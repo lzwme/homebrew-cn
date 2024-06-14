@@ -5,7 +5,6 @@ cask "font-praise" do
   url "https:github.comgooglefontsrawmainoflpraisePraise-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Praise"
-  desc "Versatile script with variations from casual (non-connecting) to formal appeal"
   homepage "https:fonts.google.comspecimenPraise"
 
   font "Praise-Regular.ttf"

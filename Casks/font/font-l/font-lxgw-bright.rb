@@ -4,7 +4,6 @@ cask "font-lxgw-bright" do
 
   url "https:github.comlxgwLxgwBrightreleasesdownloadv#{version}LXGWBright.7z"
   name "LXGW Bright"
-  desc "Merged font of Ysabeau Office and LXGW WenKai Lite"
   homepage "https:github.comlxgwLxgwBright"
 
   font "LXGWBrightLXGWBright-Italic.ttf"

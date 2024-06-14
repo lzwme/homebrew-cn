@@ -4,7 +4,6 @@ cask "font-3270-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}3270.zip"
   name "3270 Nerd Font (IBM 3270)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

@@ -5,7 +5,6 @@ cask "font-geist" do
   url "https:github.comvercelgeist-fontreleasesdownload#{version}Geist-#{version}.zip",
       verified: "github.comvercelgeist-font"
   name "Geist"
-  desc "Sans-serif typeface"
   homepage "https:vercel.comfontsans"
 
   livecheck do

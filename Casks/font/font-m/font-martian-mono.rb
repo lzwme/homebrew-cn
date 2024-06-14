@@ -4,7 +4,6 @@ cask "font-martian-mono" do
 
   url "https:github.comevilmartiansmonoreleasesdownloadv#{version}martian-mono-#{version}-otf.zip"
   name "Martian Mono"
-  desc "Monospaced font from Evil Martians"
   homepage "https:github.comevilmartiansmono"
 
   font "MartianMono-CnBd.otf"

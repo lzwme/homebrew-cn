@@ -4,7 +4,6 @@ cask "font-delugia-book" do
 
   url "https:github.comadam7delugia-codereleasesdownloadv#{version}delugia-book.zip"
   name "Delugia Code"
-  desc "Cascadia Code + Nerd Fonts, minor difference between Caskaydia Cove Nerd Font"
   homepage "https:github.comadam7delugia-code"
 
   font "delugia-bookDelugiaBook-Bold.ttf"

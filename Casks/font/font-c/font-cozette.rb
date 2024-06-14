@@ -4,7 +4,6 @@ cask "font-cozette" do
 
   url "https:github.comslavfoxCozettereleasesdownloadv.#{version}CozetteVector.dfont"
   name "Cozette"
-  desc "Bitmap programming font"
   homepage "https:github.comslavfoxCozette"
 
   livecheck do

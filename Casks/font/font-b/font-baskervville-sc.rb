@@ -4,7 +4,6 @@ cask "font-baskervville-sc" do
 
   url "https:github.comgooglefontsrawmainoflbaskervvillescBaskervvilleSC-Regular.ttf"
   name "Baskervville SC"
-  desc "Small caps version of baskervville"
   homepage "https:github.comanrt-typeANRT-Baskervville"
 
   font "BaskervvilleSC-Regular.ttf"

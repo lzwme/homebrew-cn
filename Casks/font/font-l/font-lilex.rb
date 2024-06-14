@@ -4,7 +4,6 @@ cask "font-lilex" do
 
   url "https:github.commishamyrtLilexreleasesdownload#{version}Lilex.zip"
   name "Lilex"
-  desc "Programming font"
   homepage "https:github.commishamyrtLilex"
 
   font "ttfLilex-Bold.ttf"

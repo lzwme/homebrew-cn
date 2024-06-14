@@ -4,7 +4,6 @@ cask "font-droid-sans-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}DroidSansMono.zip"
   name "DroidSansM Nerd Font (Droid Sans Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

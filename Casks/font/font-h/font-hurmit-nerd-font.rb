@@ -4,7 +4,6 @@ cask "font-hurmit-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hermit.zip"
   name "Hurmit Nerd Font (Hermit)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

@@ -7,7 +7,6 @@ cask "font-anybody" do
       branch:    "main",
       only_path: "oflanybody"
   name "Anybody"
-  desc "10 degrees, noticable but subtle"
   homepage "https:fonts.google.comspecimenAnybody"
 
   font "Anybody-Italic[wdth,wght].ttf"

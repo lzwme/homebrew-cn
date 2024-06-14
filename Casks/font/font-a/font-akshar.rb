@@ -5,7 +5,6 @@ cask "font-akshar" do
   url "https:github.comgooglefontsrawmainoflaksharAkshar%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Akshar"
-  desc "Supported"
   homepage "https:fonts.google.comspecimenAkshar"
 
   font "Akshar[wght].ttf"

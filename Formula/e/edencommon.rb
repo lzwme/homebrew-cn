@@ -1,30 +1,30 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https:github.comfacebookexperimentaledencommon"
-  url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2024.05.06.00.tar.gz"
-  sha256 "02238f2a05e46f8189bf6826057b642f7aa03bd36684a245a900f8b6dc4afb7e"
+  url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2024.06.10.00.tar.gz"
+  sha256 "2b3b749e0b4457f90f9ccd08d6bb49de4abeb38f29311f60cd2af689da4f4424"
   license "MIT"
   head "https:github.comfacebookexperimentaledencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c771c585c2a1e3cb9b103d5e76a5b966f4e9853e0fe1848802045a649842675e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ff98de9486f2b4ced0ff22462174b3c1e432ad2591131c54c2f30e1cd3fba7d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "21df80b27e291727526e56af8790c17bdb0e6014f5ab912df08b94de644c4240"
-    sha256 cellar: :any_skip_relocation, sonoma:         "31c147866ed88c9c255388df30e98bdb51fdd751f66969144bc6126875fda645"
-    sha256 cellar: :any_skip_relocation, ventura:        "9710ef8c8333c550e336534334dbbe49b8c9d97228472bb120aefb85db1eb7f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c8024ee66630dcb24dfa3b9a4ecac76626fd27cb82aa3fd54b9c54adb0be9a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b278be62c5d7bad5192909a6af245164c6dae126a656a5bf76531ed7b097e785"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e19bb1fb91b01acc1495bafac654b95631c0033a59f7d0372fd1d8680895a1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ff2e0628742c39da8ec809a0684dcae2d2bc2b64343bb7627d6fc7983518f62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4cb3ae13f5634b8be85084e657484a7ba83a7f38ae07b176426081e0cf24dae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1506cdd2d59fc998b914a756eee1d16aec30a2004575d278575bbc34c1295eb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd7b98b46b736021fd22315cad5a6d055302f02f4744109f6f91f538fafbf0a5"
+    sha256 cellar: :any_skip_relocation, monterey:       "55cb24046ae863909705816c3a699940915692366581e370cd21f0b3b791c43d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f2fcc698f755fec5dba007b35181660f9f2f80177730da073af109276b69ea"
   end
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "mvfst" => :build
   depends_on "fb303"
   depends_on "fbthrift"
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
   depends_on "libsodium"
+  depends_on "mvfst"
   depends_on "openssl@3"
   depends_on "wangle"
 

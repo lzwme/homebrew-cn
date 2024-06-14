@@ -5,7 +5,6 @@ cask "font-noto-sans-vithkuqi" do
   url "https:github.comgooglefontsrawmainoflnotosansvithkuqiNotoSansVithkuqi%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans Vithkuqi"
-  desc "Design for the historical european vithkuqi script"
   homepage "https:fonts.google.comspecimenNoto+Sans+Vithkuqi"
 
   font "NotoSansVithkuqi[wght].ttf"

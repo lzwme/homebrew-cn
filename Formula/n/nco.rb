@@ -4,15 +4,16 @@ class Nco < Formula
   url "https:github.comnconcoarchiverefstags5.2.4.tar.gz"
   sha256 "44efa9151825487fa0562fa5c6d68837624059a8e2da9d15c83ceb4d498f7902"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2eeacf6f6ca687eeade92c237edc923b5f1ff7516216bc3b751ba7df4a4859f7"
-    sha256 cellar: :any,                 arm64_ventura:  "ecc03da4235eec14eb4df50e4d019310a5135642929df31b7248e5d8f0fbd767"
-    sha256 cellar: :any,                 arm64_monterey: "606a3c7f789bda80cab7c5c72006e7e70c839002c04afead860289f438d9ef3a"
-    sha256 cellar: :any,                 sonoma:         "52a02706e7a6a1ffb53fbf747870722ad091cf787808f5247f4d4f97c13406d3"
-    sha256 cellar: :any,                 ventura:        "033b7efa5b3f44df8f9a18bb0dd4b2d60b10749dddec3f53a5e1a8a392136963"
-    sha256 cellar: :any,                 monterey:       "7432696a7338a2bc02c7bb535e074e61789a48b4f0ce37c65b246090400a85ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "561a4876522330782c0083c3108604bfc0f98f58bcfb58b256f2ffc14062c54a"
+    sha256 cellar: :any,                 arm64_sonoma:   "e06c92b4db3f900701d73db2035302598eeba44901c4be1f9ea7a2a0b3ac63b7"
+    sha256 cellar: :any,                 arm64_ventura:  "40ea3caaff8445b187d43774c27e06b1d96ee84bee0cee80a6b93086fa8574f2"
+    sha256 cellar: :any,                 arm64_monterey: "443e0a0e8ca196cdf7ac57347fa2dd8e6c8449be3fa5edeb5df2e4337e016127"
+    sha256 cellar: :any,                 sonoma:         "4d1461f3002674cbcb7cc5761830b107c967d75a819325c4ae8a76413092d22e"
+    sha256 cellar: :any,                 ventura:        "cbed6f43b1266cac1b2659e876ef6bfb29020ec6a2fe1fe460fc9e630846d4e0"
+    sha256 cellar: :any,                 monterey:       "6998c0926a9aa2b89139c81a149ff120feac59a5547c0c46e7cfcdf6d36af153"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcb7d703fb59cf8f41a6f7dcb961ed9ce8a0f860bd3edea116e77b6b2bae9a70"
   end
 
   head do

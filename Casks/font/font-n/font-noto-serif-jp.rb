@@ -5,7 +5,6 @@ cask "font-noto-serif-jp" do
   url "https:github.comgooglefontsrawmainoflnotoserifjpNotoSerifJP%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Noto Serif JP"
-  desc "Modulated (“serif”) design for the japanese language"
   homepage "https:fonts.google.comspecimenNoto+Serif+JP"
 
   font "NotoSerifJP[wght].ttf"

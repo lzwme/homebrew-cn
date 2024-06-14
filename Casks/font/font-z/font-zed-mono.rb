@@ -4,7 +4,6 @@ cask "font-zed-mono" do
 
   url "https:github.comzed-industrieszed-fontsreleasesdownload#{version}zed-mono-#{version}.zip"
   name "Zed Mono"
-  desc "Quasi-proportional monospace font based on Iosevka"
   homepage "https:github.comzed-industrieszed-fonts"
 
   font "zed-mono-bold.ttf"

@@ -7,7 +7,6 @@ cask "font-mulish" do
       branch:    "main",
       only_path: "oflmulish"
   name "Mulish"
-  desc "Minimalist sans serif typeface, designed for both display and text typography"
   homepage "https:fonts.google.comspecimenMulish"
 
   font "Mulish-Italic[wght].ttf"

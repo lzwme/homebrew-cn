@@ -7,7 +7,6 @@ cask "font-silkscreen" do
       branch:    "main",
       only_path: "oflsilkscreen"
   name "Silkscreen"
-  desc "Typeface for your web graphics"
   homepage "https:fonts.google.comspecimenSilkscreen"
 
   font "Silkscreen-Bold.ttf"

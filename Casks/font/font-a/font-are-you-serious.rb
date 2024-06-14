@@ -5,7 +5,6 @@ cask "font-are-you-serious" do
   url "https:github.comgooglefontsrawmainoflareyouseriousAreYouSerious-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Are You Serious"
-  desc "Fun playful font with a very joyful spirit"
   homepage "https:fonts.google.comspecimenAre+You+Serious"
 
   font "AreYouSerious-Regular.ttf"

@@ -4,7 +4,6 @@ cask "font-intone-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IntelOneMono.zip"
   name "IntoneMono Nerd Font (Intel One Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

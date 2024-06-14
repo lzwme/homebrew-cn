@@ -5,7 +5,6 @@ cask "font-shalimar" do
   url "https:github.comgooglefontsrawmainoflshalimarShalimar-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Shalimar"
-  desc "Upright script inspired by the calligraphic strokes of a flat nib pen"
   homepage "https:fonts.google.comspecimenShalimar"
 
   font "Shalimar-Regular.ttf"

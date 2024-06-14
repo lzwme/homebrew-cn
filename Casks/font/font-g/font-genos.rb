@@ -7,7 +7,6 @@ cask "font-genos" do
       branch:    "main",
       only_path: "oflgenos"
   name "Genos"
-  desc "Modern display font with a futuristic feel"
   homepage "https:fonts.google.comspecimenGenos"
 
   font "Genos-Italic[wght].ttf"

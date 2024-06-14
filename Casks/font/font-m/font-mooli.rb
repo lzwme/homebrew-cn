@@ -5,7 +5,6 @@ cask "font-mooli" do
   url "https:github.comgooglefontsrawmainoflmooliMooli-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Mooli"
-  desc "Derived from the mulish font family"
   homepage "https:fonts.google.comspecimenMooli"
 
   font "Mooli-Regular.ttf"

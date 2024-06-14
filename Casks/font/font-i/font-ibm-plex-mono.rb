@@ -7,7 +7,6 @@ cask "font-ibm-plex-mono" do
       branch:    "main",
       only_path: "oflibmplexmono"
   name "IBM Plex Mono"
-  desc "Corporate typeface for IBM"
   homepage "https:fonts.google.comspecimenIBM+Plex+Mono"
 
   font "IBMPlexMono-Bold.ttf"

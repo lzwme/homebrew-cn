@@ -5,7 +5,6 @@ cask "font-sn-pro" do
   url "https:github.comsupernotessn-proreleasesdownload#{version}SN-Pro.zip",
       verified: "github.comsupernotessn-pro"
   name "SN Pro Font Family"
-  desc "SN Pro is a friendly sans serif typeface optimized for use with Markdown"
   homepage "https:supernotes.appopen-sourcesn-pro"
 
   livecheck do

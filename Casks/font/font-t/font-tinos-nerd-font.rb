@@ -4,7 +4,6 @@ cask "font-tinos-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Tinos.zip"
   name "Tinos Nerd Font (Tinos)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

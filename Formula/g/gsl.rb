@@ -1,38 +1,28 @@
 class Gsl < Formula
   desc "Numerical library for C and C++"
-  homepage "https:www.gnu.orgsoftwaregsl"
-  url "https:ftp.gnu.orggnugslgsl-2.7.1.tar.gz"
-  mirror "https:ftpmirror.gnu.orggslgsl-2.7.1.tar.gz"
-  sha256 "dcb0fbd43048832b757ff9942691a8dd70026d5da0ff85601e52687f6deeb34b"
+  homepage "https://www.gnu.org/software/gsl/"
+  url "https://ftp.gnu.org/gnu/gsl/gsl-2.8.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gsl/gsl-2.8.tar.gz"
+  sha256 "6a99eeed15632c6354895b1dd542ed5a855c0f15d9ad1326c6fe2b2c9e423190"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "67f4f4745081dd2d7a6d8434d59a240d2fc13b954d1015c82deb1445dcecdbfb"
-    sha256 cellar: :any,                 arm64_ventura:  "2430e5586457f35f98014639a19d40c4d8d4b821949bb0cc7e091ac2aa9987bb"
-    sha256 cellar: :any,                 arm64_monterey: "207ba177628696ce2179fe94125ecd637794396a442a7550c92f9a8a202c03bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "1184a75460c96dc80a9fa5299f3f0931bbff729b556607e2b7492608dd7e44d7"
-    sha256 cellar: :any,                 sonoma:         "5e7546917872e35511baa70ee1602db896c92e7801e241d891d1860ffa2ed950"
-    sha256 cellar: :any,                 ventura:        "9e28ec4b8e62b94c208312780b63f417b08c3ca80dcb7e7f7223e06675e2807c"
-    sha256 cellar: :any,                 monterey:       "3125ff756739ec6eea0ddac3c3b01e879f525eb3b7de88586d6438cd954e28a8"
-    sha256 cellar: :any,                 big_sur:        "3cfd6c05d383ad930471e6d92942de62982d5e4149d5508bbbf5ed513561c288"
-    sha256 cellar: :any,                 catalina:       "03a4c21c0384602ec0d5c802f61fdc0737730a703396b3fe37274c884019a6b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daf456a559c5f031b5584db251ffe07aa02fbb04c3d7dc06e1202cfd9109a0c7"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    sha256 cellar: :any,                 arm64_sonoma:   "b5cd011cc1f8ac606487224628d21247cbe290b4a035f844ab016088c82bbdf7"
+    sha256 cellar: :any,                 arm64_ventura:  "5a197c4ee1e19b629de8203c0e365c7df8293c0d83cdadb38282baa2cceb926b"
+    sha256 cellar: :any,                 arm64_monterey: "3b13e8f79478d63845e9f2e0f4e6b09dee7b7c139f9a789a87a1250a6e989da0"
+    sha256 cellar: :any,                 sonoma:         "a955529c333b0d646bdc2ea92c821b5280d2451090e999e159e78e6d274a24a0"
+    sha256 cellar: :any,                 ventura:        "0b59031c0d9af903b2c1fc50e98022199a802ce5e44ad554a81bf763a2748806"
+    sha256 cellar: :any,                 monterey:       "0d90b773e23b6892e7c90a6a7a1cd9bc8b647f50abcf5e39adc520af9ee7d93b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7fb92934fa28882ef82232f29289132270d1de558d75452644668a8fdcd630a"
   end
 
   def install
-    ENV.deparallelize
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system "make" # A GNU tool which doesn't support just make install! Shameful!
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "make"
     system "make", "install"
   end
 
   test do
-    system bin"gsl-randist", "0", "20", "cauchy", "30"
+    system bin/"gsl-randist", "0", "20", "cauchy", "30"
   end
 end

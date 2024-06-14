@@ -1,19 +1,19 @@
 class Iniparser < Formula
   desc "Library for parsing ini files"
   homepage "https://gitlab.com/iniparser/iniparser"
-  url "https://gitlab.com/iniparser/iniparser/-/archive/v4.2.2/iniparser-v4.2.2.tar.bz2"
-  sha256 "2e0e448377c5ff69f809160824a7af60846ddf6055d19a96c269b9682aea761e"
+  url "https://gitlab.com/iniparser/iniparser/-/archive/v4.2.3/iniparser-v4.2.3.tar.bz2"
+  sha256 "cf9afba93f524e04483a6438698de8d6b4b4a3c817c2f2ca5df46919b47c8b75"
   license "MIT"
   head "https://gitlab.com/iniparser/iniparser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ff19dc079e7b301b1ecf4fe793f71e24d4f3c62453ab75c5de958a03d1acdc30"
-    sha256 cellar: :any,                 arm64_ventura:  "dcae85da4cdd7827d6ebcfbddd005a5e1839b3944fafb0a2aaf25f8e35f78774"
-    sha256 cellar: :any,                 arm64_monterey: "0c3040ee4f3a1cd894fd2893642e2326f623c5b3148c5fce1db4a8636b3083d6"
-    sha256 cellar: :any,                 sonoma:         "78373947428f27fe156a8fb965fca7dbf959cfe73f3a44c51bd1256536f4a7a0"
-    sha256 cellar: :any,                 ventura:        "7de2d005b9b01c0cf9dc1897f4f4e326a4ceb62a0ac691487452e5e81ed7af94"
-    sha256 cellar: :any,                 monterey:       "208d502f8c397c5ddc6b1f2dec3b54fc03957ae94216c9eafc7bd204f331339a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "899186db0aa1a8860f8e188a3526bccbf076c183b78c3360d4528fba43e3ff70"
+    sha256 cellar: :any,                 arm64_sonoma:   "df7cd6b03bd305992437bb5a7b6a7822126e406cba0a4602e7b773b5477de850"
+    sha256 cellar: :any,                 arm64_ventura:  "b215b6778fac7a7f2550809bc82c8a7afb5922f7f058aa613686ec582db18b1f"
+    sha256 cellar: :any,                 arm64_monterey: "feadfcbe2a6972acf894ce99cc3cad8119405678adcab92f1de2f77a3ad9f62c"
+    sha256 cellar: :any,                 sonoma:         "92a5eaf12ad873442a1fde9478e552d7d9ed341c7f9f81687c02a49c0b42520e"
+    sha256 cellar: :any,                 ventura:        "0414af8a5e511e4abc60d47ba6b8714f41da0c3ffa33bda2d589d4c4457b3626"
+    sha256 cellar: :any,                 monterey:       "b42380cc658b2b7fdbfbb3970c1f05b453a5e68a941691fb52f0ea5d5c09946e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ceb11fd26232228421bec9b565f2f3d5e0d67524f521c8fb6c06138f702f3f0"
   end
 
   depends_on "cmake" => :build

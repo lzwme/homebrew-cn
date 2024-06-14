@@ -8,6 +8,8 @@ cask "opencore-patcher" do
   desc "Boot loader to injectpatch current features for unsupported Macs"
   homepage "https:dortania.github.ioOpenCore-Legacy-Patcher"
 
+  auto_updates true
+
   pkg "OpenCore-Patcher.pkg"
 
   uninstall launchctl: [

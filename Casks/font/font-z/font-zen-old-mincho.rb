@@ -7,7 +7,6 @@ cask "font-zen-old-mincho" do
       branch:    "main",
       only_path: "oflzenoldmincho"
   name "Zen Old Mincho"
-  desc "Intended for text usage, it also works well in large sizes"
   homepage "https:fonts.google.comspecimenZen+Old+Mincho"
 
   font "ZenOldMincho-Black.ttf"

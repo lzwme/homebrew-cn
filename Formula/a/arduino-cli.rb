@@ -2,8 +2,8 @@ class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https:github.comarduinoarduino-cli"
   url "https:github.comarduinoarduino-cli.git",
-      tag:      "v0.35.3",
-      revision: "95cfd654fe0dd6b07e903d3132c0faceabfbe9e3"
+      tag:      "v1.0.0",
+      revision: "05c9852a0b8105c6c7b45303de87711db11a5f48"
   license "GPL-3.0-only"
   head "https:github.comarduinoarduino-cli.git", branch: "master"
 
@@ -13,13 +13,13 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "490da66935363b7a43d492bde7a10a734c5469eb8e6e0d710dca07be67ff1761"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e49003a5ff03579941a8ec60694177392bb8635357c0d36b31d28e99de98f1a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba8af5d91337c4d2be5be0c3ee1cd0bf9e7a3efa6a0a523dcbf3ea89b744b552"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a03dda880772b74b038abb20d6b36db9b363c73b0e1c8a05646e3e2717f449fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "55caab9c9b0553dcac1803c21c222bd463bb626cef8bdf8c45cae8c1b141ea5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2091b69e81aa97b36e587e86c50b65526ba4f45644e81a9634bc6833047c756e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcdfa3d4f57b7148a322078f3ed7cb1fa9dc0f0330fe29430d7bd4c6be5dfba5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f1dcfaa65219fb68dbdddc8060ee61cc33d72a6575beb080c90376d3514f118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60b3334be78090a6b7f7a9cab4d716655c65becbbf7c9bd724fbc3fa602ea115"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15e2c28260063df50a76525fb050873e5b76d2a43a8ca67a35d023a05d25fece"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dce300d6ad1cd3951167fa5cb821bbcbf6427d841e23c7ceece0b13425573d94"
+    sha256 cellar: :any_skip_relocation, ventura:        "b603198bfa7073d9f2c4ccf8a9e6169ff176c5f4e090fe7f140daa93f6ee1bbc"
+    sha256 cellar: :any_skip_relocation, monterey:       "17ed0f297e1546116bda5cb50ef8b166ad4263ae4981b6145927ff32fa2fa1b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aac4e417e3034cf6415d6fdc131c8fed5caf5a32cc1dd5c716f40cfa34507e3"
   end
 
   depends_on "go" => :build

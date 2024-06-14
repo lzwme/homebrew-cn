@@ -1,19 +1,19 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2024.05.06.00.tar.gz"
-  sha256 "456fb61eacd9296bd452ef030b9727a1470933a31f326bdaddb52a59b2feef16"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2024.06.10.00.tar.gz"
+  sha256 "b440440b3447b5a36f5823fc93dd69dfb63f7d0cf4c4801a3756fe9489a0ee16"
   license "MIT"
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9410b4b119812956ec5c064d97bd431d40819228fb796762ef4939cc1ef5fd06"
-    sha256 cellar: :any,                 arm64_ventura:  "faa946e214d25678421fd6c4408f7d6887442bd3caf8c2e4341b1be965725bdf"
-    sha256 cellar: :any,                 arm64_monterey: "eaa4dc834ad4a577b00a6577c6a78c51987c7ffae5f8cee1052c05df7c70bff3"
-    sha256 cellar: :any,                 sonoma:         "d8488eb7b1189a56aecd3a20ad30317f135d7f72e1562e181802f0f5ce341263"
-    sha256 cellar: :any,                 ventura:        "509d971921f135c36e21a6a64d0542f655ff495eb838dd99d4ef3fd59e161751"
-    sha256 cellar: :any,                 monterey:       "95423e2cb2927a8b30d204258f53d15f1414ca0f0c24836e147863e3f529e67e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24919bbc7c971be7fe37ea161ea4268604c67dcfe6435dc2258b2050cb4495c3"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a0d0e3791ceebc1a880b83eacdc7f1a8f5b231266f4d5c4de9b770559cf8758"
+    sha256 cellar: :any,                 arm64_ventura:  "02504dea51bbfbf2aabb5fc31cb65fd5e1a8a85af82dfeaf7eb2e413bece7c6f"
+    sha256 cellar: :any,                 arm64_monterey: "3d94212faf56b063d01b30a368c55fdbe019c7aeca7936e417fbf18c8fdf83cf"
+    sha256 cellar: :any,                 sonoma:         "caf4218c48515674639905e4846ea2f0ffab39a7473e836429f84a4920a48a46"
+    sha256 cellar: :any,                 ventura:        "1cb82deeed62f1c476849aa7b30fd3b741dbe63bd35fac4cb00188d4fdb381d4"
+    sha256 cellar: :any,                 monterey:       "5b2767499b715650711cafefa08f75a333edcb7a1c3f02b52c70235c97cff954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4a130e845e6560df15c84f582d299c40ea630ee34b0238a933f1ee10f6d9b38"
   end
 
   # https:github.comfacebookwatchmanissues963
@@ -23,7 +23,6 @@ class Watchman < Formula
   depends_on "cpptoml" => :build
   depends_on "edencommon" => :build
   depends_on "googletest" => :build
-  depends_on "mvfst" => :build
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build
@@ -36,6 +35,7 @@ class Watchman < Formula
   depends_on "glog"
   depends_on "libevent"
   depends_on "libsodium"
+  depends_on "mvfst"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.12"

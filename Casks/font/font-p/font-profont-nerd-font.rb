@@ -4,7 +4,6 @@ cask "font-profont-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ProFont.zip"
   name "ProFont Nerd Font families (ProFont)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

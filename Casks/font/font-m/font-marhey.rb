@@ -5,7 +5,6 @@ cask "font-marhey" do
   url "https:github.comgooglefontsrawmainoflmarheyMarhey%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Marhey"
-  desc "Playful display typeface, custom hand lettering with contrast strokes"
   homepage "https:fonts.google.comspecimenMarhey"
 
   font "Marhey[wght].ttf"

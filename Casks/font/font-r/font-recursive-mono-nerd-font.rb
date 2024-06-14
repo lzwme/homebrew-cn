@@ -4,7 +4,6 @@ cask "font-recursive-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Recursive.zip"
   name "RecMono Nerd Font families (Recursive Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

@@ -4,7 +4,6 @@ cask "font-iosevka-aile" do
 
   url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-IosevkaAile-#{version}.zip"
   name "Iosevka Aile"
-  desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
   homepage "https:github.combe5invisIosevka"
 
   livecheck do

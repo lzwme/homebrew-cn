@@ -7,7 +7,6 @@ cask "font-agdasima" do
       branch:    "main",
       only_path: "oflagdasima"
   name "Agdasima"
-  desc "Based on big shoulders, a condensed american gothic sans-serif font family"
   homepage "https:fonts.google.comspecimenAgdasima"
 
   font "Agdasima-Bold.ttf"

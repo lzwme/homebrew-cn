@@ -5,7 +5,6 @@ cask "font-lxgw-neoxihei" do
   url "https:github.comlxgwLxgwNeoXiHeireleasesdownloadv#{version}LXGWNeoXiHei.ttf"
   name "LXGW NeoXiHei"
   name "霞鹜新晰黑"
-  desc "Chinese sans-serif font derived from IPAex Gothic"
   homepage "https:github.comlxgwLxgwNeoXiHei"
 
   font "LXGWNeoXiHei.ttf"

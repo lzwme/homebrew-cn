@@ -5,7 +5,6 @@ cask "font-protest-strike" do
   url "https:github.comgooglefontsrawmainoflproteststrikeProtestStrike-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Protest Strike"
-  desc "Solid but peaceful sans serif typeface"
   homepage "https:fonts.google.comspecimenProtest+Strike"
 
   font "ProtestStrike-Regular.ttf"

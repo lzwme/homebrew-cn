@@ -4,7 +4,6 @@ cask "font-symbols-only-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}NerdFontsSymbolsOnly.zip"
   name "Symbols Nerd Font (Symbols Only)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

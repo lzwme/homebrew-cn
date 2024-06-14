@@ -4,7 +4,6 @@ cask "font-delugia-mono-complete" do
 
   url "https:github.comadam7delugia-codereleasesdownloadv#{version}delugia-mono-complete.zip"
   name "Delugia Code"
-  desc "Cascadia Code + Nerd Fonts, minor difference between Caskaydia Cove Nerd Font"
   homepage "https:github.comadam7delugia-code"
 
   font "delugia-mono-completeDelugiaMonoComplete-Bold.ttf"

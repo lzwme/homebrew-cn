@@ -7,7 +7,6 @@ cask "font-bona-nova" do
       branch:    "main",
       only_path: "oflbonanova"
   name "Bona Nova"
-  desc "Cursive typeface"
   homepage "https:fonts.google.comspecimenBona+Nova"
 
   font "BonaNova-Bold.ttf"

@@ -4,7 +4,6 @@ cask "font-lekton-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Lekton.zip"
   name "Lekton Nerd Font (Lekton)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

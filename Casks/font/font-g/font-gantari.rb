@@ -7,7 +7,6 @@ cask "font-gantari" do
       branch:    "main",
       only_path: "oflgantari"
   name "Gantari"
-  desc "Designed so that all characters can look harmonious"
   homepage "https:fonts.google.comspecimenGantari"
 
   font "Gantari-Italic[wght].ttf"

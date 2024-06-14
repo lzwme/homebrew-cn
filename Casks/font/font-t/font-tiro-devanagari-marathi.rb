@@ -7,7 +7,6 @@ cask "font-tiro-devanagari-marathi" do
       branch:    "main",
       only_path: "ofltirodevanagarimarathi"
   name "Tiro Devanagari Marathi"
-  desc "Broader proportions, generous counters, and strong diagonal strokes"
   homepage "https:fonts.google.comspecimenTiro+Devanagari+Marathi"
 
   font "TiroDevanagariMarathi-Italic.ttf"

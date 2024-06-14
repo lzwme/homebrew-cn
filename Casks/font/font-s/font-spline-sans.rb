@@ -5,7 +5,6 @@ cask "font-spline-sans" do
   url "https:github.comgooglefontsrawmainoflsplinesansSplineSans%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Spline Sans"
-  desc "Original typeface initiated by the spline team"
   homepage "https:fonts.google.comspecimenSpline+Sans"
 
   font "SplineSans[wght].ttf"

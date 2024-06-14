@@ -5,7 +5,6 @@ cask "font-zhuque-fangsong" do
   url "https:github.comTrionesTypezhuquereleasesdownloadv#{version}ZhuqueFangsong-v#{version}.zip"
   name "Zhuque Fangsong"
   name "朱雀仿宋"
-  desc "Open source Chinese Fangsong font created by TrionesType"
   homepage "https:github.comTrionesTypezhuque"
 
   font "ZhuqueFangsong-Regular.ttf"

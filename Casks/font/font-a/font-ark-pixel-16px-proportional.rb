@@ -4,7 +4,6 @@ cask "font-ark-pixel-16px-proportional" do
 
   url "https:github.comTakWolfark-pixel-fontreleasesdownload#{version}ark-pixel-font-16px-proportional-otf-v#{version}.zip"
   name "Ark Pixel 16px Proportional"
-  desc "Open source Pan-CJK pixel font"
   homepage "https:github.comTakWolfark-pixel-font"
 
   font "ark-pixel-16px-proportional-ja.otf"

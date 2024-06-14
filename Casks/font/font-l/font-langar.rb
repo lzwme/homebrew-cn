@@ -5,7 +5,6 @@ cask "font-langar" do
   url "https:github.comgooglefontsrawmainofllangarLangar-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Langar"
-  desc "One-weight latingurmukhi display font based on informal, playful letterforms"
   homepage "https:fonts.google.comspecimenLangar"
 
   font "Langar-Regular.ttf"

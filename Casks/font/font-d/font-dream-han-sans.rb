@@ -4,7 +4,6 @@ cask "font-dream-han-sans" do
 
   url "https:github.comPal3lovedream-han-cjkreleasesdownloaddream-#{version.csv.first}-sans-#{version.csv.second}-serif-#{version.csv.third}DreamHanSans.zip"
   name "Dream Han Sans"
-  desc "Pan-CJK font families with range of weights"
   homepage "https:github.comPal3lovedream-han-cjk"
 
   livecheck do

@@ -7,7 +7,6 @@ cask "font-kaisei-decol" do
       branch:    "main",
       only_path: "oflkaiseidecol"
   name "Kaisei Decol"
-  desc "Designed with the same element in kanji, the little dot at the end of the stroke"
   homepage "https:fonts.google.comspecimenKaisei+Decol"
 
   font "KaiseiDecol-Bold.ttf"

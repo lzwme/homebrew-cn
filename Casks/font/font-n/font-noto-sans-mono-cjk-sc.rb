@@ -4,7 +4,6 @@ cask "font-noto-sans-mono-cjk-sc" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}13_NotoSansMonoCJKsc.zip"
   name "Noto Sans Mono CJK SC"
-  desc "Language Specific Monospace OTFs Simplified Chinese (简体中文)"
   homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do

@@ -4,7 +4,6 @@ cask "font-libertinus" do
 
   url "https:github.comalerquelibertinusreleasesdownloadv#{version}Libertinus-#{version}.tar.xz"
   name "Libertinus"
-  desc "Proportional serif typeface inspired by 19th century book type"
   homepage "https:github.comalerquelibertinus"
 
   font "Libertinus-#{version}staticOTFLibertinusKeyboard-Regular.otf"

@@ -4,7 +4,6 @@ cask "font-fira-code" do
 
   url "https:github.comtonskyFiraCodereleasesdownload#{version}Fira_Code_v#{version}.zip"
   name "Fira Code"
-  desc "Free monospaced font with programming ligatures"
   homepage "https:github.comtonskyFiraCode"
 
   font "ttfFiraCode-Bold.ttf"

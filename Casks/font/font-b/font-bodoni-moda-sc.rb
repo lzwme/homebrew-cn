@@ -6,7 +6,6 @@ cask "font-bodoni-moda-sc" do
       branch:    "main",
       only_path: "oflbodonimodasc"
   name "Bodoni Moda SC"
-  desc "Designed by owen earl (indestructible type*)"
   homepage "https:github.comindestructible-typeBodoni"
 
   font "BodoniModaSC-Italic[opsz,wght].ttf"

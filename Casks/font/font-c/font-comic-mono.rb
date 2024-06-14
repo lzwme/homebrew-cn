@@ -5,7 +5,6 @@ cask "font-comic-mono" do
   url "https:codeload.github.comdtinthcomic-mono-fontzipmaster",
       verified: "codeload.github.comdtinthcomic-mono-font"
   name "Comic Mono"
-  desc "Legible monospace font"
   homepage "https:dtinth.github.iocomic-mono-font"
 
   font "comic-mono-font-masterComicMono.ttf"

@@ -5,7 +5,6 @@ cask "font-tiejili-sc" do
   url "https:github.comBuerniaTiejilireleasesdownload#{version}Tiejili.zip"
   name "Tiejili SC"
   name "铁蒺藜体 简"
-  desc "Open-source font that extends Fontworks' Reggae One to Chinese"
   homepage "https:github.comBuerniaTiejili"
 
   font "TiejiliSC-Regular.otf"

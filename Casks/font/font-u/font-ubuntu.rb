@@ -7,7 +7,6 @@ cask "font-ubuntu" do
       branch:    "main",
       only_path: "uflubuntu"
   name "Ubuntu"
-  desc "Sans-serif typeface manually hinted for clarity"
   homepage "https:fonts.google.comspecimenUbuntu"
 
   font "Ubuntu-Bold.ttf"

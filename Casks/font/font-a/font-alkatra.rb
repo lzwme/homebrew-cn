@@ -5,7 +5,6 @@ cask "font-alkatra" do
   url "https:github.comgooglefontsrawmainoflalkatraAlkatra%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Alkatra"
-  desc "Display typeface family"
   homepage "https:fonts.google.comspecimenAlkatra"
 
   font "Alkatra[wght].ttf"

@@ -1,7 +1,7 @@
 class Ecasound < Formula
   desc "Multitrack-capable audio recorder and effect processor"
   homepage "https://nosignal.fi/ecasound/"
-  url "http://nosignal.fi/download/ecasound-2.9.3.tar.gz"
+  url "https://nosignal.fi/download/ecasound-2.9.3.tar.gz"
   sha256 "468bec44566571043c655c808ddeb49ae4f660e49ab0072970589fd5a493f6d4"
   license "GPL-2.0-or-later"
 

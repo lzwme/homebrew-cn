@@ -4,7 +4,6 @@ cask "font-anton-sc" do
 
   url "https:github.comgooglefontsrawmainoflantonscAntonSC-Regular.ttf"
   name "Anton SC"
-  desc "Small caps version of anton"
   homepage "https:github.comgooglefontsAntonFont"
 
   font "AntonSC-Regular.ttf"

@@ -2,24 +2,14 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https:audacious-media-player.org"
   license "BSD-2-Clause"
-  revision 1
 
   stable do
-    url "https:distfiles.audacious-media-player.orgaudacious-4.3.1.tar.bz2"
-    sha256 "85e9e26841505b51e342ee72a2d05f19bef894f567a029ebb3f3e0c1adb42042"
+    url "https:distfiles.audacious-media-player.orgaudacious-4.4.tar.bz2"
+    sha256 "aadc5d26ea2954236a00153e424094d9e6eb55c5c324c08fd0491b7c2ae2f830"
 
     resource "plugins" do
-      url "https:distfiles.audacious-media-player.orgaudacious-plugins-4.3.1.tar.bz2"
-      sha256 "2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6"
-    end
-
-    # Fixes: ..srclibaudcorevfs.h:78:62: error: integer value -1 is outside
-    # the valid range of values [0, 3] for this enumeration type
-    # [-Wenum-constexpr-conversion]
-    # Remove when included in a release.
-    patch do
-      url "https:github.comaudacious-media-playeraudaciouscommit4967240899b6f36e3e5dfc68f1b8963824562fe9.patch?full_index=1"
-      sha256 "f1232ab272927c4d042e2475d02d08e99965b5f01a5a1a7c57a76c669224d688"
+      url "https:distfiles.audacious-media-player.orgaudacious-plugins-4.4.tar.bz2"
+      sha256 "3caf3a5fe5b6f2808f461f85132fbff4ae22a53ef9f3d26d9e6030f6c6d5baa2"
     end
   end
 
@@ -29,13 +19,13 @@ class Audacious < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "82cf7e48a09f0468ccd17fd84b03321d63cc54fbf740baacea47f1061fd21000"
-    sha256 arm64_ventura:  "7c035f0fe808ddb565fe00cc7268aa317ae965cd0fdcfa821dffee0e52904fca"
-    sha256 arm64_monterey: "2b20f6790d06b5c477dcbf760e50d9f15ba55922c74910e54179c4c180384f70"
-    sha256 sonoma:         "db478a7d9dae10ad8b9743cb4c96a4164a62495896ac13b1eb8cf677652eb1a7"
-    sha256 ventura:        "ca18e033d72a4c6ee60b5b7127921b394b2e5c2bf88f69648ed0abf5479260ab"
-    sha256 monterey:       "73d8752361d84d876ef26d68e8003b62ee46d6db7facf7ffb3a931bacf3b0594"
-    sha256 x86_64_linux:   "40e939273d344e1898bbb7b1e47dea3e0eb3478c317c75f45c10a9bdc920d198"
+    sha256 arm64_sonoma:   "e03058224d658019e61fbbc1c04a385e26e470ec902c6cdeb7d033b72614bf73"
+    sha256 arm64_ventura:  "f1cff5889746668db16352051f62bff287fd0c29f343de04f2d06d61851ef72c"
+    sha256 arm64_monterey: "79546d5bd47b5f3a5c44f73f89ff223301139f213e519c553ca76c564ee795c7"
+    sha256 sonoma:         "873a17be51d0898e05fa87a46b781822a0a22d31480e0bb25cb5bc18bed11279"
+    sha256 ventura:        "cd34f079dc5b8268ac03b5762ea1716b7a4ebc1145b4f1e64f22894111f68d66"
+    sha256 monterey:       "b1056a92f3c10f9d818e27d60e54f4ce9b0f42812a18a76510555b596a499986"
+    sha256 x86_64_linux:   "695f2ae08a9e8b2e3e34358b64eaa566d39121334abf57c913323ccbeb9e5483"
   end
 
   head do
@@ -93,9 +83,10 @@ class Audacious < Formula
   fails_with gcc: "5"
 
   def install
+    odie "plugins resource needs to be updated" if build.stable? && version != resource("plugins").version
+
     args = %w[
       -Dgtk=false
-      -Dqt6=true
     ]
 
     system "meson", "setup", "build", *std_meson_args, *args, "-Ddbus=false"

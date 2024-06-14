@@ -5,7 +5,6 @@ cask "font-yuji-syuku" do
   url "https:github.comgooglefontsrawmainoflyujisyukuYujiSyuku-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Yuji Syuku"
-  desc "Also approachable"
   homepage "https:fonts.google.comspecimenYuji+Syuku"
 
   font "YujiSyuku-Regular.ttf"

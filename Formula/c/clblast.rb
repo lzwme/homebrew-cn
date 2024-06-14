@@ -1,18 +1,18 @@
 class Clblast < Formula
   desc "Tuned OpenCL BLAS library"
   homepage "https:github.comCNugterenCLBlast"
-  url "https:github.comCNugterenCLBlastarchiverefstags1.6.2.tar.gz"
-  sha256 "d7c1fb61162a6e2fa4eb6e95fafacbe22ee8460cd82371478f794f195aad267f"
+  url "https:github.comCNugterenCLBlastarchiverefstags1.6.3.tar.gz"
+  sha256 "c05668c7461e8440fce48c9f7a8966a6f9e0923421acd7c0357ece9b1d83f20e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ebca10ae7272196af10cf453e7ad120674926db5941f9f8b4017ec90436b0064"
-    sha256 cellar: :any,                 arm64_ventura:  "61b3c32e0d3f4953a5c1e2606f685c6656fafe3ac68eaef6a60605d36d98b655"
-    sha256 cellar: :any,                 arm64_monterey: "e91a630c1b4e3e753fd5c73c202f36c05dea759f8e1e5e8f0c8867a89d36b3bc"
-    sha256 cellar: :any,                 sonoma:         "938856dc505d77f6a0651ba67db9b0ae2ace4232187d9a2e1346f7bdaaf5e597"
-    sha256 cellar: :any,                 ventura:        "125f99f8188915d70ea3e7f7ae96ca0406b47c2c8e1341eca5d2d13f8d1c6dc1"
-    sha256 cellar: :any,                 monterey:       "fc7669fd1db375c8705b33b2300abb1af4b826e504ea708e48d5ecf9f427c67d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9911067b1bceff5bac59df3ecbbc4becdc96ed0639a9116b6ad56392fb118c0"
+    sha256 cellar: :any,                 arm64_sonoma:   "51694bd4a8eefd817e62561ef30afa0807dd169cf8b8b3ed3599afd8240f0772"
+    sha256 cellar: :any,                 arm64_ventura:  "4ae97edde32865dae186f21292d0885d402be3e4622b76fb77f5b6240035f560"
+    sha256 cellar: :any,                 arm64_monterey: "b2190d5fe22baa139b0c6d4884af910db597fdcf1f6b02cc8dcbd377991f1e4b"
+    sha256 cellar: :any,                 sonoma:         "7af136b15b5d8fc47a2c392052a7b35ec447c4530c3f57fab3675e45e55d1e96"
+    sha256 cellar: :any,                 ventura:        "05968756c5c41c794e4134f1dc93756efe8beca0f76cd6959a7ba839f75ae791"
+    sha256 cellar: :any,                 monterey:       "3fbca33d20a9d99bc166e1af71058bfb56ed064ea5fbfdc733e1373afc553587"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fc7ca301aa5cfd50033c67343f4fddcedffc6536274423081e71a2f86282e8e"
   end
 
   depends_on "cmake" => :build

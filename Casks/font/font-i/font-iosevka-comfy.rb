@@ -5,7 +5,6 @@ cask "font-iosevka-comfy" do
   url "https:github.comprotesilaosiosevka-comfy.git",
       branch: "master"
   name "Iosevka-Comfy"
-  desc "Custom build of Iosevka with different style and metrics than the default"
   homepage "https:github.comprotesilaosiosevka-comfy"
 
   font "iosevka-comfy-motionttfiosevka-comfy-motion-extrabolditalic.ttf"

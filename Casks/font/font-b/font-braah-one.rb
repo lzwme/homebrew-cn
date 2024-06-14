@@ -5,7 +5,6 @@ cask "font-braah-one" do
   url "https:github.comgooglefontsrawmainoflbraahoneBraahOne-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Braah One"
-  desc "Bold and playful font"
   homepage "https:fonts.google.comspecimenBraah+One"
 
   font "BraahOne-Regular.ttf"

@@ -5,7 +5,6 @@ cask "font-joan" do
   url "https:github.comgooglefontsrawmainofljoanJoan-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Joan"
-  desc "Under development"
   homepage "https:fonts.google.comspecimenJoan"
 
   font "Joan-Regular.ttf"

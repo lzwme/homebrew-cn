@@ -4,7 +4,6 @@ cask "font-iosevka-curly" do
 
   url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-IosevkaCurly-#{version}.zip"
   name "Iosevka Curly"
-  desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
   homepage "https:github.combe5invisIosevka"
 
   livecheck do

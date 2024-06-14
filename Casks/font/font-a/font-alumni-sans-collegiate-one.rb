@@ -7,7 +7,6 @@ cask "font-alumni-sans-collegiate-one" do
       branch:    "main",
       only_path: "oflalumnisanscollegiateone"
   name "Alumni Sans Collegiate One"
-  desc "Font inspired by Impact Black"
   homepage "https:fonts.google.comspecimenAlumni+Sans+Collegiate+One"
 
   font "AlumniSansCollegiateOne-Italic.ttf"

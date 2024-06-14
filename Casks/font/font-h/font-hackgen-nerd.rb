@@ -4,7 +4,6 @@ cask "font-hackgen-nerd" do
 
   url "https:github.comyuru7HackGenreleasesdownloadv#{version}HackGen_NF_v#{version}.zip"
   name "HackGenNerd"
-  desc "Japanese programming font which is a composed of Hack and GenJyuu-Gothic"
   homepage "https:github.comyuru7HackGen"
 
   font "HackGen_NF_v#{version}HackGen35ConsoleNF-Bold.ttf"

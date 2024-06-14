@@ -7,7 +7,6 @@ cask "font-newsreader" do
       branch:    "main",
       only_path: "oflnewsreader"
   name "Newsreader"
-  desc "Original typeface primarily intended for continuous on-screen reading"
   homepage "https:fonts.google.comspecimenNewsreader"
 
   font "Newsreader-Italic[opsz,wght].ttf"

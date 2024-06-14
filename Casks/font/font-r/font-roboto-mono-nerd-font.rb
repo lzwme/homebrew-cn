@@ -4,7 +4,6 @@ cask "font-roboto-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}RobotoMono.zip"
   name "RobotoMono Nerd Font (Roboto Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

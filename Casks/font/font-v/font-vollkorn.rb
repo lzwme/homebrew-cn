@@ -7,7 +7,6 @@ cask "font-vollkorn" do
       branch:    "main",
       only_path: "oflvollkorn"
   name "Vollkorn"
-  desc "Quiet, modest and high quality serif typeface"
   homepage "https:fonts.google.comspecimenVollkorn"
 
   font "Vollkorn-Italic[wght].ttf"

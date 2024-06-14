@@ -4,7 +4,6 @@ cask "font-iansui" do
 
   url "https:github.comButTaiwaniansuireleasesdownloadv#{version}iansui.zip"
   name "iansui"
-  desc "Chinese font derived from Klee One"
   homepage "https:github.comButTaiwaniansui"
 
   font "Iansui-Regular.ttf"

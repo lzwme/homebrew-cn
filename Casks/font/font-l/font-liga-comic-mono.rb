@@ -4,7 +4,6 @@ cask "font-liga-comic-mono" do
 
   url "https:codeload.github.comwayoucomic-mono-fontzipmaster"
   name "Liga Comic Mono"
-  desc "Legible monospace font with programming ligatures"
   homepage "https:github.comwayoucomic-mono-font"
 
   font "comic-mono-font-masterLigaComicMono.ttf"

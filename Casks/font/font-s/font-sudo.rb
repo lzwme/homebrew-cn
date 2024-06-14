@@ -4,7 +4,6 @@ cask "font-sudo" do
 
   url "https:github.comjenskutileksudo-fontreleasesdownloadv#{version}sudo.zip"
   name "Sudo"
-  desc "Font for programmers and command-line users"
   homepage "https:github.comjenskutileksudo-font"
 
   font "sudoSudoVariable.ttf"

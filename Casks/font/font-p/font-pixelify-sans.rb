@@ -5,7 +5,6 @@ cask "font-pixelify-sans" do
   url "https:github.comgooglefontsrawmainoflpixelifysansPixelifySans%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Pixelify Sans"
-  desc "Achieved by using a grid of small, square pixels to create each letterform"
   homepage "https:fonts.google.comspecimenPixelify+Sans"
 
   font "PixelifySans[wght].ttf"

@@ -7,7 +7,6 @@ cask "font-tiro-tamil" do
       branch:    "main",
       only_path: "ofltirotamil"
   name "Tiro Tamil"
-  desc "Especially suited to traditional literary publishing"
   homepage "https:fonts.google.comspecimenTiro+Tamil"
 
   font "TiroTamil-Italic.ttf"

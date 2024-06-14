@@ -5,7 +5,6 @@ cask "font-lxgw-zhenkai" do
   url "https:github.comlxgwLxgwZhenKaireleasesdownloadv#{version}LXGWZhenKai.ttf"
   name "LXGW ZhenKai"
   name "霞鹜臻楷"
-  desc "Bolder-weight Edition of LXGW WenKai"
   homepage "https:github.comlxgwLxgwZhenKai"
 
   deprecate! date: "2024-02-18", because: :discontinued

@@ -4,7 +4,6 @@ cask "font-codicon" do
 
   url "https:github.commicrosoftvscode-codiconsreleasesdownload#{version}codicon.ttf"
   name "Codicon"
-  desc "Icon font for Visual Studio Code"
   homepage "https:github.commicrosoftvscode-codicons"
 
   font "codicon.ttf"

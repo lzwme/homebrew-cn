@@ -4,7 +4,6 @@ cask "font-xits" do
 
   url "https:github.comkhaledhosnyxitsarchivev#{version}.zip"
   name "XITS"
-  desc "Times-like typeface for mathematical and scientific publishing"
   homepage "https:github.comkhaledhosnyxits"
 
   deprecate! date: "2023-12-17", because: :discontinued

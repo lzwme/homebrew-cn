@@ -5,7 +5,6 @@ cask "font-my-soul" do
   url "https:github.comgooglefontsrawmainoflmysoulMySoul-Regular.ttf",
       verified: "github.comgooglefonts"
   name "My Soul"
-  desc "Flat pen calligraphic style with capital forms that have been subtly embellished"
   homepage "https:fonts.google.comspecimenMy+Soul"
 
   font "MySoul-Regular.ttf"

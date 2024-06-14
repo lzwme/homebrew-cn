@@ -4,7 +4,6 @@ cask "font-intel-one-mono" do
 
   url "https:github.comintelintel-one-monoreleasesdownloadV#{version}otf.zip"
   name "font-intel-one-mono"
-  desc "Expressive monospaced font family"
   homepage "https:github.comintelintel-one-mono"
 
   font "otfIntelOneMono-Bold.otf"

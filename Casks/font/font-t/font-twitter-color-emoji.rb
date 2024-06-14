@@ -4,7 +4,6 @@ cask "font-twitter-color-emoji" do
 
   url "https:github.comeosreitwemoji-color-fontreleasesdownloadv#{version}TwitterColorEmoji-SVGinOT-#{version}.zip"
   name "Twitter Color Emoji"
-  desc "Twitter Unicode emoji color OpenType-SVG font"
   homepage "https:github.comeosreitwemoji-color-font"
 
   font "TwitterColorEmoji-SVGinOT-#{version}TwitterColorEmoji-SVGinOT.ttf"

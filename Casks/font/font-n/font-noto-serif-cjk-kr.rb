@@ -4,7 +4,6 @@ cask "font-noto-serif-cjk-kr" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSerif#{version}08_NotoSerifCJKkr.zip"
   name "Noto Serif CJK KR"
-  desc "Language Specific OTFs Korean (한국어)"
   homepage "https:github.comnotofontsnoto-cjktreemainSerif"
 
   livecheck do

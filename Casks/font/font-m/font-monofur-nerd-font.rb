@@ -4,7 +4,6 @@ cask "font-monofur-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Monofur.zip"
   name "Monofur Nerd Font (Monofur)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

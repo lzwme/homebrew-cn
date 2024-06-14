@@ -5,7 +5,6 @@ cask "font-hedvig-letters-serif" do
   url "https:github.comgooglefontsrawmainoflhedviglettersserifHedvigLettersSerif%5Bopsz%5D.ttf",
       verified: "github.comgooglefonts"
   name "Hedvig Letters Serif"
-  desc "Perfect when it’s not"
   homepage "https:fonts.google.comspecimenHedvig+Letters+Serif"
 
   font "HedvigLettersSerif[opsz].ttf"

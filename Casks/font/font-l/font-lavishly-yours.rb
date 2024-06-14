@@ -5,7 +5,6 @@ cask "font-lavishly-yours" do
   url "https:github.comgooglefontsrawmainofllavishlyyoursLavishlyYours-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Lavishly Yours"
-  desc "Charming calligraphic script"
   homepage "https:fonts.google.comspecimenLavishly+Yours"
 
   font "LavishlyYours-Regular.ttf"

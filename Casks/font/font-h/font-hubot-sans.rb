@@ -4,7 +4,6 @@ cask "font-hubot-sans" do
 
   url "https:github.comgithubhubot-sansreleasesdownloadv#{version}Hubot-Sans.zip"
   name "Hubot-Sans"
-  desc "Hubot Sans, a variable font from GitHub"
   homepage "https:github.comgithubhubot-sans"
 
   font "Hubot SansOTFHubotSans-Black.otf"

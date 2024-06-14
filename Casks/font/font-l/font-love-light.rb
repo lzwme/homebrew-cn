@@ -5,7 +5,6 @@ cask "font-love-light" do
   url "https:github.comgooglefontsrawmainofllovelightLoveLight-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Love Light"
-  desc "Adaptation of another font"
   homepage "https:fonts.google.comspecimenLove+Light"
 
   font "LoveLight-Regular.ttf"

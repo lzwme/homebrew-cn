@@ -5,7 +5,6 @@ cask "font-stick" do
   url "https:github.comgooglefontsrawmainoflstickStick-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Stick"
-  desc "Designed with straight lines that create a cute and playful feel"
   homepage "https:fonts.google.comspecimenStick"
 
   font "Stick-Regular.ttf"

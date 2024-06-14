@@ -7,7 +7,6 @@ cask "font-chivo-mono" do
       branch:    "main",
       only_path: "oflchivomono"
   name "Chivo Mono"
-  desc "Variable font ranging from thin to black with matching italics"
   homepage "https:fonts.google.comspecimenChivo+Mono"
 
   font "ChivoMono-Italic[wght].ttf"

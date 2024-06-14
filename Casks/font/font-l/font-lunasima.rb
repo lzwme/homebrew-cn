@@ -7,7 +7,6 @@ cask "font-lunasima" do
       branch:    "main",
       only_path: "ofllunasima"
   name "Lunasima"
-  desc "Unmodulated (“sans serif”) design"
   homepage "https:fonts.google.comspecimenLunasima"
 
   font "Lunasima-Bold.ttf"

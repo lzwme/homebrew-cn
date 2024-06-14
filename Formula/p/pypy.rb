@@ -4,6 +4,7 @@ class Pypy < Formula
   url "https:downloads.python.orgpypypypy2.7-v7.3.16-src.tar.bz2"
   sha256 "43721cc0c397f0f3560b325c20c70b11f7c76c27910d3df09f8418cec4f9c2ad"
   license "MIT"
+  revision 1
   head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pypy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2f05891ca68f1426ddd467af7123c887705613ce7f7b93ba4df0a95f9177f8c4"
-    sha256 cellar: :any,                 arm64_ventura:  "3a6f24b8a5b1b20af38fbc3c28259e22a7ca4568d355c36815012294de97d52a"
-    sha256 cellar: :any,                 arm64_monterey: "33af05a2d3afa44b27d8349e530a33ba9213eb40dd2575339ada69b3c9db94f7"
-    sha256 cellar: :any,                 sonoma:         "b731fe0f0717793955d52ec921f28458192f519b3f77dcae15972953253476e2"
-    sha256 cellar: :any,                 ventura:        "acb05f5ff3b8a7e121c47cdc3fe413d6689032d5b39b2415b6eeb32662f0d63a"
-    sha256 cellar: :any,                 monterey:       "512f4fca3ed3cf0a33251a5f07c312f6f9478bcbab28fc34dbf673265bac23bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e07a55df23aa198f34998cc4768555200a50ed2e09b68417edd3b3b62ec441f6"
+    sha256 cellar: :any,                 arm64_sonoma:   "da1a01f89696f81729d396a0a8d7f8bbfd601064147bcdf26a9080a5d94e3acc"
+    sha256 cellar: :any,                 arm64_ventura:  "64b8f29a40a69dad3b2fbfe0f6b22b31baf0520189b70cccea9af48bfae85c7f"
+    sha256 cellar: :any,                 arm64_monterey: "8e33e35169131951c317964a1f20f8151958c99d60f4c8830679ea0c88daebb6"
+    sha256 cellar: :any,                 sonoma:         "e681af17dd443e7cf0be677356beb1285c365b9cd67cf0ba68fd7279f7f9fe3f"
+    sha256 cellar: :any,                 ventura:        "d89473f5b6a9cbd2f150bbd40c236efc562aefea65bf8674cf8a081af1f091b0"
+    sha256 cellar: :any,                 monterey:       "77e02724127fff79dcdc56d0a522c2e2ebca1127ad5e6788872b2e81af84e1af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6392a5a456bbbd9a7b3f690c9408f4b8a7ac990da4571d9e8d05d57bc3df422"
   end
 
   depends_on "pkg-config" => :build
@@ -79,6 +80,17 @@ class Pypy < Formula
     inreplace "lib_pypy_tkintertklib_build.py" do |s|
       s.gsub! "usrlocalopttcl-tk", Formula["tcl-tk"].opt_prefix""
       s.gsub! "include'", "includetcl-tk'"
+    end
+
+    if OS.mac?
+      # Allow python modules to use ctypes.find_library to find homebrew's stuff
+      # even if homebrew is not a usrlocallib. Try this with:
+      # `brew install enchant && pip install pyenchant`
+      inreplace "lib-python2.7ctypesmacholibdyld.py" do |f|
+        f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
+                "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}lib',"
+        f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}Frameworks',"
+      end
     end
 
     # See https:github.comHomebrewhomebrewissues24364

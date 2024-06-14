@@ -4,7 +4,6 @@ cask "font-caskaydia-cove-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CascadiaCode.zip"
   name "CaskaydiaCove Nerd Font (Cascadia Code)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

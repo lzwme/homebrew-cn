@@ -4,7 +4,6 @@ cask "font-noto-sans-mono-cjk-kr" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}12_NotoSansMonoCJKkr.zip"
   name "Noto Sans Mono CJK KR"
-  desc "Language Specific Monospace OTFs Korean (한국어)"
   homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do

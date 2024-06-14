@@ -4,7 +4,6 @@ cask "font-noto-sans-mono-cjk-jp" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}11_NotoSansMonoCJKjp.zip"
   name "Noto Sans Mono CJK JP"
-  desc "Language Specific Monospace OTFs Japanese (日本語)"
   homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do

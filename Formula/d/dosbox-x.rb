@@ -4,6 +4,7 @@ class DosboxX < Formula
   url "https:github.comjoncampbell123dosbox-xarchiverefstagsdosbox-x-v2024.03.01.tar.gz"
   sha256 "2a89d3196ddc15361f6dc7e6ab142bfe95945d93d527cfd6bacca1f7a401a513"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
   head "https:github.comjoncampbell123dosbox-x.git", branch: "master"
 
@@ -19,13 +20,13 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c5fc239fdfaecfe9e9aa5cd0b7011d2011d0f8df956d592011582388abdd22cf"
-    sha256 arm64_ventura:  "b0e949524fab090eeb53f501526ee34a9238c4851ea3af1772aaf660cfeed586"
-    sha256 arm64_monterey: "85cad3def53f998a9b2d57cfe0e34b7a7d2ad7f9207f8cab09b4682bcd003ac3"
-    sha256 sonoma:         "315e1ad4e8dd4161dd8ad9439182b7a67b24444b03a39f8ce66df3ebb981fe48"
-    sha256 ventura:        "36e89f27d3edad1b38ebfe9031620eb51166d9717cf5d72983729c303462fbf0"
-    sha256 monterey:       "bd1e197f12758fba0dc539d0bad12a0d185061c6abc3d34c40471ca22d2e30f3"
-    sha256 x86_64_linux:   "7000472cd311ec130d2844defac3447f85cff1c5e3b1d58328ae11c384c52b20"
+    sha256 arm64_sonoma:   "831bb184856ac27d26858adbe9ccea37f5ee56e43fcab7b8231a0e8e83f9acef"
+    sha256 arm64_ventura:  "b24ce13996abe1b79ae0ce7d598287627b7b64877f12e5ed9f3de88e8bd46dd4"
+    sha256 arm64_monterey: "37e29dbda2a1756471050cf0f37fef0667444f96aec8b3beb256845bd550c030"
+    sha256 sonoma:         "1a3e023ed387c4a98d1a89b4ba0b2d372ee5fb1847f3d89eeb923dec4dcbadde"
+    sha256 ventura:        "2b70b9b6a2a96f7e401639d019c7290a5af72c3d88c6a8a3002801984f693302"
+    sha256 monterey:       "294c93bd3d3bf73eae34227090a61aa0754a5478236af06fd084d357599ce47f"
+    sha256 x86_64_linux:   "fdc386db0517932d64d9071c10268ce671aad990e1351fe37732cc200edf7d1a"
   end
 
   depends_on "autoconf" => :build
@@ -50,7 +51,7 @@ class DosboxX < Formula
 
     # See flags in `build-macos-sdl2`.
     args = %w[
-      --enable-core-inline
+      --enable-debug=heavy
       --enable-sdl2
       --disable-sdl2test
       --disable-sdl

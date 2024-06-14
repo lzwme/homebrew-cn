@@ -4,7 +4,7 @@ cask "whale" do
 
   url "https:github.com1000chwhalereleasesdownloadv#{version}Whale-#{version}.dmg"
   name "Whale"
-  desc "Unofficial Trello app :whale:"
+  desc "Unofficial Trello app"
   homepage "https:github.com1000chwhale"
 
   app "Whale.app"

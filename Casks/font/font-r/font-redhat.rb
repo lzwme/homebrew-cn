@@ -4,7 +4,6 @@ cask "font-redhat" do
 
   url "https:github.comRedHatOfficialRedHatFontarchive#{version}.tar.gz"
   name "Red Hat"
-  desc "Geometric sans-serif typeface"
   homepage "https:github.comRedHatOfficialRedHatFont"
 
   font "RedHatFont-#{version}fontsproportionalstaticotfRedHatDisplay-Black.otf"

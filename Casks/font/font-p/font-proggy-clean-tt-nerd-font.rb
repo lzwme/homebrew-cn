@@ -4,7 +4,6 @@ cask "font-proggy-clean-tt-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ProggyClean.zip"
   name "ProggyClean Nerd Font families (ProggyCleanTT)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

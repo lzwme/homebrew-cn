@@ -7,7 +7,6 @@ cask "font-grandstander" do
       branch:    "main",
       only_path: "oflgrandstander"
   name "Grandstander"
-  desc "Display variable font with a weight axis"
   homepage "https:fonts.google.comspecimenGrandstander"
 
   font "Grandstander-Italic[wght].ttf"

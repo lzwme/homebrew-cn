@@ -4,7 +4,6 @@ cask "font-inconsolata-lgc-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}InconsolataLGC.zip"
   name "Inconsolata LGC Nerd Font (Inconsolata LGC)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

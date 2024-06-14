@@ -4,7 +4,6 @@ cask "font-monoid-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Monoid.zip"
   name "Monoid Nerd Font (Monoid)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

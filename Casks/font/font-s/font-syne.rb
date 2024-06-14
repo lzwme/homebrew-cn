@@ -5,7 +5,6 @@ cask "font-syne" do
   url "https:github.comgooglefontsrawmainoflsyneSyne%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Syne"
-  desc "Typeface originally designed for the art center Synesthésie"
   homepage "https:fonts.google.comspecimenSyne"
 
   font "Syne[wght].ttf"

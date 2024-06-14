@@ -4,7 +4,6 @@ cask "font-iosevka-term-slab-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IosevkaTermSlab.zip"
   name "IosevkaTermSlab Nerd Font (Iosevka Term Slab)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

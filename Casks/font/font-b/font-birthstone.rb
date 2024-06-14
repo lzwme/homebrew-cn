@@ -5,7 +5,6 @@ cask "font-birthstone" do
   url "https:github.comgooglefontsrawmainoflbirthstoneBirthstone-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Birthstone"
-  desc "Sibling birthstone bounce that includes caps and ending swashed forms"
   homepage "https:fonts.google.comspecimenBirthstone"
 
   font "Birthstone-Regular.ttf"

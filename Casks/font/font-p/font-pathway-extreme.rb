@@ -7,7 +7,6 @@ cask "font-pathway-extreme" do
       branch:    "main",
       only_path: "oflpathwayextreme"
   name "Pathway Extreme"
-  desc "Very popular historic typographic style"
   homepage "https:fonts.google.comspecimenPathway+Extreme"
 
   font "PathwayExtreme-Italic[opsz,wdth,wght].ttf"

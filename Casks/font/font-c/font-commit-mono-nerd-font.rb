@@ -4,7 +4,6 @@ cask "font-commit-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CommitMono.zip"
   name "CommitMono Nerd Font (Commit Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

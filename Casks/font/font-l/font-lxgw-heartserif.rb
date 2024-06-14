@@ -5,7 +5,6 @@ cask "font-lxgw-heartserif" do
   url "https:github.comlxgwLxgwNeoZhiSongreleasesdownloadv#{version}LXGWHeartSerif.ttf"
   name "LXGW Heart Serif"
   name "霞鹜铭心宋"
-  desc "Chinese serif font derived from IPAmj Mincho"
   homepage "https:github.comlxgwLxgwNeoZhiSong"
 
   font "LXGWHeartSerif.ttf"

@@ -5,7 +5,6 @@ cask "font-zen-dots" do
   url "https:github.comgooglefontsrawmainoflzendotsZenDots-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Zen Dots"
-  desc "One of three latin fonts part of the zen fonts collection"
   homepage "https:fonts.google.comspecimenZen+Dots"
 
   font "ZenDots-Regular.ttf"

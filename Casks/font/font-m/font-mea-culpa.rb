@@ -5,7 +5,6 @@ cask "font-mea-culpa" do
   url "https:github.comgooglefontsrawmainoflmeaculpaMeaCulpa-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Mea Culpa"
-  desc "Beautiful formal script with flourished capitals"
   homepage "https:fonts.google.comspecimenMea+Culpa"
 
   font "MeaCulpa-Regular.ttf"

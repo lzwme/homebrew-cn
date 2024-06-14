@@ -5,7 +5,6 @@ cask "font-amiri" do
   url "https:github.comalif-typeamirireleasesdownload#{version}Amiri-#{version}.zip",
       verified: "github.comalif-typeamiri"
   name "Amiri"
-  desc "Classical Arabic typeface in Naskh style"
   homepage "https:www.amirifont.org"
 
   deprecate! date: "2023-12-17", because: :discontinued

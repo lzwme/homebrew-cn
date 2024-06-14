@@ -4,7 +4,6 @@ cask "font-hasklig" do
 
   url "https:github.comi-tuHaskligreleasesdownloadv#{version}Hasklig-#{version}.zip"
   name "Hasklig"
-  desc "Code font with monospaced ligatures"
   homepage "https:github.comi-tuHasklig"
 
   livecheck do

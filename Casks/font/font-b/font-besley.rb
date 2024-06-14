@@ -7,7 +7,6 @@ cask "font-besley" do
       branch:    "main",
       only_path: "oflbesley"
   name "Besley"
-  desc "Designed by owen earl (indestructible type*)"
   homepage "https:fonts.google.comspecimenBesley"
 
   font "Besley-Italic[wght].ttf"

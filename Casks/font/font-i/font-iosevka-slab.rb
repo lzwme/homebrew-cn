@@ -4,7 +4,6 @@ cask "font-iosevka-slab" do
 
   url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-IosevkaSlab-#{version}.zip"
   name "Iosevka Slab"
-  desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
   homepage "https:github.combe5invisIosevka"
 
   livecheck do

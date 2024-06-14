@@ -5,7 +5,6 @@ cask "font-danfo" do
   url "https:github.comgooglefontsrawmainofldanfoDanfo%5BELSH%5D.ttf",
       verified: "github.comgooglefonts"
   name "Danfo"
-  desc "Elsh axis variable font with three main styles at 0,50, and 100"
   homepage "https:fonts.google.comspecimenDanfo"
 
   font "Danfo[ELSH].ttf"

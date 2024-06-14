@@ -5,7 +5,6 @@ cask "font-gulzar" do
   url "https:github.comgooglefontsrawmainoflgulzarGulzar-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Gulzar"
-  desc "Nasta’liq type for which an original latin counterpart was designed"
   homepage "https:fonts.google.comspecimenGulzar"
 
   font "Gulzar-Regular.ttf"

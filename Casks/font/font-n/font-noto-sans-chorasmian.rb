@@ -5,7 +5,6 @@ cask "font-noto-sans-chorasmian" do
   url "https:github.comgooglefontsrawmainoflnotosanschorasmianNotoSansChorasmian-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans Chorasmian"
-  desc "Design for the historical middle eastern chorasmian script"
   homepage "https:fonts.google.comspecimenNoto+Sans+Chorasmian"
 
   font "NotoSansChorasmian-Regular.ttf"

@@ -5,7 +5,6 @@ cask "font-luxurious-roman" do
   url "https:github.comgooglefontsrawmainoflluxuriousromanLuxuriousRoman-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Luxurious Roman"
-  desc "Semi-hand lettered font with inconsistent serifs"
   homepage "https:fonts.google.comspecimenLuxurious+Roman"
 
   font "LuxuriousRoman-Regular.ttf"

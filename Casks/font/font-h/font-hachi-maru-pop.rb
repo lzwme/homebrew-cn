@@ -5,7 +5,6 @@ cask "font-hachi-maru-pop" do
   url "https:github.comgooglefontsrawmainoflhachimarupopHachiMaruPop-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Hachi Maru Pop"
-  desc "Handwritten font"
   homepage "https:fonts.google.comspecimenHachi+Maru+Pop"
 
   font "HachiMaruPop-Regular.ttf"

@@ -5,7 +5,6 @@ cask "font-league-mono" do
   url "https:github.comtheleagueofleague-monoreleasesdownload#{version}LeagueMono-#{version}.tar.xz",
       verified: "github.comtheleagueofleague-mono"
   name "League Mono"
-  desc "Monospace typeface inspired by Fira Mono, Libertinus Mono, and Courier"
   homepage "https:www.theleagueofmoveabletype.comleague-mono"
 
   font "LeagueMono-#{version}staticOTFLeagueMono-Thin.otf"

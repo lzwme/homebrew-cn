@@ -7,7 +7,6 @@ cask "font-spline-sans-mono" do
       branch:    "main",
       only_path: "oflsplinesansmono"
   name "Spline Sans Mono"
-  desc "Original typeface initiated by the spline team"
   homepage "https:fonts.google.comspecimenSpline+Sans+Mono"
 
   font "SplineSansMono-Italic[wght].ttf"

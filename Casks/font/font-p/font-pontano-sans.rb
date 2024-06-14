@@ -5,7 +5,6 @@ cask "font-pontano-sans" do
   url "https:github.comgooglefontsrawmainoflpontanosansPontanoSans%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Pontano Sans"
-  desc "Minimalist and light-weighted sans serif"
   homepage "https:fonts.google.comspecimenPontano+Sans"
 
   font "PontanoSans[wght].ttf"

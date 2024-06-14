@@ -5,7 +5,6 @@ cask "font-noto-sans-hk" do
   url "https:github.comgooglefontsrawmainoflnotosanshkNotoSansHK%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans HK"
-  desc "Sans-serif design using the traditional chinese variant of the han ideograms"
   homepage "https:fonts.google.comspecimenNoto+Sans+HK"
 
   font "NotoSansHK[wght].ttf"

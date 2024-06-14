@@ -5,7 +5,6 @@ cask "font-aboreto" do
   url "https:github.comgooglefontsrawmainoflaboretoAboreto-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Aboreto"
-  desc "On the thinner side"
   homepage "https:fonts.google.comspecimenAboreto"
 
   font "Aboreto-Regular.ttf"

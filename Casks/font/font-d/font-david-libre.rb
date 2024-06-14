@@ -7,7 +7,6 @@ cask "font-david-libre" do
       branch:    "main",
       only_path: "ofldavidlibre"
   name "David Libre"
-  desc "Led by meir sadan, a type designer based in tel aviv, israel"
   homepage "https:fonts.google.comspecimenDavid+Libre"
 
   font "DavidLibre-Bold.ttf"

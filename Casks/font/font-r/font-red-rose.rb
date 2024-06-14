@@ -5,7 +5,6 @@ cask "font-red-rose" do
   url "https:github.comgooglefontsrawmainoflredroseRedRose%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Red Rose"
-  desc "Latin display typeface designed for posters"
   homepage "https:fonts.google.comspecimenRed+Rose"
 
   font "RedRose[wght].ttf"

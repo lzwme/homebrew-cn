@@ -5,7 +5,6 @@ cask "font-alkalami" do
   url "https:github.comgooglefontsrawmainoflalkalamiAlkalami-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Alkalami"
-  desc "Very black, solid rectangle"
   homepage "https:fonts.google.comspecimenAlkalami"
 
   font "Alkalami-Regular.ttf"

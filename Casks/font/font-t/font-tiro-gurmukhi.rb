@@ -7,7 +7,6 @@ cask "font-tiro-gurmukhi" do
       branch:    "main",
       only_path: "ofltirogurmukhi"
   name "Tiro Gurmukhi"
-  desc "Reintroduces stroke modulation of traditional Punjabi manuscript"
   homepage "https:fonts.google.comspecimenTiro+Gurmukhi"
 
   font "TiroGurmukhi-Italic.ttf"

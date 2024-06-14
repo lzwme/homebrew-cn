@@ -7,7 +7,6 @@ cask "font-zen-maru-gothic" do
       branch:    "main",
       only_path: "oflzenmarugothic"
   name "Zen Maru Gothic"
-  desc "Also easy to use in any scenes"
   homepage "https:fonts.google.comspecimenZen+Maru+Gothic"
 
   font "ZenMaruGothic-Black.ttf"

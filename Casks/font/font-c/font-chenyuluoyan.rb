@@ -5,7 +5,6 @@ cask "font-chenyuluoyan" do
   url "https:github.comChenyu-otfchenyuluoyan_thinreleasesdownloadv#{version}ChenYuluoyan-Thin-Monospaced.ttf"
   name "Chenyuluoyan"
   name "辰宇落雁體"
-  desc "Open-source traditional Chinese handwritten font"
   homepage "https:github.comChenyu-otfchenyuluoyan_thin"
 
   font "ChenYuluoyan-Thin-Monospaced.ttf"

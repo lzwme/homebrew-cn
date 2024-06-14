@@ -5,7 +5,6 @@ cask "font-send-flowers" do
   url "https:github.comgooglefontsrawmainoflsendflowersSendFlowers-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Send Flowers"
-  desc "Appropriate for an older audience"
   homepage "https:fonts.google.comspecimenSend+Flowers"
 
   font "SendFlowers-Regular.ttf"

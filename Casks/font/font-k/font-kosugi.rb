@@ -5,7 +5,6 @@ cask "font-kosugi" do
   url "https:github.comgooglefontsrawmainapachekosugiKosugi-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Kosugi"
-  desc "Available as kosugi maru"
   homepage "https:fonts.google.comspecimenKosugi"
 
   font "Kosugi-Regular.ttf"

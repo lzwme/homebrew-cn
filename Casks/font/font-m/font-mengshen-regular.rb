@@ -5,7 +5,6 @@ cask "font-mengshen-regular" do
   url "https:github.comMaruTamaMengshen-pinyin-fontreleasesdownload#{version}Mengshen.zip"
   name "Mengshen Pinyin"
   name "萌神拼音"
-  desc "OpenSource Pinyin font that supports homograph"
   homepage "https:github.comMaruTamaMengshen-pinyin-font"
 
   font "Mengshen-HanSerif.ttf"

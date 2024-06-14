@@ -5,7 +5,6 @@ cask "font-freeman" do
   url "https:github.comgooglefontsrawmainoflfreemanFreeman-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Freeman"
-  desc "Re-interpretation of the traditional display sans serif gothic typeface"
   homepage "https:fonts.google.comspecimenFreeman"
 
   font "Freeman-Regular.ttf"

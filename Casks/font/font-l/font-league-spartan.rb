@@ -5,7 +5,6 @@ cask "font-league-spartan" do
   url "https:github.comtheleagueofleague-spartanreleasesdownload#{version}LeagueSpartan-#{version}.tar.xz",
       verified: "github.comtheleagueofleague-spartan"
   name "League Spartan"
-  desc "Geometric sans-serif revival of ATF’s classic Spartan"
   homepage "https:www.theleagueofmoveabletype.comleague-spartan"
 
   font "LeagueSpartan-#{version}staticOTFLeagueSpartan-ExtraLight.otf"

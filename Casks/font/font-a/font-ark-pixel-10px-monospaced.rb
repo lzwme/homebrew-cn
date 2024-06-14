@@ -4,7 +4,6 @@ cask "font-ark-pixel-10px-monospaced" do
 
   url "https:github.comTakWolfark-pixel-fontreleasesdownload#{version}ark-pixel-font-10px-monospaced-otf-v#{version}.zip"
   name "Ark Pixel 10px Monospaced"
-  desc "Open source Pan-CJK pixel font"
   homepage "https:github.comTakWolfark-pixel-font"
 
   font "ark-pixel-10px-monospaced-ja.otf"

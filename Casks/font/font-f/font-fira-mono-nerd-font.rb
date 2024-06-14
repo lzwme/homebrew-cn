@@ -4,7 +4,6 @@ cask "font-fira-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}FiraMono.zip"
   name "FiraMono Nerd Font (Fira)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

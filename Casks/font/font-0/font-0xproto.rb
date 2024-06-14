@@ -4,7 +4,6 @@ cask "font-0xproto" do
 
   url "https:github.com0xType0xProtoreleasesdownload#{version}0xProto_#{version.dots_to_underscores}.zip"
   name "0xProto"
-  desc "Programming font focused on source code legibility"
   homepage "https:github.com0xType0xProto"
 
   font "fonts0xProto-Regular.otf"

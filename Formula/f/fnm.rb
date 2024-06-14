@@ -1,8 +1,8 @@
 class Fnm < Formula
   desc "Fast and simple Node.js version manager"
   homepage "https:github.comSchnizfnm"
-  url "https:github.comSchnizfnmarchiverefstagsv1.37.0.tar.gz"
-  sha256 "673a107ac15787a29c84934ad97ac7b292ca5a3c52a7784f8d9e4bf83b4b9c0f"
+  url "https:github.comSchnizfnmarchiverefstagsv1.37.1.tar.gz"
+  sha256 "56a170304ab281439a71e541c4db878848c3a891078ae3c2dcc84017cd0306b4"
   license "GPL-3.0-only"
   head "https:github.comSchnizfnm.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Fnm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ea888ddc1491df087da90ffc005bd1b837ee35938696e81813c48490dd09f15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6b6e4dc36f46ccd233caf13aa2cd06099462edc845ce929afce5fb14e959317"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25f4154164cb1d2f924bed457e52a4c8ec8c7f9885487a854e2cbc54bae62f49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03fd29e24099740ca67632189e645c63f4d83fb28b08f58d9df27e7e22faebc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a4c006874b89d832389322ecd8614ab9c3f166e14c6c1f50d362d20bf971413"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5d42a3bec501b0239bb6c6e0251768a83393fd5708199c4d4a7094aa2e119af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69cb9d6178c5b7b92ee1aa2c745c8e1cdfca84100609142629cf01a793cac4ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b76925bd68d73812fa50dcf9768dbc08f9cdbcad5fd1d54a4824551f9924cb77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be21cbd78b04ac291aba99b4044c644c3b25462acfd581d7d8a321f98e13db1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "023f0243f9f181da44311a19d4371156fd4a2fdde891f2e9f3d74b4727bc63da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5e47c4ff6ae6abf8e814b0dab30e80a1e26f1b71ce0bc70709c802b1cbdf44d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f03d2930e7c35f46853990183cb6ba49ecc666da19c5519b90e555a3fbd1021"
+    sha256 cellar: :any_skip_relocation, monterey:       "24f90f9dd3b446a33594a728d7e74ed0f07b1ea32b14ce8d740a121354fc4a9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0da3ea9b80b434ff1097927a2f4701b8cff8c327e111972d9e990ab0fc8a1422"
   end
 
   depends_on "rust" => :build

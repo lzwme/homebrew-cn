@@ -5,7 +5,6 @@ cask "font-cherish" do
   url "https:github.comgooglefontsrawmainoflcherishCherish-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Cherish"
-  desc "Dry brush style that adds expression and sophistication"
   homepage "https:fonts.google.comspecimenCherish"
 
   font "Cherish-Regular.ttf"

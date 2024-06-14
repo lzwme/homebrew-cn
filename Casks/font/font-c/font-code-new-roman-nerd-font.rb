@@ -4,7 +4,6 @@ cask "font-code-new-roman-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CodeNewRoman.zip"
   name "CodeNewRoman Nerd Font (Code New Roman)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

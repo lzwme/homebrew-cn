@@ -7,7 +7,6 @@ cask "font-material-icons" do
       branch:    "master",
       only_path: "font"
   name "Material Icons"
-  desc "Icons based on core Material Design principles"
   homepage "https:google.github.iomaterial-design-icons"
 
   font "MaterialIcons-Regular.ttf"

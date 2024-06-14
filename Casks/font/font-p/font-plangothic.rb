@@ -4,7 +4,6 @@ cask "font-plangothic" do
 
   url "https:github.comFitzgerald-Porthmouth-KoenigseggPlangothic-ProjectarchiverefstagsV#{version}.zip"
   name "Plangothic"
-  desc "Plangothic is a sans-serif font that covers CJK Unified Ideographs"
   homepage "https:github.comFitzgerald-Porthmouth-KoenigseggPlangothic-Project"
 
   font "Plangothic-Project-#{version}PlangothicP1-Regular (allideo).ttf"

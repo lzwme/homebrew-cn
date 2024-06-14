@@ -4,7 +4,6 @@ cask "font-envy-code-r-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}EnvyCodeR.zip"
   name "EnvyCodeR Nerd Font (Envy Code R)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

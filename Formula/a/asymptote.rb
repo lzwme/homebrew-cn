@@ -5,6 +5,7 @@ class Asymptote < Formula
   url "https://downloads.sourceforge.net/project/asymptote/2.89/asymptote-2.89.src.tgz"
   sha256 "f64e62b4ee4f85f1a78640c4f1e8a6f98e91f54edacab19727c7cabe94a57f5b"
   license "LGPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b4391c8b620b185ad515fc5a4231d3cc91ba3c14141e628a2df648d065693f2a"
-    sha256 arm64_ventura:  "cd5272505690c2a2fa20c5c5b9d94bf6095dbac528a59d7e1d77376661c9e2c5"
-    sha256 arm64_monterey: "57ca55dcaa13cafa388c2eb6674c3263cd859c2ecc03acd2941f1a0d36e781cc"
-    sha256 sonoma:         "dd179223630ac07ecacff4e201c54da76a5779cfa4c0614c5365a3a3ec5066d7"
-    sha256 ventura:        "ae6b041de51a37329f07361c9e164a0e95ca7f3bc287b7fbf5db1a9bf3414eac"
-    sha256 monterey:       "0e4936bbd458f85c5c4c5f0f1b29dfd2d4b05bda7175cbdcea7899b9e86578a9"
-    sha256 x86_64_linux:   "2f56e57c07516a56e358875328d7ca50f4033b22565fc4034c31c2a3123630ca"
+    sha256 arm64_sonoma:   "dae7a3c6154fe240aa2e9748bc0c2a325ed0779482a0db7be7c75639c1fa6db5"
+    sha256 arm64_ventura:  "59a50ebf638ffda33ca65067c45fbe1ab42d1000dd9ef7b2f7c0db4e90d1501c"
+    sha256 arm64_monterey: "0483483c2219ed057b07bc39c84815951c8bf4a430ab3b2bfdf0765e53ab187b"
+    sha256 sonoma:         "fced302116659ce3dfb6ad7ab767f5993881d0cc6645a7b32f6614767450e9bd"
+    sha256 ventura:        "cb74dd408d957f88208b9a9b725cfe5c77d74e6a37a9449738f4f3d84e943f00"
+    sha256 monterey:       "1a4222be8f452234ad7d28c36556ee5eb6fe12c65c68525070322ef14cd0e7bf"
+    sha256 x86_64_linux:   "463c4c8b0ea9d74de992709343b7bdb0de3074c141c2996238b9137415ad2c7a"
   end
 
   depends_on "glm" => :build

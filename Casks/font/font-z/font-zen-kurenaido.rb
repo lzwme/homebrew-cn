@@ -5,7 +5,6 @@ cask "font-zen-kurenaido" do
   url "https:github.comgooglefontsrawmainoflzenkurenaidoZenKurenaido-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Zen Kurenaido"
-  desc "Japanese font with a handwritten feeling"
   homepage "https:fonts.google.comspecimenZen+Kurenaido"
 
   font "ZenKurenaido-Regular.ttf"

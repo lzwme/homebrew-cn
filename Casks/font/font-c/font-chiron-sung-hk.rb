@@ -5,7 +5,6 @@ cask "font-chiron-sung-hk" do
   url "https:github.comchiron-fontschiron-sung-hkarchiverefstagsv#{version}.zip"
   name "Chiron Sung HK"
   name "昭源宋體"
-  desc "Modern, region-agnostic traditional Chinese serif typeface"
   homepage "https:github.comchiron-fontschiron-sung-hk"
 
   font "chiron-sung-hk-#{version}VARChironSungHKItVF.otf"

@@ -7,7 +7,6 @@ cask "font-birthstone-bounce" do
       branch:    "main",
       only_path: "oflbirthstonebounce"
   name "Birthstone Bounce"
-  desc "Sibling family of birthstone that adds more luster and playfulness to it"
   homepage "https:fonts.google.comspecimenBirthstone+Bounce"
 
   font "BirthstoneBounce-Medium.ttf"

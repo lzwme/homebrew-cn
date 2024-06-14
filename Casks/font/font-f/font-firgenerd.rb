@@ -4,7 +4,6 @@ cask "font-firgenerd" do
 
   url "https:github.comyuru7Firgereleasesdownloadv#{version}FirgeNerd_v#{version}.zip"
   name "FirgeNerd"
-  desc "Programming font based on Fira Mono and Genshin Gothic"
   homepage "https:github.comyuru7Firge"
 
   font "FirgeNerd_v#{version}Firge35NerdConsole-Bold.ttf"

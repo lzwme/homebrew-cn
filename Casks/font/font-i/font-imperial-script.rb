@@ -5,7 +5,6 @@ cask "font-imperial-script" do
   url "https:github.comgooglefontsrawmainoflimperialscriptImperialScript-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Imperial Script"
-  desc "Formal script font with clean connections and an elegant look"
   homepage "https:fonts.google.comspecimenImperial+Script"
 
   font "ImperialScript-Regular.ttf"

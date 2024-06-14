@@ -7,7 +7,6 @@ cask "font-familjen-grotesk" do
       branch:    "main",
       only_path: "oflfamiljengrotesk"
   name "Familjen Grotesk"
-  desc "Sans serif typeface with a contemporary appearance"
   homepage "https:fonts.google.comspecimenFamiljen+Grotesk"
 
   font "FamiljenGrotesk-Italic[wght].ttf"

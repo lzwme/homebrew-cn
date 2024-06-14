@@ -1,18 +1,18 @@
 class Libjuice < Formula
   desc "UDP Interactive Connectivity Establishment (ICE) library"
   homepage "https:github.compaullouisageneaulibjuice"
-  url "https:github.compaullouisageneaulibjuicearchiverefstagsv1.4.2.tar.gz"
-  sha256 "5fc6c422c70b5bdf5a3a8ed8543bff295ebdcaf24efe75933c17bfe54f940559"
+  url "https:github.compaullouisageneaulibjuicearchiverefstagsv1.5.1.tar.gz"
+  sha256 "39b9d54440b82cd78c8448cb9687c2fa43b4cdb0e629f8981d73ce2ad63350bf"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "315d0493ebf6f6febb53a8cc3442fc93b3d776acc9f803933b92e82a204e27b0"
-    sha256 cellar: :any,                 arm64_ventura:  "1b9b8f30830d509cf1c507f4280d635a9be82dc94d112331be32465cdc085c60"
-    sha256 cellar: :any,                 arm64_monterey: "a8e74cdd814aa0e1c4b1b16e02920b32a4c9ce3775c868ff2ad228cb1bb432f8"
-    sha256 cellar: :any,                 sonoma:         "fb3fd86d8532fb2abcda6cea837f848917c9db32d69b377f7d06acdb52b1545f"
-    sha256 cellar: :any,                 ventura:        "63242c44268500cca402b3ccdcbc94e692faf46674b3651ff65fe57079bb86a7"
-    sha256 cellar: :any,                 monterey:       "83c62e435237a1ed7c402121a269f19d89003150125a5a0f3b073057fc37aec8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "891d0d99582c8a99d16908ae92079e8128f2cc183229254c181455f9e3035e30"
+    sha256 cellar: :any,                 arm64_sonoma:   "4bd4ca23472949dea0ef436370f12ec7fcfdb8d60b30980ebca34e43e0d12dfe"
+    sha256 cellar: :any,                 arm64_ventura:  "abff935658a807c2acacaa5179b5cd11b533315ae6fb45707c23ccef54b9c1cb"
+    sha256 cellar: :any,                 arm64_monterey: "44a4921010935abbb0edeee3f2ffe92f725c272993549df530ea303b081cf926"
+    sha256 cellar: :any,                 sonoma:         "45eddcbc035567fef87f8781b24700b17ccea241f8bc9b97965c8f7f6aea9913"
+    sha256 cellar: :any,                 ventura:        "11c209a12bdfe1167da640c5d2e88344ad333301579d6de6e23610be1b0b8601"
+    sha256 cellar: :any,                 monterey:       "5a60ca59447e0eaf27cd4451698e021f08e45890fd558c336dda3344787dbc09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0c95931044be39d947c1255fa08cd91d5a3571b92470b228f63bf0080a2269e"
   end
 
   depends_on "cmake" => :build

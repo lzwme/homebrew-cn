@@ -4,7 +4,6 @@ cask "font-coelacanth" do
 
   url "https:github.comFuzzypegCoelacanthrawmasterreleasecoelacanth_v#{version}.zip"
   name "Coelacanth"
-  desc "Serif typeface inspired by Bruce Rogers' Centaur"
   homepage "https:github.comFuzzypegCoelacanth"
 
   livecheck do

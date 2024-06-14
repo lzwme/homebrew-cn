@@ -4,7 +4,6 @@ cask "font-last-resort" do
 
   url "https:github.comunicode-orglast-resort-fontreleasesdownload#{version}LastResort-Regular.ttf"
   name "Last Resort"
-  desc "Special-purpose font, providing glyphs to represent types of Unicode characters"
   homepage "https:github.comunicode-orglast-resort-font"
 
   font "LastResort-Regular.ttf"

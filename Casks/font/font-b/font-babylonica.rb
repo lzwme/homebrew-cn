@@ -5,7 +5,6 @@ cask "font-babylonica" do
   url "https:github.comgooglefontsrawmainoflbabylonicaBabylonica-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Babylonica"
-  desc "Interrupted by upright or back-slanted forms giving it an interrupted stress"
   homepage "https:fonts.google.comspecimenBabylonica"
 
   font "Babylonica-Regular.ttf"

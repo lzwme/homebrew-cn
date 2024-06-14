@@ -5,7 +5,6 @@ cask "font-smooch" do
   url "https:github.comgooglefontsrawmainoflsmoochSmooch-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Smooch"
-  desc "Slightly bolder than other hand-lettered scripts"
   homepage "https:fonts.google.comspecimenSmooch"
 
   font "Smooch-Regular.ttf"

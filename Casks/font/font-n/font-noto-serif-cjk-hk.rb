@@ -4,7 +4,6 @@ cask "font-noto-serif-cjk-hk" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSerif#{version}11_NotoSerifCJKhk.zip"
   name "Noto Serif CJK HK"
-  desc "Language Specific OTFs Traditional Chinese — Hong Kong (繁體中文—香港)"
   homepage "https:github.comnotofontsnoto-cjktreemainSerif"
 
   livecheck do

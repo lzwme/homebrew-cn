@@ -7,7 +7,6 @@ cask "font-kantumruy-pro" do
       branch:    "main",
       only_path: "oflkantumruypro"
   name "Kantumruy Pro"
-  desc "From work sans, with modified width and weight"
   homepage "https:fonts.google.comspecimenKantumruy+Pro"
 
   font "KantumruyPro-Italic[wght].ttf"

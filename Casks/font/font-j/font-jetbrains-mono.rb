@@ -5,7 +5,6 @@ cask "font-jetbrains-mono" do
   url "https:github.comJetBrainsJetBrainsMonoreleasesdownloadv#{version}JetBrainsMono-#{version}.zip",
       verified: "github.comJetBrainsJetBrainsMono"
   name "JetBrains Mono"
-  desc "Typeface made for developers"
   homepage "https:www.jetbrains.comlpmono"
 
   livecheck do

@@ -5,7 +5,6 @@ cask "font-lxgw-neozhisong" do
   url "https:github.comlxgwLxgwNeoZhiSongreleasesdownloadv#{version}LXGWNeoZhiSong.ttf"
   name "LXGW Neo ZhiSong"
   name "霞鹜新致宋"
-  desc "Chinese serif font derived from IPAmj Mincho"
   homepage "https:github.comlxgwLxgwNeoZhiSong"
 
   font "LXGWNeoZhiSong.ttf"

@@ -4,7 +4,6 @@ cask "font-anonymice-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}AnonymousPro.zip"
   name "AnonymicePro Nerd Font (Anonymous Pro)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

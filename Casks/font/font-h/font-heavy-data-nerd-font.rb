@@ -4,7 +4,6 @@ cask "font-heavy-data-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}HeavyData.zip"
   name "HeavyData Nerd Font (Heavy Data)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

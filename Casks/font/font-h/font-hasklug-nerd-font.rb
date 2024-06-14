@@ -4,7 +4,6 @@ cask "font-hasklug-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hasklig.zip"
   name "Hasklug Nerd Font (Hasklig)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

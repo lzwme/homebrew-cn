@@ -4,7 +4,6 @@ cask "font-inconsolata-lgc" do
 
   url "https:github.comMihailJPInconsolata-LGCreleasesdownloadLGC-#{version}InconsolataLGC-#{version}.tar.xz"
   name "Inconsolata LGC"
-  desc "Inconsolata LGC is a modified version of Inconsolata with Cyrillic alphabet"
   homepage "https:github.comMihailJPInconsolata-LGC"
 
   livecheck do

@@ -5,7 +5,6 @@ cask "font-comforter-brush" do
   url "https:github.comgooglefontsrawmainoflcomforterbrushComforterBrush-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Comforter Brush"
-  desc "Brushy companion of comforter, a bouncy, upright brush style script"
   homepage "https:fonts.google.comspecimenComforter+Brush"
 
   font "ComforterBrush-Regular.ttf"

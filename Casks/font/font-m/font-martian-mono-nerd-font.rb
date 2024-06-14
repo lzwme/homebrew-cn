@@ -4,7 +4,6 @@ cask "font-martian-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}MartianMono.zip"
   name "MartianMono Nerd Font (MartianMono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

@@ -4,7 +4,6 @@ cask "font-lilex-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Lilex.zip"
   name "Lilex Nerd Font (Lilex)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

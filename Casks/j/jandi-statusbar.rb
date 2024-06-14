@@ -4,7 +4,7 @@ cask "jandi-statusbar" do
 
   url "https:github.comtechinparkJandireleasesdownloadv#{version}jandi.dmg"
   name "jandi"
-  desc "Github Contributions in your status bar"
+  desc "GitHub contributions in your status bar"
   homepage "https:github.comtechinparkJandi"
 
   livecheck do

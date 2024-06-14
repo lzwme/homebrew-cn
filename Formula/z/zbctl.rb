@@ -1,8 +1,8 @@
 class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https:docs.camunda.iodocsapis-clientscli-clientindex"
-  url "https:github.comcamundazeebearchiverefstags8.5.1.tar.gz"
-  sha256 "05fa5d7830004c39e00cf2ff0db85e95ac4aedc2e5a9444450491dffdb6270cb"
+  url "https:github.comcamundazeebearchiverefstags8.5.3.tar.gz"
+  sha256 "5bc14705a8424c4c1da6a70dc1140aaf7636fb79c7569c0d92979448be81eb54"
   license "Apache-2.0"
   head "https:github.comcamundazeebe.git", branch: "develop"
 
@@ -18,13 +18,13 @@ class Zbctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bcd26e7e0c19b21ad5a04cb4e2080aa13d55efc78b55cc4a3e331cca26ba2d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dd79e6cc1e243ff27cbec84218a9f9c08ed2352899d87e0b70139fe26fac053"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd79e6cc1e243ff27cbec84218a9f9c08ed2352899d87e0b70139fe26fac053"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd79e6cc1e243ff27cbec84218a9f9c08ed2352899d87e0b70139fe26fac053"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e6a2d7b16c318b30382255678f3d896a215b68162e4fe520725ff2da4ef53c8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6a2d7b16c318b30382255678f3d896a215b68162e4fe520725ff2da4ef53c8e"
+    sha256 cellar: :any_skip_relocation, monterey:       "e6a2d7b16c318b30382255678f3d896a215b68162e4fe520725ff2da4ef53c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e5cafa0c93aa642df25cc8839530418f6219c32017c2e0de26afd9295edf8b9"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,6 @@ cask "font-pretendard" do
 
   url "https:github.comorioncactuspretendardreleasesdownloadv#{version}Pretendard-#{version}.zip"
   name "Pretendard"
-  desc "Alternative font to system-ui for all platforms"
   homepage "https:github.comorioncactuspretendard"
 
   font "publicstaticPretendard-Black.otf"

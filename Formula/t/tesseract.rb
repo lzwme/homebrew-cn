@@ -1,8 +1,8 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https:github.comtesseract-ocr"
-  url "https:github.comtesseract-ocrtesseractarchiverefstags5.4.0.tar.gz"
-  sha256 "30ceffd9b86780f01cbf4eaf9b7fc59abddfcbaf5bbd52f9a633c6528cb183fd"
+  url "https:github.comtesseract-ocrtesseractarchiverefstags5.4.1.tar.gz"
+  sha256 "c4bc2a81c12a472f445b7c2fb4705a08bd643ef467f51ec84f0e148bd368051b"
   license "Apache-2.0"
   head "https:github.comtesseract-ocrtesseract.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c18159a800c3db208ca4ac48a41223795d50d96bb338101aebd28b0a14fdfa49"
-    sha256 cellar: :any,                 arm64_ventura:  "b0f2f6b3f81031438b184354081828fa329d31abc5e015cd75be77cbf0619115"
-    sha256 cellar: :any,                 arm64_monterey: "655fe566eaa87ca167e6a62563ca4148d7a1a2f6a251f21d7bdf2376dbc46c80"
-    sha256 cellar: :any,                 sonoma:         "1506318adafb39d45305a775ba5cac53f6462df067d2aa85f863d50606d09489"
-    sha256 cellar: :any,                 ventura:        "78beb92bc43cb96bcda3f00d8cca13a8aefcbf39666ed30ca535649135ea0d79"
-    sha256 cellar: :any,                 monterey:       "4a1e198c7acc79855888d9c7b350a50d3085a31601d4843f5c766835a7e93457"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ec01279baef11b5a1b8df493db3c44c955becce2da34986901d3538f1f3b2a"
+    sha256 cellar: :any,                 arm64_sonoma:   "41f0427bedd959c89b6c0aeb4eca98801f229745d50e4aa39dfc05c31785e289"
+    sha256 cellar: :any,                 arm64_ventura:  "ac7861b3d6ceb629f9618e0e5d73706196738cbb01f90bcc48418d25508b5d68"
+    sha256 cellar: :any,                 arm64_monterey: "ac2c5c4c3d242f88fe1eb198e1f0d83c1d714e6db0da42f11752efa084e1e682"
+    sha256 cellar: :any,                 sonoma:         "43ad1eb8de45a461536c0d117767e46e50fb92a0d8a940f7022e9c55fef1da93"
+    sha256 cellar: :any,                 ventura:        "0bdf6471b1818008bead07bc19f73128cd915421cbd56e4d8e5a2b78456c97ed"
+    sha256 cellar: :any,                 monterey:       "d063d7ceb42dc5b4b921c5e5268f8f39f1dd710d313416be6e9fb8f2653736ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99be97155dc76f21c1ff4522c39a63ed6630c061b7f55c6ed1a8a99abb83ba4b"
   end
 
   depends_on "autoconf" => :build
@@ -26,10 +26,18 @@ class Tesseract < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "glib"
+  depends_on "harfbuzz"
   depends_on "icu4c"
   depends_on "leptonica"
   depends_on "libarchive"
   depends_on "pango"
+
+  on_macos do
+    depends_on "freetype"
+    depends_on "gettext"
+  end
 
   fails_with gcc: "5"
 

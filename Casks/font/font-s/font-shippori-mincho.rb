@@ -7,7 +7,6 @@ cask "font-shippori-mincho" do
       branch:    "main",
       only_path: "oflshipporimincho"
   name "Shippori Mincho"
-  desc "Based on the Tsukiji Typeface making facility of Tokyo"
   homepage "https:fonts.google.comspecimenShippori+Mincho"
 
   font "ShipporiMincho-Bold.ttf"

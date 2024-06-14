@@ -4,7 +4,6 @@ cask "font-comic-shanns-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ComicShannsMono.zip"
   name "ComicShannsMono Nerd Font (Comic Shanns Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

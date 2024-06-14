@@ -5,7 +5,6 @@ cask "font-noto-sans-nko" do
   url "https:github.comgooglefontsrawmainoflnotosansnkoNotoSansNKo-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans NKo"
-  desc "Unmodulated design for texts in the African N’Ko script"
   homepage "https:fonts.google.comspecimenNoto+Sans+NKo"
 
   font "NotoSansNKo-Regular.ttf"

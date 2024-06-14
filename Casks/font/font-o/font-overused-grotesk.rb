@@ -4,7 +4,6 @@ cask "font-overused-grotesk" do
 
   url "https:github.comRandomMaerksOverused-Groteskreleasesdownloadv#{version}OverusedGrotesk-v#{version}.zip"
   name "Overused Grotesk"
-  desc "Variable sans serif typeface inspired by the classic neo-grotesk Swiss design"
   homepage "https:github.comRandomMaerksOverused-Grotesk"
 
   font "otfOverusedGrotesk-Black.otf"

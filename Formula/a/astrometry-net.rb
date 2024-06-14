@@ -6,6 +6,7 @@ class AstrometryNet < Formula
   url "https:github.comdstndstnastrometry.netreleasesdownload0.95astrometry.net-0.95.tar.gz"
   sha256 "b8239e39b44d6877b0427edeffd95efc258520044ff5afdd0fb1a89ff8f1afc0"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e6fb8ec426f755ef1b4ddbd3f1ea03dc3aaacf5cfd5d6a80cfa874979ffe5a38"
-    sha256 cellar: :any,                 arm64_ventura:  "fd49a3b2aba7ad52ec114e219297f4388edda04b58139d4368cd78faab41742a"
-    sha256 cellar: :any,                 arm64_monterey: "798d42abbd899d65406336e91ae16b8a42797bfed8e13cda63265d380ca2f2a1"
-    sha256 cellar: :any,                 sonoma:         "b8e1278ffd89f28c523d5d03610a840bde224813ae379096aa340d8d6ddf3a59"
-    sha256 cellar: :any,                 ventura:        "655b0157dafd37b4454ea03d9b1260f90dc28de8b05f6f381f295765d0a5f0dd"
-    sha256 cellar: :any,                 monterey:       "e410667649f2c55410a5ade1245c0ca54bbee8983bec0a1025112dd0957731dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9dd3a68a30bdcce2f24e8852237cfa21590307e3ef09dbd7a3d10db32623bab"
+    sha256 cellar: :any,                 arm64_sonoma:   "0abb91d2795ab69b56150eed0bff0fa88a8c3c5444a7fb2422cf04bde2e91300"
+    sha256 cellar: :any,                 arm64_ventura:  "737e218aff30454c7d4612e9c39afd8b122352096bb31e582bef1f241be5a5a8"
+    sha256 cellar: :any,                 arm64_monterey: "6347a4edbc9060417c3e34b67bfe421bda57a830712f2ff7ac52057164e3b216"
+    sha256 cellar: :any,                 sonoma:         "78aedc0a6bc704c1389af6bd1f619ee0f1be866280d9d01343e6813706e6435d"
+    sha256 cellar: :any,                 ventura:        "bedf5b70775e9621c702f9476bf63abf7b3ecf040f241f59cb9918435bfad118"
+    sha256 cellar: :any,                 monterey:       "75c31c171f4a998864575be6c1b4dae8be056413f59652eac83e6924a540263c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925b6431debcb4a5266f00f77aceeba043ee15d652236428ac3ee91a048fe0ed"
   end
 
   depends_on "pkg-config" => :build

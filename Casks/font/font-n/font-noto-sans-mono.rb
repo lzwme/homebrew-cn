@@ -5,7 +5,6 @@ cask "font-noto-sans-mono" do
   url "https:github.comnotofontslatin-greek-cyrillicreleasesdownloadNotoSansMono-v#{version}NotoSansMono-v#{version}.zip",
       verified: "github.comnotofonts"
   name "Noto Sans"
-  desc "Monospaced variable font"
   homepage "https:notofonts.github.io"
 
   livecheck do

@@ -4,7 +4,6 @@ cask "font-mona-sans" do
 
   url "https:github.comgithubmona-sansreleasesdownloadv#{version}MonaSans.zip"
   name "Mona-Sans"
-  desc "Mona Sans, a variable font from GitHub"
   homepage "https:github.comgithubmona-sans"
 
   font "Mona SansOTFMonaSans-Black.otf"

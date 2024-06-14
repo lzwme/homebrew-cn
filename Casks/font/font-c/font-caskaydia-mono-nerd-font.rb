@@ -4,7 +4,6 @@ cask "font-caskaydia-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CascadiaMono.zip"
   name "CaskaydiaMono Nerd Font (Cascadia Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

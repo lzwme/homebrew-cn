@@ -5,7 +5,6 @@ cask "font-agbalumo" do
   url "https:github.comgooglefontsrawmainoflagbalumoAgbalumo-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Agbalumo"
-  desc "Single weight font"
   homepage "https:fonts.google.comspecimenAgbalumo"
 
   font "Agbalumo-Regular.ttf"

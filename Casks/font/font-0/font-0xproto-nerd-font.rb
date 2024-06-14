@@ -4,7 +4,6 @@ cask "font-0xproto-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}0xProto.zip"
   name "0xProto Nerd Font (0xProto)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

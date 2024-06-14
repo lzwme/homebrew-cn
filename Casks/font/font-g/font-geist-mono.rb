@@ -5,7 +5,6 @@ cask "font-geist-mono" do
   url "https:github.comvercelgeist-fontreleasesdownload#{version}GeistMono-#{version}.zip",
       verified: "github.comvercelgeist-font"
   name "Geist Mono"
-  desc "Monospaced typeface designed to be used where code is represented"
   homepage "https:vercel.comfontmono"
 
   livecheck do

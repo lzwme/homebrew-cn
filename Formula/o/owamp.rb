@@ -6,8 +6,7 @@ class Owamp < Formula
   license "Apache-2.0"
 
   livecheck do
-    # HTTP allows directory listing while HTTPS returns 403
-    url "http://software.internet2.edu/sources/owamp/"
+    url "https://software.internet2.edu/sources/owamp/"
     regex(/href=.*?owamp[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.t/i)
   end
 

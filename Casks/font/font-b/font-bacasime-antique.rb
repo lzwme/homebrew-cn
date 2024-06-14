@@ -5,7 +5,6 @@ cask "font-bacasime-antique" do
   url "https:github.comgooglefontsrawmainoflbacasimeantiqueBacasimeAntique-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Bacasime Antique"
-  desc "Stylistically a transitional design"
   homepage "https:fonts.google.comspecimenBacasime+Antique"
 
   font "BacasimeAntique-Regular.ttf"

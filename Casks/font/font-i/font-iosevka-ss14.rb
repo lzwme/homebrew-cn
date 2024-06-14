@@ -4,7 +4,6 @@ cask "font-iosevka-ss14" do
 
   url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-IosevkaSS14-#{version}.zip"
   name "Iosevka SS14"
-  desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
   homepage "https:github.combe5invisIosevka"
 
   livecheck do

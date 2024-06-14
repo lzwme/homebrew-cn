@@ -5,7 +5,6 @@ cask "font-noto-sans-nandinagari" do
   url "https:github.comgooglefontsrawmainoflnotosansnandinagariNotoSansNandinagari-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans Nandinagari"
-  desc "Historical indic nandinagari script"
   homepage "https:fonts.google.comspecimenNoto+Sans+Nandinagari"
 
   font "NotoSansNandinagari-Regular.ttf"

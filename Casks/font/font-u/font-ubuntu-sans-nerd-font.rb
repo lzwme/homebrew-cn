@@ -4,7 +4,6 @@ cask "font-ubuntu-sans-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}UbuntuSans.zip"
   name "UbuntuSans Nerd Font families (Ubuntu Sans)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

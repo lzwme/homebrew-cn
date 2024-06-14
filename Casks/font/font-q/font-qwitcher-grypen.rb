@@ -7,7 +7,6 @@ cask "font-qwitcher-grypen" do
       branch:    "main",
       only_path: "oflqwitchergrypen"
   name "Qwitcher Grypen"
-  desc "Casual brush script with a bit of an edge"
   homepage "https:fonts.google.comspecimenQwitcher+Grypen"
 
   font "QwitcherGrypen-Bold.ttf"

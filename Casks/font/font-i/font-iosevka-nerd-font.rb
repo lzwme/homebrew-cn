@@ -4,7 +4,6 @@ cask "font-iosevka-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Iosevka.zip"
   name "Iosevka Nerd Font (Iosevka)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

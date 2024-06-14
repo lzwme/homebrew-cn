@@ -5,7 +5,6 @@ cask "font-fuggles" do
   url "https:github.comgooglefontsrawmainoflfugglesFuggles-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Fuggles"
-  desc "Powerful script that can be used for sophisticated commercial design"
   homepage "https:fonts.google.comspecimenFuggles"
 
   font "Fuggles-Regular.ttf"

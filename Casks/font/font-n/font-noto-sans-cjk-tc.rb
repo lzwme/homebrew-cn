@@ -4,7 +4,6 @@ cask "font-noto-sans-cjk-tc" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}09_NotoSansCJKtc.zip"
   name "Noto Sans CJK TC"
-  desc "Language Specific OTFs Traditional Chinese — Taiwan (繁體中文—臺灣)"
   homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do

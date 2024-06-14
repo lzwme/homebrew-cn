@@ -7,7 +7,6 @@ cask "font-roboto-serif" do
       branch:    "main",
       only_path: "oflrobotoserif"
   name "Roboto Serif"
-  desc "Just as comfortable to read and work in print media"
   homepage "https:fonts.google.comspecimenRoboto+Serif"
 
   font "RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf"

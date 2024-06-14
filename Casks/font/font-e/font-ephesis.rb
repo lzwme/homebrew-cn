@@ -5,7 +5,6 @@ cask "font-ephesis" do
   url "https:github.comgooglefontsrawmainoflephesisEphesis-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Ephesis"
-  desc "Contemporary script great for casual invitations, cards, tubes, scrapbooking"
   homepage "https:fonts.google.comspecimenEphesis"
 
   font "Ephesis-Regular.ttf"

@@ -5,7 +5,6 @@ cask "font-montecarlo" do
   url "https:github.comgooglefontsrawmainoflmontecarloMonteCarlo-Regular.ttf",
       verified: "github.comgooglefonts"
   name "MonteCarlo"
-  desc "Perfect for an ornate look and a readable message"
   homepage "https:fonts.google.comspecimenMonteCarlo"
 
   font "MonteCarlo-Regular.ttf"

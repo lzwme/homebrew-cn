@@ -5,7 +5,6 @@ cask "font-yaldevi" do
   url "https:github.comgooglefontsrawmainoflyaldeviYaldevi%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Yaldevi"
-  desc "Designed by sol matas"
   homepage "https:fonts.google.comspecimenYaldevi"
 
   font "Yaldevi[wght].ttf"

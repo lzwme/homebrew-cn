@@ -1,19 +1,19 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https:woodpecker-ci.org"
-  url "https:github.comwoodpecker-ciwoodpeckerarchiverefstagsv2.5.0.tar.gz"
-  sha256 "54dc09cb1e1b9670bce1e0730a5b19eccd2494f381b0026b13cd1339bdf3607c"
+  url "https:github.comwoodpecker-ciwoodpeckerarchiverefstagsv2.6.0.tar.gz"
+  sha256 "5d0ba91d86a0d2a1a4f212a64a1b95291c1a5b61ed492174767182555d59a202"
   license "Apache-2.0"
   head "https:github.comwoodpecker-ciwoodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cdd5322acffbb7ee18313f339ed8b63723499888d1906f840cce59e85e7fd5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e9c74f5ba947cc8236e6d14c3993438776ca109d816f13846396b80a1360229"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36e1eb9f3ed54ea67fdf9696c544329a4877ed443acf664e8aa6c8b52351a7db"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fafc1b9ecce4df8188fcccacbacf33a8b548980c396344e216b66ba95e4e1e20"
-    sha256 cellar: :any_skip_relocation, ventura:        "daa61ea57e113cecdd8057407b381da6135880c9d6f2547f7f7c464fd91b5120"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f1510db1c38ba804bc6d6ec855bc7c877ebdd2799577342f2c4ef6072465199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d99d430a95631c65267f324cd899577457111aa0dd40c991c8e89355f687fb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d313f9d9bf06b2c56721adbd192adc6939b9aba0595013f7822257c1aa5838b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca840077e4d40dc8a015e86171a117e92772a26825b35fd1fd484399fdd0d98b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e094071927439f6a2e64e02e4003adad244839f667709030dd8fb080cd674ba9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4aae92feaa6cdea729333c5aa90d56a45dcab4ca3368375c87eaf9a5ae045e24"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ca4345a479e6c05c0e042948297b7b0053e445b35d12afa67b3344dfe30cab0"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5c3c992d9b027816e566b4b61b281bf0986f33243f7ed996b3d6c3bfe24ce15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb76a972b08f0d1abfe27dd519a30888b54e88b6563e835eb72421f3255c40f1"
   end
 
   depends_on "go" => :build

@@ -7,7 +7,6 @@ cask "font-epilogue" do
       branch:    "main",
       only_path: "oflepilogue"
   name "Epilogue"
-  desc "Sans serif variable font with a weight axis"
   homepage "https:fonts.google.comspecimenEpilogue"
 
   font "Epilogue-Italic[wght].ttf"

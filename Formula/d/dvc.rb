@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackages554f4bf3dabe2929073ca50f9318fa678b1413816f3d1c2ca36f9d9bd67a87a3dvc-3.51.2.tar.gz"
   sha256 "bc714b727e02f4702e79346933fbed8a6409da6ec1bef7b51416af741fc6aa13"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "446921becee721495026f012ea891b1b6b1f719b84487b593201e84f60195704"
-    sha256 cellar: :any,                 arm64_ventura:  "df20efe64378747ee4740527cfa7e73a16466ed912634ef4e637457edd7be7e6"
-    sha256 cellar: :any,                 arm64_monterey: "875516134109c43c38a12bb1e1a26d4319d2d53ca9d31d535bad73fd399348f3"
-    sha256 cellar: :any,                 sonoma:         "347d685ee5a6c87685570698e320c9cbe38f0ddbd36a0b4382a316e2088b5ff8"
-    sha256 cellar: :any,                 ventura:        "3bade7d5d17165f8205123187eee51e02191aaf7859bfcebb8ebf299a93b882c"
-    sha256 cellar: :any,                 monterey:       "f2de4ef694be9a2cd280b350195eee35e782596bf35ea3270874be8a21e41339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f3f52d9c795212dab333c3203e154373a086c886b0716d0f6a65fcf3cc73e9c"
+    sha256 cellar: :any,                 arm64_sonoma:   "0ce2422aa9569eb7fbf516cf0f3a6f48f1f43f87f8d06a4f5be334f7e128b580"
+    sha256 cellar: :any,                 arm64_ventura:  "87a76fbd54b22f63deadb40b8c47703b5e555aebe8d3891ce386b04894191320"
+    sha256 cellar: :any,                 arm64_monterey: "f6ccb9b294e96d3803c47b049d3d03b8c884bb9ab77818c12c5459bc44938ff5"
+    sha256 cellar: :any,                 sonoma:         "4a03c70422d094b73e675ea50b17a9113ee637be4a9e6297c543be3cbb445fac"
+    sha256 cellar: :any,                 ventura:        "e420629435a4ba1056b5f618278c52b222c3d55f02a0b7c317e2035dfb208504"
+    sha256 cellar: :any,                 monterey:       "fb4443534430f3cd6bb197336b25dcee767a65d910e1ee5ba281a4318576d5a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dc79f76fcd8858a18182448b9f896d3b3344ac68bffdcbfbd8c57949feba29f"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -134,8 +135,8 @@ class Dvc < Formula
   end
 
   resource "azure-identity" do
-    url "https:files.pythonhosted.orgpackagescdf125cba0d1f4ba1f9b9c799c4755400a3e577adcb1470cf5760fcd730b88e1azure-identity-1.16.0.tar.gz"
-    sha256 "6ff1d667cdcd81da1ceab42f80a0be63ca846629f518a922f7317a7e3c844e1b"
+    url "https:files.pythonhosted.orgpackagesbb1cbd704075e555046e24b069157ca25c81aedb4199c3e0b35acba9243a6ca6azure-identity-1.16.1.tar.gz"
+    sha256 "6d93f04468f240d59246d8afde3091494a5040d4f141cad0f49fc0c399d0d91e"
   end
 
   resource "azure-storage-blob" do
@@ -374,8 +375,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesfe181be4f26349574b169149e18fafe24eb2ef5038d97c2e16440d1c9c4dd3f6google-api-python-client-2.132.0.tar.gz"
-    sha256 "d6340dc83b72d72333cee5d50f7dcfecbff66a8783164090e945f985ec4c374d"
+    url "https:files.pythonhosted.orgpackagesd4314ded7003d5a8ed4351cd716a18ccaf435c05380b86759f4ff755cdcb2456google-api-python-client-2.133.0.tar.gz"
+    sha256 "293092905b66a046d3187a99ac454e12b00cc2c70444f26eb2f1f9c1a82720b4"
   end
 
   resource "google-auth" do
@@ -399,8 +400,8 @@ class Dvc < Formula
   end
 
   resource "google-cloud-storage" do
-    url "https:files.pythonhosted.orgpackages17c50bc3f97cf4c14a731ecc5a95c5cde6883aec7289dc74817f9b41f866f77egoogle-cloud-storage-2.16.0.tar.gz"
-    sha256 "dda485fa503710a828d01246bd16ce9db0823dc51bbca742ce96a6817d58669f"
+    url "https:files.pythonhosted.orgpackages1df90096c3f32ee6087da902d8e450639f3659371052301cc8d5587f5fb288fegoogle-cloud-storage-2.17.0.tar.gz"
+    sha256 "49378abff54ef656b52dca5ef0f2eba9aa83dc2b2c72c78714b03a1a95fe9388"
   end
 
   resource "google-crc32c" do
@@ -409,8 +410,8 @@ class Dvc < Formula
   end
 
   resource "google-resumable-media" do
-    url "https:files.pythonhosted.orgpackagesc178638c9ab69571db4f7ec022383ce13ff8d0cea5b8afc168a51bb0e9353c10google-resumable-media-2.7.0.tar.gz"
-    sha256 "5f18f5fa9836f4b083162064a1c2c98c17239bfda9ca50ad970ccf905f3e625b"
+    url "https:files.pythonhosted.orgpackagesd63dd51e8c691d24e08cbf5b1924a4f950c492d44f7e3ccbacf362f1de04ce2bgoogle-resumable-media-2.7.1.tar.gz"
+    sha256 "eae451a7b2e2cdbaaa0fd2eb00cc8a1ee5e95e16b55597359cbc3d27d7d90e33"
   end
 
   resource "googleapis-common-protos" do
@@ -494,8 +495,8 @@ class Dvc < Formula
   end
 
   resource "msal" do
-    url "https:files.pythonhosted.orgpackagesb32a76e64e6a5f0d3d12f4b3ab2cfc8b5e4fcb6982d15213aad9c8e6b20ebeaemsal-1.28.0.tar.gz"
-    sha256 "80bbabe34567cb734efd2ec1869b2d98195c927455369d8077b3c542088c5c9d"
+    url "https:files.pythonhosted.orgpackagesea2a9dcb26678320cc2f57ea19205c4be596799c3ef5e57e9d6c4fc0c839aa3cmsal-1.28.1.tar.gz"
+    sha256 "d72bbfe2d5c2f2555f4bc6205be4450ddfd12976610dd9a16a9ab0f05c68b64d"
   end
 
   resource "msal-extensions" do
@@ -529,8 +530,8 @@ class Dvc < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackagesf816c10c42b69beeebe8bd136ee28b76762837479462787be57f11e0ab5d6f5dorjson-3.10.3.tar.gz"
-    sha256 "2b166507acae7ba2f7c315dcf185a9111ad5e992ac81f2d507aac39193c2c818"
+    url "https:files.pythonhosted.orgpackagesd1cada227308a5a6400198532a03b840227c12434fec991a99d3554d19e33fcaorjson-3.10.4.tar.gz"
+    sha256 "c912ed25b787c73fe994a5decd81c3f3b256599b8a87d410d799d5d52013af2a"
   end
 
   resource "oss2" do
@@ -544,8 +545,8 @@ class Dvc < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pathspec" do
@@ -564,8 +565,8 @@ class Dvc < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackages5d0f2a8cf0881833cae8a2b50f0ce63ba4662c44473640c1feeb054f19d33459prompt_toolkit-3.0.46.tar.gz"
-    sha256 "869c50d682152336e23c4db7f74667639b5047494202ffe7670817053fd57795"
+    url "https:files.pythonhosted.orgpackages476d0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879fprompt_toolkit-3.0.47.tar.gz"
+    sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
   end
 
   resource "proto-plus" do

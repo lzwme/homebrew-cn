@@ -5,7 +5,6 @@ cask "font-jaini-purva" do
   url "https:github.comgooglefontsrawmainofljainipurvaJainiPurva-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Jaini Purva"
-  desc "Typeface based on the calligraphic style of the Jain Kalpasutra manuscripts"
   homepage "https:fonts.google.comspecimenJaini+Purva"
 
   font "JainiPurva-Regular.ttf"

@@ -7,7 +7,6 @@ cask "font-inclusive-sans" do
       branch:    "main",
       only_path: "oflinclusivesans"
   name "Inclusive Sans"
-  desc "Contemporary neo-grotesques"
   homepage "https:fonts.google.comspecimenInclusive+Sans"
 
   font "InclusiveSans-Italic.ttf"

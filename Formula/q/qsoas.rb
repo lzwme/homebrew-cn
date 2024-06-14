@@ -4,6 +4,7 @@ class Qsoas < Formula
   url "https:bip.cnrs.frwp-contentuploadsqsoasqsoas-3.3.tar.gz"
   sha256 "c5a701dfed23c682892479b43b92aac79a7db5ceb9ed6b6cd0a41129d2690492"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https:github.comfourmondQSoas.git"
@@ -11,13 +12,13 @@ class Qsoas < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1a38da810ed778afab4910333154be9a7e9d023dbe6b31a1474f234195e71082"
-    sha256 cellar: :any,                 arm64_ventura:  "3719d9bcc7efb9eb02ad8df0e5db43898c57cb85d6ccae3ec041c41c9516e20d"
-    sha256 cellar: :any,                 arm64_monterey: "a6c01927415078bc9fa9502897cb3e1fc9ee697eb061cc65215622aa547d1e3c"
-    sha256 cellar: :any,                 sonoma:         "8bde4f66b2c7038e53f5368ce5fadc708b3c026cad89fa4e3ae8e93c91eba57a"
-    sha256 cellar: :any,                 ventura:        "e346084ec2da1a1a8b09655384c656e15b243634724ed3ad284da177f9001db2"
-    sha256 cellar: :any,                 monterey:       "6d113519d854f6f1eec16a575aade4d729cfbec5185bf26dfba89a9c119fde47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2aff2943602ababdef4e34fe307329ed45a6f499bfcebe8bd74c0abec6f834aa"
+    sha256 cellar: :any,                 arm64_sonoma:   "59cf34ad9e7db06d2e7e6d68dd60d12ba6f7a1b1818a322ac866f4895a0e3af8"
+    sha256 cellar: :any,                 arm64_ventura:  "1aa8ad3b027fa61914688ca5857cd9ef030fa2d3e07a7555d06479f429d29691"
+    sha256 cellar: :any,                 arm64_monterey: "25cd57d44b1e89044e1da640288bc33a511cadb10659137d2bb71f38b2d74b3d"
+    sha256 cellar: :any,                 sonoma:         "8bd41179d0dcd078ac4731c5edc181352cdd6f639d49ee082b0cbab9a9c00f88"
+    sha256 cellar: :any,                 ventura:        "6d3850245479bad8b493a9ffd52cca5e382dcc899fec0382dbcda96790e8f350"
+    sha256 cellar: :any,                 monterey:       "751f9a7fda93b3193f2fb8c3118c79ec52bbaba6c95e0420b0ca981ac78cfdb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d99b2b0c412e82eb58102d3722c32b5629773334ac81996ee6d4e58f0dffef3"
   end
 
   depends_on "bison" => :build

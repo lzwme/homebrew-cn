@@ -5,7 +5,6 @@ cask "font-stix" do
   url "https:github.comstipubstixfontsarchivev#{version}.tar.gz",
       verified: "github.comstipubstixfonts"
   name "STIX"
-  desc "Unicode fonts for scientific, technical, and mathematical texts"
   homepage "https:stixfonts.org"
 
   font "stixfonts-#{version}fontsstatic_otfSTIXTwoMath-Regular.otf"

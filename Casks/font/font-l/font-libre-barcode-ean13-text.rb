@@ -5,7 +5,6 @@ cask "font-libre-barcode-ean13-text" do
   url "https:github.comgooglefontsrawmainofllibrebarcodeean13textLibreBarcodeEAN13Text-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Libre Barcode EAN13 Text"
-  desc "Led by lasse fister, a font and web developer based in nuremberg, germany"
   homepage "https:fonts.google.comspecimenLibre+Barcode+EAN13+Text"
 
   font "LibreBarcodeEAN13Text-Regular.ttf"

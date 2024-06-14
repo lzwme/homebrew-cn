@@ -4,7 +4,6 @@ cask "font-hack-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hack.zip"
   name "Hack Nerd Font (Hack)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

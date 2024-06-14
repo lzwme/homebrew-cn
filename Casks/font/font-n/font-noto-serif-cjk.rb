@@ -4,7 +4,6 @@ cask "font-noto-serif-cjk" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSerif#{version}01_NotoSerifCJK.ttc.zip"
   name "Noto Serif CJK"
-  desc "Static Super OTC"
   homepage "https:github.comnotofontsnoto-cjktreemainSerif"
 
   livecheck do

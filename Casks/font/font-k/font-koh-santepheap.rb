@@ -7,7 +7,6 @@ cask "font-koh-santepheap" do
       branch:    "main",
       only_path: "oflkohsantepheap"
   name "Koh Santepheap"
-  desc "Khmer font for body text"
   homepage "https:fonts.google.comspecimenKoh+Santepheap"
 
   font "KohSantepheap-Black.ttf"

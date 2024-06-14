@@ -4,7 +4,6 @@ cask "font-twilio-sans-mono" do
 
   url "https:github.comtwiliotwilio-sans-monorawmainTwilio-Sans-Mono.zip"
   name "Twilio Sans Mono"
-  desc "Programming font"
   homepage "https:github.comtwiliotwilio-sans-mono"
 
   font "Twilio-Sans-MonoOTFTwilioSansMono-Bold.otf"

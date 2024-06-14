@@ -4,7 +4,6 @@ cask "font-go-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Go-Mono.zip"
   name "GoMono Nerd Font (Go Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

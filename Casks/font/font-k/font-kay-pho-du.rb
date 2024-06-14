@@ -7,7 +7,6 @@ cask "font-kay-pho-du" do
       branch:    "main",
       only_path: "oflkayphodu"
   name "Kay Pho Du"
-  desc "Font family for the kayah li script"
   homepage "https:fonts.google.comspecimenKay+Pho+Du"
 
   font "KayPhoDu-Bold.ttf"

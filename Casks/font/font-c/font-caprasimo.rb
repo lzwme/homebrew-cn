@@ -5,7 +5,6 @@ cask "font-caprasimo" do
   url "https:github.comgooglefontsrawmainoflcaprasimoCaprasimo-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Caprasimo"
-  desc "Based on fraunces"
   homepage "https:fonts.google.comspecimenCaprasimo"
 
   font "Caprasimo-Regular.ttf"

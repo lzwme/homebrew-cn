@@ -5,7 +5,6 @@ cask "font-noto-serif-sc" do
   url "https:github.comgooglefontsrawmainoflnotoserifscNotoSerifSC%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Noto Serif SC"
-  desc "Modulated (“serif”) design for simplified chinese"
   homepage "https:fonts.google.comspecimenNoto+Serif+SC"
 
   font "NotoSerifSC[wght].ttf"

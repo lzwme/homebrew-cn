@@ -7,7 +7,6 @@ cask "font-tiro-devanagari-sanskrit" do
       branch:    "main",
       only_path: "ofltirodevanagarisanskrit"
   name "Tiro Devanagari Sanskrit"
-  desc "Broader proportions, generous counters, and strong diagonal strokes"
   homepage "https:fonts.google.comspecimenTiro+Devanagari+Sanskrit"
 
   font "TiroDevanagariSanskrit-Italic.ttf"

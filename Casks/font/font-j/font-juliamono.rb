@@ -4,7 +4,6 @@ cask "font-juliamono" do
 
   url "https:github.comcormullionjuliamonoreleasesdownloadv#{version}JuliaMono.tar.gz"
   name "JuliaMono"
-  desc "Monospaced typeface designed for programming in Julia"
   homepage "https:github.comcormullionjuliamono"
 
   font "JuliaMono-Black.ttf"

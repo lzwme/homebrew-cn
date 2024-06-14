@@ -7,7 +7,6 @@ cask "font-platypi" do
       branch:    "main",
       only_path: "oflplatypi"
   name "Platypi"
-  desc "Platypuses"
   homepage "https:fonts.google.comspecimenPlatypi"
 
   font "Platypi-Italic[wght].ttf"

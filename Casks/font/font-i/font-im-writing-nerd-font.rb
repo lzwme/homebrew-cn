@@ -4,7 +4,6 @@ cask "font-im-writing-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}iA-Writer.zip"
   name "IMWriting Nerd Font families (iA Writer)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

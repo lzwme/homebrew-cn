@@ -5,7 +5,6 @@ cask "font-kumbh-sans" do
   url "https:github.comgooglefontsrawmainoflkumbhsansKumbhSans%5BYOPQ%2Cwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Kumbh Sans"
-  desc "Geometric sans-serif multi-purpose font"
   homepage "https:fonts.google.comspecimenKumbh+Sans"
 
   font "KumbhSans[YOPQ,wght].ttf"

@@ -5,7 +5,6 @@ cask "font-syne-mono" do
   url "https:github.comgooglefontsrawmainoflsynemonoSyneMono-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Syne Mono"
-  desc "Another take on letting go of control"
   homepage "https:fonts.google.comspecimenSyne+Mono"
 
   font "SyneMono-Regular.ttf"

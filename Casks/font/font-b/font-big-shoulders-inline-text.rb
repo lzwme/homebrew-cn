@@ -5,7 +5,6 @@ cask "font-big-shoulders-inline-text" do
   url "https:github.comgooglefontsrawmainoflbigshouldersinlinetextBigShouldersInlineText%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Big Shoulders Inline Text"
-  desc "Superfamily of condensed American Gothic typefaces"
   homepage "https:fonts.google.comspecimenBig+Shoulders+Inline+Text"
 
   font "BigShouldersInlineText[wght].ttf"

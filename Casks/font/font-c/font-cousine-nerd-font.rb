@@ -4,7 +4,6 @@ cask "font-cousine-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Cousine.zip"
   name "Cousine Nerd Font (Cousine)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

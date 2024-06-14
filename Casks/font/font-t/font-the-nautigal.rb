@@ -7,7 +7,6 @@ cask "font-the-nautigal" do
       branch:    "main",
       only_path: "oflthenautigal"
   name "The Nautigal"
-  desc "Fluid yet formal with beautiful connectors"
   homepage "https:fonts.google.comspecimenThe+Nautigal"
 
   font "TheNautigal-Bold.ttf"

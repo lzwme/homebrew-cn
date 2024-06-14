@@ -7,7 +7,6 @@ cask "font-tai-heritage-pro" do
       branch:    "main",
       only_path: "ofltaiheritagepro"
   name "Tai Heritage Pro"
-  desc "Available in regular and bold weights, with both opentype and graphite rendering"
   homepage "https:fonts.google.comspecimenTai+Heritage+Pro"
 
   font "TaiHeritagePro-Bold.ttf"

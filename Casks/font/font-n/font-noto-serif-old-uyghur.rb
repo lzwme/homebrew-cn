@@ -5,7 +5,6 @@ cask "font-noto-serif-old-uyghur" do
   url "https:github.comgooglefontsrawmainoflnotoserifolduyghurNotoSerifOldUyghur-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Noto Serif Old Uyghur"
-  desc "Design for the historical central asian old uyghur script"
   homepage "https:fonts.google.comspecimenNoto+Serif+Old+Uyghur"
 
   font "NotoSerifOldUyghur-Regular.ttf"

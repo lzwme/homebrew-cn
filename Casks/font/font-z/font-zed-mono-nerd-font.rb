@@ -4,7 +4,6 @@ cask "font-zed-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ZedMono.zip"
   name "ZedMono Nerd Font (Zed Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

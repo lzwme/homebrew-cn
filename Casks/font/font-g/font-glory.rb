@@ -7,7 +7,6 @@ cask "font-glory" do
       branch:    "main",
       only_path: "oflglory"
   name "Glory"
-  desc "Suitable for logos, headlines and body text with the available six weights"
   homepage "https:fonts.google.comspecimenGlory"
 
   font "Glory-Italic[wght].ttf"

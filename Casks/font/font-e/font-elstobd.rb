@@ -4,7 +4,6 @@ cask "font-elstobd" do
 
   url "https:github.compsb1558Elstob-fontreleasesdownloadv#{version}Elstob_#{version}.zip"
   name "ElstobD"
-  desc "Variable font for medievalists"
   homepage "https:github.compsb1558Elstob-font"
 
   font "Elstob_fontvariableElstob-Italic.ttf"

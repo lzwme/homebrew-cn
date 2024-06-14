@@ -2420,7 +2420,7 @@ Homebrew-homebrew-core/Formula/g/grype.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gsar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsasl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsettings-desktop-schemas.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gsl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gsl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsmartcontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gsoap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gspell.rb, Homebrew/homebrew-core, 0
@@ -11222,6 +11222,7 @@ Homebrew-homebrew-cask/Casks/i/itch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iterm2@nightly.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/itermai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ithoughtsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itk-snap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itraffic.rb, Homebrew/homebrew-cask, 1

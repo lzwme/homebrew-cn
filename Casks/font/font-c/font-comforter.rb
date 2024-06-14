@@ -5,7 +5,6 @@ cask "font-comforter" do
   url "https:github.comgooglefontsrawmainoflcomforterComforter-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Comforter"
-  desc "Appealing for many usages"
   homepage "https:fonts.google.comspecimenComforter"
 
   font "Comforter-Regular.ttf"

@@ -5,7 +5,6 @@ cask "font-vazirmatn" do
   url "https:github.comgooglefontsrawmainoflvazirmatnVazirmatn%5Bwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Vazirmatn"
-  desc "Combined with roboto"
   homepage "https:fonts.google.comspecimenVazirmatn"
 
   font "Vazirmatn[wght].ttf"

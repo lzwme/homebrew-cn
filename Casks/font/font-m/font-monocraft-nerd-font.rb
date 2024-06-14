@@ -4,7 +4,6 @@ cask "font-monocraft-nerd-font" do
 
   url "https:github.comIdreesIncMonocraftreleasesdownloadv#{version}Monocraft-nerd-fonts-patched.ttf"
   name "Monocraft with Nerd glyphs"
-  desc "Monospaced font inspired by the Minecraft typeface patched to add Nerd glyphs"
   homepage "https:github.comIdreesIncMonocraft"
 
   font "Monocraft-nerd-fonts-patched.ttf"

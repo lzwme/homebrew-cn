@@ -5,7 +5,6 @@ cask "font-waterfall" do
   url "https:github.comgooglefontsrawmainoflwaterfallWaterfall-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Waterfall"
-  desc "Calligraphic script"
   homepage "https:fonts.google.comspecimenWaterfall"
 
   font "Waterfall-Regular.ttf"

@@ -7,7 +7,6 @@ cask "font-fraunces" do
       branch:    "main",
       only_path: "oflfraunces"
   name "Fraunces"
-  desc "Variable font with four axes"
   homepage "https:fonts.google.comspecimenFraunces"
 
   font "Fraunces-Italic[SOFT,WONK,opsz,wght].ttf"

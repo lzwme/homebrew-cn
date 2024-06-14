@@ -5,7 +5,6 @@ cask "font-biorhyme" do
   url "https:github.comgooglefontsrawmainoflbiorhymeBioRhyme%5Bwdth%2Cwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "BioRhyme"
-  desc "Latin typeface family"
   homepage "https:fonts.google.comspecimenBioRhyme"
 
   font "BioRhyme[wdth,wght].ttf"

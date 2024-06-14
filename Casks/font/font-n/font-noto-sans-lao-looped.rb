@@ -5,7 +5,6 @@ cask "font-noto-sans-lao-looped" do
   url "https:github.comgooglefontsrawmainoflnotosanslaoloopedNotoSansLaoLooped%5Bwdth%2Cwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Noto Sans Lao Looped"
-  desc "Looped variant of the southeast asian lao script"
   homepage "https:fonts.google.comspecimenNoto+Sans+Lao+Looped"
 
   font "NotoSansLaoLooped[wdth,wght].ttf"

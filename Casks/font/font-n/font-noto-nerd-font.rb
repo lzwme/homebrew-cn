@@ -4,7 +4,6 @@ cask "font-noto-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Noto.zip"
   name "Noto Nerd Font families (Noto)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do

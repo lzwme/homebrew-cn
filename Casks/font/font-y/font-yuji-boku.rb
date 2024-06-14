@@ -5,7 +5,6 @@ cask "font-yuji-boku" do
   url "https:github.comgooglefontsrawmainoflyujibokuYujiBoku-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Yuji Boku"
-  desc "New and joyful design"
   homepage "https:fonts.google.comspecimenYuji+Boku"
 
   font "YujiBoku-Regular.ttf"

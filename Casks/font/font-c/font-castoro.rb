@@ -7,7 +7,6 @@ cask "font-castoro" do
       branch:    "main",
       only_path: "oflcastoro"
   name "Castoro"
-  desc "Named for the north american beaver, castor canadensis"
   homepage "https:fonts.google.comspecimenCastoro"
 
   font "Castoro-Italic.ttf"

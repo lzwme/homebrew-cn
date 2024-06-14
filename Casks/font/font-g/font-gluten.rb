@@ -5,7 +5,6 @@ cask "font-gluten" do
   url "https:github.comgooglefontsrawmainoflglutenGluten%5Bslnt%2Cwght%5D.ttf",
       verified: "github.comgooglefonts"
   name "Gluten"
-  desc "Filling, we'll put it that way"
   homepage "https:fonts.google.comspecimenGluten"
 
   font "Gluten[slnt,wght].ttf"

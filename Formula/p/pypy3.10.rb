@@ -1,8 +1,8 @@
 class Pypy310 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https:pypy.org"
-  url "https:downloads.python.orgpypypypy3.10-v7.3.15-src.tar.bz2"
-  sha256 "48ce19ca7642131b8468ddfb7ef355f49952518702ab501e2c6b3d9b4eb09ad4"
+  url "https:downloads.python.orgpypypypy3.10-v7.3.16-src.tar.bz2"
+  sha256 "4a3a3177d0a1f51d59982bb981d1d485403bda3419d5437b9e077f55f59424ff"
   license "MIT"
   head "https:github.compypypypy.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Pypy310 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7a554add2b78114196458bd691f6133c3c73c9a699ef41c1f36d5f11b31b7a2e"
-    sha256 cellar: :any,                 arm64_ventura:  "aee9586d87cde504a49d49c7c31648c7e8d62029a27442f97b630900317ba329"
-    sha256 cellar: :any,                 arm64_monterey: "ceef213ed4f8e2f6a034a4b104d405ff4c0b7cd38aa72b544b537a21c0e2a083"
-    sha256 cellar: :any,                 sonoma:         "e6ecefbbad3987d161067e302b5158c283285a86223748f8f10f9f73ef7eca6a"
-    sha256 cellar: :any,                 ventura:        "ad08281d042cc9ab673b37553eadc149457f77047285fdfc4007f00b88d77b52"
-    sha256 cellar: :any,                 monterey:       "81f365b2b4092b52d2d7759b517fc6cfa7c184ed44cb930e4b23d23a589c9a03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3534e00aa130dd0a59c0079f1c426cd028e0d164214da7525cf5e7949febca41"
+    sha256 cellar: :any,                 arm64_sonoma:   "ade823aa590461009d952824a9f19a74cae00dfd2842cd3816cf07aefec95a1b"
+    sha256 cellar: :any,                 arm64_ventura:  "0d02fa763dbbc79e6df6264310d2c28e6323eb151e2be156bbb5e1e770e318d1"
+    sha256 cellar: :any,                 arm64_monterey: "fbf24ed94c122e648ebc761da85c3c114708822601e57fb82cd839f9f4c77220"
+    sha256 cellar: :any,                 sonoma:         "b09861a9c9d4ec530fd1e9679c6deae9174b9ed5c2958011f9acfa97006412aa"
+    sha256 cellar: :any,                 ventura:        "1888faab65c74715f6fb049f0c92cfcaca5f7c009d243d591ce7e11e5bf4fbce"
+    sha256 cellar: :any,                 monterey:       "3d8db5b2bfed31b89b2a18ab01048edc683a0074ee13ac9486fb4e9fda8a5ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e9894e2100fce3941dd92a83c037a49ed0276b0fe1106de627260e34c014579"
   end
 
   depends_on "pkg-config" => :build
@@ -49,6 +49,12 @@ class Pypy310 < Formula
     sha256 "7fd9972f96db22c8077a1ee2691b172c8089b17a5652a44494a9ecb0d78f9149"
   end
 
+  # Fix mismatch in test definition of ncurses
+  patch do
+    url "https:github.compypypypycommit13e2004d86a3431d27a2ac98c7d591473ca9ef9c.patch?full_index=1"
+    sha256 "b84c2593f10cb4698f21ff8cb5b7318f718f92f2c35eef271ccb2d504d9436d6"
+  end
+
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
@@ -70,6 +76,17 @@ class Pypy310 < Formula
       # We moved `tcl-tk` headers to `includetcl-tk`.
       # TODO: upstream this.
       s.gsub! "include'", "includetcl-tk'"
+    end
+
+    if OS.mac?
+      # Allow python modules to use ctypes.find_library to find homebrew's stuff
+      # even if homebrew is not a usrlocallib. Try this with:
+      # `brew install enchant && pip install pyenchant`
+      inreplace "lib-python3ctypesmacholibdyld.py" do |f|
+        f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
+                "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}lib', "
+        f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}Frameworks',"
+      end
     end
 
     # Having PYTHONPATH set can cause the build to fail if another

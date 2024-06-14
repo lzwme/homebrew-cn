@@ -7,7 +7,6 @@ cask "font-tiro-telugu" do
       branch:    "main",
       only_path: "ofltirotelugu"
   name "Tiro Telugu"
-  desc "Especially suited to traditional literary publishing"
   homepage "https:fonts.google.comspecimenTiro+Telugu"
 
   font "TiroTelugu-Italic.ttf"

@@ -7,7 +7,6 @@ cask "font-georama" do
       branch:    "main",
       only_path: "oflgeorama"
   name "Georama"
-  desc "Original typeface available in several widths and weights"
   homepage "https:fonts.google.comspecimenGeorama"
 
   font "Georama-Italic[wdth,wght].ttf"

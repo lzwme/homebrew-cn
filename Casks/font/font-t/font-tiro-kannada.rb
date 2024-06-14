@@ -7,7 +7,6 @@ cask "font-tiro-kannada" do
       branch:    "main",
       only_path: "ofltirokannada"
   name "Tiro Kannada"
-  desc "Especially suited to traditional literary publishing"
   homepage "https:fonts.google.comspecimenTiro+Kannada"
 
   font "TiroKannada-Italic.ttf"

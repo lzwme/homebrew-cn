@@ -5,7 +5,6 @@ cask "font-fontawesome" do
   url "https:github.comFortAwesomeFont-Awesomereleasesdownload#{version}fontawesome-free-#{version}-desktop.zip",
       verified: "github.comFortAwesomeFont-Awesome"
   name "Font Awesome"
-  desc "Icon set and toolkit"
   homepage "https:fontawesome.com"
 
   font "fontawesome-free-#{version}-desktopotfsFont Awesome #{version.major} Brands-Regular-400.otf"

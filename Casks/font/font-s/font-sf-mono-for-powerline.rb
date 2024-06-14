@@ -4,7 +4,6 @@ cask "font-sf-mono-for-powerline" do
 
   url "https:github.comTwixesSF-Mono-Powerlinearchivemaster.zip"
   name "SF Mono for Powerline"
-  desc "Apple's SF Mono font patched with the Nerd Fonts patcher for Powerline support"
   homepage "https:github.comTwixesSF-Mono-Powerline"
 
   font "SF-Mono-Powerline-masterSF-Mono-Powerline-Bold.otf"

@@ -5,7 +5,6 @@ cask "font-syne-tactile" do
   url "https:github.comgooglefontsrawmainoflsynetactileSyneTactile-Regular.ttf",
       verified: "github.comgooglefonts"
   name "Syne Tactile"
-  desc "Originally designed for the Art Center 'Synesthésie'"
   homepage "https:fonts.google.comspecimenSyne+Tactile"
 
   font "SyneTactile-Regular.ttf"

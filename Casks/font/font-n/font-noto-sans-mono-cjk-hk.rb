@@ -4,7 +4,6 @@ cask "font-noto-sans-mono-cjk-hk" do
 
   url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}15_NotoSansMonoCJKhk.zip"
   name "Noto Sans Mono CJK HK"
-  desc "Language Specific Monospace OTFs Traditional Chinese — Hong Kong (繁體中文—香港)"
   homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do

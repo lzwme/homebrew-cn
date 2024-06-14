@@ -4,7 +4,6 @@ cask "font-zed-sans" do
 
   url "https:github.comzed-industrieszed-fontsreleasesdownload#{version}zed-sans-#{version}.zip"
   name "Zed Sans"
-  desc "Quasi-proportional sans-serif font based on Iosevka"
   homepage "https:github.comzed-industrieszed-fonts"
 
   font "zed-sans-bold.ttf"

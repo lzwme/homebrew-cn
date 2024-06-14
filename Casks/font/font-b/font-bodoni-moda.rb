@@ -5,7 +5,6 @@ cask "font-bodoni-moda" do
   url "https:github.comindestructible-typeBodonireleasesdownload#{version}Bodoni-master.zip",
       verified: "github.comindestructible-typeBodoni"
   name "Bodoni Moda"
-  desc "Serif typeface with high contrast"
   homepage "https:indestructibletype.comBodoni.html"
 
   font "Bodoni-masterfontsvariableBodoni-Italic-VF.ttf"

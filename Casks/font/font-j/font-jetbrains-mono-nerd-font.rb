@@ -4,7 +4,6 @@ cask "font-jetbrains-mono-nerd-font" do
 
   url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}JetBrainsMono.zip"
   name "JetBrainsMono Nerd Font families (JetBrains Mono)"
-  desc "Developer targeted fonts with a high number of glyphs"
   homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
