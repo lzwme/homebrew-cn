@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/1d/23/2478f48fa39d23d736410f0762f58fc8de6e3f9cb74c6ac4d75c3c8c46f9/huggingface_hub-0.23.3.tar.gz"
-  sha256 "1a1118a0b3dea3bab6c325d71be16f5ffe441d32f3ac7c348d6875911b694b5b"
+  url "https://files.pythonhosted.org/packages/9d/83/0c07c6e6de04b097a4dd474a30492a650e5845256c4e4eed4397316248e4/huggingface_hub-0.23.4.tar.gz"
+  sha256 "35d99016433900e44ae7efe1c209164a5a81dbbcd53a52f99c281dcd7ce22431"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5cf7b320705052e5309fcd93c71b7ccc99fde2e2e154e8bee6bff2509ba1e5bf"
-    sha256 cellar: :any,                 arm64_ventura:  "a77b7f59f880b214c2b49ee09045515e35af0476ebb76dba214c5a0630c480f7"
-    sha256 cellar: :any,                 arm64_monterey: "34c4a0ec24668c01259395bdcba80e09ca720615cf1528844fa4bff8db256e7f"
-    sha256 cellar: :any,                 sonoma:         "c564dc4fe6fd3a2ea5a28cebe782a2c46ec75e9cdd42774b1dbcb2b5ba119d5c"
-    sha256 cellar: :any,                 ventura:        "2abc9e55306c405e94df4f7750da885f26d39410ee8de09b222abc7ec9b9753e"
-    sha256 cellar: :any,                 monterey:       "4dacd12e27684a2a5459becffa8715699ca954a85c8a210c558986f47c15eeb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "486788e0088e8088e5f20ce30e3bf8e7a2b80495106a3122864cb72c79c04119"
+    sha256 cellar: :any,                 arm64_sonoma:   "ef0e1adaea4e1af5b3d821c0b1845c43bfd120f953da8ae1ff236b8a83d4e504"
+    sha256 cellar: :any,                 arm64_ventura:  "b2c0205415f3a9de8d715a807242bb1d7271ef0563510bc975bf53f35fcb1ad2"
+    sha256 cellar: :any,                 arm64_monterey: "88cac4a04f4344f7588d41b3990289b0db8915c63e64c3f4ef7419f54d37529c"
+    sha256 cellar: :any,                 sonoma:         "841642bb9dd977ad8c7959cfa65b92db9eacdd21d019a25d0300ecb6b13d1b44"
+    sha256 cellar: :any,                 ventura:        "db920ca6bda1e049064a035dde6d58fe58799a84a1db1af8fe42df7b90ee5f0f"
+    sha256 cellar: :any,                 monterey:       "d88bdadc092a3c4c93c2530a7c9b11df6eec840a6dafdfe5f3336bb895131db1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1861c3f5dc6b9271b5f271bd3c509a0e64c183920bfd91b0008f726488e7ea0d"
   end
 
   depends_on "certifi"
@@ -28,8 +28,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/06/ae/f8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897ea/filelock-3.14.0.tar.gz"
-    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
+    url "https://files.pythonhosted.org/packages/69/7d/73d36db6955bde2ed495ce40ce02c9a2533b8c7b64fd42a38b1ee879ea18/filelock-3.15.1.tar.gz"
+    sha256 "58a2549afdf9e02e10720eaa4d4470f56386d7a6f72edd7d0596337af8ed7ad8"
   end
 
   resource "fsspec" do
@@ -43,8 +43,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pyyaml" do
@@ -63,8 +63,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e8/fb/4217a963512b9646274fe4ce0aebc8ebff09bbb86c458c6163846bb65d9d/typing_extensions-4.12.1.tar.gz"
-    sha256 "915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"
+    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do

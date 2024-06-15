@@ -17,7 +17,6 @@ class Fizz < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "double-conversion"
   depends_on "fmt"
   depends_on "folly"
@@ -27,17 +26,21 @@ class Fizz < Formula
   depends_on "libsodium"
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "snappy"
   depends_on "zstd"
+  uses_from_macos "zlib"
 
   fails_with gcc: "5"
 
   def install
-    system "cmake", "-S", "fizz", "-B", "build",
-                    "-DBUILD_TESTS=OFF",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    args = ["-DBUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    if OS.mac?
+      # Prevent indirect linkage with boost and snappy.
+      args += [
+        "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+        "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+      ]
+    end
+    system "cmake", "-S", "fizz", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

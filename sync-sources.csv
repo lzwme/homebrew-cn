@@ -971,6 +971,7 @@ Homebrew-homebrew-core/Formula/c/code-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-minimap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codec2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codecov-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codelimit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codequery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
@@ -2003,6 +2004,7 @@ Homebrew-homebrew-core/Formula/g/genders.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/generate-json-schema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genext2fs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gengetopt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/geni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genometools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gensio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geocode-glib.rb, Homebrew/homebrew-core, 0
@@ -3062,6 +3064,7 @@ Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubefirst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubekey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeless.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubelogin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeprod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
@@ -5024,6 +5027,7 @@ Homebrew-homebrew-core/Formula/p/postgresql@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgrest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/potrace.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/poutine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/povray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/powerlevel10k.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/powerline-go.rb, Homebrew/homebrew-core, 1
@@ -13959,6 +13963,7 @@ Homebrew-homebrew-cask/Casks/x/xlplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmind@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmplify.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xnapper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xnconvert.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xnviewmp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xonotic.rb, Homebrew/homebrew-cask, 0

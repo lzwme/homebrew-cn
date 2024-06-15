@@ -1,10 +1,9 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
   homepage "https:stp.github.io"
-  url "https:github.comstpstparchiverefstags2.3.3.tar.gz"
-  sha256 "ea6115c0fc11312c797a4b7c4db8734afcfce4908d078f386616189e01b4fffa"
+  url "https:github.comstpstparchiverefstags2.3.4.tar.gz"
+  sha256 "dc197e337c058dc048451b712169a610f7040b31d0078b6602b831fbdcbec990"
   license "MIT"
-  revision 10
   head "https:github.comstpstp.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5343128099903b03b500e6a1623900c363a93e569350633c4860a8e7d27f8c80"
-    sha256 cellar: :any,                 arm64_ventura:  "5698e683ca98c101c05e8f939e1adafb14fd80d3ece8d3cd969a32586ecbcc48"
-    sha256 cellar: :any,                 arm64_monterey: "faac03e2aab07b03299e31ec49a5f9b92a73d14a06ad5076adeec60ffeed884e"
-    sha256 cellar: :any,                 sonoma:         "28fe51355bdd1221838fc45b50f535126c5b56da28d2e675007eb925480a71d3"
-    sha256 cellar: :any,                 ventura:        "d78a8db52416a16944d3f1f997a2fe6350273d609f8df14f648b4ff48f24a554"
-    sha256 cellar: :any,                 monterey:       "e74cd58f7037db97af626bd7945302922f5e88408b42e8e50f17c92da0c42d0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "917de9e52fe5e786a3bcb97c1fab38335769806bef07945643a57f258ac853d4"
+    sha256 cellar: :any,                 arm64_sonoma:   "8d2d25a991994393947c9a10811348f58f9d7be146566ffeddd25eb96798b3c7"
+    sha256 cellar: :any,                 arm64_ventura:  "dcae4c325d93deac3fbf35f47644b257c6d8ccbe8cf4fd4cd5ca3e5be5b81b9a"
+    sha256 cellar: :any,                 arm64_monterey: "a0992a32a881c907b6ea4640339763d0bffd046f2a84da39ccf466d149580c3e"
+    sha256 cellar: :any,                 sonoma:         "853f39ffae6259944569b262cf249aaa4c4c92f3e2bae830d291ea683206d848"
+    sha256 cellar: :any,                 ventura:        "f67fbc50dc10ed864f5152aa657544f6e0a6f26464d0bf8d86040a54c0c0c808"
+    sha256 cellar: :any,                 monterey:       "f881bf0041b5151c962b9df594f145785230732f2d1988ff057725323d89b2b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8280802ee8e53554ae5ce0a383158f0e84bcf7cc623df11c5dbe45dee623e5a0"
   end
 
   # stp refuses to build with system bison and flex
@@ -29,6 +28,7 @@ class Stp < Formula
   depends_on "python-setuptools" => :build
   depends_on "boost"
   depends_on "cryptominisat"
+  depends_on "gmp"
   depends_on "minisat"
   depends_on "python@3.12"
 

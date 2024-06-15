@@ -34,8 +34,6 @@ class Watchman < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "libevent"
-  depends_on "libsodium"
-  depends_on "mvfst"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.12"
@@ -52,18 +50,22 @@ class Watchman < Formula
               gtest_discover_tests\((.*)\),
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
+    args = %W[
+      -DENABLE_EDEN_SUPPORT=ON
+      -DPython3_EXECUTABLE=#{which("python3.12")}
+      -DWATCHMAN_VERSION_OVERRIDE=#{version}
+      -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
+      -DWATCHMAN_STATE_DIR=#{var}runwatchman
+    ]
+    # Avoid overlinking with libsodium and mvfst
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
     #       RPATHs configured, so will need to be installed and relocated manually
     #       if they are built as shared libraries. They're not used by any other
     #       formulae, so let's link them statically instead. This is done by default.
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DENABLE_EDEN_SUPPORT=ON",
-                    "-DPython3_EXECUTABLE=#{which("python3.12")}",
-                    "-DWATCHMAN_VERSION_OVERRIDE=#{version}",
-                    "-DWATCHMAN_BUILDINFO_OVERRIDE=#{tap.user}",
-                    "-DWATCHMAN_STATE_DIR=#{var}runwatchman",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -75,7 +77,8 @@ class Watchman < Formula
 
   def post_install
     (var"runwatchman").mkpath
-    chmod 042777, var"runwatchman"
+    # Don't make me world-writeable! This admits symlink attacks that makes upstream dislike usage of `tmp`.
+    chmod 03775, var"runwatchman"
   end
 
   test do

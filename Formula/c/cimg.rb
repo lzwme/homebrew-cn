@@ -1,8 +1,8 @@
 class Cimg < Formula
   desc "C++ toolkit for image processing"
   homepage "https://cimg.eu/"
-  url "https://cimg.eu/files/CImg_3.3.6.zip"
-  sha256 "d55bd4a95f8d351282a7c2505397a509f87a8ac3409944ddde42b91e2951fd4c"
+  url "https://cimg.eu/files/CImg_3.4.0.zip"
+  sha256 "d6b8e2ff696750d85d41eb4e6d692676584dfdf32a078caee18708f88789b6a6"
   license "CECILL-2.0"
 
   livecheck do
@@ -11,7 +11,13 @@ class Cimg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5916481110e1c8ddf15e9a253e8b9d4bd1f892139bdb338efdf00c3e7184ca26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
   end
 
   fails_with gcc: "5" # C++ 17 is required

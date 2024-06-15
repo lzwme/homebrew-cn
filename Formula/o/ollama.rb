@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https:ollama.com"
   url "https:github.comollamaollama.git",
-      tag:      "v0.1.43",
-      revision: "217f60c3d95edc7d5dcbeb4c3cffb0190c147f92"
+      tag:      "v0.1.44",
+      revision: "c39761c5525132d96e1da0956a9aa39e87b54114"
   license "MIT"
   head "https:github.comollamaollama.git", branch: "main"
 
@@ -16,13 +16,13 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45ab694cab446e14b91366c905c11cb3773bd581f052fa18f8cd54c90ff1ec17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9f9f2e4010f55836f15d1ce874ad1193bd20505e01c58bf48393d02f8de6088"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6477c2abcab163db6d88def26bafd27a1b73e1f9978f04646d42bca779bed0be"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5cce9d39497365e9aabcf0bc1228575993106312981aba2524b199386b2d29ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "80252a8a375fcd2b236554df428d3f35344cbb736776e56b991300c0af3721cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "64cf8f4cd0646de006c43a7009079d2eaabd0cfb0ab09f5aeedb00005ac56c40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdc3e996653dd6ece95148a353a9c28855916e518591f34e62de6ceb5a1a8e40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59b3c5ad860eb19a117dab7e745e8f6caf10afb26450d0e479cd6666a19e4c88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67f021d256d0df78714252856e1bd96a32fc1cf3e787c6d583a067de0c7bba79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6e607c1492242b198a9238c89bb456894ab1b7fd7c579e707b93a555fab0316"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cfcf32a51257697331e6edac3ae2ae86706fe447cd67fd78c437bf63447ee29a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f8ad2dea67f1a75bdbc17149f0685046d9496d63c033d2007d2e02b6fa61aff"
+    sha256 cellar: :any_skip_relocation, monterey:       "c7451294d51d644fb9772601331ab835c18a14db060d7872ce3373eed6ba7605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "477138a3023713e0d77f6969713ee3ead5c34de43dd112bf706102a7328fa55c"
   end
 
   depends_on "cmake" => :build

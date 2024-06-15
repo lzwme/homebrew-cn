@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.4.tar.xz"
-  sha256 "45aea378933b9e468f656051ed2bfcf93bab02bb350f94e8754727eb17b407a4"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.5.tar.xz"
+  sha256 "6d2b2d4cffbd8313a11e73bc3c86f8ff95bc5e0def7359efac3033f563051894"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "ff9f4f4ae73b954e8e058fc3ebc46f6e77a179fd3e144860c94811d8b8b5e6d2"
+    sha256 x86_64_linux: "00af5fb50a451d1dd677cc6193543f8e9983830ccb53f05954c8c78c9ede5561"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -31,11 +31,15 @@ class Apt < Formula
   depends_on "gettext"
   depends_on "gnupg"
   depends_on "gnutls"
+  depends_on "libgcrypt"
   depends_on :linux
   depends_on "lz4"
   depends_on "perl"
+  depends_on "systemd"
   depends_on "xxhash"
+  depends_on "xz"
   depends_on "zlib"
+  depends_on "zstd"
 
   fails_with gcc: "5"
 

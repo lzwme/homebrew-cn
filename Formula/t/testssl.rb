@@ -1,14 +1,19 @@
 class Testssl < Formula
   desc "Tool which checks for the support of TLSSSL ciphers and flaws"
   homepage "https:testssl.sh"
-  url "https:github.comdrwettertestssl.sharchiverefstagsv3.0.8.tar.gz"
-  sha256 "22c5dc6dfc7500db94b6f8a48775f72b5149d0a372b8552ed7666016ee79edf0"
+  url "https:github.comdrwettertestssl.sharchiverefstagsv3.0.9.tar.gz"
+  sha256 "75ecbe4470e74f9ad17f4c4ac733be123b0f67d676ed24cc2b30adb41561e05f"
   license "GPL-2.0-only"
   head "https:github.comdrwettertestssl.sh.git", branch: "3.2"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3a76af565cfb3d79ede861d1ef2edaa3bea39f94dcfa3d8bd7ee72979afbb4f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "89c2d9fac34c18ab2661f9b816e137bbb787b9dea9c14993cf7299a9902429fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26122e016d5896b307e53cd37cbd0fb040ab684fe5462fca6959efa8a91bbb1f"
   end
 
   depends_on "openssl@3"
@@ -30,6 +35,6 @@ class Testssl < Formula
   end
 
   test do
-    system "#{bin}testssl.sh", "--local", "--warnings", "off"
+    system bin"testssl.sh", "--local", "--warnings", "off"
   end
 end

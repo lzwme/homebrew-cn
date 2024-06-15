@@ -1,8 +1,8 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
   homepage "https:www.embree.org"
-  url "https:github.comRenderKitembreearchiverefstagsv4.3.1.tar.gz"
-  sha256 "824edcbb7a8cd393c5bdb7a16738487b21ecc4e1d004ac9f761e934f97bb02a4"
+  url "https:github.comRenderKitembreearchiverefstagsv4.3.2.tar.gz"
+  sha256 "dc7bb6bac095b2e7bc64321435acd07c6137d6d60e4b79ec07bb0b215ddf81cb"
   license "Apache-2.0"
   head "https:github.comRenderKitembree.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Embree < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f59edde2dbe52f9e37e8f00f164700e21b7516260c37dd00a30a1f0e791d8714"
-    sha256 cellar: :any,                 arm64_ventura:  "3e6831dac7fadc2e65a3570d1c5c8e092ed0613a463b189c1991891369b90c76"
-    sha256 cellar: :any,                 arm64_monterey: "35b992ef6d162a1271d621ed5edc429fb292993ed96605936ac682982df332ee"
-    sha256 cellar: :any,                 sonoma:         "2f83ac47b08204dd27fc9deec489da48d6ef3c4bb326a5affa6a01fc2eb72738"
-    sha256 cellar: :any,                 ventura:        "19bf35024448598f3efc4ee3f055fa123dc7b80997178fbe36f395951579b8f5"
-    sha256 cellar: :any,                 monterey:       "70a9be414f42b1ae43560deeb6973c06d34670c6c1bc76d7656c51c6b00fdf8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "183323e174eca3b25b65f8dabae19bebb41dd62f52269cdccf09fee81c4d0d08"
+    sha256 cellar: :any,                 arm64_sonoma:   "ac773161f3b2822c0580db066372b63d518939c55671155bd20c54f16b7fc4f1"
+    sha256 cellar: :any,                 arm64_ventura:  "50deea7d486f6c56ff0204e1b33725e659f3fd48520a5408a82c09ca75da0379"
+    sha256 cellar: :any,                 arm64_monterey: "a3652817a19d9546c433aed696636672f001ca3bc0e1d04eddf11f3cecdaeb19"
+    sha256 cellar: :any,                 sonoma:         "b513021f43c4091e2a74062aea477f96cfc18f42ad069ea894692008da0882d2"
+    sha256 cellar: :any,                 ventura:        "2d0c627deb353c1910004ff5c509d10ee8a1090bff875da70b06d4bba7d60ad0"
+    sha256 cellar: :any,                 monterey:       "b0b9d01cbaa94d41552a66811150861f71a62f3d587b63e565097389d66d7163"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "837fd1ec85bc0c68fb629b2263289d0a6b2eb3a303f868b7b69b7c2c40fecabf"
   end
 
   depends_on "cmake" => :build

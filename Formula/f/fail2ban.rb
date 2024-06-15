@@ -4,6 +4,7 @@ class Fail2ban < Formula
   url "https:github.comfail2banfail2banarchiverefstags1.1.0.tar.gz"
   sha256 "474fcc25afdaf929c74329d1e4d24420caabeea1ef2e041a267ce19269570bae"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comfail2banfail2ban.git", branch: "master"
 
   livecheck do
@@ -12,14 +13,13 @@ class Fail2ban < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "9a2ad3c6f2d059d4850a456ee61d2ec7fb98871b691bf5459c5f72eb35718153"
-    sha256 cellar: :any,                 arm64_ventura:  "29d10c2c5fd555dde333ae1336671c4d6fd60185424b3d27ec96eb425d54acf4"
-    sha256 cellar: :any,                 arm64_monterey: "51edc42706c0111efa1b50c3d5a126560089ee21b71fd885a1dcb273a495dc9d"
-    sha256 cellar: :any,                 sonoma:         "1b8b7461c2cd1dcecb4e63b86e18e321fcd874a4f89a07991bffca12cc48c78c"
-    sha256 cellar: :any,                 ventura:        "a09486a0617d89608ecf994caffd4e113df92706fb8a544075ca0b543a5d9c77"
-    sha256 cellar: :any,                 monterey:       "15c3b1fdcf3acd343a965040256f3c5ab524f7d67f1d052207134077ed32d6e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c45ae1eabc4ee45291465540dbcd94724fa9bab68f93f85a11821e7de4dcae8"
+    sha256 cellar: :any,                 arm64_sonoma:   "cf5c1de50ffc65ce116fe5dac16941d4910db66e3e8367da6e895c2140a8a6f4"
+    sha256 cellar: :any,                 arm64_ventura:  "0fb591826aa549f9f6f34f266c13078ae9bfc60644c8a8d79fbaf78c1ed8da9f"
+    sha256 cellar: :any,                 arm64_monterey: "f1c5d007357f9473b73052e2d421151dd7d165d2948b70f3c81fba92ea3bcc62"
+    sha256 cellar: :any,                 sonoma:         "1b223090596c6c0d992def9b4e0ca00207c63b9904b2ed872936d43cba98c87e"
+    sha256 cellar: :any,                 ventura:        "40c3c8513dc38e606ef54519ebf9eeceb93178215d4fbdf3172b22647fe8f1d3"
+    sha256 cellar: :any,                 monterey:       "e897703f4b3a56e898adae42d6fd335d4f9dd9337ebcf2b14b99615d9b3f5968"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "018bc1240512d0832d3dba7202cfb5933ade5e0f43aa8b5653c76006b8d586fc"
   end
 
   depends_on "sphinx-doc" => :build

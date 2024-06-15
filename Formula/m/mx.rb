@@ -1,8 +1,8 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
   homepage "https:github.comgraalvmmx"
-  url "https:github.comgraalvmmxarchiverefstags7.25.10.tar.gz"
-  sha256 "6e8d420cc69d436b479619c0be3df49a6cb83c64892946effc0754dc583acddd"
+  url "https:github.comgraalvmmxarchiverefstags7.25.14.tar.gz"
+  sha256 "5eb750eb90f47d122d75f57cd01072b2a28a6f59846f3130b72a3132e8800499"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49f6b9aa9fd4d5de00bebe039cad73ceeb57db3901af208fbf062b6ba0ca6c90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49f6b9aa9fd4d5de00bebe039cad73ceeb57db3901af208fbf062b6ba0ca6c90"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49f6b9aa9fd4d5de00bebe039cad73ceeb57db3901af208fbf062b6ba0ca6c90"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f62f8b2c5f195378903cd3778245a962e9ce1c7a5ff784bf106690e694215ddb"
-    sha256 cellar: :any_skip_relocation, ventura:        "f62f8b2c5f195378903cd3778245a962e9ce1c7a5ff784bf106690e694215ddb"
-    sha256 cellar: :any_skip_relocation, monterey:       "49f6b9aa9fd4d5de00bebe039cad73ceeb57db3901af208fbf062b6ba0ca6c90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f129e72af8b983c18d0645af769a77b9dfafea677344b1eac9194ae0492d60c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd355fd19ae55cbbba986475d37b033f161f1989c6cb96f2c562a57b764b390c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5ce1798e2fd77acbcf73ab6ca7714828c7bbd20e9602ff03b0fb5744bc614f1"
   end
 
   depends_on "openjdk" => :test

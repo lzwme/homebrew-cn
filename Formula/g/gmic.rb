@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https:gmic.eu"
-  url "https:gmic.eufilessourcegmic_3.3.6.tar.gz"
-  sha256 "783db018dece6dc443349ddf1cc85ff06b2aeb9a4612f795859c39c85d38fddf"
+  url "https:gmic.eufilessourcegmic_3.4.0.tar.gz"
+  sha256 "4fc0c79eed360c4f804d8110d7955bc8e0db9a14fba9483fe494f02c3640be69"
   license "CECILL-2.1"
   head "https:github.comGreycLabgmic.git", branch: "master"
 
@@ -12,19 +12,20 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bc9570a59e7f1da952c0e2462ade936c53d37bc7eeafa8dfd24484fd62d5973a"
-    sha256 cellar: :any,                 arm64_ventura:  "2de30fd027cc5259b3a7715190362c7242f8b2a351164efe16154588d202d418"
-    sha256 cellar: :any,                 arm64_monterey: "e7874607857384f572ceb96c31cd88b055d3203dd033a663371963f62dd8c689"
-    sha256 cellar: :any,                 sonoma:         "e0934d639d85e5afbf6eb39ed01aa4bacdddd3a038a98dde203ffd9a3df622dd"
-    sha256 cellar: :any,                 ventura:        "d5fce309d3f780779c2d88137ab550a13c563e1b92a37f5900f643ee87b4d483"
-    sha256 cellar: :any,                 monterey:       "b8bb90b5aa90e1897f39a385c3535bd129157e31bc039ebd94bc7f53bf1a9ec9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34c17e417f9ca175243984e464bb49b0e01a5a02ea7aa150d9120a096b28ed69"
+    sha256 cellar: :any,                 arm64_sonoma:   "2aff00789d67f96ac9769c7db736edc894d67299a951e4163184b08867c5eea8"
+    sha256 cellar: :any,                 arm64_ventura:  "1a763350b3103aa9c6082e2f8fd22ef9b10f41b9e05da970b2d703f75caab062"
+    sha256 cellar: :any,                 arm64_monterey: "0c018c3c576b2301a5a9de92c42950c5a28230b39c7501b4e5a87426485b48ba"
+    sha256 cellar: :any,                 sonoma:         "d5a768c488dc8ff9bdbb58a5e66169f239324599f1275d9164b86bf9f010ffb5"
+    sha256 cellar: :any,                 ventura:        "6990dd996965abe8c986629a932e313ad0173cfe860aaccb057485c0b50ec631"
+    sha256 cellar: :any,                 monterey:       "153dc171edb149ad53761203c5c781d4613fe4bf42c9b9885f063fcc8249dd89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4475048a21c9d904eb07fc4243a93ed25726a0960022a12d146b183965d46ea"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "cimg"
   depends_on "fftw"
+  depends_on "imath"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"

@@ -5,8 +5,8 @@ class Ruby < Formula
   head "https:github.comrubyruby.git", branch: "master"
 
   stable do
-    url "https:cache.ruby-lang.orgpubruby3.3ruby-3.3.2.tar.gz"
-    sha256 "3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
+    url "https:cache.ruby-lang.orgpubruby3.3ruby-3.3.3.tar.gz"
+    sha256 "83c05b2177ee9c335b631b29b8c077b4770166d02fa527f3a9f6a40d13f3cce2"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
@@ -28,13 +28,13 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5c302be6759299396709e09711fd4ccce82d7b02fa20cd3a30f85d324ba7a66f"
-    sha256 arm64_ventura:  "e4112aade8f329f37043cee611e6ea496b783cd01b41186b6d324aa8f875cbdf"
-    sha256 arm64_monterey: "8076a90c8469146ddbcbaab3e96885e33072317edb804072b30bb87da3ae45fa"
-    sha256 sonoma:         "5ae0365228c916318e1d0ac1feb1317ff0bc55a39fcbae7fda5fe49f53f65a76"
-    sha256 ventura:        "7845e15c6780d035ecc2b448b4dea084825d090bc7f503448991569d881bf38c"
-    sha256 monterey:       "4a45effa020ece0ac81107debc6b5fa60864f458f2e4e0dfc9c2212df2661a50"
-    sha256 x86_64_linux:   "d2a638039fe1b24e6babfa137dc6e426c8a44be20752d6741fdf105913df7bfc"
+    sha256 arm64_sonoma:   "506cb8e8011c02be15e4c13ad6a0bf32335dc8c3a1da8063d8262b4afbe5bd3b"
+    sha256 arm64_ventura:  "08805f5b9a2e94ad11253a4bac14cf3d0dafbc8838b386a4bd5ba15f7850fc0b"
+    sha256 arm64_monterey: "754a5a2fbf192c204aa72bf1641e1b9cf6b4988e273f10d82cf61da7b1fec9ea"
+    sha256 sonoma:         "5ee31524d8a1f8d15ba120af35705ae37e070948a2f14a9fc7d353aae93b07b8"
+    sha256 ventura:        "60214b23b66f6fc1734a74d1e8d1a167a01f5e45545b1bd81a5071e21ab2bab6"
+    sha256 monterey:       "00ed646493fbc77e9b008276c33a325e4bdc96bec6e6b3dbb7571b6a1e41e562"
+    sha256 x86_64_linux:   "5ecbf946cb539ca909a0133fff5342bd11ea0779a611cbf51b2e5e0de3342c62"
   end
 
   keg_only :provided_by_macos

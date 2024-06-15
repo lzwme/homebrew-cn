@@ -14,6 +14,8 @@ cask "porting-kit" do
   app "Porting Kit.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.paulthetall.portingkit.sfl*",
+    "~LibraryApplication Supportportingkit",
     "~LibraryPreferencescom.paulthetall.portingkit.plist",
     "~LibrarySaved Application Statecom.paulthetall.portingkit.savedState",
   ]

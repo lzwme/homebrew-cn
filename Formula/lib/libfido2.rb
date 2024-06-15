@@ -1,19 +1,18 @@
 class Libfido2 < Formula
   desc "Provides library functionality for FIDO U2F & FIDO 2.0, including USB"
   homepage "https:developers.yubico.comlibfido2"
-  url "https:github.comYubicolibfido2archiverefstags1.14.0.tar.gz"
-  sha256 "3601792e320032d428002c4cce8499a4c7b803319051a25a0c9f1f138ffee45a"
+  url "https:github.comYubicolibfido2archiverefstags1.15.0.tar.gz"
+  sha256 "32e3e431cfe29b45f497300fdb7076971cb77fc584fcfa80084d823a6ed94fbb"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "124c6acd3f42b69035cdf61dc1a03b3fdf86c1290a3c9ad3144c4732d25b798c"
-    sha256 cellar: :any,                 arm64_ventura:  "42504c5bc3a7895b31365222687510f4ff386f129072b2e73b365e1e1d69f2f8"
-    sha256 cellar: :any,                 arm64_monterey: "c9f675b9b835f8b391bda4c63c20d24fda863649b5154537da2373b6835ca9ea"
-    sha256 cellar: :any,                 sonoma:         "3dee804ca54bc15d99e4a47cbecec62e7ffe64323afa476811bf1b2c7f8326bd"
-    sha256 cellar: :any,                 ventura:        "6e06c97e6d5231ac270ea458d2d528826fbef7438cc3973ce2a10ed09a9896d9"
-    sha256 cellar: :any,                 monterey:       "0fcdef5244969f2f450415daa7a51aafac325f0ed0cf63215306ca6017c17094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9a9fe328eb53484cda674637c633c9cd0030593f2efc6bcb249ee7cb19c6bd6"
+    sha256 cellar: :any,                 arm64_sonoma:   "af63db962f5466784b450d1052475668fdb7fd8588f6f0f52c952e4445739fda"
+    sha256 cellar: :any,                 arm64_ventura:  "33c05cce853e59f211ae4dd2bac144b57d27a94537a79ffbee97c5efa34cbd4a"
+    sha256 cellar: :any,                 arm64_monterey: "451806f5a0f08d301a6789d705614f2cf1c7dceeaa88005c584280f907924447"
+    sha256 cellar: :any,                 sonoma:         "c25ffe40fef70db5d37372fcbe4d3e34eb50ba9c5c0e3714d3cbb09d07c9a73d"
+    sha256 cellar: :any,                 ventura:        "2592f9c608fddf4d40e6dc9eb0d64e56fe3e960dbd51ef8abfe928c40ac1e27c"
+    sha256 cellar: :any,                 monterey:       "139818589401f84797b5e581312b3a0208d0ce308eb0b7ae55e9546cd5bf674a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ebead53de6c6dd99885d4b3fb94cf0c753995a280824cb06b63b26e0bd1d40"
   end
 
   depends_on "cmake" => :build

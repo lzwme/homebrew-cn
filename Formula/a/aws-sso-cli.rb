@@ -1,27 +1,33 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https:github.comsynfinaticaws-sso-cli"
-  url "https:github.comsynfinaticaws-sso-cli.git",
-      tag:      "v1.15.1",
-      revision: "e2ec94d101ba9f9c8af8d766d3961f92e116a025"
+  url "https:github.comsynfinaticaws-sso-cliarchiverefstagsv1.16.1.tar.gz"
+  sha256 "276d3f257ad8299d43c60ed4c87ddc72c9c14d29efa91fa8b27b3fb49f2acbd0"
   license "GPL-3.0-only"
   head "https:github.comsynfinaticaws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35786787cfa8317d878038738f1c024184eb5ca3f6dd1b886510fc3b97880e33"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbf061ce4d268d244f88e8e96612913ae7f0e371ce56d6579be0604db158513a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efd0a989bf4ae8fdbc4c57e6fa1f2837a4a8995f7b56f625b3782a8296087bbf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "463433d7d16ceded8133d73d60e60d7fdeb39794543c25e0c0eba03078d78b22"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb6235800ee66cd94dcd3205569259f3584f48883b4214c16db2c9c4f6a73666"
-    sha256 cellar: :any_skip_relocation, monterey:       "26b69d185dde783e7e42ee9b49579d1f941808405be7f06810e5a9cf36086a9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87d6e8627a3acbbedf04dec38d9ede0ed2bed41a771b02cd70791d0deca26703"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2180f62bdc51f75152a059e63202f66f1d8c5dcff5d058262c3219529a1055ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9603b79d6aed4ac82e4f73a74f5e7c7c6ea73596562a557f0789c6c38bab343"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3183cec9199136bd68a2eca7adeb0a45a7f5e276a995ea403e5d0b8ba52afb1b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34d357e055f45f1459765d091235929d496c4dcd826575f4c656917c60cb06eb"
+    sha256 cellar: :any_skip_relocation, ventura:        "4eb2aae5b89c8679a6fe2f7ba525f770958048f8b504ebcfb263e79935790e50"
+    sha256 cellar: :any_skip_relocation, monterey:       "55a43f9042182176317a158d3cf8a5168970cb73b6a521398dbe97541ef0d78a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51377617b355fe27abc09f8a397e63519c13509cfca9b9178bdcbb9f21d78f9d"
   end
 
   depends_on "go" => :build
   depends_on xcode: :build
 
   def install
-    system "make", "install", "INSTALL_PREFIX=#{prefix}"
+    ldflags = %W[
+      -s -w
+      -X main.Version=#{version}
+      -X main.Buildinfos=#{time.iso8601}
+      -X main.Tag=#{version}
+      -X main.CommitID=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(ldflags:, output: bin"aws-sso"), ".cmdaws-sso"
   end
 
   test do

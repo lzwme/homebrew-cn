@@ -23,19 +23,15 @@ class Fb303 < Formula
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
-  depends_on "libsodium"
-  depends_on "mvfst"
   depends_on "openssl@3"
-  depends_on "wangle"
 
   fails_with gcc: "5" # C++17
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXTENSIONS=OFF",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", "-DPYTHON_EXTENSIONS=OFF", *shared_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
