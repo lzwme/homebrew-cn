@@ -1,18 +1,18 @@
 class Scnlib < Formula
   desc "Scanf for modern C++"
   homepage "https:scnlib.dev"
-  url "https:github.comeliaskosunenscnlibarchiverefstagsv3.0.0.tar.gz"
-  sha256 "4435489aeaf4cdb8f81d0c48c4185e8436d80c57cff3e6cc7d1decd236f62fa6"
+  url "https:github.comeliaskosunenscnlibarchiverefstagsv3.0.1.tar.gz"
+  sha256 "bc8a668873601d00cce6841c2d0f2c93f836f63f0fbc77997834dea12e951eb1"
   license "Apache-2.0"
   head "https:github.comeliaskosunenscnlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "730190d9f70b73d62b5c3d4186f5b47b2ba012c5c832aafc56a124a75c46099b"
-    sha256 cellar: :any, arm64_ventura:  "584fbbee0ec2401ca39ea534bcaff880a23b306c013775b1589859b8394c0d48"
-    sha256 cellar: :any, arm64_monterey: "2c7b090821076f75c533a97e5d06fc6b0b6001214235d29780f25da01ee64428"
-    sha256 cellar: :any, sonoma:         "04788975f9299a1162ac639acecae402094cf3b341a4b7f389648cb74f770ba9"
-    sha256 cellar: :any, ventura:        "b4ab1c26817878ccd33cd0ba5428934b2285e2323120741da8d8b74c8e9c305c"
-    sha256 cellar: :any, monterey:       "0bd33a5b9ebca24788197953047ff92ec75d593eabd00384e45495da3dce1e93"
+    sha256 cellar: :any, arm64_sonoma:   "def3883afe16f2e32c65d6f9331aa050124e602abdc35a20bd88d6beafb668c0"
+    sha256 cellar: :any, arm64_ventura:  "00ed2164ad8e23214486727d7fa9ef9cbe3bcaaa15f9c273df7b90e1be7fbed3"
+    sha256 cellar: :any, arm64_monterey: "121ad95a6e8d037dfb926d43ae88e5621592ca39a444dab497833e6535e4957f"
+    sha256 cellar: :any, sonoma:         "a1ae7d4535296341082febf3ccae1e3cff7f218687642428c2029e6ae06fcf97"
+    sha256 cellar: :any, ventura:        "91a8f6f2cad11299e504249add90dda7c3ee47f37b0fc07a769153e3a343e445"
+    sha256 cellar: :any, monterey:       "a8890b190420eb0ddfdf11b464719d5f51fff232b62c79060ce29b877e759af1"
   end
 
   depends_on "cmake" => :build

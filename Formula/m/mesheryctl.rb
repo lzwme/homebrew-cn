@@ -3,18 +3,19 @@ class Mesheryctl < Formula
   homepage "https:meshery.io"
   url "https:github.commesherymeshery.git",
       tag:      "v0.7.74",
-      revision: "6fe68af18e0fc23461ff012752af980d70eb39b3"
+      revision: "ff94671da80712b413630d7c5731923f0ba51e2b"
   license "Apache-2.0"
   head "https:github.commesherymeshery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6361c4c9bf9a4e4909b186a087370eff349ef4582dd82a6a7c0b529ed542a830"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6361c4c9bf9a4e4909b186a087370eff349ef4582dd82a6a7c0b529ed542a830"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6361c4c9bf9a4e4909b186a087370eff349ef4582dd82a6a7c0b529ed542a830"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3dfb80e6c14037288c8664aafaae1d8ade544b80878214ca0d5672dfad7f76ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dfb80e6c14037288c8664aafaae1d8ade544b80878214ca0d5672dfad7f76ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "3dfb80e6c14037288c8664aafaae1d8ade544b80878214ca0d5672dfad7f76ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05f5774e8069a8d2c3dfd96b3ec7a52086b7c9ba17e58312c303e1ca2c6dd8f3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1818e1c51ca7f4c8240522c65b1c53af44a32f6e9cef4189a4d4d0c5d56e3c26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1818e1c51ca7f4c8240522c65b1c53af44a32f6e9cef4189a4d4d0c5d56e3c26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1818e1c51ca7f4c8240522c65b1c53af44a32f6e9cef4189a4d4d0c5d56e3c26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0dc278cd1dc6f2a76f9a17788ee4c923f2f7b500ea047ba7e5e16a9c34b128d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dc278cd1dc6f2a76f9a17788ee4c923f2f7b500ea047ba7e5e16a9c34b128d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "0dc278cd1dc6f2a76f9a17788ee4c923f2f7b500ea047ba7e5e16a9c34b128d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49fcfe48fa4a842fde3ceb7d7d7228f024ce5c42b957f559443e55340655d1ef"
   end
 
   depends_on "go" => :build

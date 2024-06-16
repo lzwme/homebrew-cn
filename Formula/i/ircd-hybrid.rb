@@ -1,8 +1,8 @@
 class IrcdHybrid < Formula
   desc "High-performance secure IRC server"
   homepage "https://www.ircd-hybrid.org/"
-  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.43/ircd-hybrid-8.2.43.tgz"
-  sha256 "bd0373c780e308c1a6f6989015ff28e1c22999ef764b7b68636b628573c251ef"
+  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.44/ircd-hybrid-8.2.44.tgz"
+  sha256 "6bf0c2ff5fc643dc1757a232c9bd5825d33891c7cc1837f024ad4fff7c61c679"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,16 +11,13 @@ class IrcdHybrid < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b1d51228ff4227f5c004295ad3dd01d05cae278355d7c88e206e9ef8b70ef9cf"
-    sha256 arm64_ventura:  "6a81e2c060cd566f402869f96af0ed8c64a0ed34bab832d647e7376b55b208ff"
-    sha256 arm64_monterey: "8278654b1edca6191c1d549e796919b6836e524feb4a59b44860f817965b81da"
-    sha256 arm64_big_sur:  "b3927d1e5ddbfb44800b02eee5fd9fe88fc597589f3810fd1fd41deb20713f4a"
-    sha256 sonoma:         "241be12e6feffcef270561492c12315c6bfd10116adca9f5e9735aa265f01a53"
-    sha256 ventura:        "5a528cd1893e00df7ccbfe9b9fb324dc3574da86c6a358113ded14fe7e2407bb"
-    sha256 monterey:       "c7ffbfb6de2e476e248bd63c2b963abee68e684ce4aac3042c9406e12ecad09e"
-    sha256 big_sur:        "2eea0b23275797fe30f9095cbaebb167d707a08250bc66f5a0c729851bba7776"
-    sha256 catalina:       "2a1ce03715e20c3fb69c1716362471a7d1ee2ed4230c8db80347c7ef42986b7e"
-    sha256 x86_64_linux:   "e2bd735a173dbb77da8bb51a30b82844d4225f4ee2e3056c2afbc5c624c623be"
+    sha256 arm64_sonoma:   "72fdc6acf53edb6e1d9eb992b62f4b0a40d8179ec3d6901431cb5686292cf4a3"
+    sha256 arm64_ventura:  "9daae1aa570e53ed800fbea6bcd728b315a56b6b63e83db3e8a4b530f7990f42"
+    sha256 arm64_monterey: "dd47cd78b1d73d65cdc39009d11a7acbc1bc7798d5df698bbf5aee1f170f1cd0"
+    sha256 sonoma:         "542ea12fe02e1112a863332c2a091a2cdcfcd2ed1bcf86c863649285a5e28597"
+    sha256 ventura:        "f045df6dd88c979d70c4b4e9f9181492e5ee420fd086b39a56d8f0061f16c3f9"
+    sha256 monterey:       "b5988373fb4c8596bdfdf13ac57a8df69077e2fd65cd60e04076556c53649898"
+    sha256 x86_64_linux:   "40e86951cf10d46446468540e2142b894bc03608e8e47aafdd166cf397fa85fe"
   end
 
   depends_on "openssl@3"

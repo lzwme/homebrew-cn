@@ -2,9 +2,10 @@ cask "font-playwrite-ng-modern" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritengmodernPlaywriteNGModern%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritengmodernPlaywriteNGModern%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite NG Modern"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+NG+Modern"
 
   font "PlaywriteNGModern[wght].ttf"
 

@@ -22,7 +22,7 @@ class RubyAT27 < Formula
 
   # EOL: 2023-03-31
   # https:www.ruby-lang.orgendownloadsbranches
-  deprecate! date: "2023-05-14", because: :unsupported
+  disable! date: "2024-06-15", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"

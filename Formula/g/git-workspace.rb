@@ -18,6 +18,7 @@ class GitWorkspace < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
+  depends_on "openssl@3"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

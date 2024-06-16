@@ -1,21 +1,18 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
   homepage "https:freeglut.sourceforge.net"
-  url "https:github.comFreeGLUTProjectfreeglutreleasesdownloadv3.4.0freeglut-3.4.0.tar.gz"
-  sha256 "3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec"
+  url "https:github.comFreeGLUTProjectfreeglutreleasesdownloadv3.6.0freeglut-3.6.0.tar.gz"
+  sha256 "9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5609fda7a635a92cdb67576afb5b90026c7f6f782763eed097ec8bee66058edb"
-    sha256 cellar: :any,                 arm64_ventura:  "ee111ddfa7bdc0a6b3e6857e900d387388264bc5b0c6334d8c5e103b762fec8b"
-    sha256 cellar: :any,                 arm64_monterey: "149209f3f7f7f2d849bfd938ca7da2abe9e1302f41fa1bb107985087c97aa9cc"
-    sha256 cellar: :any,                 arm64_big_sur:  "232cbfd50de1285bbc009e713da698c25d9928b42de042f001a74ef5f83e990f"
-    sha256 cellar: :any,                 sonoma:         "06b73b47b9e4ba5951c74ef179ecce846ebfa3ed1774c05a820ec40c0fce29c6"
-    sha256 cellar: :any,                 ventura:        "7c7e7fe57e38c1f1bdcd52a4ec9e81a217699131bb88ce35f8865963179d288a"
-    sha256 cellar: :any,                 monterey:       "dcebb4520aba3f89fb3662e5d896ac1eef92fd57259e94402d53b2d12ad66a19"
-    sha256 cellar: :any,                 big_sur:        "16825f785a572f580450f63be3c51fd737303ee664b4c774eaea7b7dcf434db3"
-    sha256 cellar: :any,                 catalina:       "ebd335220912ca9e72e40d98358f6e8d6f0d27c4c72024ac1d6a59004301cba6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7751750942757f330249bf3d6a84c7a6b69fe4a29cbb502832c338ccd1927d7"
+    sha256 cellar: :any,                 arm64_sonoma:   "cbd441a4a55c8b7db3732964e1dea5709fc7a9698a3bfc8df498f306a19b7df9"
+    sha256 cellar: :any,                 arm64_ventura:  "9e1d3f9c8cedb8b611e66158e898d46bbcb4e28aaf5280536917b0f30b207cb7"
+    sha256 cellar: :any,                 arm64_monterey: "02606145d1a13b1a22e9ce8b61c61701dd903b17aa962f9abbdfe558cc3e00ca"
+    sha256 cellar: :any,                 sonoma:         "ae8ac9e040e9fdefa287e882cd7fec7b0952a98dc5bf025875b0b16d2c6a37a6"
+    sha256 cellar: :any,                 ventura:        "e636688689f5be4828151ce0ad415387fd10b0a6fd4610a9c0919882c8e084c9"
+    sha256 cellar: :any,                 monterey:       "95b2565476d715ae6a7a8230ae2af1539455cdba8b898e640ef1f7ca2e7926a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd41f7adaac60fd1674cd3147c0f10d6eb37f48345b1b13d6f080c4d0e1a68b"
   end
 
   depends_on "cmake" => :build

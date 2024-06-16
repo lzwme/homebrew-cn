@@ -9,13 +9,14 @@ class Sigstore < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8de62a050155bc8fef083b9032b8f5e94e9d35d6ea82ad5a6c3b7be41f0f16ba"
-    sha256 cellar: :any,                 arm64_ventura:  "e26bac0274b47e6d7d61cff0f0d00a087e3555882dc8f1c3750d7b9979e5eb58"
-    sha256 cellar: :any,                 arm64_monterey: "476f1190ee91120890613374562dae3d8dc34fba5824ba9b71004461359894f3"
-    sha256 cellar: :any,                 sonoma:         "9e96fe0ef4466346b355de948d526e018bfee005adf4bfcdd55d988526f14395"
-    sha256 cellar: :any,                 ventura:        "d3826971b04df8797d0337a3ef27c79e74a94899998785b52e368458ecf4cd2f"
-    sha256 cellar: :any,                 monterey:       "c4ae37d9c105681e940eea002e9184015ef17bd03d4b566e2462163e28dd2a77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a890264eb5db0f726d13e8b98485fdeeb84674cd5957d48840b1708fdfcbb15"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ba13cbb68ddc4de85b6764cf69c9b173b752b2e52b4929aaab2df2eff2893850"
+    sha256 cellar: :any,                 arm64_ventura:  "279c1672060c8c84915ef515c4d85e0a99aaea52de353ef76c77d7496827875a"
+    sha256 cellar: :any,                 arm64_monterey: "3f2fad5dfc37e8c018f78b05402d599d11457b741eb30e5e05102c1342991c57"
+    sha256 cellar: :any,                 sonoma:         "5d8b72db0fd8b310b5b7f94650d5d7ae98d022feb5e28d0bbb75b050b59bbc24"
+    sha256 cellar: :any,                 ventura:        "95255527401b71257ff19e6339a877083600325103a1e612eb7719f798758c26"
+    sha256 cellar: :any,                 monterey:       "d3429041d25f22b623c901dc4cd2ffdd91829fcfc3b196d6fb1c2c4036470429"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f4b58d2370e0cbb124fd7674f424db2774987e54ea8a47e4cc4985489bcf12c"
   end
 
   depends_on "rust" => :build
@@ -104,13 +105,13 @@ class Sigstore < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
-    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
+    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
-    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
+    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
+    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
   end
 
   resource "pygments" do
@@ -134,13 +135,13 @@ class Sigstore < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rfc8785" do
-    url "https:files.pythonhosted.orgpackagesf82f071527b61df98ec4c812cc98cd078ebf07bd7f05606e29c609a60b850143rfc8785-0.1.2.tar.gz"
-    sha256 "4668c70e02f4cf96327d60375d2f1f21958830ff777e0e414424a794323521a1"
+    url "https:files.pythonhosted.orgpackages7d8fdb412a9abee1d6f982371512db2078c0148776aa96964d62bf4c15a78713rfc8785-0.1.3.tar.gz"
+    sha256 "167efe3b5cdd09dded9d0cfc8fec1f48f5cd9f8f13b580ada4efcac138925048"
   end
 
   resource "rich" do
@@ -149,8 +150,8 @@ class Sigstore < Formula
   end
 
   resource "securesystemslib" do
-    url "https:files.pythonhosted.orgpackages80f5242b9e3186cdb462dfa7d8bc6a7f8f2332edbcb588cbf27eafc4a0a12674securesystemslib-1.0.0.tar.gz"
-    sha256 "50f5053e274066502da7785dfd12b21e61131ca6e8b57ecedd2da0d1e9cd66c1"
+    url "https:files.pythonhosted.orgpackages81add01a19c754c512f35ed3b955db08bd3d077a322038bc8544e15c7b016b76securesystemslib-1.1.0.tar.gz"
+    sha256 "27143a8e04b5573636f260f21d7e26b48bcedcf394e6f74ec31e9a5287e0c38b"
   end
 
   resource "sigstore-protobuf-specs" do
@@ -174,8 +175,8 @@ class Sigstore < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do

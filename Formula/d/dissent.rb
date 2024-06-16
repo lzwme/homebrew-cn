@@ -1,19 +1,19 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https:github.comdiamondburneddissent"
-  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.24.tar.gz"
-  sha256 "65537bbc947acfc53fdd7bf0ab98e083fb78af73507b27deec9ba92c1bc783cc"
+  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.25.tar.gz"
+  sha256 "286b1b1409f55950ded8e02fdea4ef0f1a5d27f552c04ec70bd52fdfa7a94cee"
   license "GPL-3.0-or-later"
   head "https:github.comdiamondburneddissent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c945bf5d945474d36acdf05c6e9ea0584d5c1021b7c22918f278626f1723302e"
-    sha256 cellar: :any,                 arm64_ventura:  "9d18607c8a0ccb1bcc7d5198198266e84863a4d3b36119863e9b4dff9ddbe56e"
-    sha256 cellar: :any,                 arm64_monterey: "0035dab703869173a5ea4b61926d978d50eb852259c1ae7b9ca25496d2603e18"
-    sha256 cellar: :any,                 sonoma:         "a24f1a11ba24ad181ef7a27ecbb4960b8ad7cf836903e9d89d5aada56481105e"
-    sha256 cellar: :any,                 ventura:        "8729e5f9a0d6267f1e15e88737a7226976863ac99d3f3e88566ceb6c0b802290"
-    sha256 cellar: :any,                 monterey:       "0b6992a6cb33163bfcd0e71956b8bc00e87051a7e3f870597d4be2d22ae48c85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8d3c45975320f4621985e57b5d891e14ac6be8d823b2c25f06167f47266aaba"
+    sha256 cellar: :any,                 arm64_sonoma:   "e45eeaab0b0855dfad5a03c85e3c35d2fb25fcbd763e09c87e90883849e9a5b2"
+    sha256 cellar: :any,                 arm64_ventura:  "b2b67f7ac2a2047fbd57bff2c5dc2bcc33f48ba6111bb858eaf9bb6778b28062"
+    sha256 cellar: :any,                 arm64_monterey: "4570148e5715a6b4c2815cb2a245d565acbd83793452529d7cd64d5181f31c7c"
+    sha256 cellar: :any,                 sonoma:         "4d1e194e8ef87eebdcc41e5440a9f695358b8b1986ae166fc5a053674fc310b7"
+    sha256 cellar: :any,                 ventura:        "a707d35748e513acf31c62466fc715c358cbfea77eddf38f42d11f845a18d753"
+    sha256 cellar: :any,                 monterey:       "18377c830560827726ad46a325616b27b9820a56f6c1e114082cbae9efd5c6c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39904d58aecb51a459876858d1c7a63314945c4e73186ceaf733426232b6242d"
   end
 
   depends_on "go" => :build

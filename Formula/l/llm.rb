@@ -8,13 +8,14 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "949b438a80b7387235a9cf042ad01e833e97d13b492dfef7e678fe0439a9f7df"
-    sha256 cellar: :any,                 arm64_ventura:  "97f89cd134c2f229e5d8d02d583a38a2543246a0cac77fd2d4537cdd8e2a8156"
-    sha256 cellar: :any,                 arm64_monterey: "21efdeeac4f1e68819404717770a7820307904070b6141f43e09dd027b4681e4"
-    sha256 cellar: :any,                 sonoma:         "054a7a97cc814d4bd475d92574ab55cb8aa8e5b37a36dcf9d9478fdefec27dfe"
-    sha256 cellar: :any,                 ventura:        "43e0cbc02aaabdcb2d35723b95e6edccd33c2e46c33920602494d11c7df8241e"
-    sha256 cellar: :any,                 monterey:       "78c6bf2412be7036564eb3623c7fa0975c2f983b78c1f0e1682206a7f578037b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7855b5926501a471418e5bbee63af6f885682297a5afc6cab8b7d61273a4a67e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "fa784c9bee45be915cfdabbdffde857af1d870eab2f62d12a391e24c78ea2fb1"
+    sha256 cellar: :any,                 arm64_ventura:  "1c7271cdee523353d478f629176140e14f8ab21c54047ec79febaf651e4b04d9"
+    sha256 cellar: :any,                 arm64_monterey: "99ad1c50356cf26b02a53e2bd1ee5f91bea6dd70cf015e6a30a2f8022154c748"
+    sha256 cellar: :any,                 sonoma:         "85a30d05a2c3554b1b55a7fa52709372770ae6d967ab5bcc0f78eb317bd819aa"
+    sha256 cellar: :any,                 ventura:        "ed36d41d92fde9c3bdd7596cad38f61f56e7a55a9fe106882be00146288f6ea7"
+    sha256 cellar: :any,                 monterey:       "26582033cf084d673bc89941839c3d5d936491c57bbea2049fb80091601c46b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f536e8809475a33ee116a9cf5072f75d0ee641a99ceebe7268244dea11442f2e"
   end
 
   depends_on "rust" => :build
@@ -23,13 +24,13 @@ class Llm < Formula
   depends_on "python@3.12"
 
   resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/db/4d/3970183622f0330d3c23d9b8a5f52e365e50381fd484d08e3285104333d3/anyio-4.3.0.tar.gz"
-    sha256 "f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"
+    url "https://files.pythonhosted.org/packages/e6/e3/c4c8d473d6780ef1853d630d581f70d655b4f8d7553c6997958c283039a2/anyio-4.4.0.tar.gz"
+    sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"
   end
 
   resource "click" do
@@ -68,8 +69,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b3/3e/5dbfcc57dbffc8b8a52aff5d154115c19f3ffaff8c73d9418a5c1e33fbfd/openai-1.29.0.tar.gz"
-    sha256 "d5a769f485610cff8bae14343fa45a8b1d346be3d541fa5b28ccd040dbc8baf8"
+    url "https://files.pythonhosted.org/packages/8f/23/c02b7184912fa9c634f099531a9879e2c8941cded026a56cb0a79ad76bc3/openai-1.34.0.tar.gz"
+    sha256 "95c8e2da4acd6958e626186957d656597613587195abd0fb2527566a93e76770"
   end
 
   resource "pluggy" do
@@ -78,13 +79,13 @@ class Llm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/1f/74/0d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714/pydantic-2.7.1.tar.gz"
-    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
+    url "https://files.pythonhosted.org/packages/0d/fc/ccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967/pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/e9/23/a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651/pydantic_core-2.18.2.tar.gz"
-    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
+    url "https://files.pythonhosted.org/packages/02/d0/622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6/pydantic_core-2.18.4.tar.gz"
+    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
   end
 
   resource "python-dateutil" do
@@ -93,8 +94,8 @@ class Llm < Formula
   end
 
   resource "python-ulid" do
-    url "https://files.pythonhosted.org/packages/ad/41/0c28964763497d0c6220dd1a8cc48023a5471b9a0a73bd8f6f95bcafae52/python_ulid-2.5.0.tar.gz"
-    sha256 "d000bc05bf3e7f4a56507f72b02bcbb0cb0170da102cf17af39c59ea946050dc"
+    url "https://files.pythonhosted.org/packages/dc/15/8c945a034be6c5e295512c247321b3a56ac87b8f12a1200d265aab57a1c6/python_ulid-2.6.0.tar.gz"
+    sha256 "904e19093dd6578a5ce01a8274e3e228d556d47be3bda328da2d3601c5240c4f"
   end
 
   resource "pyyaml" do
@@ -103,8 +104,8 @@ class Llm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https://files.pythonhosted.org/packages/aa/60/5db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44/setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "six" do
@@ -143,8 +144,8 @@ class Llm < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/f3/b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2/typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   def install

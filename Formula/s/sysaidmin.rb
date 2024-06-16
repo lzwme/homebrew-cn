@@ -9,13 +9,14 @@ class Sysaidmin < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c11f73490220a4314490692a848d13a62b610cf284c88927017d5a8112c5f345"
-    sha256 cellar: :any,                 arm64_ventura:  "d4c1e618bbcc23e65d0e9a101af09f5fe36921146c7345c955133c829c5b61a9"
-    sha256 cellar: :any,                 arm64_monterey: "8117a625e6111584eb52f2297a30311bbaad616132b48094480bc0007fa7a6a6"
-    sha256 cellar: :any,                 sonoma:         "5b0c27dd15c78cc2e12253946bfb7b088c3d156df1771c0702a9480aded80370"
-    sha256 cellar: :any,                 ventura:        "7bc8d65883f8671383b0753249344275b3b5f82a9a79503a40e52ad6862681d0"
-    sha256 cellar: :any,                 monterey:       "463f9f08b2f7f3a59756b778b5ede3a37fd717e601e71d3c3e5224b1b43b3b87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4304b3539dd273147d836dda87bfa057a6e645248fbb9b835a069cbdf74bd35d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "0a4a74558e6fa430a60758712b68e6431e56c5ac17572b00a34116e13310f0e6"
+    sha256 cellar: :any,                 arm64_ventura:  "1f7354d1417b31d5db762dcc4d5ab21b923872e73fc2a762b710ca7d6fafd2c9"
+    sha256 cellar: :any,                 arm64_monterey: "b7a04bc2191c970194f70bf8b98cfa35de1b54af992d5950f8170f4165d14aef"
+    sha256 cellar: :any,                 sonoma:         "66ad937034d917e162508f0f897b0f36b90995bc8f421a7c3a9dd92c91dacbca"
+    sha256 cellar: :any,                 ventura:        "a8798426727c6f8a487fcb8e872b989a776d7ee41c3f8df0eb75e6ecae751ed4"
+    sha256 cellar: :any,                 monterey:       "fd99435770df0b9aefbd62e55df00bb2d4737aa8a53a96acf2a21cb667ef9157"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85384e02d58639ef9222788cf3cd789513b3ede9b877c77ed30d37441264b55"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -23,13 +24,13 @@ class Sysaidmin < Formula
   depends_on "python@3.12"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagesdb4d3970183622f0330d3c23d9b8a5f52e365e50381fd484d08e3285104333d3anyio-4.3.0.tar.gz"
-    sha256 "f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"
+    url "https:files.pythonhosted.orgpackagese6e3c4c8d473d6780ef1853d630d581f70d655b4f8d7553c6997958c283039a2anyio-4.4.0.tar.gz"
+    sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"
   end
 
   resource "distro" do
@@ -58,18 +59,18 @@ class Sysaidmin < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages068a7e3d0aa81be59fa3c7beb54ade24ec46b569f78908761eb5f3a78cbbdc4eopenai-1.25.1.tar.gz"
-    sha256 "f561ce86f4b4008eb6c78622d641e4b7e1ab8a8cdb15d2f0b2a49942d40d21a8"
+    url "https:files.pythonhosted.orgpackages8f23c02b7184912fa9c634f099531a9879e2c8941cded026a56cb0a79ad76bc3openai-1.34.0.tar.gz"
+    sha256 "95c8e2da4acd6958e626186957d656597613587195abd0fb2527566a93e76770"
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
-    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
+    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
-    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
+    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
+    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
   end
 
   resource "setuptools" do
@@ -88,8 +89,8 @@ class Sysaidmin < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   def install

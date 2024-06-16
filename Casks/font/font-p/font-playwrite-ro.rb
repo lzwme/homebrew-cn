@@ -2,9 +2,10 @@ cask "font-playwrite-ro" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywriteroPlaywriteRO%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywriteroPlaywriteRO%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite RO"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+RO"
 
   font "PlaywriteRO[wght].ttf"
 

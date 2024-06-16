@@ -1,19 +1,19 @@
 class GitCredentialOauth < Formula
   desc "Git credential helper that authenticates in browser using OAuth"
   homepage "https:github.comhickfordgit-credential-oauth"
-  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.11.3.tar.gz"
-  sha256 "fe54bc6053c7696d2ce990698cf469e2463266a71dab6615ab6b557c9eecc5e7"
+  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.12.1.tar.gz"
+  sha256 "22afa94526b7da02c520fda36a531616e8f53bc6c34c1438e929337c990c65fc"
   license "Apache-2.0"
   head "https:github.comhickfordgit-credential-oauth.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "588c6f5e7c80822c228a3a61fc9d7d325b82b76c81c52300416ea645c06520c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b64f792a5e52bcca31c076d7d9b2164d13f3b5e1d8427a18fdb3c7239a2571fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d3d80bd74733d845f250560a142ded6474b9011d86f4b7ca1ac9bbea0dc5616"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd84288ef10fd4295ae4c670955e0f4940415276d62421bc2c6c450f35131da8"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fc624b0201e39b9df85122973496e3005352e8c9a3308d9c842f788d35141a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ba3a931ee56b9d119edb1f53368b932b7afcbe4641b7f8fd4f2fe760c0c4033"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a97fdcca6f85bb4391db0a2faff22e65b7e32dc793e4ec7cde6231a023b92bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5e83f0a8a249a4a2c5b04be5b2c932163289ad7019776f7d7a3f7e79042e218"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6ebf1cd61e08e05b6239409366e8e6dc9e96f39c9e2e8e48e52edf302c1cdc1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca1e8300354d4b9001d9fa53bca3d1a81041d94c01c4ccbc2d2b3c0e13962140"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf02cea4569edb62cd8958bd2b537ee2ce93f3862b5a774fe172dbfeb433b2e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "48fdfa6658292673c8bb7e530942e4c2e667f58c805636ac9eed2a94cc25d3d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "934ef0bfddc0f845eee4e2dc65bdc291d5c7f317697a00c9b3e1404c4b21ad09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54f154bc06d458889d202c5615fa9b125abb96558660ca5cb1a7b57a5ab9745a"
   end
 
   depends_on "go" => :build

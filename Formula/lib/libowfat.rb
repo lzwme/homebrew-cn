@@ -18,7 +18,7 @@ class Libowfat < Formula
   end
 
   # https:github.comHomebrewhomebrew-corepull125418
-  deprecate! date: "2023-05-31", because: :does_not_build
+  disable! date: "2024-06-15", because: :does_not_build
 
   patch do
     url "https:github.commistydemeolibowfatcommit278a675a6984e5c202eee9f7e36cda2ae5da658d.patch?full_index=1"

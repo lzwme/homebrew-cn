@@ -9,13 +9,14 @@ class Sgr < Formula
   revision 11
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "007eaa707a19cbb7fb1c1ab50681af74d84f68956e5f72675ca50ce48896f977"
-    sha256 cellar: :any,                 arm64_ventura:  "a33316fdd214f985e1e04fab73f0a710e1b48210ec216454f7689d50c0f6be25"
-    sha256 cellar: :any,                 arm64_monterey: "137d66e49c8f11df0145bd80bec50ed06f579b1ab546798cd4abfda125893e2c"
-    sha256 cellar: :any,                 sonoma:         "8d39ae2429a9ca2203db82a34d2dd6073d76f90a40a42ae88c157b7a56c042f7"
-    sha256 cellar: :any,                 ventura:        "c8b301c0ad724fe2a386eadb6650337632e4ff443f9df42e2cf09b398a784821"
-    sha256 cellar: :any,                 monterey:       "ea07150c55489e9f3b8e7389d8dee0c00912b1f664d53afd71785a9758e14f25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9621c400f9407246cfe146baa2cbeacb13399bf9f6208e751a2b5d89fb95cba6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4f76283db46670d48f38be240869170034a243afd079e32e4f04a5a9f938e82f"
+    sha256 cellar: :any,                 arm64_ventura:  "d9821cb17c76e3557394dbd54fdb7e7a572636ebf7b89ba59ee6248db7760b23"
+    sha256 cellar: :any,                 arm64_monterey: "eaff6e1b644143e73ba70ffd8ce740483462512b3ee5aa52ecfa5ee8815252c5"
+    sha256 cellar: :any,                 sonoma:         "c612c29bd206799603320db238cc819d4bad041c947be0b10245fa1a4e0d2751"
+    sha256 cellar: :any,                 ventura:        "9652ecefbefc30f04c2462c20d58bc883e834a50b62068405975ac175f2faeea"
+    sha256 cellar: :any,                 monterey:       "2b00e4d973f273677197dd75f0a87f547c983089078860f8acef3e1c842e0f5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc6792e463a52acce385cccebb2d635a2a63e90759d5950321c065109e863d8c"
   end
 
   depends_on "cython" => :build # TODO: remove with newer `pglast` (4.4+)
@@ -75,8 +76,8 @@ class Sgr < Formula
   end
 
   resource "docker" do
-    url "https:files.pythonhosted.orgpackages25147d40f8f64ceca63c741ee5b5611ead4fb8d3bcaf3e6ab57d2ab0f01712bcdocker-7.0.0.tar.gz"
-    sha256 "323736fb92cd9418fc5e7133bc953e11a9da04f4483f828b527db553f1e7e5a3"
+    url "https:files.pythonhosted.orgpackages919b4a2ea29aeba62471211598dac5d96825bb49348fa07e906ea930394a83cedocker-7.1.0.tar.gz"
+    sha256 "ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c"
   end
 
   resource "idna" do
@@ -110,8 +111,8 @@ class Sgr < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "parsimonious" do
@@ -135,13 +136,13 @@ class Sgr < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
-    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
+    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
-    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
+    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
+    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
   end
 
   resource "referencing" do
@@ -150,8 +151,8 @@ class Sgr < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rpds-py" do
@@ -200,8 +201,8 @@ class Sgr < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
