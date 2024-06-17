@@ -1,19 +1,19 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https:github.comsayanarijitxplr"
-  url "https:github.comsayanarijitxplrarchiverefstagsv0.21.8.tar.gz"
-  sha256 "6fa6ab87cd9f48e531146e2f04c980f2ec90259b3e7b874bf9e165e613be0789"
+  url "https:github.comsayanarijitxplrarchiverefstagsv0.21.9.tar.gz"
+  sha256 "345400c2fb7046963b2e0fcca8802b6e523e0fb742d0d893cb7fd42f10072a55"
   license "MIT"
   head "https:github.comsayanarijitxplr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b068537d770244256f77020815603f54a667f20ea0334999fd3fef3bf4bf1ee1"
-    sha256 cellar: :any,                 arm64_ventura:  "7a2a737789cda6265c86614b2298ddebe538759864d009fa86fc5da5c9c48f42"
-    sha256 cellar: :any,                 arm64_monterey: "4cfac91c946191e32d77783d79d2ea37789ae33229d7b46deb2a4530f49bc1d1"
-    sha256 cellar: :any,                 sonoma:         "a4f9dcaaa07ab5f5a17a30b64d0e28d612552a46bd2bafa61d5a1a722e75b6e9"
-    sha256 cellar: :any,                 ventura:        "f9f27735dfd758e6422549484cc72fae852d24b2f9f9b5cc218ba6f16dab9074"
-    sha256 cellar: :any,                 monterey:       "6b84f2f456fb888a03ec5ce9cd6c97c358507baae31c7550a8aedb7bb9a3b4f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7910837bee5bc69efe2903fd4a2cce212bf208fdbf161ecf7573d9deb4d738f"
+    sha256 cellar: :any,                 arm64_sonoma:   "e12c3daf98f01ef65c0712449f17b2e44941ae864468139028df465b5e6714f9"
+    sha256 cellar: :any,                 arm64_ventura:  "a5e3d5b13f3fae8554777905d97a8a5b5de096de7218f541d34059304b5f7dd1"
+    sha256 cellar: :any,                 arm64_monterey: "4fead8b01327480386b45f7165f05c47dce16e3f575e15f74128739dca1f23ab"
+    sha256 cellar: :any,                 sonoma:         "251c75b3051e9e98a746ee31735042c7067e2269bd31e38aea2b7c1421d1c3aa"
+    sha256 cellar: :any,                 ventura:        "3293d23dcbd6c3b440b053c439eb662234ea9b9beb5f5a71365fb949e2354a40"
+    sha256 cellar: :any,                 monterey:       "bf794adee15ca2eabac6aa3d5ac1cab694a76bd2b787cbd15915b486b02485ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2e5fd49885a71195c2c9e6087e3b8d2f1b6b9c4a866be343db5fd1e067d5915"
   end
 
   depends_on "pkg-config" => :build

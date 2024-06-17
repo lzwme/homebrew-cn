@@ -10162,6 +10162,10 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-padauk.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-p/font-padyakke-expanded-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-palanquin-dark.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-palanquin.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-bold.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-bolditalic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-italic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-regular.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-palette-mosaic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pangolin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-paprika.rb, Homebrew/homebrew-cask, 1
@@ -13595,7 +13599,7 @@ Homebrew-homebrew-cask/Casks/t/tunnelblick.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tunnelblick@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tuple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/turtl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tusk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 1
@@ -14105,6 +14109,7 @@ nicerloop-homebrew-nicerloop/Formula/tccplus.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/video-transcoding.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/warc2html.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/wine-scripts.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/xcodes.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/8bitdo-firmware-updater.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/airdisplay-client.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 1

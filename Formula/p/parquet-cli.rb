@@ -2,18 +2,13 @@ class ParquetCli < Formula
   desc "Apache Parquet command-line tools and utilities"
   homepage "https:parquet.apache.org"
   url "https:github.comapacheparquet-mr.git",
-      tag:      "apache-parquet-1.14.0",
-      revision: "fe9179414906cc19b550d13d2819b4e16fddf8a1"
+      tag:      "apache-parquet-1.14.1",
+      revision: "97ede968377400d1d79e3196636ba3de392196ba"
   license "Apache-2.0"
   head "https:github.comapacheparquet-mr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c2829a0f0cb3099a9cc71f7097d63c97afb7f21d149e066495797fa6a4632d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a835c27ba0f4b035c2dffab9c66cfeb75640a9ae60028d56fc18e81f874c6582"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f248fc5ce2c40e13bc966be98de481b747c4390d6eb35160d4134dce9ae27bf3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4a97c973c26827e535a2fe0e614d83eb74a3e3e58aa11a0ac08e6f405ab6e30"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc6675c31fab9ef3912d7b6e43f77a56acc0d5047f25693378eea405554d219f"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb1ebad940b4bfe8048d0e82240342a3976d012c07c55eca50306b0c6bd45909"
+    sha256 cellar: :any_skip_relocation, all: "4921c5a0099f3b55f007e97ae1ad4492260025ebb813de235faa234c84746fa8"
   end
 
   depends_on "maven" => :build

@@ -8,7 +8,8 @@ cask "mochi-diffusion" do
   homepage "https:github.comgodly-devotionMochiDiffusion"
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: ">= :sonoma"
+  depends_on arch: :arm64
 
   app "Mochi Diffusion.app"
 

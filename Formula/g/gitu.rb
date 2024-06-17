@@ -1,19 +1,19 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https:github.comaltsemgitu"
-  url "https:github.comaltsemgituarchiverefstagsv0.20.1.tar.gz"
-  sha256 "f36401daf3800ab1b52a0c07926262bae8e23b0e6c497a9d5077ae50022e6322"
+  url "https:github.comaltsemgituarchiverefstagsv0.21.0.tar.gz"
+  sha256 "12a452b99b8e6b35aca810d093ea21fcfbacd29272eb70a72a5d67f99db7f31c"
   license "MIT"
   head "https:github.comaltsemgitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c01a232c6ff4ea3fbb1e77630c5bc90dddbb28f8aa4bc6125a1fc157fbed34af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08a9648c4286e1f3de0151dabefbab125a13b5a5cc278ec2d2ba374d4bef8c4e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9a9eb7abb1dc990ce993a6e1cf56255d572e11ad17dce53382c4d9ae3292554"
-    sha256 cellar: :any_skip_relocation, sonoma:         "085dddc4d4d166c0fb5c9143c7f6028994d0965292e5b8bafe2da90edf4d91b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "b969fd0e158f813845b9b94143efc17eb206849281622678bdd945bb859e012d"
-    sha256 cellar: :any_skip_relocation, monterey:       "39956620ee808bbcdd25b3adc0d8647a284d7b8100aa8ec8e3c473433885d224"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "840a422323f9f372145822985a59a2295031a60c659888347c932b99f5ea4943"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eef232a6c50a1a195809a73da260b65313d62694a3f540edc1ef4c2e849b218f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcb6a8299fb0a2e9bc959e939d4e91e0f44700976b0d407ae7d6f5aa0e60a6d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed33cefad10c621897d4a3416d42ceb4b47aaf7bb9c9d9af879b83c986b02442"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e91beda3a697e970a2305a0d936d03b850d1b001092e9938405a1d2ad8320eae"
+    sha256 cellar: :any_skip_relocation, ventura:        "b5cd69636db663153b8cfb0037e456c98789121e0aab1ef02e76674430cd4168"
+    sha256 cellar: :any_skip_relocation, monterey:       "f28f0507fca31a9082281db8ae5c2744dee0667360f9a9228325e71c9205b6a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78169daa38173e99936b131038d168d63c4c2cae7990184587ddc11d06a4ec66"
   end
 
   depends_on "rust" => :build

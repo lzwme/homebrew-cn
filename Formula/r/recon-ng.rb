@@ -13,20 +13,20 @@ class ReconNg < Formula
   revision 1
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_sonoma:   "9558290efc3f7165e733ed4f443a2c8de6193925c3d9c7d0b94dbcc7fda6b7c4"
-    sha256 cellar: :any,                 arm64_ventura:  "1c23268facfa9116189eb611ea3c282c09ae2f8fc5608a89edbc312d0da0dd14"
-    sha256 cellar: :any,                 arm64_monterey: "f111fbfca64e7ed0f1ce23e9df8dcd7b7a2a0327909fa2a27f55df452151dc1a"
-    sha256 cellar: :any,                 sonoma:         "4ae6a6718d1dcdf854c0b0b636f62e37ef3e4de4c630836afcbe66e3f5c5d454"
-    sha256 cellar: :any,                 ventura:        "f66debf0afb9cc70ffe480efc455a2ccc9adbbb17bbb841ce2a8470094d2145a"
-    sha256 cellar: :any,                 monterey:       "bddfa636abeb702de819749021900f7bfee062882f10dfcc055e156f54c9b153"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d74f449f8cb11c5ed84808638d5dbcdd4d3b3faa23b6cca7668e11d997c7c31"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_sonoma:   "3dc206cd3f8da1fa47c3a10ffcb238c860fca78a243ada53cfea56f84fc9c9a8"
+    sha256 cellar: :any,                 arm64_ventura:  "647b0fdb1772d54fa556c956c37cc80c692e8f1a86d3ec6f39436daee1c5d754"
+    sha256 cellar: :any,                 arm64_monterey: "2b1905f0796d683c2f1e7f94280eb96e85ae4d87c0b86608138221a4f9dee79c"
+    sha256 cellar: :any,                 sonoma:         "de909a4b5d420f9791451bdcb044ab78f4ddeb79bdd5a53295781e06b71bd776"
+    sha256 cellar: :any,                 ventura:        "d5ebc31d0008d66aed5d9d323749560afbabcd7bf12e564f0d1b424204b8b20b"
+    sha256 cellar: :any,                 monterey:       "2548b7e1939ada378f49f0d08e254a74899b65d010a9802d6c3e3c878b403b61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfbec288e41bf152731449d5129eb556671f321437861adf8ca6ee6dbf3cefc2"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.11" # Python 3.12 issue: https:github.comlanmaster53recon-ngissues193
+  depends_on "python@3.12"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -42,8 +42,8 @@ class ReconNg < Formula
   end
 
   resource "blinker" do
-    url "https:files.pythonhosted.orgpackagesa1136df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9eblinker-1.7.0.tar.gz"
-    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
+    url "https:files.pythonhosted.orgpackages1e57a6a1721eff09598fb01f3c7cda070c1b6a0f12d63c83236edf79a440abccblinker-1.8.2.tar.gz"
+    sha256 "8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"
   end
 
   resource "charset-normalizer" do
@@ -72,8 +72,8 @@ class ReconNg < Formula
   end
 
   resource "flask" do
-    url "https:files.pythonhosted.orgpackages3fe0a89e8120faea1edbfca1a9b171cff7f2bf62ec860bbafcb2c2387c0317beflask-3.0.2.tar.gz"
-    sha256 "822c03f4b799204250a7ee84b1eddc40665395333973dfb9deebfe425fefcb7d"
+    url "https:files.pythonhosted.orgpackages41e1d104c83026f8d35dfd2c261df7d64738341067526406b40190bc063e829aflask-3.0.3.tar.gz"
+    sha256 "ceb27b0af3823ea2737928a4d99d125a06175b8512c445cbd9a9ce200ef76842"
   end
 
   resource "flask-restful" do
@@ -87,23 +87,23 @@ class ReconNg < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "itsdangerous" do
-    url "https:files.pythonhosted.orgpackages7fa1d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08itsdangerous-2.1.2.tar.gz"
-    sha256 "5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"
+    url "https:files.pythonhosted.orgpackages9ccb8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31ditsdangerous-2.2.0.tar.gz"
+    sha256 "e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -112,8 +112,8 @@ class ReconNg < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "markupsafe" do
@@ -122,8 +122,8 @@ class ReconNg < Formula
   end
 
   resource "mechanize" do
-    url "https:files.pythonhosted.orgpackages33e6bb760d200e895a9d1d2b8187d572726249e3c6fe8554388a20911ba30363mechanize-0.4.9.tar.gz"
-    sha256 "69a5edb0962f921e8b10837368c2242d8ad049f0b91ff699ce7f601bfc431521"
+    url "https:files.pythonhosted.orgpackagesf5ce35d356959be6d8cdd5a3c8b6ea74548281ea9ae71c4d4538c076c4c986a2mechanize-0.4.10.tar.gz"
+    sha256 "1dea947f9be7ea0ab610f7bbc4a4e36b45d6bfdfceea29ad3d389a88a1957ddf"
   end
 
   resource "mistune" do
@@ -132,8 +132,8 @@ class ReconNg < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pytz" do
@@ -147,28 +147,28 @@ class ReconNg < Formula
   end
 
   resource "redis" do
-    url "https:files.pythonhosted.orgpackages4a4c3c3b766f4ecbb3f0bec91ef342ee98d179e040c25b6ecc99e510c2570f2aredis-5.0.1.tar.gz"
-    sha256 "0dab495cd5753069d3bc650a0dde8a8f9edde16fc5691b689a566eda58100d0f"
+    url "https:files.pythonhosted.orgpackagesfd123330f4982058c2eda0c29dcdd1bc8ef74b5ab5a4a4e7825678ee4aabf9ffredis-5.0.6.tar.gz"
+    sha256 "38473cd7c6389ad3e44a91f4c3eaf6bcb8a9f746007f29bf4fb20824ff0b2197"
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages21c5b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9areferencing-0.33.0.tar.gz"
-    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "rq" do
-    url "https:files.pythonhosted.orgpackages6664f66686dea341ce259c717ea4de098c14ecd1a6bd5aec91f6991b3c288a03rq-1.15.1.tar.gz"
-    sha256 "1f49f4ac1a084044bb8e95b3f305c0bf17e55618b08c18e0b60c080f12d6f008"
+    url "https:files.pythonhosted.orgpackagesc51da020e8f3559293635dd6283d037bfc15f866136498da3db1e5416c65773drq-1.16.2.tar.gz"
+    sha256 "5c5b9ad5fbaf792b8fada25cc7627f4d206a9a4455aced371d4f501cc3f13b34"
   end
 
   resource "six" do
@@ -192,8 +192,8 @@ class ReconNg < Formula
   end
 
   resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages0dccff1904eb5eb4b455e442834dabf9427331ac0fa02853bf83db817a7dd53dwerkzeug-3.0.1.tar.gz"
-    sha256 "507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc"
+    url "https:files.pythonhosted.orgpackages02512e0fc149e7a810d300422ab543f87f2bcf64d985eb6f1228c4efd6e4f8d4werkzeug-3.0.3.tar.gz"
+    sha256 "097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"
   end
 
   resource "xlsxwriter" do
@@ -201,9 +201,15 @@ class ReconNg < Formula
     sha256 "9977d0c661a72866a61f9f7a809e25ebbb0fb7036baa3b9fe74afcfca6b3cb8c"
   end
 
+  # Replace `imp` for python 3.12: https:github.comlanmaster53recon-ngpull204
+  patch do
+    url "https:github.comlanmaster53recon-ngcommit745fe3580e9a974348622163c44eba6bdb531f63.patch?full_index=1"
+    sha256 "10eec6be1c49a1fe3bce2b8a8145d98df92ea4d7a94e115f7735b6e53d461a94"
+  end
+
   def install
     libexec.install Dir["*"]
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
 
     # Replace shebang with virtualenv python
@@ -219,6 +225,6 @@ class ReconNg < Formula
       options list
       exit
     EOS
-    system "#{bin}recon-ng", "-r", testpath"resource"
+    system bin"recon-ng", "-r", testpath"resource"
   end
 end

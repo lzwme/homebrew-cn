@@ -1,21 +1,19 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https:github.comFiloSottileage"
-  url "https:github.comFiloSottileagearchiverefstagsv1.1.1.tar.gz"
-  sha256 "f1f3dbade631976701cd295aa89308681318d73118f5673cced13f127a91178c"
+  url "https:github.comFiloSottileagearchiverefstagsv1.2.0.tar.gz"
+  sha256 "cefe9e956401939ad86a9c9d7dcf843a43b6bcdf4ee7d8e4508864f227a3f6f0"
   license "BSD-3-Clause"
   head "https:github.comFiloSottileage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb6ae25bd119151a8d3449a170c0893a515ab89646bac0889d45ed849ddaab67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8c3818aeeb7eea70eb6b5bc3ea0cce27362a859b198fb74a00db98c6580785b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac5bba583073cc0b27cfc6d4429ba0f35b0f19713db12c053fefd81f37596024"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54ea15cf68dcc78e96564825785b348d4f84c76042742b1ddf3cb3db2eb3c0fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e7bc0bcbc06642ab6b2489df76bee825a6b967f080c8d8c2046639dcaf7dc6ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "93bbcd6f694b2cc9a35ade57d2a9b39059bc6afd27528bd3dacd01bebd901ef9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8f7a53819cbc634ab0f496ef6d8b2ae9cf9ceacabfd2e195c3277c5161aedcfc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bdfdb069c08d9c8062bd1f6b951000ee9fdcd8fe57e50a4e522ee508931569df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "035ffde6b73ec870c742ed42b4fb4a0709ba1fc9394fee63b2689a2d0c9d84d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41e4ed7ff1849806a4144c68fd6ea0607000b6ab9968e658664e2846764b5acc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94cfc2ee8b79c165388e74c3ab53cb824f3ec3043e6d8cecb4016dce0e6d7c31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "365a092bba65b870b2a171fc81f893fa43d8c025c2f257926de0c3431529fa2f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bac09b266d274fef97330251550355444ae86d771aa36ac657da06e04c3c502f"
+    sha256 cellar: :any_skip_relocation, ventura:        "69d5ab672aab414d7f4e7867ac8aedaae24b65bbae275aeecca2ca2a2532c871"
+    sha256 cellar: :any_skip_relocation, monterey:       "50180ad28dff70d139b3577b94b66dac48767bf6b957ba0c7bf0ccecb7f58722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33f74dae7dff519afbbcf200af30a1953f2707be25d03f8f912d1c43e5556ec8"
   end
 
   depends_on "go" => :build

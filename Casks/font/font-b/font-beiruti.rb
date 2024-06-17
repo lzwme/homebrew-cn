@@ -4,7 +4,6 @@ cask "font-beiruti" do
 
   url "https:github.comgooglefontsrawmainoflbeirutiBeiruti%5Bwght%5D.ttf"
   name "Beiruti"
-  desc "Designed by volker schnebel"
   homepage "https:github.comgooglefontsbeiruti"
 
   font "Beiruti[wght].ttf"

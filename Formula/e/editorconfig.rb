@@ -1,32 +1,31 @@
 class Editorconfig < Formula
   desc "Maintain consistent coding style between multiple editors"
   homepage "https:editorconfig.org"
-  url "https:github.comeditorconfigeditorconfig-core-carchiverefstagsv0.12.8.tar.gz"
-  sha256 "508f7633416a2ce3c05104ea7daac61c4953803c9935cca6e059086cfa67ee63"
+  url "https:github.comeditorconfigeditorconfig-core-carchiverefstagsv0.12.9.tar.gz"
+  sha256 "4aaa4e3883332aac7ec19c169dcf128f5f0f963f61d09beb299eb2bce5944e2c"
   license "BSD-2-Clause"
   head "https:github.comeditorconfigeditorconfig-core-c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d3c964060e34e20aca1c15b8e9d57fc27d6f38dd0d180df128d0cacfca7aaf45"
-    sha256 cellar: :any,                 arm64_ventura:  "11e65b8174b934c672cf6209e0b9be8d60c8e8e60bc7f2a1db98310092157453"
-    sha256 cellar: :any,                 arm64_monterey: "f3ee92ff41f995cd6405dfeb73a452630cd1ea6ab41d4f3395cd9b375a8cf6f4"
-    sha256 cellar: :any,                 sonoma:         "8c9d93e8e80e134144fd441661165a69c09aabdfd94769290198e4a05b6e1468"
-    sha256 cellar: :any,                 ventura:        "dd014a8d3674569e7071f7c1eda0c153a579ce71e92f49d15198acb684c39706"
-    sha256 cellar: :any,                 monterey:       "19ce8f99802e4fc54a3824771ce35048f8586031f1ff1917c6c8a429148f24d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca6d27f7806279e58053485815bc1171563cf8a161c3bbd3927f037732274f42"
+    sha256 cellar: :any,                 arm64_sonoma:   "68292eee4ca5bb261e091e5546caf2d6e6ecdf78e5d6bfd359bc66cfb4676230"
+    sha256 cellar: :any,                 arm64_ventura:  "758d3759492e33359ab231574bb223c5fed86b3b207139701ba5798963c09836"
+    sha256 cellar: :any,                 arm64_monterey: "f65e5c1e7edef043e3042347662ed957cc2cadbbab09b8de64f1e57d6727e4bf"
+    sha256 cellar: :any,                 sonoma:         "ac46d5659ab9aaafd7552a796ce848b72c6872fb26d1542f84ea87370e8b0b86"
+    sha256 cellar: :any,                 ventura:        "ed9992d208d2eceeabcd646ad6c5a2d8d5ac36e8da10dd61ee4080cf97cc4148"
+    sha256 cellar: :any,                 monterey:       "20c4080381d9f63379cdaf63e5b827f03698334ed2c3d65ae7cbe936124a713f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edae75cc4622ec47783d0c1293c84f0f3eb4d2f1d1c4f0e837f636a1810c18c0"
   end
 
   depends_on "cmake" => :build
   depends_on "pcre2"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    system "#{bin}editorconfig", "--version"
+    system bin"editorconfig", "--version"
   end
 end
