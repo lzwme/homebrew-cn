@@ -1,18 +1,18 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https:github.comvaleriansaliousonic"
-  url "https:github.comvaleriansaliousonicarchiverefstagsv1.4.8.tar.gz"
-  sha256 "703b3d979f3cb72ed6c1f3535c2a4c4851107972eda3cd34a88542724f537181"
+  url "https:github.comvaleriansaliousonicarchiverefstagsv1.4.9.tar.gz"
+  sha256 "68f9336cd63e8f4171073be89e37ed6688812281207c3f70567b28fbe37be63b"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c75ce6f8389d69e5a0efab866be05145b06615ca35e35268e0d7bc78335fc4a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bc99dbcd2262ba06b582ae26f3aef36652c1c61e1c98262f7520585b3730ff3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fdf796638a103a809318b252359108821f17e9fb2c8f75d88d19820321541fa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d76808c045782af3e01b67ea1bb1def19a835ae542535260ae642a7e7b693fd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "79556244b4f4da38f9481116bc28e023709f2d3ff326ed51c2fd63e37dfff602"
-    sha256 cellar: :any_skip_relocation, monterey:       "538f90545efe6392d352c1a293e6bfc2093a73b7b796c41a439d07d7a858b3df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abeccf0b9b9070be03f746f9a4da886a7b5cb2286e64ca95a03033873f28fa5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eeac83f672962725f3217370f12b06582da32f38ac31198fff2dc0c3358f572"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51c1a32ae3da2966e4f943baf0b7553e2802f1354eae2029d6c840424531a697"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e35da6261442351069d3195082219065dc61e269cab9265cebfca2c57d94e97"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dd0f9672179042b93dc1df50bdb4833f92a0fefe1085c37794748385fea62410"
+    sha256 cellar: :any_skip_relocation, ventura:        "70c609372b8a30d3d6cbcd96dad191f60dd412dc9d787bcf64e0ce956b6cecb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "16e5f7de38eb2a531e7b844330dfcae8579f8602f71daec7050f9e9d1be5deb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "686d7ff993a9ee79e10de1fbf250c0a9eeb67048efaaff042bbc8b579e497524"
   end
 
   depends_on "rust" => :build

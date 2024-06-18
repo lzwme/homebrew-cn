@@ -6,16 +6,17 @@ class Awslogs < Formula
   url "https:files.pythonhosted.orgpackages15f58f3bd0f4a927b1fbb3a5e6a5b036f29e4263977fb167b301bc4a5f4db2b9awslogs-0.15.0.tar.gz"
   sha256 "19f223bb1c0703cea0689d94b1d293006529095e6ab8971f6b52289a2e545dd5"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comjorgebastidaawslogs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, ventura:        "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, monterey:       "574d528a945eec8ffcd125b54a9931591f05993fff9ecb19aa88f9c97cb70bf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33fd557fb5360b143beb29bdf0df0e00f2fdd2552e8d7da85a8b3f7646f99c8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, ventura:        "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, monterey:       "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa203c74eb963d0b630e8a22c0bc840bd4daa225e6bc506f11b300636e0c6d6"
   end
 
   depends_on "python@3.12"
@@ -23,13 +24,13 @@ class Awslogs < Formula
   uses_from_macos "zlib"
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages50714382017bf4ddb37250966b077e3347e944522873aea49de546053bbd71fbboto3-1.34.75.tar.gz"
-    sha256 "eaec72fda124084105a31bcd67eafa1355b34df6da70cadae0c0f262d8a4294f"
+    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
+    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages8bc014e3d01ff8a58adef587f032e04486cccb4e8137b132f65ddb8123c5578cbotocore-1.34.75.tar.gz"
-    sha256 "06113ee2587e6160211a6bd797e135efa6aa21b5bde97bf455c02f7dff40203c"
+    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
+    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
   end
 
   resource "jmespath" do
@@ -58,8 +59,8 @@ class Awslogs < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

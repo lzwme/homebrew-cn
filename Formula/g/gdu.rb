@@ -1,18 +1,18 @@
 class Gdu < Formula
   desc "Disk usage analyzer with console interface written in Go"
   homepage "https:github.comdundeegdu"
-  url "https:github.comdundeegduarchiverefstagsv5.28.0.tar.gz"
-  sha256 "b184046e76a97f4205b745d431655b7910f8c7b41a8592d68c4cbf61e3b14125"
+  url "https:github.comdundeegduarchiverefstagsv5.29.0.tar.gz"
+  sha256 "42e972f46e49995be24b223c91375bfbea547f5e8cf94c0364f7b3eb5b0ed0a3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d5a14d7c8dbbb6af220db7cb19e2afaf44fad0286fac1d9086d5a06fe4ae969"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "994dbf2887bc5fd879d49545d5ecd98a8aa825de0e24b61a8223b5ce562eff6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b02ffd215347cf18b7062098763a72b09c81128965f3759e8f0a20ad5a0cdd1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2bf9311c8380d46bee207edeff761fa87140d7f0927fd7ebbc2eb4aa6304f4b0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b25ba3ecd84a5cb3b2523a3710882b53543996a49e5b85f8bdbfc89a8e6bee4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a40ef760395efb85dc4df87faef35ffe379ac77c9ec0f067bb72725b670da05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aad0a688c4e964c109f8c2ac9fe37ba5e0dd0d71e247ff44a338cc9b0c65cbec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "400253d80ce28d715ab27f9c96bc84a9a0804414fb69175bbcf5a9a784663829"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b1c3911a7ec3bba12be03083d86efc678dd5fe20c625294d7726fb611dd344f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca36ad5c560d8a41acb52e96f183ee41f0f4c6ccd9ed411f48a0eafba651dec9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51ea3cf59e39a9437276f3312e3596a07d361ef0703940401ea9320adde4d46f"
+    sha256 cellar: :any_skip_relocation, ventura:        "29ef3699c568681e545d3eee2ce044a329eb2a09955a8dffd1e4c8000cd48f39"
+    sha256 cellar: :any_skip_relocation, monterey:       "89c537d2c2f290a401166fd18b108dab0826f6b8134c049f12d7391f7f35c8af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a24fe025827b65ec3a228f2e9551d9d5a646eb62e2cb77b892f0a27821d0f87e"
   end
 
   depends_on "go" => :build

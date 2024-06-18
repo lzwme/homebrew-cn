@@ -1,21 +1,18 @@
 class Libmobi < Formula
   desc "C library for handling Kindle (MOBI) formats of ebook documents"
   homepage "https:github.combfabiszewskilibmobi"
-  url "https:github.combfabiszewskilibmobireleasesdownloadv0.11libmobi-0.11.tar.gz"
-  sha256 "6a7cbfb2b8f00849f02af3d913a694a0d7c7e7acb6b801625373f32e57db8051"
+  url "https:github.combfabiszewskilibmobireleasesdownloadv0.12libmobi-0.12.tar.gz"
+  sha256 "9a6fb2c56b916f8fa8b15e0c71008d908109508c944ea1d297881d4e277bf7e7"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e203121c2cc0c23acbabdbc95a93b383cf945ac3ece9c8c68ebf94d33932b1f"
-    sha256 cellar: :any,                 arm64_ventura:  "ed2e5915bb8c43876492d8c12f09d72ce13a2e2b9d6567cd815a07ebca15288f"
-    sha256 cellar: :any,                 arm64_monterey: "8910ccf86e81bb038762ff0f07239a16bfbe36321c682042ef0e7b594cc30154"
-    sha256 cellar: :any,                 arm64_big_sur:  "acb868d0c49f811fe952cb7a5d1844dfaefc8d1c845486c4fddb10c0304b2a7b"
-    sha256 cellar: :any,                 sonoma:         "07b18d39c322894960ff4a53523e145b13a2bd0c0ea8614c6bf170d3132f03e7"
-    sha256 cellar: :any,                 ventura:        "3519c368bd9c42d991b7b81e6d18f1e6061906e0b3c3814be54337fad1076dd3"
-    sha256 cellar: :any,                 monterey:       "fd2601afa5199daa00c077c7aa7e3fd2f47e2f54f6661678c3474d6cc5d7f681"
-    sha256 cellar: :any,                 big_sur:        "481e9486192ed6cea54c75465612f23675434fb5efea26267cdb944120a75851"
-    sha256 cellar: :any,                 catalina:       "ca52fa0e0ffad550d104ac35f6d45d24d4e02478f76ff15e1650d38de66d26b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78c582c8d248ba77c93065c9e71658ea1a8e6b8e4f5e22d512e17d7a67f1d28d"
+    sha256 cellar: :any,                 arm64_sonoma:   "d1fe8e0413649a0a838d650e614ef07010aa121e1ab3a2b360d8ba6da1124a77"
+    sha256 cellar: :any,                 arm64_ventura:  "1f4ea76703406a4f5453ac1767100a8198d6bf14782c1a6a862fcb3e2dd5d908"
+    sha256 cellar: :any,                 arm64_monterey: "4745216331bec2106dad3b68997ff46888b15ca74a19f4e6aafc510ed16daa26"
+    sha256 cellar: :any,                 sonoma:         "d510c86ba6f58c1835f3b4721986058711d2db5d94c9d6c9afc1d08f6f7a5316"
+    sha256 cellar: :any,                 ventura:        "5182d5625306772b104ee2fa38105e399c82bc33b25c01934f5722bfefddd177"
+    sha256 cellar: :any,                 monterey:       "ac43b774943fed966a0698c82cf05ec9bd8f020380ac12810cb60613d7d8923b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "380132da0b9faf43d841d6eeaeafa37cfbf1381d2a66549a105c44808022fcc8"
   end
 
   uses_from_macos "libxml2"

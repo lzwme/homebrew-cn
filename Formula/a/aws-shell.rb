@@ -6,40 +6,39 @@ class AwsShell < Formula
   url "https:files.pythonhosted.orgpackages0131ee166a91c865a855af4f15e393974eadf57762629fc2a163a3eb3f470ac5aws-shell-0.2.2.tar.gz"
   sha256 "fd1699ea5f201e7cbaacaeb34bf1eb88c8fe6dc6b248bce1b3d22b3e099a41e5"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "b9cc080f126a83708f0df33ea5ab854e01d9efc3adb63f8d4fe0c59a78d3cd45"
-    sha256 cellar: :any,                 arm64_ventura:  "57ada13e7c6a0e1b837255789c102055cd8d2d610334640f2b808b921255f322"
-    sha256 cellar: :any,                 arm64_monterey: "54fbf9b20e08ee019d549fbb55abe12c6590d947e963b759820af43e4f391fea"
-    sha256 cellar: :any,                 sonoma:         "8a020ad13ce56df0a18a65c643c42ad0c60eb2cbe4f073f609878d0ab7b82589"
-    sha256 cellar: :any,                 ventura:        "f2f3ca8ac11f25b0e95d44ac810f8b3427034287b3c828cd942d08c7d9f1fd86"
-    sha256 cellar: :any,                 monterey:       "63c04e960f35162d36c7bd5e2660396385167f9bc87bdb1064516b99e0af6703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b0b2b6002c5c49967e9f018c0dcc5ad183c854dafcc25fe0d88c8cc6fe882a6"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a1ff893a2e72bc7b99e7cb94d85251e82a50d8c5a6d551d59df5994bf4f4b5f"
+    sha256 cellar: :any,                 arm64_ventura:  "f9b533e73e8b568bff77d83a69f41ddfa450628e76bec96a8a948995c81e50ec"
+    sha256 cellar: :any,                 arm64_monterey: "802826f971fbd3b0229d28f1ef657966de143c2ea7cac59a17f3f2b6941b598a"
+    sha256 cellar: :any,                 sonoma:         "46d321f14353be140a0add6ac5cbc77b095dc02d9a75168a7a1c137dd698b211"
+    sha256 cellar: :any,                 ventura:        "2de528ed6ff6532d651b4eff5616326c3fff293b5c8283a07458ec1fc44c7663"
+    sha256 cellar: :any,                 monterey:       "f998cffff699b64737e286819cb94cded95e0939b8339b6a4014a53afd0e08cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e23ccdd126e0aa0167c0c2904322c439e771c0dc973556bda477714e9cfe1667"
   end
 
   depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "awscli" do
-    url "https:files.pythonhosted.orgpackagesd5ba6fcd48889942f975c258b650fae6bf4d15cf9380a604ce0d8bef2d5661ceawscli-1.32.42.tar.gz"
-    sha256 "724ea13c509aec7eed32adba8c665001187a8f59ec61c63402506ab304f62d4c"
+    url "https:files.pythonhosted.orgpackages280e0fddb681e12b4ff9635bfac8a17b7787cb92b5362bc7e49a9d05a1b49111awscli-1.33.10.tar.gz"
+    sha256 "0a5b4b5555be2c7324bf9e748bc24c17c95ef1b070e8f324354ef8747ce984e9"
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages4b712d62af7b6258ed523bdf14ff48788decc499288fec685f1c0f4dc55c77cfboto3-1.34.42.tar.gz"
-    sha256 "2ed136f9cf79e783e12424db23e970d1c50e65a8d7a9077efa71cbf8496fb7a3"
+    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
+    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9fcefd56ae7d57dffb8c7c798ee41c82aa9ff5d15dd70e311928994b84a38fe4botocore-1.34.42.tar.gz"
-    sha256 "cf4fad50d09686f03e44418fcae9dd24369658daa556357cedc0790cfcd6fdac"
+    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
+    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
   end
 
   resource "colorama" do
-    url "https:files.pythonhosted.orgpackages1fbb5d3246097ab77fa083a61bd8d3d527b7ae063c7d8e8671b1cf8c4ec10cbecolorama-0.4.4.tar.gz"
-    sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
+    url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
+    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
   resource "configobj" do
@@ -63,18 +62,18 @@ class AwsShell < Formula
   end
 
   resource "pyasn1" do
-    url "https:files.pythonhosted.orgpackagescedc996e5446a94627fe8192735c20300ca51535397e31e7097a3cc80ccf78b7pyasn1-0.5.1.tar.gz"
-    sha256 "6d391a96e59b23130a5cfa74d6fd7f388dbbe26cc8f1edf39fdddf08d9d6676c"
+    url "https:files.pythonhosted.orgpackages4aa3d2157f333900747f20984553aca98008b6dc843eb62f3a36030140ccec0dpyasn1-0.6.0.tar.gz"
+    sha256 "3a35ab2c4b5ef98e17dfdec8ab074046fbda76e281c5a706ccd82328cfc8f64c"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pyyaml" do
@@ -88,8 +87,8 @@ class AwsShell < Formula
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackagesa0b54c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40bas3transfer-0.10.0.tar.gz"
-    sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
+    url "https:files.pythonhosted.orgpackages83bcfb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571s3transfer-0.10.1.tar.gz"
+    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
   end
 
   resource "six" do
@@ -98,8 +97,8 @@ class AwsShell < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcwidth" do

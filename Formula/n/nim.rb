@@ -1,8 +1,8 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https:nim-lang.org"
-  url "https:nim-lang.orgdownloadnim-2.0.4.tar.xz"
-  sha256 "71526bd07439dc8e378fa1a6eb407eda1298f1f3d4df4476dca0e3ca3cbe3f09"
+  url "https:nim-lang.orgdownloadnim-2.0.6.tar.xz"
+  sha256 "fbcd5d731743adec2b3bb9bcf6f5fd993ed11b250f957166bebf328f307cba6a"
   license "MIT"
   head "https:github.comnim-langNim.git", branch: "devel"
 
@@ -12,13 +12,13 @@ class Nim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08901a7f566f0513521a5814f87a11d593df7a471914ef34625cedb44644cf45"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b69ee0671acbc72ee02de1c82c5c9129fd1f9a55467621f2c32620056032ecd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3fab6eeed221fcf97c6416139c831390d9becd77d09074b2a343c87ea16fed6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "674f0162136814d1555eac5699ecd977bdc494217401d4d6f90dd8719a5e1afe"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a074c2dcee6e3e0e53569eda343be5ee16d22b43ba24f5227fe8d7bdda633d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ef96b141be5a1d3b3e5decc17ce38812812f814d2b1f5e5a5417587742c36c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b46ce433d100c39380459700770fc23675bc46b36157330a3810177a62c85e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02331d6a806f478fe9f03c35b5367c4d81f5b740b012c0bed4a36e4676dc922f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bd003300466eac499eeb2fa344951406b8170520bf831c2605316bfbfbc2415"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "247467381bbea35e3a6c6329916a094ad942ce3b9ffaa1e8582b7f3a0fd318a3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4832c3264413d4c7ab2b85a4259abbf216cd5e5c450c5a5d44e4e4e75903e4e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "27726bda18b98886cf32cc3e902046ec0f84fa04a94f919be7e4454d29def87e"
+    sha256 cellar: :any_skip_relocation, monterey:       "61bf916d2b54cbbcbd4125a9b095f4de5bda22bc46546d12e0ff73a717105b39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c253943a6d73ded8f9976f6376a1a7bb6c7c7db900bfa159df78b77f98369736"
   end
 
   depends_on "help2man" => :build

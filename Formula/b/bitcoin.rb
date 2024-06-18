@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https:bitcoincore.org"
-  url "https:bitcoincore.orgbinbitcoin-core-26.1bitcoin-26.1.tar.gz"
-  sha256 "9164ee5d717b4a20cb09f0496544d9d32f365734814fe399f5cdb4552a9b35ee"
+  url "https:bitcoincore.orgbinbitcoin-core-27.1bitcoin-27.1.tar.gz"
+  sha256 "0c1051fd921b8fae912f5c2dfd86b085ab45baa05cd7be4585b10b4d1818f3da"
   license "MIT"
   head "https:github.combitcoinbitcoin.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9f31e1e345f50e5fa63a3fdca07115d53e556bea31b8370dcae48b23b4aabdbf"
-    sha256 cellar: :any,                 arm64_ventura:  "ec9cb37c32dddd4a7cd438349a478148b3c580c0eaa732dbe9940880dfea7dcc"
-    sha256 cellar: :any,                 arm64_monterey: "da3f1b6089c6e8e16c2a613f65615433c29a35287a810436a67da682e327f7b0"
-    sha256 cellar: :any,                 sonoma:         "13e9e5b60b4388260104808a8fbc55181b9aa0924821963ee7170e02902c0f30"
-    sha256 cellar: :any,                 ventura:        "9f542bd0ae8fe8755ca3de730b43abd5fecf49441bbd696532625c56e8cbe52a"
-    sha256 cellar: :any,                 monterey:       "7bcce40dccc2940a0c9996378f1395e9b76a342575e8897b71434e8995b53639"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6694e26f630f53bc2ed624fb17bc1f5f0ede7aa99920c56f57c6e994115d95ab"
+    sha256 cellar: :any,                 arm64_sonoma:   "4c8fa01542cbbc6d538e0ee2f4b3500c13339855b64a8dc825f935265c16060e"
+    sha256 cellar: :any,                 arm64_ventura:  "9f5160acc4a3f80310c25b8fb1161150c48867ceb32b912e9cb8db42e178596e"
+    sha256 cellar: :any,                 arm64_monterey: "e392e556f28356a560543a7fc931b906551d1dd6d90e0ff9bd0701591db6eeaa"
+    sha256 cellar: :any,                 sonoma:         "c72491eafc0e56b05a585eba3edbc764f658ce7be5ad064e2e23068662265010"
+    sha256 cellar: :any,                 ventura:        "24cdb153e7f1c37b5c6153749bc7ffe060843b994a41853461e39065de79bd30"
+    sha256 cellar: :any,                 monterey:       "bc8d2fa559c22a81f5ca18ca9837dc41f6a172dacd38cd89284850bc9d6503ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "369369596fede974d8030866521b151667536bce4936814403c196d18b1cb06f"
   end
 
   depends_on "autoconf" => :build
@@ -42,18 +42,14 @@ class Bitcoin < Formula
   end
 
   fails_with :gcc do
-    version "7" # fails with GCC 7.x and earlier
-    cause "Requires std::filesystem support"
+    version "9"
+    cause "Requires C++ 20"
   end
 
+  # Skip two tests that currently fail in the brew CI
   patch do
-    url "https:github.combitcoinbitcoincommite1e3396b890b79d6115dd325b68f456a0deda57f.patch?full_index=1"
-    sha256 "b9bb2d6d2ae302bc1bd3956c7e7e66a25e782df5dc154b9d2b17d28b23fda1ad"
-  end
-
-  patch do
-    url "https:github.combitcoinbitcoincommit9c144154bd755e3765a51faa42b8849316cfdeb9.patch?full_index=1"
-    sha256 "caeb3c04eda55b260272bfbdb4f512c99dbf2df06b950b51b162eaeb5a98507a"
+    url "https:github.comfanquakebitcoincommit9b03fb7603709395faaf0fac409465660bbd7d81.patch?full_index=1"
+    sha256 "1d56308672024260e127fbb77f630b54a0509c145e397ff708956188c96bbfb3"
   end
 
   def install

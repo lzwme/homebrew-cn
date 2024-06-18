@@ -5,16 +5,16 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.5.1/apache-pulsar-client-cpp-3.5.1.tar.gz"
   sha256 "d24990757319dfa9c9e5d3263f60105dd9e12ddeaf1396d6b397f87dab2fd7d1"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e9a8c4fdce52d8527834802e88e49ef5626be2bcb62874f05054c9c492ce7bfa"
-    sha256 cellar: :any,                 arm64_ventura:  "c6de53c50f101028cf3b41acdceab57672b71b5697b76577cc6a1faca1f57d1d"
-    sha256 cellar: :any,                 arm64_monterey: "16c747c9d2c151f3d1cc1c41e19177d79015caae94ac41fa5c04a5db2b9c45a7"
-    sha256 cellar: :any,                 sonoma:         "80c8ffc6ca9a8c7fee69b6737eb5db3f414eef42de1f373e96eab646ae34fd91"
-    sha256 cellar: :any,                 ventura:        "34ed444fa22a3e38f1f69ff2a9a3874d5fa79fd6ff58d6c0a4bf425ee45ca2bd"
-    sha256 cellar: :any,                 monterey:       "478b41fda1d301e837e925f5b774b44e30c62683f7f91d9dbd34f985fc9a2353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75319b4881305a725a654a39065bde7023133d3a58211d9c7804dd2af8f8ee30"
+    sha256 cellar: :any,                 arm64_sonoma:   "c3977514cf6edca99fbd871ade8e6f39a20fb370839f60a399e7dca18d3bcd71"
+    sha256 cellar: :any,                 arm64_ventura:  "6180325b2bdac7c4d5d82c00ed19b30967b966de1b0cbae4bc71206d0c6ac872"
+    sha256 cellar: :any,                 arm64_monterey: "c96e48429050dbfedcade7225b9ad038016c18ea6b044fe1cb79f14c8261eb16"
+    sha256 cellar: :any,                 sonoma:         "7c2f2cda4965a2c6fd83c8766ffff2b405d21cbec1d0befb5c73a104259589b2"
+    sha256 cellar: :any,                 ventura:        "cb6b6ca1d7a04509da589ea1d09c4a9bf17f946e457b5c1a3df41f84caa7831f"
+    sha256 cellar: :any,                 monterey:       "b38fcff8f422942b6658224106858ce46eeb894f2dc74c74732350e100491dca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "407806381a142f65595d215b35dbd7564cc901bbcfc5a500f1a9d89295b34d5e"
   end
 
   depends_on "cmake" => :build

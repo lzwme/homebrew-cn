@@ -2,20 +2,18 @@ class Lc0 < Formula
   desc "Open source neural network based chess engine"
   homepage "https:lczero.org"
   url "https:github.comLeelaChessZerolc0.git",
-      tag:      "v0.30.0",
-      revision: "ee6866911663485d94c1e7ff99e607c15f2110be"
+      tag:      "v0.31.0",
+      revision: "018f28bad2fc0a6214e73bc937ae46e8c770bf0e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a13aa9442869cd7cd46c9f6ec86b7346177e93981ecfea2f723d2b9bcbfba347"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e010af9bbc8615097befd17d72551f6271399e0ba6bf17d09b3f8a81e681b1c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67f388251920e35eca0d28e175cf902e1add3d37ec46fa563a6959ed02bf26ec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e062c34cde10264f2bcad3bb22e38e5dd102d838d58b6e36d5acb9b158006003"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0dac792ffdb44afe580efbd5abb71c13c7aff5a2184f705e517ff22a973c149a"
-    sha256 cellar: :any_skip_relocation, ventura:        "6725b604ba0003035986bc7be6399fb6731341d8f3b96f087ab0a68432e87093"
-    sha256 cellar: :any_skip_relocation, monterey:       "1015c4823f4055a8c9b9b1824795e7a269c009991f4cdfa02d1bbc309118edba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07ef8d0e683d2f9ba8276461554e5950333809739e016b3bad6a8d7b449b52b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df45f8885b351219f6f7e47b284a39d42690e3efc71049ffaeec8cf58935528f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a599cbd6a5e3cb80a4c85e19bcc36ae84d6bac787ff5d6b4e8c46c84de5c242f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1079a0e3b693569b0907ef68813f7850bd5fe69e46073b3670bb35644c0efd7d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1889e860e75f05901ab9801ad22e664c930d29300e64a8481a702148ab98ce2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "43d2caabce024410302728eeba787263dd7859d99cadcbadb67ced3549c3cfc3"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e6e0ecc756b4fe727bbb462b61a9752340b4c23f8f3eaf99a6a86be4868ebd7"
+    sha256 cellar: :any_skip_relocation, monterey:       "66edcc0e9029723c948a6c9121365deabd2cefee003302920c36ba4de99db677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc810dd1a50558bc10e2ce6d0070089a31bccd97937915fb9032b6fc8a71f769"
   end
 
   depends_on "cmake" => :build

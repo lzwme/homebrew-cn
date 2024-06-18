@@ -1,8 +1,8 @@
 class Toml11 < Formula
   desc "TOML for Modern C++"
   homepage "https:github.comToruNiinatoml11"
-  url "https:github.comToruNiinatoml11archiverefstagsv3.8.1.tar.gz"
-  sha256 "6a3d20080ecca5ea42102c078d3415bef80920f6c4ea2258e87572876af77849"
+  url "https:github.comToruNiinatoml11archiverefstagsv4.0.0.tar.gz"
+  sha256 "f3dc3095f22e38745a5d448ac629f69b7ee76d2b3e6d653e4ce021deb7f7266e"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Toml11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4503636fc24fc772d4f8f32907f0de27150901ad024eadc207290bb4fba1be86"
+    sha256 cellar: :any_skip_relocation, all: "9181ed03c86fcfbad4e180a7f4b67731efb384f52371a44acf1c823f272ee321"
   end
 
   depends_on "cmake" => :build

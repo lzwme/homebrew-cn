@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https:github.comlu-zerocargo-c"
-  url "https:github.comlu-zerocargo-carchiverefstagsv0.9.32.tar.gz"
-  sha256 "a96f3cc6c63d9901c9583083338d50b0132504bb067f68accc17f4116ed01f72"
+  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.0.tar.gz"
+  sha256 "85230801f57c1f2b85d99fae3fc43f93080ecc0e3763a6af178fc5e6c218004b"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "46900c9ec0a8ef1e2a8da7df55614f6ac5be574e5722b237ee9be2a21b1d7381"
-    sha256 cellar: :any,                 arm64_ventura:  "be40d7452b4f50767ebcc9ab96c40422ffce04361785caa811f7d992efb724da"
-    sha256 cellar: :any,                 arm64_monterey: "c2a271c072ef4c0810821343c84a4712f0ede1493c399defa367fd5df0e29562"
-    sha256 cellar: :any,                 sonoma:         "5902527aefdb710e3b51165d19b3d6510295c02720e639ec271fad5c67310563"
-    sha256 cellar: :any,                 ventura:        "e9ef8ea2093f40d0cdb1531e628fb4f975af945bae3b60e93253922756d1c0b1"
-    sha256 cellar: :any,                 monterey:       "de2506fbe218ac9b7a18b38213ec3976bc75af04eeefa68406fb70636239e5af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f205ac78bd5b3a9c9de1e9b234781a8b13f99ebed0cccf8e8bcdfd3705db6a0"
+    sha256 cellar: :any,                 arm64_sonoma:   "c42771824ac04b414af6521ecff00f7c0a209efb9a741dcd382acdb0d11b7a49"
+    sha256 cellar: :any,                 arm64_ventura:  "76e5e49e05be6cb82ed0ed42eab38c624e52e77adb782cdd83d6201fb0babc29"
+    sha256 cellar: :any,                 arm64_monterey: "2a7629159198c93fd1e2b064e8dcc6ec8855cd7cf3b2f7411436c9e17be0818b"
+    sha256 cellar: :any,                 sonoma:         "73400d87bcfe1f36f048b6c68eb499e38d0c979193f47cef3954fc61cbb0ce7a"
+    sha256 cellar: :any,                 ventura:        "3738e517a4fd6f1793dee3c55aec6f0e5ca726c9996c3a087e230d83a2c70dc1"
+    sha256 cellar: :any,                 monterey:       "e4d2406ee10fbf0f006ddc81fe8c1d656aaa3cbc804a712b382a9576983803a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b26ffaa5c517b3c11ece3b2676427c2617b38c435a129472cd1360b32a29fc6"
   end
 
   depends_on "rust" => :build

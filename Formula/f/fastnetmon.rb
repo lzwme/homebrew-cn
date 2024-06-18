@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b0a882d511fa17b78fe99fa1781e6ea85a9b47c5249a3d6902f8f0295144c4e3"
-    sha256 cellar: :any,                 arm64_ventura:  "2d8fa4bd1912f8113463647620959173b7c63c7b27c553ab2cf88c85d352bfa4"
-    sha256 cellar: :any,                 arm64_monterey: "13542349c93fed74ba9f9a7c08e30fa242df93dbb0ed2ab1cdb3bb52568992af"
-    sha256 cellar: :any,                 sonoma:         "6949c5a65f26b5c66baf74c77170487333cd7a59f92e062646fea7a40a150bbc"
-    sha256 cellar: :any,                 ventura:        "4629d16caa0614c2820b6d6e8f5bb9eefc7ae612447c4bee0b7150173adc23b7"
-    sha256 cellar: :any,                 monterey:       "364e4817e62819248111c18053e76a1ac24129bd7f406ac933e1d873755484a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4274cf0201cd15d34ac730ced53cef86b7438139a447a5f02e7b5803999dca6"
+    sha256 cellar: :any,                 arm64_sonoma:   "fa74c8af0c445163ce5b2d4b5d5fe7723d04d79fa2a8dbe54bd29661b69f2c0a"
+    sha256 cellar: :any,                 arm64_ventura:  "88b081f8be5a98df8b0ed0375d96889b8a1680f97ada4a493c2a664cb04bdcf6"
+    sha256 cellar: :any,                 arm64_monterey: "f43e32e6f15b68622419711f146eff4a40cb842aaa905d8acde1750c7772a101"
+    sha256 cellar: :any,                 sonoma:         "1517cbab5085b4d34e7b12c876aca3471b4664f0645cdc3afab21515d974b290"
+    sha256 cellar: :any,                 ventura:        "79fe68fecd2a16821d131b93aff465e1c108a408d998db5c2b5bef5e04c6288b"
+    sha256 cellar: :any,                 monterey:       "95e9fd6fb0be10fac036c7bd17200375f820e33246b9702bd038757f38820dca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24cc6b09a6f2acb365ace771389ed5905c0f6f60fd18f62de5181637daf7016d"
   end
 
   depends_on "cmake" => :build

@@ -8,10 +8,10 @@ class Asitop < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eeab44a58dd6252a970dbc0383d562cbd540ef255e65111e04cfcdd0b720729c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50d1ee2206a174682d11b33b7e193156886b323c2ce0cb44c54ddda926696330"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57512f3dfa29da42031706f9768e0c86441ba377d08bc3ea22cafca61f779a73"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8fa9deb82c11f613cc6355f14433abf6a23b98bf414c42b93eb8d105b8f7cc8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a4be33923fd90e29181eb00164a1b5317e119de55529148b3bbff9134e7619c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21fee7bc3f0553f9481a591bb34933e9cc3087cacfe2a5a6a00154cfa6393f59"
   end
 
   depends_on arch: :arm64
@@ -45,6 +45,7 @@ class Asitop < Formula
 
   def install
     virtualenv_install_with_resources
+    bin.env_script_all_files(libexec, PYTHONDONTWRITEBYTECODE: "1")
   end
 
   test do

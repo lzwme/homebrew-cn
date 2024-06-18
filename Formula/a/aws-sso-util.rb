@@ -6,16 +6,17 @@ class AwsSsoUtil < Formula
   url "https:files.pythonhosted.orgpackages4f64f00272ecbc60703d0f1a3b17ab75d893c05ec5d60b0e6e9d59ef9b8b9c61aws_sso_util-4.33.0.tar.gz"
   sha256 "e48d7f5911443450d28e1ac1613f81b9aa15babb1b2055b4531df87db43a09df"
   license "Apache-2.0"
+  revision 1
   head "https:github.combenkehoeaws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7836869c583bc0ff875ec3320b5547227d68bd8adcb21d000245bca09abf3a13"
-    sha256 cellar: :any,                 arm64_ventura:  "96096190305272c14e350922bfa23ec4925157de3928244ed56b7c99091f26aa"
-    sha256 cellar: :any,                 arm64_monterey: "da79e10847615ab266c52fc7ab67839d5bbccb92fb121b6420061fb86a57e063"
-    sha256 cellar: :any,                 sonoma:         "13bad4661c7714000fc2f61fc682bd34fa5751fe097ff85d60a44d58a4d9ee18"
-    sha256 cellar: :any,                 ventura:        "dde2babbf2933e2fc25706aef136130489b6931480e8dab0d4ab6660591c3752"
-    sha256 cellar: :any,                 monterey:       "cbf807c0124f493a4a33528cfc8b1375e515a021b9738ba21ccb52c6afc809f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f09dfe69f131a7c4c243c93eda1160d493d54187e9ef2a24865ebc8675a2d1a"
+    sha256 cellar: :any,                 arm64_sonoma:   "997774847c625ee2a208fb0ab0271f0bc19cb337bce9046b14a57af085155eba"
+    sha256 cellar: :any,                 arm64_ventura:  "a0e5979684315e7d7d39831a376d133eabb7b33f4cbf3e49f22dc48dac8ab67b"
+    sha256 cellar: :any,                 arm64_monterey: "a4f91918788ab41c56c4e700fc8e592d3934d4b2edcafd636ec0c1361f6eb448"
+    sha256 cellar: :any,                 sonoma:         "2434bf6f955948ba3f8c149d7838b52efd0a03387d089961b111f0c6550d8e2a"
+    sha256 cellar: :any,                 ventura:        "e16fb2e596d4132b0732ca8b9f63095106b0ad8384172f1dc855ea2bb4db0fa9"
+    sha256 cellar: :any,                 monterey:       "8235aad952f1eda72603360b788c4133ab6723092662a44d2a3c85fa2fec0b22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84f3778eba8ad6e8f78d2dc631e3e73614e45540b66fa816c2638bec4a66c55a"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -39,13 +40,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages8583cad274d561666dc36dbb2702cf049dd4204a2ba8574cbab6c1c54f34e379boto3-1.34.117.tar.gz"
-    sha256 "c8a383b904d6faaf7eed0c06e31b423db128e4c09ce7bd2afc39d1cd07030a51"
+    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
+    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesaafd163ba1340a4fcfcf85146dffa2c01f403b3308d8bf29a76c28c7b784af7ebotocore-1.34.117.tar.gz"
-    sha256 "4637ca42e6c51aebc4d9a2d92f97bf4bdb042e3f7985ff31a659a11e4c170e73"
+    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
+    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
   end
 
   resource "charset-normalizer" do
@@ -114,8 +115,8 @@ class AwsSsoUtil < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

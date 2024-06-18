@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https:sysdig.com"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   stable do
     url "https:github.comdraiossysdigarchiverefstags0.37.1.tar.gz"
@@ -22,13 +22,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "ea309f2c3911132ec751b96b69d26f81c42d7bdc7737194c7e68203e3123ef15"
-    sha256                               arm64_ventura:  "5914bcde213ec06e612315960717e0fa2bad026f2ecc1855e94ec334c637df9d"
-    sha256                               arm64_monterey: "2485c8c8fb72e4d537c9d64d1b319020641021d6bcdf5c6b39b05c984d153cf3"
-    sha256                               sonoma:         "0640944acbaee87b60ca580f9166736c41ec044c65a8e3b6a0707ead1b3e70e9"
-    sha256                               ventura:        "4931b7430c774666401b1c1dde16716969c879a9d74cd1a11019cc1c6ec474bb"
-    sha256                               monterey:       "b51b373b526e3f6a50e2602fbf36629851e9ef3fa75dd0a57e70dc8422f61f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2145abf7c8114014fd3e80e3a3e1b6ae7994651ae13705b9b87649ff8e1d2cc"
+    sha256                               arm64_sonoma:   "004942ab404dd1a2ed36ec4c6481fe9a8d650534b33914d90c30833bbc1d8482"
+    sha256                               arm64_ventura:  "4c3a26f55af1f4b6e151bd26e8484191b7596996453023477b73cfdde213f501"
+    sha256                               arm64_monterey: "db83bb280c1acc8cd2c1739e2cdb01d9c00132c0f2355afbfe4ea91124e1c125"
+    sha256                               sonoma:         "8c44d61ea3876a49024511a7e0dac161b02f64f61a63f206bae6f6433120a012"
+    sha256                               ventura:        "e20749407817e714e6bd09b16baa933ab939908a6be00896c5dcce21d2b0dc61"
+    sha256                               monterey:       "4483e1cea9219993b8dc35207a7a5f01512fb52ddd914b3d6b6519b15cb5d297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5852c2167b69cfb1c6545c873adceb9ea0a4bccb98e6ebc2cd3f57da8f750544"
   end
 
   head do

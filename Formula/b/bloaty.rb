@@ -4,17 +4,16 @@ class Bloaty < Formula
   url "https:github.comgooglebloatyreleasesdownloadv1.1bloaty-1.1.tar.bz2"
   sha256 "a308d8369d5812aba45982e55e7c3db2ea4780b7496a5455792fb3dcba9abd6f"
   license "Apache-2.0"
-  revision 25
+  revision 26
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "b1afb7eaa6b88ef167a93060d78b3c5502cd676bde5dea3409ec626eb9e2ed31"
-    sha256 cellar: :any,                 arm64_ventura:  "4c9a855ce38c2d0425d32f5d5ac9ba4a913410fb53f1be131185d1694f9395bd"
-    sha256 cellar: :any,                 arm64_monterey: "560d56fea8f6c7798c135109f3bb4461861d8e8c29a746449a1a236aab4e47b9"
-    sha256 cellar: :any,                 sonoma:         "8961375f5bcf1a7ebe157135c8e1a52075e71fcda83d4fa178e60ec9a0760f62"
-    sha256 cellar: :any,                 ventura:        "6ccfc4d232a43eebe0225ac5b7fe7d24806660ec8989e13ca761ed55331475d0"
-    sha256 cellar: :any,                 monterey:       "b16b1c1a66b074e592fb508e7d9584fefe5f3926cf40d2b711a755f98b901730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52917909740da8dadd44d2b9826b9560ab98a0abb04353df7116b695d49826c2"
+    sha256 cellar: :any,                 arm64_sonoma:   "5fdc606fdabc81364a5734f94331830b93721524ee6c14c0f2c742bd6160976c"
+    sha256 cellar: :any,                 arm64_ventura:  "4f88e940b44f8d1d31873b6212544989097d33f5e0589d255777f967dad78a87"
+    sha256 cellar: :any,                 arm64_monterey: "2a8584f7be455ffd7c88f68687155b884489308af6793d0fbad3b9fad20be379"
+    sha256 cellar: :any,                 sonoma:         "5f3643f6a12f95aa6f070697d7395aa47374e4efac968431a5e22499d2524d2f"
+    sha256 cellar: :any,                 ventura:        "044a2400f8245ef780cf934add652b83b98abe867a6eb7aafdb3d926beb5fdec"
+    sha256 cellar: :any,                 monterey:       "71d2c6793d86bbb68d633c3322191912ae20d9b7d92a2b1cada2d0f9f0bcda60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "043c80e0e90448a48259ec37cd6554c1a5ecf541432f6c4530b6f008394a0273"
   end
 
   depends_on "cmake" => :build

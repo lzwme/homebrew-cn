@@ -4,6 +4,7 @@ class Gradle < Formula
   url "https:services.gradle.orgdistributionsgradle-8.8-all.zip"
   sha256 "f8b4f4772d302c8ff580bc40d0f56e715de69b163546944f787c87abf209c961"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https:gradle.orginstall"
@@ -11,24 +12,22 @@ class Gradle < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efcdc5e35e4c84992247cca63dc6e4cfa9fb560e3887c2e4caafa62d7cad045c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efcdc5e35e4c84992247cca63dc6e4cfa9fb560e3887c2e4caafa62d7cad045c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efcdc5e35e4c84992247cca63dc6e4cfa9fb560e3887c2e4caafa62d7cad045c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bd2537fef2d3504b1b195131abbfbf302a4d4bf2e86984249dd4e8dcc2c2d1a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd2537fef2d3504b1b195131abbfbf302a4d4bf2e86984249dd4e8dcc2c2d1a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd2537fef2d3504b1b195131abbfbf302a4d4bf2e86984249dd4e8dcc2c2d1a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "834067560a7903b2bbd9c686b4830e736157ddbcedeb655a19fb565e735c42de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e74dd8ea5b8b7ee1f11a81bc51e987bd4bbeb2ed4aab44ef09e1a751cef751a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e74dd8ea5b8b7ee1f11a81bc51e987bd4bbeb2ed4aab44ef09e1a751cef751a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e74dd8ea5b8b7ee1f11a81bc51e987bd4bbeb2ed4aab44ef09e1a751cef751a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f34aea09fe33ccbdba75de64bedf303221405b2f8ebae11ed842c0487e72698c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f34aea09fe33ccbdba75de64bedf303221405b2f8ebae11ed842c0487e72698c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f34aea09fe33ccbdba75de64bedf303221405b2f8ebae11ed842c0487e72698c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d7c13cd0e6ccb8a694c2433e3604b32f9de3d7e6030d7850f1e5a6fe11aa724"
   end
 
-  # no java 22 support for gradle 8.7
   # https:github.comgradlegradleblobmasterplatformsdocumentationdocssrcdocsuserguidereleasescompatibility.adoc
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   def install
     rm_f Dir["bin*.bat"]
     libexec.install %w[bin docs lib src]
-    env = Language::Java.overridable_java_home_env("21")
+    env = Language::Java.overridable_java_home_env
     (bin"gradle").write_env_script libexec"bingradle", env
   end
 

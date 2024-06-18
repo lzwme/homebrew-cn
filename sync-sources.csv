@@ -59,6 +59,7 @@ Homebrew-homebrew-core/Formula/a/aften.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aftman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agda.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/age-plugin-se.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/age-plugin-yubikey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/age.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agedu.rb, Homebrew/homebrew-core, 0
@@ -127,6 +128,7 @@ Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ansible@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansifilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansilove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansiweather.rb, Homebrew/homebrew-core, 1
@@ -4444,6 +4446,7 @@ Homebrew-homebrew-core/Formula/n/nspr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nsq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nsuds.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntbtls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ntfs-3g.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntfy.rb, Homebrew/homebrew-core, 1

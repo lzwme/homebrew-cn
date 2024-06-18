@@ -6,16 +6,17 @@ class AivenClient < Formula
   url "https:files.pythonhosted.orgpackagesbee234e73478db37847c94c51fd5b6b4f7e6618f5070a4f2f1fd24f17ab05466aiven_client-4.2.0.tar.gz"
   sha256 "8383b984324e3e126e12fba1e75963b29458ff4098969020ac4532c31da32b40"
   license "Apache-2.0"
+  revision 1
   head "https:github.comaivenaiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, sonoma:         "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, ventura:        "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, monterey:       "caddec0a16ea83ceece06b73df589cadbdc797473bc8078cd048ac2fa26a3331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf6b8c799cd06ff8527b088594a4464365c82478f760f948445d44f42a9ae30d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce05734981008a11ad2ea8c4d79ae48e50d09ea7a35670a92028e5b630bda597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef8e3d6e402bc0c8b926a8c47b41deefc7a702c6dc24336fb1bb7d4cea684624"
   end
 
   depends_on "certifi"
@@ -42,8 +43,8 @@ class AivenClient < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

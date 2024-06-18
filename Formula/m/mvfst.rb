@@ -7,32 +7,34 @@ class Mvfst < Formula
   head "https:github.comfacebookincubatormvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "be4948a70ea561cd2668d2fd0b03901cbc39b0c7f97be0197eb581ddbfcea37a"
-    sha256 cellar: :any,                 arm64_ventura:  "9a7a6a4267f1acae8a10e3249f59fd64b64ea6b95de74ec3a3cf827ea0613ff2"
-    sha256 cellar: :any,                 arm64_monterey: "a089eccb1602966e8d20a927d1d422e1950e548e97731570a16f9579575374fd"
-    sha256 cellar: :any,                 sonoma:         "e4e3fefcc348980921d219d9a6c086fa552e86f78b87d9c4e31e8f7293784f11"
-    sha256 cellar: :any,                 ventura:        "e4a7e5c2fcda18f69b3b6c929b0eabcd63b901d6b7deb5916790dbe999a97e44"
-    sha256 cellar: :any,                 monterey:       "da3c5a32e67a863c955630b8e850fca487155b368c4a4bb2418e3410a561493d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f7529e16f5abbc86cced50d243fd76fba8e6845740dce5e4cd57d8e1e053b4b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9807ead1cdec9312a434233435915fda38753b493388e1f0b82c34fa6b0c199e"
+    sha256 cellar: :any,                 arm64_ventura:  "9f42fb882a4e8540c22f5dcf79b2e68f490a448b40f5680f0162820b9c0309b3"
+    sha256 cellar: :any,                 arm64_monterey: "ac6755ede44509df56645d868996f13ddb30b19d0b02a530df0bfafb97eda66d"
+    sha256 cellar: :any,                 sonoma:         "1ffd22b3b7e2096da6f958ef83df50383823b83a6a119beb071ff2c7c2241ddf"
+    sha256 cellar: :any,                 ventura:        "4a33a960b8b47c1d1f2ecfb85e37bd339782010d5b5e916663aa00bf2120884b"
+    sha256 cellar: :any,                 monterey:       "2030ecb20eac98ff8a1c1d3e6afd87b4f217a14631f5e07ea3389a78a62c6859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b877a36eee9be92c9ad14980a4bec394eabca3c30f0b947632c10e6dda498642"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "googletest" => :test
-  depends_on "boost"
+  depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "libsodium"
   depends_on "openssl@3"
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
-    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
-    system "cmake", "-S", ".", "-B", "_build",
-                    "-DBUILD_TESTS=OFF",
-                    "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
-                    *shared_args, *std_cmake_args
+    linker_flags = %w[-undefined dynamic_lookup -dead_strip_dylibs]
+    linker_flags << "-ld_classic" if OS.mac? && MacOS.version == :ventura
+    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "_build", "-DBUILD_TESTS=OFF", *shared_args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
   end

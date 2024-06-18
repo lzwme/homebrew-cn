@@ -6,17 +6,17 @@ class Awscurl < Formula
   url "https:files.pythonhosted.orgpackages715b9a3e05e574b45e99033db5984a1ba6cbb1ad9f422dc63789b18e16af77e4awscurl-0.33.tar.gz"
   sha256 "9cc47a97218992206af322bd71c7db4e6c8f5635c45d8045578e616c7c83e6cd"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.comokiganawscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42b6721c0996f8420a4438d66d102ed3c5cd9d3c9bbefef1bcccdd67decb2adb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f99172781a72ca1a178b55ecc231f8c9e101d800559eda3c2c8adc465ae554d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db0ea964e3c21cca8c668477d6c2d9f80ca5edec653bdcbf38ee6d2a051d38f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3fe538b38a3024dbf26c9be7622e036d252aac7608dd8b1c15a93bf2ad5e9ea1"
-    sha256 cellar: :any_skip_relocation, ventura:        "28b0120703b8365fb28261c8448d916e0a7e8e9676a59a798289ca1b70393c96"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bf2a55d76eb556e21a827914afc3aa508e27ba86fdb08de460d4b45bacbd29d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bfed102e618d6d6207419cb2b413d68eab571a2d6343b0ff0856affbd3ed6b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8df0fe07720feb7e8c30da45ee497a3ae4638b57974378c3823e0eaac8bf88e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6598508a420ef75c8b60c71a9c9af302775164309c74186adf4eb002745038c4"
   end
 
   depends_on "certifi"
@@ -46,13 +46,13 @@ class Awscurl < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
-    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

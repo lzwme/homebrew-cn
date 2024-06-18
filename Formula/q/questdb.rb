@@ -1,8 +1,8 @@
 class Questdb < Formula
   desc "Time Series Database"
   homepage "https:questdb.io"
-  url "https:github.comquestdbquestdbreleasesdownload8.0.0questdb-8.0.0-no-jre-bin.tar.gz"
-  sha256 "72f7da71d30f6ffc3f9ae68a5e6e9240c0092d28f13fe0fdfd89a982c600604c"
+  url "https:github.comquestdbquestdbreleasesdownload8.0.1questdb-8.0.1-no-jre-bin.tar.gz"
+  sha256 "4ba8ba5cbc45a48c58025c42bbe300ce730b9015afa7c415c6079dfab602593d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Questdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a471b962bb7d44c19b170abdd32b7a5f1e2e6483fef0195f74fc8217ac63773c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a471b962bb7d44c19b170abdd32b7a5f1e2e6483fef0195f74fc8217ac63773c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a471b962bb7d44c19b170abdd32b7a5f1e2e6483fef0195f74fc8217ac63773c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a15cb2b3e5e05f0712e6232ff183e7cf2fe4dd8207b3c77197e44b7999c256f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "a15cb2b3e5e05f0712e6232ff183e7cf2fe4dd8207b3c77197e44b7999c256f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "a15cb2b3e5e05f0712e6232ff183e7cf2fe4dd8207b3c77197e44b7999c256f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02681dfe0b53b86ac7df7f938463ac5e620d2ff318d4b248b944598b234dd314"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, sonoma:         "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, ventura:        "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, monterey:       "458851d5c14f843de01710bc4e6b5ec7f2a159345c71913b9ef4ee735b99c882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c02e9e85196edc9ddc3c13495d4f7a9a9f77adab8a8513760a0b8ff7b093fdf"
   end
 
   depends_on "openjdk"

@@ -5,6 +5,11 @@ class Velero < Formula
   sha256 "e292c4427d801b426a53e24cff10aed16de5bcbf2a5207edfee30d8c4d363135"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e0ff8caec98eec0c4d7e95493514c485966559fc798fb6d8d8346890c1238c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e9e8ecd38140f9e644987bea9813d2230cfc188d428a18eb48ee4d744a6445a"
