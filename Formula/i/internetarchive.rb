@@ -6,16 +6,16 @@ class Internetarchive < Formula
   url "https:files.pythonhosted.orgpackages0d9e07e577a1d3e20deeae447069b80d523e7140b790f0a8e1bab1e23b1b9252internetarchive-4.1.0.tar.gz"
   sha256 "467188386218d2c77815ca798a51dd18310b326841113bb462b24ea9a71beedc"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20d05bfaea3824ddabf5d2fc1810d6771bb889fea0ab2850e2d08655b86bb16f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4f5ebae54b9a857473fb76cf3252ea06f00bf479c2b5d8a4908b301e1248748"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a911a60aca5933bf4417b615f73531551dabab3da65b7bab85ed0eddd1f71f8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d5f4e90efb1df9d6985ac49018b331ba93e904fe0a574d357cba5499e70fcc70"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4623b0550965db79fb86c29a4f560c055ddf6449f6543e7cb42908f1454954b"
-    sha256 cellar: :any_skip_relocation, monterey:       "88a7cd7ec95058c6224a12fbfd247dac6bff4bfd1f665a0873b2b12d9396aa1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b0241a93e6145890f0c137f61b346418dbc4202552dc58fa321a2d779b717a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, ventura:        "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, monterey:       "96ff7412b8276164101dd14d9d669a1c25e3f17be42d0a4a22212f45111d8b97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7880876b688a12b91d7f69e26efc8995d9e6f7ab7d1329ee96eb0e088a14cab"
   end
 
   depends_on "certifi"
@@ -42,13 +42,13 @@ class Internetarchive < Formula
   end
 
   resource "jsonpointer" do
-    url "https:files.pythonhosted.orgpackages8f5e67d3ab449818b629a0ffe554bb7eb5c030a71f7af5d80fbf670d7ebe62bcjsonpointer-2.4.tar.gz"
-    sha256 "585cee82b70211fa9e6043b7bb89db6e1aa49524340dde8ad6b63206ea689d88"
+    url "https:files.pythonhosted.orgpackages6a0aeebeb1fa92507ea94016a2a790b93c2ae41a7e18778f85471dc54475ed25jsonpointer-3.0.0.tar.gz"
+    sha256 "2b2d729f2091522d61c3b31f82e11870f60b68f43fbc705cb76bf4b832af59ef"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "schema" do
@@ -62,8 +62,8 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

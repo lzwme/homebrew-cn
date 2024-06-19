@@ -6,17 +6,16 @@ class Sgr < Formula
   url "https:files.pythonhosted.orgpackagesdd617d6cf822edb39d2426f6f185c7fc4de0ad4b80e0da3e5f50d94952795c11splitgraph-0.3.12.tar.gz"
   sha256 "76a4476002b5ac5a2b9fba36b6fcffd85b878bcc25f5aae411387e04a5532459"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4f76283db46670d48f38be240869170034a243afd079e32e4f04a5a9f938e82f"
-    sha256 cellar: :any,                 arm64_ventura:  "d9821cb17c76e3557394dbd54fdb7e7a572636ebf7b89ba59ee6248db7760b23"
-    sha256 cellar: :any,                 arm64_monterey: "eaff6e1b644143e73ba70ffd8ce740483462512b3ee5aa52ecfa5ee8815252c5"
-    sha256 cellar: :any,                 sonoma:         "c612c29bd206799603320db238cc819d4bad041c947be0b10245fa1a4e0d2751"
-    sha256 cellar: :any,                 ventura:        "9652ecefbefc30f04c2462c20d58bc883e834a50b62068405975ac175f2faeea"
-    sha256 cellar: :any,                 monterey:       "2b00e4d973f273677197dd75f0a87f547c983089078860f8acef3e1c842e0f5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc6792e463a52acce385cccebb2d635a2a63e90759d5950321c065109e863d8c"
+    sha256 cellar: :any,                 arm64_sonoma:   "307cb0fe6d3dc16b5015834648bfbe002dae28edcb3277129db1a8fae787e20c"
+    sha256 cellar: :any,                 arm64_ventura:  "8ea136e242a1657b9659d43de45387b1a1d2ba62cfa2c50db5cc0512d3565067"
+    sha256 cellar: :any,                 arm64_monterey: "c2dd65f7bf656db480a9f73f500a71a29e81f896d973a96ca2f57d741384ee9b"
+    sha256 cellar: :any,                 sonoma:         "83e352482d42295813c076f9e7d081784075bc04633cfe7b40d1a2b60cfea9a8"
+    sha256 cellar: :any,                 ventura:        "5753957d007902c1b06387830292724f24465dc6aa653b4e5a90ccfc814ef60d"
+    sha256 cellar: :any,                 monterey:       "741bfd746d6e30b17cfa61476453776281a8aafebd3395cca842dc056c3cb455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45aff3df501154d9f7b624139cfd90c391dea090c73ab5bbff1b99a2d382a0f2"
   end
 
   depends_on "cython" => :build # TODO: remove with newer `pglast` (4.4+)
@@ -206,8 +205,8 @@ class Sgr < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   # Switch build-system to poetry-core to avoid rust dependency on Linux.

@@ -6,16 +6,16 @@ class Instaloader < Formula
   url "https://files.pythonhosted.org/packages/7e/35/1f8d36c0656d4797fc5089c016995447f2b439e8fb9df02bf9d7873566fc/instaloader-4.11.tar.gz"
   sha256 "7478a1f0ed5c05911832c50cb19747243a461b5d434907f9fdb7d2d750d1b4f5"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "942757bf0e1d09121405f03026e6902191c0aad8b6a27a40675b6857a2e2568c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d71516e5024696fb3ec578642bc48cc88d880926ad57efdc12078a99791f73e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02b6275cbcb268a54e282ba8d68e033a4898fb12dc10d0a8c0e73e98007c65ac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18df021f306422cc5bd1b63c292fafd99ea3c652a9ef6f967abad6857ea76db6"
-    sha256 cellar: :any_skip_relocation, ventura:        "be4e6bd89bb03cf62767fe419b49d05de42d2fbf448cecc1e91f76df6c7a30db"
-    sha256 cellar: :any_skip_relocation, monterey:       "9943504924ec77e7f3d559758f2e6c21ae42f9c142b06857d1172326f839dd21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be398a0ea7789f5e3b8d79a30845418062c1b05d22f6867913fb8c037a2b14c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, ventura:        "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, monterey:       "08c103c7e609770f6ca32650894cc27376ad307fe49f629ad4e6bb3dcdbd5fcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "814fd3bf9a42c39d09dab1f6d5924d0a6604bb8fa82061e054120df3a79d998e"
   end
 
   depends_on "certifi"
@@ -32,13 +32,13 @@ class Instaloader < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

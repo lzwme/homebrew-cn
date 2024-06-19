@@ -6,16 +6,16 @@ class GorillaCli < Formula
   url "https://files.pythonhosted.org/packages/cd/2b/7a64f9ad59009e72ddf73d055195b4bf23e15599a61e66f1458b4025b9e5/gorilla-cli-0.0.10.tar.gz"
   sha256 "bf375230a06fac99ba56f14f49474466036f072751cd1d5a1908e8ace561856c"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "942159fd88e15d5d12dc10a21370ec42e2f37f89d5cfea4e0c41a277269c7610"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba57929848a6634fad2bea174d0d4352f13394521378ac1ef51a26b337fe9077"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe7da9313dcee6a2da2226d6768631db1eaf69429bf78f2796672e5bb16ab969"
-    sha256 cellar: :any_skip_relocation, sonoma:         "91a3e84455a76eb7fd11860fea6117412933a5940cd811e672338ac8bbab7390"
-    sha256 cellar: :any_skip_relocation, ventura:        "36efe2cbab19dd2c7cc68a617ccf310665ff1ea8cf6ff4b5c2f8e0fbc25250f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "45acd6e24b40ae6be7c4e6f67e336e9467fd10b8232d6aed55646e65d7a6e0bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "382cc90e905b06fff9a5dc26cc8aeb9efdac82d7bf1ebab6df62f02e524b83a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d416ebe00b2ab118491bf6447fc71ef43c0921d2d69b646d5a312e929cc5bb2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d416ebe00b2ab118491bf6447fc71ef43c0921d2d69b646d5a312e929cc5bb2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d416ebe00b2ab118491bf6447fc71ef43c0921d2d69b646d5a312e929cc5bb2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "79f99c8ac65244d108103af279b02b2601e3a12531ea221e6e51873b105c2429"
+    sha256 cellar: :any_skip_relocation, ventura:        "79f99c8ac65244d108103af279b02b2601e3a12531ea221e6e51873b105c2429"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d416ebe00b2ab118491bf6447fc71ef43c0921d2d69b646d5a312e929cc5bb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3909a9070a0bc65842f887b937bb8f8613b5c40e4e4de86e8cd1ef4e82a41c2"
   end
 
   depends_on "certifi"
@@ -47,13 +47,13 @@ class GorillaCli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/cc/c6/25b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126ca/prompt_toolkit-3.0.43.tar.gz"
-    sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
+    url "https://files.pythonhosted.org/packages/47/6d/0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879f/prompt_toolkit-3.0.47.tar.gz"
+    sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/d8/c1/f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16/requests-2.32.1.tar.gz"
-    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
+    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "six" do
@@ -72,8 +72,8 @@ class GorillaCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcwidth" do

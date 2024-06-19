@@ -2,8 +2,8 @@ class Dagger < Formula
   desc "Portable devkit for CICD pipelines"
   homepage "https:dagger.io"
   url "https:github.comdaggerdagger.git",
-      tag:      "v0.11.7",
-      revision: "8bc62edb288ac68afa76550734e232cb77b74418"
+      tag:      "v0.11.8",
+      revision: "95ab898c3cbcf298654d2074b478d35223e324ec"
   license "Apache-2.0"
   head "https:github.comdaggerdagger.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Dagger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3acb6a8543404d712f21df242d287ce1dd01992bd3378af916c18266e4f61fbc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2436d2105f9bdc3bf6cb579e66abe34f44539ee849c48666ebce463ab8517097"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9a621610446d6dd82150f72f3758b71e46027fa4ea57b78ab238b2d0c689eca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cc5b8de4c361c825b7992fd8db3ecf9da2c362fe3ebc0b104bd4d4ee2be61269"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc3d26768241d07a261dbbccde0656f344a3b95428538f737dd21ebb9fecd324"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fd278e422c380107320dc65d57fb5d9b4bda705fe9002d44d50d0f262bdcf91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9480ebff947c7fddf9d8b29e8d1dc0a61c8c1ec71662255b2ca5ba5248eafcde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bfe44534c757c686b53b441129d67b4c20c039fe64d2ff33b2aba27f724b9c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8f23fa3353f0aea5dede5d22a328bcd4fe61d80931a1ad1b0b49546d38bf237"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e069516990ac50ff26b8463bce05a6855da6323b6b330bd4711c8f3e3600269e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b39c5be40337ceebb8f87f6fb556efdcbd20d1b7c61d24fb8549960a3aaac3f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ecf2621e612db7262086b2117616db39001e8f8f402921ac7aefdff02392f5e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f6ba956f49184ff3914ee6bcd7a7f1c72338fbb36ee7226a3a6b291c9b63a6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20e7842e096c0ad8bd23e1dc273615e0d52a80e38017e76960b072b4a3a31a1d"
   end
 
   depends_on "go" => :build

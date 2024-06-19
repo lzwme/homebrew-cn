@@ -1,8 +1,8 @@
 class Ehco < Formula
   desc "Network relay tool and a typo :)"
   homepage "https:github.comEhco1996ehco"
-  url "https:github.comEhco1996ehcoarchiverefstagsv1.1.3.tar.gz"
-  sha256 "9d91dcc122578cf814574ed88d5c8517c74a2574e8af72d9d02f79376fcdb4bf"
+  url "https:github.comEhco1996ehcoarchiverefstagsv1.1.4.tar.gz"
+  sha256 "7409064ad97040988826c86ae62a6230943f6ae1667571f39798e311e535fb79"
   license "GPL-3.0-only"
   head "https:github.comEhco1996ehco.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ehco < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9decf4e78c060a0156bb071babb128f10bf1bd7add555a8bf6f06cc8b40b0d48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a403caf4895fb1f5e645fc920edde5981dbcb731b66e4412e0bb3e52d824d1e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dac01d2b5b027c31038a355f25ee831977e4a8f8409772dfd81994e7952952d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "001e18c6e8ae69e854d9755345d165fd0f8712781d7935644bb0dbbe5e334685"
-    sha256 cellar: :any_skip_relocation, ventura:        "b621065178b625674903224b535d36e9565323b8d4dedd36efb587c4e59d93c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "83c8687ac92f19074e8d9ed41addea02c067b52f72d8a381fe27f375c21cf7d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "800a0d68efe206a9af19616db9376a4ef594821efc915619149f7703d4391e5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "231df470a08a92dcf5e904ceda7c3f5b530cd88c3694517dc00f99cbf5249eb6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39979432527f45f8cf6eddc335257d73f43b4ffae65d84cce6217496599b9241"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "faf1404fef3eebb3c1389e43df065fb520b5a13a0039f0f024597c488721737e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4fd4b56fff548abc18353aad3589158d27984261141cf58933e3205c65c0a833"
+    sha256 cellar: :any_skip_relocation, ventura:        "35b4e206605a39dd73c657cb7175abb63da2c3efa55a6f3394e034072dcc7115"
+    sha256 cellar: :any_skip_relocation, monterey:       "288e20c323998e9748e09f3642b30d0347021bb15e33b6be421c57d829aafe96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb470e778aeeeb162968f48a891d7fedb1aae67df0f2e81ca2003dcfe8378062"
   end
 
   depends_on "go" => :build
@@ -33,7 +33,10 @@ class Ehco < Formula
       -X github.comEhco1996ehcointernalconstant.BuildTime=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), "cmdehcomain.go"
+    # -tags added here are via upstream's MakefileCI builds
+    system "go", "build",
+            "-tags", "nofibrechannel,nomountstats",
+            *std_go_args(ldflags:), "cmdehcomain.go"
   end
 
   test do

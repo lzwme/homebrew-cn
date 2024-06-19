@@ -6,17 +6,17 @@ class HttpPrompt < Formula
   url "https:files.pythonhosted.orgpackagesbfe2bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4chttp-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 7
+  revision 8
   head "https:github.comhttpiehttp-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "262a0ecaa6eae99f0e9e3b64b98eacb800464e2b0c97d9d362a804f92e0ac655"
-    sha256 cellar: :any,                 arm64_ventura:  "225b013bc8ddea5de65622987fb13de998a67ee0bf62cd0a5522bb5b94d8963a"
-    sha256 cellar: :any,                 arm64_monterey: "b1b77079cb5e1966fd7ef15574d15cc4101b0e5d96d999082eb2ac5dd5ef44fa"
-    sha256 cellar: :any,                 sonoma:         "a01c9d992e4c67ec15012526b1d0403b1d90af70a5f4c7a7f6b379fcc4a34058"
-    sha256 cellar: :any,                 ventura:        "cfc7d9daf3f5fc0cec4890a0e206d447775b42a7c71c8a56633d74806c90d506"
-    sha256 cellar: :any,                 monterey:       "da3b1e99532e04b08b7f55f2088dc0a25ee55ec41b1a4af79ac3a86d656343ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "891478252ccbc9619882914f84ee33966310791ffcaaa3be754a7f1b9f9c9bd0"
+    sha256 cellar: :any,                 arm64_sonoma:   "09a37b4414c8cd6fbb26cc36f0be7ecf91dc14524a3b72015963e8c4c9c6dac1"
+    sha256 cellar: :any,                 arm64_ventura:  "f0c45ddbe704b52041f497854a2716f81767c277831d0e1deb8085910fee064d"
+    sha256 cellar: :any,                 arm64_monterey: "4cc94d9c56436f4d1038f4bfb8fc071969d765eaa8170803d871df874bef3ba2"
+    sha256 cellar: :any,                 sonoma:         "ac33201c5e96829fa6cd5d35c7197cabeeaf439708a83b3ce898638b19f95bd0"
+    sha256 cellar: :any,                 ventura:        "0609e8d4d776a33348b3a8e51e5488e3d2a994faa979309b1cae8dfcece27e3d"
+    sha256 cellar: :any,                 monterey:       "d32ed548d0d7979b65ba321314165294f34426a312c8ac8aade603052eabc51b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dec9abcc92cd12fdf2141a7fab97d11e925113ac43080e06d4cadd85dc5c323"
   end
 
   depends_on "certifi"
@@ -94,8 +94,8 @@ class HttpPrompt < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-toolbelt" do
@@ -119,8 +119,8 @@ class HttpPrompt < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcwidth" do

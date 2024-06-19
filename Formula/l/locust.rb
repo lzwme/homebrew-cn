@@ -6,15 +6,16 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/4a/02/7b50fbee3f55f561fd76e035624ced58f4692d62087cc03ccf95a6b939c2/locust-2.29.0.tar.gz"
   sha256 "649c99ce49d00720a3084c0109547035ad9021222835386599a8b545d31ebe51"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "071881e3ba18c053bf3e216786f6a960efebb1ee1fdba334233a758d0b1b38ae"
-    sha256 cellar: :any,                 arm64_ventura:  "26f5d602845ea05edf09d8648c409c950f68d08e7394b97ce7e7d16bdec3c49d"
-    sha256 cellar: :any,                 arm64_monterey: "2c46d8486ca199e25b2d5b99f2e6d33610fd595a3feea5068aa21c88745b5c51"
-    sha256 cellar: :any,                 sonoma:         "b2dc0569811817e8fc1daed7696bfe50e1356e25bbb30b5391fc87bc75af393b"
-    sha256 cellar: :any,                 ventura:        "7279d7ebada384525f5485d422dcae3bf6479dfc436eed2dc15fbed217bf032a"
-    sha256 cellar: :any,                 monterey:       "07b36691b1f65c69e931b048d592435c2c6e60a25307aa2bc0fa491162e4a0a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e11d9d2a231564bd325d75775f1f4d3bee9f286d3524693c7afe59ffc41202e8"
+    sha256 cellar: :any,                 arm64_sonoma:   "15433d9829498d1a7e7343a73a9d02271d1bfe572118aecfa6c33e5f5cb583bf"
+    sha256 cellar: :any,                 arm64_ventura:  "02135ab3ca79b29ac270268386abd536f7542f0de3039ff9353f6c9fb0b70421"
+    sha256 cellar: :any,                 arm64_monterey: "9ead0a123512728dd5c50027a896db654ad2f264433d9d4c6bcd21c5ec6bf0c1"
+    sha256 cellar: :any,                 sonoma:         "96b7181ff1b4a80de8b59146257924d364c2479a95e0fa57b6bd1a4d82ddc43c"
+    sha256 cellar: :any,                 ventura:        "f953cfbb25e934280133c9470a02e907380e0600b9bfd57016eb12df47561b1d"
+    sha256 cellar: :any,                 monterey:       "47c180efaf4ed0da00be483110ed4d8dee9bba2afcff41978fe13ac87699e5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58e6a20a57a03f2bd7c4b0b0593505f83628c3f30a49d936d0a0bc271e8e55c0"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -124,8 +125,8 @@ class Locust < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "werkzeug" do

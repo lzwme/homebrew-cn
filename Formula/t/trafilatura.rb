@@ -6,15 +6,16 @@ class Trafilatura < Formula
   url "https://files.pythonhosted.org/packages/28/3f/1d11375431bbcd8d42dc2014d742f0b836102213dfa16390036b63c43a52/trafilatura-1.10.0.tar.gz"
   sha256 "7b10573e2dd16b6702f56f56858b25f34ff81d6b16e429af0a3b266f0746aeee"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6deaca039b59d307e2d65f06f4b584eb59cdb9d892ca53cddc3f46989992eeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cdacc5616a548ece68e90b7f9462654563857ebddf8a00699b434d4d3958f857"
-    sha256 cellar: :any,                 arm64_monterey: "5a77bd525905f8b3c0474cad068abb2ccf05bbbb1e4aac9a7806cc782e0e1d15"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae77353870dd393719e652e72e8ab18b411f044f8b6ceb543dbf0ba878973748"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cd8ee23c776a852c642bce3993b16c12614d5160971517e1d59efa1066a3cf7"
-    sha256 cellar: :any,                 monterey:       "d3b2477cace5db7016fd3c09b28a2380ef9342e3c4e449fd3a5d2f9f38a57d58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3ab531463668f276420fed5cdf50afd07cfad867ec0cf8f87155eff93e69ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7cc4f9e02d7551d11219333b115f177ae61c327a5adc47f69208719d772717d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "015a2e6ca35b6d2a3b94024c5d855112cc615246f404b33d3dd0111a3e6c256c"
+    sha256 cellar: :any,                 arm64_monterey: "bfb8f01c59c4557f76eaac02412a0b280cb15df8cead2b471e2946d433aa1594"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1b9cf6f3e7c394d431e6a88e04731c70ce49fa9e5e1c90ef34573185647a9ba1"
+    sha256 cellar: :any_skip_relocation, ventura:        "830d3eae922042f79b15ffd576dd1135f3d8355bd6b74cc57b9e08edc43eab87"
+    sha256 cellar: :any,                 monterey:       "88e4617ba380fb9d6203a1dd42987a45b3343ceb508dbbcfc33a932ed9272f16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2563936c1fc8536a51fc7797e36b3e98fa0256576208612e160db6692081ee09"
   end
 
   depends_on "certifi"
@@ -34,8 +35,8 @@ class Trafilatura < Formula
   end
 
   resource "courlan" do
-    url "https://files.pythonhosted.org/packages/9e/e8/66d9e87a5db4d627d4961c68d121b12b99b205e2f9d73aa3118ab9815236/courlan-1.1.0.tar.gz"
-    sha256 "d706684334f18be4ada1fbd57f2680adf0036648f6d840852f7a4822d3adfd8d"
+    url "https://files.pythonhosted.org/packages/97/8d/4f435e4e93a30acce11da3c98579273ba463e27d9988ed84384a574396fb/courlan-1.2.0.tar.gz"
+    sha256 "0cbc9cac83970c651b937a7823a5d92cbebb6b601454ea0fb6cb4d0ee5d1845d"
   end
 
   resource "dateparser" do
@@ -94,8 +95,8 @@ class Trafilatura < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

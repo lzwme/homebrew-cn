@@ -1,8 +1,8 @@
 class Spotbugs < Formula
   desc "Tool for Java static analysis (FindBugs's successor)"
   homepage "https:spotbugs.github.io"
-  url "https:repo.maven.apache.orgmaven2comgithubspotbugsspotbugs4.8.5spotbugs-4.8.5.tgz"
-  sha256 "c514054fd8f81f242ac6d64871d30bdb7b79cb49be7bd6b58067484efae8bfa0"
+  url "https:repo.maven.apache.orgmaven2comgithubspotbugsspotbugs4.8.6spotbugs-4.8.6.tgz"
+  sha256 "b9d4d25e53cd4202b2dc19c549c0ff54f8a72fc76a71a8c40dee94422c67ebea"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,7 +11,13 @@ class Spotbugs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "50d22096ab0a28a88957201e5f0cc54e8af15106f95ae115686b846a2bbe19bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27e6002a2ee2a2c2664291af654541a77bb6a925e66393eb783423f072a1c830"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27e6002a2ee2a2c2664291af654541a77bb6a925e66393eb783423f072a1c830"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27e6002a2ee2a2c2664291af654541a77bb6a925e66393eb783423f072a1c830"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a7b66466aff1f1bc50ecc52faa62044a42e736a09c5d9d296d0b8ee6605cead"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a7b66466aff1f1bc50ecc52faa62044a42e736a09c5d9d296d0b8ee6605cead"
+    sha256 cellar: :any_skip_relocation, monterey:       "27e6002a2ee2a2c2664291af654541a77bb6a925e66393eb783423f072a1c830"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83822f6a3a9e21032c8d4a4283161c6a8f8566828c7a14519d54bb39f90a7b18"
   end
 
   head do

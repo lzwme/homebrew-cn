@@ -28,6 +28,8 @@ class Ecm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f41307b6ed8b2c02efc9269a74424428f099ab9802a26e28dad16d7282c46324"
   end
 
+  deprecate! date: "2024-06-18", because: :repo_removed
+
   def install
     system ENV.cc, "-o", "ecm", "ecm.c"
     system ENV.cc, "-o", "unecm", "unecm.c"

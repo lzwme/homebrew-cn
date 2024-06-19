@@ -6,17 +6,17 @@ class Toot < Formula
   url "https:files.pythonhosted.orgpackagese401dcfb2d4fd58a5c96d99d9ff98f7a48cf0813e4a615b5953da11e67374075toot-0.43.0.tar.gz"
   sha256 "6aa84c4b8df6e2214a3e735142bf5bd57b3b10aa08e35579425c5dbe3bc25ae7"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47c411478bafca733b600dcf9ebcd94fdafa2aabb74b467b37fac77be30d141b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcfd36efcabfcc9e02255f96a422c67fe962bf018f9bb42b52225cf2a73abffb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dca359111a5a00eaf563a086bc163c32957b010fb8844079e20d71ff6e124f8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc0c2a2670e69bbccc46dd677b72c29f061fc83c926ea8bcb1579eec604428ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e28529a5851bd40fcdc18f7809f26fc8e5cb4ab9d6107cc8e9230fef48f048d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fa0fe1d49d080a7abe158315b431a37a7f41530bdf1136c2f89fa13181a0889"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "245ab5de22d6152cfbd699070321ffdfeaab69aedb1cdf7cfb3db1e05f3dbda1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bfabd53f011a7213051083a017590460051816b0bf46226b8dfd08011bc12df7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bfabd53f011a7213051083a017590460051816b0bf46226b8dfd08011bc12df7"
+    sha256 cellar: :any_skip_relocation, monterey:       "f113a9d8a56944535291cecdf69a412d1ee2b5c512fa4102dbe65e0eff7de71d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5c2ff3b39211083faafb5260b67b4c66dc63607164a93cddfde1803647de6f"
   end
 
   depends_on "certifi"
@@ -44,8 +44,8 @@ class Toot < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "soupsieve" do
@@ -64,18 +64,18 @@ class Toot < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages9ee0afd5f41a87cba266418622dc6e37fd18f61378aa56d73ea9ee01db3ceaddurwid-2.6.12.tar.gz"
-    sha256 "1c9f5a5b47ec3fcc88032e0e224a00d7bf21704fa0060f498db395235f1731f1"
+    url "https:files.pythonhosted.orgpackagesdb1b5dfd51ee4b31bfdeed32390bfd9bb66ade9227bc9e6472045723d140fca7urwid-2.6.14.tar.gz"
+    sha256 "feeafc4fa9343fdfa1e9b01914064a4a9399ec746b814a550d44462e5ef85c72"
   end
 
   resource "urwidgets" do

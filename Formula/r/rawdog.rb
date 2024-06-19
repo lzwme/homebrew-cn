@@ -6,16 +6,16 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e27919769c033e7c984a9df28ed94326c95f856304427976d395a1d573b77013"
-    sha256 cellar: :any,                 arm64_ventura:  "0e94a9aaec8cbfbce6e961c246b393891f90bfae2d5744fc13693f2f2e8d8a45"
-    sha256 cellar: :any,                 arm64_monterey: "4e875bd60d3faad89a755a68f92db5538748fac7b0048ab495b5d0986d774441"
-    sha256 cellar: :any,                 sonoma:         "a6519895a8e960b0490ad864b4c5904a7cc3f5d7db0508abd78291e2cdd413a2"
-    sha256 cellar: :any,                 ventura:        "cfacfe793939b3b8bbbf4ff6e88ce3dc0e076e4b99313dff82bcb9b47ef25ae0"
-    sha256 cellar: :any,                 monterey:       "9499ba70515777d67ca7183ad3b491d97a30f6722ec9ecdb5bb1e1463752de65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b24dfd48f748b14065e7461e82a7f6ef1f3181e160f9442f8117eb77808d866a"
+    sha256 cellar: :any,                 arm64_sonoma:   "ba5a7e4d214d583743f7d3b51234b256a5ab4a48f9d8fe53f67f7cd4bd3a3d0c"
+    sha256 cellar: :any,                 arm64_ventura:  "e007bc4ed5c358a0e5488319e8ce3eb5b6545014b0849ab5ef984fc3415ca41d"
+    sha256 cellar: :any,                 arm64_monterey: "09e7af640d196feeb24509a1295514b374cbd62c83960f29916e8a4c1728e5d7"
+    sha256 cellar: :any,                 sonoma:         "fc59f17a024b939b5b11c155bee762520f58d8a8e1b5a2ad64031d175b1bed8d"
+    sha256 cellar: :any,                 ventura:        "1ee23c7535d77009e9244666d43f2dd929a6896b996546dfb288df54ff3b858d"
+    sha256 cellar: :any,                 monterey:       "28784343985f6b2ade85a48d9e86bf9b1bdfa09d1717042abcc04f2c1d612b5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9bbdfa6835809b773b48844f0044dcc38ab500199d63bf270393b1fec9011ec"
   end
 
   depends_on "rust" => :build
@@ -64,8 +64,8 @@ class Rawdog < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/06/ae/f8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897ea/filelock-3.14.0.tar.gz"
-    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
+    url "https://files.pythonhosted.org/packages/69/7d/73d36db6955bde2ed495ce40ce02c9a2533b8c7b64fd42a38b1ee879ea18/filelock-3.15.1.tar.gz"
+    sha256 "58a2549afdf9e02e10720eaa4d4470f56386d7a6f72edd7d0596337af8ed7ad8"
   end
 
   resource "frozenlist" do
@@ -94,13 +94,18 @@ class Rawdog < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/1d/23/2478f48fa39d23d736410f0762f58fc8de6e3f9cb74c6ac4d75c3c8c46f9/huggingface_hub-0.23.3.tar.gz"
-    sha256 "1a1118a0b3dea3bab6c325d71be16f5ffe441d32f3ac7c348d6875911b694b5b"
+    url "https://files.pythonhosted.org/packages/9d/83/0c07c6e6de04b097a4dd474a30492a650e5845256c4e4eed4397316248e4/huggingface_hub-0.23.4.tar.gz"
+    sha256 "35d99016433900e44ae7efe1c209164a5a81dbbcd53a52f99c281dcd7ce22431"
   end
 
   resource "idna" do
     url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+  end
+
+  resource "ijson" do
+    url "https://files.pythonhosted.org/packages/6c/83/28e9e93a3a61913e334e3a2e78ea9924bb9f9b1ac45898977f9d9dd6133f/ijson-3.3.0.tar.gz"
+    sha256 "7f172e6ba1bee0d4c8f8ebd639577bfe429dee0f3f96775a067b8bae4492d8a0"
   end
 
   resource "importlib-metadata" do
@@ -114,8 +119,8 @@ class Rawdog < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/3b/1c/db6127f448c78d22436e529e5d6e06898095a776772dab5739a70b580e4e/litellm-1.40.4.tar.gz"
-    sha256 "3edaa1189742afd7c7df2b122f77373d47154a8fb6df6187ff5875e188baa3e1"
+    url "https://files.pythonhosted.org/packages/6b/0e/57507ac2a15c59f2e077384ab745d28a8b2c523f98cc4aab7f88ea02fc50/litellm-1.40.16.tar.gz"
+    sha256 "b32cd15c7cf9084aa0f92eb7103323741d63cc8a14e28b739054b0cb6682c431"
   end
 
   resource "markupsafe" do
@@ -129,18 +134,18 @@ class Rawdog < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/de/90/065fb3f874ba75f05fcbffa676df83a43cdbb2aae701ab2e19b95fa9a14e/openai-1.32.0.tar.gz"
-    sha256 "a6df15a7ab9344b1bc2bc8d83639f68b7a7e2453c0f5e50c1666547eee86f0bd"
+    url "https://files.pythonhosted.org/packages/8f/23/c02b7184912fa9c634f099531a9879e2c8941cded026a56cb0a79ad76bc3/openai-1.34.0.tar.gz"
+    sha256 "95c8e2da4acd6958e626186957d656597613587195abd0fb2527566a93e76770"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/21/76/a622bd8e7b0b751f65884f54c0430e5910d523b8aeccf11a8bcef26fb17e/pydantic-2.7.3.tar.gz"
-    sha256 "c46c76a40bb1296728d7a8b99aa73dd70a48c3510111ff290034f860c99c419e"
+    url "https://files.pythonhosted.org/packages/0d/fc/ccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967/pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
@@ -189,13 +194,13 @@ class Rawdog < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e8/fb/4217a963512b9646274fe4ce0aebc8ebff09bbb86c458c6163846bb65d9d/typing_extensions-4.12.1.tar.gz"
-    sha256 "915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"
+    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "yarl" do

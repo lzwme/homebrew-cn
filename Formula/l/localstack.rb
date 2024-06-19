@@ -6,15 +6,16 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/2c/72/0cd94b0d9f896012a494f57b04f55685e0192a0f4beb6380fc07b7720334/localstack-3.5.0.tar.gz"
   sha256 "79f0a1b9bc2d90f68cbbbb26286ba493554db0be908d480d6d0986d023ad8834"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3c2c1976950816c2e03faf834d761062741e0ab5a4d73c2de2e70de607006407"
-    sha256 cellar: :any,                 arm64_ventura:  "ad375b74eb57b375539447e5660b618ad35e76b398de1a9f23ee580aa5c18b68"
-    sha256 cellar: :any,                 arm64_monterey: "662ed824c807bb506cbb2d1687116c96617acd6395c61ebc8aafc32a159d51cc"
-    sha256 cellar: :any,                 sonoma:         "f5d9935b07fc75a83c1667b803fc853f0996742e2f76ca068f9a4fb1b4a5f183"
-    sha256 cellar: :any,                 ventura:        "e5732f8a3849d6933639c8b82a5621e4f088c817368a28ad5fcbf8f76c67fe72"
-    sha256 cellar: :any,                 monterey:       "878e2f2752cab39b7535dda259525c0894c2e466289a4a9f6b5bf2423a84ddf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf579a33268061d2d486692de98bfaedf38b60754fb35fbda44317f8a5c93d4"
+    sha256 cellar: :any,                 arm64_sonoma:   "c1f17a04027c349545bd65bc38d2adbdbc64afa0663dc6eeba97c96aa7312801"
+    sha256 cellar: :any,                 arm64_ventura:  "f2c3798720003a586497387b59b43ec091e7364bc02ef5f62148a627310f4e46"
+    sha256 cellar: :any,                 arm64_monterey: "4c1c56b4c97a403ffb47392d017000fd35c46b7aa0abcfe80a3f3c93f7900dba"
+    sha256 cellar: :any,                 sonoma:         "08e2177937d48c72b993c9239a44a1aa5e2ec314974b887866bcc630ebd3bf56"
+    sha256 cellar: :any,                 ventura:        "ffd8e88ad47247bea33020f11b9045ddd47cd08ec16dcd40c059f0e7ac67e174"
+    sha256 cellar: :any,                 monterey:       "46748534391aa1bc8fc1556e4b03975e31905f64ff78c12d6f9d489f14d3fe97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "732733e8bcab038ffe50595004f84049f223992fc59d9f4fc1b68feb3cd4876e"
   end
 
   depends_on "docker" => :test
@@ -179,8 +180,8 @@ class Localstack < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

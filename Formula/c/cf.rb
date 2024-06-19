@@ -1,8 +1,8 @@
 class Cf < Formula
   desc "Filter to replace numeric timestamps with a formatted date time"
   homepage "https://ee.lbl.gov/"
-  url "https://ee.lbl.gov/downloads/cf/cf-1.2.7.tar.gz"
-  sha256 "cdb8d7aa1c45f2baa4b3c2b355ab8653a8a4b222fce6d9092edb4c3a98fef081"
+  url "https://ee.lbl.gov/downloads/cf/cf-1.2.8.tar.gz"
+  sha256 "52ce4302f7f9dd67227e5a3d09fc289127bf0ad256d24d8e1698733ea2e1fd48"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a48fe3aae85ac626f6fa80508c4a9b1623fa4b134ce9a34a6d98880ff718d78f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71b36856f3b6cf08b642489b4e84cd1f809f24557ef1378256ffb536035748d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6aea6b45b8b308b818eebd925c4cf452e5b50be2f8795c3d77b0ddf83b264ea0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a1e0f3bf50ce389b175411b08f6e247a96a73e83c692b63c37f1fa4b96ed5c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b5ae0887650b078377a36d0fd1d4b8a1aee5899942e27d5107ea383c8cc3da9"
-    sha256 cellar: :any_skip_relocation, monterey:       "82f5e7d6ff9d78aab2d967d95aaecc3296c1801b88f763a2d4bb3aeb416122de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b10af174bf2bacdbf06c9b64c649740cb78ede8135aa400ede6c78a26af74ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe6582539aa71c5a8bece92c29a4802f15dd735d147c834ca0bbd8e7213a84d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b5a8edb4e24cdae78ee7b41c64f408d447e80ec4d58e0bebffd23e46e8b2e4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "889ed10c47853e2fdcdeb6f6bc4fc677f524b26bec7f5e91b94e5f763cb4ac70"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8adfb68d96bb5baf3559102add0b8242e1c2d2eb4f4ec577624adf49b326b034"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbc2e7870bf045b37011c48612b393f9416a3f4e9cb2a8e49b1908eef5bd6adf"
+    sha256 cellar: :any_skip_relocation, monterey:       "43b2f71f97887ebeb6cff4a87be8599161afe5d081db33cf01b1a1bbace464c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ac7581dae658e0e16a2413c5c9fda7725460394f707c3f78c65b99f9557692"
   end
 
   def install

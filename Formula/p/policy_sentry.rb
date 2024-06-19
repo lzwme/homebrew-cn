@@ -6,17 +6,17 @@ class PolicySentry < Formula
   url "https:files.pythonhosted.orgpackages7e7a7fbb394f21a3c43edcb7d04382b6d93567900b4c8ea4b224b284656115edpolicy_sentry-0.12.11.tar.gz"
   sha256 "8db1ea570e835d87c57ef51bf6f2372a8b78d463549a5f9c65cb5f8103cd1ed8"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4e2758649b1f5931549ceffb9735f503b5ee3e7fb3d10112f47d27fdfba9dee6"
-    sha256 cellar: :any,                 arm64_ventura:  "619932791ef3987f46ebb381f403b8ba7ff8b80a0e0be64c9cec2410bc5355e3"
-    sha256 cellar: :any,                 arm64_monterey: "abc80581116f816c879c808bea0d27d9b5089ff2f9bbf2630d2b059279a3d322"
-    sha256 cellar: :any,                 sonoma:         "e4c0df0a3f35a639d5997589b91dfb26315966b26b25f9d363d39f1b76ce06c3"
-    sha256 cellar: :any,                 ventura:        "d1fbe3f7b2c2250785d5b6bbf78983dfa477f94b564dd15621f29b6494fa43b8"
-    sha256 cellar: :any,                 monterey:       "02ca0fe4f9477af07aae4f1c7f2c0f194f1cbef38d9d3d7fcb7b1d5d9a6c2d89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "556914d4c45e3753d8423437b127d3de1ff5f07e86c65a2a08d3a084c642ca8c"
+    sha256 cellar: :any,                 arm64_sonoma:   "86bce4929be345ed08b96816be874b98b77087f2a2b6b29bfb3e66a5a499887d"
+    sha256 cellar: :any,                 arm64_ventura:  "2e0dd411d3c002089874caefa5d96eabf22fae0c237b62b4f5be7d772f445b92"
+    sha256 cellar: :any,                 arm64_monterey: "223f1f2fb9f4a9855fb29cd082413a9c028d851c41066684870633043331938e"
+    sha256 cellar: :any,                 sonoma:         "41e2431dc6fb45467722a4a11e81b5769fafc7ff3bf837326700cb0944949852"
+    sha256 cellar: :any,                 ventura:        "071f594ee676ddf161901e23b1752213a4b47f37004fdd6b91886aec9f8bf044"
+    sha256 cellar: :any,                 monterey:       "ec32627cdd8a24fa693c8bb6eaa026aa007433772c17dc038b88014102f622c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f4c3cfc270d4f32c980b528218c9d6dedf64da2f2655ea7a489900c7cf4d21c"
   end
 
   depends_on "certifi"
@@ -49,8 +49,8 @@ class PolicySentry < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "schema" do
@@ -64,8 +64,8 @@ class PolicySentry < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

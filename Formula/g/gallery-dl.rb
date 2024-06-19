@@ -6,16 +6,17 @@ class GalleryDl < Formula
   url "https:files.pythonhosted.orgpackages3a5a2648a7a0d090170be8b0009ffa3edc738c0c93cfdcaaa0c82982b01b61f4gallery_dl-1.27.0.tar.gz"
   sha256 "ccc8a61e3697830392b7c1db49e738a34cb77bd5dfead145888e0acecacff39d"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, ventura:        "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d29e6b50d311ee581a7030856622ce701a7e80d3eab7a2c785abf8bf0573dab5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84099c72889c0239f472d783375c5742b26b726995a4a3405cf1d78088101b6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6d24d8d4828d7f747f873cd1b24b53e72c361375d46ba4315b32165a7297eebe"
+    sha256 cellar: :any_skip_relocation, ventura:        "935761a5ca6cc1e4b177926735a668f659271bdd80d304b511eb118e4ba8660a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdb1e5249ca8e9e6495157b309492283402599a183b24d449680a74dd3b5225d"
   end
 
   depends_on "certifi"
@@ -37,8 +38,8 @@ class GalleryDl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

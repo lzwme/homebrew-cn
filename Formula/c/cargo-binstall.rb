@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.6.9.tar.gz"
-  sha256 "0a41e12770fd2ed00704d7d9d01e001c11e5f3c9151803730d96a54eb2805d6d"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.7.1.tar.gz"
+  sha256 "594b1f0abdb02c588bbc9245ef7a922befb21228254f0c61742c0003abe9e843"
   license "GPL-3.0-only"
   head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
@@ -12,16 +12,20 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "678efa71751eb305a9e3cc58dcf584d61d5ebf161e8fcd5467548f3e39c370ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e3b8eff4869bbb64c61198af31255b900c05557db24f5bbee52b36fcab798d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd8f2f8f1a77fb38f00eb9a6d4ea25836ae7e81de0db0f10c55e23c4a6832a85"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b8e7c0dc3e11aa5dd4ff3b4fc4c07f7e8ccb399c1b251e60b738f35651eaf919"
-    sha256 cellar: :any_skip_relocation, ventura:        "5de76c02bcba36e198c8d60c109eb51476c21a93299629feb521c9066f7e28a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "24545523e26c4600fa5707023e14503d11f849d6edbd615e33304aab36f595d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c8597e9088a819df9662aab1826f3019c7dd63c7e166b6aeb4539ac565740c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b2922f7f2ca8960b55a295009bde2ef6568caaf819ba99f3c51ee7e32e7093f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17d911de273c0fbb1be68dc9db765a92e6cb1b98accbd53110ff22e5d575e8ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2433f113c2c7614ec9d70d340b7ee083eb5a2da32a370c8223b7ac9c3c73349"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8d379bc544d54758ec5ff8f904850890f3bd779a1e5c2f9e76b235f3fc7205a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "63d02dcad9619a3c8fed3bbee127d1eb44baece9eb33b2f884f0a87902f5c68b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0982663caa98e50d7936464c7e290ff02e56befde598f839ab3f55543098dfa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7018f1c80018a0e80d62288a11d15abdc46dd0ae1a49c096ed7aad9c02ec663c"
   end
 
   depends_on "rust" => :build
+
+  # Remove after this is resolved:
+  # https:github.comcargo-binscargo-binstallpull1781
+  patch :DATA
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cratesbin")
@@ -34,3 +38,20 @@ class CargoBinstall < Formula
     assert_equal version.to_s, shell_output("#{bin}cargo-binstall -V").chomp
   end
 end
+__END__
+diff --git a.cargoconfig.toml b.cargoconfig.toml
+index 65dd57802..0a23a07bc 100644
+--- a.cargoconfig.toml
++++ b.cargoconfig.toml
+@@ -9,8 +9,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+ rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+ 
+ [target.x86_64-apple-darwin]
+-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
++rustflags = ["-C", "link-arg=-fuse-ld=ld"]
+ [target.x86_64h-apple-darwin]
+-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
++rustflags = ["-C", "link-arg=-fuse-ld=ld"]
+ [target.aarch64-apple-darwin]
+-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
++rustflags = ["-C", "link-arg=-fuse-ld=ld"]

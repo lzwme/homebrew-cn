@@ -6,17 +6,17 @@ class Vdirsyncer < Formula
   url "https:files.pythonhosted.orgpackages81fb6fbb7f1d102a59db275811a0de756d6f5bb55c624ba4bdf918b3fbd2ddc0vdirsyncer-0.19.2.tar.gz"
   sha256 "fd058ceeab8293459a0466cd9b0e4ab3b39462c6e089a0f0ac37c307420d82ba"
   license "BSD-3-Clause"
-  revision 7
+  revision 8
   head "https:github.compimutilsvdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "405437cfced5244caf3914bf17f678262318fe938fe4b7fc5760f2fd2824a40b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1b012282fb2bd58f3fea700b9ace8ef4b774a4555820cdc2f9c69ec64b70908"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6427699e9eff2914a7d8df492b39d69ec36feecbcb857953a070a19a68440778"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8b20a4c98764fea19ff5ddb78134439070ba51482c4aa3c8e8a47de4648ed50"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6c5c4cb0a5bf62cfc60190b7d062a3f6ce64a59b2d09188fa9b56d576a376db"
-    sha256 cellar: :any_skip_relocation, monterey:       "31f7c48ee1e995fca3ca7ba7e8d8e6d7700b3959865b83c29becac0dde07e234"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6757e2a1e84d25a23d08475673f5cd3be1eafd16a5bda7b3c062c292eace46fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5b736ab4590b2d5eaeb6807f389681c50b7b1a763a28b820059e22f5e578a44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5388f29e2ae6c40c324b5fc83f59c9b0e1453da472bad3b520d7053f3eddc77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd770bc1c488a5c0b1faee75fafd369cf440f288b716e515862bd1a899e30d3f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "97347903069957f2de5626d05f76959f4e592850b07ef903489bb1c366d05ac0"
+    sha256 cellar: :any_skip_relocation, ventura:        "1d305364a11b1ad167ca7e79e5059bc9acfaf1271093d83a20476e44acbef30c"
+    sha256 cellar: :any_skip_relocation, monterey:       "36a5f315437288404444738c4aca60121dc44b4406580ccfec37e945e3bad9b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f4cc4bf4276376a182b46b9b5fadb41f146fc8d740aed9ce18477c395179bfc"
   end
 
   depends_on "certifi"
@@ -88,8 +88,8 @@ class Vdirsyncer < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-toolbelt" do
@@ -98,8 +98,8 @@ class Vdirsyncer < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "yarl" do

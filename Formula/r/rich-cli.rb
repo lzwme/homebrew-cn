@@ -6,16 +6,16 @@ class RichCli < Formula
   url "https:files.pythonhosted.orgpackagesca55e35962573948a148a4f63416d95d25fe75feb06d9ae2f9bb35adc416f894rich-cli-1.8.0.tar.gz"
   sha256 "7f99ed213fb18c25999b644335f74d2be621a3a68593359e7fc62e95fe7e9a8a"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0a0e19fc6c55935c92897824d2204fb0c4c78514313b7a5c8e15dc60ac165a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da84898146bbfcb7ce0bb10a8411044b9e46ddf84dd8644acdf7cf8e92266b73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a9457ecf971061d9a49c9055c875ef5e799199b2d1574311585e797ed170828"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c680e1c77fc7c27912c6dd3ff6a838cdb66452574194ab40b0df3a8af1c5550b"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa0f141dab6adc1c057c49f8b23f4aebdab1b2ab4ec3351add402ec00f297c31"
-    sha256 cellar: :any_skip_relocation, monterey:       "596268bf3104a3f606591b5ed0516e4ee4bea628b6e38eacf5e8536f54ab5a7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1be94fb5e701cd74e7aba520a17caf4721b022f00dab666724a8c2f1d40bf87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f448176131d0a9dfc31ca9ae2f06141c3749ec82a2c7970b4dc39e46a7d7079"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f448176131d0a9dfc31ca9ae2f06141c3749ec82a2c7970b4dc39e46a7d7079"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e3858544bfb05438496610055aba2a6558be645cd07c05e115748eb4adbecc4"
   end
 
   depends_on "certifi"
@@ -52,8 +52,8 @@ class RichCli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rich" do
@@ -72,8 +72,8 @@ class RichCli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

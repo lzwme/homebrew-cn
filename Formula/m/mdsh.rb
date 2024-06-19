@@ -1,19 +1,19 @@
 class Mdsh < Formula
   desc "Markdown shell pre-processor"
   homepage "https:zimbatm.github.iomdsh"
-  url "https:github.comzimbatmmdsharchiverefstagsv0.8.0.tar.gz"
-  sha256 "987fc01340b2d80029e7a1dca073cca4e7c8eb53a8eb980e8c2919833de63179"
+  url "https:github.comzimbatmmdsharchiverefstagsv0.9.0.tar.gz"
+  sha256 "6d87498bf600ef3b0d5ac8813e676ee1e7913057cf9290a288b4d93c7ffcc4e9"
   license "MIT"
   head "https:github.comzimbatmmdsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "beff21a1ff152718c5782df119eda5dc9970a2b4a0344c0ae8bd077c5b8bfedb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "178f41349eee5fa384335142ecf509b12dbf252b33aa535a08cd544c0f8a06c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "590c3ca3c20f28a54f5d55c3474970393f4472dfc8e101928dca3ebfae821e38"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ef56220a885441904e44fa9ce2b30152c033dbd4f077b1a607287d63bfc8407"
-    sha256 cellar: :any_skip_relocation, ventura:        "71130fe8827f854a779706f84ae9ba725673ede641e9dae6655479e3b88db1b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3e8e14d72f25d9384912431efe83f6090424f420408a1982a90bf65e5baea29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5639229e187290b73532d3e257e1d86df8d85b870381c1e08ce81b970955a0d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cb6ad949b1853f9d378b1677bafe46d2eefdce5fa236789ba20b41f86a9d6ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd1175a75d3a77ae26605493aeac7473025081b7b962c3c1b9c9a587e6b3100a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f59e1fed6183d5910b70de5cb5aa1b6663456cdbbed62f160fac931944d6cbd7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f514330a4e5407ea8ed0087f32bbc1c8b32e908b71663852768d54e47d21e1b"
+    sha256 cellar: :any_skip_relocation, ventura:        "e21b5ebc1a866e457fedeba187f68e9ab7dcce67b71f51e60e05a17720f1b5f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "36730e48b121e9a0357c215021eb2db025849ad2dc8eda3469084cb5b25ed085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "417d4e50323892d738d5634208d579873994f28ea7fd0110b6035ca50abe48fb"
   end
 
   depends_on "rust" => :build

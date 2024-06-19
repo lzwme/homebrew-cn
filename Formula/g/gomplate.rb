@@ -1,8 +1,8 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
   homepage "https:gomplate.ca"
-  url "https:github.comhairyhendersongomplatearchiverefstagsv3.11.8.tar.gz"
-  sha256 "a38ba762e57a0aa5d7040f818a1ddbb613c42bf0432c897e33a99d21388ecdc7"
+  url "https:github.comhairyhendersongomplatearchiverefstagsv4.0.0.tar.gz"
+  sha256 "284437746f190da7453b73393b37bf6f8d7e68cfa1b0b2b5336596bcf99798af"
   license "MIT"
   head "https:github.comhairyhendersongomplate.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Gomplate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d8f941a9f53adeacef6f2e97471859cac7708953e80910d6334d2d0f36b3917"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea0ce27b7dd80feb60e6400a2efc9055d6a0c27e5a3bf2c4eb9282a508bfbf8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d6133534d1703c4ccc98ef387ab12f3a02b2fe7f63efa79f3ad87198d96439b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a685420a86995a526138716548fe51cf625437cd672198035118f8d6880ea9ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "534e5f1a0e781c6a155c43ccf19a3a64add1740f78b77bf32717a524162713bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "aba744143a252b0d1e6d858fb789b183038362a2f60864c90115dabf65001d98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61bdfe98fddb9c2185462ca1a159257363c715fe45ebe4268d93972831f25b99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4601b7cf3a326817fe03081692a7a4c4c508eba712a10bbc9e895ef1fb269041"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d683ee96adfbb08068d53f1b08fdd5ad0a41d099234bce51525f24c9ca1a23cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "481b1775499d7de1e3bf3be583a96cb201a4834e50c2c11fea4dc507d6e28fd0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b9cbb066dc2d2cdd686ef74214b1943bef88a3933922c7105699695fc08fb07"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a4109c8be777bead46845e14580dbeafc1234350a3375b1b1456c2a2a21e1a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d56cdcfdc64b8fb979f429b3d377671911cd2ee38a79d9d5a595dfe2e7a7fa7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8271d4b1a03edad7e875e6416487df11a4b603a7684f83c102f516dc03d0ff0b"
   end
 
   depends_on "go" => :build

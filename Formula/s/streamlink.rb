@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackagese09be8149ee6e566500e1133e42b3686d4e292e64a4e7f435efbca9a66ec99e1streamlink-6.7.4.tar.gz"
-  sha256 "9337537ab119fe77524a5d665aaecebbfb06e2cb8df28d1260d92876425751ce"
+  url "https:files.pythonhosted.orgpackages370d4ab6dc0ae46b9d848a85d07b6c0eed593c8e0dc598f07efaaed13f9c1ea6streamlink-6.8.1.tar.gz"
+  sha256 "4c437efac282b4df026519f2069e278911656fe2cf48d732302bbd466f86399d"
   license "BSD-2-Clause"
-  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "996c805b2cbf94d83562f61eff65487b2753544167d455d9feeb29b543ba71a0"
-    sha256 cellar: :any,                 arm64_ventura:  "959881d11771d6cf22c46d7a0f3d9e79a332476f0d89d0fb48112b3abd610cf7"
-    sha256 cellar: :any,                 arm64_monterey: "721345ec76d8663004eb0a5b11e6548b89670bc740f2243dd12fd7a3cf737cbf"
-    sha256 cellar: :any,                 sonoma:         "fa9887d3e7fa6fe4081352fee2826b905e85821aaceff52b8eeecaf098b91553"
-    sha256 cellar: :any,                 ventura:        "b8ce0d82f1030e9efcba23f1f0184f74979d72019957f288535ba4e05b9e570c"
-    sha256 cellar: :any,                 monterey:       "76f2ec0e84c5af02dad6308a37743d6664617aa030e6e9e7a2482acfcfaba09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "229d0997bf8243f8c9bf8f54fca16486da5eb4e98b016f0e6a62a0cf6d3acf14"
+    sha256 cellar: :any,                 arm64_sonoma:   "80b0dc9b5a17bfdec3da7dd13d4f95f2b50b6a124b6cda769b5147045bb9beec"
+    sha256 cellar: :any,                 arm64_ventura:  "b5393c4363e035f58ea81640acd3fc3b6c54247372babc5de8e6228a2fc569f2"
+    sha256 cellar: :any,                 arm64_monterey: "1dad6594794066dba16cd4b4440c24e15e0d67b406ddd92f6506d591facf01d7"
+    sha256 cellar: :any,                 sonoma:         "4e815bb216e26c4ddabf75cefe02a079f07e31a818b2a644458805a4390d70c0"
+    sha256 cellar: :any,                 ventura:        "525e2dadc63bbb4de2be2eefdb29e11aa0f435542c7c34a2e3579b31b6eae41b"
+    sha256 cellar: :any,                 monterey:       "1adf1e60035eb496f18c1aed7a28b4f3b9ff64626cf51e3549ccacf1482c7e7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4787db1abd03f166a876797ddc4aaf8a8e0c0a17156c1c7e49d8a0df58f8e9f1"
   end
 
   depends_on "certifi"
@@ -66,8 +65,8 @@ class Streamlink < Formula
   end
 
   resource "pycountry" do
-    url "https:files.pythonhosted.orgpackages084a137f422423b9c85148183691da65c5c843a209b7fc0c33a5144489366f53pycountry-23.12.11.tar.gz"
-    sha256 "00569d82eaefbc6a490a311bfa84a9c571cff9ddbf8b0a4f4e7b4f868b4ad925"
+    url "https:files.pythonhosted.orgpackages7657c389fa68c50590881a75b7883eeb3dc15e9e73a0fdc001cdd45c13290c92pycountry-24.6.1.tar.gz"
+    sha256 "b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221"
   end
 
   resource "pycryptodome" do
@@ -81,8 +80,8 @@ class Streamlink < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "six" do
@@ -111,13 +110,13 @@ class Streamlink < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "websocket-client" do
@@ -135,8 +134,8 @@ class Streamlink < Formula
   end
 
   test do
-    system "#{bin}streamlink", "https:youtu.behe2a4xK8ctk", "audio_mp4a", "-o", "video.mp4"
-    assert_match "video.mp4: ISO Media, MPEG v4 system", shell_output("file video.mp4")
+    system "#{bin}streamlink", "https:vimeo.com144358359", "360p", "-o", "video.mp4"
+    assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
 
     url = OS.mac? ? "https:ok.ruvideo3388934659879" : "https:www.youtube.comwatch?v=pOtd1cbOP7k"
     output = shell_output("#{bin}streamlink --ffmpeg-no-validation -l debug '#{url}'")

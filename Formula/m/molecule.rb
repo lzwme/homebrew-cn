@@ -6,15 +6,16 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/59/ad/303a000ff2e2ae9b0cf5300c37d79e7058607f16d9b1c667088d666c32e4/molecule-24.6.0.tar.gz"
   sha256 "8decb4c684fcafb85a7b4f038da125ed425bdd10db76bf0cdb413f9b84e41b58"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8386f1b53748b40160b3fe57e3d06e7758e940592e07c4f2a437c5b711352cba"
-    sha256 cellar: :any,                 arm64_ventura:  "ea80ee15e6dc0b25cbebca79c514d916034832c18e997f32d6ac4e29e1e508c8"
-    sha256 cellar: :any,                 arm64_monterey: "f661dee5a2951db373f283ad7a5aebf9b06eb7959d7de49d4169ed00f50ccc86"
-    sha256 cellar: :any,                 sonoma:         "f1b1b347b9346bac415f38d3814fd10e75418f8076ecf4115dafbf791960855d"
-    sha256 cellar: :any,                 ventura:        "ef8fb184dffb51bfef62d5a4e3996dc84ea38e9c4728f8edd599d5873eb4c3db"
-    sha256 cellar: :any,                 monterey:       "708936eb8e9384f14760d49b8210e6c79ea3640ecd77a24d8fbda9871e8edea3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2797495e286a62e5d29132e8840108e1f6c37707c8772e062bb0de3ef91d8dd1"
+    sha256 cellar: :any,                 arm64_sonoma:   "b1dae6b01f722f104253e3191cb3f52e729a950538c9dd4abb77a3e3eb155bfc"
+    sha256 cellar: :any,                 arm64_ventura:  "b6d6a192221716656a347bf31ab4ef11516d50841ba6a193b426656122846c63"
+    sha256 cellar: :any,                 arm64_monterey: "adecfeddf939e14bfcfec136f5072c84327edeca4bc585c569cbba3a8f4e4144"
+    sha256 cellar: :any,                 sonoma:         "9c9e64dcf4ccc48b7a760bc5af9a31b3538e20d406daa47e294ba4e6a366a7a7"
+    sha256 cellar: :any,                 ventura:        "43b34e9619403bc9959e658d4476d535a6eac0c5b0c681f57673d77e7efb9541"
+    sha256 cellar: :any,                 monterey:       "a9440fa7ec1b19cead1a40cacccbc5a8cec9970a1d05721edfc314be33c5865e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07bc9ecdf0385418c6f4f357541e7def377e8bcbe73a2c350fe0fa6d395398f"
   end
 
   depends_on "rust" => :build
@@ -36,8 +37,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/a7/e5/956a16811044c28663d88740932de9c3fbbe2ec14fabe86a69b3cfe4842b/ansible_core-2.17.0.tar.gz"
-    sha256 "bd16e30ecac405dac594de3e1b1b4d9cc6fa1a9f7a01a6a8d4c471b20660716d"
+    url "https://files.pythonhosted.org/packages/c4/76/e7b0ac590ef1f100fef0ae6875dbbab06d74edfac8b050024ef28cab1c3d/ansible_core-2.17.1.tar.gz"
+    sha256 "46449d71bbd17c3ce85fe379721d88d333fd23637b5c3798e83fae5fa38def00"
   end
 
   resource "attrs" do
@@ -126,8 +127,8 @@ class Molecule < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pluggy" do
@@ -186,13 +187,13 @@ class Molecule < Formula
   end
 
   resource "subprocess-tee" do
-    url "https://files.pythonhosted.org/packages/f6/a0/acafd85c7c0aead293a16a70a49aba20ba2af9478771370b2897eae6059c/subprocess-tee-0.4.1.tar.gz"
-    sha256 "b3c124993f8b88d1eb1c2fde0bc2069787eac720ba88771cba17e8c93324825d"
+    url "https://files.pythonhosted.org/packages/d7/22/991efbf35bc811dfe7edcd749253f0931d2d4838cf55176132633e1c82a7/subprocess_tee-0.4.2.tar.gz"
+    sha256 "91b2b4da3aae9a7088d84acaf2ea0abee3f4fd9c0d2eae69a9b9122a71476590"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcmatch" do

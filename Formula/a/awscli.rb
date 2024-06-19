@@ -6,16 +6,17 @@ class Awscli < Formula
   url "https:github.comawsaws-cliarchiverefstags2.16.10.tar.gz"
   sha256 "f26e8c09624941d1a7d3d5413b3516244549561449c567dd4cccdecfd2317353"
   license "Apache-2.0"
+  revision 1
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f04897bf71fed67055ef063c53aaea174a61423ff318a687e09cd1af1ca76bfb"
-    sha256 cellar: :any,                 arm64_ventura:  "67f3b8320f533e8cd9b0b82e487df4516d6768164aa588a2cebf672d3aee98ab"
-    sha256 cellar: :any,                 arm64_monterey: "c9c01b8c1335c7983b8cd74bf5e0745a19e1cdedec1e12e80129d593c9ac1cbf"
-    sha256 cellar: :any,                 sonoma:         "204db7cc372e6a1a7ea8524d98986d9e919be37458acff2d4b6fe6806e15c730"
-    sha256 cellar: :any,                 ventura:        "29b4b36cc776281f5a4479e6440fb520b07362285b29f0c8a9d484cacf021c1d"
-    sha256 cellar: :any,                 monterey:       "e2d25ce4dd5b398a152fd0ba96d1d3cf82d6162f7f25d740bf0a878756634d7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4313f99b0e0e544ef1787618f27bcc4420e2a5c801f53cb318aeca7f53c424bf"
+    sha256 cellar: :any,                 arm64_sonoma:   "5ef06676fe22326a03fe01330a20c43b436de80e20adf6068dd81e1978e80539"
+    sha256 cellar: :any,                 arm64_ventura:  "f06e279242318883665a628d268f8be1b47032c10da568178948483a355e342a"
+    sha256 cellar: :any,                 arm64_monterey: "a46218b10445e950bbb539c60d4741a2110291eec28661131114d66efed51781"
+    sha256 cellar: :any,                 sonoma:         "f2a61fb82b10692bace67f7c70f834f78978dff6ba43aafbc583811603263f25"
+    sha256 cellar: :any,                 ventura:        "b9377472433f52aa246cf439d1bfabf1c30069d018e5de518c193f32d036a93f"
+    sha256 cellar: :any,                 monterey:       "c5877ba44b0a201ac5278aa344e9c554aa568d0ec208824aa6f2076ce56f13c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16bf22ab2db13d0d581849535a340ae944d8e32ffe33ae1a6c6b159760a3805"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -29,8 +30,8 @@ class Awscli < Formula
   uses_from_macos "mandoc"
 
   resource "awscrt" do
-    url "https:files.pythonhosted.orgpackages6925b1c6d1c3aeed90cb6ce69a6c5136caeb7f43f8d81a87f626d6a21b082afcawscrt-0.19.19.tar.gz"
-    sha256 "1c1511535dee146a6c26a382ed3ead56259a105b3b7d7d823553ae567d038dfe"
+    url "https:files.pythonhosted.orgpackagesc9959faca9e404fd3cd72fa8f75d4f33f16032f3598a841e83dc81c687b4b80aawscrt-0.20.11.tar.gz"
+    sha256 "c3dbfb7f1909457952e645373e72b69f90c50c465ee6a46d9bbdc12acb79803c"
   end
 
   resource "cffi" do
@@ -99,8 +100,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages0c3964487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08urllib3-1.26.18.tar.gz"
-    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
+    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
+    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
   end
 
   resource "wcwidth" do

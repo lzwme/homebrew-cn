@@ -6,16 +6,16 @@ class Nbdime < Formula
   url "https://files.pythonhosted.org/packages/97/3f/8f926f0eba7b31a3c67a224e747b0e084c643180c7a7500f879f8bf7a09e/nbdime-4.0.1.tar.gz"
   sha256 "f1a760c0b00c1ba9b4945c16ce92577f393fb51d184f351b7685ba6e8502098e"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53e6eb345f913644e265dcf2afd3f53db1d1ccbbf6f39deac3b7f8560614b8f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73e056f4dda0443738413cab7f3b273cb97e5fc0b7f2d59fc0d17deacb3f44ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef4e3eefae6682f92784f7f82e4f5918536d01fabd59f95e8e1d17338f45fdaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e1f8802d89c9c0f90aa428a65bb02dd43facfcaddd38434cd90e506435797b88"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec07329fba196e7e14febe8ee7df47e4001fe8905039436da2f1166b915feefa"
-    sha256 cellar: :any_skip_relocation, monterey:       "005e1f43f67ac498b62c21d62bac83d205fd6a2667fb6c37053e1632a9a62aae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6ccae84df186ab18dc2b4c5c4bc533094aa2cfcd58fc4e7f3d5bfb9e1617da4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1ba060338ac841d42a255d5d69d09af91e121df39d78db1f43173ba589f4268"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d90439548bf8ed5df200c79a8939959aec58cb103c70e4701707a42905f19ee"
   end
 
   depends_on "certifi"
@@ -48,8 +48,8 @@ class Nbdime < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "smmap" do
@@ -58,8 +58,8 @@ class Nbdime < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def python3

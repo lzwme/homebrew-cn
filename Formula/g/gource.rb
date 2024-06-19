@@ -1,19 +1,18 @@
 class Gource < Formula
   desc "Version Control Visualization Tool"
   homepage "https:github.comacaudwellGource"
-  url "https:github.comacaudwellGourcereleasesdownloadgource-0.54gource-0.54.tar.gz"
-  sha256 "1dcbcedf65d2cf4d69fe0b633e54c202926c08b829bcad0b73eaf9e29cd6fae5"
+  url "https:github.comacaudwellGourcereleasesdownloadgource-0.55gource-0.55.tar.gz"
+  sha256 "c8239212d28b07508d9e477619976802681628fc25eb3e04f6671177013c0142"
   license "GPL-3.0-or-later"
-  revision 4
 
   bottle do
-    sha256 arm64_sonoma:   "0a22e1eeb613eeeb43e82650c78058db8f9be241ca52588f235267f0137aff8e"
-    sha256 arm64_ventura:  "bfb3df79badebd7b21308e65225c1ca9026c40cf75faf1d5b924149195766004"
-    sha256 arm64_monterey: "6d038b9f738420539f7cc32362a9c1074afa26a0f46880dfb6e623f27d51998f"
-    sha256 sonoma:         "e5c26a4251e5975fd8301c01299b6a8a5a4d2a848843086e2c8f415ee5d6ccac"
-    sha256 ventura:        "af0c1dae247b7069be63625b50fb95e1aa598855a344da4aeac5060a3f156d82"
-    sha256 monterey:       "c1012016e7b681774b17458008744399dcb61b551b3b6c5876b6ad54db22c03f"
-    sha256 x86_64_linux:   "54663e308e0755e3e7b992985d36b91f859d2bfb2b0dbc82a2690d836569c851"
+    sha256 arm64_sonoma:   "3596c21ecd8e3c2b225d9ff98defa38a5496d52c8e9f34464a2e414f8c9ec8f6"
+    sha256 arm64_ventura:  "7356eb34bd94d8a6aefedd18cf85d09b3fd19d7ab09363e9d20c5e45eab71a81"
+    sha256 arm64_monterey: "7a59b2bf59553a8a20a83cf6a2c4dbd89438fee6d3959e06c6e27bbd84f84a3f"
+    sha256 sonoma:         "b1bfbbb3b3e6c635cea3dacf66167842135a9d6648c0eafa40d899fa7e1166cf"
+    sha256 ventura:        "c2c1c4c00db4ebb316b6b7797440f7851b08c14bbf259701c4a71e57bbcbfaaa"
+    sha256 monterey:       "ecf466f251a966b38fb9d7ddf4a7ebb234b0396205d380b39bc83ecb063400ad"
+    sha256 x86_64_linux:   "2008fd1997753832a8377facbaabcd081d96e1fa5d1128f23624d11f26e5ca5a"
   end
 
   head do
@@ -33,13 +32,6 @@ class Gource < Formula
   depends_on "pcre2"
   depends_on "sdl2"
   depends_on "sdl2_image"
-
-  # Fix build with `boost` 1.85.0 using open PR.
-  # PR ref: https:github.comacaudwellGourcepull326
-  patch do
-    url "https:github.comacaudwellGourcecommit4357df0e3cf3a5f2c8bcff74bf562e5f346c930a.patch?full_index=1"
-    sha256 "8c566c312e18ee293eb1cf14864b6c3658cfcc971eaf887ee0d308b67572c3e6"
-  end
 
   def install
     ENV.cxx11

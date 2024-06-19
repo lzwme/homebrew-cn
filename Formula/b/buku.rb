@@ -6,17 +6,17 @@ class Buku < Formula
   url "https:github.comjarunbukuarchiverefstagsv4.9.tar.gz"
   sha256 "1e432270ae78c7852110dcf2c2e215893bcc338299a4998f14a1f6b26e37bfac"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17be5e7443c5c542d9bfa1a10a32b9653c60a88809d2bd7ef3fbe7170fc6bc24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0122e570bce2060bdfc65f0c8c4c914df5aa2a6ffd778617644ae2065afee719"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95f39ea319235137c2d514ca2a449e92c729a153c863a7e87c1cf2d576edabc0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "44d72f0f42143094e2e4eb298888d9042b3673d66b192d70df0aecd329084be4"
-    sha256 cellar: :any_skip_relocation, ventura:        "f53be40b07ee4144c9e29491c6e2f6da4acf1c62e4051aaba0d128fd95474da6"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ee739ba74354012b518b7675610f82ccc10a3497ce3c5a0d14b352d2eeb9ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "907e7360baaa63682cc808c1b3948c1ffc580b9f8013e838a4a3c6196ae954df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42789fd14267d57b9b0c72105cf9f9eea6a569252f7b5cefbed919c9de76c2dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "220c3bc922a5a4ecd65e4744d3f338a6260209343aae13d8c5fd62c6220afcfa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da1690b766a2a5d1b0b60f75d656f2e04ff569d3a13dd15ec1a2c7f9d54182ca"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b1a8151f967b9ce29331ca1deb8a9961e29d93c53a56106b8f94124c9a999126"
+    sha256 cellar: :any_skip_relocation, ventura:        "78ffcaff8c41bcab589d21f9c335cb4d7b8ab9dfc04c9aa70849b7de744e3e0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "a182efa77e04bf172c94b56cd9e0ab2d5c034a793f3cb24e248bbb0318a03801"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dc87c08b6b4504d81dad0696f6ae0e514a2f435210b044b03ad6e3da898e99a"
   end
 
   depends_on "certifi"
@@ -117,8 +117,8 @@ class Buku < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages0c3964487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08urllib3-1.26.18.tar.gz"
-    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
+    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
+    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
   end
 
   resource "visitor" do

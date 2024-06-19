@@ -6,18 +6,17 @@ class Mentat < Formula
   url "https:files.pythonhosted.orgpackagese08ba808d6663065e3b446d3be521d7836f774f3b39bdd30f786d093aca383b6mentat-1.0.8.tar.gz"
   sha256 "81679055448a495c3e7e55eeb8b59373dc0658cea6b2549d0ae48d26937494ba"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https:github.comAbanteAImentat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "788e61a2818cac3f4c0a14fe7d682d2057f31422e398ca110bf3615f027728ce"
-    sha256 cellar: :any,                 arm64_ventura:  "7872235adb3f56b008ba5f5a82c8634af49cc24e1e7d6c0942ccad78c3a7c5a9"
-    sha256 cellar: :any,                 arm64_monterey: "f6411e19b59e5b6ecdd055d140a3b2d07b02af3848b48f51876fb665eea244ed"
-    sha256 cellar: :any,                 sonoma:         "6f5ff7a48ec345dcd1ba3a39b25a7bcb7d9588b248040822fd8ae953760c5f6e"
-    sha256 cellar: :any,                 ventura:        "950e606c417068fdb48b4c9556f3a94b875f9d431ddfef14607b0600c23d2fc6"
-    sha256 cellar: :any,                 monterey:       "1a27f4124600ef201461dcc7d285c5d1f66a98182943319436e6d031a9db8ee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6b1d234b893e54931f6095dada56812370d46cf6b86c2bd6e60d2e372ffc765"
+    sha256 cellar: :any,                 arm64_sonoma:   "06f91e3553a418ff3d4002467c5490996c5daf08e0cbc04d408b2f88d4a83d7f"
+    sha256 cellar: :any,                 arm64_ventura:  "f472fee094ce43c23c838432a94136279cfe9dfebe1503f667a2c1d6fc58ead7"
+    sha256 cellar: :any,                 arm64_monterey: "f60ae0a65efb301be68987c370c13363e0e6453b68049dbc91c0737192c3cf1d"
+    sha256 cellar: :any,                 sonoma:         "0baa094536dc29fd2d1f93270b8e89257ec3a1a15a10f8a6b212d528f96bdb8e"
+    sha256 cellar: :any,                 ventura:        "514d9bab0b7167e18210590cfd1f73feb0d375849303ef0c6a1f96af8d5e16b4"
+    sha256 cellar: :any,                 monterey:       "98971a04d93bbf20ee2e1bf3774e453b1cb35b715b0de483b10a00ee5818f6f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb9feeabced4de5e8a7d0237c1df317eeb816df380f831ebf68a38bde72a3c3a"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -289,8 +288,8 @@ class Mentat < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcwidth" do

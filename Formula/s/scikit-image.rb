@@ -3,19 +3,19 @@ class ScikitImage < Formula
 
   desc "Image processing in Python"
   homepage "https:scikit-image.org"
-  url "https:files.pythonhosted.orgpackages24ce183ff64ed397911a9d3b671714f8a2618af407b427a40ca48550fb0f7bd7scikit_image-0.23.2.tar.gz"
-  sha256 "c9da4b2c3117e3e30364a3d14496ee5c72b09eb1a4ab1292b302416faa360590"
+  url "https:files.pythonhosted.orgpackages5dc5bcd66bf5aae5587d3b4b69c74bee30889c46c9778e858942ce93a030e1f3scikit_image-0.24.0.tar.gz"
+  sha256 "5d16efe95da8edbeb363e0c4157b99becbd650a60b77f6e3af5768b66cf007ab"
   license "BSD-3-Clause"
   head "https:github.comscikit-imagescikit-image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "565d50d3357d078e7d35a9eea23f76706906a9b3bf8f7610e93aa2560f70fc44"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b28fbc9cd49b7c2ce72a14fc9da5f0201034cfa2f183f05ec343b5a430e5d8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4157c90179ccfc36a400c7843f3f06fbddabb9a0e7551b2df8b70898c26d3698"
-    sha256 cellar: :any_skip_relocation, sonoma:         "036f686aa4441fd6c2d3b559734c950297741c6287aceda45580405826d33827"
-    sha256 cellar: :any_skip_relocation, ventura:        "1149b14dea7cdc4d7e55f8dd84c8d33ccc43f2ab8b53a91a5e9a4e8bd9aa5d26"
-    sha256 cellar: :any_skip_relocation, monterey:       "094aa24d9566672ad6babb7db4cfd9d1af6c76b42921822367e10129c7970bc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7569fd80a0416329af9b2cb777f2d621e18ec8b451cc539f2f5acf1afef2d5f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8aa4f1756355a294e4b26c6aa395fc7fdbdd574c00d82b87558d7d384eb119e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "912a19ba94573aa3ea604743fba82b30bfb10c8de80c9330fa5888c5319dff92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "067eeccfb003e88003969d0bb31d0e9f10eea326790054bb65bdcfecc0bc14a7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4c5a0842b9be549e1acb25ec8265b971a425da52d0269435db64e0cb5ae40f8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9736500714362a642c82459ad66fe961b1a3def18ed97d4cb87538f7f22f563b"
+    sha256 cellar: :any_skip_relocation, monterey:       "5556ac9f3acc51b9773bf191fca8ee866686bbdbcefe64d82e251fe6276139ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56c69786ae7d70ec8cd3a24b775b50e2643f333cf60605a2779a8932692e7f53"
   end
 
   depends_on "meson" => :build
@@ -31,8 +31,8 @@ class ScikitImage < Formula
   end
 
   resource "imageio" do
-    url "https:files.pythonhosted.orgpackagesc37170f81a9c0cd3b106f6663af8d92402d16354abec48f7b8ba15a6c41ddca9imageio-2.34.0.tar.gz"
-    sha256 "ae9732e10acf807a22c389aef193f42215718e16bd06eed0c5bb57e1034a4d53"
+    url "https:files.pythonhosted.orgpackages2cf9aa9f3a4eae46f4727902516dc7b365356c1e4e883156532b74d135a69887imageio-2.34.1.tar.gz"
+    sha256 "f13eb76e4922f936ac4a7fec77ce8a783e63b93543d4ea3e40793a6cabd9ac7d"
   end
 
   resource "lazy-loader" do
@@ -46,13 +46,13 @@ class ScikitImage < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "tifffile" do
-    url "https:files.pythonhosted.orgpackages7b79f55cf9d4c2a2bbb19a37d8a0c14142e9c329a6cf3843e8d68237cb0615a8tifffile-2024.4.18.tar.gz"
-    sha256 "5ffcd77b9d77c3aada1278631af5c8ac788438452fda2eb1b9b60d5553e95c82"
+    url "https:files.pythonhosted.orgpackages8de5c58f2dc22f6372516d1154ce1874c74cecf7c52892ad5f09bf3764b6b1b2tifffile-2024.6.18.tar.gz"
+    sha256 "57e0d2a034bcb6287ea3155d8716508dfac86443a257f6502b57ee7f8a33b3b6"
   end
 
   def install

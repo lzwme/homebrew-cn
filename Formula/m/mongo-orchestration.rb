@@ -6,17 +6,17 @@ class MongoOrchestration < Formula
   url "https:files.pythonhosted.orgpackages80bc46ec328dcb9abcc8e9956c02378bfd4bfb053cb94fcf40b62b75f900d147mongo-orchestration-0.8.0.tar.gz"
   sha256 "9cb17a4f1a19d578a04c34ef51f4d5bc2a1c768f4968948792f330644c9398f6"
   license "Apache-2.0"
-  revision 5
+  revision 6
   head "https:github.com10genmongo-orchestration.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a3f43767c123f3233a34850e09f1f41dec8c1a292dc5896a1bf6e049f82a133"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bde4b5e7f294bf976728640790e9eeb757a36e60eb9c6dc82a7d82cb8bdd7c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07b4a108f9b541c52a927504a6da0771b6984481b1f81cc02fbc8c5f2d58ddc2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5cbe53641f551ffa790713711f3f8d814e775acdf4688a6c655e9bf7f673d24f"
-    sha256 cellar: :any_skip_relocation, ventura:        "9890b079b29b0662b777f94dd069afa1c8bc878181156413fc0f6238541ea923"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f85ebb0e06ba655ac4d89bc0c9f26afed75adb1a276a08766f7bb79c6d40a76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a30eb4de90902ce3a95ded535ecea7befcc5352e82691835ea92901011cc061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e358b3e7f365dc1adb3bc901de810add3fab891fff4d4f13c237c8d95f2ec2ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3715f1ab8558933a0aa4c62d3b919bc3fb0563d435d2f124c8e3a4753ad9900"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "007bf8a86adea963ef4c7c15e9e01febb484bc6a628b3521de372d55cc0cce5a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "314f9c0583213cd6fc484cfa2843ccf2859cdcca6e1de80003bb69163fa5afb2"
+    sha256 cellar: :any_skip_relocation, ventura:        "9dedc2f46bcae5a161d6a3df8dba479dbe473202866ba7200cd7b31dcfb27070"
+    sha256 cellar: :any_skip_relocation, monterey:       "b942a701bdd1caf744b055319cadec6e533d1c350da844417d1564ded14ce7c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f89299f147390c285a174eeb0f6f1fe31c0a60313d387edfc71aacd7d2f42ef"
   end
 
   depends_on "certifi"
@@ -53,23 +53,23 @@ class MongoOrchestration < Formula
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackagesdfad7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4more-itertools-10.2.0.tar.gz"
-    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
+    url "https:files.pythonhosted.orgpackages013377f586de725fc990d12dda3d4efca4a41635be0f99a987b9cc3a78364c13more-itertools-10.3.0.tar.gz"
+    sha256 "e5d93ef411224fbcef366a6e8ddc4c5781bc6359d43412a65dd5964e46111463"
   end
 
   resource "pymongo" do
-    url "https:files.pythonhosted.orgpackagesaf7a3401c2f16bff666e7b2d0416a345e2cb4059d27c98cb80aad66cb82dda69pymongo-4.7.2.tar.gz"
-    sha256 "9024e1661c6e40acf468177bf90ce924d1bc681d2b244adda3ed7b2f4c4d17d7"
+    url "https:files.pythonhosted.orgpackages824822ac52590af5f4b5c7c1da0b7d10d68722f65978592f54eb12b781cdd52bpymongo-4.7.3.tar.gz"
+    sha256 "6354a66b228f2cd399be7429685fb68e07f19110a3679782ecb4fdb68da03831"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

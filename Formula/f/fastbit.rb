@@ -24,6 +24,8 @@ class Fastbit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "198c4ca4965a0f5285fe2c887295f34dbd0481ec7eb6898d5cf325688dccfb96"
   end
 
+  deprecate! date: "2024-06-18", because: :unmaintained
+
   depends_on "openjdk"
 
   conflicts_with "iniparser", because: "both install `includedictionary.h`"

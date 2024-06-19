@@ -6,17 +6,17 @@ class Onionprobe < Formula
   url "https://files.pythonhosted.org/packages/aa/a7/881b66594477795314e4a5029f098eb78cf21c843b63bed8d3c7cfcf5fe4/onionprobe-1.2.0.tar.gz"
   sha256 "65ef77047e2cb24de999dcfeeb759de04f6ec952612a5aa9225dc92488696dc5"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fa47dfdbf20b8ce16af33bf25d736fe325c94ac229d2c204dee9d42f5f220e50"
-    sha256 cellar: :any,                 arm64_ventura:  "aecd88c6792577c164b8f0249eca91a52189e452283829664a8355143d1e63d2"
-    sha256 cellar: :any,                 arm64_monterey: "63828afc60cf78eab114ae8a9a4c5732264c0894492ced10138a05dd0524764c"
-    sha256 cellar: :any,                 sonoma:         "95978575565bf1bbafff298b5df87ae0fbf2a2b70bc25baf0c8d654098f26c98"
-    sha256 cellar: :any,                 ventura:        "56c4b4b0719895a42ad43e2de27f7c90db0c596fa3affee78a7ef63c704c67e4"
-    sha256 cellar: :any,                 monterey:       "05af99247a980adf40c4793bfcc57f6decbc649f300d5b99946b51511d06ad2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eaff246054a8f569b83bd3c1c5de206613ef61c03eddc6498997ae59786dc39"
+    sha256 cellar: :any,                 arm64_sonoma:   "cdfb9df372d603f79f0199b34dd52ea56b50c3eeac82fcaf6425195a34e6f84f"
+    sha256 cellar: :any,                 arm64_ventura:  "fdd9303588a11d041e0a0202671e3bca24b7187f9fbbcb481c03f858cbd1757e"
+    sha256 cellar: :any,                 arm64_monterey: "f22fc97215648f8c1f40b226da21455a8e8b966d3f7ce71c07b25c90b6c49a66"
+    sha256 cellar: :any,                 sonoma:         "ac2bcab751cdc96cdfc977052fecd30f1af16c9cf743631cb672f4c5876a675b"
+    sha256 cellar: :any,                 ventura:        "9f2092d7199e249b619af17c3d6e999daaa56ffc17c4cdc918ce9335c7630e20"
+    sha256 cellar: :any,                 monterey:       "6d4e949031d9edc6587c68e63dda4093ed16d78e7c015b1a8500f94e987c3cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb0a88926a5dc48d6ebbf856441556d1b36787ffa442d09c87a1d3491b4a0e58"
   end
 
   depends_on "certifi"
@@ -61,8 +61,8 @@ class Onionprobe < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

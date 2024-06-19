@@ -6,16 +6,17 @@ class Wtfis < Formula
   url "https:files.pythonhosted.orgpackagesc88ed8005d43adcfd263723de2ee643eb2a6a48e645a9338202c7eda800a0df5wtfis-0.10.0.tar.gz"
   sha256 "1a364350e51d3daca0fba2135207f5eb5234cebd43ac40bda82f7e7b6817bf36"
   license "MIT"
+  revision 1
   head "https:github.compirxthepilotwtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abcf19ec42842a51bc1db9eb998e392b3cc94e879f0eb6178a36ee838481bf24"
-    sha256 cellar: :any,                 arm64_ventura:  "cb30bee39f84fec2e7b4670b0ccf17a33db173ec7262acbe6543af138c84d45f"
-    sha256 cellar: :any,                 arm64_monterey: "d14e9451bb1a212e047bd4d6e9a4b3cae9178ac586ff2467083da825b9d38aff"
-    sha256 cellar: :any,                 sonoma:         "21738c049fd5c0bf32021e93c61242c49240a4589aae9fc267d8748381f551a1"
-    sha256 cellar: :any,                 ventura:        "7740f6b135a562f5ff11452a332229e3368defc94c0b05e319b9b80dc59eed12"
-    sha256 cellar: :any,                 monterey:       "2c1477714a3c59317f961359537b2fc7c0f03e3717a20689d160e24b5be1d136"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e6fa204497c0f29361ba74357825aa272db2c5bdb23eef68ca8b36a58ff608a"
+    sha256 cellar: :any,                 arm64_sonoma:   "b9ee4182b8df999bda76d6d33ba856528e8fa60ac504673ef15fd5168efe358f"
+    sha256 cellar: :any,                 arm64_ventura:  "5eec75893e8d91fd851a2f375d7937814ed1d3f0a007ee11123985753f73c9ef"
+    sha256 cellar: :any,                 arm64_monterey: "a77541879a3c5ae6248f2f4a005c8404119f799cadfe380fb1207c9398b4fbe9"
+    sha256 cellar: :any,                 sonoma:         "153a911915aa4a0adc60a2f425103de56250a45c0fd4d8b3f69f72471bde76f5"
+    sha256 cellar: :any,                 ventura:        "a5f7a0681d63bef7f6845372e4fd8bb676db48083e720c99ebb1f70e094bc8de"
+    sha256 cellar: :any,                 monterey:       "b7d42788322bd52abe7139697ae364f3b7c9357b019a330f35a7678739d00da7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d27cd0048eed541085be139c36a3aae846f543daefd537d495125e90825062f8"
   end
 
   depends_on "rust" => :build
@@ -48,8 +49,8 @@ class Wtfis < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
-    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
+    url "https:files.pythonhosted.orgpackages697d73d36db6955bde2ed495ce40ce02c9a2533b8c7b64fd42a38b1ee879ea18filelock-3.15.1.tar.gz"
+    sha256 "58a2549afdf9e02e10720eaa4d4470f56386d7a6f72edd7d0596337af8ed7ad8"
   end
 
   resource "idna" do
@@ -68,8 +69,8 @@ class Wtfis < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages2176a622bd8e7b0b751f65884f54c0430e5910d523b8aeccf11a8bcef26fb17epydantic-2.7.3.tar.gz"
-    sha256 "c46c76a40bb1296728d7a8b99aa73dd70a48c3510111ff290034f860c99c419e"
+    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
+    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
   end
 
   resource "pydantic-core" do
@@ -113,13 +114,13 @@ class Wtfis < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagese8fb4217a963512b9646274fe4ce0aebc8ebff09bbb86c458c6163846bb65d9dtyping_extensions-4.12.1.tar.gz"
-    sha256 "915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "xlsxwriter" do

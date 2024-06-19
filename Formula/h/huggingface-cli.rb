@@ -6,15 +6,16 @@ class HuggingfaceCli < Formula
   url "https://files.pythonhosted.org/packages/9d/83/0c07c6e6de04b097a4dd474a30492a650e5845256c4e4eed4397316248e4/huggingface_hub-0.23.4.tar.gz"
   sha256 "35d99016433900e44ae7efe1c209164a5a81dbbcd53a52f99c281dcd7ce22431"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ef0e1adaea4e1af5b3d821c0b1845c43bfd120f953da8ae1ff236b8a83d4e504"
-    sha256 cellar: :any,                 arm64_ventura:  "b2c0205415f3a9de8d715a807242bb1d7271ef0563510bc975bf53f35fcb1ad2"
-    sha256 cellar: :any,                 arm64_monterey: "88cac4a04f4344f7588d41b3990289b0db8915c63e64c3f4ef7419f54d37529c"
-    sha256 cellar: :any,                 sonoma:         "841642bb9dd977ad8c7959cfa65b92db9eacdd21d019a25d0300ecb6b13d1b44"
-    sha256 cellar: :any,                 ventura:        "db920ca6bda1e049064a035dde6d58fe58799a84a1db1af8fe42df7b90ee5f0f"
-    sha256 cellar: :any,                 monterey:       "d88bdadc092a3c4c93c2530a7c9b11df6eec840a6dafdfe5f3336bb895131db1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1861c3f5dc6b9271b5f271bd3c509a0e64c183920bfd91b0008f726488e7ea0d"
+    sha256 cellar: :any,                 arm64_sonoma:   "11d64672a76eb69b4b5bdac403294a2a268f0ae87ee1a672a4bb1b52cd0c644d"
+    sha256 cellar: :any,                 arm64_ventura:  "1364d07e501c9490a35eb59098e0f52157f6c2362561e28dbbd267f3a509b7fd"
+    sha256 cellar: :any,                 arm64_monterey: "bde79425d633e4eb231208b33ab10fbfc44997b1fa066c09ef7a524be686b04a"
+    sha256 cellar: :any,                 sonoma:         "70b606868e4574099daaf19a8f40ed380eb241a10dcca5f8eb0b75237d3fe67a"
+    sha256 cellar: :any,                 ventura:        "5fc563900b2c3d598cd34278d647361d0a597990d1ed20d9bbbb3da77e78e33b"
+    sha256 cellar: :any,                 monterey:       "26c4caafc28930516ae6da4adb72d05c6fd848ce0957a353604d80c5d5aa7211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae3e974838f157e93e16cbe74f1cf8bf1760e374e4566cb218ce186a0e45225d"
   end
 
   depends_on "certifi"
@@ -68,8 +69,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

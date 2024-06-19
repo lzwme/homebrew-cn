@@ -1,8 +1,8 @@
 class Payara < Formula
   desc "Java EE application server forked from GlassFish"
   homepage "https://www.payara.fish"
-  url "https://search.maven.org/remotecontent?filepath=fish/payara/distributions/payara/6.2024.5/payara-6.2024.5.zip"
-  sha256 "cc66c5328688c9d766d5e9cc403262df1d6271810c83ba35f9c67ef01f378140"
+  url "https://search.maven.org/remotecontent?filepath=fish/payara/distributions/payara/6.2024.6/payara-6.2024.6.zip"
+  sha256 "01b70d244cc6933f659875a21d65ef6b5dee293fe22de5b9c9288b7b78d6eba3"
   license any_of: [
     "CDDL-1.1",
     { "GPL-2.0-only" => { with: "Classpath-exception-2.0" } },
@@ -14,12 +14,12 @@ class Payara < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1d554d61abc0870b503036f7470d1c7287258212b93293b0b5ca501c6225d6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33a7cb887b9a6687802248c4dea0c7cb51662fdf313a9af6b4c317cdac558a00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "937f46fb97bd8e7ab9cbc07cafc90a83e52b779fd03a7df4ba1ffef6d04fe7a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b753bdf20e6f4d80cf76a2d1d1e48193c7eeef707f446819392d797c4634590"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6de38c3e77ed69dfc13955353ad307ed07ec3753f179f99a76e3966a07a45e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b34230b4b1a399607997acb4442163b6ad42a3bb67101e55726b5783a08eec2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df95de99b77d0a4d330814417b634448e62ce9778934cf6d1b993c4d2abc224d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "252168875fba6cf58b444f9f259c8ee58a14bfbfbc4d54d4ff7c2bf92d01e12f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "252168875fba6cf58b444f9f259c8ee58a14bfbfbc4d54d4ff7c2bf92d01e12f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2fe3e6588e75e724dd96f00a0b08fbb26c9a82fec6fe11c5d522f313a12fa5f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "2fe3e6588e75e724dd96f00a0b08fbb26c9a82fec6fe11c5d522f313a12fa5f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "41642982377d5f4b1b2a9a1dd2bdde6c03f385122384e11e461a5c764c63940d"
   end
 
   depends_on :macos # The test fails on Linux.

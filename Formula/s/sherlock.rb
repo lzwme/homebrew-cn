@@ -6,16 +6,17 @@ class Sherlock < Formula
   url "https:files.pythonhosted.orgpackageseb570ac8fcde9e2dbdacb20f48e8c20f3049972a59839d8bccbef0799b944140sherlock_project-0.14.4.tar.gz"
   sha256 "3c0edc4ebbcdb8eae03d5ce2e377e1c6839d73b8e77388b70125120537917022"
   license "MIT"
+  revision 1
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c9aa8b48768ebdb3a1f75d57dbb1b5494e328cb960442d151dfe61d19af290c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2313da93e039f071360a265ec9405e0c7ff99a24e3623908cfa1807e5b6d073"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55b06aab82e51d750745088c8fc21c63c2c0544a7b7fe27198db418ece12bee7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "962fb08052f1cef920bbfe7a7c7f3642f7b9c84a7037818f0f6f538b3dd42fee"
-    sha256 cellar: :any_skip_relocation, ventura:        "90db2f5ecac6ed021485664b2a477dea8e9c4e53c98063c83516521d1ca40386"
-    sha256 cellar: :any_skip_relocation, monterey:       "01e31530d3c0e54a1e6a255fb4d2640821e1b3a2a064371ae7bf9d8a64a86a92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aab9b488bfd11364f1b6e3a94f2ae2acfbb293e605bce48fb2b87815ccb0cbc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a15b64e7f91ffc6c277a3aab4d09e97afc3f934595120b15cf28413eee01fb60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1f8e81fbcdf27790c14444098a751f277235959d961d6b050b1fe368d6e60cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09dcef1f9f7bfb150925610ae7f3daec2725d887b1791cb5fc636934bd60edef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1ceb188b20a514ad30b250af49a03e1d1567557cc247b82454ba047f146c1850"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2958f4a42bf5b78f74f64411bb42a6570f0ecbe035e854a31a67e8139979e07"
+    sha256 cellar: :any_skip_relocation, monterey:       "c03c267e690aaa91234a40ea5f002fe24e51966457e182ace22881ce5b91c61b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80522cbd8ceb87f589daa8a6fa50ea6d587e0ffd180f75c996000283e7d1c303"
   end
 
   depends_on "cmake" => :build
@@ -53,8 +54,8 @@ class Sherlock < Formula
   end
 
   resource "openpyxl" do
-    url "https:files.pythonhosted.orgpackages42e8af028681d493814ca9c2ff8106fc62a4a32e4e0ae14602c2a98fc7b741c8openpyxl-3.1.2.tar.gz"
-    sha256 "a6f5977418eff3b2d5500d54d9db50c8277a368436f4e4f8ddb1be3422870184"
+    url "https:files.pythonhosted.orgpackages14b8acf74229f1b2d9e961f155e0be04e4629a1b53b3eeb4f2ac35c10032cf1bopenpyxl-3.1.4.tar.gz"
+    sha256 "8d2c8adf5d20d6ce8f9bca381df86b534835e974ed0156dacefa76f68c1d69fb"
   end
 
   resource "pandas" do
@@ -78,8 +79,8 @@ class Sherlock < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-futures" do
@@ -108,8 +109,8 @@ class Sherlock < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

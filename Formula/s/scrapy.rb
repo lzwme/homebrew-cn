@@ -6,17 +6,17 @@ class Scrapy < Formula
   url "https:files.pythonhosted.orgpackagesf21f5524416a64c030fbe18caeba079e7176836b281bf9eb50b79efdf8015063scrapy-2.11.2.tar.gz"
   sha256 "dfbd565384fc3fffeba121f5a3a2d0899ac1f756d41432ca0879933fbfb3401d"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comscrapyscrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1001c6adea90a39236f7a2e27f467ec81a192a84ff6f9bc5d66e408c390c6ec6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0117d7b3f686d23455fab97a95c21a145098ec0390e272381c7a2c50c9863e6"
-    sha256 cellar: :any,                 arm64_monterey: "73663d0891e6afa5f7625086238d44237c09f5b32439d5db12d858ed771a6304"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f40d373420b1e0283a94524205c644076af05520c5c298929c052333aab71c12"
-    sha256 cellar: :any_skip_relocation, ventura:        "e344b2aa2bdcbaa5305d5ae0314bf996326c99489f5443f1b91f3e17d6129126"
-    sha256 cellar: :any,                 monterey:       "0e9af22d341537b503d711b421dac7d8615486e8998e563d4278c1963bbea473"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d96242bca839b0be6d6385e59e9b8a44f2b3cb4746b15f2eb1fef75f2918d6c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cea0d5f015e4af8e3b9a12e49aab63ae4d43d332939a1a42954bb73ea7094cf5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bb87e7639f7116ee38f784c8167be92c54d5bedc4f2b31bb3229f13d76f6538"
+    sha256 cellar: :any,                 arm64_monterey: "1e3f19d3e3c4107c21416b498d5eda2473651532dbf92bed212c6587cf626fa3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6faef51314d0f70e83ce00e445b46b57f07108f373f0c4bea9f5f1283ee151d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "1537b26b668b6f91e06945283001515d5a3f82ee792dafed0668e385485f3c70"
+    sha256 cellar: :any,                 monterey:       "73b94335c276588244bba64ea100265433a381b2a0da9c81b756967ffb97cf73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46a3f9cdd4a896ba8c73c9b6f0a1aa27364704547f7053d57fa7816435edd683"
   end
 
   depends_on "certifi"
@@ -57,8 +57,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
-    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
+    url "https:files.pythonhosted.orgpackages697d73d36db6955bde2ed495ce40ce02c9a2533b8c7b64fd42a38b1ee879ea18filelock-3.15.1.tar.gz"
+    sha256 "58a2549afdf9e02e10720eaa4d4470f56386d7a6f72edd7d0596337af8ed7ad8"
   end
 
   resource "hyperlink" do
@@ -82,8 +82,8 @@ class Scrapy < Formula
   end
 
   resource "itemloaders" do
-    url "https:files.pythonhosted.orgpackagese565e43fb029445a332ed6620ee93be29a94c023a16a0e59f17a5f3665987e79itemloaders-1.2.0.tar.gz"
-    sha256 "fc2307f984116b010d6101a68a6a133ac8de927320b0ab696f31ad710a8d8d98"
+    url "https:files.pythonhosted.orgpackages17cd1cdef11f36a0a6c3db2bbfc28e5e10b358aeae54f6c2279dd89c595ebf56itemloaders-1.3.1.tar.gz"
+    sha256 "81571c941cc189bb55e211f0cd3476fde7511239d3bf7ff91eb6ed68a1b0ec10"
   end
 
   resource "jmespath" do
@@ -97,8 +97,8 @@ class Scrapy < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "parsel" do
@@ -137,8 +137,8 @@ class Scrapy < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-file" do
@@ -172,23 +172,23 @@ class Scrapy < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "w3lib" do
-    url "https:files.pythonhosted.orgpackages47790c62d246fcc9e6fe520c196fe4dad2070db64692bde49c15c4f71fe7d1cbw3lib-2.1.2.tar.gz"
-    sha256 "ed5b74e997eea2abe3c1321f916e344144ee8e9072a6f33463ee8e57f858a4b1"
+    url "https:files.pythonhosted.orgpackagesccdd8d080c3bf19f4e853433193e0ffd894d9f5c5a55c11d7283038ee822a0dbw3lib-2.2.1.tar.gz"
+    sha256 "756ff2d94c64e41c8d7c0c59fea12a5d0bc55e33a531c7988b4a163deb9b07dd"
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackages1f41d0bdb50947f77341e979241de26f348e538a5d0f3ddb2482bc3907a3d728zope_interface-6.4.tar.gz"
-    sha256 "b11f2b67ccc990a1522fa8cd3f5d185a068459f944ab2d0e7a1b15d31bcb4af4"
+    url "https:files.pythonhosted.orgpackages09067c1202972bc99dd1b731c3c01157855cbc8d0944894c3b234473b1f4119czope.interface-6.4.post2.tar.gz"
+    sha256 "1c207e6f6dfd5749a26f5a5fd966602d6b824ec00d2df84a7e9a924e8933654e"
   end
 
   def install

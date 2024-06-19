@@ -6,14 +6,14 @@ class Networkit < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "aeca1389873b623451264b1fa1d44d523c63cb9ea2728c64e312b7baa91eb24a"
-    sha256 cellar: :any,                 arm64_ventura:  "c4399d2cadbc56465ab7d3b6381eb2102f7900196d1afcc9c26fde900c31e4d2"
-    sha256 cellar: :any,                 arm64_monterey: "e73e3ffd843c1f2174c0bbefd721ba0309cb41d9783866aeaa8fc9c512822efb"
-    sha256 cellar: :any,                 sonoma:         "3aaf130e9d503254b0aa715c8fa879edb13ce048a7ac5a34b8e7d0ac6bf6303a"
-    sha256 cellar: :any,                 ventura:        "1f45434288fe627d17555645be06405a2d1a62c36404bf466b89c0f2227048de"
-    sha256 cellar: :any,                 monterey:       "02e26531757bb9412e6e3ec9f24468fffef797377de1a955e484393b1a2707ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c53c33bf47a6ce53d4181b787fa233096a406ec0b3de7f13d24d8d987f22f36c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "81949acfa3065cfbbe5faa3b36e330933236a0c30e140a50b7400cde3171659d"
+    sha256 cellar: :any,                 arm64_ventura:  "6bcfd6165aa1ffd664366a0332bd65ce243094c40d1b63fe24462658d62e2d1f"
+    sha256 cellar: :any,                 arm64_monterey: "5fcae28e49883d22df3dc2bb97be716ac0737c034879beefe2c7034b0571201d"
+    sha256 cellar: :any,                 sonoma:         "74584f6e8f6e4a0ce0e56d3c2b9f4782d876c5f5261a0dba45bb60bfb32bbb5e"
+    sha256 cellar: :any,                 ventura:        "7ef54d95f47df44e4461d3efa6641b327497acec7dcfdc6c1c044a4600ce5195"
+    sha256 cellar: :any,                 monterey:       "961902133e55e13836d0032151b6803f7f1759eb9ed8c680b6a2f95eb6d5039c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64835847af612a11dc878b6b46b8330133b2c8034c118198feb955ef36a8a2e1"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,12 @@ class Networkit < Formula
 
   def python3
     which("python3.12")
+  end
+
+  # Add compat for numpy 2.0
+  patch do
+    url "https:github.comnetworkitnetworkitcommit165503580caac864c7a31558b4c5fee27bcb007e.patch?full_index=1"
+    sha256 "67bd2d1fe3ebccb42ccdd1f7cf5aeea40967caa4e9bc96cc69737dc14ffa9654"
   end
 
   def install

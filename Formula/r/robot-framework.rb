@@ -6,16 +6,17 @@ class RobotFramework < Formula
   url "https:files.pythonhosted.orgpackages51843f1913910c8b877f13b444487861096049341a16b44a4aaee947e5546e2drobotframework-7.0.1.zip"
   sha256 "58d01b84cd7eccea69f2dbe13cbcbff1299e551168d3b88c25617b0c9d6ddc75"
   license "Apache-2.0"
+  revision 1
   head "https:github.comrobotframeworkrobotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "57eb2d1a2847d8da2ebda67709da71c95a907e18162fe55dee2d53822daec4cc"
-    sha256 cellar: :any,                 arm64_ventura:  "21d27ce7a953a7dd27745837dd18bf29ab6deff7017044ddfd16cd12df14550d"
-    sha256 cellar: :any,                 arm64_monterey: "b124b7fd2b804944b00007f5cd147d2df2484d767d20d130a65b28e712b5011e"
-    sha256 cellar: :any,                 sonoma:         "85016ea6e0b8e2b10347068b9169a68169f6feea3f254b4a9fc7b911d91ccd7d"
-    sha256 cellar: :any,                 ventura:        "b0b99c33636a0619cfb616bf66e4d02a9a580c7a77069581063a65411f22d130"
-    sha256 cellar: :any,                 monterey:       "6282c77137de323be3de94b002877b6b195feb52b201620ee6a600954b1c363f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8abde7f1d1cd37d97ccc75bc9618008f64f39c6d161316d7343596270b117f6e"
+    sha256 cellar: :any,                 arm64_sonoma:   "49f3fe0767006171e28a8d08d37de7a1ac4b5b30315e1480b18873ded79f047d"
+    sha256 cellar: :any,                 arm64_ventura:  "9b3def3ab28533bc1b167d5675488b10e861b883762a90c34e1cae1fd57460d7"
+    sha256 cellar: :any,                 arm64_monterey: "7529fb8e9b707e26df67898a2713d87ca2b8698d0b6693710a2cdc9c027d237b"
+    sha256 cellar: :any,                 sonoma:         "4bd9d55423688dd418f7657a4bb6318cb7bd7d2a11b407f11af04724018e8202"
+    sha256 cellar: :any,                 ventura:        "683700960b2eaebff32f338860e48fe2419dc774469c848b97cf1994a73318ea"
+    sha256 cellar: :any,                 monterey:       "8710058da4bbed778d9a1c023bc15ad187187b6692bbfb0f6e578345fd36bfdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94d2d308d152b1b8aca149952c44cda3766c1452fe66dc07cade975e3bedd7ac"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -124,8 +125,8 @@ class RobotFramework < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wsproto" do

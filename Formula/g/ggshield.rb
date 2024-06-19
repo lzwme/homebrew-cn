@@ -6,16 +6,17 @@ class Ggshield < Formula
   url "https:files.pythonhosted.orgpackages05f9c4968af9346ecad66f5c419f6bd0efe6a7071a4ee91d5218a93dc17d85ceggshield-1.28.0.tar.gz"
   sha256 "4ca067fb8675c93b6ecb733dd532a88657442b27e949b3bec6f0ff55219b23ac"
   license "MIT"
+  revision 1
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cbc5ed3c7972fef174276bab1a1a33c126f948db53d3b66647fed23d783e819b"
-    sha256 cellar: :any,                 arm64_ventura:  "fbc9d000d749fa612c09dd3d700282f8b5910cdb191c08ef12c8f3e7215e797c"
-    sha256 cellar: :any,                 arm64_monterey: "4967468a2739c392b69556aabf5a7beb1f9ec06ab3b22ad9ff7089d6942cd451"
-    sha256 cellar: :any,                 sonoma:         "35b030a7debd6c5adac3cf3f7632c28bac09aae8d818bff8886e34c31a37a968"
-    sha256 cellar: :any,                 ventura:        "17f269345d00bb578f986cfaa567e095b8677f3bee405b0bf98635d5cf811ed2"
-    sha256 cellar: :any,                 monterey:       "be500d946afdef61cdc05be419c932cacf2e88409d0d14a8972d065c14ef778a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e5a339cd75f5d8abdd915d1374e0d1e6649de9db181c96daf13860f465dbda2"
+    sha256 cellar: :any,                 arm64_sonoma:   "cfbdaf84eae9a219666dbdd0b0ede6b116182accc2f73027d0586df543b1d1a9"
+    sha256 cellar: :any,                 arm64_ventura:  "69758965dd794c7172a3b792ecb3594588b90047eb014844c3ff8c9ebe7de2e5"
+    sha256 cellar: :any,                 arm64_monterey: "56f957c2f0988f05ef3fb156099916aa4a3689ab4200c8ff055e046870b7a9fc"
+    sha256 cellar: :any,                 sonoma:         "30f05a7607fde532dc771ae795a85f1436e9afb8835870b50cd85241aa1f28c8"
+    sha256 cellar: :any,                 ventura:        "05dbb17e231e988568c776fc26d57e438f5b8ab0fe995f898bc3616ed7f0a7c2"
+    sha256 cellar: :any,                 monterey:       "55768676a8469102ceaa2cf3a345c9153e91ba131a9bbb95183881094862dc72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd4003678138ba04a7d81f3f86f35620480299cb9e2c17b0779bd12cdcdce53b"
   end
 
   depends_on "certifi"
@@ -64,8 +65,8 @@ class Ggshield < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "platformdirs" do
@@ -109,8 +110,8 @@ class Ggshield < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesce6aaa0a40b0889ec2eb81a02ee0daa6a34c6697a605cf62e6e857eead9e4f85typing_extensions-4.12.0.tar.gz"
-    sha256 "8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "typing-inspect" do
@@ -119,8 +120,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

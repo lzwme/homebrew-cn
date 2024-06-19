@@ -6,17 +6,17 @@ class Bpython < Formula
   url "https:files.pythonhosted.orgpackagescf7654e0964e2974becb673baca69417b6c6293e930d4ebcf2a2a68c1fe9704abpython-0.24.tar.gz"
   sha256 "98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"
   license "MIT"
-  revision 5
+  revision 6
   head "https:github.combpythonbpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ff9d3573206b142f68b13f2b826ca4b609336250ba8e6c9478050b1ef87179b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78c347542feefff82fc61c8f12e8cb620fee639b84aa934362311bebac15ef0f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46fbac45be865371f150aa9bd2fc6a92e24092aa54a48dcb1fe5578a4da74189"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9238003500329fc13a5b6d0aa7b89da91f4ceaab26689ce2b4f63aa3e0307ecb"
-    sha256 cellar: :any_skip_relocation, ventura:        "13a67fe0202ad391a2052cec8735ad070933d8656e40ffedf23447027e77ee2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a25a12dfda6261c387ac2cc4a9691713218057418bef9bab3eb73272b9b44fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05b7b8b55b6af900f2e786ccfd050b394fad8087feebb372921ca6e833abe233"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7f7561153987a849efddadcf8879bc552b90e798b440908168bbcd625f7eadc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61affeb7592d3590a5afe1fe71ccaac0158607d25caedd54fa563310dee2b40f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5523b6e78ff4f944611e4455bad1922252a216622d61b5c3b84f604faa2e763a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2bbd8b0fe5d27a8bc18937072ed2b78e125112d771ae28842c436a4ab41848e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "103ae2ade2e3a310a27a76db40c697eb997721ba0a47036a7fa617ef401ec2d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5ab39aca83ffbb50eb067ee28ec7417228a7bacc6265477473f16bcd619926e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49ba830b22c25d9e27d0cdf8777ad47ba318d9746e3e2b887fbf136d1cbfa1c1"
   end
 
   depends_on "certifi"
@@ -63,8 +63,8 @@ class Bpython < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
-    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "six" do
@@ -73,8 +73,8 @@ class Bpython < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "wcwidth" do

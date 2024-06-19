@@ -6,16 +6,16 @@ class OktaAwscli < Formula
   url "https:files.pythonhosted.orgpackagesed2c153d8ba330660d756fe6373fb4d1c13b99e63675570042de45aedf300bb7okta-awscli-0.5.5.tar.gz"
   sha256 "a8b1277914b992fc24e934edaf1947291723ce386f2191a8952e7c008f2e77fa"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f26c5e6e675f2dd53aaf61b862157fb9a6c8acfc2e34b943f37d90a7e57bb8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d94cc1b9c367d4861a7a4f5f4194a1024314765bfd3d939da032c8345bcf25c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf04a7cf4dbdf8bcc82e2f1853391e8610dda00bb93c0a0c5caca2785a78fc40"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a284d80bbfbb2e12670637e8898e91dad9d60649786fb0841ce5810850354f87"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec7e0a8843263b1b9963da41dea0ca50a7ed92cd5a06f8d264492b8a3fcbf8d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "19ab6ca92784b1c3e7c4171ca7a4a0a4f262caf0737e0beed3ff0f527d4d6772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cc5a9804f0f35d8afb320e66b37e0fbf8f9c2172e20b25d6d3e275720c79fda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "52d40816a3d8b3fcbb959be3307d16f5d7d8cf78eacbeb5c8065f78d1c721a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83e7da9e8f4caba46bc3d98c65d886be56ed67edc19a37bf06ba97a32be03f9d"
   end
 
   depends_on "certifi"
@@ -27,13 +27,13 @@ class OktaAwscli < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesf209fe22f1a2704edbf370ffa0093e23ffb3fb78704f2e65989d0ba79a41687dboto3-1.34.110.tar.gz"
-    sha256 "83ffe2273da7bdfdb480d85b0705f04e95bd110e9741f23328b7c76c03e6d53c"
+    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
+    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages68213186c501d87a83dcc1b3df12c9112ee494033c1ed7c051e72414ba6a3212botocore-1.34.110.tar.gz"
-    sha256 "b2c98c40ecf0b1facb9e61ceb7dfa28e61ae2456490554a16c8dbf99f20d6a18"
+    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
+    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
   end
 
   resource "charset-normalizer" do
@@ -67,8 +67,8 @@ class OktaAwscli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "s3transfer" do
@@ -87,13 +87,13 @@ class OktaAwscli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   resource "validators" do
-    url "https:files.pythonhosted.orgpackagesdc2ef07c5391802a08c442ac5b80e254e92354a91f8eb85de6cef40b883c8b3evalidators-0.28.1.tar.gz"
-    sha256 "5ac88e7916c3405f0ce38ac2ac82a477fcf4d90dbbeddd04c8193171fc17f7dc"
+    url "https:files.pythonhosted.orgpackages74353a76942b43f1a7fac9d5cdd7ddb60cd21dde7fc30f41706fc6b2e3b41a5evalidators-0.28.3.tar.gz"
+    sha256 "c6c79840bcde9ba77b19f6218f7738188115e27830cbaff43264bc4ed24c429d"
   end
 
   def install

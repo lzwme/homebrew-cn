@@ -6,16 +6,17 @@ class Certbot < Formula
   url "https:files.pythonhosted.orgpackagesc0e95e637d66a9fe6d93c4c075d539a3b949244a9b795b3f07a0998951af9b00certbot-2.11.0.tar.gz"
   sha256 "257ae1cb0a534373ca50dd807c9ae96f27660e41379c45afb9b50cab0e6a7a97"
   license "Apache-2.0"
+  revision 1
   head "https:github.comcertbotcertbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fc850f160bc1e3465fbfe152c0f62eb30607b21af808e51c1813d845b5efced"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1cde8fab78d33a65d36d549a61860c6151dd9a3b4018138443483b7dee0036c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1cde8fab78d33a65d36d549a61860c6151dd9a3b4018138443483b7dee0036c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38b4492bab1dce8ee6358f42235cb193d6fc02bf95d8b3c3356bb5c75e629906"
-    sha256 cellar: :any_skip_relocation, ventura:        "38b4492bab1dce8ee6358f42235cb193d6fc02bf95d8b3c3356bb5c75e629906"
-    sha256 cellar: :any_skip_relocation, monterey:       "38b4492bab1dce8ee6358f42235cb193d6fc02bf95d8b3c3356bb5c75e629906"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f68d948b1822c3d3a7dac0d6245d472d84cdb72e0b04571e9f24167c9fcfe3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"
+    sha256 cellar: :any_skip_relocation, sonoma:         "016848c9437260f67cbbf169d4d991eaa25d0890aa393f007bb63e214cac3ffe"
+    sha256 cellar: :any_skip_relocation, ventura:        "016848c9437260f67cbbf169d4d991eaa25d0890aa393f007bb63e214cac3ffe"
+    sha256 cellar: :any_skip_relocation, monterey:       "016848c9437260f67cbbf169d4d991eaa25d0890aa393f007bb63e214cac3ffe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf1f2e5aeb4606daf7cb4d328f968936645ccf4a7d31b8fc2939091c1e43e942"
   end
 
   depends_on "augeas"
@@ -117,8 +118,8 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install
