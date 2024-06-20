@@ -4,19 +4,19 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https:webpack.js.org"
-  url "https:registry.npmjs.orgwebpack-webpack-5.92.0.tgz"
-  sha256 "095b6472d1da5bf13efd43a755298e0d348e062468e004799e89b7e449b4585d"
+  url "https:registry.npmjs.orgwebpack-webpack-5.92.1.tgz"
+  sha256 "76073c7d5a84473f35e74ebce74d50fc4cfc6fe77a435754ca0c7621594411a3"
   license "MIT"
   head "https:github.comwebpackwebpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bcbb3f60ec51616da63c575dc81d0fc50f5786965c5e44a4415aa388b55cf11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bcbb3f60ec51616da63c575dc81d0fc50f5786965c5e44a4415aa388b55cf11"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bcbb3f60ec51616da63c575dc81d0fc50f5786965c5e44a4415aa388b55cf11"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e89e24b08ef995a5344d2712b9a240260bdbcd7676754158f9b0151479107d15"
-    sha256 cellar: :any_skip_relocation, ventura:        "e89e24b08ef995a5344d2712b9a240260bdbcd7676754158f9b0151479107d15"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f6ab56c479e9321e5a6b7ee31d6fbe07339c560580eb56af261f19782e8a718"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fba375d2d9265d5508d9cae197c02608d00b5d156d6c4488eda2f384467c97b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "492cfa46076aed87fca3d129ddd2afac68b654c8937eeecbc2d9dfeede27a76c"
   end
 
   depends_on "node"

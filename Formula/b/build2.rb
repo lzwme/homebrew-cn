@@ -1,8 +1,8 @@
 class Build2 < Formula
   desc "C/C++ Build Toolchain"
   homepage "https://build2.org"
-  url "https://download.build2.org/0.16.0/build2-toolchain-0.16.0.tar.xz"
-  sha256 "23793f682a17b1d95c80bbd849244735ed59a3e27361529aa4865d2776ff8adc"
+  url "https://download.build2.org/0.17.0/build2-toolchain-0.17.0.tar.xz"
+  sha256 "3722a89ea86df742539d0f91bb4429fd46bbf668553a350780a63411b648bf5d"
   license "MIT"
 
   livecheck do
@@ -11,25 +11,19 @@ class Build2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cfcd09aa221a08dd5b190e1d471822946c7e08210f74dc3be4ef8f89f088d937"
-    sha256 arm64_ventura:  "fc0c8d37ea3a336f182133daeb135699a45b34d8fa02af56dbc104fff33d6f3c"
-    sha256 arm64_monterey: "93e00c45fcac69a862a26b5e39004c1217675f6a482812107b27d85ff9ab2318"
-    sha256 sonoma:         "aa3e700461c6a0c2052cb3d89a78f9f37bd65e9b8a6fcb9191a5a0b2f3d29540"
-    sha256 ventura:        "61a7a28750af25b609ed325f532773d2624e23ca6ebfb616574cce759f8a4bc0"
-    sha256 monterey:       "1f90f3b72cadd6d429164f3db7f49a200e72da2faa1316a0f113bbe2d264b287"
-    sha256 x86_64_linux:   "92b0ca8b79c117d3e4b0462cf0ab7e1d2d4fffe7c17331e02a7e0b336ac505ab"
+    sha256 arm64_sonoma:   "0e7160137ee4ed4148b5b7219224029a1120d0429425602711d3a175f743bcb2"
+    sha256 arm64_ventura:  "8f144b91ef3c6cece42e79cfac3422f0c7c88291f0e5cd3cc8d93b7eaac09936"
+    sha256 arm64_monterey: "56b872f3baf6900a98dbed0703dd9ea2e6aad437c9ae54b1aac417ec7d1be475"
+    sha256 sonoma:         "b7ac1377358cb2440b33094f30e696cdbf4b7e77f90f126a220f223299fcaf6c"
+    sha256 ventura:        "e7e1b9212dd13e228cba7aa96cff10688da90517bad8806fa65e55170ef67e1d"
+    sha256 monterey:       "2e9e1e8bf14f7daea54d814e7919353b52fd257d82394c6dccbc258f18b59c8c"
+    sha256 x86_64_linux:   "b0bf7ddb8cc3cb9a9d196d86bc76bba253460c31b55e7914acb8d1d72d2a297a"
   end
-
-  depends_on "pkgconf"
 
   uses_from_macos "curl"
   uses_from_macos "openssl"
-  uses_from_macos "sqlite"
 
   def install
-    pkgconf = Formula["pkgconf"]
-    sqlite = Formula["sqlite"] if OS.linux?
-
     # Suppress loading of default options files.
     ENV["BUILD2_DEF_OPT"] = "0"
 
@@ -44,21 +38,8 @@ class Build2 < Formula
              "-j", ENV.make_jobs,
              "config.cxx=#{ENV.cxx}",
              "config.bin.lib=static",
-             "config.build2.libpkgconf=true",
-             "config.cc.poptions=-I#{pkgconf.include}/pkgconf",
-             "config.cc.loptions=-L#{pkgconf.lib}",
              "build2/exe{b}"
       mv "build2/b", "build2/b-boot"
-    end
-
-    loptions = "-L#{pkgconf.lib}"
-    loptions += " -L#{sqlite.lib}" if OS.linux?
-
-    # Work around macOS dylib cache in /usr/lib (can be dropped after 0.17.0).
-    if OS.mac?
-      mkdir "#{buildpath}/build/lib"
-      ln_s "#{MacOS.sdk_path}/usr/lib/libsqlite3.tbd", "#{buildpath}/build/lib/libsqlite3.dylib"
-      loptions += " -L#{buildpath}/build/lib"
     end
 
     # Note that while Homebrew's clang wrapper will strip any optimization
@@ -69,13 +50,9 @@ class Build2 < Formula
     system "build2/build2/b-boot", "-V",
            "config.cxx=#{ENV.cxx}",
            "config.cc.coptions=-O3",
-           "config.cc.loptions=#{loptions}",
            "config.bin.lib=shared",
            "config.bin.rpath='#{rpath}'",
            "config.install.root=#{prefix}",
-           "config.import.libsqlite3=",
-           "config.build2.libpkgconf=true",
-           "config.config.persist='config.*'@unused=drop",
            "configure"
 
     system "build2/build2/b-boot", "-v",

@@ -15,20 +15,31 @@ class Yazi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2dd1283e888475f107c48f9ec5df45d6d0263502df80c87091f6038f3cf442d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b83b98aa0e9e85404e3acfc98aa5cc364f83d319b08a5aafad394275cc30d24"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51deba176fe060e79ecae1b7bdbe12067161d4c0979421d62e67701770da7ac6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a8a389802aaa39009b019c21591f27cd34c29eb536f92ecd61acb71cfff92b5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "9467bf91431b390cb8c0c618e4900ffd2642bbb6cf0da76cd6324bfa32d04c4a"
-    sha256 cellar: :any_skip_relocation, monterey:       "105f8274fcd8cdfcc4d3433fcaa6183dd6dbd36325a9bb4efa66027edf99cd29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e9cc4e06368e643617f8f54350ab3e3b486131255e5992513a31c5d780c78c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c8b0ab9f80b5d0ab80672fdac86f188ca33c9425fd73014b3cf9fed62d691d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "821e2333d4a388d4c3b6a59b48364717242eb6c262a09e6256a4ef4e8d4a261c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4858bac34cba74df38d096e60da4eebd0354bdc6fdb8530acc07c1533b6bdcc4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a5b3658172fb5c0a667cc0c6aca57166450afe6a0bbf71d01ad71de0dbe28eb4"
+    sha256 cellar: :any_skip_relocation, ventura:        "425c974caa2e8eb5f8340f5b9027517bcdb40145a2776cdd6e381e08b5c79a1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "22d4cc7b2a4fedcbae01feed518365eabfbc9cc0815b21c7a4421e2d52e42e14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1e0d354fce49bb77e9a8c885a0de4986e71061ad358e4e474cdb40818a33ef0"
   end
 
   depends_on "rust" => :build
 
   def install
     ENV["VERGEN_GIT_SHA"] = tap.user
+    ENV["YAZI_GEN_COMPLETIONS"] = "1"
     system "cargo", "install", *std_cargo_args(path: "yazi-fm")
+    system "cargo", "install", *std_cargo_args(path: "yazi-cli")
+
+    bash_completion.install "yazi-bootcompletionsyazi.bash" => "yazi"
+    zsh_completion.install "yazi-bootcompletions_yazi"
+    fish_completion.install "yazi-bootcompletionsyazi.fish"
+
+    bash_completion.install "yazi-clicompletionsya.bash" => "ya"
+    zsh_completion.install "yazi-clicompletions_ya"
+    fish_completion.install "yazi-clicompletionsya.fish"
   end
 
   test do

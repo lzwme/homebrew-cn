@@ -6,16 +6,11 @@ class VirtManager < Formula
   url "https:releases.pagure.orgvirt-managervirt-manager-4.1.0.tar.gz"
   sha256 "950681d7b32dc61669278ad94ef31da33109bf6fcf0426ed82dfd7379aa590a2"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
   head "https:github.comvirt-managervirt-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14429d8f3fb234cb4de3b000f034b6b10acfca45a3b8a15cbdbf9f46d78a69e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6783700ef6e932b444508bfec50d88609d640c4cb2232c7eb8d5cfac5642ec1b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c5474b471b67c8dca81234745cd79144df4744a7cfdc5a8b4988fe9d869cab9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9b26211b260ec8a8d0eb5888bf5e9311a75761ba3e840bf7c6abcd3e461e9d88"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf51feb81223c6e96bcd88df41f9aa8543fe094062306c63b14f188cc5f64f19"
-    sha256 cellar: :any_skip_relocation, monterey:       "65a24cd05348fc76c900ce7b989dcf8280274c14b7203958674a50ad70efa1fa"
+    sha256 cellar: :any_skip_relocation, all: "67acfb8187105c4c0f551dd26980cfdc44a8aba4b478034facc0d9e29cd3fbd9"
   end
 
   depends_on "docutils" => :build
@@ -50,13 +45,13 @@ class VirtManager < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

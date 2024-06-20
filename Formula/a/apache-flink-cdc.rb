@@ -1,41 +1,41 @@
 class ApacheFlinkCdc < Formula
   desc "Flink CDC is a streaming data integration tool"
   homepage "https:nightlies.apache.orgflinkflink-cdc-docs-stable"
-  url "https:www.apache.orgdynmirrorsmirrors.cgi?action=download&filename=flinkflink-cdc-3.1.0flink-cdc-3.1.0-bin.tar.gz"
-  mirror "https:archive.apache.orgdistflinkflink-cdc-3.1.0flink-cdc-3.1.0-bin.tar.gz"
-  sha256 "f10b26a2368fd933c26b928fc118f1f1e28efec3ab58b0ec0c58f3f22906a9ab"
+  url "https:www.apache.orgdynmirrorsmirrors.cgi?action=download&filename=flinkflink-cdc-3.1.1flink-cdc-3.1.1-bin.tar.gz"
+  mirror "https:archive.apache.orgdistflinkflink-cdc-3.1.1flink-cdc-3.1.1-bin.tar.gz"
+  sha256 "1f014be61fde2b881985f0928173f6f509a73556d247019843ccef282ad26504"
   license "Apache-2.0"
   head "https:github.comapacheflink-cdc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1eed20a5fa3aa4b81f2bf40576dc65f6ce44546627fce3681c3a96ffe42e0b38"
+    sha256 cellar: :any_skip_relocation, all: "2980ff1f34ddc49bd3d960256aacadbdd4713b8a0d62e2b6b08c60c6bf5810ea"
   end
 
   depends_on "apache-flink" => :test
 
   resource "mysql-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-mysql3.1.0flink-cdc-pipeline-connector-mysql-3.1.0.jar"
-    sha256 "2503a60a7e97c48a8b739d5cdb7270a93ba0d48bf073f9b88e1b34c915c4dd88"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-mysql3.1.1flink-cdc-pipeline-connector-mysql-3.1.1.jar"
+    sha256 "82baa189c57720484dfbb95bc57e0090a670c53a4e7b51c0b12940e1abbb2168"
   end
   resource "paimon-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-paimon3.1.0flink-cdc-pipeline-connector-paimon-3.1.0.jar"
-    sha256 "799c723beb31379cb093a8caf01e402a126a8b6e5674d5cd579e819221e8fae8"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-paimon3.1.1flink-cdc-pipeline-connector-paimon-3.1.1.jar"
+    sha256 "85c4ca730bad4e1c43d16ba80116eeb541822eb195de7d54e8d4c659c43d49d8"
   end
   resource "kafka-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-kafka3.1.0flink-cdc-pipeline-connector-kafka-3.1.0.jar"
-    sha256 "285de33acad088ec3b6da51bd58ab9e6326626ea025b48d9c048d2383ca2df6e"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-kafka3.1.1flink-cdc-pipeline-connector-kafka-3.1.1.jar"
+    sha256 "c8d34ed1fa4e5da99e120a4b66610a91d230a5ab7c0834aaa8c0eba9203c42cd"
   end
   resource "doris-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-doris3.1.0flink-cdc-pipeline-connector-doris-3.1.0.jar"
-    sha256 "20d7744376ac152994e7de803100a792a1c583a5ca03a647c55e9039ae59237c"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-doris3.1.1flink-cdc-pipeline-connector-doris-3.1.1.jar"
+    sha256 "9e8d89275542592634feaad631533783728cc2f296f367c004654359d605204e"
   end
   resource "starrocks-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-starrocks3.1.0flink-cdc-pipeline-connector-starrocks-3.1.0.jar"
-    sha256 "48ce5ffe3462c965f39ed3a97717f96739e3160759a5c6422b86ed151d6165ba"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-starrocks3.1.1flink-cdc-pipeline-connector-starrocks-3.1.1.jar"
+    sha256 "827b1b767d07d4c07f19170e4219b6b255c8d6920f012d447ef12a331fc0521e"
   end
   resource "values-connector" do
-    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-values3.1.0flink-cdc-pipeline-connector-values-3.1.0.jar"
-    sha256 "7e16714c1395fa3139e60f189de54877020369e4ec2a7ec13cc4c7b84a26402e"
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-values3.1.1flink-cdc-pipeline-connector-values-3.1.1.jar"
+    sha256 "bb22b67b6db89026d6279b3e4bfb21e45516ed179913e668e00f93d11516bb1f"
   end
 
   def install

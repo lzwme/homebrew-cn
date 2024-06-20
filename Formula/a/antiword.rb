@@ -27,8 +27,7 @@ class Antiword < Formula
     sha256 x86_64_linux:   "12935daff8ed3ffc2a68b8be542ea190bff6d7d2a2d46c854080d4023346d526"
   end
 
-  # This cannot be deprecated while the `textract` formula depends on it.
-  # deprecate! date: "2023-09-24", because: :unmaintained
+  deprecate! date: "2024-06-19", because: :repo_removed
 
   resource "testdoc.doc" do
     url "https:github.comrsdoielantiwordrawfe4b579067122a2d9d62647efb1ee7cfe3ca92bbDocstestdoc.doc"

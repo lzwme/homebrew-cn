@@ -3,19 +3,19 @@ class Fortls < Formula
 
   desc "Fortran language server"
   homepage "https:fortls.fortran-lang.org"
-  url "https:files.pythonhosted.orgpackages385638b11a3b5e3025dcb6054b16e00772b7d3d6701442fabd25722ff311996cfortls-3.1.1.tar.gz"
-  sha256 "ef248ce72bd1656d37ddb4d52f67c4764926102c749fc65b58429dcf9120e48d"
+  url "https:files.pythonhosted.orgpackagesf182b0f91372538de824bccb5e4fe8936e47f6771dbd700a74d35e19045050b5fortls-3.1.2.tar.gz"
+  sha256 "93ea78598492ac699f7cefb624e89bf5012d44604d07fbe5ad4a31e32fc977bc"
   license "MIT"
   head "https:github.comfortran-langfortls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d443c225335e5ba2dbc876feb1dd42ba01a52799a8a169d1d459433020ec493"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b832d03239ff371f68f0461562338ea938548b538c82da1522a414289cd5a7c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, ventura:        "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, monterey:       "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "361fa9e20b1acd15bd76e155b7cb7314172ae820431c4ebacba1fc985d4f1aac"
   end
 
   depends_on "python@3.12"
@@ -28,8 +28,8 @@ class Fortls < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   def install

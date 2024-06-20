@@ -3,19 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagese3aff3a8858df0fd364a459293bc8f64e69e03664c1266bfadb6190ce87995b9esphome-2024.5.5.tar.gz"
-  sha256 "b300164b414bece1efdd4583a014fca15800cf219aa65f61c4a243b2d48733ed"
+  url "https:files.pythonhosted.orgpackagesc8fff2545774a9d4981791c0bfb695dff15c57aa116092eaf8e82695fc809238esphome-2024.6.0.tar.gz"
+  sha256 "bbc1180bf1c364f71dcc5018bc723c7bd6392c460e7b420a06a6d5feb51c6e6b"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "73be8b8cc33b9aa8abfd2a9047c0308808ca5703307518317440177d9b22f9e4"
-    sha256 cellar: :any,                 arm64_ventura:  "af6ca0fe0bd7b0378c0dffcd412706f61685d5585544d12230240cf852792182"
-    sha256 cellar: :any,                 arm64_monterey: "2fee4bdb9fe945f0579de9d1803ee155d97fd42c51cf789f61615e4687f0a169"
-    sha256 cellar: :any,                 sonoma:         "a5b56c329b48da1f80b08c84b2af77b856ca85cf6eb3bd20c2939abfce4f7d17"
-    sha256 cellar: :any,                 ventura:        "91992ade28b9f48949495fd96a59ba4f8b5163a4501b1c75330ae602d3df1da2"
-    sha256 cellar: :any,                 monterey:       "f555d397257d362ed9d34f8845c926a24bc8d02a59ccc94c81450fb49d12eee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "343212d6cb75215998b5d06703113ac1e298d2a56e9d526511889208c0b58e1e"
+    sha256 cellar: :any,                 arm64_sonoma:   "12f803afda3bdeddd17a6c84f57ce85b3a71ff3dd8c4c607881b288a9dd38ec3"
+    sha256 cellar: :any,                 arm64_ventura:  "3261db8606eee63fd484b365bcc0291d1b016b882189e29379ddc385874ca3d6"
+    sha256 cellar: :any,                 arm64_monterey: "09ae2f599deb905229b65a3fc1e9a61a9f080c00e6f4760d95059d2086c984ac"
+    sha256 cellar: :any,                 sonoma:         "da63594bc689fd4e372d64c0e339d581ae4e3dab366b914e9ca678aa56c9e5c4"
+    sha256 cellar: :any,                 ventura:        "d0c5e11c2b56e9ce0a8d652b6705e805e5489825fae99cefef5c258ae9e66777"
+    sha256 cellar: :any,                 monterey:       "7fd77a2ab07cc669e24e181a49462cd0e8d7211af70e6b289f909afa7a6b21fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db287d39cfe7938668861899a94e7cc39d5665dbbac935853e7c6a7c3ecf20bd"
   end
 
   depends_on "certifi"
@@ -75,11 +74,6 @@ class Esphome < Formula
     sha256 "c1ca3de2c78eb87ac006d975729e0b9032ff31597e3c112e78268f4cd431fd6a"
   end
 
-  resource "chardet" do
-    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
-  end
-
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
@@ -101,8 +95,8 @@ class Esphome < Formula
   end
 
   resource "esphome-dashboard" do
-    url "https:files.pythonhosted.orgpackagesad1f583c28b40593bb320eeeddcb9937dad69195ccfaaf076f2d4838cc6aff46esphome-dashboard-20240412.0.tar.gz"
-    sha256 "313fc4a59f240ca1e12461789e3761e90fb17bc185e056316a82228214a0ba24"
+    url "https:files.pythonhosted.orgpackages21e04c21218e27f21929430f4e93aa3d88c63e6c2e2a35a2ddf13c3db260b7f3esphome_dashboard-20240613.0.tar.gz"
+    sha256 "d033a2d7fbbc6412d118e4fc40a5d41262f01eb965dafea7aea40b91f3b6b515"
   end
 
   resource "esptool" do

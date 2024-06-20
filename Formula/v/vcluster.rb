@@ -2,19 +2,27 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https:www.vcluster.com"
   url "https:github.comloft-shvcluster.git",
-      tag:      "v0.19.5",
-      revision: "38a919a551838204f5d6298d65770966ed4629f2"
+      tag:      "v0.19.6",
+      revision: "37892ff5668e1401536f4fd07706839343bca65a"
   license "Apache-2.0"
   head "https:github.comloft-shvcluster.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfeeaab3049f379192d40162a8d7c4215c294f929743f8d630868542a43dd60d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3517ecc630edc52f7eb4a7239c043c9af01df852191be1851824629193845f94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a9f3dc8eb8f9a91cc8e9bd276a020e93f9e8dccb13167989134b33d3c4c982e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17c3be35d4d2cf026e8f591428e2522e300898135d5f63a15accb336b127b9bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "18dcb74d0612766699d6d674aa4c037b399e8f66807be5295c798a82142d3559"
-    sha256 cellar: :any_skip_relocation, monterey:       "445f62862149ba086fb144cf0c68aaf0491356b9eff2b6e90f1c64e896bcc324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aec7cc5c7f519a708e7ca28e578ea1c7f87f634b2bec9d4aa98f1b67d178398"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b6925574ce01be4a1122147143895931097fffc34f08c362cbdb08d207ada24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7c3357493925f2050da5b4f5075cb59897ac951b35c1ec0d32f2ffdb3fdc12e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e5e4a0bdff029e39bc813c7c78ecd1b87c5405c6f697c8c2a61844089fbe9c9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf7a7b2139e477cd81f036125e38cb500a954fb96485d2da2ff829790fc879f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "1db4a5af5f7146ccc1c99f18475650ccf59bdb3db7d89fbafa228e657b7cc1b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "892f0b967ca22ae53caa597609e64c2f8ff8ac32fd21d611d43d9ad80cc23dad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e1d436afcb0d67ca90777cd616f88000d53ff418770458178af62ec882bfd36"
   end
 
   depends_on "go" => :build

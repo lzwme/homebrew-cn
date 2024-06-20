@@ -1,10 +1,10 @@
 class ApacheFlink < Formula
   desc "Scalable batch and stream data processing"
   homepage "https:flink.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=flinkflink-1.19.0flink-1.19.0-bin-scala_2.12.tgz"
-  mirror "https:archive.apache.orgdistflinkflink-1.19.0flink-1.19.0-bin-scala_2.12.tgz"
-  version "1.19.0"
-  sha256 "3119c6db3a8f4813defce1c89cac46111df9d0cb9712a264da0b3a3b7290bf86"
+  url "https:www.apache.orgdyncloser.lua?path=flinkflink-1.19.1flink-1.19.1-bin-scala_2.12.tgz"
+  mirror "https:archive.apache.orgdistflinkflink-1.19.1flink-1.19.1-bin-scala_2.12.tgz"
+  version "1.19.1"
+  sha256 "596169f3efca71d41932f03f92b589b137f7c1edfe2850117226d739e799bdce"
   license "Apache-2.0"
   head "https:github.comapacheflink.git", branch: "master"
 
@@ -14,7 +14,13 @@ class ApacheFlink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0983dd623b462b2b57af833026029eb7db3367469d1605d3597a985fc42adb23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, ventura:        "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, monterey:       "93e6c996d8ec26b5968a684fc2e6ba3146eab2eb8b541ebb5dbb71fce24cd490"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad88b00bff78ce4a347abfb4e93248aa8e27c2f58a235c790e6eb9b271a9896"
   end
 
   depends_on "openjdk@11"

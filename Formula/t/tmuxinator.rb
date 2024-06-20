@@ -1,19 +1,19 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https:github.comtmuxinatortmuxinator"
-  url "https:github.comtmuxinatortmuxinatorarchiverefstagsv3.2.1.tar.gz"
-  sha256 "56c0b26b37c801ba8dc95666e39bf69f4041817b34471bd915f587cface6220b"
+  url "https:github.comtmuxinatortmuxinatorarchiverefstagsv3.3.0.tar.gz"
+  sha256 "e15cf0d7fc8fc88b89adbeeebacd8061620c759da060b1bccf93bf8541679061"
   license "MIT"
   head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf19c5cc5e96ce8b0186cda2a9570ed89cc6530c69746685503542346331ff01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17115c99d069a6003adb9373789aae2504f192f542d544e81cf81461f0eabb41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f2471c2f41004dfe9f50b271b4f482eff56ce084d051d93d5ac4f2c6fbfbe93"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fb4ea46c7355cc27e7f828dd15282916fd6a939ec869d2ba9046ccc7526fa2d1"
-    sha256 cellar: :any_skip_relocation, ventura:        "115ba13675f33d4b9df9716ee915413554507ea3d30e4c545f9faf0dfc3872c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "86b81ad3bff4c9039086954a1a261634130c592cba0c7f21f20b81f67e6b0790"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94d39cde254710b088898fad72bb157b4451fc16c77be8c283a2168760a77161"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cafc0fa320f381a2f74791d160a582f4d042446c9d4246233f269265b8db97f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "cafc0fa320f381a2f74791d160a582f4d042446c9d4246233f269265b8db97f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "cafc0fa320f381a2f74791d160a582f4d042446c9d4246233f269265b8db97f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79bbeb63619d0b16c99322d7574c8d34fba73adc6ff6bb0970ef0fe9e21656d6"
   end
 
   depends_on "ruby"

@@ -1,8 +1,8 @@
 class Metabase < Formula
   desc "Business intelligence report server"
   homepage "https:www.metabase.com"
-  url "https:downloads.metabase.comv0.50.4metabase.jar"
-  sha256 "8ec74901daf6324d515ddcc35e572ffe909bedf604661b149b7f7eae07d541ce"
+  url "https:downloads.metabase.comv0.50.6metabase.jar"
+  sha256 "3d7ad42870426be7cf9bbecc11b6847222c31e9a8f28703563a980538edecf29"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c43d4e25be05db04b2e8a1d40c7a4f720780a2e38ec675ad4dcd887951e1206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d2935e946502ef1c329d6d1d23c94eb3a6081e1deed1279c4019c6900f583d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, ventura:        "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, monterey:       "280ba20dfec5052d1b7d56b7e0cff49b3f650c4bff7ab591d95499a2b6fda65e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2809c14584a827650d57dc73bbfca02d02ad7f6600b5365ee6e00ba223de839e"
   end
 
   head do

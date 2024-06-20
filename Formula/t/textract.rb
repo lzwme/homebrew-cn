@@ -18,6 +18,9 @@ class Textract < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c586d18c8d63831319b36c7e0904037b363f6fa74ce0c71f15237e9f98fa7a54"
   end
 
+  # https:github.comdeanmalmgrentextractissues498
+  deprecate! date: "2024-06-18", because: :unmaintained
+
   depends_on "antiword"
   depends_on "flac"
   depends_on "pillow"

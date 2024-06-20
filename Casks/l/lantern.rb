@@ -2,8 +2,8 @@ cask "lantern" do
   version "7.8.5"
   sha256 :no_check
 
-  url "https:s3.amazonaws.comlanternlantern-installer.dmg",
-      verified: "s3.amazonaws.comlantern"
+  url "https:lantern.s3.amazonaws.comlantern-installer.dmg",
+      verified: "lantern.s3.amazonaws.com"
   name "Lantern"
   desc "Open Internet For All"
   homepage "https:lantern.io"

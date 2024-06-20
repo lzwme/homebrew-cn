@@ -3,18 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https:tmt.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages86458807f79321c02114b04c02bc3f3b3bae85d0bc7d97c2c7cf8ee458568281tmt-1.33.0.tar.gz"
-  sha256 "a32d1b9f8b2b21d66c753e72b2b5980e259325eee83c19364f9e03b4282415d3"
+  url "https:files.pythonhosted.orgpackagesa8c406319611fe675f74fc70bd407b3d9bfd653190026991d3f47ce249a877catmt-1.34.0.tar.gz"
+  sha256 "e3b8b0d0af1dd5d56522c9ebc8c6ccb4bfb04e6cf3e54f31402cf8dbc1717cc4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "030e09cb5e91d0a1b22d7b94b46e9a2054164cd11c615482cc3ded11a7131736"
-    sha256 cellar: :any,                 arm64_ventura:  "cd47feb47f59825a02c69155a48fcd3e7258b66866baf928b048d922bd80ed72"
-    sha256 cellar: :any,                 arm64_monterey: "27c5c1feb62169cc5708c18c798351d9c171947d531493f6a641a7292ef44cd9"
-    sha256 cellar: :any,                 sonoma:         "e10c3e222cfae3086bc468280710d3adb8a0e4620a7faa2f4ca3a1d472cdbc9e"
-    sha256 cellar: :any,                 ventura:        "7ba96572ade2c32821631ee39e4cac9fa4120139c72ee5210c5c1b615b8bdca4"
-    sha256 cellar: :any,                 monterey:       "ef84a9cf47e36953184a168be2acfd97e6f54ec1db3fdf1c02f1211d5555484c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dfc9d073777c7e5f1583e8fc339367314791e53e3ee390e4b8407c34ccd18a6"
+    sha256 cellar: :any,                 arm64_sonoma:   "b887c29a83a654d9813980074df655fb34108012defce6f79c059363201219c0"
+    sha256 cellar: :any,                 arm64_ventura:  "f7fad4015d76b675382e317641b23dc847370085619e4d59979f18a62487a1a9"
+    sha256 cellar: :any,                 arm64_monterey: "7defc93858e3263a3ec9755478147f536a096d2d226dcae2532cb7db914ad7b3"
+    sha256 cellar: :any,                 sonoma:         "ae4b5bb0170772f8e3267a2aef8ad4049cf1cd4364227570bb93a4b14e06e723"
+    sha256 cellar: :any,                 ventura:        "62d7477c8ada008852642ec3e200688210d614c320721433450f8e6fc64ff645"
+    sha256 cellar: :any,                 monterey:       "4cc19909f75fdb937122ff78028db39cb3664a854ea5c9a7fdcd122a207e9342"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4c47737710102e789e0c26c229ce61389942d5883fae8e49fccdc05b6e0afc2"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -43,8 +43,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
-    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
+    url "https:files.pythonhosted.orgpackages7d986e68cf474669042ba6ba0a7761b8be04beb8131b366d5c6b1596f8cdfec2filelock-3.15.3.tar.gz"
+    sha256 "e1199bf5194a2277273dacd50269f0d87d0682088a3c561c15674ea9005d8635"
   end
 
   resource "fmf" do
@@ -95,8 +95,8 @@ class Tmt < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rpds-py" do
@@ -115,8 +115,8 @@ class Tmt < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

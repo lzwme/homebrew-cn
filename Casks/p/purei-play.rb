@@ -1,9 +1,9 @@
 cask "purei-play" do
-  version "2024-06-10,a5753e58"
-  sha256 "42f762334934a437172d9653b5e49aa5efd7ef5d78571d700fd1316f02d332c8"
+  version "2024-06-18,d0dd51a2"
+  sha256 "348fd296ece73e5fd1ff08a887afb04063963f9d9203b8a7055e675ff88c611b"
 
-  url "https://s3.us-east-2.amazonaws.com/playbuilds/#{version.csv.second}/Play.dmg",
-      verified: "s3.us-east-2.amazonaws.com/playbuilds/"
+  url "https://playbuilds.s3.amazonaws.com/#{version.csv.second}/Play.dmg",
+      verified: "playbuilds.s3.amazonaws.com/"
   name "Play!"
   desc "PlayStation 2 emulator"
   homepage "https://purei.org/"

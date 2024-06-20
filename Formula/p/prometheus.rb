@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https:prometheus.io"
-  url "https:github.comprometheusprometheusarchiverefstagsv2.52.0.tar.gz"
-  sha256 "cdbc5245e7b54b1e247a082866b4ca73b676f0485ea14e596dda25719b22dacc"
+  url "https:github.comprometheusprometheusarchiverefstagsv2.53.0.tar.gz"
+  sha256 "8a3fd7c4614f3fa94fe04e8c8673dcc6d482c7e3a86101fa94ac807993d6aa00"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,13 +14,13 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "554d107ff141b62f020c33220cf4a8100731e7643e3131196ed50957199ef88b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bfb89052527393b3a89b47ebbec226b807ad0dfada64d366beffcf3005fbcf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "869b072d217bcdc3608de10f570021e1363e55d13d659ca56246336891bff375"
-    sha256 cellar: :any_skip_relocation, sonoma:         "92546871f0435921a2cd58f5e07b2ff6ed2f04c34c36d3531ac7f6fc1e87e5d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "d63776c1c86cc1a24b88b28c20979584ec5673febdee7274dd64f182b13d7ff2"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3259f8032ca89fc34a2fb74621c7df4d50a641428b6fa6d7927aabe2d744b1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "631a479305dab1de62b5a106cde87b2a2b586e8b8bdd45ae97fc9bb01e7c57b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e211330e491646bedf90ebceac94f49a20871d957dfe34f0f29678ecb71eaca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6538b7c47675bbe1553a81f9993e0d45ca204e18433a4185e460ce558a75c1da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b555eb3e873a7b097a2e59329d99ff3d24309de181115f19bf0ca934f34d404c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93ce7f17061dda626aad6ffa76f04dc6e9fc3b5b8381863b1e54a30bcce8408e"
+    sha256 cellar: :any_skip_relocation, ventura:        "504a99b11b69a0063f8ed1d8e98abfdc4ed4a4685dae62af42f1c73686b7fb36"
+    sha256 cellar: :any_skip_relocation, monterey:       "06c226e795287964de0185849f5ee8cb3278bc6c85c9fece2cd7dc41164f2e6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d9168bedc7414086f786302ab2d4ada7d9fe6cf7fba92b85e783bb566ddc011"
   end
 
   depends_on "gnu-tar" => :build
