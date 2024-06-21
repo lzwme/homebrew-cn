@@ -1,7 +1,7 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
-  homepage "https:github.comnoir-crnoir"
-  url "https:github.comnoir-crnoirarchiverefstagsv0.16.0.tar.gz"
+  homepage "https:github.comowasp-noirnoir"
+  url "https:github.comowasp-noirnoirarchiverefstagsv0.16.0.tar.gz"
   sha256 "fb523ccec493ed6cfc590e0436de6754aea4d2cbf17b64b9df8a5babd095116d"
   license "MIT"
 
@@ -33,7 +33,7 @@ class Noir < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}noir --version")
 
-    system "git", "clone", "https:github.comnoir-crnoir.git"
+    system "git", "clone", "https:github.comowasp-noirnoir.git"
     output = shell_output("#{bin}noir -b noir 2>&1")
     assert_match "Generating Report.", output
   end

@@ -1,19 +1,19 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloadertools written in Golang"
   homepage "https:docs.iyear.metdl"
-  url "https:github.comiyeartdlarchiverefstagsv0.17.1.tar.gz"
-  sha256 "26f7a65aba24d0f925590d3d0ccbfb8c0e47960e0660e94ec1086076a27eb490"
+  url "https:github.comiyeartdlarchiverefstagsv0.17.2.tar.gz"
+  sha256 "79b171fead97b26ab5b4b643a20a236d634eed46dbcf85cc55ec28ff190a27ea"
   license "AGPL-3.0-only"
   head "https:github.comiyeartdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8fffb10c1234a098131b14eb80a761a97e28d421e1028552f47a080ff570c480"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "926492e10b944aa36d389130c8b722595121c4916d384bb5ac5f6570c058a803"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aec643d4cc6153e6ff5185ca9fbede04fd13ca5d753ef8b9308aacda92dae6f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f97c812527be2b27d78f8a65c19c96e5fd24ef75a57e2422febc7961ddb5cdb2"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff4b57c9676ea44580a54e1cc8b21fd2582ee14fcd2e088efb45f7984bb18a20"
-    sha256 cellar: :any_skip_relocation, monterey:       "05ea97ec1a9d1f2168599a2b15d9e89b40a2ac722ed9e5c553335f51a6d8e130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4b2e0eac6be73a74d8696e32461019cf5426ccad33d1069eb36a8ed493da37e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc2cb22b448c8bd3ccd91532d51afb850a390a9aecaf29fff097d84e5feda230"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f5b0320da17fc2d1d72a00ea1de8ac363915d3a35d34101347bc489c513ed79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d5747a486febc3c96f08a543a3c3eabbdedd24e3067dc23361d1c7ec98e1c2d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c4bfda008b16b6c3e64ee882c25574f91adad70db8f92810ea3e35bf9046cba"
+    sha256 cellar: :any_skip_relocation, ventura:        "403f49525672aa535f3fa99a0d8090b2d2a1d8879006a9f97ed31fe34519ac36"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ec8b13cb9700525703757b7739f8b8e6a356dc8da41bb57c4b6fdeb39777392"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16719d3befc102aae30f4c9ca88ff7dfdc518b46728379dbceb6281ca29ba976"
   end
 
   depends_on "go" => :build

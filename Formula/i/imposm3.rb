@@ -1,18 +1,18 @@
 class Imposm3 < Formula
   desc "Imports OpenStreetMap data into PostgreSQLPostGIS databases"
   homepage "https:imposm.org"
-  url "https:github.comomniscaleimposm3archiverefstagsv0.12.0.tar.gz"
-  sha256 "ab9edc262bd79dd6ee0d5547021ecd14c9931b35abb76cdeeb7cc93433ff9e13"
+  url "https:github.comomniscaleimposm3archiverefstagsv0.13.2.tar.gz"
+  sha256 "a4edb7626d929919224c3778af5a2f2d11539a5d5c30fec00bacacbc39dfb7a0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b2cd313b199010b43cde186d8f1983abdb93c2df9b8bdb1109d681a66cbbe944"
-    sha256 cellar: :any,                 arm64_ventura:  "be4cd7a2f1035e99570547e4a9deeb372d2b585da07eea07fdb9f42b77539606"
-    sha256 cellar: :any,                 arm64_monterey: "f86562e84e513ca30c7d568fc13f963c5977518b68e8ea8323acd59e77f94300"
-    sha256 cellar: :any,                 sonoma:         "3d680915e3156555266ede0503e0e37f1c73b8791645b88fe271ace7e0dd32cc"
-    sha256 cellar: :any,                 ventura:        "ea62335f23869e6ab6bd4ccc256a452a43b8a0e658c649006f92637feb3bd4ba"
-    sha256 cellar: :any,                 monterey:       "c5702658eec7b40ce205156669b3c0f9e2b06a7182e6941baf5cc0d6c19d2f78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f1ebf18396335e8a5c4d998074723af58db2bf2e67e65c45ef4ddf3853a0be"
+    sha256 cellar: :any,                 arm64_sonoma:   "ce2806e30f44d312e04d59ce5d6f413e1606465fd4341fbb581c3f9f8113f22e"
+    sha256 cellar: :any,                 arm64_ventura:  "b485d6d14576a96b8dbf358eec1760c461c3215ee16d8cbeb473dfec4f83ac63"
+    sha256 cellar: :any,                 arm64_monterey: "bd15d0e48252112d24e07fa9a741ffd3461c9b8e0b3f2ccac3013eda3eb8386b"
+    sha256 cellar: :any,                 sonoma:         "a56faaf41dc1fd37b8ee4c7e108cb6660ac7dc62ec7479ec99f1a9d2fa30f1ae"
+    sha256 cellar: :any,                 ventura:        "beef1c9f5a5540ebb8d766274f15995d8ce276944cd2c4c50a523a01abb38a09"
+    sha256 cellar: :any,                 monterey:       "ecdff9422d68ac066e12cdc7d5ed3a727adafe28298982cb7f79910d0df44453"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f23b804200789a26ee1e152d4015a8f264fad1412665db8a97e6dd1c98ac37"
   end
 
   depends_on "go" => :build

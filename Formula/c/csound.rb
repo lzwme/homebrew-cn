@@ -74,7 +74,6 @@ class Csound < Formula
   end
 
   conflicts_with "libextractor", because: "both install `extract` binaries"
-  conflicts_with "pkcrack", because: "both install `extract` binaries"
 
   fails_with gcc: "5"
 

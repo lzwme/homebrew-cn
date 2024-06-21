@@ -3,13 +3,19 @@ require "languagenode"
 class Typescript < Formula
   desc "Language for application scale JavaScript development"
   homepage "https:www.typescriptlang.org"
-  url "https:registry.npmjs.orgtypescript-typescript-5.4.5.tgz"
-  sha256 "154fae77169f04155ac52d521ac59abb07c9be29ea3744732adbf9f14abb2440"
+  url "https:registry.npmjs.orgtypescript-typescript-5.5.2.tgz"
+  sha256 "2f12d2e95610c573b778ac0669497440626c07d6aae6865171e246fce96ddda0"
   license "Apache-2.0"
   head "https:github.comMicrosoftTypeScript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e9a93bf3035058ebe45cfe31be63616aec6d16f772144e50c6284051846b1686"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, ventura:        "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, monterey:       "0252c491a4b9cdaf59af0b41d4cc4acb7fabc0500d3480be36e74ca1887e7da5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04877163aecb209e935bf45c52efeb3a4bf146ef0671317206273557e7f61621"
   end
 
   depends_on "node"

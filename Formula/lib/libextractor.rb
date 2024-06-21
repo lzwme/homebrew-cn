@@ -22,7 +22,6 @@ class Libextractor < Formula
   uses_from_macos "zlib"
 
   conflicts_with "csound", because: "both install `extract` binaries"
-  conflicts_with "pkcrack", because: "both install `extract` binaries"
 
   def install
     ENV.deparallelize

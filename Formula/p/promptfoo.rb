@@ -3,18 +3,18 @@ require "language/node"
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.65.1.tgz"
-  sha256 "bc3c6d8b0e8c11f53a106bcbdce91d47dea4ad15153dc88426d185f8728e35ba"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.65.2.tgz"
+  sha256 "d3079b2bcc90d9193f8f5cca195c3c23e72767e0a8760d59c408da0220ecd762"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3108201d2e8237187930b9ac38ad89a8ce29e85fe56cfa399dfa7202968fd06a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f288de96cde704773712562098197445d34fb67314e4b41619de5e1262d29f1a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f684bac056bea5cb97010998139bc1a85b0c7acea13816476ac842bbb464e6ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff0da9fcefe5c897b15874f939fde9437b7fe704d819cd584dc9ed3b86819417"
-    sha256 cellar: :any_skip_relocation, ventura:        "16658ba7aa6a5633d34ef64a018630098c9fae3b55b0a254b8b1727520d9df3d"
-    sha256 cellar: :any_skip_relocation, monterey:       "f59defc81b35fc6aed40b76a58b8a2b937dddccfa8f5d8e3b623e7fa5f51f02f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21179c92f6c1a9d2c67e1c4b4554bc7b9a5d0d3dae7d07e9fee82fc7bcc6b1bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56112c090f4265d0b77cbc8de9113fab8a455f8957b0fd8d2eb658f938b09cba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22e30ecd7b34c5d9ddc8f259548b08fe4ee4434cec1d7ceae083b9f393c48714"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66b9517dfff698d655bb6e64faad66a79f7b801638bdb7715e45445d712431ef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d4a4927e2acda033f08eb05765e691397e28077e045c5d21aefa9bd4cbdb4f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "c32c216070d476fd12f330d8d12c5d1ddfcf6c488be44c3a22c2f5cec2262ad8"
+    sha256 cellar: :any_skip_relocation, monterey:       "556efdc5134e2ecfd77e8a13468929711b1a7da6b97aa90b68fe3caac0b26d2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58b15f9a9a68610c6a166cd35ceacef1704b89c9365055b0d2602fbe6e597c3e"
   end
 
   depends_on "node"
@@ -29,7 +29,7 @@ class Promptfoo < Formula
 
     system bin/"promptfoo", "init", "--no-interactive"
     assert_predicate testpath/"promptfooconfig.yaml", :exist?
-    assert_match "description: 'My eval'", (testpath/"promptfooconfig.yaml").read
+    assert_match "description: \"My eval\"", (testpath/"promptfooconfig.yaml").read
 
     assert_match version.to_s, shell_output("#{bin}/promptfoo --version")
   end

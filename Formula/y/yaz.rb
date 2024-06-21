@@ -1,10 +1,9 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50SRWSRU clientsservers"
   homepage "https:www.indexdata.comresourcessoftwareyaz"
-  url "https:ftp.indexdata.compubyazyaz-5.34.0.tar.gz"
-  sha256 "bcbea894599a13342910003401c17576f0fb910092aecb51cb54065d0cd2d613"
+  url "https:ftp.indexdata.compubyazyaz-5.34.1.tar.gz"
+  sha256 "c7fd8e0222b3b0d1115ad8e7a2ee67be7a2807624d61d5b71854bf5e167ab7a9"
   license "BSD-3-Clause"
-  revision 2
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.
@@ -14,13 +13,13 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "79d99c8711467e1293cf29ad7de73a63b2d3c974edef0f4c56b3855f8c8a58e0"
-    sha256 cellar: :any,                 arm64_ventura:  "63f2fb0f41ce638e380adcc6a552e3fe99bbb83a474261d87afde0aeb2e54744"
-    sha256 cellar: :any,                 arm64_monterey: "061d685a68f9a3f26ed65cc4ca593e2f56a518ec44694f9382c82a5435528bb8"
-    sha256 cellar: :any,                 sonoma:         "e81fbd1f1c424045cad6efd0ef1b840704d9a27f87272277a52bb193eb487c6b"
-    sha256 cellar: :any,                 ventura:        "1b897f5d8c7ecf516d859900c8a646314524dd68420ba984fa26bbc7385f53b9"
-    sha256 cellar: :any,                 monterey:       "decd970c1e88a9a030238fedfdf5d657799fc4bd549bc286f3d20c7e7d84ebb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "366223a48ffa7eea929dda410165cf8c128adbfe83d33b57156c5933da8d25cc"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc45f16c09632a6e73e49ace9bd8d0b4e086a5a9c5503cfe7c066f18a59d8f87"
+    sha256 cellar: :any,                 arm64_ventura:  "de294f63ae537046de8e38aab6a66964d142a72bbd5039a1e0510d06444b3d56"
+    sha256 cellar: :any,                 arm64_monterey: "be73925a730bbc3956497ba501596848f6f80292f7ef23cb72490537fd141948"
+    sha256 cellar: :any,                 sonoma:         "7bca2535a733fa5d4d59b565d1844ba549275e7e3deb4ea118a35b8aace8d865"
+    sha256 cellar: :any,                 ventura:        "9df7ada09b950e224f87f15387725a63754d77ea2b5f5f707af654f26a336a47"
+    sha256 cellar: :any,                 monterey:       "a6b19cb6e6905f85aa590d49c4b10aaa28a8364f60aacd76c85d210fa9e760a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "019454b127ed23be0ddac5cda1f86e1e011267a6c68ced037c9eeb3843324569"
   end
 
   head do
@@ -42,13 +41,6 @@ class Yaz < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-
-  # Fix build with libxml2 2.12. Remove if upstream PR is merged and in release.
-  # PR Ref: https:github.comindexdatayazpull103
-  patch do
-    url "https:github.comindexdatayazcommitb10643c42ea64b1ee09fe53aec2490129f903bcb.patch?full_index=1"
-    sha256 "7dba5fc599bfa3c54694c87f6978f24dd584ab746aab68bc82a41411da81bec6"
-  end
 
   def install
     if build.head?

@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v17.0.0",
-      revision: "44feccdf3a5f65891017ef143a78c7a0d22bb63b"
+      tag:      "v17.1.0",
+      revision: "fe451d5a3074a4027e281a3a2eb49a1b55465a9f"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -13,13 +13,13 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fc8a467c1a49a8cec12f21cd577a43489be941608fe5829d620bfefb4acd2e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aeac604b2aa5cee922cbe9bc191aac9312a72a5d8fed3f23fe40a843d79267b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e6110d6c70dc6656e5954d8d5b852e813fd7ad7afe30f9bf0e91ea908c989b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "00d2cbd9bcb7ff466a27e45270d4455c07c3575a8d548fd9b132c64645832889"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4bb062d457fbcda057049bc577a2a836ba1bea3e37fa1db0668adfddaea4d71"
-    sha256 cellar: :any_skip_relocation, monterey:       "a37ffdd4caadcb6b438e4d2f80466479224461688c8a673a2b237488f4e6814a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a076d99cc973eaa39fab5585b7bb63caf364b3fb3d18b6b2c304020dddee73ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ffa2d6a85c297f37fba84f4c6221016649efbb78eb521b7e6acff30af22458b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07238a3e9c13875326fcbcb07afb0ef07303a2910f65dd59e8246b64643c2e0d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07cb729d2ef3884dd6c3430f5b5e169c7745ba92c6588ec0a336c86a54109883"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1ffaaead8864f0fe6175b2b1af34a2858b787c556885fb77669edd41872224e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a0c0d41b474d64f16a2676b82394728967fabfc8e1ba77f034acf23e10ecb39"
+    sha256 cellar: :any_skip_relocation, monterey:       "7399f2e7fba13583c73cca23b7ee72f56cd2716bfdd0588708306ee67ab87c24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cab2495a6d7bab2da934d8f54fb8aa82cf7319b5d821a7027213753f9d037db"
   end
 
   depends_on "go" => :build
