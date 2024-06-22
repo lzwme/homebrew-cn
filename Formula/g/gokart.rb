@@ -19,6 +19,8 @@ class Gokart < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "272ab63250f847c8749b0ea407a5947e8472288f8bb21da400df45a01e9ecb4a"
   end
 
+  deprecate! date: "2024-06-20", because: :repo_archived
+
   depends_on "go" => [:build, :test]
 
   def install

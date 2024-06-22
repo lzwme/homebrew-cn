@@ -3,20 +3,19 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https:docs.mvt.reenlatest"
-  url "https:files.pythonhosted.orgpackages0ba7e12932647247b7cd253698e6aa0d5f831700d3dd7688c366af85eb255b62mvt-2.5.3.tar.gz"
-  sha256 "5727877815b3d5a2a98e21a6be9da51c3629eb548e424457e9e78ae183344264"
+  url "https:files.pythonhosted.orgpackages0d12a87132ab005aaa685663348df0a927c123a921ad8385813c83098c544269mvt-2.5.4.tar.gz"
+  sha256 "bb539d853ad27d6499acbe03f9f4686b8738c624b68d226e1794fa1358f1dd0e"
   license :cannot_represent # Adaptation of MPL-2.0
-  revision 2
   head "https:github.commvt-projectmvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a00e0dea65e080cff4c766c6948ea5f32154cfbf51843cd55b4ae9080335b912"
-    sha256 cellar: :any,                 arm64_ventura:  "1c1babbdee2fe0b659b9536410f61ee1aa32b138db9773353e94d5d147d4e51c"
-    sha256 cellar: :any,                 arm64_monterey: "9d3d657466d53b1946fcce18c035ab5282dafbd08f5c4ee281e38df6f54def08"
-    sha256 cellar: :any,                 sonoma:         "db2b3f898a523964489b2493142e51779457b4e64b9395d086b941c307b2d023"
-    sha256 cellar: :any,                 ventura:        "af72c27683abdcb50277f720799456f112cbc6b82576c1145133cd0e9e5cbcf9"
-    sha256 cellar: :any,                 monterey:       "921512924c46464f7e382848ec9a1ff611b865e3df9573fa4300dae61f39d501"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80a16ac7cadb743ed39f510fd8b0be9ce7b2102ec9f61d0644fc9c70dcf1c4b1"
+    sha256 cellar: :any,                 arm64_sonoma:   "c8ffe44fe33fab85b1a096199142b82b3e60d4a9c61278dc1b4dadb8448f1632"
+    sha256 cellar: :any,                 arm64_ventura:  "08f7d90d39f957d989bf78ce9a52a0c0318ff2e484fca943b193290c676f0f17"
+    sha256 cellar: :any,                 arm64_monterey: "7b58b012a3c61ba10fd45529cfb74de4181ee3e626baff04d5909b7f8b9cf0f5"
+    sha256 cellar: :any,                 sonoma:         "4f3badbd0687dc0149d61afca3a2cdd75f536b3780e53c15140019a1db848805"
+    sha256 cellar: :any,                 ventura:        "21e5e751f862a5dbc67a8f8444825682e6090ca2d734899ba58ece0e51542538"
+    sha256 cellar: :any,                 monterey:       "d7a1c4ca7d3e8379a4a79a78e7d0a04fa2e520254e470b72a43b27e3500eef73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6b167ef9e4e88367e027284939b18baa7e828408fddd46f13c63d4493fa3940"
   end
 
   depends_on "certifi"

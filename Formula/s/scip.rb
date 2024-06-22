@@ -1,8 +1,8 @@
 class Scip < Formula
   desc "Solver for mixed integer programming and mixed integer nonlinear programming"
   homepage "https://scipopt.org"
-  url "https://scipopt.org/download/release/scip-9.0.1.tgz"
-  sha256 "83e353a7a2c125d19a0da760ae1087a3e418b673a8ee17494afac3ad84e0a797"
+  url "https://scipopt.org/download/release/scip-9.1.0.tgz"
+  sha256 "40459696c513c376bd1dbde10744837d0d4d4b9359df26243e749ba7991481f6"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6ecfd6e11a65972d4919916f94571f71140950a6539ccace515e8ae6ad0988fb"
-    sha256 cellar: :any,                 arm64_ventura:  "edd1d4e32c191ed7e7244837fadb13c89376f5052c9f3147744bd90096c7d16f"
-    sha256 cellar: :any,                 arm64_monterey: "1a8f452ef1612a00034269c5610a9af7b77ad2942026bfcec9df95d1c595f898"
-    sha256 cellar: :any,                 sonoma:         "516e748c04152edeb228af82bc03e28abb9c34148648c34a9153f185a051f512"
-    sha256 cellar: :any,                 ventura:        "8d0c5b53900521d8206898a102b2de7dbf0fdd686cb36f97f9361834ed7a98de"
-    sha256 cellar: :any,                 monterey:       "d0a0f5588156d728304209bf5f62d37721ef38218e9ed8b02424d523109dad93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08ca46c84a7d447628fc7388a82c59a8d53b0eeb0b070ede8689339acdd70289"
+    sha256 cellar: :any,                 arm64_sonoma:   "705a97ff1ca9f055004c006185e899c99d05a12d0e5c3609f86ca675fbb57e43"
+    sha256 cellar: :any,                 arm64_ventura:  "896b0868587888345ace85d2ec03f9cd265d753ad320c07ed0bba89de8b756a7"
+    sha256 cellar: :any,                 arm64_monterey: "1803a116966786bdda39fd83cd1c288f76419273eea70475ee8ccd8e0880eac6"
+    sha256 cellar: :any,                 sonoma:         "ad3ac0efe663d0842daa73b1dae468057a26494d2893d57bbc21fb9d7160772b"
+    sha256 cellar: :any,                 ventura:        "895f958e2dbad907ebd9155ced804c8a884bd6cecfcf10e39d366a2e78b02191"
+    sha256 cellar: :any,                 monterey:       "dafe677b7d8aa59f5f11383fbb52ad4b6fa818c6e5e1e6f3903045fa0f99b37c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "611c37768da18821b98a4233005548ec9d4867b726a2713e8f36b94ccc90c007"
   end
 
   depends_on "cmake" => :build

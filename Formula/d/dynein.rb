@@ -1,25 +1,25 @@
 class Dynein < Formula
   desc "DynamoDB CLI"
   homepage "https:github.comawslabsdynein"
-  url "https:github.comawslabsdyneinarchiverefstagsv0.2.1.tar.gz"
-  sha256 "1946d521b74da303bafd19a0a36fd7510a9f8c9fc5cf64d2e6742b4b0b2c9389"
+  url "https:github.comawslabsdyneinarchiverefstagsv0.3.0.tar.gz"
+  sha256 "40be5866288f565ac00494910d5dbb266ca0c34d56d50d839bc2c2aad34dc470"
   license "Apache-2.0"
   head "https:github.comawslabsdynein.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa2f35206a63c297f87dec9d5019517a5e47242cc8880e4d8c5278b7f1a0b430"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "635583bc18c063999d9135bb322742a17caf167afa6752de58ca871c71894a54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db55aa07dfe414452a0d7137077b8baefe3881ed327623f881f38941cdcfe284"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "739c8a91f706fe1738bd9ba41dac317f0db5728ab17dfe5d7526a3894f6d412c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a36b9b30e106c3921dd5a5fc8b97f1734b1d94cde1d611285ffe6879430d283b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b743e8a94a3d1080bb527fb643f88877a395a71753156fcf7ccc199ec17a58df"
-    sha256 cellar: :any_skip_relocation, monterey:       "da3f54319ce86e2bdd1dc9896612a1e6180752f967793a1536e53d3525851f4f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c9a51b02ae52fae35a02d8d433a7edaa926215751ddcc0d66986c44ae001aef7"
-    sha256 cellar: :any_skip_relocation, catalina:       "f4279bdb47125daff9c6409243f14aba664e18b3a691476fb2372b63c5ed6ea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "075dad3a402d915e8645bd192254f0bbcd68f419e1cd94b936223f2bf319cd78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91b9e9c541f813bef303f2fdf8d07f58845f7bdae1bbd90203a489836aac2686"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b815a934b4e075d52617c31d4994bebf2bd41698f7ab155b12506bc1dbf326c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ca0ab5f1dedb70ecc9654c05831c8cf1a549a1340d03417fc3591ff1fc7541c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d1782320d190d2fb194376ef10d4a6e9a96cbabf9050deb4e6c106aff8abfde8"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ef1635233b03ee3787239236a24581bd084e6939c15989053abd01e58d45ef1"
+    sha256 cellar: :any_skip_relocation, monterey:       "8624ef8a79a41026c00810bb8b36ed4bafb22217ab201a3239b41584f7846e13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5842684aeeca93f1a9869327cb4f41a75c708ab354c47a2e124063cd8108ea8"
   end
 
+  depends_on "cmake" => :build # for libz-ng-sys crate
   depends_on "rust" => :build
+
+  uses_from_macos "bzip2"
 
   on_linux do
     depends_on "pkg-config" => :build

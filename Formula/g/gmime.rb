@@ -1,19 +1,18 @@
 class Gmime < Formula
   desc "MIME mail utilities"
   homepage "https:github.comjstedfastgmime"
-  url "https:github.comjstedfastgmimereleasesdownload3.2.14gmime-3.2.14.tar.xz"
-  sha256 "a5eb3dd675f72e545c8bc1cd12107e4aad2eaec1905eb7b4013cdb1fbe5e2317"
+  url "https:github.comjstedfastgmimereleasesdownload3.2.15gmime-3.2.15.tar.xz"
+  sha256 "84cd2a481a27970ec39b5c95f72db026722904a2ccf3fdbd57b280cf2d02b5c4"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "6e16acb81604f4148018f68bd7cd6f5b490fe32b735bfd0aad835f285bee6f75"
-    sha256                               arm64_ventura:  "c50f74db8f74fa8ab213c35cd51a94fef2ad30b6e3902634f4f340296ce8ddd2"
-    sha256                               arm64_monterey: "211515061ac24a75022f0efada0fc16e710f6778a5e64c25e5dc3e096fef176b"
-    sha256                               sonoma:         "b18779212f120eaf25f631b8c2857fe91e81e0b1c8e227c7b9e0d663ffc4104d"
-    sha256                               ventura:        "8471fb1e3f5a8a62151f9f2fd1f55d5b71de0c96e60f3e8a4b70e19063941f5d"
-    sha256                               monterey:       "3c69c4fdd87c998407b6ced7771a98ae01c6093b52acf4ecbbaec4fff079716a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "990d4b95f1c247971058b5486e744f5c4ce75e20a33fe4b947f24bc0d9d1090e"
+    sha256                               arm64_sonoma:   "a509468f057fc0a2013788381d8884710ef74d5241b706891372a43a9aa402ba"
+    sha256                               arm64_ventura:  "ea7b8ca1f448ab1fa9486e3e55a12305f2df3b5a8c19b99587332d0412326cf3"
+    sha256                               arm64_monterey: "c7c87673c6db12e288f836fe8a7aad8312c3aba2d35dae680a155741a82f660c"
+    sha256                               sonoma:         "103a9dada388b0c0d1e00f5d43e89a69be9c811c5db9053410aab1349897288a"
+    sha256                               ventura:        "4e6bcbb52d75e42ecd622a6aa76f376c148421aa073b1a808e82392cdb3f3b75"
+    sha256                               monterey:       "2acb6d3050ee79911c9f1407c90b1f0870becf0f4540ad441dc4f5cab69e5fc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d427feebdf23d147fb3b4bf6d0df1b35d08c20d71d5d2100ab3572c2edb982d6"
   end
 
   head do

@@ -14,13 +14,14 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0abb91d2795ab69b56150eed0bff0fa88a8c3c5444a7fb2422cf04bde2e91300"
-    sha256 cellar: :any,                 arm64_ventura:  "737e218aff30454c7d4612e9c39afd8b122352096bb31e582bef1f241be5a5a8"
-    sha256 cellar: :any,                 arm64_monterey: "6347a4edbc9060417c3e34b67bfe421bda57a830712f2ff7ac52057164e3b216"
-    sha256 cellar: :any,                 sonoma:         "78aedc0a6bc704c1389af6bd1f619ee0f1be866280d9d01343e6813706e6435d"
-    sha256 cellar: :any,                 ventura:        "bedf5b70775e9621c702f9476bf63abf7b3ecf040f241f59cb9918435bfad118"
-    sha256 cellar: :any,                 monterey:       "75c31c171f4a998864575be6c1b4dae8be056413f59652eac83e6924a540263c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925b6431debcb4a5266f00f77aceeba043ee15d652236428ac3ee91a048fe0ed"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "5f15d618c8756197d1970f72a761afcb4b875a1fbce0c4daff180dc3bbd5e054"
+    sha256 cellar: :any,                 arm64_ventura:  "92c976e4604da5686a8ad5aa315ec80f8057b7494d9ddabbd51a592418390580"
+    sha256 cellar: :any,                 arm64_monterey: "8ac2b1a0ffa382b0cbe797697de36644bb195cdd5e69cf6566f4d7741284721f"
+    sha256 cellar: :any,                 sonoma:         "5261231e0b211468b2e2946cba198b6284876e8892376ca199a105c521942bb0"
+    sha256 cellar: :any,                 ventura:        "eac7171945f2b770d1bc5157099aca26d0bd80f2ef7408793dab356696507415"
+    sha256 cellar: :any,                 monterey:       "10069a20a7084298abe218a891610d6b9bb389b635c943f678222395962d9f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6fec941da11af47992550f463aa96e59c589893655aa7c7b40c809ae335e887"
   end
 
   depends_on "pkg-config" => :build
@@ -37,8 +38,18 @@ class AstrometryNet < Formula
   depends_on "wcslib"
 
   resource "fitsio" do
-    url "https:files.pythonhosted.orgpackagesaa03d7d0b77f938627cb46f6d91257d859c78459fbb5b155899d6c4c78970faafitsio-1.2.1.tar.gz"
-    sha256 "c64f60588f25fb2ba499854082bca73b0eda43b32ed6091f09dfcbcb72a911a6"
+    url "https:files.pythonhosted.orgpackages6a94edcf29d321985d565f8365e3349aa2283431d45913b909d69d648645f931fitsio-1.2.4.tar.gz"
+    sha256 "d57fe347c7657dc1f78c7969a55ecb4fddb717ae1c66d9d22046c171203ff678"
+  end
+
+  # Support numpy 2.0
+  patch do
+    url "https:github.comdstndstnastrometry.netcommit5640e60401ac6961449d64ec0256c326b1d26216.patch?full_index=1"
+    sha256 "7486d9dac6bf7261f2cd459af028426dfb29c0b3c23c840889ef9ba083c42be3"
+  end
+  patch do
+    url "https:github.comdstndstnastrometry.netcommit7991b0d20280e8fc6a9b17d5669312eee69e4c43.patch?full_index=1"
+    sha256 "4fa0feec1bd4159749789c5f115dd0e99e6a92e6032b90da273560a9064419d5"
   end
 
   def install

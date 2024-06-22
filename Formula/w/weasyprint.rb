@@ -3,18 +3,18 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/c4/c6/02995082a0f02cb4f8de4b3f1d4cf31965322e0c1609fb84bb91842edfb3/weasyprint-62.2.tar.gz"
-  sha256 "a08ac400e11919d996d76becaa33160d7c1ac55ba160628c42ce7586574c1a51"
+  url "https://files.pythonhosted.org/packages/fd/22/2d76310cd2ea5bbf03c691a08d48626f49853b7261a51bbdc0f834d746ca/weasyprint-62.3.tar.gz"
+  sha256 "8d8680d732f7fa0fcbc587692a5a5cb095c3525627066918d6e203cbf42b7fcd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db17dda7bf44efec6034fae3f3c2c2309159757d63881ffcdc97e376424e33bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d13c4c58f9273e2b383a3dc978affc4d991f23955b08b32453fb03f7da06b4eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c3d11ca6b6f6818fa1b0d0b268460e2685c2dce64c8972b767dbcb6100d1d96"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5298750fa5acf4c4357ebdebcc8a195993698853a1a9fe832d0c85c135cb219a"
-    sha256 cellar: :any_skip_relocation, ventura:        "0581b00b7987f1c93e086dea1a01019f0427b88a8a186a6b3fdada88f2ca2876"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b581ac3516572bd422ae3b83073561f3948ce3bd621a81b2e7311d85def7535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79d5c3c53ac756c9a9956a0155ec31c8b5a4c3edc2a3a3ddf6099e59630949ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c673fc341ddd0b6c77472204f0fbece9dccd1875aa145cff73725ca4b3456937"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e502ab307d6e5c6d8b736fe8d68d8fef8bfb65009044493a69676473ea05691"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b70956809a87fc94fe386ddcdbf536db293a9ecf61d5fc4db349695ceee42959"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67ec881fb796087cbeed85d0aaf28fc1f23df86b5ad9e155c35e7c620c47a07c"
+    sha256 cellar: :any_skip_relocation, ventura:        "be59ff232b1a0d10a91d5b6151c1dec11c26959c0b6455b4f7a7258a9f0b4ff7"
+    sha256 cellar: :any_skip_relocation, monterey:       "f9fde52e0ee7963f652f516af14aba49bd0785be3d734c0f368bd5e17ed28d7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b53402900a8fab244e00fb1147045bda5a8dd6759ad29ebf9f75990c4cb432a5"
   end
 
   depends_on "pango"

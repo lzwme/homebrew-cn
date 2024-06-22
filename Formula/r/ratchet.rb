@@ -1,19 +1,19 @@
 class Ratchet < Formula
   desc "Tool for securing CICD workflows with version pinning"
   homepage "https:github.comsethvargoratchet"
-  url "https:github.comsethvargoratchetarchiverefstagsv0.9.2.tar.gz"
-  sha256 "a229b8cb3abc5300c438f78f35b9733ae4280ce59e0f8b5c7ec45f9b9c9b4683"
+  url "https:github.comsethvargoratchetarchiverefstagsv0.10.0.tar.gz"
+  sha256 "e96135fa2acddade2707e2110d212b790c2a8d114a7ace8c5d25e9edbf83b7e9"
   license "Apache-2.0"
   head "https:github.comsethvargoratchet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5d9a4db858c6075f9b518c1b69624a4756eb8f645a9d44503304388b766b04d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c295360c84e6cd84062cfc51a516953250f762f4d95dfa0a01b8047d542511e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5747661ca78fcb07f035fbd6a663d4d91d5f21a534b949f99f8ba00900b88d8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "89b2f6341d209acccd21d50ec94aa051776f0ff796cff893716156c54aefc5d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "93191c01af994c71cdd054d29c62706724349497f9bac975f5e739baa81b941a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b84b170d361e753e3116f3e697b4305281200ac2e902f8c1b65c5dd33a14bc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4220faed06da3ac5aa63fdd1cef644ecf2742df3ec246fd37c18df6e6072384b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e904d78b0e6c10d5bf551a16ed857252d24ead2e9f516f26e461b69508fb196"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "579509ef8e3f5f20d185c8662620613b7aff6131a53f17d510068d91c7200370"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e42a349f8878e4ff5adb0daddba625e93488b1042123e4deb28e2eb0ed68154"
+    sha256 cellar: :any_skip_relocation, sonoma:         "97aa1f256588276eba74c07ff6ee9c99fa19740c4bfb3b1c9e4bc4634a994111"
+    sha256 cellar: :any_skip_relocation, ventura:        "56b68e942bb996298d508b5bf7c7d5233066397bb07f756d1ef5f8a69abbdfe8"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3d68a2ebc3886f694dc4771449230fe9bf57da781d7701692be1aa8a950f5b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db3d5f28e3d08211699d07e23aae308a856acd2652177e9164354fa4efe563d"
   end
 
   depends_on "go" => :build

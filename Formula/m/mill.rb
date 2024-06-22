@@ -1,8 +1,8 @@
 class Mill < Formula
   desc "Scala build tool"
   homepage "https:com-lihaoyi.github.iomillmillIntro_to_Mill.html"
-  url "https:github.comcom-lihaoyimillreleasesdownload0.11.70.11.7-assembly"
-  sha256 "8a28ca6654288885a8b3e29dabd848822339c8cef109fd7569bac9ef52cef630"
+  url "https:github.comcom-lihaoyimillreleasesdownload0.11.80.11.8-assembly"
+  sha256 "1ce4537b1233af16d68dc1ab4b9f49a996e8c460b393cc0a7f778a328606aab2"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,13 @@ class Mill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9968d8516b3370fc429babf0bd01775a954312431cfacab9ce56a8aecd220680"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "0074a7a8c087e399795bc061b75e8658f1bf5f0174b857766e8cf8cac51df2e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76b9fa828dbc215635a723db587f676c6af2f626227dc5608d0f4f62af6ed62e"
   end
 
   depends_on "openjdk"

@@ -1,18 +1,18 @@
 class Openlibm < Formula
   desc "High quality, portable, open source libm implementation"
   homepage "https:openlibm.org"
-  url "https:github.comJuliaMathopenlibmarchiverefstagsv0.8.2.tar.gz"
-  sha256 "7244f9aa468584744e260cef740d57d10eab6e9c05f62084f8f2ba457f4b4b1d"
+  url "https:github.comJuliaMathopenlibmarchiverefstagsv0.8.3.tar.gz"
+  sha256 "9f83e40d1180799e580371691be522f245da4c2fdae3f09cd33031706de4c59c"
   license all_of: ["MIT", "ISC", "BSD-2-Clause"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "435f9020d1297471c2fff357cd441914bc9330830afa4a58a7794a47d3ef6098"
-    sha256 cellar: :any,                 arm64_ventura:  "1fcb943a2b0b8a013db3d157a6cafbc08d03c7cf3c554918aacd9270c2d96de9"
-    sha256 cellar: :any,                 arm64_monterey: "551a339e3d2c2e06ce625b5dc51e375e290a61801c508b351bfc690890f1fa26"
-    sha256 cellar: :any,                 sonoma:         "3330d9dba6af55a5d1fc86f471619e1999049964c91e451e1eb02f6de7920c75"
-    sha256 cellar: :any,                 ventura:        "9d88f67464be7f2b245cd9f7f47e6faca6c12288ed71e1c83dc7a0580f1d266a"
-    sha256 cellar: :any,                 monterey:       "a073965d7967121a63a63b0ab888df1b46e64e5b86e4cb0dfe1337a4eae4cda8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7efc8d98d0cbf005e186fde4b9cba73dc82921f2d31634adac1546b473fc8de"
+    sha256 cellar: :any,                 arm64_sonoma:   "ea138b154ee285ea9e7dfc8e75095f5ef10b35e26a385cddb29be717e0845830"
+    sha256 cellar: :any,                 arm64_ventura:  "6c26c17ebbbfa29ba9b240368f553f116a13ac5aa56776ebb648f405f3ed9058"
+    sha256 cellar: :any,                 arm64_monterey: "643421ea8cf4fe60d165534daaba6a9028c85c336a196f4a8b7075a1d5053050"
+    sha256 cellar: :any,                 sonoma:         "d43a797126c456158cfd2916be3c59999dd947389ec3f0f3568d26fb236e3040"
+    sha256 cellar: :any,                 ventura:        "6429d3667b4a15a182f21f497914062f36ff63ac0e7bb85c6a47819fec2b234e"
+    sha256 cellar: :any,                 monterey:       "fbfa7f78bd9e7f46ff19f4b9b5b645a365bb9d488e7a76ef31ef5ba867b1ae01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85ab572e3a32c552acf1b0f628dd36c82843ed89227b0123fa1b75affd37fd19"
   end
 
   def install
