@@ -1,19 +1,19 @@
 class Flawz < Formula
   desc "Terminal UI for browsing security vulnerabilities (CVEs)"
   homepage "https:github.comorhunflawz"
-  url "https:github.comorhunflawzarchiverefstagsv0.2.1.tar.gz"
-  sha256 "a20fd49a2a69fce1bc248c40dc159569d8f5db9117e468af3c589b7dde3b16f3"
+  url "https:github.comorhunflawzarchiverefstagsv0.2.2.tar.gz"
+  sha256 "743b5b687b702ed24245111b988680b546fef479855309d87057ce6ac8ff465b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comorhunflawz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "993c8f052ec58ce4c1cee0c8e143713e3c15de025ccc614fe710da7d8bf4a723"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c1f3248134eeaed51ed4302fc2d6acf0a64d731055dbd2ecee5daf9259cd5a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0132d8b57a65e51e8996980491060d24acfffdf7dd0131783480ad6daf4f73df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "79fd53a760c4c3fbe63fbee93f153fca87b61eb0ef8ce63bc34ce4d92da88be9"
-    sha256 cellar: :any_skip_relocation, ventura:        "d32236ed1bf4a1cdc8f27ae86714721bc45bac217696fe9fdfb15e6347fe06e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "17d99e6393c85a86f88eab245c1c05d0d80fa0508b7cfd7921945f4bb7bbc45b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80f8d9c4b7537a3ac94e220814b473ae0a0810b573565c3c7e4ff3c6d6e1c080"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b19ab4fbb6411b2a2c870e0f6503e908c1002e3ba1226e88326c05f5dcdad84b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0ffb604c728350b02f048cf73a8244d3e8f22c0dd0b7f3877967fa604f5aed8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18b1de55cdc164a2867875556b275fbd1da985f8fbd1b68b49d858b1c9e9c023"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f376b5b28925674a8a5a4040b5b6412ad583980f8f10d979c81b34fc4427930f"
+    sha256 cellar: :any_skip_relocation, ventura:        "bfee18af52a59af4fc11f6ffca201a358a4321f381db0c6c35dff8cf9815665f"
+    sha256 cellar: :any_skip_relocation, monterey:       "2897e6cffcb9d31f2987c967876b138038b1ed94c0b1bcf537af2804936c9f36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68a195329fff395c89e34b535c7ee89a09e4f8133cde2b96013b175ba2e0c6dc"
   end
 
   depends_on "pkg-config" => :build

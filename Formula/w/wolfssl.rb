@@ -5,6 +5,7 @@ class Wolfssl < Formula
       tag:      "v5.7.0-stable",
       revision: "8970ff4c34034dbb3594943d11f8c9d4c5512bd5"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comwolfSSLwolfssl.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class Wolfssl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f3f5722adb7e5894916733b6057e0d6b0cd1e396ef25247178fffebe4f24de54"
-    sha256 cellar: :any,                 arm64_ventura:  "a02e95cd80bb1449b1c5d99980eae6e523c17db8288700fca3a9c93bd2fe30f7"
-    sha256 cellar: :any,                 arm64_monterey: "8a7b1552e6a8ddadbdc8503bca1491d8a9a9aee539e25eaa2b2706e77e1e1485"
-    sha256 cellar: :any,                 sonoma:         "d768072f12162da9d0b6a687fd5d3acc4ee71855dfee7a54fd0e4be6d92bd785"
-    sha256 cellar: :any,                 ventura:        "9bed028e5e37b2a4356a26fd119dfe5043a8fb58489c507645bb4beece5e543a"
-    sha256 cellar: :any,                 monterey:       "18cd06b3f18e2a09b00ba633b00dcec16b8a94ffd45b2bd1c091e688f9bfe801"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85ce871f71dc0d62e530d3ff12ec1a1de7b8016f96ad7e8f8fc9e56b9aea3a45"
+    sha256 cellar: :any,                 arm64_sonoma:   "8671c05a8465056ffbdc5a87296f5249893a1266fd9c8a47e08f87665f389137"
+    sha256 cellar: :any,                 arm64_ventura:  "813adbbc241825a546600e5979d735e35c66650e5b10e65a72ccb9df215ddad0"
+    sha256 cellar: :any,                 arm64_monterey: "ced44d6feb28ef0d5b333b9a55a70cd8585c1d4f2c03feba2d42953fb6bd7bac"
+    sha256 cellar: :any,                 sonoma:         "508a6def8973c2a78258367aa2ac006d5273beb0ee47a7b811fb645f0bb4d36e"
+    sha256 cellar: :any,                 ventura:        "f75479122307d1e9bc07189b31a5ea42deae5fef3c63fdae00f3937e125ad3f5"
+    sha256 cellar: :any,                 monterey:       "61411684303a254b166bfb7cc790a890a7b5ba17eb2100defcfc44498f50766a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5417bf3989db7d5e39ce37f14aaf3b45a295b17e0dd6a160dc3ae4e04bc364a4"
   end
 
   depends_on "autoconf" => :build
@@ -44,6 +45,7 @@ class Wolfssl < Formula
       --disable-webserver
       --enable-aesccm
       --enable-aesgcm
+      --enable-aesgcm-stream
       --enable-alpn
       --enable-blake2
       --enable-camellia

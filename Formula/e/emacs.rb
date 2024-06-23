@@ -1,20 +1,19 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https:www.gnu.orgsoftwareemacs"
-  url "https:ftp.gnu.orggnuemacsemacs-29.3.tar.xz"
-  mirror "https:ftpmirror.gnu.orgemacsemacs-29.3.tar.xz"
-  sha256 "c34c05d3ace666ed9c7f7a0faf070fea3217ff1910d004499bd5453233d742a0"
+  url "https:ftp.gnu.orggnuemacsemacs-29.4.tar.xz"
+  mirror "https:ftpmirror.gnu.orgemacsemacs-29.4.tar.xz"
+  sha256 "ba897946f94c36600a7e7bb3501d27aa4112d791bfe1445c61ed28550daca235"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "9df5c8fc4bf416fea8965b256ec49ec12d4d3693a369fde29fa5a9f4b304d0af"
-    sha256 arm64_ventura:  "1092605e902ad642d7e3346a9fe6605899f10f408a2d2c3b50d7d8408aa53e3c"
-    sha256 arm64_monterey: "01b043bc1eee38a606999e148a74bd29d9bf0763baf3cb6f8f1477fd7324a77a"
-    sha256 sonoma:         "f955eb0981734a52a9ef168d6d2a3946ed406f2eec177caba985743427335f5d"
-    sha256 ventura:        "41fc10312eb60e46f41e948617d41f16b32f4365b24fe9c0b8eef03827060fbc"
-    sha256 monterey:       "90826084a843438ab493370b0fb2ebd82d4431ab13d962b68febecc4955adeaf"
-    sha256 x86_64_linux:   "c09767110a53ddb890f83b6169f683df28b2c02f4a5ed4085c957575be7a258a"
+    sha256 arm64_sonoma:   "20e7866b16eaa06b26353cafaf9711eb1666617c22fc4b49ed04e3049e6d569b"
+    sha256 arm64_ventura:  "8f8df523a30e54eb217adc577d6618c9c2d1da1718a15050b6921d9076fa7ca8"
+    sha256 arm64_monterey: "894efa66a9caa6f2e20de12cea7d67f1709d94d702485ae7bbf472e25243cd32"
+    sha256 sonoma:         "5b900dc9417f61ce1cc348df7e6d5c3fcfb3fa82254473379b3883f097633b29"
+    sha256 ventura:        "88d3bf3ff1d9d7b10bf2c19bd4dda3143f9b886887f5e22a867725a5d000f276"
+    sha256 monterey:       "a5be71f542b675dd3eb4d7aee4ea94d42446c984813284c04ad7f70bc7059d2d"
+    sha256 x86_64_linux:   "75407dd7ca74edf2fab75546fd7a387c6477a360fb5ffb7ba63ef38b53ff0a71"
   end
 
   head do
@@ -22,10 +21,10 @@ class Emacs < Formula
 
     depends_on "autoconf" => :build
     depends_on "gnu-sed" => :build
-    depends_on "texinfo" => :build
   end
 
   depends_on "pkg-config" => :build
+  depends_on "texinfo" => :build
   depends_on "gmp"
   depends_on "gnutls"
   depends_on "jansson"

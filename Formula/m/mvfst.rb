@@ -1,20 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https:github.comfacebookincubatormvfst"
-  url "https:github.comfacebookincubatormvfstarchiverefstagsv2024.06.10.00.tar.gz"
-  sha256 "cc75889429a66463cc8e607ba09d584fb4e6d2e69b1127a538043b367c54a1ae"
+  url "https:github.comfacebookincubatormvfstarchiverefstagsv2024.06.17.00.tar.gz"
+  sha256 "748c744dae967a0ac25c89a6c7ccf62da2a4974ab45644d395fb7bc8f2e96dc1"
   license "MIT"
   head "https:github.comfacebookincubatormvfst.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "9807ead1cdec9312a434233435915fda38753b493388e1f0b82c34fa6b0c199e"
-    sha256 cellar: :any,                 arm64_ventura:  "9f42fb882a4e8540c22f5dcf79b2e68f490a448b40f5680f0162820b9c0309b3"
-    sha256 cellar: :any,                 arm64_monterey: "ac6755ede44509df56645d868996f13ddb30b19d0b02a530df0bfafb97eda66d"
-    sha256 cellar: :any,                 sonoma:         "1ffd22b3b7e2096da6f958ef83df50383823b83a6a119beb071ff2c7c2241ddf"
-    sha256 cellar: :any,                 ventura:        "4a33a960b8b47c1d1f2ecfb85e37bd339782010d5b5e916663aa00bf2120884b"
-    sha256 cellar: :any,                 monterey:       "2030ecb20eac98ff8a1c1d3e6afd87b4f217a14631f5e07ea3389a78a62c6859"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b877a36eee9be92c9ad14980a4bec394eabca3c30f0b947632c10e6dda498642"
+    sha256 cellar: :any,                 arm64_sonoma:   "b12d9bd96d7dc7c8e032aa2513f49e128ed902e2c5bf25c22ea69ee6c4aac1ad"
+    sha256 cellar: :any,                 arm64_ventura:  "98aab8e35c6f28cb55f354e2adf37ea3c6298b2d6b2f71e6861842d6680cd36f"
+    sha256 cellar: :any,                 arm64_monterey: "747efae3909bef9f2c3d454e9b67c67527332374fa4c57370de2841d7b9b2ef4"
+    sha256 cellar: :any,                 sonoma:         "a6293d32a221beb469cf4935c70fa4ea3996e4a9139e1a9a6a7614dd6b1cf43e"
+    sha256 cellar: :any,                 ventura:        "a699bbf32480facec8b89be5b2c415e9b6ab85fa47c85400dfb1d5aa274050b7"
+    sha256 cellar: :any,                 monterey:       "9b682f3eecdc10d77921f5d87a38dadfd28aa79da4f8f9de4f2c5c84bd1dd878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6a0de751b0df364efbe733bd4e0f0e61b27287d3b1e37e9a121769dc30b61af"
   end
 
   depends_on "cmake" => [:build, :test]

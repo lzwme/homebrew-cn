@@ -1,20 +1,18 @@
 class Vivid < Formula
   desc "Generator for LS_COLORS with support for multiple color themes"
   homepage "https:github.comsharkdpvivid"
-  url "https:github.comsharkdpvividarchiverefstagsv0.9.0.tar.gz"
-  sha256 "325f16df916e4192d56d589839be474801ffd3d6a105f4a1a033221570ff6b56"
+  url "https:github.comsharkdpvividarchiverefstagsv0.10.1.tar.gz"
+  sha256 "88db6158dad60aba66ae16f2cd1b09f515625940a33bada65da5562a03538e49"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61412a36f2a42c2d0ab30c8ea1adc1e74de5badaf19c1df610b07226e676d767"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f381730f7272be8cb2c0896b0fcb916151d84fb9ab83ae47a43783eef512be4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "200ceb9a2a92ab5e15dc643e673e87222842a41ab69dbb90fc7c016bba5859cd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ce70c826e792f2d5714c786c36b77cc596771a4bc18f17bc1ca22a3afca1e6e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "569b9d8465b9b8562f82823db4fcb1f3aa9f68b532d6491d1355771ea7c44272"
-    sha256 cellar: :any_skip_relocation, ventura:        "420da5ade8bab468f57d324ff8682f5ba5bcc3c2333df6c89f1db0cb512a02d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fd20145df51c6f4f0c561099cbba404799be68f99c3df2d252eb18dd550c958"
-    sha256 cellar: :any_skip_relocation, big_sur:        "83479305aab8f669f1d6a5d7cbe7b5c4bb1eaba14f4322dfefe3fcf73c633cc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0adb4dfe18c2d5fe5ef4d84d2b1334b64d3f311d307905bc25c28afdb8feaef3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9428a55dd427e7f69fd5d2bca9ce9ed2facc3f9a46dcb88eef94c2262ef16fae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b836a81f247fdbbfdb40cdb637b8da247189d6bdcd47d12fef66c8e45782bd1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "560ecb779c10ccaef4b429f834b9003a105e6624336ef79547a131479ecc378e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6de93d50a62ed34f7b448db4620a765f2084ba538b611c0cffa45ccc3be4c0ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "21e4d0ad3a7c823273dccbb76b0de6769eabc4b4623e69416f0624468e45ab4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "457741bc68092d77ae065c74392404f8a1fb401b6e9aec6a07bf77b61fd89f06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ad36619ada9c224b6f245fed8f79cf39b69e343d223917bd816a1fa873bcdf"
   end
 
   depends_on "rust" => :build

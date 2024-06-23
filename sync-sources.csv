@@ -230,6 +230,7 @@ Homebrew-homebrew-core/Formula/a/arturo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arx-libertatis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arxiv_latex_cleaner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/as-tree.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/asak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ascii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ascii2binary.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciidoc.rb, Homebrew/homebrew-core, 1
@@ -1349,6 +1350,7 @@ Homebrew-homebrew-core/Formula/d/dnscontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-wrapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsdist.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dnsgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmasq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnsperf.rb, Homebrew/homebrew-core, 0
@@ -1804,7 +1806,6 @@ Homebrew-homebrew-core/Formula/f/flowpipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fltk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fluent-bit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fluid-synth.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fluid-synth@2.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fluxctl.rb, Homebrew/homebrew-core, 1
@@ -5095,6 +5096,7 @@ Homebrew-homebrew-core/Formula/p/puf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pugixml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulledpork.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pulsarctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pulumi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pumba.rb, Homebrew/homebrew-core, 1
@@ -5144,7 +5146,7 @@ Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyright.rb, Homebrew/homebrew-core, 1
@@ -8568,6 +8570,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans-collegiate-one-sc.rb, 
 Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans-collegiate-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans-inline-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans-pinstripe.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-alumni-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-amarante.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-amaranth.rb, Homebrew/homebrew-cask, 1
@@ -9632,6 +9635,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-mako.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mali.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mallanna.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mamelon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-maname.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mandali.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-manjari.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-manrope.rb, Homebrew/homebrew-cask, 1

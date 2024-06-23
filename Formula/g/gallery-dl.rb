@@ -3,20 +3,19 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https:github.commikfgallery-dl"
-  url "https:files.pythonhosted.orgpackages3a5a2648a7a0d090170be8b0009ffa3edc738c0c93cfdcaaa0c82982b01b61f4gallery_dl-1.27.0.tar.gz"
-  sha256 "ccc8a61e3697830392b7c1db49e738a34cb77bd5dfead145888e0acecacff39d"
+  url "https:files.pythonhosted.orgpackages10ec7de9022ddbf799978c78511475ee15139ee5fa4f8ecadda1edc766dcbac1gallery_dl-1.27.1.tar.gz"
+  sha256 "4b5445d05349fe8293c2af525d720e9ea04856218860156ec4f8d5ffa7db795f"
   license "GPL-2.0-only"
-  revision 1
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6d24d8d4828d7f747f873cd1b24b53e72c361375d46ba4315b32165a7297eebe"
-    sha256 cellar: :any_skip_relocation, ventura:        "935761a5ca6cc1e4b177926735a668f659271bdd80d304b511eb118e4ba8660a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f498c78a092c51bbd9c50df09181cea2ff9575ff94fb81baeac8c432e08a20d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdb1e5249ca8e9e6495157b309492283402599a183b24d449680a74dd3b5225d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, ventura:        "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d955d5a68f73e18aafd218b36dd9b2368c0a4d291ec71c8010e6e085702d2ed0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe99f9e6db21183f027a4af2f11cc8df0296a2ce185fdd7d781fa1404be2378e"
   end
 
   depends_on "certifi"

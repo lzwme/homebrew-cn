@@ -24,4 +24,14 @@ cask "inform" do
   depends_on macos: ">= :mojave"
 
   app "Inform.app"
+
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.inform7.inform-compiler.sfl*",
+    "~LibraryCachescom.inform7.inform-compiler",
+    "~LibraryHTTPStoragescom.inform7.inform-compiler",
+    "~LibraryInform",
+    "~LibraryPreferencescom.inform7.inform-compiler.plist",
+    "~LibrarySaved Application Statecom.inform7.inform-compiler.savedState",
+    "~LibraryWebKitcom.inform7.inform-compiler",
+  ]
 end
