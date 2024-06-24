@@ -3,27 +3,27 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https:git-cola.github.io"
-  url "https:files.pythonhosted.orgpackages0143b01b5d1ae4b0b2adf7fb1c796bcc4860976a3a802d57a283e3d44b8680d5git-cola-4.7.1.tar.gz"
-  sha256 "991af316f6b308ae9d423b1c3afe0bddcbdbe5f67591cac76a0fce3a20625dfd"
+  url "https:files.pythonhosted.orgpackages6b34fd3f893a2b58c8c51b22a3ea411d6f7040ba4816311b2befdfcc515e18b1git-cola-4.8.0.tar.gz"
+  sha256 "86971d6f386a70e1e7d35e8c2f57cd586cb81986ec8ca099cb93412142bbfbf0"
   license "GPL-2.0-or-later"
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eedda9d6acb1387a846731597c17390857d0bc4eeb4534e2d45e5549b7f53878"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eedda9d6acb1387a846731597c17390857d0bc4eeb4534e2d45e5549b7f53878"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eedda9d6acb1387a846731597c17390857d0bc4eeb4534e2d45e5549b7f53878"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9f8baf1e20b4e9f057fa0be7f49800a4c771844f2aa7d8711f0182326aa6d82a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f8baf1e20b4e9f057fa0be7f49800a4c771844f2aa7d8711f0182326aa6d82a"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f8baf1e20b4e9f057fa0be7f49800a4c771844f2aa7d8711f0182326aa6d82a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7a4eaaeb3460c229c2df92f1f2fa89169cdd7d065657b56ddb0af5f4ced6303"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6aef417eb7419252c60d477676d3140851f293a57ed336d1295c48fd22afa793"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6aef417eb7419252c60d477676d3140851f293a57ed336d1295c48fd22afa793"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6aef417eb7419252c60d477676d3140851f293a57ed336d1295c48fd22afa793"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0c79cc0fc38f430ee823a6c90f2edd3e88250eed6a675b1ef79213de746a36da"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c79cc0fc38f430ee823a6c90f2edd3e88250eed6a675b1ef79213de746a36da"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c79cc0fc38f430ee823a6c90f2edd3e88250eed6a675b1ef79213de746a36da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4ab3043d96fab95baecb8d5f93410400515a3a34ee1d80c9827ffe3966a008a"
   end
 
   depends_on "pyqt"
   depends_on "python@3.12"
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "polib" do

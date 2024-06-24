@@ -3,8 +3,8 @@ class Cups < Formula
   homepage "https:github.comOpenPrintingcups"
   # This is the author's fork of CUPS. Debian have switched to this fork:
   # https:lists.debian.orgdebian-printing202012msg00006.html
-  url "https:github.comOpenPrintingcupsreleasesdownloadv2.4.8cups-2.4.8-source.tar.gz"
-  sha256 "75c326b4ba73975efcc9a25078c4b04cdb4ee333caaad0d0823dbd522c6479a0"
+  url "https:github.comOpenPrintingcupsreleasesdownloadv2.4.10cups-2.4.10-source.tar.gz"
+  sha256 "d75757c2bc0f7a28b02ee4d52ca9e4b1aa1ba2affe16b985854f5336940e5ad7"
   license "Apache-2.0"
   head "https:github.comOpenPrintingcups.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Cups < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6a422caac35339a78ab915377420845691c996897ee70f263a55441adce3ff4d"
-    sha256 arm64_ventura:  "f1b35ba4669add4508510461a4bd0a9c0cfa5b42443e56a139f6f3a9e0f186c4"
-    sha256 arm64_monterey: "878d53ad48759782369cb1572f3b5add05497eed519397d8f11777eb873c4b96"
-    sha256 sonoma:         "6e848623922fe67279d3522d95c24bf3eabaa15b6c1c7d4374d07b34f387eba5"
-    sha256 ventura:        "298efd746551946e1f84dd77c01fc37da3a673fcc436c26ec601c43e0678f7cf"
-    sha256 monterey:       "9cd6e7ba8147debb860e2046aaeee087e7d3b738829124135dc110c3193965ec"
-    sha256 x86_64_linux:   "c02a0668434c3e2ef37c35a62f23c6e9f51927067ab7ff7c05ea9ec868bc3e58"
+    sha256 arm64_sonoma:   "58df6136f3aa5f3a1d634892ee4b742e5170f6aaa7b91ab8ca041af5baf5cf54"
+    sha256 arm64_ventura:  "bd58946f6e800d91d6a08cafe8910941885563a70855356ff21777bcd7f17ab1"
+    sha256 arm64_monterey: "2846fedb1ef7d4333ea499a08fbb267507633089d5152a68df6c07ca90709889"
+    sha256 sonoma:         "fac480f1a065d47433e18718383686596d7b646902afa45b14fd50ee7c61f63b"
+    sha256 ventura:        "67251db05865a0bab70a1d3ad170eba578b031b034b82012b5c78dd49c37cfbf"
+    sha256 monterey:       "3c488b7f512b7122c274465d849b023bb1c906c57d46ef3a60ee52fd5510aa15"
+    sha256 x86_64_linux:   "6a3a570c6a30876b79da8c94e64f0e75a523a24ee6146adb7cc4d4cb8835db9b"
   end
 
   keg_only :provided_by_macos

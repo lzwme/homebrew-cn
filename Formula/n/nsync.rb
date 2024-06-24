@@ -1,18 +1,18 @@
 class Nsync < Formula
   desc "C library that exports various synchronization primitives"
   homepage "https:github.comgooglensync"
-  url "https:github.comgooglensyncarchiverefstags1.28.1.tar.gz"
-  sha256 "0011fc00820088793b6a9ba97536173a25cffd3df2dc62616fb3a2824b3c43f5"
+  url "https:github.comgooglensyncarchiverefstags1.29.1.tar.gz"
+  sha256 "3045a8922171430426b695edf794053182d245f6a382ddcc59ef4a6190848e98"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53f2cf85e2100cddd876d48d8dc6309daa08cd0867d603a6c0b658c0f295c893"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f12bfbc372ffce6a7888a33cc6aa4b530555b2599e78308945155fc4e11a27f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca0be2891d0afae87ab685a5e711e6866340aa7d61b56c8e2fe26a5876fe98b4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f10dcc6b4e4505ad404dd34f56b1aa6ff7037f6379b7a7af5f3565a5d912438b"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb85df0493e20b08d1a46d81e668497487ba441e4b509df4486c6b5b2855ed4a"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c4acee3fe1279a69bff756fe73b3b88a6034c4a9a493c3377e440987869d144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d035281fdf1cc4be9a3d568c1a2aa6d25c0d3d10c8d5ae2403e1ad591da51a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e26d4118f7cc103d115354063badfaaacb688bc4f062ce8a1bcabe0e931db7b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c5f9305a3cb9b6a55b79b5adc122b5fd7cf30006b759c31df99f44376416f4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bece1cb9c8c2f20eaad4334b06ac302de5f6ae681555c00cb9cf7c8f11cd307a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "43d08a39236f457c376c52c24e9e756465177b0efedda2b26a871ac933082800"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b97786bc28199bad573f7be75b0172d54ac3d0f002cf620838814d14ea9f8da"
+    sha256 cellar: :any_skip_relocation, monterey:       "3421d2bf00a82dc25a91626f290cf18477044516426e4b96cd5580ff4d4c1f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66c86b79bf451db5a5e1744cbae4903610519a06ad644b1cb8ed7e3f4dbd5bf0"
   end
 
   depends_on "cmake" => :build

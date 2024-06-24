@@ -13,4 +13,9 @@ cask "pppc-utility" do
   app "PPPC Utility.app"
 
   uninstall quit: "com.jamf.opensource.pppcutility"
+
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.jamf.opensource.pppcutility*",
+    "~LibraryContainerscom.jamf.opensource.pppcutility",
+  ]
 end

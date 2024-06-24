@@ -1,13 +1,13 @@
 class KubePs1 < Formula
   desc "Kubernetes prompt info for bash and zsh"
   homepage "https:github.comjonmoscokube-ps1"
-  url "https:github.comjonmoscokube-ps1archiverefstagsv0.8.0.tar.gz"
-  sha256 "7e57dc42d60f6c18fc1c814800c74b0ffb4e6f9d8e2b53f6f40bd7076f6c50a0"
+  url "https:github.comjonmoscokube-ps1archiverefstagsv0.9.0.tar.gz"
+  sha256 "f922c24eb4a6b41d1cd7839ac419a704694686c21472d9687da1592951d32681"
   license "Apache-2.0"
   head "https:github.comjonmoscokube-ps1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e5d9cf3512efbda9b7fcbabd2726adbee97ae8c38596835197f648b14b7d94ab"
+    sha256 cellar: :any_skip_relocation, all: "8b7dbe43c977fc6410a1c076cdd9d488a42201b62be6389e0f09b63030bf5e1b"
   end
 
   depends_on "kubernetes-cli"

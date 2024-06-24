@@ -1,6 +1,6 @@
 cask "archivewebpage" do
-  version "0.12.1"
-  sha256 "2db8f1cd05a93687f939bf8d5730c0f336542b36443be23a435499b1f92a4981"
+  version "0.12.2"
+  sha256 "cc6198229baeef7afab9210dd20a0cdd96d0fc4b50605e83a86a72dcdf610d64"
 
   url "https:github.comwebrecorderarchiveweb.pagereleasesdownloadv#{version}ArchiveWeb.page-#{version}.dmg",
       verified: "github.comwebrecorderarchiveweb.page"

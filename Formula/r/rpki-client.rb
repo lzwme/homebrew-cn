@@ -1,8 +1,8 @@
 class RpkiClient < Formula
   desc "OpenBSD portable rpki-client"
   homepage "https://www.rpki-client.org/"
-  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-9.0.tar.gz"
-  sha256 "c364e38ba5501a36540521c1a76169dd9356e48dab941ae4147d155d2d55e12a"
+  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-9.1.tar.gz"
+  sha256 "0e8248d079401df6f18b41de13694452a147dff252db6b9a76bdc3cdc5ca2b0b"
   license "ISC"
 
   livecheck do
@@ -11,13 +11,13 @@ class RpkiClient < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c4270d290d79712df8741d40f951c5a8e4821c55617ed5bfbcc353cd9043055a"
-    sha256 arm64_ventura:  "7447e09c8e99d9b7fd6cc6558688003dd91c28684d4404ff4d76e6299e0f7e4d"
-    sha256 arm64_monterey: "240a4e16595400b7965dc80740298cdbbd2bed23d77c8e447446139916141c01"
-    sha256 sonoma:         "c52a0d0a0911171c74961e0164378a361d84e397b1b061a084283a8d8cae3740"
-    sha256 ventura:        "794670d49718efb46b96ae32dc124a311493fe8055b3ea941496f15c6de2ff7a"
-    sha256 monterey:       "5512a4a3200a556538f2f952317cc07c4227c54f54bbdd9cdc7c78b4b27d2228"
-    sha256 x86_64_linux:   "35b6f3c091016fde67bed1add82ace5b171626ba142ca3d4e3257982a34f858c"
+    sha256 arm64_sonoma:   "bf1db5429aa4d2482a107f5ea5f4f5f7b169c1786952d92be87c5d881750694e"
+    sha256 arm64_ventura:  "0e849d292abbf70546fe580453ae7902decedc5b0f062ba0c4b802a760c5a57c"
+    sha256 arm64_monterey: "cd478dc811244dc35e0d95c815cd3149cb458967f8e217651ed34f21525edd8a"
+    sha256 sonoma:         "42b738e49407f19f168b1bdc405713372558496c547db0392f8e9f6806e32c8c"
+    sha256 ventura:        "751eeb621d46a9e15e0ae18e17e5bf59abffc03fb43c0a5ae25d178ad82545f0"
+    sha256 monterey:       "46214825406cea8ad26171b590dae4577de609d27c0cd13ad3fd40352b9edada"
+    sha256 x86_64_linux:   "0e8ae78ec8c6ffe411677db1c6e9e6dcc4eb1e0afc2c302f663d0792a070f2d8"
   end
 
   depends_on "pkg-config" => :build

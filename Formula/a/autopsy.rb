@@ -25,6 +25,9 @@ class Autopsy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e1ce8b5147639d7737a4013030ee2a059d1b8dd4657554e08e9423a9a6b2f66"
   end
 
+  # Installs prebuilt binaries, broken on arm: https:github.comHomebrewhomebrew-coreissues175053
+  deprecate! date: "2024-06-22", because: :does_not_build
+
   depends_on "sleuthkit"
 
   uses_from_macos "perl"

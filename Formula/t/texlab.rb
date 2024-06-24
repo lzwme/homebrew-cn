@@ -1,19 +1,19 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
   homepage "https:github.comlatex-lsptexlab"
-  url "https:github.comlatex-lsptexlabarchiverefstagsv5.16.1.tar.gz"
-  sha256 "f9bdf5511b184bca41610be6d5eef74fb8042b758b2ecf79bce266085d8bc045"
+  url "https:github.comlatex-lsptexlabarchiverefstagsv5.17.0.tar.gz"
+  sha256 "d21868a912b3ba1ca037d1df537dfdcecbbda3a3436529dc0634cacee302d8a9"
   license "GPL-3.0-only"
   head "https:github.comlatex-lsptexlab.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04a67337078cf18113d95fd9c0610445ba35acbc1bc4af30661d34ab4f4c88a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "062307da6afc5c97a3be1e4dace4745bf4a0d05a74b65451a9e004e6253bac76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec76382539b2571b2516f7dd6027bc28aa3a3f57d09023b15dcd1fee390ec2cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f54d4ed5f4cf0e18eddbe1d6978f342cd240681da6b6b40197e2d84c8bf22254"
-    sha256 cellar: :any_skip_relocation, ventura:        "dde204b09943c8b54a9a8408d39375853c863139d71e262d58644be5fba69849"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbfaee7abaab7e2a335c405d95162f5ebbd2ea84a1ba5dd72b8ecca4b654d420"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "454e8b5836d18009df5ffc28f18fd7cf4f76b7a300992df4b9007c4b9c08b4b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f29ea57dab4932b810b951ca7107be82740a7ca56d10f64fb94593929247da1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e402eaef206ad2fbd6043721c8e845ba180158f74f48ec56b55092e42f3880c8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c914201ce2f9e5e7d5bfd585fa82eccbb65236e71e68829ccd9a9ac50d33f401"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c685585418837d831fb40f1fc1fca88204eb37da8c190b2f7c17967bf1857824"
+    sha256 cellar: :any_skip_relocation, ventura:        "d03078164f8f48897213958b50aa808330c05f3b9b7ca7a91290d72490fba838"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b841a2cffc720f7b7fc03b341fa6d80a13d3abcd81276085c508368b7a55a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "061653e3db3c3ad36497cc8dc8da5f54265601d1fba502f4693e730f1f5807a2"
   end
 
   depends_on "rust" => :build
