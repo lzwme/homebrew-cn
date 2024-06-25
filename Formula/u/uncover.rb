@@ -1,19 +1,19 @@
 class Uncover < Formula
   desc "Tool to discover exposed hosts on the internet using multiple search engines"
   homepage "https:github.comprojectdiscoveryuncover"
-  url "https:github.comprojectdiscoveryuncoverarchiverefstagsv1.0.8.tar.gz"
-  sha256 "b88864edc8832b70135191ea7fbd4b8e89a6acc2a4c923d7382a9413b21016e7"
+  url "https:github.comprojectdiscoveryuncoverarchiverefstagsv1.0.9.tar.gz"
+  sha256 "21da033571b5f726b22bbe7146cc334ca32b76ae4d39cb43066565ec3d38c3f1"
   license "MIT"
   head "https:github.comprojectdiscoveryuncover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91796fb8db26506fdf1608af91807e13ba23f13196acd8e3dad10f5fb55eb601"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "580f00912964beee231517b5808223df7c30d473a8324e76f6dd1a1a90d7460b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb0bb67117e33995235734fa51d921f7ea30039dd0c166a2fb5706710fee7627"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74e0773aac9aac907689317a59a54aa7761b98bb065f2f34d51b90432be4ed59"
-    sha256 cellar: :any_skip_relocation, ventura:        "5fd6739975efa0739f824c0a11354c030200617093fc4a86ad7477fc9376b3b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "72c4968f8dcb504a319b0c747bffcc93a2553dc387590788ddd10a349cc879c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73455eeed5a1cdc4475a250d46c94fc3981ab9f1c8c3f57e22dc8e5c281c11b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b99ac4fa55dffd880206929630abc2755c282c9fa1445ff95429321e7eeb60f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18c1721e4c516753727c64d3fe64e00c37a287da791f4a0c4de0581598100ae8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de26a7df9ae03999cdaf0159c5a72f6faaa477239478f591596c7f125e9f96c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "265a89787b78a1a13630d6881c88386b5930b33c37bbf91ab2bf7fb42fea4f11"
+    sha256 cellar: :any_skip_relocation, ventura:        "99c1cace80bc709fb90f21eb82c53cf190e2bed766f27cde0a3de643689c339c"
+    sha256 cellar: :any_skip_relocation, monterey:       "185eee6fea59b74b83f5eab5e05ab1e106cb9f5cf1168e40427c4a903927409a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c335651058751513043128d93159c82ec19c72250ab3f79f84197c0a795a230"
   end
 
   depends_on "go" => :build

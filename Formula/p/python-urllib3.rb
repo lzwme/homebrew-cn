@@ -15,7 +15,7 @@ class PythonUrllib3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a93d805dc32d35932eeb16e26b24bf513e53815cea88aada3d5da426bf91fa07"
   end
 
-  deprecate! date: "2024-03-14", because: "does not meet homebrewcore's requirements for Python library formulae"
+  disable! date: "2024-06-23", because: "does not meet homebrewcore's requirements for Python library formulae"
 
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]

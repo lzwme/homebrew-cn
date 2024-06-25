@@ -12,13 +12,14 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ff9a8d7ec44f4e9b954190108144021bbb6a3121c203381c714e608826a14aff"
-    sha256 arm64_ventura:  "a91084586bc1d366602537146c69cd3ccebd67cf2f7779308ecb9e0940e76f6d"
-    sha256 arm64_monterey: "9d8c2be2139f7266f3561a187d4e6cb60189460f7ad14be3102fa57badc39a8b"
-    sha256 sonoma:         "5d28cee03b27355159ca32ad9a2d9820042b48f19830acec480d8b8adc0ade25"
-    sha256 ventura:        "24d2a49356fbafd314432923341f2bb9cf740acf6f223e8094f116357660fe1d"
-    sha256 monterey:       "954f4bae6843535c027cd0b5f0079a7d7b184a2f5dbec12c13cd1f3c1007770c"
-    sha256 x86_64_linux:   "bf5ff1ded3a3278e08aa5257389840c28fc367b29721d4d0d979195de339006d"
+    rebuild 1
+    sha256 arm64_sonoma:   "e04800f099c12ada07e8625f7757acfdbb1c0c4abd6477dac0760ac99f444e36"
+    sha256 arm64_ventura:  "5fd9337e1f56bb567c015192b8c25999171ab8f943b7bdab1976909195b17806"
+    sha256 arm64_monterey: "c4812d68cd125bfcfb3f908847cf105c2da57680ef8aa5a287b939d6253f3a5c"
+    sha256 sonoma:         "f0a48b5fd21760881ca66f5a22e62bcad06491b5cff5a2dabd81830aca7b1202"
+    sha256 ventura:        "309f70806ef8f8a12dede36dddc2ce647d4efd919ed090a309bf1311aa33b10a"
+    sha256 monterey:       "5034cc84b797746c6ecc0f449a73e5bf0630c20fd6338622271b878c2a373e3d"
+    sha256 x86_64_linux:   "7624f5c22f908474dd90db64ddb9b1fdd8a752b3357a8def079fb28b405b063e"
   end
 
   depends_on "cmake" => :build

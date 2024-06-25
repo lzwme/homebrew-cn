@@ -15,19 +15,18 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "26f9d814bbbd7350ec8c8c5e395be911ed5ad95f72f3e38e8c5ff9e25095c741"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "37c5191a09303f9ae07489a6f81c1e9cd71460bff583a860cfd352d67ba2b871"
   end
 
   depends_on "cython" => :build
   depends_on "pkg-config" => :build
-  depends_on "cffi"
   depends_on "cryptography"
   depends_on "libffi"
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"
   depends_on "python@3.12"
-  depends_on "six"
 
   resource "apsw" do
     url "https:files.pythonhosted.orgpackagesc3e12773d8d993eb39d5cbe92f376b5d2454c66e458ebf5e6a110c094d2aa749apsw-3.45.3.0.tar.gz"
@@ -42,6 +41,11 @@ class S3ql < Formula
   resource "attrs" do
     url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
     sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+  end
+
+  resource "cffi" do
+    url "https:files.pythonhosted.orgpackages68ce95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91dcffi-1.16.0.tar.gz"
+    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
   end
 
   resource "defusedxml" do
@@ -92,6 +96,11 @@ class S3ql < Formula
   resource "trio" do
     url "https:files.pythonhosted.orgpackagesb4514f5ae37ec58768b9c30e5bc5b89431a7baf3fa9d0dda98983af6ef55eb47trio-0.25.0.tar.gz"
     sha256 "9b41f5993ad2c0e5f62d0acca320ec657fdb6b2a2c22b8c7aed6caf154475c4e"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "sniffio" do

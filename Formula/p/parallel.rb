@@ -1,9 +1,9 @@
 class Parallel < Formula
   desc "Shell command parallelization utility"
   homepage "https://savannah.gnu.org/projects/parallel/"
-  url "https://ftp.gnu.org/gnu/parallel/parallel-20240522.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/parallel/parallel-20240522.tar.bz2"
-  sha256 "67ed9fad31bf3e25f09d500e7e8ca7df9e3ac380fe4ebd16c6f014448a346928"
+  url "https://ftp.gnu.org/gnu/parallel/parallel-20240622.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/parallel/parallel-20240622.tar.bz2"
+  sha256 "37e210c907bd443c7d5b626071e815dc0d691d0652992b67d0c2acc34cbf38d5"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://git.savannah.gnu.org/git/parallel.git", branch: "master"
@@ -14,13 +14,13 @@ class Parallel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "191329637b017a09911260be1032aeef8516eeea938453c029bce0a1d1742025"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "191329637b017a09911260be1032aeef8516eeea938453c029bce0a1d1742025"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "191329637b017a09911260be1032aeef8516eeea938453c029bce0a1d1742025"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb8ba088077adb6aaa17f7913b529c31321966d5a98261b64abaacea3996b315"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb8ba088077adb6aaa17f7913b529c31321966d5a98261b64abaacea3996b315"
-    sha256 cellar: :any_skip_relocation, monterey:       "191329637b017a09911260be1032aeef8516eeea938453c029bce0a1d1742025"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "191329637b017a09911260be1032aeef8516eeea938453c029bce0a1d1742025"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, ventura:        "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, monterey:       "e4cba90fdb5ba15d44ae8ce5db63f33060a0dc604b050661c0e1db5346f04276"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e552c25a556a149172ff09f9733a5ccba5cc27c2074bcbae2128a615a0cbbb79"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"

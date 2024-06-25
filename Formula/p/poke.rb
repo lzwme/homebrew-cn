@@ -1,43 +1,55 @@
 class Poke < Formula
   desc "Extensible editor for structured binary data"
-  homepage "https://jemarch.net/poke"
-  url "https://ftp.gnu.org/gnu/poke/poke-4.0.tar.gz"
-  sha256 "02bab22cb1fa6153a1b6a927c8bb3cd58d508543c144842a6d7ee74f19973a77"
+  homepage "https:jemarch.netpoke"
+  url "https:ftp.gnu.orggnupokepoke-4.1.tar.gz"
+  sha256 "08ecaea41f7374acd4238e12bbf97e8cd5e572d5917e956b73b9d43026e9d740"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "02e57bebe24cec6dbaba007e04a2e6d6cb6aa172fdb983804cdd8bae28f67906"
-    sha256 arm64_ventura:  "fe36f17d923e77d806a5842aa959a169c758ef6210e474474286e627a60a4165"
-    sha256 arm64_monterey: "c7b5c78eb3f40b41043ac15198c96d73aaf2da34936d2c6bf2a2e255354423e4"
-    sha256 sonoma:         "1ea600135a0122f8f1ddd81e16f50dbd3fd2b4f39bcede73582c7939964f67dc"
-    sha256 ventura:        "a0882981400b9189ee697aaf9ace26295d9fd1bc7efae85c256530f94c32690e"
-    sha256 monterey:       "c15b0a7d14b79d222db210791851ee1e1ad4839d88fbcd99de998af9e682a170"
-    sha256 x86_64_linux:   "2fb77d8f1757a01f9267725a2202a9c9cb5808b9646bba2d0216c43b84b2b602"
+    sha256 arm64_sonoma:   "3d9297de5d81573ebd887c0cc4cd60708035243ffa76b4b55c017d209990d1f0"
+    sha256 arm64_ventura:  "9f7f2774471a422cf1e3d5e88c47a36e74464ad91ea3f5df85ac116f638bb6bc"
+    sha256 arm64_monterey: "47bfef8768ab688bf91baa185ded5e4a1a472a1cf9fe40f915c944dd7a31ac0a"
+    sha256 sonoma:         "0bee499d3c558c3e0356a8213253ca174d5e2df2ae652500b0fc1dd48cb81976"
+    sha256 ventura:        "596a59a1c0963fefafaae893abe5079ddaa406f8bc76bb37e9d059b7a0b0b0d0"
+    sha256 monterey:       "a27a1107d42548ba66f4b5a5c74cb5550d7696f0f7f3e4b97ba117eacbcbf065"
+    sha256 x86_64_linux:   "6187cd9c0982529ead1c5731fd77dbe30115053b96fbd9a3a6858b9c47bda753"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "help2man" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "bdw-gc"
   depends_on "gettext"
   depends_on "readline"
 
   uses_from_macos "ncurses"
 
+  # fix jitter configure script, upstream commit ref, https:git.ageinghacker.netjittercommit?id=b8a882e765e720fb9a4b66ddd9bdbd78f545ee47
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patches9db6349936a3cbaba02968015348e61833a917ffpokepoke-4.1-jitter-config.patch"
+    sha256 "5b9bb230c41b86e45d04813a61c4bea2492b885719e51e1796070ab95511cbd4"
+  end
+
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--with-lispdir=#{elisp}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args, "--disable-silent-rules", "--with-lispdir=#{elisp}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.pk").write <<~EOS
-      .file #{bin}/poke
+    (testpath"test.pk").write <<~EOS
+      .file #{bin}poke
       dump :size 4#B :ruler 0 :ascii 0
       .exit
     EOS
     if OS.mac?
-      assert_match "00000000: cffa edfe", shell_output("#{bin}/poke --quiet -s test.pk")
+      assert_match "00000000: cffa edfe", shell_output("#{bin}poke --quiet -s test.pk")
     else
-      assert_match "00000000: 7f45 4c46", shell_output("#{bin}/poke --quiet -s test.pk")
+      assert_match "00000000: 7f45 4c46", shell_output("#{bin}poke --quiet -s test.pk")
     end
   end
 end

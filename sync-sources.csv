@@ -191,7 +191,7 @@ Homebrew-homebrew-core/Formula/a/arb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arcade-learning-environment.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archey4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archi-steam-farm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/archivemount.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/archivemount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archiver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arduino-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ares.rb, Homebrew/homebrew-core, 1
@@ -347,6 +347,7 @@ Homebrew-homebrew-core/Formula/a/awscli-local.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awscli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awscli@1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awscurl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/awsdac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awslogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
@@ -799,6 +800,7 @@ Homebrew-homebrew-core/Formula/c/chamber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/changie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chaoskube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chapel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/charge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 1
@@ -3207,6 +3209,7 @@ Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm.rb, Homebrew/homebrew-core, 1
@@ -4969,7 +4972,7 @@ Homebrew-homebrew-core/Formula/p/podman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podofo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poetry.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pokerstove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy_sentry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polyglot.rb, Homebrew/homebrew-core, 0
@@ -5156,7 +5159,6 @@ Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0

@@ -1,8 +1,8 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.35.0-Source.tar.gz"
-  sha256 "16888fb6679b1e241f50b69f300ac50124a3192342ae2ea903d7621b664e79ea"
+  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.36.0-Source.tar.gz"
+  sha256 "da74143a64b2beea25ea27c63875bc8ec294e69e5bd0887802040eb04151d79a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,17 +11,18 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d47b00615ab84f7a09c6d0ddd325128a9bc0006d3412ecb26ac0df75163cfa1b"
-    sha256 arm64_ventura:  "2785624d6f4aa1a28d6dff906e771d9acbd16b08ab33250147a1169a1c1e8459"
-    sha256 arm64_monterey: "f53950785a13fe44aedb8f4690e421c48e7cdb1a3286a9f7dec5e06508c8fab2"
-    sha256 sonoma:         "421b5f55183f0c1de343041cc00ecb5a642ba97f26c318693c31d6dc7513877e"
-    sha256 ventura:        "54063555548f85c692e96ab5027a58dcced7e419e92b592ff87724e200786081"
-    sha256 monterey:       "61cc4d30dec0879381d0980050ebd8aefdb5ebe0b0e7795e92217f1a162cc5f2"
-    sha256 x86_64_linux:   "90e7ec4042c2fc479ba3714f244db4b63158cef9f928b8d6de4d2ac6cbd3d2a2"
+    sha256 arm64_sonoma:   "557e0ef44f04748e9d0e57453d1a968f68d66ada8640f0390715a556d19d13ed"
+    sha256 arm64_ventura:  "5dbefb6d63c3a46b83cc239813cb5c5c07d47ca70bc78abb5f7212962b54d530"
+    sha256 arm64_monterey: "9f7dc2f051ccb029df8915b382cb828cbeec3fd2545f19dfae07d13749521a10"
+    sha256 sonoma:         "73ec2c2a93384cdb7f12c27b4efbcdb3cbbb4ab233a4b84902ff0a48e7a2f7be"
+    sha256 ventura:        "4a16e7b8858ef4ee5dd697837d25b80054cccde0aa46b947e09801e1d6ec6452"
+    sha256 monterey:       "62ce82e1205ed31b790ac255fdd99975ccac4c7093bdf96291763fa8b90499bd"
+    sha256 x86_64_linux:   "aca7f1982b24d8a6e1b21e05f1ef711e7cb48833871979eda9bc5b1dbcc84dc9"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
+  depends_on "libaec"
   depends_on "libpng"
   depends_on "netcdf"
   depends_on "openjpeg"

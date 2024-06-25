@@ -15,7 +15,7 @@ class PythonIdna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8efe129e5a958477ceddfe5f1a6fa039924b4811a7315f2052b39d99eb27dc8e"
   end
 
-  deprecate! date: "2024-03-14", because: "does not meet homebrewcore's requirements for Python library formulae"
+  disable! date: "2024-06-23", because: "does not meet homebrewcore's requirements for Python library formulae"
 
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]

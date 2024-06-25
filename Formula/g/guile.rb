@@ -1,20 +1,19 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftp.gnu.org/gnu/guile/guile-3.0.9.tar.xz"
-  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz"
-  sha256 "1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d"
+  url "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
+  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.10.tar.xz"
+  sha256 "bd7168517fd526333446d4f7ab816527925634094fbd37322e17e2b8d8e76388"
   license "LGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "4cfcd9e34a96fe072bece6b1fbde207bca7a199abb301bf7a905d59b0a0beb45"
-    sha256 arm64_ventura:  "b279b06347094774fb46580d7041dc1e5017561c15b87b970b759807b1ea8492"
-    sha256 arm64_monterey: "25b50c7a95da0ec243e171db63b26ca1237ac9a28e36a34ab94cd464b6487fef"
-    sha256 sonoma:         "0f96a1041a637d901cad5ba39c755353b9de2f776b231248b8645e32714ad7d9"
-    sha256 ventura:        "6b84ab0f14f06a81ac232b8c97abea33db4884644586ee5a96d94cc840041a6d"
-    sha256 monterey:       "a20e7b2489f6c37c1afa2b55d160f4dba10e99c5286ef2182d1d04f757bef36c"
-    sha256 x86_64_linux:   "01bd0704d493a88f8fe2210d7f75d3ade620f8ff6704c2cc342d72663611b611"
+    sha256 arm64_sonoma:   "e7f65709dffaf55c7ace2e1c8f6553aebc56a17674b7ab57421c1f22bbf7798a"
+    sha256 arm64_ventura:  "8e47adc1f7238e67c3af7712ff0e57c1d0b1b79a86950f0e0370944f1a69c960"
+    sha256 arm64_monterey: "d58266c28fa037d004ddcd50f5da744a7232303455139523f61a83a3d36ce5e6"
+    sha256 sonoma:         "4b8013bda989e3215cbe659f8e0786408f8e71a56777c1533a882246e986cdf8"
+    sha256 ventura:        "48cf5388ba5c114888987ae31a6620d640ed94c72e22076df491c33a88a35deb"
+    sha256 monterey:       "2716185a062154262f1b160358fa955bf31bbdae5d0b08f4d0c38e3bf6ff066c"
+    sha256 x86_64_linux:   "fd3f68416f1b61d67641e43ce42a3a4b88ad5a010533b572b42e69fa8e4ef434"
   end
 
   head do

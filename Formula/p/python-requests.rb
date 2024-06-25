@@ -15,7 +15,7 @@ class PythonRequests < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "38eb54a3c08da5790c7da2dbbe36992772214a7bf2ce87a73b5f58930ec7b0a8"
   end
 
-  deprecate! date: "2024-03-14", because: "does not meet homebrewcore's requirements for Python library formulae"
+  disable! date: "2024-06-23", because: "does not meet homebrewcore's requirements for Python library formulae"
 
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]

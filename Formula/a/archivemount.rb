@@ -1,7 +1,7 @@
 class Archivemount < Formula
   desc "File system for accessing archives using libarchive"
-  homepage "https://www.cybernoia.de/software/archivemount.html"
-  url "https://www.cybernoia.de/software/archivemount/archivemount-0.9.1.tar.gz"
+  homepage "https:github.comcybernoidarchivemount"
+  url "https:slackware.uk~urchlaysrcarchivemount-0.9.1.tar.gz"
   sha256 "c529b981cacb19541b48ddafdafb2ede47a40fcaf16c677c1e2cd198b159c5b3"
   license "LGPL-2.0-or-later"
 
@@ -16,8 +16,8 @@ class Archivemount < Formula
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    ENV.append_to_cflags "-I/usr/local/include/osxfuse"
-    system "./configure", "--disable-debug",
+    ENV.append_to_cflags "-Iusrlocalincludeosxfuse"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -26,6 +26,6 @@ class Archivemount < Formula
   end
 
   test do
-    system bin/"archivemount", "--version"
+    system bin"archivemount", "--version"
   end
 end

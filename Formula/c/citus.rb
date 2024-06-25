@@ -1,8 +1,8 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https:www.citusdata.com"
-  url "https:github.comcitusdatacitusarchiverefstagsv12.1.3.tar.gz"
-  sha256 "5b3b20b89ead1f97072088cb1ff275a053ded886e174f8ebe3288a2e7229d92c"
+  url "https:github.comcitusdatacitusarchiverefstagsv12.1.4.tar.gz"
+  sha256 "6f8e55bbcae75309192c48cdb7238e8c895fd63e5b785ff798023c8b8b799e61"
   license "AGPL-3.0-only"
   head "https:github.comcitusdatacitus.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a72deac26a11caa40ae4967a09db73dac221b1df9d4c47b23df5cef0d6d9ce4a"
-    sha256 cellar: :any,                 arm64_ventura:  "fa1b2f4c6167a90b3aedd021847decaab153674fad83a6962378e2478552b829"
-    sha256 cellar: :any,                 arm64_monterey: "1703cef0e36a0d52ba7a9567ae1c5b1d4aef794318d4def84ffdfe15f1b1451a"
-    sha256 cellar: :any,                 sonoma:         "127da8ff2a8d1714c874faafa34010584d05ffdfe88f1216fcd280ab995abcb7"
-    sha256 cellar: :any,                 ventura:        "3a268aad9b4a8a3d6f3525572dde6e9ebd84a764dcd2ecae541e3ab39714ace0"
-    sha256 cellar: :any,                 monterey:       "6b2c83a3d6b4fe46ebcba8c7feabfcf0d9dd13166ba6e517882eee83fe5d959f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbcbf8f822110640d4554c1bcbda7d442559fa9f0518220be0d90ae56c18dfdb"
+    sha256 cellar: :any,                 arm64_sonoma:   "786b219283e84207a8cf2820c7c74e9e61b3f2bf0ba06a10bc32d9e781c1bdfc"
+    sha256 cellar: :any,                 arm64_ventura:  "5bb67885ce15fa7298da6923126b7130310053504edc84d2aec88630af21e831"
+    sha256 cellar: :any,                 arm64_monterey: "0422a4a7e7891f5102c12c289bea85c9f69f59fd3f36dae47bc297760c470ef0"
+    sha256 cellar: :any,                 sonoma:         "362100c937c43c33190c04eef85b17fc1a697649634500d8ed7457bf7668e9be"
+    sha256 cellar: :any,                 ventura:        "0e17325da26d62c2cb2a0e60b5adfee79676271c1a93814791bbce6918e8c5de"
+    sha256 cellar: :any,                 monterey:       "1584b2586f0a566ab65e88edc40bcd848b67870e0581affbb55ff23a6f5ed277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4363b7e3f120d35f0fa024c82f9903619e0414185fdc9ad466853fd37c30a86d"
   end
 
   depends_on "lz4"

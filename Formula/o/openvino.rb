@@ -1,8 +1,8 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https:docs.openvino.ai"
-  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.1.0.tar.gz"
-  sha256 "b298a91b5aae252ef9883e0f2017e88677be88a9839b1aa2f6e9f70067d98ce6"
+  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.2.0.tar.gz"
+  sha256 "b624481efb7814cf2d98a29163c3b914fa2f23c1417289b13561d0b5e32fc67c"
   license "Apache-2.0"
   head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a91bcff7e57b16c3e54c4916688f83618bfed26c31cc40642903338abad98b9c"
-    sha256 cellar: :any,                 arm64_ventura:  "7fcd7e0b9e22df209fe7d6bc39af60a87411b0c4bdd796affba22072ab23ed6d"
-    sha256 cellar: :any,                 arm64_monterey: "1aff2106605cfea24ef754fbf139a6954abcae23b191778162fecb602fb9a47c"
-    sha256 cellar: :any,                 sonoma:         "7235ef56a930cf1eaa38a868a45244bf0992e50813a5ed10db54c3e87cfdf6f0"
-    sha256 cellar: :any,                 ventura:        "ded034e479eec8c7cfe11f65c1c01c7fcf1bb94089d6fc91dd40287b0b0f4991"
-    sha256 cellar: :any,                 monterey:       "96135b3ce48d4656ee3e7b4d74d9ba12dbba1adb27245a9162151aa39a48f153"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5ab89d572de42b03428ac17b01fc556ea58cc56a8b1ef5c4c81fb47a0ef6542"
+    sha256 cellar: :any,                 arm64_sonoma:   "5a7b9f9d82b909f5fb3f7cdb706b4d2815f2ea2825c8c3e1a1211547bcb6a734"
+    sha256 cellar: :any,                 arm64_ventura:  "cc54c82fd07e995e939ebd657d407005bb7e4c027233f675d2de418127603aab"
+    sha256 cellar: :any,                 arm64_monterey: "a3569f9e6dba9f34d330805fcdea945ba06da240d918c82556c9bf67187ca6ac"
+    sha256 cellar: :any,                 sonoma:         "daec83be26bdc5e3e4776da1854602c419cc54a351860d1e9e8b6c2c0ccebb2c"
+    sha256 cellar: :any,                 ventura:        "61baddf9e47f14d2d00a3112ddf3250cd171fd5243e6612dc7dffe758fb2bd30"
+    sha256 cellar: :any,                 monterey:       "b1a45cf4dbffa48b75b82e9ac462289839b512c88c16319f88a00e34f2780a69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69c79995d1be93f8819f014585822dfcf221fd31052052134958cbee7cbe8c02"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -41,8 +41,8 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https:github.comoneapi-srconeDNNarchive4e6ff043c439652fcf6c400ac4e0c81bbac7c71c.tar.gz"
-      sha256 "c3543d560fbbb7297df91c191cc9bf682322c5554302e256f1bf4a757424a331"
+      url "https:github.comoneapi-srconeDNNarchive37f48519b87cf8b5e5ef2209340a1948c3e87d72.tar.gz"
+      sha256 "58131e094408460f88bf941977b5206232dc2bc8dbf227250d1e2236b43153a5"
     end
   end
 
@@ -50,8 +50,8 @@ class Openvino < Formula
     depends_on "scons" => :build
 
     resource "arm_compute" do
-      url "https:github.comARM-softwareComputeLibraryarchiverefstagsv24.02.1.tar.gz"
-      sha256 "590d5cb710355bce2ddfe7117529c2f492cd253b548f709bbfe84702203d99c8"
+      url "https:github.comARM-softwareComputeLibraryarchiverefstagsv24.04.tar.gz"
+      sha256 "6d7aebfa9be74d29ecd2dbeb17f69e00c667c36292401f210121bf26a30b38a5"
     end
   end
 
@@ -65,8 +65,8 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https:github.comopenvinotoolkitoneDNNarchive26633ae49edd4353a29b7170d9fcef6b2d79f4b3.tar.gz"
-    sha256 "3cd4a2aea30cd6ca689e63545cf986f8e83c88333b73d42bb750fcaf08940b17"
+    url "https:github.comopenvinotoolkitoneDNNarchive373e65b660c0ba274631cf30c422f10606de1618.tar.gz"
+    sha256 "c205b81f9024952c742e765090556a18c9463fff245753a2afa42c344bd6379d"
   end
 
   resource "onnx" do

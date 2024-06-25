@@ -1,21 +1,19 @@
 class Gotify < Formula
   desc "Command-line interface for pushing messages to gotifyserver"
   homepage "https:github.comgotifycli"
-  url "https:github.comgotifycliarchiverefstagsv2.2.3.tar.gz"
-  sha256 "9446aa09a675bca2a8fd0448e6c45e28630e31f7578cc9e1587d09f24e59f66a"
+  url "https:github.comgotifycliarchiverefstagsv2.2.4.tar.gz"
+  sha256 "6a7adfb7910a29342b106f5e79d7bbbe955b268bb34c994ed3d31350ee62caa3"
   license "MIT"
   head "https:github.comgotifycli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fd505d7e456bca1972d7b793ee81d805ad59ba1b71b148a4d4718860cd9dcff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "089f351450dbfda3a863d43b567bdfee951b403b29a274929431899cd216d2bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "089f351450dbfda3a863d43b567bdfee951b403b29a274929431899cd216d2bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "089f351450dbfda3a863d43b567bdfee951b403b29a274929431899cd216d2bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "53941bf7ef9f64b57d74b2248bda65583f96f42202f59fd951bc6c6ca3b2678f"
-    sha256 cellar: :any_skip_relocation, ventura:        "ece8f7f186f1e4116a314969b5615ca03228d1a320edf72eed4075ce133e1540"
-    sha256 cellar: :any_skip_relocation, monterey:       "ece8f7f186f1e4116a314969b5615ca03228d1a320edf72eed4075ce133e1540"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ece8f7f186f1e4116a314969b5615ca03228d1a320edf72eed4075ce133e1540"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "387b4dc3b5651bc315acb0c331a0b2dc9eaf12a0c3aa983c00bbfebf69e03f94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1377bb103cdc435951868b928ab8f1c940d08d8d187e5aa18ce06f8e122ec752"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9298e8a450bfe79af36395869f09ac5dc6da0656e735bf2465527c2924a75e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8d689fcd5e4f449a526a8e2c9a2a4cb0609d19fb0e2bd568a0889a7fece78fd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2677559d48fef384b532e425a2b00e2d6323dbbda9566183c258db300a0b3a8f"
+    sha256 cellar: :any_skip_relocation, ventura:        "10d48a803787baadf6fe9f8bfb5bb55b8377cd325080e4f411cc4b60ba4bd608"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd6ee3e04f73e62ac0474ebc67cd385cc2e233753589c83f5810dbd56536aae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f60b21853ee118f5532cfa5f7fe36b99308c2b1127ca4bee142ca6a01a8cdab"
   end
 
   depends_on "go" => :build
