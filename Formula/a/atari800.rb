@@ -21,10 +21,25 @@ class Atari800 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "656005889be7d36009a7b927d4b7437f38b988cc74063b5e3cefe3406bbffd77"
   end
 
+  head do
+    url "https:github.comatari800atari800.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "libpng"
   depends_on "sdl12-compat"
 
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
+    system ".autogen.sh" if build.head?
     system ".configure", "--disable-sdltest",
                           "--disable-riodevice",
                           *std_configure_args.reject { |s| s["--disable-debug"] }

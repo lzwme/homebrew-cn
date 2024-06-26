@@ -1,20 +1,18 @@
 class ChromeCli < Formula
   desc "Control Google Chrome from the command-line"
   homepage "https:github.comprasmussenchrome-cli"
-  url "https:github.comprasmussenchrome-cliarchiverefstags1.9.3.tar.gz"
-  sha256 "cc213ebd087bafd6f1faaaeb4cc1fae4da2a7e1c484ee9265cf113f6ce108376"
+  url "https:github.comprasmussenchrome-cliarchiverefstags1.10.0.tar.gz"
+  sha256 "d8ff25fb608ca4145d4af688e999ea106128e75b95fb1edc6861499133e9bb8c"
   license "MIT"
   head "https:github.comprasmussenchrome-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "738e99293907931fa3fd0a22084d2f9474ace9d5435bb019bf7638f3397022a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d70b7338fa940cd8bb69320351d2439fef7934b55e59a6d6a06d3a89b45b8699"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df806f8e7f783f7eba55030f6cd276f1d20e8d62e1fb44e6ff2e8d10133a27a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59bd6c10d1b730a1a08a0cb326cedaa0752b5dd3ac8027a30961f524e46f140f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b1d9d98feafb0ace4033623e6345e8c3e2621bee75d7333ef16aae7a539f59e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "77a5de975ff122c908100c89422a07090d4da3b8f4e10b42c9c15c102789d347"
-    sha256 cellar: :any_skip_relocation, monterey:       "100da0df53e8f6bb5a0d27328a004b317d59e307a13ee41aca8f2688fb1d615b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8053bddf715a147449eac24043a90b5e41833cde7d55edc3e21ee5a7d28a1331"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dbfcf2110ce0c98549762695f3f1ea7a9d4d2b6858151607cadf5ed13bc981b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6423c14b6452d94b9f79ebcc3a71c8e0b6158c12810f57c9efc1be57d1ab2169"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63ae694a49b249cfeca26389f5c201417ea4b7d56c0db46669856993a67f5702"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d34831217ca47d2f91e19643307e7dba5c8b31a136380ceabc469ce8f13ce730"
+    sha256 cellar: :any_skip_relocation, ventura:        "a5094b212f9f4d9edc5af49a0df72a8046605ab450b7c72d9aa13fd593305880"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd67692c870bc96c11800fdddeac4db57fbe6abc5bc01e2d1e82464320f8eaa8"
   end
 
   depends_on xcode: :build
@@ -31,6 +29,7 @@ class ChromeCli < Formula
     bin.install "scriptsbrave-cli"
     bin.install "scriptsvivaldi-cli"
     bin.install "scriptsedge-cli"
+    bin.install "scriptsarc-cli"
   end
 
   test do

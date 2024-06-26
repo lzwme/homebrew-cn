@@ -27,6 +27,10 @@ class Networkit < Formula
   depends_on "python@3.12"
   depends_on "scipy"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def python3
     which("python3.12")
   end

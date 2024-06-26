@@ -2,7 +2,7 @@ cask "font-sf-mono-for-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comTwixesSF-Mono-Powerlinearchivemaster.zip"
+  url "https:github.comTwixesSF-Mono-Powerlinearchiverefsheadsmaster.tar.gz"
   name "SF Mono for Powerline"
   homepage "https:github.comTwixesSF-Mono-Powerline"
 

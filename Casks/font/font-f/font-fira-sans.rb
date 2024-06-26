@@ -2,7 +2,7 @@ cask "font-fira-sans" do
   version "4.202"
   sha256 "d86269657387f144d77ba12011124f30f423f70672e1576dc16f918bb16ddfe4"
 
-  url "https:github.commozillaFiraarchive#{version}.tar.gz",
+  url "https:github.commozillaFiraarchiverefstags#{version}.tar.gz",
       verified: "github.commozillaFira"
   name "Fira Sans"
   homepage "https:mozilla.github.ioFira"

@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/29313/cdo-2.4.0.tar.gz"
-  sha256 "a4790fb8cc07f353b11f9bbe49218b8e4be8e5ae56aade8420bad390510b4d2c"
+  url "https://code.mpimet.mpg.de/attachments/download/29481/cdo-2.4.2.tar.gz"
+  sha256 "4df1fe2b8f92f54c27eb9f399edfab40d9322005a6732ca1524ef5c1627ac4e7"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cdo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0efcbb9aa9fde71e19fad9faf1b7bf6c45dccf62cf60530337a9dd640d5b532c"
-    sha256 cellar: :any,                 arm64_ventura:  "5fc62c8ef0799cb670c513c3164e963c3767f0221a9ff9f9e6c5393875622ca4"
-    sha256 cellar: :any,                 arm64_monterey: "ddecf8b068c2e0152f0a09e3ca695c133b4406611debe87ee74d8c6585332907"
-    sha256 cellar: :any,                 sonoma:         "2361db7f81cd6dce7acb3e72ff1e8d03ad001173a763a7e28ce10231bb229227"
-    sha256 cellar: :any,                 ventura:        "ee4872d831ed65c7c9442a269f1417e1de540cfcd97e35530b4701e3959ef7a8"
-    sha256 cellar: :any,                 monterey:       "62c3b4bfbde205a1ebe31aa135af7b1afdc3137e3fb1e0b8b5a41f411dd29a8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f87e7c66dd4b2d0c03e0b45c45d560731608cd5d2537639b3a6457a09cbe9ded"
+    sha256 cellar: :any,                 arm64_sonoma:   "783f4fd3db5f8d6cef3c120d09dcb40820dc8a94998018940352a036a763c372"
+    sha256 cellar: :any,                 arm64_ventura:  "2d4f548ad076f98849a68d5f6e0cc67f6249e44032643844bfb79048f7c00043"
+    sha256 cellar: :any,                 arm64_monterey: "a3b8989c73104456e42bd99e065ded170051feb8100a66bdeabc0f7e6a64cdda"
+    sha256 cellar: :any,                 sonoma:         "b0bbba46ae854c66318434d655cc8dd6f9116b369092a2d691f8a25bc1819b43"
+    sha256 cellar: :any,                 ventura:        "32bc4c9b10c6cd740d0b9659712603d3204f8468d84faa12c6fd9ac9ccbe65bb"
+    sha256 cellar: :any,                 monterey:       "0af145b7202b9d12627ace51f4050a7c75334afe61a11acade91c9bfd94776bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ac47db570b82c31351162ad052cac1b0fee7c289ee4d5df8e07227d7990bfa7"
   end
 
   depends_on "eccodes"
@@ -28,16 +28,16 @@ class Cdo < Formula
   uses_from_macos "python" => :build
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1403
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
   fails_with :clang do
-    build 1403
+    build 1500
     cause "Requires C++20 support"
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1403
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     args = %W[
       --disable-openmp

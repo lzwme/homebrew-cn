@@ -2,7 +2,7 @@ cask "eurkey" do
   version "1.2"
   sha256 :no_check
 
-  url "https:github.comjonasdiemerEurKEY-Macarchivemaster.zip",
+  url "https:github.comjonasdiemerEurKEY-Macarchiverefsheadsmaster.tar.gz",
       verified: "github.comjonasdiemerEurKEY-Mac"
   name "EurKEY keyboard layout"
   desc "Keyboard Layout for Europeans, Coders and Translators"

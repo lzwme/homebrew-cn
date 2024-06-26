@@ -2,7 +2,7 @@ cask "font-awesome-terminal-fonts" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgabrielelanaawesome-terminal-fontsarchivepatching-strategy.tar.gz"
+  url "https:github.comgabrielelanaawesome-terminal-fontsarchiverefsheadspatching-strategy.tar.gz"
   name "Awesome Terminal Fonts"
   homepage "https:github.comgabrielelanaawesome-terminal-fonts"
 

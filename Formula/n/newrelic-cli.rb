@@ -1,8 +1,8 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
   homepage "https:github.comnewrelicnewrelic-cli"
-  url "https:github.comnewrelicnewrelic-cliarchiverefstagsv0.88.0.tar.gz"
-  sha256 "27adc732e19e0c2ba24ee7a7a6e1fdfe25253cd5f887085b16c6d83a85bd9dca"
+  url "https:github.comnewrelicnewrelic-cliarchiverefstagsv0.88.1.tar.gz"
+  sha256 "cba38712d1c22dc01f165169e53341547b6bdc5c09835d3de6308a39e8c6395f"
   license "Apache-2.0"
   head "https:github.comnewrelicnewrelic-cli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class NewrelicCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30bc5d8132ba27d3d95aa7059cb3422bf5f81aa38892a51a1b16f712314dbd31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca9035a901b447a25093dc65d7d2639480133b244b40e4b974f37e643ff0115d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20b7c166cb1a6cc2217283fc416fb21218c72277eb190582bf2f0e51d5596443"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b006641b31d15c849e8ee7d129021dd099af5cfd410dee3f0778b1fb0c05e506"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ab8ad363993a6df2ca1abd9eb8f9225d8fa77484a76e76ec912c186ab3d9ed0"
-    sha256 cellar: :any_skip_relocation, monterey:       "077870bea746191913c616e8a3779363f3cc24bc762462801d02070490f8cd55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9783e73b7a8d233f785527e542b5fad4380f15f6a1949dba064cdbb41c2225d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e50469353d2c546ada6cef513b627c0ad64bd96aa59d7a54aa483408ce74c150"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9d2c2985d20a30eb6c4b002ec6f252438b0d2267a76bee9413b4aa2b18f281b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "769493513c14bb5533847a551194617a4773e54fff9d45cbe1ffab1f60c9b7cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5cc794da212e654de103226010c99817bea9227bd47bab5458b17370ea7be1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f0c73814a4015dfcb6ad7fb4d86bb6e6fa242ff428401930b7c24f69202b58f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "defe9aea0a9e64c27d10f61f1f4fafdeef1364ce7627a69c86318ea01e6a37e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "001cd3f9540bd8edf4f4693fd455f32be35a3be99c6a12390445bc40c241b66d"
   end
 
   depends_on "go" => :build

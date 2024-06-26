@@ -2,7 +2,7 @@ cask "font-ia-writer-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:codeload.github.comiaoloiA-Fontszipmaster"
+  url "https:github.comiaoloiA-Fontsarchiverefsheadsmaster.tar.gz"
   name "iA Writer Mono"
   homepage "https:github.comiaoloiA-Fonts"
 

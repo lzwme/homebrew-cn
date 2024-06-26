@@ -2,7 +2,7 @@ cask "font-blackout" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comtheleagueofblackoutarchivemaster.zip",
+  url "https:github.comtheleagueofblackoutarchiverefsheadsmaster.tar.gz",
       verified: "github.comtheleagueofblackout"
   name "Blackout"
   homepage "https:www.theleagueofmoveabletype.comblackout"

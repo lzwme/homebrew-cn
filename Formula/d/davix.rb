@@ -1,19 +1,19 @@
 class Davix < Formula
   desc "Library and tools for advanced file IO with HTTP-based protocols"
   homepage "https:github.comcern-ftsdavix"
-  url "https:github.comcern-ftsdavixreleasesdownloadR_0_8_6davix-0.8.6.tar.gz"
-  sha256 "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b"
+  url "https:github.comcern-ftsdavixreleasesdownloadR_0_8_7davix-0.8.7.tar.gz"
+  sha256 "78c24e14edd7e4e560392d67147ec8658c2aa0d3640415bdf6bc513afcf695e6"
   license "LGPL-2.1-or-later"
   head "https:github.comcern-ftsdavix.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "63f3d6ae3f948f10848bf300834b115e49fe975a13aff0ead97dd1c1a94adfb9"
-    sha256 cellar: :any,                 arm64_ventura:  "a9bf80372d40cbcb0bbe1ac9402d28b2904b2160d4199c9fe22337975e02f85c"
-    sha256 cellar: :any,                 arm64_monterey: "e0c075112133133bc67aee15ee18f85fabe4544f00835bb48b0606f05ba94d36"
-    sha256 cellar: :any,                 sonoma:         "c5e79b54981bd253923a9759e3941f8f5e560b4501d040ab2ebffc15f6bd5dce"
-    sha256 cellar: :any,                 ventura:        "b0ace78d968c3ef59d59ded5dec2be674bb428ee5777a3cf89c232d6a0e8dd21"
-    sha256 cellar: :any,                 monterey:       "dd8d4f1bdade915a02d53647b8aef5c7d9678e3c82710b79b79e05149a027f3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52835912bf20d9bb20c1894ebb71d52c22877f4a00ef8582a94abc9b0e7fbc7c"
+    sha256 cellar: :any,                 arm64_sonoma:   "54e5bb08a24253d9e0c4f2e00e04ba10277f02d0608804ed948223e60bad3672"
+    sha256 cellar: :any,                 arm64_ventura:  "f6fc0314f5d39d0230400cdab883e8d5b325108403551c143c76eb4568d675b7"
+    sha256 cellar: :any,                 arm64_monterey: "22c2d25841190dd02dfb5473b9d57cb7fa0f92ca0c85632863d511fa87eab7bb"
+    sha256 cellar: :any,                 sonoma:         "e43d8021be61259e6b69985be4c2aa08650ce2b8b6448ea048447721e4c26a3c"
+    sha256 cellar: :any,                 ventura:        "2067b1e8c55e8908b38b3333e2c5fce53d1c72bfc62c3ba43d3b2ed20c667354"
+    sha256 cellar: :any,                 monterey:       "120f4c46485812389b5033185e3f9e01f7d354aea826606128eff54055c6e3c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aed179e04a6e34773981aba65e9e38478dd18cce9718a4aa599a4301001a1453"
   end
 
   depends_on "cmake" => :build

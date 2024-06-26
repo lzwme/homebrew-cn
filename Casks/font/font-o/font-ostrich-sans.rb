@@ -2,7 +2,7 @@ cask "font-ostrich-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comtheleagueofostrich-sansarchivemaster.zip",
+  url "https:github.comtheleagueofostrich-sansarchiverefsheadsmaster.tar.gz",
       verified: "github.comtheleagueofostrich-sans"
   name "Ostrich Sans"
   homepage "https:www.theleagueofmoveabletype.comostrich-sans"

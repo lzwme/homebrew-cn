@@ -2,15 +2,17 @@ cask "font-balsamiq-sans" do
   version :latest
   sha256 :no_check
 
-  url "https:github.combalsamiqbalsamiqsansarchivemaster.zip",
-      verified: "github.combalsamiqbalsamiqsans"
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
+      branch:    "main",
+      only_path: "oflbalsamiqsans"
   name "Balsamiq Sans"
   homepage "https:balsamiq.comgivingbackopensourcefont"
 
-  font "balsamiqsans-masterfontsttfBalsamiqSans-Bold.ttf"
-  font "balsamiqsans-masterfontsttfBalsamiqSans-BoldItalic.ttf"
-  font "balsamiqsans-masterfontsttfBalsamiqSans-Italic.ttf"
-  font "balsamiqsans-masterfontsttfBalsamiqSans-Regular.ttf"
+  font "BalsamiqSans-Bold.ttf"
+  font "BalsamiqSans-BoldItalic.ttf"
+  font "BalsamiqSans-Italic.ttf"
+  font "BalsamiqSans-Regular.ttf"
 
   # No zap stanza required
 end

@@ -2,7 +2,7 @@ cask "font-ia-writer-quattro" do
   version :latest
   sha256 :no_check
 
-  url "https:codeload.github.comiaoloiA-Fontszipmaster"
+  url "https:github.comiaoloiA-Fontsarchiverefsheadsmaster.tar.gz"
   name "iA Writer Quattro"
   homepage "https:github.comiaoloiA-Fonts"
 

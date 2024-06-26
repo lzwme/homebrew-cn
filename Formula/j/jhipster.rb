@@ -3,18 +3,18 @@ require "language/node"
 class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
-  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-8.5.0.tgz"
-  sha256 "5c40bb3225142e9536a8262b4844470fa52e31cad580de6830f26a3cc5feee66"
+  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-8.6.0.tgz"
+  sha256 "bf5f4013a912df79979eb5d2bd69f809a16ef147a563a9985ced0eccb9333572"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_sonoma:   "0fedc5b030f9772fde504afb57a6139fc7587b6f39089055eec59209b1e6ceeb"
-    sha256                               arm64_ventura:  "f858864dc4ec231a065ccf5a01cfd30b2452aca7016410041d42997f80419df2"
-    sha256                               arm64_monterey: "856859fadecd6a1553ee66fbab4ecab649c90332d0c1d9bbe5554f21243a477a"
-    sha256                               sonoma:         "c3427fca7cd4408e5c23064e8b6150a292abcacb16e5da79bffd3fd3f2c6b48c"
-    sha256                               ventura:        "bcdc74c2567bfe85839989c580705b071a9b6dd6f0f3e78a5d883c729034d987"
-    sha256                               monterey:       "deb31e428a2988d841b4e5823a6d6b9e7d8c9090e45bf1263c7a6b342fe1b2a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4883c97ceedc4fb8333f4740ceb1cb761982a9db3ecde2f52c6fc2be9d09903c"
+    sha256                               arm64_sonoma:   "aa061287a397511c7b144728cf25b40ad699b3f902c0ae4d376728ff59a4a4f7"
+    sha256                               arm64_ventura:  "439669bd05c952c9d349272d32c847f79ea2bb7a122a8f61b7168af806ddc2f1"
+    sha256                               arm64_monterey: "5c3661a6c42076669b6aa8fe66e3546d5e75b113b0ea6d6359becbbf1f740643"
+    sha256                               sonoma:         "b89f493e905476db3256e13252139e2a7d4f1bfbdc1bfe68c15fae63955a87ca"
+    sha256                               ventura:        "ddacb5b5f684b35f01faab78885b49d242ca8ba57f44735b7d0b4121a1cf0ed8"
+    sha256                               monterey:       "e85aec9aa54c0527e186a1ac58935c6e0085df9d9605b0ed2a1c79b7eb4509b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5270776cf5eb810776e370c515c801b913d680d93c9fa40c135aa1033a1e327"
   end
 
   depends_on "node"

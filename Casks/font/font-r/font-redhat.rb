@@ -2,7 +2,7 @@ cask "font-redhat" do
   version "4.0.3"
   sha256 "95e9eaa3bbbb343d0d4bc519d18a216651c73b0ab191ab5532a3cb370120b2b2"
 
-  url "https:github.comRedHatOfficialRedHatFontarchive#{version}.tar.gz"
+  url "https:github.comRedHatOfficialRedHatFontarchiverefstags#{version}.tar.gz"
   name "Red Hat"
   homepage "https:github.comRedHatOfficialRedHatFont"
 

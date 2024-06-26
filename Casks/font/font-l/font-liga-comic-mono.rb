@@ -2,7 +2,7 @@ cask "font-liga-comic-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:codeload.github.comwayoucomic-mono-fontzipmaster"
+  url "https:github.comwayoucomic-mono-fontarchiverefsheadsmaster.tar.gz"
   name "Liga Comic Mono"
   homepage "https:github.comwayoucomic-mono-font"
 

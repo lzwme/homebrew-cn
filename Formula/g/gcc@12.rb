@@ -1,9 +1,9 @@
 class GccAT12 < Formula
   desc "GNU compiler collection"
   homepage "https:gcc.gnu.org"
-  url "https:ftp.gnu.orggnugccgcc-12.3.0gcc-12.3.0.tar.xz"
-  mirror "https:ftpmirror.gnu.orggccgcc-12.3.0gcc-12.3.0.tar.xz"
-  sha256 "949a5d4f99e786421a93b532b22ffab5578de7321369975b91aec97adfda8c3b"
+  url "https:ftp.gnu.orggnugccgcc-12.4.0gcc-12.4.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orggccgcc-12.4.0gcc-12.4.0.tar.xz"
+  sha256 "704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,14 +12,13 @@ class GccAT12 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "5484357fe4f2083bf035868e0449fede58fdf022b51d4da5e7fc601ab0c28f68"
-    sha256                               arm64_ventura:  "5b711c76aef4746ee930106d403c6144a1934d9258eed36f0944fd474be549ad"
-    sha256                               arm64_monterey: "d8559e6a8b872e445fa77a65919c3738b454ae446a1bf00853035bff6d10fbd3"
-    sha256                               sonoma:         "68da751c328ca66f52a2e748d589de6ffe71ad96fb94c0e8f91f1800131d8713"
-    sha256                               ventura:        "0682c6c199cc26d0f8271b9025aa6ccec38edb2d564506999a0056ce0c0027f8"
-    sha256                               monterey:       "b055d3a58443ec08cf96e951de9c98d112a58b5c5477bdb7460be3be6c9ab888"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3da0ff551e7b2fcb708b4ae708bb7911f8b93e6b56ff34c938c495b6e109506f"
+    sha256                               arm64_sonoma:   "55614581a8985550c5cc84cd29f7122d4aca5d11f60c5ff119e7432419c2b9d8"
+    sha256                               arm64_ventura:  "1466d203d2b62e3771a0d1935314747e6a098793622f6a007c23acaf8185731b"
+    sha256                               arm64_monterey: "94bc560bcbfc98966d891656b3a0705958bdac330dfab3a9913c4c412e2f5885"
+    sha256                               sonoma:         "de57cdd8fc489a7fb88f7af19a730af87a14418c7181e5ba03e20c40e4d65738"
+    sha256                               ventura:        "cbaf8ac753711e7c39e90cc3abf3dee9847dea8908e5e575bd4065ffeef0c9b0"
+    sha256                               monterey:       "436e51d082e7cfaa612458fdd2703f530abcd49730e7634ce659700fedb033e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50b8eb4f9125e36b9daad5dcd7cf470d6780d1ab2a1bad652793299fc6036770"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -44,8 +43,8 @@ class GccAT12 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https:github.comiainsgcc-12-branch
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesf1188b90d610e2ed170b22512ff7435ba5c891e2gccgcc-12.3.0.diff"
-    sha256 "9da2f964d8aeaea7c30623d253c3d36d398baa3db907ebe38e2a9ce1f005818b"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesca7047dad38f16fb02eb63bd4447e17d0b68b3bbgccgcc-12.4.0.diff"
+    sha256 "c0e8e94fbf65a6ce13286e7f13beb5a1d84b182a610489026ce3e2420fc3d45c"
   end
 
   def install
@@ -91,6 +90,8 @@ class GccAT12 < Formula
         toolchain_path = "LibraryDeveloperCommandLineTools"
         args << "--with-ld=#{toolchain_path}usrbinld-classic"
       end
+
+      make_args = []
     else
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
@@ -104,11 +105,16 @@ class GccAT12 < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https:stackoverflow.coma54038769
       inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+
+      make_args = %W[
+        BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}
+        BOOT_LDFLAGS=-L#{Formula["zlib"].opt_lib}
+      ]
     end
 
     mkdir "build" do
       system "..configure", *args
-      system "make"
+      system "make", *make_args
 
       # Do not strip the binaries on macOS, it makes them unsuitable
       # for loading plugins

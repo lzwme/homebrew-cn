@@ -2,7 +2,7 @@ cask "font-spectral" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comproductiontypeSpectralarchivemaster.zip"
+  url "https:github.comproductiontypeSpectralarchiverefsheadsmaster.tar.gz"
   name "Spectral"
   homepage "https:github.comproductiontypeSpectral"
 

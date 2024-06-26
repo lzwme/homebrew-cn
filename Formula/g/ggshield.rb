@@ -3,20 +3,19 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackages05f9c4968af9346ecad66f5c419f6bd0efe6a7071a4ee91d5218a93dc17d85ceggshield-1.28.0.tar.gz"
-  sha256 "4ca067fb8675c93b6ecb733dd532a88657442b27e949b3bec6f0ff55219b23ac"
+  url "https:files.pythonhosted.orgpackagesf02df189c7da207693637fbf968f05df20ee3f5d32d29c01323e6431894a1e95ggshield-1.29.0.tar.gz"
+  sha256 "37fbfc82807ceddf842ce9e48b84e8227c755d4203ec148e8e6757e259f912a5"
   license "MIT"
-  revision 1
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cfbdaf84eae9a219666dbdd0b0ede6b116182accc2f73027d0586df543b1d1a9"
-    sha256 cellar: :any,                 arm64_ventura:  "69758965dd794c7172a3b792ecb3594588b90047eb014844c3ff8c9ebe7de2e5"
-    sha256 cellar: :any,                 arm64_monterey: "56f957c2f0988f05ef3fb156099916aa4a3689ab4200c8ff055e046870b7a9fc"
-    sha256 cellar: :any,                 sonoma:         "30f05a7607fde532dc771ae795a85f1436e9afb8835870b50cd85241aa1f28c8"
-    sha256 cellar: :any,                 ventura:        "05dbb17e231e988568c776fc26d57e438f5b8ab0fe995f898bc3616ed7f0a7c2"
-    sha256 cellar: :any,                 monterey:       "55768676a8469102ceaa2cf3a345c9153e91ba131a9bbb95183881094862dc72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd4003678138ba04a7d81f3f86f35620480299cb9e2c17b0779bd12cdcdce53b"
+    sha256 cellar: :any,                 arm64_sonoma:   "c72fa3e2d412f8831dc49ef5fc079ce1ceda2cd233e7bb251a8cb7adecc23b19"
+    sha256 cellar: :any,                 arm64_ventura:  "6a503ac202cbed7501e0074d8ae746bf166b435d917e9609072a0919b95c70ee"
+    sha256 cellar: :any,                 arm64_monterey: "0f0fa4b503a8b4e70e554fd19012d8e8ba1fc10bde5c4ba23a17318b3339a23d"
+    sha256 cellar: :any,                 sonoma:         "617ee747bf669aece7802803c3a2a0341e56cb7ab58c5a7794e2030526cc2beb"
+    sha256 cellar: :any,                 ventura:        "f8b8f0ff8d765e9ed4f9ec21633fd6a4f575f1b7bd31352d8c1fe3855f2aec22"
+    sha256 cellar: :any,                 monterey:       "3ade16f84f0b693ad94e540778b85b37aea3cacedc7a495c14a2b54c51fba920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8438a752b6fc269451df0480038a52185007d4d7a1fbbad4b09b530fbb301b75"
   end
 
   depends_on "certifi"
@@ -75,8 +74,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https:files.pythonhosted.orgpackages9e8b409389c1c43ef019b0b65e9a239ef4065a5ae29902a2cd7006d69ebe5b49pygitguardian-1.14.0.tar.gz"
-    sha256 "52f3a2820dd0eb448bf235993669bcd814233daaa52f0a133a2d83303bb5284a"
+    url "https:files.pythonhosted.orgpackagesece20d518647fed3c712fb9a492e6cf6f720e72816405a122ebed8243ec35b22pygitguardian-1.15.2.tar.gz"
+    sha256 "430d237184d7988d77eb122658116233cdbf11f78afad0ea172441061b29648d"
   end
 
   resource "pygments" do
@@ -100,13 +99,18 @@ class Ggshield < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesbb2dc902484141330ded63c6c40d66a9725f8da5e818770f67241cf429eef825rich-12.5.1.tar.gz"
     sha256 "63a5c5ce3673d3d5fbbf23cd87e11ab84b6b451436f1b7f19ec54b6bc36ed7ca"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages0d9dc587bea18a7e40099857015baee4cece7aca32cd404af953bdeb95ac8e47setuptools-70.1.1.tar.gz"
+    sha256 "937a48c7cdb7a21eb53cd7f9b59e525503aa8abaf3584c730dc5f7a5bec3a650"
   end
 
   resource "typing-extensions" do

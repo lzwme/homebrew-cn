@@ -2,7 +2,7 @@ cask "font-junction" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comtheleagueofjunctionarchivemaster.zip",
+  url "https:github.comtheleagueofjunctionarchiverefsheadsmaster.tar.gz",
       verified: "github.comtheleagueofjunction"
   name "Junction"
   homepage "https:www.theleagueofmoveabletype.comjunction"

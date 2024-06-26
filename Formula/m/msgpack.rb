@@ -1,8 +1,8 @@
 class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
   homepage "https:msgpack.org"
-  url "https:github.commsgpackmsgpack-creleasesdownloadc-6.0.1msgpack-c-6.0.1.tar.gz"
-  sha256 "a349cd9af28add2334c7009e331335af4a5b97d8558b2e9804d05f3b33d97925"
+  url "https:github.commsgpackmsgpack-creleasesdownloadc-6.0.2msgpack-c-6.0.2.tar.gz"
+  sha256 "5e90943f6f5b6ff6f4bda9146ada46e7e455af3a77568f6d503f35618c1b2a12"
   license "BSL-1.0"
   head "https:github.commsgpackmsgpack-c.git", branch: "c_master"
 
@@ -15,13 +15,13 @@ class Msgpack < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b7e5117cdadb73ce58b278a96b99d11fe2380280b8a0f79c06cf89a6c82f6a25"
-    sha256 cellar: :any,                 arm64_ventura:  "9666b5d9ac86ec85fdfc9195aa1064bf8604d9c283a44c217a74762f4bc0cd0c"
-    sha256 cellar: :any,                 arm64_monterey: "92fdc6ce888b36f23e1a8768e562c03caeb523bda509a9ba8794548fc6d54f39"
-    sha256 cellar: :any,                 sonoma:         "6281f5d270814c2bfc4a68430f546737160cd10434819b0c117774c51b46a509"
-    sha256 cellar: :any,                 ventura:        "844bf1facb3017cd8e1f19801c3d1f4750e72887f0b2de175b75bda6eb45c8a0"
-    sha256 cellar: :any,                 monterey:       "3d8dee34a712fd1f29731060d65f0a927c91370f4b24759a935144aadc5a2b6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcd2a3799c88a200f8326838ef2ff2014a951b5e493a23a403426c43b59e6754"
+    sha256 cellar: :any,                 arm64_sonoma:   "a161e2fb828f231162c3e36ecbebe93dbaa1270ff0e5a7fd531af138e4108d33"
+    sha256 cellar: :any,                 arm64_ventura:  "a25d6e1381f812f45212ee16ab624dfc5b210a05f6d9ae4b77eeade014e16f87"
+    sha256 cellar: :any,                 arm64_monterey: "062b0bc0266345dd2aa0dde051c19bbdc676c377a2cec821c2da952fef92f328"
+    sha256 cellar: :any,                 sonoma:         "09430eae7575fad0f32c836bd000cf053c3bc12258ac17bed3fba74ffec280f6"
+    sha256 cellar: :any,                 ventura:        "204dbc8810c0bf3f975817ab3d14be4e6a250a670e6e4f54784db9dcc06d26a9"
+    sha256 cellar: :any,                 monterey:       "be4e47cda2cb1ebb6b878bd10170b550fc470725647fd1e394ece15180fb8ed6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7021b9a2421afcc1614788d01b4e4d7cbe44d90c7805a1d950f672f23f72c72c"
   end
 
   depends_on "cmake" => :build

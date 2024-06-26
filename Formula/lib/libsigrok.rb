@@ -41,13 +41,14 @@ class Libsigrok < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "2b4fba5fab7b14eb6353ba0b46011834e532aa86cf1025caf93574b7c44ca3bf"
-    sha256                               arm64_ventura:  "f34fc56616368f574610435653d7d075ca4a0c1c308faadbfcb11b35dd60bc0e"
-    sha256                               arm64_monterey: "96f681f1de2c5bc55cc716ff81ed739f81e119598cc9b2825d6b32d888ba24a1"
-    sha256                               sonoma:         "3fee2ccdeac69c721c42813728cfb2b42967069f2beb75c90e8d813ae51bb57e"
-    sha256                               ventura:        "fc0b38abdc6cc5b9493dfdcc512a0a6efa222319a2f98f210f7a01f0fc420d76"
-    sha256                               monterey:       "c850c19abe5a14bdb3523870a8ea16d49a86add71543fa7e8660e52c9d5506b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9766522977b12741bdd678ef04274aa748e3a42c627d8b62772a9fec0f2ab19"
+    rebuild 1
+    sha256                               arm64_sonoma:   "25451aaa30807a512ee33dab2c5e84a0d6a9248cc345bea3d314e4e9871c3d7e"
+    sha256                               arm64_ventura:  "d5a91f7b194fdeff5f9dbccdaf47e42ae20eef9b5885ce4c195656ee3a4e50a4"
+    sha256                               arm64_monterey: "4b977b13bc1aa1e9290f9b8b5994b7ca95572f4d963a806390be234b4bd2540f"
+    sha256                               sonoma:         "8f439b415662863d7e6c9d14524cea2479fbad8e64f9b59a73bba4d2887de80c"
+    sha256                               ventura:        "3c3e878899fa1538c53c8981886ddacd868f9fc726bfb3d2d707afbb5f961bce"
+    sha256                               monterey:       "77caa1c69e1d0f7e5e0be2de793f9f684b9c02b40bc11dbf9b2e5e22ad287298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e8328d0d3fb80d6ccb0499cae7ec7cb3e6643abf1fb3064b51923f45b6357f8"
   end
 
   head do
@@ -82,6 +83,11 @@ class Libsigrok < Formula
   depends_on "numpy"
   depends_on "pygobject3"
   depends_on "python@3.12"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "libsigc++@2"
+  end
 
   resource "fw-fx2lafw" do
     url "https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/sigrok-firmware-fx2lafw-bin-0.1.7.tar.gz"

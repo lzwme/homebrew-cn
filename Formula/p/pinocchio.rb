@@ -25,11 +25,16 @@ class Pinocchio < Formula
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "eigen"
   depends_on "eigenpy"
   depends_on "hpp-fcl"
   depends_on "python@3.12"
   depends_on "urdfdom"
+
+  on_macos do
+    depends_on "octomap"
+  end
 
   def python3
     "python3.12"

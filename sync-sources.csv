@@ -6217,6 +6217,7 @@ Homebrew-homebrew-core/Formula/t/tesseract-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/testdisk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/testkube.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/testscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/testssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tetra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texapp.rb, Homebrew/homebrew-core, 0

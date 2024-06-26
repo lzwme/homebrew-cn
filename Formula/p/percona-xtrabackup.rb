@@ -2,10 +2,9 @@ class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https:www.percona.comsoftwaremysql-databasepercona-xtrabackup"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https:downloads.percona.comdownloadsPercona-XtraBackup-LATESTPercona-XtraBackup-8.0.35-30sourcetarballpercona-xtrabackup-8.0.35-30.tar.gz"
-  sha256 "8a3632a5a7a91834800f4f83902468bccff1d979e82347c0372b39a97b0c85f0"
+  url "https:downloads.percona.comdownloadsPercona-XtraBackup-LATESTPercona-XtraBackup-8.0.35-31sourcetarballpercona-xtrabackup-8.0.35-31.tar.gz"
+  sha256 "c6bda1e7f983e5a667bff22d1d67d33404db4e741676d03c9c60bbd4b263cabf"
   license "GPL-2.0-only"
-  revision 3
 
   livecheck do
     url "https:docs.percona.compercona-xtrabackuplatest"
@@ -20,13 +19,13 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e1a79eda619c2e9c53172f8efc09704ac7df13131da707cf8d6a838819f46057"
-    sha256 arm64_ventura:  "f05e26039c455a07998ea5b586049da2de7a5e7ab50073e396e063f8897ce9de"
-    sha256 arm64_monterey: "d08ecc70736dfa2a9151d6621a57a34db94f063218e26dda6aec8c925b4d5d65"
-    sha256 sonoma:         "0fea5bd755c85be147a607645dc15668310b84d6cdb87af7927ddd742e9c80d9"
-    sha256 ventura:        "fedabe4f80e9e427550fa075f2021c37f05e4802deabccddc6867c86d8259f74"
-    sha256 monterey:       "d2b57a3fb5adade2b88bc4922642026cfcd21f936967c77754c9438706231c6f"
-    sha256 x86_64_linux:   "4082113faad96e48e5247f76d43c77f98d970858f441e06527c496653712bd5d"
+    sha256 arm64_sonoma:   "4e946a2cfea03a1948984d70f7f962620ff5daa969dffb22fba8550245b9e963"
+    sha256 arm64_ventura:  "5933c6a83680e1f249f0ea0688710aebbad26e66a4c4371dc8e3d52fa9058434"
+    sha256 arm64_monterey: "f3ef69bc3099153309a5bc27abc74af7758d235c9ccbbdd562854f1328afa9d1"
+    sha256 sonoma:         "87c8f8dc9b73d22530f39db6ba3041258c2647e676a0a175876c66ae0c1c0ebf"
+    sha256 ventura:        "d23a41e05238236f562b0ef10d6836bf3f741a6962e5243ffcbcf4e981eb9d32"
+    sha256 monterey:       "3c7bae88a2359b7922269699dcf8d45bcf86e0ee0cd50d2a701175e34d77459f"
+    sha256 x86_64_linux:   "a7d51f7b824f4eef8dbaa13809d7f4ea45f46bdb8cf2c729c0068646b5a392e7"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -42,6 +41,7 @@ class PerconaXtrabackup < Formula
   depends_on "mysql-client"
   depends_on "openssl@3"
   depends_on "protobuf@21"
+  depends_on "zlib"
   depends_on "zstd"
 
   uses_from_macos "vim" => :build # needed for xxd
@@ -49,7 +49,10 @@ class PerconaXtrabackup < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
   uses_from_macos "perl"
-  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libgpg-error"
+  end
 
   on_linux do
     depends_on "patchelf" => :build
@@ -75,8 +78,8 @@ class PerconaXtrabackup < Formula
   end
 
   resource "DBD::mysql" do
-    url "https:cpan.metacpan.orgauthorsidDDVDVEEDENDBD-mysql-5.004.tar.gz"
-    sha256 "33a6bf1b685cc50c46eb1187a3eb259ae240917bc189d26b81418790aa6da5df"
+    url "https:cpan.metacpan.orgauthorsidDDVDVEEDENDBD-mysql-5.006.tar.gz"
+    sha256 "4ca6c6415552a8acd3d8e01a96d0ac5a4a936e845c4c0e6a7ac6a10ad3798db7"
   end
 
   # https:github.comperconapercona-xtrabackupblobpercona-xtrabackup-#{version}cmakeboost.cmake

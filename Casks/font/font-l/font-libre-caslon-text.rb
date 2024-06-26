@@ -2,7 +2,7 @@ cask "font-libre-caslon-text" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comimpallariLibre-Caslon-Textarchivemaster.zip"
+  url "https:github.comimpallariLibre-Caslon-Textarchiverefsheadsmaster.tar.gz"
   name "Libre Caslon Text"
   homepage "https:github.comimpallariLibre-Caslon-Text"
 

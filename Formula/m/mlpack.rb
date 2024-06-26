@@ -4,16 +4,17 @@ class Mlpack < Formula
   url "https:mlpack.orgfilesmlpack-4.4.0.tar.gz"
   sha256 "61c604026d05af26c244b0e47024698bbf150dfcc9d77b64057941d7d64d6cf6"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
+  revision 1
   head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c493daecb84e9fafae3013a3f5f1f19517ffb585b7dd5757fb84997a707588f3"
-    sha256 cellar: :any,                 arm64_ventura:  "16717ad32de7e095a1820f850b6885bca2846e802f261f82f4c154a5685a9f4d"
-    sha256 cellar: :any,                 arm64_monterey: "55495cabfed20643cd9fd4332843a39ead25151aefa790d2fd05a6eacbe18ea4"
-    sha256 cellar: :any,                 sonoma:         "3179971fdaf5d6618c137499b15ff1bef945b0d25a3db3a1c5a205ffe364e7a9"
-    sha256 cellar: :any,                 ventura:        "5817d2ece8f42980c391130ba019d18eebba81fffff7dd2e22fcfeede51c69e4"
-    sha256 cellar: :any,                 monterey:       "d830509c7770fca443e99a2d97bed4de930002b3b533d65032eb3992f12b5754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "857f7fdad50388d56551c5189320a8c5dd56deb657313a9ac53c1bdfd2245b38"
+    sha256 cellar: :any,                 arm64_sonoma:   "2da7300cdc468b5e24de606e3a154a4a5cbab59937316e53d9f118a8fead4caa"
+    sha256 cellar: :any,                 arm64_ventura:  "d0998af6ec4fb8aeee1957e4936371b7fc587078f02cfceeda0a0cab4821d326"
+    sha256 cellar: :any,                 arm64_monterey: "73362efe455c7f4d0ab589d6602b18e57794b82cff68752de9c89fb9d739447c"
+    sha256 cellar: :any,                 sonoma:         "cf3477a7305fe5f772093d5c7a8edf7c9e4afe587e40b8c8ea52f095934425e6"
+    sha256 cellar: :any,                 ventura:        "aa20e00cd4cb387be86edd240d36ce734a62030553981356e45a860b1c588459"
+    sha256 cellar: :any,                 monterey:       "ad27e9311cf8817793845aa7b3dfbf7a1f347316f03fd06a8a95c8a1750d8dc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3cb9f195b25de1b245f5e3a775647846b3097e76302621c86c832faed0c4b62"
   end
 
   depends_on "cmake" => :build

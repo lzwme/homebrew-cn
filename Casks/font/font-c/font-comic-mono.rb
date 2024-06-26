@@ -2,8 +2,8 @@ cask "font-comic-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:codeload.github.comdtinthcomic-mono-fontzipmaster",
-      verified: "codeload.github.comdtinthcomic-mono-font"
+  url "https:github.comdtinthcomic-mono-fontarchiverefsheadsmaster.tar.gz",
+      verified: "github.comdtinthcomic-mono-font"
   name "Comic Mono"
   homepage "https:dtinth.github.iocomic-mono-font"
 

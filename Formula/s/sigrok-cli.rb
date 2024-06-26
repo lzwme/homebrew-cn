@@ -36,6 +36,10 @@ class SigrokCli < Formula
   depends_on "libsigrok"
   depends_on "libsigrokdecode"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     system "./autogen.sh" if build.head?
     mkdir "build" do

@@ -33,6 +33,7 @@ class Gnuradio < Formula
   depends_on "boost"
   depends_on "cppzmq"
   depends_on "fftw"
+  depends_on "fmt"
   depends_on "gmp"
   depends_on "gsl"
   depends_on "gtk+3"
@@ -48,6 +49,7 @@ class Gnuradio < Formula
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "soapyrtlsdr"
+  depends_on "soapysdr"
   depends_on "spdlog"
   depends_on "uhd"
   depends_on "volk"
@@ -55,6 +57,11 @@ class Gnuradio < Formula
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "llvm"
+  end
 
   fails_with gcc: "5"
 
@@ -156,11 +163,10 @@ class Gnuradio < Formula
     ENV.cxx11
     ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
 
-    venv_root = libexec"venv"
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_create_path "PYTHONPATH", venv_rootsite_packages
-    venv = virtualenv_create(venv_root, python3)
+    venv = virtualenv_create(libexec"venv", python3)
     venv.pip_install resources
+    ENV.prepend_create_path "PYTHONPATH", venv.rootsite_packages
 
     # Avoid references to the Homebrew shims directory
     inreplace "CMakeLists.txt" do |s|
@@ -177,7 +183,7 @@ class Gnuradio < Formula
       -DGR_PREFSDIR=#{etc}gnuradioconf.d
       -DGR_PYTHON_DIR=#{prefixsite_packages}
       -DENABLE_DEFAULT=OFF
-      -DPYTHON_EXECUTABLE=#{venv_root}binpython
+      -DPYTHON_EXECUTABLE=#{venv.root}binpython
       -DPYTHON_VERSION_MAJOR=3
       -DQWT_LIBRARIES=#{qwt_lib}
       -DQWT_INCLUDE_DIRS=#{qwt_include}
@@ -206,15 +212,13 @@ class Gnuradio < Formula
     plugin_pth_dir = etc"gnuradioplugins.d"
     plugin_pth_dir.mkpath
 
-    venv_site_packages = venv_rootsite_packages
-
-    (venv_site_packages"homebrew_gr_plugins.py").write <<~EOS
+    (venv.site_packages"homebrew_gr_plugins.py").write <<~EOS
       import site
       site.addsitedir("#{plugin_pth_dir}")
     EOS
 
     pth_contents = "#{prefixsite_packages}\nimport homebrew_gr_plugins\n"
-    (venv_site_packages"homebrew-gnuradio.pth").write pth_contents
+    (venv.site_packages"homebrew-gnuradio.pth").write pth_contents
 
     # Patch the grc config to change the search directory for blocks
     inreplace etc"gnuradioconf.dgrc.conf", share.to_s, "#{HOMEBREW_PREFIX}share"

@@ -27,6 +27,7 @@ class HppFcl < Formula
   depends_on "pkg-config" => :build
   depends_on "assimp"
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "eigen"
   depends_on "eigenpy"
   depends_on "octomap"
