@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https:github.comminiomc"
   url "https:github.comminiomc.git",
-      tag:      "RELEASE.2024-06-20T14-50-54Z",
-      revision: "dda9e96887a452b60f23ef18ea68e8898836c017"
-  version "20240620145054"
+      tag:      "RELEASE.2024-06-24T19-40-33Z",
+      revision: "3548007d5bd1ba8e2ed98f35d95c4776dd9a7ff9"
+  version "20240624194033"
   license "AGPL-3.0-or-later"
   head "https:github.comminiomc.git", branch: "master"
 
@@ -17,13 +17,13 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9dcb4db31ed60090c18f649cceb2201233ac87d0f31a203852a8fe30f8e27a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33d16e9bd2ee7ac8f9336c4071cd12724219b11aa5618826e200512ef59e01b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52ed924a336cff01e99579934f4efcecf91825a14903c244a0bf81fc9b02a06d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b359b0b9c1a930c48b907f7eafbdef24e011924f370b79bab3073489c32ea6ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "53941ca574ce83429cecddec3ecd4b304b14048fd401e033798e7c44efec63b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "6db914006a82ef708c577b34c1a47635f2908c59a344ea5bf4832f7b256641fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8c82444f34faa23deccb3a92e9c2d331bdd0b7a1a2a31a8daafc58712669e4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85252a61f683b5a7385636726b37d6dd2ec27eaed0379546e15e8ba36184cd96"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af68113c4ab932043932e3a8bc63129c2d8309399c68d22fcedab6a0f7aa600b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "070cdd54cc364bdd805d2dfb296273bf861313198cc38b2b4ebef19946831ea0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5283816ef60dc58531a28742fb544255eec20fbe7c51c5f3307ed50e829c9ac2"
+    sha256 cellar: :any_skip_relocation, ventura:        "85b80accdce7deba2eb888f4b68e14b900d7171c9cd6e6866b84c22ff25abbca"
+    sha256 cellar: :any_skip_relocation, monterey:       "424106fc0841294ccb95102a386a13c535f29843b963e189c68b98a41eda862a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "425bf8dfcea0bb9b5aae41385057301acf07c360cb3e79347d5cfa3c09c80e24"
   end
 
   depends_on "go" => :build

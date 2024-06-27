@@ -7250,7 +7250,7 @@ Homebrew-homebrew-cask/Casks/a/anka-build-cloud-controller.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/a/anka-build-cloud-registry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anka-virtualization.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankama.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/ankermake.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/ankermake.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ankerwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ankiapp.rb, Homebrew/homebrew-cask, 0
@@ -7729,6 +7729,7 @@ Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckb-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
@@ -11710,7 +11711,7 @@ Homebrew-homebrew-cask/Casks/m/meetingbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megacmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0
@@ -11877,6 +11878,7 @@ Homebrew-homebrew-cask/Casks/m/mono-mdk-for-visual-studio.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/m/mono-mdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monodraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monofocus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/monokle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monolingual.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monotype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moom.rb, Homebrew/homebrew-cask, 0
@@ -11995,6 +11997,7 @@ Homebrew-homebrew-cask/Casks/n/navicat-for-postgresql.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/n/navicat-for-sql-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-for-sqlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium-essentials.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/navicat-premium-lite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium@15.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navigraph-charts.rb, Homebrew/homebrew-cask, 0
@@ -13955,6 +13958,7 @@ Homebrew-homebrew-cask/Casks/x/xsplit-vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xstation5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtool-creative-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtorrent.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yacreader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yakyak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0

@@ -3,18 +3,18 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https:github.comPyCQApylint"
-  url "https:files.pythonhosted.orgpackages9ae960280b14cc1012794120345ce378504cf17409e38cd88f455dc24e0ad6b5pylint-3.2.3.tar.gz"
-  sha256 "02f6c562b215582386068d52a30f520d84fdbcf2a95fc7e855b816060d048b60"
+  url "https:files.pythonhosted.orgpackagesb4ad0a538337cac5089af67b712f18345a12ac2ae14d4a4f04994bc7c1995a71pylint-3.2.4.tar.gz"
+  sha256 "5753d27e49a658b12a48c2883452751a2ecfc7f38594e0980beb03a6e77e6f86"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99187e4dea9557c56cd2f3fd925d42116473e652d9cf5c90dbf4e646788a1f77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99187e4dea9557c56cd2f3fd925d42116473e652d9cf5c90dbf4e646788a1f77"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99187e4dea9557c56cd2f3fd925d42116473e652d9cf5c90dbf4e646788a1f77"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af2c58515eb6612be8e5eb637b646ddcd3b0ce2851fcea6586ea8a191001e2ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "af2c58515eb6612be8e5eb637b646ddcd3b0ce2851fcea6586ea8a191001e2ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "af2c58515eb6612be8e5eb637b646ddcd3b0ce2851fcea6586ea8a191001e2ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b261cb5b1ea9c313ab283343ec316bdc4915eb5a24774f462a04e69b9ca2b1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f715a2ed613c688a7628b71c8ea2f8fbb56bcb3b0e32993b31142ad32574dc7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f715a2ed613c688a7628b71c8ea2f8fbb56bcb3b0e32993b31142ad32574dc7f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f715a2ed613c688a7628b71c8ea2f8fbb56bcb3b0e32993b31142ad32574dc7f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c04795e267ffad09c8969af7b16e9f297660d2406c03012f21b6dc22951112e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "c04795e267ffad09c8969af7b16e9f297660d2406c03012f21b6dc22951112e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c04795e267ffad09c8969af7b16e9f297660d2406c03012f21b6dc22951112e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a1c1db9fd95212ca64aa3b839e4908a65787980ce8d535d1656074f938765d0"
   end
 
   depends_on "python@3.12"

@@ -1,19 +1,19 @@
 class SonarScanner < Formula
   desc "Launcher to analyze a project with SonarQube"
   homepage "https:docs.sonarqube.orglatestanalysisscansonarscanner"
-  url "https:binaries.sonarsource.comDistributionsonar-scanner-clisonar-scanner-cli-6.0.0.4432.zip"
-  sha256 "965a18c438a213aa2167b51c793116987bc2a9df9ad245c8e02d3ab3e54022e7"
+  url "https:binaries.sonarsource.comDistributionsonar-scanner-clisonar-scanner-cli-6.1.0.4477.zip"
+  sha256 "6928d282b22381d37865c725293f8d03613f81104bc2461ed3318fac2f345cdc"
   license "LGPL-3.0-or-later"
   head "https:github.comSonarSourcesonar-scanner-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0cf45694c4683b4ffd2735c79433b954d7c531496255f3396a8ef6678ba301e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dc9079487bbc35160e68c4c9fab52d391e3381eb91d8ce781538b2ec7763c49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a4a993d143f125bf902bfaea4e8a69c064f944eb682c4f2a311d765a8fa0b8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50f629e9d25548f2d0eb31cf42a16edcc5f4f94a4acfa649834949ebbc8fcaa2"
   end
 
   depends_on "openjdk"

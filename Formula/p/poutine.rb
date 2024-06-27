@@ -1,19 +1,19 @@
 class Poutine < Formula
   desc "Security scanner that detects vulnerabilities in build pipelines"
   homepage "https:boostsecurityio.github.iopoutine"
-  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.11.0.tar.gz"
-  sha256 "b74028a79b960cdd9765c4fded68b8734c27b6423e70ac31d37e8850fd6bc930"
+  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.13.0.tar.gz"
+  sha256 "d36f1e5849599d5b56a8838818a1dc41e30e113a5f1a098607cf40b32e5639fb"
   license "Apache-2.0"
   head "https:github.comboostsecurityiopoutine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4abb7a8040490ead89b53f9b4ba6a6c3f8dfd006d32062d8c1d679fc92e3cfdf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6bdf0881b43bd9bcd600037ed185a0a67a8a4997553932948f196b0ce1a5d77"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4f554c6c7cfafec1d8693adfbb49766d876ff9a8d67f0e2e113c483757a9e47"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7ef48d148f373ba7fee016c7b95abdd29a132d7dc30dba32bbbf9a133023e7b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "96685d9f8a039284e838030a38522871f46ed65dc75ec1ae880a422edc46cb08"
-    sha256 cellar: :any_skip_relocation, monterey:       "83651f5308754b16a185535e8e9fdcb7d1375c48b28d9b0057530b017eb21f03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "def2e8c62352b8bc2b7bd22ea74490ddf73864411967207ed6e24c7b90bb8a91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc8d260725a77263604bc08485eb37f1738577175e69c44043491289b11b2ecc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74ed2b5adbbdc796e284b38769bfa4bab796348f26b57279d897e658a508ada7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d7005fb53c259e8db333a56704e471c7bacd07a11e622550883f863768aa87d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2d8af7029d02d05ff9c3f76e2727c8f63a752d9d04f7198b08d89433c993f3a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "78c635b84df8386a38c56639f0bee52ac8b7e8f0bac3e87d1b7a241fd4ff277d"
+    sha256 cellar: :any_skip_relocation, monterey:       "deb3d82f09e410df4b11fe230790ea2ecc85d310487dbb206c0a16588c0cd643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0b9d689c1a7811a4e465afefcb7b3ef8f5b7a1d297035742108352b98f06b52"
   end
 
   depends_on "go" => :build
@@ -32,6 +32,13 @@ class Poutine < Formula
   end
 
   test do
+    mkdir testpath".poutine"
+    (testpath".poutine.yml").write <<~EOS
+      include:
+      - path: .poutine
+      ignoreForks: true
+    EOS
+
     assert_match version.to_s, shell_output("#{bin}poutine version")
 
     # Creating local Git repo with vulnerable test file that the scanner can detect

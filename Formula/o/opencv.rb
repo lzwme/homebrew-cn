@@ -24,9 +24,12 @@ class Opencv < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
+  depends_on "abseil"
   depends_on "ceres-solver"
   depends_on "eigen"
   depends_on "ffmpeg@6"
+  depends_on "freetype"
+  depends_on "gflags"
   depends_on "glog"
   depends_on "harfbuzz"
   depends_on "jpeg-turbo"
@@ -40,10 +43,25 @@ class Opencv < Formula
   depends_on "protobuf"
   depends_on "python@3.12"
   depends_on "tbb"
+  depends_on "tesseract"
   depends_on "vtk"
   depends_on "webp"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "glew"
+    depends_on "imath"
+    depends_on "jsoncpp"
+    depends_on "libarchive"
+  end
+
+  on_linux do
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "glib"
+    depends_on "gtk+3"
+  end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 

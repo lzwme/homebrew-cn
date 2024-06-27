@@ -3,20 +3,19 @@ class Twine < Formula
 
   desc "Utilities for interacting with PyPI"
   homepage "https:github.compypatwine"
-  url "https:files.pythonhosted.orgpackages666ddcf5c58dbc468b52f20f2de0470caaae09a7ab91d847f7ca4a786137ca4ftwine-5.1.0.tar.gz"
-  sha256 "4d74770c88c4fcaf8134d2a6a9d863e40f08255ff7d8e2acb3cbbd57d25f6e9d"
+  url "https:files.pythonhosted.orgpackages7768bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782btwine-5.1.1.tar.gz"
+  sha256 "9aa0825139c02b3434d913545c7b847a21c835e11597f5255842d457da2322db"
   license "Apache-2.0"
-  revision 2
   head "https:github.compypatwine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f0711d230b7078078b9e2fefc98df2afdce83aa5f2774d4b131ad683d00597f0"
-    sha256 cellar: :any,                 arm64_ventura:  "988e26c5147610594286df2558f2529dfbb20e6c0162a95d9345e43b6c657010"
-    sha256 cellar: :any,                 arm64_monterey: "bc35ec8d5e3acc2e84e8aaee8262f5a4e1e57d61925d623476a9d5c5ddf61388"
-    sha256 cellar: :any,                 sonoma:         "2143138d2669bf39ba3cafa72084810773fba913edddf86b6b55b7058cac74da"
-    sha256 cellar: :any,                 ventura:        "b802a7bcdc0d913cb3edf840d59938820b06edf06ee431063ae60737d6df1973"
-    sha256 cellar: :any,                 monterey:       "0468348a66fcc76130091070441844c8813ff369b4ee6d6d2cb1e456e2745359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "333cc4b4674d142ea5f03dc5326278040a741346219b36f94162209d8918930f"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc49769cf0469075adafa5ef8577326dbd04df4da6043d8ce126e43aa59902fc"
+    sha256 cellar: :any,                 arm64_ventura:  "4b3f8657addd25067299494145f1dcd086c8e67a47afad652baaa88e2476e794"
+    sha256 cellar: :any,                 arm64_monterey: "3d3c6c985e3c14f4a22a027070793f915f23b3aefd2d9519e1a32b5b18cc27b9"
+    sha256 cellar: :any,                 sonoma:         "a5863bb4b33578e5c3cc2e20bd88453c05222a9012ae94f3682c99032be71b70"
+    sha256 cellar: :any,                 ventura:        "49c8ebd0bbaba79c31e8ab344089348381a23b446b002f9071e3530d3bd4b978"
+    sha256 cellar: :any,                 monterey:       "fb98d807779dffbe8b175584556b4f11625c65ca6856f5262b778337452b2096"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c66701d17ee661a3f73a90a75121b6a05e2ad4a81d820786c2006e321041c74"
   end
 
   depends_on "rust" => :build
@@ -39,8 +38,8 @@ class Twine < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagesa0fcc4e6078d21fc4fa56300a241b87eae76766aa380a23fc450fc85bb7bf547importlib_metadata-7.1.0.tar.gz"
-    sha256 "b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"
+    url "https:files.pythonhosted.orgpackages20ffbd28f70283b9cca0cbf0c2a6082acbecd822d1962ae7b2a904861b9965f8importlib_metadata-8.0.0.tar.gz"
+    sha256 "188bd24e4c346d3f0a933f275c2fec67050326a856b9a359881d7c2a697e8812"
   end
 
   resource "jaraco-classes" do
@@ -84,8 +83,8 @@ class Twine < Formula
   end
 
   resource "pkginfo" do
-    url "https:files.pythonhosted.orgpackages4fa1f00755330cb34bc19b1ba744b9880c51a9b1ed8526039354736d5f4dfb0dpkginfo-1.11.1.tar.gz"
-    sha256 "2e0dca1cf4c8e39644eed32408ea9966ee15e0d324c62ba899a393b3c6b467aa"
+    url "https:files.pythonhosted.orgpackages2f72347ec5be4adc85c182ed2823d8d1c7b51e13b9a6b0c1aae59582eca652dfpkginfo-1.10.0.tar.gz"
+    sha256 "5df73835398d10db79f8eecd5cd86b1f6d29317589ea70796994d49399af6297"
   end
 
   resource "pygments" do

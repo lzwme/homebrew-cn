@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https:www.nushell.sh"
-  url "https:github.comnushellnushellarchiverefstags0.94.2.tar.gz"
-  sha256 "19b8ccb30f63da7eadbc8d9afa69318d9cbbb40bc162558604a24b8773ccd04a"
+  url "https:github.comnushellnushellarchiverefstags0.95.0.tar.gz"
+  sha256 "f41a0f41af3996581f9bd485cfe5d55f26dd486dc3812b386bd43439c72a6d16"
   license "MIT"
   head "https:github.comnushellnushell.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "67e1bd1dfda551df79d07c9cfe90b3f710e2ff4f6f632e754d1bbf49bba0abba"
-    sha256 cellar: :any,                 arm64_ventura:  "19e7b05868efbf78662bc35bbf7b35fbb454d257f0865d92afeced30562c86a7"
-    sha256 cellar: :any,                 arm64_monterey: "191d8abe65fe8787e51d979865debacf2f35bb35e2e03a46b4ba054d093f9f93"
-    sha256 cellar: :any,                 sonoma:         "34e6d025537b9b5e17eb49a45a90562e4daf0eb9a04ddd02e59ef1fef0b7c06e"
-    sha256 cellar: :any,                 ventura:        "3aa618dd611d20d629a2a337e7348c9b01a8c493ee70efe1234d21cae2945fa3"
-    sha256 cellar: :any,                 monterey:       "bf88809a3a97b9bbfb8eebed5b7c5450024684ba0bf5e5a2b9019164ec64edae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a727d163abab2dbeff77df9b0c00ca06426b1bc1840f1a77c96d71bf37cd8f4d"
+    sha256 cellar: :any,                 arm64_sonoma:   "c711bf913853f57ff8e485f1e16ba463665d36994562c8aa610ac85961991ca4"
+    sha256 cellar: :any,                 arm64_ventura:  "5d005710c7fe45013f788f544032de55bb8aeaba11797bdfb6636f3fd397c1c1"
+    sha256 cellar: :any,                 arm64_monterey: "ccddd2c79c12e44920797267437a6a15716da8d7993bdf626e9960d61f50a3e8"
+    sha256 cellar: :any,                 sonoma:         "34c36139c209ae97e25fc9b9e7da35e6c7ce5f055352dea9990abd882d07eb63"
+    sha256 cellar: :any,                 ventura:        "d5e075b2739f993981d444904cca866d9599f366a9f516154a20ca69a87ef4b8"
+    sha256 cellar: :any,                 monterey:       "af08638eb0dfdf58b629f8db0c07d4b3b420ee6856d5a4295bd07f01be1bcf1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9258454636925590dbeab03a9b071429496e0d6e3889d1e99be37b190434715e"
   end
 
   depends_on "rust" => :build
