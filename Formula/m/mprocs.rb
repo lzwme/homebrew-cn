@@ -1,22 +1,19 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https:github.compvolokmprocs"
-  url "https:github.compvolokmprocsarchiverefstagsv0.6.4.tar.gz"
-  sha256 "7fdb5f3f8baaa82ccb7bf2193a7b843027cb133824a99475226524c105255077"
+  url "https:github.compvolokmprocsarchiverefstagsv0.7.0.tar.gz"
+  sha256 "5e23215885da9afdaa420e24749f4a4ff3b04b0d547dae9e756aaae2748e8b88"
   license "MIT"
   head "https:github.compvolokmprocs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2eed9f5ff395c01137f17aa1381229ed3a97a84f82e6201eb102d65b8686eda9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eb52d211cb3e815fde72ac095e47d6ed6d9c0c4144521a2a8186d60a978b45e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "809917011f4d7b325f47e690f18ad5ebc929e69057e8ff9bf8e4bd5c3d13d2d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d96fa9177201787519d810a8cef0dfa489c40991ef93f472f7437ba3400c8081"
-    sha256 cellar: :any_skip_relocation, sonoma:         "42a74d04f4079f423589582fd4d9945379e3e59a185f6d41f2a97e32ae42f359"
-    sha256 cellar: :any_skip_relocation, ventura:        "d9faadb723f373b8ffd992a5282d1da8171130587166e2831e2cdc1ce44b831a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1189819af1ec7c13b6c23a66d0964a123a2f46c3adeb82b5ae4a6784c344cace"
-    sha256 cellar: :any_skip_relocation, big_sur:        "944c5e0b1f910f4202eb334e8d0f5152d5c791c10241d57000f4a7095ed68a04"
-    sha256 cellar: :any_skip_relocation, catalina:       "21334450af9a4872263142344fe6451bc9d299fb2a8df5c0ca99b6d15642660c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "010993dcf1f72fcdaf8ac26ae55c6f2ae3de15ac1aab7ec6a7012f69133b52e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e389cac5772228409ceb4947c882b0ef3607fbb0d3284a34ce11128262d93e33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dcc5ad18b12653d8a33a9d4b23c3f16ac1b17818f779ffb348a1571b1790a34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fa31bbc13e511fac507b9f128abf7481a8fd0ff749d117fdf6575b9f5b88833"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b524ae4791f2d9b553b02564d93791cc897771784b4b683aabf45a5b9a7e36ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "a144c711d1b951e1bd3803b4ee1f8931a63b28253fcc958cc1b061f421788d90"
+    sha256 cellar: :any_skip_relocation, monterey:       "65e3a738e891225e7b0327739008f295061a7a652aa9911ab904ec539f370a62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72bc4af5264a2605a7b29dae77a4462799aee795a000934fa5097c0345358a5c"
   end
 
   depends_on "rust" => :build

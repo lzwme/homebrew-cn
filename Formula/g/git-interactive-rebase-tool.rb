@@ -1,8 +1,8 @@
 class GitInteractiveRebaseTool < Formula
   desc "Native sequence editor for Git interactive rebase"
   homepage "https:gitrebasetool.mitmaro.ca"
-  url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.4.0.tar.gz"
-  sha256 "25d76f5565d2283f320491fa7d7fe2fd12ef2664fa29fb7e332e048e687b8178"
+  url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.4.1.tar.gz"
+  sha256 "0b1ba68a1ba1548f44209ce1228d17d6d5768d72ffa991909771df8e9d42d70d"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class GitInteractiveRebaseTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8429e444bd9bed7cabacce6b949e3422d2e35b5d092020773154370aefb0e7ac"
-    sha256 cellar: :any,                 arm64_ventura:  "3f072ba39641bfd213c9fd9145f63375a7d101cddcdea4adc28234c53505c97f"
-    sha256 cellar: :any,                 arm64_monterey: "3d7070c4913492785ca75a0a17b86b13136f9481b05941a950b51445120e1bd8"
-    sha256 cellar: :any,                 sonoma:         "785162ad5c56856a764aa4b71de7bd28ab19339d27a06b9abfd361733b277896"
-    sha256 cellar: :any,                 ventura:        "157a34883bc15a1ebc4e59bfea8eb21f680100cad5f8cacda7cc93cec24580aa"
-    sha256 cellar: :any,                 monterey:       "7c6147296984de54844c4eaaf4afed7a7c0df23ddd4dbcd0f22bf5633ef97d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c96a2122bbaa4a975e2bc8710934eae851351a885dbd5b2fc3af34cdf7c1439f"
+    sha256 cellar: :any,                 arm64_sonoma:   "4ac649d64eb740c263b9ad078d03653d3ddcd0749f421e8f3338a14a118c4ab4"
+    sha256 cellar: :any,                 arm64_ventura:  "a9651edfb9767af29f1616798bda32cd94114cfa1d175a5367d7539560b7aba6"
+    sha256 cellar: :any,                 arm64_monterey: "e6d25224763538b1732a4489dd02b56e1a5069113f1f949336a780de68fa3628"
+    sha256 cellar: :any,                 sonoma:         "3f1e8c8ebf19d085050d76d1541e400f0a85ab867681244d5a169a9c83df0210"
+    sha256 cellar: :any,                 ventura:        "d8704de335fe2d5fdb1f9a43a87ff650a92b733846f366ddeb394239e59903b2"
+    sha256 cellar: :any,                 monterey:       "c001b62f173b7b355e34ac2ffc379430ebae1e5660ed2c1b3fb9b9f7f909ff6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18ea56c826b260bd6028f99818cfdb98a5ff684c2c581712dbd76527161c5877"
   end
 
   depends_on "pkg-config" => :build

@@ -1,19 +1,19 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https:docs.astral.shruff"
-  url "https:github.comastral-shruffarchiverefstagsv0.4.10.tar.gz"
-  sha256 "cd3212c8e44c0c2c92eba10c44df0ed4073c77b2cff669563b37a56a090c9e74"
+  url "https:github.comastral-shruffarchiverefstags0.5.0.tar.gz"
+  sha256 "d82f44f45fc310345cb7d4ce3fc5c9a39556515062002804bb4ae9f6e191c2b2"
   license "MIT"
   head "https:github.comastral-shruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21abb43ca09921c0a5dc4b1031fec475127d12ea58e1c1e08ea9a71969aeb3dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79369d5be3fcc61b913bea7dabf9449e5868a570abc9d3980c3ea99f68ecec3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa8836859a3be1041e5cf69c017a73cfa03a393cd4fd2ed0c251c4fa4eacea06"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eee6497c376d27bdfbb80ce64853156e628f9ebad1445cead9f661fb897e3fc9"
-    sha256 cellar: :any_skip_relocation, ventura:        "69bec408390e0643430a3ed828796d8759bbd650caaff5ff3e6ed39876b221dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fc4ca5f412656b8b2cc4a537757577889a5286bf997177dacfd208ef7322d80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbe4f298b6b3f87c8ead12657863fdd3e43e448c891f537df51b5f0dfe2a4e00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9df5ebde60a458bafb437674b8cee8260243f64f6b7882b7074f27bdbd2cbbdc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf2b1a213ba61b9a99c2b9d5b9d4d0832ff5dbc83ab6bf051ccdf9eecc2aedd6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ef350d59cb9936b53eeab5ae533cb48551414bb5d165b321458fee057c5eb4d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf5748e0884dc86aeb4e4f0d9287f3059a959c824c4c99f9af7cc3c918b51cd0"
+    sha256 cellar: :any_skip_relocation, ventura:        "c06b3af06950814526a1deca07f05f4235e4d4fea4ff8218f04803c2aca68901"
+    sha256 cellar: :any_skip_relocation, monterey:       "759e8d12f89e1191fbd18bcfd149e34606063f1f68e6dd227a354acef8e18a27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83091f5db5725e48eaadc3731798d67848f3035d92cee56db1eb78f51d9a0f9b"
   end
 
   depends_on "rust" => :build
@@ -28,6 +28,6 @@ class Ruff < Formula
       import os
     EOS
 
-    assert_match "`os` imported but unused", shell_output("#{bin}ruff --quiet #{testpath}test.py", 1)
+    assert_match "`os` imported but unused", shell_output("#{bin}ruff check #{testpath}test.py", 1)
   end
 end

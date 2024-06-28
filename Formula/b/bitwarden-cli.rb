@@ -1,9 +1,11 @@
-require "language/node"
+require "languagenode"
 
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
-  homepage "https://bitwarden.com/"
-  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-2024.6.0.tgz"
+  homepage "https:bitwarden.com"
+  # Do not use npmjs for the next release as it will contain non-open-source code.
+  # https:github.comHomebrewhomebrew-corepull175702
+  url "https:registry.npmjs.org@bitwardencli-cli-2024.6.0.tgz"
   sha256 "c6cc40900db37dd7653eb24bb095dbedbe00bb27a1024642dbf12c31a03dceeb"
   license "GPL-3.0-only"
 
@@ -20,19 +22,21 @@ class BitwardenCli < Formula
   depends_on "node"
 
   def install
+    raise "Formula requires changes to only use GPL assets." if version > "2024.6.0"
+
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
 
     generate_completions_from_executable(
-      bin/"bw", "completion",
+      bin"bw", "completion",
       base_name: "bw", shell_parameter_format: :arg, shells: [:zsh]
     )
   end
 
   test do
-    assert_equal 10, shell_output("#{bin}/bw generate --length 10").chomp.length
+    assert_equal 10, shell_output("#{bin}bw generate --length 10").chomp.length
 
-    output = pipe_output("#{bin}/bw encode", "Testing", 0)
+    output = pipe_output("#{bin}bw encode", "Testing", 0)
     assert_equal "VGVzdGluZw==", output.chomp
   end
 end

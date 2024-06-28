@@ -3,12 +3,18 @@ require "languagenode"
 class GitSplitDiffs < Formula
   desc "Syntax highlighted side-by-side diffs in your terminal"
   homepage "https:github.combangagit-split-diffs"
-  url "https:registry.npmjs.orggit-split-diffs-git-split-diffs-1.1.0.tgz"
-  sha256 "124709db0b14ba1543553e8774d44c0c2361f4d4765f71df5d9d6d345cc104ed"
+  url "https:registry.npmjs.orggit-split-diffs-git-split-diffs-1.2.0.tgz"
+  sha256 "d75cf4a0e45c461fb49f76a064c771cf1a8146fd339bae17a48c179d5bf404e1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5b348302822608e4fe122591d8b0d89cffa0a1687b79c6d49bab09fbbc9dc22b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, ventura:        "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, monterey:       "be2e89b1abb0ddc889f3f545094794151e9368afe0df468b79498c2edf88c39d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b98d38accb79c026d9641380afd10c17cb587a93429a8c1a99cb21685554cde"
   end
 
   depends_on "node"

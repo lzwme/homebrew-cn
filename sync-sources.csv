@@ -492,7 +492,7 @@ Homebrew-homebrew-core/Formula/b/bitcoin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitlbee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitrise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bittwist.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitwise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkcrack.rb, Homebrew/homebrew-core, 1
@@ -5187,7 +5187,6 @@ Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.12.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python@3.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 1
@@ -5221,6 +5220,7 @@ Homebrew-homebrew-core/Formula/q/qpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qrcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrencode.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qrtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrupdate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qscintilla2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qshell.rb, Homebrew/homebrew-core, 1
@@ -6037,6 +6037,7 @@ Homebrew-homebrew-core/Formula/s/stylish-haskell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stylua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sub2srt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subfinder.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/subliminal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subnetcalc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sugarjar.rb, Homebrew/homebrew-core, 1

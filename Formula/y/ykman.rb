@@ -3,19 +3,19 @@ class Ykman < Formula
 
   desc "Tool for managing your YubiKey configuration"
   homepage "https:developers.yubico.comyubikey-manager"
-  url "https:files.pythonhosted.orgpackagesca22c973548be0286e3bd3599e525c6de55b4535e38f0feff165442777db0f24yubikey_manager-5.4.0.tar.gz"
-  sha256 "53726a186722cd2683b2f5fd781fc0a2861f47ce62ba9d3527960832c8fabec8"
+  url "https:files.pythonhosted.orgpackages941a93777ec4776013f0c51b2d5f0c61fec8b7b54d6150a4c22bd6e2b4463d71yubikey_manager-5.5.0.tar.gz"
+  sha256 "27a616443f79690a5a74d694c642f15b6c887160a7bd81ae43b624bb325e7662"
   license "BSD-2-Clause"
   head "https:github.comYubicoyubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b8db2c41cd23fd0b1df0826bb39448a92d11f79513907bd5af33c6395d692c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c198a828a247a6f35f1427904ddc14f6719d2ff08e4fa644bc528323c5c338d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b30835f61e282c8c23a73e73e9b960cd3d6440e5db22f4983e2e6acb7830c5a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "69141b742777be8711a97fb5cf84f5f1f6f01f2b82eddb75caae1eb965386656"
-    sha256 cellar: :any_skip_relocation, ventura:        "fb9ef6edda20fcd01e607dbeef709d7aa4b883db6318ad1fc93b20b82ff7ded5"
-    sha256 cellar: :any_skip_relocation, monterey:       "f605645a199c0fd0203f3509c8565f61848fd52ac4f09cbeeb3901ff834f8e57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cb94fd189933ebda03e4f337ad0e41d3a8cefdb3ac33dd25463c847d11b044a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a385fcf070a568715763ac40916244544f5dab6ef3fc0e0719c4606b553583c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43f6e69151f9a696655e65ae5c6fcbbfe5416cf420c6374b04775fb85148d519"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a96b77633df74b56da0563a15306e5751c2b1717cce85c15b8f3c604193fc23"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42dafea3cdac01c3219ec828c8f00b093066cbef03f14479e753c52d9cf8c6c7"
+    sha256 cellar: :any_skip_relocation, ventura:        "2a8fb4ea3ae79eda606af0a4336a15cc9f7ec557dc4c437c1dc7e3ef7c44177c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ffb2a20375d200f5bfead24e76a5090bcb7d5a462a4e8eb54cb43a0a82a19d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf2d316c5d4df5af8be07c921187d80c749b80bf8e6f97a916489dc418762272"
   end
 
   depends_on "swig" => :build
@@ -23,6 +23,8 @@ class Ykman < Formula
   depends_on "python@3.12"
 
   uses_from_macos "pcsc-lite"
+
+  # pin pyscard to 2.0.8, upstream bug report, https:github.comLudovicRousseaupyscardissues169
 
   resource "click" do
     url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
@@ -35,8 +37,18 @@ class Ykman < Formula
   end
 
   resource "jaraco-classes" do
-    url "https:files.pythonhosted.orgpackagesa58aed955184b2ef9c1eef3aa800557051c7354e5f40a9efc9a46e38c3e6d237jaraco.classes-3.3.1.tar.gz"
-    sha256 "cb28a5ebda8bc47d8c8015307d93163464f9f2b91ab4006e09ff0ce07e8bfb30"
+    url "https:files.pythonhosted.orgpackages06c0ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https:files.pythonhosted.orgpackagesc960e83781b07f9a66d1d102a0459e5028f3a7816fdd0894cba90bee2bbbda14jaraco.context-5.3.0.tar.gz"
+    sha256 "c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2"
+  end
+
+  resource "jaraco-functools" do
+    url "https:files.pythonhosted.orgpackagesbc66746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
   resource "jeepney" do
@@ -45,13 +57,13 @@ class Ykman < Formula
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackagesae6cbd2cfc6c708ce7009bdb48c85bb8cad225f5638095ecc8f49f15e8e1f35ekeyring-24.3.1.tar.gz"
-    sha256 "c3327b6ffafc0e8befbdb597cacdb4928ffe5c1212f7645f186e6d9957a898db"
+    url "https:files.pythonhosted.orgpackages3ee954f232e659f635a000d94cfbca40b9d5d617707593c3d552ec14d3ba27f1keyring-25.2.1.tar.gz"
+    sha256 "daaffd42dbda25ddafb1ad5fec4024e5bbcfe424597ca1ca452b299861e49f1b"
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackagesdfad7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4more-itertools-10.2.0.tar.gz"
-    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
+    url "https:files.pythonhosted.orgpackages013377f586de725fc990d12dda3d4efca4a41635be0f99a987b9cc3a78364c13more-itertools-10.3.0.tar.gz"
+    sha256 "e5d93ef411224fbcef366a6e8ddc4c5781bc6359d43412a65dd5964e46111463"
   end
 
   resource "pyscard" do

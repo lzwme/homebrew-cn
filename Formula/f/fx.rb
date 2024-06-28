@@ -1,18 +1,18 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https:fx.wtf"
-  url "https:github.comantonmedvfxarchiverefstags34.0.0.tar.gz"
-  sha256 "a1d436a8951a753488adda02fe9fb1091fabfe928eafce73f3b1e690a9dccbee"
+  url "https:github.comantonmedvfxarchiverefstags35.0.0.tar.gz"
+  sha256 "5ab642bb91ad9c1948de1add2d62acec22d82398e420957c191c1549999eb351"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48de944b02718c8c55662ad58a2b6343884be96cb5a8c926189ca36d742265a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48de944b02718c8c55662ad58a2b6343884be96cb5a8c926189ca36d742265a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48de944b02718c8c55662ad58a2b6343884be96cb5a8c926189ca36d742265a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94f465f85daf21ba6930a33ea67353f12912c8242e584961d26bc347aaae30d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "94f465f85daf21ba6930a33ea67353f12912c8242e584961d26bc347aaae30d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "94f465f85daf21ba6930a33ea67353f12912c8242e584961d26bc347aaae30d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df1cea58e1293d847dfefc5560e90edbc1ffa309a9870de4f0e6fc06e87641a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ac980c80f98aa4a5ea9bd21d1a17b0080ada804f9e189d0dd91810f4f829048"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ac980c80f98aa4a5ea9bd21d1a17b0080ada804f9e189d0dd91810f4f829048"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ac980c80f98aa4a5ea9bd21d1a17b0080ada804f9e189d0dd91810f4f829048"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b04e666a49281880912c45d2867df85f1bc699e0472161f83f017a2e5e8472c"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b04e666a49281880912c45d2867df85f1bc699e0472161f83f017a2e5e8472c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b04e666a49281880912c45d2867df85f1bc699e0472161f83f017a2e5e8472c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70b778921a29c92bb09b7f9e6a889100b90173b49c66c674beec0974fe8d30be"
   end
 
   depends_on "go" => :build

@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/51/ff/c599f964d6446e52954a5b0ce772df57737d62e2f269abff068b1bfaf093/checkov-3.2.140.tar.gz"
-  sha256 "1da294ed5525931749a21b37463dd8b5365c49fad58d64106f038d513f91e98f"
+  url "https://files.pythonhosted.org/packages/82/cf/51f169e15fddcfe9b33171ce6cccc013420bde4c75e87eddbf2c4b3e37c0/checkov-3.2.150.tar.gz"
+  sha256 "3b0c436d78d9e7728373d4737c7c10f372190c2fc2118ae5e1ed67a05740e6fa"
   license "Apache-2.0"
 
   livecheck do
@@ -17,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "365f98ae448d2911cbde40a699b4e5755c273449c734f825aee52e8dd2a919d2"
-    sha256 cellar: :any,                 arm64_ventura:  "613b2d7c7facb990bdbc0e773187a923d578eb6d3ce9aa849941caba1bdc141d"
-    sha256 cellar: :any,                 arm64_monterey: "84f6189d0c32e4dd1a6051fccd2f5fc332eb9fc68e81b67cb71397805c241075"
-    sha256 cellar: :any,                 sonoma:         "5d34ad17af11ffa183898cfb1f819327050c1c472adaddc5401dd471d2d4b1a1"
-    sha256 cellar: :any,                 ventura:        "34ba295924601a25227dca13893164fefd7e0215da5bcaf798919c5250fb4ab7"
-    sha256 cellar: :any,                 monterey:       "a4032136ed95b5b585402c953c216a536c3138eefa52931457de25b0b98da996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99cdadfd3ce1442ee2991b235f1b391671c8f84c0a50ee39e6528edb826f1d52"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc43916c0f3f463190284084c74ac1d4004fd92b8e45a4fc668e500043f7c27d"
+    sha256 cellar: :any,                 arm64_ventura:  "3d75f5fac130f44232b096d55aaeb8a082abe8bdcc852c77f294e82ddac8524f"
+    sha256 cellar: :any,                 arm64_monterey: "1144ce009ff74743aae80b43a21b8a34621e809eebea5944dc40508bef5b613a"
+    sha256 cellar: :any,                 sonoma:         "193051827576d45afc95d74369494b9b868b1cf8a98ce3aed8896e44984f07f6"
+    sha256 cellar: :any,                 ventura:        "053144289db1bef1879a036eed66e3e015853bdc41f36494f7ac7c70ccb9fa35"
+    sha256 cellar: :any,                 monterey:       "ac876badbeb829861c8d1c154e15dde686d48f6124f10452bc03a9b25674529d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b951ef0b9ab0f2d0de9f6034caeb176963cd3de3c0e2e0b9ff60d4c2261f991"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -211,8 +211,8 @@ class Checkov < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/a0/fc/c4e6078d21fc4fa56300a241b87eae76766aa380a23fc450fc85bb7bf547/importlib_metadata-7.1.0.tar.gz"
-    sha256 "b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"
+    url "https://files.pythonhosted.org/packages/76/72/33d1bb4be61f1327d3cd76fc41e2d001a6b748a0648d944c646643f123fe/importlib_metadata-7.2.1.tar.gz"
+    sha256 "509ecb2ab77071db5137c655e24ceb3eee66e7bbc6574165d0d114d9fc4bbe68"
   end
 
   resource "isodate" do
@@ -381,8 +381,8 @@ class Checkov < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/83/bc/fb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571/s3transfer-0.10.1.tar.gz"
-    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
+    url "https://files.pythonhosted.org/packages/cb/67/94c6730ee4c34505b14d94040e2f31edf144c230b6b49e971b4f25ff8fab/s3transfer-0.10.2.tar.gz"
+    sha256 "0711534e9356d3cc692fdde846b4a1e4b0cb6519971860796e6bc4c7aea00ef6"
   end
 
   resource "schema" do

@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https:www.gdal.org"
-  url "https:github.comOSGeogdalreleasesdownloadv3.9.0gdal-3.9.0.tar.gz"
-  sha256 "3b29b573b60d156cf160805290474b625c4197ca36a79fd14f83ec8f77f29ba0"
+  url "https:github.comOSGeogdalreleasesdownloadv3.9.1gdal-3.9.1.tar.gz"
+  sha256 "46cd95ad0f270af0cd317ddc28fa5e0a7ad0b0fd160a7bd22909150df53e3418"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -12,13 +11,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a6b731287daa812e197b6188f5062a1b7e52612cc58c7f47e1ab6239d3dea594"
-    sha256 arm64_ventura:  "ebd03d88fb59387cf8fe545eaf955800411dde781eb6003eeb989b3aef67e0b0"
-    sha256 arm64_monterey: "33c6aad3b8e0f7bf1efedad63b95e17a0b6ab8c714bd0063483fbc69d9de53e0"
-    sha256 sonoma:         "30b4af4134bf4424ef09444c249cf707f91b75d91b3e2e69b324d107a478c478"
-    sha256 ventura:        "e005822b59f0f6684dc907a9f873f76f554b3f0cb90c68097c26ac27418acbcd"
-    sha256 monterey:       "a6c769aa1c8652d209c1a53cf9e41a02a00c51dd4b74ca99cf3d4e24c8fa12d8"
-    sha256 x86_64_linux:   "6557a4e156ef1dd038c7c864d276d78c2688448c169ca828cba1089e0af2be8d"
+    sha256 arm64_sonoma:   "9dd583c679b723c8584c1f19d0524b16a11f39b2e004e6d84a576e2fa5234c83"
+    sha256 arm64_ventura:  "ee000d500f7369d08843d6d5d7b418582a948fb7abf5ceef0cbb0ac7258ea195"
+    sha256 arm64_monterey: "873865d13b402fe9e62698f88ad4ab3d9dbce53859882c8b2d934ec870b1374d"
+    sha256 sonoma:         "3df8bf489b1abfd608b622fc839c40a3026cf90846e5246758b01399911b3876"
+    sha256 ventura:        "f524f71a7ef1e6c0cc36b4b573fc6696d150f253244932c52efa3ff300bb1c71"
+    sha256 monterey:       "d4c529215f85fdf77006196c39ffb31e9c2f916a2b95d9062c582f2775af68c4"
+    sha256 x86_64_linux:   "3d612454c87e0f88ca7d33fd80067a2a82a308899b36978a5f8305822d0e1e39"
   end
 
   head do
@@ -39,9 +38,11 @@ class Gdal < Formula
   depends_on "geos"
   depends_on "giflib"
   depends_on "hdf5"
+  depends_on "imath"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "json-c"
+  depends_on "libaec"
   depends_on "libarchive"
   depends_on "libgeotiff"
   depends_on "libheif"
@@ -52,6 +53,7 @@ class Gdal < Formula
   depends_on "libspatialite"
   depends_on "libtiff"
   depends_on "libxml2"
+  depends_on "lz4"
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "openexr"
@@ -70,6 +72,12 @@ class Gdal < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "minizip"
+    depends_on "uriparser"
+  end
 
   on_linux do
     depends_on "util-linux"
