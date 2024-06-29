@@ -567,7 +567,7 @@ Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-cask-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-gem.rb, Homebrew/homebrew-core, 1
@@ -6334,6 +6334,7 @@ Homebrew-homebrew-core/Formula/t/toml-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toml11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tomlplusplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toot.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/topfew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgrade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tor.rb, Homebrew/homebrew-core, 0

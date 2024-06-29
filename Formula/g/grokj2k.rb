@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https:github.comGrokImageCompressiongrok"
-  url "https:github.comGrokImageCompressiongrokarchiverefstagsv12.0.2.tar.gz"
-  sha256 "591ee84e883c9af6eb0ca0bba4cb153202b1909efba0e95f4b333086c279cf8e"
+  url "https:github.comGrokImageCompressiongrokarchiverefstagsv12.0.3.tar.gz"
+  sha256 "8f35ea6559c7ce6f17268b16a6642fa704a64a81a7c35daa045466b11ad4a274"
   license "AGPL-3.0-or-later"
   head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "61078a3b7bde6a0d154624f5de61f3b8078e02accb65952857709feb8a475de1"
-    sha256 cellar: :any,                 arm64_ventura:  "3e7eac867a742c8842ba0f006e6849a65d9af64dcdaed4a1d7f8db2dad3110c5"
-    sha256 cellar: :any,                 arm64_monterey: "67a0f443fea1de9aec2d6f6d314f49858a2716725e5a7d4649b49c3bc6460cb9"
-    sha256 cellar: :any,                 sonoma:         "1229219a6d783b1188b63a1ec0bb6e0c0d5becec57f1519b95bc804413f90005"
-    sha256 cellar: :any,                 ventura:        "0c2be41b19a1e6a4ed4f55466d9a243c27115a5856563431d4bcf62d266dd6a3"
-    sha256 cellar: :any,                 monterey:       "f13c99f26872df799327a634fa01a46ef544e3732a2cd0f6a02eeb50c248f08b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3ea91e55db6b8d9d6de4bdb5895f9913728aaf3d3aa27ddff3c904c868d5d41"
+    sha256 cellar: :any,                 arm64_sonoma:   "2895a3f184fff6ed582fe8deaf8263269d8fd8d96b32eb6daa26bd65de1193b5"
+    sha256 cellar: :any,                 arm64_ventura:  "5a1641b959e88ba1833188551443f562cf6627b5fe6fadf2b213f32d80b7972a"
+    sha256 cellar: :any,                 arm64_monterey: "efae536e36b219da4b8bb9a8ed6bd0cd443ebe8b342c8a333d4f65bb1a3fde4d"
+    sha256 cellar: :any,                 sonoma:         "097f484b713a0663c571eaab77ca75f01ebe3a146195eb9f4acee8eb04736865"
+    sha256 cellar: :any,                 ventura:        "3fcb01eff880bb5b7d9438d2fcb2816a2dade94a8fd5db117cb15844a3c454fb"
+    sha256 cellar: :any,                 monterey:       "6802006a793137e7572f8fa259f76accdc6f2699b3d1e951a7ec2c92d9abe35e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04bcaeee0c78b07d889c39518b9a740d9097987f843ee6b507e44d43d03226b2"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +36,8 @@ class Grokj2k < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1200
+    depends_on "xz"
+    depends_on "zstd"
   end
 
   fails_with :clang do

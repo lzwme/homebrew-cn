@@ -3,9 +3,9 @@ class Jdtls < Formula
 
   desc "Java language specific implementation of the Language Server Protocol"
   homepage "https:github.comeclipse-jdtlseclipse.jdt.ls"
-  url "https:download.eclipse.orgjdtlsmilestones1.36.0jdt-language-server-1.36.0-202405301306.tar.gz"
-  version "1.36.0"
-  sha256 "028e274d06f4a61cad4ffd56f89ef414a8f65613c6d05d9467651b7fb03dae7b"
+  url "https:download.eclipse.orgjdtlsmilestones1.37.0jdt-language-server-1.37.0-202406271335.tar.gz"
+  version "1.37.0"
+  sha256 "d04cd9f4df45ce85ae9cf49530c72a1a324b14eee747af26e3374500e36b5bd0"
   license "EPL-2.0"
   version_scheme 1
 
@@ -15,13 +15,13 @@ class Jdtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f796f725e4a2ba11182e5e7940f063940829a78a2f65424d08191b23a122a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79d15be5e79f35aa5257ca2a56aeac54ec629098a3fca9c69068581bb0666d4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "49e7cf48236f9530005592c4954723d77b008e390c93739b679995c2bea4f7ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "075e2e829eb23d0605691f69297dbd2c14e6e3a834a69e08dc81148651445a89"
   end
 
   depends_on "openjdk"

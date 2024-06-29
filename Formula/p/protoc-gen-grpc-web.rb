@@ -7,6 +7,11 @@ class ProtocGenGrpcWeb < Formula
   sha256 "d3043633f1c284288e98e44c802860ca7203c7376b89572b5f5a9e376c2392d5"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:   "b89aa0ba6730eaad8968e03c7cdabdc8de90f56f841bebb0ba8d72d1753065ee"

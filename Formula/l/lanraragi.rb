@@ -3,29 +3,19 @@ require "languagenode"
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.10.tar.gz"
+  sha256 "03d00928a84705e7b89a667c6aea85b529ca1d1c08a153e0c2e2922ec64fd0d1"
   license "MIT"
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
-  stable do
-    url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.0.tar.gz"
-    sha256 "76390a12c049216c708b522372a7eed9f2fcf8f8d462af107d881dbb1ce3a79f"
-
-    # patch for `Can't load application from file "...lanraragi": Can't open file "oshino"`
-    # remove in next release
-    patch do
-      url "https:github.comDifegueLANraragicommitd2ab6807cc4b1ed1fe902c264cba7750ae07f435.patch?full_index=1"
-      sha256 "3edc8e1248e5931bfc7f983af93b92354bb85368582d4ccedcd1af93013ce24a"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3b49498cbc0a34297dcb42c3afb77eebf5db20e38499ab7e35ebd0d985ec0f93"
-    sha256 cellar: :any,                 arm64_ventura:  "6746c926ae28a5ea67e5c7d0640f63ae654435777914c267d64054733cc0b292"
-    sha256 cellar: :any,                 arm64_monterey: "a76240c2c099dc3c87bb6496f5db3fa98fab445561faf27c3245e1a894fb672e"
-    sha256 cellar: :any,                 sonoma:         "0aefa14f2fe76f790aa9a13c815256c3ca43fc1b1f8d670b468b0e9b766fbf13"
-    sha256 cellar: :any,                 ventura:        "47e34ca1d4ed8ac217df7be95533f540b0fba4912b0220e70e52a8b7ecd26969"
-    sha256 cellar: :any,                 monterey:       "e169e620e4eef0d430a227e4a8e4903946246d271a0133fdbf872d88aec8cea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b8ccd9a2cfeb25225e21ff477852767f99befcd3c6315e9ade1a34e43c3c376"
+    sha256 cellar: :any,                 arm64_sonoma:   "80a79b140793a3a5ccf020fd0424c409516008a3d2fc792df709d28c21ff647f"
+    sha256 cellar: :any,                 arm64_ventura:  "ba0e853e04297c1e1e17108478b25955a8d44f50b1d93a1252bcbf95aa372370"
+    sha256 cellar: :any,                 arm64_monterey: "ee17141271cc1b784fbfb3fcab13365a593d2638c2c79cce39db09103d4fa8e2"
+    sha256 cellar: :any,                 sonoma:         "53e1105e464caf48d2415dc1a72906b5ca0269bba802ee74c2a229a2338052ec"
+    sha256 cellar: :any,                 ventura:        "c01bccd2a47abe5eb01dfb81c1462cdc2212a8797978e8c8ac5bdc174d00eff8"
+    sha256 cellar: :any,                 monterey:       "bfe35ab57f4cb2257dca6079a07a34e2e4cccbb0ed45635ca5b21909806d9e8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2daa2c275346d68bdddf3368e47e5d93a6568a915caa99fc5acdf78769724b0"
   end
 
   depends_on "nettle" => :build
@@ -46,14 +36,14 @@ class Lanraragi < Formula
 
   resource "libarchive-headers" do
     on_macos do
-      url "https:github.comapple-oss-distributionslibarchivearchiverefstagslibarchive-121.tar.gz"
-      sha256 "f38736ffdbf9005726bdc126e68ff34ddaee25326ae51d58e4385de717bc773f"
+      url "https:github.comapple-oss-distributionslibarchivearchiverefstagslibarchive-131.tar.gz"
+      sha256 "8d0e4d71d2b039a968d2c7b4230806912785da98ce5d3a10c60024016ac343bb"
     end
   end
 
   resource "Image::Magick" do
-    url "https:cpan.metacpan.orgauthorsidJJCJCRISTYImage-Magick-7.1.1-20.tar.gz"
-    sha256 "a0c0305d0071b95d8580f1c18548beb683453d59d12cd8d9a9d3f6abe922ea38"
+    url "https:cpan.metacpan.orgauthorsidJJCJCRISTYImage-Magick-7.1.1-28.tar.gz"
+    sha256 "bc54137346c1d45626e7075015f7d1dae813394af885457499f54878cfc19e0b"
   end
 
   def install

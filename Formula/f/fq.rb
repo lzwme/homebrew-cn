@@ -1,21 +1,19 @@
 class Fq < Formula
   desc "Brokered message queue optimized for performance"
   homepage "https:github.comcirconus-labsfq"
-  url "https:github.comcirconus-labsfqarchiverefstagsv0.13.10.tar.gz"
-  sha256 "fe304987145ec7ce0103a3d06a75ead38ad68044c0f609ad0bcc20c06cbfd62e"
+  url "https:github.comcirconus-labsfqarchiverefstagsv0.13.11.tar.gz"
+  sha256 "bd48eaed12d93b2f746df6c5f2f6ddc29902a4629acd2ce67d4e63c15235dd88"
   license "MIT"
   head "https:github.comcirconus-labsfq.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "22ad970d2336565f56ae979163a54e3de07a82165f3b4f15050abf7ca3926617"
-    sha256 arm64_ventura:  "909e9e74ea0d6a28cbd112383a29957597aaad6b32fd02efe61334c0db59122b"
-    sha256 arm64_monterey: "ce96b506bfe342397d39c409890f63a6a424562b463fa738c802d3603bba35ee"
-    sha256 sonoma:         "eb9b15284089358379211dacdf2ce810d92c27f9a344a3acff7768dc15ef7110"
-    sha256 ventura:        "f0e6202567699912b509c9ec544c9b193eb86001879e8fe3d4f449e02f3f5a4b"
-    sha256 monterey:       "60be8da7fc7c0e9909d92c225815e220c697e498f1b62b4206d1bf2a72b58be1"
-    sha256 big_sur:        "0953c716b652e678dd83c6aadc9b42b5d2699c1d9ed234e4387a3bbaad4f09ad"
-    sha256 x86_64_linux:   "e451023b35a528f0839e7e432ee2825ce4cc8deac929641da92242cd2e723128"
+    sha256 arm64_sonoma:   "90e55635d4ede2f18a7f05068675f4c841ff19847ed55c8727a5756dcf7a4fc6"
+    sha256 arm64_ventura:  "108cf65a18d86c600cf71269b5f1d76c5068aca9f1ad648c898a93df43f0411c"
+    sha256 arm64_monterey: "78bbc079ebb51b8a40faee45b9937e0dfac8b715f0df3da5639110441963f73d"
+    sha256 sonoma:         "8c8ead0f9aa5354e763ae5e87b9ad32c1e55274abcc0e554c15ed3d1428c3df2"
+    sha256 ventura:        "37ea5d45cb526690d3003297c5efb59cd7040b68a4270abe4a28a11771cd3277"
+    sha256 monterey:       "be4eb1042b9c5dbdb9eeac614eedd8246afbe60d490d68b6de2a1da0f8921fb8"
+    sha256 x86_64_linux:   "345283197d4a3cef92779527209392574f5f9bb8038ef0622769364eef6874b4"
   end
 
   depends_on "concurrencykit"

@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https:www.hiro.soclarinet"
-  url "https:github.comhirosystemsclarinetarchiverefstagsv2.6.0.tar.gz"
-  sha256 "6080cc1f634204cc8f329c38f4445a67f663cbc8c05124ccb16bea20fe8ac8cc"
+  url "https:github.comhirosystemsclarinetarchiverefstagsv2.7.0.tar.gz"
+  sha256 "f3296882f6cc12dab3f28ff73bc551639f5f18eba6065830924ed6f47ca74b8e"
   license "GPL-3.0-only"
   head "https:github.comhirosystemsclarinet.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a691642750c58f7f6ed406f1087bbea427806717f5806b40c8b6543e8c4f087"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d5a792260539c95630609afb057ad013d3348e80aa43ec9329367ff0531cba7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc5dff3ec361ac4485d951c7d3cb9f206ee4fa4763802d939cfe9daebca80f24"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55b630eaeb069cb644128028d237de54a963073f2b4ca76e8a9d0bb3737170ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "b44b29da04f08905d55fb4e86da24e798f23167f800a876d434dcb57a0eb14ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "104a5286aa6d464b10eb77c6b497910a9d2697433c260ece334800dafcc8a4bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b8e5fb63dcd80f7070bac6afeac09abf37f994fea016018ebe78c39b4f8d4c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa0cec65edd8678ac7a6317d47343ce3e01e08b1fc8de011f89e592ce148c278"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d2dc26f9fefc8c5ddeee01e8981ec9d08ef61bfb42945e62477a4060bb559f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8f4f2ede28c842b92ecc003a1cb80bbd7d878c73257f9bd923f5470a7ecaa17"
+    sha256 cellar: :any_skip_relocation, sonoma:         "75c076a1500a1a8cf26746ac4985656e8b65ebc0c071c5d0912f7099bc68ec85"
+    sha256 cellar: :any_skip_relocation, ventura:        "3abe7a9ec77413ca171350e96b1e265e1767c1dbca62c19a588117f217c3b958"
+    sha256 cellar: :any_skip_relocation, monterey:       "932d6594399fd2f43c4d0888232ad72f0286390997a9a76feb903d98fa642110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c579b1124d2f66de2b71af93f2dc5d0f9dc98b5f661c3b73611bff1dd46b765c"
   end
 
   depends_on "rust" => :build

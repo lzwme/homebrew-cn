@@ -1,8 +1,8 @@
 class Clib < Formula
   desc "Package manager for C programming"
   homepage "https:github.comclibsclib"
-  url "https:github.comclibsclibarchiverefstags2.8.5.tar.gz"
-  sha256 "181cd5c6c73aa1e090af06c1d6dfa4e6477312bba877850a89ed107717b7c1dc"
+  url "https:github.comclibsclibarchiverefstags2.8.7.tar.gz"
+  sha256 "83d5767e363c3ed4b4271000b9ce63b6e11b6c4740df910e0074f844fb34258e"
   license "MIT"
   head "https:github.comclibsclib.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Clib < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6731e2dac2c1366e927a181c6f36a8550222d7af6ec2a5966330dd642315cb40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cda0f0c819604faaf6b06cc0fa759fdf57be408126ccd253bcc8cbb1aa8bf8c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcd1e902b95d5a768583dcbabf27d47c2d5f5bc07f34f953e3c92eabc93e7525"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4357f7fb71fab00af4da6ecd69284c0935b94a88fa1546ee8137a942e705ae96"
-    sha256 cellar: :any_skip_relocation, ventura:        "144626f6491b5ae931e442e72853583c22acfa2f36d1a366a1cbf10a3fcff582"
-    sha256 cellar: :any_skip_relocation, monterey:       "3caa83703a1f806930e08d62311f2b0af95c6efefdf62e12ac90ce9ab7a7be15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1bafac64063408b040c9829ffc7cd32a26596c85abbbef6b045fbe2b27b6839"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "adaa04956400da4720ab59df6f5751b1f04e98dd297890f3289eafd55bcd7f3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7209d89f9749907745dffd80fa70d85b722ce4e907020cc55a63dd3d9066e6d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1a9ccc23f7f02055c2df418f3131adea4c9341c0d859d7fe1b84e37d2b82e08"
+    sha256 cellar: :any_skip_relocation, sonoma:         "638ea5f7900fa5e5e1fee0f597c2268979333dcf56dc303f2ca8a36d73957bb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c143f9e0b7d3f78e90b7ddd112ac7c73b5f31500401753e6ebc6ec8d18a6e8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "eaaf603e0f7a35bc6ea1f9b51a0704968e608aaee2f587035a37ef108d091faa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b575c125079396fdd1f4fd5b96a0d23048052aa8f0c9ff29986ac5209b14e649"
   end
 
   uses_from_macos "curl"

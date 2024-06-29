@@ -1,23 +1,23 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https:dartsim.github.io"
-  url "https:github.comdartsimdartarchiverefstagsv6.13.2.tar.gz"
-  sha256 "02699a8f807276231c80ffc5dbc3f66dc1c3612364340c91bcad63a837c01576"
+  url "https:github.comdartsimdartarchiverefstagsv6.14.1.tar.gz"
+  sha256 "07bc1442a80abc03b2c1984bdb9b5843446047ac6a37c18b834533c871631fde"
   license "BSD-2-Clause"
-  revision 3
 
   bottle do
-    sha256                               arm64_sonoma:   "d482ac5d4fced6f80b4161342f6532fd736fdbc2ba536d03d108205597fe16f0"
-    sha256                               arm64_ventura:  "a0513f294b6cf7c55f3d63759dfa80bec77805ca1fdf042260802480ed2d0236"
-    sha256                               arm64_monterey: "f26c5f3a861b4190de9a4102e23cd1686ee3b692d05c8cc19a9c8cac42beaa6b"
-    sha256                               sonoma:         "7b0f35fe2ccab08976cdd40edfbc97182a9c425f1c48077d3403dfcddfdd9c10"
-    sha256                               ventura:        "8d0ded6d56feef80c7e4a53f154a25763b84033f45d43fdc1383ada312857567"
-    sha256                               monterey:       "1f80d49484d33b85afaeda38cc8c3bd0af56776ca982c79748e11d77ce72d507"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e014a208567544b13b1056c671ad76ae9447f55035cba12a27404bfea0c7d3"
+    sha256                               arm64_sonoma:   "7779dcce35f01f3b15d6a8930a2d07625aa11cb1c85945d79978a9ed9706b215"
+    sha256                               arm64_ventura:  "de5c250bf8954cd209bb81662128fb51e95099c68a56785e7d9cbfff4418ec56"
+    sha256                               arm64_monterey: "352b4fad937f3f64662fbdf3a5f6041714d9b2b2146cdabb9f36d643fb9b64bc"
+    sha256                               sonoma:         "82dccf2d11ba35b7ead2e79301b825035eeb0faa35cc2c1c81fd093de4fbc288"
+    sha256                               ventura:        "bfbd4e61c0eb0ed64499418f21e478a47de24c20650defad57f1ac827cc0cfec"
+    sha256                               monterey:       "20d0d79e266415546e4a8c7dc17a3d4533b72642a44d482d88be3bc365b94132"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccb008e0ac76a4f735a4c28e03b3f2be8aae998241bb1f6b7e27e061ad7a73dd"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "assimp"
   depends_on "bullet"
   depends_on "eigen"
@@ -38,7 +38,6 @@ class Dartsim < Formula
   fails_with gcc: "5"
 
   def install
-    ENV.cxx11
     args = std_cmake_args
 
     if OS.mac?
@@ -47,10 +46,12 @@ class Dartsim < Formula
       args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
     end
 
-    mkdir "build" do
-      system "cmake", "..", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
-      system "make", "install"
-    end
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DDART_BUILD_DARTPY=OFF"
+
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Clean up the build file garbage that has been installed.
     rm_r Dir["#{share}docdart**CMakeFiles"]

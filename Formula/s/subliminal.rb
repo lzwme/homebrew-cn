@@ -3,19 +3,19 @@ class Subliminal < Formula
 
   desc "Library to search and download subtitles"
   homepage "https:subliminal.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages32079ea2a7d67fbcc8ff132d72d6162548ad19b742a0350ddf2b82fe8a18a34esubliminal-2.2.0.tar.gz"
-  sha256 "f103380d1e2ef09b7cb194beff5bf4a19492d5f3bbf336dec03a7451c992a593"
+  url "https:files.pythonhosted.orgpackagese32436cdb82e90afc602e2ed36c34e022ca545d35f5be9aa7ef9ddb0af7967b2subliminal-2.2.1.tar.gz"
+  sha256 "2ed6024a07bbb3c68fe3db76374244ad91adfca9d93fc24d3ddb9ef61825756e"
   license "MIT"
   head "https:github.comDiaoulsubliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83e5cbf4d08c12b0a4f33e20172ba94c299a4de4f8530696940729d3f38718db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83e5cbf4d08c12b0a4f33e20172ba94c299a4de4f8530696940729d3f38718db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83e5cbf4d08c12b0a4f33e20172ba94c299a4de4f8530696940729d3f38718db"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ddc0b09a97e669a5cbd40195bec33d4a04307c1b1bc4d9af87d41c91e496e6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ddc0b09a97e669a5cbd40195bec33d4a04307c1b1bc4d9af87d41c91e496e6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ddc0b09a97e669a5cbd40195bec33d4a04307c1b1bc4d9af87d41c91e496e6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d36126b86f96f580b5394027b4e9b49e541463be777551a7d8fec090664e5af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9709cca86eb3cab3f39fc6817568227a2341a40eeeb182b87d5fef63acb69446"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9709cca86eb3cab3f39fc6817568227a2341a40eeeb182b87d5fef63acb69446"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9709cca86eb3cab3f39fc6817568227a2341a40eeeb182b87d5fef63acb69446"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29803cac788eee142b6a11973f0100946ffe78f0e156a3fdb3769edabbd69d32"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb5baad15b51da801ff7ea4774dc3b1f56302095e5ca0f43e5de388b48ddffbc"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb5baad15b51da801ff7ea4774dc3b1f56302095e5ca0f43e5de388b48ddffbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0740e079d8c38bbe3f3f9f1cc972b845ccb0f5bc7189c5715e4d0eaaa5b3454"
   end
 
   depends_on "certifi"

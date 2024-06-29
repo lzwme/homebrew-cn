@@ -1,19 +1,18 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https:github.comoneapi-srconeTBB"
-  url "https:github.comoneapi-srconeTBBarchiverefstagsv2021.12.0.tar.gz"
-  sha256 "c7bb7aa69c254d91b8f0041a71c5bcc3936acb64408a1719aec0b2b7639dd84f"
+  url "https:github.comoneapi-srconeTBBarchiverefstagsv2021.13.0.tar.gz"
+  sha256 "3ad5dd08954b39d113dc5b3f8a8dc6dc1fd5250032b7c491eb07aed5c94133e1"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "20a09dfac1334404a7da5796d116f60d21497ba80f6ab12d9f05095f72b3e5a7"
-    sha256 cellar: :any,                 arm64_ventura:  "b9ab6fce05f88018e2b039ff19e379d97a6fef37157d8fdecfafbd0f0b73f19b"
-    sha256 cellar: :any,                 arm64_monterey: "56f34d804f1e16c62ca755cea7f7a28fc7bf8e992ac444ad83ecc86f01d3337e"
-    sha256 cellar: :any,                 sonoma:         "d4f7a8f799ab9a0ec0a493e36136d0a2f0b7b7dc2a9ad3d84098a6e705289d1a"
-    sha256 cellar: :any,                 ventura:        "39d9df67e1c146705107082bff0a90584c31162574349acbceaa4a232568abe1"
-    sha256 cellar: :any,                 monterey:       "c938dc2ebf9d161a4e5d9795153e1a684e869552277cb0b4e2118fc9849ddb71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22b14889248f932bf5983079a1ba9ee2602e84f9fc7655921b1d9dbda71e3163"
+    sha256 cellar: :any,                 arm64_sonoma:   "8e9ed982a18c3dac9d8db3d64fd2a8c0b157adb846103c0a9315d1f67eef25cd"
+    sha256 cellar: :any,                 arm64_ventura:  "fcae42945dc2c556b9dabcc9645646fcb36a7ceb48c07dd0029e840d3bcb1b48"
+    sha256 cellar: :any,                 arm64_monterey: "b5837d8c9c05831661606c47e210dfb2889a72e26b5d88b51ef081694410c76f"
+    sha256 cellar: :any,                 sonoma:         "1c368b6566070dc6c527d82484d2f18a1fee5dd296ae05c67888bf7a080dc14e"
+    sha256 cellar: :any,                 ventura:        "992efbcc88b69ab097794e969439994a90c5fd39af45023b2953dc53f7d05699"
+    sha256 cellar: :any,                 monterey:       "ed6b5b509b170c2a0003a63fae7c9d364195963bcb0f3a9788448d3ebc834622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5798f4862bf605ae914e0116e8cd9baaf65102279a553c9f588e32004cae2bb1"
   end
 
   depends_on "cmake" => :build

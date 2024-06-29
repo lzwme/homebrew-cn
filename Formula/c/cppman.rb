@@ -3,19 +3,18 @@ class Cppman < Formula
 
   desc "C++ 9811141720 manual pages from cplusplus.com and cppreference.com"
   homepage "https:github.comaitjcizecppman"
-  url "https:files.pythonhosted.orgpackages5532beede58634c85d82b92139a64e514718e4af914461c5477d5779c4e9b6c4cppman-0.5.6.tar.gz"
-  sha256 "3cd1a6bcea268a496b4c4f4f8e43ca011c419270b24d881317903300a1d5e9e0"
+  url "https:files.pythonhosted.orgpackagesf7c10ee5b360b7e5941fac6b3e4749e0f02c45154b1747f097ca925e8f605ea2cppman-0.5.7.tar.gz"
+  sha256 "008729416e754dd2f4b59df83496cb36c8174605f5ed02813c7d28c36c560f1a"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, ventura:        "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8318f7ad48430b865690662c367d9567eb59dff05aa52779f3ff302ade6c945"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc6a4bba4cd38b9f4d56cdddd6ba802bd5a0b584d53bd48a46abcefa5f4e9d81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d56f3be4d16ea7bb421e12b887350feef3605fbd7d00fdada9cfe0746177fae0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d56f3be4d16ea7bb421e12b887350feef3605fbd7d00fdada9cfe0746177fae0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b50609ac2b38f553aa5a1a1220207518b553fa183fb4e834e15dc498af82dea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d56f3be4d16ea7bb421e12b887350feef3605fbd7d00fdada9cfe0746177fae0"
+    sha256 cellar: :any_skip_relocation, ventura:        "d56f3be4d16ea7bb421e12b887350feef3605fbd7d00fdada9cfe0746177fae0"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b50609ac2b38f553aa5a1a1220207518b553fa183fb4e834e15dc498af82dea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d02fccc87385689cb5b22ff7a6e9810456d3eff92b70758ac66cfaf3c1de6e8"
   end
 
   depends_on "python@3.12"

@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https:www.ejabberd.im"
-  url "https:github.comprocessoneejabberdarchiverefstags24.02.tar.gz"
-  sha256 "b6d48d3bf2bef368e9321e35436381c86d78444b9042649c6c4aab0089395c07"
+  url "https:github.comprocessoneejabberdarchiverefstags24.06.tar.gz"
+  sha256 "34ef56370d39bdc9a3c58d7775a65a2c1d4e8c52e6aa80e77a8435d414dda81e"
   license "GPL-2.0-only"
   head "https:github.comprocessoneejabberd.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "068453fc248200e5a6a59323732cff760d9e4c6d5a8b73420abde241210d4399"
-    sha256 cellar: :any,                 arm64_ventura:  "a8ed53effb98f9ee0d01085db4a288add52967e9a2d90186a833b093b8eddef8"
-    sha256 cellar: :any,                 arm64_monterey: "c16f30356c6ac475cdf0b649dbb574e8de3ab8073124ffc6277fd77b0922e5ea"
-    sha256 cellar: :any,                 sonoma:         "dd5d709e3bfd463ae3dc1eee3660671e4fd1c2cc8109538600697bbb2458b5d2"
-    sha256 cellar: :any,                 ventura:        "51135a589be16e436213e110364bc8a5533bf81791ef59ac44ac1a1014b3b701"
-    sha256 cellar: :any,                 monterey:       "265918def8d32a2e7039be0e39545f51f9885567297f62dd17084af9e6f7a3f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a4c9da21319520782311e5f1e312adfe4b197abe29fd7647d84f71f1e25cb3f"
+    sha256 cellar: :any,                 arm64_sonoma:   "02c537ebbd8b8df2830d5fd354a5e94e971cea9ffd13615060761c9e99a4b29f"
+    sha256 cellar: :any,                 arm64_ventura:  "f2f9f0c671e879d11915cfac45e15025058409cfb4e076e87a0d2694da61bffc"
+    sha256 cellar: :any,                 arm64_monterey: "97c5e3099fde54457a50c682f588f9f9c0224ab57a86e5dbc4cc4e779a54c54e"
+    sha256 cellar: :any,                 sonoma:         "699ffa3a0a26c0741453d78f1f59d7e2c5f9c7d804fede88c6f1626f744bffc5"
+    sha256 cellar: :any,                 ventura:        "8aae2081d21815c5e53b408328497bc3f14038bc0c2e63cfa8323c4b8e03ca0d"
+    sha256 cellar: :any,                 monterey:       "c39b4e1b9ddb0209f9ac4248e94af28a927106c03d889b774808c3a2a93a6b4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b611f3387d22da8e86ca65f7d7db19269b832acc8f1c0e29f269e9c2a77e6326"
   end
 
   depends_on "autoconf" => :build
@@ -30,6 +30,8 @@ class Ejabberd < Formula
   depends_on "gd"
   depends_on "libyaml"
   depends_on "openssl@3"
+
+  uses_from_macos "expat"
 
   on_linux do
     depends_on "linux-pam"

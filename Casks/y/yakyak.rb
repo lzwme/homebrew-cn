@@ -10,10 +10,13 @@ cask "yakyak" do
   desc "Desktop chat client for Google Hangouts"
   homepage "https:github.comyakyakyakyak"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  disable! date: "2024-06-27", because: :unmaintained
 
   app "YakYak-darwin-#{arch}YakYak.app"
+
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.yakyak.sfl*",
+    "~LibraryApplication Supportyakyak",
+    "~LibraryPreferencescom.github.yakyak.plist",
+  ]
 end

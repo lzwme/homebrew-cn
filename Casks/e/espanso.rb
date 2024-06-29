@@ -28,8 +28,4 @@ cask "espanso" do
     "~LibraryPreferencesespanso.plist",
     "~LibrarySaved Application Statecom.federicoterzi.espanso.savedState",
   ]
-
-  caveats do
-    unsigned_accessibility
-  end
 end
