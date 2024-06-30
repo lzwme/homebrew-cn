@@ -3,20 +3,18 @@ class Gexiv2 < Formula
   homepage "https://wiki.gnome.org/Projects/gexiv2"
   # release info on the website might lag behind, refer to gitlab tags for latest release info
   # see discussions in https://gitlab.gnome.org/GNOME/gexiv2/-/issues/77
-  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz"
-  sha256 "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
+  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.3.tar.xz"
+  sha256 "21e64d2c56e9b333d44fef3f2a4b25653d922c419acd972fa96fab695217e2c8"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "c80f38f7bc014d4b17196583ed6d1de648e5000e52663f8d00f95341d26cba60"
-    sha256 cellar: :any, arm64_ventura:  "612684a73317a22620479756fcee11fae7fd1436446b087edff24385df11eed2"
-    sha256 cellar: :any, arm64_monterey: "469e0ea99ac26cf6fb64feecd2bb2b5a96f8e2e4d3db4eebd409c4a7ff9cef3b"
-    sha256 cellar: :any, sonoma:         "853e45314b2824c293a4124245ffac4773b7ef79653be1c77fa47372b8e1c8fd"
-    sha256 cellar: :any, ventura:        "8765986471baf740607e563c7b99eb3a447fb4ff3b51557ea6e652705d3b1c7b"
-    sha256 cellar: :any, monterey:       "26bcd41689a5be13d78bd78a1728448ac6114cb3b63ad4fb6e03aa517cde7594"
-    sha256               x86_64_linux:   "f940fee4151e253561119242611886f248a6a6ef1c21813d0a91c9872e5762cc"
+    sha256 cellar: :any, arm64_sonoma:   "67e11e557d79c924eddda15dbca08e388946bf1f8d4ccb60e938901719f3c579"
+    sha256 cellar: :any, arm64_ventura:  "afda771f7cb34bcdccda695f5b843d1acd188427e8b0dcb55e895f427efb515e"
+    sha256 cellar: :any, arm64_monterey: "daef02de6a9fd13965b53543ecb568dbdfcccb69a9425f047fff2ae4bc28e457"
+    sha256 cellar: :any, sonoma:         "15453b28ad8ceae545a5fd10ba90075b191a87945da03ccfc4fd64a43433f886"
+    sha256 cellar: :any, ventura:        "fe5fa4ebfd93ac04ac0abf3e8aaa151312c4e6b4f33f2ed4e162d5617bbd6215"
+    sha256 cellar: :any, monterey:       "d8309f1187652152e7817e0973e6496e3ddedf549eb279c1704523ddd81c0e2a"
+    sha256               x86_64_linux:   "93e44d86332a71710f2e67fdc510541988bb8794493a735ac26a7c933c58e916"
   end
 
   depends_on "gobject-introspection" => :build

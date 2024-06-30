@@ -1,17 +1,17 @@
 class Xcodes < Formula
   desc "Best command-line tool to install and switch between multiple versions of Xcode"
   homepage "https:github.comRobotsAndPencilsxcodes"
-  url "https:github.comRobotsAndPencilsxcodesarchiverefstags1.4.1.tar.gz"
-  sha256 "fe042ea365da9b7e1f6dca6cbeda0c54179b4d284ecb3a0ea70cd7bf6c4edb2d"
+  url "https:github.comRobotsAndPencilsxcodesarchiverefstags1.5.0.tar.gz"
+  sha256 "f55fe5c35fe7b4d76e5a0a90991b43fbac8fd4b0801cafaa60f958c5f3eaca92"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64ed372b1b209098ade04b0e6ba7ab54538b24d94c75e16227b3c1ab0b7838f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af680a02d22517629d5c4fd0c440fbed8cef6db05777607fa9c2958fb4cb7184"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7d45e1d801fff440ecc7ac2375989d24f656b7f69152f2d10c8f51305395f4f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8323cc4e8d1fce55d1cb7531f32d502d1a886640b16e145391e3c1ee94222624"
-    sha256 cellar: :any_skip_relocation, ventura:        "12bf7e26e4f33ec8debaf7c7b44d6236474120ac2be40ba57346d5539af1e4fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "f44885b0a61b1d094eec3f3660b4a5031ec2006d749264ba5a764db632cdca50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5ac938d7aa777318b6f2c1df21990fb41c823431b1ed64a2b9a1071b8a42bcc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e089ed9e1698abf3958ac72d807b02a244f61975d21f0dc581cd25516a19a755"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86e13f8b8e2a2e858c2bf7376268ecf9db5d0ca027cde2bd2e2e6e81b0ad057e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b22180902cf0edfd08d6e20ff991ba024dcf5e0c07e4f4d4c5a31bfeccfd845c"
+    sha256 cellar: :any_skip_relocation, ventura:        "017cd7a0ea7b8504cf126c68357b37c6a6a5ba532fe274a9fb2c4be5617a3d6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "1aa5c7469e3b9eaf3a968b350fba1d66b1b9fd550a9265587b41d27af80823cf"
   end
 
   depends_on xcode: ["13.3", :build]

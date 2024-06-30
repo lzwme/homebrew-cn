@@ -1,16 +1,16 @@
 class Libpeas < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.2.tar.xz"
-  sha256 "f30dffed63ca2f40477b40e171c0a31f80d91425ba1e1e47320ee6425480ecc3"
+  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.3.tar.xz"
+  sha256 "39e3b507c29d2d01df1345e9b3380fd7a9d0aeb5b2e657d38e6c2bea5023e5f0"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:  "7e0306e1365bf6c706db14bac0367f7a48459a4bf3504dfa83e705e9909fdc42"
-    sha256 arm64_ventura: "a3ec34d0a1313d2543e370d9f147d0f8125fa637aada56ee1572fd07465bab4a"
-    sha256 sonoma:        "0d33cbf631b04e8aa2c09aaa197076793bcd512f3ac290a30e215970eab512c7"
-    sha256 ventura:       "c792a526d9557b0cb617a4633c0a8351df54e1e9de9b1edb55d656b9c617b2a5"
-    sha256 x86_64_linux:  "651c57c75d5f75c0f2ebbb853152d67071a4a9ad992facf51ae3541aca8f4992"
+    sha256 arm64_sonoma:  "42e6ded6c04525304a112370557d5c15e6f5a5326881c4e259e0031f015ce1b8"
+    sha256 arm64_ventura: "5d7477d40b259db22ef12d090d06e7b1ba3423479f3b0c79a904577c16debf8d"
+    sha256 sonoma:        "31bff770d772fb86b11867b60f24d7b2fbe859cd5e05bdf871861d77a8176682"
+    sha256 ventura:       "17547e83be3e50cb03789ae940f00f1ca6ca579b5daa95c947fad502240acf2d"
+    sha256 x86_64_linux:  "217766dae766058274846f542a6094ee9c8deeeb1c7983a54664ae200544eec4"
   end
 
   depends_on "meson" => :build
@@ -23,6 +23,11 @@ class Libpeas < Formula
   depends_on "gtk+3"
   depends_on "pygobject3"
   depends_on "python@3.12"
+  depends_on "spidermonkey"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     pyver = Language::Python.major_minor_version "python3.12"

@@ -1,18 +1,18 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https:dartsim.github.io"
-  url "https:github.comdartsimdartarchiverefstagsv6.14.1.tar.gz"
-  sha256 "07bc1442a80abc03b2c1984bdb9b5843446047ac6a37c18b834533c871631fde"
+  url "https:github.comdartsimdartarchiverefstagsv6.14.2.tar.gz"
+  sha256 "6bbaf452f8182b97bf22adeab6cc7f3dc1cd2733358543131fa130e07c0860fc"
   license "BSD-2-Clause"
 
   bottle do
-    sha256                               arm64_sonoma:   "7779dcce35f01f3b15d6a8930a2d07625aa11cb1c85945d79978a9ed9706b215"
-    sha256                               arm64_ventura:  "de5c250bf8954cd209bb81662128fb51e95099c68a56785e7d9cbfff4418ec56"
-    sha256                               arm64_monterey: "352b4fad937f3f64662fbdf3a5f6041714d9b2b2146cdabb9f36d643fb9b64bc"
-    sha256                               sonoma:         "82dccf2d11ba35b7ead2e79301b825035eeb0faa35cc2c1c81fd093de4fbc288"
-    sha256                               ventura:        "bfbd4e61c0eb0ed64499418f21e478a47de24c20650defad57f1ac827cc0cfec"
-    sha256                               monterey:       "20d0d79e266415546e4a8c7dc17a3d4533b72642a44d482d88be3bc365b94132"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccb008e0ac76a4f735a4c28e03b3f2be8aae998241bb1f6b7e27e061ad7a73dd"
+    sha256                               arm64_sonoma:   "13675f61990e33b4878b22e02685b0db1515b649b547fd609697166863d3d684"
+    sha256                               arm64_ventura:  "02ccd208a65a048a45b04203c4bd48a3d8de436bfa11bf2229397fa2fcebcdcd"
+    sha256                               arm64_monterey: "62874e2140eb3c1a66c8e77bebccf96b2acee547e4193db2dc4e0d93f3d238ec"
+    sha256                               sonoma:         "32ada69b69e6e842b41d9febe45f9a5a62848ad9ea5faf8ab12bc41610d2ddf3"
+    sha256                               ventura:        "8d7b93baec18a9a6aed22391ba0f0ac73457a8814829423527016a6ce3670694"
+    sha256                               monterey:       "31acc24eda41a46f9b54a4e86a2c5a85b5ea7e737b3c492566634df62ad3a32f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f4c7764c5a8f15d18408fe1f76f1efdf880de753762e5f159bd826e3bcc2098"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +27,7 @@ class Dartsim < Formula
   depends_on "ipopt"
   depends_on "libccd"
   depends_on "nlopt"
+  depends_on "octomap"
   depends_on "ode"
   depends_on "open-scene-graph"
   depends_on "spdlog"
@@ -34,6 +35,10 @@ class Dartsim < Formula
   depends_on "urdfdom"
 
   uses_from_macos "python" => :build
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   fails_with gcc: "5"
 

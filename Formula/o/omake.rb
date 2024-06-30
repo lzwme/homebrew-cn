@@ -27,6 +27,7 @@ class Omake < Formula
   depends_on "ocaml-findlib" => :test
 
   conflicts_with "oil", because: "both install 'osh' binaries"
+  conflicts_with "oils-for-unix", because: "both install 'osh' binaries"
   conflicts_with "etsh", because: "both install 'osh' binaries"
 
   def install

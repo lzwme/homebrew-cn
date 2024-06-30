@@ -1,18 +1,18 @@
 class Osslsigncode < Formula
   desc "OpenSSL based Authenticode signing for PEMSIJava CAB files"
   homepage "https:github.commtrojnarosslsigncode"
-  url "https:github.commtrojnarosslsigncodearchiverefstags2.8.tar.gz"
-  sha256 "d275d86bf0a8094e2c2ea451065299f965238be3cfaf3af6aff276302d759354"
+  url "https:github.commtrojnarosslsigncodearchiverefstags2.9.tar.gz"
+  sha256 "3fe5488e442ad99f91410efeb7b029275366b5df9aa02371dcc89a8f8569ff55"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8d5b69f29bac418152975bb0b288fa077823e7f2caaaea15a330f417276ef51"
-    sha256 cellar: :any,                 arm64_ventura:  "e0f1712a32fd4eac4439b5f37aa0c828918d31865513e02d59e311d63462472d"
-    sha256 cellar: :any,                 arm64_monterey: "11cf3fcd97f3a19d2eacdf3df2f91c435a4db55ef583b24aad028ba9ca58a4f6"
-    sha256 cellar: :any,                 sonoma:         "b81dd3731b0f8c4518485c3cbaac40f83ec1e1612763699650366bf118325b94"
-    sha256 cellar: :any,                 ventura:        "3a56ebcfdbdd9c1197991cd50b7828a337937daf12003131699b8fa06cc7a687"
-    sha256 cellar: :any,                 monterey:       "141066fcb3a7f1337fa8acfb9c547ef1b4ce19078f996d664f52e71d84f1da3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90b5b5279052424a356d3578dd592dfb4dcbb69e3b9be03a00740b6609c93ec1"
+    sha256 cellar: :any,                 arm64_sonoma:   "917f9ac6b5ceaa7558b47929da67fa0aa3a7b3d6e4d2e7fb40f582c29bde91a2"
+    sha256 cellar: :any,                 arm64_ventura:  "3024c29dd0838b5fa7c57edab3ed3e2373515e65dd211421d8384fe9088642cb"
+    sha256 cellar: :any,                 arm64_monterey: "aa7c4c53ebf2aa83120b5883b0f8229e119fe1a4ac5bb97c1d3e9fcf141c1241"
+    sha256 cellar: :any,                 sonoma:         "6278aff15a055a409edbc6aa4a69176befc7777325b3980afc58cd71737cf11a"
+    sha256 cellar: :any,                 ventura:        "c09dfe8cb41d3af6327fb73695a7a5691c799b36f09331454b21a23e0e04ffbb"
+    sha256 cellar: :any,                 monterey:       "a329dc07e46683d428cd6f8d9fe9b2bd6c02fc03b3f5c86dfbed1e5fdb244913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e35630485849326c73bc6135118ccc391fdef8afd579371432207dd0aaec5f05"
   end
 
   depends_on "cmake" => :build

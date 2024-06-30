@@ -1,10 +1,9 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https:www.inspircd.org"
-  url "https:github.cominspircdinspircdarchiverefstagsv3.17.0.tar.gz"
-  sha256 "181de90130e11a26ec107fcb6b74005cbce3051b89b500347e416054e29c3166"
+  url "https:github.cominspircdinspircdarchiverefstagsv3.17.1.tar.gz"
+  sha256 "921fa8726676f74a9ea8670b41601c975955ad9c131e9b6eb129fa6034433cdb"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f909dabd1cda182a8bffac9702d1ba9e6811cc184680c1723405c8e9c8d758ba"
-    sha256 arm64_ventura:  "1300bfd953404cc3728e3fa6e6411350bdb395ff7361dbc50e1dc3ec1fa59371"
-    sha256 arm64_monterey: "8f86230f1506baf2082fc140675d23f337303d71ce64c025ba8c6e304ce5b6d7"
-    sha256 sonoma:         "ae5c22ec9be553b0a59ad856be6a56c6091673318eef9f4bb07cfba10a4ae4bb"
-    sha256 ventura:        "ce39749fdb7a7e2a00c50009b35fdb83500676ff28634edc49d8192f11d86ce4"
-    sha256 monterey:       "b97474dd548b126d240fd87708cf749cd06e1d9ee6e155ce79b722c8a77b14fa"
-    sha256 x86_64_linux:   "335aeeb4df8b203befe37e35b80776f9679bcc36f263975a952fc2a24502ac8d"
+    sha256 arm64_sonoma:   "0326259bd49a60c0dc56a3a17c814e8cf7138d702ba55b445af8deae910f0ed8"
+    sha256 arm64_ventura:  "0cde9596aade07ded4059178f3916acefa6d930acc52c8f60d61a66699f93535"
+    sha256 arm64_monterey: "3913f5a95f33356e79025f761f5245f4db1f825373f1f5cd0d4eb770d9fbf153"
+    sha256 sonoma:         "acc41966991fd83277d38a5a30f609e36356e3b683d787a542038336e914c87e"
+    sha256 ventura:        "b7d90882a5140ef5d66d06d8854fde8437fec81590e3f41967fca5bb8534477b"
+    sha256 monterey:       "d7a46852ce14b4ddecfdafe6663b26cf07ac535755dffe8e7157ee7305f7c103"
+    sha256 x86_64_linux:   "5c9f16a3afd6eba0bf328400d2d0148f0bbed4b0ab2b75eec7b178f1ff9a7fb6"
   end
 
   depends_on "pkg-config" => :build
@@ -28,6 +27,12 @@ class Inspircd < Formula
   depends_on "mysql-client"
 
   uses_from_macos "openldap"
+
+  on_macos do
+    depends_on "openssl@3"
+    depends_on "zlib"
+    depends_on "zstd"
+  end
 
   skip_clean "data"
   skip_clean "logs"

@@ -1,6 +1,6 @@
 cask "font-bungee" do
-  version "2.000"
-  sha256 "475c443ada44d5530debcf49703ef6871b968fbc0967676b3e1b0852b812b750"
+  version "2.001"
+  sha256 "df293931cb01e8a8737defbcee3eb853db2af67271005d65e4508d541b6f592c"
 
   url "https:github.comdjrrbbungeereleasesdownloadv#{version}Bungee-fonts.zip",
       verified: "github.comdjrrbbungee"
@@ -12,8 +12,8 @@ cask "font-bungee" do
   font "Bungee-fontsBungee_BasicBungeeInline-Regular.ttf"
   font "Bungee-fontsBungee_BasicBungeeOutline-Regular.ttf"
   font "Bungee-fontsBungee_BasicBungeeShade-Regular.ttf"
-  font "Bungee-fontsBungee_ColorBungeeColor-Regular.ttf"
   font "Bungee-fontsBungee_ColorBungeeSpice-Regular.ttf"
+  font "Bungee-fontsBungee_ColorBungeeTint-Regular.ttf"
   font "Bungee-fontsBungee_LayersBungeeLayers-Regular.ttf"
   font "Bungee-fontsBungee_LayersBungeeLayersInline-Regular.ttf"
   font "Bungee-fontsBungee_LayersBungeeLayersOutline-Regular.ttf"

@@ -1,19 +1,19 @@
 class Tio < Formula
   desc "Simple TTY terminal IO application"
   homepage "https:tio.github.io"
-  url "https:github.comtiotioreleasesdownloadv3.4tio-3.4.tar.xz"
-  sha256 "4fdc91b257b10e401ae0b0200db9f8fcf14460193e92c8e67fddc85e11a8c911"
+  url "https:github.comtiotioreleasesdownloadv3.5tio-3.5.tar.xz"
+  sha256 "efd3e9a406f827ac22d4157e345079dde15ee5a948b24156561d6c97a54e6ec0"
   license "GPL-2.0-or-later"
   head "https:github.comtiotio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "10d4113a1ff8cdd491ea097880af983b1a0050f83f31e0e4b9e27d774a03f2cd"
-    sha256 cellar: :any, arm64_ventura:  "5e2cda08a596874609b9b9979b99edf0d8bc0faad0ca86b385eaab7ede61c01c"
-    sha256 cellar: :any, arm64_monterey: "ff53448ad6bb14e83edc0decab8940070be5e03a603bfa467899724944712af2"
-    sha256 cellar: :any, sonoma:         "e63f78acdb57373635884ffaed8d5480015bb1978fecaeab8585a6a6bbdfacce"
-    sha256 cellar: :any, ventura:        "ee037ae786e83ec7bfab3cc6cdc21ac5da28746daf0cd0cd5c57574b8fe10152"
-    sha256 cellar: :any, monterey:       "e59827f73f00c6eaa9d7a251910a2e66c389eb0f4b2bb73c05c89c3cffe3c402"
-    sha256               x86_64_linux:   "d8ec08f3861b8e29399392b2ccf3ade3b1e4ce7ea1b8222cd0bebe634ec9ffc9"
+    sha256 cellar: :any, arm64_sonoma:   "a7a1ec7ee2d60c3736e2f5dd9c6539b798529748cd286297a04fddbeab342030"
+    sha256 cellar: :any, arm64_ventura:  "e8c13da32cef114a0560a20bb3af9a64cf0f0d045b79764e8df04540177253c8"
+    sha256 cellar: :any, arm64_monterey: "99e1ad3a4a8d97d35136a1a2634b538c69e4595c8ffde88e75e7de5f0601b3e4"
+    sha256 cellar: :any, sonoma:         "65e8723cec535c6e206efe10d5202e798049793f6660605977f3f88a089147ca"
+    sha256 cellar: :any, ventura:        "5b1a0e3f0595db6b2311a8b40c2dac865664caab7db1bc287ce64b3921310d80"
+    sha256 cellar: :any, monterey:       "9af5eaf690b86ab92a7cfcb7305e71051229fb2c98d0145d6cc76ff0e25eb657"
+    sha256               x86_64_linux:   "d54f723ad37a40227f3fae8971408293bcb1d1e45e325dc3d628414c3b435ffe"
   end
 
   depends_on "meson" => :build

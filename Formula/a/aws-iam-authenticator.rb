@@ -1,9 +1,8 @@
 class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
   homepage "https:github.comkubernetes-sigsaws-iam-authenticator"
-  url "https:github.comkubernetes-sigsaws-iam-authenticator.git",
-      tag:      "v0.6.20",
-      revision: "774efb85b060370538c2d47576fb3ba3e58b2c38"
+  url "https:github.comkubernetes-sigsaws-iam-authenticatorarchiverefstagsv0.6.21.tar.gz"
+  sha256 "0358a392f49fba10301815b41f97abe99ab9c0e26f4c1a93aca2051241575303"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigsaws-iam-authenticator.git", branch: "master"
 
@@ -17,24 +16,25 @@ class AwsIamAuthenticator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f96ec24eb10c862101acbefc2563ac2875384e6b8079d19cd034588b11121210"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe9666edb0e05fc8878fe9a715b27427467da12c59257be4ea7d7e22759efbc3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38af7825bc92fe8e5df74fb62591c23d607eba137c81e71b63af83438a14bf43"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8179efeb131800aae64826fc5d2754dca40f1cdc7b5b318cf25ba54904f992f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d0fb1622dafc4e30b94d9ee8d17ed432e20e9796bb2700d66609a476a1db2da4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c149fd529d8cd0eb59a7b27340f08c11d7e67ca0eeeb765358a20189ed0825d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41c4b2f83ae08aa6c1c6bc686bde2cf3070fa5c1a1ced547b467065b07a54b1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f2a17527f11b0f7455021babb08b0430be64134ecb963f023b93d8bbc7abf43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "570f0f702c95c7dcf4238c572f13d8a9becf6a13730a72b69261009ba3724301"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7f425cd8e7854d8eaba4be358eb255ba364234e47c6959d1a344289d53abb2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0836b39a2617d508fc461998b1fc0d9677d745ac1f993a82a91f5611ddd17df3"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f1392a9328dbfd3260a44ffd0b86277c578530e8717d27777546146e6632f62"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d57c0f3c2a16a0267f9cd3eab3073c778e06178a1f6a75ba83cd9b85d2aed0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ddf1c79eb09fac4884b64baa3d62825e17d419f810b5b7cc1b0b10bcc2a0f6e"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = ["-s", "-w",
-               "-X sigs.k8s.ioaws-iam-authenticatorpkg.Version=#{version}",
-               "-X sigs.k8s.ioaws-iam-authenticatorpkg.CommitID=#{Utils.git_head}",
-               "-buildid=''"]
+    ldflags = %W[
+      -s -w
+      -X sigs.k8s.ioaws-iam-authenticatorpkg.Version=#{version}
+      -X sigs.k8s.ioaws-iam-authenticatorpkg.CommitID=#{tap.user}
+      -buildid=
+    ]
     system "go", "build", *std_go_args(ldflags:), ".cmdaws-iam-authenticator"
-    prefix.install_metafiles
   end
 
   test do

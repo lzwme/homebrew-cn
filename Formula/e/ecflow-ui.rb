@@ -1,8 +1,8 @@
 class EcflowUi < Formula
   desc "User interface for client/server workflow package"
   homepage "https://confluence.ecmwf.int/display/ECFLOW"
-  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.13.0-Source.tar.gz"
-  sha256 "a14f4e97cc9123bc6cadfb3ecbf3899e27b6deb53058590bba7a4dae12f3e029"
+  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.13.1-Source.tar.gz"
+  sha256 "5358992b3e64ed3d330cb019790ff95cdbd0c9d9942614c7ce27a700294851a2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,19 +11,21 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "23593c3cb8d9c4207a76e36352b85ebd9500a400378bc040fdaf59229ca6101b"
-    sha256                               arm64_ventura:  "a116c960755b8e4c5227ded668a4d22643e4bd96cb0f83017cf1993927d55214"
-    sha256                               arm64_monterey: "89c63734991933932884ec212b19a28d64b110f46258bbc59f7ee077111ec55c"
-    sha256                               sonoma:         "49385e41229201774a32dc7b560286ffe9a289f6774c70d88cfd100b44f6f035"
-    sha256                               ventura:        "f2dd444a665d6d6f6c9a5c24cef2dbf10a6a1ca84411a77a58286612f846db39"
-    sha256                               monterey:       "8bdf3dd54132804f31344d4517be9ec96f2bf13d9c8f9e1bc272d21cffe2c0b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "549461677c05ea62e14b8098913a6a789625ce7f42714645c65978fe37ff1ceb"
+    sha256                               arm64_sonoma:   "ddca4250df99a1ce918364d4ec6f00508b6ebcc572a5f2f903b9079ac90322f3"
+    sha256                               arm64_ventura:  "37636ad924f4ca0eafc45625e4a1bbf12cf6b10b2bcf5c2f65ec47abd13df22e"
+    sha256                               arm64_monterey: "d73a00cdeeab08bf3afac4c24588a3b2a14556b3e7caf992fa41df8f2b824503"
+    sha256                               sonoma:         "b94d38e8f38f156f1b467b9b519226fc6166821ddbb69500c617a94422f4e336"
+    sha256                               ventura:        "fec08cce3db04bf38af7c799550d480f9de8f576c095ff9193cdc846d61e38cc"
+    sha256                               monterey:       "c6604ac8a589701fa8e2c5c2031d79cdb234dd0209e6b2bd45658740b08698f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ce650dd2f5b055ca14b5e845e0171ed21783e13e769fa47af6f9adf3cc9a08f"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "openssl@3"
   depends_on "qt"
+
+  uses_from_macos "libxcrypt"
 
   # requires C++17 compiler to build with Qt
   fails_with gcc: "5"

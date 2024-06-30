@@ -21,6 +21,7 @@ class Oil < Formula
 
   depends_on "readline"
 
+  conflicts_with "oils-for-unix", because: "both install 'osh' and 'ysh' binaries"
   conflicts_with "omake", because: "both install 'osh' binaries"
 
   def install

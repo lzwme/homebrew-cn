@@ -3,26 +3,10 @@ class Uhd < Formula
 
   desc "Hardware driver for all USRP devices"
   homepage "https:files.ettus.commanual"
+  url "https:github.comEttusResearchuhdarchiverefstagsv4.7.0.0.tar.gz"
+  sha256 "afe56842587ce72d6a57535a2b15c061905f0a039abcc9d79f0106f072a00d10"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 2
   head "https:github.comEttusResearchuhd.git", branch: "master"
-
-  stable do
-    # The build system uses git to recover version information
-    url "https:github.comEttusResearchuhd.git",
-        tag:      "v4.6.0.0",
-        revision: "50fa3baa2e11ea3b30d5a7e397558e9ae76d8b00"
-
-    # Backport fixes for build failure with `boost` 1.85.0. Remove in the next release.
-    patch do
-      url "https:github.comEttusResearchuhdcommitc4863b9b9f8b639260f7797157e8ac4dd81fef93.patch?full_index=1"
-      sha256 "5e5a90ba2fdaee109dccf0ca583d63e8848605eabff08b96187a408804b2910e"
-    end
-    patch do
-      url "https:github.comEttusResearchuhdcommitea586168c596d13d05d145832519755794649ba0.patch?full_index=1"
-      sha256 "224b3f0b726dc2eda982733a59009f34c0f70a0d2970a64755268ea237e86db3"
-    end
-  end
 
   livecheck do
     url :stable
@@ -30,13 +14,13 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "15c59fae8381671f20e5f08e32d929b1cce61fdf8ead1aa0cf85c9bf101e3077"
-    sha256                               arm64_ventura:  "61139c9b2c48f563e9993385eaeba2210c90a4ec1b306ca3888b261e528a9f61"
-    sha256                               arm64_monterey: "442159ec407fa946db4e56bf2168e052fca6cb16ee72f0c87b36bb850a835fb5"
-    sha256                               sonoma:         "3364bca9f3195744f4d1eb2712e8fc691cbf25ef9a106cc113f54b8d983268f1"
-    sha256                               ventura:        "2f49ee5c1218cad92112c50d3f75686f4595c34853f964ff0851ea8a9857a725"
-    sha256                               monterey:       "2aa7c3907b518d05b2bd33c7d4803b6713e794b744936ef13835504d0f58f238"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3d93b9305a06183f8c7deffd40dd8e60d2b92a02198a45f96f3460d9aa0a97f"
+    sha256                               arm64_sonoma:   "515e4ab3658dfe37936db6628082d7ae184bcdb5469b20d31d905f910f4358b4"
+    sha256                               arm64_ventura:  "32722cc8c33002d500a7fe60cd3ebcbf594bff0ae700b133e2c99cfcbdfd8013"
+    sha256                               arm64_monterey: "a18ec633ab705207b9046b40e045681bfc759877685e93951dcd5aeed0b6c33d"
+    sha256                               sonoma:         "766eb76e84e6ee233b5e5c1be4be6b88bae7df6693dcec3a7dc87f779266fac3"
+    sha256                               ventura:        "9d4e4d8f7517f2b7f000cbdc11204c2ecf699321861ab330c370132b2f79c44c"
+    sha256                               monterey:       "ec05ebb1f005947853565daba578f0106abbd3c6c7d759835dfb55ce1d78c294"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72779009ae52578530dff2121a07c16e59f032961286e1910cfd8731159e548c"
   end
 
   depends_on "cmake" => :build
@@ -46,16 +30,20 @@ class Uhd < Formula
   depends_on "libusb"
   depends_on "python@3.12"
 
+  on_linux do
+    depends_on "ncurses"
+  end
+
   fails_with gcc: "5"
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackagesd41b71434d9fa9be1ac1bc6fb5f54b9d41233be2969f16be759766208f49f072Mako-1.3.2.tar.gz"
-    sha256 "2a0c8ad7f6274271b3bb7467dd37cf9cc6dab4bc19cb69a4ef10669402de698e"
+    url "https:files.pythonhosted.orgpackages6703fb5ba97ff65ce64f6d35b582aacffc26b693a98053fa831ab43a437cbddbMako-1.3.5.tar.gz"
+    sha256 "48dbc20568c1d276a2698b36d968fa76161bf127194907ea6fc594fa81f943bc"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages6d7c59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbfMarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
+    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
   def python3
@@ -65,14 +53,17 @@ class Uhd < Formula
   def install
     venv = virtualenv_create(buildpath"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", buildpath"venv"Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
 
-    system "cmake", "-S", "host", "-B", "hostbuild", "-DENABLE_TESTS=OFF", *std_cmake_args
-    system "cmake", "--build", "hostbuild"
-    system "cmake", "--install", "hostbuild"
+    system "cmake", "-S", "host", "-B", "build",
+                    "-DENABLE_TESTS=OFF",
+                    "-DUHD_VERSION=#{version}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match version.major_minor_patch.to_s, shell_output("#{bin}uhd_config_info --version")
+    assert_match version.to_s, shell_output("#{bin}uhd_config_info --version")
   end
 end

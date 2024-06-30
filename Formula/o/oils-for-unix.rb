@@ -22,6 +22,9 @@ class OilsForUnix < Formula
 
   depends_on "readline"
 
+  conflicts_with "oil", because: "both install 'osh' and 'ysh' binaries"
+  conflicts_with "omake", because: "both install 'osh' binaries"
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--datarootdir=#{share}",

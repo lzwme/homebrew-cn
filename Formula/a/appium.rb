@@ -3,19 +3,19 @@ require "languagenode"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https:appium.io"
-  url "https:registry.npmjs.orgappium-appium-2.11.0.tgz"
-  sha256 "80db90a6a80f1bd6c29c81d4a2d74eaec23cef262a5849da544aed1af0e1937b"
+  url "https:registry.npmjs.orgappium-appium-2.11.1.tgz"
+  sha256 "7a7f33d2ee805398dd53d89aff1451ee1f97641078c863b3258df56704dd844a"
   license "Apache-2.0"
   head "https:github.comappiumappium.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8fc50e838f49f8bdaccadeea7ca6ba83e70ef800ec049d2762868f217d8e501c"
-    sha256 cellar: :any,                 arm64_ventura:  "8fc50e838f49f8bdaccadeea7ca6ba83e70ef800ec049d2762868f217d8e501c"
-    sha256 cellar: :any,                 arm64_monterey: "8fc50e838f49f8bdaccadeea7ca6ba83e70ef800ec049d2762868f217d8e501c"
-    sha256 cellar: :any,                 sonoma:         "7dee7a8ecac4f638645923db7ebee6d39f0c1d52817aa3617318bd0ed0641842"
-    sha256 cellar: :any,                 ventura:        "7dee7a8ecac4f638645923db7ebee6d39f0c1d52817aa3617318bd0ed0641842"
-    sha256 cellar: :any,                 monterey:       "7dee7a8ecac4f638645923db7ebee6d39f0c1d52817aa3617318bd0ed0641842"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cd1f9fd754f48f092f12e379d6c20d90386060e3e3fa948eb167d108b208ce4"
+    sha256 cellar: :any,                 arm64_sonoma:   "2502470c73a3ae37df6895e063b0e1cd5cea848bb5bfb5947a33751bbdaa5abb"
+    sha256 cellar: :any,                 arm64_ventura:  "2502470c73a3ae37df6895e063b0e1cd5cea848bb5bfb5947a33751bbdaa5abb"
+    sha256 cellar: :any,                 arm64_monterey: "2502470c73a3ae37df6895e063b0e1cd5cea848bb5bfb5947a33751bbdaa5abb"
+    sha256 cellar: :any,                 sonoma:         "169a6c227eb79756d4bf4105aa94958ef502db9d7b5ded0792bcd2650dcf567f"
+    sha256 cellar: :any,                 ventura:        "169a6c227eb79756d4bf4105aa94958ef502db9d7b5ded0792bcd2650dcf567f"
+    sha256 cellar: :any,                 monterey:       "169a6c227eb79756d4bf4105aa94958ef502db9d7b5ded0792bcd2650dcf567f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb889518d8d61fc36aad762a18b49ecaccfcee02cb32c730faa96393117c8a6d"
   end
 
   depends_on "node"

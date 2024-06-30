@@ -1,18 +1,18 @@
 class Arping < Formula
   desc "Utility to check whether MAC addresses are already taken on a LAN"
   homepage "https:github.comThomasHabetsarping"
-  url "https:github.comThomasHabetsarpingarchiverefstagsarping-2.24.tar.gz"
-  sha256 "e443f65a44e247b27da8177decac31aa84336d5de87eab44fc02e33e7ba0b251"
+  url "https:github.comThomasHabetsarpingarchiverefstagsarping-2.25.tar.gz"
+  sha256 "96f86d0d317c9d09eda183c2f1b7590102ee1798264241377c26bed8bdc0c623"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2dbbead3a75d49794f13bb3c51891e22711ab9fc506e53139c061b6d8e3658c3"
-    sha256 cellar: :any,                 arm64_ventura:  "9527fdcea88db09d128a4e85080024d7a1343dd0dbc1c73d226593859b63132f"
-    sha256 cellar: :any,                 arm64_monterey: "3ebf50e297b1dc1ce809a28cd3467d3122bf7f85a923f65a4e755a951ea29482"
-    sha256 cellar: :any,                 sonoma:         "c5b13cc6caf9e28b37283798265459cc494955e9f7fb186fbf1ebd0e65a3b4b3"
-    sha256 cellar: :any,                 ventura:        "bf560ca2a6747a15fd7c20f5a0a5df1baae96bb902aaa5e97d4661f05323f66b"
-    sha256 cellar: :any,                 monterey:       "846f905f680a6ec181bfcc791cb2529f21ee6eff3165b2c5d48376742f0ad247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8880c2d7a238a5c1b5cba68b3357c914723da9368725354fb63db2b8423a6d2c"
+    sha256 cellar: :any,                 arm64_sonoma:   "3d35ded0256f623d42b3f2e38bc998211432b1b779a60d6f4433de1398c9600b"
+    sha256 cellar: :any,                 arm64_ventura:  "87d1d118843ce11929fa19841c739b1e0191f435d08d7583c9a7115942afc454"
+    sha256 cellar: :any,                 arm64_monterey: "537f0fbf6282e143e13cecb4180d3e62450609c53d4ff0eac8e178ae37a2517b"
+    sha256 cellar: :any,                 sonoma:         "9188b61bf686f9d25a1fe4739546e390295a0661b0e73c0814a3f12c0f87d757"
+    sha256 cellar: :any,                 ventura:        "6922379c216cdadc1f19d9943b0beda7700eb84c19adafd56da4beb81638feb4"
+    sha256 cellar: :any,                 monterey:       "496990ab37463fcdfe46e5c357778e0f0a2e1372e2f535a490184bb98a225bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b42edfbfddb3f8595b4ac04addda06675ed0390350e6f70dc990cd59aa847d1"
   end
 
   depends_on "autoconf" => :build
