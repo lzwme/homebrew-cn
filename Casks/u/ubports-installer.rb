@@ -21,4 +21,8 @@ cask "ubports-installer" do
     "~LibraryPreferencescom.ubports.installer.plist",
     "~LibrarySaved Application Statecom.ubports.installer.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

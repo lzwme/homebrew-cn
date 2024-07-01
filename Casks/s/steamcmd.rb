@@ -40,4 +40,8 @@ cask "steamcmd" do
         "~LibraryApplication SupportSteam",
         "~LibraryApplication SupportSteamlogs",
       ]
+
+  caveats do
+    requires_rosetta
+  end
 end

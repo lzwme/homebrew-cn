@@ -21,4 +21,8 @@ cask "session" do
     "~LibraryPreferencescom.loki-project.messenger-desktop.plist",
     "~LibrarySaved Application Statecom.loki-project.messenger-desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

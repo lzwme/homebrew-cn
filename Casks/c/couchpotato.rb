@@ -13,4 +13,8 @@ cask "couchpotato" do
   app "CouchPotato.app"
 
   zap trash: "~LibraryApplication SupportCouchPotato"
+
+  caveats do
+    requires_rosetta
+  end
 end

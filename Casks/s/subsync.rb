@@ -26,4 +26,8 @@ cask "subsync" do
   end
 
   zap trash: "~LibraryPreferencessubsync"
+
+  caveats do
+    requires_rosetta
+  end
 end

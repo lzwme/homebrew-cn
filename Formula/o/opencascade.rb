@@ -1,11 +1,10 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CADCAMCAE"
   homepage "https:dev.opencascade.org"
-  url "https:git.dev.opencascade.orggitweb?p=occt.git;a=snapshot;h=refstagsV7_7_2;sf=tgz"
-  version "7.7.2"
-  sha256 "2fb23c8d67a7b72061b4f7a6875861e17d412d524527b2a96151ead1d9cfa2c1"
+  url "https:git.dev.opencascade.orggitweb?p=occt.git;a=snapshot;h=refstagsV7_8_1;sf=tgz"
+  version "7.8.1"
+  sha256 "33f2bdb67e3f6ae469f3fa816cfba34529a23a9cb736bf98a32b203d8531c523"
   license "LGPL-2.1-only"
-  revision 4
 
   # The first-party download page (https:dev.opencascade.orgrelease)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -21,13 +20,13 @@ class Opencascade < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d943fcf559ec121ef458209e848f42ded0ee293be5e420210207098627511b99"
-    sha256 cellar: :any,                 arm64_ventura:  "48a51a8264dcd534b3d8598e0b4f6703183151ec9f90706d19e039aab3d40c52"
-    sha256 cellar: :any,                 arm64_monterey: "b91b3734788912a10a59137925635d45820b7f9e16566a899a4ec2718503ba79"
-    sha256 cellar: :any,                 sonoma:         "627e3ae8871711e79e1212bfbd3dda93b19f998cbcb48714386d7e3c5084dc88"
-    sha256 cellar: :any,                 ventura:        "4566d546ab5a26112dd0155ba7ab63e1f685b2a8e67c0ec2dc9ab3fd60fe09fd"
-    sha256 cellar: :any,                 monterey:       "aa411b1a71ed7556a3e0efc1d3bd8df116b88b480510fb29942bcd38f553000f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfa811c0b269317e024ea68eaaf5b8a81d78a1e5c2cfb053668af567b6fcb80e"
+    sha256 cellar: :any,                 arm64_sonoma:   "725b60ffcfcdc50edb28dd8c5d8d87c44fd9e2c5267c64c677b6098e64b68f83"
+    sha256 cellar: :any,                 arm64_ventura:  "ebd45601d545eeeb65ac441d57a1a90b0cc615707eb9b0896d6161e9ace3ee2d"
+    sha256 cellar: :any,                 arm64_monterey: "55758e47849fa92c48982fb5c0898d4c53a034d4de6cbb64f69a555f36de2a8c"
+    sha256 cellar: :any,                 sonoma:         "f89cadd051255fe193fe39aebd04c2c2716393568189c343501767b4950d3a4a"
+    sha256 cellar: :any,                 ventura:        "f6b02e2c9146c3834f40673233f6091d50464f777416b80338d1a0e705096cbf"
+    sha256 cellar: :any,                 monterey:       "49121a638da14d08516ccefc1b28f0d7591984cc913fae410cc9f18362b68908"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7f813cfab8bc0c4dcf3ec91c7d6ca16c2e1ad732bda317f6d12a9334095850b"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -113,6 +112,7 @@ class Opencascade < Formula
     # Make sure hardcoded library name references in our CMake config files are valid.
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
+      set(CMAKE_CXX_STANDARD 11)
       project(test LANGUAGES CXX)
       find_package(OpenCASCADE REQUIRED)
       add_executable(test main.cpp)

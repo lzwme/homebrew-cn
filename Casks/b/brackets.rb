@@ -16,4 +16,8 @@ cask "brackets" do
     "~LibraryApplication SupportBrackets",
     "~LibraryPreferencesio.brackets.appshell.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -831,6 +831,7 @@ Homebrew-homebrew-core/Formula/c/chinadns-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chipmunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chisel-tunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chisel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chkbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chkrootkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chmlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chocolate-doom.rb, Homebrew/homebrew-core, 1
@@ -1538,6 +1539,7 @@ Homebrew-homebrew-core/Formula/e/efl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/efm-langserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eg-examples.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/egctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eget.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ehco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eiffelstudio.rb, Homebrew/homebrew-core, 0
@@ -2218,7 +2220,7 @@ Homebrew-homebrew-core/Formula/g/gnome-common.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-latex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-recipes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-barcode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-chess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-complexity.rb, Homebrew/homebrew-core, 0
@@ -4977,7 +4979,7 @@ Homebrew-homebrew-core/Formula/p/podman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podofo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poetry.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pokerstove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy_sentry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polyglot.rb, Homebrew/homebrew-core, 0
@@ -4994,6 +4996,7 @@ Homebrew-homebrew-core/Formula/p/popt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portablegl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portaudio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/porter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portmidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poster.rb, Homebrew/homebrew-core, 1
@@ -7684,6 +7687,7 @@ Homebrew-homebrew-cask/Casks/c/chainner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0

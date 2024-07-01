@@ -32,4 +32,8 @@ cask "atom" do
     "~LibrarySaved Application Statecom.github.atom.savedState",
     "~LibraryWebKitcom.github.atom",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

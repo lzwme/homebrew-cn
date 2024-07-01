@@ -18,4 +18,8 @@ cask "wey" do
     "~LibrarySaved Application Stateorg.yue.wey.savedState",
     "~LibraryWebKitorg.yue.wey",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

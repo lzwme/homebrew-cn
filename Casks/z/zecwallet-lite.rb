@@ -16,4 +16,8 @@ cask "zecwallet-lite" do
     "~LibraryApplication SupportZcashzecwallet-light-wallet.debug.log",
     "~LibraryApplication SupportZecwallet Lite",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

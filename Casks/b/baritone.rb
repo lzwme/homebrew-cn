@@ -9,4 +9,8 @@ cask "baritone" do
   homepage "https:tma02.github.iobaritone"
 
   app "Baritone-darwin-x64Baritone.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,18 +1,18 @@
 class Kubevpn < Formula
   desc "Offers a Cloud-Native Dev Environment that connects to your K8s cluster network"
   homepage "https:www.kubevpn.cn"
-  url "https:github.comkubenetworkskubevpnarchiverefstagsv2.2.11.tar.gz"
-  sha256 "ec366fd2ba511ec27711fe2a59c5ac7982e6879bb78c77f94436d4754846b0d0"
+  url "https:github.comkubenetworkskubevpnarchiverefstagsv2.2.12.tar.gz"
+  sha256 "6a8139cd1ff10091d694e74e1376b2d5edbc3f110c9dab43ace387bd4f9fdd40"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba679f0b3615ac40ee21d54b4e2cd5531701952ed86ba681c7ab9a7b92dcd3ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24df0871241c35120dcc4d58c63b652dfe1e1e85f41fafa2fb949776ac04a500"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "975a77f2674b50f5c0de21ab716387f303b45bb15976ca4094539b19340c6e84"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ed51f1ccc6d6c7336fc539df76fb1e9b4f709dfda53493723b1e112076c31740"
-    sha256 cellar: :any_skip_relocation, ventura:        "971ae4bd05e97847ef7103b4c9071e7bcb1ede195b1aca4288a5d43bb665d1c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "dec03a55ed5765485cf7adf7a2c4e7ef2570b12de3eaf7c14cda835b9a5b0813"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a76a8b0dcbe3924f03c9e6feb706c97204510b1a170c36848dddc3722f1dd3c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1915d937505e0c7f3a88aa6e5b6826364c1edc4ce3a1669ce6518888e3a798a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c32c437690564921209c3a2dacb8f0dcb3aa689e0e1ae303f98cfbbe10ff44f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d9c0137fe64be6609f56172e32cae3b4bcb3d10fc27e844139a06a4d04ef96a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ba6d20ef9ecabce871bfc60f3ea6535a77dfcc0e0dd6446160dec4d7af66eb4d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f60c586d5292c0b8fa1a35169c1e37557d991585be90a1e38da0017adecd3e07"
+    sha256 cellar: :any_skip_relocation, monterey:       "0f1bcd04e2516a2deed26a3a4b5752c259cd6448df748d2e70a11360b28c1f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45751e8afdc4cf43455b85b8e16025e06d33c9cdfcc6552451668e33090c9711"
   end
 
   depends_on "go" => :build

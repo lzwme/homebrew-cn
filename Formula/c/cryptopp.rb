@@ -17,18 +17,19 @@ class Cryptopp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9f71fb46be984b3de81084bc400340f93a1e888bb580b3829c522fc43d8c97eb"
-    sha256 cellar: :any,                 arm64_ventura:  "1f37a8ac9856c2249251e98da5e75a95bf34fab3dfbf600488c1fabe6dd1d546"
-    sha256 cellar: :any,                 arm64_monterey: "6bcd6f6a6afabaea3c17c1d08afbe71dfd1daa0023064035dca0ec0a84980d34"
-    sha256 cellar: :any,                 sonoma:         "da2d97ae9b15cc9df4de1098db5492795ed8d10c830c595ae57b8965aef99b9f"
-    sha256 cellar: :any,                 ventura:        "04a1f334f8ceca0f56dca4120e4a41892c400b7302c884438a1d242278fded4a"
-    sha256 cellar: :any,                 monterey:       "86aeb2c3a76277dd6cb99e697768ad77e2f77fd23063fbb9c3321d3bab51b91c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be09ea086a11c50c5717a8cf7e2c2f682bd9a2c9cbdff945c85d4e4bab290116"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "272e8028bcdf871a7c35d6590af87d3520aa9d1c053d2d5253dec85656c1b19d"
+    sha256 cellar: :any,                 arm64_ventura:  "d4a8d3ba690a9762d7fdd84a048b8e73ca14a44c52ee82d40b309799c5603890"
+    sha256 cellar: :any,                 arm64_monterey: "44322c46519ccadfb08e746e54b71a7183ae5daa348a04f2a0c8399f13409f59"
+    sha256 cellar: :any,                 sonoma:         "d9b7900ca928fd39e568a259e6f1f4e093d5ae7e33debbd0f94c6e6d7e8578ad"
+    sha256 cellar: :any,                 ventura:        "9703073429f04a5b3e2e0f1ae3adb4419ecc87c520471d4f19ba45b1fd45c68e"
+    sha256 cellar: :any,                 monterey:       "a8fbbbb8ab93c348d4d6258a7d2423843bb1a04a465ac1eac85df26e46eb9788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6404ced52f843fd29dc3a495ff3706c4040641597ae50e1cd58e19e1d915777"
   end
 
   def install
     ENV.cxx11
-    system "make", "all", "libcryptopp.pc"
+    system "make", "all", "libcryptopp.pc", "PREFIX=#{prefix}"
     system "make", "test"
     system "make", "install-lib", "PREFIX=#{prefix}"
   end

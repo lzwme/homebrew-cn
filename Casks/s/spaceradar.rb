@@ -22,4 +22,8 @@ cask "spaceradar" do
     "~LibraryPreferencescom.electron.spaceradar.plist",
     "~LibrarySaved Application Statecom.electron.spaceradar.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

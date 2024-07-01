@@ -70,4 +70,8 @@ cask "wine-stable" do
         "~.localshareicons",
         "~.localsharemime",
       ]
+
+  caveats do
+    requires_rosetta
+  end
 end

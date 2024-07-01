@@ -20,4 +20,8 @@ cask "activitywatch" do
     "~LibraryCachesactivitywatch",
     "~LibraryLogsactivitywatch",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

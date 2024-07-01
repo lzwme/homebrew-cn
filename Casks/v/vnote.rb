@@ -15,4 +15,8 @@ cask "vnote" do
     "~LibraryPreferencescom.vnotex.vnote.plist",
     "~LibraryPreferencesVNote",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

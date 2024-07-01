@@ -3,31 +3,31 @@ class EcsDeploy < Formula
 
   desc "CLI tool to simplify Amazon ECS deployments, rollbacks & scaling"
   homepage "https:github.comfabfuelecs-deploy"
-  url "https:files.pythonhosted.orgpackages17919febc5c9ee79719d3fc02bc70c2d5009192e6e886faf99525aa9eccc2d37ecs-deploy-1.14.0.tar.gz"
-  sha256 "70e37b28da0496d8f2c50d998945ec4f1844ff1b4d6d119db7f1810bf4916127"
+  url "https:files.pythonhosted.orgpackagesf13ca2fc74f43992bda8df2e159351c254bacb5c157e766698b9aa537d459c7eecs-deploy-1.15.0.tar.gz"
+  sha256 "9fbd007e62b8842c3e82e80e1531af157eda8236d2822512170c62430c669ad3"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1c34b3f0d4a0658da6c70e9e98df4a8c00583da6f75b00e522d66c3802eacec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1c34b3f0d4a0658da6c70e9e98df4a8c00583da6f75b00e522d66c3802eacec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1c34b3f0d4a0658da6c70e9e98df4a8c00583da6f75b00e522d66c3802eacec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d6cfae65b6db404027729ae3d1cd5f81a5f2462a047dbb3c6384805df0e013e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d6cfae65b6db404027729ae3d1cd5f81a5f2462a047dbb3c6384805df0e013e"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d6cfae65b6db404027729ae3d1cd5f81a5f2462a047dbb3c6384805df0e013e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16d484e2c629d2ddbc81015c0d808d554ab0af859ae39f2c4d1c4459a48427a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfbc4a97ca89ced505c472b547c372c8019212b85ea0910f72f35fe1e6db7822"
   end
 
   depends_on "certifi"
   depends_on "python@3.12"
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages1ab5679e002118ac9dff4ee6411505b596556eaa4124eaccbb583d0a16174851boto3-1.34.130.tar.gz"
-    sha256 "b781d267dd5e7583966e05697f6bd45e2f46c01dc619ba0860b042963ee69296"
+    url "https:files.pythonhosted.orgpackages9442f34ab93ea175b4e6c96e73a3b3f24d073f63418971925c8149d41f6a252aboto3-1.34.136.tar.gz"
+    sha256 "0314e6598f59ee0f34eb4e6d1a0f69fa65c146d2b88a6e837a527a9956ec2731"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages4ba889d45112f862992e4ecf1cbc776111761654694b2cf5c080c2ed79ec864cbotocore-1.34.130.tar.gz"
-    sha256 "a242b3b0a836b14f308a309565cd63e88654cec238f9b73abbbd3c0526db4c81"
+    url "https:files.pythonhosted.orgpackages3cec09d963aa91a1d09a87c21c014da5092a1eccde8b44cd51bbe8a27e3576fdbotocore-1.34.136.tar.gz"
+    sha256 "7f7135178692b39143c8f152a618d2a3b71065a317569a7102d2306d4946f42f"
   end
 
   resource "charset-normalizer" do
@@ -46,8 +46,8 @@ class EcsDeploy < Formula
   end
 
   resource "dictdiffer" do
-    url "https:files.pythonhosted.orgpackagesbaedcee2a41eefad60860a8b64513d2be7b15cbc5a4e3ecaa4c9921b11732629dictdiffer-0.8.0.tar.gz"
-    sha256 "b3ad476fc9cca60302b52c50e1839342d2092aeaba586d69cbf9249f87f52463"
+    url "https:files.pythonhosted.orgpackages617b35cbccb7effc5d7e40f4c55e2b79399e1853041997fcda15c9ff160abba0dictdiffer-0.9.0.tar.gz"
+    sha256 "17bacf5fbfe613ccf1b6d512bd766e6b21fb798822a133aa86098b8ac9997578"
   end
 
   resource "future" do
@@ -71,18 +71,13 @@ class EcsDeploy < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackages4cd270fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdbrequests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackages83bcfb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571s3transfer-0.10.1.tar.gz"
-    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages1c1c8a56622f2fc9ebb0df743373ef1a96c8e20410350d12f44ef03c588318c3setuptools-70.1.0.tar.gz"
-    sha256 "01a1e793faa5bd89abc851fa15d0a0db26f160890c7102cd8dce643e886b47f5"
+    url "https:files.pythonhosted.orgpackagescb6794c6730ee4c34505b14d94040e2f31edf144c230b6b49e971b4f25ff8fabs3transfer-0.10.2.tar.gz"
+    sha256 "0711534e9356d3cc692fdde846b4a1e4b0cb6519971860796e6bc4c7aea00ef6"
   end
 
   resource "six" do
@@ -91,8 +86,8 @@ class EcsDeploy < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
+    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
   end
 
   def install

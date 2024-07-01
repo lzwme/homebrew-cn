@@ -19,4 +19,8 @@ cask "coin-wallet" do
     "~LibraryPreferencescom.coinspace.wallet*.plist",
     "~LibrarySaved Application Statecom.coinspace.wallet.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

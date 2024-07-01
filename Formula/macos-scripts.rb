@@ -1,8 +1,8 @@
 class MacosScripts < Formula
   desc "Various command-line utility scripts for macOS"
   homepage "https:github.comnicerloopmacos-scripts"
-  url "https:github.comnicerloopmacos-scriptsarchiverefstagsv1.9.1.tar.gz"
-  sha256 "a0837b36fd8edd8ef613503ea0de81061207952f9f6af8923e2746b99d993de1"
+  url "https:github.comnicerloopmacos-scriptsarchiverefstagsv1.9.2.tar.gz"
+  sha256 "2586d6617111960b0ec7b1258acd5f5abd3f95745b78c567c08c54dc33cae44e"
 
   def install
     bin.install "brew-bundle-leaves"

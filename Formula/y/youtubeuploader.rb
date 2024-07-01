@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https:github.comporjoyoutubeuploader"
-  url "https:github.comporjoyoutubeuploaderarchiverefstags23.06.tar.gz"
-  sha256 "54161eac7efc92dba00ad98a92bfd9e067bdf7cd7208d370e0e0e4bf58faa105"
+  url "https:github.comporjoyoutubeuploaderarchiverefstags24.01.tar.gz"
+  sha256 "dbcfd5dfae58bcd0b7c691b79b56800e8ce3ff140909061d00e5173cb0ed205f"
   license "Apache-2.0"
   head "https:github.comporjoyoutubeuploader.git", branch: "master"
 
@@ -16,13 +16,13 @@ class Youtubeuploader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00e2f57d95d1d1e1ed9121fcdb0b102439eff1b1380e774aa9b8a6c8a75fe5e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a365567c1261346db06e357fec2601b195366fe4f24e2cfbef0eb9574bb345b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "72f018aac8b9426d338e742a738966ff5dbbb13e3d4574410a20e5dce3e56afa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad0fc6dd9921f37d9bc6f7688f07967e1caf71632c294c7e5c03943f698c0f66"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e981f04e18660e5412de166bb2d3651ad1f6c35ccbe2cce5e7ad5fbe9ab6d51"
-    sha256 cellar: :any_skip_relocation, monterey:       "232d655d50aab5fd052b9ed160bf85be919d466597ff3b3bd16c4e05e424f451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b0774ac2da5a45cfc772cc2fefef188dfae5640ee325080d025fb5a137a23a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9f9880a34bca1a12df46691445e342eb873c2b9d2f4ede24fc993af0cf87409"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69fc55023c63fcc5e239dcae727528475f98e2505a020a3b272da725677bbf18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cca8b4af55bf8869438269a392c9ee21d9b69330cd089f6121eb20e2ff513719"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6db5554737f95badc43cd766a9520a6775527ae38ea79f1f1f48cac4472322f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "bada1bbce066c8221938f972e04a576f2894e16f9a4c1f5e58dbab186ba286cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed93912d8531ffd24f621eedec0b7d503d1f6711d95a7d754b5c529bb227c139"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "875badff68989015fc182c516c65fc6ab8c6292f601ec8d021a6b8686232fd7a"
   end
 
   depends_on "go" => :build

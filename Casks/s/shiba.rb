@@ -8,4 +8,8 @@ cask "shiba" do
   homepage "https:github.comrhysdShiba"
 
   app "Shiba-darwin-x64Shiba.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

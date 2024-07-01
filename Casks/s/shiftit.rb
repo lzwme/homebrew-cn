@@ -18,4 +18,8 @@ cask "shiftit" do
     "~LibraryCachesorg.shiftitapp.ShiftIt",
     "~LibraryPreferencesorg.shiftitapp.ShiftIt.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -15,4 +15,8 @@ cask "ariang" do
     "~LibraryPreferencesnet.mayswind.ariang.plist",
     "~LibrarySaved Application Statenet.mayswind.ariang.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

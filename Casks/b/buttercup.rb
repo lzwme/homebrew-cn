@@ -26,4 +26,8 @@ cask "buttercup" do
     "~LibraryPreferencespw.buttercup.desktop.plist",
     "~LibrarySaved Application Statepw.buttercup.desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
