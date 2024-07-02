@@ -11,6 +11,8 @@ class GitStandup < Formula
     sha256 cellar: :any_skip_relocation, all: "b0bd8d9ae367c4eb026f0ce046e7c33fbfa861249425d47fd2c9b81e69ca6706"
   end
 
+  conflicts_with "git-extras", because: "both install `git-standup` binaries"
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -22,6 +22,8 @@ class Schemathesis < Formula
   depends_on "libyaml"
   depends_on "python@3.12"
 
+  conflicts_with "st", because: "both install `st` binaries"
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/e6/e3/c4c8d473d6780ef1853d630d581f70d655b4f8d7553c6997958c283039a2/anyio-4.4.0.tar.gz"
     sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"

@@ -38,6 +38,8 @@ class Lrzip < Formula
     depends_on "nasm" => :build
   end
 
+  conflicts_with "lrzsz", because: "both install `lrz` binaries"
+
   def install
     # Attempting to build the ASMx86 folder as a compilation unit fails (even on Intel). Removing this compilation
     # unit doesn't disable ASM usage though, since ASM is still included in the C build process.

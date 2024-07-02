@@ -19,6 +19,8 @@ class Cog < Formula
   depends_on "go" => :build
   depends_on "python@3.12" => :build
 
+  conflicts_with "cocogitto", because: "both install `cog` binaries"
+
   def install
     python3 = "python3.12"
 

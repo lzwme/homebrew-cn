@@ -23,6 +23,8 @@ class Libgsm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2398c2265658796adac35f2494dc97e0bd4fa6e20d1fd7bd70d15ea389782a05"
   end
 
+  conflicts_with "toast", because: "both install `toast` binaries"
+
   def install
     # Only the targets for which a directory exists will be installed
     bin.mkpath

@@ -25,6 +25,8 @@ class UutilsCoreutils < Formula
     conflicts_with "aardvark_shell_utils", because: "both install `realpath` binaries"
   end
 
+  conflicts_with "unp", because: "both install `ucat` binaries"
+
   def install
     man1.mkpath
 

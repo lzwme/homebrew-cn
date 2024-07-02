@@ -20,6 +20,8 @@ class EspeakNg < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
+  conflicts_with "espeak", because: "both install `espeak` binaries"
+
   def install
     touch "NEWS"
     touch "AUTHORS"

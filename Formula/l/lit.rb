@@ -22,6 +22,8 @@ class Lit < Formula
     which("python3.12")
   end
 
+  conflicts_with "luvit", because: "both install `lit` binaries"
+
   def install
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 

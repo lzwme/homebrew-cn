@@ -17,6 +17,8 @@ class TrzszSsh < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "tssh", because: "both install `tssh` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tssh"), ".cmdtssh"
   end

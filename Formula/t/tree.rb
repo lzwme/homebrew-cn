@@ -1,19 +1,18 @@
 class Tree < Formula
   desc "Display directories as trees (with optional colorHTML output)"
   homepage "https:oldmanprogrammer.netsource.php?dir=projectstree"
-  url "https:github.comOld-Man-Programmertreearchiverefstags2.1.1.tar.gz"
-  sha256 "1b70253994dca48a59d6ed99390132f4d55c486bf0658468f8520e7e63666a06"
+  url "https:github.comOld-Man-Programmertreearchiverefstags2.1.2.tar.gz"
+  sha256 "d2a09b7c57473bf0451c37c2dbd5a72406ea2ee0810e97bd01a6a5459c0ea3fb"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d1c490c83719c983ec360085e9d0049418ff424259bc00122869f8acf68ed63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13b597dcee0eec0e8d3a7f864dfb5713d812605092bf1e417c765e788d0c0d31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bd195b460f491c6e71b0277efb3c4cdbab8b6d814072519ade39e5ca257b048"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af3d14eb91e4bf756bb5ef5f6a489aeb33e6cf5fc4f72c99d70352bec364e282"
-    sha256 cellar: :any_skip_relocation, ventura:        "da304661d82c58ee3d4a14f80479d15d3405ca4c1be78b6085f7c62e67f79412"
-    sha256 cellar: :any_skip_relocation, monterey:       "13a0875d7da74de5ccfd1c6d3bd6167d2c4c0d7d4d747cc3ebb377fad60df365"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48bf95e7ef6c5f14db8a551b3ba22db93613f39ad04985f2edd3d34754daf89e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fdd34e46049ad22f376d1a38e9ab0a546c8d73c2069a8facc871c9457bf23d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51c5ed50ad02e86f0463a726c4b9d27a7e067a8be261c1b082dea1343ebd7f71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb61ff0606c967f1736780295957f8f9dadc544725db52383a6b7a837426558d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e7c0c22a1fdda6cf20a6da8d4ad3ee08163070ada1c9ab2e36d9fb77e22675e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1c620de27c2cd3d2eff7b095f7c25be9cae42c7e2fab48fcd81f100bfef228b"
+    sha256 cellar: :any_skip_relocation, monterey:       "61797963fba191a49aed039537e2435d59375ef7b8339296e15839e70aab2747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13ccbbcb094a96d079edf57b0bd873160240fa0f29035307e17ca761b6304bf7"
   end
 
   def install

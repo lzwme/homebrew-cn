@@ -18,6 +18,8 @@ class Toast < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "libgsm", because: "both install `toast` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

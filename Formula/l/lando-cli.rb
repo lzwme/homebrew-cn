@@ -9,6 +9,11 @@ class LandoCli < Formula
   sha256 "2b930fa5c7cbe50396d147d3cf51f382e8a7312607f9dcefc04a4ad1399f4a46"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf0b3e960e6648fbafa20d63292b7fd8ac29047cc987d41de56465656b605c20"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf0b3e960e6648fbafa20d63292b7fd8ac29047cc987d41de56465656b605c20"

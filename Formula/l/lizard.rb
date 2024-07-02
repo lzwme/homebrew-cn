@@ -27,6 +27,8 @@ class Lizard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d50573d98593492aefbae83f872366e44915d241f975a9f3213c6fbc59b6a1f8"
   end
 
+  conflicts_with "lizard-analyzer", because: "both install `lizard` binaries"
+
   def install
     system "make", "PREFIX=#{prefix}", "install"
     cd "examples" do

@@ -26,6 +26,8 @@ class Cbc < Formula
   depends_on "coinutils"
   depends_on "osi"
 
+  conflicts_with "libcouchbase", because: "both install `cbc` binaries"
+
   def install
     # Work around for:
     # Error 1: "mkdir: #{include}cbccoin: File exists."

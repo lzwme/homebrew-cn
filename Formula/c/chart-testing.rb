@@ -22,6 +22,8 @@ class ChartTesting < Formula
   depends_on "yamllint" => :test
   depends_on "yamale"
 
+  conflicts_with "coreos-ct", because: "both install `ct` binaries"
+
   def install
     # Fix default search path for configuration files, needed for ARM
     inreplace "pkgconfigconfig.go", "usrlocaletc", etc

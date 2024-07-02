@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/82/cf/51f169e15fddcfe9b33171ce6cccc013420bde4c75e87eddbf2c4b3e37c0/checkov-3.2.150.tar.gz"
-  sha256 "3b0c436d78d9e7728373d4737c7c10f372190c2fc2118ae5e1ed67a05740e6fa"
+  url "https://files.pythonhosted.org/packages/a9/a9/6c3dadd10a7c92e8b98c2cf6c628ed201e7ce0f9b9cd1564592e6024d914/checkov-3.2.160.tar.gz"
+  sha256 "d38259695a4604360e9cf332377de7611ede1d2c876c8d42d1403de59aa5b3c4"
   license "Apache-2.0"
 
   livecheck do
@@ -17,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dc43916c0f3f463190284084c74ac1d4004fd92b8e45a4fc668e500043f7c27d"
-    sha256 cellar: :any,                 arm64_ventura:  "3d75f5fac130f44232b096d55aaeb8a082abe8bdcc852c77f294e82ddac8524f"
-    sha256 cellar: :any,                 arm64_monterey: "1144ce009ff74743aae80b43a21b8a34621e809eebea5944dc40508bef5b613a"
-    sha256 cellar: :any,                 sonoma:         "193051827576d45afc95d74369494b9b868b1cf8a98ce3aed8896e44984f07f6"
-    sha256 cellar: :any,                 ventura:        "053144289db1bef1879a036eed66e3e015853bdc41f36494f7ac7c70ccb9fa35"
-    sha256 cellar: :any,                 monterey:       "ac876badbeb829861c8d1c154e15dde686d48f6124f10452bc03a9b25674529d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b951ef0b9ab0f2d0de9f6034caeb176963cd3de3c0e2e0b9ff60d4c2261f991"
+    sha256 cellar: :any,                 arm64_sonoma:   "bdbd7b2e256cb7b67abd77477aefe5b1e984a7e757d2073b68d80ee20301ea15"
+    sha256 cellar: :any,                 arm64_ventura:  "66982cab80e6bba1faec3ea290bdee5d1ed93eb8904cd8013c8e84a1ae668ee5"
+    sha256 cellar: :any,                 arm64_monterey: "8c7eabca181e6e9f9b0a8cf2b86a9474740a15c94fcd612ace2aa32ca36d0659"
+    sha256 cellar: :any,                 sonoma:         "7cef794d582805bc6a79be721d182aadbbf425d0201534d3228234f16a9ac008"
+    sha256 cellar: :any,                 ventura:        "d6c60bbf591e6f4901344ec1fb49dc52fb08dcfe03b6180beff9ae371fa3ba06"
+    sha256 cellar: :any,                 monterey:       "2d2e20fadf7959afb23a8168020a8de00e291e4247d1706290e16bd73d5cd350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c275ab2d3853be76a9726b327b9e141b071406962a6c12b94749f235ace7430"
   end
 
   depends_on "cmake" => :build # for igraph

@@ -1,8 +1,8 @@
 class LibvirtPython < Formula
   desc "Libvirt virtualization API python binding"
   homepage "https://www.libvirt.org/"
-  url "https://download.libvirt.org/python/libvirt-python-10.4.0.tar.gz"
-  sha256 "a20273a3374fcacb45b5ac4fd135e2c40460bb4a3a290d26c4aa8d0eaf1225b5"
+  url "https://download.libvirt.org/python/libvirt-python-10.5.0.tar.gz"
+  sha256 "785023500f58d3e8e829af98647d43eee97e517aacc9d9e7ded43594ea52d032"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6358b9bb1a1ae12938cc9d002eba3a47384ab152124f1cefb70f90bdbb282ad2"
-    sha256 cellar: :any,                 arm64_ventura:  "cb2e1b01519d70641b0445ae81872621b25708b17c0279e51e9f777df3ecb856"
-    sha256 cellar: :any,                 arm64_monterey: "879a1989fb88480ad7bb7198aca09dd6bf7bc162e153013b5f010c7a2a28490c"
-    sha256 cellar: :any,                 sonoma:         "0af3b557f2d25238078204238af97e76648b583b224f9d168f479b6cedc64069"
-    sha256 cellar: :any,                 ventura:        "24b5a5ad02dbb81724fd29cc175c8474d7a33cfedd2934e0ce5a5b12120d9f70"
-    sha256 cellar: :any,                 monterey:       "6dd0f44652828812979a3cfb3e39068765900fa6491c76d5a91c98f18f986223"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bc27311f35d9fcb3c23c5a3e6d92911db97fd00c60a932bbd44008e1dfe7a2c"
+    sha256 cellar: :any,                 arm64_sonoma:   "0d5c099e6075a707f9de697742fe52f9bf27ab247ffb55e1b6cca26363440397"
+    sha256 cellar: :any,                 arm64_ventura:  "0c9652751c63cea9d060efdf4f8ba9446f6d145279d3a8acfe932da4c8957adc"
+    sha256 cellar: :any,                 arm64_monterey: "a7ca430cd8e1658fccb2322956c094dc08d11c0428d84d3618f086e6825285e4"
+    sha256 cellar: :any,                 sonoma:         "a0878bd3342d215a3b93a324ff7e62d792cc872a51f67bfcc70cf9758e2f7679"
+    sha256 cellar: :any,                 ventura:        "a1e7ed5751680ff33c1731981e36927e4091162e36de87886341e468c00f40a1"
+    sha256 cellar: :any,                 monterey:       "a9220bda3f5f75dd3ecffc9d9ee43b0bf7df9791f2863e8d4aeb752fddc28174"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66f4ed0a119554f6347dd712e03977b9e0ee5d92e668ed4ba687e9383b9023b5"
   end
 
   depends_on "pkg-config" => :build

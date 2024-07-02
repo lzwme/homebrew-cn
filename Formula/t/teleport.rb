@@ -39,6 +39,7 @@ class Teleport < Formula
   uses_from_macos "zip"
 
   conflicts_with "etsh", because: "both install `tsh` binaries"
+  conflicts_with "tctl", because: "both install `tctl` binaries"
 
   def install
     ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }

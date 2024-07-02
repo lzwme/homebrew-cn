@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https:github.comseaweedfsseaweedfs"
   url "https:github.comseaweedfsseaweedfs.git",
-      tag:      "3.68",
-      revision: "a9cd9b0542ef9e2c795baf063d3f7db395ff209b"
+      tag:      "3.69",
+      revision: "ac6fd36c06f9cd6740cb2ff7e97c1ba92d55bf2c"
   license "Apache-2.0"
   head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15ff8174313096a1ab4674fc48bb0541e3748311cf69711ed0f210876932f47d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe82b0a955e2bba8f6e7f410e11043e34dada91a38b5ab2ab1c2d7c8c91515d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39fed80df640de5294684092c1dd1f5f126cba931c73a1fc54c1147dc955d6ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b9bf35128918186a964574cd87e242edd28c2d7893f42dcd5c4cdcb83e0dab5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "a17626e8bd68a5cc891d45e99c809bad11a25b1baa6fb9d8c7faa0354db03416"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fed1198dc1fabbf1b875f64c58104a394b36b8ed3fb0286a7784e0a89321dab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d6673b0788fbe6375d76b44163065ba16e0a867d77d57f9e44f315a98dfc35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68d17227630bee43e2b007b5b542692471cf66ee5098f0a5173d802d28b7692b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04b6394e8b2e7d382968c76d98bd17032069f76a81a5e75f6010a7debd0e4305"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca5ef2ab757ed704f236dd8165efdf4e7a06168a258ea42a4e9f8984017cd92b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46c6d0c88dcf34ce0ee6a3b610079869dd18bdc13a76d5059e4616cbb966261d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef62bbea079358d3dfdce42fe5b43d466a2d89b7ae397d07e2c46a872855de37"
+    sha256 cellar: :any_skip_relocation, monterey:       "f88c174a35f5069360bb2aaa2dacbf1fa3fc138339d3ceada46c2d6745d7a692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51ad1a12a2549c0d60bc459da74881fb936fc0365784684bd050e72d057993d7"
   end
 
   depends_on "go" => :build

@@ -26,6 +26,8 @@ class Conserver < Formula
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
 
+  conflicts_with "uffizzi", because: "both install `console` binaries"
+
   def install
     system ".configure", "--prefix=#{prefix}", "--with-openssl", "--with-ipv6", "--with-gssapi", "--with-striprealm"
     system "make"

@@ -21,6 +21,8 @@ class V < Formula
 
   uses_from_macos "vim"
 
+  conflicts_with "vlang", because: "both install `v` binaries"
+
   def install
     bin.install "v"
     man1.install "v.1"

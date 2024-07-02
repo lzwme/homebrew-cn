@@ -29,6 +29,8 @@ class NicotinePlus < Formula
     depends_on "gettext" => :build # for `msgfmt`
   end
 
+  conflicts_with "httm", because: "both install `nicotine` binaries"
+
   def install
     virtualenv_install_with_resources
   end

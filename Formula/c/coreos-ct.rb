@@ -20,6 +20,8 @@ class CoreosCt < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "chart-testing", because: "both install `ct` binaries"
+
   def install
     system "make", "all", "VERSION=v#{version}"
     bin.install ".binct"

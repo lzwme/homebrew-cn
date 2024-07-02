@@ -21,6 +21,8 @@ class Aerleon < Formula
   depends_on "libyaml"
   depends_on "python@3.12"
 
+  conflicts_with "cgrep", because: "both install `cgrep` binaries"
+
   resource "absl-py" do
     url "https:files.pythonhosted.orgpackages79c945ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0absl-py-1.4.0.tar.gz"
     sha256 "d2c244d01048ba476e7c080bd2c6df5e141d211de80223460d5b3b8a2a58433d"

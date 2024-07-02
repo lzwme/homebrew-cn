@@ -24,6 +24,8 @@ class Solidity < Formula
   depends_on xcode: ["11.0", :build]
   depends_on "boost"
 
+  conflicts_with "solc-select", because: "both install `solc` binaries"
+
   fails_with gcc: "5"
 
   def install

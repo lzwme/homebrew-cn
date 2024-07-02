@@ -24,6 +24,8 @@ class Vlang < Formula
 
   depends_on "bdw-gc"
 
+  conflicts_with "v", because: "both install `v` binaries"
+
   resource "vc" do
     # For every vlang release there is a matching commit of the V compiler in the format
     # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".

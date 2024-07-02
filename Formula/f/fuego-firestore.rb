@@ -19,6 +19,8 @@ class FuegoFirestore < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "fuego", because: "both install `fuego` binaries"
+
   def install
     system "go", "build", *std_go_args(output: bin"fuego", ldflags: "-s -w")
   end

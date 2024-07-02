@@ -18,6 +18,8 @@ class Reflex < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "re-flex", because: "both install `reflex` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end

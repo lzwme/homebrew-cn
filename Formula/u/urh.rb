@@ -6,17 +6,17 @@ class Urh < Formula
   url "https:files.pythonhosted.orgpackagesd8dca6dcf5686e980530b23bc16936cd9c879c50da133f319f729da6d20bd95burh-2.9.6.tar.gz"
   sha256 "0dee42619009361e8f5f54d48f31e1c6cf24b171c773dd38f99a34111a0945e1"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comjopohlurh.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "1c761ec24000722b26f2eaaa1c8a890055822edc33e2fb481ae8abe846d9959d"
-    sha256 cellar: :any,                 arm64_ventura:  "b33b6e7a84bcf08bde5797d303b7592ce7b3b34f6ee80f511cc4b7c6a7cd5ca3"
-    sha256 cellar: :any,                 arm64_monterey: "6aaa6bc8354d35293cce98a2df7f352bab19c9e438cfbfcef5a553c6afc14b56"
-    sha256 cellar: :any,                 sonoma:         "a0e7c188e5fd345937d649d9d0ef0c2cd07e1a7469c46fb84df1dd427e860346"
-    sha256 cellar: :any,                 ventura:        "f2c34d221304bb3ad6aeb5a17296ea81db57034d71a2ef20354e2fa78f23b077"
-    sha256 cellar: :any,                 monterey:       "15f815e7131230718efe6ace156afd9bd70d1065ac22bae2875a902e8bf8e34d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1977bc5ba714adfac0933a38415d8d22ec690d48cb237f3338d6aacfdcdc0a7"
+    sha256 cellar: :any,                 arm64_sonoma:   "9cf0c985be519cb7a5f1451f28e242d9505aecd69e45f24e6ea5ee5348c13421"
+    sha256 cellar: :any,                 arm64_ventura:  "eb11c4f95f491213e504f5b60504b12a828caa585be5c0aec76feeca62f57ab5"
+    sha256 cellar: :any,                 arm64_monterey: "750206ac26d982f439f424f847ba0836fe8a5dcc38ee6d11365bd4c13515c371"
+    sha256 cellar: :any,                 sonoma:         "c0a2928d954e4db4233ec61cd01b51dd53a97ce5378064645da014ba0809cc2a"
+    sha256 cellar: :any,                 ventura:        "add9e8fa22725e8821e914840d7d9fb7d7264a759aa938ad71e79518f753eeee"
+    sha256 cellar: :any,                 monterey:       "d7ecf3dccb8741f280378988e79477a37b78eb6493f50cf4688582f24c697abd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7249ef337f50461015896cc171db6501f3ca2b3d0b9e0664a2c32ba51fb7629"
   end
 
   depends_on "pkg-config" => :build

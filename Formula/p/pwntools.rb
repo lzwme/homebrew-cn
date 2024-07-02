@@ -27,6 +27,9 @@ class Pwntools < Formula
   uses_from_macos "libffi"
 
   conflicts_with "moreutils", because: "both install an `errno` executable"
+  conflicts_with "cspice", because: "both install `version` binaries"
+  conflicts_with "jena", because: "both install `update` binaries"
+  conflicts_with "scala", because: "both install `common` binaries"
 
   resource "bcrypt" do
     url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"

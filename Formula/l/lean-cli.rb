@@ -20,6 +20,8 @@ class LeanCli < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "elan-init", because: "both install `lean` binaries"
+
   def install
     build_from = build.head? ? "homebrew-head" : "homebrew"
     system "go", "build", *std_go_args(output: bin"lean", ldflags: "-s -w -X main.pkgType=#{build_from}"), ".lean"

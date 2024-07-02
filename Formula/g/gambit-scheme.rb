@@ -29,6 +29,7 @@ class GambitScheme < Formula
   end
 
   conflicts_with "ghostscript", because: "both install `gsc` binary"
+  conflicts_with "scheme48", because: "both install `scheme-r5rs` binaries"
 
   # Clang is slower both for compiling and for running output binaries
   fails_with :clang

@@ -23,6 +23,8 @@ class Cassandra < Formula
   depends_on "openjdk@11"
   depends_on "python@3.12"
 
+  conflicts_with "emqx", because: "both install `nodetool` binaries"
+
   resource "cassandra-driver" do
     url "https:files.pythonhosted.orgpackages0746cdf1e69263d8c2fe7a05a8f16ae67910b62cc40ba313ffbae3bc5025519acassandra-driver-3.29.1.tar.gz"
     sha256 "38e9c2a2f2a9664bb03f1f852d5fccaeff2163942b5db35dffcf8bf32a51cfe5"

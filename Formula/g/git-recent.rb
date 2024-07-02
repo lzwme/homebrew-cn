@@ -11,6 +11,8 @@ class GitRecent < Formula
 
   depends_on macos: :sierra
 
+  conflicts_with "git-plus", because: "both install `git-recent` binaries"
+
   def install
     bin.install "git-recent"
   end

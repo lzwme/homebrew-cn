@@ -6,17 +6,17 @@ class Manim < Formula
   url "https:files.pythonhosted.orgpackages835f717ba528eb191124211036ec710bafd605dc7f7bb948a41219a8dd1124b6manim-0.18.1.tar.gz"
   sha256 "4bf2b479d258b410259c6828261fe79e107beb8f2dd04ebfa73b96bcefdde93d"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cfd5d44782f8ef0faad36e22e5210813af2b97e476fa32fd7cf1b387a6154a2c"
-    sha256 cellar: :any,                 arm64_ventura:  "5be605d9c07ce4ea4cf9cc24fcdcf788794a77eddde695ebe0ddd252913e3bae"
-    sha256 cellar: :any,                 arm64_monterey: "683b3c4af57d99ae22b2869a243a922a7fa146cda31513a292138e5f0921b492"
-    sha256 cellar: :any,                 sonoma:         "758b99d11ec4ab2d9af63eeb72fdda594b81828dddedad511167e62cbcb5de24"
-    sha256 cellar: :any,                 ventura:        "e2d7e33dd275a7fa60919dc986f0f645cede8c0227f5170c6a4ad20acab214fb"
-    sha256 cellar: :any,                 monterey:       "cbd5fae3387103ad6ea249163afff396e32762330d0a46418e19976698c5990b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daaf7088daa8a4811f71f6164dfb59d83ce18277d0bd8223a13a266afc85c0e0"
+    sha256 cellar: :any,                 arm64_sonoma:   "e0733b64dced9f557184614b2eaac0c52ff9b67555f8b35195576292d0739b0f"
+    sha256 cellar: :any,                 arm64_ventura:  "ea0585cb0d8cd4eff810a753283d257f8a2c48a635bfcc60e02c5e984e3d0f59"
+    sha256 cellar: :any,                 arm64_monterey: "9a3cc7988c3f54acd67c3a36b2e7b5bb50ad70ecc5568ad93c2553c73ea8018e"
+    sha256 cellar: :any,                 sonoma:         "c016acbb6e145237ef23b680dfd48b76bf0184681f0ad767a0840620d1a5611d"
+    sha256 cellar: :any,                 ventura:        "82c6084245d5de5de8a41e5c637d027174f599534f2934b8f9cc2711a2af8a86"
+    sha256 cellar: :any,                 monterey:       "14065dfc5059b028c2aec7df2169f9b19e538dffbb8b0d4ece8b49470afebd49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1e7ba8286cb425bbda68a05ce1eb91b90c66d856b6c4c9f31423b388e3ec5c6"
   end
 
   depends_on "cython" => :build

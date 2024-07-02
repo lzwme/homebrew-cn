@@ -19,6 +19,9 @@ class BashSnippets < Formula
   end
 
   conflicts_with "cheat", because: "both install a `cheat` executable"
+  conflicts_with "expect", because: "both install `weather` binaries"
+  conflicts_with "pwned", because: "both install `pwned` binaries"
+  conflicts_with "todoman", because: "both install `todo` binaries"
 
   def install
     system ".install.sh", "--prefix=#{prefix}", "all"

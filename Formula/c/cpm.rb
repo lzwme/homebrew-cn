@@ -18,6 +18,8 @@ class Cpm < Formula
 
   depends_on "perl"
 
+  conflicts_with "yaze-ag", because: "both install `cpm` binaries"
+
   resource "Module::Build::Tiny" do
     url "https:cpan.metacpan.orgauthorsidLLELEONTModule-Build-Tiny-0.048.tar.gz"
     sha256 "79a73e506fb7badabdf79137a45c6c5027daaf6f9ac3dcfb9d4ffcce92eb36bd"

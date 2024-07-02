@@ -17,6 +17,8 @@ class Opendetex < Formula
 
   uses_from_macos "flex" => :build
 
+  conflicts_with "texlive", because: "both install `detex` binaries"
+
   def install
     system "make"
     bin.install "detex"

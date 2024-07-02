@@ -17,6 +17,8 @@ class Pedump < Formula
 
   depends_on "ruby"
 
+  conflicts_with "mono", because: "both install `pedump` binaries"
+
   def install
     ENV["GEM_HOME"] = libexec
     system "bundle", "config", "set", "without", "development"

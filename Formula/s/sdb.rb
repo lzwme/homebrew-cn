@@ -22,6 +22,8 @@ class Sdb < Formula
   depends_on "vala" => :build
   depends_on "glib"
 
+  conflicts_with "snobol4", because: "both install `sdb` binaries"
+
   def install
     system "meson", *std_meson_args, "build"
     system "meson", "compile", "-C", "build", "-v"

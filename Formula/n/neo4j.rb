@@ -23,6 +23,8 @@ class Neo4j < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "cypher-shell", because: "both install `cypher-shell` binaries"
+
   def install
     env = {
       JAVA_HOME:  Formula["openjdk"].opt_prefix,

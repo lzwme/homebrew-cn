@@ -43,6 +43,8 @@ class Emqx < Formula
     depends_on "zlib"
   end
 
+  conflicts_with "cassandra", because: "both install `nodetool` binaries"
+
   def install
     ENV["PKG_VSN"] = version.to_s
     ENV["BUILD_WITHOUT_QUIC"] = "1"

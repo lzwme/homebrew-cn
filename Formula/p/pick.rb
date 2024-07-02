@@ -23,6 +23,8 @@ class Pick < Formula
 
   uses_from_macos "ncurses"
 
+  conflicts_with "nmh", because: "both install `pick` binaries"
+
   def install
     ENV["PREFIX"] = prefix
     ENV["MANDIR"] = man

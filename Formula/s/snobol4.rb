@@ -31,6 +31,8 @@ class Snobol4 < Formula
     depends_on "readline"
   end
 
+  conflicts_with "sdb", because: "both install `sdb` binaries"
+
   def install
     ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac?
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"

@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https:www.greenwoodsoftware.comlessindex.html"
-  url "https:www.greenwoodsoftware.comlessless-643.tar.gz"
-  sha256 "2911b5432c836fa084c8a2e68f6cd6312372c026a58faaa98862731c8b6052e8"
+  url "https:www.greenwoodsoftware.comlessless-661.tar.gz"
+  sha256 "2b5f0167216e3ef0ffcb0c31c374e287eb035e4e223d5dae315c2783b6e738ed"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9ed9bd846294aead8c097efd24e0b6c45381763c973b14269bbd17b15b8f0236"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "263b71168dfecdba1f0dce9822a5ccaaf3bf75ef89f19212b640c3df9544ddc3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edf8e4d9c8b70364c9b6e586b115a1002b23801efcd20263217f90183005be45"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea7446088b0a038c6c3692936f0005256f552684782fb9afa496f4488f727103"
-    sha256 cellar: :any,                 sonoma:         "b5fdd2a9a8dd18387230f10ccf59de1af9682de151f7950386ac44914c299753"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3b4a5fa225f2b0f41b260e457115d4ea24cbbfa2630aadef83384d7746217fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "d538406b7ba642c5a3fe529af7423f13dfd44dac60bc7fe8954615cf59bbebdd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fda865b847c02a8382505bcc8c1c93a8edf52ed47585006b1c2d0825cc27e788"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94de1be625ab953936a6caf6be15754dfcd6bedc4c80cd7e3855d422581e9997"
+    sha256 cellar: :any,                 arm64_sonoma:   "cfb63b0a54db503b382df1eb92658b09e9e3234e25e8dc6973dedd1026e57c4e"
+    sha256 cellar: :any,                 arm64_ventura:  "8f013221c467b8a71d8c19251139f46cb727173adef7e11a1071be0c705d267e"
+    sha256 cellar: :any,                 arm64_monterey: "b21ce2f938836916b41daec8a906f64c9cf27b14cdc4ea4fe900a9e6dddc87dc"
+    sha256 cellar: :any,                 sonoma:         "d02a9931e1d951074b1cd9c3ca54f974e67a0153c78764f913246712c188dd2a"
+    sha256 cellar: :any,                 ventura:        "ee6f804370faa6b2b3f40db2080a291685c142bd2f7207c18bb77770cc71f726"
+    sha256 cellar: :any,                 monterey:       "791d4cd683fabf7f9b1342baee2b07f7ec40a67c3bc6d6be21ca69860026738c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee1f4afb1837a82ed5d16f7a547c3e542c0da2fef96fc8632ec3bc6b25665649"
   end
 
   head do

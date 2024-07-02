@@ -22,6 +22,8 @@ class Scala < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "pwntools", because: "both install `common` binaries"
+
   def install
     rm Dir["bin*.bat"]
     libexec.install "lib"

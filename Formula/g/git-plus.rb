@@ -21,6 +21,8 @@ class GitPlus < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "git-recent", because: "both install `git-recent` binaries"
+
   def install
     virtualenv_install_with_resources
   end

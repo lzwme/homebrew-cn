@@ -23,6 +23,8 @@ class Jaq < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "json2tsv", because: "both install `jaq` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "jaq")
   end

@@ -22,6 +22,8 @@ class SolcSelect < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "solidity", because: "both install `solc` binaries"
+
   resource "packaging" do
     url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
     sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"

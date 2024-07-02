@@ -20,6 +20,9 @@ class GerritTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e944c907ac7f5bb3d468a7adfa14bdd52c22d0f0261b201f006407f2dc425506"
   end
 
+  conflicts_with "git-gerrit", because: "both install `gerrit-cherry-pick` binaries"
+  conflicts_with "git-review", because: "both install `git-review` binaries"
+
   def install
     prefix.install "bin"
   end

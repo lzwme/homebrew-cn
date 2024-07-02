@@ -18,6 +18,8 @@ class Helix < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "hex", because: "both install `hx` binaries"
+
   fails_with gcc: "5" # For C++17
 
   def install

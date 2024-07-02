@@ -6,15 +6,16 @@ class PythonMatplotlib < Formula
   url "https:files.pythonhosted.orgpackagesc5a4a7236bf8b0137deff48737c6ccf2154ef4486e57c6a5b7c309bf515992bdmatplotlib-3.9.0.tar.gz"
   sha256 "e6d29ea6c19e34b30fb7d88b7081f869a03014f66fe06d62cc77d5a6ea88ed7a"
   license "PSF-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8cd17c7a9d3958a2a2972a419c91761db75d2645963f659fdd9de886779825ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "316c8d1d41b7166fcd2a660464cc7888a6c4747a375ef8729f848f159050a112"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "96d57fcc85304480976af631bcd637a0bf190f359589699b646ebaf43b011fd0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3547b3df44235b0ed9e4f9d5572ec1e5d30222ce6c4cedfa51400ad6f1c8777e"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cddedca7ffa2e2970426394b82e77f557640a01bf8072acaecaa8d8e525b2b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "56367e7bae4372f2c4a0b93e3f04838728611fabe1e6b03bcd7facf7119a61e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64579a19b74154e4e746f14114ffc54a7f5e54e4a8de7c7fdc576606574054f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c57c7887ed6ffd8cae0e386808c86cbd28e427806d8d4d6ed4c2c3f7bc32dce5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e8d1b138a14050e75c1f5cd8e0c617b66ecbad6e874f005d72a25ef09562585"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03e039098b7cab4fc3294446d92a0ed424c62e4cc0f1881d1eea834b24fd67bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "df0ebde32356732ad3174bd9a3c28d23e38ec0e69218d59bd8c2e5d4058f7668"
+    sha256 cellar: :any_skip_relocation, ventura:        "dff86a610aedb981fedae9367b489b2fb42e707f852d70458f596bf98a36a165"
+    sha256 cellar: :any_skip_relocation, monterey:       "6fc55a5a6624949b4118a8ae3b1b0aa4f5295e0764c17fb6283351612aef2a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13a91c0ba3fbb28eb5627010da1a08215c60d0eeb0d7a5f44b30e8818e0ef0d2"
   end
 
   depends_on "meson" => :build

@@ -24,6 +24,8 @@ class Ht < Formula
 
   uses_from_macos "ncurses"
 
+  conflicts_with "texlive", because: "both install `ht` binaries"
+
   # Apply commit from open PR to work around build failure on Apple Silicon
   # ld: building fixups: pointer not aligned at _coff_characteristics+0x1
   # PR ref: https:github.comsebastianbiallashtpull31

@@ -3,20 +3,18 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https:copier.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages3e654059cf029a8782706f53871bcd5402873923bf04353014bf27bc8d5fb2d7copier-9.2.0.tar.gz"
-  sha256 "4ed9012579923955d3fc61d049568907fabe6d9a47e5f871236c6aae0b7472f1"
+  url "https:files.pythonhosted.orgpackagesad947d68e4bf431f5dec256a7dfafe081161f2b7dd41cf87c8726afb9bd1a6e0copier-9.3.0.tar.gz"
+  sha256 "99adf780b1f044f94538bcd5f694850b11ed40957fd866ce2cb19ee2b4e82dca"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "2215eb80bb1e8178fd66bc7b0365dd6ba66567ab146f5bcf89a348eeacfff332"
-    sha256 cellar: :any,                 arm64_ventura:  "8ed436b7101b98ca27b41da05e6c9a6ba891d336bad6ea2057468c9c22698f4f"
-    sha256 cellar: :any,                 arm64_monterey: "4f1d3489cad8cd26165df16f0b4da8bf4706e0e3f9b5ee70dd05ed5aaf11dc9c"
-    sha256 cellar: :any,                 sonoma:         "c6cde04b5ea57149c0d22b7ac19937f38e84eeff8f227f5f3212c96142701760"
-    sha256 cellar: :any,                 ventura:        "56d87d11f2a7cc14f9eaba32f7cd61b022893b08daf72ce77b6ec607701f01c0"
-    sha256 cellar: :any,                 monterey:       "877176aeba1588233cb5489a1ebce8751cdb05251f7cb4bfcc753e3096d51935"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d64337e626fddd00ca022b2a96b80b2f23747169058c413b234579f879f9ff31"
+    sha256 cellar: :any,                 arm64_sonoma:   "f317f149649d429fe63b69f3c12d0f53e0b03fb06c87d0f5fbc265d4009bfc5f"
+    sha256 cellar: :any,                 arm64_ventura:  "ecf7b03f81ab6d6156c5588dc1f5088d83ab7980d798fd8ff93ce03ab30f221d"
+    sha256 cellar: :any,                 arm64_monterey: "8a3d4a2dfa80c96f7df89dd383f919fe2a2c272c474bfd35ec2ad29f3488c916"
+    sha256 cellar: :any,                 sonoma:         "754f5d36ab4c5f0400c2e363c086fd84a7b805dfc832271747474f4ec0bd3839"
+    sha256 cellar: :any,                 ventura:        "689a44ab06dd18d43841d1a3aa2e3796d80327f27409e2eb4192c6c6b880faad"
+    sha256 cellar: :any,                 monterey:       "61fa18e1ab42fa5b789f50b2ce52014cbb489aab2529d60860bf33b11bf99657"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e59ede219d2a80ed2b761a5ec664184d623426fb2c1e19570c4352ce05dd99"
   end
 
   depends_on "rust" => :build
@@ -34,8 +32,8 @@ class Copier < Formula
   end
 
   resource "dunamai" do
-    url "https:files.pythonhosted.orgpackagese084e321b67334207eefeda01942cd57c93ed985e2a4b5e1af1cd60458d7d0d0dunamai-1.21.1.tar.gz"
-    sha256 "d7fea28ad2faf20a6ca5ec121e5c68e55eec6b8ada23d9c387e4e7a574cc559f"
+    url "https:files.pythonhosted.orgpackagesc2717cc5ba60aabefebfaa800e18d82388b0eb48f8f0becbfa5838afe7920484dunamai-1.21.2.tar.gz"
+    sha256 "05827fb5f032f5596bfc944b23f613c147e676de118681f3bb1559533d8a65c4"
   end
 
   resource "funcy" do

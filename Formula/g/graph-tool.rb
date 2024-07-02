@@ -7,6 +7,7 @@ class GraphTool < Formula
   url "https:downloads.skewed.degraph-toolgraph-tool-2.71.tar.bz2"
   sha256 "315784100c6f73a7c49906ad9539fd5c608e4cd91c0aff28b8d6d8a8bebd03c5"
   license "LGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https:downloads.skewed.degraph-tool"
@@ -14,13 +15,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "8dd741e5716791ff2ac631f6495cd47d7c2f6027b74b88abea2f16c2d81502b1"
-    sha256                               arm64_ventura:  "2431fc810d1a840f311bf453eacb6ab4dafef2f42707d5d4b4f07d0c325ae68f"
-    sha256                               arm64_monterey: "731575d7d958766de4c46c4c9d60795bdf5f6a4f356a9f3894f7390ec61185c6"
-    sha256                               sonoma:         "57b1339d542ca8bf0c75699323c90ff0de24b522b6612524c09ba13d1f5b7267"
-    sha256                               ventura:        "172f1ee8f77e0a58979445028c43c998d03b1223ad93e1c53a41edaa784564fd"
-    sha256                               monterey:       "8e3c3e51c211cca0de7930229a7d59dafeb83258ff331aece3a594ec97a221c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0984f192dced5fb7c11efa91e26d905fb8a46b075aa6f2d64699473bd69fcc2e"
+    sha256                               arm64_sonoma:   "7a3b4a82bfe8251fbe5ebbb5fa4d323d299cc6bacfa4fff03f32bd48a9a11d25"
+    sha256                               arm64_ventura:  "a612b898329dfa7713fef7668ee7b00a5814a56c44615fa388a30cc3f2a5bc66"
+    sha256                               arm64_monterey: "e789f6b23ef2ff445d9aac1ade88bda27f35887219f9ae23cb749764700ad9d1"
+    sha256                               sonoma:         "634a8998e59d0d4ad7331ff83c9e1ecd0d4889ec3f7f2e2a75b85be68183c4aa"
+    sha256                               ventura:        "94851f972438edd35dacbd2e7fc10567134a0ec6e5691421b464093ecdda9ebe"
+    sha256                               monterey:       "333134d9bb7caed2ea0fbdecc7e7d1051f38601425b935390c54a54d5d1a5ec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a4dee2a723194e3de3cd0a134e50ad3294c1168e2adce1150c36dc6b04d9b3a"
   end
 
   depends_on "ninja" => :build

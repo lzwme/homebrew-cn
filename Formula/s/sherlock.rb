@@ -6,17 +6,17 @@ class Sherlock < Formula
   url "https:files.pythonhosted.orgpackageseb570ac8fcde9e2dbdacb20f48e8c20f3049972a59839d8bccbef0799b944140sherlock_project-0.14.4.tar.gz"
   sha256 "3c0edc4ebbcdb8eae03d5ce2e377e1c6839d73b8e77388b70125120537917022"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a15b64e7f91ffc6c277a3aab4d09e97afc3f934595120b15cf28413eee01fb60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1f8e81fbcdf27790c14444098a751f277235959d961d6b050b1fe368d6e60cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "09dcef1f9f7bfb150925610ae7f3daec2725d887b1791cb5fc636934bd60edef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ceb188b20a514ad30b250af49a03e1d1567557cc247b82454ba047f146c1850"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2958f4a42bf5b78f74f64411bb42a6570f0ecbe035e854a31a67e8139979e07"
-    sha256 cellar: :any_skip_relocation, monterey:       "c03c267e690aaa91234a40ea5f002fe24e51966457e182ace22881ce5b91c61b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80522cbd8ceb87f589daa8a6fa50ea6d587e0ffd180f75c996000283e7d1c303"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42f1586e3de0478df13f1775afe67d61cd9bdfe776201209166ae3255b07217a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dac71187813214e99f3b43df9bf83988a7f59053ec5dee5a6940dbcc97005d20"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2c0fcb5ba4c1ba01792040ff58014909c5567be5ce619790c2c376e24fa28a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0c8ae0cfe6ef4a1cb65fe62cb44488347681f8105996287d9bc49149648d3072"
+    sha256 cellar: :any_skip_relocation, ventura:        "c70840d3143289b9278f61419c047d1c9f52f41f4f423dd924c344c1322c2a19"
+    sha256 cellar: :any_skip_relocation, monterey:       "76a29ff9f4c86d04077b2b785f4750c6d8728dd89d52bf5b8aa8b9e279c8a551"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b5a61e377edbb8fbf8dc4e8fcddf883b59018f0bfaf73365eb93d6f457a54a7"
   end
 
   depends_on "cmake" => :build

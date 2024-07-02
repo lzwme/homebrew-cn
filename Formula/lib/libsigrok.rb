@@ -4,7 +4,7 @@ class Libsigrok < Formula
   # libserialport is LGPL3+
   # fw-fx2lafw is GPL-2.0-or-later and LGPL-2.1-or-later"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 4
+  revision 5
 
   stable do
     url "https://sigrok.org/download/source/libsigrok/libsigrok-0.5.2.tar.gz"
@@ -41,14 +41,13 @@ class Libsigrok < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "25451aaa30807a512ee33dab2c5e84a0d6a9248cc345bea3d314e4e9871c3d7e"
-    sha256                               arm64_ventura:  "d5a91f7b194fdeff5f9dbccdaf47e42ae20eef9b5885ce4c195656ee3a4e50a4"
-    sha256                               arm64_monterey: "4b977b13bc1aa1e9290f9b8b5994b7ca95572f4d963a806390be234b4bd2540f"
-    sha256                               sonoma:         "8f439b415662863d7e6c9d14524cea2479fbad8e64f9b59a73bba4d2887de80c"
-    sha256                               ventura:        "3c3e878899fa1538c53c8981886ddacd868f9fc726bfb3d2d707afbb5f961bce"
-    sha256                               monterey:       "77caa1c69e1d0f7e5e0be2de793f9f684b9c02b40bc11dbf9b2e5e22ad287298"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e8328d0d3fb80d6ccb0499cae7ec7cb3e6643abf1fb3064b51923f45b6357f8"
+    sha256                               arm64_sonoma:   "531edfde4ad0fde8bc06d1380d62b85bed86415f2ea63f76706b2369f2fa70d1"
+    sha256                               arm64_ventura:  "632dc0050579c516cadca7127de3b89104b0b16088735934a0857412c31a5b3e"
+    sha256                               arm64_monterey: "09286cd2262fc0cfbfa1a29abfab61e92b88c0a031acee695b0eac837aaa44c1"
+    sha256                               sonoma:         "927be3d20407cfd3c9371f54eadc63c55036cff36f8c931d29337cb1c2d4aa05"
+    sha256                               ventura:        "ce4c862b9e10a258a23f47dba9633095abd548b5b6513aa8f14d155d9c5c0a68"
+    sha256                               monterey:       "62967ec4b00854d14da39764d6b325da4a29fd20d7ba2bc55d726ff7be6c8876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df2b9d29a225cdf6e78ade8aa14629773c4ddc2ccbaf0d894f864580912b7f8"
   end
 
   head do

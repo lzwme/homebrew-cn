@@ -17,6 +17,8 @@ class TrzszGo < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "trzsz", because: "both install `trz`, `tsz` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"trz"), ".cmdtrz"
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tsz"), ".cmdtsz"

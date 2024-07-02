@@ -18,6 +18,8 @@ class Jot < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "json-table", because: "both install `jt` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

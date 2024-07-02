@@ -17,6 +17,8 @@ class Tctl < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "teleport", because: "both install `tctl` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtctlmain.go"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin"tctl-authorization-plugin",

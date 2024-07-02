@@ -33,6 +33,8 @@ class Fpc < Formula
     depends_on "mesa" => :test
   end
 
+  conflicts_with "px", because: "both install `ptop` binaries"
+
   resource "bootstrap" do
     on_macos do
       url "https://downloads.sourceforge.net/project/freepascal/Mac%20OS%20X/3.2.2/fpc-3.2.2.intelarm64-macosx.dmg"

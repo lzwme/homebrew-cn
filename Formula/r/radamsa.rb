@@ -15,6 +15,8 @@ class Radamsa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4689407adfe023eb9ef82d62468d80460b1ce882066990b1d0decc65723b428"
   end
 
+  conflicts_with "ol", because: "both install `ol` binaries"
+
   def install
     system "make", "future"
     man1.install "doc/radamsa.1"

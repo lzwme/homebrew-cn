@@ -14,6 +14,8 @@ class Woof < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "woof-doom", because: "both install `woof` binaries"
+
   def install
     rewrite_shebang detected_python_shebang, "woof"
     bin.install "woof"

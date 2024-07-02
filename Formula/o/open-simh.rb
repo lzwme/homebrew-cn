@@ -29,6 +29,8 @@ class OpenSimh < Formula
   uses_from_macos "libpcap"
   uses_from_macos "zlib"
 
+  conflicts_with "sigma-cli", because: "both install `sigma` binaries"
+
   def install
     ENV.append_to_cflags "-Os -fcommon" if OS.linux?
     inreplace "makefile" do |s|

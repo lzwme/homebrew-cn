@@ -23,6 +23,8 @@ class JsonTable < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2a8b0576a8a0be8e8bc9bcafcb70ad0fd98197a2f465d4713163fff48ba7696"
   end
 
+  conflicts_with "jot", because: "both install `jt` binaries"
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

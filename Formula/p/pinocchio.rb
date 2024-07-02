@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https:github.comstack-of-taskspinocchioreleasesdownloadv2.7.1pinocchio-2.7.1.tar.gz"
   sha256 "fd50b72f9f32c14c8f9e7712d9abe077c154d2072e780faf12cc132cc198815f"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstack-of-taskspinocchio.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e2575f8d573f3760be3ad8de68785c552935d4479196ad53bb2fcc4ead3dbcc"
-    sha256 cellar: :any,                 arm64_ventura:  "ba757831239ab83459de79d8411861c5950e6007394721bd9369073da00b9a2b"
-    sha256 cellar: :any,                 arm64_monterey: "7103ae81cdb44f41458d8dee0e9c91f946ec11b7920f7815dceed29d630ba023"
-    sha256 cellar: :any,                 sonoma:         "2d0a09efb7e362932f1758caf129203aed2b5b10295a4cc512979d332bd01bcd"
-    sha256 cellar: :any,                 ventura:        "d31f608a766fd378b309755067f707dffad0b099ef7c6a2b452a8520724be2d3"
-    sha256 cellar: :any,                 monterey:       "e71c53c9c664f6e9b666d85678a2e8a32c9148b0500201b1d096dc007f08fcd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8051834fa5c74a06105dcf814f538c5234e38ec84de4075f41d60c8c56bf4b9"
+    sha256 cellar: :any,                 arm64_sonoma:   "aac850f371c27f55671e1d990118444cb9e446725b34733b2c1ab431b009954b"
+    sha256 cellar: :any,                 arm64_ventura:  "0930085d52ff606453ba155242e00c98c6695e27dae41dece5857186fd9a579e"
+    sha256 cellar: :any,                 arm64_monterey: "8d5d9e7ff52538196585a3dc1d5cba69305a6747801c8f1ab687171f3aa33c0c"
+    sha256 cellar: :any,                 sonoma:         "48a55da307abc0d2569f685a8364c35e4c9ed08ed18321e6eb1c8c906dd85f54"
+    sha256 cellar: :any,                 ventura:        "cec59d60b90aba99e780a0cfc0cab0ffaed095b055347f22937ea3a57a3f74ca"
+    sha256 cellar: :any,                 monterey:       "658aaf710ab43fe5c7619404535a2deb8f659a0647ba84a03fd8a566336f2fbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1cc93c5115abfa32ccc413e92cb7d0741571a6fb2caa6dfaefe6b74e8162dce"
   end
 
   depends_on "cmake" => :build

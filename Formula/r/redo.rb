@@ -21,6 +21,8 @@ class Redo < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "goredo", because: "both install `redo` and `redo-*` binaries"
+
   resource "beautifulsoup4" do
     url "https:files.pythonhosted.orgpackagesb3ca824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58beautifulsoup4-4.12.3.tar.gz"
     sha256 "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051"

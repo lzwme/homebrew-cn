@@ -1,24 +1,19 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https:www.numpy.org"
+  url "https:files.pythonhosted.orgpackages0535fb1ada118002df3fe91b5c3b28bc0d90f879b881a5d8f68b1f9b79c44bfenumpy-2.0.0.tar.gz"
+  sha256 "cf5d1c9e6837f8af9f92b6bd3e86d513cdc11f60fd62185cc49ec7d1aba34864"
   license "BSD-3-Clause"
   head "https:github.comnumpynumpy.git", branch: "main"
 
-  stable do
-    url "https:files.pythonhosted.orgpackages656e09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058numpy-1.26.4.tar.gz"
-    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
-
-    depends_on "python-setuptools" => :build
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e5a11ee6e1e4b3ead073e1ee05182f7b31d8b34a1c37902e74d2a944172d4f62"
-    sha256 cellar: :any,                 arm64_ventura:  "65231d3b52bcd472a56efe82eada5118fcf157df462b4a3dcbb2460c0c751ee0"
-    sha256 cellar: :any,                 arm64_monterey: "4c6d2747b3204fae2a75b4bd9a91e53971e6a394b7beaede5c331e34009a3072"
-    sha256 cellar: :any,                 sonoma:         "bf6f3380a7785111ac70f62c9f6bf3aa5308f2c4edd61490acc554ee3a463d26"
-    sha256 cellar: :any,                 ventura:        "a235a28c6f4b11202edd3034251372b90eae40305f0dd1db0e8d535cdc723307"
-    sha256 cellar: :any,                 monterey:       "345e466d8cd392e68e54928053c3cc737d5dbbc5966a6fd86e4e0990da241177"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fed0cdb5f32d8df64d87ceadd4ed03c81e8320f2ba6f40b964e4a4e6a186ace"
+    sha256 cellar: :any,                 arm64_sonoma:   "fd895652221b39720286180cb96e82973fdf02c8618d0e80e73226abb605c27a"
+    sha256 cellar: :any,                 arm64_ventura:  "908a8cc92dce11ec5ee29ddf93badc2ababf2354b7fbab3a1dd380a5269222a2"
+    sha256 cellar: :any,                 arm64_monterey: "9709e51ce8f1bcf4310791cdea980f941a05dd59b8ef340463c41092180af107"
+    sha256 cellar: :any,                 sonoma:         "bf2949e8a594ff32fb7aa1717d9ec5e7802c87aa6343db50a3f8266c19ecddf9"
+    sha256 cellar: :any,                 ventura:        "dd9c75e900e9bc82d65adc321ca9000876e7588adf66cc5b960ae371ed9b617f"
+    sha256 cellar: :any,                 monterey:       "8e76c0d5da70462f77b79f636767812df89f42325dc0326c736563c244e39487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5051957b3488ef45762e7bddb428c01dbd63b5cf1d0c298a81570b81ef1f1bf0"
   end
 
   depends_on "gcc" => :build # for gfortran
@@ -37,7 +32,7 @@ class Numpy < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .sort_by(&:version) # so that `binf2py` and `binf2py3` use newest python
+        .sort_by(&:version) # so scripts like `binf2py` use newest python
   end
 
   def install
@@ -57,8 +52,8 @@ class Numpy < Formula
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec"binpython"
-      system python_exe, "-c", <<~EOS
+      python3 = python.opt_libexec"binpython"
+      system python3, "-c", <<~EOS
         import numpy as np
         t = np.ones((3,3), int)
         assert t.sum() == 9

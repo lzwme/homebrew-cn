@@ -9,6 +9,8 @@ class Repl < Formula
     sha256 cellar: :any_skip_relocation, all: "497a5e7b673fbd288181f823e1b1a7ba71770b6d3da82bd66ac100c60b0295b3"
   end
 
+  conflicts_with "nmh", because: "both install `repl` binaries"
+
   def install
     bin.install "binrepl"
     man1.install "manrepl.1"

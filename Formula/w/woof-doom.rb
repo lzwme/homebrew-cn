@@ -24,6 +24,8 @@ class WoofDoom < Formula
   depends_on "sdl2"
   depends_on "sdl2_net"
 
+  conflicts_with "woof", because: "both install `woof` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

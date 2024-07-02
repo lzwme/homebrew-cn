@@ -19,6 +19,8 @@ class Cocogitto < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
 
+  conflicts_with "cog", because: "both install `cog` binaries"
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 

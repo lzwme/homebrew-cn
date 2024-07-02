@@ -22,6 +22,9 @@ class Px < Formula
 
   uses_from_macos "lsof"
 
+  conflicts_with "fpc", because: "both install `ptop` binaries"
+  conflicts_with "pixie", because: "both install `px` binaries"
+
   def install
     virtualenv_install_with_resources
 

@@ -40,6 +40,10 @@ class Nmh < Formula
     depends_on "gdbm"
   end
 
+  conflicts_with "ali", because: "both install `ali` binaries"
+  conflicts_with "pick", because: "both install `pick` binaries"
+  conflicts_with "repl", because: "both install `repl` binaries"
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",

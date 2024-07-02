@@ -22,6 +22,8 @@ class Oakc < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "oak", because: "both install `oak` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
     pkgshare.install "examples"

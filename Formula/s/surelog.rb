@@ -28,6 +28,8 @@ class Surelog < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "open-babel", because: "both install `roundtrip` binaries"
+
   def install
     antlr = Formula["antlr"]
     system "cmake", "-S", ".", "-B", "build",

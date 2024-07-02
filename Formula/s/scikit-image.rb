@@ -6,16 +6,17 @@ class ScikitImage < Formula
   url "https:files.pythonhosted.orgpackages5dc5bcd66bf5aae5587d3b4b69c74bee30889c46c9778e858942ce93a030e1f3scikit_image-0.24.0.tar.gz"
   sha256 "5d16efe95da8edbeb363e0c4157b99becbd650a60b77f6e3af5768b66cf007ab"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comscikit-imagescikit-image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8aa4f1756355a294e4b26c6aa395fc7fdbdd574c00d82b87558d7d384eb119e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "912a19ba94573aa3ea604743fba82b30bfb10c8de80c9330fa5888c5319dff92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "067eeccfb003e88003969d0bb31d0e9f10eea326790054bb65bdcfecc0bc14a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c5a0842b9be549e1acb25ec8265b971a425da52d0269435db64e0cb5ae40f8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9736500714362a642c82459ad66fe961b1a3def18ed97d4cb87538f7f22f563b"
-    sha256 cellar: :any_skip_relocation, monterey:       "5556ac9f3acc51b9773bf191fca8ee866686bbdbcefe64d82e251fe6276139ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56c69786ae7d70ec8cd3a24b775b50e2643f333cf60605a2779a8932692e7f53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3aeefa1537ddfbf9c2a8dd2bc77853c333e8f99a71cce6d35daeb10e95107f5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77a258de0568a6bc6405b67707dba97b25dffe1338dbe37b39fc63b5c4c78d3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "096478908be082b78050b357a271c440015be85e21961fb827345780b34baa21"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e28919721e67e5ec677e22851352097ec70c56e811aa1836d3d6a82bf36f477"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1710b3af9a709a4a42144623a274766bda6736c69b5d17ab6b918c4557ca87a"
+    sha256 cellar: :any_skip_relocation, monterey:       "97cb05e332e4b5d31c1d09a44291cb2cce4938ec44a7834a9fb197201b89ec15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a22e7dd8bb37445bc526d3f719e48738d53a46deddd6e088ada56e0663e5ef4"
   end
 
   depends_on "meson" => :build

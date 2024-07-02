@@ -21,6 +21,8 @@ class Cgrep < Formula
   depends_on "pkg-config" => :build
   depends_on "pcre"
 
+  conflicts_with "aerleon", because: "both install `cgrep` binaries"
+
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args

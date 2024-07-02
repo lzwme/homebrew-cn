@@ -27,6 +27,8 @@ class Fuego < Formula
   depends_on "automake" => :build
   depends_on "boost"
 
+  conflicts_with "fuego-firestore", because: "both install `fuego` binaries"
+
   def install
     # Work around build failure with Boost 1.85.0
     # Issue ref: https://sourceforge.net/p/fuego/tickets/108/

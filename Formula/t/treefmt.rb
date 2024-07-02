@@ -1,19 +1,19 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https:github.comnumtidetreefmt"
-  url "https:github.comnumtidetreefmtarchiverefstagsv2.0.1.tar.gz"
-  sha256 "2b0e8d1ec0bcf8cefbdfb41c98fc325d274e35a81eca2e3eddcb2c0d76ca2b06"
+  url "https:github.comnumtidetreefmtarchiverefstagsv2.0.2.tar.gz"
+  sha256 "513afebec7dd563d78a5e8fc6e5316610ad78419fea2121d4b080bae0f1ae647"
   license "MIT"
   head "https:github.comnumtidetreefmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aa363f498de85133ba7f72de6d224a2fb0c71c2973d7e5c332a04d24dab5504"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a6c29b801cfaa91308b42840ad45c655a6cd9017c24e412b373dbbcd0013605"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f22483187b118d620cb0dacae5b3c9794327ef585c55740f6626bf69c43df09e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8cc08f258a0dce085495e14861a0a0cbf65098ab42339d4282a22f3b8f1e5da"
-    sha256 cellar: :any_skip_relocation, ventura:        "530692b89732834e3cafc4ad418be72ec854c8034e8f076a814da1d69dad6a6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ab26d66f6f4cac8fac43374304888ceef1099d5757986576ade6c3264c47d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d532b19c2b40870e1a7af7997989e14ee5368a9a0e4921f59ef15ed025ab5cbc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "258c2ed7c70c78a300dc4062a2999624bbce38f6df851b07f1705941e873f1f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b608b96dc93e3d58af43811433972cea7becc431d85cf0f4a034d6a085e7695"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5282b9f74ffdbc8041201180e50af8d7b2781aae9ad2469a26ecd4e06ec54e53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "903c939dcdf890f7b0f80421e9a099fd667f269f3bf32414ddd903db95b6d0dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "24e65d57ac85527fe6064e850adf5f2e11da7beda844829e5e26d07a31a86e78"
+    sha256 cellar: :any_skip_relocation, monterey:       "b54e58da6be46c2b4f49b1051794bc2510a507a001392e67ff78bd27dbdc7380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc65544ea3786311707b62ea6fe06d636e444f5dc20a78ffc287b6fed18551fd"
   end
 
   depends_on "go" => :build

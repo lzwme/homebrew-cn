@@ -6,18 +6,17 @@ class OpenaiWhisper < Formula
   url "https:files.pythonhosted.orgpackagesd26e50ace2bf704e5ffc786d20d96403ab0d57c5d6ab8729de7fed8c436687dfopenai-whisper-20231117.tar.gz"
   sha256 "7af424181436f1800cc0b7d75cf40ede34e9ddf1ba4983a910832fcf4aade4a4"
   license "MIT"
-  revision 4
+  revision 5
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "181b3f92c38b0d27223afcadac694a1892af0249660801f32f2234da350ade6b"
-    sha256 cellar: :any,                 arm64_ventura:  "aead20c878fd66455dd43baa1b5148d8b7f7c1e54775f1c236a64ad6caaadfde"
-    sha256 cellar: :any,                 arm64_monterey: "8b254c74ba6f3455dbc9ad4106c9526fc1a8da752dc1d2e1ed38d28b83eae617"
-    sha256 cellar: :any,                 sonoma:         "1c0907da9a5e6bfd06ea64b3d7d7d6cd236e2d36cb4d9c9080c7d9b58d582c76"
-    sha256 cellar: :any,                 ventura:        "2abf66a94e6dfc6d210690e328486f7605c6ebb15eee19e00099cc990a58f65f"
-    sha256 cellar: :any,                 monterey:       "4b828a2d11e322acb2d295e8b325c9561bfc903c237a4ab83a88c24bc5e0a458"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d014f4346cb79d600e49343d857eced20eb62c9aceace086feaf56f26229e262"
+    sha256 cellar: :any,                 arm64_sonoma:   "5c0f66f4da079c643d98a8cf8bb7d7df823977b274735bf84fc173b5cd68936f"
+    sha256 cellar: :any,                 arm64_ventura:  "c266e2b5e120c5cc5d1b7526a8187dc5aa8a9ecfc1e92e1de729bb7aa714768b"
+    sha256 cellar: :any,                 arm64_monterey: "dbc69a81f7d17c6b27f760a71e41b6328b81f01b62b6210547c1fed9e81bb7bc"
+    sha256 cellar: :any,                 sonoma:         "14104b8148c43be9be0854aef4afdd3854affa97e565df5930f10ca5baa81b27"
+    sha256 cellar: :any,                 ventura:        "15ee1feba9cd6fa12d172a91bd0fded080b0074540967baedf1dbe4c9662f126"
+    sha256 cellar: :any,                 monterey:       "586562313b49a1d38351a153ee8ac9ef627e9c26eebae2dc129aa877dabdeeba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba221a60f8869b137fdd84b272e3c424a593f3fe91af1b0f01d8274b892aaffd"
   end
 
   depends_on "rust" => :build # for tiktoken

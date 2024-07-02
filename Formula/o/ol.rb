@@ -18,6 +18,8 @@ class Ol < Formula
 
   uses_from_macos "vim" => :build # for xxd
 
+  conflicts_with "radamsa", because: "both install `ol` binaries"
+
   def install
     system "make", "all", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"

@@ -21,6 +21,8 @@ class Oak < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "oakc", because: "both install `oak` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end

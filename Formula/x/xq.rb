@@ -18,6 +18,8 @@ class Xq < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "python-yq", because: "both install `xq` binaries"
+
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[

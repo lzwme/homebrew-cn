@@ -54,6 +54,8 @@ class Sapling < Formula
     "#{segments.take(2).join("-")}+#{segments.last}"
   end
 
+  conflicts_with "sl", because: "both install `sl` binaries"
+
   def install
     if OS.mac?
       # Avoid vendored libcurl.

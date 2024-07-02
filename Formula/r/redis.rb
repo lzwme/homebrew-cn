@@ -31,6 +31,8 @@ class Redis < Formula
 
   depends_on "openssl@3"
 
+  conflicts_with "valkey", because: "both install `redis-*` binaries"
+
   def install
     odie "Do not bump to v7.4+" if version.major_minor >= "7.4"
 

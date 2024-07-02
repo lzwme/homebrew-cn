@@ -23,6 +23,8 @@ class Uffizzi < Formula
   depends_on "ruby"
   depends_on "skaffold"
 
+  conflicts_with "conserver", because: "both install `console` binaries"
+
   # Runtime dependencies of uffizzi
   # List with `gem install --explain uffizzi-cli`
   resource "tty-cursor" do

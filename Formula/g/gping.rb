@@ -33,6 +33,8 @@ class Gping < Formula
     depends_on "iputils"
   end
 
+  conflicts_with "inetutils", because: "both install `gping` binaries"
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     system "cargo", "install", *std_cargo_args(path: "gping")

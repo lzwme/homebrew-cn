@@ -12,6 +12,7 @@ class Jena < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "pwntools", because: "both install `update` binaries"
   conflicts_with "samba", because: "both install `tdbbackup` binaries"
 
   def install

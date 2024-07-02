@@ -22,6 +22,8 @@ class Goredo < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "redo", because: "both install `redo` and `redo-*` binaries"
+
   def install
     cd "src" do
       system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"

@@ -40,6 +40,8 @@ class Duck < Formula
     depends_on "libxtst"
   end
 
+  conflicts_with "duckscript", because: "both install `duck` binaries"
+
   resource "jna" do
     url "https:github.comjava-native-accessjnaarchiverefstags5.14.0.tar.gz"
     sha256 "b8a51f4c97708171fc487304f98832ce954b6c02e85780de71d18888fddc69e3"

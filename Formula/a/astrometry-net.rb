@@ -6,7 +6,7 @@ class AstrometryNet < Formula
   url "https:github.comdstndstnastrometry.netreleasesdownload0.95astrometry.net-0.95.tar.gz"
   sha256 "b8239e39b44d6877b0427edeffd95efc258520044ff5afdd0fb1a89ff8f1afc0"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -14,14 +14,13 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "5f15d618c8756197d1970f72a761afcb4b875a1fbce0c4daff180dc3bbd5e054"
-    sha256 cellar: :any,                 arm64_ventura:  "92c976e4604da5686a8ad5aa315ec80f8057b7494d9ddabbd51a592418390580"
-    sha256 cellar: :any,                 arm64_monterey: "8ac2b1a0ffa382b0cbe797697de36644bb195cdd5e69cf6566f4d7741284721f"
-    sha256 cellar: :any,                 sonoma:         "5261231e0b211468b2e2946cba198b6284876e8892376ca199a105c521942bb0"
-    sha256 cellar: :any,                 ventura:        "eac7171945f2b770d1bc5157099aca26d0bd80f2ef7408793dab356696507415"
-    sha256 cellar: :any,                 monterey:       "10069a20a7084298abe218a891610d6b9bb389b635c943f678222395962d9f2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6fec941da11af47992550f463aa96e59c589893655aa7c7b40c809ae335e887"
+    sha256 cellar: :any,                 arm64_sonoma:   "681664bdc8381e23fe4210d23e12950648f2c0b356fa897047ebabbae7aa18be"
+    sha256 cellar: :any,                 arm64_ventura:  "0049fe69dcfa6a6a822f73dcf126e347510d50269d50034c15b7594aff317de1"
+    sha256 cellar: :any,                 arm64_monterey: "f99643266e57f488814848732bf1ef8400f5c2a8cd1f326f54fa0237a489006f"
+    sha256 cellar: :any,                 sonoma:         "574dae103e0381b66d6b94e2bd4b7bb4ec4806d72f6601712ca3e67ba82cdef3"
+    sha256 cellar: :any,                 ventura:        "069e7081981b182a91479b4ae449a9a542fe4000301cb405c8b0ad8a60cd6e6a"
+    sha256 cellar: :any,                 monterey:       "b90eb143ad2c5af39f8e4ec6981490e1aba97ba2780788abf8716c72b51f7e95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3d547674c49913efdb2fc5bce77af258e727d22dc29db604e0a209935d10068"
   end
 
   depends_on "pkg-config" => :build

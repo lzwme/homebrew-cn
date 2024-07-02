@@ -24,6 +24,8 @@ class Crfsuite < Formula
 
   uses_from_macos "python" => :test
 
+  conflicts_with "freeling", because: "both install `crfsuite` binaries"
+
   resource "homebrew-conll2000-training-data" do
     url "https:www.cnts.ua.ac.beconll2000chunkingtrain.txt.gz"
     sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"

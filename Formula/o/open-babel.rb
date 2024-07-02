@@ -34,6 +34,8 @@ class OpenBabel < Formula
     "python3.12"
   end
 
+  conflicts_with "surelog", because: "both install `roundtrip` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DRUN_SWIG=ON",

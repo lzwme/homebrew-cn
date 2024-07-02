@@ -28,6 +28,8 @@ class Scheme48 < Formula
     sha256 x86_64_linux:   "522dcf810f30c5e1f91fae01d951764ece1b12edaf42a497c31a87539831168d"
   end
 
+  conflicts_with "gambit-scheme", because: "both install `scheme-r5rs` binaries"
+
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-gc=bibop"
     system "make"

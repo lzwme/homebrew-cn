@@ -6,6 +6,7 @@ class Openvino < Formula
   url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.2.0.tar.gz"
   sha256 "b624481efb7814cf2d98a29163c3b914fa2f23c1417289b13561d0b5e32fc67c"
   license "Apache-2.0"
+  revision 1
   head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
   livecheck do
@@ -14,14 +15,13 @@ class Openvino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "07e55f608b78d1de200bf8ba262cdd49ccc30b88dfa0c5895ee0786eba094958"
-    sha256 cellar: :any,                 arm64_ventura:  "1fe8c5f82ac6dc9c1d89e62e6807e1865511ca66ab1b46a1775afe95d0fe05fc"
-    sha256 cellar: :any,                 arm64_monterey: "25db898560b72b7257f8c1c96c70408b242f13e61968756532b2d88d58ef0483"
-    sha256 cellar: :any,                 sonoma:         "8afc3a4da6ecc123564075f00e1ceeea68ea59230e5b33bd2a0483447a83fc12"
-    sha256 cellar: :any,                 ventura:        "71ac52208fe7a6f28c3a60697527a7ab3a606bade63a591fabec6975c65f9ac8"
-    sha256 cellar: :any,                 monterey:       "0e087e25ec480d08b8780ce17563a9058f5545b0b737197d30e70a355a728835"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef42ca92587edf7218c6116bb25df168a3888e686510d480fed91a9c7f71c667"
+    sha256 cellar: :any,                 arm64_sonoma:   "760e909234abb37171c247b0712c701fb34c55f8dc583ffa32e42e5f9e6130f6"
+    sha256 cellar: :any,                 arm64_ventura:  "9e6598733dca8bd377c5e08798a5b83dec7b12b562b0bcdf8c20ee8882675b09"
+    sha256 cellar: :any,                 arm64_monterey: "9d7ddfefae3ec268577c3b75385b58b202c0f5eb3cdd2f65c8dfa5ff714b3a07"
+    sha256 cellar: :any,                 sonoma:         "ae313d33cebda7f787905cf2cba8a09aad7c281ed8284abf9e0dafeea5da274c"
+    sha256 cellar: :any,                 ventura:        "cc022fa148c518bbe1e9beea80e17caa1d316f1001d3f3a1acb7a2680f677ea8"
+    sha256 cellar: :any,                 monterey:       "79157480d03b305ba54aec1fac3e2ae25c59218f0c3b99505a95cb112f98fedb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d4025a4444fa4a13ff2191a59e7b92ca80fb183a9e3b62e5dbd96024657dba9"
   end
 
   depends_on "cmake" => [:build, :test]

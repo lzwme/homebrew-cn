@@ -4,7 +4,7 @@ class Aubio < Formula
   url "https:sources.buildroot.netaubioaubio-0.4.9.tar.bz2"
   sha256 "d48282ae4dab83b3dc94c16cf011bcb63835c1c02b515490e1883049c3d1f3da"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url "https:aubio.orgpub"
@@ -12,14 +12,13 @@ class Aubio < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "ab73e13683ffe8f16420f3840b812d526aaa5cd8c504db046016326bc82eaf90"
-    sha256 cellar: :any,                 arm64_ventura:  "830a71f3bab206de19e3b1b7a60ceecfb85e1c5215c265f70efe1c0ad1bebfc5"
-    sha256 cellar: :any,                 arm64_monterey: "5b25c1f944296cf89d576a90bd691381dc3030020b1d0845985803754b85936d"
-    sha256 cellar: :any,                 sonoma:         "d7f0930c4d82642f232ed8db39018134251bc1abd32729c7feeb491ca41848e4"
-    sha256 cellar: :any,                 ventura:        "c2b2d098bc08de758990f533bdd892615adeb3fc83c980b66500f9b5144e7cc3"
-    sha256 cellar: :any,                 monterey:       "211264da83fe13e14a91869011e6fe79f1b63cb7110bd3d8f214178fe6b51def"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80790bb2aefbfdbaf13ecfa873325f22ebbe7d5bf8bea8a921696ce91494ae89"
+    sha256 arm64_sonoma:   "861126445e0643c4135a942e9d95b858597ee35acae313a66248e434477820b9"
+    sha256 arm64_ventura:  "68979803b19d987f8e6c007e5f0f8d15a5d2e40783d0f8b1f2df811d1850d989"
+    sha256 arm64_monterey: "e7eab620a5f855dd1a3ed279451fa58e53c6efc186a597131c81d9d73acaa3e5"
+    sha256 sonoma:         "a8bd9ab89e05ff75426654fdd70aefd450d2e1f06fe18cbd310f5414545dc8db"
+    sha256 ventura:        "58d468192fe8cdf5173844cbcd80c21be7d389b4f3d323f15f1e3c0069e9d846"
+    sha256 monterey:       "19f2f3c166e37236cd7721d8aede9c297d00955999e8942497b8f2bf57d51bf9"
+    sha256 x86_64_linux:   "b9e34e9f4405c12be3a4e42305916c3399fcab7c1ddbf8e712cd379f06af763e"
   end
 
   depends_on "libtool" => :build

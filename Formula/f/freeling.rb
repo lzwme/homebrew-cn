@@ -25,6 +25,8 @@ class Freeling < Formula
   conflicts_with "foma", because: "freeling ships its own copy of foma"
   conflicts_with "hunspell", because: "both install 'analyze' binary"
 
+  conflicts_with "crfsuite", because: "both install `crfsuite` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

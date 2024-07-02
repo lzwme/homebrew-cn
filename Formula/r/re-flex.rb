@@ -17,6 +17,8 @@ class ReFlex < Formula
 
   depends_on "pcre2"
 
+  conflicts_with "reflex", because: "both install `reflex` binaries"
+
   def install
     system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

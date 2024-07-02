@@ -31,6 +31,8 @@ class Proxygen < Formula
   uses_from_macos "python" => :build
   uses_from_macos "zlib"
 
+  conflicts_with "hq", because: "both install `hq` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

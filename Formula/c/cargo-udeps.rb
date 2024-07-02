@@ -1,18 +1,18 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
   homepage "https:github.comest31cargo-udeps"
-  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.47.tar.gz"
-  sha256 "8794b480ab6dd166617711345116be5958def42679c1a5948d41850ecb9cb806"
+  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.49.tar.gz"
+  sha256 "f3beaaa9c11526f4fc52dff140214b8948622b69ebf2878a607132056e6b3c33"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b00bdb45cf491c545641ec5f5b0ea3ebf72827cb05619071b3b4ebd930b2894f"
-    sha256 cellar: :any,                 arm64_ventura:  "55eb71de7dc712e5b9f6392fee924890fb8de957b31acb12ca012875947312cd"
-    sha256 cellar: :any,                 arm64_monterey: "a650e624f353e9a555e373001422f9a412404db753a4d407a548f792c5b89ae1"
-    sha256 cellar: :any,                 sonoma:         "d62863728dacaa6f8ca039a70c4c65a318829170fb56f707cbf5ad6a0c722fad"
-    sha256 cellar: :any,                 ventura:        "452b6ee1631ca2555b39a4cfe66a674a9ae61058e03afe7df0de90ac5def7980"
-    sha256 cellar: :any,                 monterey:       "30ab935ed8e8bc4a4892b42a2465363d53014b63e495cfaeec7949746a54dfca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "285966a31c6a1a441bf1696b00a172ce64f87301d1708517f0afb16ad396a6f8"
+    sha256 cellar: :any,                 arm64_sonoma:   "d26fff7e646a5447d6ccdafcb6899e17c91f60fbb3ae27b36fd4c3c818b526e5"
+    sha256 cellar: :any,                 arm64_ventura:  "d61d285c78243004c2b66065b50096a43992c16af0214e8e49d15c9a9bff742b"
+    sha256 cellar: :any,                 arm64_monterey: "f24b87ab2bcd523df1023c42ba8e73d29f46b3e30392069ea50e6bbeb62ff7a2"
+    sha256 cellar: :any,                 sonoma:         "e7af5535059df65a1ae508341be4ff5bff40c33632c009fd9a4e54935d9ba569"
+    sha256 cellar: :any,                 ventura:        "b7a614c6faaf213d35134f997a6fe06ecc3bf5107778a8f714ba0a5e34e6fd36"
+    sha256 cellar: :any,                 monterey:       "7a4c1b7a7726c30981ca6dbf1c9869a725d746db37d935a066943fec73a98ea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eca6f9dbfb96bc0cdb8d408bb8bf0ce7f178d6e7f5671252d885cc86a326d9d4"
   end
 
   depends_on "rust" => :build

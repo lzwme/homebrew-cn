@@ -20,8 +20,10 @@ class GitExtras < Formula
     depends_on "util-linux" # for `column`
   end
 
-  conflicts_with "git-sync",
-    because: "both install a `git-sync` binary"
+  conflicts_with "git-delete-merged-branches", because: "both install `git-delete-merged-branches` binaries"
+  conflicts_with "git-standup", because: "both install `git-standup` binaries"
+  conflicts_with "git-sync", because: "both install a `git-sync` binary"
+  conflicts_with "ugit", because: "both install `git-undo` binaries"
 
   def install
     system "make", "PREFIX=#{prefix}", "INSTALL_VIA=brew", "install"

@@ -86,6 +86,8 @@ class Texlive < Formula
 
   conflicts_with "cweb", because: "both install `cweb` binaries"
   conflicts_with "lcdf-typetools", because: "both install a `cfftot1` executable"
+  conflicts_with "ht", because: "both install `ht` binaries"
+  conflicts_with "opendetex", because: "both install `detex` binaries"
 
   fails_with gcc: "5"
 

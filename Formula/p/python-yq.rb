@@ -22,6 +22,7 @@ class PythonYq < Formula
   depends_on "python@3.12"
 
   conflicts_with "yq", because: "both install `yq` executables"
+  conflicts_with "xq", because: "both install `xq` binaries"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/79/51/fd6e293a64ab6f8ce1243cf3273ded7c51cbc33ef552dce3582b6a15d587/argcomplete-3.3.0.tar.gz"

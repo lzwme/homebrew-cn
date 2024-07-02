@@ -26,6 +26,8 @@ class St < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bd7167b97a64e85a91f23a1b3597d7c65e4819d8c23993bd78a071c16376ca6"
   end
 
+  conflicts_with "schemathesis", because: "both install `st` binaries"
+
   def install
     ENV.prepend_create_path "PERL5LIB", lib"perl5"
 

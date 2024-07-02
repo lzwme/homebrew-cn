@@ -22,6 +22,7 @@ class Todoman < Formula
   depends_on "jq" # Needed for ZSH completions.
   depends_on "python@3.12"
 
+  conflicts_with "bash-snippets", because: "both install `todo` binaries"
   conflicts_with "devtodo", because: "both install a `todo` binary"
 
   resource "atomicwrites" do

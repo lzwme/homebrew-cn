@@ -22,6 +22,8 @@ class SigmaCli < Formula
   depends_on "libyaml"
   depends_on "python@3.12"
 
+  conflicts_with "open-simh", because: "both install `sigma` binaries"
+
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"

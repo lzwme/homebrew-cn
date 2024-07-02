@@ -28,6 +28,7 @@ class ElanInit < Formula
     depends_on "pkg-config" => :build
   end
 
+  conflicts_with "lean-cli", because: "both install `lean` binaries"
   conflicts_with "lean", because: "`lean` and `elan-init` install the same binaries"
 
   def install

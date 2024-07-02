@@ -18,6 +18,8 @@ class Valkey < Formula
 
   depends_on "openssl@3"
 
+  conflicts_with "redis", because: "both install `redis-*` binaries"
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 

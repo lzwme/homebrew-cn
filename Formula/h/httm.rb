@@ -22,6 +22,8 @@ class Httm < Formula
     depends_on "acl"
   end
 
+  conflicts_with "nicotine-plus", because: "both install `nicotine` binaries"
+
   def install
     system "cargo", "install", "--features", "xattrs,acls", *std_cargo_args
     man1.install "httm.1"

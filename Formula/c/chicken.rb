@@ -25,6 +25,8 @@ class Chicken < Formula
     sha256 x86_64_linux:   "e2b200753be38c69074918464c322b94d0468d234b332b69d77ed074a372cbd9"
   end
 
+  conflicts_with "mono", because: "both install `csc`, `csi` binaries"
+
   def install
     ENV.deparallelize
 

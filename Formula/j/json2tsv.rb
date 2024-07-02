@@ -22,6 +22,8 @@ class Json2tsv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f31d004ff27bc78bfbb8880ce832cbbe128eeb2400cdfa2105e69e00dfc26101"
   end
 
+  conflicts_with "jaq", because: "both install `jaq` binaries"
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "MANPREFIX=#{man}"
   end

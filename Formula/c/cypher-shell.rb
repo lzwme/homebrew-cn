@@ -23,6 +23,8 @@ class CypherShell < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "neo4j", because: "both install `cypher-shell` binaries"
+
   def install
     libexec.install Dir["*"]
     (bin/"cypher-shell").write_env_script libexec/"bin/cypher-shell", Language::Java.overridable_java_home_env

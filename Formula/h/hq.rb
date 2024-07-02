@@ -22,6 +22,8 @@ class Hq < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "proxygen", because: "both install `hq` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "html-query")
   end

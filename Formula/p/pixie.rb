@@ -26,6 +26,8 @@ class Pixie < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "px", because: "both install `px` binaries"
+
   def install
     semver = build.head? ? "0.0.0-dev" : version
     ldflags = %W[

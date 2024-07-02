@@ -25,6 +25,8 @@ class Luvit < Formula
   depends_on "openssl@3"
   depends_on "pcre"
 
+  conflicts_with "lit", because: "both install `lit` binaries"
+
   # To update this resource, check LIT_VERSION in the Makefile:
   # https:github.comluvitluvitblob#{version}Makefile
   resource "lit" do

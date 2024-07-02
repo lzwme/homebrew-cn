@@ -35,6 +35,8 @@ class Gwenhywfar < Formula
     depends_on "gettext"
   end
 
+  conflicts_with "go-size-analyzer", because: "both install `gsa` binaries"
+
   fails_with gcc: "5"
 
   # Fix -flat_namespace being used on Big Sur and later.

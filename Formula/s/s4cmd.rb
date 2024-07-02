@@ -6,30 +6,29 @@ class S4cmd < Formula
   url "https:files.pythonhosted.orgpackages42b40061f4930958cd790098738659c1c39f8feaf688e698142435eedaa4ae34s4cmd-2.1.0.tar.gz"
   sha256 "42566058a74d3e1e553351966efaaffa08e4b6ac28a19e72a51be21151ea9534"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https:github.combloomreachs4cmd.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "103c679241f0b70f2aa12599c10a46dcd7227ddbd9db66c8f108855a74d7c547"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22b4ce77eeb40eb4ecda2862cb2b75cee7e61dc17c74cdbb066ea6b350095f55"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "719c197edf8ade59f0eb9ff7afc3dfac57f39518d2ddece8e036390d2a379fb6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "81774bd95aad818da2ecbe786245df9948da449dd1b8db459b9699c1b486222c"
-    sha256 cellar: :any_skip_relocation, ventura:        "176842842c1cfa2ef5c103aa3f5e405d170aeb10c81286b3241f502d96be65d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "45fd295f1235ecab38e59f85d955cc85ee4579bf30edcc37ebc9f6332f177201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f19512e5dc935d54703e52701a066aa9bd9364ef5c3f5c41b12412d391aca84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb2e46cd954e06eabe0bb8264cff721271d51c1dcd2fee8bdd6be1ff915c9b8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "739d479e2f285c9a8c0f42d484423e53690b3319d47a6c9928483ac0dafef67f"
   end
 
   depends_on "python@3.12"
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages89518b7c07768bef5756cdc38b3168b228139d2ff1ddd782e515f1c0f2c35a2aboto3-1.34.47.tar.gz"
-    sha256 "7574afd70c767fdbb19726565a67b47291e1e35ec792c9fbb8ee63cb3f630d45"
+    url "https:files.pythonhosted.orgpackages9442f34ab93ea175b4e6c96e73a3b3f24d073f63418971925c8149d41f6a252aboto3-1.34.136.tar.gz"
+    sha256 "0314e6598f59ee0f34eb4e6d1a0f69fa65c146d2b88a6e837a527a9956ec2731"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages93cf8c9516f6b1fb859e7fcb7413942b51573b54113307a92db46a44497a3b96botocore-1.34.47.tar.gz"
-    sha256 "29f1d6659602c5d79749eca7430857f7a48dd02e597d0ea4a95a83c47847993e"
+    url "https:files.pythonhosted.orgpackages3cec09d963aa91a1d09a87c21c014da5092a1eccde8b44cd51bbe8a27e3576fdbotocore-1.34.136.tar.gz"
+    sha256 "7f7135178692b39143c8f152a618d2a3b71065a317569a7102d2306d4946f42f"
   end
 
   resource "jmespath" do
@@ -38,8 +37,8 @@ class S4cmd < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pytz" do
@@ -48,8 +47,8 @@ class S4cmd < Formula
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackagesa0b54c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40bas3transfer-0.10.0.tar.gz"
-    sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
+    url "https:files.pythonhosted.orgpackagescb6794c6730ee4c34505b14d94040e2f31edf144c230b6b49e971b4f25ff8fabs3transfer-0.10.2.tar.gz"
+    sha256 "0711534e9356d3cc692fdde846b4a1e4b0cb6519971860796e6bc4c7aea00ef6"
   end
 
   resource "six" do
@@ -58,8 +57,8 @@ class S4cmd < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
+    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
   def install

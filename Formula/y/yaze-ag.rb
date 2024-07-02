@@ -23,6 +23,8 @@ class YazeAg < Formula
     sha256 x86_64_linux:   "7a3cfeda8e67249ed33bdc5c6d37c037895967530f1f416cb8dbe908cfb922fe"
   end
 
+  conflicts_with "cpm", because: "both install `cpm` binaries"
+
   def install
     if OS.mac?
       inreplace "Makefile_solaris_gcc-x86_64", "md5sum -b", "md5"

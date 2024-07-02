@@ -18,6 +18,8 @@ class Hex < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "helix", because: "both install `hx` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

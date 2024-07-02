@@ -1,19 +1,19 @@
 class Pacparser < Formula
   desc "Library to parse proxy auto-config (PAC) files"
   homepage "https:github.commanugargpacparser"
-  url "https:github.commanugargpacparserarchiverefstagsv1.4.3.tar.gz"
-  sha256 "437adddb23fac102a4fb781f49ef4da41cf62d12a24920061b8eaccc98c528af"
+  url "https:github.commanugargpacparserarchiverefstagsv1.4.5.tar.gz"
+  sha256 "fac205f41d000e245519244dc3e730e649a0ac1c61b5f2d1d0660056e1680b2d"
   license "LGPL-3.0-or-later"
   head "https:github.commanugargpacparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "44fffec03bfd001b9350fdcf15960961b0c30b5d36c282b50503a466064d687b"
-    sha256 cellar: :any,                 arm64_ventura:  "78cf14483acf7c7e46e523364782bd00dfa8ca4abb14a2d65db9162a5c3ba48a"
-    sha256 cellar: :any,                 arm64_monterey: "66308f2c2adef547c1ab4ec8c97b0a550ab5721a3308b4d829b35fa998ed7b1b"
-    sha256 cellar: :any,                 sonoma:         "bcb38cce78607101dd674b59e515b3fb4fd2e09774cea9fb889ada0424b7aea3"
-    sha256 cellar: :any,                 ventura:        "337edff454a7841691fd49db5ca73d1d4e955ece6791544de6c8b9f6faace96c"
-    sha256 cellar: :any,                 monterey:       "9bb74f68cd177f97f9359bbf8a11fe7c6c9f1827b010da3cd9648fcb8cbe6ec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd68b68880db12acd79f3c6d212b63d3969ad0efc4d0a7e670e5c483ffca1539"
+    sha256 cellar: :any,                 arm64_sonoma:   "22d47d663a8dee08bffab1c78bb4ed863317da5c9fa5bd8a937fe87784d8996e"
+    sha256 cellar: :any,                 arm64_ventura:  "2eb88d3fbf6f69a38d7e9f95d8781d3471ad1b3cc89cfbfb7bbe4b08f9150a91"
+    sha256 cellar: :any,                 arm64_monterey: "10f108fb57f52d0774b9f02981e5bdb2c0c569c9bd1b5fa789a7f8d4383d1e26"
+    sha256 cellar: :any,                 sonoma:         "4d184243ed935d24e10744195addf345d21822ab299309636345ef1a8c5f14ae"
+    sha256 cellar: :any,                 ventura:        "67d627d395f5c153f5025fe552c70931e6ab55f0dd2e7171414de5d43497e20d"
+    sha256 cellar: :any,                 monterey:       "541bd6827519339d49f1521f5733fd9854961aec2fd48b157f70f99953e144a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea64d408d99ac2dfd8426d17e8afd6e39ed561ab0b17b62baf9fe6d871e87982"
   end
 
   def install

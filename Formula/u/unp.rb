@@ -17,6 +17,8 @@ class Unp < Formula
 
   depends_on "p7zip"
 
+  conflicts_with "uutils-coreutils", because: "both install `ucat` binaries"
+
   def install
     bin.install %w[unp ucat]
     man1.install "debian/unp.1"

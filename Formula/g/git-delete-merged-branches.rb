@@ -19,6 +19,8 @@ class GitDeleteMergedBranches < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "git-extras", because: "both install `git-delete-merged-branches` binaries"
+
   resource "colorama" do
     url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"

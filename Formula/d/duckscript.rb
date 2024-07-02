@@ -24,6 +24,8 @@ class Duckscript < Formula
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
+  conflicts_with "duck", because: "both install `duck` binaries"
+
   def install
     system "cargo", "install", "--features", "tls-native", *std_cargo_args(path: "duckscript_cli")
   end

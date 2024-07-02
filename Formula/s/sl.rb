@@ -25,6 +25,8 @@ class Sl < Formula
 
   uses_from_macos "ncurses"
 
+  conflicts_with "sapling", because: "both install `sl` binaries"
+
   def install
     system "make", "-e"
     bin.install "sl"

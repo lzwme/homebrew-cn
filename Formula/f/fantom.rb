@@ -11,6 +11,8 @@ class Fantom < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "flux", because: "both install `flux` binaries"
+
   def install
     rm_f Dir["bin*.exe", "bin*.dll", "libdotnet*"]
 

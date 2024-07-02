@@ -32,6 +32,8 @@ class Clip < Formula
   depends_on "fribidi"
   depends_on "harfbuzz"
 
+  conflicts_with "geomview", because: "both install `clip` binaries"
+
   fails_with gcc: "5" # for C++17
 
   def install
