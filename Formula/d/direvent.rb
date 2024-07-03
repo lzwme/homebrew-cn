@@ -1,21 +1,19 @@
 class Direvent < Formula
   desc "Monitors events in the file system directories"
   homepage "https://www.gnu.org.ua/software/direvent/direvent.html"
-  url "https://ftp.gnu.org/gnu/direvent/direvent-5.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/direvent/direvent-5.3.tar.gz"
-  sha256 "9405a8a77da49fe92bbe4af18bf925ff91f6d3374c10b7d700a031bacb94c497"
+  url "https://ftp.gnu.org/gnu/direvent/direvent-5.4.tar.gz"
+  mirror "https://ftpmirror.gnu.org/direvent/direvent-5.4.tar.gz"
+  sha256 "1dbbc6192aab67e345725148603d570c6a2828380c964215762af91524d795ba"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "230e53f04ffbe106aefee421274782defccc68f3ff1201b803321e5625047e24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56eac8f60269a262b743e7fae5950ab1e4b96adea5337ec46c3c1c2f32f6d6b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1ca94c6ba49376399a6b42ae091c5f8b3f5816dc9ffb6a37354203153f54035"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b70c636ba8ad224c9a5f818e6026a58cc8a5cace37b500dbf4c3e3699f12c78"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6d0f14d3c13716e9467dd83edfa70d4139ac14a70f1ab21d9f10882c380e77bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "851d631665b043d01df2a154c2a7d1d6bdf8a85fe515f633e25584888f89a3dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c308ddb297a72378fbbe30a108d101912557b6f5d34216f835823e8a5c6cc05"
-    sha256 cellar: :any_skip_relocation, big_sur:        "db43a79498ed9ba81ad83e53242d88e6e1e82fb617888d78b6917f760e37a99e"
-    sha256                               x86_64_linux:   "70fc7158afeb6b3e77f13d2d49d299fc6487c600a2695ad0bbd7f1cec69f44da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afb68e0c1394f2dc09e35f47cae0d7c57b337b4d92766fe3edb018b956628bef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ed0f6f45d7c79bab9b43a70c66a9f42c50c98914d387c7ab88bfb52e043af20"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9044f997c251b9d8d188f576b5fc71e8f3e1306f4b2bb86e131eec6d106877ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93e741a317f67a70c7ec7a51ee68b16b9af06e0038eea6477332543c657246cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "55d5411f9552456a39cb6bee0fd86cc40f88a19f6e3deb1fbc52dbe0a63fac5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa9149e69d6ed55b6a4de7cb345c9202dfb8136197ec40d99d3d9f4d805b3678"
+    sha256                               x86_64_linux:   "c8fb131f7845cd016244b0f5285c3e2ca52efcb52b5c1d2c9a7ac301f5b7152e"
   end
 
   def install

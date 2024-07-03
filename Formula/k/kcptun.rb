@@ -1,8 +1,8 @@
 class Kcptun < Formula
   desc "Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC"
   homepage "https:github.comxtacikcptun"
-  url "https:github.comxtacikcptunarchiverefstagsv20240701.tar.gz"
-  sha256 "8282d29c1b2d2a1c69bfed3405a623d4ed5b44ab05acbfa972d07622518c1c0a"
+  url "https:github.comxtacikcptunarchiverefstagsv20240702.tar.gz"
+  sha256 "e404aaa5b2cbe3cfa654d7d00403af298a1649c1003595f03e637ef12e336a47"
   license "MIT"
   head "https:github.comxtacikcptun.git", branch: "master"
 
@@ -16,13 +16,13 @@ class Kcptun < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e32796258db100c4cf70f3b9dd5ae5c00db1dbe4a2a4145378774cbc8e88729e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a675a33c826a012b7f166a2c9dff8e7e894ed2dff6fa30a6e9cc82b322ca834"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "754e237d2264d35c2355cf90b387a5f66296cc54fbb8b04cb8ccfd69a339cc7a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c42a3b6bd9b14088783d45463d54ffd0d58912bf1357a2b496800fb9639ea610"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c78b10b19127160df1b338a9c4eb127bb7a6fa2938ca09618203dc1d944ecdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "db6476c411aaa819b4d7be078bf4e37542a72968be8e632aa496ca7e6d64fcbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "705a1cebb8c5ee856f2a51956c40cabdadc4221dfa9247b1d609a6575f744468"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2da7a369f03a00abc9ef73249e314a5fb01034055570d40d0506ca106e2e5a44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d90face0aec81a93451be0baba236fb327c2ee4f5502874e760a79e2dec441b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f27277ec9a8a23b9309ad14ad99f4098c3bd14db9569c68592e26666188809f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c0f68b4ae7e7860d3464de9dc37325a72d7153040199813ef910c3cee24d6fe"
+    sha256 cellar: :any_skip_relocation, ventura:        "622051486536f0dcca4cdaf1114d6c49b6427b65ac6c051024a6e9b6ee49940b"
+    sha256 cellar: :any_skip_relocation, monterey:       "42ada2858f38a5afab813bd533d54f4bb6f726d987638ba31c1e5238fca41a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a23f77888a144957c22961971b287612edf1c41fbdc39c2d33be6ae7e056964"
   end
 
   depends_on "go" => :build

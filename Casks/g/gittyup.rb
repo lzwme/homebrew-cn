@@ -31,4 +31,8 @@ cask "gittyup" do
     "~LibraryPreferencescom.Murmele.Gittyup.plist",
     "~LibrarySaved Application Statecom.Murmele.Gittyup.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

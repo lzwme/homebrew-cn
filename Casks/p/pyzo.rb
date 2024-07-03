@@ -11,4 +11,8 @@ cask "pyzo" do
   app "pyzo.app"
 
   zap trash: "~LibraryApplication Supportpyzo"
+
+  caveats do
+    requires_rosetta
+  end
 end

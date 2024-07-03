@@ -3,19 +3,18 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https:github.comwimglennjohnnydep"
-  url "https:files.pythonhosted.orgpackages16bf158fac439f5465bf7a84d59c45677154e36f0d37e7eb1b0551a75f9dd779johnnydep-1.20.4.tar.gz"
-  sha256 "34b5f44839fd6b42a0377e338ca7e6f1cadd8262936963c2d4799c4548876659"
+  url "https:files.pythonhosted.orgpackagese557ccdd7ab46a4a06fae442555fe90a02d551009d765b79b99a942b2df330c5johnnydep-1.20.5.tar.gz"
+  sha256 "eacee79094c7820b089619a6b8ac2a1b62692db2e518eaeb03f8efa549bfaf04"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "53da895d43fcb931bf00b911a29e898015a6d9e10f0da908bd45b03d10cb09ab"
-    sha256 cellar: :any,                 arm64_ventura:  "e8d3c1b464d4a779d42dd6bb1e9ba8b1ae19da7f5a6e0d5bdc3dc39d584d1abe"
-    sha256 cellar: :any,                 arm64_monterey: "87ef00b3e30b84cb524e2ecf668330f8853e1f8a9d260c5e8f6f762a70728f18"
-    sha256 cellar: :any,                 sonoma:         "e9a40c1d41b745fb39b3dcf32defcda15ec3013a670214443a10952ff6043ceb"
-    sha256 cellar: :any,                 ventura:        "ae9f45506e21c6017d15a3ddccc147ab17cc9add53b1678593151169d73e39ac"
-    sha256 cellar: :any,                 monterey:       "b9733d35404f1018efd38d0eb8ec3cff3a802dbffd7b560aa5361aac64d09d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb1e3eb0ea044531c0082b59dd6f7fe7727e088b1901d2ec3d6154e0a867f680"
+    sha256 cellar: :any,                 arm64_sonoma:   "7dfd3070817e5f2fe961f4c9f4e6bc46cadd3ee48c3f4f6c85088cf17f8baae8"
+    sha256 cellar: :any,                 arm64_ventura:  "8752b1b49070c4e0c428ec00a46e73b8117f77e935f6e3f09557e548b15385b1"
+    sha256 cellar: :any,                 arm64_monterey: "47dbe1dc37f573e40de8e2b9cf37cffd9999b1a18535db823ca6389e5ccec86e"
+    sha256 cellar: :any,                 sonoma:         "fd26929e3a59376d69f394ab56c45ad12b9e9b372bf9cd95c33459692f1f83b6"
+    sha256 cellar: :any,                 ventura:        "800134bd8f2321511ca4cc1d1a281a3b255ffd1023d29876fad021f83911ec0c"
+    sha256 cellar: :any,                 monterey:       "af52e110d46f9f8905201a906066434cc9ca6c48a1c46a8eef6eb8557310868b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b94a704ec37a1568d734e96ecbcbb8d8ddf75b0b28e160e6c41a9b9fbd3d81"
   end
 
   depends_on "libyaml"
@@ -27,8 +26,8 @@ class Johnnydep < Formula
   end
 
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackages10211b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5cachetools-5.3.2.tar.gz"
-    sha256 "086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2"
+    url "https:files.pythonhosted.orgpackagesb34d27a3e6dd09011649ad5210bdf963765bc8fa81a0827a4fc01bafd2705c5bcachetools-5.3.3.tar.gz"
+    sha256 "ba29e2dfa0b8b556606f097407ed1aa62080ee108ab0dc5ec9d6a723a007d105"
   end
 
   resource "oyaml" do
@@ -37,8 +36,8 @@ class Johnnydep < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pyyaml" do
@@ -52,8 +51,8 @@ class Johnnydep < Formula
   end
 
   resource "structlog" do
-    url "https:files.pythonhosted.orgpackagesd1ac87aedb7a9ba52f645b9d29a7f48bb12a5c6b7e204b8137549fbe4754b563structlog-24.1.0.tar.gz"
-    sha256 "41a09886e4d55df25bdcb9b5c9674bccfab723ff43e0a86a1b7b236be8e57b16"
+    url "https:files.pythonhosted.orgpackages87879b237eda856dc3e72f2485e884f59fe0ee8be49aa2ce8eff3a425c388766structlog-24.2.0.tar.gz"
+    sha256 "0e3fe74924a6d8857d3f612739efb94c72a7417d7c7c008d12276bca3b5bf13b"
   end
 
   resource "tabulate" do
@@ -67,8 +66,8 @@ class Johnnydep < Formula
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb0b4bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97bwheel-0.42.0.tar.gz"
-    sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
+    url "https:files.pythonhosted.orgpackagesb8d6ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69wheel-0.43.0.tar.gz"
+    sha256 "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"
   end
 
   resource "wimpy" do

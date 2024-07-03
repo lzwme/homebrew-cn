@@ -17,4 +17,8 @@ cask "nfov" do
     "~LibraryPreferencescom.electron.nfov.plist",
     "~LibrarySaved Application Statecom.electron.nfov.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

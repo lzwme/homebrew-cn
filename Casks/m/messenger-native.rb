@@ -8,4 +8,8 @@ cask "messenger-native" do
   homepage "https:github.comgastonmorixeMessengerNative"
 
   app "osx64Messenger Native.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

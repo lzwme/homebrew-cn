@@ -14,4 +14,8 @@ cask "mater" do
     "~LibraryPreferencescom.electron.mater.plist",
     "~LibrarySaved Application Statecom.electron.mater.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

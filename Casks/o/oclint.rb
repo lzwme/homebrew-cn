@@ -14,4 +14,8 @@ cask "oclint" do
   binary "oclint-#{version}includec++v1", target: "#{HOMEBREW_PREFIX}includec++v1"
   binary "oclint-#{version}libclang", target: "#{HOMEBREW_PREFIX}libclang"
   binary "oclint-#{version}liboclint", target: "#{HOMEBREW_PREFIX}liboclint"
+
+  caveats do
+    requires_rosetta
+  end
 end

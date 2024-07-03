@@ -18,4 +18,8 @@ cask "lidarr" do
   app "Lidarr.app"
 
   zap trash: "~.configLidarr"
+
+  caveats do
+    requires_rosetta
+  end
 end

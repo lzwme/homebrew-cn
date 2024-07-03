@@ -1,18 +1,18 @@
 class ManifestTool < Formula
   desc "Command-line tool to create and query container image manifest listindexes"
   homepage "https:github.comestespmanifest-tool"
-  url "https:github.comestespmanifest-toolarchiverefstagsv2.1.6.tar.gz"
-  sha256 "b92801e032d0c0ce5714dfd120551939a4e0db16be3d3315d3e1d6dd03bb9be6"
+  url "https:github.comestespmanifest-toolarchiverefstagsv2.1.7.tar.gz"
+  sha256 "fcf163faad3aff112593f1e648a750e08014ba83d43739e9a5bb0f0e9f0927ca"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "972c6533ac4e024b66809212bcb7744d4aa16de7fbc45f0787eeb926b118dd89"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96ed3800f775332ea1c655d832de37d88eb715b2d5c10cce0c9e6fc6758a5555"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e46c37a2e774c5fd61c37525ec2462871a94a2a87f59921d18938278a4122c4d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bf46e7aeeda1e772dd3d8229c78ed8c0fc28a99c070799a8c0b39c022ce423b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "b902934a3dce529d0a91927e9d55a92ce16717b68b1b7bb32236d818d3003f99"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a66126c030352fdc96c5fdf1d6882386271b74b908b9dc0139671d97821614d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30afd13173de3932bfede02d0166fa0d1345cb506eef16eb2c1d4c0df8a98900"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00c822837fcebc8ba92cb2440c5339b1875f267586a612d1407ec666d81494c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "472cb9d36b0f005282b790b4f134fe3e436d9b578a74d7b693285fa16c0e984f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5ac24ba9596cac9e41a715f4de5ef50dc8abd3dc4da6209375fed924105b791"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1709b2ce3705956f3c0889e915c9fc51f5668d6ab78ecba89a10e5053807efb8"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef30dbeace12c20e3aa7324c1384280dcc147679ed564ba50f1c79a0618661f4"
+    sha256 cellar: :any_skip_relocation, monterey:       "399bfcb8761a795af3afdefdd093d2bc71723ebd1be93b709f4da4fa4b1592fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "523d53eb4737435418928e59af054f978d9f382fdd203c32ea125c0e106d7462"
   end
 
   depends_on "go" => :build

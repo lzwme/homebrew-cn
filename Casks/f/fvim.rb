@@ -20,4 +20,8 @@ cask "fvim" do
   app "FVim.app"
 
   zap trash: "~LibrarySaved Application Statecom.fvim.www.savedState"
+
+  caveats do
+    requires_rosetta
+  end
 end

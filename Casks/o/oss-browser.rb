@@ -22,4 +22,8 @@ cask "oss-browser" do
     "~LibraryPreferencescom.electron.oss-browser.plist",
     "~LibrarySaved Application Statecom.electron.oss-browser.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

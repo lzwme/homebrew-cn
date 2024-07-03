@@ -23,4 +23,8 @@ cask "jitsi" do
     "~LibraryLogsJitsi",
     "~LibraryPreferencesorg.jitsi.jitsi.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

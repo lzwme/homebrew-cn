@@ -1,8 +1,8 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https:github.comzlib-ngzlib-ng"
-  url "https:github.comzlib-ngzlib-ngarchiverefstags2.1.7.tar.gz"
-  sha256 "59e68f67cbb16999842daeb517cdd86fc25b177b4affd335cd72b76ddc2a46d8"
+  url "https:github.comzlib-ngzlib-ngarchiverefstags2.2.1.tar.gz"
+  sha256 "ec6a76169d4214e2e8b737e0850ba4acb806c69eeace6240ed4481b9f5c57cdf"
   license "Zlib"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,13 @@ class ZlibNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "68a0d88da9e3299b877d436dd4cf7aab9d2d5548adae8640d8b338f907b16355"
-    sha256 cellar: :any,                 arm64_ventura:  "f5a61f55027c18a3f7b81b473b4e97aa36bdb7b7993a75120ce4eaa0c8269dd4"
-    sha256 cellar: :any,                 arm64_monterey: "6b014d9746b5605c6407cd7e5f19c6a8740c8ac73ccf57eb913dcbfc31b2deec"
-    sha256 cellar: :any,                 sonoma:         "6ed50a121de70d0c2a1d106c031fa75855df810cfaa356f1060c48c7db843998"
-    sha256 cellar: :any,                 ventura:        "d5b2d8ed297a4bd134ff17b295e9861497865a9cee1d756400eb3ba57ad7eccb"
-    sha256 cellar: :any,                 monterey:       "52ff5e709148ead370199df579de3b9e14b5c80f4c3fe71a1d57517f4679c9a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c5979dc197360dda1e6f3695aa7b5a773379b7d0bba2431151fe746f4977ab8"
+    sha256 cellar: :any,                 arm64_sonoma:   "aac6f687053010769a39a7491a8287952e929fcbbd60055965eb46267e97a763"
+    sha256 cellar: :any,                 arm64_ventura:  "aab4b10b3025404add211b6ac62ae8e95cc012990fb5fb55657f1d3f6c96e94a"
+    sha256 cellar: :any,                 arm64_monterey: "b6bef36dbacd12ce1cff6f90b73c840a611a1e2775d63bedf2cc868150fa83c8"
+    sha256 cellar: :any,                 sonoma:         "74d2c4916bec00e12b191f1de40374f7cf210f7a361262ccdf6bf9686f9711e6"
+    sha256 cellar: :any,                 ventura:        "7482bc8b9d332b87ac9e650a3aa3e808bc94d11950889feda4ceadfbff599e90"
+    sha256 cellar: :any,                 monterey:       "0f9fe4f274ebf4b5497fc1d087f36ac95a5dd20c34c88c962e35da0de9815a21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68bc93a042b9803ada6217132bb7e802cffbb82f0a68c531b6ab2f974118584e"
   end
 
   # https:zlib.netzlib_how.html

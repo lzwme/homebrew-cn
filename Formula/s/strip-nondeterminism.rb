@@ -1,21 +1,19 @@
 class StripNondeterminism < Formula
   desc "Tool for stripping bits of non-deterministic information from files"
   homepage "https://salsa.debian.org/reproducible-builds/strip-nondeterminism"
-  url "https://salsa.debian.org/reproducible-builds/strip-nondeterminism/-/archive/1.13.1/strip-nondeterminism-1.13.1.tar.bz2"
-  sha256 "0bde4b23edd6cdb82fcdc4745ef9dc8ca0743e7c7e4fb2ea0bf78c76511f49f3"
+  url "https://salsa.debian.org/reproducible-builds/strip-nondeterminism/-/archive/1.14.0/strip-nondeterminism-1.14.0.tar.bz2"
+  sha256 "a401c4a3bec46ae01da84c4de1c41b81402bbd2355c7978ba700cbad9873950f"
   license "GPL-3.0-or-later"
   head "https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aae7c8eee08d5348a2897848b4fc2ace653fd851103970bca9633ca18bc114ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba3ad2c20a564c08f0e2baa695747714899aa45ea7aee3e756c6de29342f6823"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba3ad2c20a564c08f0e2baa695747714899aa45ea7aee3e756c6de29342f6823"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "263c7feef3a16a8a8fd3acdb6040c471691781cca9a86d93d8d3171e15f970f8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5f6606234e2bceab2887132e6a888854c1d4af84f92ec9ee1c925f4e116ffc73"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbd497072b9febd8b80a6c891f3f3b50127ab8f768acd30f87b96dd293a19a91"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbd497072b9febd8b80a6c891f3f3b50127ab8f768acd30f87b96dd293a19a91"
-    sha256 cellar: :any_skip_relocation, big_sur:        "00d0414ef922ed84f8a40a4441d3b4144de61fcb98d4472a6ee1990464a135d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c947310bc8a8cbef77f88c6b73ce650fbadf05f27950ccd170436e034edfac8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4889a8a780e94f221537499a77fdf5dc61bea3bae90d1a6b2bccad1ecabe93d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "477182536288c65e8300da8531287d1a85462012ed5040881c73a8f414737867"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "477182536288c65e8300da8531287d1a85462012ed5040881c73a8f414737867"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2561ffce2fa33e15ff6f8fb8753b3bf0c1df2637e02c0b9e4c0d47fcd9fd766b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ba3fa4e68304b091a5fb0a06be792298d19bbca7c637546933ce4cee8f796607"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba3fa4e68304b091a5fb0a06be792298d19bbca7c637546933ce4cee8f796607"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb1a8045434705a32ff62b8f7cb5dc73d25d42e30aa54efec091e79a371c1e3f"
   end
 
   uses_from_macos "file-formula" => :test
@@ -32,13 +30,8 @@ class StripNondeterminism < Formula
   end
 
   resource "Getopt::Long" do
-    url "https://cpan.metacpan.org/authors/id/J/JV/JV/Getopt-Long-2.54.tar.gz"
-    sha256 "584ba3c99bb2d6b341375212f9b874613f706cfb01cee21b8a2676a98ab985fe"
-  end
-
-  resource "Sub::Override" do
-    url "https://cpan.metacpan.org/authors/id/O/OV/OVID/Sub-Override-0.09.tar.gz"
-    sha256 "939a67c1f729968e0cc81b74958db750e1bdb7c020bee1a263332f422c2e25b5"
+    url "https://cpan.metacpan.org/authors/id/J/JV/JV/Getopt-Long-2.58.tar.gz"
+    sha256 "1305ed46ea21f794304e97aa3dcd3a38519059785e9db7415daf2c218506c569"
   end
 
   def install

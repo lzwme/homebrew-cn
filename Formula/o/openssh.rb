@@ -1,10 +1,10 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https:www.openssh.com"
-  url "https:cdn.openbsd.orgpubOpenBSDOpenSSHportableopenssh-9.7p1.tar.gz"
-  mirror "https:cloudflare.cdn.openbsd.orgpubOpenBSDOpenSSHportableopenssh-9.7p1.tar.gz"
-  version "9.7p1"
-  sha256 "490426f766d82a2763fcacd8d83ea3d70798750c7bd2aff2e57dc5660f773ffd"
+  url "https:cdn.openbsd.orgpubOpenBSDOpenSSHportableopenssh-9.8p1.tar.gz"
+  mirror "https:cloudflare.cdn.openbsd.orgpubOpenBSDOpenSSHportableopenssh-9.8p1.tar.gz"
+  version "9.8p1"
+  sha256 "dd8bd002a379b5d499dfb050dd1fa9af8029e80461f4bb6c523c49973f5a39f3"
   license "SSH-OpenSSH"
 
   livecheck do
@@ -13,13 +13,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "447bfbf4b1c31720c1bad753cf207f234b52cb1fea5b0a474708a6251e82dff2"
-    sha256 arm64_ventura:  "74ad631d8504351d31259ac7aae694a81097b04739f9a2f1e6a28e42ca60834b"
-    sha256 arm64_monterey: "ba7b58021803bdecef4c8ac9ed33e6f8c3788c47ee00548bbab4bb0a937c8ef9"
-    sha256 sonoma:         "87eedfb466961ad64757901871958b25eb15090aa3b261142bdf21250c6905d8"
-    sha256 ventura:        "379cdb985a280265a8451180838044c8fca07e02c2972ab9da846a602288082c"
-    sha256 monterey:       "119e9396d914c59f94eabab53fb66bdc5f0d180da000c77ee3deddb269fae94c"
-    sha256 x86_64_linux:   "df5724bab105958f71a2ff1d880785d14940bceb7e8da6a6655b55bc64c05ebb"
+    sha256 arm64_sonoma:   "f484ac194ed2ff05cdaf496ee0367e937c4ddabc0361fb8320554517b64ac357"
+    sha256 arm64_ventura:  "324d887462c376b8f0dc5846551ba7f2db8cb774b2bbb5ec47bff5ce3a02db43"
+    sha256 arm64_monterey: "e39cea5297b10f417e37cfc9be250ba78cc9d5e16c3fb4eb8d8c399510bbef70"
+    sha256 sonoma:         "e2460518b0d5cae58bfbed8d6d1b697e062304e36e367ffc9747d1418e303eed"
+    sha256 ventura:        "9a13519bcfb152dfe990ef60cc6156bacc5093e8dcd8938d3de469c189d1d35b"
+    sha256 monterey:       "58e3046677e55eac1aa5c4a36b0fb9d08e3e51852033414705896e6cce6d774a"
+    sha256 x86_64_linux:   "f954c44e3a99c6811cfcd0325162bd727c6e5d675499cc5ea613df2878d2bc97"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -47,8 +47,8 @@ class Openssh < Formula
 
     # https:github.comapple-oss-distributionsOpenSSHblobmainopensshsshd.c#L532
     patch do
-      url "https:raw.githubusercontent.comHomebrewpatchesd8b2d8c2612fd251ac6de17bf0cc5174c3aab94copensshpatch-sshd.c-apple-sandbox-named-external.diff"
-      sha256 "3505c58bf1e584c8af92d916fe5f3f1899a6b15cc64a00ddece1dc0874b2f78f"
+      url "https:raw.githubusercontent.comHomebrewformula-patchesaa6c71920318f97370d74f2303d6aea387fb68e4opensshpatch-sshd.c-apple-sandbox-named-external.diff"
+      sha256 "3f06fc03bcbbf3e6ba6360ef93edd2301f73efcd8069e516245aea7c4fb21279"
     end
   end
 

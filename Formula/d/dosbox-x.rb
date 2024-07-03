@@ -1,10 +1,9 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https:dosbox-x.com"
-  url "https:github.comjoncampbell123dosbox-xarchiverefstagsdosbox-x-v2024.03.01.tar.gz"
-  sha256 "2a89d3196ddc15361f6dc7e6ab142bfe95945d93d527cfd6bacca1f7a401a513"
+  url "https:github.comjoncampbell123dosbox-xarchiverefstagsdosbox-x-v2024.07.01.tar.gz"
+  sha256 "23462a3398303f8558e86973af9ba5d3d6d53bdaf324ec749610f2baf1dd449b"
   license "GPL-2.0-or-later"
-  revision 1
   version_scheme 1
   head "https:github.comjoncampbell123dosbox-x.git", branch: "master"
 
@@ -20,13 +19,13 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "831bb184856ac27d26858adbe9ccea37f5ee56e43fcab7b8231a0e8e83f9acef"
-    sha256 arm64_ventura:  "b24ce13996abe1b79ae0ce7d598287627b7b64877f12e5ed9f3de88e8bd46dd4"
-    sha256 arm64_monterey: "37e29dbda2a1756471050cf0f37fef0667444f96aec8b3beb256845bd550c030"
-    sha256 sonoma:         "1a3e023ed387c4a98d1a89b4ba0b2d372ee5fb1847f3d89eeb923dec4dcbadde"
-    sha256 ventura:        "2b70b9b6a2a96f7e401639d019c7290a5af72c3d88c6a8a3002801984f693302"
-    sha256 monterey:       "294c93bd3d3bf73eae34227090a61aa0754a5478236af06fd084d357599ce47f"
-    sha256 x86_64_linux:   "fdc386db0517932d64d9071c10268ce671aad990e1351fe37732cc200edf7d1a"
+    sha256 arm64_sonoma:   "7a1799bfeb379368eada7999470ec97561992190d0efdafc9bec2ebdeddc1169"
+    sha256 arm64_ventura:  "d06034ea8c332aff03917656d4dc9eae12332f187466bc399be6d0357cb1ec05"
+    sha256 arm64_monterey: "0ddb17ee7afe510d74420bb6c689b6da2a1f7897ad44248b4c72d1068f34c28c"
+    sha256 sonoma:         "db5e1a4c59b8c8a9d4be01112bfaade0b90391fef49d7aafec424dd3d8068b09"
+    sha256 ventura:        "143e759651f1d7f8f8f905a1faefe14b22d66f87f57f35ee6ecf4fa1f846efbc"
+    sha256 monterey:       "c8e06ad5769214ee34bc7c09f424415e5a134da58469fbfbbbdb60f072ffd313"
+    sha256 x86_64_linux:   "0ec1091bad54cf93e3658cc989b46280e1b9a21ca338c7119dc3874bf68cae65"
   end
 
   depends_on "autoconf" => :build

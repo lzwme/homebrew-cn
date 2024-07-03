@@ -25,4 +25,8 @@ cask "mumble" do
     "~LibraryPreferencesnet.sourceforge.mumble.Mumble.plist",
     "~LibrarySaved Application Statenet.sourceforge.mumble.Mumble.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

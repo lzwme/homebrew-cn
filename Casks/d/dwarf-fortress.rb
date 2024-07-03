@@ -27,6 +27,7 @@ cask "dwarf-fortress" do
   end
 
   caveats do
+    requires_rosetta
     <<~EOS
       During uninstall, your save data will be copied to tmpdwarf-fortress-save
     EOS

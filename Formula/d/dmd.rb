@@ -4,21 +4,20 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    # make sure resources also use the same version
-    url "https:github.comdlangdmdarchiverefstagsv2.109.0.tar.gz"
-    sha256 "e6df7517fbdce8406e234119c5a30ebf924efa590831fea689eccef8c73cbda4"
+    url "https:github.comdlangdmdarchiverefstagsv2.109.1.tar.gz"
+    sha256 "8c2ce18945e3807a1568f6ec6ce0a8f2b88efa472ce0397ea1305fc2a1b8a587"
 
     resource "phobos" do
-      url "https:github.comdlangphobosarchiverefstagsv2.109.0.tar.gz"
-      sha256 "22b1dbd4326d7c2ee2fc9bc56c681db921c604280046296fcc21d706d328b632"
+      url "https:github.comdlangphobosarchiverefstagsv2.109.1.tar.gz"
+      sha256 "28974debe14d18eb58591db0dad3ddd4139e8f34783c3648c86619b67d7ba6f2"
     end
   end
 
   bottle do
-    sha256 sonoma:       "7b6a3ef7b95f05b01895b0b91ffb83f060cd6b3b0bae54c5af5ac5dcd5f14343"
-    sha256 ventura:      "e38c670b90fa9f9451f927e7f9d68e3de3d5010d289285d3a4d3543efb7b3c2a"
-    sha256 monterey:     "66e21ab51c403e653f17d223ee47f8cff997081617a5671d330288470339aa76"
-    sha256 x86_64_linux: "d889b6a761567d826eb5a898fc1cd9437e270b58afbeadf83a534ea52f5f7285"
+    sha256 sonoma:       "888f4825c9f75197c67767be536fcd13c45c6d62758f3d0b6a5d05dd331f4d7e"
+    sha256 ventura:      "dfdf2fc9e10f21f0dc248fbc22e66013e858738dfba0dc49f58b542b2dcba223"
+    sha256 monterey:     "45b25904b2bb4003cb3f52ff6e375852f2eb753ed20d1061c3650fa825a9f74d"
+    sha256 x86_64_linux: "cfb158ce63420e195494d3e2b211ca1d3c8c918850ea82cc7a3f8996c8b29dfb"
   end
 
   head do

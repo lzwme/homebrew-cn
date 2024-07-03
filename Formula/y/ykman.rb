@@ -3,19 +3,19 @@ class Ykman < Formula
 
   desc "Tool for managing your YubiKey configuration"
   homepage "https:developers.yubico.comyubikey-manager"
-  url "https:files.pythonhosted.orgpackages941a93777ec4776013f0c51b2d5f0c61fec8b7b54d6150a4c22bd6e2b4463d71yubikey_manager-5.5.0.tar.gz"
-  sha256 "27a616443f79690a5a74d694c642f15b6c887160a7bd81ae43b624bb325e7662"
+  url "https:files.pythonhosted.orgpackagesb5509b446ca65124bbd7bc0e74304cda737248a6bceb602e5dba957114ab64dfyubikey_manager-5.5.1.tar.gz"
+  sha256 "2b1f4e70813973c646eb301c8f2513faf5e4736dd3c564422efdce0349c02afd"
   license "BSD-2-Clause"
   head "https:github.comYubicoyubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a385fcf070a568715763ac40916244544f5dab6ef3fc0e0719c4606b553583c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43f6e69151f9a696655e65ae5c6fcbbfe5416cf420c6374b04775fb85148d519"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a96b77633df74b56da0563a15306e5751c2b1717cce85c15b8f3c604193fc23"
-    sha256 cellar: :any_skip_relocation, sonoma:         "42dafea3cdac01c3219ec828c8f00b093066cbef03f14479e753c52d9cf8c6c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a8fb4ea3ae79eda606af0a4336a15cc9f7ec557dc4c437c1dc7e3ef7c44177c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ffb2a20375d200f5bfead24e76a5090bcb7d5a462a4e8eb54cb43a0a82a19d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf2d316c5d4df5af8be07c921187d80c749b80bf8e6f97a916489dc418762272"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7f71ac03cf2cb2e53c1c48967c38244aba52befc2e75262f71bc1add185dbbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a35bbe61c22da4a4545adf3e445f468a10ea1ef55c6a85c97ae3064263ccec5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d17cd4d338b4f80a8490db0ebfdfa292a5898589d8656623cd0dc1ea5843ab6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "86a6a1b096a1be71a7037f6c42fcca01fbe07eb425c1bb6072a500694e10b97c"
+    sha256 cellar: :any_skip_relocation, ventura:        "986a89a2334ead262a93f1b9285f6f6bf80b5feb6cde95c4e1c872bd3941db20"
+    sha256 cellar: :any_skip_relocation, monterey:       "94ec3c347b79d51c35ae468b6d8a118e8e7e7ca8a3a0515e99d65e2566646093"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b38a5fee79842afe1c916911d2e591aad110be075f62b61ef5b7fdf5465f193d"
   end
 
   depends_on "swig" => :build
@@ -67,8 +67,8 @@ class Ykman < Formula
   end
 
   resource "pyscard" do
-    url "https:files.pythonhosted.orgpackages27f9290e3af3b9cf367d8bc9ffe13f537d26ba37ba93b1eae90777125d22d822pyscard-2.0.8.tar.gz"
-    sha256 "2eb16ee0e89ab27759fcb36f032c40a5774ed5926c0e03309837bdeb563a6032"
+    url "https:files.pythonhosted.orgpackages7ad98dd344c82d19c240349695a8de71e9d9cd9c55d62ae3952a103147e4687cpyscard-2.0.10.tar.gz"
+    sha256 "4b9b865df03b29522e80ebae17790a8b3a096a9d885cda19363b44b1a6bf5c1c"
   end
 
   resource "secretstorage" do
@@ -80,7 +80,15 @@ class Ykman < Formula
     # Fixes: smartcardscardhelpers.c:28:22: fatal error: winscard.h: No such file or directory
     ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}PCSC" if OS.linux?
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "pyscard"
+    # Use brewed swig
+    # https:github.comHomebrewhomebrew-corepull176069#issuecomment-2200583084
+    # https:github.comLudovicRousseaupyscardissues169#issuecomment-2200632337
+    resource("pyscard").stage do
+      inreplace "pyproject.toml", 'requires = ["setuptools","swig"]', 'requires = ["setuptools"]'
+      venv.pip_install Pathname.pwd
+    end
+
     man1.install "manykman.1"
 
     # Click doesn't support generating completions for Bash versions older than 4.4

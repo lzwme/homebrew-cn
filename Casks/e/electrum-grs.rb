@@ -18,4 +18,8 @@ cask "electrum-grs" do
     "~LibraryPreferencesorg.org.pythonmac.unspecified.Electrum-GRS.plist",
     "~LibrarySaved Application StateElectrum-GRS.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

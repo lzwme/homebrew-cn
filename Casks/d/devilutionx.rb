@@ -21,4 +21,8 @@ cask "devilutionx" do
         "~LibraryApplication Supportdiasurgicaldevilution",
       ],
       rmdir: "~LibraryApplication Supportdiasurgical"
+
+  caveats do
+    requires_rosetta
+  end
 end

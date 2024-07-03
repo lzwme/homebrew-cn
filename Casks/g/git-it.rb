@@ -14,4 +14,8 @@ cask "git-it" do
     "~LibraryPreferencescom.electron.git-it.helper.plist",
     "~LibraryPreferencescom.electron.git-it.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -4,20 +4,19 @@ class Global < Formula
 
   desc "Source code tag system"
   homepage "https://www.gnu.org/software/global/"
-  url "https://ftp.gnu.org/gnu/global/global-6.6.12.tar.gz"
-  mirror "https://ftpmirror.gnu.org/global/global-6.6.12.tar.gz"
-  sha256 "542a5b06840e14eca548b4bb60b44c0adcf01024e68eb362f8bf716007885901"
+  url "https://ftp.gnu.org/gnu/global/global-6.6.13.tar.gz"
+  mirror "https://ftpmirror.gnu.org/global/global-6.6.13.tar.gz"
+  sha256 "945f349730da01f77854d9811ca8f801669c9461395a29966d8d88cb6703347b"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "b02f7ab847bbff8ed6ae98ba5ae9057e87ceed845a3626863e933a3731dea8c8"
-    sha256 arm64_ventura:  "853208dcab6b2da814d4144e13a385c54c674b83c5660aaf9452e599f8dd9b0e"
-    sha256 arm64_monterey: "ec4a0d0255b7023bdeb89d98086ff021ef7cdf99cc97c40199ef467c4d5a02ba"
-    sha256 sonoma:         "47b9879a3743bfa7f1dadb1a05c2e45182c03c7722453c0f2b1076d01f77c774"
-    sha256 ventura:        "41a680877f21ca02b2b0aea13da1c8e9ce8722a43e6f8e93363dd73ccc2a6098"
-    sha256 monterey:       "27f2fa10cea92c3e4261ba98f2f164a42cdde4b02de6cf8b8cc50320a8cf452e"
-    sha256 x86_64_linux:   "1423d091f9579d8688e5c20de615a4e54e094e45cb8662f2b670ceee8e947872"
+    sha256 arm64_sonoma:   "a16395e013dbe60ef079902a4aac6908d07dd85fe2668f900839303dacebf9d6"
+    sha256 arm64_ventura:  "40f0b4a0425fd5a8c4ff90122ba5db590496188e18a4da39998f6744b7e68efc"
+    sha256 arm64_monterey: "84dba539683309aac5c9f56945ac3c44ce9707e772b5953ceca146eec7f63ddd"
+    sha256 sonoma:         "5642c79437370efd7ac27d11da8658452a8e796d3ec67271d5a2b341e11a4442"
+    sha256 ventura:        "393f49dff80d637352a2849a19bfa406c3a31bf3e398c98abb90d4da80e653e2"
+    sha256 monterey:       "1c469a31ac0444a3613a19bc9efca253343e371f56b8347d20e5e3b8dc8fff67"
+    sha256 x86_64_linux:   "11c332b78b3e22e7bac5fcfcc750f21e996132ba5490e77907b602f6c47432b8"
   end
 
   head do
@@ -40,8 +39,8 @@ class Global < Formula
   skip_clean "lib/gtags"
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   def install

@@ -36,4 +36,8 @@ cask "openemu@experimental" do
     "~LibraryPreferencesorg.openemu.*.plist",
     "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

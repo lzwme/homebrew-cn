@@ -2,11 +2,10 @@ cask "goofy" do
   version "3.5.4"
   sha256 "a41bd37f7ba1f0cd88cd5241ffcd22ea9087320b9cfa525298565aea9fba121b"
 
-  url "https:github.comdanielbuechelegoofyreleasesdownloadv#{version}Goofy-#{version}.dmg",
-      verified: "github.comdanielbuechelegoofy"
+  url "https:github.comdanielbuechelegoofyreleasesdownloadv#{version}Goofy-#{version}.dmg"
   name "Goofy"
   desc "Desktop client for Facebook Messenger"
-  homepage "https:www.goofyapp.com"
+  homepage "https:github.comdanielbuechelegoofy"
 
   deprecate! date: "2023-12-17", because: :discontinued
 
@@ -20,4 +19,8 @@ cask "goofy" do
     "~LibraryPreferencescc.buechele.Goofy.plist",
     "~LibrarySaved Application Statecc.buechele.Goofy.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

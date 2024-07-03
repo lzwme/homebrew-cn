@@ -19,4 +19,8 @@ cask "opensesame" do
     "~.opensesame",
     "~LibraryPreferencescom.cogscinl.default.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

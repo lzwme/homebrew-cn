@@ -23,4 +23,8 @@ cask "openshot-video-editor" do
     "~LibraryApplication Supportopenshot",
     "~LibraryPreferencesopenshot-qt.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
