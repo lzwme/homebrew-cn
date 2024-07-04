@@ -7,13 +7,6 @@ class Lv < Formula
   license "GPL-2.0-or-later"
   revision 1
 
-  # The first-party website is no longer available (as of 2016) and there are no
-  # alternatives. The current release of this software is from 2004-01-16, so
-  # it's safe to say this is no longer actively developed or maintained.
-  livecheck do
-    skip "No available sources to check for versions"
-  end
-
   bottle do
     sha256                               arm64_sonoma:   "c831cf8f33a699f5176df7115c4d0918133782a78b610bae3a1d6952af562649"
     sha256                               arm64_ventura:  "40b16905a4cdbe254c41f5cec691b7363b8fefc543226fb5d0ca5f1b073510ed"
@@ -28,6 +21,8 @@ class Lv < Formula
     sha256                               high_sierra:    "90a79ade2abcd36772eb50db1c93298a67766d626a5316a3eeb1638312fbd377"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "16aa28d4dfb99fbffc482973e91282d1b7a4986f3cdc2638805228962143d949"
   end
+
+  deprecate! date: "2024-07-02", because: :repo_removed
 
   uses_from_macos "ncurses"
 

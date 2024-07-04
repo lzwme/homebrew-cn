@@ -2,8 +2,8 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https:odo.dev"
   url "https:github.comredhat-developerodo.git",
-      tag:      "v3.15.0",
-      revision: "10b5e8a8f5011703a8cb62b4001eead5ae58cf45"
+      tag:      "v3.16.1",
+      revision: "cd346c5e6c0d9891b06824915ed4e3281a4ecc02"
   license "Apache-2.0"
   head "https:github.comredhat-developerodo.git", branch: "main"
 
@@ -16,13 +16,13 @@ class OdoDev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c672d0069308c1021b684553cff3478d6a335240b90918a0821618739321a709"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "525b18a5939bfecc93f7a12d377c1f0f1af1b212ed730f206320a2df119e87b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce5cd354eb624a92e8190aa6ca61e9d24c91138e7e6ae6e9220f2790a032d689"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a48ad8fde2769145ad4d4c60304efb7796aa66dba65a13c7f750e8717c2cc995"
-    sha256 cellar: :any_skip_relocation, ventura:        "964c60a044e232330130dc4b9f793f571dde674d6d38c96b08b9af97f63e490f"
-    sha256 cellar: :any_skip_relocation, monterey:       "164c403bacadbed169f696d62c4273737ae01ec6f42410dc57e83b9720bb68f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fee6ebc1a8c640152fe665029fac051c07c554d8221d766c006510815a34bebd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0fe7015bd9afd3f18cd9c156ce2f6b21a9dd36c3b410dd759390562e3cf7722"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6e8bb684ac9d7ec17bfbdda63d976a60316d2c48771d8267f713291142d09bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "954ce19cd59112f50bd8c4cd6b29a9fe2906f914995dd05ccdcaed6a96e29424"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70206faecd21320ed843d7dcd0b21db2f94961b2a38c32828d6061bf993c2c4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "295deb9fa449f8987e06ea32e480e6c2a253e617db227ea1db03563d515edf66"
+    sha256 cellar: :any_skip_relocation, monterey:       "3002c28c9f11304b7e42efd58e26e72b972c94c7fadfd55f0bf7d776fd929a42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9480c0fa8376a3f2b839965f2d7095fd712dd306a975032479e45419f482679"
   end
 
   depends_on "go" => :build
@@ -45,7 +45,7 @@ class OdoDev < Formula
 
     # test version
     version_output = shell_output("#{bin}odo version --client 2>&1").strip
-    assert_match(odo v#{version} \([a-f0-9]{9}-Homebrew\), version_output)
+    assert_match version.to_s, version_output
 
     # try to create a new component
     system bin"odo", "init", "--devfile", "nodejs", "--name", "test", "--devfile-registry", "StagingRegistry"

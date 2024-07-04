@@ -1,8 +1,8 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
   homepage "https:f3d-app.github.iof3d"
-  url "https:github.comf3d-appf3darchiverefstagsv2.4.0.tar.gz"
-  sha256 "3286ad1b324b995fd95818679b4ced80ebc3cc3b4bd4c8e6964695c05c934c8f"
+  url "https:github.comf3d-appf3darchiverefstagsv2.5.0.tar.gz"
+  sha256 "d7f6dd7d9e4465c1f44d168c3a38aad24569a25907673180c8791a783e73f02f"
   license "BSD-3-Clause"
   revision 1
 
@@ -15,20 +15,39 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e8456d3aaeeea2ec816e083e2d2005d9ed2940282706e19531834db86141a953"
-    sha256 cellar: :any,                 arm64_ventura:  "b182344007d4fe0a1040e94944bfd0b38b3725e1805f29e909cbf35bc19cde57"
-    sha256 cellar: :any,                 arm64_monterey: "df78c97b486eb22be12d929f92e84f635e0f90d6bbdc8d92da6077a40f7d33f3"
-    sha256 cellar: :any,                 sonoma:         "b8e5d4dfc12e6a5318a3f9592a176eadb11346ad29e11eca3ab5115d8335c344"
-    sha256 cellar: :any,                 ventura:        "661157c0d070e2592193335151a7e9646e2d3537426566e743cffd79e2738f04"
-    sha256 cellar: :any,                 monterey:       "483ef8a4631c4316fe611b774b3a0a4aba77cebcc90a63711f1d15c78204993b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2526e2052e571406b6d31c6460541ddb04f995e5acf8259f1c65f44b9a626483"
+    sha256 cellar: :any,                 arm64_sonoma:   "d1cc7c01b332499f0b6029d00fbd941afeb9b1b8b4cdd63848ac8bc80da9eeeb"
+    sha256 cellar: :any,                 arm64_ventura:  "5ab0589087f07df3fc947d4f94e2f234d8926a1ec9f75ab021911ed28d76f20d"
+    sha256 cellar: :any,                 arm64_monterey: "e56500ca09cd442367725ab5d4a0ae4c22eafb18572886aeddb806ee4f2b2bbc"
+    sha256 cellar: :any,                 sonoma:         "a3382d6934a82df7686998f33703a9e5ac3a9b9301549f8d2b31a7df416fcfdd"
+    sha256 cellar: :any,                 ventura:        "5d69b498e1d29279dc4cbcc90b3e55ef373f1427418648b83fd2f5583b1e6971"
+    sha256 cellar: :any,                 monterey:       "eb799cbbe16a078c0bd7d407ec7882f748e5bd39c0e2293e0d164daef96ce443"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dcd40f0dbe5edb13dcad6daf7bfde12558c4c5190ab21a545b985f8fedf1609"
   end
 
   depends_on "cmake" => :build
   depends_on "alembic"
   depends_on "assimp"
+  depends_on "glew"
   depends_on "opencascade"
   depends_on "vtk"
+
+  on_macos do
+    depends_on "freeimage"
+    depends_on "freetype"
+    depends_on "glew"
+    depends_on "hdf5"
+    depends_on "imath"
+    depends_on "jsoncpp"
+    depends_on "libaec"
+    depends_on "netcdf"
+    depends_on "tbb"
+    depends_on "tcl-tk"
+    depends_on "zstd"
+  end
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   def install
     args = %W[

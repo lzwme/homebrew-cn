@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https:www.inspircd.org"
-  url "https:github.cominspircdinspircdarchiverefstagsv4.0.0.tar.gz"
-  sha256 "528199a6c857973611d496e5a4b4d125770525c9f52cbc5f7387ecdfdfcf885c"
+  url "https:github.cominspircdinspircdarchiverefstagsv4.0.1.tar.gz"
+  sha256 "3e00d545593f2f2585792585b58501bfc953dc16ae1f35dc55333ccb57d6ef5d"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8500f137f88d0c21b1eb7f1c7dee9a71a16c48927311bddd87a78d6f93f6df15"
-    sha256 arm64_ventura:  "d06359e934b94b5424a0bc4bb722faeb3c9a789f96d8e87897cb02eaa3c4c9c8"
-    sha256 arm64_monterey: "94466e60a078280a6994a5ad85c7679330c355a5c336e127f24273e585911fbd"
-    sha256 sonoma:         "12e1becf9cfa3d070b5e5ceb2e7842f7105da1e4592567fb76e6f1f3e5939b35"
-    sha256 ventura:        "070621ac12cc795128c09fcae93293edb40863913d2b69e122795c54c9dda11c"
-    sha256 monterey:       "3f482ee2e69e7e6ad55542748992fe8c501ea1b22ac35dbd4f8c8011efa1dbe4"
-    sha256 x86_64_linux:   "7ce193973d1c834d5e4e1d0dbca842d58a7d0f2c80be7d0069c7fa22d1341627"
+    sha256 arm64_sonoma:   "d5abadab741ca0717579b214d91c5cd8dd965d1bcb755f632844fe2d408c67c1"
+    sha256 arm64_ventura:  "82abfdd3a78022e463db28423b351f3234ac192fee85b47b4c33e8a8992afe4d"
+    sha256 arm64_monterey: "7a3cbdf29a81080411b58cab08105df4ad5378d8ce46a09383ae2e84258c63eb"
+    sha256 sonoma:         "634439a40b40cb558429f5fc4e68afa1eac505cd5bd8bca48b19b9cf45cf216f"
+    sha256 ventura:        "426b652fd1859062899388ecb5b10328d3cd97e466497efb09cd8cc8117f4fd1"
+    sha256 monterey:       "1d6429341d727e9ed7b1eea59b19bbae0d085f9d9564851cefaa1e3a31ff2c8b"
+    sha256 x86_64_linux:   "40867db14252aa063c009eb300836b34059f9b350afd2cf0d60396c7361edd22"
   end
 
   depends_on "pkg-config" => :build

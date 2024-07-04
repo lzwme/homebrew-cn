@@ -6,16 +6,16 @@ class Yewtube < Formula
   url "https:github.commps-youtubeyewtubearchiverefstagsv2.10.5.tar.gz"
   sha256 "8100466a5e89c84249d882e2e9ea9ff282a2d4f7f68135157cb942e6eb927b29"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c9b263a9b9e201a7d7ffee92ff67a158c5c5ff5b1de455ad43b35e48d1e7c11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63e3dd4b5a3530a20eeac21c6295b4f69e535c9c2b5ad058ea7af8cd70edf8d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68b39cd2abcca1c8d3fdb870a67fdaeb3aa13c3722f74daa221d852705d54c00"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db34ea6eeee8286a7e0d553d201bdf4544c68aebb3801f26f2ba46d592f160fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "2d4076a9227f0b58a28dfaeacdc2dba1b7da975029e8de7512d324a02279260f"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d165e58aa1d74d4a1c5919d54aa8d3fd3528be899d6616f60ade904555aca95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d051fc74ab6329469df8331ee0ee205b33650591c12c50524b73699c3a197989"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "205691b60bdbadff7eb4a3d90517003d8f475b3e1ef1879958adfe7d18080c6b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8d5c8f00a0058bfe22ac2304a4a8cadab8e1e05f148876b02b71921860d21d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fb2cf8a880c1a91fab67b2b72b575cfb3ed1a80f4d8da1db8f0c8484259a52c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "daabcf1915cfbdcbc4d477ad514511b370f83a60db132d81456c1381c34d6312"
+    sha256 cellar: :any_skip_relocation, ventura:        "da8ed830a6a4514afe271c16b67e69fbdff3a8b88bac007e0c0575efc023aac5"
+    sha256 cellar: :any_skip_relocation, monterey:       "faf586671fa377679754af05385f8381fa2314cf18cab9e2e1427c7ee5891c70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a68f57e2f5755716682c3c7a5c4c27380120f502e5870694e8745bc7c23eaf97"
   end
 
   depends_on "mplayer"
@@ -77,8 +77,8 @@ class Yewtube < Formula
   end
 
   resource "pyperclip" do
-    url "https:files.pythonhosted.orgpackagesa72c4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5pyperclip-1.8.2.tar.gz"
-    sha256 "105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
+    url "https:files.pythonhosted.orgpackages30232f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60dpyperclip-1.9.0.tar.gz"
+    sha256 "b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310"
   end
 
   resource "requests" do
@@ -107,8 +107,8 @@ class Yewtube < Formula
   end
 
   resource "yt-dlp" do
-    url "https:files.pythonhosted.orgpackages089c6dc54bc591d50eb9378a0e0442e5b69f28eff1ead4f234b7837b6d582761yt_dlp-2024.5.27.tar.gz"
-    sha256 "3566c0de240d0cd3d1c2285ce655f72ca38dfc618d634d46818b00d89d5288be"
+    url "https:files.pythonhosted.orgpackages5ac3ebb3aa4b46550aaa1e125db81db8c4efbfe1436221e8ed60ee5a18930890yt_dlp-2024.7.2.tar.gz"
+    sha256 "2b0c86b579d4a044eaf3c4b00e3d7b24d82e6e26869fa11c288ea4395b387f41"
   end
 
   # Fix SyntaxWarning's on python 3.12

@@ -1,18 +1,18 @@
 class ApibuilderCli < Formula
   desc "Command-line interface to generate clients for api builder"
   homepage "https:www.apibuilder.io"
-  url "https:github.comapicollectiveapibuilder-cliarchiverefstags0.1.51.tar.gz"
-  sha256 "8b97ea24baed5689f645f6031dc57e8e14828e8d41b26a3ea18b1e96af248a7b"
+  url "https:github.comapicollectiveapibuilder-cliarchiverefstags0.1.52.tar.gz"
+  sha256 "3ce833ef38dfeebcd4d4c27133b567412c28cf160c156993700d22f706caa738"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, ventura:        "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, monterey:       "2327c4b4cee95eb6aaeac46442e630fc429a8aee8587ae1f0b62c5e17c69f318"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e345ef6cb2003bc1c8e8d3e2ce58760f87cd9c4810ae12af555ae7ec89b437a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, sonoma:         "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, ventura:        "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, monterey:       "286993de65a6f4b576a50de864c2e0fbce6bcefe61e3a9f3dc7ae9dbcb5e7229"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a2bc4d4ed09d9f833260611ed36a5f4c08bd1ece1e57a5f01a8aa533fa379b9"
   end
 
   uses_from_macos "ruby"

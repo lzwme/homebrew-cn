@@ -1,9 +1,9 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https:www.mpich.org"
-  url "https:www.mpich.orgstaticdownloads4.2.1mpich-4.2.1.tar.gz"
-  mirror "https:fossies.orglinuxmiscmpich-4.2.1.tar.gz"
-  sha256 "23331b2299f287c3419727edc2df8922d7e7abbb9fd0ac74e03b9966f9ad42d7"
+  url "https:www.mpich.orgstaticdownloads4.2.2mpich-4.2.2.tar.gz"
+  mirror "https:fossies.orglinuxmiscmpich-4.2.2.tar.gz"
+  sha256 "883f5bb3aeabf627cb8492ca02a03b191d09836bbe0f599d8508351179781d41"
   license "mpich2"
 
   livecheck do
@@ -12,13 +12,13 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d67fb5456d6c278f43128f1a008a3b7e39e3fc130fdef2aa135f2b759ab667d6"
-    sha256 cellar: :any,                 arm64_ventura:  "1392f8832b3fbab06df08711b6349fe5164eaa1fb65e07f08a4af36326169621"
-    sha256 cellar: :any,                 arm64_monterey: "6a96f37e13710724f1fa111db32054a690280a27e9324faca645093f44a64bd3"
-    sha256 cellar: :any,                 sonoma:         "97ff3b760e349f2cc29e1d231e215d1eb49ad0cf0bd1d56516fcc90863848e7e"
-    sha256 cellar: :any,                 ventura:        "57351d818cd883ea13c5a547fe288f6f3690b4d8dcaa5b78f7b9956906672acb"
-    sha256 cellar: :any,                 monterey:       "e6311304eb40d0e0e0c739600e198263e6141afb5c934fbae473c1da87f2cd93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "527a2cc4b059ac550873aea0afe6eb81b964d0afa6b6c9c6af2bb3ce8954089c"
+    sha256 cellar: :any,                 arm64_sonoma:   "c5b5ab7d0674675590177b2d20b37e86856128aca461a2af7dde49e7c9c70f00"
+    sha256 cellar: :any,                 arm64_ventura:  "da9c6d133f71eebf83e38a3056d5dfc0498cc1f03a8b21d2b263fd4054baec0e"
+    sha256 cellar: :any,                 arm64_monterey: "5fde2da657a3daf95a9638e00738c5a6c5eecfdd8f07575fad67ac30582d02e7"
+    sha256 cellar: :any,                 sonoma:         "91fbcf3d4aa9ccb628ec8c3ee7fd78a7fc5ed17baa921b877bd1787d4a34722d"
+    sha256 cellar: :any,                 ventura:        "0cbcd09fa585654779ad16d7c6d7efec007f90903a06f203eb7d4f857008e077"
+    sha256 cellar: :any,                 monterey:       "c6193b32c96e742311ee2946d0aa4c4702ddf36115c041355ad4c118f52c987b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b90cf62a321d9ac4d6cf97c6b2cdc72fb0388894c34fbff5b03db47e3a29a580"
   end
 
   head do

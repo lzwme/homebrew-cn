@@ -1,18 +1,18 @@
 class Libass < Formula
   desc "Subtitle renderer for the ASSSSA subtitle format"
   homepage "https:github.comlibasslibass"
-  url "https:github.comlibasslibassreleasesdownload0.17.2libass-0.17.2.tar.xz"
-  sha256 "e8261b51d66ba933fe99248c6fdd8767ed96c5a7e5363c83992c735a2c2fbf74"
+  url "https:github.comlibasslibassreleasesdownload0.17.3libass-0.17.3.tar.xz"
+  sha256 "eae425da50f0015c21f7b3a9c7262a910f0218af469e22e2931462fed3c50959"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "87d9fe5a36cb16d1c89d489d4fad8609bd24989348a32c45211bc36b10a4e84b"
-    sha256 cellar: :any,                 arm64_ventura:  "b7fee0f2e5c6d0d18bdfb64a96143426157bbd573606ae8798ed52d2f6522d86"
-    sha256 cellar: :any,                 arm64_monterey: "e788f122320366f3ada5510fa365938078d93b3e9297703dac95072c78677a66"
-    sha256 cellar: :any,                 sonoma:         "5b9b9dc3754f07eff37a4a09d9139e1671ab7107f586b861330d6aa47919e87f"
-    sha256 cellar: :any,                 ventura:        "1b7357e49d57ee9b33ffdb04a10bc8ae4a2ab63e6f86c634033cee2d278f4596"
-    sha256 cellar: :any,                 monterey:       "051ae8aed804db9f19c9bcbf392ee783e6502a3b7ec0b0c2f16135446959cf57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fcfe468177e61784cce81e722bdcd6e16ff3a83dbc1b016ac5612a485c8c24"
+    sha256 cellar: :any,                 arm64_sonoma:   "9e8889c7d434e4a56a0f9abbb1fded340dae984d05121ad5413715e3abb03fd3"
+    sha256 cellar: :any,                 arm64_ventura:  "d0724c2ba6a6aa6f1ffb604a5cde5bf341e835369e72216042bbb2587acb83cf"
+    sha256 cellar: :any,                 arm64_monterey: "f16d796553df4b3ae94c458ae687ce824ea8e66a75bd66ff6df2f0bfe4202ab7"
+    sha256 cellar: :any,                 sonoma:         "4db6c9473a71166cd6cc5d95b5fab7da9432e081855aad495fe2eb7c0b51bf31"
+    sha256 cellar: :any,                 ventura:        "1284a21e45e033cf6df87e7fc01e3d9fb3204e24ba5580bdfac941fff69e9a63"
+    sha256 cellar: :any,                 monterey:       "07a27068fd1c52b021d39b0cd9daa99b2fd6f0ac8f70e05b20b9116c5d848507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45ef7e90470c2f9a0304b343b6216b9632be26599ca0cbadd3705d5cbf11851b"
   end
 
   head do

@@ -27,6 +27,8 @@ class ImapUw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b87416d2dcf7b2384df72ef50f309556b3e4e267eedf11f05ae54b53f67c8a1"
   end
 
+  deprecate! date: "2024-07-03", because: :unmaintained
+
   depends_on "openssl@3"
 
   uses_from_macos "krb5"

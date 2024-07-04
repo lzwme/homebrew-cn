@@ -1,19 +1,19 @@
 class SpicetifyCli < Formula
   desc "Command-line tool to customize Spotify client"
   homepage "https:github.comspicetifyspicetify-cli"
-  url "https:github.comspicetifyspicetify-cliarchiverefstagsv2.36.13v2.36.13.tar.gz"
-  sha256 "4af9a7677178adaca6cb74e34c5332db050d11aa85a92e020329a718517bf7c5"
+  url "https:github.comspicetifyspicetify-cliarchiverefstagsv2.36.14v2.36.14.tar.gz"
+  sha256 "3a00f2411586279c3067ee5c076773365c9d4093b0f5121b14431d6d19f51e56"
   license "LGPL-2.1-only"
   head "https:github.comspicetifyspicetify-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484adf0609e89bf0aba5d67ef8c67fcfee5509c13601c8479cdd0500c8d910d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df6df8f85a9c4ed6c83a2644d7bedc2e856d09fe5c396d084bbd381f590f0c69"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68529a79b552b8562ead1de044559122d2ce5a686892876a90acf487c1530ecb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3adad16bca520a4d54178f5df0895953363d78b7bb4cd08c0637bcafacfafcc9"
-    sha256 cellar: :any_skip_relocation, ventura:        "22dd09f002cd4f19f070e263668f6f6d6151ae5a4c314fdfb16018f43690a6d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "50826a7dee1da62a6b26d49a14e43edfccd6747156b2eae2c1a2b7446d9fc5d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d65a07b401a03bd8748ed94a526402a02606a946e706c62672558cccc27728c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d27b5c2a2529b3c63e63f7bb0001f39d72b5ce6fdf76b056e6f94cb4f2bd450"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa0d104a3364f18e5adfd6f568f33ee8239fd84465437d67c3ba605a023d9d28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69153159268941bcea08bfd7942fdd7d9f3b80ae14a0cc60b36fc08918d6f6cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "420b73627ef5ec9e4996a1b161b8d3260b373eb5f367a295e4c67d62f9f995c8"
+    sha256 cellar: :any_skip_relocation, ventura:        "39037d2a5e90e04555f2d6b574c28c6993ae27110dee3a080259762cfde6292a"
+    sha256 cellar: :any_skip_relocation, monterey:       "c7e9d3bf3d5925eed9264fa2867f98353568a03ac77c015347985b6d74642e29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7528228c9f54b611fc94c5503d97b107cdd70cfef0a43533e3ecfdb6574de016"
   end
 
   depends_on "go" => :build

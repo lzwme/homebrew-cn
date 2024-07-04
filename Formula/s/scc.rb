@@ -1,8 +1,8 @@
 class Scc < Formula
   desc "Fast and accurate code counter with complexity and COCOMO estimates"
   homepage "https:github.comboyterscc"
-  url "https:github.comboytersccarchiverefstagsv3.3.4.tar.gz"
-  sha256 "3097e23532d9a254fe217c81557136c7ac5aa4d48a200b61b366330e5eaf7ce4"
+  url "https:github.comboytersccarchiverefstagsv3.3.5.tar.gz"
+  sha256 "028869a7d053879a8e3f2872fdd792f165db13696918d08863475c638f08ef06"
   license any_of: ["MIT", "Unlicense"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Scc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c47ebccd16714cb51e9c6e7c257804f42b9d47e53443bed164fb521d87650cd7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99f09208465b4f88b8f7e636205b4230dcd15c2ae822d99e9409fdf357d4220d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "617b4397b1046acf9efe034ab6cda77759470314dc9028b7a9872a64ebf1ef7a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5dd97f35dbe4a095d3c61894715104224cc3ed2e0bc38c04b36b295c084a466a"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a08426edc8b2c086bbabb499bbfa735697011eab70bb213f5cd82f8978f229f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0777909c35d5d258b85b776e81dc48bc6d5e7b431d3f8635186633cd6045b974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb2cec92a0bb037c03c302d6279e0a9f98482584a84a496cb376a77902c1c419"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0474b2efe2e1d6f8baa6dd033d193ba62bac2e8cb04428d44fff4f0fa208176a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a60a5efba1a6a1fad46ea821d1530d6e51fd560bcecf8415bed888d5decc8621"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a02324fec0834b4c51aea52dab4a3d2f45ebd787f6c339ed5150923e4f047b91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "545a10d27482aa7ac0df050b4a371324c04ea29747599302e4c5bfe080fedb44"
+    sha256 cellar: :any_skip_relocation, ventura:        "00fd1132812004e0516dccd3ed1184c7be74d5987a82079abe3bedd05a1dae38"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd5ade176301cc5dfa6f8267c05f6c0ededad115b971b10696ab10cd57ea14f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2536f34d7049b22d596fb3e6d0d298f930668d2e2e69dfa8a6b327b7f1abe3b6"
   end
 
   depends_on "go" => :build

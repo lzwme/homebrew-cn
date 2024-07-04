@@ -3,18 +3,18 @@ require "languagenode"
 class Jscpd < Formula
   desc "Copypaste detector for programming source code"
   homepage "https:github.comkucherenkojscpd"
-  url "https:registry.npmjs.orgjscpd-jscpd-4.0.4.tgz"
-  sha256 "da55e87e3d0396a2507495df1026b242a0d58f00f8ced44526584b3f10c5a7e7"
+  url "https:registry.npmjs.orgjscpd-jscpd-4.0.5.tgz"
+  sha256 "e284fc35166ee0cd5f0db3d5c15b8e9bf8bbc2914d498f361c65e259cf15ae67"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee652bd1f08396d4f26261bd9e791cd287480f1567c20a56a49a7ff2456f61e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee652bd1f08396d4f26261bd9e791cd287480f1567c20a56a49a7ff2456f61e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee652bd1f08396d4f26261bd9e791cd287480f1567c20a56a49a7ff2456f61e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4dd07b2a8c6eb045cdd8e908ae27f1a81bc0065379ae127095222732befe3bd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "4dd07b2a8c6eb045cdd8e908ae27f1a81bc0065379ae127095222732befe3bd3"
-    sha256 cellar: :any_skip_relocation, monterey:       "4dd07b2a8c6eb045cdd8e908ae27f1a81bc0065379ae127095222732befe3bd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49a889a0cbdeb63579383e964efc8004df27f6947f81925e9711f11840cba80e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8abada5224d18bacad2a11a48c0b7efaa8fc198556660193a193489a63d1e5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8abada5224d18bacad2a11a48c0b7efaa8fc198556660193a193489a63d1e5c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8abada5224d18bacad2a11a48c0b7efaa8fc198556660193a193489a63d1e5c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70d55d47a1144b062afa4812ff066830148fc314c33b1b55b1f8ea2d5adfd6b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "70d55d47a1144b062afa4812ff066830148fc314c33b1b55b1f8ea2d5adfd6b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "70d55d47a1144b062afa4812ff066830148fc314c33b1b55b1f8ea2d5adfd6b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a05371abbe1efa2d0331af9bdcf74bbe1daad9cc91a0ddb329cbf8b242266428"
   end
 
   depends_on "node"

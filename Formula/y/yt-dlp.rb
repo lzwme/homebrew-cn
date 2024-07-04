@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audiovideo downloader"
   homepage "https:github.comyt-dlpyt-dlp"
-  url "https:files.pythonhosted.orgpackagesdb73b1a1f2ccb07456891ba28e8f0e37a22071d065e3b0866fe0b4fc5160e804yt_dlp-2024.7.1.tar.gz"
-  sha256 "eb0019474ffde6979378c07555fa01173cf55bde90b172a0181b5716793aaef2"
+  url "https:files.pythonhosted.orgpackages5ac3ebb3aa4b46550aaa1e125db81db8c4efbfe1436221e8ed60ee5a18930890yt_dlp-2024.7.2.tar.gz"
+  sha256 "2b0c86b579d4a044eaf3c4b00e3d7b24d82e6e26869fa11c288ea4395b387f41"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dca3fad186ac737e1cdb35aed45092b691f6a00f2a1abc05b66ce7882941bb3f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f46afbd667daf461842c320b9d9638726f7577bb8c6a0da2d8b9cd6fc2496bf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41ab4a98fbd6389bf8df50761f5cbde88681909be5f1603c00303a849bf2abf6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3394a87c9f3c79db7a7e0e88eede75812b34b34b17e13e661623d578489489be"
-    sha256 cellar: :any_skip_relocation, ventura:        "40609093014eb1cb5a7ed1ca34d78f06f264102a86af5487d71983696cffd298"
-    sha256 cellar: :any_skip_relocation, monterey:       "71c9345e750ae336335f5dc857e0799398a23b9b640a7c2eb7885422462ecebd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d91ff45df79467e17c5f53c3e08e99eec50b2be040b898369b7886f1137b4a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6a1e1acc8ba4a608b493e619da42784762a3e398eb21176d9e5b817faa5272c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb0627b089acb7c3372c79ce790295d964b85ced2d6dbf3c13179ecd93030c78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "153f3a0f7200a8ffede71e94899f4b80179fc60f96a936533f653ac6ada673e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c94a9d8c4662861b30d96d4ed6fb0c05f9c33c4ddf48e77dcb7204418e3da55"
+    sha256 cellar: :any_skip_relocation, ventura:        "9af14f7a41d43484a3f854f8137d11d1339af2e16413f18a5902579b9c584ab8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e5c813e1f715a33b24a27338d88af084825d0866c4352f90be205fb6f58a941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146c6b7410f29124346575eb4764c1d00808b409c6ad92f69121e0af459cc89d"
   end
 
   head do

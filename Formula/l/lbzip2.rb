@@ -22,6 +22,8 @@ class Lbzip2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "88137d3cccfc08f362d926aeaad73312aa4d5265dd89fc92c881b1da20097f6f"
   end
 
+  deprecate! date: "2024-07-03", because: :unmaintained
+
   # Fix crash on macOS >= 10.13.
   patch :p0 do
     url "https:raw.githubusercontent.comHomebrewformula-patches6b276429dbe68323349e1eda09b7e5d5a1082671lbzip2gnulib-vasnprintf-port-to-macOS-10-13.diff"

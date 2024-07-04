@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https:csound.com"
   license "LGPL-2.1-or-later"
-  revision 8
+  revision 9
   head "https:github.comcsoundcsound.git", branch: "master"
 
   # Remove `stable` block when patches are no longer needed
@@ -29,13 +29,13 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "35d9b09ebe9bb72399d10faff833d2b6e2d07d61916890aeac3d9b650e426bd6"
-    sha256 arm64_ventura:  "beabe27ce94e15a94f4df63dc9c98b8d95f2b0104f756e33aa135c3b1e39ca76"
-    sha256 arm64_monterey: "f70769471f3c5ea0b0cabaeb809720b6098c1e14d50cb30196518c54cb464e27"
-    sha256 sonoma:         "33122f505bd391b6e55c6e90e812a24219e6e211cfdebbaa8d12e97acf3a7a63"
-    sha256 ventura:        "44e1c701e1a37f6a43119a96b507f4124b98f7af9ccfdda34af9b270dd9d77f1"
-    sha256 monterey:       "c59dc0df0dae84409ea08cd5f2a151f3f54f07938b41f8285b04882c4c80bb64"
-    sha256 x86_64_linux:   "14b97dadcdc37012242268e1d96233fdc5cd5594d90a62ee6868f9ce3423a241"
+    sha256 arm64_sonoma:   "ef04baac87bf252c3d3b05df83c2bfcd4442346f0854e6aee5fe3071dd03283a"
+    sha256 arm64_ventura:  "f9f57bacdbec6c5f51af768ca70824710a9e5e5bc912d356c901536ffc3766cf"
+    sha256 arm64_monterey: "c9b6460d1c22a445fd06ab88da81dcd3b18178b5090582d9c259c33b7eb5aaa8"
+    sha256 sonoma:         "41e9bc70cd76f290aad97fe4d37f314a168fba2e4b47f54022d8aba3b0fd6d1f"
+    sha256 ventura:        "0a6adbf53c7990f15adf996b36903b0d6922dbbcd5e315adf16848c7e2c9ac69"
+    sha256 monterey:       "9607a4cc2e210683496097d997929ba38134aa3d207b253895036572412bc0c9"
+    sha256 x86_64_linux:   "b86d4424af45b3ebb857b7b3aa5dd85b04f6d815fcc0f462e9f5ca90d194f823"
   end
 
   depends_on "asio" => :build
@@ -78,8 +78,8 @@ class Csound < Formula
   fails_with gcc: "5"
 
   resource "ableton-link" do
-    url "https:github.comAbletonlinkarchiverefstagsLink-3.1.1.tar.gz"
-    sha256 "90f9c8bd6526776235dc36dec71620ea82dbd89761294b6270595335cd2e2078"
+    url "https:github.comAbletonlinkarchiverefstagsLink-3.1.2.tar.gz"
+    sha256 "2673dfad75b1484e8388deb8393673c3304b3ab5662dd5828e08e029ca8797aa"
   end
 
   resource "csound-plugins" do

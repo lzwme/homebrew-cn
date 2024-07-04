@@ -23,6 +23,8 @@ class Jerm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2396a1d6257e20a5115a14f270c4c4039b91a3f9fd86fb8ad8437735bd98869d"
   end
 
+  deprecate! date: "2024-07-03", because: :repo_removed
+
   def install
     system "make", "all"
     bin.install %w[jerm tiocdtr]

@@ -12,6 +12,7 @@ class UtilLinux < Formula
     "LGPL-2.1-or-later",
     :public_domain,
   ]
+  revision 1
 
   # The directory listing where the `stable` archive is found uses majorminor
   # version directories, where it's necessary to check inside a directory to
@@ -24,17 +25,19 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "47e2f20b4278c4e20de4886ce0dc56e61f6cbaaa8a226c04bd412ff171c0ca48"
-    sha256 arm64_ventura:  "e780e389150f94ed154079df0f24aa0220e17eade0082b44ce1aca197a5d88f4"
-    sha256 arm64_monterey: "5d08ea506b31e9ac4fff8bd53a8499d20b13488a6d9b85c8a2e007a75043a59d"
-    sha256 sonoma:         "0be86a08a696b60bf5567edbbf6ab0d325987919d22d511e03ddeec9d099f695"
-    sha256 ventura:        "c694b7cb31490b7d8b6ee108813f2fab2d2f23dfdd5a06cfd0745f37ce3f3a55"
-    sha256 monterey:       "5d8ebdda62cef0f9c5177db92debda32482d338095cd29ea8641a7c49f93669a"
-    sha256 x86_64_linux:   "2471fb33843afa81c3518904e60cc302fe3473eefa41fd5d8c2c3d9aaac149c0"
+    sha256 arm64_sonoma:   "71d806190372bbff50dbef59f3401ebc3e838943e7ac0ce312ee36bb4d4ddd54"
+    sha256 arm64_ventura:  "e50f0dfefd74624135b856cfac74752ebff2b6bf8bd1aab976ad387807274b83"
+    sha256 arm64_monterey: "bcafa93700327cef6eaadd7b799c799436ed9980e769a0e83759d09f6ffe426f"
+    sha256 sonoma:         "05502008a8453b8996861383179912d6cf09ae469853c2a1cd98e28163475251"
+    sha256 ventura:        "0db06762eca7460d29810aecc43355bbee7a15def25c7e9b7ec1efd5a420fb0b"
+    sha256 monterey:       "169357b7f9ea7966baeaac00844d7af5b1ba4ed14075e7713024cb3acc2b4fed"
+    sha256 x86_64_linux:   "6c5f553d101655a7b9e69ef34b15fa246844dbe80f39d739a5283e1e6b6416d6"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
 
   uses_from_macos "libxcrypt"
@@ -53,6 +56,17 @@ class UtilLinux < Formula
     conflicts_with "flock", because: "both install `flock` binaries"
     conflicts_with "ossp-uuid", because: "both install `uuid.3` file"
     conflicts_with "rename", because: "both install `rename` binaries"
+  end
+
+  # Fix for https:github.comutil-linuxutil-linuxissues3071
+  # Remove with `autoconf` and `automake` build deps when included in a release.
+  patch do
+    url "https:github.comutil-linuxutil-linuxcommitff8ee29d648111eb222612ad4251e4c3b236a389.patch?full_index=1"
+    sha256 "0fcdcd07c7fe5c66b80917976064b260bac84635599e4437bff13857e8771075"
+  end
+  patch do
+    url "https:github.comutil-linuxutil-linuxcommit0309a6f5ca018d83420e49e0f9d046fecdb29261.patch?full_index=1"
+    sha256 "0923e85a7381a33b888984ab79b079d6e52f2d96d274f85632a696b6cc352863"
   end
 
   # uuid_time function compatibility fix on macos

@@ -1,18 +1,18 @@
 class Zlog < Formula
   desc "High-performance C logging library"
   homepage "https:github.comHardySimpsonzlog"
-  url "https:github.comHardySimpsonzlogarchiverefstags1.2.17.tar.gz"
-  sha256 "7fe412130abbb75a0779df89ae407db5d8f594435cc4ff6b068d924e13fd5c68"
+  url "https:github.comHardySimpsonzlogarchiverefstags1.2.18.tar.gz"
+  sha256 "3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e1c8fc12f6ca10885f95e4a8679dd2584d397bdfe60ba70281329e7a1e11204d"
-    sha256 cellar: :any,                 arm64_ventura:  "2d9322f96b62089204e0e2cd678942d35df790d2195b9402533aa0da495abe6f"
-    sha256 cellar: :any,                 arm64_monterey: "27debda881311329213187c060b2029122d939bc355f988000c9a73a410ca01d"
-    sha256 cellar: :any,                 sonoma:         "230642455c764960cfb097b80793cf5b04e417eda975638ea537a3f39b4924d9"
-    sha256 cellar: :any,                 ventura:        "00753664bd8dddc742ff431f821559d7f56b6d061bbffa5e8bdeebe5a82dda29"
-    sha256 cellar: :any,                 monterey:       "6d31422019f2bb265e13755d85ec9ba47d70d05833852badf8f57c6a0eed664b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78c9e0d1d1146eb99895e8736cf8fae032ad537193df9bdf5d6f6523559e8627"
+    sha256 cellar: :any,                 arm64_sonoma:   "37e945fe1dd889750af896e816c0790db9b18f3a534772cac3d2be22e720b637"
+    sha256 cellar: :any,                 arm64_ventura:  "5553716576ac0457c4fb359f1f5a68304ee9801b7741a29d14d20ef7d2f45791"
+    sha256 cellar: :any,                 arm64_monterey: "d88d92564bd205190476a208b4bf684f20e6f4c8390c050a42a4e8acf31cc0b1"
+    sha256 cellar: :any,                 sonoma:         "fd76e9b11c931478c0106c32c4f67feb6f5c1ddfd10cdf985278ececff977aa6"
+    sha256 cellar: :any,                 ventura:        "3a641c10f7447de85a8b04d1c283aa0b9804efd9feb73115b68afd2cd06f13cf"
+    sha256 cellar: :any,                 monterey:       "84cded237749c8ffb59d04d0426765cf86f42beefe415e54fb6ad99508c7f247"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "868ff2416cf589e55963163d173f2b30515350a114b0dc70183f6b0183c62191"
   end
 
   def install

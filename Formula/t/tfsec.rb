@@ -1,8 +1,8 @@
 class Tfsec < Formula
   desc "Static analysis security scanner for your terraform code"
   homepage "https:aquasecurity.github.iotfseclatest"
-  url "https:github.comaquasecuritytfsecarchiverefstagsv1.28.9.tar.gz"
-  sha256 "03d61e1419440bcb989c1a2afce3ed32c449bd8b6ea9811532be41c95d676514"
+  url "https:github.comaquasecuritytfsecarchiverefstagsv1.28.10.tar.gz"
+  sha256 "7eb194c8e489f198126a3e322e8b4a43226a50e544c43b6aefb6f6c4ae836e21"
   license "MIT"
   head "https:github.comaquasecuritytfsec.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Tfsec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d812110fbb21b2759af37617b6a74aa9c3dc9966e9f8a9a4d9e2a3194eeded5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea25e8bec86fd055a5283e4506ba8ed7dcfe9a226a5d6277ff71c77d4c03f490"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7787b299c21d8daadac64aa954da0609a6f7f6a41497312d6e4077e4e53ac37"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1bcfa86cead869620ed652536e0c05da82c031ae2b3bb298b66dfdec7630f7f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "c29d8dda092dc9d6a1632ea99a53b0d959238a839a0db424f87c39f8a73afaa4"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba15108b8bdc93178465d4f5533a0e42c7cbb74a25e433bdabb90bec9b5c2465"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecf50feaf41c0c67c27db1ea2128ece368ecedf77fb96d866eb13354bc1d1594"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9c3afb8500bd7b93914ddf71316e71954c9924fdd80b8d23c52cc9f2bbc9249"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bee5f56ad1fc4f957dff2bf5fa780ecea9b0103a86f50aa768bba30301d2a41e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "861101574abb59e17a3cb3a09105c8464bce4014ab9372ea97e711a64c802cae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e28088877b39af2ade96049c670531c1456d1f131ced357a8b0bf03e15f4d5a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2e3867d8acd7eb535af42712bb8f1650c0f30fd28543952b5f92f2eb3c785ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "853aeb62467d9086ca58b03bf479ba8c3f13f6b11dcc77ba0d28d0c5df7bb690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2878538074d6a1902143d6d25c12ee8a04c3ad99208f7494edf6a7dfe3f1e0e3"
   end
 
   depends_on "go" => :build
