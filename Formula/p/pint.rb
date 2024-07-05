@@ -1,18 +1,18 @@
 class Pint < Formula
   desc "Prometheus rule lintervalidator"
   homepage "https:cloudflare.github.iopint"
-  url "https:github.comcloudflarepintarchiverefstagsv0.60.0.tar.gz"
-  sha256 "c8ee91da7327d57e151f912c823d63e0fcf757b487ce6b77a2e1b83b23080ab1"
+  url "https:github.comcloudflarepintarchiverefstagsv0.61.1.tar.gz"
+  sha256 "1f475c07b932daa8ef6315da5740e64f7180075e99707d8f4175214ec81c0b25"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c178179aed70b416566f1b4b21a5ecc9e8b042f0972776863deff9361ed56de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d47300c20bd12f42f65db75a0ecee63d74b4cb032daa389fb1136e523b9d834"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "375bab7c2f4f3ceb72c6561476902804782050574474731237ddf74d6f8c925c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ca78678021210837d445902694d63a2ceb428a3bc37d9be5a870fc9604be62f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a347467eb13793f37439963d0e7cdbba0766cdbb890d2a440f22fdd7a78e0b16"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4575c943e1602b52d63251679c8eaf7bc5ccd43f5acf0c26fe2cd16ccd112fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e1efc7f9e56bf34ae22f215e29c136b92eb9c3f1c60d193a23b90e449a39722"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52590a71abfe0ebda1c0e1a1aa8a721a922c573f867513761310cb7a2d9dbf33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b1aa68e5e6c0090c46572e50a514721319ac406af93f860e9f7192e63eb034f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "89b3008263044de968176968133a6eb96c010a6436db50dd1477253f59b15fb3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e105f70ad7d1ff1b8cac7a383f4566aca4c19d3d552d0a61bd0369deb890684"
+    sha256 cellar: :any_skip_relocation, ventura:        "b889ff639721cf313f7e8c278f52af226a73cd6667a802af85605e48ffac2799"
+    sha256 cellar: :any_skip_relocation, monterey:       "788cdb5a9ef10ef25750729706d32b30d7b79ff1529a87bf365010458ac5c936"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "775f35cb1be25fb7db5ba27846536385510c1069e0347c6194754b3b3ba0fe23"
   end
 
   depends_on "go" => :build

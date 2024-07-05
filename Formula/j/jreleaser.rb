@@ -1,12 +1,18 @@
 class Jreleaser < Formula
   desc "Release projects quickly and easily with JReleaser"
   homepage "https:jreleaser.org"
-  url "https:github.comjreleaserjreleaserreleasesdownloadv1.12.0jreleaser-1.12.0.zip"
-  sha256 "e72b06f31d2f9f4c00f78e12d5073725d0379506e5455dd6391de1fc514bfc48"
+  url "https:github.comjreleaserjreleaserreleasesdownloadv1.13.1jreleaser-1.13.1.zip"
+  sha256 "c384888b61fd99ba3a3d3366a20ca5bb63e6ec054eb2841490ede5762d87ae59"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c76ebad8e530a48dbf24be456b479bf53858b427a577cd2e972aeb621d312e86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adbfa52d246f5b0dd5eb1cac286534a613ae2b6812fffb1fb47c5489dcb0573b"
   end
 
   depends_on "openjdk"

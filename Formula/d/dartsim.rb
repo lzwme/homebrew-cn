@@ -4,15 +4,16 @@ class Dartsim < Formula
   url "https:github.comdartsimdartarchiverefstagsv6.14.2.tar.gz"
   sha256 "6bbaf452f8182b97bf22adeab6cc7f3dc1cd2733358543131fa130e07c0860fc"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "13675f61990e33b4878b22e02685b0db1515b649b547fd609697166863d3d684"
-    sha256                               arm64_ventura:  "02ccd208a65a048a45b04203c4bd48a3d8de436bfa11bf2229397fa2fcebcdcd"
-    sha256                               arm64_monterey: "62874e2140eb3c1a66c8e77bebccf96b2acee547e4193db2dc4e0d93f3d238ec"
-    sha256                               sonoma:         "32ada69b69e6e842b41d9febe45f9a5a62848ad9ea5faf8ab12bc41610d2ddf3"
-    sha256                               ventura:        "8d7b93baec18a9a6aed22391ba0f0ac73457a8814829423527016a6ce3670694"
-    sha256                               monterey:       "31acc24eda41a46f9b54a4e86a2c5a85b5ea7e737b3c492566634df62ad3a32f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f4c7764c5a8f15d18408fe1f76f1efdf880de753762e5f159bd826e3bcc2098"
+    sha256                               arm64_sonoma:   "f51ee46a7e1f4bb644dad337ec05f1b371e3493ad00056e856ae18ec64270eb7"
+    sha256                               arm64_ventura:  "f85b8b2d47d826f0a46df4a190467e136fed73aadbfcd1772acf194a99b8dd76"
+    sha256                               arm64_monterey: "f6283a0ccc658818a39836ca7145d16d47c659bc34b6f12eea161ed1cd857e62"
+    sha256                               sonoma:         "79c176a1838d1945f09d681fa793699577ad54eb9f82a106e23ca61722c9989d"
+    sha256                               ventura:        "318de2f6dff8deb79fe2d98a6a98a4eb4ab78f9c3f54f2db8f25e2425e8fb823"
+    sha256                               monterey:       "5368af64d629c92879db1efc47b977d38dbb3e15169e826edc5f8051bd6cae2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04747ac18422d4bb609131f1dc076dc32bbcdb5b7c7799036ea71a8866446c7b"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +54,7 @@ class Dartsim < Formula
 
     args << "-DBUILD_TESTING=OFF"
     args << "-DDART_BUILD_DARTPY=OFF"
+    args << "-DDART_ENABLE_SIMD=OFF"
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *args
     system "cmake", "--build", "build"

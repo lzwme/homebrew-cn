@@ -2,11 +2,10 @@ class PhpDebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.8.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.8.tar.xz"
-  sha256 "aea358b56186f943c2bbd350c9005b9359133d47e954cfc561385319ae5bb8d7"
+  url "https:www.php.netdistributionsphp-8.3.9.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.9.tar.xz"
+  sha256 "bf4d7b8ea60a356064f88485278bd6f941a230ec16f0fc401574ce1445ad6c77"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https:www.php.netdownloads"
@@ -15,12 +14,12 @@ class PhpDebugZts < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "d5c28939981a52047129e70e7914033ef5f3730d6f9b47dd68fa7f957becb0b7"
-    sha256 arm64_ventura:  "34a03e36eae4b85278e192e6c8593e1ea4579060818ba96acbb22f4694416acc"
-    sha256 arm64_monterey: "b6360985bc21dcc18729ed2bb5b1929b144f6ff917547ffdc05dd2b3cf96514d"
-    sha256 ventura:        "9e3a24ec1f0adfb7804ce089039943e43794aab352ba6409f71b0046b7011156"
-    sha256 monterey:       "bc86f9f67021b8ab9ea7e40f3707c7078060c4830a65bda6ddcb825bbebfce49"
-    sha256 x86_64_linux:   "2885a7be52d230f6cf17070277d1a623ebe1173a84ab4ef09257e66ed8c03394"
+    sha256 arm64_sonoma:   "cc440b40dab0eb465045808318099436e743c07b1fc55d1a4b1fb9ca58f24e9b"
+    sha256 arm64_ventura:  "bc30c8cb9906ca6e9aa78cf3b8d2008f783fa9071c95bd7893c4d09864bc2f41"
+    sha256 arm64_monterey: "4889ec08cf4bf9409b32a1fdb483ee64f4d9435cac45c8a8491ab482a5ad0e4d"
+    sha256 ventura:        "99c24874175e5d168ad0bebd7e922a4454d846731615ff0da24d90b315ef5904"
+    sha256 monterey:       "c482950525b09fc3e3a2931f3a3ddc84597828798809d667fc46c8ef8193aae8"
+    sha256 x86_64_linux:   "9aa06463163339b3bc7c41499990ee89e17ec79ebdaa1fbd1d5fec7a9091f128"
   end
 
   head do
@@ -66,12 +65,6 @@ class PhpDebugZts < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
-  end
-
-  # Remove with 8.3.9
-  patch do
-    url "https:raw.githubusercontent.comshivammathurphp-builder595dc3fconfigpatches8.30045-method-visibility-issue.patch?full_index=1"
-    sha256 "2947d7ad1a54af20c935ec7d804bb45aec8d9e66b7f6a693a26b1ce0f2ed0a35"
   end
 
   def install

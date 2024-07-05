@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https:www.elastic.coproductslogstash"
-  url "https:github.comelasticlogstasharchiverefstagsv8.14.1.tar.gz"
-  sha256 "7fe9f04c27015cd564912d70d00eabdbfb08e9582dcdc67f1ef433c3b4189457"
+  url "https:github.comelasticlogstasharchiverefstagsv8.14.2.tar.gz"
+  sha256 "9f5bb45b81ce9e0cf64ca4947f7a0dc767bed507c041a4e34489bcb1e8370337"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comelasticlogstash.git", branch: "main"
@@ -13,13 +13,13 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb8bfe51944479d0bf908b987f4b7e25b656cfad7703fa01557b90dbca3edd23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "402cecab59c2ec2effdb521d2cc8cf076db42998b70cbdc826d4726494296e3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef8628004544088f2c1d13d0d026d693fd6a13683284a5fba369dc42af8f72a5"
-    sha256 cellar: :any,                 sonoma:         "5380f9b60d17d7bbf34d155830272bfc34321d36a287eea6167462cebf6dd7f2"
-    sha256 cellar: :any,                 ventura:        "8d57ec896dd443992f36d31951ae173cbb4193714db49624f6d48107862c69de"
-    sha256 cellar: :any,                 monterey:       "521a58aab0958178f18057322f102abaf21868392cd78f41b93a56ccbcd4c8e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c4707a185706ef4165cf9d9269f871615c24eca2a41878ea1a7260a243b31de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9109dbdcc34848fe4d1ce5d3743666b47afc32ee955053f4e50f684fa599fe0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f671f658055a48c2589fb11554e93a960d4865720d0ae540c21efd0ca811fc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e11979f1a5d0eec3b6457cd402ecc12886e9db0bab415e3d37b7efcd6d6363a5"
+    sha256 cellar: :any,                 sonoma:         "27487917df26a1a7cd555b13066b89275eb4e00eb77c0639d09b8a1d0f915fe6"
+    sha256 cellar: :any,                 ventura:        "05a66c1b2e97f9161a50ca717fc4ac359f66490a4d1d09d35529a33498ffaaf1"
+    sha256 cellar: :any,                 monterey:       "38547b7895b323bf2b4e4e72d1b7ef2fd82e6573e0e49199f6ff57712be0632a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "acf14457a92759afe9a1d40512dfc65dba7d1dba2ef1df6d2be1204545c8b9b8"
   end
 
   depends_on "openjdk@17"

@@ -3,19 +3,18 @@ class PythonMatplotlib < Formula
 
   desc "Python library for creating static, animated, and interactive visualizations"
   homepage "https:matplotlib.org"
-  url "https:files.pythonhosted.orgpackagesc5a4a7236bf8b0137deff48737c6ccf2154ef4486e57c6a5b7c309bf515992bdmatplotlib-3.9.0.tar.gz"
-  sha256 "e6d29ea6c19e34b30fb7d88b7081f869a03014f66fe06d62cc77d5a6ea88ed7a"
+  url "https:files.pythonhosted.orgpackages22069e8ba6ec8b716a215404a5d1938b61f5a28001be493cf35344dda9a4072amatplotlib-3.9.1.tar.gz"
+  sha256 "de06b19b8db95dd33d0dc17c926c7c9ebed9f572074b6fac4f65068a6814d010"
   license "PSF-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c57c7887ed6ffd8cae0e386808c86cbd28e427806d8d4d6ed4c2c3f7bc32dce5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e8d1b138a14050e75c1f5cd8e0c617b66ecbad6e874f005d72a25ef09562585"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03e039098b7cab4fc3294446d92a0ed424c62e4cc0f1881d1eea834b24fd67bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "df0ebde32356732ad3174bd9a3c28d23e38ec0e69218d59bd8c2e5d4058f7668"
-    sha256 cellar: :any_skip_relocation, ventura:        "dff86a610aedb981fedae9367b489b2fb42e707f852d70458f596bf98a36a165"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fc55a5a6624949b4118a8ae3b1b0aa4f5295e0764c17fb6283351612aef2a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13a91c0ba3fbb28eb5627010da1a08215c60d0eeb0d7a5f44b30e8818e0ef0d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a485c33d5f93775e023e392537d1a68a8ef02b45207a0a111c0051d0419f02a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc3a51b99af7ac0fb55b80aad2484d211e268be2d7bfcb9b170d2a607377608b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a0f20d8044dff4b47b696ebd461d4235384f7c931e1d5137e04b7823ad6cb9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4100352ff913a5a96826df3fe70c909b8badf3d8aabc7759e7ab154c2501d07f"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a5613a0de1b555162812db934519183c69ed8932e238b2bc9d4ee4e8da0a752"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e7819054cca66567c4e1e35bcd4fb22686e02fd581c982671a0253c5e36f3b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39167af6f592d04d32619d930e125e2e88d24f4d92bb2cc55fb568ece28b0bce"
   end
 
   depends_on "meson" => :build
@@ -47,8 +46,8 @@ class PythonMatplotlib < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackages73e45f31f97c859e2223d59ce3da03c67908eb8f8f90d96f2537b73b68aa2a5afonttools-4.51.0.tar.gz"
-    sha256 "dc0673361331566d7a663d7ce0f6fdcbfbdc1f59c6e3ed1165ad7202ca183c68"
+    url "https:files.pythonhosted.orgpackagesa46e681d39b71d5f0d6a1b1dc87d7333331f9961b5ab6a2ad6372d6cf3f8b04cfonttools-4.53.0.tar.gz"
+    sha256 "c93ed66d32de1559b6fc348838c7572d5c0ac1e4a258e76763a5caddd8944002"
   end
 
   resource "kiwisolver" do
@@ -57,8 +56,8 @@ class PythonMatplotlib < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pyparsing" do

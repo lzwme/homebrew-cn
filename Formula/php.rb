@@ -2,11 +2,10 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.8.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.8.tar.xz"
-  sha256 "aea358b56186f943c2bbd350c9005b9359133d47e954cfc561385319ae5bb8d7"
+  url "https:www.php.netdistributionsphp-8.3.9.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.9.tar.xz"
+  sha256 "bf4d7b8ea60a356064f88485278bd6f941a230ec16f0fc401574ce1445ad6c77"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https:www.php.netdownloads"
@@ -15,12 +14,12 @@ class Php < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "d3615ea3b58564334a00d447d3d4f33770e56c74d041b69258d81c592b582e27"
-    sha256 arm64_ventura:  "eca3ddde0ca92364e5996a65fafeb7429a0faf8eacccc9efd5487d5eb0dd1680"
-    sha256 arm64_monterey: "7fe7b1d0f6972cc5d34194ff7077dc11c2bb36beff0527a63fc795a192738ce9"
-    sha256 ventura:        "27a80fa5e1f71b21f84b8b89604f5c40ac3345f1fd0c76e449579eb9772873f1"
-    sha256 monterey:       "0c8e979d1000c87e017aac7eae1eae9a357dae35eef8db0f6a6419e921ac12e5"
-    sha256 x86_64_linux:   "3f158d3a3f2d86088e53763fdb7516684ae8ce4f48f1f7c9701f9df492a3201e"
+    sha256 arm64_sonoma:   "df4bca1b599788adb8fc7185a04cef08eab19bb200a9410cc11b35af7b6869ae"
+    sha256 arm64_ventura:  "d6c42a50b85da41b79fcfd980195f63a057a7602a785d8840e9cb9514ef943b7"
+    sha256 arm64_monterey: "d5e31c5521f6353da677d5679aabaaca17132dae559a1bae0f0d1302aed94dfe"
+    sha256 ventura:        "7241d6639023dfe0126d8747ef3993d6fab94413bf9e0ee19ec4f7661dd66732"
+    sha256 monterey:       "495671f13d8157ff0d1c54c4eb97dc5e60a8331188be5066a3c517af2f3c0924"
+    sha256 x86_64_linux:   "415c450507bb31470dc7f9cae9b2ccd0d4b28ab63435b652de5f98e10fbec127"
   end
 
   head do
@@ -66,12 +65,6 @@ class Php < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
-  end
-
-  # Remove with 8.3.9
-  patch do
-    url "https:raw.githubusercontent.comshivammathurphp-builder595dc3fconfigpatches8.30045-method-visibility-issue.patch?full_index=1"
-    sha256 "2947d7ad1a54af20c935ec7d804bb45aec8d9e66b7f6a693a26b1ce0f2ed0a35"
   end
 
   def install

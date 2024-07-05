@@ -1,20 +1,19 @@
 class PhpAT82DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.2.20.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.20.tar.xz"
-  sha256 "4474cc430febef6de7be958f2c37253e5524d5c5331a7e1765cd2d2234881e50"
+  url "https:www.php.netdistributionsphp-8.2.21.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.21.tar.xz"
+  sha256 "8cc44d51bb2506399ec176f70fe110f0c9e1f7d852a5303a2cd1403402199707"
   license "PHP-3.01"
-  revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "58390f8795fc16b7cdb9a8a10dd25b541bfb119ee13f7cc0fdfb12cb8c1b7928"
-    sha256 arm64_ventura:  "42cf6dfc939c19607824466c09c7001aca7ea9866282687d0154b04292f1f63b"
-    sha256 arm64_monterey: "b4c0e36cc9dcb9a6a37a60d0d9597da3467f7d235cb96a5dc14f917d2e952b48"
-    sha256 ventura:        "3eef8c9e9bb092fd91d3f92127bb0630f9ae6d8deac3b677bd59111a3fb793d8"
-    sha256 monterey:       "ad49340c55dbc51619504d8382354005dfde88c4e1cfc53bc2a2db3ea7ae4395"
-    sha256 x86_64_linux:   "2861b1dff8ed70784d1a64859bd1132de37d78596b6de04705b65e18e1566e50"
+    sha256 arm64_sonoma:   "82b6f4a25ecec7c1a371a62eecf4aa26a826ae1fcc7d43769ad3604f60c2c7a6"
+    sha256 arm64_ventura:  "3c31c4c6997df06f501ef005e4b539d55bb7b4e2b1ee561ea7efc011f861a2b4"
+    sha256 arm64_monterey: "7ccb91f4fd2fff110b26d80796159e6e194c5a1a10413b8c6337a387b8547227"
+    sha256 ventura:        "7e142452eadbe2c31b1de20a92981eda22dbae0a6d4154cdf11987577bb2fd38"
+    sha256 monterey:       "e0dedc1b5352743b3a25c574628d72e44f459a045daebf99edf3b90ac02d4dd6"
+    sha256 x86_64_linux:   "24c7d1719caf0592cf096cd5d5997968d994bc02357165cb39697e240bae6178"
   end
 
   keg_only :versioned_formula
@@ -57,12 +56,6 @@ class PhpAT82DebugZts < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
-  end
-
-  # Remove with 8.2.21
-  patch do
-    url "https:github.comphpphp-srccommit955d717e242c3433cdf76fa353831aefae530cab.patch?full_index=1"
-    sha256 "bec8a84c3a00e1defd30cd0d7a89c52b000292be79d6ad49f3bf8ba497f2565e"
   end
 
   def install
