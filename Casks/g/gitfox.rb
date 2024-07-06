@@ -1,6 +1,6 @@
 cask "gitfox" do
-  version "3.9.3,9610"
-  sha256 "65c231deeb852a8ab8deaa4c52e61fd3fbc560de3743008ffe122511411b48a9"
+  version "3.9.4,9613"
+  sha256 "e33bd956ca1dff35d3e3aade7fea927ca69d00027adde2a0d3195e7fdfae482d"
 
   url "https://storage.googleapis.com/gitfox/builds/retail/#{version.csv.second}/Gitfox.#{version.csv.second}.zip",
       verified: "storage.googleapis.com/gitfox/"
@@ -9,12 +9,18 @@ cask "gitfox" do
   homepage "https://www.gitfox.app/"
 
   livecheck do
-    url "https://storage.googleapis.com/gitfox/Gitfox.latest.stable.zip"
-    strategy :extract_plist
+    url "https://api.gitfox.app/v1/versions"
+    strategy :json do |json|
+      json.dig("response", "builds")&.map do |item|
+        next if !item["short_version_string"] || !item["build"]
+
+        "#{item["short_version_string"]},#{item["build"]}"
+      end
+    end
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: ">= :ventura"
 
   app "Gitfox.app"
   binary "#{appdir}/Gitfox.app/Contents/SharedSupport/bin/gitfox-cli", target: "gitfox"

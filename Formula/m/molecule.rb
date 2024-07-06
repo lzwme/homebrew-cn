@@ -3,19 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/59/ad/303a000ff2e2ae9b0cf5300c37d79e7058607f16d9b1c667088d666c32e4/molecule-24.6.0.tar.gz"
-  sha256 "8decb4c684fcafb85a7b4f038da125ed425bdd10db76bf0cdb413f9b84e41b58"
+  url "https://files.pythonhosted.org/packages/51/9e/ec0b8b286d52abe53ecb5fd3774e05098095ba05e6c49fbfab778714d97e/molecule-24.6.1.tar.gz"
+  sha256 "41c1903a597297c2602bd059e107b5ef2e32c9da24797dcb78ff9873c6615ee6"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b1dae6b01f722f104253e3191cb3f52e729a950538c9dd4abb77a3e3eb155bfc"
-    sha256 cellar: :any,                 arm64_ventura:  "b6d6a192221716656a347bf31ab4ef11516d50841ba6a193b426656122846c63"
-    sha256 cellar: :any,                 arm64_monterey: "adecfeddf939e14bfcfec136f5072c84327edeca4bc585c569cbba3a8f4e4144"
-    sha256 cellar: :any,                 sonoma:         "9c9e64dcf4ccc48b7a760bc5af9a31b3538e20d406daa47e294ba4e6a366a7a7"
-    sha256 cellar: :any,                 ventura:        "43b34e9619403bc9959e658d4476d535a6eac0c5b0c681f57673d77e7efb9541"
-    sha256 cellar: :any,                 monterey:       "a9440fa7ec1b19cead1a40cacccbc5a8cec9970a1d05721edfc314be33c5865e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07bc9ecdf0385418c6f4f357541e7def377e8bcbe73a2c350fe0fa6d395398f"
+    sha256 cellar: :any,                 arm64_sonoma:   "d63628f8759e896439104188d024462328a55b9e4f8866c7a4921acf6865bc9a"
+    sha256 cellar: :any,                 arm64_ventura:  "f5a4facb26a0efc7dc9cef81e8508108a932160386d686516c33f2b967f78a05"
+    sha256 cellar: :any,                 arm64_monterey: "f2d94aa05c265685eace3fbdc2cc65863ba2527de2bdfd892bd7313697e0d5ec"
+    sha256 cellar: :any,                 sonoma:         "bf05474dd393724cc0557e18a19802ace90907e91f495997ebd1eb6e7843f800"
+    sha256 cellar: :any,                 ventura:        "c9ffebd41e348d5729e594c645012fedf877296b315204aeb1628f7bcbcbf3ac"
+    sha256 cellar: :any,                 monterey:       "ebcee907ae08557119822b3d1d2a91696b1dc3357ddbc8a992be9896371c3650"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4d1fdb95fdcb1abffe21c6b478ef50450f3f9360747b0ee95886acc2ec60dab"
   end
 
   depends_on "rust" => :build

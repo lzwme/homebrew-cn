@@ -1,10 +1,9 @@
 class Musikcube < Formula
   desc "Terminal-based audio engine, library, player and server"
   homepage "https:musikcube.com"
-  url "https:github.comclangenmusikcubearchiverefstags3.0.2.tar.gz"
-  sha256 "65f82db36d635bdbfd99f67d1d68c9e1aedf8e38efa627f303cf7971c306d063"
+  url "https:github.comclangenmusikcubearchiverefstags3.0.3.tar.gz"
+  sha256 "329c57719969cc4490d5173a926f6d4d71b1b650fe2d66431bbc9c782e0c6313"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comclangenmusikcube.git", branch: "master"
 
   livecheck do
@@ -13,18 +12,18 @@ class Musikcube < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "973c9e44a3834eff19673fe4aa85a46edeccd856f8d38436830537f2cfd6adbe"
-    sha256 arm64_ventura:  "f66fe00d4f779b42531b29ff3d49ee1dca54d9ebb8e69ce15bcee6f1b538c834"
-    sha256 arm64_monterey: "cbc1e67a73376ede3d261bbd7df91ae49511c9b0b357218a3707074ff34bc522"
-    sha256 sonoma:         "552d3abc223e7f180f4756d698b538381bbe34e16458fddf24c742187689faf0"
-    sha256 ventura:        "4f8f9a178681fbf0e68846381f039c88a2d5c058bd48aba2b6ffcb48d4e6aabd"
-    sha256 monterey:       "ba6f7193efdb416a51c57c74322742716fe040cb8371f43bee1b1a492fe7e80c"
+    sha256 arm64_sonoma:   "f7ab780618f3e8e5789e22595bd98e675b184563c3606fd4b10ca8e6b415ff6e"
+    sha256 arm64_ventura:  "a40a9d19243f725ab0dc70a38c2a18e6ba41d6e29d1a67e638e1c70350555198"
+    sha256 arm64_monterey: "1fb6b52e17785b8113e00566a10cb5fc24ca31e3a0923515d16f46a50612d341"
+    sha256 sonoma:         "724b02f3e7bbc3881f354663720e0ecce7704e91499e67272cb7704f3f079f30"
+    sha256 ventura:        "18c67a098c10b0454c4c7da33c520d05fb534bb5afdbc588fa6374236a78683c"
+    sha256 monterey:       "74265f00bcc11d2e701609ea5a92e4a5fe2432c0b36ee421f3d20bd9ea19ee87"
   end
 
   depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg"
   depends_on "game-music-emu"
   depends_on "gnutls"
   depends_on "lame"

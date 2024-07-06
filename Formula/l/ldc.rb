@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https:wiki.dlang.orgLDC"
-  url "https:github.comldc-developersldcreleasesdownloadv1.38.0ldc-1.38.0-src.tar.gz"
-  sha256 "ca6238efe022e34cd3076741f8a070c6a377196351c61949a48a48c99379f38e"
+  url "https:github.comldc-developersldcreleasesdownloadv1.39.0ldc-1.39.0-src.tar.gz"
+  sha256 "839bac36f6073318e36f0b163767e03bdbd3f57d99256b97494ac439b59a4562"
   license "BSD-3-Clause"
   head "https:github.comldc-developersldc.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Ldc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "95844acab6441d928fd95b8e408668c734392a83a4d317fef59193095a5ae358"
-    sha256                               arm64_ventura:  "4a187abbcef9fdddf26704e2cfe6e8497c0ddaa50ac358a7fce1156f2888b783"
-    sha256                               arm64_monterey: "6e9aaa4d4ac5d7bb17680d5a1e2c55ce89d224153e52a77a143ebd8b840259d3"
-    sha256                               sonoma:         "36961228c3aacd893a9b8ced838ac884b65e77e049e48242ec99b604dfe65c91"
-    sha256                               ventura:        "18505f725af1fa492fe8570bb0536c213f4db4835e4c70a29d04cd59aa6e4655"
-    sha256                               monterey:       "09564b1b6d9e0a86ebd65095a001315c75063529e0becb061c3f45508b1d5b4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31f5610e48ed3be9f85bc5979d6345fbe388481438054fa92b7e755114523f71"
+    sha256                               arm64_sonoma:   "b8c30a4ac033e903d377e07d94b3ed095f2691b56bd99d27a76d48ff665a93d4"
+    sha256                               arm64_ventura:  "99251ae8e6f5bdcd6f6eb66b3999d7c4ea6960a009dfe633da27d9f75c659bc0"
+    sha256                               arm64_monterey: "44ac5441951ba752a05850a2cf1bdd2ce43081a8e0734ee61ea15cbd93f4b910"
+    sha256                               sonoma:         "9651940f505ace172f4655a03d11ce880055cc40bd4b2fee52b0603ad144ec98"
+    sha256                               ventura:        "24dc413bca528d23a5664683c1c37d975be5e5222805cc0f8bb51a4380015342"
+    sha256                               monterey:       "de03f99ea9eab85b3e3f7676848043ccff79d5a193f0dd03e633f7f642798da6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e6ce62025173793a521b2186cbf741e135ba60d61819cef73f112810057c1de"
   end
 
   depends_on "cmake" => :build
@@ -33,22 +32,22 @@ class Ldc < Formula
   resource "ldc-bootstrap" do
     on_macos do
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.38.0ldc2-1.38.0-osx-arm64.tar.xz"
-        sha256 "bfcad81853462a1308c045f1c82b641c3ac007000c5f7de269172067e60a6dea"
+        url "https:github.comldc-developersldcreleasesdownloadv1.39.0ldc2-1.39.0-osx-arm64.tar.xz"
+        sha256 "4f0285d6ab0f335f97a8cae1ebc951eb5e68face0645f2b791b8d5399689ad95"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.38.0ldc2-1.38.0-osx-x86_64.tar.xz"
-        sha256 "d52e1bc5634f045528083d5088b8cfb936b5ab9c041aaaa604902dbf82eef76b"
+        url "https:github.comldc-developersldcreleasesdownloadv1.39.0ldc2-1.39.0-osx-x86_64.tar.xz"
+        sha256 "751ebe8c744fa3375a08dfb67d80569e985944f3fb7f551affa5d5052117beb6"
       end
     end
     on_linux do
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.38.0ldc2-1.38.0-linux-aarch64.tar.xz"
-        sha256 "3d17aae84f7500a0e0ad5a3b6a4c6398415d2a4cd330216a4b15a3b4d3a2edea"
+        url "https:github.comldc-developersldcreleasesdownloadv1.39.0ldc2-1.39.0-linux-aarch64.tar.xz"
+        sha256 "bafba183432dc8c277d07880d6dd17b4b1b3050808bef0be07875a41cda6dfcf"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.38.0ldc2-1.38.0-linux-x86_64.tar.xz"
-        sha256 "e5108a5ae7ca135623f79569182929a2aab117767a6fb85b599338648b7e7737"
+        url "https:github.comldc-developersldcreleasesdownloadv1.39.0ldc2-1.39.0-linux-x86_64.tar.xz"
+        sha256 "f50cdacd11c923b96e57edab15cacff6a30c7ebff4b7e495fc684eed0a27ae17"
       end
     end
   end

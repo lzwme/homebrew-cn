@@ -1,19 +1,19 @@
 class Dzr < Formula
   desc "Command-line Deezer.com player"
   homepage "https:github.comynedzr"
-  url "https:github.comynedzrarchiverefstags240609.tar.gz"
-  sha256 "73e633aae231a312ac344ffb847884a70e6f0a3195e1246c00e9eda1e9df7b21"
+  url "https:github.comynedzrarchiverefstags240704.tar.gz"
+  sha256 "003e56d73fac350e90c69c726a7871d1ff382faee33cb05841c35056209fa224"
   license "Unlicense"
   head "https:github.comynedzr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, ventura:        "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, monterey:       "4cc2a38c370cd729ef941b45cee61ae8a4f11b3fd256c9e8672217d683655d30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3634f1f247ca10ff9b0e86d94dcca5d3bd995400eaa6800f672f5579780a7773"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, ventura:        "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, monterey:       "03ff93eb31b32dc10416abaa32061fd6f3ab879ccfb1d6fa0d427097f9dab00d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d8df73803bbcfb522dca235a74f7baebd3174874d52ceeb3a4f1ad9a076b204"
   end
 
   depends_on "dialog"

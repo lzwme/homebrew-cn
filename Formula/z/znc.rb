@@ -1,22 +1,18 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
-  # Temporary URLs as znc.in certificate has expired
-  # FIXME: homepage "https:wiki.znc.inZNC"
-  homepage "https:github.comzncznc"
-  url "https:deb.debian.orgdebianpoolmainzzncznc_1.9.0.orig.tar.gz"
-  mirror "https:znc.inreleasesarchiveznc-1.9.0.tar.gz"
-  sha256 "8b99c9dbb21c1309705073460be9bfacb6f7b0e83a15fe5d4b7140201b39d2a1"
+  homepage "https://wiki.znc.in/ZNC"
+  url "https://znc.in/releases/znc-1.9.1.tar.gz"
+  sha256 "e8a7cf80e19aad510b4e282eaf61b56bc30df88ea2e0f64fadcdd303c4894f3c"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "ece54a18459b4d498a699278daef03cae8f37d008645313afe0116e9e5a5f263"
-    sha256 arm64_ventura:  "6caf5ebc8490cb565f951e1eb14f24da2dc3eddd0e510133db6325b788e8656c"
-    sha256 arm64_monterey: "6120a847b16ac4bca100f332c3a4ad9c64b000de89d757979533ed04a97b955f"
-    sha256 sonoma:         "3af5963b24f8444d3ab144bb9c57c31950c6e1d8c22dc4a4a25599f59a937f51"
-    sha256 ventura:        "e98891934fcbeb85ac8d80d9b44df2fe0a6de07a4a9aa1d9d8a0f537d76fd7c5"
-    sha256 monterey:       "0b4ebe72752d4c810c3a2a6e335cab10ac3aca8676785344100baf6d8570bd61"
-    sha256 x86_64_linux:   "3541c695090d2e083f89ca537df3925d7dd8884e656425f3b533bb65f724bc77"
+    sha256 arm64_sonoma:   "ee6eaf54730ba8dbb41db83afaf55dd576fb40d5d4d7240e91350b52bde15553"
+    sha256 arm64_ventura:  "b2b61efde97fb30819e20401df289b60b0785ebb50d59f6ed55e2d52883855f8"
+    sha256 arm64_monterey: "1ec419a63bc8bd6af046d8cab7cbc0faa0fd13385b90dea59c0d359548a41c91"
+    sha256 sonoma:         "97d86798faf0e95e85b1a7383c1e0ff4eacbce118af2ad76d6bcf10e1ffab337"
+    sha256 ventura:        "82d0ea87748360a70f0be47072f4a080396f8bc1bbce669d13dd68924fcdb40b"
+    sha256 monterey:       "21fa98d7aaa364cdc304fd4568897e241ec819441c345a3c1a9081703c722e3d"
+    sha256 x86_64_linux:   "f17e3e7b444ff827b864d63389e7e42e1cdbddfdd5faf0c1208d09ef62a86917"
   end
 
   depends_on "cmake" => :build
@@ -35,28 +31,30 @@ class Znc < Formula
     # Fixes: CMake Error: Problem with archive_write_header(): Can't create 'swigpyrun.h'
     ENV.deparallelize
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DWANT_PYTHON=ON",
-                    "-DWANT_PYTHON_VERSION=python-#{xy}",
-                    *std_cmake_args
+    args = %W[
+      -DWANT_PYTHON=ON
+      -DWANT_PYTHON_VERSION=python-#{xy}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims directory
-    inreplace lib"pkgconfigznc.pc", Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace lib/"pkgconfig/znc.pc", Superenv.shims_path/ENV.cxx, ENV.cxx
   end
 
   service do
-    run [opt_bin"znc", "--foreground"]
+    run [opt_bin/"znc", "--foreground"]
     run_type :interval
     interval 300
-    log_path var"logznc.log"
-    error_log_path var"logznc.log"
+    log_path var/"log/znc.log"
+    error_log_path var/"log/znc.log"
   end
 
   test do
     mkdir ".znc"
-    system bin"znc", "--makepem"
-    assert_predicate testpath".zncznc.pem", :exist?
+    system bin/"znc", "--makepem"
+    assert_predicate testpath/".znc/znc.pem", :exist?
   end
 end

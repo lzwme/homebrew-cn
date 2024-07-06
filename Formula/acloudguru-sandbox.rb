@@ -1,5 +1,5 @@
 class AcloudguruSandbox < Formula
-  desc "Command-line tool to manage A Cloud Guru sandboxes and configure credentials."
+  desc "Command-line tool to manage A Cloud Guru sandboxes and configure credentials"
   homepage "https:github.comnicerloopacloudguru-sandbox"
   version "0.0.1"
   license "BSD-3-Clause"
@@ -29,5 +29,4 @@ class AcloudguruSandbox < Formula
   def install
     bin.install "acloudguru-sandbox"
   end
-
 end

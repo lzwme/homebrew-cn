@@ -8,11 +8,6 @@ cask "zeronet" do
   desc "Decentralised websites using Bitcoin crypto and BitTorrent network"
   homepage "https:zeronet.io"
 
-  livecheck do
-    url "https:github.comHelloZeroNetZeroNetreleases"
-    strategy :github_latest
-  end
-
   # see https:github.comHelloZeroNetZeroNetissues2847
   deprecate! date: "2024-06-17", because: :unmaintained
 
@@ -22,4 +17,8 @@ cask "zeronet" do
     "~LibraryApplication SupportZeroNet",
     "~LibrarySaved Application Stateorg.pythonmac.unspecified.ZeroNet.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

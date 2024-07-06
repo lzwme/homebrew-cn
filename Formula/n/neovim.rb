@@ -3,8 +3,6 @@ class Neovim < Formula
   homepage "https:neovim.io"
   license "Apache-2.0"
 
-  head "https:github.comneovimneovim.git", branch: "master"
-
   stable do
     url "https:github.comneovimneovimarchiverefstagsv0.10.0.tar.gz"
     sha256 "372ea2584b0ea2a5a765844d95206bda9e4a57eaa1a2412a9a0726bab750f828"
@@ -68,6 +66,11 @@ class Neovim < Formula
     sha256 ventura:        "64de1ffb23f9ef9f8f51dd0d33ab19d31a290d33b1d62a422be1d4a4047820f2"
     sha256 monterey:       "fe5c86b90ee70689f94bfe05ec95f064053ad7223090f64749de8f86b3b8465c"
     sha256 x86_64_linux:   "77883d08b74050e4a609865c8e113f07b847e6eacc657b9597cf002bbc97395e"
+  end
+
+  head do
+    url "https:github.comneovimneovim.git", branch: "master"
+    depends_on "utf8proc"
   end
 
   depends_on "cmake" => :build

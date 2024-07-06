@@ -7044,7 +7044,7 @@ Homebrew-homebrew-core/Formula/z/zls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmqpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znapzend.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zola.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zopfli.rb, Homebrew/homebrew-core, 1
@@ -7180,6 +7180,7 @@ Homebrew-homebrew-cask/Casks/a/aimersoft-video-converter-ultimate.rb, Homebrew/h
 Homebrew-homebrew-cask/Casks/a/air-video-server-hd.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aircall.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/airdash.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/airdisplay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airdroid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airflow.rb, Homebrew/homebrew-cask, 0

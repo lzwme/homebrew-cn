@@ -4,9 +4,9 @@ class S3ql < Formula
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https:github.coms3qls3ql"
   # TODO: Try to remove `cython` and corresponding build_cython in the next release.
-  # check if `python3 setup.py build_cython` is still needed in https:github.coms3qls3qlblobmaster.githubworkflowspr-ci.yml#L27
-  url "https:github.coms3qls3qlreleasesdownloads3ql-5.2.0s3ql-5.2.0.tar.gz"
-  sha256 "150e5f67071af334c98afd123bd95f101d4ba293cf353ae71b34c8e7f90a6155"
+  # check if `python3 setup.py build_cython` is still needed in https:github.coms3qls3qlblobmaster.githubworkflowspr-ci.yml#L34
+  url "https:github.coms3qls3qlreleasesdownloads3ql-5.2.1s3ql-5.2.1.tar.gz"
+  sha256 "04981b792b82e1d0cd01aa5255ae79131dd473dc526e38e66abf815f2d6cbd8f"
   license "GPL-3.0-only"
 
   livecheck do
@@ -15,8 +15,7 @@ class S3ql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "37c5191a09303f9ae07489a6f81c1e9cd71460bff583a860cfd352d67ba2b871"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fcf8401cc1f91d7b0dc301a48b1353e981371e25a9a52669800758845e6346b0"
   end
 
   depends_on "cython" => :build
@@ -29,8 +28,8 @@ class S3ql < Formula
   depends_on "python@3.12"
 
   resource "apsw" do
-    url "https:files.pythonhosted.orgpackagesc3e12773d8d993eb39d5cbe92f376b5d2454c66e458ebf5e6a110c094d2aa749apsw-3.45.3.0.tar.gz"
-    sha256 "e538e439b1bd0f4e8347db623d50c83f66c662432827a1113bfbad298764fbc5"
+    url "https:files.pythonhosted.orgpackages24feb473223765e356e7b2977fe46af650020412b099acd8650402c6f8881b6bapsw-3.46.0.1.tar.gz"
+    sha256 "a36d1e80180d1dc9c079f766dead8204dfeb1c80707676f9b75c1705800fe7d0"
   end
 
   resource "async-generator" do
@@ -59,8 +58,8 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackages18b2f14129111cfd61793609643a07ecb03651a71dd65c6974f63b0310ff4b45google-auth-2.29.0.tar.gz"
-    sha256 "672dff332d073227550ffc7457868ac4218d6c500b155fe6cc17d2b13602c360"
+    url "https:files.pythonhosted.orgpackages6280e143d53aa8d02c3b468d3feaf58a0dd094a8ff1954e2500f9f68a8e8bf8fgoogle-auth-2.31.0.tar.gz"
+    sha256 "87805c36970047247c8afe614d4e3af8eceafc1ebba0c679fe75ddd1d575e871"
   end
 
   resource "google-auth-oauthlib" do
@@ -84,18 +83,18 @@ class S3ql < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackages8de62fc95aec377988ff3ca882aa58d4f6ab35ff59a12b1611a9fe3075eb3019setuptools-70.2.0.tar.gz"
+    sha256 "bd63e505105011b25c3c11f753f7e3b8465ea739efddaccef8f0efac2137bac1"
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackagesb4514f5ae37ec58768b9c30e5bc5b89431a7baf3fa9d0dda98983af6ef55eb47trio-0.25.0.tar.gz"
-    sha256 "9b41f5993ad2c0e5f62d0acca320ec657fdb6b2a2c22b8c7aed6caf154475c4e"
+    url "https:files.pythonhosted.orgpackages7366bc155385503674288a440384c1c262c755af4c218e56e61e4b90635b15aftrio-0.26.0.tar.gz"
+    sha256 "67c5ec3265dd4abc7b1d1ab9ca4fe4c25b896f9c93dac73713778adab487f9c4"
   end
 
   resource "six" do
