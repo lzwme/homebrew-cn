@@ -15,6 +15,8 @@ class PythonPackaging < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f80a3334512e058ba367fdb71e9dd40bf5edac49820fcd7ff734a40dc29ed2"
   end
 
+  disable! date: "2024-10-05", because: "does not meet homebrewcore's requirements for Python library formulae"
+
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 

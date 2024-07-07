@@ -1,24 +1,30 @@
 class GoTask < Formula
   desc "Task is a task runnerbuild tool that aims to be simpler and easier to use"
   homepage "https:taskfile.dev"
-  url "https:github.comgo-tasktaskarchiverefstagsv3.37.2.tar.gz"
-  sha256 "ed735d663527691d53e44af98d24b3df91fa9da96ff6e05e9b6c7b78cc05c913"
+  url "https:github.comgo-tasktaskarchiverefstagsv3.38.0.tar.gz"
+  sha256 "09d597ed0618fd57dae944b61efa474f522f8d05d7ebeb0bc282cb5292b1d085"
   license "MIT"
   head "https:github.comgo-tasktask.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "284f0a955a7744d551a0d88043b453e572443ff5a42902ee9a3db0ab52503b22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33b0c604bcb4e2ea28a03b735c17bb06e60a31c3b2bb06da422d166af6ace153"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1640eef61031ed240c273445703946783d004631a7f75602aa068dd976ca739"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d1a570e4ab6ca9434e782f699629e691b15633fd00b03ba2cce49eacaa30848e"
-    sha256 cellar: :any_skip_relocation, ventura:        "e318dfce734136ba0af673a34732266313c4f11fdda4bf83bd1c9e04a3932124"
-    sha256 cellar: :any_skip_relocation, monterey:       "5651c57be532ca1e0475f7c4b62576d538ac68a11cfd8c306342d6ade6de27ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "087edcadb79e35a34754afa7281a4202c0a80df916b2fccf1afdec9cc2753d04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0ba9633b8c995183f505f77968241d66e426cc0efded83c3638d7b1988b9a8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1605bcbc11649f3042bd3097b71ff0f939b4cb0bc92e23f7066918998fbf2c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9544a6435b8712b65f602225bcb6057860f988f39aac1064b6a44271cf065cd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c9d7f0396ff809b2594bd041aa4a00179dc8cf26b951c4746e2c29554ba485c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "98b570026cb6a011bd4dbe2425926d10f29a784f728a4c795d809b9d67d9aea5"
+    sha256 cellar: :any_skip_relocation, monterey:       "b726481931f13bba6dea21f54a33503de068b632943fb2782074af840b474601"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a749e5a6c3dbda02fbd1811655b0a70d8f69c8aa0cd81c310213f8f0e617660b"
   end
 
   depends_on "go" => :build
 
   conflicts_with "task", because: "both install `task` binaries"
+
+  # Fix ldflags for --version
+  patch do
+    url "https:github.comgo-tasktaskcommit9ee4f21d62382714ac829df6f9bbf1637406eb5b.patch?full_index=1"
+    sha256 "166c8150416568b34f900c87f0d40eba715d04cc41b780aa6393ee2532b422a2"
+  end
 
   def install
     ldflags = %W[
@@ -32,11 +38,10 @@ class GoTask < Formula
   end
 
   test do
-    str_version = shell_output("#{bin}task --version")
-    assert_match "Task version: #{version}", str_version
+    output = shell_output("#{bin}task --version")
+    assert_match "Task version: #{version}", output
 
-    taskfile = testpath"Taskfile.yml"
-    taskfile.write <<~EOS
+    (testpath"Taskfile.yml").write <<~EOS
       version: '3'
 
       tasks:
@@ -45,12 +50,7 @@ class GoTask < Formula
             - echo 'Testing Taskfile'
     EOS
 
-    args = %W[
-      --taskfile #{taskfile}
-      --silent
-    ].join(" ")
-
-    ok_test = shell_output("#{bin}task #{args} test")
-    assert_match "Testing Taskfile", ok_test
+    output = shell_output("#{bin}task --silent test")
+    assert_match "Testing Taskfile", output
   end
 end

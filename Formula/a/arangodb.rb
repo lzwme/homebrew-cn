@@ -18,7 +18,7 @@ class Arangodb < Formula
 
   # Vendors deps, has a low download count, build always breaks
   # https:github.comHomebrewhomebrew-corepull135487#issuecomment-1616018628
-  deprecate! date: "2023-07-05", because: :does_not_build
+  disable! date: "2024-07-05", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "go" => :build

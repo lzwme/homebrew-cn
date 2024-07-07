@@ -1,8 +1,8 @@
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
-  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.41.tar.xz"
-  sha256 "3ad392af91115b7740f7b50d228cc1c5fc13afc1da7f16cb0213917a37f71bda"
+  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.42.tar.xz"
+  sha256 "85ca62cac0d41fc77d3f6033da9df6fd73d20ea2fc18b0a3609ffb4110e1baeb"
   license "X11"
 
   # We use a common regex because libxslt doesn't use GNOME's "even-numbered
@@ -13,13 +13,13 @@ class Libxslt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8564b7e32eb44d0f06d621181a770cdf4a3e20a104bcb603b26e27b93cf3f2de"
-    sha256 cellar: :any,                 arm64_ventura:  "a59219d57c8ba7e90fc29d8f48f36fb6639ed0b86e6c2ae156e0d69fc854304e"
-    sha256 cellar: :any,                 arm64_monterey: "f473ad97775ebbc54988b87abb07d9ff553d77a781642a221ffd57b22176ded8"
-    sha256 cellar: :any,                 sonoma:         "25add8dfb26997d70c8c5078cc4052b957b7a4c9ec4b16e34a83ed5f8f60338d"
-    sha256 cellar: :any,                 ventura:        "6c1fe3aec9f51ae802a59fa5122712732ae854cbcb1dc3317c11a65d2ecee964"
-    sha256 cellar: :any,                 monterey:       "4a2901b93c934a895421a017982da0885e7b1584a2060fbf945609757a5b1495"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abee7df413e69bc6e6a943d8456db2ca2802506a3b7f19d4f355d88763fb28a3"
+    sha256 cellar: :any,                 arm64_sonoma:   "3c3a336b56c8384b9c2956202cc78e28271db8b627a65227f77f049d387b8c05"
+    sha256 cellar: :any,                 arm64_ventura:  "fd6b363128cde585e7086df6d54c8473475a568842b6aa04add1947dae8b9135"
+    sha256 cellar: :any,                 arm64_monterey: "27c8a5e233ab19a82557b33c99f4e226610859832b27c18276a49c1a3765621d"
+    sha256 cellar: :any,                 sonoma:         "33fbe4982e16be91957f9eeb77f35f70385831d479a15b87908389a1077a475c"
+    sha256 cellar: :any,                 ventura:        "82e7425e4331d0024a053434efbd3e6035721a3f792b3fb5b8b8d72fce88cc73"
+    sha256 cellar: :any,                 monterey:       "1609668b445f07134b3f6fafa6cc0307d0659466f2d4aa708e0787bf3a064a6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "222f19398d1b8f2d1efb196b2336d9b6a8b805abd6b3ab3f1d002112dc7fa67c"
   end
 
   head do

@@ -23,7 +23,7 @@ class Cronolog < Formula
   end
 
   # no new release since 2003
-  deprecate! date: "2023-07-05", because: :unmaintained
+  disable! date: "2024-07-05", because: :unmaintained
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

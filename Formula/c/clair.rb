@@ -20,14 +20,10 @@ class Clair < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dd538221ff3cbefec3bc0320d76d06efc4471fbdf8694d696535640fde60b57"
   end
 
-  depends_on "go@1.21" => :build # use "go" again when https:github.comquayclairpull1942 is released
+  depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.Version=#{version}
-    ]
-
+    ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdclair"
     (etc"clair").install "config.yaml.sample"
   end

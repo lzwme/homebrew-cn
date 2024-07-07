@@ -6,16 +6,16 @@ class CloudflareCli4 < Formula
   url "https:github.comcloudflarepython-cloudflare-cli4archiverefstags2.19.4.tar.gz"
   sha256 "7a3e9b71cad0a995d59b0c3e285e1cf16bd08d9998509f44d7c321abe803d22b"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c5cb584e79944dd6ea01f0aadbb6703ded8d1664c7677c768afdd6f838a5c2aa"
-    sha256 cellar: :any,                 arm64_ventura:  "713359996608bb858f97987b3acea28592a9a479147ab3e493b27a0dde07f88b"
-    sha256 cellar: :any,                 arm64_monterey: "d3e173833ce6640624023365df93131ef4936e6af337776ac2cf57f4cf104ce7"
-    sha256 cellar: :any,                 sonoma:         "57e3b9e205499029023ba49c72e2d57b918de8adb1815a143e0f8948fc7c5769"
-    sha256 cellar: :any,                 ventura:        "ba0cf1bb0e68e6b1a40c4a6b744724aa129aee77b9b436b8467ccba5f7d912d6"
-    sha256 cellar: :any,                 monterey:       "1b678743a85101ddd67e88c3738cbe960b96f599ba9c8a15215b2b3069aae6e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab9f57752201613b11989d7435cc8e313c1861c6dd30c6b0efaa832ac6131f16"
+    sha256 cellar: :any,                 arm64_sonoma:   "66de81a8dd306d4dc04bb5dee08879db9c8ad1351eb0b768bb97c994b47152fe"
+    sha256 cellar: :any,                 arm64_ventura:  "6520d624bbbb28eb2df42f0f139c3852187c632d816ce26b8c08da8bd23cd31f"
+    sha256 cellar: :any,                 arm64_monterey: "47d70d8f2f118ce6dc9d075dbd5b7c99aaddb85f4dbf3ba9f4e366a1dc4ba4c9"
+    sha256 cellar: :any,                 sonoma:         "9785034a135f6e1b2f58ed3ccd4dd5e57927bf9ab81ed4f767b4f19345974783"
+    sha256 cellar: :any,                 ventura:        "0836c14d10d04e0bfe45f64e37fc446a1a46f067245258f055f9378f36781157"
+    sha256 cellar: :any,                 monterey:       "17ffd70ff252dcfb6710d66fe5f437803b87f3f84168e45c55b43af6d78e642c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74fde110d3e7113590c2c952b024eff93c5f56a154a1234d1a4c455f01d21b88"
   end
 
   depends_on "libyaml"
@@ -27,8 +27,8 @@ class CloudflareCli4 < Formula
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackages07b3e02f4f397c81077ffc52a538e0aec464016f1860c472ed33bd2a1d220cc5certifi-2024.6.2.tar.gz"
-    sha256 "3cd43f1c6fa7dedc5899d69d3ad0398fd018ad1a17fba83ddaf78aa46c747516"
+    url "https:files.pythonhosted.orgpackagesc202a95f2b11e207f68bc64d7aae9666fed2e2b3f307748d5123dffb72a1bbeacertifi-2024.7.4.tar.gz"
+    sha256 "5a1e7645bc0ec61a09e26c36f6106dd4cf40c6db3a1fb6352b0244e7fb057c7b"
   end
 
   resource "charset-normalizer" do

@@ -1,8 +1,8 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
   homepage "https:rgbds.gbdev.io"
-  url "https:github.comgbdevrgbdsarchiverefstagsv0.7.0.tar.gz"
-  sha256 "ef04d24d7a79c05ffadac0c08214f59b8d8812c7d1052a585e5ab0145f093b30"
+  url "https:github.comgbdevrgbdsarchiverefstagsv0.8.0.tar.gz"
+  sha256 "7097e713384376c324bb001707b4d3924dc7051358a54069eb0bfd424ebe3c4e"
   license "MIT"
   head "https:github.comgbdevrgbds.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Rgbds < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c1c0bda09f9b4d3ff0eb38ba528aed01a4bb36c3df45d36409778f35852dda49"
-    sha256 cellar: :any,                 arm64_ventura:  "ac809ea02ad3b8f89ab89116c0e4138993b069a8e82d7512ac2dfb520506178b"
-    sha256 cellar: :any,                 arm64_monterey: "3ff99f46c769f04633aed867465af73f22321d5395c99c4f98fb3460af66f9c2"
-    sha256 cellar: :any,                 sonoma:         "6dfc174514bf7b613b7b4c678d99c7daf965f03e681870f89b7abca3334842cb"
-    sha256 cellar: :any,                 ventura:        "a0daa592ca2112053a0ca2b34437a10c1492a1a7127c17f22ef454f16fce82e7"
-    sha256 cellar: :any,                 monterey:       "db2a8ecb7d5c1bf55489604210bcd028b6b8fab8a9aeb711ec15f2f0d0cf6cf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5081091e37107f494dfa92b07d804b24df19e2d42e70eea68f6788a8ff39cfa"
+    sha256 cellar: :any,                 arm64_sonoma:   "644ff192797102456f26f9513540de9ce86765c1177ae24fe6619a2b07c2ad32"
+    sha256 cellar: :any,                 arm64_ventura:  "5f8011ddf89542afdf952b5d834fc376cf7e6690988a498426bced15ce6a9200"
+    sha256 cellar: :any,                 arm64_monterey: "b263ebc8a8e41690a7e94689d6434bf647d94e362691e591ed6a7d0138990126"
+    sha256 cellar: :any,                 sonoma:         "e91b064c360fa310ba66e30722e088e4cbbb49ca17600945aadae3553d879c01"
+    sha256 cellar: :any,                 ventura:        "a4dd6e7e0b556d48aebb97befd45473a29828eef7fc0a82c63d4fd13cece9986"
+    sha256 cellar: :any,                 monterey:       "2d1008de0fbf9ec18d5d42d08adc1451db21a3f644de7057d07d346922dbe122"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a5f81b9c7ae0f312183e29b08faeb27da936ec5c443db3c404e1fcea782b316"
   end
 
   depends_on "bison" => :build
@@ -28,8 +28,8 @@ class Rgbds < Formula
   depends_on "libpng"
 
   resource "rgbobj" do
-    url "https:github.comgbdevrgbobjarchiverefstagsv0.2.1.tar.gz"
-    sha256 "3d91fb91c79974700e8b0379dcf5c92334f44928ed2fde88df281f46e3f6d7d1"
+    url "https:github.comgbdevrgbobjarchiverefstagsv0.3.0.tar.gz"
+    sha256 "273fe064750503e3687aeb24026074d78406724d313c48c01c3ad10920896962"
   end
 
   def install

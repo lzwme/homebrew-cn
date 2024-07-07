@@ -1,4 +1,6 @@
 class OpenAdventure < Formula
+  include Language::Python::Virtualenv
+
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
   url "http://www.catb.org/~esr/open-adventure/advent-1.19.tar.gz"
@@ -22,8 +24,8 @@ class OpenAdventure < Formula
   end
 
   depends_on "asciidoc" => :build
+  depends_on "libyaml" => :build
   depends_on "python@3.12" => :build
-  depends_on "pyyaml" => :build
 
   uses_from_macos "libxml2" => :build
   uses_from_macos "libedit"
@@ -32,12 +34,17 @@ class OpenAdventure < Formula
     depends_on "pkg-config" => :build
   end
 
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+  end
+
   def install
-    python = Formula["python@3.12"].opt_bin/"python3.12"
-    system python, "./make_dungeon.py"
+    venv = virtualenv_create(buildpath, "python3.12")
+    venv.pip_install resources
+    system venv.root/"bin/python", "./make_dungeon.py"
     system "make"
     bin.install "advent"
-    system "make", "advent.6"
     man6.install "advent.6"
   end
 

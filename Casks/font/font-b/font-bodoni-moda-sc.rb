@@ -3,10 +3,11 @@ cask "font-bodoni-moda-sc" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflbodonimodasc"
   name "Bodoni Moda SC"
-  homepage "https:github.comindestructible-typeBodoni"
+  homepage "https:fonts.google.comspecimenBodoni+Moda+SC"
 
   font "BodoniModaSC-Italic[opsz,wght].ttf"
   font "BodoniModaSC[opsz,wght].ttf"

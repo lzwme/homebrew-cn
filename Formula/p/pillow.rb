@@ -17,7 +17,6 @@ class Pillow < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "freetype"
@@ -49,7 +48,7 @@ class Pillow < Formula
     end
 
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args,
+      system python, "-m", "pip", "install", *std_pip_args(build_isolation: true),
                      "-C", "debug=true", # Useful in case of build failures.
                      "-C", "tiff=enable",
                      "-C", "freetype=enable",

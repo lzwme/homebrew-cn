@@ -1,21 +1,19 @@
 class Nq < Formula
   desc "Unix command-line queue utility"
   homepage "https:github.comleahneukirchennq"
-  url "https:github.comleahneukirchennqarchiverefstagsv0.5.tar.gz"
-  sha256 "3f01aaf0b8eee4f5080ed1cd71887cb6485d366257d4cf5470878da2b734b030"
+  url "https:github.comleahneukirchennqarchiverefstagsv1.0.tar.gz"
+  sha256 "d5b79a488a88f4e4d04184efa0bc116929baf9b34617af70d8debfb37f7431f4"
   license "CC0-1.0"
   head "https:github.comleahneukirchennq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4711f28cc5781e6a6c3049192e4de16dd65a87dd1b33fcc610fbf4e93f80d36a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3006d397e3423d928d11d7473559b0ef1f68cc95d11a784d450b7e0afc0b1182"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b050bc2a3667662b9f12ec156c2aa73758b5a58803029c56172ba8c8ce0dd0f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8f30174530722649e4515ff41c06d3d4d88d96db7a5f69299ee827c2112c9274"
-    sha256 cellar: :any_skip_relocation, sonoma:         "abbcaf287d79639bc7d94f902dac86bfcaf43ed901ded606488b0b63fe32669b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8ab76c16891d21276c7db64fe81a29a81fac99c745ab37181df9674e717d3ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b0266ca4e323c0d7edabfe047d20d2dad6065d2d41708e89ed29af617ddc5c4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "57fa203a54904a2fdc06cb0031a6d2bea0cfcd3137562b0c64cf3ac92dc4dd7f"
-    sha256 cellar: :any_skip_relocation, catalina:       "c33190abc0b66757582008bf593ab4e37c977f7d9faeafdea6b1631c455ca4a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae28c7a5e20440483a4e5b28b0d1ee042484fdc9f350945eb529880bd3ff491e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e707baa4138b15e50ebce902f36c011180a3294c5391448954c81dd94378de1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "532896b3958f00fc540461bfffa1864dcae2d51165c100a8eb42de5ce734f021"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2cc1df79c5e57c03e1356d2c574477d43c0a2b4e3b43931d11137716e14065b"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ec6ec8c64eb5462a319fc640f4c8be7fbf7df78fef3633d28244a1030f80adb"
+    sha256 cellar: :any_skip_relocation, monterey:       "f4b2a60136050855c0446ce1e7d9baa890541f11e9bd7991b54f8fe8dce36054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af85098406f38474034563e06b631e0fb9671331bbb057a9c3f0311f086f51f"
   end
 
   def install
@@ -24,8 +22,8 @@ class Nq < Formula
   end
 
   test do
-    system "#{bin}nq", "touch", "TEST"
-    assert_match "exited with status 0", shell_output("#{bin}fq -a")
+    system bin"nq", "touch", "TEST"
+    assert_match "exited with status 0", shell_output("#{bin}nqtail -a 2>&1")
     assert_predicate testpath"TEST", :exist?
   end
 end

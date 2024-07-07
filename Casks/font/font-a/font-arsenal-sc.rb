@@ -3,10 +3,11 @@ cask "font-arsenal-sc" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflarsenalsc"
   name "Arsenal SC"
-  homepage "https:github.comalexeivaArsenal"
+  homepage "https:fonts.google.comspecimenArsenal+SC"
 
   font "ArsenalSC-Bold.ttf"
   font "ArsenalSC-BoldItalic.ttf"

@@ -1,8 +1,8 @@
 class HelmDocs < Formula
   desc "Tool for automatically generating markdown documentation for helm charts"
   homepage "https:github.comnorwoodjhelm-docs"
-  url "https:github.comnorwoodjhelm-docsarchiverefstagsv1.13.1.tar.gz"
-  sha256 "b1a0eba4120614f3ddc4d5cbe1133dcfc44ef746543c49a3e07168d2db55827d"
+  url "https:github.comnorwoodjhelm-docsarchiverefstags1.14.0.tar.gz"
+  sha256 "65386a0c6401486d135a7c436b28fd1e9b8d0232bc2c702f8c7406a1139aa54a"
   license "GPL-3.0-or-later"
 
   # This repository originally used a date-based version format like `19.0110`
@@ -15,17 +15,22 @@ class HelmDocs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eba1e91b5e61ec7040156632bef627ef0dd5625aad0753a887757ff03931f27c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49d016199c385757eff2bd246e57c130e955835ae6ec1d62be68149a014ac55f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faecf2dada756f4f7f1bda0d5f08386d258d51be956ba4ea6380a111024b19ce"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cd685b2f668306f47d418fed933ee59261d1e0d3cfacfe8069e44e910feaaf8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "462c5093e116867eaea0284c644f7a04faf8fbcce65c5d1659085178fa03180d"
-    sha256 cellar: :any_skip_relocation, monterey:       "736df8bcd7635cdcddcf78d4da9bbabd39b26ff43389d0fed0ef7be5d4f969c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "330cdedbb4afcb298253191709eb4e7b17d4615eca3382d78be7375afa9fd55e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b2c53928925eae9f19d20b0912ca6e65669a6f4aea0072cdde49115ecc60b37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9932d8a6f935a341c99838d2cf55962608136850790ab777276b4614752bc8ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06d6a8887470d6659c83593b17ad858581aba3b4cf00a90b354ba06280a5cfda"
+    sha256 cellar: :any_skip_relocation, sonoma:         "62a07c0ed09269214fd203bf921957623fa96c352bd0b208ce086f7b5d48afc0"
+    sha256 cellar: :any_skip_relocation, ventura:        "80fc1daa00c2d42586e91140cff724042394aa990b280768808c13c208c4627b"
+    sha256 cellar: :any_skip_relocation, monterey:       "8542bc685ddaa2361b52fafad0584bee6c6e4aef4e32a66656300f2f8c9dd18e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b82e35467e5145808747ea4ef21c4ff637e710325a2fb2598157d97f6481203"
   end
 
   depends_on "go" => :build
+
+  # patch go version, upstream pr ref, https:github.comnorwoodjhelm-docspull247
+  patch do
+    url "https:github.comnorwoodjhelm-docscommit0b634309511c595c50b32d3a3090c45fa5a4cd2e.patch?full_index=1"
+    sha256 "6607867eb63efb3e67a42a704f37615277f4638f167cbfdd697d35a335710b0a"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelm-docs"

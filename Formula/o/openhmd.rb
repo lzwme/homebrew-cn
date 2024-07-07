@@ -29,7 +29,6 @@ class Openhmd < Formula
   depends_on "hidapi"
 
   conflicts_with "cspice", because: "both install `simple` binaries"
-  conflicts_with "libftdi0", because: "both install `simple` binaries"
 
   def install
     system ".autogen.sh"

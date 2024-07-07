@@ -10,4 +10,10 @@ cask "bit-slicer" do
   depends_on macos: ">= :high_sierra"
 
   app "Bit Slicer.app"
+
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.zgcoder.bitslicer.sfl*",
+    "~LibraryPreferencescom.zgcoder.BitSlicer.plist",
+    "~LibrarySaved Application Statecom.zgcoder.BitSlicer.savedState",
+  ]
 end

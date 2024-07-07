@@ -21,7 +21,6 @@ class LibvirtPython < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "libvirt"
   depends_on "python@3.12"
 
@@ -33,7 +32,7 @@ class LibvirtPython < Formula
 
   def install
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
+      system python, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
   end
 

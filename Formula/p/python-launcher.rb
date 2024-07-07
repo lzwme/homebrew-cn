@@ -1,23 +1,19 @@
 class PythonLauncher < Formula
   desc "Launch your Python interpreter the lazysmart way"
   homepage "https:github.combrettcannonpython-launcher"
-  url "https:github.combrettcannonpython-launcherarchiverefstagsv1.0.0.tar.gz"
-  sha256 "31e5a4e50e3db4506e8484db06f6503df1225f482b40a892ffb5131b4ec11a43"
+  url "https:github.combrettcannonpython-launcherarchiverefstagsv1.0.1.tar.gz"
+  sha256 "6f868da0217b74e05775e7ebcbec4779ce12956728397ea57fd59c8529c56b6d"
   license "MIT"
   head "https:github.combrettcannonpython-launcher.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "446742ea1596a204f7df42c2ff0e434e3cbdab3b959e7c590c3e1b29d74d8d8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd92ae1827420e02bd899e2a8f4be16b31bad24abb5038f934f944603acf03e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a1439311c007d3300050b0d8783fdae8cff055a1f33505a74c8085c180adeed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5310aafe95f47164c849bbb278708ba5f2a601739c7556e19e9f8389e618320c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf4a49b26c676e007c2e32a39722ab427722648fe1a2a483384d10379f6da67f"
-    sha256 cellar: :any_skip_relocation, ventura:        "db1819262548dff7c3f1f55eb4414a5a23f1e23db211eb7cc841d90e11e28ba7"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c80376c3923316d00b043281cb9c53a6cfaebc748c16fd0237b7f1dcfd50efe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ccb5a7d8b51f327df0003a9ee2a64bda64c962bdfb86e2b71dc21819c395a74e"
-    sha256 cellar: :any_skip_relocation, catalina:       "2f7377330417e885a222ae6e3bcfc51a36415713fce24973eb9448c9be058e27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd2b8f79e79ec6ea754393c44e392b57c9ab622568a465b46cdb7e93f85a2b30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0146c61c87ead63c9c650d43e12d5050001109ff75d9a7f410cd747c36a484bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f3708b110318c5c3596eb21ecd45390921eac40ae0201fcd262fdb476d9c744"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09f64d96d2ebb83f2c9520ed535a77b8a3e4095f9a6c216de53553357242fee0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "04dae312adf70a9df94f79210ccf241013f58ce4aadf6cc29951c03cc16957b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b82f0178b46f14118b120598178b823812db7caecdf91b4e8822a4b8f143227"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3b9e42353ee19f5354a4e8f6b19c941926977398f021261b5cc3c11aa28d8d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "252b4ae87c81431c5f8929f9c41922224856ac40aaf928e2c7874ff5400acf3b"
   end
 
   depends_on "rust" => :build
@@ -25,7 +21,7 @@ class PythonLauncher < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    man1.install "docsman-pagepy.1"
+    man1.install "man-pagepy.1"
     fish_completion.install "completionspy.fish"
   end
 

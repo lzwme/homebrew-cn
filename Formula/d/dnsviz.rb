@@ -3,19 +3,18 @@ class Dnsviz < Formula
 
   desc "Tools for analyzing and visualizing DNS and DNSSEC behavior"
   homepage "https:github.comdnsvizdnsviz"
-  url "https:files.pythonhosted.orgpackagesa57cb38750c866e7e29bc76450c75f61ede6c2560e75cfe36df81e9517612434dnsviz-0.9.4.tar.gz"
-  sha256 "6448d4c6e7c1844aa2a394d60f7cc53721ad985e0e830c30265ef08a74a7aa28"
+  url "https:files.pythonhosted.orgpackagescd6e8e285523108cc91b32f0584c2b4a7b006348af597cdc84e728206df15b3bdnsviz-0.10.0.tar.gz"
+  sha256 "8e2c4d0636296acf704f7eca1ca8fea98b022c920c5517b39dfdc982ce685cd3"
   license "GPL-2.0-or-later"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1a681d17c245dded85b9d6c0d11245e57c24970a151d61520b7658611ccfaedc"
-    sha256 cellar: :any,                 arm64_ventura:  "7b0873435a98770c510abc4a1cd215afe91dbebea3f0bb6e3413fe13c7b4b374"
-    sha256 cellar: :any,                 arm64_monterey: "1eb6c2046c1fac80de7d459b88deb69cdcee9a1291f3db1fee6eeb9067b54ac6"
-    sha256 cellar: :any,                 sonoma:         "08abe1fdfb557d401bfe08da1407448f2e20f6d2ecd254b24ffb9a584c3e7e71"
-    sha256 cellar: :any,                 ventura:        "3853449bdffe374c2d5139bc54e7d1f060b79ba912c4b0cc5686c830685b6df5"
-    sha256 cellar: :any,                 monterey:       "83301d907db7028a16c1effb580097c293c9d3853782d2af83c792cdaedaa40f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c780c60799ebb5d98d3b6a7a754f22618abb9bed88a07cc184a4646a852c4845"
+    sha256 cellar: :any,                 arm64_sonoma:   "010d753c953f5784dbdcabb3a0e178b37feebc15a8849ecc60da0e06e6b1a98d"
+    sha256 cellar: :any,                 arm64_ventura:  "11074313d53d5f0e1bb3bb45e5f0d2cfd360890158bb0db237acfb5fdac8b4a6"
+    sha256 cellar: :any,                 arm64_monterey: "4cb91ae29fff849510d2eab470bcfe4370158db481f9ce11101661a692ff1855"
+    sha256 cellar: :any,                 sonoma:         "d16f6e37ee84a64ed3dd280965879b0d103dd67b1330842d61b5bb3502cd526e"
+    sha256 cellar: :any,                 ventura:        "be79adbc4298d749b20aa5d3f223a80bab1ebb58cac17a5ee5bbb89d7449a1ea"
+    sha256 cellar: :any,                 monterey:       "6ed049efc4d975a5eff8cdfb85e2f23274d73e9218e9b4bf4ce4822f04d96c46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80fb24e908cb98fc30a35d3a4a882daa73eaa9c1b9678a4ec714f3118e42450c"
   end
 
   depends_on "bind" => [:build, :test]
@@ -42,8 +41,8 @@ class Dnsviz < Formula
   end
 
   resource "pygraphviz" do
-    url "https:files.pythonhosted.orgpackagesf02a3a7e5f6ba25c0a8998ded9234127c88c5c867bd03cfc3a7b18ef00876599pygraphviz-1.12.tar.gz"
-    sha256 "8b0b9207954012f3b670e53b8f8f448a28d12bdbbcf69249313bd8dbe680152f"
+    url "https:files.pythonhosted.orgpackages8c417b9a22df38bb7884012b34f2986d765691dbe41bf5e7af881dfd09f8145fpygraphviz-1.13.tar.gz"
+    sha256 "6ad8aa2f26768830a5a1cfc8a14f022d13df170a8f6fdfd68fd1aa1267000964"
   end
 
   def install

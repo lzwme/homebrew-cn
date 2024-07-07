@@ -4,15 +4,16 @@ class Glibmm < Formula
   url "https://download.gnome.org/sources/glibmm/2.80/glibmm-2.80.0.tar.xz"
   sha256 "539b0a29e15a96676c4f0594541250566c5ca44da5d4d87a3732fa2d07909e4a"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "8146911c8de1e567e11c9125e200d980aa8fcc949670be77f005337fc13d1539"
-    sha256 cellar: :any, arm64_ventura:  "80d92647ef150c09cb50379b97a7ff74ce525266a9d43b0b72d094642c688d0a"
-    sha256 cellar: :any, arm64_monterey: "a59f817889d8bff3abe041194aa52717d28e9429e069005e8f92d57805fe0db1"
-    sha256 cellar: :any, sonoma:         "349305c1bf11e5833b7288e1898f63ea520bb259eec32a957fceda0a59b60186"
-    sha256 cellar: :any, ventura:        "6ec8c02168f12f069a8d75cfa6f81af8fd906b1ffb1f8678a865b6879adc28c4"
-    sha256 cellar: :any, monterey:       "9bfc78450bef875c2a85fc9ca85f6036914a4d56ba9fcd0139404f5308c14c97"
-    sha256               x86_64_linux:   "dfa186baebe5dca5af93f3ca2799e34ad128efedc6183bdad0f3e73bbdf41acd"
+    sha256 cellar: :any, arm64_sonoma:   "874cd180abccbe1e4637ba6459ee2c4aa60b65adc240387ae6aa3a47ac040e11"
+    sha256 cellar: :any, arm64_ventura:  "eb5880ccddc02dd49653b67767b06d9aa6748e2895ebf6a7adcff17651063a2a"
+    sha256 cellar: :any, arm64_monterey: "0a8b3f36488bd9bda5ea87ef2123e905321212397c690c1c21f26b19e47496a1"
+    sha256 cellar: :any, sonoma:         "318957fb8c9cc96ed11a7df991c065dfb0b3409a3f3363addbac27ec12ee290b"
+    sha256 cellar: :any, ventura:        "94875f1cf28156ff0fd0a5b71ba8282ac62ac146db0e69c943246f8df2f15d0f"
+    sha256 cellar: :any, monterey:       "65cc335fd272f9dc8f3cc40d6ab66de7a7220a6a5a370474356025b18b7b4e52"
+    sha256               x86_64_linux:   "10ff3f89ee53bcd2daaee31764896d968e9292ba7cdd46cde031c658fed1b2dc"
   end
 
   depends_on "meson" => :build
@@ -27,6 +28,12 @@ class Glibmm < Formula
     system "meson", "setup", "build", "-Dbuild-examples=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+
+    return unless OS.mac?
+
+    inreplace lib/"glibmm-2.68/proc/gmmproc",
+              "#{HOMEBREW_LIBRARY}/Homebrew/shims/mac/super/m4",
+              "#{HOMEBREW_PREFIX}/bin/m4"
   end
 
   test do

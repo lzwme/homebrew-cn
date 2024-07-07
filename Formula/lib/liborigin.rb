@@ -1,8 +1,8 @@
 class Liborigin < Formula
   desc "Library for reading OriginLab OPJ project files"
   homepage "https://sourceforge.net/projects/liborigin/"
-  url "https://downloads.sourceforge.net/project/liborigin/liborigin/3.0/liborigin-3.0.2.tar.gz"
-  sha256 "2581420d427481eee8c371ad5b6ebeba83bd7faa8df117c7a3f7d3250b4429ca"
+  url "https://downloads.sourceforge.net/project/liborigin/liborigin/3.0/liborigin-3.0.3.tar.gz"
+  sha256 "b394e3bf633888f9f4a3e1449d7c7eb39b778a2e657424177a04cde4afe6965a"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Liborigin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "28bd38fca29a6137db214a6d8c4b151705d5d1028e844aa3c004eb253bf8627b"
-    sha256 cellar: :any,                 arm64_ventura:  "ca63266ed035f00907bd903e8005eea61a165897074fa66ed6b265456ebd9ac1"
-    sha256 cellar: :any,                 arm64_monterey: "0622ef79242ba03c3ed38ec3a42b05c94488369371cfd7d0efb2e6b0b26b08ad"
-    sha256 cellar: :any,                 sonoma:         "7984988756f10f27e88653cc4f61d69abdc8241d1f3c49da9f1be8d0b6a2e83d"
-    sha256 cellar: :any,                 ventura:        "2486e161b330f0af0015f9234f5ca3d45f192aa88f0b18c9cb8f0718c2135ed3"
-    sha256 cellar: :any,                 monterey:       "08d242356b0df10fcea02d69bd93f039e3c1fcecf170eb3b497f53d99e6a73a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ab6103c2fb90a0349ce227ec251c72188cc0a0c77dc145305383c8f589e9eb4"
+    sha256 cellar: :any,                 arm64_sonoma:   "6b2321d3a34333dd2412625fb5710244eb6ec6d14b0dbeb920bfedc2be8a2452"
+    sha256 cellar: :any,                 arm64_ventura:  "c03e70300f707b2eb9df6c967d9a57f7a2c642c6ab579e431586398959af7c7b"
+    sha256 cellar: :any,                 arm64_monterey: "5cc7c81fa2c9f7c5e43a523c73ede1f85f50c2163d5ae177e89438f39f17379c"
+    sha256 cellar: :any,                 sonoma:         "66b7d4f00528e398d6dac79c6f4bb4b851d0c6a6da36d9ad2a592a8fcb5566db"
+    sha256 cellar: :any,                 ventura:        "cc73444b1cd2328a431f07471a2a1c91f7b5461fe9aceb8ca356f748e5099f95"
+    sha256 cellar: :any,                 monterey:       "b56942f218b5c8a1c954fe63c4f440ab61c845bdab16b11aae95ab292ed28038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b2bd55d4b555d79b2b215f8d543f9fb5b7c948d066fd8b5bcc42b869b932341"
   end
 
   depends_on "cmake" => :build

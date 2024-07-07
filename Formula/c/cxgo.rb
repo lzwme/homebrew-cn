@@ -1,23 +1,19 @@
 class Cxgo < Formula
   desc "Transpiling C to Go"
   homepage "https:github.comgotranspilecxgo"
-  url "https:github.comgotranspilecxgo.git",
-      tag:      "v0.3.7",
-      revision: "cfc1ca865f59182eea902a45ce96b4cdda0f2b8c"
+  url "https:github.comgotranspilecxgoarchiverefstagsv0.4.0.tar.gz"
+  sha256 "d17a69ae9d6bc96341a989d0f673f1f6b8f65686987ddbe4c903b571e56c665f"
   license "MIT"
   head "https:github.comgotranspilecxgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c65c05bac7e287fcb4f8cc5b34b3116ad2b2ace2315621e0675c551072d896d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01d2976616ed7156938f6162585a3c948d95cc949d49b97abc29bed8c381b136"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b5a70797d3f41c27dcb860fb1e35578a9f2d09cc50504f0bf04cde5797ed2f3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "800b736a7731fda17e15de197a00562e70c863b62bd00afd9d216996efef6ecf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bbbc952c7e4d7a09570258782960b099acbf84f0e47007ae405e67f3aff34c52"
-    sha256 cellar: :any_skip_relocation, ventura:        "af5a140675ba61902c305c2be1ba5fbe7e83d12ec2d1cfb3648ea471af7f3cbb"
-    sha256 cellar: :any_skip_relocation, monterey:       "eef11759db93aaeba729c7f76ccc73940f321c010446194ab42527fbce73ad2b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5db55c7ab63bdd7771b87c55a0e9ce64c6e60f9d588d1620a113451ee15554f0"
-    sha256 cellar: :any_skip_relocation, catalina:       "6287342a8d7a37d461611a3382cfe09d6509c5e692ba5f1de4f54e19a569d01c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a8fb8c61c95813b7a8315c01c28265835583f15f6df4253bc117751b87d3a34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bed5ef0e2d7d6f45377b192e8abcc594ad9b3cd763905ae28093c54598cf88a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c16827d8dfadf869da239e7abd54cd2868eed4abbb4b027b3ee00c37893ee8f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71999929e1355bbe9c8b119dde56c7a39006abc44a91cc1b83fc71717d507fa7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ccdb1b1538ea5be8610c8afdb399da9bc8754514b4a4658b41dfaf90727e8e05"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf4dd149ddba8b895c4ff91b69bcd0eca0726935010f0dd3fad497087cfdda6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "19b69309d1dedbb456c32573d64771b0529158dad1dddf4f52b0f990da99e7bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26ef72201e83ff7d5c5409e6eef61999a44d60771c5829839f55966b8abdb289"
   end
 
   depends_on "go" => :build
@@ -26,7 +22,7 @@ class Cxgo < Formula
     ldflags = %W[
       -s -w
       -X main.version=#{version}
-      -X main.commit=#{Utils.git_head}
+      -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
 

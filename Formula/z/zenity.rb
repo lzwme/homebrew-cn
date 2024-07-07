@@ -1,18 +1,18 @@
 class Zenity < Formula
   desc "GTK+ dialog boxes for the command-line"
   homepage "https://wiki.gnome.org/Projects/Zenity"
-  url "https://download.gnome.org/sources/zenity/4.0/zenity-4.0.1.tar.xz"
-  sha256 "0c2f537813b10f728470d9d05d6c95713db2512f9c95096e1e85b1a6739605e6"
+  url "https://download.gnome.org/sources/zenity/4.0/zenity-4.0.2.tar.xz"
+  sha256 "c16dcae46e29e22c2fa0b95e80e06c96b2aec93840161369c95c85ed9f093153"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "212ea8114fd4a8194d54901b7ffd39c0775596635c6d43d96792cee3f5d58c6f"
-    sha256 arm64_ventura:  "17e3166e2e29d183fd28e6698507363ece6abd27f9a4bbed174078946340d924"
-    sha256 arm64_monterey: "98b08d8479d72e2fda14722591ca57443ad0c8d14e24ad9ac8557f7e68d4c933"
-    sha256 sonoma:         "a0181ae41410618b7530b9b001fa8f5173ec7201d8caa6448e879d2e3be90067"
-    sha256 ventura:        "84b0b5d4903ee46ec73daee35c78c77dd5ccee2b8f7b09e3d3b5617d95f0625b"
-    sha256 monterey:       "689624fa6e714ea580b2e88d1a22fdd1b1fa512e8f278fe2383b3b0b0ecb8384"
-    sha256 x86_64_linux:   "6721b9d7445e31cb9f9c89d4a9733dee9eb326b0036a13dc37a4480aee992840"
+    sha256 arm64_sonoma:   "324af3731f3817b139c002ff323090fc082a0fd98d62bf7111301a9bf6b6315f"
+    sha256 arm64_ventura:  "ced590fb6362f41d1ceb9783aa9ed4355991119d7775e13b5c7ca3a9ebc528b2"
+    sha256 arm64_monterey: "f8f09e214c8a87f2b4b123047657e12d355a14d2c95def2b9f52f9dd5fecc04e"
+    sha256 sonoma:         "90746002a9d277c8a59657a992f207cc3de2930ec3ad348883d1fc9d7f2f5bfb"
+    sha256 ventura:        "df30edd6cadf89bad689859f1109f3a600631ee7ddbbf1c897ddae880e01e6ac"
+    sha256 monterey:       "fb144d3c4bb1933b812a71e17a61f042c590134fe751f7be878e89187d540543"
+    sha256 x86_64_linux:   "3b1e00581cd9fb4b0fa0506018c864ba34cb5a4a5db6fd67dcd06b60c7ea88d0"
   end
 
   depends_on "gettext" => :build

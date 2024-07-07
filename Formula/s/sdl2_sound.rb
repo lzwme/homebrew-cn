@@ -10,15 +10,14 @@ class Sdl2Sound < Formula
   head "https:github.comicculusSDL_sound.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c0e08d7f39c6a105807852f51e101b5753929046f715a6a6c8908f4456374662"
-    sha256 cellar: :any,                 arm64_ventura:  "78efdb69dd2f29646f6e4e13ebe2b73021b16c39be323c589a9076c89431f31d"
-    sha256 cellar: :any,                 arm64_monterey: "fc10f79b0f7063898408b2256c67205bf4da1b64858534b605ee4d2502812884"
-    sha256 cellar: :any,                 arm64_big_sur:  "bd8b8ebfe41a9635a97c6798eda4a584dc6ca4046fe5195d47d89c2bbc267205"
-    sha256 cellar: :any,                 sonoma:         "c825a14430098f03bacb6186997e4860780f299ae85fd1a58acc764b6c30cfc1"
-    sha256 cellar: :any,                 ventura:        "e7e2502eeadf23ca7327e087c6b7d7afeb12f75727a2ecbc2662bcacb0b951e1"
-    sha256 cellar: :any,                 monterey:       "b4b2f9f1681928e4cc8dbe0fddbc40eb311de24144155d6b043dbb1415af3bd2"
-    sha256 cellar: :any,                 big_sur:        "b7d96ba9534e1e3fbff4585f8994169c148c1e19da87b0bdd879bdca2211a5aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08026f0cdd8b3e6ff8cc66cb968a8107472fc9f6ca97ce0b9ef78e910dcbb206"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b5dbb3211b7148b6db375929569eb077f38073e870263aec7ce1a0350728cc3c"
+    sha256 cellar: :any,                 arm64_ventura:  "8eea51b732b96e20c63322757b3b75d6b56e47b20a5431b9167c3a51c77108ad"
+    sha256 cellar: :any,                 arm64_monterey: "716eacab5e22fae2b8fa9319408099115d9b248a0d1106ca42b2066324a6b8c3"
+    sha256 cellar: :any,                 sonoma:         "7f6da7961795af5407b4647dffea3225d64b26b820a3b9f48887e0d3d99ccff0"
+    sha256 cellar: :any,                 ventura:        "59c050c5363b877bc2359c9c05ff279ab369c1d05db4a6dcc191e42ef593408b"
+    sha256 cellar: :any,                 monterey:       "1610ef569e7dd41e1049f0b8dc795c16532fd94bd4c2f3690b428826dd88ca66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1239f72dacd41eba7fb03d0f5eafc640ae44a1e2a937f4ebfe7aca1340ad7c0"
   end
 
   depends_on "cmake" => :build
@@ -65,7 +64,7 @@ class Sdl2Sound < Formula
          File extension "UMX"
          File extension "XM"
          Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
-         https:modplug-xmms.sourceforge.net
+         http:modplug-xmms.sourceforge.net
 
        * MPEG-1 Audio Layer I-III
          File extension "MP3"

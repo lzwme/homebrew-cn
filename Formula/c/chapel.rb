@@ -4,17 +4,17 @@ class Chapel < Formula
   url "https:github.comchapel-langchapelreleasesdownload2.1.0chapel-2.1.0.tar.gz"
   sha256 "72593c037505dd76e8b5989358b7580a3fdb213051a406adb26a487d26c68c60"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comchapel-langchapel.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "3f9e90c98eb1bb7eac6d8efd9e74d8fae13fe480db295f6ebe525acaf2bdb296"
-    sha256 arm64_ventura:  "fcffb99bb673abb3bf462c89beb33c735fc8ad909ab7d631c0e19a73eae7e7f3"
-    sha256 arm64_monterey: "34e564f7870b9c8093303286dea05d92ee52e9a46c974c405bdb5dd62ea9b375"
-    sha256 sonoma:         "bd0c31abc87c2cf3cce274baa551189bdfec28c975ea4e511bc9aefb5b7f7669"
-    sha256 ventura:        "ecdb74bf7d09036004561f4259cf67ca9f9c66385f7c654541fd293032182ea2"
-    sha256 monterey:       "631a09bb74e26e6b92a80b8e8050926e9686e1e3000833e534751d98e99ee455"
-    sha256 x86_64_linux:   "0580d2a4392040690610e1dee948c9e470e129eacaf113bcc56955029e43eeb4"
+    sha256 arm64_sonoma:   "8fef36b23b39444d16b245ebdbe8db4e9eacf700237c9a45b855481147bf38ec"
+    sha256 arm64_ventura:  "9e8107f9f7a48cfd519ae6a240ad2b21a5a380d40177b7bcef8126b03447c053"
+    sha256 arm64_monterey: "1cba37d433a5b4a893f9b220cf5ca0434bca0bfa383e7724ee71096a6598fc8f"
+    sha256 sonoma:         "d4d8a4f514115690e1c7968f239e0449e3e0a55094e90dc5a857892eeb588c55"
+    sha256 ventura:        "38afff1791b315572dbb30cc11b708ad6d222f61f7501ca86caed38d7837dfe6"
+    sha256 monterey:       "b7860d273572a53d93fe98344995af049c97eb4e94c02d4cffcc45854bc6b106"
+    sha256 x86_64_linux:   "a038f17093596dfb5c2edeb04719dcb2e32f5255a6c770a6ad351b69aa6ebdff"
   end
 
   depends_on "cmake"

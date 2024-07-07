@@ -27,9 +27,11 @@ class Echidna < Formula
   depends_on "truffle" => :test
 
   depends_on "crytic-compile"
+  depends_on "gmp"
   depends_on "libff"
   depends_on "secp256k1"
   depends_on "slither-analyzer"
+
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 

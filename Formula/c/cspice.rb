@@ -31,9 +31,7 @@ class Cspice < Formula
   end
 
   conflicts_with "openhmd", because: "both install `simple` binaries"
-  conflicts_with "libftdi0", because: "both install `simple` binaries"
   conflicts_with "enscript", because: "both install `states` binaries"
-
   conflicts_with "pwntools", because: "both install `version` binaries"
 
   def install

@@ -6,16 +6,16 @@ class Abi3audit < Formula
   url "https:files.pythonhosted.orgpackages988c987d0c3fbc7e7ce2e1baa336d7cd68c6b0ffbf0237442c4e33175824eefaabi3audit-0.0.10.tar.gz"
   sha256 "a68af492ec3b373bd9329ed05b7bacdecd727a97b1d75921634c35d0e5f48de5"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c45a3f9c902494765edd9f5705cb2b3da3d5b0c8effae3ecedb1d9dbd7b1ad2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c45a3f9c902494765edd9f5705cb2b3da3d5b0c8effae3ecedb1d9dbd7b1ad2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c45a3f9c902494765edd9f5705cb2b3da3d5b0c8effae3ecedb1d9dbd7b1ad2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d429d98655add0a8be836f3f1a1d366cac5bb31b899856468b24716b5e970648"
-    sha256 cellar: :any_skip_relocation, ventura:        "d429d98655add0a8be836f3f1a1d366cac5bb31b899856468b24716b5e970648"
-    sha256 cellar: :any_skip_relocation, monterey:       "d429d98655add0a8be836f3f1a1d366cac5bb31b899856468b24716b5e970648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ae139ee8bf273db0bd5d0ce65d98e1b24345dcdf733ddd615af60ff357cb884"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08f4106ce4abc24526bf62b46669bafe46b981a65cd5dc8d5fbafcd92442222a"
   end
 
   depends_on "cmake" => :build
@@ -27,8 +27,8 @@ class Abi3audit < Formula
   end
 
   resource "abi3info" do
-    url "https:files.pythonhosted.orgpackages011a262b6492a13441de9430361d637c9088f3064d35989833ef2f73789d0749abi3info-2024.4.25.tar.gz"
-    sha256 "fce8da37363c82a2681ed91f5c60f00daf95beed9e4bb868b15350dcfe760aa9"
+    url "https:files.pythonhosted.orgpackages3ba83223100090d37f36054159e761ab06694186ee32f6576b5dc4817d18921babi3info-2024.6.25.tar.gz"
+    sha256 "e94bf88025c4bee77ebe0ff24a39b103dce646345de5e21f9fdfc8f9a00c1830"
   end
 
   resource "attrs" do
@@ -42,8 +42,8 @@ class Abi3audit < Formula
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackages07b3e02f4f397c81077ffc52a538e0aec464016f1860c472ed33bd2a1d220cc5certifi-2024.6.2.tar.gz"
-    sha256 "3cd43f1c6fa7dedc5899d69d3ad0398fd018ad1a17fba83ddaf78aa46c747516"
+    url "https:files.pythonhosted.orgpackagesc202a95f2b11e207f68bc64d7aae9666fed2e2b3f307748d5123dffb72a1bbeacertifi-2024.7.4.tar.gz"
+    sha256 "5a1e7645bc0ec61a09e26c36f6106dd4cf40c6db3a1fb6352b0244e7fb057c7b"
   end
 
   resource "charset-normalizer" do
@@ -102,8 +102,8 @@ class Abi3audit < Formula
   end
 
   resource "requests-cache" do
-    url "https:files.pythonhosted.orgpackages0cf62a1078b61b5b21718b61500b08e84ecd525d94a162db782c1065f9f571c7requests_cache-1.2.0.tar.gz"
-    sha256 "db1c709ca343cc1cd5b6c8b1a5387298eceed02306a6040760db538c885e3838"
+    url "https:files.pythonhosted.orgpackages1abe7b2a95a9e7a7c3e774e43d067c51244e61dea8b120ae2deff7089a93fb2brequests_cache-1.2.1.tar.gz"
+    sha256 "68abc986fdc5b8d0911318fbb5f7c80eebcd4d01bfacc6685ecf8876052511d1"
   end
 
   resource "rich" do

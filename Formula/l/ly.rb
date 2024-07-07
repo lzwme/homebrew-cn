@@ -17,7 +17,6 @@ class Ly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58025ba773b81b7d22e72c002f9ce7ed7691bf6f51d10ed8d60bf065ac330ff8"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   def python3
@@ -25,7 +24,7 @@ class Ly < Formula
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
   end
 
   test do
