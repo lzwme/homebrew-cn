@@ -5,6 +5,11 @@ class Scrcpy < Formula
   sha256 "9a29ac5171dd81c250337d9b0500f1edbaf01044645b35f8993a191ffbb8597f"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "1d7fe865c98fb90da644d0ddf7c81de13cc0900f5280a253528e2417fdb8f942"
     sha256 arm64_ventura:  "95ae467b41ba2bf559edb2aff33f0635107c592df1f258f972ea9f05f09b6480"

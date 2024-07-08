@@ -6,11 +6,6 @@ class DcosCli < Formula
   license "Apache-2.0"
   head "https:github.comdcosdcos-cli.git", branch: "master"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "566aeb81f1c506438c9f5b503f775c540dfef7a4aa5e728e710e50a2e0c10993"
@@ -25,6 +20,9 @@ class DcosCli < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "759770809a74366f84721771b18702a3d27c9e6aa9099f25895200462df17ab8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ca96957a95df6e3084eeddf3d45cd52a26bdd69446647af7e52f297c6b1f1ce"
   end
+
+  # D2iQ (formerly Mesosphere) has shutdown last year
+  deprecate! date: "2024-07-07", because: :unmaintained
 
   depends_on "go" => :build
 

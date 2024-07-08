@@ -3,8 +3,8 @@ class Polynote < Formula
 
   desc "Polyglot notebook with first-class Scala support"
   homepage "https:polynote.org"
-  url "https:github.compolynotepolynotereleasesdownload0.5.1polynote-dist.tar.gz"
-  sha256 "e7715dd7e044cdf4149a1178b42a506c639a31bcb9bf97d08cec4d1fe529bf18"
+  url "https:github.compolynotepolynotereleasesdownload0.6.0polynote-dist.tar.gz"
+  sha256 "ec4e0e434f5996e83fd9490dbd6b99cbb724a39fa4074d3198eb16662ddf1d4a"
   license "Apache-2.0"
 
   # Upstream marks all releases as "pre-release", so we have to use
@@ -26,14 +26,13 @@ class Polynote < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_sonoma:   "8177302c01e8c767c7535352acfed7550b02589168c901a91d7e30dba8d83d44"
-    sha256 cellar: :any, arm64_ventura:  "a4ca4925de7aded7490e10b189a1704e0088df923d9397e298ff43bbaf31fd5e"
-    sha256 cellar: :any, arm64_monterey: "c770429f67aa53551cb9e6b2a44af16d8e0fb60487f84ebed24749d0d855f4d1"
-    sha256 cellar: :any, sonoma:         "93922c92ebf8c9f6f93681f65b9390936a21cf202e40e6551db4bcbe7956b31d"
-    sha256 cellar: :any, ventura:        "67ff220afe410cc3a1eab89a0dce2687573ef735500d31a178a1bad64e3a385a"
-    sha256 cellar: :any, monterey:       "624a6c403fc577fc760e72e7b29f4ad52430509dbfdfdbda80cef914312c1a42"
-    sha256               x86_64_linux:   "aa388f3e97800bdf1dd6f861ab96ebb3631792d4edf63e002d07d0e3e0c76182"
+    sha256 cellar: :any, arm64_sonoma:   "e5ca852520d67545e8024fc00c164068768be2f80ff1362b96ba45e25d97d118"
+    sha256 cellar: :any, arm64_ventura:  "adef7a68ddeabd34a5dfb6dbe09281a3432a7d1262a73638ba7b7936a82ed332"
+    sha256 cellar: :any, arm64_monterey: "7f79ab9b7f726fd425b3fbe3c78fe412c31b0bcd8530ebd8cb005c00689707eb"
+    sha256 cellar: :any, sonoma:         "8b312ff6e53371243da3729db6383eaf824d3526fb6219f4c8550d1cf25e18e6"
+    sha256 cellar: :any, ventura:        "03e05340bd23eabb467df101ce9dbc4e0f89a4cc008b437578bb00a4975d9d2b"
+    sha256 cellar: :any, monterey:       "0d3412b343ea542425c770ccb27d129dfb4b79ce17f79b194ab8dedfc796073b"
+    sha256               x86_64_linux:   "5330ce06a98879026081054dc919bf2ff118d427eeac4c79422bf5652346b03e"
   end
 
   depends_on "numpy" # used by `jep` for Java primitive arrays
@@ -65,6 +64,7 @@ class Polynote < Formula
 
     env = Language::Java.overridable_java_home_env
     env["PYTHONPATH"] = libexec"vendor"Language::Python.site_packages(python3)
+    env["LD_LIBRARY_PATH"] = lib
     (bin"polynote").write_env_script libexec"polynote.py", env
   end
 

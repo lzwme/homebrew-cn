@@ -1,10 +1,10 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
-  homepage "https:github.commickael-menuzk"
-  url "https:github.commickael-menuzkarchiverefstagsv0.14.1.tar.gz"
+  homepage "https:github.comzk-orgzk"
+  url "https:github.comzk-orgzkarchiverefstagsv0.14.1.tar.gz"
   sha256 "563331e1f5a03b4dd3a4ff642cc205cc7b6c3c350c98f627a3273067e7ec234c"
   license "GPL-3.0-only"
-  head "https:github.commickael-menuzk.git", branch: "main"
+  head "https:github.comzk-orgzk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f8f181e8d732eb66c3500a232cd4fb25f771b785389d97cf12f5095854529d10"

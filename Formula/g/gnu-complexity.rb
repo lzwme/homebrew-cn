@@ -1,6 +1,6 @@
 class GnuComplexity < Formula
   desc "Measures complexity of C source"
-  homepage "https://www.gnu.org/software/complexity"
+  homepage "https://www.gnu.org/software/complexity/"
   url "https://ftp.gnu.org/gnu/complexity/complexity-1.13.tar.xz"
   mirror "https://ftpmirror.gnu.org/complexity/complexity-1.13.tar.xz"
   sha256 "80a625a87ee7c17fed02fb39482a7946fc757f10d8a4ffddc5372b4c4b739e67"

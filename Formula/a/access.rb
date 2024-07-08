@@ -19,6 +19,9 @@ class Access < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a79bf2d2657b530ea0d6a6d2e56f209419ade6d3250ae506db41d000a72d9ca"
   end
 
+  # service sunset notice, https:web.archive.orgweb20240707220001https:indent.com
+  deprecate! date: "2024-07-07", because: :unmaintained
+
   depends_on "go" => :build
 
   def install

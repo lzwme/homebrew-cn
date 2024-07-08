@@ -1,18 +1,18 @@
 class PowermanDockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https:github.compowermandockerize"
-  url "https:github.compowermandockerizearchiverefstagsv0.19.2.tar.gz"
-  sha256 "42fdc1b71231705dc7e272ded9dc5aeb3575e6ea6b9703e7a3d6cbc7b0b09147"
+  url "https:github.compowermandockerizearchiverefstagsv0.19.3.tar.gz"
+  sha256 "452e7842984480b47099bd89bf7823ceeead62341a0e2eb984155f16f88311de"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03db86807b1cf09a1582b0e66d3e980a9d32891f79de6802c3af50b67b90c383"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28d390ad28d7778972afe5b6638386650a0e6381bfbdca34e2248e1b0c486e0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "438ac307030eed2e49ebaaa9636fa71bfd0d3a510b96fa2c2795f964e89a3d38"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad5a15ea1493600daf3aa29a0377b856d72741a80ad9d17f741ebe4b30fef2bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4238b28deab36826cd328b5eb6134bc969e0a2fff249597afda9a8ef4321ac9"
-    sha256 cellar: :any_skip_relocation, monterey:       "7975b98243d320f2054815329467b64c9a9d2c50eba3800de2a45bd0b806c05b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a54622fc7772d2cb89b888e122c57e8d1ff0ce392d6ffec673aaac8c50643fd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34efe528eb1fa78a9e2b6559920c0f546779503f5ff2b2099835e103ce47b6cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1efaf7bd8b9265c75c0aa12d7bbf22b26085cca10b65e26260ceb0875c967c82"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b734ab7becbf23666f211549f3f3a874b2968bddb784acc9c025c9823da9348"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e52f53545a65ad1266882a7680a6a923101dd16cca111a7acc3f8321bbab301"
+    sha256 cellar: :any_skip_relocation, ventura:        "1d2a014ff83243ccaf7f211bef9f5b37c499b3f13bfcb723711c02e3972a87bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f952c99b24c09078edc26e395c738b66bee7828d47fb384b0a51ccf91b3293c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3460c6247b74f3ab0e19ea19ac9f521a0266bd390e1a44776f75aba9737f1097"
   end
 
   depends_on "go" => :build

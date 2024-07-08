@@ -4,8 +4,8 @@ class MysqlAT80 < Formula
   # TODO: Check if we can use unversioned `protobuf` at version bump
   # https:bugs.mysql.combug.php?id=111469
   # https:bugs.mysql.combug.php?id=113045
-  url "https:cdn.mysql.comDownloadsMySQL-8.0mysql-boost-8.0.37.tar.gz"
-  sha256 "fe0c7986f6a2d6a2ddf65e00aadb90fa6cb73da38c4172dc2b930dd1c2dc4af6"
+  url "https:cdn.mysql.comDownloadsMySQL-8.0mysql-boost-8.0.38.tar.gz"
+  sha256 "2b8d1620d96e8adda715bf6b060c324223d9e80db487a04cbaa2be8ec5fed718"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -14,13 +14,13 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1e57fb21f0a2c9bc1058c324ef472cc883299a029b566c9bddad6ed90c63595a"
-    sha256 arm64_ventura:  "a6adee29d1752a708ac2788f42551287ba9ddb8378ed6f2900cd3e1d2156f465"
-    sha256 arm64_monterey: "b18aeb4477d9b2ae09730fb7ee0c22b933a323a67fbbb54a9f0f59790113a17a"
-    sha256 sonoma:         "a481574ef1cfed040864f6c63a6e0bac0f3196726ff2b2c255e884d23bb7b921"
-    sha256 ventura:        "4a4efb87533ff17584a0a4d89a1516cfd084e4e5c173c37a02f4a9e8fbed0c3f"
-    sha256 monterey:       "e18e05be75823dcfde303a98b68a303b90c17c4657398ffc32764dab98752b76"
-    sha256 x86_64_linux:   "f32b5c194485f803a42b280fe724ed93e1d00fbf6d590693d9221c3d70b64644"
+    sha256 arm64_sonoma:   "f6c54ec6b012c959c8f9974d4970fdce9d15ca6eea660626610bb2e4c86d1770"
+    sha256 arm64_ventura:  "61c52c7943b790fdeee80d680311bf72707bb9befc6fef34550fed7468541b21"
+    sha256 arm64_monterey: "723b89c1c8922f14bbfab33ae597fd6ec9931e5b37eeecd767643c3e921a2c14"
+    sha256 sonoma:         "3a7d454d3ddecb4f91f8c286636b820522d5666c751be4fe6268f3ead6425359"
+    sha256 ventura:        "7040b91fbd0d4c630c12fee605b76c277aecf9d5face7663c09c0b4da6f60fee"
+    sha256 monterey:       "a85a095f6d98d340227d789d4d27585de7f0c0bae59b8cd1641b38aa392c3da2"
+    sha256 x86_64_linux:   "24a8b5440d5fd8522ca1a03109565f780291550bbbaa92c36c1ebb40f2469c5e"
   end
 
   keg_only :versioned_formula

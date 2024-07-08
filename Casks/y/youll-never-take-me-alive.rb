@@ -9,4 +9,8 @@ cask "youll-never-take-me-alive" do
   homepage "https:github.comiSECPartnersyontma-mac"
 
   app "You'll Never Take Me Alive!.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

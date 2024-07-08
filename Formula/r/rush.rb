@@ -1,6 +1,6 @@
 class Rush < Formula
   desc "GNU's Restricted User SHell"
-  homepage "https://www.gnu.org/software/rush/"
+  homepage "https://www.gnu.org.ua/software/rush/"
   url "https://ftp.gnu.org/gnu/rush/rush-2.3.tar.xz"
   mirror "https://ftpmirror.gnu.org/rush/rush-2.3.tar.xz"
   sha256 "8cae258247cd2623e856ea5e2c62cd7f09e9e3e043e6fc63bbd1abec3d3fdd93"

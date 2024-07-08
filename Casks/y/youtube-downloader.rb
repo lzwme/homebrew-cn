@@ -7,6 +7,8 @@ cask "youtube-downloader" do
   desc "Simple menu bar app to download YouTube movies"
   homepage "https:github.comDenBekeYouTube-Downloader-for-macOS"
 
+  depends_on macos: ">= :sierra"
+
   app "Youtube Downloader.app"
 
   zap trash: "~LibraryPreferencesdenbeke.Youtube-Downloader.plist"

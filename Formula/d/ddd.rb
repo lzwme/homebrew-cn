@@ -1,6 +1,6 @@
 class Ddd < Formula
   desc "Graphical front-end for command-line debuggers"
-  homepage "https://www.gnu.org/s/ddd/"
+  homepage "https://www.gnu.org/software/ddd/"
   url "https://ftp.gnu.org/gnu/ddd/ddd-3.4.0.tar.gz"
   mirror "https://ftpmirror.gnu.org/ddd/ddd-3.4.0.tar.gz"
   sha256 "5d4cbc8a0bb0458543866d679308c53a3ef066e402fe5a1918e19698a3d3580f"

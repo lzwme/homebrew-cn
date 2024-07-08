@@ -7,12 +7,7 @@ cask "continuity-activation-tool" do
   desc "Enable continuity features on compatible hardware"
   homepage "https:github.comdokterdokContinuity-Activation-Tool"
 
-  livecheck do
-    url :url
-    strategy :extract_plist do |items|
-      items["org.dokterdok.ContinuityActivationTool"].short_version
-    end
-  end
+  deprecate! date: "2024-07-06", because: :unmaintained
 
   app "Continuity-Activation-Tool-masterContinuity Activation Tool.app"
 end

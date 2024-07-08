@@ -28,6 +28,9 @@ class Cmockery2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3277107c3831686b1fbd803f8d5613f1c29800293c144b982b018f61b63b1870"
   end
 
+  # last commit was 7 years ago, cmockery is also deprecated
+  deprecate! date: "2024-07-07", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

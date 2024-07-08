@@ -16,4 +16,8 @@ cask "xcodeclangformat" do
     "~LibraryContainerscom.mapbox.XcodeClangFormat.clang-format",
     "~LibraryGroup ContainersXcodeClangFormat",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

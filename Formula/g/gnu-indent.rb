@@ -23,6 +23,7 @@ class GnuIndent < Formula
   end
 
   def install
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
     args = %W[
       --disable-debug
       --disable-dependency-tracking

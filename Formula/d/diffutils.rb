@@ -1,6 +1,6 @@
 class Diffutils < Formula
   desc "File comparison utilities"
-  homepage "https://www.gnu.org/s/diffutils/"
+  homepage "https://www.gnu.org/software/diffutils/"
   url "https://ftp.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz"
   mirror "https://ftpmirror.gnu.org/diffutils/diffutils-3.10.tar.xz"
   sha256 "90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e"

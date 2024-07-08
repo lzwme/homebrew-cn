@@ -7,6 +7,8 @@ cask "wewechat" do
   desc "Unofficial WeChat client"
   homepage "https:github.comtrazynweweChat"
 
+  deprecate! date: "2024-07-07", because: :discontinued
+
   app "wewechat.app"
 
   zap trash: [
@@ -15,4 +17,8 @@ cask "wewechat" do
     "~LibraryPreferencesgh.trazyn.wewechat.plist",
     "~LibrarySaved Application Stategh.trazyn.wewechat.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

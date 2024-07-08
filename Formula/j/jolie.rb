@@ -1,18 +1,18 @@
 class Jolie < Formula
   desc "Service-oriented programming language"
   homepage "https:www.jolie-lang.org"
-  url "https:github.comjoliejoliereleasesdownloadv1.12.0jolie-1.12.0.jar"
-  sha256 "67edee1780ed1390f8ffcc37a2342e95feaa819b20982042f53b226b9a87699b"
+  url "https:github.comjoliejoliereleasesdownloadv1.12.1jolie-1.12.1.jar"
+  sha256 "d6d5f90254c43f04982451a49134e7df94a081a4d1965a95fc29e7959678a286"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f120e4134af5b1034b44d3f84230d67bc70ad47dbc393e853a798388ebbd93b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7787f5b6977b4500ec51580f601eb4b5760a92b1b3ce730492726baf34c576e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, ventura:        "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, monterey:       "9db417b509499bc5ff1b3bfff0d5fab4b6b0fe95185f8b0660615a2f04ab8c95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6155fdd1b4c997e527baeee0af58255fc05402d8dda4b93c5359612da88f22d"
   end
 
   depends_on "openjdk"

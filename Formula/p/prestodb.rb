@@ -3,8 +3,8 @@ class Prestodb < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https:prestodb.io"
-  url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-server0.287presto-server-0.287.tar.gz"
-  sha256 "c16ef78d56820a16fec6918a439b26121a78eb3cc50fdcd7bee93a1211347f8f"
+  url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-server0.288presto-server-0.288.tar.gz"
+  sha256 "138761fa376567f5a40e3bbd252f98f15ceb677f3d0b454417c9ed49ae6b48a3"
   license "Apache-2.0"
 
   # Upstream has said that we should check Maven for Presto version information
@@ -16,10 +16,10 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "458069d52d46aad32bba940785141f5208b384c9c815397fe1d4e7091459c8ff"
-    sha256 cellar: :any_skip_relocation, ventura:      "e5fa4d5f984956b935d50a64f0b58b313507c299273133b1f58a11e41a4569c4"
-    sha256 cellar: :any_skip_relocation, monterey:     "e503a128447aa3c3ad99b658a0d10ca3179a6e67207e953d46f6092e9524416c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ef3cea970014fddda02a98b41cedcdeac7defd108bbd3180b92de0a692540de"
+    sha256 cellar: :any_skip_relocation, sonoma:       "6be6f0b4e0e79a303b7c2ab82f0c8a777a1c62ff589c44fe95f0f5f558af0d0f"
+    sha256 cellar: :any_skip_relocation, ventura:      "6be6f0b4e0e79a303b7c2ab82f0c8a777a1c62ff589c44fe95f0f5f558af0d0f"
+    sha256 cellar: :any_skip_relocation, monterey:     "6be6f0b4e0e79a303b7c2ab82f0c8a777a1c62ff589c44fe95f0f5f558af0d0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d0e4dad455ed75323fab0e830b2319ade02878688a678b2b7bb78650248e5533"
   end
 
   # https:github.comprestodbprestoissues17146
@@ -28,8 +28,8 @@ class Prestodb < Formula
   depends_on "python@3.12"
 
   resource "presto-cli" do
-    url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-cli0.287presto-cli-0.287-executable.jar"
-    sha256 "ff91091dae44976266625476e5f4dc483273324433e36ef209154ce947e34c90"
+    url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-cli0.288presto-cli-0.288-executable.jar"
+    sha256 "2fd64558d65070786c2032656100eba82ebc7d69173feb0743f6beedbf26c555"
   end
 
   def install

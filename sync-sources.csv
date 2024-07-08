@@ -2471,6 +2471,7 @@ Homebrew-homebrew-core/Formula/g/gzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gzrt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/h2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/h264bitstream.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/h26forge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/h2c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/h2o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/h2spec.rb, Homebrew/homebrew-core, 1
@@ -5192,7 +5193,7 @@ Homebrew-homebrew-core/Formula/p/pytorch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pytouhou.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
@@ -6477,7 +6478,7 @@ Homebrew-homebrew-core/Formula/u/uncrustify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ungit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni-algo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/u/uni2ascii.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/uni2ascii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unibilium.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unicorn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unifdef.rb, Homebrew/homebrew-core, 1
@@ -7190,7 +7191,7 @@ Homebrew-homebrew-cask/Casks/a/alacritty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aladin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alchemy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alcom.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aleph-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alex313031-thorium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alfaview.rb, Homebrew/homebrew-cask, 0
@@ -12274,7 +12275,7 @@ Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outguess.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/outline-manager.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/outline-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/outline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/output-factory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/outset.rb, Homebrew/homebrew-cask, 1

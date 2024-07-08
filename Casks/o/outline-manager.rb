@@ -1,27 +1,23 @@
 cask "outline-manager" do
-  version "1.14.0"
-  sha256 "148e8359c7351c072e63f613d21899485568b7dcc397fd7a80d9fc10d570baee"
+  version "1.15.2"
+  sha256 "9c5ccba90834056bcf18ee0ca84d3e036483f503576966da020450bc5bdd1a1d"
 
-  url "https:github.comJigsaw-Codeoutline-serverreleasesdownloadmanager-v#{version}Outline-Manager.dmg",
-      verified: "github.comJigsaw-Codeoutline-server"
+  url "https://s3.amazonaws.com/outline-releases/manager/macos/#{version}/1/Outline-Manager.dmg",
+      verified: "s3.amazonaws.com/outline-releases/manager/macos/"
   name "Outline Manager"
   desc "Tool to create and manage Outline servers, powered by Shadowsocks"
-  homepage "https:www.getoutline.org"
+  homepage "https://www.getoutline.org/"
 
-  # The GitHub repository contains tagreleases for other software and the
-  # "latest" release may not be for Outline Manager, so we have to check
-  # multiple releases to identify the latest version.
   livecheck do
-    url :url
-    regex(%r{^(?:manager(?:[._-]macos)?[._-])?v?(\d+(?:\.\d+)+)$}i)
-    strategy :github_releases
+    url "https://s3.amazonaws.com/outline-releases/manager/latest-mac.yml"
+    strategy :electron_builder
   end
 
   app "Outline Manager.app"
 
   zap trash: [
-    "~LibraryApplication SupportOutline Manager",
-    "~LibraryPreferencescom.electron.outline-manager.plist",
-    "~LibrarySaved Application Statecom.electron.outline-manager.savedState",
+    "~/Library/Application Support/Outline Manager",
+    "~/Library/Preferences/com.electron.outline-manager.plist",
+    "~/Library/Saved Application State/com.electron.outline-manager.savedState",
   ]
 end

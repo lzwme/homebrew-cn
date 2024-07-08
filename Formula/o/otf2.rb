@@ -1,6 +1,7 @@
 class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
   homepage "https:www.vi-hps.orgprojectsscore-p"
+  # TODO: check if we can remove `autoconf` + `automake` at version bump.
   url "https:perftools.pages.jsc.fz-juelich.decicdotf2tagsotf2-3.0.3otf2-3.0.3.tar.gz", using: :homebrew_curl
   sha256 "18a3905f7917340387e3edc8e5766f31ab1af41f4ecc5665da6c769ca21c4ee8"
   license "BSD-3-Clause"
@@ -11,20 +12,23 @@ class Otf2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "78f35eea831993370199a428d648b221f8175921c8ba589e6a1bada1a328e1fb"
-    sha256 arm64_ventura:  "cb87fafcaf023a4aa1f6833837becd1236491e235acba27667fcf88171e84f05"
-    sha256 arm64_monterey: "6568d6f73093214b443d6521f8730226da1d0969bf1167ae4bcb9200ddfa0316"
-    sha256 sonoma:         "d92fb55b39ba4b530fda2278b4312d7968a2c439ac918aeefba121eb87e90574"
-    sha256 ventura:        "253b308dba8eeb4ef23ab5af06ded4d4082a180d6a00585a6fcc06b83605327e"
-    sha256 monterey:       "add5d9e2fbdc79966eaa99bf1932708611b2a6e2894914e9ed419182cfacc5ea"
-    sha256 x86_64_linux:   "aba1c2972673732577d9348d8fb9b604d9652440c3d8e13c76a0c424f025ca88"
+    rebuild 2
+    sha256 arm64_sonoma:   "80ae5483e293499a103208036e71dfc89bb3d6a07c5db49b7a4542fa9f4fa5bb"
+    sha256 arm64_ventura:  "3025d4a7f4abb1bb0daf3f63242cfb3587106ce2841c9974ca88272ca5db1459"
+    sha256 arm64_monterey: "d27a2cf721638980b8068b1ec834d7fd791d93a00351ee18ed59c47c27a7a5eb"
+    sha256 sonoma:         "73c03d86d35a0685c3d90c517a6add5d5894ec7c9c4a89dead273730c6b5ef99"
+    sha256 ventura:        "64e94d9dc3a7e0628120b88f25f454a71f0bb45a130c95a0f15b503601419458"
+    sha256 monterey:       "8d75fac976ffd59b903d10ed0b227e934cf48f9bae5d62e6e3305f8f121915dc"
+    sha256 x86_64_linux:   "0e70a12bcdf95ec85041668d67b6344fd64c0fb368126c61c18899b666f6a948"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
   depends_on "gcc" # for gfortran
   depends_on "open-mpi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "six" do
     url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
@@ -44,7 +48,7 @@ class Otf2 < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
@@ -56,6 +60,9 @@ class Otf2 < Formula
     ENV["PYTHON"] = which(python3)
     ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin"sphinx-build"
 
+    # Bundled `build-configpy-compile` isn't compatabile with python 3.12 due to `imp` usage
+    # TODO: check if we can remove this and `autoconf` + `automake` deps
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"

@@ -18,6 +18,9 @@ class Cmockery < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "55dae4a89d4badbbe3628527d765ac03feb8a344607af7ddf7b7d6396cf78a29"
   end
 
+  # see thread, https:github.comgooglecmockeryissues72
+  deprecate! date: "2024-07-07", because: :unmaintained
+
   on_macos do
     depends_on "autoconf" => :build
     depends_on "automake" => :build

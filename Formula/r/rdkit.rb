@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https:rdkit.org"
-  url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_3.tar.gz"
-  sha256 "52f79c6bf1d446cdb5c86a35de655d96bad0c52a5f4ecbe15f08eaf334e6f76a"
+  url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_4.tar.gz"
+  sha256 "cbb39098f720748efd50bde9c26df2166dc89197dbdedf9664d0debaf14319ef"
   license "BSD-3-Clause"
   head "https:github.comrdkitrdkit.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1e79ba4e88cfd5942515c40393c0c5638572066ab25475b40b71326d9a6e6198"
-    sha256 cellar: :any,                 arm64_ventura:  "5a1c37494b6d17371fc1879a40b1a1ec054dadb454400a6a0ca8315d9c4ad50f"
-    sha256 cellar: :any,                 arm64_monterey: "865023c3d4b8b3d8d571fb5256bf5b3a1d2b747f9ce257baa092881dcc92c255"
-    sha256 cellar: :any,                 sonoma:         "8530dabca86a3dbe76cc66b1a0f23cd45a976510433a11747a37cfbd2c4ecf19"
-    sha256 cellar: :any,                 ventura:        "9c8599e1cd3a2bde50afa5d844717682370cc7465ad361ff497e93dbec96429f"
-    sha256 cellar: :any,                 monterey:       "9e16a58d635fa35d620d92de43044b2a198cd8b83fc21527a9ae1b40829eeca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9711e228ebaf50b97e507c9959b060e7d57e5d1776ec1624fde2fb9f44f305eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "47a54bc1660e83b3c3c578fa222343883e4afbc0756faf461885cf375988d83b"
+    sha256 cellar: :any,                 arm64_ventura:  "f185cd323c58fb4271d11a474482e77b8207a68afda8cb56bd4ac36ca3830763"
+    sha256 cellar: :any,                 arm64_monterey: "32ed76177e35c8e8b497e52b79e4ffbeea91bd4a95c6467bac2fa1e4f1c9fab1"
+    sha256 cellar: :any,                 sonoma:         "90039970c43afb5dc508170e540784e2565a3128ba9a26e218de6c50405eb935"
+    sha256 cellar: :any,                 ventura:        "3636a67ab6aa691cad45120a843f4c47b99208cf533977e5769ff1f1e40f1785"
+    sha256 cellar: :any,                 monterey:       "0f27ffb6db2ad169d161f930dd87ead1159d6a57107bb5bd4cc8d6c1eafb90b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "919a01e76999b4f40e2c7cabaec3cb2db9d0d6f5d7d7087a20bca269e766134f"
   end
 
   depends_on "catch2" => :build
@@ -66,7 +66,7 @@ class Rdkit < Formula
     end
     py3include = py3prefix"includepython#{py3ver}"
     site_packages = Language::Python.site_packages(python_executable)
-    numpy_include = Formula["numpy"].opt_prefixsite_packages"numpycoreinclude"
+    numpy_include = Formula["numpy"].opt_prefixsite_packages"numpy_coreinclude"
 
     # Prevent trying to install into pg_config-defined dirs
     inreplace "CodePgSQLrdkitCMakeLists.txt" do |s|

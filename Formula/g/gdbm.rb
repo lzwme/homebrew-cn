@@ -1,22 +1,19 @@
 class Gdbm < Formula
   desc "GNU database manager"
-  homepage "https:www.gnu.orgsoftwaregdbm"
-  url "https:ftp.gnu.orggnugdbmgdbm-1.23.tar.gz"
-  mirror "https:ftpmirror.gnu.orggdbmgdbm-1.23.tar.gz"
-  sha256 "74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd"
+  homepage "https:www.gnu.org.uasoftwaregdbm"
+  url "https:ftp.gnu.orggnugdbmgdbm-1.24.tar.gz"
+  mirror "https:ftpmirror.gnu.orggdbmgdbm-1.24.tar.gz"
+  sha256 "695e9827fdf763513f133910bc7e6cfdb9187943a4fec943e57449723d2b8dbf"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "33ff1dbaa9c69d2111979a2d27f6d9806349344f6adeb22884b6525eb5ca0c34"
-    sha256 cellar: :any, arm64_ventura:  "a7321472cc9ff32a54c549556340dd1ad9dd95415828149005fb4959d04e83b7"
-    sha256 cellar: :any, arm64_monterey: "62a2c1994737a2677f318a97ac64a32690f9f958086310a49f37e3fcfd5b6731"
-    sha256 cellar: :any, arm64_big_sur:  "09f52f15b2a2d126213ea5631bdd35722006540f0086bd285a4f611a4b4b8a78"
-    sha256 cellar: :any, sonoma:         "d7e9af7d1722d16f92d00b0e757c1b5620f3c47c5bd2f8360bfda5380330525e"
-    sha256 cellar: :any, ventura:        "72bf08b82cb8fb7919e1c81d9df16425d9f8b7920e8f5abec958274207d7a2ef"
-    sha256 cellar: :any, monterey:       "0d0aeea95f9e7b4ccfa1e8d7f3a83b3b4d604eac1178e4f88ad51d132ad1f7cd"
-    sha256 cellar: :any, big_sur:        "d52ed8dbb258f11b14eb10494aeb8a2dab91c3626b11e37d8197d2fb183c489b"
-    sha256 cellar: :any, catalina:       "47e4821fa03790827af24698bf7cb833656d48e56bfb141b3093e8cabf5b1c88"
-    sha256               x86_64_linux:   "7d5728174c3de6c048a233459a1b8ac9e8c53645ca14962d9a1deb60fd58a568"
+    sha256 cellar: :any, arm64_sonoma:   "439b678f3befe6e37a2e36c9a8df727137f5a86bdf0fdf6a2e612409ffe1409a"
+    sha256 cellar: :any, arm64_ventura:  "9517b85db682569c03ebd86330b2e4d7f5a044d48352e971ce36bee738cddc2c"
+    sha256 cellar: :any, arm64_monterey: "fc44f8e15beecf80991b2856a0e85309c68e0562d4ca7fe656fcb94c122fcf40"
+    sha256 cellar: :any, sonoma:         "20b4d20aab87fe96f59914aa5d012066342519b86bd6961696feade676b80fa9"
+    sha256 cellar: :any, ventura:        "de0719d7d530b03c71fb7f4d29244d9eac7691b614f570475a4ef22bf568fd20"
+    sha256 cellar: :any, monterey:       "3aa7e2f745e8ca1f6f8425c48a290855c34cac823c7d42a8e7d0ff0933e5e0d8"
+    sha256               x86_64_linux:   "7fd35749fc28a0bf5e2f3c7cc74d8e2da38914d3009127cbedf9cf617cb6fe61"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
