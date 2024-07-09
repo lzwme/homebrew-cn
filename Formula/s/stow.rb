@@ -16,13 +16,15 @@ class Stow < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c8ec472ea192228536e3bd3826b0156295bebfb6492cdff7b36c50a7c14a7a"
   end
 
+  uses_from_macos "perl"
+
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     (testpath/"test").mkpath
-    system "#{bin}/stow", "-nvS", "test"
+    system bin/"stow", "-nvS", "test"
   end
 end

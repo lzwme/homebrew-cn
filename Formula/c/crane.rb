@@ -1,18 +1,18 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https:github.comgooglego-containerregistry"
-  url "https:github.comgooglego-containerregistryarchiverefstagsv0.19.2.tar.gz"
-  sha256 "110f41283fb91ba6d34f6eaaa33b373a2ca026a88222293bfb711c5464059dca"
+  url "https:github.comgooglego-containerregistryarchiverefstagsv0.20.0.tar.gz"
+  sha256 "56264dcd9078e9be0ec469d30dbd937b1b706fd7c34df91ce82bacd95986ff6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06f2cbfd977b32dff7d119cd8974f408591be6099f1efcc99584984666f7d9b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b4e8f2e3eb155c55a4803a622108113eba1f584b823cf2bed40d9e418f93259"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d12cb9afccae6818a7dce3f62e569a610a02e330710da584978b2de2da8cff7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "025eea031e8a93ef0d159a5776557f92b6a9999371d46bfdb38b06ce25624671"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d47a8f63b6e5919b7b853206dff74e64a0dfd8e1896fec76c8bfbe27b4ff6cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0a0b9fa62b6b01f7b8502708e14c7a8fc8e6e2d039875284571b74950b40bf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96722b5047d54de9f369f820916916f475dc6a52fb24840e1a0654ae956817c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b980af08449a87307e5fdcf5caa1feadc9a267e3f58dc7f31cc02c72d087bfa4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6d36d5d9981db420a60ca9da249a998714bc257525d8dac0cc01e0901ca7f5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5574b4141cd0164af9cdb9244cc1d1ad2b2a1570e2709938d40ff2509116ad93"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48093300a8265ef2993d85f02ea20a5fc8a5f8ee90899c77eee98134e4da2109"
+    sha256 cellar: :any_skip_relocation, ventura:        "81eda5b809bb66342c103a927c6a311f3dee3d15bdd82df6d5958967334688b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "4cd7a9012fe2a8b71f2699b9e54e89ec60b04315e2bded121ff580053b060539"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c55086306f6d342270662e9a6836e03183181f40ea244e914a7887c7b894877a"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Sngrep < Formula
   desc "Command-line tool for displaying SIP calls message flows"
   homepage "https:github.comirontecsngrep"
-  url "https:github.comirontecsngreparchiverefstagsv1.8.1.tar.gz"
-  sha256 "678875d44c6fdacb533f2d9e1b8db33ee8252723bb95653368fd43fae58969fe"
+  url "https:github.comirontecsngreparchiverefstagsv1.8.2.tar.gz"
+  sha256 "1cd05bddd531b353e3069c5243e7076b60a3ee907dbbc3c9c2834676ed8c4bac"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "68307fa5179d441454cb15e1ad2daa3e10b83aeb86314ada37508fedca78d1ed"
-    sha256 cellar: :any,                 arm64_ventura:  "fb1e759d1bc7b451eb3bf5b3494321ba3407975a0e024023e8827ae2bed115b6"
-    sha256 cellar: :any,                 arm64_monterey: "ed3f485d7f233e87d681fbe3129652a83499310e0e181009b1e96f62e79aa28a"
-    sha256                               sonoma:         "ba93efa661eed18d6fdeb23cf5e973ce6f2b4ebe124d47ff6b3264e2ee89aff5"
-    sha256                               ventura:        "c6ddc9eb9c12fa931e806036c4c917c252a2804b3dbc8fd2604a19ff143348e0"
-    sha256                               monterey:       "c06d57f2e6d7965ce2fb5e442acf9cc317f16f353bc5b68e3ab84c727b8dceb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d76277ba85ee919973a64e3bef6fe04380765a3cd3da1ccabeff74188a376378"
+    sha256 cellar: :any,                 arm64_sonoma:   "af78fe4604a4b205135a31f113a35907d121d08bd7352f5747f82afbfbf7b964"
+    sha256 cellar: :any,                 arm64_ventura:  "024eb3f86b15664e9cdae3dec40226b91432a2abe44bd3e6c72fbcff0f9c6167"
+    sha256 cellar: :any,                 arm64_monterey: "2ce85bce10e93345e1991e4d23d92f46df955cf90c20bf47a0abe4eea4d9c0f7"
+    sha256                               sonoma:         "57d93a31a23337e083f75ff3df8c40731fbd68d857678599184027f9240947c0"
+    sha256                               ventura:        "9fdeee12cf3751750380301d66b61d0862e568b3f789e9bc21bd676b0495168f"
+    sha256                               monterey:       "230ba56b3c53cd525f4dbed3495ec75c63cba1306c5d4cc5356573e22a2cf464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c9d43d767e6ae8f902fc0e74c4dff3ca255e94178cc0aa108e1241b797ea67"
   end
 
   depends_on "autoconf" => :build

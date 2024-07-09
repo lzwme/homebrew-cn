@@ -5081,7 +5081,7 @@ Homebrew-homebrew-core/Formula/p/psftools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/psgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pspg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/psql2csv.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/psqlodbc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/psqlodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pstoedit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pstree.rb, Homebrew/homebrew-core, 1
@@ -6717,6 +6717,7 @@ Homebrew-homebrew-core/Formula/w/wazero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wb32-dfu-updater_cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wcslib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wcurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdiff.rb, Homebrew/homebrew-core, 0
@@ -7510,6 +7511,7 @@ Homebrew-homebrew-cask/Casks/b/blender@lts.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bleunlock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blheli-configurator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blink1control.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/blip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blisk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blitz-gg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blobby-volley2.rb, Homebrew/homebrew-cask, 0

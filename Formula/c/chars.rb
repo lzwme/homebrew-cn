@@ -1,10 +1,10 @@
 class Chars < Formula
   desc "Command-line tool to display information about unicode characters"
-  homepage "https:github.comantifuchschars"
-  url "https:github.comantifuchscharsarchiverefstagsv0.7.0.tar.gz"
+  homepage "https:github.comboinkor-netchars"
+  url "https:github.comboinkor-netcharsarchiverefstagsv0.7.0.tar.gz"
   sha256 "2f79843a3b1173870b41ebce491a54812b13a44090d0ae30a6f572caa91f0736"
   license "MIT"
-  head "https:github.comantifuchschars.git", branch: "master"
+  head "https:github.comboinkor-netchars.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d2b320036c7ea379db3cee9a29ed6b5c55441c7ad984c14d7942d4949069e2b"

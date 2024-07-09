@@ -1,8 +1,8 @@
 class BotanAT2 < Formula
   desc "Cryptographic algorithms and formats library in C++"
   homepage "https:botan.randombit.net"
-  url "https:botan.randombit.netreleasesBotan-2.19.4.tar.xz"
-  sha256 "5a3a88ef6433e97bcab0efa1ed60c6197e4ada9d9d30bc1c47437bf89b97f276"
+  url "https:botan.randombit.netreleasesBotan-2.19.5.tar.xz"
+  sha256 "dfeea0e0a6f26d6724c4af01da9a7b88487adb2d81ba7c72fcaf52db522c9ad4"
   license "BSD-2-Clause"
   head "https:github.comrandombitbotan.git", branch: "release-2"
 
@@ -12,13 +12,13 @@ class BotanAT2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "474b35ff0b5f6181037c3abbfcdb2e18bbd6f36984319c9a2a0d8b0bf644adbe"
-    sha256 arm64_ventura:  "95984c9e9d4253c0e2a5aa62025f114b889e7eb20c87db78f0d18da716ef3c76"
-    sha256 arm64_monterey: "95827c9faccd5b1c3ebf7b4b2fc1ca1698bd91eb429cfb202b341fb1836ece8c"
-    sha256 sonoma:         "ed5cccfcfa2bb1a7449a44fc8cf1c9649e060c890d07423a3c8357a5e59a134f"
-    sha256 ventura:        "c02d656cf9e53ebbe300ccfee5bdcecf5229938491208c37dda8255a28419202"
-    sha256 monterey:       "f83cdd76d128db1c88a5ffde722c5fa78815cee57f954423b074c22632c2cb03"
-    sha256 x86_64_linux:   "4cb4c1a3e7e7d08a7782780ffc5f84df3b6259776205fc97fbb511dc5bc3bddd"
+    sha256 arm64_sonoma:   "26123f333ae9d3b9370ac9c25537f01905e7bd6f1d4d87efd186be3128dbf78f"
+    sha256 arm64_ventura:  "a3827282841699000756d03c5d5e53c5224e67f340c7e7c5fc43d93e19a4e370"
+    sha256 arm64_monterey: "291b91e6418c3be4e290f42f72bf690f05867ab19cb6d7b5a2af031a65ccf960"
+    sha256 sonoma:         "354bea166821d3957ad270afe95798cb159e1117b45d55664f2a67c51b931a1b"
+    sha256 ventura:        "2eb567dfa4a898b0d99d06c6219d5098f74ba77c72258f7b580d0facdb6d769c"
+    sha256 monterey:       "f5d51f622c5146a9e830274f3a0a94f6570029824b938d91ebed895fc6d93c88"
+    sha256 x86_64_linux:   "eca2b5787826800519a4b0d51e28818b93cc9f8c2136af9b70c9ebb2dd3a7952"
   end
 
   keg_only :versioned_formula

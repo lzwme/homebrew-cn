@@ -1,7 +1,7 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
-  homepage "https:github.comSpiderLabsModSecurity"
-  url "https:github.comSpiderLabsModSecurityreleasesdownloadv3.0.12modsecurity-v3.0.12.tar.gz"
+  homepage "https:github.comowasp-modsecurityModSecurity"
+  url "https:github.comowasp-modsecurityModSecurityreleasesdownloadv3.0.12modsecurity-v3.0.12.tar.gz"
   sha256 "a36118401641feef376bb469bf468abf94b7948844976a188a6fccb53390b11f"
   license "Apache-2.0"
 
@@ -29,7 +29,7 @@ class Modsecurity < Formula
 
   # Use ArchLinux patch to fix build with libxml2 2.12.
   # TODO: Check if fixed in future libxml2 release.
-  # Issue ref: https:github.comSpiderLabsModSecurityissues3023
+  # Issue ref: https:github.comowasp-modsecurityModSecurityissues3023
   patch do
     url "https:gitlab.archlinux.orgarchlinuxpackagingpackageslibmodsecurity-raw5c78cfaaeb00c842731c52851341884c74bdc9b2libxml-includes.patch"
     sha256 "7ee0adbe5b164ca512c49e51e30ffd41e29244156a695e619dcf1d0387e69aef"

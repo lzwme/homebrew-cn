@@ -1,9 +1,9 @@
 class TomcatAT9 < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90.tar.gz"
-  sha256 "318491c4be43494e6872b5277c40cac8506901d744ad09d37df62e88543f6223"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz"
+  sha256 "0c5b29ca1d3a31bbb8fab6ad1feed8a3702ed325d14839550a6774c76c90b856"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class TomcatAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cd770729d57646c044dadf0a6da9555a658c9ff6ff2a8c50694f4259e8c744b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49cf6dcf30d756af974bfe7342d0fab0c80134ca201436c9a311f91eb460ef15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, sonoma:         "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, ventura:        "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, monterey:       "81411a5152288067fdadb290f55ffc6a0498be7a27372108ea9eb12990d47f90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c749b1162aee583327345c6ddbefa64f0e9328da0ca7f5b383fb2a610ee2325"
   end
 
   keg_only :versioned_formula

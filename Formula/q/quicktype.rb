@@ -2,11 +2,11 @@ require "languagenode"
 
 class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
-  homepage "https:github.comquicktypequicktype"
+  homepage "https:github.comglideappsquicktype"
   url "https:registry.npmjs.orgquicktype-quicktype-23.0.170.tgz"
   sha256 "659d134a323644b799149dc562882092544804d69a5288574af4d657f3c00a57"
   license "Apache-2.0"
-  head "https:github.comquicktypequicktype.git", branch: "master"
+  head "https:github.comglideappsquicktype.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3835e6f164868aaec4537e04dd0aa46fa94c4b8167f73fb6bf0bcae2c25f9a0"

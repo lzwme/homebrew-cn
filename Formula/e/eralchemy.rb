@@ -2,7 +2,7 @@ class Eralchemy < Formula
   include Language::Python::Virtualenv
 
   desc "Simple entity relation (ER) diagrams generation"
-  homepage "https:github.comAlexis-benoisteralchemy"
+  homepage "https:github.comeralchemyeralchemy"
   url "https:files.pythonhosted.orgpackages874007b58c29406ad9cc8747e567e3e37dd74c0a8756130ad8fd3a4d71c796e3ERAlchemy-1.2.10.tar.gz"
   sha256 "be992624878278195c3240b90523acb35d97453f1a350c44b4311d4333940f0d"
   license "Apache-2.0"

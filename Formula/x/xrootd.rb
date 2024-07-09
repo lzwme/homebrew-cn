@@ -1,9 +1,9 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https:xrootd.slac.stanford.edu"
-  url "https:github.comxrootdxrootdreleasesdownloadv5.6.9xrootd-5.6.9.tar.gz"
-  mirror "https:xrootd.slac.stanford.edudownloadv5.6.9xrootd-5.6.9.tar.gz"
-  sha256 "44196167fbcf030d113e3749dfdecab934c43ec15e38e77481e29aac191ca3a8"
+  url "https:github.comxrootdxrootdreleasesdownloadv5.7.0xrootd-5.7.0.tar.gz"
+  mirror "https:xrootd.slac.stanford.edudownloadv5.7.0xrootd-5.7.0.tar.gz"
+  sha256 "214599bba98bc69875b82ac74f2d4b9ac8a554a1024119d8a9802b3d8b9986f8"
   license "LGPL-3.0-or-later"
   head "https:github.comxrootdxrootd.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Xrootd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "749426498af0929373093f03d569d366af84235ef588a3f7dc567984bada6c10"
-    sha256 cellar: :any,                 arm64_ventura:  "f373ffe1a043ed8a9ccdbcee92c1a3bb9815c90b1ef8b76c1c7f7fe4a3112a66"
-    sha256 cellar: :any,                 arm64_monterey: "a0d28194a21fcf7095fb21f87c2084f1527328dba598d71076e38bd3b1e79126"
-    sha256 cellar: :any,                 sonoma:         "d839deee85ab77a90ca252790f9423b6e12951f48250035f0717af86c461754d"
-    sha256 cellar: :any,                 ventura:        "566b484124cd71de7dd352fa5266449ae96bb5a17256a642e04937780cd77bdf"
-    sha256 cellar: :any,                 monterey:       "67f03d5ba7558359b5f298430269e4e49cdcec6b2bad31bb9498272843892763"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ecd2c0d8085f6032a37341cb551d60db0d5c1ab47778cc6f083a7029ab46c62"
+    sha256 cellar: :any,                 arm64_sonoma:   "a1651db16a4cd1e1da3c2b06461994617feb5bae7594140af42c8f61d5e39dd0"
+    sha256 cellar: :any,                 arm64_ventura:  "bf96d130c68e5ef5c147c83d2cedd519954ad4fdbec88b0832e6a71e58d92015"
+    sha256 cellar: :any,                 arm64_monterey: "61b909503eb88d4a6ae3e72688881866c1b7b8775cae798b1052865bc6c5341e"
+    sha256 cellar: :any,                 sonoma:         "71e41a87ac717fc7d509f88e8305f57329c2dff1e927b80c54b517d14166a198"
+    sha256 cellar: :any,                 ventura:        "1d85108dec3b577ae4a91c01d8eb396be47a77a063903539a7934db5c87e9612"
+    sha256 cellar: :any,                 monterey:       "7e947380f3782793248a1970d79ed71befa6721298ef98d003555cad708d5a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3266fe8ecca6e2d469ece52f1e921030993e1ea9cee60f57ee80b0613ea5338"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +30,7 @@ class Xrootd < Formula
   depends_on "openssl@3"
   depends_on "readline"
 
+  uses_from_macos "curl"
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"

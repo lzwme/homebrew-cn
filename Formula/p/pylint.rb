@@ -2,7 +2,7 @@ class Pylint < Formula
   include Language::Python::Virtualenv
 
   desc "It's not just a linter that annoys you!"
-  homepage "https:github.comPyCQApylint"
+  homepage "https:github.compylint-devpylint"
   url "https:files.pythonhosted.orgpackagesdff3e552877a02574b7919855a8d1f372591e67d276ea880c079968e7b3ba353pylint-3.2.5.tar.gz"
   sha256 "e9b7171e242dcc6ebd0aaa7540481d1a72860748a0a7816b8fe6cf6c80a6fe7e"
   license "GPL-2.0-or-later"

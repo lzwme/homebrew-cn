@@ -3,20 +3,19 @@ class PolicySentry < Formula
 
   desc "Generate locked-down AWS IAM Policies"
   homepage "https:policy-sentry.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages7e7a7fbb394f21a3c43edcb7d04382b6d93567900b4c8ea4b224b284656115edpolicy_sentry-0.12.11.tar.gz"
-  sha256 "8db1ea570e835d87c57ef51bf6f2372a8b78d463549a5f9c65cb5f8103cd1ed8"
+  url "https:files.pythonhosted.orgpackagescaf1496838fb09f5bb76d178616bf6c5029634d33a115e1702550f623a9d6ea6policy_sentry-0.12.14.tar.gz"
+  sha256 "4c71d8e6a827168f1283d51f5b502aeb66ba2f8aaf89088f0a40e0460bd29cec"
   license "MIT"
-  revision 3
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "86bce4929be345ed08b96816be874b98b77087f2a2b6b29bfb3e66a5a499887d"
-    sha256 cellar: :any,                 arm64_ventura:  "2e0dd411d3c002089874caefa5d96eabf22fae0c237b62b4f5be7d772f445b92"
-    sha256 cellar: :any,                 arm64_monterey: "223f1f2fb9f4a9855fb29cd082413a9c028d851c41066684870633043331938e"
-    sha256 cellar: :any,                 sonoma:         "41e2431dc6fb45467722a4a11e81b5769fafc7ff3bf837326700cb0944949852"
-    sha256 cellar: :any,                 ventura:        "071f594ee676ddf161901e23b1752213a4b47f37004fdd6b91886aec9f8bf044"
-    sha256 cellar: :any,                 monterey:       "ec32627cdd8a24fa693c8bb6eaa026aa007433772c17dc038b88014102f622c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f4c3cfc270d4f32c980b528218c9d6dedf64da2f2655ea7a489900c7cf4d21c"
+    sha256 cellar: :any,                 arm64_sonoma:   "5430188c83ed9429ab4969ab0ece7e1b09819ee073c658fec973c7af363a146a"
+    sha256 cellar: :any,                 arm64_ventura:  "4e39fffb802e74b35a40e5291623a6487197af4cf5883b20a75739d719c8eb48"
+    sha256 cellar: :any,                 arm64_monterey: "f39ebd81cc45f012f06a037f325a7a1b90e1a1c77156330380ee603143d744a7"
+    sha256 cellar: :any,                 sonoma:         "50be8b80434439e8047a62a8acd0164e98c1453ee9922623eab0a5f40523675c"
+    sha256 cellar: :any,                 ventura:        "8ffba8af4e314b16f3656176d65e63cd9422c443a26924fb8ef479f5421e9742"
+    sha256 cellar: :any,                 monterey:       "0da424bec7b1fef03a830ec302be01ad0a71f5f3d1b4d771be065a91391c90f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56640ff5306923b4be3ea82bcb7870973b9feac18f994feeeb38d763528df255"
   end
 
   depends_on "certifi"

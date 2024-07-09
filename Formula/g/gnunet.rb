@@ -1,19 +1,19 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.21.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.21.1.tar.gz"
-  sha256 "93e68b3eaca7087273e3d7685fe6ae38b2e8055e4c9e700d360dd4055249785c"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.21.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.21.2.tar.gz"
+  sha256 "8c2351268e9b8ba2ad288b8b337ce399f79c18e3ffd960803f4ed5de7dda9fa1"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3c3a8f7934ccac6b02d4d75d83aba5042dc46a41d2d38fc7912c72d15008f9ee"
-    sha256 cellar: :any,                 arm64_ventura:  "62ddf223d41f85a7c50557cecebbe859def4d2e585f2dcc129ded906f0dd997d"
-    sha256 cellar: :any,                 arm64_monterey: "90a6b344c235a97cb96ed2c740329ca6ef62c5063aa00fb4bf77d3706a954874"
-    sha256 cellar: :any,                 sonoma:         "c53410a463c9cefe0311e3a4c11ee312b91c064778e339514e0f1bd0dc9143e8"
-    sha256 cellar: :any,                 ventura:        "3fdb453508259ffa704970058fa8aec18b6cb4d72ed3001e3928e4f5e1f0685b"
-    sha256 cellar: :any,                 monterey:       "32a87990c7e665847610061d0e26839bbb59deb64cfd6440742c2304d0a08aba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43ba4d2f1d0a026200b3f9597eee684d4482ed1d059c6f1fbf724cdd8b4127fd"
+    sha256 cellar: :any,                 arm64_sonoma:   "80a3a071b390f9d15f0e84e5f5af17b486dd65f146b3f0e9de59530ad07e650e"
+    sha256 cellar: :any,                 arm64_ventura:  "570598cc3c051512b44944d49ec96cfb768a4e4c71cd05a3ed932695faeffbd3"
+    sha256 cellar: :any,                 arm64_monterey: "f9b1ae7c259af8f62b4f5872c1db2707ce00f4596c1861e615732a758349f784"
+    sha256 cellar: :any,                 sonoma:         "ec1e100e3d94aec5b54cfad86e4caa0e2e8ffb61e6bd2f3f09bec0deeb248e5f"
+    sha256 cellar: :any,                 ventura:        "4beeb787ef01b37696ef6172722deddcdd434794e23da865db01f17ff2f554da"
+    sha256 cellar: :any,                 monterey:       "89cca3de2e856cd8930e2e7f083ebc820460bb025bcb4c0c300ae4f3f51ff10c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66145c8fdf87794050a20e33074ccecd901f28645ee2da8ea2b8418d908249b"
   end
 
   depends_on "pkg-config" => :build
@@ -37,8 +37,12 @@ class Gnunet < Formula
   end
 
   test do
-    system "#{bin}/gnunet-config", "--rewrite"
-    output = shell_output("#{bin}/gnunet-config -s arm")
-    assert_match "BINARY = gnunet-service-arm", output
+    (testpath/"gnunet.conf").write <<~EOS
+      [arm]
+      START_DAEMON = YES
+      START_SERVICES = "dns,hostlist,ats"
+    EOS
+
+    system bin/"gnunet-arm", "-c", "gnunet.conf", "-s"
   end
 end

@@ -16,4 +16,8 @@ cask "unetbootin" do
   app "unetbootin.app"
 
   zap trash: "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.yourcompany.unetbootin.sfl*"
+
+  caveats do
+    requires_rosetta
+  end
 end

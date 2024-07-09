@@ -1,8 +1,8 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
   homepage "https:github.comnxp-imxmfgtools"
-  url "https:github.comnxp-imxmfgtoolsreleasesdownloaduuu_1.5.165uuu_source-uuu_1.5.165.tar.gz"
-  sha256 "6e65fc028afacc94b805ae376e3da3864dcb2570d425037820e716207ab70373"
+  url "https:github.comnxp-imxmfgtoolsreleasesdownloaduuu_1.5.182uuu_source-uuu_1.5.182.tar.gz"
+  sha256 "723d3da358e6af974a056e3adbcb105fac9dad4b87544de0d22b8c974a8037aa"
   license "BSD-3-Clause"
   head "https:github.comnxp-imxmfgtools.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Uuu < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e26b02f6b271d87ee60387fd0eb726cf6c624cbca415725b0087d3ceccba23bc"
-    sha256 arm64_ventura:  "ab874bca6b934143c5409c656e6e7cfe6d27bfc82fb101ec30fe49242516df17"
-    sha256 arm64_monterey: "b535f71ca4c12ed04438fd18c27f3754ab9565cb61b9d50f6f54e67592981478"
-    sha256 sonoma:         "36d8243d8275559a4da10f0d759dfbfffbf53375629224a97769345e6a6f5c68"
-    sha256 ventura:        "827238dcad512a10007edb815e07c3e7830d2c3fc1229e7f7ad88e5e06babae9"
-    sha256 monterey:       "3352a6cb1824a2e08c0bc784581ffb09c3f32f1b74b914883fc16e18e5139a32"
-    sha256 x86_64_linux:   "ba0ed7b39b8f20b0c7e513bdb9ec63e0c8233bb3aa5d9dc8d6857fab8ab7cf49"
+    sha256 arm64_sonoma:   "2d0b798240aa95ac17d48010de1eacf4115b7cfbe3c30a216fee81ac52210716"
+    sha256 arm64_ventura:  "be2915e1eb0d229e66cc94e18873863af4d23d04194a266e95850ba08435b7df"
+    sha256 arm64_monterey: "ba7c3dd03436445bb5405d73d53c0631b323b5021fb845906009e24274c45f9b"
+    sha256 sonoma:         "a77873946eb1b54f22f61e7d8f3a1d33fee09e72bcf50ec86f474532a5ac233b"
+    sha256 ventura:        "7e06483006d74914e337b98add7df1a38e9f79cd97d3eb05695df5968f6dd9cf"
+    sha256 monterey:       "50935214e4b33cf3d80dae31ec529e32e5c02ed4ef7efd86c45e87eb31faaa2d"
+    sha256 x86_64_linux:   "19e6bebfc3fdb36ef5b0ee3c517e294c75a2ebc9460501a104c00d7586239616"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,10 @@ class Uuu < Formula
   depends_on "libzip"
   depends_on "openssl@3"
   depends_on "tinyxml2"
+  depends_on "zstd"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

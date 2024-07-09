@@ -1,7 +1,7 @@
 class Kyua < Formula
   desc "Testing framework for infrastructure software"
-  homepage "https:github.comjmmvkyua"
-  url "https:github.comjmmvkyuareleasesdownloadkyua-0.13kyua-0.13.tar.gz"
+  homepage "https:github.comfreebsdkyua"
+  url "https:github.comfreebsdkyuareleasesdownloadkyua-0.13kyua-0.13.tar.gz"
   sha256 "db6e5d341d5cf7e49e50aa361243e19087a00ba33742b0855d2685c0b8e721d6"
   license "BSD-3-Clause"
   revision 2

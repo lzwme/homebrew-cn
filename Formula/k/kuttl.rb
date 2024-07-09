@@ -1,19 +1,19 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
   homepage "https:kuttl.dev"
-  url "https:github.comkudobuilderkuttlarchiverefstagsv0.17.0.tar.gz"
-  sha256 "a9a3a0aea4d6954855b53c7b033996ccb2a60cc09ed6e49ca17d1aaf73a7092a"
+  url "https:github.comkudobuilderkuttlarchiverefstagsv0.18.0.tar.gz"
+  sha256 "e43c701f7b663ee9a88b197a9fc7b794c71452bb50a0d2ecf4fea66e0a23c0d2"
   license "Apache-2.0"
   head "https:github.comkudobuilderkuttl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01be77011aa2709aaca437ea6d1dcc24fc9d626ac800878b116b953b7149d16b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1a0a0a2adabefcc39f69066e02e3829d6d45e3e59a1179510281d0ae0d73215"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d04621991072d889d6a6ee12c0d78d9c1e7b9eec4d4f67891ebaaeb835cf9600"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23e31d4b93abc256c0be48ed50b633508f42c2a6ac6913ae9deea756250ec3d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c588e4ee59f539beb0099eed7d18feb764bcb01e8290d83d98addf17e9ca1fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf61cb85592e5f1cf567f04b3e7ba7399d4a206a829059ceca82cc81b4fe6278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4106a1c1d66a6fbcc9e4a2ed9ac8688a2f987ac748457be3fa58f660b03ce0b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1eb2928fd65375d490e8f45a1c3104f182ce4c049b98b273fbf79e70951aa52"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6abb3dd1ff7e75be6d204ee0953db366fec96dc3d6d1fc66e0094cfa191865fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e8d3568c6afca2e0b2166af9902619300513ba992135d9a4b94b660a9400cbd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a0431b174a28e7486063538b378e2ee49486d5449407e4d50be2413dc809cdbc"
+    sha256 cellar: :any_skip_relocation, ventura:        "471d8aaa892d033480cd4f639d4191f875a3dfaf5a85b189f46ffd0267a0b3da"
+    sha256 cellar: :any_skip_relocation, monterey:       "83afd0ad8bb867382659bc37916f046d096d0823c8f5a22c72d12e64c5acca5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c9dd60a3e38f7c41d0135d509c7aa04ae14467cff3ef93e943ac23a4e54d431"
   end
 
   depends_on "go" => :build

@@ -1,7 +1,7 @@
 class Density < Formula
   desc "Superfast compression library"
-  homepage "https:github.comk0daidensity"
-  url "https:github.comk0daidensityarchiverefstagsdensity-0.14.2.tar.gz"
+  homepage "https:github.comg1mvdensity"
+  url "https:github.comg1mvdensityarchiverefstagsdensity-0.14.2.tar.gz"
   sha256 "0b130ea9da3ddaad78810a621a758b47c4135d91d5b5fd22d60bbaf04bc147da"
   license "BSD-3-Clause"
 
@@ -23,12 +23,12 @@ class Density < Formula
   disable! date: "2023-09-25", because: :repo_archived
 
   resource "cputime" do
-    url "https:github.comk0daicputime.git",
+    url "https:github.comg1mvcputime.git",
         revision: "d435d91b872a4824fb507a02d0d1814ed3e791b0"
   end
 
   resource "spookyhash" do
-    url "https:github.comk0daispookyhasharchiverefstagsspookyhash-1.0.6.tar.gz"
+    url "https:github.comg1mvspookyhasharchiverefstagsspookyhash-1.0.6.tar.gz"
     sha256 "11215a240af513e673e2d5527cd571df0b4f543f36cce50165a6da41695144c6"
   end
 

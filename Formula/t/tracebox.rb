@@ -1,6 +1,6 @@
 class Tracebox < Formula
   desc "Middlebox detection tool"
-  homepage "https:www.github.comtraceboxtracebox"
+  homepage "https:github.comtraceboxtracebox"
   url "https:github.comtraceboxtracebox.git",
       tag:      "v0.4.4",
       revision: "4fc12b2e330e52d340ecd64b3a33dbc34c160390"

@@ -1,7 +1,7 @@
 class Uptoc < Formula
   desc "Convenient static file deployment tool that supports multiple platforms"
-  homepage "https:github.comsaltbouptoc"
-  url "https:github.comsaltbouptoc.git",
+  homepage "https:github.combonaysoftuptoc"
+  url "https:github.combonaysoftuptoc.git",
       tag:      "v1.4.3",
       revision: "30266b490379c816fc08ca3670fd96808214b24c"
   license "MIT"

@@ -1,5 +1,5 @@
 cask "lantern" do
-  version "7.8.5"
+  version "7.8.6"
   sha256 :no_check
 
   url "https:lantern.s3.amazonaws.comlantern-installer.dmg",
@@ -29,4 +29,8 @@ cask "lantern" do
     "~LibraryApplication SupportLantern",
     "~LibraryLogsLantern",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

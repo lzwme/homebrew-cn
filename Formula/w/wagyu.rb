@@ -1,10 +1,10 @@
 class Wagyu < Formula
   desc "Rust library for generating cryptocurrency wallets"
-  homepage "https:github.comAleoHQwagyu"
-  url "https:github.comAleoHQwagyuarchiverefstagsv0.6.1.tar.gz"
+  homepage "https:github.comhowardwuwagyu"
+  url "https:github.comhowardwuwagyuarchiverefstagsv0.6.1.tar.gz"
   sha256 "2458b3d49653acd5df5f3161205301646527eca9f6ee3d84c7871afa275bad9f"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comAleoHQwagyu.git", branch: "master"
+  head "https:github.comhowardwuwagyu.git", branch: "master"
 
   bottle do
     rebuild 2

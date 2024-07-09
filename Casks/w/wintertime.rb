@@ -15,4 +15,8 @@ cask "wintertime" do
     "~LibraryPreferencescom.electron.wintertime.plist",
     "~LibrarySaved Application Statecom.electron.wintertime.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

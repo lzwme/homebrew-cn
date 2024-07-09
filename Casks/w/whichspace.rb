@@ -20,4 +20,8 @@ cask "whichspace" do
     "~LibraryPreferencesio.gechr.WhichSpace.plist",
     "~LibrarySaved Application Stateio.gechr.WhichSpace.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -7,13 +7,14 @@ class Gptscript < Formula
   head "https:github.comgptscript-aigptscript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f20814619925f3d18bd3038f0491f777932e31d10b2d4c9bc1697b02b1b64832"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "209c6b5102aaf4a3dcd4457d8b4f4f1b80fab1a2cf68a6bffaa5e81b6d71546f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b61d360e999106875012f79b7723d8382526548be912ff4049950ee4d99e115"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d1d83f617bfb2b313e8d9b3012bedc0f65dbc5676f33e458616babffb1cbb2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf55cfaca8a5aefeefc69419e5863448e33cd691820328288dfe3513ba877884"
-    sha256 cellar: :any_skip_relocation, monterey:       "ada49f51626d59853d30294b76a196da61a2809a4109441acbd5fd879bec4dc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4df089083726e8e81939da0a20b076f6067c28d475af05259bcdcdb49f911de6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "872e389dc19a9383d72c638954f1948533de5b0325747ad06dc1b4a883d54235"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75d358441d8304b71dfdaa96e508f8269f2e35f9e7a83395e6167f624e0ed12f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d01e1b0fe74517bd3aafdfe3a203fb95fbea706d4b79a2a1c5f7800015716e91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "74a0c9cf7752729ec56af0391b39c95b915a3b066ab5fbbab1fa374e2eeca17a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e1df46aa0487df360902f4c319ffae88b16d9e31f7f3e28adfc5e8cd52678c8"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5459ef88997c2182d49d8dc2c427aa16e484ab6b9d271de0a83e5cb56490e29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9abc33c32ca0702cf1b238bb808a9d79c4f5f05dbfb5f82b3bcd267bd7ef87d0"
   end
 
   depends_on "go" => :build
@@ -21,11 +22,12 @@ class Gptscript < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comgptscript-aigptscriptpkgversion.Tag=#{version}
+      -X github.comgptscript-aigptscriptpkgversion.Tag=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "examples"
+    generate_completions_from_executable(bin"gptscript", "completion")
   end
 
   test do

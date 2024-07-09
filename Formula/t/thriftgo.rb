@@ -1,19 +1,19 @@
 class Thriftgo < Formula
   desc "Implementation of thrift compiler in go language with plugin mechanism"
   homepage "https:github.comcloudwegothriftgo"
-  url "https:github.comcloudwegothriftgoarchiverefstagsv0.3.13.tar.gz"
-  sha256 "b1012a87d81433eb11eced4a9a1488d8a2311a02be497d701d820b3239a7449c"
+  url "https:github.comcloudwegothriftgoarchiverefstagsv0.3.14.tar.gz"
+  sha256 "676b84253709a2c51e690f8ac9dcfb90bffb1fc8f5a34763d1c8f5212018a225"
   license "Apache-2.0"
   head "https:github.comcloudwegothriftgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1856857ca793bc1c3e316f456de217b5993b9b126a45789777bddc72148a8014"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d0f79962b35f12fbf044a76e1f7c145a0ca4c77c83824dcdc1f59f80cfa51bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbb43e6a5b85e4253fe17c4a3b7f76908584064d2a86c25c47b84d438806f4fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e90d8f55a87d416810f9103a76c2546b77a850309d08348b5c6473cd16186d78"
-    sha256 cellar: :any_skip_relocation, ventura:        "ee89541ae676a3996ad80333e78e985ac1495a8468ce131891f44fd70c7fa52e"
-    sha256 cellar: :any_skip_relocation, monterey:       "422ce0fc8b1922610bbb5972f36b49b4bf6a6532ef482d5c8e5be07198c27ea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dee8c8767fef8f4b005fb8d22f682fd13a24aeea96cd21ea15ec97f7fef7c45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d0870ffae220b1c05c24aa78b06615d41e262b5ca088e42fb87242dbf27c1e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4093112295ad151b8cdd77d05046c71d7f92a101918baade67aebe60034517d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c903e2daca0cd3e0b074c64fc4061c77511dd12825daaf881f6d1d901e912f4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be003a84ee7fcc933cc221b0f0f2ae2becb9c5d47cacfc30c04be3c8e466d3b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ef708650fccfd92a975985e609e56e31a58cede2c8171c0175ea1cf212366ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "d17cb72e031a12c953955a2f1cbd2d0e17543e96ea6154eb35a00ccc68cb64ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cf4966e945e270946b8de3987661a8b2b875c6eb6508e5a4138100dd9ce1305"
   end
 
   depends_on "go" => :build

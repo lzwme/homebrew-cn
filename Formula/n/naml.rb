@@ -1,10 +1,10 @@
 class Naml < Formula
   desc "Convert Kubernetes YAML to Golang"
-  homepage "https:github.comkris-novanaml"
-  url "https:github.comkris-novanamlarchiverefstagsv1.0.3.tar.gz"
+  homepage "https:github.comkrisnovanaml"
+  url "https:github.comkrisnovanamlarchiverefstagsv1.0.3.tar.gz"
   sha256 "0842633268b06be82db4dd10c3c938f756f613c44c15c2d935b933409da8c4bd"
   license "Apache-2.0"
-  head "https:github.comkris-novanaml.git", branch: "main"
+  head "https:github.comkrisnovanaml.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d2757a3ba04823d969e9298bebf32444870a24d94e47e9db8ce8ab80cec512c"

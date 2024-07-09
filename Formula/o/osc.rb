@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https:openbuildservice.org"
-  url "https:github.comopenSUSEoscarchiverefstags1.8.2.tar.gz"
-  sha256 "4a231ed16cf40bc41110c3a400c43c9c09c507e3be1ade4cfde1b2fad5f8014b"
+  url "https:github.comopenSUSEoscarchiverefstags1.8.3.tar.gz"
+  sha256 "833efb2701718b4ec17adc6d621799e8169d4490774c33e2abd089194c0c1505"
   license "GPL-2.0-or-later"
   head "https:github.comopenSUSEosc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "515567c13f6717ed83da288acfe0b638fb60220b632995a18f0ce8e923ed6e79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "515567c13f6717ed83da288acfe0b638fb60220b632995a18f0ce8e923ed6e79"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "515567c13f6717ed83da288acfe0b638fb60220b632995a18f0ce8e923ed6e79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff22390531c13b8c55a35fa2b9d942be1205723356b08d9b11c12baf47b497f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff22390531c13b8c55a35fa2b9d942be1205723356b08d9b11c12baf47b497f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff22390531c13b8c55a35fa2b9d942be1205723356b08d9b11c12baf47b497f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c187c949df0ad416783d7117b3ca8ae3adb9f4a70de934f66155821dff61e21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
+    sha256 cellar: :any_skip_relocation, ventura:        "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
+    sha256 cellar: :any_skip_relocation, monterey:       "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc80e64f4b581cfc07e01dae65ac8028d241c9f651cd3916d5a789054b6db549"
   end
 
   depends_on "cryptography"

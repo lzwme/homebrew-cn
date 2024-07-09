@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackagesaab5b8db6db99441da8140a9b997b27260187ab9cbde2e272d82072b991490c6cfn_lint-1.5.0.tar.gz"
-  sha256 "7fdcf1b1393ace49d50f7e8f047f90811a1c463a1cd57489d4781a31f205a8d0"
+  url "https:files.pythonhosted.orgpackages53b343d7ef2b641f862187d414643bf5181238975c99ebcd967720e18329dc8dcfn_lint-1.5.1.tar.gz"
+  sha256 "7ee28264d55543912803ddd6e895f37d4cac5aad4e7135a606c71697e6ed9d3a"
   license "MIT-0"
 
   livecheck do
@@ -13,13 +13,13 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3e61fb9982094e18715ac69c7e50cd4745323b7e3791558d6e0e13e9c9389892"
-    sha256 cellar: :any,                 arm64_ventura:  "9ace4e573f914142936d21426a5672dfb30f5575a4e30d2dd018047448e57969"
-    sha256 cellar: :any,                 arm64_monterey: "171ef70e5e345d68ca054b30cc318fb5752d9065b7f43e5759acc8e5ae82965e"
-    sha256 cellar: :any,                 sonoma:         "b38a37835c4307b9189dd43f6b3e8974688656b0d795fdd713864c14b5e24933"
-    sha256 cellar: :any,                 ventura:        "65916e25898fb866a10efd26207827143d90a40c8dbda1eb2957bc7dea66a815"
-    sha256 cellar: :any,                 monterey:       "9b5380b742a555797b1b28dba198da1fa8c41d5a783f5d8a918e10e830a38bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4efc8557a296d415ddb1b6aa659bb041c648e88719941a2031e199dd8d10e3b3"
+    sha256 cellar: :any,                 arm64_sonoma:   "a7e162a89580a62d011194957975b980b0a14b49387f414c56eddddb366fafc9"
+    sha256 cellar: :any,                 arm64_ventura:  "ffdbc04b09492071c5b6b860768d80b22b30fd8d280bd62c2a1ff58822a85fc8"
+    sha256 cellar: :any,                 arm64_monterey: "a50ed5a096277145283f3bb611c45a7596d1faf1e08ff085dd88a96ee6d00a62"
+    sha256 cellar: :any,                 sonoma:         "83141395a763488b56298c227e580711c6e6a27f7b7e1fcb1d0b2adeebe94de2"
+    sha256 cellar: :any,                 ventura:        "2dc0cdb9f3d3eb73f5fa1da93e15f930db05d6c81a3bf868139252c749754476"
+    sha256 cellar: :any,                 monterey:       "c1c6f45e34dbc42936908f281c54de5923351ee32c3df228c00a6d50b3d5d19b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d66f21d56a2f5fec8a06cfa11aa0477b23894f104d461fd31711d3b6f258d47"
   end
 
   depends_on "rust" => :build
@@ -42,13 +42,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages3632b766eafe67488ab84382f39b04b7aecc1d25f97e154ba56fed414a8f2c2bboto3-1.34.137.tar.gz"
-    sha256 "0b21b84db4619b3711a6f643d465a5a25e81231ee43615c55a20ff6b89c6cc3c"
+    url "https:files.pythonhosted.orgpackages3f79c9a3651e563c5ac762080b8cef8e85659400a78d9ccffcf83916f68f4b04boto3-1.34.140.tar.gz"
+    sha256 "578bbd5e356005719b6b610d03edff7ea1b0824d078afe62d3fb8bea72f83a87"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages53140289e386626f646817b8e8001c35c76dfa2d2ebdc42e5a7cca1578e7bc5cbotocore-1.34.137.tar.gz"
-    sha256 "e29c8e9bfda0b20a1997792968e85868bfce42fefad9730f633a81adcff3f2ef"
+    url "https:files.pythonhosted.orgpackagesa59a3ae02c5dcc8f9a188e03d897aac898bd20d7f3eb5b910c9e071caf70f172botocore-1.34.140.tar.gz"
+    sha256 "86302b2226c743b9eec7915a4c6cfaffd338ae03989cd9ee181078ef39d1ab39"
   end
 
   resource "jmespath" do
@@ -87,13 +87,13 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages8b7b23dc30fba5793d7be3307f33bebb36e08f78f8af9c03fce608833f01bebdpydantic-2.8.0.tar.gz"
-    sha256 "d970ffb9d030b710795878940bd0489842c638e7252fc4a19c3ae2f7da4d6141"
+    url "https:files.pythonhosted.orgpackages8c99d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902epydantic-2.8.2.tar.gz"
+    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages7dfa9802d053f33dbcf110d46e3f28667b06cd764b164f1e3f4189848cdd6e78pydantic_core-2.20.0.tar.gz"
-    sha256 "366be8e64e0cb63d87cf79b4e1765c0703dd6313c729b22e7b9e378db6b96877"
+    url "https:files.pythonhosted.orgpackages12e30d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247pydantic_core-2.20.1.tar.gz"
+    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
   end
 
   resource "python-dateutil" do
@@ -117,8 +117,8 @@ class CfnLint < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
-    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
+    url "https:files.pythonhosted.orgpackages36a283c3e2024cefb9a83d832e8835f9db0737a7a2b04ddfdd241c650b703db0rpds_py-0.19.0.tar.gz"
+    sha256 "4fdc9afadbeb393b4bbbad75481e0ea78e4469f2e1d713a90811700830b553a9"
   end
 
   resource "s3transfer" do

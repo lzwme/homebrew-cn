@@ -2,11 +2,11 @@ class Remarshal < Formula
   include Language::Python::Virtualenv
 
   desc "Convert between TOML, YAML and JSON"
-  homepage "https:github.comdbohdanremarshal"
+  homepage "https:github.comremarshal-projectremarshal"
   url "https:files.pythonhosted.orgpackagesaee798e22a9d62ee2c086da94f6aafeee5e7c3a68197d761cc22c90e7e949afbremarshal-0.18.0.tar.gz"
   sha256 "8fd29ba9d5931f5ee2c54f902b11b26cd3bbca0ad8b3d6f39ca48255284f71dd"
   license "MIT"
-  head "https:github.comdbohdanremarshal.git", branch: "master"
+  head "https:github.comremarshal-projectremarshal.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af300c5d2b86f9e76229391e05a6f01f333cf0395c7e9cc1b320fb1a7dd4214a"

@@ -1,8 +1,8 @@
 class Minica < Formula
   desc "Small, simple certificate authority"
   homepage "https:github.comjshaminica"
-  url "https:github.comjshaminicaarchiverefstagsv1.0.2.tar.gz"
-  sha256 "c5b7e6c890ad472eb39f7e44d777da1b623930fd099b414213ced14bb599c6ec"
+  url "https:github.comjshaminicaarchiverefstagsv1.1.0.tar.gz"
+  sha256 "4f56ea73d2a943656f8a5b533e554b435bc10f56c12d0b53836e84a96b513bf7"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,13 @@ class Minica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c7334a3e9027cc0bcc410d11904e90e142c0811549ede3d63cbeccbcc7ea99e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecf3d68d4a4e348da0de9a156062d4c45cab04506899a74f11a84cf1af7f9402"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae5f85025b2ad73a25fb69c777587a5660ab40f92e148c561df8f9aa54544356"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e6f68245edcd602ca5fe8ab2b98c5aef62e826bc1e5f6660c710d886c308bc8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0d368f1e0f118453a42d30d0e1a0e86f6981269ffefb427b1dd82bdee02f0df0"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7a04897c252e04c3f5559cc0b7607e1b812aec6dd7548e778bf4c6b6196c46d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d812f951cbf8acc0b39ceb8a8aec45a7e10d0ff96b697c4b8e34efdda458837"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a0ae49ee8f0a7dd9804c19e899efad38c95632c572cf440f247fbf8c902072c2"
-    sha256 cellar: :any_skip_relocation, catalina:       "6ed3047835593e51bddc2f1150ca3db84f736c4714442140ed693e23561053ee"
-    sha256 cellar: :any_skip_relocation, mojave:         "3665f724fc7ca7da303894232bceda5f53b3aa75d6fe010f77635f75062212d7"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "898ae6355e98099a2692f397b58c497dbed656a7859ed8bfb9e045fc4af56a0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2be226df1e804807e87055c5637b7d750684c744cad1aeccbe4b031c9a980c82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc8955ffd5c34b8eaedbc556e71188ec55c2a01e76c26f853aeb0038c7ac2426"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa6002d59696edcfa6929d19a51a99260f472d1c492295c6c38ee074c381d0aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9317695171ce2314300613641c494762895bf1954560e53546c44e0d9557ea83"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e65d5ccc5f4703009f8b2d0a460dc883711c71a4814c06921c2ea98dfd797f8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "93d40ba3ada1bee8b74febdd40b3bf37a4bdd91a24d4a62f342314a9d85cb736"
+    sha256 cellar: :any_skip_relocation, monterey:       "6769f28dbd2b0295f87d007007b9cb61d5715e93a9b13f4b25de9466083fdc23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea318ca6a9231fd445ec38d2905f6b5de30ce697dcedeb9d8ae5127f9634500f"
   end
 
   depends_on "go" => :build

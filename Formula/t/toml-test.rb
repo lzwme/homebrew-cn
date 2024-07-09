@@ -1,7 +1,7 @@
 class TomlTest < Formula
   desc "Language agnostic test suite for TOML parsers"
-  homepage "https:github.comburntsushitoml-test"
-  url "https:github.comBurntSushitoml-testarchiverefstagsv1.5.0.tar.gz"
+  homepage "https:github.comtoml-langtoml-test"
+  url "https:github.comtoml-langtoml-testarchiverefstagsv1.5.0.tar.gz"
   sha256 "e6829cdcaed94ac2bfcaea05dab9d16db0bead2d3ac9936224774a67fbd46ade"
   license "MIT"
 

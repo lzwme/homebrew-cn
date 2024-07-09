@@ -2,21 +2,20 @@ class Sherlock < Formula
   include Language::Python::Virtualenv
 
   desc "Hunt down social media accounts by username"
-  homepage "https:sherlock-project.github.io"
-  url "https:files.pythonhosted.orgpackageseb570ac8fcde9e2dbdacb20f48e8c20f3049972a59839d8bccbef0799b944140sherlock_project-0.14.4.tar.gz"
-  sha256 "3c0edc4ebbcdb8eae03d5ce2e377e1c6839d73b8e77388b70125120537917022"
+  homepage "https:sherlockproject.xyz"
+  url "https:files.pythonhosted.orgpackages0a95b4f7a399c43d1d57a703ddf08513411bbb0bfc6bbaabab7ad4e2c534bba7sherlock_project-0.15.0.tar.gz"
+  sha256 "1ae2ef98a0d482039ff00743e702f28ddf4a0d6260b0fbc2579d680469874910"
   license "MIT"
-  revision 2
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42f1586e3de0478df13f1775afe67d61cd9bdfe776201209166ae3255b07217a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dac71187813214e99f3b43df9bf83988a7f59053ec5dee5a6940dbcc97005d20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2c0fcb5ba4c1ba01792040ff58014909c5567be5ce619790c2c376e24fa28a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c8ae0cfe6ef4a1cb65fe62cb44488347681f8105996287d9bc49149648d3072"
-    sha256 cellar: :any_skip_relocation, ventura:        "c70840d3143289b9278f61419c047d1c9f52f41f4f423dd924c344c1322c2a19"
-    sha256 cellar: :any_skip_relocation, monterey:       "76a29ff9f4c86d04077b2b785f4750c6d8728dd89d52bf5b8aa8b9e279c8a551"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b5a61e377edbb8fbf8dc4e8fcddf883b59018f0bfaf73365eb93d6f457a54a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8345de85f112cc086ac469f31a31a8b3776845024c1187762ec07b966dc60560"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ba7bf78a6649390a4ef1665e87ca89f7a2f1c2ab3d612aea1f542042be9a9b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1bd1b1ef99db8e219b21417971000e2c26db6ff7f0b6bcb0f9bc2f7edd7aee80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad04c2512b4831b2203d6ffff576e4cf607c635c7378db71c74c4f1f2c4ff05f"
+    sha256 cellar: :any_skip_relocation, ventura:        "20249260bca45b83eae5e37fd46e8a7bcb2f7fc57f08ae3b3853d7d26cb71566"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf85f8c4823f023ff414ef55c7fd855ee73d2e592b23f144e04db3e718dbaf28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "acd837d9f3ff0e6a9f643b079e015a869da0c7f3344c3cfab160ac14986fa621"
   end
 
   depends_on "cmake" => :build
@@ -43,19 +42,14 @@ class Sherlock < Formula
     sha256 "8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"
   end
 
-  resource "exrex" do
-    url "https:files.pythonhosted.orgpackages21398f143f76fa9f6048cb42fa0594fc1a57fd143e69a7d42a35d4e16cabc7d9exrex-0.11.0.tar.gz"
-    sha256 "59912f0234567a5966b10d963c37ca9fe07f1640fd158e77c0dc7c3aee780489"
-  end
-
   resource "idna" do
     url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "openpyxl" do
-    url "https:files.pythonhosted.orgpackages14b8acf74229f1b2d9e961f155e0be04e4629a1b53b3eeb4f2ac35c10032cf1bopenpyxl-3.1.4.tar.gz"
-    sha256 "8d2c8adf5d20d6ce8f9bca381df86b534835e974ed0156dacefa76f68c1d69fb"
+    url "https:files.pythonhosted.orgpackages3df988d94a75de065ea32619465d2f77b29a0469500e99012523b91cc4141cd1openpyxl-3.1.5.tar.gz"
+    sha256 "cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050"
   end
 
   resource "pandas" do
@@ -96,11 +90,6 @@ class Sherlock < Formula
   resource "stem" do
     url "https:files.pythonhosted.orgpackages94c6b2258155546f966744e78b9862f62bd2b8671b422bb9951a1330e4c8fd73stem-1.8.2.tar.gz"
     sha256 "83fb19ffd4c9f82207c006051480389f80af221a7e4783000aedec4e384eb582"
-  end
-
-  resource "torrequest" do
-    url "https:files.pythonhosted.orgpackagesa3d200538e47a2c80979231313c346a0abc3927c7b230d69eb923bb5b221ec62torrequest-0.1.0.tar.gz"
-    sha256 "3745d4ea3ffda98d7a034363c787adb37aab77bdab40094a4d937392cd4dae82"
   end
 
   resource "tzdata" do

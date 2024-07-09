@@ -5,17 +5,17 @@ class Gmt < Formula
   mirror "https:mirrors.ustc.edu.cngmtgmt-6.5.0-src.tar.xz"
   sha256 "4022adb44033f9c1d5a4d275b69506449e4d486efe2218313f3ff7a6c6c3141e"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comGenericMappingToolsgmt.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "e3b1717337b57a9e65a5d4bcfa618773e3ce884bc9bf2a8829be8bc765820b95"
-    sha256 arm64_ventura:  "ecd0d44325856b3212e60c51bd061935594ea5d5079958037e744bccad306be8"
-    sha256 arm64_monterey: "aeb5ba6d661148c53e235fdabb8ae740d46843ed87d95134ad2f725d29e9c617"
-    sha256 sonoma:         "be0b2a8dbf84a6158f0380081d08e648868c1253117b1010b431402cdf4813f1"
-    sha256 ventura:        "5cc67841a0f2665219c20d100fe50520f30d5959d338c34ec4c6ecb89755c0ff"
-    sha256 monterey:       "7e800eb22861b0be50a3630eeb5f24354467fe6e05aafc373bf71d079b3a94a3"
-    sha256 x86_64_linux:   "99009476dd6ef2a4adb7df593e3ee833f41627f7da646536c3b6207b903a351f"
+    sha256 arm64_sonoma:   "7a9e2b2d755984f837700e435ed9f7a178d97e731c9c035471216a2bc7229b6a"
+    sha256 arm64_ventura:  "d1417abc1165bddb1bf1a455daa6e9267a443cf45f80c0f0d18c004fb441a1ce"
+    sha256 arm64_monterey: "829748601cadad21494b220e3cbbd9fa73bac30e5653008badb806952d4b59c9"
+    sha256 sonoma:         "d208aa7a4f2583c23df3b997664c665f312246c93e6b5223cdc45e3cc2468e7e"
+    sha256 ventura:        "7fae084040a7434450bac91087439904765faa73e0243c4c5c22998d398a88e1"
+    sha256 monterey:       "9909ef3fdfc45c1e6832a32c32c92ca996b4cab44ea720af3001ea8afb4e0f49"
+    sha256 x86_64_linux:   "0be4e41f6fd938a58ccd09f4afc9d2b11df44c4f30120074e542ea96ac26cdc4"
   end
 
   depends_on "cmake" => :build
@@ -31,9 +31,9 @@ class Gmt < Formula
   end
 
   resource "dcw" do
-    url "https:github.comGenericMappingToolsdcw-gmtreleasesdownload2.1.2dcw-gmt-2.1.2.tar.gz"
-    mirror "https:mirrors.ustc.edu.cngmtdcw-gmt-2.1.2.tar.gz"
-    sha256 "4bb840d075c8ba3e14aeb41cf17c24236bff787566314f9ff758ab9977745d99"
+    url "https:github.comGenericMappingToolsdcw-gmtreleasesdownload2.2.0dcw-gmt-2.2.0.tar.gz"
+    mirror "https:mirrors.ustc.edu.cngmtdcw-gmt-2.2.0.tar.gz"
+    sha256 "f2a8a7b7365bdd17269aa1d412966a871528eefa9b2a7409815832a702ff7dcb"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Libchewing < Formula
   desc "Intelligent phonetic input method library"
   homepage "https:chewing.im"
-  url "https:github.comchewinglibchewingreleasesdownloadv0.8.4libchewing-0.8.4.tar.zst"
-  sha256 "c272e85c9aff03265db08641cac25709b9faf45b4602e04ea6cb39317103b3fa"
+  url "https:github.comchewinglibchewingreleasesdownloadv0.8.5libchewing-0.8.5.tar.zst"
+  sha256 "472881fc7df7f1bc90383937c504589d80d542b5f2c4c5c007017c13a21f534e"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7f1a299fcae44b3ff5c4b857e7218ea8b9ec689eec261a7787efce48084a99e7"
-    sha256 cellar: :any,                 arm64_ventura:  "39f8feb5a332fb7e5c5ccf7a7c34f2962ea06af11821dc2a797d6d6a9f44c6eb"
-    sha256 cellar: :any,                 arm64_monterey: "c5d4c657ae42255346a6948686c6c133be6759b074fac940e666d7fe06a6ab47"
-    sha256 cellar: :any,                 sonoma:         "72f4a959c958f5cc3857cc70e993130c946932fa720a45cb7fc35ec2f2eafa8a"
-    sha256 cellar: :any,                 ventura:        "7fadf43898c394b03850e0135cb4bcf1e49503d624ac67107f5f5467c3be1542"
-    sha256 cellar: :any,                 monterey:       "7fb74f41c2c0709f5167733b54bf7a533848b02d2d03d4c6abffe7ccdbd4557a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b1c2e758831df267ae0a6245a69a2002086bc26ce7ee30be9e5c1a9d55e1252"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ef7e71d5b7443cf3c7fc08bd33bf376f6cb54bf6af203069a83edcbffef5d95"
+    sha256 cellar: :any,                 arm64_ventura:  "85b945e2ba6468408b69a15137ddc54eaf29b4a1682673b4eecf3acaf3c69448"
+    sha256 cellar: :any,                 arm64_monterey: "b96e58c16950027d036241cc80ee4e2615c811df431aa366378f519bf478b31f"
+    sha256 cellar: :any,                 sonoma:         "0b839bec70a2463b55443ae89b148df676a79f92ca24ee535aca0d5e9861d791"
+    sha256 cellar: :any,                 ventura:        "7b2998fe365dfb04a93bd7dfe5aae92207f204dc12fd94cded6cd2447414a2bc"
+    sha256 cellar: :any,                 monterey:       "8c195f94098a82571cf630a570d4ea86e461637cd3b8d8cd1b5d7d21a7edf8ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3e9cf90e8ccfcf31f2a02fe375e5e3d3b02540bcfb61d0f8b56128ae8c49faa"
   end
 
   depends_on "cmake" => :build

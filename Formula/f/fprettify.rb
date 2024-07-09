@@ -2,11 +2,11 @@ class Fprettify < Formula
   include Language::Python::Virtualenv
 
   desc "Auto-formatter for modern fortran source code"
-  homepage "https:github.compseewaldfprettify"
-  url "https:github.compseewaldfprettifyarchiverefstagsv0.3.7.tar.gz"
+  homepage "https:github.comfortran-langfprettify"
+  url "https:github.comfortran-langfprettifyarchiverefstagsv0.3.7.tar.gz"
   sha256 "052da19a9080a6641d3202e10572cf3d978e6bcc0e7db29c1eb8ba724e89adc7"
   license "GPL-3.0-or-later"
-  head "https:github.compseewaldfprettify.git", branch: "master"
+  head "https:github.comfortran-langfprettify.git", branch: "master"
 
   bottle do
     rebuild 2
