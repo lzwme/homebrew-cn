@@ -28,4 +28,8 @@ cask "calibrite-profiler" do
     "~LibraryPreferencescom.calibrite.profiler.plist",
     "~LibrarySaved Application Statecom.calibrite.profiler.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

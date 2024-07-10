@@ -15,4 +15,8 @@ cask "ajour" do
   app "Ajour.app"
 
   zap trash: "~.configajour"
+
+  caveats do
+    requires_rosetta
+  end
 end

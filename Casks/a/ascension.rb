@@ -15,4 +15,8 @@ cask "ascension" do
     "~LibraryPreferencescom.byteproject.Ascension.plist",
     "~LibrarySaved Application Statecom.byteproject.Ascension.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

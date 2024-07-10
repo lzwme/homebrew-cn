@@ -1,9 +1,9 @@
 class ArmNoneEabiGdb < Formula
   desc "GNU debugger for arm-none-eabi cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-14.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.2.tar.xz"
-  sha256 "2d4dd8061d8ded12b6c63f55e45344881e8226105f4d2a9b234040efa5ce7772"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-15.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-15.1.tar.xz"
+  sha256 "38254eacd4572134bca9c5a5aa4d4ca564cbbd30c369d881f733fb6b903354f2"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ArmNoneEabiGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5f2bce4bfb9515f2252c53cbd353df65af5b22f685dd30da34f9d85c33762b51"
-    sha256 arm64_ventura:  "bd11590d85c8d7fed140e2e87d79dff67503c06e9b5691ee91eb69143b8524d0"
-    sha256 arm64_monterey: "b5d702336686b39598b9dfbd632e691cba66485f767136d7f085adc142343e8b"
-    sha256 sonoma:         "bc119dd0e1c4b191a1a3234a2b779c98dab1cd1e93a8d0bd54b3a046bca77344"
-    sha256 ventura:        "21b5e7e040736cfce044b927fb6ba238c9c3f379bceb46055bac805e3ea3f219"
-    sha256 monterey:       "f755b803b442cfb7f731f4ba0a522153a27fd9536e8a6a2f6eeb3f735dd0dc6e"
-    sha256 x86_64_linux:   "bbcd5e3cdf0a3db13f8acaaeab5223c5c0c9a6f78c7b5f72beac90bab56bba83"
+    sha256 arm64_sonoma:   "1f2012ea2f5c260fb5403802612d9f67caf6049aa0941b4e2623f3d4d802e145"
+    sha256 arm64_ventura:  "dd0f5fd927cc14f6d445edc65ccc2b74d5cd17ba3bbda0dff0c6bd7b6fda5088"
+    sha256 arm64_monterey: "3419beec438e06d8a30b95dc62055f57ff61fd2b18b48945c485801496a8651a"
+    sha256 sonoma:         "3b5d49f771d77f4848fbc910de65aeb60b41f776d6a3dbf7e81e4045c3eb0977"
+    sha256 ventura:        "fb66b64cea0bb9a72f28d9405ec616f5390c02791f984db1a414f1a3a5b6d2b4"
+    sha256 monterey:       "d648d0e4d2a1117ed0f9b9f091cedf3c99a994837667dec9da1bbbc4f79c2e96"
+    sha256 x86_64_linux:   "655212621e11ca1ba708b18fb42402be25b0bb7ea572de0e8bbb5353bab15aa1"
   end
 
   depends_on "arm-none-eabi-gcc" => :test

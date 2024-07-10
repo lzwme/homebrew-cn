@@ -3,7 +3,7 @@ class Eg < Formula
   homepage "https:github.comdavepeg"
   url "https:github.comdavepegarchiverefstagsv1.02.tar.gz"
   sha256 "6b73fff51b5cf82e94cdd60f295a8f80e7bbb059891d4c75d5b1a6f0c5cc7003"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.comdavepeg.git", branch: "master"
 
   bottle do
@@ -25,6 +25,12 @@ class Eg < Formula
 
   depends_on "s-lang"
 
+  conflicts_with "eg-examples", because: "both install `eg` binaries"
+
+  # Fix error: parameter 'iRefresh' was not declared, defaults to 'int';
+  # ISO C99 and later do not support implicit int [-Wimplicit-int]
+  patch :DATA
+
   def install
     inreplace "eglib.c", "usrshare", "#{etc}"
     bin.mkpath
@@ -41,3 +47,18 @@ class Eg < Formula
     system bin"eg", "not_here.ng"
   end
 end
+
+__END__
+diff --git aegscreen.c begscreen.c
+index d3c7e66..31bbca3 100644
+--- aegscreen.c
++++ begscreen.c
+@@ -211,7 +211,7 @@ void DisplayMessage( char *pszMsg, int iRefresh )
+ *
+  *
+
+-void ShowStdMsg( iRefresh )
++void ShowStdMsg( int iRefresh )
+ {
+     char *pszMsg = (char *) egmalloc( strlen( CurrentGuide( NULL ) ) +
+                                       strlen( EG_VERSION ) + 7 );

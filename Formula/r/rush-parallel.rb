@@ -17,6 +17,8 @@ class RushParallel < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "rush", because: "both install `rush` binaries"
+
   def install
     system "go", "build", *std_go_args(output: bin"rush")
   end

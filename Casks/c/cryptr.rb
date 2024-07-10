@@ -19,4 +19,8 @@ cask "cryptr" do
     "~LibraryPreferencesio.cryptr.plist",
     "~LibrarySaved Application Stateio.cryptr.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

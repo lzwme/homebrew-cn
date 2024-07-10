@@ -6,16 +6,16 @@ class Yewtube < Formula
   url "https:github.commps-youtubeyewtubearchiverefstagsv2.10.5.tar.gz"
   sha256 "8100466a5e89c84249d882e2e9ea9ff282a2d4f7f68135157cb942e6eb927b29"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "707474d4ebc4f2648d28d1fe49621c4fa61beadc44621c753998fed00aad59bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fbb600fe1ee00eaf630ef64fd3f5e132c706ddc46660f787c35d03cdfe435d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83903435a23778da4b4b3623ef865c172545e75f5e7b4271d19881c479a6f3a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "84b75c99a07beaa260218c6e508f03befbe9014215f383e2f9ab8c0597257495"
-    sha256 cellar: :any_skip_relocation, ventura:        "522744d13ece8f73bf06b3cc73bac99ed2b438a0e92b19b8959df695a150bb90"
-    sha256 cellar: :any_skip_relocation, monterey:       "54de1ae2c9112e2d1103e223b9636aacb9d88be1694b67e17c4dc62d9c079668"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b412ba7b3197b1eb236cd722952527a34d523607da8ada3ee0bda164df7ebe2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "872c1323225c91a13fb51f6658506650c17a3c4f6a5dcc0f205b400a8f47a983"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c91a2258c805bf4c33d8eee39519a0c74017e7233c4f5bc0872107336cb5cf41"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9046036c2e629ff96ff49ae91901339c1317f68657325d311ac83bae254fbd3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "74fccd98cd52d9ca658ffa67163cde09c90f7f716015f75ef31b8adc5085870f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e32970c118f8270b8251ea37136826e4a920f7c4f9b95cf84cfc16cfde18f923"
+    sha256 cellar: :any_skip_relocation, monterey:       "b55b413c9a5a0ff3e211b202e2062e4696e6664bc6c430716bae8c1c97b4e4b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "720dc571b204ba3939140db726ca146e5ba4918c1af4c79989caea87be40458e"
   end
 
   depends_on "mplayer"
@@ -107,8 +107,8 @@ class Yewtube < Formula
   end
 
   resource "yt-dlp" do
-    url "https:files.pythonhosted.orgpackages5ac3ebb3aa4b46550aaa1e125db81db8c4efbfe1436221e8ed60ee5a18930890yt_dlp-2024.7.2.tar.gz"
-    sha256 "2b0c86b579d4a044eaf3c4b00e3d7b24d82e6e26869fa11c288ea4395b387f41"
+    url "https:files.pythonhosted.orgpackages2d2a9eeaaf4f3c9253c332d065ae9adf925742f46bf033864754d01a2aae66ecyt_dlp-2024.7.9.tar.gz"
+    sha256 "e19f00f9e55e90bca1c94bcaf809aa33e51634be9f0de2df84a72d3206934f94"
   end
 
   # Fix SyntaxWarning's on python 3.12

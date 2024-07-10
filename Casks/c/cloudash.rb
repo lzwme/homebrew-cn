@@ -18,4 +18,8 @@ cask "cloudash" do
     "~LibraryPreferencesdev.cloudash.cloudash.plist",
     "~LibrarySaved Application Statedev.cloudash.cloudash.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -8,4 +8,8 @@ cask "augur" do
   homepage "https:github.comAugurProjectaugur-app"
 
   app "augur.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

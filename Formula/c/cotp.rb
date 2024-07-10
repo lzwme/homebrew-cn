@@ -1,19 +1,19 @@
 class Cotp < Formula
   desc "TOTPHOTP authenticator app with import functionality"
   homepage "https:github.comreplydevcotp"
-  url "https:github.comreplydevcotparchiverefstagsv1.7.1.tar.gz"
-  sha256 "62c7bd4b5f3435cc04add28041a896ea76605c0c0675e711672b2dc2221cbccf"
+  url "https:github.comreplydevcotparchiverefstagsv1.7.2.tar.gz"
+  sha256 "0293483ef7a6671901fbe8fb228a334ae4fa9c9c579c9fae7a112f6efd04ae53"
   license "GPL-3.0-only"
   head "https:github.comreplydevcotp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91ebb7aa5f53d1f8ef8601dbd0f96dd60569f274905422ed90450d48211b9e2b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d82fc9ae1c8db9333bcb1a5c81adcc97d4e29108ddd75c37faeab5ac9b324311"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e40c68be447fe4403e470f7f852d0e4e8e9ee6e8880adec3166a89eaf500c3ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4e15c74c1a26a5cb8ebbec95a86618a3d180f1ebe0cbae044ce4186f9c89d0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "26387825ec4023b6094ea981c49b5200146fecda4323f199b98736cbf89bbfbf"
-    sha256 cellar: :any_skip_relocation, monterey:       "6272afdc1ea694aec603d5deae5ac30a7c7a0b2f9e4c7a75dcc05c1611d240ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0721b853e66ae1be61dc8937e993cf917583e11fe1b6fc9a3a929d12114203fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42618ced4b4e8891c7ea11c3fff5b6d44c9ad54c2fc6c0c48c38047246ad6b70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4d768f289bedb144cc392367f369609375cca008b4a2e97aa76ed6d00f06d9a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f40b1f9cdee1d5225b9a5451f71bebf173b5ea5c718ed1a8653b506def1ccbf8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5bc292affc1e8e59cda9d2e4d76bef9ad3ff04269a1e4db17b53a23491df07a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "fcd4371a197e161ca75ea88f9e9f1a4d8f55bfe606b7d3dbde9a04c744943b19"
+    sha256 cellar: :any_skip_relocation, monterey:       "be51777e4a2b707ea48d0a2ad4edc08a75434740096ba35225950b79b0160150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d6414419d4989dc269217e4c546fdc2c5e2e88f4c980af156b4ae2c45098e31"
   end
 
   depends_on "rust" => :build

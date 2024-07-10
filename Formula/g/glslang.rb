@@ -1,8 +1,8 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https:www.khronos.orgopenglessdktoolsReference-Compiler"
-  url "https:github.comKhronosGroupglslangarchiverefstags14.2.0.tar.gz"
-  sha256 "14a2edbb509cb3e51a9a53e3f5e435dbf5971604b4b833e63e6076e8c0a997b5"
+  url "https:github.comKhronosGroupglslangarchiverefstags14.3.0.tar.gz"
+  sha256 "be6339048e20280938d9cb399fcdd06e04f8654d43e170e8cce5a56c9a754284"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
   head "https:github.comKhronosGroupglslang.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Glslang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fa8e2a69d8570405d5cd1eeb4ed26fe220e03b618f0f4f91745b3ac89cc28efb"
-    sha256 cellar: :any,                 arm64_ventura:  "beb6d03a1566fa02acddd72368c1bd632980697bc3d67563b32b511536392ee8"
-    sha256 cellar: :any,                 arm64_monterey: "8321c28d1fe27cb23e27315184a0cd4d1f68aeb6da2d666f88e31bd44f3fabca"
-    sha256 cellar: :any,                 sonoma:         "97632cebe4f409d9871454aa2904b4dc47f014ff41063c3fa54bac6b1bc68420"
-    sha256 cellar: :any,                 ventura:        "f0ac392ab84be5ec228b51168da8bbebe08e8e05f31da8e5a784c146ac270aa7"
-    sha256 cellar: :any,                 monterey:       "58430de8ff23719940a0d1a4087ca902e72e56851baef2428fe243ba637e9d3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5af402e45fec6132350a474b433ee6450208b5dd72c72e6211bec0200fc6132"
+    sha256 cellar: :any,                 arm64_sonoma:   "47ec2bd28333f865554eb3345c2725537d0643049628626ecf13f9ca317dbc5b"
+    sha256 cellar: :any,                 arm64_ventura:  "390d16183d4dee8ae1e1f8b974189d26cf1bce4db7c4a8dbfe09cb439c927af6"
+    sha256 cellar: :any,                 arm64_monterey: "32d3f139cb61c855a13561eb946035355cfc28b48d44a180a8136b93e1c9292b"
+    sha256 cellar: :any,                 sonoma:         "3bd7bc3c27df33d84c8063eeb0a88b1927f04b38b7b46993164d22783578844a"
+    sha256 cellar: :any,                 ventura:        "87101567327645d36baf33384fdb407e9a9c53ddf95462137bef4b94bdc60b87"
+    sha256 cellar: :any,                 monterey:       "af5b88f33e41ac73a0aaeaea12aab26c6590764e7b3213e7551f411fdca916a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4614dd621b0f2792235693a83e5fbb51045d73301df7e6cc67f9b0c384a90457"
   end
 
   depends_on "cmake" => :build

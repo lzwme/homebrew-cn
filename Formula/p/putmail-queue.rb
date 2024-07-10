@@ -13,6 +13,9 @@ class PutmailQueue < Formula
     sha256 cellar: :any_skip_relocation, all: "6fc472e77db929384f6f9e436b6a3433df05d86cc583e499f92bd69373d332c3"
   end
 
+  # putmail-queue doesn't support Python 3
+  disable! date: "2024-07-03", because: :unsupported
+
   depends_on "putmail"
 
   def install

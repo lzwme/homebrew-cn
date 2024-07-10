@@ -58,4 +58,8 @@ cask "cockatrice" do
     "~LibrarySaved Application Statecom.cockatrice.cockatrice.savedState",
     "~LibrarySaved Application Statecom.cockatrice.oracle.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

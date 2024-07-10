@@ -16,4 +16,8 @@ cask "corona-tracker" do
     "~LibraryApplication Scriptsmaccatalyst.com.samabox.corona",
     "~LibraryContainersmaccatalyst.com.samabox.corona",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

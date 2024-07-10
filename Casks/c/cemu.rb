@@ -5,9 +5,14 @@ cask "cemu" do
   url "https:github.comCE-ProgrammingCEmureleasesdownloadv#{version}macOS_CEmu.dmg",
       verified: "github.comCE-ProgrammingCEmu"
   name "CEmu"
+  desc "TI-84 Plus CE and TI-83 Premium CE calculator emulator"
   homepage "https:ce-programming.github.ioCEmu"
 
   depends_on macos: ">= :sierra"
 
   app "CEmu.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https:github.comutil-linuxutil-linux"
-  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.40util-linux-2.40.1.tar.xz"
-  sha256 "59e676aa53ccb44b6c39f0ffe01a8fa274891c91bef1474752fad92461def24f"
+  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.40util-linux-2.40.2.tar.xz"
+  sha256 "d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -12,7 +12,6 @@ class UtilLinux < Formula
     "LGPL-2.1-or-later",
     :public_domain,
   ]
-  revision 1
 
   # The directory listing where the `stable` archive is found uses majorminor
   # version directories, where it's necessary to check inside a directory to
@@ -25,13 +24,13 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "71d806190372bbff50dbef59f3401ebc3e838943e7ac0ce312ee36bb4d4ddd54"
-    sha256 arm64_ventura:  "e50f0dfefd74624135b856cfac74752ebff2b6bf8bd1aab976ad387807274b83"
-    sha256 arm64_monterey: "bcafa93700327cef6eaadd7b799c799436ed9980e769a0e83759d09f6ffe426f"
-    sha256 sonoma:         "05502008a8453b8996861383179912d6cf09ae469853c2a1cd98e28163475251"
-    sha256 ventura:        "0db06762eca7460d29810aecc43355bbee7a15def25c7e9b7ec1efd5a420fb0b"
-    sha256 monterey:       "169357b7f9ea7966baeaac00844d7af5b1ba4ed14075e7713024cb3acc2b4fed"
-    sha256 x86_64_linux:   "6c5f553d101655a7b9e69ef34b15fa246844dbe80f39d739a5283e1e6b6416d6"
+    sha256 arm64_sonoma:   "dc18e89c3ac8ebea09caac2f1a3bc0f6e3416da1a3a747f310054dddc702924e"
+    sha256 arm64_ventura:  "5c4f9d4fd727f05219af9a9121958ea7a5c108d9f9706be4e03ddd62d5ec7665"
+    sha256 arm64_monterey: "fa0d6e71473544c03133c8b465433f16cca2aeddf83e51207c709d862b49c3eb"
+    sha256 sonoma:         "83c2c08d2c66a378b31f6edd91da6669a48631f4b2d8d24641fb88dcef6e5b05"
+    sha256 ventura:        "c193f0ccd7a9dd4b1ec81b41544bc963f50258a8713ff3112bb30e98b0385541"
+    sha256 monterey:       "0d0dc0fd8860b3a95a6248a60782f0e4770989ca81f5e8e02d8e3622596776d3"
+    sha256 x86_64_linux:   "2ab17c3336042dc8e51d1564ffec4320f7b29e2e7be561970e434d82fe8bf075"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -56,17 +55,6 @@ class UtilLinux < Formula
     conflicts_with "flock", because: "both install `flock` binaries"
     conflicts_with "ossp-uuid", because: "both install `uuid.3` file"
     conflicts_with "rename", because: "both install `rename` binaries"
-  end
-
-  # Fix for https:github.comutil-linuxutil-linuxissues3071
-  # Remove with `autoconf` and `automake` build deps when included in a release.
-  patch do
-    url "https:github.comutil-linuxutil-linuxcommitff8ee29d648111eb222612ad4251e4c3b236a389.patch?full_index=1"
-    sha256 "0fcdcd07c7fe5c66b80917976064b260bac84635599e4437bff13857e8771075"
-  end
-  patch do
-    url "https:github.comutil-linuxutil-linuxcommit0309a6f5ca018d83420e49e0f9d046fecdb29261.patch?full_index=1"
-    sha256 "0923e85a7381a33b888984ab79b079d6e52f2d96d274f85632a696b6cc352863"
   end
 
   # uuid_time function compatibility fix on macos
@@ -104,7 +92,7 @@ class UtilLinux < Formula
       args << "--without-python"
     end
 
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
 
     # install completions only for installed programs

@@ -26,4 +26,8 @@ cask "conferences" do
     "~LibrarySaved Application Statedigital.conferences.macos.savedState",
     "~LibraryWebKitdigital.conferences.macos",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

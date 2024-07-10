@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https:github.comcycodehqcycode-cli"
-  url "https:files.pythonhosted.orgpackages73d78bbeb924924dbaa5bde92f30edfd544f864c2deefb54b30886816556d3e8cycode-1.10.2.tar.gz"
-  sha256 "ed0458f9410cea2028e37f01bb31c28c444492ec44dd4050abfc4d3406e5358f"
+  url "https:files.pythonhosted.orgpackages6778bc0b26080ffb07e76e2ab078aef54ba6b0d2c5cecf9233cfe3a819c8d4b3cycode-1.10.3.tar.gz"
+  sha256 "1584d510b510b5a3af2e72b17d300d40679e5a293ec9ab9cb00137efa55579f1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2075d3ceec4045a78518da9eec8b9e61b8c098922e39d5353a77d11d74d92f89"
-    sha256 cellar: :any,                 arm64_ventura:  "9c414505870d5a2e66c3c78ec51a77da505fb3fdd1861a798dd44dd446cd6051"
-    sha256 cellar: :any,                 arm64_monterey: "da47f81ce24ae452c6cda66cdc6b382089e34bdf7284fcbdd589f961070ff6a3"
-    sha256 cellar: :any,                 sonoma:         "77654bbb23c57c0524631f3e359993d7ce67dd8e46151a71d7fdcffc2016003e"
-    sha256 cellar: :any,                 ventura:        "2e0e999cda34d79130d3b2be9f563c484e45df85938ec60bd0cfdc6d4d4d000b"
-    sha256 cellar: :any,                 monterey:       "a5daa8a76f0ac9d9ce9d98b97cad59c5c69a5820031d0fe567cd4c116cdf9db9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a326ba7285e04fa6f4022013db7e023159a03cd0dadbd0f5128f001b86519e55"
+    sha256 cellar: :any,                 arm64_sonoma:   "b6eb83f3a2ac2d6f75864a54fe5b074a17d542390422344a4f3df3aff78de5cc"
+    sha256 cellar: :any,                 arm64_ventura:  "49fbf633c1cda47f89b18bd74ff6a336e40c8e3ea29aaa4aadd587f2cfcd86a6"
+    sha256 cellar: :any,                 arm64_monterey: "e1c48e7d3bbc50f65b250bbb9f04fe6f344a873bcff9622b8f677862c380294d"
+    sha256 cellar: :any,                 sonoma:         "2036f554e14019252734b2013a366cdc35b3956905dd223299d5643c2b688633"
+    sha256 cellar: :any,                 ventura:        "257179c72e2552d96b1b191783b53e857176076e4b1eee0f148646b569edc5d7"
+    sha256 cellar: :any,                 monterey:       "6fdda76953b80bd5906ba2386d91c09d64466f735ce45164919fe9eeaca62a7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa96442fe20852327e024c69fd35ca7e5bb1dd65f8c08b89f21dc68fd294be67"
   end
 
   depends_on "certifi"
@@ -81,6 +81,11 @@ class Cycode < Formula
     sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
+  resource "pyjwt" do
+    url "https:files.pythonhosted.orgpackages30728259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3bPyJWT-2.8.0.tar.gz"
+    sha256 "57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de"
+  end
+
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -94,6 +99,11 @@ class Cycode < Formula
   resource "requests" do
     url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+  end
+
+  resource "sentry-sdk" do
+    url "https:files.pythonhosted.orgpackagesc99dd61d64819ecb0481647229c3ee8ddc00887552acc23745fd65d0d4d066f3sentry_sdk-2.8.0.tar.gz"
+    sha256 "aa4314f877d9cd9add5a0c9ba18e3f27f99f7de835ce36bd150e48a41c7c646f"
   end
 
   resource "six" do
@@ -112,8 +122,8 @@ class Cycode < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages0c3964487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08urllib3-1.26.18.tar.gz"
-    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
+    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
+    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
   end
 
   def install

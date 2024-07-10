@@ -10,4 +10,8 @@ cask "cmd-eikana" do
   app "⌘英かな.app"
 
   zap trash: "~LibraryPreferencesio.github.imasanari.cmd-eikana.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -8,4 +8,8 @@ cask "automute" do
   homepage "https:github.comLorenzo45AutoMute"
 
   app "AutoMute.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

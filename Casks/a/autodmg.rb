@@ -22,4 +22,8 @@ cask "autodmg" do
     "~LibraryLogsAutoDMG",
     "~LibraryPreferencesse.gu.it.AutoDMG.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

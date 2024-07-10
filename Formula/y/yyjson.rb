@@ -1,19 +1,19 @@
 class Yyjson < Formula
   desc "High performance JSON library written in ANSI C"
   homepage "https:github.comibiremeyyjson"
-  url "https:github.comibiremeyyjsonarchiverefstags0.9.0.tar.gz"
-  sha256 "59902bea55585d870fd7681eabe6091fbfd1a8776d1950f859d2dbbd510c74bd"
+  url "https:github.comibiremeyyjsonarchiverefstags0.10.0.tar.gz"
+  sha256 "0d901cb2c45c5586e3f3a4245e58c2252d6b24bf4b402723f6179523d389b165"
   license "MIT"
   head "https:github.comibiremeyyjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4a9f0ed152dc939cfef2fca0f5b909becbac3d518384d7f5477f8dc24fba563b"
-    sha256 cellar: :any,                 arm64_ventura:  "9d7f2f6e4e8b3e32d687f051d46e6638becc6a3e161a984640af6c4f058245aa"
-    sha256 cellar: :any,                 arm64_monterey: "f001c295b9144280a7172abd89f3dac8cc5935d596fff4e346b1be635952cd56"
-    sha256 cellar: :any,                 sonoma:         "bbe09ff4626fdea8b6f01618312dcf4cef31b9c7ddd8d57f036148fbc2e6f085"
-    sha256 cellar: :any,                 ventura:        "9eed441407a199bd57a1ab64674ee874bf7d247675c939c858098e4cfaeef6e2"
-    sha256 cellar: :any,                 monterey:       "f4b178ad08b086b22a9a1b501858d4b2a224a710fa40384bd9d071d29d6895f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b0d97a657496f8d633a3ffb896264ba5360bf921b71ba0b39ef92b6bf4fc096"
+    sha256 cellar: :any,                 arm64_sonoma:   "9ab9c2ecf8f02f0c781afa350b60bfedc128100a6fc33a39f8fda630797c10b1"
+    sha256 cellar: :any,                 arm64_ventura:  "8085a2cccc46355a7cd7de87f15b65705e32bc7095edac87a55d0544befce88a"
+    sha256 cellar: :any,                 arm64_monterey: "d83d78ab70d9243f1b1efb995f933de45b24b78bbc304f078ff5b937ff105d00"
+    sha256 cellar: :any,                 sonoma:         "04f0f2b5ec7c3940b6fefe7dfc3a8478b370bae125c7933565584c73f9a28480"
+    sha256 cellar: :any,                 ventura:        "b32d5220a84af677e9ba28e60c90f7c5797a8cf97020a33f16a3bd931bb538d9"
+    sha256 cellar: :any,                 monterey:       "c73550bf23abcf2cd1ab01f1ee704cd933694785cb574115a6b347fc72aa250a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dec9417966cf48f6459914f0a32d46b608a0fe8068590b2643d1f08e8accf24"
   end
 
   depends_on "cmake" => :build

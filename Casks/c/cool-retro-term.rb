@@ -18,4 +18,8 @@ cask "cool-retro-term" do
     "~LibraryPreferencescom.yourcompany.cool-retro-term.plist",
     "~LibrarySaved Application Statecom.yourcompany.cool-retro-term.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

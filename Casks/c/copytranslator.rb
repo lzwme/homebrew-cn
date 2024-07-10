@@ -28,4 +28,8 @@ cask "copytranslator" do
         "~LibrarySaved Application Statecom.copytranslator.copytranslator.savedState",
       ],
       rmdir: "~copytranslatorlocales"
+
+  caveats do
+    requires_rosetta
+  end
 end

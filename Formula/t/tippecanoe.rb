@@ -5,6 +5,11 @@ class Tippecanoe < Formula
   sha256 "2e1ca50d456b22ff33e3496678f6fd753bf1caadcdf937b9130e3c7051cb928e"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f0260ec13ad40433f430be45dcd17edd10a2b531427980a0ae3fcb5cef5e4e8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b9620cc51a4d78e260ea896c2c3de06ab13edfe22535dc1ed1f50eb09715c70"

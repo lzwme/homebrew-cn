@@ -1,8 +1,8 @@
 class Ballerina < Formula
   desc "Programming Language for Network Distributed Applications"
   homepage "https://ballerina.io"
-  url "https://dist.ballerina.io/downloads/2201.9.1/ballerina-2201.9.1-swan-lake.zip"
-  sha256 "73c46a8e4d9c8ee89bb931f48459abddd23eae9c2b5d9d99caf707070aa21308"
+  url "https://dist.ballerina.io/downloads/2201.9.2/ballerina-2201.9.2-swan-lake.zip"
+  sha256 "a45119e1cec7dc6cd3fbcdc8b118373a53f98aab9a763cd279eea9adff5f1a59"
   license "Apache-2.0"
 
   # The Downloads and Installation Options pages don't include any version
@@ -18,13 +18,13 @@ class Ballerina < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "06e52a3f2cd00780a562e4522f7cac42c940550572ea7b538441750d21488c3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f53893bdcfb47b87245ff304c9eb7091c9a01347ba16e2dc8f5d85db5ae9062"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa8ab93a6baf251425b740fae90a9fb6e0e27363fcc9d73a852194f3457f9ed"
   end
 
   depends_on "openjdk"

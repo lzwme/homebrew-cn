@@ -21,4 +21,8 @@ cask "ankermake" do
     "~LibraryPreferencescom.ankermake.AnkerMake_64bit_fp.plist",
     "~LibraryPreferencescom.ankerslicer.AnkerMake_64bit_fp.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

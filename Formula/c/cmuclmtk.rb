@@ -30,6 +30,12 @@ class Cmuclmtk < Formula
 
   depends_on "pkg-config" => :build
 
+  conflicts_with "julius", because: "both install `binlm2arpa` binaries"
+
+  # Fix errors: call to undeclared function '***';
+  # ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  patch :DATA
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
@@ -41,4 +47,69 @@ class Cmuclmtk < Formula
                           "--prefix=#{prefix}"
     system "make", "install"
   end
+
+  test do
+    output = pipe_output("#{bin}text2wfreq", "Hello Hello Homebrew")
+    assert_match "Hello 2", output
+    assert_match "Homebrew 1", output
+  end
 end
+
+__END__
+diff --git asrclibsrr_mkdtemp.c bsrclibsrr_mkdtemp.c
+index 50441ce..ee1f1c5 100755
+--- asrclibsrr_mkdtemp.c
++++ bsrclibsrr_mkdtemp.c
+@@ -36,6 +36,7 @@
+
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sysstat.h>
+
+ #include <..win32compat.h>
+
+diff --git asrcprogramstext2idngram.c bsrcprogramstext2idngram.c
+index 1ec1cc2..b9ba37b 100644
+--- asrcprogramstext2idngram.c
++++ bsrcprogramstext2idngram.c
+@@ -53,6 +53,8 @@
+ #include <string.h>
+ #include <systypes.h>
+ #include <errno.h>
++#include <sysstat.h>
++#include <unistd.h>
+
+ #include "..liblmesttoolkit.h"
+ #include "..libsgeneral.h"
+diff --git asrcprogramstext2wngram.c bsrcprogramstext2wngram.c
+index 22ba67d..2790fde 100644
+--- asrcprogramstext2wngram.c
++++ bsrcprogramstext2wngram.c
+@@ -41,11 +41,14 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <errno.h>
++#include <sysstat.h>
++#include <unistd.h>
+
+ #include "..liblmesttoolkit.h"
+ #include "..libspc_general.h"
+ #include "..libsgeneral.h"
+ #include "..win32compat.h"
++#include "..libsac_lmfunc_impl.h"
+
+ int cmp_strings(const void *string1,const void *string2) {
+
+diff --git asrcprogramswngram2idngram.c bsrcprogramswngram2idngram.c
+index 3f2ba57..e363282 100644
+--- asrcprogramswngram2idngram.c
++++ bsrcprogramswngram2idngram.c
+@@ -47,6 +47,8 @@
+ #include <string.h>
+ #include <systypes.h>
+ #include <errno.h>
++#include <sysstat.h>
++#include <unistd.h>
+
+ #include "..liblmesttoolkit.h"
+ #include "..libsgeneral.h"

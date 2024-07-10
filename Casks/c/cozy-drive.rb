@@ -23,4 +23,8 @@ cask "cozy-drive" do
     "~LibraryPreferencesio.cozy.desktop.plist",
     "~LibrarySaved Application Stateio.cozy.desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

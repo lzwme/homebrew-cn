@@ -4,7 +4,7 @@ class Dcadec < Formula
   url "https:github.comfoo86dcadec.git",
       tag:      "v0.2.0",
       revision: "0e074384c9569e921f8facfe3863912cdb400596"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
   head "https:github.comfoo86dcadec.git", branch: "master"
 
   bottle do
@@ -24,20 +24,24 @@ class Dcadec < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f727365cbd24d678682c06e73ff49a7fdf92b17a5a1c6b82068522e4d0e0b1f"
   end
 
-  resource "sample" do
+  # Ref https:github.comfoo86dcadeccommitb93deed1a231dd6dd7e39b9fe7d2abe05aa00158
+  deprecate! date: "2024-06-30", because: :deprecated_upstream
+
+  conflicts_with "libdca", because: "both install `dcadec` binaries"
+
+  resource "homebrew-testdata" do
     url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
     sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
   end
 
   def install
     system "make", "all"
-    system "make", "check"
     system "make", "PREFIX=#{prefix}", "install"
   end
 
   test do
-    resource("sample").stage do
-      system "#{bin}dcadec", resource("sample").cached_download
+    resource("homebrew-testdata").stage do
+      system "#{bin}dcadec", resource("homebrew-testdata").cached_download
     end
   end
 end

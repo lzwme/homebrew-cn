@@ -2,19 +2,19 @@ class CloudflareQuiche < Formula
   desc "Savoury implementation of the QUIC transport protocol and HTTP3"
   homepage "https:docs.quic.techquiche"
   url "https:github.comcloudflarequiche.git",
-      tag:      "0.21.0",
-      revision: "1780aeceb686c212afdd2732b8a568cf5193f035"
+      tag:      "0.22.0",
+      revision: "4ff56ec2566622980bbb0e0d7b9217254d97c4ba"
   license "BSD-2-Clause"
   head "https:github.comcloudflarequiche.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9cb7c93a5ea77b90d833f0dd2cf8c2a6d7ed2852042804a9f9eb11af99b46875"
-    sha256 cellar: :any,                 arm64_ventura:  "81bfc154681beb1abc1e126ac1a0726c7c32bc3695bdb5911a35ad811ebf68bb"
-    sha256 cellar: :any,                 arm64_monterey: "6ea012417846fce02c96c7748a1de234f0da0746741b1216b894de9a063b7fc7"
-    sha256 cellar: :any,                 sonoma:         "706e51d242ed1da068415b1b2dd93b3ec23b94262da2e2ff118883a1d93cd2dc"
-    sha256 cellar: :any,                 ventura:        "668560ee38dba1037455c01386d29045e64e38de9fda49a7025bce892f9416a3"
-    sha256 cellar: :any,                 monterey:       "775274cb07f139ea570708fa29b0e1c62756a86b963f1ae7cf91d882e0d8b472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78e1abdcae5a0dd4b75cde19f4cbf1e0b643809e24813e249d483bce2b953443"
+    sha256 cellar: :any,                 arm64_sonoma:   "edce91e6f01349436adc89ddb657619ee44b50dc4c0d2348a3a17938abdf948c"
+    sha256 cellar: :any,                 arm64_ventura:  "7c113bc0ac14fe5bfcbfecf79cf1d4cdb94c1efbb1ac31808347a252ccad7488"
+    sha256 cellar: :any,                 arm64_monterey: "6aff3a2f065cdb912aeca3cb46992ac119b02c56e0d51ce2c823bb2ca413b8d8"
+    sha256 cellar: :any,                 sonoma:         "876f91d5a1f9737a71767019e124f9337a1f52db81e4fa3d4ec4a27508733096"
+    sha256 cellar: :any,                 ventura:        "04b58c13fcbdec3306c12fa24175392d1ce85fd60e668dda649062194d76e49a"
+    sha256 cellar: :any,                 monterey:       "3433639f9423e5d994151f04802f9b33972e25a7f0d456730dc44a2d4de41789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9242ad03216fa5dd05d2246674443884388ef7360276476ff0a1dd5383799df1"
   end
 
   depends_on "cmake" => :build
@@ -23,9 +23,20 @@ class CloudflareQuiche < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "apps")
 
-    system "cargo", "build", "--lib", "--features", "ffi,pkg-config-meta", "--release"
-    lib.install "targetrelease#{shared_library("libquiche")}"
+    system "cargo", "build", "-j", "1", "--lib", "--features", "ffi,pkg-config-meta", "--release"
+    lib.install "targetreleaselibquiche.a"
     include.install "quicheincludequiche.h"
+
+    # install dylib with version and symlink
+    lib.install "targetrelease#{shared_library("libquiche")}"
+    if OS.mac?
+      mv "#{lib}libquiche.dylib", "#{lib}libquiche.#{version.major_minor_patch}.dylib"
+      lib.install_symlink "#{lib}libquiche.#{version.major_minor_patch}.dylib" => "#{lib}libquiche.dylib"
+    else
+      mv "#{lib}libquiche.so", "#{lib}libquiche.so.#{version.major_minor_patch}"
+      lib.install_symlink "#{lib}libquiche.so.#{version.major_minor_patch}" => "#{lib}libquiche.so.#{version.major}"
+      lib.install_symlink "#{lib}libquiche.so.#{version.major_minor_patch}" => "#{lib}libquiche.so"
+    end
 
     # install pkgconfig file
     pc_path = "targetreleasequiche.pc"

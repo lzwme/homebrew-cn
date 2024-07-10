@@ -42,6 +42,8 @@ class Mapnik < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "svg2png", because: "both install `svg2png` binaries"
+
   fails_with :gcc do
     version "14"
     cause "Fails to build with GCC 14 (https:github.commapnikmapnikpull4456)"

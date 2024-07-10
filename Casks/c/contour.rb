@@ -15,4 +15,8 @@ cask "contour" do
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}63contour"
 
   zap trash: "~.configcontour"
+
+  caveats do
+    requires_rosetta
+  end
 end

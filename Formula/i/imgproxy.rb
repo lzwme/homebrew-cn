@@ -1,25 +1,29 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https:imgproxy.net"
-  url "https:github.comimgproxyimgproxyarchiverefstagsv3.24.1.tar.gz"
-  sha256 "dc75ffd728450b04c8eaa7cd172836d518b129d552026bbaef87fd32e078573d"
+  url "https:github.comimgproxyimgproxyarchiverefstagsv3.25.0.tar.gz"
+  sha256 "14c76764b33174eebaf22f201b325dfa36434b6dcd9f79a86bb925a5eecfe69b"
   license "MIT"
   head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5ff11e9477cb9e02f0b0a7652ddc2ac7f6f4ea74a3a6aa7ebfbbb42ae4a388be"
-    sha256 cellar: :any,                 arm64_ventura:  "88d2278740dc1b7633b7515afc2f984c8bf58955e6fe05c873fa61acda9f9d9c"
-    sha256 cellar: :any,                 arm64_monterey: "72d894718e527f80f120bbfdde49a2d516fabc7a356fe2ecfd88cb09a212da3f"
-    sha256 cellar: :any,                 sonoma:         "e566bad032ce5be97c26f9c87c5d7c0dea33d35f0f1aaaeeb3722866c5671203"
-    sha256 cellar: :any,                 ventura:        "91822815cb24b63cb7ffafa207496ab6b5b2d2aba53aa23d8104346dbb5141f1"
-    sha256 cellar: :any,                 monterey:       "819a662654d393903b42f11244dd2f0e11768632a6fa8663a3b4b640d85376a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba31fb3a5ea84d76f6095503bd2b7cb40ed4dd385f67605103a9ba359e2f9395"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a71612b4b8f5aca5b1144d7c1476a4d79a4f3c6da8ffeaf08fa23c99744a401"
+    sha256 cellar: :any,                 arm64_ventura:  "e55f81fa301e2f1003bda6e5c01436ed0d31deb56cc27216235fe5b8e40f7f0b"
+    sha256 cellar: :any,                 arm64_monterey: "00f45ce78e9831b266d3b24ab19228455484f6f2dfd0bc75fc1eb2d231c2eae4"
+    sha256 cellar: :any,                 sonoma:         "5a8e98f9fe31b23adf203f7423152853e3d5b9ea10a0f9a26e6f3249cb4b999e"
+    sha256 cellar: :any,                 ventura:        "d9f6ea636b8bc5a393f21f723d5930c06c619d71b36e8f8f3582feece1dc0b01"
+    sha256 cellar: :any,                 monterey:       "448068ccb9462038251a68544b83af4178b386d563135c2e37a5fc3685b9187a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1062a9646ca6c48fa8d367bbbc080c6e14557e1de6ed936812e8cfd9cf3d3fa5"
   end
 
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "vips"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["CGO_LDFLAGS_ALLOW"]="-s|-w"

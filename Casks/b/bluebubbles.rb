@@ -36,4 +36,8 @@ cask "bluebubbles" do
     "~LibraryPreferencescom.BlueBubbles.BlueBubbles-Server.plist",
     "~LibrarySaved Application Statecom.BlueBubbles.BlueBubbles-Server.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

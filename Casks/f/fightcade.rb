@@ -1,6 +1,6 @@
 cask "fightcade" do
-  version "2.1.41"
-  sha256 "9471a9f4c4577465203a646578aa2fc371ccbbcdf0b83dc11b7b47f506a2b07c"
+  version "2.1.44"
+  sha256 "1ec7f8bb6e077a0c50518658c8a1c01298e2e62cdf76d2da10916e9146ae3feb"
 
   url "https://web.fightcade.com/download/Fightcade-osx-v#{version}.tar.gz"
   name "Fightcade"
@@ -10,7 +10,7 @@ cask "fightcade" do
   livecheck do
     url "https://web.fightcade.com/download/update.json"
     strategy :json do |json|
-      json["mac"]["version"]
+      json.dig("mac", "version")
     end
   end
 

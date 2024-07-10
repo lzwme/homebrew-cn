@@ -1,18 +1,18 @@
 class Spglib < Formula
   desc "C library for finding and handling crystal symmetries"
   homepage "https:spglib.readthedocs.io"
-  url "https:github.comspglibspglibarchiverefstagsv2.4.0.tar.gz"
-  sha256 "e33694b189c6864f719a59c31e2af55301a524fb68ba9fb65f08e95af471847d"
+  url "https:github.comspglibspglibarchiverefstagsv2.5.0.tar.gz"
+  sha256 "80c060b1a606a76b15f2cc708e9fdd4a83479924ebff9ac16ed26a87a0eac1a9"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "de01ae5818606638b18d896634358d37f2ce5a87cdd12899ac3beaff6bec43a4"
-    sha256 cellar: :any,                 arm64_ventura:  "9a41890d5e23dc309c55e4d1313d44bfdb94935091f626b185bc72ed1a67daa9"
-    sha256 cellar: :any,                 arm64_monterey: "1a5df6a31488c0e5543fcbdee8852c874f1808e0cf60a5624dae00f029c401ac"
-    sha256 cellar: :any,                 sonoma:         "4f2c67e008cf11a608a5eb50dd9c04bd1018920979c17d36adda89b43fe9fbd6"
-    sha256 cellar: :any,                 ventura:        "44369ffdb739d50b1d9ce775bcbb6a479040e04cc172d09f06bc9632437d7956"
-    sha256 cellar: :any,                 monterey:       "0b8f9379dfe647b641c754dd0770e17818d050d2a3caeaeaab11ec4bbd5af5d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6499c24ed7d5dbb6de0e62ed7b6e49ebc77235d464da36f0556d29232539464"
+    sha256 cellar: :any,                 arm64_sonoma:   "87cc4a9d8fa45ce98963930405160196f2ac322070ca4dd994ece719706ced42"
+    sha256 cellar: :any,                 arm64_ventura:  "3dced6938cf16477fd60b24fb025f634f64555a5cbaceb880705c7bd8d7fb28c"
+    sha256 cellar: :any,                 arm64_monterey: "614d1f10c66cceaa0c5103e110cadd0e56562488e2d41269e5bfde4c665bdd40"
+    sha256 cellar: :any,                 sonoma:         "c54b6e9e3123656c2ee5ae36aaaa4f88c1b820abbe155b6b8c2d19c1dd3ebfb6"
+    sha256 cellar: :any,                 ventura:        "8f27f51353ea2965ce0bac10adb0086b810607c699bb9c1595b3dd18a5bfea5f"
+    sha256 cellar: :any,                 monterey:       "2239cc40e94b32ec55bf8d7ce0854e400fefe37aea725a5431e7bc9fed4b5bc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a37dcc5ec9431b396478aafa2d7e82bdcd41baf93b83ed3c4682075dbb6e46b"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,6 +23,7 @@ class Spglib < Formula
     # https:github.comspglibspglibissues352#issuecomment-1784943807
     common_args = %w[
       -DSPGLIB_WITH_Fortran=OFF
+      -DSPGLIB_WITH_TESTS=OFF
     ]
     system "cmake", "-S", ".", "-B", "build_shared",
                    *common_args, "-DSPGLIB_SHARED_LIBS=ON", *std_cmake_args

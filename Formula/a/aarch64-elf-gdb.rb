@@ -1,9 +1,9 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-14.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.2.tar.xz"
-  sha256 "2d4dd8061d8ded12b6c63f55e45344881e8226105f4d2a9b234040efa5ce7772"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-15.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-15.1.tar.xz"
+  sha256 "38254eacd4572134bca9c5a5aa4d4ca564cbbd30c369d881f733fb6b903354f2"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e0fe06ddf01e98f9f3b1bacbacdfeb8e94c69fed9ed296adb3237014dc5d388d"
-    sha256 arm64_ventura:  "3e8a6f8721ae7f70b4d7c9bc24f75674604bc3985e829fa90f4d8f89493b9eee"
-    sha256 arm64_monterey: "be4fb136fe3c6be6096cdb2712da166fb9d9217ff5b294859acbaa362840ed88"
-    sha256 sonoma:         "5e56fc21982e0c9b493e51847f55e268693e1a381dbfb1ae761fd3cd1dbef26f"
-    sha256 ventura:        "8f151a4fbf9185320e6d8ce79e0fba4e856b2286364c3ece369f766549f2750e"
-    sha256 monterey:       "299757fa86eee8576b7bda5c0822836dfbaa4e9049e98fa96df58c20e99b751a"
-    sha256 x86_64_linux:   "afe17d09b65783e472a0c8410a0204f40467b762c0f6156b680a4bf659228334"
+    sha256 arm64_sonoma:   "63d6a5d5caefd0c4e4a5c07986638a0178b8659caaa9c0aa4587c979a9049bb9"
+    sha256 arm64_ventura:  "4259b476ca52a7cfe17ad36a1251de44916aa4a6c2fcbebf7955ecd2b1807d07"
+    sha256 arm64_monterey: "57b2407f5fe9d0f6409121e2029ea5062f349dab3b19b85cbdd25d368ddc5956"
+    sha256 sonoma:         "348be178426a897da684e0fa7e6661068b0d9be39250d4245f34fa1f8e23b56b"
+    sha256 ventura:        "cc514ebf544c3e5678b3d076ac2622d1d2dc96b8f8243e6a821e240be187a21a"
+    sha256 monterey:       "9b6764be2914e8303caa58461bceb44dbd47842927cb3ff06456f28c5ec940b7"
+    sha256 x86_64_linux:   "393ec8e3717b1abf6fd13cc593b076697c41f6d3fe5f173051116ed119f19538"
   end
 
   depends_on "pkg-config" => :build

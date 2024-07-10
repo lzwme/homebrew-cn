@@ -15,4 +15,8 @@ cask "brisk" do
     "~LibraryPreferencesorg.blisk.Blisk.plist",
     "~LibrarySaved Application Stateorg.blisk.Blisk.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

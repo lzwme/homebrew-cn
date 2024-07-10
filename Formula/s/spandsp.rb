@@ -6,6 +6,11 @@ class Spandsp < Formula
   license "LGPL-2.1-only"
   revision 3
 
+  livecheck do
+    url "https:www.soft-switch.orgdownloadsspandsp"
+    regex(href=.*?spandsp[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c0031a76da7569594a6e541f5373a81fd8fd67fe51d8ded0bc317c22b7c9d61b"
     sha256 cellar: :any,                 arm64_ventura:  "1de79b77a71edef3e67c18da0b22400821a06190cd2c6e1363ed8bdf92fb6379"

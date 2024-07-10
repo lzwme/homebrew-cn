@@ -9,4 +9,8 @@ cask "apk-icon-editor" do
   homepage "https:kefir500.github.ioapk-icon-editor"
 
   app "APK Icon Editor.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

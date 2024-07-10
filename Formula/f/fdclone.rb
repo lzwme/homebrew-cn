@@ -3,6 +3,7 @@ class Fdclone < Formula
   homepage "https:hp.vector.co.jpauthorsVA012337softfd"
   url "http:www.unixusers.netsrcfdcloneFD-3.01j.tar.gz"
   sha256 "fe5bb67eb670dcdb1f7368698641c928523e2269b9bee3d13b3b77565d22a121"
+  license :cannot_represent
 
   livecheck do
     url :homepage
@@ -27,6 +28,8 @@ class Fdclone < Formula
   depends_on "nkf" => :build
 
   uses_from_macos "ncurses"
+
+  conflicts_with "fd", because: "both install `fd` binaries"
 
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patches86107cffdclone3.01b.patch"
@@ -54,5 +57,9 @@ class Fdclone < Formula
       To set application messages to Japanese, edit your .fd2rc:
           MESSAGELANG="ja"
     EOS
+  end
+
+  test do
+    assert_match "Hello Homebrew", shell_output("#{bin}fdsh -c \"echo Hello Homebrew\"")
   end
 end

@@ -27,4 +27,8 @@ cask "clock-bar" do
     "~LibraryApplication Scriptsnihalsharma.clock-bar",
     "~LibraryContainersnihalsharma.clock-bar",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

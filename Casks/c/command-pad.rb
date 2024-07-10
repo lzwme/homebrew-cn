@@ -16,4 +16,8 @@ cask "command-pad" do
     "~LibraryPreferencescom.webows.commandpad.plist",
     "~LibrarySaved Application Statecom.webowscommandpad.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

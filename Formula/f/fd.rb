@@ -18,6 +18,8 @@ class Fd < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "fdclone", because: "both install `fd` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "docfd.1"

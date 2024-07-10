@@ -13,4 +13,8 @@ cask "audioscrobbler" do
     "~LibraryCachesfm.last.Audioscrobbler",
     "~LibraryPreferencesfm.last.Audioscrobbler.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

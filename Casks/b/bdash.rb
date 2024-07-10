@@ -21,4 +21,8 @@ cask "bdash" do
     "~LibraryPreferencesio.bdash.plist",
     "~LibrarySaved Application Stateio.bdash.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

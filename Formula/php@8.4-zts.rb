@@ -1,21 +1,21 @@
 class PhpAT84Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive42530c65439b64409091ed23d2c343baffc3386e.tar.gz?commit=42530c65439b64409091ed23d2c343baffc3386e"
+  url "https:github.comphpphp-srcarchive19813b5b7e962f46d4227304ad9c5dd8e42716c6.tar.gz?commit=19813b5b7e962f46d4227304ad9c5dd8e42716c6"
   version "8.4.0"
-  sha256 "9b19c33e6c09e3309675883c78b093e1638af1d61303e56f1030e4d2a8069bc3"
+  sha256 "de9c9ef47cc054195e2e76af2f70538304a0b0be0162702a701a69935b0edf31"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 72
-    sha256 arm64_sonoma:   "c06274578a56ab43b7089a83c34c90bb1747677525431e31291a42ecad511ec0"
-    sha256 arm64_ventura:  "c5445f416faabf102a622de5dab95e35837427012dedbc1af86b3f29dc7a8af5"
-    sha256 arm64_monterey: "100fae1d3a6b4a4cb88ccfbff85e308e5b393929d4e1a571ffc9020f8d066b5f"
-    sha256 ventura:        "67434cb0f3d0ff72d89382aae2c456b031e40fd1bfcee30425e9c7a4f5312a66"
-    sha256 monterey:       "1a6a9896d467a9f2cae95cd7629655334959520d93f2ce2ade30d93b6bb8f0ff"
-    sha256 x86_64_linux:   "b0ad7ebcebdbe79810ba4536a7d71486f8b4f7e8a63e1f7dee289df6bddfd068"
+    rebuild 73
+    sha256 arm64_sonoma:   "877846567992e083fc70600753fad180aa858e0414db93cf44deaee053cc7a44"
+    sha256 arm64_ventura:  "ef2acc18166bc7a671a46b7714c997987426b6319b38394a40f39084ae6fce37"
+    sha256 arm64_monterey: "e4e080af0288086df7d5927448ca750db50a73b60eccb2387c1f895b02ff0722"
+    sha256 ventura:        "eff3ddc6e0de81007b57adbdebe3638f465fb1b529213b556180faf06dfdc0f3"
+    sha256 monterey:       "e4734eb590324c10c613cb27e44cb4a30d20d017189af812f41587e17e10afad"
+    sha256 x86_64_linux:   "97d694548cb8d4857042ef08d919e35c24668ca057f17965ae22ead4f274d0e9"
   end
 
   keg_only :versioned_formula
@@ -65,7 +65,7 @@ class PhpAT84Zts < Formula
     system ".buildconf", "--force"
 
     inreplace "configure" do |s|
-      s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes'`",
+      s.gsub! "APACHE_THREADED_MPM=$($APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes')",
               "APACHE_THREADED_MPM="
       s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`",
               "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}httpdmodules'"

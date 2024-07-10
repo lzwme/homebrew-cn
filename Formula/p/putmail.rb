@@ -9,6 +9,9 @@ class Putmail < Formula
     sha256 cellar: :any_skip_relocation, all: "1df81ef382665ba394fb3ee99383dd7662a776290f9efdb0a2c7765ce3a663e4"
   end
 
+  # putmail doesn't support Python 3
+  disable! date: "2024-07-03", because: :unsupported
+
   def install
     bin.install "putmail.py"
     man1.install "man/man1/putmail.py.1"

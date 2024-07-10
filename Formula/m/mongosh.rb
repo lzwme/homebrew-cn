@@ -3,18 +3,18 @@ require "languagenode"
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https:github.commongodb-jsmongosh"
-  url "https:registry.npmjs.org@mongoshcli-repl-cli-repl-2.2.10.tgz"
-  sha256 "ce4649f6109fdf8c9b436e63760f193936e4660b96b25f874516e6a5f5c19ef7"
+  url "https:registry.npmjs.org@mongoshcli-repl-cli-repl-2.2.11.tgz"
+  sha256 "59e0784738edfe0b177b6cc0a73e88d316826ebed8240587821a598f88930aaa"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_sonoma:   "b3689df4f9bcace3a94d64ecbd0012bfe87748462146ffcbb9f71b3887196c91"
-    sha256                               arm64_ventura:  "22014132e4aace9e4f6ec12a1bd9e97bc4e5b38c505af1e7dc415ef101fe61a4"
-    sha256                               arm64_monterey: "4c836947ba3da55a5ca0fde902a8a0a10317844f51ca4bf6af5e815621f4a206"
-    sha256                               sonoma:         "9b8d8b3e74a951a3d3ec857a33edd810d2fb82cb0c98260925fe8cd267bf8c72"
-    sha256                               ventura:        "42eb15ad3708abe92153cf174a9b81099314d029b3611b80e8a4879410958fbc"
-    sha256                               monterey:       "6da955cdb8d48eb9a0e6114cb0103b0e661c150db528edb3e3b1e0dcd174c858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ee0f625c1c6955cdb5e242c15db7922dae9c4f6b5c279ff98b3784ed3e8a898"
+    sha256                               arm64_sonoma:   "7be7a95a5af580645a28f2708ca6ea7809e8185a154d9d6a0331589e7d410660"
+    sha256                               arm64_ventura:  "02cfc46be08ea0974189c6e3e703059d0c7e693359af1bd18b8e6e10c51fefe3"
+    sha256                               arm64_monterey: "dc719e04101c2e2deb66669627488285ccc2715f4ec5a9cee25db7ed4e6912f6"
+    sha256                               sonoma:         "19df6e5f722b342eccf3218db2239cacfb37e5b79c228fa25000b452aae82389"
+    sha256                               ventura:        "0350e913cce8f2830a816e1854146044febb16245949b7d5bb21c6fbcbc47066"
+    sha256                               monterey:       "cfca0a7ff2b0f6b7d4db4f2606617af47d8d7e82b1571ca65b88afda5afe30ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2436fcbca73140b3c2f615600598f34b2f9d40f34b83b85358a3542fb7509af"
   end
 
   depends_on "node"

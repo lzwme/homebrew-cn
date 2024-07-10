@@ -19,4 +19,8 @@ cask "camera-live" do
     "~LibraryPreferencesinfo.v002.Camera-Live.plist",
     "~LibrarySaved Application Stateinfo.v002.Camera-Live.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

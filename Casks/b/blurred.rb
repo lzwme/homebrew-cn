@@ -20,4 +20,8 @@ cask "blurred" do
     "~LibraryContainersfoundation.dwarves.blurred",
     "~LibraryContainersfoundation.dwarves.blurredlauncher",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

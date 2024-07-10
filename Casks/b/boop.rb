@@ -11,7 +11,7 @@ cask "boop" do
   livecheck do
     url "https:boop.okat.bestversion.json"
     strategy :json do |json|
-      json["standalone"]["version"]
+      json.dig("standalone", "version")
     end
   end
 

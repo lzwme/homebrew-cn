@@ -13,4 +13,8 @@ cask "color-studio" do
     "~LibraryApplication Scriptscom.bernaferrari.colorstudio",
     "~LibraryContainerscom.bernaferrari.colorstudio",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,8 +1,10 @@
 class ImapUw < Formula
   # imap-uw is unmaintained software; the author has passed away and there is
   # no active successor project.
+  # The previous homepage is
+  # https://web.archive.org/web/20191028114408/https://www.washington.edu/imap/
   desc "University of Washington IMAP toolkit"
-  homepage "https://web.archive.org/web/20191028114408/https://www.washington.edu/imap/"
+  homepage "https://salsa.debian.org/holmgren/uw-imap"
   url "https://mirrorservice.org/sites/ftp.cac.washington.edu/imap/imap-2007f.tar.gz"
   mirror "https://fossies.org/linux/misc/old/imap-2007f.tar.gz"
   sha256 "53e15a2b5c1bc80161d42e9f69792a3fa18332b7b771910131004eb520004a28"
@@ -37,6 +39,8 @@ class ImapUw < Formula
     depends_on "linux-pam"
   end
 
+  conflicts_with "alpine", because: "both install `mailutil` binaries"
+
   # Two patches below are from Debian, to fix OpenSSL 3 compatibility
   # https://salsa.debian.org/holmgren/uw-imap/tree/master/debian/patches
   patch do
@@ -64,16 +68,18 @@ class ImapUw < Formula
     # Skip IPv6 warning on Linux as libc should be IPv6 safe.
     touch "ip6"
 
-    args = []
-    # Workaround for Xcode 14.3.
-    args << "EXTRACFLAGS=-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    extra_cflags = []
+    # Workaround for Xcode 14.3
+    extra_cflags << "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Workaround for Xcode 15
+    extra_cflags << "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     target = if OS.mac?
       "oxp"
     else
       "ldb"
     end
-    system "make", target, *args
+    system "make", target, "EXTRACFLAGS=#{extra_cflags.join(" ")}"
 
     # email servers:
     sbin.install "imapd/imapd", "ipopd/ipop2d", "ipopd/ipop3d"

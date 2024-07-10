@@ -20,6 +20,8 @@ class EgExamples < Formula
 
   depends_on "python@3.12"
 
+  conflicts_with "eg", because: "both install `eg` binaries"
+
   def install
     virtualenv_install_with_resources
   end

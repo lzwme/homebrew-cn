@@ -3,7 +3,7 @@ class Svg2png < Formula
   homepage "https://cairographics.org/"
   url "https://cairographics.org/snapshots/svg2png-0.1.3.tar.gz"
   sha256 "e658fde141eb7ce981ad63d319339be5fa6d15e495d1315ee310079cbacae52b"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
   revision 2
 
   livecheck do
@@ -25,7 +25,13 @@ class Svg2png < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
+  depends_on "libsvg"
   depends_on "libsvg-cairo"
+
+  conflicts_with "mapnik", because: "both install `svg2png` binaries"
 
   def install
     # svg2png.c:53:9: note: include the header <string.h> or explicitly provide a declaration for 'strcmp'

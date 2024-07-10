@@ -22,4 +22,8 @@ cask "betaflight-configurator" do
     "~LibraryPreferencescom.nw-builder.betaflight-configurator.plist",
     "~LibrarySaved Application Statecom.nw-builder.betaflight-configurator.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

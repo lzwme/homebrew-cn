@@ -13,4 +13,8 @@ cask "crunch" do
     "~LibraryPreferencescom.csimpkins.Crunch.plist",
     "~LibrarySaved Application Statecom.csimpkins.Crunch.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

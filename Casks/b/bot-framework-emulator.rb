@@ -21,4 +21,8 @@ cask "bot-framework-emulator" do
     "~LibraryPreferencescom.electron.botframework-emulator.plist",
     "~LibrarySaved Application Statecom.electron.botframework-emulator.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -16,4 +16,8 @@ cask "cumulus" do
     "~LibraryPreferencescom.gillesdemey.cumulus.plist",
     "~LibrarySaved Application Statecom.gillesdemey.cumulus.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

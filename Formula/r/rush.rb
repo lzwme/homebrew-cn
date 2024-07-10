@@ -4,7 +4,7 @@ class Rush < Formula
   url "https://ftp.gnu.org/gnu/rush/rush-2.3.tar.xz"
   mirror "https://ftpmirror.gnu.org/rush/rush-2.3.tar.xz"
   sha256 "8cae258247cd2623e856ea5e2c62cd7f09e9e3e043e6fc63bbd1abec3d3fdd93"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 arm64_sonoma:   "48ef750e54b922ed60f74ee23787bfa0fb2e009c8c8ec81096d68f89fb33029a"
@@ -18,6 +18,8 @@ class Rush < Formula
     sha256 catalina:       "e382adfc56df5e2fd3075f9183e0513ce85ed7358699f935272d57411d7979b9"
     sha256 x86_64_linux:   "d00ab93f179b7714db5dd3eb7f2679f31cfa2fda5596387d9d6f310a6a931129"
   end
+
+  conflicts_with "rush-parallel", because: "both install `rush` binaries"
 
   def install
     system "./configure", "--disable-debug",

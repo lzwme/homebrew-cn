@@ -1,9 +1,9 @@
 class Riscv64ElfGdb < Formula
   desc "GNU debugger for riscv64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-14.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.2.tar.xz"
-  sha256 "2d4dd8061d8ded12b6c63f55e45344881e8226105f4d2a9b234040efa5ce7772"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-15.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-15.1.tar.xz"
+  sha256 "38254eacd4572134bca9c5a5aa4d4ca564cbbd30c369d881f733fb6b903354f2"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Riscv64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "eed85e69e68619ae73c7e832dfdc1e68db0b5a5954de8316e339cfa264d77888"
-    sha256 arm64_ventura:  "3c56697016096d5acd6607ebebacb70ea52ebe0631ed1ec440b7d4ec06b6ac6a"
-    sha256 arm64_monterey: "f797740f74d78a1b102b7e3d1a03805189eb5d7f4b17c4e478f33bbbde461040"
-    sha256 sonoma:         "b6934f3146b90ec2ce91c6b1c4c9c5afc2b17c0a17d4828141b1203d30f3bce2"
-    sha256 ventura:        "35f213aea2ae027b406afed1d9c0c38fbe9fbeee17077c3d1f13b150af5d848d"
-    sha256 monterey:       "12f2465df8d61b3f07b6ff46be406daae87aa370da7ebbffbafa52e27dfeb579"
-    sha256 x86_64_linux:   "21ffe2c21e812d498f36fb63b7a86e372ccf5eaafa4780334ae844382dd8d951"
+    sha256 arm64_sonoma:   "69e827ae4d9fb2557b7a0633b8fd465a8865f6c4f6368c06ab523f966a4d22fb"
+    sha256 arm64_ventura:  "b730c8115a9690e20c5e1c98c65d54098a786aabb522ef0e7fc05d369bcc368f"
+    sha256 arm64_monterey: "3ea7e8dd30bc0201ff6e193f36a2e393d62c279d7b18d93827ab6e789bf4e16f"
+    sha256 sonoma:         "98ef12be27a6faeb51b4e17a678f32c0efd916583669b9154dee85f7369fe2a9"
+    sha256 ventura:        "37720faaae0e249d4277efc26bf009d4689bd25d1f77a1cde0a6ada1d82374da"
+    sha256 monterey:       "75e0735658e3cc2a7ee2c12937c644f0eed406753bcaa28055f0bb48153daf2b"
+    sha256 x86_64_linux:   "fe6e9f6868e419a65137cbc5f71de460657c53f424c45a704810013356291286"
   end
 
   depends_on "riscv64-elf-gcc" => :test

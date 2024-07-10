@@ -21,12 +21,12 @@ cask "cloudflare-warp" do
 
   pkg "Cloudflare_WARP_#{version}.pkg"
 
-  uninstall launchctl: "com.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",
-            script:    {
-              executable: "ApplicationsCloudflare WARP.appContentsResourcesuninstall.sh",
-              input:      ["Y\n"],
-              sudo:       true,
-            }
+  uninstall launchctl: [
+              "com.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",
+              "com.cloudflare.1dot1dot1dot1.macos.warp.daemon",
+            ],
+            quit:      "com.cloudflare.1dot1dot1dot1.macos",
+            pkgutil:   "com.cloudflare.1dot1dot1dot1.macos"
 
   zap trash: [
     "~LibraryApplication Scriptscom.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",

@@ -100,7 +100,7 @@ Homebrew-homebrew-core/Formula/a/allureofthestars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alluxio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/alot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/alpine.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/alpine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alpscore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alsa-lib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/alure.rb, Homebrew/homebrew-core, 1
@@ -1037,6 +1037,7 @@ Homebrew-homebrew-core/Formula/c/corral.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corrosion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corsixth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortex.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cortexso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cosign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coturn.rb, Homebrew/homebrew-core, 1
@@ -2566,7 +2567,7 @@ Homebrew-homebrew-core/Formula/h/hmmer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hoedown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hof.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeassistant-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/homebank.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/homebank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeshick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeworlds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/honcho.rb, Homebrew/homebrew-core, 1
@@ -3203,6 +3204,7 @@ Homebrew-homebrew-core/Formula/l/lit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litani.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/litecli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/literate-git.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/litmusctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/little-cms2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/livekit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
@@ -5818,6 +5820,7 @@ Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snyk-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/so.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/soapyhackrf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soapyremote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soapyrtlsdr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soapysdr.rb, Homebrew/homebrew-core, 1

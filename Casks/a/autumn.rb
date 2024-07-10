@@ -17,4 +17,8 @@ cask "autumn" do
     "~LibraryPreferencescom.sephware.autumn.plist",
     "~LibraryWebKitcom.sephware.autumn",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
