@@ -23,6 +23,9 @@ cask "mullvadvpn" do
             delete:    [
               "LibraryCachesmullvad-vpn",
               "LibraryLaunchDaemonsnet.mullvad.daemon.plist",
+              "opthomebrewsharefishvendor_completions.dmullvad.fish",
+              "usrlocalsharefishvendor_completions.dmullvad.fish",
+              "usrlocalsharezshsite-functions_mullvad",
               "varlogmullvad-vpn",
             ]
 

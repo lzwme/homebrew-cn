@@ -3,20 +3,19 @@ class Httpie < Formula
 
   desc "User-friendly cURL replacement (command-line HTTP client)"
   homepage "https:httpie.io"
-  url "https:github.comhttpiecliarchiverefstags3.2.2.tar.gz"
-  sha256 "01b4407202fac3cc68c73a8ff1f4a81a759d9575fabfad855772c29365fe18e6"
+  url "https:github.comhttpiecliarchiverefstags3.2.3.tar.gz"
+  sha256 "91cb6cbd1f9e6115ffc13824e87b2a4d903d76c769859e81924913adbf609c1b"
   license "BSD-3-Clause"
-  revision 7
   head "https:github.comhttpiecli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71ca4ea3a7b53f0c2d2d7d6c88fa7c08986538fca935a1de9de4c3e56e372c8f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba449306f2e31520e54027770989b8dd061ef8c1c7e01f78a02f5dfd00e070a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d00f3a846786c3b046620dff7bb7ed75f30bb02f3cb1c93655760ff897684310"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c9a9ae39f5e6e7c76f40daa28379460840f58904b9a3ab2ca5cde5e21d673d8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "633cb8595246206f68428de8946e60ad2423e73799ca2173096fdc7bb2109ad1"
-    sha256 cellar: :any_skip_relocation, monterey:       "742e8ce4cbd9a88e9b1710aa6135a2cada0b8424493869fdc5b335d42239e781"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75ca6608d999f198ce11e7f4201f22c5494b1c33182ef6f2406abdf67e4f6f5f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1476a5428cc4fb85f518fa53effcf05c187af97d7ff2b8e3c0bd15b3c8436e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0d2006724ca312e1adcbb8e9e7a019aaf214a52aba2f7c987efe2bc54699b4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ccb77f5c72757907efdb7224549211a6e6eb1f0c27b22b39998708e8b5078a7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cca72ebd9a4001283f2ce344a650d7a6668a4dd151c9d3e0eb459e972872f99e"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a67403d228486e58e2aca907a1622ddd3bb661097f9b4439b0511d2fa04b90d"
+    sha256 cellar: :any_skip_relocation, monterey:       "1aad0d069eabc375735eb7a0c5a2452e539f668c0dc327935e8b34f3dd1ef460"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33a2f07b968ddc359331d64ce284dfacfeff36ae87b3ed748fd0bf998545ca3a"
   end
 
   depends_on "certifi"
@@ -63,8 +62,8 @@ class Httpie < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "requests-toolbelt" do
@@ -78,8 +77,8 @@ class Httpie < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   resource "urllib3" do

@@ -35,4 +35,8 @@ cask "eddie" do
     "~.configeddie",
     "~LibraryPreferencesorg.airvpn.eddie.ui.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

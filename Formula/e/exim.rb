@@ -1,8 +1,8 @@
 class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
-  url "https://ftp.exim.org/pub/exim/exim4/exim-4.97.1.tar.xz"
-  sha256 "bd782057509a793593508528590626d185ea160ce32cb34beda262e99cefdfa9"
+  url "https://ftp.exim.org/pub/exim/exim4/exim-4.98.tar.xz"
+  sha256 "0ebc108a779f9293ba4b423c20818f9a3db79b60286d96abc6ba6b85a15852f7"
   license "GPL-2.0-or-later"
 
   # Maintenance releases are kept in a `fixes` subdirectory, so it's necessary
@@ -29,13 +29,13 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "88cc9fb1a2edf0209c4969d77398504c82b7b3ad7f5269e61e7e4d8f39222831"
-    sha256 arm64_ventura:  "ef6f00c280f783176017ac1d4782b63b1dd348b1b253b6716870f2e8bc415743"
-    sha256 arm64_monterey: "769e6caf8b39ee9b0d8d9fdb40daa5f8786417d52865fccb84dbcc390543e870"
-    sha256 sonoma:         "833f28f1f6a7b268468af5ebed48a7a09458f10adb6991c34f27ae0f60b3c3e3"
-    sha256 ventura:        "acaeab63b2b87d37da44fd1e6802856ea7fa291ef8e6008d1ffb3d8e2d7879e2"
-    sha256 monterey:       "2f642c275688fa3042e82171892b5ce56081d2d9641bf0651f34f0c5d7f662ee"
-    sha256 x86_64_linux:   "3a4c555201a99552a0a7b919720a8666189e781ff3b8685de8a9cb5e73b48d68"
+    sha256 arm64_sonoma:   "9d191df8db39460aa8840f0aa7cafcdbb010f73758a840e19e0907f4558eac38"
+    sha256 arm64_ventura:  "6b5c612e24799fb00727fe69b64988445a86d20cbcf83d71e3f5e8c84d28325b"
+    sha256 arm64_monterey: "5c5cd9bc15e186692a59ebd311bf8706c29438f2c98b92b7554a614246f08be6"
+    sha256 sonoma:         "70f63c3d07217f4acb1a357523e66f7973c8500b4ae26a8b1e86892d89aba87a"
+    sha256 ventura:        "ab8281ba1aff765df525f58297a8156fab046234a5dde1d971fa9598bcb496ad"
+    sha256 monterey:       "94128f45652f109b1297758b1b308a1890e862756029d9e7acc240cc4e33c93b"
+    sha256 x86_64_linux:   "5673d387c1b534b03a54ddf53ca0d93e1b7daa97e35ba1b34ef8049c7d44e896"
   end
 
   depends_on "berkeley-db@5"
@@ -49,12 +49,16 @@ class Exim < Formula
     url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-1.18.tar.gz"
     sha256 "f900cb39505eb6e168a9ca51a10b73f1bbde1914b923a09ecd72d9c02e6ec2ef"
   end
+
   resource "File::FcntlLock" do
     url "https://cpan.metacpan.org/authors/id/J/JT/JTT/File-FcntlLock-0.22.tar.gz"
     sha256 "9a9abb2efff93ab73741a128d3f700e525273546c15d04e7c51c704ab09dbcdf"
   end
 
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # fix `Cannot read timezone file /usr/share/zoneinfo/UTC0` issue
     ENV["TZ"] = "UTC"
 

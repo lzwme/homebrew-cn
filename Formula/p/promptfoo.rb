@@ -3,18 +3,18 @@ require "language/node"
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.69.2.tgz"
-  sha256 "59ac54bc640f2cf291fe5b4fde25c4d73940d9e04cd565cfdc6f9314dc8d5c58"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.70.0.tgz"
+  sha256 "237f6a138a17f0cdbcdc7732cb967ed21765abe3054fc13d100ff19b1d5bbca9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43f893a3f48de1abbb2d8b7f90c2ba86bdbd9106265b9fbf6837d26fe045553c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7bdcb6979ab45b5b20ac7bf13ed4ba914a857d9ca782faadc6425e9c223f578"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f43361273ae0ea756d0a505c1347286f6572898f687a0678b197f695d412a6a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "206afdf69242f96fc5195c16f8f52a9cdc69b5cd5bcf74795550b878cb941b6a"
-    sha256 cellar: :any_skip_relocation, ventura:        "acb3125616ea4d8b8c352e6d687eb146087cba26b15bae62fb336cc806362761"
-    sha256 cellar: :any_skip_relocation, monterey:       "996e9c4c0f4c3a7cdda3fedc0fb2688b2b348a1321c6d2d5f0067e5a542f63b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ec59e5e386590a5b8f04c3a09b07c7d005ed9a3b074e44471c05fbe78694d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e699338955fab9809fa75a193348fa5c929662c4d1c773b1aff0275552e4efc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1491b65619eab5b4f5c4f3aa23c5f692caeed294833dcb24a436d07415c733c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6422e2e6f0d875f04edcf218cda262e6b7e09f17f265155c542f2914ab2b04a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "565f11660b824c2a23ab100d20652c83bb4f84a00002f012b9e2832cbab2ef95"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d80b1b71e99bcfaee0460b443812db10915b20240d7af141ea60760172702ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ce10d1b74a2fe0968df0345758fdb88d98f5ac607b76cfa7186df4d0beb7b6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c258288d63a043fda177a593e7ee58f109298332ae2591ed483fe2bacecef192"
   end
 
   depends_on "node"

@@ -3,20 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https:github.comanchorevunnel"
-  url "https:files.pythonhosted.orgpackages681e40d3a5465362182ac8495f9f8fd8a9c7bfca85e823075a25ebc64a727840vunnel-0.25.0.tar.gz"
-  sha256 "bf97c14b2703760b2b3196a79384560002310613aad0c332963de06bc687d248"
+  url "https:files.pythonhosted.orgpackages0ece37ee5bf252db226824d34c1f0b0519c9742d92a59f0b7055e4c40faaf8cbvunnel-0.26.1.tar.gz"
+  sha256 "812c2037cfcd7bce67f4d917e8f573c96f48f61cba9594932192c8300011c864"
   license "Apache-2.0"
-  revision 1
   head "https:github.comanchorevunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a57117baa4598bb889a822e9340cfd0f285a49c5f7462631e46302f35dcbd792"
-    sha256 cellar: :any,                 arm64_ventura:  "623bc8b58f855e9532e85af646dd38b914e318b779184bf9c662be27d14c5f4f"
-    sha256 cellar: :any,                 arm64_monterey: "dd2e91c1d1feec925ffb9226e3b67c6e9f3b11454bed13ff815eab079c9ed086"
-    sha256 cellar: :any,                 sonoma:         "0a0a23807ed07b4b40051b8884f8ce574d34a60ad2eb2bd603791513662e659f"
-    sha256 cellar: :any,                 ventura:        "94092a57b1e86ecc0cf0c1a919d86e4a13848a6d16ceb87c00e6ac3416ea4394"
-    sha256 cellar: :any,                 monterey:       "ce1398fb4b8573776ab432fa34b6abdb6aa8a184d327fb85a38ec13f0627dc4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4e7f5509d944af9762dee5e11b240d641481d2f89f3659bceec0e5b76d11475"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7fefad6d25f6718b4f1e614d33d8c09a7b72a94d9a6eadeabab9ac0278792b0"
+    sha256 cellar: :any,                 arm64_ventura:  "11b212a9997accc89ab52b7c57f448f41278ebc24b2abb32cfd27e45152dc542"
+    sha256 cellar: :any,                 arm64_monterey: "b5bc69cdf04d121fb77612a31ebba6377483f99869623e6ff05d4645394b0ad1"
+    sha256 cellar: :any,                 sonoma:         "501acda3c870a2091e17b10fabbdd9efc76b0b45588f60035666ed0b3b86b394"
+    sha256 cellar: :any,                 ventura:        "be0cab06f3edec46a78886f06813155a11b6dde2851a86603180e21d6ec4c520"
+    sha256 cellar: :any,                 monterey:       "e4ed71d01af1a5501ce8ef66323cfe5b92cd553ac1eee669a9e2c5df98fd7329"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8cd62327b11884145c55c3f848a7c5fedc35c2a9467724e8ec00b944c7f5cfc"
   end
 
   depends_on "rust" => :build
@@ -62,6 +61,11 @@ class Vunnel < Formula
     sha256 "9dc71659d3b853c3018cd7b2ec34d5d054370128e12b79ee655498cb339cc711"
   end
 
+  resource "greenlet" do
+    url "https:files.pythonhosted.orgpackages17143bddb1298b9a6786539ac609ba4b7c9c0842e12aa73aaa4d8d73ec8f8185greenlet-3.0.3.tar.gz"
+    sha256 "43374442353259554ce33599da8b692d5aa96f8976d567d4badf263371fbe491"
+  end
+
   resource "idna" do
     url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
@@ -73,8 +77,8 @@ class Vunnel < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagesa0fcc4e6078d21fc4fa56300a241b87eae76766aa380a23fc450fc85bb7bf547importlib_metadata-7.1.0.tar.gz"
-    sha256 "b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"
+    url "https:files.pythonhosted.orgpackages767233d1bb4be61f1327d3cd76fc41e2d001a6b748a0648d944c646643f123feimportlib_metadata-7.2.1.tar.gz"
+    sha256 "509ecb2ab77071db5137c655e24ceb3eee66e7bbc6574165d0d114d9fc4bbe68"
   end
 
   resource "iniconfig" do
@@ -113,8 +117,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackagesf9baa506ace6d9e4cb96cb4bed678fddc2605b8befe7fbbbecc309af1364b7c4orjson-3.10.5.tar.gz"
-    sha256 "7a5baef8a4284405d96c90c7c62b755e9ef1ada84c2406c24a9ebec86b89f46d"
+    url "https:files.pythonhosted.orgpackages70248be1c9f6d21e3c510c441d6cbb6f3a75f2538b42a45f0c17ffb2182882f1orjson-3.10.6.tar.gz"
+    sha256 "e54b63d0a7c6c54a5f5f726bc93a2078111ef060fec4ecbf34c5db800ca3b3a7"
   end
 
   resource "packaging" do

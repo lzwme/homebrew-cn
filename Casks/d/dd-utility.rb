@@ -16,4 +16,8 @@ cask "dd-utility" do
   app "dd Utility.app"
 
   zap trash: "~LibrarySaved Application Stateco.za.thefanclub.ddUtility.savedState"
+
+  caveats do
+    requires_rosetta
+  end
 end

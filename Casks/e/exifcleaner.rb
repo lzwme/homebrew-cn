@@ -14,4 +14,8 @@ cask "exifcleaner" do
     "~LibraryApplication SupportExifCleaner",
     "~LibrarySaved Application Statecom.exifcleaner.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

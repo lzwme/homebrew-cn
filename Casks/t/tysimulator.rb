@@ -14,4 +14,8 @@ cask "tysimulator" do
   uninstall quit: "com.tianyiyan.TySimulator"
 
   zap trash: "~LibraryPreferencescom.tianyiyan.TySimulator.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

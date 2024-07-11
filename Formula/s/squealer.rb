@@ -1,19 +1,19 @@
 class Squealer < Formula
   desc "Scans Git repositories or filesystems for secrets in commit histories"
   homepage "https:github.comowenrumneysquealer"
-  url "https:github.comowenrumneysquealerarchiverefstagsv1.2.2.tar.gz"
-  sha256 "a7d37b86fec436d8b8c558a486f21c503565a1dc5b52260498f1c0e8645fad8b"
+  url "https:github.comowenrumneysquealerarchiverefstagsv1.2.3.tar.gz"
+  sha256 "001683802233e79c2063d866fb7953a36a8331a441a537bd9f7d66c0c10fb92e"
   license "Unlicense"
   head "https:github.comowenrumneysquealer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1e71074986be2d93d968d9b78e3c6d150e89f890af49a7fae49e1e4806cb895"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b892e645c5939e0234b07eb2e10d03848448d90d63c9a9305a09741fe11fc23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61e55acd5defd591fe274f9c556dfb343c8a50e195a4b1203d5f7cee0c060b55"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bec3fcc2f4d7b6579c9f94fb6be266259ac0ca3146fdd9c31ef34288904301c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa1d05727436144e2df5e53685fb2bc3e44d0c37ab26eca8d7db2769ec39f588"
-    sha256 cellar: :any_skip_relocation, monterey:       "e64025082676c8e7f8b413a6aa1dc0d2676e4ab41b9655b3649bcd9037c0290e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4a4208f112a9698eb8acd528767a468573c68cf99fccb2bb687a6b4c912d07c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67cabdd9ed5a27e56d42ae5e7e11f84ce8a8e6d8c122dc907a2e594e100f840e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2444b45b2ab83c10b577953e3b81bfecd528a0b9b1ee6fe90849687916da78f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "261c89ccacbc0f3597b6123604019191b1fdf17635795ec1008fc6348769f1da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52a30dcb323eb7bcf28ff4a6c22cebfd7b1e14189ee937bfc0bab0a4023f1cba"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e25732cdaa1567b34973f47eea215c031b04078973c1d79c99b17a348325e22"
+    sha256 cellar: :any_skip_relocation, monterey:       "0832649e0602783978553546d21e6af92f4ff6791c05f54586c2d766a63548ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1fea9cfe464827fcec4d3ccb3439a3fc1a0788724c868a19c850526c88a37eb"
   end
 
   depends_on "go" => :build

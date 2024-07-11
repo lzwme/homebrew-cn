@@ -7,5 +7,11 @@ cask "dropletmanager" do
   desc "Digital Ocean droplet manager"
   homepage "https:github.comdeivuhDODropletManager-OSX"
 
+  disable! date: "2024-07-10", because: :unmaintained
+
   app "DropletManager.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -14,4 +14,8 @@ cask "todometer" do
     "~LibraryApplication Supporttodometer",
     "~LibraryPreferencescom.electron.todometer.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

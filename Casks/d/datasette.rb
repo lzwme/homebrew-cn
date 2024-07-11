@@ -18,4 +18,8 @@ cask "datasette" do
     "~LibraryPreferencesio.datasette.app.plist",
     "~LibrarySaved Application Stateio.datasette.app.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

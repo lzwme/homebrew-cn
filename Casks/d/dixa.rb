@@ -21,4 +21,8 @@ cask "dixa" do
     "~LibraryPreferencesdixa.plist",
     "~LibrarySaved Application Statedixa.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -4,7 +4,10 @@ cask "beardedspice" do
 
   url "https:github.combeardedspicebeardedspicereleasesdownloadv#{version}BeardedSpice-#{version}.zip"
   name "BeardedSpice"
+  desc "Control web-based media players with media keys"
   homepage "https:github.combeardedspicebeardedspice"
+
+  deprecate! date: "2024-07-09", because: :unmaintained
 
   auto_updates true
 
@@ -14,4 +17,8 @@ cask "beardedspice" do
     "~LibraryCachescom.beardedspice.BeardedSpice",
     "~LibraryPreferencescom.beardedspice.BeardedSpice.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

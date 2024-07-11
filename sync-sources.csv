@@ -1039,6 +1039,7 @@ Homebrew-homebrew-core/Formula/c/corsixth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortexso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cosign.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cotila.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coturn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/couchbase-shell.rb, Homebrew/homebrew-core, 1
@@ -2964,6 +2965,7 @@ Homebrew-homebrew-core/Formula/k/kapacitor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/karmadactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
@@ -4311,6 +4313,7 @@ Homebrew-homebrew-core/Formula/n/neovim-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neovim-remote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neovim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nerdctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nerdfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nerdfix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nesc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nest.rb, Homebrew/homebrew-core, 1
@@ -5097,6 +5100,7 @@ Homebrew-homebrew-core/Formula/p/ptunnel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/publish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pueue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/puf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pugixml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulledpork.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 1

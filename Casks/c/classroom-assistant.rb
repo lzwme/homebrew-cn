@@ -7,7 +7,7 @@ cask "classroom-assistant" do
   desc "Tool to clone student repositories in bulk"
   homepage "https:classroom.github.comassistant"
 
-  deprecate! date: "2023-12-17", because: :discontinued
+  disable! date: "2023-12-17", because: :discontinued
 
   app "Classroom Assistant.app"
 

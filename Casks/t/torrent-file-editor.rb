@@ -19,4 +19,8 @@ cask "torrent-file-editor" do
     "~LibraryPreferencesnet.sourceforge.torrent-file-editor.plist",
     "~LibrarySaved Application Statenet.sourceforge.torrent-file-editor.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

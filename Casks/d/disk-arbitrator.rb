@@ -6,10 +6,16 @@ cask "disk-arbitrator" do
   name "Disk Arbitrator"
   homepage "https:github.comaburghDisk-Arbitrator"
 
+  deprecate! date: "2024-07-09", because: :unmaintained
+
   app "Disk Arbitrator.app"
 
   uninstall launchctl: "us.burghardt.Disk-Arbitrator",
             quit:      "us.burghardt.Disk-Arbitrator"
 
   zap trash: "~LibraryPreferencesus.burghardt.Disk-Arbitrator.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

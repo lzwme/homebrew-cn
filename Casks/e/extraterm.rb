@@ -19,4 +19,8 @@ cask "extraterm" do
     "~LibraryApplication Supportextraterm",
     "~LibraryPreferencescom.electron.extraterm*.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

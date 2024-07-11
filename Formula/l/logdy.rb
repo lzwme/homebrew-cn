@@ -1,18 +1,18 @@
 class Logdy < Formula
   desc "Web based real-time log viewer"
   homepage "https:logdy.dev"
-  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.12.2.tar.gz"
-  sha256 "a2fcf5ae44e1e8b43daf96f98a29776b255e8aa8c7caeaca6e5293334b78cda7"
+  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.13.tar.gz"
+  sha256 "e23010f4979f79b6545181d35a27b4e80f08815f7f9bfb089eb3d1bd4879fa0d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba2c86435406e100aa18ee764a608ec88cb8148d28ceb76120107bcc2b459815"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7f72609602006b1ce2466a5160233b9fc34a1157457fc7f17ccc0647c4d2971"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c2227654d22d7aba4f9483e5968c18009e8035f0ea4e579dd971e7fe5643320"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7aba148fcb92c4a53cd98659366f17706f1d260e348b5aa0c88c04fe4d7f2e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6738c9df22bc14c095d79769b4bac339a2fd9558ec1a062bc8b15517bfdfc45"
-    sha256 cellar: :any_skip_relocation, monterey:       "a945764d1c8bfff40455196fbeb5394f1fb2f6a8922fc5b3064680df6c08fca1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7f0455c5e563ba861484dbb84386417a3d1ed367809690d6c9239742097a17f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9190a20f9e29be0744ac4ecf864d4cfa6db9c04dfc8ee3b934e1f702cebbb61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba142b96d4dd276dbfaa45ffc42e41ab2918b41b3312d7d7ed23c215c97ad61c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb2e139edd2ebb0d0e0939f3a93b6a19e86e21b84d63d2d9db05fc88c10c549f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3cfecfbe4f13c85bc25453e83bac7ccb079d42bb9b87a5dedb7e518432ed56b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "bed24d829f1f6110106d3626f4f11d5ed7afd9b0c12a7c4bdd3a53e4d297fd05"
+    sha256 cellar: :any_skip_relocation, monterey:       "0790f3c87c788b3c50b9aceb2590b4bb56d1d4cf3d6a0afb83dc12546e9bcb40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f239bd7a6a7ad620f541c1b06250e3cce3929746be8d76ec3e2c268b6eba8326"
   end
 
   depends_on "go" => :build

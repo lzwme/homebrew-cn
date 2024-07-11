@@ -7,13 +7,14 @@ class Pngquant < Formula
   head "https:github.comkornelskipngquant.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d3e16afa75e8c67f0bd33265a5b41bc386b3556c03f005665dfea57a8ce5be00"
-    sha256 cellar: :any,                 arm64_ventura:  "8a1da7e0f02ac09b8d76e4d61303d68a00c06de630878d39a440652b441c087d"
-    sha256 cellar: :any,                 arm64_monterey: "132f62c08f87aadc9243de4d6ac887050b61231ed175cabe9d753186be1b7151"
-    sha256 cellar: :any,                 sonoma:         "6e973dbeded39f7b02bcf90cd3e6a271a8a4323cc35a0e0670a162b8037d9166"
-    sha256 cellar: :any,                 ventura:        "c290edbea7b632f3cae66a0b9f1c5f67942d398290a2b439d2518d4a86a1b568"
-    sha256 cellar: :any,                 monterey:       "c691267cf2d7a281d2bf23ddb745bfbba974cc0e8133e4b023e244d937c8ee41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5044118575aca60f3b593f1bce3a975976ba4bddf2b2f7105c1d6a7e8dd0514"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "7304b28d6ac4803b515bc6d5f7a56115f993d0af414cc20173ac5e766e6b8dd6"
+    sha256 cellar: :any,                 arm64_ventura:  "8fe4369e28cadb40f580f8788202124e9c8cecc8adf160422d941df8132b7105"
+    sha256 cellar: :any,                 arm64_monterey: "c142cd5a58cbcc5dc2a642bd87ab7696dcd371c4c87db5138b8a54735adb37d6"
+    sha256 cellar: :any,                 sonoma:         "6810c2738ecc54130198b31380b8fdd8629aab89a497e7bc456ac72417d90936"
+    sha256 cellar: :any,                 ventura:        "e9a2a6f6276529634cf601eb2c15b257db31d0d7b5fab624ef6f4001af4faac9"
+    sha256 cellar: :any,                 monterey:       "190bce955acdfcf9999a2dec7902d3bc1864b29eb2a2e636b3820fedd9ad81be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "088abd195e0063a9ff6f8b3e041f50c9cc08807c475ac573349cf47607519e51"
   end
 
   depends_on "pkg-config" => :build
@@ -21,8 +22,16 @@ class Pngquant < Formula
   depends_on "libpng"
   depends_on "little-cms2"
 
+  # remove when upstream merge and release https:github.comkornelskipngquantpull418
+  resource "manpage" do
+    url "https:raw.githubusercontent.comkornelskipngquant53a332a58f44357b6b41842a54d74aa1e245913dpngquant.1"
+    sha256 "831f485ccb3664436e72c4c8142f15cc35b93854e18c5f01f0d2f3dbc918d374"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
+
+    man1.install resource("manpage")
   end
 
   test do

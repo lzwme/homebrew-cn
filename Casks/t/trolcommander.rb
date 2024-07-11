@@ -9,4 +9,8 @@ cask "trolcommander" do
   homepage "https:trolsoft.ruensofttrolcommander"
 
   app "trolCommander.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

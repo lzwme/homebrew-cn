@@ -7,4 +7,8 @@ cask "taskwarrior-pomodoro" do
   homepage "https:github.comcoddingtonbeartaskwarrior-pomodoro"
 
   app "Taskwarrior Pomodoro.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

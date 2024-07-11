@@ -4,6 +4,7 @@ class Htslib < Formula
   url "https:github.comsamtoolshtslibreleasesdownload1.20htslib-1.20.tar.bz2"
   sha256 "e52d95b14da68e0cfd7d27faf56fef2f88c2eaf32a2be51c72e146e3aa928544"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,16 @@ class Htslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9fbfe8953941d6c1b121672e533c0f677dc817f0c49aef72ee2ada50c8ee2c98"
-    sha256 cellar: :any,                 arm64_ventura:  "26b3ea2b0217b1995069eb1109d2ec77a9792cd310625f066412f2b6147c8016"
-    sha256 cellar: :any,                 arm64_monterey: "243aa954fa86249f2c4b0223b331949ad856f26a6fe31508d5a88299990a9d47"
-    sha256 cellar: :any,                 sonoma:         "8c3c97d6bb1b1dddf675fa75ec4f6a8f27144acd65575307e96da5dc20163b7b"
-    sha256 cellar: :any,                 ventura:        "bbba88c048749552415a7f9d7251195a7a4f5dee7ec20327ec99995b07babb27"
-    sha256 cellar: :any,                 monterey:       "1983bc40811162d756e7889d84ab1b16997c1e575404efed0c3bd7eb2ffe712b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e5690f88f816c9291f96558338954b4dd27edb166b32cedb5edcf49c3034c95"
+    sha256 cellar: :any,                 arm64_sonoma:   "b57cfe11502c0d4b8d7d87b3e100b864c6d54919a13afe771003cd1c5ab4e7fd"
+    sha256 cellar: :any,                 arm64_ventura:  "e8bdefab6c3c5f268b3de351bee60d4219d3106ba9495b045c300299bed15340"
+    sha256 cellar: :any,                 arm64_monterey: "d0117119343a7fd14531db96d2c0d82cefd00156e2addbf4582959713121fc4f"
+    sha256 cellar: :any,                 sonoma:         "34e920bc28bf678c6ede59714a35aea4644fb6feccc4a0e2e830d2a74ceb0007"
+    sha256 cellar: :any,                 ventura:        "aeca2fb129525817e5bd00b8a32f5fc8f9841f963358b00ed01c8ec56d647bcf"
+    sha256 cellar: :any,                 monterey:       "a35e2728e23394a7b0c4764fa3ded2bc23b29d2505f31183c3f965011d81d1a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2d11ad1fe3539918fae0b520615aaa2737816cfeb606e1160d2776b86a781ee"
   end
 
+  depends_on "libdeflate"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -31,7 +33,7 @@ class Htslib < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--enable-libcurl"
+    system ".configure", "--prefix=#{prefix}", "--enable-libcurl", "--with-libdeflate"
     system "make", "install"
   end
 

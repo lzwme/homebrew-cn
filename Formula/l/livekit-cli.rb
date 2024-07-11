@@ -1,19 +1,19 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.0.3.tar.gz"
-  sha256 "56da9d55d3b09ef4ababafaf678aad018b2d3d8b3001d888fd6aafe04b33aab5"
+  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.0.4.tar.gz"
+  sha256 "66d7080ff5f339f69ddd39a715defc4aaa2f3e5f4d6a1ef815a070b759602c74"
   license "Apache-2.0"
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "190bd21a53e673ea3e5fd6d70ddf776e55aad253c806da456c1ff46666a467d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "137e934f591ae48059eb464f33cf67eb7d3c8355186841fa5cba5fd100c2a26b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa013d96301e420f3fd5b089b634ade85c25762d6b87ddb05f23273a08203c59"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adaa714139e39458b7bf16571f132b555cf3011832365413f4a3fdd8e430fc44"
-    sha256 cellar: :any_skip_relocation, ventura:        "da5247143a54fc652f336c80bcc29b09cd62e180f0377dd906d764181bc2e85f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d6bc15d64af24c87b4999948e1b1758a2137dde7878c8d34dfabfdababfa045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c30ae9c2ea026d2d257fdf9db98c4b3257f41a961e938dcced5c307a75fd67a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7b5493d9555798dae623e40de98b63f9d76020313943c0210d143e984537e70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "316c35350d6f3314ce7bce48014ccdfb0ac06e5b77c45e586da88fea424b75e9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0772d69a6408e0180bd66a61eaf5fdf1bb6fcfa7f21c47e9bff4211dd5806b99"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34d8737df2ef320f5d315f65de11bb16796257bdc883bc7f728feb569288272d"
+    sha256 cellar: :any_skip_relocation, ventura:        "91a113c2447fe31535771d5c96685b84ba537638e976d7ffd4e2532fcd90c762"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a9283a1fd0edc12c7f937820bb06018c76c774501bac9d51485a21fdb3d8fbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56700b4194108adbb89ff19a5ab5bc17f1c59b6ecb548b4b760760dd2459c383"
   end
 
   depends_on "go" => :build

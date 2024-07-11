@@ -15,4 +15,8 @@ cask "transmission-remote-gui" do
     "~LibraryPreferencescom.transgui.plist",
     "~LibrarySaved Application Statecom.transgui.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
