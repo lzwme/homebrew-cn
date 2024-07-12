@@ -19,7 +19,11 @@ class Gnumeric < Formula
   depends_on "intltool" => :build
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "at-spi2-core"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "goffice"
   depends_on "gtk+3"
@@ -30,9 +34,11 @@ class Gnumeric < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "python" => :build
   uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+    depends_on "harfbuzz"
   end
 
   on_linux do

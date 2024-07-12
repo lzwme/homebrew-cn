@@ -32,4 +32,8 @@ cask "gpgfrontend" do
     "~LibraryPreferencespub.gpgfrontend.gpgfrontend.plist",
     "~LibrarySaved Application Statepub.gpgfrontend.gpgfrontend.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

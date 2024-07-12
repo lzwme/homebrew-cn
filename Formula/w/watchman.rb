@@ -1,19 +1,19 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2024.07.01.00.tar.gz"
-  sha256 "d56a1672802c5ea0b9b853a3a9d1dcf1644d72a56e5c6069db6319310b271d32"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2024.07.08.00.tar.gz"
+  sha256 "140f5ce335cd2639945e45e778f5203581add5fc30e64a166ee37140fe8970e4"
   license "MIT"
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "73886555afca55bab7b6e0cb136e0fdf02f895771f2fdf926a7d40e0d880a450"
-    sha256 cellar: :any,                 arm64_ventura:  "80e4c78cc9a83a0a33c2a807b6e4a7757223257883f6c7b279a15b88fa8d4033"
-    sha256 cellar: :any,                 arm64_monterey: "357ea33d8acbd1037f3b47ff31178609276cceb3602e2673b01ed5fc2fd8f865"
-    sha256 cellar: :any,                 sonoma:         "58728609a286fe6a24e7c9610fb1fc59bdecb15eedf0f008971403ec1219dc4f"
-    sha256 cellar: :any,                 ventura:        "1576bcabee5e23af1d8495c374cb0992a3f633fdc5b0bcb5ac0a87d1f0676e14"
-    sha256 cellar: :any,                 monterey:       "1e2fb41efb6bab128e93ce8198ad1d66190f11d0db39fd3bc3e08c96e46ddaa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da891b72c3e65ed334034b974e784757a117d6e7aac5f0d9b7126a57bc952809"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ade44c790eb49178789ce23506ade13564194b7ff0a0dd03d4c6b2cb03501c4"
+    sha256 cellar: :any,                 arm64_ventura:  "12b550ae38d82fe6dfe2580f648e3a4aa7acc0cd0015f11debb758eba0e4fa3d"
+    sha256 cellar: :any,                 arm64_monterey: "f0eb354ee7b6fd7f4bf62a63ff64915bb0bcbef69c1d633c230e4fb9a080007d"
+    sha256 cellar: :any,                 sonoma:         "1fa07b70d9673549687c4d3d542655a660b727d02ec6bdf9195b98867182447b"
+    sha256 cellar: :any,                 ventura:        "4370738864cf96d1d03b23847c2d89f4cb5ede1c3885b2c136ccdd47cca17816"
+    sha256 cellar: :any,                 monterey:       "0c95c2baae9dd51e6e68b7a7c72061640925ea7fce7fca8c2eee84828132fcd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54388aaebced4de7927f7c7c3ba45b319842ee4e8494cb8ffd76f0df091c89fd"
   end
 
   # https:github.comfacebookwatchmanissues963
@@ -43,12 +43,6 @@ class Watchman < Formula
   end
 
   fails_with gcc: "5"
-
-  # watchman_client dependency version bump, upstream pr ref, https:github.comfacebookwatchmanpull1229
-  patch do
-    url "https:github.comfacebookwatchmancommit681074fe3cc4c0dce2f7fad61c1063a3e614d554.patch?full_index=1"
-    sha256 "7931c7f4e24c39ea597ea9b125c3003ccdb892292fc455b4c66971c65a48f5f6"
-  end
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.

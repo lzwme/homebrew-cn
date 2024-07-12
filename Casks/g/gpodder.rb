@@ -16,4 +16,8 @@ cask "gpodder" do
   app "gPodder.app"
 
   zap trash: "~LibraryApplication SupportgPodder"
+
+  caveats do
+    requires_rosetta
+  end
 end

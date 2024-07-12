@@ -11,4 +11,8 @@ cask "fspy" do
   app "fSpy.app"
 
   zap trash: "~LibraryApplication Supportfspy"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -17,12 +17,21 @@ class Dissent < Formula
   end
 
   depends_on "go" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "graphene"
   depends_on "gtk4"
   depends_on "libadwaita"
   depends_on "libcanberra"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

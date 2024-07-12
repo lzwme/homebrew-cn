@@ -6,5 +6,11 @@ cask "g-desktop-suite" do
   name "G Desktop Suite"
   homepage "https:github.comalexkim205g-desktop-suite"
 
+  deprecate! date: "2024-07-11", because: :unmaintained
+
   app "G Desktop Suite.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

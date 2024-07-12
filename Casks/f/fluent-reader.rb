@@ -20,4 +20,8 @@ cask "fluent-reader" do
     "~LibraryPreferencesme.hyliu.fluentreader.plist",
     "~LibrarySaved Application Stateme.hyliu.fluentreader.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

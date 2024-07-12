@@ -24,6 +24,8 @@ class ErofsUtils < Formula
   depends_on "util-linux" # for libuuid
   depends_on "xz"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "libfuse@2"
   end

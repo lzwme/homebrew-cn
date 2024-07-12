@@ -12,13 +12,16 @@ class Avahi < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "libtool" => :build
   depends_on "m4" => :build
   depends_on "perl" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "xmltoman" => :build
+
   depends_on "dbus"
+  depends_on "expat"
   depends_on "gdbm"
   depends_on "glib"
   depends_on "libdaemon"

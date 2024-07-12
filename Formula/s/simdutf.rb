@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https:github.comsimdutfsimdutf"
-  url "https:github.comsimdutfsimdutfarchiverefstagsv5.2.8.tar.gz"
-  sha256 "2706f1bef85a6d8598f82defd3848f1c5100e2e065c5d416d993118b53ea8d77"
+  url "https:github.comsimdutfsimdutfarchiverefstagsv5.3.0.tar.gz"
+  sha256 "9b568d6e66b14810bdbcf645f19b103475ab8175201b5c85828222c0ff0a735c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsimdutfsimdutf.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "88e01c7d1d6e13554c0a0b1402fb2725af01989b48562b1132b8872fa0cafe93"
-    sha256 cellar: :any, arm64_ventura:  "7af24734a478f1f412e63c6f1f2b1ed9237472d007db2c132b4a33fe64055338"
-    sha256 cellar: :any, arm64_monterey: "c60db767114e135842c8aabf15e356d814fdab89cf1c188d98bc315d4a3dd785"
-    sha256 cellar: :any, sonoma:         "f65c3304820ca11fd6ca601b1834d615ef6f2df8e64caee6d8ac7b18e2f478d1"
-    sha256 cellar: :any, ventura:        "c88fe1cf89b912243d3213fdf1abe66decd747237c9120fc5750d65a72c88b20"
-    sha256 cellar: :any, monterey:       "6e093a7e2de161fa8fba90d187fc3edfc4e0051d22d4f9df534c0b0925961478"
+    sha256 cellar: :any, arm64_sonoma:   "6fd0b26c5407961961cabd0aae53862106fc357ce009237794d91fe6d97fbf3e"
+    sha256 cellar: :any, arm64_ventura:  "948b39bb608d6d4b4a5053ba0c5c678b434745465c46135cbd2721eb114cb181"
+    sha256 cellar: :any, arm64_monterey: "b55273fa181a9ee266a455d0af1670b1f333857e9cd3f6cbbb2a927aa244130b"
+    sha256 cellar: :any, sonoma:         "1755d5d46737b39f2fb52611c19e2a89ab228f72df7df2565a923f2ecb0cc676"
+    sha256 cellar: :any, ventura:        "0eb808c9251ba05857affdb4c27a6cfb575ab92d2b79bb3d201795adee3ac68a"
+    sha256 cellar: :any, monterey:       "fb349625f50748393e5bfe89eb3d654f4bba83a7bcf0d44dc4361e31649fef0b"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,7 @@ class Simdutf < Formula
 
   uses_from_macos "python" => :build
 
-  # https:github.comsimdutfsimdutfblobv#{version}benchmarksbase64CMakeLists.txt#L5
+  # VERSION=#{version} && curl -s https:raw.githubusercontent.comsimdutfsimdutfv$VERSIONbenchmarksbase64CMakeLists.txt | grep -C 1 'name = "VERSION"'
   resource "base64" do
     url "https:github.comaklompbase64archiverefstagsv0.5.2.tar.gz"
     sha256 "723a0f9f4cf44cf79e97bcc315ec8f85e52eb104c8882942c3f2fba95acc080d"

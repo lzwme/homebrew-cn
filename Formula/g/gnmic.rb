@@ -1,18 +1,18 @@
 class Gnmic < Formula
   desc "GNMI CLI client and collector"
   homepage "https:gnmic.openconfig.net"
-  url "https:github.comopenconfiggnmicarchiverefstagsv0.37.0.tar.gz"
-  sha256 "37fa3e0cc0a9899508fe84dfd849d83bd28bcb23d8705c6a23a4f4fa6080f1e1"
+  url "https:github.comopenconfiggnmicarchiverefstagsv0.38.0.tar.gz"
+  sha256 "1ff2d83aad75b67d274dee0fe916521c40d542e24733360e7cde1407be36dc6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c460520c7798190c67aa416fd81e36db3fcba13ae1d40f571f393e1309b9547c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c91b536f0b8d8351df6e48919783da24bc21244ac305902fc38327b240415c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "529c022886492396c2d9dbfacded6e8f3179d5376c892dd8790da615f2265098"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2ba3e6bb13e3a757281c033051b00f42e67ccff1b7cd424f56abaa66306489a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ad238744873458b569ce34095c86107c0c2056faf21f6a95cac8a06ab7e359f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae8ec26421f489dcd4be2b4d59bf71b61a501b60c20b5ab77b72eda0d7cd0bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7159c83578aa3a910d7e94b4d3183f81ad5296a25f3be279e63f22a3775d4d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "583af194423157eed80ae0d5769d05f34e574b951cde136cbf012dd1129a4d83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46d9d85314f13542f884daa692d0f7ca175bdd52646ff3951f7e0cb73c2dbdc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c67b4ca731a8f4a4f87d25a8e2bac4acb373903ffdc0be9ca6ea2614cce9b0a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "53fa245c80a85d024bf69aa0a51ee99aed53f7d981fb33324184966cf5cd866a"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b29fd543887c053a811f147018524a336f710dd85c68dd8b195894c975cddb3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4ad5b81402af31e31a128eca686d9dcfa8af7a50355e48354bcb491a68dc154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd650f680597569767853fc1719f6c88357c2dfc10a91d21fe12ee3f23141dc9"
   end
 
   depends_on "go" => :build

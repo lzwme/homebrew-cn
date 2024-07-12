@@ -4,7 +4,7 @@ class Visp < Formula
   url "https:visp-doc.inria.frdownloadreleasesvisp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https:visp.inria.frdownload"
@@ -12,13 +12,13 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aefbb29ddf9b04bb066d9c204ff0aa543613e621f4a92c03695b7131324abea2"
-    sha256 cellar: :any,                 arm64_ventura:  "ed9745df38cf5b9b6c709215c4570f5bf377adcf6dd229ac7615e7ffcc1e6d53"
-    sha256 cellar: :any,                 arm64_monterey: "8a8ec734e686eea880816aaaa361b12506a6b0a99539f9d35d6a1180fb457d85"
-    sha256 cellar: :any,                 sonoma:         "e78c8d941c97159f1d01b131e0c867e79ccb896afb77f5a6925b746b1b88e1fc"
-    sha256 cellar: :any,                 ventura:        "53ded94c21564a1508a31cb91f0a7adfdb06ea9859a8bb05b7eb39f751585d93"
-    sha256 cellar: :any,                 monterey:       "9ee6ba617a25ea4c6fd5a011e3be303b7f4b185accb7290ca0b290a7ec9aefa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f47d63677bc7b78d8cb3d3a900540b53579b35f575c9fded216c52c82f14195"
+    sha256 cellar: :any,                 arm64_sonoma:   "aa2ae8cfa6a139b9789cff6b0c91a10cea7b1c854d4d23073bbca8ac53bbb4b4"
+    sha256 cellar: :any,                 arm64_ventura:  "afa24d7d2774a8a53ef166bb1d00cdf81b56b4ad6f71441fc9660f67af93a698"
+    sha256 cellar: :any,                 arm64_monterey: "1a0a7b8cd994f5d302d2f5693071a6c17ec93a4edab19691867e12dc20278911"
+    sha256 cellar: :any,                 sonoma:         "fee41cb44c0c51d1942ae451d8bb2079d2c96e994f341f201fb1b403faf4c274"
+    sha256 cellar: :any,                 ventura:        "a4a5b98f1546f90c563ca8ffef2cf86912a92acdd39965fa8c81a3b1ba52898d"
+    sha256 cellar: :any,                 monterey:       "754fccdcd34b588341ae8a6d846bd500f443a23f3485910a301b2af62dcf0d5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ae66b7767af5ceb8ad682c3328aa9dc6bca569e4705641d45c161e199ff0a55"
   end
 
   depends_on "cmake" => :build

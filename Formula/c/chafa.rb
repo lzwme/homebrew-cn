@@ -21,6 +21,7 @@ class Chafa < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "cairo"
   depends_on "freetype"
   depends_on "glib"
   depends_on "jpeg-turbo"
@@ -28,9 +29,13 @@ class Chafa < Formula
   depends_on "libtiff"
   depends_on "webp"
 
+  on_macos do
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     man1.install "docs/chafa.1"
   end

@@ -1,10 +1,10 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https:opencv.org"
-  url "https:github.comopencvopencvarchiverefstags4.9.0.tar.gz"
-  sha256 "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c"
+  url "https:github.comopencvopencvarchiverefstags4.10.0.tar.gz"
+  sha256 "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9"
   license "Apache-2.0"
-  revision 12
+  head "https:github.comopencvopencv.git", branch: "4.x"
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "912667fc2a05cb49ae5727564f76f7489277947335ee245f73496fe3fc92b0ac"
-    sha256 arm64_ventura:  "696ad3154be36061b812a900822b163008d2bb2a115e9d72c1e6b98cfdfff756"
-    sha256 arm64_monterey: "ce84c65b02a9291010934a33d9053821e7bf9ed32addd287d0587c39e524578e"
-    sha256 sonoma:         "5b3020942612a977b2cb0ea36e9c502190005ed1bc462c561b3c8425cb3100b7"
-    sha256 ventura:        "73ff2d1a229aaad8f4d6e9cc8e706d3d3bfcd61a2ed0f4379c4f996c25c81784"
-    sha256 monterey:       "be179de9a4dafbff1d72497b47c764a3fb77751cfbddf4ef9314d86dface91c6"
-    sha256 x86_64_linux:   "0655d0d978edc75e0d37954d6edefabf1f5b587cf8c6c7c6c1e9a554625edef0"
+    sha256 arm64_sonoma:   "8031982299b0e441f71a44410029bf22b6808a366ecd30f23b9811d42fab521d"
+    sha256 arm64_ventura:  "fa9251fa7a911abd017421ba0c51dee7397b7a18e0aefccc2dc18964546c2120"
+    sha256 arm64_monterey: "f1bbb6747490a4f6674fddab6d344d4304297712e209ea51d13e6d30213263c7"
+    sha256 sonoma:         "7f8dc0a72cf52b1373d80a6a7c659f7ad8158cdeeb830167c5a2690c329829be"
+    sha256 ventura:        "4b05d990ad1a3b8a68ec0e2b635ac910db07d96b6c2860a9289f9204246f0897"
+    sha256 monterey:       "50936e22b41f5d386fa282177fc2d50600396f879dcb7f4af479051422a9f0c0"
+    sha256 x86_64_linux:   "8167249db3953cf746015391fbb29b7513c2d36085f6f712050098abfca371de"
   end
 
   depends_on "cmake" => :build
@@ -66,30 +66,12 @@ class Opencv < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https:github.comopencvopencv_contribarchiverefstags4.9.0.tar.gz"
-    sha256 "8952c45a73b75676c522dd574229f563e43c271ae1d5bbbd26f8e2b6bc1a4dae"
-
-    # TODO: remove with next OpenCV release. Fix https:github.comopencvopencv_contribpull3624
-    patch do
-      url "https:github.comopencvopencv_contribcommit46fb893f9a632012990713c4003d7d3cab4f2f25.patch?full_index=1"
-      sha256 "8f89f3db9fd022ffbb30dd1992df6d20603980fadfe090384e12c57731a9e062"
-    end
+    url "https:github.comopencvopencv_contribarchiverefstags4.10.0.tar.gz"
+    sha256 "65597f8fb8dc2b876c1b45b928bbcc5f772ddbaf97539bf1b737623d0604cba1"
   end
 
   def python3
     "python3.12"
-  end
-
-  # Patch for DNN module to work with OpenVINO API 2.0(enabled starting OV 2022.1 release)
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesa10057a843de773896a50e9b18f4559a8bbc4d27opencvopenvino-api2.0.patch"
-    sha256 "08f918fa762715d0fbc558baee9867be8f059ee3008831dc0a09af63404a9048"
-  end
-
-  # Patch for G-API to work with OpenVINO API 2.0(enabled starting OV 2022.1 release)
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesa10057a843de773896a50e9b18f4559a8bbc4d27opencvgapi-openvino-api2.0.patch"
-    sha256 "b67aa8882559858824c5841ba3d0746078273be081540b0d339c0ff58dc9452d"
   end
 
   def install
@@ -189,6 +171,9 @@ class Opencv < Formula
 
     # Prevent dependents from using fragile Cellar paths
     inreplace lib"pkgconfigopencv#{version.major}.pc", prefix, opt_prefix
+
+    # Replace universal binaries with their native slices
+    deuniversalize_machos
   end
 
   test do

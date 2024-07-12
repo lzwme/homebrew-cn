@@ -8,6 +8,8 @@ cask "gisto" do
   desc "Snippets management desktop application with (team) sharing options"
   homepage "https:www.gistoapp.com"
 
+  deprecate! date: "2024-07-11", because: :unmaintained
+
   app "Gisto.app"
 
   zap trash: [
@@ -16,4 +18,8 @@ cask "gisto" do
     "~LibraryPreferencescom.gistoapp.gisto2.plist",
     "~LibrarySaved Application Statecom.gistoapp.gisto2.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

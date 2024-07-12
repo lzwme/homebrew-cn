@@ -7,9 +7,11 @@ class GnuIndent < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "e5ee243d23b83e1ab6fbfbab7bfdf3f97428deb36181e6cfadd873af5982d830"
     sha256 arm64_ventura:  "90269c7d0cb032e8defb0ed1a46222decdf12856f47206d7290aa42f41f64dc5"
     sha256 arm64_monterey: "ed32867a9b921557dcbd8eab24d0bd8045f6525d9000d0034fa9ed2a14e23a54"
     sha256 arm64_big_sur:  "e60464107020d08df53cf12dd388825cbeefd0d1ecf986f00cdf890d7cc58413"
+    sha256 sonoma:         "70285ba433d904f549cee4ffbeb1ee086d1f14d457aa5ebbcbbe8b3649d1fa3e"
     sha256 ventura:        "97399d01070ba20f588dde6cddf6a20353a1e2def99bd99d9f11d0d3c8f12748"
     sha256 monterey:       "ece97222820cb413acad02586561c87d8cda14370e6b4d0e2e5d47f5e7774402"
     sha256 big_sur:        "cf85276b497f4cf5e909ee415393207ad67c94bb9aa130e564f92f7b435d09a6"

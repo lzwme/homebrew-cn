@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https:github.compingcaptidb"
-  url "https:github.compingcaptidbarchiverefstagsv8.1.0.tar.gz"
-  sha256 "aedee9e1cdee3703802536aec1b25e54226f773796874faaaef527622250558e"
+  url "https:github.compingcaptidbarchiverefstagsv8.2.0.tar.gz"
+  sha256 "876bf565b7c7fe7e539098daf264e5b699652da5337c07db87a1b5de270c95da"
   license "Apache-2.0"
   head "https:github.compingcaptidb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93fa7f2b40b3eab8c7ac5d1aa31c9a3aa0a25c3dc2df42bbf57c7daff76e877a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a732adf6c749d5fa35cbc9d62478e3ce3eb5940d1250cbe73197425d7f30ce7a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e41381ba0b9e2dc06977514fd472e9d39048181600ba71dfadbdd6ad3ef78c49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ef8e420d3a225e11cb0ac3d982f7381b64a9ce9d42a1c7f030a1937ccb8cac8"
-    sha256 cellar: :any_skip_relocation, ventura:        "101632815391b7d48d070ffdcd9b9ff9b6dd10980bc4ff93bb94c720a529d1d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "51159e0f5f7bf9a5da7ca345e19ceac4f426a88df43b1dc2a9a476f45408a1bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "208e8458bca612adfff3530dd5a54f021894dad9f09a5ceed8a44d7ab395cf24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "117e97292b4cdf130f5152b9e2f636c21f9263df5f317c0d33ecfdd145731a45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c255345b059fca1f3589cafbb402571430a4c2c29d4da38bc697245d0f88a46a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc357ca5c8f7bc263c2e144a509106b13ad67896918bd59576964810899b9b3f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c0c12737f05ef7df4eb5ccec8f29856cdf9e5458f753ba8fe0efc5a5df31e48"
+    sha256 cellar: :any_skip_relocation, ventura:        "46669150a27ecdc0f1d4ec5d3de779049cb9528ee24a3e5292421ab94a92966f"
+    sha256 cellar: :any_skip_relocation, monterey:       "799f35a609f0488fd98cea6866cf0fdb54f19d9af276d1a1c192d11d8e04081d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2102c86da73c336050ebbec8cc36b05c07f2d6d14f701e9123f43b567b192ae"
   end
 
   depends_on "go" => :build

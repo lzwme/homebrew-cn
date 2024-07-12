@@ -20,6 +20,7 @@ class Fourstore < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "dbus"
   depends_on "gettext"
   depends_on "glib"
@@ -27,6 +28,12 @@ class Fourstore < Formula
   depends_on "raptor"
   depends_on "rasqal"
   depends_on "readline"
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`

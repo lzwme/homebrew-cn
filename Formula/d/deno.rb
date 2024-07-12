@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv1.44.4deno_src.tar.gz"
-  sha256 "dde8d643976560c19cbdd1edaa168034dd71306211f8b32d529e4ccdd85413c1"
+  url "https:github.comdenolanddenoreleasesdownloadv1.45.0deno_src.tar.gz"
+  sha256 "c063b84e32aa997fdc690d8913fcbe753070f1c66599fdcf21aad8dd2012433f"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bbd07e796386549d62e058bbef880209ccd7d2073fe20d1c1169c6f33c87c0f7"
-    sha256 cellar: :any,                 arm64_ventura:  "0566b69529b3f1fec9d8ccc10b22d1502543922e5fa732f27557fe317e24a845"
-    sha256 cellar: :any,                 arm64_monterey: "037231b7a92dd9cc9d7f44d4c9daf813d107e4a2f6dfb20f09048c5617907000"
-    sha256 cellar: :any,                 sonoma:         "3215d5b2d4c583afa245b965b3710168bbfe921c10c333a3e9405a65776e21c5"
-    sha256 cellar: :any,                 ventura:        "93a40fb59f58bc76fc6a3415f1b9c23220d5a14da9b2ddd9df0f1cf32a8e6285"
-    sha256 cellar: :any,                 monterey:       "255d9176958488118fa98f071256df4e865b16c3f51551e479781d95b8e5bb62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2431d32e4d967019d506e75641b151b1585217321f0197ec73352e8c0781abf3"
+    sha256 cellar: :any,                 arm64_sonoma:   "5f954f13ba354c52faa2b1aed150dad123ecd70033f8b71eaf6f7a69a49013ef"
+    sha256 cellar: :any,                 arm64_ventura:  "b0543de9c74228ed8acb939a9841bf40a799b2ba7679cf198364e1e6ffbd5452"
+    sha256 cellar: :any,                 arm64_monterey: "1d656cced446887f13b1027c32363f69365a418a76415357af00c958ecddbdf0"
+    sha256 cellar: :any,                 sonoma:         "a4fd2e26d347e63c4a4954e853d27328cd6fc2d6f97816a7af364798848a988e"
+    sha256 cellar: :any,                 ventura:        "25152fa52b2fde09a906e401d1b2c618616fbc05f1640c43dc812d7d9607df36"
+    sha256 cellar: :any,                 monterey:       "72a3174f1c794110a0cf55b986f36365ce7c1e6ae44796c2c94f53160faaa31a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4b56c6d5bb848a4591f22ffd8b5b1bd21a6ca7e92002d3b4b87bc882c64c37b"
   end
 
   depends_on "cmake" => :build
@@ -42,24 +42,24 @@ class Deno < Formula
   # Temporary resources to work around build failure due to files missing from crate
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https:github.comdenolandrusty_v8issues1065 is resolved
-  # VERSION = #{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "v8"'
+  # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "v8"'
   resource "rusty_v8" do
-    url "https:static.crates.iocratesv8v8-0.93.1.crate"
-    sha256 "82943fec029559cb43f9d7fc36e2bb85121534702d6f893554e737d1b147d140"
+    url "https:static.crates.iocratesv8v8-0.97.0.crate"
+    sha256 "5ecc402c55b363c29901bdd0613c68213b01c5b2a3ee362d5e985cb74901b472"
   end
 
   # Find the v8 version from the last commit message at:
   # https:github.comdenolandrusty_v8commitsv#{rusty_v8_version}v8
   # Then, use the corresponding tag found in https:github.comdenolandv8tags
   resource "v8" do
-    url "https:github.comdenolandv8archiverefstags12.6.228.9-denoland-04f16fc81831b448fa75.tar.gz"
-    sha256 "7cd5b583f1b8df75ccf2ff98406858aca4374f4eefc6f3fda08adfddc0891b03"
+    url "https:github.comdenolandv8archiverefstags12.7.224.12-denoland-f14e70e46f3c575a9095.tar.gz"
+    sha256 "06baf9c3d733b95526a0fec5a9f1438bb2105218280bf0c20f1a20a5a0e7e8d7"
   end
 
-  # VERSION = #{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "deno_core"'
+  # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "deno_core"'
   resource "deno_core" do
-    url "https:github.comdenolanddeno_corearchiverefstags0.290.0.tar.gz"
-    sha256 "3bdbd0d11bde7958d4d5e7964bf445d94b9665d4b59682573b122a866057e69c"
+    url "https:github.comdenolanddeno_corearchiverefstags0.293.0.tar.gz"
+    sha256 "975a84cd886f0674aa2a88fb9250957a132eda9f76b7f024b62831c425ae166b"
   end
 
   # To find the version of gn used:

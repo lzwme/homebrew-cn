@@ -24,6 +24,7 @@ class Openmama < Formula
   depends_on "qpid-proton"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "ncurses"
 
   # UUID is provided by util-linux on Linux.
   on_linux do

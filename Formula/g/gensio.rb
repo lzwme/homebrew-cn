@@ -15,18 +15,22 @@ class Gensio < Formula
     sha256 x86_64_linux:   "39bb8dc41d3c547299356e9613b11cb1236c09e68cb015b564e4ea8768811ae4"
   end
 
-  depends_on "go" => [:build]
-  depends_on "pkg-config" => [:build]
-  depends_on "swig" => [:build]
+  depends_on "go" => :build
+  depends_on "pkg-config" => :build
+  depends_on "swig" => :build
+
   depends_on "glib"
   depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "python@3.12"
+
   uses_from_macos "tcl-tk"
+
   on_linux do
     depends_on "alsa-lib"
     depends_on "avahi"
     depends_on "linux-pam"
+    depends_on "systemd"
     depends_on "tcl-tk"
   end
 
@@ -41,7 +45,7 @@ class Gensio < Formula
       --sysconfdir=#{etc}
     ]
     args << "--with-tclcflags=-I #{HOMEBREW_PREFIX}includetcl-tk" if OS.linux?
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
     (prefixLanguage::Python.site_packages(python3)).install_symlink Dir["#{lib}gensio-python*"]
   end

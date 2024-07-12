@@ -23,11 +23,15 @@ class Ser2net < Formula
   depends_on "gensio"
   depends_on "libyaml"
 
+  on_linux do
+    depends_on "linux-pam"
+  end
+
   def install
-    system "./configure", *std_configure_args,
-                          "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--datarootdir=#{HOMEBREW_PREFIX}/share",
-                          "--mandir=#{man}"
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install"
 
     (etc/"ser2net").install "ser2net.yaml"

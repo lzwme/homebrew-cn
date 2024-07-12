@@ -15,6 +15,7 @@ cask "gitfiend" do
   end
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "GitFiend.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)
@@ -33,4 +34,8 @@ cask "gitfiend" do
     "~LibraryPreferencescom.tobysuggate.gitfiend.plist",
     "~LibrarySaved Application Statecom.tobysuggate.gitfiend.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

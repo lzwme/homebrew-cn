@@ -32,6 +32,12 @@ class Gcab < Formula
   depends_on "vala" => :build
   depends_on "glib"
 
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     system "meson", "setup", "build", "-Ddocs=false", "-Dtests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

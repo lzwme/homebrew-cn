@@ -21,6 +21,7 @@ class Fontforge < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
+
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -39,6 +40,11 @@ class Fontforge < Formula
   depends_on "woff2"
 
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "brotli"
+  end
 
   # build patch for po translation files
   # upstream bug report, https:github.comfontforgefontforgeissues5251
@@ -52,6 +58,7 @@ class Fontforge < Formula
       -DENABLE_GUI=OFF
       -DENABLE_FONTFORGE_EXTRAS=ON
     ]
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

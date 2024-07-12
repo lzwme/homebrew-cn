@@ -7890,6 +7890,7 @@ Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craftmanager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/crashplan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creality-slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/create-recovery-partition-installer.rb, Homebrew/homebrew-cask, 1
@@ -12097,6 +12098,7 @@ Homebrew-homebrew-cask/Casks/n/not-tetris.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nota.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notch-simulator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/notchnook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notedup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1

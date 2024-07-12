@@ -25,12 +25,15 @@ class Gegl < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "babl"
   depends_on "gettext"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "json-glib"
   depends_on "libpng"
+  depends_on "libtiff"
+  depends_on "little-cms2"
 
   on_linux do
     depends_on "cairo"

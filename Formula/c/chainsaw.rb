@@ -1,19 +1,19 @@
 class Chainsaw < Formula
   desc "Rapidly Search and Hunt through Windows Forensic Artefacts"
   homepage "https:github.comWithSecureLabschainsaw"
-  url "https:github.comWithSecureLabschainsawarchiverefstagsv2.9.1.tar.gz"
-  sha256 "72a729607989d8ff1676e3a19559d895938a56e4ae6d84d864b59ea5d78fd82e"
+  url "https:github.comWithSecureLabschainsawarchiverefstagsv2.9.2.tar.gz"
+  sha256 "3d7a60c4b5cdb6bbe8f33a5cb45761ae0e1d1d008bf73cd7a1ea50f1ea2955b8"
   license "GPL-3.0-only"
   head "https:github.comWithSecureLabschainsaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb69f1712241bef2da1d82f7cb15ec1da219fb6f355d13442964d4100a1d51f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d08843f16c3a7c791429b2492657e28a89beef2dcb35847522815f36ee24114"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2348f7399e4a02182596e835822fa5f6ae8634a96dea01f9de641bc6b4c3774"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0a2b54617f019aea804d502aff2d01ffd49d00b5a47f2d4362498b5f53e368d"
-    sha256 cellar: :any_skip_relocation, ventura:        "13b0d05670f63ccad5ba0099c22cfe7e03a8d62497e69738c52e0ee9e27264e7"
-    sha256 cellar: :any_skip_relocation, monterey:       "a87a17022eb6772c01bb96a7fe9745ed16eaece2529df9d36ad4e3f600b865a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c19eaf295b48958e68f2806a13250a3bf696ce666d057d3bccf4c5348a1558e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "973023b5d20e006aac52862a3376153305a62b2b45719d52a6520adeebaea5c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e08d8747b556d120682a3bbd0848fbc2e4a60389e6d3527f5aaa10e88727b00"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "297f9b9da2a2cdfdd9165150189efc65c3e8ea91eea6359550a356d0b062cf32"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5599eb6ca5d69d4ecef899fa62555b60653d7a2434f39c3a3009e736cdc582b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "60e38ace488c571d1318f7bf7e47e7b5c254ce2985d6c4ebbdbdfe8e8cd24529"
+    sha256 cellar: :any_skip_relocation, monterey:       "a05b1d076291199064c5147b2d1706b04ae838f3df19801b42b2c45af52bae36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b3c3239ae156fc3ee1ad6b4041d61f65462eafa61f6d2c53d7b74384a5d656c"
   end
 
   depends_on "rust" => :build

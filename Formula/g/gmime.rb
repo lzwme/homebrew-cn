@@ -28,6 +28,14 @@ class Gmime < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "glib"
   depends_on "gpgme"
+  depends_on "libidn2"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "libgpg-error"
+  end
 
   def install
     args = %w[

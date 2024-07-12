@@ -50,15 +50,24 @@ class Gpredict < Formula
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
   depends_on "goocanvas"
   depends_on "gtk+3"
   depends_on "hamlib"
+  depends_on "pango"
 
   uses_from_macos "perl" => :build
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build

@@ -27,6 +27,7 @@ class Nmail < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "expat"
   uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
