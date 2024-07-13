@@ -24,8 +24,11 @@ class GupnpAv < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "gettext"
   depends_on "glib"
+
+  uses_from_macos "libxml2"
 
   def install
     system "meson", "setup", "build", *std_meson_args

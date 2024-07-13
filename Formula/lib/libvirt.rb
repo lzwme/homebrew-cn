@@ -26,6 +26,7 @@ class Libvirt < Formula
   depends_on "ninja" => :build
   depends_on "perl" => :build
   depends_on "pkg-config" => :build
+
   depends_on "gettext"
   depends_on "glib"
   depends_on "gnu-sed"
@@ -38,6 +39,7 @@ class Libvirt < Formula
   depends_on "yajl"
 
   uses_from_macos "curl"
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   on_macos do
@@ -47,6 +49,7 @@ class Libvirt < Formula
   on_linux do
     depends_on "acl"
     depends_on "libtirpc"
+    depends_on "util-linux"
   end
 
   fails_with gcc: "5"

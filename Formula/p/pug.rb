@@ -1,19 +1,19 @@
 class Pug < Formula
   desc "Drive terraform at terminal velocity"
   homepage "https:github.comleg100pug"
-  url "https:github.comleg100pugarchiverefstagsv0.3.4.tar.gz"
-  sha256 "3979b5f95690f8def808ed49f6e1c7ea9ccce7e7d2f9d194c5ed3e7c8a36ca83"
+  url "https:github.comleg100pugarchiverefstagsv0.4.0.tar.gz"
+  sha256 "a6f446e77fccb05b0478f5cb4802ef37fb70c680adf9932e8b4bd7b053f99910"
   license "MPL-2.0"
   head "https:github.comleg100pug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aef1dd15a0b44fdc4ef83a87c4ce4506fff7345337c120d56367f5d08d4ed272"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a50ce94ec7b0aeca3904a2b0eb1b971861466a34e640a8176dea3dfa0430f95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88ef3d35b9943cb87dea3f16139e6bf8870e2f37befe4439bb433d076f526534"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d385f45d38cc61a7ae4c221df63b6fdb80afbea6883ef8a607dbc025982a4f69"
-    sha256 cellar: :any_skip_relocation, ventura:        "959456e86f79609e3cf59addc9abdc7f192978416dcb7b62a4cbe433d725a17b"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae7b995bec012ce0faf9f59ba25b0de6877fd2fc3c11dc6e5ca4bc65fee04ce6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e93cdd0acfce56aec042eb0a8a97439b08b2384b52e40d9bec4911ecf476d928"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d82dc825ff6fe4414b7f7a79351388f18a873b8aba8b4412237d1f988e54dd73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf1cb42fab37b32bba436ad173fb84e1bf9d51371f524864ae08974680f24d92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb5e00b7ed3f62931d1e6ff52151a86cf9ac64adf2bc72d46f311aa81c3259b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "046a0d302f8896d4cb2a530fa7af42419fdc76dd8713039b047f9d62fe38ffd9"
+    sha256 cellar: :any_skip_relocation, ventura:        "350e7c19b31d8d4a8df95fe67fdd3bd022735eca403eecf7fbe2ef4ccdf62be1"
+    sha256 cellar: :any_skip_relocation, monterey:       "a6e7620fef6a91e2abf46b064be973964445d278403c044e744bda1e8390ae8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "209a18c841a706d3b137e2ed9bfbd515ef411df4c423fd2d52e288f0b0dac369"
   end
 
   depends_on "go" => :build

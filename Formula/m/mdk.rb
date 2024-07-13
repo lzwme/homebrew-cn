@@ -25,18 +25,26 @@ class Mdk < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
   depends_on "flex"
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "guile"
+  depends_on "pango"
   depends_on "readline"
 
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "bdw-gc"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
+
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -58,8 +66,8 @@ class Mdk < Formula
               ALF    "LD"                                      (12)
               END    START       end of the program            (13)
     EOS
-    system "#{bin}/mixasm", "hello"
-    output = `#{bin}/mixvm -r hello`
+    system bin/"mixasm", "hello"
+    output = shell_output("#{bin}/mixvm -r hello")
 
     expected = <<~EOS
       Program loaded. Start address: 1000

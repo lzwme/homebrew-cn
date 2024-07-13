@@ -25,9 +25,15 @@ class Libjcat < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
+
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
+  depends_on "nettle"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     rewrite_shebang detected_python_shebang, "contribgenerate-version-script.py"

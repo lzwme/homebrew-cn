@@ -30,6 +30,15 @@ class Jnettop < Formula
   depends_on "glib"
 
   uses_from_macos "libpcap"
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "berkeley-db@5"
+  end
 
   def install
     # Fix compile with newer Clang
@@ -41,14 +50,12 @@ class Jnettop < Formula
                                "$(jnettop_OBJECTS) $(AM_LDFLAGS) $(LDFLAGS) $(jnettop_LDFLAGS)"
     end
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--man=#{man}"
+    system "./configure", "--man=#{man}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/jnettop", "-h"
+    # need sudo access to capture packets
+    assert_match version.to_s, shell_output("#{bin}/jnettop --version")
   end
 end

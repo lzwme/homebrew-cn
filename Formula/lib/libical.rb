@@ -22,6 +22,14 @@ class Libical < Formula
 
   uses_from_macos "libxml2"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "berkeley-db@5"
+  end
+
   def install
     system "cmake", ".", "-DBDB_LIBRARY=BDB_LIBRARY-NOTFOUND",
                          "-DENABLE_GTK_DOC=OFF",

@@ -11,4 +11,8 @@ cask "helium" do
   uninstall quit: "com.koushikdutta.Helium"
 
   zap trash: "~LibrarySaved Application Statecom.koushikdutta.Helium.savedState"
+
+  caveats do
+    requires_rosetta
+  end
 end

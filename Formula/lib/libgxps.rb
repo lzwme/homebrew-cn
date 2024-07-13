@@ -30,15 +30,22 @@ class Libgxps < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
+  depends_on "freetype"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libarchive"
+  depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
 
   uses_from_macos "zip" => :test
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Tell meson to search for brewed zlib before host zlib on Linux.
@@ -95,6 +102,6 @@ class Libgxps < Formula
     Dir.chdir(testpath) do
       system zip, "-qr", (testpath/"test.xps"), "_rels", "Documents", "FixedDocumentSequence.fdseq"
     end
-    system "#{bin}/xpstopdf", (testpath/"test.xps")
+    system bin/"xpstopdf", (testpath/"test.xps")
   end
 end

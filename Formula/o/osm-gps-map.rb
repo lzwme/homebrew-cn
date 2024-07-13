@@ -38,13 +38,22 @@ class OsmGpsMap < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
 
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
+
   def install
     configure = build.head? ? ".autogen.sh" : ".configure"
-    system configure, *std_configure_args, "--disable-silent-rules", "--enable-introspection"
+    system configure, "--disable-silent-rules", "--enable-introspection", *std_configure_args
     system "make", "install"
   end
 

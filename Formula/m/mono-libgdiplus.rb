@@ -24,12 +24,14 @@ class MonoLibgdiplus < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gettext"
   depends_on "giflib"
   depends_on "glib"
+  depends_on "harfbuzz"
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libpng"
@@ -43,10 +45,10 @@ class MonoLibgdiplus < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--disable-tests",
-                          "--without-x11"
+                          "--without-x11",
+                          *std_configure_args
     system "make"
     cd "tests" do
       system "make", "testbits"

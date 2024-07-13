@@ -41,6 +41,14 @@ class Mcabber < Formula
   depends_on "libotr"
   depends_on "loudmouth"
 
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "libassuan"
+    depends_on "libgpg-error"
+  end
+
   def install
     if build.head?
       cd "mcabber"
@@ -48,10 +56,7 @@ class Mcabber < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-otr"
+    system "./configure", "--enable-otr", *std_configure_args
     system "make", "install"
 
     pkgshare.install %w[mcabberrc.example contrib]
@@ -67,6 +72,6 @@ class Mcabber < Formula
   end
 
   test do
-    system "#{bin}/mcabber", "-V"
+    system bin/"mcabber", "-V"
   end
 end

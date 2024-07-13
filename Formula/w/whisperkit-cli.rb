@@ -1,13 +1,13 @@
 class WhisperkitCli < Formula
   desc "Swift native on-device speech recognition with Whisper for Apple Silicon"
   homepage "https:github.comargmaxincWhisperKit"
-  url "https:github.comargmaxincWhisperKitarchiverefstagsv0.7.2.tar.gz"
-  sha256 "6c0261c1935b8567c4a6f872d8b2c4c036b088526d90f552e8db0b53aff395e2"
+  url "https:github.comargmaxincWhisperKitarchiverefstagsv0.8.0.tar.gz"
+  sha256 "055fccb2cab1389f042ad5d78e6fc4eb42e552ca24e1de5a173b3fada3094427"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0b9de790e95d44427e887774cd9d272efe1cc045b3172357ce9b42f2b1aa56d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae78403d6edc48d622028d300bc643f9b09cdee7b3c8b22cdafe0271187b02ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23bc8f711859a9d8d5cab52bf66e1da146740e1ecf8df1726d5be613d371de17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "17836c7fcd2e3ef3fd5069c51f1ce245d85b6b9a33f0efad33eb764ae712bdbc"
   end
 
   depends_on xcode: ["15.0", :build]

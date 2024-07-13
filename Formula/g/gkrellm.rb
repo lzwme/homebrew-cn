@@ -3,6 +3,7 @@ class Gkrellm < Formula
   homepage "https://billw2.github.io/gkrellm/gkrellm.html"
   url "http://gkrellm.srcbox.net/releases/gkrellm-2.3.11.tar.bz2"
   sha256 "1ee0643ed9ed99f88c1504c89d9ccb20780cf29319c904b68e80a8e7c8678c06"
+  license "GPL-3.0-or-later"
   revision 4
 
   livecheck do
@@ -32,8 +33,14 @@ class Gkrellm < Formula
   depends_on "openssl@3"
   depends_on "pango"
 
+  on_macos do
+    depends_on "harfbuzz"
+  end
+
   on_linux do
+    depends_on "libice"
     depends_on "libsm"
+    depends_on "libx11"
   end
 
   def install

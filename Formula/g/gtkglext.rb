@@ -19,14 +19,26 @@ class Gtkglext < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "gtk+"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+
+    depends_on "libx11"
+    depends_on "mesa"
     depends_on "mesa-glu"
 
-    resource("pangox-compat") do
+    resource "pangox-compat" do
       url "https:gitlab.gnome.orgArchivepangox-compat-archive0.0.2pangox-compat-0.0.2.tar.gz"
       sha256 "c8076b3d54d5088974dbb088a9d991686d7340f368beebaf437b78dfed6c5cd5"
 
@@ -105,7 +117,7 @@ class Gtkglext < Formula
       end
       ENV.append_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
 
-      system "autoreconf", "-fvi"
+      system "autoreconf", "--force", "--install", "--verbose"
     end
 
     args = *std_configure_args

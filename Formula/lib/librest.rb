@@ -29,20 +29,26 @@ class Librest < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "libsoup@2"
+
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
     ENV.prepend_path "XDG_DATA_DIRS", Formula["libsoup@2"].opt_share
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--without-gnome",
                           "--without-ca-certificates",
-                          "--enable-introspection=yes"
+                          "--enable-introspection=yes",
+                          *std_configure_args
     system "make", "install"
   end
 

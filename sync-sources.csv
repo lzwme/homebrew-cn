@@ -4556,6 +4556,7 @@ Homebrew-homebrew-core/Formula/o/open62541.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openai-whisper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openal-soft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openapi-generator.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openbao.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencascade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencbm.rb, Homebrew/homebrew-core, 1
@@ -5520,6 +5521,7 @@ Homebrew-homebrew-core/Formula/r/rustup-init.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rxvt-unicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rye.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ryelang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/s-lang.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/s-nail.rb, Homebrew/homebrew-core, 0
@@ -8839,7 +8841,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-cambay.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-c/font-cambo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-camingocode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-candal.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-c/font-cantarell.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-cantarell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cantata-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cantora-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-caprasimo.rb, Homebrew/homebrew-cask, 1

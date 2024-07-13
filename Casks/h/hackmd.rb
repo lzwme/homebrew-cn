@@ -13,4 +13,8 @@ cask "hackmd" do
     "~LibraryApplication SupportHackMD",
     "~LibrarySaved Application Statecom.hackmd.desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

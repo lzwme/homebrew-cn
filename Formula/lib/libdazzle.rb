@@ -21,8 +21,18 @@ class Libdazzle < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   def install
     system "meson", "setup", "build", "-Dwith_vapi=true", *std_meson_args

@@ -30,6 +30,12 @@ class Lasso < Formula
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
+  uses_from_macos "libxslt"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "six" do
     on_linux do

@@ -3,6 +3,7 @@ class Goocanvas < Formula
   homepage "https:wiki.gnome.orgProjectsGooCanvas"
   url "https:download.gnome.orgsourcesgoocanvas3.0goocanvas-3.0.0.tar.xz"
   sha256 "670a7557fe185c2703a14a07506156eceb7cea3b4bf75076a573f34ac52b401a"
+  license "LGPL-2.0-only"
   revision 1
 
   bottle do
@@ -17,9 +18,18 @@ class Goocanvas < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "at-spi2-core"
   depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -28,10 +38,10 @@ class Goocanvas < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-gtk-doc-html",
+    system ".configure", "--disable-gtk-doc-html",
                           "--disable-silent-rules",
-                          "--enable-introspection=yes"
+                          "--enable-introspection=yes",
+                          *std_configure_args
     system "make", "install"
   end
 end

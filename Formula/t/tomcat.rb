@@ -1,19 +1,19 @@
 class Tomcat < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.25/bin/apache-tomcat-10.1.25.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.25/bin/apache-tomcat-10.1.25.tar.gz"
-  sha256 "f1240a32b879c445a4a4419c9b6dd87581bdb96f8a51f7b0ca1935164bb1e842"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.26/bin/apache-tomcat-10.1.26.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.26/bin/apache-tomcat-10.1.26.tar.gz"
+  sha256 "f73f76760137833b3305dfb18ed174f87feac3ab78f65289a0835a851d7cfeb2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b15db51b6c1c4d53f05d8376a62187f8398e92b33604c2e3feed0f57251471e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e4dfae152d0351443d173ab3044ea64afd6889db41c6e45a3adf4b7a726df2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57c3c8c7c504dacc37937b041d6f46bfdc8e983bec0e5626c8d643c0e112434f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57c3c8c7c504dacc37937b041d6f46bfdc8e983bec0e5626c8d643c0e112434f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57c3c8c7c504dacc37937b041d6f46bfdc8e983bec0e5626c8d643c0e112434f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c9e5c88501c75661c2fbf9149034c7ed8dd3f0036e1c0f683a5bc91397fd798"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c9e5c88501c75661c2fbf9149034c7ed8dd3f0036e1c0f683a5bc91397fd798"
+    sha256 cellar: :any_skip_relocation, monterey:       "57c3c8c7c504dacc37937b041d6f46bfdc8e983bec0e5626c8d643c0e112434f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41553c67ee1717794eef66213ef69482b2466c5beb0f8936b4097f6db974b82e"
   end
 
   depends_on "openjdk"

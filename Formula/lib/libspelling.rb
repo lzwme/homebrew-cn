@@ -20,10 +20,21 @@ class Libspelling < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "enchant"
   depends_on "glib"
   depends_on "gtk4"
   depends_on "gtksourceview5"
+  depends_on "icu4c"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "graphene"
+    depends_on "harfbuzz"
+  end
 
   def install
     system "meson", "setup", "build", "-Ddocs=false", *std_meson_args

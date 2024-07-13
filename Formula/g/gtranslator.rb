@@ -20,7 +20,9 @@ class Gtranslator < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
   depends_on "gettext"
   depends_on "glib"
   depends_on "gspell"
@@ -31,6 +33,7 @@ class Gtranslator < Formula
   depends_on "libgda"
   depends_on "libsoup"
   depends_on "libspelling"
+  depends_on "pango"
 
   uses_from_macos "libxml2"
 
@@ -49,6 +52,6 @@ class Gtranslator < Formula
   end
 
   test do
-    system "#{bin}/gtranslator", "-h"
+    system bin/"gtranslator", "-h"
   end
 end

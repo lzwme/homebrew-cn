@@ -26,6 +26,7 @@ class Ldapvi < Formula
 
   depends_on "pkg-config" => :build
   depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.
+
   depends_on "gettext"
   depends_on "glib"
   depends_on "openssl@3"
@@ -33,6 +34,7 @@ class Ldapvi < Formula
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
+  uses_from_macos "ncurses"
   uses_from_macos "openldap"
 
   # These patches are applied upstream but release process seems to be dead.
@@ -53,12 +55,11 @@ class Ldapvi < Formula
     inreplace "ldapvi.c", "if (lstat(sasl, &st) == -1) return;",
                           "if (lstat(sasl, &st) == -1) return 0;"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/ldapvi", "--version"
+    system bin/"ldapvi", "--version"
   end
 end

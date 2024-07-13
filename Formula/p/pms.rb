@@ -23,17 +23,19 @@ class Pms < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "gettext"
   depends_on "glib"
 
+  uses_from_macos "ncurses"
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match(/Practical Music Search v#{version}/,
-                 shell_output("#{bin}/pms -?", 4))
+    output = shell_output("#{bin}/pms -?", 4)
+    assert_match "Practical Music Search v#{version}", output
   end
 end

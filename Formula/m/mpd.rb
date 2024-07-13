@@ -21,6 +21,7 @@ class Mpd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "chromaprint"
   depends_on "expat"
   depends_on "faad2"
@@ -50,6 +51,7 @@ class Mpd < Formula
   depends_on "sqlite"
   depends_on "wavpack"
 
+  uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
