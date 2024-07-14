@@ -30,10 +30,14 @@ class Yaf < Formula
   depends_on "pcre"
 
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "openssl@3"
+  end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end

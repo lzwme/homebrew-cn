@@ -1,8 +1,8 @@
 class Darkice < Formula
   desc "Live audio streamer"
   homepage "http:www.darkice.org"
-  url "https:github.comrafael2kdarkicereleasesdownloadv1.4darkice-1.4.tar.gz"
-  sha256 "e6a8ec2b447cf5b4ffaf9b62700502b6bdacebf00b476f4e9bf9f9fe1e3dd817"
+  url "https:github.comrafael2kdarkicereleasesdownloadv1.5darkice-1.5.tar.gz"
+  sha256 "18b4c4573a7ccfe09c1094eb5798159e2a9892106ea62d753933f6f2a746058e"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,37 +11,40 @@ class Darkice < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "af910d1b4f053b52d0be917a698954a5903bebeaaaf7015b62fdce29ea4b4749"
-    sha256 cellar: :any,                 arm64_ventura:  "d0db564fd3fad3478ae882b45007229aa010fa374fde2543fbcd453357a964a9"
-    sha256 cellar: :any,                 arm64_monterey: "0c114d7e19e2a1fea948adbf40be5566dea4d9a21888448aa48cad337e1aefa7"
-    sha256 cellar: :any,                 arm64_big_sur:  "74ea8b8e64aa084b45b2c0f54cf77617960a4de2e3ab14601375e4242fc74f0c"
-    sha256 cellar: :any,                 sonoma:         "3cceeffac938178db89da3fdccc54454d405b0ea875d360d41f6ced8be5a7e36"
-    sha256 cellar: :any,                 ventura:        "a63714cf7139435583c9d7ee8f1f2f3627d386063beb6cd0767b47d28f721b02"
-    sha256 cellar: :any,                 monterey:       "a07e77aa24879c67883e75d3fb73b7003d98fc59d6b9f5da24d64789727e1ea1"
-    sha256 cellar: :any,                 big_sur:        "7bccd99a386891b98e1085300243152a8bd82fdaa0fe20d9b83448460711d2c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbc68231f2235a681304aa5821ab187cb220977aa0ae4e7ef48eccd9de3a3c43"
+    sha256 cellar: :any,                 arm64_sonoma:   "089a73da66e99a1289c3259dc974acf0ffcc053af05facf3b760f8b0d7c4b0e9"
+    sha256 cellar: :any,                 arm64_ventura:  "22abd05d4b3d880d9b1ad6abaf636f7d31c65ff3d20a7ce54c888d5464b32369"
+    sha256 cellar: :any,                 arm64_monterey: "d70aab113619347c2b1ab5dc69b265a0dcacab27c30a81ad852c12417960e670"
+    sha256 cellar: :any,                 sonoma:         "01555e1eff33f033c509891563900a3bd69bbaa658570d298e40f5ed6438a0eb"
+    sha256 cellar: :any,                 ventura:        "f922c9ca8895e789a65b11fdabda217f1301d91ce1c19890de8e433a19f8c5f8"
+    sha256 cellar: :any,                 monterey:       "47f4bafaa04a5c4eb24783771215f643bf032dbd911145812b3b27d8d3034b39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e96398becc4f8c42c2fa104ea86e96207756ee073a301d0acb0fe56fd665ebcb"
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "faac"
   depends_on "jack"
   depends_on "lame"
+  depends_on "libogg"
   depends_on "libsamplerate"
   depends_on "libvorbis"
   depends_on "two-lame"
 
+  on_linux do
+    depends_on "alsa-lib"
+  end
+
   def install
     ENV.cxx11
-    system ".configure", *std_configure_args,
-                          "--sysconfdir=#{etc}",
+    system ".configure", "--sysconfdir=#{etc}",
                           "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
                           "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
                           "--with-twolame",
                           "--with-jack",
                           "--with-vorbis",
                           "--with-samplerate",
-                          "--without-opus"
+                          "--without-opus",
+                          *std_configure_args
     system "make", "install"
   end
 

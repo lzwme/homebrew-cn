@@ -33,10 +33,12 @@ class Wv2 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "libgsf"
 
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   # Temporary test resource for bottles built before testole.doc was added.
   resource "testole.doc" do

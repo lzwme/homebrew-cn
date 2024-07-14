@@ -1616,7 +1616,7 @@ Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eslint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esniper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/espeak-ng.rb, Homebrew/homebrew-core, 1
@@ -1886,6 +1886,7 @@ Homebrew-homebrew-core/Formula/f/frege-repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frege.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frei0r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fribidi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/frizbee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frobtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frotz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frozen.rb, Homebrew/homebrew-core, 1

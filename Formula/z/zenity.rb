@@ -21,9 +21,16 @@ class Zenity < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "gtk+3"
+  depends_on "gtk4"
   depends_on "libadwaita"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["DESTDIR"] = "/"

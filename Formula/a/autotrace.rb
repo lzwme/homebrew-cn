@@ -34,6 +34,16 @@ class Autotrace < Formula
   depends_on "libtiff"
   depends_on "pstoedit"
 
+  on_macos do
+    depends_on "fontconfig"
+    depends_on "freetype"
+    depends_on "gettext"
+    depends_on "liblqr"
+    depends_on "libomp"
+    depends_on "libtool"
+    depends_on "little-cms2"
+  end
+
   on_linux do
     depends_on "perl-xml-parser" => :build
   end

@@ -42,7 +42,10 @@ class SpiceGtk < Formula
   depends_on "gtk+3"
   depends_on "jpeg-turbo"
   depends_on "json-glib"
+  depends_on "libepoxy"
+  depends_on "libsoup"
   depends_on "libusb"
+  depends_on "libx11"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "opus"
@@ -51,6 +54,18 @@ class SpiceGtk < Formula
   depends_on "pixman"
   depends_on "spice-protocol"
   depends_on "usbredir"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gobject-introspection"
+    depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "libva"
+    depends_on "wayland"
+  end
 
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/46/3a/31fd28064d016a2182584d579e033ec95b809d8e220e74c4af6f0f2e8842/pyparsing-3.1.2.tar.gz"

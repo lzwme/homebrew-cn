@@ -1,19 +1,19 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https:github.comneovideneovide"
-  url "https:github.comneovideneovidearchiverefstags0.13.1.tar.gz"
-  sha256 "6cc2ddf50708a343114756d424b318c581c148437b96ba9563c401dfdb754408"
+  url "https:github.comneovideneovidearchiverefstags0.13.2.tar.gz"
+  sha256 "3ae09d94ad6bbae9fdba306523b28071508c5e8eb205bc8fa9f32e7323fffdb6"
   license "MIT"
   head "https:github.comneovideneovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "053f5a69ef87d61891aab9809fe48f40bbdb64b72d282cec7e0b7c0b1ddb5204"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c04bce151e58ed54613a7f7e3f430fa9244ce7581ef5e4627dc0d63b350e9043"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7de1e55ca74e158cdfc6d00297f5a7445333d337458f37d1d86efc0ef649e5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eaf53cbb3008a2a17171c10d162c79a7f70d1e5da0b405a6a9c09c3f332423a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ccb8283f738be5ef49de800cf607a2caa4c7c6a05d4c48a89a274bb37f2e143"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea11dec2a953a55471ecb5ea300d9eecde1934dd3191a6c62ab5ba6f473237a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a6b7dd59a8a6fd2f54f350d727a95386dbc4661a186c8a5d38d56167e39bd70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c846b06c2ae7441b419c247265cd4847962a2115ec7a9a12dc6f912d76452fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71291af118ee6c1eb490c367e2383e4136c995ef8bf05d822e1f42a1b3c0d44d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01803e27f1e187fc23f5ab8291f526e3a141adb005b19e0acd13d0ddecf2078f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "11b5267882ec704ae099f429d8377f250da870d1b39940a5bc1b478fefb8902d"
+    sha256 cellar: :any_skip_relocation, ventura:        "381a3de45b14561720a096e9a8f7170f5b260b2d29f5ae14884936a6523bf6e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "4f1d2299d2523be0cc650cb65028f05e35a747e3f321fd8c9928d178aa25c5f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b982cd5bdf3349691c1b80a671f1ce1914816835d55d9d77c7361649cf7bd0c8"
   end
 
   depends_on "rust" => :build

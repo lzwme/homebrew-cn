@@ -1,19 +1,19 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https:github.comZxillygo-size-analyzer"
-  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.4.2.tar.gz"
-  sha256 "98d195673cf7ab71633df4e9fb9ef53b7af720da9683522680ae4d4e757ae7dd"
+  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.4.3.tar.gz"
+  sha256 "0598913ea4580e2b22df376c6f2021a01c4227cb44d70e1b3c6270d9d5f8f9cf"
   license "AGPL-3.0-only"
   head "https:github.comZxillygo-size-analyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6539b0745f5edaa04321a829ff3ab23e1bd93962bed454481ee65328fa9777e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "658398549e6c6bbc13b9b745d32001d9b48f7c5da34a66caab37c2bed0bd9897"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c757826c460852313d29f3d279de0c84a4997840e9dda5f0063e141857851475"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e362bd219232e8c986233348e9730810f65614df6ad507f18d0aa47dccc1ea15"
-    sha256 cellar: :any_skip_relocation, ventura:        "40b8594d8cabc2e44a8a2fb75c4fd800dc62e4e0783bc4e8adc5683c7657d06a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7a8939b17288016aa5d0fe60b82803ad6d091d0d07b82e1caeb2d978a0ef31c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68e270440cda68356c709eba80880e8527ea665ac704106444cf4fc53ecc793c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99cbdc6663160d4cf0e69f6ed408b0086d1034b74f00fa80e3a8726649313635"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eb9534073b1527d6ff74654dc74166ca472f86ed4636509f8d951aa1e4eed58"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73eb2f69f992e54f4a750df553bf0fa79fa0809ba35e074bd02c5d6c9e5414f6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cbe54bed391a35d9ffd3795ea77b59520611dc2788add57c73d249197f9d1dd"
+    sha256 cellar: :any_skip_relocation, ventura:        "8e822ba1b23f329e438c91ae6c692a38949443953b553b9408e4437c1151034f"
+    sha256 cellar: :any_skip_relocation, monterey:       "4c27749952c9757f678f9df704e0a263d8d8d8516c0fddda255ce93585763260"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ea383fa12d81a2e9c78f9c58a84f628a30485ef96757457bc63afe5023f694"
   end
 
   depends_on "go" => [:build, :test]

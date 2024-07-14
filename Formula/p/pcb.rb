@@ -30,8 +30,11 @@ class Pcb < Formula
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
   depends_on "dbus"
   depends_on "gd"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+"
@@ -43,7 +46,11 @@ class Pcb < Formula
   uses_from_macos "tcl-tk"
 
   on_macos do
+    depends_on "at-spi2-core"
     depends_on "gnu-sed"
+    depends_on "harfbuzz"
+    depends_on "libxrender"
+    depends_on "pango"
   end
 
   on_linux do

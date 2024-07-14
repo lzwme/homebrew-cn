@@ -51,7 +51,13 @@ class SynergyCore < Formula
     depends_on "gdk-pixbuf"
     depends_on "glib"
     depends_on "libnotify"
+    depends_on "libx11"
+    depends_on "libxext"
+    depends_on "libxi"
+    depends_on "libxinerama"
     depends_on "libxkbfile"
+    depends_on "libxrandr"
+    depends_on "libxtst"
   end
 
   fails_with gcc: "5" do

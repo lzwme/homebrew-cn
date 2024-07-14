@@ -33,13 +33,26 @@ class Ncdc < Formula
   depends_on "ncurses"
   depends_on "sqlite"
 
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  # newer clang build patch, remove in next release
+  patch do
+    url "https://code.blicky.net/yorhel/ncdc/commit/42590da4741baf93889773df96e0f3546d2e7f20.patch"
+    sha256 "52140c8b108e085b0e5792afdc21fc7f6b731036e8b3f7a4842f8519ab940ace"
+  end
+
   def install
-    system "autoreconf", "-ivf" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/ncdc", "-v"
+    system bin/"ncdc", "-v"
   end
 end

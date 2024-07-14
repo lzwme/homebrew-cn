@@ -19,19 +19,24 @@ class SofiaSip < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "openssl@3"
 
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     system ".bootstrap.sh"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}localinfo"
-    system "#{bin}sip-date"
+    system bin"localinfo"
+    system bin"sip-date"
   end
 end

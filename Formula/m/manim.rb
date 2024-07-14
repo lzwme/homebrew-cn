@@ -10,13 +10,14 @@ class Manim < Formula
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e0733b64dced9f557184614b2eaac0c52ff9b67555f8b35195576292d0739b0f"
-    sha256 cellar: :any,                 arm64_ventura:  "ea0585cb0d8cd4eff810a753283d257f8a2c48a635bfcc60e02c5e984e3d0f59"
-    sha256 cellar: :any,                 arm64_monterey: "9a3cc7988c3f54acd67c3a36b2e7b5bb50ad70ecc5568ad93c2553c73ea8018e"
-    sha256 cellar: :any,                 sonoma:         "c016acbb6e145237ef23b680dfd48b76bf0184681f0ad767a0840620d1a5611d"
-    sha256 cellar: :any,                 ventura:        "82c6084245d5de5de8a41e5c637d027174f599534f2934b8f9cc2711a2af8a86"
-    sha256 cellar: :any,                 monterey:       "14065dfc5059b028c2aec7df2169f9b19e538dffbb8b0d4ece8b49470afebd49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1e7ba8286cb425bbda68a05ce1eb91b90c66d856b6c4c9f31423b388e3ec5c6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d108d31fcffc46da729773754850637a05ddb4eda4b2437492f1e1ac941da88a"
+    sha256 cellar: :any,                 arm64_ventura:  "b426acd4318a8878234f78aa553a1068b801a33706deaad530956ed52796aa61"
+    sha256 cellar: :any,                 arm64_monterey: "c9e084c263f0a485d4803954c35f9d2c008331d9daca954d92e5fc4604a377fc"
+    sha256 cellar: :any,                 sonoma:         "d463689bcc401300aaf81d7194b863b405d3f969f0832995a30be333e5bf8d8d"
+    sha256 cellar: :any,                 ventura:        "fb64f12d5d4df9ee4693071614a36869e6b563bcfc25557086c8aaa07ce33985"
+    sha256 cellar: :any,                 monterey:       "db86d235d0053376adc8d8d11d8fe65e7db88833a95aa21e81845c3b2e8bedc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84bf4558e70b655644cbd49e3dd1f36ecc683cfa6a80365285ca1c1914e4fb1e"
   end
 
   depends_on "cython" => :build
@@ -114,14 +115,9 @@ class Manim < Formula
     sha256 "0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9"
   end
 
-  resource "pillow" do
-    url "https:files.pythonhosted.orgpackagesef43c50c17c5f7d438e836c169e343695534c38c77f60e7c90389bd77981bc21pillow-10.3.0.tar.gz"
-    sha256 "9d2455fbf44c914840c793e89aa82d0e1763a14253a000743719ae5946814b2d"
-  end
-
   resource "pycairo" do
-    url "https:files.pythonhosted.orgpackages1c4191955188e97c7b85fbaac6bbf4e33de028899e0aa31bdce99b1afe2eeb17pycairo-1.26.0.tar.gz"
-    sha256 "2dddd0a874fbddb21e14acd9b955881ee1dc6e63b9c549a192d613a907f9cbeb"
+    url "https:files.pythonhosted.orgpackages194f0d48a017090d4527e921d6892bc550ae869902e67859fc960f8fe63a9094pycairo-1.26.1.tar.gz"
+    sha256 "a11b999ce55b798dbf13516ab038e0ce8b6ec299b208d7c4e767a6f7e68e8430"
   end
 
   resource "pydub" do
@@ -157,11 +153,6 @@ class Manim < Formula
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
     sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
-  end
-
-  resource "scipy" do
-    url "https:files.pythonhosted.orgpackagesae0048c2f661e2816ccf2ecd77982f6605b2950afe60f60a52b4cbbc2504aa8fscipy-1.13.1.tar.gz"
-    sha256 "095a87a0312b08dfd6a6155cbbd310a8c51800fc931b8c0b84003014b874ed3c"
   end
 
   resource "screeninfo" do

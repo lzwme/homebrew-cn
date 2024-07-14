@@ -1,6 +1,6 @@
 cask "dexed" do
-  version "0.9.6"
-  sha256 "7a9481628a92b7e348857f18be3a24fe8b48d4a67d3a9d7fe290e37e915d2fc4"
+  version "0.9.7"
+  sha256 "b4357157fbdfc453c56ea02799978571624d8506c4dd728150f85ead798f3330"
 
   url "https:github.comasb2m10dexedreleasesdownloadv#{version}dexed-#{version}-macos.zip",
       verified: "github.comasb2m10dexed"
@@ -13,11 +13,19 @@ cask "dexed" do
     strategy :github_latest
   end
 
-  pkg "dexed-#{version}.mpkg"
+  pkg "dexed-macOS-#{version}.pkg"
 
   uninstall pkgutil: [
-    "com.digitalsuburban.DexedAU",
-    "com.digitalsuburban.DexedStandalone",
-    "com.digitalsuburban.DexedVST3",
+              "com.digitalsuburban.dexed.app.pkg",
+              "com.digitalsuburban.dexed.clap.pkg",
+              "com.digitalsuburban.dexed.component.pkg",
+              "com.digitalsuburban.dexed.vst3.pkg",
+            ],
+            delete:  "ApplicationsDexed.app"
+
+  zap trash: [
+    "privatevardbreceiptscom.digitalsuburban.dexed.*",
+    "~LibraryApplication SupportDexed.settings",
+    "~LibrarySaved Application Statecom.digitalsuburban.Dexed.savedState",
   ]
 end

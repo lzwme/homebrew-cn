@@ -1,7 +1,7 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
   homepage "https:oss.oetiker.chrrdtoolindex.en.html"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   stable do
     url "https:github.comoetikerrrdtool-1.xreleasesdownloadv1.8.0rrdtool-1.8.0.tar.gz"
@@ -35,10 +35,19 @@ class Rrdtool < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
+
+  depends_on "cairo"
   depends_on "glib"
+  depends_on "libpng"
   depends_on "pango"
 
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "groff" => :build
@@ -48,9 +57,7 @@ class Rrdtool < Formula
     # fatal error: 'rubyconfig.h' file not found
     ENV.delete("SDKROOT")
 
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --disable-tcl
       --with-tcllib=usrlib
       --disable-perl-site-install
@@ -61,15 +68,16 @@ class Rrdtool < Formula
     inreplace "configure", ^sleep 1$, "#sleep 1"
 
     system ".bootstrap" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
 
     system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}", "install"
   end
 
   test do
-    system "#{bin}rrdtool", "create", "temperature.rrd", "--step", "300",
+    system bin"rrdtool", "create", "temperature.rrd", "--step", "300",
       "DS:temp:GAUGE:600:-273:5000", "RRA:AVERAGE:0.5:1:1200",
       "RRA:MIN:0.5:12:2400", "RRA:MAX:0.5:12:2400", "RRA:AVERAGE:0.5:12:2400"
-    system "#{bin}rrdtool", "dump", "temperature.rrd"
+
+    system bin"rrdtool", "dump", "temperature.rrd"
   end
 end

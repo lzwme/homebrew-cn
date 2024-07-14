@@ -1,20 +1,18 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https:tcpreplay.appneta.com"
-  url "https:github.comappnetatcpreplayreleasesdownloadv4.4.4tcpreplay-4.4.4.tar.gz"
-  sha256 "44f18fb6d3470ecaf77a51b901a119dae16da5be4d4140ffbb2785e37ad6d4bf"
+  url "https:github.comappnetatcpreplayreleasesdownloadv4.5.1tcpreplay-4.5.1.tar.gz"
+  sha256 "2de79bfd67ec92ca9ae2ffb50456dd1d53ff40f3fa71b422c65e8062013c9e85"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d9b9267efb0e7752db3ecbb0df344d46c44f5cab21175f09d9e260e1259de86d"
-    sha256 cellar: :any,                 arm64_ventura:  "6d4ecb5611be8412c3c0a0c4aa1b7b1ba332b0dc6a5012085db1df36df88d102"
-    sha256 cellar: :any,                 arm64_monterey: "161b8a9f9f36d57d9e202e048a6268ece22766d77ace117db804e2e4a4c46bfa"
-    sha256 cellar: :any,                 arm64_big_sur:  "d380ca5958c854092c1043730013f1ca23d3236fca729fb40823f306c4287abe"
-    sha256 cellar: :any,                 sonoma:         "5d3933922b6b26daf5085a66b692699eb6c59648fa0d7bd47f01b1a6f0f8b3cc"
-    sha256 cellar: :any,                 ventura:        "840cf96e8e0123dfdae2837c2636065634f3a4b49073eefd5979e50d1d29c635"
-    sha256 cellar: :any,                 monterey:       "026d9a462e83ef10af1aa075b05d833cb52063c263a5675242c85caa2d4ff544"
-    sha256 cellar: :any,                 big_sur:        "544f608fe29cbb7259f7711d7e18f1c414de49f5dffc4df74d1f8087e123a845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef8f50af0ac4fe0c84beaea014c71cdd881e954a00cc0de72138b98c9de169b4"
+    sha256 cellar: :any,                 arm64_sonoma:   "53cefd654ed79a5dd9783f598d97877ddf748251ec6e10c96a15ac8c74cd2166"
+    sha256 cellar: :any,                 arm64_ventura:  "6ba083d208f7da09c4b24635bad3fcbecae67f95ac016bdcd6d08880ad1b5c89"
+    sha256 cellar: :any,                 arm64_monterey: "9bcef2805cf1df5fb206f40e3f6094bb21766738c3f7c84338693b33e99fa64f"
+    sha256 cellar: :any,                 sonoma:         "5d4306409a7a2ab05625d584a7ead36034ab5643cc07534abbda61c53277075e"
+    sha256 cellar: :any,                 ventura:        "c5c5eb557b954ac8ba90b74c8be124e3dc8b8da5ce4b4e50958248663797ad04"
+    sha256 cellar: :any,                 monterey:       "f1477033f2820e1cde521bf37693a2171ffd9466ad9daa99cb583e30ba3e6999"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f67650d054f423e98ef5804aa5e9401ca0895a84e8d0552d97b2e182372b8eb"
   end
 
   depends_on "autoconf" => :build

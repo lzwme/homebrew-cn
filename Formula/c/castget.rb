@@ -32,10 +32,12 @@ class Castget < Formula
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -61,7 +63,7 @@ class Castget < Formula
       spool=#{testpath}
     EOS
 
-    system "#{bin}/castget", "-C", testpath/"castgetrc"
+    system bin/"castget", "-C", testpath/"castgetrc"
     assert_predicate testpath/"test.mp3", :exist?
   end
 end

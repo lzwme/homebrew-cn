@@ -1,18 +1,18 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https:github.comgoplusllgo"
-  url "https:github.comgoplusllgoarchiverefstagsv0.9.0.tar.gz"
-  sha256 "fdf145f85b2570a50e4bdf29ae2bf93f2197b16546e3bce37c4622eee97f39cb"
+  url "https:github.comgoplusllgoarchiverefstagsv0.9.1.tar.gz"
+  sha256 "4298c0670d088db0faab6aa8bd1b3649d09ba1cf75c0e02171a446f6cd3fc1dd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1d6e32db706cf4ab6e9087b4197c0d9e829559ac336f3ad6c617b2c49471497c"
-    sha256 cellar: :any,                 arm64_ventura:  "c104959502b64c956e0143272a070e4cd5844e185af6fb930d33abc9cb51a10b"
-    sha256 cellar: :any,                 arm64_monterey: "cbb8e6a856ebe25ef8f52d337f284e09e2c9a5cec3771123fd2b04a6d4b3881f"
-    sha256 cellar: :any,                 sonoma:         "9d646b31abe3b91c0d055de26444a1b7035d793e937e3fb653120a6d47849f54"
-    sha256 cellar: :any,                 ventura:        "7ce36bdaef8e762797deaf1694be9975389126e7083998278c50b5f2c15ee010"
-    sha256 cellar: :any,                 monterey:       "ad9b4d3a38da553396ded11959777a717fd23b8d6fc6ff94622956616a7a1eac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21170472c5998a024cf70865c50c4a2be44e6913653e1522ba2c7d75523c030e"
+    sha256 cellar: :any,                 arm64_sonoma:   "26df457b0095ea1e8695cebdf87cfeac93a1645ae4c72805279a2ac6c02d696e"
+    sha256 cellar: :any,                 arm64_ventura:  "a8c21824ee916d81cb34c77240b361287f7afeffd17a8eb21fdc0f5153b31849"
+    sha256 cellar: :any,                 arm64_monterey: "ac8e670daed38d90f1e672bbf60feedd43e510a9495e13b6688c2ff8ea0cab4c"
+    sha256 cellar: :any,                 sonoma:         "1ebbc9f5ca2046e31265c38c48b440d6a2ecce637b48e8c70a151ae73bad9eca"
+    sha256 cellar: :any,                 ventura:        "866bc6abc4b8b4e794e2fc0a87705d1ae00b0a6ff5df87e6d3589b439b3b0037"
+    sha256 cellar: :any,                 monterey:       "d5353cc1308d15b5ffd2e4c16efa3026cfdcd48a0f87072eb15335acd4ba4bc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c58d95df55862f8df250f0f479401793eabc0c1a3f1d2b10eacf62bf66cddaa"
   end
 
   depends_on "bdw-gc"

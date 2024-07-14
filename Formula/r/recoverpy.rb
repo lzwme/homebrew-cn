@@ -3,13 +3,13 @@ class Recoverpy < Formula
 
   desc "TUI to recover overwritten or deleted data"
   homepage "https:github.comPabloLecrecoverpy"
-  url "https:files.pythonhosted.orgpackages8bf08299f85d15fdbadaa89d4633b9181dbfd7545465d7fbbc69427c874b251crecoverpy-2.1.8.tar.gz"
-  sha256 "8dce0d1280f44ae20800c1ea0ae43f79eb8e4ed30aeba6ddc5a6d41a8bcc1e17"
+  url "https:files.pythonhosted.orgpackagesea559b4c247c0988b791e25431269acd13ba0b784d84d3b8d46f1775fbf8693brecoverpy-2.1.9.tar.gz"
+  sha256 "e04933f67020de3ed9d732a0daf87ea82ea9d5d985042e5371c7c96046d7a075"
   license "GPL-3.0-or-later"
   head "https:github.comPabloLecrecoverpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d65c766f3965fc4ffdca250de62aef0078e8214f86cc3867f70f7afc53ea502f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "82a7bfbfe29efe7b03d6fb04857a1e54e04d4aff389e6b7d92708e92496fcbd7"
   end
 
   depends_on :linux
@@ -46,8 +46,8 @@ class Recoverpy < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages551b74272da7cdd4d2acbc4bc664d61b9ffaf1d7dc37c37e2977c2d460c4dc18textual-0.65.2.tar.gz"
-    sha256 "05d4d39eedffac977b9bce9bea307dfefefdaaaa5081722549472cbb1d32e53f"
+    url "https:files.pythonhosted.orgpackages2340100a105ab455be14cc5b96e2ecb0196ba28c506dcfd0c497a796db3c90c5textual-0.72.0.tar.gz"
+    sha256 "14174ce8d49016a85aa6c0669d0881b5419e98cf46d429f263314295409ed262"
   end
 
   resource "typing-extensions" do

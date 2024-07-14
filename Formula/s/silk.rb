@@ -21,16 +21,21 @@ class Silk < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "libfixbuf"
   depends_on "yaf"
 
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "openssl@3"
+  end
 
   def install
     args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
       --mandir=#{man}
       --enable-ipv6
       --enable-data-rootdir=#{var}/silk
@@ -39,7 +44,7 @@ class Silk < Formula
     # removed from Perl 5.34 resulting in `Can't locate Pod/Select.pm in @INC`
     args << "ac_cv_prog_PODSELECT=" if OS.mac? && MacOS.version == :sonoma
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 

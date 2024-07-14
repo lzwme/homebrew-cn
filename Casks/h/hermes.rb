@@ -8,10 +8,7 @@ cask "hermes" do
   desc "Pandora player"
   homepage "https:hermesapp.org"
 
-  livecheck do
-    url "https:raw.githubusercontent.comHermesAppHermesApp.github.iomasterversions.xml"
-    strategy :sparkle, &:short_version
-  end
+  deprecate! date: "2024-07-12", because: :unmaintained
 
   auto_updates true
 
@@ -22,4 +19,8 @@ cask "hermes" do
     "~LibraryCachescom.alexcrichton.Hermes",
     "~LibraryPreferencescom.alexcrichton.Hermes.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

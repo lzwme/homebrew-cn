@@ -1,7 +1,7 @@
 class Cattle < Formula
   desc "Brainfuck language toolkit"
   homepage "https:kiyuko.orgsoftwarecattle"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   stable do
     url "https:kiyuko.orgsoftwarecattlereleasescattle-1.4.0.tar.xz"
@@ -45,7 +45,12 @@ class Cattle < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     pkgshare.mkpath
@@ -58,9 +63,7 @@ class Cattle < Formula
     end
 
     mkdir "build" do
-      system "..configure", "--disable-dependency-tracking",
-                             "--disable-silent-rules",
-                             "--prefix=#{prefix}"
+      system "..configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
       system "make", "install"
     end
   end

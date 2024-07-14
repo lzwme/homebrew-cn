@@ -1,7 +1,8 @@
 class Wv < Formula
   desc "Programs for accessing Microsoft Word documents"
   homepage "https://wvware.sourceforge.net/"
-  url "https://abisource.com/downloads/wv/1.2.9/wv-1.2.9.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/w/wv/wv_1.2.9.orig.tar.gz"
+  mirror "https://abisource.com/downloads/wv/1.2.9/wv-1.2.9.tar.gz"
   sha256 "4c730d3b325c0785450dd3a043eeb53e1518598c4f41f155558385dd2635c19d"
   license "GPL-2.0-or-later"
   revision 1
@@ -30,10 +31,15 @@ class Wv < Formula
   depends_on "libpng"
   depends_on "libwmf"
 
+  uses_from_macos "libxml2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make"
     ENV.deparallelize
     # the makefile generated does not create the file structure when installing
@@ -48,5 +54,12 @@ class Wv < Formula
     (pkgshare/"patterns").mkpath
 
     system "make", "install"
+  end
+
+  test do
+    output = shell_output("#{bin}/wvSummary #{test_fixtures("test.pdf")} 2>&1")
+    assert_match "No OLE2 signature", output
+
+    assert_match version.to_s, shell_output("#{bin}/wvHtml --version")
   end
 end

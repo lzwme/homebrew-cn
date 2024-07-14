@@ -54,7 +54,8 @@ class Glibc < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "274dd06ae6ecaee3025d6bf21cf4c7641df9a1cc3973e162911a1f4a76000a24"
+    rebuild 1
+    sha256 x86_64_linux: "91e866deda35d20e5e5e7a288ae0902b7692ec4398d4267c74c84a6ebcc7cdd9"
   end
 
   keg_only "it can shadow system glibc if linked"

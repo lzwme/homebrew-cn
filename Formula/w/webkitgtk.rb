@@ -55,6 +55,17 @@ class Webkitgtk < Formula
   depends_on "wpebackend-fdo"
   depends_on "zlib"
 
+  on_linux do
+    depends_on "at-spi2-core"
+    depends_on "gdk-pixbuf"
+    depends_on "libdrm"
+    depends_on "libepoxy"
+    depends_on "libtasn1"
+    depends_on "libx11"
+    depends_on "pango"
+    depends_on "wayland"
+  end
+
   fails_with gcc: "5"
 
   def install

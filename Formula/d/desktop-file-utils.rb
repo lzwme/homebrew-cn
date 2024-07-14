@@ -18,7 +18,12 @@ class DesktopFileUtils < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -52,6 +57,7 @@ class DesktopFileUtils < Formula
       Name=Create a new Foo!
       Icon=fooview-new
     EOS
-    system "#{bin}/desktop-file-validate", "test.desktop"
+
+    system bin/"desktop-file-validate", "test.desktop"
   end
 end

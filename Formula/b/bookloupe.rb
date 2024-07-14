@@ -28,13 +28,15 @@ class Bookloupe < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "glib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -47,7 +49,7 @@ class Bookloupe < Formula
       # (bugzilla page is not publicly accessible)
       next if test_file.end_with?("/markup.tst")
 
-      system "#{bin}/loupe-test", test_file
+      system bin/"loupe-test", test_file
     end
   end
 end

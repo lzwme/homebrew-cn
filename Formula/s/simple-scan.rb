@@ -22,12 +22,20 @@ class SimpleScan < Formula
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
 
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk4"
   depends_on "libadwaita"
   depends_on "libgusb"
   depends_on "sane-backends"
   depends_on "webp"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Work-around for build issue with Xcode 15.3

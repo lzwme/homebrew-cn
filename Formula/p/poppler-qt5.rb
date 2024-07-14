@@ -25,6 +25,7 @@ class PopplerQt5 < Formula
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -35,12 +36,18 @@ class PopplerQt5 < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
+  depends_on "nspr"
   depends_on "nss"
   depends_on "openjpeg"
   depends_on "qt@5"
 
   uses_from_macos "gperf" => :build
   uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libassuan"
+  end
 
   fails_with gcc: "5"
 

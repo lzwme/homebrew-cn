@@ -19,11 +19,20 @@ class Cpansearch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f88cd961acac2cdd3fd6711aea3c5e7fde3a23356c0a299f08cf440bed88d7d"
   end
 
+  # upstream missing license report, https:github.comc9scpansearchissues5
+  deprecate! date: "2024-07-13", because: "missing license"
+
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "ncurses"
 
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "pcre2"
+  end
 
   def install
     unless OS.mac?
