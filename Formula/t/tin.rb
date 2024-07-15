@@ -1,7 +1,7 @@
 class Tin < Formula
   desc "Threaded, NNTP-, and spool-based UseNet newsreader"
   homepage "http://www.tin.org"
-  url "https://www.nic.funet.fi/pub/unix/news/tin/v2.6/tin-2.6.3.tar.xz"
+  url "https://sunsite.icm.edu.pl/pub/unix/news/tin/v2.6/tin-2.6.3.tar.xz"
   sha256 "bf7ae8cfdc6ab6bc5aced4f08cf13687d8d6f9fa4be1690dfda5d123188d2217"
   license "BSD-3-Clause"
 
@@ -24,6 +24,7 @@ class Tin < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"

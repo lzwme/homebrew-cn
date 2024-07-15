@@ -18,25 +18,32 @@ class Dopewars < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "glib"
 
   uses_from_macos "curl"
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     inreplace "src/Makefile.in", "$(dopewars_DEPENDENCIES)", ""
     inreplace "src/Makefile.in", "chmod", "true"
     inreplace "auxbuild/ltmain.sh", "need_relink=yes", "need_relink=no"
     inreplace "src/plugins/Makefile.in", "LIBADD =", "LIBADD = -module -avoid-version"
-    system "./configure", *std_configure_args,
-                          "--disable-gui-client",
+
+    system "./configure", "--disable-gui-client",
                           "--disable-gui-server",
                           "--enable-plugins",
                           "--enable-networking",
-                          "--mandir=#{man}"
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install", "chgrp=true"
   end
 
   test do
-    system "#{bin}/dopewars", "-v"
+    system bin/"dopewars", "-v"
   end
 end

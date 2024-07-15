@@ -2,9 +2,10 @@ cask "font-playwrite-cu" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritecuPlaywriteCU%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritecuPlaywriteCU%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite CU"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+CU"
 
   font "PlaywriteCU[wght].ttf"
 

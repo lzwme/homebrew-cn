@@ -23,10 +23,15 @@ class GeocodeGlib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "json-glib"
   depends_on "libsoup"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"

@@ -21,8 +21,13 @@ class GitCredentialLibsecret < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "libsecret"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     cd "contribcredentiallibsecret" do
@@ -37,10 +42,12 @@ class GitCredentialLibsecret < Formula
       username=Homebrew
       password=123
     EOS
+
     output = <<~EOS
       username=Homebrew
       password=123
     EOS
+
     assert_equal output, pipe_output("#{bin}git-credential-libsecret get", input, 1)
   end
 end

@@ -27,11 +27,17 @@ class Gammu < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Disable opportunistic linking against Postgres
     inreplace "CMakeLists.txt", "macro_optional_find_package (Postgres)", ""
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DBASH_COMPLETION_COMPLETIONSDIR=#{bash_completion}",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

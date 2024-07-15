@@ -22,8 +22,13 @@ class JsonrpcGlib < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "glib"
   depends_on "json-glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", "-Dwith_vapi=true", *std_meson_args

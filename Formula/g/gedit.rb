@@ -31,6 +31,7 @@ class Gedit < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "adwaita-icon-theme"
   depends_on "at-spi2-core"
   depends_on "cairo"
@@ -48,6 +49,10 @@ class Gedit < Formula
   depends_on "libxml2"
   depends_on "pango"
   depends_on "tepl"
+
+  on_macos do
+    depends_on "gtk-mac-integration"
+  end
 
   def install
     ENV["DESTDIR"] = "/"

@@ -19,16 +19,24 @@ class Gspell < Formula
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
+  depends_on "at-spi2-core"
+  depends_on "cairo"
   depends_on "enchant"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
+  depends_on "harfbuzz"
   depends_on "icu4c"
+  depends_on "pango"
 
   on_macos do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gtk-doc" => :build
     depends_on "libtool" => :build
+
+    depends_on "gettext"
     depends_on "gtk-mac-integration"
 
     patch :DATA

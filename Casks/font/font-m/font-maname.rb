@@ -2,9 +2,10 @@ cask "font-maname" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmanameManame-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflmanameManame-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Maname"
-  homepage "https:github.commooniakmaname-font"
+  homepage "https:fonts.google.comspecimenManame"
 
   font "Maname-Regular.ttf"
 

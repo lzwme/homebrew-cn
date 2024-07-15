@@ -2,9 +2,10 @@ cask "font-playwrite-hr" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritehrPlaywriteHR%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritehrPlaywriteHR%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite HR"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+HR"
 
   font "PlaywriteHR[wght].ttf"
 

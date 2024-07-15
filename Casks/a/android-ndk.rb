@@ -35,7 +35,7 @@ cask "android-ndk" do
   ].each { |link_name| binary shimscript, target: link_name }
 
   uninstall_postflight do
-    FileUtils.rm_f("#{HOMEBREW_PREFIX}shareandroid-ndk")
+    FileUtils.rm("#{HOMEBREW_PREFIX}shareandroid-ndk")
   end
 
   # No zap stanza required

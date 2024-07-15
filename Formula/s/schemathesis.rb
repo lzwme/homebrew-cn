@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9c/67/d7c0125ac7070a8f08c8e9d9d31a47fa1092874469a56f08d9c701cc45c7/schemathesis-3.31.1.tar.gz"
-  sha256 "d519a6b982436b2f21f56168fa866d826ccad6b635be12cc93114d861fadf6ef"
+  url "https://files.pythonhosted.org/packages/0b/9d/21d5d60935c88c30122b64564db577f225bcfeb63b19a2d6b0177d0c4ae9/schemathesis-3.32.0.tar.gz"
+  sha256 "12b83af38758c7893808fcdd8de1022a3aec05e486a440c6f242fadf4bee4efd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e3d87d64ea4a3e2463fb0443eab45295afc5d6d6ad82d584b17de6ddcb5d07c0"
-    sha256 cellar: :any,                 arm64_ventura:  "a8ab5951925b1bb943a227e10c0b6b978d544c827f5cfedf29b8a27d36f971f6"
-    sha256 cellar: :any,                 arm64_monterey: "d7f2388ac4705ca33d7bfbd306642e1a8ce878190c9371c2273f293b2b9e195e"
-    sha256 cellar: :any,                 sonoma:         "2dc835a607cde642872611408d7209ad06f35b53b3c2aba565d757ca98cc7d5a"
-    sha256 cellar: :any,                 ventura:        "1949a65ad809119b8aa007303b0aa57016291d5b1a6c2cc11dec0c1b1a199786"
-    sha256 cellar: :any,                 monterey:       "8f674077f5c3c2a4c770ee72c8e3c662b44a44afbd5ab6b64ad87cabe05afdd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "348f1facf9d3ca4cd6fd16182712ed665b7471fd159bc31a762c151a0dc31ce0"
+    sha256 cellar: :any,                 arm64_sonoma:   "a6f12c656cc957c235946f1c51747f4f1e5aa5c1a66f97c5e200ccf3cf863ddc"
+    sha256 cellar: :any,                 arm64_ventura:  "930a9a6abd2324267f3458bae2482e86d496ab6efdd456fa1e7ba2d6b553f658"
+    sha256 cellar: :any,                 arm64_monterey: "26c4a5a86ead7b5b23574e41215eeef8a0da206b3f4b31e83aa68c86fc381af2"
+    sha256 cellar: :any,                 sonoma:         "6bdf18d79bc3932c89c26355b6aaef842ffd8fab4efdcfde84ad370021076db1"
+    sha256 cellar: :any,                 ventura:        "11232554dfb223f3cb29db3f332959ff8146eacad9168cd3b33da4b949595d9a"
+    sha256 cellar: :any,                 monterey:       "d403645c67ac8d06be503113707e5f40b4c5189b467227572f956f66842535ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3559294eefa9107186637f3bc633d55396211f9dd742f70d82b8806e0b781b40"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -80,8 +80,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/b5/54/8fa003725080d9d2c575e8007342f2c9276194d48e7961534b8972a6d480/hypothesis-6.104.2.tar.gz"
-    sha256 "6f2a1489bc8fe1c87ffd202707319b66ec46b2bc11faf6e0161e957b8b9b1eab"
+    url "https://files.pythonhosted.org/packages/6d/e7/a56575e21e01022620ea52c8ce765c7990848daecbb5e8845b95470302a5/hypothesis-6.108.0.tar.gz"
+    sha256 "24183b2a4d05c15834f5a80fe51cf933cdc812c4f7dc036209c9902b81d4e8e5"
   end
 
   resource "hypothesis-graphql" do
@@ -105,8 +105,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/19/f1/1c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263/jsonschema-4.22.0.tar.gz"
-    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
+    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
+    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
   end
 
   resource "jsonschema-specifications" do
@@ -170,8 +170,8 @@ class Schemathesis < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/2d/aa/e7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beea/rpds_py-0.18.1.tar.gz"
-    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
+    url "https://files.pythonhosted.org/packages/36/a2/83c3e2024cefb9a83d832e8835f9db0737a7a2b04ddfdd241c650b703db0/rpds_py-0.19.0.tar.gz"
+    sha256 "4fdc9afadbeb393b4bbbad75481e0ea78e4469f2e1d713a90811700830b553a9"
   end
 
   resource "six" do

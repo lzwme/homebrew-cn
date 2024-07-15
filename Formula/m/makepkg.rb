@@ -2,19 +2,19 @@ class Makepkg < Formula
   desc "Compile and build packages suitable for installation with pacman"
   homepage "https://wiki.archlinux.org/index.php/makepkg"
   url "https://gitlab.archlinux.org/pacman/pacman.git",
-      tag:      "v6.1.0",
-      revision: "e3dc296ba35d5039775c6e53decc7296b3bce396"
+      tag:      "v7.0.0",
+      revision: "138cbae58448b7fde90335526add3029875784ee"
   license "GPL-2.0-or-later"
   head "https://gitlab.archlinux.org/pacman/pacman.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "507a4c1078a9b109dc69a3376188e396dc63ac1d7c3ef0d5ba69e577686c22a3"
-    sha256 arm64_ventura:  "0761fe2e513cd94f1267c42f8dd2c30f50dc34c02a58027f898a9f5977325de3"
-    sha256 arm64_monterey: "17e26d19bf6c950e24a45755ce059efce96c0864e2482b80aeb1e68fbd542f4d"
-    sha256 sonoma:         "1e9d79566f1c0663e16676def8a90a60c9608c0abfa979a0bcde8acac5ff4458"
-    sha256 ventura:        "5ff1e558f4c860612fa62b4586ba8c902332dc2281c797a7b3a3861aa704dd8e"
-    sha256 monterey:       "b4a77ae7d873d791b36e2076de5174d52c7778e7d80988c668d6d581ca02f95f"
-    sha256 x86_64_linux:   "99b6ebb40225e1fdad4fcb9fcc1ed0a00301e77368da6689f36c2176d4c6f804"
+    sha256 arm64_sonoma:   "61faf5587194320721c0360027347b28d97c3ce0b157ff78504b9fbf8af28ccf"
+    sha256 arm64_ventura:  "da4a03fa1256800c68b4d97faa71a8defd17e99afc9401c0c9882baf1db79dcb"
+    sha256 arm64_monterey: "c6354bff149380a83c87fb59b6730fedb015407362e243be8e98736d14df50c4"
+    sha256 sonoma:         "45597fa37e62ddd69aee401a4a9d34dc5ec1afdb367da9a1ed25035346462ed9"
+    sha256 ventura:        "10997d0ff1dd13d24378863f421d1554c46502ebe5859f178df7055dc85f0ffe"
+    sha256 monterey:       "b9b8be7872828bbb3da1488513d1a60a3b870f9880e2c929576da152e8cd230b"
+    sha256 x86_64_linux:   "77d749e913352e3d8b15a627f5368a267700fc25771476efe9749d9b5b5472a2"
   end
 
   depends_on "meson" => :build

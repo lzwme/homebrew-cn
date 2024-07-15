@@ -29,10 +29,12 @@ class Irssi < Formula
   uses_from_macos "ncurses"
   uses_from_macos "perl"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --with-proxy
       --enable-true-color
@@ -41,7 +43,7 @@ class Irssi < Formula
       --with-perl-lib=#{lib}perl5site_perl
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     # "make" and "make install" must be done separately on some systems
     system "make"
     system "make", "install"

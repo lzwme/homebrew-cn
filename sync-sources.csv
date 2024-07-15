@@ -1906,6 +1906,7 @@ Homebrew-homebrew-core/Formula/f/fsw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fswatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ftgl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ftjam.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ftnchek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fuc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuego-firestore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuego.rb, Homebrew/homebrew-core, 0
@@ -10520,6 +10521,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sintony.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-s/font-sirin-stencil.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sitara.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-six-caps.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-sixtyfour-convergence.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sixtyfour.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-skranji.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-slabo-13px.rb, Homebrew/homebrew-cask, 1
@@ -12806,6 +12808,7 @@ Homebrew-homebrew-cask/Casks/r/renpy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repetier-host.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replacicon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replay.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/replit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/repoz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/reqable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/requestly.rb, Homebrew/homebrew-cask, 1

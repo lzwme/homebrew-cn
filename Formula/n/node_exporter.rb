@@ -1,8 +1,8 @@
 class NodeExporter < Formula
   desc "Prometheus exporter for machine metrics"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/node_exporter/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "6a2dc6b0be27fa089574f2c32cee3673bbf4c6749c84f1d08f8c374e0908c0ad"
+  url "https://github.com/prometheus/node_exporter/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "f615c70be816550498dd6a505391dbed1a896705eff842628de13a1fa7654e8f"
   license "Apache-2.0"
   head "https://github.com/prometheus/node_exporter.git", branch: "master"
 
@@ -12,13 +12,13 @@ class NodeExporter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5f109e08561b233b8385d58efb43b4d7a82fabfd1a048e26f1e5352ad099ce0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b685328531229f921e0d39e362cae52daf6b8f168f1f8dfac81f5400b5d95567"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd0852819c7539fe0381613dd8d124134f41be08db582b69266478be3c93519e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "97d526b98077240fca0a593964a38364067e8976697e3afde2f27d2992deff77"
-    sha256 cellar: :any_skip_relocation, ventura:        "f432f7c5b2bf150090a1947e65276b00c4825621d96f510187dbfab4d74f0d49"
-    sha256 cellar: :any_skip_relocation, monterey:       "ddaa1d0f23ddf6dd5781e473dc2ebc9005dd2df4996f928f74a32ed7f07fb86e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a00d48bbcb714214d82ae69b79612587881d2eb7ec819cff1dde392238c706a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "763072dec71f2cbbd34b19873574e0385258f0c2879df86e0dbbbd2408f4d32c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "310634ef8185409fd48cf7c978b6015d7bc83290da06345566699e6e7ff84adb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6046cc85d395e2d4aebda99e3bede1eab9abf07eb3a1a95c177d10c11043c94"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b6f5e9d5c2e07a113313c97b06243e94a1e1f3a8960f3a0818a3a2f56f3f5ab3"
+    sha256 cellar: :any_skip_relocation, ventura:        "62d5151b71d60d7c7ea67a703e6b348233eeb5b3b1535cb03c7a14951ee3b846"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a8138efd708d76751c0c7811a28217f107dcd97a078e7ed99113dba8774ef33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8300960df12d7d8ef8b9bb30b764b2ddc61527e09c6084a5b44eef3cc581f885"
   end
 
   depends_on "go" => :build

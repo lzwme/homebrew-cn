@@ -26,6 +26,7 @@ class Goffice < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -42,6 +43,7 @@ class Goffice < Formula
 
   on_macos do
     depends_on "gettext"
+    depends_on "harfbuzz"
   end
 
   on_linux do

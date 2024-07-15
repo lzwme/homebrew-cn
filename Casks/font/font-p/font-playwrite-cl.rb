@@ -2,9 +2,10 @@ cask "font-playwrite-cl" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywriteclPlaywriteCL%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywriteclPlaywriteCL%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite CL"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+CL"
 
   font "PlaywriteCL[wght].ttf"
 
