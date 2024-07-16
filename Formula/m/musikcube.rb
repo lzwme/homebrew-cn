@@ -1,8 +1,8 @@
 class Musikcube < Formula
   desc "Terminal-based audio engine, library, player and server"
   homepage "https:musikcube.com"
-  url "https:github.comclangenmusikcubearchiverefstags3.0.3.tar.gz"
-  sha256 "329c57719969cc4490d5173a926f6d4d71b1b650fe2d66431bbc9c782e0c6313"
+  url "https:github.comclangenmusikcubearchiverefstags3.0.4.tar.gz"
+  sha256 "25bb95b8705d8c79bde447e7c7019372eea7eaed9d0268510278e7fcdb1378a5"
   license "BSD-3-Clause"
   head "https:github.comclangenmusikcube.git", branch: "master"
 
@@ -12,17 +12,18 @@ class Musikcube < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f7ab780618f3e8e5789e22595bd98e675b184563c3606fd4b10ca8e6b415ff6e"
-    sha256 arm64_ventura:  "a40a9d19243f725ab0dc70a38c2a18e6ba41d6e29d1a67e638e1c70350555198"
-    sha256 arm64_monterey: "1fb6b52e17785b8113e00566a10cb5fc24ca31e3a0923515d16f46a50612d341"
-    sha256 sonoma:         "724b02f3e7bbc3881f354663720e0ecce7704e91499e67272cb7704f3f079f30"
-    sha256 ventura:        "18c67a098c10b0454c4c7da33c520d05fb534bb5afdbc588fa6374236a78683c"
-    sha256 monterey:       "74265f00bcc11d2e701609ea5a92e4a5fe2432c0b36ee421f3d20bd9ea19ee87"
+    sha256 arm64_sonoma:   "59aa9a51bc017b88fb4e5b6841452f5933e7a84e1769db122445b370ef1d8047"
+    sha256 arm64_ventura:  "a8b4b4f99b07b95acf97cb0db02aefc64bc9e1e35d2ea34223c2a9062a167a29"
+    sha256 arm64_monterey: "a90d7dfd1ade9c1168cff35fa52de9018b89261055da93cb38d5ce59b85f20e9"
+    sha256 sonoma:         "a1953c59d50ab92536a60e824a97558edb1f4fafce514df81db712f0d7519de4"
+    sha256 ventura:        "b2fd6204a72b9736872184db685e89c326639755da0ffe2d526bb041f8557e71"
+    sha256 monterey:       "e2ad36a2565ba7e15e751e5acd0bf92375dde852c83c7869b163dd66713012f6"
   end
 
   depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg"
   depends_on "game-music-emu"
   depends_on "gnutls"
@@ -36,7 +37,13 @@ class Musikcube < Formula
   depends_on "ncurses"
   depends_on "openssl@3"
   depends_on "taglib"
+
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on "mpg123"
+    depends_on "portaudio"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

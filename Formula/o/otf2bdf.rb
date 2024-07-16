@@ -6,19 +6,14 @@ class Otf2bdf < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "1885b8b469299e262a9536c19a5283c70c950e58fb59725860fb26957785040a"
-    sha256 cellar: :any,                 arm64_ventura:  "ad6e3edd7a5580a686f85804bace10257aac6fca2d986cdeac6a6a7ecc85a16d"
-    sha256 cellar: :any,                 arm64_monterey: "24958a27ec3ab7c33c3a23e5617a2eee5ebf78d80df0fc0efb5da8fe4dee04b1"
-    sha256 cellar: :any,                 arm64_big_sur:  "077dfdbef2ee5d04e9101f64cfe6da40631d8ea685e2fd6dfe052bfd0374bcf0"
-    sha256 cellar: :any,                 sonoma:         "976a8d60f00be6d29b89506d9609d1614daa4573b314a4882c8440d377a4e6b0"
-    sha256 cellar: :any,                 ventura:        "253ccb814956456b58a293c71e9ab44d1bf225b14de70e2d64cf718a91f62fde"
-    sha256 cellar: :any,                 monterey:       "9be65daed2aacb60a961236e47cb496c4afac542ce3b48fe6ff16653d8bc9454"
-    sha256 cellar: :any,                 big_sur:        "3feac6fe8b055277c8b4174415f5974fc082019ab1b82c8c582fbf9f8de581d0"
-    sha256 cellar: :any,                 catalina:       "200d4f317f5fda0c3c4a350ba773322af4a29af56a65f9e3de11b406ab517522"
-    sha256 cellar: :any,                 mojave:         "76e89f43b017f0bc2f90c3d49e70d75ac9da5260b9567d1078449f1b80af60bf"
-    sha256 cellar: :any,                 high_sierra:    "208ef317e3c51e88818c4f59ca0333a76d6efeed97b04affe66c3cd6b601bada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "474eb191656b41d2707754f98de17c2a5691a8917981ee52155de962dc314395"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "d870da25b4ff6680200b767f9bd5c2d94bb4be4413498a4a80ea52d2af87aea1"
+    sha256 cellar: :any,                 arm64_ventura:  "1ad51b1db3e7b521fb3608e43e27c495aae5438f03913f133b7ab14a85cd1ce6"
+    sha256 cellar: :any,                 arm64_monterey: "6886123b0c45985af7cba20da8c3dad5b7781087f2ef1c7202eecb2d598c898f"
+    sha256 cellar: :any,                 sonoma:         "1d140fa94e091509910ca6713ab82a97f7af120833ccc2e3978068be815f6fee"
+    sha256 cellar: :any,                 ventura:        "edfb01b76f2db5887a66bdc3ecdc42081a03a4645a76fe6c15f626a7c6925129"
+    sha256 cellar: :any,                 monterey:       "dafee8b4a63fb155ed161200df6c15e64ba054863cfcfc3171038b795bfc2ea1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06814ebf37e5b3387409a79c416d52ab43c3a67d32ea1bea076d471bb0c84142"
   end
 
   depends_on "freetype"

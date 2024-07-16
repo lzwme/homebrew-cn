@@ -1,8 +1,8 @@
 class Allure < Formula
   desc "Flexible lightweight test report tool"
   homepage "https:github.comallure-frameworkallure2"
-  url "https:repo.maven.apache.orgmaven2ioqametaallureallure-commandline2.29.0allure-commandline-2.29.0.zip"
-  sha256 "0b1d1144c699724cdfec769efad457475d8039718edfe7b1439acbd317c14223"
+  url "https:repo.maven.apache.orgmaven2ioqametaallureallure-commandline2.30.0allure-commandline-2.30.0.zip"
+  sha256 "2e3e9af0772796862da17d95007abd8d3df1176c13aca89ee2c79118fe4dd2f7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,13 @@ class Allure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c86a7ce74feb18ce05dd5133d09958cfbe3ccaa079d0fe9fb312741d25779526"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "0dcc88d31dacc90ea42157fd33aeaf308bffc0d2ba821848435345f293c2f3d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aba96abd6775fb70188e8f9cab54fd1ee362f184a99d891b3dc8a5e5901e4c37"
   end
 
   depends_on "openjdk"

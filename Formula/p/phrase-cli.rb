@@ -1,18 +1,18 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https:phrase.com"
-  url "https:github.comphrasephrase-cliarchiverefstags2.31.0.tar.gz"
-  sha256 "5b35a69c2101559b709a3a79eb4dba2c54724876ec57700d33bcc77ad7e2d4b2"
+  url "https:github.comphrasephrase-cliarchiverefstags2.31.1.tar.gz"
+  sha256 "abe756d192e43ff3bc9b3896093c469185774827c779d60c033073e4f95a89e8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07f2f6b59c68de56d543b76abc8b772da04a3e0a0d8fdc17eb4b4cd10eaa6580"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "429661aae1e2e0969f5e09f6720b5ea49f32118f387d22e04d215edbb6137180"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50932ba792bedecbd1d5102aa5a24925f2e5dc521571d79cf35655bd16d83b58"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3cb38e38eca45e0aeb27ad5e0cc3ea5059282c85a173c46d1fe9105682a371a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "05ef88ec7f704d663a7603c4dc9ecc3e2e72a401e4a16c94dded35f3df107120"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f3539af555a17358ab0262ceb5630163394e3688aae6498e0c0a67b13ec5212"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df2d00647a0e4aaf4252212e56b4bc352430dc190a75b2778c083e2b6226f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca7693f351fd06907d1c76a7ad74ba16da5f7375bd606a68691ff508cdf75f0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca80a8bf21d03ddf777b5390a93cda789ce3360875b052bcf311c47a431c2ede"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "994ee634ab6469e5b3c687f7006929ce446ff153334b4f2f4fbac0571b50cca9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "852ca13d5ca49ef7b4b66738570a5d0f084ef30507fcd6ebb4d4a2e7553ddb9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "6925968f67df8d1548b3702b99227476ed4908be8086b25dcc114879161ee224"
+    sha256 cellar: :any_skip_relocation, monterey:       "af3fa8b4d3dbe6145b59153797740d39b12832e168a2d379510557e1d79dd9b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a57018767a27a37b555f1aed762bf97539a07c6107a0a486b9e196cd4134033"
   end
 
   depends_on "go" => :build

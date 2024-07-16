@@ -3,19 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/b7/0a/b88033900b1582f5ed8f880263363daef968d1cd064175e32abfd9714410/sphinx-7.3.7.tar.gz"
-  sha256 "a4a7db75ed37531c05002d56ed6948d4c42f473a36f46e1382b0bd76ca9627bc"
+  url "https://files.pythonhosted.org/packages/ca/fa/6dc2d733f80304f94688056c7b84e9cb8e9b61040603c6848d0715fbdb31/sphinx-7.4.0.tar.gz"
+  sha256 "8385520a28dc129ebf8b5fccfa1beb71215fd4455c6d10fa418e08c3c7a2ff9c"
   license "BSD-2-Clause"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7186d6921a44384f9f45dfcd9548e2b0fd31f8c4716c30ce4fff3e12fc1bbcea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28fffa95a0b3c9bc0eac0e88da131967c8777f4ec49164700ba488f0f367d405"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba9e4d6794480bb97281cc671cd709d5468d452c5f21fee507fdeacc882a8a5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "645bcf66dfe4323d1c4bd1bf67eabee978d6033562c18aef39271ec326bd6f07"
-    sha256 cellar: :any_skip_relocation, ventura:        "45fd6b2f0a86d8a16b291dc2ee9809df92a2ea0ef8b74999a3fd8fd8e905d8bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8029904c4c447a7134ad8c1c5f36408a983a5b3b6f2c0ae40d822ad414aedc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f473bb1f49a141c993e7d7bc8b0c7a836e9f66711c5055913bdf3fbb73927c8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cbaf302e63ca287d9b013dbd45f4dda0d802ae820303b96dc352e0b805a45d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a33ab778585e4411b3d56fe0ca5d25f6d1a5a522b5d6dd31e31c3977906e5a96"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3de08272fb827f125a91a09535d34cde287bd222ebc3c28dc81e733ce4488083"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5281d4f46c7c6cfd7c24d8406382779f90850e01ea27419b6476a325377fbb8b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2f9099508d6bb8e086f3b6e8358962357c81de04ebc27fcb77d6af0ca6952bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "2de9ddd3a7c01358700ae86922ebf5836c784df791335d585743bbabdf126fd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78e0f966bc482f647a6a9077841c222d9e62f81e06ec48248ef46c987f2a31c9"
   end
 
   keg_only <<~EOS

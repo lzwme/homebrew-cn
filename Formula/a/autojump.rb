@@ -8,8 +8,14 @@ class Autojump < Formula
   head "https:github.comwtingautojump.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "186ebf3a980da0c5f3d7ab1436fb367ad5a47554d09d5b2cfbe0c37097cf287e"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, sonoma:         "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, ventura:        "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, monterey:       "99ba23c9e74320381af33cef477c4258185ff0cc5ef5d54165a07ca3385a9237"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbdc660e87f1a4e80757a36c7ce9cda4235e79e490007b80b8c2d894206b1f8b"
   end
 
   depends_on "python@3.12"

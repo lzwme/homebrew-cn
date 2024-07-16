@@ -3,19 +3,19 @@ require "languagenode"
 class Retire < Formula
   desc "Scanner detecting the use of JavaScript libraries with known vulnerabilities"
   homepage "https:retirejs.github.ioretire.js"
-  url "https:registry.npmjs.orgretire-retire-5.1.1.tgz"
-  sha256 "121d2027129f0b6d420141b3cc02f4b75a58261387bf78d01d8e94b45955dc04"
+  url "https:registry.npmjs.orgretire-retire-5.1.2.tgz"
+  sha256 "363f3827a82a5e482d2e9bdc4a6b21a9d833e87e991142a778b758643498cfbc"
   license "Apache-2.0"
   head "https:github.comRetireJSretire.js.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b9729783656d9a973f99f37fdd259f5679d5f758b9082614145384d67aed759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b0496957c34f96fc119904291904607c3fba31e3d11ddd2b398201b24f20772"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f23ba8222f182a9d7c07cc1dffae8f4c5e6923710b786c3f4548812f6af84f52"
   end
 
   depends_on "node"

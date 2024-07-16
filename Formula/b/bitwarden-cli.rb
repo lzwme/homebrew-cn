@@ -3,29 +3,34 @@ require "languagenode"
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https:bitwarden.com"
-  # Do not use npmjs for the next release as it will contain non-open-source code.
-  # https:github.comHomebrewhomebrew-corepull175702
-  url "https:registry.npmjs.org@bitwardencli-cli-2024.6.0.tgz"
-  sha256 "c6cc40900db37dd7653eb24bb095dbedbe00bb27a1024642dbf12c31a03dceeb"
+  url "https:github.combitwardenclientsarchiverefstagscli-v2024.6.1.tar.gz"
+  sha256 "1dff0f6af422864aa9a4e8c226282cb3f4346a4c8e661effe2571e1553603e56"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb752136fdb18ceea631e6626e260b6385691af02663e0e31c97ac5a963d59b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20c64724b8206cbf15c90a05c7d16104ff894215f7941512ded8229994d84f98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1ff22ce78035dfcbc6ffb446bc18dcf1d9cc8f3863c2d6f181be32c1fbf36bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2bc9e93b9a543900829ab80f0b8ef6a8c7273e228092203bfaaab88946119296"
-    sha256 cellar: :any_skip_relocation, ventura:        "3133beeb8430b0f86e8fbde85b5fb0c45926b60b790ef86189b425cffd5aced7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f434edb274e170149b485f8608dc1659186b693bbf563dc6b2a99332ec0c5be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f627fb9dd646f59e47d1182aadd9e9f3b4214f220c247adb49c48371f6f9db81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "711cc5ac937d834e59a007e4de78347a97c8acfdd94817bab1522a2a6740c8e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b2ef0b7f9dbeea0ec9fe94290c5f5ee79f25ca087a76216a3d6efd5f22b1d3b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12e01176eeca3dfb9bfcb82ae893f203a3672dbb450041116930e2e9daf3ec4b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a81f956a41874b4aa6e9a0a342cbcda993b9511e76cda106c7300c1e49059539"
+    sha256 cellar: :any_skip_relocation, ventura:        "c91323e71654a0753fb2b8cc555d84c1fa9ad9262108b92aa18e1bb5e0535b96"
+    sha256 cellar: :any_skip_relocation, monterey:       "c31d3ee2ed80399a5f00c68a9590d32b80927f9a16eea49fa55f41b514e05f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd14f3cbf054c40792b0f0b9e985fba9e99c20855dcc6e8ec79c4228a16fb18c"
   end
 
   depends_on "node"
 
   def install
-    raise "Formula requires changes to only use GPL assets." if version > "2024.6.0"
-
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec"bin*"]
+    Language::Node.setup_npm_environment
+    system "npm", "ci", "--ignore-scripts"
+    cli_root = buildpath"appscli" # Bitwarden's source code is a monorepo
+    cd cli_root do
+      # The `oss` build of Bitwarden is a GPL backed build
+      system "npm", "run", "build:oss:prod", "--ignore-scripts"
+      cd cli_root"build" do
+        system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+        bin.install_symlink Dir[libexec"bin*"]
+      end
+    end
 
     generate_completions_from_executable(
       bin"bw", "completion",
