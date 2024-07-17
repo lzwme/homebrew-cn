@@ -1,18 +1,18 @@
 class Blake3 < Formula
   desc "C implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.1.tar.gz"
-  sha256 "822cd37f70152e5985433d2c50c8f6b2ec83aaf11aa31be9fe71486a91744f37"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.3.tar.gz"
+  sha256 "ec9114480857334858e73b727199c573bfdbed6138a83be573f076d37e671fc1"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c2201b562ac720e557ddcd29b16967231efdb43ced0cb15360b71a8f50ba35d7"
-    sha256 cellar: :any,                 arm64_ventura:  "d4d8f65bd488c430e008d1d2248ee700ec6f3e7c775bbf3f853787d176f5bb8f"
-    sha256 cellar: :any,                 arm64_monterey: "f5d9b4b1e92f61ba7ebc9ab84aad73641044650b4ed5e66de373b7c650b352f3"
-    sha256 cellar: :any,                 sonoma:         "2f4c994fbe40aa9550077ef7270d7529107706ab2b43e54c9bd42cd047f98280"
-    sha256 cellar: :any,                 ventura:        "5a35a1a282fa9ad9ed1166aa14d3c073d6195c9c97600653c198d3f966cd8247"
-    sha256 cellar: :any,                 monterey:       "9ae5366201da7e076fdcfa3c5b2f768de540c083798a6dde7363d19b6d8bccad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5c6ef340097f3d5195f8b77d1af22d8ef701f2ad47ef0344ed8897f74bddd4e"
+    sha256 cellar: :any,                 arm64_sonoma:   "b7aa528547ebd01123d6a61b7f2856c9a0ef151f465977e3d09635caf85c6807"
+    sha256 cellar: :any,                 arm64_ventura:  "d0908161009b153f258581416a8c92715b66fab4bde454239d9d10fcb71e2c89"
+    sha256 cellar: :any,                 arm64_monterey: "4c139107b706715c3319f0c09d1a472e9438ac47109aff4048cfab12337c6985"
+    sha256 cellar: :any,                 sonoma:         "1f36c5d92b9c0d32abf5555070a4540365cfa0964199d9db4232cf2825e436ab"
+    sha256 cellar: :any,                 ventura:        "1df8866566b2d1ad8b11f7edc846b359ef54501e0e7ec45319f8dacecf3b6802"
+    sha256 cellar: :any,                 monterey:       "ddb7a8901e47ca09bd4539eebad60c109fc78553f69c040cf08776e66c0d6b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08e4d04eaab578748a0507843fdf0c99a2a3c1ebc7ccfb0a9ea241841601297d"
   end
 
   depends_on "cmake" => :build

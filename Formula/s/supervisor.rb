@@ -6,24 +6,24 @@ class Supervisor < Formula
   url "https:files.pythonhosted.orgpackagesce37517989b05849dd6eaa76c148f24517544704895830a50289cbbf53c7efb9supervisor-4.2.5.tar.gz"
   sha256 "34761bae1a23c58192281a5115fb07fbf22c9b0133c08166beffc70fed3ebc12"
   license "BSD-3-Clause-Modification"
+  revision 1
   head "https:github.comSupervisorsupervisor.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "114ed80c189bf19224311eb0bbd95769267b80327c8072f21c23802f377d665f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2873473b2f374c6918ba564f217a5251fa3b6d9a5510015ccbd5b8d027fb7dd2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa2fbe86f0746425a1b24ef9524c553a41bb697174f6f02af721740834b7b37e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "01790650d680a9618c81cf4fadc932954ca60dfa4d55cbcef6739bb4021ab953"
-    sha256 cellar: :any_skip_relocation, ventura:        "41c9b2f7cbe02d24eabaa4cbca4a63f6335d315b1d8a416f85a39941f4f815df"
-    sha256 cellar: :any_skip_relocation, monterey:       "399bf9a900a4f198bba19ddcb9f70b7b0b1a8dc9bfd400ed2466a82a6551a62c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e4e0ba7947159bb2c71d518062e0f79a12f54db62fe4aa3f9d5a627d1968fe6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec664bd2e3bc60bd9a8514ac2a16da34a0a9efcebb8fe775b21698af40909444"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec664bd2e3bc60bd9a8514ac2a16da34a0a9efcebb8fe775b21698af40909444"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec664bd2e3bc60bd9a8514ac2a16da34a0a9efcebb8fe775b21698af40909444"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2eb8e7fba66707eda58ce2a41920c5a0281e64a376a0e1130018ae3ba32f3c9b"
+    sha256 cellar: :any_skip_relocation, ventura:        "2eb8e7fba66707eda58ce2a41920c5a0281e64a376a0e1130018ae3ba32f3c9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2eb8e7fba66707eda58ce2a41920c5a0281e64a376a0e1130018ae3ba32f3c9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78207f4fe866c1554ce1ffc5d574a74fb8ccc7cf30fd662917bcc6e76023457f"
   end
 
   depends_on "python@3.12"
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   def install

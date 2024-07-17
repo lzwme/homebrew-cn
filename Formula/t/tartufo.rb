@@ -6,16 +6,17 @@ class Tartufo < Formula
   url "https:files.pythonhosted.orgpackagesd5ea6248387282150270f1886d75111f776f43e694f488a3a1ea3b5b0d1195f1tartufo-5.0.0.tar.gz"
   sha256 "99ab6652cae6de295aeb31089e9ba27d66d0ad695af493d2d5cbc795397d1c84"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comgodaddytartufo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ca6285522fc3e3acb9caa7d138d52f00340fe90d30cdf469c7af896f1dae8810"
-    sha256 cellar: :any,                 arm64_ventura:  "eb507ba58820f3a2eb3ffab9750ed4b1be5d73ecf17faf7749529ace779d0475"
-    sha256 cellar: :any,                 arm64_monterey: "88ea6be6f01b84422eea3eaf73581bb2d842a43996e96a4864198cfe7924cee1"
-    sha256 cellar: :any,                 sonoma:         "855555b472b539847a776bb9f055273c03eb883129a0790e39ee6379e8bd0441"
-    sha256 cellar: :any,                 ventura:        "006ca239c22671c1378b655e8eebdeb874542cebfc0913e4dddc86b7b6d0e070"
-    sha256 cellar: :any,                 monterey:       "774eab27db9ef995164cb72eb6c634cf9cfaf277b203068ec4c5755082093942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93361f79f79bd27a1fddf8fa6e6ed2055394f23d519e7ffb6cad4a8180239e57"
+    sha256 cellar: :any,                 arm64_sonoma:   "8f684681220701497493bea2b2d354bb77e2cb48891b00ebfb030a3c8883c951"
+    sha256 cellar: :any,                 arm64_ventura:  "71d7ecb5b71477b306f02efd53807ef08cd5987908d55fa06ed1f38732f025f8"
+    sha256 cellar: :any,                 arm64_monterey: "7ae51faea90a2ee86ab0ebce6a260c07885d8839cf36cbf52168826ebe12c2ab"
+    sha256 cellar: :any,                 sonoma:         "f3b6f6d7f1a99ad94a9e00bf7b09fe6d6c8b2989f1e7e950d17f00261bf034ca"
+    sha256 cellar: :any,                 ventura:        "a31b499051c106bf60e14253d03f91861da3b414a24e178d91d3208b9733cbba"
+    sha256 cellar: :any,                 monterey:       "78fae9022fb120fb5f605c8ef57a69d604857b37dbacc6386158d5521b91c8f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f73241c51a2ce44fa61e4553d42f7dd99382692b83033d743f98012a0b7b7db9"
   end
 
   depends_on "libgit2"
@@ -44,13 +45,13 @@ class Tartufo < Formula
   end
 
   resource "gitpython" do
-    url "https:files.pythonhosted.orgpackages8f1271a40ffce4aae431c69c45a191e5f03aca2304639264faf5666c2767acc4GitPython-3.1.42.tar.gz"
-    sha256 "2d99869e0fef71a73cbd242528105af1d6c1b108c60dfabd994bf292f76c3ceb"
+    url "https:files.pythonhosted.orgpackagesb6a1106fd9fa2dd989b6fb36e5893961f82992cf676381707253e0bf93eb1662GitPython-3.1.43.tar.gz"
+    sha256 "35f314a9f878467f5453cc1fee295c3e18e52f1b99f10f6cf5b1682e968a9e7c"
   end
 
   resource "pycparser" do
-    url "https:files.pythonhosted.orgpackages5e0b95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46depycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
+    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
   end
 
   resource "pygit2" do
@@ -59,8 +60,8 @@ class Tartufo < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   resource "smmap" do

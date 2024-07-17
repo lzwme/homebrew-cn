@@ -1,8 +1,8 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https:www.jenkins.io"
-  url "https:get.jenkins.iowar2.467jenkins.war"
-  sha256 "965fdbf11e1735f18ee143ebb5b12a8c3055a725385311f5fd4c336c064bc346"
+  url "https:get.jenkins.iowar2.468jenkins.war"
+  sha256 "d0f6dfc74dd2baa6ad17d8654d457197af500ab33420bcc6d4d941f80beacb71"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf00e674ba8e766df164e70bb9aa3859fe31e45f6fe710d1c0578cdb061db401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "186add715eff52b3f3040b53eec52a2e8ae97a780a54c1aa988b3820aa78b64e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c13a66814dae1157bb22fd7476a8ce1650909cf81a62e24aeff0d61825ac174"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1168654ef2453ff40daae1d371534292fa409ad62c5db71d2ea48a0a6ec7d0f0"
   end
 
   head do

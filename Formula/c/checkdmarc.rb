@@ -3,20 +3,19 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https:domainaware.github.iocheckdmarc"
-  url "https:files.pythonhosted.orgpackagesdf06e61a492a70a2126ac62fea72694aa0ce6f645cbe44ea513d9a68e2df822bcheckdmarc-5.3.1.tar.gz"
-  sha256 "1d71e7fa611fa8faa36fad09416b5e2c3265d026d3b5209c051f4e292565e332"
+  url "https:files.pythonhosted.orgpackages6236d6c60dd39dab96cbd9e5621da9723d3375d371bfe0f66cb3da709d026482checkdmarc-5.4.0.tar.gz"
+  sha256 "ede39e1b34356b3d54f36782970b3c77bc3866348362587b61be5d88e8e7b460"
   license "Apache-2.0"
-  revision 3
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "735f6a321f9a8082ba49f69591e350912b4a15391c5786f253b1f0e1e6f1e8a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62f1715c1970a80f4797e6a7da9c35a68576f074abdcbce1f85dbb112961119c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, monterey:       "a8447e10b6134d6eb2a0b6a5e235331df2decdb48f2cc4c7bac705e57c753706"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bb59740d79fff19e85c8307b3dcede6b59a554dc57f7c949e516edce029b350"
   end
 
   depends_on "certifi"
@@ -44,8 +43,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackagesaf573ea928fac754715161b13560582e5c46e9914880d211e9caf3fda91ef930publicsuffixlist-0.10.1.20240616.tar.gz"
-    sha256 "7d598406bf689ac09e440b1a3d4674ef2d629ff6f1ec97861c83f0ac1c46a58f"
+    url "https:files.pythonhosted.orgpackages90fd814388487a45351f32e37e77e4b23b11c87d4da81c02d5d7cf918ffd107bpublicsuffixlist-1.0.2.20240714.tar.gz"
+    sha256 "584ea0339fcd8375b9692f1dbbc6b4051b2b9b5a4c863b88902c7ec02b3928dc"
   end
 
   resource "pyleri" do

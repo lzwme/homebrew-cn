@@ -3,26 +3,23 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.11.tar.gz"
-  sha256 "dfdfab1a3397ba9a6c22b84db97b2dc0cfdda0950b0c0be1d26ea2d4772c9311"
+  url "https:github.comawsaws-cliarchiverefstags2.17.13.tar.gz"
+  sha256 "c30251c25100e2e53a0cf21d168a1903b4dafef8768b0ebed525ee6c1c54c2f3"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ab05795c0f665ec4d236ea49a719b43a9e62ad50d0d7976ae6672022aac43cf4"
-    sha256 cellar: :any,                 arm64_ventura:  "72af09f91cd2a6f9d541e991392574ab76b283e31cf3961d6dea0537bb18fe55"
-    sha256 cellar: :any,                 arm64_monterey: "79c653b2fd6451f9619eefd09eb6bee452985024a88575239878dfc576b85d40"
-    sha256 cellar: :any,                 sonoma:         "e04966a10e23617b9ff0ec1deb0af53bac5aa0cfbf6d3d27dea8bdcb8331a5ee"
-    sha256 cellar: :any,                 ventura:        "e8ca15ee73eac38d50827fdd8f4ff29ea3ed43db74b17504108431b9c6a5c5ab"
-    sha256 cellar: :any,                 monterey:       "9dc93478235a83195c1498cdafa4f43ea6f4d50bf27c3305fa687a38d166cd18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5112c880580369e782b7ec54a2443e58cfcedc4bb9869c474f3351db08701e74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b4f96b103066c72f83e5d89b0c194d72774426d417a19f03d5b78c6eb1982ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a25d71d7f6ca44250dbc942181ad299b912c4e41ebe5df65e2793f38ec68bc96"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b43b0872962441549195c7ff1758cf2879d2b36d68be157a5993b85045e79f6b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce20693ab39a4047b621fe6c8ad26a78f02ddd3cf1cd5c3c6b30ebfb8f7227d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ab51b017470520b9ef6f47eac7d0f307a241637fba3bddaffad0a40744c8199"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a131def11f8c3eee922c08d2dc104a14b898487d0ae9a75c44ff4288c6535b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2a93adb8ea83a91c5365d264453b0931c95b47d14aad30fd4ed6536e78fe28d"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "cmake" => :build # for awscrt
+  depends_on "cryptography"
   depends_on "python@3.11" # Python 3.12 issue: https:github.comawsaws-cliissues8342
 
   uses_from_macos "libffi"
@@ -33,19 +30,9 @@ class Awscli < Formula
     sha256 "c3dbfb7f1909457952e645373e72b69f90c50c465ee6a46d9bbdc12acb79803c"
   end
 
-  resource "cffi" do
-    url "https:files.pythonhosted.orgpackages68ce95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91dcffi-1.16.0.tar.gz"
-    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
-  end
-
   resource "colorama" do
     url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "cryptography" do
-    url "https:files.pythonhosted.orgpackages15d9c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282ecryptography-40.0.1.tar.gz"
-    sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
   end
 
   resource "distro" do
@@ -58,6 +45,11 @@ class Awscli < Formula
     sha256 "33995a6753c30b7f577febfc2c50411fec6aac7f7ffeb7c4cfe5991072dcf9e6"
   end
 
+  resource "flit-core" do
+    url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"
+    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+  end
+
   resource "jmespath" do
     url "https:files.pythonhosted.orgpackages002ae867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
@@ -66,11 +58,6 @@ class Awscli < Formula
   resource "prompt-toolkit" do
     url "https:files.pythonhosted.orgpackages4bbb75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415aprompt_toolkit-3.0.38.tar.gz"
     sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
-  end
-
-  resource "pycparser" do
-    url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
-    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
   end
 
   resource "python-dateutil" do
@@ -89,8 +76,8 @@ class Awscli < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   resource "six" do
@@ -118,10 +105,6 @@ class Awscli < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     # The `awscrt` package uses its own libcrypto.a on Linux. When building _awscrt.*.so,
     # Homebrew's default environment causes issues, which may be due to `openssl` flags.
     # This causes installation to fail while running `scriptsgen-ac-index` with error:
@@ -137,8 +120,11 @@ class Awscli < Formula
     # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
+    venv = virtualenv_create(libexec, python3, system_site_packages: false)
+    venv.pip_install resources.reject { |r| r.name == "awscrt" }
     # The `awscrt` resource requires `setuptools` & `wheel`, so they must be installed first
-    virtualenv_install_with_resources(system_site_packages: false, end_with: "awscrt")
+    venv.pip_install resource("awscrt")
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     pkgshare.install "awscliexamples"
 

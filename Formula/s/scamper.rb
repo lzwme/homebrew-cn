@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20240503.tar.gz"
-  sha256 "e6f42a7882689d321103225a0f60d079982af42cf1a66859a3ce91e63853cb09"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20240716.tar.gz"
+  sha256 "16dcb59cffeef7b5a6f71b7accaf420add464d190d86b36414507f9ecf4f9b20"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Scamper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6ac323639d5108ef258d74f26088e9ec8c9ff7353b1da45be34170329bbd6214"
-    sha256 cellar: :any,                 arm64_ventura:  "3c5c5fe97e34db51e21e9f1a8d53e3080159bf1d2c243fb9972fe6ca3eac3218"
-    sha256 cellar: :any,                 arm64_monterey: "618150d16b4b6d982ed27d54299340f061a4fc258795ca6443e2929bf0cbe628"
-    sha256 cellar: :any,                 sonoma:         "0b3cb7eb170e13432ab45dc664e200f3c9036d72e416d1098e06d363047cf603"
-    sha256 cellar: :any,                 ventura:        "fe85d7fb87888b39577b83fdfd351e3419b995c0cd0eecc8c1da76e7a5d0826a"
-    sha256 cellar: :any,                 monterey:       "30fbfcd6f662fc8af7f4eed5063be81b5fb716a40bcb635c09fcaeab5fb5b013"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3123731dba0751407f46619e3f81dfb5f33da24b7d536a7441debb7ce11aea19"
+    sha256 cellar: :any,                 arm64_sonoma:   "88b944cf50fada2795bb2213b83ddf155a2e69791b92adf075a3662751ed95bf"
+    sha256 cellar: :any,                 arm64_ventura:  "d6e9d58b0b84e53e31fd9020ef83dd0068b5fc549dd851f0c6cf24996a977ef1"
+    sha256 cellar: :any,                 arm64_monterey: "ff10edc948dfcae285471cebbc1af0791ddf59833efd4f5a8b2346978f171765"
+    sha256 cellar: :any,                 sonoma:         "741c3c91882765aaba598a737fa41c1cca81c256279d06ed7fa0f09e69e89e48"
+    sha256 cellar: :any,                 ventura:        "e725ecc52182a7a849eb191d36f0f9d241509930b493c1698ae969ee48d58ec2"
+    sha256 cellar: :any,                 monterey:       "b9728bd9a3ad487f41bdac88a5fb46996ad8af18f61ccb7e38aa6e0aa951f63f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fb2b6a96a020d29ad7fe22ad68da3ac9b435b86cf118e7db9276c5115f2f440"
   end
 
   depends_on "pkg-config" => :build

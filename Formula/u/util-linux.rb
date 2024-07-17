@@ -24,19 +24,18 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "dc18e89c3ac8ebea09caac2f1a3bc0f6e3416da1a3a747f310054dddc702924e"
-    sha256 arm64_ventura:  "5c4f9d4fd727f05219af9a9121958ea7a5c108d9f9706be4e03ddd62d5ec7665"
-    sha256 arm64_monterey: "fa0d6e71473544c03133c8b465433f16cca2aeddf83e51207c709d862b49c3eb"
-    sha256 sonoma:         "83c2c08d2c66a378b31f6edd91da6669a48631f4b2d8d24641fb88dcef6e5b05"
-    sha256 ventura:        "c193f0ccd7a9dd4b1ec81b41544bc963f50258a8713ff3112bb30e98b0385541"
-    sha256 monterey:       "0d0dc0fd8860b3a95a6248a60782f0e4770989ca81f5e8e02d8e3622596776d3"
-    sha256 x86_64_linux:   "2ab17c3336042dc8e51d1564ffec4320f7b29e2e7be561970e434d82fe8bf075"
+    rebuild 1
+    sha256 arm64_sonoma:   "ae2f7c6c2a844f8cbd3522f85e51cb929d03a8c9eed9a66d14a81b2632f9dcb4"
+    sha256 arm64_ventura:  "b933894463178a94495ced95268b2d66ccdc0c9e2e408b7fdc4b5a36016f228a"
+    sha256 arm64_monterey: "4b0c25db0dcd8f13e1d881b7ecf5eb80ebd53453b56fd0c096a2745b97c90d42"
+    sha256 sonoma:         "ad20c2beac16f7d241569f93d0edd5b19f0bb2fafd62c227747ea20d9f615892"
+    sha256 ventura:        "0b62fc43806131f0b9f96916b0887ad85ae47db2418386721fc3da6d3f49dec7"
+    sha256 monterey:       "1fed3dce8f5487a95fab00de380f3ff3320a43b94ad9949a102466bb6fbc3bbd"
+    sha256 x86_64_linux:   "773c91eea7c86a3a5a18ae1b43a43c9346b190ccf7640bb811e4cadb77a42874"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "pkg-config" => :build
 
   uses_from_macos "libxcrypt"

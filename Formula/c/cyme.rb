@@ -1,19 +1,19 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
   homepage "https:github.comtuna-f1shcyme"
-  url "https:github.comtuna-f1shcymearchiverefstagsv1.8.0.tar.gz"
-  sha256 "e0da391876423afc6dd318f85d7a371924773c07fd412daad925c2e05512c69b"
+  url "https:github.comtuna-f1shcymearchiverefstagsv1.8.1.tar.gz"
+  sha256 "3db71b9c75b87bec10283d97f298e930ec258abe1d669de5a2f99c390f20c73f"
   license "GPL-3.0-or-later"
   head "https:github.comtuna-f1shcyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bebcb18b356e3dc757b36c9eeb10a490032a79fe37b1ec93dbe1ab9835b90929"
-    sha256 cellar: :any,                 arm64_ventura:  "9ecab833277b536f6ea97571ddfda7c29b7d6976edd3a353eed11f44c7ea4f71"
-    sha256 cellar: :any,                 arm64_monterey: "69e08783c9971f23e35d0262fafcd6cb4fa08d92c58c682e511ea9164458c935"
-    sha256 cellar: :any,                 sonoma:         "150518b72067211d80dde72ace954f84ab3335f26f1f4f41ac5f19f7b15c72d6"
-    sha256 cellar: :any,                 ventura:        "6c9861f87e8e3b639f21da72250cf3df6f74a9d6e9d3392c4768c3ff4cf1a7d2"
-    sha256 cellar: :any,                 monterey:       "4f029d6981dc78cd6bceb1593e35443caa76bbac49cebe2c6c1b3e2ef9a10c0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0622efb4b67dd74dfa436b7fdb45976a608aaf87a305636415da680bf96b19d5"
+    sha256 cellar: :any,                 arm64_sonoma:   "629dcab85400cb46089b4bcb0204fe7beb7eb613fcf3e5277f5dad5515eba65d"
+    sha256 cellar: :any,                 arm64_ventura:  "073f85d79fc2e7f6de59d17cc4f536444eba9c72f91583351da9c7d3b778e9e8"
+    sha256 cellar: :any,                 arm64_monterey: "4df5a42e4254338f2e86e0efb12982729e973717df78f409d2b1f430ab2ff193"
+    sha256 cellar: :any,                 sonoma:         "aa6eac1ee2bdc28759945a8a0eaf5da71634513998c6a6c7145cc20726c9a205"
+    sha256 cellar: :any,                 ventura:        "caab5b29000428fcb1b09a1069702bf025494b5840910953257958ddef80b3ee"
+    sha256 cellar: :any,                 monterey:       "915631f372f85aad0568a622f34285ad859ae2d31ef155599da9a2c6c596c921"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f812e06dc0cc5df99ac7cdb44470827b10da88f73530f7682380e4259d83bd93"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Pod2man < Formula
   desc "Perl documentation generator"
   homepage "https://www.eyrie.org/~eagle/software/podlators/"
-  url "https://archives.eyrie.org/software/perl/podlators-5.01.tar.xz"
-  sha256 "76260ab7e2b343b38351dff42f576f9cd61166d1ff5cc8e15c0f79f28d518e77"
+  url "https://archives.eyrie.org/software/perl/podlators-v6.0.2.tar.xz"
+  sha256 "22f5941c848756c05396356437dc799b32703f4fc282f0f281b9c83696500183"
 
   livecheck do
     url "https://archives.eyrie.org/software/perl/"
@@ -10,22 +10,20 @@ class Pod2man < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68233590467cb5cb8e61d34d3a645d2078d0084f380c8aab92f40c61bf86e59c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fa74a3c4174f393da58ddf7d466629f1ebcb10c5b3f3ae8e50c676ffcc02e2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fa74a3c4174f393da58ddf7d466629f1ebcb10c5b3f3ae8e50c676ffcc02e2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d769fcfbea533598b2366b7c608e764f911034fc89237cd2c8d0656474e945d0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "672dc6a92f4c386f245f7a64a12f39ced171d23c90842b8657b4b22226ad5ebb"
-    sha256 cellar: :any_skip_relocation, ventura:        "efda90db8dd0b7a04fa853e7aed0045049c408eb3bf798d0248b63cee60851e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "efda90db8dd0b7a04fa853e7aed0045049c408eb3bf798d0248b63cee60851e6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b3709c2f1a523bfdc7666d7254062b6fe1a274b0bc1f1f33c07f0ca7a2b757f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8ff87ced43f638d9aab682367e0654a6f12ce4653b82647c17a38b0f9b44aff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b40bf5470087e943cc5a965f9788962d4dd44c831d08e95105a50bc5c325123c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0a9a958c8614e6452f8e1d893f0a277011ca50b8160929b307139c911511b14"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0a9a958c8614e6452f8e1d893f0a277011ca50b8160929b307139c911511b14"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c18bed6c302dfaa0c4373d546f99d0b1dbee75bc618fa2f914b54379e9a57bbd"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8b7d64bb1ed99ec0d43c980a0b559e40a0c23dec4651fd2098b8728f33e3c71"
+    sha256 cellar: :any_skip_relocation, monterey:       "c8b7d64bb1ed99ec0d43c980a0b559e40a0c23dec4651fd2098b8728f33e3c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "269cdc0db938df147bab44127e86b05cf46074741bd9d8644b08f88a00e62f97"
   end
 
   keg_only "perl ships with pod2man"
 
   resource "Pod::Simple" do
-    url "https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.43.tar.gz"
-    sha256 "65abe3f5363fa4cdc108f5ad9ce5ce91e7a39186a1b297bb7a06fa1b0f45d377"
+    url "https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.45.tar.gz"
+    sha256 "8483bb95cd3e4307d66def092a3779f843af772482bfdc024e3e00d0c4db0cfa"
   end
 
   def install
@@ -47,6 +45,6 @@ class Pod2man < Formula
     (testpath/"test.pod").write "=head2 Test heading\n"
     manpage = shell_output("#{bin}/pod2man #{testpath}/test.pod")
     assert_match '.SS "Test heading"', manpage
-    assert_match "Pod::Man #{version}", manpage
+    assert_match "Pod::Man v#{version}", manpage
   end
 end

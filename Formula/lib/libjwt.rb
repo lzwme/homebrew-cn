@@ -1,8 +1,8 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
   homepage "https:github.combenmcollinslibjwt"
-  url "https:github.combenmcollinslibjwtreleasesdownloadv1.17.1libjwt-1.17.1.tar.bz2"
-  sha256 "1db8ffcd2fc5e0ee750aee8d90aaecf467282a4836c88524f04bb068b1a06d72"
+  url "https:github.combenmcollinslibjwtreleasesdownloadv1.17.2libjwt-1.17.2.tar.bz2"
+  sha256 "f11c4544f61a31f105720b8329409fea009d6f9ef41c9361f98c2de48152eeae"
   license "MPL-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d401018405929b179299529c9ff100ddaf58ab2a8bceb47ca7d85057c3e0ab01"
-    sha256 cellar: :any,                 arm64_ventura:  "6cc8b31e9e5df4d95ded09ef7b627e6b1a5b38eda0cef904b569065786399a3e"
-    sha256 cellar: :any,                 arm64_monterey: "eeda8958df30e73b8265b31e2805090d626991d52e2b902a0dd2e5d66f907f79"
-    sha256 cellar: :any,                 sonoma:         "970142499d0e227ea6511192d66ca058e32f7a656e479ee0391b1b798bc4e5f0"
-    sha256 cellar: :any,                 ventura:        "0ff812e7b77b0e9062002888ac5f995f7b1531eaa1086fc7f60e458ce2fb8ff2"
-    sha256 cellar: :any,                 monterey:       "4b9afa8a495a47d52610af8b90f07d2c779118dfab47a58b9447acae2b553210"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e10b6e84062a8c02d463a84dadd4c1836005357a26b99b997e73d42b76580d6"
+    sha256 cellar: :any,                 arm64_sonoma:   "e5e42db60707d394e7b75f12fbd4e893af044e6b8f95f0965d2360be945f54b8"
+    sha256 cellar: :any,                 arm64_ventura:  "7155a77451afa2502504166ee1f993d2940491307655baae26574a1e11ad79d4"
+    sha256 cellar: :any,                 arm64_monterey: "d146d780d78e589e25e65b60ad3b7d8690919fe5431eba07ef993f2355d9cd87"
+    sha256 cellar: :any,                 sonoma:         "88f76ba6d0b19bf5ce7b55606e091bfc3961dc86c63a5316dfd8863bbbc8962f"
+    sha256 cellar: :any,                 ventura:        "f2d43fd72ea4c4ddadc55897c08e42d5956e438dae7c4b7761938c86b889d0e5"
+    sha256 cellar: :any,                 monterey:       "27b7c6378fadd9a458e54ed4588b14f1f1fd6c9c596302a2853116d4f2249249"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91c1b7a6dcfb8a65387ffef2f66c3902510b6e78c00cfa46077b853eb605022e"
   end
 
   head do

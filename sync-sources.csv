@@ -6169,6 +6169,7 @@ Homebrew-homebrew-core/Formula/t/tcptunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/td.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tdlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tealdeer.rb, Homebrew/homebrew-core, 1
@@ -11820,7 +11821,7 @@ Homebrew-homebrew-cask/Casks/m/microsoft-outlook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-powerpoint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-remote-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-teams.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/microsoft-teams@classic.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/microsoft-teams@classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-word.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/middle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/middleclick.rb, Homebrew/homebrew-cask, 1
@@ -13225,6 +13226,7 @@ Homebrew-homebrew-cask/Casks/s/springtoolsuite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spundle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spybuster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spyder.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sq-mixpad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sql-tabs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sqlcl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlectron.rb, Homebrew/homebrew-cask, 1
@@ -13631,6 +13633,7 @@ Homebrew-homebrew-cask/Casks/t/tvrenamer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/twelite-stage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twilioquest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twine.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/twingate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twitch-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/twobird.rb, Homebrew/homebrew-cask, 0

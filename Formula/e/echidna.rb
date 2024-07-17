@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https:github.comcryticechidna"
-  url "https:github.comcryticechidnaarchiverefstagsv2.2.3.tar.gz"
-  sha256 "5d52aa22b360cc27155f195480a39d4e6cdfa8c88b39b8f25a64ef5799cb2f8e"
+  url "https:github.comcryticechidnaarchiverefstagsv2.2.4.tar.gz"
+  sha256 "5dd35a3f7e95bdc9f31be93f87cfa8e0e76f974fbe9d0bf4ce6c5829dce09c62"
   license "AGPL-3.0-only"
   head "https:github.comcryticechidna.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9976d9f5715ebc873d7056216fbdbcf8579c447c15998f02a89b4977f719923f"
-    sha256 cellar: :any,                 arm64_ventura:  "04d426f750924952dd96d046f07b24845cc80d5cd83d6b0933480ce80ee7da0a"
-    sha256 cellar: :any,                 arm64_monterey: "604023890a2aabe52303d2e20f49a9e2a1ab613ef817e371a14162115514aaa7"
-    sha256 cellar: :any,                 sonoma:         "698790f4ba7684285027ce801333ed8e3c1f4e9adf03132aaffd147559737c1b"
-    sha256 cellar: :any,                 ventura:        "56037ead666297d91874edf29a0d4907b61ee2e0e5731efb5dcae0b9550fa057"
-    sha256 cellar: :any,                 monterey:       "b7a318183f1026ca3f07f0f32fd942d8dc18e55498ac31dd9137f561e24d9738"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5aeac3e6360807349fb3ab4fc22926ee3035ada95a9e12c2e0e33870d11553e"
+    sha256 cellar: :any,                 arm64_sonoma:   "3d08b9f25134ba9165eaee16c37bbbd2dfe80b06bf55eecb7db4820e6376a1a3"
+    sha256 cellar: :any,                 arm64_ventura:  "db5c111bc49deb84dd2be5b60c24abeb7aeff991ceb7c723dad3120aa1d37776"
+    sha256 cellar: :any,                 arm64_monterey: "aa493c077e188547d86213d4a2d90a88df649f6798f87491233d9e5db16ae436"
+    sha256 cellar: :any,                 sonoma:         "ba1a80cd7fa0139d14a9fd1110d7f2445bc7caef411ad503591e2460e189a0e3"
+    sha256 cellar: :any,                 ventura:        "9f5f898378f89f2592c16b7ca974a63d55c4d6913bb942c8b66d15932d54a39b"
+    sha256 cellar: :any,                 monterey:       "2172df63a57d8fc0bd639da0d711912cc939afd4ff8222587f5375e0cbdc3860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "686eedecd01d69970633fd6fd023bb9fb7fce1791a60b876f5017394a74312e4"
   end
 
   depends_on "ghc@9.4" => :build

@@ -1,22 +1,18 @@
 class Gomodifytags < Formula
   desc "Go tool to modify struct field tags"
   homepage "https:github.comfatihgomodifytags"
-  url "https:github.comfatihgomodifytagsarchiverefstagsv1.16.0.tar.gz"
-  sha256 "276526aede6e42c3d540cdaa5fe67cbd276837acfea5d9f5ca19c3a8d16a82ed"
+  url "https:github.comfatihgomodifytagsarchiverefstagsv1.17.0.tar.gz"
+  sha256 "a490786d80c962dc946b8f9804ffec596c1087dbf91b122b9b5903c03b6da6b9"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08722c291c5aece07a3071899a43e0a5ec9c4e9d178ffc1657fc8e49643c5c14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9493515299a08d2d57bad868109ed74e987149b170e6670b02b3489f4c5b6ce0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f99010f77d3726d789cd1d870442fb867595fa62b5f1addc44f27840581c18a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dbd3a4c7a66090a7c17afd699b0b35d70663b5e9305085a573a3493a5cc4ebe2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ef89a2562b7411887574d53d8e4d06bcc89e9ae07d4ae99b302ecdb11856e4e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "73d9f9b00d7e4be16971263be7141170d4d3fdb7620d7275549f50647d1b0e2d"
-    sha256 cellar: :any_skip_relocation, monterey:       "762d9e674caf68cff1c1ed195064ddb01b5705e45b079832cb2aa414ee38086a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3c815e6288c0c3474800937bbb15fa2569e34a7715121b94c713b8575c51203"
-    sha256 cellar: :any_skip_relocation, catalina:       "c3c815e6288c0c3474800937bbb15fa2569e34a7715121b94c713b8575c51203"
-    sha256 cellar: :any_skip_relocation, mojave:         "c3c815e6288c0c3474800937bbb15fa2569e34a7715121b94c713b8575c51203"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0cdedf095c819f8b5293dbda500958d18ea93339d2cf4340973e3b3141d9317"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b8b61d88b7f280dce019aca484de7be64234a31ba3b20192e35f3c58dc5e0ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b8b61d88b7f280dce019aca484de7be64234a31ba3b20192e35f3c58dc5e0ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b8b61d88b7f280dce019aca484de7be64234a31ba3b20192e35f3c58dc5e0ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
+    sha256 cellar: :any_skip_relocation, ventura:        "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
+    sha256 cellar: :any_skip_relocation, monterey:       "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0150f69a9b1e40bc73e41616c4b7cc0d4e515e8eba31756302899a5dd64203cd"
   end
 
   depends_on "go" => :build

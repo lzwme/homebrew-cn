@@ -6,17 +6,17 @@ class Liquidctl < Formula
   url "https:files.pythonhosted.orgpackages99d915bfe9dc11f2910b7483693b0bab16a382e5ad16cee657ff8133b7cae56dliquidctl-1.13.0.tar.gz"
   sha256 "ee17241689c0bf3de43cf4d97822e344f5b57513d16dd160e37fa0e389a158c7"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comliquidctlliquidctl.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "7c54bc0b938b78cef979fc14034c240929b954838e69bbc291f71c8e4cd8e54b"
-    sha256 cellar: :any,                 arm64_ventura:  "332a8e1cc4a9518c7c5195ffb5c3c8705f128091b7ad79d2f97f38195acfcf45"
-    sha256 cellar: :any,                 arm64_monterey: "85b3ce0085769094dc23c5f19e97f704ad3d4ac0cd6a01ebd679455bdb012fcd"
-    sha256 cellar: :any,                 sonoma:         "4d4edbbc35b6940d190a40a4f74106714b0196fc76629fa25cd04ac6d9561559"
-    sha256 cellar: :any,                 ventura:        "a606ae831d1bca34872b01bde1ca94c4e00fec533f3ba3914852621ad621e17a"
-    sha256 cellar: :any,                 monterey:       "98e5669050a2f30de6b80954dec7a4991ed313f5cc0662733940a2007439ae39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bb5a06123244c9a2ce837725ee1a1d62f5b5e1859a91ffd0f7c65f14f3041c3"
+    sha256 cellar: :any,                 arm64_sonoma:   "dddbd4c30271c6717ab045cf0eba23390cbc3a0ebfab7e1b5d8ffece9f006b98"
+    sha256 cellar: :any,                 arm64_ventura:  "1308ad56bf8a75dff8e4b5e783ce784855af973f885f3d41633be40206415d3a"
+    sha256 cellar: :any,                 arm64_monterey: "4f03cef66d179bef3468d8a7d0e8bb1c255756187d500dc7db41812eca6c2908"
+    sha256 cellar: :any,                 sonoma:         "b38fe5a79d3164a75712f641f856bba28f9e9b3e90eaab05a58dc9161d1b3c58"
+    sha256 cellar: :any,                 ventura:        "f6a06c19cc0de7bffad467829f92a6f691568b57812a0e47c8d7eade663ed3fe"
+    sha256 cellar: :any,                 monterey:       "d013462cb9d268a02ac316b471b047f7856d87851129fb9e02ce42f026f45c46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9f93a1689b0f6f32187d300046a9fcb4e16d105a591def6f33d7f63731478ae"
   end
 
   depends_on "hidapi"
@@ -60,8 +60,8 @@ class Liquidctl < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   def install

@@ -8,16 +8,16 @@ class Mapproxy < Formula
   url "https:files.pythonhosted.orgpackagesba096ca59563371cf5a0839a1bca32f277f00dc737a213b1bfa72e5ec0dfeca6MapProxy-2.0.2.tar.gz"
   sha256 "1f03b982faec5bda40af3e112edc4d7c29a216a6bce40022eb004923e17d184f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "2c40f3a30623559efe0166eaeb383d7a4d1406158fc2cf03fc1986f2733729cc"
-    sha256 cellar: :any,                 arm64_ventura:  "0565fb1caab873569f1bb1fbc2a5eb50936d8cef1047f71de4eb0c692d33c058"
-    sha256 cellar: :any,                 arm64_monterey: "150acd2a51bc6573364d0f144a34dfd16d3cb81cf584f8d4dd01ef7b59f63ac9"
-    sha256 cellar: :any,                 sonoma:         "cd2f280e07279411860935121fde03a128956595c7a8336a8c1a3e6fc5893dc4"
-    sha256 cellar: :any,                 ventura:        "c10f86f71cf3ba06d2fda158946eb2e5a9ece460c3a2599dff71f6fae6ab5cf1"
-    sha256 cellar: :any,                 monterey:       "072416e846102529fa74f55f81825cccc3ba3c378db4b3a8f3b218eb3ef4f8d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc6a1b31479e2bed0bd011062b248576e487ab8fafee513596795875e7ec4312"
+    sha256 cellar: :any,                 arm64_sonoma:   "daaa0d4c12d3be15f3ac5595d1fd3274758e80852a2d0b13fdb7f29a1ab965ae"
+    sha256 cellar: :any,                 arm64_ventura:  "dc4f06880ab4c0353bd04ccb5fabf874701f7543672687f7b7153ef86be962d3"
+    sha256 cellar: :any,                 arm64_monterey: "2373b3fc7c44d74b575c11cb2d74148b6c7aadbcb14fee4e5c3363ddbd6df322"
+    sha256 cellar: :any,                 sonoma:         "358a8838bef33e0aa34f485af83444537e741cd49336e66418bd55476d752f74"
+    sha256 cellar: :any,                 ventura:        "7f1dc483b3c27850eb9a57ac762a96bb7ad3ea2d35924375c9d25bcbb07bc9f2"
+    sha256 cellar: :any,                 monterey:       "98cae1a577664c5161ea66e36ced7135740e22578d4c6d24ee7e696ff28b0752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2dee44fcd932d61013606e970357aed7cb8767bbe7498dd91787fc6da8e55ee"
   end
 
   depends_on "certifi"
@@ -37,8 +37,8 @@ class Mapproxy < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   def install

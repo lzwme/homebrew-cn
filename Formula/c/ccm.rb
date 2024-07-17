@@ -6,26 +6,25 @@ class Ccm < Formula
   url "https:files.pythonhosted.orgpackagesf112091e82033d53b3802e1ead6b16045c5ecfb03374f8586a4ae4673a914c1accm-3.1.5.tar.gz"
   sha256 "f07cc0a37116d2ce1b96c0d467f792668aa25835c73beb61639fa50a1954326c"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https:github.comriptanoccm.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "238731a2b61638873f9a94df258f553eeb4d062a9871ae2976cee5efb23c73e5"
-    sha256 cellar: :any,                 arm64_ventura:  "a5ec6e8ba4a31ce97bf0c76bab35925a9ed7e70fb316e4b94d620fe42d3a0785"
-    sha256 cellar: :any,                 arm64_monterey: "a87e6a11875898d4c6852d80e0dc21008dcf4f07d8d734cabc4836bcefa116e0"
-    sha256 cellar: :any,                 sonoma:         "ee37033f3eedc5ea6090a4b7b945f1409d1d57e18e7ddcb4184892221612ebc8"
-    sha256 cellar: :any,                 ventura:        "b28083c2a409fc2c89dd87541d249143b3b2da4297b709dc2234a530be8237fd"
-    sha256 cellar: :any,                 monterey:       "29a980cae479521c3bc2efa1599b3d6ba8871624ea1ae15b1a97202e08f29b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85cfbe69582690550af35accb458500bde601a9f35d37fb7d3a7705b11ee1e1b"
+    sha256 cellar: :any,                 arm64_sonoma:   "110d0383fa279c58e5f9e39fa29744036500a00fdb35e748f9097c3b018651ae"
+    sha256 cellar: :any,                 arm64_ventura:  "6246dd963507a6c8f4608d9b480f9c7aa5cca92bd05d552276f3fba6dbaa967d"
+    sha256 cellar: :any,                 arm64_monterey: "792c4210dd416f413530b7c00fd4ef65593f711ff3bea8bda2f9c91fe1fa7b2a"
+    sha256 cellar: :any,                 sonoma:         "cb9d360a538366c88c86187ed553879039b41b109b3d0beae89d8d50fc8795da"
+    sha256 cellar: :any,                 ventura:        "61cc3aa4d48862826b32c3ef498b03013a41e01f1326e9f4352d5fea4aa0ab90"
+    sha256 cellar: :any,                 monterey:       "05db78bfe126a54fd81a08dd54ce4bbfd0576b73be3517f42484dbc1ccaab633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2418b3718902e783e4dd3af477e4174e52f0d696d38824530df773a26ae76d2a"
   end
 
   depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "cassandra-driver" do
-    url "https:files.pythonhosted.orgpackages59283e0ea7003910166525304b65a8ffa190666b483c2cc9c38ed5746a25d0fdcassandra-driver-3.29.0.tar.gz"
-    sha256 "0a34f9534356e5fd33af8cdda109d5e945b6335cb50399b267c46368c4e93c98"
+    url "https:files.pythonhosted.orgpackages0746cdf1e69263d8c2fe7a05a8f16ae67910b62cc40ba313ffbae3bc5025519acassandra-driver-3.29.1.tar.gz"
+    sha256 "38e9c2a2f2a9664bb03f1f852d5fccaeff2163942b5db35dffcf8bf32a51cfe5"
   end
 
   resource "click" do
@@ -44,8 +43,8 @@ class Ccm < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc93d74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fadsetuptools-69.1.0.tar.gz"
-    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   resource "six" do

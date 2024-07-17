@@ -1,9 +1,9 @@
 cask "google-cloud-sdk" do
   arch arm: "arm", intel: "x86_64"
 
-  version "481.0.0"
-  sha256 arm:   "4a140315b3dd634f7ac066317461c1dc88ec38ae3e3d2fa3e1c21eefa7b2fefc",
-         intel: "29064fe40199a9c7322dbb36e8876e7c6433ce16d55559ffaef2316b03028fd9"
+  version "484.0.0"
+  sha256 arm:   "cc3b85e79ad0ef76becf85171c36367292487ca33fe99d41fc3d87bf10cd9b21",
+         intel: "fbca2ebc197b54f6ff07d0e410f5d6f5ff3619f866506251bac23b7136d57ea4"
 
   url "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-#{version}-darwin-#{arch}.tar.gz"
   name "Google Cloud SDK"
@@ -12,7 +12,7 @@ cask "google-cloud-sdk" do
 
   livecheck do
     url "https://cloud.google.com/sdk/docs/install-sdk"
-    regex(/google[._-]cloud[._-]cli[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(/latest\s*gcloud\s*CLI\s*version\s*\(v?(\d+(?:\.\d+)+)\)/i)
   end
 
   auto_updates true

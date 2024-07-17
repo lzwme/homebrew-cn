@@ -19,6 +19,8 @@ class Apidoc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "814be573ff5193c0e23d6ffffe1fee94fd5d9ed5efbc4684bf3e39ac0325d34f"
   end
 
+  deprecate! date: "2024-07-16", because: :repo_archived
+
   depends_on "node"
 
   def install

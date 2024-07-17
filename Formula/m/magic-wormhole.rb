@@ -6,17 +6,17 @@ class MagicWormhole < Formula
   url "https:files.pythonhosted.orgpackages89998c8709d8c3e1058ba8b6d9f331529a0e91b484ae0585dd24cd77cb45ad4fmagic-wormhole-0.14.0.tar.gz"
   sha256 "006d239f88bff7c37bc2eff60a004e263faf9258f7279192d06ba0c9ced6b080"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d5a8cd0d37dd4d020c134d95d2b868bc9c3d8cfeff41ab0aef101c8de5f02759"
-    sha256 cellar: :any,                 arm64_ventura:  "cc11e7e848c93abf35e623b532600b4cd9078cd225d0055d2c8a01803af9289f"
-    sha256 cellar: :any,                 arm64_monterey: "b0a99d45d39c3aac2a305bef26fe6cc8b15325fbc53b8b0bcc9aad6019160c83"
-    sha256 cellar: :any,                 sonoma:         "4da779bdd4d1c78b6f7cedc0a757e48aac18a09e5290f50d269e076ce9ee2495"
-    sha256 cellar: :any,                 ventura:        "3d1d4398132b78ccb2970a0b3b00169452c51025e5878397ecc3ce13735d24a3"
-    sha256 cellar: :any,                 monterey:       "ca03c086df0360072b55798df4c7ee3d4febec00447983484bb32ac0aa9431f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d41b0bd1afe7a1fc924b5434635c735e4237a4d23217c5429d6428b876b6eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "1a1776c8668b34079ec996a11ae65d5bc2040edf31f2faf08b0da879f11822b4"
+    sha256 cellar: :any,                 arm64_ventura:  "02ba23def84e1d8ff1dc32cabd17e4ecfae36c8c676d0799f61d734c3ddf070d"
+    sha256 cellar: :any,                 arm64_monterey: "0e0c545d799c230536b4fc5b6575b6f98eeb004ab2f877ba9f64390e31839b8b"
+    sha256 cellar: :any,                 sonoma:         "9442c6479261d57400fe7e7279284a25817e647d4a1d1e632767bb818f9114ce"
+    sha256 cellar: :any,                 ventura:        "2ab9c37965a6bc466df14a5398b25d909fee72a891f1ea66b90d12d3d7db7c26"
+    sha256 cellar: :any,                 monterey:       "352374fc20b1d4e52dd71bbe673cad29287e83f4baa027a42dfedae1aca46d35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "100cbcac6d7f6d28f0f3ae58c6df8437e2c3fa49618c8fa58f16ada4f6d3188d"
   end
 
   depends_on "cryptography"
@@ -56,8 +56,8 @@ class MagicWormhole < Formula
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages76217a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75chumanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https:files.pythonhosted.orgpackages5db1c8f05d5dc8f64030d8cc71e91307c1daadf6ec0d70bcd6eabdfd9b6f153fhumanize-4.10.0.tar.gz"
+    sha256 "06b6eb0293e4b85e8d385397c5868926820db32b9b654b932f57fa41c23c9978"
   end
 
   resource "hyperlink" do
@@ -106,8 +106,8 @@ class MagicWormhole < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
   end
 
   resource "six" do
@@ -148,8 +148,8 @@ class MagicWormhole < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "zipstream-ng" do
@@ -158,8 +158,8 @@ class MagicWormhole < Formula
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackages2abda30bf6df24480017171da4f52ee527a72c7a6450c86355011e0156e71723zope.interface-6.3.tar.gz"
-    sha256 "f83d6b4b22262d9a826c3bd4b2fbfafe1d0000f085ef8e44cd1328eea274ae6a"
+    url "https:files.pythonhosted.orgpackages09067c1202972bc99dd1b731c3c01157855cbc8d0944894c3b234473b1f4119czope.interface-6.4.post2.tar.gz"
+    sha256 "1c207e6f6dfd5749a26f5a5fd966602d6b824ec00d2df84a7e9a924e8933654e"
   end
 
   def install

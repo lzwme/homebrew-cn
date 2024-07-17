@@ -7,6 +7,11 @@ class Orgalorg < Formula
   license "MIT"
   head "https:github.comreconquestorgalorg.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e46be33a85e16f4eea618ea1070c991d08b3ecce91008808ecf62c83cf241ed0"

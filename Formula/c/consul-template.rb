@@ -1,19 +1,19 @@
 class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
   homepage "https:github.comhashicorpconsul-template"
-  url "https:github.comhashicorpconsul-templatearchiverefstagsv0.39.0.tar.gz"
-  sha256 "46947663a3e884ee2c8907d6b2f46ee54288f18099842bdb02bcfe3cfa553398"
+  url "https:github.comhashicorpconsul-templatearchiverefstagsv0.39.1.tar.gz"
+  sha256 "864a81cb114c3aa079c185226acf869cbccef03f1ae525d88a6d929d2b7a64f4"
   license "MPL-2.0"
   head "https:github.comhashicorpconsul-template.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "780ce1c2eb1c7707c4975595fc1ad54815991fbf8c1c99f36362fa5522c19d9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9279a6f5f535de3fea366a87d03dd32761e88469685beac29654e17767949849"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d747dca8fcb4201ad82ed168a58d0cfc35417f2733b278f91efb63ea7c6e037"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e5e80f64cfcc7334cd850b1462feff4a147f3804b23c934d45e527f4b362290"
-    sha256 cellar: :any_skip_relocation, ventura:        "65fceb18010734283924256c503723cfb95dde97af61d3124a37eb25f47080fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b689c069dde04af66f106ff919bcf0c2fd5a9931c625db15213ae868e6e8c56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76ae0010dcd1622e4430a2e85a19970ccde716490f83d738f909fdcfd592a861"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e94ae8bac9e71da4f91b25bfb301728c6a0255a92cd43838e4179857027d22e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89ad41bf65fc9f430b17ed8a789a36a28c870977936cc0ba9d71c68069b27baa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e167655f9b1be88a2c2a254855fe2888b538a3f048ea94280707e17709b6cb46"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ddaac2a8089187a7a3b968c4eeb6f40a2882ffdcf7a3d09d539432dfb9948cd"
+    sha256 cellar: :any_skip_relocation, ventura:        "e89f2997a3595d91896706d6e09202028f93ae8a126b6630943317dc5eabba7c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a8a53aa07b37cbf6164d0e17c617b5ca0c60c3660c9c23b9eaad23a7c907c1bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43250e2791cddb58e5b9f8a7d640e2de2a393046a9453fb7968bb866703ad353"
   end
 
   depends_on "go" => :build
