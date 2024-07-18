@@ -4,18 +4,17 @@ class Libgit2Glib < Formula
   url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.2.0/libgit2-glib-v1.2.0.tar.bz2"
   sha256 "421ac5c99e02c5b6235842e60eb7f9fa8dc580d2500fb1eb521ced8a22de9f29"
   license "LGPL-2.1-only"
+  revision 1
   head "https://gitlab.gnome.org/GNOME/libgit2-glib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "bfcbc9f8a8bdd07cd9a5c62da9e50bc454d73269db42a7ba8f93c30eea2be410"
-    sha256 cellar: :any, arm64_ventura:  "1fe5fe74645a85743b063f8b3b87a3a95d1f08baaf939eea3a8399fb7d11f4d2"
-    sha256 cellar: :any, arm64_monterey: "0acba9ffc1f7f5a9b78d3dba685564b9abb1f2ab7fafc33c952a0f38ed18c665"
-    sha256 cellar: :any, arm64_big_sur:  "d25c6019431293c7c4536c88c78dfddfa7d6daa58865a0d751d5e063cc3d3bfb"
-    sha256 cellar: :any, sonoma:         "6894a3e05597929f5e4c2fae9329fe217b5450d73d8f0399236d741e6d2d4cb8"
-    sha256 cellar: :any, ventura:        "7821187b992687679d7c7a0ff2d26a13c4cf9b0acebc8c64a80227e05f3a002f"
-    sha256 cellar: :any, monterey:       "9088ebccecd0b04312da6a6fc457600c085d7279f8c7e797eae315cc94c12110"
-    sha256 cellar: :any, big_sur:        "bafc615584caf3b11a104e4f2e83416b80ab442ec7ee82d0993cd3a4647c5232"
-    sha256               x86_64_linux:   "29a96ea2997da39fc923ee2c90b4f7cc604cd34e2e3a648ccf9c6e937f397177"
+    sha256 cellar: :any, arm64_sonoma:   "b95571e3e781efaa5f25a35570b70e7bd6cdcb1ddc259fbde15ea4ada4f4fdff"
+    sha256 cellar: :any, arm64_ventura:  "7daba9e7e88b07c51dda615784f2e2e1fa11afbb9056dae95ec499bd0d56f737"
+    sha256 cellar: :any, arm64_monterey: "362cfd852233d5a5947668911d2ac1520efed4775867c846679ef46ac91cb2c4"
+    sha256 cellar: :any, sonoma:         "0549acee239da6d75b165ab7ebb864e70d339e96f970aa226654f7291e96bd8b"
+    sha256 cellar: :any, ventura:        "844b931e1e3a82557e8fb8578b59e3a9e3c68420f942453a6499b650565ea6e8"
+    sha256 cellar: :any, monterey:       "4a10eec01bea9e0fe0689b0a68911a13b12bae857b20206968123600b8a65adc"
+    sha256               x86_64_linux:   "2b0f2753501ccd392198453629c4b290085e906728722af8f4e7522b114d7e32"
   end
 
   depends_on "gobject-introspection" => :build
@@ -24,7 +23,7 @@ class Libgit2Glib < Formula
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
   depends_on "glib"
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
 
   on_macos do
     depends_on "gettext"

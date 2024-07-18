@@ -4,21 +4,22 @@ class Convco < Formula
   url "https:github.comconvcoconvcoarchiverefstagsv0.5.1.tar.gz"
   sha256 "1d1d275253567069b49d66abe65c04ae1fd5a5d3b8c173f57d7e1f696794c311"
   license "MIT"
+  revision 1
   head "https:github.comconvcoconvco.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f05204711d1a1ddd333ada91f7a43eedefd8fc6ae126b5f3e0e8fdb0087df12a"
-    sha256 cellar: :any,                 arm64_ventura:  "8ce952b8bb74db3b6343485b08d42d68427f22e74288137f3015da6f6a4c9d37"
-    sha256 cellar: :any,                 arm64_monterey: "cd38aca0fafcfbe648affb30bbac8d7ad5d7755f531efac8ac0329d014f81817"
-    sha256 cellar: :any,                 sonoma:         "948e961998a7113217a7f529e71b82a39d1ad499619493e37c30a8439672ff53"
-    sha256 cellar: :any,                 ventura:        "c0afc6c9216829e69176910eb2774e3c95c72fe5840949989bfb927afcda3177"
-    sha256 cellar: :any,                 monterey:       "d0077e9ddef585429baea31535cbd28a9cf9ca585c6079d18ebd005da6b0e102"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca6ef0e53e7f5bcfb1365bfe8b11acc9e8d0e11b0c1c112e59a7cc1856daa40d"
+    sha256 cellar: :any,                 arm64_sonoma:   "61fb9360e5d3ec10142eb7142f77994cc15d2451f4beb7db671a69b281930d46"
+    sha256 cellar: :any,                 arm64_ventura:  "857d2354c07e7153b4be0241a2a1cf72e3601baa7bbebc49c3900805d0b024a8"
+    sha256 cellar: :any,                 arm64_monterey: "38405fbb5a10f4c6b0f36cb3905332440a2eb17f14ed721cb94e4fa9763326f8"
+    sha256 cellar: :any,                 sonoma:         "7789bf3b472a00b9f0867939eee940fd49684d1b96179f531749f645909f8812"
+    sha256 cellar: :any,                 ventura:        "396f514fa6feb31c81a11120a6a0413e92a4749252f4ed5b067077a8a33df17e"
+    sha256 cellar: :any,                 monterey:       "633f5ca9ad08fd017836f916969c921d153d0602c00d43ff9b0d7ca26dc98a10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8bd724cb142766e92819c19bb4aaf83dc4e9f4c303f54306de3cb257d9c5717"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
@@ -39,7 +40,7 @@ class Convco < Formula
     linkage_with_libgit2 = (bin"convco").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2@1.7"].opt_libshared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end

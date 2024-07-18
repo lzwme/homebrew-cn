@@ -4,21 +4,22 @@ class CargoGenerate < Formula
   url "https:github.comcargo-generatecargo-generatearchiverefstagsv0.21.1.tar.gz"
   sha256 "3159eb16de57e0b28af67fcda01bcd54eee81edfbfd882e557018e4bcf6f41b0"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https:github.comcargo-generatecargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "662fefeb07f8f1736539ed3d169afed488e0e73f884ce3842766d4a9f0970883"
-    sha256 cellar: :any,                 arm64_ventura:  "a1bb56e4b66027725544cace4cf19ce8905e2c5afae9afd4015f5c6d99c1585c"
-    sha256 cellar: :any,                 arm64_monterey: "2f68946c691b2d9eea90006dd5dc59978d75f97086a3ec3a3253c95ce385ef96"
-    sha256 cellar: :any,                 sonoma:         "61154a0cfe9d087e4cb80051da65ec908dff0783d48dba159b722fe8b2afc536"
-    sha256 cellar: :any,                 ventura:        "d8d5b0f86ee7fbc04ba52e7f94dbf606151147d21c325d10a40b67297958e0e9"
-    sha256 cellar: :any,                 monterey:       "bb1dab7e4944196149038c2d9bb17f8059c4539fc80306b9f33e4129c7a1ba4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d64c4935df4ffdd8dfff0a508c23835600d5a999844f2f7fc3af9ca267fb3c34"
+    sha256 cellar: :any,                 arm64_sonoma:   "270200246924bf03d6b65f045470cb02d350793f74af8840c910f03c60384648"
+    sha256 cellar: :any,                 arm64_ventura:  "240f31a914b5e34f5dfea0b2a41e65d5e75f72235eb2fe39a0c41a44d5dd6eb9"
+    sha256 cellar: :any,                 arm64_monterey: "2975d50089c42f93d395bcef7d87d3086aa9de43819fba4702a7438d7db4c5ee"
+    sha256 cellar: :any,                 sonoma:         "af39c2d6ab64b86a47719c8a33082d2fe8fd0ebd410da5638e77a8d4aeb7d0f0"
+    sha256 cellar: :any,                 ventura:        "bbe1c6f32cfd4a3cb227a18800362b0a988bd8fa2cabb674aeed7369d7dfefe8"
+    sha256 cellar: :any,                 monterey:       "a0132ed5b82c040c7ab5436ba03a856b3c856c9c87e1b2b7753f542cf36901ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e598308f4ba8a8b36741bc57989e663e2eb88b54c098c78e478a6776eceb138"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -49,7 +50,7 @@ class CargoGenerate < Formula
     assert_match "brewtest", (testpath"brewtestCargo.toml").read
 
     linked_libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
     ]

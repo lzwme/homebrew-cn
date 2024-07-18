@@ -6,7 +6,7 @@ cask "almighty" do
       verified: "almighty-app.s3.amazonaws.com"
   name "Almighty"
   desc "Settings and tweaks configurator"
-  homepage "https:onmyway133.comalmighty"
+  homepage "https:indiegoodies.comalmighty"
 
   livecheck do
     url "https:raw.githubusercontent.comonmyway133archivesmasterAlmightyCast.xml"
@@ -14,7 +14,7 @@ cask "almighty" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Almighty.app"
 

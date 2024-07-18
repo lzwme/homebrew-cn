@@ -1,8 +1,8 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https:xtls.github.io"
-  url "https:github.comXTLSXray-corearchiverefstagsv1.8.18.tar.gz"
-  sha256 "088248fe9d06c0a8964b8815edc6099cb50a7fe2b36633681829097903470ac1"
+  url "https:github.comXTLSXray-corearchiverefstagsv1.8.19.tar.gz"
+  sha256 "e0a8032519b76c5d04d9f7ebbeefdbb81f30488f84d534a329b109ea2dd96709"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https:github.comXTLSXray-core.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e80539942154ea8177c36ae72355f611960ffad86057f455ae6b2ab9cfaa485"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "559f763913a04b4f77c077218649a15f57d761ab12ca12df66162af0493f529c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acabfbdd671853918dda0a7cae02900a58fa5155141613d8f4a32123b71a381f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a591058bd699334469074308e160405bdaae38099a9070ce914839641813a39a"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5efc3d308b30d91856692ee8a4eb8e267dabc7d5ad204afea77029eb56dfdf2"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f9a47f7aac5a6ffbdde7f41bd18682016e5fd0f05f4153524e4504e22e1a23a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56bb19e07a71601e2073dd3eb9dc68f73c71edd9e46f8289181586d86ba64884"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "535d92454ed8ae360c952f75bd633700cda85d4ff0c8db60e90e6ee69c108acb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17802e47260876b6789c4c49a7c941199fbc47013f4898cc7f2d134f74775724"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae58ee6be1c566bbce2934cb005ea9f3ae0faf9ff86c3841046472deab073aad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "84b38542de255274f037f1ddeb1775a7d361c8ed798186c8d9322e20a7b24de2"
+    sha256 cellar: :any_skip_relocation, ventura:        "4c2bc07625bb9a9c04b079d995214761f5921d64e8ff780fdf827aa52a457963"
+    sha256 cellar: :any_skip_relocation, monterey:       "7886e9700a885f302ff01bdf18426d60891aceee282897c5884811c2ae8065a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eec711375188203d62318fb094a447cbb0654589fd557f5ba6e93a95b4e832e0"
   end
 
   depends_on "go" => :build

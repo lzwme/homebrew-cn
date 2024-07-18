@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk11uarchiverefstagsjdk-11.0.23-ga.tar.gz"
-  sha256 "82bd91cc58909c6b08a8066e8ed8cf3ad09532b250126eb1159390b15db1f9fd"
+  url "https:github.comopenjdkjdk11uarchiverefstagsjdk-11.0.24-ga.tar.gz"
+  sha256 "5232ca19c93b9dce023f7afd4e3914d19a914ac46632a1828635c24994f13048"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "97ee92fd5b15fbf361ca3193fdaba0140a3c0ad15ec81947b3d01fb714023dcd"
-    sha256 cellar: :any,                 arm64_ventura:  "38c7b2546d8eaf4a0bf22a042e010cedbc79640eb7dae477d84bff0c27e7d16c"
-    sha256 cellar: :any,                 arm64_monterey: "bcfcacdf2ccf7ea5e6d14cd7e8d66c173a5645f35df96900759f64e11edbd996"
-    sha256 cellar: :any,                 sonoma:         "1a9b6c3e121a8e4b14f10da6c8f45e653947765b2878e55892f894f5e4c33149"
-    sha256 cellar: :any,                 ventura:        "5cbca297e8fda3da4ddad43158a0ea8229753c81959e64155165497a07cf4a98"
-    sha256 cellar: :any,                 monterey:       "7aadc5defa8d2398c6a182d84b8e9788f74574e0a1d60993c0439f3f60a713cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "217bb1ad9743b7b46f56dcc3fe4dc69cb730130fd71e8b0ca1ed02ed931b97e1"
+    sha256 cellar: :any,                 arm64_sonoma:   "55565ebdad224446b1fc7dfb95ff248b474592e897e0f37fee42a926ba682853"
+    sha256 cellar: :any,                 arm64_ventura:  "09c82bc3af0f6e5fc83ff0711c1681b699f53434868a6a47487c8b78b8fc8930"
+    sha256 cellar: :any,                 arm64_monterey: "71d6ad32f6f8c0aabe9bfcdc9ae749e2467f4bffeae6b84afc3e5a46e97bc035"
+    sha256 cellar: :any,                 sonoma:         "8b4a1b4b6a758617dda6f1c1ae30dca60e2799af0932be5688561cbe6404b4d1"
+    sha256 cellar: :any,                 ventura:        "f8e39184846b63e6c8877cc670c1f56cc56e21dac4457d6fe2ac0016e81f24cc"
+    sha256 cellar: :any,                 monterey:       "f2a7b8fad66d410eb19117808387f476fb1ea98cc3a1a35ed50e5f433afe565b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9408b8162b2db62bafd59b10a5a53bf3161bf4c7ef2e6571c1884d96cdb87a4"
   end
 
   keg_only :versioned_formula

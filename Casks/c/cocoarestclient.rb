@@ -8,7 +8,7 @@ cask "cocoarestclient" do
   desc "App for testing HTTPREST endpoints"
   homepage "https:mmattozzi.github.iococoa-rest-client"
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :mojave"
 
   app "CocoaRestClient.app"
 end

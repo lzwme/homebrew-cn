@@ -8,7 +8,7 @@ cask "bob" do
   homepage "https:github.comripperheBob"
 
   auto_updates true
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :high_sierra"
 
   app "Bob.app"
 

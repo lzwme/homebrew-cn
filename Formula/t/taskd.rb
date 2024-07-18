@@ -7,11 +7,6 @@ class Taskd < Formula
   revision 1
   head "https:github.comGothenburgBitFactorytaskserver.git", branch: "1.2.0"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sonoma:   "e3bb75dc9d5d281fcdd7a9eb5604d5d17f36791458bf69c91a88403c385913f3"
@@ -22,6 +17,8 @@ class Taskd < Formula
     sha256 cellar: :any,                 monterey:       "a0131221a82276fc6feb0bec88b260d6731d346e05c84570b7f8ba376d1714eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d81536e57b798ded725ca302e02ff8b57e49445b02346508a5a707c925608a8e"
   end
+
+  deprecate! date: "2024-07-04", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "gnutls"

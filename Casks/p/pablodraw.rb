@@ -7,9 +7,7 @@ cask "pablodraw" do
   desc "AnsiAscii text and RIPscrip editorviewer"
   homepage "https:github.comcwensleypablodraw"
 
-  livecheck do
-    skip "No reliable way to get version info"
-  end
+  disable! date: "2024-07-16", because: "is 32-bit only"
 
   app "PabloDraw.app"
 

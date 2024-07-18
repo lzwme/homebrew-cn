@@ -1,19 +1,19 @@
 class Cog < Formula
   desc "Containers for machine learning"
   homepage "https:cog.run"
-  url "https:github.comreplicatecogarchiverefstagsv0.9.12.tar.gz"
-  sha256 "6ed976976b0fed8e3424966aa1b66703116cbc4adf677ba0b317b4de1942cd4e"
+  url "https:github.comreplicatecogarchiverefstagsv0.9.13.tar.gz"
+  sha256 "762729db54dea7fc5a23b8302c6c1b4cc857908305ba35ac8dd71f508e3941a8"
   license "Apache-2.0"
   head "https:github.comreplicatecog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05e2fe7ffecc1dc79c75e29c630f67796c815d2512d5bf6e811c3cfcec7301a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ce7f37f656297f1e266a65bb343a7661b8857f00512cefe766a6c0977c0c353"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4744371ef704a082baaf7dbdc01abd0abb144c63205dd222e8cc10774ea74681"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e449ae46005e38b07ed89c40f206c8ec5953b60764311be3e3a5a34ceb4af14"
-    sha256 cellar: :any_skip_relocation, ventura:        "600d716bf3a5f4ef175946c992bb6586ebb474ec2bc8c541de5f689068e213e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8de83b1302c1104d7e5085bb778bab125eaaf9139b03c45c8cf94b19909801bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4044f9f7bdd7338d2fd5ae0a7e62837d718ad18e1fe38b586208c0b69a415153"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47ed756fc89f4db696470fb64e312fe58764fce1aac5dc6b7bfec4b62fdd5565"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1656b889868d7a91b96e30d038d4fe047d4b22c769ffdc4f36561cf3d50831b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fe06f2e0321660f7ee28d3a7af85aebd14c5db9779d8770eb7ed1ec597695ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2bcb07349b891a53e579243d8325b032eea3dadb36fbc8543db45c71446b10af"
+    sha256 cellar: :any_skip_relocation, ventura:        "0880ede9bd576bcd554b0812366359605668539f29b4e47dd158fc2a96f2baae"
+    sha256 cellar: :any_skip_relocation, monterey:       "a929267b9cd0d1fd7205bb2a67368db026e1cc3cd80319b3b1d833219e792146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf514359845b6e557867bbf18ff616a36d2a235fc6d29a23e09aaa672ea0ca1a"
   end
 
   depends_on "go" => :build

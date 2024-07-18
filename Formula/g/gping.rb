@@ -4,6 +4,7 @@ class Gping < Formula
   url "https:github.comorfgpingarchiverefstagsgping-v1.16.1.tar.gz"
   sha256 "557dad6e54b5dd23f88224ea7914776b7636672f237d9cbbea59972235ca89a8"
   license "MIT"
+  revision 1
   head "https:github.comorfgping.git", branch: "master"
 
   # The GitHub repository has a "latest" release but it can sometimes point to
@@ -16,18 +17,18 @@ class Gping < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6c0b8a00018562a56428730081d2149b75e5d70683f112f258c3dd09287e240a"
-    sha256 cellar: :any,                 arm64_ventura:  "2f32084a6efef9a3a037b0c9d82299a2258256f6b9b665bbb73fdc8b211b0fd6"
-    sha256 cellar: :any,                 arm64_monterey: "4668f27d28670807e0e7e39552f7a20e53d1a093e891ad8948b3a0747f1ef81f"
-    sha256 cellar: :any,                 sonoma:         "7d74bf93f8f90500e1e7c9af1cf1f0543dc45f2bd11e3c489a743359874c1859"
-    sha256 cellar: :any,                 ventura:        "7efd96965712edc3ebe8a5208758a072d322a1e07b0347838a2400c955111a26"
-    sha256 cellar: :any,                 monterey:       "352d66ee19e9a3c4fb133687c331c38fb1a3636bf243d0f1ad348a16065274df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a20f09bff83e703cff8bec5adda1a0d8b2e75cb2bda8a182fea048bf55bb1ef"
+    sha256 cellar: :any,                 arm64_sonoma:   "c620c9087b5cf4aa3848ca4fc068209164cfde8f0dd54284794118a3232622fd"
+    sha256 cellar: :any,                 arm64_ventura:  "d83c2735767e7ec8f483315df1e5865ea615c45d6cd8989db161f75cdb56d1b8"
+    sha256 cellar: :any,                 arm64_monterey: "131c1f7da640bbc4a2c7fdfd315b35f0c94238684d7f58cab8d742b4400063ed"
+    sha256 cellar: :any,                 sonoma:         "dbb3e46597fde402108c54ebda1887fa890bbec1395e5a81c944d38cc7cafda4"
+    sha256 cellar: :any,                 ventura:        "ccfb2382fb3d1c733421d9b7405c273d89ac1149de03ec09236dca977402c573"
+    sha256 cellar: :any,                 monterey:       "6741f1ec2ef9a930ea5ae07694f35aa38dc7412f15ef808fda1104b8bc5545cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf8e3a8152e86c8204a4eb65300e686f33e820cb463b011318e3831c77a5733"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
 
   on_linux do
     depends_on "iputils"
@@ -46,7 +47,7 @@ class Gping < Formula
 
     r, w, = PTY.spawn("#{bin}gping google.com")
     r.winsize = [80, 130]
-    sleep 1
+    sleep 10
     w.write "q"
 
     begin
@@ -68,7 +69,7 @@ class Gping < Formula
     linkage_with_libgit2 = (bin"gping").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2@1.7"].opt_libshared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end

@@ -38,8 +38,6 @@ class Chezmoi < Formula
     bash_completion.install "completionschezmoi-completion.bash"
     fish_completion.install "completionschezmoi.fish"
     zsh_completion.install "completionschezmoi.zsh" => "_chezmoi"
-
-    prefix.install_metafiles
   end
 
   test do

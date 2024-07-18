@@ -36,8 +36,6 @@ class Hub < Formula
   def install
     system "make", "install", "prefix=#{prefix}"
 
-    prefix.install_metafiles
-
     bash_completion.install "etchub.bash_completion.sh"
     zsh_completion.install "etchub.zsh_completion" => "_hub"
     fish_completion.install "etchub.fish_completion" => "hub.fish"

@@ -27,7 +27,6 @@ class Goofys < Formula
     cd "srcgithub.comkahinggoofys" do
       system "go", "build", "-o", "goofys", "-ldflags", "-X main.Version=#{Utils.git_head}"
       bin.install "goofys"
-      prefix.install_metafiles
     end
   end
 

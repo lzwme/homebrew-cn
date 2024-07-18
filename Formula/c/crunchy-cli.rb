@@ -16,6 +16,8 @@ class CrunchyCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bfb8108c92d7926879b6c3067632692db81b020f9d52166f17e788a6b64b391"
   end
 
+  deprecate! date: "2024-07-16", because: :repo_archived
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"

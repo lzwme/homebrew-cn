@@ -1,19 +1,19 @@
 class Falco < Formula
   desc "VCL parser and linter optimized for Fastly"
   homepage "https:github.comysugimotofalco"
-  url "https:github.comysugimotofalcoarchiverefstagsv1.9.0.tar.gz"
-  sha256 "e205f460da2437fb7c2a59f6b1fa090c23a720cb9164f7a9a9da903ebab862f5"
+  url "https:github.comysugimotofalcoarchiverefstagsv1.9.1.tar.gz"
+  sha256 "9c849f412a4b6a8b8052cdc96203139cbbba04bd315af10c9b1a6f42a4bda5c0"
   license "MIT"
   head "https:github.comysugimotofalco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ab88cc276d5931ab96f09efeec4d0b4e62093b90d55581c8afd6e3b8b914c52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82bbac7634ff6211d52b734f8a319c54a992690b46c502f15aad4773394b3ad9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56a30b4153f4a5a738417b2e0592682bc45981ba6755eba2ede3517ce80cf4f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e638396d6eacd8e1fd81936d05c32f1726a332bd5c698a8552be69e2d1efb979"
-    sha256 cellar: :any_skip_relocation, ventura:        "f55dcc9b14390924488ff13be6277be2f4c873f3cd761ae89599cacb0abbfd72"
-    sha256 cellar: :any_skip_relocation, monterey:       "c787db6bf0daba48b50a33122b1d51c1262e96cc06bce73d933d071dbf4e82f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69b3e1c7da476d99319a20a11f5e70d543f98f6e50ca778b05f25cbafb5cf7ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b39c79e557dbd9e91d64947c3437224baceb1daadfea17a7474c9d7d128e8412"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b61869eb07e34b753c98bbdee6e0db722dcaa3688b9eee7e3a52029aaf5776f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea9f9e76ed7d1551e88205de938e2fb4d55d044a8b0a7fb4f4dc0b1e45659836"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0451011f303136ef4bca729b9357ee5128c3cf6deb8c5120dc80d4b0929700ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "398e1199f07c7badcd8ea1ef77bc6a77f3e7ebd6650bb553f3e1134f6586c7fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e60e084a1c033c940de21c0821056e2b06273f86f176a0ed993a149660bcb5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b89c3c17d575ae79300daa0acf0639a878c533ddb7a331193691e56ed9b0c00d"
   end
 
   depends_on "go" => :build
@@ -29,7 +29,7 @@ class Falco < Formula
     pass_vcl = testpath"pass.vcl"
     pass_vcl.write <<~EOS
       sub vcl_recv {
-      #Fastly recv
+      #FASTLY RECV
         return (pass);
       }
     EOS
@@ -39,12 +39,12 @@ class Falco < Formula
     fail_vcl = testpath"fail.vcl"
     fail_vcl.write <<~EOS
       sub vcl_recv {
-      #Fastly recv
+      #FASTLY RECV
         set req.backend = httpbin_org;
         return (pass);
       }
     EOS
     assert_match "Type mismatch: req.backend requires type REQBACKEND",
-      shell_output("#{bin}falco #{fail_vcl} 2>&1")
+      shell_output("#{bin}falco #{fail_vcl} 2>&1", 1)
   end
 end

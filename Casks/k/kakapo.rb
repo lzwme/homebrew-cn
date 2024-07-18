@@ -2,11 +2,16 @@ cask "kakapo" do
   version "1.3.0"
   sha256 "4f89f2d651b88e7c13bce3cccefc4929e83a5f509dae102f071ecd80aab9d524"
 
-  url "https:github.combluedanielKakapo-appreleasesdownloadv#{version}Kakapo-#{version}-Mac.zip",
-      verified: "github.combluedanielKakapo-app"
+  url "https:github.combluedanielKakapo-appreleasesdownloadv#{version}Kakapo-#{version}-Mac.zip"
   name "Kakapo"
   desc "Open-source ambient sound mixer"
-  homepage "http:www.kakapo.coapp.html"
+  homepage "https:github.combluedanielKakapo-app"
+
+  deprecate! date: "2024-07-17", because: :unmaintained
 
   app "Kakapo.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

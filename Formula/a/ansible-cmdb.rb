@@ -12,7 +12,6 @@ class AnsibleCmdb < Formula
   depends_on "libyaml"
 
   def install
-    prefix.install_metafiles
     man1.install "ansible-cmdb.man.1" => "ansible-cmdb.1"
     inreplace "ansible-cmdb.py", "usrlocal", HOMEBREW_PREFIX
     libexec.install Dir["*"] - ["Makefile"]

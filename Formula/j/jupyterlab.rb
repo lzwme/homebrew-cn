@@ -11,13 +11,14 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "de3aadcd96ff47c94b63dee029d2bcab858ece667ec55ecdbd7a8fdda1838e66"
-    sha256 cellar: :any,                 arm64_ventura:  "f89b1a329e6cb7ddee77ab7fd135b4d1226d277a80563a66b9679918ac36ed39"
-    sha256 cellar: :any,                 arm64_monterey: "72ba89daab21418c22fca8a81e571948f39b14c5b0237c41331646c5a003834e"
-    sha256 cellar: :any,                 sonoma:         "284a7ccfe7dd4381040accecb5eb2295659c0e0e5a5c382ee3cce14069cd4a06"
-    sha256 cellar: :any,                 ventura:        "77f9ff7103bef7aef17550423cda0d0709f6ad698c4b73fef30290facbc43906"
-    sha256 cellar: :any,                 monterey:       "7c68898e435ae2c15e8b8d6dcfde6408320617f59bbb2da622beea478c1afd3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "136ce0bb6c01effeffb2832aed59815872dad4e69de0d7e5c890d3f3566a094b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c59e5f80ee0ae24f18bddead75b710beb4c3c49242275a1b6126f1f2d2e44be5"
+    sha256 cellar: :any,                 arm64_ventura:  "4b0eff26ec48ed36ab0806b5d697c2388c0e548ace83608f44d5b1e7eb7c3841"
+    sha256 cellar: :any,                 arm64_monterey: "a8938f9839222bee40047609ed355f83e4d3eed68c94171b133a57c0d796a61d"
+    sha256 cellar: :any,                 sonoma:         "d777633cbb3dd8901e5a6ed983a935a1091e4705b2198b0e25d0a544c3b2e79e"
+    sha256 cellar: :any,                 ventura:        "b33604adb5481db703ecfc751755dea8b698082a15afa5c79f71db52e7ddeb3b"
+    sha256 cellar: :any,                 monterey:       "a51e79d332faaeaeeb694d3faa0ba419bf84ab2ad8137a3f07dc24c5da4a8a68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "809000eacfb931c75c7be8c7d4bac0ec8dce0372eebd76addc70051fe9821b9b"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -551,6 +552,13 @@ class Jupyterlab < Formula
       Additional kernels can be installed into the shared jupyter directory
         #{etc}jupyter
     EOS
+  end
+
+  service do
+    run [opt_bin"jupyter-lab"]
+    keep_alive true
+    log_path var"logjupyterlab.log"
+    error_log_path var"logjupyterlab.log"
   end
 
   test do

@@ -3,18 +3,18 @@ class Abi3audit < Formula
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
   homepage "https:github.comtrailofbitsabi3audit"
-  url "https:files.pythonhosted.orgpackagesf116e4388c9681abea98959d16ac31bce69c8140adda8e42bce82b58b673f4a8abi3audit-0.0.12.tar.gz"
-  sha256 "fbf7651a3289942c93f09bf3edd7110a85eb621e2cf05dc3ddc86cc4cb29f7a2"
+  url "https:files.pythonhosted.orgpackagesf9f5ccb74a36cb61b8659234373893fa45265318f47f0612e0ed3615b3884d05abi3audit-0.0.13.tar.gz"
+  sha256 "71c69bc30487bb698f72658ca06fd36c4aeb21f46e462e02238a17e1117537bd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d5a8e3a4c52e4fc71609844a521f08b6c60b729bcadde4f934abb8bb7393e8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d5a8e3a4c52e4fc71609844a521f08b6c60b729bcadde4f934abb8bb7393e8c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d5a8e3a4c52e4fc71609844a521f08b6c60b729bcadde4f934abb8bb7393e8c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6a8df3c7d4e1fd2ce641a63a447e6ff8fb858d241ca996ef1704a202758afd6"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6a8df3c7d4e1fd2ce641a63a447e6ff8fb858d241ca996ef1704a202758afd6"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6a8df3c7d4e1fd2ce641a63a447e6ff8fb858d241ca996ef1704a202758afd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fd35b515cde9200655f6d1d0e3184409ebf775180726038a833f537de354d5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc0c2ff99b30e31fcbeb04a86f996df402274ad0ae65e525cf4d369d154284a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc0c2ff99b30e31fcbeb04a86f996df402274ad0ae65e525cf4d369d154284a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc0c2ff99b30e31fcbeb04a86f996df402274ad0ae65e525cf4d369d154284a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "252f8e9055fbbba0be9b1bddaac6d264cbc02f8c7b0a47a2cf7c83f3d5ea21f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "252f8e9055fbbba0be9b1bddaac6d264cbc02f8c7b0a47a2cf7c83f3d5ea21f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "95787a538544e867f8bcbd01bbdd469e268ef47a0b6ea10d272b501f306e4bdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "682aab95ab0f2a875c29de2920eb8c9c2172cff322abbdf1fe3ef55363e4f674"
   end
 
   depends_on "cmake" => :build

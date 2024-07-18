@@ -23,7 +23,6 @@ class Micro < Formula
     system "make", "build-tags"
     bin.install "micro"
     man1.install "assetspackagingmicro.1"
-    prefix.install_metafiles
   end
 
   test do

@@ -19,7 +19,6 @@ class OpenlibertyMicroprofile4 < Formula
   def install
     rm_rf Dir["bin/**/*.bat"]
 
-    prefix.install_metafiles
     libexec.install Dir["*"]
     (bin/"openliberty-microprofile4").write_env_script "#{libexec}/bin/server",
                                                        Language::Java.overridable_java_home_env

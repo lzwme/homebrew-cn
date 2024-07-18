@@ -29,8 +29,6 @@ class Pueue < Formula
       system "#{bin}pueue", "completions", "zsh", "."
       zsh_completion.install "_pueue" => "_pueue"
     end
-
-    prefix.install_metafiles
   end
 
   service do

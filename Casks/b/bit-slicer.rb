@@ -7,7 +7,7 @@ cask "bit-slicer" do
   desc "Universal game trainer"
   homepage "https:github.comzorgiepoobit-slicer"
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :mojave"
 
   app "Bit Slicer.app"
 

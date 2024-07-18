@@ -34,7 +34,6 @@ class Tnftp < Formula
 
     bin.install "src/tnftp" => "ftp"
     man1.install "src/ftp.1"
-    prefix.install_metafiles
   end
 
   test do

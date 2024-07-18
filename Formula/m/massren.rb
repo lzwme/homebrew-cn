@@ -26,7 +26,6 @@ class Massren < Formula
     (buildpath"srcgithub.comlaurent22massren").install buildpath.children
     cd "srcgithub.comlaurent22massren" do
       system "go", "build", "-o", bin"massren"
-      prefix.install_metafiles
     end
   end
 

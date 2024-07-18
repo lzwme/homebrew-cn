@@ -4,6 +4,7 @@ class CargoC < Formula
   url "https:github.comlu-zerocargo-carchiverefstagsv0.10.2.tar.gz"
   sha256 "0217c26fee99f3af867ce52719a39349d19ec6cfac084eea3901f8046f4607c6"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "65bdfdbdd2fadaffa7403e827e7f8f70f9032a0649bf932b8795f830686f1f63"
-    sha256 cellar: :any,                 arm64_ventura:  "05290ac98f8b3479a323647d03c017ad7c65436d79a265d8cc3cc959fc127322"
-    sha256 cellar: :any,                 arm64_monterey: "84b51cbb3222f5b55b8fed9c5982492fc1296cba466b6d6fa3270369f5d51464"
-    sha256 cellar: :any,                 sonoma:         "596bbe23e4d79f00a3552344c6c02c9ab847c64d364ddf208519aefbc44136dc"
-    sha256 cellar: :any,                 ventura:        "9910697f72f1c0454eee15aee3ded8a128e5e5f54535b0671b869159aeec2a7d"
-    sha256 cellar: :any,                 monterey:       "b269fe9610b92a6f11b86bebc1496d0309fd468e0a2a1be42302755c8c6d5f47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3e59b4239ae7f0141fd6807039e944856f6d0173feb0ebde24e47deac91a9dd"
+    sha256 cellar: :any,                 arm64_sonoma:   "cd9fa62bcfb42fd0b4708cd67d47677864116ef7fd500c4bf590375a440f79ff"
+    sha256 cellar: :any,                 arm64_ventura:  "08f8ca7499ad8e1cc9938b0d197924fa4b26e2a774bd698dc194d73426c92284"
+    sha256 cellar: :any,                 arm64_monterey: "05e03fcc85dccfaa7c57c951d954dc41934056bb2dc056fd24f8d3a9ceec27a5"
+    sha256 cellar: :any,                 sonoma:         "ac33123a71f8a727d6bb810b27130c43dc9580e99df914142d50fd51a48afc9a"
+    sha256 cellar: :any,                 ventura:        "aa129258503fb6f6be647d5ed1e3a46f143c063472f7891d53dfce8af9354d9d"
+    sha256 cellar: :any,                 monterey:       "479a68f12cb3b494507b60eb56e3f705ee216e5f117e9102cc013446f2349b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd506221f794844239b7d8b17cdf05f41b9b7e5bba4a4018d2294ccf47a1cde"
   end
 
   depends_on "rust" => :build
@@ -25,7 +26,7 @@ class CargoC < Formula
   # be missing despite its presence.
   # Try switching to `uses_from_macos` when that's resolved.
   depends_on "curl"
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -60,7 +61,7 @@ class CargoC < Formula
 
     [
       Formula["curl"].opt_libshared_library("libcurl"),
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),

@@ -32,8 +32,9 @@ class ProcyonDecompiler < Formula
           }
       }
     EOS
+
     (testpath"T.java").write fixture
-    system "#{Formula["openjdk@21"].bin}javac", "T.java"
-    assert_match fixture, pipe_output([bin"procyon-decompiler", "T.class"])
+    system Formula["openjdk@21"].bin"javac", "T.java"
+    assert_match fixture, shell_output("#{bin}procyon-decompiler T.class")
   end
 end

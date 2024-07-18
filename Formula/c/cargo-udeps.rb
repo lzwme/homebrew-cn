@@ -4,20 +4,21 @@ class CargoUdeps < Formula
   url "https:github.comest31cargo-udepsarchiverefstagsv0.1.49.tar.gz"
   sha256 "f3beaaa9c11526f4fc52dff140214b8948622b69ebf2878a607132056e6b3c33"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d26fff7e646a5447d6ccdafcb6899e17c91f60fbb3ae27b36fd4c3c818b526e5"
-    sha256 cellar: :any,                 arm64_ventura:  "d61d285c78243004c2b66065b50096a43992c16af0214e8e49d15c9a9bff742b"
-    sha256 cellar: :any,                 arm64_monterey: "f24b87ab2bcd523df1023c42ba8e73d29f46b3e30392069ea50e6bbeb62ff7a2"
-    sha256 cellar: :any,                 sonoma:         "e7af5535059df65a1ae508341be4ff5bff40c33632c009fd9a4e54935d9ba569"
-    sha256 cellar: :any,                 ventura:        "b7a614c6faaf213d35134f997a6fe06ecc3bf5107778a8f714ba0a5e34e6fd36"
-    sha256 cellar: :any,                 monterey:       "7a4c1b7a7726c30981ca6dbf1c9869a725d746db37d935a066943fec73a98ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eca6f9dbfb96bc0cdb8d408bb8bf0ce7f178d6e7f5671252d885cc86a326d9d4"
+    sha256 cellar: :any,                 arm64_sonoma:   "67eb1c057ba9b46e113a5bd47847585cfec0c90b93b8388969dcef32307e595b"
+    sha256 cellar: :any,                 arm64_ventura:  "d80c26149576935bc074057923b43230c66c7d574cb0c357e39b82e006453e3a"
+    sha256 cellar: :any,                 arm64_monterey: "8d5c23f0d320e85db80e160de3f2d021bb8eeca9649357bc51fef8de40ef71ca"
+    sha256 cellar: :any,                 sonoma:         "1915e5f9ce824e8555d5a25e76b18ff2152fea14dbcd1c1a0a4354d4218cbb01"
+    sha256 cellar: :any,                 ventura:        "90c1b9b12a175a587cd99ae508bf4132c92aac058268d9e3ddc78d622dce11e6"
+    sha256 cellar: :any,                 monterey:       "925e5a66dc1d4d04d67c4f178f07d51a60257efe6cd63998320a390da183bec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "974fc52deb3edb281e1186d213148420fdb73f33c12e6dbe16d4bcf1317969c1"
   end
 
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -69,7 +70,7 @@ class CargoUdeps < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),

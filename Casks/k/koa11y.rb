@@ -9,4 +9,8 @@ cask "koa11y" do
   homepage "https:open-indy.github.ioKoa11y"
 
   app "Koa11y.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

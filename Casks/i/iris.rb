@@ -22,4 +22,8 @@ cask "iris" do
     "~LibraryPreferencescom.iristech.Iris.plist",
     "~LibrarySaved Application Stateco.iristech.Iris.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,10 +1,22 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
   homepage "https:abseil.io"
-  url "https:github.comabseilabseil-cpparchiverefstags20240116.2.tar.gz"
-  sha256 "733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc"
   license "Apache-2.0"
   head "https:github.comabseilabseil-cpp.git", branch: "master"
+
+  stable do
+    url "https:github.comabseilabseil-cpparchiverefstags20240116.2.tar.gz"
+    sha256 "733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc"
+
+    # upstream commit to avoid export of testonly target
+    patch do
+      url "https:github.comabseilabseil-cppcommit779a3565ac6c5b69dd1ab9183e500a27633117d5.patch?full_index=1"
+      sha256 "14ad7abbc20b10d57e00d0940e8338f69fd69f58d8285214848998e8687688cc"
+    end
+
+    # upstream fix to remove cyclic cmake dependency, see: https:github.comabseilabseil-cppcommitcd7f66cab520e99531979b3fd727a25616a1ccbb
+    patch :DATA
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1f81e5b4e59baadeeb034b9e3ab39bfd6fa3452ba040454b20bc7be02f04e3f1"
@@ -71,3 +83,17 @@ class Abseil < Formula
     assert_equal "Joined string: foo-bar-baz\n", shell_output("#{testpath}test")
   end
 end
+
+__END__
+diff --git aabslrandomCMakeLists.txt babslrandomCMakeLists.txt
+index bd363d88..7692a35b 100644
+--- aabslrandomCMakeLists.txt
++++ babslrandomCMakeLists.txt
+@@ -112,7 +112,6 @@ absl_cc_library(
+     absl::raw_logging_internal
+     absl::random_distributions
+     absl::random_internal_distribution_caller
+-    absl::random_internal_mock_overload_set
+     absl::random_random
+     absl::strings
+     absl::span

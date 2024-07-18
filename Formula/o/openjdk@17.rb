@@ -1,8 +1,8 @@
 class OpenjdkAT17 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk17uarchiverefstagsjdk-17.0.11-ga.tar.gz"
-  sha256 "4aa214812f88b21c11ad91e111075f64d57e1b13096f98fc5d45f95f789d4642"
+  url "https:github.comopenjdkjdk17uarchiverefstagsjdk-17.0.12-ga.tar.gz"
+  sha256 "74654bdd094c466217d3c65d71622f5ad9039d86d0c1b5eaa0bf6b2ae6e0822d"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenjdkAT17 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "863da25f8214b887d286a382e9af611d9ae1c056139fa4ce2ad97769c981433c"
-    sha256 cellar: :any, arm64_ventura:  "10ed0880e57ee8a16b2a0502ca01444a10eede5a02198aea789a118b71675389"
-    sha256 cellar: :any, arm64_monterey: "1ff13d91e018699f1f0ccf14c1fa2790cf91a79cf946353d6e698f6a788a183d"
-    sha256 cellar: :any, sonoma:         "cad19f798ab29ba8573f96d1277315ea148e5ea2beec2a2b02df4ebbff52b181"
-    sha256 cellar: :any, ventura:        "f1331fb360d01968764c1d5c812a2b579c6e4745af2b398be95f6d840656e920"
-    sha256 cellar: :any, monterey:       "4debc6c01c3f8749e754aba8a18f152db12f29d2001c73d835fe7bb5121791e6"
-    sha256               x86_64_linux:   "1dbdc1185c19320e3524d3a4e8eafc8f017ca78f3beffd88654f5e1242158ea7"
+    sha256 cellar: :any, arm64_sonoma:   "3b29caef76d813ed09ab21895f936d1cbfeaa82036cf2c11c60921edbb695a1a"
+    sha256 cellar: :any, arm64_ventura:  "63c80057ba27ee109b7ae201ed1c636d96a4d7b70c51e5173d3b8d954c8e01fc"
+    sha256 cellar: :any, arm64_monterey: "6fa7a88b24590d26454d2098d436593117bba45683cb54b32fa3ec0ed5bf63e4"
+    sha256 cellar: :any, sonoma:         "e15a14c4af6f59721addd21288a9f8e767ae30021d2caec8fb4093ae84e5ada4"
+    sha256 cellar: :any, ventura:        "17a2ee28099824bd37941ce63d80b068913999daa2010e332a04ee1aa6755bed"
+    sha256 cellar: :any, monterey:       "c0057a4f9927733cc670444c0f2f4c9eab2ce51f21d2bca08cbc661c024299e0"
+    sha256               x86_64_linux:   "ea8063d59d2c2d5a27d6355b2378840067418f0d92f061a891d2414e2a7cdf3a"
   end
 
   keg_only :versioned_formula

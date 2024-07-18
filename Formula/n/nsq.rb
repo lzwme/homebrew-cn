@@ -20,7 +20,6 @@ class Nsq < Formula
 
   def install
     system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"
-    prefix.install_metafiles
   end
 
   def post_install

@@ -1,8 +1,8 @@
 class OpenjdkAT21 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.3-ga.tar.gz"
-  sha256 "818e9dee28ae390f2781406d594690fc42bd994d078ad9f8360a4fbca6a3df1f"
+  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.4-ga.tar.gz"
+  sha256 "9223a0f1db1b7ee0ca480e010d6473a8be72eaae93d883fd31ef9ba6dcc41014"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenjdkAT21 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "aec482cdb96996ba9402067cd88be0299cd887e5b87e4c18b0b2d1deb3ed3106"
-    sha256 cellar: :any, arm64_ventura:  "0956a035050c26af4e25301c2df59627eaf3bfcf354320c90d7905983c3352b0"
-    sha256 cellar: :any, arm64_monterey: "e40e95bb72f9b6d95734118f7919c50e0c2548c5da59af924ffb4c9623cdc45b"
-    sha256 cellar: :any, sonoma:         "a2dcea077166caf52638df5b15364471ea8d77eaef42a597f1588846814bdeea"
-    sha256 cellar: :any, ventura:        "1aaf0f1992b80735642a7748f4601f9118ce5aa42814d1acb53b757bed2ba7e7"
-    sha256 cellar: :any, monterey:       "880517d05b646ad165ff7a8d82e23ab242f1f72240fca01d8746b4e081d52941"
-    sha256               x86_64_linux:   "96aa8a414f7742f0dae62d45b3fe9732efe3ea0395913f8b7f1c5eccf3f994bb"
+    sha256 cellar: :any, arm64_sonoma:   "9c746b162f12f2c3ac7ef4cca58676e7c4a6c1234b2b35b2fe2c1d6dba4ef3d8"
+    sha256 cellar: :any, arm64_ventura:  "d19ae20da8a2ac5c6a6ddc3ac09842e7bf68f2bd5e69459b52c9f536db3b0820"
+    sha256 cellar: :any, arm64_monterey: "e3202b8d03ae38b2573a5070a8e562edfdc3ece36e7b73ceaa6f25dee4d91bab"
+    sha256 cellar: :any, sonoma:         "be8c445b5620e6f192ed5fd62d7e38ef787840ef2ea9edd6d54c80eb414d0690"
+    sha256 cellar: :any, ventura:        "5f3d8b8928fca61cc9cc850a26182f8df5f4b657e1dcd7ee308138437b37f9fa"
+    sha256 cellar: :any, monterey:       "ae616ae18b3021cfcc6ade320570afa3f55ebcae70cbd0b5660daeae59684988"
+    sha256               x86_64_linux:   "0207f847d33688cfdc651f737cd2316cbf06ca95deda455056840b590619ca06"
   end
 
   keg_only :versioned_formula

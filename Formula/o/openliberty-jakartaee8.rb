@@ -19,7 +19,6 @@ class OpenlibertyJakartaee8 < Formula
   def install
     rm_rf Dir["bin/**/*.bat"]
 
-    prefix.install_metafiles
     libexec.install Dir["*"]
     (bin/"openliberty-jakartaee8").write_env_script "#{libexec}/bin/server",
                                                     Language::Java.overridable_java_home_env

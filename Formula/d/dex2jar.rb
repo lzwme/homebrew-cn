@@ -21,7 +21,6 @@ class Dex2jar < Formula
     rm_rf Dir["*.bat"]
 
     # Install files
-    prefix.install_metafiles
     chmod 0755, Dir["*"]
     libexec.install Dir["*"]
 

@@ -872,6 +872,7 @@ Homebrew-homebrew-core/Formula/c/clang-build-analyzer.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/c/clang-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@8.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/clang-uml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 1
@@ -1741,7 +1742,7 @@ Homebrew-homebrew-core/Formula/f/fff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmpeg2theora.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/ffmpeg@2.8.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/ffmpeg@2.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmpeg@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmpeg@6.rb, Homebrew/homebrew-core, 1
@@ -2152,7 +2153,7 @@ Homebrew-homebrew-core/Formula/g/gitlab-ci-local.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlab-gem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlab-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitleaks.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gitless.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gitless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitmoji.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitoxide.rb, Homebrew/homebrew-core, 1
@@ -2759,6 +2760,7 @@ Homebrew-homebrew-core/Formula/i/ios-class-guard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-deploy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-sim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-webkit-debug-proxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iowow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iozone.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ip_relay.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ipbt.rb, Homebrew/homebrew-core, 0
@@ -3474,6 +3476,7 @@ Homebrew-homebrew-core/Formula/lib/libgit2-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libgit2@1.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libglade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libglademm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgnt.rb, Homebrew/homebrew-core, 0
@@ -7392,6 +7395,7 @@ Homebrew-homebrew-cask/Casks/a/autumn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ava.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avast-secure-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avast-security.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/avbeam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avg-antivirus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aviatrix-vpn-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avidcodecsle.rb, Homebrew/homebrew-cask, 0
@@ -8151,6 +8155,7 @@ Homebrew-homebrew-cask/Casks/d/duplicacy-web-edition.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/d/duplicacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duplicate-annihilator-for-photos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duplicate-file-finder.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/duplicateaudiofinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duplicati.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dupscanub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dust3d.rb, Homebrew/homebrew-cask, 1
@@ -12854,6 +12859,7 @@ Homebrew-homebrew-cask/Casks/r/rnnoise.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/roam-research.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roaringapps.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/roblox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/robo-3t.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/robofont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roboform.rb, Homebrew/homebrew-cask, 0

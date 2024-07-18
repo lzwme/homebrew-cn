@@ -7,6 +7,8 @@ cask "keep" do
   desc "Run Google Keep in the menu bar"
   homepage "https:github.comtmcinerneykeep"
 
+  deprecate! date: "2024-07-17", because: :unmaintained
+
   app "Keep.app"
 
   uninstall signal: [
@@ -21,4 +23,10 @@ cask "keep" do
     "~LibraryPreferencescom.electron.keep.plist",
     "~LibrarySaved Application Statecom.electron.keep.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
+
+# Last update in 2018

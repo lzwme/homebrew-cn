@@ -28,7 +28,7 @@ class Basex < Formula
     rm_rf "repo"
     rm_rf "data"
     rm_rf "etc"
-    prefix.install_metafiles
+
     libexec.install Dir["*"]
     bin.install Dir["#{libexec}/bin/*"]
     bin.env_script_all_files libexec/"bin", JAVA_HOME: Formula["openjdk"].opt_prefix

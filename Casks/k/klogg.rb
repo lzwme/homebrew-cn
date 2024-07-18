@@ -38,4 +38,8 @@ cask "klogg" do
     "~LibraryPreferencescom.klogg.klogg_session.plist",
     "~LibrarySaved Application Statecom.github.variar.klogg.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

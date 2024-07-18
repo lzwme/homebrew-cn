@@ -6,6 +6,7 @@ class Snapcraft < Formula
   url "https:github.comsnapcoresnapcraftarchiverefstags8.3.1.tar.gz"
   sha256 "0dd22b2e6bb7fe7d104edcabfc4a5f475560e64a620c57bd969645372df02fab"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,16 +14,16 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "65caffff14228028621e314c483e878a60e48ed238703272574954bd4ba4bf83"
-    sha256 cellar: :any,                 arm64_ventura:  "82f184e11e4f37aff59242afabfe66189bf4c585f2907f3778fa6319da616555"
-    sha256 cellar: :any,                 arm64_monterey: "514410c884785244d93b4f8ec7b25f456f6a9e3bbfa9766cacac450cd8910490"
-    sha256 cellar: :any,                 sonoma:         "49c1da24b48aa1cdfc5395a2dd20944ff9a5568c23ab1fe944ecab9c7772400c"
-    sha256 cellar: :any,                 ventura:        "f14ff216fa1d351c861c2eac1431a4d0212e236c630ff4cc60907e61e273b0b1"
-    sha256 cellar: :any,                 monterey:       "53f5eb1556b7617b9886fefd871244fe790768bfb332326739426e5b08318d08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49645d8f13d45e6b4ebe620b5ad2530b20f158f5ff6ddcedfe22bc2d94fa10b5"
+    sha256 cellar: :any,                 arm64_sonoma:   "d0484189616e0445f33ca1db8b683cb876b6b97e5d41767412550fc3e698af9f"
+    sha256 cellar: :any,                 arm64_ventura:  "957fb4e2117a893167c8f6d0b9a693b7e868ab8b9fbd79ea30c3f005acce65cf"
+    sha256 cellar: :any,                 arm64_monterey: "f87e435965f550f3cd6edb43e74f2d7c57c4658034b84d368eafc3b44bbd882f"
+    sha256 cellar: :any,                 sonoma:         "29b936d0e8d2b02aca4bdbd973b6d8fe58b4f29d086488b691c0e93e7f5bbb55"
+    sha256 cellar: :any,                 ventura:        "25ffbd4c933aa92649a5c80c7d285a6d35a27738e6a26646380dfa85e4abbb7e"
+    sha256 cellar: :any,                 monterey:       "c26b68c8db66ba52e53214c4a11eaa17e64d3d220323b335151b937c1e8cf0f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5dface7b079ff288e4dde0519e72358ca18eebd88f9dcd9fc28a592073f7c22"
   end
 
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "lxc"

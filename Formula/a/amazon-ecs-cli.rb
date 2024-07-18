@@ -30,7 +30,6 @@ class AmazonEcsCli < Formula
     cd "srcgithub.comawsamazon-ecs-cli" do
       system "make", "build"
       bin.install "binlocalecs-cli"
-      prefix.install_metafiles
     end
   end
 

@@ -23,7 +23,6 @@ class TerraformDocs < Formula
     os = OS.kernel_name.downcase
 
     bin.install "bin#{os}-#{cpu}terraform-docs"
-    prefix.install_metafiles
 
     generate_completions_from_executable(bin"terraform-docs", "completion", shells: [:bash, :zsh])
   end

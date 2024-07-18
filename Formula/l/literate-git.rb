@@ -6,18 +6,19 @@ class LiterateGit < Formula
   url "https:files.pythonhosted.orgpackagesbd1dd8b406bb72174e3869c3d3242aec9ebd435a7b38cc9c4b0a34edd2bdf2b7literategit-0.4.7.tar.gz"
   sha256 "b669f7209638e1a2a98304f749f5f2cc594db353c2b50d7be720cf6b261da97e"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "08a4638b65d6e90593fb4cfafa12ee4377ea8eecd641083f8f5e88206f1298cd"
-    sha256 cellar: :any,                 arm64_ventura:  "cfc489be39fc3c3fd6f70325e5051ace8dc77a3195f42c3c0cd3dab88bea780b"
-    sha256 cellar: :any,                 arm64_monterey: "39ef2f198b1fe6266e87f767e3645d3defa27dda8ad48d320e4233c7519ff087"
-    sha256 cellar: :any,                 sonoma:         "e278b9570ea03eec7fa9cb82b06f6065650f81598e71da2d2f08fc0e32599acf"
-    sha256 cellar: :any,                 ventura:        "cead4befbb4d7a552fa4a5a6367d3f6debc6eb1abf51ca7cee9a0e57bdfc4e0f"
-    sha256 cellar: :any,                 monterey:       "3eae789fa9680745e1a2aa45aead3b70efb8c011e768ba465175d5346ec77b7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "579cfff725845b7651d7264f80f42e78981feca3679f252b32f63279c5e986a9"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc3bb7409c8a14d06f16ca896b49b17c7549d217b8b809a5a13a5f99aae12ea1"
+    sha256 cellar: :any,                 arm64_ventura:  "cb1aa2bd7f1dc350ff3e7bff5f47784725ee24cf1bcd20d829fdfb43b29a1183"
+    sha256 cellar: :any,                 arm64_monterey: "daeff0fffe9d17ba3e4513faa7825d3b2a828fe66bdf537d130ab9faa30e62e1"
+    sha256 cellar: :any,                 sonoma:         "f9190d897e5a7fe7e8abd0cc614925562db1eaa46c0aafa349669633546c8601"
+    sha256 cellar: :any,                 ventura:        "56b6d56dee84f57f9030863a1566b1a3eac5912e540bd13e8c6db145a691e6df"
+    sha256 cellar: :any,                 monterey:       "dbff94779ed3ffe9008b072f794854bc9da4f36ac47f88e43defc3524374711d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58fd27c6a6b014e312352d54e0972ec39c1f3b11f0eca601fe12fd0bccc618c9"
   end
 
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "python@3.12"
 
   on_linux do

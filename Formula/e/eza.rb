@@ -1,18 +1,18 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
   homepage "https:github.comeza-communityeza"
-  url "https:github.comeza-communityezaarchiverefstagsv0.18.18.tar.gz"
-  sha256 "437ea76838fea2464b9592f1adef7df0412e27c9fc2a3e7ff47efcdfb17457f5"
+  url "https:github.comeza-communityezaarchiverefstagsv0.18.21.tar.gz"
+  sha256 "53cee12706be2b5bedcf40b97e077a18b254f0f53f1aee52d1d74136466045bc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c3eadfc9c81742884c3d45bbb79245206c3498f9cc917d877b7fc31f63ec1eb8"
-    sha256 cellar: :any,                 arm64_ventura:  "ca84616dc290841037b9d0390139c003d520b01197042be5426320f3db6e0e3e"
-    sha256 cellar: :any,                 arm64_monterey: "cd08982de41eaa9d6c9d64e75843dcd21a65ead22d0d155460d1e0831bfefba0"
-    sha256 cellar: :any,                 sonoma:         "be71d5bdd8198f1a05a74db70a76e3b231039f95c4aa6202c70b135bb92ef3c5"
-    sha256 cellar: :any,                 ventura:        "b36755e5e8ceb4b88d254906cd1362154e9c0c63f306f13887098353fad960c5"
-    sha256 cellar: :any,                 monterey:       "babefc16fef5b7be2187598daabd5fd2034140cbd871ea5b7a4480ba74dd2b4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c83bd8ef9f52e1ad2b38159bfc51d53d605523a886c49174d070f9512f0a974"
+    sha256 cellar: :any,                 arm64_sonoma:   "0854de570e63cbfdf9fae5621dc8e2ccbfaea9c6da285af20a079176971848e8"
+    sha256 cellar: :any,                 arm64_ventura:  "013a2a3775c9662ae564bf25803b4af969794eecc4e11982739c117e0e331a1f"
+    sha256 cellar: :any,                 arm64_monterey: "ac680d3b53936978b868703bea2fbaf7ba945dccdd15988e6d72748d963d53cd"
+    sha256 cellar: :any,                 sonoma:         "27155a9e6877e06c7d4f20ed624113284c6e1590a6634e83a9e56e318581c2bd"
+    sha256 cellar: :any,                 ventura:        "56d42278429e45035cbeeb8b8188dd9676d8bb1821264977c8fef19fb165b137"
+    sha256 cellar: :any,                 monterey:       "5d8ba534926d64696476d6c443ff007dd098a306e0b63af11042cd2bbff52431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd6ffcf5720ab64cc6674c62e8c4595c7c60b89010188fd46d923fa62c416164"
   end
 
   depends_on "pandoc" => :build
@@ -21,6 +21,8 @@ class Eza < Formula
   depends_on "libgit2"
 
   def install
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
 
     bash_completion.install "completionsbasheza"

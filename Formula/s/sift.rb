@@ -44,7 +44,6 @@ class Sift < Formula
     resources.each { |r| (buildpath"src"r.name).install r }
     cd "srcgithub.comsventsift" do
       system "go", "build", "-o", bin"sift"
-      prefix.install_metafiles
 
       bash_completion.install "sift-completion.bash" => "sift"
     end

@@ -24,8 +24,8 @@ class Liquibase < Formula
 
   def install
     rm_f Dir["*.bat"]
+
     chmod 0755, "liquibase"
-    prefix.install_metafiles
     libexec.install Dir["*"]
     (bin"liquibase").write_env_script libexec"liquibase", Language::Java.overridable_java_home_env
     (libexec"lib").install_symlink Dir["#{libexec}sdklib-sdkslf4j*"]

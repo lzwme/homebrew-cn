@@ -8,4 +8,8 @@ cask "ksnip" do
   homepage "https:github.comksnipksnip"
 
   app "ksnip.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

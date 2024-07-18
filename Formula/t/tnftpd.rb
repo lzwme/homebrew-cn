@@ -34,7 +34,6 @@ class Tnftpd < Formula
     man5.install "src/ftpd.conf.man" => "ftpd.conf.5"
     etc.install "examples/ftpd.conf"
     etc.install "examples/ftpusers"
-    prefix.install_metafiles
   end
 
   def caveats

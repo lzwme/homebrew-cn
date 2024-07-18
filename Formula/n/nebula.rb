@@ -23,7 +23,6 @@ class Nebula < Formula
     system "make", "service"
     bin.install ".nebula"
     bin.install ".nebula-cert"
-    prefix.install_metafiles
   end
 
   service do

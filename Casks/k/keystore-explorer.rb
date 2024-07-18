@@ -11,4 +11,8 @@ cask "keystore-explorer" do
   app "KeyStore Explorer.app"
 
   zap trash: "~LibrarySaved Application Stateorg.kse.keystore-explorer.savedState"
+
+  caveats do
+    requires_rosetta
+  end
 end

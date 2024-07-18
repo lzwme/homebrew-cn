@@ -28,7 +28,6 @@ class Groovysdk < Formula
     # We don't need Windows' files.
     rm_f Dir["bin/*.bat"]
 
-    prefix.install_metafiles
     bin.install Dir["bin/*"]
     libexec.install "conf", "lib", "src", "doc"
     bin.env_script_all_files libexec/"bin",

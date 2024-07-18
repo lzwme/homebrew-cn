@@ -7,6 +7,8 @@ cask "iglance" do
   desc "System monitor for the status bar"
   homepage "https:github.comiglanceiGlance"
 
+  deprecate! date: "2024-07-17", because: :unmaintained
+
   auto_updates true
   depends_on macos: ">= :sierra"
 
@@ -16,4 +18,8 @@ cask "iglance" do
     "~LibraryCachesio.github.iglance.iGlance",
     "~LibraryPreferencesio.github.iglance.iGlance.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -19,4 +19,8 @@ cask "kindle-comic-converter" do
   app "Kindle Comic Converter.app"
 
   zap trash: "~LibraryPreferencescom.kindlecomicconverter.KindleComicConverter.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

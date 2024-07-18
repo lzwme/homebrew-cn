@@ -43,7 +43,6 @@ class Textql < Formula
       system "go", "build", "-ldflags", "-X main.VERSION=#{version}",
              "-o", bin"textql", ".textql"
       man1.install "mantextql.1"
-      prefix.install_metafiles
     end
   end
 

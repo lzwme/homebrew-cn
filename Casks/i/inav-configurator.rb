@@ -20,4 +20,8 @@ cask "inav-configurator" do
     "~LibraryPreferencescom.nw-builder.inav-configurator.plist",
     "~LibrarySaved Application Statecom.nw-builder.inav-configurator.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -4,7 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,14 +12,13 @@ class Gitg < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sonoma:   "c2d256dff6512475355f39087ecb4879f71d7acf921c0052437cda5bcfe05a8d"
-    sha256 arm64_ventura:  "2d3427983fdab1b82bc9f70c0738d8afea29c567f202ca66810b888b662b919e"
-    sha256 arm64_monterey: "e95f4e4de0df3ccb5771f9fe11a31a149c456094ac271e31141a64a411a99e1f"
-    sha256 sonoma:         "b15febabe2a755e5cbd4549e82193d4254cc8c88cd0d29f2850b0479efb99de9"
-    sha256 ventura:        "7ae4a73fc8793b7477b1793667d99400b762998512677f87ffff24ae0f6e0aa3"
-    sha256 monterey:       "5c88b3b0852de793a274aa7bd8e78a04911e8bbfa9981c9ad93c250c4d5d39c3"
-    sha256 x86_64_linux:   "9c51c81c30bc1240f9eab3a3558890736b5d33131199a482dd85a6250d9400a7"
+    sha256 arm64_sonoma:   "1caffaeae8c0c99e46b34624513085e7c8fbe27c38635277f66159b9edf517d3"
+    sha256 arm64_ventura:  "c2973e35ca94c61673fa4f9861f67278a021735c11afb57d1b59035efe0c21ba"
+    sha256 arm64_monterey: "2cf313c7b67b8f4e8e0656c1273872fa2786d894c84ed8bc6f608b1f543c6814"
+    sha256 sonoma:         "c0a70b70902f255644077ee0fe21161a1cd9b3f118872a47eaecacc187c99ccd"
+    sha256 ventura:        "c8fa8f55f91d1c49776752e57e201ac8769687bf0f7438cdedc34c84ff031aad"
+    sha256 monterey:       "45b643eae44497030d2bf25da3f824e8a64e28fdf288209efd4a57b626dc6fbd"
+    sha256 x86_64_linux:   "0cbc0e25ab157fe48820366df24a9ea57d105ece188f62d9bb27110198977d96"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
@@ -38,8 +37,8 @@ class Gitg < Formula
   depends_on "json-glib"
   depends_on "libdazzle"
   depends_on "libgee"
-  depends_on "libgit2"
   depends_on "libgit2-glib"
+  depends_on "libgit2@1.7"
   depends_on "libhandy"
   depends_on "libpeas@1"
   depends_on "libsecret"
@@ -86,7 +85,7 @@ class Gitg < Formula
     libepoxy = Formula["libepoxy"]
     libffi = Formula["libffi"]
     libgee = Formula["libgee"]
-    libgit2 = Formula["libgit2"]
+    libgit2 = Formula["libgit2@1.7"]
     libgit2_glib = Formula["libgit2-glib"]
     libhandy = Formula["libhandy"]
     libpng = Formula["libpng"]
@@ -110,7 +109,7 @@ class Gitg < Formula
       -I#{libepoxy.opt_include}
       -I#{libgee.opt_include}/gee-0.8
       -I#{libffi.opt_lib}/libffi-3.0.13/include
-      -I#{libgit2}/include
+      -I#{libgit2.opt_include}
       -I#{libgit2_glib.opt_include}/libgit2-glib-1.0
       -I#{libhandy.opt_include}/libhandy-1
       -I#{libpng.opt_include}/libpng16

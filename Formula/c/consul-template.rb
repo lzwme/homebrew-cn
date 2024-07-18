@@ -26,7 +26,6 @@ class ConsulTemplate < Formula
       -X #{project}version.GitCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    prefix.install_metafiles
   end
 
   test do

@@ -1,7 +1,7 @@
 class FfmpegAT28 < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-2.8.22.tar.xz"
+  homepage "https://ffmpeg.org/"
+  url "https://ffmpeg.org/releases/ffmpeg-2.8.22.tar.xz"
   sha256 "1fbbf622806a112c5131d42b280a9e980f676ffe1c81a4e0f2ae4cb121241531"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
@@ -9,8 +9,8 @@ class FfmpegAT28 < Formula
   revision 1
 
   livecheck do
-    url "https:ffmpeg.orgdownload.html"
-    regex(href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.ti)
+    url "https://ffmpeg.org/download.html"
+    regex(/href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.t/i)
   end
 
   bottle do
@@ -34,10 +34,12 @@ class FfmpegAT28 < Formula
   depends_on "frei0r"
   depends_on "lame"
   depends_on "libass"
+  depends_on "libogg"
   depends_on "libvo-aacenc"
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "opencore-amr"
+  depends_on "openssl@3"
   depends_on "opus"
   depends_on "rtmpdump"
   depends_on "sdl12-compat"
@@ -47,14 +49,20 @@ class FfmpegAT28 < Formula
   depends_on "x264"
   depends_on "x265"
   depends_on "xvid"
-  depends_on "xz" # try to change to uses_from_macos after python is not a dependency
+  depends_on "xz"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     # Work-around for build issue with Xcode 15.3
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
-      --prefix=#{prefix}
       --enable-shared
       --enable-pthreads
       --enable-gpl
@@ -83,6 +91,7 @@ class FfmpegAT28 < Formula
       --enable-libopencore-amrwb
       --enable-librtmp
       --enable-libspeex
+      --enable-vda
       --disable-indev=jack
       --disable-libxcb
       --disable-xlib
@@ -90,17 +99,7 @@ class FfmpegAT28 < Formula
 
     args << "--enable-opencl" if OS.mac?
 
-    # A bug in a dispatch header on 10.10, included via CoreFoundation,
-    # prevents GCC from building VDA support. GCC has no problems on
-    # 10.9 and earlier.
-    # See: https:github.comHomebrewhomebrewissues33741
-    args << if ENV.compiler == :clang
-      "--enable-vda"
-    else
-      "--disable-vda"
-    end
-
-    system ".configure", *args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-dependency-tracking"] }
 
     inreplace "config.mak" do |s|
       shflags = s.get_make_var "SHFLAGS"
@@ -111,13 +110,13 @@ class FfmpegAT28 < Formula
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools*"].select { |f| File.executable? f }
+    bin.install Dir["tools/*"].select { |f| File.executable? f }
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath"video.mp4"
-    system bin"ffmpeg", "-y", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath/"video.mp4"
+    system bin/"ffmpeg", "-y", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_predicate mp4out, :exist?
   end
 end

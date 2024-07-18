@@ -1,8 +1,8 @@
 class Gcsfuse < Formula
   desc "User-space file system for interacting with Google Cloud"
   homepage "https:github.comgooglecloudplatformgcsfuse"
-  url "https:github.comGoogleCloudPlatformgcsfusearchiverefstagsv2.3.1.tar.gz"
-  sha256 "769a452f8e3758975e3c9e2fe1f8acc569676afcf3134075f2f43c90a7fb86c4"
+  url "https:github.comGoogleCloudPlatformgcsfusearchiverefstagsv2.3.2.tar.gz"
+  sha256 "7be89a7f1171b678272127ec7eb3ab9c31727f2096580f0fefea83ee360dc23a"
   license "Apache-2.0"
   head "https:github.comGoogleCloudPlatformgcsfuse.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Gcsfuse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "846ce0d45edff89d30c3d075d5a50d1211f840a3aa4d288cc8dc05a5c0d9e000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1b9665a2e8d8a66c7dcb2b241e519dee8225618b599df18c083c98df3683123"
   end
 
   depends_on "go" => :build

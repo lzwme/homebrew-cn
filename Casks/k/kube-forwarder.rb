@@ -7,5 +7,12 @@ cask "kube-forwarder" do
   name "Kube Forwarder"
   homepage "https:kube-forwarder.pixelpoint.io"
 
+  # https:github.compixel-pointkube-forwarderissues100#issuecomment-1065111816
+  deprecate! date: "2024-07-17", because: :unmaintained
+
   app "Kube Forwarder.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

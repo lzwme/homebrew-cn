@@ -4,16 +4,17 @@ class Criterion < Formula
   url "https:github.comSnaipeCriterionreleasesdownloadv2.4.2criterion-2.4.2.tar.xz"
   sha256 "e3c52fae0e90887aeefa1d45066b1fde64b82517d7750db7a0af9226ca6571c0"
   license "MIT"
+  revision 1
   head "https:github.comSnaipeCriterion.git", branch: "bleeding"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "dfcc1663c7ca47642db565c77773a3e68866cfc0d5d353629e20ef47649191d0"
-    sha256 cellar: :any, arm64_ventura:  "5ae290e70fc07f3c78d8827027b70232c87ff07bb7297161bde71c9792fb407c"
-    sha256 cellar: :any, arm64_monterey: "f8e3b622a0cd0dbcb169d7595cd15acbe81cc666fb3344f0f0a560fd5740afbf"
-    sha256 cellar: :any, sonoma:         "ec1932cc75323624c4d43a5eb3d54b02b3ec0d016cb111695488b681eb67874e"
-    sha256 cellar: :any, ventura:        "3e7ad78fdf43eddaa64dce5caf15fc28806e8066adc8625720a7bfa2fc9fe795"
-    sha256 cellar: :any, monterey:       "4a591b4b9f37f8343dc5900ad42b8daff1703fa9b7e03b5957b2b94476ea8d89"
-    sha256               x86_64_linux:   "cbb32a2c8d32f1c0611d3194c03190bd9f61bcfd6c6052d03fcf9d5f201139c9"
+    sha256 cellar: :any, arm64_sonoma:   "575118c0a83351e49c5f6504d80e7022186e7f7b21da529ad3015969d9c46f0a"
+    sha256 cellar: :any, arm64_ventura:  "6b9c4a49f635a0eac301d1ed822fd38d5912a2e9a871e814b3ecba2ac58d6e11"
+    sha256 cellar: :any, arm64_monterey: "59ab15a4aed2eaa77fb3b98db32814872866cafba2b9b52a9f1bf7bb0efa6c0c"
+    sha256 cellar: :any, sonoma:         "8a1fe522970384b9a8711295d3c9903258da51247118b4b690cbba3392d9ba60"
+    sha256 cellar: :any, ventura:        "40f455121c1d6d57adf4219972db267a0771a382545ba1446c7cbff6ed2344b5"
+    sha256 cellar: :any, monterey:       "b3a62482e751294a5721e415f743cef1e4ccb86770abb5a06645d49089f76501"
+    sha256               x86_64_linux:   "498652568251bf981b761f3180eaa9c31ddd66cd74604678b3e603f3818e9b91"
   end
 
   depends_on "cmake" => :build

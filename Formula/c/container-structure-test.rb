@@ -1,19 +1,19 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
   homepage "https:github.comGoogleContainerToolscontainer-structure-test"
-  url "https:github.comGoogleContainerToolscontainer-structure-testarchiverefstagsv1.18.1.tar.gz"
-  sha256 "56fa7c8f2a080a0970b06c3fabc29367cb45ef6950526c24a41b07e813f77dfa"
+  url "https:github.comGoogleContainerToolscontainer-structure-testarchiverefstagsv1.19.0.tar.gz"
+  sha256 "fa9d2a1e6b626b331a9830276a8ea96a8013e1652546dd553863308a270457b3"
   license "Apache-2.0"
   head "https:github.comGoogleContainerToolscontainer-structure-test.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "856a30d397fe57e05dbe95b92fe2005708448093cc85eb9a20830686d5f0fac7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12079d86dab2c1bfb4bfbea61115cb12d4d8f2723d9e5509f8d90ac77ae0c2a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5244a8f134cd010c2b135c4506998f7c60c2b6c8db06980ae9ae6cffa18c974"
-    sha256 cellar: :any_skip_relocation, sonoma:         "292ea9df3cc53fe74fe1b6dcf6947d6f2012ad6028392b399ea9510e3555ebcd"
-    sha256 cellar: :any_skip_relocation, ventura:        "d56f868ebe3edec78945ac401c3179b2578b2c58714d26cb3c1ccf37295d2c1b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ec3dbfe41975d74218fcc6ec0f831a4ab90945e087f97f0b80fa51dc223d33c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9faafd7fea3646d4ec4c20dce91b1a123374982d4e4a09617a6f0817e26bf2f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72331e49cd211ce8bd5151a38ffa538ae4853e00f6c99842bed5ed13819b2297"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58b2c45687cf8a5f46e4f58762ab324e3ab7129262963491ebf3dc1c854173bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c32a65364765bec3b3f2f106ddf25d8a32f13e66ab010aa19fcbe73babd18577"
+    sha256 cellar: :any_skip_relocation, sonoma:         "232c9478fcc68edd418808f12ea804fc12884caa6fa148388be8c026612b8390"
+    sha256 cellar: :any_skip_relocation, ventura:        "345e3d5b10d06ec895bba7fbc065f7ef35c6b0271d548bfc02f6b7df939209ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "fabbe847882bee3211f9973bb0099067d0071be8526023585e6107d3dea07f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aebec8e924a4ad803265b2480aeee5c5f4bfd1785d389249aae897ee25d193f"
   end
 
   depends_on "go" => :build

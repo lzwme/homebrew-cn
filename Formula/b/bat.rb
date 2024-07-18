@@ -4,21 +4,22 @@ class Bat < Formula
   url "https:github.comsharkdpbatarchiverefstagsv0.24.0.tar.gz"
   sha256 "907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https:github.comsharkdpbat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "66f03028e55d7a9ce344c7910b8469e16c0acd812ebc2886cdff8c10f9cf34c4"
-    sha256 cellar: :any,                 arm64_ventura:  "b36dd52fda8441a5b9c83f0914b4f362c8caa9c6a1143b1ee2c7f54941b8ed6b"
-    sha256 cellar: :any,                 arm64_monterey: "0a7454b37d7b095de1006996ceb43a585ca05339c2f540dde1703202b139695d"
-    sha256 cellar: :any,                 sonoma:         "58769b8c6b1380e9d066586bf8f678993457ef9ea449c3d4d7955461018d3b49"
-    sha256 cellar: :any,                 ventura:        "d6e91c86547c67292cb6abf92fac7f9c6272bf6bca5483466e3e9adc744ce1c0"
-    sha256 cellar: :any,                 monterey:       "eb2c932132331cb87e5cace268b034e32c3a4741fccd42813cf853269e3a9c21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ae5db045ded8528d1588d703d62d6be481ebe006888c7e29f7e178b07e0e926"
+    sha256 cellar: :any,                 arm64_sonoma:   "7f10b2232b03e82cd9d27560e9ed7e62e685370a187c1d9ae692b9c088f7b078"
+    sha256 cellar: :any,                 arm64_ventura:  "36c6ccd54c032411a7e552a010e6859936bec66ad7937ee210de8ef2a7b09ffc"
+    sha256 cellar: :any,                 arm64_monterey: "bc2056fc9ac24bd33d1f8739330f25c759afad5255532547a30ecc4ebb792004"
+    sha256 cellar: :any,                 sonoma:         "f6d1933c659a4073863cdad02273a9a6261770cf2bcdb8694ebd65433c49f634"
+    sha256 cellar: :any,                 ventura:        "1beafb2f78e79ea2a905db10306c5944cb02a58b6b0e334d766482f853c9c692"
+    sha256 cellar: :any,                 monterey:       "14e1b6003fd419f35f525667d4997c42fc044f85709563c3f02833ecbb98e3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36182f578db0917f46fce701b68b7122bba8323524b384f3238ca325a789b97d"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "oniguruma"
 
   def install
@@ -50,7 +51,7 @@ class Bat < Formula
     assert_match "Homebrew test", output
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
       Formula["oniguruma"].opt_libshared_library("libonig"),
     ].each do |library|
       assert check_binary_linkage(bin"bat", library),
