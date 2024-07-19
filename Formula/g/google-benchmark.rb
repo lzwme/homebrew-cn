@@ -1,19 +1,19 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
   homepage "https:github.comgooglebenchmark"
-  url "https:github.comgooglebenchmarkarchiverefstagsv1.8.4.tar.gz"
-  sha256 "3e7059b6b11fb1bbe28e33e02519398ca94c1818874ebed18e504dc6f709be45"
+  url "https:github.comgooglebenchmarkarchiverefstagsv1.8.5.tar.gz"
+  sha256 "d26789a2b46d8808a48a4556ee58ccc7c497fcd4c0af9b90197674a81e04798a"
   license "Apache-2.0"
   head "https:github.comgooglebenchmark.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96f66edd70bd4fd5b743b3cb47481c55a0fa6119048566d304f4f4b76f4e3cfb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70025180f4eefd615cd18012febe749208f4113ea925789dc10ef902adc03dc6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c489b8fce7399e3b8e429df45f9c119c405669a86ec10ba1689984732bb8de80"
-    sha256 cellar: :any_skip_relocation, sonoma:         "89b959b99ccb917145e426fc38c79f474a48799f86a875a8da3da0edb898250e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f49d6f70f17ac2f192674ab9136713bc4be13280fef264cedb47d3e58f25e730"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b9200561f16267c54323837a819a9f9c384d8a2318c7caf51b6b6d602b4b816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32cf9bc19a5623a51c97a2bbb200bdb11fb5d444b5d9247b7c1a68225a2855ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b8107188b5464fd82a0eb6bef619216dca1c1acb4c54807853b7ca7c0a7bb68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15d35ed300e5f4d576f0307f5436b98964f39e20b45610fb47cd3b28200eb525"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7beaeaf5f83176400116468f2426fb4daeeac7b5d91f928301033d3318eaa5f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e20793bce48954150e078d4bdc5fcb8b8055dc42f36a7b18dbc6dee66863f50"
+    sha256 cellar: :any_skip_relocation, ventura:        "2585e20f79fb5b75a3b7655e39c044818d1b2ec3b04ce308a184a00f3dba87aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "f61171cc5cf5724e70bda8293bc740f13811dd3c473eea7618bdb8dbde55536c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1535fa8185d11b074b42adf0f314a73cedf4e777c4c8e0f52f16352784554f9b"
   end
 
   depends_on "cmake" => :build

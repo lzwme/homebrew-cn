@@ -7,13 +7,14 @@ class GnuUnits < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "8be10faad6f9a7391148fe0cd5748b28cd3b2194ef0b4f4a14c1ce78f4466b2f"
-    sha256 arm64_ventura:  "90a4e4efe9e2cc803aad78fa7b5d5e69dc0651fb22ec380e944ef854e932ef26"
-    sha256 arm64_monterey: "d8b640be8f30166129f8b91105c9edf75a1c9b5df05a8094d1266d6c7bbf71fc"
-    sha256 sonoma:         "1c878e0d2ce4967ffe7a47d973e347e628a1a18590b3b3a4ec6f25e6878f818b"
-    sha256 ventura:        "661431292b871a07d71e0a96a7ac8c034126f88e5137b37caa21eab6e4f96c15"
-    sha256 monterey:       "376b628a76336b62a49e0e630c4a4573a1e3c4b42c7325209f5e85af36888d27"
-    sha256 x86_64_linux:   "62ebf75d2507b08f9979204e0ce049f953cd4b498db42080bebce78247abbfc5"
+    rebuild 1
+    sha256 arm64_sonoma:   "473f619fae31245e4b4d04c66e74b0363cb64d43964a5e82307d2dae10e20254"
+    sha256 arm64_ventura:  "e364dbbb0ad04977a9e1ac93c47355a153e4b3b73089b126ea708df02dd24029"
+    sha256 arm64_monterey: "b0153e8b43b52bcdec45fd79d59208658fad30548138ccb8be565975daee2373"
+    sha256 sonoma:         "22d8e72eb6255cdb7530e64d86d2e93eff2a6346ff0000c48d64b9c998f251a2"
+    sha256 ventura:        "100129725430b6f71f48ee93d999c0735cea0e6bfac0d2f4d0c4505329a6ac29"
+    sha256 monterey:       "8d116d2d4e98f362e0213daf131db29d60282df0e83838feaa9eb0c4aa9d9d36"
+    sha256 x86_64_linux:   "cca502b31e282cfffb7c30ffc204cecdf2d6a9aba8b23310e886719096465fe0"
   end
 
   depends_on "readline"
@@ -33,7 +34,7 @@ class GnuUnits < Formula
       (libexec/"gnubin").install_symlink bin/"gunits_cur" => "units_cur"
       (libexec/"gnuman/man1").install_symlink man1/"gunits.1" => "units.1"
     end
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

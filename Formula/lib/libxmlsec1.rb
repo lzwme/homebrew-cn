@@ -1,8 +1,8 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.4.tar.gz"
-  sha256 "45ad9078d41ae76844ad2f8651600ffeec0fdd128ead988a8d69e907c57aee75"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.5.tar.gz"
+  sha256 "2ffd4ad1f860ec93e47a680310ab2bc94968bd07566e71976bd96133d9504917"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libxmlsec1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "408d3fee98965fed2bb5c3534b9205e4a44197fd2590d539c54abec98e855767"
-    sha256 cellar: :any,                 arm64_ventura:  "687072490c390f0ca5726066b25ac45c819863ab2fbd8fb00ade24046cf30895"
-    sha256 cellar: :any,                 arm64_monterey: "99ec155d703937ab71ff84133e42d6fe1e3a52bd11a4eaa43b000ce52dcc21b4"
-    sha256 cellar: :any,                 sonoma:         "e8266e14e7cc534ee8995fc369dfc8e365c561c09f39ec9d6f5ca7c51db036ea"
-    sha256 cellar: :any,                 ventura:        "cd3c045a06728102ad8dd83a5db5a0a15270717424857265be64144b38e039e0"
-    sha256 cellar: :any,                 monterey:       "f5418fcbf1f7b47ba604c3327b9b23b424f3122071fcfc338c129caef897b5af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d79c1415b0a2687e45e14991a2760208e72b92de97632f35d9166193710eea10"
+    sha256 cellar: :any,                 arm64_sonoma:   "7731d32c5c2ee494f03870631d070debfa83466f08d72f6d4891144ca0f2fd1b"
+    sha256 cellar: :any,                 arm64_ventura:  "e632fcf2cff2e0b5d3a08cc8ffbb47b339aaa9c57ea517e8a8d99f0ff4450a30"
+    sha256 cellar: :any,                 arm64_monterey: "d6a3ea2f521670b52000d551dc86a1fb0433a16ea976b072d396ecb8cff07e13"
+    sha256 cellar: :any,                 sonoma:         "7cac617ce6a3c41ccc883373d25aa5ecea6316a19650fd675d5b7ae4071b0156"
+    sha256 cellar: :any,                 ventura:        "b65856e9c1f414238c8c7a58d34afc242dc186e931767cf62bd9f962b9990047"
+    sha256 cellar: :any,                 monterey:       "c58bbc73a0c7410edcbb43ad52e1b11913711b5e8ffe5968976d4db562b43824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9328a9d91fd609b96f885d27605f56763bf89ff7d4e5da52d4560e93d6c4d780"
   end
 
   depends_on "pkg-config" => :build

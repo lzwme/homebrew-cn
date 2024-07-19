@@ -9,21 +9,22 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b08079f51bd2f49def8624e024f48fef74cddbf2e215182b792f0bb3b0a62526"
-    sha256 cellar: :any,                 arm64_ventura:  "8ec1cd2f9c1de134be477fc35eb9e9c892c5bad7241dd4b4df0bfb1275683ea0"
-    sha256 cellar: :any,                 arm64_monterey: "e95691eec5745aa5c1f0732d7a4c1a6215b50e11867d40a9845fcf6e30f7d8e1"
-    sha256 cellar: :any,                 sonoma:         "e2228ed0b9e5c09a00a530f544d35baaf05cbf55f17ad32d0f9df2d80e788fa8"
-    sha256 cellar: :any,                 ventura:        "14721b970a5cf3bbf431a094eabe0c7e49d1d0b947c611a910978f61f2b5232c"
-    sha256 cellar: :any,                 monterey:       "f94ef0ed7bea9a25f758c2bba891562cb3b6ae3fcaa4252df1937fc62b9bae4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "683892ba4c1b916bb1506d5ba3e6638cabf7c66bd42417f6a6433dc3e0b3625c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "94fdc6ebe650027f0336801720312e46458a81fa05a6699e83d017166d69fd64"
+    sha256 cellar: :any,                 arm64_ventura:  "dc4cd9729e4514004087a0320a9bd11f10bd64d515475a2f1eaca719cf36ee6e"
+    sha256 cellar: :any,                 arm64_monterey: "c9fd6a165e3cefc496fdfe75aa2e9bd126b89034076931e13076db3902c9098e"
+    sha256 cellar: :any,                 sonoma:         "9482643c62438dec4e4da0e61b8cfeb2559bbd940f992e085dee402d928188a7"
+    sha256 cellar: :any,                 ventura:        "36ba75b584d84683f948099864c428ae857fef32d8ea22ce214f8f6ff19e4640"
+    sha256 cellar: :any,                 monterey:       "c8394e35012d322f13d049bc0f5faea2b005e2b46753725477d76a38eb8fe581"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87f3603690ade35e8b0280f3ca354ae29bb6aa979b58ed0d00fb9ca47dc43d81"
   end
 
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "libgit2"
   depends_on "libsodium"
   depends_on "libyaml"
+  depends_on "pygit2"
   depends_on "python@3.12"
 
   resource "attrs" do
@@ -194,11 +195,6 @@ class Charmcraft < Formula
   resource "pydantic-yaml" do
     url "https:files.pythonhosted.orgpackages9ee730713a0fae04001f8886b0219cad667b0fbf56149f4ea3ee5a84e8e0c9e7pydantic_yaml-0.11.2.tar.gz"
     sha256 "19c8f3c9a97041b0a3d8fc06ca5143ff71c0846c45b39fde719cfbc98be7a00c"
-  end
-
-  resource "pygit2" do
-    url "https:files.pythonhosted.orgpackagesf05e6e05213a9163bad15489beda5f958500881d45889b0df01d7b8964f031bfpygit2-1.14.1.tar.gz"
-    sha256 "ec5958571b82a6351785ca645e5394c31ae45eec5384b2fa9c4e05dde3597ad6"
   end
 
   resource "pymacaroons" do

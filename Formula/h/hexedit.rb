@@ -1,6 +1,6 @@
 class Hexedit < Formula
   desc "View and edit files in hexadecimal or ASCII"
-  homepage "http:rigaux.orghexedit.html"
+  homepage "https:rigaux.orghexedit.html"
   url "https:github.compixelhexeditarchiverefstags1.6.tar.gz"
   sha256 "598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3"
   license "GPL-2.0-or-later"

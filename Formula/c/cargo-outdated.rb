@@ -9,22 +9,23 @@ class CargoOutdated < Formula
   url "https:static.crates.iocratescargo-outdatedcargo-outdated-0.15.0.crate"
   sha256 "0641d14a828fe7dcf73e6df54d31ce19d4def4654d6fa8ec709961e561658a4d"
   license "MIT"
+  revision 1
   head "https:github.comkbknappcargo-outdated.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a64cfa869ebf18a5b503eb18e9fff3a5bfbe03ff140c13632ab474a9f4aec52"
-    sha256 cellar: :any,                 arm64_ventura:  "97f5a8cd382904cbadf6cebb05aa4724f1a4ea2e33c1de7dc49e1d5e3779b645"
-    sha256 cellar: :any,                 arm64_monterey: "66c5b1160d69b285925f22908da23f5c16e012d02c2886b47dbb2e4e296fbaa2"
-    sha256 cellar: :any,                 sonoma:         "6b79a061b01990586e093d97fac5dc62a14d2d15c6eb70b45935d6ccfacf3de6"
-    sha256 cellar: :any,                 ventura:        "6bd512544a6d9822d3a049df30d68300f462af2df0d1476822623d3857f2280b"
-    sha256 cellar: :any,                 monterey:       "5a05df06ef26ab97b72391a7bd91bf06afe8b016944c691557d0063b76971492"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7543eddf05cf16cdf8c4f938e19509b9a1d160fae615f0e7aa8603397e8d5740"
+    sha256 cellar: :any,                 arm64_sonoma:   "94522bad259cf98624503bd1c36b359489a4e3e80e88892f28619d9edffe3287"
+    sha256 cellar: :any,                 arm64_ventura:  "ec799ae4a8928ead673a50feec7067a5e0568c96fe6c862b0cb9535adc1dadac"
+    sha256 cellar: :any,                 arm64_monterey: "e639384993b506125e86d0059712187857c328a944bd096ad32889865b35be2e"
+    sha256 cellar: :any,                 sonoma:         "414ac82417f8b68cf77b882cc95b40de2a4a7a29a78f1e34111b4e4d54b05982"
+    sha256 cellar: :any,                 ventura:        "1c0734e31857ad16ec0b49bc471aa33b4c8a3c83ac26613f665300e1538bdcad"
+    sha256 cellar: :any,                 monterey:       "da4b0dce1d17bd596a0ac310407782ccab9c27e91edcd487f52c94c8e4a491f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37d1ad865261d4ed2dd5e3b19f3f843aa5e27fed0e3126b628417c6c9ca3d9e3"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "openssl@3"
 
   def install
@@ -72,7 +73,7 @@ class CargoOutdated < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|

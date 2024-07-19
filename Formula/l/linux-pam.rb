@@ -1,6 +1,6 @@
 class LinuxPam < Formula
   desc "Pluggable Authentication Modules for Linux"
-  homepage "http:www.linux-pam.org"
+  homepage "https:github.comlinux-pamlinux-pam"
   url "https:github.comlinux-pamlinux-pamreleasesdownloadv1.6.1Linux-PAM-1.6.1.tar.xz"
   sha256 "f8923c740159052d719dbfc2a2f81942d68dd34fcaf61c706a02c9b80feeef8e"
   license any_of: ["BSD-3-Clause", "GPL-1.0-only"]

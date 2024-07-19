@@ -7,14 +7,14 @@ class UutilsCoreutils < Formula
   head "https:github.comuutilscoreutils.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "909f65abde6d575efbd663905b1af083ee02b6ee3dbf9785838403a1ed48c0e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9513777efc24f8f5afa53b26512303c24644472982be1e9409e43ae5c5c3b315"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5981c792d41976b5478ae9d7abcc6254913c3f830986fac7762900f5e5904918"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f329b6db2133f8fd9cc382fcfc638db824a3ea192bde0419ad661ea4c433738"
-    sha256 cellar: :any_skip_relocation, ventura:        "16d1a6e842797a06f97ff64d43290b1fc4a9d5abb08eef0a62fb539cf66bfa2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "039454774e3ebb1f6e658b725d43c829dede270ea56b21dab9e6b6d2c53f4875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95279f741499a4d83312ac28ce40bf1a260bb30e23cbeb545475f7348159c77a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe7f3acfd38d03324688992a9d772ee73b20ce6fb4c0f822b19b8644edee717d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a5d5a1a16401ff96a7aecc0c71fb2c1612e350de3c9ca98eac368bf3060ee9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e37c96f80334ce66be4aa8fbd1c7bb9537a7c0693bbd7b7a8731c8ae1293ca1d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "79b54832494706587f5b9545690ee91e857d4d4ac86da00dfa35ae200997ca49"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0d1e609f322dfd1cd054640308216fbebd310e20ab8c10039ea136386ba3775"
+    sha256 cellar: :any_skip_relocation, monterey:       "fde4e6ddbb70db21ae8bd91446cd7e6e278dd78645e7a9a5119b417fd7ce5d30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ba63b4c38b3041f81d0340345f6929e395d490f67816851a148f413f586a42a"
   end
 
   depends_on "make" => :build
@@ -47,7 +47,7 @@ class UutilsCoreutils < Formula
       (libexec"uuman""man1").install_symlink man1"u#{cmd}" => cmd
     end
 
-    libexec.install_symlink "uuman" => "man"
+    (libexec"uubin").install_symlink "..uuman" => "man"
 
     # Symlink non-conflicting binaries
     no_conflict = if OS.mac?

@@ -8,4 +8,8 @@ cask "lighting" do
   homepage "https:github.comtateyLighting"
 
   app "Lighting.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

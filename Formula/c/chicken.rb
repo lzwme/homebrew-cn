@@ -1,10 +1,9 @@
 class Chicken < Formula
   desc "Compiler for the Scheme programming language"
   homepage "https://www.call-cc.org/"
-  url "https://code.call-cc.org/releases/5.3.0/chicken-5.3.0.tar.gz"
-  sha256 "c3ad99d8f9e17ed810912ef981ac3b0c2e2f46fb0ecc033b5c3b6dca1bdb0d76"
+  url "https://code.call-cc.org/releases/5.4.0/chicken-5.4.0.tar.gz"
+  sha256 "3c5d4aa61c1167bf6d9bf9eaf891da7630ba9f5f3c15bf09515a7039bfcdec5f"
   license "BSD-3-Clause"
-  revision 1
   head "https://code.call-cc.org/git/chicken-core.git", branch: "master"
 
   livecheck do
@@ -13,16 +12,13 @@ class Chicken < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "153f91c6f57de09a23b056da8ab32f0a78d1d5a8ef30a4f1c7c1de611c9e1aba"
-    sha256 arm64_ventura:  "725c379c3149258014d47f3020e0fe1f884f3597d5e7ebd95fe60ac384b94873"
-    sha256 arm64_monterey: "735eaf1eff7d654129834cf32300deaa9967a154a05e8d646715061a817dbccd"
-    sha256 arm64_big_sur:  "41364c265c005a36f35b92e71e5442b478a31350ec2c3fdc56014a89b01b49ed"
-    sha256 sonoma:         "2f9f0201ad695213089099af8d4222c3f9859e6664394f44b13a2ecf05116f5e"
-    sha256 ventura:        "81b173fbdafe7ab814bf91126d30afb1385aead51485cd0e7c9d6185b47edb78"
-    sha256 monterey:       "5f24e343e712def1c09cff350d1ee69abd79a23699d64d766e36072933390699"
-    sha256 big_sur:        "d7e2e910b7744978bf4cc87f09088d5460c40918a2b2368f2e57646b4c8ddb48"
-    sha256 catalina:       "b05075013a96eb98358be15f57417b4bf511ed8d93a78b1a330dcb4be1a14046"
-    sha256 x86_64_linux:   "e2b200753be38c69074918464c322b94d0468d234b332b69d77ed074a372cbd9"
+    sha256 arm64_sonoma:   "937abf3f4f1b9c2c8fe12d091fe009e47be5c293db051314f37044c6ea18e58f"
+    sha256 arm64_ventura:  "14359300f7a220a4b7756217f35ff22dd678c36bce8f24366d2f450cee37df81"
+    sha256 arm64_monterey: "eeef1d3351f9ce6633fc224ad133b68af57ab1f57c224d756a877629018b3c0b"
+    sha256 sonoma:         "4fb9fc2a51936c8219769352d50a5dc71a1a70437709a489e94125adb86c643c"
+    sha256 ventura:        "c61f762a256633c5f9940a33d53c43204fe25e7e08283d30ed07f80b29753ea6"
+    sha256 monterey:       "2772973cddc536ee5432553792f1bbc58812943ce2c51a0313db2dddaccae735"
+    sha256 x86_64_linux:   "1091828584dfe4b0eaf42f4dac05b789f9933f2888cdccd56536363e3e107868"
   end
 
   conflicts_with "mono", because: "both install `csc`, `csi` binaries"

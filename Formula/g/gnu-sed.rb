@@ -7,16 +7,14 @@ class GnuSed < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c4c92a7683dcbd3d251bf2e541ed46151401423cc9cbf30db9ce7185dc218a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5abaf39c16d02125db97d14cd36a96cf1a20a87821199cb38a55134fd4e0aaef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20ae3f853a32e7f7f0f340e8c751ab7350888a655bfe7c5c20e5746c61a24fd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7c89842a90d03dbb497bc1ded17b7d732fe20eaf69613fd4abb48820ab80895"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6ab6bc1628639ff2789fe20e4dd690e4bfe047d3a772bbb7b5d57efe88787951"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1ac59a9a6fa20c6c904e047df3ee4d0b4e57c0a5df3821b17b8cd82bcc67b5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5e2460ad86516b2517f1e77d672a4fd6ad30b158c470cccbb3b6464f228674d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c1c63d995d132a82fadc80b470eecfe816cb86c8cd716f01de5f003bc1199fcc"
-    sha256 cellar: :any_skip_relocation, catalina:       "fb5ee7317d987d9ac7f2ee357736a9bc594c88b5fbbca4f6a65046f1c2898c44"
-    sha256                               x86_64_linux:   "8abd5b48de6b706c1ce7c2f7b8775420f63078ba294bd5ad801e458776228bbc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca2fd8e6b23712c14bfb84c584f0ac08f58f34e66ebfcddb9da59e38f308ed3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c70b2b3bd8b11457e19fc450c330da321ab4270023452578ea95fb01f618540a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e3b5d286e0e24f8a592ae909c2816f59c5b72ef21973f4213a1758421c6dcf2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5831636dc3635c4e76a229dded92d1da402fc03fd92261179e2c874d6bfff810"
+    sha256 cellar: :any_skip_relocation, ventura:        "292fdd497666624a749327d262b9d61e33a72f4dfe994ce8212dc8b512037761"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d5ad0f2edb63fe1d0b7de7f6a370643be971c20702839388d1ca05c4e74f5e4"
+    sha256                               x86_64_linux:   "3989ab1717786e2d9ac9d1035f794cd741372131c1f830e2a76722f085872cfb"
   end
 
   conflicts_with "ssed", because: "both install share/info/sed.info"
@@ -40,7 +38,7 @@ class GnuSed < Formula
       (libexec/"gnuman/man1").install_symlink man1/"gsed.1" => "sed.1"
     end
 
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

@@ -4,6 +4,7 @@ class GitInteractiveRebaseTool < Formula
   url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.4.1.tar.gz"
   sha256 "0b1ba68a1ba1548f44209ce1228d17d6d5768d72ffa991909771df8e9d42d70d"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,18 +12,18 @@ class GitInteractiveRebaseTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4ac649d64eb740c263b9ad078d03653d3ddcd0749f421e8f3338a14a118c4ab4"
-    sha256 cellar: :any,                 arm64_ventura:  "a9651edfb9767af29f1616798bda32cd94114cfa1d175a5367d7539560b7aba6"
-    sha256 cellar: :any,                 arm64_monterey: "e6d25224763538b1732a4489dd02b56e1a5069113f1f949336a780de68fa3628"
-    sha256 cellar: :any,                 sonoma:         "3f1e8c8ebf19d085050d76d1541e400f0a85ab867681244d5a169a9c83df0210"
-    sha256 cellar: :any,                 ventura:        "d8704de335fe2d5fdb1f9a43a87ff650a92b733846f366ddeb394239e59903b2"
-    sha256 cellar: :any,                 monterey:       "c001b62f173b7b355e34ac2ffc379430ebae1e5660ed2c1b3fb9b9f7f909ff6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18ea56c826b260bd6028f99818cfdb98a5ff684c2c581712dbd76527161c5877"
+    sha256 cellar: :any,                 arm64_sonoma:   "fb5993c4312324326b25f1e2209b6fcbe88fc98352db69fdb07c0b5c63e42873"
+    sha256 cellar: :any,                 arm64_ventura:  "0bf45047f460751efed83d895546c79188af0933cba013160a8a0fe0cedb7b89"
+    sha256 cellar: :any,                 arm64_monterey: "72a6adb852a9d40a838a9136717148b2aaf1e70f832e5edc599d33f87fd77149"
+    sha256 cellar: :any,                 sonoma:         "fca7280d997fbac58b67ad6b55e627805353ec814fd0a23fa3883a699def7326"
+    sha256 cellar: :any,                 ventura:        "8f8ffe5ca81753b46ff1df663fe9219baa5a9e331d3abd29f91af0f97a077a95"
+    sha256 cellar: :any,                 monterey:       "8512328d56cf54e7f7c712b985b84ee6267df174eb45e514f8da300f312a0905"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7aa1b32fbfe987e86fdd9aa2a914c14a041341b9a7ce781555b68ca325b2e31"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
 
   uses_from_macos "zlib"
 
@@ -67,7 +68,7 @@ class GitInteractiveRebaseTool < Formula
     assert_equal expected_git_rebase_todo, todo_file.read
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
     ].each do |library|
       assert check_binary_linkage(bin"interactive-rebase-tool", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

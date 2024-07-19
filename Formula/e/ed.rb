@@ -7,13 +7,14 @@ class Ed < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "256f07971d6c3531a7e4ff53181ed97c2a3eba36695728b690540a7da40aee2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d79fa7654496b56001cc2375966611fb2acff57b9503ea9c093a2ad12ee67d66"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94bbb07a78c169c2052ba0a347efd1456331acf885ac4d0d969445540baa25e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "307e41c5a31b7df5274e91390e7b69f4ef679aac9e946cad02cb4c73023cc4c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "44a39cd99e7284851a607084242703e0bf0836fb515845c20a9531222ed2a190"
-    sha256 cellar: :any_skip_relocation, monterey:       "e9cfc5a1ab23700ec4c7230335571d58e4de10fedb4a0938c04b9841f55480c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cec09d44599940964ce0b1cd8936746a001df44cf76fac1b65dce2e8e875e378"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5e2085684e3c92fbfd33c36230d0948bf13fce8d79664894213f514dee00811"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06825e7936586efb4577e2f00f07763e0e126e3415b3cd83b57af05e5695889e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b57aba94d5a86dedfef793b7f035c20449d7441b4c2c5c96c8f591181830c79"
+    sha256 cellar: :any_skip_relocation, sonoma:         "738c04bc4f1d593dd2b24c4729ef586d66f5b33bb53085c431798d4b065ecefa"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0dcf2f47ca608af30f5ba70fd1c7c0344a728fcdb4812d2a284a4393ac87728"
+    sha256 cellar: :any_skip_relocation, monterey:       "abcf20b00afa925f070a7840b44b01e57a02fd5ccd06632061863f50103a5c55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "190b7d16443a9415e21a0ee9d93a106d7890680c428f6bfa1a23f0b7d994c67d"
   end
 
   keg_only :provided_by_macos
@@ -35,7 +36,7 @@ class Ed < Formula
       end
     end
 
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

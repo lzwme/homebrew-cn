@@ -3,8 +3,8 @@ class Asciidoc < Formula
 
   desc "Formattertranslator for text files to numerous formats"
   homepage "https:asciidoc-py.github.io"
-  url "https:files.pythonhosted.orgpackages8a5750180e0430fdb552539da9b5f96f1da6f09c4bfa951b39a6e1b4fbe37d75asciidoc-10.2.0.tar.gz"
-  sha256 "91ff1dd4c85af7b235d03e0860f0c4e79dd1ff580fb610668a39b5c77b4ccace"
+  url "https:files.pythonhosted.orgpackages1de7315a82f2d256e9270977aa3c15e8fe281fd7c40b8e2a0b97e0cb61ca8fa0asciidoc-10.2.1.tar.gz"
+  sha256 "d9f13c285981b3c7eb660d02ca0a2779981e88d48105de81bb40445e60dddb83"
   license "GPL-2.0-or-later"
   head "https:github.comasciidoc-pyasciidoc-py.git", branch: "main"
 
@@ -14,14 +14,13 @@ class Asciidoc < Formula
   end
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "215cdd544ce3046f58f868347c476c8fa83b3391b2a700e6ddd1f9b65b0e9c4f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "215cdd544ce3046f58f868347c476c8fa83b3391b2a700e6ddd1f9b65b0e9c4f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "215cdd544ce3046f58f868347c476c8fa83b3391b2a700e6ddd1f9b65b0e9c4f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14ebbae301d847d3e1eb0a62f632982736583120d816f6cd4489fea56ccf8629"
-    sha256 cellar: :any_skip_relocation, ventura:        "14ebbae301d847d3e1eb0a62f632982736583120d816f6cd4489fea56ccf8629"
-    sha256 cellar: :any_skip_relocation, monterey:       "14ebbae301d847d3e1eb0a62f632982736583120d816f6cd4489fea56ccf8629"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30bef817c3d4b470c4290451311aac33acc092dcaef0b42e8ba2c8444646abb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ab32cd1cb6941a93ad04eede903bccef924de598f18ce3e3ceae24f352df018"
+    sha256 cellar: :any_skip_relocation, ventura:        "7ab32cd1cb6941a93ad04eede903bccef924de598f18ce3e3ceae24f352df018"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d6d5e9be887a617249f785eb76402192778a5fc2885f17a9e8a9cc7595b9c29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f7189d7ff2776ad9f27dcb9403f90f435f48e615552eb16db2972fc43616e38"
   end
 
   depends_on "docbook"

@@ -8,14 +8,14 @@ class Gawk < Formula
   head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "499846eee5d2c6b3be6fd9b7c6097728f935453741b9f148890fc05dfa46da77"
-    sha256 arm64_ventura:  "8f10baab1fd634eba3b7f84edd353d9f978de2b11d20e76cb4294eb6fc963934"
-    sha256 arm64_monterey: "f9885785f17b99fe4fdd3ed0df6c18835cd0d65d5cfa6f46b4eb193856a36495"
-    sha256 sonoma:         "2b93e1aec7726e3276bcd4826b3f258c2bdad143ffcf6d36ea7b2b317fa3175e"
-    sha256 ventura:        "d024c72187389da9f92ce7264dd199ab624fb0b25a210ce612705b5f8a1b9af5"
-    sha256 monterey:       "1171dc2bb9c744ee48d96a379be108b80550daff5ed472512c16f73349ef9e50"
-    sha256 x86_64_linux:   "a9c75546a0a9e37feed5cbe1512c3d1ff31f27349c5e63ed1934a60b2f25f576"
+    rebuild 2
+    sha256 arm64_sonoma:   "73d743d915e4c9841f9bdc289710ef4ea071ccf1f026542f1fcc8ba4a870e8f5"
+    sha256 arm64_ventura:  "36265210141086740f625d2e672b6275a2247de4de1f1df9747ed51b409a5e24"
+    sha256 arm64_monterey: "24956ab7119678bf5168a66ace1b5e735cede929084ff756da14ab74a1c8f63a"
+    sha256 sonoma:         "786aa0d52925e6816ece520d4ca45778862775249186e9bea85022dc96653c38"
+    sha256 ventura:        "30185c073065bff4138f1512603315c789babcb83a3253a8155b670e4baa32c1"
+    sha256 monterey:       "ee33b62eba04ca68cc6346b7fa51466696b9380f67e2a2bedaa367a1a154c9a4"
+    sha256 x86_64_linux:   "2938d1181dc33bd3b5470f59eeda56184d522af135bcce84142d7495d1cf2b33"
   end
 
   depends_on "gmp"
@@ -55,7 +55,7 @@ class Gawk < Formula
     (bin/"awk").unlink if OS.mac?
     (libexec/"gnubin").install_symlink bin/"gawk" => "awk"
     (libexec/"gnuman/man1").install_symlink man1/"gawk.1" => "awk.1"
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

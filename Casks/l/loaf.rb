@@ -16,4 +16,8 @@ cask "loaf" do
     "~LibraryPreferencescom.loaf.studio.plist",
     "~LibrarySaved Application Statecom.loaf.studio.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

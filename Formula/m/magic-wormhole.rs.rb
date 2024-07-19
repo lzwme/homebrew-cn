@@ -1,19 +1,19 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
   homepage "https:github.commagic-wormholemagic-wormhole.rs"
-  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.6.1.tar.gz"
-  sha256 "522db57161bb7df10feb4b0ca8dec912186f24a0974647dc4fccdd8f70649f96"
+  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.0.tar.gz"
+  sha256 "dee1f6784310c0855473aed5fa45866b74e90baf3807e881dee8139caf20c9b3"
   license "EUPL-1.2"
   head "https:github.commagic-wormholemagic-wormhole.rs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d38edab7ed408bd27e9e9f1885a652c9d142991afee79fe1bdf1d049b906280c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f706e6c204c714e3fc0656cc6807df5147ab772949bbe9f714b6b7385f420fbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71a0c12ddcadfcc5ba1b9b9efda2bd5c84f02fc795d7b9ba9a2fae9cdf344d33"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0dd2f502fd16e23076d234dce9893b55225bc37b4dc789cd4e69a1b505b11fe3"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5604c8b0d336a96aafd97d18e2e2604ab7ec6653685980bc1c467b934a8cb26"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b3c15888e1b07d1122d0d6127cce866b7943656ac8598dc54ed4b92131d271d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "712436bf59d66a6463ee06711903b120f00d6b16e822fae4dbac203bd083a439"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a69c7e6833c59df6da5a9529737823aedaff273802b7f461b624a6dd6dffb11c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b30394c767a8eef7cfdddd48f53cd896bb4cf5cf5f9604a4a6aa4cb56742f78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4ce2ac8fbbe62f82e8078d2cb29af22861bc7c0cf554a83c2bf4906afb1cd00"
+    sha256 cellar: :any_skip_relocation, sonoma:         "24175fe4e1a585f986850e0f890b0c0512f829ef297e556e28f871afd6510849"
+    sha256 cellar: :any_skip_relocation, ventura:        "10d418a2b9bd389896c47ba20f3acf8f69960994535fc79a6440ce7a7ae4c572"
+    sha256 cellar: :any_skip_relocation, monterey:       "15143940a55920f228cbf93305274273054b191381436f40d72d01c038100b04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc4b3ebc907ac2ca40b0000f593b744d317f759401fed67b8138a964b5880d48"
   end
 
   depends_on "rust" => :build
@@ -30,9 +30,10 @@ class MagicWormholeRs < Formula
     sleep 1
     begin
       received = "received.svg"
-      exec bin"wormhole-rs", "receive", "--noconfirm", "--rename=#{received}", "#{n}-homebrew-test"
+      exec bin"wormhole-rs", "receive", "--noconfirm", "#{n}-homebrew-test"
       assert_predicate testpathreceived, :exist?
     ensure
+      Process.kill("TERM", pid)
       Process.wait(pid)
     end
   end

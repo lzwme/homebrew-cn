@@ -7,15 +7,14 @@ class Make < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 arm64_sonoma:   "2cf9b5846e07363681d41819a13d2d9a993a69dd5090bbfae3da182915e777b9"
-    sha256 arm64_ventura:  "23e26446ffdefd2b7fe44c559e11ab6bc127abd32233847f4e73bb3de87d98c6"
-    sha256 arm64_monterey: "f3c69489afdb2ad686c7674d85deac4fcfdb3f891664c08c5d255af20a6eddcb"
-    sha256 arm64_big_sur:  "cdb852c53ed94d31d5f4988338336b004f21857d1ecaa8e84b1c155bf92e0c47"
-    sha256 sonoma:         "8c51e1eebb1cb1ae3acc4c52d041b141dd7d1ca005ba0081fd7c47162d4a50db"
-    sha256 ventura:        "206c13dc47f17131b1337ed24677b69288c2f03f780d09d1c3e5fd11a41d6ad9"
-    sha256 monterey:       "75651f4a57f1a712dfed7ed926de8b4c7f6c728544627ea059304f28455c4bab"
-    sha256 big_sur:        "2571cf69a3d123408660797685af0040097b1c273b13dfd0e3653ca1150830e2"
-    sha256 x86_64_linux:   "bded8e436d51f10ee36207ec69a0a318fb8583f83a5863f45bb203d3ae055170"
+    rebuild 1
+    sha256 arm64_sonoma:   "94377dc5a364da305c75fd7aa923a42897993de9edd1eb074428e13c3f2aaf93"
+    sha256 arm64_ventura:  "389fd41ada645cde1c43c97f16fc829c80b2312db9c43f358ce774f19d0130d7"
+    sha256 arm64_monterey: "49fa5e3e19d0793bdc32cc453a3c209697553ec1fd92964cfbdaf67c6a72a03f"
+    sha256 sonoma:         "3cc4a3aa1a3fe8ef30b2c7089708c5bdb04be3ae47ebc620f2cfd270941e96f2"
+    sha256 ventura:        "e5b435315db19e1634289e888fcbd4282ed985a85591a7bec9661595a091d56f"
+    sha256 monterey:       "d6d6e4b66e31ed8499dd7d1fecdc4d33b11af9073d0d884aedf9248bcbe6ac3e"
+    sha256 x86_64_linux:   "b9fc9f80dd7f93b1b5eb9545044d6f7b016a372e7b2beb03f3e1a045e701410f"
   end
 
   head do
@@ -53,7 +52,7 @@ class Make < Formula
       (libexec/"gnuman/man1").install_symlink man1/"gmake.1" => "make.1"
     end
 
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

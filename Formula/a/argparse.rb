@@ -1,13 +1,13 @@
 class Argparse < Formula
   desc "Argument Parser for Modern C++"
   homepage "https:github.comp-ranavargparse"
-  url "https:github.comp-ranavargparsearchiverefstagsv3.0.tar.gz"
-  sha256 "ba7b465759bb01069d57302855eaf4d1f7d677f21ad7b0b00b92939645c30f47"
+  url "https:github.comp-ranavargparsearchiverefstagsv3.1.tar.gz"
+  sha256 "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46"
   license "MIT"
   head "https:github.comp-ranavargparse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83247bc96ba531d3c00bedb4ff57b5c704e33ab3e2fa53eb2ef82385f99bd022"
+    sha256 cellar: :any_skip_relocation, all: "39f76bf545ad1c7e0376f0d3cc14d3b615a1cb1b3ad0d249a94b5cb8f7bc3d0a"
   end
 
   depends_on "cmake" => :build

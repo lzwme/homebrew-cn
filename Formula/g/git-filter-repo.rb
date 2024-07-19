@@ -3,13 +3,18 @@ class GitFilterRepo < Formula
 
   desc "Quickly rewrite git repository history"
   homepage "https:github.comnewrengit-filter-repo"
-  url "https:github.comnewrengit-filter-reporeleasesdownloadv2.38.0git-filter-repo-2.38.0.tar.xz"
-  sha256 "db954f4cae9e47c6be3bd3161bc80540d44f5379cb9cf9df498f4e019f0a41a9"
+  url "https:github.comnewrengit-filter-reporeleasesdownloadv2.45.0git-filter-repo-2.45.0.tar.xz"
+  sha256 "430a2c4a5d6f010ebeafac6e724e3d8d44c83517f61ea2b2d0d07ed8a6fc555a"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "bd20e32d8074540db1ffa2f77ab7581328c96adab2aa21848c4e330c1bf918fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, ventura:        "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, monterey:       "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdafd98c555e8c43f9baf3a871bbf45dbb5f8577149dddc02804013da76be66a"
   end
 
   depends_on "python@3.12"

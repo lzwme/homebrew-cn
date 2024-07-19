@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.8.10.tar.gz"
-  sha256 "d4c90c17cfcd44aa96b98237731e4f811e071d4c2052a689d2d81e6671f571b1"
+  url "https://www.ivarch.com/programs/sources/pv-1.8.12.tar.gz"
+  sha256 "9687f9deedb09d0dc00d80c30691f0c91282c0d5d8fa7d6a2a085c8742c2cd7c"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Pv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "004faa12fdd3db1914ce0421c0c2e03ae1b82295d5e2d1cfdc68681e366be2eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bfb8b5841df46f8bd32f7e2cb9bd03af62a3e9b8617fbcfeecf84d7ab6769f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "701476576b7084c588eb4e10aca427231c812cd75321fbee9ca2185723ead6c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "53d9b52ea085a7d7e12f9a6b2c2916c41e746e702cb84bcd21cc19b55329e908"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8b8f98b51a1ae4d0ec6f84b2df1b8b3487123ef25b14e8244286053cadb3653"
-    sha256 cellar: :any_skip_relocation, monterey:       "b015d9f5d346126e92bf11ffa799d40c585f1e3f5f2e952604a7acbce175b072"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c15eece234ed08b4ff463ef219b9306d2c549e3bce295c1a4ca4d81516da0bbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49322c69f39d78e80431b3ecbaa984a94b41906809fde4c05f5454af2a5aaef7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d5d03d75411ecec1c57d4d77e51d71cf7c6f6e076b008e281e9e1ff4fa73527"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "047c47b6e7662e5a5e65da526c2942228979a913d19d95d063a30fa3f9828265"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dbb3ae11b9e6ec56980c5b11d9b524b68419e841eb6f1c7443e51696cf635c6d"
+    sha256 cellar: :any_skip_relocation, ventura:        "241d0aed8541f63dc26bbd9718b6b956184b4a419309923b2e6727ae70a70d0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f9c9b78b39aa7d94d0dd459634ea43b49b59396e8d26d6b63a2d02fe6a633fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1bf2aa7efad940f801d80ea6eba095dc30db9ef55faaba108d3b0643b864564"
   end
 
   def install

@@ -1,19 +1,18 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https:github.comgoplusllgo"
-  url "https:github.comgoplusllgoarchiverefstagsv0.9.1.tar.gz"
-  sha256 "4298c0670d088db0faab6aa8bd1b3649d09ba1cf75c0e02171a446f6cd3fc1dd"
+  url "https:github.comgoplusllgoarchiverefstagsv0.9.2.tar.gz"
+  sha256 "a3bf64aadefee0d145f823b8271c08e1ee24ca182bd2b354d8c667a6d4fdcc28"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "8294041a96e4228053933ecbc4bd9a0acbdb37cae9818777d5a920018bb41ef0"
-    sha256 cellar: :any, arm64_ventura:  "76b026771d3a0730f813ae5aba9a58a2a551068cdf6581b4c1d76aac8f7d3301"
-    sha256 cellar: :any, arm64_monterey: "262d54fd59104c3e8fc0e5950b0c476ab8dd834637561f2bc26fa5946622ac6e"
-    sha256 cellar: :any, sonoma:         "e64d222a7bed11b2e019a5fc7409d49e0ef15cbb907a9e7c26688678e4a9d796"
-    sha256 cellar: :any, ventura:        "d67e679cad8870d1c57e3ffd863592f916f78549271637f8fa8ec0552776185d"
-    sha256 cellar: :any, monterey:       "383e0f0e2cd6a2d2070f467b5867a75212eb0977265fc247bc6ac4312c2f274e"
-    sha256               x86_64_linux:   "c63c792e00e88f86a79fbf46f718782d9b7c8a608d737c4e23b03877fc7b67a1"
+    sha256 cellar: :any, arm64_sonoma:   "416bc5f4f991dc57675db343caded2d87d5005fae4e5d9235f0c3541338b1409"
+    sha256 cellar: :any, arm64_ventura:  "fadfbff07c6d431da832d258add1e4a44a6ad5a6085a551f4407ec9ac232601c"
+    sha256 cellar: :any, arm64_monterey: "9ddb406673e6e7c5ded6585d9043e155eebf4fc43016cfc6bfeb8f405bba4f7f"
+    sha256 cellar: :any, sonoma:         "b75dd458eb731d05d91eb47bdc4ece03a717e2bf1134309d16afe2f11972103e"
+    sha256 cellar: :any, ventura:        "4c78c7dd099f3fb0c60b2f1cfe61c5854a2052d79b52cf8faba5fa8117c737c1"
+    sha256 cellar: :any, monterey:       "c199cdc38680c021476adc2a47b8bdf7e22889c951f15609a54cdac3db24aac9"
+    sha256               x86_64_linux:   "1250c4dda1151db845be75acf9076a0ba403d1a2c423690a73dcba5e27885ee8"
   end
 
   depends_on "bdw-gc"

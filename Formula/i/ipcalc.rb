@@ -1,6 +1,6 @@
 class Ipcalc < Formula
   desc "Calculate various network masks, etc. from a given IP address"
-  homepage "http:jodies.deipcalc"
+  homepage "https:jodies.deipcalc"
   url "https:github.comkjokjoipcalcarchiverefstags0.51.tar.gz"
   sha256 "a4dbfaeb7511b81830793ab9936bae9d7b1b561ad33e29106faaaf97ba1c117e"
   license "GPL-2.0-or-later"

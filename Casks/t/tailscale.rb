@@ -1,10 +1,10 @@
 cask "tailscale" do
-  version "1.68.2"
-  sha256 "7dad62fa1787d1439ae9ccceaff72156b515a5b8b1a2b91d91b17c04b80b4600"
+  version "1.70.0"
+  sha256 "15134284147db110de12a87f33d0b617f02e85b176580fc5e30cdf33468923c9"
 
-  url "https:pkgs.tailscale.comstableTailscale-#{version}-macos.zip"
+  url "https:pkgs.tailscale.comstableTailscale-#{version}-macos.pkg"
   name "Tailscale"
-  desc "Mesh VPN based on Wireguard"
+  desc "Mesh VPN based on WireGuard"
   homepage "https:tailscale.com"
 
   livecheck do
@@ -16,7 +16,7 @@ cask "tailscale" do
   conflicts_with formula: "tailscale"
   depends_on macos: ">= :catalina"
 
-  app "Tailscale.app"
+  pkg "Tailscale-#{version}-macos.pkg"
   # shim script (https:github.comcaskroomhomebrew-caskissues18809)
   shimscript = "#{staged_path}tailscale.wrapper.sh"
   binary shimscript, target: "tailscale"
@@ -29,17 +29,28 @@ cask "tailscale" do
   end
 
   uninstall quit:       "io.tailscale.ipn.macsys",
-            login_item: "Tailscale"
+            login_item: "Tailscale",
+            pkgutil:    "com.tailscale.ipn.macsys"
 
   zap trash: [
     "~LibraryApplication Scripts*.io.tailscale.ipn.macsys",
     "~LibraryApplication Scriptsio.tailscale.ipn.macsys",
+    "~LibraryApplication Scriptsio.tailscale.ipn.macsys.login-item-helper",
     "~LibraryApplication Scriptsio.tailscale.ipn.macsys.share-extension",
+    "~LibraryCachesio.tailscale.ipn.macsys",
     "~LibraryContainersio.tailscale.ipn.macos.network-extension",
     "~LibraryContainersio.tailscale.ipn.macsys",
+    "~LibraryContainersio.tailscale.ipn.macsys.login-item-helper",
     "~LibraryContainersio.tailscale.ipn.macsys.share-extension",
     "~LibraryContainersTailscale",
     "~LibraryGroup Containers*.io.tailscale.ipn.macsys",
+    "~LibraryHTTPStoragesio.tailscale.ipn.macsys",
+    "~LibraryPreferencesio.tailscale.ipn.macsys.plist",
     "~LibraryTailscale",
   ]
+
+  caveats do
+    kext
+    license "https:tailscale.comterms"
+  end
 end

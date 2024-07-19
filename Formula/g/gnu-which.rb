@@ -8,20 +8,14 @@ class GnuWhich < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97c6d0e56281d2adc27fd8c38b267edc4ff12dff39a5dfa4adb7db45fd0cb042"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0778972c32eb2eb9cbde5026fe69c0a5c4bdfbc1e16f18c327e0c6f92a32385e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8343d2e916151642b540143f2b3f8a79af4a6e22df55e01b846bad2d0e509074"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "873e8ac50fdc7b40699f7ebcf29c73c768d2db8d958f1fdb2d4be13c0b670c3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5524dce5bf9b05388b10687ba53cb3d2cb2a12f589ebd67625688aec5f3598de"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff5af1e6019d670be02d24175b1be0cc0973e303f4788d1e5b8ef4c167f0d36f"
-    sha256 cellar: :any_skip_relocation, monterey:       "21e5e71e2a9aadc88636bdb7e76dc5aef17e5ca31b99e02553bc61263e2c36e8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eeb493d3cc6252da45b29cf1d2a1d6daca630a6cd467ae690c3979673ea9a589"
-    sha256 cellar: :any_skip_relocation, catalina:       "f9e6512591096a9f53067ea4a0b5b9f8516515b49fd5bdabfc6e31c1c0c876f2"
-    sha256 cellar: :any_skip_relocation, mojave:         "170008e80a4cc5f1e45b3445f9fb6f099d7700aa6dd825602f6d32316c27735b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "66446416b0dc367076ab38cfc9775d8c201fc571b1a2cd2fc0197daa6b83882a"
-    sha256 cellar: :any_skip_relocation, sierra:         "68ea3522ec318c9b25d711ce4405b4cd6a41edca20b7df008adc499ab794c4fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf191a85d1f5684e84909ccf5d5df3ec3b9ffd7facc629bc2664f99078bf414e"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a984a5dacd2cc1fb1a408ef568cdd3219cfaea93e53de7cef4c263c832a6478"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "207bd913337ee0484767f38a161066d47e67b2d4328eed79b1652d2c52035d7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71f3da67b74f1d75cfdd05325b9ccc0d123d774291f11e1fa3395937ad04ba29"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f33ad5ef24c070a28b7422c0397af0e9efdadf679fd60f0615656ae11f619a7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e0afad40c63dc51ba4891d0580c714dafbee0f6ae5a5fd12e5cbaad20f43fcf"
+    sha256 cellar: :any_skip_relocation, monterey:       "648d1369e3bee92727dc16bc5d3c97b754252d822452acb446183d8efea0f311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "945684139954c72ae7c7442e5e4974fadeca1015275c35a166f7cab78d806cf2"
   end
 
   def install
@@ -39,7 +33,7 @@ class GnuWhich < Formula
       (libexec/"gnuman/man1").install_symlink man1/"gwhich.1" => "which.1"
     end
 
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

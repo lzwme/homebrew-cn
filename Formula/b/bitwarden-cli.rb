@@ -7,6 +7,11 @@ class BitwardenCli < Formula
   sha256 "1dff0f6af422864aa9a4e8c226282cb3f4346a4c8e661effe2571e1553603e56"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    regex(^cli[._-]v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "711cc5ac937d834e59a007e4de78347a97c8acfdd94817bab1522a2a6740c8e5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b2ef0b7f9dbeea0ec9fe94290c5f5ee79f25ca087a76216a3d6efd5f22b1d3b"

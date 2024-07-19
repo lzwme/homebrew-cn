@@ -30,9 +30,11 @@ class Agda < Formula
     end
   end
 
+  # The regex below is intended to match stable tags like `2.6.3` but not
+  # seemingly unstable tags like `2.6.3.20230930`.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    regex(^v?(\d+(?:\.\d+)*\.\d{1,3})$i)
   end
 
   bottle do

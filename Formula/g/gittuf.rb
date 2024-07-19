@@ -1,19 +1,19 @@
 class Gittuf < Formula
   desc "Security layer for Git repositories"
   homepage "https:gittuf.dev"
-  url "https:github.comgittufgittufarchiverefstagsv0.5.1.tar.gz"
-  sha256 "6d598fd10d37dc2dd011042277da9347be6c65dd2fafc2c5c5f1af07b34e2430"
+  url "https:github.comgittufgittufarchiverefstagsv0.5.2.tar.gz"
+  sha256 "0f04fd9e786b3c34599433ed972331faa3518f6be70d939e4e37d4268eaa5619"
   license "Apache-2.0"
   head "https:github.comgittufgittuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c2f861bdc91f3e0616c74eb74445d99e48ae763123ba61bc5e96a8ec9c764ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bc9a2ca5fc614b44eb62e2766639386fbeb4480c18b6b1a6c9dbb1347a6abe7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dd0d9d2cc566f5dbff7f4961322736979968bd3253e6feac1b48ac5f7a398e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7d4cbb4aefd39513c29e27c1cd05a3b92f068d5f39fdc34f920eb0b87ebae950"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3175fb2d9fd102b7cf74200bbb812a0333788c095e211e29b418363c9940e2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "9da58e8a71a10c7b90de41d86c606f23019fe687a98f7e2e047e17c750e28650"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e2a08dd9c2a8ead2d8f5d66605c7a070f1644ef0ced62a7f2d7868ea89c37ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b78d7a4639cd1a2a45b60a11fe2287ac27b16e986944009a3a2cb5e14d372ba6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f78310dbc7aecf61b6e579eca9f02bd92b6356ee0ac989d781f1240015cedf95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55a9a79ba45dd46e45037b600c52c15aa44ae118b7189036ade1b6882fcd9402"
+    sha256 cellar: :any_skip_relocation, sonoma:         "731a4a6df77a7fddf2c014528d7c8da874916b168fb4b0c188be2a5d732c2ee9"
+    sha256 cellar: :any_skip_relocation, ventura:        "1314bdb21d09b6bcd79c9433009974605ce28beea2b5f71a78d01527cbc32b70"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd4e266d9d123f1f8b27bfb2cac4d801ff4a18a534f3eca32e9012b947869ea0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20ca873cdd73adab226158b8a09cfaf49b51b984d3959d81fefc7be6a609ffe9"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Nerdfix < Formula
   desc "Findfix obsolete Nerd Font icons"
   homepage "https:github.comloichyannerdfix"
-  url "https:github.comloichyannerdfixarchiverefstagsv0.4.0.tar.gz"
-  sha256 "72e835aeb349495be87e92f74f405b43dac982ec137cfd7e180e72146b6f6fb7"
+  url "https:github.comloichyannerdfixarchiverefstagsv0.4.1.tar.gz"
+  sha256 "37f13ccf0eb6567b31862bc46e694a60177cbf5b76667fe73f22cef8f7ea68df"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f54b1925b720fc83c90365b73f20afe041d57a8897ae7a3250e6d45a9f1e3503"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee40bd99dfa454b7300d9cdb5d6596dcbb959d4e63197b8f608d6e1226834bc7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3790a49ea1ff71d0d4f3ede9d503427bd2969b212383f6551c57f18a56d1a504"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4150cf0f61cfe6424b2c8b72a07e5930b0c609822f6f4c5cafbf38bb462b2ad5"
-    sha256 cellar: :any_skip_relocation, ventura:        "43c6190ad07d0438b0fd0a33ec4f96d42894cfd13800e5af28de88756f73f4a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c35567729497a8f2bda16863c5ca6df5905cc989c08bf0c8319d25930385f4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c463aee0ef326c902eac2b658966b573e7c3f70afe914c1bfd198dc95f91d87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d5798e7f09af5bb1fcb64a7e502ecfddb3fc4ead85c5611e3e2bd7210fe13cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "daef9dbadb1db61fefd923a3699b3a9edbf8d8e9ace06db181fdd4e150d181bc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f757476796838ce2f18d9dc9e9b25f9e561f6c3fed81b85a2b91bcab03b4480f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "236056a7d51fcf434977df5b05aa8c29c93cec4db96c202bc2931737ad5de28a"
+    sha256 cellar: :any_skip_relocation, ventura:        "48758a489aacd7bdf98f3943ded3ee3f7a825ab56a0edbaf296e780ec59a108a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e57e9613e67a27b46c6959483c24f72630c614c2cfd0a9108ead154a19dfcdb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e22edc2daee1185ccef621bb5ebcaaf5e8b2544194843cfbafc8e850f5683b5"
   end
 
   depends_on "rust" => :build

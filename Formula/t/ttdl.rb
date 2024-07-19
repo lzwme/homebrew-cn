@@ -1,18 +1,18 @@
 class Ttdl < Formula
   desc "Terminal Todo List Manager"
   homepage "https:github.comVladimirMarkelovttdl"
-  url "https:github.comVladimirMarkelovttdlarchiverefstagsv4.3.0.tar.gz"
-  sha256 "ad952d458e987d87f7c73c5d646c83441f0626a750955eb7fcbe32f8a9848009"
+  url "https:github.comVladimirMarkelovttdlarchiverefstagsv4.4.0.tar.gz"
+  sha256 "81a5509551e92e496c712c4bc31d6f9c234f8e74ef15e2fb7adb4ea4c5111727"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aca4203e5caa4ff248a53e4f2e7024ddbafdd56df9a2c196b5eebe4d320733b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7411d1956a3bfd0453fd2eee84f434d5d3be68ce896122c01a671aa3946dd51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a31701449492322eed484d51032bc969744d8eb155b9e770d2dffe52bd1ed94"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e784775caf6b92ed2aeb9613d077d9cf11355f0e9141dcbd50c8e7e1612f7ebe"
-    sha256 cellar: :any_skip_relocation, ventura:        "619b0937442ce44fce8989f134d65c303a6c2753ea3965c63f37f2ee607b967e"
-    sha256 cellar: :any_skip_relocation, monterey:       "115215b05102d58725e371275cac661a64ae855d118bdd4b1b4a66e6bfc9550b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a85a83bcba6d5d253f2ff7ef77f82e985b8cd4a3ea6188b1a5989d5165b6922"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d076743d534376cf35df8a7fa098ebed82833e8fea2ad76c40cdbfad056a3da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90e2af86d8dd6dc045a537c7e135cee2a38a6a6a3b8e9f9c49c79e4b6d9dff5b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3916f04548d75a33a4909f97bf4fe3165f2372759bb614b767c4c5c0f97c7502"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b06a2eb99a279c42de2d741aa0bf46a30d71ca00182c9357c7dac59e662fee1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e0d7cd83dea19ef26cec5e5f796adbbbd47ac5e16d11359cc39c457fcb660491"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc6f46137a8cc0568e7c1839b81a144ed631e43c1f1f35de9c1150346b4b1558"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c5b9e72c4db10b48356a2c4b65658503ff32063503c03e14a44c3bfd787e34"
   end
 
   depends_on "rust" => :build

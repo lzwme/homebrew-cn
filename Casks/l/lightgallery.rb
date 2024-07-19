@@ -7,6 +7,8 @@ cask "lightgallery" do
   name "lightgallery"
   homepage "https:sachinchoolur.github.iolightgallery-desktop"
 
+  deprecate! date: "2024-07-18", because: :unmaintained
+
   app "lightgallery.app"
 
   zap trash: [
@@ -14,4 +16,8 @@ cask "lightgallery" do
     "~LibraryCachesLightgallery",
     "~LibraryPreferenceslightgallery-desktop.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -3,18 +3,18 @@ require "languagenode"
 class Czg < Formula
   desc "Interactive Commitizen CLI that generate standardized commit messages"
   homepage "https:github.comZhengqbbbcz-git"
-  url "https:registry.npmjs.orgczg-czg-1.9.3.tgz"
-  sha256 "c324e29a7ff02a0857987ad7f1f8601588cdf81ff792715f2e133eb653768f80"
+  url "https:registry.npmjs.orgczg-czg-1.9.4.tgz"
+  sha256 "d005cdff971561e70fe64d615ab67e60d5eba0e8f9dd8994fa22b54f861f9b47"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd7fb5e43ef603f5cef716e5ac20a1501a8bec34f1e8b0fb847b29ba73f53b59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e8aff93d4b3c16511f24a7846851dd694edf1ca21da0a55c1df9a4f4784264"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "df2c96cae02377b590b7c1bb83d68f8574fc10ee1db2e491f0a3b88f63172752"
+    sha256 cellar: :any_skip_relocation, monterey:       "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a36ded1af7e80799e311d873c7a23cc41a4378d0d6546cd9969de8e5c97177d9"
   end
 
   depends_on "node"

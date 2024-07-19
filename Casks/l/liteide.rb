@@ -18,4 +18,7 @@ cask "liteide" do
   app "liteideLiteIDE.app"
 
   # No zap stanza required
+  caveats do
+    requires_rosetta
+  end
 end

@@ -7,13 +7,14 @@ class Inetutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "eb362cd58b231f8472ff804a0556c2d028803781e66019f1aeb6faf8e60263ae"
-    sha256 arm64_ventura:  "352aa9dadeca1469fed9beb698ef3771b920e764dfc2d828824b5f7974020524"
-    sha256 arm64_monterey: "b69db528c4cf1e7bbdfa4e2b410fa55a0458610c09589b041c2d9c170c815b25"
-    sha256 sonoma:         "4c6873d55b69d42e53e91fd4557eef9db185e995aede9e9ddb0edd298819c6e1"
-    sha256 ventura:        "0f9ca71c5ea6aa16379b60f604f1af305878983cbe0f48ab234da91968e6d3d8"
-    sha256 monterey:       "ce0fe97b4c1706fb77d17a8672148be394bd8a5e81bdcf44e9ad8cb3facf730d"
-    sha256 x86_64_linux:   "494e2ab0b32fdc71e6c715f06ed8aa51e1fea2d525c9061073921220de93f135"
+    rebuild 1
+    sha256 arm64_sonoma:   "e6afa68602fd3a2789d7488c2080fb88acab6021aadc8e4c8cdb7fb5c1168e39"
+    sha256 arm64_ventura:  "9b554572efb13f9762a17d4abfa721c1e9b4d757a78ac67eb56bfcd777852ba4"
+    sha256 arm64_monterey: "8dd6e104cc9092a2225c205dfa346ad7a9f0134f0608e8f58e454f6c749b6714"
+    sha256 sonoma:         "251dcd9d1fee54a85c35ccc0c29e5ca1f9bbccc7edb71ae714ee6cab51f52e54"
+    sha256 ventura:        "f77f7f7460b637f6d90997cd8b0ab2edf1a94ce62b79d5d167e1f02b0ab9a475"
+    sha256 monterey:       "6f6271408faa0f220506dd46ca5eb1fbf353f77071139c94d84406a10a7c3cfd"
+    sha256 x86_64_linux:   "d76a8cb2d5cf6eb61e23d0cd6fa0527dea4e0649830a5e562d423df4cadcb0ce"
   end
 
   depends_on "help2man" => :build
@@ -82,7 +83,7 @@ class Inetutils < Formula
       (libexec/"gnubin").install_symlink bin/"g#{cmd}" => cmd
       (libexec/"gnuman"/"man1").install_symlink man1/"g#{cmd}.1" => "#{cmd}.1"
     end
-    libexec.install_symlink "gnuman" => "man"
+    (libexec/"gnubin").install_symlink "../gnuman" => "man"
 
     no_conflict -= linux_conflicts if OS.linux?
     # Symlink binaries that are not shadowing macOS utils or are

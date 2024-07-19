@@ -3,20 +3,19 @@ class Cloudsplaining < Formula
 
   desc "AWS IAM Security Assessment tool"
   homepage "https:cloudsplaining.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages364110330ab113c1d40a48f32f536579aff5025ea975098f37def13fd7fdaef6cloudsplaining-0.6.2.tar.gz"
-  sha256 "02fc4f8482b701b0b19b7ad543b579ba50f31b3e0389bb9f6973391891d6ecd1"
+  url "https:files.pythonhosted.orgpackages840bb232db103402bc27a9216909c6a9a3d308936e5895e5cadfb6783bccd719cloudsplaining-0.6.3.tar.gz"
+  sha256 "f8763ecde24de928cfb3ecd16972c96f48c2a576750c1db4451c9e098ceaf203"
   license "BSD-3-Clause"
-  revision 3
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3f2c3a4e01e3fd20a4e78e3a00dbe2f321806eca4a218f75f098f2224d298fa5"
-    sha256 cellar: :any,                 arm64_ventura:  "db10aad3e5fa734d9470faebe637d6be3fb425e76b55424ace0654c8e4fcb585"
-    sha256 cellar: :any,                 arm64_monterey: "d10bef3653c4c28cae3f2a84b1943a1e7201f58f8d407371f94c3336f1538c6e"
-    sha256 cellar: :any,                 sonoma:         "16d239eb626eb035b64e1b471c3101fd080ce6576bb9af0d148a98bf92612ab8"
-    sha256 cellar: :any,                 ventura:        "bdb6c8852926e6216a0c10d32a55fc41386bf71cbe7c73f9637a7005fe733607"
-    sha256 cellar: :any,                 monterey:       "ba497e7ee981a39084a54a64cfb3231d28865c023956c1d7253a371e776fdd60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a3860c82404a5d1d6ff81bea6554598a348c5ab3a42d13bc0a28f6b151c7cef"
+    sha256 cellar: :any,                 arm64_sonoma:   "324ff63daac1df56c92a0ae28b2134cc12f8e495678cb265546d78949f964f3b"
+    sha256 cellar: :any,                 arm64_ventura:  "0b3876c3fad9ed286ed6ae1b4b00cf7364aced950c000da3d41d060785272a4c"
+    sha256 cellar: :any,                 arm64_monterey: "fef37e50dedf2c667e61f075ec8ce1a217dd090564292c0224239ac2674e3bcd"
+    sha256 cellar: :any,                 sonoma:         "038e6c121f8b6eff237e88828b462570c4a0ebf3db4130faa9e123912897fa81"
+    sha256 cellar: :any,                 ventura:        "2dafe16440d1824ff73aae849a003fb6cdbcb616f6d3a67b283fc91ec7086c14"
+    sha256 cellar: :any,                 monterey:       "d57a74d557fc80fa43ca57e210763589ac6f6c39692a7142ca09e1dfaa5bf04a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53614c9a9aea885e8425beff2f688989bac0a2c6a5959e8e4811ee5a5fda781b"
   end
 
   depends_on "certifi"
@@ -29,13 +28,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
-    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
+    url "https:files.pythonhosted.orgpackages42e5738f7bf96f4f5597c8393e11be2c28bef5f876b5635c1ea9d86888e59657boto3-1.34.144.tar.gz"
+    sha256 "2f3e88b10b8fcc5f6100a9d74cd28230edc9d4fa226d99dd40a3ab38ac213673"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
-    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
+    url "https:files.pythonhosted.orgpackages8c6601d63edf404b2ef2c5594701565ac0c031ce7253231298d423e2514566b8botocore-1.34.144.tar.gz"
+    sha256 "4215db28d25309d59c99507f1f77df9089e5bebbad35f6e19c7c44ec5383a3e8"
   end
 
   resource "cached-property" do
@@ -84,8 +83,8 @@ class Cloudsplaining < Formula
   end
 
   resource "policy-sentry" do
-    url "https:files.pythonhosted.orgpackages7e7a7fbb394f21a3c43edcb7d04382b6d93567900b4c8ea4b224b284656115edpolicy_sentry-0.12.11.tar.gz"
-    sha256 "8db1ea570e835d87c57ef51bf6f2372a8b78d463549a5f9c65cb5f8103cd1ed8"
+    url "https:files.pythonhosted.orgpackages0b7652009505879c765ad57c68a9e2a53fc7bcee886b6ccba8f9f981b85a7c18policy_sentry-0.12.15.tar.gz"
+    sha256 "93532cdc085d122b090cdd741852a646fd796c3607232a7cc5e8aa9ac5480198"
   end
 
   resource "python-dateutil" do
@@ -104,8 +103,8 @@ class Cloudsplaining < Formula
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackages83bcfb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571s3transfer-0.10.1.tar.gz"
-    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
+    url "https:files.pythonhosted.orgpackagescb6794c6730ee4c34505b14d94040e2f31edf144c230b6b49e971b4f25ff8fabs3transfer-0.10.2.tar.gz"
+    sha256 "0711534e9356d3cc692fdde846b4a1e4b0cb6519971860796e6bc4c7aea00ef6"
   end
 
   resource "schema" do

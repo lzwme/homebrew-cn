@@ -7,13 +7,14 @@ class Coreutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "b2c643420d7d9de89385d86e0c3f5e9f9ae2404ce378db574dabbfce3ca37a91"
-    sha256 arm64_ventura:  "0f889fb75ebc8e96aa1f38aff6ed1bc7e87c45b70f7644c7e1492f1f9480f352"
-    sha256 arm64_monterey: "43bb62929309c51bb600e0d156b107ef147094445b29ada1387c222d9a2465c4"
-    sha256 sonoma:         "19eccdcccfcacd67000acf89e3261174dfe30b0a764d10ccc39be82a4b37c0a5"
-    sha256 ventura:        "7c8c3c6eab6032c379bb7266bf78e25b3b3d38d167c4eee92a7c023b131b86e0"
-    sha256 monterey:       "44ce33f1d4d73b54bf312f48c9d93bd7a186f4ce1adc004c9f3168da004eee6c"
-    sha256 x86_64_linux:   "e48884f502b3236e747b1280d5373d058b4bb47f872c99533d90ba2e730f3266"
+    rebuild 1
+    sha256 arm64_sonoma:   "4b8602d2400cc9b70d4ce3deefc551fc590c57d6fd4260a212fb0e6469faad36"
+    sha256 arm64_ventura:  "b9fb235fc83dcbe57b25d3a053da0865265fe1d33cd9a7e809fe9b2dedab913d"
+    sha256 arm64_monterey: "90d7e3a73c196e1c96f740fc566bf0aa331444eb83b39c85c84d78b491057724"
+    sha256 sonoma:         "a5fee7f3a08317464bd61051a5186ffa6cc7e81fb8de6b6ecee65cbc612a6b6b"
+    sha256 ventura:        "04d794bfbff9ca92eca0a1df6e863120e6bb280b62b0caffdaabb56c7fbbb6f9"
+    sha256 monterey:       "0177633e7a1b426030d1172b7237c765f96be4ef54c4e455f99fc65ff3d60119"
+    sha256 x86_64_linux:   "dffb61fa6e84acde47409b8bec1d9a8fb80bee41370901d7b36049f846a2d49f"
   end
 
   head do
@@ -85,7 +86,7 @@ class Coreutils < Formula
     coreutils_filenames(man1).each do |cmd|
       (libexec"gnuman""man1").install_symlink man1"g#{cmd}" => cmd
     end
-    libexec.install_symlink "gnuman" => "man"
+    (libexec"gnubin").install_symlink "..gnuman" => "man"
 
     no_conflict -= breaks_macos_users if OS.mac?
     # Symlink non-conflicting binaries

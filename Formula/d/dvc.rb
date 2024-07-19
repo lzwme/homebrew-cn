@@ -6,16 +6,16 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackages554f4bf3dabe2929073ca50f9318fa678b1413816f3d1c2ca36f9d9bd67a87a3dvc-3.51.2.tar.gz"
   sha256 "bc714b727e02f4702e79346933fbed8a6409da6ec1bef7b51416af741fc6aa13"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "45ff0297f07c7e9e4a84c918c8f29d159ac30b9874a877a2376c3de1042c8dc1"
-    sha256 cellar: :any,                 arm64_ventura:  "b83505a22a54ca2c1c1d41c20b094bde7def412a39fe2c99e9d056f232c470c2"
-    sha256 cellar: :any,                 arm64_monterey: "b2266f1a66ecb2ca6971007933e7c7ebaa0f7fc5a3075533cdf353e2dd697374"
-    sha256 cellar: :any,                 sonoma:         "1b803e308b84828c19d992273dac1197ddfba2e5ce36b99a727ce4873cfde85c"
-    sha256 cellar: :any,                 ventura:        "eb2fd458eb62f15edac6fdb51477241897a1027fcbf7b94af87b1bb93317d551"
-    sha256 cellar: :any,                 monterey:       "40c9e08e0d8f9569d8499f04191132e6300fac8e197f26f4904b00d33139fe70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b63fa9bd342d3c0d238b029e496451b9501eb9e9f2ccf1d29348a8b6d5c9378d"
+    sha256 cellar: :any,                 arm64_sonoma:   "7250fd56a6c5a09fa351935f8ec40493b05cb29fef07dc50411da3a07753b539"
+    sha256 cellar: :any,                 arm64_ventura:  "f314959b691c381770ce416f2f625b2c1187e8cf4642e9c368e18971efb46594"
+    sha256 cellar: :any,                 arm64_monterey: "eff4e8b9ead1ee9f91dd29a7f55b77555c63bdbcc39816f574cac0df3affa707"
+    sha256 cellar: :any,                 sonoma:         "df8f88f714fe6c05cfc80dc8bd0e6ea63dd70f57091913512865c2744e349c20"
+    sha256 cellar: :any,                 ventura:        "8a0e88463aa1db7f55e426119aa3555399eebfe7d86d0eb61e422681d922187c"
+    sha256 cellar: :any,                 monterey:       "febcf5a972a1effd1d58a6305a659a54a098fd21b42f0a0332321897791da876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27257571923333fbe22958d3189cb5f4753a98459ca5bffbacf1b5659b25504a"
   end
 
   depends_on "cmake" => :build # for pyarrow

@@ -7,4 +7,8 @@ cask "livetail" do
   homepage "https:github.comSumoLogiclivetail-cli"
 
   binary "livetail"
+
+  caveats do
+    requires_rosetta
+  end
 end

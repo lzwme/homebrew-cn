@@ -1,7 +1,7 @@
 class Jxrlib < Formula
   desc "Tools for JPEG-XR image encodingdecoding"
   homepage "https:tracker.debian.orgpkgjxrlib"
-  url "http:deb.debian.orgdebianpoolmainjjxrlibjxrlib_1.2~git20170615.f752187.orig.tar.xz"
+  url "https:deb.debian.orgdebianpoolmainjjxrlibjxrlib_1.2~git20170615.f752187.orig.tar.xz"
   version "1.2_git20170615-f752187.orig"
   sha256 "3e3c9d3752b0bbf018ed9ce01b43dcd4be866521dc2370dc9221520b5bd440d4"
   license "BSD-2-Clause"

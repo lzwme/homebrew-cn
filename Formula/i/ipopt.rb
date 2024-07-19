@@ -24,8 +24,8 @@ class Ipopt < Formula
 
   resource "mumps" do
     # follow links provided in official repo: https:github.comcoin-or-toolsThirdParty-Mumpsblobstable3.0get.Mumps
-    url "http:coin-or-tools.github.ioThirdParty-MumpsMUMPS_5.6.2.tar.gz"
-    mirror "http:deb.debian.orgdebianpoolmainmmumpsmumps_5.6.2.orig.tar.gz"
+    url "https:coin-or-tools.github.ioThirdParty-MumpsMUMPS_5.6.2.tar.gz"
+    mirror "https:deb.debian.orgdebianpoolmainmmumpsmumps_5.6.2.orig.tar.gz"
     sha256 "13a2c1aff2bd1aa92fe84b7b35d88f43434019963ca09ef7e8c90821a8f1d59a"
 
     patch do

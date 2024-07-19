@@ -1,8 +1,8 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
-  homepage "http:yaws.hyber.org"
-  url "https:github.comerlyawsyawsarchiverefstagsyaws-2.1.1.tar.gz"
-  sha256 "aeb74f0051fe9a2925b1a1b4f13af31ec5404acfbe000ac32cda25ee9779f4bf"
+  homepage "https:erlyaws.github.io"
+  url "https:github.comerlyawsyawsarchiverefstagsyaws-2.2.0.tar.gz"
+  sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
   license "BSD-3-Clause"
   head "https:github.comerlyawsyaws.git", branch: "master"
 
@@ -13,16 +13,13 @@ class Yaws < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9691b1f2db8123fa575ffeec832355aa28fc3206796dfe743509528e364ff859"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "979fa10690f71f32f99ff48ba73b61db66841fc6dab8759a0b70d768d4e09483"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "915f2debcd29895c2dd235232fae27c6b93a8df74600324fc6281c037a8f0a9f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9e8b1c12a01f2a69f60629ce7e9238b502cefca4838c7ec8f10add24560c66a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2eb08889b5aec7d6e7cdabf8b5deda6ba98ed696ecea94dc9474908067b48c2e"
-    sha256 cellar: :any_skip_relocation, ventura:        "32023b27f056a704bf8a74a83cd07efc1680b440ff6b7f2e22c3549d38e221ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8ed14ebe8b7754b382567af80237d9622197e3a10b1aa673aaf6201c9d8cc17"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8ed6901333af5bda880682772f53eb3cbcfc89323527d0820696e9a0d963979"
-    sha256 cellar: :any_skip_relocation, catalina:       "1c84e7ed9b5329b5d79eeed7fabcf63bac90ae398481b1d71104ee97958056df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a98f436c58c2cc58eebfaf052387faf4c02f9554138935f674d6b6dd5cb8df94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f466561d44b576cba8fe45a1005e3ca5cd145c56847b412ee7dfc469941247a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a98edfa26642f6927f31550e15dc17998536e6642487794f9a8dac03dcdfb5e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1215945f0993a225b510eec874c9e9422977fadab87ccd69c9f00964145bd31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "78f9aeed03048a8ee5694bb72eeaf63722051ba849262b692f9a280202f4cb7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "46107a726d6a380084466ba19a082db129dc5deee526ac9a0801240e4385bb33"
+    sha256 cellar: :any_skip_relocation, monterey:       "f9a6516efc7a805c785d2a2080dce0bf4c2fc7df5ee7650433d50d97c94acf55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf623679c1cb98ce64347d7cd92cb3ebcbfd01c16a149632581da989d112cd26"
   end
 
   depends_on "autoconf" => :build
@@ -100,7 +97,7 @@ class Yaws < Formula
     fork do
       exec bin"yaws", "-c", testpath"yaws.conf", "--erlarg", "-noshell"
     end
-    sleep 3
+    sleep 6
 
     output = shell_output("curl --silent localhost:#{port}example.txt")
     assert_match "401 authentication needed", output

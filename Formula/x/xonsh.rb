@@ -3,19 +3,19 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https:xon.sh"
-  url "https:files.pythonhosted.orgpackages33f756ce182e31011161bcd5362f4dc73192f7f1b0f622b930e05ebce1da9915xonsh-0.18.1.tar.gz"
-  sha256 "b3063ae7606c7b7177a0135e0850fb1dca6ed234401401aa22dc10529b2d2cb8"
+  url "https:files.pythonhosted.orgpackages64e8ea068dfef7a1d49bd947a4a006a9188130bbb7dc08fd5e9fdb426a283cfcxonsh-0.18.2.tar.gz"
+  sha256 "c5073d154f14c210d855aff4863f69ce9215be084ed5562899bdf1c934f7a53b"
   license "BSD-2-Clause-Views"
   head "https:github.comxonshxonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "449a756fa09651137399bd62f0cb1aee302054a3009c25851d2b3458bf78a331"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f084989ffd20013fec107a54e68f14952c8da8174c8c592bb77d6effc8db0556"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa0b599ee86adf1e57a84151fe3486eea7f1f4b600d9049ff8dc523e6288e7e6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3bb557f8b317853b19adc7d4f58a06ec5a3487f3ac88b3984315d99b7f120ffd"
-    sha256 cellar: :any_skip_relocation, ventura:        "501a2493b7a1f94fab41805d5a212861e3b9d1e40acf35a539a54d107b053399"
-    sha256 cellar: :any_skip_relocation, monterey:       "87029fd016c388e79381cfd95efc816edc7f3acca61ca6f0a4371680b1b7c17f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64b05aff9b229296fc58300e87241420b95885b899bd46a599362784e046602f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32b74d3c6e9040bf06043922f3411e3a6ab9c058c25f8c576c72f7bc9fbd4298"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4b44797cdea11d6b329e65c8ef474ef62ac7f89fa08ec2aefdf72550a546be9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5ce43b25fbfa0531afc7440c02ec3022bd20364abbe16f37ff062510bb194fe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6a7bf2cc246aa0ddead1f5e5b741e2a498b5df0e6c42e4395953454360222def"
+    sha256 cellar: :any_skip_relocation, ventura:        "cbc8005c8b40f9d8245e9eeaaec03cd4aabc310d8677ca9943c117c7ec83d294"
+    sha256 cellar: :any_skip_relocation, monterey:       "74a99ab7e20d9d4c9f4d62b18880c82fad9993df0749dd3c0fcfaf167dc89935"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "987ec0aeecf3753b684b918eada854bbbba49301547e031b3ae890753387d89c"
   end
 
   depends_on "python@3.12"

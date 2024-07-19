@@ -1,9 +1,9 @@
 class Blast < Formula
   desc "Basic Local Alignment Search Tool"
   homepage "https://blast.ncbi.nlm.nih.gov/"
-  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.15.0/ncbi-blast-2.15.0+-src.tar.gz"
-  version "2.15.0"
-  sha256 "6918c370524c8d44e028bf491e8f245a895e07c66c77b261ce3b38d6058216e0"
+  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.16.0/ncbi-blast-2.16.0+-src.tar.gz"
+  version "2.16.0"
+  sha256 "17c93cf009721023e5aecf5753f9c6a255d157561638b91b3ad7276fd6950c2b"
   license :public_domain
 
   livecheck do
@@ -12,13 +12,13 @@ class Blast < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c94e6f275774f19ae13655c4a060728c79101c0450686afb80cff7a9a2d211d1"
-    sha256 arm64_ventura:  "7b57dceca3f83fa852fa225dc8a749a2f46af68c1234bd8694cc19411323c91e"
-    sha256 arm64_monterey: "f35317bdbed37113b13278e32228ec0f941b2bedd62a7623b5ed1b7638a1769b"
-    sha256 sonoma:         "014528e069266455d50f9e8073e54d24ed5125b3fb01d7e20380700453746e05"
-    sha256 ventura:        "a96e1d915905547dff084c59a55c656422076e22719a0ff82819c36a2f9fe64c"
-    sha256 monterey:       "d0ed36de012c79a90fa3b9ecaae13092f5bb1cab51f0cb39f5d43ba90b2a4662"
-    sha256 x86_64_linux:   "8522583e6941497542ca844027479240ba5e248e9099d32579688e3eef6a707e"
+    sha256 arm64_sonoma:   "8e77abd1cdf1e35d25d701327042d1e33902f968cc34ed36951c6b784fd12f7d"
+    sha256 arm64_ventura:  "7a33345e002e745fe513ee84e81074259e3225e9e45fdec0531feb9af097f76e"
+    sha256 arm64_monterey: "2ea7535bc0267077b6afdd622a1860a50509a1d3c3cb9d91df9b8a3b5fe4de7c"
+    sha256 sonoma:         "c11dfa24a469e44b56cd270a532f8a5e341f02b9a41aa07b112d48054d76d901"
+    sha256 ventura:        "3aa4433e3e7235441f8418f97c9bac09cbb98f569c008922a0d732344fd95017"
+    sha256 monterey:       "946e1a0a2892aea9e93441a147355baa9d3e87626c052f847c7cf37c397e2fb4"
+    sha256 x86_64_linux:   "a9fb9b0ec8fdfe89cf32b175ff180d160134d99e542f0329466cf9f7a545139b"
   end
 
   depends_on "lmdb"

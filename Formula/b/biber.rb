@@ -6,16 +6,18 @@ class Biber < Formula
   license "Artistic-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fc81ac62fa27f9bbd889ba7e9f9e18d7d3a3cfb86142faa858acaeee2c125672"
-    sha256 cellar: :any,                 arm64_ventura:  "2a5bd2a92c317fae01a4dc2bf49a608ae032a41082e06161a78edd9e364d7549"
-    sha256 cellar: :any,                 arm64_monterey: "0e393f6e76328a0c1628523fe477d4bfda9da10fe866652b958937ad73dd4424"
-    sha256 cellar: :any,                 sonoma:         "6eb3acfaa58d8c17bb821d5c169e8c46367f406a7ff231f4d7446f202f7659c7"
-    sha256 cellar: :any,                 ventura:        "41c92a1bb2556a77155d2da1dd03e3b07e27ecf0caf60fc1ffa934d30795b39f"
-    sha256 cellar: :any,                 monterey:       "2aaf59844da77df897a90785710b7d39b0c65ac9e0da1538988c01a65fbf9619"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7f956838734c9dce5462ac1b2615f688d08af88771a6d287ce300d434256281"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "f018ab37e28a17160227cd2628a212c1118e19295d0d9eb90b42ad7f0b7761bb"
+    sha256 cellar: :any,                 arm64_ventura:  "36185def50483b55f1eca670196469b4fef358ea861260bc1f40062d1535204f"
+    sha256 cellar: :any,                 arm64_monterey: "0bd8bb16155244410aaca2fe01bf11f560e6a97aa0941a3f190d26f8d911662e"
+    sha256 cellar: :any,                 sonoma:         "ecc3b942b3546d18d023cc50234c5bf2f0a14ff729cc646bd7725eaa0787b3f9"
+    sha256 cellar: :any,                 ventura:        "49f979490d7e6f2305ec6f94a364521d7d119e5e152c74d17c90c50b39e16a86"
+    sha256 cellar: :any,                 monterey:       "0413d6cce8ba9e7e936824f1e8fe7850b686bdf07614a73ecf1e446d949b922c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb6f325f4d18b733f2e11753a7283b9f58bd3ff95852ccaf71f3d052bb679b33"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "texlive" => :test
   depends_on "openssl@3"
   depends_on "perl"
 
@@ -683,5 +685,24 @@ class Biber < Formula
     assert_predicate testpath"annotations.bcf.html", :exist?
     assert_predicate testpath"annotations.blg", :exist?
     assert_predicate testpath"annotations.bbl", :exist?
+
+    (testpath"test.bib").write <<~EOS
+      @book{test,
+        author = {Test},
+        title = {Test}
+      }
+    EOS
+    (testpath"test.latex").write <<~EOS
+      \\documentclass{article}
+      \\usepackage[backend=biber]{biblatex}
+      \\bibliography{test}
+      \\begin{document}
+      \\cite{test}
+      \\printbibliography
+      \\end{document}
+    EOS
+    system Formula["texlive"].bin"pdflatex", "-interaction=errorstopmode", testpath"test.latex"
+    system bin"biber", "test"
+    assert_predicate testpath"test.bbl", :exist?
   end
 end

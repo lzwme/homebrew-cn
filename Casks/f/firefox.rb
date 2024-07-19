@@ -213,8 +213,10 @@ cask "firefox" do
   homepage "https:www.mozilla.orgfirefox"
 
   livecheck do
-    url "https:download.mozilla.org?product=firefox-latest-ssl&os=osx"
-    strategy :header_match
+    url "https:product-details.mozilla.org1.0firefox_versions.json"
+    strategy :json do |json|
+      json["LATEST_FIREFOX_VERSION"]
+    end
   end
 
   auto_updates true

@@ -1,8 +1,8 @@
 class Flyway < Formula
   desc "Database version control to control migrations"
   homepage "https://flywaydb.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/flywaydb/flyway-commandline/10.15.2/flyway-commandline-10.15.2.tar.gz"
-  sha256 "8da2dfdd5989da2f38beaaf1e80c19ab8000f69c034ad6c5e267d13d80d9f2b4"
+  url "https://search.maven.org/remotecontent?filepath=org/flywaydb/flyway-commandline/10.16.0/flyway-commandline-10.16.0.tar.gz"
+  sha256 "41040c05dc221dde8d36662420496862975f08dc43b339a345173d45326801e7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Flyway < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2fda2aebf40c3cb2790245702c2bc68331ca2de78956d2b75baf6c429fb0aca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe5c0582f9e4260adbeebfa3fc1aff0ee6037b132e191b444fcabbb62972488a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7285589d303093ebae880102dd965b3be8ec76662d42827b83b4af357c378b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7285589d303093ebae880102dd965b3be8ec76662d42827b83b4af357c378b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7285589d303093ebae880102dd965b3be8ec76662d42827b83b4af357c378b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "69241e4860c7d1bcb5e16ff2f7e0f694b5c281e19f94117227bd0651ad930a6b"
+    sha256 cellar: :any_skip_relocation, ventura:        "69241e4860c7d1bcb5e16ff2f7e0f694b5c281e19f94117227bd0651ad930a6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f3527f5bd5e1d8a6afd0034c7836759944a3fe9ca555b3f66423351783c19de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "481783a77a0818d83239885f18b125aa96cb64c1b8e255de281a037d08461441"
   end
 
   depends_on "openjdk"

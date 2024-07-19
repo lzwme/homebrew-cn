@@ -8,6 +8,7 @@ class Texlive < Formula
   mirror "https:ftp.tu-chemnitz.depubtughistoricsystemstexlive2024texlive-20240312-source.tar.xz"
   sha256 "7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96"
   license :cannot_represent
+  revision 1
   head "https:github.comTeX-Livetexlive-source.git", branch: "trunk"
 
   livecheck do
@@ -33,13 +34,13 @@ class Texlive < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e0d06953f710540235b8b6f80da4984bfa2a6690a55250291c2d5ec2bdfa6057"
-    sha256 arm64_ventura:  "fe1175f08ad58b1efc33d47afd9342f860c3167b097c064c29dd3d54b6fb6493"
-    sha256 arm64_monterey: "6bd8d365f9099f60b1f854431dbe42687396b4f4ee63565dad5c5fb09246610a"
-    sha256 sonoma:         "163c4d535411f7b79398f9362965dc35ccb268fefe454314df327f36252afcc5"
-    sha256 ventura:        "2121ccf35545150c97764a4beac1f2d7be3c71d473d82d54f368747e11d7fed6"
-    sha256 monterey:       "c04f925fc21d7552c171341d61468ab80e375caba31a50cb66f2ec2c4825407b"
-    sha256 x86_64_linux:   "d3d5cff482feb3e475228dff92716e271c45c9fae1cfa1fe240f2beae9509352"
+    sha256 arm64_sonoma:   "36f2ac1e40afea99ec819132bf2efcb5d47e4490c02729ed24444e6884b1fbd6"
+    sha256 arm64_ventura:  "903ac239e9213bbf89ec733589406a5c060d7f35ad2e53c3ca0d1d2db39cebd0"
+    sha256 arm64_monterey: "258165d99a101ca6ec8afac14aa3a4006cab92bb26b2ab3e87d39a342ad0f95e"
+    sha256 sonoma:         "b649f37b6ed625cf602c1218aea9f2bec68ec5deb8bc6b6a455f43dd7120df7b"
+    sha256 ventura:        "060e5ae8e5760b73a48b738aa214a4434b2987c5c9224658c718257f2fde3796"
+    sha256 monterey:       "8c26b5f1eb681a43adad972a79d97302f66f5be8d6ec72f807cf24ad583f2c64"
+    sha256 x86_64_linux:   "b7847a9f7f3da040504204b65eb3f4a7c7c5f3ab9be13b7a8919d85949aaa265"
   end
 
   depends_on "pkg-config" => :build
@@ -90,6 +91,16 @@ class Texlive < Formula
   conflicts_with "opendetex", because: "both install `detex` binaries"
 
   fails_with gcc: "5"
+
+  # biber 2.20 requires BibLaTeX 3.20, but TeX Live 2024 ships BibLaTeX 3.19
+  # (https:github.comHomebrewhomebrew-coreissues172769). Install BibLaTeX 3.20
+  # so that biber is functional. This resource and the update of BibLaTeX can be
+  # removed when TeX Live 2025 is released. The string biblatex@3.20 should also
+  # be removed from the list of tex_resources in this formula's install method.
+  resource "biblatex@3.20" do
+    url "https:github.complkbiblatexarchiverefstagsv3.20.tar.gz"
+    sha256 "f936ca60463f47d14ca165226f89388db39080caf49e62fbd36b9787b596b238"
+  end
 
   resource "texlive-extra" do
     url "https:ftp.math.utah.edupubtexhistoricsystemstexlive2024texlive-20240312-extra.tar.xz"
@@ -349,7 +360,7 @@ class Texlive < Formula
     ENV["PERL_MM_USE_DEFAULT"] = "1"
     ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
-    tex_resources = %w[texlive-extra install-tl texlive-texmf]
+    tex_resources = %w[biblatex@3.20 texlive-extra install-tl texlive-texmf]
 
     resources.each do |r|
       next if tex_resources.include? r.name
@@ -437,6 +448,16 @@ class Texlive < Formula
     system "make"
     system "make", "install"
     system "make", "texlinks"
+
+    # This can be removed when TeX Live 2025 is released.
+    resource("biblatex@3.20").stage do
+      inreplace "obuildbuild.sh",
+                "declare DATE=$(date '+%Y%m%d')",
+                # Date from https:github.complkbiblatexreleasestagv3.20
+                "declare DATE='20240321'"
+
+      system "obuildbuild.sh", "install", "3.20", share"texmf-dist"
+    end
 
     # Create tlmgr config file.  This file limits the actions that the user
     # can perform in 'system' mode, which would write to the cellar.  'tlmgr' should

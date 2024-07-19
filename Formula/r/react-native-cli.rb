@@ -8,8 +8,14 @@ class ReactNativeCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "bd0fcb144d7edefcc27c70aeb12e143c1f5fd5a2d63a8cf22dab475885db0ab6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77d3f103253c4aca89a6f814ddf314f87800185d0039be2878e9e3645c825c15"
   end
 
   depends_on "node"
