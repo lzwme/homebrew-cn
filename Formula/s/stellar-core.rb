@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https:www.stellar.org"
   url "https:github.comstellarstellar-core.git",
-      tag:      "v21.1.0",
-      revision: "b3aeb14cc798f6d11deb2be913041be916f3b0cc"
+      tag:      "v21.2.0",
+      revision: "d78f48eacabb51753e34443de7618b956e61c59f"
   license "Apache-2.0"
   head "https:github.comstellarstellar-core.git", branch: "master"
 
@@ -16,12 +16,12 @@ class StellarCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a7ecf624d58c5397e328b7de784b542aba50af1bd2842cbca18861c04040bf80"
-    sha256 cellar: :any,                 arm64_ventura:  "5a5231e045ebd9714646d13c73e92247c2a401879559a02efb9c93716f52c8b0"
-    sha256 cellar: :any,                 arm64_monterey: "ec66a2049f7f1c695f0e1fa082a477c5ede7e55d7fd620877e97bdeeec33aaad"
-    sha256 cellar: :any,                 ventura:        "d0f1aac8c0831d284a51487c70e0ed17c1266d94dcba761c3091313f9cc42c67"
-    sha256 cellar: :any,                 monterey:       "d264099b21e38a38f133e386080b1005d404e8eaef99007b01904736e33a9e38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4eceec6dc5ad70604e14d636706a730375fde77a02abca75fd53bee8deb012e"
+    sha256 cellar: :any,                 arm64_sonoma:   "0b59cbf8f63d37b287c5e072e2fd4d901ead7cfb4ee090be3c1ed9d9c682aac5"
+    sha256 cellar: :any,                 arm64_ventura:  "ac451768a9112f9a3775d39fdcf81dc72d64b06cf63d3f68725d2ba7c34a2c1a"
+    sha256 cellar: :any,                 arm64_monterey: "2974a6b354ebfd127a66991f4c5c1e584019d7b5e61e33c723c8b41a01e1d3d5"
+    sha256 cellar: :any,                 ventura:        "81d9847c1846ebef319c9df2d2b617a76ffb7efb26cc652c46aa02f39693a505"
+    sha256 cellar: :any,                 monterey:       "e8bcb1c3c1a1f058f3cb8a07cae64a900903a63fb7b0ddd56fd71ba67117a679"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56b24e573998a6d0b79b21f00e0b8b80a578365be2dd88f61a55b6fe78533b22"
   end
 
   depends_on "autoconf" => :build

@@ -1,10 +1,9 @@
 class CargoDeps < Formula
   desc "Cargo subcommand to building dependency graphs of Rust projects"
-  homepage "https:github.commrcnskicargo-deps"
-  url "https:github.commrcnskicargo-depsarchiverefstagsv1.5.1.tar.gz"
-  sha256 "b570902b2225f1cf8af5a33d3b77ac4bf04161ef7e9573731eed97715efa9fd3"
+  homepage "https:crates.iocratescargo-deps"
+  url "https:static.crates.iocratescargo-depscargo-deps-1.5.1.crate"
+  sha256 "958e78d8463edf62018d7d5e6f1c5866d59084a4f224c3be01f6eca8a2d3df47"
   license "BSD-3-Clause"
-  head "https:github.commrcnskicargo-deps.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6817f6aba18ea54427289043559801aabc573370c80aed691e9ae78893046348"

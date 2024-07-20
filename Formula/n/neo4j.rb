@@ -4,6 +4,7 @@ class Neo4j < Formula
   url "https://neo4j.com/artifact.php?name=neo4j-community-5.21.2-unix.tar.gz"
   sha256 "19fd2ddbedf9fab526cdec55d1d5cbc9ebda282984f8af9fb7216d9dbc7d0af6"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://neo4j.com/deployment-center/"
@@ -12,22 +13,21 @@ class Neo4j < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2d58d5f4da22e9a215c1cfc97e474e68903f2ba622a6bca709780fa399dd5dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2d58d5f4da22e9a215c1cfc97e474e68903f2ba622a6bca709780fa399dd5dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2d58d5f4da22e9a215c1cfc97e474e68903f2ba622a6bca709780fa399dd5dc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a24716bfce36860ea21f3da3f5d2fd47d2fdf4f85ea53571769f3836e4501f17"
-    sha256 cellar: :any_skip_relocation, ventura:        "a24716bfce36860ea21f3da3f5d2fd47d2fdf4f85ea53571769f3836e4501f17"
-    sha256 cellar: :any_skip_relocation, monterey:       "a24716bfce36860ea21f3da3f5d2fd47d2fdf4f85ea53571769f3836e4501f17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a866261cbce0b07890ad2571fd9ed041081c2221a343618c8b0c7eb304039363"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "892ef2ef19e5d2b0b78ba8e4141d47be2d08276c120c6285b79545ebb372e3b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "892ef2ef19e5d2b0b78ba8e4141d47be2d08276c120c6285b79545ebb372e3b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "892ef2ef19e5d2b0b78ba8e4141d47be2d08276c120c6285b79545ebb372e3b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5dd5d271c9278a0c351b260bcad234018efa21fdf64b3df6ce4e4c5b19d28024"
+    sha256 cellar: :any_skip_relocation, ventura:        "999887c4720d654942bca4b5a0f9d757a411545cf73ec70a30471346fc6f67b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5dd5d271c9278a0c351b260bcad234018efa21fdf64b3df6ce4e4c5b19d28024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3589d3a4106f28c1f4fe2ac356af46b874b4bae148420c5253d0aa4c375b8dc"
   end
 
-  depends_on "openjdk"
-
-  conflicts_with "cypher-shell", because: "both install `cypher-shell` binaries"
+  depends_on "cypher-shell"
+  depends_on "openjdk@21"
 
   def install
     env = {
-      JAVA_HOME:  Formula["openjdk"].opt_prefix,
+      JAVA_HOME:  Formula["openjdk@21"].opt_prefix,
       NEO4J_HOME: libexec,
     }
     # Remove windows files
@@ -37,7 +37,7 @@ class Neo4j < Formula
     libexec.install Dir["*"]
 
     # Symlink binaries
-    bin.install Dir["#{libexec}/bin/neo4j{,-shell,-import,-shared.sh,-admin}", "#{libexec}/bin/cypher-shell"]
+    bin.install Dir["#{libexec}/bin/neo4j{,-shell,-import,-shared.sh,-admin}"]
     bin.env_script_all_files(libexec/"bin", env)
 
     # Adjust UDC props

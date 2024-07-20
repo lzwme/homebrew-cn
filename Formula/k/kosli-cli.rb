@@ -1,8 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https:docs.kosli.comclient_reference"
-  url "https:github.comkosli-devcliarchiverefstagsv2.10.10.tar.gz"
-  sha256 "5b1bbb37b16ac5bad9d3a1ce14b2bb787ba3844214c9e856d8cc33e2562ab21d"
+  url "https:github.comkosli-devcliarchiverefstagsv2.10.11.tar.gz"
+  sha256 "783d5d240dddfb322b5910ad3fb41b8ba201a97d4f7e0240993909faedd722a2"
   license "MIT"
   head "https:github.comkosli-devcli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class KosliCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "075d64fd0a3603cd4e7dacc8f293e2c6fc47deaac2c45a5dbee0cdd98d313892"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab2707238012bc45f223e914de10072b46edcf3ee01371d2565636991801e1a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e52a346f770f3873a849da8528396fcf070712d35c5d2b221a5d20d63f1c9f88"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8f9ff11391ffcd585ca882d68cd7b63f1ca9a769efa6795e5fcc75581592cf1"
-    sha256 cellar: :any_skip_relocation, ventura:        "860a26ee5c653f608ef9f9e8479529019e2d2ef96b454a19d34efd3e6dcf049f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d830e408424a9f5db76caf18ae0a339c83ade9c2b983695e80b0092a615502d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "112446577e908af785448d634b048b8528f69b15bff8bdc33dd970c91ef78d8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ffe4c875641148543335b1dee750f30664848d7bcd827455b9bbb5230103db7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3158c22e772c94c7914295e2faacfd3750832a64f1bd77273f7c1b1e09280db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68704fe88402d65b90dd1348ccb114c283a97544bc77a24c182a2838d58e2857"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c1399abad4bc1921b25928373412322af0440a2246f1fffdde46574bc4eecfcd"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3512e3ba08498c2061709e744911968d97544e797471ac31bac4c9fce65649a"
+    sha256 cellar: :any_skip_relocation, monterey:       "029bc20d339e0c6fd5d72220da8c55ebd34613e1212af9a3d0a228c06bade0d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57d7f60b4fe8cb3b725b6b0adfd9ba0d66f6786b32b8c72e489ec99d9d5af5a7"
   end
 
   depends_on "go" => :build

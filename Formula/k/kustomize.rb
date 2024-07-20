@@ -1,8 +1,8 @@
 class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https:github.comkubernetes-sigskustomize"
-  url "https:github.comkubernetes-sigskustomizearchiverefstagskustomizev5.4.2.tar.gz"
-  sha256 "3c2c24971b29d96aac43853c090a5f042789d169bd41cbd9738c7979c5f09deb"
+  url "https:github.comkubernetes-sigskustomizearchiverefstagskustomizev5.4.3.tar.gz"
+  sha256 "911e749de8d33a35ebeff50f65d0c3d79e5d1c9ff7eb9b73e29192d99b5f2444"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskustomize.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kustomize < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a08864647d906f488393f86d4f9460fe84205f831e093fea94177a0dc10b1fbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0cd4fdd6c552fdad8d9216c229f7688ac429ac15bd337ef0374f777d42d05939"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e8d1359309d9e5b42a536ba23a5ee164ac53f69c199c6b1a1776ffb7325b076"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d632b6184c030de95e6931ee8589ecac47f44ed02e93d974312e375612e44e91"
-    sha256 cellar: :any_skip_relocation, ventura:        "809810cb012518f874da947a439cda16db7b75a812187e54a995190760ebfad4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f9874863c0ecefbb33e8b9424bc96c3a9ce57b8992fe73a7bc8bd570340f6d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43618dcedeec52f77b0fe079fb84ad67a7fd890900ceb4e07fed3683cb2ff23b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e6d222e8a5e9bd13ae418db39804da9a84a21fcb291683d5223abe70e9f4d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38f0377cccfda2718997ac62aa1e7c727e7ad979717d54a1cef793547fc15a23"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2f682df029c1aa5c463951322c80020b0ba75c1414044af032842b3618c826a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "488be64e3439c71b80eecafa30728c79e71287cb0acc3ab7474020656cf954a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "d615f46ca90a431045476fb26a555ad77807fd347033165f146567d445b9b70c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4649044fed586e0a8a58ae4add96b9d0cfc99a64ab73134f18b749f847fce69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c71cc051fa36e9fa7abd46ad8076e07dfc0cb8b102cb7e048bca437c885c6ac"
   end
 
   depends_on "go" => :build

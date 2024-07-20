@@ -1,10 +1,10 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https:www.cmake.org"
-  url "https:github.comKitwareCMakereleasesdownloadv3.30.0cmake-3.30.0.tar.gz"
-  mirror "http:fresh-center.netlinuxmisccmake-3.30.0.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacycmake-3.30.0.tar.gz"
-  sha256 "157e5be6055c154c34f580795fe5832f260246506d32954a971300ed7899f579"
+  url "https:github.comKitwareCMakereleasesdownloadv3.30.1cmake-3.30.1.tar.gz"
+  mirror "http:fresh-center.netlinuxmisccmake-3.30.1.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacycmake-3.30.1.tar.gz"
+  sha256 "df9b3c53e3ce84c3c1b7c253e5ceff7d8d1f084ff0673d048f260e04ccb346e1"
   license "BSD-3-Clause"
   head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4eb265cf09f23ebab2f4b5cc463150a8cd1004b480e43496593bebec24eb49f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1e0b599c1a9fd9e3ade591d0373ae73480088baaec0f6a021fb7a9587e33e20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ab549f9321c07ca25959dac83fdffe842644cde1952f12389618a44b4c233d6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "755feeccd7b416faaffda0913439f83d9407f0cfb236379e5b593d26796d4330"
-    sha256 cellar: :any_skip_relocation, ventura:        "49e0f45a1c729a611694531bb11e24a93778ab03e3b811101548fe4d1ef20c4e"
-    sha256 cellar: :any_skip_relocation, monterey:       "52e1f8fb713dd78b51ee97225a925023acfab2907dfb4ae16d69f3b759e52694"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96861ca124424d2061b00e6727b19f1490e79fae34c9e2e7f488d43cd0d0e285"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e4470bf5c6b14ca6e2f86c48d7e5b5e90e39d091d8066cb17c703d5e2ef0ce3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3efe3c104c11f5ad3cd845eaa1e5408ef3209fdfc9c18f0f80263e093e25ac31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "654d34ee6520907135bfd90ed271ab461c453c372c9fa6d855eaf0bbfd056545"
+    sha256 cellar: :any_skip_relocation, sonoma:         "282c7dee3a64006b3cfb4fb4c3f7e2afc103c1d9ca55d0eb372b938e23848a53"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c088a2eac92d059ab45f266dcae23cda4f26c97cffbef49e80d46c7125037d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "17522bdc0e79abb5dcaa09a4a6897211357a2fc819b0768db5a877192e9bfb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57e927cf83f7d436e6b175006afd7fd25afbd4eb5f2894ba0714d98b3d3d645a"
   end
 
   uses_from_macos "ncurses"

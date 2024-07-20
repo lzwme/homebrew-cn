@@ -6,6 +6,11 @@ class Grafana < Formula
   license "AGPL-3.0-only"
   head "https:github.comgrafanagrafana.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13910f94278ae43f02379a6fccd67832e2754c4cda58653db882984939090c10"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc300c8f9acd97b04ff9ae9c2b038641f3b663b351f815393214a3004dd78d20"

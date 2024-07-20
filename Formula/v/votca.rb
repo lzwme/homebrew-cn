@@ -1,19 +1,18 @@
 class Votca < Formula
   desc "Versatile Object-oriented Toolkit for Coarse-graining Applications"
   homepage "https:www.votca.org"
-  url "https:github.comvotcavotcaarchiverefstagsv2024.tar.gz"
-  sha256 "be1f8ad3de2ce86f0c01014aa5358c181f128a847bc4508ba0a4bffd5c82a1cf"
+  url "https:github.comvotcavotcaarchiverefstagsv2024.1.tar.gz"
+  sha256 "74d447f976a7d5c05ec65ab99f52b75379cafa3b40b8bc3b9b328f8402bc53dc"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "504f8ab09074e72ba32a4a295445c25b69b72de16c1250887ce1992c59a56e09"
-    sha256 cellar: :any,                 arm64_ventura:  "7531ab683d8456efbf5ad26e60cd6cbaa47247ca3978d1190c9c76ff5f4a9776"
-    sha256 cellar: :any,                 arm64_monterey: "a8fe9612566ffc9523f848051bea9c34e7647b2f17c90376592e07dc63d33853"
-    sha256 cellar: :any,                 sonoma:         "1f9259d2b6505d7024cef35bf0ac09b594820ae5d024a4afb418d42811f6e939"
-    sha256 cellar: :any,                 ventura:        "d169ac530b6d8fbb309e75baa24d930b4cbb276fb35a7ddda479ec4cd93758fc"
-    sha256 cellar: :any,                 monterey:       "d4a876cb84a7274acf864514c09e87cee8c1dfce0f6152b73f43619f23b4139e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5172837a798669038f93ed27dad0aec384bbb9f0179131e38b40c43f80f88905"
+    sha256 cellar: :any,                 arm64_sonoma:   "d83bd1a9c46735242047b9d00ad6e372ef8886dde8a70375c82fb96728bbc6db"
+    sha256 cellar: :any,                 arm64_ventura:  "517dd32b3eac99c62b70d3ec73d724a894ebe0ca11211ba9093ca2733953f1ef"
+    sha256 cellar: :any,                 arm64_monterey: "f6d189bd73aa95e2fc74c506a94d2584e6be327f7446309ff5f669f439ef7b39"
+    sha256 cellar: :any,                 sonoma:         "7920055ec0096918752abbc653114a6daaa4cc68a54b72f1f584503208a3d0e8"
+    sha256 cellar: :any,                 ventura:        "9100082cb7ad9bb733a2fd759c83525e00af5beea5fc7021bb91d986935e5a21"
+    sha256 cellar: :any,                 monterey:       "ab8b77362943511d03947aa3b2f55146d746ba6a595e0789b0be6279c787f4fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb617d7416af23f219076b0bc6d4277036dac280d2cfcb104759dbadac5931d5"
   end
 
   depends_on "cmake" => :build
@@ -34,13 +33,8 @@ class Votca < Formula
   uses_from_macos "expat"
 
   on_macos do
+    depends_on "libaec"
     depends_on "libomp"
-  end
-
-  # Backport fix for build failure with `boost` 1.85.0. Remove in the next release.
-  patch do
-    url "https:github.comvotcavotcacommit9a29a3a82ea23c5159d43b0f25218601e12085b4.patch?full_index=1"
-    sha256 "814fad24b533b84855f5171dda6789552872f16e1bbc3bebf8a3ebb2394440af"
   end
 
   def install

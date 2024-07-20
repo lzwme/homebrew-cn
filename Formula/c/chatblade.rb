@@ -3,19 +3,18 @@ class Chatblade < Formula
 
   desc "CLI Swiss Army Knife for ChatGPT"
   homepage "https:github.comnpivchatblade"
-  url "https:files.pythonhosted.orgpackages554a61b7d54354a57837dd1555fcec400c2ce291c26fb1c587ba408fe991ac32chatblade-0.4.0.tar.gz"
-  sha256 "02313ed4c9129193ad1143ca10f04a4379fe68e07c730b28ac1a4be6c90db245"
+  url "https:files.pythonhosted.orgpackages6de9b1d8accb69577a991f760bcf2b61c1c176109c8b2b4fb9859898e687e108chatblade-0.5.0.tar.gz"
+  sha256 "3a084509b8853a10509157e18a4d2d159f7eb4216e655d6b24f5db04d47804be"
   license "GPL-3.0-only"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5bb4d3302503e134de1b72654e80045951ee3ef1496fc3c779bef3ea1eae127d"
-    sha256 cellar: :any,                 arm64_ventura:  "b305d442e8546e9803da9fbac5e4d6b61146aa82fa1ead09d01026d70f1885b9"
-    sha256 cellar: :any,                 arm64_monterey: "88989f8c309b1ea7e6891fc2996efc26133c634d0938cd791011e108c3d884ef"
-    sha256 cellar: :any,                 sonoma:         "461f77b5e006ed043e387a856b555de12c269cfed12a2bbfb0fcea29dec85620"
-    sha256 cellar: :any,                 ventura:        "aaf5a73c64d097d4ee3fe7e54cfbb41956b7fa89a194dd38a45eb3640eede63d"
-    sha256 cellar: :any,                 monterey:       "bddf50b4299ab17a5813021da4a1e26c86ff03f26bcdea4a10151be349f723f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d23414b88c083e340fd3e643b4df679af0d028587fae707d3fddb840fcf6fee"
+    sha256 cellar: :any,                 arm64_sonoma:   "41ed054471d6d876e1709bea9a665d1219e461fbb8da7110d45fa60381f2b890"
+    sha256 cellar: :any,                 arm64_ventura:  "0f88f03125c7564e24ae18497127b1c37011542fc087689c120c35b0392e84ec"
+    sha256 cellar: :any,                 arm64_monterey: "8ff2915b272e6cf300645fe3afadf18d580c9ab665cc9126896e53ea18f511c3"
+    sha256 cellar: :any,                 sonoma:         "3a7aded0ada93e0d686303a2bb8d220fb37d0a482ac03080b76261fedb184e02"
+    sha256 cellar: :any,                 ventura:        "295055c55b1328bc2f8c451643d5a8498964d34434b7a82b0ac768e5f8a2659e"
+    sha256 cellar: :any,                 monterey:       "cfb39e923b7dfcde22b975c470389b91f9c47a9fab04dbef647f3bcdfc1c5a65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d2d51932541a228451b68a3c09ef18a4c29f0b0b8d1e011dcf11a46faf8f52"
   end
 
   depends_on "rust" => :build
@@ -74,8 +73,8 @@ class Chatblade < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages5c53ae546a4411940ac89945b90ff8047d8441c29818117e1216ad977344737bopenai-1.13.4.tar.gz"
-    sha256 "bdca99de67db0659b2b27c791f8c1d0018099dc119cd8fc712d64b108ef92ce5"
+    url "https:files.pythonhosted.orgpackagesae79f7b778570826fbdc091eac48c4de43304bb605a0045a0b36bb092963546eopenai-1.35.15.tar.gz"
+    sha256 "307007e2036d57115612c1ecb50e9bc98fcc93537109a9f9efa1b4eedb2ea968"
   end
 
   resource "platformdirs" do
@@ -84,13 +83,13 @@ class Chatblade < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
-    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
+    url "https:files.pythonhosted.orgpackages8c99d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902epydantic-2.8.2.tar.gz"
+    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
-    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
+    url "https:files.pythonhosted.orgpackages12e30d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247pydantic_core-2.20.1.tar.gz"
+    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
   end
 
   resource "pygments" do
@@ -124,8 +123,8 @@ class Chatblade < Formula
   end
 
   resource "tiktoken" do
-    url "https:files.pythonhosted.orgpackages3a7ba8f49a8fb3f7dd70c77ab1d90b0514ab534db43cbcf8ac0a7ece57c64d87tiktoken-0.6.0.tar.gz"
-    sha256 "ace62a4ede83c75b0374a2ddfa4b76903cf483e9cb06247f566be3bf14e6beed"
+    url "https:files.pythonhosted.orgpackagesc44aabaec53e93e3ef37224a4dd9e2fc6bb871e7a538c2b6b9d2a6397271daf4tiktoken-0.7.0.tar.gz"
+    sha256 "1077266e949c24e0291f6c350433c6f0971365ece2b173a23bc3b9f9defef6b6"
   end
 
   resource "tqdm" do

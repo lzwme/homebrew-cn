@@ -23,9 +23,14 @@ class JsonGlib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
 
   uses_from_macos "libxslt" => :build # for xsltproc
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
@@ -44,6 +49,7 @@ class JsonGlib < Formula
         return 0;
       }
     EOS
+
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[

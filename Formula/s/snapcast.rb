@@ -2,16 +2,17 @@ class Snapcast < Formula
   desc "Synchronous multiroom audio player"
   homepage "https:github.combadaixsnapcast"
   url "https:github.combadaixsnapcastarchiverefstagsv0.28.0.tar.gz"
-  sha256 "ce7edf2db19835c0c4c2bf47af3bc3088a4740144df10fead9e7fb2741b8b51e"
+  sha256 "7911037dd4b06fe98166db1d49a7cd83ccf131210d5aaad47507bfa0cfc31407"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "80fb41b2e5b1d10cf211303256547290722181f29f31f27f3b2b61e90a96a53e"
-    sha256 cellar: :any, arm64_ventura:  "fe61bdbb1751d70c806e04635b71b6ce703cc2139123ad77709a0e3e34b9c756"
-    sha256 cellar: :any, arm64_monterey: "d43333c9aec68a7a71443dd5c7e626071a8a1bdade0f79dfe717314dd352ae4f"
-    sha256 cellar: :any, sonoma:         "340b42091cd68a9cb2244a1ef28d2e324ccebe2dbb0d17f8f3a311f6f1df59af"
-    sha256 cellar: :any, ventura:        "84ad5a9b29a5a85d5f35798953fba89f0eec23affaa6e4fffd9feadc75a59ad5"
-    sha256 cellar: :any, monterey:       "706c5bc609b28c03fedfdfef35c6fa804f8797fa034966fa2e4031aed403c45a"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "75e6de027292f02f8e07acfbb259c90d176b39af701c0f100c3d2b6b443fbc8e"
+    sha256 cellar: :any, arm64_ventura:  "3a54d56492e2124f689368a6d49b03bdae36bd35e3b0ce4445157123821d7da9"
+    sha256 cellar: :any, arm64_monterey: "e3985b051dba335a8a964ac76a431e44b4e120f02e3e1883b876606fa2494e7c"
+    sha256 cellar: :any, sonoma:         "cecd4502e518a7aa0a0b1bc827bdee80d62318e26378e72e3d1a3e6a856c4916"
+    sha256 cellar: :any, ventura:        "637e67d6f01ecf9e2fec50af36d101901ab7ae9c8f6d9ba80e3f61f80b501a1d"
+    sha256 cellar: :any, monterey:       "878309f55ef6cc0322491dbf9f83713182a773b7d0dd6b0da828a6518e790230"
   end
 
   depends_on "boost" => :build

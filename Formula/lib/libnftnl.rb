@@ -1,8 +1,8 @@
 class Libnftnl < Formula
   desc "Netfilter library providing interface to the nf_tables subsystem"
   homepage "https://netfilter.org/projects/libnftnl/"
-  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.2.6.tar.xz"
-  sha256 "ceeaea2cd92147da19f13a35a7f1a4bc2767ff897e838e4b479cf54b59c777f4"
+  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.2.7.tar.xz"
+  sha256 "9122774f968093d5c0bacddd67de480f31fa4073405a7fc058a34b0f387aecb3"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Libnftnl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "785bbe57269cdf996d7f156874c1b2ed1bafef79d337ed9d370529b2c0fc294b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4712589d2e8f50b7020cad7ca5cb13798ed086b879916758a43d8eaa222a7a89"
   end
 
   depends_on "pkg-config" => [:build, :test]
@@ -19,7 +19,7 @@ class Libnftnl < Formula
   depends_on :linux
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     pkgshare.install "examples"
     inreplace pkgshare/"examples/Makefile", Superenv.shims_path/"ld", "ld"
