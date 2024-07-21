@@ -3889,7 +3889,7 @@ Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcrafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
@@ -6222,8 +6222,10 @@ Homebrew-homebrew-core/Formula/t/terraformer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraforming.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terragrunt-atlantis-config.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terragrunt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terrahash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrahelp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrahub.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/terramaid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terramate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrapin-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrascan.rb, Homebrew/homebrew-core, 1
@@ -10894,6 +10896,7 @@ Homebrew-homebrew-cask/Casks/g/github@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/githubpulse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitkraken-cli.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gitkraken-on-premise-serverless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitkraken.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitpigeon.rb, Homebrew/homebrew-cask, 0
@@ -11908,6 +11911,7 @@ Homebrew-homebrew-cask/Casks/m/mojibar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/molotov.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monal@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/monarch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monero-wallet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moneydance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moneymanager.rb, Homebrew/homebrew-cask, 0

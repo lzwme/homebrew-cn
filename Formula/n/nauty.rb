@@ -16,14 +16,14 @@ class Nauty < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2998663bc5f33dc6ec3aafc7484c3dcecba0ff1d4276408b384179b82cef2433"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5ac9c4a7c6bc9c2092b24aa1f08122a5ee54c72869a1a2dc6fed71348f8b3f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a4688fe963d913e35b14ad3078c1cf2d1dd054976b432acbc32e4badac51448"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46690024133ff0fab6226a4d1473d9f7f987475fa65f6835272600e718f1a4d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "6722de8d71b05629eb75ea96c79aa1e169bc2d0f6dac8a93b37219b41dfd682d"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa21ab2f8e0df03513b17a7e0ecc1961ea1efc8a36fc44a050e462fed8d8e1d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee528b994774bc9a28632f211973cd65078b06aee0d63726fb356867587c6d31"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e766a9ef6bbea8dfac11fc6a624eb87bb1b1152fc74b0620926e1814b39f5180"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0fec02120cce86a5cb43cf68b07e41263755a974b999381eb8c5394977e1081"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d43c3cdee779dac54911bedddb0d3c89b1b3232a709736ad35b0fcb65a3a8b5b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "635a1766e3a06890d01ccd47a33b872363d08a47c56764e4b87af21454fd0bc3"
+    sha256 cellar: :any_skip_relocation, ventura:        "05e0200b2ff5c8c811f2e47cbf4df6db9680ef19b7cd3aa56a4e2f7f37d5c9af"
+    sha256 cellar: :any_skip_relocation, monterey:       "44a6a34d06e530ae38cc7e67eb508fabade9c0e3bede5769f28a319d876efd22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e77a00e472ec4c75ee2343fe220d96e4739e4266a505ad030e454e6f5c08c81a"
   end
 
   # patch to correct the location of nauty*.pc files
@@ -31,7 +31,7 @@ class Nauty < Formula
   patch :DATA
 
   def install
-    system "./configure", "--includedir=#{include}/nauty", *std_configure_args
+    system "./configure", "--enable-tls", "--includedir=#{include}/nauty", *std_configure_args
     system "make", "all", "TLSlibs"
     system "make", "install", "TLSinstall"
 

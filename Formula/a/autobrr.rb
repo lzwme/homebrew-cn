@@ -1,18 +1,18 @@
 class Autobrr < Formula
   desc "Modern, easy to use download automation for torrents and usenet"
   homepage "https:autobrr.com"
-  url "https:github.comautobrrautobrrarchiverefstagsv1.43.0.tar.gz"
-  sha256 "b480cad76fe9297616843f929a0267edf1ffec14defe180935f2d3fefcdab3d3"
+  url "https:github.comautobrrautobrrarchiverefstagsv1.44.0.tar.gz"
+  sha256 "c41d78dc3ed13ef52ecbac9afaf46fbe05fbf2e23a71ea35f35bafd718da2939"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b5f9f6134a25f54334573f2b20dd1900ddbadce6b31ebfaed97107474dc1ef2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bddf18134752251e019cc707571e5a7817310f8f28c9a32b498c368f56c4542"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "040d6abdf9c2b49de4c65abda224b08238eed0a80e4c7b992893b4bae44be940"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3642a5cc5b8fa1b6e81c2defa313d502b8afe8f35144e388bff076dac1382796"
-    sha256 cellar: :any_skip_relocation, ventura:        "ee0ea4d48b6ee377f67887c06ef0693e94ff440bb287a599ea5b246718ae3a8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f73a0c9142b9400cba82153ce7c8150e8b28c516a59c3b3b87fd9472abc10660"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "294f4a3666058f7e186f4b8510d9d1c8cbbacd11e6a7b017df9c742f0ff5c633"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea47b41bcadf0bb70a0ab05128acecb5a3c30f81ab7587b6883e531ae18b9895"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7c320c471c61cfde1a15fbecf2b6cfe0a2d3888ec3c9e32b19235945eea9aff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0e13119d42b79dd13f9431a66be1e6360917abcced708c43f6935581d6292fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "942a1d6feca746a762cd4a1c42979b5d340c3daba2baf4f6ccbf1de5d30ae433"
+    sha256 cellar: :any_skip_relocation, ventura:        "910ce6a71b66293a7dba0b5aab42998cf114ff2577cf13ac2f8e5cca35423d2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "8cabc205e6d9769fa6dd30b8a8873518a1a783bd2f80eeaeaf26239b37758657"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f735f57da6ee15849c8becce2aeb8a7ca53819b93b3eddc30259da6bcf7c286"
   end
 
   depends_on "go" => :build

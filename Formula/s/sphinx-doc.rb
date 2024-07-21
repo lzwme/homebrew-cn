@@ -3,18 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/c6/81/8ef210d47c9df9c184c5c1b832e92b50eea11e2463ed7254a3661c0b3e83/sphinx-7.4.6.tar.gz"
-  sha256 "116918d455c493fff3178edea12b4fe1c1e4894680fd81e7b7431ea21d47ca52"
+  url "https://files.pythonhosted.org/packages/5b/be/50e50cb4f2eff47df05673d361095cafd95521d2a22521b920c67a372dcb/sphinx-7.4.7.tar.gz"
+  sha256 "242f92a7ea7e6c5b406fdc2615413890ba9f699114a9c09192d7dfead2ee9cfe"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01f5460ad01131a60ca5f19ba0b20b39947d63ff5d1aced479707f55e4395c05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd3d42197858a11f4355763b1327aa1f027ace2ec2e60547363b19e67592e447"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81a98e7e0931f9bd45ea42add843b6e6f1177c0cc3556d8a649a977fb299b26f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9efa2a14a285bb22f062dbf7ea3df02f6836db655936d146a5f1add0b3ee2b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fef7f91fc4bc66f34881f987c2c0f59957695682ea57ecaf7aacded480730c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f02a1c355daf8a2ff01f9111e65258fe8dca006dc010dff71b62c3ae2301d95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a632ff52cba7a2889616d4e896ee68c4c81771b4b4effdbed7264f7401a414be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f73a7740702da0c6ceb8a8000320b9f03f8efcbb122a3f9286a56107dfa26d19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa8ca76d17b4e2b6bbe326aed85603b47dc62d2de73924c1d756b8034edde3e9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4ee3c378ba5560e0d6178c6dedc8c2a541b3711aa77021747f775ca0b766172"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6eb723650525b69d10509bae4861d0df6ccb4d3a4cd9f7396944129314dd68b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f3350c3b41c736a031b3dad08aaefb06a076e39ace4f1f79e2978d6b72ab601"
+    sha256 cellar: :any_skip_relocation, monterey:       "fde3e40f99c97c96c7a4839946b071f9b591e5da2eb0b195085baee616a6d27e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5793e829496419b1b71bd7f8d40b93382dd2c14bb332ba6c0f2ddaf772a4499a"
   end
 
   keg_only <<~EOS
@@ -101,8 +101,8 @@ class SphinxDoc < Formula
   end
 
   resource "sphinxcontrib-htmlhelp" do
-    url "https://files.pythonhosted.org/packages/8a/03/2f9d699fbfdf03ecb3b6d0e2a268a8998d009f2a9f699c2dcc936899257d/sphinxcontrib_htmlhelp-2.0.5.tar.gz"
-    sha256 "0dc87637d5de53dd5eec3a6a01753b1ccf99494bd756aafecd74b4fa9e729015"
+    url "https://files.pythonhosted.org/packages/92/d9/a1c50c8a7b5e12f34bf4d63300a1e2629c29b71603115d900c0fa7c79219/sphinxcontrib_htmlhelp-2.0.6.tar.gz"
+    sha256 "c6597da06185f0e3b4dc952777a04200611ef563882e0c244d27a15ee22afa73"
   end
 
   resource "sphinxcontrib-jsmath" do
@@ -111,8 +111,8 @@ class SphinxDoc < Formula
   end
 
   resource "sphinxcontrib-qthelp" do
-    url "https://files.pythonhosted.org/packages/ac/29/705cd4e93e98a8473d62b5c32288e6de3f0c9660d3c97d4e80d3dbbad82b/sphinxcontrib_qthelp-1.0.7.tar.gz"
-    sha256 "053dedc38823a80a7209a80860b16b722e9e0209e32fea98c90e4e6624588ed6"
+    url "https://files.pythonhosted.org/packages/a6/67/f5c7df6457315877202f370450acb28626d033822eec1e8163600612b4ef/sphinxcontrib_qthelp-1.0.8.tar.gz"
+    sha256 "db3f8fa10789c7a8e76d173c23364bdf0ebcd9449969a9e6a3dd31b8b7469f03"
   end
 
   resource "sphinxcontrib-serializinghtml" do

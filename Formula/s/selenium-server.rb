@@ -1,8 +1,8 @@
 class SeleniumServer < Formula
   desc "Browser automation for testing purposes"
   homepage "https:www.selenium.dev"
-  url "https:github.comSeleniumHQseleniumreleasesdownloadselenium-4.22.0selenium-server-4.22.0.jar"
-  sha256 "fb8a6a8c08fcdc0f8134235d3204e5df1b3ab17eeedea3126766759619e98ae8"
+  url "https:github.comSeleniumHQseleniumreleasesdownloadselenium-4.23.0selenium-server-4.23.0.jar"
+  sha256 "f6a8163dc4d5cb51c7586fba7d948b3567dbbb3717e19aa3ae7b272ae36da2ae"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c1824c6de86ef1868bcc790c188bc4d75d5a7b5432aa9422f32c333894781af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca34fb3b68b2f5a77c6e4b15204cb1106f792d813ea2fdc272536883c76ff5b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3dd468e945b50fec89ec9001e198ede9f54c4bfc63b8bcb4d8fe30950558d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e97208e4a5e0838fedf11c719673c6964254f09541eaf105227f90d1adf016e"
   end
 
   depends_on "openjdk"

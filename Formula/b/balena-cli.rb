@@ -3,8 +3,8 @@ require "languagenode"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https:www.balena.iodocsreferencecli"
-  url "https:registry.npmjs.orgbalena-cli-balena-cli-18.2.25.tgz"
-  sha256 "c5aa11a902a73744ad1acd07004c46244fc709b5ac44239a56b1b94a9d66b1d0"
+  url "https:registry.npmjs.orgbalena-cli-balena-cli-18.2.33.tgz"
+  sha256 "9bbec6f27fe46c9028a929e3a9cba679ada54fa527288d3e36f1f1e1c5bf6740"
   license "Apache-2.0"
 
   livecheck do
@@ -13,21 +13,17 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "87a5847634aab70838b8dc954bad74a54b8308aacb2555396219cee62c7c16fa"
-    sha256                               arm64_ventura:  "d84d814eee72c6849a16b1cb1a5b435c7c8fd31b65a8cac29656f7657d0e17dd"
-    sha256                               arm64_monterey: "20760b7d4cca342491d62fe1a1d9933ce82d03e1d829c8bf0d2785e44e864e6d"
-    sha256                               sonoma:         "2a169077a6e0cbe4e5cf7e4644c6fd264aa1c1d3f6c8765f15d9a4f69437e82f"
-    sha256                               ventura:        "2c834b182d7c352f7d2d1fb9b7c439d5be612e5c9c0621e9703176240383c7ab"
-    sha256                               monterey:       "cd5978cffe445e1a254a1510a3525ac8485317911c973cdadb2ed221eda28300"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d28b9709c6f518f12d3b4bcc8b3ebd1c652b7316dfebf311de2cca313ffdd6a9"
+    sha256                               arm64_sonoma:   "62642d0f10e8e647e12d2ca1fc7ad0d5bb054b649f0912876547ee6d744c75c5"
+    sha256                               arm64_ventura:  "c3b1b527bb1d488c2a12c47cc415240259a248b0e9f58803b36df474cd395adf"
+    sha256                               arm64_monterey: "c513534b5c7d60531df702301a387ff66bd9316ff98ce553c1bad7236522e6ed"
+    sha256                               sonoma:         "2d97e783bca2967d3abbffcd592ded35fe58e4a9d76ed12695c0ca09489cd2a4"
+    sha256                               ventura:        "3eb5bf6e93cd5620feaafc627a5dbe2a137cbdbadd65a6cef5b962cffd32a285"
+    sha256                               monterey:       "a14de5c0e6be6f0f0ff81d1b62d63f69d73e01cd88b14af65f4a5bcfccc0245e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "085c71bc99ec320fa3fe37b72d262689b8079316a1e89a2bb7cd05ca51063ef7"
   end
 
   # need node@20, and also align with upstream, https:github.combalena-iobalena-cliblobmaster.githubactionspublishaction.yml#L21
   depends_on "node@20"
-
-  on_macos do
-    depends_on "macos-term-size"
-  end
 
   on_linux do
     depends_on "libusb"
@@ -50,24 +46,6 @@ class BalenaCli < Formula
 
     (node_modules"lzma-nativebuild").rmtree
     (node_modules"usb").rmtree if OS.linux?
-
-    term_size_vendor_dir = node_modules"term-sizevendor"
-    term_size_vendor_dir.rmtree # remove pre-built binaries
-
-    if OS.mac?
-      macos_dir = term_size_vendor_dir"macos"
-      macos_dir.mkpath
-      # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin"term-size").relative_path_from(macos_dir), macos_dir
-
-      unless Hardware::CPU.intel?
-        # Replace pre-built x86_64 binaries with native binaries
-        %w[denymount macmount].each do |mod|
-          (node_modulesmod"bin"mod).unlink
-          system "make", "-C", node_modulesmod
-        end
-      end
-    end
 
     # Replace universal binaries with native slices
     deuniversalize_machos

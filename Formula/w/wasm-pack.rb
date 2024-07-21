@@ -1,23 +1,22 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
   homepage "https:rustwasm.github.iowasm-pack"
-  url "https:github.comrustwasmwasm-packarchiverefstagsv0.12.1.tar.gz"
-  sha256 "afa164fec0b119e2c47e38aad9e83351cb414e8ca3c062de292ec8008a45ac09"
+  url "https:github.comrustwasmwasm-packarchiverefstagsv0.13.0.tar.gz"
+  sha256 "d9eeb1116a584afc50ccb7c4ca15e0256453d4d2b4bc437b83f312b78432fdab"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comrustwasmwasm-pack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd0285a53af8bf89c1f8a1d20569e68ee274c3a777ce77ca46d7f38b4d8cd7b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e205a97851b7166c70355e63b166541b44e6b419db5483ace1fc0ed2d1b87ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1f73a1e067a8bc27645fdbe009a5b2bb3aa289ee88ba541cc0c6964f64add76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13dac57eb2b6b269013ddf52a2dc0adf890a75ac511d1a347c9d0753c926c149"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6d4449aa72ab189815374819d751700297fa19d2d6ff81d4a4f496725688883a"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c884e28455fec249ae4fd0d64ce9c653699a1f42e4d9df2cb21b3b4a283c077"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd3838f43dd5f2d1fece3ea22d597a019f127ea757625f946193463418c361d4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7540592385c24534fbc9223f65a2361f26082a52f3f717dc40debfe7ae2d250d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0a69f2bb774de2289f5f3bf2fb151d168f1ad07c7e17c2891b4cc85f53948c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f9874054430a355a1b89f89a61ee567443b08034408848ea2921b7f98969499"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed6e00095ccaa2ba64277113d6a4e12d41a16933c61e94f8ba1ac2a666f2e9b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19284846b04cc4435caed6a9ef012ea03fdb5dfdc35c9854c343b143e5cddb6b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "92f0033ece6cc83109306625ab03dcbf3aafa11d350bb972d5dbf4d6babd1231"
+    sha256 cellar: :any_skip_relocation, ventura:        "e9fcecc4da9399e5db97298e3270fd7b1ae2b2664a45285eb7ad9b82d4ecaf85"
+    sha256 cellar: :any_skip_relocation, monterey:       "afbf975761f20b901d3b44540d0ba2cdd1493c4e8bf371b2c1577313faa55ff7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82499d28c9b6cbbc017bc939fbaef4b755c8605e4376da07dd1a482bdfdd02a7"
   end
 
+  depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "rustup-init"
 

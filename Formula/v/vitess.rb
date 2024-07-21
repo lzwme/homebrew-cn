@@ -71,7 +71,7 @@ class Vitess < Formula
                          "--cells_to_watch", cell,
                          "--port", port.to_s
     end
-    sleep 3
+    sleep 5
 
     output = shell_output("curl -s localhost:#{port}debughealth")
     assert_equal "ok", output

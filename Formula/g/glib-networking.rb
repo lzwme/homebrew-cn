@@ -18,9 +18,14 @@ class GlibNetworking < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gsettings-desktop-schemas"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   link_overwrite "lib/gio/modules"
 

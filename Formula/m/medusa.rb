@@ -1,19 +1,19 @@
 class Medusa < Formula
   desc "Solidity smart contract fuzzer powered by go-ethereum"
   homepage "https:github.comcryticmedusa"
-  url "https:github.comcryticmedusaarchiverefstagsv0.1.4.tar.gz"
-  sha256 "7b101077a378b41b89c94571ff12425c5d37decc961b089910a5e5c4b89787ad"
+  url "https:github.comcryticmedusaarchiverefstagsv0.1.5.tar.gz"
+  sha256 "fd5b2f3a9dd4aad51397b892a695d644809f15194b200d0e4221d1a99f43f4f6"
   license "AGPL-3.0-only"
   head "https:github.comcryticmedusa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ecf5a663e1f55e2a698b373648ff6aef7d324fe61b85f92494303a31d4ce43a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c834112f76db15ef8f7f882da465474acc5df2afaece2fee910a9f0861cae853"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "325e1fcd741b3429e3fc37e3cd159139f2b8ea510b2beb15e493a6c57f9ba303"
-    sha256 cellar: :any_skip_relocation, sonoma:         "324002128251f506226e3579bd1246649f4707b1a82c402c93f3e311ffceb91a"
-    sha256 cellar: :any_skip_relocation, ventura:        "925ab3032f07dc086f8790b93648676fc8cdf573fae6bb1d246140e5f5850ce6"
-    sha256 cellar: :any_skip_relocation, monterey:       "317be3bf7b4d274b612665bc70ca94e72cf64c50d0b0993dbdf1dd5188846e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6b681bbd85ed5938d9b28b266b7091eccd912f0399afebaeb56e1f679918603"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7da2c1a7788838fc892489be36ad27f2d8cb2564f4a2c50c74f82c301d3e78c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36dc3fcb097a7352b0a72f54b657b74bd5777eb06c936068350d715c89650117"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab99ba1013332bb045b18dccd5d3bab3fb53c644106dce8bb5c2c2e1ab57dd01"
+    sha256 cellar: :any_skip_relocation, sonoma:         "360bcfc531563c9a0865368f09ac9c049efab421eeaf15c99e1340c58431ccb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e82619eaa049ad7d1521fc1ae85077dba87561627134b495131a3d22411aa0ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e5b48d79d420b35432886deadf53bd635ce49d7df29c6230bd2fd084263df0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d4036fd354efc293b94fe230d4acfd3163eaa17df09759dad34db476dd80d48"
   end
 
   depends_on "go" => :build

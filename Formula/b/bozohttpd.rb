@@ -15,6 +15,8 @@ class Bozohttpd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbd5ed984d13939f8c193b697794540e2b52294e246ed5da888f09f4f357b43f"
   end
 
+  deprecate! date: "2024-07-20", because: :repo_removed
+
   depends_on "pkg-config" => :build
   depends_on "lua"
   depends_on "openssl@3"

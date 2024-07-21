@@ -3,19 +3,18 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/ae/70/dc7c74592f30ac20be23eaeeb2a84ee6e2c12c21beb07a3eb53ead77de1f/sqlite-utils-3.36.tar.gz"
-  sha256 "dcc311394fe86dc16f65037b0075e238efcfd2e12e65d53ed196954502996f3c"
+  url "https://files.pythonhosted.org/packages/65/c5/a16a5d3f5f64e700a77de3df427ce1fcf5029e38db3352e12a0696448569/sqlite_utils-3.37.tar.gz"
+  sha256 "542a71033d4e7936fe909230ac9794d3e200021838ab63dbaf3ce8f5bc2273a4"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b2222312303da2cd82cdf50b9817077b5769ba12b3ddc07269c92a468c0b920"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d088bf9a317954888c5bac071451dde7955596b0906a6b8fa17cd085e50d47a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d84102b4c4264cf8f57eadc6cb14b05b179b18cc44ab626ea614cb47f66f7b19"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4c7e124f8a75623621a1aad0a92caa3b81d4b99b07d0203419057208af14f52"
-    sha256 cellar: :any_skip_relocation, ventura:        "48a81fb992280221f90ddf268dec220518e5bcc59b197faef3c28600c34de449"
-    sha256 cellar: :any_skip_relocation, monterey:       "27cda1835aeea0af2e43ecedac178223a27334e420d2271c62ed2fd7b59c2443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1450462a0b43736b8228ec579b6553b46fd9109f40a260936f04ac662cbf4a96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df686f55d3c00995ff179cc24d3bc6df092113b874bae8f6425d9e4647ea6225"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df686f55d3c00995ff179cc24d3bc6df092113b874bae8f6425d9e4647ea6225"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df686f55d3c00995ff179cc24d3bc6df092113b874bae8f6425d9e4647ea6225"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d2cbbd0b404f9e8b8b7e40a0ebf95256ee6ae41ca4926fc88c08b0fd82112869"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2cbbd0b404f9e8b8b7e40a0ebf95256ee6ae41ca4926fc88c08b0fd82112869"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2cbbd0b404f9e8b8b7e40a0ebf95256ee6ae41ca4926fc88c08b0fd82112869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1422cbdfe26b640d56e033e82fd28e4ad8e00b0e692c5cdfe744e4d627f064a7"
   end
 
   depends_on "python@3.12"
@@ -31,13 +30,13 @@ class SqliteUtils < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/54/c6/43f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59/pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "six" do

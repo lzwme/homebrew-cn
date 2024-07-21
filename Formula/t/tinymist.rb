@@ -1,8 +1,8 @@
 class Tinymist < Formula
   desc "Language server for Typst"
   homepage "https:github.comMyriad-Dreamintinymist"
-  url "https:github.comMyriad-Dreamintinymistarchiverefstagsv0.11.15.tar.gz"
-  sha256 "12bdc89b200095033f9db8b8bb086662f3dd86f7fc432dd840f1c87839c103a2"
+  url "https:github.comMyriad-Dreamintinymistarchiverefstagsv0.11.16.tar.gz"
+  sha256 "10f2facdb8cb57b92f58502e90cf68b3dacdf5d6c01f116a67f080f3364ecadb"
   license "Apache-2.0"
   head "https:github.comMyriad-Dreamintinymist.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Tinymist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95671923090f6dd1d3e2f7b824ef1539e34ca9aa73f6b12f5153c8d9a35df481"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8f63acb4fb81f0fcb60120f4cd7bbd9f07ae56fe00aca2f07f65b0003a4418a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ac86fccb1ed7b0ce60c3d897810c6a77732fc2573de2cb921b24fca1f3846b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "50cc784ec8991ad39d6cef6c73787e97cd420df1c10b5fd7abe0be1df7252d3b"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e543de146c98dcc317bd3c093210ecacdff2765111464a43d59925a97d126a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "718be78197b79413f3984a5f48ca7be5d4b470736443ca4552e269600cec3e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1908b60d124b5cc7b49285c963383b87b3d51688e818b9a81148d533c4fd8ca6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aed5c98e8461f5d38c4b5978589acea88a9056c142a7f150bf78847b392b3fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52416d531a0b146c22250ef1079929e325431ec9c6caf232b8a0fd2335028ea2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42518f5117bac1d41244692d8fe1ad948e020d2885fd039af7d763c4f08fdf8f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4be05c011cadff62be02f3b414a03785687d360c8d9e7a432b83addc24e53589"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c78109c2a7afda0236a764ea0dcf748ba1a24f3a3d3bc6c7de67d46a206b01f"
+    sha256 cellar: :any_skip_relocation, monterey:       "20c3ec434b1ced0663a75ff954d6e762fd2b548f7dc1f1b668a29a7b425f3e12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "249763aeea4e29d01c84a37cba8f725e581b0b66f3740dfc091085f3fe4d29b4"
   end
 
   depends_on "rust" => :build

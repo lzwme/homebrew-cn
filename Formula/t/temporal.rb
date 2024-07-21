@@ -6,6 +6,11 @@ class Temporal < Formula
   license "MIT"
   head "https:github.comtemporaliocli.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b227f8933bb196c685e4cbac92bb91e70f8c595bb1a8eebb74306a632925993"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3df1ac8326d65cfb0de8fd91a8f042499f5600786d4b8b67a25487f983bddefc"

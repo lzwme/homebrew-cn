@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https:www.simutrans.com"
-  url "svn:servers.simutrans.orgsimutranstrunk", revision: "11266"
-  version "124.1"
+  url "svn:servers.simutrans.orgsimutranstrunk", revision: "11351"
+  version "124.2"
   license "Artistic-1.0"
   head "https:github.comsimutranssimutrans.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Simutrans < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5ee09f2998ff1a13a7a1b90708a4f491ecb935973b3d3f7a10da12795e99d173"
-    sha256 cellar: :any,                 arm64_ventura:  "1993d78df04a796e3f1d1dde292b810b7c8b5627c6759889b0250857b9e9e5c9"
-    sha256 cellar: :any,                 arm64_monterey: "597a046050a6fa7ab3b5942ba548c3dbb7515cd54fbbb6fb1e6f44a6f2c559b5"
-    sha256 cellar: :any,                 sonoma:         "9896dcefe6f6c903b7e10a91230dc5ad5925a9e7b9d3a63681b9046bbe994e29"
-    sha256 cellar: :any,                 ventura:        "7465491b6ce304ef556c64e50220b00fe5409bea7b92f296477cf380716a9468"
-    sha256 cellar: :any,                 monterey:       "7ef629b1436433faf5677ed535559de0d41d2a3eb6931d40869f74c344cd760f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc80d348d1d73691f2622289b83c4e51c9dcd65550f0fd069d6eecea1804887b"
+    sha256 cellar: :any,                 arm64_sonoma:   "c2fbd52dc6359452a145c821d73c066f37da4db93041892d26b9c793ab2a53c5"
+    sha256 cellar: :any,                 arm64_ventura:  "b2be8ba9bdee787dcddd2fa3ced62ef0045033447d7d8bad6c83abbd309d0173"
+    sha256 cellar: :any,                 arm64_monterey: "00e11775d858f4da3409305e6466b017bf70fbbe361d64a3ec273eab699ec0f9"
+    sha256 cellar: :any,                 sonoma:         "5b63b20dabccc424807d9010893f0061785d563f8b392ecdfa3f05d1d0155670"
+    sha256 cellar: :any,                 ventura:        "8c1246cd704450f903734f8453bd70a6e8f66f7e93c39b43bb810e9da408462a"
+    sha256 cellar: :any,                 monterey:       "f1c54cb3e3fbe65542e2c474e62dfb3525c1686dc2b93ea7c6eaee7dbbc7fa89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cd54e58b98c90f1a716fd2cfdcfd125807ace32396871b14dadf96f5e4164dc"
   end
 
   depends_on "cmake" => :build
@@ -40,8 +40,8 @@ class Simutrans < Formula
   fails_with gcc: "5"
 
   resource "pak64" do
-    url "https:downloads.sourceforge.netprojectsimutranspak64124-1simupak64-124-1.zip"
-    sha256 "5a70e8ad28c3fa25474388dd2a197e76d769f3f78f8a33052b32ad83fe1a4efd"
+    url "https:downloads.sourceforge.netprojectsimutranspak64124-2simupak64-124-2.zip"
+    sha256 "e690e4647a1a617032a3778a2457c8812cc4510afad0f5bf8524999468146d86"
   end
   resource "soundfont" do
     url "https:src.fedoraproject.orgrepopkgsPersonalCopy-Lite-soundfontPCLite.sf2629732b7552c12a8fae5b046d306273aPCLite.sf2"
