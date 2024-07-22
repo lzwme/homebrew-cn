@@ -3,19 +3,19 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-24.1.3.tar.xz"
-  sha256 "63236426b25a745ba6aa2d6daf8cd769d5ea01887b0745ab7124d2ef33a9020d"
+  url "https://mesa.freedesktop.org/archive/mesa-24.1.4.tar.xz"
+  sha256 "7cf7c6f665263ad0122889c1d4b076654c1eedea7a2f38c69c8c51579937ade1"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "c9608d55b2ce367322aaabf4fa8e9a0adf8fe713d45d9becc25f88a46a4d8c9d"
-    sha256 arm64_ventura:  "e1d1cea5ade94e0697004b0be63930a10733f830e7d9cb7095ed03d56a45f960"
-    sha256 arm64_monterey: "25cfbe67ba36a1e5cfeb8eb5e785d6feed68f2a7d7c7a81a7eca16287b5736b4"
-    sha256 sonoma:         "49e17978a6c253b474b908c939f846ca42a76899ac1bc47655dc679ea9a38505"
-    sha256 ventura:        "d6f8849eb44935df108f768da871b15473b66cf7d8195d6b71af4f9db06e4940"
-    sha256 monterey:       "ee3148cc08275d010a2a53536b14cb878e4dd69de8bfa8c1febf5926b0331c7c"
-    sha256 x86_64_linux:   "b374d6eb1a243794bae54fd1b4d00df02dda10fac73ba0100e2a14aedfa922e7"
+    sha256 arm64_sonoma:   "348ba2c226ff26b93fe79fb9493a1f0f25825958c76c4b737b0d3fb637125ad3"
+    sha256 arm64_ventura:  "e34fb6c20135c0947b46a1e1af5b78f8a1352b3de728dcf8b2209c7042496eef"
+    sha256 arm64_monterey: "b4ed0165c83bef72c448494e53fd6ca201b0c4a0ee4f5643188b0b718fd6bb98"
+    sha256 sonoma:         "2dd59d5aab145586f37c09d99d076d38822117fc6469d876546887eca12bc3d0"
+    sha256 ventura:        "e5f0b2197c85b3a9372c265a43c0b044f1be4b6dab1c58e8681c076967a4283f"
+    sha256 monterey:       "5c734798783dfd23cfea5cfaf250149ee9cc79acb18ff1c3694ad025461c812f"
+    sha256 x86_64_linux:   "f2ddf6fb20994f5cb28b7f538949aec943dfc9aa4fbcdfd5520028967d4ed346"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'

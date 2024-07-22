@@ -1,18 +1,18 @@
 class Kallisto < Formula
   desc "Quantify abundances of transcripts from RNA-Seq data"
   homepage "https:pachterlab.github.iokallisto"
-  url "https:github.compachterlabkallistoarchiverefstagsv0.50.1.tar.gz"
-  sha256 "030752bab3b0e33cd3f23f6d8feddd74194e5513532ffbf23519e84db2a86d34"
+  url "https:github.compachterlabkallistoarchiverefstagsV0.51.0.tar.gz"
+  sha256 "efeb0191c1a6a0d6de69111fb66f4bda51ff31fb40c513280f072bd44556f80d"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b72e208558837c34d5d568870efd392d4ace50736201577926f1c470231cb51f"
-    sha256 cellar: :any,                 arm64_ventura:  "881cc4e56078e9b8bfa5d40d8870d595041ec8ec330332b18e55894626902394"
-    sha256 cellar: :any,                 arm64_monterey: "32356e5bfc9de68eea6b181ae391f3c4730462882ac6cb397d8205c54654f207"
-    sha256 cellar: :any,                 sonoma:         "47e3b307b8fea2c470d523bf3406c2d34573a63c6cb0fd68008f0a57c2940640"
-    sha256 cellar: :any,                 ventura:        "8b91fa3d58a117c213fd5040ea3d500cae0f467279be9428f36374be6653b997"
-    sha256 cellar: :any,                 monterey:       "352acfa20a7bce0e87bddfb385cca39fc6979342866d48a13306338e6941e272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a837f4beaf83ee36cffdebdcc833da829f5ca973555c9258c6b8c45b08a9744e"
+    sha256 cellar: :any,                 arm64_sonoma:   "cd8d0834c5c6426824aa215d5c2f1a89d42a0adb5e8ff48b1ef4398fd432cfb9"
+    sha256 cellar: :any,                 arm64_ventura:  "f823ddc6d52f2ad690007bf638560086d09b781d3b67cf934dca4dc83e189027"
+    sha256 cellar: :any,                 arm64_monterey: "0680066baf90e1e27b093dc12b453ee71902d498e77b01836950f31e4ea57999"
+    sha256 cellar: :any,                 sonoma:         "d2a8d404b8fd448dd4c221ee52f3af4d0dcb73e7a09e8e9754dbae4cf1c85dc1"
+    sha256 cellar: :any,                 ventura:        "2ff18ec926f91197f615780bb905763b53a177fa4f62fd6d1e66e33b09812b72"
+    sha256 cellar: :any,                 monterey:       "501c9dedb5a462f429784266916d7fa8bbb4b7f603a8780120d0ff8691dc04b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7a815fb9879dd352e5f446e53bb670c2c6ddde8cb2324f7e9f6876b4bd2db47"
   end
 
   depends_on "cmake" => :build

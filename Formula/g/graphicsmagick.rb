@@ -22,6 +22,7 @@ class Graphicsmagick < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "freetype"
   depends_on "jasper"
   depends_on "jpeg-turbo"
@@ -32,6 +33,7 @@ class Graphicsmagick < Formula
   depends_on "libtool"
   depends_on "little-cms2"
   depends_on "webp"
+  depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"

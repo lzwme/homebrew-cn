@@ -1,8 +1,8 @@
 class Pulsarctl < Formula
   desc "CLI for Apache Pulsar written in Go"
   homepage "https:streamnative.io"
-  url "https:github.comstreamnativepulsarctlarchiverefstagsv3.3.0.6.tar.gz"
-  sha256 "e61be0befa5beea6bb04a98ca2c81064cb1c82e06375f0db9aa9f9d5e59c56b5"
+  url "https:github.comstreamnativepulsarctlarchiverefstagsv3.3.0.7.tar.gz"
+  sha256 "51efd225e705fe9fa8258a2ed9efbd33eb4f9a1b22e1fd55d1f6991a05423031"
   license "Apache-2.0"
   head "https:github.comstreamnativepulsarctl.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Pulsarctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28dc9aeefbc1ea3abd4df8f21e138019ef64ca581d1d9876728bb5ffd2263e24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13ccbd0f87b9893215f28cfca90f6c0a342a08a92388302afce3c41f44749468"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46d546157972785f871f868f5f1678d90baaf2670c07d4e2e417f292acaaf762"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6142e4cd3cfcb0de908d36ecf22d0ae0fa67e498c0710e2c6d67d8f6b98c1138"
-    sha256 cellar: :any_skip_relocation, ventura:        "52e18b3b48f34b16ed0dd1a91051ebc2fbad1ec8df0bbe8fb3d6f66682c59b24"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc2a90826aa9f792c7545e2011e336010a2b6c1f00dc44d5b76e8d2c51c50aab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59c841cb82d90a7c38d346b31498652120346ef62621bf424190bf29bcb460f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47892a0f9324ed560e1c940c3c4a68ca204a94bcf0d062e505cfba179aa52ee1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f005d104219d1a6886115566474515bdb44aa658e1dae77c74e77babed9feeac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdf593c7cc028fbcc876caee780180df4070434e6672fc8b2552bdf824dddd5e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7b70521693a2f29af28309f45d01b7cf1bbe372042e61a9601b74882db3b701"
+    sha256 cellar: :any_skip_relocation, ventura:        "a87211af440994cf0e414677b343797adfdf186c38b777c9f47e472625b91e45"
+    sha256 cellar: :any_skip_relocation, monterey:       "db08edf6813f8748b5b093e97986bcd188ba2ea240daf43264df7fe64de7f89d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c0f0097d03ed9e90386129bb32b779d933b60a7f84ad24e60d485510ae10db6"
   end
 
   depends_on "go" => :build

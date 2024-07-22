@@ -1,8 +1,8 @@
 class Libtrng < Formula
   desc "Tina's Random Number Generator Library"
   homepage "https:www.numbercrunch.detrng"
-  url "https:github.comrabauketrng4archiverefstagsv4.25.tar.gz"
-  sha256 "2727ce04e726a0b214e7bc8066793489b1ddce2fdf932d63313f4fd2823c9beb"
+  url "https:github.comrabauketrng4archiverefstagsv4.26.tar.gz"
+  sha256 "b6646d911862edb5a35e1a633b2ebbe8b5e66a4147d1c075f35d18f49467a864"
   license "BSD-3-Clause"
   head "https:github.comrabauketrng4.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Libtrng < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8257549668db1ad3e6cce3a09eb86bc19625d293ab1d79a9c3f9b64a7602114"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1196fcff705fdf7c4de517d463fd69727e09432d8e9a7c433678337193cd29a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb53432989d3d92094ac9946fc9ec710ed62bf74632307c2033eb041a5d69c98"
-    sha256 cellar: :any_skip_relocation, sonoma:         "82030b459f055448cc48fb9a5c0018b58b27816ca03816efcf2441887dbfe2ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "60ffdd162492855567c734df2944d83064bc29eaafeda09f85360a087f313e34"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f4567d5234247880921ed3755bb9941d9aa6f0b79d6805b19b6154505888dfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ebdbe801578fef0d327a7b181c142d1602e347a3779ce18398140c662c0349c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63b6c95f69435eee51f4eba5aa10d2669f429b50a0ecadf69c9936ebc89912d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a682682e919e6a21550328aefa64cd679312d64bd9be301d4055de7b2835787c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44b7c200d2bae8f616c10622d3c083b2982af60d6e56203ba5803d4243bcac1a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4bc10c526627980dc2df8e92b6f5b784fb88c17d2d7cec56153189e039f63bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "7238e2d2a1fe040aa51207d80055080fa9a8e5d6c3b443f67a7ceefd87a01c57"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab4266b5054f8377da9f268489ffe7d115491cc58ec6cb97e9a232faecda41c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b48064ab72bed694064419d269a6ddcb51dadc98cd417ff7ce2d1b8cbf005dc"
   end
 
   depends_on "cmake" => :build

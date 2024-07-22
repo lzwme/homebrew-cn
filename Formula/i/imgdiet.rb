@@ -18,7 +18,13 @@ class Imgdiet < Formula
 
   depends_on "go" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "glib"
   depends_on "vips"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/imgdiet"

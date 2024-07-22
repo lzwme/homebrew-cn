@@ -18,11 +18,14 @@ class Osmcoastline < Formula
 
   depends_on "cmake" => :build
   depends_on "libosmium" => :build
+
+  depends_on "expat"
   depends_on "gdal"
   depends_on "geos"
   depends_on "libspatialite"
   depends_on "lz4"
 
+  uses_from_macos "bzip2"
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
@@ -48,7 +51,7 @@ class Osmcoastline < Formula
     args = %W[
       -DPROTOZERO_INCLUDE_DIR=#{protozero}
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -61,6 +64,6 @@ class Osmcoastline < Formula
       n103 v1 x1.01 y1.04
       w200 v1 Tnatural=coastline Nn100,n101,n102,n103,n100
     EOS
-    system "#{bin}osmcoastline", "-v", "-o", "output.db", "input.opl"
+    system bin"osmcoastline", "-v", "-o", "output.db", "input.opl"
   end
 end

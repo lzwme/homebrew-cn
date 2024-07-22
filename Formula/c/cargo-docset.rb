@@ -19,7 +19,7 @@ class CargoDocset < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "rustup-init" => :test
+  depends_on "rustup" => :test
   uses_from_macos "sqlite"
 
   def install
@@ -29,10 +29,9 @@ class CargoDocset < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
-    ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin"rustup-init"
-    system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
+    ENV.prepend_path "PATH", Formula["rustup"].bin
+    system "rustup", "default", "beta"
+    system "rustup", "set", "profile", "minimal"
 
     crate = testpath"demo-crate"
     mkdir crate do

@@ -18,10 +18,18 @@ class SimpleTiles < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "cairo"
   depends_on "gdal"
+  depends_on "glib"
   depends_on "pango"
+
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   # Update waf for python 3.12
   # Use resource instead of patch since applying corrupts waf

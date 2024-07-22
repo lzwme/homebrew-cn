@@ -20,6 +20,7 @@ class Lanraragi < Formula
 
   depends_on "nettle" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cpanminus"
   depends_on "ghostscript"
   depends_on "giflib"
@@ -33,6 +34,11 @@ class Lanraragi < Formula
   depends_on "zstd"
 
   uses_from_macos "libarchive"
+  uses_from_macos "libffi"
+
+  on_macos do
+    depends_on "lz4"
+  end
 
   resource "libarchive-headers" do
     on_macos do

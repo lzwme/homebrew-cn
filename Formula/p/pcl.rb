@@ -24,13 +24,22 @@ class Pcl < Formula
   depends_on "flann"
   depends_on "glew"
   depends_on "libpcap"
+  depends_on "libpng"
   depends_on "libusb"
+  depends_on "lz4"
   depends_on "qhull"
   depends_on "qt"
   depends_on "vtk"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "freeglut"
+    depends_on "libx11"
+    depends_on "mesa"
+    depends_on "mesa-glu"
   end
 
   def install
@@ -106,22 +115,23 @@ class Pcl < Formula
         return (0);
       }
     EOS
-    mkdir "build" do
-      # the following line is needed to workaround a bug in test-bot
-      # (Homebrewhomebrew-test-bot#544) when bumping the boost
-      # revision without bumping this formula's revision as well
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share"pkgconfig"
-      ENV.delete "CPATH" # `error: no member named 'signbit' in the global namespace`
-      args = std_cmake_args + ["-DQt5_DIR=#{Formula["qt@5"].opt_lib}cmakeQt5"]
-      args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
-      system "cmake", "..", *args
-      system "make"
-      system ".pcd_write"
-      assert_predicate (testpath"buildtest_pcd.pcd"), :exist?
-      output = File.read("test_pcd.pcd")
-      assert_match "POINTS 2", output
-      assert_match "1 2 3", output
-      assert_match "4 5 6", output
-    end
+    # the following line is needed to workaround a bug in test-bot
+    # (Homebrewhomebrew-test-bot#544) when bumping the boost
+    # revision without bumping this formula's revision as well
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share"pkgconfig"
+
+    ENV.delete "CPATH" # `error: no member named 'signbit' in the global namespace`
+
+    args = std_cmake_args + ["-DQt5_DIR=#{Formula["qt@5"].opt_lib}cmakeQt5"]
+    args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
+
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system ".buildpcd_write"
+    assert_predicate (testpath"test_pcd.pcd"), :exist?
+    output = File.read("test_pcd.pcd")
+    assert_match "POINTS 2", output
+    assert_match "1 2 3", output
+    assert_match "4 5 6", output
   end
 end

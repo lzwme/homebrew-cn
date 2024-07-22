@@ -1,21 +1,19 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
   homepage "https:github.comcurlpipeox"
-  url "https:github.comcurlpipeoxarchiverefstags0.2.7.tar.gz"
-  sha256 "ae08c18243b66d8c24f9e0844e499890be2864584a8d3e38f186fdf3aa5c09fc"
+  url "https:github.comcurlpipeoxarchiverefstags0.4.0.tar.gz"
+  sha256 "504089d50ad549b013ca9108aaeb800928b35e4f36766ded4245c4026504073d"
   license "GPL-2.0-only"
   head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbc7e29d479429b0137f9c245df663c83bab5a4d95ec3c33785c620ca7250b11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db8e62ab63880a852649df5abf70a6c327938d3976f037e4b9669ffd960e7ebf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8db3c16dd26d2465bb502ba4a8a9a395b5f994a8ad1918ae6ca807578bebf331"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dbed75de05d6ff3bfd805c6534f41a6a0c7c2b7969c76028ad8075733569784a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ceed944c8cb0127388c7d961a01aeb0cce9d02ef3f8eb1daeee4b8e3a524cbc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "2038f6d47418ec55d1791984a8e75f8e0fc7ed52d540cdd292c64ac148cb0be5"
-    sha256 cellar: :any_skip_relocation, monterey:       "c206120daa4a96c5982eac790002bce0d07c3f7d4f784ca338938a742a8c0bec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8581f482c082a10780837652b351723c0b8ccb0a6093180a7830e1d789a4d76c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7558585f65e9b5753616dabc187da65bac2a047c2cd443f839da029632ad221d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee6ae091c741dac114e71949efcbaa1379580168b0b3f88a26d5ccd6b98eec54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "313f11c368eea5d37940051e2f54e55cb20ae31ed2da0ba3c94f9ba07216f488"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53d1e07e11924fd4d98d00aaa2ff2a17385b7900c04a7b965fee32c3f638dcdf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2b4c5a1d76028bcfc43081251e4ea529fc20603d2551e7ec9998f40425ee8828"
+    sha256 cellar: :any_skip_relocation, ventura:        "97755ed2064519dd7fdba8bf6b6dd561976ecb40348a414119d2183efa1b4083"
+    sha256 cellar: :any_skip_relocation, monterey:       "91548699028b90b62713d705702bd50c787cd5c8f58cc4f8b691f78b85b0b0eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ae7d48392b27a54bf08fc8129479a21befd78d17623ec6b5293bba20a13aafc"
   end
 
   depends_on "rust" => :build

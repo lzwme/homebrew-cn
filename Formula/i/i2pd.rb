@@ -1,23 +1,25 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https:i2pd.website"
-  url "https:github.comPurpleI2Pi2pdarchiverefstags2.52.0.tar.gz"
-  sha256 "f5fafa700b61d0791d37bd8eee04912582ea5e3f3b1d80ec339bd8158a30995b"
+  url "https:github.comPurpleI2Pi2pdarchiverefstags2.53.0.tar.gz"
+  sha256 "a5eb7f9faa7a8b66b044841e2967b9dc0367e4e41939ce6a3223f8bd2f347da8"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7523375ec4ca1be89a87b17b0dd6f092e9cb4eeedb331225d4f8ddca72d5853c"
-    sha256 cellar: :any,                 arm64_ventura:  "c9ae2353c787198debcf3c8e37cbc678e2fd7f255850f4d08dcf08162e484bd8"
-    sha256 cellar: :any,                 arm64_monterey: "17cf7d01d2379c0f8e81b62c7ade35e62dcf0b8311f2f9f264a23119cf4ae4ae"
-    sha256 cellar: :any,                 sonoma:         "0588859847e32374edd9b66d65d371c8c6ef5102816de1cc2ab6a9f5b5aecfc9"
-    sha256 cellar: :any,                 ventura:        "873b435f078b2dd022b0bc1f6989375abbe7d9d270c25ce3cd070fb175394696"
-    sha256 cellar: :any,                 monterey:       "51b8a226dcf18a62c6729e7284d94d977b9c534ac6fb7bb5b62eaad9ba1028b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eeb1b137f151e21e30a01617aa76a897a36ce44955036c78cc66b99d5b9c3e6c"
+    sha256 cellar: :any,                 arm64_sonoma:   "f65ba9dcbb03a5c6df32717c7081b14f42f9a2c9412f8cfb65691961ed8207f1"
+    sha256 cellar: :any,                 arm64_ventura:  "c7b12e7dbeadcc3dc7665e43f7cf85c041c0c038acddcf0b90877cf47e065054"
+    sha256 cellar: :any,                 arm64_monterey: "1f94b327cda9cfbae5a5d4ff5e7ec8603856e16af8fcb8576f26f80aa9778de0"
+    sha256 cellar: :any,                 sonoma:         "634caa584e9c56c2e92fcc174b0fc795405413e4c3917d0215fa3f2b3f9bc112"
+    sha256 cellar: :any,                 ventura:        "007a1756c89651e2c894bb8bace7891057edcdf59ce5a437cb2526543b54f049"
+    sha256 cellar: :any,                 monterey:       "422d936d98fd77215d547c6a1a4ce613a470bdcec9c4d073c128516401142dba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a102eb020eda421abf841b1e8773c8ff6efab9d84538381a9762a11b215ef443"
   end
 
   depends_on "boost"
   depends_on "miniupnpc"
   depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   def install
     args = %W[

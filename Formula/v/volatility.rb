@@ -3,6 +3,7 @@ class Volatility < Formula
 
   desc "Advanced memory forensics framework"
   homepage "https:github.comvolatilityfoundationvolatility3"
+  # Update pypi_formula_mappings.json to `{"package_name": "volatility3[full]"}` at version bump
   url "https:files.pythonhosted.orgpackagesc8a868c5bbc799bd70fb87da2a6ea081200fa1742e2ee47de4680cbd3b1d47b7volatility3-2.7.0.tar.gz"
   sha256 "0b219b27b334cda79c0d7e244edba8e6928d9d0852e6d3462ba89e74f7ea92b5"
   license :cannot_represent
@@ -24,7 +25,6 @@ class Volatility < Formula
   depends_on "python@3.12"
   depends_on "yara"
 
-  # Extra resources are from `requirements.txt`: https:github.comvolatilityfoundationvolatility3#requirements
   resource "attrs" do
     url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
     sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"

@@ -21,8 +21,15 @@ class VapoursynthImwri < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "imagemagick"
   depends_on "vapoursynth"
+
+  on_macos do
+    depends_on "jpeg-xl"
+    depends_on "libheif"
+    depends_on "libtiff"
+  end
 
   fails_with gcc: "5"
 

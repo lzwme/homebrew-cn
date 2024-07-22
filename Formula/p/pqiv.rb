@@ -17,19 +17,32 @@ class Pqiv < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "imagemagick"
   depends_on "libarchive"
   depends_on "libspectre"
+  depends_on "pango"
   depends_on "poppler"
   depends_on "webp"
 
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
+
   on_linux do
     depends_on "libtiff"
+    depends_on "libx11"
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    args = *std_configure_args.reject { |s| s["--disable-debug"]|| s["--disable-dependency-tracking"] }
+    system ".configure", *args
     system "make", "install"
   end
 

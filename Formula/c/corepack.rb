@@ -3,8 +3,8 @@ class Corepack < Formula
 
   desc "Package acting as bridge between Node projects and their package managers"
   homepage "https:github.comnodejscorepack"
-  url "https:registry.npmjs.orgcorepack-corepack-0.29.2.tgz"
-  sha256 "ad3422b0fd8d268f7bd2e147f22b126a1de957a3b526bbfc3cf7cb8b3906dd2c"
+  url "https:registry.npmjs.orgcorepack-corepack-0.29.3.tgz"
+  sha256 "63b88391da952a8c977e1e85db734bfa975805cf22c1c5dc5dc9e54eb9eed97e"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,13 @@ class Corepack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c1a1f72a4a943c3193e5234a6534e7db50aad3d5e55cc948da361df3b8f3c6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15032df098cd4d1875fee60a134b6aa9816956ae304a79e6164ff5167766f81f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, ventura:        "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0b716c6d5870ae96d8babde7ec28d9273d4339484dba225fb61a492afb19405"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c47f93a081f5178b14c191f8135acfff177df34e5d69719665315e67e538ea4b"
   end
 
   depends_on "node"

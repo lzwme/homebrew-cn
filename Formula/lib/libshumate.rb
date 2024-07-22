@@ -30,16 +30,25 @@ class Libshumate < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
 
+  depends_on "cairo"
   depends_on "cmake"
+  depends_on "gdk-pixbuf"
   depends_on "gi-docgen"
+  depends_on "glib"
+  depends_on "graphene"
   depends_on "gtk4"
   depends_on "json-glib"
   depends_on "libsoup"
+  depends_on "pango"
   depends_on "protobuf-c"
+  depends_on "sqlite"
 
   uses_from_macos "gperf"
   uses_from_macos "icu4c"
-  uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", "-Dgtk_doc=false", *std_meson_args

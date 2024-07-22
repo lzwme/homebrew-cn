@@ -7,7 +7,7 @@ class JettyRunner < Formula
 
   livecheck do
     url "https://search.maven.org/remotecontent?filepath=org/eclipse/jetty/jetty-runner/maven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
+    regex(%r{<version>v?(\d+(?:\.\d+)+(?:[._-]v?\d+)?)</version>}i)
   end
 
   bottle do

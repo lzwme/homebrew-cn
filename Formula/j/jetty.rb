@@ -8,7 +8,7 @@ class Jetty < Formula
 
   livecheck do
     url "https:search.maven.orgremotecontent?filepath=orgeclipsejettyjetty-distributionmaven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+\.v\d{8})<version>}i)
+    regex(%r{<version>v?(\d+(?:\.\d+)+(?:[._-]v?\d+)?)<version>}i)
   end
 
   bottle do

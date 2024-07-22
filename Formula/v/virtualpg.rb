@@ -27,6 +27,11 @@ class Virtualpg < Formula
   depends_on "libspatialite"
   depends_on "postgis"
   depends_on "postgresql@14"
+  depends_on "sqlite"
+
+  on_linux do
+    depends_on "libpq"
+  end
 
   def install
     # New SQLite3 extension won't load via SELECT load_extension('mod_virtualpg');

@@ -21,13 +21,23 @@ class Valabind < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "glib"
   depends_on "swig"
   depends_on "vala"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
+    # Workaround to build with newer clang
+    # Upstream bug report, https:github.comradarevalabindissues61
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     system "make", "VALA_PKGLIBDIR=#{Formula["vala"].opt_lib}vala-#{Formula["vala"].version.major_minor}"
     system "make", "install", "PREFIX=#{prefix}"
   end

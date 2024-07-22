@@ -22,12 +22,16 @@ class Siril < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
   depends_on "cfitsio"
   depends_on "exiv2"
   depends_on "ffmpeg@6"
   depends_on "ffms2"
   depends_on "fftw"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gnuplot"
   depends_on "gsl"
   depends_on "gtk+3"
@@ -35,16 +39,20 @@ class Siril < Formula
   depends_on "json-glib"
   depends_on "libconfig"
   depends_on "libheif"
+  depends_on "libpng"
   depends_on "libraw"
   depends_on "librsvg"
+  depends_on "libtiff"
   depends_on "netpbm"
   depends_on "opencv"
   depends_on "openjpeg"
+  depends_on "pango"
   depends_on "wcslib"
 
   uses_from_macos "perl" => :build
 
   on_macos do
+    depends_on "gettext"
     depends_on "gtk-mac-integration"
     depends_on "libomp"
   end

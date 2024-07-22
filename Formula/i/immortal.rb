@@ -1,19 +1,19 @@
 class Immortal < Formula
   desc "OS agnostic (*nix) cross-platform supervisor"
   homepage "https:immortal.run"
-  url "https:github.comimmortalimmortalarchiverefstags0.24.5.tar.gz"
-  sha256 "5f07bb7832200e56551e49b7c812fc107b3718468036c9fb1ba1db57c57869d4"
+  url "https:github.comimmortalimmortalarchiverefstagsv0.24.6.tar.gz"
+  sha256 "f62b21ba622ffff04acee5bb7606761db3d19f57cbbe666e40fa84674b1ef4bf"
   license "BSD-3-Clause"
   head "https:github.comimmortalimmortal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abd24f840121f022fe89d409a00e5b47c943fe9baa1ecae3268b54f63fbb3827"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0bd1667b7385bc20b7c1b2590248f6431dcd129bcdfd8dc2311775ddbc4e94e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe5963c725ffa56c85a968228db14c13ade71032132cc850a605400ea28d09d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ecc6af8a28056e344789332ebebb4cb59b1836869f24e11962a38ee6de926e51"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3588f52a1349fd2e6e625c1495a1a73bd06170496efa3712e17147c25603a99"
-    sha256 cellar: :any_skip_relocation, monterey:       "d31e1c6e65c7e1967d82446159267b473c0ca0e30a816861046e5bb89052b993"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ba2d3e2c6a8a4d5c53b9eb6a606732403ba0fff5d1e4493724ef0d34863573b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1c3c0aeb30b0928787e93434aeedb259f019550eb26ee06e86a9958c81d632f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1710b0a46b1221d24c2bbcc560ad91c193c3ad630772d7758dd8a7fd26c3cde0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a500f9e9092f1263f8811d0148e63f9aeb2600233827b98ccdc93d99cb95d05"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4e75b4f8c75d8aae9cc0fae052916f1424b36ac6183942d974077191b6079f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbe372718d137b00ec707786441d1a6ef0df3a472e5c282464358bdbfef8571f"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab444396fab083b3938dc87cfae485a1c2eb0fad2b221a5a00a9bccf5a88f62b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75184bcc104152d9b8c6d418f09dcde65d93863645794c19a2482278354dd281"
   end
 
   depends_on "go" => :build
