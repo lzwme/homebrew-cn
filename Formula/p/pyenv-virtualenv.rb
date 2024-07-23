@@ -1,8 +1,8 @@
 class PyenvVirtualenv < Formula
   desc "Pyenv plugin to manage virtualenv"
   homepage "https:github.compyenvpyenv-virtualenv"
-  url "https:github.compyenvpyenv-virtualenvarchiverefstagsv1.2.3.tar.gz"
-  sha256 "22f0248e9d6bf6a7c459ba5f790a625fdcc25afaffd9213369d8b29fc8a5b656"
+  url "https:github.compyenvpyenv-virtualenvarchiverefstagsv1.2.4.tar.gz"
+  sha256 "6f49a395a17221f87e1e16f0f92c99c3d21d4fc27072d5c80e65ca11b686eedd"
   license "MIT"
   version_scheme 1
   head "https:github.compyenvpyenv-virtualenv.git", branch: "master"
@@ -13,13 +13,13 @@ class PyenvVirtualenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e4afc272034aa96f61df27d68296542cd21a92f8abdf7c2126684fb78fe93e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e4afc272034aa96f61df27d68296542cd21a92f8abdf7c2126684fb78fe93e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e4afc272034aa96f61df27d68296542cd21a92f8abdf7c2126684fb78fe93e2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "13be379aec1f27cc830124968183b08dd1243615aa9a53add252919712f15851"
-    sha256 cellar: :any_skip_relocation, ventura:        "13be379aec1f27cc830124968183b08dd1243615aa9a53add252919712f15851"
-    sha256 cellar: :any_skip_relocation, monterey:       "13be379aec1f27cc830124968183b08dd1243615aa9a53add252919712f15851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6513b107bac78b4952fa7f72d0278360106843c4a854e091af0f045c487788b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5520ee72fd178ae11886721c276fcfe4008434519d8d56b25ff9eee7d40f5a9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5520ee72fd178ae11886721c276fcfe4008434519d8d56b25ff9eee7d40f5a9f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5520ee72fd178ae11886721c276fcfe4008434519d8d56b25ff9eee7d40f5a9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5974b4594ca7e79058e457bbe88147751611efc836ab587cf9ba65732a3ecde5"
+    sha256 cellar: :any_skip_relocation, ventura:        "5974b4594ca7e79058e457bbe88147751611efc836ab587cf9ba65732a3ecde5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5974b4594ca7e79058e457bbe88147751611efc836ab587cf9ba65732a3ecde5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "248fd1598c1d3a342b6b0c23491b4b7b8700faf3c985635409f5f3fdd09932fd"
   end
 
   depends_on "pyenv"

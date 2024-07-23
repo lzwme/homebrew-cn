@@ -17,11 +17,22 @@ class QalculateGtk < Formula
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "libqalculate"
+  depends_on "pango"
 
   uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build
@@ -30,11 +41,11 @@ class QalculateGtk < Formula
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
 
-    system ".configure", "--prefix=#{prefix}"
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    system "#{bin}qalculate-gtk", "-v"
+    system bin"qalculate-gtk", "-v"
   end
 end

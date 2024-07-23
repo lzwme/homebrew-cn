@@ -1,19 +1,19 @@
 class Chsrc < Formula
   desc "Change Source for every software on every platform from the command-line"
   homepage "https:github.comRubyMetricchsrc"
-  url "https:github.comRubyMetricchsrcarchiverefstagsv0.1.6.tar.gz"
-  sha256 "e5b64922154262eda7d17af7ecd297278bd2c4134a5f385e0e9807eb27020de9"
+  url "https:github.comRubyMetricchsrcarchiverefstagsv0.1.7.tar.gz"
+  sha256 "cc9ca0f7cb73772680e80980e34ae62cba77b3c50a3f934383b24597bf6050fe"
   license "GPL-3.0-or-later"
   head "https:github.comRubyMetricchsrc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12fd3a489f497e2ca04c58b5bff5ac026c74dd4ef6a459558b12894d08d27fc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4be864f1d6dbb6ca81550ef6b565435fdcbcffdcd4861aa1cec3e5d13ee1d9f7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0708f2a35c06f7aaba8e08762b68881ca318c69bd0ab46b0e99d88117a1e7b82"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70d6efa1fbd10411703d090a4369b8625196a0d5a649dc75f1d1373e177c7553"
-    sha256 cellar: :any_skip_relocation, ventura:        "c76576fde6b6303def507ac705ad438d1dfeeecc37ff2c9833733da3dba6d41b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6772faaebd7b43fc4801ad54e8b04742e7689fbfdaac64c3c8fcd087bb23ff95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52e375710393dcd4b596be0f188c9f62419a34097d3764c0ef9b5d1ce5e39461"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd429fcb7c982e057d13ed96d0e5aa1fc4046433b919c3f03eb61991c8fa63cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8c09a20e98450343813431af539797d1f847965fb651ff343f4b696095fb6a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fddc2d216ebb2460cc2ac7f3dd7bb9850dcf2ce83fcdf18d9a14d25672d69d63"
+    sha256 cellar: :any_skip_relocation, sonoma:         "633351fe859dafcfa9c9a47a5b4442eed4b7178d566675fe4a123b3bc2aac1b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "9e48fe72ceca794640e782eee54e151dbfeba0939c4640373f4789484dff134c"
+    sha256 cellar: :any_skip_relocation, monterey:       "55798faf8bd57a0d1a7a561dcc2c9723ea95f0fa90683d47b435d832692244e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e03b6ec7539f66810fa2995afaf67195fc0ba63360b77bf656799024f3b821dc"
   end
 
   def install

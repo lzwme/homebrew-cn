@@ -1,25 +1,24 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https:gitversion.net"
-  # TODO: Switch `dotnet@6` to `dotnet` with v6 release
-  url "https:github.comGitToolsGitVersionarchiverefstags5.12.0.tar.gz"
-  sha256 "fe2ecbd2d63a4458f19eb9f0ee6853b5041e8b2f6d7c75b0fa606be2d1a81476"
+  url "https:github.comGitToolsGitVersionarchiverefstags6.0.0.tar.gz"
+  sha256 "b0de243cbf3a59a1415efce35aec8531caef17dd05562d18e9777f98a4a4b973"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "93e6d2233a255f3d25679f0bc279c3c3106b70d919b38aa32663e371e0ed8994"
-    sha256 cellar: :any,                 arm64_monterey: "984d821555ebb343d16d9f8652f374317b68a0473f631db8cc9733e86bf98d20"
-    sha256 cellar: :any,                 arm64_big_sur:  "c267e42278780562b5a63f4e4b4e18cf6fdf379c68aa1e8d8f35849d6f3eeca3"
-    sha256 cellar: :any,                 ventura:        "91a3e18cd1327b71e0fa11e24980b86c26eb605d932c42b4d87393b2d23c2f3c"
-    sha256 cellar: :any,                 monterey:       "6fa2d451e80962aa254a703aaeeceb96bc593261fead61d78572752ce5b8a688"
-    sha256 cellar: :any,                 big_sur:        "0d4a39ceb9e8e68908e95996371a83f6fdfe3264f9ae89ecf6fa8fa7feddad0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "145cf97b7cf3542f18a5cb1bde69518a090672cdefef3c6681ce4f5415934c6e"
+    sha256 cellar: :any,                 arm64_sonoma:   "40c413fb8178335e100db2961d37edd1869e5b405ea01d25fc6e0cee3c7ee0e3"
+    sha256 cellar: :any,                 arm64_ventura:  "1626b82250004a371b336a29fe37ac5cd689e1db889ba43d1cb6dbbb65fd0271"
+    sha256 cellar: :any,                 arm64_monterey: "08fd171e3e5bc122dc3366ffc16c25892a77c882ee1ca2ed818d6f9321c36698"
+    sha256 cellar: :any,                 sonoma:         "95d355db1c6f04f67c121e93cfba36b98bd9ba433b484f730cdbe58f376b1ab6"
+    sha256 cellar: :any,                 ventura:        "c79a9de564e35d31aa469a61d8ebb72135c9d18a621132a066b0ac1b0b381956"
+    sha256 cellar: :any,                 monterey:       "3c565d656be2953995934e51ed0ee3a4cc08d16fba65835a1367b49c469a7f71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3afc85979da0857e1f39bd86910f546a5a7e631f1bc001f03bbacab39f25c540"
   end
 
-  depends_on "dotnet@6"
+  depends_on "dotnet"
 
   def install
-    dotnet = Formula["dotnet@6"]
+    dotnet = Formula["dotnet"]
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
@@ -32,8 +31,9 @@ class Gitversion < Formula
       -p:PublishSingleFile=true
       -p:Version=#{version}
     ]
-    args << "-p:OsxArm64=true" if OS.mac? && Hardware::CPU.arm?
 
+    # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
+    File.rename("global.json", "global.json.ignored")
     system "dotnet", "publish", "srcGitVersion.AppGitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
     (bin"gitversion").write_env_script libexec"gitversion", env
@@ -49,6 +49,6 @@ class Gitversion < Formula
     system "git", "config", "user.email", "test@example.com"
     system "git", "add", "test.txt"
     system "git", "commit", "-q", "--message='Test'"
-    assert_match '"FullSemVer": "0.1.0+0"', shell_output("#{bin}gitversion -output json")
+    assert_match '"FullSemVer": "0.0.1-1"', shell_output("#{bin}gitversion -output json")
   end
 end

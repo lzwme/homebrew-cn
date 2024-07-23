@@ -5,6 +5,11 @@ class Man2html < Formula
   mirror "https://distfiles.macports.org/man2html/man2html3.0.1.tar.gz"
   sha256 "a3dd7fdd80785c14c2f5fa54a59bf93ca5f86f026612f68770a0507a3d4e5a29"
 
+  livecheck do
+    url "https://www.mhonarc.org/release/misc/"
+    regex(/href=.*?man2html[._-]?v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57f83bcc5fc4cc1278e1e8fa671a51959ff91c4952a3a2da10f602c3331f141d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad45d9711383728beed965692eeff5cf47f26017c9a68254aa00af577e950c7e"

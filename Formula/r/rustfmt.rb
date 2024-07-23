@@ -16,15 +16,13 @@ class Rustfmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e93863d9f42ac0ec4bda61168758d82e2164a400ea80d929433c864728977ba"
   end
 
-  depends_on "rustup-init" => :build
+  depends_on "rustup" => :build
   depends_on "rust" => :test
   uses_from_macos "zlib"
 
   def install
-    system "rustup-init", "--profile", "minimal", "-qy", "--no-modify-path", "--default-toolchain", "none"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
-
     ENV["CFG_RELEASE_CHANNEL"] = "stable"
+    system "rustup", "set", "profile", "minimal"
     system "cargo", "install", *std_cargo_args
 
     # Bundle the shared libraries used by the executables.
@@ -56,10 +54,8 @@ class Rustfmt < Formula
   end
 
   test do
-    system "cargo", "new", "hello_world", "--bin"
-    cd "hello_world" do
-      system bin"rustfmt", "--check", ".srcmain.rs"
-    end
+    system Formula["rust"].bin"cargo", "init", "--name=brew", "--bin"
+    system bin"rustfmt", "--check", ".srcmain.rs"
 
     # Make sure all the executables work after patching.
     bin.each_child { |exe| system exe, "--help" }

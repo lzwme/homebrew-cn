@@ -21,15 +21,20 @@ class Pianod < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "glib"
   depends_on "gstreamer"
   depends_on "json-c"
   depends_on "libao"
   depends_on "libgcrypt"
+  depends_on "taglib"
 
   uses_from_macos "curl"
   uses_from_macos "libxcrypt"
+  uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
+    depends_on "gnutls"
     depends_on "ncurses"
   end
 
@@ -42,11 +47,11 @@ class Pianod < Formula
 
   def install
     ENV["OBJCXXFLAGS"] = "-std=c++14"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/pianod", "-v"
+    system bin/"pianod", "-v"
   end
 end

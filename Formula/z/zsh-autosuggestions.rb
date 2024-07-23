@@ -6,8 +6,14 @@ class ZshAutosuggestions < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4537653cbf3540a0785481966b36291255839f1be4012a22409ef97c46a1860b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41af0bbd2d46b3e09d821e1c4702c2e224ce214d436fc9a09ca7e6fec32ebfa6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41af0bbd2d46b3e09d821e1c4702c2e224ce214d436fc9a09ca7e6fec32ebfa6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41af0bbd2d46b3e09d821e1c4702c2e224ce214d436fc9a09ca7e6fec32ebfa6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b431cf90fc39ec89e8f3b67aad634732ea7c4691812d2169e39a89deb6246c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b431cf90fc39ec89e8f3b67aad634732ea7c4691812d2169e39a89deb6246c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "41af0bbd2d46b3e09d821e1c4702c2e224ce214d436fc9a09ca7e6fec32ebfa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41af0bbd2d46b3e09d821e1c4702c2e224ce214d436fc9a09ca7e6fec32ebfa6"
   end
 
   uses_from_macos "zsh" => :test

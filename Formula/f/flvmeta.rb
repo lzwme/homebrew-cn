@@ -1,15 +1,10 @@
 class Flvmeta < Formula
   desc "Manipulate Adobe flash video files (FLV)"
   homepage "https:flvmeta.com"
-  url "https:flvmeta.comfilesflvmeta-1.2.2.tar.gz"
-  sha256 "a51a2f18d97dfa1d09729546ce9ac690569b4ce6f738a75363113d990c0e5118"
+  url "https:github.comnoirotmflvmetaarchiverefstagsv1.2.2.tar.gz"
+  sha256 "59371e286168d6e5c4647d3575c01bcbb30147c4916eb69e10f38cdbc1c5546d"
   license "GPL-2.0-or-later"
   head "https:github.comnoirotmflvmeta.git", branch: "master"
-
-  livecheck do
-    url :homepage
-    regex(href=.*?flvmeta[._-]v?(\d+(?:\.\d+)+)\.ti)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ba117a6573cabe3ccb7b5ae11483fe4fee639ccdb638512d338704604951fc8"

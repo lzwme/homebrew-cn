@@ -1,8 +1,8 @@
 class Libngspice < Formula
   desc "Spice circuit simulator as shared library"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/42/ngspice-42.tar.gz"
-  sha256 "737fe3846ab2333a250dfadf1ed6ebe1860af1d8a5ff5e7803c772cc4256e50a"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/43/ngspice-43.tar.gz"
+  sha256 "14dd6a6f08531f2051c13ae63790a45708bd43f3e77886a6a84898c297b13699"
   license :cannot_represent
 
   livecheck do
@@ -10,13 +10,13 @@ class Libngspice < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1b7f41535b042356748c429ab37a3599bfda3aa8f20aad24460655921c860bca"
-    sha256 cellar: :any,                 arm64_ventura:  "994cfb89d39add3d8c3ef0a7d060687b070e36fba4ed8c76eeb56d3a8a110f62"
-    sha256 cellar: :any,                 arm64_monterey: "af645ea8cfbc99476161f9cbfa6aa4c2f09cb91e811bab2438db775edbf7de69"
-    sha256 cellar: :any,                 sonoma:         "f44a278c06c7e6ea1eea4a77f08c580d46b5d228657c7230b833ba6712bfce7c"
-    sha256 cellar: :any,                 ventura:        "872eab8712b544df51cbbbd051037b05612564aa596f68ea0a0b05942e003d30"
-    sha256 cellar: :any,                 monterey:       "4008d734e08ececaff89dd41f98895ba3a828e969f0d40f70495e4e11d5ad475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76c1ef037bc3fc6ac0cb98fdcf51f45315b2aa9e4718edaee4f91e950ba63889"
+    sha256 cellar: :any,                 arm64_sonoma:   "08d34caae24bf2e5922e21bf6cc069fc0104d6a91bec5df245b2c10eda161ea5"
+    sha256 cellar: :any,                 arm64_ventura:  "655107924c134dba8f4d014157a0dcd96a540e477cde0daf572e89606808ee5c"
+    sha256 cellar: :any,                 arm64_monterey: "796bc6f9713683e875d6f8ddf1c34b961269791fa8b3543a3056e49c1b05d819"
+    sha256 cellar: :any,                 sonoma:         "e0a25a456c4fbe11c600fa59edd984502cb26938da52b8a8f94bef8f139e2fbb"
+    sha256 cellar: :any,                 ventura:        "e82c34fa66368d3ad017e5fcb55a38aec99053a4b48181e5ef836c6a1672ac55"
+    sha256 cellar: :any,                 monterey:       "d5d137b9a286bef3d5ce8f9fa82c2886d2a68cc491ed6ddd39116c47116c8a17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2f0e80dc6c18dade4045ecca05f3e2824d1eb6c220c26b055272ce9bcd2f75d"
   end
 
   head do
@@ -36,7 +36,7 @@ class Libngspice < Formula
     args = %w[
       --with-ngshared
       --enable-cider
-      --enable-xspice
+      --disable-openmp
     ]
 
     system "./configure", *args, *std_configure_args

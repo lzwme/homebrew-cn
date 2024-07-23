@@ -1,20 +1,21 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
   homepage "https:github.comwolfpldtracy"
-  url "https:github.comwolfpldtracyarchiverefstagsv0.10.tar.gz"
-  sha256 "a76017d928f3f2727540fb950edd3b736caa97b12dbb4e5edce66542cbea6600"
+  url "https:github.comwolfpldtracyarchiverefstagsv0.11.0.tar.gz"
+  sha256 "b591ef2820c5575ccbf17e2e7a1dc1f6b9a2708f65bfd00f4ebefad2a1ccf830"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "89d591c75f9dcf9cef53b6243b68d1a8b2d192c8f7a514000334bb8aa0a3c4e0"
-    sha256 cellar: :any,                 arm64_ventura:  "8e755a116f50f11a23a0a4ced30bdd8d990ca9708a02e1dfdd06fd47dcdc4cb7"
-    sha256 cellar: :any,                 arm64_monterey: "511c556958a4927e0f3d2ee1d8e03fc974a888a70fa436975fbdc2ac0b5002a1"
-    sha256 cellar: :any,                 sonoma:         "9bfd9235a73dacb47faa65730acb7ebced534bb49f235a674ba089f4c27ddc17"
-    sha256 cellar: :any,                 ventura:        "ba33f0fcd37ad5aad9adc864d0e29368ca93df88e7a0af1c002f0e2722df8359"
-    sha256 cellar: :any,                 monterey:       "ef4ba91b47ab2c9f8533b22eb4d00377455831c4b9282d5eee22ef829c877d5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bab7235ba26d16cecb2c91532d0b4e48d29ef9550a08c2288dd56cbd5948501f"
+    sha256 cellar: :any,                 arm64_sonoma:   "dd1a741539f0c65f5871567157edc2aa4269703fb37079919c5043d1039c261a"
+    sha256 cellar: :any,                 arm64_ventura:  "37ee1281141ecfb2a47315d41cfcf365e9faffc6166e1ac02f400a87bf0ad52c"
+    sha256 cellar: :any,                 arm64_monterey: "da06ed8c0f859a1270ac08c4aef7f99691fa17cddbe03a8e1364cf4f3f7a2241"
+    sha256 cellar: :any,                 sonoma:         "10d6d0b13a1387b809bd0298ac5103cfe901335167b87fc6740f3d7515c5288a"
+    sha256 cellar: :any,                 ventura:        "70ff96b45cad523508fbff0f5e70c8577d6e4ad335399005e262effd89350ed5"
+    sha256 cellar: :any,                 monterey:       "e8973f9aa0f62a989cfd4ea08893dd01aa463015b5d61e18d703263a085821f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8ee49d32d243d29e7fe206afd278a496e38a6456329b1d7ab42cb35ed552e12"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "capstone"
   depends_on "freetype"
@@ -24,24 +25,26 @@ class Tracy < Formula
   on_linux do
     depends_on "dbus"
     depends_on "libxkbcommon"
+    depends_on "mesa"
+    depends_on "wayland"
   end
 
   fails_with gcc: "5" # C++17
 
   def install
-    %w[capture csvexport import-chrome update].each do |f|
-      system "make", "-C", "#{f}buildunix", "release"
-      bin.install "#{f}buildunix#{f}-release" => "tracy-#{f}"
+    %w[capture csvexport import-chrome update profiler].each do |f|
+      system "cmake", "-S", f, "-B", "#{f}build", *std_cmake_args
+      system "cmake", "--build", "#{f}build"
+      if f == "profiler"
+        bin.install "#{f}buildtracy-#{f}" => "tracy"
+      else
+        bin.install "#{f}buildtracy-#{f}" => "tracy-#{f}"
+      end
     end
 
-    system "make", "-C", "profilerbuildunix", "release"
-    bin.install "profilerbuildunixTracy-release" => "tracy"
-    system "make", "-C", "libraryunix", "release"
-    lib.install "libraryunixlibtracy-release.so" => "libtracy.so"
-
-    %w[client common tracy].each do |f|
-      (include"Tracy#{f}").install Dir["public#{f}*.{h,hpp}"]
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

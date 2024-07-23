@@ -17,7 +17,7 @@ class CargoZigbuild < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "rustup-init" => :test
+  depends_on "rustup" => :test
   depends_on "zig"
 
   def install
@@ -25,15 +25,14 @@ class CargoZigbuild < Formula
   end
 
   test do
-    # Ignore rust installation path check
-    ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
     # Remove errant CPATH environment variable for `cargo zigbuild` test
     # https:github.comziglangzigissues10377
     ENV.delete "CPATH"
     ENV.delete "RUSTFLAGS"
 
-    system "#{Formula["rustup-init"].bin}rustup-init", "-y", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
+    ENV.prepend_path "PATH", Formula["rustup"].bin
+    system "rustup", "default", "beta"
+    system "rustup", "set", "profile", "minimal"
     system "rustup", "target", "add", "aarch64-unknown-linux-gnu"
 
     system "cargo", "new", "hello_world", "--bin"

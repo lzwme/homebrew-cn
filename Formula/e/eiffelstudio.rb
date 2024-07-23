@@ -7,6 +7,14 @@ class Eiffelstudio < Formula
   license "GPL-2.0"
   revision 1
 
+  livecheck do
+    url "https://ftp.eiffel.com/pub/download/latest/pp/"
+    regex(/href=.*?PorterPackage[._-]std[._-]v?(\d+(?:[._-]\d+)+).t/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_-", ".") }
+    end
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "eb80572a9f45330718c9d37480bf5dd883654e1fef524447d828558d3fa86223"
     sha256 cellar: :any,                 arm64_ventura:  "13f283babf97160d03bd4793575262df0d96abccbab80a0e23749c43c72b2000"

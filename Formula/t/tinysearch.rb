@@ -20,7 +20,7 @@ class Tinysearch < Formula
 
   depends_on "rust" => :build
 
-  depends_on "rustup-init"
+  depends_on "rustup"
   depends_on "wasm-pack"
 
   def install
@@ -29,8 +29,9 @@ class Tinysearch < Formula
   end
 
   test do
-    system "#{Formula["rustup-init"].bin}rustup-init", "-y", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
+    ENV.prepend_path "PATH", Formula["rustup"].bin
+    system "rustup", "default", "stable"
+    system "rustup", "set", "profile", "minimal"
 
     system bin"tinysearch", pkgshare"fixturesindex.json"
     assert_predicate testpath"wasm_outputtinysearch_engine_bg.wasm", :exist?

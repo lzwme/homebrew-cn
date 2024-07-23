@@ -31,6 +31,22 @@ class Rtabmap < Formula
   depends_on "opencv"
   depends_on "pcl"
   depends_on "pdal"
+  depends_on "qt"
+  depends_on "sqlite"
+  depends_on "vtk"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "boost"
+    depends_on "flann"
+    depends_on "glew"
+    depends_on "libomp"
+    depends_on "libpcap"
+    depends_on "libpng"
+    depends_on "lz4"
+    depends_on "qhull"
+  end
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
@@ -45,7 +61,8 @@ class Rtabmap < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -85,10 +102,12 @@ class Rtabmap < Formula
         return 0;
       }
     EOS
+
     args = std_cmake_args
     args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
-    system "cmake", ".", *args, "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DRTABMap_DIR=#{rtabmap_dir}"
-    system "make"
-    assert_equal version.to_s, shell_output(".test").strip
+
+    system "cmake", "-S", ".", "-B", "build", *args, "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DRTABMap_DIR=#{rtabmap_dir}"
+    system "cmake", "--build", "build"
+    assert_equal version.to_s, shell_output(".buildtest").strip
   end
 end

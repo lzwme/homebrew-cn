@@ -5522,7 +5522,6 @@ Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rustup-init.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rxvt-unicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ry.rb, Homebrew/homebrew-core, 1
@@ -7574,6 +7573,7 @@ Homebrew-homebrew-cask/Casks/b/boom-3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/boost-note.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/boosteroid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bootstrap-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bootxchanger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bose-updater.rb, Homebrew/homebrew-cask, 0
@@ -11353,6 +11353,7 @@ Homebrew-homebrew-cask/Casks/k/kaku.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kaleidoscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kaleidoscope@2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kaleidoscope@3.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kando.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kapitainsky-rclone-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/karabiner-elements.rb, Homebrew/homebrew-cask, 1
@@ -13424,6 +13425,7 @@ Homebrew-homebrew-cask/Casks/t/tdr-vos-slickeq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teambition.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teamspeak-client.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/teamspeak-client@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teamviewer-host.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teamviewer-quickjoin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teamviewer-quicksupport.rb, Homebrew/homebrew-cask, 0
@@ -13607,6 +13609,7 @@ Homebrew-homebrew-cask/Casks/t/transmit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transnomino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transocks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/treesheets.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/treeviewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tresorit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trezor-bridge.rb, Homebrew/homebrew-cask, 1

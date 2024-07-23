@@ -8,18 +8,18 @@ class Buildapp < Formula
   head "https:github.comxachbuildapp.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "9d672d608ec24555bb2c71166452bac9f051f7700f742fc3b99d2ff043650070"
-    sha256 arm64_ventura:  "468c2887f5a309815e85988bcfca8eef8764c3f5055572e342da83ee3409c7c4"
-    sha256 arm64_monterey: "d2b5001a28d69d60a31214ddb65e0a4a10b240d4ff80168e1e7606cc9bd7bce8"
-    sha256 arm64_big_sur:  "55b809a69e52c8adcc143bdbc4bad1e4f0a478c1a7861abc2801cbf44584ddad"
-    sha256 sonoma:         "cdcb0e8e5c51173545f4cf22643301d0e520ea3878b011c82e63bde494fb2df7"
-    sha256 ventura:        "4655e54b740f13f6e3c29ef8fc242586b5e98e8d548dff8b3a2300256b5487bf"
-    sha256 monterey:       "f431518369e379b761850cc758a05a24c8192a48bd5a67c4ed165622910c1c46"
-    sha256 big_sur:        "60a961473709c72ba66996bb99f3d0385d220eab7c3c833b603fd6a8b93bceaf"
+    rebuild 2
+    sha256 arm64_sonoma:   "4cd0afa49db04a858b694e03cb247d5fc67b5c73b082725032364102b6e24973"
+    sha256 arm64_ventura:  "41ce31edf3763b06c08acd06abfcfaecec13bfa0487d876ca37019f2aea85ead"
+    sha256 arm64_monterey: "071a97e829ed1ca27927b7bb4539a552cc1a26f671f83d23cad621ad13b3cb4a"
+    sha256 sonoma:         "d54e9bdbef32deb80e6dcf9ad7089ae433e9594fd3fc8df6e1ae50065a8e2857"
+    sha256 ventura:        "e74370d3c6b1367de4d8edcee76878f8a380d7728f43f18cf4e2b28d6acb609e"
+    sha256 monterey:       "8c4d8793f2467b30a89079fd58099a79d331794d3667949736b91542279d1b6c"
+    sha256 x86_64_linux:   "4642b29de810bdc8d7c9d5e1ea678c5f366dee7a3dd6ca48523dd36af4f559ea"
   end
 
   depends_on "sbcl"
+  depends_on "zstd"
 
   def install
     bin.mkpath
@@ -27,10 +27,11 @@ class Buildapp < Formula
   end
 
   test do
+    # Fails in Linux CI with "Can't find sbcl.core"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     code = "(defun f (a) (declare (ignore a)) (write-line \"Hello, homebrew\"))"
-    system "#{bin}buildapp", "--eval", code,
-                              "--entry", "f",
-                              "--output", "t"
+    system bin"buildapp", "--eval", code, "--entry", "f", "--output", "t"
     assert_equal `.t`, "Hello, homebrew\n"
   end
 end

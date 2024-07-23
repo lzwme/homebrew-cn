@@ -39,6 +39,7 @@ class Opencascade < Formula
   depends_on "tcl-tk"
 
   on_linux do
+    depends_on "libx11"
     depends_on "mesa" # For OpenGL
   end
 

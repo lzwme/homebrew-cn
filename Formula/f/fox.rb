@@ -5,6 +5,15 @@ class Fox < Formula
   sha256 "5a734b84d76d2f8e334e26ff85dd3950d3fedf53057a4d4b19fd4a712c8d5b81"
   license "LGPL-2.1-or-later"
 
+  # We restrict matching to versions with an even-numbered minor version
+  # number, as an odd-numbered minor indicates a development version:
+  # http:www.fox-toolkit.orgfaq.html#VERSION
+  livecheck do
+    url "http:fox-toolkit.orgdownload.html"
+    regex(%r{href=.*?fox[._-]v?(\d+(?:\.\d+)+)\.t[^"' >]+?["']?[^>]*?>[^<]+?<[^>]+?>\s*\(STABLE\)}im)
+    regex(href=.*?fox[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.ti)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a7d81645a79ad7dc2cfef61762146266c510354d0b8f47c58acc329d65f1adc2"
     sha256 cellar: :any,                 arm64_ventura:  "254668d35c9764f82cb174d6a5ea420497a25f4c73e897163daa0ebcb7da69cc"

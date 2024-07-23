@@ -5,8 +5,8 @@ class DosboxStaging < Formula
   head "https:github.comdosbox-stagingdosbox-staging.git", branch: "main"
 
   stable do
-    url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.81.1.tar.gz"
-    sha256 "2b389fdc338454f916240aab5a2ae5560d1dd9808d63c70f34ec9a91e60b535a"
+    url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.81.2.tar.gz"
+    sha256 "6676a3b6957c144a80ca8c3ffec2a0bec0320274382f23af9c57dd1c20b2eb1b"
 
     # Backport fix to bypass SDL wraps on macOS
     patch do
@@ -23,13 +23,13 @@ class DosboxStaging < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c0acb77ffeec1998eaf05f50fd123f7c5d60cd0eb3650d4b267202a9eed6520a"
-    sha256 arm64_ventura:  "8dfd66a126fdf5377b5facf51526bcc1ba3f658c76cad10ad74bfc05d7618719"
-    sha256 arm64_monterey: "9ce6593351bc70da42abee12ff5ed96f59ce15b37157127c0ac17500ef805236"
-    sha256 sonoma:         "4ce3401dec1900d9db2dd6fc9327d99b9269453e72697468106f26aeb76211fe"
-    sha256 ventura:        "40fbcc2a17cbe0a49f52df32206643c25bac07af97e4ba2ace2a3dde609d9f00"
-    sha256 monterey:       "956f3c50523268e900a1dbafc938095b0d886a8aa0ba951611388f0847caeafc"
-    sha256 x86_64_linux:   "557f821e2cca2f17ff524aa08e07ebba24ca141603588e32eff6771addcea278"
+    sha256 arm64_sonoma:   "d9c7de5c2c373cbd38b42779d5af89ca1c3efc2a236e2d1be1885db9c17404a4"
+    sha256 arm64_ventura:  "b253f715e507d4a1231a11ebc5cecd3f47efea1c6d5f70ff31047bdeb9e93677"
+    sha256 arm64_monterey: "9ec95a30a281c9aad5be2661f76ae7dbb931da3f9459ccc105769beb829e260c"
+    sha256 sonoma:         "76a1633bbde50f79c9f5d93ddc1c90706b9b145d792aba00d0c1ec78e002cab5"
+    sha256 ventura:        "eef0af318fbd3fcc85fc8285ebe8308e9385a18c49beba38eb0d2d7bbc7aa1fb"
+    sha256 monterey:       "b94ee1b1cca29f8bf00be43aeff3eeacf93bbf77da4ab710b1ded3c53ebb3f84"
+    sha256 x86_64_linux:   "dda24c081c9437844203c3624888ab07298f74c0b29f5dca250c9e071b764a7f"
   end
 
   depends_on "meson" => :build
@@ -46,6 +46,7 @@ class DosboxStaging < Formula
   depends_on "sdl2_image"
   depends_on "sdl2_net"
   depends_on "speexdsp"
+
   uses_from_macos "zlib"
 
   on_linux do

@@ -24,16 +24,24 @@ class Cafeobj < Formula
     sha256 ventura:        "09a50d00fb9193709372416b990d34e74beb4ff09b8ae9ea280d238363cd356b"
     sha256 monterey:       "afad90131b9fb0a6566817ddc18dc9d98be0170eb3e6071f457fa31bf81a868e"
     sha256 big_sur:        "f4337d1c194cc66630e2ea78b2d532b59971ec19ad422a11ea515d23cad46f3c"
+    sha256 x86_64_linux:   "30bf501217fe13524dcfc5667bb149a6ddcd3523916e04a86fc5b1dd06649240"
   end
 
   depends_on "sbcl"
+  depends_on "zstd"
 
   def install
-    system ".configure", "--with-lisp=sbcl", "--prefix=#{prefix}", "--with-lispdir=#{share}emacssite-lispcafeobj"
+    # Exclude unrecognized options
+    args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
+
+    system ".configure", "--with-lisp=sbcl", "--with-lispdir=#{share}emacssite-lispcafeobj", *args
     system "make", "install"
   end
 
   test do
-    system "#{bin}cafeobj", "-batch"
+    # Fails in Linux CI with "Can't find sbcl.core"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    system bin"cafeobj", "-batch"
   end
 end

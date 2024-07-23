@@ -1,25 +1,29 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https:gr-framework.org"
-  url "https:github.comsciappgrarchiverefstagsv0.73.6.tar.gz"
-  sha256 "00f6265e8d7c27a74a7a717006e7f18d4193748e1a36ca5d3f6749b5dd48dc09"
+  url "https:github.comsciappgrarchiverefstagsv0.73.7.tar.gz"
+  sha256 "2584727b1413a337ef14daae1e61bdc5c946403031695b42ecfbf8bc1888d132"
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:   "4c22d40e0f3e5fb0571d5ff87dee56a64dc34b4670d3f488813b5068d91c2896"
-    sha256 arm64_ventura:  "704cbaa41f7a660ea98424f2c76fc691acfc4ed78c1853db9fa5dfecd8e2b957"
-    sha256 arm64_monterey: "28b481d782e3f2c04497df7e7c7c66698c0b44818bccaaf571fa7c8169a7bcfd"
-    sha256 sonoma:         "30998f6669c1b44db819e82a3158f48c9b4a91da0f1db5463736918bef278538"
-    sha256 ventura:        "6b82df8b7eb80400d56931a88b51d40debbd46765449d53daa8165eef67063e2"
-    sha256 monterey:       "9aeaf67006a567d70739884c8befec0ed6ec68cfed1b1a09f901a6d62face91d"
-    sha256 x86_64_linux:   "434265f56a364a14daff6c3635baea530d4290c8057c29f46d83e1b02d5ddc39"
+    sha256 arm64_sonoma:   "151c2541f5465682ecdd5a69856463db37f684e3194f5c13d2aab97cb11c2919"
+    sha256 arm64_ventura:  "1f1599f6a4b6abcf3a2d07e53a8a54de1407e8ef7c0dc1974622416d1ca5b912"
+    sha256 arm64_monterey: "f33a6cb78447fc0e410470cb61f7c472e989198aa9e642d270f9d8e4d67e76f0"
+    sha256 sonoma:         "b2e39f5e4bab5db900610fc2869c9e29b417b21df98b126883951136e5e69c91"
+    sha256 ventura:        "ad82fc1fe1f247cfee54b577a55d61f52ab87f7eda2cc4aff446b14ea60731e3"
+    sha256 monterey:       "8e8422424e63d968da5ecedcf38e218a8807a85ad68a88b850d06ff931da5428"
+    sha256 x86_64_linux:   "5485d4f2faf12243a4c95e92c7f15e6d2a1e86c4657463dc6f230f164030a30a"
   end
 
   depends_on "cmake" => :build
   depends_on "cairo"
   depends_on "ffmpeg@6"
+  depends_on "freetype"
   depends_on "glfw"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
   depends_on "libtiff"
+  depends_on "pixman"
   depends_on "qhull"
   depends_on "qt"
   depends_on "zeromq"

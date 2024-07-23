@@ -20,16 +20,25 @@ class ValaLanguageServer < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "json-glib"
   depends_on "jsonrpc-glib"
   depends_on "libgee"
   depends_on "vala"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "meson", "-Dplugins=false", "build", *std_meson_args
-    system "ninja", "-C", "build"
-    system "ninja", "-C", "build", "install"
+    # Workaround to build with newer clang
+    # Upstream bug report, https:github.comvala-langvala-language-serverissues310
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    system "meson", "setup", "build", "-Dplugins=false", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -40,6 +49,7 @@ class ValaLanguageServer < Formula
       "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"" \
       "processId\":88075,\"rootPath\":\"#{testpath}\",\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
+
     output = pipe_output("#{bin}vala-language-server", input, 0)
     assert_match(^Content-Length: \d+i, output)
   end

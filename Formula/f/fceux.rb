@@ -29,14 +29,19 @@ class Fceux < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg@6"
+  depends_on "libarchive"
   depends_on "minizip"
   depends_on "qt"
   depends_on "sdl2"
   depends_on "x264"
+  depends_on "x265"
 
   on_linux do
+    depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib"
   end
 
   fails_with gcc: "5"

@@ -19,11 +19,9 @@ class SignalCli < Formula
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
   depends_on "gradle" => :build
   depends_on "protobuf" => :build
-  # the libsignal-client build targets a specific rustc listed in the file
+  # libsignal-client requires a specific version of rustc
   # https:github.comsignalapplibsignalblob#{libsignal-client.version}rust-toolchain
-  # which doesn't automatically happen if we use brew-installed rust. rustup-init
-  # allows us to use a toolchain that lives in HOMEBREW_CACHE
-  depends_on "rustup-init" => :build
+  depends_on "rustup" => :build
 
   depends_on "openjdk@21"
 
@@ -46,10 +44,6 @@ class SignalCli < Formula
     libexec.install (buildpath"buildinstallsignal-cli").children
     (libexec"binsignal-cli.bat").unlink
     (bin"signal-cli").write_env_script libexec"binsignal-cli", Language::Java.overridable_java_home_env("21")
-
-    # this will install the necessary cargorustup toolchain bits in HOMEBREW_CACHE
-    system Formula["rustup-init"].bin"rustup-init", "-qy", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     resource("libsignal-client").stage do |r|
       # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#manual-build

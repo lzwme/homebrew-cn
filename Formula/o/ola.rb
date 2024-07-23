@@ -3,12 +3,22 @@ class Ola < Formula
 
   desc "Open Lighting Architecture for lighting control information"
   homepage "https:www.openlighting.orgola"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https:github.comOpenLightingProjectolareleasesdownload0.10.9ola-0.10.9.tar.gz"
-  sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
   head "https:github.comOpenLightingProjectola.git", branch: "master"
+
+  stable do
+    # TODO: Check if we can use unversioned `protobuf` at version bump
+    url "https:github.comOpenLightingProjectolareleasesdownload0.10.9ola-0.10.9.tar.gz"
+    sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
+
+    # fix liblo 0.32 header compatibility
+    # upstream pr ref, https:github.comOpenLightingProjectolapull1954
+    patch do
+      url "https:github.comOpenLightingProjectolacommite083653d2d18018fe6ef42f757bc06462de87f28.patch?full_index=1"
+      sha256 "1276aded269497fab2e3fc95653b5b8203308a54c40fe2dcd2215a7f0d0369de"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -25,6 +35,7 @@ class Ola < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "liblo"
   depends_on "libmicrohttpd"
   depends_on "libusb"
@@ -34,6 +45,11 @@ class Ola < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "ncurses"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def python3
     "python3.12"
