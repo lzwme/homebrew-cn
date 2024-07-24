@@ -3,18 +3,18 @@ require "languagenode"
 class AwsCdk < Formula
   desc "AWS Cloud Development Kit - framework for defining AWS infra as code"
   homepage "https:github.comawsaws-cdk"
-  url "https:registry.npmjs.orgaws-cdk-aws-cdk-2.149.0.tgz"
-  sha256 "c504cfd69cd60ed2f30349260c0ccbce07f8f38208c4bbbf1e4a082d77c7b4ab"
+  url "https:registry.npmjs.orgaws-cdk-aws-cdk-2.150.0.tgz"
+  sha256 "0e477c36f5d4f88bed4ad97da471360f8c04b54336d26152fa73f14825c405f1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3cbd3b42170953cb88dd164904d87c0d93e625bfb51ec012700dab2131fd01d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75c3bad8f79ded4d8d5db28618aa60dc88e157ef35729b72a3a53e4abb38a10f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, ventura:        "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, monterey:       "2312daea786e4b6ee833824cfa6c167601e5f246c918a0266bc208eb6ae23ed5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b5e14ef6a9587e34cff624adf2c8a983d3499bbbe168ae1b451c269c204e90b"
   end
 
   depends_on "node"

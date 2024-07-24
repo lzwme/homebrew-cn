@@ -23,9 +23,14 @@ class Libnice < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gstreamer"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "intltool" => :build

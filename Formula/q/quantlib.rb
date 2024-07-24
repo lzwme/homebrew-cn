@@ -1,18 +1,18 @@
 class Quantlib < Formula
   desc "Library for quantitative finance"
   homepage "https:www.quantlib.org"
-  url "https:github.comlballabioQuantLibreleasesdownloadv1.34QuantLib-1.34.tar.gz"
-  sha256 "eb87aa8ced76550361771e167eba26aace018074ec370f7af49a01aa56b2fe50"
+  url "https:github.comlballabioQuantLibreleasesdownloadv1.35QuantLib-1.35.tar.gz"
+  sha256 "fd83657bbc69d8692065256699b7424d5a606dff03e7136a820b6e9675016c89"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "41d28e8d1b0efabbf573aeea930875b762e2e4b386a0c6b7b6502dd75b6c40fe"
-    sha256 cellar: :any,                 arm64_ventura:  "8c170b6ac2f5af5f62222b3b6368d9275f64412a4183716cfd35648a41bf3c69"
-    sha256 cellar: :any,                 arm64_monterey: "a8c74793924d0e9a69b70b3350e92fe1194b58ddd28033d5c5ee8aa27f0b3dcc"
-    sha256 cellar: :any,                 sonoma:         "d77cc110e0466412d5ecdd22c0ea84dc754755fc95b57b45b736cfeb87f3cf5b"
-    sha256 cellar: :any,                 ventura:        "2ea014a7f8b64f73c9fdeaea0a9bdb6a0caea410e7490ace7672d380854d261c"
-    sha256 cellar: :any,                 monterey:       "e0660fb1575af5c75fbfda66cf8a7f2297bad4b53cdcefa6f7b95d3c7d577314"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62c8056319087ca1af3403d256a30c13b7d6f81eb432b9cdf08a45786377da4"
+    sha256 cellar: :any,                 arm64_sonoma:   "7d0b2c8b6725b696ef1f07f1ca21d777e4b77e7d99c4feaadc91dfd33d40ceab"
+    sha256 cellar: :any,                 arm64_ventura:  "8dd31e9dd6b59b9cae2dc2e8625e5cc69903216e625d81a520f911eb7ae05731"
+    sha256 cellar: :any,                 arm64_monterey: "b6b9feeecbf646ec1409915e6a9e6e3b41731007b2503b220b47aa137920646c"
+    sha256 cellar: :any,                 sonoma:         "360b8683f968704b67b46ac1bb419b61d280a27b8afc696a55669c7e3a668618"
+    sha256 cellar: :any,                 ventura:        "626e06f2c70a53670722598b9d3f318f45bb19d2ff0166a0691320232ec16151"
+    sha256 cellar: :any,                 monterey:       "e8ec014692a6a5ee27e7dec5b2ae530cffb2b05de0db215815f981726d914a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9563730bf7451d68ad5f70afae1ca960f2a3f129b71fd0f10c3c3c17a17f5f1"
   end
 
   head do

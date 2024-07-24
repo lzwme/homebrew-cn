@@ -10,8 +10,14 @@ class SpeedtestCli < Formula
   head "https:github.comsivelspeedtest-cli.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "d4e4b3b28c6f94a387f11713c18bd03b62f7c8d559f6eb2551c773c82d73e73a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"
+    sha256 cellar: :any_skip_relocation, sonoma:         "62201ed3f52ff7ea5e4bdf9a2ac0b1845857ce06f053ecb2c189b0e29e074fe4"
+    sha256 cellar: :any_skip_relocation, ventura:        "62201ed3f52ff7ea5e4bdf9a2ac0b1845857ce06f053ecb2c189b0e29e074fe4"
+    sha256 cellar: :any_skip_relocation, monterey:       "62201ed3f52ff7ea5e4bdf9a2ac0b1845857ce06f053ecb2c189b0e29e074fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3cea7d2de8fe8d5d014b498e85fec5a179e3f93264ed18f630aa0100cac9a80"
   end
 
   depends_on "python@3.12"

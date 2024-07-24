@@ -1,8 +1,8 @@
 class Mill < Formula
   desc "Scala build tool"
   homepage "https:mill-build.commillIntro_to_Mill_for_Scala.html"
-  url "https:github.comcom-lihaoyimillreleasesdownload0.11.90.11.9-assembly"
-  sha256 "3e3c2a43389638a08ef46d42c374a23af7609dcd35701ce0c9194e89303cbb80"
+  url "https:github.comcom-lihaoyimillreleasesdownload0.11.100.11.10-assembly"
+  sha256 "fc855679352ede9895f3449f6ea7921bab674540d3a40ca805c6de0957a55297"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Mill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, ventura:        "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b49362932711a6d1fd33734e1a453730d7d62bc66cd9905e0d29d2005d9bbc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2648488674a64bd96771e25d9dcb8130052716522ee46511b73fc2c59854971"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9955755ece4918b589a3dc034e5a907d94b58c03517d7583358bc6324e2a0128"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9955755ece4918b589a3dc034e5a907d94b58c03517d7583358bc6324e2a0128"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9955755ece4918b589a3dc034e5a907d94b58c03517d7583358bc6324e2a0128"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9955755ece4918b589a3dc034e5a907d94b58c03517d7583358bc6324e2a0128"
+    sha256 cellar: :any_skip_relocation, ventura:        "d921df589be6909fe8d14110c2c3ba495fb54d03d4dbeb6002f5d67a7853cccd"
+    sha256 cellar: :any_skip_relocation, monterey:       "9955755ece4918b589a3dc034e5a907d94b58c03517d7583358bc6324e2a0128"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb19f51e773ee887ce884d9281902c2d32506198d7eba10ea33584c78ce16b5e"
   end
 
   depends_on "openjdk"

@@ -803,7 +803,7 @@ Homebrew-homebrew-core/Formula/c/charge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-testing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chatblade.rb, Homebrew/homebrew-core, 1
@@ -10859,6 +10859,7 @@ Homebrew-homebrew-cask/Casks/g/geneious-prime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genesis-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genesys-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genymotion.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/geoda.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/geogebra.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geogebra@5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geomap.rb, Homebrew/homebrew-cask, 0

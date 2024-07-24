@@ -19,6 +19,8 @@ class Mpack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b67930d5c73b96f420f655232564bb6b48ca5b6d3689d0804390e9860a65610b"
   end
 
+  deprecate! date: "2024-07-21", because: :repo_removed
+
   # Fix missing return value; clang refuses to compile otherwise
   patch :p0 do
     url "https:raw.githubusercontent.comHomebrewformula-patches1ad38a9cmpackuudecode.c.patch"

@@ -19,19 +19,37 @@ class Mlt < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg@6"
   depends_on "fftw"
+  depends_on "fontconfig"
   depends_on "frei0r"
   depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "libdv"
   depends_on "libexif"
   depends_on "libsamplerate"
+  depends_on "libvidstab"
   depends_on "libvorbis"
   depends_on "opencv"
   depends_on "pango"
   depends_on "qt"
+  depends_on "rubberband"
   depends_on "sdl2"
   depends_on "sox"
+
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "freetype"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "pulseaudio"
+  end
 
   fails_with gcc: "5"
 

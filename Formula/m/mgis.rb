@@ -19,9 +19,14 @@ class Mgis < Formula
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
+
   depends_on "boost-python3"
   depends_on "numpy"
   depends_on "python@3.12"
+
+  on_macos do
+    depends_on "gcc"
+  end
 
   def python3
     which("python3.12")

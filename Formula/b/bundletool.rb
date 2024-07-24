@@ -1,18 +1,18 @@
 class Bundletool < Formula
   desc "Command-line tool to manipulate Android App Bundles"
   homepage "https:github.comgooglebundletool"
-  url "https:github.comgooglebundletoolreleasesdownload1.17.0bundletool-all-1.17.0.jar"
-  sha256 "54ebee1f1de8367d9ad26b4672bfb2976b0b12142e15d683fc7b8e254fc6cc1b"
+  url "https:github.comgooglebundletoolreleasesdownload1.17.1bundletool-all-1.17.1.jar"
+  sha256 "45881ead13388872d82c4255b195488b7fc33f2cac5a9a977b0afc5e92367592"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "1281862a3031c91fc175843041b2db31e63300d765c646051de4d1312a91a7fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cd6d3bd56b23ed58c3c8db20bc1047981ab2844fdf3d979824d3aee23e413fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68eb7b3df648ebbfbbd45818938d79d1db458fb613b25d96791a6783882c69f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68eb7b3df648ebbfbbd45818938d79d1db458fb613b25d96791a6783882c69f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68eb7b3df648ebbfbbd45818938d79d1db458fb613b25d96791a6783882c69f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8bb53345f5406e2ea06406c44d6db71cef7da29a89d307ea8dbb299daf44228c"
+    sha256 cellar: :any_skip_relocation, ventura:        "8bb53345f5406e2ea06406c44d6db71cef7da29a89d307ea8dbb299daf44228c"
+    sha256 cellar: :any_skip_relocation, monterey:       "68eb7b3df648ebbfbbd45818938d79d1db458fb613b25d96791a6783882c69f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50480a4d62a2aa54f98482248944ff53bf16ac96c8b49a24c58f0f04ac278dc9"
   end
 
   depends_on "openjdk"

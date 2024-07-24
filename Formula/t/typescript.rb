@@ -3,19 +3,19 @@ require "languagenode"
 class Typescript < Formula
   desc "Language for application scale JavaScript development"
   homepage "https:www.typescriptlang.org"
-  url "https:registry.npmjs.orgtypescript-typescript-5.5.3.tgz"
-  sha256 "f47d21b40c99188b4158f8a444f132207957d528b1f80ccbc019ce9c4765c3d1"
+  url "https:registry.npmjs.orgtypescript-typescript-5.5.4.tgz"
+  sha256 "2680b6354d462a1d90a2cf10c790e071f1c45081c9d4561cb47ce23c934d8586"
   license "Apache-2.0"
   head "https:github.comMicrosoftTypeScript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "356dcef9f8ad0f1789d1f295c71085c9ba5f631fe037f26c5633b966be9df9b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a7b3199e241f01b3983e59c69a08a242a4715a0e2cc84f979b5b9281b0d546a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, ventura:        "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, monterey:       "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8de159428e45a63d940c2cf360d435a89db9bd9bd7089075b6f66977b635d8ee"
   end
 
   depends_on "node"

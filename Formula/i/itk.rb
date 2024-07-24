@@ -23,6 +23,7 @@ class Itk < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "double-conversion"
   depends_on "fftw"
   depends_on "gdcm"
@@ -31,6 +32,13 @@ class Itk < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "vtk"
+
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "glew"
+  end
 
   on_linux do
     depends_on "alsa-lib"

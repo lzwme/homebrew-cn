@@ -12,16 +12,18 @@ class MongodbAtlasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2268b939259333bffb06cd76963091aa4e7d4640587ca2b7b7cb40fce768308a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5fe6d8e224b94fe18f729b71f1276053b7c33cbe5871580ef6f2e252bd70adc7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "314f103a1a341e67f9910fd6e0903996084f479c6147678be64608e03ab65c80"
-    sha256 cellar: :any_skip_relocation, ventura:       "5652801cf8785128f10763235b13f9bda72def3825a6b05f229ffd9c321b862e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ac364b3933960fae5d35a57cb897effd51a8ce9f658f6b7ee7a7da8ee15028c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "107b9fa71e257ef6fb5444add7c9189db920f9bce4aa34b827cd2d28bc923bfe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6705005d7384093ad41c78784d070e231b7374b9d145d98e80a21e603757401"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e8804b48d4233ede6443a266459fe259da6164d4f2cb1a039c1d45a94d64a33"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e5c208f2c61a0d0d51fda32320bea0054e1e2ac2262c9c756d345f8e6b5d304"
+    sha256 cellar: :any_skip_relocation, ventura:        "5450bcbf237c1ebcf4c904650ce8ae6b34b5aed9e200f0d37481e836492362d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "68acbac6c7b92413afef39577e45441395e7d18a506d6e1bd4321633470eb341"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fe5962e4b550dd5d0ca7db007a5caab0fa7775083f9417c4c1a14880874a223"
   end
 
   depends_on "go" => :build
   depends_on "mongosh"
-  depends_on "podman"
 
   conflicts_with "nim", because: "both install `atlas` executable"
 

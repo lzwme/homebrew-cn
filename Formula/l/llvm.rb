@@ -441,7 +441,7 @@ class Llvm < Formula
     on_macos do
       <<~EOS
         To use the bundled libc++ please add the following LDFLAGS:
-          LDFLAGS="-L#{opt_lib}c++ -Wl,-rpath,#{opt_lib}c++"
+          LDFLAGS="-L#{opt_lib}c++ -L#{opt_lib} -lunwind"
       EOS
     end
   end

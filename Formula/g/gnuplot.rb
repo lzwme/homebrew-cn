@@ -30,12 +30,21 @@ class Gnuplot < Formula
 
   depends_on "gnu-sed" => :build # https://sourceforge.net/p/gnuplot/bugs/2676/
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
   depends_on "gd"
+  depends_on "glib"
   depends_on "libcerf"
   depends_on "lua"
   depends_on "pango"
   depends_on "qt"
   depends_on "readline"
+  depends_on "webp"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   fails_with gcc: "5"
 
@@ -76,15 +85,14 @@ class Gnuplot < Formula
 
     ENV.append "CXXFLAGS", "-std=c++17" # needed for Qt 6
     system "./prepare" if build.head?
-    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },
-                          *args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     ENV.deparallelize # or else emacs tries to edit the same file with two threads
     system "make"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/gnuplot", "-e", <<~EOS
+    system bin/"gnuplot", "-e", <<~EOS
       set terminal dumb;
       set output "#{testpath}/graph.txt";
       plot sin(x);

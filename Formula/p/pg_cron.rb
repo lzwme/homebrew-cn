@@ -1,19 +1,18 @@
 class PgCron < Formula
   desc "Run periodic jobs in PostgreSQL"
   homepage "https:github.comcitusdatapg_cron"
-  url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.2.tar.gz"
-  sha256 "9f4eb3193733c6fa93a6591406659aac54b82c24a5d91ffaf4ec243f717d94a0"
+  url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.3.tar.gz"
+  sha256 "ea2af24ab8c501037a15d5c74351ef53dbd0a0a3cd035c78f7108574030d61ee"
   license "PostgreSQL"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ab537999d98dd7cb8183f1dd8ac5a2a1c0b6b144e917d0088c4df624bb49d019"
-    sha256 cellar: :any,                 arm64_ventura:  "81aed28f89bb77a7420e7f7ac35f3d4a461a5fbd04c9a34f72959a2b6b4d358b"
-    sha256 cellar: :any,                 arm64_monterey: "89476a9d9f99446bfc07ec141f1d7b0c57e35c4e9d3f520bd094267d77994315"
-    sha256 cellar: :any,                 sonoma:         "11fa040c59567059cdee5c972986770498c8eabdc5a88a99406fcf0b6ca9eb73"
-    sha256 cellar: :any,                 ventura:        "5ac4c0b346031905988a1509f685c67cab56e481aef1ebe272850edff8e67966"
-    sha256 cellar: :any,                 monterey:       "37c5e41876212c485e99e882e7bc9fa62d5cc968a7579691d66d434b668fb66b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18e321a8163c1614a8cc93c66382525a3b71e996225001707971ebb918cbc3aa"
+    sha256 cellar: :any,                 arm64_sonoma:   "18579d04dbfeae9fec0abca5e02c0308b6ea1828d38c2dce716790d087bc1548"
+    sha256 cellar: :any,                 arm64_ventura:  "cc6ff6a3ebb9af143b8232fc35dc99d3627832cf5d37a4db649796ab0a3d9cbe"
+    sha256 cellar: :any,                 arm64_monterey: "70f6faa52706ce0472f447abd104fccd8af93682b6451946872b47f5e0aaf365"
+    sha256 cellar: :any,                 sonoma:         "8ce58d463c2391f0cf195319a4209a548cef25b29e0a87e0c13ec96462b699b8"
+    sha256 cellar: :any,                 ventura:        "7ee8bba1cc6631d080b5ff1a903f17852185e51c36d40153b2754c3c500d6f0a"
+    sha256 cellar: :any,                 monterey:       "bd64ef477661416302f0de6821043ce0774220947ee08da4659630324439b598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a226081425b80e8258d7c14cb9859b0d4aa6290e580d437b52c70d3296100f9"
   end
 
   depends_on "postgresql@14"

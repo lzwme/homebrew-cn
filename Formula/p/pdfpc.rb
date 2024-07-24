@@ -27,13 +27,25 @@ class Pdfpc < Formula
 
   depends_on "cmake" => :build
   depends_on "vala" => :build
+
+  depends_on "cairo"
   depends_on "discount"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "json-glib"
   depends_on "libgee"
   depends_on "librsvg"
+  depends_on "libx11"
+  depends_on "pango"
   depends_on "poppler"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "webkitgtk"

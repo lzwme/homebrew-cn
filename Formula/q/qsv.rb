@@ -7,13 +7,14 @@ class Qsv < Formula
   head "https:github.comjqnatividadqsv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "236be8e259593cc6c28137e8c597155e3bc03bea94d66cd9aa9dd87062d8820f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da7051ce9396db2e90a6d63507b98c00dcc12bb73da03c96c089bb207a5ac6dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3d21fe2b3de707b0605cab9def264914882117fb4a2dc569cfd2ea73c24d3cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e67c28a814d8370e08f99b604127740dc86c479e250a674c4fe6f3466fd4dae"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c0526d555ee46796c5b0c8471cfb77a2dbc0b8f0fed2948c9d690a10de3e11b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2fc71af121497d3358cb567eb55fc3f002b7a51bc3421626cecb96723ff8d6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1be6070d7286f72b187192d5b4d9c95cfc3741d832bc52280c1c4bebf399e398"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f74e44008d43492b8c5267aad808c82aeee5b8a3cba377eb82962dc66175f342"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba70c9299cdea7200498ba4e585f29471566565c03ebd46a0502e0165d22b926"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d4636829bac3abc7cdb9640cdf149e366a2b68df44206ba34cd7cd0c4402143"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4a71e1cd4d42b01bb2dd71fd09cf71e748e202840d1b3bc226967efac73635c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "130ef072b7d1b6dc070ce1a8af180d948bd6235030593c13a5afea810f5c7336"
+    sha256 cellar: :any_skip_relocation, monterey:       "c78b494cd9ccb8007b07246e18dc7b3183a3112f7decb12da7a2b8d77430a08c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "262b0b1312bb2c46f1ca6cd0edeb6a3cc481d0b085ddc405800d533276437572"
   end
 
   depends_on "rust" => :build
@@ -24,6 +25,9 @@ class Qsv < Formula
 
   def install
     system "cargo", "install", *std_cargo_args, "--features", "apply,luau,feature_capable"
+    bash_completion.install "contribcompletionsexamplesqsv.bash" => "qsv"
+    fish_completion.install "contribcompletionsexamplesqsv.fish"
+    zsh_completion.install "contribcompletionsexamplesqsv.zsh" => "_qsv"
   end
 
   test do

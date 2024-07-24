@@ -32,7 +32,12 @@ class Aravis < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
     depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
   end
 
   def install

@@ -1,18 +1,18 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https:github.comlaunchbadgesqlx"
-  url "https:github.comlaunchbadgesqlxarchiverefstagsv0.7.4.tar.gz"
-  sha256 "ec388590cc15232eca9d02356428c0527a6cc599d09136fac46f62116050fe77"
+  url "https:github.comlaunchbadgesqlxarchiverefstagsv0.8.0.tar.gz"
+  sha256 "fffe09726fd225c0899c757bdbd5cad4481d63df6ca2f699a5aacd528cb01776"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0118f39aa62482fecd023fcab0fbb1158b0c27ed8eb1d07042562724d77547d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b9b62fd481d254b3d6b049f774873d2c4acbf8d26ecdc821b3b6d4d0424c715"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f341f62224df437146e81495257c53bc324d55813449b04fb84eba273ce40b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0316ec1f0e2203fe90e2349c3a1edc5cb6c1455e148a8e0951f82c3156216cf6"
-    sha256 cellar: :any_skip_relocation, ventura:        "95539c81fd95934ee4729780c48e4d18fdb6c0cb369f4c58bd33950708b7ed9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b54a2497f5b34fe7b94b2268e83fc6422a6d5846d380fa4efb8cd728f9753ad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75761f1ed65b9854bcd12c10bba3a1902e6b14b9c39e144b73942b766b4ca47e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2957863f4c5e75a7d466f568bca5e52a99bdf4295e91d62966f7787e533c8ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff1b198ca832c521236a3a85d5834a2c14ff4201d7c6a2e6664993d7965fa531"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbb22c392dd646d4d3c6ed63c3ce06f990889c8c053724c4ab43ce84354d0e96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e37705fc94bafc2b55632be57b8c5a5912f3cb6c2773beded5cc44e76ae7a15f"
+    sha256 cellar: :any_skip_relocation, ventura:        "d6157d665b629272c145a937e7ab6b8f6699b8471f109b85a59d74eceeb66af1"
+    sha256 cellar: :any_skip_relocation, monterey:       "4d38d170fea25038c49a19d9da394afab970605f978757933f011d8634162b7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "053c7afb04bf5154e057d33de21b1b9e368fb8376867e489a16b0eba15da41fc"
   end
 
   depends_on "rust" => :build

@@ -42,6 +42,7 @@ class Qmmp < Formula
   depends_on "libxcb"
   depends_on "libxmp"
   depends_on "mad"
+  depends_on "mpg123"
   depends_on "mplayer"
   depends_on "opus"
   depends_on "opusfile"
@@ -57,7 +58,16 @@ class Qmmp < Formula
   on_macos do
     # musepack is not bottled on Linux
     # https:github.comHomebrewhomebrew-corepull92041
+    depends_on "gettext"
+    depends_on "glib"
+
     depends_on "musepack"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "libx11"
+    depends_on "mesa"
   end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC

@@ -34,6 +34,10 @@ class Minidlna < Formula
   depends_on "libvorbis"
   depends_on "sqlite"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   # Add missing include: https://sourceforge.net/p/minidlna/bugs/351/

@@ -1,8 +1,8 @@
 class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https:github.comarduinoarduino-cli"
-  url "https:github.comarduinoarduino-cliarchiverefstagsv1.0.2.tar.gz"
-  sha256 "3741dee1cf63eecd0b8b42f51c8e1570ceb464a38ff3acdbbeb214a88645d930"
+  url "https:github.comarduinoarduino-cliarchiverefstagsv1.0.3.tar.gz"
+  sha256 "5987889e3a2675a8aca6488026826147dc82a5573ab61ed187cab40f4b6f433b"
   license "GPL-3.0-only"
   head "https:github.comarduinoarduino-cli.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c23185dd7b39b3f0dd94551df70685bd994afeac2f5e596495d348d2a4b87cd6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05d67cdd1413ece5e745bec1d64acd3bf69e3a344446bdad0ec9309a232157de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3eb4b947c7267435197f324790754652922d8034d2ff0ec1dac7afef0906f195"
-    sha256 cellar: :any_skip_relocation, sonoma:         "afa4d28dd10b32c3183753ee006a30df3272f725a8ba1d6ae23f7dceaec14c07"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3181071468d4c4120a7d30d74cba25b3422d9e40ad1ca0cfa862a55afc6728b"
-    sha256 cellar: :any_skip_relocation, monterey:       "24d3123ed30c2f6e2e451d853187b27a4075f04bd946d92e0ab4c81a007c02be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "328474a13115a3d70b0a0f8ca3b2f56059d4ca29630c86b669e180c1a2ed0d25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf36dd3af19dcbfdf60b163d98f00e641c03b7a1c86dd79cf087626f7c95f5dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be376fe141c43ad01208474e9f031eb11cf13ee7411920d4dea235cf064d7782"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "38b78a4f0c499632899c943cbd6b5b860e4a093dd48d1b90fcd8a71f6622bc57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8f894aa9830118525955783ff7e468551f065774ad4b2bc043ea494cb4873f03"
+    sha256 cellar: :any_skip_relocation, ventura:        "97c40da4a5d1dd7b398abf0d6fff762c2d0fed4bd812905818e08344d15cc266"
+    sha256 cellar: :any_skip_relocation, monterey:       "604dea249f8aa2e756e4d708d0926fbb6bdd17ea817993d3269f79a8ab37c4ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb61a6f8ec123db22c40e89e9df253033065a4cb3aadf1c4234b82773ebb1ab3"
   end
 
   depends_on "go" => :build

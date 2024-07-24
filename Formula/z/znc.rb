@@ -5,6 +5,11 @@ class Znc < Formula
   sha256 "e8a7cf80e19aad510b4e282eaf61b56bc30df88ea2e0f64fadcdd303c4894f3c"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://znc.in/releases/"
+    regex(/href=.*?znc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "ee6eaf54730ba8dbb41db83afaf55dd576fb40d5d4d7240e91350b52bde15553"
     sha256 arm64_ventura:  "b2b61efde97fb30819e20401df289b60b0785ebb50d59f6ed55e2d52883855f8"
