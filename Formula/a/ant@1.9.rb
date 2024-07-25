@@ -17,6 +17,9 @@ class AntAT19 < Formula
 
   keg_only :versioned_formula
 
+  # End-of-life on 2024-06-19: https://lists.apache.org/thread/f6jw4v3gjwhqt5fz25og0my2o6xwvvm1
+  deprecate! date: "2024-07-24", because: :unsupported
+
   depends_on "openjdk"
 
   def install

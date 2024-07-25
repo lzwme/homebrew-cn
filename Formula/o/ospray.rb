@@ -1,10 +1,9 @@
 class Ospray < Formula
   desc "Ray-tracing-based rendering engine for high-fidelity visualization"
   homepage "https:www.ospray.org"
-  url "https:github.comosprayosprayarchiverefstagsv3.1.0.tar.gz"
-  sha256 "0b9d7df900fe0474b12e5a2641bb9c3f5a1561217b2789834ebf994a15288a82"
+  url "https:github.comosprayosprayarchiverefstagsv3.2.0.tar.gz"
+  sha256 "2c8108df2950bc5d1bc2a62f74629233dbe4f36e3f6a8ea032907d4a3fdc6750"
   license "Apache-2.0"
-  revision 1
   head "https:github.comosprayospray.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Ospray < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5579d8382f75e7326ad0a8937f6562ff167c1ae1d4650a092610fedab1b4f486"
-    sha256 cellar: :any,                 arm64_ventura:  "daed769741e22bd69913fe1d0a726413fcb674616abf57f59700bdf6f8bfeedd"
-    sha256 cellar: :any,                 arm64_monterey: "9251be35bf7ca53c4611112bfe41fd2fa714084f7d9dc649d4967c3621a5f057"
-    sha256 cellar: :any,                 sonoma:         "d7a76240bab1306d4379cdb7cd38b6d2fd37a96795d182868b2e90d8d91f5417"
-    sha256 cellar: :any,                 ventura:        "e1eef957f20f5c977fa7ee8a6f348eb715019f8423cdf9618ecfb5161af151b1"
-    sha256 cellar: :any,                 monterey:       "77198703201d64fb1681d9475f7107c7908ed9a87ae7eebe7546483aae6b32e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77698d5997a11ec80305915acbca696811ca3c9305320c5b7986d9de1ce6c02e"
+    sha256 cellar: :any,                 arm64_sonoma:   "970fe14d8a918196943fd2ff352432fe55d02c2ffb903a97637c0cd8a7d13ac2"
+    sha256 cellar: :any,                 arm64_ventura:  "0d1c6ded545f4cb342648e3a604468d476b37bf749dfc19a3eae74b76804bf63"
+    sha256 cellar: :any,                 arm64_monterey: "34df9ae68fdd19cdb8cb85074678fd4ed0f259e3ef0f1e9582d015d5d520a7d6"
+    sha256 cellar: :any,                 sonoma:         "a72ff4404280c926f33548561b8252863557e9305eeab39c99c102371bf56b5f"
+    sha256 cellar: :any,                 ventura:        "a073623de4aaa0e7d97d579b83b882ed03cf9f7030fac1c928862bc2346daa14"
+    sha256 cellar: :any,                 monterey:       "e0260bfe736f2dcca20e488902e28b41a4322535e928cafa888f11b3d19db7e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67b279accdeb1e6af969ca0e6bcf7eafb6f56bca61d12aac02f8808f722e024a"
   end
 
   depends_on "cmake" => :build
@@ -28,8 +27,8 @@ class Ospray < Formula
   depends_on "tbb"
 
   resource "rkcommon" do
-    url "https:github.comosprayrkcommonarchiverefstagsv1.13.0.tar.gz"
-    sha256 "8ae9f911420085ceeca36e1f16d1316a77befbf6bf6de2a186d65440ac66ff1f"
+    url "https:github.comosprayrkcommonarchiverefstagsv1.14.0.tar.gz"
+    sha256 "5aef75afc8d4fccf9e70df4cbdf29a1b28b39ee51b5588b94b83a14c6a166d83"
   end
 
   resource "openvkl" do

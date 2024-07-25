@@ -4,6 +4,7 @@ class Icecast < Formula
   url "https://downloads.xiph.org/releases/icecast/icecast-2.4.4.tar.gz", using: :homebrew_curl
   mirror "https://ftp.osuosl.org/pub/xiph/releases/icecast/icecast-2.4.4.tar.gz"
   sha256 "49b5979f9f614140b6a38046154203ee28218d8fc549888596a683ad604e4d44"
+  license "GPL-2.0-only"
   revision 2
 
   livecheck do
@@ -24,10 +25,13 @@ class Icecast < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "libogg"
   depends_on "libvorbis"
   depends_on "openssl@3"
 
   uses_from_macos "curl"
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   def install

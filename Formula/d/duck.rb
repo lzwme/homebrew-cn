@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https:duck.sh"
-  url "https:dist.duck.shduck-src-9.0.0.41777.tar.gz"
-  sha256 "4c92be3cc3cce94788f971476b6d57cefd27ac6361706ebb2d1c9c0dfb4fa584"
+  url "https:dist.duck.shduck-src-9.0.1.41941.tar.gz"
+  sha256 "265c6bfef4a500336417c6d674f224f64f1cd53ef91b308be88c15367f233cca"
   license "GPL-3.0-only"
   head "https:github.comiterate-chcyberduck.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Duck < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "661239af23ccfd59f22e22a2db029a636f818fbade09faffe3c00ae47acc6495"
-    sha256 cellar: :any, arm64_ventura:  "3d756efd4c5e65b7cfabea0f293a68be6c8db7a116ffb147817cc9286bc864dc"
-    sha256 cellar: :any, arm64_monterey: "addf05ef525f528b8708b7c311f4da514d37aac134d5fbe71c356296d32fc946"
-    sha256 cellar: :any, sonoma:         "9e1288d352e60040f8ec53d8160f800629aa43f0f60ffbcdcfa706cf0502e749"
-    sha256 cellar: :any, ventura:        "a1f4abc4594e6e75321966c94a1c80b043ebfb880e96ebddf9161f2929173839"
-    sha256 cellar: :any, monterey:       "f67ff636102a1409a39b5b2cd7d1f32def79a576a84a80f0e1f2fae8361cf3f6"
-    sha256               x86_64_linux:   "5c20014cdbabda4e533d8878c2547cbc1d23b397f2d702f332cb342da65092b0"
+    sha256 cellar: :any, arm64_sonoma:   "457e1c33bda569182b91cfd16cc1ea6f09641927bb4471576124c3d4915e9d35"
+    sha256 cellar: :any, arm64_ventura:  "1c27967ffea11eb260a0823dc8e7257b6d4ae9888fff196c539e82a51cb6fd3b"
+    sha256 cellar: :any, arm64_monterey: "44cc4aaeb7b62ba2ca21c66f8a1da2a660cede322b86b6153ec1dd351c8e4313"
+    sha256 cellar: :any, sonoma:         "11f8c41aa10107581b5eed23af2a9b02be4464ab0e0420bafb06394bc18a8689"
+    sha256 cellar: :any, ventura:        "fc3878115f65558dc213b2cf01f963c1c0bf823e1cbd9a8ec2c4371217dd9d7e"
+    sha256 cellar: :any, monterey:       "9b8e1431cb1964ce332d832a7f580ed417ef2509734f6170b00f7d3cc9ae6a82"
+    sha256               x86_64_linux:   "bcd0411a1f962cca75784cb6341b403e2d38f802311bb80f7cb0b0dab4eb6c1e"
   end
 
   depends_on "ant" => :build
@@ -33,11 +33,16 @@ class Duck < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "freetype"
+    depends_on "giflib"
+    depends_on "harfbuzz"
+    depends_on "jpeg-turbo"
+    depends_on "libpng"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxi"
     depends_on "libxrender"
     depends_on "libxtst"
+    depends_on "little-cms2"
   end
 
   conflicts_with "duckscript", because: "both install `duck` binaries"

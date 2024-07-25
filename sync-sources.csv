@@ -4711,6 +4711,7 @@ Homebrew-homebrew-core/Formula/p/packer-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packetbeat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packetq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/packetry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packmol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacmc.rb, Homebrew/homebrew-core, 1
@@ -12079,6 +12080,7 @@ Homebrew-homebrew-cask/Casks/n/netspot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/network-radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netxms-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/next.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nextcloud-vfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nextcloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nfov.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/ngrok.rb, Homebrew/homebrew-cask, 0
@@ -12586,6 +12588,7 @@ Homebrew-homebrew-cask/Casks/p/prizmo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/processing.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/processing@3.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/processmonitor.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/processspy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/procexp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proclaim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/product-hunt.rb, Homebrew/homebrew-cask, 0
@@ -12870,6 +12873,7 @@ Homebrew-homebrew-cask/Casks/r/roam-research.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roaringapps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roblox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/robloxstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/robo-3t.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/robofont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roboform.rb, Homebrew/homebrew-cask, 0

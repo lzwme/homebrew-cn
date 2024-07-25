@@ -8,6 +8,13 @@ class Wordnet < Formula
   license :cannot_represent
   revision 1
 
+  # This matches WordNet tarball versions as well as database file versions,
+  # as these may differ.
+  livecheck do
+    url "https://wordnet.princeton.edu/download/current-version"
+    regex(/href=.*?(?:WordNet|wn)[._-]?v?(\d+(?:\.\d+)+)(?:[._-]dict)?\.t/i)
+  end
+
   bottle do
     sha256                               arm64_sonoma:   "b950541da50b255f77a15f09e713f22472820da7e131c577a4b3f377fc2b44fe"
     sha256                               arm64_ventura:  "57a8ed88c01550f3fc44dd887ddd4ae3c9bbad47ea82c2793bfe167506aacfb6"

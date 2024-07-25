@@ -6,13 +6,14 @@ class Votca < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d83bd1a9c46735242047b9d00ad6e372ef8886dde8a70375c82fb96728bbc6db"
-    sha256 cellar: :any,                 arm64_ventura:  "517dd32b3eac99c62b70d3ec73d724a894ebe0ca11211ba9093ca2733953f1ef"
-    sha256 cellar: :any,                 arm64_monterey: "f6d189bd73aa95e2fc74c506a94d2584e6be327f7446309ff5f669f439ef7b39"
-    sha256 cellar: :any,                 sonoma:         "7920055ec0096918752abbc653114a6daaa4cc68a54b72f1f584503208a3d0e8"
-    sha256 cellar: :any,                 ventura:        "9100082cb7ad9bb733a2fd759c83525e00af5beea5fc7021bb91d986935e5a21"
-    sha256 cellar: :any,                 monterey:       "ab8b77362943511d03947aa3b2f55146d746ba6a595e0789b0be6279c787f4fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb617d7416af23f219076b0bc6d4277036dac280d2cfcb104759dbadac5931d5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "528f109aaeb4bad60365616e2ae9c69ba8520e40fc7b933ef05bdde967084266"
+    sha256 cellar: :any,                 arm64_ventura:  "626419cb9f450f1e806c069e08f2177fdced2f4b8e97fa7b2417aa6d11544e3a"
+    sha256 cellar: :any,                 arm64_monterey: "cd2e2b233adb416508c97793eae83959a50d773fa1d65feca4e7193d0678dcb7"
+    sha256 cellar: :any,                 sonoma:         "5507f809c1f1a79bf0b9bdc7d6882a0993444a895421762059f8b003dfbc1674"
+    sha256 cellar: :any,                 ventura:        "80036e2945f55198de413d036f9f4015866a92c0e26a2047c80b028db291bd21"
+    sha256 cellar: :any,                 monterey:       "917f3a6638f494825e97ae96901127a7c2bdeb2f10344b7161661e9933b2c497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0502b5382574920108db15990f74d79f40fe10eee13aeb7cdd1bb4808cb85265"
   end
 
   depends_on "cmake" => :build
@@ -22,8 +23,7 @@ class Votca < Formula
   depends_on "fftw"
   depends_on "gcc" # for OpenMP
   # add gromacs dep back once it was built with clang
-  # Use hdf5@1.10: Unable to determine HDF5 CXX flags from HDF5 wrapper.
-  depends_on "hdf5@1.10"
+  depends_on "hdf5"
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"

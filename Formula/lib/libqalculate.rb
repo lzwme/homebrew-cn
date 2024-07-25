@@ -24,22 +24,27 @@ class Libqalculate < Formula
 
   uses_from_macos "perl" => :build
   uses_from_macos "curl"
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gmp"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+    depends_on "gmp"
   end
 
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
     ENV.cxx11
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--without-icu",
-                          "--prefix=#{prefix}"
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    system "#{bin}qalc", "-nocurrencies", "(2+2)4 hours to minutes"
+    system bin"qalc", "-nocurrencies", "(2+2)4 hours to minutes"
   end
 end

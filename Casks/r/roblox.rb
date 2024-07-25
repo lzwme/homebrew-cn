@@ -1,8 +1,11 @@
 cask "roblox" do
-  version "0.634.0.6340420,54d7a525231d424e"
-  sha256 "295bd50f36ea4bd2882a843c6edf671d0cb0b3f47d67e9a6b2f8eac55b471b9d"
+  arch arm: "arm64/"
 
-  url "https://setup.rbxcdn.com/mac/version-#{version.csv.second}-RobloxPlayer.zip",
+  version "0.635.0.6350588,35578f93b64f4c86"
+  sha256 arm:   "76d53b7e06603ccb7679dbef23e07161ccab8c08b6f6e64a883f311cfc181ee9",
+         intel: "2f9e69d194e29c80d3eade53a4cc32b50776d4ea69fb987263da2d6376b8e0fe"
+
+  url "https://setup.rbxcdn.com/mac/#{arch}version-#{version.csv.second}-RobloxPlayer.zip",
       verified: "setup.rbxcdn.com/"
   name "Roblox"
   desc "Online multiplayer game platform"
@@ -33,8 +36,4 @@ cask "roblox" do
     "~/Library/Preferences/com.roblox.RobloxPlayer.plist",
     "~/Library/Preferences/com.roblox.RobloxPlayerChannel.plist",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

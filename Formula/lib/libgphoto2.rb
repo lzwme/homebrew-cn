@@ -31,20 +31,24 @@ class Libgphoto2 < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "gd"
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libtool"
+  depends_on "libusb"
   depends_on "libusb-compat"
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

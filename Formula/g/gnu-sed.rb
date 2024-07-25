@@ -7,14 +7,14 @@ class GnuSed < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca2fd8e6b23712c14bfb84c584f0ac08f58f34e66ebfcddb9da59e38f308ed3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c70b2b3bd8b11457e19fc450c330da321ab4270023452578ea95fb01f618540a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e3b5d286e0e24f8a592ae909c2816f59c5b72ef21973f4213a1758421c6dcf2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5831636dc3635c4e76a229dded92d1da402fc03fd92261179e2c874d6bfff810"
-    sha256 cellar: :any_skip_relocation, ventura:        "292fdd497666624a749327d262b9d61e33a72f4dfe994ce8212dc8b512037761"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d5ad0f2edb63fe1d0b7de7f6a370643be971c20702839388d1ca05c4e74f5e4"
-    sha256                               x86_64_linux:   "3989ab1717786e2d9ac9d1035f794cd741372131c1f830e2a76722f085872cfb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ffd49517ed790e52a088e720de77f1dd4de4e88816fb6a1d244be3f6b01314d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3770e9098033bc1f32427d3b6502a1ab10082b3945e204286c87060d82d03d19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e41980dc2d528301c562ed7ec59ee8bcfe43d1f9a4dc734652e9c216ac3fbdf4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d10e5703feb75bc37e450178f2c6bdc3a6b2cf9eb72594cfab90f89b270136c"
+    sha256 cellar: :any_skip_relocation, ventura:        "66f640fbd1291801c04dc8af37378c051aa1ddbb3a620df2b4b85b9f0f6df80e"
+    sha256 cellar: :any_skip_relocation, monterey:       "0f63397072520ce4c163974de6f0313a9117d106890c8cb0fb9344c723543674"
+    sha256                               x86_64_linux:   "6ecac3ffdd0517ed1516ff18d79d4ea44f761b6fb2a5040c124bb51da35c03e1"
   end
 
   conflicts_with "ssed", because: "both install share/info/sed.info"
@@ -25,10 +25,13 @@ class GnuSed < Formula
       --disable-dependency-tracking
     ]
 
-    args << if OS.mac?
-      "--program-prefix=g"
+    args += if OS.mac?
+      %w[--program-prefix=g]
     else
-      "--without-selinux"
+      %w[
+        --disable-acl
+        --without-selinux
+      ]
     end
     system "./configure", *args
     system "make", "install"

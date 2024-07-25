@@ -20,6 +20,7 @@ class Hcxtools < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     bin.mkpath
@@ -36,11 +37,11 @@ class Hcxtools < Formula
 
     # Convert hash to .cap file
     testcap = testpath"test.cap"
-    system "#{bin}hcxhash2cap", "--pmkid-eapol=#{testhash}", "-c", testpath"test.cap"
+    system bin"hcxhash2cap", "--pmkid-eapol=#{testhash}", "-c", testpath"test.cap"
 
     # Convert .cap file back to hash file
     newhash = testpath"new.22000"
-    system "#{bin}hcxpcapngtool", "-o", newhash, testcap
+    system bin"hcxpcapngtool", "-o", newhash, testcap
 
     expected = "WPA*01*4d4fe7aac3a2cecab195321ceb99a7d0*fc690c158264*f4747f87f9f4*686173686361742d6573736964***01"
     assert_equal expected, newhash.read.chomp

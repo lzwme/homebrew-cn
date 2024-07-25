@@ -33,7 +33,10 @@ class Lnav < Formula
   depends_on "pcre2"
   depends_on "readline"
   depends_on "sqlite"
+
+  uses_from_macos "bzip2"
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   fails_with gcc: "5"
 
@@ -48,6 +51,6 @@ class Lnav < Formula
   end
 
   test do
-    system "#{bin}lnav", "-V"
+    system bin"lnav", "-V"
   end
 end

@@ -67,6 +67,8 @@ class Squid < Formula
     run [opt_sbin/"squid", "-N", "-d 1"]
     keep_alive true
     working_dir var
+    log_path var/"log/squid.log"
+    error_log_path var/"log/squid.log"
   end
 
   test do

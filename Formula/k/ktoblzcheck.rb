@@ -23,6 +23,7 @@ class Ktoblzcheck < Formula
   depends_on "cmake" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.12"
+  depends_on "sqlite"
 
   uses_from_macos "curl"
 

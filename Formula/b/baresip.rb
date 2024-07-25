@@ -4,15 +4,16 @@ class Baresip < Formula
   url "https:github.combaresipbaresiparchiverefstagsv3.14.0.tar.gz"
   sha256 "bb886c393d29e6bb5f89395cff1985ba9eda27dfd3aac2a5221ef7957c44b1a1"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "2431632efcffa429d8bf6efbd75ca8d4bccb882c68cba576685430cf57ae1608"
-    sha256 arm64_ventura:  "e06d04cd917c42064a2f5cd107f90718d0d7ce9c13e88b4ee51f5faf6d94a61e"
-    sha256 arm64_monterey: "99d0b9bd8653c39d2a6a96a3e8ebe0404af37a74fb74ed2b81810c2f370ab25c"
-    sha256 sonoma:         "e46d739c29a25a8398409580002a0c61ee572183d70cf4c89ab4961686d8d5a5"
-    sha256 ventura:        "56cf154fd5b77a27c9a0e8d61b1eaa73af36138c68ce9bb1c25946bdf9e546ab"
-    sha256 monterey:       "50ae7cdd4543c470f5aab8d372e05c78d35256f06e9bc7337c78af5800aaf894"
-    sha256 x86_64_linux:   "6b8b5ea0ec9747d16954346b9229bb604ffc837302588607eb4ac614c9aff824"
+    sha256 arm64_sonoma:   "3394e6520c23b01652d969176507b5cba99d17a7bd5556b0e3048029ccaa63c1"
+    sha256 arm64_ventura:  "773ea68041dda36b728a181d2f1a0b2fcc5109c98feafa60ee737a61713d2c3c"
+    sha256 arm64_monterey: "0619cfdaa9bf64d0071b22074731e03500daca806bf25d24d24712473ca873f9"
+    sha256 sonoma:         "1610c2cb67eebf584100e3bf3980e64beae5855e3f5ec371b3d76cabeef8e42f"
+    sha256 ventura:        "855c17b2e2f171013253037151884283f4dfb47103bbb7730825437e9eed13d7"
+    sha256 monterey:       "f7c0e3ee97c3836afdb9de77186403ef0e03f016cf472d4980ad403efb887e01"
+    sha256 x86_64_linux:   "c777d5fb1332a7a0344cfbbf50b4f9715002b1f219256937d907b627de560110"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,18 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https:colmap.github.io"
-  url "https:github.comcolmapcolmaparchiverefstags3.9.1.tar.gz"
-  sha256 "f947ad80802baa8f00f30f26d316d8c608ab2626465eac1c81cf325d57879862"
+  url "https:github.comcolmapcolmaparchiverefstags3.10.tar.gz"
+  sha256 "61850f323e201ab6a1abbfb0e4a8b3ba1c4cedbf55e0a5716bdea1df8ae1813a"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9d00fc57d1f732a4fefb741ab48e221f480e2cb16deeb9ca8f513b6a21ae6e73"
-    sha256 cellar: :any,                 arm64_ventura:  "04d186231e777dcbccb8516dd4ffbee31c686698520df771100a330862b48949"
-    sha256 cellar: :any,                 arm64_monterey: "e775d2ea1698071def8cfff84feb8514c41bf2415821bce4aec28cf620226cef"
-    sha256 cellar: :any,                 sonoma:         "a1d0c5faccff52fd59c3e6e36be5f333f6b77f01026afaf222533260cb600cb5"
-    sha256 cellar: :any,                 ventura:        "07548fd18349a37b3b0805fa5ea2f26d3b377729ad89633741838a8b2ef7ea24"
-    sha256 cellar: :any,                 monterey:       "bb805ef9f6ae9d67f50a159a914bda94a60f2c5db4b3d28b2063648840c9405f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98c7879a56073964c8f8c04247391bc6fc50dc0db4e7f5685c9fa54096092423"
+    sha256 cellar: :any,                 arm64_sonoma:   "0e66ed8897969562e2f7f1064904a1378ba1215d0496e73b879af43f77f50455"
+    sha256 cellar: :any,                 arm64_ventura:  "59b95f21f9a19a6d300ccd8732d4c2fbccae6b516efa9ef2512f1268c7cbe792"
+    sha256 cellar: :any,                 arm64_monterey: "a398f35d16d695514364a838157b3e675d01a6093ace52a6e084c7b3e5bb79b0"
+    sha256 cellar: :any,                 sonoma:         "7b5d4f750563fa282bdf0e51896696d86c438d58e57cb1c9ae8946227fc36245"
+    sha256 cellar: :any,                 ventura:        "f34cbcfe17fff0582a91d9b6f8a7c295fa64a65a63919e322ebdea82ec79825f"
+    sha256 cellar: :any,                 monterey:       "67d6f2823721734595ddb680d50ee2d14a1952b7d4dfe778f282dfaad366a59b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a87578e228dc96603dc715fda37f342be6b94bda5095dfa47d6b271c7df19c"
   end
 
   depends_on "cmake" => :build
@@ -26,12 +25,23 @@ class Colmap < Formula
   depends_on "gflags"
   depends_on "glew"
   depends_on "glog"
+  depends_on "gmp"
   depends_on "lz4"
   depends_on "metis"
   depends_on "qt@5"
   depends_on "suite-sparse"
 
   uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on "libomp"
+    depends_on "mpfr"
+    depends_on "sqlite"
+  end
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   # Remove this patch after https:github.comcolmapcolmappull2338 is included in
   # a future release
@@ -50,6 +60,7 @@ class Colmap < Formula
     assert_path_exists (testpath  "db")
   end
 end
+
 __END__
 diff --git asrccolmapimageline.cc bsrccolmapimageline.cc
 index 3637c3dc..33fff7da 100644

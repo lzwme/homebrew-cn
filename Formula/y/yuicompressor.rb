@@ -12,8 +12,14 @@ class Yuicompressor < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "94b45d04e09ea0fda70a1913d9af1c1770ff333c1602e67f1d2c2b9fa4f1fecd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39a0c85d86b163e85204877c02dc2028d458aaa93822a9744bd3ce6cf883163b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39a0c85d86b163e85204877c02dc2028d458aaa93822a9744bd3ce6cf883163b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39a0c85d86b163e85204877c02dc2028d458aaa93822a9744bd3ce6cf883163b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a777992c7ffb05c413bcc9d2f7e6abafffc51af453be8300eb14944393b73c20"
+    sha256 cellar: :any_skip_relocation, ventura:        "a777992c7ffb05c413bcc9d2f7e6abafffc51af453be8300eb14944393b73c20"
+    sha256 cellar: :any_skip_relocation, monterey:       "a777992c7ffb05c413bcc9d2f7e6abafffc51af453be8300eb14944393b73c20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ecbde7c5fb11f028b5bca5b4174f007370df1827ea1e83a603c89c522823855"
   end
 
   depends_on "openjdk"

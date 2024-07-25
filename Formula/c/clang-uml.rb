@@ -7,13 +7,14 @@ class ClangUml < Formula
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "36d0aa1fa346deb13d765fb462e630b22b99c682e499456f7a00422feb96788a"
-    sha256 cellar: :any,                 arm64_ventura:  "38d9e81d54fa5d33b7d45f33b10b8179497d77fe8b028e84ef58bdac808e2ccd"
-    sha256 cellar: :any,                 arm64_monterey: "d1de2315c0e6bf8fab645a6a9f5fb2a07909987054d0fa06ecee7a41c00892cd"
-    sha256 cellar: :any,                 sonoma:         "894596aee232128d1065aee22091c7757161de84763c8ec278f61d8ac1ce0433"
-    sha256 cellar: :any,                 ventura:        "c9718ceba293590886e83858d3272621182900a51336d0777b1c9be613564019"
-    sha256 cellar: :any,                 monterey:       "ab9b40e24efb743cb1ae94c6d71a39c2729735de62674dff332e094823ff2c33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "595c11370d9eaf6d557974d8b21c5398bc956e765cd0af9ce9233c116e2da6a5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ae11b22d67d7ea38967de689b7257574138dfae301cfb3aef21358bce38f4044"
+    sha256 cellar: :any,                 arm64_ventura:  "711a1c13d68ef7b5e8853ffa5732566df3e62d88759a2dcbd61b60a136bb068f"
+    sha256 cellar: :any,                 arm64_monterey: "f7bf5af198bbe107ab545e16d79bbb280363db0addd85409e21065757e03918b"
+    sha256 cellar: :any,                 sonoma:         "8ef84c0c0ff33aa76f7a777776d17cf13eb8e3ba7af2bc2ef323468e2634dbf0"
+    sha256 cellar: :any,                 ventura:        "dabc45f366e1d0d8d8b0cec7475fea52e2f0422844c3547065033b34b0007616"
+    sha256 cellar: :any,                 monterey:       "da1344a9733f0bf84eef780601019bd45e0799adf5713e097441cf72823306cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a75868a2b3fd4e753c13bbf417b318356915f75072d6f8f6097512bef0de1a4c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -37,10 +38,8 @@ class ClangUml < Formula
     # to provide the version using a CMake option
     args << "-DGIT_VERSION=#{version}" if build.stable?
 
-    if OS.mac? && (MacOS.version >= :ventura)
-      ENV.append "LDFLAGS", "-L#{llvm.opt_lib}c++"
-      args << "-DCMAKE_INSTALL_RPATH=#{rpath(target: llvm.opt_lib)}"
-    end
+    # Use LLVM-provided libc++
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-L#{llvm.opt_lib}c++ -L#{llvm.opt_lib} -lunwind" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

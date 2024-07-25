@@ -1,6 +1,6 @@
 class Gedit < Formula
   desc "GNOME text editor"
-  homepage "https://wiki.gnome.org/Apps/Gedit"
+  homepage "https://gedit-technology.github.io/apps/gedit/"
   url "https://download.gnome.org/sources/gedit/46/gedit-46.2.tar.xz"
   sha256 "c0866412bad147ebace2d282ffcbb5a0e9a304b20fd55640bee21c81e6d501ef"
   license "GPL-2.0-or-later"

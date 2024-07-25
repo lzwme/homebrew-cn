@@ -6,6 +6,13 @@ class Lockrun < Formula
   sha256 "cea2e1e64c57cb3bb9728242c2d30afeb528563e4d75b650e8acae319a2ec547"
   license :public_domain
 
+  # The upstream website doesn't publish version information, so we check the
+  # version history comment in `lockrun.c` itself.
+  livecheck do
+    url :stable
+    regex(%r{v?(\d+(?:\.\d+)+)\s+\d{4}[/-]\d{2}[/-]\d{2}}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60567111dd2a82dc49b2c4687b16cf29a21543d68f533e2ec8b34e4f1da2bd77"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "faddfa34e58f779eb9881ab52b8623f41a875b6198a40a6588e7048c42d210a3"

@@ -22,6 +22,7 @@ class GitCinnabar < Formula
   depends_on "mercurial"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
 

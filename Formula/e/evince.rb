@@ -1,18 +1,18 @@
 class Evince < Formula
   desc "GNOME document viewer"
-  homepage "https://wiki.gnome.org/Apps/Evince"
-  url "https://download.gnome.org/sources/evince/46/evince-46.3.tar.xz"
-  sha256 "bc0d1d41b9d7ffc762e99d2abfafacbf745182f0b31d86db5eec8c67f5f3006b"
+  homepage "https://apps.gnome.org/Evince/"
+  url "https://download.gnome.org/sources/evince/46/evince-46.3.1.tar.xz"
+  sha256 "945c20a6f23839b0d5332729171458e90680da8264e99c6f9f41c219c7eeee7c"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "fd325d001f0a26ede51f1169cd1d69f62189e22ca772ccf5949bf742702ee5eb"
-    sha256 arm64_ventura:  "4d2cf11142d80118155c6316be3d58a992a4d73c0345209e82a049a17fe5634d"
-    sha256 arm64_monterey: "8d230caaaa8ac63110bbdb04ea34656a1296cc3bb6d4873f7ef460e7dcaeec98"
-    sha256 sonoma:         "ba35131ca8404a18efb242555db8937e2c6e6ad6bdc6990717e2c174b177e8d2"
-    sha256 ventura:        "37dd9fab3bcc8986dc1e65b65a458197ff2d1d0f27e6a19a5c3f2271bf87ac72"
-    sha256 monterey:       "ebf12efd418ada6fd8f791e706dc3d8501cf91cca5e621ac54ec59ecc75066ce"
-    sha256 x86_64_linux:   "0fd0af71e2fe9b040ac804c68b6f1129b34d68803fb114a2d272dab2b34842d0"
+    sha256 arm64_sonoma:   "21852215aea592397425ed58039e347dbea319f9fecae3f753cd5acdcc147b94"
+    sha256 arm64_ventura:  "0cddc507eaf18b5d52c8f52983f3b646be142db4c8e470918534d66afdd0f19d"
+    sha256 arm64_monterey: "69ccf42eee57f2e1558bad935514778be45476869fc9358212f8dde85ea1f4a8"
+    sha256 sonoma:         "9cd783e163d622d63f0d1d5e0a48a7dde9aab95ceae0352fa0992c0b9acad2f3"
+    sha256 ventura:        "40428930fe5a7a103e279f2b914ddea2e113f0a2831992067d564cc09e8d8c18"
+    sha256 monterey:       "e4efa202ef6cf72f3ac992ba590523a26f438a73b502044202be3d1e9f4a8ab1"
+    sha256 x86_64_linux:   "5547d26ffb2d3e5e96dc34180d02c5bceccc8b0d10eec5d262c2744f809f3d32"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
