@@ -49,6 +49,8 @@ class Ettercap < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "libmaxminddb"
   depends_on "libnet"
@@ -67,6 +69,11 @@ class Ettercap < Formula
     # ...tapi stubify -isysroot ... -o libettercap-ui.0.8.3.1.tbd libettercap-ui.0.8.3.1.dylib
     # error: no such file or directory: 'libettercap-ui.0.8.3.1.dylib'
     depends_on "ninja" => :build
+
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "freetype"
+    depends_on "pango"
   end
 
   def install

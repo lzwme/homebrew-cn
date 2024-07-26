@@ -20,6 +20,7 @@ class Osslsigncode < Formula
 
   uses_from_macos "curl"
   uses_from_macos "python"
+  uses_from_macos "zlib"
 
   # Fix permission issue when installing bash completionn
   patch :DATA

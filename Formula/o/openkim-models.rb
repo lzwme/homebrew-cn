@@ -27,6 +27,10 @@ class OpenkimModels < Formula
   depends_on "cmake" => :build
   depends_on "kim-api"
 
+  on_macos do
+    depends_on "gcc"
+  end
+
   def install
     args = %W[
       -DKIM_API_MODEL_DRIVER_INSTALL_PREFIX=#{lib}/openkim-models/model-drivers

@@ -14,7 +14,7 @@ class Benerator < Formula
 
   def install
     # Remove unnecessary files
-    rm_f Dir["bin*.bat", "binpom.xml"]
+    rm(Dir["bin*.bat", "binpom.xml"])
 
     # Installs only the "bin" and "lib" directories from the tarball
     libexec.install Dir["bin", "lib"]

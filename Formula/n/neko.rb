@@ -1,119 +1,44 @@
 class Neko < Formula
   desc "High-level, dynamically typed programming language"
   homepage "https:nekovm.org"
+  url "https:github.comHaxeFoundationnekoarchiverefstagsv2-4-0.tar.gz"
+  version "2.4.0"
+  sha256 "232d030ce27ce648f3b3dd11e39dca0a609347336b439a4a59e9a5c0a465ce15"
   license "MIT"
-  revision 7
-
-  stable do
-    url "https:github.comHaxeFoundationnekoarchiverefstagsv2-3-0neko-2.3.0.tar.gz"
-    sha256 "850e7e317bdaf24ed652efeff89c1cb21380ca19f20e68a296c84f6bad4ee995"
-
-    depends_on "pcre"
-
-    on_linux do
-      depends_on "gtk+" # On mac, neko uses carbon. On Linux it uses gtk2
-    end
-
-    # Don't redefine MSG_NOSIGNAL -- https:github.comHaxeFoundationnekopull217
-    patch do
-      url "https:github.comHaxeFoundationnekocommit24a5e8658a104ae0f3afe66ef1906bb7ef474bfa.patch?full_index=1"
-      sha256 "1a707e44b7c1596c4514e896211356d1b35d4e4b578b14b61169a7be47e91ccc"
-    end
-
-    # Fix -Wimplicit-function-declaration issue in libsuiui.c
-    # https:github.comHaxeFoundationnekopull218
-    patch do
-      url "https:github.comHaxeFoundationnekocommit908149f06db782f6f1aa35723d6a403472a2d830.patch?full_index=1"
-      sha256 "3e9605cccf56a2bdc49ff6812eb56f3baeb58e5359601a8215d1b704212d2abb"
-    end
-
-    # Fix -Wimplicit-function-declaration issue in libsstdprocess.c
-    # https:github.comHaxeFoundationnekopull219
-    patch do
-      url "https:github.comHaxeFoundationnekocommit1a4bfc62122aef27ce4bf27122ed6064399efdc4.patch?full_index=1"
-      sha256 "7fbe2f67e076efa2d7aa200456d4e5cc1e06d21f78ac5f2eed183f3fcce5db96"
-    end
-
-    # Fix mariadb-connector-c CMake error: "Flow control statements are not properly nested."
-    # https:github.comHaxeFoundationnekopull225
-    patch do
-      url "https:github.comHaxeFoundationnekocommit660fba028af1b77be8cb227b8a44cc0ef16aba79.patch?full_index=1"
-      sha256 "7b0a60494eaef7c67cd15e5d80d867fee396ac70e99000603fba0dc3cd5e1158"
-    end
-
-    # Fix m1 specifics
-    # https:github.comHaxeFoundationnekopull224
-    patch do
-      url "https:github.comHaxeFoundationnekocommitff5da9b0e96cc0eabc44ad2c10b7a92623ba49ee.patch?full_index=1"
-      sha256 "ac843dfc7585535f3b08fee2b22e667fa6c38e62dcf8374cdfd1d8fcbdbcdcfd"
-    end
-  end
+  head "https:github.comHaxeFoundationneko.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "5df554d5b13e35244da52a836eb57f2f0c060db5af7389d08b7cc483aa30e22e"
-    sha256                               arm64_ventura:  "7884de8412bd4275f2ad1d64391b7b42c3c816143a8ae6f13b268bb2e9aa29a4"
-    sha256                               arm64_monterey: "5c98fefc1af0c5b4391c48c2c28957f3b11e635b4f6fdf2b8a274a9b3d71c6fc"
-    sha256                               arm64_big_sur:  "7dc2386e227172ce35a3c01583bcac98793e3477f23ac0dd764514fb1ad8126d"
-    sha256                               sonoma:         "c313dc45e64b718ca4b65a7d60fa34e667c9d196a1a3f155d4988abfd2a410b8"
-    sha256                               ventura:        "41e4b5cafe8330cabb6fb97ec386beb2a0390a2f89a2d91a3c0ff325d3cdba7b"
-    sha256                               monterey:       "25484b429d41aba93aed15be888c59bcf33247936c2fc0bfc4aa657324aaee7e"
-    sha256                               big_sur:        "c58be5fa39965347a20657f83e980e6a8b92c055b47e2425c1cd4ee228d76f9b"
-    sha256                               catalina:       "a6d4dfa77a8de46e49eb8cad58fd2423f6e0c57fc6788941bef81ea9abc02ad2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b85cdf1112098a5bb933676765efd29c446cf58a994f02e914b113681e84009"
-  end
-
-  head do
-    url "https:github.comHaxeFoundationneko.git", branch: "master"
-
-    depends_on "pcre2"
-
-    on_linux do
-      depends_on "gtk+3" # On mac, neko uses carbon. On Linux it uses gtk3
-    end
+    sha256 arm64_sonoma:   "f328cd57b25a6f02f44b9124020c60e0729b8ab66293263290569403dde76ad9"
+    sha256 arm64_ventura:  "1b43732229a9c256a5ef317d4d46887f57073e1166f8dcaf0bd42043b88e5c3b"
+    sha256 arm64_monterey: "b3090d3aa25403f4084b154e5920b8f2c1434c2a1ec11ba48a114452f46e4a2f"
+    sha256 sonoma:         "ca35339d3a40d4f817d4b04a2bcd5b0cdafa623aae869c554fb016a8cedae682"
+    sha256 ventura:        "0b8d1d088a6f5e251f1cda6642614224f63e31873328c7f85d69721c653d65ec"
+    sha256 monterey:       "a18d3cf349b7a01404af808e4e72e7f44be5a2a76a829ecc7a88f15a0c0ae23b"
+    sha256 x86_64_linux:   "4c068527390aaa0c95262fa54367ad354b5ec2bf0bd2658d1b0fe312ea87a8ac"
   end
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "bdw-gc"
-  depends_on "mbedtls@2"
+  depends_on "mbedtls"
+  depends_on "mysql-client"
+  depends_on "pcre2"
+  depends_on "zlib" # due to `mysql-client`
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "apr"
     depends_on "apr-util"
+    depends_on "gtk+3" # On mac, neko uses carbon. On Linux it uses gtk3
     depends_on "httpd"
   end
 
   def install
-    if build.stable?
-      inreplace "libsmysqlCMakeLists.txt",
-                %r{https:downloads.mariadb.orgf},
-                "https:downloads.mariadb.comConnectorsc"
-
-      # Work around for https:github.comHaxeFoundationnekoissues216 where
-      # maria-connector fails to detect the location of iconv.dylib on Big Sur.
-      # Also, no reason for maria-connector to compile its own version of zlib,
-      # just link against the system copy.
-      mysql_cmake_args = ["-Wno-dev", "-DWITH_EXTERNAL_ZLIB=1"]
-      if OS.mac?
-        mysql_cmake_args << "-DICONV_LIBRARIES=-liconv"
-        mysql_cmake_args << "-DICONV_INCLUDE_DIR="
-      end
-      inreplace "libsmysqlCMakeLists.txt", "-Wno-dev", mysql_cmake_args.join(" ")
-    end
-
-    # Let cmake download its own copy of MariaDBConnector during build and statically link it.
-    # It is because there is no easy way to define we just need any one of mariadb, mariadb-connector-c,
-    # mysql and mysql-client.
     args = %w[
-      -DSTATIC_DEPS=MariaDBConnector
       -DRELOCATABLE=OFF
       -DRUN_LDCONFIG=OFF
     ]
-    args << "-DCMAKE_INSTALL_RPATH=#{rpath}" if build.head?
     if OS.linux?
       args << "-DAPR_LIBRARY=#{Formula["apr"].opt_lib}"
       args << "-DAPR_INCLUDE_DIR=#{Formula["apr"].opt_include}apr-1"
@@ -121,7 +46,7 @@ class Neko < Formula
       args << "-DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util"].opt_include}apr-1"
     end
 
-    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

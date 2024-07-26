@@ -24,11 +24,14 @@ class Afflib < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "openssl@3"
   depends_on "python@3.12"
+  depends_on "readline"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   # Backport commits for regenerated pyaff.c to fix build with Python 3.12.
   # Remove in the next release.
@@ -63,11 +66,13 @@ class Afflib < Formula
     # As a side effect, we need to imitate the Makefile and provide paths to headerslibraries.
     ENV.append_to_cflags "-I#{include}"
     ENV.append "LDFLAGS", "-L#{lib}"
+
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".pyaff"
   end
 
   test do
-    system "#{bin}affcat", "-v"
+    system bin"affcat", "-v"
+
     system python3, "-c", "import pyaff"
   end
 end

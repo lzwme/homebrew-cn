@@ -1,10 +1,11 @@
 class MitScheme < Formula
   desc "MITGNU Scheme development tools and runtime library"
   homepage "https:www.gnu.orgsoftwaremit-scheme"
-  url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1.tar.gz"
-  mirror "https:ftpmirror.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1.tar.gz"
-  sha256 "5509fb69482f671257ab4c62e63b366a918e9e04734feb9f5ac588aa19709bc6"
+  url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
+  mirror "https:ftpmirror.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
+  sha256 "2c5b5bf1f44c7c2458da79c0943e082ae37f1752c7d9d1ce0a61f7afcbf04304"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https:ftp.gnu.orggnumit-schemestable.pkg?C=M&O=D"
@@ -13,13 +14,14 @@ class MitScheme < Formula
   end
 
   bottle do
-    sha256 monterey:     "bae1d2a271efb27c40b785490cb77ae62a2ad2856c49169df4ca4b6fa5d15a77"
-    sha256 big_sur:      "e53230ae27dc40a7b3a4ed54dfe9e905b60a605f5693e5fdbea513f4a5f12b35"
-    sha256 x86_64_linux: "84fc2e7429a15a8a894e39b4edfe042e4ddc404ef517896bcf63c8ee0c97bbed"
+    sha256 arm64_sonoma:   "da2acf2666e321393c150917e783456c04942de61a2b4db2eebfaeaac094168b"
+    sha256 arm64_ventura:  "23923b9cbbf60f33e46325ec788edaf149b1d43b62ddd69beff33528b14453c3"
+    sha256 arm64_monterey: "cfdb8ea9127c65a67e727fe75c293cde238172a18de91343540ff49c949f8449"
+    sha256 sonoma:         "a8ebb5f3d8e66fd9a2924b02bdd0e920e5484890865ea107fdbba9a737dc703c"
+    sha256 ventura:        "03ec5e2d199d6736dc7345d4ca3c083a78c53cb024b3874edb0e45aeb7123a2a"
+    sha256 monterey:       "72fcee689c1ca44d5834d654490f8368f099e939f4065c4f9f06d24c0022bd19"
+    sha256 x86_64_linux:   "0e910ffb8aff109164099832f8d465f54e9e0c731a0580cb0c794970e3f6ce11"
   end
-
-  # Does not build: https:savannah.gnu.orgbugs?64611
-  deprecate! date: "2023-11-20", because: :does_not_build
 
   # Has a hardcoded compile check for ApplicationsXcode.app
   # Dies on "configure: error: SIZEOF_CHAR is not 1" without Xcode.
@@ -29,34 +31,16 @@ class MitScheme < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
 
-  on_macos do
-    depends_on arch: :x86_64 # No support for Apple silicon: https:www.gnu.orgsoftwaremit-scheme#status
-  end
-
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
 
   resource "bootstrap" do
-    on_arm do
-      url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-aarch64le.tar.gz"
-      sha256 "708ffec51843adbc77873fc18dd3bafc4bd94c96a8ad5be3010ff591d84a2a8b"
-    end
-
-    on_intel do
-      url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-x86-64.tar.gz"
-      sha256 "8cfbb21b0e753ab8874084522e4acfec7cadf83e516098e4ab788368b748ae0c"
-    end
+    url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
+    sha256 "2c5b5bf1f44c7c2458da79c0943e082ae37f1752c7d9d1ce0a61f7afcbf04304"
   end
 
   def install
-    # Setting -march=native, which is what --build-from-source does, can fail
-    # with the error "the object ..., passed as the second argument to apply, is
-    # not the correct type." Only Haswell and above appear to be impacted.
-    # Reported 23rd Apr 2016: https:savannah.gnu.orgbugsindex.php?47767
-    # NOTE: `unless build.bottle?` avoids overriding --bottle-arch=[...].
-    ENV["HOMEBREW_OPTFLAGS"] = "-march=#{Hardware.oldest_cpu}" unless build.bottle?
-
     resource("bootstrap").stage do
       cd "src"
       system ".configure", "--prefix=#{buildpath}staging", "--without-x"

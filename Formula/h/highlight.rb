@@ -1,13 +1,13 @@
 class Highlight < Formula
   desc "Convert source code to formatted text with syntax highlighting"
-  homepage "http://www.andre-simon.de/doku/highlight/en/highlight.php"
-  url "http://www.andre-simon.de/zip/highlight-4.12.tar.bz2"
+  homepage "http://andre-simon.de/doku/highlight/en/highlight.php"
+  url "http://andre-simon.de/zip/highlight-4.12.tar.bz2"
   sha256 "0f7d03362d74dddfb3bc8419fb8198bf8c9b4a5788dec491a00cd43acdf07f1e"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/saalen/highlight.git", branch: "master"
 
   livecheck do
-    url "http://www.andre-simon.de/zip/download.php"
+    url "http://andre-simon.de/zip/download.php"
     regex(/href=.*?highlight[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

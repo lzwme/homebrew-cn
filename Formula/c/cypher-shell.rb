@@ -1,10 +1,9 @@
 class CypherShell < Formula
   desc "Command-line shell where you can execute Cypher against Neo4j"
   homepage "https://neo4j.com"
-  url "https://dist.neo4j.org/cypher-shell/cypher-shell-5.21.0.zip"
-  sha256 "98120a168bf67c6040429d0abab44371c588577680508edcd741a70c2ceca8a6"
+  url "https://dist.neo4j.org/cypher-shell/cypher-shell-5.22.0.zip"
+  sha256 "9b9e6a187aef05aeda744d655b8139d50fd1d7a9f5dea2a14c792e13c2e19113"
   license "GPL-3.0-only"
-  revision 1
   version_scheme 1
 
   livecheck do
@@ -13,14 +12,13 @@ class CypherShell < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b15234e48cda90b4016156b29be6a1358771a97b21c38882d23b3baf1301030"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b15234e48cda90b4016156b29be6a1358771a97b21c38882d23b3baf1301030"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b15234e48cda90b4016156b29be6a1358771a97b21c38882d23b3baf1301030"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b15234e48cda90b4016156b29be6a1358771a97b21c38882d23b3baf1301030"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ea149e155a93b4cb5b4da0715bf8962565155cabdf66c008e7e43ee437b7256"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b15234e48cda90b4016156b29be6a1358771a97b21c38882d23b3baf1301030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03ea1f073944ac41767c4d2de93f0c3387312693b542d3efe628770012216929"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0db26ef4a8cd51d6cb6b2d6ce97285b382ad50d3979fd48783bb9e72735ba0be"
+    sha256 cellar: :any_skip_relocation, ventura:        "0db26ef4a8cd51d6cb6b2d6ce97285b382ad50d3979fd48783bb9e72735ba0be"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "858a49f9955d7f10ad6e0726782eea37d114928bf70f2ee0299b5e491d45d2ca"
   end
 
   depends_on "openjdk@21"

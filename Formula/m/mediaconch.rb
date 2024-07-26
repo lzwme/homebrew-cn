@@ -26,7 +26,9 @@ class Mediaconch < Formula
   depends_on "sqlite"
 
   uses_from_macos "curl"
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
+  uses_from_macos "zlib"
 
   def install
     cd "ZenLib/Project/GNU/Library" do
@@ -63,6 +65,9 @@ class Mediaconch < Formula
   end
 
   test do
-    pipe_output("#{bin}/mediaconch", test_fixtures("test.mp3"))
+    output = shell_output("#{bin}/mediaconch #{test_fixtures("test.mp3")}")
+    assert_match "N/A! #{test_fixtures("test.mp3")}", output
+
+    assert_match version.to_s, shell_output("#{bin}/mediaconch --version")
   end
 end

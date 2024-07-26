@@ -18,10 +18,12 @@ class Libmediainfo < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "libmms"
   depends_on "libzen"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   # These files used to be distributed as part of the media-info formula
   link_overwrite "includeMediaInfo*"

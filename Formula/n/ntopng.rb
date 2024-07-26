@@ -36,6 +36,7 @@ class Ntopng < Formula
   depends_on "libtool" => :build
   depends_on "lua" => :build
   depends_on "pkg-config" => :build
+
   depends_on "json-c"
   depends_on "libmaxminddb"
   depends_on "libsodium"
@@ -43,11 +44,21 @@ class Ntopng < Formula
   depends_on "openssl@3"
   depends_on "redis"
   depends_on "rrdtool"
+  depends_on "sqlite"
   depends_on "zeromq"
+  depends_on "zlib"
 
   uses_from_macos "curl"
+  uses_from_macos "expat"
   uses_from_macos "libpcap"
-  uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on "zstd"
+  end
+
+  on_linux do
+    depends_on "libcap"
+  end
 
   fails_with gcc: "5"
 

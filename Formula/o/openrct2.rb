@@ -20,6 +20,7 @@ class Openrct2 < Formula
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "pkg-config" => :build
+
   depends_on "duktape"
   depends_on "flac"
   depends_on "freetype"
@@ -32,6 +33,8 @@ class Openrct2 < Formula
   depends_on "openssl@3"
   depends_on "sdl2"
   depends_on "speexdsp"
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "curl"
@@ -56,19 +59,18 @@ class Openrct2 < Formula
     (buildpath"datatitle").install resource("title-sequences")
     (buildpath"dataobject").install resource("objects")
 
-    mkdir "build" do
-      cmake_args = [
-        "-DWITH_TESTS=OFF",
-        "-DDOWNLOAD_TITLE_SEQUENCES=OFF",
-        "-DDOWNLOAD_OBJECTS=OFF",
-        "-DMACOS_USE_DEPENDENCIES=OFF",
-        "-DDISABLE_DISCORD_RPC=ON",
-      ]
-      cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
-      system "cmake", "..", *std_cmake_args, *cmake_args
+    args = [
+      "-DWITH_TESTS=OFF",
+      "-DDOWNLOAD_TITLE_SEQUENCES=OFF",
+      "-DDOWNLOAD_OBJECTS=OFF",
+      "-DMACOS_USE_DEPENDENCIES=OFF",
+      "-DDISABLE_DISCORD_RPC=ON",
+    ]
+    args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
 
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # By default macOS build only looks up data in app bundle Resources
     libexec.install bin"openrct2"

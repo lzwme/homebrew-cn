@@ -5,12 +5,6 @@ class Crm114 < Formula
   sha256 "fb626472eca43ac2bc03526d49151c5f76b46b92327ab9ee9c9455210b938c2b"
   license "GPL-3.0-only"
 
-  livecheck do
-    url "https://crm114.sourceforge.net/wiki/doku.php?id=download"
-    regex(%r{href=.*?/crm114[._-]v?(\d+(?:\.\d+)*)[._-][^"' >]*?[._-]src\.t}i)
-    strategy :page_match
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "02293e7f49287e46515f25f788207339c207a9caed0b57c31853b691a9e0358c"
     sha256 cellar: :any,                 arm64_ventura:  "9791c36069114cb7235007258500b450c2d28aec42bc0753fae806bb2ef71dd4"
@@ -27,6 +21,10 @@ class Crm114 < Formula
     sha256 cellar: :any,                 el_capitan:     "d48449acfcd105d07e11c0ac7c47fdb21b88d3346c0b51377b9e44b8c8726073"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "159ba6e29e2da48573b2305e5d8afa7e6cb5806337fa6e2dc4375f8f77d781ca"
   end
+
+  # The homepage has disappeared along with the `stable` tarball and the
+  # SourceForge project only contains files from 2002-2004.
+  deprecate! date: "2024-07-24", because: :unmaintained
 
   depends_on "tre"
 

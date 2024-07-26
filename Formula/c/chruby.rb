@@ -7,8 +7,14 @@ class Chruby < Formula
   head "https:github.compostmodernchruby.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "977cf9319a21ddbbd26d3f0a43ed75825eb2a514bdce56b4045e5214732ec13b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64a6475437b898659d47bded2e62cd7df312d5eb92b87008877755c11a041e34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64a6475437b898659d47bded2e62cd7df312d5eb92b87008877755c11a041e34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "64a6475437b898659d47bded2e62cd7df312d5eb92b87008877755c11a041e34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0ff541a8d6e1c0f152ec30116c895526e1a7a47ed06a1b853adfb26f8aa35792"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ff541a8d6e1c0f152ec30116c895526e1a7a47ed06a1b853adfb26f8aa35792"
+    sha256 cellar: :any_skip_relocation, monterey:       "64a6475437b898659d47bded2e62cd7df312d5eb92b87008877755c11a041e34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64a6475437b898659d47bded2e62cd7df312d5eb92b87008877755c11a041e34"
   end
 
   def install

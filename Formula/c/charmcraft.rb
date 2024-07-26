@@ -3,18 +3,18 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/f8/5b/ac830e086fdca311718bd1573457987d6b50963e15997a0eee2795c9d533/charmcraft-3.1.0.tar.gz"
-  sha256 "d9f59f64ab32df886dd57558df16e3ce5a4216fb6c857e78aa0c766a93fbc48f"
+  url "https://files.pythonhosted.org/packages/4b/77/24455dd47274add9ec1beae1d804ca52e04f7d634a0b249cfa9ae2624e88/charmcraft-3.1.1.tar.gz"
+  sha256 "37a5099cc715227aea3f7fe6bebb06d8e3ca6122a2621812301c4daeb0825f3a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e895a26184a62898ca26d7e043776c0e962d8effabcd515829efdde17d231363"
-    sha256 cellar: :any,                 arm64_ventura:  "8b177dc70d8203dbbcb217b2c83c9114b9667d5caa1cf8ad557b63c5a82aa546"
-    sha256 cellar: :any,                 arm64_monterey: "ee307cebd97ca1dc78bd1de3f2e462336d7ea5d533004f24c3fbc0a3b6ffecb3"
-    sha256 cellar: :any,                 sonoma:         "9c5856e4f240a9e17937d6852e324ac4fa05d8cf7b94b51a7e9b38bc22f1deb8"
-    sha256 cellar: :any,                 ventura:        "f30af03c1a8b161907b58665b7ce9785d20b3eb3cb20683677d15099e5b88863"
-    sha256 cellar: :any,                 monterey:       "38f1ae5de024a254d25db8ae00c11fc42e700d85999c123c02abcc04b364a873"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f94afa79e99391dd56d7d01c6406b8c0c454d6078ff93381ea4fca12ef362b29"
+    sha256 cellar: :any,                 arm64_sonoma:   "54428fe9948b60ade04771a8c2b96d7d7fb51c1df81ff1c61e61009a46c9ace6"
+    sha256 cellar: :any,                 arm64_ventura:  "d671289da5204941027cf12f34a23254f04d697d58b5092610cf54c534a3bb60"
+    sha256 cellar: :any,                 arm64_monterey: "fa3f0b319d3e0253aa414de5098a4272cf132aa27b75365d03b884561033b95f"
+    sha256 cellar: :any,                 sonoma:         "1e0440d243cd4bc4d5346fde231d5a1abd79b1eff74ede9be78471709a8e09e9"
+    sha256 cellar: :any,                 ventura:        "61ad15d0701cff411c182337f79aff0dcc58eeb949f9f03b3b74c912999b1e44"
+    sha256 cellar: :any,                 monterey:       "ea556c3ce5d26aec053d39fae02e7a54573e05bf781d980dbb829c801da824ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "167416dc2bb70fd2006ba553b3cb42f71a66a6b7033bda78a024a2109cdf47bd"
   end
 
   depends_on "rust" => :build
@@ -24,6 +24,11 @@ class Charmcraft < Formula
   depends_on "libyaml"
   depends_on "pygit2"
   depends_on "python@3.12"
+
+  resource "annotated-types" do
+    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
@@ -58,6 +63,11 @@ class Charmcraft < Formula
   resource "craft-parts" do
     url "https://files.pythonhosted.org/packages/7c/2d/5a2cd895c8bfebfb35b948345c4224e740e17901eecdc4833821146a8da5/craft_parts-1.33.0.tar.gz"
     sha256 "cb07fbfc46f44c4a7fce641baaf1d4476bb835858ac10069a9407921743427f5"
+  end
+
+  resource "craft-platforms" do
+    url "https://files.pythonhosted.org/packages/2a/e0/142cdea8fbddc9dd2779c74ff60b776ed68f6dc6f261b6223d77251fcdfe/craft_platforms-0.1.1.tar.gz"
+    sha256 "462da03aac2fadb656dbdeb4207de44a2208dcfbb9977f1433d59e59d6b74f42"
   end
 
   resource "craft-providers" do
@@ -101,8 +111,8 @@ class Charmcraft < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/d6/b2/c1d251caf629375d0dcced2c4fe6a7e2c38395c1f8438fd63e6cebfdb7ca/importlib_metadata-8.1.0.tar.gz"
-    sha256 "fcdcb1d5ead7bdf3dd32657bb94ebe9d2aabfe89a19782ddc32da5041d6ebfb4"
+    url "https://files.pythonhosted.org/packages/f6/a1/db39a513aa99ab3442010a994eef1cb977a436aded53042e69bee6959f74/importlib_metadata-8.2.0.tar.gz"
+    sha256 "72e8d4399996132204f9a16dcc751af254a48f8d1b20b9ff0f98d4a8f901e73d"
   end
 
   resource "jaraco-classes" do
@@ -261,8 +271,8 @@ class Charmcraft < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/36/a2/83c3e2024cefb9a83d832e8835f9db0737a7a2b04ddfdd241c650b703db0/rpds_py-0.19.0.tar.gz"
-    sha256 "4fdc9afadbeb393b4bbbad75481e0ea78e4469f2e1d713a90811700830b553a9"
+    url "https://files.pythonhosted.org/packages/2f/fe/5217efe981c2ae8647b503ba3b8f55efc837df62f63667572b4bb75b30bc/rpds_py-0.19.1.tar.gz"
+    sha256 "31dd5794837f00b46f4096aa8ccaa5972f73a938982e32ed817bb520c465e520"
   end
 
   resource "secretstorage" do
@@ -296,8 +306,8 @@ class Charmcraft < Formula
   end
 
   resource "types-pyyaml" do
-    url "https://files.pythonhosted.org/packages/0a/3c/6f4c97d9eb2b58f57fc595c105ae0a53a851747cddfb7df30f3d7192c837/types-PyYAML-6.0.12.20240311.tar.gz"
-    sha256 "a9e0f0f88dc835739b0c1ca51ee90d04ca2a897a71af79de9aec5f38cb0a5342"
+    url "https://files.pythonhosted.org/packages/b5/c4/7d307b64d33f98c18bcddb0ed80d9f19f492cb5a849eb3d23de9555e2ea8/types-PyYAML-6.0.12.20240724.tar.gz"
+    sha256 "cf7b31ae67e0c5b2919c703d2affc415485099d3fe6666a6912f040fd05cb67f"
   end
 
   resource "typing-extensions" do

@@ -25,9 +25,9 @@ class Basex < Formula
 
   def install
     rm Dir["bin/*.bat"]
-    rm_rf "repo"
-    rm_rf "data"
-    rm_rf "etc"
+    rm_r("repo")
+    rm_r("data")
+    rm_r("etc")
 
     libexec.install Dir["*"]
     bin.install Dir["#{libexec}/bin/*"]

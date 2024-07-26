@@ -1,7 +1,7 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https:github.comhadolinthadolint"
-  # TODO: Try to switch `ghc@9.2` to `ghc` when spdx supports base>=4.17
+  # TODO: Update GHC dependency on the next release and remove resource
   url "https:github.comhadolinthadolintarchiverefstagsv2.12.0.tar.gz"
   sha256 "1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545"
   license "GPL-3.0-only"
@@ -20,11 +20,21 @@ class Hadolint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build # https:github.comhadolinthadolintissues904
+  depends_on "ghc@9.6" => :build # can use GHC 9.8 on the next release
 
   uses_from_macos "xz"
 
+  # Use newer cabal.project to fix error fetching `shellcheck` and allow building `spdx` with GHC 9.6.
+  # Ref: https:github.comhadolinthadolintcommit6a6dd09917d4b6c7c8fb5a5d8c31bb24e2a3b1e0
+  resource "cabal.project" do
+    url "https:raw.githubusercontent.comhadolinthadolint6a6dd09917d4b6c7c8fb5a5d8c31bb24e2a3b1e0cabal.project"
+    sha256 "48c6aadfdf982760501742f55e0f22b57c3f9aada0097d8bb8fc91522b000719"
+  end
+
   def install
+    odie "Remove cabal.project resource as no longer needed in new release!" if version > "2.12.0"
+    buildpath.install resource("cabal.project")
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end

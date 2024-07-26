@@ -34,7 +34,7 @@ class Bloaty < Formula
     # https:github.comprotocolbuffersprotobufissues9947
     ENV.append_to_cflags "-DNDEBUG"
     # Remove vendored dependencies
-    %w[abseil-cpp capstone protobuf re2].each { |dir| (buildpath"third_party"dir).rmtree }
+    %w[abseil-cpp capstone protobuf re2].each { |dir| rm_r(buildpath"third_party"dir) }
     abseil_cxx_standard = 17 # Keep in sync with C++ standard in abseil.rb
     inreplace "CMakeLists.txt", "CMAKE_CXX_STANDARD 11", "CMAKE_CXX_STANDARD #{abseil_cxx_standard}"
     inreplace "CMakeLists.txt", "-std=c++11", "-std=c++17"

@@ -22,6 +22,10 @@ class Hdf5AT110 < Formula
 
   keg_only :versioned_formula
 
+  # 1.10.11 is the last release for 1.10.x
+  # https:github.comHDFGrouphdf5#release-schedule
+  deprecate! date: "2024-07-24", because: :unsupported
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

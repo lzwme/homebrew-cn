@@ -24,6 +24,7 @@ class Aide < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "libgcrypt"
   depends_on "libgpg-error"
   depends_on "pcre2"
@@ -31,6 +32,7 @@ class Aide < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     # use sdk's strnstr instead
@@ -39,11 +41,9 @@ class Aide < Formula
     system "sh", ".autogen.sh" if build.head?
 
     args = %W[
-      --disable-lfs
       --disable-static
       --with-zlib
       --sysconfdir=#{etc}
-      --prefix=#{prefix}
     ]
 
     args << if OS.mac?
@@ -52,7 +52,7 @@ class Aide < Formula
       "--with-curl=#{Formula["curl"].prefix}"
     end
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
 
     system "make", "install"
   end
@@ -69,6 +69,6 @@ class Aide < Formula
       database_attrs = sha256
       etc p+i+u+g+sha256
     EOS
-    system "#{bin}aide", "--config-check", "-c", "aide.conf"
+    system bin"aide", "--config-check", "-c", "aide.conf"
   end
 end

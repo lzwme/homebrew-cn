@@ -35,6 +35,13 @@ class MediaInfo < Formula
   end
 
   test do
-    pipe_output("#{bin}mediainfo", test_fixtures("test.mp3"))
+    output = shell_output("#{bin}mediainfo #{test_fixtures("test.mp3")}")
+    assert_match <<~EOS, output
+      General
+      Complete name                            : #{test_fixtures("test.mp3")}
+      Format                                   : MPEG Audio
+    EOS
+
+    assert_match version.to_s, shell_output("#{bin}mediainfo --Version")
   end
 end

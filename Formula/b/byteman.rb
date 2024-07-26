@@ -24,7 +24,7 @@ class Byteman < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin*.bat"]
+    rm_r(Dir["bin*.bat"])
     doc.install Dir["docs*"], "README"
     libexec.install ["bin", "lib", "contrib"]
     pkgshare.install ["sample"]

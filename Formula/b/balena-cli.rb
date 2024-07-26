@@ -42,10 +42,10 @@ class BalenaCli < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec"libnode_modulesbalena-clinode_modules"
     node_modules.glob("{ffi-napi,ref-napi}prebuilds*")
-                .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
-    (node_modules"lzma-nativebuild").rmtree
-    (node_modules"usb").rmtree if OS.linux?
+    rm_r(node_modules"lzma-nativebuild")
+    rm_r(node_modules"usb") if OS.linux?
 
     # Replace universal binaries with native slices
     deuniversalize_machos

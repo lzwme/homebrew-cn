@@ -68,6 +68,18 @@ class Postgis < Formula
     # https:github.comprotobuf-cprotobuf-cpull711
     ENV["PROTOCC"] = Formula["protobuf"].opt_bin"protoc"
 
+    # PostGIS' build system assumes it is being installed to the same place as
+    # PostgreSQL, and looks for the `postgres` binary relative to the
+    # installation `bindir`. We gently support this system using an illusion.
+    #
+    # PostGIS links against the `postgres` binary for symbols that aren't
+    # exported in the public libraries `libpgcommon.a` and similar, so the
+    # build will break with confusing errors if this is omitted.
+    #
+    # See: https:github.comNixOSnixpkgscommit330fff02a675f389f429d872a590ed65fc93aedb
+    bin.mkpath
+    ln_s "#{postgresql.opt_bin}postgres", "#{bin}postgres"
+
     args = [
       "--with-projdir=#{Formula["proj"].opt_prefix}",
       "--with-jsondir=#{Formula["json-c"].opt_prefix}",
@@ -81,8 +93,7 @@ class Postgis < Formula
     ]
 
     system ".autogen.sh" if build.head?
-    # Pretend to install into HOMEBREW_PREFIX to allow PGXS to find PostgreSQL binaries
-    system ".configure", *args, *std_configure_args(prefix: HOMEBREW_PREFIX)
+    system ".configure", *args, *std_configure_args
     system "make"
     # Override the hardcoded install paths set by the PGXS makefiles
     system "make", "install", "bindir=#{bin}",
@@ -91,6 +102,8 @@ class Postgis < Formula
                               "pkglibdir=#{libpostgresql.name}",
                               "datadir=#{sharepostgresql.name}",
                               "PG_SHAREDIR=#{sharepostgresql.name}"
+
+    rm "#{bin}postgres"
 
     # Extension scripts
     bin.install %w[

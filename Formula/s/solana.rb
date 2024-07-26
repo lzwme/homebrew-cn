@@ -38,6 +38,9 @@ class Solana < Formula
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
+  depends_on "openssl@3"
+
+  uses_from_macos "llvm" => :build # for libclang
   uses_from_macos "zlib"
 
   on_linux do
@@ -59,6 +62,11 @@ class Solana < Formula
     ].each do |bin|
       system "cargo", "install", "--no-default-features", *std_cargo_args(path: bin)
     end
+
+    # Note; the solana-test-validator is installed as bin of the validator cargo project, rather than
+    # it's own dedicate project, hence why it's installed outside of the loop above
+    system "cargo", "install", "--no-default-features",
+      "--bin", "solana-test-validator", *std_cargo_args(path: "validator")
   end
 
   test do

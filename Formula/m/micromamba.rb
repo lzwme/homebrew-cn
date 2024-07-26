@@ -28,6 +28,7 @@ class Micromamba < Formula
   depends_on "nlohmann-json" => :build
   depends_on "spdlog" => :build
   depends_on "tl-expected" => :build
+
   depends_on "fmt"
   depends_on "libsolv"
   depends_on "lz4"
@@ -38,6 +39,7 @@ class Micromamba < Formula
   depends_on "zstd"
 
   uses_from_macos "python" => :build
+  uses_from_macos "bzip2"
   uses_from_macos "curl", since: :ventura # uses curl_url_strerror, available since curl 7.80.0
   uses_from_macos "krb5"
   uses_from_macos "libarchive", since: :monterey
@@ -86,7 +88,7 @@ class Micromamba < Formula
     assert_match version.to_s, shell_output("#{bin}micromamba --version").strip
 
     python_version = "3.9.13"
-    system "#{bin}micromamba", "create", "-n", "test", "python=#{python_version}", "-y", "-c", "conda-forge"
+    system bin"micromamba", "create", "-n", "test", "python=#{python_version}", "-y", "-c", "conda-forge"
     assert_match "Python #{python_version}", shell_output("#{bin}micromamba run -n test python --version").strip
   end
 end

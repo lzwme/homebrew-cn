@@ -1,12 +1,13 @@
 class Etsh < Formula
   desc "Two ports of /bin/sh from V6 UNIX (circa 1975)"
-  homepage "https://etsh.nl/"
-  url "https://etsh.nl/src/etsh_5.4.0/etsh-5.4.0.tar.xz"
+  homepage "https://etsh.dev/"
+  url "https://etsh.dev/src/etsh_5.4.0/etsh-5.4.0.tar.xz"
   sha256 "fd4351f50acbb34a22306996f33d391369d65a328e3650df75fb3e6ccacc8dce"
+  license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", :public_domain]
   version_scheme 1
 
   livecheck do
-    url "https://etsh.nl/src/"
+    url "https://etsh.dev/src/"
     regex(/href=.*?etsh[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

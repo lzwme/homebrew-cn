@@ -21,14 +21,25 @@ class Mikutter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fb63d053caabda978ef73ca377addc05ae0d51b8eccb4c9b8ac1daef02d8e8a"
   end
 
+  depends_on "at-spi2-core"
+  depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "gtk+3"
+  depends_on "harfbuzz"
+  depends_on "pango"
   depends_on "ruby"
 
+  uses_from_macos "libffi"
   uses_from_macos "libxml2" # for nokogiri
   uses_from_macos "libxslt" # for nokogiri
+  uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     depends_on "terminal-notifier"
   end
 

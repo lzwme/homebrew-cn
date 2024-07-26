@@ -3,18 +3,18 @@ require "languagenode"
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https:tailwindcss.com"
-  url "https:github.comtailwindlabstailwindcssarchiverefstagsv3.4.6.tar.gz"
-  sha256 "31bdf3fd34bbe5dd2cfb129349197199b134ad88debf9d26413c9369c2eaf39a"
+  url "https:github.comtailwindlabstailwindcssarchiverefstagsv3.4.7.tar.gz"
+  sha256 "eec408a6ae90764c72d644f83cbf711749a895301dde1a34fe8b473dfbd40bca"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7623ad0095c26e1960af6880f7c4229df139ff11c4c28ca7b755b7643a312ec1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77a995050d92b4958fe5c3ab07ba624cb4ac25038fc8dc6c37f4d981266529ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "77a995050d92b4958fe5c3ab07ba624cb4ac25038fc8dc6c37f4d981266529ce"
-    sha256 cellar: :any_skip_relocation, sonoma:         "00edcc3b48f9f625dc1c79e1080488d052464c94c6d3f14e7e438429e86ffdc2"
-    sha256 cellar: :any_skip_relocation, ventura:        "b15245ca6d22b87225cf2f4721e11cce54c7ae8f578d7d53de7c2c04f8c69b90"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe5a8201bb42ec84927558842506c309587d0c9db6471143c8d64e8a62eec63a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf50a1f360b90fd3c6019c3969005a964704b6e3a15d83b9ef7eee0b3184520"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d27c49f81d7235d86dfdacf4212bd5e541967e914e280e72771f3b201896f20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c50c6056c22a72b35374a30aa2a094b7c8c27a3900bb09d7d4dfb51679c4d88"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c50c6056c22a72b35374a30aa2a094b7c8c27a3900bb09d7d4dfb51679c4d88"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bab433abcb45f14adf4612e2b7498b096e1fe80d3a0fc8787bbb9eaeba9a4168"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e4bb2e3d9f65a95e8e40545bc8d822750d880b8378e5a86ad223ead76485aea"
+    sha256 cellar: :any_skip_relocation, monterey:       "9fb8c6304174372bd664c48945561b8dfeef522943495212576ce46159026a93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dbd40b813790067933d85ec9580cb85d3c55dfcca9b71958c39ebfd1ffce17b"
   end
 
   depends_on "node" => :build

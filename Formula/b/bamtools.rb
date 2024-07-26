@@ -28,7 +28,7 @@ class Bamtools < Formula
 
   def install
     # Delete bundled jsoncpp to avoid fallback
-    (buildpath"srcthird_partyjsoncpp").rmtree
+    rm_r(buildpath"srcthird_partyjsoncpp")
 
     # Build shared library
     system "cmake", "-S", ".", "-B", "build_shared",

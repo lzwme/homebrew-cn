@@ -7,7 +7,8 @@ class Yadm < Formula
   head "https:github.comTheLocehiliosanyadm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fae6c470a2f67ecdcbfb2b973d78d74563759d4f39988f1be71c4641345b88ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3a6b4ce5923f10c490affc90e19372b2393d40aa1ab188a71627bb3005b5ec8a"
   end
 
   def install
