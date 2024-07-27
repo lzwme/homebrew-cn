@@ -2778,6 +2778,7 @@ Homebrew-homebrew-core/Formula/i/iprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iproute2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iproute2mac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipsumdump.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/ipsw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iptables.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iputils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipv6calc.rb, Homebrew/homebrew-core, 1
@@ -4626,7 +4627,7 @@ Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1

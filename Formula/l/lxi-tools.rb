@@ -21,18 +21,28 @@ class LxiTools < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "cairo"
   depends_on "desktop-file-utils"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "gtk4"
   depends_on "gtksourceview5"
   depends_on "hicolor-icon-theme"
   depends_on "json-glib"
   depends_on "libadwaita"
   depends_on "liblxi"
   depends_on "lua"
+  depends_on "readline"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+
     rm_f "#{share}glib-2.0schemasgschemas.compiled"
   end
 

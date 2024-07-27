@@ -1,9 +1,9 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u412-ga.tar.gz"
-  version "1.8.0-412"
-  sha256 "f63bb60fbc6e798b0bbf5b6477765c66740a2b3cceab2d6713be879057f1c99b"
+  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u422-ga.tar.gz"
+  version "1.8.0-422"
+  sha256 "3931898b4336f0e583a5e97df7e5c339d859d53afaff6dafe20124107e836ebe"
   license "GPL-2.0-only"
 
   livecheck do
@@ -15,10 +15,10 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "fedd84f8e92c2d2a99d04c127fa9b1d1f1ce4155a79c3d9d253c2d1b672397e0"
-    sha256 cellar: :any,                 ventura:      "c858f2fc6c5b283ac8f0b13320eed010876c6a04eb711359b993aae6262bcd8a"
-    sha256 cellar: :any,                 monterey:     "2a7ada2abda6b533ef44572342e51a0f8adcfe4a3ced4b5e872fc390a857495f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9eba0e19767a4ba2483ae12c89ce575f7ef639cdb0a0efd38361e00cba65d830"
+    sha256 cellar: :any,                 sonoma:       "cb987dc52503fcabc91b10c4700fc5c46d10f32c36caf3698d850a6d57124026"
+    sha256 cellar: :any,                 ventura:      "25366b96f7324d1499663cb679cacd0d826d174e05d9f69b4c2e4f9e5fe44507"
+    sha256 cellar: :any,                 monterey:     "4f75d93506ba05e827ab68b1e6e415584bed506eb881c7088f3f27b621e4aac3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bc71861ff5e8041f23f12b299f45b6bcf4b47cfba392500f800add2b7693d50"
   end
 
   keg_only :versioned_formula
@@ -94,11 +94,6 @@ class OpenjdkAT8 < Formula
         s.gsub! "$(subst .,,$(MACOSX_VERSION_MIN))", ENV["HOMEBREW_MACOS_VERSION_NUMERIC"]
         s.gsub! "MACOSX_VERSION_MIN=10.7.0", "MACOSX_VERSION_MIN=#{MacOS.version}"
       end
-
-      # Fix Xcode 13 detection.
-      inreplace "commonautoconftoolchain.m4",
-                "if test \"${XC_VERSION_PARTS[[0]]}\" != \"6\"",
-                "if test \"${XC_VERSION_PARTS[[0]]}\" != \"#{MacOS::Xcode.version.major}\""
     else
       # Fix linker errors on brewed GCC
       inreplace "commonautoconfflags.m4", "-Xlinker -O1", ""

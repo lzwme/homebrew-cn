@@ -3,18 +3,18 @@ require "language/node"
 class Solhint < Formula
   desc "Linter for Solidity code"
   homepage "https://protofire.github.io/solhint/"
-  url "https://registry.npmjs.org/solhint/-/solhint-5.0.1.tgz"
-  sha256 "c44aad3d7b3e3d41c64af799744741b58392fac028f95aee50a1fd79af315a36"
+  url "https://registry.npmjs.org/solhint/-/solhint-5.0.2.tgz"
+  sha256 "072a0704218fc9c1c13bf86e3074ab3cc79fa4b8586931ec2acd4f510c53865c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a28d0a4f80daea8a106b28669d0dacd22d080b023e65a93b36748e813d4d91f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfc8b1806f8fbe61da55b2938bb7d9b65705dbae1c313c2d36fa1b8f53780a59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b634335aa0dc5c67db90a25f333eca2b97d37f7d1a88fb1e53de85517ec32696"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d9025605b253e8b6e131cbaf594d2d1b751939e9f4a465a7f0676dd2840b6249"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3beee10dd76be60aeeb3260e7017670bb19b116084088ad0ea782b7d1ddb634"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e3bcd51096fe79a92a669dc313c109c9e40eb8bbf7136aadff15eb78c1e1061"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd811f57ccb4c3fb7308b9e762544e43a240f49233fa781d7f2044267c63d910"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c5a3700968c53f71b1b02d6cae9363c4584856a6814caea3858a3ec568cfa3d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5a3700968c53f71b1b02d6cae9363c4584856a6814caea3858a3ec568cfa3d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d054a8aaf63e6bc74016009d8280b1f293b5dfda8c5c6feb412d9159f055150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0c43618fbb4398aa69d5b0d8b15367f5413fccc921f4d99da8eb2080e6fce76"
   end
 
   depends_on "node"

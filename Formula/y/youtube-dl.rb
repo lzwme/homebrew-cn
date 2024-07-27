@@ -43,7 +43,7 @@ class YoutubeDl < Formula
     if build.head?
       system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python3}", "install"
       fish_completion.install prefix"etcfishcompletionsyoutube-dl.fish"
-      (prefix"etcfish").rmtree
+      rm_r(prefix"etcfish")
     else
       virtualenv_install_with_resources
       # Handle "ERROR: Unable to extract uploader id" until new release

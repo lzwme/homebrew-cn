@@ -1,19 +1,19 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
   homepage "https:github.commagic-wormholemagic-wormhole.rs"
-  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.0.tar.gz"
-  sha256 "dee1f6784310c0855473aed5fa45866b74e90baf3807e881dee8139caf20c9b3"
+  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.1.tar.gz"
+  sha256 "c6e2acd3cccd982f449d26184d714d4cf813f51b8b75b3e36ecbb78565b3f4e8"
   license "EUPL-1.2"
   head "https:github.commagic-wormholemagic-wormhole.rs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a69c7e6833c59df6da5a9529737823aedaff273802b7f461b624a6dd6dffb11c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b30394c767a8eef7cfdddd48f53cd896bb4cf5cf5f9604a4a6aa4cb56742f78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4ce2ac8fbbe62f82e8078d2cb29af22861bc7c0cf554a83c2bf4906afb1cd00"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24175fe4e1a585f986850e0f890b0c0512f829ef297e556e28f871afd6510849"
-    sha256 cellar: :any_skip_relocation, ventura:        "10d418a2b9bd389896c47ba20f3acf8f69960994535fc79a6440ce7a7ae4c572"
-    sha256 cellar: :any_skip_relocation, monterey:       "15143940a55920f228cbf93305274273054b191381436f40d72d01c038100b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc4b3ebc907ac2ca40b0000f593b744d317f759401fed67b8138a964b5880d48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a00766d0955048fce61802525debac9d734f9f7f392a916f10e2024abf67426"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e2a75ab3f8ffb0a6b5f2a43784e9e811696293005ff8d0b243c18add7169758"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "130f3fef715a4e6b83ca78d0dca0c1a186a77d463ee0071708339cf32dba0fb3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fbf23452aedcb7a59ea57a9d82067001b05f18bc306a6b0dc0dbecf3db8d0d64"
+    sha256 cellar: :any_skip_relocation, ventura:        "8a1bac6e095cdb11373f593bcb87df85217356fa0815c790b9ad35ed3d340221"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f6bd3888b10ac9eaa3b051473396962dcb3d2df4a05af21efce3ff6dec9f055"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7345e96205efd22976c26df9441f343e8c997e837fb9034efec0265144201fd"
   end
 
   depends_on "rust" => :build

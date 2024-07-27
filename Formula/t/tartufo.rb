@@ -3,20 +3,19 @@ class Tartufo < Formula
 
   desc "Searches through git repositories for high entropy strings and secrets"
   homepage "https:tartufo.readthedocs.ioenstable"
-  url "https:files.pythonhosted.orgpackagesd5ea6248387282150270f1886d75111f776f43e694f488a3a1ea3b5b0d1195f1tartufo-5.0.0.tar.gz"
-  sha256 "99ab6652cae6de295aeb31089e9ba27d66d0ad695af493d2d5cbc795397d1c84"
+  url "https:files.pythonhosted.orgpackagesf3bea004a02e3b2be08c998f66f391df238de701320af3f0a0438e724db943e2tartufo-5.0.1.tar.gz"
+  sha256 "5eda46cd6a68dfe35b61b0f18a63bc0a7fc9bb6c096e4a26c8e1aaec8dea9324"
   license "GPL-2.0-only"
-  revision 3
   head "https:github.comgodaddytartufo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b2dde8f4519f9279df16776e0d8980b89b44c4b94925b6539bc42fb734fdaeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b2dde8f4519f9279df16776e0d8980b89b44c4b94925b6539bc42fb734fdaeb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b2dde8f4519f9279df16776e0d8980b89b44c4b94925b6539bc42fb734fdaeb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0622862e7b007ad202e55a94c7f2bef2ad6314afae83a74d976525f7f89c8871"
-    sha256 cellar: :any_skip_relocation, ventura:        "0622862e7b007ad202e55a94c7f2bef2ad6314afae83a74d976525f7f89c8871"
-    sha256 cellar: :any_skip_relocation, monterey:       "0622862e7b007ad202e55a94c7f2bef2ad6314afae83a74d976525f7f89c8871"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94090ab1f2288440f1bc42dfd41e009e90272bfbc67af83077052f215cfb3791"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6780d70ce53b81d93686023e0eb59ab1d8573b58ac59c9446d2f49d719388a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6780d70ce53b81d93686023e0eb59ab1d8573b58ac59c9446d2f49d719388a8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6780d70ce53b81d93686023e0eb59ab1d8573b58ac59c9446d2f49d719388a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f2cbdf5faa974325f07a9c7872c810c1720873f2b74ee45477933d26dc60421c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2cbdf5faa974325f07a9c7872c810c1720873f2b74ee45477933d26dc60421c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2cbdf5faa974325f07a9c7872c810c1720873f2b74ee45477933d26dc60421c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3703dd93bb1d935240217e728662a06c0a87f150a625309fa58377a50db5cec"
   end
 
   depends_on "pygit2"
@@ -50,14 +49,8 @@ class Tartufo < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages1037dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978aftomlkit-0.11.8.tar.gz"
-    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
-  end
-
-  # pygit 1.15.1 build patch, upstream pr ref, https:github.comgodaddytartufopull532
-  patch do
-    url "https:github.comgodaddytartufocommitc4fe2cb4011c3f830945f20593df81adfd4bcf17.patch?full_index=1"
-    sha256 "45d63c2c3bef7c11ffd37020f1b4e0276a930a212ca596de44b86807ff8eb062"
+    url "https:files.pythonhosted.orgpackages4b34f5f4fbc6b329c948a90468dd423aaa3c3bfc1e07d5a76deec269110f2f6etomlkit-0.13.0.tar.gz"
+    sha256 "08ad192699734149f5b97b45f1f18dad7eb1b6d16bc72ad0c2335772650d7b72"
   end
 
   def install

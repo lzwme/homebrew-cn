@@ -16,7 +16,8 @@ class Rome < Formula
   end
 
   # https:github.comtmspzzRomeissues262
-  deprecate! date: "2023-10-01", because: :does_not_build
+  # Original deprecation date: 2023-10-01
+  disable! date: "2024-07-26", because: :does_not_build
 
   depends_on "cabal-install" => :build
   depends_on "ghc@8.10" => :build

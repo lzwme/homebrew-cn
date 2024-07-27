@@ -19,7 +19,7 @@ class MariadbAT1010 < Formula
 
   # See: https:mariadb.comkbenchanges-improvements-in-mariadb-1010
   # End-of-life on 2023-11-17: https:mariadb.orgabout#maintenance-policy
-  deprecate! date: "2023-11-17", because: :unsupported
+  disable! date: "2024-07-26", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build

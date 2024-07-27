@@ -2,22 +2,22 @@ class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
   homepage "https:revive.run"
   url "https:github.commgechevrevive.git",
-      tag:      "v1.3.7",
-      revision: "5c5d6c1075a82337d9840e7f8195c0eaccdb959c"
+      tag:      "v1.3.9",
+      revision: "9ec5e553e9be5cbf9efd3950d789dbd767137ea0"
   license "MIT"
   head "https:github.commgechevrevive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed7ad7a119741ae0c6df650dc76826a1a0603ffe4f5369d5e6f3209ca9442020"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9349b8da3657103b79848355b3dac3a3b041df6c48693ae547a63dc3a7c00e6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68eee8bdcdb47e5ff183cd491222e696a29477b6f052e405cb2d7875b7f157d5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "86301f225e7d2c3771fa4cdd2434ed8fb3665ebfd4526a764a56907ddc36f101"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a38cb97c650c52deff8e9ade90c985659fbc1920134b16c3faeda88bcdcdb7a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e82afde38dd0378bb36cc7177535e15fd1ef2bf37a2f706064390559f8865a31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a0eaf687ce44344266c7681757cba8b28ffe70bdb91ab9f434fde4158b5476c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f094f3ccdc74d750af557363cd4e32cd1563dbde935179b167282db77a77805a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45a6133d45061003ca098e365c9a8ab57a9e1da110f4a15c2d3b2f58646c7aa8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e86eb97c91bed57ed9d857f89a43e2669ae5158413f300d327034689fbc8272b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbe32aa80c6159a8a8610e68a412ee708729a61895414e2ace7bbdfe5dc90df6"
+    sha256 cellar: :any_skip_relocation, ventura:        "96f1c0f5715e1c78aecb45139f9891539e1790233587f0aa39a73a869653ff8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca01b0fdd0e1e8c75e774cb3cd36db0aee66318140ea8d720ad76397469208c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b92bf8957ed88c6895c67ab10a4c4e42f35366c690e18ff499085446af1f2be1"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   def install
     ldflags = %W[
@@ -40,6 +40,8 @@ class Revive < Formula
         fmt.Println(my_string)
       }
     EOS
+
+    system "go", "mod", "init", "brewtest"
     output = shell_output("#{bin}revive main.go")
     assert_match "don't use underscores in Go names", output
   end

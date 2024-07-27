@@ -28,7 +28,7 @@ class Empty < Formula
 
     system "make", "all"
     system "make", "PREFIX=#{prefix}", "install"
-    rm_rf "#{prefix}/man"
+    rm_r("#{prefix}/man")
     man1.install "empty.1"
     pkgshare.install "examples"
   end

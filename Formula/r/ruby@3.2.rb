@@ -1,8 +1,8 @@
 class RubyAT32 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.2ruby-3.2.4.tar.gz"
-  sha256 "c72b3c5c30482dca18b0f868c9075f3f47d8168eaf626d4e682ce5b59c858692"
+  url "https:cache.ruby-lang.orgpubruby3.2ruby-3.2.5.tar.gz"
+  sha256 "ef0610b498f60fb5cfd77b51adb3c10f4ca8ed9a17cb87c61e5bea314ac34a16"
   license "Ruby"
 
   livecheck do
@@ -11,13 +11,13 @@ class RubyAT32 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e53e897164a68ad3d027a4dce50742a1f20130d849c1cb3bcc58ab1200ea122b"
-    sha256 arm64_ventura:  "d52c90c5f9048725ffdef1ecd609ee2deb256369493429cb6dcc31f0456c4216"
-    sha256 arm64_monterey: "a707434a60ac044067c8dd1817c2d176fe5e620cce5640465b286037539363c7"
-    sha256 sonoma:         "aedc9fa3b5ab822f07d51027b924e05fb825a1d17ee1b5f6a88d5a5a239ce76d"
-    sha256 ventura:        "ab0e542f51c3b669561a2a0a1a0ca9084de4fee7f57722b74b204dbcb3f7375e"
-    sha256 monterey:       "7c6657eedc19f12724fa6c8b843509676b188d80b6491b1ebfc4d4f8fcbf2717"
-    sha256 x86_64_linux:   "51fa1767613a571a8f091b137bbc0e0635d4adb4d5a766beb7238223afaa2ee8"
+    sha256 arm64_sonoma:   "b25fb429b76a4347021ae40690e73ee2da0d6def67805e77519a937ce1550ea1"
+    sha256 arm64_ventura:  "f026982cdaed591b8dac9b3b3988059f409bdcdaec03f9b62a13dc5560e2440a"
+    sha256 arm64_monterey: "c5d41d65015960ff5292b99b8492dc8b1a33a3281d4505a3dc9ef701e9743282"
+    sha256 sonoma:         "cabfa17a3f0e6737b1b330fb5bd5f01a5ec8c65be63ae573bf1087b46f41ceba"
+    sha256 ventura:        "cf949eb6881c9442d9719c66f340e1211b0392b194562ee5ae9f580463cc7cf8"
+    sha256 monterey:       "85f1212a1480cb9f74ce48fecd02c39d75b3997649edbecc73b25d8446b0787e"
+    sha256 x86_64_linux:   "f6fb0fafda4497496a34a0ceab074877d7a872f4649c12f13be1e9155f8dab9f"
   end
 
   keg_only :versioned_formula
@@ -33,14 +33,20 @@ class RubyAT32 < Formula
   uses_from_macos "gperf"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
+  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   # Should be updated only when Ruby is updated (if an update is available).
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https:rubygems.orgrubygemsrubygems-3.5.9.tgz"
-    sha256 "2b203642191e6bb9ece19075f62275a88526319b124684c46667415dca4363f1"
+    url "https:rubygems.orgrubygemsrubygems-3.5.16.tgz"
+    sha256 "7fd10de9e5e933321b62b8f1194256ae64703ba2541cab91ec31244a018d9012"
+
+    livecheck do
+      url "https:rubygems.orgpagesdownload"
+      regex(href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.ti)
+    end
   end
 
   def api_version

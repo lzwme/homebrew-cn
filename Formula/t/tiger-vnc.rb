@@ -1,8 +1,8 @@
 class TigerVnc < Formula
   desc "High-performance, platform-neutral implementation of VNC"
   homepage "https:tigervnc.org"
-  url "https:github.comTigerVNCtigervncarchiverefstagsv1.13.1.tar.gz"
-  sha256 "b7c5b8ed9e4e2c2f48c7b2c9f21927db345e542243b4be88e066b2daa3d1ae25"
+  url "https:github.comTigerVNCtigervncarchiverefstagsv1.14.0.tar.gz"
+  sha256 "5700f9919802a2f0529cc058b8caded03281cdbf0335581f2dcc7df03f783419"
   license "GPL-2.0-or-later"
 
   # Tags with a 90+ patch are unstable (e.g., the 1.9.90 tag is used for the
@@ -13,23 +13,25 @@ class TigerVnc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "11349890d86fea80c502337ccd450997944ff1af60a90e0b449c7fd02ee1ef1b"
-    sha256 cellar: :any, arm64_ventura:  "020433420a88dee43baf6d3f615c599fcfb198af33a1aa7804b558c42d567530"
-    sha256 cellar: :any, arm64_monterey: "7736e3193f654d40c55995280d7a1bd065f869fff11780c83b26321fa83cf614"
-    sha256 cellar: :any, arm64_big_sur:  "85d05acc79800b9e5ebb4c187480edbb97afb7b54f0990513ca30ab0a0714d7e"
-    sha256 cellar: :any, sonoma:         "90b925a8a9b2a6cb65eab504587bc1011d14084792cf47fa24fdf2988b6d8b65"
-    sha256 cellar: :any, ventura:        "7955a68a220e7823e98620a6f9be3c43e3057ae773388e5612cff6619fd93733"
-    sha256 cellar: :any, monterey:       "08a5dc1ad2f983174eda1c31e68bd66f2db1276cdde640df82ec2d2497b1a990"
-    sha256 cellar: :any, big_sur:        "d4961d1d80f491537148c9c5f800ada12df1ece76cc017e1ad10403f740055eb"
-    sha256               x86_64_linux:   "5d79edb3286b58e516c615f9350576d50737b61fe4aa94809b0eac7dabda978c"
+    sha256 cellar: :any, arm64_sonoma:   "a4d0f2e2ee98e6026a1264f2399ceae66837b3878b48dcfe5ad666cd90ef841c"
+    sha256 cellar: :any, arm64_ventura:  "33b103c92fa1d2089d0c49f3266aa3330a7d8d7c4c1b6e1011accd1d018f8032"
+    sha256 cellar: :any, arm64_monterey: "daac790f90e2e4d612b5c0aa52e01fdcd2eae3670216babcbaffc6c492553712"
+    sha256 cellar: :any, sonoma:         "6e3950d12238592e88708071a4be97b4d50e66f3f70de8f0dbcee447aff82c79"
+    sha256 cellar: :any, ventura:        "041a1cfed4716b20799ce552a237c6ba025ce080f0b3d31d72fee8a0ec2b2028"
+    sha256 cellar: :any, monterey:       "dc869076e5e92b85fdc6f1e1075fbb7f4719091eb8157892c25a0ee495c893ef"
+    sha256               x86_64_linux:   "91194d51191ea03eea1a927148efc052dce585bdbbb0abf5a83652626285e160"
   end
 
   depends_on "cmake" => :build
   depends_on "fltk"
   depends_on "gettext"
+  depends_on "gmp"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
+  depends_on "nettle"
   depends_on "pixman"
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libx11"

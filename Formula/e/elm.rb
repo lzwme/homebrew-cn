@@ -37,8 +37,13 @@ class Elm < Formula
   end
 
   def install
+    # Work around build failure due to incompatibility with newer `tls` package
+    # Ref: https:github.comelmcompilerpull2325
+    args = ["--constraint=tls<2"]
+    odie "Check if `tls` constraint can be removed!" if version > "0.19.1"
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

@@ -1,8 +1,8 @@
 class Flashrom < Formula
   desc "Identify, read, write, verify, and erase flash chips"
   homepage "https:flashrom.org"
-  url "https:download.flashrom.orgreleasesflashrom-v1.3.0.tar.bz2"
-  sha256 "a053234453ccd012e79f3443bdcc61625cf97b7fd7cb4cdd8bfbffbe8b149623"
+  url "https:download.flashrom.orgreleasesflashrom-1.4.0.tar.xz"
+  sha256 "ad7ee1b49239c6fb4f8f55e36706fcd731435db1a4bd2fab3d80f1f72508ccee"
   license "GPL-2.0-or-later"
   head "https:review.coreboot.orgflashrom.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Flashrom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9f3d686bd756e4422c5f9122dab96f43719645604b7c409d1dd9cfb8d439edaf"
-    sha256 cellar: :any,                 arm64_ventura:  "6d5089b69b8f9d2ccb3da22940ae48d2c4edc09944d4b2be53886e6d8b4929f3"
-    sha256 cellar: :any,                 arm64_monterey: "2f7bfb24f1c0cbbd4d48dfc0ccccaf04970f7c65fbf263273e518ac656909e49"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f7f73b3a916f6987e91be89cf333c212cb77896b51e2b0db3a243bfef6d104c"
-    sha256 cellar: :any,                 sonoma:         "e7c3d3603e37ff69e0deb4f0f877217eb747712b0993f6e413524604d37ce946"
-    sha256 cellar: :any,                 ventura:        "4ff89489acba2e2d05a44e2bfd13ba321e97adfe9a75c67c239b48d99fdb189d"
-    sha256 cellar: :any,                 monterey:       "ea25d355f9065255c13e1e76a6575d81a4050bf926ff5f78f4f0faae1216af9a"
-    sha256 cellar: :any,                 big_sur:        "f731416fcea36016d9e33999354a6e83ac81e5772a755847daaf66e1fe8f6067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e3fee5b882f6f5d28f9eab9364727ed69ab9938d9e8f087cd96eee494bdedb2"
+    sha256 cellar: :any,                 arm64_sonoma:   "f6a24fb6e9db1e1283cdbc40e045b004ad53f12bc86a1f3f63407abfc361400a"
+    sha256 cellar: :any,                 arm64_ventura:  "2e892b95bdc41d71063b3279f258e9b6ab010cc000d3fb2aec3c755fee1455f4"
+    sha256 cellar: :any,                 arm64_monterey: "bbe8b4003bf7f78060ff7e174e66043277c28993206fd6d98b4101bf18799a4b"
+    sha256 cellar: :any,                 sonoma:         "66f0c3e9c787271359921b10a5e624a96667f3b2052fbfb068f17b890484d99b"
+    sha256 cellar: :any,                 ventura:        "f07e8bc13a2567551ff670e2b3565ba9e4613dffab040470c52b8e970f4ad6e5"
+    sha256 cellar: :any,                 monterey:       "414ad270f9b00e71d020f99779b6b428646ebab33160d4967c506728505b8169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a81a9eb50bf2cbfd072cbc065c1793e197690fbb08f8a3c6aad12e1692674190"
   end
 
   depends_on "pkg-config" => :build

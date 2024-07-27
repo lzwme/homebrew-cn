@@ -30,10 +30,19 @@ class Libadwaita < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "appstream"
+  depends_on "fribidi"
+  depends_on "glib"
+  depends_on "graphene"
   depends_on "gtk4"
+  depends_on "pango"
 
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args

@@ -23,11 +23,13 @@ class Libkml < Formula
   depends_on "cmake" => :build
   depends_on "googletest" => :test
   depends_on "pkg-config" => :test
+
   depends_on "minizip"
   depends_on "uriparser"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

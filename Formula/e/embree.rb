@@ -44,10 +44,6 @@ class Embree < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Remove binmodels directory and the resultant empty bin directory since
-    # tutorials are not enabled.
-    rm_rf bin
   end
 
   test do

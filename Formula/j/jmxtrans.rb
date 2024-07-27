@@ -16,6 +16,9 @@ class Jmxtrans < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "33004f7a6ece9cc9b0c6a0fa1640bf3176237a860012a2df0b2c71ce0a722396"
   end
 
+  # no new commits since March 31 2021, lots of bug reports in https:github.comjmxtransjmxtransissues
+  deprecate! date: "2024-07-26", because: :unmaintained
+
   depends_on "maven" => :build
   depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
   depends_on "openjdk@8"

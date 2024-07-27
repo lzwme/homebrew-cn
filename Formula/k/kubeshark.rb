@@ -5,6 +5,14 @@ class Kubeshark < Formula
   sha256 "8088520ff96687526fcfdc740633ab1c51b0260b31f9de300afbf527ff32db11"
   license "Apache-2.0"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc04c7e96917c6ebf582a3ae0b13beeb8c0b817852925e64e70649e714daf99e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "373b2a28d7f83d31946a3324da946353a9e592d2476719c15aeeb0044a3edf9e"

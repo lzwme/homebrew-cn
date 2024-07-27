@@ -25,7 +25,7 @@ class Kettle < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["*.{bat}"]
+    rm_r(Dir["*.{bat}"])
     libexec.install Dir["*"]
 
     (etc+"kettle").install libexec+"pwd/carte-config-master-8080.xml" => "carte-config.xml"

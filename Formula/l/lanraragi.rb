@@ -3,19 +3,19 @@ require "languagenode"
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.20.tar.gz"
-  sha256 "1687ed39880853f5f5169af3b8deda5e4cda1550720aec823223b46851d74147"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.21.tar.gz"
+  sha256 "ed2d704d058389eb4c97d62080c64fa96fcc230be663ec8958f35764d229c463"
   license "MIT"
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8995e18a94e7d89a0f39fce755a6a6b555bae0b10a54840067435e24478d7821"
-    sha256 cellar: :any,                 arm64_ventura:  "dede1bb7b28346c14c83adc7b6d55bc62ab7f1885c80e1c3462f9e514fb2b933"
-    sha256 cellar: :any,                 arm64_monterey: "c482daed03606b2bd8b9c9df9618fd48689c1de496173eee5385365e1ab43034"
-    sha256 cellar: :any,                 sonoma:         "0c535a25ca5de8e2c4b40d826361fd7e52aa7ff4632ac13ea0b0f00b7b6b6edf"
-    sha256 cellar: :any,                 ventura:        "279850b9e112c04bcdd2adc455cbc20cc4d522f37808e58cfd8c6ab6f0eb5558"
-    sha256 cellar: :any,                 monterey:       "40414eaf617fcd0487cf5cce2c70d57f8e1bbaa295961b01a602f11b6ab8bd19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2209da866d09b8ca582ae8e37dc180aff6f9631a906da3f147a80f072d7bf02"
+    sha256 cellar: :any,                 arm64_sonoma:   "2a804967f1f97f008cf3d98c42a2e92204e3bedac38112a4e1c6ad9f3d228e60"
+    sha256 cellar: :any,                 arm64_ventura:  "ecec3c669e6bdb4e641961ff6a06e1d7e26d67c7d181e8118c89e2617355d1d5"
+    sha256 cellar: :any,                 arm64_monterey: "a1d3874f3e673370ccbd79e8364b046d98c6ed994836457355fb8f1df13f8c7a"
+    sha256 cellar: :any,                 sonoma:         "9780c6975588959ca66332bc34b25a2e8c51c023659cba40d7fbef9dc2a36ece"
+    sha256 cellar: :any,                 ventura:        "2f724d8529c7dbfd3bd770e229486d96817bd8eb11aa4ae943fa3be1fd5fda19"
+    sha256 cellar: :any,                 monterey:       "151a3319103602148c858f33b4a0d283af7eec42a9b56afc3e8d2785e65f4d77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34fa6e2e6af797dbdb0b6c1bc05e9b0349509827d7038430152b51e87b6cbd30"
   end
 
   depends_on "nettle" => :build

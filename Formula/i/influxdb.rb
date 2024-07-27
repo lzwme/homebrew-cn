@@ -4,8 +4,8 @@ class Influxdb < Formula
   # When bumping to 3.x, update license stanza to `license any_of: ["Apache-2.0", "MIT"]`
   # Ref: https:github.cominfluxdatainfluxdbblobmainCargo.toml#L124
   url "https:github.cominfluxdatainfluxdb.git",
-      tag:      "v2.7.7",
-      revision: "e9e0f744fa892ce2f7936ff8f2bcbf286938c6a0"
+      tag:      "v2.7.8",
+      revision: "18c989726c3b879902a1d609c0eda17ed61c34d2"
   license "MIT"
   head "https:github.cominfluxdatainfluxdb.git", branch: "main-2.x"
 
@@ -21,13 +21,13 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d24266a41b4231d0dbb1b7dbf055c9e5f8f4ea3fe28090248241917e1202153"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b1038febc48cf7c5da8f898b38b9ac3f878404cb9ccabd1617946e778cc0040"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8ee05bdb1a6d7374877b4efd0f67c361c4505b11d25f1b432233681e28abc25"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d09d5f7a7bf1405224a89c4daeb9e9494e7752bd06eb36e9420a5d50141963a"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c9dd71d0a9322ab1ae652a3a9071ac10b539b952aee04df179eb8eaf87c7418"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e5208e5c2bb9e84599eb49a5627227cf1cebc1763de7ef1784e1c4617febd8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fff6d1c1c609da92bba7d207d9a0e742e6b026894fe592a6897a41bbc17aab86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c7fcb3d126e80a11cf8e954dd4aaeae900d38135bcb8cc6e414f95dfe83218a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b177adeed8d670687122fe4b7cc0d74ba953bdb05314c89dba2a2c3f7b0c1949"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c515dcb4dbcc073b2ef8f1678988ed623f7d4fe750b968b53340043195763bb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "af37bc657c3cc788072b5aaae55ffa704b3ebe9a1e2f10b40d398c29940c8ac4"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f09f0c1b6b887a79e1403ed3a747ef19877bf6273321e69d52ae4d778957589"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2d71c3bb40719ce5ba5b72a1874a8e06f28a8490452f15203230e25a05f04ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c887f19494e36c2ed8b78b869104b9256674296615f542da6dd4b6d663674da2"
   end
 
   depends_on "breezy" => :build
@@ -51,8 +51,8 @@ class Influxdb < Formula
   # NOTE: The versionURL here is specified in scriptsfetch-ui-assets.sh in influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "ui-assets" do
-    url "https:github.cominfluxdatauireleasesdownloadOSS-v2.7.1build.tar.gz"
-    sha256 "d24e7d48abedf6916ddd649de4f4544e16df6dcb6dd9162d6b16b1a322c80a6f"
+    url "https:github.cominfluxdatauireleasesdownloadOSS-2.7.8build.tar.gz"
+    sha256 "28ace1df37b7860b011e5c1b8c74830b0ec584d2f86c24e58a7c855c168f58a8"
 
     livecheck do
       url "https:raw.githubusercontent.cominfluxdatainfluxdbv#{LATEST_VERSION}scriptsfetch-ui-assets.sh"

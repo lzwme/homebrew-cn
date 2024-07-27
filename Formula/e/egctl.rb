@@ -1,22 +1,26 @@
 class Egctl < Formula
   desc "Command-line utility for operating Envoy Gateway"
   homepage "https:gateway.envoyproxy.io"
-  url "https:github.comenvoyproxygatewayarchiverefstagsv1.0.2.tar.gz"
-  sha256 "05406182dc165513925cf60722582613d4de9ea789d60e014e6da456bb229f65"
+  url "https:github.comenvoyproxygatewayarchiverefstagsv1.1.0.tar.gz"
+  sha256 "f841cfa30416063b40062976d92afcd573a2c324bb30e4311e362ed9d5b7a2f5"
   license "Apache-2.0"
   head "https:github.comenvoyproxygateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "442ef19cd8d4abd3929ce289e8259b4618e915fe076a0b28cb433a83e83ee345"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98026117b40295bd0dbccde6d7d5483669ed0cce00c66432712bd1631b809839"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "babab75268c48dd69cea1ded164a70e3c3fb63af258b488b7c6d58653f40bb60"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c39ebd95cad867bc1b8612f8ced46628f8598468258b63dd3254885733311dd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "2283eeb99931b79594b94f3c93ba50b03cb8af69643d174ce31614414b843c97"
-    sha256 cellar: :any_skip_relocation, monterey:       "2789de921dd337393c43f85b2e808a35214f12f24f53505b8f72e31371f2f2e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e623e4318e5e60496222dbfaee3fe4c7a6ee885d0b5875b5551ea730b87b49d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a114c8378fbbafe0492c3399a600bce08a8223f07eb1811202081391d3f42b41"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c810d0bd93d459b9e02d1febc0636e48af9c3d76b288cda68213643b65462897"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc873af49170fa76ff87dd0472cfe1a0e7d9cf7d0adf2727c9a182355a5531d0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70139c72f68bf7549f260d680a711737f9837ba89b5ca55d2f164d199edc9177"
+    sha256 cellar: :any_skip_relocation, ventura:        "289838d6f1c5b637c45b435beaac08ef58a96c6e2294e50a46d2e43d867f70c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbd5f3fbfd2e37d1e3cc010e3c063383366b8fc2be5386698a2eba35cf9143f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5819d3a3a9274b2708e342eb13a398e6b50525f968def39b1da03713570975a6"
   end
 
   depends_on "go" => :build
+
+  on_linux do
+    depends_on "btrfs-progs"
+  end
 
   def install
     ldflags = %W[
@@ -111,10 +115,25 @@ class Egctl < Formula
               virtualHosts:
               - domains:
                 - www.example.com
+                metadata:
+                  filterMetadata:
+                    envoy-gateway:
+                      resources:
+                      - kind: ""
+                        name: eg
+                        namespace: default
+                        sectionName: http
                 name: defaulteghttpwww_example_com
                 routes:
                 - match:
                     prefix: 
+                  metadata:
+                    filterMetadata:
+                      envoy-gateway:
+                        resources:
+                        - kind: HTTPRoute
+                          name: backend
+                          namespace: default
                   name: httproutedefaultbackendrule0match0www_example_com
                   route:
                     cluster: httproutedefaultbackendrule0

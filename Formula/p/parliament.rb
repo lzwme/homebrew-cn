@@ -3,33 +3,32 @@ class Parliament < Formula
 
   desc "AWS IAM linting library"
   homepage "https:github.comduo-labsparliament"
-  url "https:files.pythonhosted.orgpackages8e9a64e0e24972057276141403b5971e87d8f51c82ba3d027badc10f39e5524fparliament-1.6.2.tar.gz"
-  sha256 "05f9db2bda8d85f039dbe27716538f025b7cb973d336568762a06217e3b7e3ae"
+  url "https:files.pythonhosted.orgpackagesa63fb7262b8a7c8d41c243950c5858cefc29652623599a6fafb2f753621b9702parliament-1.6.3.tar.gz"
+  sha256 "13e0f21048c3f2f6dbc3e90035421a7f2e35eda55c829794ec3f410140ce6740"
   license "BSD-3-Clause"
-  revision 3
   head "https:github.comduo-labsparliament.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bce9bb9c34242b31af31e337ec4e921bf4f757a4a8ccbfdfcdb859187a367830"
-    sha256 cellar: :any,                 arm64_ventura:  "07348851991c11092b1ad8cd2c00b0bb20272797a445e8a9799ecf887804d360"
-    sha256 cellar: :any,                 arm64_monterey: "289ac9dccb2fd28c604da1d509381b09cc9400bcbfb28773ed414de236d51d74"
-    sha256 cellar: :any,                 sonoma:         "13bdd2035761d5a6c20efa163b801e741aa0e9c2a359d9cde16307b0c72780f2"
-    sha256 cellar: :any,                 ventura:        "1a7949913ee0783f75f58065774e6e35f9b7d068fd26beda33242ae2ecd65394"
-    sha256 cellar: :any,                 monterey:       "da7b6e56678b97a6ddb9f92931d858dad81ba33b56bdd44f357d00a353d81e22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e1033132a4ff13024bb45183fefdd6d1501dff3839be1b1f9214c875f5363bf"
+    sha256 cellar: :any,                 arm64_sonoma:   "9f2be989f303519fb28ad485bdbc4c585fd4ee24f2316a57849b4d2fa1451ae7"
+    sha256 cellar: :any,                 arm64_ventura:  "836145ee2f4070d875c8e43425b47388eb10c5df47ad95368cd98e8886614fc0"
+    sha256 cellar: :any,                 arm64_monterey: "c04fe7a13b8123c5f2268055c2b09566a1f75ca9df262015a6b4366deaacc08f"
+    sha256 cellar: :any,                 sonoma:         "2679c58cae8562f532271a2dbc7697afa65de343183b559a2732e805199180da"
+    sha256 cellar: :any,                 ventura:        "6ff4d248bed9023bca41479ff5f45485d7b891df2b64678cc45e8c1fc5aa0571"
+    sha256 cellar: :any,                 monterey:       "e85a8e4e086f6d420234ec861a0099f2b08287abe8daef7ad65f509d279241e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65816d2a5d4d0f190795261b67e8498edeb7ed353337fd4c74f5b9bfefdf242a"
   end
 
   depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages81f50c7d1b745462d9fe0c2b4709dc6a4b1cbe399c02ad60b26ae2837714d455boto3-1.34.128.tar.gz"
-    sha256 "43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"
+    url "https:files.pythonhosted.orgpackages9640c8d85f14e0aea7b80859595fadad5ad80f6662ac78f150d844c4e25fe90bboto3-1.34.149.tar.gz"
+    sha256 "f4e6489ba9dc7fb37d53e0e82dbc97f2cb0a4969ef3970e2c88b8f94023ae81a"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9ec9844ad5680d847d94adb97b22c30b938ddda86f8a815d439503d4ee545484botocore-1.34.128.tar.gz"
-    sha256 "8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"
+    url "https:files.pythonhosted.orgpackages33cbacc65294eb572c83cec1d25cc637fb82745a7b40e69680a09855ee397b49botocore-1.34.149.tar.gz"
+    sha256 "2e1eb5ef40102a3d796bb3dd05f2ac5e8fb43fe1ff114b4f6d33153437f5a372"
   end
 
   resource "jmespath" do
@@ -58,13 +57,13 @@ class Parliament < Formula
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackages83bcfb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571s3transfer-0.10.1.tar.gz"
-    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
+    url "https:files.pythonhosted.orgpackagescb6794c6730ee4c34505b14d94040e2f31edf144c230b6b49e971b4f25ff8fabs3transfer-0.10.2.tar.gz"
+    sha256 "0711534e9356d3cc692fdde846b4a1e4b0cb6519971860796e6bc4c7aea00ef6"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https:files.pythonhosted.orgpackages32c05b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931setuptools-71.1.0.tar.gz"
+    sha256 "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
   end
 
   resource "six" do

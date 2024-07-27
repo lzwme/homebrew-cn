@@ -26,6 +26,7 @@ class FbClient < Formula
   end
 
   depends_on "curl"
+  depends_on "openssl@3"
   depends_on "python@3.12"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
