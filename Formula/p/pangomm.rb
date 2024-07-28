@@ -1,25 +1,28 @@
 class Pangomm < Formula
   desc "C++ interface to Pango"
   homepage "https://www.pango.org/"
-  url "https://download.gnome.org/sources/pangomm/2.52/pangomm-2.52.0.tar.xz"
-  sha256 "34a134126a6484ff12f774358c36ecc44d0e9df094e1b83796d9774bb7d24947"
+  url "https://download.gnome.org/sources/pangomm/2.54/pangomm-2.54.0.tar.xz"
+  sha256 "4a5b1fd1b7c47a1af45277ea82b5abeaca8e08fb10a27daa6394cf88d74e7acf"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c190b7406547e70fc3f79e34f9e66c677b8be641ec52a76139755ec45d2399bf"
-    sha256 cellar: :any, arm64_ventura:  "1cba18840fc171623c4ee6aaf42f15d8276b99a6c82616091f6a4061ad05a337"
-    sha256 cellar: :any, arm64_monterey: "23f8b644129de1ce573ad7bddec586a5e4103aedcc1ecad375318ff5215b5ae6"
-    sha256 cellar: :any, sonoma:         "393e4b9ed7dfdfd4276478bbad7aaac533857277ef3e2f48b5bf5f500a0b095f"
-    sha256 cellar: :any, ventura:        "a9947704abbdd99b3a528f03a4f5c7c1e89081c6f0c50e470c437d38e2fbc0d0"
-    sha256 cellar: :any, monterey:       "736bd3839ce9b1d7e3206acdbb89f7fa2cbc63efda141026518017303b2af91e"
-    sha256               x86_64_linux:   "54f2c185939b1aebe91b3f0f598076435db1bf863ed6b093736746412fdce4d9"
+    sha256 cellar: :any, arm64_sonoma:   "96d6b86cb3c3d9b8df92e5a2d9cbf25a0be17d3fbf6575af6a64d6e7cdcab3f8"
+    sha256 cellar: :any, arm64_ventura:  "a970a47d003c8802cb36f05742d3ba0040b6711801e593ca124a8e7f5d39c7fe"
+    sha256 cellar: :any, arm64_monterey: "27d31ee025f795002d2656cc9bac32d2973f5840c8efccc00999be221d196283"
+    sha256 cellar: :any, sonoma:         "6f9ea0544f66fa351dd460b8b93cf1f64c27f5ddf3594dba8071e4dbd6809346"
+    sha256 cellar: :any, ventura:        "e86aa89885d5051902f1d63c8282de16d1d5852624d16c4ab4b6f745513b80ea"
+    sha256 cellar: :any, monterey:       "711bdbb646de5e52d8214b650cce62755503e79f01c986e50b040265c6f03b1e"
+    sha256               x86_64_linux:   "41a65860c91d42df29ae592b9d9c38cf836fbc33d40a99d3e8ce69cb1cebe1e6"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "cairomm"
+  depends_on "glib"
   depends_on "glibmm"
+  depends_on "libsigc++"
   depends_on "pango"
 
   fails_with gcc: "5"

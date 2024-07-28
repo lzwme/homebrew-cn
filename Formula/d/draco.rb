@@ -18,16 +18,23 @@ class Draco < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", * std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "testdatacube_att.ply"
   end
 
   test do
-    system "#{bin}draco_encoder", "-i", "#{pkgshare}cube_att.ply",
-           "-o", "cube_att.drc"
+    cp pkgshare"cube_att.ply", testpath
+
+    output = shell_output("#{bin}draco_encoder -i cube_att.ply -o cube_att.drc")
     assert_predicate testpath"cube_att.drc", :exist?
+    assert_match <<~EOS, output
+      Encoder options:
+        Compression level = 7
+        Positions: Quantization = 11 bits
+        Normals: Quantization = 8 bits
+    EOS
   end
 end

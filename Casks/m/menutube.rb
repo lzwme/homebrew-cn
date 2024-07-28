@@ -15,4 +15,8 @@ cask "menutube" do
     "~LibraryPreferencescom.rednuclearmonkey.menutube.plist",
     "~LibrarySaved Application Statecom.rednuclearmonkey.menutube.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

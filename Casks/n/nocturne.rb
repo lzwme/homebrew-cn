@@ -7,11 +7,11 @@ cask "nocturne" do
   desc "Adjust display colours to suit low light conditions"
   homepage "https:github.comDaij-Djannocturne"
 
-  livecheck do
-    url :homepage
-    regex(%r{href=.*?nocturneblobmasterDistv?(\d+(?:\.\d+)+)\.zip}i)
-    strategy :page_match
-  end
+  disable! date: "2024-07-27", because: :unmaintained
 
   app "Nocturne.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

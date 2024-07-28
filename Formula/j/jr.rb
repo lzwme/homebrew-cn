@@ -1,25 +1,25 @@
 class Jr < Formula
   desc "CLI program that helps you to create quality random data for your applications"
   homepage "https:jrnd.io"
-  url "https:github.comugoljrarchiverefstagsv0.3.7.tar.gz"
-  sha256 "30e431bbce6382f49d555028e6120c394580f74f81b46022f18890d5bd379963"
+  url "https:github.comugoljrarchiverefstagsv0.3.8.tar.gz"
+  sha256 "be0b28a1c4a3de2807303d0e42e16d65e7d99793c3e753c8d47ac824338a5ae7"
   license "MIT"
   head "https:github.comugoljr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47049f7c69353b8a0d1d24ae93a97bf0e2b015eaffebcf1e16e5d2d27caf55cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb347769c407a1d6dba4a65a425ac2f0483c56a409b81252448e2e69ab2c4730"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "769244d46167d4674723bc7cbcd63599e11db71bca6024d5061127d7508e1e5a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74360526509b49c6d64ce8064d41b781cd3d318d8cbd1640847aef6c50f137f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a63c3698f0dff8e22af5150fc7ac062eed53be89e966099840d98c9ebbe53e26"
-    sha256 cellar: :any_skip_relocation, monterey:       "59f4c3da1a54c1624ee6ea5e1d8cc71fdc8cc1c6b70295183745147cd0426bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33f05b6086246a5a95a5421fa7008be84dbb36a6dccb9904f54cb0b221f59ea3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c964d0bcec163858f770b5f58cb8cc29898a80377eb69ac6450581ad0e5fbb05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd2756fd69377deddcbfc662512d6098c827d433571be7b72d4cce241ac99b79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a9902e1b089e43da1176ffba069b2ae492fbd74cc3e82ef8b3b9801c6ef85dc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe2901bc3f74b41690998006f37f5ade928b5fcc57a492b9a6a1d7837e632956"
+    sha256 cellar: :any_skip_relocation, ventura:        "55463b907f4d2d402285368d9e62750a775c27e1edb6b28ef3621efdd7546c16"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ba587e30764154cbe08ebef244eae3b9db27dec7a5867cc4eda7b4a52763e80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6cc82c2d8db910ab88bc4c3d6b9c409352d2863e883f6ddf2d47738d667fb1a"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "all"
+    ENV.deparallelize { system "make", "all" }
     libexec.install Dir["build*"]
     pkgetc.install "configjrconfig.json"
     pkgetc.install "templates"

@@ -24,6 +24,9 @@ class ElmFormat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6b1ec84983f60bd9a7834c03074931a6f7a1c78ac640a4c6b94cbc1a10bb968"
   end
 
+  # Has been using pre-built GHC due to needing specific patch version of GHC
+  deprecate! date: "2024-07-27", because: "does not build with any GHC formula"
+
   depends_on "cabal-install" => :build
   depends_on "haskell-stack" => :build
   depends_on "hpack" => :build

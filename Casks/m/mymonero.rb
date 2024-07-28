@@ -21,4 +21,8 @@ cask "mymonero" do
     "~LibraryPreferencescom.mymonero.mymonero-desktop.plist",
     "~LibrarySaved Application Statecom.mymonero.mymonero-desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

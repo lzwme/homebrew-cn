@@ -6,6 +6,11 @@ class Ipsw < Formula
   license "MIT"
   head "https:github.comblacktopipsw.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e874641bc34545333b9e9e447668d25f28480de9f1d56a695198d35cc8df0551"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdbd45f57e193d04e49544a8e84481e7e267943942fcd2a0aacf3a6442666b5d"

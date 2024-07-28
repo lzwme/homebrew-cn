@@ -33,6 +33,7 @@ class OsrmBackend < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "boost"
   depends_on "libstxxl"
   depends_on "libxml2"
@@ -40,7 +41,9 @@ class OsrmBackend < Formula
   depends_on "lua"
   depends_on "tbb"
 
+  uses_from_macos "bzip2"
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   conflicts_with "flatbuffers", because: "both install flatbuffers headers"
 
@@ -56,6 +59,7 @@ class OsrmBackend < Formula
 
     lua = Formula["lua"]
     luaversion = lua.version.major_minor
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DENABLE_CCACHE:BOOL=OFF",
                     "-DLUA_INCLUDE_DIR=#{lua.opt_include}lua#{luaversion}",
@@ -64,6 +68,7 @@ class OsrmBackend < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
     pkgshare.install "profiles"
   end
 
@@ -93,8 +98,9 @@ class OsrmBackend < Formula
         result.forward_speed = 1
       end
     EOS
-    safe_system "#{bin}osrm-extract", "test.osm", "--profile", "tiny-profile.lua"
-    safe_system "#{bin}osrm-contract", "test.osrm"
+
+    safe_system bin"osrm-extract", "test.osm", "--profile", "tiny-profile.lua"
+    safe_system bin"osrm-contract", "test.osrm"
     assert_predicate testpath"test.osrm.names", :exist?, "osrm-extract generated no output!"
   end
 end

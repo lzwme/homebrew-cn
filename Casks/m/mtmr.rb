@@ -18,4 +18,8 @@ cask "mtmr" do
   app "MTMR.app"
 
   zap trash: "~LibraryApplication SupportMTMR"
+
+  caveats do
+    requires_rosetta
+  end
 end

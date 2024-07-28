@@ -3,6 +3,7 @@ class Libstxxl < Formula
   homepage "https://stxxl.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/stxxl/stxxl/1.4.1/stxxl-1.4.1.tar.gz"
   sha256 "92789d60cd6eca5c37536235eefae06ad3714781ab5e7eec7794b1c10ace67ac"
+  license "BSL-1.0"
 
   bottle do
     rebuild 1
@@ -22,9 +23,8 @@ class Libstxxl < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

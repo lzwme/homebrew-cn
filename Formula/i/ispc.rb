@@ -14,20 +14,21 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "54fa5a0a549861e1de159999de691426f573c126adc7a0d69bf9fcd294180cce"
-    sha256 cellar: :any,                 arm64_ventura:  "7c55ec8a529fb34cf8f085433586363b222a0ba6afb225fa94c266b21183d91e"
-    sha256 cellar: :any,                 arm64_monterey: "26c15e7e84c676fdf79f818f38c5a95296a6ecc4b958bfae06bc637e9846e83d"
-    sha256 cellar: :any,                 sonoma:         "237a797a7178f652c1137947c31e16216e8befaec98c40d19943fe6cee2b2dc7"
-    sha256 cellar: :any,                 ventura:        "9bc5d7902ca0a355a502afa39a63812b654f3643e8f15189cf9825f378070e39"
-    sha256 cellar: :any,                 monterey:       "7ca251d052ec6bbb9b0eee31a8d65008dfe8cd2caa6ae0fa5a73e88017d4d1a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0292ec3a7d8efc0efdcf854ac28f44b0cfbe82f22c58d93d8afc5876f9670ff"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "41c1b1fe5223a511e995381df555f153e6208bd22e7b7644b4a2dd10823a61e7"
+    sha256 cellar: :any,                 arm64_ventura:  "a567c3b6ba0323e7a1166c447ae486e33f5b4f40eef5b743444a0b9d2be9b613"
+    sha256 cellar: :any,                 arm64_monterey: "be76a08cd5cba9cf2da2ae9bd6c15582bbb5817d75f3d761c36370fe04bf3ee2"
+    sha256 cellar: :any,                 sonoma:         "af4618b443203546e904e02a80fccc89e7455fc2c9880671cc7f038057a4bc49"
+    sha256 cellar: :any,                 ventura:        "93b09215f93b71e040e9284632507814ab562734c1e0a7ad4ec795bf5dcfd911"
+    sha256 cellar: :any,                 monterey:       "b51680a68ccfb3c7ac05000229a07e4def868b45176c24f235d4bae7e93c9c3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dd4f8dac1934d94e155fcb2444752157f60be5d7ee1adeab33dd2efd69084d8"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.12" => :build
-  depends_on "llvm@17"
+  depends_on "llvm"
 
   on_linux do
     depends_on "tbb"

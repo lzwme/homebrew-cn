@@ -30,10 +30,9 @@ class Spigot < Formula
   end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -64,7 +63,8 @@ class Spigot < Formula
       4120032290498384346434429544700282883947137096322722314705104266951483698
       9368770466478147882866690955248337250379671389711241
     EOS
-    assert_equal shell_output("#{bin}/spigot -d1729 tau").strip,
-                 expected.delete!("\n")
+
+    output = shell_output("#{bin}/spigot -d1729 tau").strip
+    assert_equal expected.delete!("\n"), output
   end
 end

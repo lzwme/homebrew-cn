@@ -1,18 +1,18 @@
 class Pmd < Formula
   desc "Source code analyzer for Java, JavaScript, and more"
   homepage "https:pmd.github.io"
-  url "https:github.compmdpmdreleasesdownloadpmd_releases%2F7.3.0pmd-dist-7.3.0-bin.zip"
-  sha256 "7e56043b5db83b288804c97d48a46db37bba22861b63eadd8e69f72c74bfb0a8"
+  url "https:github.compmdpmdreleasesdownloadpmd_releases%2F7.4.0pmd-dist-7.4.0-bin.zip"
+  sha256 "1dcbb7784a7fba1fd3c6efbaf13dcb63f05fe069fcf026ad5e2933711ddf5026"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, ventura:        "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, monterey:       "0290c9f34fa86abfd312be6935d27a5468c52057a930883951c6d57afdca7c19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcbdf8c85f31d48aa328593d91cde433d72a5766ab46e5e72f512c5059fda9ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, ventura:        "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, monterey:       "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0dd600b67eaeb7142de161aa826589a3e95a1764fd2de7ea3dfc95d9df6e0d0"
   end
 
   depends_on "openjdk"

@@ -877,7 +877,7 @@ Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/claws-mail.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/clazy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/clazy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clblast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clean.rb, Homebrew/homebrew-core, 0
@@ -9257,6 +9257,8 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-gochi-hand.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-g/font-gohufont-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-goldman.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-text.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gorditas.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gothic-a1.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gotu.rb, Homebrew/homebrew-cask, 1
@@ -11779,7 +11781,7 @@ Homebrew-homebrew-cask/Casks/m/melodics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/melonbooksviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/melonds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mem.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/memo.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/memo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-clean-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-cleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-map.rb, Homebrew/homebrew-cask, 0

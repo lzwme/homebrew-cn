@@ -21,4 +21,8 @@ cask "mqtt-explorer" do
     "~LibraryContainersde.t7n.apps.mqtt-explorer",
     "~LibraryGroup Containers*.de.t7n.apps.mqtt-explorer",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

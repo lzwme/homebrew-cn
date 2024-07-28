@@ -26,17 +26,19 @@ class Dynet < Formula
   conflicts_with "freeling", because: "freeling ships its own copy of dynet"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args,
-             "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3"
-      system "make"
-      system "make", "install"
-    end
+    args = %W[
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "examples"
   end
 
   test do
     cp pkgshare"examplesxortrain_xor.cc", testpath
+
     system ENV.cxx, "-std=c++11", "train_xor.cc", "-I#{include}",
                     "-L#{lib}", "-ldynet", "-o", "train_xor"
     assert_match "memory allocation done", shell_output(".train_xor 2>&1")

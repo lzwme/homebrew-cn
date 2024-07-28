@@ -6,5 +6,11 @@ cask "macdependency" do
   name "MacDependency"
   homepage "https:github.comkwinmacdependency"
 
+  deprecate! date: "2024-07-27", because: :unmaintained
+
   app "MacDependency.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

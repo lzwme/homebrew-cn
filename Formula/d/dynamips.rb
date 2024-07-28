@@ -3,6 +3,7 @@ class Dynamips < Formula
   homepage "https:github.comGNS3dynamips"
   url "https:github.comGNS3dynamipsarchiverefstagsv0.2.23.tar.gz"
   sha256 "503bbb52c03f91900ea8dbe8bd0b804b76e2e28d0b7242624e0d3c52dda441a1"
+  license "GPL-2.0-only"
 
   livecheck do
     url :stable
@@ -35,21 +36,19 @@ class Dynamips < Formula
   end
 
   def install
-    cmake_args = std_cmake_args + ["-DANY_COMPILER=1"]
+    cmake_args = ["-DANY_COMPILER=1"]
     cmake_args << if OS.mac?
       "-DLIBELF_INCLUDE_DIRS=#{Formula["libelf"].opt_include}libelf"
     else
       "-DLIBELF_INCLUDE_DIRS=#{Formula["elfutils"].opt_include}"
     end
 
-    ENV.deparallelize
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    system "#{bin}dynamips", "-e"
+    system bin"dynamips", "-e"
   end
 end

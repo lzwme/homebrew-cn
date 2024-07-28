@@ -17,4 +17,8 @@ cask "manyverse" do
   app "Manyverse.app"
 
   zap trash: "~LibraryApplication Supportmanyverse"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -7,7 +7,13 @@ cask "macmorpheus" do
   desc "3D 180360 video player using PSVR"
   homepage "https:github.comemoRaivisMacMorpheus"
 
+  deprecate! date: "2024-07-27", because: :unmaintained
+
   app "MacMorpheus.app"
 
   zap trash: "~LibraryPreferencesemoRaivis.MacMorpheus.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

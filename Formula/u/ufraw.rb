@@ -50,7 +50,7 @@ class Ufraw < Formula
                           "--without-gtk",
                           "--without-gimp"
     system "make", "install"
-    (share"pixmaps").rmtree
+    rm_r(share"pixmaps")
   end
 
   test do

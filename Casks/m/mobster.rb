@@ -7,6 +7,8 @@ cask "mobster" do
   desc "Pair and mob programming timer"
   homepage "https:github.comdillonkearnsmobster"
 
+  deprecate! date: "2024-07-27", because: :unmaintained
+
   app "Mobster.app"
 
   zap trash: [
@@ -15,4 +17,8 @@ cask "mobster" do
     "~LibraryPreferencescom.dillonkearns.mobster.plist",
     "~LibrarySaved Application Statecom.dillonkearns.mobster.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

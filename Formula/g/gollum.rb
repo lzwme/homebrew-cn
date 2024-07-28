@@ -18,6 +18,9 @@ class Gollum < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9069887fd837e33a18020e839a78fa28a76f3d4088e59596e0e75941031f7760"
   end
 
+  # no commits since july 1 2021, and cannot rebuild, https:github.comtrivagogollumissues265
+  deprecate! date: "2024-07-27", because: :unmaintained
+
   depends_on "go" => :build
 
   def install

@@ -48,7 +48,7 @@ class Zookeeper < Formula
     system "tar", "-xf", "zookeeper-assemblytargetapache-zookeeper-#{version}-bin.tar.gz"
     binpfx = "apache-zookeeper-#{version}-bin"
     libexec.install binpfx+"bin", binpfx+"lib", "zookeeper-contrib"
-    rm_f Dir["build-binbin*.cmd"]
+    rm(Dir["build-binbin*.cmd"])
 
     system "tar", "-xf", "zookeeper-assemblytargetapache-zookeeper-#{version}-lib.tar.gz"
     libpfx = "apache-zookeeper-#{version}-lib"

@@ -19,15 +19,11 @@ class Uncrustify < Formula
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
 
-  fails_with gcc: "5"
-
   def install
-    ENV.cxx11
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
     doc.install (buildpath"documentation").children
   end
 
@@ -36,6 +32,7 @@ class Uncrustify < Formula
       #include <stdio.h>
       int main(void) {return 0;}
     EOS
+
     expected = <<~EOS
       #include <stdio.h>
       int main(void) {
@@ -43,7 +40,7 @@ class Uncrustify < Formula
       }
     EOS
 
-    system "#{bin}uncrustify", "-c", "#{doc}htdocsdefault.cfg", "t.c"
-    assert_equal expected, File.read("#{testpath}t.c.uncrustify")
+    system bin"uncrustify", "-c", doc"htdocsdefault.cfg", "t.c"
+    assert_equal expected, (testpath"t.c.uncrustify").read
   end
 end

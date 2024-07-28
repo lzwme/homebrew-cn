@@ -27,4 +27,8 @@ cask "meshlab" do
     "~LibraryPreferencescom.vcg.MeshLab_64bit_fp.plist",
     "~LibrarySaved Application Statecom.vcg.meshlab.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

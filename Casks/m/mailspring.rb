@@ -20,4 +20,8 @@ cask "mailspring" do
     "~LibraryPreferencescom.mailspring.*",
     "~LibrarySaved Application Statecom.mailspring.*",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -14,10 +14,9 @@ class Ensmallen < Formula
   depends_on "armadillo"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -33,6 +32,7 @@ class Ensmallen < Formula
         return 0;
       }
     EOS
+
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
                     "-larmadillo", "-o", "test"
   end

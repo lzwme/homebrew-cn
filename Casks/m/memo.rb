@@ -2,23 +2,22 @@ cask "memo" do
   version "1.0.3"
   sha256 :no_check
 
-  url "https:usememo.comMemoSetup.dmg"
+  url "https://usememo.com/MemoSetup.dmg"
   name "Memo"
   desc "Note taking app using GitHub Gists"
-  homepage "https:usememo.com"
+  homepage "https://usememo.com/"
 
-  livecheck do
-    url "https:raw.githubusercontent.combtkmemomasterpackage.json"
-    strategy :json do |json|
-      json["version"]
-    end
-  end
+  deprecate! date: "2024-07-27", because: :unmaintained
 
   app "Memo.app"
 
   zap trash: [
-    "~LibraryApplication SupportMemo",
-    "~LibraryPreferencescom.usememo.app.plist",
-    "~LibrarySaved Application Statecom.usememo.app.savedState",
+    "~/Library/Application Support/Memo",
+    "~/Library/Preferences/com.usememo.app.plist",
+    "~/Library/Saved Application State/com.usememo.app.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

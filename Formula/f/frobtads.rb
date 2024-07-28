@@ -24,13 +24,24 @@ class Frobtads < Formula
   uses_from_macos "ncurses"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match(FrobTADS #{version}$, shell_output("#{bin}frob --version"))
+    (testpath"hello.t").write <<~EOS
+      #charset "us-ascii"
+      #include <tads.h>
+
+      main(args) {
+        "Hello, Homebrew!";
+      }
+    EOS
+
+    system bin"t3make", "hello.t"
+    system bin"frob", "--no-pause", "hello.t3"
+
+    assert_match version.to_s, shell_output("#{bin}frob --version")
   end
 end

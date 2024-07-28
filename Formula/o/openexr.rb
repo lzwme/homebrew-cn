@@ -28,19 +28,18 @@ class Openexr < Formula
   link_overwrite "liblibIlmThread.dylib"
   link_overwrite "liblibIlmThread.so"
 
-  resource "homebrew-exr" do
-    url "https:github.comAcademySoftwareFoundationopenexr-imagesrawf17e353fbfcde3406fe02675f4d92aeae422a560TestImagesAllHalfValues.exr"
-    sha256 "eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4"
-  end
-
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    resource "homebrew-exr" do
+      url "https:github.comAcademySoftwareFoundationopenexr-imagesrawf17e353fbfcde3406fe02675f4d92aeae422a560TestImagesAllHalfValues.exr"
+      sha256 "eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4"
+    end
+
     resource("homebrew-exr").stage do
       system bin"exrheader", "AllHalfValues.exr"
     end

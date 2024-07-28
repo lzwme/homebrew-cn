@@ -21,4 +21,8 @@ cask "macast" do
     "~LibraryPreferencescn.xfangfang.Macast.plist",
     "~LibrarySaved Application Statecn.xfangfang.Macast.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

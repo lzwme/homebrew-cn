@@ -1,8 +1,8 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "https://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.4.6/sbcl-2.4.6-source.tar.bz2"
-  sha256 "a489907842dae09a1726d62985bf7a56670aaea2f3eca1fb7023bca67c3f3091"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.4.7/sbcl-2.4.7-source.tar.bz2"
+  sha256 "68544d2503635acd015d534ccc9b2ae9f68996d429b5a9063fd22ff0925011d2"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
@@ -11,13 +11,13 @@ class Sbcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3254f78e86f7e09ee213fb91be7cd83ad304f977f9d8ce3c67f9171a510d4816"
-    sha256 cellar: :any,                 arm64_ventura:  "13a2b67aa22928dae431dc5394619b11b1a8eb0998b8d53e31018a1ef8196c9c"
-    sha256 cellar: :any,                 arm64_monterey: "d357a9189fdcd55121da84a29eb3cc5b9336f6a9f8dbfec03dee7276724de559"
-    sha256 cellar: :any,                 sonoma:         "0bb55eb0a9fe2e09141f078d720032d79c372b1cbd32ab5a956aaf0579987c2c"
-    sha256 cellar: :any,                 ventura:        "70c233cd5044316108176cfaa0e1215490cb874195acb0b25c6b42e654794181"
-    sha256 cellar: :any,                 monterey:       "e325724be7e6ef74e7dca00a264dfe740d47c989591bd0df6b7c331fff8fecea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "449ee8b0286b964f0629729faf9034a0c90685afe5ea85512e940a668bf296fc"
+    sha256 cellar: :any,                 arm64_sonoma:   "68752979aeb063c2183f2ee71d5804645c90804aaac3aa6ddc50e0196a3b620d"
+    sha256 cellar: :any,                 arm64_ventura:  "6e5bb311ab48f05b22b24377a70e3e6f00124e5e3b8190d22d17712810c990d0"
+    sha256 cellar: :any,                 arm64_monterey: "ebf3c5c9b39978d9e9a6c675dce5aadbc6b6346e7653ba7892d3f519b6a837cc"
+    sha256 cellar: :any,                 sonoma:         "411b75246fe297a3c0a8fc636b6a3cb3eec3f94b430cbc81f266c990be1cf377"
+    sha256 cellar: :any,                 ventura:        "759434c3e90b9496d44b579d8efca6618b38f93b55c5d7d71436405f9d777e87"
+    sha256 cellar: :any,                 monterey:       "3d2027fac4271cf30b709550ce6dd313cf425f10e0af09cb2e16c838cb102e91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47243a8073ba39f7edd6dc454a46d87fcdfc9bf53c9931a7eae320332c442498"
   end
 
   depends_on "ecl" => :build

@@ -1,19 +1,19 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https:mesonbuild.com"
-  url "https:github.commesonbuildmesonreleasesdownload1.5.0meson-1.5.0.tar.gz"
-  sha256 "45d7b8653c1e5139df35b33be2dd5b2d040c5b2c6129f9a7c890d507e33312b8"
+  url "https:github.commesonbuildmesonreleasesdownload1.5.1meson-1.5.1.tar.gz"
+  sha256 "567e533adf255de73a2de35049b99923caf872a455af9ce03e01077e0d384bed"
   license "Apache-2.0"
   head "https:github.commesonbuildmeson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e7fe0a4e6ae2f009bd1c7c648b8c7715e9ed021e96b471bd28109b36095eac4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e7fe0a4e6ae2f009bd1c7c648b8c7715e9ed021e96b471bd28109b36095eac4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e7fe0a4e6ae2f009bd1c7c648b8c7715e9ed021e96b471bd28109b36095eac4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "04682d921a967d0d36f0d056a44e6cb2e9888e83b4d15f727a90fcd65a79f40b"
-    sha256 cellar: :any_skip_relocation, ventura:        "04682d921a967d0d36f0d056a44e6cb2e9888e83b4d15f727a90fcd65a79f40b"
-    sha256 cellar: :any_skip_relocation, monterey:       "04682d921a967d0d36f0d056a44e6cb2e9888e83b4d15f727a90fcd65a79f40b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a373c667fb817cbbbe23f2fd1301069409903cfca7c15a9c20f75c16283810"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e54fd61d7161717c0ef89dad36a82423e5bbbfb1cbf94eb7ade6f6a0c8e4b0a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e54fd61d7161717c0ef89dad36a82423e5bbbfb1cbf94eb7ade6f6a0c8e4b0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e54fd61d7161717c0ef89dad36a82423e5bbbfb1cbf94eb7ade6f6a0c8e4b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4941b3900a433dacad331eb52ba809f45dd3e439e19eb150ae442eebe9bcb3f"
   end
 
   depends_on "ninja"

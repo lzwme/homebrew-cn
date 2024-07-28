@@ -19,35 +19,35 @@ class Openvdb < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+
   depends_on "boost"
   depends_on "c-blosc"
   depends_on "jemalloc"
   depends_on "openexr"
   depends_on "tbb"
 
-  fails_with gcc: "5"
-
-  resource "homebrew-test_file" do
-    url "https:artifacts.aswf.ioioaswfopenvdbmodelscube.vdb1.0.0cube.vdb-1.0.0.zip"
-    sha256 "05476e84e91c0214ad7593850e6e7c28f777aa4ff0a1d88d91168a7dd050f922"
-  end
+  uses_from_macos "zlib"
 
   def install
-    cmake_args = [
+    args = [
       "-DDISABLE_DEPENDENCY_VERSION_CHECKS=ON",
       "-DOPENVDB_BUILD_DOCS=ON",
       "-DUSE_NANOVDB=ON",
       "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}",
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    resource("homebrew-test_file").stage testpath
+    resource "homebrew-test_file" do
+      url "https:artifacts.aswf.ioioaswfopenvdbmodelscube.vdb1.0.0cube.vdb-1.0.0.zip"
+      sha256 "05476e84e91c0214ad7593850e6e7c28f777aa4ff0a1d88d91168a7dd050f922"
+    end
+
+    testpath.install resource("homebrew-test_file")
     system bin"vdb_print", "-m", "cube.vdb"
   end
 end

@@ -8,4 +8,8 @@ cask "mks" do
   homepage "https:github.comx0054MKS"
 
   app "MKS.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

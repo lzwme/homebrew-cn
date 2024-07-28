@@ -43,4 +43,8 @@ cask "musescore" do
     "~LibraryPreferencesorg.musescore.MuseScore*.plist",
     "~LibrarySaved Application Stateorg.musescore.MuseScore.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

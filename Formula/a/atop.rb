@@ -1,13 +1,13 @@
 class Atop < Formula
   desc "Advanced system and process monitor for Linux using process events"
   homepage "https:www.atoptool.nl"
-  url "https:github.comAtoptoolatoparchiverefstagsv2.10.0.tar.gz"
-  sha256 "29b8cf36f9dd92bb2efef19b791afa5842573fd22d7ecb14d1eeab597bcdc30c"
+  url "https:github.comAtoptoolatoparchiverefstagsv2.11.0.tar.gz"
+  sha256 "f61d01fcae4fd5e2644ed4e210a0cbcfc9bf85cef32b00e342417e3923eda49c"
   license "GPL-2.0-or-later"
   head "https:github.comAtoptoolatop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c6f352f8729ea5b0212b864586101840b399fcbb9c48fbb2515a0c651a13d48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "724dc68495d244ecc250ab08de07a9e5b746a59fe5dd22a75c98a9544b589557"
   end
 
   depends_on "pkg-config" => :build

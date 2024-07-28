@@ -9,4 +9,8 @@ cask "mjml" do
   homepage "https:mjmlio.github.iomjml-app"
 
   app "MJML.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

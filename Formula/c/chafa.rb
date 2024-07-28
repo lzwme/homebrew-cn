@@ -1,8 +1,8 @@
 class Chafa < Formula
   desc "Versatile and fast Unicode/ASCII/ANSI graphics renderer"
   homepage "https://hpjansson.org/chafa/"
-  url "https://hpjansson.org/chafa/releases/chafa-1.14.1.tar.xz"
-  sha256 "24707f59e544cec85d7a1993854672136b05271f86954248c5d8a42e221f6f25"
+  url "https://hpjansson.org/chafa/releases/chafa-1.14.2.tar.xz"
+  sha256 "8a28d308074e25597e21bf280747461ac695ae715f2f327eb0e0f0435967f8b3"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Chafa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c588788736d413d8e1903e09a58f98b862c32ee0b4ca60bed9d5788d8c1bb009"
-    sha256 cellar: :any,                 arm64_ventura:  "c5a232a794db05f653064eb1e8563de125059351cfae6846586d66e976775240"
-    sha256 cellar: :any,                 arm64_monterey: "8d43efc573ee0370dd42c6000351e18635394f95df772168f59302d9855519ed"
-    sha256 cellar: :any,                 sonoma:         "72efc9066f140136c6cb187c9a530687d2dedfb8b9fc75610c34a562c9d6f6ae"
-    sha256 cellar: :any,                 ventura:        "cf3cd86afd9f30364cc63b8e4da901d595b97175cb0e76af9f32e765a0ce7d10"
-    sha256 cellar: :any,                 monterey:       "de19352d7a7f30293af8bcdd0f124868dfb63bad99b4fef1a2315d67faebd582"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d04fa0a10c7e5dd6a7347638817bafe4a29762b372006c3be00c3ed0ba78e67"
+    sha256 cellar: :any,                 arm64_sonoma:   "a4d628175d8e1370d2c029725ca5dfed28ae8557202a05921a09ff4a8d36695c"
+    sha256 cellar: :any,                 arm64_ventura:  "e9559f683e16db079084e8f2e07b8b7935f669eac0a83cf3133c368ed33cdf53"
+    sha256 cellar: :any,                 arm64_monterey: "efd04351d4046b6ffbd52893186127f8f373fe4b781fb0c127161bfe9169f22c"
+    sha256 cellar: :any,                 sonoma:         "684159ed9101150b5612f7e2bc901cee76581b7882fb8531e93fd791b608256b"
+    sha256 cellar: :any,                 ventura:        "a3275323cdbbe2c74381636c1441d153cd06bc8cb4a197ee68c80312a38d19af"
+    sha256 cellar: :any,                 monterey:       "592ffcf3776f9454f4f035da2b35624e64b553ff3eac4baa276e222851fd5c7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9013544016acf877bb9d6c346ba0ea9c79ce8107e54788dfd6e098342cad2ca"
   end
 
   depends_on "pkg-config" => :build

@@ -7,9 +7,15 @@ cask "overkill" do
   desc "Stop iTunes from opening when you connect your iPhone"
   homepage "https:github.comKrauseFxoverkill-for-mac"
 
+  deprecate! date: "2024-07-27", because: :unmaintained
+
   depends_on macos: ">= :sierra"
 
   app "Overkill.app"
 
   zap trash: "~LibraryPreferencescom.krausefx.Overkill.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

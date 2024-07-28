@@ -25,18 +25,17 @@ class Lzfse < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    File.binwrite("original", Random.new.bytes(0xFFFF))
+    (testpath"original").write Random.new.bytes(0xFFFF)
 
-    system "#{bin}lzfse", "-encode", "-i", "original", "-o", "encoded"
-    system "#{bin}lzfse", "-decode", "-i", "encoded", "-o", "decoded"
+    system bin"lzfse", "-encode", "-i", "original", "-o", "encoded"
+    system bin"lzfse", "-decode", "-i", "encoded", "-o", "decoded"
 
-    assert compare_file("original", "decoded")
+    assert_equal (testpath"original").read, (testpath"decoded").read
   end
 end
