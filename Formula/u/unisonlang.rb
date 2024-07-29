@@ -7,30 +7,28 @@ class Unisonlang < Formula
 
   stable do
     url "https:github.comunisonwebunison.git",
-        tag:      "releaseM5j",
-        revision: "7778bdc1a1e97e82a6ae3910a7ed10074297ff27"
-    version "M5j"
+        tag:      "release0.5.25",
+        revision: "7301b693c8a9f9a8647de4e2b8f65e96cb3260b0"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-uiarchiverefstagsreleaseM5j.tar.gz"
-      version "M5j"
-      sha256 "99f8dd4c86b1cae263f16b2e04ace88764a8a1b138cead4756ceaadb7899c338"
+      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.25.tar.gz"
+      sha256 "04565fb26f7ba8367968f382ee20edaecda917c548a51a93ed7c69057f0796b7"
     end
   end
 
   livecheck do
     url :stable
-    regex(%r{^release(M\d+[a-z]*)$}i)
+    regex(%r{^releasev?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27ab477693638d1b62c7b679ad24dddf5ea6bd0745d8ff03c0da85d8c4560d5e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ca8bfe440d39d66d88e2d436d8ad374393963737fd8a7d0a4e53a37758d8aa7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d772b22156d824974696caf89ea263f125a62cd8eb0d8a4cab2c07f710efe14f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77d8a6b34336d5c63564877a8a6dd97a855a3edef5a3926adbaba5d5fbdb5aa1"
-    sha256 cellar: :any_skip_relocation, ventura:        "24d03a539050feb1aefe0ebbecef1c4f06f2379d91a063ea144af02dc3f94f45"
-    sha256 cellar: :any_skip_relocation, monterey:       "2de0f07799a44b4d53619f62b20741dfa12040fb90fcab8421a8564c5006d5ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d594aae90116a8136956555221276bd192bccd2155c64b71cface577c8f5d981"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "588dfadbe6163e6deee17e080a4885a8174814cb709126d3c874b1cd1adbd200"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b707cf5713961b8d1b797654f9fbc876d24e4a25c91dd2085b35b670787ee395"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d19a8eab85219b6dc15a50fbbbd9d41068326480d9687269d42d3b665240c6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e59326ebe8e09b4baec2a67ee8d7766d9f8b485f404ba511cb5637894d88661b"
+    sha256 cellar: :any_skip_relocation, ventura:        "997a0883fad382246f33ca204ecc6d6f05df74958cdcf85876f10e7874faab8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fabab188500a58f189a21cf64588160855e85db202e4d2df536ceb7e8f5da26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea921a1229683575fb6e5b8596d098beef8c7666a05b495a6f031da4a0ca14e2"
   end
 
   head do
@@ -41,9 +39,10 @@ class Unisonlang < Formula
     end
   end
 
-  depends_on "ghc@9.2" => :build # GHC 9.4 PR: https:github.comunisonwebunisonpull4009
+  depends_on "elm" => :build
+  depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
-  depends_on "node@18" => :build
+  depends_on "node@20" => :build
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
@@ -51,10 +50,6 @@ class Unisonlang < Formula
 
   on_linux do
     depends_on "ncurses"
-  end
-
-  on_arm do
-    depends_on "elm" => :build
   end
 
   def install
@@ -66,12 +61,10 @@ class Unisonlang < Formula
     # Build and install the web interface
     resource("local-ui").stage do
       system "npm", "install", *Language::Node.local_npm_install_args
-      if Hardware::CPU.arm?
-        # Replace x86_64 elm binary to avoid dependency on Rosetta
-        elm = Pathname("node_moduleselmbinelm")
-        elm.unlink
-        elm.parent.install_symlink Formula["elm"].opt_bin"elm"
-      end
+      # Replace pre-built x86_64 elm binary
+      elm = Pathname("node_moduleselmbinelm")
+      elm.unlink
+      elm.parent.install_symlink Formula["elm"].opt_bin"elm"
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.
       # Issue ref: https:github.comzwiliaselm-jsonissues50
@@ -83,13 +76,13 @@ class Unisonlang < Formula
       prefix.install "distunisonLocal" => "ui"
     end
 
-    stack_args = [
-      "-v",
-      "--system-ghc",
-      "--no-install-ghc",
-      "--skip-ghc-check",
-      "--copy-bins",
-      "--local-bin-path=#{buildpath}",
+    stack_args = %W[
+      -v
+      --system-ghc
+      --no-install-ghc
+      --skip-ghc-check
+      --copy-bins
+      --local-bin-path=#{buildpath}
     ]
 
     system "stack", "-j#{jobs}", "build", "--flag", "unison-parser-typechecker:optimized", *stack_args
@@ -111,7 +104,7 @@ class Unisonlang < Formula
 
     (testpath"hello.md").write <<~EOS
       ```ucm
-      .> project.create test
+      scratchmain> project.create test
       testmain> load hello.u
       testmain> add
       testmain> run hello

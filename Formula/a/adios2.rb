@@ -4,6 +4,7 @@ class Adios2 < Formula
   url "https:github.comornladiosADIOS2archiverefstagsv2.10.1.tar.gz"
   sha256 "ce776f3a451994f4979c6bd6d946917a749290a37b7433c0254759b02695ad85"
   license "Apache-2.0"
+  revision 1
   head "https:github.comornladiosADIOS2.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "15dc5582a5809d2fd547311d2e509da5a1cd1998b66b7be713fdb29f3a90af45"
-    sha256 arm64_ventura:  "660e1bf873b7d6ccc560f5585ed1c05760033ea365b8d6e6ce3ea3d00b7b6b5d"
-    sha256 arm64_monterey: "b24dd9522c4858ee40454dec41f13b9980d7dd4a1732a4e0d9e09f5ea4858b7f"
-    sha256 sonoma:         "e54e9b99ca2553ed65970bc277ced6563a5d1bb7255a34859e20312679f6a587"
-    sha256 ventura:        "55acae4510e3146d024222370f987de7c1a205776db4c312de41ac455d1f2632"
-    sha256 monterey:       "fa52f5f7c028709c4d7394add07c53618c6141c7a6e3a5bb1ae7fbd75b5d365b"
-    sha256 x86_64_linux:   "a6bb7f960648f75642c6940cdca6e44dba5f2c8e2961060ec9f43519e46ed246"
+    sha256 arm64_sonoma:   "c6173e887d128c8868a087e0cb87c024d6a4eca32509f5de491875d637e18632"
+    sha256 arm64_ventura:  "4063bcd651c2f7e2a7b387a8fbba8962835575e9d087f908a23f62e66a4e463d"
+    sha256 arm64_monterey: "cc1db18103afaa9280c284a63976630445f3b2f1bc7eb0ff2d21300aa817a8d7"
+    sha256 sonoma:         "097a2eebee3f943828cd737fe4973b7029fc6dffa6f7ff0d54143b91944b52c8"
+    sha256 ventura:        "5cdf5e17e24daa2bfa0d641c3d28737ac616237d4637ccc851963a6552d800ea"
+    sha256 monterey:       "cec63f45515bf942144e7d15be9c87606949b42f85dfc9424b1f1be97dda582e"
+    sha256 x86_64_linux:   "d9f8c709fc2a57f9bd8970160862a10b2070fe87cb30705e0758ca1317b17cc4"
   end
 
   depends_on "cmake" => :build

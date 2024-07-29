@@ -36,7 +36,7 @@ class I2pd < Formula
 
     # preinstall to prevent overwriting changed by user configs
     confdir = etc"i2pd"
-    rm_rf prefix"etc"
+    rm_r(prefix"etc")
     confdir.install doc"i2pd.conf", doc"subscriptions.txt", doc"tunnels.conf"
   end
 

@@ -9,4 +9,8 @@ cask "pliim" do
   homepage "https:zehfernandes.github.iopliim"
 
   app "Pliim.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

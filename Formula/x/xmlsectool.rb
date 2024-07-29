@@ -18,7 +18,7 @@ class Xmlsectool < Formula
 
   def install
     prefix.install "doc/LICENSE.txt"
-    rm_rf "doc"
+    rm_r("doc")
     libexec.install Dir["*"]
     (bin/"xmlsectool").write_env_script "#{libexec}/xmlsectool.sh", JAVA_HOME: Formula["openjdk"].opt_prefix
   end

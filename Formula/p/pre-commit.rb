@@ -3,20 +3,19 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https:pre-commit.com"
-  url "https:files.pythonhosted.orgpackagesaa46cc214ef6514270328910083d0119d0a80a6d2c4ec8c6608c0219db0b74cfpre_commit-3.7.1.tar.gz"
-  sha256 "8ca3ad567bc78a4972a3f1a477e94a79d4597e8140a6e0b651c5e33899c3654a"
+  url "https:files.pythonhosted.orgpackages641097ee2fa54dff1e9da9badbc5e35d0bbaef0776271ea5907eccf64140f72fpre_commit-3.8.0.tar.gz"
+  sha256 "8bb6494d4a20423842e198980c9ecf9f96607a07ea29549e180eef9ae80fe7af"
   license "MIT"
-  revision 1
   head "https:github.compre-commitpre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "62cc7c7ffc97c6bc14aeefbc3b0466ba4119521ed877400ec982bc7ccbdb1d1f"
-    sha256 cellar: :any,                 arm64_ventura:  "86e9468deca2aaa403cf7ee97745477b85a9418370f3fbb8305f8bdf3ab1c3d8"
-    sha256 cellar: :any,                 arm64_monterey: "85b3cdbf7e72bea3811f1acae24579ea6d3549d6ae0a07f1fb7c39cb21110e69"
-    sha256 cellar: :any,                 sonoma:         "abf4091f0260359eb78c60785f77b60d398c53531c61d055675a6d93435cc756"
-    sha256 cellar: :any,                 ventura:        "f35d4f9b4d267830969e6cc5d3bed166c919cc8479d27af3d5cc6902a9c7fdb5"
-    sha256 cellar: :any,                 monterey:       "abb770e9f8e9b7f01d4a6c53dfce00d546f6e186cc0dc00ab01e51661b3b196b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9839768ff61e8e2358b8dcb31dc8149663aef25144f6286172bf97b6254a86a8"
+    sha256 cellar: :any,                 arm64_sonoma:   "038b2592f3bfeec760057063e5f946e7e47f8f151d9983d77ba6b6cff6b5ba93"
+    sha256 cellar: :any,                 arm64_ventura:  "561bbe8994339275497419d7eef007e8c696222cff93f65d7edd3a0b2f3399d3"
+    sha256 cellar: :any,                 arm64_monterey: "1dd80d9ef9977b5bef5fead88553b984b1170d7d3bb3851682566d0a2386bcb8"
+    sha256 cellar: :any,                 sonoma:         "4eee92e3da7bd144245205b70b8e8d7b45e7b3d10eec74408a45a21527d5742c"
+    sha256 cellar: :any,                 ventura:        "1e1530c1811e238955b98eae971e855bab0e38831e620ac34ab8e5c190e1d8c0"
+    sha256 cellar: :any,                 monterey:       "093e9df946e1e2eefbfa474b165608caaf4fd4b6b6026e7f020ecd8a9ec83aa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdb2fb46ee71c585ac7260a73a03c682b86f367f04b7d4e28939bbe7e4718fa8"
   end
 
   depends_on "libyaml"

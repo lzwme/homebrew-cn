@@ -13,4 +13,8 @@ cask "pusher" do
     "~LibraryPusher",
     "~LibrarySaved Application Statecom.noodlewerk.Pusher.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

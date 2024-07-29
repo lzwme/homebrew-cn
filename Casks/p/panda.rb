@@ -7,6 +7,8 @@ cask "panda" do
   desc "Utility to switch from light to dark mode"
   homepage "https:github.compablosprojectPanda-Mac-app"
 
+  deprecate! date: "2024-07-28", because: :unmaintained
+
   auto_updates true
 
   app "Panda.app"
@@ -15,4 +17,8 @@ cask "panda" do
     "~LibraryCachescom.pablosproject.Panda",
     "~LibraryPreferencescom.pablosproject.Panda.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

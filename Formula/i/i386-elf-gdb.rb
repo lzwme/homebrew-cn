@@ -27,6 +27,8 @@ class I386ElfGdb < Formula
   depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 
+  uses_from_macos "expat"
+  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   on_system :linux, macos: :ventura_or_newer do
@@ -60,7 +62,8 @@ class I386ElfGdb < Formula
   test do
     (testpath/"test.c").write "void _start(void) {}"
     system Formula["i686-elf-gcc"].bin/"i686-elf-gcc", "-g", "-nostdlib", "test.c"
-    assert_match "Symbol \"_start\" is a function at address 0x",
-                 shell_output("#{bin}/i386-elf-gdb -batch -ex 'info address _start' a.out")
+
+    output = shell_output("#{bin}/i386-elf-gdb -batch -ex 'info address _start' a.out")
+    assert_match "Symbol \"_start\" is a function at address 0x", output
   end
 end

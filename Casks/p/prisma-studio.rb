@@ -16,4 +16,8 @@ cask "prisma-studio" do
     "~LibraryPreferencesio.prisma.studio.plist",
     "~LibrarySaved Application Stateio.prisma.studio.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

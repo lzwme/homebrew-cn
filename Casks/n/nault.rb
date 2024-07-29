@@ -22,4 +22,8 @@ cask "nault" do
     "~LibraryPreferencescc.nault.plist",
     "~LibrarySaved Application Statecc.nault.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

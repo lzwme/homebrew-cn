@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https:nxtrace.github.ioNTrace-core"
-  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.1.tar.gz"
-  sha256 "4af2896d5dcc18ecff3bd45f20728c6e848127608d080ebe47b07ed1212720d6"
+  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.2.tar.gz"
+  sha256 "30a22f9d94fafcb64a26bad490803a1434f5d695a4fc7d7dcbec73be7f0329f3"
   license "GPL-3.0-only"
   head "https:github.comnxtraceNTrace-core.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f898f8232d62b849869128446d192d34aa106361c268d8691e6efb581494e0c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e97ed8f6fb27a22a991fc541159b03cafb143e562e316fe91322ce82dc61547"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30b603640d8286d518de7ae5d84da44e7b4aceb748fa46aee5ad552910902e64"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b59bde9c255fbe2a1ac178110b161d1a5e0011b3713fc3dfbf4a47c2798429f"
-    sha256 cellar: :any_skip_relocation, ventura:        "efd7b55b638d5cd1300307f2850f1c60324bc9eb7898423419c470f3fc2148ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "74f430640230f7263fd489a7dd2de6dcc914c50a578224bc4cd0fafef8531245"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1087d7a336dbfc86916cda0350d1f3283b0009355877a9b9d7b65d6f8e1a0531"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4ec666811db32583458e57ad1e23b0a750a77259a527707d7c8fc4725c3ff5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1dcf2460793c3f74470d755e29e1f870f1b78cc64ee9825cfcc542ac906a882"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20ac6c59bd66dff27ddc8070b4c0e4d5a3235e9cd5426f8b93b95bb97c32a981"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2d6af572a724e857db8c506722c9c48fb202fe6c8ef323487ae6d75fffbac396"
+    sha256 cellar: :any_skip_relocation, ventura:        "93bcac1a533c78e8f32b65cc007f4edf5a6f2f04f9ae53589565582b15760f32"
+    sha256 cellar: :any_skip_relocation, monterey:       "477a2f3218765a281542499d21c50ef57e2db350f8b6b1d0d462168633fda045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e90f31d9c8689e87102573b8e21b0551a55a19a8bb0b5ec8187dcd4fee7d086c"
   end
 
   depends_on "go" => :build

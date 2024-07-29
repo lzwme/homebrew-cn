@@ -22,13 +22,20 @@ class Appstream < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
+  depends_on "glib"
   depends_on "libxmlb"
   depends_on "libyaml"
+  depends_on "zstd"
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "gettext" => :build
@@ -57,6 +64,7 @@ class Appstream < Formula
     ]
 
     args << "-Dsystemd=false" if OS.mac?
+
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

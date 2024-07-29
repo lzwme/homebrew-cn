@@ -21,4 +21,8 @@ cask "pynsource" do
     "~LibraryPreferencesPyNSource",
     "~LibrarySaved Application StatePynsource.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

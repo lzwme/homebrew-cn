@@ -22,6 +22,8 @@ class Cortex < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "cortexso", because: "both install `cortex` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcortex"
     cd "docsconfiguration" do

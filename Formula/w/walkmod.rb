@@ -17,7 +17,7 @@ class Walkmod < Formula
 
   def install
     # Remove windows files
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install Dir["*"]
     (bin"walkmod").write_env_script libexec"binwalkmod", JAVA_HOME: Formula["openjdk"].opt_prefix
   end

@@ -26,6 +26,8 @@ class Cortexso < Formula
     depends_on "python-setuptools" => :build
   end
 
+  conflicts_with "cortex", because: "both install `cortex` binaries"
+
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]

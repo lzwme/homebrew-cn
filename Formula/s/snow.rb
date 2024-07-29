@@ -6,6 +6,11 @@ class Snow < Formula
   sha256 "c0b71aa74ed628d121f81b1cd4ae07c2842c41cfbdf639b50291fc527c213865"
   license "Apache-2.0"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?snow[._-]v?(\d+(?:\.\d+)*)\.t/i)
+  end
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc3cd801f7bd8ab8d936d3ce543de987c9d4536bebfb2c8d67900c6cb866eb47"

@@ -8,7 +8,8 @@ class ParquetCli < Formula
   head "https:github.comapacheparquet-mr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4921c5a0099f3b55f007e97ae1ad4492260025ebb813de235faa234c84746fa8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6e33538fcca9b9bd16232ce073ee5626302003c7a8786a293ab76987d22308b3"
   end
 
   depends_on "maven" => :build
@@ -23,7 +24,7 @@ class ParquetCli < Formula
     cd "parquet-cli" do
       system "mvn", "clean", "package", "-DskipTests=true"
       system "mvn", "dependency:copy-dependencies"
-      libexec.install "targetparquet-cli-#{version}-runtime.jar"
+      libexec.install "targetparquet-cli-#{version}.jar"
       libexec.install Dir["targetdependency*"]
       (bin"parquet").write <<~EOS
         #!binsh

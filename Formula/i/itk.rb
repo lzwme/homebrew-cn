@@ -49,7 +49,7 @@ class Itk < Formula
 
   def install
     # Avoid CMake trying to find GoogleTest even though tests are disabled
-    (buildpath"ModulesThirdPartyGoogleTest").rmtree
+    rm_r(buildpath"ModulesThirdPartyGoogleTest")
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON
@@ -96,7 +96,7 @@ class Itk < Formula
     system "cmake", "--install", "build"
 
     # Remove the bundled JRE installed by SCIFIO ImageIO plugin
-    (lib"jre").rmtree if OS.linux? || Hardware::CPU.intel?
+    rm_r(lib"jre") if OS.linux? || Hardware::CPU.intel?
   end
 
   test do

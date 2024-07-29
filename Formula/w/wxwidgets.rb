@@ -38,8 +38,8 @@ class Wxwidgets < Formula
 
   def install
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
-    %w[catch pcre].each { |l| (buildpath"3rdparty"l).rmtree }
-    %w[expat jpeg png tiff zlib].each { |l| (buildpath"src"l).rmtree }
+    %w[catch pcre].each { |l| rm_r(buildpath"3rdparty"l) }
+    %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath"src"l) }
 
     args = [
       "--prefix=#{prefix}",

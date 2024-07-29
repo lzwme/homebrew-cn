@@ -19,4 +19,8 @@ cask "pine" do
     "~LibrarySaved Application Stateio.github.lukakerr.Pine.savedState",
     "~LibraryWebKitio.github.lukakerr.Pine",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

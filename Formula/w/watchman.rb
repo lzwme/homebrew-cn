@@ -72,7 +72,7 @@ class Watchman < Formula
     path = Pathname.new(File.join(prefix, HOMEBREW_PREFIX))
     bin.install (path"bin").children
     lib.install (path"lib").children
-    path.rmtree
+    rm_r(path)
   end
 
   def post_install

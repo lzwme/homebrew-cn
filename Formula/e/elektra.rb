@@ -1,6 +1,6 @@
 class Elektra < Formula
   desc "Framework to access config settings in a global key database"
-  homepage "https:www.libelektra.orghome"
+  homepage "https:www.libelektra.org"
   url "https:www.libelektra.orgftpelektrareleaseselektra-0.11.0.tar.gz"
   sha256 "4e1f7c986010555a1d30ef2d23c0636373e993bab88e5ec238cac18a469b5cc2"
   license "BSD-3-Clause"
@@ -27,11 +27,15 @@ class Elektra < Formula
   depends_on "doxygen" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DBINDINGS=cpp", "-DTOOLS=kdb;",
-                            "-DPLUGINS=NODEP;-tracer", *std_cmake_args
-      system "make", "install"
-    end
+    args = %w[
+      -DBINDINGS=cpp
+      -DTOOLS=kdb;
+      -DPLUGINS=NODEP;-tracer
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     bash_completion.install "scriptscompletionkdb-bash-completion" => "kdb"
     fish_completion.install "scriptscompletionkdb.fish"
@@ -42,7 +46,7 @@ class Elektra < Formula
     output = shell_output("#{bin}kdb get system:elektraversioninfoslicence")
     assert_match "BSD", output
     shell_output("#{bin}kdb plugin-list").split.each do |plugin|
-      system "#{bin}kdb", "plugin-check", plugin
+      system bin"kdb", "plugin-check", plugin
     end
   end
 end

@@ -23,6 +23,8 @@ class Openbao < Formula
 
   uses_from_macos "curl" => :test
 
+  conflicts_with "bao", because: "both install `bao` binaries"
+
   def install
     ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin" # for npm
     system "make", "bootstrap", "static-dist", "dev-ui"

@@ -29,7 +29,7 @@ class WebExt < Formula
 
     # Remove vendored pre-built binary `terminal-notifier`
     node_notifier_vendor_dir = libexec"libnode_modulesweb-extnode_modulesnode-notifiervendor"
-    node_notifier_vendor_dir.rmtree # remove vendored pre-built binaries
+    rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
       terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"

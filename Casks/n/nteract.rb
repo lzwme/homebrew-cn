@@ -25,4 +25,8 @@ cask "nteract" do
     "~LibraryPreferencesio.nteract.nteract.plist",
     "~LibrarySaved Application Stateio.nteract.nteract.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

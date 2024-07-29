@@ -3,23 +3,25 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https:github.combennorthliterate-git"
-  url "https:files.pythonhosted.orgpackagesbd1dd8b406bb72174e3869c3d3242aec9ebd435a7b38cc9c4b0a34edd2bdf2b7literategit-0.4.7.tar.gz"
-  sha256 "b669f7209638e1a2a98304f749f5f2cc594db353c2b50d7be720cf6b261da97e"
+  # TODO: migrate to `libgit2` after https:github.combennorthliterate-gitissues11
+  url "https:files.pythonhosted.orgpackages7febb9798ba7c4e818b26b7214dff2bd43d4ec58c8dab956e5d71e9b5549b099literategit-0.4.8.tar.gz"
+  sha256 "4dbbaf08a6db02d8a1076e3ef54ea046bd297b47abadd06c35812a4ca2aff8a1"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dc3bb7409c8a14d06f16ca896b49b17c7549d217b8b809a5a13a5f99aae12ea1"
-    sha256 cellar: :any,                 arm64_ventura:  "cb1aa2bd7f1dc350ff3e7bff5f47784725ee24cf1bcd20d829fdfb43b29a1183"
-    sha256 cellar: :any,                 arm64_monterey: "daeff0fffe9d17ba3e4513faa7825d3b2a828fe66bdf537d130ab9faa30e62e1"
-    sha256 cellar: :any,                 sonoma:         "f9190d897e5a7fe7e8abd0cc614925562db1eaa46c0aafa349669633546c8601"
-    sha256 cellar: :any,                 ventura:        "56b6d56dee84f57f9030863a1566b1a3eac5912e540bd13e8c6db145a691e6df"
-    sha256 cellar: :any,                 monterey:       "dbff94779ed3ffe9008b072f794854bc9da4f36ac47f88e43defc3524374711d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58fd27c6a6b014e312352d54e0972ec39c1f3b11f0eca601fe12fd0bccc618c9"
+    sha256 cellar: :any,                 arm64_sonoma:   "1722d6de47dcc48b4b8a8ccb761322e77db27ba1beb8f296c20fdcbe7dba2f9c"
+    sha256 cellar: :any,                 arm64_ventura:  "8e8a91a76d187d0296c05f5e5adabe92420dc3716d2b9fcb4f9137cec806b68a"
+    sha256 cellar: :any,                 arm64_monterey: "64c7dfbc25daf870feb1985800a848c0eb159602c16da39a3659863d2b67dcfa"
+    sha256 cellar: :any,                 sonoma:         "6f4892b45f55314d8df0ff6315f7cb9ca646dfe312a0b010e1b571f1c2201dd3"
+    sha256 cellar: :any,                 ventura:        "ba4895c0f38a653533b55987831c316447806ac3a384870ee607879d3f4fd57c"
+    sha256 cellar: :any,                 monterey:       "38e490a8c38bd6c7dec3a10cb6dd597642b70ef415a7d98c540c1fcc3fecc91e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b12c28303e4b8278ebd3be782886a94b57afca2873df274a8a4402c4acb56bd8"
   end
 
   depends_on "libgit2@1.7"
   depends_on "python@3.12"
+
+  uses_from_macos "libffi"
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -41,8 +43,8 @@ class LiterateGit < Formula
   end
 
   resource "markdown2" do
-    url "https:files.pythonhosted.orgpackages7489a6bb59171d0bd5a3b19deb834ec29378a7c8e05bcb0a4dd4e5cb418ea03bmarkdown2-2.4.13.tar.gz"
-    sha256 "18ceb56590da77f2c22382e55be48c15b3c8f0c71d6398def387275e6c347a9f"
+    url "https:files.pythonhosted.orgpackagesda003c708de5bffa0494daf894d2e8e2b6165f866ef3ae7939546fae039b5f0emarkdown2-2.5.0.tar.gz"
+    sha256 "9bff02911f8b617b61eb269c4c1a5f9b2087d7ff051604f66a61b63cab30adc2"
   end
 
   resource "markupsafe" do
@@ -66,8 +68,8 @@ class LiterateGit < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackages32c05b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931setuptools-71.1.0.tar.gz"
+    sha256 "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
   end
 
   def install

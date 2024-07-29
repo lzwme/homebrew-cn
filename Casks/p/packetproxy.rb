@@ -13,4 +13,8 @@ cask "packetproxy" do
     "~.packetproxy",
     "~LibrarySaved Application Statepacketproxy",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

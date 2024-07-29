@@ -19,4 +19,8 @@ cask "pyfa" do
     "~LibraryPreferencesorg.pyfaorg.pyfa.plist",
     "~LibrarySaved Application Stateorg.pyfaorg.pyfa.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

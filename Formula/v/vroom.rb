@@ -33,7 +33,7 @@ class Vroom < Formula
 
     # Use brewed dependencies instead of vendored dependencies
     cd "include" do
-      rm_rf ["cxxopts", "rapidjson"]
+      rm_r(["cxxopts", "rapidjson"])
       mkdir_p "cxxopts"
       ln_s Formula["cxxopts"].opt_include, "cxxoptsinclude"
       ln_s Formula["rapidjson"].opt_include, "rapidjson"

@@ -2737,7 +2737,7 @@ Homebrew-homebrew-core/Formula/i/inlyne.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/innoextract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/innotop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inotify-tools.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/insect.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/insect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inspectrum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inspircd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/install-peerdeps.rb, Homebrew/homebrew-core, 1
@@ -4129,7 +4129,7 @@ Homebrew-homebrew-core/Formula/m/mongrel2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongroup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monika.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monit.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monkeysphere.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mono-libgdiplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 1
@@ -6552,6 +6552,7 @@ Homebrew-homebrew-core/Formula/u/uuu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvg266.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvicorn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uvw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uwsgi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/v.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/v2ray-plugin.rb, Homebrew/homebrew-core, 1
@@ -13988,6 +13989,7 @@ Homebrew-homebrew-cask/Casks/x/x-mirage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/x-moto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/x-swiftformat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/x2goclient.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/x32-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xact.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-android.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xamarin-ios.rb, Homebrew/homebrew-cask, 0

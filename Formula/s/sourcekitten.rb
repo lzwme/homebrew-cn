@@ -2,18 +2,18 @@ class Sourcekitten < Formula
   desc "Framework and command-line tool for interacting with SourceKit"
   homepage "https:github.comjpsimSourceKitten"
   url "https:github.comjpsimSourceKitten.git",
-      tag:      "0.35.0",
-      revision: "fd4df99170f5e9d7cf9aa8312aa8506e0e7a44e7"
+      tag:      "0.36.0",
+      revision: "fbd6bbcddffa97dca4b8a6b5d5a8246a430be9c7"
   license "MIT"
   head "https:github.comjpsimSourceKitten.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0bd1035c22cd6761912daa069a6f20f49b312d7aa2cc217a8004796f37ee080f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eafdd15b9e0de09d67b815c6daf250d61976f4baf11513c558a430b0bb5182fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e35a2af7a4273b844ab35b150e8e6a45553c3078fdfe2c5d15bd38a68ec1156"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8779a196675cad2cddec33812545647731994a36cf9542de513bfa9e0ed85093"
-    sha256 cellar: :any_skip_relocation, ventura:        "44cfbed75b6096db3306b208d008ef619604c72587ab3ee4ead87e82f7681b32"
-    sha256 cellar: :any_skip_relocation, monterey:       "b97ff5ab90b33c889a57fe2a5b80117cc4e7649e790658cfb55611bebbc54885"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de09af7ebff8f1fefb5daa5656ceb3d768b06ed9c1825783680acdcce96acb86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1b65a68b37177be39565b54be6149dba1f3ba42fcabc26ced151c7f7803edc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8dffc8ba081641777ef1d0606130582d2eb2a505926c9dd3230d17acf9336850"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a75f960c137193ded31c765fb96ecda9bc1c6f8893f32a5becd02c090a35463f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3e70dc9ec689ee44363e943f3ef32020bffdb894debab04f52b24a7f993c462"
+    sha256 cellar: :any_skip_relocation, monterey:       "803e0dfba2e8333141c7dd5fd6bda0310f0a917a6c79f16aa929bae56c3adcde"
   end
 
   depends_on xcode: ["14.0", :build]

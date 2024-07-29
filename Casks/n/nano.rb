@@ -22,4 +22,8 @@ cask "nano" do
     "~LibraryRaiBlocks",
     "~LibrarySaved Application Statenet.raiblocks.rai_wallet.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

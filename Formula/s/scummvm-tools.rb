@@ -25,10 +25,13 @@ class ScummvmTools < Formula
   depends_on "boost"
   depends_on "flac"
   depends_on "freetype"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "mad"
   depends_on "wxwidgets"
+
+  uses_from_macos "zlib"
 
   def install
     # configure will happily carry on even if it can't find wxwidgets,
@@ -41,13 +44,19 @@ class ScummvmTools < Formula
     wxconfig = "wx-config-#{wxwidgets.version.major_minor}"
     inreplace "configure", ^_wxconfig=wx-config$, "_wxconfig=#{wxconfig}"
 
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-debug",
-                          "--enable-verbose-build"
+    system ".configure", "--enable-verbose-build", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin"scummvm-tools-cli", "--list"
+    assert_match <<~EOS, shell_output("#{bin}scummvm-tools-cli --list")
+      All available tools:
+      \tcompress_agos:	Compresses Simon the Sorcerer and Feeble Files data files.
+      \tcompress_gob:	Compresses Gobliiins! data files.
+      \tcompress_kyra:	Used to compress Legend of Kyrandia games.
+      \tcompress_queen:	Used to compress Flight of the Amazon Queen data files.
+    EOS
+
+    assert_match version.to_s, shell_output("#{bin}scummvm-tools-cli --version")
   end
 end

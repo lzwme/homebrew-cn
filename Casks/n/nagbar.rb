@@ -17,4 +17,8 @@ cask "nagbar" do
     "~LibraryCachescom.volendavidov.NagBar",
     "~LibraryPreferencescom.volendavidov.NagBar.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

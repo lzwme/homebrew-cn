@@ -7,10 +7,16 @@ cask "play" do
   name "Play"
   homepage "https:pmsaue0.github.ioplay"
 
+  disable! date: "2024-07-28", because: :discontinued
+
   app "Play.app"
 
   zap trash: [
     "~LibraryApplication SupportPlay",
     "~LibraryCachesPlay",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

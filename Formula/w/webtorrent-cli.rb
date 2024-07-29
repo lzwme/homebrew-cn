@@ -30,7 +30,7 @@ class WebtorrentCli < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     libexec.glob("lib/node_modules/webtorrent-cli/node_modules/{bufferutil,utp-native,utf-8-validate}/prebuilds/*")
-           .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with their native slices
     deuniversalize_machos

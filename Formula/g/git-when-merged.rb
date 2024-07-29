@@ -9,8 +9,14 @@ class GitWhenMerged < Formula
   head "https:github.commhaggergit-when-merged.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "1475d839dbfbe0fcf5132c9291a9f4467f118a9c899f5571f11cdf09568dc097"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2eaa583d95ad40ab71601ea90261449fead78a76e54c07ce44d7eff6f556e69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f47d13d3c0efac1f4ab3769f7602284a92fded793d7eb547253abd4cdf0ddac4"
   end
 
   # TODO: Update this to whichever python has `binpython3`.

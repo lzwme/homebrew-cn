@@ -121,9 +121,7 @@ class Awscli < Formula
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources.reject { |r| r.name == "awscrt" }
-    # The `awscrt` resource requires `setuptools` & `wheel`, so they must be installed first
-    venv.pip_install resource("awscrt")
+    venv.pip_install resources
     venv.pip_install_and_link buildpath, build_isolation: false
 
     pkgshare.install "awscliexamples"
@@ -151,6 +149,6 @@ class Awscli < Formula
   test do
     assert_match "topics", shell_output("#{bin}aws help")
     site_packages = libexecLanguage::Python.site_packages(python3)
-    assert_includes Dir[site_packages"awsclidata*"], "#{site_packages}awsclidataac.index"
+    assert_includes site_packages.glob("awsclidata*"), site_packages"awsclidataac.index"
   end
 end

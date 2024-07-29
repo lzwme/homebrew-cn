@@ -3,7 +3,7 @@ class Fifechan < Formula
   homepage "https:fifengine.github.iofifechan"
   url "https:github.comfifenginefifechanarchiverefstags0.1.5.tar.gz"
   sha256 "29be5ff4b379e2fc4f88ef7d8bc172342130dd3e77a3061f64c8a75efe4eba73"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
@@ -27,16 +27,20 @@ class Fifechan < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "allegro"
   depends_on "sdl2"
   depends_on "sdl2_image"
   depends_on "sdl2_ttf"
 
+  on_linux do
+    depends_on "mesa"
+  end
+
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DENABLE_SDL_CONTRIB=ON", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_SDL_CONTRIB=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

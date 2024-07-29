@@ -15,4 +15,8 @@ cask "puppetry" do
     "~LibraryPreferencescom.dsheiko.puppetry.plist",
     "~LibrarySaved Application Statecom.dsheiko.puppetry.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -10,13 +10,14 @@ class EulerPy < Formula
   head "https:github.comiKevinYEulerPy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c005ce9f3a3d171dd8a0a1fcdd333a50796f6ecd9c8d2388e826c17bfb06baf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c005ce9f3a3d171dd8a0a1fcdd333a50796f6ecd9c8d2388e826c17bfb06baf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c005ce9f3a3d171dd8a0a1fcdd333a50796f6ecd9c8d2388e826c17bfb06baf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7c5da5389a951513481ec408bc198369e971fda5759ced080b229d322ea31edb"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c5da5389a951513481ec408bc198369e971fda5759ced080b229d322ea31edb"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c005ce9f3a3d171dd8a0a1fcdd333a50796f6ecd9c8d2388e826c17bfb06baf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47a547a457b0c89fc23a52eb1635b35703d07ae4a6d6d619eed5f45b9bd2aa2d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22166d8bb4c8e96c7d2ff89f1d0da3cdfa1630c67bfddac76ba00f75dd0a978d"
   end
 
   depends_on "python@3.12"
@@ -27,15 +28,14 @@ class EulerPy < Formula
   end
 
   def install
+    # Unpin old click version: https:github.comiKevinYEulerPycommit9923d2ee026608e33026909bb95c444724b08ba2
+    inreplace "requirements.txt", "click==4.0", "click"
     virtualenv_install_with_resources
   end
 
   test do
-    require "open3"
-    output = Open3.capture2("#{bin}euler", stdin_data: "\n")
-    # output[0] is the stdout text, output[1] is the exit code
-    assert_match 'Successfully created "001.py".', output[0]
-    assert_equal 0, output[1]
+    output = pipe_output("#{bin}euler", "Y\n")
+    assert_match 'Successfully created "001.py".', output
     assert_predicate testpath"001.py", :exist?
   end
 end

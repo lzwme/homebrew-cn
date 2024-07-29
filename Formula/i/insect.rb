@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Insect < Formula
   desc "High precision scientific calculator with support for physical units"
-  homepage "https://insect.sh/"
-  url "https://registry.npmjs.org/insect/-/insect-5.9.0.tgz"
+  homepage "https:github.comsharkdpinsect"
+  url "https:registry.npmjs.orginsect-insect-5.9.0.tgz"
   sha256 "dcb8d696e9209157f596c7c102cdc436d520629d2aed71585767af77bde2cb70"
   license "MIT"
 
@@ -27,15 +27,15 @@ class Insect < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
 
-    clipboardy_fallbacks_dir = libexec/"lib/node_modules/#{name}/node_modules/clipboardy/fallbacks"
-    clipboardy_fallbacks_dir.rmtree # remove pre-built binaries
+    clipboardy_fallbacks_dir = libexec"libnode_modules#{name}node_modulesclipboardyfallbacks"
+    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
     if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
+      linux_dir = clipboardy_fallbacks_dir"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (Formula["xsel"].opt_bin"xsel").relative_path_from(linux_dir), linux_dir
     end
 
     # Replace universal binaries with their native slices
@@ -43,7 +43,7 @@ class Insect < Formula
   end
 
   test do
-    assert_equal "120000 ms", shell_output("#{bin}/insect '1 min + 60 s -> ms'").chomp
-    assert_equal "299792458 m/s", shell_output("#{bin}/insect speedOfLight").chomp
+    assert_equal "120000 ms", shell_output("#{bin}insect '1 min + 60 s -> ms'").chomp
+    assert_equal "299792458 ms", shell_output("#{bin}insect speedOfLight").chomp
   end
 end

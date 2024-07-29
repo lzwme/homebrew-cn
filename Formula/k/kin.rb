@@ -9,13 +9,14 @@ class Kin < Formula
   head "https:github.comSerchinasticoKin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72ceb288c7ec1f5669544fe6ab9aeba9bef50a7b9153de7d6494c74aff6f49c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c4e3aa72276f7639f716e38f87edca546be48f8c76da97b50a5c8f805f60196"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9eb6bc7b4d86f5e2c689a797f1e307a7e87567524b4075163c96fc17f422c8a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7ae3e2e893df9fb31087548f90fbd0fe792aa2b38cc9b9c230841a82a5f3b8d"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e661f1ce7e41a958b76a6743521e4e44f7b69d7d2df17af524cd8d3ad68dc8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "46bf71970fe31abe368abe43652e8639c9dd04ea69fafa4ca3121eaded9b3909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7b046a13badece5223b6b62513db9ac7a0da3c41e3ba47c4cce4e52b2c0ba33"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "747006dfd30eb91047cae53ab11532077a0e50908c45270172187f6de8dbc833"
   end
 
   depends_on "python@3.12"
@@ -23,6 +24,12 @@ class Kin < Formula
   resource "antlr4-python3-runtime" do
     url "https:files.pythonhosted.orgpackagesb6007f1cab9b44518ca225a03f4493ac9294aab5935a7a28486ba91a20ea29cfantlr4-python3-runtime-4.13.1.tar.gz"
     sha256 "3cd282f5ea7cfb841537fe01f143350fdb1c0b1ce7981443a2fa8513fddb6d1a"
+  end
+
+  # Drop unneeded argparse requirement: https:github.comSerchinasticoKinpull115
+  patch do
+    url "https:github.comSerchinasticoKincommit02251e6babc56e3b3d5dfda18559d2f86f147975.patch?full_index=1"
+    sha256 "838b4e9fe54c9afcff0f38a6b6f1eda83883ff724c7089bfa08521f96615fbca"
   end
 
   def install

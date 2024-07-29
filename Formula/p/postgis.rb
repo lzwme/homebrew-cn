@@ -31,15 +31,23 @@ class Postgis < Formula
 
   depends_on "gpp" => :build
   depends_on "pkg-config" => :build
+
   depends_on "gdal" # for GeoJSON and raster handling
   depends_on "geos"
   depends_on "icu4c"
   depends_on "json-c" # for GeoJSON and raster handling
+  depends_on "libxml2"
   depends_on "pcre2"
   depends_on "postgresql@14"
   depends_on "proj"
   depends_on "protobuf-c" # for MVT (map vector tiles) support
   depends_on "sfcgal" # for advanced 2D3D functions
+
+  uses_from_macos "llvm"
+
+  on_linux do
+    depends_on "libpq"
+  end
 
   fails_with gcc: "5" # C++17
 

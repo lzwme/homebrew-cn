@@ -6,6 +6,8 @@ cask "pennywise" do
   name "Pennywise"
   homepage "https:github.comkamranahmedsepennywise"
 
+  deprecate! date: "2024-07-28", because: :unmaintained
+
   app "Pennywise.app"
 
   zap trash: [
@@ -14,4 +16,8 @@ cask "pennywise" do
     "~LibraryPreferencesinfo.kamranahmed.pennywise.plist",
     "~LibrarySaved Application Stateinfo.kamranahmed.pennywise.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

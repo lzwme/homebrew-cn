@@ -19,23 +19,26 @@ class DiffPdf < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
+  depends_on "glib"
   depends_on "poppler"
   depends_on "wxwidgets"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   fails_with gcc: "5"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    system "make"
+    system ".configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
     testpdf = test_fixtures("test.pdf")
-    system "#{bin}diff-pdf", "--output-diff=no_diff.pdf", testpdf, testpdf
-    assert (testpath"no_diff.pdf").file?
+    system bin"diff-pdf", "--output-diff=no_diff.pdf", testpdf, testpdf
+    assert_predicate testpath"no_diff.pdf", :exist?
   end
 end

@@ -22,10 +22,6 @@ class Whistle < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]
-
-    # Remove x86 specific optional feature
-    node_modules = libexec"libnode_moduleswhistlenode_modules"
-    rm_f node_modules"set-global-proxylibmacwhistle" if Hardware::CPU.arm?
   end
 
   test do

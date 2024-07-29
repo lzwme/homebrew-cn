@@ -8,4 +8,8 @@ cask "opensim" do
   homepage "https:github.comluoshengOpenSim"
 
   app "OpenSim.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

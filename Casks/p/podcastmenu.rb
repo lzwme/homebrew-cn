@@ -7,10 +7,7 @@ cask "podcastmenu" do
   desc "Tool to display Overcast on the menu bar"
   homepage "https:github.cominsideguiPodcastMenu"
 
-  livecheck do
-    url "https:github.cominsideguiPodcastMenurawmasterReleasesappcast.xml"
-    strategy :sparkle, &:short_version
-  end
+  deprecate! date: "2024-07-28", because: :unmaintained
 
   auto_updates true
   depends_on macos: ">= :el_capitan"
@@ -22,4 +19,8 @@ cask "podcastmenu" do
     "~LibraryCachesbr.com.guilhermerambo.PodcastMenu",
     "~LibraryPreferencesbr.com.guilhermerambo.PodcastMenu.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

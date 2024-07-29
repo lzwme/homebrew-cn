@@ -14,4 +14,8 @@ cask "pulse-sms" do
     "~LibraryApplication Supportpulse-sms",
     "~LibraryLogspulse-sms",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

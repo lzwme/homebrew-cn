@@ -28,18 +28,18 @@ class Eccodes < Formula
   depends_on "openjpeg"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DENABLE_NETCDF=ON",
-                            "-DENABLE_FORTRAN=ON",
-                            "-DENABLE_PNG=ON",
-                            "-DENABLE_JPG=ON",
-                            "-DENABLE_JPG_LIBOPENJPEG=ON",
-                            "-DENABLE_JPG_LIBJASPER=OFF",
-                            "-DENABLE_PYTHON=OFF",
-                            "-DENABLE_ECCODES_THREADS=ON",
-                             *std_cmake_args
-      system "make", "install"
-    end
+    args = %w[
+      -DENABLE_NETCDF=ON
+      -DENABLE_FORTRAN=ON
+      -DENABLE_PNG=ON
+      -DENABLE_JPG=ON
+      -DENABLE_JPG_LIBOPENJPEG=ON
+      -DENABLE_JPG_LIBJASPER=OFF
+      -DENABLE_ECCODES_THREADS=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims directory
     shim_references = [include/"eccodes_ecbuild_config.h", lib/"pkgconfig/eccodes.pc", lib/"pkgconfig/eccodes_f90.pc"]

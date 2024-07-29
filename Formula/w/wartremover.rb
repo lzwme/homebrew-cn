@@ -1,8 +1,8 @@
 class Wartremover < Formula
   desc "Flexible Scala code linting tool"
   homepage "https:github.comwartremoverwartremover"
-  url "https:github.comwartremoverwartremoverarchiverefstagsv3.1.7.tar.gz"
-  sha256 "44e316f66db6fd7c27d3e068d7db3c5d3b9709fc5ecff26cc9e95ff58f67d1b5"
+  url "https:github.comwartremoverwartremoverarchiverefstagsv3.1.8.tar.gz"
+  sha256 "d47b073cc6801d77bf85fd497a861323174903b318eabcd8ac80f18ea3d8b967"
   license "Apache-2.0"
   head "https:github.comwartremoverwartremover.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Wartremover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "b94038cde8b7d5343838a841af6415111f4ce3672d70b68c84acc23ab9a363a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e77cf2555174e7f5f06be5a444f94a7b33c6ea23358b0faea66d972f91b1565"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, ventura:        "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, monterey:       "09b309536a8950553c7f57a77010f73ae7b9d84f4a354b644652dc1d44a523de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "677c7e3592185bdd601c6fae07cbf17e91593aa9162046c4b456c4d04abdcae4"
   end
 
   depends_on "sbt" => :build

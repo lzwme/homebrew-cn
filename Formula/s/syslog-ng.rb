@@ -6,15 +6,17 @@ class SyslogNg < Formula
   url "https:github.comsyslog-ngsyslog-ngreleasesdownloadsyslog-ng-4.8.0syslog-ng-4.8.0.tar.gz"
   sha256 "f2035546af5fcc0c03a8d03f5f0e929ce19131a428d611c982a5fea608a5d9d6"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
+  head "https:github.comsyslog-ngsyslog-ng.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "c12c97cb63cc78dd24bd11184b3a603d315c57c9768661762b0121ff85f382f1"
-    sha256 arm64_ventura:  "16164beb37e9fca01a9c10132f0b8e1e6f025ce021ae06d4b41d78f73f482b2d"
-    sha256 arm64_monterey: "8de488f6bc784a77d3bfe687aa433e530755c1e55b8dbff4b4984009b0389e18"
-    sha256 sonoma:         "7eeaef857d7f609ea1f1b16a99d0079d668b044a5a62fd929c142916f4c6a56a"
-    sha256 ventura:        "81c331142b9f783646192a81af6290bd1768e8833e59afa4511cac8753fa6d9e"
-    sha256 monterey:       "ceee07413334402d6ec99644a0031e9eab795a0dba4cb09dfd600af07bcef521"
-    sha256 x86_64_linux:   "8b8992c943c83726ddaf465c4949d6461b51c9d88209520249050c1be0bd6895"
+    sha256 arm64_sonoma:   "05d656ba36cb226bef7b8909cdac713dbd42b2d2257dbcaed5f0bfb2c591ebc8"
+    sha256 arm64_ventura:  "212067254ea48e8f24310893eaf92195aa5e38e02ce5505e2b41245b07502a98"
+    sha256 arm64_monterey: "a0a8b255c853c47c46956c93df031f9e0a9031815aeb2c2222c669065ffd1373"
+    sha256 sonoma:         "563fe3229679fdbe66a10faebf326119c567af8930303590465d0b063b5dbeec"
+    sha256 ventura:        "1b113ad0279d38620b42518f5925c54836ddf9a4f334aaefb0458ee828366428"
+    sha256 monterey:       "e9e5fe985f1e918fcdd63be304ebaac7e89fe088d46f9a09bd79c93ada76051d"
+    sha256 x86_64_linux:   "9f56a693a2b73d5b1a7c39d84d1e35f893a97d6a9f08c8125798dbfed7ae5946"
   end
 
   depends_on "pkg-config" => :build
@@ -41,6 +43,10 @@ class SyslogNg < Formula
 
   uses_from_macos "curl"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     # In file included from LibraryDeveloperCommandLineToolsSDKsMacOSX14.sdkusrincludec++v1compare:157:
     # .version:1:1: error: expected unqualified-id
@@ -48,9 +54,13 @@ class SyslogNg < Formula
     ENV["VERSION"] = version
 
     python3 = "python3.12"
-    sng_python_ver = Language::Python.major_minor_version python3
+    venv = virtualenv_create(libexec, python3)
+    # FIXME: we should use resource blocks but there is no upstream pip support besides this requirements.txt
+    # https:github.comsyslog-ngsyslog-ngblobmasterrequirements.txt
+    args = std_pip_args(prefix: false, build_isolation: true).reject { |s| s["--no-deps"] }
+    system python3, "-m", "pip", "--python=#{venv.root}binpython",
+                          "install", *args, "--requirement=#{buildpath}requirements.txt"
 
-    venv_path = libexec"python-venv"
     system ".configure", *std_configure_args,
                           "CXXFLAGS=-std=c++17",
                           "--disable-silent-rules",
@@ -58,25 +68,18 @@ class SyslogNg < Formula
                           "--sysconfdir=#{pkgetc}",
                           "--localstatedir=#{var}#{name}",
                           "--with-ivykis=system",
-                          "--with-python=#{sng_python_ver}",
-                          "--with-python-venv-dir=#{venv_path}",
+                          "--with-python=#{Language::Python.major_minor_version python3}",
+                          "--with-python-venv-dir=#{venv.root}",
                           "--disable-example-modules",
                           "--disable-java",
                           "--disable-java-modules",
-                          "--disable-smtp",
-                          # enable this after v4.8.0 is released: https:github.comsyslog-ngsyslog-ngpull4924
-                          "--disable-grpc"
+                          "--disable-smtp"
     system "make", "install"
-
-    requirements = lib"syslog-ngpythonrequirements.txt"
-    venv = virtualenv_create(venv_path, python3)
-    venv.pip_install requirements.read.gsub(#.*$, "")
-    cp requirements, venv_path
   end
 
   test do
-    assert_equal "syslog-ng #{version.major} (#{version})",
-                 shell_output("#{sbin}syslog-ng --version").lines.first.chomp
-    system "#{sbin}syslog-ng", "--cfgfile=#{pkgetc}syslog-ng.conf", "--syntax-only"
+    output = shell_output("#{sbin}syslog-ng --version")
+    assert_equal "syslog-ng #{version.major} (#{version})", output.lines.first.chomp
+    system sbin"syslog-ng", "--cfgfile=#{pkgetc}syslog-ng.conf", "--syntax-only"
   end
 end
