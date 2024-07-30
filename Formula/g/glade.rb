@@ -21,17 +21,24 @@ class Glade < Formula
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
   depends_on "libxml2"
+  depends_on "pango"
 
   uses_from_macos "libxslt" => :build
 
   on_macos do
+    depends_on "at-spi2-core"
     depends_on "gtk-mac-integration"
+    depends_on "harfbuzz"
   end
 
   def install
@@ -53,8 +60,8 @@ class Glade < Formula
   test do
     # executable test (GUI)
     # fails in Linux CI with (glade:20337): Gtk-WARNING **: 21:45:31.876: cannot open display:
-    system "#{bin}/glade", "--version" if OS.mac?
-    # API test
+    system bin/"glade", "--version" if OS.mac?
+
     (testpath/"test.c").write <<~EOS
       #include <gladeui/glade.h>
 
@@ -63,65 +70,9 @@ class Glade < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
-    atk = Formula["atk"]
-    cairo = Formula["cairo"]
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gdk_pixbuf = Formula["gdk-pixbuf"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    gtkx3 = Formula["gtk+3"]
-    harfbuzz = Formula["harfbuzz"]
-    libepoxy = Formula["libepoxy"]
-    libpng = Formula["libpng"]
-    pango = Formula["pango"]
-    pcre = Formula["pcre"]
-    pixman = Formula["pixman"]
-    flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
-    flags += %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/gio-unix-2.0/
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx3.opt_include}/gtk-3.0
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/libgladeui-2.0
-      -I#{libepoxy.opt_include}
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pcre.opt_include}
-      -I#{pixman.opt_include}/pixman-1
-      -D_REENTRANT
-      -L#{atk.opt_lib}
-      -L#{cairo.opt_lib}
-      -L#{gdk_pixbuf.opt_lib}
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{gtkx3.opt_lib}
-      -L#{lib}
-      -L#{pango.opt_lib}
-      -latk-1.0
-      -lcairo
-      -lcairo-gobject
-      -lgdk-3
-      -lgdk_pixbuf-2.0
-      -lgio-2.0
-      -lgladeui-2
-      -lglib-2.0
-      -lgobject-2.0
-      -lgtk-3
-      -lpango-1.0
-      -lpangocairo-1.0
-      -lxml2
-    ]
-    flags << "-lintl" if OS.mac?
-    system ENV.cc, "test.c", "-o", "test", *flags
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs gladeui-2.0").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
     system "./test"
   end
 end

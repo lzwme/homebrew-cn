@@ -46,8 +46,8 @@ class ChocolateDoom < Formula
                           "--disable-silent-rules",
                           "--disable-sdltest"
     system "make", "install", "execgamesdir=#{bin}"
-    (share"applications").rmtree
-    (share"icons").rmtree
+    rm_r(share"applications")
+    rm_r(share"icons")
   end
 
   def caveats

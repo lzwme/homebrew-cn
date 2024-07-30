@@ -1,4 +1,6 @@
 class Lorem < Formula
+  include Language::Python::Shebang
+
   desc "Python generator for the console"
   homepage "https:github.comper9000lorem"
   url "https:github.comper9000loremarchiverefstagsv0.8.0.tar.gz"
@@ -10,8 +12,11 @@ class Lorem < Formula
     sha256 cellar: :any_skip_relocation, all: "79e38b6949ebd14157f0177fae6331e780f1889c76594c86dea7d649ef5c9057"
   end
 
+  uses_from_macos "python"
+
   def install
     bin.install "lorem"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), bin"lorem"
   end
 
   test do

@@ -1,8 +1,8 @@
 class Metabase < Formula
   desc "Business intelligence report server"
   homepage "https:www.metabase.com"
-  url "https:downloads.metabase.comv0.50.16metabase.jar"
-  sha256 "1a77ee1d8d3c4977a561875858e58e9a5e2427c3d5aa71276876dfc4acf3ab8e"
+  url "https:downloads.metabase.comv0.50.17metabase.jar"
+  sha256 "f8d8153dfe4e586de92a4be1ea0ce1ccdbaf45822fbf3d40a61aab5d98043bba"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcf613315d46a99b84a91b7a4db5a41ecb5f3bfb131dd764ff0f9deb76136eb9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcf613315d46a99b84a91b7a4db5a41ecb5f3bfb131dd764ff0f9deb76136eb9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcf613315d46a99b84a91b7a4db5a41ecb5f3bfb131dd764ff0f9deb76136eb9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a8daae855f91d1abe926bc9d17cadc9ff2e3d1b5f19bd5bac2736b44a966b3b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8daae855f91d1abe926bc9d17cadc9ff2e3d1b5f19bd5bac2736b44a966b3b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8daae855f91d1abe926bc9d17cadc9ff2e3d1b5f19bd5bac2736b44a966b3b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b3c9bc296a4b2ae53586974278c28319a5c2ba5143a1adeda4e8a0dbae1af64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, ventura:        "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, monterey:       "b7e0c81f112c5e86ee1644f2174b3339b9f560e47c119ac696082c29075d5842"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a2545cb7aa8d03a11e11b21de332d207b755947fa2e2de2eb8257b9a6bc1923"
   end
 
   head do

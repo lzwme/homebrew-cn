@@ -37,18 +37,18 @@ class Cdrtools < Formula
     # This could be done by dropping each occurrence of *_p.mk from the definition
     # of MK_FILES in every lib*/Makefile. But it is much easier to just remove all
     # lib*/*_p.mk files. The latter method produces warnings but works fine.
-    rm_f Dir["lib*/*_p.mk"]
+    rm(Dir["lib*/*_p.mk"])
     # CFLAGS is required to work around autoconf breakages as of 3.02a
     system "smake", "INS_BASE=#{prefix}", "INS_RBASE=#{prefix}",
            "CFLAGS=-Wno-implicit-function-declaration",
            "install"
     # cdrtools tries to install some generic smake headers, libraries and
     # manpages, which conflict with the copies installed by smake itself
-    (include/"schily").rmtree
+    rm_r(include/"schily")
     %w[libschily.a libdeflt.a libfind.a].each do |file|
       (lib/file).unlink
     end
-    man5.rmtree
+    rm_r(man5)
   end
 
   test do

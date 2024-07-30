@@ -1,19 +1,19 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https:xmake.io"
-  url "https:github.comxmake-ioxmakereleasesdownloadv2.9.3xmake-v2.9.3.tar.gz"
-  sha256 "82a9bb6961a39bea8f280c1413d54854423f8f92e2ff43ee1c0fead7a3b5edd8"
+  url "https:github.comxmake-ioxmakereleasesdownloadv2.9.4xmake-v2.9.4.tar.gz"
+  sha256 "75e2dde2bd2a48a332989b801ae65077c452d491fec517a9db27a81c8713cdc5"
   license "Apache-2.0"
   head "https:github.comxmake-ioxmake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "499b583a08ab7e4056480964d0bc4a24ba742794544a6f4ad61eeed7ab7451b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "383cd125aeafc1eaff9ee0b93080285aa45ce8f75b19d3f19b095b8d00afda47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c69ac34872e8750a677e30540c87c74bafc81ed3044455312b042377b306fb63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8dc8f8900ef16dfe2dedcdc66012738b2a376ee9781c39364d7ef2d9a9dc6d11"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2751c686d5725eab1203c9cd42516271a4c857bc5c177871532a305444cdd1a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bfca3d8bb77f5a057d66f29e91dfbea47608f26124d11561cad7f22251f391a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10da87dbb6a68eb7dab6a813404dbba8a86c0f6edb961f4d05d299091e68b4f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0723c1ecf87b6b33384a8283567bb3f24c4126b62157db2c2b5e258771d5ef60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa78f17fc76dac0f340db156c98bced32ae5b177894f0052cd7cb0aa6d87d946"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7ad8b83d15ef2a96a2f0284839892aac6ab289bd55903dd3aaf443266645133"
+    sha256 cellar: :any_skip_relocation, sonoma:         "886f28d50d68ed6bba0ffcee2105f1899b751d250f310ee675ea9fc2e0565687"
+    sha256 cellar: :any_skip_relocation, ventura:        "006f416fbba6429476708d98767e66c57d5e3bc9606849a6bddd873b15f9f209"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1b423e6cd500c93ede366ed49abe652d81bda357ed43c7302b9c73b790c40fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da5cf9de532311811cbc20c37626914fda85f01c29b5c9a37ad12696cbedb07a"
   end
 
   uses_from_macos "ncurses"

@@ -36,8 +36,7 @@ class CheckPostgres < Formula
 
     (bin"check_postgres").write_env_script libexec"bincheck_postgres.pl", PATH: "#{Formula["libpq"].opt_bin}:$PATH"
 
-    rm_rf prefix"Library"
-    rm_rf prefix"lib"
+    rm_r(prefix"lib")
   end
 
   test do

@@ -1602,6 +1602,7 @@ Homebrew-homebrew-core/Formula/e/epeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ephemeralpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epic5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epinio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/epoll-shim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/epr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eprover.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epsilon.rb, Homebrew/homebrew-core, 0
@@ -12739,6 +12740,7 @@ Homebrew-homebrew-cask/Casks/q/quicklookase.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicknfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicksilver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicktune.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/quickwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quiet-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quiet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quik.rb, Homebrew/homebrew-cask, 0

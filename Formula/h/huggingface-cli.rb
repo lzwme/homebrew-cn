@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/2b/31/6db4b94d96cbe1949919cfd768bb47f695a041350d73b7b0c2b4aa665c6c/huggingface_hub-0.24.2.tar.gz"
-  sha256 "92be892405d2f6a7a8479016f9a5662354f202b2c6c1ff499609621aed1fae10"
+  url "https://files.pythonhosted.org/packages/05/4d/5e5a0ec7afea883a7a42274464d2984c1f30f0c7c9c05a356639b91f8c6a/huggingface_hub-0.24.3.tar.gz"
+  sha256 "bfdc05cc9b64a0e24e8614a44222698799183268f6b68be209aa2df70cff2cde"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "42461277153f3765cf51228e503f091936d2ef6e5f1cb51410f11f95edaf0b92"
-    sha256 cellar: :any,                 arm64_ventura:  "6dd6cae85c7c9ee7b163be0b00ef9d78a91cf8113578847861e2d0bd499b4eee"
-    sha256 cellar: :any,                 arm64_monterey: "30a294c27c850842a9785ec9b188433b35b577d30a70c37ac304076591c75f65"
-    sha256 cellar: :any,                 sonoma:         "93a85951c96a25e2a31b511f680cd76c1342df94b6db5705a9cda9867d085cd9"
-    sha256 cellar: :any,                 ventura:        "2264d2a54a96f3572919e22a9bb3062febc23f7eae024dfd34b132d89a51bec9"
-    sha256 cellar: :any,                 monterey:       "60cacaea52fef45bbbaa795ae753243806c23a3a2a300ffaa1cb43cec9381ee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ce9bfb5b8cc44757f05af6c6714686a3b5baf72e8bfa09aba0fac2849ebbce4"
+    sha256 cellar: :any,                 arm64_sonoma:   "12d37f48b4e2beec324fbc55c52170a6138e9b66781d61e10e7e74979828c5e6"
+    sha256 cellar: :any,                 arm64_ventura:  "0de36a37cfe741b6f25a6e68260b96c6bb4cdc7161af0f09e9dc5d7e67d4a69e"
+    sha256 cellar: :any,                 arm64_monterey: "f1013ae66e7e4fb6b53d0b11f20ce1b699f81eb521d842b35e3e30f29baaf271"
+    sha256 cellar: :any,                 sonoma:         "53c898cb447da65195582942bab02c7b097b2a6026a08df35613aee9600690da"
+    sha256 cellar: :any,                 ventura:        "070a6c78a54e63c215a1fd6fbec88538bc6957f67707f49050e5beef02d1f23d"
+    sha256 cellar: :any,                 monterey:       "b60ce0886deb15decc7ad5cde28f9f51e6cb6cdbf8f82b6149b82284377be021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c2e9ce899903faa908bee7dc9cd970e184bc5890058284359c0e0c865a4d859"
   end
 
   depends_on "certifi"

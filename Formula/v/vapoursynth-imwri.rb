@@ -40,8 +40,8 @@ class VapoursynthImwri < Formula
               "install_dir = vapoursynth_dep.get_variable(pkgconfig: 'libdir')  'vapoursynth'",
               "install_dir = '#{lib}vapoursynth'"
 
-    system "meson", *std_meson_args, "build"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 

@@ -21,19 +21,23 @@ class Gegl < Formula
     sha256 x86_64_linux:   "4411ccbe1d5e15a856bec20d3da20a381f97a0ec6950fd906475f7bc26b64bb5"
   end
 
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
 
   depends_on "babl"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "json-glib"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "cairo"
@@ -51,14 +55,16 @@ class Gegl < Formula
     touch "subprojects/poly2tri-c/EMPTYFILE.c"
     ### END Temporary Fix ###
 
-    system "meson", *std_meson_args, "build",
-                    "-Ddocs=false",
-                    "-Dcairo=disabled",
-                    "-Djasper=disabled",
-                    "-Dumfpack=disabled",
-                    "-Dlibspiro=disabled",
-                    "--force-fallback-for=libnsgif,poly2tri-c"
-    system "meson", "compile", "-C", "build", "-v"
+    args = %w[
+      -Ddocs=false
+      -Dcairo=disabled
+      -Djasper=disabled
+      -Dumfpack=disabled
+      -Dlibspiro=disabled
+      --force-fallback-for=libnsgif,poly2tri-c
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 

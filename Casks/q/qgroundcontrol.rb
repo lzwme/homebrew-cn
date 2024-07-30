@@ -20,4 +20,8 @@ cask "qgroundcontrol" do
     "~LibraryCachesQGroundControl.org",
     "~LibrarySaved Application Stateorg.qgroundcontrol.QGroundControl.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

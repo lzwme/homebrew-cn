@@ -1,20 +1,19 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via ApacheNGINX"
   homepage "https:www.phusionpassenger.com"
-  url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.22passenger-6.0.22.tar.gz"
-  sha256 "1fc2a89196fc83469b10fea1ac7b57002fb9bf2552d70f03b780c92d7d9ed044"
+  url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.23passenger-6.0.23.tar.gz"
+  sha256 "897555224fb11340677780d929b5099da62303b1ae15f2e7c65cd3f6d3e7920c"
   license "MIT"
-  revision 1
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6418b958201403886627e0027d9f362f12f27447b81f62242146a16410f7f256"
-    sha256 cellar: :any,                 arm64_ventura:  "f40a3edcf65e11149751a34a8c9480c360a2016c9caaf8fefd8b8826189b8510"
-    sha256 cellar: :any,                 arm64_monterey: "6085e4c644c173055a205d99acf7083561a17e1e718ba3035cce0bf7b8e5dcc4"
-    sha256 cellar: :any,                 sonoma:         "82f77d7f6551d4de1e1aa2275e9a2efdaf4ec1640d2822332611e14cbb012085"
-    sha256 cellar: :any,                 ventura:        "0d6ca5d1d376ea1ea71fae72c4d8cba14be03553b355f454e2873fd643cdb63b"
-    sha256 cellar: :any,                 monterey:       "ea3ee317e535a68d41c67e98fffdc14de66f5c4d21e8c31fd9b7b60b9a35c6c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a9ca1317d851fa49c1cb330da9aa852cb945129df0d2254f465fc66d1002c0b"
+    sha256 cellar: :any,                 arm64_sonoma:   "403399c4ed7bca3447a27048c80802e2c0bef18341ae92b9b24898ebcc1863f3"
+    sha256 cellar: :any,                 arm64_ventura:  "a3267ad962d1ab8a50214a4c001eefe2fbfec7546f3660cc0147a0c362e3023a"
+    sha256 cellar: :any,                 arm64_monterey: "e5491b8320dc570d26b65f29303be9071529498ef286acc96817b155ae8ebcc8"
+    sha256 cellar: :any,                 sonoma:         "d6a9800e7125eb83e747351fa4e2ff623eea995f1ce76743413468b07dcc3f20"
+    sha256 cellar: :any,                 ventura:        "1b100c8490a2ed8c9aa3b8c30f01fd9b25721d7d9a0d77e685955ffeaa5ae33d"
+    sha256 cellar: :any,                 monterey:       "b6ec7c599b35542d3d29c06d6ad6d5c15bc70e512835b5403ca9f549224f3ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "736f98042134674ddd93a2542a373e24b1a5721d594491036c300c49798fc75b"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
@@ -30,13 +29,6 @@ class Passenger < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "ruby", since: :catalina
   uses_from_macos "zlib"
-
-  # Fix upstream_config.limit_rate initialization for Nginx 1.27.0 compatibility
-  # upstream pr ref, https:github.comphusionpassengerpull2548
-  patch do
-    url "https:github.comphusionpassengercommit4038e18f8f9231f6edc58f444aae1f282db4aa9b.patch?full_index=1"
-    sha256 "8a8cb3232506090279bfe23d37fdd6f5ad265f94bd64f60a9d6f3428afe73724"
-  end
 
   def install
     if OS.mac? && MacOS.version >= :mojave && MacOS::CLT.installed?

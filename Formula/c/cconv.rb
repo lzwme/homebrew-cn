@@ -32,7 +32,7 @@ class Cconv < Formula
     system "autoreconf", "-fvi"
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
-    rm_f include"unicode.h"
+    rm(include"unicode.h")
   end
 
   test do

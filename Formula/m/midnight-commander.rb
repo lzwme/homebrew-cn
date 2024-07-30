@@ -12,14 +12,14 @@ class MidnightCommander < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "db38bfda3b36eabaa861452b3edda1929d3bf09caf6e4703e1952a9e0fa550e5"
-    sha256 arm64_ventura:  "1485984ff451a2e9cebca05381c076b19022add8e001017fe70a4cef38a2b583"
-    sha256 arm64_monterey: "3c55ef249b10cd7a1406865e6c681b4f63fecc77c0c0bb5a1d6c87567e695319"
-    sha256 sonoma:         "819441b71fb4b0fc93253a0a2347cf5c509d05bb0fb81ad931d6d16ec04452cb"
-    sha256 ventura:        "619dec9f3c360453eece1a988827eb25d596f60bcd04c402d20639dd600519a2"
-    sha256 monterey:       "4c37aa02e3733b307f0b6fae9142213cb1ef349bc9a4b84cf017468d6537f5be"
-    sha256 x86_64_linux:   "ba4853c54f2abb917b60797f9008dd07ec9fdce81e2794aa121e94c6020eaf0b"
+    rebuild 2
+    sha256 arm64_sonoma:   "f0705dc478f5ee10d280de6b2d02b8dc6bf03e7e24857d461a878a74ae5d437e"
+    sha256 arm64_ventura:  "a370b58b90278689d30d71f15c120c9c6321d38ea94056c3b7fad38673ec8dd0"
+    sha256 arm64_monterey: "afbb203e238eb94049ed948fe4ecbfe0fd8faef2230f735e54c502c6c5d33eea"
+    sha256 sonoma:         "7ccb5bb2350689ba47c110d45b1cff222b8326f1fce7ecfec33e9914b2ef781e"
+    sha256 ventura:        "1a79c8c1f27b44573196c0be681ef7f1b55484c31b08216b1504daf815847c0d"
+    sha256 monterey:       "04a3ae62c176b08cb9e54d113bff88e8a7dbf855312c0a1a8b72c8e933f9f27c"
+    sha256 x86_64_linux:   "6195bb65394f9b17c85c9469764635054ff2daa9c3d2f68d68471790a1c6f119"
   end
 
   head do
@@ -31,32 +31,38 @@ class MidnightCommander < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "glib"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "s-lang"
 
+  on_macos do
+    depends_on "diffutils"
+    depends_on "gettext"
+  end
+
   conflicts_with "minio-mc", because: "both install an `mc` binary"
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
+    args = %w[
       --disable-silent-rules
-      --prefix=#{prefix}
       --without-x
       --with-screen=slang
       --enable-vfs-sftp
     ]
 
     system ".autogen.sh" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
 
-    inreplace share"mcsyntaxSyntax", Superenv.shims_path, "usrbin" if OS.mac?
+    if OS.mac?
+      inreplace share"mcsyntaxSyntax", Superenv.shims_path, "usrbin"
+      bin.env_script_all_files(libexec"bin", PATH: "#{Formula["diffutils"].opt_bin}:$PATH")
+    end
   end
 
   test do
-    assert_match "GNU Midnight Commander", shell_output("#{bin}mc --version")
+    assert_match version.to_s, shell_output("#{bin}mc --version")
   end
 end

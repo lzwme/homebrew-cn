@@ -5,7 +5,6 @@ class VapoursynthOcr < Formula
   sha256 "e9da11b7f5f3e4acfee5890729769217aa5b385bb573cb303c2661d8d8a83712"
   license "MIT"
   version_scheme 1
-
   head "https:github.comvapoursynthvs-ocr.git", branch: "master"
 
   bottle do
@@ -31,8 +30,8 @@ class VapoursynthOcr < Formula
       "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
       "install_dir : '#{lib}vapoursynth'"
 
-    system "meson", *std_meson_args, "build"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 

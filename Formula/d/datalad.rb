@@ -8,29 +8,30 @@ class Datalad < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96b73346ebdf4269912540ae5de5029a382dc0dd012d5a506cc596fde270eb90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f5bdda09bf5012a45fc369c88c674173cc7fd56a96cac71a7730f7cd42026ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dd17b6e8120aad0615e3631ebf61512ee9a498fc3475039d5371d0c5d851a71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d47b23df9e1601bb85c63ecdeedd7a108b39ba102cf6aaceaac592d64005f988"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8b667990aae9568f5523371c62d7a7436643a2fcbc33d0dca4f25ac1c1cd7c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2fcc2c4e1780a4491c6db6040cf9193faf21eebeaac161e407f10dea320cfc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e1d22d9d5d028d0d10fac9eeb9db55dbb8a2f6b9ac850edbd699ea827d698c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f8b25b419927e78aa5d94567511c9f5a889d5d646c4067335fcee6fd39022b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15031378492fe63e07ea7f005a2b772f607dec5a81ee75af490584436f1f6add"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ece7fbabeb6f7c26ccd8c5e848b71e99509c82eb4ce7d5d0a9c8eb16979dc1c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46d54d459e571de82be459cbe15694866e520dc0e89d276fe9c1f7dd8715c289"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0bd046e1abc93716ee7ee33dc000f2dcc1b8614f5163c216c855f047b79dfa5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7954c398caeaef5d069a416214bf4c4a40770f6f0dbf32e6d3b75a75a567a537"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "747a427b94d522b6ba16dee1d5734909f59041b8871827732472019f501b405c"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "git-annex"
   depends_on "p7zip"
-  depends_on "python@3.11" # Python 3.12 blocked by `boto` usage: https:github.comdataladdataladissues5597
+  depends_on "python@3.12"
 
   resource "annexremote" do
     url "https:files.pythonhosted.orgpackagesaea7103ec87b5400583be13e861bec8fb1a9fdc237016aa372bc46cade987df0annexremote-1.6.5.tar.gz"
     sha256 "ad0ccdd84a8771ad58922d172ee68b225ece77bf464abe4d24ff91a4896a423e"
   end
 
-  resource "backports-tarfile" do
-    url "https:files.pythonhosted.orgpackages8672cd9b395f25e290e633655a100af28cb253e4393396264a98bd5f5951d50fbackports_tarfile-1.2.0.tar.gz"
-    sha256 "d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991"
+  resource "argcomplete" do
+    url "https:files.pythonhosted.orgpackagesdbca45176b8362eb06b68f946c2bf1184b92fc98d739a3f8c790999a257db91fargcomplete-3.4.0.tar.gz"
+    sha256 "c2abcdfe1be8ace47ba777d4fce319eb13bf8ad9dace8d085dcad6eded88057f"
   end
 
   resource "boto3" do
@@ -71,11 +72,6 @@ class Datalad < Formula
   resource "idna" do
     url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
-  end
-
-  resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagesf6a1db39a513aa99ab3442010a994eef1cb977a436aded53042e69bee6959f74importlib_metadata-8.2.0.tar.gz"
-    sha256 "72e8d4399996132204f9a16dcc751af254a48f8d1b20b9ff0f98d4a8f901e73d"
   end
 
   resource "iso8601" do
@@ -148,6 +144,11 @@ class Datalad < Formula
     sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
   end
 
+  resource "pyperclip" do
+    url "https:files.pythonhosted.orgpackages30232f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60dpyperclip-1.9.0.tar.gz"
+    sha256 "b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310"
+  end
+
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -193,13 +194,20 @@ class Datalad < Formula
     sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
-  resource "zipp" do
-    url "https:files.pythonhosted.orgpackagesd320b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1zipp-3.19.2.tar.gz"
-    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
-  end
-
   def install
-    virtualenv_install_with_resources
+    without = %w[python-dateutil requests]
+    venv = virtualenv_install_with_resources(without:)
+
+    # Fix compatability with setuptools 72+: https:github.comdateutildateutilpull1376
+    without.each do |r|
+      resource(r).stage do
+        inreplace "setup.py", "from setuptools.command.test import test as TestCommand",
+                              "TestCommand = object"
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    generate_completions_from_executable(libexec"binregister-python-argcomplete", "datalad", "--shell")
   end
 
   test do

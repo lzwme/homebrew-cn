@@ -1,8 +1,8 @@
 class ProtocGenGoGrpc < Formula
   desc "Protoc plugin that generates code for gRPC-Go clients"
   homepage "https:github.comgrpcgrpc-go"
-  url "https:github.comgrpcgrpc-goarchiverefstagscmdprotoc-gen-go-grpcv1.4.0.tar.gz"
-  sha256 "e932b9ceb1a338eabdb3a421b7e3bbc871f85d359d31955a5e4627ee1132f882"
+  url "https:github.comgrpcgrpc-goarchiverefstagscmdprotoc-gen-go-grpcv1.5.1.tar.gz"
+  sha256 "54cb438abe590c9366e08251f811810fa004b1193154fe6e6a7d7c782a37332e"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class ProtocGenGoGrpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54e069e294ed066cea79382a990ea8cca724ab375efdfeb987f4587aaabffba6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54e069e294ed066cea79382a990ea8cca724ab375efdfeb987f4587aaabffba6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54e069e294ed066cea79382a990ea8cca724ab375efdfeb987f4587aaabffba6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f5ad040c80e043489b9f61c98d50cb19768e93ee9494d161886305ea29602d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f5ad040c80e043489b9f61c98d50cb19768e93ee9494d161886305ea29602d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f5ad040c80e043489b9f61c98d50cb19768e93ee9494d161886305ea29602d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b00231000adce3581fe6bb425b387f8e2c109c8b1a566ea147bd6937d789907"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
+    sha256 cellar: :any_skip_relocation, sonoma:         "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6252fdd5f14faaa8467cd9f5ce529b22c22aa2b8b4625ade71b52e28a2a2cb1"
   end
 
   depends_on "go" => :build

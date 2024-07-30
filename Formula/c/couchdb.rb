@@ -58,7 +58,7 @@ class Couchdb < Formula
     # setting new database dir
     inreplace "relcouchdbetcdefault.ini", ".data", "#{var}couchdbdata"
     # remove windows startup script
-    rm_rf("relcouchdbbincouchdb.cmd")
+    rm_r("relcouchdbbincouchdb.cmd")
     # install files
     prefix.install Dir["relcouchdb*"]
     if File.exist?(prefix"LibraryLaunchDaemonsorg.apache.couchdb.plist")

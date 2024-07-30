@@ -45,7 +45,7 @@ class ClickhouseOdbc < Formula
 
   def install
     # Remove bundled libraries excluding required bundled `folly` headers
-    %w[googletest nanodbc poco ssl].each { |l| (buildpath"contrib"l).rmtree }
+    %w[googletest nanodbc poco ssl].each { |l| rm_r(buildpath"contrib"l) }
 
     args = %W[
       -DCH_ODBC_PREFER_BUNDLED_THIRD_PARTIES=OFF

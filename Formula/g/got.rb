@@ -11,20 +11,22 @@ class Got < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a58b0c45b9587c0cc312e02b729b838ee49f743a126d070e2d211bb0fda5c06a"
-    sha256 arm64_ventura:  "61c398885d3e8c96160462a3e309782c140c848802bcbf605f49d331ce604dab"
-    sha256 arm64_monterey: "29dccd4a4efa0a3117f6645f731e6586881b7c93b115fb0d7661fb3e856f71b1"
-    sha256 sonoma:         "a02b4331e36399f3535134b3cef5f67a3f3735e65dbabded6229d7fa7833ff5c"
-    sha256 ventura:        "37b7a21513219e26ff182d593e4f198a64952117be3e6a7fd636dd9a7d0c7eca"
-    sha256 monterey:       "c877ab51ccbd712d8801fbcb0bcc8dc59155f5821e39577c720763e7a4d3d1b2"
-    sha256 x86_64_linux:   "7092ddb235700573fcd2f88072d9cbe18f701630da96681f8094c098e27c542e"
+    rebuild 1
+    sha256 arm64_sonoma:   "ca90b719e44fd037ca635068987c9a166d009ee6f504a6eb29d8f6f58c552e11"
+    sha256 arm64_ventura:  "88901a3c58056bc87b9ced054ff8e74dde8929fa4316f21d3a15146acb35ce86"
+    sha256 arm64_monterey: "eed6bb0a29304c2f9ef670551621bd717b701f37183d327cdfa1d9601bf677c9"
+    sha256 sonoma:         "3f6128f61dd171f95cac85fd97b62723b83f9490c0ab9ae45c09a53a9241bc48"
+    sha256 ventura:        "560411ba1228e5cab0e5fd051d3712d53efc74f46c1e3fd9ab62d0a9c068ea18"
+    sha256 monterey:       "cb985ae235fe3987bd9744890d74a52287a9927c11d13d54ca23aa245df01972"
+    sha256 x86_64_linux:   "048f42d66b9ab92f3893968819175e5a96ca99185b7e693ecda0b25dbe7bc17e"
   end
 
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
   depends_on "libevent"
-  depends_on "libressl"
+  depends_on "libretls"
   depends_on "ncurses"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -35,10 +37,9 @@ class Got < Formula
   end
 
   def install
-    inreplace "configure", %r{\$\{HOMEBREW_PREFIX?\}/opt/openssl@\d+(\.\d+)?}, Formula["libressl"].opt_prefix
-    system "./configure", "--disable-silent-rules",
-                          "--with-libtls=#{Formula["libressl"].opt_prefix}",
-                          *std_configure_args
+    ENV["LIBTLS_CFLAGS"] = "-I#{Formula["libretls"].opt_include}"
+    ENV["LIBTLS_LIBS"] = "-L#{Formula["libretls"].opt_lib} -ltls"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

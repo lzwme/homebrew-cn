@@ -8,4 +8,8 @@ cask "qmoji" do
   homepage "https:github.comjaredlyqmoji"
 
   app "qmoji.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

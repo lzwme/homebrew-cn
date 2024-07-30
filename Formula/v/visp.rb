@@ -23,17 +23,30 @@ class Visp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "eigen"
   depends_on "gsl"
   depends_on "jpeg-turbo"
   depends_on "libdc1394"
   depends_on "libpng"
+  depends_on "openblas"
   depends_on "opencv"
   depends_on "pcl"
+  depends_on "vtk"
   depends_on "zbar"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "boost"
+    depends_on "flann"
+    depends_on "glew"
+    depends_on "libomp"
+    depends_on "libpcap"
+    depends_on "qhull"
+    depends_on "qt"
+  end
 
   on_linux do
     depends_on "libnsl"

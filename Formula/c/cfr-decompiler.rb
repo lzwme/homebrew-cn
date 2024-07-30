@@ -55,7 +55,7 @@ class CfrDecompiler < Formula
       mkdir doc"javadoc"
       cd doc"javadoc" do
         system Formula["openjdk@11"].bin"jar", "-xf", docdoc_jar
-        rm_rf "META-INF"
+        rm_r("META-INF")
       end
     end
   end

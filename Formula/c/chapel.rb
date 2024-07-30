@@ -81,13 +81,11 @@ class Chapel < Formula
       system "make", "mason"
       system "make", "cleanall"
 
-      rm_rf("third-partyllvmllvm-src")
-      rm_rf("third-partygasnetgasnet-src")
-      rm_rf("third-partylibfabriclibfabric-src")
-      rm_rf("third-partyfltkfltk-1.3.5-source.tar.gz")
-      rm_rf("third-partylibunwindlibunwind-1.1.tar.gz")
-      rm_rf("third-partygmpgmp-src")
-      rm_rf("third-partyqthreadqthread-srcinstalled")
+      rm_r("third-partyllvmllvm-src")
+      rm_r("third-partygasnetgasnet-src")
+      rm_r("third-partylibfabriclibfabric-src")
+      rm_r("third-partygmpgmp-src")
+      rm_r("third-partyqthreadqthread-src")
     end
 
     # Install chpl and other binaries (e.g. chpldoc) into bin as exec scripts.

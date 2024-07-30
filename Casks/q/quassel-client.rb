@@ -18,4 +18,8 @@ cask "quassel-client" do
   app "Quassel Client.app"
 
   zap trash: "~LibraryPreferencesorg.quassel-irc.client.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

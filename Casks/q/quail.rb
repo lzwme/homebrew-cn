@@ -17,4 +17,8 @@ cask "quail" do
     "~LibraryPreferencesnet.1000ch.quail.plist",
     "~LibrarySaved Application Statenet.1000ch.quail.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

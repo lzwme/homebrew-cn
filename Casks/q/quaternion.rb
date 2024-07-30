@@ -32,4 +32,8 @@ cask "quaternion" do
     "~LibraryPreferencescom.quotient.quaternion.plist",
     "~LibrarySaved Application Statecom.github.quaternion.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

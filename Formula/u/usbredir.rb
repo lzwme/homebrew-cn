@@ -27,9 +27,9 @@ class Usbredir < Formula
   depends_on "libusb"
 
   def install
-    system "meson", *std_meson_args, ".", "build"
-    system "ninja", "-C", "build", "-v"
-    system "ninja", "-C", "build", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

@@ -31,4 +31,8 @@ cask "quiet" do
   app "Quiet.app"
 
   zap trash: "~LibraryApplication SupportQuiet2"
+
+  caveats do
+    requires_rosetta
+  end
 end

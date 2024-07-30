@@ -7,7 +7,14 @@ class Vnu < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8d00fc6bf779e1275f7384ad5665490c35990af2a7e3c85c3e32b205fc436493"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, sonoma:         "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, ventura:        "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, monterey:       "81b343a03a3a7f211a61a6793bdea0d180afb01e95b2cd311ce4fb296ee11503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a803564acec3a4e5ed15e65dfa6d61d1e4e957254a1018f5b131a5846e1b01"
   end
 
   depends_on "openjdk"

@@ -32,10 +32,10 @@ class Strongswan < Formula
 
   depends_on "openssl@3"
 
+  uses_from_macos "curl"
+
   def install
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --sbindir=#{bin}
       --sysconfdir=#{etc}
       --disable-defaults
@@ -69,12 +69,13 @@ class Strongswan < Formula
       --enable-updown
       --enable-x509
       --enable-xauth-generic
+      --enable-curl
     ]
 
     args << "--enable-kernel-pfroute" << "--enable-osx-attr" if OS.mac?
 
     system ".autogen.sh" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -85,7 +86,7 @@ class Strongswan < Formula
   end
 
   test do
-    system "#{bin}ipsec", "--version"
-    system "#{bin}charon-cmd", "--version"
+    assert_match version.to_s, shell_output("#{bin}ipsec --version")
+    assert_match version.to_s, shell_output("#{bin}charon-cmd --version")
   end
 end

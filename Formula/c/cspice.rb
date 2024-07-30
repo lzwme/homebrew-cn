@@ -42,8 +42,8 @@ class Cspice < Formula
       end
     end
 
-    rm_f Dir["lib/*"]
-    rm_f Dir["exe/*"]
+    rm(Dir["lib/*"])
+    rm(Dir["exe/*"])
     system "csh", "makeall.csh"
     mv "exe", "bin"
     pkgshare.install "doc", "data"

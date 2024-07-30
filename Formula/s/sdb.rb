@@ -25,8 +25,8 @@ class Sdb < Formula
   conflicts_with "snobol4", because: "both install `sdb` binaries"
 
   def install
-    system "meson", *std_meson_args, "build"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
