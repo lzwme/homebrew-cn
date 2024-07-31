@@ -8,7 +8,14 @@ class Ncc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3bdd7554a42bdf4b9b98bcfd88f12b6576bd843216bb5a187dbd39da18613340"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, sonoma:         "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, ventura:        "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, monterey:       "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d55b94e1f441d7dc759cdec53b73749b4c8a1909857f1e65c3d4869e21e6153"
   end
 
   depends_on "node"

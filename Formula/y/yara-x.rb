@@ -1,19 +1,19 @@
 class YaraX < Formula
   desc "Tool to do pattern matching for malware research"
   homepage "https:virustotal.github.ioyara-x"
-  url "https:github.comVirusTotalyara-xarchiverefstagsv0.5.0.tar.gz"
-  sha256 "cea25fe87bf1b5391f022921ed73e6c189e1ce4243be55cc19d61d63c6ebab8b"
+  url "https:github.comVirusTotalyara-xarchiverefstagsv0.6.0.tar.gz"
+  sha256 "2f60e714aaa9140642f83aef7df012baaf7941ca444995a79c3b99cb4941367c"
   license "BSD-3-Clause"
   head "https:github.comVirusTotalyara-x.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d20e10d34fe6226a1d4bd688a9cbb3608f2f9e5a4fae238376947bd44ee4520e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2b59082d3c4d701517daf9ded02ae51b2e96ea951b2996b088ec136793e989a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c31057095bc979f3878f1d916a73237070c7aca9f118a1bd1a797ef60f8a390"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2637ff2ec3481fe54931dacedb49137c4d2403818d3e09791fbd8b3f886e5ef7"
-    sha256 cellar: :any_skip_relocation, ventura:        "61ccfc8313c348c55ba5baec5f042b9ea8a1a277535aef867e81f232323e964f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ee32539f562c871e42f2cc1d8608f4b2fdaccab6dacca559ed714a44d1be8951"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90037672029e987ed7bba4a38b2d3c89cbb7d172120c0deb1ca6bded4c4106c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d032c6f13c973f37fbdce10716a7bfc75d2e5bfa0b107ba5d3818ec7525492b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "832cd54c22e4b173638f0d33522591aef9abfc04f6c47334665e366c95e9dad7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f563aee617d0bb63dac1674e9c2b9fc6968fe06dbeff08838c2516dd70651846"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbd6b3459cc20614decb327e1f925bd5db7d7bb2bf136c0c1526a141e1cab030"
+    sha256 cellar: :any_skip_relocation, ventura:        "5650c99f8c066e96cc112bc48f26cf93d1d4855fa5475a649b4dc51580649f48"
+    sha256 cellar: :any_skip_relocation, monterey:       "eafd03d8c347fa8ce9b44c15fbb0b9848bf555a7b8417e4187e57f0cd7c217dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c916db31f7ef907f87b6fa4a60ac8b082dfb5edb3a18bbc079e726a17a4141"
   end
 
   depends_on "rust" => :build

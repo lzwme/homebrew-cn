@@ -1,5 +1,3 @@
-require "languagenode"
-
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
   homepage "https:github.commozillaweb-ext"
@@ -24,7 +22,7 @@ class WebExt < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove vendored pre-built binary `terminal-notifier`

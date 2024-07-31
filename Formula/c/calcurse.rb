@@ -30,13 +30,16 @@ class Calcurse < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "gettext"
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./autogen.sh" if build.head?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
 
     # Specify XML_CATALOG_FILES for asciidoc
     system "make", "XML_CATALOG_FILES=/usr/local/etc/xml/catalog"

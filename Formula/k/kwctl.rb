@@ -1,19 +1,19 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https:www.kubewarden.io"
-  url "https:github.comkubewardenkwctlarchiverefstagsv1.14.0.tar.gz"
-  sha256 "178a01a14173090180192906543248f3e002985b501387c9d93f979254c26ada"
+  url "https:github.comkubewardenkwctlarchiverefstagsv1.15.0.tar.gz"
+  sha256 "4228e5021f90e4c2d8e1a71ac8ac79f6c37b2b8f42f63da4856b69b95d9f5dee"
   license "Apache-2.0"
   head "https:github.comkubewardenkwctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "594f2af8665e7d0f3dbcc4fe523e1b6dfe15c07622ee7849f3506db332bcd1dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32ecc789565170b5cd560c9f569ed37270d65740e979b0c1e237bf2d7a2340e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a18bed5194723110781cc22aea91c717a4244a7416ff70e0a2816661e31e15e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b4caf9f1b9c057caeb0d701424af25b93ccc6bca34a1507ced682873d5f506e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb442cc17e29a78873f5a41e60e2fe8d613fc1f6364318c4361bbc4eca38349b"
-    sha256 cellar: :any_skip_relocation, monterey:       "888f556dfde97dfbb26d2d75fd26160763300dddbe2b58423e892bebd591d7dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2768ec80dffeef1f5baaf7924eb2763231d950e840ce7617476cf5887f552c27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20acd63b8c1d7f7bf4100e1eac183c901c1fde0d72f5c75c790fd2f76e529a63"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df45ec5a9fe533433a1e9f37b593ed59320d3601e5c6eff70ff08464f6479ad7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecad163b4343982b847f3e36dba27636075d52b9efd9f088e1cfca422ff53b96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cbed6e7e0b4393d3752e9380f1f6aad9433793fc16b66237b4297dd316876d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "9212d11e4b84ddbf71f14c03b9218dbd73b2d8aef269a3bddb18ca30c662616d"
+    sha256 cellar: :any_skip_relocation, monterey:       "a0347ee0a90dff70e10882d8a046318243a10f699a32350413118158d28e6640"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89380e5657e5582c0c800958da5446b1492eeed17df85c9ea791627d0420bb79"
   end
 
   depends_on "rust" => :build

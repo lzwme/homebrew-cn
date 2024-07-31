@@ -1,19 +1,18 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https:github.comociclocicl"
-  url "https:github.comociclociclarchiverefstagsv2.3.7.tar.gz"
-  sha256 "7199674fe545a0a80b1cf7aed9a52b51277beca3583c95478aae24e0c9af74f8"
+  url "https:github.comociclociclarchiverefstagsv2.3.9.tar.gz"
+  sha256 "f1066fc58fab4ae2162da22a5795a16deb4cc8bb6b34c0431d96173fae0aeb79"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "db598f1150c7c62388b389f0773785270ff1ee5f054c2c838c596164c685d351"
-    sha256 arm64_ventura:  "bf6240551321c7cc58de3a1979127e791b620003071e010067493637aff8a365"
-    sha256 arm64_monterey: "81a78edf6a178b28a86321cded4347067cb704d295bc8294878526698ee51ae1"
-    sha256 sonoma:         "fa527e051513d14a3b723444e231891a117214fd0f2a3f436dba52d471a79243"
-    sha256 ventura:        "5ff6f116b0139d70e5798f263076bc85cce41a699606fe63a700b3766a567a65"
-    sha256 monterey:       "5d70004fb71d255b9165b8fce6bac2218bb795ab75cac8ae9feff43b21df1af9"
-    sha256 x86_64_linux:   "68fa8acf7a31529cf254d14ad63a528a283de6249c6c184e0b96a226e54de825"
+    sha256 arm64_sonoma:   "8a7e2c6f2954c8da856bb82db2dd8859cb9bc90a95ffce6539d940f0be3c83f5"
+    sha256 arm64_ventura:  "bb437ad5eeafdc711c82a5e914bde1086c66011163c3efa4acbe8d5efbddefc7"
+    sha256 arm64_monterey: "f5d29c6d75bc63a7a3b1beb7993e5cc009c5ab94cb62629d44cdfd4fcd9d80a0"
+    sha256 sonoma:         "93280afcb33f7a1009801bc82a36317aaf3cd69bfb3a069a843b2261ba0e6b7f"
+    sha256 ventura:        "ce8b2c840e8714c7ed6809e483d5c468578c28ad34ed77ed082f6c1922f8215c"
+    sha256 monterey:       "6d897b8c30ca96136b970d2cfdc8b2850728be4d067ea3c6dc5654de4332bf40"
+    sha256 x86_64_linux:   "79439bab5529092afe152d8c4c331914f63e8b1dd7baab39b4a63d6c49e084cb"
   end
 
   depends_on "oras"
@@ -40,6 +39,7 @@ class Ocicl < Formula
     # Write a shell script to wrap ocicl
     (bin"ocicl").write <<~EOS
       #!usrbinenv -S sbcl --core #{libexec}ocicl.core --script
+      (uiop:restore-image)
       (ocicl:main)
     EOS
 

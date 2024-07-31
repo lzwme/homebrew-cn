@@ -1,8 +1,8 @@
 class GitGui < Formula
   desc "TclTk UI for the git revision control system"
   homepage "https:git-scm.com"
-  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.45.2.tar.xz"
-  sha256 "51bfe87eb1c02fed1484051875365eeab229831d30d0cec5d89a14f9e40e9adb"
+  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.46.0.tar.xz"
+  sha256 "7f123462a28b7ca3ebe2607485f7168554c2b10dfc155c7ec46300666ac27f95"
   license "GPL-2.0-only"
   head "https:github.comgitgit.git", branch: "master"
 
@@ -11,13 +11,13 @@ class GitGui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, ventura:        "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, monterey:       "8150389f89d20c15f00ad0357e361401d7519a5cf9742d91316ed13b54657199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30e9f706127e30b1275c6c319d4f8feb08a7ab91756c9a472868f3bbbb80a842"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, monterey:       "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20931574b751a49578c122064cb2487dc4fd9e3e7547bf4f2d718717dbf2cc6d"
   end
 
   depends_on "tcl-tk"

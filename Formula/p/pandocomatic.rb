@@ -1,12 +1,18 @@
 class Pandocomatic < Formula
   desc "Automate the use of pandoc"
   homepage "https:heerdebeer.orgSoftwaremarkdownpandocomatic"
-  url "https:github.comhtdebeerpandocomaticarchiverefstags1.1.1.tar.gz"
-  sha256 "fb3b77f01cb52927163965fd911f9b59a04f133896b3a15d9aa1b56704a0d6e8"
+  url "https:github.comhtdebeerpandocomaticarchiverefstags1.1.3.tar.gz"
+  sha256 "5bbc608b6f12690c18818f1d4934d82d11a5df0a3a0864b60ace48482982af6a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4fce20eede304438d055535ccbbbaf811df1b1f3c294aa5844c7dfde5cdf0d38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, ventura:        "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, monterey:       "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a6ed15fdfced1052abeb3902281c5bf943d454cf2e4d24d43b685e4b5ef3799"
   end
 
   depends_on "pandoc"
@@ -18,8 +24,8 @@ class Pandocomatic < Formula
   end
 
   resource "paru" do
-    url "https:rubygems.orggemsparu-1.1.0.gem"
-    sha256 "0c7406a398d9b356043a4a1bfee81f33947d056bb114e9dfb6a5e2c68806fe57"
+    url "https:rubygems.orggemsparu-1.3.gem"
+    sha256 "e031d4f008bd2aa298c5ca7a9d2270b4b2d2c3a5ceb3c39ca5a2afcba020ad17"
   end
 
   def install

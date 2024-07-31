@@ -1,4 +1,3 @@
-require "languagenode"
 require "json"
 
 class Webpack < Formula
@@ -31,7 +30,7 @@ class Webpack < Formula
     buildpath.install resource("webpack-cli")
 
     cd buildpath"node_moduleswebpack" do
-      system "npm", "install", *Language::Node.local_npm_install_args, "--legacy-peer-deps"
+      system "npm", "install", *std_npm_args(prefix: false), "--legacy-peer-deps"
     end
 
     # declare webpack as a bundledDependency of webpack-cli
@@ -40,7 +39,7 @@ class Webpack < Formula
     pkg_json["bundleDependencies"] = ["webpack"]
     File.write("package.json", JSON.pretty_generate(pkg_json))
 
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
 
     bin.install_symlink libexec"binwebpack-cli"
     bin.install_symlink libexec"binwebpack-cli" => "webpack"

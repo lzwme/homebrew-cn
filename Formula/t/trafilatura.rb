@@ -3,18 +3,18 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/03/9e/ae012a5e563c1e2f948af367518ae2bc4a3ebdaecf9efdb79058c775e653/trafilatura-1.11.0.tar.gz"
-  sha256 "9334ca101c40b2904af5afcee790f0374fabca3ac388811720be65cc768787a2"
+  url "https://files.pythonhosted.org/packages/bc/b9/16b217a7337bef05bbb55ca272192842563995466f0cfcf43b6d603035ed/trafilatura-1.12.0.tar.gz"
+  sha256 "17d2074ecfe2c562bf0863de7e839fad14cc66d5f98090741eaa918eabfbf9d5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2247edf98598adbb5d70ce94a1827ee7d802d57bb38c3d667eacd2a30c7fd0bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd57aa2496623b77f41a5dc4a4f877c608edfa5371017fa18402c6804c198777"
-    sha256 cellar: :any,                 arm64_monterey: "b4ce4d772797b0d53d38a548f8b066130cd75ae434bb1d29d4abe11ef1f624cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "78b40a3133ae6981986c79052c5fa9ea4989dc3b332020d8d4791863221d0c30"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2eb82c266b43b9f01c2e035b1e8fbc7654f0800d39121fe95f91574579bd485"
-    sha256 cellar: :any,                 monterey:       "32dc85b9b44302c31d1075ec59fc08792f982263c1ab7b74044cc69bade9acdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8097367fc91e179140cc7614cdcc9d59876099c43447d59a349006d8bcd67071"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c37fa7d89cc897a69393d50af08ce8226f16e719c3749bc010d1aca92bc85dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f58b9a905a6b18d988564a947ba92e863e8e66b8c6f10ca9b216dbb6158003da"
+    sha256 cellar: :any,                 arm64_monterey: "64017d73228592afce1079be8cabb60a5765a1dc2e6e8f1efe9b46feebe02a35"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec17505c3108554456a98d18e3bcd28a83a7dc25e03f8b709a4e5e320826c32f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a75b8151bb5f480326efcb23d9d62b55658246b6d0b1e5e2c18e95a342310261"
+    sha256 cellar: :any,                 monterey:       "bf1a01e319af5aa2f0c20de72ce89ecbebc6926c0f6e916fc64acd9dd010ebfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7853bd81ff6229152da480653ee9d52caa7c3563c725e40a88b22f1ed2e4d352"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Trafilatura < Formula
   end
 
   resource "courlan" do
-    url "https://files.pythonhosted.org/packages/97/8d/4f435e4e93a30acce11da3c98579273ba463e27d9988ed84384a574396fb/courlan-1.2.0.tar.gz"
-    sha256 "0cbc9cac83970c651b937a7823a5d92cbebb6b601454ea0fb6cb4d0ee5d1845d"
+    url "https://files.pythonhosted.org/packages/0f/47/4c32478892e8d87438eb205996ec3798b8bcb174b947cfb6cd3df45f5a5b/courlan-1.3.0.tar.gz"
+    sha256 "3868f388122f2b09d154802043fe92dfd62c3ea7a700eaae8abc05198cf8bc25"
   end
 
   resource "dateparser" do
@@ -59,8 +59,8 @@ class Trafilatura < Formula
   end
 
   resource "lxml-html-clean" do
-    url "https://files.pythonhosted.org/packages/07/51/37862bf64cd8d5b5675755ac071de7eb2e780c0c0079e02b57c289a25399/lxml_html_clean-0.1.1.tar.gz"
-    sha256 "8a644ed01dbbe132fabddb9467f077f6dad12a1d4f3a6a553e280f3815fa46df"
+    url "https://files.pythonhosted.org/packages/c2/64/1f45e912e26b8f4c31ba7b7abf65b55a867f88582ff39d600ba07660ac82/lxml_html_clean-0.2.0.tar.gz"
+    sha256 "47c323f39d95d4cbf4956da62929c89a79313074467efaa4821013c97bf95628"
   end
 
   resource "python-dateutil" do
@@ -74,8 +74,8 @@ class Trafilatura < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7a/db/5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49b/regex-2024.5.15.tar.gz"
-    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
+    url "https://files.pythonhosted.org/packages/3f/51/64256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478/regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   resource "six" do

@@ -39,12 +39,13 @@ class Rsyslog < Formula
     system "make"
     system "make", "install"
 
-    (etc/"rsyslog.conf").write <<~EOS
+    (buildpath/"rsyslog.conf").write <<~EOS
       # minimal config file for receiving logs over UDP port 10514
       $ModLoad imudp
       $UDPServerRun 10514
       *.* /usr/local/var/log/rsyslog-remote.log
     EOS
+    etc.install buildpath/"rsyslog.conf"
   end
 
   def post_install

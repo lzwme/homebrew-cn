@@ -1,12 +1,11 @@
 class FfmpegAT4 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-4.4.4.tar.xz"
-  sha256 "e80b380d595c809060f66f96a5d849511ef4a76a26b76eacf5778b94c3570309"
+  url "https:ffmpeg.orgreleasesffmpeg-4.4.5.tar.xz"
+  sha256 "f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 5
 
   livecheck do
     url "https:ffmpeg.orgdownload.html"
@@ -14,13 +13,13 @@ class FfmpegAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b93c26e8523427622fcd2fd58ee7f6811db1d0eee1b84647e478f78a297a7205"
-    sha256 arm64_ventura:  "754227e6e1f32d11b2f766a8d91d13ec9769cb5b8549cae5abbf690036849b90"
-    sha256 arm64_monterey: "030562359f909dd4349a4a0d0d9db5f8b7284facd67c9d4184d0d4ca3b03f111"
-    sha256 sonoma:         "34418a4e16bed9cd6968fcbb8a9c064599b843ffd4a6a9441adfc2296ca51b32"
-    sha256 ventura:        "836d46e48c69e1056b631e953f83cddba89781eb558fd6c8fea7e22b29bb9850"
-    sha256 monterey:       "83f0acfff8513945e03f097763d7576c94aabef230793d7370498a7dc9fde9c2"
-    sha256 x86_64_linux:   "80137cd1c73395c6563dc7d5dc0e05c3adba7517f23e8fa73872de18f25a1aaf"
+    sha256 arm64_sonoma:   "844f9fcfd73ff9fe92d317f3221dc4ca7c6f7f2239edc0b33241473b7d655f63"
+    sha256 arm64_ventura:  "f61c7d552d5f7229796024bb48dff1b0a5bcf41b6b02d2d811035a5709698452"
+    sha256 arm64_monterey: "e12fe4e2172ac35c0512c6aca98c30da73dbc86b6fe20d45e77cf8eae0a7ff3c"
+    sha256 sonoma:         "797829b1631c473486ea9fa264deebdd7979e4845c0ece944f6b73cfef8f091e"
+    sha256 ventura:        "58ceb35af0ba32e147c20ae074c74a4e1cc64def5d35abc211b583d90f546f5c"
+    sha256 monterey:       "2e4330e21e0eeee05bf2c4dcd5363fb2f96f5380a066668116edd7eb3e2cbf53"
+    sha256 x86_64_linux:   "b31766d170cd71ddaf9c14266a07e4a697d8805bd567d937ff90755b52a993e0"
   end
 
   keg_only :versioned_formula
@@ -70,12 +69,6 @@ class FfmpegAT4 < Formula
   end
 
   fails_with gcc: "5"
-
-  # Fixes assembling with binutil as >= 2.41
-  patch do
-    url "https:github.comFFmpegFFmpegcommiteffadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
-    sha256 "9800c708313da78d537b61cfb750762bb8ad006ca9335b1724dbbca5669f5b24"
-  end
 
   def install
     args = %W[

@@ -1,19 +1,18 @@
 class KotlinLanguageServer < Formula
   desc "Intelligent Kotlin support for any editorIDE using the Language Server Protocol"
   homepage "https:github.comfwcdkotlin-language-server"
-  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.9.tar.gz"
-  sha256 "4c06ce35b1686c27cc4a8b8dc0905dd3901e83de7028e0c7c0cfd2b6082e1e09"
+  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.12.tar.gz"
+  sha256 "6d36c011b9a1f02f2d83570e1e03c77e2481a744ce3f6a7579cc83681f604aa8"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8d59892ad24d73ed974361ae1cf3d76a5b69be2aabf65ba957c613f142dfc0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67e00c791ec11c67d1b7460aa2e1a7974540958f77e1ce3c8e58dd08a89b050a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "322fc2466fc81316599f83290d47d32ca34cd4a595db595c313b7483717cc444"
-    sha256 cellar: :any_skip_relocation, sonoma:         "533bff6c7a0e79a623c818109e1afe6e189de0bb63e67fca5ba408a4eff2a402"
-    sha256 cellar: :any_skip_relocation, ventura:        "d702b4eb3f92da0a827c3d5368fd7b60703579eccf493056e218096123800eb2"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d6cccf5835831e9a4618982f35e0b33fa21b5a68f6e9087f1422d0718fc2d10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4320f8a6d153c210c02aac4288ec8c2f9f77743f22bcc4093b39137232749191"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e92605918e7da83a9e1dc913d204ccd74c5f4b8e9aac0cbae0768222203f2a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b585c23e483af862f96b3e418616275c77f91250dcc9d6c0a10875c4d83574d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bb729d83ecf63175071e4954dff5b85f729893512018ba8e23a53aa20711038"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46bf3133b78b99e2146113941d072b7df3f846d69ba5763f9291fdc0624ad036"
+    sha256 cellar: :any_skip_relocation, ventura:        "522688d61beaf748c5508e92fe4ccf5a2e349a4c3f47a5e456efba0231fdf72b"
+    sha256 cellar: :any_skip_relocation, monterey:       "235497b217ef9cd30330ad18e3996ccdec429323c7ea3e3428e066b64d309e94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fca93e17a9eba4a773f4cbb654369fe8103fa3c446d4fd9cc3cfdd831c0f18e9"
   end
 
   depends_on "gradle" => :build

@@ -33,10 +33,12 @@ class GlibNetworking < Formula
     # stop gnome.post_install from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = "/"
 
-    system "meson", *std_meson_args, "build",
-                    "-Dlibproxy=disabled",
-                    "-Dopenssl=disabled",
-                    "-Dgnome_proxy=disabled"
+    args = %w[
+      -Dlibproxy=disabled
+      -Dopenssl=disabled
+      -Dgnome_proxy=disabled
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

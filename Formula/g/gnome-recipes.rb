@@ -5,6 +5,7 @@ class GnomeRecipes < Formula
   url "https:gitlab.gnome.orgGNOMErecipes.git",
       tag:      "2.0.4",
       revision: "d5e9733c49ea4f99e72c065c05ee1a35ef65e67d"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do
@@ -22,7 +23,11 @@ class GnomeRecipes < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gnome-autoar"
   depends_on "gspell"
   depends_on "gtk+3"
@@ -32,6 +37,14 @@ class GnomeRecipes < Formula
   depends_on "librest" # for goa
   depends_on "libsoup@2" # libsoup 3 issue: https:gitlab.gnome.orgGNOMErecipes-issues155
   depends_on "libxml2"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "enchant"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   resource "goa" do
     url "https:download.gnome.orgsourcesgnome-online-accounts3.43gnome-online-accounts-3.43.1.tar.xz"
@@ -77,6 +90,6 @@ class GnomeRecipes < Formula
   end
 
   test do
-    system "#{bin}gnome-recipes", "--help"
+    system bin"gnome-recipes", "--help"
   end
 end

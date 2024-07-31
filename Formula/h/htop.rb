@@ -12,13 +12,14 @@ class Htop < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a07989af65c77dbfb28b07b8faec12d3760831c360e0caa6a32a58eff0e8fd65"
-    sha256 cellar: :any,                 arm64_ventura:  "66603fe2d93294af948155b0392e6631faec086b0bcc68537d931861e9b1de39"
-    sha256 cellar: :any,                 arm64_monterey: "f8c4b4433a3fda0ee127ba558b4f7a53dff1e92ff6fb6cef3c8fbf376f1512c8"
-    sha256 cellar: :any,                 sonoma:         "5cd79199db8d7394d331dbb362dd101d12519325f78dde1af4e7c67fb9f4e5da"
-    sha256 cellar: :any,                 ventura:        "d47397e29f584bedd7d1f453af5ff42f10c3607a823fa72314b6d4f1c44cd176"
-    sha256 cellar: :any,                 monterey:       "665c48cbe7434b5850d66512008e143193cd22b69ae54788314955415b6c546d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6734208d3ea8db55123b1d1d9ac4f427c5e7ba89472193afe51543a2bb1a9a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ea457e022296c96a73ebecc31119ea225c2b41670426a9099bccf5f1d17673ec"
+    sha256 cellar: :any,                 arm64_ventura:  "5895685e6db67598024850ca3c440e1244ee5dd54bc7c6b5345b28d74f9fa4f0"
+    sha256 cellar: :any,                 arm64_monterey: "91b0b5fe4ffb977e6381664d74ec48e890da908a346473b5e4d88f8117a2dc23"
+    sha256 cellar: :any,                 sonoma:         "c3ee757e215de2dfd151ea9eb68ef53bb64ba86c5d07a443c6477bdb952f02bf"
+    sha256 cellar: :any,                 ventura:        "69f690190833cf309baa396b7a7a8218ec012ca93e0825a2b2a4d9f0d5cafb33"
+    sha256 cellar: :any,                 monterey:       "9872ffeea0cbab0d5f2e418fd06442663a113b67be12e15b0ece20e701f4ada3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85ee4a9f06bc81442fc93e02f8aa875a7641781aa147aab1f863e5c4d744b47d"
   end
 
   depends_on "autoconf" => :build

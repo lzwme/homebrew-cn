@@ -7,6 +7,11 @@ class Openbao < Formula
   license "MPL-2.0"
   head "https:github.comopenbaoopenbao.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af464d4037f1acd7124f137cf5c7be313a28f95769b7792ea585e13ee387e0eb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "727429756f2a735ee3e42a7ecf49211b74f2ba8d32c0af44699de955204a962f"

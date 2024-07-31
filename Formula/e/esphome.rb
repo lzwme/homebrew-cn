@@ -8,13 +8,14 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3eb0bc6906533a6616957d04d4d25b3612d7695d2645132db60fd4394920270c"
-    sha256 cellar: :any,                 arm64_ventura:  "b922a5493e63ad1e21710850676055ee868b816a69c99c0fcfe18d2c8b3d30de"
-    sha256 cellar: :any,                 arm64_monterey: "446265bf43cd6139de1f850876dd31ede0491edc75fe87af14b65ed13b8c6b77"
-    sha256 cellar: :any,                 sonoma:         "03d30f0e0b27e44cc0ea3a29bdf84bfe86206a50e281750f9f07a611dabb959e"
-    sha256 cellar: :any,                 ventura:        "6bff936badf6b77d19b3c489049e15d52fd67a6d84c3a31b55750baf3251ea06"
-    sha256 cellar: :any,                 monterey:       "1d874a7ac3b9250f7e9c7ee6028d424dbd557a33e01c7fe8fcaee953142630e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd1c76668cf5aeb0ab8793440d9d4257ee740584f8457f1199d73e6a10393aaa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d07168710ee0ce16d4baea3d0fef63e17ffda309c23c77567054638dd5fa9493"
+    sha256 cellar: :any,                 arm64_ventura:  "b7911507349ae3a1db7b996f33a0afd55d041a1c1408149d8603c4ce45fe0fe6"
+    sha256 cellar: :any,                 arm64_monterey: "07e7411df4108e9dac97f40747a351133f8a63cc0f53eca966d40c39bc8f4852"
+    sha256 cellar: :any,                 sonoma:         "33cbee9070619f4435c6aab80b0740bbbe558d9af56731e2f49cc2c7d5cb69e9"
+    sha256 cellar: :any,                 ventura:        "100ded8358abbd8914391a79516d47d85e005b579762c6339f693e757952cff7"
+    sha256 cellar: :any,                 monterey:       "07dc24352d7f4fa8851c5f629376bbb8f913ed3ba1bb49d144eefb11e43b1b7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6db830d32df48abb1125efb41ed0bd7c8cb84c30b003c7b3c4c3ee0db445af45"
   end
 
   depends_on "certifi"
@@ -72,6 +73,11 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackagesc8f5de042f4f0a3580541d173db5bb98988f525e3557651d40f04b132350ca38chacha20poly1305_reuseable-0.12.2.tar.gz"
     sha256 "378801cc9902d881511a0d1f817f9571a63bf41bf072b0f02d2daab3ae5cf30b"
+  end
+
+  resource "chardet" do
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do

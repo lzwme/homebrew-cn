@@ -30,6 +30,7 @@ class SpatialiteGui < Formula
   depends_on "libspatialite"
   depends_on "libtiff"
   depends_on "libxlsxwriter"
+  depends_on "libxml2"
   depends_on "lz4"
   depends_on "minizip"
   depends_on "openjpeg"
@@ -42,7 +43,6 @@ class SpatialiteGui < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   def install

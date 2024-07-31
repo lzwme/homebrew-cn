@@ -36,10 +36,12 @@ class GeocodeGlib < Formula
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
 
-    system "meson", *std_meson_args, "build",
-                    "-Denable-installed-tests=false",
-                    "-Denable-gtk-doc=false",
-                    "-Dsoup2=false"
+    args = %w[
+      -Denable-installed-tests=false
+      -Denable-gtk-doc=false
+      -Dsoup2=false
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

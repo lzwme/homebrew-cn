@@ -7,6 +7,11 @@ class Securefs < Formula
   revision 2
   head "https:github.comnetheril96securefs.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "69bd65930f628dde00b4fd981242fd75a764845dc4cb4f7fbcd797148931bc34"
   end

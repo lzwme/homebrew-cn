@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https:github.comabiosoftcolimablobmainREADME.md"
   url "https:github.comabiosoftcolima.git",
-      tag:      "v0.6.10",
-      revision: "12c0c834633986e1c05ec2bd2d53c6cb06c89aef"
+      tag:      "v0.7.0",
+      revision: "4b14e8a9993b17d2e6f5071fd9059513111cd365"
   license "MIT"
   head "https:github.comabiosoftcolima.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Colima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb7f2e5a3e49486f6dbdf77491673c42121d43a462324bf61251e8f92d3beb93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f7ffd19938fea8176677736dc4ae231a05e638f2b5415f1f262c8a039d27f21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc2f85a2182e39b9fca16711ae5b9f8c6facaabf6cb7220cc4814bdd3e89ac97"
-    sha256 cellar: :any_skip_relocation, sonoma:         "89e1a354f2939998885c56ade4ae9e227e38bf4598b5196a6e854d583c5868aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e21b3787779a28dc95e2c731907d60858b5f2d8b6758ab9da3bc10256f332a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8f8b5ee7f49264ad5d06cf221c3c9c762a53c66cfed55327cc891e045d26fad5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12c14c7214c2dc0e9c5cf763c1bfad1fb639576e1eec2e2c02e9339ce1031782"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "544301a8aaa3ae8fcde297448ae0f5699820b711cc81f7d83a37d6f97d7d1bd2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6b09b6333769f1007fde820cc1b2f8337669baa84681a3f33da0d053a4e4c35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c79b155558880ee7357c853c76612b5bf755f0069f89999a15282cf70d07f787"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eef87ef0d84f9412dd54f8577cb796d5c883e0696658703ce207d1b66a27c7b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa9da61d9beebcfbafeda24b232e2a9ad716c187f3ea8a68d1e8611ef5150f13"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd4fb23b73f083fb5d356090eddc065dce14afbe332017e67f7b7f2dae40b79a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7413c579f7f35d685cd5223c62c0e272a45c2279f67fd0c19ad7322ddccbbed"
   end
 
   depends_on "go" => :build
