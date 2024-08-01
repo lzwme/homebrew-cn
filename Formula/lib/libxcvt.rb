@@ -23,9 +23,9 @@ class Libxcvt < Formula
   depends_on "ninja" => :build
 
   def install
-    system "meson", "build", *std_meson_args
-    system "ninja", "-C", "build"
-    system "ninja", "-C", "build", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

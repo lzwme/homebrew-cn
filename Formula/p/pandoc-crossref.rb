@@ -24,7 +24,7 @@ class PandocCrossref < Formula
   uses_from_macos "zlib"
 
   def install
-    rm_f "cabal.project.freeze"
+    rm("cabal.project.freeze")
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args

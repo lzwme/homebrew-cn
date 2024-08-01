@@ -18,7 +18,7 @@ class Fop < Formula
   end
 
   def install
-    rm_rf Dir["fop/*.bat"] # Remove Windows files.
+    rm_r(Dir["fop/*.bat"]) # Remove Windows files.
     libexec.install Dir["*"]
 
     executable = libexec/"fop/fop"

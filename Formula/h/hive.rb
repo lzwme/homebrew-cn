@@ -17,7 +17,7 @@ class Hive < Formula
   depends_on "openjdk@8"
 
   def install
-    rm_f Dir["bin/*.cmd", "bin/ext/*.cmd", "bin/ext/util/*.cmd"]
+    rm(Dir["bin/*.cmd", "bin/ext/*.cmd", "bin/ext/util/*.cmd"])
     libexec.install %w[bin conf examples hcatalog lib scripts]
 
     # Hadoop currently supplies a newer version

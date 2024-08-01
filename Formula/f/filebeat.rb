@@ -27,7 +27,7 @@ class Filebeat < Formula
 
   def install
     # remove non open source files
-    rm_rf "x-pack"
+    rm_r("x-pack")
 
     cd "filebeat" do
       # don't build docs because it would fail creating the combined OSSx-pack

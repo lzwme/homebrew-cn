@@ -163,7 +163,7 @@ class Duck < Formula
 
       # Remove the `*.tbd` files. They're not needed, and they cause codesigning issues.
       buildpath.glob("JavaNativeFoundation.framework**JavaNativeFoundation.tbd").map(&:unlink)
-      rm_rf libdir"JavaNativeFoundation.framework"
+      rm_r(libdir"JavaNativeFoundation.framework")
       libdir.install buildpath"JavaNativeFoundation.framework"
 
       rm libdirshared_library("librococoa")

@@ -85,7 +85,7 @@ class Opencv < Formula
 
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
-    libdirs.each { |l| (buildpath"3rdparty"l).rmtree }
+    libdirs.each { |l| rm_r(buildpath"3rdparty"l) }
 
     args = %W[
       -DCMAKE_CXX_STANDARD=17

@@ -42,8 +42,8 @@ class ApachePulsar < Formula
     system "tar", "-xf", "distributionservertarget#{binpfx}-bin.tar.gz"
     libexec.install "#{binpfx}bin", "#{binpfx}lib", "#{binpfx}instances", "#{binpfx}conf", "#{binpfx}trino"
     libexec.glob("bin*.cmd").map(&:unlink)
-    (libexec"trinobinprocnameLinux-aarch64").rmtree
-    (libexec"trinobinprocnameLinux-ppc64le").rmtree
+    rm_r(libexec"trinobinprocnameLinux-aarch64")
+    rm_r(libexec"trinobinprocnameLinux-ppc64le")
     pkgshare.install "#{binpfx}examples"
     (etc"pulsar").install_symlink libexec"conf"
 

@@ -50,7 +50,7 @@ class Libressl < Formula
   end
 
   def post_install
-    rm_f pkgetc"cert.pem"
+    rm(pkgetc"cert.pem") if (pkgetc"cert.pem").exist?
     pkgetc.install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
   end
 

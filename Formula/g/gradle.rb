@@ -24,7 +24,7 @@ class Gradle < Formula
   depends_on "openjdk"
 
   def install
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install %w[bin docs lib src]
     env = Language::Java.overridable_java_home_env
     (bin"gradle").write_env_script libexec"bingradle", env

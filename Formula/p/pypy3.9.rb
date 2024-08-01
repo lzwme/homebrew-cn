@@ -137,7 +137,7 @@ class Pypy39 < Formula
     # Create a site-packages in the prefix.
     site_packages(HOMEBREW_PREFIX).mkpath
     touch site_packages(HOMEBREW_PREFIX)".keepme"
-    site_packages(libexec).rmtree
+    rm_r(site_packages(libexec))
 
     # Symlink the prefix site-packages into the cellar.
     site_packages(libexec).parent.install_symlink site_packages(HOMEBREW_PREFIX)

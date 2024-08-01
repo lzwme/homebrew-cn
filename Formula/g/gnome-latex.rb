@@ -33,22 +33,38 @@ class GnomeLatex < Formula
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gspell"
   depends_on "gtk+3"
   depends_on "libgedit-amtk"
   depends_on "libgedit-gtksourceview"
   depends_on "libgee"
+  depends_on "pango"
   depends_on "tepl"
 
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "enchant"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
+
   def install
+    # build workaround for xcode 15.3
+    # upstream bug report, https://gitlab.gnome.org/swilmet/gedit-tex/-/issues/14
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     configure = build.head? ? "./autogen.sh" : "./configure"
-    system configure, *std_configure_args,
-                      "--disable-schemas-compile",
+
+    system configure, "--disable-schemas-compile",
                       "--disable-silent-rules",
                       "--disable-code-coverage",
-                      "--disable-dconf-migration"
+                      "--disable-dconf-migration",
+                      *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
@@ -60,6 +76,6 @@ class GnomeLatex < Formula
   end
 
   test do
-    system "#{bin}/gnome-latex", "--version"
+    system bin/"gnome-latex", "--version"
   end
 end

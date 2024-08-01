@@ -23,7 +23,7 @@ class DependencyCheck < Formula
   depends_on "openjdk"
 
   def install
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
 
     chmod 0755, "bindependency-check.sh"
     libexec.install Dir["*"]

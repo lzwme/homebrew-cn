@@ -33,7 +33,7 @@ class Halp < Formula
     man1.install "halp.1"
 
     # Remove binaries used for building completions and manpage
-    rm_f [bin"halp-completions", bin"halp-mangen", bin"halp-test"]
+    rm([bin"halp-completions", bin"halp-mangen", bin"halp-test"])
   end
 
   test do

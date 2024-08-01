@@ -66,7 +66,7 @@ class LuajitOpenresty < Formula
     end
 
     # Having an empty Lua dir in libshare can mess with other Homebrew Luas.
-    %W[#{lib}lua #{share}lua].each { |d| rm_rf d }
+    %W[#{lib}lua #{share}lua].each { |d| rm_r(d) }
   end
 
   test do

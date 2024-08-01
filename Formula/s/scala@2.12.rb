@@ -23,7 +23,7 @@ class ScalaAT212 < Formula
   def install
     inreplace Dir["man/man1/scala{,c}.1"], "/usr/local", HOMEBREW_PREFIX
 
-    rm_f Dir["bin/*.bat"]
+    rm(Dir["bin/*.bat"])
     doc.install Dir["doc/*"]
     share.install "man"
     libexec.install "bin", "lib"

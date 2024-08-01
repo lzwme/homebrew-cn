@@ -63,7 +63,7 @@ class Sratoolkit < Formula
     system "cmake", "--install", "sra-tools-build"
 
     # Remove non-executable files.
-    (bin"ncbi").rmtree
+    rm_r(bin"ncbi")
   end
 
   test do

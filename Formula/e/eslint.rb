@@ -1,5 +1,3 @@
-require "language/node"
-
 class Eslint < Formula
   desc "AST-based pattern checker for JavaScript"
   homepage "https://eslint.org"
@@ -8,19 +6,20 @@ class Eslint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f75c51330e5f804e0023d9ac23a9283592cf5ca7c0a9d88584b41d52eba621d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f75c51330e5f804e0023d9ac23a9283592cf5ca7c0a9d88584b41d52eba621d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f75c51330e5f804e0023d9ac23a9283592cf5ca7c0a9d88584b41d52eba621d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "349c7cdd6aa11e6b180b80bbb59a921a3c30c0564d1a687decb86346ecb266b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "349c7cdd6aa11e6b180b80bbb59a921a3c30c0564d1a687decb86346ecb266b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "349c7cdd6aa11e6b180b80bbb59a921a3c30c0564d1a687decb86346ecb266b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90cdde64d205050f2218b6d05f3881bc8c90c934ee14d066dbe31156443c1cd3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ef0881fcbc6e973866e801f74f35373e138287606604a896501ff6c8b57561c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ef0881fcbc6e973866e801f74f35373e138287606604a896501ff6c8b57561c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ef0881fcbc6e973866e801f74f35373e138287606604a896501ff6c8b57561c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd2c78b40116486b9d34bbe3884c850485e41d18ac2a9321a3d4619d178ef688"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd2c78b40116486b9d34bbe3884c850485e41d18ac2a9321a3d4619d178ef688"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd2c78b40116486b9d34bbe3884c850485e41d18ac2a9321a3d4619d178ef688"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29465b475ca8c3c895b813e7f635c6c03c06923e5e3e1731fd630b8865459b09"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

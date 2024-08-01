@@ -42,7 +42,7 @@ class Httrack < Formula
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
     # Don't need Gnome integration
-    rm_rf Dir["#{share}{applications,pixmaps}"]
+    rm_r(Dir["#{share}{applications,pixmaps}"])
   end
 
   test do

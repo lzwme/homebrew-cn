@@ -21,17 +21,20 @@ class Gssdp < Formula
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
-  depends_on "gettext"
   depends_on "glib"
   depends_on "libsoup"
 
   uses_from_macos "python" => :build
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
 
-    system "meson", *std_meson_args, "build", "-Dsniffer=false"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", "-Dsniffer=false", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 

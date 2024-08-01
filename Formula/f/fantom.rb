@@ -14,7 +14,7 @@ class Fantom < Formula
   conflicts_with "flux", because: "both install `flux` binaries"
 
   def install
-    rm_f Dir["bin*.exe", "bin*.dll", "libdotnet*"]
+    rm(Dir["bin*.exe", "bin*.dll", "libdotnet*"])
 
     # Select OpenJDK path in the config file
     java_home = Formula["openjdk"].opt_libexec"openjdk.jdkContentsHome"

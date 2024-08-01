@@ -36,7 +36,7 @@ class ArchiSteamFarm < Formula
     EOS
 
     etc.install libexec"config" => "asf"
-    rm_rf libexec"config"
+    rm_r(libexec"config")
     libexec.install_symlink etc"asf" => "config"
   end
 

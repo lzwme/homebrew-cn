@@ -47,7 +47,7 @@ class MbedtlsAT2 < Formula
     system "cmake", "--install", "build"
 
     # Why does Mbedtls ship with a "Hello World" executable. Let's remove that.
-    rm_f bin"hello"
+    rm(bin"hello")
     # Rename benchmark & selftest, which are awfully generic names.
     mv bin"benchmark", bin"mbedtls-benchmark"
     mv bin"selftest", bin"mbedtls-selftest"

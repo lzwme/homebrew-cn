@@ -27,7 +27,7 @@ class Jena < Formula
       JENA_HOME: libexec,
     }
 
-    rm_rf "bat" # Remove Windows scripts
+    rm_r("bat") # Remove Windows scripts
 
     libexec.install Dir["*"]
     Pathname.glob("#{libexec}/bin/*") do |file|

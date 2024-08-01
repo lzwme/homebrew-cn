@@ -21,7 +21,7 @@ class JbossForge < Formula
   depends_on "openjdk"
 
   def install
-    rm_f Dir["bin/*.bat"]
+    rm(Dir["bin/*.bat"])
     libexec.install %w[addons bin lib logging.properties]
     bin.install libexec/"bin/forge"
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env

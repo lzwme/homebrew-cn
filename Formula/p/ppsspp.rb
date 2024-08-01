@@ -50,10 +50,10 @@ class Ppsspp < Formula
     # See https:github.comHomebrewhomebrew-coreissues84737.
     cd "ffmpeg" do
       if OS.mac?
-        rm_rf "macosx"
+        rm_r("macosx")
         system ".mac-build.sh"
       else
-        rm_rf "linux"
+        rm_r("linux")
         system ".linux_x86-64.sh"
       end
     end

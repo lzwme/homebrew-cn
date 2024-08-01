@@ -25,7 +25,7 @@ class ApacheSpark < Formula
     # Rename beeline to distinguish it from hive's beeline
     mv "binbeeline", "binspark-beeline"
 
-    rm_f Dir["bin*.cmd"]
+    rm(Dir["bin*.cmd"])
     libexec.install Dir["*"]
     bin.install Dir[libexec"bin*"]
     bin.env_script_all_files(libexec"bin", JAVA_HOME: Language::Java.overridable_java_home_env("17")[:JAVA_HOME])

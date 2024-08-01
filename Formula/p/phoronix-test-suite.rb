@@ -33,7 +33,7 @@ class PhoronixTestSuite < Formula
 
   # 7.4.0 installed files in the formula's rack so clean up the mess.
   def post_install
-    rm_rf [prefix"..etc", prefix"..usr"]
+    rm_r([prefix"..etc", prefix"..usr"])
   end
 
   test do

@@ -41,7 +41,7 @@ class JoplinCli < Formula
     bin.install_symlink Dir["#{libexec}bin*"]
 
     node_notifier_vendor_dir = libexec"libnode_modulesjoplinnode_modulesnode-notifiervendor"
-    node_notifier_vendor_dir.rmtree # remove vendored pre-built binaries
+    rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
 
     if OS.mac?
       terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"

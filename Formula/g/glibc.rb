@@ -195,15 +195,15 @@ class Glibc < Formula
       include etcld.so.conf
     EOS
 
-    rm_f etc"ld.so.cache"
+    rm(etc"ld.so.cache")
   ensure
     # Delete bootstrap binaries after build is finished.
-    rm_rf bootstrap_dir
+    rm_r(bootstrap_dir)
   end
 
   def post_install
     # Rebuild ldconfig cache
-    rm_f etc"ld.so.cache"
+    rm(etc"ld.so.cache")
     system sbin"ldconfig"
 
     # Compile locale definition files

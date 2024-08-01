@@ -23,7 +23,7 @@ class JvmMon < Formula
   depends_on "openjdk@8"
 
   def install
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install Dir["*"]
 
     (bin"jvm-mon").write_env_script libexec"binjvm-mon", Language::Java.java_home_env("1.8")

@@ -20,7 +20,7 @@ class Lv2 < Formula
   depends_on "ninja" => :build
 
   def install
-    system "meson", "build", *std_meson_args, "-Dplugins=disabled", "-Dlv2dir=#{lib}/lv2"
+    system "meson", "setup", "build", "-Dplugins=disabled", "-Dlv2dir=#{lib}/lv2", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 

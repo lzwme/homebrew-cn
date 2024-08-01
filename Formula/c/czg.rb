@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Czg < Formula
   desc "Interactive Commitizen CLI that generate standardized commit messages"
   homepage "https:github.comZhengqbbbcz-git"
@@ -8,19 +6,20 @@ class Czg < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "df2c96cae02377b590b7c1bb83d68f8574fc10ee1db2e491f0a3b88f63172752"
-    sha256 cellar: :any_skip_relocation, monterey:       "25f077613768332129dd88900f73ba1ce2c6084e11003208da001dc264dc75d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a36ded1af7e80799e311d873c7a23cc41a4378d0d6546cd9969de8e5c97177d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c75647262ed4bed88908c8e95f39b01e2e4e65eab8702e1b162d9148ed1eaa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d30fbdd434fd931ce152e3e473748937cd35061e1159b016ff05d882fbf6c74"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

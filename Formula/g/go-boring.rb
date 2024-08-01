@@ -35,7 +35,7 @@ class GoBoring < Formula
       system "./make.bash", "--no-clean"
     end
 
-    (buildpath/"pkg/obj").rmtree
+    rm_r(buildpath/"pkg/obj")
     libexec.install Dir["*"]
     bin.install_symlink Dir[libexec/"bin/go*"]
 
@@ -43,7 +43,7 @@ class GoBoring < Formula
 
     # Remove useless files.
     # Breaks patchelf because folder contains weird debug/test files
-    Dir.glob(libexec/"**/testdata").each { |testdata| rm_rf testdata }
+    Dir.glob(libexec/"**/testdata").each { |testdata| rm_r(testdata) }
   end
 
   test do

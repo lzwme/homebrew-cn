@@ -8,15 +8,14 @@ class Truffle < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "591334d7e1f9933905e6d66abc5f11c80dc477c991559dc4a1eec8921cdafd4e"
-    sha256                               arm64_ventura:  "e6500d8c656acc698debd2bf71f07d066f3d8d519af39e6c7f4e7162c18ac550"
-    sha256                               arm64_monterey: "ffc2638a4a690d9eb22045d16d61fc365c42075608dcb297c48c6ab7461d4700"
-    sha256                               arm64_big_sur:  "52f39e675bdc15b89d03d6e12308f6438dcd96e40a349cd398c45da848a2e823"
-    sha256                               sonoma:         "b1257f21b1ffaaa5fe5216361f3713c460f305ac2641cfcc7403b9646d46c87d"
-    sha256                               ventura:        "b6b357828877823d3d474cd9c4bd6008328b1c111f4089eddbba2cb1c8798a65"
-    sha256                               monterey:       "4291e2238faa646201e16850404c1970a1de34d1ea794cb0011a4e452e02dd93"
-    sha256                               big_sur:        "a7dbb72f08ba81bb4580699ea23b55d9ebf031a9bed7c1f032f077e9736d545f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab14a38e62ada678dfff3ade0d31ad5d66f922c2a5851444259622e2248ca5a"
+    rebuild 1
+    sha256                               arm64_sonoma:   "bf976e193aaab626da6ba2c5153e2c73cb8b4cca2085a4eddd0d1af149d35a91"
+    sha256                               arm64_ventura:  "e25bde3e668ae14b3548da278b94470c6331c1aab5ad70e12fe84a8a5283054a"
+    sha256                               arm64_monterey: "7c9383f39c371ec41e8423c6238fefb205a5a4473b780813343d74393ec220a8"
+    sha256                               sonoma:         "4ba206f662ce3535a93392f257a6dd1a53b68c94afb91800bf8194db088bf782"
+    sha256                               ventura:        "3d8364ecd6eaef5f0987102fdbd3edfa82553a4c47cadd97619abf548267c64f"
+    sha256                               monterey:       "00a57fe89b291ec2b55c81c88e98c72b238690abbff59a5f0f6ef85545b6ad62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8dae03cb8c5330f85e9b7b81937b3ea5100309f64e9990b8def34242ad5bd24"
   end
 
   depends_on "node"
@@ -40,7 +39,7 @@ class Truffle < Formula
         else
           # Remove incompatible pre-built binaries
           dir.glob("*.musl.node").map(&:unlink)
-          dir.rmtree if dir.basename.to_s != "#{os}-#{arch}"
+          rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
         end
       end
     end

@@ -38,12 +38,12 @@ class Sfml < Formula
     # Fix "fatal error: 'osavailability.h' file not found" on 10.11 and
     # "error: expected function body after function declarator" on 10.12
     # Requires the CLT to be the active developer directory if Xcode is installed
-    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && version <= :high_sierra
+    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version <= :high_sierra
 
     # Always remove the "extlibs" to avoid install_name_tool failure
     # (https:github.comHomebrewhomebrewpull35279) but leave the
     # headers that were moved there in https:github.comSFMLSFMLpull795
-    rm_rf Dir["extlibs*"] - ["extlibsheaders"]
+    rm_r(Dir["extlibs*"] - ["extlibsheaders"])
 
     args = ["-DCMAKE_INSTALL_RPATH=#{lib}",
             "-DSFML_MISC_INSTALL_PREFIX=#{share}SFML",

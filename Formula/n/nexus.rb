@@ -33,8 +33,8 @@ class Nexus < Formula
     system "mvn", "install", "-DskipTests"
     system "unzip", "-o", "-d", "target", "assembliesnexus-base-templatetargetnexus-base-template-#{version}.zip"
 
-    rm_f Dir["targetnexus-base-template-#{version}bin*.bat"]
-    rm_f "targetnexus-base-template-#{version}bincontrib"
+    rm(Dir["targetnexus-base-template-#{version}bin*.bat"])
+    rm_r("targetnexus-base-template-#{version}bincontrib")
     libexec.install Dir["targetnexus-base-template-#{version}*"]
 
     env = {

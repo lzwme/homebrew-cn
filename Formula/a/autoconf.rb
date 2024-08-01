@@ -36,7 +36,7 @@ class Autoconf < Formula
     system "./configure", "--prefix=#{prefix}", "--with-lispdir=#{elisp}"
     system "make", "install"
 
-    rm_f info/"standards.info"
+    rm(info/"standards.info")
   end
 
   test do

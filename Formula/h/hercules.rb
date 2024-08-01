@@ -46,7 +46,7 @@ class Hercules < Formula
   def install
     resources.each do |r|
       resource_prefix = buildpathr.name
-      resource_prefix.rmtree
+      rm_r(resource_prefix)
       build_dir = buildpath"#{r.name}64.Release"
 
       r.stage do

@@ -1,5 +1,3 @@
-require "languagenode"
-
 class HttpServer < Formula
   desc "Simple zero-configuration command-line HTTP server"
   homepage "https:github.comhttp-partyhttp-server"
@@ -9,13 +7,20 @@ class HttpServer < Formula
   head "https:github.comhttp-partyhttp-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8e9d67691b2b1afcbff2ecaf2730ad9306e3d04f546d466a963bc8c9d0e0de6f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, ventura:        "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, monterey:       "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9f714a6e9f2aae98529f5cf3c01587a9c3ff867ad8aa8446453a62688ff4bb4"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

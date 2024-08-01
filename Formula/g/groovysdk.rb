@@ -26,7 +26,7 @@ class Groovysdk < Formula
 
   def install
     # We don't need Windows' files.
-    rm_f Dir["bin/*.bat"]
+    rm(Dir["bin/*.bat"])
 
     bin.install Dir["bin/*"]
     libexec.install "conf", "lib", "src", "doc"

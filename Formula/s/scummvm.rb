@@ -45,8 +45,8 @@ class Scummvm < Formula
                           "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}"
     system "make"
     system "make", "install"
-    (share"pixmaps").rmtree
-    (share"icons").rmtree
+    rm_r(share"pixmaps")
+    rm_r(share"icons")
   end
 
   test do

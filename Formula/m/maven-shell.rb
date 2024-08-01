@@ -16,7 +16,7 @@ class MavenShell < Formula
 
   def install
     # Remove windows files.
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install Dir["*"]
     bin.install_symlink libexec"binmvnsh"
   end

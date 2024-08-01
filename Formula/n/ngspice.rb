@@ -68,7 +68,7 @@ class Ngspice < Formula
     inreplace pkgshare/"scripts/spinit", lib/"ngspice/", Formula["libngspice"].opt_lib/"ngspice/"
 
     # remove conflict lib files with libngspice
-    rm_rf Dir[lib/"ngspice"]
+    rm_r(Dir[lib/"ngspice"])
   end
 
   test do

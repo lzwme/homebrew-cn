@@ -19,7 +19,7 @@ class SonarScanner < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin*.bat"]
+    rm_r(Dir["bin*.bat"])
     libexec.install Dir["*"]
     bin.install libexec"binsonar-scanner"
     etc.install libexec"confsonar-scanner.properties"

@@ -44,7 +44,7 @@ class OpensearchDashboards < Formula
                 "pid.file: #{var}runopensearchDashboards.pid"
 
       (etc"opensearch-dashboards").install Dir["config*"]
-      rm_rf Dir["{config,data,plugins}"]
+      rm_r(Dir["{config,data,plugins}"])
 
       prefix.install Dir["*"]
     end

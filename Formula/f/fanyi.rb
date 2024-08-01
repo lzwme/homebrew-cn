@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Fanyi < Formula
   desc "Chinese and English translate tool in your command-line"
   homepage "https:github.comafc163fanyi"
@@ -8,15 +6,14 @@ class Fanyi < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d601e555d930ee4c1b90402d837b802818772c142496e617a4dfef0ae9fd52a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7728af46fdeeff0990e400a0bdecc76239094a19a4e0589ab1e88394fa3ce6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7728af46fdeeff0990e400a0bdecc76239094a19a4e0589ab1e88394fa3ce6d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7728af46fdeeff0990e400a0bdecc76239094a19a4e0589ab1e88394fa3ce6d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3eed09616fa08706056055b7278afb90a6122ab549eb4f0b8d8e49b9f0b61e9d"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f43524726f3d282299f7a68b1c436f3d70f6be419cd8d4c9d41c1d58ee51b20"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f43524726f3d282299f7a68b1c436f3d70f6be419cd8d4c9d41c1d58ee51b20"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4f43524726f3d282299f7a68b1c436f3d70f6be419cd8d4c9d41c1d58ee51b20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41e9d42993b45b6c5912408b174e2f520c3ed244da434e3c4e0d566ed3aceeba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "492499711ec5231ee325e0545e3ac88fe3807846ada190ddd0fa403e192c93bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "492499711ec5231ee325e0545e3ac88fe3807846ada190ddd0fa403e192c93bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "492499711ec5231ee325e0545e3ac88fe3807846ada190ddd0fa403e192c93bd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b6e640b0079f8b9dbbfe64a76022d1fcf5785b8f5202fcc0d534034ab27bd04"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b6e640b0079f8b9dbbfe64a76022d1fcf5785b8f5202fcc0d534034ab27bd04"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b6e640b0079f8b9dbbfe64a76022d1fcf5785b8f5202fcc0d534034ab27bd04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069d7deffbebdf7583a77d75eeb2299a484cf07d5ef759a52414e71e42856fe7"
   end
 
   depends_on "node"
@@ -26,11 +23,11 @@ class Fanyi < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec"bin*"]
 
     term_size_vendor_dir = libexec"libnode_modules"name"node_modulesterm-sizevendor"
-    term_size_vendor_dir.rmtree # remove pre-built binaries
+    rm_r(term_size_vendor_dir) # remove pre-built binaries
 
     if OS.mac?
       macos_dir = term_size_vendor_dir"macos"

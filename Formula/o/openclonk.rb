@@ -89,7 +89,7 @@ class Openclonk < Formula
     File.open(buildpath"toolsosx_bundle_libs", "w") { |f| f.puts "#!binbash" }
 
     # Remove unneeded bundled library to avoid default fallback in build
-    (buildpath"thirdpartytinyxml").rmtree
+    rm_r(buildpath"thirdpartytinyxml")
 
     # Modify Linux install location for openclonk binary to bin directory
     inreplace "CMakeLists.txt", "install(TARGETS openclonk DESTINATION games)",

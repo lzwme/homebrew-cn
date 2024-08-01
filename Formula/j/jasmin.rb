@@ -15,7 +15,7 @@ class Jasmin < Formula
 
   def install
     # Remove Windows scripts
-    rm_rf Dir["*.bat"]
+    rm_r(Dir["*.bat"])
 
     libexec.install Dir["*.jar"]
     prefix.install %w[Readme.txt license-ant.txt license-jasmin.txt]

@@ -80,7 +80,7 @@ class NodeAT14 < Formula
     end
 
     term_size_vendor_dir = lib/"node_modules/npm/node_modules/term-size/vendor"
-    term_size_vendor_dir.rmtree # remove pre-built binaries
+    rm_r(term_size_vendor_dir) # remove pre-built binaries
 
     if OS.mac?
       macos_dir = term_size_vendor_dir/"macos"

@@ -20,7 +20,7 @@ class GradleProfiler < Formula
   depends_on "openjdk@11"
 
   def install
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install %w[bin lib]
     env = Language::Java.overridable_java_home_env("11")
     (bin"gradle-profiler").write_env_script libexec"bingradle-profiler", env

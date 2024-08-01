@@ -35,7 +35,7 @@ class Fits < Formula
 
     # Remove Windows-only directories
     %w[exiftoolwindows file_utility_windows mediainfowindows].each do |dir|
-      (buildpath"tools"dir).rmtree
+      rm_r(buildpath"tools"dir)
     end
 
     libexec.install "lib", "tools", "xml", *buildpath.glob("*.properties")

@@ -59,9 +59,9 @@ class Passenger < Formula
     (libexec"download_cache").mkpath
 
     # Fixes https:github.comphusionpassengerissues1288
-    rm_rf "buildoutlibev"
-    rm_rf "buildoutlibuv"
-    rm_rf "buildoutcache"
+    rm_r("buildoutlibev")
+    rm_r("buildoutlibuv")
+    rm_r("buildoutcache")
 
     necessary_files = %w[configure Rakefile README.md CONTRIBUTORS
                          CONTRIBUTING.md LICENSE CHANGELOG package.json

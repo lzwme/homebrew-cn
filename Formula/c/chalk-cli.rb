@@ -1,5 +1,3 @@
-require "languagenode"
-
 class ChalkCli < Formula
   desc "Terminal string styling done right"
   homepage "https:github.comchalkchalk-cli"
@@ -8,13 +6,20 @@ class ChalkCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "36202571cae4f3cf1dfdf4b03739e501beef3c46ec3dc76a1df41f831ebcd0aa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "6dd72ec4c56bdaf68b01d37300b2535c23b69a539ab796d27136640ac072f6b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea570e06f25667aeceac64b1434ddc5bafdc21ecd5147ba46fd102b3a7ee9498"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

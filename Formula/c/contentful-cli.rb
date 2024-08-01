@@ -1,5 +1,3 @@
-require "languagenode"
-
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https:github.comcontentfulcontentful-cli"
@@ -9,19 +7,20 @@ class ContentfulCli < Formula
   head "https:github.comcontentfulcontentful-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0df0be8cf868331c49d56dfc7abb5a4addff00fcae0e2360b8015611cda58d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0df0be8cf868331c49d56dfc7abb5a4addff00fcae0e2360b8015611cda58d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0df0be8cf868331c49d56dfc7abb5a4addff00fcae0e2360b8015611cda58d6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4952a10b381a4352212247893f8c32b8a26842df875a12792f666f6e8557cd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "c4952a10b381a4352212247893f8c32b8a26842df875a12792f666f6e8557cd3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4952a10b381a4352212247893f8c32b8a26842df875a12792f666f6e8557cd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70109e3187f2db0f0753ac9fa52aec12948b842544391ac8dec4cec4b88f629c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "177216e49adbd52e55ad3923c09c5329025e311014c2483557262ce083812b7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "177216e49adbd52e55ad3923c09c5329025e311014c2483557262ce083812b7b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "177216e49adbd52e55ad3923c09c5329025e311014c2483557262ce083812b7b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c750b3bd304310b5af1aa4cf98af9554c62929a0f218bfd41246a0aa1fa7d08"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c750b3bd304310b5af1aa4cf98af9554c62929a0f218bfd41246a0aa1fa7d08"
+    sha256 cellar: :any_skip_relocation, monterey:       "6471f4b92badf80beb23471251dd60c597fdae1c925af862fdbf87ca5d546f64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a988eec16401dc6cb35774d5548fb4ec33eac3606743ac4a371faab1b01a5685"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

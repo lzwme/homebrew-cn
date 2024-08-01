@@ -50,7 +50,7 @@ class ArmNoneEabiGcc < Formula
       system "make", "install-target-libgcc"
 
       # FSF-related man pages may conflict with native gcc
-      (share/"man/man7").rmtree
+      rm_r(share/"man/man7")
     end
   end
 

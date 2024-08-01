@@ -3,6 +3,7 @@ class Mrtg < Formula
   homepage "https://oss.oetiker.ch/mrtg/"
   url "https://oss.oetiker.ch/mrtg/pub/mrtg-2.17.10.tar.gz"
   sha256 "c7f11cb5e217a500d87ee3b5d26c58a8652edbc0d3291688bb792b010fae43ac"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://oss.oetiker.ch/mrtg/pub/"
@@ -23,13 +24,17 @@ class Mrtg < Formula
   end
 
   depends_on "gd"
+  depends_on "libpng"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    # Exclude unrecognized options
+    args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
+
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/cfgmaker", "--nointerfaces", "localhost"
+    system bin/"cfgmaker", "--nointerfaces", "localhost"
   end
 end

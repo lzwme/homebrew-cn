@@ -36,9 +36,9 @@ class Dwdiff < Formula
     system "make", "install"
 
     # Remove non-English man pages
-    (man/"nl").rmtree
-    (man/"nl.UTF-8").rmtree
-    (share/"locale/nl").rmtree
+    rm_r(man/"nl")
+    rm_r(man/"nl.UTF-8")
+    rm_r(share/"locale/nl")
   end
 
   test do

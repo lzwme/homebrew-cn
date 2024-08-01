@@ -14,7 +14,7 @@ class Flume < Formula
   depends_on "openjdk@11"
 
   def install
-    rm_f Dir["bin/*.cmd", "bin/*.ps1"]
+    rm(Dir["bin/*.cmd", "bin/*.ps1"])
     libexec.install %w[conf docs lib tools]
     prefix.install "bin"
 

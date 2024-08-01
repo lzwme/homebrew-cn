@@ -33,9 +33,9 @@ class Enigma < Formula
 
   depends_on "imagemagick" => :build
   depends_on "pkg-config" => :build
+
   depends_on "enet"
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "libpng"
   depends_on "sdl2"
   depends_on "sdl2_image"
@@ -43,12 +43,16 @@ class Enigma < Formula
   depends_on "sdl2_ttf"
   depends_on "xerces-c"
 
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     system ".autogen.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--with-system-enet",
-                          "--prefix=#{prefix}"
-    system "make"
+    system ".configure", "--with-system-enet", *std_configure_args
     system "make", "install"
   end
 

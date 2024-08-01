@@ -31,8 +31,8 @@ class GpgTui < Formula
     fish_completion.install "gpg-tui.fish"
     zsh_completion.install "_gpg-tui"
 
-    rm_f bin"gpg-tui-completions"
-    rm_f Dir[prefix".crates*"]
+    rm(bin"gpg-tui-completions")
+    rm(Dir[prefix".crates*"])
   end
 
   test do

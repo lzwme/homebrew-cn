@@ -42,7 +42,7 @@ class Hbase < Formula
 
   def install
     java_home = Language::Java.java_home("11")
-    rm_f Dir["bin*.cmd", "conf*.cmd"]
+    rm(Dir["bin*.cmd", "conf*.cmd"])
     libexec.install %w[bin conf lib hbase-webapps]
 
     # Some binaries have really generic names (like `test`) and most seem to be

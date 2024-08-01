@@ -16,18 +16,17 @@ class Evince < Formula
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
-  depends_on "gettext" => :build # for msgfmt
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
   depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "djvulibre"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gspell"
   depends_on "gtk+3"
@@ -44,20 +43,31 @@ class Evince < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "gettext" => :build # for msgfmt
+  end
+
   def install
     ENV["DESTDIR"] = "/"
-    system "meson", "setup", "build", "-Dnautilus=false",
-                                      "-Dcomics=enabled",
-                                      "-Ddjvu=enabled",
-                                      "-Dpdf=enabled",
-                                      "-Dps=enabled",
-                                      "-Dtiff=enabled",
-                                      "-Dxps=enabled",
-                                      "-Dgtk_doc=false",
-                                      "-Dintrospection=true",
-                                      "-Ddbus=false",
-                                      "-Dgspell=enabled",
-                                      *std_meson_args
+
+    args = %w[
+      -Dnautilus=false
+      -Dcomics=enabled
+      -Ddjvu=enabled
+      -Dpdf=enabled
+      -Dps=enabled
+      -Dtiff=enabled
+      -Dxps=enabled
+      -Dgtk_doc=false
+      -Dintrospection=true
+      -Ddbus=false
+      -Dgspell=enabled
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

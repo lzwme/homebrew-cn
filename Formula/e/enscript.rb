@@ -24,7 +24,9 @@ class Enscript < Formula
     sha256 x86_64_linux:   "d968c97391029600c54ace8362e7293202ca6227421d626dced22f21b2ccfa26"
   end
 
-  depends_on "gettext"
+  on_macos do
+    depends_on "gettext"
+  end
 
   conflicts_with "cspice", because: "both install `states` binaries"
 
@@ -36,8 +38,7 @@ class Enscript < Formula
   end
 
   def install
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

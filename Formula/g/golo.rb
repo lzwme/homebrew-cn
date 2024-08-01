@@ -24,7 +24,7 @@ class Golo < Formula
     end
     libexec.install %w[share samples]
 
-    rm_f Dir["#{libexec}bin*.bat"]
+    rm(Dir["#{libexec}bin*.bat"])
     bin.install Dir["#{libexec}bin*"]
     bin.env_script_all_files libexec"bin", JAVA_HOME: "${JAVA_HOME:-#{ENV["JAVA_HOME"]}}"
     bash_completion.install "#{libexec}shareshell-completiongolo-bash-completion"

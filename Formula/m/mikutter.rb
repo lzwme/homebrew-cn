@@ -279,7 +279,7 @@ class Mikutter < Formula
     system "bundle", "install",
            "--local", "--path=#{lib}/mikutter/vendor"
 
-    rm_rf "vendor"
+    rm_r("vendor")
     (lib/"mikutter").install "plugin"
     libexec.install Dir["*"]
 

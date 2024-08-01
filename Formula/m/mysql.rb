@@ -105,11 +105,11 @@ class Mysql < Formula
     end
 
     # Remove the tests directory
-    rm_rf prefix"mysql-test"
+    rm_r(prefix"mysql-test")
 
     # Don't create databases inside of the prefix!
     # See: https:github.comHomebrewhomebrewissues4975
-    rm_rf prefix"data"
+    rm_r(prefix"data")
 
     # Fix up the control script and link into bin.
     inreplace "#{prefix}support-filesmysql.server",

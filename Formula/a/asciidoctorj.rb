@@ -23,7 +23,7 @@ class Asciidoctorj < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin*.bat"] # Remove Windows files.
+    rm_r(Dir["bin*.bat"]) # Remove Windows files.
     libexec.install Dir["*"]
     (bin"asciidoctorj").write_env_script libexec"binasciidoctorj", JAVA_HOME: Formula["openjdk"].opt_prefix
   end

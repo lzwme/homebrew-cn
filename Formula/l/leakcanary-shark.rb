@@ -13,7 +13,7 @@ class LeakcanaryShark < Formula
 
   def install
     # Remove Windows scripts
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
 
     libexec.install Dir["*"]
     (bin"shark-cli").write_env_script libexec"binshark-cli", Language::Java.overridable_java_home_env

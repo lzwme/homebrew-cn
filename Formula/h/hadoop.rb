@@ -28,7 +28,7 @@ class Hadoop < Formula
   conflicts_with "yarn", because: "both install `yarn` binaries"
 
   def install
-    rm_f Dir["bin*.cmd", "sbin*.cmd", "libexec*.cmd", "etchadoop*.cmd"]
+    rm(Dir["bin*.cmd", "sbin*.cmd", "libexec*.cmd", "etchadoop*.cmd"])
     rm ["bincontainer-executor", "binoom-listener", "bintest-container-executor"]
     libexec.install %w[bin sbin libexec share etc]
 

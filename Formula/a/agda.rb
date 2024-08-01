@@ -38,13 +38,14 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c5ad14e8d9384d04112c8e786acc1c2f3746d6e0da40b9035a4a1418f1fbeadd"
-    sha256 arm64_ventura:  "c6ce41a5ab626c84211b9edbff313fac292a1816ddb939dba75196a1e62debb3"
-    sha256 arm64_monterey: "d6b81a5524508cee748e5331424c4e849c81ae7d3221f8edd66db423143f7054"
-    sha256 sonoma:         "cdbb9865d08ea102cd43a5a4fa51d299e8ab189cda36b00e4a5d8e8161a4ec39"
-    sha256 ventura:        "ef022f20c61c681b344a01bd9b9f198fd219b0a669d5c23529b994cfe7831b23"
-    sha256 monterey:       "29c8b74ca117e2053f35e65155993bc102ca5fea9a76f72059d172c346c195d8"
-    sha256 x86_64_linux:   "b033a7e961f4ea7e749557ba20cc60a79db23e02576ed6516c167d33804cf12c"
+    rebuild 1
+    sha256 arm64_sonoma:   "29261856a11b5d29452f3ccbde6318c88ff552e435708699b121cc495572d30b"
+    sha256 arm64_ventura:  "e58d2df494097189c5be89734395806d518da38c8d21b83ff6edc8f8db721b56"
+    sha256 arm64_monterey: "5ae8b9ae8787cc167a0b39b7b4b7d17be21e6654dd2868e6dbb71a2f594c904e"
+    sha256 sonoma:         "998241e20b2c5af10ce3cbfba7dbfcdd99e11f5c387a5fc4424d0da76294c304"
+    sha256 ventura:        "b5d53995badb244ee52c28b8b15900b3b8b18f9418d7923dfcb724ee8b505f65"
+    sha256 monterey:       "6124151ce410a6e66642fad8705cdc30d4f7be592305a320023a286dfd181659"
+    sha256 x86_64_linux:   "57a3411ee4dfa36e39030e6ec8b21a3d2e0d1be388bd6b8f2d6aeaa2d6ca12cc"
   end
 
   head do
@@ -74,12 +75,21 @@ class Agda < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  # TODO: Remove when lib:Agda install works with latest cabal-install
+  # Ref: https:github.comagdaagdaissues7401
+  resource "cabal-install" do
+    url "https:hackage.haskell.orgpackagecabal-install-3.10.3.0cabal-install-3.10.3.0.tar.gz"
+    sha256 "a8e706f0cf30cd91e006ae8b38137aecf65983346f44d0cba4d7a60bbfa3da9e"
+  end
+
   def install
+    cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
+
     system "cabal", "v2-update"
     # expose certain packages for building and testing
     system "cabal", "--store-dir=#{libexec}", "v2-install",
            "base", "ieee754", "text", "directory", "--lib",
-           *(std_cabal_v2_args.reject { |s| s["installdir"] })
+           *cabal_args
     agdalib = lib"agda"
 
     # install main Agda library and binaries
@@ -90,14 +100,17 @@ class Agda < Formula
     # relying on the Agda library just installed
     resource("agda2hs").stage "agda2hs-build"
     cd "agda2hs-build" do
-      system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
+      # TODO: Remove when lib:Agda install works with latest cabal-install
+      resource("cabal-install").stage do
+        system "cabal", "v2-install", *cabal_args, "--installdir=#{buildpath}agda2hs-build"
+      end
+
+      system ".cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
     end
 
     # generate the standard library's documentation and vim highlighting files
     resource("stdlib").stage agdalib
     cd agdalib do
-      cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
-      system "cabal", "v2-update"
       system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}agda"
       system ".GenerateEverything"
       cd "doc" do
@@ -106,7 +119,7 @@ class Agda < Formula
     end
 
     # Clean up references to Homebrew shims in the standard library
-    rm_rf "#{agdalib}dist-newstylecache"
+    rm_r("#{agdalib}dist-newstylecache")
 
     # generate the cubical library's documentation files
     cubicallib = agdalib"cubical"

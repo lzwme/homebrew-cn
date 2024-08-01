@@ -13,7 +13,7 @@ class Savana < Formula
 
   def install
     # Remove Windows files
-    rm_rf Dir["bin*.{bat,cmd}"]
+    rm_r(Dir["bin*.{bat,cmd}"])
 
     prefix.install %w[COPYING COPYING.LESSER licenses svn-hooks]
 

@@ -60,7 +60,7 @@ class Grokj2k < Formula
     ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec"lib"
 
     # Ensure we use Homebrew little-cms2
-    %w[liblcms2 libpng libtiff libz].each { |l| (buildpath"thirdparty"l).rmtree }
+    %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath"thirdparty"l) }
     inreplace "thirdpartyCMakeLists.txt" do |s|
       s.gsub! "add_subdirectory(liblcms2)", ""
       s.gsub! %r{(set\(LCMS_INCLUDE_DIRNAME) \$\{GROK_SOURCE_DIR\}thirdpartyliblcms2include},

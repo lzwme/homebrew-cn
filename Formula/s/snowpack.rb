@@ -33,9 +33,9 @@ class Snowpack < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     libexec.glob("lib/node_modules/snowpack/node_modules/{bufferutil,utf-8-validate}/prebuilds/*")
-           .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
     # `rollup` < 2.38.3 uses x86_64-specific `fsevents`. Can remove when `rollup` is updated.
-    (libexec/"lib/node_modules/snowpack/node_modules/rollup/node_modules/fsevents").rmtree if Hardware::CPU.arm?
+    rm_r(libexec/"lib/node_modules/snowpack/node_modules/rollup/node_modules/fsevents") if Hardware::CPU.arm?
 
     # Replace universal binaries with their native slices
     deuniversalize_machos

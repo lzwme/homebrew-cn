@@ -12,7 +12,7 @@ class Jbake < Formula
   depends_on "openjdk"
 
   def install
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install Dir["*"]
     bin.install libexec"binjbake"
     bin.env_script_all_files libexec"bin", JAVA_HOME: Formula["openjdk"].opt_prefix

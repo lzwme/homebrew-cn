@@ -55,9 +55,9 @@ class FsUae < Formula
     system "make", "install"
 
     # Remove unnecessary files
-    (share"applications").rmtree
-    (share"icons").rmtree
-    (share"mime").rmtree
+    rm_r(share"applications")
+    rm_r(share"icons")
+    rm_r(share"mime")
   end
 
   test do

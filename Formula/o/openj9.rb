@@ -161,7 +161,7 @@ class Openj9 < Formula
       libexec.install Dir["build*imagesjdk-bundle*"].first => "openj9.jdk"
       jdk = "openj9.jdkContentsHome"
       rm jdk"libsrc.zip"
-      rm_rf Dir.glob(jdk"***.dSYM")
+      rm_r(Dir.glob(jdk"***.dSYM"))
     else
       libexec.install Dir["buildlinux-x86_64-server-releaseimagesjdk*"]
     end

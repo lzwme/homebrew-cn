@@ -102,7 +102,7 @@ class Openvino < Formula
                       srcpluginsintel_gputhirdpartyrapidjson
                       srcpluginsintel_gputhirdpartyonednn_gpu
                       srcpluginsintel_cputhirdpartyComputeLibrary]
-    dependencies.each { |d| (buildpathd).rmtree }
+    dependencies.each { |d| rm_r(buildpathd) }
 
     resource("onnx").stage buildpath"thirdpartyonnxonnx"
     resource("mlas").stage buildpath"srcpluginsintel_cputhirdpartymlas"

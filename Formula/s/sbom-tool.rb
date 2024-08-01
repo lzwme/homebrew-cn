@@ -1,19 +1,19 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https:github.commicrosoftsbom-tool"
-  url "https:github.commicrosoftsbom-toolarchiverefstagsv2.2.6.tar.gz"
-  sha256 "2f4f9f624c5bd4881bee920e5c2a8801c23889da9b61935912f28e27c7fc6aaf"
+  url "https:github.commicrosoftsbom-toolarchiverefstagsv2.2.7.tar.gz"
+  sha256 "4a7d858775629148b5a83246a78954489bc1f637c117ba33cca4fb44d826955a"
   license "MIT"
   head "https:github.commicrosoftsbom-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a74e432d437d743783f196da854c1978eeb523cb09f82ca40189fe7d6ac1dc4f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2d245a508f38f49dbcd3fb7e00e5ebd9d4a4c3e3a9ec6e7fbfe82d4e8d1b46e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c8bca177ee182cdb2c110868b32a6d0f19b96b0c1017ec111accf9ac20936d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c189d8a5cdc6612bc40f3896d61c1b2fc8af2619f8cd86a03c133c08dc54fa90"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf33692f2d9f549eb6827c05f94119decaa90548d06a992f25f3f099da426e2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "72d777eaf070fd70ec865f41b8fbda10efee33428e423fc50564810aa045efa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4336d259bb08ed15dffaa793fb63d26b8bd063342b6daa8d484abe6c2510d9ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e29cf57e4c4f097c0331f9ecf1be5cda905be080f36f9d15f09f7073676e714"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89e3e06bfc97e69db21761a5dacbd59e1835cafab840dce56e611342f392dcb9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9ea68b2eb82cdf104826ad04f3014dcb30d0547ade66a49165820d017864261"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51eafcd21b28fea972d1b2f523bd0badf2b5c806b5f39435c47fb0b7716a9397"
+    sha256 cellar: :any_skip_relocation, ventura:        "7359c78b0fa3c881e9dfcb54d08f17aa5d1b51c22e694f2fc9dcdbd7bfefd921"
+    sha256 cellar: :any_skip_relocation, monterey:       "f25161cf2102a195a357f3615869036b4b63fb9424627048e5cb97bce2403bf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d473611de86422fbf882eb8306a304f13ec240ec3f5e7325ae60530adbd6d534"
   end
 
   depends_on "dotnet"

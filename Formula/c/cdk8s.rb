@@ -1,5 +1,3 @@
-require "language/node"
-
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https://cdk8s.io/"
@@ -8,19 +6,20 @@ class Cdk8s < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ae78073b90cd6875886dfcf8155b80ab865068cdfce32e0e96a234ecf292463"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ae78073b90cd6875886dfcf8155b80ab865068cdfce32e0e96a234ecf292463"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ae78073b90cd6875886dfcf8155b80ab865068cdfce32e0e96a234ecf292463"
-    sha256 cellar: :any_skip_relocation, sonoma:         "abca0122f464bb6bb07d851030f235cf6e74ff0d105a372ccb7e4d99b38af4a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "abca0122f464bb6bb07d851030f235cf6e74ff0d105a372ccb7e4d99b38af4a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "abca0122f464bb6bb07d851030f235cf6e74ff0d105a372ccb7e4d99b38af4a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6826ec421eae6850dd2dd345fa80847def9f6a0226e2c2a8bbdb4f7caecb9de6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37ab0cf70c4ca637755a34339937ace37c803181ecaeaa50d6553e3103786e1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37ab0cf70c4ca637755a34339937ace37c803181ecaeaa50d6553e3103786e1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "37ab0cf70c4ca637755a34339937ace37c803181ecaeaa50d6553e3103786e1c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1379e34b1d87dc11f681bd8dac0dc2ff06d28bb8a393edd771867ef409e2436f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1379e34b1d87dc11f681bd8dac0dc2ff06d28bb8a393edd771867ef409e2436f"
+    sha256 cellar: :any_skip_relocation, monterey:       "1379e34b1d87dc11f681bd8dac0dc2ff06d28bb8a393edd771867ef409e2436f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d870a2fcaf9d95a7feb529f32c3a2dff379b72b81b722100a1aa10fbcca81cb6"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

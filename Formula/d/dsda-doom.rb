@@ -22,6 +22,7 @@ class DsdaDoom < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "dumb"
   depends_on "fluid-synth"
   depends_on "libvorbis"
@@ -31,9 +32,15 @@ class DsdaDoom < Formula
   depends_on "sdl2"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
+
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libogg"
+  end
+
   on_linux do
+    depends_on "mesa"
     depends_on "mesa-glu"
   end
 

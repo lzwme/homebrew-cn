@@ -1,19 +1,19 @@
 class Valkey < Formula
   desc "High-performance data structure server that primarily serves keyvalue workloads"
   homepage "https:valkey.io"
-  url "https:github.comvalkey-iovalkeyarchiverefstags7.2.5.tar.gz"
-  sha256 "c7c7a758edabe7693b3692db58fe5328130036b06224df64ab1f0c12fe265a76"
+  url "https:github.comvalkey-iovalkeyarchiverefstags7.2.6.tar.gz"
+  sha256 "5272f244deecd5655d805aabc71c84a7c7699bc4fa009dd7fc550806a042d512"
   license "BSD-3-Clause"
   head "https:github.comvalkey-iovalkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a40c337f18bad2ae274199b35ee1e261b18ed3521a67bc61a0a4cf4169eaa893"
-    sha256 cellar: :any,                 arm64_ventura:  "cb62ce022ad11d6c12424a028df11ca21b4c8479c7731124536ab62f9a055522"
-    sha256 cellar: :any,                 arm64_monterey: "fffd8f00b86e2c5cf2140c3d178c5834857a77416a043f3427ce9a9b35acf8cc"
-    sha256 cellar: :any,                 sonoma:         "9e1451cda196df3bc62b82832ba613af06bca50d3ef4c93450b0ca320244d699"
-    sha256 cellar: :any,                 ventura:        "3aec084610e710f07c16a6861a45b0bc539e02ef3b815cc8da9267f5b02a5bfe"
-    sha256 cellar: :any,                 monterey:       "4a55fb259562e56eb8df25e92c0fa1fe33eead6ca06c6908e61969173924f62b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "508f9fbd61b282abc3278a4dc015b69c6bcc1c3cf84d0969a3281cab820e6e15"
+    sha256 cellar: :any,                 arm64_sonoma:   "d3cd139668e121b5caa306ce301fda2614ca1b46941fe25db5a0a9b80a6ad8dd"
+    sha256 cellar: :any,                 arm64_ventura:  "de9f479d5978b0bbf635299d225c3068a5e7f5aac8a410fbdf173a9cd78b3185"
+    sha256 cellar: :any,                 arm64_monterey: "85a845363f2832856e4cbf131844254283b4c2c56f1a383a19bebf68be60a5d0"
+    sha256 cellar: :any,                 sonoma:         "b9b53942e9c10157cd99511dde13f531dced1ab8a0f9cb6951af0b6f30f03f68"
+    sha256 cellar: :any,                 ventura:        "20de31a33ccff361c090da4991463f7f7566014d00ce1a80773a6c1d9f026e23"
+    sha256 cellar: :any,                 monterey:       "6c1438f58b815998b049b1fbd21d15d22dc4691b5844954a44b453d1ef38466c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d87aa424286c347de00f181b805ad13714b9747987f649f2864239d29da53904"
   end
 
   depends_on "openssl@3"

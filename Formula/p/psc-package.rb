@@ -18,7 +18,7 @@ class PscPackage < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.4" => :build
+  depends_on "ghc@9.6" => :build
   depends_on "purescript"
 
   # Apply upstream patch to fix build. Remove with next release.

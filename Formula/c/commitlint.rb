@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Commitlint < Formula
   desc "Lint commit messages according to a commit convention"
   homepage "https:commitlint.js.org#"
@@ -9,19 +7,20 @@ class Commitlint < Formula
   head "https:github.comconventional-changelogcommitlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15b7edcb85f4caf7a8e444dfd891017ac20e2f94189f593e9fb6403a08eb9860"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15b7edcb85f4caf7a8e444dfd891017ac20e2f94189f593e9fb6403a08eb9860"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "15b7edcb85f4caf7a8e444dfd891017ac20e2f94189f593e9fb6403a08eb9860"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c53449fe9728ea230148d33d5438b48c7c3054f6576aa0f14f0e2f617a41741"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c53449fe9728ea230148d33d5438b48c7c3054f6576aa0f14f0e2f617a41741"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c53449fe9728ea230148d33d5438b48c7c3054f6576aa0f14f0e2f617a41741"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15b7edcb85f4caf7a8e444dfd891017ac20e2f94189f593e9fb6403a08eb9860"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "835bb470798abd5172a8ae23a1b7b2ddf39b0897606846f44813b1abf617a206"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "835bb470798abd5172a8ae23a1b7b2ddf39b0897606846f44813b1abf617a206"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "835bb470798abd5172a8ae23a1b7b2ddf39b0897606846f44813b1abf617a206"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0a9903caf955420e1ed47ab5fd01a54dec1db45460fb20b9bc2282a1fd4b8e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0a9903caf955420e1ed47ab5fd01a54dec1db45460fb20b9bc2282a1fd4b8e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0a9903caf955420e1ed47ab5fd01a54dec1db45460fb20b9bc2282a1fd4b8e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a91a1e8ad08df01e00e0b2a841f6d17090d5306c3da1dc39358826d08142e6dc"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

@@ -262,7 +262,7 @@ class Snakemake < Formula
 
   def install
     venv = virtualenv_install_with_resources
-    (venv.site_packages"pulpsolverdircbc").rmtree
+    rm_r(venv.site_packages"pulpsolverdircbc")
   end
 
   test do

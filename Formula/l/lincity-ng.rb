@@ -61,7 +61,7 @@ class LincityNg < Formula
 
     system ".configure", *args
     system "jam", "install"
-    rm_rf ["#{pkgshare}applications", "#{pkgshare}pixmaps"]
+    rm_r(["#{pkgshare}applications", "#{pkgshare}pixmaps"])
   end
 
   def caveats

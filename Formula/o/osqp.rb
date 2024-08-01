@@ -33,7 +33,7 @@ class Osqp < Formula
     system "cmake", "--install", "build"
 
     # Remove unnecessary qdldl install.
-    rm_rf Dir[include"qdldl", lib"cmakeqdldl", lib"libqdldl.a", libshared_library("libqdldl")]
+    rm_r(Dir[include"qdldl", lib"cmakeqdldl", lib"libqdldl.a", libshared_library("libqdldl")])
   end
 
   test do

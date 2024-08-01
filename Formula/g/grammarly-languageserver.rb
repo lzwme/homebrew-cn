@@ -1,5 +1,3 @@
-require "languagenode"
-
 class GrammarlyLanguageserver < Formula
   desc "Language Server for Grammarly"
   homepage "https:github.comznckgrammarly"
@@ -9,7 +7,14 @@ class GrammarlyLanguageserver < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7433d92272f07c1cd865850dbf5db445aaef83b4ce00cebd49b8faad6aaf88b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b88bbd69c207d41bb1ead5ffba2879ed2961c4cbd4147536b80e83aaf821b952"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b88bbd69c207d41bb1ead5ffba2879ed2961c4cbd4147536b80e83aaf821b952"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b88bbd69c207d41bb1ead5ffba2879ed2961c4cbd4147536b80e83aaf821b952"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a70d983e2f36b026141bad92136e0532a262aa072bdfde0f50a40ce54fae22e"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a70d983e2f36b026141bad92136e0532a262aa072bdfde0f50a40ce54fae22e"
+    sha256 cellar: :any_skip_relocation, monterey:       "b88bbd69c207d41bb1ead5ffba2879ed2961c4cbd4147536b80e83aaf821b952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d8c0beaa0099184da7a6376055ba6a188e9cebd0d0471af86e65218d0048235"
   end
 
   deprecate! date: "2023-11-02", because: "uses deprecated `node@16`"
@@ -17,7 +22,7 @@ class GrammarlyLanguageserver < Formula
   depends_on "node@16" # try `node` after https:github.comznckgrammarlyissues334
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     (bin"grammarly-languageserver").write <<~EOS
       #! usrbinenv sh
 

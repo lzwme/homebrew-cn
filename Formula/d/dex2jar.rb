@@ -18,7 +18,7 @@ class Dex2jar < Formula
 
   def install
     # Remove Windows scripts
-    rm_rf Dir["*.bat"]
+    rm_r(Dir["*.bat"])
 
     # Install files
     chmod 0755, Dir["*"]

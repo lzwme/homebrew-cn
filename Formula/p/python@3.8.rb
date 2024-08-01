@@ -245,7 +245,7 @@ class PythonAT38 < Formula
     end
 
     # Remove the site-packages that Python created in its Cellar.
-    site_packages_cellar.rmtree
+    rm_r(site_packages_cellar)
 
     %w[setuptools pip wheel].each do |r|
       (libexecr).install resource(r)
@@ -284,16 +284,16 @@ class PythonAT38 < Formula
     site_packages_cellar.parent.install_symlink site_packages
 
     # Write our sitecustomize.py
-    rm_rf site_packages.glob("sitecustomize.py[co]")
+    rm_r(site_packages.glob("sitecustomize.py[co]"))
     (site_packages"sitecustomize.py").atomic_write(sitecustomize)
 
     # Remove old setuptools installations that may still fly around and be
     # listed in the easy_install.pth. This can break setuptools build with
     # zipimport.ZipImportError: bad local file header
     # setuptools-0.9.8-py3.3.egg
-    rm_rf Dir["#{site_packages}setuptools*"]
-    rm_rf Dir["#{site_packages}distribute*"]
-    rm_rf Dir["#{site_packages}pip[-_.][0-9]*", "#{site_packages}pip"]
+    rm_r(Dir["#{site_packages}setuptools*"])
+    rm_r(Dir["#{site_packages}distribute*"])
+    rm_r(Dir["#{site_packages}pip[-_.][0-9]*", "#{site_packages}pip"])
 
     %w[setuptools pip wheel].each do |pkg|
       (libexecpkg).cd do
@@ -305,7 +305,7 @@ class PythonAT38 < Formula
       end
     end
 
-    rm_rf bin.glob("{easy_install,pip{,3}}")
+    rm_r(bin.glob("{easy_install,pip{,3}}"))
     mv bin"wheel", bin"wheel#{version.major_minor}"
 
     # Install unversioned and major-versioned symlinks in libexecbin.

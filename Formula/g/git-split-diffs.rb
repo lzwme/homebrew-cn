@@ -1,5 +1,3 @@
-require "languagenode"
-
 class GitSplitDiffs < Formula
   desc "Syntax highlighted side-by-side diffs in your terminal"
   homepage "https:github.combangagit-split-diffs"
@@ -8,19 +6,20 @@ class GitSplitDiffs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2244f8a3edebc099c527930bb66a3af4ea97683b335be3c492f95c282c5ba1f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c72733099ccedd81772f27388700abb6d5edfd9c77b27c8ca93dcb5af68a0bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, ventura:        "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, monterey:       "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e479320545a1b6326b0a5d99b932bc9c56909616c6fc950ef98f327b50712301"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

@@ -112,7 +112,7 @@ class Libgccjit < Formula
 
     # We only install the relevant libgccjit files from libexec and delete the rest.
     prefix.find do |f|
-      rm_rf f if !f.directory? && !f.basename.to_s.start_with?("libgccjit")
+      rm_r(f) if !f.directory? && !f.basename.to_s.start_with?("libgccjit")
     end
 
     # Provide a `libgccxy` directory to align with the versioned GCC formulae.

@@ -57,7 +57,7 @@ class Parrot < Formula
     system "make"
     system "make", "install"
     # Don't install this file in HOMEBREW_PREFIXlib
-    rm_rf lib"VERSION"
+    rm_r(lib"VERSION")
   end
 
   test do

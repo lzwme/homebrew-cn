@@ -22,9 +22,17 @@ class Ebook2cw < Formula
     sha256 x86_64_linux:   "269994f635db4fc4570e9d0684051e883bbfba824be06bd8bf420ed8189fdf2b"
   end
 
-  depends_on "gettext"
   depends_on "lame"
+  depends_on "libogg"
   depends_on "libvorbis"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "gettext" => :build # for msgfmt
+  end
 
   def install
     system "make", "DESTDIR=#{prefix}"
@@ -32,9 +40,10 @@ class Ebook2cw < Formula
   end
 
   test do
-    system "echo \"test mp3 file generation\" | #{bin}/ebook2cw -o test"
+    pipe_output("#{bin}/ebook2cw -o test", "test mp3 file generation")
     assert_predicate testpath/"test0000.mp3", :exist?
-    system "echo \"test ogg file generation\" | #{bin}/ebook2cw -O -o test"
+
+    pipe_output("#{bin}/ebook2cw -O -o test", "test ogg file generation")
     assert_predicate testpath/"test0000.ogg", :exist?
   end
 end

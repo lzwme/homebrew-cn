@@ -21,14 +21,13 @@ class Libmpdclient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3e56f369d58e7d23eafe3d6d8dcfa0f5eca8daa9c732582f4938ff99abad183"
   end
 
-  depends_on "doxygen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
   def install
-    system "meson", *std_meson_args, ".", "output"
-    system "ninja", "-C", "output"
-    system "ninja", "-C", "output", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

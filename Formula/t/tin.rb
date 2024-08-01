@@ -34,7 +34,7 @@ class Tin < Formula
 
   def install
     # Remove bundled libraries
-    %w[intl pcre].each { |l| (buildpath/l).rmtree }
+    %w[intl pcre].each { |l| rm_r(buildpath/l) }
 
     system "./configure", *std_configure_args,
                           "--mandir=#{man}",

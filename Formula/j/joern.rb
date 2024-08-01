@@ -31,7 +31,7 @@ class Joern < Formula
     system "sbt", "stage"
 
     cd "joern-clitargetuniversalstage" do
-      rm_f Dir["***.bat"]
+      rm(Dir["***.bat"])
       libexec.install Pathname.pwd.children
     end
 

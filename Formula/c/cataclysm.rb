@@ -26,13 +26,19 @@ class Cataclysm < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "gettext"
+
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sdl2"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     os = OS.mac? ? "osx" : OS.kernel_name.downcase

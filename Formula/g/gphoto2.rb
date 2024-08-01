@@ -1,14 +1,14 @@
 class Gphoto2 < Formula
   desc "Command-line interface to libgphoto2"
-  homepage "http://www.gphoto.org/"
-  url "https://downloads.sourceforge.net/project/gphoto/gphoto/2.5.28/gphoto2-2.5.28.tar.bz2"
+  homepage "http:www.gphoto.org"
+  url "https:downloads.sourceforge.netprojectgphotogphoto2.5.28gphoto2-2.5.28.tar.bz2"
   sha256 "2a648dcdf12da19e208255df4ebed3e7d2a02f905be4165f2443c984cf887375"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/gphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?gphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -25,19 +25,50 @@ class Gphoto2 < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libgphoto2"
   depends_on "popt"
   depends_on "readline"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
+  # fix incompatible pointer type issue
+  # upstream patch PR ref, https:github.comgphotogphoto2pull569
+  patch :DATA
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gphoto2 -v")
+    assert_match version.to_s, shell_output("#{bin}gphoto2 -v")
   end
 end
+
+__END__
+diff --git agphoto2main.c bgphoto2main.c
+index 2bf5964..cd84467 100644
+--- agphoto2main.c
++++ bgphoto2main.c
+@@ -1215,14 +1215,14 @@ start_timeout_func (Camera *camera, unsigned int timeout,
+ 
+ 	pthread_create (&tid, NULL, thread_func, td);
+ 
+-	return (tid);
++	return (unsigned int)tid;
+ }
+ 
+ static void
+ stop_timeout_func (Camera __unused__ *camera, unsigned int id,
+ 		   void __unused__ *data)
+ {
+-	pthread_t tid = id;
++	pthread_t tid = (pthread_t)id;
+ 
+ 	pthread_cancel (tid);
+ 	pthread_join (tid, NULL);

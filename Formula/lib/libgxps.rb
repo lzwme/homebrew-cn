@@ -52,7 +52,7 @@ class Libgxps < Formula
     # This is not the same variable as setting LD_LIBRARY_PATH!
     ENV.append "LIBRARY_PATH", Formula["zlib"].opt_lib unless OS.mac?
 
-    system "meson", *std_meson_args, "build", "-Denable-test=false"
+    system "meson", "setup", "build", "-Denable-test=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

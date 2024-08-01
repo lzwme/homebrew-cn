@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https:www.simutrans.com"
-  url "svn:servers.simutrans.orgsimutranstrunk", revision: "11351"
-  version "124.2"
+  url "svn:servers.simutrans.orgsimutranstrunk", revision: "11365"
+  version "124.2.1"
   license "Artistic-1.0"
   head "https:github.comsimutranssimutrans.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Simutrans < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c2fbd52dc6359452a145c821d73c066f37da4db93041892d26b9c793ab2a53c5"
-    sha256 cellar: :any,                 arm64_ventura:  "b2be8ba9bdee787dcddd2fa3ced62ef0045033447d7d8bad6c83abbd309d0173"
-    sha256 cellar: :any,                 arm64_monterey: "00e11775d858f4da3409305e6466b017bf70fbbe361d64a3ec273eab699ec0f9"
-    sha256 cellar: :any,                 sonoma:         "5b63b20dabccc424807d9010893f0061785d563f8b392ecdfa3f05d1d0155670"
-    sha256 cellar: :any,                 ventura:        "8c1246cd704450f903734f8453bd70a6e8f66f7e93c39b43bb810e9da408462a"
-    sha256 cellar: :any,                 monterey:       "f1c54cb3e3fbe65542e2c474e62dfb3525c1686dc2b93ea7c6eaee7dbbc7fa89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cd54e58b98c90f1a716fd2cfdcfd125807ace32396871b14dadf96f5e4164dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "2fc8ad6a2d69483848675ded8a58190d58dc40085e7c104f9d6c00f6ebf0861a"
+    sha256 cellar: :any,                 arm64_ventura:  "e3947b011f4740d842ff911114ef847c10902a5cbb973a0222af9e7e93f863ff"
+    sha256 cellar: :any,                 arm64_monterey: "90936a62a2a94ede7fa7751c03cba2114220cf4d34e8c91fcea9fe02d93abff7"
+    sha256 cellar: :any,                 sonoma:         "913ca3fdecc46ad53fa30d895c6afed2afce525dfe3bbd45fe979fd957b7e99b"
+    sha256 cellar: :any,                 ventura:        "ca3d98629dd6ee12fc7cb76529dde2a3ce9656646eba19a8d4738c004a2109a7"
+    sha256 cellar: :any,                 monterey:       "b3518394f760e65d9559ce73c30c68491c815d50809ada101a40b915ba152b10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bbb9c626150451aa7efcfa646c8e677ed2dc8f9f553a18217c3b3d7c5d58abd"
   end
 
   depends_on "cmake" => :build

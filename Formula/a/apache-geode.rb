@@ -14,7 +14,7 @@ class ApacheGeode < Formula
   depends_on "openjdk@11"
 
   def install
-    rm_f "bin/gfsh.bat"
+    rm("bin/gfsh.bat")
     bash_completion.install "bin/gfsh-completion.bash" => "gfsh"
     libexec.install Dir["*"]
     (bin/"gfsh").write_env_script libexec/"bin/gfsh", Language::Java.java_home_env("11")

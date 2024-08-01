@@ -28,9 +28,9 @@ class Nsnake < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     # No need for Linux desktop
-    (share"applications").rmtree
-    (share"icons").rmtree
-    (share"pixmaps").rmtree
+    rm_r(share"applications")
+    rm_r(share"icons")
+    rm_r(share"pixmaps")
   end
 
   test do

@@ -24,7 +24,7 @@ class Payara < Formula
 
   def install
     # Remove Windows scripts
-    rm_f Dir["**/*.{bat,exe}"]
+    rm(Dir["**/*.{bat,exe}"])
 
     inreplace "bin/asadmin", /AS_INSTALL=.*/,
                              "AS_INSTALL=#{libexec}/glassfish"

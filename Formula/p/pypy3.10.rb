@@ -130,7 +130,7 @@ class Pypy310 < Formula
 
     # Delete two files shipped which we do not want to deliver
     # These files make patchelf fail
-    rm_f [libexec"binlibpypy#{abi_version}-c.so.debug", libexec"binpypy#{abi_version}.debug"]
+    rm([libexec"binlibpypy#{abi_version}-c.so.debug", libexec"binpypy#{abi_version}.debug"])
   end
 
   def post_install
@@ -147,7 +147,7 @@ class Pypy310 < Formula
     # Create a site-packages in the prefix.
     site_packages(HOMEBREW_PREFIX).mkpath
     touch site_packages(HOMEBREW_PREFIX)".keepme"
-    site_packages(libexec).rmtree
+    rm_r(site_packages(libexec))
 
     # Symlink the prefix site-packages into the cellar.
     site_packages(libexec).parent.install_symlink site_packages(HOMEBREW_PREFIX)

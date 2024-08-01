@@ -6,7 +6,14 @@ class Fisher < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ea1072241c8f719087b312405c96e5719d33d3c0a93780ed04bdd55590c70a94"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, ventura:        "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1a8d7644b008b6c42fc245366f11a8a5a13c95adc180816e82e366874f08092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8b727116c5d988b083398fc3fb250a104a9525d20bb063fa8901975f331dea7"
   end
 
   depends_on "fish"

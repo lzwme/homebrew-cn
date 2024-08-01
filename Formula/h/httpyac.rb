@@ -1,5 +1,3 @@
-require "language/node"
-
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
@@ -8,13 +6,14 @@ class Httpyac < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e46d3bea588bb7078209fbbb94f88c83c4041d7a7af6f389325201f07e1f57dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e46d3bea588bb7078209fbbb94f88c83c4041d7a7af6f389325201f07e1f57dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e46d3bea588bb7078209fbbb94f88c83c4041d7a7af6f389325201f07e1f57dc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "21ae5e623fdb380d94554910e60aae595c4a2bc94276355be50d2198ddae919c"
-    sha256 cellar: :any_skip_relocation, ventura:        "21ae5e623fdb380d94554910e60aae595c4a2bc94276355be50d2198ddae919c"
-    sha256 cellar: :any_skip_relocation, monterey:       "21ae5e623fdb380d94554910e60aae595c4a2bc94276355be50d2198ddae919c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "379b95b110ca0ffa349bfe8d0ea9644714a3d1abdfcde9adc4cf4928fee7141d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54f4110665146cf751ec7632a5672efcdeeee84670c12c63f6c424a2dacee413"
   end
 
   depends_on "node"
@@ -24,11 +23,11 @@ class Httpyac < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec/"bin/*"]
 
     clipboardy_fallbacks_dir = libexec/"lib/node_modules/#{name}/node_modules/clipboardy/fallbacks"
-    clipboardy_fallbacks_dir.rmtree # remove pre-built binaries
+    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
     if OS.linux?
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath

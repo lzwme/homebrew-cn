@@ -18,7 +18,7 @@ class DhallYaml < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.4" => :build
+  depends_on "ghc@9.6" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"

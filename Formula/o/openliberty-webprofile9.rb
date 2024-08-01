@@ -17,7 +17,7 @@ class OpenlibertyWebprofile9 < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin/**/*.bat"]
+    rm_r(Dir["bin/**/*.bat"])
 
     libexec.install Dir["*"]
     (bin/"openliberty-webprofile9").write_env_script "#{libexec}/bin/server",

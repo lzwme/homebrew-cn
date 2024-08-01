@@ -1,5 +1,3 @@
-require "language/node"
-
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
@@ -8,20 +6,21 @@ class CubejsCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "97ddc9eb7215cc91a67e6bc0473f2f59d088be1b75986ca3df9dd0e0d785e996"
-    sha256 cellar: :any,                 arm64_ventura:  "97ddc9eb7215cc91a67e6bc0473f2f59d088be1b75986ca3df9dd0e0d785e996"
-    sha256 cellar: :any,                 arm64_monterey: "97ddc9eb7215cc91a67e6bc0473f2f59d088be1b75986ca3df9dd0e0d785e996"
-    sha256 cellar: :any,                 sonoma:         "5100bdcb99ad4d58a4e1ca5c49295300af668b8778067f06103a798ad8b13d3a"
-    sha256 cellar: :any,                 ventura:        "5100bdcb99ad4d58a4e1ca5c49295300af668b8778067f06103a798ad8b13d3a"
-    sha256 cellar: :any,                 monterey:       "5100bdcb99ad4d58a4e1ca5c49295300af668b8778067f06103a798ad8b13d3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cba633c629dc33e7b242fb27374fa7eec09320d3f45ad474e5f28fbfc9a9e70d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "90d2bbd8e38569f864aa54184634d850c1ba3389e91641bfd3a60c7bb07956af"
+    sha256 cellar: :any,                 arm64_ventura:  "90d2bbd8e38569f864aa54184634d850c1ba3389e91641bfd3a60c7bb07956af"
+    sha256 cellar: :any,                 arm64_monterey: "90d2bbd8e38569f864aa54184634d850c1ba3389e91641bfd3a60c7bb07956af"
+    sha256 cellar: :any,                 sonoma:         "92398885678dad5a5893f718bfc89a54fa9167ab3cff896ab6526efda0c45e07"
+    sha256 cellar: :any,                 ventura:        "92398885678dad5a5893f718bfc89a54fa9167ab3cff896ab6526efda0c45e07"
+    sha256 cellar: :any,                 monterey:       "92398885678dad5a5893f718bfc89a54fa9167ab3cff896ab6526efda0c45e07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c77713ab82287ec90fe4c060bef509ac1a94c76c66564a48ac153aa7c83ae50"
   end
 
   depends_on "node"
   uses_from_macos "zlib"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

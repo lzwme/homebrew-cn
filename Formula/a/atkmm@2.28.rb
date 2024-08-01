@@ -23,8 +23,15 @@ class AtkmmAT228 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "at-spi2-core"
+  depends_on "glib"
   depends_on "glibmm@2.66"
+  depends_on "libsigc++@2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

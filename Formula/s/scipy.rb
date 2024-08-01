@@ -45,7 +45,7 @@ class Scipy < Formula
   # cleanup leftover .pyc files from previous installs which can cause problems
   # see https:github.comHomebrewhomebrew-pythonissues185#issuecomment-67534979
   def post_install
-    rm_f Dir["#{HOMEBREW_PREFIX}libpython*.*site-packagesscipy***.pyc"]
+    rm(Dir["#{HOMEBREW_PREFIX}libpython*.*site-packagesscipy***.pyc"])
   end
 
   test do

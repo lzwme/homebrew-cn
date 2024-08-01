@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https:github.comdicebeardicebear"
@@ -8,13 +6,14 @@ class Dicebear < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "91aec5fd7e75f6a161668097fd4fa6f54f32c4e3685130b4a54f91b831fea9ac"
-    sha256 cellar: :any,                 arm64_ventura:  "91aec5fd7e75f6a161668097fd4fa6f54f32c4e3685130b4a54f91b831fea9ac"
-    sha256 cellar: :any,                 arm64_monterey: "91aec5fd7e75f6a161668097fd4fa6f54f32c4e3685130b4a54f91b831fea9ac"
-    sha256 cellar: :any,                 sonoma:         "af649e54fdf8f9294e4543e5c286340cd59de18a6a01befad2bfe5fbbdcf1ed6"
-    sha256 cellar: :any,                 ventura:        "af649e54fdf8f9294e4543e5c286340cd59de18a6a01befad2bfe5fbbdcf1ed6"
-    sha256 cellar: :any,                 monterey:       "1e55eff8926e24ab415c892a43edd2f623a58f632cdd9da92892592fa93a24be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63ed81281a4201b1f6c8c79603749ec74db5e5c83d4d2bb8903c3305ad0edf29"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"
+    sha256 cellar: :any,                 arm64_ventura:  "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"
+    sha256 cellar: :any,                 arm64_monterey: "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"
+    sha256 cellar: :any,                 sonoma:         "84999e26857352a410710a70f4c20a92aae09eab8ff99e92049a22d1d2282c64"
+    sha256 cellar: :any,                 ventura:        "84999e26857352a410710a70f4c20a92aae09eab8ff99e92049a22d1d2282c64"
+    sha256 cellar: :any,                 monterey:       "84999e26857352a410710a70f4c20a92aae09eab8ff99e92049a22d1d2282c64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc7bd6459f4e05438c5bf26579d0cb2179275c7aae5513ba64b1503abef85a16"
   end
 
   depends_on "node"
@@ -24,7 +23,7 @@ class Dicebear < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
 
     node_modules = libexec"libnode_modulesdicebearnode_modules"
@@ -33,7 +32,7 @@ class Dicebear < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules.glob("{bare-fs,bare-os}prebuilds*")
-                .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do

@@ -55,9 +55,9 @@ class Geckodriver < Formula
       %w[webdriver mozbase].each do |r|
         (buildpath"staging").install resource(r)
         mv buildpath"staging""testing"r, buildpath"testing"
-        rm_rf buildpath"staging""testing"
+        rm_r(buildpath"staging""testing")
       end
-      rm_rf buildpath"staging"
+      rm_r(buildpath"staging")
       (buildpath"testing""geckodriver").install resource("Cargo.lock")
     end
 

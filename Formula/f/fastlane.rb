@@ -42,7 +42,7 @@ class Fastlane < Formula
 
     # Remove vendored pre-built binary
     terminal_notifier_dir = libexec.glob("gemsterminal-notifier-*vendorterminal-notifier").first
-    (terminal_notifier_dir"terminal-notifier.app").rmtree
+    rm_r(terminal_notifier_dir"terminal-notifier.app")
 
     if OS.mac?
       ln_sf(

@@ -2041,6 +2041,7 @@ Homebrew-homebrew-core/Formula/g/ghc@8.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ghc@9.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghcup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghi.rb, Homebrew/homebrew-core, 1
@@ -2345,7 +2346,7 @@ Homebrew-homebrew-core/Formula/g/gperf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gperftools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpg-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpgme.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gplcver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpm.rb, Homebrew/homebrew-core, 1
@@ -11248,6 +11249,7 @@ Homebrew-homebrew-cask/Casks/i/islide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isolator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/istat-menus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/istat-menus@5.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/istat-menus@6.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/istat-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isteg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isubtitle.rb, Homebrew/homebrew-cask, 0
@@ -11867,9 +11869,9 @@ Homebrew-homebrew-cask/Casks/m/min.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindforger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindjet-mindmanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mindmac.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/minecraft-education.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minecraft-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/minecraft.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/minecraftpe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mini-program-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mini-vmac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miniconda.rb, Homebrew/homebrew-cask, 0

@@ -18,7 +18,7 @@ class StructurizrCli < Formula
   depends_on "openjdk"
 
   def install
-    rm_f Dir["*.bat"]
+    rm(Dir["*.bat"])
     libexec.install Dir["*"]
     (bin"structurizr-cli").write_env_script libexec"structurizr.sh", Language::Java.overridable_java_home_env
   end

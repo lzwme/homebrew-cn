@@ -23,7 +23,6 @@ class Aqbanking < Formula
     sha256 x86_64_linux:   "f7586074ec396a050c9f210d05ae733b9697c0f9f2d366940b6937927f2cd215"
   end
 
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "gwenhywfar"
   depends_on "ktoblzcheck"
@@ -33,13 +32,17 @@ class Aqbanking < Formula
   depends_on "openssl@3"
   depends_on "pkg-config" # aqbanking-config needs pkg-config for execution
 
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     ENV.deparallelize
+
     inreplace "aqbanking-config.in.in", "@PKG_CONFIG@", "pkg-config"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-cli"
+    system "./configure", "--enable-cli", *std_configure_args
     # This is banking software, so let's run the test suite.
     system "make", "check"
     system "make", "install"

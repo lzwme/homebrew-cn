@@ -28,7 +28,7 @@ class Launch < Formula
   depends_on :macos
 
   def install
-    rm_rf "launch" # We'll build it ourself, thanks.
+    rm_r("launch") # We'll build it ourself, thanks.
     xcodebuild "-configuration", "Deployment", "SYMROOT=build", "clean"
     xcodebuild "-arch", Hardware::CPU.arch, "-configuration", "Deployment", "SYMROOT=build"
 

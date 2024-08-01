@@ -1,5 +1,3 @@
-require "language/node"
-
 class Gitmoji < Formula
   desc "Interactive command-line tool for using emoji in commit messages"
   homepage "https://gitmoji.dev"
@@ -8,19 +6,20 @@ class Gitmoji < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc7eeca9ccf87681979158459f5550231ff2de078d290276b2f25f60f0f8ab9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc7eeca9ccf87681979158459f5550231ff2de078d290276b2f25f60f0f8ab9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc7eeca9ccf87681979158459f5550231ff2de078d290276b2f25f60f0f8ab9d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03d761f9a271b391e1b21ccb08f9026fb4330599ea0454a0dc43294f4e74588c"
-    sha256 cellar: :any_skip_relocation, ventura:        "03d761f9a271b391e1b21ccb08f9026fb4330599ea0454a0dc43294f4e74588c"
-    sha256 cellar: :any_skip_relocation, monterey:       "03d761f9a271b391e1b21ccb08f9026fb4330599ea0454a0dc43294f4e74588c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e113035e41180403e15e0ba2a8f98c498c1fb57ce18009573d6bf03ee9c867b6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "89a2544cf484c302bd704ed411e0dcae4d789c271a230103c9e9a279a50a41b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "89a2544cf484c302bd704ed411e0dcae4d789c271a230103c9e9a279a50a41b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "89a2544cf484c302bd704ed411e0dcae4d789c271a230103c9e9a279a50a41b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af90b1631b3dbc51a16d76ae3b38c13ebf8c7bd7b6ce7524509cc6f2589bbbb"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

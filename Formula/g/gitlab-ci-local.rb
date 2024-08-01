@@ -1,5 +1,3 @@
-require "languagenode"
-
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https:github.comfirecowgitlab-ci-local"
@@ -9,19 +7,20 @@ class GitlabCiLocal < Formula
   head "https:github.comfirecowgitlab-ci-local.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4ca7350ca019c4490155de25d84c6d9623b5bf668e06ad68c4738e49a6abdfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4ca7350ca019c4490155de25d84c6d9623b5bf668e06ad68c4738e49a6abdfc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4ca7350ca019c4490155de25d84c6d9623b5bf668e06ad68c4738e49a6abdfc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cc0acbcbac5d98832403b367fb0ee653f232f130469007b5a5efcb54baafad8"
-    sha256 cellar: :any_skip_relocation, ventura:        "8cc0acbcbac5d98832403b367fb0ee653f232f130469007b5a5efcb54baafad8"
-    sha256 cellar: :any_skip_relocation, monterey:       "8cc0acbcbac5d98832403b367fb0ee653f232f130469007b5a5efcb54baafad8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c08d491bfbf997a79f2d1a754742adb64304d2816d4eafb59e2769caf3a857d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "251e46c484c28faa95aa8cec426e066e013e647c79523955d252a51d5ab1c984"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "251e46c484c28faa95aa8cec426e066e013e647c79523955d252a51d5ab1c984"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "251e46c484c28faa95aa8cec426e066e013e647c79523955d252a51d5ab1c984"
+    sha256 cellar: :any_skip_relocation, sonoma:         "90004d99bbd489474b740c9d6a52f40064cd76bcc58fd3d1faa894a9b67cd277"
+    sha256 cellar: :any_skip_relocation, ventura:        "90004d99bbd489474b740c9d6a52f40064cd76bcc58fd3d1faa894a9b67cd277"
+    sha256 cellar: :any_skip_relocation, monterey:       "90004d99bbd489474b740c9d6a52f40064cd76bcc58fd3d1faa894a9b67cd277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d99bc0193be79d676a0dbf430a91213717bb20ee15db5ef8d0b420c8c0f298aa"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

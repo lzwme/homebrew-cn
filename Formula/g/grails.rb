@@ -33,7 +33,7 @@ class Grails < Formula
     libexec.install Dir["*"]
 
     resource("cli").stage do
-      rm_f "bingrails.bat"
+      rm("bingrails.bat")
       (libexec"lib").install Dir["lib*.jar"]
       bin.install "bingrails"
       bash_completion.install "bingrails_completion" => "grails"

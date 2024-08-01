@@ -3,19 +3,25 @@ class GoogleJavaFormat < Formula
 
   desc "Reformats Java source code to comply with Google Java Style"
   homepage "https:github.comgooglegoogle-java-format"
-  url "https:github.comgooglegoogle-java-formatreleasesdownloadv1.22.0google-java-format-1.22.0-all-deps.jar"
-  sha256 "16b2a1ee938686c8b1d88abf19eb83dfd0d623cee9de6fc6d09980214f816d3f"
+  url "https:github.comgooglegoogle-java-formatreleasesdownloadv1.23.0google-java-format-1.23.0-all-deps.jar"
+  sha256 "7c6375ac24b4825be6bbe61900e8b58b1a3e8944a1367a8363210f9ed2d08570"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "56ca8b8d305c56efcf9cc5951bc15010fb7b29d44a6bc8f43cc33d41ec5d5573"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, ventura:        "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, monterey:       "be0c8abed3e983a3802fbb131113aaf96fd4e9a413cdc8b47a5145d8a79ce41b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "526ece906208ab12abfcc5607e650c5a85e5dce46652d061c3a5385e25f810b6"
   end
 
   depends_on "openjdk"
   depends_on "python@3.12"
 
   resource "google-java-format-diff" do
-    url "https:raw.githubusercontent.comgooglegoogle-java-formatv1.22.0scriptsgoogle-java-format-diff.py"
+    url "https:raw.githubusercontent.comgooglegoogle-java-formatv1.23.0scriptsgoogle-java-format-diff.py"
     sha256 "c1f2c6e8af0fc34a04adfcb01b35e522a359df5da1f5db5102ca9e0ca1f670fd"
   end
 

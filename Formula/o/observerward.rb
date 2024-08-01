@@ -1,18 +1,18 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.7.25.tar.gz"
-  sha256 "82c4420270b0322d1f1f31bcc9e46a9a2d5d105c802a4134537a202058c48849"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.7.31.tar.gz"
+  sha256 "a0a31371e6551fd36f69091b67b096ea5f4204e98fa0508a07253ee593641b34"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5d81cddb3af5ec867647624118992f145ef71368065479bf7a227bf4ca560cb8"
-    sha256 cellar: :any,                 arm64_ventura:  "0775ebb5fdb97c67eb9b4e966e75112d361a9c44f3e24513911e2292ee659472"
-    sha256 cellar: :any,                 arm64_monterey: "eda9f0b3ddf7f81fb6317618501c1e01069d1a351b3b0f124b5917203d84585c"
-    sha256 cellar: :any,                 sonoma:         "0b385019fb81d2a9622254644892c7c20870289d205e9c4549c7ef7991c3cb0b"
-    sha256 cellar: :any,                 ventura:        "32bb16088ff84118a480f6bbbd9965c3003c57a62f2a41aad245ca3731cfdcf8"
-    sha256 cellar: :any,                 monterey:       "f9513dc8a9864fa905c1f53989d427043f8320f82a3764bc73724c38840541d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19741a8b8b4914c882cb3ca54a2b8f208e32c5bbd2c4c86dad79875482cb6dc7"
+    sha256 cellar: :any,                 arm64_sonoma:   "9e30b61b6161557fc35728520f9848f05eeb34883a9cd4a91349184a3b52e9e3"
+    sha256 cellar: :any,                 arm64_ventura:  "0b4ff45313f380eb37b96cf4c5e9543edf8d2429b13b535877458b052caacce5"
+    sha256 cellar: :any,                 arm64_monterey: "8cb4cee5edb12ed63c1c624ef60e1865794fe1659f6440ff08c8d5658122fb49"
+    sha256 cellar: :any,                 sonoma:         "a8cbd9efbffd65daa55b1af84bfc3be8d8c77fe637146cd4c1843efe5f26cf2d"
+    sha256 cellar: :any,                 ventura:        "c7282db4efe10770c6106e06e78760474780204a5c2e71deae528d1eb36865e6"
+    sha256 cellar: :any,                 monterey:       "724408d9fe853358320def3f78e220d0e1a7f5756e557367a74a91aa2e22cea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d34341e2ebf16d396335a28e7d853477753c37e14585b5a4aede6488757d83d"
   end
 
   depends_on "rust" => :build

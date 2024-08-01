@@ -82,7 +82,7 @@ class Fpc < Formula
     bin.install_symlink lib/name/version/compiler_name
 
     # Prevent non-executable audit warning
-    rm_f Dir[bin/"*.rsj"]
+    rm(Dir[bin/"*.rsj"])
 
     # Generate a default fpc.cfg to set up unit search paths
     system "#{bin}/fpcmkcfg", "-p", "-d", "basepath=#{lib}/fpc/#{version}", "-o", "#{prefix}/etc/fpc.cfg"

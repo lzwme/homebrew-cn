@@ -24,7 +24,7 @@ class Metricbeat < Formula
 
   def install
     # remove non open source files
-    rm_rf "x-pack"
+    rm_r("x-pack")
 
     cd "metricbeat" do
       # don't build docs because it would fail creating the combined OSSx-pack

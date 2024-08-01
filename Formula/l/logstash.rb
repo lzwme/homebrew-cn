@@ -28,7 +28,7 @@ class Logstash < Formula
 
   def install
     # remove non open source files
-    rm_rf "x-pack"
+    rm_r("x-pack")
     ENV["OSS"] = "true"
 
     # Build the package from source
@@ -59,7 +59,7 @@ class Logstash < Formula
 
     # Move config files into etc
     (etc"logstash").install Dir[libexec"config*"]
-    (libexec"config").rmtree
+    rm_r(libexec"config")
 
     bin.install libexec"binlogstash", libexec"binlogstash-plugin"
     bin.env_script_all_files libexec"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("17")}}"
@@ -69,7 +69,7 @@ class Logstash < Formula
       libexec"vendorjrubylibrubystdliblibfixposixbinary",
     ]
     paths.each do |path|
-      path.each_child { |dir| dir.rmtree unless dir.to_s.include? Hardware::CPU.arch.to_s }
+      path.each_child { |dir| rm_r(dir) unless dir.to_s.include? Hardware::CPU.arch.to_s }
     end
     rm_r libexec"vendorjrubylibrubystdliblibfixposixbinaryarm64-darwin" if OS.mac? && Hardware::CPU.arm?
   end

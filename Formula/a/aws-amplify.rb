@@ -24,8 +24,8 @@ class AwsAmplify < Formula
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     unless Hardware::CPU.intel?
-      rm_rf "#{libexec}/lib/node_modules/@aws-amplify/cli-internal/node_modules" \
-            "/@aws-amplify/amplify-frontend-ios/resources/amplify-xcode"
+      rm_r "#{libexec}/lib/node_modules/@aws-amplify/cli-internal/node_modules" \
+           "/@aws-amplify/amplify-frontend-ios/resources/amplify-xcode"
     end
 
     # Remove non-native libsqlite4java files

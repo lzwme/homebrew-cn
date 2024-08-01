@@ -1,9 +1,20 @@
 class Cracklib < Formula
   desc "LibCrack password checking library"
   homepage "https:github.comcracklibcracklib"
-  url "https:github.comcracklibcracklibreleasesdownloadv2.9.11cracklib-2.9.11.tar.bz2"
-  sha256 "ca8b049a3c2d3b2225a1e8d15d613798ebc748e3950388eda2694de507ba6020"
   license "LGPL-2.1-only"
+  head "https:github.comcracklibcracklib.git", branch: "main"
+
+  stable do
+    url "https:github.comcracklibcracklibreleasesdownloadv2.10.1cracklib-2.10.1.tar.bz2"
+    sha256 "102ffe74865152a7ce03b5122135ac896b06cfb06684983abe3179e468787a51"
+
+    # Fix missing endian-related functions when building on macOS (from https:github.comcracklibcracklibpull97)
+    # Changes included upstream, remove on 2.10.2 or newer
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches3bd3ae1a12ffc359a7250dc4d7aeda0029f792e5cracklib2.10.1-endian.patch"
+      sha256 "965c6ec5d9119c56cf2e07af8a67fb4e2e4dafc577c1a4933976e18bb81e94b8"
+    end
+  end
 
   livecheck do
     url :stable
@@ -11,31 +22,38 @@ class Cracklib < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "94fbedda3c69ccc05abb91ba942bf55997f8e2c8ee80d3b9932ae5d3f091b34b"
-    sha256 arm64_ventura:  "6a3a072cf106fde02db24ad3024d75795afd6fcd8595a50e569f9eafa0b8f849"
-    sha256 arm64_monterey: "366eea9cce24cf4353676bfd54bef63596fd678992b138c81606e6083526f5fe"
-    sha256 arm64_big_sur:  "fa8e46c43b097175d54821836f5e41edff34dbad7b3a8f40e581141903111e67"
-    sha256 sonoma:         "57dacbc37230ae1921e26a97f165c6da146078e513b1fea347e418dca29ebd0c"
-    sha256 ventura:        "f7aed3f2bd1d5ff0c0da5f42e443b239fb126bd3f0ec72db65c581a30fb84bcc"
-    sha256 monterey:       "5b2918b1e6b0e356b3c1039498d7ff241f5d339a1a8e685bd63ae64aee4180da"
-    sha256 big_sur:        "ed0830783c21bfb87f7c9f3a3775806cc5be421ff34d5e82749ebc3e1c9e8af0"
-    sha256 x86_64_linux:   "c0c98e94bf0217fd21363d1543d51c13a86c83c56039e2f7ce128b30bbaed5a2"
+    sha256 arm64_sonoma:   "0f231f48c8024fbf45ae1b8a15964bf1800388a38c6c531b63186ff70703252c"
+    sha256 arm64_ventura:  "e7d7c13b6c64b85343bb3a63e8d4f36bc73558b6c71d9a3a9c0a2d7a985690af"
+    sha256 arm64_monterey: "17727e4efe900789f4d4a2cf6a5be19c7a4cc96a2cde1153b95c454b0c8a936e"
+    sha256 sonoma:         "597400935abe1f841d1208c22bfc36e2f2f6e851b5af57c00c4c7c7e8eca4c50"
+    sha256 ventura:        "95547fe0db7ff728800cd10e1ced9534505bfdf11a3e9243f62c50b0b0abbf1f"
+    sha256 monterey:       "a5869de4d658a2da346aa9ebdc1a2a389bda5a1415ae66a850b3dc174b0273de"
+    sha256 x86_64_linux:   "95dfd460b7aa55d174a75a0248814ccca7770314b012368840790220b74ca9d9"
   end
+
+  # Patch touches Makefile.am, autotools is needed to run autoreconf before build
+  # At 2.10.2 or newer, autotools is only needed for HEAD builds
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   depends_on "gettext"
 
+  uses_from_macos "zlib"
+
   resource "cracklib-words" do
-    url "https:github.comcracklibcracklibreleasesdownloadv2.9.11cracklib-words-2.9.11.bz2"
+    url "https:github.comcracklibcracklibreleasesdownloadv2.10.1cracklib-words-2.10.1.bz2"
     sha256 "ec25ac4a474588c58d901715512d8902b276542b27b8dd197e9c2ad373739ec4"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
   def install
+    # At 2.10.2 or newer, all source code (including autotools files) are in src subdirectory
+    # (replace with a `cd do` block when possible)
+    Dir.chdir "src" if build.head?
+
+    # At 2.10.2 or newer, autoreconf is only needed for HEAD builds
+    system "autoreconf", "--force", "--install", "--verbose"
+
     system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sbindir=#{bin}",
@@ -48,11 +66,11 @@ class Cracklib < Formula
 
   def post_install
     (var"cracklib").mkpath
-    cp share"cracklib-words-#{version}", var"cracklibcracklib-words"
+    cp share"cracklib-words-#{resource("cracklib-words").version}", var"cracklibcracklib-words"
     system "#{bin}cracklib-packer < #{var}cracklibcracklib-words"
   end
 
   test do
-    assert_match "password: it is based on a dictionary word", pipe_output("#{bin}cracklib-check", "password", 0)
+    assert_match "password: it is based on a dictionary word", pipe_output(bin"cracklib-check", "password", 0)
   end
 end

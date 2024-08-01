@@ -25,7 +25,7 @@ class Packetbeat < Formula
 
   def install
     # remove non open source files
-    rm_rf "x-pack"
+    rm_r("x-pack")
 
     cd "packetbeat" do
       # prevent downloading binary wheels during python setup

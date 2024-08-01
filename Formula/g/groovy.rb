@@ -59,7 +59,7 @@ class Groovy < Formula
     end
 
     # Don't need Windows files.
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
 
     libexec.install "bin", "conf", "lib"
     bin.install Dir["#{libexec}bin*"] - ["#{libexec}bingroovy.ico"]

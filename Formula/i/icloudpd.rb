@@ -3,22 +3,28 @@ class Icloudpd < Formula
 
   desc "Tool to download photos from iCloud"
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
-  url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.21.0.tar.gz"
-  sha256 "f63e1ae321055b7775d3253dee8f41643a9c50855605852de242b7eb7526da59"
+  # We use a git checkout as scriptspatch_version runs git commands to update SHA
+  url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
+      tag:      "v1.23.0",
+      revision: "39000ac28eb250d27f63ad943d95525f9fd8447f"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "784376cbd6f9e6456f1501cc2dbb86322930ad05e5d3f692acc4245689b94315"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2eb585ad08098c5743565cf06e3212a9c19d954011ec53ff61a3b7707c2a3af7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5df557ba2a9ed8f929454c9d2703f739adefe2028305a2a2040bd2bff644c453"
-    sha256 cellar: :any_skip_relocation, sonoma:         "425b943faf4725cad8ec410c185608175fc5d6f45015e2c7c695062dd6d3c6be"
-    sha256 cellar: :any_skip_relocation, ventura:        "4787d6d95baafb06d1fecdc77d61ccb5acbb4787d5555ac5a339b5923f811af5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3ce1c3583dd631374ba8121d7b12a719d8fdcd2d1df89a0efdf36c3ac89c41c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e48505f06ea583e7b1c9809f383a289c38693d0bb63afc116343e2f3706436fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f8e86bea1f2e344533c02f86501fd6b4756f8e8bcb876723354d917c0084835"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80d38853d3721cb4d11e1ae253ddce109fc29be0f4fb2e34605b6c6210a6e203"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "853fa441d12b16e3c55a4fe3e0525b6304251cb36946bb2c45b3011cab9bd67e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d5b5eef2fd74dda847406cffab567972e147be9798ae8bfd4457eb09b6736974"
+    sha256 cellar: :any_skip_relocation, ventura:        "beec5d032474f9a6d0805f36ecf7a5cc0d92cfeaf565f909a023be42d9c1d968"
+    sha256 cellar: :any_skip_relocation, monterey:       "64601ded40cb7eeb17c36539f722afcdf0b5ec695a3923cc6c493e0101270c42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bdbcf67497ab51cfae5bbb7d9f5165857996a7d1fccc3664b1605ffda97db61"
   end
 
   depends_on "python@3.12"
+
+  on_macos do
+    depends_on "gnu-sed" => :build
+  end
 
   resource "blinker" do
     url "https:files.pythonhosted.orgpackages1e57a6a1721eff09598fb01f3c7cda070c1b6a0f12d63c83236edf79a440abccblinker-1.8.2.tar.gz"
@@ -161,6 +167,10 @@ class Icloudpd < Formula
   end
 
   def install
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec"gnubin" if OS.mac?
+    # https:github.comicloud-photos-downloadericloud_photos_downloaderissues922#issuecomment-2252928501
+    system "scriptspatch_version"
+
     virtualenv_install_with_resources
   end
 

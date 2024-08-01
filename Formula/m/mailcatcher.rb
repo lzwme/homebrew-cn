@@ -169,7 +169,7 @@ class Mailcatcher < Formula
     # Remove temporary logs that reference Homebrew shims.
     # TODO: See if we can handle this better:
     #       https:github.comsparklemotionsqlite3-rubydiscussions394
-    rm_rf libexec"gemssqlite3-#{resource("sqlite").version}extsqlite3tmp"
+    rm_r(libexec"gemssqlite3-#{resource("sqlite").version}extsqlite3tmp")
   end
 
   service do

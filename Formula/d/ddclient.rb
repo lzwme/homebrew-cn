@@ -88,7 +88,7 @@ class Ddclient < Formula
     ohai "Migrating `#{old_config_file}` to `#{new_config_file}`..."
     etc.install new_config_file => "ddclient.conf.default" if new_config_file.exist?
     etc.install old_config_file
-    pkgetc.rmtree if pkgetc.empty?
+    rm_r(pkgetc) if pkgetc.empty?
   end
 
   def caveats

@@ -56,7 +56,7 @@ class Grokmirror < Formula
       system "git", "config", "--bool", "core.bare", "true"
       mv testpath"reposrepo.git", testpath"reposrepo.git"
     end
-    rm_rf testpath"reposrepo"
+    rm_r(testpath"reposrepo")
 
     system bin"grok-manifest", "-m", testpath"manifest.js.gz", "-t", testpath"repos"
     system "gzip", "-d", testpath"manifest.js.gz"

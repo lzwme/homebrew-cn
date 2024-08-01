@@ -26,7 +26,7 @@ class DjlServing < Formula
 
   def install
     # Install files
-    rm_rf Dir["bin*.bat"]
+    rm_r(Dir["bin*.bat"])
     mv "binserving", "bindjl-serving"
     libexec.install Dir["*"]
     env = { MODEL_SERVER_HOME: "${MODEL_SERVER_HOME:-#{var}}" }

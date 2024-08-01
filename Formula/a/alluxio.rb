@@ -35,7 +35,7 @@ class Alluxio < Formula
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("11")
     chmod "+x", Dir["#{libexec}/bin/*"]
 
-    rm_rf Dir["#{etc}/alluxio/*"]
+    rm_r(Dir["#{etc}/alluxio/*"])
 
     (etc/"alluxio").install libexec/"conf/alluxio-env.sh.template" => "alluxio-env.sh"
     ln_sf "#{etc}/alluxio/alluxio-env.sh", "#{libexec}/conf/alluxio-env.sh"

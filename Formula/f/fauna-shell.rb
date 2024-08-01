@@ -1,5 +1,3 @@
-require "languagenode"
-
 class FaunaShell < Formula
   desc "Interactive shell for FaunaDB"
   homepage "https:fauna.com"
@@ -8,19 +6,20 @@ class FaunaShell < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "deee3f582ab2840f03b8099a11095b41367d0653bb013304a6bc50059e554eab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deee3f582ab2840f03b8099a11095b41367d0653bb013304a6bc50059e554eab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "deee3f582ab2840f03b8099a11095b41367d0653bb013304a6bc50059e554eab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ef3939928ff4d3d4bcd28f096ad4eaae2607b95562b2b2ff016d39d77db37b23"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef3939928ff4d3d4bcd28f096ad4eaae2607b95562b2b2ff016d39d77db37b23"
-    sha256 cellar: :any_skip_relocation, monterey:       "22153a6eb7a9238cf588608e72c88dd52d5deed82501c9ecb3b0c5dc1d9a4cef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e282a512b6ea907e857acb3569d34a27ce4caaf0ba65950145876738bd1367f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe1c37e6040b4be169be9ded1df46a08a5cf0bd21ae8a3c63e6d1a267c80decf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe1c37e6040b4be169be9ded1df46a08a5cf0bd21ae8a3c63e6d1a267c80decf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe1c37e6040b4be169be9ded1df46a08a5cf0bd21ae8a3c63e6d1a267c80decf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2523748bab8aaa58da93d3bbb248cd50ce1325620c4adea80c86d1271a8df3e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "2523748bab8aaa58da93d3bbb248cd50ce1325620c4adea80c86d1271a8df3e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "2523748bab8aaa58da93d3bbb248cd50ce1325620c4adea80c86d1271a8df3e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8984692ddd3d69b5ca9bc672f01ecf18d89560ee88d917195c41263c536b2af1"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

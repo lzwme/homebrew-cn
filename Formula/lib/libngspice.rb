@@ -43,7 +43,7 @@ class Libngspice < Formula
     system "make", "install"
 
     # remove script files
-    rm_rf Dir[share/"ngspice/scripts"]
+    rm_r(Dir[share/"ngspice/scripts"])
   end
 
   test do

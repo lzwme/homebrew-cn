@@ -24,7 +24,7 @@ class Orientdb < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin/*.bat"]
+    rm_r(Dir["bin/*.bat"])
 
     chmod 0755, Dir["bin/*"]
     libexec.install Dir["*"]

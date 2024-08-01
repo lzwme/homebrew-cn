@@ -43,7 +43,7 @@ class Opensubdiv < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install bin"tutorialshbr_tutorial_0"
-    rm_rf "#{bin}tutorials"
+    rm_r("#{bin}tutorials")
   end
 
   test do

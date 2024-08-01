@@ -21,8 +21,9 @@ class Libslirp < Formula
   depends_on "glib"
 
   def install
-    system "meson", "build", "-Ddefault_library=both", *std_meson_args
-    system "ninja", "-C", "build", "install", "all"
+    system "meson", "setup", "build", "-Ddefault_library=both", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

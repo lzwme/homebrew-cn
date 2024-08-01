@@ -30,7 +30,7 @@ class Neo4j < Formula
       NEO4J_HOME: libexec,
     }
     # Remove windows files
-    rm_f Dir["bin/*.bat"]
+    rm(Dir["bin/*.bat"])
 
     # Install jars in libexec to avoid conflicts
     libexec.install Dir["*"]

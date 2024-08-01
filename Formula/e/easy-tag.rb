@@ -20,19 +20,31 @@ class EasyTag < Formula
   depends_on "intltool" => :build
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "at-spi2-core"
+  depends_on "cairo"
   depends_on "flac"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "harfbuzz"
   depends_on "hicolor-icon-theme"
   depends_on "id3lib"
   depends_on "libid3tag"
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "pango"
   depends_on "speex"
   depends_on "taglib"
   depends_on "wavpack"
 
   uses_from_macos "perl" => :build
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build

@@ -46,7 +46,7 @@ class Mupdf < Formula
     # Remove bundled libraries excluding `extract`, `gumbo-parser` (deprecated), and
     # "strongly preferred" `lcms2mt` (lcms2 fork)
     keep = %w[extract gumbo-parser lcms2]
-    (buildpath/"thirdparty").each_child { |path| path.rmtree if keep.exclude? path.basename.to_s }
+    (buildpath/"thirdparty").each_child { |path| rm_r(path) if keep.exclude? path.basename.to_s }
 
     args = %W[
       build=release

@@ -109,11 +109,11 @@ class Mariadb < Formula
 
     # Don't create databases inside of the prefix!
     # See: https:github.comHomebrewhomebrewissues4975
-    rm_rf prefix"data"
+    rm_r(prefix"data")
 
     # Save space
-    (prefix"mariadb-test").rmtree
-    (prefix"sql-bench").rmtree
+    rm_r(prefix"mariadb-test")
+    rm_r(prefix"sql-bench")
 
     # Link the setup scripts into bin
     bin.install_symlink [

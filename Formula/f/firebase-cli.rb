@@ -1,5 +1,3 @@
-require "languagenode"
-
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https:firebase.google.comdocscli"
@@ -9,13 +7,14 @@ class FirebaseCli < Formula
   head "https:github.comfirebasefirebase-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91b57113629a61d359c22dd981032dd2ac34fc6849f49c765838566868c49500"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91b57113629a61d359c22dd981032dd2ac34fc6849f49c765838566868c49500"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91b57113629a61d359c22dd981032dd2ac34fc6849f49c765838566868c49500"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ded31ff7763ca8300496ea48ad255b349376c985d21f7f4517a5c2564091d12e"
-    sha256 cellar: :any_skip_relocation, ventura:        "ded31ff7763ca8300496ea48ad255b349376c985d21f7f4517a5c2564091d12e"
-    sha256 cellar: :any_skip_relocation, monterey:       "54e74f05e41ed07e0157709050493175368832f889176001c2e0e3da9382291a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5ca96a2a8e45ab3282c96b8662f8c44218e207e8d0fdb6ecaec6ab99e3dfa1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc36156f7392b4c2706161059a2ccb196c0c76398c99e9007713d19cad096514"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc36156f7392b4c2706161059a2ccb196c0c76398c99e9007713d19cad096514"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc36156f7392b4c2706161059a2ccb196c0c76398c99e9007713d19cad096514"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7558e229b33c6eaab07ac7eeca9c32efcb5cff028069b30e9142f461012da7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d7558e229b33c6eaab07ac7eeca9c32efcb5cff028069b30e9142f461012da7c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d7558e229b33c6eaab07ac7eeca9c32efcb5cff028069b30e9142f461012da7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e22aecee2d0718a6cef3bfa5dac277ad9da661aae70d9a482a4931d65ed62db"
   end
 
   depends_on "node"
@@ -23,7 +22,7 @@ class FirebaseCli < Formula
   uses_from_macos "expect" => :test
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 
