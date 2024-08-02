@@ -52,6 +52,6 @@ class Gdmap < Formula
   end
 
   test do
-    system "#{bin}gdmap", "--help"
+    system bin"gdmap", "--help"
   end
 end

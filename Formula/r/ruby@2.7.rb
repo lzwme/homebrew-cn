@@ -66,7 +66,7 @@ class RubyAT27 < Formula
 
     %w[openssl digest].each do |r_name|
       resource(r_name).stage do
-        %W[ext#{r_name} test#{r_name}].each { |stem| (buildpathstem).rmtree }
+        %W[ext#{r_name} test#{r_name}].each { |stem| rm_r(buildpathstem) }
         (buildpath"ext").install "ext#{r_name}"
         Pathname.new("lib").each_child do |child|
           if child.directory?
@@ -149,11 +149,11 @@ class RubyAT27 < Formula
     # Since Gem ships Bundle we want to provide that fullexpected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
-    rm_f %W[
+    rm(%W[
       #{rubygems_bindir}bundle
       #{rubygems_bindir}bundler
-    ]
-    rm_rf Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"]
+    ].select { |file| File.exist?(file) })
+    rm_r(Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"])
     rubygems_bindir.install_symlink Dir[libexec"gembin*"]
 
     # Customize rubygems to lookinstall in the global gem directory

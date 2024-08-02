@@ -77,7 +77,7 @@ class Composer < Formula
       echo Greetings::sayHelloWorld();
     EOS
 
-    system "#{bin}/composer", "install"
+    system bin/"composer", "install"
     assert_match(/^HelloHomebrew$/, shell_output("php tests/test.php"))
   end
 end

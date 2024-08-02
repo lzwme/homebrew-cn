@@ -41,6 +41,6 @@ class Davix < Formula
   end
 
   test do
-    system "#{bin}davix-get", "https:brew.sh"
+    system bin"davix-get", "https:brew.sh"
   end
 end

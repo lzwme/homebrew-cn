@@ -57,6 +57,6 @@ class Uudeview < Formula
   end
 
   test do
-    system "#{bin}uudeview", "-V"
+    system bin"uudeview", "-V"
   end
 end

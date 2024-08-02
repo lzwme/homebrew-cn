@@ -34,6 +34,6 @@ class Xmlstarlet < Formula
   end
 
   test do
-    system "#{bin}/xmlstarlet", "--version"
+    system bin/"xmlstarlet", "--version"
   end
 end

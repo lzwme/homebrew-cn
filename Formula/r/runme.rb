@@ -31,7 +31,7 @@ class Runme < Formula
   end
 
   test do
-    system "#{bin}runme", "--version"
+    system bin"runme", "--version"
     markdown = (testpath"README.md")
     markdown.write <<~EOS
       # Some Markdown

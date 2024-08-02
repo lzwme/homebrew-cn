@@ -49,6 +49,6 @@ class Htop < Formula
   end
 
   test do
-    pipe_output("#{bin}htop", "q", 0)
+    pipe_output(bin"htop", "q", 0)
   end
 end

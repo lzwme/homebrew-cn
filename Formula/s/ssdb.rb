@@ -72,7 +72,7 @@ class Ssdb < Formula
   test do
     pid = fork do
       Signal.trap("TERM") do
-        system("#{bin}ssdb-server", "-d", "#{HOMEBREW_PREFIX}etcssdb.conf")
+        system(bin"ssdb-server", "-d", "#{HOMEBREW_PREFIX}etcssdb.conf")
         exit
       end
     end

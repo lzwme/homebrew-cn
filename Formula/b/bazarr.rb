@@ -102,7 +102,7 @@ class Bazarr < Formula
     require "open3"
     require "timeout"
 
-    system "#{bin}bazarr", "--help"
+    system bin"bazarr", "--help"
 
     config_file = testpath"configconfig.ini"
     config_file.write <<~EOS
@@ -112,7 +112,7 @@ class Bazarr < Formula
 
     port = free_port
 
-    Open3.popen3("#{bin}bazarr", "--no-update", "--config", testpath, "-p", port.to_s) do |_, _, stderr, wait_thr|
+    Open3.popen3(bin"bazarr", "--no-update", "--config", testpath, "-p", port.to_s) do |_, _, stderr, wait_thr|
       Timeout.timeout(30) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"

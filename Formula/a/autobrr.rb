@@ -53,7 +53,7 @@ class Autobrr < Formula
     EOS
 
     pid = fork do
-      exec "#{bin}autobrr", "--config", "#{testpath}"
+      exec bin"autobrr", "--config", "#{testpath}"
     end
     sleep 4
 

@@ -28,7 +28,7 @@ class Spr < Formula
   end
 
   test do
-    spr = "#{bin}spr"
+    spr = bin"spr"
     assert_match "spr #{version}", shell_output("#{spr} --version")
 
     system "git", "config", "--global", "user.email", "nobody@example.com"

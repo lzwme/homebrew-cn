@@ -34,6 +34,6 @@ class Stoken < Formula
   end
 
   test do
-    system "#{bin}stoken", "show", "--random"
+    system bin"stoken", "show", "--random"
   end
 end

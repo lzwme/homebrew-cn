@@ -33,6 +33,6 @@ class Daemonlogger < Formula
   end
 
   test do
-    system "#{bin}/daemonlogger", "-h"
+    system bin/"daemonlogger", "-h"
   end
 end

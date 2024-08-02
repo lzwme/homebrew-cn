@@ -66,6 +66,6 @@ class Texlab < Formula
 
     output = Content-Length: \d+\r\n\r\n
 
-    assert_match output, pipe_output("#{bin}texlab", input, 0)
+    assert_match output, pipe_output(bin"texlab", input, 0)
   end
 end

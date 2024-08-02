@@ -31,6 +31,6 @@ class Swiftformat < Formula
         let baked: Bool
       }
     EOS
-    system "#{bin}swiftformat", "#{testpath}potato.swift"
+    system bin"swiftformat", "#{testpath}potato.swift"
   end
 end

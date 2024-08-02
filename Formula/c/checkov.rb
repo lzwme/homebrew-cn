@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/56/ce/904a11ae6bb7f00e5c0033c7782b46305ca30df0b5680ee81d694ac686b2/checkov-3.2.200.tar.gz"
-  sha256 "207792b3d438eae0604e077dded67719607d9a259e5b9fb38bf5a7b5d7d7f56c"
+  url "https://files.pythonhosted.org/packages/c6/f8/c58bc734940512739d76adc6d9f63c9214d194a40b554fa70474b6d1f2af/checkov-3.2.210.tar.gz"
+  sha256 "281a0e07f9c60af2303305e3675aff2f2b9047a79e11431bfc01b851080c0518"
   license "Apache-2.0"
 
   livecheck do
@@ -17,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a286e5ed7ea9cac13753bc7d8540578b57e7e6b714d872ed95ccff22d3517b0c"
-    sha256 cellar: :any,                 arm64_ventura:  "a3b4bde5afd220f748feb5ac1ef5fa0f16c22c7c460061aa6690201a9f685d68"
-    sha256 cellar: :any,                 arm64_monterey: "9c888e2da6b33411a4d7e6fd4113acf21119c2eb609eabe83cfa1baa7efa1e9b"
-    sha256 cellar: :any,                 sonoma:         "f1eb0fd184dcfae209e8e501f50800975602c6a6259c8b6e2cea73180bc564d5"
-    sha256 cellar: :any,                 ventura:        "5a81f08acdad95304ce2be39eccd49a4934d10725869856cf42cc2caa5e2c99d"
-    sha256 cellar: :any,                 monterey:       "5e3ebe3ced4f5f9f64d3c217150dafbd7476946aeed0be652255cebe704eedba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b15fe902327d07e0d6f95d49beea51c116b28846458e7aa0fab3d72c731cbd"
+    sha256 cellar: :any,                 arm64_sonoma:   "08a3550290029c3e241a63cc3d4284efd0435d80ab74cde7238c549daf609dbe"
+    sha256 cellar: :any,                 arm64_ventura:  "4282d7f1a16d51e9f0c7d135bc28da30465772ac8e4a94423a797bb02704872f"
+    sha256 cellar: :any,                 arm64_monterey: "c21aa97b7d7632dca7d0f298af8c874801c327a5f735968be6df9430d68a9e08"
+    sha256 cellar: :any,                 sonoma:         "a7d0011a1feed38950ba6f527977e6b5524a823724055107a53e86704ffba09c"
+    sha256 cellar: :any,                 ventura:        "a215c9367550b34e706c130a7799317acf445d37b6418867539229c8dae6734b"
+    sha256 cellar: :any,                 monterey:       "bad75c1e2c9ef03b3903ddedb50a713af7f588cc6925daef673bf2528f2c14e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9201874862913ad2a5c9f90c3544880574bca7b94cb915876771b2a722650397"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -361,8 +361,8 @@ class Checkov < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7a/db/5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49b/regex-2024.5.15.tar.gz"
-    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
+    url "https://files.pythonhosted.org/packages/3f/51/64256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478/regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   resource "requests" do
@@ -371,8 +371,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/36/a2/83c3e2024cefb9a83d832e8835f9db0737a7a2b04ddfdd241c650b703db0/rpds_py-0.19.0.tar.gz"
-    sha256 "4fdc9afadbeb393b4bbbad75481e0ea78e4469f2e1d713a90811700830b553a9"
+    url "https://files.pythonhosted.org/packages/2f/fe/5217efe981c2ae8647b503ba3b8f55efc837df62f63667572b4bb75b30bc/rpds_py-0.19.1.tar.gz"
+    sha256 "31dd5794837f00b46f4096aa8ccaa5972f73a938982e32ed817bb520c465e520"
   end
 
   resource "rustworkx" do

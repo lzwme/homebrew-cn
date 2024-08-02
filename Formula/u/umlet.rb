@@ -30,7 +30,7 @@ class Umlet < Formula
   end
 
   test do
-    system "#{bin}/umlet", "-action=convert", "-format=png",
+    system bin/"umlet", "-action=convert", "-format=png",
       "-output=#{testpath}/test-output.png",
       "-filename=#{libexec}/palettes/Plots.uxf"
   end

@@ -39,6 +39,6 @@ class Ghi < Formula
   end
 
   test do
-    system "#{bin}ghi", "--version"
+    system bin"ghi", "--version"
   end
 end

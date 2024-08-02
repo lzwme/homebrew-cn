@@ -62,7 +62,7 @@ class C10t < Formula
   end
 
   test do
-    system "#{bin}c10t", "--list-colors"
+    system bin"c10t", "--list-colors"
   end
 end
 

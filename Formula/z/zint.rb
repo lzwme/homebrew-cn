@@ -35,6 +35,6 @@ class Zint < Formula
   end
 
   test do
-    system "#{bin}/zint", "-o", "test-zing.png", "-d", "This Text"
+    system bin/"zint", "-o", "test-zing.png", "-d", "This Text"
   end
 end

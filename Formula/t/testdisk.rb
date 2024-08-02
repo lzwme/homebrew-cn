@@ -36,6 +36,6 @@ class Testdisk < Formula
     path = "test.dmg"
     cp test_fixtures(path + ".gz"), path + ".gz"
     system "gunzip", path
-    system "#{bin}/testdisk", "/list", path
+    system bin/"testdisk", "/list", path
   end
 end

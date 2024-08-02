@@ -33,6 +33,6 @@ class Arss < Formula
   end
 
   test do
-    system "#{bin}/arss", "--version"
+    system bin/"arss", "--version"
   end
 end

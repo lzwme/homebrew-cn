@@ -32,6 +32,6 @@ class Crunch < Formula
   end
 
   test do
-    system "#{bin}/crunch", "-v"
+    system bin/"crunch", "-v"
   end
 end

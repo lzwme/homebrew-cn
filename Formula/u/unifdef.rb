@@ -31,6 +31,6 @@ class Unifdef < Formula
   end
 
   test do
-    pipe_output("#{bin}unifdef", "echo ''")
+    pipe_output(bin"unifdef", "echo ''")
   end
 end

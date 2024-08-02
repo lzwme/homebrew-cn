@@ -61,7 +61,7 @@ class Tm < Formula
     assert_match "Triggermesh CLI, version v#{version}", version_output
 
     # node
-    system "#{bin}tm", "generate", "node", "foo-node"
+    system bin"tm", "generate", "node", "foo-node"
     assert_predicate testpath"foo-nodeserverless.yaml", :exist?
     assert_predicate testpath"foo-nodehandler.js", :exist?
 
@@ -70,7 +70,7 @@ class Tm < Formula
     assert_match "runtime: #{runtime}", yaml
 
     # python
-    system "#{bin}tm", "generate", "python", "foo-python"
+    system bin"tm", "generate", "python", "foo-python"
     assert_predicate testpath"foo-pythonserverless.yaml", :exist?
     assert_predicate testpath"foo-pythonhandler.py", :exist?
 
@@ -79,7 +79,7 @@ class Tm < Formula
     assert_match "runtime: #{runtime}", yaml
 
     # go
-    system "#{bin}tm", "generate", "go", "foo-go"
+    system bin"tm", "generate", "go", "foo-go"
     assert_predicate testpath"foo-goserverless.yaml", :exist?
     assert_predicate testpath"foo-gomain.go", :exist?
 
@@ -88,7 +88,7 @@ class Tm < Formula
     assert_match "runtime: #{runtime}", yaml
 
     # ruby
-    system "#{bin}tm", "generate", "ruby", "foo-ruby"
+    system bin"tm", "generate", "ruby", "foo-ruby"
     assert_predicate testpath"foo-rubyserverless.yaml", :exist?
     assert_predicate testpath"foo-rubyhandler.rb", :exist?
 

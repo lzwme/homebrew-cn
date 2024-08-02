@@ -80,9 +80,9 @@ class Watson < Formula
   end
 
   test do
-    system "#{bin}watson", "start", "foo", "+bar"
-    system "#{bin}watson", "status"
-    system "#{bin}watson", "stop"
-    system "#{bin}watson", "log"
+    system bin"watson", "start", "foo", "+bar"
+    system bin"watson", "status"
+    system bin"watson", "stop"
+    system bin"watson", "log"
   end
 end

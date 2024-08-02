@@ -79,7 +79,7 @@ class AdrViewer < Formula
       ## Consequences
       See Michael Nygard's article, linked above. For a lightweight ADR toolset, see Nat Pryce's [adr-tools](https:github.comnpryceadr-tools).
     EOS
-    system "#{bin}adr-viewer", "--adr-path", adr_dir, "--output", "index.html"
+    system bin"adr-viewer", "--adr-path", adr_dir, "--output", "index.html"
     assert_predicate testpath"index.html", :exist?
   end
 end

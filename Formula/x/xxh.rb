@@ -58,7 +58,7 @@ class Xxh < Formula
       end
 
       stdout, stderr, = Open3.capture3(
-        "#{bin}xxh", "test.localhost",
+        bin"xxh", "test.localhost",
         "-p", port.to_s,
         "+xc", "#{testpath}config.xxhc",
         "+v"

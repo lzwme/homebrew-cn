@@ -15,6 +15,6 @@ class GithubKeygen < Formula
   end
 
   test do
-    system "#{bin}github-keygen"
+    system bin"github-keygen"
   end
 end

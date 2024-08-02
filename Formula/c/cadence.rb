@@ -38,6 +38,6 @@ class Cadence < Formula
         return 0
       }
     EOS
-    system "#{bin}cadence", "hello.cdc"
+    system bin"cadence", "hello.cdc"
   end
 end

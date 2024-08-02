@@ -28,10 +28,10 @@ class Streamripper < Formula
   def install
     # the Makefile ignores CPPFLAGS from the environment, which
     # breaks the build when HOMEBREW_PREFIX is not /usr/local
-    ENV.append_to_cflags ENV.cppflags
+    ENV.append_to_cflags ENV.cppflags if ENV.cppflags.present?
 
     # remove bundled libmad
-    (buildpath/"libmad-0.15.1b").rmtree
+    rm_r(buildpath/"libmad-0.15.1b")
 
     chmod 0755, "./install-sh" # or "make install" fails
 
@@ -40,6 +40,6 @@ class Streamripper < Formula
   end
 
   test do
-    system "#{bin}/streamripper", "--version"
+    system bin/"streamripper", "--version"
   end
 end

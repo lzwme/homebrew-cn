@@ -34,6 +34,6 @@ class RiemannClient < Formula
   end
 
   test do
-    system "#{bin}/riemann-client", "send", "-h"
+    system bin/"riemann-client", "send", "-h"
   end
 end

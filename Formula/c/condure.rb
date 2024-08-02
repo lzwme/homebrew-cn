@@ -94,7 +94,7 @@ class Condure < Formula
     EOS
 
     pid = fork do
-      exec "#{bin}condure", "--listen", "10000,req", "--zclient-req", "ipc:#{ipcfile}"
+      exec bin"condure", "--listen", "10000,req", "--zclient-req", "ipc:#{ipcfile}"
     end
 
     begin

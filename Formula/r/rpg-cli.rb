@@ -26,7 +26,7 @@ class RpgCli < Formula
   end
 
   test do
-    output = shell_output("#{bin}rpg-cli").strip
+    output = shell_output(bin"rpg-cli").strip
     assert_match "hp", output
     assert_match "equip", output
     assert_match "item", output

@@ -55,6 +55,6 @@ class Rogue < Formula
   end
 
   test do
-    system "#{bin}/rogue", "-s"
+    system bin/"rogue", "-s"
   end
 end

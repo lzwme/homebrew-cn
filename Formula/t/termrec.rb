@@ -41,6 +41,6 @@ class Termrec < Formula
   end
 
   test do
-    system "#{bin}termrec", "--help"
+    system bin"termrec", "--help"
   end
 end

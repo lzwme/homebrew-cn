@@ -59,7 +59,7 @@ class Squiid < Formula
   test do
     require "pty"
 
-    PTY.spawn("#{bin}/squiid") do |r, w, pid|
+    PTY.spawn(bin/"squiid") do |r, w, pid|
       sleep 1 # wait for squiid to start
 
       w.write "(10 - 2) * (3 + 5) / 4\r"

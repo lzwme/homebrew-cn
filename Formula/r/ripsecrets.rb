@@ -29,6 +29,6 @@ class Ripsecrets < Formula
     # but mark it as allowed to test more of the program
     (testpath"test.txt").write("ghp_#{fake_key.join} # pragma: allowlist secret")
 
-    system "#{bin}ripsecrets", (testpath"test.txt")
+    system bin"ripsecrets", (testpath"test.txt")
   end
 end

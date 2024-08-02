@@ -42,6 +42,6 @@ class Truecrack < Formula
   end
 
   test do
-    system "#{bin}truecrack"
+    system bin"truecrack"
   end
 end

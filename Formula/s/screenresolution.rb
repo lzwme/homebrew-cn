@@ -30,6 +30,6 @@ class Screenresolution < Formula
   end
 
   test do
-    system "#{bin}screenresolution", "get"
+    system bin"screenresolution", "get"
   end
 end

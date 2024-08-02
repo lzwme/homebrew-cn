@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Prettierd < Formula
   desc "Prettier daemon"
   homepage "https:github.comfsouzaprettierd"
@@ -8,13 +6,20 @@ class Prettierd < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2407fad452f5fb7ccf331779fc7393eaac93009dd0f0a391a04ad3136675dc58"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "25b404362efc90f2ce7986adc01878db41f9142dee34a9c32785ed43438902e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dc9d301c9ecf59636baf5e2a42601ce6712915c601360158ddd54cf5e9d3fb4"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

@@ -34,12 +34,12 @@ class Rage < Formula
 
   test do
     # Test key generation
-    system "#{bin}rage-keygen", "-o", "#{testpath}output.txt"
+    system bin"rage-keygen", "-o", "#{testpath}output.txt"
     assert_predicate testpath"output.txt", :exist?
 
     # Test encryption
     (testpath"test.txt").write("Hello World!\n")
-    system "#{bin}rage", "-r", "age1y8m84r6pwd4da5d45zzk03rlgv2xr7fn9px80suw3psrahul44ashl0usm",
+    system bin"rage", "-r", "age1y8m84r6pwd4da5d45zzk03rlgv2xr7fn9px80suw3psrahul44ashl0usm",
       "-o", "#{testpath}test.txt.age", "#{testpath}test.txt"
     assert_predicate testpath"test.txt.age", :exist?
     assert File.read(testpath"test.txt.age").start_with?("age-encryption.org")

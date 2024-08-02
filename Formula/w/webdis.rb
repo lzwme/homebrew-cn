@@ -47,7 +47,7 @@ class Webdis < Formula
     inreplace "#{testpath}webdis.json", "\"http_port\":\t7379,", "\"http_port\":\t#{port},"
 
     server = fork do
-      exec "#{bin}webdis", "#{testpath}webdis.json"
+      exec bin"webdis", "#{testpath}webdis.json"
     end
     sleep 0.5
     # Test that the response is from webdis

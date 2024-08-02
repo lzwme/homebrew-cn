@@ -28,7 +28,7 @@ class Whatmp3 < Formula
   test do
     (testpath"flac").mkpath
     cp test_fixtures("test.flac"), "flac"
-    system "#{bin}whatmp3", "--notorrent", "--V0", "flac"
+    system bin"whatmp3", "--notorrent", "--V0", "flac"
     assert_predicate testpath"V0test.mp3", :exist?
   end
 end

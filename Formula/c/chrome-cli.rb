@@ -33,6 +33,6 @@ class ChromeCli < Formula
   end
 
   test do
-    system "#{bin}chrome-cli", "version"
+    system bin"chrome-cli", "version"
   end
 end

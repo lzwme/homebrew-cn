@@ -41,7 +41,7 @@ class Bookloupe < Formula
   end
 
   test do
-    ENV["BOOKLOUPE"] = "#{bin}/bookloupe"
+    ENV["BOOKLOUPE"] = bin/"bookloupe"
 
     Dir["#{pkgshare}/*.tst"].each do |test_file|
       # Skip test that fails on macOS

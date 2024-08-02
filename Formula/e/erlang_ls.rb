@@ -23,7 +23,7 @@ class ErlangLs < Formula
   end
 
   test do
-    output = pipe_output("#{bin}erlang_ls", nil, 1)
+    output = pipe_output(bin"erlang_ls", nil, 1)
     assert_match "Content-Length", output
   end
 end

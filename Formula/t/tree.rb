@@ -29,6 +29,6 @@ class Tree < Formula
   end
 
   test do
-    system "#{bin}tree", prefix
+    system bin"tree", prefix
   end
 end

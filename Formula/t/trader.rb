@@ -40,6 +40,6 @@ class Trader < Formula
   test do
     # Star Traders is an interactive game, so the only option for testing
     # is to run something like "trader --version"
-    system "#{bin}/trader", "--version"
+    system bin/"trader", "--version"
   end
 end

@@ -57,7 +57,7 @@ class Fabio < Formula
         sleep 30
       end
       fork do
-        exec "#{bin}fabio"
+        exec bin"fabio"
       end
       sleep 10
       assert_equal true, port_open?(localhost_ip, fabio_default_port)

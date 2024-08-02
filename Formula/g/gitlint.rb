@@ -61,7 +61,7 @@ class Gitlint < Formula
   test do
     # Install gitlint as a git commit-msg hook
     system "git", "init"
-    system "#{bin}/gitlint", "install-hook"
+    system bin/"gitlint", "install-hook"
     assert_predicate testpath/".git/hooks/commit-msg", :exist?
 
     # Verifies that the second line of the hook is the title

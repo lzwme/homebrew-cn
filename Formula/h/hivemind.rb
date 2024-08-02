@@ -27,6 +27,6 @@ class Hivemind < Formula
 
   test do
     (testpath"Procfile").write("test: echo 'test message'")
-    assert_match "test message", shell_output("#{bin}hivemind")
+    assert_match "test message", shell_output(bin"hivemind")
   end
 end

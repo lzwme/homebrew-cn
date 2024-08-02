@@ -32,6 +32,6 @@ class Xhyve < Formula
   end
 
   test do
-    system "#{bin}xhyve", "-v"
+    system bin"xhyve", "-v"
   end
 end

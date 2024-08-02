@@ -28,7 +28,7 @@ class WormholeWilliam < Formula
     # Send "foo" over the wire
     code = "#{rand(1e12)}-test"
     pid = fork do
-      exec "#{bin}wormhole-william", "send", "--code", code, "--text", "foo"
+      exec bin"wormhole-william", "send", "--code", code, "--text", "foo"
     end
 
     # Give it some time

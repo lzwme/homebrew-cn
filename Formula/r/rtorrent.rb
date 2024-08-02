@@ -38,7 +38,7 @@ class Rtorrent < Formula
 
   test do
     pid = fork do
-      exec "#{bin}rtorrent", "-n", "-s", testpath
+      exec bin"rtorrent", "-n", "-s", testpath
     end
     sleep 3
     assert_predicate testpath"rtorrent.lock", :exist?

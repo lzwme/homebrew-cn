@@ -34,6 +34,6 @@ class Sl < Formula
   end
 
   test do
-    system "#{bin}sl", "-c"
+    system bin"sl", "-c"
   end
 end

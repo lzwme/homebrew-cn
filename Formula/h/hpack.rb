@@ -53,7 +53,7 @@ class Hpack < Formula
         default-language: Haskell2010
     EOS
 
-    system "#{bin}hpack"
+    system bin"hpack"
 
     # Skip the first lines because they contain the hpack version number.
     assert_equal expected, (testpath"homebrew.cabal").read.lines[6..].join

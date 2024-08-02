@@ -513,9 +513,9 @@ class Swift < Formula
     # Test Swift Package Manager
     ENV["SWIFTPM_MODULECACHE_OVERRIDE"] = module_cache
     mkdir "swiftpmtest" do
-      system "#{bin}swift", "package", "init", "--type=executable"
+      system bin"swift", "package", "init", "--type=executable"
       cp "..foundation-test.swift", "Sourcesmain.swift"
-      system "#{bin}swift", "build", "--verbose", "--disable-sandbox"
+      system bin"swift", "build", "--verbose", "--disable-sandbox"
       assert_match "www.swift.org\n", shell_output("#{bin}swift run --disable-sandbox")
     end
 

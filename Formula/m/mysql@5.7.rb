@@ -19,7 +19,7 @@ class MysqlAT57 < Formula
   keg_only :versioned_formula
 
   # https:www.oracle.comussupportlibrarylifetime-support-technology-069183.pdf
-  deprecate! date: "2023-10-01", because: :unsupported
+  disable! date: "2024-08-01", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "libevent"

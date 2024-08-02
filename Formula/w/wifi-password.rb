@@ -15,6 +15,6 @@ class WifiPassword < Formula
   end
 
   test do
-    system "#{bin}wifi-password", "--version"
+    system bin"wifi-password", "--version"
   end
 end

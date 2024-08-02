@@ -24,7 +24,7 @@ class Sigi < Formula
   end
 
   test do
-    system "#{bin}sigi", "-st", "_brew_test", "push", "Hello World"
+    system bin"sigi", "-st", "_brew_test", "push", "Hello World"
     assert_equal "Hello World", shell_output("#{bin}sigi -qt _brew_test pop").strip
   end
 end

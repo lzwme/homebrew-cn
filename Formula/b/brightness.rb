@@ -29,6 +29,6 @@ class Brightness < Formula
   end
 
   test do
-    system "#{bin}brightness", "-l"
+    system bin"brightness", "-l"
   end
 end

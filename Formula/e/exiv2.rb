@@ -23,13 +23,20 @@ class Exiv2 < Formula
 
   depends_on "cmake" => :build
   depends_on "brotli"
-  depends_on "gettext"
   depends_on "inih"
   depends_on "libssh"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "gettext" => :build # for msgmerge
+  end
 
   def install
     args = %W[
@@ -48,10 +55,9 @@ class Exiv2 < Formula
       -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}#{shared_library("libssh")}
       -DSSH_INCLUDE_DIR=#{Formula["libssh"].opt_include}
       -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
-      ..
     ]
 
-    system "cmake", "-G", "Unix Makefiles", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

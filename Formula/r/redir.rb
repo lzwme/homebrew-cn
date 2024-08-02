@@ -32,7 +32,7 @@ class Redir < Formula
 
   test do
     redir_pid = fork do
-      exec "#{bin}redir", "--cport=12345", "--lport=54321"
+      exec bin"redir", "--cport=12345", "--lport=54321"
     end
     Process.detach(redir_pid)
 

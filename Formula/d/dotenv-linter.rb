@@ -40,7 +40,7 @@ class DotenvLinter < Formula
       1FOO=bar
       _FOO=bar
     EOS
-    output = shell_output("#{bin}dotenv-linter", 1)
+    output = shell_output(bin"dotenv-linter", 1)
     assert_match(\.env:2\s+DuplicatedKey, output)
     assert_match(\.env:3\s+UnorderedKey, output)
     assert_match(\.env.test:1\s+LeadingCharacter, output)

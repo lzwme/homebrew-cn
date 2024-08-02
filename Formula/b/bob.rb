@@ -34,9 +34,9 @@ class Bob < Formula
     mkdir_p "#{testpath}.localsharebob"
     mkdir_p "#{testpath}.localsharenvim-bin"
 
-    system "#{bin}bob", "install", "v0.9.0"
+    system bin"bob", "install", "v0.9.0"
     assert_match "v0.9.0", shell_output("#{bin}bob list")
     assert_predicate testpath".localsharebobv0.9.0", :exist?
-    system "#{bin}bob", "erase"
+    system bin"bob", "erase"
   end
 end

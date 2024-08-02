@@ -33,6 +33,6 @@ class Taskd < Formula
   end
 
   test do
-    system "#{bin}taskd", "init", "--data", testpath
+    system bin"taskd", "init", "--data", testpath
   end
 end

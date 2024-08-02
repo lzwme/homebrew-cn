@@ -45,6 +45,6 @@ class Gcab < Formula
   end
 
   test do
-    system "#{bin}/gcab", "--version"
+    system bin/"gcab", "--version"
   end
 end

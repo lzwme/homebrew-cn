@@ -34,7 +34,7 @@ class Amfora < Formula
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.txt"
     input.puts "stty rows 80 cols 43"
-    input.puts "#{bin}amfora"
+    input.puts bin"amfora"
     sleep 1
     input.putc "1"
     sleep 1

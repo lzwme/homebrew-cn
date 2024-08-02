@@ -1,19 +1,19 @@
 class Noseyparker < Formula
   desc "Finds secrets and sensitive information in textual data and Git history"
   homepage "https:github.compraetorian-incnoseyparker"
-  url "https:github.compraetorian-incnoseyparkerarchiverefstagsv0.18.1.tar.gz"
-  sha256 "065729ad1c2b3c618603f0eebfff1a235aaa6fe44fda64dc535f63d9466fd44c"
+  url "https:github.compraetorian-incnoseyparkerarchiverefstagsv0.19.0.tar.gz"
+  sha256 "cfa74ef3e2e3472823ac712f384e4fbc99f84cc9a9752cf4d22266b4e93921ca"
   license "Apache-2.0"
   head "https:github.compraetorian-incnoseyparker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eca50788a846a424fdc503f8c8e47099180391dcff57ed35b2561c8d5a345508"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "443da5d69a86795794aaff0f95a5c38ae02224ba16cec02d086b2fc7a9e472f8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3a977146968cec30dc650baafe9087460d531fc8f9f8104f4e9540cc03126fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "96a2f93b435c0129b66cf998fc8b41518a7db5ba9668f30e6e730ef7f8d59d8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a68b236aa2baf366a87767cd58daf3efe5adcab0b0af66a62d52571e340ecad"
-    sha256 cellar: :any_skip_relocation, monterey:       "1796d6dc599a1ea7242cd347289cb5055897cd1dfb29964171ea4147b28da1be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59ad3090724af7999d21a9ed072a605ec05c01b243c840ff6ec09a5c30ec337a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73451211b1237ce2225dbd5a9cae670157855bc01539e74a88530edd11450f09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03b0627b0dc3f78e9e7f9eb4c7ea59825ce5cdaba2238a672ba267f82ca73bf0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bdb05e0bd2c3702f2f866f3c4ad3e9379995fb30c4bea806072d49719b77d32"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f0df42f329e6028c4c041b521cf0db2733fbf2ba8f48f2c5e20ed568cb8d6cd4"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e0651a8ca823494887e7b0d89f88355c21db86fc1d063d267ac9ea1a77ec63a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e7f6d40fc849c8eb7ee88e2b046bf8e5708ea78a9b7606bb9f64140edba1f068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00ef9f997cfd2e90f6d0414985ba9e75653918d77ae47e9fc66f3f8be466038"
   end
 
   depends_on "boost" => :build
@@ -38,7 +38,7 @@ class Noseyparker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}noseyparker -V")
 
-    output = shell_output(bin"noseyparker scan --git-url https:github.comHomebrewbrew")
+    output = shell_output(bin"noseyparker scan --git-url https:github.comhomebrew.github")
     assert_match "00 new matches", output
   end
 end

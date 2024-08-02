@@ -33,7 +33,7 @@ class Scour < Formula
   end
 
   test do
-    system "#{bin}scour", "-i", test_fixtures("test.svg"), "-o", "scrubbed.svg"
+    system bin"scour", "-i", test_fixtures("test.svg"), "-o", "scrubbed.svg"
     assert_predicate testpath"scrubbed.svg", :exist?
   end
 end

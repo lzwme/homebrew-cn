@@ -22,6 +22,6 @@ class Djvu2pdf < Formula
   end
 
   test do
-    system "#{bin}/djvu2pdf", "-h"
+    system bin/"djvu2pdf", "-h"
   end
 end

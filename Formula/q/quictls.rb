@@ -102,7 +102,7 @@ class Quictls < Formula
   end
 
   def post_install
-    rm_f quictlsdir"cert.pem"
+    rm(quictlsdir"cert.pem") if (quictlsdir"cert.pem").exist?
     quictlsdir.install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
   end
 

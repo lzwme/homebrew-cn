@@ -52,6 +52,6 @@ class Ffe < Formula
       }
     EOS
 
-    system "#{bin}/ffe", "-c", "test.rc", "source"
+    system bin/"ffe", "-c", "test.rc", "source"
   end
 end

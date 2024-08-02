@@ -25,8 +25,8 @@ class Gzip < Formula
 
   test do
     (testpath/"foo").write "test"
-    system "#{bin}/gzip", "foo"
-    system "#{bin}/gzip", "-t", "foo.gz"
+    system bin/"gzip", "foo"
+    system bin/"gzip", "-t", "foo.gz"
     assert_equal "test", shell_output("#{bin}/gunzip -c foo")
   end
 end

@@ -32,6 +32,6 @@ class Spim < Formula
   end
 
   test do
-    assert_match "__start", pipe_output("#{bin}/spim", "print_symbols")
+    assert_match "__start", pipe_output(bin/"spim", "print_symbols")
   end
 end

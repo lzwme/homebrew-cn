@@ -49,6 +49,6 @@ class Wmctrl < Formula
   end
 
   test do
-    system "#{bin}wmctrl", "--version"
+    system bin"wmctrl", "--version"
   end
 end

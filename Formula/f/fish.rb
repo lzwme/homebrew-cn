@@ -52,6 +52,6 @@ class Fish < Formula
   end
 
   test do
-    system "#{bin}fish", "-c", "echo"
+    system bin"fish", "-c", "echo"
   end
 end

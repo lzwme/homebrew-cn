@@ -20,11 +20,11 @@ class Dspdfviewer < Formula
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
+
   depends_on "boost"
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -33,21 +33,29 @@ class Dspdfviewer < Formula
   depends_on "poppler-qt5"
   depends_on "qt@5"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   fails_with gcc: "5"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-DRunDualScreenTests=OFF",
-                    "-DUsePrerenderedPDF=ON",
-                    "-DUseQtFive=ON",
-                    "-DCMAKE_CXX_STANDARD=14",
-                    "-DCMAKE_CXX_FLAGS=-Wno-deprecated-declarations"
+    args = %w[
+      -DRunDualScreenTests=OFF
+      -DUsePrerenderedPDF=ON
+      -DUseQtFive=ON
+      -DCMAKE_CXX_STANDARD=14
+      -DCMAKE_CXX_FLAGS=-Wno-deprecated-declaration
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux?
-    system "#{bin}dspdfviewer", "--help"
+
+    system bin"dspdfviewer", "--help"
   end
 end

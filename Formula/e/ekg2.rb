@@ -60,6 +60,6 @@ class Ekg2 < Formula
   end
 
   test do
-    system "#{bin}ekg2", "--help"
+    system bin"ekg2", "--help"
   end
 end

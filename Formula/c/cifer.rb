@@ -38,7 +38,7 @@ class Cifer < Formula
   end
 
   test do
-    assert_match version.to_s, pipe_output("#{bin}/cifer")
+    assert_match version.to_s, pipe_output(bin/"cifer")
   end
 end
 

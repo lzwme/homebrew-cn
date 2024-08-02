@@ -74,7 +74,7 @@ class Tmuxinator < Formula
     list_output = shell_output("#{bin}tmuxinator list")
     assert_match "tmuxinator projects:", list_output
 
-    system "#{bin}tmuxinator", "new", "test"
+    system bin"tmuxinator", "new", "test"
     list_output = shell_output("#{bin}tmuxinator list")
     assert_equal "tmuxinator projects:\ntest\n", list_output
   end

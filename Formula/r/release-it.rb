@@ -1,5 +1,3 @@
-require "languagenode"
-
 class ReleaseIt < Formula
   desc "Generic CLI tool to automate versioning and package publishing related tasks"
   homepage "https:github.comrelease-itrelease-it"
@@ -8,19 +6,20 @@ class ReleaseIt < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51e149180106cbde7372b92c21c88d1db89b76f2fb607cb3ab650f1fa10f040a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51e149180106cbde7372b92c21c88d1db89b76f2fb607cb3ab650f1fa10f040a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51e149180106cbde7372b92c21c88d1db89b76f2fb607cb3ab650f1fa10f040a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80912520bad19c624f4bbe4db2ef3327f72686d2948f08e1378db101efc69792"
-    sha256 cellar: :any_skip_relocation, ventura:        "80912520bad19c624f4bbe4db2ef3327f72686d2948f08e1378db101efc69792"
-    sha256 cellar: :any_skip_relocation, monterey:       "43a9f66ddd9840daee8b2315825bae68a2bb8adf9fd45bbf01f53b8feca06627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be30ea7906202453673ec62344e941922562c95ecfee9ae5c53c993a2c39a80e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc2f4cb596c2505b3d46890c594e7d89f4ea22b2b01fd4a4cab39dc73e2e8c67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc2f4cb596c2505b3d46890c594e7d89f4ea22b2b01fd4a4cab39dc73e2e8c67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc2f4cb596c2505b3d46890c594e7d89f4ea22b2b01fd4a4cab39dc73e2e8c67"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d79f27c7872c130817d0783eb74385360c98a400cb08f02ec0991209e340b76"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d79f27c7872c130817d0783eb74385360c98a400cb08f02ec0991209e340b76"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d79f27c7872c130817d0783eb74385360c98a400cb08f02ec0991209e340b76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c450bb27a909106bf9c159317023c102c17cad776c4f947b5a435db1cae5d047"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

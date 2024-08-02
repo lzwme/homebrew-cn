@@ -52,7 +52,7 @@ class Dos2unix < Formula
     assert_equal "foo\r\nbar\r\n", path.read
 
     # dos2unix: convert cr+lf to lf
-    system "#{bin}/dos2unix", path
+    system bin/"dos2unix", path
     assert_equal "foo\nbar\n", path.read
   end
 end

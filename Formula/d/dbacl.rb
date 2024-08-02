@@ -56,8 +56,8 @@ class Dbacl < Formula
       The course of true love never did run smooth.
     EOS
 
-    system "#{bin}/dbacl", "-l", "twain", "mark-twain.txt"
-    system "#{bin}/dbacl", "-l", "shake", "william-shakespeare.txt"
+    system bin/"dbacl", "-l", "twain", "mark-twain.txt"
+    system bin/"dbacl", "-l", "shake", "william-shakespeare.txt"
 
     output = pipe_output("#{bin}/dbacl -v -c twain -c shake", "to be or not to be")
     assert_equal "shake", output.strip

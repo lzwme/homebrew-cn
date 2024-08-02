@@ -27,7 +27,7 @@ class GitFilterRepo < Formula
   end
 
   test do
-    system "#{bin}git-filter-repo", "--version"
+    system bin"git-filter-repo", "--version"
 
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
@@ -39,7 +39,7 @@ class GitFilterRepo < Formula
     # Use --force to accept non-fresh clone run:
     # Aborting: Refusing to overwrite repo history since this does not look like a fresh clone.
     # (expected freshly packed repo)
-    system "#{bin}git-filter-repo", "--path-rename=foo:bar", "--force"
+    system bin"git-filter-repo", "--path-rename=foo:bar", "--force"
 
     assert_predicate testpath"bar", :exist?
   end

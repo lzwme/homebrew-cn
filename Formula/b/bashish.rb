@@ -30,6 +30,6 @@ class Bashish < Formula
   end
 
   test do
-    system "#{bin}/bashish", "list"
+    system bin/"bashish", "list"
   end
 end

@@ -36,6 +36,6 @@ class Remctl < Formula
   end
 
   test do
-    system "#{bin}/remctl", "-v"
+    system bin/"remctl", "-v"
   end
 end

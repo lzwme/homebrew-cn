@@ -33,7 +33,7 @@ class Gcsfuse < Formula
   end
 
   test do
-    system "#{bin}gcsfuse", "--help"
+    system bin"gcsfuse", "--help"
     system "#{sbin}mount.gcsfuse", "--help"
   end
 end

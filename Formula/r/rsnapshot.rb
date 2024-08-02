@@ -26,6 +26,6 @@ class Rsnapshot < Formula
   end
 
   test do
-    system "#{bin}rsnapshot", "--version"
+    system bin"rsnapshot", "--version"
   end
 end

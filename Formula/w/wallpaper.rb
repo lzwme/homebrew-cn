@@ -26,6 +26,6 @@ class Wallpaper < Formula
   end
 
   test do
-    system "#{bin}wallpaper", "get"
+    system bin"wallpaper", "get"
   end
 end

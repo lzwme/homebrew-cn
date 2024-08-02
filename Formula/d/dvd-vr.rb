@@ -32,6 +32,6 @@ class DvdVr < Formula
   end
 
   test do
-    system "#{bin}/dvd-vr", "--version"
+    system bin/"dvd-vr", "--version"
   end
 end

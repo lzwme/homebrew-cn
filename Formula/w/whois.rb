@@ -40,6 +40,6 @@ class Whois < Formula
   end
 
   test do
-    system "#{bin}whois", "brew.sh"
+    system bin"whois", "brew.sh"
   end
 end

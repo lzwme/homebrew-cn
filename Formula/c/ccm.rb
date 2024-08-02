@@ -57,6 +57,6 @@ class Ccm < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}ccm", 1)
+    assert_match "Usage", shell_output(bin"ccm", 1)
   end
 end

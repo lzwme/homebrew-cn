@@ -37,6 +37,6 @@ class Vbindiff < Formula
   end
 
   test do
-    system "#{bin}/vbindiff", "-L"
+    system bin/"vbindiff", "-L"
   end
 end

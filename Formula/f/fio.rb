@@ -34,6 +34,6 @@ class Fio < Formula
   end
 
   test do
-    system "#{bin}fio", "--parse-only"
+    system bin"fio", "--parse-only"
   end
 end

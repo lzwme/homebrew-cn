@@ -41,6 +41,6 @@ class Golo < Formula
   end
 
   test do
-    system "#{bin}golo", "golo", "--files", "#{libexec}sampleshelloworld.golo"
+    system bin"golo", "golo", "--files", "#{libexec}sampleshelloworld.golo"
   end
 end

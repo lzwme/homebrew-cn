@@ -48,6 +48,6 @@ class Cgdb < Formula
   end
 
   test do
-    system "#{bin}cgdb", "--version"
+    system bin"cgdb", "--version"
   end
 end

@@ -25,6 +25,6 @@ class Aerc < Formula
   end
 
   test do
-    system "#{bin}/aerc", "-v"
+    system bin/"aerc", "-v"
   end
 end

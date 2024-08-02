@@ -41,7 +41,7 @@ class AwsIamAuthenticator < Formula
     output = shell_output("#{bin}aws-iam-authenticator version")
     assert_match %Q("Version":"#{version}"), output
 
-    system "#{bin}aws-iam-authenticator", "init", "-i", "test"
+    system bin"aws-iam-authenticator", "init", "-i", "test"
     contents = Dir.entries(".")
     ["cert.pem", "key.pem", "aws-iam-authenticator.kubeconfig"].each do |created|
       assert_includes contents, created

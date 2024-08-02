@@ -26,7 +26,7 @@ class GitSizer < Formula
 
   test do
     system "git", "init"
-    output = shell_output("#{bin}git-sizer")
+    output = shell_output(bin"git-sizer")
     assert_match "No problems above the current threshold were found", output
   end
 end

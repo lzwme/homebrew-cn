@@ -34,6 +34,6 @@ class BrewGem < Formula
   end
 
   test do
-    system "#{bin}brew-gem", "help"
+    system bin"brew-gem", "help"
   end
 end

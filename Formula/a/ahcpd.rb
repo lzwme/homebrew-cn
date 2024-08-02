@@ -53,7 +53,7 @@ class Ahcpd < Formula
       ntp-server 192.168.4.2
     EOS
 
-    system "#{bin}/ahcpd", "-c", "ahcpd.conf", "-I", pid_file, "-L", log_file, "-D", "lo0"
+    system bin/"ahcpd", "-c", "ahcpd.conf", "-I", pid_file, "-L", log_file, "-D", "lo0"
     sleep(2)
 
     assert_predicate pid_file, :exist?, "The file containing the PID of the child process was not created."

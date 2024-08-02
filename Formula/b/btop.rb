@@ -61,7 +61,7 @@ class Btop < Formula
         log_level=DEBUG
       EOS
 
-      r, w, pid = PTY.spawn("#{bin}btop")
+      r, w, pid = PTY.spawn(bin"btop")
       r.winsize = [80, 130]
       sleep 5
       w.write "q"

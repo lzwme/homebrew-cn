@@ -27,6 +27,6 @@ class Wdfs < Formula
   end
 
   test do
-    system "#{bin}/wdfs", "-v"
+    system bin/"wdfs", "-v"
   end
 end

@@ -36,7 +36,7 @@ class Vhs < Formula
     Sleep 1s
     TAPE
 
-    system "#{bin}vhs", "validate", "test.tape"
+    system bin"vhs", "validate", "test.tape"
 
     assert_match version.to_s, shell_output("#{bin}vhs --version")
   end

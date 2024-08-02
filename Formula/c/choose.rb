@@ -51,6 +51,6 @@ class Choose < Formula
     # [Errno 6] No such device or address: 'devtty'
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_equal "homebrew-test", pipe_output("#{bin}choose", "homebrew-test\n").strip
+    assert_equal "homebrew-test", pipe_output(bin"choose", "homebrew-test\n").strip
   end
 end

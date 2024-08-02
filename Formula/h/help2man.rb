@@ -42,7 +42,7 @@ class Help2man < Formula
 
     system ".configure", "--prefix=#{prefix}", *args
     system "make", "install"
-    (libexec"bin").install "#{bin}help2man"
+    (libexec"bin").install bin"help2man"
     (bin"help2man").write_env_script("#{libexec}binhelp2man", PERL5LIB: ENV["PERL5LIB"])
   end
 

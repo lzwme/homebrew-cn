@@ -30,6 +30,6 @@ class WaitOn < Formula
   end
 
   test do
-    system "#{bin}/wait_on", "-v"
+    system bin/"wait_on", "-v"
   end
 end

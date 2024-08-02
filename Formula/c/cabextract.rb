@@ -37,7 +37,7 @@ class Cabextract < Formula
     EOS
     (testpath/"test.cab").binwrite [cab].pack("H*")
 
-    system "#{bin}/cabextract", "test.cab"
+    system bin/"cabextract", "test.cab"
     assert_predicate testpath/"a", :exist?
   end
 end

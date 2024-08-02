@@ -51,6 +51,6 @@ class Xdotool < Formula
   end
 
   test do
-    system "#{bin}xdotool", "--version"
+    system bin"xdotool", "--version"
   end
 end

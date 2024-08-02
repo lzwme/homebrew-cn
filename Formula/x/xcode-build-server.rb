@@ -24,6 +24,6 @@ class XcodeBuildServer < Formula
   end
 
   test do
-    system "#{bin}xcode-build-server", "--help"
+    system bin"xcode-build-server", "--help"
   end
 end

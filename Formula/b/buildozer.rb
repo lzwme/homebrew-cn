@@ -26,7 +26,7 @@ class Buildozer < Formula
     build_file = testpath"BUILD"
 
     touch build_file
-    system "#{bin}buildozer", "new java_library brewed", ":__pkg__"
+    system bin"buildozer", "new java_library brewed", ":__pkg__"
 
     assert_equal "java_library(name = \"brewed\")\n", build_file.read
   end

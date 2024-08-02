@@ -35,6 +35,6 @@ class Sysbench < Formula
   end
 
   test do
-    system "#{bin}sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
+    system bin"sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
   end
 end

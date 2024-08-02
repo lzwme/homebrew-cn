@@ -30,6 +30,6 @@ class Screenfetch < Formula
   end
 
   test do
-    system "#{bin}screenfetch"
+    system bin"screenfetch"
   end
 end

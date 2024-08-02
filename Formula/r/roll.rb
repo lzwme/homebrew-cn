@@ -32,6 +32,6 @@ class Roll < Formula
   end
 
   test do
-    system "#{bin}roll", "1d6"
+    system bin"roll", "1d6"
   end
 end

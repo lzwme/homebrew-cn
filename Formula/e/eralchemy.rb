@@ -50,9 +50,9 @@ class Eralchemy < Formula
       sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
     end
 
-    system "#{bin}eralchemy", "-v"
+    system bin"eralchemy", "-v"
     resource("er_example").stage do
-      system "#{bin}eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
+      system bin"eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
       assert_predicate Pathname.pwd"test_eralchemy.pdf", :exist?
     end
   end

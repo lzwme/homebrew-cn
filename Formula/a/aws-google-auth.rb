@@ -170,7 +170,7 @@ class AwsGoogleAuth < Formula
   end
 
   test do
-    auth_process = IO.popen "#{bin}aws-google-auth"
+    auth_process = IO.popen bin"aws-google-auth"
     sleep 10
     Process.kill "TERM", auth_process.pid
     assert_match "AWS Region:", auth_process.read

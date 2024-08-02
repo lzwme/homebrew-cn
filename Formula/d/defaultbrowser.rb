@@ -30,6 +30,6 @@ class Defaultbrowser < Formula
   test do
     # defaultbrowser outputs a list of browsers by default;
     # safari is pretty much guaranteed to be in that list
-    assert_match "safari", shell_output("#{bin}defaultbrowser")
+    assert_match "safari", shell_output(bin"defaultbrowser")
   end
 end

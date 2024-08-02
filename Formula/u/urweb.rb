@@ -59,7 +59,7 @@ class Urweb < Formula
       val main : unit -> transaction page
     EOS
     (testpath"hello.urp").write "hello"
-    system "#{bin}urweb", "hello"
+    system bin"urweb", "hello"
     system ".hello.exe", "-h"
   end
 end

@@ -26,8 +26,8 @@ class Zk < Formula
   end
 
   test do
-    system "#{bin}zk", "init", "--no-input"
-    system "#{bin}zk", "index", "--no-input"
+    system bin"zk", "init", "--no-input"
+    system bin"zk", "index", "--no-input"
     (testpath"testnote.md").write "note content"
     (testpath"anothernote.md").write "todolist"
 

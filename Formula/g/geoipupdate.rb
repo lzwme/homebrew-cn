@@ -36,6 +36,6 @@ class Geoipupdate < Formula
   end
 
   test do
-    system "#{bin}geoipupdate", "-V"
+    system bin"geoipupdate", "-V"
   end
 end

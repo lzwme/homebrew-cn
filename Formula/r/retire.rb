@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Retire < Formula
   desc "Scanner detecting the use of JavaScript libraries with known vulnerabilities"
   homepage "https:retirejs.github.ioretire.js"
@@ -9,19 +7,20 @@ class Retire < Formula
   head "https:github.comRetireJSretire.js.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d32874a2bd665a2a044bdcf7113b3a658c26dd355e252c96def57af882d3ba7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f23ba8222f182a9d7c07cc1dffae8f4c5e6923710b786c3f4548812f6af84f52"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "d53a179ee5816ab0d330a4eedf30a1e3b5a6e2a71201a288da096cd0a98299b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61f3b49145326f0c569b1012186891532bc31dd1120ef7a12e0088dd9cfe0fc7"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

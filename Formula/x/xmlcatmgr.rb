@@ -29,6 +29,6 @@ class Xmlcatmgr < Formula
   end
 
   test do
-    system "#{bin}/xmlcatmgr", "-v"
+    system bin/"xmlcatmgr", "-v"
   end
 end

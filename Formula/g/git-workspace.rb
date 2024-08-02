@@ -29,7 +29,7 @@ class GitWorkspace < Formula
   test do
     ENV["GIT_WORKSPACE"] = Pathname.pwd
     ENV["GITHUB_TOKEN"] = "foo"
-    system "#{bin}git-workspace", "add", "github", "foo"
+    system bin"git-workspace", "add", "github", "foo"
     assert_match "provider = \"github\"", File.read("workspace.toml")
     output = shell_output("#{bin}git-workspace update 2>&1", 1)
     assert_match "Error fetching repositories from Github userorg foo", output

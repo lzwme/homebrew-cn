@@ -47,10 +47,10 @@ class Timg < Formula
   end
 
   test do
-    system "#{bin}timg", "--version"
-    system "#{bin}timg", "-g10x10", test_fixtures("test.gif")
-    system "#{bin}timg", "-g10x10", test_fixtures("test.png")
-    system "#{bin}timg", "-pq", "-g10x10", "-o", testpath"test-output.txt", test_fixtures("test.jpg")
+    system bin"timg", "--version"
+    system bin"timg", "-g10x10", test_fixtures("test.gif")
+    system bin"timg", "-g10x10", test_fixtures("test.png")
+    system bin"timg", "-pq", "-g10x10", "-o", testpath"test-output.txt", test_fixtures("test.jpg")
     assert_match "38;2;255;38;0;49m", (testpath"test-output.txt").read
   end
 end

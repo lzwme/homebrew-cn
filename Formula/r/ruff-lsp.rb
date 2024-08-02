@@ -67,7 +67,7 @@ class RuffLsp < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}ruff-lsp", input)
+    output = pipe_output(bin"ruff-lsp", input)
     assert_match(^Content-Length: \d+i, output)
   end
 end

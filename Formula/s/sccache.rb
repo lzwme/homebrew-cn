@@ -43,7 +43,7 @@ class Sccache < Formula
         return 0;
       }
     EOS
-    system "#{bin}sccache", "cc", "hello.c", "-o", "hello-c"
+    system bin"sccache", "cc", "hello.c", "-o", "hello-c"
     assert_equal "Hello, world!", shell_output(".hello-c").chomp
   end
 end

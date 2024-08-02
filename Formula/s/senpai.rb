@@ -26,7 +26,7 @@ class Senpai < Formula
   test do
     require "pty"
 
-    stdout, _stdin, _pid = PTY.spawn "#{bin}/senpai"
+    stdout, _stdin, _pid = PTY.spawn bin/"senpai"
     _ = stdout.readline
     assert_equal "Configuration assistant: senpai will create a configuration file for you.\r\n", stdout.readline
   end

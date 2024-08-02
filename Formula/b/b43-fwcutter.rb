@@ -39,6 +39,6 @@ class B43Fwcutter < Formula
   end
 
   test do
-    system "#{bin}/b43-fwcutter", "--version"
+    system bin/"b43-fwcutter", "--version"
   end
 end

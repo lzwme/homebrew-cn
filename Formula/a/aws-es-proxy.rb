@@ -42,7 +42,7 @@ class AwsEsProxy < Formula
     address = "127.0.0.1:#{free_port}"
     endpoint = "https:dummy-host.eu-west-1.es.amazonaws.com"
 
-    fork { exec "#{bin}aws-es-proxy", "-listen=#{address}", "-endpoint=#{endpoint}" }
+    fork { exec bin"aws-es-proxy", "-listen=#{address}", "-endpoint=#{endpoint}" }
     sleep 2
 
     output = shell_output("curl --silent #{address}")

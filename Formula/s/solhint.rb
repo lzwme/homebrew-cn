@@ -1,5 +1,3 @@
-require "language/node"
-
 class Solhint < Formula
   desc "Linter for Solidity code"
   homepage "https://protofire.github.io/solhint/"
@@ -8,19 +6,20 @@ class Solhint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53a0bd26d8ca86865905f2eb9648385783d451f66bd8cc5f0c90a14de3ff88aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5a3700968c53f71b1b02d6cae9363c4584856a6814caea3858a3ec568cfa3d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5a3700968c53f71b1b02d6cae9363c4584856a6814caea3858a3ec568cfa3d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d054a8aaf63e6bc74016009d8280b1f293b5dfda8c5c6feb412d9159f055150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0c43618fbb4398aa69d5b0d8b15367f5413fccc921f4d99da8eb2080e6fce76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "882122bc044a0bf518f9d059ac50307bbc6ad8afc0392bb8086375f8d01b1575"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "882122bc044a0bf518f9d059ac50307bbc6ad8afc0392bb8086375f8d01b1575"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "882122bc044a0bf518f9d059ac50307bbc6ad8afc0392bb8086375f8d01b1575"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bb2b6f082e264891758f7cbe3ae8b38ac721bc76de86ff2ee4ceec0578f61eb7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb2b6f082e264891758f7cbe3ae8b38ac721bc76de86ff2ee4ceec0578f61eb7"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb2b6f082e264891758f7cbe3ae8b38ac721bc76de86ff2ee4ceec0578f61eb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b56dff559bba772052a1d8928b9834944c6b1e7f1bf72a194420b193ec3f5c6"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

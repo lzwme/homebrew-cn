@@ -43,7 +43,7 @@ class Fastme < Formula
       D 4.0 5.0 6.0 0.0
     EOS
 
-    system "#{bin}/fastme", "-i", "test.dist"
+    system bin/"fastme", "-i", "test.dist"
     assert_predicate testpath/"test.dist_fastme_tree.nwk", :exist?
   end
 end

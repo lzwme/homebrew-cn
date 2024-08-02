@@ -24,7 +24,7 @@ class Woof < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}woof", "-s", "-p", port.to_s
+      exec bin"woof", "-s", "-p", port.to_s
     end
 
     sleep 2

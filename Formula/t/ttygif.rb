@@ -33,6 +33,6 @@ class Ttygif < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     ENV["TERM_PROGRAM"] = "Something"
-    system "#{bin}ttygif", "--version"
+    system bin"ttygif", "--version"
   end
 end

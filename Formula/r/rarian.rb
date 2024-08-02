@@ -38,9 +38,9 @@ class Rarian < Formula
   end
 
   test do
-    seriesid1 = shell_output("#{bin}/rarian-sk-gen-uuid").strip
+    seriesid1 = shell_output(bin/"rarian-sk-gen-uuid").strip
     sleep 5
-    seriesid2 = shell_output("#{bin}/rarian-sk-gen-uuid").strip
+    seriesid2 = shell_output(bin/"rarian-sk-gen-uuid").strip
     assert_match(/^\h+(?:-\h+)+$/, seriesid1)
     assert_match(/^\h+(?:-\h+)+$/, seriesid2)
     refute_equal seriesid1, seriesid2

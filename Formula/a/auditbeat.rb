@@ -77,7 +77,7 @@ class Auditbeat < Formula
         filename: auditbeat
     EOS
     fork do
-      exec "#{bin}auditbeat", "-path.config", testpath"config", "-path.data", testpath"data"
+      exec bin"auditbeat", "-path.config", testpath"config", "-path.data", testpath"data"
     end
     sleep 5
     touch testpath"filestouch"

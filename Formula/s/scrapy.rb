@@ -198,9 +198,9 @@ class Scrapy < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}scrapy version")
 
-    system "#{bin}scrapy", "startproject", "brewproject"
+    system bin"scrapy", "startproject", "brewproject"
     cd testpath"brewproject" do
-      system "#{bin}scrapy", "genspider", "-t", "basic", "brewspider", "brew.sh"
+      system bin"scrapy", "genspider", "-t", "basic", "brewspider", "brew.sh"
       assert_match "INFO: Spider closed (finished)", shell_output("#{bin}scrapy crawl brewspider 2>&1")
     end
   end

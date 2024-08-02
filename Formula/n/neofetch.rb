@@ -7,8 +7,14 @@ class Neofetch < Formula
   head "https:github.comdylanarapsneofetch.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "78eb3e99dfde7f5fb1c3b192804a6d345f428c9effa6ea6ba54d7e5b7254387f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1a2a14e36d3beb1d907cca877438c031857df97d42916334e93b1fd426a3d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fdb0500241669f3f5ede2f5a6bd8b2fc683e6f4f01e1ad39c09d2df7395259b"
   end
 
   deprecate! date: "2024-05-04", because: :repo_archived

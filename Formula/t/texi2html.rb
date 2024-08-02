@@ -42,7 +42,7 @@ class Texi2html < Formula
       @end ifnottex
       @bye
     EOS
-    system "#{bin}/texi2html", "test.texinfo"
+    system bin/"texi2html", "test.texinfo"
     assert_match "Hello World!", File.read("test.html")
   end
 end

@@ -47,6 +47,6 @@ class Wemux < Formula
   end
 
   test do
-    system "#{bin}wemux", "help"
+    system bin"wemux", "help"
   end
 end

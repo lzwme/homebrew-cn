@@ -38,7 +38,7 @@ class Cppi < Formula
       #include <homebrew.h>
       #endif
     EOS
-    assert_equal <<~EOS, pipe_output("#{bin}/cppi", test, 0)
+    assert_equal <<~EOS, pipe_output(bin/"cppi", test, 0)
       #ifdef TEST
       # include <homebrew.h>
       #endif

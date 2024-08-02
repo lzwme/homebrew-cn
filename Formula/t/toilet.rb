@@ -46,6 +46,6 @@ class Toilet < Formula
   end
 
   test do
-    system "#{bin}toilet", "--version"
+    system bin"toilet", "--version"
   end
 end

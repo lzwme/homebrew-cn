@@ -20,7 +20,7 @@ class Redpen < Formula
 
   def install
     # Don't need Windows files.
-    rm_f Dir["bin*.bat"]
+    rm(Dir["bin*.bat"])
     libexec.install %w[conf lib sample-doc js]
 
     prefix.install "bin"

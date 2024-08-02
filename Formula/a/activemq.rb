@@ -42,6 +42,6 @@ class Activemq < Formula
   end
 
   test do
-    system "#{bin}/activemq", "browse", "-h"
+    system bin/"activemq", "browse", "-h"
   end
 end

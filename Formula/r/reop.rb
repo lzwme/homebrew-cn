@@ -53,6 +53,6 @@ class Reop < Formula
       -----END REOP SIGNATURE-----
     EOS
 
-    system "#{bin}/reop", "-V", "-x", "sig", "-p", "pubkey", "-m", "msg"
+    system bin/"reop", "-V", "-x", "sig", "-p", "pubkey", "-m", "msg"
   end
 end

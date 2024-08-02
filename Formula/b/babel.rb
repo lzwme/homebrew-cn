@@ -1,4 +1,3 @@
-require "language/node"
 require "json"
 
 class Babel < Formula
@@ -9,13 +8,14 @@ class Babel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e1909b2f685fb27c48edb0b1796c7978094378602decc65d6e2a55dde70fccf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e1909b2f685fb27c48edb0b1796c7978094378602decc65d6e2a55dde70fccf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e1909b2f685fb27c48edb0b1796c7978094378602decc65d6e2a55dde70fccf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb5ef195bc8b9df1db4ba6853e5039b2a517711739cf913a5abafde072faa6b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb5ef195bc8b9df1db4ba6853e5039b2a517711739cf913a5abafde072faa6b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e1909b2f685fb27c48edb0b1796c7978094378602decc65d6e2a55dde70fccf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9af7f9fd8b98b7e1aad7b6027241f75dc491a9ee4292db01e2620de818fc451b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, ventura:        "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, monterey:       "6dd5647d696698bb8a880823ddb5211d2a3fad7746e08c28623ca535a5052078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "093bd57c05ed3a658e43bbe8f83d3321c01f7a365d2e5e38f70325cafc23024f"
   end
 
   depends_on "node"
@@ -30,10 +30,10 @@ class Babel < Formula
     buildpath.install resource("babel-cli")
 
     cd buildpath/"node_modules/@babel/core" do
-      system "npm", "install", *Language::Node.local_npm_install_args, "--production"
+      system "npm", "install", *std_npm_args(prefix: false), "--production"
     end
 
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

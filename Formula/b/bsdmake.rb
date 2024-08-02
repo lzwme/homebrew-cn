@@ -74,7 +74,7 @@ class Bsdmake < Formula
       \ttouch $@
     EOS
 
-    system "#{bin}bsdmake"
+    system bin"bsdmake"
     assert_predicate testpath"foo", :exist?
   end
 end

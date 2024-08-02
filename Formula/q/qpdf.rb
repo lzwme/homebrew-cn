@@ -32,6 +32,6 @@ class Qpdf < Formula
   end
 
   test do
-    system "#{bin}qpdf", "--version"
+    system bin"qpdf", "--version"
   end
 end

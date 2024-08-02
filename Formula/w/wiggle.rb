@@ -25,6 +25,6 @@ class Wiggle < Formula
   end
 
   test do
-    system "#{bin}wiggle", "--version"
+    system bin"wiggle", "--version"
   end
 end

@@ -62,6 +62,6 @@ class Timidity < Formula
   end
 
   test do
-    system "#{bin}/timidity"
+    system bin/"timidity"
   end
 end

@@ -14,6 +14,6 @@ class Xcv < Formula
   end
 
   test do
-    system "#{bin}xcv"
+    system bin"xcv"
   end
 end

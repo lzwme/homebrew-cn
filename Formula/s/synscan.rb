@@ -42,6 +42,6 @@ class Synscan < Formula
   end
 
   test do
-    system "#{bin}/synscan", "-V"
+    system bin/"synscan", "-V"
   end
 end

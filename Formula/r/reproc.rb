@@ -25,7 +25,7 @@ class Reproc < Formula
     system "cmake", "-S", ".", "-B", "build", *args, "-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    rm_rf "build"
+    rm_r("build")
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     lib.install "buildreprocliblibreproc.a", "buildreproc++liblibreproc++.a"

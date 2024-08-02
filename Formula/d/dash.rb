@@ -40,6 +40,6 @@ class Dash < Formula
   end
 
   test do
-    system "#{bin}/dash", "-c", "echo Hello!"
+    system bin/"dash", "-c", "echo Hello!"
   end
 end

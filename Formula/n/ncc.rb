@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Ncc < Formula
   desc "Compile a Node.js project into a single file"
   homepage "https:github.comvercelncc"
@@ -8,20 +6,20 @@ class Ncc < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, sonoma:         "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, ventura:        "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, monterey:       "780d77d96277011284e25bf72dae772f0334b4fa205b6fb03d6b240db0450889"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d55b94e1f441d7dc759cdec53b73749b4c8a1909857f1e65c3d4869e21e6153"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "507cc4d97e59cb966e9a1da8af31b4041afea40cefef244c707bee8a65e92e1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "204def702229d225311c36b5a60152f49d181e968921274198fb331ba0589610"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

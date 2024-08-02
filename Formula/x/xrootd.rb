@@ -66,7 +66,7 @@ class Xrootd < Formula
   end
 
   test do
-    system "#{bin}xrootd", "-H"
+    system bin"xrootd", "-H"
     system "python3.12", "-c", <<~EOS
       import XRootD
       from XRootD import client

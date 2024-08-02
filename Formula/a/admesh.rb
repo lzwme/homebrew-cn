@@ -38,6 +38,6 @@ class Admesh < Formula
       ENDFACET
       ENDSOLID Untitled1
     EOS
-    system "#{bin}admesh", "test.stl"
+    system bin"admesh", "test.stl"
   end
 end

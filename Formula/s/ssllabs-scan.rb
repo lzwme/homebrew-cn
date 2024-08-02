@@ -37,6 +37,6 @@ class SsllabsScan < Formula
   end
 
   test do
-    system "#{bin}ssllabs-scan", "-grade", "-quiet", "-usecache", "ssllabs.com"
+    system bin"ssllabs-scan", "-grade", "-quiet", "-usecache", "ssllabs.com"
   end
 end

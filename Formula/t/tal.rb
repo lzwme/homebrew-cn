@@ -30,6 +30,6 @@ class Tal < Formula
   end
 
   test do
-    system "#{bin}/tal", "/etc/passwd"
+    system bin/"tal", "/etc/passwd"
   end
 end

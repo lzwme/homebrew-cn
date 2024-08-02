@@ -61,7 +61,7 @@ class Ratfor < Formula
       end
     EOS
 
-    system "#{bin}/ratfor", "-o", "test.f", testpath/"test.r"
+    system bin/"ratfor", "-o", "test.f", testpath/"test.r"
     system "gfortran", "test.f", "-o", "test"
     system "./test"
   end

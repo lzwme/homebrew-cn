@@ -89,7 +89,7 @@ class Thrift < Formula
       }
     EOS
 
-    system "#{bin}thrift", "-r", "--gen", "cpp", "test.thrift"
+    system bin"thrift", "-r", "--gen", "cpp", "test.thrift"
 
     system ENV.cxx, "-std=c++11", "gen-cppMultiplicationService.cpp",
       "gen-cppMultiplicationService_server.skeleton.cpp",

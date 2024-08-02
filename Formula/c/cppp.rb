@@ -45,6 +45,6 @@ class Cppp < Formula
       # endif
       #endif
     EOS
-    system "#{bin}/cppp", "-DFOO", "hello.c"
+    system bin/"cppp", "-DFOO", "hello.c"
   end
 end

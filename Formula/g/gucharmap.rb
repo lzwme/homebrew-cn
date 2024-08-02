@@ -68,6 +68,6 @@ class Gucharmap < Formula
   end
 
   test do
-    system "#{bin}/gucharmap", "--version"
+    system bin/"gucharmap", "--version"
   end
 end

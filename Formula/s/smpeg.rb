@@ -58,7 +58,7 @@ class Smpeg < Formula
     system "make", "install"
 
     # Not present since we do not build with gtk+
-    rm_f "#{man1}gtv.1"
+    rm("#{man1}gtv.1")
   end
 
   test do

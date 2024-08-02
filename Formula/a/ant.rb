@@ -65,6 +65,6 @@ class Ant < Formula
         }
       }
     EOS
-    system "#{bin}/ant", "compile"
+    system bin/"ant", "compile"
   end
 end

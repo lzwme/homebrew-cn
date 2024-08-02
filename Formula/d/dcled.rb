@@ -35,6 +35,6 @@ class Dcled < Formula
   end
 
   test do
-    system "#{bin}/dcled", "--help"
+    system bin/"dcled", "--help"
   end
 end

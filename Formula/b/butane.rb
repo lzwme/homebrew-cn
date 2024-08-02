@@ -49,7 +49,7 @@ class Butane < Formula
               - ssh-rsa mykey
     EOS
 
-    system "#{bin}butane", "--strict", "--output=#{testpath}example.ign", "#{testpath}example.bu"
+    system bin"butane", "--strict", "--output=#{testpath}example.ign", "#{testpath}example.bu"
     assert_predicate testpath"example.ign", :exist?
     assert_match(.*"sshAuthorizedKeys":\["ssh-rsa mykey"\].*m, File.read(testpath"example.ign").strip)
 

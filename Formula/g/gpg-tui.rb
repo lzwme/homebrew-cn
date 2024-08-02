@@ -41,7 +41,7 @@ class GpgTui < Formula
 
     (testpath"gpg-tui").mkdir
     begin
-      r, w, pid = PTY.spawn "#{bin}gpg-tui"
+      r, w, pid = PTY.spawn bin"gpg-tui"
       r.winsize = [80, 43]
       sleep 1
       w.write "q"

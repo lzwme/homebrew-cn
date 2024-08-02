@@ -35,7 +35,7 @@ class Apparix < Formula
 
   test do
     mkdir "test"
-    system "#{bin}/apparix", "--add-mark", "homebrew", "test"
+    system bin/"apparix", "--add-mark", "homebrew", "test"
     assert_equal "j,homebrew,test",
       shell_output("#{bin}/apparix -lm homebrew").chomp
   end

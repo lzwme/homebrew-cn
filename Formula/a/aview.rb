@@ -46,6 +46,6 @@ class Aview < Formula
   end
 
   test do
-    system "#{bin}aview", "--version"
+    system bin"aview", "--version"
   end
 end

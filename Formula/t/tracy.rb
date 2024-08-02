@@ -52,7 +52,7 @@ class Tracy < Formula
     assert_match "Tracy Profiler #{version}", shell_output("#{bin}tracy --help")
 
     pid = fork do
-      exec "#{bin}tracy", "-p", port.to_s
+      exec bin"tracy", "-p", port.to_s
     end
     sleep 1
   ensure

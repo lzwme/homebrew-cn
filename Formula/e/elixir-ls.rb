@@ -41,7 +41,7 @@ class ElixirLs < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output("#{bin}elixir-ls", input, 0)
+    output = pipe_output(bin"elixir-ls", input, 0)
     assert_match "Content-Length", output
   end
 end

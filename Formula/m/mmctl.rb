@@ -7,11 +7,6 @@ class Mmctl < Formula
   license "Apache-2.0"
   head "https:github.commattermostmmctl.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "556076fdaa27b44d9cfdbc10cc906d304d1b04907dc631965c727a4818b7fa3f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f9bbd0ee1ba75322fb8a48fa6e3bbe9df725923d15bcd835484af20dfde6497"
@@ -23,6 +18,8 @@ class Mmctl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "ce5037a3240ce5a32b1c0f748823c719e221eee469ee116d4a66469f8c6800a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eb33d2c49c5db76ea8afb3bb3a5b28b8c4234e7161a520c3e934f251407538d"
   end
+
+  deprecate! date: "2024-08-01", because: :repo_archived
 
   depends_on "go" => :build
 

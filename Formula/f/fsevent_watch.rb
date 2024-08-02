@@ -27,6 +27,6 @@ class FseventWatch < Formula
   end
 
   test do
-    system "#{bin}fsevent_watch", "--version"
+    system bin"fsevent_watch", "--version"
   end
 end

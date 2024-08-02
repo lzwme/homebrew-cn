@@ -3,19 +3,18 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https:github.comsigstoresigstore-python"
-  url "https:files.pythonhosted.orgpackages080249fb5e4f9c1e3dec6ab9b94b4d2b9778ad90a2bf6034e7bc7ccf6936d009sigstore-3.0.0.tar.gz"
-  sha256 "a6a9538a648e112a0c3d8092d3f73a351c7598164764f1e73a6b5ba406a3a0bd"
+  url "https:files.pythonhosted.orgpackages9ad27e87c6ade26724a63bf28168ade19730678e855635781409163a48570063sigstore-3.1.0.tar.gz"
+  sha256 "cc0b52acff3ae25f7f1993e21dec4ebed44213c48e2ec095e8c06f69b3751fdf"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4fd6b887ff74cea75f60336c9b898df88a5ffbc22bbe4a6f6ed5f592349b4953"
-    sha256 cellar: :any,                 arm64_ventura:  "820605e69308ea69082f79c58e08bf470e281b9882f0dc512d73872d861be156"
-    sha256 cellar: :any,                 arm64_monterey: "ae30f3132cef99363e694b315a3702922b02094297df3f044c66fb2bb9d1e62d"
-    sha256 cellar: :any,                 sonoma:         "9e5761edfefc218550e476c8ba49054053bc8c8cb3d299c58149a961c2c69624"
-    sha256 cellar: :any,                 ventura:        "2e6d499512b6f8bfca9c0ff46ee63ae0792b7bbfe088b6a8c9b372d871755eb2"
-    sha256 cellar: :any,                 monterey:       "2b069d03600ba8dc7ae034c2c0cb7a647129792fba3623afbc79794397f5204d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5681fc8a5e4ff80a969a716b3b7ed6635eed6f5af6ca6cb361ca4e8d61cbcfdc"
+    sha256 cellar: :any,                 arm64_sonoma:   "61e8b030b0aaa65a2ee00e649a3dff7b9379c9dae0670066e36ffa853d705d6e"
+    sha256 cellar: :any,                 arm64_ventura:  "efa80691172ccd14791236b0a5c7af208b270ca2a9bfd0cbc2989d6624c7bae1"
+    sha256 cellar: :any,                 arm64_monterey: "e02133e7a598d8cb10fcac78788928f874faa9f705dec2b9b17e5a2f4c96728f"
+    sha256 cellar: :any,                 sonoma:         "a3e9caf1c915bb687625a099a03efd2824ff583ec6f1fff9983cc9238daa5d94"
+    sha256 cellar: :any,                 ventura:        "a0d3536bb044ac8aee081ce962f681c75c53c125cf395194936fe879170099ef"
+    sha256 cellar: :any,                 monterey:       "8b32bfe50c7ad430c4b0513a2449cd8dd3f68b90e78edddeb7fb237d375b25de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42b0355ed967bb2f4f01e7c400c835fe95e7bce611154799f0321e2fc2f55f9b"
   end
 
   depends_on "rust" => :build
@@ -44,8 +43,8 @@ class Sigstore < Formula
   end
 
   resource "email-validator" do
-    url "https:files.pythonhosted.orgpackages8523faab91ba691ddcff25db67c2835cbe65b0fbb0177cbbc532c6230b826d12email_validator-2.1.2.tar.gz"
-    sha256 "14c0f3d343c4beda37400421b39fa411bbe33a75df20825df73ad53e06a9f04c"
+    url "https:files.pythonhosted.orgpackages48ce13508a1ec3f8bb981ae4ca79ea40384becc868bfae97fd1c942bb3a001b1email_validator-2.2.0.tar.gz"
+    sha256 "cb690f344c617a714f22e66ae771445a1ceb46821152df8e165c5f9a364582b7"
   end
 
   resource "grpclib" do
@@ -104,13 +103,13 @@ class Sigstore < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
-    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
+    url "https:files.pythonhosted.orgpackages8c99d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902epydantic-2.8.2.tar.gz"
+    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
-    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
+    url "https:files.pythonhosted.orgpackages12e30d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247pydantic_core-2.20.1.tar.gz"
+    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
   end
 
   resource "pygments" do
@@ -124,8 +123,8 @@ class Sigstore < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackages91a8cbeec652549e30103b9e6147ad433405fdd18807ac2d54e6dbb73184d8a1pyOpenSSL-24.1.0.tar.gz"
-    sha256 "cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f"
+    url "https:files.pythonhosted.orgpackages5d70ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8pyopenssl-24.2.1.tar.gz"
+    sha256 "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95"
   end
 
   resource "python-dateutil" do
@@ -191,21 +190,21 @@ class Sigstore < Formula
     assert_match version.to_s, shell_output("#{bin}sigstore -V")
 
     resource "homebrew-test-artifact" do
-      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.0.0sigstore-3.0.0.tar.gz", using: :nounzip
-      sha256 "a6a9538a648e112a0c3d8092d3f73a351c7598164764f1e73a6b5ba406a3a0bd"
+      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.1.0sigstore-3.1.0.tar.gz", using: :nounzip
+      sha256 "cc0b52acff3ae25f7f1993e21dec4ebed44213c48e2ec095e8c06f69b3751fdf"
     end
 
     resource "homebrew-test-artifact.sigstore" do
-      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.0.0sigstore-3.0.0.tar.gz.sigstore"
-      sha256 "4985b593853a065b8fc3a0ffa437478b6ebd4925ef58855cbb034082746c2e02"
+      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.1.0sigstore-3.1.0.tar.gz.sigstore"
+      sha256 "630044f8545ff133a55617a3ae5e4d24b2e42068115702b165465c169966a815"
     end
 
     resource("homebrew-test-artifact").stage testpath
     resource("homebrew-test-artifact.sigstore").stage testpath
 
-    cert_identity = "https:github.comsigstoresigstore-python.githubworkflowsrelease.yml@refstagsv3.0.0"
+    cert_identity = "https:github.comsigstoresigstore-python.githubworkflowsrelease.yml@refstagsv3.1.0"
 
-    output = shell_output("#{bin}sigstore verify github sigstore-3.0.0.tar.gz --cert-identity #{cert_identity}")
-    assert_match "OK: sigstore-3.0.0.tar.gz", output
+    output = shell_output("#{bin}sigstore verify github sigstore-3.1.0.tar.gz --cert-identity #{cert_identity}")
+    assert_match "OK: sigstore-3.1.0.tar.gz", output
   end
 end

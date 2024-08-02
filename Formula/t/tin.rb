@@ -44,6 +44,6 @@ class Tin < Formula
   end
 
   test do
-    system "#{bin}/tin", "-H"
+    system bin/"tin", "-H"
   end
 end

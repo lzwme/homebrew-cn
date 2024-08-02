@@ -27,6 +27,6 @@ class Ctop < Formula
   end
 
   test do
-    system "#{bin}ctop", "-v"
+    system bin"ctop", "-v"
   end
 end

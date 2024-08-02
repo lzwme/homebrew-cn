@@ -38,7 +38,7 @@ class Scarb < Formula
   test do
     assert_match "#{testpath}Scarb.toml", shell_output("#{bin}scarb manifest-path")
 
-    system "#{bin}scarb", "init", "--name", "brewtest", "--no-vcs"
+    system bin"scarb", "init", "--name", "brewtest", "--no-vcs"
     assert_predicate testpath"srclib.cairo", :exist?
     assert_match "brewtest", (testpath"Scarb.toml").read
 

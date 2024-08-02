@@ -35,6 +35,6 @@ class Dvdbackup < Formula
   end
 
   test do
-    system "#{bin}dvdbackup", "--version"
+    system bin"dvdbackup", "--version"
   end
 end

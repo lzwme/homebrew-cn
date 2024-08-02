@@ -44,7 +44,7 @@ class Fig2dev < Formula
   end
 
   test do
-    system "#{bin}/fig2dev", "-L", "png", "#{pkgshare}/patterns.fig", "patterns.png"
+    system bin/"fig2dev", "-L", "png", "#{pkgshare}/patterns.fig", "patterns.png"
     assert_predicate testpath/"patterns.png", :exist?, "Failed to create PNG"
   end
 end

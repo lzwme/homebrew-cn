@@ -29,7 +29,7 @@ class Bvi < Formula
       out = shell_output("#{bin}/bvi -c q", 1)
       assert_match out, "Input is not from a terminal"
     else
-      system "#{bin}/bvi", "-c", "q"
+      system bin/"bvi", "-c", "q"
     end
   end
 end

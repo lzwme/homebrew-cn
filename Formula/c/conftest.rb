@@ -30,6 +30,6 @@ class Conftest < Formula
     # Using the policy parameter changes the default location to look for policies.
     # If no policies are found, a non-zero status code is returned.
     (testpath"test.rego").write("package main")
-    system "#{bin}conftest", "verify", "-p", "test.rego"
+    system bin"conftest", "verify", "-p", "test.rego"
   end
 end

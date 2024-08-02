@@ -29,6 +29,6 @@ class Gowsdl < Formula
   end
 
   test do
-    system "#{bin}gowsdl"
+    system bin"gowsdl"
   end
 end

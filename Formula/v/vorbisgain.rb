@@ -40,6 +40,6 @@ class Vorbisgain < Formula
   end
 
   test do
-    system "#{bin}/vorbisgain", "--version"
+    system bin/"vorbisgain", "--version"
   end
 end

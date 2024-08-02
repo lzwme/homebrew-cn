@@ -33,7 +33,7 @@ class Unp < Formula
     path = testpath/"test"
     path.write "Homebrew"
     system "gzip", "test"
-    system "#{bin}/unp", "test.gz"
+    system bin/"unp", "test.gz"
     assert_equal "Homebrew", path.read
   end
 end

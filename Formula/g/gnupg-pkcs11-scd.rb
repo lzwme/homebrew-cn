@@ -47,6 +47,6 @@ class GnupgPkcs11Scd < Formula
   end
 
   test do
-    system "#{bin}gnupg-pkcs11-scd", "--help"
+    system bin"gnupg-pkcs11-scd", "--help"
   end
 end

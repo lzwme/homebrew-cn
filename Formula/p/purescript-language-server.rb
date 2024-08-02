@@ -1,5 +1,3 @@
-require "languagenode"
-
 class PurescriptLanguageServer < Formula
   desc "Language Server Protocol server for PureScript"
   homepage "https:github.comnwolversonpurescript-language-server"
@@ -8,14 +6,21 @@ class PurescriptLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3fa10a1604c4d0d482eb93545476554052611078e6fb118af709e6a66eb24a98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, sonoma:         "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, ventura:        "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, monterey:       "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25410574878aaeff7b211222108eb127f332f48d28ffce06069fd041455feeb9"
   end
 
   depends_on "node"
   depends_on "purescript"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

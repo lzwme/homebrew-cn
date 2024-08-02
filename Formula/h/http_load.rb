@@ -53,6 +53,6 @@ class HttpLoad < Formula
 
   test do
     (testpath/"urls").write "https://brew.sh/"
-    system "#{bin}/http_load", "-rate", "1", "-fetches", "1", "urls"
+    system bin/"http_load", "-rate", "1", "-fetches", "1", "urls"
   end
 end

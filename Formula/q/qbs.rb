@@ -51,6 +51,6 @@ class Qbs < Formula
       }
     EOS
 
-    system "#{bin}/qbs", "run", "-f", "test.qbs"
+    system bin/"qbs", "run", "-f", "test.qbs"
   end
 end

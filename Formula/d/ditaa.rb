@@ -21,6 +21,6 @@ class Ditaa < Formula
   end
 
   test do
-    system "#{bin}ditaa", "-help"
+    system bin"ditaa", "-help"
   end
 end

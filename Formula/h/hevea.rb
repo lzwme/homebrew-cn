@@ -41,6 +41,6 @@ class Hevea < Formula
       \\begin{document}
       \\end{document}
     EOS
-    system "#{bin}/hevea", "test.tex"
+    system bin/"hevea", "test.tex"
   end
 end

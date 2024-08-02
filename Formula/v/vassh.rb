@@ -13,6 +13,6 @@ class Vassh < Formula
   end
 
   test do
-    system "#{bin}vassh", "-h"
+    system bin"vassh", "-h"
   end
 end

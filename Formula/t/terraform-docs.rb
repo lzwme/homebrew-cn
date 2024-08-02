@@ -64,6 +64,6 @@ class TerraformDocs < Formula
         value = "vpc-5c1f55fd"
       }
     EOS
-    system "#{bin}terraform-docs", "json", testpath
+    system bin"terraform-docs", "json", testpath
   end
 end

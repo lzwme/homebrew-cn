@@ -7,7 +7,7 @@ class Libgit2AT17 < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(^v?(1\.7(?:\.\d+)+)$i)
   end
 
   bottle do

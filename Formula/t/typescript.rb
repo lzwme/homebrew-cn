@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Typescript < Formula
   desc "Language for application scale JavaScript development"
   homepage "https:www.typescriptlang.org"
@@ -9,19 +7,20 @@ class Typescript < Formula
   head "https:github.comMicrosoftTypeScript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, ventura:        "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "25b52ba2261a608f73fe5eb6cb4f1289106de099ce3d7f396609fffd373d0fb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8de159428e45a63d940c2cf360d435a89db9bd9bd7089075b6f66977b635d8ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, ventura:        "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, monterey:       "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab7c9619010eaef83e59fa9c5fc564a42c7bbfaa0eb47ebc6af6f99440789c0f"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

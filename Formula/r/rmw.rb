@@ -41,7 +41,7 @@ class Rmw < Formula
     touch file
     assert_match "removed", shell_output("#{bin}rmw #{file}")
     refute_predicate file, :exist?
-    system "#{bin}rmw", "-u"
+    system bin"rmw", "-u"
     assert_predicate file, :exist?
     assert_match ".localshareWaste", shell_output("#{bin}rmw -l")
     assert_match "purging is disabled", shell_output("#{bin}rmw -vvg")

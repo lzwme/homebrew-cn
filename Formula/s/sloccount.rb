@@ -43,7 +43,7 @@ class Sloccount < Formula
   end
 
   test do
-    system "#{bin}/sloccount", "--version"
+    system bin/"sloccount", "--version"
   end
 end
 

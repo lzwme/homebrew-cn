@@ -40,6 +40,6 @@ class Gifsicle < Formula
   end
 
   test do
-    system "#{bin}gifsicle", "--info", test_fixtures("test.gif")
+    system bin"gifsicle", "--info", test_fixtures("test.gif")
   end
 end

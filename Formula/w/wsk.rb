@@ -33,6 +33,6 @@ class Wsk < Formula
   end
 
   test do
-    system "#{bin}wsk", "property", "set", "--apihost", "https:127.0.0.1"
+    system bin"wsk", "property", "set", "--apihost", "https:127.0.0.1"
   end
 end

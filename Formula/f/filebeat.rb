@@ -84,7 +84,7 @@ class Filebeat < Formula
     (testpath"data").mkpath
 
     fork do
-      exec "#{bin}filebeat", "-c", "#{testpath}filebeat.yml",
+      exec bin"filebeat", "-c", "#{testpath}filebeat.yml",
            "-path.config", "#{testpath}filebeat",
            "-path.home=#{testpath}",
            "-path.logs", "#{testpath}log",

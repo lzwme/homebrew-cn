@@ -111,6 +111,6 @@ class AwsShell < Formula
   end
 
   test do
-    system "#{bin}aws-shell", "--help"
+    system bin"aws-shell", "--help"
   end
 end

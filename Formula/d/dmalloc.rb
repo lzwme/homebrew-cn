@@ -30,6 +30,6 @@ class Dmalloc < Formula
   end
 
   test do
-    system "#{bin}/dmalloc", "-b", "runtime"
+    system bin/"dmalloc", "-b", "runtime"
   end
 end

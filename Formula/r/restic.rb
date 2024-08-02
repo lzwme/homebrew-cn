@@ -43,10 +43,10 @@ class Restic < Formula
 
     (testpath"testfile").write("This is a testfile")
 
-    system "#{bin}restic", "init"
-    system "#{bin}restic", "backup", "testfile"
+    system bin"restic", "init"
+    system bin"restic", "backup", "testfile"
 
-    system "#{bin}restic", "restore", "latest", "-t", "#{testpath}restore"
+    system bin"restic", "restore", "latest", "-t", "#{testpath}restore"
     assert compare_file "testfile", "#{testpath}restoretestfile"
   end
 end

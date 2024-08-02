@@ -34,7 +34,7 @@ class GithubRelease < Formula
   end
 
   test do
-    system "#{bin}github-release", "info", "--user", "github-release",
+    system bin"github-release", "info", "--user", "github-release",
                                             "--repo", "github-release",
                                             "--tag", "v#{version}"
   end

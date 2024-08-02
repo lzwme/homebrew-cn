@@ -56,6 +56,6 @@ class Ffmpeg2theora < Formula
   end
 
   test do
-    system "#{bin}/ffmpeg2theora", "--help"
+    system bin/"ffmpeg2theora", "--help"
   end
 end

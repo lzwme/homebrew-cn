@@ -20,7 +20,7 @@ class Gws < Formula
 
   test do
     system "git", "init", "project"
-    system "#{bin}gws", "init"
+    system bin"gws", "init"
     output = shell_output("#{bin}gws status")
     assert_equal "project:\n  *                           Clean [Local only repository]\n", output
   end

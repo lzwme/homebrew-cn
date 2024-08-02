@@ -33,7 +33,7 @@ class Doublecpp < Formula
   end
 
   test do
-    system "#{bin}/doublecpp", "--version"
+    system bin/"doublecpp", "--version"
   end
 end
 

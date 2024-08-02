@@ -56,7 +56,7 @@ class Yasm < Formula
       mov ebx, 0
       int 0x80
     EOS
-    system "#{bin}yasm", "foo.s"
+    system bin"yasm", "foo.s"
     code = File.open("foo", "rb") { |f| f.read.unpack("C*") }
     expected = [0x66, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x66, 0xbb,
                 0x00, 0x00, 0x00, 0x00, 0xcd, 0x80]
@@ -79,7 +79,7 @@ class Yasm < Formula
         msg:    db      "Hello, world!", 10
         .len:   equ     $ - msg
       EOS
-      system "#{bin}yasm", "-f", "macho64", "test.asm"
+      system bin"yasm", "-f", "macho64", "test.asm"
       system "usrbinld", "-macosx_version_min", "10.8.0", "-static", "-o", "test", "test.o"
       assert_match "Mach-O 64-bit object x86_64", shell_output("file test.o")
       assert_match "Mach-O 64-bit executable x86_64", shell_output("file test")
@@ -100,7 +100,7 @@ class Yasm < Formula
         msg:    db      "Hello, world!", 10
         .len:   equ     $ - msg
       EOS
-      system "#{bin}yasm", "-f", "elf64", "test.asm"
+      system bin"yasm", "-f", "elf64", "test.asm"
       system "usrbinld", "-static", "-o", "test", "test.o"
     end
     assert_equal "Hello, world!\n", shell_output(".test") if Hardware::CPU.intel?

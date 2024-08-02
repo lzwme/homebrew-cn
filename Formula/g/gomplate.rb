@@ -42,6 +42,6 @@ class Gomplate < Formula
       bar:baz
     EOS
 
-    assert_match expected, pipe_output("#{bin}gomplate", test_template, 0)
+    assert_match expected, pipe_output(bin"gomplate", test_template, 0)
   end
 end

@@ -45,7 +45,7 @@ class Yapf < Formula
   end
 
   test do
-    output = pipe_output("#{bin}yapf", "x='homebrew'")
+    output = pipe_output(bin"yapf", "x='homebrew'")
     assert_equal "x = 'homebrew'", output.strip
   end
 end

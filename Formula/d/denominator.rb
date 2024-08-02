@@ -23,6 +23,6 @@ class Denominator < Formula
   end
 
   test do
-    system "#{bin}denominator", "providers"
+    system bin"denominator", "providers"
   end
 end

@@ -45,8 +45,8 @@ class Bitrise < Formula
               - content: printf 'Test - OK' > brew.test.file
     EOS
 
-    system "#{bin}bitrise", "setup"
-    system "#{bin}bitrise", "run", "test_wf"
+    system bin"bitrise", "setup"
+    system bin"bitrise", "run", "test_wf"
     assert_equal "Test - OK", (testpath"brew.test.file").read.chomp
   end
 end

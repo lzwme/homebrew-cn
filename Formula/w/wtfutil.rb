@@ -69,7 +69,7 @@ class Wtfutil < Formula
 
     begin
       pid = fork do
-        exec "#{bin}wtfutil", "--config=#{testconfig}"
+        exec bin"wtfutil", "--config=#{testconfig}"
       end
     ensure
       Process.kill("HUP", pid)

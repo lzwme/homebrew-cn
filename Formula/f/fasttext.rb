@@ -32,7 +32,7 @@ class Fasttext < Formula
 
   test do
     (testpath"trainingset").write("__label__brew brew")
-    system "#{bin}fasttext", "supervised", "-input", "trainingset", "-output", "model"
+    system bin"fasttext", "supervised", "-input", "trainingset", "-output", "model"
     assert_predicate testpath"model.bin", :exist?
   end
 end

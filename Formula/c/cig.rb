@@ -41,6 +41,6 @@ class Cig < Formula
     (testpath".cig.yaml").write <<~EOS
       test_project: #{repo_path}
     EOS
-    system "#{bin}cig", "--cp=#{testpath}"
+    system bin"cig", "--cp=#{testpath}"
   end
 end

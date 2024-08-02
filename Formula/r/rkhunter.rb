@@ -26,6 +26,6 @@ class Rkhunter < Formula
   end
 
   test do
-    system "#{bin}/rkhunter", "--version"
+    system bin/"rkhunter", "--version"
   end
 end

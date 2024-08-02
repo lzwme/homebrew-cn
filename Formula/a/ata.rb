@@ -22,7 +22,7 @@ class Ata < Formula
   end
 
   test do
-    system "#{bin}ata", "--version"
+    system bin"ata", "--version"
 
     config_file = testpath"configata.toml"
     config_file.write <<~EOS

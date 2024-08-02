@@ -77,7 +77,7 @@ class Cppcheck < Formula
         number = initialNumber;
       }
     EOS
-    system "#{bin}cppcheck", test_cpp_file
+    system bin"cppcheck", test_cpp_file
 
     # Test the "out of bounds" check
     test_cpp_file_check = testpath"testcheck.cpp"
@@ -125,7 +125,7 @@ class Cppcheck < Formula
           print("%s\\n%s" %(detected_functions, detected_token_count))
     EOS
 
-    system "#{bin}cppcheck", "--dump", test_cpp_file
+    system bin"cppcheck", "--dump", test_cpp_file
     test_cpp_file_dump = "#{test_cpp_file}.dump"
     assert_predicate testpathtest_cpp_file_dump, :exist?
     output = shell_output("#{python3} #{sample_addon_file} #{test_cpp_file_dump}")

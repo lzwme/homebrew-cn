@@ -29,8 +29,8 @@ class Zopfli < Formula
   end
 
   test do
-    system "#{bin}zopfli"
-    system "#{bin}zopflipng", test_fixtures("test.png"), "#{testpath}out.png"
+    system bin"zopfli"
+    system bin"zopflipng", test_fixtures("test.png"), "#{testpath}out.png"
     assert_predicate testpath"out.png", :exist?
   end
 end

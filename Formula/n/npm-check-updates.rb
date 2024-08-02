@@ -1,5 +1,3 @@
-require "languagenode"
-
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
   homepage "https:github.comraineorshinenpm-check-updates"
@@ -8,19 +6,20 @@ class NpmCheckUpdates < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec7ac0020a9eea33120a7296b6dda7589c4375cdbd5d140069e72d98b02ae300"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec7ac0020a9eea33120a7296b6dda7589c4375cdbd5d140069e72d98b02ae300"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec7ac0020a9eea33120a7296b6dda7589c4375cdbd5d140069e72d98b02ae300"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8488a6ccc485be2af85dfcfb09848c59ace446e4d5b70413904d620bd5effbbe"
-    sha256 cellar: :any_skip_relocation, ventura:        "8488a6ccc485be2af85dfcfb09848c59ace446e4d5b70413904d620bd5effbbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "8488a6ccc485be2af85dfcfb09848c59ace446e4d5b70413904d620bd5effbbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b573f7c80dbd03ff313a996d4e1cdc2caee9283828f342a3587fc7fe7324f409"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ba1d6d3d33b75f59c891adaca70f31f61976fc3528b17e1bc18b699ce058930"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ba1d6d3d33b75f59c891adaca70f31f61976fc3528b17e1bc18b699ce058930"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ba1d6d3d33b75f59c891adaca70f31f61976fc3528b17e1bc18b699ce058930"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21fa8b29f3157b6fc360947d4c7e3c33691cb5d602423ec2fdd18c4851c7b67c"
+    sha256 cellar: :any_skip_relocation, ventura:        "21fa8b29f3157b6fc360947d4c7e3c33691cb5d602423ec2fdd18c4851c7b67c"
+    sha256 cellar: :any_skip_relocation, monterey:       "21fa8b29f3157b6fc360947d4c7e3c33691cb5d602423ec2fdd18c4851c7b67c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "008b77d2deac7f4ebedf7b76b2c83e7db29334c077de0fae4ab64811aa7ee2f3"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

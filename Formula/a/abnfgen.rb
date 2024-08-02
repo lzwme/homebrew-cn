@@ -31,6 +31,6 @@ class Abnfgen < Formula
 
   test do
     (testpath/"grammar").write 'ring = 1*12("ding" SP) "dong" CRLF'
-    system "#{bin}/abnfgen", (testpath/"grammar")
+    system bin/"abnfgen", (testpath/"grammar")
   end
 end

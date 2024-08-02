@@ -36,6 +36,6 @@ class XmlrpcC < Formula
   end
 
   test do
-    system "#{bin}/xmlrpc-c-config", "--features"
+    system bin/"xmlrpc-c-config", "--features"
   end
 end

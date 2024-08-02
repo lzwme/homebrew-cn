@@ -33,6 +33,6 @@ class Cmatrix < Formula
   end
 
   test do
-    system "#{bin}cmatrix", "-V"
+    system bin"cmatrix", "-V"
   end
 end

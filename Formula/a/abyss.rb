@@ -84,11 +84,11 @@ class Abyss < Formula
   test do
     testpath.install resource("homebrew-testdata")
     if which("column")
-      system "#{bin}abyss-pe", "B=2G", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
+      system bin"abyss-pe", "B=2G", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
     else
       # Fix error: abyss-tabtomd: column: not found
-      system "#{bin}abyss-pe", "B=2G", "unitigs", "scaffolds", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
+      system bin"abyss-pe", "B=2G", "unitigs", "scaffolds", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
     end
-    system "#{bin}abyss-fac", "ts-unitigs.fa"
+    system bin"abyss-fac", "ts-unitigs.fa"
   end
 end

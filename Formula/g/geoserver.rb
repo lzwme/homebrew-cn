@@ -38,6 +38,6 @@ class Geoserver < Formula
   end
 
   test do
-    assert_match "geoserver path", shell_output("#{bin}/geoserver")
+    assert_match "geoserver path", shell_output(bin/"geoserver")
   end
 end

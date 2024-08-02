@@ -34,7 +34,7 @@ class Boringtun < Formula
   end
 
   test do
-    system "#{bin}boringtun-cli", "--help"
+    system bin"boringtun-cli", "--help"
     assert_match "boringtun #{version}", shell_output("#{bin}boringtun-cli -V")
 
     output = shell_output("#{bin}boringtun-cli utun --foreground 2>&1", 1)

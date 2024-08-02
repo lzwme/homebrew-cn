@@ -37,7 +37,7 @@ class Dcm2niix < Formula
     end
 
     resource("homebrew-sample.dcm").stage testpath
-    system "#{bin}dcm2niix", "-f", "%d_%e", "-z", "n", "-b", "y", testpath
+    system bin"dcm2niix", "-f", "%d_%e", "-z", "n", "-b", "y", testpath
     assert_predicate testpath"localizer_1.nii", :exist?
     assert_predicate testpath"localizer_1.json", :exist?
   end

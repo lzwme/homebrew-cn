@@ -63,6 +63,6 @@ class Espeak < Formula
   end
 
   test do
-    system "#{bin}/espeak", "This is a test for Espeak.", "-w", "out.wav"
+    system bin/"espeak", "This is a test for Espeak.", "-w", "out.wav"
   end
 end

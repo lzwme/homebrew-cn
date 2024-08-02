@@ -41,6 +41,6 @@ class Aspcud < Formula
 
       request: foo >= 1
     EOS
-    system "#{bin}aspcud", "in.cudf", "out.cudf"
+    system bin"aspcud", "in.cudf", "out.cudf"
   end
 end

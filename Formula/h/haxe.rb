@@ -109,7 +109,7 @@ class Haxe < Formula
 
   test do
     ENV["HAXE_STD_PATH"] = "#{HOMEBREW_PREFIX}libhaxestd"
-    system "#{bin}haxe", "-v", "Std"
+    system bin"haxe", "-v", "Std"
     system "#{bin}haxelib", "version"
 
     (testpath"HelloWorld.hx").write <<~EOS
@@ -119,7 +119,7 @@ class Haxe < Formula
           static function main() Console.log("Hello world!");
       }
     EOS
-    system "#{bin}haxe", "-js", "out.js", "-main", "HelloWorld"
+    system bin"haxe", "-js", "out.js", "-main", "HelloWorld"
 
     cmd = if OS.mac?
       "osascript -so -lJavaScript out.js 2>&1"

@@ -38,6 +38,6 @@ class Smake < Formula
   end
 
   test do
-    system "#{bin}/smake", "-version"
+    system bin/"smake", "-version"
   end
 end

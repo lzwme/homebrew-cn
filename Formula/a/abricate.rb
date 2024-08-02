@@ -165,7 +165,7 @@ class Abricate < Formula
   end
 
   def post_install
-    system "#{bin}abricate", "--setupdb"
+    system bin"abricate", "--setupdb"
   end
 
   test do

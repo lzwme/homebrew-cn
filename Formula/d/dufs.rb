@@ -26,7 +26,7 @@ class Dufs < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
+      exec bin"dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
     end
 
     sleep 2

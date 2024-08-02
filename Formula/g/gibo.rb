@@ -29,7 +29,7 @@ class Gibo < Formula
   end
 
   test do
-    system "#{bin}gibo", "update"
+    system bin"gibo", "update"
     assert_includes shell_output("#{bin}gibo dump Python"), "Python.gitignore"
 
     assert_match version.to_s, shell_output("#{bin}gibo version")

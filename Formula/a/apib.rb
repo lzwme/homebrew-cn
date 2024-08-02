@@ -32,6 +32,6 @@ class Apib < Formula
   end
 
   test do
-    system "#{bin}apib", "-c 1", "-d 1", "https:www.google.com"
+    system bin"apib", "-c 1", "-d 1", "https:www.google.com"
   end
 end

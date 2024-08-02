@@ -47,6 +47,6 @@ class Abook < Formula
   end
 
   test do
-    system "#{bin}/abook", "--formats"
+    system bin/"abook", "--formats"
   end
 end

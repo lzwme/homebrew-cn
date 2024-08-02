@@ -1,21 +1,21 @@
 class PhpAT56Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:secure.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchive30e5da4b4bf8604149f19d4f73ff2220da3205aa.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchivede417b2a04e4bc04f59e3a214ac2158f8becdc4f.tar.gz"
   version "5.6.40"
-  sha256 "63619b43de54f884a87f638a41f827c1b978ee3deaa24e0266922f6ce49a78f6"
+  sha256 "897fe10215996e84b9db1f2a4cf9f1d11fd0ba70151e74e5adc780aebf07f2b8"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 4
-    sha256 arm64_sonoma:   "02dc639ab5f85e64c4586bfdae0a4dd9c67f18af102da4ef1aa4796c9f717c8d"
-    sha256 arm64_ventura:  "870a2fa564c691b50709ad74c68e731a7b403ee235097f9187ad9680995687e9"
-    sha256 arm64_monterey: "ac55ed78ffceda24b10bba88f94f1d00db84649387b18122b359494563d9d8ec"
-    sha256 ventura:        "397280e0ac1384c231ed5a2ff5fff1b1ffac8a08d111c99d757704358e98ce49"
-    sha256 monterey:       "1b9beaa82e3fad32629e5410fca11573c78ef5b84793d2de642e265bd705166b"
-    sha256 x86_64_linux:   "583aa8f31115046c02c23f2b5f86a55e813551a56f9a84be453bd3660dd2b948"
+    rebuild 5
+    sha256 arm64_sonoma:   "937d2b1c6db7ae0de2fd14d3b03306fd671bfcb4cc9773c5c3361215da4e28f5"
+    sha256 arm64_ventura:  "146f11c47d14b4526bbb24ed8fa09bfd0b4b0cb40634220925cfeae5590f9e4b"
+    sha256 arm64_monterey: "bcabf2548cc1729440baa4f4429feabbac3cf72bc86990e6d306a978a1b87e18"
+    sha256 ventura:        "a876c54f19ba624b6a80913b334bbdee93e6908f9e860f08016609b22b691eb1"
+    sha256 monterey:       "3bd559eccd8c355d4bdcfdf3da7eb3d58fcf4cd137eb333b99c8f0e25d407376"
+    sha256 x86_64_linux:   "5cd6c173168c7fa19de8f4513880077074edeafd317a6bd803439fbe35fadeb7"
   end
 
   keg_only :versioned_formula
@@ -72,6 +72,7 @@ class PhpAT56Zts < Formula
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
       ENV.append "CFLAGS", "-Wno-implicit-int"
+      ENV.append "CFLAGS", "-Wno-int-conversion"
     end
 
     # Workaround for https:bugs.php.net80310

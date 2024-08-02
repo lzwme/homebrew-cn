@@ -13,13 +13,14 @@ class Dagger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4de8a557fe0bf44695e8b778732e32e41cf56b404f0e805da9b5ab2b1f5ac022"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a016a56f9d9557bd4cc864c7f86cc4d5d4f3fd286a1497e525992bf0dfe28b3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ec6e62a4243ac2c7fbbd6f9cccd5923eacfe251b4f9a52da2f501ce845a9c84"
-    sha256 cellar: :any_skip_relocation, sonoma:         "037d63ffb8042bd3eafa0f8b13d41392734d0d84d175b09213dcdc5381dcfdc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "b788c0f1adc5871192d2fc9baa5db7e823d50f7fde74a8d7cca8e151a7c5d1b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc563117625e31b2361070b2d650e858399e1971cf1936a8919267599f6e4c3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45df262b0c439cd2afefebceb10cba1ab46fbdc24b6b53a9a6920a293ff2dac3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d39849750406ea51e2b81788ec20c29d31ddfa53e481ab6bef08f456dddcd476"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7ce74b8f856df88df8ecf59c657b43cb7f9eb1e7d5ae744613f136e1e3cc403"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5cc989986752b75c8511cb3d60bb2ab1b72292b35f1f71641fbdd09344069ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02e8ab09556a548f653ad46ec7583dc9e43e2d35f641b50d27b5c111abf3a5b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "41d13b2f2de5e083e7a7788c92db2aec47a95cd2850a1c729ca5aeaf900bec9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5b64738c8d4626584211f0b015f2c14c53ff060e8b637e2e30071b04d715afc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef9250fa8a591b153d2bf8c48dfef72d3406f6d8daa57ec68d5d0f2242f5383"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class Dagger < Formula
     ldflags = %W[
       -s -w
       -X github.comdaggerdaggerengine.Version=v#{version}
+      -X github.comdaggerdaggerengine.Tag=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmddagger"
 

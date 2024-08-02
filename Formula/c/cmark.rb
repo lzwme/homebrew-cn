@@ -29,7 +29,7 @@ class Cmark < Formula
   end
 
   test do
-    output = pipe_output("#{bin}cmark", "*hello, world*")
+    output = pipe_output(bin"cmark", "*hello, world*")
     assert_equal "<p><em>hello, world<em><p>", output.chomp
   end
 end

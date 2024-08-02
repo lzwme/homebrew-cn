@@ -14,6 +14,6 @@ class Selecta < Formula
   end
 
   test do
-    system "#{bin}selecta", "--version"
+    system bin"selecta", "--version"
   end
 end

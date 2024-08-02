@@ -47,6 +47,6 @@ class Depqbf < Formula
   end
 
   test do
-    system "#{bin}depqbf", "-h"
+    system bin"depqbf", "-h"
   end
 end

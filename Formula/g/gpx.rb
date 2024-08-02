@@ -29,6 +29,6 @@ class Gpx < Formula
 
   test do
     (testpath"test.gcode").write("G28 X Y Z")
-    system "#{bin}gpx", "test.gcode"
+    system bin"gpx", "test.gcode"
   end
 end

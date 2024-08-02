@@ -33,7 +33,7 @@ class Rig < Formula
   end
 
   test do
-    system "#{bin}/rig"
+    system bin/"rig"
   end
 end
 

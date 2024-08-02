@@ -14,6 +14,6 @@ class Spark < Formula
   end
 
   test do
-    system "#{bin}spark"
+    system bin"spark"
   end
 end

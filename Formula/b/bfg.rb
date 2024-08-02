@@ -25,6 +25,6 @@ class Bfg < Formula
   end
 
   test do
-    system "#{bin}/bfg"
+    system bin/"bfg"
   end
 end

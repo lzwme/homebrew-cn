@@ -41,7 +41,7 @@ class Gpsim < Formula
   end
 
   test do
-    system "#{bin}/gpsim", "--version"
+    system bin/"gpsim", "--version"
   end
 end
 

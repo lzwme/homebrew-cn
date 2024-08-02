@@ -39,6 +39,6 @@ class Rancid < Formula
       RCSSYS=git; export RCSSYS
       LIST_OF_GROUPS="backbone aggregation switches"
     EOS
-    system "#{bin}/rancid-cvs", "-f", testpath/"rancid.conf"
+    system bin/"rancid-cvs", "-f", testpath/"rancid.conf"
   end
 end

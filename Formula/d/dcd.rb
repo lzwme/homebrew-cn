@@ -40,12 +40,12 @@ class Dcd < Formula
     # spawn a server, using a non-default port to avoid
     # clashes with pre-existing dcd-server instances
     server = fork do
-      exec "#{bin}dcd-server", "-p", port.to_s
+      exec bin"dcd-server", "-p", port.to_s
     end
     # Give it generous time to load
     sleep 0.5
     # query the server from a client
-    system "#{bin}dcd-client", "-q", "-p", port.to_s
+    system bin"dcd-client", "-q", "-p", port.to_s
   ensure
     Process.kill "TERM", server
     Process.wait server

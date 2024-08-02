@@ -39,6 +39,6 @@ class Gtmess < Formula
   end
 
   test do
-    system "#{bin}gtmess", "--version"
+    system bin"gtmess", "--version"
   end
 end

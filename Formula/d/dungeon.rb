@@ -45,7 +45,7 @@ class Dungeon < Formula
 
   test do
     require "open3"
-    Open3.popen3("#{bin}dungeon") do |stdin, stdout, _|
+    Open3.popen3(bin"dungeon") do |stdin, stdout, _|
       stdin.close
       assert_match " Welcome to Dungeon.\t\t\t", stdout.read
     end

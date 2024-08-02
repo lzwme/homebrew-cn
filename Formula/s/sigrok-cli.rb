@@ -50,6 +50,6 @@ class SigrokCli < Formula
 
   test do
     # Make sure that we can capture samples from the demo device
-    system "#{bin}/sigrok-cli", "-d", "demo", "--samples", "1"
+    system bin/"sigrok-cli", "-d", "demo", "--samples", "1"
   end
 end

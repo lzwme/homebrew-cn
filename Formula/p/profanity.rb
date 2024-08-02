@@ -4,16 +4,16 @@ class Profanity < Formula
   url "https:profanity-im.github.iotarballsprofanity-0.14.0.tar.gz"
   sha256 "fd23ffd38a31907974a680a3900c959e14d44e16f1fb7df2bdb7f6c67bd7cf7f"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 arm64_sonoma:   "3c6edaa4c1aaf06a4db21ea71e9c8d3f82187e0ace35c9813136c0e1164e479d"
-    sha256 arm64_ventura:  "0abe70541f49da406e708d83fda1692aa020c7942b44934d93555da080bcae22"
-    sha256 arm64_monterey: "e062da3abfb99bcbba595ffd8a759b3aac43d539d76d57dc26340025c5a25367"
-    sha256 sonoma:         "bc25e571d1887a3464dcca4f8d9bdfc10fce9e3e2769ba28b7765c612d3e5f79"
-    sha256 ventura:        "6fc7f42a211ebcd9257ba509ea6a9327ce531ad42227c1d59857c468b8adfc52"
-    sha256 monterey:       "6f626bcec863159279cca047f5b2e8bf5bcc2dc74603ffd065a8d0ce7c786747"
-    sha256 x86_64_linux:   "da7113532893f9b7ff5fefa25c8f58e6aa757b6eec6476747f23ebb1125992c2"
+    sha256 arm64_sonoma:   "785c5656009a9c7bafa360970213ae1ab6b4d10a29070aaca0c8888f471b31fe"
+    sha256 arm64_ventura:  "bd357e54c2386698c759f54a6acde769e905b5bebf4b97956e058d295ee44547"
+    sha256 arm64_monterey: "3287c963e410993f6cdee0e15b8d7f0d5169dfd6b21e951d1f3b303c427c28a3"
+    sha256 sonoma:         "7f8cc373092a650e59604a08b8815a32dfa4d0c52ccea43e34ed91d4a2e9fc24"
+    sha256 ventura:        "fdd1827ab4303299262306ca8170692f9caf25e02e65a10fd8d01055644b9ad5"
+    sha256 monterey:       "9d1e8c9343b3fa5b351cfb2e8482e65c4d236a342f438c8781c98b0377043b53"
+    sha256 x86_64_linux:   "16dd29f3802c7ccf9930e4ecc65a981c70233404e617f90cdf21b07f66c621a3"
   end
 
   head do
@@ -25,6 +25,7 @@ class Profanity < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "libomemo-c" => :build
   depends_on "pkg-config" => :build
 
   depends_on "curl"
@@ -33,7 +34,6 @@ class Profanity < Formula
   depends_on "gpgme"
   depends_on "libgcrypt"
   depends_on "libotr"
-  depends_on "libsignal-protocol-c"
   depends_on "libstrophe"
   depends_on "python@3.12"
   depends_on "readline"
@@ -56,14 +56,14 @@ class Profanity < Formula
     # We need to pass `BREW` to `configure` to make sure it can be found inside the sandbox in non-default
     # prefixes. `configure` knows to check `opthomebrew` and `usrlocal`, but the sanitised build
     # environment will prevent any other `brew` installations from being found.
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--enable-python-plugins",
-                          "BREW=#{HOMEBREW_BREW_FILE}"
+                          "BREW=#{HOMEBREW_BREW_FILE}",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    system "#{bin}profanity", "-v"
+    system bin"profanity", "-v"
   end
 end

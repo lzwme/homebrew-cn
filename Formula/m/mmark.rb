@@ -1,18 +1,18 @@
 class Mmark < Formula
   desc "Powerful markdown processor in Go geared towards the IETF"
   homepage "https:mmark.miek.nl"
-  url "https:github.commmarkdownmmarkarchiverefstagsv2.2.43.tar.gz"
-  sha256 "9f672c36a65dd8013f416ab8e7f85b0143cf7e92af6ba3f965163cffc5299262"
+  url "https:github.commmarkdownmmarkarchiverefstagsv2.2.44.tar.gz"
+  sha256 "c2bab6fcb68fbf2c1fa0763948d0d5a18f00734b29d0f4b1894ff1991739aff7"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1691c4e18037d68503a15db9deebdfc46c96a3614491be9600edf8fbba00078a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1691c4e18037d68503a15db9deebdfc46c96a3614491be9600edf8fbba00078a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1691c4e18037d68503a15db9deebdfc46c96a3614491be9600edf8fbba00078a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a8dfb8f8f5a5ef67bf931bcc2c122ab7275e7145da348df8acb0e38c93477f64"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8dfb8f8f5a5ef67bf931bcc2c122ab7275e7145da348df8acb0e38c93477f64"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8dfb8f8f5a5ef67bf931bcc2c122ab7275e7145da348df8acb0e38c93477f64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f41fd0f96801cfe4bf957eb19ed7446f609900bf347665e2084ae4352bd3f223"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acb13a00ba530e40a58cba93e5cafeebbe66d2ffa3e9e753536acfadf0615e1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acb13a00ba530e40a58cba93e5cafeebbe66d2ffa3e9e753536acfadf0615e1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "acb13a00ba530e40a58cba93e5cafeebbe66d2ffa3e9e753536acfadf0615e1c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6f7f5fc40b7ca933125c35925aadd83c9a1067d99897aa49db335479d8ad2c5a"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f7f5fc40b7ca933125c35925aadd83c9a1067d99897aa49db335479d8ad2c5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f7f5fc40b7ca933125c35925aadd83c9a1067d99897aa49db335479d8ad2c5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12230718cfdfa561fbf1c263d3c1b58dd38701f239192374f4e86ead69dfa6bf"
   end
 
   depends_on "go" => :build

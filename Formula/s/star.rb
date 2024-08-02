@@ -30,7 +30,7 @@ class Star < Formula
   end
 
   test do
-    system "#{bin}/star", "--version"
+    system bin/"star", "--version"
 
     (testpath/"test").write("Hello Homebrew!")
     system bin/"star", "-c", "-z", "-v", "file=test.tar.gz", "test"

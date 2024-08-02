@@ -23,6 +23,6 @@ class Yaegi < Formula
   end
 
   test do
-    assert_match "4", pipe_output("#{bin}yaegi", "println(3 + 1)", 0)
+    assert_match "4", pipe_output(bin"yaegi", "println(3 + 1)", 0)
   end
 end

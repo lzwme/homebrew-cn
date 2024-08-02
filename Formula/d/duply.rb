@@ -29,6 +29,6 @@ class Duply < Formula
   end
 
   test do
-    system "#{bin}/duply", "-v"
+    system bin/"duply", "-v"
   end
 end

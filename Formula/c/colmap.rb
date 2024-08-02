@@ -56,7 +56,7 @@ class Colmap < Formula
   end
 
   test do
-    system "#{bin}colmap", "database_creator", "--database_path", (testpath  "db")
+    system bin"colmap", "database_creator", "--database_path", (testpath  "db")
     assert_path_exists (testpath  "db")
   end
 end

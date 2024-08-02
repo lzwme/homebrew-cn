@@ -68,8 +68,8 @@ class YoutubeDl < Formula
 
   test do
     # commit history of homebrew-core repo
-    system "#{bin}youtube-dl", "--simulate", "https:www.youtube.comwatch?v=pOtd1cbOP7k"
+    system bin"youtube-dl", "--simulate", "https:www.youtube.comwatch?v=pOtd1cbOP7k"
     # homebrew playlist
-    system "#{bin}youtube-dl", "--simulate", "--yes-playlist", "https:www.youtube.comwatch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
+    system bin"youtube-dl", "--simulate", "--yes-playlist", "https:www.youtube.comwatch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
   end
 end

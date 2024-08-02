@@ -55,7 +55,7 @@ class Crystalline < Formula
       #{payload}
     LSP_REQUEST
 
-    output = pipe_output("#{bin}crystalline", request, 0)
+    output = pipe_output(bin"crystalline", request, 0)
     assert_match "Content-Length", output
   end
 end

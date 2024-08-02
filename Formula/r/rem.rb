@@ -31,6 +31,6 @@ class Rem < Formula
   end
 
   test do
-    system "#{bin}rem", "version"
+    system bin"rem", "version"
   end
 end

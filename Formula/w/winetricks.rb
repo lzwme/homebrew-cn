@@ -25,6 +25,6 @@ class Winetricks < Formula
   end
 
   test do
-    system "#{bin}winetricks", "--version"
+    system bin"winetricks", "--version"
   end
 end

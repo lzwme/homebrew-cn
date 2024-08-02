@@ -34,7 +34,7 @@ class Genext2fs < Formula
   test do
     rootpath = testpath"img"
     (rootpath"foo.txt").write "hello world"
-    system "#{bin}genext2fs", "--root", rootpath,
+    system bin"genext2fs", "--root", rootpath,
                                "--block-size", "4096",
                                "--size-in-blocks", "100",
                                "#{testpath}test.img"

@@ -32,7 +32,7 @@ class Astyle < Formula
 
   test do
     (testpath/"test.c").write("int main(){return 0;}\n")
-    system "#{bin}/astyle", "--style=gnu", "--indent=spaces=4",
+    system bin/"astyle", "--style=gnu", "--indent=spaces=4",
            "--lineend=linux", "#{testpath}/test.c"
     assert_equal File.read("test.c"), <<~EOS
       int main()

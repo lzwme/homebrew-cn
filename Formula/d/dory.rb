@@ -31,7 +31,7 @@ class Dory < Formula
   test do
     shell_output(bin"dory")
 
-    system "#{bin}dory", "config-file"
+    system bin"dory", "config-file"
     assert_predicate testpath".dory.yml", :exist?, "Dory could not generate config file"
 
     version = shell_output(bin"dory version")

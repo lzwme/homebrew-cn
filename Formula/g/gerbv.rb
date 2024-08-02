@@ -43,7 +43,7 @@ class Gerbv < Formula
 
   test do
     # executable (GUI) test
-    system "#{bin}gerbv", "--version"
+    system bin"gerbv", "--version"
     # API test
     (testpath"test.c").write <<~EOS
       #include <gerbv.h>

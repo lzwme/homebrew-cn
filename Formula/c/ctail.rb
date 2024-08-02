@@ -43,6 +43,6 @@ class Ctail < Formula
   end
 
   test do
-    system "#{bin}ctail", "-h"
+    system bin"ctail", "-h"
   end
 end

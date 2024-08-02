@@ -33,6 +33,6 @@ class Xclip < Formula
   end
 
   test do
-    system "#{bin}xclip", "-version"
+    system bin"xclip", "-version"
   end
 end

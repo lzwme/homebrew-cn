@@ -32,7 +32,7 @@ class Tag < Formula
     test_tag = "test_tag"
     test_file = Pathname.pwd+"test_file"
     touch test_file
-    system "#{bin}tag", "--add", test_tag, test_file
+    system bin"tag", "--add", test_tag, test_file
     assert_equal test_tag, `#{bin}tag --list --no-name #{test_file}`.chomp
   end
 end

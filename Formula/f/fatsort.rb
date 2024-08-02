@@ -32,6 +32,6 @@ class Fatsort < Formula
   end
 
   test do
-    system "#{bin}/fatsort", "--version"
+    system bin/"fatsort", "--version"
   end
 end

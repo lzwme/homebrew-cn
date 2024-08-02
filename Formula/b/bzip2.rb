@@ -61,7 +61,7 @@ class Bzip2 < Formula
 
     testfilepath.write "TEST CONTENT"
 
-    system "#{bin}/bzip2", testfilepath
+    system bin/"bzip2", testfilepath
     system "#{bin}/bunzip2", zipfilepath
 
     assert_equal "TEST CONTENT", testfilepath.read

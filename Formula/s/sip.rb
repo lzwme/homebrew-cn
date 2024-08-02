@@ -78,6 +78,6 @@ class Sip < Formula
       %End
     EOS
 
-    system "#{bin}sip-install", "--target-dir", "."
+    system bin"sip-install", "--target-dir", "."
   end
 end

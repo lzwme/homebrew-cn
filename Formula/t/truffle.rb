@@ -1,5 +1,3 @@
-require "language/node"
-
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
@@ -8,20 +6,20 @@ class Truffle < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "bf976e193aaab626da6ba2c5153e2c73cb8b4cca2085a4eddd0d1af149d35a91"
-    sha256                               arm64_ventura:  "e25bde3e668ae14b3548da278b94470c6331c1aab5ad70e12fe84a8a5283054a"
-    sha256                               arm64_monterey: "7c9383f39c371ec41e8423c6238fefb205a5a4473b780813343d74393ec220a8"
-    sha256                               sonoma:         "4ba206f662ce3535a93392f257a6dd1a53b68c94afb91800bf8194db088bf782"
-    sha256                               ventura:        "3d8364ecd6eaef5f0987102fdbd3edfa82553a4c47cadd97619abf548267c64f"
-    sha256                               monterey:       "00a57fe89b291ec2b55c81c88e98c72b238690abbff59a5f0f6ef85545b6ad62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8dae03cb8c5330f85e9b7b81937b3ea5100309f64e9990b8def34242ad5bd24"
+    rebuild 2
+    sha256                               arm64_sonoma:   "92ad4c83b95c30319d61cfe06957a32f10b288c01cbcc8fec77dd1377d2f53ad"
+    sha256                               arm64_ventura:  "7e859053402f47674c30baebf3b5aa05ad21609471ab14d222dd9aee2b62a3b4"
+    sha256                               arm64_monterey: "dc749938200b0b6aed95ac1103daf87ac555b729862e55767163936f0b1c26e8"
+    sha256                               sonoma:         "3f7dbf05369a67669711f1d7358446c46380a5caf38b599d1653156441d5e60e"
+    sha256                               ventura:        "7fda9c9211a1884fe42f87dcdfe896eb35d8e5dd332e324d0fb25230417e3c1a"
+    sha256                               monterey:       "ea609ec0150beda892f4bdad71aff910c78fbe91338798e8a6a65c37a0434f11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db01e2a5e1d9ab923419eafc7a0588dd02bca55f62310277838a41d4cc5c653"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec/"bin/*"]
 
     truffle_dir = libexec/"lib/node_modules/truffle"

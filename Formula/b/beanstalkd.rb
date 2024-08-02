@@ -30,6 +30,6 @@ class Beanstalkd < Formula
   end
 
   test do
-    system "#{bin}beanstalkd", "-v"
+    system bin"beanstalkd", "-v"
   end
 end

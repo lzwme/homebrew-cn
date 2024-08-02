@@ -56,7 +56,7 @@ class EasyrpgPlayer < Formula
     if OS.mac?
       prefix.install "buildEasyRPG Player.app"
       bin.write_exec_script "#{prefix}EasyRPG Player.appContentsMacOSEasyRPG Player"
-      mv "#{bin}EasyRPG Player", "#{bin}easyrpg-player"
+      mv "#{bin}EasyRPG Player", bin"easyrpg-player"
     end
   end
 

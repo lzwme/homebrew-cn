@@ -20,6 +20,6 @@ class Tailor < Formula
 
   test do
     (testpath"Test.swift").write "import Foundation\n"
-    system "#{bin}tailor", testpath"Test.swift"
+    system bin"tailor", testpath"Test.swift"
   end
 end

@@ -37,6 +37,6 @@ class Guetzli < Formula
   end
 
   test do
-    resource("test_image").stage { system "#{bin}guetzli", "bees.png", "bees.jpg" }
+    resource("test_image").stage { system bin"guetzli", "bees.png", "bees.jpg" }
   end
 end

@@ -41,7 +41,7 @@ class Rpl < Formula
   test do
     (testpath"test").write "I like water."
 
-    system "#{bin}rpl", "-v", "water", "beer", "test"
+    system bin"rpl", "-v", "water", "beer", "test"
     assert_equal "I like beer.", (testpath"test").read
   end
 end

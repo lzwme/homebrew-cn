@@ -27,6 +27,6 @@ class Wagyu < Formula
   end
 
   test do
-    system "#{bin}wagyu", "bitcoin"
+    system bin"wagyu", "bitcoin"
   end
 end

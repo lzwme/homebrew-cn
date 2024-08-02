@@ -19,6 +19,6 @@ class BrewPhpSwitcher < Formula
 
   test do
     assert_match "usage: brew-php-switcher version",
-                 shell_output("#{bin}brew-php-switcher")
+                 shell_output(bin"brew-php-switcher")
   end
 end

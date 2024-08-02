@@ -52,6 +52,6 @@ class Cdargs < Formula
   end
 
   test do
-    system "#{bin}cdargs", "--version"
+    system bin"cdargs", "--version"
   end
 end

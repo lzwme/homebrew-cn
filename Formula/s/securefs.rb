@@ -43,6 +43,6 @@ class Securefs < Formula
   end
 
   test do
-    system "#{bin}securefs", "version" # The sandbox prevents a more thorough test
+    system bin"securefs", "version" # The sandbox prevents a more thorough test
   end
 end

@@ -46,7 +46,7 @@ class Task < Formula
 
   test do
     touch testpath".taskrc"
-    system "#{bin}task", "add", "Write", "a", "test"
+    system bin"task", "add", "Write", "a", "test"
     assert_match "Write a test", shell_output("#{bin}task list")
   end
 end

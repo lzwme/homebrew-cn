@@ -2,27 +2,26 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https:www.rust-lang.org"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
 
   stable do
-    url "https:static.rust-lang.orgdistrustc-1.79.0-src.tar.gz"
-    sha256 "172ecf3c7d1f9d9fb16cd2a628869782670416ded0129e524a86751f961448c0"
+    url "https:static.rust-lang.orgdistrustc-1.80.0-src.tar.gz"
+    sha256 "6f606c193f230f6b2cae4576f7b24d50f5f9b25dff11dbf9b22f787d3521d672"
 
     # From https:github.comrust-langrusttree#{version}srctools
     resource "cargo" do
-      url "https:github.comrust-langcargoarchiverefstags0.80.0.tar.gz"
-      sha256 "542efc5daa159e2942d454eb2815247a96589363977429bd473f8cac8a55636e"
+      url "https:github.comrust-langcargoarchiverefstags0.81.0.tar.gz"
+      sha256 "5d2ea954f1a8bf03389fe2cefc5603de180a0c0010aa66628a325007216ef862"
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4a5bb56c4bd0737dc6d417ae69eb67598f62e0a31d95bed03909ef2bc23bc204"
-    sha256 cellar: :any,                 arm64_ventura:  "f9545c1caee9d72c24436f8c41bcb934c45fa3ea2711a18709995f137e1e25bb"
-    sha256 cellar: :any,                 arm64_monterey: "a1a7f4c3cdc96743303abc305774eb8c3393bd46dfdecc799376670e0fec86b6"
-    sha256 cellar: :any,                 sonoma:         "b21989b2f4374a135740f8e6303e79dbfb52ffddcd45a0abfe966acf1d0f9e8e"
-    sha256 cellar: :any,                 ventura:        "4568c49228bab0460fc51a2f8347e22f3c49af9c0912bfecb28539980adcde8f"
-    sha256 cellar: :any,                 monterey:       "a99f311afda7a84ba4fc2c3e21ea3ac4d847a3425a54dcb206308dd72fa768b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e71e3052cde5118d9aee9667e8493e71cea39112ba3d69d6bb468bb2951e0f68"
+    sha256 cellar: :any,                 arm64_sonoma:   "76963565a1d975a3f86c4c26a411a2c626cbeb31962fcb50b0716cfee71ec769"
+    sha256 cellar: :any,                 arm64_ventura:  "9c773d9dc1a08184930a34274c33c5bcadf9a8c0473df8679a6273a37b947753"
+    sha256 cellar: :any,                 arm64_monterey: "61b535aea1f733208f03cac7a33f64d653d458d42d23e69885d7dcbbb07f1269"
+    sha256 cellar: :any,                 sonoma:         "4dfe00cf886618532cdbbdb4731ba5e2b555b12d01ebf37f4c5f59180caad139"
+    sha256 cellar: :any,                 ventura:        "603a746a26c16ae1c502a3865ec776b8e450cc56dc08a0f40d85d71070a6d378"
+    sha256 cellar: :any,                 monterey:       "70e42a5876cbf15a8fbdfbb0278a02993932aa269aab2c6d70b20adaf5dae2be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08661a1ccfc53ff2b7693c56ea2051fc7fa51435574f2173db55c826834c39e8"
   end
 
   head do
@@ -44,32 +43,35 @@ class Rust < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  # From https:github.comrust-langrustblob#{version}srcstage0.json
+  # From https:github.comrust-langrustblob#{version}srcstage0
   resource "cargobootstrap" do
     on_macos do
       on_arm do
-        url "https:static.rust-lang.orgdist2024-05-02cargo-1.78.0-aarch64-apple-darwin.tar.xz"
-        sha256 "76b9a39eea441b31c6b26cc58ebff7095a64bc60788254c2525e752a1149688d"
+        url "https:static.rust-lang.orgdist2024-06-13cargo-1.79.0-aarch64-apple-darwin.tar.xz"
+        sha256 "2cc674f17c18b0c01e0e5a8e5caedc26b0f499d2cc10605cf1a838e2cad9ef7d"
       end
       on_intel do
-        url "https:static.rust-lang.orgdist2024-05-02cargo-1.78.0-x86_64-apple-darwin.tar.xz"
-        sha256 "4d4078695265c8489ee5dfefd87d26caa1755a4f46f56f6f07f2b7b7292416c8"
+        url "https:static.rust-lang.orgdist2024-06-13cargo-1.79.0-x86_64-apple-darwin.tar.xz"
+        sha256 "e1326c13b7437a72e061a2d662400c114ef87b73c45ef8823ea1b2bdc3140109"
       end
     end
 
     on_linux do
       on_arm do
-        url "https:static.rust-lang.orgdist2024-05-02cargo-1.78.0-aarch64-unknown-linux-gnu.tar.xz"
-        sha256 "5173f84a07d4cc6b19f27eda7464999c5886232ce8e54bf61b06617635d43fb9"
+        url "https:static.rust-lang.orgdist2024-06-13cargo-1.79.0-aarch64-unknown-linux-gnu.tar.xz"
+        sha256 "4ca5e9bd141b0111387ea1aa0355f87eb8d0da52fbc616cefa4ecde4997aa65b"
       end
       on_intel do
-        url "https:static.rust-lang.orgdist2024-05-02cargo-1.78.0-x86_64-unknown-linux-gnu.tar.xz"
-        sha256 "f8aacf7a101eb10dc000b8bf26de90a9d0ce678d02ccf70430ed20dd31ecec6b"
+        url "https:static.rust-lang.orgdist2024-06-13cargo-1.79.0-x86_64-unknown-linux-gnu.tar.xz"
+        sha256 "07fcadd27b645ad58ff4dae5ef166fd730311bbae8f25f6640fe1bfd2a1f3c3c"
       end
     end
   end
 
   def install
+    # relates to https:github.comrust-langrustpull126507
+    odie "bump to use libgit2 1.8" if version >= "1.81.0"
+
     # Ensure that the `openssl` crate picks up the intended library.
     # https:docs.rsopenssllatestopenssl#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -91,7 +93,7 @@ class Rust < Formula
     ENV.prepend_path "PATH", buildpath"cargobootstrapbin"
 
     cargo_src_path = buildpath"srctoolscargo"
-    cargo_src_path.rmtree
+    rm_r(cargo_src_path)
     resource("cargo").stage cargo_src_path
     if OS.mac?
       inreplace cargo_src_path"Cargo.toml",
@@ -134,12 +136,12 @@ class Rust < Formula
     system "make", "install"
 
     (lib"rustlibsrcrust").install "library"
-    rm_f [
+    rm([
       bin.glob("*.old"),
       lib"rustlibinstall.log",
       lib"rustlibuninstall.sh",
       (lib"rustlib").glob("manifest-*"),
-    ]
+    ])
   end
 
   def post_install

@@ -34,6 +34,6 @@ class Sipcalc < Formula
   end
 
   test do
-    system "#{bin}/sipcalc", "-h"
+    system bin/"sipcalc", "-h"
   end
 end

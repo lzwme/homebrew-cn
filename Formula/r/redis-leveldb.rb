@@ -30,6 +30,6 @@ class RedisLeveldb < Formula
   end
 
   test do
-    system "#{bin}redis-leveldb", "-h"
+    system bin"redis-leveldb", "-h"
   end
 end

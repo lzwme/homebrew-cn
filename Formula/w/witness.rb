@@ -38,7 +38,7 @@ class Witness < Formula
 
     system "openssl", "genrsa", "-out", "buildkey.pem", "2048"
     system "openssl", "rsa", "-in", "buildkey.pem", "-outform", "PEM", "-pubout", "-out", "buildpublic.pem"
-    system "#{bin}witness", "run", "-s", "build", "-a", "environment", "-k", "buildkey.pem", "-o",
+    system bin"witness", "run", "-s", "build", "-a", "environment", "-k", "buildkey.pem", "-o",
            "build-attestation.json"
 
     output = Base64.decode64(JSON.parse((testpath"build-attestation.json").read)["payload"])

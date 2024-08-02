@@ -24,6 +24,6 @@ class Asimov < Formula
 
   test do
     assert_match "Finding dependency directories with corresponding definition files…",
-                 shell_output("#{bin}asimov")
+                 shell_output(bin"asimov")
   end
 end

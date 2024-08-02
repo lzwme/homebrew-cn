@@ -30,7 +30,7 @@ class Flamebearer < Formula
 
     assert_match "Processed V8 log",
       pipe_output(
-        "#{bin}flamebearer",
+        bin"flamebearer",
         shell_output("#{Formula["node"].bin}node --prof-process --preprocess -j #{logs.join(" ")}"),
       )
 

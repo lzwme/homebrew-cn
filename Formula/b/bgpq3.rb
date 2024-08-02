@@ -35,7 +35,7 @@ class Bgpq3 < Formula
   end
 
   test do
-    system "#{bin}bgpq3", "AS-ANY"
+    system bin"bgpq3", "AS-ANY"
   end
 end
 

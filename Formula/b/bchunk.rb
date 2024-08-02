@@ -43,7 +43,7 @@ class Bchunk < Formula
 
     touch testpath"foo.bin"
 
-    system "#{bin}bchunk", "foo.bin", "foo.cue", "foo"
+    system bin"bchunk", "foo.bin", "foo.cue", "foo"
     assert_predicate testpath"foo01.iso", :exist?
   end
 end

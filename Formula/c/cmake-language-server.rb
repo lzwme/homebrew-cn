@@ -52,7 +52,7 @@ class CmakeLanguageServer < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output("#{bin}cmake-language-server", input)
+    output = pipe_output(bin"cmake-language-server", input)
 
     assert_match(^Content-Length: \d+i, output)
 

@@ -44,7 +44,7 @@ class Dtrx < Formula
       refute_predicate testpath/f, :exist?, "Text files should have been removed!"
     end
 
-    system "#{bin}/dtrx", "--flat", "test.zip"
+    system bin/"dtrx", "--flat", "test.zip"
 
     %w[test1 test2 test3].each do |f|
       assert_predicate testpath/f, :exist?, "Failure unzipping test.zip!"

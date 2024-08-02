@@ -28,6 +28,6 @@ class Wakeonlan < Formula
   end
 
   test do
-    system "#{bin}wakeonlan", "--version"
+    system bin"wakeonlan", "--version"
   end
 end

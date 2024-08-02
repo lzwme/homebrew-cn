@@ -31,6 +31,6 @@ class Tnef < Formula
   end
 
   test do
-    system "#{bin}tnef", "--version"
+    system bin"tnef", "--version"
   end
 end

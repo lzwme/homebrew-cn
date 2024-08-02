@@ -50,7 +50,7 @@ class Gops < Formula
     pid = fork { exec ".brew-test" }
     sleep 1
     begin
-      assert_match(\d+, shell_output("#{bin}gops"))
+      assert_match(\d+, shell_output(bin"gops"))
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

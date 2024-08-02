@@ -25,7 +25,7 @@ class Cloudlist < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}cloudlist -version 2>&1")
 
-    output = shell_output "#{bin}cloudlist", 1
+    output = shell_output bin"cloudlist", 1
     assert_match output, "invalid provider configuration file provided"
   end
 end

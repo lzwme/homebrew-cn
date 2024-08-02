@@ -27,7 +27,7 @@ class BazelRemote < Formula
     ENV["BAZEL_REMOTE_MAX_SIZE"] = "10"
 
     begin
-      pid = fork { exec "#{bin}bazel-remote" }
+      pid = fork { exec bin"bazel-remote" }
       sleep 2
       assert_predicate testpath"test", :exist?, "Failed to create test directory"
     ensure

@@ -53,6 +53,6 @@ class Asn1c < Formula
       END
     EOS
 
-    system "#{bin}asn1c", "test.asn1"
+    system bin"asn1c", "test.asn1"
   end
 end

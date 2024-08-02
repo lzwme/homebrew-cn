@@ -42,6 +42,6 @@ class Dwatch < Formula
 
   test do
     # '-h' is not actually an option, but it exits 0
-    system "#{bin}/dwatch", "-h"
+    system bin/"dwatch", "-h"
   end
 end

@@ -46,7 +46,7 @@ class Svg2pdf < Formula
 
   test do
     resource("svg.svg").stage do
-      system "#{bin}svg2pdf", "svg.svg", "test.pdf"
+      system bin"svg2pdf", "svg.svg", "test.pdf"
       assert_predicate Pathname.pwd"test.pdf", :exist?
     end
   end

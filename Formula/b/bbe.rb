@@ -31,6 +31,6 @@ class Bbe < Formula
   end
 
   test do
-    system "#{bin}/bbe", "--version"
+    system bin/"bbe", "--version"
   end
 end

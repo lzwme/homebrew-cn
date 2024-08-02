@@ -38,6 +38,6 @@ class Riemann < Formula
   end
 
   test do
-    system "#{bin}riemann", "-help", "0"
+    system bin"riemann", "-help", "0"
   end
 end

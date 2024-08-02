@@ -25,10 +25,10 @@ class Sourcekitten < Formula
   end
 
   test do
-    system "#{bin}sourcekitten", "version"
+    system bin"sourcekitten", "version"
     return if OS.mac? && MacOS::Xcode.version < 14
 
     ENV["IN_PROCESS_SOURCEKIT"] = "YES"
-    system "#{bin}sourcekitten", "syntax", "--text", "import Foundation  Hello World"
+    system bin"sourcekitten", "syntax", "--text", "import Foundation  Hello World"
   end
 end

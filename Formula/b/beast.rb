@@ -56,7 +56,7 @@ class Beast < Formula
       return
     end
 
-    system "#{bin}beast", "testUCRelaxedClockLogNormal.xml"
+    system bin"beast", "testUCRelaxedClockLogNormal.xml"
 
     %w[ops log trees].each do |ext|
       output = "testUCRelaxedClockLogNormal." + ext

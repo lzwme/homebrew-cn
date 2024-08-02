@@ -28,7 +28,7 @@ class Slowhttptest < Formula
   end
 
   test do
-    system "#{bin}slowhttptest", "-u", "https:google.com",
+    system bin"slowhttptest", "-u", "https:google.com",
                                   "-p", "1", "-r", "1", "-l", "1", "-i", "1"
 
     assert_match version.to_s, shell_output("#{bin}slowhttptest -h", 1)

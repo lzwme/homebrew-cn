@@ -65,6 +65,6 @@ class Fceux < Formula
     # "This application failed to start because no Qt platform plugin could be initialized."
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}fceux", "--help"
+    system bin"fceux", "--help"
   end
 end

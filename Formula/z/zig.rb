@@ -67,7 +67,7 @@ class Zig < Formula
           try stdout.print("Hello, world!", .{});
       }
     EOS
-    system "#{bin}zig", "build-exe", "hello.zig"
+    system bin"zig", "build-exe", "hello.zig"
     assert_equal "Hello, world!", shell_output(".hello")
 
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
@@ -80,7 +80,7 @@ class Zig < Formula
         return 0;
       }
     EOS
-    system "#{bin}zig", "cc", "hello.c", "-o", "hello"
+    system bin"zig", "cc", "hello.c", "-o", "hello"
     assert_equal "Hello, world!", shell_output(".hello")
   end
 end

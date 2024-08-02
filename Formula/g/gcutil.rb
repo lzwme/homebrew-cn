@@ -19,6 +19,6 @@ class Gcutil < Formula
   end
 
   test do
-    system "#{bin}/gcutil", "version"
+    system bin/"gcutil", "version"
   end
 end

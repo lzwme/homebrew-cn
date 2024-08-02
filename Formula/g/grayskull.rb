@@ -144,7 +144,7 @@ class Grayskull < Formula
   test do
     assert_equal version, shell_output("#{bin}grayskull --version").strip
 
-    system "#{bin}grayskull", "pypi", "grayskull"
+    system bin"grayskull", "pypi", "grayskull"
     assert_predicate testpath"grayskullmeta.yaml", :exist?
   end
 end

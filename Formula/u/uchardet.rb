@@ -27,6 +27,6 @@ class Uchardet < Formula
   end
 
   test do
-    assert_equal "ASCII", pipe_output("#{bin}/uchardet", "Homebrew").chomp
+    assert_equal "ASCII", pipe_output(bin/"uchardet", "Homebrew").chomp
   end
 end

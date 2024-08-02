@@ -32,7 +32,7 @@ class Atasm < Formula
 
   test do
     cd "#{doc}/examples" do
-      system "#{bin}/atasm", "-v", "test.m65", "-o/tmp/test.bin"
+      system bin/"atasm", "-v", "test.m65", "-o/tmp/test.bin"
     end
   end
 end

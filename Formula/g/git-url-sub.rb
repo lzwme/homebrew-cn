@@ -29,7 +29,7 @@ class GitUrlSub < Formula
   test do
     system "git", "init"
     system "git", "remote", "add", "origin", "foo"
-    system "#{bin}git-url-sub", "-c", "foo", "bar"
+    system bin"git-url-sub", "-c", "foo", "bar"
     assert_match(origin\s+bar \(fetch\), shell_output("git remote -v"))
   end
 end

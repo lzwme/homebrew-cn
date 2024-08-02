@@ -35,6 +35,6 @@ class Hashcash < Formula
   end
 
   test do
-    system "#{bin}/hashcash", "-mb10", "test@example.com"
+    system bin/"hashcash", "-mb10", "test@example.com"
   end
 end

@@ -63,6 +63,6 @@ class Aggregate < Formula
       10.1.3.0/25
     EOS
 
-    assert_equal expected_output, pipe_output("#{bin}/aggregate", test_input), "Test Failed"
+    assert_equal expected_output, pipe_output(bin/"aggregate", test_input), "Test Failed"
   end
 end

@@ -19,14 +19,14 @@ class Aicommits < Formula
   end
 
   test do
-    assert_match "The current directory must be a Git repository!", shell_output("#{bin}aicommits", 1)
+    assert_match "The current directory must be a Git repository!", shell_output(bin"aicommits", 1)
 
     system "git", "init"
     assert_match "No staged changes found. Stage your changes manually, or automatically stage all changes with the",
-      shell_output("#{bin}aicommits", 1)
+      shell_output(bin"aicommits", 1)
     touch "test.txt"
     system "git", "add", "test.txt"
     assert_match "Please set your OpenAI API key via `aicommits config set OPENAI_KEY=<your token>`",
-      shell_output("#{bin}aicommits", 1)
+      shell_output(bin"aicommits", 1)
   end
 end

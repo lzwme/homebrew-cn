@@ -32,7 +32,7 @@ class Detach < Formula
   end
 
   test do
-    system "#{bin}/detach", "-p", "#{testpath}/pid", "sh", "-c", "sleep 10"
+    system bin/"detach", "-p", "#{testpath}/pid", "sh", "-c", "sleep 10"
     pid = (testpath/"pid").read.to_i
     ppid = shell_output("ps -p #{pid} -o ppid=").to_i
     assert_equal 1, ppid

@@ -47,6 +47,6 @@ class Flactag < Formula
   end
 
   test do
-    system "#{bin}flactag"
+    system bin"flactag"
   end
 end

@@ -34,6 +34,6 @@ class Roundup < Formula
   end
 
   test do
-    system "#{bin}roundup", "-v"
+    system bin"roundup", "-v"
   end
 end

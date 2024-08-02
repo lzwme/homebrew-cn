@@ -57,6 +57,6 @@ class SpoofMac < Formula
   end
 
   test do
-    system "#{bin}spoof-mac", "list", "--wifi"
+    system bin"spoof-mac", "list", "--wifi"
   end
 end

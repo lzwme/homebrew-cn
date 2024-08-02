@@ -112,11 +112,11 @@ class Cvs < Formula
   test do
     cvsroot = testpath"cvsroot"
     cvsroot.mkpath
-    system "#{bin}cvs", "-d", cvsroot, "init"
+    system bin"cvs", "-d", cvsroot, "init"
 
     mkdir "cvsexample" do
       ENV["CVSROOT"] = cvsroot
-      system "#{bin}cvs", "import", "-m", "dir structure", "cvsexample", "homebrew", "start"
+      system bin"cvs", "import", "-m", "dir structure", "cvsexample", "homebrew", "start"
     end
   end
 end

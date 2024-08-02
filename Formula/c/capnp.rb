@@ -68,7 +68,7 @@ class Capnp < Formula
         email @2 :Text;
       }
     EOS
-    system "#{bin}capnp", "compile", "-oc++", testpath"person.capnp"
+    system bin"capnp", "compile", "-oc++", testpath"person.capnp"
 
     (testpath"test.cpp").write <<~EOS
       #include "person.capnp.h"

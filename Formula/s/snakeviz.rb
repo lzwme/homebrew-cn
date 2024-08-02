@@ -31,7 +31,7 @@ class Snakeviz < Formula
 
   test do
     require "cgi"
-    system "#{bin}/snakeviz", "--version"
+    system bin/"snakeviz", "--version"
     system "python3.12", "-m", "cProfile", "-o", "output.prof", "-m", "cProfile"
 
     port = free_port
@@ -39,7 +39,7 @@ class Snakeviz < Formula
     output_file = testpath/"output.prof"
 
     pid = fork do
-      exec "#{bin}/snakeviz", "--port", port.to_s, "--server", output_file
+      exec bin/"snakeviz", "--port", port.to_s, "--server", output_file
     end
     sleep 3
     output = shell_output("curl -s http://localhost:#{port}/snakeviz/#{CGI.escape output_file}")

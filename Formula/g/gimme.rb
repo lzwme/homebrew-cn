@@ -14,6 +14,6 @@ class Gimme < Formula
   end
 
   test do
-    system "#{bin}gimme", "-l"
+    system bin"gimme", "-l"
   end
 end

@@ -82,7 +82,7 @@ class Xsd < Formula
           return 0;
       }
     EOS
-    system "#{bin}xsd", "cxx-tree", schema
+    system bin"xsd", "cxx-tree", schema
     assert_predicate testpath"meaningoflife.hxx", :exist?
     assert_predicate testpath"meaningoflife.cxx", :exist?
     system ENV.cxx, "-o", "xsdtest", "xsdtest.cxx", "meaningoflife.cxx", "-std=c++11",

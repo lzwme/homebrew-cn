@@ -49,6 +49,6 @@ class Quasi88 < Formula
   end
 
   test do
-    system "#{bin}/quasi88", "-help"
+    system bin/"quasi88", "-help"
   end
 end

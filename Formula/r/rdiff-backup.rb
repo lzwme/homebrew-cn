@@ -32,6 +32,6 @@ class RdiffBackup < Formula
   end
 
   test do
-    system "#{bin}/rdiff-backup", "--version"
+    system bin/"rdiff-backup", "--version"
   end
 end

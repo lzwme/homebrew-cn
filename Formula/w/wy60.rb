@@ -29,6 +29,6 @@ class Wy60 < Formula
   end
 
   test do
-    system "#{bin}/wy60", "--version"
+    system bin/"wy60", "--version"
   end
 end

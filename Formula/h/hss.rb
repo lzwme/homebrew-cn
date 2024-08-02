@@ -35,7 +35,7 @@ class Hss < Formula
       end
       hss_read, hss_write = IO.pipe
       hss_pid = fork do
-        exec "#{bin}hss", "-H", "-p #{port} 127.0.0.1", "-u", "root", "true",
+        exec bin"hss", "-H", "-p #{port} 127.0.0.1", "-u", "root", "true",
           out: hss_write
       end
       server.close

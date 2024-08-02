@@ -17,6 +17,6 @@ class Xmlformat < Formula
   end
 
   test do
-    system "#{bin}/xmlformat", "--version"
+    system bin/"xmlformat", "--version"
   end
 end

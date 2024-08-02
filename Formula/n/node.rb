@@ -112,6 +112,8 @@ class Node < Formula
     # in `cached_download` npm resource, which breaks `npm -g outdated npm`.
     # This copies back over the vanilla `package.json` to fix this issue.
     cp bootstrap/"package.json", libexec/"lib/node_modules/npm"
+    # These symlinks are never used & they've caused issues in the past.
+    rm_r libexec/"share"
 
     bash_completion.install bootstrap/"lib/utils/completion.sh" => "npm"
   end
@@ -119,6 +121,8 @@ class Node < Formula
   def post_install
     node_modules = HOMEBREW_PREFIX/"lib/node_modules"
     node_modules.mkpath
+    # Kill npm but preserve all other modules across node updates/upgrades.
+    rm_r node_modules/"npm" if (node_modules/"npm").exist?
 
     cp_r libexec/"lib/node_modules/npm", node_modules
     # This symlink doesn't hop into homebrew_prefix/bin automatically so

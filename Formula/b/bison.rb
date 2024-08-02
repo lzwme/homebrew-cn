@@ -57,7 +57,7 @@ class Bison < Formula
       int yylex () { cin.get(c); return c; }
       int main() { yyparse(); }
     EOS
-    system "#{bin}/bison", "test.y"
+    system bin/"bison", "test.y"
     system ENV.cxx, "test.tab.c", "-o", "test"
     assert_equal "pass", shell_output("echo \"((()(())))()\" | ./test")
     assert_equal "fail", shell_output("echo \"())\" | ./test")

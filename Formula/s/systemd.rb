@@ -107,6 +107,6 @@ class Systemd < Formula
   end
 
   test do
-    assert_match "temporary: tmp", shell_output("#{bin}systemd-path")
+    assert_match "temporary: tmp", shell_output(bin"systemd-path")
   end
 end

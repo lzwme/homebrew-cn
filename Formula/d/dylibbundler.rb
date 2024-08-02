@@ -24,6 +24,6 @@ class Dylibbundler < Formula
   end
 
   test do
-    system "#{bin}dylibbundler", "-h"
+    system bin"dylibbundler", "-h"
   end
 end

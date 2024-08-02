@@ -25,6 +25,6 @@ class Sslscan < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}sslscan --version")
-    system "#{bin}sslscan", "google.com"
+    system bin"sslscan", "google.com"
   end
 end

@@ -47,6 +47,6 @@ class Fossil < Formula
   end
 
   test do
-    system "#{bin}/fossil", "init", "test"
+    system bin/"fossil", "init", "test"
   end
 end

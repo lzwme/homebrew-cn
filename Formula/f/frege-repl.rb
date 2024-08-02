@@ -22,6 +22,6 @@ class FregeRepl < Formula
   end
 
   test do
-    assert_match "65536", pipe_output("#{bin}frege-repl", "println $ 64*1024\n:quit\n")
+    assert_match "65536", pipe_output(bin"frege-repl", "println $ 64*1024\n:quit\n")
   end
 end

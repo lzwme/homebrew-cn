@@ -52,6 +52,6 @@ class Xcproj < Formula
   end
 
   test do
-    system "#{bin}xcproj", "--version"
+    system bin"xcproj", "--version"
   end
 end

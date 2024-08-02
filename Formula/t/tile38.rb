@@ -56,7 +56,7 @@ class Tile38 < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}tile38-server", "-q", "-p", port.to_s
+      exec bin"tile38-server", "-q", "-p", port.to_s
     end
     sleep 2
     # remove `$408` in the first line output

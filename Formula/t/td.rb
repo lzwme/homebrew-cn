@@ -27,7 +27,7 @@ class Td < Formula
 
   test do
     (testpath".todos").write "[]\n"
-    system "#{bin}td", "a", "todo of test"
+    system bin"td", "a", "todo of test"
     todos = (testpath".todos").read
     assert_match "todo of test", todos
     assert_match "pending", todos

@@ -28,6 +28,6 @@ class Tiff2png < Formula
   end
 
   test do
-    system "#{bin}tiff2png", test_fixtures("test.tiff")
+    system bin"tiff2png", test_fixtures("test.tiff")
   end
 end

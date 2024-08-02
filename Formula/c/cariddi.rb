@@ -23,7 +23,7 @@ class Cariddi < Formula
   end
 
   test do
-    output = pipe_output("#{bin}cariddi", "http:testphp.vulnweb.com")
+    output = pipe_output(bin"cariddi", "http:testphp.vulnweb.com")
     assert_match "http:testphp.vulnweb.comlogin.php", output
 
     assert_match version.to_s, shell_output("#{bin}cariddi -version 2>&1")

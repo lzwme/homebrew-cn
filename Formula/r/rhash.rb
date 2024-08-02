@@ -29,6 +29,6 @@ class Rhash < Formula
   test do
     (testpath"test").write("test")
     (testpath"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
-    system "#{bin}rhash", "-c", "test.sha1"
+    system bin"rhash", "-c", "test.sha1"
   end
 end

@@ -40,7 +40,7 @@ class Tika < Formula
 
     port = free_port
     pid = fork do
-      exec "#{bin}/tika-rest-server", "--port=#{port}"
+      exec bin/"tika-rest-server", "--port=#{port}"
     end
 
     sleep 10

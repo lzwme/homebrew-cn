@@ -19,7 +19,7 @@ class Briss < Formula
 
   test do
     cp test_fixtures("test.pdf"), testpath
-    system "#{bin}/briss", "-s", "test.pdf", "-d", "output.pdf"
+    system bin/"briss", "-s", "test.pdf", "-d", "output.pdf"
     assert_predicate testpath/"output.pdf", :exist?
   end
 end

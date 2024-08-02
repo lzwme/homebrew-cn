@@ -60,7 +60,7 @@ class BerkeleyDb < Formula
       system "make", "install", "DOCLIST=license"
 
       # delete docs dir because it is huge
-      rm_rf prefix"docs"
+      rm_r(prefix"docs")
     end
   end
 

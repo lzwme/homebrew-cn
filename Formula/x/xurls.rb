@@ -25,7 +25,7 @@ class Xurls < Formula
   end
 
   test do
-    output = pipe_output("#{bin}xurls", "Brew test with https:brew.sh.")
+    output = pipe_output(bin"xurls", "Brew test with https:brew.sh.")
     assert_equal "https:brew.sh", output.chomp
 
     output = pipe_output("#{bin}xurls --fix", "Brew test with http:brew.sh.")

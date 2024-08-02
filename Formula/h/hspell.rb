@@ -59,6 +59,6 @@ class Hspell < Formula
     File.open("test.txt", "w:ISO8859-8") do |f|
       f.write "שלום"
     end
-    system "#{bin}hspell", "-l", "test.txt"
+    system bin"hspell", "-l", "test.txt"
   end
 end

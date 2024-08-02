@@ -32,10 +32,10 @@ class Gauge < Formula
       }
     EOS
 
-    system("#{bin}gauge", "install")
+    system(bin"gauge", "install")
     assert_predicate testpath".gaugeplugins", :exist?
 
-    system("#{bin}gauge", "config", "check_updates", "false")
+    system(bin"gauge", "config", "check_updates", "false")
     assert_match "false", shell_output("#{bin}gauge config check_updates")
 
     assert_match version.to_s, shell_output("#{bin}gauge -v 2>&1")

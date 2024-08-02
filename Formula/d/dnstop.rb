@@ -39,6 +39,6 @@ class Dnstop < Formula
   end
 
   test do
-    system "#{bin}/dnstop", "-v"
+    system bin/"dnstop", "-v"
   end
 end

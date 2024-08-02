@@ -49,6 +49,6 @@ class Dosbox < Formula
   end
 
   test do
-    system "#{bin}/dosbox", "-version"
+    system bin/"dosbox", "-version"
   end
 end

@@ -134,7 +134,7 @@ class Streamlink < Formula
   end
 
   test do
-    system "#{bin}streamlink", "https:vimeo.com144358359", "360p", "-o", "video.mp4"
+    system bin"streamlink", "https:vimeo.com144358359", "360p", "-o", "video.mp4"
     assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
 
     url = OS.mac? ? "https:ok.ruvideo3388934659879" : "https:www.youtube.comwatch?v=pOtd1cbOP7k"

@@ -65,7 +65,7 @@ class Alpine < Formula
   end
 
   test do
-    system "#{bin}alpine", "-conf"
+    system bin"alpine", "-conf"
   end
 end
 

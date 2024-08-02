@@ -35,7 +35,7 @@ class Ssldump < Formula
   end
 
   test do
-    system "#{bin}ssldump", "-v"
+    system bin"ssldump", "-v"
   end
 end
 

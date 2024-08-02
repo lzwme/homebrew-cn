@@ -35,7 +35,7 @@ class Ffsend < Formula
   end
 
   test do
-    system "#{bin}ffsend", "help"
+    system bin"ffsend", "help"
 
     (testpath"file.txt").write("test")
     url = shell_output("#{bin}ffsend upload -Iq #{testpath}file.txt").strip

@@ -38,6 +38,6 @@ class Vcprompt < Formula
   end
 
   test do
-    system "#{bin}/vcprompt"
+    system bin/"vcprompt"
   end
 end

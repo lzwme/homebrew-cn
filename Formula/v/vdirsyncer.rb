@@ -148,8 +148,8 @@ class Vdirsyncer < Formula
       END:VCARD
     EOS
     (testpath".contactsbfoo").mkpath
-    system "#{bin}vdirsyncer", "discover"
-    system "#{bin}vdirsyncer", "sync"
+    system bin"vdirsyncer", "discover"
+    system bin"vdirsyncer", "sync"
     assert_match "Ö φ 風 ض", (testpath".contactsbfoo092a1e3b55.vcf").read
   end
 end

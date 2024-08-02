@@ -52,6 +52,6 @@ class Httperf < Formula
   end
 
   test do
-    system "#{bin}httperf", "--version"
+    system bin"httperf", "--version"
   end
 end

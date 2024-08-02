@@ -28,6 +28,6 @@ class Dcfldd < Formula
   end
 
   test do
-    system "#{bin}/dcfldd", "--version"
+    system bin/"dcfldd", "--version"
   end
 end

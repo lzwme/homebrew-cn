@@ -1,21 +1,21 @@
 class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive28a7c6243c7bae49f6262b12425e8521abecec2a.tar.gz?commit=28a7c6243c7bae49f6262b12425e8521abecec2a"
+  url "https:github.comphpphp-srcarchive3c36c7308dd204036dd49d5bd66d14d950f23418.tar.gz?commit=3c36c7308dd204036dd49d5bd66d14d950f23418"
   version "8.4.0"
-  sha256 "d206820ef639abee34fb3359bbb3f8528fbb227f0cb31f6690f737c508b8cb4e"
+  sha256 "65094f7a5e6ea8f4c6dbc66cda7902c0f682b9df2e5408cc535c53719ea9ecfe"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 83
-    sha256 arm64_sonoma:   "6c5113d080eeb812fb6bad681c582734df094dd8dc37af2a28e428d4c688b226"
-    sha256 arm64_ventura:  "e1ba6d0c35e92799423723e48d5ae60b87432b54a0c9bb98b1c522b4b03fda45"
-    sha256 arm64_monterey: "af96d0f7501497df26338b830e44d5f004aecb17c4b45b32faaae0b43014cf61"
-    sha256 ventura:        "985ac43a146160be3306e4b1f8c3de40d1e36e67f9618c105c11a7a054319d43"
-    sha256 monterey:       "c403b64d13e159458404edc8a706a01df5ab753dfa836b3de32f82ff97e1b105"
-    sha256 x86_64_linux:   "4b3eaaa694309756cc5316f22c21721ae333eaeabd82ee00938a6107d8b029e2"
+    rebuild 84
+    sha256 arm64_sonoma:   "afa14abcce5e015edad8716750b30590981be697b8513f0da8e10e552b31d761"
+    sha256 arm64_ventura:  "8fa89db3e1655d20032cf9f03c09ab409de0325268722df2c3514290a110ddf2"
+    sha256 arm64_monterey: "a535a187830b0b06d42732febb5bb6aa9bdb134968a02b621b3c5d430e2167fb"
+    sha256 ventura:        "07e5aa4a8a0942cc71ba530b1f87ff4f2942d03a4a407476547f63da6e3bb0ed"
+    sha256 monterey:       "0fa885169ebe64f30305102f828012b16857dc7dfc74087164b6f49df12cfa7d"
+    sha256 x86_64_linux:   "dfffe7c086462b845f31ddad2d6e716b42e114b993db286244b74d8e85936ddf"
   end
 
   keg_only :versioned_formula
@@ -44,7 +44,6 @@ class PhpAT84 < Formula
   depends_on "openldap"
   depends_on "openssl@3"
   depends_on "pcre2"
-  depends_on "readline"
   depends_on "sqlite"
   depends_on "tidy-html5"
   depends_on "unixodbc"
@@ -162,6 +161,7 @@ class PhpAT84 < Formula
       --with-layout=GNU
       --with-ldap=#{Formula["openldap"].opt_prefix}
       --with-libxml
+      --with-libedit
       --with-mhash#{headers_path}
       --with-mysql-sock=tmpmysql.sock
       --with-mysqli=mysqlnd
@@ -176,7 +176,6 @@ class PhpAT84 < Formula
       --with-pgsql=#{Formula["libpq"].opt_prefix}
       --with-pic
       --with-pspell=#{Formula["aspell"].opt_prefix}
-      --with-readline=#{Formula["readline"].opt_prefix}
       --with-sodium
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}

@@ -31,7 +31,7 @@ class Graphqlviz < Formula
       }
     EOS
 
-    output = pipe_output("#{bin}graphqlviz", test_file.read)
+    output = pipe_output(bin"graphqlviz", test_file.read)
     assert_match "digraph erd", output
     assert_match version.to_s, shell_output("#{bin}graphqlviz --version")
   end

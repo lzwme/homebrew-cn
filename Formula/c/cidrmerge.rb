@@ -34,6 +34,6 @@ class Cidrmerge < Formula
       192.1.4.5/32
       192.1.4.4/32
     EOS
-    assert_equal "10.1.1.0/24\n192.1.4.4/31\n", pipe_output("#{bin}/cidrmerge", input)
+    assert_equal "10.1.1.0/24\n192.1.4.4/31\n", pipe_output(bin/"cidrmerge", input)
   end
 end

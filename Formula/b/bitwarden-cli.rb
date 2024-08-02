@@ -1,5 +1,3 @@
-require "languagenode"
-
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https:bitwarden.com"
@@ -13,26 +11,25 @@ class BitwardenCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "711cc5ac937d834e59a007e4de78347a97c8acfdd94817bab1522a2a6740c8e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b2ef0b7f9dbeea0ec9fe94290c5f5ee79f25ca087a76216a3d6efd5f22b1d3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12e01176eeca3dfb9bfcb82ae893f203a3672dbb450041116930e2e9daf3ec4b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a81f956a41874b4aa6e9a0a342cbcda993b9511e76cda106c7300c1e49059539"
-    sha256 cellar: :any_skip_relocation, ventura:        "c91323e71654a0753fb2b8cc555d84c1fa9ad9262108b92aa18e1bb5e0535b96"
-    sha256 cellar: :any_skip_relocation, monterey:       "c31d3ee2ed80399a5f00c68a9590d32b80927f9a16eea49fa55f41b514e05f6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd14f3cbf054c40792b0f0b9e985fba9e99c20855dcc6e8ec79c4228a16fb18c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62981189e5dc48300a569d46e4715971503ccf67961cb8179d5640c79f6273e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5885f6bf3a742d7ee3c756e30d0107a9ecd25b1368458611ae5734050f9875bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ed398d05150c71293f934543a149490668cf0edd9cce9b9058d154c5255b367"
+    sha256 cellar: :any_skip_relocation, sonoma:         "182870118b975e4ac4dd5f17571c8fe44563da2ff8da201c25536fcc29875e77"
+    sha256 cellar: :any_skip_relocation, ventura:        "6af180ca8807842a194282a789dfbc944c40b40235fe0e80aa660d1eba75cbda"
+    sha256 cellar: :any_skip_relocation, monterey:       "17d4695f522e1c15e8b56b63c7aa81abe4aab96fdad42e9b3be3fd23be668e67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b69bff8e769adee84a006cfcdce42471a5cc53a8548cc4ece2c712ec65d13166"
   end
 
   depends_on "node"
 
   def install
-    Language::Node.setup_npm_environment
     system "npm", "ci", "--ignore-scripts"
-    cli_root = buildpath"appscli" # Bitwarden's source code is a monorepo
-    cd cli_root do
+    cd buildpath"appscli" do
       # The `oss` build of Bitwarden is a GPL backed build
       system "npm", "run", "build:oss:prod", "--ignore-scripts"
-      cd cli_root"build" do
-        system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+      cd ".build" do
+        system "npm", "install", *std_npm_args
         bin.install_symlink Dir[libexec"bin*"]
       end
     end

@@ -48,6 +48,6 @@ class Wapm < Formula
     EOF
     assert_equal expected_output, shell_output("#{bin}wapm run cowsay hello wapm!")
 
-    system "#{bin}wapm", "uninstall", "cowsay"
+    system bin"wapm", "uninstall", "cowsay"
   end
 end

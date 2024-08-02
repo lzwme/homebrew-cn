@@ -43,7 +43,7 @@ class Tinymist < Formula
     JSON
 
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = IO.popen("#{bin}tinymist", "w+") do |pipe|
+    output = IO.popen(bin"tinymist", "w+") do |pipe|
       pipe.write(input)
       sleep 1
       pipe.close_write

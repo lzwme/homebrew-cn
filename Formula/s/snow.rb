@@ -37,9 +37,9 @@ class Snow < Formula
   test do
     touch "in.txt"
     touch "out.txt"
-    system "#{bin}/snow", "-C", "-m", "'Secrets Abound Here'", "-p",
+    system bin/"snow", "-C", "-m", "'Secrets Abound Here'", "-p",
            "'hello world'", "in.txt", "out.txt"
     # The below should get the response 'Secrets Abound Here' when testing.
-    system "#{bin}/snow", "-C", "-p", "'hello world'", "out.txt"
+    system bin/"snow", "-C", "-p", "'hello world'", "out.txt"
   end
 end

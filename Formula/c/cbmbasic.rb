@@ -29,6 +29,6 @@ class Cbmbasic < Formula
   end
 
   test do
-    assert_match(READY.\r\n 1, pipe_output("#{bin}cbmbasic", "PRINT 1\n", 0))
+    assert_match(READY.\r\n 1, pipe_output(bin"cbmbasic", "PRINT 1\n", 0))
   end
 end

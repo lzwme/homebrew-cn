@@ -28,7 +28,7 @@ class HttpServer < Formula
     port = free_port
 
     pid = fork do
-      exec "#{bin}http-server", "-p#{port}"
+      exec bin"http-server", "-p#{port}"
     end
     sleep 3
     output = shell_output("curl -sI http:localhost:#{port}")

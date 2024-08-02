@@ -137,7 +137,7 @@ class TrojanGo < Formula
         cert:       #{testpath}test.crt
         key:        #{testpath}test.key
     EOS
-    server = fork { exec "#{bin}trojan-go", "-config", testpath"server.yaml" }
+    server = fork { exec bin"trojan-go", "-config", testpath"server.yaml" }
 
     trojan_go_client_port = free_port
     (testpath"client.yaml").write <<~EOS
@@ -152,7 +152,7 @@ class TrojanGo < Formula
         verify:     false
         sni:        localhost
     EOS
-    client = fork { exec "#{bin}trojan-go", "-config", testpath"client.yaml" }
+    client = fork { exec bin"trojan-go", "-config", testpath"client.yaml" }
 
     sleep 3
     begin

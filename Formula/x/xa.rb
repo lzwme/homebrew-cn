@@ -30,7 +30,7 @@ class Xa < Formula
   test do
     (testpath/"foo.a").write "jsr $ffd2\n"
 
-    system "#{bin}/xa", "foo.a"
+    system bin/"xa", "foo.a"
     code = File.open("a.o65", "rb") { |f| f.read.unpack("C*") }
     assert_equal [0x20, 0xd2, 0xff], code
   end

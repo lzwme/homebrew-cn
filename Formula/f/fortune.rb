@@ -53,7 +53,7 @@ class Fortune < Formula
   end
 
   test do
-    system "#{bin}/fortune"
+    system bin/"fortune"
   end
 end
 

@@ -60,7 +60,7 @@ class TreeSitter < Formula
       ---
       (source_file)
     EOS
-    system "#{bin}tree-sitter", "test"
+    system bin"tree-sitter", "test"
 
     (testpath"test_program.c").write <<~EOS
       #include <stdio.h>

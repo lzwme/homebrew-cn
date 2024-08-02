@@ -28,6 +28,6 @@ class Regldg < Formula
   end
 
   test do
-    system "#{bin}regldg", "test"
+    system bin"regldg", "test"
   end
 end

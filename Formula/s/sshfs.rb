@@ -23,6 +23,6 @@ class Sshfs < Formula
   end
 
   test do
-    system "#{bin}sshfs", "--version"
+    system bin"sshfs", "--version"
   end
 end

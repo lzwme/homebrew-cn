@@ -30,6 +30,6 @@ class Flyway < Formula
   end
 
   test do
-    system "#{bin}/flyway", "-url=jdbc:h2:mem:flywaydb", "validate"
+    system bin/"flyway", "-url=jdbc:h2:mem:flywaydb", "validate"
   end
 end

@@ -39,6 +39,6 @@ class Sylpheed < Formula
   end
 
   test do
-    system "#{bin}sylpheed", "--version"
+    system bin"sylpheed", "--version"
   end
 end

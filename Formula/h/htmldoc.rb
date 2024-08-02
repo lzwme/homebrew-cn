@@ -36,6 +36,6 @@ class Htmldoc < Formula
   end
 
   test do
-    system "#{bin}htmldoc", "--version"
+    system bin"htmldoc", "--version"
   end
 end

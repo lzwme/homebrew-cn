@@ -30,7 +30,7 @@ class Epeg < Formula
   end
 
   test do
-    system "#{bin}epeg", "--width=1", "--height=1", test_fixtures("test.jpg"), "out.jpg"
+    system bin"epeg", "--width=1", "--height=1", test_fixtures("test.jpg"), "out.jpg"
     assert_predicate testpath"out.jpg", :exist?
   end
 end

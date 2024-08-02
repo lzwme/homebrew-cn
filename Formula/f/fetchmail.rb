@@ -36,6 +36,6 @@ class Fetchmail < Formula
   end
 
   test do
-    system "#{bin}/fetchmail", "--version"
+    system bin/"fetchmail", "--version"
   end
 end

@@ -129,6 +129,6 @@ class Binwalk < Formula
 
   test do
     touch "binwalk.test"
-    system "#{bin}binwalk", "binwalk.test"
+    system bin"binwalk", "binwalk.test"
   end
 end

@@ -36,7 +36,7 @@ class Tuntox < Formula
   test do
     require "open3"
 
-    Open3.popen2e("#{bin}tuntox") do |stdin, stdout_err, th|
+    Open3.popen2e(bin"tuntox") do |stdin, stdout_err, th|
       pid = th.pid
       stdin.close
       sleep 2

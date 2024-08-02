@@ -207,6 +207,6 @@ class Freeswitch < Formula
   end
 
   test do
-    system "#{bin}freeswitch", "-version"
+    system bin"freeswitch", "-version"
   end
 end

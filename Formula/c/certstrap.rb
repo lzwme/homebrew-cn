@@ -31,6 +31,6 @@ class Certstrap < Formula
   end
 
   test do
-    system "#{bin}certstrap", "init", "--common-name", "Homebrew Test CA", "--passphrase", "beerformyhorses"
+    system bin"certstrap", "init", "--common-name", "Homebrew Test CA", "--passphrase", "beerformyhorses"
   end
 end

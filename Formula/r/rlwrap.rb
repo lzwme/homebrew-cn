@@ -38,6 +38,6 @@ class Rlwrap < Formula
   end
 
   test do
-    system "#{bin}rlwrap", "--version"
+    system bin"rlwrap", "--version"
   end
 end

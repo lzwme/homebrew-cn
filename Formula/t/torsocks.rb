@@ -33,6 +33,6 @@ class Torsocks < Formula
   end
 
   test do
-    system "#{bin}/torsocks", "--help"
+    system bin/"torsocks", "--help"
   end
 end

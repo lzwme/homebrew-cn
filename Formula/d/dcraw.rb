@@ -35,6 +35,6 @@ class Dcraw < Formula
   end
 
   test do
-    assert_match "\"dcraw\" v9", shell_output("#{bin}/dcraw", 1)
+    assert_match "\"dcraw\" v9", shell_output(bin/"dcraw", 1)
   end
 end

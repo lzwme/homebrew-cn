@@ -52,6 +52,6 @@ class Tmate < Formula
   end
 
   test do
-    system "#{bin}tmate", "-V"
+    system bin"tmate", "-V"
   end
 end

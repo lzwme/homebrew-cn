@@ -25,6 +25,6 @@ class Wgcf < Formula
   end
 
   test do
-    system "#{bin}wgcf", "trace"
+    system bin"wgcf", "trace"
   end
 end

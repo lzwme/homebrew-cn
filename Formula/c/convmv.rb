@@ -32,6 +32,6 @@ class Convmv < Formula
   end
 
   test do
-    system "#{bin}/convmv", "--list"
+    system bin/"convmv", "--list"
   end
 end

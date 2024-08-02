@@ -40,6 +40,6 @@ class A52dec < Formula
 
   test do
     touch testpath/"test"
-    system "#{bin}/a52dec", "-o", "null", "test"
+    system bin/"a52dec", "-o", "null", "test"
   end
 end

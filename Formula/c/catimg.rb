@@ -29,6 +29,6 @@ class Catimg < Formula
   end
 
   test do
-    system "#{bin}catimg", test_fixtures("test.png")
+    system bin"catimg", test_fixtures("test.png")
   end
 end

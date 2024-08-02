@@ -1,8 +1,8 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https:tarantool.org"
-  url "https:download.tarantool.orgtarantoolsrctarantool-3.1.0.tar.gz"
-  sha256 "6df4383566a8bf3dcb417f798bd46c790dc96bf3b39bc9604acaba45288cc342"
+  url "https:download.tarantool.orgtarantoolsrctarantool-3.1.1.tar.gz"
+  sha256 "705aeeac16b26ab7b06c6acb418ae22c5367665dcdccc28d577271fddd78a1e6"
   license "BSD-2-Clause"
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
@@ -13,13 +13,13 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8cfa0e21313a437204301b4b8a0962c03e1a24e638e4774c50183e9c0fad3fcc"
-    sha256 cellar: :any,                 arm64_ventura:  "e7dbeb6e687dc6ae7525f87af52161a5dec0b2cdc0b1dfeb716794039b915412"
-    sha256 cellar: :any,                 arm64_monterey: "360308ed989b3a1e94cba4c825a69b808c45a7e111221cbab4c9d02b091e1dcc"
-    sha256 cellar: :any,                 sonoma:         "0810ab6811a55e499975f136e23b7b7eec8114591486da1f0f563cacab69caee"
-    sha256 cellar: :any,                 ventura:        "a4251a66c93d633d9f9376007652b20b859f13f6c45d65581c18672896c6356d"
-    sha256 cellar: :any,                 monterey:       "d87b02511c78237fca446709761b4d25d3b29a3cac9799312cc8ec02ef54e763"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91dd35c80872ae199de6b43b98db8d66be56b87c76fe41665e7e77d431cbd9bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "00eec48fa3453dddb4f0d04942159d79b3e8d09ebdfd7aed59aa94cc3b292dfb"
+    sha256 cellar: :any,                 arm64_ventura:  "161b28c6bd698ad25ef263432ef952236518fa83c169c704db6f36a09089d919"
+    sha256 cellar: :any,                 arm64_monterey: "76e784d0b260461c09ffa60254a5710854cfca949a6e58f033c8ebe9f56ee3a8"
+    sha256 cellar: :any,                 sonoma:         "fc6c89a9a7008a5afcf2cb454adaa151333dc9360d33ec5e48b5f99d3a8b08a3"
+    sha256 cellar: :any,                 ventura:        "0ee24029edbc046f6ddc03a096c5f04d1a7d171fbd0876d4dc217dcc2bc69ba9"
+    sha256 cellar: :any,                 monterey:       "d6d50ad1f20bb62c9f2e079e0fb3db925c3583dce89ef2ca607ad3c2a731ece4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "573e31c572d7d11969ecffc374e166bd902494ba963b2c03335f59a3fddcf57c"
   end
 
   depends_on "cmake" => :build

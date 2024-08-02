@@ -50,7 +50,7 @@ class Aften < Formula
 
   test do
     resource("sample_wav").stage testpath
-    system "#{bin}/aften", "#{testpath}/1kHz_44100Hz_16bit_05sec.wav", "sample.ac3"
+    system bin/"aften", "#{testpath}/1kHz_44100Hz_16bit_05sec.wav", "sample.ac3"
   end
 end
 __END__

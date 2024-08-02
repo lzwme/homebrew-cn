@@ -41,6 +41,6 @@ class Flowgrind < Formula
   end
 
   test do
-    system "#{bin}flowgrind", "--version"
+    system bin"flowgrind", "--version"
   end
 end

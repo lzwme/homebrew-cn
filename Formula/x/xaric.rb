@@ -49,7 +49,7 @@ class Xaric < Formula
   test do
     require "pty"
     output = ""
-    PTY.spawn("#{bin}xaric", "-v") do |r, _w, _pid|
+    PTY.spawn(bin"xaric", "-v") do |r, _w, _pid|
       r.each_line { |line| output += line }
     rescue Errno::EIO
       # GNULinux raises EIO when read is done on closed pty

@@ -21,6 +21,6 @@ class Darkhttpd < Formula
   end
 
   test do
-    system "#{bin}darkhttpd", "--help"
+    system bin"darkhttpd", "--help"
   end
 end

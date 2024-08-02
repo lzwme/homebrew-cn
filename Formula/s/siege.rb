@@ -62,6 +62,6 @@ class Siege < Formula
   end
 
   test do
-    system "#{bin}/siege", "--concurrent=1", "--reps=1", "https://www.google.com/"
+    system bin/"siege", "--concurrent=1", "--reps=1", "https://www.google.com/"
   end
 end

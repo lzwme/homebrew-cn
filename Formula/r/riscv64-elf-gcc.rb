@@ -43,7 +43,7 @@ class Riscv64ElfGcc < Formula
       system "make", "install-target-libgcc"
 
       # FSF-related man pages may conflict with native gcc
-      (share/"man/man7").rmtree
+      rm_r(share/"man/man7")
     end
   end
 
@@ -56,7 +56,7 @@ class Riscv64ElfGcc < Formula
         return i;
       }
     EOS
-    system "#{bin}/riscv64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
+    system bin/"riscv64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf64-littleriscv",
                  shell_output("#{Formula["riscv64-elf-binutils"].bin}/riscv64-elf-objdump -a test-c.o")
   end

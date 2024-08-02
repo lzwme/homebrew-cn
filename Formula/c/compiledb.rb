@@ -48,7 +48,7 @@ class Compiledb < Formula
       int main(void) { return 0; }
     EOS
 
-    system "#{bin}compiledb", "-n", "make"
+    system bin"compiledb", "-n", "make"
     assert_predicate testpath"compile_commands.json", :exist?, "compile_commands.json should be created"
   end
 end

@@ -65,8 +65,8 @@ class Clash < Formula
           password: "test"
           cipher: chacha20-ietf-poly1305
     EOS
-    system "#{bin}clash", "-t", "-d", testpath # test config && download Country.mmdb
-    client = fork { exec "#{bin}clash", "-d", testpath }
+    system bin"clash", "-t", "-d", testpath # test config && download Country.mmdb
+    client = fork { exec bin"clash", "-d", testpath }
 
     sleep 3
     begin

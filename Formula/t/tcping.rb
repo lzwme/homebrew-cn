@@ -29,6 +29,6 @@ class Tcping < Formula
   end
 
   test do
-    system "#{bin}tcping", "www.google.com", "80"
+    system bin"tcping", "www.google.com", "80"
   end
 end

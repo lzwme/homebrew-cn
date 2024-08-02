@@ -29,6 +29,6 @@ class Shmux < Formula
   end
 
   test do
-    system "#{bin}shmux", "-h"
+    system bin"shmux", "-h"
   end
 end

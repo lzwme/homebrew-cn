@@ -32,7 +32,7 @@ class Fprettify < Formula
   end
 
   test do
-    system "#{bin}fprettify", "--version"
+    system bin"fprettify", "--version"
     (testpath"test.f90").write <<~EOS
       program demo
       integer :: endif,if,elseif
@@ -48,7 +48,7 @@ class Fprettify < Formula
       endif
       end program
     EOS
-    system "#{bin}fprettify", testpath"test.f90"
+    system bin"fprettify", testpath"test.f90"
     ENV.fortran
     system ENV.fc, testpath"test.f90", "-o", testpath"test"
     system testpath"test"

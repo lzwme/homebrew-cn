@@ -53,7 +53,7 @@ class Ffmpegthumbnailer < Formula
     system f.to_s, "-loop", "1", "-i", png.to_s, "-c:v", "libx264", "-t", "30",
                    "-pix_fmt", "yuv420p", "v.mp4"
     assert_predicate testpath"v.mp4", :exist?, "Failed to generate source video!"
-    system "#{bin}ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
+    system bin"ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
     assert_predicate testpath"out.jpg", :exist?, "Failed to create thumbnail!"
   end
 end

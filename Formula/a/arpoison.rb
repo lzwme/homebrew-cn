@@ -37,6 +37,6 @@ class Arpoison < Formula
 
   test do
     # arpoison needs to run as root to do anything useful
-    assert_match "target MAC", shell_output("#{bin}/arpoison", 1)
+    assert_match "target MAC", shell_output(bin/"arpoison", 1)
   end
 end

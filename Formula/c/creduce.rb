@@ -146,6 +146,6 @@ class Creduce < Formula
     EOS
 
     chmod 0755, testpath"test1.sh"
-    system "#{bin}creduce", "test1.sh", "test1.c"
+    system bin"creduce", "test1.sh", "test1.c"
   end
 end

@@ -34,6 +34,6 @@ class Treecc < Formula
   end
 
   test do
-    system "#{bin}/treecc", "-v"
+    system bin/"treecc", "-v"
   end
 end

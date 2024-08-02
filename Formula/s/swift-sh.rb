@@ -30,7 +30,7 @@ class SwiftSh < Formula
 
   test do
     (testpath"test.swift").write "#!usrbinenv swift sh"
-    system "#{bin}swift-sh", "eject", "test.swift"
+    system bin"swift-sh", "eject", "test.swift"
     assert_predicate testpath"Test""Package.swift", :exist?
   end
 end

@@ -29,7 +29,7 @@ class Slacknimate < Formula
   end
 
   test do
-    system "#{bin}slacknimate", "--version"
-    system "#{bin}slacknimate", "--help"
+    system bin"slacknimate", "--version"
+    system bin"slacknimate", "--help"
   end
 end

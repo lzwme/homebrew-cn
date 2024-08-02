@@ -63,7 +63,7 @@ class Bpytop < Formula
     require "pty"
     require "ioconsole"
 
-    r, w, pid = PTY.spawn("#{bin}bpytop")
+    r, w, pid = PTY.spawn(bin"bpytop")
     r.winsize = [80, 130]
     sleep 5
     w.write "\cC"

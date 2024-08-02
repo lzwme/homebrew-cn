@@ -26,7 +26,7 @@ class Telegraf < Formula
   def install
     ldflags = "-s -w -X github.cominfluxdatatelegrafinternal.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdtelegraf"
-    (etc"telegraf.conf").write Utils.safe_popen_read("#{bin}telegraf", "config")
+    (etc"telegraf.conf").write Utils.safe_popen_read(bin"telegraf", "config")
   end
 
   def post_install
@@ -45,7 +45,7 @@ class Telegraf < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}telegraf --version")
     (testpath"config.toml").write shell_output("#{bin}telegraf -sample-config")
-    system "#{bin}telegraf", "-config", testpath"config.toml", "-test",
+    system bin"telegraf", "-config", testpath"config.toml", "-test",
            "-input-filter", "cpu:mem"
   end
 end

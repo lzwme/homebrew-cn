@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical processsystem monitor"
   homepage "https:clementtsang.github.iobottom"
-  url "https:github.comClementTsangbottomarchiverefstags0.9.7.tar.gz"
-  sha256 "29c3f75323ae0245576ea23268bb0956757352bf3b16d05f511357655b9cc71e"
+  url "https:github.comClementTsangbottomarchiverefstags0.10.1.tar.gz"
+  sha256 "c0e507cc3a5246e65521e91391410efc605840abe3b40194c5769265051fa1cc"
   license "MIT"
   head "https:github.comClementTsangbottom.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddc0189ccf66af970eaace8442072a6b4fc3549099f70811c8fe49eaa653d436"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "767a3b5bc3ee69bbdaaaf8b71320ea93795da1387597b91286c75967fdca3206"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6fab0d7a1e322d68586a664ba30066bc2bd0f6fe1f069b2e865d7c18616d42f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "837c004767ea25431890e1a2186434dff17463b8290730bf0378e423fba8ce18"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4b093d689599cac6cb6980d89321caa544db5d1b4a8a068e57c960a989e9c20"
-    sha256 cellar: :any_skip_relocation, monterey:       "a710710e02d61c21ab44462dc42a68025a601fc2c50de54f0d769dcf0ab1ea8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "972ea2c2796bdc51cbd28ad54f2a95d584092785ddfcc40a735e18b3721d3faa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eedb62de704cd160bc387e0df8b98f79525f4942bf11434a16adf963c6b4e1eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "967c4f6458f98e441a173b2682c6d9e328ffe01fd3ca6aa586883bfc849f2f0a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e29a2c3ea6204ae3523cedc6260b18d7f232fc812dbd240c8c6bbeb497de3f40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4a2d09c039a6cac8d729b5b4650eba43af34eebb77b0807c4ed64214a64b10b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2b3aa0c4bba40944686070ab14587f22fcb85a1e3b5501a495a16d9b0cf2f4a"
+    sha256 cellar: :any_skip_relocation, monterey:       "74f3492d94351fb7901453ec17cd3242a17e045283e46a429207896bec92ecb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b24cdb601d4b21233ce852c5fa15acbb30c1554dd8223c502b2e2fe9c1c966f"
   end
 
   depends_on "rust" => :build

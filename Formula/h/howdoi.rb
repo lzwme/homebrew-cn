@@ -9,13 +9,14 @@ class Howdoi < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5c28f21d2e7357942b10e5cfc93007617fb0ab1b84f197bfc41c571b130d835"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ded6aa318d6531f2165093355f7c3d6ed86870c80e18a8e4fb443ccba7ffdc1"
-    sha256 cellar: :any,                 arm64_monterey: "2f4cd16d1af84a88a78c32577898999cbff813026332a9a36f9a85c4dd3e8e87"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60c48f986dfcbd633cb18de6979842ea7a0ea0699c03dc83e6a32ff576d73897"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4d70115086bd5b8b16af11a9c869635cae5a5490bd07b1a4ad4d8ea642b71b2"
-    sha256 cellar: :any,                 monterey:       "3189a45e051a6a5616c9b312bc0032abc64fe18abdbd1b1852ef43c92b89c0d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83bf82d3a00ca204892e2248b633320006ba6c61f90daeffcabc54eca5f659de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2aba154864418a4c8c1c38c8a868f3e68148376fac6ed49292c975019cb0f12b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aac1db10e831ea0980d1da458b721b7b96c6950710f1c16e6e2abcc1d29c5ec"
+    sha256 cellar: :any,                 arm64_monterey: "8da6c648eb6447c81c8bf5c6321b7744091eca31e6c7af3687ce1a42b02a50fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a6599bf83d1c11b5bf40126e1af5386f5b396ba8419e87bfbf1fc570780631d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "d636094f9780dbdd6ff5ed66a4242aac0a4fa8d82b2a949e01a0bd13ec426a64"
+    sha256 cellar: :any,                 monterey:       "fad155e8b9ef5523d6fac103af068079861be1f97cf176139db097acff2ee031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a4cac62a69c3f6531ba3e1cf534e6353a3b2b26f52d91cd1394d7f3cdb061bf"
   end
 
   depends_on "certifi"
@@ -66,8 +67,8 @@ class Howdoi < Formula
   end
 
   resource "keep" do
-    url "https:files.pythonhosted.orgpackages6df22c35a4bb1332d81f2b1d94725a9ede4d44902fa8ec11b25dedd210394c2fkeep-2.10.1.tar.gz"
-    sha256 "3abbe445347711cecd9cbb80dab4a0777418972fc14a14e9387d0d2ae4b6adb7"
+    url "https:files.pythonhosted.orgpackages602bcff99a6e90eb54f88ea4f96395a788dce3167b95b5e2a93642f16d8a10e2keep-2.11.tar.gz"
+    sha256 "06bc2fbbf65ebebf2c384dca0306a40c3cd531cd95a05c486f5a2b5c07acd94d"
   end
 
   resource "lxml" do
@@ -120,9 +121,9 @@ class Howdoi < Formula
     sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
-  resource "terminaltables" do
-    url "https:files.pythonhosted.orgpackagesf5fc0b73d782f5ab7feba8d007573a3773c58255f223c5940a7b7085f02153c3terminaltables-3.1.10.tar.gz"
-    sha256 "ba6eca5cb5ba02bba4c9f4f985af80c54ec3dccf94cfcd190154386255e47543"
+  resource "terminaltables3" do
+    url "https:files.pythonhosted.orgpackages559b9abd7feb0cf552061cfa452c22773f3158cdad877ad5623f13edfa07116fterminaltables3-4.0.0.tar.gz"
+    sha256 "4e3eefe209aa89005a0a34d1525739424569729ee29b5e64a8dd51c5ebdab77f"
   end
 
   resource "typing-extensions" do
@@ -141,18 +142,7 @@ class Howdoi < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-
-    # Switch build-system to poetry-core to avoid rust dependency on Linux.
-    # Remove when released: https:github.commatthewdeanmartinterminaltablespull1
-    resource("terminaltables").stage do
-      inreplace "pyproject.toml", 'requires = ["poetry>=0.12"]', 'requires = ["poetry-core>=1.0"]'
-      inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
-      venv.pip_install_and_link Pathname.pwd
-    end
-
-    venv.pip_install resources.reject { |r| r.name == "terminaltables" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

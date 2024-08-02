@@ -51,6 +51,6 @@ class Gource < Formula
   end
 
   test do
-    system "#{bin}gource", "--help"
+    system bin"gource", "--help"
   end
 end

@@ -15,6 +15,6 @@ class Rmate < Formula
   end
 
   test do
-    system "#{bin}rmate", "--version"
+    system bin"rmate", "--version"
   end
 end

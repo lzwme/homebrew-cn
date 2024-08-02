@@ -29,7 +29,7 @@ class Websocketd < Formula
 
   test do
     port = free_port
-    pid = Process.fork { exec "#{bin}websocketd", "--port=#{port}", "echo", "ok" }
+    pid = Process.fork { exec bin"websocketd", "--port=#{port}", "echo", "ok" }
     sleep 2
 
     begin

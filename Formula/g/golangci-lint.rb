@@ -37,7 +37,7 @@ class GolangciLint < Formula
     assert_match(golangci-lint has version #{version} built with go(.*) from, str_version)
 
     str_help = shell_output("#{bin}golangci-lint --help")
-    str_default = shell_output("#{bin}golangci-lint")
+    str_default = shell_output(bin"golangci-lint")
     assert_equal str_default, str_help
     assert_match "Usage:", str_help
     assert_match "Available Commands:", str_help

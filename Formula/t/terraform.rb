@@ -75,7 +75,7 @@ class Terraform < Formula
         count         = 4
       }
     EOS
-    system "#{bin}terraform", "init"
-    system "#{bin}terraform", "graph"
+    system bin"terraform", "init"
+    system bin"terraform", "graph"
   end
 end

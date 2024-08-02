@@ -21,11 +21,11 @@ class Triangle < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-mod=vendor", "-o", "#{bin}triangle", ".cmdtriangle"
+    system "go", "build", "-mod=vendor", "-o", bin"triangle", ".cmdtriangle"
   end
 
   test do
-    system "#{bin}triangle", "-in", test_fixtures("test.png"), "-out", "out.png"
+    system bin"triangle", "-in", test_fixtures("test.png"), "-out", "out.png"
     assert_predicate testpath"out.png", :exist?
   end
 end

@@ -40,6 +40,6 @@ class Vilistextum < Formula
   end
 
   test do
-    system "#{bin}/vilistextum", "-v"
+    system bin/"vilistextum", "-v"
   end
 end

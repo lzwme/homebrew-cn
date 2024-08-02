@@ -61,6 +61,6 @@ class Exult < Formula
   end
 
   test do
-    system "#{bin}exult", "-v"
+    system bin"exult", "-v"
   end
 end

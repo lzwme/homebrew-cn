@@ -41,11 +41,11 @@ class Afio < Formula
     path.write "homebrew"
     pipe_output("#{bin}afio -o archive", "test\n")
 
-    system "#{bin}afio", "-r", "archive"
+    system bin"afio", "-r", "archive"
     path.unlink
 
-    system "#{bin}afio", "-t", "archive"
-    system "#{bin}afio", "-i", "archive"
+    system bin"afio", "-t", "archive"
+    system bin"afio", "-i", "archive"
     assert_equal "homebrew", path.read.chomp
   end
 end

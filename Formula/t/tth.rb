@@ -31,6 +31,6 @@ class Tth < Formula
   end
 
   test do
-    assert_match(/version #{version}/, pipe_output("#{bin}/tth", ""))
+    assert_match(/version #{version}/, pipe_output(bin/"tth", ""))
   end
 end

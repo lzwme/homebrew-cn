@@ -19,7 +19,7 @@ class Smartypants < Formula
 
   test do
     assert_equal "&#8220;Give me a beer&#8221;, said Mike O&#8217;Connor",
-      pipe_output("#{bin}/smartypants",
+      pipe_output(bin/"smartypants",
                   %q("Give me a beer", said Mike O'Connor), 0)
   end
 end

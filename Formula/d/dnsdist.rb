@@ -11,26 +11,25 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "589214929847369c0730f11d568c5f25250fc6f1c87919be631f15e49d9db07d"
-    sha256 cellar: :any,                 arm64_ventura:  "b52110d6639296ca40cf444c1e0e5ae6c7760729f2bc57ece278f25aab9050e5"
-    sha256 cellar: :any,                 arm64_monterey: "a45cf4f07cbe8ee7d65d85744061a066bb507b3a78155426e8594d7bfd90222e"
-    sha256 cellar: :any,                 sonoma:         "ea230e5c6fea39057fb3db53bb703c1089130544165f81b5ada82174a82da041"
-    sha256 cellar: :any,                 ventura:        "efba84e59f8cb0a74342139979e49559801aa1516e8a17bd9165c1afa8b5b055"
-    sha256 cellar: :any,                 monterey:       "3682d43176077c130a78e588565d9fceaf92e4c2d2b6de464f0bf27112f9d27b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55021557883edbb9a2b4608fab76079dfd561ef072a694ef2b7dfe3d88bd72e7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "79eb423b52c4b9c65c1e3915be55361e7816d4b94c2f7e778f96bf1d4a213324"
+    sha256 cellar: :any,                 arm64_ventura:  "422bd193439fab5251a6eb23f925a828f90a7c25972656b4e8dab870def7d79d"
+    sha256 cellar: :any,                 arm64_monterey: "c664c0516264a0c86b1859e0a71f202b5df2d24296a25b48651da6547a3f4caf"
+    sha256 cellar: :any,                 sonoma:         "c6bb6b62f9571fe36b1b914813ce8f5fd2ec999a1417c1a95eb6bfd9cf3712cc"
+    sha256 cellar: :any,                 ventura:        "3dd4292dff72c00ff19839af8e7de4fc971430dc96447b00084c921b3961d1b6"
+    sha256 cellar: :any,                 monterey:       "dca1c8e52fd8f060ff24cc3283e8c0e7136c0d0e8caf91f5d6940ffd7e93f88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7168fd530b763386341cd6fb10546a1bb308eb00f195c119f9277d3bfcca76ce"
   end
 
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
+  depends_on "tinycdb" => :build # TODO: make runtime dependency when `tinycdb` formula has a shared library
   depends_on "abseil"
-  depends_on "cdb"
   depends_on "fstrm"
-  depends_on "h2o"
   depends_on "libnghttp2"
   depends_on "libsodium"
   depends_on "luajit"
   depends_on "openssl@3"
-  depends_on "protobuf"
   depends_on "re2"
 
   uses_from_macos "libedit"

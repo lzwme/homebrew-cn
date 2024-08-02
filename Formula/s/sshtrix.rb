@@ -35,7 +35,7 @@ class Sshtrix < Formula
   end
 
   test do
-    system "#{bin}sshtrix", "-V"
-    system "#{bin}sshtrix", "-O"
+    system bin"sshtrix", "-V"
+    system bin"sshtrix", "-O"
   end
 end

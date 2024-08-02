@@ -41,7 +41,7 @@ class Qbe < Formula
       data $fmt = { b "One and one make %d!\n", b 0 }
     EOS
 
-    system "#{bin}/qbe", "-o", "out.s", "main.ssa"
+    system bin/"qbe", "-o", "out.s", "main.ssa"
     assert_predicate testpath/"out.s", :exist?
   end
 end

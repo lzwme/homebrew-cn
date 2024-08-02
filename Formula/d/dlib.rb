@@ -1,8 +1,8 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http:dlib.net"
-  url "https:github.comdaviskingdlibarchiverefstagsv19.24.4.tar.gz"
-  sha256 "d881911d68972d11563bb9db692b8fcea0ac1b3fd2e3f03fa0b94fde6c739e43"
+  url "https:github.comdaviskingdlibarchiverefstagsv19.24.5.tar.gz"
+  sha256 "01cab8fb880cf4d1cb9c84cb74c6ce291a78c69f443dced5aa2a88fb20bdc3bd"
   license "BSL-1.0"
   head "https:github.comdaviskingdlib.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Dlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "349de1e0fd1a13a138faae3a4df8ad3fc383b859bc9cdf9f9692c20b768a8862"
-    sha256 cellar: :any,                 arm64_ventura:  "e00034573b2c57f8f7c517a3605bc6465c9c75999e5780e06c5a1b47ff2ed6bf"
-    sha256 cellar: :any,                 arm64_monterey: "64418c886f8b3bba884d906ae37763069e2fb69d5cdc36ff6074054dba15db6d"
-    sha256 cellar: :any,                 sonoma:         "2aaccb56920511cb87630695ce43a782876f9f84395919595d423d2348ab1868"
-    sha256 cellar: :any,                 ventura:        "d24b6b3902e7b30db69656f87a11f3ec0d270b77281591ad70e433d2e21d8d27"
-    sha256 cellar: :any,                 monterey:       "5e7d9540338554f8f4485ae8f322e18734cb1bb6102e595d61eed85a087ceaa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b89725bd805895a735b2a4ec83180ac17f14d6511716f820ec3db21d0265739"
+    sha256 cellar: :any,                 arm64_sonoma:   "aa46d2a49ff65d58448141ade0a2949a5309c9b2ea2dfc7e2c5b90aa2f32b3cb"
+    sha256 cellar: :any,                 arm64_ventura:  "b3edb05ef7a83a8072358866525b073d32bdba63757a61071d196f5ed9d461de"
+    sha256 cellar: :any,                 arm64_monterey: "28e4a0efa4cb3654a8de23c4a3c43f6f1639a38c0bae85a9acd521e25d5be7ae"
+    sha256 cellar: :any,                 sonoma:         "bb7115e98d49924d7021426289a7565ede5f461e0588033b9ad24112dbe594b2"
+    sha256 cellar: :any,                 ventura:        "8c0413261f82a367c5de3fc51829110fa1e60598ee635518b6f9a4ab13f727b7"
+    sha256 cellar: :any,                 monterey:       "bd6696e120b25af98553914fd0cb23b36bdef5715520169a103b21feb109c4e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bed428c5816f49e4ac539b567de7d380a0a78db6d9ab0c3d84e855125a5bf1c"
   end
 
   depends_on "cmake" => :build

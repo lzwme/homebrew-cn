@@ -31,6 +31,6 @@ class Sampler < Formula
   end
 
   test do
-    assert_includes "specify config file", shell_output("#{bin}sampler")
+    assert_includes "specify config file", shell_output(bin"sampler")
   end
 end

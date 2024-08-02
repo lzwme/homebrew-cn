@@ -49,7 +49,7 @@ class Sheldon < Formula
 
   test do
     touch testpath"plugins.toml"
-    system "#{bin}sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
+    system bin"sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
     assert_predicate testpath"plugins.lock", :exist?
 
     [

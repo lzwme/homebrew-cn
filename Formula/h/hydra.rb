@@ -71,6 +71,6 @@ class Hydra < Formula
   end
 
   test do
-    assert_match( mysql .* ssh , shell_output("#{bin}hydra", 255))
+    assert_match( mysql .* ssh , shell_output(bin"hydra", 255))
   end
 end

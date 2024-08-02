@@ -73,6 +73,6 @@ class Redshift < Formula
   end
 
   test do
-    system "#{bin}redshift", "-V"
+    system bin"redshift", "-V"
   end
 end

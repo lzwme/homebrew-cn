@@ -23,7 +23,7 @@ class Questdb < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf "questdb.exe"
+    rm_r("questdb.exe")
     libexec.install Dir["*"]
     (bin"questdb").write_env_script libexec"questdb.sh", Language::Java.overridable_java_home_env
     inreplace libexec"questdb.sh", "usrlocalvarquestdb", var"questdb"

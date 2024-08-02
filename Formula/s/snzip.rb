@@ -27,7 +27,7 @@ class Snzip < Formula
 
   test do
     (testpath"test.out").write "test"
-    system "#{bin}snzip", "test.out"
-    system "#{bin}snzip", "-d", "test.out.sz"
+    system bin"snzip", "test.out"
+    system bin"snzip", "-d", "test.out.sz"
   end
 end

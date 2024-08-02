@@ -54,6 +54,6 @@ class Qrencode < Formula
   end
 
   test do
-    system "#{bin}qrencode", "123456789", "-o", "test.png"
+    system bin"qrencode", "123456789", "-o", "test.png"
   end
 end

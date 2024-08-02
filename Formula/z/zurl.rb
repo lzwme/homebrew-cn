@@ -115,7 +115,7 @@ class Zurl < Formula
     EOS
 
     pid = fork do
-      exec "#{bin}zurl", "--config=#{conffile}"
+      exec bin"zurl", "--config=#{conffile}"
     end
 
     begin

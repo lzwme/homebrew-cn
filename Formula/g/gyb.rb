@@ -160,6 +160,6 @@ class Gyb < Formula
     # Below throws a bad exit code but we can check it actually is failing
     # for the right reasons by asserting. --version never fails even if
     # resources are missing or outdatedtoo newetc.
-    assert_match "ERROR: --email is required.", shell_output("#{bin}gyb", 1)
+    assert_match "ERROR: --email is required.", shell_output(bin"gyb", 1)
   end
 end

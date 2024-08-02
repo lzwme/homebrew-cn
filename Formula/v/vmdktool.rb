@@ -60,7 +60,7 @@ class Vmdktool < Formula
     # Create a blank disk image in raw format
     system "dd", "if=/dev/zero", "of=blank.raw", "bs=512", "count=20480"
     # Use vmdktool to convert to streamOptimized VMDK file
-    system "#{bin}/vmdktool", "-v", "blank.vmdk", "blank.raw"
+    system bin/"vmdktool", "-v", "blank.vmdk", "blank.raw"
     # Inspect the VMDK with vmdktool
     output = shell_output("#{bin}/vmdktool -i blank.vmdk")
     assert_match "RDONLY 20480 SPARSE", output

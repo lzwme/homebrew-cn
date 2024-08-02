@@ -53,6 +53,6 @@ class Ucommon < Formula
   end
 
   test do
-    system "#{bin}ucommon-config", "--libs"
+    system bin"ucommon-config", "--libs"
   end
 end

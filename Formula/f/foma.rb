@@ -52,6 +52,6 @@ class Foma < Formula
       apply down> abrakadabra
     EOS
 
-    system "#{bin}/foma", "-f", "toysyllabify.script"
+    system bin/"foma", "-f", "toysyllabify.script"
   end
 end

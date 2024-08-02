@@ -33,7 +33,7 @@ class Dnsperf < Formula
   end
 
   test do
-    system "#{bin}/dnsperf", "-h"
+    system bin/"dnsperf", "-h"
     system "#{bin}/resperf", "-h"
   end
 end

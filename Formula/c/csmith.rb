@@ -53,6 +53,6 @@ class Csmith < Formula
   end
 
   test do
-    system "#{bin}csmith", "-o", "test.c"
+    system bin"csmith", "-o", "test.c"
   end
 end

@@ -30,7 +30,7 @@ class CargoFuzz < Formula
     system "rustup", "set", "profile", "minimal"
 
     system "cargo", "init"
-    system "#{bin}cargo-fuzz", "init"
+    system bin"cargo-fuzz", "init"
     assert_predicate testpath"fuzzCargo.toml", :exist?
   end
 end

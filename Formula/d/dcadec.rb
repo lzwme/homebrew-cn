@@ -41,7 +41,7 @@ class Dcadec < Formula
 
   test do
     resource("homebrew-testdata").stage do
-      system "#{bin}dcadec", resource("homebrew-testdata").cached_download
+      system bin"dcadec", resource("homebrew-testdata").cached_download
     end
   end
 end

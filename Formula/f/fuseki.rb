@@ -49,6 +49,6 @@ class Fuseki < Formula
   end
 
   test do
-    system "#{bin}/fuseki-server", "--version"
+    system bin/"fuseki-server", "--version"
   end
 end

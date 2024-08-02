@@ -26,6 +26,6 @@ class Bogofilter < Formula
   end
 
   test do
-    system "#{bin}/bogofilter", "--version"
+    system bin/"bogofilter", "--version"
   end
 end

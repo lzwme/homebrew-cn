@@ -37,7 +37,7 @@ class Ttyd < Formula
   test do
     port = free_port
     fork do
-      system "#{bin}ttyd", "--port", port.to_s, "bash"
+      system bin"ttyd", "--port", port.to_s, "bash"
     end
     sleep 5
 

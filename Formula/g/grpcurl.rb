@@ -29,6 +29,6 @@ class Grpcurl < Formula
         string hello_world = 1;
       }
     EOS
-    system "#{bin}grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
+    system bin"grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
   end
 end

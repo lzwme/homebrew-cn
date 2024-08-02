@@ -11,6 +11,8 @@ class MozGitTools < Formula
     sha256 cellar: :any_skip_relocation, all: "908939f8f921ec7d4a31b8f27686d7f44ffb2492ceaae621b080121b60b581d8"
   end
 
+  deprecate! date: "2024-08-01", because: :repo_archived
+
   def install
     # Install all the executables, except git-root since that conflicts with git-extras
     bin_array = Dir.glob("git*").push("hg-patch-to-git-patch")

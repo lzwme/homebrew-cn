@@ -73,7 +73,7 @@ class Cayley < Formula
 
     http_port = free_port
     fork do
-      exec "#{bin}cayley", "http", "--host=127.0.0.1:#{http_port}"
+      exec bin"cayley", "http", "--host=127.0.0.1:#{http_port}"
     end
     sleep 3
     response = shell_output("curl -s -i 127.0.0.1:#{http_port}")

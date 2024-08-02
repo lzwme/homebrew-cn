@@ -1,5 +1,3 @@
-require "language/node"
-
 class Newman < Formula
   desc "Command-line collection runner for Postman"
   homepage "https://www.getpostman.com"
@@ -8,19 +6,20 @@ class Newman < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ecc6f8a704e46ca38d99f0d8d980f910dd6ad9f3d8c0b9e23b3abf29b452e1dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecc6f8a704e46ca38d99f0d8d980f910dd6ad9f3d8c0b9e23b3abf29b452e1dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecc6f8a704e46ca38d99f0d8d980f910dd6ad9f3d8c0b9e23b3abf29b452e1dd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fa16f67b6cce040a5048f7247833b663d31da026eb327c702e795324bc610be"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fa16f67b6cce040a5048f7247833b663d31da026eb327c702e795324bc610be"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fa16f67b6cce040a5048f7247833b663d31da026eb327c702e795324bc610be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "667de2f36c865416e3a585c619fbb2274588fff370e644e4748bfd97b24ada73"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "083286f30003f41082fc28c1f840034fdbc439832df691616a74487b4ed115a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "083286f30003f41082fc28c1f840034fdbc439832df691616a74487b4ed115a8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "083286f30003f41082fc28c1f840034fdbc439832df691616a74487b4ed115a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "13f079c8ef75010ed011f0b421bfa8e499c70486d16fcde45546a3a1bdfd9f96"
+    sha256 cellar: :any_skip_relocation, ventura:        "13f079c8ef75010ed011f0b421bfa8e499c70486d16fcde45546a3a1bdfd9f96"
+    sha256 cellar: :any_skip_relocation, monterey:       "13f079c8ef75010ed011f0b421bfa8e499c70486d16fcde45546a3a1bdfd9f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7910178703776eabc29ef96cc2dd24a85f42803e0ce6cece7f54ee982d29e3b0"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

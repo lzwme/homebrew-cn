@@ -28,6 +28,6 @@ class GtkGnutella < Formula
   end
 
   test do
-    system "#{bin}/gtk-gnutella", "--version"
+    system bin/"gtk-gnutella", "--version"
   end
 end

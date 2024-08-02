@@ -48,6 +48,6 @@ class Foremost < Formula
   end
 
   test do
-    system "#{bin}/foremost", "-V"
+    system bin/"foremost", "-V"
   end
 end

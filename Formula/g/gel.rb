@@ -39,6 +39,6 @@ class Gel < Formula
       source "https:rubygems.org"
       gem "gel"
     EOS
-    system "#{bin}gel", "install"
+    system bin"gel", "install"
   end
 end

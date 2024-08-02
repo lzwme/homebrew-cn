@@ -20,6 +20,6 @@ class Ansiweather < Formula
   end
 
   test do
-    assert_match "Wind", shell_output("#{bin}ansiweather")
+    assert_match "Wind", shell_output(bin"ansiweather")
   end
 end

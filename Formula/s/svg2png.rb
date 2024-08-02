@@ -51,7 +51,7 @@ class Svg2png < Formula
   end
 
   test do
-    system "#{bin}/svg2png", test_fixtures("test.svg"), "test.png"
+    system bin/"svg2png", test_fixtures("test.svg"), "test.png"
     assert_predicate testpath/"test.png", :exist?
   end
 end

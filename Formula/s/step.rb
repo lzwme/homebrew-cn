@@ -40,12 +40,12 @@ class Step < Formula
 
   test do
     # Generate a public  private key pair. Creates foo.pub and foo.priv.
-    system "#{bin}step", "crypto", "keypair", "foo.pub", "foo.priv", "--no-password", "--insecure"
+    system bin"step", "crypto", "keypair", "foo.pub", "foo.priv", "--no-password", "--insecure"
     assert_predicate testpath"foo.pub", :exist?
     assert_predicate testpath"foo.priv", :exist?
 
     # Generate a root certificate and private key with subject baz written to baz.crt and baz.key.
-    system "#{bin}step", "certificate", "create", "--profile", "root-ca",
+    system bin"step", "certificate", "create", "--profile", "root-ca",
         "--no-password", "--insecure", "baz", "baz.crt", "baz.key"
     assert_predicate testpath"baz.crt", :exist?
     assert_predicate testpath"baz.key", :exist?
@@ -61,7 +61,7 @@ class Step < Formula
     assert_equal "CN=baz", baz_crt_json["issuer_dn"]
 
     # Generate a leaf certificate signed by the previously created root.
-    system "#{bin}step", "certificate", "create", "--profile", "intermediate-ca",
+    system bin"step", "certificate", "create", "--profile", "intermediate-ca",
         "--no-password", "--insecure", "--ca", "baz.crt", "--ca-key", "baz.key",
         "zap", "zap.crt", "zap.key"
     assert_predicate testpath"zap.crt", :exist?
@@ -83,14 +83,14 @@ class Step < Formula
     steppath = "#{testpath}.step"
     mkdir_p(steppath)
     ENV["STEPPATH"] = steppath
-    system "#{bin}step", "ca", "init", "--address", "127.0.0.1:8081",
+    system bin"step", "ca", "init", "--address", "127.0.0.1:8081",
         "--dns", "127.0.0.1", "--password-file", "#{testpath}password.txt",
         "--provisioner-password-file", "#{testpath}password.txt", "--name",
         "homebrew-smallstep-test", "--provisioner", "brew"
 
     begin
       pid = fork do
-        exec "#{bin}step-ca", "--password-file", "#{testpath}password.txt",
+        exec bin"step-ca", "--password-file", "#{testpath}password.txt",
           "#{steppath}configca.json"
       end
 
@@ -101,7 +101,7 @@ class Step < Formula
       shell_output("#{bin}step ca token --password-file #{testpath}password.txt " \
                    "homebrew-smallstep-leaf > token.txt")
       token = File.read(testpath"token.txt")
-      system "#{bin}step", "ca", "certificate", "--token", token,
+      system bin"step", "ca", "certificate", "--token", token,
           "homebrew-smallstep-leaf", "brew.crt", "brew.key"
 
       assert_predicate testpath"brew.crt", :exist?

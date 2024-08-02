@@ -64,7 +64,7 @@ class Swig < Formula
     EOS
 
     ENV.remove_from_cflags(-march=\S*)
-    system "#{bin}swig", "-python", "test.i"
+    system bin"swig", "-python", "test.i"
     system "python3", "setup.py", "build_ext", "--inplace"
     assert_equal "2", shell_output("python3 .run.py").strip
   end

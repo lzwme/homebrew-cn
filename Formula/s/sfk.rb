@@ -30,6 +30,6 @@ class Sfk < Formula
   end
 
   test do
-    system "#{bin}/sfk", "ip"
+    system bin/"sfk", "ip"
   end
 end

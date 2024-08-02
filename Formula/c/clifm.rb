@@ -5,6 +5,14 @@ class Clifm < Formula
   sha256 "98fe9a1d26b02d661440787ae811363c97da537a11fd3df78ff98d40f42dc487"
   license "GPL-2.0-or-later"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sonoma:   "566d5eed9e988cc3d76bd16f985ab4feb47da1a6bd2b5d29ad71836778f722d9"
     sha256 arm64_ventura:  "ca870dbb89899a9ec44a161c53a171e5e36c75689f8a79783717d5283793e566"

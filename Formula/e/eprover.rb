@@ -28,6 +28,6 @@ class Eprover < Formula
   end
 
   test do
-    system "#{bin}/eprover", "--help"
+    system bin/"eprover", "--help"
   end
 end

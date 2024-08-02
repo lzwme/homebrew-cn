@@ -16,6 +16,6 @@ class DockerMachineNfs < Formula
   end
 
   test do
-    system "#{bin}docker-machine-nfs"
+    system bin"docker-machine-nfs"
   end
 end

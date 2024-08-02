@@ -73,6 +73,6 @@ class Supermodel < Formula
   end
 
   test do
-    system "#{bin}/supermodel", "-print-games"
+    system bin/"supermodel", "-print-games"
   end
 end

@@ -37,6 +37,6 @@ class Cpulimit < Formula
   end
 
   test do
-    system "#{bin}cpulimit", "--limit=10", "ls"
+    system bin"cpulimit", "--limit=10", "ls"
   end
 end

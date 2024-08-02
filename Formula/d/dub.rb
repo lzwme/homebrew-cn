@@ -57,7 +57,7 @@ class Dub < Formula
       import std.stdio;
       void main() { writeln("Hello, world!"); }
     EOS
-    system "#{bin}dub", "build", "--compiler=#{Formula["ldc"].opt_bin}ldc2"
+    system bin"dub", "build", "--compiler=#{Formula["ldc"].opt_bin}ldc2"
     assert_equal "Hello, world!", shell_output("#{testpath}brewtest").chomp
   end
 end

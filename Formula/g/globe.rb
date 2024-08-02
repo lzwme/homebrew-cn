@@ -36,6 +36,6 @@ class Globe < Formula
   end
 
   test do
-    system "#{bin}/globe"
+    system bin/"globe"
   end
 end

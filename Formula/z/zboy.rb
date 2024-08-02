@@ -37,6 +37,6 @@ class Zboy < Formula
   end
 
   test do
-    system "#{bin}/zboy", "--help"
+    system bin/"zboy", "--help"
   end
 end

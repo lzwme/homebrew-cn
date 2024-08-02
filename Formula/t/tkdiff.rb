@@ -32,6 +32,6 @@ class Tkdiff < Formula
     # Fails with: no display name and no $DISPLAY environment variable on GitHub Actions
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    system "#{bin}/tkdiff", "--help"
+    system bin/"tkdiff", "--help"
   end
 end

@@ -41,7 +41,7 @@ class WhisperCpp < Formula
   test do
     cp [pkgshare"jfk.wav", pkgshare"for-tests-ggml-tiny.bin", pkgshare"ggml-metal.metal"], testpath
 
-    system "#{bin}whisper-cpp", "samples", "-m", "for-tests-ggml-tiny.bin"
+    system bin"whisper-cpp", "samples", "-m", "for-tests-ggml-tiny.bin"
     assert_equal 0, $CHILD_STATUS.exitstatus, "whisper-cpp failed with exit code #{$CHILD_STATUS.exitstatus}"
   end
 end

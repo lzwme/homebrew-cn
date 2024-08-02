@@ -14,6 +14,6 @@ class FormatUdf < Formula
   end
 
   test do
-    system "#{bin}format-udf", "-h"
+    system bin"format-udf", "-h"
   end
 end

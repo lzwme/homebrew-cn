@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Netlistsvg < Formula
   desc "Draws an SVG schematic from a yosys JSON netlist"
   homepage "https:github.comnturleynetlistsvg"
@@ -8,14 +6,21 @@ class Netlistsvg < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0db6e0d42e5a96a82499730ce2be1ae11af72f23b0d16e536eabf2e30c7d8983"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, ventura:        "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, monterey:       "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "375b90caacd7736ea74c7f6ebfc1b0fd5b4c8bde7a75be4e12e965b0221d4f1e"
   end
 
   depends_on "yosys" => :test
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

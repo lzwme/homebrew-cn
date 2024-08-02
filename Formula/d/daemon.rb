@@ -29,6 +29,6 @@ class Daemon < Formula
   end
 
   test do
-    system "#{bin}/daemon", "--version"
+    system bin/"daemon", "--version"
   end
 end

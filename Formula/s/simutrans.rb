@@ -69,6 +69,6 @@ class Simutrans < Formula
   end
 
   test do
-    system "#{bin}simutrans", "--help"
+    system bin"simutrans", "--help"
   end
 end

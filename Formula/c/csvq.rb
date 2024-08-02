@@ -29,7 +29,7 @@ class Csvq < Formula
   end
 
   test do
-    system "#{bin}csvq", "--version"
+    system bin"csvq", "--version"
 
     (testpath"test.csv").write <<~EOS
       a,b,c

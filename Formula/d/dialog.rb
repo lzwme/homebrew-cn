@@ -28,6 +28,6 @@ class Dialog < Formula
   end
 
   test do
-    system "#{bin}/dialog", "--version"
+    system bin/"dialog", "--version"
   end
 end

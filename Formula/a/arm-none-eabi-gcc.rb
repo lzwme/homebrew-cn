@@ -63,7 +63,7 @@ class ArmNoneEabiGcc < Formula
         return i;
       }
     EOS
-    system "#{bin}/arm-none-eabi-gcc", "-c", "-o", "test-c.o", "test-c.c"
+    system bin/"arm-none-eabi-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf32-littlearm",
                  shell_output("#{Formula["arm-none-eabi-binutils"].bin}/arm-none-eabi-objdump -a test-c.o")
   end

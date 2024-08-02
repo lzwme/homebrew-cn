@@ -44,7 +44,7 @@ class Tarlz < Formula
     system bin/"tarlz", "-C", testpath, "-cf", lzipfilepath, "source"
     assert_predicate lzipfilepath, :exist?
 
-    system "#{bin}/tarlz", "-C", dpath, "-xf", lzipfilepath
+    system bin/"tarlz", "-C", dpath, "-xf", lzipfilepath
     assert_equal "TEST CONTENT", dtestfilepath.read
   end
 end

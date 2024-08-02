@@ -33,7 +33,7 @@ class Algernon < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db",
+      exec bin"algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db",
                               "--addr", ":#{port}"
     end
     sleep 20

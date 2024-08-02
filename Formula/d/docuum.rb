@@ -33,7 +33,7 @@ class Docuum < Formula
   test do
     started_successfully = false
 
-    Open3.popen3({ "NO_COLOR" => "true" }, "#{bin}docuum") do |_, _, stderr, wait_thread|
+    Open3.popen3({ "NO_COLOR" => "true" }, bin"docuum") do |_, _, stderr, wait_thread|
       stderr.each_line do |line|
         if line.include?("Performing an initial vacuum on startup…")
           Process.kill("TERM", wait_thread.pid)

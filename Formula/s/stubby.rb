@@ -60,7 +60,7 @@ class Stubby < Formula
     assert_match "bindata for 8.8.8.8", output
 
     fork do
-      exec "#{bin}stubby", "-C", testpath"stubby_test.yml"
+      exec bin"stubby", "-C", testpath"stubby_test.yml"
     end
     sleep 2
 

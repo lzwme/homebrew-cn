@@ -1,6 +1,6 @@
 cask "brewtarget" do
-  version "3.0.11"
-  sha256 "d8d7ae1583810bc05b8f9cb43c0d6c73e366a1467f9c6a1e9b206c864b12d36a"
+  version "4.0.0"
+  sha256 "45cc7b0157f7d05c3a4ef3d3b69e3913a081d6ddffe4e83d4e35a18958827b37"
 
   url "https:github.comBrewtargetbrewtargetreleasesdownloadv#{version}brewtarget_#{version}.dmg"
   name "brewtarget"
@@ -14,8 +14,4 @@ cask "brewtarget" do
     "~LibraryPreferencescom.brewtarget.Brewtarget.plist",
     "~LibrarySaved Application Statecom.brewtarget.Brewtarget.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

@@ -31,6 +31,6 @@ class Sipsak < Formula
   end
 
   test do
-    system "#{bin}sipsak", "-V"
+    system bin"sipsak", "-V"
   end
 end

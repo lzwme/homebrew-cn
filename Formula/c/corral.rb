@@ -28,7 +28,7 @@ class Corral < Formula
         new create(env: Env) =>
           env.out.print("Hello World!")
     EOS
-    system "#{bin}corral", "run", "--", "ponyc", "test"
+    system bin"corral", "run", "--", "ponyc", "test"
     assert_equal "Hello World!", shell_output(".test1").chomp
   end
 end

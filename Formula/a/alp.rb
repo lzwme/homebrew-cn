@@ -42,7 +42,7 @@ class Alp < Formula
       {"time":"2015-09-06T06:00:43+09:00","method":"GET","uri":"foobar5xx","status":504,"body_bytes":15,"response_time":60.000}
       {"time":"2015-09-06T06:00:43+09:00","method":"GET","uri":"req","status":200,"body_bytes":15,"response_time":"-", "request_time":0.321}
     EOS
-    system "#{bin}alp", "json", "--file=#{testpath}json_access.log", "--dump=#{testpath}dump.yml"
+    system bin"alp", "json", "--file=#{testpath}json_access.log", "--dump=#{testpath}dump.yml"
     assert_predicate testpath"dump.yml", :exist?
   end
 end

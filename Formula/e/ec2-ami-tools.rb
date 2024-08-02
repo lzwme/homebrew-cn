@@ -37,6 +37,6 @@ class Ec2AmiTools < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ec2-ami-tools-version")
+    assert_match version.to_s, shell_output(bin/"ec2-ami-tools-version")
   end
 end

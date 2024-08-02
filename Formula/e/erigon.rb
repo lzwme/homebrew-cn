@@ -59,7 +59,7 @@ class Erigon < Formula
       --log.dir.verbosity debug
       --log.dir.path #{testpath}
     ]
-    system "#{bin}erigon", *args, "init", "genesis.json"
+    system bin"erigon", *args, "init", "genesis.json"
     assert_predicate testpath"erigon.log", :exist?
   end
 end

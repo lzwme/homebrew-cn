@@ -34,7 +34,7 @@ class Smlfmt < Formula
       val x = 5
       val y = 6
     EOS
-    system "#{bin}smlfmt", "--force", "source.sml"
+    system bin"smlfmt", "--force", "source.sml"
     assert_equal expected_output, (testpath"source.sml").read
   end
 end

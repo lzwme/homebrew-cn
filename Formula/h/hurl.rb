@@ -63,7 +63,7 @@ class Hurl < Formula
     # This requires a network connection, but so does Homebrew in general.
     filename = (testpath"test.hurl")
     filename.write "GET https:hurl.dev"
-    system "#{bin}hurl", "--color", filename
+    system bin"hurl", "--color", filename
     system "#{bin}hurlfmt", "--color", filename
   end
 end

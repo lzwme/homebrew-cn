@@ -29,6 +29,6 @@ class Clib < Formula
   end
 
   test do
-    system "#{bin}clib", "install", "stephenmathiesonrot13.c"
+    system bin"clib", "install", "stephenmathiesonrot13.c"
   end
 end

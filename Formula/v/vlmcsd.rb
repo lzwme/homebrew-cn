@@ -69,7 +69,7 @@ class Vlmcsd < Formula
     assert_match "vlmcs", output
     begin
       pid = fork do
-        exec "#{bin}vlmcsd", "-D"
+        exec bin"vlmcsd", "-D"
       end
       # Run vlmcsd, then use vlmcs to check
       # the running status of vlmcsd

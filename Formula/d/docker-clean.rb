@@ -14,6 +14,6 @@ class DockerClean < Formula
   end
 
   test do
-    system "#{bin}docker-clean", "--help"
+    system bin"docker-clean", "--help"
   end
 end

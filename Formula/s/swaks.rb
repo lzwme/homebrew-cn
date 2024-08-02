@@ -19,6 +19,6 @@ class Swaks < Formula
   end
 
   test do
-    system "#{bin}/swaks", "--version"
+    system bin/"swaks", "--version"
   end
 end

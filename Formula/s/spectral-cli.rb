@@ -1,5 +1,3 @@
-require "languagenode"
-
 class SpectralCli < Formula
   desc "JSONYAML linter and support OpenAPI v3.1v3.0v2.0, and AsyncAPI v2.x"
   homepage "https:stoplight.ioopen-sourcespectral"
@@ -8,19 +6,20 @@ class SpectralCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
-    sha256 cellar: :any_skip_relocation, ventura:        "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
-    sha256 cellar: :any_skip_relocation, monterey:       "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf2121c4406a8558364f34a6b9ee383df6414ebf8b933188b5920b030b24e684"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

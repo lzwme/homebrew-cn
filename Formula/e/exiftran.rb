@@ -61,6 +61,6 @@ class Exiftran < Formula
   end
 
   test do
-    system "#{bin}exiftran", "-9", "-o", "out.jpg", test_fixtures("test.jpg")
+    system bin"exiftran", "-9", "-o", "out.jpg", test_fixtures("test.jpg")
   end
 end

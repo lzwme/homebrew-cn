@@ -35,7 +35,7 @@ class Fastjar < Formula
   end
 
   test do
-    system "#{bin}/fastjar", "-V"
+    system bin/"fastjar", "-V"
     system "#{bin}/grepjar", "-V"
   end
 end

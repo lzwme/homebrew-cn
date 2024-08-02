@@ -46,6 +46,6 @@ class GitNumber < Formula
   end
 
   test do
-    system "#{bin}git-number", "-v"
+    system bin"git-number", "-v"
   end
 end

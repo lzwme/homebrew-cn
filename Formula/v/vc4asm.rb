@@ -38,6 +38,6 @@ class Vc4asm < Formula
       add.unpack8ai r0, r4, ra1
       add r0, r4.8a, ra1
     EOS
-    system "#{bin}vc4asm", "-o test.hex", "-V", "#{share}vc4incvc4.qinc", "test.qasm"
+    system bin"vc4asm", "-o test.hex", "-V", "#{share}vc4incvc4.qinc", "test.qasm"
   end
 end

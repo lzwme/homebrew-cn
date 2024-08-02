@@ -32,6 +32,6 @@ class Websocat < Formula
   end
 
   test do
-    system "#{bin}websocat", "-t", "literal:qwe", "assert:qwe"
+    system bin"websocat", "-t", "literal:qwe", "assert:qwe"
   end
 end

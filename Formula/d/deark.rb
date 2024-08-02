@@ -31,7 +31,7 @@ class Deark < Formula
     (testpath/"test.gz").write ::Base64.decode64 <<~EOS
       H4sICKU51VoAA3Rlc3QudHh0APNIzcnJ11HwyM9NTSpKLVfkAgBuKJNJEQAAAA==
     EOS
-    system "#{bin}/deark", "test.gz"
+    system bin/"deark", "test.gz"
     file = (testpath/"output.000.test.txt").readlines.first
     assert_match "Hello, Homebrew!", file
   end

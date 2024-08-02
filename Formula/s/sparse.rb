@@ -46,6 +46,6 @@ class Sparse < Formula
 
   test do
     (testpath/"test.C").write("int main(int a) {return a;}\n")
-    system "#{bin}/sparse", testpath/"test.C"
+    system bin/"sparse", testpath/"test.C"
   end
 end

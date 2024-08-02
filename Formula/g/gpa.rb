@@ -46,6 +46,6 @@ class Gpa < Formula
   end
 
   test do
-    system "#{bin}/gpa", "--version"
+    system bin/"gpa", "--version"
   end
 end

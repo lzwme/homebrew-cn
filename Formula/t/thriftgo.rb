@@ -39,7 +39,7 @@ class Thriftgo < Formula
           Response echo(1: Request req)
       }
     EOS
-    system "#{bin}thriftgo", "-o=.", "-g=go", "test.thrift"
+    system bin"thriftgo", "-o=.", "-g=go", "test.thrift"
     assert_predicate testpath"api""test.go", :exist?
     refute_predicate (testpath"api""test.go").size, :zero?
   end

@@ -33,6 +33,6 @@ class Commitlint < Formula
         };
     EOS
     assert_match version.to_s, shell_output("#{bin}commitlint --version")
-    assert_equal "", pipe_output("#{bin}commitlint", "foo: message")
+    assert_equal "", pipe_output(bin"commitlint", "foo: message")
   end
 end

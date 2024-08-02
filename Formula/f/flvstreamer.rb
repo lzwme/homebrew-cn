@@ -36,6 +36,6 @@ class Flvstreamer < Formula
   end
 
   test do
-    system "#{bin}/flvstreamer", "-h"
+    system bin/"flvstreamer", "-h"
   end
 end

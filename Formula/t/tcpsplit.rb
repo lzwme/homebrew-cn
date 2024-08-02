@@ -34,6 +34,6 @@ class Tcpsplit < Formula
   end
 
   test do
-    system "#{bin}/tcpsplit", "--version"
+    system bin/"tcpsplit", "--version"
   end
 end

@@ -32,6 +32,6 @@ class Qstat < Formula
   end
 
   test do
-    system "#{bin}qstat", "--help"
+    system bin"qstat", "--help"
   end
 end

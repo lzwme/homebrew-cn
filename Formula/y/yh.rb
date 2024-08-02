@@ -28,6 +28,6 @@ class Yh < Formula
   end
 
   test do
-    assert_equal "\e[91mfoo\e[0m: \e[33mbar\e[0m\n", pipe_output("#{bin}yh", "foo: bar")
+    assert_equal "\e[91mfoo\e[0m: \e[33mbar\e[0m\n", pipe_output(bin"yh", "foo: bar")
   end
 end

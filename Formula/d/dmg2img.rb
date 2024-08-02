@@ -43,7 +43,7 @@ class Dmg2img < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}dmg2img")
+    assert_match version.to_s, shell_output(bin"dmg2img")
     output = shell_output("#{bin}vfdecrypt 2>&1", 1)
     assert_match "No Passphrase given.", output
   end

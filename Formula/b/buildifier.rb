@@ -24,6 +24,6 @@ class Buildifier < Formula
 
   test do
     touch testpath"BUILD"
-    system "#{bin}buildifier", "-mode=check", "BUILD"
+    system bin"buildifier", "-mode=check", "BUILD"
   end
 end

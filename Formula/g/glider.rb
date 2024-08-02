@@ -39,7 +39,7 @@ class Glider < Formula
 
   test do
     proxy_port = free_port
-    glider = fork { exec "#{bin}glider", "-listen", "socks5::#{proxy_port}" }
+    glider = fork { exec bin"glider", "-listen", "socks5::#{proxy_port}" }
 
     sleep 3
     begin

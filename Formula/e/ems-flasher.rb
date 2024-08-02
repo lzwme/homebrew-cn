@@ -48,6 +48,6 @@ class EmsFlasher < Formula
   end
 
   test do
-    system "#{bin}ems-flasher", "--version"
+    system bin"ems-flasher", "--version"
   end
 end

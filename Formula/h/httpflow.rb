@@ -32,6 +32,6 @@ class Httpflow < Formula
   end
 
   test do
-    system "#{bin}httpflow", "-h"
+    system bin"httpflow", "-h"
   end
 end

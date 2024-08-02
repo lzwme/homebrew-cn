@@ -22,8 +22,8 @@ class Cmix < Formula
 
   test do
     (testpath"foo").write "test"
-    system "#{bin}cmix", "-c", "foo", "foo.cmix"
-    system "#{bin}cmix", "-d", "foo.cmix", "foo.unpacked"
+    system bin"cmix", "-c", "foo", "foo.cmix"
+    system bin"cmix", "-d", "foo.cmix", "foo.unpacked"
     assert_equal "test", shell_output("cat foo.unpacked")
   end
 end

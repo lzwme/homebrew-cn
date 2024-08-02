@@ -31,6 +31,6 @@ class Stockfish < Formula
   end
 
   test do
-    system "#{bin}stockfish", "go", "depth", "20"
+    system bin"stockfish", "go", "depth", "20"
   end
 end

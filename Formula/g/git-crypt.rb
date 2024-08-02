@@ -37,6 +37,6 @@ class GitCrypt < Formula
   end
 
   test do
-    system "#{bin}/git-crypt", "keygen", "keyfile"
+    system bin/"git-crypt", "keygen", "keyfile"
   end
 end

@@ -36,6 +36,6 @@ class Wwwoffle < Formula
   end
 
   test do
-    system "#{bin}/wwwoffle", "--version"
+    system bin/"wwwoffle", "--version"
   end
 end

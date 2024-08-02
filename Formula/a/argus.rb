@@ -33,6 +33,6 @@ class Argus < Formula
   end
 
   test do
-    assert_match "Pages", shell_output("#{bin}/argus-vmstat")
+    assert_match "Pages", shell_output(bin/"argus-vmstat")
   end
 end

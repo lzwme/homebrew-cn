@@ -16,6 +16,6 @@ class Slugify < Formula
   end
 
   test do
-    system "#{bin}slugify", "-n", "dry_run.txt"
+    system bin"slugify", "-n", "dry_run.txt"
   end
 end

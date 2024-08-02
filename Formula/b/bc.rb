@@ -51,7 +51,7 @@ class Bc < Formula
   end
 
   test do
-    system "#{bin}/bc", "--version"
-    assert_match "2", pipe_output("#{bin}/bc", "1+1\n")
+    system bin/"bc", "--version"
+    assert_match "2", pipe_output(bin/"bc", "1+1\n")
   end
 end

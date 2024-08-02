@@ -37,7 +37,7 @@ class Wordgrinder < Formula
   end
 
   test do
-    system "#{bin}wordgrinder", "--convert", "#{doc}README.wg", "#{testpath}converted.txt"
+    system bin"wordgrinder", "--convert", "#{doc}README.wg", "#{testpath}converted.txt"
     assert_predicate testpath"converted.txt", :exist?
   end
 end

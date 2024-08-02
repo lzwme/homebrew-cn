@@ -23,6 +23,6 @@ class Sec < Formula
   end
 
   test do
-    system "#{bin}sec", "--version"
+    system bin"sec", "--version"
   end
 end

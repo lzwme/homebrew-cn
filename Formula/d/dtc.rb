@@ -40,6 +40,6 @@ class Dtc < Formula
       / {
       };
     EOS
-    system "#{bin}/dtc", "test.dts"
+    system bin/"dtc", "test.dts"
   end
 end

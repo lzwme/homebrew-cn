@@ -52,6 +52,6 @@ class Sntop < Formula
   end
 
   test do
-    system "#{bin}/sntop", "--version"
+    system bin/"sntop", "--version"
   end
 end

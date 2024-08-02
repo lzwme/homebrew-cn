@@ -42,11 +42,11 @@ class Afsctool < Formula
 
     test_options = [[], ["-T", "LZFSE"]]
     test_options.each do |x|
-      system "#{bin}afsctool", "-c", *x, path
-      system "#{bin}afsctool", "-v", path
+      system bin"afsctool", "-c", *x, path
+      system bin"afsctool", "-v", path
       raise "Did not compress" unless File.stat(path).blocks.between?(1, 10)
 
-      system "#{bin}afsctool", "-d", path
+      system bin"afsctool", "-d", path
       raise "Did not decompress" if File.stat(path).blocks != original_size
       raise "Data corruption" if path.read != sample
     end

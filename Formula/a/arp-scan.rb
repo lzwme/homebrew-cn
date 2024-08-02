@@ -30,6 +30,6 @@ class ArpScan < Formula
   end
 
   test do
-    system "#{bin}arp-scan", "-V"
+    system bin"arp-scan", "-V"
   end
 end

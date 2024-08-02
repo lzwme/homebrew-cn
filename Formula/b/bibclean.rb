@@ -56,6 +56,6 @@ class Bibclean < Formula
       }
     EOS
 
-    system "#{bin}/bibclean", "test.bib"
+    system bin/"bibclean", "test.bib"
   end
 end

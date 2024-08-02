@@ -57,6 +57,6 @@ class Figlet < Formula
   end
 
   test do
-    system "#{bin}/figlet", "-f", "larry3d", "hello, figlet"
+    system bin/"figlet", "-f", "larry3d", "hello, figlet"
   end
 end

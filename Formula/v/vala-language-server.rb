@@ -50,7 +50,7 @@ class ValaLanguageServer < Formula
       "processId\":88075,\"rootPath\":\"#{testpath}\",\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output("#{bin}vala-language-server", input, 0)
+    output = pipe_output(bin"vala-language-server", input, 0)
     assert_match(^Content-Length: \d+i, output)
   end
 end

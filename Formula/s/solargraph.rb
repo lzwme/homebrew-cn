@@ -45,7 +45,7 @@ class Solargraph < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}solargraph", "stdio") do |stdin, stdout, _, _|
+    Open3.popen3(bin"solargraph", "stdio") do |stdin, stdout, _, _|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
       assert_match(^Content-Length: \d+i, stdout.readline)

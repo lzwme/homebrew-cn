@@ -51,7 +51,7 @@ class Ruby < Formula
   uses_from_macos "zlib"
 
   def determine_api_version
-    Utils.safe_popen_read("#{bin}ruby", "-e", "print Gem.ruby_api_version")
+    Utils.safe_popen_read(bin"ruby", "-e", "print Gem.ruby_api_version")
   end
 
   def api_version
@@ -126,7 +126,7 @@ class Ruby < Formula
     resource("rubygems").stage do
       ENV.prepend_path "PATH", bin
 
-      system "#{bin}ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
+      system bin"ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
       rg_in = lib"ruby#{api_version}"
       rg_gems_in = lib"rubygems#{api_version}"
 
@@ -153,11 +153,11 @@ class Ruby < Formula
     # Since Gem ships Bundle we want to provide that fullexpected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
-    rm_f %W[
+    rm(%W[
       #{rubygems_bindir}bundle
       #{rubygems_bindir}bundler
-    ]
-    rm_rf Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"]
+    ].select { |file| File.exist?(file) })
+    rm_r(Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"])
     rubygems_bindir.install_symlink Dir[libexec"gembin*"]
 
     # Customize rubygems to lookinstall in the global gem directory

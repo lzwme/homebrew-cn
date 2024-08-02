@@ -16,6 +16,6 @@ class Doubledown < Formula
   end
 
   test do
-    system "#{bin}doubledown", "--help"
+    system bin"doubledown", "--help"
   end
 end

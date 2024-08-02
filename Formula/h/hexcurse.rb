@@ -32,6 +32,6 @@ class Hexcurse < Formula
   end
 
   test do
-    system "#{bin}hexcurse", "-help"
+    system bin"hexcurse", "-help"
   end
 end

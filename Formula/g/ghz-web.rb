@@ -32,7 +32,7 @@ class GhzWeb < Formula
     port = free_port
     ENV["GHZ_SERVER_PORT"] = port.to_s
     fork do
-      exec "#{bin}ghz-web"
+      exec bin"ghz-web"
     end
     sleep 1
     cmd = "curl -sIm3 -XGET http:localhost:#{port}"

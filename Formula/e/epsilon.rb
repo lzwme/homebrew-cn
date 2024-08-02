@@ -44,6 +44,6 @@ class Epsilon < Formula
   end
 
   test do
-    system "#{bin}/epsilon", "--version"
+    system bin/"epsilon", "--version"
   end
 end

@@ -54,6 +54,6 @@ class Solarus < Formula
   end
 
   test do
-    system "#{bin}/solarus-run", "-help"
+    system bin/"solarus-run", "-help"
   end
 end

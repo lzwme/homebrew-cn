@@ -1,5 +1,3 @@
-require "language/node"
-
 class ReactNativeCli < Formula
   desc "Tools for creating native apps for Android and iOS"
   homepage "https://facebook.github.io/react-native/"
@@ -8,20 +6,20 @@ class ReactNativeCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "294bd06227f8bc38e2adbfd14149c885304c4668dcff70a8528f256429dc66ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77d3f103253c4aca89a6f814ddf314f87800185d0039be2878e9e3645c825c15"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, monterey:       "286f38336638ab6b72ee871aa7b2d71e691601b4c41e86af258d393efc6dffd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59fc8b8c6188532bd4d646071108dc246a4ed7ebd9914040bd093988143c73c9"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

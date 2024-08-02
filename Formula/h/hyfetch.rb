@@ -55,7 +55,7 @@ class Hyfetch < Formula
     EOS
     system "#{bin}neowofetch", "--config", "none", "--color_blocks", "off",
                               "--disable", "wm", "de", "term", "gpu"
-    system "#{bin}hyfetch", "-C", testpath"hyfetch.json",
+    system bin"hyfetch", "-C", testpath"hyfetch.json",
                              "--args=\"--config none --color_blocks off --disable wm de term gpu\""
   end
 end

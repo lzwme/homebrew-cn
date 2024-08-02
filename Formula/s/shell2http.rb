@@ -28,7 +28,7 @@ class Shell2http < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}shell2http", "-port", port.to_s, "echo", "echo brewtest"
+      exec bin"shell2http", "-port", port.to_s, "echo", "echo brewtest"
     end
     sleep 1
     output = shell_output("curl -s http:localhost:#{port}")

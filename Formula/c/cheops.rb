@@ -35,6 +35,6 @@ class Cheops < Formula
   end
 
   test do
-    system "#{bin}cheops", "--version"
+    system bin"cheops", "--version"
   end
 end

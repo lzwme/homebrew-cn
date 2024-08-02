@@ -84,7 +84,7 @@ class Flex < Formula
         yylex();
       }
     EOS
-    system "#{bin}flex", "test.flex"
+    system bin"flex", "test.flex"
     system ENV.cc, "lex.yy.c", "-L#{lib}", "-lfl", "-o", "test"
     assert_equal shell_output("echo \"Hello World\" | .test"), <<~EOS
       Hello

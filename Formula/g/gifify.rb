@@ -22,6 +22,6 @@ class Gifify < Formula
 
   test do
     system "ffmpeg", "-f", "lavfi", "-i", "testsrc", "-t", "1", "-c:v", "libx264", "test.m4v"
-    system "#{bin}gifify", "test.m4v"
+    system bin"gifify", "test.m4v"
   end
 end

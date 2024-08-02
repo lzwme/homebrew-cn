@@ -32,6 +32,6 @@ class Rats < Formula
   end
 
   test do
-    system "#{bin}/rats"
+    system bin/"rats"
   end
 end

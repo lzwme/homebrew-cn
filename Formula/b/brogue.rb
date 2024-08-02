@@ -50,6 +50,6 @@ class Brogue < Formula
   end
 
   test do
-    system "#{bin}brogue", "--version"
+    system bin"brogue", "--version"
   end
 end

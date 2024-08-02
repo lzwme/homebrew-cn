@@ -20,7 +20,7 @@ class MariadbAT104 < Formula
   # See: https:mariadb.comkbenchanges-improvements-in-mariadb-104
   # End-of-life on 2024-06-18: https:mariadb.orgabout#maintenance-policy
   # Cannot use `openssl@3`, so we match the deprecation date of `openssl@1.1`
-  deprecate! date: "2023-09-11", because: :unsupported
+  disable! date: "2024-08-01", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build

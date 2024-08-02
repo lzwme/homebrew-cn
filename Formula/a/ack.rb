@@ -54,7 +54,7 @@ class Ack < Formula
       man1.install "blibman1ack.1"
     else
       bin.install "ack-v#{version.to_s.tr("-", "_")}" => "ack"
-      system "#{Formula["pod2man"].opt_bin}pod2man", "#{bin}ack", "ack.1", "--release=ack v#{version}"
+      system "#{Formula["pod2man"].opt_bin}pod2man", bin"ack", "ack.1", "--release=ack v#{version}"
       man1.install "ack.1"
     end
   end

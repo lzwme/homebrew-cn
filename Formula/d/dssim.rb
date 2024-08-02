@@ -23,6 +23,6 @@ class Dssim < Formula
   end
 
   test do
-    system "#{bin}dssim", test_fixtures("test.png"), test_fixtures("test.png")
+    system bin"dssim", test_fixtures("test.png"), test_fixtures("test.png")
   end
 end

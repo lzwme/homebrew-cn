@@ -4,7 +4,6 @@ class Gh < Formula
   url "https:github.comclicliarchiverefstagsv2.53.0.tar.gz"
   sha256 "5e47d567216b1f63a4939e634f9067c9b60b0852625edf8ad10e1b9be5033cff"
   license "MIT"
-
   head "https:github.comclicli.git", branch: "trunk"
 
   livecheck do
@@ -27,8 +26,14 @@ class Gh < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
+    gh_version = if build.stable?
+      version.to_s
+    else
+      Utils.safe_popen_read("git", "describe", "--tags", "--dirty").chomp
+    end
+
     with_env(
-      "GH_VERSION" => version.to_s,
+      "GH_VERSION" => gh_version,
       "GO_LDFLAGS" => "-s -w -X main.updaterEnabled=clicli",
     ) do
       system "make", "bingh", "manpages"

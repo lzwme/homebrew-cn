@@ -92,7 +92,7 @@ class Apprise < Formula
     assert_match \
       "#{brewtest_notification_title}: #{brewtest_notification_body}", \
       shell_output(
-        "#{bin}/apprise" \
+        (bin/"apprise") \
         + " " + %Q(-P "#{brewtest_notifier_file}") \
         + " " + %Q(-t "#{brewtest_notification_title}") \
         + " " + %Q(-b "#{brewtest_notification_body}") \

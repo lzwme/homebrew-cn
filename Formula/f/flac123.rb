@@ -34,6 +34,6 @@ class Flac123 < Formula
 
   test do
     driver = OS.mac? ? "macosx" : "oss"
-    system "#{bin}flac123", "-d=#{driver}"
+    system bin"flac123", "-d=#{driver}"
   end
 end

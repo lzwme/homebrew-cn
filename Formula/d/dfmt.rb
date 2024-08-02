@@ -53,7 +53,7 @@ class Dfmt < Formula
       }
     EOS
 
-    system "#{bin}dfmt", "-i", "test.d"
+    system bin"dfmt", "-i", "test.d"
 
     assert_equal expected, (testpath"test.d").read
   end

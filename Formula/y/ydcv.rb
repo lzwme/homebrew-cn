@@ -41,6 +41,6 @@ class Ydcv < Formula
   end
 
   test do
-    system "#{bin}ydcv", "--help"
+    system bin"ydcv", "--help"
   end
 end

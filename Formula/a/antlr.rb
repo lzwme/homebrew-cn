@@ -53,7 +53,7 @@ class Antlr < Formula
     EOS
     ENV.prepend "CLASSPATH", "#{prefix}/antlr-#{version}-complete.jar", ":"
     ENV.prepend "CLASSPATH", ".", ":"
-    system "#{bin}/antlr", "Expr.g4"
+    system bin/"antlr", "Expr.g4"
     system "#{Formula["openjdk"].bin}/javac", *Dir["Expr*.java"]
     assert_match(/^$/, pipe_output("#{bin}/grun Expr prog", "22+20\n"))
   end

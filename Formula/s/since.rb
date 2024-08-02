@@ -38,7 +38,7 @@ class Since < Formula
       foo
       bar
     EOS
-    system "#{bin}/since", "-z", "test"
+    system bin/"since", "-z", "test"
     assert_predicate testpath/".since", :exist?
   end
 end

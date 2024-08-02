@@ -37,6 +37,6 @@ class Trash < Formula
   end
 
   test do
-    system "#{bin}trash"
+    system bin"trash"
   end
 end

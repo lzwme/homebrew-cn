@@ -19,6 +19,6 @@ class Gpcslots2 < Formula
   end
 
   test do
-    system "#{bin}/gpcslots2", "-h"
+    system bin/"gpcslots2", "-h"
   end
 end

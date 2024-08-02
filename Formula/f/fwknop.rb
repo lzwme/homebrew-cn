@@ -56,6 +56,6 @@ class Fwknop < Formula
   test do
     touch testpath".fwknoprc"
     chmod 0600, testpath".fwknoprc"
-    system "#{bin}fwknop", "--version"
+    system bin"fwknop", "--version"
   end
 end

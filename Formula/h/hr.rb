@@ -16,6 +16,6 @@ class Hr < Formula
   end
 
   test do
-    system "#{bin}hr", "-#-"
+    system bin"hr", "-#-"
   end
 end

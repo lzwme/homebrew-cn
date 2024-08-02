@@ -25,6 +25,6 @@ class Speedread < Formula
   end
 
   test do
-    system "#{bin}speedread", "-w 1000", "<(echo This is a test)"
+    system bin"speedread", "-w 1000", "<(echo This is a test)"
   end
 end

@@ -25,6 +25,6 @@ class Dhcpdump < Formula
   end
 
   test do
-    system "#{bin}dhcpdump", "-h"
+    system bin"dhcpdump", "-h"
   end
 end

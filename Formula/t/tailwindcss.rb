@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https:tailwindcss.com"
@@ -8,23 +6,24 @@ class Tailwindcss < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d27c49f81d7235d86dfdacf4212bd5e541967e914e280e72771f3b201896f20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c50c6056c22a72b35374a30aa2a094b7c8c27a3900bb09d7d4dfb51679c4d88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c50c6056c22a72b35374a30aa2a094b7c8c27a3900bb09d7d4dfb51679c4d88"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bab433abcb45f14adf4612e2b7498b096e1fe80d3a0fc8787bbb9eaeba9a4168"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e4bb2e3d9f65a95e8e40545bc8d822750d880b8378e5a86ad223ead76485aea"
-    sha256 cellar: :any_skip_relocation, monterey:       "9fb8c6304174372bd664c48945561b8dfeef522943495212576ce46159026a93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dbd40b813790067933d85ec9580cb85d3c55dfcca9b71958c39ebfd1ffce17b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea7e52e250d828c24b90cdb44ea2af1a3d81f183799308849bf46ae724a80628"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d12ddea4769651fb5bbbb9fd11ef15ce3d2ab651f4eeed69bc05877fd42cb762"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d12ddea4769651fb5bbbb9fd11ef15ce3d2ab651f4eeed69bc05877fd42cb762"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d53668104032e97a84d365ad86e40d42457b70477f53c7977114970ff585a96"
+    sha256 cellar: :any_skip_relocation, ventura:        "5eef39fef7a8fe4cb1b267a8cc05bd98c64ef9b6f28a151fb524ef381143894c"
+    sha256 cellar: :any_skip_relocation, monterey:       "5eef39fef7a8fe4cb1b267a8cc05bd98c64ef9b6f28a151fb524ef381143894c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "839ac55cc5938312b8146b1825788ddaa244e009fe04f5f912327c8be5789e6b"
   end
 
   depends_on "node" => :build
 
   def install
-    system "npm", "install", *Language::Node.local_npm_install_args
+    system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
 
     cd "standalone-cli" do
-      system "npm", "install", *Language::Node.local_npm_install_args
+      system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
       os = OS.mac? ? "macos" : "linux"
       cpu = Hardware::CPU.arm? ? "arm64" : "x64"

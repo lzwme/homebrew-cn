@@ -30,6 +30,6 @@ class Gperf < Formula
 
   test do
     assert_match "TOTAL_KEYWORDS 3",
-      pipe_output("#{bin}/gperf", "homebrew\nfoobar\ntest\n")
+      pipe_output(bin/"gperf", "homebrew\nfoobar\ntest\n")
   end
 end

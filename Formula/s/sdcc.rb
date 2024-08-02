@@ -47,7 +47,7 @@ class Sdcc < Formula
         return 0;
       }
     EOS
-    system "#{bin}/sdcc", "-mz80", "#{testpath}/test.c"
+    system bin/"sdcc", "-mz80", "#{testpath}/test.c"
     assert_predicate testpath/"test.ihx", :exist?
   end
 end

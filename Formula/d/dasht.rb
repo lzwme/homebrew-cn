@@ -20,7 +20,7 @@ class Dasht < Formula
   end
 
   test do
-    system "#{bin}dasht-docsets-install", "--force", "bash"
-    assert_equal "Bash\n", shell_output("#{bin}dasht-docsets")
+    system bin"dasht-docsets-install", "--force", "bash"
+    assert_equal "Bash\n", shell_output(bin"dasht-docsets")
   end
 end

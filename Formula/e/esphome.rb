@@ -3,19 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackages47494766106dab938aeb668ea42922a00f2979e4ac9237166375dce519fe1433esphome-2024.7.2.tar.gz"
-  sha256 "ec1fe04d16a84fb93241900c8239badf57b70a2966fb71197cc4c7d509892da1"
+  url "https:files.pythonhosted.orgpackagesb92736fae72bac314116c7dfa098a64ad6a6529aed887c05e711211ae6128e33esphome-2024.7.3.tar.gz"
+  sha256 "fb1b9675e552c83f24984794f134c327283ea3801496ab5e36fcc9d2e1063595"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "d07168710ee0ce16d4baea3d0fef63e17ffda309c23c77567054638dd5fa9493"
-    sha256 cellar: :any,                 arm64_ventura:  "b7911507349ae3a1db7b996f33a0afd55d041a1c1408149d8603c4ce45fe0fe6"
-    sha256 cellar: :any,                 arm64_monterey: "07e7411df4108e9dac97f40747a351133f8a63cc0f53eca966d40c39bc8f4852"
-    sha256 cellar: :any,                 sonoma:         "33cbee9070619f4435c6aab80b0740bbbe558d9af56731e2f49cc2c7d5cb69e9"
-    sha256 cellar: :any,                 ventura:        "100ded8358abbd8914391a79516d47d85e005b579762c6339f693e757952cff7"
-    sha256 cellar: :any,                 monterey:       "07dc24352d7f4fa8851c5f629376bbb8f913ed3ba1bb49d144eefb11e43b1b7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6db830d32df48abb1125efb41ed0bd7c8cb84c30b003c7b3c4c3ee0db445af45"
+    sha256 cellar: :any,                 arm64_sonoma:   "09991b3f42e8690935bb1fd689fd7ec1d77335aac43ebd5950090e8b91a3e810"
+    sha256 cellar: :any,                 arm64_ventura:  "768f3829ee1f302020d15de1c10fbba2d52d4b50a33c8dc7602bd57e5037d3e5"
+    sha256 cellar: :any,                 arm64_monterey: "99fd793cde9cb76db66c6f9da4ef7863687e54cec061c05e1f1142b4a000515d"
+    sha256 cellar: :any,                 sonoma:         "fce19547e527c1ed50845c3ba8d5f0839ef896a4c54acb1f3d8345241eb279b6"
+    sha256 cellar: :any,                 ventura:        "694c17d0dff9719a985f7824db557fd6b2db600c0459cb70a38e7a7e104aa0d8"
+    sha256 cellar: :any,                 monterey:       "d867c32aebdb027634fa71263c4aee23487b6ebef0681a93d15146a0b9620570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "944f91c91226da8e9ce3d00076d2ce17321ddf79ebf5f2dbc08a5f8874393720"
   end
 
   depends_on "certifi"
@@ -31,8 +30,8 @@ class Esphome < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackagescc83f731ac54f82fc25984ee4d6abadf69b824dde03b629a1348f459e7b35d5aaiohappyeyeballs-2.3.2.tar.gz"
-    sha256 "77e15a733090547a1f5369a1287ddfc944bd30df0eb8993f585259c34b405f4e"
+    url "https:files.pythonhosted.orgpackages3cc152b8ecc87576f8b06fd5132e3ab8550209c958fb450e6d185b15835da82caiohappyeyeballs-2.3.4.tar.gz"
+    sha256 "7e1ae8399c320a8adec76f6c919ed5ceae6edd4c3672f4d9eae2b27e37c80ff6"
   end
 
   resource "ajsonrpc" do
@@ -73,11 +72,6 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackagesc8f5de042f4f0a3580541d173db5bb98988f525e3557651d40f04b132350ca38chacha20poly1305_reuseable-0.12.2.tar.gz"
     sha256 "378801cc9902d881511a0d1f817f9571a63bf41bf072b0f02d2daab3ae5cf30b"
-  end
-
-  resource "chardet" do
-    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -166,8 +160,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages71a5d61e4263e62e6db1990c120d682870e5c50a30fb6b26119a214c7a014847protobuf-5.27.2.tar.gz"
-    sha256 "f3ecdef226b9af856075f28227ff2c90ce3a594d092c39bee5513573f25e2714"
+    url "https:files.pythonhosted.orgpackages1b610671db2ab2aee7c92d6c1b617c39b30a4cd973950118da56d77e7f397a9dprotobuf-5.27.3.tar.gz"
+    sha256 "82460903e640f2b7e34ee81a947fdaad89de796d324bcbc38ff5430bcdead82c"
   end
 
   resource "pyelftools" do
@@ -300,6 +294,6 @@ class Esphome < Formula
     return if Hardware::CPU.arm?
 
     ENV.remove_macosxsdk if OS.mac?
-    system "#{bin}esphome", "compile", "test.yaml"
+    system bin"esphome", "compile", "test.yaml"
   end
 end

@@ -28,6 +28,6 @@ class Weggli < Formula
 
   test do
     (testpath"test.c").write("void foo() {int bar=10+foo+bar;}")
-    system "#{bin}weggli", "{int $a = _+foo+$a;}", testpath"test.c"
+    system bin"weggli", "{int $a = _+foo+$a;}", testpath"test.c"
   end
 end

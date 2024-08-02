@@ -1,5 +1,3 @@
-require "language/node"
-
 class Standard < Formula
   desc "JavaScript Style Guide, with linter & automatic code fixer"
   homepage "https://standardjs.com/"
@@ -8,21 +6,20 @@ class Standard < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af0e3f2f36dc415192148b7591f5a3e17229ad7970082b56241eba24f78f62f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac043f24d6883a01fc0a97c5f65f522b9521635be94b1ee2d90645e5a5c13f11"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac043f24d6883a01fc0a97c5f65f522b9521635be94b1ee2d90645e5a5c13f11"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac043f24d6883a01fc0a97c5f65f522b9521635be94b1ee2d90645e5a5c13f11"
-    sha256 cellar: :any_skip_relocation, sonoma:         "19720a4e77b8f31d17affe3ac5eb07fd4cfe2db3579bd2c45984d64e85c31933"
-    sha256 cellar: :any_skip_relocation, ventura:        "c4faa4fdc9b7304c64b9477d83f11810d6f38a300b2bedf4719d6c40e611c60d"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4faa4fdc9b7304c64b9477d83f11810d6f38a300b2bedf4719d6c40e611c60d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c4faa4fdc9b7304c64b9477d83f11810d6f38a300b2bedf4719d6c40e611c60d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac043f24d6883a01fc0a97c5f65f522b9521635be94b1ee2d90645e5a5c13f11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d06a373849759c1b455daca6ba136aae42fd595a61a879822d2e296a203a13f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d06a373849759c1b455daca6ba136aae42fd595a61a879822d2e296a203a13f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d06a373849759c1b455daca6ba136aae42fd595a61a879822d2e296a203a13f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "282a80dbf34a60f7e44a4a78d6ee35ae579ff7ba4783c631162c2c5289b391be"
+    sha256 cellar: :any_skip_relocation, ventura:        "282a80dbf34a60f7e44a4a78d6ee35ae579ff7ba4783c631162c2c5289b391be"
+    sha256 cellar: :any_skip_relocation, monterey:       "282a80dbf34a60f7e44a4a78d6ee35ae579ff7ba4783c631162c2c5289b391be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bc78f5c4f7351ad1fbc152ae3869fe81b77a7047b41fea80f09bfe1a76ead1d"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

@@ -34,7 +34,7 @@ class ReorderPythonImports < Formula
       from os import path
       import sys
     EOS
-    system "#{bin}reorder-python-imports", "--exit-zero-even-if-changed", "#{testpath}test.py"
+    system bin"reorder-python-imports", "--exit-zero-even-if-changed", "#{testpath}test.py"
     assert_equal("import sys\nfrom os import path\n", File.read(testpath"test.py"))
   end
 end

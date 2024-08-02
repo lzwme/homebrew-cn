@@ -55,7 +55,7 @@ class Tinyproxy < Formula
     inreplace testpath"tinyproxy.conf", "Port 8888", "Port #{port}"
 
     pid = fork do
-      exec "#{bin}tinyproxy", "-c", testpath"tinyproxy.conf"
+      exec bin"tinyproxy", "-c", testpath"tinyproxy.conf"
     end
     sleep 2
 

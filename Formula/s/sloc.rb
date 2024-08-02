@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Sloc < Formula
   desc "Simple tool to count source lines of code"
   homepage "https:github.comflossesloc"
@@ -8,13 +6,20 @@ class Sloc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "401c79fd025169082d6f2a07f7855dc67af62872f54bc7d22f0ec59aeef416fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, ventura:        "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, monterey:       "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67f3b6498f7ffaeec6b245a9d4fd2bd562e95637afa78e570d64aa313b651236"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

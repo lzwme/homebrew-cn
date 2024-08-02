@@ -29,6 +29,6 @@ class Btfs < Formula
   end
 
   test do
-    system "#{bin}btfs", "--help"
+    system bin"btfs", "--help"
   end
 end

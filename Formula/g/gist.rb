@@ -18,7 +18,7 @@ class Gist < Formula
   end
 
   test do
-    output = pipe_output("#{bin}gist", "homebrew")
+    output = pipe_output(bin"gist", "homebrew")
     assert_match "GitHub now requires credentials", output
   end
 end

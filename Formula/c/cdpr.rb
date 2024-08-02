@@ -35,6 +35,6 @@ class Cdpr < Formula
   end
 
   test do
-    system "#{bin}/cdpr", "-h"
+    system bin/"cdpr", "-h"
   end
 end

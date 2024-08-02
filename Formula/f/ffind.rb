@@ -17,6 +17,6 @@ class Ffind < Formula
   end
 
   test do
-    system "#{bin}ffind"
+    system bin"ffind"
   end
 end

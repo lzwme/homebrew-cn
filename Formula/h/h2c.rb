@@ -18,6 +18,6 @@ class H2c < Formula
 
     # test if h2c can convert HTTP headers to curl options.
     assert_match "curl --head --http1.1 --header Accept: --header \"Shoesize: 12\" --user-agent \"moo\" https:example.com",
-      pipe_output("#{bin}h2c", "HEAD   HTTP1.1\nHost: example.com\nUser-Agent: moo\nShoesize: 12")
+      pipe_output(bin"h2c", "HEAD   HTTP1.1\nHost: example.com\nUser-Agent: moo\nShoesize: 12")
   end
 end

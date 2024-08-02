@@ -42,7 +42,7 @@ class Bsdiff < Formula
     (testpath/"bin1").write "\x01\x02\x03\x04"
     (testpath/"bin2").write "\x01\x02\x03\x05"
 
-    system "#{bin}/bsdiff", "bin1", "bin2", "bindiff"
+    system bin/"bsdiff", "bin1", "bin2", "bindiff"
   end
 end
 

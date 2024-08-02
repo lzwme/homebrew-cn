@@ -40,6 +40,6 @@ class Vimpc < Formula
   end
 
   test do
-    system "#{bin}vimpc", "-v"
+    system bin"vimpc", "-v"
   end
 end

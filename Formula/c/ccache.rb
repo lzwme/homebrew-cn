@@ -90,6 +90,6 @@ class Ccache < Formula
   test do
     ENV.prepend_path "PATH", opt_libexec
     assert_equal "#{opt_libexec}gcc", shell_output("which gcc").chomp
-    system "#{bin}ccache", "-s"
+    system bin"ccache", "-s"
   end
 end
