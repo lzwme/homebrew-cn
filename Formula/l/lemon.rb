@@ -37,7 +37,7 @@ class Lemon < Formula
   end
 
   test do
-    system "#{bin}/lemon", "-d#{testpath}", "#{pkgshare}/lemon-test01.y"
+    system bin/"lemon", "-d#{testpath}", "#{pkgshare}/lemon-test01.y"
     system ENV.cc, "lemon-test01.c"
     assert_match "tests pass", shell_output("./a.out")
   end

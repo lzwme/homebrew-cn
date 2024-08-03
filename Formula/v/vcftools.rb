@@ -41,6 +41,7 @@ class Vcftools < Formula
       #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
       1	1	.	A	C	10	PASS	.
     EOS
-    system "#{bin}vcf-validator", "test.vcf"
+
+    system bin"vcf-validator", "test.vcf"
   end
 end

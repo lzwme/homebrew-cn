@@ -23,6 +23,6 @@ class Prettyping < Formula
   end
 
   test do
-    system "#{bin}prettyping", "-c", "3", "127.0.0.1"
+    system bin"prettyping", "-c", "3", "127.0.0.1"
   end
 end

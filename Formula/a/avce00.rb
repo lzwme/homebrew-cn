@@ -38,6 +38,6 @@ class Avce00 < Formula
 
   test do
     touch testpath/"test"
-    system "#{bin}/avctest", "-b", "test"
+    system bin/"avctest", "-b", "test"
   end
 end

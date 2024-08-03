@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
   homepage "https:github.comhashicorpterraform-cdk"
@@ -23,8 +21,8 @@ class Cdktf < Formula
   depends_on "terraform"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}bin*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin*")
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase

@@ -34,7 +34,7 @@ class Kn < Formula
   end
 
   test do
-    system "#{bin}kn", "service", "create", "foo",
+    system bin"kn", "service", "create", "foo",
       "--namespace", "bar",
       "--image", "gcr.iocloudrunhello",
       "--target", "."

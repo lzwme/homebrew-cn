@@ -85,7 +85,7 @@ class Mlton < Formula
     (testpath"hello.sml").write <<~'EOS'
       val () = print "Hello, Homebrew!\n"
     EOS
-    system "#{bin}mlton", "hello.sml"
+    system bin"mlton", "hello.sml"
     assert_equal "Hello, Homebrew!\n", `.hello`
   end
 end

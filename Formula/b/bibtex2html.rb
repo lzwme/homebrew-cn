@@ -56,7 +56,8 @@ class Bibtex2html < Formula
           pages   = {3--4}
       }
     EOS
-    system "#{bin}bib2bib", "test.bib", "--remove", "pages", "-ob", "out.bib"
+
+    system bin"bib2bib", "test.bib", "--remove", "pages", "-ob", "out.bib"
     assert(pages\s*=\s*\{3--4\} !~ File.read("out.bib"))
     assert_match(pages\s*=\s*\{3--4\}, File.read("test.bib"))
   end

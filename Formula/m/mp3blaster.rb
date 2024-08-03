@@ -32,6 +32,6 @@ class Mp3blaster < Formula
   end
 
   test do
-    system "#{bin}/mp3blaster", "--version"
+    system bin/"mp3blaster", "--version"
   end
 end

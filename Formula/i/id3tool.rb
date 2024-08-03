@@ -36,11 +36,12 @@ class Id3tool < Formula
   end
 
   test do
-    mp3 = "#{testpath}/test.mp3"
-    cp test_fixtures("test.mp3"), mp3
+    test_mp3 = testpath/"test.mp3"
+    # needs to write the file to set the tags
+    cp test_fixtures("test.mp3"), test_mp3
 
-    system "#{bin}/id3tool", "-t", "Homebrew", mp3
+    system bin/"id3tool", "-t", "Homebrew", test_mp3
     assert_match(/Song Title:\s+Homebrew/,
-                 shell_output("#{bin}/id3tool #{mp3}").chomp)
+                 shell_output("#{bin}/id3tool #{test_mp3}").chomp)
   end
 end

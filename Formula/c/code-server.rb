@@ -1,5 +1,3 @@
-require "languagenode"
-
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https:github.comcodercode-server"
@@ -8,13 +6,14 @@ class CodeServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34e3f851d17904af4b81e2c05ad277971f7b463691858943d6e16e22dc1bb170"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4a98a378a47037ef44fa44a12c6a07b32eff3e855836580f6556a9f6d4a74f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79a34cc4514cb1dd21e061c5aec72da9aa3ec215292781682d391e7c39787829"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3220d02d930f5f148bbf0f3c1be20f8bd74652de6cbe3f43ec12a5ec40662154"
-    sha256 cellar: :any_skip_relocation, ventura:        "c33fd1f0626220f8f3ecf678a3d06de5b5dfd68c5135b0c46896991e02fff4af"
-    sha256 cellar: :any_skip_relocation, monterey:       "7beccbb9b5e1d8f16a7a910a0a61397f30010f9ba661a8ba53667469ddd5186f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f75a1edb6fefde561f59ea5f8493e56e38e116a92c9d287620e6ebb4dfa3dbe6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6552a8d502d4ec0449d6cf7fe11850a49e8e6d7868322e4111534edc714f17cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d98325dd95798edb060b780660b45820c14157c17d53b92a2b5cd49603b8d864"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21d1c6efae8b0465bbcd83dcd56abb4d43764bb702334aa65aaa73d81edf2ca4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "592294a1a8feffcea9f4500337ef9eb5132024d0347c28ccb457d49e25193961"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cf716bdda8bf22b70e15b036984dc8f2d86cb269f5a52974ad0c7e2b45b53fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "2da8171b6ac28da15ab8601baddbc17f01461da314fa2a607c8fe1fa416f8f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "118464890162921266db09f853b3798af699af8519c9badc11c65db8ced8b6f6"
   end
 
   depends_on "yarn" => :build
@@ -33,8 +32,7 @@ class CodeServer < Formula
     # Fix broken node-addon-api: https:github.comnodejsnodeissues52229
     ENV.append "CXXFLAGS", "-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT"
 
-    node = Formula["node@20"]
-    system "npm", "install", *Language::Node.local_npm_install_args, "--unsafe-perm", "--omit", "dev"
+    system "npm", "install", *std_npm_args(prefix: false), "--unsafe-perm", "--omit", "dev"
 
     # @parcelwatcher bundles all binaries for other platforms & architectures
     # This deletes the non-matching architecture otherwise brew audit will complain.
@@ -47,8 +45,7 @@ class CodeServer < Formula
     unneeded_prebuilds.map(&:rmtree)
 
     libexec.install Dir["*"]
-    env = { PATH: "#{node.opt_bin}:$PATH" }
-    (bin"code-server").write_env_script "#{libexec}outnodeentry.js", env
+    bin.install_symlink libexec"outnodeentry.js" => "code-server"
   end
 
   def caveats

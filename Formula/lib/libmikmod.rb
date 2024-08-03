@@ -36,6 +36,6 @@ class Libmikmod < Formula
   end
 
   test do
-    system "#{bin}/libmikmod-config", "--version"
+    system bin/"libmikmod-config", "--version"
   end
 end

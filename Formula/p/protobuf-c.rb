@@ -4,16 +4,16 @@ class ProtobufC < Formula
   url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.0protobuf-c-1.5.0.tar.gz"
   sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b93c1f49a901ea16b5bfacaf5a10f9bd4f09c295c5f1795f080be6fe7faad5a5"
-    sha256 cellar: :any,                 arm64_ventura:  "e731a68e108cd354a43c6d3aa29f67f393372221349d3efeb401f7ebaca990bf"
-    sha256 cellar: :any,                 arm64_monterey: "951d1564c87b5597dd143f8aa50706dcf0ce6e60bd2cd487b7a68ed00155efc0"
-    sha256 cellar: :any,                 sonoma:         "2d707548d7efcd1db02820483202daf39441bd0a3ef482a487668cf050dce999"
-    sha256 cellar: :any,                 ventura:        "97ecf11df5a5c6aecbbecddedecb5e2ec10753fabb43831142b674d8874b8746"
-    sha256 cellar: :any,                 monterey:       "0f6e11df495a6c210758c78940ce102f9e93b4410843bb5424e62dc53fb2ea2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b5c30f7a107018873e0f026f04de1d3c10fe04ae85e631231235c6e77d8eae4"
+    sha256 cellar: :any,                 arm64_sonoma:   "72fee94793c602ef83a4d8aac7d1caa98e133fa6c5f25fbc1d8396579029ef98"
+    sha256 cellar: :any,                 arm64_ventura:  "75bb825db8bd2d82af93a89f5f6a9cfe12b6b5d4f6b70341fb155461b2ea552f"
+    sha256 cellar: :any,                 arm64_monterey: "8e0115bd2a6b2620d3479a6fd1d20d17cfda41d086b9ab2b030409f0f7a5421d"
+    sha256 cellar: :any,                 sonoma:         "88ff05c990ed1e11bb8caeae0064d08c47647ab17f40d956b86be42aaa35c8e8"
+    sha256 cellar: :any,                 ventura:        "095c877e564e511a3ef901a64f868dafe47d79f0a825d2f35328a413889e1559"
+    sha256 cellar: :any,                 monterey:       "cce6a68c711e9b9526c560edeaacd9a64bae5f22800e72612162239858bfac84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55519392277fdfed903aceed44f4fada89f540399e9bb4e49b9d010b99448380"
   end
 
   head do

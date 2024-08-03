@@ -15,6 +15,6 @@ class Modman < Formula
   end
 
   test do
-    system "#{bin}modman"
+    system bin"modman"
   end
 end

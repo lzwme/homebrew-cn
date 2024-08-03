@@ -32,7 +32,7 @@ class Progress < Formula
     end
     sleep 1
     begin
-      assert_match "dd", shell_output("#{bin}progress")
+      assert_match "dd", shell_output(bin"progress")
     ensure
       Process.kill 9, pid
       Process.wait pid

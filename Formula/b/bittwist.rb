@@ -26,6 +26,6 @@ class Bittwist < Formula
 
   test do
     system bin/"bittwist", "-help"
-    system "#{bin}/bittwiste", "-help"
+    system bin/"bittwiste", "-help"
   end
 end

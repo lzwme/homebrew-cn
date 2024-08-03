@@ -261,7 +261,7 @@ class Ruby < Formula
     assert_equal api_version, determine_api_version
 
     ENV["GEM_HOME"] = testpath
-    system "#{bin}gem", "install", "json"
+    system bin"gem", "install", "json"
 
     (testpath"Gemfile").write <<~EOS
       source 'https:rubygems.org'

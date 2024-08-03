@@ -30,6 +30,6 @@ class Vde < Formula
   end
 
   test do
-    system "#{bin}vde_switch", "-v"
+    system bin"vde_switch", "-v"
   end
 end

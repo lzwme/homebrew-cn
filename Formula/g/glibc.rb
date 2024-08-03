@@ -259,8 +259,8 @@ class Glibc < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}ld.so --help")
-    safe_system "#{lib}libc.so.6", "--version"
-    safe_system "#{bin}locale", "--version"
+    safe_system lib"libc.so.6", "--version"
+    safe_system bin"locale", "--version"
   end
 
   def ld_so_conf_d

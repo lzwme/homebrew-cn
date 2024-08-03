@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Bazarr < Formula
   include Language::Python::Virtualenv
 
@@ -51,7 +49,7 @@ class Bazarr < Formula
     if build.head?
       # Build front-end.
       cd buildpath"frontend" do
-        system "npm", "install", *Language::Node.local_npm_install_args
+        system "npm", "install", *std_npm_args(prefix: false)
         system "npm", "run", "build"
       end
     end

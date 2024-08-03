@@ -52,8 +52,8 @@ class ObjcCodegenutils < Formula
 
   test do
     # Would do more verification here but it would require fixture Xcode projects not in the main repo
-    system "#{bin}objc-assetgen", "-h"
-    system "#{bin}objc-colordump", "-h"
-    system "#{bin}objc-identifierconstants", "-h"
+    system bin"objc-assetgen", "-h"
+    system bin"objc-colordump", "-h"
+    system bin"objc-identifierconstants", "-h"
   end
 end

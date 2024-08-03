@@ -23,8 +23,9 @@ class Icdiff < Formula
   test do
     (testpath"file1").write "test1"
     (testpath"file2").write "test1"
-    system "#{bin}icdiff", "file1", "file2"
+
+    system bin"icdiff", "file1", "file2"
     system "git", "init"
-    system "#{bin}git-icdiff"
+    system bin"git-icdiff"
   end
 end

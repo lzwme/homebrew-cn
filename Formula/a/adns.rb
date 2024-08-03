@@ -30,6 +30,6 @@ class Adns < Formula
   end
 
   test do
-    system "#{bin}/adnsheloex", "--version"
+    system bin/"adnsheloex", "--version"
   end
 end

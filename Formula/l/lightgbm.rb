@@ -32,7 +32,7 @@ class Lightgbm < Formula
   test do
     cp_r (pkgshare"examplesregression"), testpath
     cd "regression" do
-      system "#{bin}lightgbm", "config=train.conf"
+      system bin"lightgbm", "config=train.conf"
     end
   end
 end

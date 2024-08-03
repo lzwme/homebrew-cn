@@ -42,6 +42,6 @@ class TheSilverSearcher < Formula
 
   test do
     (testpath"Hello.txt").write("Hello World!")
-    system "#{bin}ag", "Hello World!", testpath
+    system bin"ag", "Hello World!", testpath
   end
 end

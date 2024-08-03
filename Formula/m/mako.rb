@@ -1,5 +1,3 @@
-require "language/node"
-
 class Mako < Formula
   desc "Production-grade web bundler based on Rust"
   homepage "https://makojs.dev"
@@ -8,19 +6,20 @@ class Mako < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "dc1939ed03b4b9b439021c0723bf20c8d2fb312a0a75ce0885685e943902895f"
-    sha256                               arm64_ventura:  "7e46f6175eab4e570e1e078ccc8097ea00bbd31938f5f10da96b38e05ff7c157"
-    sha256                               arm64_monterey: "63b2702699f127e502af841b279036b4579e255cb2579fc89417138c40edb75b"
-    sha256                               sonoma:         "cdfa008731d773036e54aec1b76b6ab74471cced935fe7a360b2514dc3cbb0c4"
-    sha256                               ventura:        "a5339b9f552cbe68838e9981dc28434a9a11c19a104fe1050f2458eabd50d8b7"
-    sha256                               monterey:       "ea285d2ef7540675fec0261aad211b48fef750c9328748105b44999f631a546b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e428961bc7907a8373eabee9a857f9df0044efe90060a7aadf5f5f4ac14d709a"
+    rebuild 1
+    sha256                               arm64_sonoma:   "d8a8a370bd43963430bd081192e996c63585a9c5e0f8948dd731bd72e982f878"
+    sha256                               arm64_ventura:  "6974949c4ec3b54dd8064005a2251e49761652771e3aca684074b6f8d4bf40f4"
+    sha256                               arm64_monterey: "907d4d7b1256d3e1fbc1719df82bb7957fa061749b7ae63868dce1b57f80154e"
+    sha256                               sonoma:         "3ffd4d42c8a69863d5fc6318ed1b94e4b653c77caf3fd59d756394006d4d357f"
+    sha256                               ventura:        "e8f0e438531d5f87c6e11f061f7dec341440e6402dab85470f8bc4b56cc8607e"
+    sha256                               monterey:       "6a1b8f6face05229edbe5291262276f1815493dbc0dfb2013e9ac319cb30b94c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54229eab00b16827f101fc681cfe9e95f1176f71a50adcd364a1871deafbc063"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries

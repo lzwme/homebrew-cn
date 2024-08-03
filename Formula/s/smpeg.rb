@@ -58,11 +58,11 @@ class Smpeg < Formula
     system "make", "install"
 
     # Not present since we do not build with gtk+
-    rm("#{man1}gtv.1")
+    rm(man1"gtv.1")
   end
 
   test do
-    system "#{bin}plaympeg", "--version"
+    system bin"plaympeg", "--version"
   end
 end
 

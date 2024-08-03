@@ -36,7 +36,7 @@ class Libmaxminddb < Formula
   end
 
   test do
-    system "#{bin}mmdblookup", "-f", "#{share}examplesGeoIP2-City-Test.mmdb",
+    system bin"mmdblookup", "-f", "#{share}examplesGeoIP2-City-Test.mmdb",
                                 "-i", "175.16.199.0"
   end
 end

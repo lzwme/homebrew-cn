@@ -24,6 +24,6 @@ class Moe < Formula
   end
 
   test do
-    system "#{bin}/moe", "--version"
+    system bin/"moe", "--version"
   end
 end

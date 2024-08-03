@@ -36,6 +36,6 @@ class T1utils < Formula
   end
 
   test do
-    system "#{bin}t1mac", "--version"
+    system bin"t1mac", "--version"
   end
 end

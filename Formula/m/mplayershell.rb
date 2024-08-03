@@ -40,6 +40,6 @@ class Mplayershell < Formula
   end
 
   test do
-    system "#{bin}mps"
+    system bin"mps"
   end
 end

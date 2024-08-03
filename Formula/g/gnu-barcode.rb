@@ -42,7 +42,7 @@ class GnuBarcode < Formula
 
   test do
     (testpath/"test.txt").write("12345")
-    system "#{bin}/barcode", "-e", "CODE39", "-i", "test.txt", "-o", "test.ps"
+    system bin/"barcode", "-e", "CODE39", "-i", "test.txt", "-o", "test.ps"
     assert File.read("test.ps").start_with?("")
   end
 end

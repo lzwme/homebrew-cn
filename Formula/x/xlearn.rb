@@ -38,6 +38,6 @@ class Xlearn < Formula
 
   test do
     cp_r (pkgshare"democlassificationcriteo_ctrsmall_train.txt"), testpath
-    system "#{bin}xlearn_train", "small_train.txt"
+    system bin"xlearn_train", "small_train.txt"
   end
 end

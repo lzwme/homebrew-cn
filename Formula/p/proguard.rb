@@ -36,7 +36,7 @@ class Proguard < Formula
       ProGuard, version #{version}
       Usage: java proguard.ProGuard [options ...]
     EOS
-    assert_equal expect, shell_output("#{bin}proguard", 1)
+    assert_equal expect, shell_output(bin"proguard", 1)
 
     expect = <<~EOS
       Picked up _JAVA_OPTIONS: #{ENV["_JAVA_OPTIONS"]}

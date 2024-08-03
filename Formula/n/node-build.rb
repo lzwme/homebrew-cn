@@ -31,6 +31,6 @@ class NodeBuild < Formula
   end
 
   test do
-    system "#{bin}/node-build", "--definitions"
+    system bin/"node-build", "--definitions"
   end
 end

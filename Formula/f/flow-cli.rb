@@ -38,6 +38,7 @@ class FlowCli < Formula
         log("Hello, world!")
       }
     EOS
-    system "#{bin}flow", "cadence", "hello.cdc"
+
+    system bin"flow", "cadence", "hello.cdc"
   end
 end

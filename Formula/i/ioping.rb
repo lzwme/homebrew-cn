@@ -25,6 +25,6 @@ class Ioping < Formula
   end
 
   test do
-    system "#{bin}ioping", "-c", "1", testpath
+    system bin"ioping", "-c", "1", testpath
   end
 end

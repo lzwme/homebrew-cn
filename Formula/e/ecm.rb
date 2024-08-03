@@ -5,12 +5,6 @@ class Ecm < Formula
   version "1.0"
   sha256 "1d0d19666f46d9a2fc7e534f52475e80a274e93bdd3c010a75fe833f8188b425"
 
-  # The first-party web page was been missing since 2014, so we can't check for
-  # new versions and the developer doesn't seem to be actively working on this.
-  livecheck do
-    skip "No available sources to check for versions"
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdf32f3a049870985a1a971414a46077e2735cf8d4df10326ed5807d661601a4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "187a0f53b52d50cd1dc9989bb704dd06ffea7a96bf9d84f7fe10e9b68d0b5042"

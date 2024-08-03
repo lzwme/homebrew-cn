@@ -62,6 +62,7 @@ class Maven < Formula
         </properties>
       </project>
     EOS
+
     (testpath/"src/main/java/org/homebrew/MavenTest.java").write <<~EOS
       package org.homebrew;
       public class MavenTest {
@@ -70,6 +71,7 @@ class Maven < Formula
         }
       }
     EOS
-    system "#{bin}/mvn", "compile", "-Duser.home=#{testpath}"
+
+    system bin/"mvn", "compile", "-Duser.home=#{testpath}"
   end
 end

@@ -51,7 +51,8 @@ class ArmNoneEabiBinutils < Formula
           mov r2, #1
           svc #0x80
     EOS
-    system "#{bin}/arm-none-eabi-as", "-o", "test-s.o", "test-s.s"
+
+    system bin/"arm-none-eabi-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf32-littlearm",
                  shell_output("#{bin}/arm-none-eabi-objdump -a test-s.o")
     assert_match "f()", shell_output("#{bin}/arm-none-eabi-c++filt _Z1fv")

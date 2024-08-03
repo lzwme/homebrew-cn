@@ -42,8 +42,8 @@ class TokyoDystopia < Formula
       81\tJapan
     EOS
 
-    system "#{bin}/dystmgr", "importtsv", "casket", "test.tsv"
-    system "#{bin}/dystmgr", "put", "casket", "83", "China"
-    system "#{bin}/dystmgr", "list", "-pv", "casket"
+    system bin/"dystmgr", "importtsv", "casket", "test.tsv"
+    system bin/"dystmgr", "put", "casket", "83", "China"
+    system bin/"dystmgr", "list", "-pv", "casket"
   end
 end

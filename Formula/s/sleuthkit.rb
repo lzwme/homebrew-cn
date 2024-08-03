@@ -50,6 +50,6 @@ class Sleuthkit < Formula
   end
 
   test do
-    system "#{bin}tsk_loaddb", "-V"
+    system bin"tsk_loaddb", "-V"
   end
 end

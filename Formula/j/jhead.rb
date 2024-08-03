@@ -24,6 +24,6 @@ class Jhead < Formula
 
   test do
     cp test_fixtures("test.jpg"), testpath
-    system "#{bin}jhead", "-autorot", "test.jpg"
+    system bin"jhead", "-autorot", "test.jpg"
   end
 end

@@ -29,6 +29,6 @@ class ChooseGui < Formula
   end
 
   test do
-    system "#{bin}choose", "-h"
+    system bin"choose", "-h"
   end
 end

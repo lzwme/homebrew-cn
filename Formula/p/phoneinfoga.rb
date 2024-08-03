@@ -37,7 +37,7 @@ class Phoneinfoga < Formula
 
   test do
     assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}phoneinfoga version")
-    system "#{bin}phoneinfoga", "scanners"
+    system bin"phoneinfoga", "scanners"
     assert_match "given phone number is not valid", shell_output("#{bin}phoneinfoga scan -n foobar 2>&1", 1)
   end
 end

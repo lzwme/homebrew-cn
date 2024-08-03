@@ -41,6 +41,6 @@ class Pipebench < Formula
   end
 
   test do
-    system "#{bin}pipebench", "-h"
+    system bin"pipebench", "-h"
   end
 end

@@ -33,6 +33,6 @@ class Pbzip2 < Formula
   end
 
   test do
-    system "#{bin}/pbzip2", "--version"
+    system bin/"pbzip2", "--version"
   end
 end

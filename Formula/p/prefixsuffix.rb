@@ -43,6 +43,6 @@ class Prefixsuffix < Formula
 
   test do
     # Disable this part of the test on Linux because display is not available.
-    system "#{bin}prefixsuffix", "--version" if OS.mac?
+    system bin"prefixsuffix", "--version" if OS.mac?
   end
 end

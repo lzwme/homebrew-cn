@@ -79,7 +79,7 @@ class Plod < Formula
 
   test do
     ENV["LOGDIR"] = testpath/".logdir"
-    system "#{bin}/plod", "this", "is", "Homebrew"
+    system bin/"plod", "this", "is", "Homebrew"
     assert File.directory? "#{testpath}/.logdir"
     assert_match(/this is Homebrew/, shell_output("#{bin}/plod -P"))
   end

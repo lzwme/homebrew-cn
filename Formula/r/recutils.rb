@@ -39,7 +39,7 @@ class Recutils < Formula
       a,b,c
       1,2,3
     EOS
-    system "#{bin}csv2rec", "test.csv"
+    system bin"csv2rec", "test.csv"
 
     (testpath"test.rec").write <<~EOS
       %rec: Book
@@ -47,6 +47,6 @@ class Recutils < Formula
 
       Title: GNU Emacs Manual
     EOS
-    system "#{bin}recsel", "test.rec"
+    system bin"recsel", "test.rec"
   end
 end

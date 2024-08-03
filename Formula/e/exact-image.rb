@@ -38,6 +38,6 @@ class ExactImage < Formula
   end
 
   test do
-    system "#{bin}/bardecode"
+    system bin/"bardecode"
   end
 end

@@ -51,6 +51,6 @@ class Mp3unicode < Formula
   end
 
   test do
-    system "#{bin}mp3unicode", "-s", "ASCII", "-w", test_fixtures("test.mp3")
+    system bin"mp3unicode", "-s", "ASCII", "-w", test_fixtures("test.mp3")
   end
 end

@@ -3,20 +3,18 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/0e/1f/f4a99e92c583780787e04b05aa9d8a8db9ec76d091d81545948a006f5b44/fastapi-0.111.0.tar.gz"
-  sha256 "b9db9dd147c91cb8b769f7183535773d8741dd46f9dc6676cd82eab510228cd7"
+  url "https://files.pythonhosted.org/packages/0a/50/c535521c0cdb8b78da923bfffca7eb38429828de1770bbd8820b55f3779f/fastapi-0.112.0.tar.gz"
+  sha256 "d262bc56b7d101d1f4e8fc0ad2ac75bb9935fec504d2b7117686cec50710cf05"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "0e7ee0b12f8638e4c2e1efb77deb51a75a9b2ce50f963a483d738cd414f719c7"
-    sha256 cellar: :any,                 arm64_ventura:  "4b670ddbf5f20588da46d8e3330a0d269d96b3978b7cb7b536d9a463946e0b1f"
-    sha256 cellar: :any,                 arm64_monterey: "f28a6ca232128cb3c8fa514a8174840f714657c8f0a3b385ec58307468cd06f1"
-    sha256 cellar: :any,                 sonoma:         "31a0704050583fa78f61f531361fe970200a2f9a997841e6f2aa594166191e39"
-    sha256 cellar: :any,                 ventura:        "de5ce1fe501c37b6731b346641d6d76eefe132e3f16bff65d84ee1905450e14d"
-    sha256 cellar: :any,                 monterey:       "38be9993cb7de723a91dd0b8508e5cbeedb6848a3aba695cec192f96ebea931e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b1e12e29ca7dc40b7bf1ffce8b02a6a4d99afcd46e11354d6b0db58510f3c40"
+    sha256 cellar: :any,                 arm64_sonoma:   "980e71fe316b8a0cec86c0242348532d9c038241a0a2561213b5c90ae1c904d5"
+    sha256 cellar: :any,                 arm64_ventura:  "f83c77c189e6d5028d1a2254519f986fde8a7c5c90c3669c2057c2e53a29b86a"
+    sha256 cellar: :any,                 arm64_monterey: "280ad547d13c02a839bb3e7022f9d2d5fe17342f49f626b9222a83ab3c6af011"
+    sha256 cellar: :any,                 sonoma:         "03e0191907b0e62a7e2c534a80eee5906d7ed7ed4b79a150cd2b6b56d8d50733"
+    sha256 cellar: :any,                 ventura:        "67f4404f3c2cf2f04ebceb9c53e1f43c63487ffb337be26200aeb9bce2e83963"
+    sha256 cellar: :any,                 monterey:       "895e8873430af685d7fc58a0187c6b943b9bc42f6214b1828ad805b1d2b61133"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8e4b98616c2b4ca1f1773662c45ca3571833abe818db22d4eb9169f75a427b5"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -49,13 +47,13 @@ class Fastapi < Formula
   end
 
   resource "email-validator" do
-    url "https://files.pythonhosted.org/packages/63/82/2914bff80ebee8c027802a664ad4b4caad502cd594e358f76aff395b5e56/email_validator-2.1.1.tar.gz"
-    sha256 "200a70680ba08904be6d1eef729205cc0d687634399a5924d842533efb824b84"
+    url "https://files.pythonhosted.org/packages/48/ce/13508a1ec3f8bb981ae4ca79ea40384becc868bfae97fd1c942bb3a001b1/email_validator-2.2.0.tar.gz"
+    sha256 "cb690f344c617a714f22e66ae771445a1ceb46821152df8e165c5f9a364582b7"
   end
 
   resource "fastapi-cli" do
-    url "https://files.pythonhosted.org/packages/3c/ca/2cc414b8246d5b968098514f2e54c8e92dc2d3b3870b539f24d6724b2fb7/fastapi_cli-0.0.4.tar.gz"
-    sha256 "e2e9ffaffc1f7767f488d6da34b6f5a377751c996f397902eb6abb99a67bde32"
+    url "https://files.pythonhosted.org/packages/c5/f8/1ad5ce32d029aeb9117e9a5a9b3e314a8477525d60c12a9b7730a3c186ec/fastapi_cli-0.0.5.tar.gz"
+    sha256 "d30e1239c6f46fcb95e606f02cdda59a1e2fa778a54b64686b3ff27f6211ff9f"
   end
 
   resource "h11" do
@@ -103,19 +101,14 @@ class Fastapi < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "orjson" do
-    url "https://files.pythonhosted.org/packages/f9/ba/a506ace6d9e4cb96cb4bed678fddc2605b8befe7fbbbecc309af1364b7c4/orjson-3.10.5.tar.gz"
-    sha256 "7a5baef8a4284405d96c90c7c62b755e9ef1ada84c2406c24a9ebec86b89f46d"
-  end
-
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/0d/fc/ccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967/pydantic-2.7.4.tar.gz"
-    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
+    url "https://files.pythonhosted.org/packages/8c/99/d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902e/pydantic-2.8.2.tar.gz"
+    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/02/d0/622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6/pydantic_core-2.18.4.tar.gz"
-    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
+    url "https://files.pythonhosted.org/packages/12/e3/0d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247/pydantic_core-2.20.1.tar.gz"
+    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
   end
 
   resource "pygments" do
@@ -168,14 +161,9 @@ class Fastapi < Formula
     sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
-  resource "ujson" do
-    url "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz"
-    sha256 "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
-  end
-
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/37/16/9f5ccaa1a76e5bfbaa0c67640e2db8a5214ca08d92a1b427fa1677b3da88/uvicorn-0.30.1.tar.gz"
-    sha256 "d46cd8e0fd80240baffbcd9ec1012a712938754afcf81bce56c024c1656aece8"
+    url "https://files.pythonhosted.org/packages/c3/ad/02b1b412e43605aa6aac8d0392c383ff3f6ae8267b7864e48e3b5f3f601e/uvicorn-0.30.5.tar.gz"
+    sha256 "ac6fdbd4425c5fd17a9fe39daf4d4d075da6fdc80f653e5894cdc2fd98752bee"
   end
 
   resource "uvloop" do

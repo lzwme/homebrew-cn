@@ -39,6 +39,6 @@ class Uru < Formula
   end
 
   test do
-    system "#{bin}/uru_rt"
+    system bin/"uru_rt"
   end
 end

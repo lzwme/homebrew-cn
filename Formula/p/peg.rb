@@ -35,7 +35,7 @@ class Peg < Formula
       start <- "username"
     EOS
 
-    system "#{bin}/peg", "-o", "username.c", "username.peg"
+    system bin/"peg", "-o", "username.c", "username.peg"
 
     assert_match 'yymatchString(yy, "username")', File.read("username.c")
   end

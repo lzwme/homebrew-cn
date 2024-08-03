@@ -52,7 +52,7 @@ class Marksman < Formula
 
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
-    Open3.popen3("#{bin}marksman", "server") do |stdin, stdout|
+    Open3.popen3(bin"marksman", "server") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
 
       sleep 3

@@ -40,6 +40,6 @@ class Mairix < Formula
   end
 
   test do
-    system "#{bin}mairix", "--version"
+    system bin"mairix", "--version"
   end
 end

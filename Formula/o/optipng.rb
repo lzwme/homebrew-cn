@@ -29,6 +29,6 @@ class Optipng < Formula
   end
 
   test do
-    system "#{bin}/optipng", "-simulate", test_fixtures("test.png")
+    system bin/"optipng", "-simulate", test_fixtures("test.png")
   end
 end

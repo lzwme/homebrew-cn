@@ -38,9 +38,10 @@ class Hdt < Formula
   end
 
   test do
-    system "#{bin}rdf2hdt", "-h"
-    path = testpath"test.nt"
-    path.write <<~EOS
+    system bin"rdf2hdt", "-h"
+
+    test_file = testpath"test.nt"
+    test_file.write <<~EOS
       <http:example.orguri1> <http:example.orgpredicate1> "literal1" .
       <http:example.orguri1> <http:example.orgpredicate1> "literalA" .
       <http:example.orguri1> <http:example.orgpredicate1> "literalA" .
@@ -54,8 +55,9 @@ class Hdt < Formula
       <http:example.orguri3> <http:example.orgpredicate3> <http:example.orguri5> .
       <http:example.orguri4> <http:example.orgpredicate4> <http:example.orguri5> .
     EOS
-    system "#{bin}rdf2hdt", path, "test.hdt"
-    assert_predicate testpath"test.hdt", :exist?
-    system "#{bin}hdtInfo", "test.hdt"
+
+    system bin"rdf2hdt", test_file, "test.hdt"
+    assert_predicate testtest_file"test.hdt", :exist?
+    system bin"hdtInfo", "test.hdt"
   end
 end

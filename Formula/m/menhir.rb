@@ -42,7 +42,7 @@ class Menhir < Formula
                 | TIMES { fun x y -> x * y }
     EOS
 
-    system "#{bin}/menhir", "--dump", "--explain", "--infer", "test.mly"
+    system bin/"menhir", "--dump", "--explain", "--infer", "test.mly"
     assert_predicate testpath/"test.ml", :exist?
     assert_predicate testpath/"test.mli", :exist?
   end

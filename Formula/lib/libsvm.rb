@@ -47,7 +47,7 @@ class Libsvm < Formula
       -0.12 1168:1.2 3318:1.2 3938:1.8 4481:1
     EOS
 
-    system "#{bin}svm-train", "-s", "0", "train_classification.txt"
-    system "#{bin}svm-train", "-s", "3", "train_regression.txt"
+    system bin"svm-train", "-s", "0", "train_classification.txt"
+    system bin"svm-train", "-s", "3", "train_regression.txt"
   end
 end

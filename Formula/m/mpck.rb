@@ -33,6 +33,6 @@ class Mpck < Formula
   end
 
   test do
-    system "#{bin}/mpck", test_fixtures("test.mp3")
+    system bin/"mpck", test_fixtures("test.mp3")
   end
 end

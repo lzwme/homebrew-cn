@@ -62,9 +62,9 @@ class Tinysvm < Formula
       -0.12 1168:1.2 3318:1.2 3938:1.8 4481:1
     EOS
 
-    system "#{bin}svm_learn", "-t", "1", "-d", "2", "-c", "train.svmdata", "test"
-    system "#{bin}svm_classify", "-V", "train.svmdata", "test"
-    system "#{bin}svm_model", "test"
+    system bin"svm_learn", "-t", "1", "-d", "2", "-c", "train.svmdata", "test"
+    system bin"svm_classify", "-V", "train.svmdata", "test"
+    system bin"svm_model", "test"
 
     assert_predicate testpath"test", :exist?
   end

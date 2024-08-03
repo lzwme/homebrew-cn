@@ -1,12 +1,16 @@
 class Ec2AmiTools < Formula
   desc "Amazon EC2 AMI Tools (helps bundle Amazon Machine Images)"
   homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-up-ami-tools.html"
-  url "https://ec2-downloads.s3.amazonaws.com/ec2-ami-tools-1.5.7.zip"
-  sha256 "5a45d9f393d2e144124d23d2312b3a8918c5a3f7463b48d55f8db3d56a3fb29f"
-  revision 1
+  url "https://ec2-downloads.s3.amazonaws.com/ec2-ami-tools-1.5.19.zip"
+  sha256 "bdda4494bea7d55dfff995459dd4705a953f3365bbc69f03430c796b5cc1dd7f"
+
+  livecheck do
+    url "https://ec2-downloads.s3.amazonaws.com/"
+    regex(/>ec2-ami-tools[._-]v?(\d+(?:\.\d+)+)\.zip</i)
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2410a9e4734c4f4358ed678b90d51f610e0c60ab6dd47797c3b9514be8a95bc3"
+    sha256 cellar: :any_skip_relocation, all: "760890f1ed79a9c2456cf6ab781414b976ad9ad71946b0adc6f8cd7a7dd126a3"
   end
 
   depends_on "openjdk"

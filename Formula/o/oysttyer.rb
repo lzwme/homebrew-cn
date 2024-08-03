@@ -16,7 +16,7 @@ class Oysttyer < Formula
   end
 
   test do
-    IO.popen("#{bin}oysttyer", "r+") do |pipe|
+    IO.popen(bin"oysttyer", "r+") do |pipe|
       assert_equal "-- using SSL for default URLs.", pipe.gets.chomp
       pipe.puts "^C"
       pipe.close_write

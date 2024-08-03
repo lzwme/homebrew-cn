@@ -45,7 +45,7 @@ class Lha < Formula
 
   test do
     (testpath"foo").write "test"
-    system "#{bin}lha", "c", "foo.lzh", "foo"
+    system bin"lha", "c", "foo.lzh", "foo"
     assert_equal "::::::::\nfoo\n::::::::\ntest",
       shell_output("#{bin}lha p foo.lzh")
   end

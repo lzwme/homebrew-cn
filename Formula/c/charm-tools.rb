@@ -229,7 +229,7 @@ class CharmTools < Formula
   end
 
   test do
-    system "#{bin}charm-create", "brewtest"
+    system bin"charm-create", "brewtest"
     assert_predicate testpath"brewtestmetadata.yaml", :exist?
 
     assert_match version.to_s, shell_output("#{bin}charm-version")

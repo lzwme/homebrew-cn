@@ -41,6 +41,6 @@ class Mruby < Formula
   end
 
   test do
-    system "#{bin}mruby", "-e", "true"
+    system bin"mruby", "-e", "true"
   end
 end

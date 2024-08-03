@@ -30,6 +30,6 @@ class Lci < Formula
   end
 
   test do
-    assert_match "[I, 2]", pipe_output("#{bin}lci", "Append [1] [2]\n")
+    assert_match "[I, 2]", pipe_output(bin"lci", "Append [1] [2]\n")
   end
 end

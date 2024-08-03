@@ -43,6 +43,6 @@ class Nano < Formula
   end
 
   test do
-    system "#{bin}/nano", "--version"
+    system bin/"nano", "--version"
   end
 end

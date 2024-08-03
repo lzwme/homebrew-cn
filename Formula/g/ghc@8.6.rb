@@ -112,7 +112,7 @@ class GhcAT86 < Formula
   end
 
   def post_install
-    system "#{bin}/ghc-pkg", "recache"
+    system bin/"ghc-pkg", "recache"
   end
 
   test do

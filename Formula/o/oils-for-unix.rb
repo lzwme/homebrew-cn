@@ -35,10 +35,10 @@ class OilsForUnix < Formula
   end
 
   test do
-    system "#{bin}/osh", "-c", "shopt -q parse_backticks"
+    system bin/"osh", "-c", "shopt -q parse_backticks"
     assert_equal testpath.to_s, shell_output("#{bin}/osh -c 'echo `pwd -P`'").strip
 
-    system "#{bin}/ysh", "-c", "shopt -u parse_equals"
+    system bin/"ysh", "-c", "shopt -u parse_equals"
     assert_equal "bar", shell_output("#{bin}/ysh -c 'var foo = \"bar\"; write $foo'").strip
   end
 end

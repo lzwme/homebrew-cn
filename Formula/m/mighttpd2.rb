@@ -26,7 +26,7 @@ class Mighttpd2 < Formula
   end
 
   test do
-    system "#{bin}/mighty-mkindex"
+    system bin/"mighty-mkindex"
     assert (testpath/"index.html").file?
   end
 end

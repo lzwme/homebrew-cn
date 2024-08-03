@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Json5 < Formula
   desc "JSON enhanced with usability features"
   homepage "https:json5.org"
@@ -8,13 +6,20 @@ class Json5 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e56197088965d111aad8994191dfe4a8f180581f0c1ba66fb2b2fbf894ccf4ac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, sonoma:         "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, ventura:        "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, monterey:       "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9b146e913a2062ed76d2e6f4cdfa8ad70c3605dda61a1b629f1189b1cb914ed"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

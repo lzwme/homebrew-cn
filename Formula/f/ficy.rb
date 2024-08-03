@@ -33,6 +33,6 @@ class Ficy < Formula
 
   test do
     cp test_fixtures("test.mp3"), testpath
-    system "#{bin}/fResync", "-n", "1", "test.mp3"
+    system bin/"fResync", "-n", "1", "test.mp3"
   end
 end

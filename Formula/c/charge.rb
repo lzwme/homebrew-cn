@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Charge < Formula
   desc "Opinionated, zero-config static site generator"
   homepage "https:charge.js.org"
@@ -30,7 +28,7 @@ class Charge < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin*")
 
     # Replace universal binaries with their native slices.

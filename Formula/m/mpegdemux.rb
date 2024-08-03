@@ -29,6 +29,6 @@ class Mpegdemux < Formula
   end
 
   test do
-    system "#{bin}/mpegdemux", "--help"
+    system bin/"mpegdemux", "--help"
   end
 end

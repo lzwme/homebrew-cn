@@ -96,8 +96,8 @@ class Gnucobol < Formula
     EOS
 
     # create test executable and run it, with verbose output
-    system "#{bin}/cobc", "-x", "-j", "-v", "hello.cob"
+    system bin/"cobc", "-x", "-j", "-v", "hello.cob"
     # now again as shared object (will also run cobcrun)
-    system "#{bin}/cobc", "-m", "-j", "-v", "hello.cob"
+    system bin/"cobc", "-m", "-j", "-v", "hello.cob"
   end
 end

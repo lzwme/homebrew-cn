@@ -27,6 +27,6 @@ class TaskSpooler < Formula
   end
 
   test do
-    system "#{bin}/ts", "-l"
+    system bin/"ts", "-l"
   end
 end

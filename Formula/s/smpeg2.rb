@@ -50,12 +50,12 @@ class Smpeg2 < Formula
     system "make", "install"
 
     # To avoid a possible conflict with smpeg 0.x
-    mv "#{bin}plaympeg", "#{bin}plaympeg2"
-    mv "#{man1}plaympeg.1", "#{man1}plaympeg2.1"
+    mv bin"plaympeg", bin"plaympeg2"
+    mv man1"plaympeg.1", man1"plaympeg2.1"
   end
 
   test do
-    system "#{bin}plaympeg2", "--version"
+    system bin"plaympeg2", "--version"
   end
 end
 

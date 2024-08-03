@@ -26,11 +26,6 @@ class Paperkey < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "065de554c087ac3f19246e81fdbf2a60b64c2307f420b91029d781ec901b2d94"
   end
 
-  resource "homebrew-test_sec" do
-    url "https:raw.githubusercontent.comdmshawpaperkey46adad971458a798e203bf8ec65d6bc897494754checkspapertest-rsa.sec"
-    sha256 "0f39397227339171209760e0f27aa60ecf7eae31c32d0ec3a358434afd38eacd"
-  end
-
   def install
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
@@ -39,8 +34,13 @@ class Paperkey < Formula
   end
 
   test do
+    resource "homebrew-test_sec" do
+      url "https:raw.githubusercontent.comdmshawpaperkey46adad971458a798e203bf8ec65d6bc897494754checkspapertest-rsa.sec"
+      sha256 "0f39397227339171209760e0f27aa60ecf7eae31c32d0ec3a358434afd38eacd"
+    end
+
     resource("homebrew-test_sec").stage do
-      system "#{bin}paperkey", "--secret-key", "papertest-rsa.sec", "--output", "test"
+      system bin"paperkey", "--secret-key", "papertest-rsa.sec", "--output", "test"
       assert_predicate Pathname.pwd"test", :exist?
     end
   end

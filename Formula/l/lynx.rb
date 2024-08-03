@@ -54,6 +54,6 @@ class Lynx < Formula
   end
 
   test do
-    system "#{bin}lynx", "-dump", "https:example.org"
+    system bin"lynx", "-dump", "https:example.org"
   end
 end

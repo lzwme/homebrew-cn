@@ -51,6 +51,6 @@ class Liblinear < Formula
       -1 99:1 3057:1 3957:1 5838:0.3
     EOS
 
-    system "#{bin}train", "train_classification.txt"
+    system bin"train", "train_classification.txt"
   end
 end

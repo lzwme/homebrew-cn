@@ -31,7 +31,7 @@ class Kmod < Formula
   end
 
   test do
-    system "#{bin}/kmod", "help"
+    system bin/"kmod", "help"
     assert_match "Module", shell_output("#{bin}/kmod list")
   end
 end

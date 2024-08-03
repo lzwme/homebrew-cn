@@ -36,6 +36,7 @@ class CernNdiff < Formula
     (testpath"lhs.txt").write("0.0 2e-3 0.003")
     (testpath"rhs.txt").write("1e-7 0.002 0.003")
     (testpath"test.cfg").write("*   * abs=1e-6")
-    system "#{bin}ndiff", "lhs.txt", "rhs.txt", "test.cfg"
+
+    system bin"ndiff", "lhs.txt", "rhs.txt", "test.cfg"
   end
 end

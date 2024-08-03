@@ -52,7 +52,8 @@ class I686ElfBinutils < Formula
           movl $4, %ebx
           int $0x80
     EOS
-    system "#{bin}/i686-elf-as", "--32", "-o", "test-s.o", "test-s.s"
+
+    system bin/"i686-elf-as", "--32", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf32-i386",
       shell_output("#{bin}/i686-elf-objdump -a test-s.o")
   end

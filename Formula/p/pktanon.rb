@@ -45,6 +45,6 @@ class Pktanon < Formula
   end
 
   test do
-    system "#{bin}/pktanon", "--version"
+    system bin/"pktanon", "--version"
   end
 end

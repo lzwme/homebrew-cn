@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https:github.comgoogleor-toolsarchiverefstagsv9.10.tar.gz"
   sha256 "e7c27a832f3595d4ae1d7e53edae595d0347db55c82c309c8f24227e675fd378"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https:github.comgoogleor-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +13,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7986a565b53a7a62767d312094ce5d30b8b22bde897e6ad04281371cfdb6b60a"
-    sha256 cellar: :any,                 arm64_ventura:  "a5289e00c31c046a9cfaace8a05c9af252f6443d2c8cc8cc3e3a7fc37e4b63d8"
-    sha256 cellar: :any,                 arm64_monterey: "b75c04de3a092cb8bb0b1f70b82ff17bc626ae3f3a8cc782120db4256357fbcc"
-    sha256 cellar: :any,                 sonoma:         "9e46241c531a9ab77ee82d751b82956e1d9b9dfc3b0bb4679984b2a927f0e31e"
-    sha256 cellar: :any,                 ventura:        "bced90ca8c280435261b12e5ae5cd4f2f0e729600eb5be612f50914ec7c06e91"
-    sha256 cellar: :any,                 monterey:       "1ecddc034026e0d1a2a7765b3b44de7427e339c8f9ff0ec92fbb81d5752ad962"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f98bff4d5b29105d478d9a36bd5ea1ddba822d9d8c9984a65a6a1397e462c92c"
+    sha256 cellar: :any,                 arm64_sonoma:   "ddf2a1913cbb666fc7109d7c569a66845782de7e8a81423abd4393930d3b9e9b"
+    sha256 cellar: :any,                 arm64_ventura:  "4c8bab2c27ec35961b9761b54dc7cf3ab6d9884a173ac00fd64836c517081d10"
+    sha256 cellar: :any,                 arm64_monterey: "068c5e29d3fa1680455ef6a842d0c39a5bf0ed5de6511270b1e40c16a978b58a"
+    sha256 cellar: :any,                 sonoma:         "3a88cca3d408ea5dde4ce55ba4f5d8bbccedb4217af380c74d91c5e6cb33f17f"
+    sha256 cellar: :any,                 ventura:        "8aea7898dd86135644208b57ba5f5e12aecafbbc172e63ee1116566754482aaa"
+    sha256 cellar: :any,                 monterey:       "37c8729112cbc0a09da670e64aae11b9233a89bb92d589b335e81bc22f112133"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5bc50e61575b275b23af6a11582378ae57714581ca074add86544d8eb29701f"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -84,6 +84,6 @@ class Perl < Formula
 
   test do
     (testpath"test.pl").write "print 'Perl is not an acronym, but JAPH is a Perl acronym!';"
-    system "#{bin}perl", "test.pl"
+    system bin"perl", "test.pl"
   end
 end

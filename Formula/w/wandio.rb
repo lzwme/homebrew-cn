@@ -47,7 +47,7 @@ class Wandio < Formula
   end
 
   test do
-    system "#{bin}wandiocat", "-z", "9", "-Z", "gzip", "-o", "test.gz",
+    system bin"wandiocat", "-z", "9", "-Z", "gzip", "-o", "test.gz",
       test_fixtures("test.png"), test_fixtures("test.pdf")
     assert_predicate testpath"test.gz", :exist?
   end

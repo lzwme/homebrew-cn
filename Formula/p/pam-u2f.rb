@@ -56,6 +56,6 @@ class PamU2f < Formula
   end
 
   test do
-    system "#{bin}pamu2fcfg", "--version"
+    system bin"pamu2fcfg", "--version"
   end
 end

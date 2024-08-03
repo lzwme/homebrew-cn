@@ -42,6 +42,6 @@ class Mkvdts2ac3 < Formula
   end
 
   test do
-    system "#{bin}mkvdts2ac3", "--version"
+    system bin"mkvdts2ac3", "--version"
   end
 end

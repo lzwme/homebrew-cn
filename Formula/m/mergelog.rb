@@ -35,6 +35,6 @@ class Mergelog < Formula
   end
 
   test do
-    system "#{bin}/mergelog", "/dev/null"
+    system bin/"mergelog", "/dev/null"
   end
 end

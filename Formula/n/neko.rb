@@ -64,9 +64,9 @@ class Neko < Formula
 
   test do
     ENV["NEKOPATH"] = "#{HOMEBREW_PREFIX}libneko"
-    system "#{bin}neko", "-version"
+    system bin"neko", "-version"
     (testpath"hello.neko").write '$print("Hello world!\n");'
-    system "#{bin}nekoc", "hello.neko"
+    system bin"nekoc", "hello.neko"
     assert_equal "Hello world!\n", shell_output("#{bin}neko hello")
   end
 end

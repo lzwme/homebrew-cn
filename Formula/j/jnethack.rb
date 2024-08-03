@@ -78,7 +78,7 @@ class Jnethack < Formula
   end
 
   test do
-    system "#{bin}jnethack", "-s"
+    system bin"jnethack", "-s"
     assert_match (HOMEBREW_PREFIX"sharejnethack").to_s,
       shell_output("#{bin}jnethack --showpaths")
   end

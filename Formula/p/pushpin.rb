@@ -95,7 +95,7 @@ class Pushpin < Formula
     ENV["LANG"] = "en_US.UTF-8"
 
     pid = fork do
-      exec "#{bin}pushpin", "--config=#{conffile}"
+      exec bin"pushpin", "--config=#{conffile}"
     end
 
     begin

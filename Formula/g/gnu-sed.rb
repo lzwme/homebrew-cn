@@ -57,15 +57,16 @@ class GnuSed < Formula
   end
 
   test do
-    (testpath/"test.txt").write "Hello world!"
+    test_file = testpath/"test.txt"
+    test_file.write "Hello world!"
     if OS.mac?
-      system "#{bin}/gsed", "-i", "s/world/World/g", "test.txt"
-      assert_match "Hello World!", File.read("test.txt")
+      system bin/"gsed", "-i", "s/world/World/g", "test.txt"
+      assert_match "Hello World!", test_file.read
 
-      system "#{opt_libexec}/gnubin/sed", "-i", "s/world/World/g", "test.txt"
+      system opt_libexec/"gnubin/sed", "-i", "s/world/World/g", "test.txt"
     else
-      system "#{bin}/sed", "-i", "s/world/World/g", "test.txt"
+      system bin/"sed", "-i", "s/world/World/g", "test.txt"
     end
-    assert_match "Hello World!", File.read("test.txt")
+    assert_match "Hello World!", test_file.read
   end
 end

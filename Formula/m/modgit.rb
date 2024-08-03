@@ -13,6 +13,6 @@ class Modgit < Formula
   end
 
   test do
-    system "#{bin}modgit"
+    system bin"modgit"
   end
 end

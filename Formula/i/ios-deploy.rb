@@ -35,6 +35,6 @@ class IosDeploy < Formula
   end
 
   test do
-    system "#{bin}ios-deploy", "-V"
+    system bin"ios-deploy", "-V"
   end
 end

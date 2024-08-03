@@ -28,6 +28,6 @@ class VaultCli < Formula
 
   test do
     # Bad test, but we're limited without a Jackrabbit repo to speak to...
-    system "#{bin}vlt", "--version"
+    system bin"vlt", "--version"
   end
 end

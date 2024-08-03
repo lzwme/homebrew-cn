@@ -55,7 +55,7 @@ class Mkhexgrid < Formula
 
   test do
     # test the example from the man page (but without inches)
-    system "#{bin}/mkhexgrid", "--output=ps", "--image-width=2448",
+    system bin/"mkhexgrid", "--output=ps", "--image-width=2448",
       "--image-height=1584", "--hex-side=36", "--coord-bearing=0",
       "--coord-dist=22", "--coord-size=8", "--grid-thickness=1",
       "--coord-font=Helvetica", "--grid-grain=h", "--grid-start=o",

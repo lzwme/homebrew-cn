@@ -35,6 +35,6 @@ class Mdformat < Formula
 
   test do
     (testpath/"test.md").write("# mdformat")
-    system "#{bin}/mdformat", testpath
+    system bin/"mdformat", testpath
   end
 end

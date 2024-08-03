@@ -33,8 +33,10 @@ class GerritTools < Formula
     hook = (testpath".githookscommit-msg")
     touch hook
     hook.chmod 0744
+
     ENV["GERRIT"] = "example.com"
-    system "#{bin}gerrit-setup"
+
+    system bin"gerrit-setup"
     assert_equal "github\norigin\n", shell_output("git remote")
   end
 end

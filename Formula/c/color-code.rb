@@ -34,6 +34,6 @@ class ColorCode < Formula
   test do
     # We cannot write a more substantial test because executing the binary
     # opens a GUI, which is not supported by Homebrew's test environment
-    system "#{bin}/colorcode", "-h"
+    system bin/"colorcode", "-h"
   end
 end

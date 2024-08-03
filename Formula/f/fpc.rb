@@ -85,7 +85,7 @@ class Fpc < Formula
     rm(Dir[bin/"*.rsj"])
 
     # Generate a default fpc.cfg to set up unit search paths
-    system "#{bin}/fpcmkcfg", "-p", "-d", "basepath=#{lib}/fpc/#{version}", "-o", "#{prefix}/etc/fpc.cfg"
+    system bin/"fpcmkcfg", "-p", "-d", "basepath=#{lib}/fpc/#{version}", "-o", prefix/"etc/fpc.cfg"
 
     if OS.linux?
       # On Linux, non-executable IDE support files get built and end up in bin.
@@ -107,6 +107,7 @@ class Fpc < Formula
         writeln('Hello Homebrew')
       end.
     EOS
+
     (testpath/"hello.pas").write(hello)
     system bin/"fpc", "hello.pas"
     assert_equal "Hello Homebrew", shell_output("./hello").strip

@@ -16,6 +16,6 @@ class Nerdfetch < Formula
 
   test do
     user = ENV["USER"]
-    assert_match user.to_s, shell_output("#{bin}nerdfetch")
+    assert_match user.to_s, shell_output(bin"nerdfetch")
   end
 end

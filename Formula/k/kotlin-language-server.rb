@@ -39,7 +39,7 @@ class KotlinLanguageServer < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output("#{bin}kotlin-language-server", input, 0)
+    output = pipe_output(bin"kotlin-language-server", input, 0)
 
     assert_match(^Content-Length: \d+i, output)
   end

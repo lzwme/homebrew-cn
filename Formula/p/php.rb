@@ -202,7 +202,7 @@ class Php < Formula
     system "make", "install"
 
     # Allow pecl to install outside of Cellar
-    extension_dir = Utils.safe_popen_read("#{bin}php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin"php-config", lib"php", prefix"pecl"
     %w[development production].each do |mode|
@@ -260,7 +260,7 @@ class Php < Formula
     pecl_path = HOMEBREW_PREFIX"libphppecl"
     pecl_path.mkpath
     ln_s pecl_path, prefix"pecl" unless (prefix"pecl").exist?
-    extension_dir = Utils.safe_popen_read("#{bin}php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin"php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
     php_ext_dir = opt_prefix"libphp"php_basename
 
@@ -337,8 +337,8 @@ class Php < Formula
                     (Formula["libpq"].opt_libshared_library("libpq", 5)).to_s
 
     system "#{sbin}php-fpm", "-t"
-    system "#{bin}phpdbg", "-V"
-    system "#{bin}php-cgi", "-m"
+    system bin"phpdbg", "-V"
+    system bin"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(^snmp$, shell_output("#{bin}php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")

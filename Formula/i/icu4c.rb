@@ -43,10 +43,10 @@ class Icu4c < Formula
 
   test do
     if File.exist? "usrsharedictwords"
-      system "#{bin}gendict", "--uchars", "usrsharedictwords", "dict"
+      system bin"gendict", "--uchars", "usrsharedictwords", "dict"
     else
       (testpath"hello").write "hello\nworld\n"
-      system "#{bin}gendict", "--uchars", "hello", "dict"
+      system bin"gendict", "--uchars", "hello", "dict"
     end
   end
 end

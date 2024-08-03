@@ -43,20 +43,20 @@ class Cpmtools < Formula
   test do
     # make a disk image
     image = testpath/"disk.cpm"
-    system "#{bin}/mkfs.cpm", "-f", "ibm-3740", image
+    system bin/"mkfs.cpm", "-f", "ibm-3740", image
 
     # copy a file into the disk image
     src = testpath/"foo"
     src.write "a" * 128
     # Note that the "-T raw" is needed to make cpmtools work correctly when linked against libdsk:
-    system "#{bin}/cpmcp", "-T", "raw", "-f", "ibm-3740", image, src, "0:foo"
+    system bin/"cpmcp", "-T", "raw", "-f", "ibm-3740", image, src, "0:foo"
 
     # check for the file in the cp/m directory
     assert_match "foo", shell_output("#{bin}/cpmls -T raw -f ibm-3740 #{image}")
 
     # copy the file back out of the image
     dest = testpath/"bar"
-    system "#{bin}/cpmcp", "-T", "raw", "-f", "ibm-3740", image, "0:foo", dest
+    system bin/"cpmcp", "-T", "raw", "-f", "ibm-3740", image, "0:foo", dest
     assert_equal src.read, dest.read
   end
 end

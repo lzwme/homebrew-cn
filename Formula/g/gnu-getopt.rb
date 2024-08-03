@@ -40,9 +40,9 @@ class GnuGetopt < Formula
   end
 
   test do
-    system "#{bin}getopt", "-o", "--test"
+    system bin"getopt", "-o", "--test"
     # Check that getopt is enhanced
-    quiet_system "#{bin}getopt", "-T"
+    quiet_system bin"getopt", "-T"
     assert_equal 4, $CHILD_STATUS.exitstatus
   end
 end

@@ -36,7 +36,7 @@ class Ndenv < Formula
     end
 
     prefix.install "bin", "completions", "libexec"
-    system "#{bin}ndenv", "rehash"
+    system bin"ndenv", "rehash"
   end
 
   test do

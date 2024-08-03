@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Kuto < Formula
   desc "Reverse JS bundler"
   homepage "https:github.comsamthorkuto"
@@ -8,13 +6,20 @@ class Kuto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ef0cca54501f33ac8ec2b3610a5d0897035e0ba672301e5bd7a6f858d4eff110"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f015ff49cc97418ef019b5830e80d66c7d545dea4f8d36b237825bef909bc61"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

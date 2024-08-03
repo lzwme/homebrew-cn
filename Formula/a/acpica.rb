@@ -33,6 +33,6 @@ class Acpica < Formula
   end
 
   test do
-    system "#{bin}acpihelp", "-u"
+    system bin"acpihelp", "-u"
   end
 end

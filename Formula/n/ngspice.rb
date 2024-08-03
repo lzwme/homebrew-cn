@@ -84,6 +84,6 @@ class Ngspice < Formula
       .endc
       .end
     EOS
-    system "#{bin}/ngspice", "test.cir"
+    system bin/"ngspice", "test.cir"
   end
 end

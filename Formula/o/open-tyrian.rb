@@ -40,6 +40,6 @@ class OpenTyrian < Formula
   end
 
   test do
-    system "#{bin}opentyrian", "--help"
+    system bin"opentyrian", "--help"
   end
 end

@@ -15,6 +15,9 @@ class Libolm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f116c980f972a0fe05051d0bedae1cd42392051566d51c9f25989639d6b05a37"
   end
 
+  # Upstream project marked as deprecated https://gitlab.matrix.org/matrix-org/olm/-/commit/6d4b5b07887821a95b144091c8497d09d377f985
+  deprecate! date: "2024-08-01", because: :deprecated_upstream
+
   depends_on "cmake" => :build
 
   def install

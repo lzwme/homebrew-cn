@@ -4,16 +4,17 @@ class OpentelemetryCpp < Formula
   url "https:github.comopen-telemetryopentelemetry-cpparchiverefstagsv1.16.1.tar.gz"
   sha256 "b8a78bb2a3a78133dbb08bcd04342f4b1e03cb4a19079b8416d408d905fffc37"
   license "Apache-2.0"
+  revision 1
   head "https:github.comopen-telemetryopentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8939a76e08486b99b82b60412e5fbf4c85e720793eebee9afff4ea6312ae9be6"
-    sha256 cellar: :any,                 arm64_ventura:  "d22010eb16f94fbe6fc592e05eddca6f825e7505b668cfe60eaf3eaa81165266"
-    sha256 cellar: :any,                 arm64_monterey: "959cf4230882ba5c9118780e3598814485cad06c63ba854f98adc955e2f396ad"
-    sha256 cellar: :any,                 sonoma:         "437aaaa79b64e97a49918722a5e882c431c5373ba885265f565ac0787ff04bbb"
-    sha256 cellar: :any,                 ventura:        "051643996d3b96423bf8703307445811b3e269db05b61878335cf199530656b3"
-    sha256 cellar: :any,                 monterey:       "560bc1b1bf68edab5dc2b969b704a74b7e48002a7d3487170a66ccaa8abebb2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "520ec6db92de82a5785f4863adeb694be9c1cfaacb77d1a827808e55f38905e2"
+    sha256 cellar: :any,                 arm64_sonoma:   "12ae7685c208fa6742bc123a17a4c3a265badfd751ca4ec6b9bf13dffbef1b19"
+    sha256 cellar: :any,                 arm64_ventura:  "6b764090ec06927ddec79b6fecc6535c836047051ff3e79011e2413fd987faec"
+    sha256 cellar: :any,                 arm64_monterey: "41eec49fb820d677f4eae82b979e59438c2732d4e3ebaa8558565ab6e1916b0e"
+    sha256 cellar: :any,                 sonoma:         "e36223f2a094979ad02b07d2cd795669a38a67268751540ea8dd1a1926b6bff6"
+    sha256 cellar: :any,                 ventura:        "e2b7059c2add01a4b466b545c2598be626922be894d5c284c8e2088bed7f360a"
+    sha256 cellar: :any,                 monterey:       "3b60f66609f33bd28450da580c948a5b2d6bba0eeec8aa10fddc9d278eab4e2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72b5ef82e69462c5648530f40715a95bb99d462cbc4aca7e97c28317487dff51"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +24,14 @@ class OpentelemetryCpp < Formula
   depends_on "nlohmann-json"
   depends_on "prometheus-cpp"
   depends_on "protobuf"
+
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on "c-ares"
+    depends_on "openssl@3"
+    depends_on "re2"
+  end
 
   def install
     ENV.append "LDFLAGS", "-Wl,-undefined,dynamic_lookup" if OS.mac?

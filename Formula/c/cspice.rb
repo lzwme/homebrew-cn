@@ -54,6 +54,6 @@ class Cspice < Formula
   end
 
   test do
-    system "#{bin}/tobin", "#{pkgshare}/data/cook_01.tsp", "DELME"
+    system bin/"tobin", "#{pkgshare}/data/cook_01.tsp", "DELME"
   end
 end

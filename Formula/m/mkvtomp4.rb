@@ -31,6 +31,6 @@ class Mkvtomp4 < Formula
   end
 
   test do
-    system "#{bin}mkvtomp4", "--help"
+    system bin"mkvtomp4", "--help"
   end
 end

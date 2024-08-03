@@ -506,7 +506,7 @@ class Swift < Formula
     assert_match "www.swift.org\n", output
 
     # Test compiler
-    system "#{bin}swiftc", "-module-cache-path", module_cache, "-v", "foundation-test.swift", "-o", "foundation-test"
+    system bin"swiftc", "-module-cache-path", module_cache, "-v", "foundation-test.swift", "-o", "foundation-test"
     output = shell_output(".foundation-test")
     assert_match "www.swift.org\n", output
 

@@ -68,7 +68,7 @@ class Millet < Formula
       pipe.write(json_rpc_message.call(msg))
     }
 
-    IO.popen("#{bin}millet-ls", "r+") do |pipe|
+    IO.popen(bin"millet-ls", "r+") do |pipe|
       pipe.sync = true
 
       # send initialization request

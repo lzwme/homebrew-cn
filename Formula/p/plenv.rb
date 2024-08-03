@@ -26,7 +26,7 @@ class Plenv < Formula
     prefix.install "bin", "plenv.d", "completions", "libexec"
 
     # Run rehash after installing.
-    system "#{bin}plenv", "rehash"
+    system bin"plenv", "rehash"
   end
 
   def caveats

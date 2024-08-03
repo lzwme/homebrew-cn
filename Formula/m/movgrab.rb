@@ -69,6 +69,6 @@ class Movgrab < Formula
   end
 
   test do
-    system "#{bin}movgrab", "--version"
+    system bin"movgrab", "--version"
   end
 end

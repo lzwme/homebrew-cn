@@ -15,7 +15,7 @@ class Kommit < Formula
 
   test do
     system "git", "init"
-    system "#{bin}git-kommit", "-m", "Hello"
+    system bin"git-kommit", "-m", "Hello"
     assert_match "Hello", shell_output("#{bin}git-kommit -s devnull 2>&1")
   end
 end

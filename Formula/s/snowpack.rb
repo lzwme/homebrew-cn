@@ -1,5 +1,3 @@
-require "language/node"
-
 class Snowpack < Formula
   desc "Frontend build tool designed for the modern web"
   homepage "https://www.snowpack.dev"
@@ -26,8 +24,8 @@ class Snowpack < Formula
   depends_on "python@3.10"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--python=python3.10"
-    bin.install_symlink Dir[libexec/"bin/*"]
+    system "npm", "install", *std_npm_args, "--python=python3.10"
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase

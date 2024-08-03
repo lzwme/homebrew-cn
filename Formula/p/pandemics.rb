@@ -36,7 +36,7 @@ class Pandemics < Formula
     assert_equal version, shell_output("#{libexec}/bin/pandemics --version")
     # does compile to pdf?
     touch testpath/"test.md"
-    system "#{bin}/pandemics", "publish", "--format", "html", "#{testpath}/test.md"
+    system bin/"pandemics", "publish", "--format", "html", "#{testpath}/test.md"
     assert_predicate testpath/"pandemics/test.html", :exist?
   end
 end

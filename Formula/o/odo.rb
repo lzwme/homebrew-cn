@@ -33,6 +33,6 @@ class Odo < Formula
   end
 
   test do
-    system "#{bin}odo", "testlog"
+    system bin"odo", "testlog"
   end
 end

@@ -23,6 +23,6 @@ class StanfordParser < Formula
   end
 
   test do
-    system "#{bin}/lexparser.sh", "#{libexec}/data/english-onesent.txt"
+    system bin/"lexparser.sh", libexec/"data/english-onesent.txt"
   end
 end

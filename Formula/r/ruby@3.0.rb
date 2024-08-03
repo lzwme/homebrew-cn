@@ -101,7 +101,7 @@ class RubyAT30 < Formula
     resource("rubygems").stage do
       ENV.prepend_path "PATH", bin
 
-      system "#{bin}ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
+      system bin"ruby", "setup.rb", "--prefix=#{buildpath}vendor_gem"
       rg_in = lib"ruby#{api_version}"
       rg_gems_in = lib"rubygems#{api_version}"
 
@@ -236,7 +236,7 @@ class RubyAT30 < Formula
     assert_equal api_version, shell_output("#{bin}ruby -e 'print Gem.ruby_api_version'")
 
     ENV["GEM_HOME"] = testpath
-    system "#{bin}gem", "install", "json"
+    system bin"gem", "install", "json"
 
     (testpath"Gemfile").write <<~EOS
       source 'https:rubygems.org'

@@ -55,7 +55,7 @@ class Psftools < Formula
   test do
     # The zip file has a fon in it, use fon2fnts to extract to fnt
     resource("pc8x8font").stage do
-      system "#{bin}/fon2fnts", "pc8x8.fon"
+      system bin/"fon2fnts", "pc8x8.fon"
       assert_predicate Pathname.pwd/"PC8X8_9.fnt", :exist?
     end
   end

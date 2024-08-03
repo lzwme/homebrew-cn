@@ -45,6 +45,6 @@ class Ipmiutil < Formula
   end
 
   test do
-    system "#{bin}/ipmiutil", "delloem", "help"
+    system bin/"ipmiutil", "delloem", "help"
   end
 end

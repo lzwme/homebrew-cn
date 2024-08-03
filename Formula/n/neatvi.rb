@@ -23,6 +23,6 @@ class Neatvi < Formula
   end
 
   test do
-    pipe_output("#{bin}/neatvi", ":q\n")
+    pipe_output(bin/"neatvi", ":q\n")
   end
 end

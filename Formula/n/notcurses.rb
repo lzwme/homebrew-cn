@@ -61,6 +61,6 @@ class Notcurses < Formula
     # current homebrew CI runs with TERM=dumb. given that Notcurses explicitly
     # does not support dumb terminals (i.e. those lacking the "cup" terminfo
     # capability), we expect a failure here. all output will go to stderr.
-    assert_empty shell_output("#{bin}notcurses-info", 1)
+    assert_empty shell_output(bin"notcurses-info", 1)
   end
 end

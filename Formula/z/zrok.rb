@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https:zrok.io"
@@ -9,13 +7,14 @@ class Zrok < Formula
   head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c43ae0c5d5b3ba50e9fcc2a8841e8bb47fb5f9d3f5d5f122d71df82b8313d5b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f19ec6fc4e560ae0581a85f5591066d7e6acc0ac31ccd114e9bdf057e25549e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4bd2a67a441e255a4af0b7b7905299e5944f0c1d5e553911fa3eef05d092670"
-    sha256 cellar: :any_skip_relocation, sonoma:         "29b3c31526c36085d41bbe68f6e304e485ab4cb3363cf5d71703086965479c20"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef73a457a7dcc047d491464c1716a6ff41341925715c2cdb8b830e8c28a48fb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc5ddf708c08cf15f4fb5ea26406b6eabddb6dcd274d87923d2fab4163c2dc6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9202549c80e7f945bdfc05e14f60482080513cecf68700832f51b694e8a3c958"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bac443394ff09290b438089b1bd9a6d4f5950e351bf9332be1e82ed0d1ab9b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ad4e62aac0bdff70057f8bfe06c1315d7df5aa96ff4bf17dbfec9b18d65dc58"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "31a1054dc595547c6fb838f2bfdca8fb36abfb15e0a488e2d471d0528c9a034a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "acb78bb6490b99a4b702d3a4f72d274f90694735d8d3b6ca3d8c8ab3b37431a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "9e110467ee5b6875222b99774a1b81f64a2fbdb268da7c1dbab921b4289d5d27"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb0dd05fbd1f1c5b180d9694d24a138f96e7e7dc6ab9761efccf78778d3ad3bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e87e3ce53c853899891ee3ad5f31b03af63843dfb9d9226ef51ab835600be30d"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Zrok < Formula
 
   def install
     cd buildpath"ui" do
-      system "npm", "install", *Language::Node.local_npm_install_args
+      system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
     end
 

@@ -220,16 +220,16 @@ class MingwW64 < Formula
       target = "#{arch}-w64-mingw32"
       outarch = (arch == "i686") ? "i386" : "x86-64"
 
-      system "#{bin}/#{target}-gcc", "-o", "test.exe", "hello.c"
+      system bin/"#{target}-gcc", "-o", "test.exe", "hello.c"
       assert_match "file format pei-#{outarch}", shell_output("#{bin}/#{target}-objdump -a test.exe")
 
-      system "#{bin}/#{target}-g++", "-o", "test.exe", "hello.cc"
+      system bin/"#{target}-g++", "-o", "test.exe", "hello.cc"
       assert_match "file format pei-#{outarch}", shell_output("#{bin}/#{target}-objdump -a test.exe")
 
-      system "#{bin}/#{target}-gfortran", "-o", "test.exe", "hello.f90"
+      system bin/"#{target}-gfortran", "-o", "test.exe", "hello.f90"
       assert_match "file format pei-#{outarch}", shell_output("#{bin}/#{target}-objdump -a test.exe")
 
-      system "#{bin}/#{target}-widl", "example.idl"
+      system bin/"#{target}-widl", "example.idl"
       assert_predicate testpath/"example_s.c", :exist?, "example_s.c should have been created"
     end
   end

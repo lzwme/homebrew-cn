@@ -34,6 +34,6 @@ class Hamlib < Formula
   end
 
   test do
-    system "#{bin}rigctl", "-V"
+    system bin"rigctl", "-V"
   end
 end

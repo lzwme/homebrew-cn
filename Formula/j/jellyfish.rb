@@ -35,7 +35,7 @@ class Jellyfish < Formula
       >Homebrew
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    system "#{bin}jellyfish", "count", "-m17", "-s100M", "-t2", "-C", "test.fa"
+    system bin"jellyfish", "count", "-m17", "-s100M", "-t2", "-C", "test.fa"
     assert_match "1 54", shell_output("#{bin}jellyfish histo mer_counts.jf")
     assert_match(Unique:\s+54, shell_output("#{bin}jellyfish stats mer_counts.jf"))
   end

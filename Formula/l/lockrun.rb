@@ -36,6 +36,6 @@ class Lockrun < Formula
   end
 
   test do
-    system "#{bin}/lockrun", "--version"
+    system bin/"lockrun", "--version"
   end
 end

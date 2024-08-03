@@ -5,18 +5,6 @@ class MariadbAT110 < Formula
   sha256 "0189d62946c37c6db46bf1a468ba9580bcba8e80f05958ec483c3387eccf9a00"
   license "GPL-2.0-only"
 
-  livecheck do
-    url "https:downloads.mariadb.orgrest-apimariadball-releases?olderReleases=false"
-    strategy :json do |json|
-      json["releases"]&.map do |release|
-        next unless release["release_number"]&.start_with?(version.major_minor)
-        next if release["status"] != "stable"
-
-        release["release_number"]
-      end
-    end
-  end
-
   bottle do
     sha256 arm64_sonoma:   "89a7b94bb9f795bbe4f842da5648232c6a974e0dd76ba69fe8a0952db13d836f"
     sha256 arm64_ventura:  "7bddd7c137bfc4085f961af777564355dc3180d20855f958638462690cc2eda3"
@@ -159,7 +147,7 @@ class MariadbAT110 < Formula
 
     unless File.exist? "#{var}mysqlmysqluser.frm"
       ENV["TMPDIR"] = nil
-      system "#{bin}mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
+      system bin"mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
         "--basedir=#{prefix}", "--datadir=#{var}mysql", "--tmpdir=tmp"
     end
   end
@@ -187,12 +175,12 @@ class MariadbAT110 < Formula
       "--auth-root-authentication-method=normal"
     port = free_port
     fork do
-      system "#{bin}mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+      system bin"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
         "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
       shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system "#{bin}mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end

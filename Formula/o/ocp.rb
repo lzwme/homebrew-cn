@@ -76,6 +76,6 @@ class Ocp < Formula
   end
 
   test do
-    system "#{bin}ocp", "--help"
+    system bin"ocp", "--help"
   end
 end

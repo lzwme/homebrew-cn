@@ -106,7 +106,7 @@ class Opensearch < Formula
     output = shell_output("curl -s -XGET localhost:#{port}")
     assert_equal "opensearch", JSON.parse(output)["version"]["distribution"]
 
-    system "#{bin}opensearch-plugin", "list"
+    system bin"opensearch-plugin", "list"
   end
 end
 

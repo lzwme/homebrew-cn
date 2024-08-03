@@ -59,8 +59,8 @@ class Pkcs11Tools < Formula
     ENV["PKCS11PASSWORD"] = "0000"
 
     system "softhsm2-util", "--init-token", "--slot", "0", "--label", "test", "--pin", "0000", "--so-pin", "0000"
-    system "#{bin}p11keygen", "-i", "test", "-k", "aes", "-b", "128", "encrypt"
-    system "#{bin}p11kcv", "secktest"
-    system "#{bin}p11ls"
+    system bin"p11keygen", "-i", "test", "-k", "aes", "-b", "128", "encrypt"
+    system bin"p11kcv", "secktest"
+    system bin"p11ls"
   end
 end

@@ -30,7 +30,7 @@ class Leaps < Formula
 
     # Start the server in a fork
     leaps_pid = fork do
-      exec "#{bin}leaps", "-address", port
+      exec bin"leaps", "-address", port
     end
 
     # Give the server some time to start serving

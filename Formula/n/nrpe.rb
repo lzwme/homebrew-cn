@@ -56,7 +56,7 @@ class Nrpe < Formula
 
   test do
     pid = fork do
-      exec "#{bin}nrpe", "-n", "-c", "#{etc}nrpe.cfg", "-d"
+      exec bin"nrpe", "-n", "-c", "#{etc}nrpe.cfg", "-d"
     end
     sleep 2
 

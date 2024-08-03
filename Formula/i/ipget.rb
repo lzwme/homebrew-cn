@@ -36,7 +36,7 @@ class Ipget < Formula
     # An example content identifier (CID) used in IPFS docs:
     # https:docs.ipfs.techconceptscontent-addressing
     cid = "bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly"
-    system "#{bin}ipget", "ipfs:#{cid}"
+    system bin"ipget", "ipfs:#{cid}"
     assert_match "JPEG image data", shell_output("file #{cid}")
   end
 end

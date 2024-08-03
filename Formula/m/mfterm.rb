@@ -45,6 +45,6 @@ class Mfterm < Formula
   end
 
   test do
-    system "#{bin}mfterm", "--version"
+    system bin"mfterm", "--version"
   end
 end

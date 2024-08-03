@@ -48,7 +48,7 @@ class Libjcat < Formula
   end
 
   test do
-    system "#{bin}jcat-tool", "-h"
+    system bin"jcat-tool", "-h"
     (testpath"test.c").write <<~EOS
       #include <jcat.h>
       int main(int argc, char *argv[]) {

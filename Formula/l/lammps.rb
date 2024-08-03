@@ -74,6 +74,6 @@ class Lammps < Formula
   end
 
   test do
-    system "#{bin}lmp_serial", "-in", "#{pkgshare}benchin.lj"
+    system bin"lmp_serial", "-in", pkgshare"benchin.lj"
   end
 end

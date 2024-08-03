@@ -58,7 +58,7 @@ class Katago < Formula
   end
 
   test do
-    system "#{bin}katago", "version"
+    system bin"katago", "version"
     assert_match(All tests passed$, shell_output("#{bin}katago runtests").strip)
   end
 end

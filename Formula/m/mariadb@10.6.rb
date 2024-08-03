@@ -150,7 +150,7 @@ class MariadbAT106 < Formula
 
     unless File.exist? "#{var}mysqlmysqluser.frm"
       ENV["TMPDIR"] = nil
-      system "#{bin}mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
+      system bin"mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
         "--basedir=#{prefix}", "--datadir=#{var}mysql", "--tmpdir=tmp"
     end
   end
@@ -178,12 +178,12 @@ class MariadbAT106 < Formula
       "--auth-root-authentication-method=normal"
     port = free_port
     fork do
-      system "#{bin}mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+      system bin"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
         "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
       shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system "#{bin}mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end

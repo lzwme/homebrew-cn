@@ -36,6 +36,6 @@ class Man2html < Formula
   end
 
   test do
-    pipe_output("#{bin}/man2html", (man1/"man2html.1").read, 0)
+    pipe_output(bin/"man2html", (man1/"man2html.1").read, 0)
   end
 end

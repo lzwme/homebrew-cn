@@ -37,6 +37,6 @@ class ActivemqCpp < Formula
   end
 
   test do
-    system "#{bin}activemqcpp-config", "--version"
+    system bin"activemqcpp-config", "--version"
   end
 end

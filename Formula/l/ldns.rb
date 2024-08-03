@@ -86,7 +86,7 @@ class Ldns < Formula
       powerdns.com.   10773 IN  DNSKEY  257 3 8  #{l2.tr!("\n", " ")}
     EOS
 
-    system "#{bin}ldns-key2ds", "powerdns.com.dnskey"
+    system bin"ldns-key2ds", "powerdns.com.dnskey"
 
     match = "d4c3d5552b8679faeebc317e5f048b614b2e5f607dc57f1553182d49ab2179f7"
     assert_match match, File.read("Kpowerdns.com.+008+44030.ds")

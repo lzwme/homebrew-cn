@@ -48,6 +48,6 @@ class Inspircd < Formula
   end
 
   test do
-    assert_match("ERROR: Cannot open config file", shell_output("#{bin}inspircd", 1))
+    assert_match("ERROR: Cannot open config file", shell_output(bin"inspircd", 1))
   end
 end

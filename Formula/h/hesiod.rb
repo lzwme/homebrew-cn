@@ -28,7 +28,7 @@ class Hesiod < Formula
   depends_on "libidn"
 
   def install
-    system "autoreconf", "-fvi"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -36,7 +36,7 @@ class Hesiod < Formula
   end
 
   test do
-    system "#{bin}hesinfo", "sipbtest", "passwd"
-    system "#{bin}hesinfo", "sipbtest", "filsys"
+    system bin"hesinfo", "sipbtest", "passwd"
+    system bin"hesinfo", "sipbtest", "filsys"
   end
 end

@@ -30,21 +30,14 @@ class Netperf < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dbb69e91e2bbb449c4b6ce47a4a3e624461262ed275327236afd7b83af588778"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76bf2f77ea0a7e854b9de5b139b4c8d6010a658aeace9a8bbe4691f26f4537e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa20dd669c5ea235a264c1684859a7c97e82bc3a5f210584ff17eb402ada2510"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb2e8ee85592d6dff9445af33d752ea5e73abb92fe690a7844e556059ba9e9f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "375c669d8ef5b9bfe11746f5ae7f1b41387648c6c746b9f81a3f49ab0b566edb"
-    sha256 cellar: :any_skip_relocation, ventura:        "251f856fc4ffa7c7f5c5e0c865b1b5fa41d4f4cd25c213704c0e19657dcf67fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3418def36e0e68537fd927007c717c1d88fc604db1134125f36f7173f670bb7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "de1b7e8643383ecc20cdd23742d2d7518dcb8bf49b77c98f32abed7dbca70f73"
-    sha256 cellar: :any_skip_relocation, catalina:       "da28e83fa25e8284ee5acc7fa327d886bb53ab20035cd07703909b7556ab25e1"
-    sha256 cellar: :any_skip_relocation, mojave:         "cdd840b5e300383245d703973fcd238d58b4bd89d2ae3ba6769db297b2ddb1f9"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "cf086e0d276a572aba8318f7080cedc94b36a7b612cdbb4bcc3ceefef0080c53"
-    sha256 cellar: :any_skip_relocation, sierra:         "4d3f648081c84ad697d608b56bcfce3237de7c34c4e4a53d9851628f9d50cd5d"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "c6e96625b1f83a7f83d3c9b53b8584ab65d73cfd59bc38672588ba82d37ecc1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00d6096bef2a2982df63f66cb5400c568b0b917efe598b60bc4df5b54aa24e59"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b8c8f0f6df4dbb4e85dd8870a47b12369c70a72d7a97701800d9a30c753cbc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0be8aca056a660d30656ed07a2915d75d085cda6c826fda6381ba6842b51622"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6e3f88250483cc1a9b8752d9c93bb9764f97bd4110824b51cc0c1b61c6d1d62"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c596efc4287605732753cf615b4bafd51c9554ad51a4b497e4655f8ddff2e84"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae8920b6b1666b52f368c70401e444a6d287fc25a5c75215c463c7b9f25294b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "13f14c46d72fb02c70c54e68743fc4a63b99c5de54d4731c83d982f6dffa948f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ef9981c5c2d3f0e9d9d5718a86188a9b38ab8df08f2d92ac50aa371be2a764"
   end
 
   head do
@@ -70,6 +63,6 @@ class Netperf < Formula
   end
 
   test do
-    system "#{bin}netperf -h | cat"
+    assert_match "Usage: netperf", shell_output("#{bin}netperf -h 2>&1", 1)
   end
 end

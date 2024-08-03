@@ -84,6 +84,6 @@ class Openmsx < Formula
   end
 
   test do
-    system "#{bin}openmsx", "-testconfig"
+    system bin"openmsx", "-testconfig"
   end
 end

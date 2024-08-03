@@ -36,6 +36,6 @@ class LibusbCompat < Formula
   end
 
   test do
-    system "#{bin}/libusb-config", "--libs"
+    system bin/"libusb-config", "--libs"
   end
 end

@@ -49,6 +49,6 @@ class Opencbm < Formula
   end
 
   test do
-    system "#{bin}cbmctrl", "--help"
+    system bin"cbmctrl", "--help"
   end
 end

@@ -40,11 +40,11 @@ class Lzop < Formula
     text = "This is Homebrew"
     path.write text
 
-    system "#{bin}/lzop", "test"
+    system bin/"lzop", "test"
     assert_predicate testpath/"test.lzo", :exist?
     rm path
 
-    system "#{bin}/lzop", "-d", "test.lzo"
+    system bin/"lzop", "-d", "test.lzo"
     assert_equal text, path.read
   end
 end

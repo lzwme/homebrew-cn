@@ -36,6 +36,6 @@ class Mackup < Formula
   end
 
   test do
-    system "#{bin}mackup", "--help"
+    system bin"mackup", "--help"
   end
 end

@@ -28,6 +28,6 @@ class JpegArchive < Formula
   end
 
   test do
-    system "#{bin}jpeg-recompress", test_fixtures("test.jpg"), "output.jpg"
+    system bin"jpeg-recompress", test_fixtures("test.jpg"), "output.jpg"
   end
 end

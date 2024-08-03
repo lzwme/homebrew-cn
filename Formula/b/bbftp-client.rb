@@ -40,6 +40,6 @@ class BbftpClient < Formula
   end
 
   test do
-    system "#{bin}/bbftp", "-v"
+    system bin/"bbftp", "-v"
   end
 end

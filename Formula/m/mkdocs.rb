@@ -115,6 +115,6 @@ class Mkdocs < Formula
 
       And some deeply meaningful prose.
     EOS
-    system "#{bin}/mkdocs", "build", "--clean"
+    system bin/"mkdocs", "build", "--clean"
   end
 end

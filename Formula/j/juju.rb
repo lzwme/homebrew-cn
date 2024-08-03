@@ -36,7 +36,7 @@ class Juju < Formula
   end
 
   test do
-    system "#{bin}juju", "version"
+    system bin"juju", "version"
     assert_match "No controllers registered", shell_output("#{bin}juju list-users 2>&1", 1)
     assert_match "No controllers registered", shell_output("#{bin}juju-metadata list-images 2>&1", 2)
   end

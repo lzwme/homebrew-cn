@@ -917,7 +917,6 @@ Homebrew-homebrew-core/Formula/c/cloud-sql-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloud-watch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudflare-cli4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-quiche.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cloudflare-wrangler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-wrangler2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflared.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudformation-cli.rb, Homebrew/homebrew-core, 1
@@ -4704,6 +4703,7 @@ Homebrew-homebrew-core/Formula/o/owamp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/owfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxipng.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oxker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oysttyer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p0f.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/p11-kit.rb, Homebrew/homebrew-core, 1
@@ -11809,6 +11809,7 @@ Homebrew-homebrew-cask/Casks/m/mesasqlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meshlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/meta-quest-developer-hub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metabase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metaimage.rb, Homebrew/homebrew-cask, 0

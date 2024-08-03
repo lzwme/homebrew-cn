@@ -22,6 +22,6 @@ class Linklint < Formula
 
   test do
     (testpath/"index.html").write('<a href="/">Home</a>')
-    system "#{bin}/linklint", "/"
+    system bin/"linklint", "/"
   end
 end

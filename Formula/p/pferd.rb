@@ -117,7 +117,7 @@ class Pferd < Formula
   test do
     assert_equal "PFERD #{version} (#{homepage})", shell_output("#{bin}pferd --version").strip
 
-    assert_match "Error Failed to load config", shell_output("#{bin}pferd", 1)
+    assert_match "Error Failed to load config", shell_output(bin"pferd", 1)
 
     (testpath"pferd.cfg").write <<~EOS
       [crawl:Foo]

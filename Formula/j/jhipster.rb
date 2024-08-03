@@ -1,5 +1,3 @@
-require "language/node"
-
 class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
@@ -8,20 +6,21 @@ class Jhipster < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_sonoma:   "aa061287a397511c7b144728cf25b40ad699b3f902c0ae4d376728ff59a4a4f7"
-    sha256                               arm64_ventura:  "439669bd05c952c9d349272d32c847f79ea2bb7a122a8f61b7168af806ddc2f1"
-    sha256                               arm64_monterey: "5c3661a6c42076669b6aa8fe66e3546d5e75b113b0ea6d6359becbbf1f740643"
-    sha256                               sonoma:         "b89f493e905476db3256e13252139e2a7d4f1bfbdc1bfe68c15fae63955a87ca"
-    sha256                               ventura:        "ddacb5b5f684b35f01faab78885b49d242ca8ba57f44735b7d0b4121a1cf0ed8"
-    sha256                               monterey:       "e85aec9aa54c0527e186a1ac58935c6e0085df9d9605b0ed2a1c79b7eb4509b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5270776cf5eb810776e370c515c801b913d680d93c9fa40c135aa1033a1e327"
+    rebuild 1
+    sha256                               arm64_sonoma:   "02aa2afa323f937d58e16431cf3c2dcae78c7bcfb260858b5c4241e4fa22939a"
+    sha256                               arm64_ventura:  "63efb46c10cced592b9799f9634c90b05b7ed7bb8548e06ec8ca1770c31e5d3e"
+    sha256                               arm64_monterey: "f4ae8fdfb8dccb8e5451d7211e7570a433d1dcdfc5fdce832b985c0b2f99240e"
+    sha256                               sonoma:         "9606e5c099b91c49b82fd1a0bc64c685d97db9514bf844d88f56eb2653213684"
+    sha256                               ventura:        "71f9970b1625b53dc0e122f6bab113b5a273b5b059337b865eefd8fcd830ccb6"
+    sha256                               monterey:       "117629eb5ef8c4f5baf3de5faeaf3e71d6aaa8ea9d93778f5f87fd71d5446137"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd2372641f1e1a7de33fc2275047d12e5c41704d4867cc95cf2142f840e887d2"
   end
 
   depends_on "node"
   depends_on "openjdk"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install Dir["#{libexec}/bin/*"]
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
 

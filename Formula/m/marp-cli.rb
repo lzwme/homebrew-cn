@@ -1,5 +1,3 @@
-require "languagenode"
-
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTMLCSS, PDF, PPT and images"
   homepage "https:github.commarp-teammarp-cli"
@@ -8,19 +6,20 @@ class MarpCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5832f718afc05b56019621c61165e199f659d9ea90c36003702e60095816e4d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5832f718afc05b56019621c61165e199f659d9ea90c36003702e60095816e4d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5832f718afc05b56019621c61165e199f659d9ea90c36003702e60095816e4d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5bc827178f06c452d345a198244214892d638578f723c3ce29a30b00d84ac104"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bc827178f06c452d345a198244214892d638578f723c3ce29a30b00d84ac104"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bc827178f06c452d345a198244214892d638578f723c3ce29a30b00d84ac104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e252e61548d221f12fc21c00c0fc29cc2bde145e292fe1460de7ddd85e78de5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "053d8f7070f38272319fc1511e1c54658202dcea894554672b56cb594f5a7fe1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "053d8f7070f38272319fc1511e1c54658202dcea894554672b56cb594f5a7fe1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "053d8f7070f38272319fc1511e1c54658202dcea894554672b56cb594f5a7fe1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf72d0b39d9c95a68ef4295f6b34a20371b9c87a28034006dac62ca91ba4a2a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf72d0b39d9c95a68ef4295f6b34a20371b9c87a28034006dac62ca91ba4a2a5"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf72d0b39d9c95a68ef4295f6b34a20371b9c87a28034006dac62ca91ba4a2a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73873bdd8ac8c7c485b023b292095eb410acacef4b1c0db5a6678889078914b0"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

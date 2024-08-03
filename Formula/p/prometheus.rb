@@ -86,6 +86,7 @@ class Prometheus < Formula
         - record: job:http_inprogress_requests:sum
           expr: sum(http_inprogress_requests) by (job)
     EOS
-    system "#{bin}promtool", "check", "rules", testpath"rules.example"
+
+    system bin"promtool", "check", "rules", testpath"rules.example"
   end
 end

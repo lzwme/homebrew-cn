@@ -37,6 +37,6 @@ class Uftp < Formula
   end
 
   test do
-    system "#{bin}/uftp_keymgt"
+    system bin/"uftp_keymgt"
   end
 end

@@ -42,6 +42,6 @@ class Madplay < Formula
   end
 
   test do
-    system "#{bin}madplay", "--version"
+    system bin"madplay", "--version"
   end
 end

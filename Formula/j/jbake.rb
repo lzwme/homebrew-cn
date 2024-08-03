@@ -19,6 +19,6 @@ class Jbake < Formula
   end
 
   test do
-    assert_match "Usage: jbake", shell_output("#{bin}jbake")
+    assert_match "Usage: jbake", shell_output(bin"jbake")
   end
 end

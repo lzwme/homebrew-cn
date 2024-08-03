@@ -26,6 +26,6 @@ class Peco < Formula
   end
 
   test do
-    system "#{bin}peco", "--version"
+    system bin"peco", "--version"
   end
 end

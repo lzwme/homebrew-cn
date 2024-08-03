@@ -53,8 +53,6 @@ class EcflowUi < Formula
     binary_version_out = shell_output("#{bin}/ecflow_ui.x --version")
     assert_match @version.to_s, binary_version_out
 
-    #  check that the startup script runs
-    system "#{bin}/ecflow_ui", "-h"
     help_out = shell_output("#{bin}/ecflow_ui -h")
     assert_match "ecFlowUI", help_out
     assert_match "fontsize", help_out

@@ -44,7 +44,7 @@ class Swftools < Formula
   end
 
   test do
-    system "#{bin}/png2swf", "swftools_test.swf", test_fixtures("test.png")
+    system bin/"png2swf", "swftools_test.swf", test_fixtures("test.png")
   end
 end
 

@@ -61,9 +61,10 @@ class Hurl < Formula
   test do
     # Perform a GET request to https:hurl.dev.
     # This requires a network connection, but so does Homebrew in general.
-    filename = (testpath"test.hurl")
-    filename.write "GET https:hurl.dev"
-    system bin"hurl", "--color", filename
-    system "#{bin}hurlfmt", "--color", filename
+    test_file = testpath"test.hurl"
+    test_file.write "GET https:hurl.dev"
+
+    system bin"hurl", "--color", test_file
+    system bin"hurlfmt", "--color", test_file
   end
 end

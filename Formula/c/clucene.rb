@@ -5,11 +5,6 @@ class Clucene < Formula
   sha256 "ddfdc433dd8ad31b5c5819cc4404a8d2127472a3b720d3e744e8c51d79732eab"
   head "https:git.code.sf.netpclucenecode.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(url=.*?clucene-core[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 sonoma:       "f574282f7bbf88b219a39b50160dde1c101ed8b95943242049d97b88229effb8"

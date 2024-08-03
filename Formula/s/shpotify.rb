@@ -17,6 +17,6 @@ class Shpotify < Formula
   end
 
   test do
-    system "#{bin}spotify"
+    system bin"spotify"
   end
 end

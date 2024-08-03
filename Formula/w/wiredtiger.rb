@@ -43,7 +43,7 @@ class Wiredtiger < Formula
   end
 
   test do
-    system "#{bin}wt", "create", "table:test"
-    system "#{bin}wt", "drop", "table:test"
+    system bin"wt", "create", "table:test"
+    system bin"wt", "drop", "table:test"
   end
 end

@@ -53,7 +53,7 @@ class Aria2 < Formula
   end
 
   test do
-    system "#{bin}aria2c", "https:brew.sh"
+    system bin"aria2c", "https:brew.sh"
     assert_predicate testpath"index.html", :exist?, "Failed to create index.html!"
   end
 end

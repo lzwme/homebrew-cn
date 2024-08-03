@@ -53,6 +53,6 @@ class Sword < Formula
     # This will call sword's module manager to list remote sources.
     # It should just demonstrate that the lib was correctly installed
     # and can be used by frontends like installmgr.
-    system "#{bin}installmgr", "-s"
+    system bin"installmgr", "-s"
   end
 end

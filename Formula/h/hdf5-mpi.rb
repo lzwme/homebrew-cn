@@ -80,7 +80,7 @@ class Hdf5Mpi < Formula
         return 0;
       }
     EOS
-    system "#{bin}h5pcc", "test.c"
+    system bin"h5pcc", "test.c"
     assert_equal version.to_s, shell_output(".a.out").chomp
 
     (testpath"test.f90").write <<~EOS
@@ -110,7 +110,7 @@ class Hdf5Mpi < Formula
       write (*,"(I0,'.',I0,'.',I0)") major, minor, rel
       end
     EOS
-    system "#{bin}h5pfc", "test.f90"
+    system bin"h5pfc", "test.f90"
     assert_equal version.to_s, shell_output(".a.out").chomp
   end
 end

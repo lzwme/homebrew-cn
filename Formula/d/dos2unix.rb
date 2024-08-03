@@ -36,23 +36,23 @@ class Dos2unix < Formula
 
   test do
     # write a file with lf
-    path = testpath/"test.txt"
-    path.write "foo\nbar\n"
+    test_file = testpath/"test.txt"
+    test_file.write "foo\nbar\n"
 
     # unix2mac: convert lf to cr
-    system "#{bin}/unix2mac", path
-    assert_equal "foo\rbar\r", path.read
+    system bin/"unix2mac", test_file
+    assert_equal "foo\rbar\r", test_file.read
 
     # mac2unix: convert cr to lf
-    system "#{bin}/mac2unix", path
-    assert_equal "foo\nbar\n", path.read
+    system bin/"mac2unix", test_file
+    assert_equal "foo\nbar\n", test_file.read
 
     # unix2dos: convert lf to cr+lf
-    system "#{bin}/unix2dos", path
-    assert_equal "foo\r\nbar\r\n", path.read
+    system bin/"unix2dos", test_file
+    assert_equal "foo\r\nbar\r\n", test_file.read
 
     # dos2unix: convert cr+lf to lf
-    system bin/"dos2unix", path
-    assert_equal "foo\nbar\n", path.read
+    system bin/"dos2unix", test_file
+    assert_equal "foo\nbar\n", test_file.read
   end
 end

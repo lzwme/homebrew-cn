@@ -10,7 +10,7 @@ class Bash < Formula
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2.tar.gz"
     sha256 "a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb"
-    version "5.2.26"
+    version "5.2.32"
 
     %w[
       001 f42f2fee923bc2209f406a1892772121c467f44533bedfe00a176139da5d310a
@@ -39,6 +39,12 @@ class Bash < Formula
       024 971534490117eb05d97d7fd81f5f9d8daf927b4d581231844ffae485651b02c3
       025 5138f487e7cf71a6323dc81d22419906f1535b89835cc2ff68847e1a35613075
       026 96ee1f549aa0b530521e36bdc0ba7661602cfaee409f7023cac744dd42852eac
+      027 e12a890a2e4f0d9c6ec1ce65b73da4fe116c8e4209bac8ac9dc4cd96f486ab39
+      028 6042780ba2893daca4a3f0f9b65728592cd7bb6d4cebe073855a6aad4d63aac1
+      029 125cacb37e625471924b3ee06c54cb1bf21b3b7fe0e569d24a681b0ec4a29987
+      030 c3ff73230e123acdb5ac216921a386df8f74340459533d776d02811a1f76698f
+      031 c2d1b7be2df771126105020af7fafa00fffd4deff4a4e45d60fc6a235bcba795
+      032 7b9c77daeca93ff711781d7537234166e83ed9835ce1ee7dcd5742319c372a16
     ].each_slice(2) do |p, checksum|
       patch :p0 do
         url "https://ftp.gnu.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
@@ -87,13 +93,13 @@ class Bash < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bd484090760c2736fa30e29a7861aaf115330bfb10178ce398e1f927a056a047"
-    sha256 arm64_ventura:  "637a876f29118fb0124ee2b4111d10055380963605c47d0d4e97748f53b14cfa"
-    sha256 arm64_monterey: "18f386a095f5ccf621cde4c10ea1147b3df03fcbb4b6a52a05b3bfd6c8397749"
-    sha256 sonoma:         "354e107695c01f1b970174487d0f5e501774c485b60e13f95141884b31ba883d"
-    sha256 ventura:        "32bc8c17f6a57fc3dd4e4c22cc3975bf083cb132722687b6ef7b2c4940dfca57"
-    sha256 monterey:       "d674b4be7bf889c574d52826bad427d0f6a148b5b8795f4f1cc149c54de510a3"
-    sha256 x86_64_linux:   "04c187e2ae30da9c201a53b703eacbad8da84dd2d6ac77bff56113b277f99df0"
+    sha256 arm64_sonoma:   "1f93264ad5646699b5554ad4a96ca1303a813876065d5c0782fa653f9a50ad83"
+    sha256 arm64_ventura:  "ea989ff2c61e7df3bcd0d38e37ad129d4430548e7adb27b3ec4454dd22d04dff"
+    sha256 arm64_monterey: "a5caba455076b5d77bd236b15bb81f3583de927ec2ef64c1484726045b28419f"
+    sha256 sonoma:         "d6e82bc0f21d7b40b9f86d4bdbbf64fbbfa2e81a91c73e937961ac440125037d"
+    sha256 ventura:        "eff1cd8839cbae9047ea96b0a47d389f268334e0bc28e2784be72c978839d3a4"
+    sha256 monterey:       "7b217658847a31a831fa8a10cd7555c96dd4e730904ee853a0cbffb5b38c7b85"
+    sha256 x86_64_linux:   "3356e96db216679c7b3fafcc805c8fddfe83be148d7cf6ece35c7d3ac59b0e5d"
   end
 
   def install

@@ -34,7 +34,7 @@ class Par2 < Formula
     # Protect a file with par2.
     test_file = testpath"some-file"
     File.write(test_file, "file contents")
-    system "#{bin}par2", "create", test_file
+    system bin"par2", "create", test_file
 
     # "Corrupt" the file by overwriting, then ask par2 to repair it.
     File.write(test_file, "corrupted contents")

@@ -32,6 +32,6 @@ class MacosTrash < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}trash --version")
-    system "#{bin}trash", "--help"
+    system bin"trash", "--help"
   end
 end

@@ -112,6 +112,6 @@ class NotmuchMutt < Formula
   end
 
   test do
-    system "#{bin}/notmuch-mutt", "search", "Homebrew"
+    system bin/"notmuch-mutt", "search", "Homebrew"
   end
 end

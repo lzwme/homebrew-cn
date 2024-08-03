@@ -36,6 +36,6 @@ class EbookTools < Formula
   end
 
   test do
-    system "#{bin}/einfo", "-help"
+    system bin/"einfo", "-help"
   end
 end

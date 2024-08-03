@@ -42,7 +42,7 @@ class FileFormula < Formula
   end
 
   test do
-    system "#{bin}file", test_fixtures("test.mp3")
+    system bin"file", test_fixtures("test.mp3")
   end
 end
 

@@ -39,6 +39,6 @@ class TaLib < Formula
   end
 
   test do
-    system "#{bin}/ta_regtest"
+    system bin/"ta_regtest"
   end
 end

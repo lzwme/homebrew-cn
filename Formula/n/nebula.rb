@@ -34,14 +34,14 @@ class Nebula < Formula
   end
 
   test do
-    system "#{bin}nebula-cert", "ca", "-name", "testorg"
-    system "#{bin}nebula-cert", "sign", "-name", "host", "-ip", "192.168.100.124"
+    system bin"nebula-cert", "ca", "-name", "testorg"
+    system bin"nebula-cert", "sign", "-name", "host", "-ip", "192.168.100.124"
     (testpath"config.yml").write <<~EOS
       pki:
         ca: #{testpath}ca.crt
         cert: #{testpath}host.crt
         key: #{testpath}host.key
     EOS
-    system "#{bin}nebula", "-test", "-config", "config.yml"
+    system bin"nebula", "-test", "-config", "config.yml"
   end
 end

@@ -78,7 +78,7 @@ class Msitools < Formula
            </Product>
         </Wix>
       EOS
-      system "#{bin}/wixl", "-o", "installer#{i}.msi", "installer#{i}.wxs"
+      system bin/"wixl", "-o", "installer#{i}.msi", "installer#{i}.wxs"
       assert_predicate testpath/"installer#{i}.msi", :exist?
     end
 
@@ -95,16 +95,16 @@ class Msitools < Formula
 
     # msiextract: extract files from an installer
     mkdir "files"
-    system "#{bin}/msiextract", "--directory", "files", "installer1.msi"
+    system bin/"msiextract", "--directory", "files", "installer1.msi"
     assert_equal (testpath/"test1.txt").read,
                  (testpath/"files/Program Files/test/test1.txt").read
 
     # msidump: dump tables from an installer
     mkdir "idt"
-    system "#{bin}/msidump", "--directory", "idt", "installer1.msi"
+    system bin/"msidump", "--directory", "idt", "installer1.msi"
     assert_predicate testpath/"idt/File.idt", :exist?
 
     # msibuild: replace a table in an installer
-    system "#{bin}/msibuild", "installer1.msi", "-i", "idt/File.idt"
+    system bin/"msibuild", "installer1.msi", "-i", "idt/File.idt"
   end
 end

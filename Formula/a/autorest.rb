@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Autorest < Formula
   desc "Swagger (OpenAPI) Specification code generator"
   homepage "https:github.comAzureautorest"
@@ -25,7 +23,7 @@ class Autorest < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

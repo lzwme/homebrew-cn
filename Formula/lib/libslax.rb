@@ -80,7 +80,8 @@ class Libslax < Formula
           expr "Hello World!";
       }
     EOS
-    system "#{bin}slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
+
+    system bin"slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
     assert_predicate testpath"hello.xslt", :exist?
     assert_match "<xsl:text>Hello World!<xsl:text>", File.read("hello.xslt")
   end

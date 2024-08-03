@@ -35,6 +35,6 @@ class Locateme < Formula
   end
 
   test do
-    system "#{bin}/LocateMe", "-h"
+    system bin/"LocateMe", "-h"
   end
 end

@@ -34,6 +34,6 @@ class Pelikan < Formula
   end
 
   test do
-    system "#{bin}pelikan_twemcache", "-c"
+    system bin"pelikan_twemcache", "-c"
   end
 end

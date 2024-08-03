@@ -34,6 +34,6 @@ class Pfetch < Formula
   end
 
   test do
-    assert_match "uptime", shell_output("#{bin}pfetch")
+    assert_match "uptime", shell_output(bin"pfetch")
   end
 end

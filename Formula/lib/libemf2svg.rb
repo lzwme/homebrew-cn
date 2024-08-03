@@ -23,11 +23,6 @@ class Libemf2svg < Formula
   depends_on "freetype"
   depends_on "libpng"
 
-  resource "homebrew-testdata" do
-    url "https:github.comkakwalibemf2svgraw1.1.0testsresourcesemftest-037.emf"
-    sha256 "d2855fc380fc3f791da58a78937af60c77ea437b749702a90652615019a5abdf"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -35,8 +30,13 @@ class Libemf2svg < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:github.comkakwalibemf2svgraw1.1.0testsresourcesemftest-037.emf"
+      sha256 "d2855fc380fc3f791da58a78937af60c77ea437b749702a90652615019a5abdf"
+    end
+
     resource("homebrew-testdata").stage do
-      system "#{bin}emf2svg-conv", "-i", "test-037.emf", "-o", testpath"test.svg"
+      system bin"emf2svg-conv", "-i", "test-037.emf", "-o", testpath"test.svg"
     end
     assert_predicate testpath"test.svg", :exist?
   end

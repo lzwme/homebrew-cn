@@ -51,7 +51,8 @@ class Riscv64ElfBinutils < Formula
           li a0, 0
           ecall
     EOS
-    system "#{bin}/riscv64-elf-as", "-o", "test-s.o", "test-s.s"
+
+    system bin/"riscv64-elf-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-littleriscv",
                  shell_output("#{bin}/riscv64-elf-objdump -a test-s.o")
     assert_match "f()", shell_output("#{bin}/riscv64-elf-c++filt _Z1fv")

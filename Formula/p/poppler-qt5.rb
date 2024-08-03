@@ -85,6 +85,6 @@ class PopplerQt5 < Formula
   end
 
   test do
-    system "#{bin}/pdfinfo", test_fixtures("test.pdf")
+    system bin/"pdfinfo", test_fixtures("test.pdf")
   end
 end

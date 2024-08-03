@@ -43,6 +43,6 @@ class WirouterKeyrec < Formula
   end
 
   test do
-    system "#{bin}/wirouterkeyrec", "-s", "Alice-12345678"
+    system bin/"wirouterkeyrec", "-s", "Alice-12345678"
   end
 end

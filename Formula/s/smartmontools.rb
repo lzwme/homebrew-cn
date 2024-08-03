@@ -33,7 +33,7 @@ class Smartmontools < Formula
   end
 
   test do
-    system "#{bin}/smartctl", "--version"
-    system "#{bin}/smartd", "--version"
+    system bin/"smartctl", "--version"
+    system bin/"smartd", "--version"
   end
 end

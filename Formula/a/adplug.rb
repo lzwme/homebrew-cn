@@ -55,8 +55,8 @@ class Adplug < Formula
 
   test do
     resource("ksms").stage do
-      mkdir "#{testpath}.adplug"
-      system "#{bin}adplugdb", "-v", "add", "JAZZSONG.KSM"
+      (testpath".adplug").mkpath
+      system bin"adplugdb", "-v", "add", "JAZZSONG.KSM"
     end
   end
 end

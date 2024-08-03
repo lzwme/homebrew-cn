@@ -91,7 +91,7 @@ class Ppsspp < Formula
   end
 
   test do
-    system "#{bin}ppsspp", "--version"
+    system bin"ppsspp", "--version"
     if OS.mac?
       app_frameworks = prefix"PPSSPPSDL.appContentsFrameworks"
       assert_predicate app_frameworks"libMoltenVK.dylib", :exist?, "Broken linkage with `molten-vk`"

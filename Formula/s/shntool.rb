@@ -33,6 +33,6 @@ class Shntool < Formula
   end
 
   test do
-    system "#{bin}/shninfo", test_fixtures("test.wav")
+    system bin/"shninfo", test_fixtures("test.wav")
   end
 end

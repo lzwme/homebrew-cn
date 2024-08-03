@@ -57,6 +57,6 @@ class Coturn < Formula
   end
 
   test do
-    system "#{bin}turnadmin", "-l"
+    system bin"turnadmin", "-l"
   end
 end

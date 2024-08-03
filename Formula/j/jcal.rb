@@ -42,7 +42,7 @@ class Jcal < Formula
   end
 
   test do
-    system "#{bin}/jcal", "-y"
-    system "#{bin}/jdate"
+    system bin/"jcal", "-y"
+    system bin/"jdate"
   end
 end

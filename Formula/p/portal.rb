@@ -33,7 +33,7 @@ class Portal < Formula
     # Start a local relay server on an open port.
     port=free_port
     fork do
-      exec "#{bin}portal", "serve", "--port=#{port}"
+      exec bin"portal", "serve", "--port=#{port}"
     end
     sleep 2
 
@@ -47,7 +47,7 @@ class Portal < Formula
     password_file=(testpath"password.txt")
     fork do
       $stdout.reopen(password_file)
-      exec "#{bin}portal", "send", "-s=raw", "--relay=:#{port}", test_file_sender
+      exec bin"portal", "send", "-s=raw", "--relay=:#{port}", test_file_sender
     end
     sleep 2
 
@@ -56,7 +56,7 @@ class Portal < Formula
     fork do
       mkdir_p receiver_path
       cd receiver_path do
-        exec "#{bin}portal", "receive", "-s=raw", "-y", "--relay=:#{port}", password_file.read.strip
+        exec bin"portal", "receive", "-s=raw", "-y", "--relay=:#{port}", password_file.read.strip
       end
     end
     sleep 2

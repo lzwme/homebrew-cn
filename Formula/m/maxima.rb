@@ -45,6 +45,6 @@ class Maxima < Formula
   end
 
   test do
-    system "#{bin}/maxima", "--batch-string=run_testsuite(); quit();"
+    system bin/"maxima", "--batch-string=run_testsuite(); quit();"
   end
 end

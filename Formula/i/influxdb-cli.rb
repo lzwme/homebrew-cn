@@ -60,7 +60,7 @@ class InfluxdbCli < Formula
     assert_match "OK", shell_output("#{bin}influx ping")
 
     # Perform initial DB setup.
-    system "#{bin}influx", "setup", "-u", "usr", "-p", "fakepassword", "-b", "bkt", "-o", "org", "-f"
+    system bin"influx", "setup", "-u", "usr", "-p", "fakepassword", "-b", "bkt", "-o", "org", "-f"
 
     # Assert that initial resources show in CLI output.
     assert_match "usr", shell_output("#{bin}influx user list")

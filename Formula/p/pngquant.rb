@@ -35,7 +35,7 @@ class Pngquant < Formula
   end
 
   test do
-    system "#{bin}pngquant", test_fixtures("test.png"), "-o", "out.png"
+    system bin"pngquant", test_fixtures("test.png"), "-o", "out.png"
     assert_predicate testpath"out.png", :exist?
   end
 end

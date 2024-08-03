@@ -33,6 +33,6 @@ class PegMarkdown < Formula
 
   test do
     assert_equal "<p><strong>Homebrew<strong><p>",
-      pipe_output("#{bin}peg-markdown", "**Homebrew**", 0).chomp
+      pipe_output(bin"peg-markdown", "**Homebrew**", 0).chomp
   end
 end

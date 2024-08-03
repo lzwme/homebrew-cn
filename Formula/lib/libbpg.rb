@@ -5,11 +5,6 @@ class Libbpg < Formula
   sha256 "c0788e23bdf1a7d36cb4424ccb2fae4c7789ac94949563c4ad0e2569d3bf0095"
   revision 1
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?libbpg[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "bf5d06c9fc78777d99c50c65585e3f295046d2619adcaa0c93c5349e1a650d15"
     sha256 cellar: :any, arm64_ventura:  "6efc300826fc1217ec39625cd01b93617fb9ea95f11a88c990751fed2e27eabb"

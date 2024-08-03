@@ -52,6 +52,6 @@ class Libimobiledevice < Formula
   end
 
   test do
-    system "#{bin}idevicedate", "--help"
+    system bin"idevicedate", "--help"
   end
 end

@@ -107,10 +107,10 @@ class Opentsdb < Formula
     begin
       sleep 2
 
-      system "#{pkgshare}toolscreate_table_with_env.sh"
+      system pkgshare"toolscreate_table_with_env.sh"
 
-      tsdb_err = "#{testpath}tsdb.err"
-      tsdb_out = "#{testpath}tsdb.out"
+      tsdb_err = testpath"tsdb.err"
+      tsdb_out = testpath"tsdb.out"
       fork do
         $stderr.reopen(tsdb_err, "w")
         $stdout.reopen(tsdb_out, "w")
@@ -120,7 +120,7 @@ class Opentsdb < Formula
 
       pipe_output("nc localhost 4242 2>&1", "put homebrew.install.test 1356998400 42.5 host=webserver01 cpu=0\n")
 
-      system "#{bin}tsdb", "query", "1356998000", "1356999000", "sum",
+      system bin"tsdb", "query", "1356998000", "1356999000", "sum",
              "homebrew.install.test", "host=webserver01", "cpu=0"
     ensure
       system "#{Formula["hbase"].opt_bin}stop-hbase.sh"

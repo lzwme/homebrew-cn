@@ -87,8 +87,8 @@ class Mkvtoolnix < Formula
       Homebrew
     EOS
 
-    system "#{bin}/mkvmerge", "-o", mkv_path, sub_path
-    system "#{bin}/mkvinfo", mkv_path
-    system "#{bin}/mkvextract", "tracks", mkv_path, "0:#{sub_path}"
+    system bin/"mkvmerge", "-o", mkv_path, sub_path
+    system bin/"mkvinfo", mkv_path
+    system bin/"mkvextract", "tracks", mkv_path, "0:#{sub_path}"
   end
 end

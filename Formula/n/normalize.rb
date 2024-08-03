@@ -46,6 +46,6 @@ class Normalize < Formula
 
   test do
     cp test_fixtures("test.mp3"), testpath
-    system "#{bin}/normalize", "test.mp3"
+    system bin/"normalize", "test.mp3"
   end
 end

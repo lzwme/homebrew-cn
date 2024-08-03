@@ -74,7 +74,7 @@ class Libressl < Formula
     # Check LibreSSL itself functions as expected.
     (testpath"testfile.txt").write("This is a test file")
     expected_checksum = "e2d0fe1585a63ec6009c8016ff8dda8b17719a637405a4e23c0ff81339148249"
-    system "#{bin}openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
+    system bin"openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
     open("checksum.txt") do |f|
       checksum = f.read(100).split("=").last.strip
       assert_equal checksum, expected_checksum

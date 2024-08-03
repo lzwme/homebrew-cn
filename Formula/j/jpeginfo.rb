@@ -34,6 +34,6 @@ class Jpeginfo < Formula
   end
 
   test do
-    system "#{bin}jpeginfo", "--help"
+    system bin"jpeginfo", "--help"
   end
 end

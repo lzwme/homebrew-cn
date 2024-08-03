@@ -72,7 +72,7 @@ class Apprise < Formula
 
   test do
     # Setup a custom notifier that can be passed in as a plugin
-    brewtest_notifier_file = "#{testpath}/brewtest_notifier.py"
+    file = "#{testpath}/brewtest_notifier.py"
     apprise_plugin_definition = <<~EOS
       from apprise.decorators import notify
 
@@ -82,22 +82,14 @@ class Apprise < Formula
         print("{}: {}".format(title, body))
     EOS
 
-    File.write(brewtest_notifier_file, apprise_plugin_definition)
+    File.write(file, apprise_plugin_definition)
 
     charset = Array("A".."Z") + Array("a".."z") + Array(0..9)
-    brewtest_notification_title = charset.sample(32).join
-    brewtest_notification_body = charset.sample(256).join
+    title = charset.sample(32).join
+    body = charset.sample(256).join
 
     # Run the custom notifier and make sure the output matches the expected value
-    assert_match \
-      "#{brewtest_notification_title}: #{brewtest_notification_body}", \
-      shell_output(
-        (bin/"apprise") \
-        + " " + %Q(-P "#{brewtest_notifier_file}") \
-        + " " + %Q(-t "#{brewtest_notification_title}") \
-        + " " + %Q(-b "#{brewtest_notification_body}") \
-        + " " + '"brewtest://"' \
-        + " " + "2>&1",
-      )
+    assert_match "#{title}: #{body}",
+      shell_output("#{bin}/apprise -P \"#{file}\" -t \"#{title}\" -b \"#{body}\" \"brewtest://\" 2>&1")
   end
 end

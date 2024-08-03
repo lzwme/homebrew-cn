@@ -93,6 +93,6 @@ class Urdfdom < Formula
       <robot>
     EOS
 
-    system "#{bin}check_urdf", testpath"test.xml"
+    system bin"check_urdf", testpath"test.xml"
   end
 end

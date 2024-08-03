@@ -38,6 +38,6 @@ class Teem < Formula
   end
 
   test do
-    system "#{bin}/nrrdSanity"
+    system bin/"nrrdSanity"
   end
 end

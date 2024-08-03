@@ -29,6 +29,6 @@ class Pstree < Formula
   test do
     lines = shell_output("#{bin}pstree #{Process.pid}").strip.split("\n")
     assert_match $PROGRAM_NAME, lines[0]
-    assert_match "#{bin}pstree", lines[1]
+    assert_match bin"pstree", lines[1]
   end
 end

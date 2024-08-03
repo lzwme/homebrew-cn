@@ -70,7 +70,7 @@ class Pipenv < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    assert_match "Commands", shell_output("#{bin}pipenv")
+    assert_match "Commands", shell_output(bin"pipenv")
     system bin"pipenv", "--python", which(python3)
     system bin"pipenv", "install", "requests"
     system bin"pipenv", "install", "boto3"

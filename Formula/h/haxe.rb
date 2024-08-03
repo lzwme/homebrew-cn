@@ -108,9 +108,10 @@ class Haxe < Formula
   end
 
   test do
-    ENV["HAXE_STD_PATH"] = "#{HOMEBREW_PREFIX}libhaxestd"
+    ENV["HAXE_STD_PATH"] = HOMEBREW_PREFIX"libhaxestd"
+
     system bin"haxe", "-v", "Std"
-    system "#{bin}haxelib", "version"
+    system bin"haxelib", "version"
 
     (testpath"HelloWorld.hx").write <<~EOS
       import js.html.Console;

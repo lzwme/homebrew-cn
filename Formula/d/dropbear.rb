@@ -52,8 +52,8 @@ class Dropbear < Formula
 
   test do
     testfile = testpath"testec521"
-    system "#{bin}dbclient", "-h"
-    system "#{bin}dropbearkey", "-t", "ecdsa", "-f", testfile, "-s", "521"
+    system bin"dbclient", "-h"
+    system bin"dropbearkey", "-t", "ecdsa", "-f", testfile, "-s", "521"
     assert_predicate testfile, :exist?
   end
 end

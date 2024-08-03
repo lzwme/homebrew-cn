@@ -35,6 +35,6 @@ class Picocom < Formula
   end
 
   test do
-    system "#{bin}picocom", "--help"
+    system bin"picocom", "--help"
   end
 end

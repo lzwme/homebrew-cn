@@ -35,6 +35,6 @@ class F3 < Formula
   end
 
   test do
-    system "#{bin}f3read", testpath
+    system bin"f3read", testpath
   end
 end

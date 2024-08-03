@@ -61,7 +61,7 @@ class FdkAacEncoder < Formula
       f.syswrite(samples.flatten.pack("s*"))
     end
 
-    system "#{bin}fdkaac", "-R", "--raw-channels", "1", "-m",
+    system bin"fdkaac", "-R", "--raw-channels", "1", "-m",
            "1", "#{testpath}tone.pcm", "--title", "Test Tone"
   end
 end

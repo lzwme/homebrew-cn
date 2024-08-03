@@ -41,6 +41,6 @@ class Ndiff < Formula
   end
 
   test do
-    system "#{bin}/ndiff", "--help"
+    system bin/"ndiff", "--help"
   end
 end

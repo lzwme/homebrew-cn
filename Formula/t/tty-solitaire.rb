@@ -27,6 +27,6 @@ class TtySolitaire < Formula
   end
 
   test do
-    system "#{bin}ttysolitaire", "-h"
+    system bin"ttysolitaire", "-h"
   end
 end

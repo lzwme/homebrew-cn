@@ -56,7 +56,7 @@ class Img2pdf < Formula
   end
 
   test do
-    system "#{bin}/img2pdf", test_fixtures("test.png"), test_fixtures("test.jpg"),
+    system bin/"img2pdf", test_fixtures("test.png"), test_fixtures("test.jpg"),
                              test_fixtures("test.tiff"), "--pagesize", "A4", "-o", "test.pdf"
     assert_predicate testpath/"test.pdf", :exist?
   end

@@ -96,7 +96,7 @@ class Pyspelling < Formula
         - #{testpath}/text.txt
     EOS
 
-    output = shell_output("#{bin}/pyspelling", 1)
+    output = shell_output(bin/"pyspelling", 1)
     assert_match <<~EOS, output
       Misspelled words:
       <text> #{testpath}/text.txt

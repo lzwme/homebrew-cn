@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Mailpit < Formula
   desc "Web and API based SMTP testing"
   homepage "https:mailpit.axllent.org"
@@ -8,20 +6,21 @@ class Mailpit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b109968887e48b03430f4f8d596613c6a1325fb5c2283afbc9c33ebbec7c161b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a99b8c1a2f511fc948c9f887aa79ec8575f70f1e037778b9af0646100862f92d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9776779783e5ced33479e46b1343582d7108d6c126e8a144eb73280cb9c76a75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6b9a5205bb94fe7b651c02606b991fe95476d0f03da7dccf380427e433c90eb0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7d979003f34a5f967506ecc9b0031e31f50fd2a6bf48509c0868c8ace7c5260"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5c4de813c8a8812703f12fda09198ab373a1c8b60f1a4101e0e58bf83896e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2588e6d620cb407d4e93359ecf033f3c61131fd48a6bfbe1aa6c85180acc0dc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de1e1aeae26b842406191250bd16930ed171d318734814a80f378b15401a8e74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30d0d63f3bc4498cee94109ebdefca1334c78d9a0974a3335f22b8418765dd69"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "866e81381c2332ac1efd9ffb9870cbf0d2d7a92214ebd09fdba7bb97d45f9c2d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "586ccb962f3f80e2830ca96d68ad151ba4aa9edf23675281390ff9f1a45ecb2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "67d216be9efb2853de75735a86bc27917f22cdd8847be39a47c865338081f8b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec3b759c2c9858b5d5a135c37e933d306afa9ad66af19c23d95f12634eba357e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49db9ea44e6b5667ae4b9c864b31eeb096c59f9ba6b45494c79a210c64af3813"
   end
 
   depends_on "go" => :build
   depends_on "node" => :build
 
   def install
-    system "npm", "install", *Language::Node.local_npm_install_args
+    system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
     ldflags = "-s -w -X github.comaxllentmailpitconfig.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)

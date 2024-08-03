@@ -33,6 +33,7 @@ class Orogene < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}oro --version")
-    system "#{bin}oro", "ping"
+
+    system bin"oro", "ping"
   end
 end

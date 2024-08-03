@@ -98,9 +98,9 @@ class Mpich < Formula
         return 0;
       }
     EOS
-    system "#{bin}mpicc", "hello.c", "-o", "hello"
+    system bin"mpicc", "hello.c", "-o", "hello"
     system ".hello"
-    system "#{bin}mpirun", "-np", "4", ".hello"
+    system bin"mpirun", "-np", "4", ".hello"
 
     (testpath"hellof.f90").write <<~EOS
       program hello
@@ -113,8 +113,8 @@ class Mpich < Formula
       call MPI_FINALIZE(ierror)
       end
     EOS
-    system "#{bin}mpif90", "hellof.f90", "-o", "hellof"
+    system bin"mpif90", "hellof.f90", "-o", "hellof"
     system ".hellof"
-    system "#{bin}mpirun", "-np", "4", ".hellof"
+    system bin"mpirun", "-np", "4", ".hellof"
   end
 end

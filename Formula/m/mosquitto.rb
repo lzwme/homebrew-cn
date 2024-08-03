@@ -62,11 +62,11 @@ class Mosquitto < Formula
   end
 
   test do
-    quiet_system "#{sbin}mosquitto", "-h"
+    quiet_system sbin"mosquitto", "-h"
     assert_equal 3, $CHILD_STATUS.exitstatus
-    quiet_system "#{bin}mosquitto_ctrl", "dynsec", "help"
+    quiet_system bin"mosquitto_ctrl", "dynsec", "help"
     assert_equal 0, $CHILD_STATUS.exitstatus
-    quiet_system "#{bin}mosquitto_passwd", "-c", "-b", "tmpmosquitto.pass", "foo", "bar"
+    quiet_system bin"mosquitto_passwd", "-c", "-b", "tmpmosquitto.pass", "foo", "bar"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

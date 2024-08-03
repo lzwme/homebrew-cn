@@ -38,6 +38,6 @@ class Mogenerator < Formula
   end
 
   test do
-    system "#{bin}mogenerator", "--version"
+    system bin"mogenerator", "--version"
   end
 end

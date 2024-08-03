@@ -31,7 +31,7 @@ class Advancescan < Formula
   end
 
   test do
-    system "#{bin}advdiff", "-V"
-    system "#{bin}advscan", "-V"
+    system bin"advdiff", "-V"
+    system bin"advscan", "-V"
   end
 end

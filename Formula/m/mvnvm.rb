@@ -56,6 +56,6 @@ class Mvnvm < Formula
         }
       }
     EOS
-    system "#{bin}/mvn", "-gs", "#{testpath}/settings.xml", "compile"
+    system bin/"mvn", "-gs", testpath/"settings.xml", "compile"
   end
 end

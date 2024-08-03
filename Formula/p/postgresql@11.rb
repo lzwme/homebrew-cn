@@ -99,7 +99,7 @@ class PostgresqlAT11 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -132,7 +132,7 @@ class PostgresqlAT11 < Formula
   end
 
   test do
-    system "#{bin}/initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_equal opt_pkgshare.to_s, shell_output("#{bin}/pg_config --sharedir").chomp
     assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --libdir").chomp
     assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --pkglibdir").chomp

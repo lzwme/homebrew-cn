@@ -278,11 +278,11 @@ class LlvmAT17 < Formula
     EOS
 
     # Testing default toolchain and SDK location.
-    system "#{bin}clang++", "-v",
+    system bin"clang++", "-v",
            "-std=c++11", "test.cpp", "-o", "test++"
     assert_includes MachO::Tools.dylibs("test++"), "usrliblibc++.1.dylib" if OS.mac?
     assert_equal "Hello World!", shell_output(".test++").chomp
-    system "#{bin}clang", "-v", "test.c", "-o", "test"
+    system bin"clang", "-v", "test.c", "-o", "test"
     assert_equal "Hello World!", shell_output(".test").chomp
 
     # To test `lld`, we mock a broken `ld` to make sure it's not what's being used.
@@ -293,7 +293,7 @@ class LlvmAT17 < Formula
     system ENV.cc, "-v", "fake_ld.c", "-o", "binld"
     with_env(PATH: "#{testpath}bin:#{ENV["PATH"]}") do
       # Our fake `ld` will produce a compilation error if it is used instead of `lld`.
-      system "#{bin}clang", "-v", "test.c", "-o", "test_lld", "-fuse-ld=lld"
+      system bin"clang", "-v", "test.c", "-o", "test_lld", "-fuse-ld=lld"
     end
     assert_equal "Hello World!", shell_output(".test_lld").chomp
 
@@ -303,7 +303,7 @@ class LlvmAT17 < Formula
       if OS.mac? && MacOS::CLT.installed?
         toolchain_path = "LibraryDeveloperCommandLineTools"
         cpp_base = (MacOS.version >= :big_sur) ? MacOS::CLT.sdk_path : toolchain_path
-        system "#{bin}clang++", "-v",
+        system bin"clang++", "-v",
                "-isysroot", MacOS::CLT.sdk_path,
                "-isystem", "#{cpp_base}usrincludec++v1",
                "-isystem", "#{MacOS::CLT.sdk_path}usrinclude",
@@ -311,14 +311,14 @@ class LlvmAT17 < Formula
                "-std=c++11", "test.cpp", "-o", "testCLT++"
         assert_includes MachO::Tools.dylibs("testCLT++"), "usrliblibc++.1.dylib"
         assert_equal "Hello World!", shell_output(".testCLT++").chomp
-        system "#{bin}clang", "-v", "test.c", "-o", "testCLT"
+        system bin"clang", "-v", "test.c", "-o", "testCLT"
         assert_equal "Hello World!", shell_output(".testCLT").chomp
       end
 
       # Testing Xcode
       if OS.mac? && MacOS::Xcode.installed?
         cpp_base = (MacOS::Xcode.version >= "12.5") ? MacOS::Xcode.sdk_path : MacOS::Xcode.toolchain_path
-        system "#{bin}clang++", "-v",
+        system bin"clang++", "-v",
                "-isysroot", MacOS::Xcode.sdk_path,
                "-isystem", "#{cpp_base}usrincludec++v1",
                "-isystem", "#{MacOS::Xcode.sdk_path}usrinclude",
@@ -326,7 +326,7 @@ class LlvmAT17 < Formula
                "-std=c++11", "test.cpp", "-o", "testXC++"
         assert_includes MachO::Tools.dylibs("testXC++"), "usrliblibc++.1.dylib"
         assert_equal "Hello World!", shell_output(".testXC++").chomp
-        system "#{bin}clang", "-v",
+        system bin"clang", "-v",
                "-isysroot", MacOS.sdk_path,
                "test.c", "-o", "testXC"
         assert_equal "Hello World!", shell_output(".testXC").chomp
@@ -335,7 +335,7 @@ class LlvmAT17 < Formula
       # link against installed libc++
       # related to https:github.comHomebrewlegacy-homebrewissues47149
       cxx_libdir = OS.mac? ? opt_lib"c++" : opt_lib
-      system "#{bin}clang++", "-v",
+      system bin"clang++", "-v",
              "-isystem", "#{opt_include}c++v1",
              "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
              "-rtlib=compiler-rt", "-L#{cxx_libdir}", "-Wl,-rpath,#{cxx_libdir}"
@@ -361,7 +361,7 @@ class LlvmAT17 < Formula
       # search paths or handle all of the libraries needed by `libc++` when
       # linking statically.
 
-      system "#{bin}clang++", "-v", "-o", "test_pie_runtimes",
+      system bin"clang++", "-v", "-o", "test_pie_runtimes",
                    "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
                    "-stdlib=libc++", "-rtlib=compiler-rt",
                    "-static-libstdc++", "-lpthread", "-ldl"
@@ -386,11 +386,11 @@ class LlvmAT17 < Formula
           run_plugin();
         }
       EOS
-      system "#{bin}clang++", "-v", "-o", "test_plugin.so",
+      system bin"clang++", "-v", "-o", "test_plugin.so",
              "-shared", "-fPIC", "test_plugin.cpp", "-L#{opt_lib}",
              "-stdlib=libc++", "-rtlib=compiler-rt",
              "-static-libstdc++", "-lpthread", "-ldl"
-      system "#{bin}clang", "-v",
+      system bin"clang", "-v",
              "test_plugin_main.c", "-o", "test_plugin_libc++",
              "test_plugin.so", "-Wl,-rpath=#{testpath}", "-rtlib=compiler-rt"
       assert_equal "Hello Plugin World!", shell_output(".test_plugin_libc++").chomp
@@ -416,7 +416,7 @@ class LlvmAT17 < Formula
        expected-error @+1 {{redefinition of symbol named 'foo'}}
       func.func @foo() { return }
     EOS
-    system "#{bin}mlir-opt", "--split-input-file", "--verify-diagnostics", "test.mlir"
+    system bin"mlir-opt", "--split-input-file", "--verify-diagnostics", "test.mlir"
 
     (testpath"scanbuildtest.cpp").write <<~EOS
       #include <iostream>

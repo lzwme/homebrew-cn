@@ -37,6 +37,6 @@ class Pdsh < Formula
   end
 
   test do
-    system "#{bin}pdsh", "-V"
+    system bin"pdsh", "-V"
   end
 end

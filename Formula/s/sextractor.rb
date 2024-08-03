@@ -39,7 +39,7 @@ class Sextractor < Formula
 
   test do
     cp_r Dir[pkgshare"tests*"], testpath
-    system "#{bin}sex", "galaxies.fits", "-WEIGHT_IMAGE", "galaxies.weight.fits", "-CATALOG_NAME", "galaxies.cat"
+    system bin"sex", "galaxies.fits", "-WEIGHT_IMAGE", "galaxies.weight.fits", "-CATALOG_NAME", "galaxies.cat"
     assert_predicate testpath"galaxies.cat", :exist?, "Failed to create galaxies.cat"
   end
 end

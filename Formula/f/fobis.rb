@@ -44,6 +44,7 @@ class Fobis < Formula
         character(*), parameter :: message = "Hello FoBiS"
       end module
     EOS
+
     (testpath"test-prog.f90").write <<~EOS
       program fobis_test
         use iso_fortran_env, only: stdout => output_unit
@@ -52,7 +53,8 @@ class Fobis < Formula
         write(stdout,'(A)') message
       end program
     EOS
-    system "#{bin}FoBiS.py", "build", "-compiler", "gnu"
+
+    system bin"py", "build", "-compiler", "gnu"
     assert_match "Hello FoBiS", shell_output(testpath"test-prog")
   end
 end

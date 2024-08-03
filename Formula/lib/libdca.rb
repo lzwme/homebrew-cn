@@ -31,11 +31,6 @@ class Libdca < Formula
 
   conflicts_with "dcadec", because: "both install `dcadec` binaries"
 
-  resource "homebrew-testdata" do
-    url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
-    sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
-  end
-
   def install
     # Fixes "duplicate symbol ___sputc" error when building with clang
     # https:github.comHomebrewhomebrewissues31456
@@ -49,8 +44,13 @@ class Libdca < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
+      sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
+    end
+
     resource("homebrew-testdata").stage do
-      system "#{bin}dcadec", "-o", "null", resource("homebrew-testdata").cached_download
+      system bin"dcadec", "-o", "null", resource("homebrew-testdata").cached_download
     end
   end
 end

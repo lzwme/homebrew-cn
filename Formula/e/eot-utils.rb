@@ -39,7 +39,7 @@ class EotUtils < Formula
 
   test do
     resource("eot").stage do
-      system "#{bin}eotinfo", "pixelambacht-dash.eot"
+      system bin"eotinfo", "pixelambacht-dash.eot"
     end
   end
 end

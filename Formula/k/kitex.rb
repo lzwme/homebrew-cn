@@ -45,7 +45,7 @@ class Kitex < Formula
           Response echo(1: Request req)
       }
     EOS
-    system "#{bin}kitex", "-module", "test", "test.thrift"
+    system bin"kitex", "-module", "test", "test.thrift"
     assert_predicate testpath"go.mod", :exist?
     refute_predicate (testpath"go.mod").size, :zero?
     assert_predicate testpath"kitex_gen""api""test.go", :exist?

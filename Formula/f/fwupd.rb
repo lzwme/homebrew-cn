@@ -110,6 +110,6 @@ class Fwupd < Formula
     system ".test"
 
     # this is a lame test, but fwupdtool requires root access to do anything much interesting
-    system "#{bin}fwupdtool", "-h"
+    system bin"fwupdtool", "-h"
   end
 end

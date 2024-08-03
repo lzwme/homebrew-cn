@@ -33,6 +33,6 @@ class Kstart < Formula
   end
 
   test do
-    system "#{bin}/k5start", "-h"
+    system bin/"k5start", "-h"
   end
 end

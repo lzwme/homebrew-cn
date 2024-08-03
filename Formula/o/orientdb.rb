@@ -55,12 +55,12 @@ class Orientdb < Formula
     touch "#{var}/log/orientdb/orientdb.log"
 
     ENV["ORIENTDB_ROOT_PASSWORD"] = "orientdb"
-    system "#{bin}/orientdb", "stop"
+    system bin/"orientdb", "stop"
     sleep 3
-    system "#{bin}/orientdb", "start"
+    system bin/"orientdb", "start"
     sleep 3
   ensure
-    system "#{bin}/orientdb", "stop"
+    system bin/"orientdb", "stop"
   end
 
   def caveats

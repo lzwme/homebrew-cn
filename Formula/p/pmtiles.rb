@@ -30,7 +30,7 @@ class Pmtiles < Formula
     port = free_port
 
     pid = fork do
-      exec "#{bin}pmtiles", "serve", ".", "--port", port.to_s
+      exec bin"pmtiles", "serve", ".", "--port", port.to_s
     end
     sleep 3
     output = shell_output("curl -sI http:localhost:#{port}")

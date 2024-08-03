@@ -1,5 +1,3 @@
-require "languagenode"
-
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https:github.comgrpcgrpc-web"
@@ -71,7 +69,7 @@ class ProtocGenGrpcWeb < Formula
       import {Test, TestResult} from '.test_pb';
     EOS
     (testpath"test.ts").write testts
-    system "npm", "install", *Language::Node.local_npm_install_args, "grpc-web", "@typesgoogle-protobuf"
+    system "npm", "install", *std_npm_args(prefix: false), "grpc-web", "@typesgoogle-protobuf"
     # Specify including lib for `tsc` since `es6` is required for `@typesgoogle-protobuf`.
     system "tsc", "--lib", "es6", "test.ts"
   end

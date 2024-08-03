@@ -44,7 +44,7 @@ class Plank < Formula
          }
       }
     EOS
-    system "#{bin}plank", "--lang", "objc,flow", "--output_dir", testpath, "pin.json"
+    system bin"plank", "--lang", "objc,flow", "--output_dir", testpath, "pin.json"
     assert_predicate testpath"Pin.h", :exist?, "[ObjC] Generated file does not exist"
     assert_predicate testpath"PinType.js", :exist?, "[Flow] Generated file does not exist"
   end

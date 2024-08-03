@@ -47,7 +47,8 @@ class Texinfo < Formula
       @end ifnottex
       @bye
     EOS
-    system "#{bin}/makeinfo", "test.texinfo"
-    assert_match "Hello World!", File.read("test.info")
+
+    system bin/"makeinfo", "test.texinfo"
+    assert_match "Hello World!", (testpath/"test.info").read
   end
 end

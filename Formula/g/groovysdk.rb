@@ -36,6 +36,6 @@ class Groovysdk < Formula
   end
 
   test do
-    system "#{bin}/grape", "install", "org.activiti", "activiti-engine", "5.16.4"
+    system bin/"grape", "install", "org.activiti", "activiti-engine", "5.16.4"
   end
 end

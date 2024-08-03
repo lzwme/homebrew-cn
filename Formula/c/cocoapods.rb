@@ -29,6 +29,6 @@ class Cocoapods < Formula
   end
 
   test do
-    system "#{bin}pod", "list"
+    system bin"pod", "list"
   end
 end

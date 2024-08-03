@@ -25,8 +25,8 @@ class Libdeflate < Formula
 
   test do
     (testpath"foo").write "test"
-    system "#{bin}libdeflate-gzip", "foo"
-    system "#{bin}libdeflate-gunzip", "-d", "foo.gz"
-    assert_equal "test", File.read(testpath"foo")
+    system bin"libdeflate-gzip", "foo"
+    system bin"libdeflate-gunzip", "-d", "foo.gz"
+    assert_equal "test", (testpath"foo").read
   end
 end

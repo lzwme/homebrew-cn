@@ -58,6 +58,6 @@ class OsspUuid < Formula
   end
 
   test do
-    system "#{bin}uuid-config", "--version"
+    system bin"uuid-config", "--version"
   end
 end

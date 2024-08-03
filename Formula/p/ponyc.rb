@@ -47,14 +47,14 @@ class Ponyc < Formula
     # ENV["CC"] returns llvm_clang, which does not work in a test block.
     ENV.clang
 
-    system "#{bin}ponyc", "-rexpr", "#{prefix}packagesstdlib"
+    system bin"ponyc", "-rexpr", "#{prefix}packagesstdlib"
 
     (testpath"testmain.pony").write <<~EOS
       actor Main
         new create(env: Env) =>
           env.out.print("Hello World!")
     EOS
-    system "#{bin}ponyc", "test"
+    system bin"ponyc", "test"
     assert_equal "Hello World!", shell_output(".test1").strip
   end
 end

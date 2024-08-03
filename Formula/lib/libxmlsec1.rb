@@ -47,8 +47,8 @@ class Libxmlsec1 < Formula
   end
 
   test do
-    system "#{bin}/xmlsec1", "--version"
-    system "#{bin}/xmlsec1-config", "--version"
+    system bin/"xmlsec1", "--version"
+    system bin/"xmlsec1-config", "--version"
   end
 end
 

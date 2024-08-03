@@ -42,6 +42,6 @@ class Ivtools < Formula
   end
 
   test do
-    system "#{bin}comterp", "exit(0)"
+    system bin"comterp", "exit(0)"
   end
 end

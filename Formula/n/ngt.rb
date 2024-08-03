@@ -43,6 +43,6 @@ class Ngt < Formula
 
   test do
     cp_r (pkgshare"data"), testpath
-    system "#{bin}ngt", "-d", "128", "-o", "c", "create", "index", "datasift-dataset-5k.tsv"
+    system bin"ngt", "-d", "128", "-o", "c", "create", "index", "datasift-dataset-5k.tsv"
   end
 end

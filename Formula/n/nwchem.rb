@@ -111,7 +111,7 @@ class Nwchem < Formula
       ENV["OMP_NUM_THREADS"] = "1"
       ENV["NWCHEM_TOP"] = testpath
       ENV["NWCHEM_TARGET"] = OS.mac? ? "MACX64" : "LINUX64"
-      ENV["NWCHEM_EXECUTABLE"] = "#{bin}nwchem"
+      ENV["NWCHEM_EXECUTABLE"] = bin"nwchem"
       system ".runtests.mpi.unix", "procs", "0", "dft_he2+", "pyqa3", "prop_mep_gcube", "pspw", "tddft_h2o", "tce_n2"
     end
   end

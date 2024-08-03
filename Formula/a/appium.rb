@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https:appium.io"
@@ -25,7 +23,7 @@ class Appium < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--chromedriver-skip-install"
+    system "npm", "install", *std_npm_args, "--chromedriver-skip-install"
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

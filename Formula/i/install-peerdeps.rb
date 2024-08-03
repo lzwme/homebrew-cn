@@ -1,5 +1,3 @@
-require "languagenode"
-
 class InstallPeerdeps < Formula
   desc "CLI to automatically install peerDeps"
   homepage "https:github.comnathanhleunginstall-peerdeps"
@@ -8,13 +6,20 @@ class InstallPeerdeps < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "081330377388f0833a98926f1e1e734d0556bf374eac0df2423a0404d0739a89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, monterey:       "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b833efc753877c4c00df8f7cff9c6df4291799e3b254eba899cbf5fdee45dd9"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

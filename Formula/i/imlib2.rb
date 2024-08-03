@@ -44,6 +44,6 @@ class Imlib2 < Formula
   end
 
   test do
-    system "#{bin}/imlib2_conv", test_fixtures("test.png"), "imlib2_test.png"
+    system bin/"imlib2_conv", test_fixtures("test.png"), "imlib2_test.png"
   end
 end

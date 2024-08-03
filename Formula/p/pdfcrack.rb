@@ -24,6 +24,6 @@ class Pdfcrack < Formula
   end
 
   test do
-    system "#{bin}/pdfcrack", "--version"
+    system bin/"pdfcrack", "--version"
   end
 end

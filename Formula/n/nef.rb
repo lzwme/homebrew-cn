@@ -24,7 +24,7 @@ class Nef < Formula
   end
 
   test do
-    system "#{bin}nef", "markdown",
+    system bin"nef", "markdown",
            "--project", "#{share}testsDocumentation.app",
            "--output", "#{testpath}nef"
     assert_path_exists "#{testpath}neflibraryapis.md"

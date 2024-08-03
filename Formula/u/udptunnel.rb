@@ -43,6 +43,14 @@ class Udptunnel < Formula
   end
 
   test do
-    system "#{bin}/udptunnel -h; true"
+    assert_equal <<~EOS, shell_output("#{bin}/udptunnel -h 2>&1", 2)
+      Usage: #{bin}/udptunnel -s TCP-port [-r] [-v] UDP-addr/UDP-port[/ttl]
+          or #{bin}/udptunnel -c TCP-addr[/TCP-port] [-r] [-v] UDP-addr/UDP-port[/ttl]
+           -s: Server mode.  Wait for TCP connections on the port.
+           -c: Client mode.  Connect to the given address.
+           -r: RTP mode.  Connect/listen on ports N and N+1 for both UDP and TCP.
+               Port numbers must be even.
+           -v: Verbose mode.  Specify -v multiple times for increased verbosity.
+    EOS
   end
 end

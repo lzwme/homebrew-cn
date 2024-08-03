@@ -111,7 +111,7 @@ class OpenaiWhisper < Formula
     testpath.install resource("homebrew-test-audio")
     (testpath"models").install resource("homebrew-test-model")
     # for some unknown reason, the file is installed as `tests` rather than `jfk.flac`
-    system "#{bin}whisper", "tests", "--model", "tiny.en", "--model_dir", "models", "--output_format", "txt"
+    system bin"whisper", "tests", "--model", "tiny.en", "--model_dir", "models", "--output_format", "txt"
     transcription = File.read("tests.txt")
     assert_equal transcription, <<~EOS
       And so, my fellow Americans ask not what your country can do for you

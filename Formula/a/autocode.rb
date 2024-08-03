@@ -1,5 +1,3 @@
-require "language/node"
-
 class Autocode < Formula
   desc "Code automation for every language, library and framework"
   homepage "https://autocode.readme.io/"
@@ -28,7 +26,7 @@ class Autocode < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

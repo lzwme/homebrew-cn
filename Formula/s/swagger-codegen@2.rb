@@ -48,7 +48,8 @@ class SwaggerCodegenAT2 < Formula
               200:
                 description: OK
     EOS
-    system "#{bin}swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html2"
-    assert_includes File.read(testpath"index.html"), "<h1>Simple API<h1>"
+
+    system bin"swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html2"
+    assert_includes (testpath"index.html").read, "<h1>Simple API<h1>"
   end
 end

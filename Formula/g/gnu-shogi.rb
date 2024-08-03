@@ -34,6 +34,7 @@ class GnuShogi < Formula
       7g7f
       exit
     EOS
-    system "#{bin}/gnushogi < test"
+
+    system bin/"gnushogi < test"
   end
 end

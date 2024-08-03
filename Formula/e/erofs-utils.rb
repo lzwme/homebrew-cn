@@ -57,12 +57,12 @@ class ErofsUtils < Formula
 
     # Test mkfs.erofs can make a valid erofsimg.
     #   (Also tests that `lz4` support is properly linked.)
-    system "#{bin}/mkfs.erofs", "--quiet", "-zlz4", "test.lz4.erofs", "in"
+    system bin/"mkfs.erofs", "--quiet", "-zlz4", "test.lz4.erofs", "in"
     assert_predicate testpath/"test.lz4.erofs", :exist?
 
     # Test mkfs.erofs can make a valid erofsimg.
     #   (Also tests that `lzma` support is properly linked.)
-    system "#{bin}/mkfs.erofs", "--quiet", "-zlzma", "test.lzma.erofs", "in"
+    system bin/"mkfs.erofs", "--quiet", "-zlzma", "test.lzma.erofs", "in"
     assert_predicate testpath/"test.lzma.erofs", :exist?
 
     # Unfortunately, fsck.erofs doesn't support extraction for now, and

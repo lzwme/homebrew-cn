@@ -47,9 +47,9 @@ class Tenyr < Formula
     (testpath"part1").write "B <- 9\n"
     (testpath"part2").write "C <- B * 3\n"
 
-    system "#{bin}tas", "--output=a.to", "part1"
-    system "#{bin}tas", "--output=b.to", "part2"
-    system "#{bin}tld", "--output=test.texe", "a.to", "b.to"
+    system bin"tas", "--output=a.to", "part1"
+    system bin"tas", "--output=b.to", "part2"
+    system bin"tld", "--output=test.texe", "a.to", "b.to"
 
     assert_match "C 0000001b", shell_output("#{bin}tsim -vvvv test.texe 2>&1")
   end

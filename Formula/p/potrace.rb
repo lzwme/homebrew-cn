@@ -42,7 +42,7 @@ class Potrace < Formula
 
   test do
     resource("head.pbm").stage testpath
-    system "#{bin}/potrace", "-o", "test.eps", "head.pbm"
+    system bin/"potrace", "-o", "test.eps", "head.pbm"
     assert_predicate testpath/"test.eps", :exist?
   end
 end

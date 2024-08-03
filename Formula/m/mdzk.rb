@@ -39,7 +39,7 @@ class Mdzk < Formula
   end
 
   test do
-    system "#{bin}mdzk", "init", "test_mdzk"
+    system bin"mdzk", "init", "test_mdzk"
     assert_predicate testpath"test_mdzk", :exist?
   end
 end

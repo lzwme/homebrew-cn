@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https:www.serverless.com"
@@ -30,8 +28,8 @@ class Serverless < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec"bin*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin*")
 
     # Delete incompatible Linux CPython shared library included in dependency package.
     # Raise an error if no longer found so that the unused logic can be removed.
@@ -51,7 +49,7 @@ class Serverless < Formula
         region: eu-west-1
     EOS
 
-    system(bin"serverless", "config", "credentials", "--provider", "aws", "--key", "aa", "--secret", "xx")
+    system bin"serverless", "config", "credentials", "--provider", "aws", "--key", "aa", "--secret", "xx"
     output = shell_output("#{bin}serverless package 2>&1")
     assert_match "Packaging homebrew-test for stage dev", output
   end

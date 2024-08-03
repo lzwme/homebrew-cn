@@ -52,7 +52,8 @@ class Ethereum < Formula
         "alloc": {}
       }
     EOS
-    system "#{bin}geth", "--datadir", "testchain", "init", "genesis.json"
+
+    system bin"geth", "--datadir", "testchain", "init", "genesis.json"
     assert_predicate testpath"testchaingethchaindata000002.log", :exist?
     assert_predicate testpath"testchaingethlightchaindata000002.log", :exist?
   end

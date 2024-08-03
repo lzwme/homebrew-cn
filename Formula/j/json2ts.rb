@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Json2ts < Formula
   desc "Compile JSONSchema to TypeScript type declarations"
   homepage "https:github.combchernyjson-schema-to-typescript"
@@ -8,19 +6,20 @@ class Json2ts < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f24f125b343e6d31d9d2a5171bd6a50ae6bf1fcf6222c4db8cbcc52c5660a6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f24f125b343e6d31d9d2a5171bd6a50ae6bf1fcf6222c4db8cbcc52c5660a6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f24f125b343e6d31d9d2a5171bd6a50ae6bf1fcf6222c4db8cbcc52c5660a6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "010da20bcdbd7fddc0adeea55d4ab31b06cc38929284218557b1da1fe709402d"
-    sha256 cellar: :any_skip_relocation, ventura:        "010da20bcdbd7fddc0adeea55d4ab31b06cc38929284218557b1da1fe709402d"
-    sha256 cellar: :any_skip_relocation, monterey:       "010da20bcdbd7fddc0adeea55d4ab31b06cc38929284218557b1da1fe709402d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "630ac3fb7e49fa8a386c387d467d742f6ee25561dda0273e764e8d521866a86e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ed247ec8721d93165ab4b809c930e8b67127f09b860bd081ee870475c23ddc7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ed247ec8721d93165ab4b809c930e8b67127f09b860bd081ee870475c23ddc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ed247ec8721d93165ab4b809c930e8b67127f09b860bd081ee870475c23ddc7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a6b22d3b49cf48d603acdbb92456974c08ba9eb43c3bf887f20bed888f8f49a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a6b22d3b49cf48d603acdbb92456974c08ba9eb43c3bf887f20bed888f8f49a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1a6b22d3b49cf48d603acdbb92456974c08ba9eb43c3bf887f20bed888f8f49a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d44b416cbfb6ead0f72287edf39d78e9dbf9e3429de82d1a399e31ef4b749572"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 
@@ -70,7 +69,7 @@ class Json2ts < Formula
       }
     TS
 
-    output = pipe_output("#{bin}json2ts", schema)
+    output = pipe_output(bin"json2ts", schema)
     assert_equal output, typescript
   end
 end

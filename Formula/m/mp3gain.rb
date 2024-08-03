@@ -30,6 +30,6 @@ class Mp3gain < Formula
   end
 
   test do
-    system "#{bin}/mp3gain", "-v"
+    system bin/"mp3gain", "-v"
   end
 end

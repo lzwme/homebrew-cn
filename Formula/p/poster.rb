@@ -29,6 +29,6 @@ class Poster < Formula
   end
 
   test do
-    system "#{bin}poster", test_fixtures("test.ps")
+    system bin"poster", test_fixtures("test.ps")
   end
 end

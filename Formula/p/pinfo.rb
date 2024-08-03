@@ -41,6 +41,6 @@ class Pinfo < Formula
   end
 
   test do
-    system "#{bin}pinfo", "-h"
+    system bin"pinfo", "-h"
   end
 end

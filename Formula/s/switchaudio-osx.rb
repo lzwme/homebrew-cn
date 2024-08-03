@@ -30,10 +30,10 @@ class SwitchaudioOsx < Formula
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     prefix.install Dir["buildRelease*"]
     bin.write_exec_script "#{prefix}SwitchAudioSource"
-    chmod 0755, "#{bin}SwitchAudioSource"
+    chmod 0755, bin"SwitchAudioSource"
   end
 
   test do
-    system "#{bin}SwitchAudioSource", "-c"
+    system bin"SwitchAudioSource", "-c"
   end
 end

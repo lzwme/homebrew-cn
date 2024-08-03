@@ -44,7 +44,7 @@ class Lsof < Formula
 
   test do
     (testpath"test").open("w") do
-      system "#{bin}lsof", testpath"test"
+      system bin"lsof", testpath"test"
     end
   end
 end

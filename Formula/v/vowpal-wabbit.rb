@@ -1,21 +1,19 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https:github.comVowpalWabbitvowpal_wabbit"
-  url "https:github.comVowpalWabbitvowpal_wabbitarchiverefstags9.9.0.tar.gz"
-  sha256 "46d206c5b2336ed0c9dc228d34457db4acd9e3ade8b509f8fb426183651984c1"
+  url "https:github.comVowpalWabbitvowpal_wabbitarchiverefstags9.10.0.tar.gz"
+  sha256 "9f4ec5cddf67af2c7aa9b380b23fe22c4b11e2109f2cbaa1314bdf3570749a4d"
   license "BSD-3-Clause"
   head "https:github.comVowpalWabbitvowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e8429e276eddb19c39bdeb41b74d2b4ea1a6bdaed6ffc8f4043b5f5de449749e"
-    sha256 cellar: :any,                 arm64_ventura:  "7b0cc6d8db2b758f523b9a02cc19ebc08c5abdb8711d0198c5251bc30f3e104a"
-    sha256 cellar: :any,                 arm64_monterey: "354cddee123069ab7820a7d541bfec007f3380f74c454c064de26cda440791c7"
-    sha256 cellar: :any,                 arm64_big_sur:  "aa00db12d1b5f5e2cb45a121ba3f20ab1ca8f8a132d39bca2d8ab1589797b30d"
-    sha256 cellar: :any,                 sonoma:         "ba382a6aa14c012926053e656045d8f990f24645be93c4f53b6ee331fab10d5f"
-    sha256 cellar: :any,                 ventura:        "7bfa04120272786febff9ebfb0bd86fac11b77e91e60f87a23ad172903cfe7e0"
-    sha256 cellar: :any,                 monterey:       "ff7eb7ce81122256387c721e6cf72d2582790dc299f2fd4187ec59bcbe06db8d"
-    sha256 cellar: :any,                 big_sur:        "66a90c64ba25a347ee84771bd35b399d56e2ad308e0a04c8ad0792f4b042885b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59b68b611949125c2cc36e769ab01616d69547f286e5f5e60baf4726d98e2d07"
+    sha256 cellar: :any,                 arm64_sonoma:   "6a7692ef1057b6f78faac779a4c424c13db9759cc345a698620e48bc12bb0b05"
+    sha256 cellar: :any,                 arm64_ventura:  "655f2cf5baef11abe4cfbe242e24542bb5ecf368bce0da00369833be44f521f6"
+    sha256 cellar: :any,                 arm64_monterey: "6cc2a1a0b319760bf21a663f2bcf59ba4a3307c7196c5d5093043e096b783905"
+    sha256 cellar: :any,                 sonoma:         "f03f3596466eb1996e334c192605056c5dcf5f321434e514c199fc80cbe13a32"
+    sha256 cellar: :any,                 ventura:        "a603bec1c4b0554ec743682e47d2a3adc8f99a500311bddbf0399cc7856235d5"
+    sha256 cellar: :any,                 monterey:       "d72e37aa7a76258c3eb740b43ef04cfab6bd59f1ee7eb30fd06fe6c2858dfcf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e591b131b3f75a1009d185c18cc7084a1cb9db1b75f8826264248ef617af8b3"
   end
 
   depends_on "cmake" => :build

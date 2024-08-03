@@ -14,6 +14,6 @@ class Mussh < Formula
   end
 
   test do
-    system "#{bin}/mussh", "--help"
+    system bin/"mussh", "--help"
   end
 end

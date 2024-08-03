@@ -34,6 +34,6 @@ class Midicsv < Formula
   end
 
   test do
-    system "#{bin}/midicsv", "-u"
+    system bin/"midicsv", "-u"
   end
 end

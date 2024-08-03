@@ -28,7 +28,7 @@ class Inxi < Formula
   end
 
   test do
-    inxi_output = shell_output("#{bin}/inxi")
+    inxi_output = shell_output(bin/"inxi")
     uname_r = shell_output("uname -r").strip
     assert_match uname_r.to_str, inxi_output.to_s
   end

@@ -26,6 +26,6 @@ class Proxytunnel < Formula
   end
 
   test do
-    system "#{bin}proxytunnel", "--version"
+    system bin"proxytunnel", "--version"
   end
 end

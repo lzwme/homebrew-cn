@@ -36,7 +36,7 @@ class Kumactl < Formula
   end
 
   test do
-    assert_match "Management tool for Kuma.", shell_output("#{bin}kumactl")
+    assert_match "Management tool for Kuma.", shell_output(bin"kumactl")
     assert_match version.to_s, shell_output("#{bin}kumactl version 2>&1")
 
     touch testpath"config.yml"

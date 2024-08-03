@@ -50,7 +50,7 @@ class Mongoose < Formula
     EOS
 
     begin
-      pid = fork { exec "#{bin}mongoose" }
+      pid = fork { exec bin"mongoose" }
       sleep 2
       assert_match "Hi!", shell_output("curl http:localhost:8000hello.html")
     ensure

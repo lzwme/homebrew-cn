@@ -45,9 +45,11 @@ class Htslib < Formula
       r2	0	chr1	200	0	4M	*	0	0	AATT	EFGH
     EOS
     assert_match "SAM", shell_output("#{bin}htsfile #{sam}")
+
     system "#{bin}bgzip -c #{sam} > sam.gz"
     assert_predicate testpath"sam.gz", :exist?
-    system "#{bin}tabix", "-p", "sam", "sam.gz"
+
+    system bin"tabix", "-p", "sam", "sam.gz"
     assert_predicate testpath"sam.gz.tbi", :exist?
   end
 end

@@ -27,7 +27,7 @@ class Proteinortho < Formula
   end
 
   test do
-    system "#{bin}/proteinortho", "-test"
-    system "#{bin}/proteinortho_clustering", "-test"
+    system bin/"proteinortho", "-test"
+    system bin/"proteinortho_clustering", "-test"
   end
 end

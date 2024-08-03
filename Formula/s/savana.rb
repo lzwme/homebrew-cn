@@ -26,6 +26,6 @@ class Savana < Formula
   end
 
   test do
-    system "#{bin}sav", "help"
+    system bin"sav", "help"
   end
 end

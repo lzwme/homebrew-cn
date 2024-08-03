@@ -42,7 +42,7 @@ class Nasm < Formula
       int 0x80
     EOS
 
-    system "#{bin}nasm", "foo.s"
+    system bin"nasm", "foo.s"
     code = File.open("foo", "rb") { |f| f.read.unpack("C*") }
     expected = [0x66, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x66, 0xbb,
                 0x00, 0x00, 0x00, 0x00, 0xcd, 0x80]

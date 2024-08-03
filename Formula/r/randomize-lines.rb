@@ -39,6 +39,7 @@ class RandomizeLines < Formula
       2
       4
     EOS
-    system "#{bin}/rl", "-c", "1", testpath/"test.txt"
+
+    system bin/"rl", "-c", "1", testpath/"test.txt"
   end
 end

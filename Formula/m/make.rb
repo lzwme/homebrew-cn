@@ -77,7 +77,7 @@ class Make < Formula
       assert_equal "Homebrew\n", shell_output("#{bin}/gmake")
       assert_equal "Homebrew\n", shell_output("#{opt_libexec}/gnubin/make")
     else
-      assert_equal "Homebrew\n", shell_output("#{bin}/make")
+      assert_equal "Homebrew\n", shell_output(bin/"make")
     end
   end
 end

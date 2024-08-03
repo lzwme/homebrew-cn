@@ -31,11 +31,11 @@ class Tanka < Formula
       -s -w
       -X github.comgrafanatankapkgtanka.CurrentVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin"tk"), ".cmdtk"
+    system "go", "build", *std_go_args(ldflags:, output: bin"tk"), ".cmdtk"
   end
 
   test do
     system "git", "clone", "https:github.comsh0rezgrafana.libsonnet"
-    system "#{bin}tk", "show", "--dangerous-allow-redirect", "grafana.libsonnetenvironmentsdefault"
+    system bin"tk", "show", "--dangerous-allow-redirect", "grafana.libsonnetenvironmentsdefault"
   end
 end

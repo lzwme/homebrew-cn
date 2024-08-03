@@ -35,6 +35,6 @@ class Ripgrep < Formula
 
   test do
     (testpath"Hello.txt").write("Hello World!")
-    system "#{bin}rg", "Hello World!", testpath
+    system bin"rg", "Hello World!", testpath
   end
 end

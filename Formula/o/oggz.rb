@@ -45,6 +45,6 @@ class Oggz < Formula
   end
 
   test do
-    system "#{bin}oggz", "known-codecs"
+    system bin"oggz", "known-codecs"
   end
 end

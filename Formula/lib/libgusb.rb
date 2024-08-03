@@ -42,7 +42,7 @@ class Libgusb < Formula
   end
 
   test do
-    system "#{bin}gusbcmd", "-h"
+    system bin"gusbcmd", "-h"
     (testpath"test.c").write <<~EOS
       #include <gusb.h>
 

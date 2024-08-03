@@ -30,6 +30,6 @@ class Mongroup < Formula
   end
 
   test do
-    system "#{bin}mongroup", "-V"
+    system bin"mongroup", "-V"
   end
 end

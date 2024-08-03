@@ -50,11 +50,11 @@ class Nomad < Formula
 
   test do
     pid = fork do
-      exec "#{bin}nomad", "agent", "-dev"
+      exec bin"nomad", "agent", "-dev"
     end
     sleep 10
     ENV.append "NOMAD_ADDR", "http:127.0.0.1:4646"
-    system "#{bin}nomad", "node-status"
+    system bin"nomad", "node-status"
   ensure
     Process.kill("TERM", pid)
   end

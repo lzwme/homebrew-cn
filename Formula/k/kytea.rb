@@ -51,6 +51,6 @@ class Kytea < Formula
   end
 
   test do
-    system "#{bin}kytea", "--version"
+    system bin"kytea", "--version"
   end
 end

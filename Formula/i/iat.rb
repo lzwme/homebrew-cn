@@ -29,6 +29,6 @@ class Iat < Formula
   end
 
   test do
-    system "#{bin}/iat", "--version"
+    system bin/"iat", "--version"
   end
 end

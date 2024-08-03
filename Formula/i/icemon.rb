@@ -37,7 +37,7 @@ class Icemon < Formula
 
   test do
     if OS.mac?
-      system "#{bin}icemon", "--version"
+      system bin"icemon", "--version"
     else
       assert_match("qt.qpa.xcb: could not connect to display",
                          shell_output("#{bin}icemon --version 2>&1", 134))

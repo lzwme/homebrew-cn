@@ -51,6 +51,6 @@ class Lftp < Formula
   end
 
   test do
-    system "#{bin}lftp", "-c", "open https:ftp.gnu.org; ls"
+    system bin"lftp", "-c", "open https:ftp.gnu.org; ls"
   end
 end

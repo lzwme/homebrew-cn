@@ -34,7 +34,7 @@ class Mandown < Formula
       <html><head><title>test.md(7)<title><head><body><h1>Hi from readme file!<h1>
       <body><html>
     EOS
-    system "#{bin}mdn", "-f", "test.md", "-o", "test"
+    system bin"mdn", "-f", "test.md", "-o", "test"
     assert_equal expected_output, File.read("test")
   end
 end

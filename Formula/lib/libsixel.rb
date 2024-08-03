@@ -33,6 +33,6 @@ class Libsixel < Formula
 
   test do
     fixture = test_fixtures("test.png")
-    system "#{bin}img2sixel", fixture
+    system bin"img2sixel", fixture
   end
 end

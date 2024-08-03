@@ -35,6 +35,6 @@ class KnownHosts < Formula
   end
 
   test do
-    system "#{bin}known_hosts", "version"
+    system bin"known_hosts", "version"
   end
 end

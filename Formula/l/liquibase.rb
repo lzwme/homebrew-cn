@@ -39,6 +39,6 @@ class Liquibase < Formula
   end
 
   test do
-    system "#{bin}liquibase", "--version"
+    system bin"liquibase", "--version"
   end
 end

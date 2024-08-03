@@ -1,5 +1,3 @@
-require "language/node"
-
 class AngularCli < Formula
   desc "CLI tool for Angular"
   homepage "https://angular.dev/cli"
@@ -20,7 +18,7 @@ class AngularCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

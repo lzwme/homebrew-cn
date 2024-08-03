@@ -31,6 +31,6 @@ class Vitetris < Formula
   end
 
   test do
-    system "#{bin}tetris", "-hiscore"
+    system bin"tetris", "-hiscore"
   end
 end

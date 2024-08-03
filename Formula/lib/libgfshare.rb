@@ -43,7 +43,7 @@ class Libgfshare < Formula
 
   test do
     touch "test.in"
-    system "#{bin}gfsplit", "test.in"
-    system "#{bin}gfcombine test.in.*"
+    system bin"gfsplit", "test.in"
+    system bin"gfcombine test.in.*"
   end
 end

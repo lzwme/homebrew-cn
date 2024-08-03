@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Astgen < Formula
   desc "Generate AST in json format for JSTS"
   homepage "https:github.comjoernioastgen"
@@ -23,7 +21,7 @@ class Astgen < Formula
 
   def install
     # Disable custom postinstall script
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--ignore-scripts"
+    system "npm", "install", *std_npm_args, "--ignore-scripts"
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

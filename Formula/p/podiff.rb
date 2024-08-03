@@ -46,6 +46,6 @@ class Podiff < Formula
   end
 
   test do
-    system "#{bin}/podiff", "-v"
+    system bin/"podiff", "-v"
   end
 end

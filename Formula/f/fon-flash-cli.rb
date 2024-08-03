@@ -28,6 +28,6 @@ class FonFlashCli < Formula
   end
 
   test do
-    system "#{bin}fon-flash"
+    system bin"fon-flash"
   end
 end

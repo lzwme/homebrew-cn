@@ -1,5 +1,3 @@
-require "languagenode"
-
 class AwsAuth < Formula
   desc "Allows you to programmatically authenticate into AWS accounts through IAM roles"
   homepage "https:github.comiamarkadytaws-auth"
@@ -20,7 +18,7 @@ class AwsAuth < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin*")
   end
 

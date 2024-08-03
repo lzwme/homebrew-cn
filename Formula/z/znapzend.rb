@@ -56,7 +56,9 @@ class Znapzend < Formula
     EOS
     chmod 0755, fake_zfs
     ENV.prepend_path "PATH", testpath
-    system "#{bin}znapzendzetup", "list"
+
+    system bin"znapzendzetup", "list"
+
     assert_equal <<~EOS, (testpath"znapzendzetup_said.txt").read
       list
       -H

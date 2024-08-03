@@ -43,7 +43,7 @@ class Libsail < Formula
   end
 
   test do
-    system "#{bin}sail-imaging", "decode", test_fixtures("test.png")
+    system bin"sail-imaging", "decode", test_fixtures("test.png")
 
     (testpath"test.c").write <<~EOS
       #include <sailsail.h>

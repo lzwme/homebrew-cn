@@ -27,7 +27,7 @@ class Mysqltuner < Formula
   # mysql server. It is not really feasible to spawn a mysql server
   # just for a test case so we'll stick with a rudimentary test.
   test do
-    system "#{bin}mysqltuner", "--help"
+    system bin"mysqltuner", "--help"
   end
 end
 

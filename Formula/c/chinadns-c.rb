@@ -35,6 +35,6 @@ class ChinadnsC < Formula
   end
 
   test do
-    system "#{bin}chinadns", "-h"
+    system bin"chinadns", "-h"
   end
 end

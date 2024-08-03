@@ -30,6 +30,6 @@ class Kqwait < Formula
   end
 
   test do
-    system "#{bin}kqwait", "-v"
+    system bin"kqwait", "-v"
   end
 end

@@ -51,7 +51,7 @@ class Nload < Formula
   end
 
   test do
-    system "#{bin}/nload", "--help"
+    system bin/"nload", "--help"
   end
 end
 

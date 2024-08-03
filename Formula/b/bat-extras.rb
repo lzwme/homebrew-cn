@@ -29,7 +29,7 @@ class BatExtras < Formula
   end
 
   test do
-    system "#{bin}prettybat < devnull"
+    system bin"prettybat < devnull"
     system bin"batgrep", "usrbinenv", bin
   end
 end

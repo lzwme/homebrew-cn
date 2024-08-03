@@ -38,7 +38,7 @@ class Postgraphile < Formula
     begin
       sleep 2
       system "#{pg_bin}createdb", "test"
-      system "#{bin}postgraphile", "-c", "postgres:test", "-X"
+      system bin"postgraphile", "-c", "postgres:test", "-X"
     ensure
       Process.kill 9, pid
       Process.wait pid

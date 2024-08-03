@@ -2,9 +2,9 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.2.21.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.21.tar.xz"
-  sha256 "8cc44d51bb2506399ec176f70fe110f0c9e1f7d852a5303a2cd1403402199707"
+  url "https:www.php.netdistributionsphp-8.2.22.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.22.tar.xz"
+  sha256 "8566229bc88ad1f4aadc10700ab5fbcec81587c748999d985f11cf3b745462df"
   license "PHP-3.01"
 
   livecheck do
@@ -13,13 +13,13 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2a3e3089aa10590714b7a966133ef1b76fa34ae00a4fb04e8407666295b9dbd3"
-    sha256 arm64_ventura:  "a1e9b80d82d1b042dd4d2b0988a040c4028c6e92a7f5b602d008dded9b4b4dbc"
-    sha256 arm64_monterey: "35fcf2a95fa3517edcc7fe9ad12a5bfa86c8f4ad30f55a083db4b0bd7c3c40a4"
-    sha256 sonoma:         "755fc4dad2f9cd2aa1e7995597b9e0183da92d7dde970021d587406017d81a1f"
-    sha256 ventura:        "2ab4c05124e1c1df9a007ff8d908d748cea10a0e03bdce1641d69177c74aab9f"
-    sha256 monterey:       "624dc80c422b7dbf43d264d830a9266ac5f9d09d0053acb8a3ec23b74888725a"
-    sha256 x86_64_linux:   "febbc712643fdc14b09f4be3510da73a46b95c1d25d545bef8325c59d2d302b3"
+    sha256 arm64_sonoma:   "38ed71cef858bce7cec469bfeeb24d94c120fdf4570ac4f6ead8a40de86477ae"
+    sha256 arm64_ventura:  "f9fa7942441d459e5813ba2665cd6195f9152e3c8a5ae9faff224512c001f7bb"
+    sha256 arm64_monterey: "7e21739e03f44e6f37719aa3304eb27c6f1f001e3dac7dac2bcdbdc0ee6b6cd7"
+    sha256 sonoma:         "0292176091d1bf75f3af5ea2c8d0821aaec8fc65ceb7dfdd8f8afdc12d94fc0a"
+    sha256 ventura:        "e1886532819e31afdac4b7cc9e3e8fc86af1712bb8a7daa6f4256091bb1fcf29"
+    sha256 monterey:       "73835cf81a1ff2d8044a42c35994c1d64c47718935d378b637f62774cf3cd628"
+    sha256 x86_64_linux:   "02755d79b5d09e41f038c63f6ea7be828f83f82224ccaa01c04144e65b8f7953"
   end
 
   keg_only :versioned_formula
@@ -340,8 +340,8 @@ class PhpAT82 < Formula
                     (Formula["libpq"].opt_libshared_library("libpq", 5)).to_s
 
     system "#{sbin}php-fpm", "-t"
-    system "#{bin}phpdbg", "-V"
-    system "#{bin}php-cgi", "-m"
+    system bin"phpdbg", "-V"
+    system bin"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(^snmp$, shell_output("#{bin}php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")

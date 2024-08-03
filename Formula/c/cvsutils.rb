@@ -35,6 +35,6 @@ class Cvsutils < Formula
   end
 
   test do
-    system "#{bin}/cvsu", "--help"
+    system bin/"cvsu", "--help"
   end
 end

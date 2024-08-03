@@ -43,6 +43,6 @@ class Knock < Formula
   end
 
   test do
-    system "#{bin}knock", "localhost", "123:tcp"
+    system bin"knock", "localhost", "123:tcp"
   end
 end

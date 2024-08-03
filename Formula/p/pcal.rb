@@ -35,6 +35,6 @@ class Pcal < Formula
   end
 
   test do
-    system "#{bin}/pcal"
+    system bin/"pcal"
   end
 end

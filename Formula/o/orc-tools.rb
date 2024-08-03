@@ -28,6 +28,6 @@ class OrcTools < Formula
   end
 
   test do
-    system "#{bin}/orc-tools", "meta", "-h"
+    system bin/"orc-tools", "meta", "-h"
   end
 end

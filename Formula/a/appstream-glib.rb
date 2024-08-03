@@ -82,7 +82,7 @@ class AppstreamGlib < Formula
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
-    system "#{bin}appstream-util", "--help"
+    system bin"appstream-util", "--help"
   end
 end
 

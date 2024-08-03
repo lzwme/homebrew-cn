@@ -37,9 +37,9 @@ class Zsync < Formula
   end
 
   test do
-    touch "#{testpath}/foo"
-    system "#{bin}/zsyncmake", "foo"
+    touch testpath/"foo"
+    system bin/"zsyncmake", "foo"
     sha1 = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-    File.read("#{testpath}/foo.zsync") =~ /^SHA-1: #{sha1}$/
+    assert_match "SHA-1: #{sha1}", (testpath/"foo.zsync").read
   end
 end

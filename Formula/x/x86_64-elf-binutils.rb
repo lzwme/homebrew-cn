@@ -53,7 +53,8 @@ class X8664ElfBinutils < Formula
           movl $4, %ebx
           int $0x80
     EOS
-    system "#{bin}/x86_64-elf-as", "--64", "-o", "test-s.o", "test-s.s"
+
+    system bin/"x86_64-elf-as", "--64", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-x86-64",
       shell_output("#{bin}/x86_64-elf-objdump -a test-s.o")
   end

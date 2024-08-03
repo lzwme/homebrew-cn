@@ -46,6 +46,6 @@ class Irrtoolset < Formula
   end
 
   test do
-    system "#{bin}peval", "ANY"
+    system bin"peval", "ANY"
   end
 end

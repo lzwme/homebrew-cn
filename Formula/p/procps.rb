@@ -32,7 +32,7 @@ class Procps < Formula
   end
 
   test do
-    system "#{bin}/ps", "--version"
+    system bin/"ps", "--version"
     assert_match "grep homebrew", shell_output("#{bin}/ps aux | grep homebrew")
   end
 end

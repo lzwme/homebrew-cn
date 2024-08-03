@@ -37,6 +37,6 @@ class Id3ed < Formula
   end
 
   test do
-    system "#{bin}/id3ed", "-r", "-q", test_fixtures("test.mp3")
+    system bin/"id3ed", "-r", "-q", test_fixtures("test.mp3")
   end
 end

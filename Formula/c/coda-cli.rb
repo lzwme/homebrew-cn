@@ -14,6 +14,6 @@ class CodaCli < Formula
   end
 
   test do
-    system "#{bin}coda", "-h"
+    system bin"coda", "-h"
   end
 end

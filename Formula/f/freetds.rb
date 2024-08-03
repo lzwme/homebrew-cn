@@ -63,6 +63,6 @@ class Freetds < Formula
   end
 
   test do
-    system "#{bin}tsql", "-C"
+    system bin"tsql", "-C"
   end
 end

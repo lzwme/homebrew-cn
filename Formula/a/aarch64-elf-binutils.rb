@@ -51,7 +51,7 @@ class Aarch64ElfBinutils < Formula
           mov x16, #1
           svc #0x80
     EOS
-    system "#{bin}/aarch64-elf-as", "-o", "test-s.o", "test-s.s"
+    system bin/"aarch64-elf-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-littleaarch64",
                  shell_output("#{bin}/aarch64-elf-objdump -a test-s.o")
     assert_match "f()", shell_output("#{bin}/aarch64-elf-c++filt _Z1fv")

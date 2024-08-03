@@ -3,7 +3,7 @@ class Vimpc < Formula
   homepage "https:sourceforge.netprojectsvimpc"
   url "https:github.comboysetsfrogvimpcarchiverefstagsv0.09.2.tar.gz"
   sha256 "caa772f984e35b1c2fbe0349bc9068fc00c17bcfcc0c596f818fa894cac035ce"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https:github.comboysetsfrogvimpc.git", branch: "master"
 
   bottle do
@@ -26,16 +26,17 @@ class Vimpc < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "libmpdclient"
   depends_on "pcre"
   depends_on "taglib"
 
   uses_from_macos "curl"
+  uses_from_macos "ncurses"
 
   def install
     system ".autogen.sh"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

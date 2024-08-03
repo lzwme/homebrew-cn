@@ -37,6 +37,6 @@ class Less < Formula
   end
 
   test do
-    system "#{bin}lesskey", "-V"
+    system bin"lesskey", "-V"
   end
 end

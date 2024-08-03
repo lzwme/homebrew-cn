@@ -40,6 +40,6 @@ class Wabt < Formula
 
   test do
     (testpath"sample.wast").write("(module (memory 1) (func))")
-    system "#{bin}wat2wasm", testpath"sample.wast"
+    system bin"wat2wasm", testpath"sample.wast"
   end
 end

@@ -37,6 +37,6 @@ class Mhonarc < Formula
   end
 
   test do
-    system "#{bin}/mhonarc", "-v"
+    system bin/"mhonarc", "-v"
   end
 end

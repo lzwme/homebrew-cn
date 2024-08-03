@@ -33,6 +33,6 @@ class Makedepend < Formula
 
   test do
     touch "Makefile"
-    system "#{bin}/makedepend"
+    system bin/"makedepend"
   end
 end

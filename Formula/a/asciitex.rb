@@ -30,6 +30,6 @@ class Asciitex < Formula
   end
 
   test do
-    system "#{bin}/asciiTeX", "-f", "#{pkgshare}/EXAMPLES"
+    system bin/"asciiTeX", "-f", "#{pkgshare}/EXAMPLES"
   end
 end

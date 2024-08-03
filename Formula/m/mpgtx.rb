@@ -38,6 +38,6 @@ class Mpgtx < Formula
   end
 
   test do
-    system "#{bin}/mpgtx", "--version"
+    system bin/"mpgtx", "--version"
   end
 end

@@ -50,6 +50,6 @@ class Mpg321 < Formula
   end
 
   test do
-    system "#{bin}mpg321", "--version"
+    system bin"mpg321", "--version"
   end
 end

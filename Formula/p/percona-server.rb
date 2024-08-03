@@ -213,12 +213,12 @@ class PerconaServer < Formula
       "--basedir=#{prefix}", "--datadir=#{testpath}mysql", "--tmpdir=#{testpath}tmp"
     port = free_port
     fork do
-      system "#{bin}mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+      system bin"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
         "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
       shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system "#{bin}mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end

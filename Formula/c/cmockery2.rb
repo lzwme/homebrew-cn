@@ -6,11 +6,6 @@ class Cmockery2 < Formula
   license "Apache-2.0"
   head "https:github.comlpaboncmockery2.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ae822535550629aa3551bb7260330ca338c95c2f3c6b86641362524716aaa320"
     sha256 cellar: :any,                 arm64_ventura:  "9eefe7b0693c469ebd0406452350e1af83f0b343de3d114f0cceadd976e1b549"

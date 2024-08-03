@@ -44,6 +44,6 @@ class Hyperestraier < Formula
   end
 
   test do
-    system "#{bin}/estcmd", "version"
+    system bin/"estcmd", "version"
   end
 end

@@ -46,14 +46,14 @@ class Piknik < Formula
     lines = genkeys.lines.grep(\s+=\s+).map { |x| x.gsub(\s+, " ").gsub(#.*, "") }.uniq
     conffile.write lines.join("\n")
     pid = fork do
-      exec "#{bin}piknik", "-server", "-config", conffile
+      exec bin"piknik", "-server", "-config", conffile
     end
     begin
       sleep 1
-      IO.popen([{}, "#{bin}piknik", "-config", conffile, "-copy"], "w+") do |p|
+      IO.popen([{}, bin"piknik", "-config", conffile, "-copy"], "w+") do |p|
         p.write "test"
       end
-      IO.popen([{}, "#{bin}piknik", "-config", conffile, "-move"], "r") do |p|
+      IO.popen([{}, bin"piknik", "-config", conffile, "-move"], "r") do |p|
         clipboard = p.read
         assert_equal clipboard, "test"
       end

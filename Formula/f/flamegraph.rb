@@ -65,8 +65,8 @@ class Flamegraph < Formula
     EOS
 
     output = shell_output "#{bin}stackcollapse-perf.pl #{testpath}perf-mirageos-stacks-01.txt"
-    assert_match File.read("#{testpath}perf-mirageos-stacks-01-collapsed-all.txt"), output
+    assert_match (testpath"perf-mirageos-stacks-01-collapsed-all.txt").read, output
 
-    system "#{bin}flamegraph.pl", "#{testpath}perf-mirageos-stacks-01-collapsed-all.txt"
+    system bin"flamegraph.pl", "#{testpath}perf-mirageos-stacks-01-collapsed-all.txt"
   end
 end

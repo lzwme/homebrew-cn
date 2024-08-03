@@ -52,15 +52,15 @@ class Cdrtools < Formula
   end
 
   test do
-    system "#{bin}/cdrecord", "-version"
-    system "#{bin}/cdda2wav", "-version"
+    system bin/"cdrecord", "-version"
+    system bin/"cdda2wav", "-version"
     date = shell_output("date")
     mkdir "subdir" do
       (testpath/"subdir/testfile.txt").write(date)
-      system "#{bin}/mkisofs", "-r", "-o", "../test.iso", "."
+      system bin/"mkisofs", "-r", "-o", "../test.iso", "."
     end
     assert_predicate testpath/"test.iso", :exist?
-    system "#{bin}/isoinfo", "-R", "-i", "test.iso", "-X"
+    system bin/"isoinfo", "-R", "-i", "test.iso", "-X"
     assert_predicate testpath/"testfile.txt", :exist?
     assert_equal date, File.read("testfile.txt")
   end

@@ -34,7 +34,7 @@ class StyleCheck < Formula
     (testpath".style-censor").write "homebrew % capitalize Homebrew\n"
     (testpath"paper.tex").write "Today I worked on homebrew\n"
 
-    system "#{bin}style-check.rb", "-v", "paper.tex"
+    system bin"style-check.rb", "-v", "paper.tex"
   end
 end
 __END__

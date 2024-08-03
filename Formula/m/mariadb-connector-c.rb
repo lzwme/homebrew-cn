@@ -53,6 +53,6 @@ class MariadbConnectorC < Formula
   end
 
   test do
-    system "#{bin}mariadb_config", "--cflags"
+    system bin"mariadb_config", "--cflags"
   end
 end

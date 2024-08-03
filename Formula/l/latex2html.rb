@@ -40,7 +40,7 @@ class Latex2html < Formula
       \\maketitle
       \\end{document}
     EOS
-    system "#{bin}latex2html", "test.tex"
+    system bin"latex2html", "test.tex"
     assert_match "Experimental Setup", File.read("testtest.html")
   end
 end

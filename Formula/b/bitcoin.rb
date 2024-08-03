@@ -66,7 +66,7 @@ class Bitcoin < Formula
   end
 
   test do
-    system "#{bin}test_bitcoin"
+    system bin"test_bitcoin"
 
     # Test that we're using the right version of `berkeley-db`.
     port = free_port

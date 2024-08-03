@@ -61,7 +61,7 @@ class Nexus < Formula
     mkdir "data"
     fork do
       ENV["NEXUS_KARAF_DATA"] = testpath"data"
-      exec "#{bin}nexus", "server"
+      exec bin"nexus", "server"
     end
     sleep 100
     assert_match "<title>Nexus Repository Manager<title>", shell_output("curl --silent --fail http:localhost:8081")

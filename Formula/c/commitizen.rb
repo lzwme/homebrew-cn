@@ -102,7 +102,7 @@ class Commitizen < Formula
     touch "example"
     system "git", "add", "example"
     system "yes | #{bin}cz commit"
-    system "#{bin}cz", "changelog"
+    system bin"cz", "changelog"
 
     # Verifies the checksum of the changelog
     expected_sha = "97da642d3cb254dbfea23a9405fb2b214f7788c8ef0c987bc0cde83cca46f075"

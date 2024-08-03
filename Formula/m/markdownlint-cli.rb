@@ -1,5 +1,3 @@
-require "languagenode"
-
 class MarkdownlintCli < Formula
   desc "CLI for Node.js style checker and lint tool for Markdown files"
   homepage "https:github.comigorshubovychmarkdownlint-cli"
@@ -8,19 +6,20 @@ class MarkdownlintCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4223ddc7b2e85d0027703f10d512859da1f4626b29576619cdc8b58399adf1bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9ae6b3c6ae09c48a801363861286b53fc1859074cbf53bfc6329d9d2d140515"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8fa05160f755efe6823f762f839712d4105667f747afa2f41344e29725809b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c0c94e832066c476473475a1f6f421643387d48ad3fcc9e169a3ee46164c1871"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e5f743be301c321b031f8a3eebc21b7abdb7e9d83b49616e23d462625170cce"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5b372b27888b67c9f1501980d99b4c4ab289129aad441238214cf268bda24e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9791a220e0753ce7d9d778ea5013d61903b297761f947c4e8812841afd947431"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c414c02b11e76ee418773ada20614178eafc99d22b4166565ab5acfa768360c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c414c02b11e76ee418773ada20614178eafc99d22b4166565ab5acfa768360c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c414c02b11e76ee418773ada20614178eafc99d22b4166565ab5acfa768360c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "131b5d2abb4e8b7c4f34a89ad9fea8c93b6becc15460b4709c4c3e35d2b1bf52"
+    sha256 cellar: :any_skip_relocation, ventura:        "131b5d2abb4e8b7c4f34a89ad9fea8c93b6becc15460b4709c4c3e35d2b1bf52"
+    sha256 cellar: :any_skip_relocation, monterey:       "131b5d2abb4e8b7c4f34a89ad9fea8c93b6becc15460b4709c4c3e35d2b1bf52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed1b404f35203311f4a4bf0b444f488c2ecfa1886a4486e2930a99c8e14c1570"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

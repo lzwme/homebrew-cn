@@ -40,7 +40,7 @@ class GupnpTools < Formula
   end
 
   test do
-    system "#{bin}/gupnp-universal-cp", "-h"
-    system "#{bin}/gupnp-av-cp", "-h"
+    system bin/"gupnp-universal-cp", "-h"
+    system bin/"gupnp-av-cp", "-h"
   end
 end

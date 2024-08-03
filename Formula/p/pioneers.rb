@@ -46,9 +46,9 @@ class Pioneers < Formula
   end
 
   test do
-    system "#{bin}/pioneers-editor", "--help"
+    system bin/"pioneers-editor", "--help"
     server = fork do
-      system "#{bin}/pioneers-server-console"
+      system bin/"pioneers-server-console"
     end
     sleep 5
     Process.kill("TERM", server)

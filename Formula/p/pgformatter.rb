@@ -36,6 +36,6 @@ class Pgformatter < Formula
   test do
     test_file = (testpath"test.sql")
     test_file.write("SELECT * FROM foo")
-    system "#{bin}pg_format", test_file
+    system bin"pg_format", test_file
   end
 end

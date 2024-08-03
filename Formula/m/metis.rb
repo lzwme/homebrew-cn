@@ -39,12 +39,12 @@ class Metis < Formula
   test do
     ["4elt", "copter2", "mdual"].each do |g|
       cp pkgshare/"graphs/#{g}.graph", testpath
-      system "#{bin}/graphchk", "#{g}.graph"
-      system "#{bin}/gpmetis", "#{g}.graph", "2"
-      system "#{bin}/ndmetis", "#{g}.graph"
+      system bin/"graphchk", "#{g}.graph"
+      system bin/"gpmetis", "#{g}.graph", "2"
+      system bin/"ndmetis", "#{g}.graph"
     end
     cp [pkgshare/"graphs/test.mgraph", pkgshare/"graphs/metis.mesh"], testpath
-    system "#{bin}/gpmetis", "test.mgraph", "2"
-    system "#{bin}/mpmetis", "metis.mesh", "2"
+    system bin/"gpmetis", "test.mgraph", "2"
+    system bin/"mpmetis", "metis.mesh", "2"
   end
 end

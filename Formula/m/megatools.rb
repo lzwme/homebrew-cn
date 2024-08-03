@@ -39,9 +39,9 @@ class Megatools < Formula
 
   test do
     # Downloads a publicly hosted file and verifies its contents.
-    system "#{bin}/megadl",
+    system bin/"megadl",
       "https://mega.co.nz/#!3Q5CnDCb!PivMgZPyf6aFnCxJhgFLX1h9uUTy9ehoGrEcAkGZSaI",
       "--path", "testfile.txt"
-    assert_equal File.read("testfile.txt"), "Hello Homebrew!\n"
+    assert_equal (testpath/"testfile.txt").read, "Hello Homebrew!\n"
   end
 end

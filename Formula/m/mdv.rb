@@ -46,6 +46,6 @@ class Mdv < Formula
       ## Header 2
       ### Header 3
     EOS
-    system "#{bin}mdv", "#{testpath}test.md"
+    system bin"mdv", "#{testpath}test.md"
   end
 end

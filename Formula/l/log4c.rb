@@ -40,6 +40,6 @@ class Log4c < Formula
   end
 
   test do
-    system "#{bin}log4c-config", "--version"
+    system bin"log4c-config", "--version"
   end
 end

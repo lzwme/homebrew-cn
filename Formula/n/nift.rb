@@ -33,7 +33,7 @@ class Nift < Formula
 
   test do
     mkdir "empty" do
-      system "#{bin}nsm", "init", ".html"
+      system bin"nsm", "init", ".html"
       assert_predicate testpath"emptyoutputindex.html", :exist?
     end
   end

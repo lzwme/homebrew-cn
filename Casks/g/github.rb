@@ -22,8 +22,8 @@ cask "github" do
     end
   end
 
-  url "https:desktop.githubusercontent.comgithub-desktopreleases#{version}GitHubDesktop-#{arch}.zip",
-      verified: "desktop.githubusercontent.comgithub-desktop"
+  url "https:desktop.githubusercontent.comreleases#{version}GitHubDesktop-#{arch}.zip",
+      verified: "desktop.githubusercontent.com"
   name "GitHub Desktop"
   desc "Desktop client for GitHub repositories"
   homepage "https:desktop.github.com"

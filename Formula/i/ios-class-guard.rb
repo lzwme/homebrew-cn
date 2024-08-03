@@ -54,6 +54,6 @@ class IosClassGuard < Formula
         "setR02" : "setRightButtons"
       }
     EOS
-    system "#{bin}ios-class-guard", "-c", "crashdump", "-m", "symbols.json"
+    system bin"ios-class-guard", "-c", "crashdump", "-m", "symbols.json"
   end
 end

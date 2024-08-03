@@ -41,6 +41,6 @@ class Jena < Formula
   end
 
   test do
-    system "#{bin}/sparql", "--version"
+    system bin/"sparql", "--version"
   end
 end

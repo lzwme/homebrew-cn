@@ -30,6 +30,6 @@ class Pwgen < Formula
   end
 
   test do
-    system "#{bin}/pwgen", "--secure", "20", "10"
+    system bin/"pwgen", "--secure", "20", "10"
   end
 end

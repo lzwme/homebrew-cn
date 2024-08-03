@@ -32,7 +32,8 @@ class Atomicparsley < Formula
 
   test do
     cp test_fixtures("test.m4a"), testpath"file.m4a"
-    system "#{bin}AtomicParsley", testpath"file.m4a", "--artist", "Homebrew", "--overWrite"
+
+    system bin"AtomicParsley", testpath"file.m4a", "--artist", "Homebrew", "--overWrite"
     output = shell_output("#{bin}AtomicParsley file.m4a --textdata")
     assert_match "Homebrew", output
   end

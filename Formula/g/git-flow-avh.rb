@@ -58,8 +58,8 @@ class GitFlowAvh < Formula
 
   test do
     system "git", "init"
-    system "#{bin}git-flow", "init", "-d"
-    system "#{bin}git-flow", "config"
+    system bin"git-flow", "init", "-d"
+    system bin"git-flow", "config"
     assert_equal "develop", shell_output("git symbolic-ref --short HEAD").chomp
   end
 end

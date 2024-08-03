@@ -36,6 +36,6 @@ class Sentencepiece < Formula
 
   test do
     cp (pkgshare"databotchan.txt"), testpath
-    system "#{bin}spm_train", "--input=botchan.txt", "--model_prefix=m", "--vocab_size=1000"
+    system bin"spm_train", "--input=botchan.txt", "--model_prefix=m", "--vocab_size=1000"
   end
 end

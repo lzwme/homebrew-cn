@@ -1,5 +1,3 @@
-require "language/node"
-
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
@@ -8,19 +6,20 @@ class Lerna < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "47bf26dfc54078e6b02add5c53ecc876c04a97ac6d5f18c0c49f04edbe1b6da3"
-    sha256 cellar: :any,                 arm64_ventura:  "47bf26dfc54078e6b02add5c53ecc876c04a97ac6d5f18c0c49f04edbe1b6da3"
-    sha256 cellar: :any,                 arm64_monterey: "47bf26dfc54078e6b02add5c53ecc876c04a97ac6d5f18c0c49f04edbe1b6da3"
-    sha256 cellar: :any,                 sonoma:         "c977e5b362a5602513c93ebab36007828bf45a1174e76e855423a0de3cf48389"
-    sha256 cellar: :any,                 ventura:        "c977e5b362a5602513c93ebab36007828bf45a1174e76e855423a0de3cf48389"
-    sha256 cellar: :any,                 monterey:       "c977e5b362a5602513c93ebab36007828bf45a1174e76e855423a0de3cf48389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa2321bc39872469ccea2b2b0194bc1ccbc43ffe2dc29e78ed012276f40ecb6e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8ef9cd555e0e56ea0ba20d71959207930f5ac98d52abc8edac974637bd7933e6"
+    sha256 cellar: :any,                 arm64_ventura:  "8ef9cd555e0e56ea0ba20d71959207930f5ac98d52abc8edac974637bd7933e6"
+    sha256 cellar: :any,                 arm64_monterey: "8ef9cd555e0e56ea0ba20d71959207930f5ac98d52abc8edac974637bd7933e6"
+    sha256 cellar: :any,                 sonoma:         "daaee64ba1d51295ecf68dcaf51266e31ad13ad80890b2ac546e7bd814753954"
+    sha256 cellar: :any,                 ventura:        "daaee64ba1d51295ecf68dcaf51266e31ad13ad80890b2ac546e7bd814753954"
+    sha256 cellar: :any,                 monterey:       "daaee64ba1d51295ecf68dcaf51266e31ad13ad80890b2ac546e7bd814753954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7d1ad126628564dbfe06a6c7ca0e5489b4315dbb879b0477af6b3a6400040b2"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Replace universal binaries with native slices

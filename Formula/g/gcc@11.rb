@@ -229,7 +229,7 @@ class GccAT11 < Formula
         return 0;
       }
     EOS
-    system "#{bin}gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
+    system bin"gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output(".hello-c")
 
     (testpath"hello-cc.cc").write <<~EOS
@@ -244,7 +244,7 @@ class GccAT11 < Formula
         return 0;
       }
     EOS
-    system "#{bin}g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
+    system bin"g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output(".hello-cc")
 
     (testpath"test.f90").write <<~EOS
@@ -258,7 +258,7 @@ class GccAT11 < Formula
       write(*,"(A)") "Done"
       end
     EOS
-    system "#{bin}gfortran-#{version.major}", "-o", "test", "test.f90"
+    system bin"gfortran-#{version.major}", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output(".test")
 
     return unless Hardware::CPU.intel?
@@ -271,7 +271,7 @@ class GccAT11 < Formula
         return 0;
       }
     EOS
-    system "#{bin}gdc-#{version.major}", "-o", "hello-d", "hello_d.d"
+    system bin"gdc-#{version.major}", "-o", "hello-d", "hello_d.d"
     assert_equal "Hello, world!\n", shell_output(".hello-d")
   end
 end

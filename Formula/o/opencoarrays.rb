@@ -48,8 +48,8 @@ class Opencoarrays < Formula
         if (this_image()==1) write(*,*) "Test passed"
       end program
     EOS
-    system "#{bin}caf", "tally.f90", "-o", "tally"
-    system "#{bin}cafrun", "-np", "3", "--oversubscribe", ".tally"
+    system bin"caf", "tally.f90", "-o", "tally"
+    system bin"cafrun", "-np", "3", "--oversubscribe", ".tally"
     assert_match Formula["open-mpi"].lib.realpath.to_s, shell_output("#{bin}caf --show")
   end
 end

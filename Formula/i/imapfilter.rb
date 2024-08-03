@@ -40,6 +40,6 @@ class Imapfilter < Formula
   end
 
   test do
-    system "#{bin}imapfilter", "-V"
+    system bin"imapfilter", "-V"
   end
 end

@@ -20,9 +20,9 @@ class Keychain < Formula
   end
 
   test do
-    system "#{bin}keychain"
+    system bin"keychain"
     hostname = shell_output("hostname").chomp
     assert_match "SSH_AGENT_PID", File.read(testpath".keychain#{hostname}-sh")
-    system "#{bin}keychain", "--stop", "mine"
+    system bin"keychain", "--stop", "mine"
   end
 end

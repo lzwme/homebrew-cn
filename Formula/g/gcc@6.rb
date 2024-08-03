@@ -245,7 +245,7 @@ class GccAT6 < Formula
         return 0;
       }
     EOS
-    system "#{bin}gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
+    system bin"gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", `.hello-c`
 
     (testpath"hello-cc.cc").write <<~EOS
@@ -256,7 +256,7 @@ class GccAT6 < Formula
         return 0;
       }
     EOS
-    system "#{bin}g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
+    system bin"g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", `.hello-cc`
 
     fixture = <<~EOS
@@ -271,7 +271,7 @@ class GccAT6 < Formula
       end
     EOS
     (testpath"in.f90").write(fixture)
-    system "#{bin}gfortran-#{version.major}", "-o", "test", "in.f90"
+    system bin"gfortran-#{version.major}", "-o", "test", "in.f90"
     assert_equal "done", `.test`.strip
   end
 end

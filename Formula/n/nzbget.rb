@@ -62,10 +62,10 @@ class Nzbget < Formula
   test do
     (testpath"downloadsdst").mkpath
     # Start nzbget as a server in daemon-mode
-    system "#{bin}nzbget", "-D", "-c", etc"nzbget.conf"
+    system bin"nzbget", "-D", "-c", etc"nzbget.conf"
     # Query server for version information
-    system "#{bin}nzbget", "-V", "-c", etc"nzbget.conf"
+    system bin"nzbget", "-V", "-c", etc"nzbget.conf"
     # Shutdown server daemon
-    system "#{bin}nzbget", "-Q", "-c", etc"nzbget.conf"
+    system bin"nzbget", "-Q", "-c", etc"nzbget.conf"
   end
 end

@@ -69,6 +69,6 @@ class Graphviz < Formula
       }
     EOS
 
-    system "#{bin}/dot", "-Tpdf", "-o", "sample.pdf", "sample.dot"
+    system bin/"dot", "-Tpdf", "-o", "sample.pdf", "sample.dot"
   end
 end

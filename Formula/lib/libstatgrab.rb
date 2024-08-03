@@ -43,6 +43,6 @@ class Libstatgrab < Formula
   end
 
   test do
-    system "#{bin}statgrab"
+    system bin"statgrab"
   end
 end

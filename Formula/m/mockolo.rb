@@ -32,7 +32,7 @@ class Mockolo < Formula
           func bar(arg: Float) -> String
       }
     EOS
-    system "#{bin}mockolo", "-srcs", testpath"testfile.swift", "-d", testpath"GeneratedMocks.swift"
+    system bin"mockolo", "-srcs", testpath"testfile.swift", "-d", testpath"GeneratedMocks.swift"
     assert_predicate testpath"GeneratedMocks.swift", :exist?
     output = <<~EOS.gsub(\s+, "").strip
       

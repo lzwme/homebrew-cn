@@ -34,6 +34,6 @@ class Ideviceinstaller < Formula
   end
 
   test do
-    system "#{bin}ideviceinstaller --help |grep -q ^Usage"
+    assert_match "Manage apps on iOS devices", shell_output("#{bin}ideviceinstaller --help")
   end
 end

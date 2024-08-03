@@ -26,16 +26,6 @@ class Woff2 < Formula
   depends_on "cmake" => :build
   depends_on "brotli"
 
-  resource "roboto_1" do
-    url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu4mxP.ttf"
-    sha256 "466989fd178ca6ed13641893b7003e5d6ec36e42c2a816dee71f87b775ea097f"
-  end
-
-  resource "roboto_2" do
-    url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
-    sha256 "90a0ad0b48861588a6e33a5905b17e1219ea87ab6f07ccc41e7c2cddf38967a8"
-  end
-
   def install
     args = std_cmake_args + %W[
       -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}
@@ -50,15 +40,25 @@ class Woff2 < Formula
   end
 
   test do
+    resource "homebrew-roboto_1" do
+      url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu4mxP.ttf"
+      sha256 "466989fd178ca6ed13641893b7003e5d6ec36e42c2a816dee71f87b775ea097f"
+    end
+
+    resource "homebrew-roboto_2" do
+      url "https:fonts.gstatic.comsrobotov18KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
+      sha256 "90a0ad0b48861588a6e33a5905b17e1219ea87ab6f07ccc41e7c2cddf38967a8"
+    end
+
     # Convert a TTF to WOFF2
-    resource("roboto_1").stage testpath
-    system "#{bin}woff2_compress", "KFOmCnqEu92Fr1Mu4mxP.ttf"
+    resource("homebrew-roboto_1").stage testpath
+    system bin"woff2_compress", "KFOmCnqEu92Fr1Mu4mxP.ttf"
     output = shell_output("#{bin}woff2_info KFOmCnqEu92Fr1Mu4mxP.woff2")
     assert_match "WOFF2Header", output
 
     # Convert a WOFF2 to TTF
-    resource("roboto_2").stage testpath
-    system "#{bin}woff2_decompress", "KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
+    resource("homebrew-roboto_2").stage testpath
+    system bin"woff2_decompress", "KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
     output = shell_output("file --brief KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.ttf")
     assert_match(TrueType font datai, output)
   end

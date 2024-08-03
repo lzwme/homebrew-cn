@@ -62,6 +62,6 @@ class Metaproxy < Formula
       <metaproxy>
     EOS
 
-    system "#{bin}metaproxy", "-t", "--config", "#{testpath}test-config.xml"
+    system bin"metaproxy", "-t", "--config", "#{testpath}test-config.xml"
   end
 end

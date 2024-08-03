@@ -33,7 +33,7 @@ class Mockserver < Formula
     port = free_port
 
     mockserver = fork do
-      exec "#{bin}/mockserver", "-serverPort", port.to_s
+      exec bin/"mockserver", "-serverPort", port.to_s
     end
 
     loop do

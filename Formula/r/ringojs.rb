@@ -39,6 +39,6 @@ class Ringojs < Formula
       var x = 40 + 2;
       console.assert(x === 42);
     EOS
-    system "#{bin}ringo", "test.js"
+    system bin"ringo", "test.js"
   end
 end

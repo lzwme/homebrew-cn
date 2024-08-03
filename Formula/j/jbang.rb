@@ -24,7 +24,7 @@ class Jbang < Formula
   end
 
   test do
-    system "#{bin}jbang", "init", "--template=cli", testpath"hello.java"
+    system bin"jbang", "init", "--template=cli", testpath"hello.java"
     assert_match "hello made with jbang", (testpath"hello.java").read
     assert_match version.to_s, shell_output("#{bin}jbang --version 2>&1")
   end

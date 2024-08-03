@@ -45,12 +45,14 @@ class Glslang < Formula
         gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
       }
     EOS
+
     (testpath"test.vert").write <<~EOS
       #version 110
       void main() {
           gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
       }
     EOS
-    system "#{bin}glslangValidator", "-i", testpath"test.vert", testpath"test.frag"
+
+    system bin"glslangValidator", "-i", testpath"test.vert", testpath"test.frag"
   end
 end

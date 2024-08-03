@@ -50,10 +50,10 @@ class GnuWhich < Formula
 
   test do
     if OS.mac?
-      system "#{bin}/gwhich", "gcc"
-      system "#{opt_libexec}/gnubin/which", "gcc"
+      system bin/"gwhich", "gcc"
+      system opt_libexec/"gnubin/which", "gcc"
     else
-      system "#{bin}/which", "gcc"
+      system bin/"which", "gcc"
     end
   end
 end

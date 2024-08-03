@@ -119,6 +119,6 @@ class Khal < Formula
       [default]
       default_calendar = test
     EOS
-    system "#{bin}khal", "--no-color", "search", "testevent"
+    system bin"khal", "--no-color", "search", "testevent"
   end
 end

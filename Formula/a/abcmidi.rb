@@ -47,6 +47,6 @@ class Abcmidi < Formula
       |:C2=B,2 |A,2G,2| C2=B,2|A,2G,2 :|
     EOS
 
-    system "#{bin}/abc2midi", (testpath/"balk.abc")
+    system bin/"abc2midi", testpath/"balk.abc"
   end
 end

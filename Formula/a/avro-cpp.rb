@@ -43,6 +43,7 @@ class AvroCpp < Formula
           ]
       }
     EOS
+
     (testpath"test.cpp").write <<~EOS
       #include "cpx.hh"
 
@@ -51,7 +52,8 @@ class AvroCpp < Formula
         return 0;
       }
     EOS
-    system "#{bin}avrogencpp", "-i", "cpx.json", "-o", "cpx.hh", "-n", "cpx"
+
+    system bin"avrogencpp", "-i", "cpx.json", "-o", "cpx.hh", "-n", "cpx"
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
     system ".test"
   end

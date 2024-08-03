@@ -63,7 +63,7 @@ class Mplayer < Formula
   end
 
   test do
-    system "#{bin}/mplayer", "-ao", "null", "/System/Library/Sounds/Glass.aiff"
+    system bin/"mplayer", "-ao", "null", "/System/Library/Sounds/Glass.aiff"
   end
 end
 

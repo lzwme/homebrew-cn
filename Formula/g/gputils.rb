@@ -31,7 +31,7 @@ class Gputils < Formula
   test do
     # assemble with gpasm
     (testpath/"test.asm").write " movlw 0x42\n end\n"
-    system "#{bin}/gpasm", "-p", "p16f84", "test.asm"
+    system bin/"gpasm", "-p", "p16f84", "test.asm"
     assert_predicate testpath/"test.hex", :exist?
 
     # disassemble with gpdasm

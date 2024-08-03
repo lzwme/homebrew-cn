@@ -98,6 +98,6 @@ class Lighttpd < Formula
   end
 
   test do
-    system "#{bin}/lighttpd", "-t", "-f", etc/"lighttpd/lighttpd.conf"
+    system bin/"lighttpd", "-t", "-f", etc/"lighttpd/lighttpd.conf"
   end
 end

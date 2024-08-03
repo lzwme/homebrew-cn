@@ -75,8 +75,8 @@ class Mu < Formula
       This used to happen outdoors. It was more fun then.
     EOS
 
-    system "#{bin}mu", "init", "--muhome=#{testpath}", "--maildir=#{testpath}"
-    system "#{bin}mu", "index", "--muhome=#{testpath}"
+    system bin"mu", "init", "--muhome=#{testpath}", "--maildir=#{testpath}"
+    system bin"mu", "index", "--muhome=#{testpath}"
 
     mu_find = "#{bin}mu find --muhome=#{testpath} "
     find_message = "#{mu_find} msgid:2222222222@example.com"

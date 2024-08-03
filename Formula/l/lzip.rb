@@ -35,11 +35,11 @@ class Lzip < Formula
     path.write original_contents
 
     # compress: data.txt -> data.txt.lz
-    system "#{bin}/lzip", path
+    system bin/"lzip", path
     refute_predicate path, :exist?
 
     # decompress: data.txt.lz -> data.txt
-    system "#{bin}/lzip", "-d", "#{path}.lz"
+    system bin/"lzip", "-d", "#{path}.lz"
     assert_equal original_contents, path.read
   end
 end

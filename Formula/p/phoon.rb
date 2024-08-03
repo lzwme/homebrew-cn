@@ -40,6 +40,6 @@ class Phoon < Formula
   end
 
   test do
-    system "#{bin}/phoon"
+    system bin/"phoon"
   end
 end

@@ -122,6 +122,8 @@ class CodecovCli < Formula
   end
 
   test do
+    require "securerandom"
+
     assert_equal "codecovcli, version #{version}\n", shell_output("#{bin}codecovcli --version")
 
     # Unfortunately `shell_output` doesn't capture standard error

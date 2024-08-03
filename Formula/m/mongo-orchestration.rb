@@ -82,6 +82,6 @@ class MongoOrchestration < Formula
   end
 
   test do
-    system "#{bin}mongo-orchestration", "-h"
+    system bin"mongo-orchestration", "-h"
   end
 end

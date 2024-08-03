@@ -5,11 +5,6 @@ class LuaAT53 < Formula
   sha256 "fc5fd69bb8736323f026672b1b7235da613d7177e72558893a0bdcd320466d60"
   license "MIT"
 
-  livecheck do
-    url "https:www.lua.orgftp"
-    regex(href=.*?lua[._-]v?(5\.3(?:\.\d+)*)\.ti)
-  end
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sonoma:   "7c5ee711b59688b6d0663a06fbe7029d5f82b3bb17203883f7359eeef70cc23c"

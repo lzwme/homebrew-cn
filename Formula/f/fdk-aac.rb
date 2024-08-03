@@ -32,7 +32,7 @@ class FdkAac < Formula
   end
 
   test do
-    system "#{bin}/aac-enc", test_fixtures("test.wav"), "test.aac"
+    system bin/"aac-enc", test_fixtures("test.wav"), "test.aac"
     assert_predicate testpath/"test.aac", :exist?
   end
 end

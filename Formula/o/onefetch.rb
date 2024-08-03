@@ -33,7 +33,7 @@ class Onefetch < Formula
   end
 
   test do
-    system "#{bin}onefetch", "--help"
+    system bin"onefetch", "--help"
     assert_match "onefetch " + version.to_s, shell_output("#{bin}onefetch -V").chomp
 
     system "git", "init"
@@ -43,6 +43,6 @@ class Onefetch < Formula
     (testpath"main.rb").write "puts 'Hello, world'\n"
     system "git", "add", "main.rb"
     system "git", "commit", "-m", "First commit"
-    assert_match("Ruby (100.0 %)", shell_output("#{bin}onefetch").chomp)
+    assert_match("Ruby (100.0 %)", shell_output(bin"onefetch").chomp)
   end
 end

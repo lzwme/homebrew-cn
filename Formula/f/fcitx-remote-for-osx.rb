@@ -29,6 +29,6 @@ class FcitxRemoteForOsx < Formula
   end
 
   test do
-    system "#{bin}fcitx-remote", "-n"
+    system bin"fcitx-remote", "-n"
   end
 end

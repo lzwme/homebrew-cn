@@ -42,7 +42,7 @@ class Tass64 < Formula
         RTS
     EOS
 
-    system "#{bin}/64tass", "-a", "hello.asm", "-o", "hello.prg"
+    system bin/"64tass", "-a", "hello.asm", "-o", "hello.prg"
     assert_predicate testpath/"hello.prg", :exist?
   end
 end

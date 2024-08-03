@@ -46,6 +46,6 @@ class JujuWait < Formula
     # NOTE: Testing this plugin requires a Juju environment that's in the
     # process of deploying big software. This plugin relies on those application
     # statuses to determine if an environment is completely deployed or not.
-    system "#{bin}/juju-wait", "--version"
+    system bin/"juju-wait", "--version"
   end
 end

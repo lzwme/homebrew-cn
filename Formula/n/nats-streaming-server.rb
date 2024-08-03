@@ -30,7 +30,7 @@ class NatsStreamingServer < Formula
     port = free_port
     http_port = free_port
     pid = fork do
-      exec "#{bin}nats-streaming-server",
+      exec bin"nats-streaming-server",
            "--port=#{port}",
            "--http_port=#{http_port}",
            "--pid=#{testpath}pid",

@@ -22,11 +22,6 @@ class Inform6 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef7742bbf2854576904ccb28655b7af1fea66086ce33e305f6bc946510038b12"
   end
 
-  resource "homebrew-test_resource" do
-    url "https://inform-fiction.org/examples/Adventureland/Adventureland.inf"
-    sha256 "3961388ff00b5dfd1ccc1bb0d2a5c01a44af99bdcf763868979fa43ba3393ae7"
-  end
-
   def install
     # Parallel install fails because of: https://gitlab.com/DavidGriffith/inform6unix/-/issues/26
     ENV.deparallelize
@@ -34,8 +29,13 @@ class Inform6 < Formula
   end
 
   test do
+    resource "homebrew-test_resource" do
+      url "https://inform-fiction.org/examples/Adventureland/Adventureland.inf"
+      sha256 "3961388ff00b5dfd1ccc1bb0d2a5c01a44af99bdcf763868979fa43ba3393ae7"
+    end
+
     resource("homebrew-test_resource").stage do
-      system "#{bin}/inform", "Adventureland.inf"
+      system bin/"inform", "Adventureland.inf"
       assert_predicate Pathname.pwd/"Adventureland.z5", :exist?
     end
   end

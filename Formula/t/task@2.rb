@@ -39,14 +39,15 @@ class TaskAT2 < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bash_completion.install "scriptsbashtask.sh"
+
+    bash_completion.install "scriptsbashtask.sh" => "task"
     zsh_completion.install "scriptszsh_task"
     fish_completion.install "scriptsfishtask.fish"
   end
 
   test do
     touch testpath".taskrc"
-    system "#{bin}task", "add", "Write", "a", "test"
+    system bin"task", "add", "Write", "a", "test"
     assert_match "Write a test", shell_output("#{bin}task list")
   end
 end

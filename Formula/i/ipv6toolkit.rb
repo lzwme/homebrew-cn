@@ -34,6 +34,6 @@ class Ipv6toolkit < Formula
   end
 
   test do
-    system "#{bin}addr6", "-a", "fc00::1"
+    system bin"addr6", "-a", "fc00::1"
   end
 end

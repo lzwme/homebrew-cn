@@ -20,7 +20,7 @@ class Lsusb < Formula
   end
 
   test do
-    output = shell_output("#{bin}lsusb")
+    output = shell_output(bin"lsusb")
     assert_match(^Bus [0-9]+ Device [0-9]+:, output)
   end
 end

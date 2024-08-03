@@ -39,12 +39,12 @@ class Stgit < Formula
     (testpath"test").write "test"
     system "git", "add", "test"
     system "git", "commit", "--message", "Initial commit", "test"
-    system "#{bin}stg", "--version"
-    system "#{bin}stg", "init"
-    system "#{bin}stg", "new", "-m", "patch0"
+    system bin"stg", "--version"
+    system bin"stg", "init"
+    system bin"stg", "new", "-m", "patch0"
     (testpath"test").append_lines "a change"
-    system "#{bin}stg", "refresh"
-    system "#{bin}stg", "log"
-    system "man", "#{man}man1stg.1"
+    system bin"stg", "refresh"
+    system bin"stg", "log"
+    system "man", man"man1stg.1"
   end
 end

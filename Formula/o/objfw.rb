@@ -41,8 +41,8 @@ class Objfw < Formula
   end
 
   test do
-    system "#{bin}/objfw-new", "--app", "Test"
-    system "#{bin}/objfw-compile", "-o", "t", "Test.m"
+    system bin/"objfw-new", "--app", "Test"
+    system bin/"objfw-compile", "-o", "t", "Test.m"
     system "./t"
   end
 end

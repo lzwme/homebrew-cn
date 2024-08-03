@@ -85,7 +85,7 @@ class Memray < Formula
   end
 
   test do
-    system "#{bin}/memray", "run", "--output", "output.bin", "-c", "print()"
+    system bin/"memray", "run", "--output", "output.bin", "-c", "print()"
     assert_predicate testpath/"output.bin", :exist?
 
     assert_match version.to_s, shell_output("#{bin}/memray --version")

@@ -28,10 +28,9 @@ class Quickjs < Formula
     output = shell_output("#{bin}/qjs --eval 'const js=\"JS\"; console.log(`Q${js}${(7 + 35)}`);'").strip
     assert_match(/^QJS42/, output)
 
-    path = testpath/"test.js"
-    path.write "console.log('hello');"
-    system "#{bin}/qjsc", path
-    output = shell_output(testpath/"a.out").strip
-    assert_equal "hello", output
+    test_file = testpath/"test.js"
+    test_file.write "console.log('hello');"
+    system bin/"qjsc", test_file
+    assert_equal "hello", shell_output(testpath/"a.out").strip
   end
 end

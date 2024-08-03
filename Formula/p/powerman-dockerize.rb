@@ -24,6 +24,6 @@ class PowermanDockerize < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}dockerize --version")
-    system "#{bin}dockerize", "-wait", "https:www.google.com", "-wait-retry-interval=1s", "-timeout", "5s"
+    system bin"dockerize", "-wait", "https:www.google.com", "-wait-retry-interval=1s", "-timeout", "5s"
   end
 end

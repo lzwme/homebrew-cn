@@ -7,8 +7,8 @@ class Mysqlxx < Formula
   revision 3
 
   livecheck do
-    url :homepage
-    regex(/href=.*?mysql\+\+[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://tangentsoft.com/mysqlpp/releases/"
+    regex(/>mysql\+\+[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

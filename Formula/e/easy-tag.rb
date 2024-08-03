@@ -73,7 +73,7 @@ class EasyTag < Formula
     # Gtk-WARNING **: 18:38:23.471: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/easytag", "--version"
+    system bin/"easytag", "--version"
   end
 end
 

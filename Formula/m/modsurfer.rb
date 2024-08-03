@@ -32,8 +32,8 @@ class Modsurfer < Formula
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
     (testpath"sum.wasm").write(wasm)
 
-    system "#{bin}modsurfer", "generate", "-p", "sum.wasm", "-o", "mod.yaml"
+    system bin"modsurfer", "generate", "-p", "sum.wasm", "-o", "mod.yaml"
     assert_path_exists testpath"mod.yaml"
-    system "#{bin}modsurfer", "validate", "-p", "sum.wasm", "-c", "mod.yaml"
+    system bin"modsurfer", "validate", "-p", "sum.wasm", "-c", "mod.yaml"
   end
 end

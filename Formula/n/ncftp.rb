@@ -40,7 +40,7 @@ class Ncftp < Formula
   end
 
   test do
-    system "#{bin}/ncftp", "-F"
+    system bin/"ncftp", "-F"
   end
 end
 

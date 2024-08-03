@@ -57,7 +57,7 @@ class Coccinelle < Formula
   end
 
   test do
-    system "#{bin}spatch", "-sp_file", "#{pkgshare}simple.cocci",
+    system bin"spatch", "-sp_file", "#{pkgshare}simple.cocci",
                             "#{pkgshare}simple.c", "-o", "new_simple.c"
     expected = <<~EOS
       int main(int i) {
@@ -65,6 +65,7 @@ class Coccinelle < Formula
         f(g("ca va pas"), 3);
       }
     EOS
+
     assert_equal expected, (testpath"new_simple.c").read
   end
 end

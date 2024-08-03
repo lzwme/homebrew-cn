@@ -30,6 +30,6 @@ class SignifyOsx < Formula
   end
 
   test do
-    system "#{bin}signify", "-G", "-n", "-p", "test.pub", "-s", "test.sec"
+    system bin"signify", "-G", "-n", "-p", "test.pub", "-s", "test.sec"
   end
 end

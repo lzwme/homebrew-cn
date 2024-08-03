@@ -35,7 +35,7 @@ class PhpCsFixerAT2 < Formula
       <?php $this->foo('homebrew rox');
     EOS
 
-    system "#{bin}php-cs-fixer", "fix", "test.php"
+    system bin"php-cs-fixer", "fix", "test.php"
     assert compare_file("test.php", "correct_test.php")
   end
 end

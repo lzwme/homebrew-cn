@@ -217,7 +217,7 @@ class Lcov < Formula
 
     system gcc, "-g", "-O2", "--coverage", "-o", "hello", "hello.c"
     system ".hello"
-    system "#{bin}lcov", "--gcov-tool", gcov, "--directory", ".", "--capture", "--output-file", "all_coverage.info"
+    system bin"lcov", "--gcov-tool", gcov, "--directory", ".", "--capture", "--output-file", "all_coverage.info"
 
     assert_predicate testpath"all_coverage.info", :exist?
     assert_includes (testpath"all_coverage.info").read, testpath"hello.c"

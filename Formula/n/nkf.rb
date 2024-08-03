@@ -35,6 +35,6 @@ class Nkf < Formula
   end
 
   test do
-    system "#{bin}/nkf", "--version"
+    system bin/"nkf", "--version"
   end
 end

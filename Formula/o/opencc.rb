@@ -31,7 +31,7 @@ class Opencc < Formula
 
   test do
     input = "中国鼠标软件打印机"
-    output = pipe_output("#{bin}opencc", input)
+    output = pipe_output(bin"opencc", input)
     output = output.force_encoding("UTF-8") if output.respond_to?(:force_encoding)
     assert_match "中國鼠標軟件打印機", output
   end

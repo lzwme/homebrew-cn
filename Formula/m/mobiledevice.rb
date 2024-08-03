@@ -35,6 +35,6 @@ class Mobiledevice < Formula
   end
 
   test do
-    system "#{bin}mobiledevice", "list_devices"
+    system bin"mobiledevice", "list_devices"
   end
 end

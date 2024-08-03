@@ -48,7 +48,7 @@ class Owamp < Formula
   end
 
   test do
-    system "#{bin}/owping", "-h"
+    system bin/"owping", "-h"
   end
 end
 

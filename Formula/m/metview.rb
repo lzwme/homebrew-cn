@@ -93,7 +93,7 @@ class Metview < Formula
       setoutput(png_output(output_name:"test"))
       plot(grib, grid_shading)
     EOS
-    system "#{bin}/metview", "-nocreatehome", "-b", "test_binary_run_grib_plot.mv"
+    system bin/"metview", "-nocreatehome", "-b", "test_binary_run_grib_plot.mv"
     assert_predicate testpath/"test.1.png", :exist?
   end
 end

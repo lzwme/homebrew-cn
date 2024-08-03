@@ -41,6 +41,6 @@ class Minimodem < Formula
   end
 
   test do
-    system "#{bin}/minimodem", "--benchmarks"
+    system bin/"minimodem", "--benchmarks"
   end
 end

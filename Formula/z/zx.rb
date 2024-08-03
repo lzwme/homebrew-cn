@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Zx < Formula
   desc "Tool for writing better scripts"
   homepage "https:github.comgooglezx"
@@ -8,19 +6,20 @@ class Zx < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "023910f5fa85df09bc6eab9f318cfbe875bec09957522bf6c9fa3d498adbd630"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "023910f5fa85df09bc6eab9f318cfbe875bec09957522bf6c9fa3d498adbd630"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "023910f5fa85df09bc6eab9f318cfbe875bec09957522bf6c9fa3d498adbd630"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3900dea2180764d4b5a3dc774cbe2e534b9c4436e189ff29ddd3e5568994e4a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3900dea2180764d4b5a3dc774cbe2e534b9c4436e189ff29ddd3e5568994e4a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "3900dea2180764d4b5a3dc774cbe2e534b9c4436e189ff29ddd3e5568994e4a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62e90addbe8a4bdd52245de2095129bd53c1ca162f1894e8b4c278412f555026"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b454c529e1dc9d1dc584f6eb948c8e3a9937735b674e059a501e024bb7a4cef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b454c529e1dc9d1dc584f6eb948c8e3a9937735b674e059a501e024bb7a4cef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b454c529e1dc9d1dc584f6eb948c8e3a9937735b674e059a501e024bb7a4cef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "581b54bc7ee2b94eedb6129b6e510d5ac8998e551ddc4898af8273870619fe3c"
+    sha256 cellar: :any_skip_relocation, ventura:        "581b54bc7ee2b94eedb6129b6e510d5ac8998e551ddc4898af8273870619fe3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "581b54bc7ee2b94eedb6129b6e510d5ac8998e551ddc4898af8273870619fe3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9b3a8e018f04112082fd0c0440304648cdba4d3f64bfc2cc1a3f5c53fcea71f"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 

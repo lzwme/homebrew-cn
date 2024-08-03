@@ -37,7 +37,7 @@ class Ncmdump < Formula
     end
 
     resources.each { |r| r.stage(testpath) }
-    system "#{bin}ncmdump", "#{testpath}test.ncm"
+    system bin"ncmdump", "#{testpath}test.ncm"
     assert_predicate testpath"test.flac", :exist?
     assert_equal File.read("test.flac"), File.read("expect.bin")
   end

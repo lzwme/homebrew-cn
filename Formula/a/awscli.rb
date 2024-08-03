@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.19.tar.gz"
-  sha256 "b31fb24c1f5bbc9a44d363bb3624077878795a80f508af2ade793c369257e229"
+  url "https:github.comawsaws-cliarchiverefstags2.17.21.tar.gz"
+  sha256 "b4f79dba48f557d91eae3212c89a824283a8633f3a2371b454d7b55bcb78a6e7"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7972c1a3880ed4012d7acb8ae0ebec110d6c8c8880d1fcb96d39214b9bfb0b60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3612d8f75522c38748a7409f17623a8ea220aee862234f3df021ffbccca54545"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28a03652aca639bdcf1c31c882e69156732b95d6fab493932e1d467944ad3685"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34f9159fccca8a8673c4d0669cd8639ecd6707d2ae990de2af3e5ba0f2f602e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b84c60345a7db12158149450c72611864d366b74db8b4ad97a68c083f5c6147"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a948f61fbe5e886bd53aff1ea89150ca90400ad1533f059a6d82f0b50ba555e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecb71b431b2a3f6eb2e8512b0bd065914deb1ac2c7578c73de90653837fe6d98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cf2d5c69ecfa1afc330b8a2cebbeb668b71f8b0aaba4c62cde5a77553ffcb29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "664f452409d07871a10edfb63ac8a7ee1274373b2b085c43c3c4d5db83d9e1d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f36ac5b24a1ea416e490dfe0347968612b718e64212255d73fb47f45c87773e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c09908c8150bae5a0d2f4c53facfc2d7742e76321b17d40caf94904b275dd211"
+    sha256 cellar: :any_skip_relocation, ventura:        "adf5f250b8b05312df940eb66ccba4de62e5afda239947e34d40857d68b1fca8"
+    sha256 cellar: :any_skip_relocation, monterey:       "77a33d33203ea652059897f8f03b3c66adfb9d4c5177dc1c0cbddbf75d4d299e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaa55f031748afd07b4ab1013c83e736fa3ab29ecaffc128055202d521fedd14"
   end
 
   depends_on "cmake" => :build # for awscrt

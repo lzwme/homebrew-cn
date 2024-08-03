@@ -51,7 +51,7 @@ class Mlkit < Formula
       val res = if b = 24 then "OK" else "ERR"
       val () = print ("Result: " ^ res ^ "\\n")
     EOS
-    system "#{bin}mlkit", "-o", "test", "test.sml"
+    system bin"mlkit", "-o", "test", "test.sml"
     assert_equal "Result: OK\n", shell_output(".test")
   end
 end

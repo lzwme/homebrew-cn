@@ -35,6 +35,9 @@ class Sapling < Formula
   depends_on "openssl@3"
   depends_on "python@3.11"
 
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "pkg-config" => :build # for `curl-sys` crate to find `curl`
   end
@@ -87,14 +90,16 @@ class Sapling < Formula
   end
 
   test do
-    assert_equal("Sapling #{modified_version}", shell_output("#{bin}sl --version").chomp)
-    system "#{bin}sl", "config", "--user", "ui.username", "Sapling <sapling@sapling-scm.com>"
-    system "#{bin}sl", "init", "--git", "foobarbaz"
+    assert_equal "Sapling #{modified_version}", shell_output("#{bin}sl --version").chomp
+
+    system bin"sl", "config", "--user", "ui.username", "Sapling <sapling@sapling-scm.com>"
+    system bin"sl", "init", "--git", "foobarbaz"
+
     cd "foobarbaz" do
       touch "a"
-      system "#{bin}sl", "add"
-      system "#{bin}sl", "commit", "-m", "first"
-      assert_equal("first", shell_output("#{bin}sl log -l 1 -T {desc}").chomp)
+      system bin"sl", "add"
+      system bin"sl", "commit", "-m", "first"
+      assert_equal "first", shell_output("#{bin}sl log -l 1 -T {desc}").chomp
     end
 
     [

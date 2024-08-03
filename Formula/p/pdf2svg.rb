@@ -31,6 +31,6 @@ class Pdf2svg < Formula
   end
 
   test do
-    system "#{bin}pdf2svg", test_fixtures("test.pdf"), "test.svg"
+    system bin"pdf2svg", test_fixtures("test.pdf"), "test.svg"
   end
 end

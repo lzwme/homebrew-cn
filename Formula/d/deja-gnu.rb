@@ -41,6 +41,6 @@ class DejaGnu < Formula
   end
 
   test do
-    system "#{bin}/runtest"
+    system bin/"runtest"
   end
 end

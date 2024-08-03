@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 13
+  revision 14
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fa74c8af0c445163ce5b2d4b5d5fe7723d04d79fa2a8dbe54bd29661b69f2c0a"
-    sha256 cellar: :any,                 arm64_ventura:  "88b081f8be5a98df8b0ed0375d96889b8a1680f97ada4a493c2a664cb04bdcf6"
-    sha256 cellar: :any,                 arm64_monterey: "f43e32e6f15b68622419711f146eff4a40cb842aaa905d8acde1750c7772a101"
-    sha256 cellar: :any,                 sonoma:         "1517cbab5085b4d34e7b12c876aca3471b4664f0645cdc3afab21515d974b290"
-    sha256 cellar: :any,                 ventura:        "79fe68fecd2a16821d131b93aff465e1c108a408d998db5c2b5bef5e04c6288b"
-    sha256 cellar: :any,                 monterey:       "95e9fd6fb0be10fac036c7bd17200375f820e33246b9702bd038757f38820dca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24cc6b09a6f2acb365ace771389ed5905c0f6f60fd18f62de5181637daf7016d"
+    sha256 cellar: :any,                 arm64_sonoma:   "779080428f45d396f2dddfde202e9a301d84099b99a85be3b16fa549294c7e20"
+    sha256 cellar: :any,                 arm64_ventura:  "31ee89bb0c80a418d5736ef51e7ebaa2f71636657590ad1d91ef2629ce84274a"
+    sha256 cellar: :any,                 arm64_monterey: "f0ec266e63048e75071ec4235ae000f64093e3d993b57a63b2c374e0003c0eae"
+    sha256 cellar: :any,                 sonoma:         "e7a2cbd2a608301161e2e3f17f9cb7aeeacfeb4f82f08fb24142ee48d138cc7b"
+    sha256 cellar: :any,                 ventura:        "463b17b3e9975b1a92eb84e7446f6076d546e1840094bab0d6e04b2b6c5fcb5b"
+    sha256 cellar: :any,                 monterey:       "82dd18bcd3062f1ce12a4279f50fce4ae386eae17029fc7b1a1489f381da978d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f501d94ea65283122626cad1988305c832d8a04eefa8e07625b1b1f29b82899"
   end
 
   depends_on "cmake" => :build
@@ -81,7 +81,7 @@ class Fastnetmon < Formula
            "--log_to_console"
     end
 
-    sleep 15
+    sleep 30
 
     assert_path_exists testpath"fastnetmon.dat"
 

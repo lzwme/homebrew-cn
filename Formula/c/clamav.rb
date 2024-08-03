@@ -74,11 +74,13 @@ class Clamav < Formula
 
   test do
     assert_match "Database directory: #{var}libclamav", shell_output("#{bin}clamconf")
+
     (testpath"freshclam.conf").write <<~EOS
       DNSDatabaseInfo current.cvd.clamav.net
       DatabaseMirror database.clamav.net
     EOS
-    system "#{bin}freshclam", "--datadir=#{testpath}", "--config-file=#{testpath}freshclam.conf"
-    system "#{bin}clamscan", "--database=#{testpath}", testpath
+
+    system bin"freshclam", "--datadir=#{testpath}", "--config-file=#{testpath}freshclam.conf"
+    system bin"clamscan", "--database=#{testpath}", testpath
   end
 end

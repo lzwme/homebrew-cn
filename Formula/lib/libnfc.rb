@@ -43,6 +43,6 @@ class Libnfc < Formula
   end
 
   test do
-    system "#{bin}nfc-list"
+    system bin"nfc-list"
   end
 end

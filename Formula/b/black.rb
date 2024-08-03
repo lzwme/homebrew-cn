@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https:black.readthedocs.ioenstable"
-  url "https:files.pythonhosted.orgpackagesa247c9997eb470a7f48f7aaddd3d9a828244a2e4199569e38128715c48059ac1black-24.4.2.tar.gz"
-  sha256 "c872b53057f000085da66a19c55d68f6f8ddcac2642392ad3a355878406fbd4d"
+  url "https:files.pythonhosted.orgpackages04b046fb0d4e00372f4a86a6f8efa3cb193c9f64863615e39010b1477e010578black-24.8.0.tar.gz"
+  sha256 "2500945420b6784c38b9ee885af039f5e7471ef284ab03fa35ecdde4688cd83f"
   license "MIT"
   head "https:github.compsfblack.git", branch: "main"
 
@@ -14,20 +14,25 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2a70bf229cc1366f723ac310a791724a9bc4e5151fc60e06d3bbab8e7ad48dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "141ab91f773dd4241849e0b9e8a5fdac55c8e9a58500242c75d1e9221bff43dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13600614d439c9a785da6ca640ca863acf12a7e82144bbd4d98723c4899f1740"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f25ac4d0144a39de14d6e3171445e0d13f7105a8e7274af41ba9cdffccd829da"
-    sha256 cellar: :any_skip_relocation, ventura:        "66d1583336b66fd44334e1e9f8391f1d878d0c78580b6b0faa0c9be73cf07fd5"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0bf926bdab12358d4b5a029b31cb3ca94c6af148e86f975ed37ce91ba47f715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "248f936ed92f5823b351bfec842a2059cc897733b8571be30a711e83c44f9562"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "481cae285df56e5e507f344aa52c48d965d22b096229f5b3ebea4340a922e96d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d0cfcb28e9f2e0eb9d3a970169fa187882af4cebb9e72c20796dffc55972a47"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c83cf7ab268bee73f0bab4772d07d8cdc1fb7473fb7b8bfded29d751c9e86a2f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42082afaa7c9f88fa59b99b4e22a99d712ace6383cc1e2aa2283132b6d4fcac0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b635948623d1b2d1b9e1189d13c2938041f5dc151b0f54aca175c21464844635"
+    sha256 cellar: :any_skip_relocation, monterey:       "6526150fa82d50112a7c03bad570c0e086f4a7bdc0bde1b597d431b6e15e7a8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36a3abe619a211a59582e72fe44ebe89bd8f9530742a8b309f599080623aa59a"
   end
 
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https:files.pythonhosted.orgpackages3cc152b8ecc87576f8b06fd5132e3ab8550209c958fb450e6d185b15835da82caiohappyeyeballs-2.3.4.tar.gz"
+    sha256 "7e1ae8399c320a8adec76f6c919ed5ceae6edd4c3672f4d9eae2b27e37c80ff6"
+  end
+
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https:files.pythonhosted.orgpackagesbc97328a9e18e2bc229e5bf1391c9d5f6712104b2b5759c56f51fe03a1b702f1aiohttp-3.10.0.tar.gz"
+    sha256 "e8dd7da2609303e3574c95b0ec9f1fd49647ef29b94701a2862cceae76382e1d"
   end
 
   resource "aiosignal" do
@@ -66,8 +71,8 @@ class Black < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pathspec" do
@@ -76,8 +81,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
-    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
+    url "https:files.pythonhosted.orgpackagesf5520763d1d976d5c262df53ddda8d8d4719eedf9594d046f117c25a27261a19platformdirs-4.2.2.tar.gz"
+    sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
   end
 
   resource "yarl" do

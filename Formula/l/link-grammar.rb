@@ -47,6 +47,6 @@ class LinkGrammar < Formula
   end
 
   test do
-    system "#{bin}link-parser", "--version"
+    system bin"link-parser", "--version"
   end
 end

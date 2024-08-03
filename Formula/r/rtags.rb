@@ -97,7 +97,7 @@ class Rtags < Formula
       pipe_output("#{bin}rc -c", "clang -c #{testpath}srcfoo.c", 0)
       sleep 1
       assert_match "foo.c:1:6", shell_output("#{bin}rc -f #{testpath}srcfoo.c:5:3")
-      system "#{bin}rc", "-q"
+      system bin"rc", "-q"
     ensure
       Process.kill 9, rdm
       Process.wait rdm

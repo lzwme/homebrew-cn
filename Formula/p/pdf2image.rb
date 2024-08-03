@@ -43,6 +43,6 @@ class Pdf2image < Formula
   end
 
   test do
-    system "#{bin}pdf2image", "--version"
+    system bin"pdf2image", "--version"
   end
 end

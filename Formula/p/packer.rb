@@ -66,6 +66,6 @@ class Packer < Formula
         }]
       }
     EOS
-    system "#{bin}packer", "validate", "-syntax-only", minimal
+    system bin"packer", "validate", "-syntax-only", minimal
   end
 end

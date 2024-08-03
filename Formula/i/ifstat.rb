@@ -41,7 +41,7 @@ class Ifstat < Formula
   end
 
   test do
-    system "#{bin}/ifstat", "-v"
+    system bin/"ifstat", "-v"
   end
 end
 

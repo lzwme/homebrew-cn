@@ -42,6 +42,6 @@ class Lame < Formula
   end
 
   test do
-    system "#{bin}/lame", "--genre-list", test_fixtures("test.mp3")
+    system bin/"lame", "--genre-list", test_fixtures("test.mp3")
   end
 end

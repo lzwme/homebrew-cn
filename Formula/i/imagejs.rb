@@ -33,6 +33,6 @@ class Imagejs < Formula
 
   test do
     (testpath"test.js").write "alert('Hello World!')"
-    system "#{bin}imagejs", "bmp", "test.js", "-l"
+    system bin"imagejs", "bmp", "test.js", "-l"
   end
 end

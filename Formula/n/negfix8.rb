@@ -19,7 +19,7 @@ class Negfix8 < Formula
 
   test do
     (testpath".negfix8frameprofile").write "1 1 1 1 1 1 1"
-    system "#{bin}negfix8", "-u", "frameprofile", test_fixtures("test.tiff"),
+    system bin"negfix8", "-u", "frameprofile", test_fixtures("test.tiff"),
         "#{testpath}output.tiff"
     assert_predicate testpath"output.tiff", :exist?
   end

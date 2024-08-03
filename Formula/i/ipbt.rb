@@ -31,6 +31,6 @@ class Ipbt < Formula
   end
 
   test do
-    system "#{bin}/ipbt"
+    system bin/"ipbt"
   end
 end

@@ -29,7 +29,7 @@ class Neofetch < Formula
   end
 
   test do
-    system "#{bin}neofetch", "--config", "none", "--color_blocks", "off",
+    system bin"neofetch", "--config", "none", "--color_blocks", "off",
                               "--disable", "wm", "de", "term", "gpu"
   end
 end

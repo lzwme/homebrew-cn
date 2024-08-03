@@ -41,6 +41,6 @@ class Bibutils < Formula
       }
     EOS
 
-    system "#{bin}/bib2xml", "test.bib"
+    system bin/"bib2xml", "test.bib"
   end
 end

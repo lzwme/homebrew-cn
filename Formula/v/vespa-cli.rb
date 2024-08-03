@@ -38,7 +38,7 @@ class VespaCli < Formula
     doc_id = "id:mynamespace:music::a-head-full-of-dreams"
     output = shell_output("#{bin}vespa document get #{doc_id} 2>&1", 1)
     assert_match "Error: deployment not converged", output
-    system "#{bin}vespa", "config", "set", "target", "cloud"
+    system bin"vespa", "config", "set", "target", "cloud"
     assert_match "target = cloud", shell_output("#{bin}vespa config get target")
   end
 end

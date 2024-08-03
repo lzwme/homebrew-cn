@@ -75,7 +75,7 @@ class Gtkx3 < Formula
   def post_install
     system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
     system bin/"gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
-    system "#{bin}/gtk-query-immodules-3.0 > #{HOMEBREW_PREFIX}/lib/gtk-3.0/3.0.0/immodules.cache"
+    system bin/"gtk-query-immodules-3.0 > #{HOMEBREW_PREFIX}/lib/gtk-3.0/3.0.0/immodules.cache"
   end
 
   test do
@@ -87,6 +87,7 @@ class Gtkx3 < Formula
         return 0;
       }
     EOS
+
     flags = shell_output("pkg-config --cflags --libs gtk+-3.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

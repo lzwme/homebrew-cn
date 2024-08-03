@@ -40,6 +40,6 @@ class Innoextract < Formula
   end
 
   test do
-    system "#{bin}innoextract", "--version"
+    system bin"innoextract", "--version"
   end
 end

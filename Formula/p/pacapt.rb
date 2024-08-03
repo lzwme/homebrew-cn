@@ -15,6 +15,6 @@ class Pacapt < Formula
   end
 
   test do
-    system "#{bin}pacapt", "-Ss", "wget"
+    system bin"pacapt", "-Ss", "wget"
   end
 end

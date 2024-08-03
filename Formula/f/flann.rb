@@ -22,11 +22,6 @@ class Flann < Formula
   depends_on "pkg-config" => :build
   depends_on "hdf5"
 
-  resource "homebrew-dataset" do
-    url "https:github.comflann-libflannfiles6518483dataset.zip"
-    sha256 "169442be3e9d8c862eb6ae4566306c31ff18406303d87b4d101f367bc5d17afa"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_PYTHON_BINDINGS:BOOL=OFF",
@@ -37,8 +32,14 @@ class Flann < Formula
   end
 
   test do
-    resource("homebrew-dataset").stage testpath
-    system "#{bin}flann_example_c"
-    system "#{bin}flann_example_cpp"
+    resource "homebrew-dataset" do
+      url "https:github.comflann-libflannfiles6518483dataset.zip"
+      sha256 "169442be3e9d8c862eb6ae4566306c31ff18406303d87b4d101f367bc5d17afa"
+    end
+
+    testpath.install resource("homebrew-dataset")
+
+    system bin"flann_example_c"
+    system bin"flann_example_cpp"
   end
 end

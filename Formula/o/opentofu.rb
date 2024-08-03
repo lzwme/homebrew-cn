@@ -58,7 +58,8 @@ class Opentofu < Formula
         count         = 4
       }
     EOS
-    system "#{bin}tofu", "init"
-    system "#{bin}tofu", "graph"
+
+    system bin"tofu", "init"
+    system bin"tofu", "graph"
   end
 end

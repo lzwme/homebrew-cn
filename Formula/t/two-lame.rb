@@ -28,6 +28,6 @@ class TwoLame < Formula
   end
 
   test do
-    system "#{bin}/stwolame", test_fixtures("test.wav"), "test.mp2"
+    system bin/"stwolame", test_fixtures("test.wav"), "test.mp2"
   end
 end

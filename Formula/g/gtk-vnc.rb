@@ -46,6 +46,6 @@ class GtkVnc < Formula
   end
 
   test do
-    system "#{bin}/gvnccapture", "--help"
+    system bin/"ccapture", "--help"
   end
 end

@@ -51,6 +51,6 @@ class Jags < Formula
       update 100
       coda *
     EOS
-    system "#{bin}/jags", "script"
+    system bin/"jags", "script"
   end
 end

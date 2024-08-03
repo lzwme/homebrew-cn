@@ -336,8 +336,8 @@ class PhpAT81 < Formula
                     (Formula["libpq"].opt_libshared_library("libpq", 5)).to_s
 
     system "#{sbin}php-fpm", "-t"
-    system "#{bin}phpdbg", "-V"
-    system "#{bin}php-cgi", "-m"
+    system bin"phpdbg", "-V"
+    system bin"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(^snmp$, shell_output("#{bin}php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")

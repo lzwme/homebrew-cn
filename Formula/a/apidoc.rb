@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Apidoc < Formula
   desc "RESTful web API Documentation Generator"
   homepage "https:apidocjs.com"
@@ -24,7 +22,7 @@ class Apidoc < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
 
     # Extract native slices from universal binaries

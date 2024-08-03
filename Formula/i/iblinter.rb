@@ -26,7 +26,7 @@ class Iblinter < Formula
 
   test do
     # Test by showing the help scree
-    system "#{bin}iblinter", "help"
+    system bin"iblinter", "help"
 
     # Test by linting file
     (testpath".iblinter.yml").write <<~EOS

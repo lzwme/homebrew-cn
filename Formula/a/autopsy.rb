@@ -5,12 +5,6 @@ class Autopsy < Formula
   sha256 "ab787f519942783d43a561d12be0554587f11f22bc55ab79d34d8da703edc09e"
   license "GPL-2.0-or-later"
 
-  livecheck do
-    url "https:github.comsleuthkitautopsy.git"
-    regex(autopsy[._-]v?(\d+(?:\.\d+)+)i)
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b7daff147ae1d82a0dee7c5f3d853b0b6015af1bf2fde65f23676feae1b7895"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b7daff147ae1d82a0dee7c5f3d853b0b6015af1bf2fde65f23676feae1b7895"

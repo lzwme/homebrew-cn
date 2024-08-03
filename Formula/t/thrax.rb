@@ -44,9 +44,9 @@ class Thrax < Formula
     # see https://www.openfst.org/twiki/bin/view/GRM/ThraxQuickTour
     cp_r pkgshare/"grammars", testpath
     cd "grammars" do
-      system "#{bin}/thraxmakedep", "example.grm"
+      system bin/"thraxmakedep", "example.grm"
       system "make"
-      system "#{bin}/thraxrandom-generator", "--far=example.far", "--rule=TOKENIZER"
+      system bin/"thraxrandom-generator", "--far=example.far", "--rule=TOKENIZER"
     end
   end
 end

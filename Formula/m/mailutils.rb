@@ -46,6 +46,6 @@ class Mailutils < Formula
   end
 
   test do
-    system "#{bin}movemail", "--version"
+    system bin"movemail", "--version"
   end
 end

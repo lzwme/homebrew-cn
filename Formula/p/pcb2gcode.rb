@@ -118,7 +118,7 @@ class Pcb2gcode < Formula
       al-y=15
       software=LinuxCNC
     EOS
-    system "#{bin}pcb2gcode", "--front=front.gbr",
+    system bin"pcb2gcode", "--front=front.gbr",
                                "--outline=edge.gbr",
                                "--drill=drill.drl"
   end

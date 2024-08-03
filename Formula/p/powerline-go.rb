@@ -24,6 +24,6 @@ class PowerlineGo < Formula
   end
 
   test do
-    system "#{bin}#{name}"
+    system bin"powerline-go"
   end
 end

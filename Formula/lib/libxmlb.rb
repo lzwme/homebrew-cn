@@ -40,7 +40,8 @@ class Libxmlb < Formula
   end
 
   test do
-    system "#{bin}xb-tool", "-h"
+    system bin"xb-tool", "-h"
+
     (testpath"test.c").write <<~EOS
       #include <xmlb.h>
       int main(int argc, char *argv[]) {

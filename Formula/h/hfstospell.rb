@@ -30,7 +30,8 @@ class Hfstospell < Formula
 
   def install
     ENV.cxx11
-    system "autoreconf", "-fiv"
+
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--without-libxmlpp",
@@ -39,6 +40,6 @@ class Hfstospell < Formula
   end
 
   test do
-    system "#{bin}hfst-ospell", "--version"
+    system bin"hfst-ospell", "--version"
   end
 end

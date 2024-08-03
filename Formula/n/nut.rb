@@ -85,6 +85,6 @@ class Nut < Formula
   end
 
   test do
-    system "#{bin}dummy-ups", "-L"
+    system bin"dummy-ups", "-L"
   end
 end

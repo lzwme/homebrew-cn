@@ -36,6 +36,6 @@ class Libdnet < Formula
   end
 
   test do
-    system "#{bin}dnet-config", "--version"
+    system bin"dnet-config", "--version"
   end
 end

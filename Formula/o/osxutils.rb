@@ -30,6 +30,6 @@ class Osxutils < Formula
   end
 
   test do
-    assert_match "osxutils", shell_output("#{bin}osxutils")
+    assert_match "osxutils", shell_output(bin"osxutils")
   end
 end

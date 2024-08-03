@@ -34,6 +34,6 @@ class Karn < Formula
     system "git", "config", "--global", "user.name", "Test"
     system "git", "config", "--global", "user.email", "test@test.com"
     system "git", "config", "--global", "user.signingkey", "test"
-    system "#{bin}karn", "update"
+    system bin"karn", "update"
   end
 end

@@ -51,12 +51,12 @@ class Votca < Formula
   end
 
   test do
-    system "#{bin}csg_property", "--help"
+    system bin"csg_property", "--help"
     (testpath"table.in").write <<~EOS
       0 0 i
       1 1 i
     EOS
-    system "#{bin}csg_resample", "--in", "table.in", "--out", "table.out", "--grid", "0:0.1:1", "--type", "linear"
+    system bin"csg_resample", "--in", "table.in", "--out", "table.out", "--grid", "0:0.1:1", "--type", "linear"
     assert_path_exists "#{testpath}table.out"
   end
 end

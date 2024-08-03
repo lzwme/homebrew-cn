@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Jsonlint < Formula
   desc "JSON parser and validator with a CLI"
   homepage "https:github.comzaachjsonlint"
@@ -8,19 +6,25 @@ class Jsonlint < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b86612463c369b8b32c1a7522cb48a5cb7b6c682f94042d179ed312c8eda5486"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9961017c6a0a18697ddf9b1f85349da345e8c7eb04a5b7cf816ab532c30e2c4b"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
     (testpath"test.json").write('{"name": "test"}')
-    system "#{bin}jsonlint", "test.json"
+    system bin"jsonlint", "test.json"
   end
 end

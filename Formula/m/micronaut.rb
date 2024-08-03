@@ -36,7 +36,7 @@ class Micronaut < Formula
   end
 
   test do
-    system "#{bin}mn", "create-app", "hello-world"
+    system bin"mn", "create-app", "hello-world"
     assert_predicate testpath"hello-world", :directory?
   end
 end

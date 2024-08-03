@@ -33,6 +33,6 @@ class Setweblocthumb < Formula
 
   test do
     Pathname.new("google.webloc").write('{URL = "https:google.com";}')
-    system "#{bin}setWeblocThumb", "google.webloc"
+    system bin"setWeblocThumb", "google.webloc"
   end
 end

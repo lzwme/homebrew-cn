@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https:github.comasyncapicli"
@@ -20,7 +18,7 @@ class Asyncapi < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
 
     # Replace universal binaries with their native slices

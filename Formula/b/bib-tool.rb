@@ -37,6 +37,7 @@ class BibTool < Formula
           pages   = {3--4}
       }
     EOS
-    system "#{bin}bibtool", "test.bib"
+
+    system bin"bibtool", "test.bib"
   end
 end

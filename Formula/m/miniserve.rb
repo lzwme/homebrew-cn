@@ -27,7 +27,7 @@ class Miniserve < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}miniserve", "#{bin}miniserve", "-i", "127.0.0.1", "--port", port.to_s
+      exec bin"miniserve", bin"miniserve", "-i", "127.0.0.1", "--port", port.to_s
     end
 
     sleep 2

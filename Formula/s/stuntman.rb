@@ -38,6 +38,6 @@ class Stuntman < Formula
   end
 
   test do
-    system "#{bin}stuntestcode"
+    system bin"stuntestcode"
   end
 end

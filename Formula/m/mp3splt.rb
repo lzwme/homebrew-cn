@@ -29,6 +29,6 @@ class Mp3splt < Formula
   end
 
   test do
-    system "#{bin}/mp3splt", "-t", "0.1", test_fixtures("test.mp3")
+    system bin/"mp3splt", "-t", "0.1", test_fixtures("test.mp3")
   end
 end

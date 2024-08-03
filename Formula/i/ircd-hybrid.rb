@@ -56,6 +56,6 @@ class IrcdHybrid < Formula
   end
 
   test do
-    system "#{bin}/ircd", "-version"
+    system bin/"ircd", "-version"
   end
 end

@@ -57,6 +57,6 @@ class Pit < Formula
   end
 
   test do
-    system "#{bin}pit", "init"
+    system bin"pit", "init"
   end
 end

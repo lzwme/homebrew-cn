@@ -37,6 +37,6 @@ class Pth < Formula
   end
 
   test do
-    system "#{bin}/pth-config", "--all"
+    system bin/"pth-config", "--all"
   end
 end

@@ -46,7 +46,7 @@ class Osmosis < Formula
       <osm>
     EOS
 
-    system("#{bin}osmosis", "--read-xml", "file=#{path}", "--write-null")
+    system(bin"osmosis", "--read-xml", "file=#{path}", "--write-null")
   end
 end
 

@@ -42,6 +42,6 @@ class Btparse < Formula
       }
     EOS
 
-    system "#{bin}/bibparse", "-check", "test.bib"
+    system bin/"bibparse", "-check", "test.bib"
   end
 end

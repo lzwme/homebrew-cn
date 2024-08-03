@@ -37,6 +37,6 @@ class Mpssh < Formula
   end
 
   test do
-    system "#{bin}mpssh"
+    system bin"mpssh"
   end
 end

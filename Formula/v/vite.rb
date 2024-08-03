@@ -1,5 +1,3 @@
-require "language/node"
-
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
@@ -8,19 +6,20 @@ class Vite < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a3420355f2c4b2794f5f0302d24e9bb8eb6ef180936c2c6c9eaea5239a75e4fb"
-    sha256 cellar: :any,                 arm64_ventura:  "a3420355f2c4b2794f5f0302d24e9bb8eb6ef180936c2c6c9eaea5239a75e4fb"
-    sha256 cellar: :any,                 arm64_monterey: "a3420355f2c4b2794f5f0302d24e9bb8eb6ef180936c2c6c9eaea5239a75e4fb"
-    sha256 cellar: :any,                 sonoma:         "7f867e3bfc0d1119a3b39e3a6a03e7214f4218c89609c0d04cc0196fe2d153fa"
-    sha256 cellar: :any,                 ventura:        "7f867e3bfc0d1119a3b39e3a6a03e7214f4218c89609c0d04cc0196fe2d153fa"
-    sha256 cellar: :any,                 monterey:       "7f867e3bfc0d1119a3b39e3a6a03e7214f4218c89609c0d04cc0196fe2d153fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a534bd3322649959cda696743cdb842e11dc15b57fa09cc42baf2eaec76ad47"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c2d7e75fb269ed66c854862f5bed0090cb24f7298cd59e4316c0e06c9ca9a552"
+    sha256 cellar: :any,                 arm64_ventura:  "c2d7e75fb269ed66c854862f5bed0090cb24f7298cd59e4316c0e06c9ca9a552"
+    sha256 cellar: :any,                 arm64_monterey: "c2d7e75fb269ed66c854862f5bed0090cb24f7298cd59e4316c0e06c9ca9a552"
+    sha256 cellar: :any,                 sonoma:         "b64f5beb389ef7d332e2838a8fea319b387f478890e1ba7908eda471efaa35ac"
+    sha256 cellar: :any,                 ventura:        "b64f5beb389ef7d332e2838a8fea319b387f478890e1ba7908eda471efaa35ac"
+    sha256 cellar: :any,                 monterey:       "b64f5beb389ef7d332e2838a8fea319b387f478890e1ba7908eda471efaa35ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fdb5ca2b4c5df772ccd91c3bb9fdfef8f64faffb45f0c7bd7c354ae33a68e95"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

@@ -54,6 +54,6 @@ class OpenSp < Formula
       </TESTDOC>
     EOS
 
-    system "#{bin}/onsgmls", "--warning=type-valid", "eg.sgml"
+    system bin/"onsgmls", "--warning=type-valid", "eg.sgml"
   end
 end

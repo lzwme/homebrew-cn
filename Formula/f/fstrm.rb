@@ -40,7 +40,7 @@ class Fstrm < Formula
   depends_on "libevent"
 
   def install
-    system "autoreconf", "-fvi" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system ".configure", "--disable-debug",
            "--disable-dependency-tracking",
            "--disable-silent-rules",
@@ -54,7 +54,9 @@ class Fstrm < Formula
            "-u", "dnstap.sock", "-w", "capture.fstrm", "-dddd"
     end
     sleep 2
+
+    system bin"fstrm_dump", "capture.fstrm"
+  ensure
     Process.kill("TERM", job)
-    system "#{bin}fstrm_dump", "capture.fstrm"
   end
 end
