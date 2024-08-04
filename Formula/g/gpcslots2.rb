@@ -11,7 +11,8 @@ class Gpcslots2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4eb93c0df897b9c27e4df6c4238c2a70e6a983a7081a124f2bf59a575b2afddc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "929c7fc634b2f18293d05562d73850df33ac33ff14e1d43bb62ccb42a4ab778b"
   end
 
   def install

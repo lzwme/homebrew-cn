@@ -5,7 +5,8 @@ class MemcacheTop < Formula
   sha256 "d5f896a9e46a92988b782e340416312cc480261ce8a5818db45ccd0da8a0f22a"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b6599577907d4472abd334e62cbf3e718f2e8641af18d2c9a4b81aa77542929b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "087a748b42b751770abe12ce9529e0e55d96b9f69f28ee7b6951e099271b8f3e"
   end
 
   def install

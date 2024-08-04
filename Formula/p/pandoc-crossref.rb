@@ -1,20 +1,19 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https:github.comlierdakilpandoc-crossref"
-  url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.17.1b.tar.gz"
-  version "0.3.17.1b"
-  sha256 "39e81ac089c23aa302ba3925147135df1425c63c5fe497b26f47e3c04789b638"
+  url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.17.1c.tar.gz"
+  version "0.3.17.1c"
+  sha256 "1c1d00d356c74749d530b508db2e6aca6fe9f5ae3a283af58d25bedc99293977"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "311e8797c8452b953874779ffd863e4aad8185c5fb39e43c2eaebbb6e4cd2b86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d0c53498ecff74a4da95e2b32e23eb7ed42b47f1bee6ac75e02d2a54d11a39c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8cae507dfa56079e4c58c4fdf9e920551b978e6d00706af6d9ec27fa206c5b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4d6096fb81a38d84b102b556c01a0532d256c81c48f52b173f0e6a19607045b"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8cab4ec07bf17a8a424447d745dd6df8b9f9fe7fac6c021989de8d1018ae768"
-    sha256 cellar: :any_skip_relocation, monterey:       "498530d3cc71549f39c514974cc845a28f9dffa227a8ac06e9d819a145fd95b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17d2de663f2d3b6d6a462d8394f7903c36407220650b1fcd4c128cb9a40c3892"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c94edf93c9f715b57577df9412dcdba0051b921304ff1885d880ddf7f049ec8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "971e09c4acbb7f0331738d28b7f23ef905e444aa1ce7bcd2001dd84b8d5565b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09f58513da6d5c759db7726f2a58de805bb58b23e8797bd882d159066e0795dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3dc0f52abfeeb9fa1d1d12d1833fdecaf20049dca2ebe7057a4d7256a39ed604"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4e1cff8bf41b03362223374fb0a5880bccf6811dadeffab0a3b17cce6715ed5"
+    sha256 cellar: :any_skip_relocation, monterey:       "d7015c5a49f787bef8ba735b31e206875d56591215c3d5317e5f9b380aa8128d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "638d0887665fededa6bd785f025cf6e3ca12691be15b0451d7fa45b7f7ea4820"
   end
 
   depends_on "cabal-install" => :build
@@ -23,12 +22,6 @@ class PandocCrossref < Formula
 
   uses_from_macos "unzip" => :build
   uses_from_macos "zlib"
-
-  # pandoc 3.3 support patch, upstream pr ref, https:github.comlierdakilpandoc-crossrefpull447
-  patch do
-    url "https:github.comlierdakilpandoc-crossrefcommitaecc631ecf871bf37e94e20010d92420d86ac30c.patch?full_index=1"
-    sha256 "3fc40a218eef05e9a7c31a37967d374c114b53060026333a425101fdf41f10dc"
-  end
 
   def install
     rm("cabal.project.freeze")

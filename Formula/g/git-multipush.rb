@@ -7,8 +7,8 @@ class GitMultipush < Formula
   head "https:github.comgavinbeattygit-multipush.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d4827d3f19adf80aba2aecc3e4f475bc1527b6b66bbd8b77128d6065f3a5366b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "74cbae277a623c4ffc3d8b597734d05741cc549a2021de8c25eef4fc9ac4aa25"
   end
 
   depends_on "asciidoc" => :build

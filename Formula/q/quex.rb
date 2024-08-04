@@ -15,8 +15,8 @@ class Quex < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "1d191fac735ddaccea99244e3d9a23b1f9384d0f204256bc5a69b9bbcf38d3e1"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "864333dd8486308ea1852916508cc7a79c813158a345d0de0865549ec5fc8802"
   end
 
   depends_on "python@3.12"

@@ -6,7 +6,8 @@ class Oysttyer < Formula
   head "https:github.comoysttyeroysttyer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a1700139674a1c4bdfb17dc7b5c7d513f835ac100fd419ac07672cdd6f78ec1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "634e4e86062e386843b2703b2a781b8de08a86539d39d7ffc9aa6db733b2c110"
   end
 
   deprecate! date: "2024-01-06", because: :repo_archived

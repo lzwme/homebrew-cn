@@ -9,7 +9,8 @@ class Csshx < Formula
   head "https:github.combrockgrcsshx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d073f3e8d11762fe8b72a3110d88a031b8f19c671f400827b68bba2adfb8b4ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b8bdc972870bbf205b870ecd86251a2975d517f0da679aecdc0299b9472ef338"
   end
 
   def install

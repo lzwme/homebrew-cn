@@ -26,9 +26,9 @@ class Mpc < Formula
   depends_on "libmpdclient"
 
   def install
-    system "meson", *std_meson_args, ".", "output"
-    system "ninja", "-C", "output"
-    system "ninja", "-C", "output", "install"
+    system "meson", "setup", "_build", *std_meson_args
+    system "meson", "compile", "-C", "_build", "--verbose"
+    system "meson", "install", "-C", "_build"
 
     bash_completion.install "contrib/mpc-completion.bash" => "mpc"
     rm share/"doc/mpc/contrib/mpc-completion.bash"

@@ -12,8 +12,8 @@ class Lv2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c3b8730ed5228ee77c3eb76a3d88d5adca04726b05548f18c511b6cb696c6827"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "25dce655720f7e01dee8e5b7db09049d887a4a0633ffac40a5333eec39283ce8"
   end
 
   depends_on "meson" => :build

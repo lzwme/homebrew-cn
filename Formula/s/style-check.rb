@@ -14,7 +14,8 @@ class StyleCheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0e16c4ab38be982971253cf502fea88db6ee637c3dcdee98c5256ac663ab7dad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fb1e03c25875d0cf1b78f401e403452420169250d6fd6cee1be00d4d8bb51725"
   end
 
   uses_from_macos "ruby"

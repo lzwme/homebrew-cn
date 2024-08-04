@@ -12,8 +12,8 @@ class Scalastyle < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5343604917bc9926d5150a1173da9b85daa158d8d32ea22f0a46d8de754003ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "1d29d487fbdb5211082bce9fd7b84028b56d4445ab0b0c9c7b8d3bb4d081cdf8"
   end
 
   depends_on "openjdk"

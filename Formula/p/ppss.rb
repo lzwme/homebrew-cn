@@ -6,7 +6,8 @@ class Ppss < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ff7ab7dc16968b6fc8674f5ddc75e36d5c45ab140518a3263b136aae14eea81d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e341e42c45d8ab9d5251b5330405329c45f1342a2cd94a466764b894a2b9ac6c"
   end
 
   def install

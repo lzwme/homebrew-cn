@@ -39,7 +39,7 @@ class Lc0 < Formula
   end
 
   def install
-    args = ["-Dgtest=false"]
+    args = ["-Dgtest=false", "-Dbindir=libexec"]
 
     if OS.mac?
       # Disable metal backend for older macOS
@@ -49,12 +49,10 @@ class Lc0 < Formula
       args << "-Dopenblas_include=#{Formula["openblas"].opt_include}"
       args << "-Dopenblas_libdirs=#{Formula["openblas"].opt_lib}"
     end
-    system "meson", *std_meson_args, *args, "buildrelease"
 
-    cd "buildrelease" do
-      system "ninja", "-v"
-      libexec.install "lc0"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
 
     bin.write_exec_script libexec"lc0"
     resource("network").stage { libexec.install Dir["*"].first => "42850.pb.gz" }

@@ -8,7 +8,8 @@ class ClearlooksPhenix < Formula
   head "https:github.comjpfleuryclearlooks-phenix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0b785c8577696a7fdaa9d1c8f1130e7653972d7b1a497d0ae37ebbf1cb79cf30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b78942e05a0bc1e821d1d2177a877ec93672ea0d7d2e300053388ab486f0bfe0"
   end
 
   depends_on "gtk+3"

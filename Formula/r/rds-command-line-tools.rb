@@ -6,7 +6,8 @@ class RdsCommandLineTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d7d88e5f02da3ee3df182d04c09442a8374230655cccd26582900a7eaf93e263"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4407dfd6ae745950a92bd1d2e7b2bbb9b00d96af8a36ecd98dc9c02029477ab6"
   end
 
   # Deprecated and replaced by AWS CLI for RDS

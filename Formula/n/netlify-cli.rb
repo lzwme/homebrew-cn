@@ -1,5 +1,3 @@
-require "languagenode"
-
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https:www.netlify.comdocscli"
@@ -9,13 +7,14 @@ class NetlifyCli < Formula
   head "https:github.comnetlifycli.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sonoma:   "eeab8da9b3280ff607c6d4f40000446d038e9bbb6367fd3c88b3ea323fb351c8"
-    sha256                               arm64_ventura:  "67f91b0d2d35815d021c950ce3a1d9df39ee32b2c70ec7a8ab8431cf9f577e70"
-    sha256                               arm64_monterey: "c8393ac814efb467905e199bcc1f289d5f27f9faeab3ce433eaccd7b0806d0f1"
-    sha256                               sonoma:         "f16612c3210e92c913ca16bc549847f8dfde9e653d04405f20ba2f797a7c6d93"
-    sha256                               ventura:        "86db4634c019d342c15b90876030252cc454cecc83fb9b45f89498e1a3644422"
-    sha256                               monterey:       "7217e91c7445674a6c17b6245c090cff5a829e3d0d0f076c5f9edc7b418ec64b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d01258212a66c3784377f45490d73e00254521e3054d43624dabf3933d823c0f"
+    rebuild 1
+    sha256                               arm64_sonoma:   "0a28426c6bd94f9258ce1b4c9f326dbdc8722f5ca514e4a0acb205d0cfd48298"
+    sha256                               arm64_ventura:  "400d583e88d2d9ac4f4299ff15da9bed0c51fde70f4e377db82bcc768ae9d7b1"
+    sha256                               arm64_monterey: "4da5b59329c4460e0f4002ec6fbb1c981b01f5f6ac6b654c378790a1daeddb70"
+    sha256                               sonoma:         "d0f8420bc76e5563b470f3f712fbbfcaa2094b74d52370bb6e834addd3374e95"
+    sha256                               ventura:        "2689f11e725eb46a74b20153a6a30128c23c550bcdda80f26d855c6eeb66e746"
+    sha256                               monterey:       "58abe7e882e72f41f224f9af5cd3c01062ff083e0e8400abd14ee7fa57051537"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "792bc58bd646d500cb2e26bf96083c11a905de6317a92a7a9f35f119db45b936"
   end
 
   depends_on "node"
@@ -28,8 +27,8 @@ class NetlifyCli < Formula
   end
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}bin*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin*")
 
     # Remove incompatible pre-built binaries
     node_modules = libexec"libnode_modulesnetlify-clinode_modules"

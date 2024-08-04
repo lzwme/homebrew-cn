@@ -6,7 +6,8 @@ class Kommit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1fdd89c3c3c5e6c30817ddfa6e41ae587f80d05afe22b729fa4de0541e28e5a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e27d05c078699c3a5c3ba379e6a598cd4b96142358bf41fca14cf2faa83251ff"
   end
 
   def install

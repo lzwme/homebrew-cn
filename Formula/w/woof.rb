@@ -8,8 +8,8 @@ class Woof < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "ec567cc35e9da2aad1a4b369960f1a6c9823dda502936968225a231a275bf623"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "f5dd93c7a711b1b98e9eaf0d892ce187468505064e615cce360ac3c4354e4437"
   end
 
   depends_on "python@3.12"

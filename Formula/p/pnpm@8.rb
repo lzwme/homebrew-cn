@@ -1,6 +1,4 @@
 class PnpmAT8 < Formula
-  require "language/node"
-
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
   url "https://registry.npmjs.org/pnpm/-/pnpm-8.15.9.tgz"
@@ -28,17 +26,18 @@ class PnpmAT8 < Formula
 
   depends_on "node" => [:build, :test]
 
+  skip_clean "bin"
+
   def install
-    libexec.install buildpath.glob("*")
-    bin.install_symlink "#{libexec}/bin/pnpm.cjs" => "pnpm@8"
-    bin.install_symlink "#{libexec}/bin/pnpx.cjs" => "pnpx@8"
-    bin.install_symlink "#{libexec}/bin/pnpm.cjs" => "pnpm"
-    bin.install_symlink "#{libexec}/bin/pnpx.cjs" => "pnpx"
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink bin/"pnpm" => "pnpm@8"
+    bin.install_symlink bin/"pnpx" => "pnpx@8"
 
     generate_completions_from_executable(bin/"pnpm", "completion")
 
     # remove non-native architecture pre-built binaries
-    (libexec/"dist").glob("reflink.*.node").each do |f|
+    (libexec/"lib/node_modules/pnpm/dist").glob("reflink.*.node").each do |f|
       next if f.arch == Hardware::CPU.arch
 
       rm f

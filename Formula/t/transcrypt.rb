@@ -7,8 +7,8 @@ class Transcrypt < Formula
   head "https:github.comelasticdogtranscrypt.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9225e648b7de3cb419e614fba90da064d60da9e980d1e85556fe4a4985fc3e69"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "14005806e49b15b371445e7f21d374ca66499c4a6aa031cfe1447f8350552f4a"
   end
 
   on_linux do

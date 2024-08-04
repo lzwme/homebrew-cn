@@ -20,11 +20,13 @@ class Genometools < Formula
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "cairo"
+  depends_on "glib"
   depends_on "pango"
   depends_on "python@3.12"
 
-  on_linux do
-    depends_on "libpthread-stubs" => :build
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
   end
 
   conflicts_with "libslax", because: "both install `bingt`"

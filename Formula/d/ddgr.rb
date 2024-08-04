@@ -8,7 +8,8 @@ class Ddgr < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "374c96ff5deaf0e4f73c471220bb299f1c6b2f4114da8db31a575d2463eee3c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3ae74323d821c1713d3a9df8c38a26e5286488dc1f5fd3cbe421cce82f489c2d"
   end
 
   depends_on "python@3.12"

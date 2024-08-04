@@ -1,11 +1,8 @@
-require "languagenode"
-
 class Copilot < Formula
   desc "CLI tool for Amazon ECS and AWS Fargate"
   homepage "https:aws.github.iocopilot-cli"
-  url "https:github.comawscopilot-cli.git",
-      tag:      "v1.34.0",
-      revision: "204bdba62d2e57d60868158d6a8c3bee2fba479f"
+  url "https:github.comawscopilot-cliarchiverefstagsv1.34.0.tar.gz"
+  sha256 "accc579f16a4a3ce59376d98bffdde206c849004834ad5f953b0bef1c4a4ed11"
   license "Apache-2.0"
   head "https:github.comawscopilot-cli.git", branch: "mainline"
 
@@ -28,28 +25,23 @@ class Copilot < Formula
   depends_on "node" => :build
 
   def install
-    Language::Node.setup_npm_environment
-
-    system "make", "tools"
-    system "make", "package-custom-resources"
-    system "make", "build"
-
+    ENV.deparallelize
+    system "make", "VERSION=#{version}"
     bin.install "binlocalcopilot"
-
     generate_completions_from_executable(bin"copilot", "completion")
   end
 
   test do
-    ENV["AWS_ACCESS_KEY_ID"] = "test"
-    ENV["AWS_SECRET_ACCESS_KEY"] = "test"
+    ENV["AWS_REGION"] = ENV["AWS_SECRET_ACCESS_KEY"] = "test"
+    ENV["AWS_ACCESS_KEY_ID"] = "eu-west-1"
     begin
-      _, stdout, wait_thr = Open3.popen2("AWS_REGION=eu-west-1 #{bin}copilot init 2>&1")
+      _, stdout, wait_thr = Open3.popen2("#{bin}copilot init 2>&1")
       assert_match "Note: It's best to run this command in the root of your Git repository", stdout.gets("\n")
     ensure
       Process.kill 9, wait_thr.pid
     end
 
-    assert_match "Run `copilot app init` to create an application",
-      shell_output("AWS_REGION=eu-west-1 #{bin}copilot pipeline init 2>&1", 1)
+    output = shell_output("#{bin}copilot pipeline init 2>&1", 1)
+    assert_match "Run `copilot app init` to create an application", output
   end
 end

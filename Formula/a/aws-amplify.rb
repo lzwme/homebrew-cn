@@ -1,5 +1,3 @@
-require "language/node"
-
 class AwsAmplify < Formula
   desc "Build full-stack web and mobile apps in hours. Easy to start, easy to scale"
   homepage "https://aws.amazon.com/amplify"
@@ -8,20 +6,21 @@ class AwsAmplify < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e4245576b6ae69c8259474494d2366b549185d57f4370ae0790f223eb03121b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e4245576b6ae69c8259474494d2366b549185d57f4370ae0790f223eb03121b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e4245576b6ae69c8259474494d2366b549185d57f4370ae0790f223eb03121b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f96100371f5f40ac35105545bde3cbd07c6d20d11e0c6c275e0bbc2d3e11e247"
-    sha256 cellar: :any_skip_relocation, ventura:        "f96100371f5f40ac35105545bde3cbd07c6d20d11e0c6c275e0bbc2d3e11e247"
-    sha256 cellar: :any_skip_relocation, monterey:       "f96100371f5f40ac35105545bde3cbd07c6d20d11e0c6c275e0bbc2d3e11e247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4728ffef20091bcc1def83a065ef42cf390103c5036a046dd55bc684d096d04f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "364145b800db47837ffa42d14a00e09407875b9e9e882ec9b4f464e2dc2192eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "364145b800db47837ffa42d14a00e09407875b9e9e882ec9b4f464e2dc2192eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "364145b800db47837ffa42d14a00e09407875b9e9e882ec9b4f464e2dc2192eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "efaaf9a3c671a836b89b1985245d97188d70358b2510afdc4f45920324bc2f90"
+    sha256 cellar: :any_skip_relocation, ventura:        "efaaf9a3c671a836b89b1985245d97188d70358b2510afdc4f45920324bc2f90"
+    sha256 cellar: :any_skip_relocation, monterey:       "efaaf9a3c671a836b89b1985245d97188d70358b2510afdc4f45920324bc2f90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e09d4fadd372eddfb1d94943a673c0d1fb90e21f7c65d052322d5149fc05fb0b"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
 
     unless Hardware::CPU.intel?
       rm_r "#{libexec}/lib/node_modules/@aws-amplify/cli-internal/node_modules" \

@@ -5,7 +5,8 @@ class Negfix8 < Formula
   sha256 "2f360b0dd16ca986fbaebf5873ee55044cae591546b573bb17797cbf569515bd"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dc774cdde317803fe6a9f0b4d63531556e781467b1491407c94fc11509fa0997"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8cfaf079531e850a4938db52d6a99d4626142eba30165284a39d9349d805a18b"
   end
 
   # https:github.comchrishuntnegfix8pull2#issuecomment-1956815369

@@ -1,12 +1,11 @@
 class FfmpegAT6 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-6.1.1.tar.xz"
-  sha256 "8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968"
+  url "https:ffmpeg.orgreleasesffmpeg-6.1.2.tar.xz"
+  sha256 "3b624649725ecdc565c903ca6643d41f33bd49239922e45c9b1442c63dca4e38"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https:ffmpeg.orgdownload.html"
@@ -14,13 +13,13 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d7406998c6199ac77f95d3f283da4954b15d9cb22ec9a9e4c3dec5d44d4074a1"
-    sha256 arm64_ventura:  "402e29ff33381f5a69725366ca7ca1dc2d5b2b9fc83e4bf8aaf48080cb3b33a8"
-    sha256 arm64_monterey: "66a75bae262cd177120305ab9d5a69d8fca364e1a109285125310c574dc3d51a"
-    sha256 sonoma:         "fbaeb2b7395aea1059e333b4800fdf3c80144e93be06ae18cfa80d599bce1870"
-    sha256 ventura:        "d832aff7012091b0103f8ea6404ca083e0dd343988fde91cbc116cc0d15db4e5"
-    sha256 monterey:       "87b1c8327e55422e7c9fd59594daacf0294f44a10211164c8a10307963788c91"
-    sha256 x86_64_linux:   "d7eb88f3cfedf728ce1f194b586d512fbbeabc75085adf54419b54720d6dba7a"
+    sha256 arm64_sonoma:   "f355eb66f61929255b324bcb4a1a9958c513a5b9738603736f779dc1fe7959b4"
+    sha256 arm64_ventura:  "a0c1e245b8ce79386bb8ddadf88c3355cd2558ea3f595dbae6095c05559b29ba"
+    sha256 arm64_monterey: "df58195c7a42e1625ee379b4ec52aa149c19e64b46b092c979b7333fd0b69988"
+    sha256 sonoma:         "0198cc27a070f6e9148f868b17853ceb8d747da084fdd8039b35c560e259abc2"
+    sha256 ventura:        "8dcfea1b53a7451f5a585759b4223406e4d18fd0a12c584c8f8e5b97ecee98ad"
+    sha256 monterey:       "ca4634630124fab74f840e9f90f23e7522e577a1bca7506de894cb63dac21c47"
+    sha256 x86_64_linux:   "bcdd26bb7ec0265015ffd22556e978946b884ed0bcde6328a0959a55bccb388c"
   end
 
   keg_only :versioned_formula

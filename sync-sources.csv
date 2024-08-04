@@ -820,7 +820,7 @@ Homebrew-homebrew-core/Formula/c/checkov.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cherrybomb.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chezmoi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chezscheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chibi-scheme.rb, Homebrew/homebrew-core, 1
@@ -3467,7 +3467,9 @@ Homebrew-homebrew-core/Formula/lib/libgcrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgda.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgdata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgedit-amtk.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libgedit-gtksourceview.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libgedit-gfls.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libgedit-gtksourceview.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libgedit-tepl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgee.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgeotiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgetdata.rb, Homebrew/homebrew-core, 1
@@ -3996,7 +3998,7 @@ Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesheryctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/meson.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/meta-package-manager.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/meta-package-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/metabase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/metalang99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/metals.rb, Homebrew/homebrew-core, 1
@@ -6200,7 +6202,6 @@ Homebrew-homebrew-core/Formula/t/tendermint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tengo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenyr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tepl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/term.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbox.rb, Homebrew/homebrew-core, 1
@@ -6858,7 +6859,7 @@ Homebrew-homebrew-core/Formula/x/x86_64-elf-gdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/x86_64-linux-gnu-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xalan-c.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xapian.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xapian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xaric.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xauth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xbee-comm.rb, Homebrew/homebrew-core, 1
@@ -12416,6 +12417,7 @@ Homebrew-homebrew-cask/Casks/p/pdfpenpro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfsam-basic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pdfshaver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/peakhour.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pearcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pecunia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/penc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pencil.rb, Homebrew/homebrew-cask, 0

@@ -6,7 +6,8 @@ class MixCompletion < Formula
   head "https:github.comdavidhqmix-power-completion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "faa9e0edf1a9e4aac06ea640bfa2ff4ee4b6e81d086c33cd3aa999ef77b54a55"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c07b1060823fba51931d64cdd01ff90ec6b03ba5f0bd6b41406456e0343e389b"
   end
 
   def install

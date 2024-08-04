@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
@@ -53,8 +51,8 @@ class Lanraragi < Formula
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", "#{libexec}libperl5"
-    ENV.prepend_path "PERL5LIB", "#{libexec}lib"
+    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_path "PERL5LIB", libexec"lib"
 
     # On Linux, use the headers provided by the libarchive formula rather than the ones provided by Apple.
     ENV["CFLAGS"] = if OS.mac?
@@ -86,7 +84,7 @@ class Lanraragi < Formula
     end
 
     system "cpanm", "Config::AutoConf", "--notest", "-l", libexec
-    system "npm", "install", *Language::Node.local_npm_install_args
+    system "npm", "install", *std_npm_args(prefix: false)
     system "perl", ".toolsinstall.pl", "install-full"
 
     prefix.install "README.md"

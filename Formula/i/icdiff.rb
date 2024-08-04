@@ -9,8 +9,8 @@ class Icdiff < Formula
   head "https:github.comjeffkaufmanicdiff.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "6ba3e02ad073e679bbb3b44e9fde5fd9f6d14bef29fff42918438fa6d88fd6c2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "175b18450e5cb403f6b4efd527d638a9f852a6eb1074177e0d610a0c3c369b9f"
   end
 
   depends_on "python@3.12"

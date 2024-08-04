@@ -1,5 +1,3 @@
-require "languagenode"
-
 class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https:opensearch.orgdocsdashboardsindex"

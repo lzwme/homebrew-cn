@@ -11,7 +11,8 @@ class MavenShell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "07937b1a530b436e89a72f73244f782228dc02ee2b31e761e052e5367704a39e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8cf238b82fe150f113e5df470ec8f73d9d8cb58d940c716726a3442492a8fa16"
   end
 
   def install

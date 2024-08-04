@@ -24,6 +24,14 @@ class ShadowsocksLibev < Formula
     depends_on "libtool" => :build
   end
 
+  # From GitHub page:
+  # Bug-fix-only libev port of shadowsocks. Future development moved to shadowsocks-rust
+  #
+  # Unmerged dependency update PRs:
+  # * MbedTLS 3: https:github.comshadowsocksshadowsocks-libevpull2999
+  # * PCRE2:     https:github.comshadowsocksshadowsocks-libevpull1792
+  deprecate! date: "2024-12-31", because: "uses deprecated `mbedtls@2`"
+
   depends_on "asciidoc" => :build
   depends_on "xmlto" => :build
   depends_on "c-ares"

@@ -10,7 +10,8 @@ class Djvu2pdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "712580b5fb3dc550722146cdce9ce17c9928565a29433bd0697cb231691e566f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9fdbe69a5415de2630d2a2934f513f985db8d4917b5451ef0241fd125e1096fc"
   end
 
   depends_on "djvulibre"

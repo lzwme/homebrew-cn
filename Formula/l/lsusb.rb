@@ -6,8 +6,8 @@ class Lsusb < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "03895259bbcb43d072aacd4d000cb28807f5bff928bc8585663320beed5a7409"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "2bb1064f475b6066dde9e1ad55789b66bbc7335765f22ccd7e5961d20af59508"
   end
 
   depends_on :macos

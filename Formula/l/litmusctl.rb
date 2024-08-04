@@ -1,19 +1,19 @@
 class Litmusctl < Formula
   desc "Command-line interface for interacting with LitmusChaos"
   homepage "https:litmuschaos.io"
-  url "https:github.comlitmuschaoslitmusctlarchiverefstags1.7.0.tar.gz"
-  sha256 "f4e404b645651e0923d38b1c56ce4a6643bda3bc27d881cddbd82ee6f7a8a7e0"
+  url "https:github.comlitmuschaoslitmusctlarchiverefstags1.8.0.tar.gz"
+  sha256 "365b2c03da5545dffe091b99cd1b073ee06d7fd20aadb528c35aa8362053dcf3"
   license "Apache-2.0"
   head "https:github.comlitmuschaoslitmusctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "759b8b912e12e56367809c1389a1dc42ecb996e0818b8d48c78230eece199204"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3429e1e9b9afa4351ba6faa7febef4e975428c463acc980e13b9dc45a6aff8ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27d38278f443c4b1303540c00d1330d00d6259b1af252748c519a64637fccd9c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "73e32f9caa7682739a9fb3fdc1a0dfcc8a0ea34df11e4c97420f8816c0de8e3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "157525e079c48a6d21dfc2c8b5883f3dec051ee278114b35955080298e7a4110"
-    sha256 cellar: :any_skip_relocation, monterey:       "8172c13924467095707c294abbad0eb260a34d42dade14ec16943ecbe040037f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de011d67530d9dab5447c26000c1ec84cc27e6a922fa3ae1da8389b1ff8def9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df978efcb025d0e08830665221caa5294f33516dbd572fcbeb886a963ff3bd5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f049eaa2907149b5347f5e8c8fb036fb5abfde4e0c9e0331aff5ca8578295ae9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73b813461f7375d05981a6e150cdf164c7b0d3f054511374661ff5b6f180faf7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7066ff58c954bda7aea1d93024835177c86e99f674a85e91fa1af4fcd1b4868c"
+    sha256 cellar: :any_skip_relocation, ventura:        "807d6d3cfc259e2326677f0965c835cc22cee46030c9373d092b7b1e24e0b339"
+    sha256 cellar: :any_skip_relocation, monterey:       "59a3c624bbb0a728c4aeab51d83e80df9b321afa13a8d0672480fa2c782b0230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31cc8998a1db12a4fd96b36f77722c83077fdcfead01e3a8286cda6fb27c13d3"
   end
 
   depends_on "go" => :build

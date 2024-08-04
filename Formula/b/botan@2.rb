@@ -23,6 +23,10 @@ class BotanAT2 < Formula
 
   keg_only :versioned_formula
 
+  # Botan2 is currently scheduled to reach end of life at the end of 2024
+  # Ref: https:botan.randombit.net#releases
+  deprecate! date: "2024-12-31", because: :unsupported
+
   depends_on "pkg-config" => :build
   depends_on "python@3.12"
   depends_on "sqlite"

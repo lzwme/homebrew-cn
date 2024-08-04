@@ -7,7 +7,7 @@ class Tdb < Formula
 
   livecheck do
     url "https://www.samba.org/ftp/tdb/"
-    regex(/>tdb[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?tdb[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

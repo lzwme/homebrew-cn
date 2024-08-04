@@ -6,8 +6,8 @@ class PassOtp < Formula
   license "GPL-3.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "b0a96216fb3d12ceda70804c9995aea916716d476bcf9e18863cc84e78558198"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "e79fd90d07ba181d43a57123d3dfa85abbf2abf93f58dcb431e64823fcc7a19a"
   end
 
   depends_on "gnupg" => :test

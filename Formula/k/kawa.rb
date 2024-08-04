@@ -12,7 +12,8 @@ class Kawa < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4832b73db70b9b1c74289522820b9ba04c2eab1bf03285e4bfdfc76962c1123c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c7ea8432d31f2ae8fdcf5307d328016c728f51db2bc2c76f10161d7c40fcb962"
   end
 
   depends_on "openjdk"

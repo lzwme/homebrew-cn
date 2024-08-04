@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https:emscripten.org"
@@ -168,7 +166,7 @@ class Emscripten < Formula
     end
 
     cd libexec do
-      system "npm", "install", *Language::Node.local_npm_install_args
+      system "npm", "install", *std_npm_args(prefix: false)
       # Delete native GraalVM image in incompatible platforms.
       if OS.linux?
         rm_r("node_modulesgoogle-closure-compiler-linux")

@@ -21,10 +21,10 @@ class Liblxi < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   uses_from_macos "libxml2"
 
   on_linux do
-    depends_on "libpthread-stubs"
     depends_on "libtirpc"
   end
 

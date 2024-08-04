@@ -71,7 +71,7 @@ class Trino < Formula
     # Keep the Linux-x86_64 directory to make bottles identical
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "Linux-x86_64" } if build.bottle?
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "#{OS.kernel_name}-#{Hardware::CPU.arch}" }
-    libprocname_dirs.map(&:rmtree)
+    rm_r libprocname_dirs
   end
 
   def post_install

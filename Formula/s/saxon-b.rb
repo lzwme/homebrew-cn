@@ -14,7 +14,8 @@ class SaxonB < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f0d7ca97d0e55110811c6366183b021b8ec8906f323832ff2e7e302c288b5afc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "689001c5df91d0cf80e9ea2d72a5a8ae88abb45142dd47bf9797728d215d2139"
   end
 
   def install

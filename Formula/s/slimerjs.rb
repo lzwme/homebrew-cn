@@ -7,11 +7,21 @@ class Slimerjs < Formula
   head "https:github.comlaurentjslimerjs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8885664d7813c68ee458bf887d4e52ccf8164a05bd89d8f2a7e82a3a5c6396b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, ventura:        "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, monterey:       "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d942f6e440cc015898a1d2c114714fe133ec4aff583043f2e35c9c404a9e621c"
   end
+
+  uses_from_macos "zip" => :build
 
   def install
     ENV["TZ"] = "UTC"
+
     cd "src" do
       system "zip", "-o", "-X", "-r", "omni.ja", "chrome", "components",
         "modules", "defaults", "chrome.manifest", "-x@package_exclude.lst"

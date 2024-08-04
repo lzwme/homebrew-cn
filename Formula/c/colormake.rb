@@ -7,7 +7,8 @@ class Colormake < Formula
   head "https:github.compagekiteColormake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0022e24dd1386f086be55a80bdcd0b7de7c2871995a4980f18db436c69dc4c63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a628cc6cde2a938abc044ae867405b3232bc9c999b10729652fbe3088535da44"
   end
 
   def install

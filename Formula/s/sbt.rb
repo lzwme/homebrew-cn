@@ -12,13 +12,8 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, ventura:        "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, monterey:       "87f03b94101cc68d76391291198cbc3748ed65e39d9895868c7a8424b4a91896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fd644037d63df12036e3ff5b2b644505dd69bfa12aeefcf8384307498790c8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "975599c4d26039778f9c0fce1cecb2c08727cd2e54130e608268a8f6810e1fe6"
   end
 
   depends_on "openjdk"

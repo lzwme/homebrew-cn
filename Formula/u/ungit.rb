@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Ungit < Formula
   desc "Easiest way to use Git. On any platform. Anywhere"
   homepage "https:github.comFredrikNorenungit"
@@ -8,20 +6,21 @@ class Ungit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e65bc0c2b45f341c3c749e76f962073ba1d9bcdcaf62b1d312f0d52078ee3038"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e65bc0c2b45f341c3c749e76f962073ba1d9bcdcaf62b1d312f0d52078ee3038"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e65bc0c2b45f341c3c749e76f962073ba1d9bcdcaf62b1d312f0d52078ee3038"
-    sha256 cellar: :any_skip_relocation, sonoma:         "def35d1320fab5ec25c27c8b768d03a82b37124feafcbaab28f2b34acc88d115"
-    sha256 cellar: :any_skip_relocation, ventura:        "def35d1320fab5ec25c27c8b768d03a82b37124feafcbaab28f2b34acc88d115"
-    sha256 cellar: :any_skip_relocation, monterey:       "def35d1320fab5ec25c27c8b768d03a82b37124feafcbaab28f2b34acc88d115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e65bc0c2b45f341c3c749e76f962073ba1d9bcdcaf62b1d312f0d52078ee3038"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40d50a00a6fcb1bd6b995a309b2ec6b8ad7d0bf5bffbc34b20423232d123ff0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40d50a00a6fcb1bd6b995a309b2ec6b8ad7d0bf5bffbc34b20423232d123ff0a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "40d50a00a6fcb1bd6b995a309b2ec6b8ad7d0bf5bffbc34b20423232d123ff0a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f9d30cf8403390943062e14226a067f130c608db317dd46eda8a742c30ac808"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f9d30cf8403390943062e14226a067f130c608db317dd46eda8a742c30ac808"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f9d30cf8403390943062e14226a067f130c608db317dd46eda8a742c30ac808"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40d50a00a6fcb1bd6b995a309b2ec6b8ad7d0bf5bffbc34b20423232d123ff0a"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}bin*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin*")
   end
 
   test do
@@ -30,7 +29,7 @@ class Ungit < Formula
     fork do
       exec bin"ungit", "--no-launchBrowser", "--port=#{port}"
     end
-    sleep 8
+    sleep 15
 
     assert_includes shell_output("curl -s 127.0.0.1:#{port}"), "<title>ungit<title>"
   end

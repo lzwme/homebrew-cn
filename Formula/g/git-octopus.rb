@@ -6,8 +6,8 @@ class GitOctopus < Formula
   license "LGPL-3.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "06986d5465b1c7781cb3cfb2f64008ef3e91d240c97389dddbb90ffd3d3fdb4c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "7ab7be1a2f2ae60aeaf6a8887b4d7c444e282a9d55d82ce974932279b2569c25"
   end
 
   def install

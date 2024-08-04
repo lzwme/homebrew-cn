@@ -1,5 +1,3 @@
-require "languagenode"
-
 class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https:unison-lang.org"
@@ -60,7 +58,7 @@ class Unisonlang < Formula
 
     # Build and install the web interface
     resource("local-ui").stage do
-      system "npm", "install", *Language::Node.local_npm_install_args
+      system "npm", "install", *std_npm_args(prefix: false)
       # Replace pre-built x86_64 elm binary
       elm = Pathname("node_moduleselmbinelm")
       elm.unlink

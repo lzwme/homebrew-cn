@@ -6,7 +6,8 @@ class Savana < Formula
   license "LGPL-3.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bbc333eb6d0c02f820b36f15123a3711a548f52b2985f8a0c0f4c581f73990b0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b6925ea787e1eab59b57ca03a2df00c63e07931a2805ae1f389684ebe8852e5a"
   end
 
   depends_on "openjdk"

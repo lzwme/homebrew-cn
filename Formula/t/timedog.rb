@@ -7,7 +7,8 @@ class Timedog < Formula
   head "https:github.comnlfiedlertimedog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0fa4a5e282aa24e8c97c2b522a32f3182b6c6b6d83da1dd5590fe9f31b9215c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a0e45f17640f67392a0681305ed9ea138fde831f355a79ef857d05e1fd7e0b9e"
   end
 
   depends_on :macos

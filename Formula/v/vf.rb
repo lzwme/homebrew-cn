@@ -6,8 +6,11 @@ class Vf < Formula
   head "https:github.comglejeunevf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "af5c51ba431bf48386231cb735f98bf038dbf3145ea96d55924e12564748a93f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e5e2d467c81269aec65859de0dd589b4493e9be0b77d047433ae1d2b98184bce"
   end
+
+  uses_from_macos "ruby"
 
   def install
     # Since the shell file is sourced instead of run

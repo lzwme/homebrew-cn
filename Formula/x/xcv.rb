@@ -6,7 +6,8 @@ class Xcv < Formula
   head "https:github.combustercxcv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a715d85b4b84704d9f4f01949e017e0ed875e812b2c200ce7ba75102f8fb9769"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d9e0dfc790cbc0a90240e2964f439260ea656a826d7688730bd9c304232e733d"
   end
 
   def install

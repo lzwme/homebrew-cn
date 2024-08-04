@@ -21,7 +21,7 @@ class PamYubico < Formula
 
   # Deprecation date set to 1 year after upstream issue was created.
   # Issue opened on 2022-07-29: https:github.comYubicoyubico-pamissues242
-  deprecate! date: "2023-07-29", because: "uses deprecated `ykclient`"
+  disable! date: "2024-08-03", because: "uses deprecated `ykclient`"
 
   depends_on "pkg-config" => :build
   depends_on "libyubikey"

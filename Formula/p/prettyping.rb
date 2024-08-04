@@ -6,8 +6,8 @@ class Prettyping < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "692fabb668d4e7d526cfa9581fbb5454cad14f938a4ab407b9d416bd884c11c1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "507cf7f326024d3e369d6dd816af6391849d3a6c03dd942c5be7df370856317d"
   end
 
   # Fixes IPv6 handling on BSDOSX:

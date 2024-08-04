@@ -6,7 +6,8 @@ class Dasht < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "94ad1a43dc67fa38cef44f163f2577fbc8821cef94f5bb8cf00ca999d72e0364"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "14af08c8719ce7e688faa8b061141624a912960bc57d53499161428f08820b21"
   end
 
   depends_on "socat"
