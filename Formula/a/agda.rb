@@ -2,7 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https:wiki.portal.chalmers.seagda"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   stable do
     url "https:github.comagdaagdaarchiverefstagsv2.6.4.3-r1.tar.gz"
@@ -10,8 +10,8 @@ class Agda < Formula
     version "2.6.4.3"
 
     resource "stdlib" do
-      url "https:github.comagdaagda-stdlibarchiverefstagsv2.0.tar.gz"
-      sha256 "14eecb83d62495f701e1eb03ffba59a2f767491f728a8ab8c8bb9243331399d8"
+      url "https:github.comagdaagda-stdlibarchiverefstagsv2.1.tar.gz"
+      sha256 "72ca3ea25094efa0439e106f0d949330414232ec4cc5c3c3316e7e70dd06d431"
     end
 
     resource "cubical" do
@@ -38,14 +38,13 @@ class Agda < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "29261856a11b5d29452f3ccbde6318c88ff552e435708699b121cc495572d30b"
-    sha256 arm64_ventura:  "e58d2df494097189c5be89734395806d518da38c8d21b83ff6edc8f8db721b56"
-    sha256 arm64_monterey: "5ae8b9ae8787cc167a0b39b7b4b7d17be21e6654dd2868e6dbb71a2f594c904e"
-    sha256 sonoma:         "998241e20b2c5af10ce3cbfba7dbfcdd99e11f5c387a5fc4424d0da76294c304"
-    sha256 ventura:        "b5d53995badb244ee52c28b8b15900b3b8b18f9418d7923dfcb724ee8b505f65"
-    sha256 monterey:       "6124151ce410a6e66642fad8705cdc30d4f7be592305a320023a286dfd181659"
-    sha256 x86_64_linux:   "57a3411ee4dfa36e39030e6ec8b21a3d2e0d1be388bd6b8f2d6aeaa2d6ca12cc"
+    sha256 arm64_sonoma:   "37754c8fe159f96685467a321a30c35c7088c2fa7a5bf9912ba67c972d79399b"
+    sha256 arm64_ventura:  "34042e188e7e31f2c6dbc1596499524f25418d6336484820851f023245133e8d"
+    sha256 arm64_monterey: "d8b64716f20cd7037b6c3bc099b4260cd76d15404a6ace0ffa71313f8cf8a332"
+    sha256 sonoma:         "6aff1192bdc412c72806011171db6e07a3f8f5bcc389f8bb23924810fef15bfd"
+    sha256 ventura:        "341696bc1ea2218202bed2823be2ab56d75410570b25b83274958f63ca463939"
+    sha256 monterey:       "2a81118ecccc5e080caf92f85426a81eda64df40378fc6a1eca0e27e9fac6ddc"
+    sha256 x86_64_linux:   "921f03e6fc741c7be27df3982e9254214688fc9e9e51722950d327ae8d427f5d"
   end
 
   head do
@@ -75,13 +74,6 @@ class Agda < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # TODO: Remove when lib:Agda install works with latest cabal-install
-  # Ref: https:github.comagdaagdaissues7401
-  resource "cabal-install" do
-    url "https:hackage.haskell.orgpackagecabal-install-3.10.3.0cabal-install-3.10.3.0.tar.gz"
-    sha256 "a8e706f0cf30cd91e006ae8b38137aecf65983346f44d0cba4d7a60bbfa3da9e"
-  end
-
   def install
     cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
 
@@ -100,12 +92,21 @@ class Agda < Formula
     # relying on the Agda library just installed
     resource("agda2hs").stage "agda2hs-build"
     cd "agda2hs-build" do
-      # TODO: Remove when lib:Agda install works with latest cabal-install
-      resource("cabal-install").stage do
-        system "cabal", "v2-install", *cabal_args, "--installdir=#{buildpath}agda2hs-build"
+      # Use previously built Agda binary to work around build error with Cabal 3.12
+      # Issue ref: https:github.comagdaagdaissues7401
+      # TODO: Try removing workaround when Agda 2.7.0 is released
+      if build.stable?
+        odie "Try to remove Setup.hs workaround!" if version > "2.6.4.3"
+        Pathname("cabal.project.local").write "packages: .agda2hs.cabal ..Agda.cabal"
+        inreplace buildpath"Setup.hs", ' agda = bdir <> "agda" <> "agda" <.> agdaExeExtension',
+                                        " agda = \"#{bin}agda\" <.> agdaExeExtension"
       end
 
-      system ".cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
+      # Work around to build agda2hs with GHC 9.10
+      # Issue ref: https:github.comagdaagda2hsissues347
+      inreplace "agda2hs.cabal", ( base .*&&) < 4\.20,, "\\1 < 4.21,", build.stable?
+
+      system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
     end
 
     # generate the standard library's documentation and vim highlighting files

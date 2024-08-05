@@ -25,28 +25,29 @@ class QuartzWm < Formula
   depends_on "xorg-server" => :test
 
   depends_on "libapplewm"
+  depends_on "libx11"
+  depends_on "libxext"
   depends_on "libxinerama"
   depends_on "libxrandr"
   depends_on :macos
   depends_on "pixman"
 
   def install
-    configure_args = std_configure_args + %W[
-      --with-bundle-id-prefix=#{Formula["xinit"].plist_name.chomp ".startx"}
-    ]
-
-    system "autoreconf", "-i"
-    system "./configure", *configure_args
-    system "make"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--with-bundle-id-prefix=#{Formula["xinit"].plist_name.chomp ".startx"}",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
+    ENV["DISPLAY"] = ":1"
+
     fork do
       exec Formula["xorg-server"].bin/"Xvfb", ":1"
     end
-    ENV["DISPLAY"] = ":1"
-    sleep 10
+
+    sleep 5
+
     fork do
       exec bin/"quartz-wm"
     end

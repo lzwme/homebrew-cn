@@ -85,7 +85,7 @@ class Gmt < Formula
   end
 
   test do
-    system bin" pscoast -R0360-7070 -Jm1.2e-2i -Ba60f30a30f15 -Dc -G240 -W10 -P > test.ps"
-    assert_predicate testpath"test.ps", :exist?
+    cmd = "#{bin}gmt pscoast -R0360-7070 -Jm1.2e-2i -Ba60f30a30f15 -Dc -G240 -W10 -P"
+    refute_predicate shell_output(cmd), :empty?
   end
 end

@@ -1,19 +1,26 @@
 class Ffind < Formula
+  include Language::Python::Shebang
+
   desc "Friendlier find"
   homepage "https:github.comsjlfriendly-find"
   url "https:github.comsjlfriendly-findarchiverefstagsv1.0.1.tar.gz"
   sha256 "cf30e09365750a197f7e041ec9bbdd40daf1301e566cd0b1a423bf71582aad8d"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8fd5e399110b236d851503a23d805401c82799c3a43cd30a5ab03ee7adc3088c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "04003304502f97107473f1e6be50bf658ff48ec2f8b3c2b12e743279bbfcb2a7"
   end
+
+  uses_from_macos "python"
 
   conflicts_with "sleuthkit",
     because: "both install a `ffind` executable"
 
   def install
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "ffind"
     bin.install "ffind"
+    man1.install "ffind.1"
   end
 
   test do

@@ -36,6 +36,6 @@ class Zork < Formula
         A leaflet.
       >
     EOS
-    assert_equal test_phrase, pipe_output("#{bin}zork", "open mailbox", 0)
+    assert_equal test_phrase, pipe_output(bin"zork", "open mailbox", 0)
   end
 end

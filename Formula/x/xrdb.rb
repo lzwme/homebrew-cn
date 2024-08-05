@@ -20,23 +20,23 @@ class Xrdb < Formula
   depends_on "pkg-config"  => :build
   depends_on "xorg-server" => :test
 
+  depends_on "libx11"
   depends_on "libxmu"
 
   def install
-    configure_args = std_configure_args + %w[
-      --with-cpp=/usr/bin/cpp
-    ]
-    system "./configure", *configure_args
-    system "make"
+    system "./configure", "--with-cpp=/usr/bin/cpp", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
+    ENV["DISPLAY"] = ":1"
+
     fork do
       exec Formula["xorg-server"].bin/"Xvfb", ":1"
     end
-    ENV["DISPLAY"] = ":1"
-    sleep 10
+
+    sleep 5
+
     system bin/"xrdb", "-query"
   end
 end

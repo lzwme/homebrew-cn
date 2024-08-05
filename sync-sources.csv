@@ -873,6 +873,7 @@ Homebrew-homebrew-core/Formula/c/clang-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-uml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/clangql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 1
@@ -4246,9 +4247,10 @@ Homebrew-homebrew-core/Formula/m/mysql++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@5.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-search-replace.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@5.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysqltuner.rb, Homebrew/homebrew-core, 1
@@ -4539,6 +4541,7 @@ Homebrew-homebrew-core/Formula/o/onedpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onedrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onefetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oniguruma.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/onion-location.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onioncat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onionprobe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onlykey-agent.rb, Homebrew/homebrew-core, 1
@@ -5057,6 +5060,7 @@ Homebrew-homebrew-core/Formula/p/prodigal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/profanity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proftpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/progress.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/progressline.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proguard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proj@7.rb, Homebrew/homebrew-core, 1
@@ -5833,7 +5837,6 @@ Homebrew-homebrew-core/Formula/s/snow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowball.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snowflake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snownews.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/snowpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snyk-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snzip.rb, Homebrew/homebrew-core, 1
@@ -8394,6 +8397,7 @@ Homebrew-homebrew-cask/Casks/f/finbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/find-any-file.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/find-empty-folders.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/find-my-ports.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/findergo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fing-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fing.rb, Homebrew/homebrew-cask, 0
@@ -14037,7 +14041,7 @@ Homebrew-homebrew-cask/Casks/x/xnconvert.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xnviewmp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xonotic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xournal-plus-plus.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/x/xpra.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xpra.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xprocheck.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xquartz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xrg.rb, Homebrew/homebrew-cask, 0

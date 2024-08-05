@@ -1,8 +1,8 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https:github.comGenymobilescrcpy"
-  url "https:github.comGenymobilescrcpyarchiverefstagsv2.6.tar.gz"
-  sha256 "d13ff4149d2ee0b40099348a57fa6d16e3fdebe7f6168f02f65ea9b3ceb337c1"
+  url "https:github.comGenymobilescrcpyarchiverefstagsv2.6.1.tar.gz"
+  sha256 "4948474f1494fdff852a0a7fa823a0b3c25d3ea0384acdaf46c322e34b13e449"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Scrcpy < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7c6c595842bf23e39e45bbefebe51e05f9c213646e8a53204a6ca3216757a5cd"
-    sha256 arm64_ventura:  "51e600bc86b93f0a2e4b5f3af587430f558210d7f37175037a071de753216c8b"
-    sha256 arm64_monterey: "a986a46d57a836268efa9f6ad4be0ecbd2e0d8599642b6ced293307b143cffa6"
-    sha256 sonoma:         "d26eff38114ca62da12aaec65385235828890b79b1c0f30054435004d1ca07f3"
-    sha256 ventura:        "60d0fbd3d3319945ba1d5c2f328bd21fce974ddbfd63cea46cb984f831f1b509"
-    sha256 monterey:       "aeb3b8bd0c09fa783027a9e1efdd5bc846f06e13e83d3e7335b399c455e2484b"
-    sha256 x86_64_linux:   "c01251ba0115a463f952c5ec182ade165ec134dfe296fd91cbf1f55aa14dc407"
+    sha256 arm64_sonoma:   "2a611dde83725f361b2bcba85156a37c872353e602afc24b363ae9ba4c9650df"
+    sha256 arm64_ventura:  "2470c7ec01faf6fc3aee531abbb916fa8a042363050ce267a1d3df9fbad0431f"
+    sha256 arm64_monterey: "b30584bbb426a7544684a0a8791f914424f08de59bdba0ec1a5f48ae19e9e028"
+    sha256 sonoma:         "ba1cfef97e9f9390cf6f81e5ca05a28522f2fabb144e6b7b62b80b6d276d9cc2"
+    sha256 ventura:        "2a90d0436c33d2569a1fc47022f03359b39518273ba4f3595fe9efb0ef721336"
+    sha256 monterey:       "7df647ca2269e1ad8ad68da2d52b4ee21b6497395fd4b5c823eacb32674ea6c4"
+    sha256 x86_64_linux:   "174bcbe00d23a459721fcfcfc99b7155380e679bdcbb966b6e3b91195300084e"
   end
 
   depends_on "meson" => :build
@@ -30,8 +30,8 @@ class Scrcpy < Formula
   fails_with gcc: "5"
 
   resource "prebuilt-server" do
-    url "https:github.comGenymobilescrcpyreleasesdownloadv2.6scrcpy-server-v2.6"
-    sha256 "7b723ff79a27f14e6ebaaaae7ef9548c40651c94e64d178612b13adf7158eb2e"
+    url "https:github.comGenymobilescrcpyreleasesdownloadv2.6.1scrcpy-server-v2.6.1", using: :nounzip
+    sha256 "ca7ab50b2e25a0e5af7599c30383e365983fa5b808e65ce2e1c1bba5bfe8dc3b"
   end
 
   def install
