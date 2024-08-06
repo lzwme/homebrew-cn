@@ -48,6 +48,10 @@ class Collectd < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "perl"
 
+  on_macos do
+    depends_on "libgpg-error"
+  end
+
   def install
     # Workaround for: Built-in generator --c_out specifies a maximum edition
     # PROTO3 which is not the protoc maximum 2023.
@@ -85,7 +89,7 @@ class Collectd < Formula
     EOS
     begin
       pid = fork { exec sbin"collectd", "-f", "-C", "collectd.conf" }
-      sleep 1
+      sleep 3
       assert_predicate log, :exist?, "Failed to create log file"
       assert_match "plugin \"memory\" successfully loaded.", log.read
     ensure

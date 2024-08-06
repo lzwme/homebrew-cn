@@ -5,6 +5,11 @@ class Azcopy < Formula
   sha256 "71684c5c1a2c192fb1168ec57a11cd76a3691bb6e1631cab3c1fe61a4dad1bc7"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4507cc4f4cda254231ce24bb94e9ed8d3c626c7ed44a052e4900f53650bc1b58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6620d5556d773e002a62efd67a7f55265b5c840b9d1fc9e8f218277d69d73d86"
@@ -14,8 +19,6 @@ class Azcopy < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "0b90a79afb8259f9e5b1a47ef2ee5776c4846d4d27085fd9ac5dc719d12275ba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb5a640a1656328d550dad84155cfa5ebfdcbfb55041d3799daae2070d0c3a3d"
   end
-
-  deprecate! date: "2024-08-01", because: :repo_archived
 
   depends_on "go" => :build
 

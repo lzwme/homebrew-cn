@@ -65,15 +65,25 @@ class Moc < Formula
   depends_on "pkg-config" => :build
   depends_on "berkeley-db@5"
   depends_on "ffmpeg@4" # FFmpeg 5 issue: https:moc.daper.netnode3644
+  depends_on "flac"
   depends_on "jack"
+  depends_on "libogg"
+  depends_on "libsamplerate"
+  depends_on "libsndfile"
   depends_on "libtool"
+  depends_on "libvorbis"
   depends_on "ncurses"
+  depends_on "speex"
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     # Not needed for > 2.5.2
-    system "autoreconf", "-fvi"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-debug", "--prefix=#{prefix}"
     system "make", "install"
   end

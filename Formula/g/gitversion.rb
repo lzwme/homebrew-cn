@@ -1,18 +1,18 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https:gitversion.net"
-  url "https:github.comGitToolsGitVersionarchiverefstags6.0.0.tar.gz"
-  sha256 "b0de243cbf3a59a1415efce35aec8531caef17dd05562d18e9777f98a4a4b973"
+  url "https:github.comGitToolsGitVersionarchiverefstags6.0.1.tar.gz"
+  sha256 "8939f6c7deafb9a7c08219b13d9955165cce79cf9959ce60ae51c66a155d71d4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "40c413fb8178335e100db2961d37edd1869e5b405ea01d25fc6e0cee3c7ee0e3"
-    sha256 cellar: :any,                 arm64_ventura:  "1626b82250004a371b336a29fe37ac5cd689e1db889ba43d1cb6dbbb65fd0271"
-    sha256 cellar: :any,                 arm64_monterey: "08fd171e3e5bc122dc3366ffc16c25892a77c882ee1ca2ed818d6f9321c36698"
-    sha256 cellar: :any,                 sonoma:         "95d355db1c6f04f67c121e93cfba36b98bd9ba433b484f730cdbe58f376b1ab6"
-    sha256 cellar: :any,                 ventura:        "c79a9de564e35d31aa469a61d8ebb72135c9d18a621132a066b0ac1b0b381956"
-    sha256 cellar: :any,                 monterey:       "3c565d656be2953995934e51ed0ee3a4cc08d16fba65835a1367b49c469a7f71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3afc85979da0857e1f39bd86910f546a5a7e631f1bc001f03bbacab39f25c540"
+    sha256 cellar: :any,                 arm64_sonoma:   "5533ce2a187084f933b5609f5877b8459687d0a6c6cfcf66359cb52081d82131"
+    sha256 cellar: :any,                 arm64_ventura:  "e8ba459cb561d5fda1ae28d1af04ddce475e64721b113b2330157cb17d12f745"
+    sha256 cellar: :any,                 arm64_monterey: "f2605ae56ffc877be7d5838f530916827cb2fd1d027c4388ebbd101afd3dc9a2"
+    sha256 cellar: :any,                 sonoma:         "44f41dd4f4334f035a185110daf188a060b0366a6ef1f41f206a096ea24bceb9"
+    sha256 cellar: :any,                 ventura:        "47f4413f6ab2c7931438c787aaac84756e2f634f17ec98589411b023faa036c5"
+    sha256 cellar: :any,                 monterey:       "3999ba998ec2391bc26e441fefdf6ceaa2b5b75ddc93cf03bf1f50e6f6f59310"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7250849c142bd25f32a6a026a0b1338cc7fb24097b3e74b25647035664e8fca3"
   end
 
   depends_on "dotnet"

@@ -24,23 +24,35 @@ class Icemon < Formula
   depends_on "extra-cmake-modules" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
+
   depends_on "icecream"
   depends_on "lzo"
   depends_on "qt@5"
+  depends_on "zstd"
+
+  on_macos do
+    depends_on "libarchive"
+  end
+
+  on_linux do
+    depends_on "libcap-ng"
+  end
 
   fails_with gcc: "5"
 
   def install
-    system "cmake", ".", "-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}ECMcmake", *std_cmake_args
-    system "make", "install"
+    args = "-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}ECMcmake"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     if OS.mac?
       system bin"icemon", "--version"
     else
-      assert_match("qt.qpa.xcb: could not connect to display",
-                         shell_output("#{bin}icemon --version 2>&1", 134))
+      output = shell_output("#{bin}icemon --version 2>&1", 134)
+      assert_match "qt.qpa.xcb: could not connect to display", output
     end
   end
 end

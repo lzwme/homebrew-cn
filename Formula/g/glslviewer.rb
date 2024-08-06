@@ -20,8 +20,15 @@ class Glslviewer < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg"
   depends_on "glfw"
+
+  uses_from_macos "ncurses"
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -32,8 +39,8 @@ class Glslviewer < Formula
   end
 
   test do
-    cp_r "#{pkgshare}examplesio.", testpath
-    pid = fork { exec "#{bin}glslViewer", "orca.frag", "-l" }
+    cp_r pkgshare"examplesio.", testpath
+    pid = fork { exec bin"glslViewer", "orca.frag", "-l" }
     sleep 1
   ensure
     Process.kill("HUP", pid)

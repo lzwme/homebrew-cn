@@ -24,7 +24,15 @@ class Gtksourceview3 < Formula
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
+  depends_on "at-spi2-core"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "pango"
+
+  uses_from_macos "libxml2"
 
   on_macos do
     depends_on "autoconf" => :build
@@ -32,14 +40,16 @@ class Gtksourceview3 < Formula
     depends_on "gtk-doc" => :build
     depends_on "libtool" => :build
     depends_on "gettext"
+    depends_on "harfbuzz"
   end
 
   def install
     system "autoreconf", "--verbose", "--install", "--force" if OS.mac?
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+
+    system "./configure", "--disable-silent-rules",
                           "--enable-vala=yes",
-                          "--enable-introspection=yes"
+                          "--enable-introspection=yes",
+                          *std_configure_args
     system "make", "install"
   end
 
@@ -52,7 +62,7 @@ class Gtksourceview3 < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
+
     flags = shell_output("pkg-config --cflags --libs gtksourceview-3.0").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

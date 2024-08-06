@@ -1,18 +1,18 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https:github.comignitecli"
-  url "https:github.comignitecliarchiverefstagsv28.5.0.tar.gz"
-  sha256 "236a8c7ab1d7477f3e59c6dd857307044381d8a7257f38377876e6353b64d2d9"
+  url "https:github.comignitecliarchiverefstagsv28.5.1.tar.gz"
+  sha256 "6e8e9a5f596346c6824adcab73691db28addcee5bb015ea04e8f121eb508e7e7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aca55ee37df556df1fda06c6aba67ba70ae089f4872fd9374f4f7c0d08e56f87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3385df8c8393cc66eb604a72567cd38d50dd3d30455706421c0aff5f2c23392"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dab20bdec38aa93918f6a8b103482eb878cc5501a3eea925b2d71fccf2932753"
-    sha256 cellar: :any_skip_relocation, sonoma:         "decaa183fcac690023beb5f07ff08dca9b51606bc56adfdbbb44894aeffbcc62"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f6e3519458fe478eecc4bacb85a257bb72ae7ad311e6172e3691f1746362eae"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc4097be74ac209574894a152cffa39a6eafa03bac852cb8c900f23b4cc84b08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d46bcb0260ca34ab9a93debbd27fbfdd4cf87aa41cfd731e3d108d35a559531"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23b6fe61222d768af4b385bd73a0a317d0c2836784a79fc707694726a3762357"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d45e9e586ace5df465adae98d500d636c0d7dd0668178fb1a5f0b99285c02127"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3339d46c3bf97b92cabaca1f97e6dec20dcb16dd1c55971575b23c144bfae3cf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd9a256c799152f35562aa0fdf5c0545af0b7138b3bc073a1cf9d9b316b2c815"
+    sha256 cellar: :any_skip_relocation, ventura:        "6300033dccd952a9e0e821788b45e8e2cd1b584f2757bfc3e23d5fe82bd0b2c5"
+    sha256 cellar: :any_skip_relocation, monterey:       "4715fbed23a01d8f2bd082b3ed8fee77dba5863b1e555a227be1cb97156366b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccc5a6f6477da7eaf31f05443213204a23bcde7b2814330a27ca89188994d686"
   end
 
   depends_on "go"

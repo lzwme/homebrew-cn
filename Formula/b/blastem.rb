@@ -31,6 +31,10 @@ class Blastem < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "mesa"
+  end
+
   resource "vasm" do
     url "http://phoenix.owl.de/tags/vasm1_8i.tar.gz"
     sha256 "9ae0b37bca11cae5cf00e4d47e7225737bdaec4028e4db2a501b4eca7df8639d"

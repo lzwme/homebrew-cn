@@ -29,9 +29,23 @@ class GtkVnc < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gnutls"
   depends_on "gtk+3"
   depends_on "libgcrypt"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   # coroutine: avoid ucontext impl on macOS M1 hardware. Remove in the next release
   patch do
@@ -46,6 +60,6 @@ class GtkVnc < Formula
   end
 
   test do
-    system bin/"ccapture", "--help"
+    system bin/"gvnccapture", "--help"
   end
 end

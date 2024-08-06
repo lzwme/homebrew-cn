@@ -26,6 +26,10 @@ class Bochs < Formula
 
   uses_from_macos "ncurses"
 
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}

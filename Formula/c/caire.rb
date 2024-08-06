@@ -23,7 +23,9 @@ class Caire < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "vulkan-headers" => :build
+    depends_on "libx11"
     depends_on "libxcursor"
+    depends_on "libxfixes"
     depends_on "libxkbcommon"
     depends_on "mesa"
     depends_on "wayland"

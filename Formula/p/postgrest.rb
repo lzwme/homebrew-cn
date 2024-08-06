@@ -21,12 +21,15 @@ class Postgrest < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "859074efdeb538c72381300a6a9c9e0454fd0927ef4205dbde0ca6bc69cd60b8"
   end
 
-  depends_on "ghc@9.6" => :build
-  depends_on "haskell-stack" => :build
+  depends_on "cabal-install" => :build
+  depends_on "ghc@9.8" => :build
   depends_on "libpq"
 
+  uses_from_macos "zlib"
+
   def install
-    system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", "--ignore-project", *std_cabal_v2_args
   end
 
   test do

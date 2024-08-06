@@ -8,13 +8,14 @@ class Mpv < Formula
   head "https:github.commpv-playermpv.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "93d5aa968907b390fcd666243a1dcb6a66a059216f79d3560203ce1da3b412c1"
-    sha256 arm64_ventura:  "9c95d2ac2955c3fb4a94c0424eacb328c58f45c218c55c2a12a896cda30d382b"
-    sha256 arm64_monterey: "941e7df30544e5e570fdf3ff91d34ecda42604586ae0c4cebd6f8016c581bbd8"
-    sha256 sonoma:         "8f37893df91d065a0a263ae10a0e5962620fdf245c8c5f4bb0d56dc22957f9a8"
-    sha256 ventura:        "76e6244d443ed7ec9fd093e4862a3300433e91346b70f868311e01e722a20912"
-    sha256 monterey:       "b1fbee73afe693264741b853a622b123c5bd6e836f9884d6bbfb019059a38053"
-    sha256 x86_64_linux:   "e344dd51ed38cb8711a651aef37ce12d9677054cb2ad71adca20ac550f9b5b73"
+    rebuild 1
+    sha256 arm64_sonoma:   "4dbf5f21d142921fd15db9e065d9a8676c4a20c4970b38decc75a698aeb55013"
+    sha256 arm64_ventura:  "d28db8e432434297ae11de44b9e1cd1f12dee57a2dee230b37ef04a82ffc532d"
+    sha256 arm64_monterey: "58a95b46e9b55f0739dc424a286a835f94ae02e1f29dccf97c03e6779870d2b1"
+    sha256 sonoma:         "dee2503d155630932ab26f9296c9f2fbe02135df9e6eaa7e85b329edb03427ef"
+    sha256 ventura:        "bcd8baa2f0376fb6979d5b5f690d04a250c3e4be6ed086c79d763f754e34f4de"
+    sha256 monterey:       "bbedc9e4e1b95a0db432bb6ab040af1b10de8c48a9619803c95b311bc286fb55"
+    sha256 x86_64_linux:   "3a1e0b8cc2f36392714bd044fae7066f54b353421c32c782a6f67a9736e4ffdc"
   end
 
   depends_on "docutils" => :build
@@ -27,7 +28,6 @@ class Mpv < Formula
   depends_on "libass"
   depends_on "libbluray"
   depends_on "libplacebo"
-  depends_on "libsamplerate"
   depends_on "little-cms2"
   depends_on "luajit"
   depends_on "mujs"
@@ -46,7 +46,19 @@ class Mpv < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libdrm"
+    depends_on "libva"
+    depends_on "libvdpau"
+    depends_on "libx11"
+    depends_on "libxext"
+    depends_on "libxkbcommon"
+    depends_on "libxpresent"
+    depends_on "libxrandr"
+    depends_on "libxscrnsaver"
+    depends_on "libxv"
+    depends_on "mesa"
     depends_on "pulseaudio"
+    depends_on "wayland"
   end
 
   def install
@@ -59,19 +71,28 @@ class Mpv < Formula
     ENV["NINJA"] = Formula["ninja"].opt_bin"ninja"
 
     # libarchive is keg-only
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig" if OS.mac?
 
     args = %W[
+      -Dbuild-date=false
       -Dhtml-build=enabled
       -Djavascript=enabled
       -Dlibmpv=true
       -Dlua=luajit
       -Dlibarchive=enabled
       -Duchardet=enabled
+      -Dvulkan=enabled
       --sysconfdir=#{pkgetc}
       --datadir=#{pkgshare}
       --mandir=#{man}
     ]
+    if OS.linux?
+      args += %w[
+        -Degl=enabled
+        -Dwayland=enabled
+        -Dx11=enabled
+      ]
+    end
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

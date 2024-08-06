@@ -2,7 +2,7 @@ class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https:ledger-cli.org"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https:github.comledgerledger.git", branch: "master"
 
   stable do
@@ -27,13 +27,13 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bb9834ceed45016edd34db30241a5474f8fe6cf55b75f9c8a63e1d8c6268ac2b"
-    sha256 cellar: :any,                 arm64_ventura:  "ca8de31777a7dd2afc9735b178e415e5e8034e34585193f3c68b31b39f2fe64b"
-    sha256 cellar: :any,                 arm64_monterey: "820af38e740ca052be182d4922ccc25cb5f9b15dd2ab83bea550dd8b275ffde8"
-    sha256 cellar: :any,                 sonoma:         "3f41fb3d90e6b5844ac30fa76a0facdb185ffaa78d711e64f887e5e8b147943c"
-    sha256 cellar: :any,                 ventura:        "2555b42ce1063b39910f906f7250080776884ebd1555e51a35dce1eabb88a48d"
-    sha256 cellar: :any,                 monterey:       "c20b917ab8d18494aa0bdb2fb8d8e6bba5c4c2909ae0fc5eb3c8ccc4b2b4e699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d960afd65dcd0c32dd4699883907b7a444e1f32753a03082b07826f6e7b7f09"
+    sha256 cellar: :any,                 arm64_sonoma:   "60ac96b0bfcb2426e6b3aaf06469abb779ec0cd62ce1a17aa7bf7662b2431059"
+    sha256 cellar: :any,                 arm64_ventura:  "9b7a4add3841f03fff22581461f97a641f6c2bad4aead31591dff19b356a7fa4"
+    sha256 cellar: :any,                 arm64_monterey: "3eb4fb8697fe8c348e37928eda6960d00f784f65a244cdf96609c8fd48335a99"
+    sha256 cellar: :any,                 sonoma:         "83c694de6d2cd94909106e1f30a11ade60d22093e6d654599a0433f508b07d8c"
+    sha256 cellar: :any,                 ventura:        "4a699b36e5d09a6f928c4a3b1eea44ac474ab897f9bb9099a86f8950d8172dc1"
+    sha256 cellar: :any,                 monterey:       "f1c7bcf2452c2cf15d063ddf01db53e534240c1b782dd10ac3fd88cbc129dada"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd2794ce3d53f5ac6694a58d08a63b84a9dc679c61b03f8434dc9f7842a98b76"
   end
 
   depends_on "cmake" => :build

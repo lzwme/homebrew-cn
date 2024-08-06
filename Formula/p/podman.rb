@@ -186,11 +186,8 @@ class Podman < Formula
       assert_match "Machine init complete", out
       system bin"podman-remote", "machine", "rm", "-f", "homebrew-testvm"
     else
-      assert_equal %W[
-        bin"podman"
-        bin"podman-remote"
-        #{bin}podmansh
-      ].sort, Dir[bin"*"]
+      assert_equal %w[podman podman-remote podmansh]
+        .map { |binary| File.join(bin, binary) }.sort, Dir[bin"*"]
       assert_equal %W[
         #{libexec}podmancatatonit
         #{libexec}podmannetavark

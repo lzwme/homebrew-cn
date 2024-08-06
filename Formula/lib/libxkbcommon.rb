@@ -26,6 +26,7 @@ class Libxkbcommon < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "libxcb"
   depends_on "xkeyboardconfig"
   depends_on "xorg-server"
 
@@ -39,6 +40,7 @@ class Libxkbcommon < Formula
       -Dxkb-config-root=#{HOMEBREW_PREFIX}shareX11xkb
       -Dx-locale-root=#{HOMEBREW_PREFIX}shareX11locale
     ]
+
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -54,6 +56,7 @@ class Libxkbcommon < Formula
           : EXIT_SUCCESS;
       }
     EOS
+
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxkbcommon",
                    "-o", "test"
     system ".test"

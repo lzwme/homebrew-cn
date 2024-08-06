@@ -3,7 +3,7 @@ class Grsync < Formula
   homepage "https://www.opbyte.it/grsync/"
   url "https://downloads.sourceforge.net/project/grsync/grsync-1.3.1.tar.gz"
   sha256 "33cc0e25daa62e5ba7091caea3c83a8dc74dc5d7721c4501d349f210c4b3c6d3"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   revision 1
 
   bottle do
@@ -19,9 +19,18 @@ class Grsync < Formula
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "pango"
 
   uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build

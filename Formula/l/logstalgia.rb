@@ -26,6 +26,7 @@ class Logstalgia < Formula
 
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
+
   depends_on "boost"
   depends_on "freetype"
   depends_on "glew"
@@ -33,6 +34,11 @@ class Logstalgia < Formula
   depends_on "pcre2"
   depends_on "sdl2"
   depends_on "sdl2_image"
+
+  on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
 
   def install
     ENV.cxx11

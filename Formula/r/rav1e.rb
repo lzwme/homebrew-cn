@@ -1,19 +1,10 @@
 class Rav1e < Formula
   desc "Fastest and safest AV1 video encoder"
   homepage "https:github.comxiphrav1e"
+  url "https:github.comxiphrav1earchiverefstagsv0.7.1.tar.gz"
+  sha256 "da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c"
   license "BSD-2-Clause"
   head "https:github.comxiphrav1e.git", branch: "master"
-
-  stable do
-    url "https:github.comxiphrav1earchiverefstagsv0.7.1.tar.gz"
-    sha256 "da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c"
-
-    # keep the version in sync
-    resource "Cargo.lock" do
-      url "https:github.comxiphrav1ereleasesdownloadv0.7.1Cargo.lock"
-      sha256 "4482976bfb7647d707f9a01fa1a3848366988f439924b5c8ac7ab085fba24240"
-    end
-  end
 
   livecheck do
     url :stable
@@ -38,11 +29,8 @@ class Rav1e < Formula
   end
 
   def install
-    odie "Cargo.lock resource needs to be updated" if build.stable? && version != resource("Cargo.lock").version
-
-    buildpath.install resource("Cargo.lock") if build.stable?
     system "cargo", "install", *std_cargo_args
-    system "cargo", "cinstall", "--prefix", prefix
+    system "cargo", "cinstall", "--prefix", prefix, "--libdir", lib
   end
 
   test do

@@ -18,6 +18,7 @@ class Yewtube < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "720dc571b204ba3939140db726ca146e5ba4918c1af4c79989caea87be40458e"
   end
 
+  depends_on "ffmpeg"
   depends_on "mplayer"
   depends_on "python@3.12"
 

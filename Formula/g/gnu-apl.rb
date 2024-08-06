@@ -25,11 +25,27 @@ class GnuApl < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "libpng"
+  depends_on "libx11"
+  depends_on "libxcb"
+  depends_on "pcre2"
   depends_on "readline" # GNU Readline is required, libedit won't work
+  depends_on "sqlite"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
+
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
@@ -41,8 +57,9 @@ class GnuApl < Formula
     EOS
 
     pid = fork do
-      exec "#{bin}/APserver"
+      exec bin/"APserver"
     end
+
     sleep 4
 
     begin

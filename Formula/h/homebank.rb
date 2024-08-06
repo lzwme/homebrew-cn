@@ -24,16 +24,26 @@ class Homebank < Formula
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gettext"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
   depends_on "libofx"
   depends_on "libsoup"
+  depends_on "pango"
 
   uses_from_macos "perl"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build
@@ -50,8 +60,7 @@ class Homebank < Formula
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin"perl"
     end
 
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--with-ofx"
+    system ".configure", "--with-ofx", *std_configure_args.reject { |s| s["--disable-debug"] }
     chmod 0755, ".install-sh"
     system "make", "install"
   end

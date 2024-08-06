@@ -22,12 +22,29 @@ class Gtksourceviewmm3 < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
+
+  depends_on "atkmm@2.28"
+  depends_on "cairomm@1.14"
+  depends_on "glib"
+  depends_on "glibmm@2.66"
+  depends_on "gtk+3"
   depends_on "gtkmm3"
   depends_on "gtksourceview3"
+  depends_on "libsigc++@2"
+  depends_on "pangomm@2.46"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
 
   def install
     ENV.cxx11
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
@@ -40,10 +57,9 @@ class Gtksourceviewmm3 < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
-    command = "#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtksourceviewmm-3.0"
-    flags = shell_output(command).strip.split
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
+
+    pkg_config_cflags = shell_output("pkg-config --cflags --libs gtksourceviewmm-3.0").chomp.split
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkg_config_cflags
     system "./test"
   end
 end

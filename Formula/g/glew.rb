@@ -25,11 +25,15 @@ class Glew < Formula
 
   on_linux do
     depends_on "freeglut" => :test
+    depends_on "libx11"
+    depends_on "mesa"
     depends_on "mesa-glu"
   end
 
   def install
-    system "cmake", "-S", ".buildcmake", "-B", "_build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "-S", ".buildcmake", "-B", "_build",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args(find_framework: "FIRST")
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
     doc.install Dir["doc*"]

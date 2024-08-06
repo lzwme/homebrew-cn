@@ -28,6 +28,7 @@ class Forge < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
+
   depends_on "fontconfig"
   depends_on "freeimage"
   depends_on "freetype"
@@ -35,12 +36,15 @@ class Forge < Formula
   depends_on "glm"
   depends_on "libx11"
 
+  on_linux do
+    depends_on "mesa"
+  end
+
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "examples"
   end
 

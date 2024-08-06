@@ -1,13 +1,12 @@
 class MysqlClientAT84 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.4/en/"
-  url "https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-8.4.2.tar.gz"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.2.tar.gz"
   sha256 "5657a78dc86bf0bf2227e0b05f8de5a2c447a816a112ffa26fa70083bcbe9814"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(8\.4(?:\.\d+)*)\.t/i)
+    formula "mysql@8.4"
   end
 
   bottle do

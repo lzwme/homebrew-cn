@@ -19,13 +19,20 @@ class GupnpTools < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
+
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gssdp"
   depends_on "gtk+3"
   depends_on "gtksourceview4"
   depends_on "gupnp"
   depends_on "gupnp-av"
   depends_on "libsoup"
+  depends_on "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Backport fix for libxml 2.12. Remove in the next release.
   patch do

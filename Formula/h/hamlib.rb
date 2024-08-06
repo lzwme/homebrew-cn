@@ -22,14 +22,18 @@ class Hamlib < Formula
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "libtool"
+  depends_on "libusb"
   depends_on "libusb-compat"
+
+  on_linux do
+    depends_on "readline"
+  end
 
   fails_with gcc: "5"
 
   def install
     system ".bootstrap" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

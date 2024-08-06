@@ -4,16 +4,17 @@ class Deno < Formula
   url "https:github.comdenolanddenoreleasesdownloadv1.45.5deno_src.tar.gz"
   sha256 "7877cc166a62408d5b0c07e35c750d1ddbde45cfc1dcc257b4e539d22e0c4294"
   license "MIT"
+  revision 1
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f83acb3c24289f668ea9bb015ea1c59fad7fbc0a235249da9c4ffd7f15aeb83f"
-    sha256 cellar: :any,                 arm64_ventura:  "1bca3edf525504be1c6e3ecdeaffe6d0cc4918aed4bd78b707b7e240362ab8c9"
-    sha256 cellar: :any,                 arm64_monterey: "13e95be0244ef958773bd3c1fe2237e360bd17daa8c42ae843fafad7f7594d4f"
-    sha256 cellar: :any,                 sonoma:         "47b8da8bcbe68780a0c773add0caf5f1b8c9c14b8cb597fee64a5bb67606cf84"
-    sha256 cellar: :any,                 ventura:        "a21a3fdc4b8b0ea1c0bc93a4479f01694d86b61d94bcc921a920001b9bb6bd04"
-    sha256 cellar: :any,                 monterey:       "6dd625de3008f78285ab4543f76be395b0e5ed8638bb81cd1ee84be13dda2852"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ede49494032caaf698c729ff0300c442ff9e504153d92a3c20665f7b9f4673"
+    sha256 cellar: :any,                 arm64_sonoma:   "b7721546c2b27ddb503267aa1d47934624ef4b6fbce469a58f82560373858ff2"
+    sha256 cellar: :any,                 arm64_ventura:  "9d23dec3e544306fcc4a6f22ec2f63608d40144e57c6a790288d9dd5553d2c8f"
+    sha256 cellar: :any,                 arm64_monterey: "096e7402a9f3b1d18ec3a5b6638b0e9a53b86165cd14f69b56cfabb8c7a875b5"
+    sha256 cellar: :any,                 sonoma:         "57b30e1a4ab84f2d70d369dd2b0c41ab4025b8017417c1a6aa62577ce6f2afb8"
+    sha256 cellar: :any,                 ventura:        "605c5ce1c5b142cc422f36c76a2f6cc0dcdf238ef351274704fb8bb8e0d29f4a"
+    sha256 cellar: :any,                 monterey:       "a0c7f0982940b3b71d36106c3222356ea13e9436b793c7ea57f0778af0618776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c78e31f84e8c56f1ae9318e88078501acce7e95bc7d2201203267ffc4fdc2d0"
   end
 
   depends_on "cmake" => :build
@@ -44,22 +45,22 @@ class Deno < Formula
   # TODO: Remove this and `v8` resource when https:github.comdenolandrusty_v8issues1065 is resolved
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "v8"'
   resource "rusty_v8" do
-    url "https:static.crates.iocratesv8v8-0.97.0.crate"
-    sha256 "5ecc402c55b363c29901bdd0613c68213b01c5b2a3ee362d5e985cb74901b472"
+    url "https:static.crates.iocratesv8v8-0.99.0.crate"
+    sha256 "fa3fc0608a78f0c7d4ec88025759cb78c90a29984b48540060355a626ae329c1"
   end
 
   # Find the v8 version from the last commit message at:
   # https:github.comdenolandrusty_v8commitsv#{rusty_v8_version}v8
   # Then, use the corresponding tag found in https:github.comdenolandv8tags
   resource "v8" do
-    url "https:github.comdenolandv8archiverefstags12.7.224.12-denoland-f14e70e46f3c575a9095.tar.gz"
-    sha256 "06baf9c3d733b95526a0fec5a9f1438bb2105218280bf0c20f1a20a5a0e7e8d7"
+    url "https:github.comdenolandv8archiverefstags12.7.224.13-denoland-14a82560ca2be2d55ecc.tar.gz"
+    sha256 "f902a5fe9320ed6c03004b43d15387d1a2e8c727d7042ed29875a49837fc91e2"
   end
 
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "deno_core"'
   resource "deno_core" do
-    url "https:github.comdenolanddeno_corearchiverefstags0.293.0.tar.gz"
-    sha256 "975a84cd886f0674aa2a88fb9250957a132eda9f76b7f024b62831c425ae166b"
+    url "https:github.comdenolanddeno_corearchiverefstags0.299.0.tar.gz"
+    sha256 "95afc1ba85d1550290801207521ad0c6e293ca103ee6ee29cfa08b3eba82c2e8"
   end
 
   # To find the version of gn used:

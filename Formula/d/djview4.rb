@@ -28,6 +28,7 @@ class Djview4 < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "djvulibre"
+  depends_on "libtiff"
   depends_on "qt@5"
 
   # Fix QT detection when multiple Xcode installations are present.
@@ -37,12 +38,11 @@ class Djview4 < Formula
   def install
     system "autoreconf", "-fiv"
 
-    system "./configure", "--disable-debug",
-                          "--prefix=#{prefix}",
-                          "--with-x=no",
+    system "./configure", "--with-x=no",
                           "--disable-nsdejavu",
                           "--disable-desktopfiles",
-                          "--with-tiff=#{Formula["libtiff"].opt_prefix}"
+                          "--with-tiff=#{Formula["libtiff"].opt_prefix}",
+                          *std_configure_args
     system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}"
 
     # From the djview4.8 README:

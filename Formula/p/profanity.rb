@@ -4,16 +4,16 @@ class Profanity < Formula
   url "https:profanity-im.github.iotarballsprofanity-0.14.0.tar.gz"
   sha256 "fd23ffd38a31907974a680a3900c959e14d44e16f1fb7df2bdb7f6c67bd7cf7f"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "785c5656009a9c7bafa360970213ae1ab6b4d10a29070aaca0c8888f471b31fe"
-    sha256 arm64_ventura:  "bd357e54c2386698c759f54a6acde769e905b5bebf4b97956e058d295ee44547"
-    sha256 arm64_monterey: "3287c963e410993f6cdee0e15b8d7f0d5169dfd6b21e951d1f3b303c427c28a3"
-    sha256 sonoma:         "7f8cc373092a650e59604a08b8815a32dfa4d0c52ccea43e34ed91d4a2e9fc24"
-    sha256 ventura:        "fdd1827ab4303299262306ca8170692f9caf25e02e65a10fd8d01055644b9ad5"
-    sha256 monterey:       "9d1e8c9343b3fa5b351cfb2e8482e65c4d236a342f438c8781c98b0377043b53"
-    sha256 x86_64_linux:   "16dd29f3802c7ccf9930e4ecc65a981c70233404e617f90cdf21b07f66c621a3"
+    sha256 arm64_sonoma:   "796e4f6d0df72b4fba98c6767294a0c34126e507178f62c059305e1447b1d57c"
+    sha256 arm64_ventura:  "f3af3a72068af54c2a5dfed25f8b4974d484e2a1c6c04782e452999f03b04a7c"
+    sha256 arm64_monterey: "026ec8f456effae8170417422b863ffcc7defd02f660f03878522e8aa73fe467"
+    sha256 sonoma:         "9daaa88e4367a56347e0fe2697f8a838452ca069ac92d37aaa4161db13b59c5c"
+    sha256 ventura:        "18296f861b95ef07102130df116f8da3a442fe038524f3a235cd95a423891368"
+    sha256 monterey:       "fb5dc8733a2fe8c043c3a77a665af9c9a30acde98d1e74d2d195b8a2699fdaa4"
+    sha256 x86_64_linux:   "b5a3eda754ad116b984759d462ec0a691a74005e262c234d7bd5b812c66c2bb5"
   end
 
   head do

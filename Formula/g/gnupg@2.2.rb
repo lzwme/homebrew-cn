@@ -4,6 +4,7 @@ class GnupgAT22 < Formula
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.43.tar.bz2"
   sha256 "a3b34c40f455d93054d33cf4cf2a8ce41149d499eca2fbb759619de04822d453"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gnupg/"
@@ -11,13 +12,13 @@ class GnupgAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "40c89c2b75dfc5664f23467620eca04ce2a521df71c3c27e8d8458fd83e7945c"
-    sha256 arm64_ventura:  "d07caa67766ee2a38396ff98c3a40f8c1706ace3bd74a952fe53e813c3ab002b"
-    sha256 arm64_monterey: "0dde167623f5f5b5b665d9d6bb0dcc17d8c6b323fc93f7dc7c05b262e348e239"
-    sha256 sonoma:         "78b9e6163f29dc21ee8bb2a80949062f85b46a46e6ba930a821ad26752596ca2"
-    sha256 ventura:        "34835eb5e3d0fab2ad90b09d493ade94c95a74ea2a4d7f1d80541caa150f367e"
-    sha256 monterey:       "ef89f38a4413e5b5f0df140c7a555064b861a31dcd4b18ad040a1fb2bdfba6a1"
-    sha256 x86_64_linux:   "9079309d3412821c6edb7710a9cbfce8dfc6b14792bd60a1a2aaff77940c1aa9"
+    sha256 arm64_sonoma:   "85de04bd6035588e6bd336b8f451ca26a63db2ad985df5a31fb64870555ef85c"
+    sha256 arm64_ventura:  "0dde16fd39c55f1c373363f1711717b1a6914820e421636fd4cf11654593f179"
+    sha256 arm64_monterey: "0e4c4b6e78d3f0f1c62347ebd72b5bdace16a9b4ba41460b403f458ae1eea0e8"
+    sha256 sonoma:         "a27cd2401fb29df75d64b516e8603d9b88e9896f712b7c43c7ba7233d808e633"
+    sha256 ventura:        "b796d3a08251a0c870e18b75bd338d559506dab1e380164d51d5e4fc4b7ba6e0"
+    sha256 monterey:       "8d5258a0878509c5c56721c263140bf692761183243ad05eaf4658846e2c4b7e"
+    sha256 x86_64_linux:   "ba4ed9a84afd6854ead05ad72d2ad1f13563e88eea40294853c2b7c498ffb3f9"
   end
 
   keg_only :versioned_formula

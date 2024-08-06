@@ -16,13 +16,13 @@ class CodeServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "118464890162921266db09f853b3798af699af8519c9badc11c65db8ced8b6f6"
   end
 
-  depends_on "yarn" => :build
   depends_on "node@20"
 
   uses_from_macos "python" => :build
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "krb5"
     depends_on "libsecret"
     depends_on "libx11"
     depends_on "libxkbfile"
@@ -32,20 +32,17 @@ class CodeServer < Formula
     # Fix broken node-addon-api: https:github.comnodejsnodeissues52229
     ENV.append "CXXFLAGS", "-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT"
 
-    system "npm", "install", *std_npm_args(prefix: false), "--unsafe-perm", "--omit", "dev"
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin*")
 
-    # @parcelwatcher bundles all binaries for other platforms & architectures
-    # This deletes the non-matching architecture otherwise brew audit will complain.
-    arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
-    prebuilds = buildpath"libvscodenode_modules@parcelwatcherprebuilds"
-    # Homebrew only supports glibc-based Linuxes, avoid missing linkage to musl libc
-    (prebuilds"linux-x64node.napi.musl.node").unlink
-    current_prebuild = prebuilds"#{OS.kernel_name.downcase}-#{arch_string}"
-    unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
-    unneeded_prebuilds.map(&:rmtree)
-
-    libexec.install Dir["*"]
-    bin.install_symlink libexec"outnodeentry.js" => "code-server"
+    # Remove incompatible pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    vscode = libexec"libnode_modulescode-serverlibvscode"
+    vscode.glob("{,extensions}node_modules@parcelwatcherprebuilds*")
+          .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    vscode.glob("{,extensions}node_modules@parcelwatcherprebuildslinux-x64*.musl.node")
+          .map(&:unlink)
   end
 
   def caveats
@@ -65,7 +62,7 @@ class CodeServer < Formula
   test do
     # See https:github.comcdrcode-serverblobmaincibuildtest-standalone-release.sh
     system bin"code-server", "--extensions-dir=.", "--install-extension", "wesbos.theme-cobalt2"
-    assert_match "wesbos.theme-cobalt2",
-      shell_output("#{bin}code-server --extensions-dir=. --list-extensions")
+    output = shell_output("#{bin}code-server --extensions-dir=. --list-extensions")
+    assert_match "wesbos.theme-cobalt2", output
   end
 end

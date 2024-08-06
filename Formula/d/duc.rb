@@ -3,7 +3,7 @@ class Duc < Formula
   homepage "https:github.comzevvduc"
   url "https:github.comzevvducreleasesdownload1.4.5duc-1.4.5.tar.gz"
   sha256 "c69512ca85b443e42ffbb4026eedd5492307af612047afb9c469df923b468bfd"
-  license "LGPL-3.0"
+  license "LGPL-3.0-only"
   head "https:github.comzevvduc.git", branch: "master"
 
   bottle do
@@ -20,16 +20,25 @@ class Duc < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "glfw"
+  depends_on "glib"
   depends_on "pango"
   depends_on "tokyo-cabinet"
 
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
+
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--disable-x11",
-                          "--enable-opengl"
+                          "--enable-opengl",
+                          *std_configure_args
     system "make", "install"
   end
 
