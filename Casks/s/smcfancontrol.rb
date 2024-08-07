@@ -12,6 +12,8 @@ cask "smcfancontrol" do
     strategy :github_latest
   end
 
+  conflicts_with cask: "smcfancontrol@beta"
+
   app "smcFanControl.app"
 
   zap trash: [
@@ -20,4 +22,8 @@ cask "smcfancontrol" do
     "~LibraryCachescom.eidac.smcFanControl#{version.major}",
     "~LibraryPreferencescom.eidac.smcFanControl#{version.major}.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

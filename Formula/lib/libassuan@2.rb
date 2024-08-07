@@ -8,7 +8,7 @@ class LibassuanAT2 < Formula
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/libassuan/"
-    regex(/href=.*?libassuan[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?libassuan[._-]v?(2(?:\.\d+)+)\.t/i)
   end
 
   bottle do

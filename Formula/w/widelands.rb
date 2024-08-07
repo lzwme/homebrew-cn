@@ -26,6 +26,7 @@ class Widelands < Formula
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glew"
   depends_on "icu4c"
   depends_on "libpng"
@@ -41,6 +42,10 @@ class Widelands < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "mesa"
   end
 
   def install

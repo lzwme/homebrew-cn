@@ -28,7 +28,12 @@ class Lftp < Formula
   depends_on "openssl@3"
   depends_on "readline"
 
+  uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Work around "error: no member named 'fpclassify' in the global namespace"

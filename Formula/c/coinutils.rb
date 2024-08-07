@@ -24,24 +24,19 @@ class Coinutils < Formula
   depends_on "pkg-config" => :build
   depends_on "openblas"
 
-  resource "homebrew-coin-or-tools-data-sample-p0201-mps" do
-    url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.11p0201.mps"
-    sha256 "8352d7f121289185f443fdc67080fa9de01e5b9bf11b0bf41087fba4277c07a4"
-  end
+  uses_from_macos "zlib"
 
   def install
     args = [
       "--datadir=#{pkgshare}",
-      "--disable-debug",
-      "--disable-dependency-tracking",
       "--includedir=#{include}coinutils",
-      "--prefix=#{prefix}",
       "--with-blas-incdir=#{Formula["openblas"].opt_include}",
       "--with-blas-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-lapack-incdir=#{Formula["openblas"].opt_include}",
       "--with-lapack-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
     ]
-    system ".configure", *args
+
+    system ".configure", *args, *std_configure_args
     system "make"
     # Deparallelize due to error 1: "mkdir: #{include}coinutilscoin: File exists."
     # https:github.comcoin-orClpissues109
@@ -49,7 +44,13 @@ class Coinutils < Formula
   end
 
   test do
-    resource("homebrew-coin-or-tools-data-sample-p0201-mps").stage testpath
+    resource "homebrew-coin-or-tools-data-sample-p0201-mps" do
+      url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.11p0201.mps"
+      sha256 "8352d7f121289185f443fdc67080fa9de01e5b9bf11b0bf41087fba4277c07a4"
+    end
+
+    testpath.install resource("homebrew-coin-or-tools-data-sample-p0201-mps")
+
     (testpath"test.cpp").write <<~EOS
       #include <CoinMpsIO.hpp>
       int main() {
@@ -57,6 +58,7 @@ class Coinutils < Formula
         return mpsIO.readMps("#{testpath}p0201.mps");
       }
     EOS
+
     system ENV.cxx, "test.cpp", "-I#{opt_include}coinutilscoin",
       "-L#{opt_lib}", "-lCoinUtils"
     system ".a.out"

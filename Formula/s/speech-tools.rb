@@ -1,6 +1,7 @@
 class SpeechTools < Formula
   desc "C++ speech software library from the University of Edinburgh"
   homepage "http:festvox.orgdocsspeech_tools-2.4.0"
+  license "MIT-Festival"
   revision 2
   head "https:github.comfestvoxspeech_tools.git", branch: "master"
 

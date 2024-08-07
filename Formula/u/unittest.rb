@@ -3,6 +3,7 @@ class Unittest < Formula
   homepage "https://unittest.red-bean.com/"
   url "https://unittest.red-bean.com/tar/unittest-0.50-62.tar.gz"
   sha256 "9586ef0149b6376da9b5f95a992c7ad1546254381808cddad1f03768974b165f"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://unittest.red-bean.com/tar/"

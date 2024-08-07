@@ -3,6 +3,7 @@ class Somagic < Formula
   homepage "https://code.google.com/archive/p/easycap-somagic-linux/"
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/easycap-somagic-linux/somagic-easycap_1.1.tar.gz"
   sha256 "3a9dd78a47335a6d041cd5465d28124612dad97939c56d7c10e000484d78a320"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d9d2e64b2ef72922c9602c0c17890455654ecae4ffd3b9b359d93d66bb8ad0cd"

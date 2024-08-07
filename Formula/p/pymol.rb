@@ -23,6 +23,7 @@ class Pymol < Formula
   depends_on "glm" => :build
   depends_on "msgpack-cxx" => :build
   depends_on "sip" => :build
+
   depends_on "freetype"
   depends_on "glew"
   depends_on "libpng"
@@ -30,10 +31,12 @@ class Pymol < Formula
   depends_on "numpy"
   depends_on "pyqt@5"
   depends_on "python@3.12"
+
   uses_from_macos "libxml2"
 
   on_linux do
     depends_on "freeglut"
+    depends_on "mesa"
   end
 
   resource "mmtf-cpp" do
@@ -100,6 +103,7 @@ class Pymol < Formula
       cmd.zoom()
       cmd.png("test.png", 200, 200)
     EOS
+
     system bin"pymol", "-cq", testpath"test.py"
     assert_predicate testpath"test.png", :exist?, "Amino acid image should exist"
     system python3, "-c", "import pymol"

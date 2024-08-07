@@ -4,36 +4,36 @@ class Shaderc < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comgoogleshadercarchiverefstagsv2024.0.tar.gz"
-    sha256 "c761044e4e204be8e0b9a2d7494f08671ca35b92c4c791c7049594ca7514197f"
+    url "https:github.comgoogleshadercarchiverefstagsv2024.1.tar.gz"
+    sha256 "eb3b5f0c16313d34f208d90c2fa1e588a23283eed63b101edd5422be6165d528"
 
     resource "glslang" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupglslang.git",
-          revision: "d73712b8f6c9047b09e99614e20d456d5ada2390"
+          revision: "142052fa30f9eca191aa9dcf65359fcaed09eeec"
     end
 
     resource "spirv-headers" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupSPIRV-Headers.git",
-          revision: "8b246ff75c6615ba4532fe4fde20f1be090c3764"
+          revision: "5e3ad389ee56fca27c9705d093ae5387ce404df4"
     end
 
     resource "spirv-tools" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupSPIRV-Tools.git",
-          revision: "04896c462d9f3f504c99a4698605b6524af813c1"
+          revision: "dd4b663e13c07fea4fbb3f70c1c91c86731099f7"
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9e91b9ca535fd4f4251290a9f05aab1d3714ddcff8a64e7f1fad846cf668ad03"
-    sha256 cellar: :any,                 arm64_ventura:  "f88f181544dd8ec38a3a8205183dd8ec02c7b89cd2c252266dd9bd980f5dac23"
-    sha256 cellar: :any,                 arm64_monterey: "b780f4fadce463d060e6cb9edd9478b1cceef8005295fa108f61768e42fe3ba5"
-    sha256 cellar: :any,                 sonoma:         "bdeb7745584aadc9a24a10f9c7db8b4a4f4e7baadc02d10f3e884295d138ebe3"
-    sha256 cellar: :any,                 ventura:        "a2d99fa5c1d74b5c01ca09f6fd1924b76df3a4a383da5bcf1a348f14198b4b7e"
-    sha256 cellar: :any,                 monterey:       "1a2b71042aa305fa2a879dd06554e047c40ddbb876abe116304f2565eccd5794"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "757ba7d2e4c50e297b9dce66251b273968628b14e574399b58b67f0710f4e5a5"
+    sha256 cellar: :any,                 arm64_sonoma:   "1c8a29c3a0edd76d3ae6e59037f48eb83e30f63083e1949838b5fe01a3224f5d"
+    sha256 cellar: :any,                 arm64_ventura:  "6210cc389dffb86e727d2f3f166d73b6c7d150e8f2e7d5c2866ae7cc5cd6772d"
+    sha256 cellar: :any,                 arm64_monterey: "996f8926a4ad55b1c2be2f4b7b92642fb8f39d9f7995df67d5cce9a43fc4e60d"
+    sha256 cellar: :any,                 sonoma:         "2c42b9747e28eee0093509b01017f732f9e78882698a8a271d750cb639e6d98e"
+    sha256 cellar: :any,                 ventura:        "0eea89915c9c734b2f08383ab163cf597e6f7f93279e0b3a451dd0060682ded3"
+    sha256 cellar: :any,                 monterey:       "6e7c1f25ca71fde54b5ce354c34cb8e371671fd34ab553a213a639e4cfb520f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17c71813d88205305292164d9b47f3df20e810edab06b5f144a0d8d67fd33c00"
   end
 
   head do
@@ -54,6 +54,10 @@ class Shaderc < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.12" => :build
+
+  # patch to fix `target "SPIRV-Tools-opt" that is not in any export set`
+  # upstream bug report, https:github.comgoogleshadercissues1413
+  patch :DATA
 
   def install
     resources.each do |res|
@@ -88,3 +92,17 @@ class Shaderc < Formula
     system ".test"
   end
 end
+
+__END__
+diff --git athird_partyCMakeLists.txt bthird_partyCMakeLists.txt
+index d44f62a..dffac6a 100644
+--- athird_partyCMakeLists.txt
++++ bthird_partyCMakeLists.txt
+@@ -87,7 +87,6 @@ if (NOT TARGET glslang)
+       # Glslang tests are off by default. Turn them on if testing Shaderc.
+       set(GLSLANG_TESTS ON)
+     endif()
+-    set(GLSLANG_ENABLE_INSTALL $<NOT:${SKIP_GLSLANG_INSTALL}>)
+     add_subdirectory(${SHADERC_GLSLANG_DIR} glslang)
+   endif()
+   if (NOT TARGET glslang)

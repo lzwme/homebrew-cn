@@ -4,6 +4,7 @@ class Vcdimager < Formula
   url "https:ftp.gnu.orggnuvcdimagervcdimager-2.0.1.tar.gz"
   mirror "https:ftpmirror.gnu.orgvcdimagervcdimager-2.0.1.tar.gz"
   sha256 "67515fefb9829d054beae40f3e840309be60cda7d68753cafdd526727758f67a"
+  license "GPL-2.0-or-later"
   revision 1
 
   bottle do

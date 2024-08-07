@@ -25,7 +25,12 @@ class Cdi < Formula
   depends_on "libaec"
   depends_on "netcdf"
   depends_on "proj"
+
   uses_from_macos "python" => :build
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     args = %W[
@@ -51,6 +56,7 @@ class Cdi < Formula
         return 0;
       }
     EOF
+
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcdi", "-o", "test"
     assert_match "CDI library version : #{version}", shell_output("./test")
   end

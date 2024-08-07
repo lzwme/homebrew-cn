@@ -3,6 +3,7 @@ class Ratfor < Formula
   homepage "http://www.dgate.org/ratfor/"
   url "http://www.dgate.org/ratfor/tars/ratfor-1.05.tar.gz"
   sha256 "826278c5cec11f8956984f146e982137e90b0722af5dde9e8c5bf1fef614853c"
+  license :public_domain
 
   livecheck do
     url :homepage

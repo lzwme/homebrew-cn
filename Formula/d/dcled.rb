@@ -3,6 +3,7 @@ class Dcled < Formula
   homepage "https://www.jeffrika.com/~malakai/dcled/index.html"
   url "https://www.jeffrika.com/~malakai/dcled/dcled-2.2.tgz"
   sha256 "0da78c04e1aa42d16fa3df985cf54b0fbadf2d8ff338b9bf59bfe103c2a959c6"
+  license :cannot_represent
 
   livecheck do
     url :homepage
@@ -27,6 +28,11 @@ class Dcled < Formula
   depends_on "libusb"
 
   def install
+    # Fix compile with newer Clang
+    if DevelopmentTools.clang_build_version >= 1403
+      inreplace "Makefile", "-Wunused-variable", "-Wunused-variable -Wno-implicit-function-declaration"
+    end
+
     system "make", "CC=#{ENV.cc}",
                    "LIBUSB_CFLAGS=-I#{Formula["libusb"].opt_include}/libusb-1.0"
     system "make", "install",

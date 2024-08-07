@@ -22,16 +22,21 @@ class Mdbtools < Formula
   depends_on "automake" => :build
   depends_on "bison" => :build
   depends_on "gawk" => :build
+  depends_on "gettext" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
   depends_on "glib"
   depends_on "readline"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "autoreconf", "-fvi"
-    system ".configure", "--prefix=#{prefix}",
-                          "--enable-man"
+    system "autoreconf", "--force", "--install", "--verbose"
+
+    system ".configure", "--enable-man", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

@@ -32,11 +32,19 @@ class Allegro < Formula
   depends_on "theora"
   depends_on "webp"
 
+  on_macos do
+    depends_on "opus"
+  end
+
   on_linux do
     depends_on "jpeg-turbo"
     depends_on "libpng"
     depends_on "libx11"
     depends_on "libxcursor"
+    depends_on "libxi"
+    depends_on "libxinerama"
+    depends_on "libxrandr"
+    depends_on "libxscrnsaver"
     depends_on "mesa"
     depends_on "mesa-glu"
   end

@@ -21,19 +21,27 @@ class Libmypaint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6114302a8ff4e54cd64388fb0968dbb1fa4ab546bb9d2bbca786da787ec3bf62"
   end
 
+  depends_on "gettext" => :build # for intltool
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "json-c"
 
   uses_from_macos "perl" => :build
 
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec"libperl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" if OS.linux?
 
     system ".configure", "--disable-introspection",
                           "--without-glib",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
   end
 
@@ -46,6 +54,7 @@ class Libmypaint < Formula
         return 0;
       }
     EOS
+
     system ENV.cc, "test.c", "-I#{include}libmypaint", "-L#{lib}", "-lmypaint", "-o", "test"
     system ".test"
   end

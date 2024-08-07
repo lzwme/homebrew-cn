@@ -3,6 +3,7 @@ class Scalastyle < Formula
   homepage "http:www.scalastyle.orgcommand-line.html"
   url "https:oss.sonatype.orgcontentrepositoriesreleasesorgscalastylescalastyle_2.121.0.0scalastyle_2.12-1.0.0-batch.jar"
   sha256 "e9dafd97be0d00f28c1e8bfcab951d0e5172b262a1d41da31d1fd65d615aedcb"
+  license "Apache-2.0"
 
   # In a filename like `scalastyle_2.12-1.0.0-batch.jar`, the first version is
   # the Scala version (2.12) and the second is the Scalastyle version (1.0.0).

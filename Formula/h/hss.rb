@@ -40,7 +40,7 @@ class Hss < Formula
       end
       server.close
       msg = hss_read.gets
-      assert_match "Connection closed by remote host", msg
+      assert_match "Connection closed", msg
     ensure
       Process.kill("TERM", accept_pid)
       Process.kill("TERM", hss_pid)

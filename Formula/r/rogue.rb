@@ -4,6 +4,7 @@ class Rogue < Formula
   homepage "https://sourceforge.net/projects/roguelike/"
   url "https://src.fedoraproject.org/repo/pkgs/rogue/rogue5.4.4-src.tar.gz/033288f46444b06814c81ea69d96e075/rogue5.4.4-src.tar.gz"
   sha256 "7d37a61fc098bda0e6fac30799da347294067e8e079e4b40d6c781468e08e8a1"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://src.fedoraproject.org/repo/pkgs/rogue/"

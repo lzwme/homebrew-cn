@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https:temporal.io"
-  url "https:github.comtemporaliocliarchiverefstagsv0.13.2.tar.gz"
-  sha256 "a492f79b2b9e2429fcce6674cd7a197fab69cc2e4f19201ddc2ea7367dbab1fd"
+  url "https:github.comtemporaliocliarchiverefstagsv1.0.0.tar.gz"
+  sha256 "9b6a821e221e832575ddb4a4d972adfe9fde6c51ea4f8cb4e0575b4fcfab2171"
   license "MIT"
   head "https:github.comtemporaliocli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b227f8933bb196c685e4cbac92bb91e70f8c595bb1a8eebb74306a632925993"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3df1ac8326d65cfb0de8fd91a8f042499f5600786d4b8b67a25487f983bddefc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a590231c7805c0bf7d1729dcab753c28bec2872188573512d7e39675b472a1b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7e28e9c27b2e24501fd9479dd79d90d6571104497198858dd088cab6c5828ee4"
-    sha256 cellar: :any_skip_relocation, ventura:        "28fa2ee8abc9dca2abbbbfe97f713d9054440c75de99e2fdd6d1e529732f9f9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b6f675b455017ac602b46df5bc5b401cd83638a947807f973b420452f371a7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ceeeac0283e22c59a5aa299a8d7c0581e5c820f44d866dd1163aa634b164743"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7e5a6383d9aff3b052c4770293cc71298073dda59b87f0c7ac8de0ecce1c959"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a300c69f7bc771058a3c29957b42074258e5cbc3d20578b239905731d5ce5468"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "327071ea09519338ea5f6a9496cc4a407db6807a10018a5f910b9e0b975621a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "276f98c66319173a47e6d7e3fa9a070ec034161f50f746e9533ccbae4e0291ef"
+    sha256 cellar: :any_skip_relocation, ventura:        "5edabad597fc53dc846fddfa031331d4b71647b3668261b10dba267958031c50"
+    sha256 cellar: :any_skip_relocation, monterey:       "b663f045db5289ba39f5978d338a9da80e7fce68aeb8debb20114f86f99c7499"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5515d54c5d67cd5b33e7933658fc17124ccf8eb347f1a99689acd42dbf8c9d9c"
   end
 
   depends_on "go" => :build

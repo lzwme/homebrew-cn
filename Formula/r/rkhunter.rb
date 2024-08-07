@@ -3,6 +3,7 @@ class Rkhunter < Formula
   homepage "https://rkhunter.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz"
   sha256 "f750aa3e22f839b637a073647510d7aa3adf7496e21f3c875b7a368c71d37487"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b2a4538360218a1f44f63eb61a24e6b9ecc36dfc613dfb2c404f10f8cb75a7f"

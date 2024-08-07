@@ -24,6 +24,8 @@ class Apngasm < Formula
   depends_on "lzlib"
   depends_on macos: :catalina
 
+  uses_from_macos "zlib"
+
   fails_with :gcc do
     version "7"
     cause "Requires C++17 filesystem"
@@ -34,13 +36,15 @@ class Apngasm < Formula
                                     "${CMAKE_INSTALL_PREFIX}sharemanman1"
     ENV.cxx11
     ENV.deparallelize # Build error: ld: library not found for -lapngasm
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
     (pkgshare"test").install "testsamples"
   end
 
   test do
-    system bin"apngasm", "#{pkgshare}testsamplesclock*.png"
+    system bin"apngasm", pkgshare"testsamplesclock*.png"
   end
 end

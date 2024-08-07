@@ -19,9 +19,14 @@ class Mailutils < Formula
   depends_on "gnutls"
   depends_on "gsasl"
   depends_on "libtool"
+  depends_on "libunistring"
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -37,11 +42,12 @@ class Mailutils < Formula
     end
 
     system ".configure", "--disable-mh",
-                          "--prefix=#{prefix}",
+                          "--disable-silent-rules",
                           "--without-fribidi",
                           "--without-gdbm",
                           "--without-guile",
-                          "--without-tokyocabinet"
+                          "--without-tokyocabinet",
+                          *std_configure_args
     system "make", "install"
   end
 

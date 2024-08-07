@@ -46,6 +46,10 @@ class Condure < Formula
   end
 
   def install
+    # https:github.comfanoutcondureissues16
+    inreplace "Cargo.toml", 'time = { version = "0.3", features = ["formatting", "local-offset", "macros"] }',
+                            'time = { version = "0.3.36", features = ["formatting", "local-offset", "macros"] }'
+
     system "cargo", "install", *std_cargo_args
   end
 

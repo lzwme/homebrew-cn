@@ -3,6 +3,7 @@ class Snap7 < Formula
   homepage "https://snap7.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/snap7/1.4.2/snap7-full-1.4.2.7z"
   sha256 "1f4270cde8684957770a10a1d311c226e670d9589c69841a9012e818f7b9f80e"
+  license "LGPL-3.0-or-later"
   revision 1
 
   bottle do

@@ -19,6 +19,9 @@ class C10t < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "freetype"
+  depends_on "libpng"
+
+  uses_from_macos "zlib"
 
   # Needed to compile against newer boost
   # Can be removed for the next version of c10t after 1.7
@@ -48,7 +51,8 @@ class C10t < Formula
   def install
     ENV.cxx11
     inreplace "testCMakeLists.txt", "boost_unit_test_framework", "boost_unit_test_framework-mt"
-    args = std_cmake_args
+
+    args = []
     unless OS.mac?
       args += %W[
         -DCMAKE_LINK_WHAT_YOU_USE=ON
@@ -56,9 +60,10 @@ class C10t < Formula
         -DZLIB_INCLUDE_DIR=#{Formula["zlib"].include}
       ]
     end
-    system "cmake", ".", *args
-    system "make"
-    bin.install "c10t"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "buildc10t"
   end
 
   test do

@@ -4,6 +4,7 @@ class Reop < Formula
   url "https://flak.tedunangst.com/files/reop-2.1.1.tgz"
   mirror "https://bo.mirror.garr.it/OpenBSD/distfiles/reop-2.1.1.tgz"
   sha256 "fa8ae058c51efec5bde39fab15b4275e6394d9ab1dd2190ffdba3cf9983fdcac"
+  license "ISC"
   revision 1
 
   livecheck do

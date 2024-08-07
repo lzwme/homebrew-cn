@@ -42,6 +42,7 @@ class Openmsx < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "mesa"
   end
 
   fails_with :clang do

@@ -4,6 +4,7 @@ class Schroedinger < Formula
   url "https://launchpad.net/schroedinger/trunk/1.0.11/+download/schroedinger-1.0.11.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/s/schroedinger/schroedinger_1.0.11.orig.tar.gz"
   sha256 "1e572a0735b92aca5746c4528f9bebd35aa0ccf8619b22fa2756137a8cc9f912"
+  license any_of: ["MPL-1.1", "LGPL-2.0-only", "GPL-2.0-only", "MIT"]
 
   bottle do
     rebuild 1

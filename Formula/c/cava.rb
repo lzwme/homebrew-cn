@@ -20,6 +20,7 @@ class Cava < Formula
   depends_on "automake" => :build
   depends_on "libtool"  => :build
   depends_on "pkg-config"  => :build
+
   depends_on "fftw"
   depends_on "iniparser"
   depends_on "portaudio"
@@ -27,15 +28,22 @@ class Cava < Formula
   uses_from_macos "vim" => :build # needed for xxd
   uses_from_macos "ncurses"
 
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "jack"
+  end
+
   def install
     # change ncursesw to ncurses
     inreplace "configure.ac", "ncursesw", "ncurses"
     # force autogen.sh to look for and use our glibtoolize
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
+    ENV.append "CPPFLAGS", "-I#{Formula["iniparser"].opt_include}iniparser"
+    ENV.append "LDFLAGS", "-L#{Formula["iniparser"].opt_lib}"
+
     system ".autogen.sh"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
-    system "make"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -58,8 +66,12 @@ class Cava < Formula
     EOS
 
     pid = spawn(bin"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
+
     sleep 2
-    Process.kill "KILL", pid
+
     assert_match "0;0;\n", cava_stdout.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

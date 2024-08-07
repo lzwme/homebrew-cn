@@ -3,6 +3,7 @@ class Spiped < Formula
   homepage "https://www.tarsnap.com/spiped.html"
   url "https://www.tarsnap.com/spiped/spiped-1.6.2.tgz"
   sha256 "05d4687d12d11d7f9888d43f3d80c541b7721c987038d085f71c91bb06204567"
+  license "BSD-2-Clause"
 
   livecheck do
     url :homepage

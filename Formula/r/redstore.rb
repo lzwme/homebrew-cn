@@ -3,7 +3,7 @@ class Redstore < Formula
   homepage "https://www.aelius.com/njh/redstore/"
   url "https://www.aelius.com/njh/redstore/redstore-0.5.4.tar.gz"
   sha256 "58bd65fda388ab401e6adc3672d7a9c511e439d94774fcc5a1ef6db79c748141"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :homepage
@@ -26,12 +26,22 @@ class Redstore < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "raptor"
+  depends_on "rasqal"
   depends_on "redland"
 
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV.append "CFLAGS", "-D_GNU_SOURCE" unless OS.mac?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
+  end
+
+  test do
+    output = shell_output("#{bin}/redstore --help 2>&1", 1)
+    assert_match "RedStore version #{version}", output
   end
 end

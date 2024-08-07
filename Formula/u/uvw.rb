@@ -6,6 +6,11 @@ class Uvw < Formula
   sha256 "c16600573871a5feeb524234b378ab832c8971b2a68d030c6bd0e3077d416ade"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)(?:[._-]libuv[._-]v?\d+(?:\.\d+)*)?$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd6b702c8f2b647f207611e843ec0d36731982a20b61759e9aae7465f5e8cb8f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9cdb35b83cb69c02172ba1e43007e5d605d3fb4c3b3af40ebf24e34cd7dcba1"

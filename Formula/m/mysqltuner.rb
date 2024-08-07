@@ -1,23 +1,20 @@
 class Mysqltuner < Formula
   desc "Increase performance and stability of a MySQL installation"
   homepage "https:raw.github.commajorMySQLTuner-perlmastermysqltuner.pl"
-  url "https:github.commajorMySQLTuner-perlarchiverefstagsv2.5.2.tar.gz"
-  sha256 "4923ca0a6184c6b3e77a98dd097f99cbdb3adaf334e45a9e4b5aa620cd83ae68"
+  url "https:github.commajorMySQLTuner-perlarchiverefstagsv2.6.0.tar.gz"
+  sha256 "9ba57ecc616c1791907c1e7befe593fee23315bcff0121adc13dbd62b2553a3c"
   license "GPL-3.0-or-later"
   head "https:github.commajorMySQLTuner-perl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98751a0d2ef92094e6b43cbc168cdb91747981b92f56705a0c0a47bb1e68b9b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98751a0d2ef92094e6b43cbc168cdb91747981b92f56705a0c0a47bb1e68b9b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98751a0d2ef92094e6b43cbc168cdb91747981b92f56705a0c0a47bb1e68b9b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "030ec7296fb4cd9f95fd85e2c1e33fdfedff8b7c80b3fce4596a0f322097438e"
-    sha256 cellar: :any_skip_relocation, ventura:        "030ec7296fb4cd9f95fd85e2c1e33fdfedff8b7c80b3fce4596a0f322097438e"
-    sha256 cellar: :any_skip_relocation, monterey:       "030ec7296fb4cd9f95fd85e2c1e33fdfedff8b7c80b3fce4596a0f322097438e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98751a0d2ef92094e6b43cbc168cdb91747981b92f56705a0c0a47bb1e68b9b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
+    sha256 cellar: :any_skip_relocation, sonoma:         "20ff3ee36a24a74ef56302b7d61732af0411ae442f20c9d89ff4db4acb38bc29"
+    sha256 cellar: :any_skip_relocation, ventura:        "20ff3ee36a24a74ef56302b7d61732af0411ae442f20c9d89ff4db4acb38bc29"
+    sha256 cellar: :any_skip_relocation, monterey:       "20ff3ee36a24a74ef56302b7d61732af0411ae442f20c9d89ff4db4acb38bc29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
   end
-
-  # upstream PR ref, https:github.commajorMySQLTuner-perlpull757
-  patch :DATA
 
   def install
     bin.install "mysqltuner.pl" => "mysqltuner"
@@ -30,14 +27,3 @@ class Mysqltuner < Formula
     system bin"mysqltuner", "--help"
   end
 end
-
-__END__
-diff --git amysqltuner.pl bmysqltuner.pl
-index 3a75531..4fa5193 100755
---- amysqltuner.pl
-+++ bmysqltuner.pl
-@@ -1,3 +1,4 @@
-+#!usrbinenv perl
- # mysqltuner.pl - Version 2.5.2
- # High Performance MySQL Tuning Script
- # Copyright (C) 2015-2023 Jean-Marie Renouard - jmrenouard@gmail.com

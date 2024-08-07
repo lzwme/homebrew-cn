@@ -3,6 +3,7 @@ class Rasqal < Formula
   homepage "https:librdf.orgrasqal"
   url "https:download.librdf.orgsourcerasqal-0.9.33.tar.gz"
   sha256 "6924c9ac6570bd241a9669f83b467c728a322470bf34f4b2da4f69492ccfd97c"
+  license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
 
   livecheck do
     url :homepage

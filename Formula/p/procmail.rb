@@ -22,6 +22,12 @@ class Procmail < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    if DevelopmentTools.clang_build_version >= 1403
+      inreplace "procmailMakefile", "CFLAGS0 = -O",
+                                     "CFLAGS0 = -Wno-implicit-function-declaration -Wno-implicit-int -O"
+    end
+
     system "make", "-C", "procmail", "BASENAME=#{prefix}", "MANDIR=#{man}",
            "LOCKINGTEST=1", "install"
   end

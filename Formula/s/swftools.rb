@@ -3,6 +3,7 @@ class Swftools < Formula
   homepage "http://www.swftools.org/"
   url "http://www.swftools.org/swftools-0.9.2.tar.gz"
   sha256 "bf6891bfc6bf535a1a99a485478f7896ebacbe3bbf545ba551298080a26f01f1"
+  license "GPL-2.0-or-later"
   revision 1
 
   livecheck do

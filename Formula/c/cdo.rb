@@ -31,6 +31,10 @@ class Cdo < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   fails_with :clang do
     build 1500
     cause "Requires C++20 support"

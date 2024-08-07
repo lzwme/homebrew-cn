@@ -24,7 +24,16 @@ class FastqTools < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+
+    # Fix compile with newer Clang
+    # upstream bug report, https:github.comdcjonesfastq-toolsissues32
+    if DevelopmentTools.clang_build_version >= 1403
+      inreplace "configure" do |s|
+        s.sub! "-Wall", "-Wall -Wno-implicit-function-declaration"
+      end
+    end
+
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -35,6 +44,7 @@ class FastqTools < Formula
       +
       IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII0000000000
     EOS
+
     assert_match "A\t20", shell_output("#{bin}fastq-kmers test.fq")
     assert_match "1 copies", shell_output("#{bin}fastq-uniq test.fq")
   end

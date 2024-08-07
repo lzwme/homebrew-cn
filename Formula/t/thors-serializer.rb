@@ -2,18 +2,18 @@ class ThorsSerializer < Formula
   desc "Declarative serialization library (JSONYAML) for C++"
   homepage "https:github.comLoki-AstariThorsSerializer"
   url "https:github.comLoki-AstariThorsSerializer.git",
-      tag:      "3.1.3",
-      revision: "3b4fb77e05872d74eb7a1260e830c2d3c8f2407e"
+      tag:      "3.2.6",
+      revision: "880bbec133a71d20ede5a16f248d787ad56c5439"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "69f36dd0f0542f5aadb6c4b8678fed9314f561cb206c0d0ed44b212077a3e251"
-    sha256 cellar: :any,                 arm64_ventura:  "c8da7753214b0ec8a225130abb05e8d3f6c12a56632f5438a2eaea0c80eb5f39"
-    sha256 cellar: :any,                 arm64_monterey: "d55821fa5b36106d51085a42804b73d3981ffc7782f4bb9ebafe26c58b413ad6"
-    sha256 cellar: :any,                 sonoma:         "1aba8816b0aacdb0159d0406a6e5a053b2b3278cc503ac6b080352196a1cbf8a"
-    sha256 cellar: :any,                 ventura:        "4e03837a5ecba36bc77ec8c8af3e9707fe4ba65aa02e07c553e619e6c4355778"
-    sha256 cellar: :any,                 monterey:       "07ce53c8fe96e5bbb74d439345b9852ef65784700783b55607d9996d626133f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1213e7a47acdb20e568da485b3600ed5b607a0ccfd852e176a10bca636be3ae"
+    sha256 cellar: :any,                 arm64_sonoma:   "d039cf926418cd0287b1739ffacfa4125859cb9c88f0cd47e6c9dfedb5695a8c"
+    sha256 cellar: :any,                 arm64_ventura:  "0c91e982aec5534a4e256f75a728764ada09f62fce9fd9d3fba39eca50e617c7"
+    sha256 cellar: :any,                 arm64_monterey: "01444f17339e3f016a2700fed971e22deee389d7b4975ca4cd5135a3d30cd353"
+    sha256 cellar: :any,                 sonoma:         "599863f8cf119566d6aad73bf425de9705ded677b3ac9dd4fce4d574ef0d2c55"
+    sha256 cellar: :any,                 ventura:        "474628ee4a6c3e7036369a9e64335ecef85b9f2bee9c4a8d05ee8305721e2bb6"
+    sha256 cellar: :any,                 monterey:       "b017968a17cfe644688627353ee0a942c24967f12075524db617bfff08e0af1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f80447cffc9f86968bb571f3969d8e26aff827c385159484a37ed0378ac8e7bd"
   end
 
   depends_on "boost" => :build
@@ -21,15 +21,20 @@ class ThorsSerializer < Formula
   depends_on "libyaml"
   depends_on "magic_enum"
   depends_on "openssl@3"
+  depends_on "snappy"
 
   fails_with gcc: "5"
 
   def install
     ENV["COV"] = "gcov"
 
+    system ".brewinit"
+
     system ".configure", "--disable-vera",
                           "--prefix=#{prefix}",
-                          "--disable-test-with-integration"
+                          "--disable-test-with-integration",
+                          "--disable-test-with-mongo-query",
+                          "--disable-Mongo-Service"
     system "make"
     system "make", "install"
   end

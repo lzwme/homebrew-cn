@@ -1,10 +1,19 @@
 class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST23, SF2 and more"
-  homepage "https:kxstudio.linuxaudio.orgApplications:Carla"
-  url "https:github.comfalkTXCarlaarchiverefstagsv2.5.8.tar.gz"
-  sha256 "4ec96d06342ff28da4b80d4a76bc08fcaa5703726f96e5174afcdc4f7fc6195d"
+  homepage "https:kx.studioApplications:Carla"
   license "GPL-2.0-or-later"
   head "https:github.comfalkTXCarla.git", branch: "main"
+
+  stable do
+    url "https:github.comfalkTXCarlaarchiverefstagsv2.5.8.tar.gz"
+    sha256 "4ec96d06342ff28da4b80d4a76bc08fcaa5703726f96e5174afcdc4f7fc6195d"
+
+    # liblo API build patch, remove in next release
+    patch do
+      url "https:github.comfalkTXCarlacommit9370483b0a278eab6462c33b16e53377f7fffc6c.patch?full_index=1"
+      sha256 "eb9d9c45eaa95cb7756a0b0c38f7f2bd456a3ee3a0096a60d2fdd6af44bd1a49"
+    end
+  end
 
   livecheck do
     url :stable
@@ -22,11 +31,23 @@ class Carla < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "fluid-synth"
   depends_on "liblo"
   depends_on "libmagic"
+  depends_on "libsndfile"
   depends_on "pyqt@5"
   depends_on "python@3.12"
+  depends_on "qt@5"
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "freetype"
+    depends_on "libx11"
+    depends_on "mesa"
+    depends_on "pulseaudio"
+    depends_on "sdl2"
+  end
 
   fails_with gcc: "5"
 

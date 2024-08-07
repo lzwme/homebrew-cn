@@ -3,6 +3,7 @@ class SiscScheme < Formula
   homepage "https://sisc-scheme.org/"
   url "https://downloads.sourceforge.net/project/sisc/SISC%20Lite/1.16.6/sisc-lite-1.16.6.tar.gz"
   sha256 "7a2f1ee46915ef885282f6df65f481b734db12cfd97c22d17b6c00df3117eea8"
+  license any_of: ["MPL-1.1", "GPL-2.0-or-later"]
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e01048572a3944b67dd73804391d0cad34e81ecdb5ec39455f5eddad3175c3c8"

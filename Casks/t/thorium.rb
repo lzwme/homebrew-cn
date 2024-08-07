@@ -13,10 +13,16 @@ cask "thorium" do
     strategy :github_latest
   end
 
+  conflicts_with cask: "alex313031-thorium"
+
   app "Thorium.app"
 
   zap trash: [
     "~LibraryApplication SupportEDRLab.ThoriumReader",
     "~LibraryPreferencesio.github.edrlab.thorium.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

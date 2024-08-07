@@ -20,6 +20,7 @@ class Ppsspp < Formula
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
+
   depends_on "libzip"
   depends_on "miniupnpc"
   depends_on "sdl2"
@@ -35,6 +36,7 @@ class Ppsspp < Formula
 
   on_linux do
     depends_on "glew"
+    depends_on "mesa"
   end
 
   on_intel do

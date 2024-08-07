@@ -11,6 +11,7 @@ cask "qlmarkdown" do
   depends_on macos: ">= :catalina"
 
   app "QLMarkdown.app"
+  binary "#{appdir}QLMarkdown.appContentsResourcesqlmarkdown_cli"
 
   zap trash: [
     "~LibraryApplication Scriptsorg.sbarex.QLMarkdown",

@@ -25,7 +25,7 @@ class Minidlna < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg@6" # ffmpeg 7 issue: https://sourceforge.net/p/minidlna/bugs/363/
   depends_on "flac"
   depends_on "jpeg-turbo"
   depends_on "libexif"

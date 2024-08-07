@@ -30,6 +30,7 @@ class ArgyllCms < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxext"
     depends_on "libxinerama"
     depends_on "libxrandr"
     depends_on "libxscrnsaver"
@@ -97,6 +98,7 @@ class ArgyllCms < Formula
     end
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
+
     inreplace "makeall.sh", "jam", libexec"jam"
     inreplace "makeinstall.sh", "jam", libexec"jam"
     system "sh", "makeall.sh"
@@ -110,6 +112,7 @@ class ArgyllCms < Formula
   test do
     system bin"targen", "-d", "0", "test.ti1"
     system bin"printtarg", testpath"test.ti1"
+
     %w[test.ti1.ps test.ti1.ti1 test.ti1.ti2].each do |f|
       assert_predicate testpathf, :exist?
     end

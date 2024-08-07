@@ -2385,7 +2385,7 @@ Homebrew-homebrew-core/Formula/g/graphql-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqlviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqxl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/graphviz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/graphviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gravity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grayskull.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grc.rb, Homebrew/homebrew-core, 1
@@ -6075,7 +6075,7 @@ Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supervisor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/surelog.rb, Homebrew/homebrew-core, 1
@@ -6381,7 +6381,7 @@ Homebrew-homebrew-core/Formula/t/tpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracebox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracker.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/tractorgen.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tractorgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tradcpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trader.rb, Homebrew/homebrew-core, 0

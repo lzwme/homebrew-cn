@@ -25,8 +25,21 @@ class Gtksourceview5 < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
+  depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "fribidi"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk4"
+  depends_on "pango"
   depends_on "pcre2"
+
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     args = %w[

@@ -21,7 +21,7 @@ class RustlsFfi < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "cinstall", "--release", "--prefix", prefix
+    system "cargo", "cinstall", "--release", "--prefix", prefix, "--libdir", lib
   end
 
   test do

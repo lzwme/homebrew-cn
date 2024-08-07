@@ -3,6 +3,7 @@ class Rename < Formula
   homepage "http:plasmasturm.orgcoderename"
   url "https:github.comaprenamearchiverefstagsv1.601.tar.gz"
   sha256 "e8fd67b662b9deddfb6a19853652306f8694d7959dfac15538a9b67339c87af4"
+  license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https:github.comaprename.git", branch: "master"
 
   bottle do

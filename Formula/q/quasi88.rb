@@ -3,6 +3,7 @@ class Quasi88 < Formula
   homepage "https://www.eonet.ne.jp/~showtime/quasi88/"
   url "https://www.eonet.ne.jp/~showtime/quasi88/release/quasi88-0.7.1.tgz"
   sha256 "a9e7097e26cee6605ca3a467f6167b624dca4d11e3d99fd5c9886894b42cc05e"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://www.eonet.ne.jp/~showtime/quasi88/download.html"
@@ -19,16 +20,12 @@ class Quasi88 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bece28e3cc116e801cbcb9da47c2e3768d0a0e15b24d05bdb2ff0f51e06496b"
   end
 
-  depends_on "sdl12-compat"
+  depends_on "sdl2"
 
   def install
     ENV.deparallelize
 
     args = %W[
-      X11_VERSION=
-      SDL_VERSION=1
-      ARCH=macosx
-      SOUND_SDL=1
       CC=#{ENV.cc}
       CXX=#{ENV.cxx}
       LD=#{ENV.cxx}
