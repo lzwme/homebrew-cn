@@ -3,6 +3,7 @@ class Libwpd < Formula
   homepage "https://libwpd.sourceforge.net/"
   url "https://dev-www.libreoffice.org/src/libwpd-0.10.3.tar.xz"
   sha256 "2465b0b662fdc5d4e3bebcdc9a79027713fb629ca2bff04a3c9251fdec42dd09"
+  license any_of: ["MPL-2.0", "LGPL-2.1-or-later"]
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"

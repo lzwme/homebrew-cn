@@ -5,6 +5,7 @@ class MecabIpadic < Formula
   url "https://deb.debian.org/debian/pool/main/m/mecab-ipadic/mecab-ipadic_2.7.0-20070801+main.orig.tar.gz"
   version "2.7.0-20070801"
   sha256 "b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523"
+  license "NAIST-2003"
 
   # We check the Debian index page because the first-party website uses a Google
   # Drive download URL and doesn't list the version in any other way, so we

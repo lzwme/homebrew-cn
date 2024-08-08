@@ -1,8 +1,8 @@
 class Tdb < Formula
   desc "Trivial DataBase, by the Samba project"
   homepage "https://tdb.samba.org/"
-  url "https://www.samba.org/ftp/tdb/tdb-1.4.11.tar.gz"
-  sha256 "4e8ba6d93f383565bbd061be4deee15318232d1bbcca7212f18e17f56bb975a8"
+  url "https://www.samba.org/ftp/tdb/tdb-1.4.12.tar.gz"
+  sha256 "6ce4b27498812d09237ece65a0d6dfac0941610e709848ecb822aa241084cd7a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Tdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "17f1b2e28c3bf5903f4c628e59fdded926080a7f0352dc9f90e9d387d8e9df9d"
-    sha256 cellar: :any,                 arm64_ventura:  "baeaf2c0623b8843115b041c431d8145d2a101b6948a3dfd3fb4c75d2326f33c"
-    sha256 cellar: :any,                 arm64_monterey: "d1dbde0051a48a15ba6b35b270047d1df087476e15d067e79b0f83fbb98f5b03"
-    sha256 cellar: :any,                 sonoma:         "9fdbdd4ae45f962d1da2fcab6ecb2e8589a8d2fb70ff7cf48eec3d5ad61a79e3"
-    sha256 cellar: :any,                 ventura:        "23d41c03b78ac0fa4ebbf70c5e528796fcfd12637205eca9437a98e59ac83b1a"
-    sha256 cellar: :any,                 monterey:       "eed511b25c04a48b5643746b6dcfe676ab3259567c2255565f999de622e4fbf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aff979411eb80e5bd16676203a886cee4f1348a1cdbdc799e43b5fedc3ba256"
+    sha256 cellar: :any,                 arm64_sonoma:   "0e03c60dc4bd4659a2f07d55b3f936fba6a4548732c78a4924b1d9db99567102"
+    sha256 cellar: :any,                 arm64_ventura:  "92de590da95180f36ef18df1c1b7a2bae72dfe7cb483c3f7141dd3249e5a4836"
+    sha256 cellar: :any,                 arm64_monterey: "3aba84cc7f913c0c2b5e5feab69664575d9fba088dce59edf43ee6c97bf69c8b"
+    sha256 cellar: :any,                 sonoma:         "3f9a3c8c78759f6bd917c8ca07b352d4bee7adcdb25d4fb9d2d04296875ce413"
+    sha256 cellar: :any,                 ventura:        "9b6d8860e4ff8be0562ff418beca64c47ffc6b6522df88af0fcb1abc6eefd692"
+    sha256 cellar: :any,                 monterey:       "4952412921c9e07fa65312f3084f0d218e32d74c949d1062d7a169f073c832e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f83948c0f11a0dfc177f1fcb59ec583bf44639b2c4fab8be95155ec1196c113c"
   end
 
   uses_from_macos "python" => :build

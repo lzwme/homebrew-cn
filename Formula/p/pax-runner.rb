@@ -4,6 +4,7 @@ class PaxRunner < Formula
   url "https://search.maven.org/remotecontent?filepath=org/ops4j/pax/runner/pax-runner-assembly/1.9.0/pax-runner-assembly-1.9.0-jdk15.tar.gz"
   version "1.9.0"
   sha256 "b1ff2039dc1e73b6957653d967d6ee028f9c79d663b9031a6b77a49932352dc1"
+  license all_of: ["Apache-2.0", "MIT"]
 
   livecheck do
     url "https://search.maven.org/remotecontent?filepath=org/ops4j/pax/runner/pax-runner-assembly/maven-metadata.xml"

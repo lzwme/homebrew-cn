@@ -1,19 +1,19 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https:dystroy.orgbacon"
-  url "https:github.comCanopbaconarchiverefstagsv2.18.2.tar.gz"
-  sha256 "cb3d767cf62fe84c61088936c58767a661d24dc54753e30e2d11ff033695f507"
+  url "https:github.comCanopbaconarchiverefstagsv2.19.0.tar.gz"
+  sha256 "a5c9af533fc9b1097b2c60aa86b086367b8799ee10b1b33e0e04fffdb9723b8b"
   license "AGPL-3.0-or-later"
   head "https:github.comCanopbacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33ccdb8a460ec8744edb087c5a55703317c25bcbedc319ed97c93ee7da99b8da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bbb94524ea7554ca0e98926a877e60fe80b5d10aa265ad12e8cbee1059b6d6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf2a69cf116b198a840dc5134ea7e9eb4d011a03248b677c1346bcc86bf9df9e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b264b0022fc130acbb197a7cf675156094187dd4f17ff7df9b87cea4f1438594"
-    sha256 cellar: :any_skip_relocation, ventura:        "bad003b5b161c8dc653a0ee2fb5fd6bdbe3af5549c8b7501537e2fef8ab43759"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc33d2f4095bb99fe47446d3e64037cd2b03679a8817de86d8bc6af8b9f9b05e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71bc9509bb0677e5fbd85e26ce9f6ca381d362429a077b42aa106779ec8be9c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c3608015c2c222ec383a2a335f048e2d4235a9b5bdd59bc299b898e162df188"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8447a6608632112377b9c3ac0cfb34083401e5d2f0f5b3cb2d39a5ea00b2bfb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca1d4e4e94ac73ccf089ef087fa1a291bc0890ae458fac54c2b956174c4b113d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4df473cf27ba8cf85af26dc2d9fa9e6aa61405b7cce2489d6eb78e7eb5e82613"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f1ba5c2c7c43e98be65dd91e1dc319e59debcf46df5d654a851f97b7f371d85"
+    sha256 cellar: :any_skip_relocation, monterey:       "6fe312833dbe37129dba8170847231fdeb03b4d2141e4a7043e1536ab2932b6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e23010a7891b65e4a20cc0b9e895ed46e8fff1737d8ff4c26d42919afe617db"
   end
 
   depends_on "rust" => :build

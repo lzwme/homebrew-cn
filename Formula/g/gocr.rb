@@ -3,6 +3,7 @@ class Gocr < Formula
   homepage "https:wasd.urz.uni-magdeburg.dejschulenocr"
   url "https:wasd.urz.uni-magdeburg.dejschulenocrgocr-0.52.tar.gz"
   sha256 "df906463105f5f4273becc2404570f187d4ea52bd5769d33a7a8661a747b8686"
+  license "GPL-2.0-or-later"
   revision 2
 
   livecheck do

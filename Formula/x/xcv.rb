@@ -3,6 +3,7 @@ class Xcv < Formula
   homepage "https:github.combustercxcv"
   url "https:github.combustercxcvarchiverefstagsv1.0.1.tar.gz"
   sha256 "f2898f78bb05f4334073adb8cdb36de0f91869636a7770c8e955cee8758c0644"
+  license "ISC"
   head "https:github.combustercxcv.git", branch: "master"
 
   bottle do

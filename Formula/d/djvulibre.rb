@@ -3,6 +3,7 @@ class Djvulibre < Formula
   homepage "https://djvu.sourceforge.net/"
   url "https://downloads.sourceforge.net/djvu/djvulibre-3.5.28.tar.gz"
   sha256 "fcd009ea7654fde5a83600eb80757bd3a76998e47d13c66b54c8db849f8f2edc"
+  license "GPL-2.0-or-later"
   revision 2
 
   livecheck do

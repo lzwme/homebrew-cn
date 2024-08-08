@@ -3,6 +3,7 @@ class Libdsk < Formula
   homepage "https:www.seasip.infoUnixLibDsk"
   url "https:www.seasip.infoUnixLibDsklibdsk-1.4.2.tar.gz"
   sha256 "71eda9d0e33ab580cea1bb507467877d33d887cea6ec042b8d969004db89901a"
+  license "LGPL-2.0-or-later"
 
   livecheck do
     url :homepage

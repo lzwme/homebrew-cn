@@ -1,6 +1,7 @@
 class Libcanberra < Formula
   desc "Implementation of XDG Sound Theme and Name Specifications"
   homepage "https:0pointer.delennartprojectslibcanberra"
+  license "LGPL-2.1-or-later"
 
   stable do
     url "https:0pointer.delennartprojectslibcanberralibcanberra-0.30.tar.xz"

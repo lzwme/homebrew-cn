@@ -10,6 +10,8 @@ class Vf < Formula
     sha256 cellar: :any_skip_relocation, all: "e5e2d467c81269aec65859de0dd589b4493e9be0b77d047433ae1d2b98184bce"
   end
 
+  disable! date: "2024-08-07", because: "is missing a license"
+
   uses_from_macos "ruby"
 
   def install

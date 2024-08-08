@@ -3,6 +3,7 @@ class Dvdauthor < Formula
   homepage "https://dvdauthor.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/dvdauthor/dvdauthor-0.7.2.tar.gz"
   sha256 "3020a92de9f78eb36f48b6f22d5a001c47107826634a785a62dfcd080f612eb7"
+  license "GPL-2.0-or-later"
   revision 3
 
   livecheck do

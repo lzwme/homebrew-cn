@@ -4,6 +4,7 @@ class WaitOn < Formula
   url "https://pkg.freebsd.org/ports-distfiles/wait_on-1.1.tar.gz"
   mirror "https://mirrorservice.org/sites/distfiles.macports.org/wait_on/wait_on-1.1.tar.gz"
   sha256 "d7f40655f5c11e882890340826d1163050e2748de66b292c15b10d32feb6490f"
+  license "BSD-4-Clause"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866722ebcb399e5524776cc6ffdd2022112287368e4fa768b8b9bbfe2a8a30cc"

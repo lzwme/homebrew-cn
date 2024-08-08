@@ -3,6 +3,9 @@ class Liboil < Formula
   homepage "https://wiki.freedesktop.org/liboil/"
   url "https://liboil.freedesktop.org/download/liboil-0.3.17.tar.gz"
   sha256 "105f02079b0b50034c759db34b473ecb5704ffa20a5486b60a8b7698128bfc69"
+  # Only liboil/ref/mt19937ar.c is BSD-3-Clause while rest is BSD-2-Clause.
+  # The license for liboil/motovec/* is excluded as it is only used on PowerPC.
+  license all_of: ["BSD-2-Clause", "BSD-3-Clause"]
 
   livecheck do
     url "https://liboil.freedesktop.org/download/"

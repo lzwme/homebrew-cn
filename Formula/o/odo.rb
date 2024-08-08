@@ -3,6 +3,7 @@ class Odo < Formula
   homepage "https:github.comatomicobjectodo"
   url "https:github.comatomicobjectodoarchiverefstagsv0.2.2.tar.gz"
   sha256 "52133a6b92510d27dfe80c7e9f333b90af43d12f7ea0cf00718aee8a85824df5"
+  license "ISC"
 
   bottle do
     rebuild 1

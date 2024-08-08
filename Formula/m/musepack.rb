@@ -4,6 +4,12 @@ class Musepack < Formula
   url "https://files.musepack.net/source/musepack_src_r475.tar.gz"
   version "r475"
   sha256 "a4b1742f997f83e1056142d556a8c20845ba764b70365ff9ccf2e3f81c427b2b"
+  license all_of: [
+    "BSD-3-Clause", # mpc2sv8, mpccut, mpcdec, mpcgain, wavcmp
+    "LGPL-2.1-or-later", # mpcenc
+    "GPL-2.0-or-later", # mpcchap
+    "Zlib", # common/huffman-bcl.c
+  ]
 
   livecheck do
     url "https://www.musepack.net/index.php?pg=src"

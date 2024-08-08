@@ -77,12 +77,6 @@ class Libvirt < Formula
   end
 
   test do
-    if build.head?
-      output = shell_output("#{bin}/virsh -V")
-      assert_match "Compiled with support for:", output
-    else
-      output = shell_output("#{bin}/virsh -v")
-      assert_match version.to_s, output
-    end
+    assert_match version.to_s, shell_output("#{bin}/virsh -v")
   end
 end

@@ -124,7 +124,6 @@ class SynergyCore < Formula
                  "synergys: no configuration available\n"
     assert_equal shell_output("#{opt_bin}synergyc", 3).split("\n")[0],
                  "synergyc: a server address or name is required"
-    return if head?
 
     version_string = Regexp.quote(version.major_minor_patch)
     assert_match(synergys #{version_string}[-.0-9a-z]*, protocol version,

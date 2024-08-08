@@ -3,6 +3,7 @@ class Libgfshare < Formula
   homepage "https:www.digital-scurf.orgsoftwarelibgfshare"
   url "https:www.digital-scurf.orgfileslibgfsharelibgfshare-2.0.0.tar.bz2"
   sha256 "86f602860133c828356b7cf7b8c319ba9b27adf70a624fe32275ba1ed268331f"
+  license "MIT"
 
   livecheck do
     url "https:www.digital-scurf.orgfileslibgfshare"

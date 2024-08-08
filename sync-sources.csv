@@ -6951,7 +6951,6 @@ Homebrew-homebrew-core/Formula/x/xq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xqilla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xrdb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xrick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xrootd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 1
@@ -7656,6 +7655,7 @@ Homebrew-homebrew-cask/Casks/b/bwana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bzflag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/c0re100-qbittorrent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cabal.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cables.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cacher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cad-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caffeine.rb, Homebrew/homebrew-cask, 1

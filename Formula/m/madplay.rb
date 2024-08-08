@@ -3,6 +3,7 @@ class Madplay < Formula
   homepage "https:www.underbit.comproductsmad"
   url "https:downloads.sourceforge.netprojectmadmadplay0.15.2bmadplay-0.15.2b.tar.gz"
   sha256 "5a79c7516ff7560dffc6a14399a389432bc619c905b13d3b73da22fa65acede0"
+  license "GPL-2.0-or-later"
   revision 3
 
   livecheck do

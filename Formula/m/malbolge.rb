@@ -4,6 +4,7 @@ class Malbolge < Formula
   url "https://esoteric.sange.fi/orphaned/malbolge/malbolge.c"
   version "0.1.0"
   sha256 "ca3b4f321bc3273195eb29eee7ee2002031b057c2bf0c8d7a4f7b6e5b3f648c0"
+  license :public_domain
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21e3313bf2fc20b33e637016710d778140383e9dbc2a4e45b14a564ddb081d30"

@@ -28,10 +28,6 @@ class Multitail < Formula
   end
 
   test do
-    if build.head?
-      assert_match "multitail", shell_output("#{bin}multitail -h 2>&1", 1)
-    else
-      assert_match version.to_s, shell_output("#{bin}multitail -h 2>&1", 1)
-    end
+    assert_match version.to_s, shell_output("#{bin}multitail -h 2>&1", 1)
   end
 end

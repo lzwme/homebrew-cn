@@ -5,6 +5,14 @@ class VirustotalCli < Formula
   sha256 "8fab50202ce3a3f8128e94565cb58cdc2cbf5f816fd7b0855d897a379c9cfaf6"
   license "Apache-2.0"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51c8c0dd2a1a71900e5daac273038cd32baa8a95b05d0606d5f7c58533344fef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a17e44fe55495d9f0ca0ec43c6aa41d9be56d69db62d674d655ee8acc5f511d1"

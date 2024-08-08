@@ -5,6 +5,11 @@ class Unac < Formula
   sha256 "29d316e5b74615d49237556929e95e0d68c4b77a0a0cfc346dc61cf0684b90bf"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/u/unac/"
+    regex(/href=.*?unac[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "27170110668e4f920abf561c75cc4b8f0f9bed1ba84ab5b52426663f2fb68546"
     sha256 cellar: :any,                 arm64_ventura:  "9ef0e09918bdf4928f18a5ef4759da9877635890cae18a739b149d25933034f8"

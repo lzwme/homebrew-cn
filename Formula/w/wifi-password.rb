@@ -3,6 +3,7 @@ class WifiPassword < Formula
   homepage "https:github.comrauchgwifi-password"
   url "https:github.comrauchgwifi-passwordarchiverefstags0.1.0.tar.gz"
   sha256 "6af6a34a579063eb21c067f10b7c2eb5995995eceb70e6a1f571dc78d4f3651b"
+  license "MIT"
 
   bottle do
     rebuild 1

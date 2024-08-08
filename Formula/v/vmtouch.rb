@@ -3,6 +3,7 @@ class Vmtouch < Formula
   homepage "https:hoytech.comvmtouch"
   url "https:github.comhoytechvmtoucharchiverefstagsv1.3.1.tar.gz"
   sha256 "d57b7b3ae1146c4516429ab7d6db6f2122401db814ddd9cdaad10980e9c8428c"
+  license "BSD-3-Clause"
   head "https:github.comhoytechvmtouch.git", branch: "master"
 
   bottle do

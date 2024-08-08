@@ -3,6 +3,7 @@ class Lrzsz < Formula
   homepage "https:www.ohse.deuwesoftwarelrzsz.html"
   url "https:www.ohse.deuwereleaseslrzsz-0.12.20.tar.gz"
   sha256 "c28b36b14bddb014d9e9c97c52459852f97bd405f89113f30bee45ed92728ff1"
+  license "GPL-2.0-or-later"
   revision 1
 
   livecheck do

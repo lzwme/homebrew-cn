@@ -5,6 +5,7 @@ class VampPluginSdk < Formula
   url "https:deb.debian.orgdebianpoolmainvvamp-plugin-sdkvamp-plugin-sdk_2.10.0.orig.tar.gz"
   mirror "https:code.soundsoftware.ac.ukattachmentsdownload2691vamp-plugin-sdk-2.10.0.tar.gz"
   sha256 "aeaf3762a44b148cebb10cde82f577317ffc9df2720e5445c3df85f3739ff75f"
+  license all_of: ["X11", "BSD-3-Clause"]
   head "https:code.soundsoftware.ac.ukhgvamp-plugin-sdk", using: :hg
 
   # code.soundsoftware.ac.uk has SSL certificate verification issues, so we're

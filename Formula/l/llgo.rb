@@ -1,18 +1,18 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https:github.comgoplusllgo"
-  url "https:github.comgoplusllgoarchiverefstagsv0.9.4.tar.gz"
-  sha256 "51fc0349b3d9230647f3bfac2dd7caef3b5cd8e7e1f8f22dcbc53d37403be0c7"
+  url "https:github.comgoplusllgoarchiverefstagsv0.9.5.tar.gz"
+  sha256 "476f699477578af75793475c8b57d491e9fa538933139a0ab99040549b242648"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "fc05893f5696e596a04f086e40a53ff2cb901560b5601e1a2a497ff817c7da6c"
-    sha256 cellar: :any, arm64_ventura:  "e1e3142ff42869ba9344e3f746deee3016226fca8049f042020f23b8c6273860"
-    sha256 cellar: :any, arm64_monterey: "bed1b23346e802e78b519ece498ce265bee9609c370d4dc966a2266ecffbd658"
-    sha256 cellar: :any, sonoma:         "878039d2df8f54ea4ae175566774c1e4e9c51ba0bf60f697b4130d169c874300"
-    sha256 cellar: :any, ventura:        "4898b2b60dfcc0d564e6f3c3b38535d75cf25200a825c4af1b0a2e9a42dbc6e8"
-    sha256 cellar: :any, monterey:       "aaf096555745d97bdc9f9cb64fb037f317a8994a2b3d2bdf03327799b241b66b"
-    sha256               x86_64_linux:   "97e07537487ad02a6ebcfb8ab263bfae3484a91bfbc8dc49646d299bda937841"
+    sha256 cellar: :any, arm64_sonoma:   "12bf8abb5ae2c3a49056805aae76d4b300e4253230d22d9b3fb1d53c1a879cb8"
+    sha256 cellar: :any, arm64_ventura:  "8c0903327b85d1fab75d3ce09667c657fe446110ae7c62a0fa567e27c1b1a43a"
+    sha256 cellar: :any, arm64_monterey: "ba68c8e8fd5bafc383971864e144d9ae6cd290c579787f9e8bd6c80ce3d23a8b"
+    sha256 cellar: :any, sonoma:         "c855df8a38f7a1482270dcdde42d3939876010e92bb814126bde7a69fc3fc22b"
+    sha256 cellar: :any, ventura:        "77281d19421962aea10d3876c028f3fdbdb4bbb437312bb43a83189c4d3a1ad0"
+    sha256 cellar: :any, monterey:       "c4c20296cd7037a82c7a8122c8eb42e5f0e2ac47e785bfe67d7e729244814a65"
+    sha256               x86_64_linux:   "b076791d77438e3c1ff43f98d1e7a14d3787dc00beed71bbf171255f5dbc7e9d"
   end
 
   depends_on "bdw-gc"
@@ -63,7 +63,7 @@ class Llgo < Formula
 
     goos = shell_output(Formula["go"].opt_bin"go env GOOS").chomp
     goarch = shell_output(Formula["go"].opt_bin"go env GOARCH").chomp
-    assert_equal "llgo v#{version} #{goos}#{goarch}", shell_output("#{bin}llgo version").chomp unless head?
+    assert_equal "llgo v#{version} #{goos}#{goarch}", shell_output("#{bin}llgo version").chomp
 
     (testpath"hello.go").write <<~EOS
       package main

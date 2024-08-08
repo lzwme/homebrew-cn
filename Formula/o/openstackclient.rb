@@ -4,18 +4,18 @@ class Openstackclient < Formula
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
   # TODO: remove `setuptools` from pypi_formula_mappings.json after https://review.opendev.org/c/openstack/pbr/+/924216
-  url "https://files.pythonhosted.org/packages/6c/4e/d1a690dcd1b2adba239b24aa5a3da53fa2f1d98d1ee6b718a6e7eff119a6/python-openstackclient-6.6.1.tar.gz"
-  sha256 "23b486ecdf90d7388db91d1a89546e357fb92fd94a2ca8bfafe22ac8ec0196c4"
+  url "https://files.pythonhosted.org/packages/92/fc/c3c17c98ba811a364094ff35057475dcc1ceaeb5edf4f9884542644982d0/python-openstackclient-7.0.0.tar.gz"
+  sha256 "d470e3598c929d923fd768fdf866f51bd34a91bfb17eb70ca1363fabb68bd2e0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e58cbc20d2da7bd51a183a28645549675db548dddc31204e4c780567a513b661"
-    sha256 cellar: :any,                 arm64_ventura:  "1ae4af4b1bae5745da3c2f8e02cf7ac05fd0d3f2471e593219aa00ef8339bd20"
-    sha256 cellar: :any,                 arm64_monterey: "b6afaeb8b3e55336698820ac46d0c05be469d57f68589952f54fc2b168eb3edf"
-    sha256 cellar: :any,                 sonoma:         "ea83a332ab7bb5e9e56cd24ce6faf4b4bf88450891d7414b0e9f76160c001b4f"
-    sha256 cellar: :any,                 ventura:        "2afc03b4c3bc119215c0f54d9112233687489c58d31c1677b6e49117c36da45f"
-    sha256 cellar: :any,                 monterey:       "2b6a295c7c2aa28271798737187f923b1f2fa21964a883ca8dc077176659209d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc64283022e68c5d3fe48b3d8edd34f97433ccb7dc8df10f26541346317cfc16"
+    sha256 cellar: :any,                 arm64_sonoma:   "d32d77c8fc9e462cc76be9b030f61ff1084a786513150eff1d0e0eba4f49fcce"
+    sha256 cellar: :any,                 arm64_ventura:  "a26f1139d1846160ea1feef858fd094d7477a3bd1bdc0b5d295fd63069069d13"
+    sha256 cellar: :any,                 arm64_monterey: "6a180e15d999758cec333be2205613c318f852750725b1cd39e3920c9ebfb11c"
+    sha256 cellar: :any,                 sonoma:         "a3e309c0d07998cf25f3cc8d7afaf67523d532c267bbc89779122169533fc497"
+    sha256 cellar: :any,                 ventura:        "c60b8446008ccb4981e596f0c8dfbc5f86bb846333bfe1694ad044d80bcc8be0"
+    sha256 cellar: :any,                 monterey:       "a32144e5a20fdd500be5ac82f2a142d303f0f9680251ffc08a004a6d0ccd9668"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74cf38db4d703d377fd846966362f3429de64673ce655f090b759cd8ff2f5e11"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -32,8 +32,8 @@ class Openstackclient < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/39/31/ca3e2de55503d8ad75985865629f69a2c376a44428c5df1450b749d30751/attrs-24.1.0.tar.gz"
-    sha256 "adbdec84af72d38be7628e353a09b6a6790d15cd71819f6e9d7b0faa8a125745"
+    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "autopage" do
@@ -302,11 +302,6 @@ class Openstackclient < Formula
     sha256 "53cd9923f43a3b0772a40e3561f74655adc8038f90261ab3de05b6211d12edcb"
   end
 
-  resource "python-novaclient" do
-    url "https://files.pythonhosted.org/packages/da/18/a175a406ebb290e8bc02f4bc4e56c9d9f8a0a3ab8761108995fa29fe2825/python-novaclient-18.6.0.tar.gz"
-    sha256 "573c10aa420b0898d35fb146edd8bb005806bfff0131ae2b5a30ca22ac89477b"
-  end
-
   resource "python-octaviaclient" do
     url "https://files.pythonhosted.org/packages/d4/45/00f23cecc76da6ec7a1c8c355fe7c2e859ece2dfaf8267bad30b92f13790/python-octaviaclient-3.7.0.tar.gz"
     sha256 "c001b107279104ec1d5998360f0569b75c868b97abdca43faa1c91540c1a29ee"
@@ -318,8 +313,8 @@ class Openstackclient < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "referencing" do
@@ -343,8 +338,8 @@ class Openstackclient < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/2f/fe/5217efe981c2ae8647b503ba3b8f55efc837df62f63667572b4bb75b30bc/rpds_py-0.19.1.tar.gz"
-    sha256 "31dd5794837f00b46f4096aa8ccaa5972f73a938982e32ed817bb520c465e520"
+    url "https://files.pythonhosted.org/packages/55/64/b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29a/rpds_py-0.20.0.tar.gz"
+    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
   resource "setuptools" do

@@ -4,6 +4,7 @@ class Phoon < Formula
   url "https://www.acme.com/software/phoon/phoon_14Aug2014.tar.gz"
   version "20140814"
   sha256 "bad9b5e37ccaf76a10391cc1fa4aff9654e54814be652b443853706db18ad7c1"
+  license "BSD-2-Clause"
   version_scheme 1
 
   # We check the site using HTTP (rather than HTTPS) because this server

@@ -3,6 +3,7 @@ class Zsdx < Formula
   homepage "https://www.solarus-games.org/games/the-legend-of-zelda-mystery-of-solarus-dx"
   url "https://gitlab.com/solarus-games/games/zsdx/-/archive/v1.12.3/zsdx-v1.12.3.tar.bz2"
   sha256 "29065d3280ec03176e8de0a7a26504421d43c5778b566e50c212deb25b45d66a"
+  license all_of: ["CC-BY-SA-4.0", "GPL-3.0-only"]
   head "https://gitlab.com/solarus-games/games/zsdx.git", branch: "dev"
 
   bottle do

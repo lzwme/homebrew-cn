@@ -3,6 +3,7 @@ class Pod2man < Formula
   homepage "https://www.eyrie.org/~eagle/software/podlators/"
   url "https://archives.eyrie.org/software/perl/podlators-v6.0.2.tar.xz"
   sha256 "22f5941c848756c05396356437dc799b32703f4fc282f0f281b9c83696500183"
+  license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
     url "https://archives.eyrie.org/software/perl/"

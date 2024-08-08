@@ -3,6 +3,7 @@ class Gom < Formula
   homepage "https://wiki.gnome.org/Projects/Gom"
   url "https://download.gnome.org/sources/gom/0.4/gom-0.4.tar.xz"
   sha256 "68d08006aaa3b58169ce7cf1839498f45686fba8115f09acecb89d77e1018a9d"
+  license "LGPL-2.1-or-later"
   revision 3
 
   bottle do

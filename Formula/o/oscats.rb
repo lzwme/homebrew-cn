@@ -3,6 +3,7 @@ class Oscats < Formula
   homepage "https:code.google.comarchiveposcats"
   url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comoscatsoscats-0.6.tar.gz"
   sha256 "2f7c88cdab6a2106085f7a3e5b1073c74f7d633728c76bd73efba5dc5657a604"
+  license "GPL-3.0-or-later"
   revision 7
 
   bottle do

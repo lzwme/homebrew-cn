@@ -4,6 +4,7 @@ class Glktermw < Formula
   url "https://www.eblong.com/zarf/glk/glktermw-104.tar.gz"
   version "1.0.4"
   sha256 "5968630b45e2fd53de48424559e3579db0537c460f4dc2631f258e1c116eb4ea"
+  license "Glulxe"
 
   livecheck do
     url :homepage

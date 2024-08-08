@@ -3,6 +3,7 @@ class Dante < Formula
   homepage "https:www.inet.nodante"
   url "https:www.inet.nodantefilesdante-1.4.3.tar.gz"
   sha256 "418a065fe1a4b8ace8fbf77c2da269a98f376e7115902e76cda7e741e4846a5d"
+  license "BSD-Inferno-Nettverk"
 
   livecheck do
     url "https:www.inet.nodantedownload.html"

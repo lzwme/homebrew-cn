@@ -3,6 +3,7 @@ class Dhex < Formula
   homepage "https://www.dettus.net/dhex/"
   url "https://www.dettus.net/dhex/dhex_0.69.tar.gz"
   sha256 "52730bcd1cf16bd4dae0de42531be9a4057535ec61ca38c0804eb8246ea6c41b"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage

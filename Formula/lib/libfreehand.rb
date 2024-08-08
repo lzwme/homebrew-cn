@@ -3,6 +3,7 @@ class Libfreehand < Formula
   homepage "https:wiki.documentfoundation.orgDLPLibrarieslibfreehand"
   url "https:dev-www.libreoffice.orgsrclibfreehandlibfreehand-0.1.2.tar.xz"
   sha256 "0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac"
+  license "MPL-2.0"
   revision 5
 
   livecheck do

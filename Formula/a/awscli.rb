@@ -3,22 +3,22 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.23.tar.gz"
-  sha256 "2221eac556ffc1ec715ddf8e1adae86afd376d63b8b600f1c069ab706994d1f2"
+  url "https:github.comawsaws-cliarchiverefstags2.17.25.tar.gz"
+  sha256 "ed074e1b2a0e869b3e1ae25042e6ecdb6f19c9b0de2a32d476e1c993e5d11b62"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1b5223333c4007d769df9f38f6b78ff9333a25187041a669f5417a165f2c3f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e44f61eaf230e0ca2884273619fbc16b073ee9b1950b1150db3f0e6f7a36c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bee9d618b738e953379705d9ca13ab2c61c83cc40d0db25780eb83372c2212a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7dfb26f97c53c51663574f93aa1484828b539028b7f3f97dea2215aa2dd4a762"
-    sha256 cellar: :any_skip_relocation, ventura:        "d51f39a3c9a0e0b105fdd764e3030d4656a100d14a5e9b4b12d0ab5a868223e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b51188d6d9cab4b99cfe33902b1cbfd9039beef042594fb410bc398f6e2fff8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a5932aa8cab887b322893b8deab636ecb897cf0e4b797f11775bb804692a6cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da193df40fb9f1740d4d0884fa77273cc620c4b34893398ceb137991cde24f1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "870f3f13ac6ac9b12cc446435cad0c3d6b640cc9ee3383f6df19899ba7e17068"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78af9b13de7e15d3a73d018805de07608d08f26985c49fb029e1a62128da9a54"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2523fee0e2481d8876b4571bd5144fc3d66f1eada3ab961123a6f204d128e669"
+    sha256 cellar: :any_skip_relocation, ventura:        "299ad5e4cd9ef612c1c461500545953918a1fbfde79d87252238c5bf58717ebe"
+    sha256 cellar: :any_skip_relocation, monterey:       "eef76c0735b3bc3c5592bff0ea71ab3b0dadde1f81fc5af43cfafa8023e3e4ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afe92388db879041408d2886b6c482bef5f8a3e7b712ad68e0ab035d20efe3bc"
   end
 
-  depends_on "cmake" => :build # for awscrt
+  depends_on "cmake" => :build
   depends_on "cryptography"
   depends_on "python@3.11" # Python 3.12 issue: https:github.comawsaws-cliissues8342
 
@@ -26,8 +26,8 @@ class Awscli < Formula
   uses_from_macos "mandoc"
 
   resource "awscrt" do
-    url "https:files.pythonhosted.orgpackagesc9959faca9e404fd3cd72fa8f75d4f33f16032f3598a841e83dc81c687b4b80aawscrt-0.20.11.tar.gz"
-    sha256 "c3dbfb7f1909457952e645373e72b69f90c50c465ee6a46d9bbdc12acb79803c"
+    url "https:files.pythonhosted.orgpackages7f747789c268de69be3f6179abdba36a5e7c079997a8de73aea13e70a98d4494awscrt-0.21.2.tar.gz"
+    sha256 "37ace28d0d7a91f90862dd2994872a15962b7b4f1376e0b7b01a821954611507"
   end
 
   resource "colorama" do

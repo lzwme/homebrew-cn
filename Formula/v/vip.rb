@@ -4,6 +4,15 @@ class Vip < Formula
   url "https:www.cs.duke.edu~desscriptsvip"
   version "19971113"
   sha256 "171278e8bd43abdbd3a4c35addda27a0d3c74fc784dbe60e4783d317ac249d11"
+  # Permission is granted to reproduce and distribute this program
+  # with the following conditions:
+  #   1) This copyright notice and the author identification below
+  #      must be left intact in the program and in any copies.
+  #   2) Any modifications to the program must be clearly identified
+  #      in the source file.
+  #
+  # Written by Daniel E. Singer, Duke Univ. Dept of Computer Science, 53095
+  license :cannot_represent
 
   bottle do
     rebuild 1

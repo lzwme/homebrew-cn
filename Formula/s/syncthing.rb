@@ -41,8 +41,7 @@ class Syncthing < Formula
   end
 
   test do
-    build_version = build.head? ? "v0.0.0-#{version}" : "v#{version}"
-    assert_match "syncthing #{build_version} ", shell_output("#{bin}syncthing --version")
+    assert_match "syncthing v#{version} ", shell_output("#{bin}syncthing --version")
     system bin"syncthing", "-generate", "."
   end
 end

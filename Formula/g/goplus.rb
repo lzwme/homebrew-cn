@@ -39,7 +39,7 @@ class Goplus < Formula
     # Run gop fmt, run, build
     ENV.prepend "GO111MODULE", "on"
 
-    assert_equal "v#{version}", shell_output("#{bin}gop env GOPVERSION").chomp unless head?
+    assert_equal "v#{version}", shell_output("#{bin}gop env GOPVERSION").chomp
     system bin"gop", "fmt", "hello.gop"
     assert_equal "Hello World\n", shell_output("#{bin}gop run hello.gop")
 

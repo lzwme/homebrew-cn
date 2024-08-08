@@ -3,6 +3,8 @@ class Par < Formula
   homepage "http://www.nicemice.net/par/"
   url "http://www.nicemice.net/par/Par-1.53.0.tar.gz"
   sha256 "c809c620eb82b589553ac54b9898c8da55196d262339d13c046f2be44ac47804"
+  # par.doc includes a custom license and alternatively allows usage under MIT license
+  license any_of: [:cannot_represent, "MIT"]
 
   livecheck do
     url :homepage

@@ -3,6 +3,7 @@ class Xmlcatmgr < Formula
   homepage "https://xmlcatmgr.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/xmlcatmgr/xmlcatmgr/2.2/xmlcatmgr-2.2.tar.gz"
   sha256 "ea1142b6aef40fbd624fc3e2130cf10cf081b5fa88e5229c92b8f515779d6fdc"
+  license "BSD-3-Clause"
 
   bottle do
     rebuild 1

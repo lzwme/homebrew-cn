@@ -3,6 +3,7 @@ class Gibbslda < Formula
   homepage "https://gibbslda.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/gibbslda/GibbsLDA%2B%2B/0.2/GibbsLDA%2B%2B-0.2.tar.gz"
   sha256 "4ca7b51bd2f098534f2fdf82c3f861f5d8bf92e29a6b7fbdc50c3c2baeb070ae"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4671894574c3037f3da88cce3a3327bf1448bb0e07eee695367a819b9c80447d"

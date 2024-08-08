@@ -3,6 +3,8 @@ class Libnova < Formula
   homepage "https://libnova.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/libnova/libnova/v%200.15.0/libnova-0.15.0.tar.gz"
   sha256 "7c5aa33e45a3e7118d77df05af7341e61784284f1e8d0d965307f1663f415bb1"
+  # libnova is LGPL but the libnovaconfig binary is GPL
+  license all_of: ["LGPL-2.0-or-later", "GPL-2.0-or-later"]
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "956371a814a279005c8b801707b40d0d7dce699c481f0bcac0ceb8cf8932505e"

@@ -3,6 +3,7 @@ class Proctools < Formula
   homepage "https:proctools.sourceforge.net"
   url "https:downloads.sourceforge.netprojectproctoolsproctools0.4pre1proctools-0.4pre1.tar.gz"
   sha256 "4553b9c6eda959b12913bc39b6e048a8a66dad18f888f983697fece155ec5538"
+  license all_of: ["BSD-3-Clause", "BSD-4-Clause-UC"]
 
   livecheck do
     url :stable

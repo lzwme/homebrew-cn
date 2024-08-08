@@ -4,6 +4,7 @@ class MecabKo < Formula
   url "https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz"
   version "0.996-ko-0.9.2"
   sha256 "d0e0f696fc33c2183307d4eb87ec3b17845f90b81bf843bd0981e574ee3c38cb"
+  license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-3-Clause"]
 
   livecheck do
     url :stable

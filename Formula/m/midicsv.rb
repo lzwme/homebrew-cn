@@ -3,6 +3,7 @@ class Midicsv < Formula
   homepage "https://www.fourmilab.ch/webtools/midicsv/"
   url "https://www.fourmilab.ch/webtools/midicsv/midicsv-1.1.tar.gz"
   sha256 "7c5a749ab5c4ebac4bd7361df0af65892f380245be57c838e08ec6e4ac9870ef"
+  license :public_domain
 
   livecheck do
     url :homepage

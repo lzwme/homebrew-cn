@@ -3,6 +3,7 @@ class Vimpager < Formula
   homepage "https:github.comrkitovervimpager"
   url "https:github.comrkitovervimpagerarchiverefstags2.06.tar.gz"
   sha256 "cc616d0840a6f2501704eea70de222ab662421f34b2da307e11fb62aa70bda5d"
+  license "BSD-2-Clause"
   head "https:github.comrkitovervimpager.git", branch: "master"
 
   bottle do

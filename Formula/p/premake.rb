@@ -47,7 +47,6 @@ class Premake < Formula
   end
 
   test do
-    expected_version = build.head? ? "-dev" : version.to_s
-    assert_match expected_version, shell_output("#{bin}premake5 --version")
+    assert_match version.to_s, shell_output("#{bin}premake5 --version")
   end
 end

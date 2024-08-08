@@ -3,6 +3,7 @@ class Libuecc < Formula
   homepage "https://git.universe-factory.net/libuecc/"
   url "https://git.universe-factory.net/libuecc/snapshot/libuecc-7.tar"
   sha256 "0120aee869f56289204255ba81535369816655264dd018c63969bf35b71fd707"
+  license "BSD-2-Clause"
   head "https://git.universe-factory.net/libuecc", using: :git, branch: "master"
 
   livecheck do

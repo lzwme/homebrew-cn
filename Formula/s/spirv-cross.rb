@@ -7,7 +7,7 @@ class SpirvCross < Formula
     "Apache-2.0",
     "MIT",
     "CC-BY-4.0",
-    :cannot_represent, # LicenseRef-KhronosFreeUse
+    "MIT-Khronos-old",
   ]
   version_scheme 1
   head "https:github.comKhronosGroupSPIRV-Cross.git", branch: "main"

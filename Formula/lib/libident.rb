@@ -3,6 +3,7 @@ class Libident < Formula
   homepage "https://www.remlab.net/libident/"
   url "https://www.remlab.net/files/libident/libident-0.32.tar.gz"
   sha256 "8cc8fb69f1c888be7cffde7f4caeb3dc6cd0abbc475337683a720aa7638a174b"
+  license :public_domain
 
   livecheck do
     url "https://www.remlab.net/files/libident/"

@@ -3,6 +3,7 @@ class Pngxx < Formula
   homepage "https://www.nongnu.org/pngpp/"
   url "https://download.savannah.gnu.org/releases/pngpp/png++-0.2.10.tar.gz"
   sha256 "998af216ab16ebb88543fbaa2dbb9175855e944775b66f2996fc945c8444eee1"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/pngpp/"

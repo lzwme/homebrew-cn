@@ -4,6 +4,7 @@ class Mecab < Formula
   # Canonical url is https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE
   url "https://deb.debian.org/debian/pool/main/m/mecab/mecab_0.996.orig.tar.gz"
   sha256 "e073325783135b72e666145c781bb48fada583d5224fb2490fb6c1403ba69c59"
+  license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-3-Clause"]
 
   livecheck do
     url :homepage

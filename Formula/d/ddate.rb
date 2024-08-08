@@ -3,6 +3,7 @@ class Ddate < Formula
   homepage "https:github.combo0tsddate"
   url "https:github.combo0tsddatearchiverefstagsv0.2.2.tar.gz"
   sha256 "d53c3f0af845045f39d6d633d295fd4efbe2a792fd0d04d25d44725d11c678ad"
+  license :public_domain
 
   bottle do
     rebuild 1

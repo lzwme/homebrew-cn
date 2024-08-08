@@ -3,6 +3,7 @@ class Libmpd < Formula
   homepage "https:gmpc.fandom.comwikiGnome_Music_Player_Client"
   url "https:www.musicpd.orgdownloadlibmpd11.8.17libmpd-11.8.17.tar.gz"
   sha256 "fe20326b0d10641f71c4673fae637bf9222a96e1712f71f170fca2fc34bf7a83"
+  license "GPL-2.0-or-later"
   revision 1
 
   livecheck do

@@ -4,6 +4,7 @@ class Dhcping < Formula
   url "http://www.mavetju.org/download/dhcping-1.2.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/d/dhcping/dhcping_1.2.orig.tar.gz"
   sha256 "32ef86959b0bdce4b33d4b2b216eee7148f7de7037ced81b2116210bc7d3646a"
+  license "BSD-2-Clause"
 
   livecheck do
     url :homepage
