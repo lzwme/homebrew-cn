@@ -47,9 +47,6 @@ class KubernetesCli < Formula
 
     version_output = shell_output("#{bin}kubectl version --client --output=yaml 2>&1")
     assert_match "gitTreeState: clean", version_output
-    if build.stable?
-      revision = stable.specs[:revision]
-      assert_match revision.to_s, version_output
-    end
+    assert_match stable.specs[:revision].to_s, version_output
   end
 end

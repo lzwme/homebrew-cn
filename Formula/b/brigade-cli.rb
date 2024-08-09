@@ -42,10 +42,8 @@ class BrigadeCli < Formula
     system bin"brig", "init", "--id", "foo"
     assert_predicate testpath".brigade", :directory?
 
-    version_output = shell_output(bin"brig version 2>&1")
+    version_output = shell_output("#{bin}brig version 2>&1")
     assert_match "Brigade client:", version_output
-
-    return unless build.stable?
 
     commit = stable.specs[:revision][0..6]
     assert_match "Brigade client: version v#{version} -- commit #{commit}", version_output

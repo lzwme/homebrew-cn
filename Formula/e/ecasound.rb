@@ -29,15 +29,19 @@ class Ecasound < Formula
   depends_on "libsamplerate"
   depends_on "libsndfile"
 
+  uses_from_macos "ncurses"
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
+
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --enable-rubyecasound=no
       --enable-sys-readline=no
     ]
-    system "./configure", *args
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

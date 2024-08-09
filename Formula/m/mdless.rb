@@ -1,19 +1,18 @@
 class Mdless < Formula
   desc "Provides a formatted and highlighted view of Markdown files in Terminal"
   homepage "https:github.comttscoffmdless"
-  url "https:github.comttscoffmdlessarchiverefstags2.1.42.tar.gz"
-  sha256 "c9f9a846eea7a6fdbbd82549197de1faee5ca84929a7d117202c2c774f6c262f"
+  url "https:github.comttscoffmdlessarchiverefstags2.1.44.tar.gz"
+  sha256 "baa3df2a641f5f8646c90d955a1a89cee1e21aa3a571cbcbe6b45ee0df3189ea"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d14c17776340e20d3330fce4796de5e6b6384b22cc8ad28356415963dcd51fbc"
-    sha256 cellar: :any,                 arm64_ventura:  "f5e252648296e3fddfefbcf5f96429cbe432fdcafc359180892214018a199599"
-    sha256 cellar: :any,                 arm64_monterey: "d887fc81b7698332aa0961c95f581d85af459710f73492f8413e2eed4965bff2"
-    sha256 cellar: :any,                 sonoma:         "1d676b07d0e2b4bc1411afd96b55951f7d7e2025711cf5b7acc165bb7dab37ef"
-    sha256 cellar: :any,                 ventura:        "2785dbbb55f4e8457626d036eadb751e991a7212c8653a8350ac5604782f373d"
-    sha256 cellar: :any,                 monterey:       "9a9e54d2d9778078b3a972589a52e7fa0ea20639a7e7a3261f8b5ef20d774afd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fb577102a312827d1615615255a0c55b9c86a5a3b1cd5dc646de396f496f09f"
+    sha256 cellar: :any,                 arm64_sonoma:   "6ccdc2729ca43fd97d8e4dc882e7f314cf1d45de14e92a80c69a0a781f6bd253"
+    sha256 cellar: :any,                 arm64_ventura:  "7d342f3e5ad4e71f71155efc4938a79773518e0a8bcc1a1d1a001d06df3fcaf7"
+    sha256 cellar: :any,                 arm64_monterey: "969bb90dd5b86447f06c4bd962a5109ed426bf39af4a4ce2c3a3a7a07b08b7d4"
+    sha256 cellar: :any,                 sonoma:         "444d16e225ff1877acdebc31cdec07ddc0ccbe24437de8ed426243608218cc8e"
+    sha256 cellar: :any,                 ventura:        "a63754351ae37b608126a64e2606e83fb0288bedcf3dcc9632e2517002ae83ea"
+    sha256 cellar: :any,                 monterey:       "c6ef26ef7ce2273b82f7eb9c285afd60cf3acac45f8060601ecbfbb0ed78ae58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe5e2745792e8ebb94c8e653747813d3763ca981f474c6a5b0f1661dd5bf31ef"
   end
 
   # Requires Ruby >= 2.7

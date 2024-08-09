@@ -12,9 +12,11 @@ class Wv < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "282ed73a67d00953c4fbd390a82f3d1148822dbe103beaa7f81cfdc92ca8194a"
     sha256 arm64_ventura:  "af7ed2ef919eb856fd37e52bce5d7d5ff8ed39785969aeb565b07c62160807c9"
     sha256 arm64_monterey: "a96f5e5c182887f42939ab725f79d4a9f31801d3f92a19da1e08da6477edcfe7"
     sha256 arm64_big_sur:  "36bac1865cab3a50dafdf0477bb914d6c9df08c386b5586951f6681e5d5f73ad"
+    sha256 sonoma:         "fb64e12f1f800257a79b538a3651a0abcc6bea703e91843f1ab84128470ae988"
     sha256 ventura:        "96dd06b5837281f09cbb87bc62ba805285c1ca2c960420f6903962618755d92e"
     sha256 monterey:       "376a60947357ebe4662e6f197745da5c76e75c0a5559456711f95b138519eba6"
     sha256 big_sur:        "6e6499eca2f6ab68a58a4a0548ac4954eec052d20558dc1bd834cc4bb030e0cc"
@@ -39,6 +41,11 @@ class Wv < Formula
   end
 
   def install
+    # Work around build errors with newer Clang
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append_to_cflags "-Wno-incompatible-function-pointer-types -Wno-int-conversion"
+    end
+
     system "./configure", "--mandir=#{man}", *std_configure_args
     system "make"
     ENV.deparallelize

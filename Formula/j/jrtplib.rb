@@ -3,6 +3,7 @@ class Jrtplib < Formula
   homepage "https://research.edm.uhasselt.be/jori/jrtplib"
   url "https://research.edm.uhasselt.be/jori/jrtplib/jrtplib-3.11.2.tar.bz2"
   sha256 "2c01924c1f157fb1a4616af5b9fb140acea39ab42bfb28ac28d654741601b04c"
+  license "MIT"
 
   livecheck do
     skip "No longer developed"

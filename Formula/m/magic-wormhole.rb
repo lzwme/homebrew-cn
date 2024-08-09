@@ -3,20 +3,19 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https:github.commagic-wormholemagic-wormhole"
-  url "https:files.pythonhosted.orgpackages89998c8709d8c3e1058ba8b6d9f331529a0e91b484ae0585dd24cd77cb45ad4fmagic-wormhole-0.14.0.tar.gz"
-  sha256 "006d239f88bff7c37bc2eff60a004e263faf9258f7279192d06ba0c9ced6b080"
+  url "https:files.pythonhosted.orgpackages9d7b9320062c8b11e58dccd079dd62e3525bf1dac7f2b441c885d64a7ca7f045magic-wormhole-0.15.0.tar.gz"
+  sha256 "be2563b5c5547ba333bc6608f048004c8f36d556139bf2ffe3d9f41da2797006"
   license "MIT"
-  revision 3
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1a1776c8668b34079ec996a11ae65d5bc2040edf31f2faf08b0da879f11822b4"
-    sha256 cellar: :any,                 arm64_ventura:  "02ba23def84e1d8ff1dc32cabd17e4ecfae36c8c676d0799f61d734c3ddf070d"
-    sha256 cellar: :any,                 arm64_monterey: "0e0c545d799c230536b4fc5b6575b6f98eeb004ab2f877ba9f64390e31839b8b"
-    sha256 cellar: :any,                 sonoma:         "9442c6479261d57400fe7e7279284a25817e647d4a1d1e632767bb818f9114ce"
-    sha256 cellar: :any,                 ventura:        "2ab9c37965a6bc466df14a5398b25d909fee72a891f1ea66b90d12d3d7db7c26"
-    sha256 cellar: :any,                 monterey:       "352374fc20b1d4e52dd71bbe673cad29287e83f4baa027a42dfedae1aca46d35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "100cbcac6d7f6d28f0f3ae58c6df8437e2c3fa49618c8fa58f16ada4f6d3188d"
+    sha256 cellar: :any,                 arm64_sonoma:   "f60592ab428bb92b6a445c5edb81fe5376c31c9ce21c56f3f38bdbf9cc7e47df"
+    sha256 cellar: :any,                 arm64_ventura:  "d23dac88d44874b7a9917b8032539ba6472851bab0f4010baa0d706a3955367c"
+    sha256 cellar: :any,                 arm64_monterey: "d3cff3fddb93a9a052e1b7d0261c2b8189335a0b0b30be40061eba6390cc793f"
+    sha256 cellar: :any,                 sonoma:         "d45eb9eccd13ebfb6a67cde061cb81d0e58761c47deb64d776c24ca74f72180d"
+    sha256 cellar: :any,                 ventura:        "4d51faebaa0847676c2dc460ea175fd33ee5490b2050a0acb53ea67d3097d415"
+    sha256 cellar: :any,                 monterey:       "0326d85f1e3ab51d119ff7f78cee821358fb89d23324d8f3441a20a43de4c588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc5c6bfc10563b56f477f1015116f3091be79513d7aabd1d75c487917de3de14"
   end
 
   depends_on "cryptography"
@@ -26,13 +25,13 @@ class MagicWormhole < Formula
   uses_from_macos "libffi"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "autobahn" do
-    url "https:files.pythonhosted.orgpackages92eec3320c326919394ff597592549ff5d29d2f7bf12be9ddaa9017caff1a170autobahn-23.6.2.tar.gz"
-    sha256 "ec9421c52a2103364d1ef0468036e6019ee84f71721e86b36fe19ad6966c1181"
+    url "https:files.pythonhosted.orgpackages38f28dffb3b709383ba5b47628b0cc4e43e8d12d59eecbddb62cfccac2e7cf6aautobahn-24.4.2.tar.gz"
+    sha256 "a2d71ef1b0cf780b6d11f8b205fd2c7749765e65795f2ea7d823796642ee92c9"
   end
 
   resource "automat" do
@@ -71,8 +70,8 @@ class MagicWormhole < Formula
   end
 
   resource "incremental" do
-    url "https:files.pythonhosted.orgpackages86429e87f04fa2cd40e3016f27a4b4572290e95899c6dce317e2cdb580f3ff09incremental-22.10.0.tar.gz"
-    sha256 "912feeb5e0f7e0188e6f42241d2f450002e11bbc0937c65865045854c24c0bd0"
+    url "https:files.pythonhosted.orgpackages2787156b374ff6578062965afe30cc57627d35234369b3336cf244b240c8d8e6incremental-24.7.2.tar.gz"
+    sha256 "fb4f1d47ee60efe87d4f6f0ebb5f70b9760db2b2574c59c8e8912be4ebd464c9"
   end
 
   resource "iterable-io" do
@@ -96,8 +95,8 @@ class MagicWormhole < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackages91a8cbeec652549e30103b9e6147ad433405fdd18807ac2d54e6dbb73184d8a1pyOpenSSL-24.1.0.tar.gz"
-    sha256 "cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f"
+    url "https:files.pythonhosted.orgpackages5d70ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8pyopenssl-24.2.1.tar.gz"
+    sha256 "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95"
   end
 
   resource "service-identity" do
@@ -106,8 +105,8 @@ class MagicWormhole < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
-    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
+    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
+    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
   end
 
   resource "six" do
@@ -128,8 +127,8 @@ class MagicWormhole < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "twisted" do
@@ -158,8 +157,8 @@ class MagicWormhole < Formula
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackages09067c1202972bc99dd1b731c3c01157855cbc8d0944894c3b234473b1f4119czope.interface-6.4.post2.tar.gz"
-    sha256 "1c207e6f6dfd5749a26f5a5fd966602d6b824ec00d2df84a7e9a924e8933654e"
+    url "https:files.pythonhosted.orgpackagesab4570929649a48b49a71a470bdd84e078110fb5a91e5d74bfe07d65e02b4f03zope.interface-7.0.1.tar.gz"
+    sha256 "f0f5fda7cbf890371a59ab1d06512da4f2c89a6ea194e595808123c863c38eff"
   end
 
   def install

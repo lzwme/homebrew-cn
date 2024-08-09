@@ -3,6 +3,7 @@ class Exiftags < Formula
   homepage "https://johnst.org/sw/exiftags/"
   url "https://johnst.org/sw/exiftags/exiftags-1.01.tar.gz"
   sha256 "d95744de5f609f1562045f1c2aae610e8f694a4c9042897a51a22f0f0d7591a4"
+  license "BSD-4-Clause"
 
   livecheck do
     url :homepage

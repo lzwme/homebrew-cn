@@ -22,12 +22,19 @@ class Dirt < Formula
 
   depends_on "jack"
   depends_on "liblo"
+  depends_on "libsamplerate"
   depends_on "libsndfile"
 
   def install
+    # Work-around for newer clang
+    # upstream bug report, https:github.comtidalcyclesDirtissues66
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `...'; ....o:(.bss+0x0): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    inreplace "Makefile", "gcc", ENV.cc
 
     system "make", "PREFIX=#{prefix}", "install"
   end

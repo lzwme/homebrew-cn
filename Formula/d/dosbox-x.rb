@@ -31,16 +31,27 @@ class DosboxX < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "fluid-synth"
   depends_on "freetype"
   depends_on "libpng"
   depends_on "libslirp"
   depends_on macos: :high_sierra # needs futimens
   depends_on "sdl2"
+
+  uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "glib"
+  end
 
   on_linux do
     depends_on "linux-headers@5.15" => :build
+    depends_on "alsa-lib"
+    depends_on "libx11"
+    depends_on "libxrandr"
   end
 
   fails_with gcc: "5"
@@ -58,7 +69,7 @@ class DosboxX < Formula
     ]
 
     system ".autogen.sh"
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make" # Needs to be called separately from `make install`.
     system "make", "install"
   end

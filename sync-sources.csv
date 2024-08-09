@@ -3571,6 +3571,7 @@ Homebrew-homebrew-core/Formula/lib/libmpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmpdclient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmpeg2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libmps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmrss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmspub.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmtp.rb, Homebrew/homebrew-core, 0
@@ -6752,7 +6753,7 @@ Homebrew-homebrew-core/Formula/w/wazero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wb32-dfu-updater_cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wcslib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/w/wcurl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wcurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdiff.rb, Homebrew/homebrew-core, 0
@@ -7472,6 +7473,7 @@ Homebrew-homebrew-cask/Casks/b/battle-net.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/battlescribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/baudline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bazecor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bbackupp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bbc-iplayer-downloads.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bbedit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bbedit@14.rb, Homebrew/homebrew-cask, 0
@@ -7900,6 +7902,7 @@ Homebrew-homebrew-cask/Casks/c/cord.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/core-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/core-tunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corelocationcli.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cornercal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cornerstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corona-tracker.rb, Homebrew/homebrew-cask, 1

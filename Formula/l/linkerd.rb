@@ -43,8 +43,7 @@ class Linkerd < Formula
     assert_match "linkerd manages the Linkerd service mesh.", run_output
 
     version_output = shell_output("#{bin}linkerd version --client 2>&1")
-    assert_match "Client version: ", version_output
-    assert_match stable.specs[:tag], version_output if build.stable?
+    assert_match "Client version: #{stable.specs[:tag]}", version_output
 
     system bin"linkerd", "install", "--ignore-cluster"
   end

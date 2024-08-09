@@ -5,6 +5,7 @@ class Fairymax < Formula
       tag:      "5.0b",
       revision: "f7a7847ea2d4764d9a0a211ba6559fa98e8dbee6"
   version "5.0b"
+  license :public_domain
   head "http://hgm.nubati.net/git/fairymax.git", branch: "master"
 
   bottle do

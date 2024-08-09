@@ -3,6 +3,7 @@ class Kimwituxx < Formula
   homepage "https://savannah.nongnu.org/projects/kimwitu-pp"
   url "https://download.savannah.gnu.org/releases/kimwitu-pp/kimwitu++-2.3.13.tar.gz"
   sha256 "3f6d9fbb35cc4760849b18553d06bc790466ca8b07884ed1a1bdccc3a9792a73"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/kimwitu-pp/"

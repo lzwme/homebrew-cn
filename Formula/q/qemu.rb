@@ -110,14 +110,13 @@ class Qemu < Formula
       sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
     end
 
-    expected = build.stable? ? version.to_s : "QEMU Project"
     archs = %w[
       aarch64 alpha arm cris hppa i386 m68k microblaze microblazeel mips
       mips64 mips64el mipsel nios2 or1k ppc ppc64 riscv32 riscv64 rx
       s390x sh4 sh4eb sparc sparc64 tricore x86_64 xtensa xtensaeb
     ]
     archs.each do |guest_arch|
-      assert_match expected, shell_output("#{bin}/qemu-system-#{guest_arch} --version")
+      assert_match version.to_s, shell_output("#{bin}/qemu-system-#{guest_arch} --version")
     end
 
     resource("homebrew-test-image").stage testpath

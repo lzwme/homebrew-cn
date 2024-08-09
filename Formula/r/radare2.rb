@@ -1,8 +1,8 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https:radare.org"
-  url "https:github.comradareorgradare2archiverefstags5.9.2.tar.gz"
-  sha256 "909a39456196220b2b8433da370425afe2244d34ea6b84b933ecbec6cb285264"
+  url "https:github.comradareorgradare2archiverefstags5.9.4.tar.gz"
+  sha256 "4b194a73ce8dfe12c0b8c70cf6af449260119588ceacc205ac95570bbf17cdd3"
   license "LGPL-3.0-only"
   head "https:github.comradareorgradare2.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Radare2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2df4418388b80cf640aa92f6bb5cfee978b5e22fc8a523c09efcc37eb95320d4"
-    sha256 arm64_ventura:  "0f2a82d3691c58b112af421d0116a0ba7e9cfdfe240b5bc13e6d84e985f71eb8"
-    sha256 arm64_monterey: "6dccde57c6529e8c5ff5947e1111ac06b1cb9e31dc2b6a0c3293b3b3be189782"
-    sha256 sonoma:         "a8dc907594cd2a2ba55243887d32475aa1da1b10188f3583febc4b750237711f"
-    sha256 ventura:        "ace1f953ddd8f8b4e1ab01219b3e8d92e44d465a777680f94d23f9605079438c"
-    sha256 monterey:       "da49ba2758c1e2256ac4e6c8afbf98af8dfd3975026fdf417c366412ac2c78a3"
-    sha256 x86_64_linux:   "6c49af1c9df30a56f2e37852e75aef9b0a3489e42cb27d85cb207bfc91395910"
+    sha256 arm64_sonoma:   "bca17b5e0bda234525315cfc1864ac91aff981573fea343ff487192db49f76bb"
+    sha256 arm64_ventura:  "88d901ad50b60f6d05e1d63762757848e3ea3b8f7be23ba718ce771f9f287448"
+    sha256 arm64_monterey: "1962f702cca5f81a601f9542e11a2b293d904723d73a04d0509d1d39b331e94c"
+    sha256 sonoma:         "b48c10c4382b79427c7aef420b549dac9219868af7b625b001c65c9391946cc0"
+    sha256 ventura:        "7ccd44be7f381dc92c39610e2de8cf8be63c724acb3210593eeb671025a462f2"
+    sha256 monterey:       "86eae99d268bc12ffb696cf9d7a37232d04932250f76bb7193c4b4ba62947ad6"
+    sha256 x86_64_linux:   "9fcf8c636062c1cc384215367378842f2742543ea4d2db87bde44516a64f78e3"
   end
 
   def install

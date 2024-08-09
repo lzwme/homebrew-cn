@@ -33,6 +33,12 @@ class Yamcha < Formula
     depends_on "automake" => :build
   end
 
+  # Use Debian patch to fix error: no matching function for call to 'make_pair'
+  patch do
+    url "https://sources.debian.org/data/main/y/yamcha/0.33-2/debian/patches/1011_fix_gcc7_compilation.patch"
+    sha256 "9edb656063290379f640ec772851ec3f559993bf469612a45d5a141277fe3d5b"
+  end
+
   # Fix build failure because of missing #include <cstring>/"stdlib.h" on Linux.
   # Patch submitted to author by email.
   patch :DATA
@@ -45,7 +51,7 @@ class Yamcha < Formula
       end
     end
     ENV.append "CPPFLAGS", "-std=c++03" if OS.linux?
-    system "./configure", *std_configure_args, "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

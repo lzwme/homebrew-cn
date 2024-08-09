@@ -28,20 +28,24 @@ class Exult < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sdl2"
 
+  uses_from_macos "zlib"
+
   def install
     system ".autogen.sh"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "EXULT_DATADIR=#{pkgshare}data"
+
     if OS.mac?
       system "make", "bundle"
       pkgshare.install "Exult.appContentsResourcesdata"
       prefix.install "Exult.app"
-      bin.write_exec_script "#{prefix}Exult.appContentsMacOSexult"
+      bin.write_exec_script prefix"Exult.appContentsMacOSexult"
     else
       system "make", "install"
     end

@@ -36,12 +36,9 @@ class Helm < Formula
     system bin"helm", "create", "foo"
     assert File.directory? testpath"foocharts"
 
-    version_output = shell_output(bin"helm version 2>&1")
+    version_output = shell_output("#{bin}helm version 2>&1")
     assert_match "GitTreeState:\"clean\"", version_output
-    if build.stable?
-      revision = stable.specs[:revision]
-      assert_match "GitCommit:\"#{revision}\"", version_output
-      assert_match "Version:\"v#{version}\"", version_output
-    end
+    assert_match "GitCommit:\"#{stable.specs[:revision]}\"", version_output
+    assert_match "Version:\"v#{version}\"", version_output
   end
 end

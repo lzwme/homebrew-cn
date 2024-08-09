@@ -78,7 +78,7 @@ class Luajit < Formula
   end
 
   test do
-    assert_includes shell_output("#{bin}luajit -v"), " #{version} " if stable?
+    assert_includes shell_output("#{bin}luajit -v"), " #{version} "
 
     system bin"luajit", "-e", <<~EOS
       local ffi = require("ffi")

@@ -34,10 +34,8 @@ class Kuttl < Formula
 
   test do
     version_output = shell_output("#{bin}kubectl-kuttl version")
-    if build.stable?
-      assert_match version.to_s, version_output
-      assert_match stable.specs[:revision].to_s, version_output
-    end
+    assert_match version.to_s, version_output
+    assert_match stable.specs[:revision].to_s, version_output
 
     kubectl = Formula["kubernetes-cli"].opt_bin  "kubectl"
     assert_equal shell_output("#{kubectl} kuttl version"), version_output

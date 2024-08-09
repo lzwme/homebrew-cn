@@ -3,28 +3,32 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackages4832a34e630e5f63e3302bab5c92ecb8c172efc82d8f3e4413a3c5d4fcd3f58fcodelimit-0.9.3.tar.gz"
-  sha256 "ce2a5d82bb06b5370da7135ebeb805b7439860bfd383f07fcaec7f19296947c6"
+  url "https:files.pythonhosted.orgpackages7f0c6b864f6263d0ce25df2b06960c1109143a32431c74b6205e693eee6ad296codelimit-0.9.4.tar.gz"
+  sha256 "6bf1b76d2e12f0cc5de85e69f33aee006664c4f546391e4c44e55a7df8daef61"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e54f914df6657ea64b2d9801245c736b2a7cb09bc93df295b2f282de1d80182"
-    sha256 cellar: :any,                 arm64_ventura:  "20b8a54b6fac49501be01601228395caaf3079837280bcbf0b399bdab4ee256a"
-    sha256 cellar: :any,                 arm64_monterey: "d412fb05adcb87c3e53aed735cd6b1a20e1ce7d2356737e13ae6598dc3f153ca"
-    sha256 cellar: :any,                 sonoma:         "1b2b5a4466106e8381489d30a9332bcd11477dbc1b156282cde6f5f3de409a79"
-    sha256 cellar: :any,                 ventura:        "17d2dfe5cba36490f3fad14db55bc0f0060891278631a3e3540a17acf144c4a0"
-    sha256 cellar: :any,                 monterey:       "f0319c88664a9a3f8731ab50d720a86b6cca9308b99e1c29b4e1ce7ce62bbb49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbd89148a1de14ea223c4232cda5ec56e07d9a51e73578a4a66147836a407695"
+    sha256 cellar: :any,                 arm64_sonoma:   "514ff56996c45d255e005d6875991645bd54358de3a4e27e6af84fd618f4442b"
+    sha256 cellar: :any,                 arm64_ventura:  "04a8d6d52aa6a2bd71a9734a4046745c18211ca7d03477418c4e76dbe9d643c0"
+    sha256 cellar: :any,                 arm64_monterey: "2762986c93f53881351265f6812aed84416a2285c3faae4d01590f0253b76f06"
+    sha256 cellar: :any,                 sonoma:         "07c6fead62ac2133be8d368ab5b9e0700da60c8ec8ce155c79aeba333e71673e"
+    sha256 cellar: :any,                 ventura:        "bda4c411573d9750d766f7f9fada792db377ab7b64657606ef29e95a489dc287"
+    sha256 cellar: :any,                 monterey:       "1a7521374303339ad407f18390c10475d9ed65ebf89be19af4222d75497dbd28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca03332b48b54e2d60404c44245489aef0289da489a5de600b0762003d0f3f58"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https:files.pythonhosted.orgpackagesf7e1bfcafd54dee859b2e6e690c5f8a8a30343d590a8822bb0669afba4c2c9e6aiohttp-3.10.1.tar.gz"
+    sha256 "8b0d058e4e425d3b45e8ec70d49b402f4d6b21041e674798b1f91ba027c73f28"
   end
 
   resource "aiosignal" do
@@ -33,8 +37,8 @@ class Codelimit < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "charset-normalizer" do
@@ -83,8 +87,8 @@ class Codelimit < Formula
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "requests" do

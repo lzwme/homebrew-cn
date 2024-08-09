@@ -4,6 +4,7 @@ class Jed < Formula
   url "https://www.jedsoft.org/releases/jed/jed-0.99-19.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/j/jed/jed_0.99.19.orig.tar.gz"
   sha256 "5eed5fede7a95f18b33b7b32cb71be9d509c6babc1483dd5c58b1a169f2bdf52"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://www.jedsoft.org/releases/jed/"
