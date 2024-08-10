@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackagesabe2acdd3ac92785cda95ed2f67721abdce4da876ca1f67db5efbbf9bc928fedcfn_lint-1.9.6.tar.gz"
-  sha256 "c2ebd44ce3a412144f7d147f9fd5e3c6a9daec8db61f8cdc1670d05d38c4708a"
+  url "https:files.pythonhosted.orgpackages830db02542fba80a9ced28f28f5c02063e1f35a7dc7f1a19f03fea26fec4f628cfn_lint-1.9.7.tar.gz"
+  sha256 "c9a460ad39b9a4aab1d54827ff8a88d878a585a522b73845d05be79fd2b0a988"
   license "MIT-0"
 
   livecheck do
@@ -13,13 +13,13 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eb538f0b1d0105ded40c56622665fc493098eb92b8ee8d8b0c6ffe2007c501a2"
-    sha256 cellar: :any,                 arm64_ventura:  "93c9dc09a8cb6dd566d5cf65acd98155158825c358453096bfe0dd3ada6ddf85"
-    sha256 cellar: :any,                 arm64_monterey: "6c0388c9cd7997e933efa433fc27618bad27508ed3a08426a94e0339952f479e"
-    sha256 cellar: :any,                 sonoma:         "2295690ed4608af000f71f8c397937edb42532de8a8c84ec69ef16463f9a52da"
-    sha256 cellar: :any,                 ventura:        "8890073e345e9563ca95d7a972625937ed72d4d0f952695f4dde83619bdedb67"
-    sha256 cellar: :any,                 monterey:       "bd7c1686678a6074650e7f776b54d82134d34d2d32b70ae08d7943be61a68094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b06f4fd0481dee0b6f62fe3a86dea1327bbf875be9f89de89527edf1a372aa2b"
+    sha256 cellar: :any,                 arm64_sonoma:   "bd66b2c59a8607dd1897ad5f1fe498b007f1aa371753402cb61be47d30f28ea8"
+    sha256 cellar: :any,                 arm64_ventura:  "b59667ce99bb38f0cc6fff4cb439357e5905d72dbfb4cc2305f7e9bb50354772"
+    sha256 cellar: :any,                 arm64_monterey: "609d152a292acee91b40d93e204a0206bb82550f04432b50787151212541825b"
+    sha256 cellar: :any,                 sonoma:         "24c820dc2387933ffd535dcb9b29c87eb363676b2058039e8a97d50d057655cb"
+    sha256 cellar: :any,                 ventura:        "3cdc9ba74c36cfd25dd1f4be7a6664eeac641972dd528fb7b82f055cf50d0cf8"
+    sha256 cellar: :any,                 monterey:       "8b74123bc00a86d3bc6f68bf5f032f02cc554a428b28a50a08fa60d62f185427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9512c795d0707b385ad27ad63a4166dbb1b30d277002899a682c1e0a35197865"
   end
 
   depends_on "rust" => :build

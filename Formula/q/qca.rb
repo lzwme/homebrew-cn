@@ -36,6 +36,7 @@ class Qca < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+    depends_on "nspr"
   end
 
   fails_with :clang do

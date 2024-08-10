@@ -22,6 +22,11 @@ class GitUrlSub < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:     "cf954ff293abbcaf8816c8142b5762ebe7601107f76530f6bab0edea71e2d609"
   end
 
+  # Script runs `find . -type dir` which is incorrect input to `-type` but
+  # macOSBSD `find` ignores the extra characters while GNU `find` fails.
+  # Also uses shell features that don't work with `dash`.
+  depends_on :macos
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

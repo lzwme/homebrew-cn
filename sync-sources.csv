@@ -205,7 +205,7 @@ Homebrew-homebrew-core/Formula/a/argp-standalone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argtable.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argus-clients.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/argus.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/argus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argyll-cms.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aria2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aribb24.rb, Homebrew/homebrew-core, 0
@@ -5560,6 +5560,7 @@ Homebrew-homebrew-core/Formula/s/sad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safeint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/safety.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
@@ -6025,6 +6026,7 @@ Homebrew-homebrew-core/Formula/s/stdman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/steamguard-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/steampipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stella.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/stellar-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stellar-core.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stencil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/step.rb, Homebrew/homebrew-core, 1

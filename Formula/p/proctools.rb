@@ -27,6 +27,7 @@ class Proctools < Formula
   end
 
   depends_on "bsdmake" => :build
+  depends_on :macos
 
   # Patches via MacPorts
   {

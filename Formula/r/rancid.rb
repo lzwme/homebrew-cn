@@ -23,12 +23,20 @@ class Rancid < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "6840b7e2cb719007f53317491e8fe88a56820c121d52ff2bda4403bbcd0ea151"
     sha256 cellar: :any_skip_relocation, mojave:         "28b5457df20fc95e94e12925073469ba25d31924e622bfca882721fc2852dba7"
     sha256 cellar: :any_skip_relocation, high_sierra:    "3f2863b14389c488ace412c10ac68fc82dd01d6d26457c356f58d7de7c7d2d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c531340985f4299eda3b5f30a1ed7a13df5ab107dd460f8be89cd06fcdf8ec75"
+  end
+
+  uses_from_macos "expect"
+  uses_from_macos "perl"
+
+  on_linux do
+    depends_on "iputils"
   end
 
   conflicts_with "par", because: "both install `par` binaries"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--exec-prefix=#{prefix}", "--mandir=#{man}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -22,11 +22,15 @@ class Pdf2svg < Formula
 
   depends_on "pkg-config" => :build
   depends_on "cairo"
+  depends_on "glib"
   depends_on "poppler"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

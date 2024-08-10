@@ -20,13 +20,16 @@ class Osm2pgsql < Formula
   depends_on "cmake" => :build
   depends_on "lua" => :build
   depends_on "nlohmann-json" => :build
+
   depends_on "boost"
   depends_on "geos"
   depends_on "libpq"
   depends_on "luajit"
   depends_on "proj"
 
+  uses_from_macos "bzip2"
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   def install
     # This is essentially a CMake disrespects superenv problem

@@ -27,9 +27,14 @@ class Autogen < Formula
 
   depends_on "coreutils" => :build
   depends_on "pkg-config" => :build
+
   depends_on "guile"
 
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "bdw-gc"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -45,10 +50,8 @@ class Autogen < Formula
     inreplace %w[agen5mk-stamps.sh build-auxrun-ag.sh configmk-shdefs.in], "mktemp", "gmktemp"
     # Upstream bug regarding "stat" struct: https:sourceforge.netpautogenbugs187
     system ".configure", "ac_cv_func_utimensat=no",
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
 
     # make and install must be separate steps for this formula
     system "make"
@@ -68,7 +71,7 @@ Index: autogen-5.18.16agen5guile-iface.h
 @@ -9,16 +9,13 @@
  # error AutoGen does not work with this version of Guile
    choke me.
- 
+
 -#elif GUILE_VERSION < 203000
 +#else
  # define AG_SCM_IS_PROC(_p)           scm_is_true( scm_procedure_p(_p))
@@ -76,12 +79,12 @@ Index: autogen-5.18.16agen5guile-iface.h
  # define AG_SCM_PAIR_P(_p)            scm_is_true( scm_pair_p(_p))
  # define AG_SCM_TO_LONG(_v)           scm_to_long(_v)
  # define AG_SCM_TO_ULONG(_v)          ((unsigned long)scm_to_ulong(_v))
- 
+
 -#else
 -# error unknown GUILE_VERSION
 -  choke me.
  #endif
- 
+
  #endif * MUTATING_GUILE_IFACE_H_GUARD *
 Index: autogen-5.18.16configure
 ===================================================================

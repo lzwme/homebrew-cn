@@ -18,6 +18,8 @@ class Bsdmake < Formula
     sha256 catalina:       "5075d566898ea241d7251734f82f6846c288a49d939f8842fa566ea706e2417f"
   end
 
+  depends_on :macos
+
   # MacPorts patches to make bsdmake play nice with our prefix system
   # Also a MacPorts patch to circumvent setrlimit error
   patch :p0 do

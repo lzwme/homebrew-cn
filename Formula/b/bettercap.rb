@@ -1,23 +1,19 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https:www.bettercap.org"
-  url "https:github.combettercapbettercaparchiverefstagsv2.32.0.tar.gz"
-  sha256 "ea28d4d533776a328a54723a74101d1720016ffe7d434bf1d7ab222adb397ac6"
+  url "https:github.combettercapbettercaparchiverefstagsv2.33.0.tar.gz"
+  sha256 "7e9f145edbe07f25b1d4c5132d9d6ed322ed728249f71acced1352459faf0e97"
   license "GPL-3.0-only"
   head "https:github.combettercapbettercap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f29cd047fc838483b68981fc505bf566a3f38ffc17d67b0d3d589e9420564c80"
-    sha256 cellar: :any,                 arm64_ventura:  "4b440d1cb6604bd834d56817364dd5d6f6335737ac94a1984bb2c790b8eab26b"
-    sha256 cellar: :any,                 arm64_monterey: "1fb738ccae7f3e2257ee1a7311d355c3f7c9381a43a774bf06c892142c10a1a2"
-    sha256 cellar: :any,                 arm64_big_sur:  "e52d4ecc4d9b34037d66f1399b4111f3753ac6fde6fdebb922170367d82578f2"
-    sha256 cellar: :any,                 sonoma:         "afdacd793400836fbaa0e750b0389d1f360fff42a5fce4a257d59371ec32c410"
-    sha256 cellar: :any,                 ventura:        "e3cf6595828271c75b2876a5b080e45b3b383d16d76482edffb8663ee70bdbaa"
-    sha256 cellar: :any,                 monterey:       "18e97d317c9dd3f3561074f23fd83f748e68f1070a06ccb3548afbfde9962829"
-    sha256 cellar: :any,                 big_sur:        "6ca4df5dc6af80e97961923613220f3930989b3b2ef2911609a719003500d613"
-    sha256 cellar: :any,                 catalina:       "d719df24fe3a24f2712fd5e08027b20ec0cf4a1e3e9f659d1b085a0b23bc7ee8"
-    sha256 cellar: :any,                 mojave:         "cb44f7b4fed4e8c10049d4e69f3745f78d07a70b03b77327b9e6d02e03e7c020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eee88cd3e242be845ff45289d6d350a5bbbe9bac3801c2a17665c770ba24492"
+    sha256 cellar: :any,                 arm64_sonoma:   "c10f39c22e1b841405a0de96004ff1497f0c7e0f5dca3bcba8c108d40a963b81"
+    sha256 cellar: :any,                 arm64_ventura:  "2a177b56a5def5cef15b93221ba367c52df7978b7d298f5a82a6ae70288c93a7"
+    sha256 cellar: :any,                 arm64_monterey: "fd57aeec6a8468a41f536d22be35495e46cb5e5e3783d411f5f2462076873efb"
+    sha256 cellar: :any,                 sonoma:         "1910fe533a6157e1aa96adcf4129c4db9971720ea25eed8d410101b571a4a43a"
+    sha256 cellar: :any,                 ventura:        "a03c6bb0eb579549e4517c6e0a63027c8bd9e8b7a4173f42e55e9b1358a89284"
+    sha256 cellar: :any,                 monterey:       "14e813d40077cb8fe4b80a0549302c711fa0db67a2715b189094c2af80f90165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0e202f85a71512ed82aae96a525c8f12bede800958cf4b1d9b373b007125ce6"
   end
 
   depends_on "go" => :build

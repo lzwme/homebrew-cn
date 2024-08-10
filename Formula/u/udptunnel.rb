@@ -9,6 +9,11 @@ class Udptunnel < Formula
   sha256 "45c0e12045735bc55734076ebbdc7622c746d1fe4e6f7267fa122e2421754670"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?udptunnel[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68d39772c6215367e95610b65557e2055741cc6f1647f0c203ecb1e2bef0a617"

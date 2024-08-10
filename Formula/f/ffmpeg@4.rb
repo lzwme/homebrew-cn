@@ -13,19 +13,21 @@ class FfmpegAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "844f9fcfd73ff9fe92d317f3221dc4ca7c6f7f2239edc0b33241473b7d655f63"
-    sha256 arm64_ventura:  "f61c7d552d5f7229796024bb48dff1b0a5bcf41b6b02d2d811035a5709698452"
-    sha256 arm64_monterey: "e12fe4e2172ac35c0512c6aca98c30da73dbc86b6fe20d45e77cf8eae0a7ff3c"
-    sha256 sonoma:         "797829b1631c473486ea9fa264deebdd7979e4845c0ece944f6b73cfef8f091e"
-    sha256 ventura:        "58ceb35af0ba32e147c20ae074c74a4e1cc64def5d35abc211b583d90f546f5c"
-    sha256 monterey:       "2e4330e21e0eeee05bf2c4dcd5363fb2f96f5380a066668116edd7eb3e2cbf53"
-    sha256 x86_64_linux:   "b31766d170cd71ddaf9c14266a07e4a697d8805bd567d937ff90755b52a993e0"
+    rebuild 1
+    sha256 arm64_sonoma:   "900f278bfd188297cebb2c3f7139c518ca00369c9b2e1c5b1fd10ad0f9d9bcdd"
+    sha256 arm64_ventura:  "28664131f7d21c16b18f8857b796c2d4a9ddb6e2c543844bebad85a77deeda64"
+    sha256 arm64_monterey: "846b9b2157d497f519411126166503b6227a463ce526f5e538185977402b9532"
+    sha256 sonoma:         "1a4db28b8d1bf1fcf0a47cb646fc78c581fe2c3bc69d03b3f3dffc6d3eeaa351"
+    sha256 ventura:        "66b707a4cd387e01fdd92ca66e46ba575bb25b8932dbd78fee746828b45ce3b4"
+    sha256 monterey:       "69d201503b3e29ad4842ba044786360258d5929d23e40e287a61beb199c0cad7"
+    sha256 x86_64_linux:   "b290118efecb94b72600d14677ca5ec69f660cddbbf53e92eb7162cd1b74fd81"
   end
 
   keg_only :versioned_formula
 
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
+
   depends_on "aom"
   depends_on "dav1d"
   depends_on "fontconfig"
@@ -40,6 +42,7 @@ class FfmpegAT4 < Formula
   depends_on "libvidstab"
   depends_on "libvorbis"
   depends_on "libvpx"
+  depends_on "libxcb"
   depends_on "opencore-amr"
   depends_on "openjpeg"
   depends_on "opus"
@@ -63,8 +66,17 @@ class FfmpegAT4 < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libarchive"
+    depends_on "libogg"
+    depends_on "libsamplerate"
+    depends_on "libvmaf"
+  end
+
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libx11"
+    depends_on "libxext"
     depends_on "libxv"
   end
 

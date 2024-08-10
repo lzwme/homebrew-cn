@@ -108,8 +108,9 @@ class EvernoteBackup < Formula
   end
 
   test do
-    output = shell_output("#{bin}evernote-backup init-db -u test -p test 2>&1", 1)
-    assert_match "Password login disabled", output
+    output = shell_output("#{bin}evernote-backup init-db -u test -p test --oauth 2>&1", 1)
+    assert_match "Logging in to Evernote...", output
+    assert_match "OAuth requires user input!", output
 
     assert_match version.to_s, shell_output("#{bin}evernote-backup --version")
   end

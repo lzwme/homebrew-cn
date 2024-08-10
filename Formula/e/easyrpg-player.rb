@@ -21,6 +21,7 @@ class EasyrpgPlayer < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "expat"
   depends_on "fmt"
   depends_on "freetype"
   depends_on "harfbuzz"
@@ -34,6 +35,12 @@ class EasyrpgPlayer < Formula
   depends_on "pixman"
   depends_on "sdl2"
   depends_on "speexdsp"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libogg"
+  end
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -55,12 +62,12 @@ class EasyrpgPlayer < Formula
 
     if OS.mac?
       prefix.install "buildEasyRPG Player.app"
-      bin.write_exec_script "#{prefix}EasyRPG Player.appContentsMacOSEasyRPG Player"
-      mv "#{bin}EasyRPG Player", bin"easyrpg-player"
+      bin.write_exec_script prefix"EasyRPG Player.appContentsMacOSEasyRPG Player"
+      mv bin"EasyRPG Player", bin"easyrpg-player"
     end
   end
 
   test do
-    assert_match(EasyRPG Player #{version}, shell_output("#{bin}easyrpg-player -v"))
+    assert_match "EasyRPG Player #{version}", shell_output("#{bin}easyrpg-player -v")
   end
 end

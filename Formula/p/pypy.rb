@@ -135,7 +135,7 @@ class Pypy < Formula
     # Symlink the prefix site-packages into the cellar.
     unless (libexec"site-packages").symlink?
       # fix the case where libexecsite-packagessite-packages was installed
-      rm_r(libexec"site-packagessite-packages")
+      rm_r(libexec"site-packagessite-packages") if (libexec"site-packagessite-packages").exist?
       mv Dir[libexec"site-packages*"], prefix_site_packages
       rm_r(libexec"site-packages")
     end

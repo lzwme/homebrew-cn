@@ -8,9 +8,11 @@ class Luvit < Formula
   head "https:github.comluvitluvit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ed6d081d3a0d4f3d89f02f5d6ff038dd9e9b9b98b0596a33e5b18bdbc598c45c"
     sha256 cellar: :any,                 arm64_ventura:  "20bc43f46fbe2135a5ca45feb75e6bd90f1825437ff5fcc3a706ee96d886e5fc"
     sha256 cellar: :any,                 arm64_monterey: "ebb8ed1a318977d2227e7f9fb9310cdbe5632f4448dd9447d9e826b1b231744b"
     sha256 cellar: :any,                 arm64_big_sur:  "e4237394b4ac43b8066fd13464282869aae5665c900c4bb981465aba60fc5196"
+    sha256 cellar: :any,                 sonoma:         "fa82bfb69e426f3103200b2f78d2ced2f69202072ea07c6303c2949be5265dcd"
     sha256 cellar: :any,                 ventura:        "4588bc9f5c49c4d3c4a9683abcc56ba9ecc7ef4112252d0df5357f9690116d6d"
     sha256 cellar: :any,                 monterey:       "9b9cbe57a9bcfd827641084cb1b3cf942e5c4967d9fc6e87cbf5bcd1ab73b67c"
     sha256 cellar: :any,                 big_sur:        "92b1351e005d37bbdf7018bcefeeaf461d65b973121b5fc540fff23cdf067925"
@@ -79,6 +81,14 @@ class Luvit < Formula
   end
 
   def install
+    if DevelopmentTools.clang_build_version >= 1500
+      # Work around build error in current `lua-openssl` resource with newer Clang
+      ENV.append_to_cflags "-Wno-incompatible-function-pointer-types"
+      # Use ld_classic to work around 'ld: multiple errors: LINKEDIT overlap of start of
+      # LINKEDIT and symbol table in '...jitted_tmpsrclualuvibundle.lua_luvi_generated.o'
+      ENV.append "LDFLAGS", "-Wl,-ld_classic"
+    end
+
     ENV["PREFIX"] = prefix
     luajit = Formula["luajit"]
     luv = Formula["luv"]
@@ -93,8 +103,8 @@ class Luvit < Formula
       # Reported in the issue linked above.
       ENV["LPEGLIB_DIR"] = "depslpeg"
 
-      Pathname("depslua-openssl").tap(&:rmtree)
-                                  .install resource("lua-openssl")
+      rm_r "depslua-openssl"
+      Pathname("depslua-openssl").install resource("lua-openssl")
 
       # CMake flags adapted from
       # https:github.comluvitluviblob#{luvi_version}Makefile#L73-L74
