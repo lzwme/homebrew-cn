@@ -16,9 +16,19 @@ class Gjs < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+
+  depends_on "cairo"
+  depends_on "glib"
   depends_on "gobject-introspection"
+  depends_on "libx11"
   depends_on "readline"
   depends_on "spidermonkey"
+
+  uses_from_macos "libffi"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   fails_with gcc: "5" # meson ERROR: SpiderMonkey sanity check: DID NOT COMPILE
 

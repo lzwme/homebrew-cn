@@ -1,11 +1,27 @@
 class Ekg2 < Formula
   desc "Multiplatform, multiprotocol, plugin-based instant messenger"
   homepage "https:github.comekg2ekg2"
-  url "https:src.fedoraproject.orglookasideextrasekg2ekg2-0.3.1.tar.gz68fc05b432c34622df6561eaabef5a40ekg2-0.3.1.tar.gz"
-  mirror "https:web.archive.orgweb20161227025528pl.ekg2.orgekg2-0.3.1.tar.gz"
-  sha256 "6ad360f8ca788d4f5baff226200f56922031ceda1ce0814e650fa4d877099c63"
   license "GPL-2.0"
   revision 4
+
+  stable do
+    url "https:src.fedoraproject.orglookasideextrasekg2ekg2-0.3.1.tar.gz68fc05b432c34622df6561eaabef5a40ekg2-0.3.1.tar.gz"
+    mirror "https:web.archive.orgweb20161227025528pl.ekg2.orgekg2-0.3.1.tar.gz"
+    sha256 "6ad360f8ca788d4f5baff226200f56922031ceda1ce0814e650fa4d877099c63"
+
+    # Fix the build on OS X 10.9+
+    # bugs.ekg2.orgissues152 [LOST LINK]
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9ekg20.3.1.patch"
+      sha256 "6efbb25e57581c56fe52cf7b70dbb9c91c9217525b402f0647db820df9a14daa"
+    end
+
+    # Upstream commit, fix build against OpenSSL 1.1
+    patch do
+      url "https:github.comekg2ekg2commitf05815.patch?full_index=1"
+      sha256 "207639edc5e6576c8a67301c63f0b28814d9885f0d4fca5d9d9fc465f4427cd7"
+    end
+  end
 
   livecheck do
     url :homepage
@@ -23,39 +39,44 @@ class Ekg2 < Formula
     sha256 x86_64_linux:   "b4bc5fe81b146a00416646862a5e723eae0d0c218a9373d28e9794a4f3accf16"
   end
 
+  head do
+    url "https:github.comekg2ekg2.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+    depends_on "glib"
+
+    on_macos do
+      depends_on "gettext"
+    end
+  end
+
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
   depends_on "readline"
 
-  # Fix the build on OS X 10.9+
-  # bugs.ekg2.orgissues152 [LOST LINK]
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9ekg20.3.1.patch"
-    sha256 "6efbb25e57581c56fe52cf7b70dbb9c91c9217525b402f0647db820df9a14daa"
-  end
-
-  # Upstream commit, fix build against OpenSSL 1.1
-  patch do
-    url "https:github.comekg2ekg2commitf05815.patch?full_index=1"
-    sha256 "207639edc5e6576c8a67301c63f0b28814d9885f0d4fca5d9d9fc465f4427cd7"
-  end
-
   def install
-    readline = Formula["readline"].opt_prefix
+    # Workaround for Xcode 15
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append_to_cflags "-Wno-implicit-function-declaration"
+      ENV.append_to_cflags "-Wno-incompatible-function-pointer-types"
+    end
 
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --enable-unicode
-      --with-readline=#{readline}
+      --with-readline=#{Formula["readline"].opt_prefix}
       --without-gtk
       --without-libgadu
       --without-perl
       --without-python
     ]
+    # Newer ncurses has opaque structures so old plugin code no longer works
+    args << "--without-ncurses" unless OS.mac?
 
-    system ".configure", *args
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *args, *std_configure_args
     system "make", "install"
   end
 

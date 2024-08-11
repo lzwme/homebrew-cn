@@ -24,6 +24,10 @@ class WoofDoom < Formula
   depends_on "sdl2"
   depends_on "sdl2_net"
 
+  on_linux do
+    depends_on "alsa-lib"
+  end
+
   conflicts_with "woof", because: "both install `woof` binaries"
 
   def install

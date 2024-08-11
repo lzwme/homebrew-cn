@@ -39,6 +39,12 @@ class Jack < Formula
     depends_on "systemd"
   end
 
+  # Backport new waf to fix build on Python 3.12
+  patch do
+    url "https:github.comjackaudiojack2commit250420381b1a6974798939ad7104ab1a4b9a9994.patch?full_index=1"
+    sha256 "919f94a5eb4a00854f90b6618a35be4ba9ab3d8cc56f09a1fba2277030363b20"
+  end
+
   def install
     if OS.mac? && MacOS.version <= :high_sierra
       # See https:github.comjackaudiojack2issues640#issuecomment-723022578

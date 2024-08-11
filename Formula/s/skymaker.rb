@@ -6,6 +6,7 @@ class Skymaker < Formula
   url "https://web.archive.org/web/20161206053718/www.astromatic.net/download/skymaker/skymaker-3.10.5.tar.gz"
   mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/skymaker/skymaker-3.10.5.tar.gz"
   sha256 "a16f9c2bd653763b5e1629e538d49f63882c46291b479b4a4997de84d8e9fb0f"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3b60d5073126dc8d3d74b4c96855b082aa49fc6d5b6a56340d14f93b746c0b15"

@@ -32,12 +32,19 @@ class Scummvm < Formula
   depends_on "jpeg-turbo"
   depends_on "libmikmod"
   depends_on "libmpeg2"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "mad"
   depends_on "sdl2"
   depends_on "theora"
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     system ".configure", "--prefix=#{prefix}",

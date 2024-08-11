@@ -3,6 +3,7 @@ class Negfix8 < Formula
   homepage "https:web.archive.orgweb20220926032510https:sites.google.comsitenegfix"
   url "https:web.archive.orgweb20201022025021https:sites.google.comsitenegfixdownloadsnegfix8.3.tgz"
   sha256 "2f360b0dd16ca986fbaebf5873ee55044cae591546b573bb17797cbf569515bd"
+  license "GPL-2.0-only"
 
   bottle do
     rebuild 1

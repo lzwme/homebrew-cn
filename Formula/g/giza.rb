@@ -17,14 +17,15 @@ class Giza < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "freetype"
   depends_on "gcc" # for gfortran
   depends_on "libx11"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
 
     # Clean up stray Makefiles in test folder

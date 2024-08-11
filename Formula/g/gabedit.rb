@@ -1,7 +1,7 @@
 class Gabedit < Formula
   desc "GUI to computational chemistry packages like Gamess-US, Gaussian, etc."
-  homepage "https://gabedit.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/gabedit/gabedit/Gabedit251/GabeditSrc251.tar.gz"
+  homepage "https:gabedit.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectgabeditgabeditGabedit251GabeditSrc251.tar.gz"
   version "2.5.1"
   sha256 "efcb00151af383f662d535a7a36a2b0ed2f14c420861a28807feaa9e938bff9e"
   license "MIT"
@@ -10,8 +10,8 @@ class Gabedit < Formula
   # Consider switching back to checking SourceForge releases once we can alter
   # the matched version from `251` to `2.5.1`.
   livecheck do
-    url "https://sites.google.com/site/allouchear/Home/gabedit/download"
-    regex(/current stable version of gabedit is v?(\d+(?:\.\d+)+)/i)
+    url "https:sites.google.comsiteallouchearHomegabeditdownload"
+    regex(current stable version of gabedit is v?(\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -25,8 +25,19 @@ class Gabedit < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+"
   depends_on "gtkglext"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "autoconf" => :build
@@ -38,29 +49,32 @@ class Gabedit < Formula
 
   def install
     opengl_headers = if OS.mac?
-      MacOS.sdk_path/"System/Library/Frameworks/OpenGL.framework/Headers"
+      MacOS.sdk_path"SystemLibraryFrameworksOpenGL.frameworkHeaders"
     else
       Formula["mesa"].opt_include
     end
 
-    (buildpath/"brew_include").install_symlink opengl_headers => "GL"
+    (buildpath"brew_include").install_symlink opengl_headers => "GL"
 
     inreplace "CONFIG" do |s|
+      s.gsub! "CC = gcc", "CC = #{ENV.cc}"
       if OS.mac?
         s.gsub! "-lX11", ""
         s.gsub! "-lpangox-1.0", ""
       else
         # Add PKG_CONFIG_PATH to pangox-compat in gtkglext.
-        ENV.append_path "PKG_CONFIG_PATH", Formula["gtkglext"].libexec/"lib/pkgconfig"
-        s.gsub! "OGLLIB=-L/usr/lib -lGL -L/usr/lib -lGLU",
+        ENV.append_path "PKG_CONFIG_PATH", Formula["gtkglext"].libexec"libpkgconfig"
+        s.gsub! "OGLLIB=-Lusrlib -lGL -Lusrlib -lGLU",
                 "OGLLIB=-L#{Formula["mesa"].opt_lib} -lGL -L#{Formula["mesa-glu"].opt_lib} -lGLU"
       end
-      s.gsub! "GTKCFLAGS =", "GTKCFLAGS = -I#{buildpath}/brew_include"
+      s.gsub! "GTKCFLAGS =", "GTKCFLAGS = -I#{buildpath}brew_include"
 
       # Work around build failures
+      # incompatible integer to pointer conversion bug report, https:github.comalloucheargabeditissues2
       if DevelopmentTools.clang_build_version >= 1403
         s.gsub! " -Wall ",
-                " -Wall -Wno-implicit-function-declaration "
+                " -Wall -Wno-implicit-function-declaration " \
+                "-Wno-incompatible-function-pointer-types -Wno-int-conversion "
       end
     end
 
@@ -74,6 +88,6 @@ class Gabedit < Formula
   end
 
   test do
-    assert_predicate bin/"gabedit", :exist?
+    assert_predicate bin"gabedit", :exist?
   end
 end

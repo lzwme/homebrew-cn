@@ -6,24 +6,28 @@ class Twtxt < Formula
   url "https:files.pythonhosted.orgpackagesfc4ccff74642212dbca8d4d9059119555cd335324b3da0b52990a414a0257756twtxt-1.3.1.tar.gz"
   sha256 "f15e580f8016071448b24048402b939b9e8dec07eabacd84b1f2878d751b71ff"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9754630facb7591ea4c8955702ef2c5bb031f0ac7e4eda4c87a1a3fefd0e475"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f6bfdf3dee16f355befc73fba9a367df74dfa9ae6376f1d287c8452d0044228"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c39441fb3ba55f17c0ae54e602933a247c1794c1416723c440aa3873bf230d70"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6880b3bad0c56418133949178beaec7cfc0751dc7b652fe9b6d9299f3f37cd3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fe258826fc35fb7dd35510985b49d0a4cda496a7c429b909eb2f52033ae3daf"
-    sha256 cellar: :any_skip_relocation, monterey:       "30c95f228b0ef110938f150485fd8a59543cb2d2d79cc31526707660d2b66024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8301fdfa0508cd4c11972a53ad15b33d133b793d275e4dc5123f311e81c65751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b55edaf636c32b5c806adc1281e0451f63b2ce2a8ef19c9f502886c18d7a13c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "563d8fc929eeaa496bfcf70ec65d615ffa2cc289a30551528743770b2d5a12ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f36e617ed25f620787eb17eda279fd462039c6474bca676fa6299c99291a8e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52f3f107d5b7e9cc7fdd03fcd73a2c676cafdfc4814a6d37d60eee2623ff4dbc"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcc88b4fa67d6d4703ada9263d1f07e751b32009fc32f177a691100a11c7a013"
+    sha256 cellar: :any_skip_relocation, monterey:       "c777bc38033da07f3a5aff2c91a2b21661cd5cdc0d0ebbd5f720bfd0fd861ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93b695f6af0ecac2009a6b38f785b9cb6f2c5a03d07416054842cad8418b0e58"
   end
 
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiosignal" do
@@ -32,8 +36,8 @@ class Twtxt < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "click" do
@@ -47,8 +51,8 @@ class Twtxt < Formula
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages76217a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75chumanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https:files.pythonhosted.orgpackages5db1c8f05d5dc8f64030d8cc71e91307c1daadf6ec0d70bcd6eabdfd9b6f153fhumanize-4.10.0.tar.gz"
+    sha256 "06b6eb0293e4b85e8d385397c5868926820db32b9b654b932f57fa41c23c9978"
   end
 
   resource "idna" do

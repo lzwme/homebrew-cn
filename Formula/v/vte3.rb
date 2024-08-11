@@ -6,13 +6,14 @@ class Vte3 < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "c6248169a7e34fd09243939bcbd13cede157ad160ff8df50a2da0e199934c7af"
-    sha256 arm64_ventura:  "46dac39504a282e5f4547390c26b23da1103b21f5d59aa1830ea248c4678d5ef"
-    sha256 arm64_monterey: "bc029b69fe01c31a7d6035b3efdac0c9b7b81ef4f806b27fc80794e0dcdc380b"
-    sha256 sonoma:         "a1a93208443bd00f150b6d9f458bff57191172bfd7928f751ba17e9a49a2afc8"
-    sha256 ventura:        "8c9dcb8aac98c2a4f719f2867bc4e9c2e0e821b372be47dd5bd20475baf11bfe"
-    sha256 monterey:       "82976f2014bca9bdc1eea7c4fca88319aff00a784c0700fec7864f41a48f7870"
-    sha256 x86_64_linux:   "af3b9e4c9a0d1d846a1b3a24aee63b1b9439a0343370c952134752568924969f"
+    rebuild 1
+    sha256 arm64_sonoma:   "f498003f52d7be2c80d3bd9f267ac496617825a72df2f31b88b21e4840d4c943"
+    sha256 arm64_ventura:  "eb95d7ad5f4a44b256818471cf1bcad69323992e290f4896930ce835e4de05e2"
+    sha256 arm64_monterey: "a4eeb754b84140619192c4c4cbae2073e3cc33a5fecb94dcfa48051b2f3bec30"
+    sha256 sonoma:         "496dd20a582cc2925492a000116b221279facef545e9c18b678d909040d9f79f"
+    sha256 ventura:        "44724e8ec9d2d585a5c67e24d9c444e21505a4a3420d181ea3e986e5def25824"
+    sha256 monterey:       "ee9131f74cfb2ae6212edc005d37d8be9f0a44f97c04fe888aab1846a1d74cca"
+    sha256 x86_64_linux:   "7e3d98d527fad56e94e8026b7bd655d460a0e0e720a5e7141948d5361148e1a6"
   end
 
   depends_on "gettext" => :build
@@ -36,19 +37,11 @@ class Vte3 < Formula
   depends_on "pcre2"
 
   on_macos do
-    depends_on "gettext"
-  end
-
-  on_ventura :or_newer do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
-  end
-
-  on_monterey :or_older do
-    # We use GCC on older macOS as build fails with brew `llvm`.
+    depends_on "gettext"
     # Undefined symbols for architecture x86_64:
     #   "std::__1::__libcpp_verbose_abort(char const*, ...)", referenced from: ...
-    depends_on "gcc"
-    fails_with :clang
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1400
   end
 
   on_linux do
@@ -70,10 +63,12 @@ class Vte3 < Formula
   patch :DATA
 
   def install
-    ENV.llvm_clang if OS.mac? && MacOS.version >= :ventura && DevelopmentTools.clang_build_version <= 1500
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib if DevelopmentTools.clang_build_version == 1500
+    if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+      ENV.llvm_clang
+      if DevelopmentTools.clang_build_version <= 1400
+        ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib} -lunwind"
+      end
+    end
 
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 

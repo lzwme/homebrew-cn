@@ -23,6 +23,7 @@ class WaitOn < Formula
   end
 
   depends_on "bsdmake" => :build
+  depends_on :macos # needs BSD kqueue
 
   def install
     system "bsdmake"

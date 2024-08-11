@@ -3,6 +3,7 @@ class Stone < Formula
   homepage "https://www.gcd.org/sengoku/stone/"
   url "https://www.gcd.org/sengoku/stone/stone-2.4.tar.gz"
   sha256 "d5dc1af6ec5da503f2a40b3df3fe19a8fbf9d3ce696b8f46f4d53d2ac8d8eb6f"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage

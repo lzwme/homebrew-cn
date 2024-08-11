@@ -1,25 +1,22 @@
 class Abyss < Formula
   desc "Genome sequence assembler for short reads"
   homepage "https:www.bcgsc.caresourcessoftwareabyss"
-  url "https:github.combcgscabyssreleasesdownload2.3.7abyss-2.3.7.tar.gz"
-  sha256 "ba37780e79ec3aa359b6003e383caef13479a87f4d0022af01b86398f9ffca1f"
+  url "https:github.combcgscabyssreleasesdownload2.3.8abyss-2.3.8.tar.gz"
+  sha256 "3c262269043f619c79ec3dcd91f5595cb141229f9a13d1a76a952b9a0bfb0d84"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
 
   livecheck do
     url :stable
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "79cb5a6c7414ad5b6a288a088ad472897edf7643dde0df8dba867f356aa4449c"
-    sha256 cellar: :any,                 arm64_ventura:  "1ba7dce6f3cec234f9fab6d19711739ec64539124e034bbedc501dd8b6dacf48"
-    sha256 cellar: :any,                 arm64_monterey: "2f8447dfaa29be848ed9cc343b2a10b6c4de902a3d1443907a8e2189a9ef894c"
-    sha256 cellar: :any,                 arm64_big_sur:  "130faddf4d47b9296578726e486ec5ac8308b48f4d7b69ffe0aac4199bc61648"
-    sha256 cellar: :any,                 sonoma:         "58082f4a3277be3a15ce05b9e202d5906f9066baec4f320013b58723511c81ad"
-    sha256 cellar: :any,                 ventura:        "6ff3e90c05d2bf5e91a1df6891634942f93439e76f2af2c5946eee010fac065d"
-    sha256 cellar: :any,                 monterey:       "0c42a5f6d2c6206c06c6131dd65c293741016f44623da7fcb382dce478af0ec6"
-    sha256 cellar: :any,                 big_sur:        "f98e11643c56066529c0c0d9cd93f063442e57536d42790e1fc0f0313b96cbcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03715ef6459270e07f02d151223f14441bfbf8021e560cfec0ed239886c9654d"
+    sha256 cellar: :any,                 arm64_sonoma:   "d51aaa3ebeee8f2d7aafddbda19f362f8964bd438cc8cd882c4d449a34215aca"
+    sha256 cellar: :any,                 arm64_ventura:  "ee601d3305bf086edc4537d6e47c62ae6203c7b20a8554cf13320cecf8c534d8"
+    sha256 cellar: :any,                 arm64_monterey: "53684411c7bbb832019b78dba2e84c99a8172e81b8f580ea28f8bf3791c239dc"
+    sha256 cellar: :any,                 sonoma:         "fd91fd250b60d771640582cb02d4d7b1b50003d17cf05152a7a8fce9e63dd5e0"
+    sha256 cellar: :any,                 ventura:        "05f1bfc1159a8bd98b2258763927a02d64e691efab0440ee1c6ef386569a0506"
+    sha256 cellar: :any,                 monterey:       "b941004f43971894244fbb61163f307bc74826544f714209ac7e0578eedbdf8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce78fd4fc24e5657de9f8eba20727e0eda20b78eb47e735306c93566810da1e9"
   end
 
   head do
@@ -45,20 +42,8 @@ class Abyss < Formula
   fails_with :clang # no OpenMP support
 
   resource "btllib" do
-    url "https:github.combcgscbtllibreleasesdownloadv1.6.0btllib-1.6.0.tar.gz"
-    sha256 "4a122c1047785dc865b8c94063714667f8ca43b8a881754eebd96dbb44fd1c3f"
-
-    # Fixes 'uint' was not declared in this scope
-    # Remove in next release
-    patch do
-      url "https:github.combcgscbtllibcommit43adf3d2671cc1ab780d23666e038055edb9d669.patch?full_index=1"
-      sha256 "47e0f70501c8f5d543eb2a956a226f0a1a51816123a9b2061a081fb92c7b3f0c"
-    end
-  end
-
-  resource "homebrew-testdata" do
-    url "https:www.bcgsc.casitesdefaultfilesbioinformaticssoftwareabyssreleases1.3.4test-data.tar.gz"
-    sha256 "28f8592203daf2d7c3b90887f9344ea54fda39451464a306ef0226224e5f4f0e"
+    url "https:github.combcgscbtllibreleasesdownloadv1.7.3btllib-1.7.3.tar.gz"
+    sha256 "31e7124e1cda9eea6f27b654258a7f8d3dea83c828f0b2e8e847faf1c5296aa3"
   end
 
   def install
@@ -82,6 +67,11 @@ class Abyss < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:www.bcgsc.casitesdefaultfilesbioinformaticssoftwareabyssreleases1.3.4test-data.tar.gz"
+      sha256 "28f8592203daf2d7c3b90887f9344ea54fda39451464a306ef0226224e5f4f0e"
+    end
+
     testpath.install resource("homebrew-testdata")
     if which("column")
       system bin"abyss-pe", "B=2G", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"

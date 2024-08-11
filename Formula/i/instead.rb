@@ -18,12 +18,24 @@ class Instead < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "luajit"
   depends_on "sdl2"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

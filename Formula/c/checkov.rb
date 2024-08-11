@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/c6/f8/c58bc734940512739d76adc6d9f63c9214d194a40b554fa70474b6d1f2af/checkov-3.2.210.tar.gz"
   sha256 "281a0e07f9c60af2303305e3675aff2f2b9047a79e11431bfc01b851080c0518"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,13 +18,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "08a3550290029c3e241a63cc3d4284efd0435d80ab74cde7238c549daf609dbe"
-    sha256 cellar: :any,                 arm64_ventura:  "4282d7f1a16d51e9f0c7d135bc28da30465772ac8e4a94423a797bb02704872f"
-    sha256 cellar: :any,                 arm64_monterey: "c21aa97b7d7632dca7d0f298af8c874801c327a5f735968be6df9430d68a9e08"
-    sha256 cellar: :any,                 sonoma:         "a7d0011a1feed38950ba6f527977e6b5524a823724055107a53e86704ffba09c"
-    sha256 cellar: :any,                 ventura:        "a215c9367550b34e706c130a7799317acf445d37b6418867539229c8dae6734b"
-    sha256 cellar: :any,                 monterey:       "bad75c1e2c9ef03b3903ddedb50a713af7f588cc6925daef673bf2528f2c14e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9201874862913ad2a5c9f90c3544880574bca7b94cb915876771b2a722650397"
+    sha256 cellar: :any,                 arm64_sonoma:   "0fcdbfef97a0dc57d7033f96f41bdcf229c0f7b89608f1eae1b3d1864e87a4a1"
+    sha256 cellar: :any,                 arm64_ventura:  "8cf40abf3eb064434215818c8f5079aa55e95f4f1f7ec6b4002869ab17503bd3"
+    sha256 cellar: :any,                 arm64_monterey: "25fe1e6048375e12d4c39e7d174b92e84d902bece8ecd2a5783ccfa81da73ff9"
+    sha256 cellar: :any,                 sonoma:         "0dae8bfa4b79e9bb6ad6200e0fd7f66eb82cec8904683efbce9c1e1ea5855370"
+    sha256 cellar: :any,                 ventura:        "4a1aca427c0553765704f1035d51c44223b390a5562a0d32e018f3072e7ae74f"
+    sha256 cellar: :any,                 monterey:       "7f80aa161298b7c6af59b28c30ac1ced94c3fd4a7407b9fb464a0d93f491e0f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c86d3d766c09981e297f13295fea1c2f4ed5d35a9d30f4b513d7e1d7f2f2dd"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -40,9 +41,14 @@ class Checkov < Formula
     sha256 "62869b23409349c21b072883ec8998316b234c9a9e36675756e8e317e8768f72"
   end
 
+  resource "aiohappyeyeballs" do
+    url "https://files.pythonhosted.org/packages/b7/c3/112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42/aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/04/a4/e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11b/aiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https://files.pythonhosted.org/packages/45/11/36ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0/aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiomultiprocess" do
@@ -61,13 +67,13 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/db/ca/45176b8362eb06b68f946c2bf1184b92fc98d739a3f8c790999a257db91f/argcomplete-3.4.0.tar.gz"
-    sha256 "c2abcdfe1be8ace47ba777d4fce319eb13bf8ad9dace8d085dcad6eded88057f"
+    url "https://files.pythonhosted.org/packages/75/33/a3d23a2e9ac78f9eaf1fce7490fee430d43ca7d42c65adabbb36a2b28ff6/argcomplete-3.5.0.tar.gz"
+    sha256 "4349400469dccfb7950bb60334a680c58d88699bff6159df61251878dc6bf74b"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "bc-detect-secrets" do
@@ -121,8 +127,8 @@ class Checkov < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz"
-    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+    url "https://files.pythonhosted.org/packages/1e/bf/82c351342972702867359cfeba5693927efe0a8dd568165490144f554b18/cffi-1.17.0.tar.gz"
+    sha256 "f3157624b7558b914cb039fd1af735e5e8049a87c817cc215109ad1c8779df76"
   end
 
   resource "charset-normalizer" do
@@ -346,8 +352,8 @@ class Checkov < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "rdflib" do
@@ -371,8 +377,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/2f/fe/5217efe981c2ae8647b503ba3b8f55efc837df62f63667572b4bb75b30bc/rpds_py-0.19.1.tar.gz"
-    sha256 "31dd5794837f00b46f4096aa8ccaa5972f73a938982e32ed817bb520c465e520"
+    url "https://files.pythonhosted.org/packages/55/64/b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29a/rpds_py-0.20.0.tar.gz"
+    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
   resource "rustworkx" do
@@ -431,8 +437,8 @@ class Checkov < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/5a/c0/b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2/tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https://files.pythonhosted.org/packages/58/83/6ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5/tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "typing-extensions" do

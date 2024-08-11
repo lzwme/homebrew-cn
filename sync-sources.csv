@@ -389,6 +389,7 @@ Homebrew-homebrew-core/Formula/b/bas55.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/base16384.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/base64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/base91.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/basedpyright.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/basex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bash-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bash-completion@2.rb, Homebrew/homebrew-core, 1
@@ -1934,7 +1935,7 @@ Homebrew-homebrew-core/Formula/g/g-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g3log.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gabedit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gabedit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gaffitter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/galen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gallery-dl.rb, Homebrew/homebrew-core, 1
@@ -2290,6 +2291,7 @@ Homebrew-homebrew-core/Formula/g/gojq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golang-migrate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/golangci-lint-langserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golangci-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gollum.rb, Homebrew/homebrew-core, 1
@@ -2650,7 +2652,7 @@ Homebrew-homebrew-core/Formula/h/hz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/i2c-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/i2p.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/i2pd.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/i2util.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/i2util.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/i386-elf-gdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/i686-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/i686-elf-gcc.rb, Homebrew/homebrew-core, 0
@@ -4715,7 +4717,6 @@ Homebrew-homebrew-core/Formula/o/owfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxipng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxker.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/oysttyer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p0f.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/p11-kit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p7zip.rb, Homebrew/homebrew-core, 1
@@ -10501,6 +10502,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sarina.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-s/font-sarpanch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sassy-frass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-satisfy.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-satoshi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sauce-code-pro-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sawarabi-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sawarabi-mincho.rb, Homebrew/homebrew-cask, 1

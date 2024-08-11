@@ -6,23 +6,29 @@ class Pferd < Formula
   url "https:files.pythonhosted.orgpackagesed530ee89a40c7a3156ac35262b7f9e897f367e1fb753fcd5bfae6d8660b1a0bpferd-3.5.2.tar.gz"
   sha256 "4ab6ec9b55ba63e174353819ccb33abb0a9f1c2fea6177ded268eb1ad4bee23f"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d4ae7246811edd99c75024f6ca892bb9467575ed10542403b758e63a4748ead"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7195cd6b53abeab863eabde15fbf26da74cc0dad05446c305b239a6c66630654"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b735613157595fdc588ca0ea0a3e06ff7a2698abd5e274beb3ffec4752f7806d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0a51d8063cbede8901e35aac9b786eecee6ecda63263ab6cd9d6b29251f899ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "714aa8d30339f72ef277dc34d0875b7ac3ec7692125338a590ac96d06b39bde7"
-    sha256 cellar: :any_skip_relocation, monterey:       "87666d024cd91eac9f2e88645f125a1de4d6bfb925df9f2aaac8fe47ed747877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77ab451eda5d4e250eb055f7f1d5f5426e0ed71b84fa13db56b202299364eff4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5908c744e6ced888ce2498727ca64f3486280d500a45d33b84b90b91dd5796f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07dd7c79e41afde6599ee044bdb40841bf8e9707ea8583f3e11b1906233b55ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "317cede52b37399b4f797fc9144c55fb8580b78aa36005635f1dfca0e74639ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e2571e39ea27fff8a6f611905df00faaf0ee7c38731e8f2aef563b883452c68"
+    sha256 cellar: :any_skip_relocation, ventura:        "6fc1d4b744c7f42fef0cf241b9512d6a0486e61f96837975af41c3adc87a92ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce570ae3c7449df30096a54bbf76ef86717b1889502df80e5fe65613a9c751cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cad9ae918105485942394ca115631dc839fc49496aa87ee4d9c4c7f43e12b34d"
   end
 
   depends_on "certifi"
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
-    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
+    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiosignal" do
@@ -31,8 +37,8 @@ class Pferd < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "beautifulsoup4" do
@@ -61,13 +67,13 @@ class Pferd < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
-    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
+    url "https:files.pythonhosted.orgpackages03b16ca3c2052e584e9908a2c146f00378939b3c51b839304ab8ef4de067f042jaraco_functools-4.0.2.tar.gz"
+    sha256 "3460c74cd0d32bf82b9576bbb3527c4364d5b27a21f5158a62aed6c4b42e23f5"
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackages18eccc0afdcd7538d4942a6b78f858139120a8c7999e554004080ed312e43886keyring-25.1.0.tar.gz"
-    sha256 "7230ea690525133f6ad536a9b5def74a4bd52642abe594761028fc044d7c7893"
+    url "https:files.pythonhosted.orgpackages3230bfdde7294ba6bb2f519950687471dc6a0996d4f77ab30d75c841fa4994edkeyring-25.3.0.tar.gz"
+    sha256 "8d85a1ea5d6db8515b59e1c5d1d1678b03cf7fc8b8dcfb1651e8c4a524eb42ef"
   end
 
   resource "markdown-it-py" do
@@ -81,8 +87,8 @@ class Pferd < Formula
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackagesdfad7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4more-itertools-10.2.0.tar.gz"
-    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
+    url "https:files.pythonhosted.orgpackages920dad6a82320cb8eba710fd0dceb0f678d5a1b58d67d03ae5be14874baa39e0more-itertools-10.4.0.tar.gz"
+    sha256 "fe0e63c4ab068eac62410ab05cccca2dc71ec44ba8ef29916a0090df061cf923"
   end
 
   resource "multidict" do
@@ -91,8 +97,8 @@ class Pferd < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "rich" do

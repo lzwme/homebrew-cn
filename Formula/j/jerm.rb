@@ -5,6 +5,7 @@ class Jerm < Formula
   mirror "https://dotsrc.dl.osdn.net/osdn/fablib/62057/jerm-8096.tar.gz"
   version "0.8096"
   sha256 "8a63e34a2c6a95a67110a7a39db401f7af75c5c142d86d3ba300a7b19cbcf0e9"
+  license "BSD-2-Clause"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96b7c79c29b63fe4f2819bb547c97c77d870aedc601d90e5e92a6b6657d89b45"

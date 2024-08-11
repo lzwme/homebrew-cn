@@ -6,23 +6,28 @@ class Airshare < Formula
   url "https://files.pythonhosted.org/packages/cb/a2/d59c18cd6a143bf860c29acb70552b7351fd7e0f56213be86b624601106b/Airshare-0.1.6.tar.gz"
   sha256 "138976933bcf2c0bc99f18901242544919e9fafe43735b4f83b19d4ae5964be7"
   license "MIT"
-  revision 13
+  revision 14
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b726c95f57e3ddee4b0bd3ebe6dff3de90a36488b1b4c69e3d72e0a85cb30894"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f62c94a933821c42a15b0d4afa93107d7b91dfd94576f86a6e6a04ce600b62f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "512200081c3e345c9ed30e3f69e4cfd9712d6c1367141d919d9aa1994a820e82"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f4db20f635531297f9e08896e763cac1f514d256b628388b0bacc44f17196d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "38b8c84b427472d003621a6152962c380dc2ee30e2e3557798878c22cceb88dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "63c6adf3b33325ca22d5a9472976de91097e63017bea413e289f38c3a29081e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06d8ffa9daa279f27e9c1b9a4a49c8e6059de3212354812591ad91f43154f47f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a98373e2e9c20cf681287988da769db66d37b87a740a4bd30c27f332bea15852"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aaeb35ed10cb453950a88f787e7148938401b244adcd849274e6cc62ddb196cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f98ddc3449765882b6a57e30c1583062c8843bcde7287f729a4e1909c5eb9faa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ae4aa2770340cb8607a0293a2de55a17cac30272ced9250ba5dac04975db859"
+    sha256 cellar: :any_skip_relocation, ventura:        "4943f1b03b62f037fab32eca7006cd1fa220462184cb5d8ffec1215507aec684"
+    sha256 cellar: :any_skip_relocation, monterey:       "ade9e571d497e6f4fc369f73c3af76a434ae48e46cf953fae422d4fb66e82cd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5395d261177359554c4cc7d9caaf3c57be4f00414717afe318cfe84c6782acd4"
   end
 
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https://files.pythonhosted.org/packages/b7/c3/112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42/aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/04/a4/e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11b/aiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https://files.pythonhosted.org/packages/45/11/36ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0/aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiosignal" do
@@ -36,8 +41,8 @@ class Airshare < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "certifi" do
@@ -66,8 +71,8 @@ class Airshare < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/76/21/7a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75c/humanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https://files.pythonhosted.org/packages/5d/b1/c8f05d5dc8f64030d8cc71e91307c1daadf6ec0d70bcd6eabdfd9b6f153f/humanize-4.10.0.tar.gz"
+    sha256 "06b6eb0293e4b85e8d385397c5868926820db32b9b654b932f57fa41c23c9978"
   end
 
   resource "idna" do
@@ -106,8 +111,8 @@ class Airshare < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/5a/c0/b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2/tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https://files.pythonhosted.org/packages/58/83/6ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5/tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "urllib3" do

@@ -6,6 +6,7 @@ class Black < Formula
   url "https:files.pythonhosted.orgpackages04b046fb0d4e00372f4a86a6f8efa3cb193c9f64863615e39010b1477e010578black-24.8.0.tar.gz"
   sha256 "2500945420b6784c38b9ee885af039f5e7471ef284ab03fa35ecdde4688cd83f"
   license "MIT"
+  revision 1
   head "https:github.compsfblack.git", branch: "main"
 
   livecheck do
@@ -14,25 +15,25 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "481cae285df56e5e507f344aa52c48d965d22b096229f5b3ebea4340a922e96d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d0cfcb28e9f2e0eb9d3a970169fa187882af4cebb9e72c20796dffc55972a47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c83cf7ab268bee73f0bab4772d07d8cdc1fb7473fb7b8bfded29d751c9e86a2f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "42082afaa7c9f88fa59b99b4e22a99d712ace6383cc1e2aa2283132b6d4fcac0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b635948623d1b2d1b9e1189d13c2938041f5dc151b0f54aca175c21464844635"
-    sha256 cellar: :any_skip_relocation, monterey:       "6526150fa82d50112a7c03bad570c0e086f4a7bdc0bde1b597d431b6e15e7a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36a3abe619a211a59582e72fe44ebe89bd8f9530742a8b309f599080623aa59a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "31ec0fd1fc60aeed2165b9992fc2184445a03c80016f898ab9225599df3bfcf0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d9890c68fe9bc3363bd3818f8f96926d63d76f6042a04733755d22651a2735f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d02bcd754735d295411177889ca201e3b90912a9ff183537205e9f15eb0acb72"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48a7a299c3bb84983ea8f9a20808c810c9019c183867f21f5979846d0634b1a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d192cb209e067cb986a8482c6551d0d7d72df1ea8329a2260f37bd6ff52c75b"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d2524941df1c8705b3346a925bafb7bdc59149ddb713b4dcfe97a188b08aff7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af95e63f9448e6c2fa9682780e808a35fe1c4425d98a5b722e01c37e5dd0a20a"
   end
 
   depends_on "python@3.12"
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackages3cc152b8ecc87576f8b06fd5132e3ab8550209c958fb450e6d185b15835da82caiohappyeyeballs-2.3.4.tar.gz"
-    sha256 "7e1ae8399c320a8adec76f6c919ed5ceae6edd4c3672f4d9eae2b27e37c80ff6"
+    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesbc97328a9e18e2bc229e5bf1391c9d5f6712104b2b5759c56f51fe03a1b702f1aiohttp-3.10.0.tar.gz"
-    sha256 "e8dd7da2609303e3574c95b0ec9f1fd49647ef29b94701a2862cceae76382e1d"
+    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiosignal" do
@@ -41,8 +42,8 @@ class Black < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "click" do

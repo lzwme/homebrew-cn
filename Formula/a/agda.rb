@@ -1,7 +1,9 @@
 class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https:wiki.portal.chalmers.seagda"
-  license "BSD-3-Clause"
+  # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
+  # Everything else specifies MIT license and installs corresponding file.
+  license all_of: ["MIT", "BSD-3-Clause"]
   revision 2
 
   stable do

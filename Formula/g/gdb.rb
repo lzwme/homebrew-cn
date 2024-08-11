@@ -14,7 +14,6 @@ class Gdb < Formula
     sha256 x86_64_linux: "dd11325ca2297ad1be34eb940e64c3be5522e491daae7460e5b1b3ac63842206"
   end
 
-  depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "python@3.12"
@@ -23,6 +22,10 @@ class Gdb < Formula
   uses_from_macos "expat"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on arch: :x86_64 # gdb is not supported on macOS ARM
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build

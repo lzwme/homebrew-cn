@@ -1,37 +1,37 @@
 class I2util < Formula
   desc "Internet2 utility tools"
-  homepage "https://software.internet2.edu/"
-  url "https://software.internet2.edu/sources/I2util/I2util-1.2.tar.gz"
-  sha256 "3b704cdb88e83f7123f3cec0fe3283b0681cc9f80c426c3f761a0eefd1d72c59"
-  revision 1
+  homepage "https:github.comperfsonari2util"
+  url "https:github.comperfsonari2utilarchiverefstagsv4.4.6.tar.gz"
+  sha256 "abf6a1f23bba3d188d8deade33ca197b85abbf43f4b3a25b9e81c6ce6d65b3d0"
+  license "Apache-2.0"
 
   livecheck do
-    url "https://software.internet2.edu/sources/I2util/"
-    regex(/href=.*?I2util[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52d210671de538ef15aab122ceba167767ec35486a094adec7d286bb0a0cf515"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17d5e12958f6a8bbb119feb21e88c381862116578af66f4b6b8e6bb6f7ce256f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b81238983a3407032564f7a7242a8ed42b62ac4193a07d6c62a03e2afdfd6445"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df33b627a3f7c69eb99d4ebb107a8ffabe49a16341ec845de5de3de7c868806b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3352f75e937c413f0dcfa6475adef55849e2b9ffdfe653d55b0bc452ce1d23b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f474b97d35ce2c1eb1814278a4c39f8bc7d9ed32f5e27942646ff5ac486bc7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5a60fa5cf61312c0a4b9f9307b94d09cbbe87addad19e9214ac3c2a5bd867f4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9f721b6a003be8ebc978c69619126625075dfdc013eaadc4ffc67192bd62a1a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07f9267aa3c7fc30361824939ba10a259cdeb1ea62485cc0410955b5b08ec3e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec98c61a927bf8bb3446bb0a9d2323de05a03a5c3e01c8077325637dd7bbc74c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d82e6ebb5e29c1748b8612962351676e5b8bfba4df4a8c0cf3c7ee5d89dad22a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63d7c76794cc8f2ce397a52fb72b5739400a9819b24310ca5adf5d8415f84f90"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c401a90715ad6a418fe2559534bed9a416547869da34cbd17dcd46fb3b8de03"
+    sha256 cellar: :any_skip_relocation, ventura:        "9445b607fa14b773b275ddfe6ea2ec5230c372a47159dcaae9d2bc8f22f42d59"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3210e2dec54034f7adc14c2dbe4e351f36ea711fcabc277a1a28447e942d40f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbef648d11c57b0c99cdf322d9b6fd7888f69fc59a8ce422f1f7f14597645444"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system ".bootstrap.sh"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <I2util/util.h>
+    (testpath"test.c").write <<~EOS
+      #include <I2utilutil.h>
       #include <string.h>
       int main() {
         uint8_t buf[2];
@@ -41,6 +41,6 @@ class I2util < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lI2util", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

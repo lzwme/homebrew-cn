@@ -3,6 +3,7 @@ class Clucene < Formula
   homepage "https:clucene.sourceforge.net"
   url "https:downloads.sourceforge.netprojectcluceneclucene-core-unstable2.3clucene-core-2.3.3.4.tar.gz"
   sha256 "ddfdc433dd8ad31b5c5819cc4404a8d2127472a3b720d3e744e8c51d79732eab"
+  license any_of: ["Apache-2.0", "LGPL-2.1-only"]
   head "https:git.code.sf.netpclucenecode.git", branch: "master"
 
   bottle do

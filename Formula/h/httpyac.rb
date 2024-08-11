@@ -1,19 +1,18 @@
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
-  url "https://registry.npmjs.org/httpyac/-/httpyac-6.14.0.tgz"
-  sha256 "5beb938d2def06b639290493f8d975e96aa9619a7f04f6ce51e98c7c538c7402"
+  url "https://registry.npmjs.org/httpyac/-/httpyac-6.15.0.tgz"
+  sha256 "5462d5b293e8dc52bcd58d4df1819f19c48201b8b2dec475cf08f642d34980db"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f4678757bf3a502c0910fab84880187f72c73a00220d5c24c9d406ba7a128e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac605190f0251454a44387b85d3d68c6f3bc34d03ff3ce09afbd9092a72b24c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54f4110665146cf751ec7632a5672efcdeeee84670c12c63f6c424a2dacee413"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cbbb2f831efff05548f4b1e0728a2e645a62adade24e4d22f9cdb6cc0c73b17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cbbb2f831efff05548f4b1e0728a2e645a62adade24e4d22f9cdb6cc0c73b17"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cbbb2f831efff05548f4b1e0728a2e645a62adade24e4d22f9cdb6cc0c73b17"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0c3f58d05b9f5fa63fe7530c44d8134c4cff69cb2148f50ade2e03e31dd7a59a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c3f58d05b9f5fa63fe7530c44d8134c4cff69cb2148f50ade2e03e31dd7a59a"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c3f58d05b9f5fa63fe7530c44d8134c4cff69cb2148f50ade2e03e31dd7a59a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfe83e384363005c7b0d16eafbe5b91f25c5fcd5f3cf634544b69af6288af3e8"
   end
 
   depends_on "node"
@@ -65,7 +64,7 @@ class Httpyac < Formula
     assert_match "HTTP/1.1 200  - OK", output
     # for graphql call
     assert_match "\"name\": \"Europe\"", output
-    assert_match "2 requests processed (2 succeeded, 0 failed)", output
+    assert_match "2 requests processed (2 succeeded))", output
 
     assert_match version.to_s, shell_output("#{bin}/httpyac --version")
   end

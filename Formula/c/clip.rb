@@ -8,6 +8,7 @@ class Clip < Formula
   stable do
     url "https:github.comasmuthcliparchiverefstagsv0.7.tar.gz"
     sha256 "f38f455cf3e9201614ac71d8a871e4ff94a6e4cf461fd5bf81bdf457ba2e6b3e"
+
     # Fix build with fmt 10, the issue is fixed on HEAD because the logic was changed
     patch :DATA
   end
@@ -26,11 +27,14 @@ class Clip < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "fmt"
+  depends_on "fontconfig"
   depends_on "freetype"
   depends_on "fribidi"
   depends_on "harfbuzz"
+  depends_on "libpng"
 
   conflicts_with "geomview", because: "both install `clip` binaries"
 
@@ -40,6 +44,7 @@ class Clip < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
     pkgshare.install "test"
   end
 
@@ -63,5 +68,5 @@ index 12aa4ef7..2316063b 100644
 -          dash_pattern += fmt::format("{} ", v);
 +          dash_pattern += fmt::format("{} ", v.value);
          }
- 
+
          stroke_opts += svg_attr("stroke-dasharray", dash_pattern);

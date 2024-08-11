@@ -1,19 +1,18 @@
 class Pagmo < Formula
   desc "Scientific library for massively parallel optimization"
   homepage "https:esa.github.iopagmo2"
-  url "https:github.comesapagmo2archiverefstagsv2.19.0.tar.gz"
-  sha256 "701ada528de7d454201e92a5d88903dd1c22ea64f43861d9694195ddfef82a70"
+  url "https:github.comesapagmo2archiverefstagsv2.19.1.tar.gz"
+  sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "74848a6d33ff15f49535e54fd072888884fe03326d28be62b57a1ff3987359be"
-    sha256 cellar: :any,                 arm64_ventura:  "d7b9590b8add425a5524e691bc9581c8e18ca4fd4ae021eacc8c9d357d9b7c3a"
-    sha256 cellar: :any,                 arm64_monterey: "c4b3f119dae48013dbfa64fa78d9d20daff88b410ad66191053aa0ce98b7f3d9"
-    sha256 cellar: :any,                 sonoma:         "889ccd3f2801d85a95995559d98cd31baecb2242f048bf73cedc4a3bc0a92e50"
-    sha256 cellar: :any,                 ventura:        "f036624926ec42eee682d1183d1df793bf4c497e36a7814c741df16a4b71e7c4"
-    sha256 cellar: :any,                 monterey:       "1521d43fcb56388acd8ea97d349d7bb40b980356f4ff186370e724a6c981f085"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dbf74152c4aa9ee8a8d209899e586ff093c83f5d6c32dcf891442e05303e7c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "c8f35d3b0588fa8f2e7e7e4ec2aafb766b021e15931860cd7c34df9ba8a64a35"
+    sha256 cellar: :any,                 arm64_ventura:  "cfc3a9d4f379ae2ad175d43391b0a9e8c568b2e189fe609a7f86d1790e302fe9"
+    sha256 cellar: :any,                 arm64_monterey: "58b3acd3f9cc46b4519b11e9fc8f8775d175788e71fad83f048d0bf160d9add3"
+    sha256 cellar: :any,                 sonoma:         "1e1c4355c5f39f8abfe607cff474b9900b8bcf118465d462a26e736a4268c910"
+    sha256 cellar: :any,                 ventura:        "a8e15e8340724b8c52918b7a510c952c5c38eb27e03290166b6185b4757fa0b9"
+    sha256 cellar: :any,                 monterey:       "7461578677e3db9bd5e3dd35211a89802287b5cfcdaf45c254f2459b82c46d32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "683df2636a3ed1fd93c401f0bbf9a0cf4fcdd33558bfce295f519d6f6aa9eed2"
   end
 
   depends_on "cmake" => :build

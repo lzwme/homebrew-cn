@@ -24,6 +24,7 @@ class Nwchem < Formula
   end
 
   depends_on "gcc" # for gfortran
+  depends_on "hwloc"
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
@@ -72,7 +73,7 @@ class Nwchem < Formula
         charmm_x #{pkgshare}charmm_x
       EOS
 
-      inreplace "utilutil_nwchemrc.F", "etcnwchemrc", "#{etc}nwchemrc"
+      inreplace "utilutil_nwchemrc.F", "etcnwchemrc", etc"nwchemrc"
 
       # needed to use python 3.X to skip using default python2
       ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.12"

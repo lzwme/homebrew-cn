@@ -20,6 +20,11 @@ class Libdrawtext < Formula
   depends_on "pkg-config" => :build
   depends_on "freetype"
 
+  on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
+
   def install
     system ".configure", "--disable-dbg", "--enable-opt", "--prefix=#{prefix}"
 
@@ -33,15 +38,17 @@ class Libdrawtext < Formula
   end
 
   test do
-    ext = if OS.mac? && MacOS.version >= :high_sierra
-      "otf"
-    else
-      "ttf"
+    ext = "ttf"
+    font_name = "DejaVuSans"
+    font_path = "usrsharefontstruetypedejavu"
+    if OS.mac?
+      ext = "otf" if MacOS.version >= :high_sierra
+      font_name = "LastResort"
+      font_path = "SystemLibraryFonts"
     end
 
-    cp "SystemLibraryFontsLastResort.#{ext}", testpath
-    system bin"font2glyphmap", "LastResort.#{ext}"
-    bytes = File.read("LastResort_s12.glyphmap").bytes.to_a[0..12]
-    assert_equal [80, 53, 10, 53, 49, 50, 32, 53, 49, 50, 10, 35, 32], bytes
+    cp "#{font_path}#{font_name}.#{ext}", testpath
+    system bin"font2glyphmap", "#{font_name}.#{ext}"
+    assert_match(P5\n512 (256|512)\n# size: 12, shell_output("head -3 #{font_name}_s12.glyphmap"))
   end
 end

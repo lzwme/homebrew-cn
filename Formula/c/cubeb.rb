@@ -1,10 +1,16 @@
 class Cubeb < Formula
   desc "Cross-platform audio library"
-  homepage "https:github.comkinetiknzcubeb"
-  url "https:github.comkinetiknzcubebarchiverefstagscubeb-0.2.tar.gz"
-  sha256 "cac10876da4fa3b3d2879e0c658d09e8a258734562198301d99c1e8228e66907"
+  homepage "https:github.commozillacubeb"
   license "ISC"
-  head "https:github.comkinetiknzcubeb.git", branch: "master"
+
+  stable do
+    url "https:github.commozillacubebarchiverefstagscubeb-0.2.tar.gz"
+    sha256 "cac10876da4fa3b3d2879e0c658d09e8a258734562198301d99c1e8228e66907"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "478c0b66412477519eeb295fe7788436e843af7f98e10df61de6f8a942235772"
@@ -22,18 +28,32 @@ class Cubeb < Formula
     sha256 cellar: :any, el_capitan:     "f7e738b374bb07e1c420e56dfeb72caa814495b446c71d8158ef98c9b33d3a60"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https:github.commozillacubeb.git", branch: "master"
+
+    depends_on "cmake" => :build
+  end
+
   depends_on "pkg-config" => :build
 
+  on_linux do
+    depends_on "pulseaudio"
+  end
+
   def install
-    system "autoreconf", "--install"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    system "make", "install"
+    if build.head?
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DBUILD_SHARED_LIBS=ON",
+                      "-DBUILD_TESTS=OFF",
+                      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                      *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    else
+      system "autoreconf", "--install"
+      system ".configure", "--disable-silent-rules", *std_configure_args
+      system "make", "install"
+    end
   end
 
   test do

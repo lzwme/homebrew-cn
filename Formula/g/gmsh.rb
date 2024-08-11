@@ -26,8 +26,23 @@ class Gmsh < Formula
   depends_on "cairo"
   depends_on "fltk"
   depends_on "gcc" # for gfortran
+  depends_on "gmp"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
   depends_on "open-mpi"
   depends_on "opencascade"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "freetype"
+  end
+
+  on_linux do
+    depends_on "libx11"
+    depends_on "mesa"
+    depends_on "mesa-glu"
+  end
 
   def install
     # Fix compile with newer Clang
@@ -35,18 +50,21 @@ class Gmsh < Formula
 
     ENV["CASROOT"] = Formula["opencascade"].opt_prefix
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-DENABLE_OS_SPECIFIC_INSTALL=0",
-                    "-DGMSH_BIN=#{bin}",
-                    "-DGMSH_LIB=#{lib}",
-                    "-DGMSH_DOC=#{pkgshare}/gmsh",
-                    "-DGMSH_MAN=#{man}",
-                    "-DENABLE_BUILD_LIB=ON",
-                    "-DENABLE_BUILD_SHARED=ON",
-                    "-DENABLE_NATIVE_FILE_CHOOSER=ON",
-                    "-DENABLE_PETSC=OFF",
-                    "-DENABLE_SLEPC=OFF",
-                    "-DENABLE_OCC=ON"
+    args = %W[
+      -DENABLE_OS_SPECIFIC_INSTALL=0
+      -DGMSH_BIN=#{bin}
+      -DGMSH_LIB=#{lib}
+      -DGMSH_DOC=#{pkgshare}/gmsh
+      -DGMSH_MAN=#{man}
+      -DENABLE_BUILD_LIB=ON
+      -DENABLE_BUILD_SHARED=ON
+      -DENABLE_NATIVE_FILE_CHOOSER=ON
+      -DENABLE_PETSC=OFF
+      -DENABLE_SLEPC=OFF
+      -DENABLE_OCC=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -55,6 +73,6 @@ class Gmsh < Formula
   end
 
   test do
-    system bin/"gmsh", "#{share}/doc/gmsh/examples/simple_geo/tower.geo", "-parse_and_exit"
+    system bin/"gmsh", share/"doc/gmsh/examples/simple_geo/tower.geo", "-parse_and_exit"
   end
 end

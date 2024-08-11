@@ -26,6 +26,8 @@ class CrispyDoom < Formula
   depends_on "sdl2_mixer"
   depends_on "sdl2_net"
 
+  uses_from_macos "zlib"
+
   def install
     system "autoreconf", "-fiv"
     system ".configure", "--prefix=#{prefix}",

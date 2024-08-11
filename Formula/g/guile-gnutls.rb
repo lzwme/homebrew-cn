@@ -21,12 +21,16 @@ class GuileGnutls < Formula
   depends_on "gnutls"
   depends_on "guile"
 
+  on_macos do
+    depends_on "bdw-gc"
+  end
+
   def install
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] },
-                          "--with-guile-site-dir=#{share}guilesite3.0",
+    system ".configure", "--with-guile-site-dir=#{share}guilesite3.0",
                           "--with-guile-site-ccache-dir=#{lib}guile3.0site-ccache",
                           "--with-guile-extension-dir=#{lib}guile3.0extensions",
-                          "--disable-silent-rules"
+                          "--disable-silent-rules",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

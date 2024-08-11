@@ -3,6 +3,10 @@ class Mimic < Formula
   homepage "https:github.comMycroftAImimic1"
   url "https:github.comMycroftAImimic1archiverefstags1.3.0.1.tar.gz"
   sha256 "9041f5c7d3720899c90c890ada179c92c3b542b90bb655c247e4a4835df79249"
+  # The `:cannot_represent` is for:
+  # * Sun Microsystems, Inc. license (e.g. srcspeechg72x.c)
+  # * BSD license with 2 clauses but not matching BSD-2-Clause (e.g. srcspeechrateconv.c)
+  license all_of: ["MIT-Festival", "BSD-2-Clause", "BSD-3-Clause", "Spencer-86", "Apache-2.0", :cannot_represent]
 
   bottle do
     sha256 arm64_sonoma:   "27c12540e94a1f80ccfca3bd15f93a305f84e4c2233253df530dd3d7b1211140"
@@ -24,13 +28,20 @@ class Mimic < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "pcre2"
-  depends_on "portaudio"
+
+  on_macos do
+    depends_on "portaudio"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args,
-                          "--enable-shared",
-                          "--enable-static"
+    system ".configure", "--enable-shared",
+                          "--enable-static",
+                          *std_configure_args
     system "make", "install"
   end
 

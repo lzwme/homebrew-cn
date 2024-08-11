@@ -6,26 +6,31 @@ class SlitherAnalyzer < Formula
   url "https:files.pythonhosted.orgpackages40e483b4a1bceb17dfb9f83bfc921bd47832a3252fb5b55e92b2591b28d8a3d3slither_analyzer-0.10.3.tar.gz"
   sha256 "5e6c96c0428b79159fbb5f08ff4ed9dc0f1c47ac5af240679fc4afc34762c60b"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comcryticslither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "559805a5fb1b8d8f118e15b634d370cef6787f3c4ef680c61de476096d55812e"
-    sha256 cellar: :any,                 arm64_ventura:  "1294a9094b6277bdb91f1640259da81ee761df59b6f8b84199cf1933b2f34ac3"
-    sha256 cellar: :any,                 arm64_monterey: "f335127e641e23d69ad61ad5c74d774addf7b71ce866eba6895190009e7a1360"
-    sha256 cellar: :any,                 sonoma:         "a7a40106289829cae15f3810fbd10274bf64baf7a63824bae2b0d098b6c25e4e"
-    sha256 cellar: :any,                 ventura:        "e39153cfc459dc5a7f5f5c5b28ed0edb57d7f22384bd1d7c992afae6d5e64891"
-    sha256 cellar: :any,                 monterey:       "7e998b84eab7dfad5e57a2b6720cd7f9c8484d0cff72393c143df0612b3800be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4351926a15eda8dc43cf0b7fcfd700886000a69148b326a20b4b9328bed63bd"
+    sha256 cellar: :any,                 arm64_sonoma:   "e5a00fdd128fdf12aba9ea11cd27f8198bff09c2d80792cfff36df59b956a36f"
+    sha256 cellar: :any,                 arm64_ventura:  "009f3f234bb4067304e52ba94d0f516b23a517854c597198a56c2e0249aa2a4d"
+    sha256 cellar: :any,                 arm64_monterey: "36f9c814a9307ddf15a660e436d7ffefcbc1ee5b2ed6d8dec90c7619b9f74044"
+    sha256 cellar: :any,                 sonoma:         "73983b9d982ff41c0c39482ffa35341c525e702971b27c90600799e5563b40f4"
+    sha256 cellar: :any,                 ventura:        "703fc3106451b6f45bfee39c1ca11cc978eaea0d62770e22f3c882af33b6ac50"
+    sha256 cellar: :any,                 monterey:       "cee9cee4fa5db3d0add21233bbb1f8fc9c1854831f6230b049c9d1cbfa721ed7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf86e4ff6314479928337ac10251ff828a1e6f727367c7114d44d0f22c77c29e"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "python@3.12"
 
+  resource "aiohappyeyeballs" do
+    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
+    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+  end
+
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
-    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
+    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
+    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
   end
 
   resource "aiosignal" do
@@ -34,8 +39,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "bitarray" do
@@ -99,8 +104,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "eth-typing" do
-    url "https:files.pythonhosted.orgpackagese7aba3256296a299995fded3f8b72ce1bf3791f8ca6f24a8d310d31b9268c959eth_typing-4.3.1.tar.gz"
-    sha256 "4504559c87a9f71f4b99aa5a1e0549adaa7f192cbf8e37a295acfcddb1b5412d"
+    url "https:files.pythonhosted.orgpackages9e24b913ef5d1a9ff300b05de0f0c06a4d00caa2b1b81f8c7448d069f94a4168eth_typing-4.4.0.tar.gz"
+    sha256 "93848083ac6bb4c20cc209ea9153a08b0a528be23337c889f89e1e5ffbe9807d"
   end
 
   resource "eth-utils" do
@@ -124,8 +129,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
-    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
+    url "https:files.pythonhosted.orgpackages382e03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deecjsonschema-4.23.0.tar.gz"
+    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
   end
 
   resource "jsonschema-specifications" do
@@ -154,13 +159,13 @@ class SlitherAnalyzer < Formula
   end
 
   resource "prettytable" do
-    url "https:files.pythonhosted.orgpackages19d37cb826e085a254888d8afb4ae3f8d43859b13149ac8450b221120d4964c9prettytable-3.10.0.tar.gz"
-    sha256 "9665594d137fb08a1117518c25551e0ede1687197cf353a4fdc78d27e1073568"
+    url "https:files.pythonhosted.orgpackages4c90e1c8c06235d53c3adaae74d295669612beea5f5a2052b3184a763e7bdd62prettytable-3.10.2.tar.gz"
+    sha256 "29ec6c34260191d42cd4928c28d56adec360ac2b1208a26c7e4f14b90cc8bc84"
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages205f00d891817d4031bbf4e846a99834bf949a76714c10a726833aa184176772protobuf-5.27.1.tar.gz"
-    sha256 "df5e5b8e39b7d1c25b186ffdf9f44f40f810bbcc9d2b71d9d3156fee5a9adf15"
+    url "https:files.pythonhosted.orgpackages1b610671db2ab2aee7c92d6c1b617c39b30a4cd973950118da56d77e7f397a9dprotobuf-5.27.3.tar.gz"
+    sha256 "82460903e640f2b7e34ee81a947fdaad89de796d324bcbc38ff5430bcdead82c"
   end
 
   resource "pycryptodome" do
@@ -179,8 +184,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
-    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
+    url "https:files.pythonhosted.orgpackages3f5164256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   resource "requests" do
@@ -194,8 +199,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
-    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
+    url "https:files.pythonhosted.orgpackages5564b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29arpds_py-0.20.0.tar.gz"
+    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
   resource "solc-select" do
@@ -224,8 +229,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "web3" do
-    url "https:files.pythonhosted.orgpackages614fa58bcc904248bf0f504bc43641475d7a4acf0686b45a32d7e5b4fba7d74dweb3-6.19.0.tar.gz"
-    sha256 "d27fbd4ac5aa70d0e0c516bd3e3b802fbe74bc159b407c34052d9301b400f757"
+    url "https:files.pythonhosted.orgpackages69c19fc3a82718e5de39454e8b1558d4b2d41b947c860eb8f4850bebff5ee00aweb3-6.20.1.tar.gz"
+    sha256 "a29bc1863734e1c05f128ddbc56878f299ea71776806e667b581a83b5d5be0ed"
   end
 
   resource "websockets" do

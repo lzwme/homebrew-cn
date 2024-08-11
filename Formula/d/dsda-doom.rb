@@ -1,8 +1,8 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
   homepage "https:github.comkraflabdsda-doom"
-  url "https:github.comkraflabdsda-doomarchiverefstagsv0.27.5.tar.gz"
-  sha256 "5e01be417033e1abf708bb22509d4d910b158a159a2790c4d5b46690daba67f0"
+  url "https:github.comkraflabdsda-doomarchiverefstagsv0.28.0.tar.gz"
+  sha256 "c6efc8d68cc0e9fa2facd2b608779383fcf3a8322edbdb8d7433f0c2adf5a483"
   license "GPL-2.0-only"
   head "https:github.comkraflabdsda-doom.git", branch: "master"
 
@@ -12,13 +12,13 @@ class DsdaDoom < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ae9d41065eab382aa05fa2336596aa74da372c87eb8d64cf71946f9576c37947"
-    sha256 arm64_ventura:  "96210b4f7fb9c4c92a6df291c2d4ed6de2670129325359efe85997ba3cef96fe"
-    sha256 arm64_monterey: "53c0f6f7bd3136ba9203db9b2815c0faa52ec30667ae34875c553d391f948212"
-    sha256 sonoma:         "5ae8098b88dc69ea6411dbc6ad95aea4e8e9c4ad9b0fe26185bf577c58f04c31"
-    sha256 ventura:        "dfd1dbb2f8da602147d652f809d6f2f79eb21a532927f56248d726c9ebf63b51"
-    sha256 monterey:       "c8afe23068fcefc108567f2ac07f9c1e98a1aaf259c021b1f9e13082d02158f4"
-    sha256 x86_64_linux:   "1f4dead38e177c76badd2618757a679ea4ef103aaddf42cece93788be99a11de"
+    sha256 arm64_sonoma:   "9a28b37636d1fe85145f55680ed4639693106c71147697a17713e92e9459c47e"
+    sha256 arm64_ventura:  "417ff87ad041d7b8103260cb8d92877a3be55caad546a6693d4423e7783aa60c"
+    sha256 arm64_monterey: "cb81f3486c84dc6004c2db531f520c7b835d2d4cb43499f62b6d955fe023d9cb"
+    sha256 sonoma:         "79e7b443bb33e68fcafabbd159c3f4ed7c009659424fb26454bf182aa3aa782e"
+    sha256 ventura:        "94618366de545884460dfad7f917d24d7fb618c3ef5887e572b0e67d20a32be2"
+    sha256 monterey:       "f52066e7d6aa87d9015fbe06666b1155863bc42069e1e3826ce99acfca04dd8b"
+    sha256 x86_64_linux:   "b92b9bbc24f88ee8d64f07bbbf9751877912662344dbe157fdc6f5168cfad2c4"
   end
 
   depends_on "cmake" => :build
@@ -75,6 +75,8 @@ class DsdaDoom < Formula
   end
 
   test do
+    ENV["XDG_DATA_HOME"] = testpath
+
     expected_output = "dsda-doom v#{version.major_minor_patch}"
     assert_match expected_output, shell_output("#{bin}dsda-doom -iwad invalid_wad 2>&1", 255)
   end
