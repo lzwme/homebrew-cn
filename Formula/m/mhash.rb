@@ -3,6 +3,7 @@ class Mhash < Formula
   homepage "https://mhash.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/mhash/mhash/0.9.9.9/mhash-0.9.9.9.tar.gz"
   sha256 "3dcad09a63b6f1f634e64168dd398e9feb9925560f9b671ce52283a79604d13e"
+  license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   livecheck do
     url :stable

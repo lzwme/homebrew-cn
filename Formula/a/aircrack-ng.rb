@@ -3,7 +3,11 @@ class AircrackNg < Formula
   homepage "https:aircrack-ng.org"
   url "https:download.aircrack-ng.orgaircrack-ng-1.7.tar.gz"
   sha256 "05a704e3c8f7792a17315080a21214a4448fd2452c1b0dd5226a3a55f90b58c3"
-  license all_of: ["GPL-2.0-or-later", "BSD-3-Clause", "OpenSSL"]
+  license all_of: [
+    "BSD-3-Clause", # includeaircrack-ngthird-party{if_arp.h,if_llc.h}
+    "GPL-2.0-or-later",
+    "GPL-2.0-or-later" => { with: "cryptsetup-OpenSSL-exception" },
+  ]
   revision 1
 
   livecheck do

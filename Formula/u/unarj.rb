@@ -4,6 +4,11 @@ class Unarj < Formula
   url "https://src.fedoraproject.org/repo/pkgs/unarj/unarj-2.65.tar.gz/c6fe45db1741f97155c7def322aa74aa/unarj-2.65.tar.gz"
   sha256 "d7dcc325160af6eb2956f5cb53a002edb2d833e4bb17846669f92ba0ce3f0264"
 
+  livecheck do
+    url "https://src.fedoraproject.org/repo/pkgs/unarj/"
+    regex(/href=.*?unarj[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b2001a999b1114d241f26b8c9eedf1c181584d3cb45b8948a7d3113484298a0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1ad20924840919b6dbbc86e4803e6a9ddf5d3b6379cdb0012307485a9849dbb"

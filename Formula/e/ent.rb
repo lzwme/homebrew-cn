@@ -4,6 +4,9 @@ class Ent < Formula
   # This tarball is versioned and smaller, though non-official
   url "https:github.compsm14entarchiverefstags1.0.tar.gz"
   sha256 "6316b9956f2e0cc39f2b934f3c53019eafe2715316c260fd5c1e5ef4523ae520"
+  # Official git has added "CC-BY-SA-4.0" license but this is not included in current release
+  # Ref: https:github.comFourmilabent_random_sequence_testerblobmasterLICENSE.md
+  license :public_domain
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f95e748a208f421f6d85b9e5445139c9f688f277ce72fbaed93449322b96abef"

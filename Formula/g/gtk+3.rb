@@ -27,21 +27,38 @@ class Gtkx3 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "at-spi2-core"
+  depends_on "cairo"
+  depends_on "fribidi"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gsettings-desktop-schemas"
+  depends_on "harfbuzz"
   depends_on "hicolor-icon-theme"
   depends_on "libepoxy"
   depends_on "pango"
 
   uses_from_macos "libxslt" => :build # for xsltproc
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
     depends_on "cmake" => :build
-    depends_on "cairo"
+
+    depends_on "fontconfig"
     depends_on "iso-codes"
+    depends_on "libx11"
+    depends_on "libxdamage"
+    depends_on "libxext"
+    depends_on "libxfixes"
+    depends_on "libxi"
+    depends_on "libxinerama"
     depends_on "libxkbcommon"
+    depends_on "libxrandr"
+    depends_on "wayland"
     depends_on "wayland-protocols"
     depends_on "xorgproto"
   end

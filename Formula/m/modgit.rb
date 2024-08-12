@@ -9,6 +9,8 @@ class Modgit < Formula
     sha256 cellar: :any_skip_relocation, all: "5d74396c99246d4279d33abfaa9c4ca5671be43bb9f174b487f0d7cff0334f8c"
   end
 
+  disable! date: "2024-08-10", because: :no_license
+
   def install
     bin.install "modgit"
   end

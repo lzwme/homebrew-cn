@@ -1,6 +1,7 @@
 class Gpa < Formula
   desc "Graphical user interface for the GnuPG"
   homepage "https://www.gnupg.org/related_software/gpa/"
+  license "GPL-3.0-or-later"
   revision 4
 
   stable do

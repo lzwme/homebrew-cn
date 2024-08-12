@@ -3,6 +3,9 @@ class Dnsmap < Formula
   homepage "https:github.comresurrecting-open-source-projectsdnsmap"
   url "https:github.comresurrecting-open-source-projectsdnsmaparchiverefstags0.36.tar.gz"
   sha256 "f52d6d49cbf9a60f601c919f99457f108d51ecd011c63e669d58f38d50ad853c"
+  # Code is all GPL-2.0-or-later but license file was changed to GPL-3.0 in following commit
+  # Ref: https:github.comresurrecting-open-source-projectsdnsmapcommit408ecfd62a0b2c089dda6f3be5d396ed2662797e
+  license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
   head "https:github.comresurrecting-open-source-projectsdnsmap.git", branch: "master"
 
   bottle do

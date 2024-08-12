@@ -3,6 +3,9 @@ class Dumb < Formula
   homepage "https:dumb.sourceforge.net"
   url "https:github.comkode54dumbarchiverefstags2.0.3.tar.gz"
   sha256 "99bfac926aeb8d476562303312d9f47fd05b43803050cd889b44da34a9b2a4f9"
+  # Essentially Zlib but with modified and added clauses that aren't intended to restrict usage
+  # https:src.fedoraproject.orgrpmsdumbblobrawhideflicense-clarification.eml
+  license :cannot_represent
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f9510e55b969457e77567594f6963a7a6470f86dac7f252ed3c01757314c44dd"

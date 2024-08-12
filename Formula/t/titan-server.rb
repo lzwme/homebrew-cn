@@ -4,6 +4,7 @@ class TitanServer < Formula
   url "http:s3.thinkaurelius.comdownloadstitantitan-1.0.0-hadoop1.zip"
   version "1.0.0"
   sha256 "67538e231db5be75821b40dd026bafd0cd7451cdd7e225a2dc31e124471bb8ef"
+  license "Apache-2.0"
 
   livecheck do
     url "https:github.comthinkaureliustitan.git"

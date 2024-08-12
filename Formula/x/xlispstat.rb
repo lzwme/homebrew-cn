@@ -7,6 +7,14 @@ class Xlispstat < Formula
   license "HPND-sell-variant"
   revision 1
 
+  livecheck do
+    url "https://homepage.cs.uiowa.edu/~luke/xls/xlispstat/current/"
+    regex(/href=.*?xlispstat[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("-", ".") }
+    end
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "10e7f44257e5722b9d044d17e1797df027796f291010ea9ccb5a4c3999424208"
     sha256 cellar: :any,                 arm64_ventura:  "3b11acb44e728fb2b1707b8700d5b0be9a68ff522884827fe824d44d6333ca33"

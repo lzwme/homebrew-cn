@@ -45,10 +45,6 @@ class PythonAT39 < Formula
     depends_on "libnsl"
   end
 
-  skip_clean "binpip3", "binpip-3.4", "binpip-3.5", "binpip-3.6", "binpip-3.7", "binpip-3.8"
-  skip_clean "bineasy_install3", "bineasy_install-3.4", "bineasy_install-3.5", "bineasy_install-3.6",
-             "bineasy_install-3.7", "bineasy_install-3.8"
-
   # Always update to latest release
   resource "flit-core" do
     url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"

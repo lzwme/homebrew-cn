@@ -9,13 +9,14 @@ class Bazarr < Formula
   head "https:github.commorpheus65535bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e861c369e72abb6c6d001e094977d9cabb800a78364ecbfd0a5f8da838397008"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "539fd0d60bf1bc1cf5a988954f6196d358c77f7df2c2f34d22e84243e97a8d28"
-    sha256 cellar: :any,                 arm64_monterey: "5ab40f896cd2e8cc05c6b0c8b444af74c79033f5434042c2bbeed3626ad0410c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b9965a3c6b62ff450104bcfd4b0d68aec535a4a7a57fe9a43febb3efe225380"
-    sha256 cellar: :any_skip_relocation, ventura:        "721eedf56183659946b51032538f3a22ff35eb7cf02c8b39c71138a1f476c5b5"
-    sha256 cellar: :any,                 monterey:       "ed2a438a8615a04912095b411455e2a0640cca7b61f926af75ccb7e33a17004b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af558a6bdc2325cb21741ef5bd6f4aa3570151ac17f6ea6ec2984d3cac0396cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b023d5c160d3c58237cd18c8ce142b47f94725ab26f9849f9161401cd416c33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5a5ccc8ae165f93dd193cb14cdbdb489eb800fc57f2da84c33fbc3b12be29fd"
+    sha256 cellar: :any,                 arm64_monterey: "99e22f87a17d46593ac22ebca997d18d25bc1d7885871b4a3afcc65a53794b45"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c97ed102759a6ea084b277f13bce79792ea13ca159d55df7a06c86d19e094ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "bad9d45c6e1f7292549859ddc2a2461b32293fa6f42cc29cc1620dd93d9a5ec4"
+    sha256 cellar: :any,                 monterey:       "18350639a3711e8a8059aaa5af057473dc833dc9894917c5e57cfa800a8857d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5757b9d197bca66cac1645c719d2f8f2f0c74397f0bf39177d4428f9dbe4075"
   end
 
   depends_on "node" => :build
@@ -23,7 +24,7 @@ class Bazarr < Formula
   depends_on "gcc"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "unar"
 
   uses_from_macos "libxml2", since: :ventura
@@ -31,8 +32,13 @@ class Bazarr < Formula
   uses_from_macos "zlib"
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
-    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
+    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
+    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
+    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
   end
 
   resource "webrtcvad-wheels" do
@@ -41,9 +47,7 @@ class Bazarr < Formula
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexecLanguage::Python.site_packages("python3.11")
-    venv = virtualenv_create(libexec, "python3.11")
-
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
 
     if build.head?
@@ -56,17 +60,20 @@ class Bazarr < Formula
 
     # Stop program from automatically downloading its own binaries.
     binaries_file = buildpath"bazarrutilitiesbinaries.json"
-    rm binaries_file
+    binaries_file.unlink
     binaries_file.write "[]"
 
+    # Prevent strange behavior of searching for a different python executable on macOS,
+    # which won't have the required dependencies
+    inreplace "bazarr.py", "def get_python_path():", "def get_python_path():\n    return sys.executable"
+
     libexec.install Dir["*"]
-    (bin"bazarr").write_env_script libexec"binpython", "#{libexec}bazarr.py",
+    (bin"bazarr").write_env_script venv.root"binpython", libexec"bazarr.py",
       NO_UPDATE:  "1",
       PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX"bin"}:$PATH",
-      PYTHONPATH: ENV["PYTHONPATH"]
+      PYTHONPATH: venv.site_packages
 
     pkgvar = var"bazarr"
-
     pkgvar.mkpath
     pkgvar.install_symlink pkgetc => "config"
 
@@ -102,8 +109,7 @@ class Bazarr < Formula
 
     system bin"bazarr", "--help"
 
-    config_file = testpath"configconfig.ini"
-    config_file.write <<~EOS
+    (testpath"configconfig.ini").write <<~EOS
       [backup]
       folder = #{testpath}custom_backup
     EOS
@@ -111,7 +117,7 @@ class Bazarr < Formula
     port = free_port
 
     Open3.popen3(bin"bazarr", "--no-update", "--config", testpath, "-p", port.to_s) do |_, _, stderr, wait_thr|
-      Timeout.timeout(30) do
+      Timeout.timeout(45) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"
           break if line.include? "BAZARR is started and waiting for request on http:0.0.0.0:#{port}"
@@ -123,9 +129,7 @@ class Bazarr < Formula
     end
 
     assert_predicate (testpath"configconfig.ini.old"), :exist?
-    new_config_file = testpath"configconfig.yaml"
-    assert_includes File.read(new_config_file), "#{testpath}custom_backup"
-    bazarr_log = testpath"logbazarr.log"
-    assert_match "BAZARR is started and waiting for request", bazarr_log.read
+    assert_includes (testpath"configconfig.yaml").read, "#{testpath}custom_backup"
+    assert_match "BAZARR is started and waiting for request", (testpath"logbazarr.log").read
   end
 end

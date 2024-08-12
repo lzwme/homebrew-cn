@@ -1369,7 +1369,7 @@ Homebrew-homebrew-core/Formula/d/dnsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doc8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docbook-xsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docbook.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/docbook2x.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/docbook2x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docfx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-buildx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-clean.rb, Homebrew/homebrew-core, 1
@@ -1891,7 +1891,6 @@ Homebrew-homebrew-core/Formula/f/frege.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frei0r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fribidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frizbee.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/frobtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frotz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frozen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frpc.rb, Homebrew/homebrew-core, 1
@@ -2034,6 +2033,7 @@ Homebrew-homebrew-core/Formula/g/gffread.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gflags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gfold.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gforth.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gfxutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ggshield.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
@@ -6955,6 +6955,7 @@ Homebrew-homebrew-core/Formula/x/xq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xqilla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xrdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xroar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xrootd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 1
@@ -7330,6 +7331,7 @@ Homebrew-homebrew-cask/Casks/a/apple-juice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/applepi-baker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/applite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/apppolice.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/approf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/appstore-quickview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apptivate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apptrap.rb, Homebrew/homebrew-cask, 0

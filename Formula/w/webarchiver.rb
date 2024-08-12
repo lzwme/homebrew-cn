@@ -19,6 +19,8 @@ class Webarchiver < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "fe85ee50f8a3da76dcbcd8bb24c1bea05bde33525055c4d471c8b07fccadfa65"
   end
 
+  disable! date: "2024-08-11", because: :no_license
+
   depends_on xcode: ["6.0.1", :build]
   depends_on :macos
 

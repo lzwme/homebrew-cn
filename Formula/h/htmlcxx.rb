@@ -3,6 +3,7 @@ class Htmlcxx < Formula
   homepage "https:htmlcxx.sourceforge.net"
   url "https:downloads.sourceforge.netprojecthtmlcxxv0.87htmlcxx-0.87.tar.gz"
   sha256 "5d38f938cf4df9a298a5346af27195fffabfef9f460fc2a02233cbcfa8fc75c8"
+  license all_of: ["LGPL-2.0-only", "Apache-2.0"]
 
   bottle do
     sha256 arm64_sonoma:   "a0db079df456a6240676663a280b60f12ef280c2a83f3f4a3a7c41a9e5bd719d"

@@ -3,19 +3,29 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackagesec6d1f0de989d3c6635e944ff7762341c78b3698aff70e53ea9feecc2b28f6e1streamlink-6.8.3.tar.gz"
-  sha256 "e3f51a567c08703092f91d0497a3fc2aefe327efcd725d03e66f3dcd11ed9b68"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
+  stable do
+    url "https:files.pythonhosted.orgpackagesec6d1f0de989d3c6635e944ff7762341c78b3698aff70e53ea9feecc2b28f6e1streamlink-6.8.3.tar.gz"
+    sha256 "e3f51a567c08703092f91d0497a3fc2aefe327efcd725d03e66f3dcd11ed9b68"
+
+    # plugins.okru: fix metadata schema, upstream pr ref, https:github.comstreamlinkstreamlinkpull6085
+    patch do
+      url "https:github.comstreamlinkstreamlinkcommit153f82d7218803347f197953a04bf642758ade06.patch?full_index=1"
+      sha256 "107b5ea39e91e3e56a6c93308d5291c0ec568397cf4f3097de1ab3567c7835e5"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0296bc2568c9525a5855ea9d6555ca84e8f64b762284899e31c2cc2c4f04c2ae"
-    sha256 cellar: :any,                 arm64_ventura:  "84659906b5f3e093144a7295d7e9fab8e8aae611cb427e7dfd79c56297934c55"
-    sha256 cellar: :any,                 arm64_monterey: "70d7b606567e14b9d9cddbc9d9e78a795d83305270c41b0a3202c7ffb6dd4a70"
-    sha256 cellar: :any,                 sonoma:         "6641ba9a60606db5fd6d8665ba8e4749eee9be8f2db921e12be3402f86f017bc"
-    sha256 cellar: :any,                 ventura:        "ee051b7876f462052290279cb3bd29f46bbc5b82847090e3c29dcf4ddcb2208d"
-    sha256 cellar: :any,                 monterey:       "b7281a40a88ce4c8cad1a9eec17544bfe0371680620184497fc6f6c7c654a158"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66b62439b2ad76d05e6ba1d3d6163425e39e81eed696e5635926fec8bc607787"
+    sha256 cellar: :any,                 arm64_sonoma:   "88e4a75b7ba5a3cf30fa506edbeeff8d61bb2d3447e52a47f1a414d50e5e11ed"
+    sha256 cellar: :any,                 arm64_ventura:  "ad99de7cabe0eb17423122be11be928d9eb894a6222a3186114daa185e21c666"
+    sha256 cellar: :any,                 arm64_monterey: "7443247c4ae6c28436a0f2360c8a9c1103aa965973e59f0c318fed87f283dccf"
+    sha256 cellar: :any,                 sonoma:         "c893ef26ba48b7b0cf49f04d33309de1b5f0db1667af4e039a7560fd70964e00"
+    sha256 cellar: :any,                 ventura:        "3c16e73286a8bf93a141a1fff8730f8962b8a14da89b1dde4fcd450f3800b224"
+    sha256 cellar: :any,                 monterey:       "bca44e4168beb180975de25046441f780bf268d5ae5afd774d64607e3b5203cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64809e2e0ae014b90b99819e256c46ddf786d82cc7a39d6da36b2ed129a33672"
   end
 
   depends_on "certifi"
@@ -137,10 +147,15 @@ class Streamlink < Formula
     system bin"streamlink", "https:vimeo.com144358359", "360p", "-o", "video.mp4"
     assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
 
-    url = OS.mac? ? "https:ok.ruvideo3388934659879" : "https:www.youtube.comwatch?v=pOtd1cbOP7k"
-    output = shell_output("#{bin}streamlink --ffmpeg-no-validation -l debug '#{url}'")
-    assert_match "Available streams:", output
-    refute_match "error", output
-    refute_match "Could not find metadata", output
+    url = OS.mac? ? "https:ok.ruvideo1643385658936" : "https:www.youtube.comwatch?v=pOtd1cbOP7k"
+    if OS.mac?
+      output = shell_output("#{bin}streamlink --ffmpeg-no-validation -l debug '#{url}'")
+      assert_match "Available streams:", output
+      refute_match "error", output
+      refute_match "Could not find metadata", output
+    else
+      output = shell_output("#{bin}streamlink --ffmpeg-no-validation -l debug '#{url}'", 1)
+      assert_match "Could not get video info - LOGIN_REQUIRED", output
+    end
   end
 end

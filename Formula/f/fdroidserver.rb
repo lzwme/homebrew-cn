@@ -11,13 +11,14 @@ class Fdroidserver < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "09a3ec12d39b909aea28a22a736ed1cbf9b0970316cfd5619dadb795bdff2320"
-    sha256 cellar: :any,                 arm64_ventura:  "fee818a9f0f29589986489c4d3573a0ad95fc66fa400afee30e90c5f60f350d9"
-    sha256 cellar: :any,                 arm64_monterey: "bd72afd46abbbac650585612609dfeb04f533d5c9a4a0d3a025010d2373bf5d9"
-    sha256 cellar: :any,                 sonoma:         "d5e434b3523cabc7a0c37abf69fadc2c7902e76303ae34ea892596f5a23a895a"
-    sha256 cellar: :any,                 ventura:        "20af8eb4061c1411ce399fd18bf56574baf8b79fd8f9c5b6b9e902c3bcc10f4c"
-    sha256 cellar: :any,                 monterey:       "6a4be8e39c39c4281dc699433b134ac7c0977e654aefa6be1fca9b54cf72e1ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "207f419da7fb76458538a4b944ddf78e788041fbcc46c7f506b121b7ffaa4210"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "023f30d36801df4c81d772fbead923b4ef8a4e76bb60006b41586a35c6c01114"
+    sha256 cellar: :any,                 arm64_ventura:  "b45a131718e7b73c3fc852fa2c7094b2fb1c1bb3c22d45a6c2c594552c8326fc"
+    sha256 cellar: :any,                 arm64_monterey: "c3f4bf2148d6979c6ba36ff07dab1dfafbf76842cf76d4bc1aabaa1907c413a8"
+    sha256 cellar: :any,                 sonoma:         "53a7f1a043f5708158ebf2fc938fcd0f76e2f47da209814aed9e12caa7a6c7bc"
+    sha256 cellar: :any,                 ventura:        "9d357124c24134bb5e5d992073c867ec5decf7edbf76227efdcd0b86863590d4"
+    sha256 cellar: :any,                 monterey:       "94faaab4fca78b8e1c28970dd91cb54a70261267b6bbb7094778c214e3aa5253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79270db6be07d6543373782a6a199cbe1ca125ee4286d619a9fb8247ff13c39e"
   end
 
   depends_on "ninja" => :build
@@ -52,8 +53,8 @@ class Fdroidserver < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackagesdbca45176b8362eb06b68f946c2bf1184b92fc98d739a3f8c790999a257db91fargcomplete-3.4.0.tar.gz"
-    sha256 "c2abcdfe1be8ace47ba777d4fce319eb13bf8ad9dace8d085dcad6eded88057f"
+    url "https:files.pythonhosted.orgpackages7533a3d23a2e9ac78f9eaf1fce7490fee430d43ca7d42c65adabbb36a2b28ff6argcomplete-3.5.0.tar.gz"
+    sha256 "4349400469dccfb7950bb60334a680c58d88699bff6159df61251878dc6bf74b"
   end
 
   resource "args" do
@@ -72,8 +73,8 @@ class Fdroidserver < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"
-    sha256 "2ee15dd749f5952fe3f0430d0ff6b74082e159c50332a1413d51b5689cf06623"
+    url "https:files.pythonhosted.orgpackagese47ed95e7d96d4828e965891af92e43b52a4cd3395dc1c1ef4ee62748d0471d0bcrypt-4.2.0.tar.gz"
+    sha256 "cf69eaf5185fd58f268f805b505ce31f9b9fc2d64b376642164e9244540c1221"
   end
 
   resource "charset-normalizer" do
@@ -122,8 +123,8 @@ class Fdroidserver < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackagesa46e681d39b71d5f0d6a1b1dc87d7333331f9961b5ab6a2ad6372d6cf3f8b04cfonttools-4.53.0.tar.gz"
-    sha256 "c93ed66d32de1559b6fc348838c7572d5c0ac1e4a258e76763a5caddd8944002"
+    url "https:files.pythonhosted.orgpackagesc6cbcd80a0da995adde8ade6044a8744aee0da5efea01301cadf770f7fbe7dccfonttools-4.53.1.tar.gz"
+    sha256 "e128778a8e9bc11159ce5447f76766cefbd876f44bd79aff030287254e4752c4"
   end
 
   resource "future" do
@@ -147,8 +148,8 @@ class Fdroidserver < Formula
   end
 
   resource "ipython" do
-    url "https:files.pythonhosted.orgpackages1c5afacbb5a0650e68b16134ce787b0990ee47f8b67316b0d844d9b183f212e6ipython-8.25.0.tar.gz"
-    sha256 "c6ed726a140b6e725b911528f80439c534fac915246af3efc39440a6b0f9d716"
+    url "https:files.pythonhosted.orgpackages7ef4dc45805e5c3e327a626139c023b296bafa4537e602a61055d377704ca54cipython-8.26.0.tar.gz"
+    sha256 "1cec0fbba8404af13facebe83d04436a7434c7400e59f47acf467c64abd0956c"
   end
 
   resource "jedi" do
@@ -167,13 +168,13 @@ class Fdroidserver < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
-    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
+    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
+    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
   end
 
   resource "matplotlib" do
-    url "https:files.pythonhosted.orgpackagesc5a4a7236bf8b0137deff48737c6ccf2154ef4486e57c6a5b7c309bf515992bdmatplotlib-3.9.0.tar.gz"
-    sha256 "e6d29ea6c19e34b30fb7d88b7081f869a03014f66fe06d62cc77d5a6ea88ed7a"
+    url "https:files.pythonhosted.orgpackages27c3b4dbf9ed2a024a5514fa8a2606867a3716c9adfd457d138865145a940a65matplotlib-3.9.1.post1.tar.gz"
+    sha256 "c91e585c65092c975a44dc9d4239ba8c594ba3c193d7c478b6d178c4ef61f406"
   end
 
   resource "matplotlib-inline" do
@@ -192,8 +193,8 @@ class Fdroidserver < Formula
   end
 
   resource "paramiko" do
-    url "https:files.pythonhosted.orgpackagesccaf11996c4df4f9caff87997ad2d3fd8825078c277d6a928446d2b6cf249889paramiko-3.4.0.tar.gz"
-    sha256 "aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
+    url "https:files.pythonhosted.orgpackages0b6a1d85cc9f5eaf49a769c7128039074bbb8127aba70756f05dfcf4326e72a1paramiko-3.4.1.tar.gz"
+    sha256 "8b15302870af7f6652f2e038975c1d2973f06046cb5d7d65355668b3ecbece0c"
   end
 
   resource "parso" do
@@ -222,8 +223,8 @@ class Fdroidserver < Formula
   end
 
   resource "pure-eval" do
-    url "https:files.pythonhosted.orgpackages975a0bc937c25d3ce4e0a74335222aee05455d6afa2888032185f8ab50cdf6fdpure_eval-0.2.2.tar.gz"
-    sha256 "2b45320af6dfaa1750f543d714b6d1c520a1688dec6fd24d339063ce0aaa9ac3"
+    url "https:files.pythonhosted.orgpackagescd050a34433a064256a578f1783a10da6df098ceaa4a57bbeaa96a6c0352786bpure_eval-0.2.3.tar.gz"
+    sha256 "5f4e983f40564c576c7c8635ae88db5956bb2229d7e9237d03b3c0b0190eaf42"
   end
 
   resource "pyasn1" do
@@ -237,8 +238,8 @@ class Fdroidserver < Formula
   end
 
   resource "pydot" do
-    url "https:files.pythonhosted.orgpackagesd72f482fcbc389e180e7f8d7e7cb06bc5a7c37be6c57939dfb950951d97f2722pydot-2.0.0.tar.gz"
-    sha256 "60246af215123fa062f21cd791be67dda23a6f280df09f68919e637a1e4f3235"
+    url "https:files.pythonhosted.orgpackages2caa4cf0b17a070fb57798e8e0f5b1665abf5b2f19ee8ea47957aec2c37b9cedpydot-3.0.1.tar.gz"
+    sha256 "e18cf7f287c497d77b536a3d20a46284568fea390776dface6eabbdf1b1b5efc"
   end
 
   resource "pygments" do
@@ -272,8 +273,8 @@ class Fdroidserver < Formula
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "qrcode" do
@@ -297,13 +298,13 @@ class Fdroidserver < Formula
   end
 
   resource "sdkmanager" do
-    url "https:files.pythonhosted.orgpackagesc2d75f771226151ff8df1799bb16a3812abb8b8935df71c0af2eb84901600163sdkmanager-0.6.7.tar.gz"
-    sha256 "b81080462b8fe7eecd6b78f7fb13ead833d64813591ea43b470c523089a3bac7"
+    url "https:files.pythonhosted.orgpackages6beb2923406c7ef3de77b8c46dbf3acdc3a09db731c6f3e6be0cefbf374bb426sdkmanager-0.6.8.tar.gz"
+    sha256 "90fe379e2bb271581541d9141cdcbcf7146da04a40514fdfc07c6141a77e40e0"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
+    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
   end
 
   resource "six" do

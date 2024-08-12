@@ -18,6 +18,7 @@ class Gnunet < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gettext"
+  depends_on "gmp"
   depends_on "gnutls"
   depends_on "jansson"
   depends_on "libextractor"
@@ -25,14 +26,21 @@ class Gnunet < Formula
   depends_on "libidn2"
   depends_on "libmicrohttpd"
   depends_on "libsodium"
+  depends_on "libtool"
   depends_on "libunistring"
 
   uses_from_macos "curl", since: :ventura # needs curl >= 7.85.0
   uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libgpg-error"
+  end
 
   def install
     ENV.deparallelize if OS.linux?
-    system "./configure", *std_configure_args, "--disable-documentation"
+
+    system "./configure", "--disable-documentation", *std_configure_args
     system "make", "install"
   end
 

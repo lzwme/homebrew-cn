@@ -20,11 +20,16 @@ class LibpeasAT1 < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
+
   depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
   depends_on "python@3.12"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     pyver = Language::Python.major_minor_version "python3.12"

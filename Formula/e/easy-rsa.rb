@@ -7,20 +7,18 @@ class EasyRsa < Formula
   head "https:github.comOpenVPNeasy-rsa.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c548341d3cf5900a1565f5c0464a082ed5f9f3c062025b97731804df0ef7a31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c548341d3cf5900a1565f5c0464a082ed5f9f3c062025b97731804df0ef7a31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c548341d3cf5900a1565f5c0464a082ed5f9f3c062025b97731804df0ef7a31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "05a1c069fee5a14aef5bd45fd6a64f265197dc12671e3f7739b4403d26a36a10"
-    sha256 cellar: :any_skip_relocation, ventura:        "05a1c069fee5a14aef5bd45fd6a64f265197dc12671e3f7739b4403d26a36a10"
-    sha256 cellar: :any_skip_relocation, monterey:       "05a1c069fee5a14aef5bd45fd6a64f265197dc12671e3f7739b4403d26a36a10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c548341d3cf5900a1565f5c0464a082ed5f9f3c062025b97731804df0ef7a31"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "eca7f9bc27629b7b609eba9f1bd75c937cc73767da281cc446b130925dfb19ab"
   end
 
   depends_on "openssl@3"
 
   def install
-    inreplace "easyrsa", "'etceasy-rsa'", "'#{pkgetc}'"
+    inreplace "easyrsa" do |s|
+      s.gsub! "'etceasy-rsa'", "'#{pkgetc}'"
+      s.gsub! "'usrlocalshareeasy-rsa'", "'#{opt_pkgshare}'"
+    end
+
     libexec.install "easyrsa"
     (bin"easyrsa").write_env_script libexec"easyrsa",
       EASYRSA:         pkgetc,

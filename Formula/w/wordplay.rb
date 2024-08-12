@@ -4,6 +4,13 @@ class Wordplay < Formula
   url "http:hsvmovies.comstatic_subpagespersonal_origwordplaywordplay722.tar.Z"
   version "7.22"
   sha256 "9436a8c801144ab32e38b1e168130ef43e7494f4b4939fcd510c7c5bf7f4eb6d"
+  # From readme:
+  # This program was written for fun and is free.  Distribute it as you please,
+  # but please distribute the entire package, with the original words721.txt and
+  # the readme file.  If you modify the code, please mention my name in it as the
+  # original author.  Please send me a copy of improvements you make, because I
+  # may include them in a future version.
+  license :cannot_represent
 
   livecheck do
     url :homepage

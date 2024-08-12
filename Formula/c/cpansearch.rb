@@ -20,7 +20,7 @@ class Cpansearch < Formula
   end
 
   # upstream missing license report, https:github.comc9scpansearchissues5
-  deprecate! date: "2024-07-13", because: "missing license"
+  disable! date: "2024-08-10", because: :no_license
 
   depends_on "pkg-config" => :build
 

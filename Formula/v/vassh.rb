@@ -10,7 +10,7 @@ class Vassh < Formula
   end
 
   # upstream missing license report, https:github.comxwpvasshissues17
-  deprecate! date: "2024-08-03", because: "missing license"
+  disable! date: "2024-08-10", because: :no_license
 
   def install
     bin.install "vassh.sh", "vasshin", "vassh"

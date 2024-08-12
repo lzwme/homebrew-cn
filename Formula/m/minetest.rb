@@ -4,8 +4,8 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https:github.comminetestminetestarchiverefstags5.8.0.tar.gz"
-    sha256 "610c85a24d77acdc3043a69d777bed9e6c00169406ca09df22ad490fe0d68c0c"
+    url "https:github.comminetestminetestarchiverefstags5.9.0.tar.gz"
+    sha256 "070bc292a0b7fc60d7ff0a14b364c8229c5cbe38296a80f948ea2c2591545a5c"
 
     resource "irrlichtmt" do
       url "https:github.comminetestirrlichtarchiverefstags1.9.0mt13.tar.gz"
@@ -24,13 +24,13 @@ class Minetest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "6d1e18e736c85005e57e7925e0064836df8fea870335b0836fbc34a8a2ef9ed1"
-    sha256 cellar: :any, arm64_ventura:  "49c3f74ad32d15b9bdf5b9a50d0b030ceaee0765b807e6dd6ab88225d752de65"
-    sha256 cellar: :any, arm64_monterey: "d72725938e822706c585254b1b0b7bffe46be99e9859ee31b37a1370fd157d7b"
-    sha256 cellar: :any, sonoma:         "66e8431e983e91fe3337f52552f6296a825d7ef94b9fd92cc10ee21fe4097e63"
-    sha256 cellar: :any, ventura:        "65085a5002468b37fcb1be9d8641ae701522be9a926c4832b386da9efa4f75f0"
-    sha256 cellar: :any, monterey:       "7294300c1673038c329acda2ec74bea9f99752b98234dc5d238733d09a763875"
-    sha256               x86_64_linux:   "ed27729be489033f9b22b8fbf5789c2848a6c1547289c2a16759a155ba12bf4d"
+    sha256 cellar: :any, arm64_sonoma:   "e8e5604af5c4d57537c38475e16e42291522af7e084421d35552b318f0a59276"
+    sha256 cellar: :any, arm64_ventura:  "61c45f1e9f61852595a7678bbb1e925f2310fd3b4e08c418d08ab66eb2ee235e"
+    sha256 cellar: :any, arm64_monterey: "c59ecf29dde4fa974a2b448fac275454f28d6af72d362591e4891a7423e2de32"
+    sha256 cellar: :any, sonoma:         "1a0502c221df753787423c5c088a3f202c6febb548bbe7a7558cd7b4fb64be19"
+    sha256 cellar: :any, ventura:        "7c978b73a7db90f27149347a5caae88a52dde2b39cb8faa23e2519b82e2e1d56"
+    sha256 cellar: :any, monterey:       "4971826e3e42072c097bfe2e5688bb351eef905f411982341a7c145a0de93786"
+    sha256               x86_64_linux:   "0ade58d0ece3346f83d8519c180220db19f001210b4d5262a12ce4ca9a0f5e0e"
   end
 
   head do

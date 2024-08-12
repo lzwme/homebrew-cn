@@ -48,10 +48,6 @@ class PythonAT38 < Formula
     depends_on "libnsl"
   end
 
-  skip_clean "binpip3", "binpip-3.4", "binpip-3.5", "binpip-3.6", "binpip-3.7", "binpip-3.8"
-  skip_clean "bineasy_install3", "bineasy_install-3.4", "bineasy_install-3.5", "bineasy_install-3.6",
-             "bineasy_install-3.7", "bineasy_install-3.8"
-
   # Always update to latest release
   resource "pip" do
     url "https:files.pythonhosted.orgpackages94596638090c25e9bc4ce0c42817b5a234e183872a1129735a9330c472cc2056pip-24.0.tar.gz"

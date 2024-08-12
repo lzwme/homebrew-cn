@@ -3,6 +3,7 @@ class Libbpg < Formula
   homepage "https://bellard.org/bpg/"
   url "https://bellard.org/bpg/libbpg-0.9.8.tar.gz"
   sha256 "c0788e23bdf1a7d36cb4424ccb2fae4c7789ac94949563c4ad0e2569d3bf0095"
+  license all_of: ["MIT", "BSD-3-Clause", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 1
 
   bottle do

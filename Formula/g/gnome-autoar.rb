@@ -33,7 +33,12 @@ class GnomeAutoar < Formula
   depends_on "libarchive"
 
   on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
     depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
   end
 
   def install

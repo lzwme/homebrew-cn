@@ -10,13 +10,14 @@ class Pwntools < Formula
   head "https:github.comGallopsledpwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3ccc88b2f7c47c9e85ab075d98aeb58481ac60c73d6f37c5dd169e62545da1e5"
-    sha256 cellar: :any,                 arm64_ventura:  "01c3fc3381248aa5a7304715b4fba742077c12b911764b376aa21b3badef1fe1"
-    sha256 cellar: :any,                 arm64_monterey: "3a7c78d4105f358ed6a5943743a12f1e070df9944444ffc90b5636c4ad4c0785"
-    sha256 cellar: :any,                 sonoma:         "a8faf01b0a522a148bf4dc195b209b12c831900b585536b60603f96d1d682b11"
-    sha256 cellar: :any,                 ventura:        "10638be996ff34cd8b3b00b24eadec6090afda2887807a555dbc75ca540f83cf"
-    sha256 cellar: :any,                 monterey:       "92731a9b2e5e8d4c0ae847f8e062917fd9ca8d304215ab5ed009f2972d62f88f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c348fb587818f5a6a39285e3969194142f38da394c5e9c01717cb9feb8e7bcf5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3fa8095b0d1ce5b71b0c71d3cc3d908173500d501e0f648a8e4adb5f94d1d6e3"
+    sha256 cellar: :any,                 arm64_ventura:  "d1649fb4515175c51484a3d60a0ed6f2416571b978aca4db18e9ff10a2139bbd"
+    sha256 cellar: :any,                 arm64_monterey: "b9d9c1187539c42c31eb687bc9f8288d89decd7915a0e3df5699164716bb56d1"
+    sha256 cellar: :any,                 sonoma:         "f593419f682b76fa9123c01586bfd4e8b8bcf54df67e08cc8543e6e67811d8f3"
+    sha256 cellar: :any,                 ventura:        "d0525c5e591871ae3062ef6b47e7d027bd9bb252289501ae38ef85556975f464"
+    sha256 cellar: :any,                 monterey:       "5c12240c9c3f877c72bd73e39284edfa7a8e5fba1d12f75e2e2d392dd78e5707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d22d59af9d058438456653098ad9066514d04d737e545d67102bb2b8df425941"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -32,8 +33,8 @@ class Pwntools < Formula
   conflicts_with "scala", because: "both install `common` binaries"
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"
-    sha256 "2ee15dd749f5952fe3f0430d0ff6b74082e159c50332a1413d51b5689cf06623"
+    url "https:files.pythonhosted.orgpackagese47ed95e7d96d4828e965891af92e43b52a4cd3395dc1c1ef4ee62748d0471d0bcrypt-4.2.0.tar.gz"
+    sha256 "cf69eaf5185fd58f268f805b505ce31f9b9fc2d64b376642164e9244540c1221"
   end
 
   resource "capstone" do
@@ -47,8 +48,8 @@ class Pwntools < Formula
   end
 
   resource "colored-traceback" do
-    url "https:files.pythonhosted.orgpackages9a8b0a4e2a8cdc14279b265532f11c9cb75396880e6295c99a0bed7281b6076acolored-traceback-0.3.0.tar.gz"
-    sha256 "6da7ce2b1da869f6bb54c927b415b95727c4bb6d9a84c4615ea77d9872911b05"
+    url "https:files.pythonhosted.orgpackages0780afcf567031ab8565f8f8d2bd14b007d313ea3258e50394e85b10a405099ccolored-traceback-0.4.2.tar.gz"
+    sha256 "ecbc8e41f0712ea81931d7cd436b8beb9f3eff1595d2498f183e0ef69b56fe84"
   end
 
   resource "idna" do
@@ -77,8 +78,8 @@ class Pwntools < Formula
   end
 
   resource "paramiko" do
-    url "https:files.pythonhosted.orgpackagesccaf11996c4df4f9caff87997ad2d3fd8825078c277d6a928446d2b6cf249889paramiko-3.4.0.tar.gz"
-    sha256 "aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
+    url "https:files.pythonhosted.orgpackages0b6a1d85cc9f5eaf49a769c7128039074bbb8127aba70756f05dfcf4326e72a1paramiko-3.4.1.tar.gz"
+    sha256 "8b15302870af7f6652f2e038975c1d2973f06046cb5d7d65355668b3ecbece0c"
   end
 
   resource "plumbum" do
@@ -87,8 +88,8 @@ class Pwntools < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
-    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
+    sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
   end
 
   resource "pyelftools" do
@@ -162,8 +163,8 @@ class Pwntools < Formula
   end
 
   resource "zstandard" do
-    url "https:files.pythonhosted.orgpackages5d912162ab4239b3bd6743e8e407bc2442fca0d326e2d77b3f4a88d90ad5a1fazstandard-0.22.0.tar.gz"
-    sha256 "8226a33c542bcb54cd6bd0a366067b610b41713b64c9abec1bc4533d69f51e70"
+    url "https:files.pythonhosted.orgpackagesedf62ac0287b442160a89d726b17a9184a4c615bb5237db763791a7fd16d9df1zstandard-0.23.0.tar.gz"
+    sha256 "b2d8c62d08e7255f68f7a740bae85b3c9b8e5466baa9cbf7f57f1cde0ac6bc09"
   end
 
   def install

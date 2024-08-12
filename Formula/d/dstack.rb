@@ -9,13 +9,14 @@ class Dstack < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e746efe97940c8db315da43bc77ec955237a976ed79705681c2e0514dd6c3b38"
-    sha256 cellar: :any,                 arm64_ventura:  "ed3c4501857664bb769472facf5e65b0b0f56851a08a06733db50a97d2631d21"
-    sha256 cellar: :any,                 arm64_monterey: "969c589f17bdac7420e43a10d3fb123a3f37c6c7df4c271b7c036b56b8f4f4ad"
-    sha256 cellar: :any,                 sonoma:         "72b4c46def7dccb2564f382d0e4ad8c48dbd764a5903fde2a8395dc65c4f8e98"
-    sha256 cellar: :any,                 ventura:        "ea6b45220941fa0002706716695a2a0a085f82e4f95edf7e593bf54034bf58ed"
-    sha256 cellar: :any,                 monterey:       "fc9f220ccd01c8ac6ad7aaf04f24d8fee9f4d4fed1b41e10b32732ea6c166cf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f38c60d5177ea540fe25f37c660345e42b3275b6faf5625f6aa55b908ce20c4f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "cf62fc577ee65c8a7d345b3b9a5b038ba3cbc89652496d61fb407a252c66d54e"
+    sha256 cellar: :any,                 arm64_ventura:  "0a191d09a15b56f8a817aac3c0a893541d8c8ef3d072fe2d713fbcc66cc4c780"
+    sha256 cellar: :any,                 arm64_monterey: "bbadb5cc4be2bdb68dab46c7d402e2c3ddf70d39dd7ae8a8fa2fb5538880c7ac"
+    sha256 cellar: :any,                 sonoma:         "a6c14a4ccfc3b87fe31c0aae78134488aa00140d7d2c9a7401b3de968b614900"
+    sha256 cellar: :any,                 ventura:        "6244e030d7d929f433ca14dba954ec5ead901c60856d64d2c781a3749b9abdaf"
+    sha256 cellar: :any,                 monterey:       "e692770bef324b8a851787723d8b41bb6dd459d88c7def848a0e1dd5ec443ac5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b9aeb4354f80a4229202052e9ac296969bbfe4f2b4305e020d4cdf78646705d"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -32,8 +33,8 @@ class Dstack < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/45/11/36ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0/aiohttp-3.10.2.tar.gz"
-    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
+    url "https://files.pythonhosted.org/packages/15/9c/ed427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cb/aiohttp-3.10.3.tar.gz"
+    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
   end
 
   resource "aiorwlock" do
@@ -412,8 +413,8 @@ class Dstack < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/cc/af/11996c4df4f9caff87997ad2d3fd8825078c277d6a928446d2b6cf249889/paramiko-3.4.0.tar.gz"
-    sha256 "aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
+    url "https://files.pythonhosted.org/packages/0b/6a/1d85cc9f5eaf49a769c7128039074bbb8127aba70756f05dfcf4326e72a1/paramiko-3.4.1.tar.gz"
+    sha256 "8b15302870af7f6652f2e038975c1d2973f06046cb5d7d65355668b3ecbece0c"
   end
 
   resource "portalocker" do
@@ -637,8 +638,8 @@ class Dstack < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/d3/20/b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1/zipp-3.19.2.tar.gz"
-    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
+    url "https://files.pythonhosted.org/packages/0e/af/9f2de5bd32549a1b705af7a7c054af3878816a1267cb389c03cc4f342a51/zipp-3.20.0.tar.gz"
+    sha256 "0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"
   end
 
   def install

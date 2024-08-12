@@ -3,7 +3,7 @@ class MesalibGlw < Formula
   homepage "https://www.mesa3d.org"
   url "https://archive.mesa3d.org/glw/glw-8.0.0.tar.bz2"
   sha256 "2da1d06e825f073dcbad264aec7b45c649100e5bcde688ac3035b34c8dbc8597"
-  license :cannot_represent
+  license "SGI-OpenGL"
   revision 1
 
   livecheck do
