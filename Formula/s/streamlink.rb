@@ -3,29 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
+  url "https:files.pythonhosted.orgpackages88a91c15931891a4e225a12b54a60d6e3e643a51678d4e7253517ff8e8474703streamlink-6.9.0.tar.gz"
+  sha256 "2ca9b0b17b80bc9d09a8422c390cb38d819af5566493960bf210d8fee221c17f"
   license "BSD-2-Clause"
-  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
-  stable do
-    url "https:files.pythonhosted.orgpackagesec6d1f0de989d3c6635e944ff7762341c78b3698aff70e53ea9feecc2b28f6e1streamlink-6.8.3.tar.gz"
-    sha256 "e3f51a567c08703092f91d0497a3fc2aefe327efcd725d03e66f3dcd11ed9b68"
-
-    # plugins.okru: fix metadata schema, upstream pr ref, https:github.comstreamlinkstreamlinkpull6085
-    patch do
-      url "https:github.comstreamlinkstreamlinkcommit153f82d7218803347f197953a04bf642758ade06.patch?full_index=1"
-      sha256 "107b5ea39e91e3e56a6c93308d5291c0ec568397cf4f3097de1ab3567c7835e5"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "88e4a75b7ba5a3cf30fa506edbeeff8d61bb2d3447e52a47f1a414d50e5e11ed"
-    sha256 cellar: :any,                 arm64_ventura:  "ad99de7cabe0eb17423122be11be928d9eb894a6222a3186114daa185e21c666"
-    sha256 cellar: :any,                 arm64_monterey: "7443247c4ae6c28436a0f2360c8a9c1103aa965973e59f0c318fed87f283dccf"
-    sha256 cellar: :any,                 sonoma:         "c893ef26ba48b7b0cf49f04d33309de1b5f0db1667af4e039a7560fd70964e00"
-    sha256 cellar: :any,                 ventura:        "3c16e73286a8bf93a141a1fff8730f8962b8a14da89b1dde4fcd450f3800b224"
-    sha256 cellar: :any,                 monterey:       "bca44e4168beb180975de25046441f780bf268d5ae5afd774d64607e3b5203cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64809e2e0ae014b90b99819e256c46ddf786d82cc7a39d6da36b2ed129a33672"
+    sha256 cellar: :any,                 arm64_sonoma:   "3790ba673ba2bfa14431ae07b5883b722bc4a68880a1a225619c9fa418c8014f"
+    sha256 cellar: :any,                 arm64_ventura:  "a56a1ae7e89969b02bd0472fa72700220db8dbbc9f02ccedbc6b0da99ed7ea21"
+    sha256 cellar: :any,                 arm64_monterey: "53e355b4e46087e976d3f648977a46332fb5da8bb3c847442d4aab44dc178a81"
+    sha256 cellar: :any,                 sonoma:         "d48f7b8ddeb725ec68e6d18aab686dfb23c790205337fb2d262415f8850e0854"
+    sha256 cellar: :any,                 ventura:        "b6c7b97cdc380389bfa12f06adc50af6da98539c59760ef0e552fd1fa11722c3"
+    sha256 cellar: :any,                 monterey:       "3047a88ad78e2194b23ea905a4edfc7d74270d924c4d418f818f1c626673bb6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "780b1390d70a65eacafa5f07aa26c74a4dcc4d02ec94d194bc45df9ec598ea27"
   end
 
   depends_on "certifi"
@@ -40,8 +30,8 @@ class Streamlink < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "charset-normalizer" do
@@ -65,8 +55,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
-    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
+    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
+    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
   end
 
   resource "outcome" do
@@ -110,8 +100,8 @@ class Streamlink < Formula
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackages7366bc155385503674288a440384c1c262c755af4c218e56e61e4b90635b15aftrio-0.26.0.tar.gz"
-    sha256 "67c5ec3265dd4abc7b1d1ab9ca4fe4c25b896f9c93dac73713778adab487f9c4"
+    url "https:files.pythonhosted.orgpackages9a03ab0e9509be0c6465e2773768ec25ee0cb8053c0b91471ab3854bbf2294b2trio-0.26.2.tar.gz"
+    sha256 "0346c3852c15e5c7d40ea15972c4805689ef2cb8b5206f794c9c19450119f3a4"
   end
 
   resource "trio-websocket" do

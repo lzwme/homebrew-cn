@@ -3,19 +3,18 @@ class Dnstwist < Formula
 
   desc "Test domains for typo squatting, phishing and corporate espionage"
   homepage "https:github.comelceefdnstwist"
-  url "https:files.pythonhosted.orgpackages31a739d27816c945ba7ba78797fc7b6a726ce437dc12463c3ffadc192c5f563fdnstwist-20240116.tar.gz"
-  sha256 "1468dba982fe14a1f322486102c33b96f0d78da4446313c455bcfe4fe98ee71b"
+  url "https:files.pythonhosted.orgpackages3fdf9c62d9e40d374fd1311de3c761670771615101e0a0b31968b31289882db7dnstwist-20240812.tar.gz"
+  sha256 "eb109cfcede027fe97b72d2f176f11d2ab633b5aadb833bb7f9b785d2e0ae1a1"
   license "Apache-2.0"
-  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "93822d03ad69743fd767903de1e0211ed885c068da9fb007c6c6340ee1ba2139"
-    sha256 cellar: :any,                 arm64_ventura:  "1f279ce557f244c2c1159b85fb80db61e36192fd4dc10e045db5972598793a32"
-    sha256 cellar: :any,                 arm64_monterey: "312e3b6eaf0299f107da4ea8d2cb98a40807fc0fc9bd25100942d0b2284ea92c"
-    sha256 cellar: :any,                 sonoma:         "4d2c0e61cae070f42c16e0a2b58747f62dd7856bb47ae5e5c37d39bb2242f682"
-    sha256 cellar: :any,                 ventura:        "aeb0a888683ee5e3a69c66df328d2ad7570a894819f1025a47014cf4cdf34662"
-    sha256 cellar: :any,                 monterey:       "6f27e022b0d64fee671fba9ab62d9562a3e105a38207d3083434889bae0aa081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc89167e17fd42f6496631713ed0f989c02c911050aec95f3a1d7e5c22cf170"
+    sha256 cellar: :any,                 arm64_sonoma:   "ee2b1ec6c018dfb33492bde0c1477507df652bfbad95b362994ccc1add9d62a3"
+    sha256 cellar: :any,                 arm64_ventura:  "c8cf577e9609dc8721be10cb4604f32aa38d26f590d42131019a50c2d2aa589f"
+    sha256 cellar: :any,                 arm64_monterey: "eac131777b66af79240a6fe0c6d78f6c1497557455a62e2980512e3fc1511476"
+    sha256 cellar: :any,                 sonoma:         "6baf7fc9decceaff33a190df5e662f1c7364686b6bc4b28556d614d553fa8afb"
+    sha256 cellar: :any,                 ventura:        "861b031a60e1622d553b21876a30fe74e3b3ebbe2e1394558807f2bc6de040bb"
+    sha256 cellar: :any,                 monterey:       "f083da93cfab11cb359379a8820906cae3080f4bb2ef374f1096aa239de25f3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18c02b068c30d8a4d0e138fbc394ef8e6b7fa5f61aa7a526963773f53100707e"
   end
 
   depends_on "certifi"
@@ -35,8 +34,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
-    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
+    url "https:files.pythonhosted.orgpackages159ced427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cbaiohttp-3.10.3.tar.gz"
+    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
   end
 
   resource "aiosignal" do

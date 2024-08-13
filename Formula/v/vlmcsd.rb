@@ -4,6 +4,7 @@ class Vlmcsd < Formula
   url "https:github.comWind4vlmcsdarchiverefstagssvn1113.tar.gz"
   version "svn1113"
   sha256 "62f55c48f5de1249c2348ab6b96dabbe7e38899230954b0c8774efb01d9c42cc"
+  license "LGPL-2.1-or-later"
   head "https:github.comWind4vlmcsd.git", branch: "master"
 
   livecheck do

@@ -32,11 +32,18 @@ class Libgweather < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "pygobject3" => :build
   depends_on "python@3.12" => :build
+
   depends_on "geocode-glib"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "json-glib"
   depends_on "libsoup"
 
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["DESTDIR"] = "/"

@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackagesfd0bdf055004d60d14da6cf92d85973b7cebd93030e5897c8e166b83b4a12b4cdvc-3.53.1.tar.gz"
-  sha256 "8750b12055f5b505e60fe85010641c8a4d28fa0424c901adf745129fa6b3e5cf"
+  url "https:files.pythonhosted.orgpackagesfa3da3fc9ea7b294bbb61772e02f3bbac0182e29ab31f215691f1a13c6967a8cdvc-3.53.2.tar.gz"
+  sha256 "072949376948338454a7e93df7a039b8a68ab8efbc2b94108008ccdf45c19172"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d1843bf1ae637b88aaf7e1a7aebdc5f2a63675ebbd26eaa1817e2720e126ea79"
-    sha256 cellar: :any,                 arm64_ventura:  "dac74bada269fdb6d9fb717a1bf56961f3420565ea05b82d6c3cba96fb3eb8d4"
-    sha256 cellar: :any,                 arm64_monterey: "3153f561eee00e8c2b3cf0962ae5129ce544c8a0a539ef5d26068a1a71289cfd"
-    sha256 cellar: :any,                 sonoma:         "b723020fa4d8e1e9d5e04f415098884841c34764a331c1ea84cb0597b83de937"
-    sha256 cellar: :any,                 ventura:        "0a745a399ade6d5099307853880045fcf96853e8697eac9b4e212b7a58bc1a4e"
-    sha256 cellar: :any,                 monterey:       "7412da4043e28e632812354a0f8415d48ad64a865c04fba3b3b47e697c84dd04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e6601844a12d93acba19debbca5b49b69cb4d975f209df1bed2525b57743bb1"
+    sha256 cellar: :any,                 arm64_sonoma:   "7ffc6dcec7030c33ba818fb6a5125784575bf399077024e7963f3c0b867c0f07"
+    sha256 cellar: :any,                 arm64_ventura:  "7340c0daaedff7db4819cb78a4474d7bb585fc8fd7758bf8b74dd25ce50d1042"
+    sha256 cellar: :any,                 arm64_monterey: "c46b60cce475a98325635274868a192f6dafe5505ef8313875ce92d29bfd14af"
+    sha256 cellar: :any,                 sonoma:         "28633b46cfff65f9f3d5ea2faa68850765b350535a2944180c99ccbdce201f1a"
+    sha256 cellar: :any,                 ventura:        "f99670b193fc9679acca8976d820b206cadd1929fb64b81f92b886416d108bee"
+    sha256 cellar: :any,                 monterey:       "ecccf090fea1b13e39d996da0278ca32c3c1b8ed0b3e8fdd16b1b9aa19e83d17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df4eb0c8569aed91f352295de12093537db6affdb03194ceb4525144d7f140e"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -50,8 +49,8 @@ class Dvc < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
-    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
+    url "https:files.pythonhosted.orgpackages159ced427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cbaiohttp-3.10.3.tar.gz"
+    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
   end
 
   resource "aiohttp-retry" do

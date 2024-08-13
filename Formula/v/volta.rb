@@ -1,10 +1,9 @@
 class Volta < Formula
   desc "JavaScript toolchain manager for reproducible environments"
   homepage "https:volta.sh"
-  url "https:github.comvolta-clivoltaarchiverefstagsv1.1.1.tar.gz"
-  sha256 "f2289274538124984bebb09b0968c2821368d8a80d60b9615e4f999f6751366d"
+  url "https:github.comvolta-clivoltaarchiverefstagsv2.0.0.tar.gz"
+  sha256 "7cb34e39bca682eee35fa0ee908afdbfc833ce77b59c8b2ed9f6d7751d22df31"
   license "BSD-2-Clause"
-  revision 2
   head "https:github.comvolta-clivolta.git", branch: "main"
 
   livecheck do
@@ -13,18 +12,18 @@ class Volta < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9e66e6c55b5cb592f2516fae593b8306888254165aaca345977aa87893f8fc2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91f86479b539d9df009da79e569b1ab740f7e5ed635f537a639f7f65c446f69e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8454fe11303c2d14a4e77b9dadc086bb12fa94aa71fdbec50f4e03a49d5e473"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b16b992a717720120aa9826992f4b217722b1153254a05b68afaa5f02fc8bb9d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c50525427941e6c3f152d25195c330c6ba18f4413a8228d1df21b5778760972c"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed384b28700d57dabca74fc9a34e25840e0e241b2dca4fb8a7d6261eff0a797b"
-    sha256 cellar: :any_skip_relocation, monterey:       "edb4737847ade262f0f2812e599ae6e900d4a1c1d12e323307c70c971cf023ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e56c356f2c0c914da2d98d62de1b52d118e6108eadad86fa5d8c75ec1cf64e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0405ae0886b099de89c2b242d70c3cc2cd4f206ce5a0478fbe2635e37b16684"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "770e914d04643cd9df8a578c93be0b1d0581279bf609b42b249aa5700e8f8ebc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd642007cbd682a560f78153f013f94a8ace9f22495ab981a17fdeb36492cd4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4976f15cff289b8fa37f5b92c264dc9d170dc961ed3219f00e61edc06e4d5a19"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b8b5f904edca1e8293be0faea549eb962b2fcc4a3da14c1de151a31faff6422"
+    sha256 cellar: :any_skip_relocation, ventura:        "26e50ad0f3bad42aaa02cde573c90ff285bcf5af03b2eb012f24632bd46d3c6e"
+    sha256 cellar: :any_skip_relocation, monterey:       "cec8524c49a5a624d2cabef743b8ed1dd2e77447bfd3005fb14056abefc5a8af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6167c2a7b8904cd5f7ec6d3955a0d0f8382566ae06788c39146ea5f5b9ba3705"
   end
 
   depends_on "rust" => :build
+
+  uses_from_macos "bzip2"
 
   on_linux do
     depends_on "pkg-config" => :build

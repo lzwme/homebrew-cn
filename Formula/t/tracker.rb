@@ -32,6 +32,7 @@ class Tracker < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "pygobject3" => :build
   depends_on "vala" => :build
+
   depends_on "dbus"
   depends_on "glib"
   depends_on "icu4c"
@@ -41,6 +42,10 @@ class Tracker < Formula
 
   uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     args = std_meson_args + %w[
@@ -53,6 +58,7 @@ class Tracker < Formula
     ]
 
     ENV["DESTDIR"] = "/"
+
     system "meson", "setup", "build", *args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -105,6 +111,7 @@ class Tracker < Formula
         return 0;
       }
     EOS
+
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
     flags = shell_output("pkg-config --cflags --libs tracker-sparql-3.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

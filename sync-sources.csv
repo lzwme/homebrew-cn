@@ -4773,6 +4773,7 @@ Homebrew-homebrew-core/Formula/p/pass-import.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-otp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passenger.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/passt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passwdqc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pastebinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pastel.rb, Homebrew/homebrew-core, 1
@@ -11696,7 +11697,7 @@ Homebrew-homebrew-cask/Casks/m/mactex-no-gui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macupdate.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/macupdater.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/macupdater.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macvim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macwinzipper.rb, Homebrew/homebrew-cask, 0

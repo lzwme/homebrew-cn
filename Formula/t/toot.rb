@@ -3,20 +3,19 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https:toot.bezdomni.net"
-  url "https:files.pythonhosted.orgpackagese401dcfb2d4fd58a5c96d99d9ff98f7a48cf0813e4a615b5953da11e67374075toot-0.43.0.tar.gz"
-  sha256 "6aa84c4b8df6e2214a3e735142bf5bd57b3b10aa08e35579425c5dbe3bc25ae7"
+  url "https:files.pythonhosted.orgpackages81be185a52bc194f00e02875b3dd3161ac8022e5cd6c365b5e90baa65c5ce229toot-0.44.1.tar.gz"
+  sha256 "2887ba4c81c0a28448b260804ba6ac1f16178c188cd3a04621912acf764c9bd7"
   license "GPL-3.0-only"
-  revision 4
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9a481ebcfed19fa1042b726e6615848d77906ab527f2eb2f0b244d50c6e0134"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bfabd53f011a7213051083a017590460051816b0bf46226b8dfd08011bc12df7"
-    sha256 cellar: :any_skip_relocation, ventura:        "bfabd53f011a7213051083a017590460051816b0bf46226b8dfd08011bc12df7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f113a9d8a56944535291cecdf69a412d1ee2b5c512fa4102dbe65e0eff7de71d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5c2ff3b39211083faafb5260b67b4c66dc63607164a93cddfde1803647de6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, sonoma:         "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, ventura:        "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, monterey:       "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f34fe1ec3b0e23a0363adc6a734a881a92ab340dc33b0fafda2f4952fc91cdeb"
   end
 
   depends_on "certifi"
@@ -54,13 +53,13 @@ class Toot < Formula
   end
 
   resource "term-image" do
-    url "https:files.pythonhosted.orgpackagesf259019a0ca982be3e6d686b9c58a72ae26333b69f8a312ea6edcbefef57279bterm-image-0.7.0.tar.gz"
-    sha256 "d62d85b62b58a90576b2dc22478aeee7eb71bfac169862a0abc94c9f494c8b0c"
+    url "https:files.pythonhosted.orgpackages39877e8ba20702294ee8b750427c2600308c20f39ddf3b0f73250dc43ef13038term_image-0.7.2.tar.gz"
+    sha256 "07320573baa667dcde145d55e94769cbaafeea43b61245245153ff5075b55ffb"
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages2bab18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8tomlkit-0.12.5.tar.gz"
-    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
+    url "https:files.pythonhosted.orgpackages4b34f5f4fbc6b329c948a90468dd423aaa3c3bfc1e07d5a76deec269110f2f6etomlkit-0.13.0.tar.gz"
+    sha256 "08ad192699734149f5b97b45f1f18dad7eb1b6d16bc72ad0c2335772650d7b72"
   end
 
   resource "typing-extensions" do
@@ -74,13 +73,13 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackagesdb1b5dfd51ee4b31bfdeed32390bfd9bb66ade9227bc9e6472045723d140fca7urwid-2.6.14.tar.gz"
-    sha256 "feeafc4fa9343fdfa1e9b01914064a4a9399ec746b814a550d44462e5ef85c72"
+    url "https:files.pythonhosted.orgpackages85b7516b0bbb7dd9fc313c6443b35d86b6f91b3baa83d2c4016e4d8e0df5a5e3urwid-2.6.15.tar.gz"
+    sha256 "9ecc57330d88c8d9663ffd7092a681674c03ff794b6330ccfef479af7aa9671b"
   end
 
   resource "urwidgets" do
-    url "https:files.pythonhosted.orgpackages161fcb6f188ddd62a52b3fa5694c2a541309d246dee54e6d4bc7a4079b2bbc59urwidgets-0.1.1.tar.gz"
-    sha256 "1e0dbceb875ace11067d93a585d8842a011db14ce78ec69ed485dc0df17f09e7"
+    url "https:files.pythonhosted.orgpackages606de7847c2a472bf16b87e4ecc3764bb059631fa5453d4148f3bb5cdd81e301urwidgets-0.2.0.tar.gz"
+    sha256 "d41acf9d9f8d576cb580bc042919b209c5aeeb60e1f81052809c63f31c4e7688"
   end
 
   resource "wcwidth" do

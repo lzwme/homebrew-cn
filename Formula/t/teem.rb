@@ -3,6 +3,8 @@ class Teem < Formula
   homepage "https://teem.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/teem/teem/1.11.0/teem-1.11.0-src.tar.gz"
   sha256 "a01386021dfa802b3e7b4defced2f3c8235860d500c1fa2f347483775d4c8def"
+  # License is LGPL-2.1-or-later with a non-SPDX license exception for linking
+  license :cannot_represent
   head "https://svn.code.sf.net/p/teem/code/teem/trunk"
 
   bottle do

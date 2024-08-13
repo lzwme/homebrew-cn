@@ -1,19 +1,19 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https:sap.github.iocloud-mta-build-tool"
-  url "https:github.comSAPcloud-mta-build-toolarchiverefstagsv1.2.30.tar.gz"
-  sha256 "f4efcf4d0540342d7b9a99b346412d4f0fca3606e89f90178feec150b10fa308"
+  url "https:github.comSAPcloud-mta-build-toolarchiverefstagsv1.2.31.tar.gz"
+  sha256 "b4d7d8a226728cd73d34b5f3255cbe6b745ad920daaff3f5c0265bcb688e7818"
   license "Apache-2.0"
   head "https:github.comSAPcloud-mta-build-tool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9efd96867d4596f525959e82728ca19f4a09ad202c9ee6127afd18c76e2cb8f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13a98e49a80e2c914262196af0123c6b1d8a4d083720afb3b108c125884615c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "843c51d425869363dde25c7b3700759b18ca66a0b06ab5e801b04154bdd7a531"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb3d94d357f002c9a18bbe130d1f641493901fd003a3cf7a15e22a91c9f9d023"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c21d937f15ebf6fbedeb801a87be9327a91c809730697a0af0d0578027739d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "803fea406f72a6cb9666da920dccf04496f5a876548097bfb3e02e4b6041ff83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8777ce261e736fa09272a4a371e6888fbf717e9371082ec5f06808384448d01d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16765b382a547e7fc5285c87ce46bc5f863aa6f49252c245526d4ee49583fc31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9436b2972a50ab062b6edd8d3491e5b4709c34258dffa5f65c7b4d6bf05a480c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f1bf638b389d371cba3ecc4e21dcb13f2548427641acf43e265d22529fd8b05"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93d1a08f229ae26df0d1a7b7b464c016dbf4c96664faa47ebf8b9b9ae88a6432"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec34c587a106f3e4cfb998622681685419e1aafb979c99491bbb2457b3040653"
+    sha256 cellar: :any_skip_relocation, monterey:       "03bc22bebf8085091ecae34fab474e25f4fa8b31a227c44dfba89c9151f29f47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d41f319d087901f5dc9c31f0eb9f5ffe55245d2d8226b1ad7dbcd7581071ea03"
   end
 
   depends_on "go" => :build

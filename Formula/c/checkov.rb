@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/c6/f8/c58bc734940512739d76adc6d9f63c9214d194a40b554fa70474b6d1f2af/checkov-3.2.210.tar.gz"
-  sha256 "281a0e07f9c60af2303305e3675aff2f2b9047a79e11431bfc01b851080c0518"
+  url "https://files.pythonhosted.org/packages/8a/ad/2f45b118409256da3ae1590499952f8df66ec01d426d93c4436aa4a2c34e/checkov-3.2.220.tar.gz"
+  sha256 "d492c95ac37678bb76a3fc384cf9e1f8612a7653f1fb65faf65c6f7cd6a490d8"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0fcdbfef97a0dc57d7033f96f41bdcf229c0f7b89608f1eae1b3d1864e87a4a1"
-    sha256 cellar: :any,                 arm64_ventura:  "8cf40abf3eb064434215818c8f5079aa55e95f4f1f7ec6b4002869ab17503bd3"
-    sha256 cellar: :any,                 arm64_monterey: "25fe1e6048375e12d4c39e7d174b92e84d902bece8ecd2a5783ccfa81da73ff9"
-    sha256 cellar: :any,                 sonoma:         "0dae8bfa4b79e9bb6ad6200e0fd7f66eb82cec8904683efbce9c1e1ea5855370"
-    sha256 cellar: :any,                 ventura:        "4a1aca427c0553765704f1035d51c44223b390a5562a0d32e018f3072e7ae74f"
-    sha256 cellar: :any,                 monterey:       "7f80aa161298b7c6af59b28c30ac1ced94c3fd4a7407b9fb464a0d93f491e0f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c86d3d766c09981e297f13295fea1c2f4ed5d35a9d30f4b513d7e1d7f2f2dd"
+    sha256 cellar: :any,                 arm64_sonoma:   "6ca6e2cc8d37224da1b78c24651ba70d7f4fde1a39a273e214ee3f0ae2e52ec4"
+    sha256 cellar: :any,                 arm64_ventura:  "372a023a351fb2d2ec7120fdc247cd53abc05b1f542cb2e34f2259ee9ababfba"
+    sha256 cellar: :any,                 arm64_monterey: "f967e378ebb3c11484d35959852941d346835e254bc4f21d5324dd4aeaabc1a3"
+    sha256 cellar: :any,                 sonoma:         "ea47d8eb4550ed3878f854e0ee8aab0e41eeb628d98a0e7be7662c912db84796"
+    sha256 cellar: :any,                 ventura:        "d263f76fc02f9fd1c49adea774fed314b0a349e41e0eb904a539970d0e881e19"
+    sha256 cellar: :any,                 monterey:       "8c77547a0b1e1175a688608e4944a4af621fe23d56c3824b61b9e4ea1d783e3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70827235a0a1931d360c3fe7806fb2f83a902818bf16fafdd5f606a54e5ad562"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -47,8 +46,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/45/11/36ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0/aiohttp-3.10.2.tar.gz"
-    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
+    url "https://files.pythonhosted.org/packages/15/9c/ed427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cb/aiohttp-3.10.3.tar.gz"
+    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
   end
 
   resource "aiomultiprocess" do
@@ -477,8 +476,8 @@ class Checkov < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/d3/20/b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1/zipp-3.19.2.tar.gz"
-    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
+    url "https://files.pythonhosted.org/packages/0e/af/9f2de5bd32549a1b705af7a7c054af3878816a1267cb389c03cc4f342a51/zipp-3.20.0.tar.gz"
+    sha256 "0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"
   end
 
   def install

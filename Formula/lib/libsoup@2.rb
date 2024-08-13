@@ -22,16 +22,24 @@ class LibsoupAT2 < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
+  depends_on "icu4c" => :test
+
+  depends_on "glib"
   depends_on "glib-networking"
   depends_on "gnutls"
   depends_on "libpsl"
+  depends_on "sqlite"
 
   uses_from_macos "krb5"
   uses_from_macos "libxml2"
-  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "brotli"
@@ -58,24 +66,11 @@ class LibsoupAT2 < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/libsoup-2.4
-      -D_REENTRANT
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lgio-2.0
-      -lglib-2.0
-      -lgobject-2.0
-      -lsoup-2.4
-    ]
-    system ENV.cc, "test.c", "-o", "test", *flags
+
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libsoup-2.4").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
     system "./test"
   end
 end

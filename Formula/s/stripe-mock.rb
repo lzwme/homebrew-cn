@@ -1,18 +1,18 @@
 class StripeMock < Formula
   desc "Mock HTTP server that responds like the real Stripe API"
   homepage "https:github.comstripestripe-mock"
-  url "https:github.comstripestripe-mockarchiverefstagsv0.187.0.tar.gz"
-  sha256 "c50b73607aef202686b2a412aa5be5c99b7d3c0b7628aa89c185e5c4a3215a32"
+  url "https:github.comstripestripe-mockarchiverefstagsv0.188.0.tar.gz"
+  sha256 "07e334ce15b6d272e3ea937def404c67e953e3ac9362a344e2a81d4f3ce343f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "939ba66a181bceeaedab98b0d0555126fbb91af4c9e6a7d0ce970a9a3be40a19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad277b5476157d21b24be7ad636661ffd8c7daa673efc4e91671769ebfe1feb9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d2197a619871b35d354733a60555579795d858476b2878b21571eb9223bf252"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ba9890f72fa59bbe08f08573fc595b410bd73a80e2a245d6326db67d5e06823e"
-    sha256 cellar: :any_skip_relocation, ventura:        "445dc3811b90c3e0b7c8900960f724ca95302cbf765b8b8d05bf55a5ad130a9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "cac8c5979bcc0bfb81757d675deb73f3f83cf3fddecfc65a05b7e1650b48eb3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "996e723b3d92839bea22353f9d0d1e2362fbd26a15d8b70ab1fb19dd1a9e8a44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ded02f29400324256a2be26681447156b7348f3be5f2e07e4adee9f38886852"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3908247f216711ac46ba909af4eb8390d57410c93ed4aa645e6f4c99811c7145"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "825d748efccaaead1c395ff3a86fd078c83d5e4bdb9de53e52abd52311d9e97b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4965c56bf280ecc0cae790c64e8371a2066dab2978961a1a2540adcc4a3be191"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d4b9013981f3bc90038c41475ebbb3b168bc433eb9ec0b1c21a2ccd60d1e6b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "8881df9658ca3b211597e4790792ebfa4a7a332fd24392759ae1d4c8d58e0707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abe3654fbbf646b501536c79cd1e9dfbc40a2beb9b2f443bf53f5dcbcadd3a88"
   end
 
   depends_on "go" => :build

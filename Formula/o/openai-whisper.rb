@@ -10,19 +10,20 @@ class OpenaiWhisper < Formula
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5c0f66f4da079c643d98a8cf8bb7d7df823977b274735bf84fc173b5cd68936f"
-    sha256 cellar: :any,                 arm64_ventura:  "c266e2b5e120c5cc5d1b7526a8187dc5aa8a9ecfc1e92e1de729bb7aa714768b"
-    sha256 cellar: :any,                 arm64_monterey: "dbc69a81f7d17c6b27f760a71e41b6328b81f01b62b6210547c1fed9e81bb7bc"
-    sha256 cellar: :any,                 sonoma:         "14104b8148c43be9be0854aef4afdd3854affa97e565df5930f10ca5baa81b27"
-    sha256 cellar: :any,                 ventura:        "15ee1feba9cd6fa12d172a91bd0fded080b0074540967baedf1dbe4c9662f126"
-    sha256 cellar: :any,                 monterey:       "586562313b49a1d38351a153ee8ac9ef627e9c26eebae2dc129aa877dabdeeba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba221a60f8869b137fdd84b272e3c424a593f3fe91af1b0f01d8274b892aaffd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c4823602582021d71a112cee7b9fd70d7bb346231ac8a064413fbc4fa5feeae4"
+    sha256 cellar: :any,                 arm64_ventura:  "dbe1c266af6c9f768aebc92dfb02f0257b823c79835dd20569f8910736c4481d"
+    sha256 cellar: :any,                 arm64_monterey: "03f5d31004276a79c6647f3d3acfb23b1458e0b47a5622a7629c3f14bd5cd093"
+    sha256 cellar: :any,                 sonoma:         "e718c5ecde8a4a034870eb564cd0644c8980ffef1f9373562a7e88402e7c91b0"
+    sha256 cellar: :any,                 ventura:        "e2d29e93aec4325471339f521bcb0948aafcc688ab19206a6cc470378129f287"
+    sha256 cellar: :any,                 monterey:       "05ece5b230afd9939107d8c0a327968f697da8713115c2b524678be1eec28ce3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a12abfebd488c81f69346f3bd7c6cfb0bc6f51926893f19c7e298b427d3386"
   end
 
   depends_on "rust" => :build # for tiktoken
   depends_on "certifi"
   depends_on "ffmpeg"
-  depends_on "llvm@14" # Issue for newer LLVM: https:github.comnumballvmliteissues914
+  depends_on "llvm@15" # Issue for newer LLVM: https:github.comnumballvmliteissues1048
   depends_on "numpy"
   depends_on "python@3.12"
   depends_on "pytorch"
@@ -47,18 +48,24 @@ class OpenaiWhisper < Formula
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackages013377f586de725fc990d12dda3d4efca4a41635be0f99a987b9cc3a78364c13more-itertools-10.3.0.tar.gz"
-    sha256 "e5d93ef411224fbcef366a6e8ddc4c5781bc6359d43412a65dd5964e46111463"
+    url "https:files.pythonhosted.orgpackages920dad6a82320cb8eba710fd0dceb0f678d5a1b58d67d03ae5be14874baa39e0more-itertools-10.4.0.tar.gz"
+    sha256 "fe0e63c4ab068eac62410ab05cccca2dc71ec44ba8ef29916a0090df061cf923"
   end
 
   resource "numba" do
     url "https:files.pythonhosted.orgpackages3c932849300a9184775ba274aba6f82f303343669b0592b7bb0849ea713dabb0numba-0.60.0.tar.gz"
     sha256 "5df6158e5584eece5fc83294b949fd30b9f1125df7708862205217e068aabf16"
+
+    # Fix compat with numpy 2.0.1: https:github.comnumbanumbapull9683
+    patch do
+      url "https:github.comnumbanumbacommitafb3d168efa713c235d1bb4586722ad6e5dbb0c1.patch?full_index=1"
+      sha256 "5045f942be69fe12d0b0f02a4236c01c092f660ee9fa008848b7ebf5cb8fd528"
+    end
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
-    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
+    url "https:files.pythonhosted.orgpackages3f5164256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   resource "requests" do
@@ -72,8 +79,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "urllib3" do
@@ -89,9 +96,9 @@ class OpenaiWhisper < Formula
     # This needs to happen _before_ we try to install torchvision.
     site_packages = Language::Python.site_packages(python3)
     pytorch = Formula["pytorch"].opt_libexec
-    (libexecsite_packages"homebrew-pytorch.pth").write pytorchsite_packages
+    (venv.site_packages"homebrew-pytorch.pth").write pytorchsite_packages
 
-    ENV["LLVM_CONFIG"] = Formula["llvm@14"].opt_bin"llvm-config"
+    ENV["LLVM_CONFIG"] = Formula["llvm@15"].opt_bin"llvm-config"
     venv.pip_install resources.reject { |r| r.name == "numba" }
     venv.pip_install(resource("numba"), build_isolation: false)
     venv.pip_install_and_link buildpath

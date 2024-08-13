@@ -1,19 +1,19 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https:github.comfacebookexperimentaledencommon"
-  url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2024.08.05.00.tar.gz"
-  sha256 "c3c96436de823abb37ec4ffaf9041c0fb322a9f1a82e236788d0ca2b6f1e3f9f"
+  url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2024.08.12.00.tar.gz"
+  sha256 "8fc9690845d02ec9c25effd574b732afa7839c15488884fc6fbf9fdd28569c94"
   license "MIT"
   head "https:github.comfacebookexperimentaledencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "863549ef846f0dbefd420e8908f585b5b13ceb93c38de22212c9653890b7697c"
-    sha256 cellar: :any,                 arm64_ventura:  "d46f0b7b95e251ff3be6e81bc7882b3c8522a40bd1a4f18c5c2cd21569df30c2"
-    sha256 cellar: :any,                 arm64_monterey: "f22aaefa851b701b630de15e7b81b4513f03cf90a3823f7c73d4a86621bc88cd"
-    sha256 cellar: :any,                 sonoma:         "321ae2c4850ead029f18de38b25bdffae8f8dea9bf84e0f0fbf20e4d92d0fe25"
-    sha256 cellar: :any,                 ventura:        "119ab91c173cf21228543ed2090b040c9d2e143da78825b1a8ec7824680bf2f3"
-    sha256 cellar: :any,                 monterey:       "f326342a27a8358b9b7e45795117a6bc1e77df6e0fb0103e9da87a0c013e7bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d348dfc7d49612df78b81609b10eb3879287452dd5efcd49c8479d828fbb76b0"
+    sha256 cellar: :any,                 arm64_sonoma:   "7e7b06db3bc3c180d6ffa182aff993bb4bb3d50bf88f8b799e8e4407ef555a99"
+    sha256 cellar: :any,                 arm64_ventura:  "2d1db38fc6203c84ddd7fc2d248f4b242a56cc11e26d84ea1334e0f30c5807f7"
+    sha256 cellar: :any,                 arm64_monterey: "01811e67a6dbbedaf0307f4027faad8ee748d38e3ffec2ce955a983040bb7bfd"
+    sha256 cellar: :any,                 sonoma:         "8e2c8243affb9d6a73841663ed7bc1997b63ce1b6d1e3807cbedef2308853180"
+    sha256 cellar: :any,                 ventura:        "232ca8327a5e110e3e02bda8c1d24b38b143b5b621948bf566cd666b8658f025"
+    sha256 cellar: :any,                 monterey:       "266752433da3bb8db6c2f3702cea14f7d46ae8501fe97c2c1fb5e238d7fe0431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fc348491ca93208061429950b491062c3bfadb82cbff886698f4312b2ab9f88"
   end
 
   depends_on "cmake" => :build
@@ -27,13 +27,6 @@ class Edencommon < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "openssl@3"
-
-  # Build shared libraries
-  # https:github.comfacebookexperimentaledencommonpull20
-  patch do
-    url "https:github.comfacebookexperimentaledencommoncommit01bca703032ff108665a83274fb56617b46882aa.patch?full_index=1"
-    sha256 "50f704ad44aa6fa8df35d913966c5c28f8fddb8871b35b3420875c804efc386a"
-  end
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.

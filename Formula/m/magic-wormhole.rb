@@ -6,16 +6,17 @@ class MagicWormhole < Formula
   url "https:files.pythonhosted.orgpackages9d7b9320062c8b11e58dccd079dd62e3525bf1dac7f2b441c885d64a7ca7f045magic-wormhole-0.15.0.tar.gz"
   sha256 "be2563b5c5547ba333bc6608f048004c8f36d556139bf2ffe3d9f41da2797006"
   license "MIT"
+  revision 1
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f60592ab428bb92b6a445c5edb81fe5376c31c9ce21c56f3f38bdbf9cc7e47df"
-    sha256 cellar: :any,                 arm64_ventura:  "d23dac88d44874b7a9917b8032539ba6472851bab0f4010baa0d706a3955367c"
-    sha256 cellar: :any,                 arm64_monterey: "d3cff3fddb93a9a052e1b7d0261c2b8189335a0b0b30be40061eba6390cc793f"
-    sha256 cellar: :any,                 sonoma:         "d45eb9eccd13ebfb6a67cde061cb81d0e58761c47deb64d776c24ca74f72180d"
-    sha256 cellar: :any,                 ventura:        "4d51faebaa0847676c2dc460ea175fd33ee5490b2050a0acb53ea67d3097d415"
-    sha256 cellar: :any,                 monterey:       "0326d85f1e3ab51d119ff7f78cee821358fb89d23324d8f3441a20a43de4c588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc5c6bfc10563b56f477f1015116f3091be79513d7aabd1d75c487917de3de14"
+    sha256 cellar: :any,                 arm64_sonoma:   "b6ab5a6f7fdcd873fd8851b33bae9087a8c54966d879c4154790f7c1bb1d1fd7"
+    sha256 cellar: :any,                 arm64_ventura:  "344b881a53d273df0d68fb3c93b7a618263eac201c6620c9cbff91458ff54bff"
+    sha256 cellar: :any,                 arm64_monterey: "6218b53abce4837fc0e7d57549e985e9062868051f72101912d7aea0dd11840f"
+    sha256 cellar: :any,                 sonoma:         "f12297023393214d67ddd8bcee16d3fb54f1805d399490608edab397d50091f6"
+    sha256 cellar: :any,                 ventura:        "782cf77a58819ebb16128be22ab49bb3ed0b359f8774cc345ce4700a49e16955"
+    sha256 cellar: :any,                 monterey:       "6b7a41b6afa7c9bd22f339d1f1f2b1e984c52cbd45d4f38a61490b3deaab70eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ecacd554605fff7744ad176acc39b89e10fd141fd9ad4f5144c63f260f20112"
   end
 
   depends_on "cryptography"
@@ -132,8 +133,8 @@ class MagicWormhole < Formula
   end
 
   resource "twisted" do
-    url "https:files.pythonhosted.orgpackagesfc8d9c09d75173984d3b0f0dcf65d885fe61a06de11db2c30b1196d85f631cfctwisted-24.3.0.tar.gz"
-    sha256 "6b38b6ece7296b5e122c9eb17da2eeab3d98a198f50ca9efd00fb03e5b4fd4ae"
+    url "https:files.pythonhosted.orgpackages8bbff30eb89bcd14a21a36b4cd3d96658432d4c590af3c24bbe08ea77fa7bbbbtwisted-24.7.0.tar.gz"
+    sha256 "5a60147f044187a127ec7da96d170d49bcce50c6fd36f594e60f4587eff4d394"
   end
 
   resource "txaio" do

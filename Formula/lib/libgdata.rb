@@ -26,6 +26,7 @@ class Libgdata < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "json-glib"
@@ -34,6 +35,10 @@ class Libgdata < Formula
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
