@@ -3,6 +3,10 @@ class Plplot < Formula
   homepage "https://plplot.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/plplot/plplot/5.15.0%20Source/plplot-5.15.0.tar.gz"
   sha256 "b92de4d8f626a9b20c84fc94f4f6a9976edd76e33fb1eae44f6804bdcc628c7b"
+  # The `:cannot_represent` is for lib/csa/* which is similar to BSD-Source-Code
+  # license but is not an exact match due to phrasing. It refers to "materials"
+  # rather than "software" and clause 2 does not mention contributor names
+  license all_of: ["LGPL-2.0-or-later", "BSD-3-Clause", "HPND", :cannot_represent]
   revision 4
 
   bottle do

@@ -1,19 +1,19 @@
 class Staticcheck < Formula
   desc "State of the art linter for the Go programming language"
   homepage "https:staticcheck.io"
-  url "https:github.comdominikhgo-toolsarchiverefstags2023.1.7.tar.gz"
-  sha256 "9e4c710e79f9b18626ff33d225587518f2005ce9c651eda3b2fa539ee4677a20"
+  url "https:github.comdominikhgo-toolsarchiverefstags2024.1.tar.gz"
+  sha256 "f7c68cbab0a46aff3af24de24d00a58744353aa7e99aa0b03ec208cd00248e0e"
   license "MIT"
   head "https:github.comdominikhgo-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cd68c06d04557cc5051dfa3730a377228fd94f2b89e476a637ff791b09de28a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e2d7c0f62b84bb06b0c6a50890d3f3fdf625e687056e67e79d45692529c0692"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db03de30bc6dc6062411795ccca39cc7f57f32c087c2dd4c8e8c5041b6bb6ec6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d175335b9ffd6fd4fb1308ff7fd1b749378c90cbeed7ad67300daaebec301973"
-    sha256 cellar: :any_skip_relocation, ventura:        "98c05d2ae5250f0f208c4ef8053ae6ad72398a6c0f3a98d3fa046ed9d05d361d"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c7e41b410c98982c90087cff787edcd923ac64345bdb278faf5031557b746dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73c95aa66b477825604f646e45315c9e198ff9c2c82a76603b7eb481ee4bd53e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd142f1f9caf45af94738d42afb56b4754f2c5fa1676147de03f536db73df015"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0c6ddd1e059cca595282b869ed61650391f82d6489616cbe3a1e02402da787a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65a2e85ac2a533e49c33e3a5ac671357cc55b38748f7120fd6be709278a7c363"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a854ff75ac43a5d5d05fa301335942282a7f404ae5279e5baed1d544d417677"
+    sha256 cellar: :any_skip_relocation, ventura:        "6fa59fb95ebdeabb7048ef48541ea9cf21613ae520d0cc9fabc735e20beb5284"
+    sha256 cellar: :any_skip_relocation, monterey:       "78b99c408e8bb50820816374f83df60b847c4469a898fa5ca32a8a33cc95a784"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "401196e23168df45c0f7117b42fcbcfa71216551be27693ac229155925ddde07"
   end
 
   depends_on "go"

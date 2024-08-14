@@ -30,9 +30,11 @@ class Ekg2 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "dd46d5621d18a8186375e940e644acba80e3be9b4a94ac5a4d517d3b4f90dd6f"
     sha256 arm64_ventura:  "e11dd5263d14ca6151025f5d9ca8172301df336a1ec3d412617767f0c2ce7a11"
     sha256 arm64_monterey: "d233462650d03da68cc1acf4df091c2bd724cdfb124b8514161555ca731237a0"
     sha256 arm64_big_sur:  "513f5f60b4c91957d35a569665d9f55000dded765f4515e9581f291d2abfcb36"
+    sha256 sonoma:         "3883db8343593cec9ba2c7d3ebbfcf05a6929c38b9fb5f3a195f5f6496f35973"
     sha256 ventura:        "cf60041384bf67e252fbe27d60baceb48ea590d22184854c1990072c3948df71"
     sha256 monterey:       "6c4d6e4a126cb31c7dda87f6080a11911ca1f153c44d26ee86ce11147f8667b3"
     sha256 big_sur:        "d5f9ac13e6ef527cf44f51bad2461976f7a0007bdbc5ded0515720793771cb57"

@@ -1,19 +1,19 @@
 class Cog < Formula
   desc "Containers for machine learning"
   homepage "https:cog.run"
-  url "https:github.comreplicatecogarchiverefstagsv0.9.14.tar.gz"
-  sha256 "5982695dd1e6df3467935a446c72409faad7e686eb7314b0e34a2eab514d6ca2"
+  url "https:github.comreplicatecogarchiverefstagsv0.9.16.tar.gz"
+  sha256 "d0efa2c5e5d8ce1989fc8c07d14f29d8294736a628ce60560e1229287215b73b"
   license "Apache-2.0"
   head "https:github.comreplicatecog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b711b2e6e3a27f86bda74ce9bfd96dccf1fc0b3b5c5d7997b5110cebd14cf5b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cffb8eccf2b820e31451991a5216ac49368478434f6aa08186d3f30610ce3394"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c157f06452b6df10c3d3375a876043f0f850c152d41d9fbe85da32265ee467bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a3bad40e2f98bf6c7feeb971711f47042cbe62d5674931e0391d56a38e14377c"
-    sha256 cellar: :any_skip_relocation, ventura:        "219b96e5cd241edd4a31c619bf39254f9ff9f7316a34a24084b4ccd4b86259d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "a2383447a8b64fbec1b4653902eb456e4d4d520f790215cc8acc572ce68fd9db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e39cd2a27ddb9d2239715a1ba7719d3618449a4923afdf2d297f1002793fc7be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37739dc1d0cf8aebf13727e692b186a7918d034c1adf13a19560ba4ad4011e5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af87a6b9023eb6f8635468c8f9727e12da66eb444a656e13a8861c48f1895d2b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d87691ac7ca415baea99876c8c6edf4b6a0bcbaa12611767b721e3bbe25a417"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b48e1d3587f112947058847297ebbee93c2794fe98eb825905b080724beab944"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c141a036bffbcc889c718ccd0476982634115309d30ba44b3420af93e66ded4"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e121af55ad63c2a06770ad4debcf2a14c21461c7855dab979dcd4fc4bb72253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e8b56f7da205be9bf88f17d5eff1a8ff9ee793ddf35388714d8b05d346f8c1f"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,9 @@ class Cog < Formula
   end
 
   test do
-    assert_match "Failed to ping docker", shell_output("#{bin}cog build 2>&1", 1)
+    system bin"cog", "init"
+    assert_match "Configuration for Cog", (testpath"cog.yaml").read
+
     assert_match "cog version #{version}", shell_output("#{bin}cog --version")
   end
 end

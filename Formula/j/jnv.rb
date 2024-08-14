@@ -1,19 +1,19 @@
 class Jnv < Formula
   desc "Interactive JSON filter using jq"
   homepage "https:github.comynqajnv"
-  url "https:github.comynqajnvarchiverefstagsv0.3.0.tar.gz"
-  sha256 "4cbb0700b3b1c4212c97edca577039abf4ea238ca8c966978825d537f13f8885"
+  url "https:github.comynqajnvarchiverefstagsv0.4.0.tar.gz"
+  sha256 "88462d1a8dbb2a362a594d09c75b52d5798124981c9924ae7cff704e213b24f4"
   license "MIT"
   head "https:github.comynqajnv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c4a4d321848c6e62f36cf921aff575d56e7e1c913a745d8b4e633e87c8cc449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2159c5e6c9d548b28abad2ec9f2f908758ba1aa035bae21ecb4c3bfb0f42ac28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3214aeeafa34b3cabf330b10276efd6bfabf6b86fb34aad8c716addb1a10f5d6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2866a9d24e838dbfab3ffd53ed8821adef3ac1d062e4781b6bb8633d4cb1cc9e"
-    sha256 cellar: :any_skip_relocation, ventura:        "13f99b3f55a70f9d23a07cac1f0a81752d06e5baa30020162daf8d5ecd639e5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebeb7b8259a4bb7f73dbe2bebee0bb5136683af0abc308cc97170e81337c4279"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9e0ea9aa4d8745b0fa0eba94c750fec760003616d5d93a82930ed6d2596209f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e15f5c54af7a1adb674d21e6fedf227aed2120749b7220f3bf04c5af66b4ee3f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a5848f6388855039fac36451406ccfe402e8b366c1e51e218f9bd9a679440d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9a287a8a7fa860dc6229cb2284a549266c426c874e459ea2808e15dc21568f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27676c6754ba27df10748d59700582513f4bf42a1842a309eb76f3820b434d33"
+    sha256 cellar: :any_skip_relocation, ventura:        "520081042e5315dac739fc8cfbb89178474d4f7c12a37f896637cdcf12516475"
+    sha256 cellar: :any_skip_relocation, monterey:       "6106bb0500fc2de37af637e4d4438bc3e6dc402c34c4f29e8bf28e6c942fcb03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5aca9c959f02aa0e6e1457bba747e59de193014e7be626d65bc924df3cc79e71"
   end
 
   depends_on "autoconf" => :build

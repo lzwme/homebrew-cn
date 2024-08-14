@@ -1,8 +1,8 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
   homepage "https:github.comsegmentiochamber"
-  url "https:github.comsegmentiochamberarchiverefstagsv2.14.1.tar.gz"
-  sha256 "f3bc8391a789c79d40aef28196a857a82dc39fb51bd3851074344cdc2dc819b8"
+  url "https:github.comsegmentiochamberarchiverefstagsv3.0.1.tar.gz"
+  sha256 "20ab38fa94daedf2965997c487223831035028de93ddf73c6b92e68558e229f7"
   license "MIT"
   head "https:github.comsegmentiochamber.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Chamber < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a7f94172665e67a6b85962f8e220c4916ebced249a65d67dcf65db14b6e02348"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85dccf8fc2375d52abea776c10474e52937435eceac14b69bc154584b7c8ee41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6d985a47a03dccc8dfd51a4e3af292b499da5dcf67e9828659fd99f3867782b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d244c76f3344755cd7ab7cf8eb29187540a5e7ec93792dee1884a8739f40488a"
-    sha256 cellar: :any_skip_relocation, ventura:        "66f390a56a386ebe8f5a649344d5c6abfc573a28e0960ee3cfdae955da776af4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a1d8a854a57895e1930511a2461dc4cba3d1cb680c6a4396b1a0b926b337375"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f0547673fd8c457cfa9f04382a938169fb699a3f119ca66816a0db17998e99b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5f5776280aeba4813dd840d48d5c3343ae04397eb9ef0eb3a71f93fe0376a61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1dcd2a7a70b5fd8d9bc904b3ba44b3b01184c8c3de0b63a5daa0f31e6cb5877e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef1cfaf8233cd90e0247ff7607eb23064373ee132922b9498d996d69fa10b0aa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c247e4d0432f203263833c2c314533d71e4bab53a29e442ecf8d0f50a76a7de"
+    sha256 cellar: :any_skip_relocation, ventura:        "739f7ad29391e9bd171520ada3756c1248bb9a5df098b112c280ada720492900"
+    sha256 cellar: :any_skip_relocation, monterey:       "954fa1f84327a6e6fe1a8ffacf1da903a58c2c02a4ec42b504c4e3de99011017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce21254f4e6577ba1bf597c5624e21b29ff971a52a78297fd9c04c47f11d883c"
   end
 
   depends_on "go" => :build
@@ -30,12 +30,10 @@ class Chamber < Formula
   end
 
   test do
-    ENV.delete "AWS_REGION"
+    ENV["AWS_REGION"] = "us-east-1"
     output = shell_output("#{bin}chamber list service 2>&1", 1)
-    assert_match "MissingRegion", output
+    assert_match "Error: Failed to list store contents: operation error SSM", output
 
-    ENV["AWS_REGION"] = "us-west-2"
-    output = shell_output("#{bin}chamber list service 2>&1", 1)
-    assert_match "NoCredentialProviders", output
+    assert_match version.to_s, shell_output("#{bin}chamber version")
   end
 end

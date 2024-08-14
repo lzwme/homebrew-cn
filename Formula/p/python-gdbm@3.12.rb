@@ -1,8 +1,8 @@
 class PythonGdbmAT312 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tgz"
-  sha256 "01b3c1c082196f3b33168d344a9c85fb07bfe0e7ecfe77fee4443420d1ce2ad9"
+  url "https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz"
+  sha256 "38dc4e2c261d49c661196066edbfb70fdb16be4a79cc8220c224dfeb5636d405"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class PythonGdbmAT312 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "bf337187b921aa4dbab2323d791d69b670ee784506843b72dfea1b7377656a93"
-    sha256 cellar: :any, arm64_ventura:  "9ed82b5f261b71068a0ea27270eace5c994e5973938d5d54733da440f3d19688"
-    sha256 cellar: :any, arm64_monterey: "8004693765d4133de1a8159737bab410710c3a64b884d565d52160c176863c66"
-    sha256 cellar: :any, sonoma:         "bd466817e6e51124fa54272c7f0eb4de872d3891ab7766e46d0ca83f8332e4a1"
-    sha256 cellar: :any, ventura:        "b719ce9855d37d2052b2a5bddc7ce6ca5ed68a53c5c70aa87ed276576bcf3de5"
-    sha256 cellar: :any, monterey:       "7e35a507883a90a67b4d305942abfbd80be5dc18571b2cfa5c609437585d7cd6"
-    sha256               x86_64_linux:   "d8b549f4603cbe41e72e55a780119c1c9bda5036958458224d2da089d84bd3b0"
+    sha256 cellar: :any, arm64_sonoma:   "c1c9969544e3ecc3c60311a284f2230bd79b04c4afcd6d60fb74a2bdbac76f52"
+    sha256 cellar: :any, arm64_ventura:  "205fa55f400655a53e7f8a0cfcc33ce69243fa7760468ebefe9cc0b7986556ff"
+    sha256 cellar: :any, arm64_monterey: "efcb3a411ca35f8d978e957cc1f327a47db61403779ddca87fa4890499649624"
+    sha256 cellar: :any, sonoma:         "1397047586e618a2d56e478e5d0cd7f4bee09eff87d5419247b2bc347b6d334d"
+    sha256 cellar: :any, ventura:        "4e65c81ed7f9db642835d47670756c77d82daa4bb2597af1ac0491fff0b551bd"
+    sha256 cellar: :any, monterey:       "a1ddf6c2346b0026fad2f0a45a312537203003c4fe2c35ce58d9ed2f5febcd7e"
+    sha256               x86_64_linux:   "f68281e90c251b555a79aaba90769c8e2050d65171a1d01b1dbe3f6ad507070c"
   end
 
   depends_on "gdbm"

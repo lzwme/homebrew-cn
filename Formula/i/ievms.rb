@@ -9,6 +9,8 @@ class Ievms < Formula
     sha256 cellar: :any_skip_relocation, all: "64f7839125fd69525935b7cd3eee26cb7ef05010105218c3135d7ac81f7cd0db"
   end
 
+  disable! date: "2024-08-12", because: :no_license
+
   depends_on "unar"
 
   def install

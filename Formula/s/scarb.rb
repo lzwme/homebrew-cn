@@ -12,13 +12,14 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae80c07df623edbeb98f4283e43199afea3538a00cd58fc15ff9da1147741c20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27478800bb22a021035d14901ff27759058bf7adc23f55c2a71644f511d0f9ed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af26ab0b048af9b1c856c4cdf7536c6b7041daf9beb8edc4eac3609ca461abfe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23018f741fe56957e76704c219a8a07b2bd93faa9181d3d8cc3d3812effaad92"
-    sha256 cellar: :any_skip_relocation, ventura:        "043117caeee18f76eab52defb646cfef3a117c6b993953aaa76f182198fd5135"
-    sha256 cellar: :any_skip_relocation, monterey:       "5cc03112185f53f5081764853c1c6df86af855b5cb1368edc4fcb61dc0dfb5ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4de2e0158ab9b8972e12a3672de46bfb006e035f3177b16dcb2d73963aaebd65"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f0fd22beb36fd6fe538f96cff1d032e9b5549a95581f17a6e16e8ba6205fac5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e0e615e0b88ffcb18f4f883c017aeb6d0e743fe64c9e0606de87de8c0b4050"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36366997f8dfd526cb6d3a6dfda6a18d6266420492fd924e801beb431fb5e0ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b476b20ae06987d6e69411a3cbab34eda40ccc3a02102a43a66b3ebcfdacd52"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcfdd287d7521364880c151d6ab81cae66e4f5d9bd4bbe963787f6e0e8ab5bc3"
+    sha256 cellar: :any_skip_relocation, monterey:       "02b75da90f69cf8474addf0b481eb004153adfa1a6c7d7077e45c27b136eed4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29d82e1d130015347b32ec29dcdece19b839a64d2bf439150481957c8eeb54d7"
   end
 
   depends_on "rust" => :build
@@ -30,6 +31,7 @@ class Scarb < Formula
       extensionsscarb-cairo-run
       extensionsscarb-cairo-test
       extensionsscarb-snforge-test-collector
+      extensionsscarb-doc
     ].each do |f|
       system "cargo", "install", *std_cargo_args(path: f)
     end
@@ -48,5 +50,6 @@ class Scarb < Formula
     assert_match version.to_s, shell_output("#{bin}scarb cairo-run --version")
     assert_match version.to_s, shell_output("#{bin}scarb cairo-test --version")
     assert_match version.to_s, shell_output("#{bin}scarb snforge-test-collector --version")
+    assert_match version.to_s, shell_output("#{bin}scarb doc --version")
   end
 end

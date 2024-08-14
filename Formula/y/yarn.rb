@@ -10,15 +10,14 @@ class Yarn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9a80ed679d05f019e217f737a7d531f4578144b65be6a1a19d3322ef41d25683"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "edb63a1b15d560263270324b63bee4c2aa8145197636a755436cc14424fc1e12"
   end
 
   depends_on "node" => :test
 
   conflicts_with "hadoop", because: "both install `yarn` binaries"
   conflicts_with "corepack", because: "both install `yarn` and `yarnpkg` binaries"
-
-  skip_clean "libexec/bin"
 
   def install
     libexec.install buildpath.glob("*")

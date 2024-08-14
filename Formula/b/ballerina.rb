@@ -1,8 +1,8 @@
 class Ballerina < Formula
   desc "Programming Language for Network Distributed Applications"
   homepage "https://ballerina.io"
-  url "https://dist.ballerina.io/downloads/2201.9.2/ballerina-2201.9.2-swan-lake.zip"
-  sha256 "a45119e1cec7dc6cd3fbcdc8b118373a53f98aab9a763cd279eea9adff5f1a59"
+  url "https://dist.ballerina.io/downloads/2201.9.3/ballerina-2201.9.3-swan-lake.zip"
+  sha256 "98e5395d4d4940bd031d88db0813720498e8a4475de279b70a74985c48f31f23"
   license "Apache-2.0"
 
   # The Downloads and Installation Options pages don't include any version
@@ -18,13 +18,7 @@ class Ballerina < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e49712e35a55e28480fb34453bfcc203df5a1478d4e4e98951ae7bb55e00477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa8ab93a6baf251425b740fae90a9fb6e0e27363fcc9d73a852194f3457f9ed"
+    sha256 cellar: :any_skip_relocation, all: "1adada8b8d01a84f89d31db47bd76f20b81f315c622c1ece2a52c48afc90ae51"
   end
 
   depends_on "openjdk"

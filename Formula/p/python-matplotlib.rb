@@ -3,18 +3,18 @@ class PythonMatplotlib < Formula
 
   desc "Python library for creating static, animated, and interactive visualizations"
   homepage "https:matplotlib.org"
-  url "https:files.pythonhosted.orgpackages27c3b4dbf9ed2a024a5514fa8a2606867a3716c9adfd457d138865145a940a65matplotlib-3.9.1.post1.tar.gz"
-  sha256 "c91e585c65092c975a44dc9d4239ba8c594ba3c193d7c478b6d178c4ef61f406"
+  url "https:files.pythonhosted.orgpackages9ed83d7f706c69e024d4287c1110d74f7dabac91d9843b99eadc90de9efc8869matplotlib-3.9.2.tar.gz"
+  sha256 "96ab43906269ca64a6366934106fa01534454a69e471b7bf3d79083981aaab92"
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6db5f3fd3c2afa66e3b1d90768d80030df6c0ec4f7a0b2f4b88e645721b68752"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e6e2d16a3257c899324c62315df0acd04123bd1a58a583aa6f9507544a3ca57"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38656d76ce85b0362799ec9f06aaeffd3914a51263982dea940d0678f2b1114b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c1ec5829b4179958c03bbaca1daf0a370387e69b06dc5150e16d48724dd231d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3201357e0319426ca8476e2ec96afda641da3739cef81dd092abdf699729daeb"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ba4a7ce5fbf5fc893e01b7ec3b96bb78f0fb87962d3dc5e62d6fda3dd2e3417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ab2309b862838bf708111a91777931773ad11c33bd79a5da555ccfbadba5f95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5491402100f7b0934f8c201d3374c708b451a65c09c0ea8baac98b23d13ed87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f0e9aa005e9b6203440365bd266cd515e7bf838ac5274e6858cb2e879b55b3b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7361caa5e27eba7a300d6c48b62150c958d41e243542743ec32a5813fb9d46f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eadc499017c850ffc58dca85e644a8b6ae16f327e86906e3b03ed50ecbfe20ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "a1568e96e15036c4ca9374961b8551b465845c2b7994f5f4c61e08a47992aa47"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d7ec530a3b06234a34dea8db82675306e30a836b60213ddeb909b02fb248922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b7929237b602270b837d774a076e8cdaf703d24480f73b78557144d3dfb8ffb"
   end
 
   depends_on "meson" => :build

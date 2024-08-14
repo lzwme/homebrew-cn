@@ -4,6 +4,12 @@ class Yasm < Formula
   url "https:www.tortall.netprojectsyasmreleasesyasm-1.3.0.tar.gz"
   mirror "https:ftp.openbsd.orgpubOpenBSDdistfilesyasm-1.3.0.tar.gz"
   sha256 "3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f"
+  license all_of: [
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    :public_domain,
+    any_of: ["Artistic-1.0-Perl", "GPL-2.0-or-later", "LGPL-2.0-or-later"], # libyasmbitvect.c
+  ]
   revision 2
 
   livecheck do

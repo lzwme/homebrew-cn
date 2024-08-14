@@ -14,6 +14,20 @@ class Vip < Formula
   # Written by Daniel E. Singer, Duke Univ. Dept of Computer Science, 53095
   license :cannot_represent
 
+  # This only uses the first match, which should be the timestamp near the
+  # start of the file. There are subsequent dates that use a mmddyy format
+  # instead of yymmdd and lead to an `invalid date` error.
+  livecheck do
+    url :stable
+    regex(%r{(\d{2}\d{2}\d{2})\s+\d{2}:\d{2}}i)
+    strategy :page_match do |page, regex|
+      match = page.match(regex)
+      next if match.blank?
+
+      Date.parse(match[1])&.strftime("%Y%m%d")
+    end
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b14079339dd70f264f10a81fc1d4934353ab7aa85b32403de04703ba5340dc6"

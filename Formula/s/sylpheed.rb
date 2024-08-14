@@ -3,6 +3,7 @@ class Sylpheed < Formula
   homepage "https:sylpheed.sraoss.jpen"
   url "https:sylpheed.sraoss.jpsylpheedv3.7sylpheed-3.7.0.tar.bz2"
   sha256 "eb23e6bda2c02095dfb0130668cf7c75d1f256904e3a7337815b4da5cb72eb04"
+  license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT", :public_domain]
   revision 7
 
   livecheck do

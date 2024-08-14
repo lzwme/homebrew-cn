@@ -3,6 +3,18 @@ class Phpmyadmin < Formula
   homepage "https://www.phpmyadmin.net"
   url "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.tar.gz"
   sha256 "61c763f209817d1b5d96a4c0eab65b4e36bce744f78e73bef3bebd1c07481c46"
+  license all_of: [
+    "GPL-2.0-only",
+    "GPL-2.0-or-later",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "CC-BY-3.0",
+    "ISC",
+    "LGPL-3.0-only",
+    "MIT",
+    "MPL-2.0",
+    :public_domain,
+  ]
 
   livecheck do
     url "https://www.phpmyadmin.net/files/"

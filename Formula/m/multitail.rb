@@ -1,8 +1,8 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
   homepage "https:vanheusden.commultitail"
-  url "https:github.comfolkertvanheusdenmultitailarchiverefstags7.1.4.tar.gz"
-  sha256 "96b781a9c22f3518fc25c4f3ce3833ec5069158b2a743a30f7586cd063824704"
+  url "https:github.comfolkertvanheusdenmultitailarchiverefstags7.1.5.tar.gz"
+  sha256 "b0c92bf5f504b39591bf3e2e30a1902925c11556e14b89a07cfa7533f9bd171b"
   license "MIT"
   head "https:github.comfolkertvanheusdenmultitail.git", head: "master"
 
@@ -12,22 +12,19 @@ class Multitail < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "56469c7b2b950499b3b214252f448d7c9291ba830cc942077a5fa08fe64a5109"
-    sha256 cellar: :any,                 arm64_ventura:  "64d9dc879b87a414f1ab4bcb1f5a5666eab23414b93162ff12f63d397ac772a8"
-    sha256 cellar: :any,                 arm64_monterey: "ff18c529e31bbd7798acf2347bdae5a80c2d90e533f790b419f714ec276578b6"
-    sha256 cellar: :any,                 sonoma:         "f249a23652a90f76bb48a944ed7b14baad2c7ce1b4fa8475f8e23abc121d37d0"
-    sha256 cellar: :any,                 ventura:        "44c0b25849a46a11ae8bccdf89162a29322577b3124ecf6fb852b87f9ec78afb"
-    sha256 cellar: :any,                 monterey:       "590e896fb99591eb654991ec625300357ac268f14737732888ab7f2b53406efb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2535a0a2ca60556988407902550b9fbbf89831843fe58916e774bf6e469f2428"
+    sha256 cellar: :any,                 arm64_sonoma:   "be06268413fcf23e7b7c95362f24d8e0b0bf01b4b956068172e48ba622caac1f"
+    sha256 cellar: :any,                 arm64_ventura:  "d764f52508358c4d881e6aa8e0a374c96c9cbd27d292f20cce17e7ac55f5b846"
+    sha256 cellar: :any,                 arm64_monterey: "480845b936a309ef633dadd0b1a1eadf90d5704be8799bfb9d05d57aa2fd5d75"
+    sha256 cellar: :any,                 sonoma:         "ca9fb55f8bf98257308ea67179d882788d74bb7c1e3cbb1b584eb679f81ee44d"
+    sha256 cellar: :any,                 ventura:        "88b234118c438295f556f25b1c651714a7e0fd597f9f124c7025d4066a43c5b4"
+    sha256 cellar: :any,                 monterey:       "9c26932eba926fbeda0f8cf27e11b47fcc09a992f31aa581560dd00ca47d6c30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e5209ad76b3f876606ca6a7a7fa6720ec2f976affd51aaab992c0dde63540b4"
   end
 
   depends_on "pkg-config" => :build
   depends_on "ncurses"
 
   def install
-    odie "remove version patch" if build.stable? && version > "7.1.4"
-    inreplace "version", "7.1.3", version.to_s
-
     system "make", "-f", "makefile.macosx", "multitail", "DESTDIR=#{HOMEBREW_PREFIX}"
 
     bin.install "multitail"

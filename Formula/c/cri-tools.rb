@@ -1,19 +1,19 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https:github.comkubernetes-sigscri-tools"
-  url "https:github.comkubernetes-sigscri-toolsarchiverefstagsv1.31.0.tar.gz"
-  sha256 "2cc766986662ed1b9585693a4f24f7f109fa5fa7d62ae62aaafea093d3a119c9"
+  url "https:github.comkubernetes-sigscri-toolsarchiverefstagsv1.31.1.tar.gz"
+  sha256 "465bd14768a86a782c6e4b15b3683c4a5efd0363d68b241d5757a7bada9bcd21"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigscri-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80e1d1f06e256f31b17cdf9ccd1b32427fa4343695a8decab66416c7132a2267"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e1d1f06e256f31b17cdf9ccd1b32427fa4343695a8decab66416c7132a2267"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80e1d1f06e256f31b17cdf9ccd1b32427fa4343695a8decab66416c7132a2267"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e6d2a96141cdafbf4ecb41e455f8c5c03aed5318c073d2818a898f41a6ba9582"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6d2a96141cdafbf4ecb41e455f8c5c03aed5318c073d2818a898f41a6ba9582"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6d2a96141cdafbf4ecb41e455f8c5c03aed5318c073d2818a898f41a6ba9582"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc81b9152658fba4318250851c9c7a19aa928eda945a16d57e56cf717f6af811"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"
+    sha256 cellar: :any_skip_relocation, sonoma:         "37ab62d27f08b4ee61bfeffbcb2fc24b785d6fc28fdda98d00783ea3dcc8eb97"
+    sha256 cellar: :any_skip_relocation, ventura:        "37ab62d27f08b4ee61bfeffbcb2fc24b785d6fc28fdda98d00783ea3dcc8eb97"
+    sha256 cellar: :any_skip_relocation, monterey:       "37ab62d27f08b4ee61bfeffbcb2fc24b785d6fc28fdda98d00783ea3dcc8eb97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6ee084f2f349c9081bc67d2244f9478308c5c5d736fd303f5b46a03892cfc63"
   end
 
   depends_on "go" => :build

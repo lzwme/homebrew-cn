@@ -3,6 +3,10 @@ class Ucommon < Formula
   homepage "https:www.gnu.orgsoftwarecommoncpp"
   url "https:ftp.gnu.orggnucommonc++ucommon-7.0.0.tar.gz"
   sha256 "6ac9f76c2af010f97e916e4bae1cece341dc64ca28e3881ff4ddc3bc334060d7"
+  license all_of: [
+    "LGPL-3.0-or-later",
+    "GPL-2.0-or-later" => { with: "mif-exception" },
+  ]
 
   livecheck do
     url :stable

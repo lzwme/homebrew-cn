@@ -1,8 +1,8 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.5/astyle-3.5.2.tar.bz2"
-  sha256 "db0c0a72d40e640c201e39e64678b6fe316f37e7ef05f67ce2b22d555c0a6d12"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.tar.bz2"
+  sha256 "f894429b198b500d51a06a47d229881c5f7c8cffb42a423d646e86c53155f1a9"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
@@ -12,13 +12,13 @@ class Astyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "693c64486b8c9a96d0dad168ec31dd72c6d7ae80167af0bada17ca661a99e027"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c3f9b6e527cbdbc6fce3de401236fa297fea54d91ba0787cab809da4e1a8ef7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8720696accd267cecadc553b9d36a967659129e049448bd7b6234ab27b6e7a36"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62ca2346bf659434aecf685ae03a709811169d45561e0aee5aaa7a558350e435"
-    sha256 cellar: :any_skip_relocation, ventura:        "0471be5fc2083e30ef70049c0a496166bfd665d3d5e5d1a8248776931a78f76b"
-    sha256 cellar: :any_skip_relocation, monterey:       "035679ac605ae157e6a3bce9796d37e823d33d2087593dc5c30ad0641825cd4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d43b433f276042904b3a88a5e5434d252ceeef603ab5bf98632c02eb46b2a653"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ecd3c0f890a504ccd62f9aa8fe84d81badd207b63a1819ebb06cfb0bff590ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "258801359f254ac771e95dd19a1f2c4e7edf6594927564bd525ff6fa29b4e1b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f8ccac661dc26f4d9d6821a99e2e1aa21bb1598dababa121eb9f0905ff86d57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "afe0cdc90d21c7ce441490bf448e8074f682a84f508ccea00857b95175d96ec1"
+    sha256 cellar: :any_skip_relocation, ventura:        "34e1b2ea516fe12ca6e20d7f75e45bad6572d51f5398d8db0742b2a5f9c2d968"
+    sha256 cellar: :any_skip_relocation, monterey:       "a887b3790ab19ad23016d586c9d691d23ba6d79846e250f0b2f8f06f84fe2b98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d41755aaccbe1700c08f0458aa73b5d8a2181de4b2292273c0224c93fcf84407"
   end
 
   depends_on "cmake" => :build

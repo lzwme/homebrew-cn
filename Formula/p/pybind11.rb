@@ -1,8 +1,8 @@
 class Pybind11 < Formula
   desc "Seamless operability between C++11 and Python"
   homepage "https:github.compybindpybind11"
-  url "https:github.compybindpybind11archiverefstagsv2.13.1.tar.gz"
-  sha256 "51631e88960a8856f9c497027f55c9f2f9115cafb08c0005439838a05ba17bfc"
+  url "https:github.compybindpybind11archiverefstagsv2.13.3.tar.gz"
+  sha256 "6e7a84ec241544f2f5e30c7a82c09c81f0541dd14e9d9ef61051e07105f9c445"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Pybind11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ceec7f46f835a836e2ba5f6408cc9ef886927b8693a370f03f9446b56c2196d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceec7f46f835a836e2ba5f6408cc9ef886927b8693a370f03f9446b56c2196d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ceec7f46f835a836e2ba5f6408cc9ef886927b8693a370f03f9446b56c2196d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "22db62a1e57397702fee5e31d66c3847b7e1c0ad9d6b80644430b6abc3e41d87"
-    sha256 cellar: :any_skip_relocation, ventura:        "22db62a1e57397702fee5e31d66c3847b7e1c0ad9d6b80644430b6abc3e41d87"
-    sha256 cellar: :any_skip_relocation, monterey:       "22db62a1e57397702fee5e31d66c3847b7e1c0ad9d6b80644430b6abc3e41d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceec7f46f835a836e2ba5f6408cc9ef886927b8693a370f03f9446b56c2196d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06e876728026edfec00758088d0f1ff8e909a6dd5304103a8dfac4ca4da373dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e876728026edfec00758088d0f1ff8e909a6dd5304103a8dfac4ca4da373dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06e876728026edfec00758088d0f1ff8e909a6dd5304103a8dfac4ca4da373dc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27db22e3823abba4f9f6719d3beadeac7d28ee72874d4d3b04eec7258c72bf73"
+    sha256 cellar: :any_skip_relocation, ventura:        "27db22e3823abba4f9f6719d3beadeac7d28ee72874d4d3b04eec7258c72bf73"
+    sha256 cellar: :any_skip_relocation, monterey:       "27db22e3823abba4f9f6719d3beadeac7d28ee72874d4d3b04eec7258c72bf73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06e876728026edfec00758088d0f1ff8e909a6dd5304103a8dfac4ca4da373dc"
   end
 
   depends_on "cmake" => :build

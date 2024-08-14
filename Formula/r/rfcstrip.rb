@@ -3,6 +3,8 @@ class Rfcstrip < Formula
   homepage "https:github.commbj4668rfcstrip"
   url "https:github.commbj4668rfcstriparchiverefstags1.3.tar.gz"
   sha256 "bba42a64535f55bfd1eae0cf0b85f781dacf5f3ce323b16515f32cefff920c6b"
+  # License is similar to TCL license but omits the government use clause
+  license :cannot_represent
 
   bottle do
     rebuild 2

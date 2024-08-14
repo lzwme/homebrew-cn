@@ -3,18 +3,18 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https:github.comsauljabinkaskade"
-  url "https:files.pythonhosted.orgpackages60b7ae8ef2fe9df50ace6870124647ab4115604ee89e012551c4093685d5d240kaskade-2.3.2.tar.gz"
-  sha256 "2d43877270a7a4f18b2ec0d081800eefa170cff026a3f6cc1e78dff3ca672ce2"
+  url "https:files.pythonhosted.orgpackages8fed33677f4c2199fd6dfa7206304de37b971342345a4713a96717629ed05760kaskade-2.3.4.tar.gz"
+  sha256 "f2df4a3f5f6e82adb1f708a1ad0dac4b080a23b36458b1bc972b637f6d88f611"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "58cecb85df1c66ada66403cde4b5f5e36e106ee46dd80a6c7d8da7b9e421421e"
-    sha256 cellar: :any,                 arm64_ventura:  "ad7ae99d013a16655762e99d7ef8a0e7992fb0f7296f9a049164ae9a06a4f5af"
-    sha256 cellar: :any,                 arm64_monterey: "55a1bc40692b25afbd67d82446652df68d0323062d5f7c833eb9e40c0a3c43d1"
-    sha256 cellar: :any,                 sonoma:         "c63b5dee4192226af4faabc54c6b86406121d3354fb85551b84dd90a5c8e4f69"
-    sha256 cellar: :any,                 ventura:        "7d14ca84860fb9b3d6080df8cf80eabe88175a7c66445238d9a95140abcd0b76"
-    sha256 cellar: :any,                 monterey:       "069f6e101ed9cbff1485af1f6ea2344cc18d4b521ffda3527886a246f13e710a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d3038a23d716be40237f2d80ee58636d8d3214483b5f2607a57bd17ee600d40"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c408b4bd7ae294cfab6b0b4e56d7f15f27e08a78b5ab25eeec6e61429959c36"
+    sha256 cellar: :any,                 arm64_ventura:  "127b849262d980814c421a642ca9578de4d2d8906ea5e5ef8588c9a546e7d781"
+    sha256 cellar: :any,                 arm64_monterey: "0819eca9e2ba4ed2821ff0663ccd1a10e23cc37303dea3690f2dfaa2c6a3a320"
+    sha256 cellar: :any,                 sonoma:         "5405ddab1aef99def5c478ec32304e92bd301a4b1a5f1716930794179c67ff87"
+    sha256 cellar: :any,                 ventura:        "026ec5f259f5f569145b8a5df11e82d075898aeea9dcfbd4650182a55ccea3b2"
+    sha256 cellar: :any,                 monterey:       "3fd1e4f7b3ec580ba1ba4ab760fed989993fe1709c3a51b11d764c90483e99cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62332d9e7e040a0206243f24cbe7924b4286c7e759ada19497cd38cba7aeea39"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -23,13 +23,13 @@ class Kaskade < Formula
   depends_on "python@3.12"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "avro" do
-    url "https:files.pythonhosted.orgpackages585b41d2dab437adbad4077acba55b05064c5eb0aea8e77145a0379564d32950avro-1.11.3.tar.gz"
-    sha256 "3393bb5139f9cf0791d205756ce1e39a5b58586af5b153d6a3b5a199610e9d17"
+    url "https:files.pythonhosted.orgpackagese67348668732bbc8ae1e79b237f84e761204c8dd266c5e16e7601000aba471d3avro-1.12.0.tar.gz"
+    sha256 "cad9c53b23ceed699c7af6bddced42e2c572fd6b408c257a7d4fc4e8cf2e2d6b"
   end
 
   resource "charset-normalizer" do
@@ -93,8 +93,8 @@ class Kaskade < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages71a5d61e4263e62e6db1990c120d682870e5c50a30fb6b26119a214c7a014847protobuf-5.27.2.tar.gz"
-    sha256 "f3ecdef226b9af856075f28227ff2c90ce3a594d092c39bee5513573f25e2714"
+    url "https:files.pythonhosted.orgpackages1b610671db2ab2aee7c92d6c1b617c39b30a4cd973950118da56d77e7f397a9dprotobuf-5.27.3.tar.gz"
+    sha256 "82460903e640f2b7e34ee81a947fdaad89de796d324bcbc38ff5430bcdead82c"
   end
 
   resource "pygments" do
@@ -123,13 +123,13 @@ class Kaskade < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages36a283c3e2024cefb9a83d832e8835f9db0737a7a2b04ddfdd241c650b703db0rpds_py-0.19.0.tar.gz"
-    sha256 "4fdc9afadbeb393b4bbbad75481e0ea78e4469f2e1d713a90811700830b553a9"
+    url "https:files.pythonhosted.orgpackages5564b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29arpds_py-0.20.0.tar.gz"
+    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages2340100a105ab455be14cc5b96e2ecb0196ba28c506dcfd0c497a796db3c90c5textual-0.72.0.tar.gz"
-    sha256 "14174ce8d49016a85aa6c0669d0881b5419e98cf46d429f263314295409ed262"
+    url "https:files.pythonhosted.orgpackagesd0ea9139a6156c6dc2f40592fc50dceb8c57c5e53d235c20c2c41fe3cc363b1ftextual-0.76.0.tar.gz"
+    sha256 "b12e8879d591090c0901b5cb8121d086e28e677353b368292d3865ec99b83b70"
   end
 
   resource "typing-extensions" do
