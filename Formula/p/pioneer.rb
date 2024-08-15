@@ -20,6 +20,7 @@ class Pioneer < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "assimp"
   depends_on "freetype"
   depends_on "glew"
@@ -28,6 +29,10 @@ class Pioneer < Formula
   depends_on "libvorbis"
   depends_on "sdl2"
   depends_on "sdl2_image"
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   fails_with gcc: "5"
 

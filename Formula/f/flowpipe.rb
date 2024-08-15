@@ -1,23 +1,23 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
   homepage "https:flowpipe.io"
-  url "https:github.comturbotflowpipearchiverefstagsv0.5.0.tar.gz"
-  sha256 "9e11f3d5d3ba91e5d9bd4fb7b0f25920700f6770949b513537297707c4cb7571"
+  url "https:github.comturbotflowpipearchiverefstagsv0.7.1.tar.gz"
+  sha256 "7053ae4681d23043daa265727dc7dbe8c65a0327d1c1bf955c29f990b39e32a7"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5142b753ec7d6abecd4c102601537972013c92222a2da4ecc5103b43d19b5c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b1d1022facf0a8f9b4bbdd6b876e5cbb8c7df7981aa169b0485a6f086f4ee10"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cd933d9ebea8078810d3449ebf071aa0273802acb8904ae3c47a188aa2f7742"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e7127b81c615ebc60869d4d6f909667002c3d885efe86c60986a5c0629c6187"
-    sha256 cellar: :any_skip_relocation, ventura:        "20da1424d3ee7f5e66b4d6f8d147ff25c759d44f7409a5df294c35a6228c1045"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1d9905a955d7aed22f0d6862e3ba8aaa70d066cb91d4fa878341d80c82a1777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81acb96880888565bda2145cd0e9c44d8b49a876ff69fe76886646dcff1e826a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16992923dc9e364e55dd4f17b92a52575dd8084f2fe951a80f8452eb9fe14d9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0909056e6e909adfccb7443d23be2766da3158e64fb4e919aaf8598f05cf5114"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8797c0ee86155579355f77d9af135e14b9a77d25b74d6993e3b6e0932b291282"
+    sha256 cellar: :any_skip_relocation, sonoma:         "123915b99ea863f969b4241ce200a9ca3b2b9048c5f391f7c506b9512d49bde4"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a2e2c5b56c9dc20605ec22a03bd5b68d684251534612ece4a36efa82993d780"
+    sha256 cellar: :any_skip_relocation, monterey:       "752ce3925ec5b3c335b8c49c8e9f342778e7d55008bfdf0e476fef3331207392"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e14b3ff84589750944cc3c44f3867ea4e913c6c8e994fa9e8f4a33459150b394"
   end
 
+  depends_on "corepack" => :build
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   def install
     cd "uiform" do
@@ -38,7 +38,8 @@ class Flowpipe < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}flowpipe -v")
 
-    output = shell_output(bin"flowpipe mod list 2>&1")
+    ret_status = OS.mac? ? 1 : 0
+    output = shell_output(bin"flowpipe mod list 2>&1", ret_status)
     if OS.mac?
       assert_match "Error: could not create sample workspace", output
     else

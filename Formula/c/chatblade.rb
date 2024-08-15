@@ -3,18 +3,18 @@ class Chatblade < Formula
 
   desc "CLI Swiss Army Knife for ChatGPT"
   homepage "https:github.comnpivchatblade"
-  url "https:files.pythonhosted.orgpackages6de9b1d8accb69577a991f760bcf2b61c1c176109c8b2b4fb9859898e687e108chatblade-0.5.0.tar.gz"
-  sha256 "3a084509b8853a10509157e18a4d2d159f7eb4216e655d6b24f5db04d47804be"
+  url "https:files.pythonhosted.orgpackages641ae83b916bf98e4c4df1e160952e212c7325dbd5f96b2a67f0a34486279603chatblade-0.6.2.tar.gz"
+  sha256 "3786335ce943d542e1887aea03a08b3b0052b504846f3f32aad3ade6609158b4"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "41ed054471d6d876e1709bea9a665d1219e461fbb8da7110d45fa60381f2b890"
-    sha256 cellar: :any,                 arm64_ventura:  "0f88f03125c7564e24ae18497127b1c37011542fc087689c120c35b0392e84ec"
-    sha256 cellar: :any,                 arm64_monterey: "8ff2915b272e6cf300645fe3afadf18d580c9ab665cc9126896e53ea18f511c3"
-    sha256 cellar: :any,                 sonoma:         "3a7aded0ada93e0d686303a2bb8d220fb37d0a482ac03080b76261fedb184e02"
-    sha256 cellar: :any,                 ventura:        "295055c55b1328bc2f8c451643d5a8498964d34434b7a82b0ac768e5f8a2659e"
-    sha256 cellar: :any,                 monterey:       "cfb39e923b7dfcde22b975c470389b91f9c47a9fab04dbef647f3bcdfc1c5a65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d2d51932541a228451b68a3c09ef18a4c29f0b0b8d1e011dcf11a46faf8f52"
+    sha256 cellar: :any,                 arm64_sonoma:   "88efb44b943857a79c00da5bec626a482bc07cc35948b9a6311e81310693042e"
+    sha256 cellar: :any,                 arm64_ventura:  "a24efb6483a54a86821055613e633788a2fbe89e6f2059cf908bb15dc31ad91b"
+    sha256 cellar: :any,                 arm64_monterey: "bd92f65b400b891699ee7ee845f235f3036a6fcf4bd6ae42dc27184e7fa0ccbe"
+    sha256 cellar: :any,                 sonoma:         "72e5ed884367015c8b8f5463752c1e87c9fbfe887853f7d48125e49b02553ed8"
+    sha256 cellar: :any,                 ventura:        "d64ab352c22e1199c4ad68882ac1b56a3346a04e0f4c4e1481c84716f9d6b3eb"
+    sha256 cellar: :any,                 monterey:       "fdd1474ad540e3ccf3fc17e2e8a11e44ffaa8df642db63203abbb30aff1c98e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fee8cc84ce0a61e340cd030b97471e15e0fa11bf437caaebe3ea9e1f27122d38"
   end
 
   depends_on "rust" => :build
@@ -97,14 +97,19 @@ class Chatblade < Formula
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
+  resource "pylatexenc" do
+    url "https:files.pythonhosted.orgpackages5dab34ec41718af73c00119d0351b7a2531d2ebddb51833a36448fc7b862be60pylatexenc-2.10.tar.gz"
+    sha256 "3dd8fd84eb46dc30bee1e23eaab8d8fb5a7f507347b23e5f38ad9675c84f40d3"
+  end
+
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
-    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
+    url "https:files.pythonhosted.orgpackages3f5164256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   resource "requests" do
@@ -128,8 +133,8 @@ class Chatblade < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "typing-extensions" do

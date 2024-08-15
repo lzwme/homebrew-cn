@@ -3,19 +3,19 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:github.compaul-gauthieraiderarchiverefstagsv0.49.1.tar.gz"
-  sha256 "e75d417ae893da0e6d5ec10240a72a214e47b16bb502ee7d2645bd0a30b0053a"
+  url "https:files.pythonhosted.orgpackages950065d8e8c9bc7f4989ef77ccdb4b01f242ffb54604576de523b40427f07c71aider_chat-0.50.1.tar.gz"
+  sha256 "f6c107863edd1b3316ae054784cb439cda2ac4a176c7a18e7976a614543d6ae0"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "567d7715bca8da73623d4799c42bbeef8e4ba56c4277cf1d7442c67de4f3db34"
-    sha256 cellar: :any,                 arm64_ventura:  "dfc22f355ccb75b769344675eb971f1861195cd6a4fe5b4c5c1c8c5960f0c0a2"
-    sha256 cellar: :any,                 arm64_monterey: "7de06a6367be019601aafe5c0857088e411d8c1745647c67b7aa2ff2a20e4e51"
-    sha256 cellar: :any,                 sonoma:         "818f27e1048503a6d087977fa6e829bc8f70ee0391bcae8807a7591da2e3e286"
-    sha256 cellar: :any,                 ventura:        "4711d2f90e5065e89bc9fee202bddb0e3629f7f86351b80def8d0d256e038b03"
-    sha256 cellar: :any,                 monterey:       "9b03e1238561ed795b791febb0c6e124441cd80b9dc3a870b65e72f56c514373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0047e8b3674c8254d9d3162969b2a7caf57a36d68a75dedc1ef1decd37a89965"
+    sha256 cellar: :any,                 arm64_sonoma:   "bc91fc3b6836f779d04e5d06ed3dd8bb95913f106eefba3e6059113eb6e1ff88"
+    sha256 cellar: :any,                 arm64_ventura:  "1f327295826dd043ec517f177af872780fbefbd6ecacdc2b3f94f5e5287c7bde"
+    sha256 cellar: :any,                 arm64_monterey: "46476fa0faa0246553058211649f1d640c7ff829158b3d6889d474e829d48b54"
+    sha256 cellar: :any,                 sonoma:         "76fdb3812c7502a240519772501c7bd2e51f56345145ced61a033124c5997af2"
+    sha256 cellar: :any,                 ventura:        "8f767b1cf994ed11397165a7cb6a5eff27e601ae12e5602a6e684d33055eb8a9"
+    sha256 cellar: :any,                 monterey:       "c5818bdfb872feb191071e2773ab5bcb97cd8fe5c18701c43ca9a267e9ee50f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e449c10297dfb0832a8fbd946362797cc425ed0088fff4df9c7bafed97315e3d"
   end
 
   depends_on "cython" => :build # for tree-sitter-languages
@@ -35,8 +35,8 @@ class Aider < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages451136ba898823ab19e49e6bd791d75b9185eadef45a46fc00d3c669824df8a0aiohttp-3.10.2.tar.gz"
-    sha256 "4d1f694b5d6e459352e5e925a42e05bac66655bfde44d81c59992463d2897014"
+    url "https:files.pythonhosted.orgpackages159ced427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cbaiohttp-3.10.3.tar.gz"
+    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
   end
 
   resource "aiosignal" do
@@ -190,8 +190,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages1e6759e6e23ee629fc0b97bbcb269fe0a520ffe96909923e1bfff40e2f9b8b08litellm-1.43.4.tar.gz"
-    sha256 "949c51ad494b935d80da1cd18c3567e4ed181f8eb531ef4706e3be72afb0c43c"
+    url "https:files.pythonhosted.orgpackages99cc10e292e40506ee62007f69aabd3112243ac7dda7e2b0569a60de735e2796litellm-1.43.9.tar.gz"
+    sha256 "c397a14c9b851f007f09c99e5a28606f7f122fdb4ae954931220f60e9edc6918"
   end
 
   resource "markdown-it-py" do
@@ -225,8 +225,8 @@ class Aider < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages0035560805fd5af879bae9add36ac0f459e09bd7c662f85dc5654f78ff330efbopenai-1.40.2.tar.gz"
-    sha256 "2180e9070bd36084328248b3ce668964e8ddd2e9019e1d426e31dc54cc117bb5"
+    url "https:files.pythonhosted.orgpackagesbfa0a2d136a93da61f3d0e25dc71fb2a3bd20af0f4b2c3cde9d03a294f06efe9openai-1.40.6.tar.gz"
+    sha256 "2239232bcb7f4bd4ce8e02544b5769618582411cf399816d96686d1b6c1e5c8d"
   end
 
   resource "packaging" do
@@ -272,6 +272,17 @@ class Aider < Formula
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+  end
+
+  resource "pypager" do
+    url "https:files.pythonhosted.orgpackagesa294fb3cf81608d8a5aaf5bbac7e8f331e1ccc4501d7351957b72f0a8eb0d9f5pypager-3.0.1.tar.gz"
+    sha256 "79c1fc8c4f2c9749dd58e5b29bfce48ca864a24898d1a1e0df1e7fe82d86ab44"
+
+    # Fix failure under build isolation: https:github.comprompt-toolkitpypagerpull31
+    patch do
+      url "https:github.comprompt-toolkitpypagercommit13e8c26d978a42154083cc2d846fa7f719a6d1fc.patch?full_index=1"
+      sha256 "ff9a7c85c2fa837d062ef96650ccc01cae8330f3ff0ba90a5487e92f6052aceb"
+    end
   end
 
   resource "pypandoc" do
@@ -330,8 +341,8 @@ class Aider < Formula
   end
 
   resource "sounddevice" do
-    url "https:files.pythonhosted.orgpackages0d885832219fa90595932d5f6d1b5125bfd8a55e95b19ad866e265c9bbb7cde4sounddevice-0.4.7.tar.gz"
-    sha256 "69b386818d50a2d518607d4b973442e8d524760c7cd6c8b8be03d8c98fc4bce7"
+    url "https:files.pythonhosted.orgpackages879262d87d7b53a4e1041f0d9e049e225fce3c7bc266c0162c023feb245b999dsounddevice-0.5.0.tar.gz"
+    sha256 "0de95277654b3d403d9c15ded3c6cedf307e9b27cc9ce7bd995a2891d0c955af"
   end
 
   resource "soundfile" do
@@ -391,8 +402,8 @@ class Aider < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackagesd320b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1zipp-3.19.2.tar.gz"
-    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
+    url "https:files.pythonhosted.orgpackages0eaf9f2de5bd32549a1b705af7a7c054af3878816a1267cb389c03cc4f342a51zipp-3.20.0.tar.gz"
+    sha256 "0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"
   end
 
   def install

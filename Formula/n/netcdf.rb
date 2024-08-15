@@ -62,10 +62,6 @@ class Netcdf < Formula
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
-    if head?
-      assert_match(^\d+(?:\.\d+)+, `.test`)
-    else
-      assert_equal version.to_s, `.test`
-    end
+    assert_equal version.to_s, `.test`
   end
 end

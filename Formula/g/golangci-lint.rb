@@ -2,19 +2,19 @@ class GolangciLint < Formula
   desc "Fast linters runner for Go"
   homepage "https:golangci-lint.run"
   url "https:github.comgolangcigolangci-lint.git",
-        tag:      "v1.60.0",
-        revision: "1147824c61441fb1a928927ca095aa3d0f208459"
+        tag:      "v1.60.1",
+        revision: "3298c104802d118670a487b330ddd3761f7afe20"
   license "GPL-3.0-only"
   head "https:github.comgolangcigolangci-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e716d60952598f87bc739f1c2597f0eb3dff7003ff3c59b2a6a73f5cc8ffdd6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a68a5aa2fbd1dc3a185ee5c3cfbb988c6f87de1db6bb74e40324576c2f1b5a2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1f2caf7177ed9763413f4e9991d573188437eeefaddbac4508251d146b4dd25"
-    sha256 cellar: :any_skip_relocation, sonoma:         "363cb00b3db0a45d15e33cc0cea95319fccd3f7ee4fbdf2cb9aaa8a76313e159"
-    sha256 cellar: :any_skip_relocation, ventura:        "f172508e8bec41da51844d90affd75215835d3e0e8b54d31736305eecbb549e2"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8e598304738f54d76479b4e035f2cbe6d75c1ada38c2b92f78f773c19702e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80f059eb54cc14d5a4052dd7f76077b6bb6523320f9d1d6468df7dd464c13011"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1c947276dfd39ec3d3520b8923a1d02b7d0d88aa38465eee9a0119d2f6422d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "427e5cd55931eab5ab3402793ddcb728647f5bbe1ea24b5fcfec49f47756861c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3443f15cd37f1df30ed820376604fe948f1f6719d8cf32b0ef0f8dbd478b36d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8ffd0f550b010d8fd8d0b1902027f90083d8e9093b76ba0bdaabfff7c5c14f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "445bd96c15418f766812f63934a96b513cba60797e4cbc33807658ca76de0c56"
+    sha256 cellar: :any_skip_relocation, monterey:       "85e7d26050a20993a91a55433dac27789897ddc2375fd4ca95e5c41024b5e410"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98cc56d1f9d57ac035323b5edc5f1a568df748de0afd9349692bdeedba89496b"
   end
 
   depends_on "go"

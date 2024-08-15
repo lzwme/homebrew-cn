@@ -24,6 +24,7 @@ class Podofo < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"
@@ -33,6 +34,7 @@ class Podofo < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   def install
     args = %W[

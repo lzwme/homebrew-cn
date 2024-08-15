@@ -25,16 +25,20 @@ class Libwmf < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "freetype"
   depends_on "gd"
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
+
   def install
-    system "./configure", *std_configure_args,
-                          "--with-png=#{Formula["libpng"].opt_prefix}",
+    system "./configure", "--with-png=#{Formula["libpng"].opt_prefix}",
                           "--with-freetype=#{Formula["freetype"].opt_prefix}",
-                          "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}"
+                          "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}",
+                          *std_configure_args
     system "make"
     ENV.deparallelize # yet another rubbish Makefile
     system "make", "install"

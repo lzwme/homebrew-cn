@@ -32,13 +32,19 @@ class Fox < Formula
   depends_on "libx11"
   depends_on "libxcursor"
   depends_on "libxext"
-  depends_on "libxfixes"
   depends_on "libxft"
-  depends_on "libxi"
   depends_on "libxrandr"
-  depends_on "libxrender"
   depends_on "mesa"
   depends_on "mesa-glu"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libxfixes"
+    depends_on "libxi"
+    depends_on "libxrender"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -49,10 +55,12 @@ class Fox < Formula
   def install
     # Needed for libxft to find ftbuild2.h provided by freetype
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}freetype2"
-    system ".configure", *std_configure_args,
-                          "--enable-release",
+
+    system ".configure", "--enable-release",
                           "--with-x",
-                          "--with-opengl"
+                          "--with-opengl",
+                          *std_configure_args
+
     # Unset LDFLAGS, "-s" causes the linker to crash
     system "make", "install", "LDFLAGS="
     (bin"Adie.stx").unlink

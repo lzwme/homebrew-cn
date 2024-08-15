@@ -16,16 +16,12 @@ class Watchman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6616d07f5a7b2622b3402dacb8eefae4f02d051abad56dbd292c36e8e8b4a7c5"
   end
 
-  # https:github.comfacebookwatchmanissues963
-  pour_bottle? only_if: :default_prefix
-
   depends_on "cmake" => :build
   depends_on "cpptoml" => :build
   depends_on "googletest" => :build
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build
-  depends_on "boost"
   depends_on "edencommon"
   depends_on "fb303"
   depends_on "fbthrift"
@@ -39,17 +35,13 @@ class Watchman < Formula
   depends_on "python@3.12"
 
   on_linux do
+    depends_on "boost"
     depends_on "libunwind"
   end
 
   fails_with gcc: "5"
 
   def install
-    # Fix "Process terminated due to timeout" by allowing a longer timeout.
-    inreplace "CMakeLists.txt",
-              gtest_discover_tests\((.*)\),
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
-
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
     #       RPATHs configured, so will need to be installed and relocated manually

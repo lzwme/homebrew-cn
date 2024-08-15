@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https:grafana.com"
-  url "https:github.comgrafanagrafanaarchiverefstagsv11.1.3.tar.gz"
-  sha256 "a51f68b635436361179366564e9370cd0ae9ddc9f6d53c40194cf7c355fccdaf"
+  url "https:github.comgrafanagrafanaarchiverefstagsv11.1.4.tar.gz"
+  sha256 "6573e70deeeb1de8b90c855c0368cc56118d0350706c67313c54372238b56ea0"
   license "AGPL-3.0-only"
   head "https:github.comgrafanagrafana.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11906175fdaaa21f9ebed4994c5a26382956e2b2cb407a1c0db5306977dc370b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1da1e621332c507dd8ffd51b1eb9aef6277d259c9a4346d56aec6137d1630517"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bfab658ddc4efcba08b449a4b7b2f393f4bd2e41ffd73a77c47c03d5fe2ddc1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a3ec2a38846197a8a75e35cb36adaa8264d5a45812f8e1ffcb67f81297dc9030"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e8597cc02c8e265cc158637daefa4d86a06c7a64cf2067c7156f513bbf94880"
-    sha256 cellar: :any_skip_relocation, monterey:       "57d432d0521b9d0a6c9bf311b0444f3a33246060cb959a1a1361c982f946286e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3b169d5a56a49dfd7089ba0f369a256ad72ab5014b3355b73f031d62a2db514"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "332873b18184ced342369c31dd07727f3ec6fc1299642061e77713dbb7ebfe1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a18a3eba302cc95f5afe3e9bb0492c81f4194b4c8a7ffabbed81d59dce2bd3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "297b2318b5177781fdfc73a5edd58ecaaa7ff9b05634bf0d90aae2a9709454bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a1ac0c97808edc4a12d92e0192bf4f6fb4de649d9ffd6ac96b111a11fc01b677"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d5255b9f03ee2341c266552ccb287ee6a02253ab9934036e5345b79d50e2218"
+    sha256 cellar: :any_skip_relocation, monterey:       "2977e546fdf06ab1ebef9b1bc94d4d643459f38b550ff5dd17d166c125166720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a79b2bef6c8dd7362524b6a6a699053b7d4a9b49c9f26aae3a564c2ddaaf85aa"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https:aptosfoundation.org"
-  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v3.5.1.tar.gz"
-  sha256 "172e9332d240ab20641b8ca20f7bfd2df9350f505355185fd4db9ebb4e7cdd96"
+  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v4.0.0.tar.gz"
+  sha256 "f92824beecfbe17a4255452c58922418edad314fcc89ac00abfa956fa0508c55"
   license "Apache-2.0"
   head "https:github.comaptos-labsaptos-core.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f023f1ce37aabef6226026e8853b2abd64c9e0bdf30498de865c0778762e869b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7b33be900aa7ee1a65d9a623397b82a9d89d08d1c38f155c973a480c670aedb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "14a4dc335ac61f7dddf0eaa0a3b6f2d879105acb15e24c5cad4586f8fbcecec2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fecad063e7ac76641f6e604a6467f177792fa5aeb980936b1de105c09bee449a"
-    sha256 cellar: :any_skip_relocation, ventura:        "386b757a8acdc4ae3f4d6f17a3c797f6d62ca6763025cfbd15fc6943179d35d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "2328a6b883ed4f8b0367066caa8a04c18ccdec493b2cfdfc9c0050f9ae83e866"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc31af4a6ad2695b6a90878047fdfd63cf3ab56b893acd0aeb57130e1813b9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17b9e5f59ba7ac1a9053c9c04006a47aeaef692d7afd5ba18f78238a28063da7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4e855b47c44fca348f8d96b9e87b5847c3bf54f0d2b1f8274f7cb2f8f71da54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5f04601345109165fe47b04437dd947df052552641dae6645dff2360c4de58e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4b205de8e54c342b9292d4c4923284542a66aa4a4106560d39e961835985532"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cb4654d52799572c4539d6569e3f3240833b4c65eb4837ba616642b16c0300a"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e3d572c089f831f86d2b04e83cbb3c5c9ac1848054a0d8b05c6cc6f72676a1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b29ed18d624105d378c20d579fac89030c39b523d33e288e98392c4a9a8407a9"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +31,12 @@ class Aptos < Formula
     depends_on "zip" => :build
     depends_on "openssl@3"
     depends_on "systemd"
+  end
+
+  # rust 1.80.0 build patch, upstream pr ref, https:github.comaptos-labsaptos-corepull14272
+  patch do
+    url "https:github.comaptos-labsaptos-corecommit15ec18e4a2533fc9f3e8d23f5629939a07490c23.patch?full_index=1"
+    sha256 "92384b60959e5c9400542e3215445dc3ae634693e41de9ae8b1907ad7557c5b7"
   end
 
   def install

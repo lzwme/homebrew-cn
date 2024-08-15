@@ -30,6 +30,7 @@ class Ftgl < Formula
   depends_on "freetype"
 
   on_linux do
+    depends_on "mesa"
     depends_on "mesa-glu"
   end
 
@@ -40,10 +41,7 @@ class Ftgl < Formula
 
     # Skip building the example program by failing to find GLUT (MacPorts)
     # by setting --with-glut-inc and --with-glut-lib
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --disable-freetypetest
       --with-glut-inc=/dev/null
       --with-glut-lib=/dev/null
@@ -51,7 +49,7 @@ class Ftgl < Formula
 
     args << "--with-gl-inc=#{Formula["mesa-glu"].opt_include}" if OS.linux?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
 
     system "make", "install"
   end

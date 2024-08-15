@@ -25,9 +25,10 @@ class Mupen64plus < Formula
   depends_on "libpng"
   depends_on "sdl2"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "mesa"
-    depends_on "mesa-glu"
   end
 
   resource "rom" do

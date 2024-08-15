@@ -3,7 +3,7 @@ class Exiftran < Formula
   homepage "https:www.kraxel.orgbloglinuxfbida"
   url "https:www.kraxel.orgreleasesfbidafbida-2.14.tar.gz"
   sha256 "95b7c01556cb6ef9819f358b314ddfeb8a4cbe862b521a3ed62f03d163154438"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 2
 
   livecheck do
@@ -25,6 +25,7 @@ class Exiftran < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "pixman"
@@ -34,11 +35,15 @@ class Exiftran < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "ghostscript"
+    depends_on "giflib"
     depends_on "libdrm"
     depends_on "libepoxy"
     depends_on "libpng"
     depends_on "libtiff"
+    depends_on "libx11"
+    depends_on "libxext"
     depends_on "libxpm"
+    depends_on "libxt"
     depends_on "mesa"
     depends_on "openmotif"
     depends_on "poppler"

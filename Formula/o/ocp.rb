@@ -23,6 +23,7 @@ class Ocp < Formula
 
   depends_on "pkg-config" => :build
   depends_on "xa" => :build
+
   depends_on "ancient"
   depends_on "cjson"
   depends_on "flac"
@@ -35,11 +36,17 @@ class Ocp < Formula
   depends_on "mad"
   depends_on "sdl2"
 
+  uses_from_macos "bzip2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libogg"
+  end
+
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
+    depends_on "alsa-lib"
   end
 
   # pin to 15.0.6 to use precompiled fonts
