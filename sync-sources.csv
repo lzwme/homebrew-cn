@@ -2386,6 +2386,7 @@ Homebrew-homebrew-core/Formula/g/graphqlviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqxl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphviz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/graphviz2drawio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gravity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grayskull.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grc.rb, Homebrew/homebrew-core, 1
@@ -2642,7 +2643,6 @@ Homebrew-homebrew-core/Formula/h/hyperestraier.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hyperfine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperscan.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hyperspec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hypre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hysteria.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyx.rb, Homebrew/homebrew-core, 0
@@ -6671,7 +6671,6 @@ Homebrew-homebrew-core/Formula/v/vmtouch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vncsnapshot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vnstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vnu.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/volatility.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/voldemort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volt.rb, Homebrew/homebrew-core, 1
@@ -6833,7 +6832,6 @@ Homebrew-homebrew-core/Formula/w/wownero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wpebackend-fdo.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wpscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wput.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wrangler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wren-cli.rb, Homebrew/homebrew-core, 1

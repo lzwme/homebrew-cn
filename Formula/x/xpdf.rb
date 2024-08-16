@@ -21,8 +21,10 @@ class Xpdf < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "fontconfig"
   depends_on "freetype"
+  depends_on "libpng"
   depends_on "qt@5"
 
   conflicts_with "pdf2image", "pdftohtml", "poppler",

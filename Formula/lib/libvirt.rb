@@ -22,28 +22,26 @@ class Libvirt < Formula
   end
 
   depends_on "docutils" => :build
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "perl" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "gettext"
   depends_on "glib"
-  depends_on "gnu-sed"
   depends_on "gnutls"
-  depends_on "grep"
   depends_on "libgcrypt"
   depends_on "libiscsi"
   depends_on "libssh2"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
   depends_on "yajl"
 
+  uses_from_macos "perl" => :build
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   on_macos do
-    depends_on "rpcgen" => :build
+    depends_on "gettext"
   end
 
   on_linux do

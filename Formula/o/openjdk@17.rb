@@ -25,10 +25,12 @@ class OpenjdkAT17 < Formula
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
   depends_on xcode: :build
+
   depends_on "giflib"
   depends_on "harfbuzz"
   depends_on "jpeg-turbo"
   depends_on "libpng"
+  depends_on "libxi"
   depends_on "little-cms2"
 
   uses_from_macos "cups"

@@ -1,9 +1,9 @@
 class X8664ElfBinutils < Formula
   desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
-  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.bz2"
+  sha256 "fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class X8664ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "408df853afe97f881f09a6863c9496255e154926fbca7bd7a26a5da99bd9d780"
-    sha256 arm64_ventura:  "769d0166a2d363a9c453b2f0cb5f41045d82b489a1065fd1ec36f070adb466ea"
-    sha256 arm64_monterey: "09970acd117822df6b2f9a252e7408db0b7fffe0374b9f5d2d63ce0a16ce35fd"
-    sha256 sonoma:         "29a61d605995edf6b47b30e8975e9c713a5125bd9dfab6e0ffeb2ed2ece93789"
-    sha256 ventura:        "3a7528efc85034f001b441e7620fee0b9af9e4077c831cd0ec419870c9ba35a4"
-    sha256 monterey:       "4a16dff918cc61b37d8ca956986bab7ff8f75e3b951d579de0e3dbc4d6e72676"
-    sha256 x86_64_linux:   "402b99039776f2d90825e678749c5a0bf2f04386a8457886beafaa2c9c12ce8e"
+    sha256 arm64_sonoma:   "030fa33de78861c8a99f02021777810b7df5d416b498690f8752ca8b52d3539d"
+    sha256 arm64_ventura:  "a0f14364664ffab038923b6ce86e072ddeec0583145744ebfd9d3b9a041be614"
+    sha256 arm64_monterey: "4b13812f6da11cc1a413ba3b9cc8fa9219f85668e144bbb669c69e399d1927e7"
+    sha256 sonoma:         "5fbbb472a6aca42bbab966af688a1bd4c4cc44a3345f0c569b2fdb8bd8dcb708"
+    sha256 ventura:        "a04e4374a04e09f063802e50ab0050b1b3cf271c20e4a538a4d5493a47c6dd91"
+    sha256 monterey:       "3d5f0c56005d2c169f6553fb923d2a1424f8846b20e01ba83d082d317ee501f2"
+    sha256 x86_64_linux:   "2fa3e69fac956787190f45c0117d69804473728fdd1253e2190ca7ddbf372bb2"
   end
 
   depends_on "pkg-config" => :build

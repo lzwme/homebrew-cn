@@ -34,7 +34,10 @@ class BashCompletionAT2 < Formula
 
   def install
     inreplace "bash_completion" do |s|
-      s.gsub! "readlink -f", "readlink" if OS.mac?
+      # `usrbinreadlink -f` exists since macOS 12.3. Older systems
+      # (including earlier Monterey releases) do not support this option.
+      s.gsub! "readlink -f", "readlink" if OS.mac? && MacOS.version <= :monterey
+      # Automatically read Homebrew's existing v1 completions
       s.gsub! "(etcbash_completion.d)", "(#{etc}bash_completion.d)"
     end
 

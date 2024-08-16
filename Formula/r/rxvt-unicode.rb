@@ -23,15 +23,20 @@ class RxvtUnicode < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "libx11"
+  depends_on "libxext"
   depends_on "libxft"
   depends_on "libxmu"
   depends_on "libxrender"
-  depends_on "libxt"
 
   uses_from_macos "perl"
+
+  on_macos do
+    depends_on "libxt"
+  end
 
   resource "libptytty" do
     url "http:dist.schmorp.delibptyttylibptytty-2.0.tar.gz"
@@ -47,11 +52,13 @@ class RxvtUnicode < Formula
 
   def install
     ENV.cxx11
+
     resource("libptytty").stage do
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath), "-DBUILD_SHARED_LIBS=OFF"
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
+
     ENV.prepend_path "PKG_CONFIG_PATH", buildpath"libpkgconfig"
     ENV.append "LDFLAGS", "-L#{buildpath}lib"
 

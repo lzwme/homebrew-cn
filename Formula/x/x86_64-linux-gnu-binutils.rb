@@ -1,9 +1,9 @@
 class X8664LinuxGnuBinutils < Formula
   desc "GNU Binutils for x86_64-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
-  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.bz2"
+  sha256 "fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,11 +11,11 @@ class X8664LinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "fa80a2ab5e34288aff6b158346fba3f6cf4f69fa5b1216b88d316d015c35ebf1"
-    sha256 arm64_ventura: "9a6b3c44d4508df299347cbe271ffa51ca4282d207ad9401ef8efa51fc394b55"
-    sha256 sonoma:        "e4537973ade8a0ecbca8f635c21a990644db79476eb5a63e0d8ecbc838e62356"
-    sha256 ventura:       "b9f47ddfa3606e0cebb4d22278595b739dac8e815494197e998d1934de5c18ed"
-    sha256 x86_64_linux:  "0149367619cc17ea2da3f7a58ee7d180b6798579c49e9769fd5921d277a1f7c5"
+    sha256 arm64_sonoma:  "11bc1793777f244aeb4680ec279759e7b3f50692dde03ce5c1cb4eb6f68dbb1c"
+    sha256 arm64_ventura: "af2e366366b38c9655317cea598c4310210ecd0bc30e821151954abd3be214cf"
+    sha256 sonoma:        "5d3c2fe99b679c66a6b915bedb4188d3e42d9f8b245deec41d848683d924e9ea"
+    sha256 ventura:       "f955128a265368c9bfd3000412193768acff4176444f4042c98507a2d1c4d813"
+    sha256 x86_64_linux:  "d02f2956eb619b9dc0958d8cd443178f2787d2f5e802ff4a1b9f7590ebe821b6"
   end
 
   depends_on "pkg-config" => :build
@@ -32,11 +32,6 @@ class X8664LinuxGnuBinutils < Formula
 
   on_linux do
     keg_only "it conflicts with `binutils`"
-  end
-
-  resource "homebrew-sysroot" do
-    url "https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/2028cdaf24259d23adcff95393b8cc4f0eef714b/debian_bullseye_amd64_sysroot.tar.xz"
-    sha256 "1be60e7c456abc590a613c64fab4eac7632c81ec6f22734a61b53669a4407346"
   end
 
   def install
@@ -66,6 +61,11 @@ class X8664LinuxGnuBinutils < Formula
   end
 
   test do
+    resource "homebrew-sysroot" do
+      url "https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/2028cdaf24259d23adcff95393b8cc4f0eef714b/debian_bullseye_amd64_sysroot.tar.xz"
+      sha256 "1be60e7c456abc590a613c64fab4eac7632c81ec6f22734a61b53669a4407346"
+    end
+
     assert_match "f()", shell_output("#{bin}/x86_64-linux-gnu-c++filt _Z1fv")
     return if OS.linux?
 

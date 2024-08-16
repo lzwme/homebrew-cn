@@ -27,9 +27,12 @@ class Dovecot < Formula
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "linux-pam"
+    depends_on "lz4"
+    depends_on "xz"
     depends_on "zstd"
   end
 

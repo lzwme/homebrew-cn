@@ -1,9 +1,9 @@
 class I686ElfBinutils < Formula
   desc "GNU Binutils for i686-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
-  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.bz2"
+  sha256 "fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class I686ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "804d849a27e5ee2b822f58b5877a6b2529bc9e1292106232e9e8efa2f2231621"
-    sha256 arm64_ventura:  "4ba5070c9e8a3df848ad7e47b8e8451dab3b32394a25d92026386ee715b330b6"
-    sha256 arm64_monterey: "af17c2346c5270ca02124d957e1e0f62e4c7a40669ecc37e12578649b3852352"
-    sha256 sonoma:         "85defe4d17e25e359c03e408ec91ddd512579fe8d41c02c71221381adecfa510"
-    sha256 ventura:        "a5e8ec4c681084eb9b931d87553655ce2673d17adb1846968a32ea17f1609e65"
-    sha256 monterey:       "df47d8f2feef198edfca99bf9477fbe3d0d22019a8a620de050ef0b8f68984d0"
-    sha256 x86_64_linux:   "a52dd1e22aece73ec60f665ee1748ae63b6cb408672646c6ad5268f0260179a4"
+    sha256 arm64_sonoma:   "1d983584854b259dca04c39d6e9c19497c1e3011388a1a5808ef19fa31de8c49"
+    sha256 arm64_ventura:  "204b7b836c8edf80d4f06912f29d05bbdbf4b964d1d66ecc92e042eadab11cbe"
+    sha256 arm64_monterey: "61c7d5bfee87bb42d28b96623be9196faf6733cbcb24de984c5caeb92bd2dbc3"
+    sha256 sonoma:         "c7b7503411278497c68d8d739268c60a98a5d6056344a523f9500cf75c57e182"
+    sha256 ventura:        "12931c2219b2682671aa033e7e72bfefbb765ff215b803671bb65240c88de879"
+    sha256 monterey:       "be793466526402e3adf56767dd8d82a285757a56ae81e0264ba449ac4996279e"
+    sha256 x86_64_linux:   "b56b74e011c71e1c3233ed16f49d07b8c83c9c58ce9e7a977b5197544392b525"
   end
 
   depends_on "pkg-config" => :build

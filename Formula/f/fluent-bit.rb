@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https:github.comfluentfluent-bit"
-  url "https:github.comfluentfluent-bitarchiverefstagsv3.0.7.tar.gz"
-  sha256 "9c9b94bcdcf1cd0a899b24e1d3e18c6269227512661631814c2ac820683e2ec8"
+  url "https:github.comfluentfluent-bitarchiverefstagsv3.1.6.tar.gz"
+  sha256 "717312873d647fd2848f1834edefb8c6767b6e0eb7ae5b9cc11117d81196d4b1"
   license "Apache-2.0"
   head "https:github.comfluentfluent-bit.git", branch: "master"
 
@@ -12,13 +12,13 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "5f70653f3f52eee2e06583ae6c94f1513960a82de425459e1df9dbb5256b4334"
-    sha256                               arm64_ventura:  "8f41814eb28775d6c70d786576a89c897ce552d7cd2eeade5e6f916dde7be7bc"
-    sha256                               arm64_monterey: "cc2b19dd4ba3a5b5039ed520381cd069d6491fc24872b732edae36d21a213045"
-    sha256                               sonoma:         "9c2990b1e4bf9974589cddf265f1048d561516eea8f27c39ef457de110ed775d"
-    sha256                               ventura:        "a8b9692888b1742f9a013ff81d9b1b2efcbfcdd3ed6a18ba27277a6946ee9ae0"
-    sha256                               monterey:       "b60be490d338d5248687ece31ee3e383b4683bdbe61fe631845c895f8f216f63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f150937225161029ed04a6c6490e7c8fbd579a9f856dea784125090c0d001c9a"
+    sha256                               arm64_sonoma:   "24d34e1b7c38ba9e2f11c2e8f94223b7bab2a61c8d193c8f9308bc225ceb5c61"
+    sha256                               arm64_ventura:  "db4029c9359bfbfe95493729cc82e2744952c33b61893bb8ede2beb2de0f87a0"
+    sha256                               arm64_monterey: "1a87811319c1f6cb4593b35d3846771d379cce2c6d0a7433b65e8fcf5855f262"
+    sha256                               sonoma:         "b771b47772b7da5a3217a4c85c5a408ad3132ccb8a6a8eb207012be12145931a"
+    sha256                               ventura:        "6fc404999a3b1cc28353ed423b9feced93b8f7ef989095ee68586cf908eb9e9a"
+    sha256                               monterey:       "0c260fec41163c31e20de3e586dcc35b1c789334fc03abb3b388ac0d23b10379"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3f4fd9b2a1ad2c72b6c36fb3330b7747c4ef753a9b7cb3790a55988861e1393"
   end
 
   depends_on "bison" => :build
@@ -27,12 +27,9 @@ class FluentBit < Formula
   depends_on "pkg-config" => :build
 
   depends_on "libyaml"
+  depends_on "luajit"
   depends_on "openssl@3"
   uses_from_macos "zlib"
-
-  # Avoid conflicts with our `luajit` formula.
-  # We don't need to set LDFLAGS because LuaJIT is statically linked.
-  patch :DATA
 
   def install
     # Prevent fluent-bit to install files into global init system
@@ -40,12 +37,11 @@ class FluentBit < Formula
     inreplace "srcCMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY libsystemdsystem)", "if(False)"
     inreplace "srcCMakeLists.txt", "elseif(IS_DIRECTORY usrshareupstart)", "elif(False)"
 
-    # Per https:luajit.orginstall.html: If MACOSX_DEPLOYMENT_TARGET
-    # is not set then it's forced to 10.4, which breaks compile on Mojave.
-    # fluent-bit builds against a vendored Luajit.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
+    args = std_cmake_args + %w[
+      -DFLB_PREFER_SYSTEM_LIB_LUAJIT=ON
+    ]
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -55,25 +51,3 @@ class FluentBit < Formula
     assert_match "Fluent Bit v#{version}", output
   end
 end
-
-__END__
---- alibluajit-cmakeLuaJIT.cmake
-+++ blibluajit-cmakeLuaJIT.cmake
-@@ -569,13 +569,13 @@ set(luajit_headers
-   ${LJ_DIR}luaconf.h
-   ${LJ_DIR}luajit.h
-   ${LJ_DIR}lualib.h)
--install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}luajit)
-+install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}includeluajit)
- install(TARGETS libluajit
--    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
--    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}lib
-+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}lib)
-
- # Build the luajit binary
--if (LUAJIT_BUILD_EXE)
-+if (FALSE)
-   add_executable(luajit ${LJ_DIR}luajit.c)
-   target_link_libraries(luajit libluajit)
-   if(APPLE AND ${CMAKE_C_COMPILER_ID} STREQUAL "zig")

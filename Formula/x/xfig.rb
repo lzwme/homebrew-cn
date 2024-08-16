@@ -23,6 +23,7 @@ class Xfig < Formula
   end
 
   depends_on "fig2dev"
+  depends_on "fontconfig"
   depends_on "freetype"
   depends_on "ghostscript"
   depends_on "jpeg-turbo"
@@ -31,7 +32,6 @@ class Xfig < Formula
   depends_on "libx11"
   depends_on "libxaw3d"
   depends_on "libxft"
-  depends_on "libxi"
   depends_on "libxpm"
   depends_on "libxt"
 

@@ -3,7 +3,7 @@ class Mg < Formula
   homepage "https:github.comibaramg"
   url "https:github.comibaramgreleasesdownloadmg-7.3mg-7.3.tar.gz"
   sha256 "1fd52feed9a96b93ef16c28ec4ff6cb25af85542ec949867bffaddee203d1e95"
-  license all_of: [:public_domain, "ISC", :cannot_represent]
+  license all_of: [:public_domain, "ISC", "BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause"]
   version_scheme 1
 
   bottle do

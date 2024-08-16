@@ -1,8 +1,8 @@
 class Exercism < Formula
   desc "Command-line tool to interact with exercism.io"
   homepage "https:exercism.iocli"
-  url "https:github.comexercismcliarchiverefstagsv3.4.0.tar.gz"
-  sha256 "e25f85e80c517551a6cd55a5289af3caf2819356601ef907339f82aa8145f004"
+  url "https:github.comexercismcliarchiverefstagsv3.4.1.tar.gz"
+  sha256 "da68ad169e23d48e2372b73891752d1cf1bf333fd82c9a4206abd05374233999"
   license "MIT"
   head "https:github.comexercismcli.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Exercism < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0889f27ef41b7426ff1e15359160c70c7be0f39e423dcf25cd12a9589675be08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27b8fd95991f2477614d3ed65f1e1b791f801d46400cadb69b1c482bb634f6a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b484c7de5f941af470dbbdc141647c4d143f395ddae3e71107d2894201da0995"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ec25271cc46405436941b94187119f7715989c2ba373a24e1b6733bbe575126"
-    sha256 cellar: :any_skip_relocation, ventura:        "3640b3df7dee3b70510bb742377a5018fe2c1dc967da365f674bac678fcb8c16"
-    sha256 cellar: :any_skip_relocation, monterey:       "a82275f8d9c81fb99fa40df3753bb08d8afb3ea35b03f2cf6c1a2bcd1c55f3ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0acb3e9e52469e86aee23bcefd7be430d144336476343de6abb14d095a51e22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccb7d247a8d421807bb29589db406f363a23c101ec324b5897da9ec4910091eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea6ffb3faba0b8b33be67efb0c4ecaaeadad429e37925972d764477c007b884"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f03348fadb9b4aa61f315287d52e185d14a01ea98be06c2e3553c8f1aa512d1b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f821fe1e57d7b7847cff19c30916c91bbe560d000c982bb9ae21493132daff96"
+    sha256 cellar: :any_skip_relocation, ventura:        "f099a8d2590cbea5f0d6cf374e8719ab9053d3d2bf945f9d5887860dec995dca"
+    sha256 cellar: :any_skip_relocation, monterey:       "a50a88d8ab42c4fa8c36455c7fa56110003e12eae40b0ae058e3b1d17b28dda2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aaec6ea8f5da36276ed0dd460117e6e4924e93e134558028f49db9a3fc529f7"
   end
 
   depends_on "go" => :build

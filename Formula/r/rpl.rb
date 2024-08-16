@@ -3,18 +3,18 @@ class Rpl < Formula
 
   desc "Text replacement utility"
   homepage "https:github.comrrthomasrpl"
-  url "https:files.pythonhosted.orgpackages9f1d3ee12488a69bfc3857636e262247f4b1d28eb149431e27fff5b0af0266d4rpl-1.15.6.tar.gz"
-  sha256 "e2f52715fc623efca0f60b708901379c76419ea06d055c21337290ce48f3c3f2"
+  url "https:files.pythonhosted.orgpackages40ad840b679493c49e0c4368662e2ddd6296f9bac41e8ee992e0d43d144b4f35rpl-1.15.7.tar.gz"
+  sha256 "5eadc62dad539d2e27a1b3c71c2905504a3dbe02380c6c98dbf8505ad9303510"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "083e8e4e93cf1cdc2d27927a5fcc9d940cf5836a627a56eb7909c53c2aec3cbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "304dcb7bae1af1dd89e70a7f251b085e8cbdbdf854a380085a7455cf2a6cbd02"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0eafe2b59387da30fbb13720583057ca3918c640a65e29c1122e67a9ea88bbcc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e88507cb5ba53208592f4af66acfd4ea87e12fe96518022fd62e48af4b6f158"
-    sha256 cellar: :any_skip_relocation, ventura:        "dae63f9ab024feeff2322915a4d6f72305c6dd043f67241fc8f53fe9d7a1d107"
-    sha256 cellar: :any_skip_relocation, monterey:       "7104efc1ff0ff1ae068c4d7909d507e10f57bb455ca06c5162af566929eccb4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c195d7aafecce96a9a509ef41ff8647cff2fc38d0886814d80ec6e92a4be02a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59015416ba8ad9993261a50d78c24c60aa606b0b39f4777521f55d834c5e5cf4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dce5e52f2472bacc14700c111ba5940ac0716123707dcb938f379a8a43df475a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "397ee7b7b672f1e0d3debe4c36c94bea1185762403503253426743483974029c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c5f5b86c9dd8bd32b98488eb679afaad4a06d3f53abcfbc7f0b4422250de3b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "24545f8ce43bfabe8599c7c2df6c488954786b32a3e692aa345889c6afbd7942"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0ec7966aabe42f8bcff6e4e6263f9f4d028161bcfce30bcdcb39299d97281c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7eb5d986bc69e230e3ba7d3da3f029f624992b96948a82c8b7b976ee441bf9e"
   end
 
   depends_on "python@3.12"
@@ -30,8 +30,8 @@ class Rpl < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
-    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+    url "https:files.pythonhosted.orgpackages3f5164256d0dc72816a4fe3779449627c69ec8fee5a5625fd60ba048f53b3478regex-2024.7.24.tar.gz"
+    sha256 "9cfd009eed1a46b27c14039ad5bbc5e71b6367c5b2e6d5f5da0ea91600817506"
   end
 
   def install

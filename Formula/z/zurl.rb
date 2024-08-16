@@ -8,12 +8,13 @@ class Zurl < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e12d1eeabfc9d23cc6a0ef3058f46ae4102fd7df0d0fb7698aa088509aeacc61"
-    sha256 cellar: :any,                 arm64_monterey: "1d0ffa790ce260a143e2e128320ce7855dc4d7876daadd5739fe8c7a1ee43845"
-    sha256 cellar: :any,                 sonoma:         "2e6ac2a0fc30fc02b75d3220348ca9c15267d58de252a01b7f1c6484deb9cfe4"
-    sha256 cellar: :any,                 ventura:        "a692e80b53a7275e0ab4f4dff81f0dc5737a4d2fa350fa4b9d6aff76d887d77f"
-    sha256 cellar: :any,                 monterey:       "40652b39c795d9157fcd95c097791723af7ec011ad65ad959d07242fc6ed8143"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62fc5497cd9456a5d5639870392b048f04d987f535ee167140950610ecb7a303"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "70ab20c9abacad98555e412aa8b942d478965428f41f1f28a4a90b41012e3753"
+    sha256 cellar: :any,                 arm64_monterey: "5a7f5071e096c8dead6a23493df5fe36a6e7e1b7dd6417c6b41029dd48f5517c"
+    sha256 cellar: :any,                 sonoma:         "d6974d31c07fce5247d6681c9737d60c00a8288155d1f15494f6581437f346ca"
+    sha256 cellar: :any,                 ventura:        "a0df5794c3daba640e7081980d9bfac9c0c14cd3304320ab94a6441a6c6d4fb3"
+    sha256 cellar: :any,                 monterey:       "99a6f58fcd6e527e33917dffa2f9eabf009db7a1fc0685c31d8d59181a79dbe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e1fcebfc7d0dc691d59d329e077d4246d425ea597ada56e0cb603e40232dc34"
   end
 
   depends_on "pkg-config" => :build

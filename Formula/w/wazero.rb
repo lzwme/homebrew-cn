@@ -1,8 +1,8 @@
 class Wazero < Formula
   desc "Zero dependency WebAssembly runtime"
   homepage "https:wazero.io"
-  url "https:github.comtetratelabswazeroarchiverefstagsv1.7.3.tar.gz"
-  sha256 "abc19b77acb6eec6a4abb33366a6b4be1ccf987496f424c64c41d90b016c4e51"
+  url "https:github.comtetratelabswazeroarchiverefstagsv1.8.0.tar.gz"
+  sha256 "218f6a72a9c78df54cfe44b666b97192e2139cf017a235029ca7babc7f4ba9ba"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Wazero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a27d2d462c556523f0d6f471a88515140040ba687e9d5a5028715f3729e12117"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d91a137ff4179e47f5c804a395bc9b5ae6a4794249adfdab08348ffd73c7f447"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb0381b7ba883a24a7aa869f208e113fefb848dba22c9fa6ad72a6b48fcce0cc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "32d43543fb3920880eb9191433440583d65700c655d8108e19054ce319cf8a60"
-    sha256 cellar: :any_skip_relocation, ventura:        "0645ca371ba79f1cace6b3e469dcb33815ddcb07be358f34cc466515b45fbccc"
-    sha256 cellar: :any_skip_relocation, monterey:       "932b3ec2d41b437892679c789b1a0524e24d8029829b533a8170b1138c8905b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55903a92bbbdaf6eb3ef84b02a61971f819d1c39f9711125fe86bb83aa8c563f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6c11561e03656912639be755a9c0008037a48077a8a8fe9302f2dbd50976591"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4962f4cb3e2c9a1eee0efad83e9a326e11f64cd554ee776853091bd6f8d70334"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27dddedea2d0c2e10926bf699683e2b6d22d7cee3ba395bb6efb605adc46c3e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f635fe5eaff6f12c35b7ffff5614f6636ef94e6bcc8d5f97d4086a9b95b8f523"
+    sha256 cellar: :any_skip_relocation, ventura:        "190346d9d24b45e8859f52226379850c39e42edf1822ed3df5b1acf8aeb59db4"
+    sha256 cellar: :any_skip_relocation, monterey:       "64278a390d773979c6cbd63a72bbd0085c46b150504b06a364d2521e6ce3299d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f947dd8cb421c4112bc260080f3e221bc99c639162975b39d09831a625c4b7d4"
   end
 
   depends_on "go" => :build

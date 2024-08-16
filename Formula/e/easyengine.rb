@@ -1,18 +1,18 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
   homepage "https:easyengine.io"
-  url "https:github.comEasyEngineeasyenginereleasesdownloadv4.7.2easyengine.phar"
-  sha256 "2e09ea97f569395e919f72e6dd6d4fa6df778b840fb4702e656bf06a97a8308e"
+  url "https:github.comEasyEngineeasyenginereleasesdownloadv4.7.3easyengine.phar"
+  sha256 "eb26a50b767a184c2017e3f4a87c145ed82a9299b1adffcdbf7c24ac5a488622"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "84949fe105ac220fba6490780a2b16d1e3e74a2357ba29ffd7e7f5a9ac67ff51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84949fe105ac220fba6490780a2b16d1e3e74a2357ba29ffd7e7f5a9ac67ff51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84949fe105ac220fba6490780a2b16d1e3e74a2357ba29ffd7e7f5a9ac67ff51"
-    sha256 cellar: :any_skip_relocation, sonoma:         "88e66933fb668e5e1d0ef9458f4f705a65311fa1d47c84e8ce1b204be48dc60d"
-    sha256 cellar: :any_skip_relocation, ventura:        "88e66933fb668e5e1d0ef9458f4f705a65311fa1d47c84e8ce1b204be48dc60d"
-    sha256 cellar: :any_skip_relocation, monterey:       "88e66933fb668e5e1d0ef9458f4f705a65311fa1d47c84e8ce1b204be48dc60d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db4e86b2cf2e65481c9044b957b11f8dffbf22732f607baf86447fb61fe6ddd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e81967af526b1fa9be310f988a0eda4dc986edc67a3012f627024ea12f12b04c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e81967af526b1fa9be310f988a0eda4dc986edc67a3012f627024ea12f12b04c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e81967af526b1fa9be310f988a0eda4dc986edc67a3012f627024ea12f12b04c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a937ff3388e011b9411df140e2fc7996ee16ee3fc3b4ea91a607f3a1eedc7938"
+    sha256 cellar: :any_skip_relocation, ventura:        "a937ff3388e011b9411df140e2fc7996ee16ee3fc3b4ea91a607f3a1eedc7938"
+    sha256 cellar: :any_skip_relocation, monterey:       "a937ff3388e011b9411df140e2fc7996ee16ee3fc3b4ea91a607f3a1eedc7938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33d2c9973a3bc5d75448157c5e9e78f45a7748cbcff15c391e963e216d13f2d7"
   end
 
   depends_on "dnsmasq"

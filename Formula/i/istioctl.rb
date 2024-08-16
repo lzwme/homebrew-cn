@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https:istio.io"
-  url "https:github.comistioistioarchiverefstags1.22.3.tar.gz"
-  sha256 "d0755c3204c9cd8e91b1d1d6fedc2b9489ec0ca6b8f2f23c5c44e39a59336566"
+  url "https:github.comistioistioarchiverefstags1.23.0.tar.gz"
+  sha256 "e29fd51c035d489b0e8b74d34f0a33014f1e16ac98077d866d09fe307457213b"
   license "Apache-2.0"
   head "https:github.comistioistio.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "746868673f19abff0f3116175f5c5cb706bf7653f599da32c3e2ad5c9377c29d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efd7e5307612a9459ba9fad213c3a28e1cc9f0a3e07d62d91fc6f1ea3d802f3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd766cbf6c948e4dfb776d614f93b692fe5cf88c7aa73bb3f05000137ef30447"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ac963bef2b3b6bd1f34c2295257dc2e2a2d38fb3e03e3bf75b2a1b54ff8ceb22"
-    sha256 cellar: :any_skip_relocation, ventura:        "0214014cad7108a11db1423fba387ddddbef781d4639fc18c07f37dc6a30dab7"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d86009d798beb16bb9dcd27c0441d87a321625e7a7043bc22462b7aa4b65c66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae8a084fa4c2c45a73a2208022cfe45b4fe00f502d22d2c7514cebce6a9a429f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "597550de23075b6c6d5bd761463901fb2a0082cbad036aa6d4bda1b9438a4bb3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1482b0bbedef2b5ab3b2b7e7dc489de56933ff0d02da57ecd2b4ee019c13b6c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2b20320f2c5de3aa1573fab236a79aaa451314b92e7d67659fe361f24401db1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "90afdcfcbdb14799e60058649ebaebb94fea8cf9caf09aa198570e0b7cf873ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "07e4438c6a7fe04349eb90f3f3c9411f473f2d643bf8f52c1991dfe6f6448f5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "a908c065ea37a577690c6c91f57456b9a82764b0f22b890acfa28796aa398849"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cab719dda903558daeb5d48eb18a3b25069532f53144edf4a37b3853aadbe0ca"
   end
 
   depends_on "go" => :build
@@ -40,6 +40,6 @@ class Istioctl < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}istioctl version --remote=false").strip
+    assert_equal "client version: #{version}", shell_output("#{bin}istioctl version --remote=false").strip
   end
 end

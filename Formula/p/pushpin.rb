@@ -1,26 +1,33 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
   homepage "https:pushpin.org"
-  url "https:github.comfastlypushpinreleasesdownloadv1.39.1pushpin-1.39.1.tar.bz2"
-  sha256 "a78d8088ed49a0b07b665148e6bced1581c32f490452c8043f54bbe4a55c1e14"
+  url "https:github.comfastlypushpinreleasesdownloadv1.40.1pushpin-1.40.1.tar.bz2"
+  sha256 "64b6486160ecffdac9d6452463e980433800858cc0877c40736985bf67634044"
   license "Apache-2.0"
   head "https:github.comfastlypushpin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "fdad7253f708ceb44826dfc9b906f56d46de3ac57fc1e04ef7b3c80392e64366"
-    sha256 cellar: :any,                 ventura:      "e46403df994c44c67870959789bc73166e287290cb7cc377078ec7f8fec3c6fc"
-    sha256 cellar: :any,                 monterey:     "bc5bd12f2a558f41a7335fc9dec4747d06e198840786cab9621526f279e319ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ba7ebf19e770baa018030f672e84e068417f907d7f977d109c3f39bdb1430fe"
+    sha256 cellar: :any,                 arm64_ventura:  "e5a25a6a9f938389eb5c79fd9cfb34e2c32b21d47b9ba3298a9663cd2d226658"
+    sha256 cellar: :any,                 arm64_monterey: "db4f9f00d9f1c8a25f84d97cb4ff4fc76e5c52cb4066840d5dc8c84f6417436b"
+    sha256 cellar: :any,                 sonoma:         "91b627cae4341f2a020902c8e4b199bb7f0df6cc65be8d6693c78e9df80b6e04"
+    sha256 cellar: :any,                 ventura:        "be07922ebf6f03ef1e54174b3ccfc192d3e9a4b043099f2f5eb7b484eaf3738e"
+    sha256 cellar: :any,                 monterey:       "d76c6ab9088e1f5579ddcbf2b623bf986407b17b8776f82e8765e5b2d36f55eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3a98c98a38e3d4d7e1b65f4e5a080f42293ac2bb28522c06e52dc1bf46f7a00"
   end
 
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "mongrel2"
+
+  depends_on "openssl@3"
   depends_on "python@3.12"
   depends_on "qt"
   depends_on "zeromq"
   depends_on "zurl"
+
+  on_intel do
+    depends_on "mongrel2"
+  end
 
   fails_with gcc: "5"
 
@@ -61,6 +68,7 @@ class Pushpin < Formula
 
     runfile.write <<~EOS
       import threading
+      import time
       from http.server import BaseHTTPRequestHandler, HTTPServer
       from urllib.request import urlopen
       class TestHandler(BaseHTTPRequestHandler):
@@ -86,9 +94,19 @@ class Pushpin < Formula
       server_thread.start()
       c.wait()
       c.release()
-      with urlopen('http:localhost:7999test') as f:
-        body = f.read()
-        assert(body == b'test response\\n')
+      tries = 0
+      while True:
+        try:
+          with urlopen('http:localhost:7999test') as f:
+            body = f.read()
+            assert(body == b'test response\\n')
+          break
+        except Exception:
+          # pushpin may not be listening yet. try again soon
+          tries += 1
+          if tries >= 10:
+            raise Exception(f'test client giving up after {tries} tries')
+          time.sleep(1)
     EOS
 
     ENV["LC_ALL"] = "en_US.UTF-8"
@@ -99,7 +117,6 @@ class Pushpin < Formula
     end
 
     begin
-      sleep 3 # make sure pushpin processes have started
       system Formula["python@3.12"].opt_bin"python3.12", runfile
     ensure
       Process.kill("TERM", pid)

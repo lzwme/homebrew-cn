@@ -17,6 +17,7 @@ class ClawsMail < Formula
     sha256 sonoma:         "1819b7c665b74c617018dcadd6b479d19db69ed4678683eb866fef502b0b1899"
     sha256 ventura:        "e916c03bc2f8b9a17237783044ae9c13fb039bbe06a0cb10b00e365c70be3472"
     sha256 monterey:       "9a22338fd482708205faeecd789eddd4b8d692f0dea74aad135d595e5ab3b86a"
+    sha256 x86_64_linux:   "d853654004fa0fbb3f57ba98d2ec1d715223027ff6e55452a54c4d369940a060"
   end
 
   depends_on "pkg-config" => :build

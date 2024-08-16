@@ -17,15 +17,33 @@ class Cgrep < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.4" => :build
+  depends_on "ghc" => :build
   depends_on "pkg-config" => :build
   depends_on "pcre"
 
   conflicts_with "aerleon", because: "both install `cgrep` binaries"
 
+  resource "rawfilepath" do
+    on_macos do
+      url "https:hackage.haskell.orgpackagerawfilepath-1.1.1rawfilepath-1.1.1.tar.gz"
+      sha256 "43f879da83b7b07c30e76a3c31d5362b7b6bb8e235c2698872b92b9fcce3bf69"
+    end
+  end
+
   def install
+    # Work around "error: call to undeclared function 'execvpe'" by imitating part of removed
+    # hack in https:github.comhaskellunixcommitb8eb2486b15d564e73ef9307e175ac24a186acd2
+    # Issue ref: https:github.comxtendo-orgrawfilepathissues13
+    if OS.mac?
+      (buildpath"cabal.project.local").write "packages: . rawfilepath"
+      (buildpath"rawfilepath").install resource("rawfilepath")
+      inreplace "rawfilepathcbitsrunProcess.c", " execvpe(", " __hsunix_execvpe("
+    end
+    # Help resolver pick package versions compatible with newer GHC
+    constraints = ["--constraint=async>=2"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *constraints, *std_cabal_v2_args
   end
 
   test do

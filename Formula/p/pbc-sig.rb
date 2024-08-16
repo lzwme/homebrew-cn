@@ -3,7 +3,7 @@ class PbcSig < Formula
   homepage "https:crypto.stanford.edupbcsig"
   url "https:crypto.stanford.edupbcsigfilespbc_sig-0.0.8.tar.gz"
   sha256 "7a343bf342e709ea41beb7090c78078a9e57b833454c695f7bcad2475de9c4bb"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   livecheck do
     url "https:crypto.stanford.edupbcsigdownload.html"
@@ -24,6 +24,7 @@ class PbcSig < Formula
     sha256 cellar: :any, high_sierra:    "79c31a3f1bcc2429648a2258974ccb1185cfe244d4fcbbfa2840c7393e7e058a"
   end
 
+  depends_on "gmp"
   depends_on "pbc"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -39,9 +40,13 @@ class PbcSig < Formula
     # Disable -fnested-functions CFLAG on ARM, which will cause it to fail with:
     # incompatible redeclaration of library function 'pow'
     # Reported upstream here: https:groups.google.comgpbc-develcWXwVWKoouj0.
-    inreplace "configure", "-fnested-functions", "" if Hardware::CPU.arm?
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    inreplace "configure", "-fnested-functions", "" if OS.mac?
+
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

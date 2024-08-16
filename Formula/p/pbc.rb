@@ -1,10 +1,18 @@
 class Pbc < Formula
   desc "Pairing-based cryptography"
   homepage "https:crypto.stanford.edupbc"
-  url "https:crypto.stanford.edupbcfilespbc-0.5.14.tar.gz"
-  sha256 "772527404117587560080241cedaf441e5cac3269009cdde4c588a1dce4c23d2"
-  license "LGPL-3.0"
-  head "https:repo.or.czpbc.git", branch: "master"
+  license "LGPL-3.0-only"
+
+  stable do
+    url "https:crypto.stanford.edupbcfilespbc-0.5.14.tar.gz"
+    sha256 "772527404117587560080241cedaf441e5cac3269009cdde4c588a1dce4c23d2"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+    end
+  end
 
   livecheck do
     url "https:crypto.stanford.edupbcdownload.html"
@@ -26,17 +34,22 @@ class Pbc < Formula
     sha256 cellar: :any, high_sierra:    "adc712fd4cc68990b669922be5b8ab15e4d499176c09facb5b129c6d7c847262"
   end
 
-  depends_on "gmp"
+  head do
+    url "https:repo.or.czpbc.git", branch: "master"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
+  depends_on "gmp"
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
+
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".setup" if build.head?
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
@@ -65,10 +78,10 @@ class Pbc < Formula
         element_pow_zn(gt2, gt1, a);  gt2 = gt1^a = e(g1, g2)^a
         element_pairing(gt3, g1a, g2);  gt3 = e(g1a, g2) = e(g1^a, g2)
         assert(element_cmp(gt2, gt3) == 0);  assert gt2 == gt3
-        pairing_clear(pairing);
         element_clear(g1); element_clear(g2); element_clear(gt1);
         element_clear(gt2); element_clear(gt3); element_clear(a);
         element_clear(g1a);
+        pairing_clear(pairing);
         return 0;
       }
     EOS

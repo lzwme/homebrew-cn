@@ -27,7 +27,13 @@ class Plplot < Formula
   depends_on "cairo"
   depends_on "freetype"
   depends_on "gcc" # for gfortran
+  depends_on "glib"
   depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   def install
     args = std_cmake_args + %w[
