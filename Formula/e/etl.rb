@@ -1,9 +1,9 @@
 class Etl < Formula
   desc "Extensible Template Library"
   homepage "https:synfig.org"
-  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.1ETL-1.5.1.tar.gz"
-  mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.1ETL-1.5.1.tar.gz"
-  sha256 "125c04f1892f285febc2f9cc06f932f7708e3c9f94c3a3004cd1803197197b4a"
+  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.2ETL-1.5.2.tar.gz"
+  mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.2ETL-1.5.2.tar.gz"
+  sha256 "98d428d4a2b3e3f17469d3da35d1f9f488c57cedbe6a934fee5c684c0ff4030f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,17 +12,17 @@ class Etl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "bb6edd499e2137dd8d238351cbf327885a99da4470c5d66c81ba670ac8b660e9"
+    sha256 cellar: :any_skip_relocation, all: "0c052b60f8a2e21a109351218fa2d1402f6bf28c66e1695f3aba77a26dc959b2"
   end
 
   depends_on "pkg-config" => :build
   depends_on "glibmm@2.66"
 
+  # upstream bug report, https:github.comsynfigsynfigissues3371
+  patch :DATA
+
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
@@ -43,3 +43,15 @@ class Etl < Formula
     system ".test"
   end
 end
+
+__END__
+diff --git aconfiginstall-sh bconfiginstall-sh
+index e046efd..ec298b5 100755
+--- aconfiginstall-sh
++++ bconfiginstall-sh
+@@ -1,4 +1,4 @@
+-#!usrbinsh
++#!binsh
+ # install - install a program, script, or datafile
+
+ scriptversion=2020-11-14.01; # UTC

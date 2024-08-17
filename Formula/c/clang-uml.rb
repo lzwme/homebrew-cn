@@ -1,20 +1,19 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https:github.combkryzaclang-uml"
-  url "https:github.combkryzaclang-umlarchiverefstags0.5.3.tar.gz"
-  sha256 "e830363ec510f14cc738c6509107b3f52bc55ececc2e27c068cadb093604e943"
+  url "https:github.combkryzaclang-umlarchiverefstags0.5.4.tar.gz"
+  sha256 "445ae69e9ef7dcc50d0352dcd79d8c55994a7bebd84684f95405fd81168338c4"
   license "Apache-2.0"
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ae11b22d67d7ea38967de689b7257574138dfae301cfb3aef21358bce38f4044"
-    sha256 cellar: :any,                 arm64_ventura:  "711a1c13d68ef7b5e8853ffa5732566df3e62d88759a2dcbd61b60a136bb068f"
-    sha256 cellar: :any,                 arm64_monterey: "f7bf5af198bbe107ab545e16d79bbb280363db0addd85409e21065757e03918b"
-    sha256 cellar: :any,                 sonoma:         "8ef84c0c0ff33aa76f7a777776d17cf13eb8e3ba7af2bc2ef323468e2634dbf0"
-    sha256 cellar: :any,                 ventura:        "dabc45f366e1d0d8d8b0cec7475fea52e2f0422844c3547065033b34b0007616"
-    sha256 cellar: :any,                 monterey:       "da1344a9733f0bf84eef780601019bd45e0799adf5713e097441cf72823306cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a75868a2b3fd4e753c13bbf417b318356915f75072d6f8f6097512bef0de1a4c"
+    sha256 cellar: :any,                 arm64_sonoma:   "ca2ac85a447a17f124d9af35041e8135c9accf744ea4fd20f695706f8679104a"
+    sha256 cellar: :any,                 arm64_ventura:  "2a883f3fde53ff4c1467348172a79dae3ee2f924006d93164af879ccb544c445"
+    sha256 cellar: :any,                 arm64_monterey: "783a0b9f50a1c5b064e1913b4d1a4910e4c4ec4a54ed1efe28ac437a00824fd0"
+    sha256 cellar: :any,                 sonoma:         "200736ce230a15a5af25d76b07efff3fe91d14077756b76be8ce401a698998ad"
+    sha256 cellar: :any,                 ventura:        "04014ddaf6aec03abf7611453987ba21c734b5c134d51b08a75b612a03fa44ec"
+    sha256 cellar: :any,                 monterey:       "33a5a27ed337b5d8f7c8ed1f31c4b95048aa666ab4ee0453bf93bbb8a15d7571"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f3a9baf770cdd7cec9ae43c83c558b4cf9cd49621047bbcd9e8fec5ecc42126"
   end
 
   depends_on "cmake" => [:build, :test]

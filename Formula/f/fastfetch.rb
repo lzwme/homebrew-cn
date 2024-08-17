@@ -12,13 +12,14 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "be07e3d2a9979d6876d7e7dafd3336d1bee59fc26f2cdc92c3a9aff21782b7f7"
-    sha256 arm64_ventura:  "04cf6ea48cf5b8ce750f8e3fdb86a7da9255286e9bfd8144cd901159af2cf12f"
-    sha256 arm64_monterey: "187da3dd17680f41d1ae9c1d7b21fb764aae4012efe38b230b27818da06eedb9"
-    sha256 sonoma:         "eafafad03f21b7100017cd46a1a7df9c9d461dba797ad7993c1960bc1edac3ee"
-    sha256 ventura:        "d9610973a172925a3df0da3d4acdaa6fe0dfb4eda0411736b4ea5f3bf504d9b3"
-    sha256 monterey:       "51dfb5bbeca055c49617737ee9d6d65c6aa997fa3644d4f5b9aae4f20e571eac"
-    sha256 x86_64_linux:   "4927ac3162c9e38d8119c5cb4f7cd8c2518c65a5777c6e101efbce6814e22054"
+    rebuild 1
+    sha256 arm64_sonoma:   "15fc995728c023c5288544b50003dc3b2953db27e25da8df04032e259a821e43"
+    sha256 arm64_ventura:  "b76af61f85ec1c7a3370f3b6a792b46a2c5501eb56cc1334e16d440768e31533"
+    sha256 arm64_monterey: "236d9573990aa3f46cf396a6963a535309f4af743649fb573f36efc6a8840ef5"
+    sha256 sonoma:         "b641531e953f6614a241087b9fbe08faed572271d0bf4cc794cce18566edd800"
+    sha256 ventura:        "63a4715ba2fc656a0cf40c7a4e24d0ae15f7a2640e190b98b181b61b1d39b2f3"
+    sha256 monterey:       "4adf09dd2940ab9f45251e56ddf16da63ca79ebbea4fbdf76bc195a120e8faa6"
+    sha256 x86_64_linux:   "dcdf1470881ed9f621ee19ae249397783e33c349bd3d9bf686304d3c084316c4"
   end
 
   depends_on "chafa" => :build
@@ -35,6 +36,7 @@ class Fastfetch < Formula
   on_linux do
     depends_on "dbus" => :build
     depends_on "ddcutil" => :build
+    depends_on "elfutils" => :build
     depends_on "libdrm" => :build
     depends_on "libx11" => :build
     depends_on "libxcb" => :build
@@ -42,7 +44,6 @@ class Fastfetch < Formula
     depends_on "linux-headers@5.15" => :build
     depends_on "mesa" => :build
     depends_on "opencl-icd-loader" => :build
-    depends_on "pciutils" => :build
     depends_on "pulseaudio" => :build
     depends_on "rpm" => :build
     depends_on "wayland" => :build

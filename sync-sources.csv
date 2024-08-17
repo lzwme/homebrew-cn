@@ -1263,6 +1263,7 @@ Homebrew-homebrew-core/Formula/d/deno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/denominator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/density.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dep-tree.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dependabot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dependency-check.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deployer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/depqbf.rb, Homebrew/homebrew-core, 1
@@ -2271,6 +2272,7 @@ Homebrew-homebrew-core/Formula/g/go@1.18.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.19.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.20.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.21.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/go@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goaccess.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gobackup.rb, Homebrew/homebrew-core, 1
@@ -3904,16 +3906,16 @@ Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/m/mariadb-connector-odbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.10.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 1
@@ -10878,6 +10880,7 @@ Homebrew-homebrew-cask/Casks/g/geany.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gearboy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gearsystem.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/geburtstagschecker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/geekbench-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geekbench-ml.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geekbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geektool.rb, Homebrew/homebrew-cask, 0

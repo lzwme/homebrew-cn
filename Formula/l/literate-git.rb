@@ -3,22 +3,21 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https:github.combennorthliterate-git"
-  # TODO: migrate to `libgit2` after https:github.combennorthliterate-gitissues11
-  url "https:files.pythonhosted.orgpackages7febb9798ba7c4e818b26b7214dff2bd43d4ec58c8dab956e5d71e9b5549b099literategit-0.4.8.tar.gz"
-  sha256 "4dbbaf08a6db02d8a1076e3ef54ea046bd297b47abadd06c35812a4ca2aff8a1"
+  url "https:files.pythonhosted.orgpackages7bcc1a6c994c90fa34cfa8e90e017c80f838b149fd0262daa24cdb930c091b48literategit-0.5.0.tar.gz"
+  sha256 "88f9e95749d427c98a397a9c38a845d9760cf3451424441bc217c53c1ec835bd"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1722d6de47dcc48b4b8a8ccb761322e77db27ba1beb8f296c20fdcbe7dba2f9c"
-    sha256 cellar: :any,                 arm64_ventura:  "8e8a91a76d187d0296c05f5e5adabe92420dc3716d2b9fcb4f9137cec806b68a"
-    sha256 cellar: :any,                 arm64_monterey: "64c7dfbc25daf870feb1985800a848c0eb159602c16da39a3659863d2b67dcfa"
-    sha256 cellar: :any,                 sonoma:         "6f4892b45f55314d8df0ff6315f7cb9ca646dfe312a0b010e1b571f1c2201dd3"
-    sha256 cellar: :any,                 ventura:        "ba4895c0f38a653533b55987831c316447806ac3a384870ee607879d3f4fd57c"
-    sha256 cellar: :any,                 monterey:       "38e490a8c38bd6c7dec3a10cb6dd597642b70ef415a7d98c540c1fcc3fecc91e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b12c28303e4b8278ebd3be782886a94b57afca2873df274a8a4402c4acb56bd8"
+    sha256 cellar: :any,                 arm64_sonoma:   "b0a3f5a47383da7bec77d1b5b767fc1a345926b490b347ea650c082e87aa4797"
+    sha256 cellar: :any,                 arm64_ventura:  "49ae359bfc9d5d3742e637bc5189bf67e2fa43741b553fa89dc6b35973f5cc52"
+    sha256 cellar: :any,                 arm64_monterey: "8fdbe2da2f31c81d2c47db219d3f0d92f7e4f1896c3d8a25c6219b05b52aae1d"
+    sha256 cellar: :any,                 sonoma:         "3c16c62933a94a0528218288753fdd1c170637a09ff2bc7fedd9c92f41d2559c"
+    sha256 cellar: :any,                 ventura:        "b937c36af05b123ca4eea2fbf567aab095831e9ae1f28e2ec8d7319637f249d2"
+    sha256 cellar: :any,                 monterey:       "9dc8482f8220023295f0da1171a0678fc8e1b193d5a3a4ca208c33ba3b587ba4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15d36127509cce2264db73fc650ab5d434221008e735e7fbf098b7e9b511b1bd"
   end
 
-  depends_on "libgit2@1.7"
+  depends_on "libgit2"
   depends_on "python@3.12"
 
   uses_from_macos "libffi"
@@ -28,8 +27,8 @@ class LiterateGit < Formula
   end
 
   resource "cffi" do
-    url "https:files.pythonhosted.orgpackages68ce95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91dcffi-1.16.0.tar.gz"
-    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+    url "https:files.pythonhosted.orgpackages1ebf82c351342972702867359cfeba5693927efe0a8dd568165490144f554b18cffi-1.17.0.tar.gz"
+    sha256 "f3157624b7558b914cb039fd1af735e5e8049a87c817cc215109ad1c8779df76"
   end
 
   resource "click" do
@@ -58,18 +57,13 @@ class LiterateGit < Formula
   end
 
   resource "pygit2" do
-    url "https:files.pythonhosted.orgpackagesf05e6e05213a9163bad15489beda5f958500881d45889b0df01d7b8964f031bfpygit2-1.14.1.tar.gz"
-    sha256 "ec5958571b82a6351785ca645e5394c31ae45eec5384b2fa9c4e05dde3597ad6"
+    url "https:files.pythonhosted.orgpackages5377d33e2c619478d0daea4a50f9ffdd588db2ca55817c7e9a6c796fca3b80efpygit2-1.15.1.tar.gz"
+    sha256 "e1fe8b85053d9713043c81eccc74132f9e5b603f209e80733d7955eafd22eb9d"
   end
 
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages32c05b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931setuptools-71.1.0.tar.gz"
-    sha256 "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
   end
 
   def install

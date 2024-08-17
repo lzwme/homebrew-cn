@@ -1,19 +1,19 @@
 class Kuzu < Formula
   desc "Embeddable graph database management system built for query speed & scalability"
   homepage "https:kuzudb.com"
-  url "https:github.comkuzudbkuzuarchiverefstagsv0.5.0.tar.gz"
-  sha256 "80ed050ffe2b1dbd474515ffa417106477de4fbbccb1fbbf4505edb49d33c2ea"
+  url "https:github.comkuzudbkuzuarchiverefstagsv0.6.0.tar.gz"
+  sha256 "e031dd4f51e719dd945ac96b271a952554c4f7ba6239533b6c23d58123fedf28"
   license "MIT"
   head "https:github.comkuzudbkuzu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "68d5860c7230c3cfc3ac6c570c6179e6d38dc6652adf588add2d88f5680deb64"
-    sha256 cellar: :any,                 arm64_ventura:  "77fbd9163b9f489ea801938bba9c28ff834bbbf97d9a20b1fe20dae8c8a55852"
-    sha256 cellar: :any,                 arm64_monterey: "bdcb97afa6c1e8adfd95c998a603b4a1d726a2b15a388f10ad04ca15e355cb7e"
-    sha256 cellar: :any,                 sonoma:         "d795fd95004fc4f41011baa6240e1ab85af976307bbd89d306f91ccbd3f48c1e"
-    sha256 cellar: :any,                 ventura:        "ebe347859e24b9d604286b7911fcaa562e74d89b728194ddcad1e5aa815bed3b"
-    sha256 cellar: :any,                 monterey:       "d657b748c0111b1d1e230f4d736b1ad6d042d17292db8a7ea91357bc6c273a60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "420b606afe4a17616d936ef365469e9c14ea213022e9b179267c807ff0f492f3"
+    sha256 cellar: :any,                 arm64_sonoma:   "7c2de79deb462b33974ad7ba228e763bb828c12f28547bac69260a459ed08eab"
+    sha256 cellar: :any,                 arm64_ventura:  "e820f66b5bbb212c134fdc9269767f0447ab6dc57fca549de6d25dac7665cc61"
+    sha256 cellar: :any,                 arm64_monterey: "e3615c738eb25b3d1b36f50c521abec6492d9cb2be95d7b57582489fc3e1a26c"
+    sha256 cellar: :any,                 sonoma:         "bdad23ddd7a5ff2f23d6402e3c7a862691a41545badcc66b8bd3c67c73a3bfff"
+    sha256 cellar: :any,                 ventura:        "76c3b01c761a5afea8ddf899ce35ca541a8fdbdc6cf3957eac1bc7d8c683d408"
+    sha256 cellar: :any,                 monterey:       "3f9df70f537ffe79bc4273f6ecd893585a0527d7aade9d3a4f687434851e802f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "904628ecdf32fa0bc7f15424eb9ff311ef83b4267d921d3ebf55cc7712a3c3f6"
   end
 
   depends_on "cmake" => :build

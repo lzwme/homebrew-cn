@@ -1,19 +1,18 @@
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https:esbuild.github.io"
-  url "https:github.comevanwesbuildarchiverefstagsv0.23.0.tar.gz"
-  sha256 "473d4d322ddc35f3620d37ecd5d6f40890f33923eeaafa96f5d87db9587e77af"
+  url "https:github.comevanwesbuildarchiverefstagsv0.23.1.tar.gz"
+  sha256 "da504f77d1856e642de6d6e96bab7ddc1da9a73726c7a67467eb4c2b7c0fdaae"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98279f532b870d25017a1fb370b308c179e25076a8a225ea5ec959428f111ce2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bbe6514b794d5f0e9aafdb4b7f08f418133273f4f1525f58b48d7e8604318b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ada0cf2a33099a5fc4a010e7dfca8309454d8915a70d37b07d7f82982776013c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f0df1ef1dfd0fb24e8d274704535c5c43c72b6b3b6c49a6f10fbcb13200e922"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f6f1549786b26bdc2137bb6cabfb0b9e7ff8301abfc111a5bf256b33938548d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3cb9a7d924a11e2e3590a634aff74badc259f010dc9ea43bb3b6b6b7d9d39bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85aff4baa388f5404943c781633f79efbd2d28f37f928350beb356f2dc0599d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7b45d1386184c83f262c1dfd4a650f8c4159994281f0c136d94249f341d5520"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7b45d1386184c83f262c1dfd4a650f8c4159994281f0c136d94249f341d5520"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7b45d1386184c83f262c1dfd4a650f8c4159994281f0c136d94249f341d5520"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0fe1f83be036b0169e3df21ba9d2cf92c43d18d14f8f19f7d9df16444e5ea2e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0fe1f83be036b0169e3df21ba9d2cf92c43d18d14f8f19f7d9df16444e5ea2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0fe1f83be036b0169e3df21ba9d2cf92c43d18d14f8f19f7d9df16444e5ea2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10d2211ea451ab99d01d1cff4c9cf5a4e4333fc0bcf06d821b5fde6d58bea13f"
   end
 
   depends_on "go" => :build

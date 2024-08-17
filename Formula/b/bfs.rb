@@ -1,18 +1,18 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https:tavianator.comprojectsbfs.html"
-  url "https:github.comtavianatorbfsarchiverefstags3.3.1.tar.gz"
-  sha256 "8fb3df6687cd0a50411c5b381317d10590787e262d44fc5f0d294a64f0ab397d"
+  url "https:github.comtavianatorbfsarchiverefstags4.0.tar.gz"
+  sha256 "3c13462a39e8e7ccfe8e9bc06562c52e14fee000e1fb4972c3f56996de624c02"
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57aabe684fd262618a3c8d665ab3abdfdff3d347a79c7e5d454792302661f0e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d6d61d305bd635156c4cad3972f9d2ab1035ec70926d1dfa4e62a55e52a2b93"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98642dba4e95975b616b09dcda2c6fe4ba4b25952d833cdddeb68472499af0ce"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d5607770d006f1b3d80b7af032099d6db5e9006873b0a21957d189ec9404d059"
-    sha256 cellar: :any_skip_relocation, ventura:        "c797c225e7571099609d519d4ba69cd4e7988f7d267c38dadcb57218fb975578"
-    sha256 cellar: :any_skip_relocation, monterey:       "4cbb4c5f89f1db212128be1b93fe80a35c7f6a8c29792bf4eaf0114db7259325"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2997a9ea22be9fcabfdd0dd9ae1f0b5454742b43e6956b40fe86904e4cc1c072"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06f36d10a51f402b43506e6396e7063fad1bde6bfa2775a9b306c5b94ab9c325"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45b882ca4f70b490033e2babb163e1d6db2779efc896ad84e15d7c08b247d9b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c21210d49ab5590e3be98e696258ee202327cc016b4156f92b7b44063b8f2faa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e8becaa6af9ea3780c50478f9d79522872efe89133cc647e27f2856a41d3834"
+    sha256 cellar: :any_skip_relocation, ventura:        "a09848421812a9235519085cf1e01ba51d9efc70be52b670038d9f8846ae7aee"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cf151bab4770f5df37112950d4770f71971e7009166a33a1b7e87088652e96a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdaa86d14d68a9d3037099915b0d11fa51780b27ffc14953ee1721d850b150d0"
   end
 
   depends_on "oniguruma"

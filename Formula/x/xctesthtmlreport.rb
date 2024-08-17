@@ -1,18 +1,18 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
   homepage "https:github.comXCTestHTMLReportXCTestHTMLReport"
-  url "https:github.comXCTestHTMLReportXCTestHTMLReportarchiverefstags2.4.2.tar.gz"
-  sha256 "ab98463c3981eb8ebc0e1b90773d483f39b6af12e06b30598d1e143edf800807"
+  url "https:github.comXCTestHTMLReportXCTestHTMLReportarchiverefstags2.5.0.tar.gz"
+  sha256 "6249242b4fd6e008b450839b2cc053c3c0646a2650480e74238b5230db0a657c"
   license "MIT"
   head "https:github.comXCTestHTMLReportXCTestHTMLReport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6567ac13495718497de773f0cdc4b23fc9b6f71be36f088c8b51e2196721c6bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8075a0c4d00ec74e0985bfd52871e27f5f49e4b2fabed49d943f6c69a4a5bf96"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6456acd9d4f7b9381667e7a589b83f8c4842b9a6a43b75b36b474032f9fb7e2d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b4172c6329aa1f2971ed5df462f83562f946a14e14a6a3d960bac183052f66d"
-    sha256 cellar: :any_skip_relocation, ventura:        "a39d9324b6efb72c3d01deb7d2471bff2d8c1d2316947d5363cf46b50f3cc087"
-    sha256 cellar: :any_skip_relocation, monterey:       "56bacc01abafd9838909ed7dd40fad2428010eadd98729589751f4130f74d972"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "098ba57586cd4b119d0b0eaa5ec921ee25fa4314e1e7914a8a72f501e5ebe057"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b74b29010437cf3d372604bc75b1831f329c280c9ee153bb9a088339bbebb78b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b346e1cb444820d593a5ce1e3e9e24cfebbd078a05a106b8c2ef0321ba74259"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a53e2b985ed3d3a099648c0e462f2191d9a1a100e14dfa9a89d7cce736854b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8ff181cf5cac1b5af9b29c893e3850875853cf4c2c75a99c2034c0517f43078"
+    sha256 cellar: :any_skip_relocation, monterey:       "795a50202ea38c203f8fec23a8ae20f23e81c2bf5effd893d6747b1f6c3abb63"
   end
 
   depends_on :macos

@@ -1,18 +1,18 @@
 class Bomber < Formula
   desc "Scans Software Bill of Materials for security vulnerabilities"
   homepage "https:github.comdevops-kung-fubomber"
-  url "https:github.comdevops-kung-fubomberarchiverefstagsv0.4.8.tar.gz"
-  sha256 "f5bc3af8ea376a3cf4a2feadf33d6be7f9fb0da7371960c11dd70ace67dc92c5"
+  url "https:github.comdevops-kung-fubomberarchiverefstagsv0.5.0.tar.gz"
+  sha256 "05c505678172dbf1f14473be2a17dc531b4db05dc70c74ed98f12f7ab0db3a8f"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "561c778aa6ee3a824570fdec4bd10cd463e867415287121a090cb775532716fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c922a49987292cacbc2fa1062aa818aa13338a2ba8324febb784b147da4fc116"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74d385ac5a65de4e55de6ff45d79131be4e5b563c34924ed8f78377678b23a83"
-    sha256 cellar: :any_skip_relocation, sonoma:         "08a2e6678b102116e45f79e71c84b0da1a624742619bfad98cabf0d292bc512a"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b4eec0105996b01c15e203cdec74e38604b3521753c03adf82c5919e05c7aee"
-    sha256 cellar: :any_skip_relocation, monterey:       "09372badd15cfa7fb295f22b4b53c37c51092dfa2ef2d65b6f6a2f3de817f1a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "232b2c8792a49d2a3146ec3b3b6c5ee4148920d482e2403dddb8787a31f5deff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2d9ee19477631f20213b148d7949b4cc579ed166ff85c4bb25b0b98c4ac0a0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6476378d4fdf202c5dacf811ea22b43d73ac1a2ab334e0356c71dd431fb0d8a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "496ad89cd3de482d2c0595a43cc0407f122c41658faf22a87dfeb7c493e2a3cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c24d982ea826137d3c860f4f48a17f2d45405513d0f6604b6ee3f686d55fe1a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce0bcd10fa126b773f14c0dab28e2d1fda20801002bb09c4c11b8250eef04559"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e852c782540052df6a605a1d3f3dc06c03fbbe6b53ee02d980a6d08671d102f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16c0deffdaa4a0ffa0e7d5014c6aa625cad9d8183b8ac9fee4b3d061ccd61bab"
   end
 
   depends_on "go" => :build

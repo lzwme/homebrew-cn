@@ -1,19 +1,19 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https:karmada.io"
-  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.10.3.tar.gz"
-  sha256 "f9865dc7aacaed3a6bcbbe881c791a1dcb2e68ba37a5918000caf8574933acfc"
+  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.10.4.tar.gz"
+  sha256 "64a72db838d8f3e3243815435bea54ecd929edd1e90430537d0d28508997a219"
   license "Apache-2.0"
   head "https:github.comkarmada-iokarmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "098f252786e3f89eecdf614651726b7af08259ab61b9c3b128737e0b7629ea2c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4750b580e45398cf5777aaa4d236ce719e81a969f5118bbf1cf611c9bf829275"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebcc3c5f92ccbe102dc3b03e8e7a3b0c622b2cd8907b808a7facee0d7138cc5d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dad043a8cbc0c37877978407c3781cfafb1e1ebeae814a6bb8671176274c714f"
-    sha256 cellar: :any_skip_relocation, ventura:        "741d0f343ead964103fa431680bf56334da75b2727d47e985850fd2695204b7a"
-    sha256 cellar: :any_skip_relocation, monterey:       "abbe94865a7d1a777a0ab975986df64643bdef60c40a36b9ddf132468f2f73a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70928e87501a4ba0b7fc68d84cb6dc821a215d41393a9c0b4933936ac2635289"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd851526b18631ba72fc73fd55b36f27aff6d5af1af1dd6c91dfb0f5b3977785"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e04fc572d51ff2a25e0beb8b3285941d4f27ae7676f94eae34702f28768074be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "faa9716058278ade7b8b7c6a89486afb851687f514f97b4ba72c2c8984f137f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f7d2ec7d412432a2a015b7c951feddc5bdba29983a645c123460fcf36c728e0c"
+    sha256 cellar: :any_skip_relocation, ventura:        "96ae5c5f9363bcbadd211b31b004dec2c39e273b0d83fe7bc48945c734677685"
+    sha256 cellar: :any_skip_relocation, monterey:       "14e964a3cc1d6a57505f3dbe30e573a3f2544ab2c799b28a0a41c6286e719513"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01d8d46f6d555a06f193e218da22edf63345eccd56b1054d6781dec760a94dd5"
   end
 
   depends_on "go" => :build
