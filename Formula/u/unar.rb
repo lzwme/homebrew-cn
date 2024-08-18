@@ -21,10 +21,12 @@ class Unar < Formula
 
   uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "gnustep-base"
     depends_on "icu4c"
+    depends_on "libobjc2"
     depends_on "wavpack"
   end
 

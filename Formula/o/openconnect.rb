@@ -29,10 +29,21 @@ class Openconnect < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gettext" => :build # for msgfmt
   depends_on "pkg-config" => :build
-  depends_on "gettext"
+
+  depends_on "gmp"
   depends_on "gnutls"
+  depends_on "nettle"
+  depends_on "p11-kit"
   depends_on "stoken"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "vpnc-script" do
     url "https://gitlab.com/openconnect/vpnc-scripts/-/raw/473d3e810b8fe8223058ab580fac20c53204e677/vpnc-script"
@@ -56,13 +67,12 @@ class Openconnect < Formula
     end
 
     args = %W[
-      --prefix=#{prefix}
       --sbindir=#{bin}
       --localstatedir=#{var}
       --with-vpnc-script=#{etc}/vpnc/vpnc-script
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

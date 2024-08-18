@@ -22,9 +22,22 @@ class Sylpheed < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gpgme"
   depends_on "gtk+"
   depends_on "openssl@3"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "libassuan"
+    depends_on "libgpg-error"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -33,9 +46,7 @@ class Sylpheed < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-updatecheck"
+    system ".configure", "--disable-updatecheck", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

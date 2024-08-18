@@ -1,19 +1,19 @@
 class Aliyunpan < Formula
   desc "Command-line client tool for Alibaba aDrive disk"
   homepage "https:github.comtickstepaliyunpan"
-  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.2.tar.gz"
-  sha256 "d47ba49da29c831509883585df9683c2557debba077edb8114188c258349a0b9"
+  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.3.tar.gz"
+  sha256 "390a298c7f429a7c47f82be9b666d8a4231b4d74724cb671de6cad25963cb6b9"
   license "Apache-2.0"
   head "https:github.comtickstepaliyunpan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7586081a844bbb72a15cf21784e6beeae9fff16e65a2b8efc28f6039341a165d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58b05384c438b32391594f947ab8d7b34dbc33b90f71889256b8b26d982b0730"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53dea5c0d8e8f561c5bb30b434e7c378ec93e370307bb68b589120e63134f668"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0fc1820ecce9f3ef510e9bde7b985629d39620e854cc118156e76c29e5247c77"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8b333807ee8312e467388f30fc2d724b8f189bb5d260f1c5118255419ebb4ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "0cb67308bea17af873a5345126137c66c6408264b6567729f398c61e6c8bf6fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce09c84f4d2f1693945d82ab873d0a419913a8bfc3b87d4acd160803abe76b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd0222b76cee305087787bcdd745102d274253fe64e19eb0fccbb7491a7940ed"
   end
 
   depends_on "go" => :build

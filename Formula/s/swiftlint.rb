@@ -2,32 +2,24 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https:github.comrealmSwiftLint"
   url "https:github.comrealmSwiftLint.git",
-      tag:      "0.55.1",
-      revision: "b515723b16eba33f15c4677ee65f3fef2ce8c255"
+      tag:      "0.56.1",
+      revision: "586dd54db496cbcc03c1aaddb3078bab19de5739"
   license "MIT"
   head "https:github.comrealmSwiftLint.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0610290fef665ecfc022ec3e8e3986224841290274a21efdee503e76b7b39bcc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af05ed001b0476ed0391778516ed92cc3ed100593a03794025c1814e6dec0cb4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e1313a57188d5a751f038596509f0186a058669abfd21aa3142457f9c16c478"
-    sha256 cellar: :any_skip_relocation, sonoma:         "148e407d81cedffbe76876288f78a35fee69f82d12b2fb3356ca102c2fd6d319"
-    sha256 cellar: :any_skip_relocation, ventura:        "709d73d12dd3adf64e276b04e94949749b5073f7ca946e0ead585557cfe9277c"
-    sha256 cellar: :any_skip_relocation, monterey:       "30ea7b1e56634ccd521ffe86a93372e02004cf25b0a10432a5b54520a71d4139"
-    sha256                               x86_64_linux:   "0f68576b2b4591e126e923278c4aa25c28aa18b7e5a9f8a3b8d7cf8eeacfe3a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8928f95c4dd5dabe5b5e9eb706f2e9249d075c014af8f42bdb79afbd9c1113d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ed24e20f861a2f4bc355648487bd005739188e07d1d5fb45f2a8828dff53337"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a196319b86855eb80004ced5636a2c5d5f580e222d3a273df950af9e4a5b416"
+    sha256 cellar: :any_skip_relocation, ventura:       "876de5549e9d21a2d2efb21f277d2688cef1badc665b63a05c7903434ea298aa"
+    sha256                               x86_64_linux:  "4962c8d617285eb6aaeeb45c91985aefda1255b361aa3226b2522434457278de"
   end
+
+  depends_on "swift" => :build
+  depends_on macos: :ventura
 
   depends_on xcode: "8.0"
-
   uses_from_macos "swift"
-
-  on_sonoma :or_newer do
-    depends_on xcode: ["15.3", :build]
-  end
-  on_ventura :or_older do
-    depends_on "swift" => :build
-  end
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release", "--product", "swiftlint"

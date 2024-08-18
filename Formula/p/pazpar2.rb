@@ -29,13 +29,16 @@ class Pazpar2 < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "icu4c"
   depends_on "yaz"
 
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
+
   def install
     system ".buildconf.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

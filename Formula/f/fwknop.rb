@@ -19,6 +19,13 @@ class Fwknop < Formula
 
   depends_on "gpgme"
 
+  uses_from_macos "libpcap"
+
+  on_macos do
+    depends_on "libassuan"
+    depends_on "libgpg-error"
+  end
+
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end

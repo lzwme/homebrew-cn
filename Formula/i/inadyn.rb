@@ -25,16 +25,19 @@ class Inadyn < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "confuse"
   depends_on "gnutls"
+  depends_on "nettle"
 
   def install
     mkdir_p buildpath"inadynm4"
+
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
-                          "--localstatedir=#{var}"
+                          "--localstatedir=#{var}",
+                          *std_configure_args
     system "make", "install"
   end
 

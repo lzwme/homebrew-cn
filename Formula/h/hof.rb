@@ -23,7 +23,8 @@ class Hof < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2d2c72ae5c2d63f628e369a67798ed8bd8da5fe57856f448b961bf600d7f881"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comhofstadter-iohofissues391 is fixed and released
+  depends_on "go@1.22" => :build
 
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

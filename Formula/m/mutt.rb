@@ -34,7 +34,9 @@ class Mutt < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
   depends_on "gpgme"
+  depends_on "libgpg-error"
   depends_on "libidn2"
   depends_on "ncurses"
   depends_on "openssl@3"
@@ -45,6 +47,11 @@ class Mutt < Formula
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+    depends_on "libunistring"
+  end
+
   conflicts_with "tin", because: "both install mmdf.5 and mbox.5 man pages"
 
   def install
@@ -52,10 +59,7 @@ class Mutt < Formula
     effective_group = Etc.getgrgid(Process.egid).name
 
     args = %W[
-      --disable-dependency-tracking
       --disable-warnings
-      --prefix=#{prefix}
-      --enable-debug
       --enable-gpgme
       --enable-hcache
       --enable-imap
@@ -69,7 +73,7 @@ class Mutt < Formula
       --with-tokyocabinet
     ]
 
-    system ".prepare", *args
+    system ".prepare", *args, *std_configure_args
     system "make"
 
     # This permits the `mutt_dotlock` file to be installed under a group

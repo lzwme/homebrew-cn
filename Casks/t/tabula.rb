@@ -10,6 +10,11 @@ cask "tabula" do
 
   app "tabulaTabula.app"
 
+  zap trash: [
+    "~LibraryApplication SupportTabula",
+    "~LibrarySaved Application Stateorg.nerdpower.tabula.Tabula.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

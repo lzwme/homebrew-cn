@@ -23,6 +23,8 @@ class Tintin < Formula
   depends_on "gnutls"
   depends_on "pcre" # PCRE2 issue: https:github.comscandumtintinissues163
 
+  uses_from_macos "zlib"
+
   def install
     # find Homebrew's libpcre
     ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"

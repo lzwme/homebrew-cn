@@ -43,9 +43,10 @@ class Proxygen < Formula
   end
 
   test do
-    pid = spawn bin"proxygen_echo"
-    sleep 10
-    system "curl", "-v", "http:localhost:11000"
+    port = free_port
+    pid = spawn(bin"proxygen_echo", "--http_port", port.to_s)
+    sleep 30
+    system "curl", "-v", "http:localhost:#{port}"
   ensure
     Process.kill "TERM", pid
   end

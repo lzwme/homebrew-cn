@@ -24,8 +24,13 @@ class Metaproxy < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "boost"
+  depends_on "yaz"
   depends_on "yazpp"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
 
   fails_with gcc: "5"
 
@@ -62,6 +67,6 @@ class Metaproxy < Formula
       <metaproxy>
     EOS
 
-    system bin"metaproxy", "-t", "--config", "#{testpath}test-config.xml"
+    system bin"metaproxy", "-t", "--config", testpath"test-config.xml"
   end
 end

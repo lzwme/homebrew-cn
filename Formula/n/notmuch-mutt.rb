@@ -24,6 +24,8 @@ class NotmuchMutt < Formula
   depends_on "perl"
   depends_on "readline"
 
+  uses_from_macos "ncurses"
+
   resource "Date::Parse" do
     url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/TimeDate-2.33.tar.gz"
     sha256 "c0b69c4b039de6f501b0d9f13ec58c86b040c1f7e9b27ef249651c143d605eb2"

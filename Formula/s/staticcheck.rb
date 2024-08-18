@@ -4,16 +4,17 @@ class Staticcheck < Formula
   url "https:github.comdominikhgo-toolsarchiverefstags2024.1.1.tar.gz"
   sha256 "fa0e5305e91ef126ac7de52c99a04728255fc694d45b0a9a3f1ca026a44828bf"
   license "MIT"
+  revision 1
   head "https:github.comdominikhgo-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "131765987b0f12c51386e6218eaa1b891591be901ae20a74cab49fca603c9493"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "facb63338994f8f96b3f3c7c5f985d86dcc83388019ce456532c66aefab7ce2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fe87448cadc09dcaa29aed7b90eb7885beafe267e7969ee633845fc8217a8e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94e925f03077234e103db2f1c6856c2d82091cddd002413254ff963707106af5"
-    sha256 cellar: :any_skip_relocation, ventura:        "d94a6a1faaf4618c7c86242c241781937911a0877b81e2c4cf9178728dfb8c55"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ff15d299b646342cf9ceb8a30aa9737904cebf55d2a3bf8f952ba32bc395229"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b1177996332a42f55a560a66418557181fd2fd169e356ceb920183ae5f3e01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb16ebbf5ca8c2e791c3ed79770e0b55a554caa1d243ea2fc7b745a56242c9e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb16ebbf5ca8c2e791c3ed79770e0b55a554caa1d243ea2fc7b745a56242c9e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb16ebbf5ca8c2e791c3ed79770e0b55a554caa1d243ea2fc7b745a56242c9e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4407641b6dcf86ef9fca913f67344de22c88f5c3ead44b028ebbcc0f77a008fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "4407641b6dcf86ef9fca913f67344de22c88f5c3ead44b028ebbcc0f77a008fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "4407641b6dcf86ef9fca913f67344de22c88f5c3ead44b028ebbcc0f77a008fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "986c7fb269e23ddd8a957b76174775209468590171909c56b64b680fcf061a0e"
   end
 
   depends_on "go"

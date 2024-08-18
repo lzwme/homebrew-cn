@@ -18,7 +18,8 @@ class Cloudpan189Go < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "21c193bc56690eef410bdbbce6d6b774fcf658f16b114ea0222afee18591d361"
   end
 
-  depends_on "go" => :build
+  # use "go" again when https:github.comtickstepcloudpan189-goissues101 is resolved and released
+  depends_on "go@1.22" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

@@ -3,7 +3,13 @@ class RedisAT62 < Formula
   homepage "https://redis.io/"
   url "https://download.redis.io/releases/redis-6.2.14.tar.gz"
   sha256 "34e74856cbd66fdb3a684fb349d93961d8c7aa668b06f81fd93ff267d09bc277"
-  license "BSD-3-Clause"
+  license all_of: [
+    "BSD-3-Clause",
+    "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
+    "BSL-1.0", # deps/fpconv
+    "MIT", # deps/lua
+    any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
+  ]
 
   livecheck do
     url "https://download.redis.io/releases/"

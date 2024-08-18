@@ -16,7 +16,8 @@ class Kuttl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c9dd60a3e38f7c41d0135d509c7aa04ae14467cff3ef93e943ac23a4e54d431"
   end
 
-  depends_on "go" => :build
+  # use "go" againg after https:github.comkudobuilderkuttlissues546 is fixed and released
+  depends_on "go@1.22" => :build
   depends_on "kubernetes-cli" => :test
 
   def install

@@ -35,14 +35,30 @@ class Gpa < Formula
     depends_on "gtk+3"
   end
 
+  depends_on "desktop-file-utils" => :build
   depends_on "pkg-config" => :build
-  depends_on "desktop-file-utils"
+
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gpgme"
+  depends_on "libassuan"
+  depends_on "libgpg-error"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
 
   def install
     inreplace "configure", "NEED_LIBASSUAN_API=2", "NEED_LIBASSUAN_API=3"
+
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make"
     system "make", "install"
   end

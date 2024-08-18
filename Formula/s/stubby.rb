@@ -24,6 +24,12 @@ class Stubby < Formula
   depends_on "getdns"
   depends_on "libyaml"
 
+  on_macos do
+    depends_on "libidn2"
+    depends_on "openssl@3"
+    depends_on "unbound"
+  end
+
   on_linux do
     depends_on "bind" => :test
   end

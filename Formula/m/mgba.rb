@@ -24,6 +24,7 @@ class Mgba < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg"
   depends_on "libepoxy"
   depends_on "libpng"
@@ -32,8 +33,10 @@ class Mgba < Formula
   depends_on "lua"
   depends_on "qt@5"
   depends_on "sdl2"
+  depends_on "sqlite"
 
-  uses_from_macos "sqlite"
+  uses_from_macos "libedit"
+  uses_from_macos "zlib"
 
   on_macos do
     # https:github.commgba-emumgbaissues3129
@@ -42,6 +45,7 @@ class Mgba < Formula
 
   on_linux do
     depends_on "elfutils"
+    depends_on "mesa"
   end
 
   def install

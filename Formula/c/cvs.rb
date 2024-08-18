@@ -33,6 +33,7 @@ class Cvs < Formula
   depends_on "automake" => :build
   depends_on "gettext"
 
+  uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
@@ -91,10 +92,7 @@ class Cvs < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--infodir=#{info}",
+    system ".configure", "--infodir=#{info}",
                           "--mandir=#{man}",
                           "--sysconfdir=#{etc}",
                           "--with-gssapi",
@@ -103,7 +101,8 @@ class Cvs < Formula
                           "--with-external-zlib",
                           "--enable-case-sensitivity",
                           "--with-editor=vim",
-                          "ac_cv_func_working_mktime=no"
+                          "ac_cv_func_working_mktime=no",
+                          *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "install"

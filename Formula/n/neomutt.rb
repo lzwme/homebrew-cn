@@ -29,6 +29,7 @@ class Neomutt < Formula
   depends_on "notmuch"
   depends_on "openssl@3"
   depends_on "pcre2"
+  depends_on "sqlite"
   depends_on "tokyo-cabinet"
 
   uses_from_macos "libxslt" => :build # for xsltproc
@@ -37,6 +38,7 @@ class Neomutt < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "libgpg-error"
     # Build again libiconv for now on,
     # but reconsider when macOS 14.2 is released
     depends_on "libiconv"

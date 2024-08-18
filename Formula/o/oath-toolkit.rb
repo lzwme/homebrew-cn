@@ -31,6 +31,8 @@ class OathToolkit < Formula
   end
 
   depends_on "pkg-config" => :build
+
+  depends_on "libxml2"
   depends_on "libxmlsec1"
   depends_on "openssl@3"
 

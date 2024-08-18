@@ -25,11 +25,15 @@ class Megatools < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
-  depends_on "glib-networking"
   depends_on "openssl@3"
 
   uses_from_macos "curl", since: :ventura # needs curl >= 7.85.0
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -42,6 +46,6 @@ class Megatools < Formula
     system bin/"megadl",
       "https://mega.co.nz/#!3Q5CnDCb!PivMgZPyf6aFnCxJhgFLX1h9uUTy9ehoGrEcAkGZSaI",
       "--path", "testfile.txt"
-    assert_equal (testpath/"testfile.txt").read, "Hello Homebrew!\n"
+    assert_equal "Hello Homebrew!\n", (testpath/"testfile.txt").read
   end
 end

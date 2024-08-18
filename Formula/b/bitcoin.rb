@@ -3,7 +3,12 @@ class Bitcoin < Formula
   homepage "https:bitcoincore.org"
   url "https:bitcoincore.orgbinbitcoin-core-27.1bitcoin-27.1.tar.gz"
   sha256 "0c1051fd921b8fae912f5c2dfd86b085ab45baa05cd7be4585b10b4d1818f3da"
-  license "MIT"
+  license all_of: [
+    "MIT",
+    "BSD-3-Clause", # srccrc32c, srcleveldb
+    "BSL-1.0", # srctinyformat.h
+    "Sleepycat", # resource("bdb")
+  ]
   head "https:github.combitcoinbitcoin.git", branch: "master"
 
   livecheck do
@@ -12,24 +17,21 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4c8fa01542cbbc6d538e0ee2f4b3500c13339855b64a8dc825f935265c16060e"
-    sha256 cellar: :any,                 arm64_ventura:  "9f5160acc4a3f80310c25b8fb1161150c48867ceb32b912e9cb8db42e178596e"
-    sha256 cellar: :any,                 arm64_monterey: "e392e556f28356a560543a7fc931b906551d1dd6d90e0ff9bd0701591db6eeaa"
-    sha256 cellar: :any,                 sonoma:         "c72491eafc0e56b05a585eba3edbc764f658ce7be5ad064e2e23068662265010"
-    sha256 cellar: :any,                 ventura:        "24cdb153e7f1c37b5c6153749bc7ffe060843b994a41853461e39065de79bd30"
-    sha256 cellar: :any,                 monterey:       "bc8d2fa559c22a81f5ca18ca9837dc41f6a172dacd38cd89284850bc9d6503ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "369369596fede974d8030866521b151667536bce4936814403c196d18b1cb06f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "71aab0dcf1c7ad4c153ea3e18e00c9a6e2c70d5bc0a00f1026a5f693f2fc93f8"
+    sha256 cellar: :any,                 arm64_ventura:  "d618b0c4fe2c4d6bb50251eaeb2b05084698e0e43d2aa8ffc00531e453c2bc84"
+    sha256 cellar: :any,                 arm64_monterey: "1d0b1b8ca67672ab69bf6b94d38faaa93f958ede69fff5bd6f234401ad0413c0"
+    sha256 cellar: :any,                 sonoma:         "c9813c58fcb96a7b98f2335e879bb846bcc134026d242493862b2091007afa78"
+    sha256 cellar: :any,                 ventura:        "c7f669c4b6c16558781d3ee95e11ce9b048627a822c9cd282e50ef3831ac72c2"
+    sha256 cellar: :any,                 monterey:       "fe94d256da8c4d5e6aae08d75f38e1afe81a3e94cbbd2c71ea370028c0c0f28b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6175a2cd66d5fea7074870796b79fa81be0605c0fc502f989fde29f3bcc69f1f"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "boost" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # berkeley db should be kept at version 4
-  # https:github.combitcoinbitcoinblobmasterdocbuild-osx.md
-  # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md
-  depends_on "berkeley-db@4"
-  depends_on "boost"
   depends_on "libevent"
   depends_on macos: :big_sur
   depends_on "miniupnpc"
@@ -46,6 +48,26 @@ class Bitcoin < Formula
     cause "Requires C++ 20"
   end
 
+  # berkeley db should be kept at version 4
+  # https:github.combitcoinbitcoinblobmasterdocbuild-osx.md
+  # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md
+  resource "bdb" do
+    url "https:download.oracle.comberkeley-dbdb-4.8.30.NC.tar.gz"
+    sha256 "12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef"
+
+    # Fix build with recent clang
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches4c55b1berkeley-db%404clang.diff"
+      sha256 "86111b0965762f2c2611b302e4a95ac8df46ad24925bbb95a1961542a1542e40"
+    end
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
+      sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+      directory "dist"
+    end
+  end
+
   # Skip two tests that currently fail in the brew CI
   patch do
     url "https:github.comfanquakebitcoincommit9b03fb7603709395faaf0fac409465660bbd7d81.patch?full_index=1"
@@ -53,10 +75,30 @@ class Bitcoin < Formula
   end
 
   def install
+    # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md#berkeley-db
+    # https:github.combitcoinbitcoinblobmasterdependspackagesbdb.mk
+    resource("bdb").stage do
+      with_env(CFLAGS: ENV.cflags) do
+        # Fix compile with newer Clang
+        ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+        # BerkeleyDB requires you to build everything from the build_unix subdirectory
+        cd "build_unix" do
+          system "..distconfigure", "--disable-replication",
+                                      "--disable-shared",
+                                      "--enable-cxx",
+                                      *std_configure_args(prefix: buildpath"bdb")
+          system "make", "libdb_cxx-4.8.a", "libdb-4.8.a"
+          system "make", "install_lib", "install_include"
+        end
+      end
+    end
+
     system ".autogen.sh"
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+    system ".configure", "--disable-silent-rules",
+                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
+                          "BDB_LIBS=-L#{buildpath}bdblib -ldb_cxx-4.8",
+                          "BDB_CFLAGS=-I#{buildpath}bdbinclude",
+                          *std_configure_args
     system "make", "install"
     pkgshare.install "sharerpcauth"
   end

@@ -27,13 +27,17 @@ class KubernetesCliAT129 < Formula
   disable! date: "2025-02-28", because: :deprecated_upstream
 
   depends_on "bash" => :build
-  depends_on "coreutils" => :build
-  depends_on "go@1.21" => :build
+  depends_on "go" => :build
 
   uses_from_macos "rsync" => :build
 
+  on_macos do
+    depends_on "coreutils" => :build
+  end
+
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" # needs GNU date
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" if OS.mac? # needs GNU date
+    ENV["FORCE_HOST_GO"] = "1"
     system "make", "WHAT=cmdkubectl"
     bin.install "_outputbinkubectl"
 

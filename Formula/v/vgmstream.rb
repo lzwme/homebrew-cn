@@ -30,15 +30,16 @@ class Vgmstream < Formula
   depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "ffmpeg"
   depends_on "jansson"
   depends_on "libao"
   depends_on "libvorbis"
   depends_on "mpg123"
+  depends_on "speex"
 
   on_macos do
     depends_on "libogg"
-    depends_on "speex"
   end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC

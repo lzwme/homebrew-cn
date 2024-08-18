@@ -16,7 +16,8 @@ class BaidupcsGo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c2c291fef9739671cc34200270e1f2f1d105332a6850f1d8e76af3e72834f31"
   end
 
-  depends_on "go" => :build
+  # use "go" again when https:github.comqjfoidnhBaiduPCS-Goissues336 is resolved and released
+  depends_on "go@1.22" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
