@@ -24,7 +24,7 @@ class MongodbAtlasCli < Formula
   depends_on "go" => :build
   depends_on "mongosh"
 
-  conflicts_with "nim", because: "both install `atlas` executable"
+  conflicts_with "atlas", "nim", because: "both install `atlas` executable"
 
   def install
     ENV["ATLAS_VERSION"] = version.to_s

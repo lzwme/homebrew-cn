@@ -2,7 +2,7 @@ class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https:ledger-cli.org"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   head "https:github.comledgerledger.git", branch: "master"
 
   stable do
@@ -19,6 +19,12 @@ class Ledger < Formula
       url "https:github.comledgerledgercommit14b90d8d952b40e0a474223e7f74a1e6505d5450.patch?full_index=1"
       sha256 "d250557e385163e3ad3002117ebe985af040d915aab49ae1ea342db82398aeda"
     end
+
+    # Backport fix to build with `boost` 1.85.0
+    patch do
+      url "https:github.comledgerledgercommit46207852174feb5c76c7ab894bc13b4f388bf501.patch?full_index=1"
+      sha256 "8aaf8daf4748f359946c64488c96345f4a4bdf928f6ec7a1003610174428599f"
+    end
   end
 
   livecheck do
@@ -27,18 +33,18 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "60ac96b0bfcb2426e6b3aaf06469abb779ec0cd62ce1a17aa7bf7662b2431059"
-    sha256 cellar: :any,                 arm64_ventura:  "9b7a4add3841f03fff22581461f97a641f6c2bad4aead31591dff19b356a7fa4"
-    sha256 cellar: :any,                 arm64_monterey: "3eb4fb8697fe8c348e37928eda6960d00f784f65a244cdf96609c8fd48335a99"
-    sha256 cellar: :any,                 sonoma:         "83c694de6d2cd94909106e1f30a11ade60d22093e6d654599a0433f508b07d8c"
-    sha256 cellar: :any,                 ventura:        "4a699b36e5d09a6f928c4a3b1eea44ac474ab897f9bb9099a86f8950d8172dc1"
-    sha256 cellar: :any,                 monterey:       "f1c7bcf2452c2cf15d063ddf01db53e534240c1b782dd10ac3fd88cbc129dada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd2794ce3d53f5ac6694a58d08a63b84a9dc679c61b03f8434dc9f7842a98b76"
+    sha256 cellar: :any,                 arm64_sonoma:   "d7fa6f760b136e2104925d5e0126baa56994691e111a486be71b88048acfa2ad"
+    sha256 cellar: :any,                 arm64_ventura:  "9706d5b3817874dc3c3fc3696ff5c7ce1418e20b15dafaaa21d612e80b3688b3"
+    sha256 cellar: :any,                 arm64_monterey: "37d03c5f94bcc3bf843ffd5c6206a2869093f0f7010c2dc91b52a6553c1d5b70"
+    sha256 cellar: :any,                 sonoma:         "d55ed9442b00f1db45976256fdabc1876a3b9d7d00e58ddb1533702a32682619"
+    sha256 cellar: :any,                 ventura:        "5d95809213044fc8056ca3b642c21d22b3ca2ebce5750fd6a7477e2d96dc55af"
+    sha256 cellar: :any,                 monterey:       "f51d0330df39298a2a313b7c25b3bfa0b6a110471b954d630d02910108d237a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a5e1d2c1d8a3c8841191e3a2d6f1a0932cdfe7bdfd9df55e1681af1f349704"
   end
 
   depends_on "cmake" => :build
   depends_on "texinfo" => :build # for makeinfo
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "gmp"
   depends_on "gpgme"
   depends_on "mpfr"
@@ -46,13 +52,6 @@ class Ledger < Formula
 
   uses_from_macos "mandoc" => :build
   uses_from_macos "libedit"
-
-  # Fix build with `boost` 1.85.0 using open PR.
-  # PR ref: https:github.comledgerledgerpull2337
-  patch do
-    url "https:github.comledgerledgercommit1da89f6ffb44a44257b9774c4ceb71e7b495d677.patch?full_index=1"
-    sha256 "8aaf8daf4748f359946c64488c96345f4a4bdf928f6ec7a1003610174428599f"
-  end
 
   def install
     ENV.cxx11
@@ -62,7 +61,7 @@ class Ledger < Formula
       --jobs=#{ENV.make_jobs}
       --output=build
       --prefix=#{prefix}
-      --boost=#{Formula["boost"].opt_prefix}
+      --boost=#{Formula["boost@1.85"].opt_prefix}
       --
       -DBUILD_DOCS=1
       -DBUILD_WEB_DOCS=1

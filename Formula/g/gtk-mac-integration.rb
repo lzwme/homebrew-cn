@@ -53,18 +53,25 @@ class GtkMacIntegration < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => [:build, :test]
+  depends_on "at-spi2-core"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
+  depends_on "glib"
   depends_on "gtk+3"
+  depends_on "harfbuzz"
   depends_on :macos
+  depends_on "pango"
 
   def install
     configure = build.head? ? ".autogen.sh" : ".configure"
-    system configure, *std_configure_args,
-                      "--disable-silent-rules",
+
+    system configure, "--disable-silent-rules",
                       "--without-gtk2",
                       "--with-gtk3",
                       "--enable-introspection=yes",
-                      "--enable-python=no"
+                      "--enable-python=no",
+                      *std_configure_args
     system "make", "install"
   end
 

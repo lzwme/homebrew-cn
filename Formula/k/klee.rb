@@ -21,6 +21,7 @@ class Klee < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "gperftools"
   depends_on "llvm@14" # LLVM 16 PR: https:github.comkleekleepull1664
   depends_on "python@3.12"
@@ -30,6 +31,11 @@ class Klee < Formula
   depends_on "z3"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "cryptominisat"
+    depends_on "minisat"
+  end
 
   on_linux do
     depends_on "python-setuptools" => :build # Remove with LLVM 15+

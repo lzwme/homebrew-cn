@@ -12,7 +12,7 @@ class Lsusb < Formula
 
   depends_on :macos
 
-  conflicts_with "usbutils", because: "both provide an `lsusb` binary"
+  conflicts_with "lsusb-laniksj", "usbutils", because: "both provide an `lsusb` binary"
 
   def install
     bin.install "lsusb"

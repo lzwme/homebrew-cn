@@ -4,6 +4,7 @@ class Armadillo < Formula
   url "https://downloads.sourceforge.net/project/arma/armadillo-14.0.2.tar.xz"
   sha256 "248e2535fc092add6cb7dea94fc86ae1c463bda39e46fd82d2a7165c1c197dff"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "89beb28d09c6c5efe6795bfe6febfed42d7920e27438977d830caac52812e039"
-    sha256 cellar: :any,                 arm64_ventura:  "fe4521d6e9697c7afa415c70da0d673c6d8f93b4872f2fc057a137aa838aa1d0"
-    sha256 cellar: :any,                 arm64_monterey: "c7a668ccae222de69bd3a63b7fee1b0e1561c04be789040d1e851454bae9bbad"
-    sha256 cellar: :any,                 sonoma:         "e05d1d348dd7990800e71422e2c4863ecbb790fc7df10715144e380b5dd98f92"
-    sha256 cellar: :any,                 ventura:        "9f1ca4819eacd856d56115c681a184cfc68dc30a13e2872b863f47c9bdebd362"
-    sha256 cellar: :any,                 monterey:       "efb251176fcb63706e12857de31d14a1cd8b8aa2e292225f6d2b716cffa8f9d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6afc07f17829c04a6d67492f9637268f14da1a32bafaffa6fc3def0247736ed"
+    sha256 cellar: :any,                 arm64_sonoma:   "68e7fbb97adc00257478df23659656c061b120ab5ccbe4504e907d45c37c70cd"
+    sha256 cellar: :any,                 arm64_ventura:  "766499cb0d1f43fc05aabd34fedcc8cb737a466f9179e13a0f9e9d70999a316f"
+    sha256 cellar: :any,                 arm64_monterey: "8eeed39c2609dd2a86b23d5545626f6c67a78367c0ee51bfe1b4667bdc4eca7b"
+    sha256 cellar: :any,                 sonoma:         "8db6b5a47d80023c329f65867ef70cc8e55e32691fc5208a78fb0a601acce420"
+    sha256 cellar: :any,                 ventura:        "7c932d6837bc650692df680062e771215e452249d80eeb1b8fb4a1eec1d2638e"
+    sha256 cellar: :any,                 monterey:       "62ed45c56afd0f695a9d4f9d5938ce275f56da180adabf6984acaf249a24e3bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b20eca052b8531f1fac29c85a85caa3abd4d8c4c26fe41750d75dd65c1905c5"
   end
 
   depends_on "cmake" => :build

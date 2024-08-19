@@ -22,7 +22,16 @@ class Jbig2enc < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
   depends_on "leptonica"
+
+  on_macos do
+    depends_on "giflib"
+    depends_on "jpeg-turbo"
+    depends_on "libpng"
+    depends_on "libtiff"
+    depends_on "webp"
+  end
 
   # The following two patches fix build with leptonica >= 1.83.
   # Remove them when they are included in a release.

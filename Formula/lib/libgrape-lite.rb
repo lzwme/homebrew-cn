@@ -18,15 +18,12 @@ class LibgrapeLite < Formula
   end
 
   depends_on "cmake" => :build
-
+  depends_on "gflags"
   depends_on "glog"
   depends_on "open-mpi"
 
   def install
-    ENV.cxx11
-
-    system "cmake", "-S", ".", "-B", "build",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -1,19 +1,19 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.bz2"
-  sha256 "fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
+  sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 
   bottle do
-    sha256                               arm64_sonoma:   "233c35be9292afff371b5abfd5415cb1c0e41ef88bfcd572f047d2c6f2cb4a24"
-    sha256                               arm64_ventura:  "3f99d6fed435ca62a140763e0dd979acd2e2425ca8ebca260510a0293aa492b6"
-    sha256                               arm64_monterey: "4e75b842b0c6242848ef8984e3125a458594cbe9b23e1f97b154a8ad2018227e"
-    sha256                               sonoma:         "db41dcf85cae9752a3b6cb4dff665715fd3a056257ef77abcac26e810e2f0ccb"
-    sha256                               ventura:        "6dded0d11e13fb06d927d899fbdd308d0b9b0f26fd77af4a4992d9229676ecd1"
-    sha256                               monterey:       "e60c7c6459b4fb98585dd84d92b2bb5f8d4071ce744511d5f75a398b6ffd2b80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec06c7983ba81f3e59c8f4db1645eb19f3edfa12fb5a86e65689bfd6ceda10dc"
+    sha256                               arm64_sonoma:   "88c34d875602f7bce1ad098b0dc61df8018db8febcd8a6d4759971cae74403d7"
+    sha256                               arm64_ventura:  "79dc9dfa4c4af46fe047c8c362c2cbad169d5d4c6c7d21d105e23ed1411ac3cd"
+    sha256                               arm64_monterey: "f46062326982276204aa358adc611d074b5872951678bb06a82fe399b7929b4a"
+    sha256                               sonoma:         "c88cb916d41507aed43ffe00cfbea11069e86ef78eb997db9ca7da1a48312f98"
+    sha256                               ventura:        "63bd99b78b6df776b633ed15439abd116afdd1a2b29e392191e37efaa58a3657"
+    sha256                               monterey:       "809e8a094c8bd8c03fee89af3d50a5837644b1af6184754d732981e628be98a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab5913dd80970340737b8450c3d227f2e6ad07874c240a82d1749ff4bba8b863"
   end
 
   keg_only "it shadows the host toolchain"

@@ -29,8 +29,6 @@ class Gpac < Formula
 
   uses_from_macos "zlib"
 
-  conflicts_with "bento4", because: "both install `mp42ts` binaries"
-
   def install
     args = %W[
       --disable-wx

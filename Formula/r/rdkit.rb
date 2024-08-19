@@ -4,6 +4,7 @@ class Rdkit < Formula
   url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_5.tar.gz"
   sha256 "b0870aec4dca12da5ee1100a769eaf4c71c3a6f99339f8aa72d30affc068a632"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "89616883da8051184a529d5ca1faa03f59bbff570630ba1b226679743c039ca7"
-    sha256 cellar: :any,                 arm64_ventura:  "2572d06717dbe97295283dcb16b7b035a269efa218b6da28678441bcddf6a1a7"
-    sha256 cellar: :any,                 arm64_monterey: "66151c0cd7c5e207533ae2ecd0172b81bab626408d3257df56f12be0444709ea"
-    sha256 cellar: :any,                 sonoma:         "f64064cc6ba59c4b53eae3074d2db524cfb159b6593ca0f6704f3bf72486ad48"
-    sha256 cellar: :any,                 ventura:        "9f2ca439e69897b8dd65a0c44b527a6b06096f10f36b3f0d1c422bf6e68cb531"
-    sha256 cellar: :any,                 monterey:       "e2b068b75ec4b56403931778351352a23408fb6e0e92e5c8db93a792e696622f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d520d92e67fd6723fa812fb553a01c4493f7fcf5873f0acb7efbfa2630479a7"
+    sha256 cellar: :any,                 arm64_sonoma:   "7916c84143637eecd0628954bf239ec960ead774e744090eb6e40593223efe81"
+    sha256 cellar: :any,                 arm64_ventura:  "34a99e49d11543a04064cbdad96735314fe80e2fd539433575a6587654b0ffee"
+    sha256 cellar: :any,                 arm64_monterey: "88dc2238289aef6ab5e3c58523115b1572a33c99779a9f7312ea6714a70a9d4c"
+    sha256 cellar: :any,                 sonoma:         "4b477c215e312729e45446eb529bc52f019cd5c6d31438d0ce1dc38bf2f901f8"
+    sha256 cellar: :any,                 ventura:        "8a9952d809eab67cdd91aa46ebda7b290bc89dca23e6b94956f33b3123d1bf97"
+    sha256 cellar: :any,                 monterey:       "c523f33ecd3e63014bb365136a352dcff2c06048dddb3db48b91307a40c52b3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daa5c0cf45a634f85ea6035150a1a4e1710c0596d688ce92d6f903c3e08e7f25"
   end
 
   depends_on "catch2" => :build

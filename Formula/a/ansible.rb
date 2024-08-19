@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https:www.ansible.com"
-  url "https:files.pythonhosted.orgpackages32e83bbd91286c1b858afafac59a4f582c5f0344efabb4f4e013de9d1d9c21c2ansible-10.1.0.tar.gz"
-  sha256 "7d8c44557f570687306e19d0e3296ad230593cb12bda35dcfc9274a6063af22a"
+  url "https:files.pythonhosted.orgpackages94e2b34a077f05f97982dfddf6ec17ab5e2e476412b3ff542e30d21d22cf2e2dansible-10.3.0.tar.gz"
+  sha256 "6144fb4bc785f917f86b1b0b6eadc9b894e9751ff9e9a7875afcfa2f74581ffd"
   license "GPL-3.0-or-later"
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "f97883e082dfdf1b80cc77fe17867975d06cbf0db5bb103f18b4ae420a3c026a"
-    sha256 cellar: :any,                 arm64_ventura:  "01e9c0ff78cbdc623ab1e0aa0e38f611fd1df58c629871118c9db9de30630c7c"
-    sha256 cellar: :any,                 arm64_monterey: "02021a8db6c800c8e65472d157a16984bf159aa4ab1a5ca9338e7e40f93e204c"
-    sha256 cellar: :any,                 sonoma:         "0466162da1b395b792884496c546420824d0911860b08a7f95e31a899d188838"
-    sha256 cellar: :any,                 ventura:        "721ce4f859f78075b8ce7cfc52d54c49af2b5cf93d05c978810534c23e68dfeb"
-    sha256 cellar: :any,                 monterey:       "3e6d9c0aacceff5ab1f68924d03ef6f0d69546ae3b01ab739ede556d4f8e60ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c04f061c9242da63e06ac1a502a346fb1bb7efa4a893655a752e5210e36cf4bc"
+    sha256 cellar: :any,                 arm64_sonoma:   "ef3eb2a117abae4270ff8459d042ea9322a9390ab1060d49bc5568571f1ae206"
+    sha256 cellar: :any,                 arm64_ventura:  "998d7723cbf71ee0bd8560b8bd98f2e40a7ce7ab7563b913614f066ba38df0d2"
+    sha256 cellar: :any,                 arm64_monterey: "b420a760118682dd6fb76c0e252674f8040fc26cce192d4bf0a2051922dee8e5"
+    sha256 cellar: :any,                 sonoma:         "742545a6f836a5fff7f0405daa2bac6bbed7d7a056c2a12520b361ab225d4a2c"
+    sha256 cellar: :any,                 ventura:        "7bcef34ee9d33e1244940014685ccdf819daaf999873d946af300230377619b6"
+    sha256 cellar: :any,                 monterey:       "19d30d5c81039760bb2959b46d4cdb9ba08b360ab07963c28af259f3de09ecbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "729ee14fedd4bef688a08d1ba9b9080aa9c9d6f70640a97303f50717da6e4ef8"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -41,8 +40,8 @@ class Ansible < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackages699d62cf1cb023710f9556d88c663950117014082387ddcf0fcc4c419a4bf0fbansible_core-2.17.2.tar.gz"
-    sha256 "3dfa15249069ea0d001257902c968ddf9bb71d965769b8802bce85187556c5d8"
+    url "https:files.pythonhosted.orgpackages3cf26b407947f6e2c91d4fb8a3b61958f941a077c68d0ef0a37c3c0df3d96026ansible_core-2.17.3.tar.gz"
+    sha256 "917557065339fe36e7078e9bea47eefab6d6877f3bd435fa5f0d766d04c58485"
   end
 
   resource "ansible-pylibssh" do
@@ -71,18 +70,18 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages33eedf4ec3cb6f292cfcc665562fbafafb68a6fe525c5a6476ab48a92b5ab669boto3-1.34.158.tar.gz"
-    sha256 "5b7b2ce0ec1e498933f600d29f3e1c641f8c44dd7e468c26795359d23d81fa39"
+    url "https:files.pythonhosted.orgpackagesfda8e825d84cdcf9136cedc89c1f317f80023179685f83469a6ad04b3b0709f4boto3-1.35.0.tar.gz"
+    sha256 "bdc242e3ea81decc6ea551b04b2c122f088c29269d8e093b55862946aa0fcfc6"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesdc1477b36078a68e756ffc05c0101a0eb4039430fda00f5aa601a6340f7a9fb6botocore-1.34.158.tar.gz"
-    sha256 "5934082e25ad726673afbf466092fb1223dafa250e6e756c819430ba6b1b3da5"
+    url "https:files.pythonhosted.orgpackages38f52b9df08eb22ecc0407e08086ec5c1a424ce66237f3b9fc0b6686712be247botocore-1.35.0.tar.gz"
+    sha256 "6ab2f5a5cbdaa639599e3478c65462c6d6a10173dc8b941bfc69b0c9eb548f45"
   end
 
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackagesa73fea907ec6d15f68ea7f381546ba58adcb298417a59f01a2962cb5e486489fcachetools-5.4.0.tar.gz"
-    sha256 "b8adc2e7c07f105ced7bc56dbb6dfbe7c4a00acce20e2227b3f355be89bc6827"
+    url "https:files.pythonhosted.orgpackagesc338a0f315319737ecf45b4319a8cd1f3a908e29d9277b46942263292115eee7cachetools-5.5.0.tar.gz"
+    sha256 "2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"
   end
 
   resource "charset-normalizer" do
@@ -276,8 +275,8 @@ class Ansible < Formula
   end
 
   resource "oslo-serialization" do
-    url "https:files.pythonhosted.orgpackages21ff78cc62d4282cf26d322eedf7409a39f7cd5f8c1a83329dc0a65bfa545bd4oslo.serialization-5.4.0.tar.gz"
-    sha256 "315cb3465e99c685cb091b90365cb701bee7140e204ba3e5fc2d8a20b4ec6e76"
+    url "https:files.pythonhosted.orgpackages3d995d314298d154a58343050b4d8bb972cbbbb728ef943b57aef7f247c372f8oslo.serialization-5.5.0.tar.gz"
+    sha256 "9e752fc5d8a975956728dd96a82186783b3fefcacbb3553acd933058861e15a6"
   end
 
   resource "oslo-utils" do
@@ -316,8 +315,8 @@ class Ansible < Formula
   end
 
   resource "prettytable" do
-    url "https:files.pythonhosted.orgpackages4c90e1c8c06235d53c3adaae74d295669612beea5f5a2052b3184a763e7bdd62prettytable-3.10.2.tar.gz"
-    sha256 "29ec6c34260191d42cd4928c28d56adec360ac2b1208a26c7e4f14b90cc8bc84"
+    url "https:files.pythonhosted.orgpackages28570a642bec16d5736b9baaac7e830bedccd10341dc2858075c34d5aec5c8b6prettytable-3.11.0.tar.gz"
+    sha256 "7e23ca1e68bbfd06ba8de98bf553bf3493264c96d5e8a615c0471025deeba722"
   end
 
   resource "proxmoxer" do
@@ -456,8 +455,8 @@ class Ansible < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
-    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
+    url "https:files.pythonhosted.orgpackagesceef013ded5b0d259f3fa636bf35de186f0061c09fbe124020ce6b8db68c83afsetuptools-72.2.0.tar.gz"
+    sha256 "80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9"
   end
 
   resource "shade" do

@@ -40,7 +40,8 @@ class Macvim < Formula
   depends_on "python@3.12"
   depends_on "ruby"
 
-  conflicts_with "vim", because: "vim and macvim both install vi* binaries"
+  conflicts_with "ex-vi", because: "both install `vi` and `view` binaries"
+  conflicts_with "vim", because: "both install vi* binaries"
 
   def install
     # Avoid issues finding Ruby headers

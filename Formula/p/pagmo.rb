@@ -4,15 +4,16 @@ class Pagmo < Formula
   url "https:github.comesapagmo2archiverefstagsv2.19.1.tar.gz"
   sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8f35d3b0588fa8f2e7e7e4ec2aafb766b021e15931860cd7c34df9ba8a64a35"
-    sha256 cellar: :any,                 arm64_ventura:  "cfc3a9d4f379ae2ad175d43391b0a9e8c568b2e189fe609a7f86d1790e302fe9"
-    sha256 cellar: :any,                 arm64_monterey: "58b3acd3f9cc46b4519b11e9fc8f8775d175788e71fad83f048d0bf160d9add3"
-    sha256 cellar: :any,                 sonoma:         "1e1c4355c5f39f8abfe607cff474b9900b8bcf118465d462a26e736a4268c910"
-    sha256 cellar: :any,                 ventura:        "a8e15e8340724b8c52918b7a510c952c5c38eb27e03290166b6185b4757fa0b9"
-    sha256 cellar: :any,                 monterey:       "7461578677e3db9bd5e3dd35211a89802287b5cfcdaf45c254f2459b82c46d32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "683df2636a3ed1fd93c401f0bbf9a0cf4fcdd33558bfce295f519d6f6aa9eed2"
+    sha256 cellar: :any,                 arm64_sonoma:   "8a0afc6cc97987dbf0d331490c278b4a739306e21d8cdd6abee1595056991cf6"
+    sha256 cellar: :any,                 arm64_ventura:  "8d8ac532e972fc741ef96a550adc2fbbcec5576e750cdf4f28c9edd585b54a98"
+    sha256 cellar: :any,                 arm64_monterey: "553b6d9439f07679e0f7f5819e459d9f8bcd8869328c506755be103b40c59e17"
+    sha256 cellar: :any,                 sonoma:         "deda63403b6b445b4418160f30b8eb48e1e8bf1763b95ece54f0a44e9c559a52"
+    sha256 cellar: :any,                 ventura:        "0ff2034f5a451de4f483e3916842fc559d6665ea3fdaf5ccc01d3f2725370b63"
+    sha256 cellar: :any,                 monterey:       "787a36f0baf71e9c858e114da69902b446447c6d74383292da02b097dc1d54bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "033a66f14e5276aa4b64bddc1114539bc2cc99eae1ce4ffd1e84a01413aaff88"
   end
 
   depends_on "cmake" => :build

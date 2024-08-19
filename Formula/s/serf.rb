@@ -20,7 +20,8 @@ class Serf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a23cfd0f748a6d4f52803b3ade623bb79691a217e12f185103cb93359cb1c6fb"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comhashicorpserfissues736 is fixed and released
+  depends_on "go@1.22" => :build
 
   uses_from_macos "zip" => :build
 

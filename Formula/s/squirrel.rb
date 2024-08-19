@@ -27,6 +27,8 @@ class Squirrel < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "747575d9f05e9496d0eecf8ea4d6db59711396eac5feca1ae2f61794a53a6a64"
   end
 
+  conflicts_with "sq", because: "both install `sq` binaries"
+
   def install
     # The tarball files are in a subdirectory, unlike the upstream repository.
     # Moving tarball files out of the subdirectory allows us to use the same

@@ -27,8 +27,8 @@ class ExVi < Formula
 
   uses_from_macos "ncurses"
 
-  conflicts_with "vim",
-    because: "ex-vi and vim both install bin/ex and bin/view"
+  conflicts_with "macvim", because: "both install `vi` and `view` binaries"
+  conflicts_with "vim", because: "both install `ex` and `view` binaries"
 
   def install
     system "make", "install", "INSTALL=/usr/bin/install",

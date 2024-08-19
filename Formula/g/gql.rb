@@ -19,6 +19,8 @@ class Gql < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
+  conflicts_with "gitql", because: "both install `gitql` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

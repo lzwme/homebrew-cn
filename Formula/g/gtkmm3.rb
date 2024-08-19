@@ -23,9 +23,14 @@ class Gtkmm3 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "atkmm@2.28"
   depends_on "cairomm@1.14"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "glibmm@2.66"
   depends_on "gtk+3"
+  depends_on "libsigc++@2"
   depends_on "pangomm@2.46"
 
   def install
@@ -37,6 +42,7 @@ class Gtkmm3 < Formula
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <gtkmm.h>
+
       class MyLabel : public Gtk::Label {
         MyLabel(Glib::ustring text) : Gtk::Label(text) {}
       };
@@ -44,7 +50,8 @@ class Gtkmm3 < Formula
         return 0;
       }
     EOS
-    flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtkmm-3.0").strip.split
+
+    flags = shell_output("pkg-config --cflags --libs gtkmm-3.0").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end

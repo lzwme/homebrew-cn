@@ -20,6 +20,8 @@ class Gitql < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "gql", because: "both install `gitql` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end

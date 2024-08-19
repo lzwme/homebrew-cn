@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.14.0.tar.gz"
   sha256 "0e74372c658f083820872311d126867f10d59b526a856672746de7b2c772034d"
   license "Apache-2.0"
+  revision 1
   head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7facaf61d5be7c4d26c76b69ddd1624cd3e42707e45f6a03f1991f185b99117c"
-    sha256 cellar: :any,                 arm64_ventura:  "71ff9170e85eb8c899de989d14182b01228d118cec70f7bcec68cc342b7c64a7"
-    sha256 cellar: :any,                 arm64_monterey: "b3c28fbb6bd165c6b7e0dbe4ca456265ce8285d19b1abfe13b28b5fff399f549"
-    sha256 cellar: :any,                 sonoma:         "18d3581755269cda878e089edf148b4d55d8fcb2465eeb2c3e471831f6309037"
-    sha256 cellar: :any,                 ventura:        "0114df3b27e2c3516a4df5a335b020bf5049e64a04ff7032068ec2805a6f5de7"
-    sha256 cellar: :any,                 monterey:       "84e1de33960979e6ada51aa731cde5bedb99a06cc450aa21d5c06309b1f8d83c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ff18c3ea0788ad8c6d5d03b370ea83e533c401d57f06242291519160780a88"
+    sha256 cellar: :any,                 arm64_sonoma:   "a5dfcce27a52ee869bde523631c8f9a3c60db196947d318d9441912668ae2244"
+    sha256 cellar: :any,                 arm64_ventura:  "176de116c165a0c10e1395d9a7f1556db1c6dcb8c68c0fd74aee4cee78676c67"
+    sha256 cellar: :any,                 arm64_monterey: "ac5123f89288245ee3afdbf611fe3c829193f848f32cbf9a3ae64259b084d1d8"
+    sha256 cellar: :any,                 sonoma:         "93123c175d2b508d1cb099013e78c982c7e09a4fc9a32aa96d88318c57d20329"
+    sha256 cellar: :any,                 ventura:        "466caf2eb641e3a72545e90e11a39eca6bb01ea6e27d012159e1d2ef68db1b5e"
+    sha256 cellar: :any,                 monterey:       "ba17f09b5690a26194e320e299b8a3ea8e4ac51d182dff5d889622d6ab508964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d27da50ba5f4f6279b895e2aca6044de662dc37585069abcdba4c25513ca17d1"
   end
 
   depends_on "cmake" => :build

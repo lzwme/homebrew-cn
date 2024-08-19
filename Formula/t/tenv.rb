@@ -1,24 +1,24 @@
 class Tenv < Formula
   desc "OpenTofu  Terraform  Terragrunt  Atmos version manager"
   homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv3.0.0.tar.gz"
-  sha256 "b05ef683581dadb9f780f19d915b5f85017b3c95f9da699cf916d54a0a06c146"
+  url "https:github.comtofuutilstenvarchiverefstagsv3.1.0.tar.gz"
+  sha256 "a5a2f208fe3cf9168d19ad322ce9176d94030f4a2bdb3a7180bec0dec25c3da5"
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0c2e1e9c82bb9a252de6286b7c2b819256673a2847a84903b6c48138fd50620"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0c2e1e9c82bb9a252de6286b7c2b819256673a2847a84903b6c48138fd50620"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0c2e1e9c82bb9a252de6286b7c2b819256673a2847a84903b6c48138fd50620"
-    sha256 cellar: :any_skip_relocation, sonoma:         "73b4bd46a2bfb9aaa38c7efaa78cf407ff3fd5b77a8f4d048f3b898f606e5876"
-    sha256 cellar: :any_skip_relocation, ventura:        "73b4bd46a2bfb9aaa38c7efaa78cf407ff3fd5b77a8f4d048f3b898f606e5876"
-    sha256 cellar: :any_skip_relocation, monterey:       "73b4bd46a2bfb9aaa38c7efaa78cf407ff3fd5b77a8f4d048f3b898f606e5876"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bc9474763fa67c9995a131697bcb2b72f0c6ec5f395f2bd9e0877eda77fee82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "705c5d5fa9ccfbe667f9171b67ecf409848b05657d9f225162fdbf4d896bc141"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "705c5d5fa9ccfbe667f9171b67ecf409848b05657d9f225162fdbf4d896bc141"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "705c5d5fa9ccfbe667f9171b67ecf409848b05657d9f225162fdbf4d896bc141"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e7fddd8517b9dc1b145168795966b94c9fac1a5d030c3cd79afc324727435863"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7fddd8517b9dc1b145168795966b94c9fac1a5d030c3cd79afc324727435863"
+    sha256 cellar: :any_skip_relocation, monterey:       "e7fddd8517b9dc1b145168795966b94c9fac1a5d030c3cd79afc324727435863"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09ecce584a095b3af3ddca6bdadff25aaba02b4449749caea1aaed06bfe812bf"
   end
 
   depends_on "go" => :build
 
-  conflicts_with "opentofu", because: "both install tofu binary"
+  conflicts_with "opentofu", "tofuenv", because: "both install tofu binary"
   conflicts_with "terraform", because: "both install terraform binary"
   conflicts_with "terragrunt", because: "both install terragrunt binary"
   conflicts_with "atmos", because: "both install atmos binary"

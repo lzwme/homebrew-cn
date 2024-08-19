@@ -3,7 +3,7 @@ class B2sum < Formula
   homepage "https:github.comBLAKE2BLAKE2"
   url "https:github.comBLAKE2BLAKE2archiverefstags20190724.tar.gz"
   sha256 "7f2c72859d462d604ab3c9b568c03e97b50a4052092205ad18733d254070ddc2"
-  license "CC0-1.0"
+  license any_of: ["CC0-1.0", "OpenSSL", "Apache-2.0"]
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f950ffbb7054c14bc13c5308966a2eb461557103b96f43d446781b9353887a78"

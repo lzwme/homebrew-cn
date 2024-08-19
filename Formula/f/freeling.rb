@@ -4,16 +4,16 @@ class Freeling < Formula
   url "https:github.comTALP-UPCFreeLingreleasesdownload4.2FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e471c2d79859e1f8d856013abc79686966d9e4e0c7ef6f6a7136466574078fed"
-    sha256 cellar: :any,                 arm64_ventura:  "b9aa7ab26bf730c3df6eeae83bdc61beea1340b544f525ad3d2884c971d91efb"
-    sha256 cellar: :any,                 arm64_monterey: "63617b4fa7d506c842a902e1fe320fa6f683b9b308755f557c96c9d4f53074af"
-    sha256 cellar: :any,                 sonoma:         "8529fb52ff2c52de1c6f85530b404c5682cc89ac2d92b1556c7ab6ecdac185b6"
-    sha256 cellar: :any,                 ventura:        "95b5feff0cc251a693c95eeb6a94c3fb589977a8c57ba7a3fe904edea3bf42ee"
-    sha256 cellar: :any,                 monterey:       "3994465596aa9bb62307f9dca37bed9fafe67d9c1e379666ec3fda6c742038f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9d22cf033e91e1dbce5faa57e0d52b2297795f77aecb162805dd6ff42cef85f"
+    sha256 cellar: :any,                 arm64_sonoma:   "ecfc8921a5a1ce53c49dc24850bca48bb1c8877cf1784e03b5cff1e3bf2de19c"
+    sha256 cellar: :any,                 arm64_ventura:  "801f54dc1051a01623a9503d4785d163125c46dfa1922fc08223d1aeeda4b4e7"
+    sha256 cellar: :any,                 arm64_monterey: "75f5cd437c1988cec1a7c596b372929cdefe083cfd30bfaa9a27afa8c0cd943c"
+    sha256 cellar: :any,                 sonoma:         "bc98a94ec428215d2a86dc80f8be616f6982293fab0ef530253607bbf32945fb"
+    sha256 cellar: :any,                 ventura:        "7bbf13e7ba9759332834e77f7f993788becb51b2a770969c444d6b76d235f41d"
+    sha256 cellar: :any,                 monterey:       "03fdbde545042f81bf8c7a4f18bd7d49bdf405e3625fa2a2c9598e6c72d12812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7d86da0c4348eaa3a2bd082920138234bbe0ef76fc238384a96144c67f3ef2d"
   end
 
   depends_on "cmake" => :build

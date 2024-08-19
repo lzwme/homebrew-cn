@@ -20,6 +20,8 @@ class Atlas < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "mongodb-atlas-cli", "nim", because: "both install `atlas` executable"
+
   def install
     ldflags = %W[
       -s -w

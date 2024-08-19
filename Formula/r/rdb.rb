@@ -15,7 +15,8 @@ class Rdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2938e89db70bf767cb86aba85fd503831a5ceeb5b4564dc9c03045fd7143abea"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comHDT3213rdbissues37 is fixed and released
+  depends_on "go@1.22" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

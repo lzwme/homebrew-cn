@@ -4,16 +4,17 @@ class Gismo < Formula
   url "https:github.comgismogismoarchiverefstagsv23.12.0.tar.gz"
   sha256 "6dc78e1d0016a45aee879eec0e42faf010cd222800461d645f877ff0c1f2d1a2"
   license "MPL-2.0"
+  revision 1
   head "https:github.comgismogismo.git", branch: "stable"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "605f549b5ca06b4a101b74ef6b6cc5c215145dba3ba6ce5e696ea7ce6ab6b7e1"
-    sha256 cellar: :any,                 arm64_ventura:  "e30d80cb9044585fc0e8fa6a7ccb1e1ebc39ea9ea25321e888c5081fc497c290"
-    sha256 cellar: :any,                 arm64_monterey: "98cd35b9d1a4509767ffe8342fd675ae7ff4e17c540fafe5f150cf857a673f74"
-    sha256 cellar: :any,                 sonoma:         "a91dffe15c5ec0d074f464540686b08978c8c4c26e454cb339e4e8ce9ef16f12"
-    sha256 cellar: :any,                 ventura:        "c1b3311beafdd282b90dd8b0389774f051cdb8cafa3c0bfd2a37d8b2b96987a6"
-    sha256 cellar: :any,                 monterey:       "36f513b6fd36d395a27c0e06170686e4dd0bfdabf63a45dd88174144c9b120ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ed7f343c03afeaf7aaf94fc418947e0d3c0cce467f95f83c98ed95ae7f21aac"
+    sha256 cellar: :any,                 arm64_sonoma:   "7d0e50c9e6bc867c1f024a9787d5aab5bf1945540981ca0c541d03d6aa7dec3b"
+    sha256 cellar: :any,                 arm64_ventura:  "5edbf2c3302567020d39a374d37658a45586af67887b8f572a3b44b800441e24"
+    sha256 cellar: :any,                 arm64_monterey: "9a7078fc694bb1ba8458584b7756165c66da692de548e7f41089153dfcdc0204"
+    sha256 cellar: :any,                 sonoma:         "7f848967b119fbe5961df3cb422d4a61e06558d99cbfaf091f3135fe075a423e"
+    sha256 cellar: :any,                 ventura:        "b63e5e4c6ce47c361cb50c886abed10603489061c7f4ad971aada97896e62c78"
+    sha256 cellar: :any,                 monterey:       "766cbd0a43cc5a721671c093555129781241300a8e0e8dce497e8bc2699ff482"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9731ddd067e2566dfeef378fd936203dd6651ed460b1e2b9e53528c63882239a"
   end
 
   depends_on "cmake" => :build

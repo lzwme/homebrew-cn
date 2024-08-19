@@ -20,40 +20,34 @@ class Cgl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "89e4dd779e9418110fea45a3511a35d711089aa94a15e8096115bba9ef14169a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
+
   depends_on "clp"
   depends_on "coinutils"
   depends_on "osi"
 
-  resource "coin-or-tools-data-sample-p0033-mps" do
-    url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.12p0033.mps"
-    sha256 "8ccff819023237c79ef32e238a5da9348725ce9a4425d48888baf3a0b3b42628"
+  on_macos do
+    depends_on "openblas"
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--includedir=#{include}cgl"
-    system "make"
+    system ".configure", "--disable-silent-rules", "--includedir=#{include}cgl", *std_configure_args
     system "make", "install"
+
     pkgshare.install "Cglexamples"
   end
 
   test do
-    resource("coin-or-tools-data-sample-p0033-mps").stage testpath
+    resource "homebrew-coin-or-tools-data-sample-p0033-mps" do
+      url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.12p0033.mps"
+      sha256 "8ccff819023237c79ef32e238a5da9348725ce9a4425d48888baf3a0b3b42628"
+    end
+
+    resource("homebrew-coin-or-tools-data-sample-p0033-mps").stage testpath
     cp pkgshare"examplescgl1.cpp", testpath
-    system ENV.cxx, "-std=c++11", "cgl1.cpp",
-                    "-I#{include}cglcoin",
-                    "-I#{Formula["clp"].opt_include}clpcoin",
-                    "-I#{Formula["coinutils"].opt_include}coinutilscoin",
-                    "-I#{Formula["osi"].opt_include}osicoin",
-                    "-L#{lib}", "-lCgl",
-                    "-L#{Formula["clp"].opt_lib}", "-lClp", "-lOsiClp",
-                    "-L#{Formula["coinutils"].opt_lib}", "-lCoinUtils",
-                    "-L#{Formula["osi"].opt_lib}", "-lOsi",
-                    "-o", "test"
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs cgl").chomp.split
+    system ENV.cxx, "-std=c++11", "cgl1.cpp", *pkg_config_flags, "-o", "test"
     output = shell_output(".test p0033 min")
     assert_match "Cut generation phase completed", output
   end

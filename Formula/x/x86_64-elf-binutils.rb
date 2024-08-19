@@ -1,9 +1,9 @@
 class X8664ElfBinutils < Formula
   desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.bz2"
-  sha256 "fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
+  sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class X8664ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "030fa33de78861c8a99f02021777810b7df5d416b498690f8752ca8b52d3539d"
-    sha256 arm64_ventura:  "a0f14364664ffab038923b6ce86e072ddeec0583145744ebfd9d3b9a041be614"
-    sha256 arm64_monterey: "4b13812f6da11cc1a413ba3b9cc8fa9219f85668e144bbb669c69e399d1927e7"
-    sha256 sonoma:         "5fbbb472a6aca42bbab966af688a1bd4c4cc44a3345f0c569b2fdb8bd8dcb708"
-    sha256 ventura:        "a04e4374a04e09f063802e50ab0050b1b3cf271c20e4a538a4d5493a47c6dd91"
-    sha256 monterey:       "3d5f0c56005d2c169f6553fb923d2a1424f8846b20e01ba83d082d317ee501f2"
-    sha256 x86_64_linux:   "2fa3e69fac956787190f45c0117d69804473728fdd1253e2190ca7ddbf372bb2"
+    sha256 arm64_sonoma:   "6b3304e1337d392828c800cecca791267f3682c7d7ecc406648e0ac01726698f"
+    sha256 arm64_ventura:  "339e160848752b6486f5364369749b333dfa43ce2cf29f2de2105b8c683ecfb4"
+    sha256 arm64_monterey: "b71f4dd4f0181b5bb1ab8a5c56253346f919020f13e17938824e98eff182dfce"
+    sha256 sonoma:         "0791226bb834c669237c872b14878ea182ea7f009622826cc6b6eeb8bdb3455c"
+    sha256 ventura:        "f494ac13ac40d3eb258accf5fc635d6036e06ff617f6e9a033f9f52d1644c3d9"
+    sha256 monterey:       "d3336e5c8c288f63f980f081648ce62fe6bd85d6bdac64bcad96d24a8e8ef6d1"
+    sha256 x86_64_linux:   "f0ed12582580e7fa52c4a1db664ceeef57c921ba29aa110673ae6aeb7ed3e7cf"
   end
 
   depends_on "pkg-config" => :build

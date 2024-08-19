@@ -6,6 +6,7 @@ class Mapnik < Formula
       tag:      "v4.0.0",
       revision: "85801bd4028fa1cbffd9f7de4e2458bfc55e44bd"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:github.commapnikmapnik.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7cfb7dd093232bccb0e355ca39647f482153318278333ad58aa7afb711c6209b"
-    sha256 cellar: :any,                 arm64_ventura:  "df8ea8fc3350cb1a7067ce94cc67b0f1b491e3a85117b415cf1f9bac2035dd94"
-    sha256 cellar: :any,                 arm64_monterey: "bdeb878366d5c0a0bb869b9189d336755b46f75a0af8cdc69423e1fcdd39a885"
-    sha256 cellar: :any,                 sonoma:         "b834a8ba4b4694b816612bec2c2a2ca41304cf0f32b975fd3d3dbcc294b88cdc"
-    sha256 cellar: :any,                 ventura:        "9198b79e4bdcaba38e7567395450aa72c11441cadd00a8df4c83a018ef35a88e"
-    sha256 cellar: :any,                 monterey:       "5ff00ec8942ceb8becac05f8243ba0b51c8170f0d4a633bda679d70b4bd00bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c133c069eeec60ee72ffdb033720b494f7a98a9b89038abf8f531a694802ed5"
+    sha256 cellar: :any,                 arm64_sonoma:   "76cd0f41910f491fa38de43b7514efe0225ff00b0f67d0b02ade7abc5033dc95"
+    sha256 cellar: :any,                 arm64_ventura:  "f91329d7796c0fd584ae3fa8bdb98712908fe6a7da2195b92e47bf1297dc0ae5"
+    sha256 cellar: :any,                 arm64_monterey: "1b2b3135ccd3ab978ab749e4c7d1168d9b9bef3160486bd8a7c1b7096fbc6d2d"
+    sha256 cellar: :any,                 sonoma:         "38044de9396c8887858ff6fdc29ffe8d2c998d7ff4c8ffc91232a734478256f8"
+    sha256 cellar: :any,                 ventura:        "0942989e458ea66f9a68848c69717236b75e61bf03399b0c296533a63a152d69"
+    sha256 cellar: :any,                 monterey:       "15a786db5e5ab087fb1ff316324bcfa9543937012f245871d7f98728948e4c98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b36a3e2447da8d0a3071e5ef8960595a06828147dea5e54b9af4f9b627c8dc40"
   end
 
   depends_on "cmake" => :build
@@ -42,6 +43,7 @@ class Mapnik < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "osrm-backend", because: "both install Mapbox Variant headers"
   conflicts_with "svg2png", because: "both install `svg2png` binaries"
 
   fails_with :gcc do

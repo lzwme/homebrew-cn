@@ -17,6 +17,8 @@ class Moar < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "moarvm", "rakudo-star", because: "both install `moar` binaries"
+
   def install
     ldflags = "-s -w -X main.versionString=v#{version}"
     system "go", "build", *std_go_args(ldflags:)

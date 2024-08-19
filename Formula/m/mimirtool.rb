@@ -26,7 +26,8 @@ class Mimirtool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4c4acf4e18e856ea816e8b4c01e2b7af0a29eb263e5c04b2e636f83e120f955"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comgrafanamimirissues9033 is fixed and released
+  depends_on "go@1.22" => :build
 
   def install
     system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmdmimirtoolmimirtool"

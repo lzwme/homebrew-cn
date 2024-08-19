@@ -6,16 +6,16 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/c2/44/8751d04184a2c4f3e60be27ef7a14f04257096303dcb8122167672d3cd6a/ansible_lint-24.7.0.tar.gz"
   sha256 "ca2edc7e4e80cf19df4b28cbf4c118f761ce6cdd6a5ef9c8561e454ed7af5a24"
   license all_of: ["MIT", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "35fc8e16b9d762f20ab5fe566a52266041119d4803a265a6e2455a40267324d8"
-    sha256 cellar: :any,                 arm64_ventura:  "3f0d7391f312df4d22c6326863d8c107177b26ecbe8a30fb2d6e2490da379cc4"
-    sha256 cellar: :any,                 arm64_monterey: "0f539518655906ffa7a32f28e67627f8272f1d0affc723fde8dea0a179e3ac33"
-    sha256 cellar: :any,                 sonoma:         "c0a910edbe4a4ca9e2c2c17de5929dbb31b2daab677d8c76f165f494a6f16288"
-    sha256 cellar: :any,                 ventura:        "d3d62d7241d0321a24ff15d388df5eee16e905da8083d84a1c7326d8aa0421b2"
-    sha256 cellar: :any,                 monterey:       "65cb6b55bc2b22d4966a061c6b114b9f3ca504c7b4a1d2c60d22621b289aaa32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d95fbfc6bcc18fbbf862f9d0ea1db5128dd6adb5d24d700ca04178a62ca1cf0a"
+    sha256 cellar: :any,                 arm64_sonoma:   "79b0c4f36420d036075e35a24e913aea9b25c088fdd1c736046c776c056282f2"
+    sha256 cellar: :any,                 arm64_ventura:  "500f9d6cc6833ec5145b1f542261c0fae9b61d8ecd9a4998b969fd0326f5a5ec"
+    sha256 cellar: :any,                 arm64_monterey: "6d05184c7219a00faaa31f363dfbd99f05639b53926dfc0bde84a01654cb3aec"
+    sha256 cellar: :any,                 sonoma:         "e8e0eeead84c9aea2250af856d69b90e52a2e58e5bff12e2dfb2d15ce55767d3"
+    sha256 cellar: :any,                 ventura:        "60302e2f9df6f7573d7c15a364a480bfa00c05468f5dbead072fd061033349e9"
+    sha256 cellar: :any,                 monterey:       "61c8d1bdd3063f70995d12dbfdaa2c392c86e23c9236963e2aff36376f5bd3bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6289b7ceae24886f479f6e09f500c9093d27e7f9582d69e2ab58e0cdf9e26c03"
   end
 
   depends_on "pkg-config" => :build
@@ -31,8 +31,8 @@ class AnsibleLint < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/69/9d/62cf1cb023710f9556d88c663950117014082387ddcf0fcc4c419a4bf0fb/ansible_core-2.17.2.tar.gz"
-    sha256 "3dfa15249069ea0d001257902c968ddf9bb71d965769b8802bce85187556c5d8"
+    url "https://files.pythonhosted.org/packages/3c/f2/6b407947f6e2c91d4fb8a3b61958f941a077c68d0ef0a37c3c0df3d96026/ansible_core-2.17.3.tar.gz"
+    sha256 "917557065339fe36e7078e9bea47eefab6d6877f3bd435fa5f0d766d04c58485"
   end
 
   resource "attrs" do

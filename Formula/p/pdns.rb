@@ -4,6 +4,7 @@ class Pdns < Formula
   url "https:downloads.powerdns.comreleasespdns-4.9.1.tar.bz2"
   sha256 "30d9671b8f084774dbcba20f5a53a3134d0822ab2edc3ef968da030e630dd09a"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https:www.powerdns.comdownloads"
@@ -11,13 +12,13 @@ class Pdns < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "45cfb0e6bc9a4daf32a9f47162828dbfc922b21573329aa5030136af7c4458a2"
-    sha256 arm64_ventura:  "484eb8d3ca30e64ebae9e35f75a5567d2d60ee8320e26ea629c41bc5ff3ace9b"
-    sha256 arm64_monterey: "38111355e0f36392af2c24210258efb0c2ccc490672851d6730a606c657c0119"
-    sha256 sonoma:         "30a1f72a75c1b488def00e3c4a521c3252d7434b8a1c14b36a785c4ac4f6625c"
-    sha256 ventura:        "ab99793a9aedf11f94cb8b599eba4b87f51f2d04d2a89a79dc64af71eaa3942c"
-    sha256 monterey:       "430d61369186264de83ee350b08ac26108098c40a3dc17d356cc7d57c94438c2"
-    sha256 x86_64_linux:   "a7f9c6ac172c712c7a7212b816efbad67e80bab0ebd37e1271050a04e937d4b2"
+    sha256 arm64_sonoma:   "660e48a419366a19a97f2f05bd5abffdd16fc0e5ae0e1f29cc76923e8d98784a"
+    sha256 arm64_ventura:  "1d36e9e6ffeba02de5e6bad5d320f9ad23f0e7bfc36cab5a1a7c6743a9f5300f"
+    sha256 arm64_monterey: "8dbfe8340a87dc4306b88abeb60bcc2cf1eff2459c48adf5bd456d56df696963"
+    sha256 sonoma:         "10e5ea6461ddddc7f7ecbdcf144566ca7466468d6f8fbd027f45e4625dfaeccf"
+    sha256 ventura:        "20dfdf4113f1804649620d1ae313d62a497cc5ca91b1f353bd69480113da9bdb"
+    sha256 monterey:       "ee59a163a5150373a16dde3346072919c542ac040451ac9d78ad179e41611323"
+    sha256 x86_64_linux:   "391591c9b46eb4e441496ca6923e04529a137ab3734537cede69ac29f26b1c65"
   end
 
   head do
@@ -38,6 +39,13 @@ class Pdns < Formula
   uses_from_macos "curl"
 
   fails_with gcc: "5" # for C++17
+
+  # Fix build with boost 1.86.0. Remove if PR is merged and in a release.
+  # PR ref: https:github.comPowerDNSpdnspull14562
+  patch do
+    url "https:github.comPowerDNSpdnscommiteed56000b1d68ac083b8e8bea4ff0ea30a1579c4.patch?full_index=1"
+    sha256 "c21a8677c048f3ce023f2e09c5204602031a78c441904567a4da2b7870dc29ad"
+  end
 
   def install
     args = %W[

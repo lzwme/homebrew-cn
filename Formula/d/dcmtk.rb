@@ -22,11 +22,14 @@ class Dcmtk < Formula
   end
 
   depends_on "cmake" => :build
+
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   def install
     args = std_cmake_args + ["-DDCMTK_WITH_ICU=OFF"]

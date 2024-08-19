@@ -20,44 +20,38 @@ class Cbc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e5afed407b3fea202f1c18c8637c15b1c909121ae22b2560e6521f182621d4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
+
   depends_on "cgl"
   depends_on "clp"
   depends_on "coinutils"
   depends_on "osi"
+
+  on_macos do
+    depends_on "openblas"
+  end
 
   conflicts_with "libcouchbase", because: "both install `cbc` binaries"
 
   def install
     # Work around for:
     # Error 1: "mkdir: #{include}cbccoin: File exists."
-    mkdir include"cbccoin"
+    (include"cbccoin").mkpath
 
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system ".configure", "--disable-silent-rules",
                           "--includedir=#{include}cbc",
-                          "--enable-cbc-parallel"
-    system "make"
+                          "--enable-cbc-parallel",
+                          *std_configure_args
     system "make", "install"
+
     pkgshare.install "Cbcexamples"
   end
 
   test do
     cp_r pkgshare"examples.", testpath
-    system ENV.cxx, "-std=c++11", "sudoku.cpp",
-                    "-L#{lib}", "-lCbc",
-                    "-L#{Formula["cgl"].opt_lib}", "-lCgl",
-                    "-L#{Formula["clp"].opt_lib}", "-lClp", "-lOsiClp",
-                    "-L#{Formula["coinutils"].opt_lib}", "-lCoinUtils",
-                    "-L#{Formula["osi"].opt_lib}", "-lOsi",
-                    "-I#{include}cbccoin",
-                    "-I#{Formula["cgl"].opt_include}cglcoin",
-                    "-I#{Formula["clp"].opt_include}clpcoin",
-                    "-I#{Formula["coinutils"].opt_include}coinutilscoin",
-                    "-I#{Formula["osi"].opt_include}osicoin",
-                    "-o", "sudoku"
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs cbc").chomp.split
+    system ENV.cxx, "-std=c++11", "sudoku.cpp", *pkg_config_flags, "-o", "sudoku"
     assert_match "solution is valid", shell_output(".sudoku")
   end
 end

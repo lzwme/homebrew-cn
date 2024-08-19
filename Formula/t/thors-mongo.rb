@@ -1,27 +1,27 @@
-class ThorsSerializer < Formula
-  desc "Declarative serialization library (JSONYAML) for C++"
-  homepage "https:github.comLoki-AstariThorsSerializer"
-  url "https:github.comLoki-AstariThorsSerializer.git",
-      tag:      "3.2.30",
-      revision: "7595f88ffdc621d73be4541205b66a2c44892dc2"
+class ThorsMongo < Formula
+  desc "Mongo API and Serialization library"
+  homepage "https:github.comLoki-AstariThorsMongo"
+  url "https:github.comLoki-AstariThorsMongo.git",
+      tag:      "3.3.00",
+      revision: "50edea0a79cb00ac0469e14e37e46188f20d5ae3"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "515d2367842648ac0c27281d6d3efb56e75f17638fec4db1172145a80d2a5e48"
-    sha256 cellar: :any,                 arm64_ventura:  "8bbba65e5c0c89c8c76b9b21ad9db8d0d469a0c6e5aa0b4b7524f381ecb73163"
-    sha256 cellar: :any,                 arm64_monterey: "a5760714e3180af4a277f3c9ff1edb28cacad43eacec3e488f5f0f3307d07b73"
-    sha256 cellar: :any,                 sonoma:         "672fc922c951d2f9dee08246e4d806308f97a729c0e457e7f93343d71559fdda"
-    sha256 cellar: :any,                 ventura:        "7958d43eeee0b990f8e7020fac0c1b6839730247e8bcc7431cfc1cdcdd899bd5"
-    sha256 cellar: :any,                 monterey:       "f5db265a13d1e5a34d16dc8e9968fdc27fabec73a57be082eb01010b51979a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad9c0d23caccff889466c587fe9c9bb95f2d5a75c4ce197ad1c81bc20737825a"
+    sha256 cellar: :any,                 arm64_sonoma:   "5bbdc57ecd5330c916f0c76d6a1e3497c2127d371349b15b2d534b62e802f516"
+    sha256 cellar: :any,                 arm64_ventura:  "0ff914b3b50e73d3b6b69e9c6b1deb1e19489d3119bd71d90f53937b6ceeab50"
+    sha256 cellar: :any,                 arm64_monterey: "1ce642bd9357de6608770d44c23ad67b2f03b4e0c51963fcd4a2baffb8b7bdf0"
+    sha256 cellar: :any,                 sonoma:         "df324671b1735d7d52d68da1b436e6706f00d5872861ec83105ce4771aef4eaa"
+    sha256 cellar: :any,                 ventura:        "76fc80118d6e7fe6511856b290f37e36de87dcd104b9d4bdcfbc32236988c5c4"
+    sha256 cellar: :any,                 monterey:       "4bae200a85947f3a300805f9fe4e7e90ef351328b382441c67645a67fad3c336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71d226417944427ea75751a1e2ce4901c89f5a5216b9fc0e4ec4246fac1c037b"
   end
 
-  depends_on "boost" => :build
-  depends_on "bzip2"
   depends_on "libyaml"
   depends_on "magic_enum"
   depends_on "openssl@3"
   depends_on "snappy"
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   fails_with gcc: "5"
 
@@ -73,7 +73,6 @@ class ThorsSerializer < Formula
       }
     EOS
     system ENV.cxx, "-std=c++20", "test.cpp", "-o", "test",
-           "-I#{Formula["boost"].opt_include}",
            "-I#{include}", "-L#{lib}", "-lThorSerialize", "-lThorsLogging", "-ldl"
     system ".test"
   end

@@ -26,6 +26,7 @@ class Notmuch < Formula
   depends_on "libgpg-error" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
+
   depends_on "cffi"
   depends_on "glib"
   depends_on "gmime"
@@ -34,6 +35,10 @@ class Notmuch < Formula
   depends_on "xapian"
 
   uses_from_macos "zlib", since: :sierra
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def python3
     "python3.12"

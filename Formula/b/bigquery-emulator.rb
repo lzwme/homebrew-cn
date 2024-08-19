@@ -16,7 +16,8 @@ class BigqueryEmulator < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbbacfb90b781068c6b9c2ee71c330f19f1ceb5487a8b2e9ea3d9c453abc08fd"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comgoccybigquery-emulatorissues348 is fixed and released
+  depends_on "go@1.22" => :build
 
   uses_from_macos "llvm" => :build
   uses_from_macos "netcat" => :test

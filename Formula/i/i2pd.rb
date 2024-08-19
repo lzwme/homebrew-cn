@@ -2,17 +2,18 @@ class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https:i2pd.website"
   url "https:github.comPurpleI2Pi2pdarchiverefstags2.53.1.tar.gz"
-  sha256 "99c3d739530b08b28a796544ead4254394c7226a873bf813db4e7b3c1524d757"
+  sha256 "c6863d853905e7594ea661595ea591055f8f2f018b9b90507d5a43a6456188ea"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "50babedaa7726acccdaf11ecb5a144d2953bd52e3f6084db49524924609a0832"
-    sha256 cellar: :any,                 arm64_ventura:  "21f79648538f2eac0abf9b9b1240b966f0edfd897ee08d77875ce9cc6e2c6455"
-    sha256 cellar: :any,                 arm64_monterey: "9e4e47d59e22dac059f86ae47dd510d0089969371ab0e681cfc4e2524991dbaf"
-    sha256 cellar: :any,                 sonoma:         "d1b0e796b5e39c80dad02b8b880706f46b2c13158f10b122197f600ec4e0337e"
-    sha256 cellar: :any,                 ventura:        "16c54ca004d3c0e60e0a55d27b66ae86f9fca0a1f106c53ef0cedfd55d22b671"
-    sha256 cellar: :any,                 monterey:       "0b2b91c5afeafa17f1c87ce61496ea6e5012d80068531cdb47bb6555011b4eb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b12898a98fb525e6d3a0ef27bbe6f07badce23281489137c7cf0b878f6f603c"
+    sha256 cellar: :any,                 arm64_sonoma:   "5fd7dd481d1a6ab34a6bb20fb63310353154987784a6b0e82542511abe6e0e1d"
+    sha256 cellar: :any,                 arm64_ventura:  "e0ffd5e80c76da7a096dee98a5c98c9bac175c9fafcbb61e5dc0236568a11bfd"
+    sha256 cellar: :any,                 arm64_monterey: "33137c83eda0896b0af38a7fd0a60f25a0facb422c30f6fa3922c92bbc936fbe"
+    sha256 cellar: :any,                 sonoma:         "3130adbee78929af125750073e6dbb6360022aad9f468a4c64bceae9da34d49c"
+    sha256 cellar: :any,                 ventura:        "a535eb423006b8b9cfaf3b32f45b8e0556cde3c4f11ef09223e3124259d41592"
+    sha256 cellar: :any,                 monterey:       "936399d51d014760e4b974a1a8a486b4f7141a0b6fc8c8c6583dadae22d0bfc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07f8e5145d6608a866bc773b6f897a7dd13620a094d451f1f900a2c839dc43e2"
   end
 
   depends_on "boost"

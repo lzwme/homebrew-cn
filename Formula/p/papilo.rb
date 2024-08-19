@@ -4,16 +4,17 @@ class Papilo < Formula
   url "https:github.comscipoptpapiloarchiverefstagsv2.3.0.tar.gz"
   sha256 "7e8727b8fcb9c58712e00276d6c342b0319652d0f1c665472af9d22475bce9c1"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aedf3b57e9bba79c4f68ba77ecae2343335457badc86bcb8ff8e203fa01d189e"
-    sha256 cellar: :any,                 arm64_ventura:  "93568788db903fe17b2e80eb2b8cafe9c735ca89426ddf75271995415e76228f"
-    sha256 cellar: :any,                 arm64_monterey: "2de8750104ae2046911cf16052b8261330d1074d495f75bc75fd20afa52531dc"
-    sha256 cellar: :any,                 sonoma:         "b0f1519abf0e4a152309036f7209f643329f8a2a29245754ef3e7f0cb30ed796"
-    sha256 cellar: :any,                 ventura:        "91d56f85209d76eff2d1f6f780014a5739444f2d778013c56e41a06b9170be8d"
-    sha256 cellar: :any,                 monterey:       "b9c58199c086a50610baf724cba38fbcef5ab25ee6415ccc10cfb320416d1f2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a2c663a672311dda26cbc875bfbdfb272303e359e60bb7812dba8a34766037a"
+    sha256 cellar: :any,                 arm64_sonoma:   "81fe3b03786cac4b69f8938f2dddbcf6763febef256e01b7e1f8764798d8cbdc"
+    sha256 cellar: :any,                 arm64_ventura:  "2b9f6fe1d9fbc2b9c1d6e7e4cb189da3fffccb906115c450c7d972bf590ccd7f"
+    sha256 cellar: :any,                 arm64_monterey: "c5d509a490081012d1e18fba0bdbb4ccf0cc324d0d24d43c4569c87adbd474ff"
+    sha256 cellar: :any,                 sonoma:         "eefb68fa32625eb977560f38dc668d9f230e69e7c34887a538834055b64e0e8f"
+    sha256 cellar: :any,                 ventura:        "b6ff4a2c857112024cc8470a5c4231098b222d5f805b84fae4473b2e48c74a7c"
+    sha256 cellar: :any,                 monterey:       "6282a0ce3945117bc53fe8893c4b586192d8c5e4e8cf1ce69c6cf46e2a77fd9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69261d6017411111f43aeaea7bbfe4c4899bd255323e7e14deafbcb502e25797"
   end
 
   depends_on "cmake" => :build

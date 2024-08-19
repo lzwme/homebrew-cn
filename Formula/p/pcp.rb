@@ -21,7 +21,8 @@ class Pcp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be128448d96fd7005c9cbda1c1ba2c71e7f7a58468c1c5bb3ec7a1f75c5109c5"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comdennis-trapcpissues30 is fixed and released
+  depends_on "go@1.22" => :build
 
   def install
     ldflags = "-X main.RawVersion=#{version} -X main.ShortCommit=#{Utils.git_short_head(length: 7)}"

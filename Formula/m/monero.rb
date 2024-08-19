@@ -5,7 +5,7 @@ class Monero < Formula
       tag:      "v0.18.3.3",
       revision: "81d4db08eb75ce5392c65ca6571e7b08e41b7c95"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,18 +13,18 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cb39ced3e963a69194a95171d84bc44055606cc3c53c66598eef89427908df80"
-    sha256 cellar: :any,                 arm64_ventura:  "c313a080c3596b65f383712ff5fdff7b534f289467179fdcc92e497a3e1467e8"
-    sha256 cellar: :any,                 arm64_monterey: "b6d9f4ba1795bc9c8bce32c8388b528ed78b159ad1c85e2cdf8de386cd44dc7e"
-    sha256 cellar: :any,                 sonoma:         "4c8e1ad2262fabd0176b130a36c9aa367879c3cf5df6e399080f41a8f4a37d84"
-    sha256 cellar: :any,                 ventura:        "f7bf5addea65f6f713efe8075e4ce4527782f22d120a627ba95856873d668492"
-    sha256 cellar: :any,                 monterey:       "375c6ef36ae4fd34831177d6300bfa4f3e357959570be71b84ab816797800285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e348d14f790b457f9624b9b3805e22f3538bccaf2f3a528f480c1e04e1e115b"
+    sha256 cellar: :any,                 arm64_sonoma:   "f6af4590f3bcb5f5ec35a94229f74d7d6397f343604bbe4bacece9107ef05304"
+    sha256 cellar: :any,                 arm64_ventura:  "6382f8b374a765caf05ea87d99f07be318e392ba35c03ede9457f85ea8e34b09"
+    sha256 cellar: :any,                 arm64_monterey: "cf61b8c3711930bf97112a8876cbf45857c97427d9f33900e5d2ab8d3d91f73c"
+    sha256 cellar: :any,                 sonoma:         "81813fe8c5fa89d835769da129f375b786acc0947da5571ffb78a7573323ca2c"
+    sha256 cellar: :any,                 ventura:        "27ee2b7176b9966799e88a42123fee5f9fdc5ecb850b89d19dc063f765b53922"
+    sha256 cellar: :any,                 monterey:       "76a64386f0e4ff20c48a4ea3ade2182ab58247f5c6118701077634cc13836b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "721b130f3f613bb95b91e502ec48cd93f9d428975199863edd04e6a09fd39d63"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "hidapi"
   depends_on "libsodium"
   depends_on "libusb"

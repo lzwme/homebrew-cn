@@ -23,6 +23,7 @@ class RakudoStar < Formula
   depends_on "readline"
   uses_from_macos "libffi", since: :catalina
 
+  conflicts_with "moar", because: "both install `moar` binaries"
   conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
   conflicts_with "rakudo"
