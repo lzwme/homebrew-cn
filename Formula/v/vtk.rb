@@ -4,16 +4,17 @@ class Vtk < Formula
   url "https:www.vtk.orgfilesrelease9.3VTK-9.3.1.tar.gz"
   sha256 "8354ec084ea0d2dc3d23dbe4243823c4bfc270382d0ce8d658939fd50061cab8"
   license "BSD-3-Clause"
+  revision 1
   head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8be7f373e56c770e091431c962b0491c79ab6a4b6555bff1ba6240b09ebf6ab9"
-    sha256 cellar: :any,                 arm64_ventura:  "a97a0dba42ae9ea040426cee42339246ac3fe0a30e1fa95b39cdee6b3271527d"
-    sha256 cellar: :any,                 arm64_monterey: "514e9e7a0c8f2228c280677dc19fbe56d2b50473e58a318c0763b1e7b21d6082"
-    sha256 cellar: :any,                 sonoma:         "8b99b06f38b00b1cc9ecda5af447c28b2a395c7cbfd86787e34c84cb1acf3ffb"
-    sha256 cellar: :any,                 ventura:        "5ba54a1864de0ebe2253aba4f9adc9e2bfa8f1c22f4f26df2afce7b364bf5a04"
-    sha256 cellar: :any,                 monterey:       "ec75ce94aba4fd73fce0a53fd6fd3f02d37759af3fdc13bbfab105ae74e79be4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2fce54f4356fca3555bd1056f3adf28c017c7a42edb0233a7b15ac730d4b8df"
+    sha256 cellar: :any,                 arm64_sonoma:   "c709d35b13659060e2f1082b98ac1f9b8abb87b38307b8b7f1e0c76514b4605d"
+    sha256 cellar: :any,                 arm64_ventura:  "c5eb1abb48cd6309b0a17f48b975d6287d8808db2a38fc2686862c7f17d8c918"
+    sha256 cellar: :any,                 arm64_monterey: "3d4601c9974dcdf776f339df052f128e58f67d1d5729cefc28839b8b35808c6e"
+    sha256 cellar: :any,                 sonoma:         "c0904e2327b42490b8cf3464fa67c580da3867c9657801b3635c8fa369d55639"
+    sha256 cellar: :any,                 ventura:        "17d354ab4856c11db5603c6a1d0d8a1dd93d602e4968760369d8036d94fafc1f"
+    sha256 cellar: :any,                 monterey:       "9784b37121178b5fde564bb8aebe6c77fd6307087d7635614bd5eeb703b6dc64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13d7f008c59ba8251e1cf71caf5a35a4af3f3c0710c8e8e1730d305c75cca8af"
   end
 
   depends_on "cmake" => [:build, :test]

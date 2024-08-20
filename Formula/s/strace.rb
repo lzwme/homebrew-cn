@@ -15,16 +15,15 @@ class Strace < Formula
     depends_on "automake" => :build
   end
 
+  depends_on "glibc"
   depends_on :linux
   depends_on "linux-headers@5.15"
 
   def install
     system ".bootstrap" if build.head?
-    system ".configure",
-      "--disable-dependency-tracking",
-      "--disable-silent-rules",
-      "--prefix=#{prefix}",
-      "--enable-mpers=no" # FIX: configure: error: Cannot enable m32 personality support
+    system ".configure", "--disable-silent-rules",
+                          "--enable-mpers=no", # FIX: configure: error: Cannot enable m32 personality support
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

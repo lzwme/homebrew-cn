@@ -1,19 +1,19 @@
 class Lsd < Formula
   desc "Clone of ls with colorful output, file type icons, and more"
   homepage "https:github.comlsd-rslsd"
-  url "https:github.comlsd-rslsdarchiverefstagsv1.1.2.tar.gz"
-  sha256 "cd80dae9a8f6c4c2061f79084468ea6e04c372e932e3712a165119417960e14e"
+  url "https:github.comlsd-rslsdarchiverefstagsv1.1.3.tar.gz"
+  sha256 "24b0c44006efe719e53a5127f21b2cdb06db58ffd833f5cfbca4bcf665d188f8"
   license "Apache-2.0"
   head "https:github.comlsd-rslsd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "027e3ba1d73615e16a1a74f12733841d36a32cb131a8657fb96d8ece41fcd5d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "657cc7ac5bff7861461b767f269fac518ff4af0642850f76ff8a797577b7d5ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e4109de20c64864e6e5fdaf9ccfbbf7f548eb61226b6051b6d55ce045dd34a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62c1787b634e9cb9728ea4fdca9d9b8e5e87dac1d2938c2613ba0264f2fb62a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "90c856e0277445914fb47e0d7d1e020e69e7cd72a675e4f73765a284d79ec924"
-    sha256 cellar: :any_skip_relocation, monterey:       "f8216e4e7492f603eca16d736209577864eadc20932cd9d4e5749836d14acc39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31de828a654365884713c54d7177791752505c4e01b8b71c0bbad5215772c85c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33bac5a7281307575a2980441b001c256a2abf5b6a5581ba03292b1fb449b7a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e5512f1a3a37ac5456dcf29c355952b075a93e1c09076a8dea2bcc4fce172d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84c346c2d1024fc4392356f2f1110fc81eabc21bb8d652e0155ef5c7a097faed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0ea048ecedc15e1dc3325a015100be118b44b5338db3ce13caecfd422bcf39e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "6770cd1b7aaba11a761c1c0810183734fbdcd63fe7ab4f30f54ee6b596c3053b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bdbcf34d772c257d455bb6d7a37f16e880be81c2faf4501c4d951b078df107d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f4dedfc68c712e2ef1cf084b2f3d59e37424b56f587e19c58c618dbd3af929b"
   end
 
   depends_on "pandoc" => :build

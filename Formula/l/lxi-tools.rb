@@ -36,6 +36,9 @@ class LxiTools < Formula
 
   on_macos do
     depends_on "gettext"
+    depends_on "graphene"
+    depends_on "harfbuzz"
+    depends_on "pango"
   end
 
   def install

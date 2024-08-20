@@ -3,18 +3,18 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https:github.comsigstoresigstore-python"
-  url "https:files.pythonhosted.orgpackages9ad27e87c6ade26724a63bf28168ade19730678e855635781409163a48570063sigstore-3.1.0.tar.gz"
-  sha256 "cc0b52acff3ae25f7f1993e21dec4ebed44213c48e2ec095e8c06f69b3751fdf"
+  url "https:files.pythonhosted.orgpackagesf363daee649bc4e97048474fbc184300dfcf511dadfa422875b42226efd3a9fcsigstore-3.2.0.tar.gz"
+  sha256 "25c8a871a3a6adf959c0cde598ea8bef8794f1a29277d067111eb4ded4ba7f65"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "61e8b030b0aaa65a2ee00e649a3dff7b9379c9dae0670066e36ffa853d705d6e"
-    sha256 cellar: :any,                 arm64_ventura:  "efa80691172ccd14791236b0a5c7af208b270ca2a9bfd0cbc2989d6624c7bae1"
-    sha256 cellar: :any,                 arm64_monterey: "e02133e7a598d8cb10fcac78788928f874faa9f705dec2b9b17e5a2f4c96728f"
-    sha256 cellar: :any,                 sonoma:         "a3e9caf1c915bb687625a099a03efd2824ff583ec6f1fff9983cc9238daa5d94"
-    sha256 cellar: :any,                 ventura:        "a0d3536bb044ac8aee081ce962f681c75c53c125cf395194936fe879170099ef"
-    sha256 cellar: :any,                 monterey:       "8b32bfe50c7ad430c4b0513a2449cd8dd3f68b90e78edddeb7fb237d375b25de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42b0355ed967bb2f4f01e7c400c835fe95e7bce611154799f0321e2fc2f55f9b"
+    sha256 cellar: :any,                 arm64_sonoma:   "322543604e4980a9bfab91bf68f626263a4ce221b6016e52cb297bcece35abf3"
+    sha256 cellar: :any,                 arm64_ventura:  "0f2cd2543036cc50aff8e56a674fb67744bcb51351302acdd38f4556bf2c5be7"
+    sha256 cellar: :any,                 arm64_monterey: "989d496197502d94000b2772c6a7e41bae5ae4f220e3249e0a94a25a7c9a33c7"
+    sha256 cellar: :any,                 sonoma:         "8a5756e42db3da6b0f008ba9c81fa155376cd8b588d444a3dd2bc4ad0c29629c"
+    sha256 cellar: :any,                 ventura:        "75ec306281eb91c22e8965c452a7d2f9b6beda5269c1667c9f338194904ad1a8"
+    sha256 cellar: :any,                 monterey:       "2c5f5637104a565df786aac85cb19afed21cc2ebff59246baa50e8a8bf177cb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd0de624ae3c01b787ee18d506225260d2286e4a40b1e8f3d809d8b7ad47e798"
   end
 
   depends_on "rust" => :build
@@ -118,8 +118,8 @@ class Sigstore < Formula
   end
 
   resource "pyjwt" do
-    url "https:files.pythonhosted.orgpackages30728259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3bPyJWT-2.8.0.tar.gz"
-    sha256 "57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de"
+    url "https:files.pythonhosted.orgpackagesfb68ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020epyjwt-2.9.0.tar.gz"
+    sha256 "7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c"
   end
 
   resource "pyopenssl" do
@@ -190,21 +190,21 @@ class Sigstore < Formula
     assert_match version.to_s, shell_output("#{bin}sigstore -V")
 
     resource "homebrew-test-artifact" do
-      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.1.0sigstore-3.1.0.tar.gz", using: :nounzip
-      sha256 "cc0b52acff3ae25f7f1993e21dec4ebed44213c48e2ec095e8c06f69b3751fdf"
+      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.2.0sigstore-3.2.0.tar.gz", using: :nounzip
+      sha256 "25c8a871a3a6adf959c0cde598ea8bef8794f1a29277d067111eb4ded4ba7f65"
     end
 
     resource "homebrew-test-artifact.sigstore" do
-      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.1.0sigstore-3.1.0.tar.gz.sigstore"
-      sha256 "630044f8545ff133a55617a3ae5e4d24b2e42068115702b165465c169966a815"
+      url "https:github.comsigstoresigstore-pythonreleasesdownloadv3.2.0sigstore-3.2.0.tar.gz.sigstore"
+      sha256 "08ab91081e6d8b1ea5d502c036886e9bb4c6804a5f8924925d33f1c2b0b52b18"
     end
 
     resource("homebrew-test-artifact").stage testpath
     resource("homebrew-test-artifact.sigstore").stage testpath
 
-    cert_identity = "https:github.comsigstoresigstore-python.githubworkflowsrelease.yml@refstagsv3.1.0"
+    cert_identity = "https:github.comsigstoresigstore-python.githubworkflowsrelease.yml@refstagsv3.2.0"
 
-    output = shell_output("#{bin}sigstore verify github sigstore-3.1.0.tar.gz --cert-identity #{cert_identity}")
-    assert_match "OK: sigstore-3.1.0.tar.gz", output
+    output = shell_output("#{bin}sigstore verify github sigstore-3.2.0.tar.gz --cert-identity #{cert_identity}")
+    assert_match "OK: sigstore-3.2.0.tar.gz", output
   end
 end

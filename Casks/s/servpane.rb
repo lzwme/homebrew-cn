@@ -8,4 +8,8 @@ cask "servpane" do
   homepage "https:github.comaderyabinServPane"
 
   app "ServPane.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

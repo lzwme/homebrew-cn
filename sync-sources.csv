@@ -243,6 +243,7 @@ Homebrew-homebrew-core/Formula/a/asimov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asitop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ask-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/asm6809.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asmfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asn1c.rb, Homebrew/homebrew-core, 1
@@ -3472,7 +3473,7 @@ Homebrew-homebrew-core/Formula/lib/libgccjit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgcrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgda.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgdata.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libgedit-amtk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libgedit-amtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgedit-gfls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgedit-gtksourceview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgedit-tepl.rb, Homebrew/homebrew-core, 0
@@ -4351,7 +4352,6 @@ Homebrew-homebrew-core/Formula/n/netlify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netlistsvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netmask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netpbm.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/netperf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netris.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netsurf-buildsystem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettle.rb, Homebrew/homebrew-core, 0
@@ -4797,6 +4797,7 @@ Homebrew-homebrew-core/Formula/p/pc6001vx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pcalc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcapplusplus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pcaudiolib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pcb2gcode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pce.rb, Homebrew/homebrew-core, 0
@@ -12177,6 +12178,7 @@ Homebrew-homebrew-cask/Casks/n/now-tv-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noxappplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nozbe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nperf.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nrf-connect.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nrfutil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nrlquaker-winbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nslogger.rb, Homebrew/homebrew-cask, 1

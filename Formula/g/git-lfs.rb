@@ -24,15 +24,13 @@ class GitLfs < Formula
 
   depends_on "asciidoctor" => :build
   depends_on "go" => :build
-  depends_on "ronn" => :build
-  depends_on "ruby" => :build
 
   def install
     ENV["GIT_LFS_SHA"] = ""
     ENV["VERSION"] = version
 
     system "make"
-    system "make", "man", "RONN=#{Formula["ronn"].bin}ronn"
+    system "make", "man"
 
     bin.install "bingit-lfs"
     man1.install Dir["manman1*.1"]

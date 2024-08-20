@@ -4,19 +4,19 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https:cassandra.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=cassandra4.1.5apache-cassandra-4.1.5-bin.tar.gz"
-  mirror "https:archive.apache.orgdistcassandra4.1.5apache-cassandra-4.1.5-bin.tar.gz"
-  sha256 "ed184c361482e8b34f75537a1ac83755286313d6dcb0e11293813fb8ce4afbf5"
+  url "https:www.apache.orgdyncloser.lua?path=cassandra4.1.6apache-cassandra-4.1.6-bin.tar.gz"
+  mirror "https:archive.apache.orgdistcassandra4.1.6apache-cassandra-4.1.6-bin.tar.gz"
+  sha256 "2f51ce787812cce2ffb3db83a9a23248537fb52123884b0855551a0555ae8d03"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "798c10d850b0352b5d38aaca5eba61228316be61d76b3f8bb1b1c172d4417b81"
-    sha256 cellar: :any,                 arm64_ventura:  "6f4d64e72b864644bc9eb3d1111915e53c08f99bc525f9b5225696e936eae928"
-    sha256 cellar: :any,                 arm64_monterey: "3304b9939a955e3cbdfc0122420e3cd9d284066de5667deab14c218ce5c3c123"
-    sha256 cellar: :any,                 sonoma:         "b3094469a7291d0c9f550a4bcb4e29856bb41dce94d6f27a4367546f9b5f9db3"
-    sha256 cellar: :any,                 ventura:        "9a94c2171ed8102ebbf0bf6b4bd527733917bc319e138d2712c2ef75c17447af"
-    sha256 cellar: :any,                 monterey:       "4ae709e90ab6fcb632651b6f27639fbd339f024815adb69896e89b6343c40aee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97734f6c4cba55bf7756255722f3485ecc69ceddeac161fd7f55b257b2b415c3"
+    sha256 cellar: :any,                 arm64_sonoma:   "2ace5138682d1969c48ad11c39749a239aa2cefb1a6fcbfedfa112ff05cbedd7"
+    sha256 cellar: :any,                 arm64_ventura:  "a3b34cd9c7374fef974caeace7ffd91fc6cdd56e7f1efd6cfd6f95d84b1001ba"
+    sha256 cellar: :any,                 arm64_monterey: "6746ed2cff35a8ccb4a5a302d6d42f82d6930811264ef865f6f6212168cee12d"
+    sha256 cellar: :any,                 sonoma:         "83ad7e4db3584bfa7602cc68d74aa47c8831f3bdb5a47b968f6e89560e812805"
+    sha256 cellar: :any,                 ventura:        "97b9c8919e0a267a618d7925ce887288b21d471a0f0f2337aca1429ccabd3650"
+    sha256 cellar: :any,                 monterey:       "a5f592f9469270b5e6eaa5352081ebbe96cebbf43a1dd2115bbfdde03a3d1ed2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "243e8ffd3cc36824a52d27606e2ca1e06e3c2246d808aab84961a14415d667b8"
   end
 
   depends_on "libev"

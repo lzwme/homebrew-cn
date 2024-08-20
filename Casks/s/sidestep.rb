@@ -8,4 +8,8 @@ cask "sidestep" do
   homepage "https:chetansurpur.comprojectssidestep"
 
   app "Sidestep.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

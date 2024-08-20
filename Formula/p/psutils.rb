@@ -3,26 +3,26 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https:github.comrrthomaspsutils"
-  url "https:files.pythonhosted.orgpackagese6d9f7e3d52af9337bdd4e2933a9be0910af62d533ae7be7503038b4eae8448apspdfutils-3.3.4.tar.gz"
-  sha256 "94b331826967d04b9d055c8a8e2a374c5824fd120d49c24b73d16644127d51fe"
+  url "https:files.pythonhosted.orgpackagesff468b697d7976ceccd4971886f04b57ec3ef46d8976b2beefa97892bfa35271pspdfutils-3.3.5.tar.gz"
+  sha256 "49d0ed8254df3fe60eb4fd74d4dc1ccaf08cc7802ea9d79d83670b45685d5e35"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39549ba08e62f24a9b516f83dda6feeff43e01ffb3bb8f564085076b243ba772"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39549ba08e62f24a9b516f83dda6feeff43e01ffb3bb8f564085076b243ba772"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39549ba08e62f24a9b516f83dda6feeff43e01ffb3bb8f564085076b243ba772"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db49f6cf9a4fb2d01e23b573564bd10a6fbe2a5e143ceca647a3e12104782396"
-    sha256 cellar: :any_skip_relocation, ventura:        "db49f6cf9a4fb2d01e23b573564bd10a6fbe2a5e143ceca647a3e12104782396"
-    sha256 cellar: :any_skip_relocation, monterey:       "39549ba08e62f24a9b516f83dda6feeff43e01ffb3bb8f564085076b243ba772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f21c0ed0186404d841f2fca4f390a155f7939bf1f006940bb948de7aeb918888"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, ventura:        "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, monterey:       "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ce27b130f85c8ebb56213cf7a41b460f031cd62c76c6c0d07c4f09f1f4f16d"
   end
 
   depends_on "libpaper"
   depends_on "python@3.12"
 
   resource "puremagic" do
-    url "https:files.pythonhosted.orgpackagesb86ec8fde967ef33df3740a0af9340bdd5d77af422bb10e7abb4c56977e61907puremagic-1.26.tar.gz"
-    sha256 "ea875d3fdd6a29134bdd035cdfeca177fed575b6bdd68acd86f83ca284edc027"
+    url "https:files.pythonhosted.orgpackagesd5cedc3a664654f1abed89d4e8a95ac3af02a2a0449c776ccea5ef9f48bde267puremagic-1.27.tar.gz"
+    sha256 "7cb316f40912f56f34149f8ebdd77a91d099212d2ed936feb2feacfc7cbce2c1"
   end
 
   resource "pypdf" do

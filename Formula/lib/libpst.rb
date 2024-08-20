@@ -25,19 +25,19 @@ class Libpst < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "boost"
-  depends_on "gettext"
+  depends_on "glib"
   depends_on "libgsf"
 
-  def install
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --disable-python
-    ]
+  uses_from_macos "zlib"
 
-    system "./configure", *args
-    system "make"
+  on_macos do
+    depends_on "gettext"
+  end
+
+  def install
+    system "./configure", "--disable-python", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

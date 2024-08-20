@@ -23,8 +23,15 @@ class Gtkmm4 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
+  depends_on "cairo"
   depends_on "cairomm"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "glibmm"
+  depends_on "graphene"
   depends_on "gtk4"
+  depends_on "libsigc++"
   depends_on "pangomm"
 
   fails_with gcc: "5"
@@ -38,6 +45,7 @@ class Gtkmm4 < Formula
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <gtkmm.h>
+
       class MyLabel : public Gtk::Label {
         MyLabel(Glib::ustring text) : Gtk::Label(text) {}
       };
@@ -45,7 +53,8 @@ class Gtkmm4 < Formula
         return 0;
       }
     EOS
-    flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtkmm-4.0").strip.split
+
+    flags = shell_output("pkg-config --cflags --libs gtkmm-4.0").chomp.split
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
     system "./test"
   end

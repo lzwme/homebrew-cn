@@ -203,7 +203,7 @@ class Glibc < Formula
 
   def post_install
     # Rebuild ldconfig cache
-    rm(etc"ld.so.cache")
+    rm(etc"ld.so.cache") if (etc"ld.so.cache").exist?
     system sbin"ldconfig"
 
     # Compile locale definition files

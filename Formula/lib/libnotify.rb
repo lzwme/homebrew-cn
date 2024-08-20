@@ -21,7 +21,13 @@ class Libnotify < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "gdk-pixbuf"
+  depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"

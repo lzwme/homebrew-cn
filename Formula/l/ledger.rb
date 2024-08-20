@@ -53,6 +53,10 @@ class Ledger < Formula
   uses_from_macos "mandoc" => :build
   uses_from_macos "libedit"
 
+  on_macos do
+    depends_on "libassuan"
+  end
+
   def install
     ENV.cxx11
     ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"
@@ -69,6 +73,7 @@ class Ledger < Formula
       -DPython_FIND_VERSION_MAJOR=3
       -DUSE_GPGME=1
     ] + std_cmake_args
+
     system ".acprep", "opt", "make", *args
     system ".acprep", "opt", "make", "doc", *args
     system ".acprep", "opt", "make", "install", *args
@@ -83,10 +88,9 @@ class Ledger < Formula
     balance = testpath"output"
     system bin"ledger",
       "--args-only",
-      "--file", "#{pkgshare}examplessample.dat",
+      "--file", pkgshare"examplessample.dat",
       "--output", balance,
       "balance", "--collapse", "equity"
     assert_equal "          $-2,500.00  Equity", balance.read.chomp
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

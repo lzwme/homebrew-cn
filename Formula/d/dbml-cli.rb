@@ -1,18 +1,18 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.7.2.tgz"
-  sha256 "4e2932f11ec1d7a2fc9232f28228122c09eb1eef6f1a88750505261b4dc5397b"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.7.3.tgz"
+  sha256 "7a07e009cb5fcfbdc008f6dcbda3b6f5d6992aee8895b27eb586dadb2646a143"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7ad8e96b1bad2b42712274489925bf11514004176c121c89392c2bb478a4099"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7ad8e96b1bad2b42712274489925bf11514004176c121c89392c2bb478a4099"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7ad8e96b1bad2b42712274489925bf11514004176c121c89392c2bb478a4099"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b12be2d0d0c40065b22dd4543e9fe5df044329f5a96c01a143baae421046cb5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b12be2d0d0c40065b22dd4543e9fe5df044329f5a96c01a143baae421046cb5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "b12be2d0d0c40065b22dd4543e9fe5df044329f5a96c01a143baae421046cb5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7ad8e96b1bad2b42712274489925bf11514004176c121c89392c2bb478a4099"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65dd69e53ef5646f99ef98968367583ef18b52d951c18a28a3c17928dacf032e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65dd69e53ef5646f99ef98968367583ef18b52d951c18a28a3c17928dacf032e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65dd69e53ef5646f99ef98968367583ef18b52d951c18a28a3c17928dacf032e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6617e1c394fd11d811c1c3933e62e038636711a5c1dcf958d23104bfee10511c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6617e1c394fd11d811c1c3933e62e038636711a5c1dcf958d23104bfee10511c"
+    sha256 cellar: :any_skip_relocation, monterey:       "6617e1c394fd11d811c1c3933e62e038636711a5c1dcf958d23104bfee10511c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65dd69e53ef5646f99ef98968367583ef18b52d951c18a28a3c17928dacf032e"
   end
 
   depends_on "node"
