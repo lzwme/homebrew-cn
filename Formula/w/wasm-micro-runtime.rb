@@ -6,9 +6,12 @@ class WasmMicroRuntime < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.combytecodealliancewasm-micro-runtime.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(^WAMR[._-]v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do
@@ -22,11 +25,6 @@ class WasmMicroRuntime < Formula
   end
 
   depends_on "cmake" => :build
-
-  resource "homebrew-fib_wasm" do
-    url "https:github.comwasm3wasm3rawmaintestlangfib.c.wasm"
-    sha256 "e6fafc5913921693101307569fc1159d4355998249ca8d42d540015433d25664"
-  end
 
   def install
     # Prevent CMake from downloading and building things on its own.
@@ -53,6 +51,11 @@ class WasmMicroRuntime < Formula
   end
 
   test do
+    resource "homebrew-fib_wasm" do
+      url "https:github.comwasm3wasm3rawmaintestlangfib.c.wasm"
+      sha256 "e6fafc5913921693101307569fc1159d4355998249ca8d42d540015433d25664"
+    end
+
     resource("homebrew-fib_wasm").stage testpath
 
     output = shell_output("#{bin}iwasm -f fib #{testpath}fib.c.wasm 2>&1", 1)

@@ -1,19 +1,19 @@
 class SvtAv1 < Formula
   desc "AV1 encoder"
   homepage "https:gitlab.comAOMediaCodecSVT-AV1"
-  url "https:gitlab.comAOMediaCodecSVT-AV1-archivev2.1.2SVT-AV1-v2.1.2.tar.bz2"
-  sha256 "a1d95875f7539d49f7c8fdec0623fbf984804a168da6289705d53268e3b38412"
+  url "https:gitlab.comAOMediaCodecSVT-AV1-archivev2.2.0SVT-AV1-v2.2.0.tar.bz2"
+  sha256 "9ebeda4602f9a3f851670e1a1cf922e05f44eef0d8f582f78c53e544c575e978"
   license "BSD-3-Clause"
   head "https:gitlab.comAOMediaCodecSVT-AV1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5b2187052d417aa06ddb0b41d5381dd741fe74ba7caee30ad120df6050bf78bb"
-    sha256 cellar: :any,                 arm64_ventura:  "073dfc4e3cead69cd42db18976c891fdd4173bb66b53ee167bbbb90c55667c54"
-    sha256 cellar: :any,                 arm64_monterey: "8aa7ef9134d2e8b9f9d0c0d2983f72ee8fd27be900af88518bb588c4fe762834"
-    sha256 cellar: :any,                 sonoma:         "8805e49274f42b7224a2b5c22e567aede7c3fbd92b858e88d79bde8d4fe0ff44"
-    sha256 cellar: :any,                 ventura:        "0ee6775d220397e8e1baab5f53334062e61615a31c82b0082e700cb9a856de8b"
-    sha256 cellar: :any,                 monterey:       "163ee3c89d1c749268c69997b8dd62e08fd3ceaecd8f58a48c384f379581a7de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa1ca4dbe40a28fbab5435f95288e1429c1bfdf24e3402c65d03f45d5f7540a"
+    sha256 cellar: :any,                 arm64_sonoma:   "98db6b12e6b922b2e8a0e24195c383f0668cc2bf9f637ca8c4ea69141711ce98"
+    sha256 cellar: :any,                 arm64_ventura:  "4744c8914f5f89cd8b048b9119dd9c0fe0c371e8850de05d7b2101e8b7a7588b"
+    sha256 cellar: :any,                 arm64_monterey: "4aa7748722b78dfe58acca51833a2c5576ad79e84c7c9b790356aa19380da951"
+    sha256 cellar: :any,                 sonoma:         "8da41e565be3ae7bbd2373120f1e891b158e2a7c6405a16cb122eadc7cbfa941"
+    sha256 cellar: :any,                 ventura:        "bee4bf235dbe1cb6d4efb94ac2aef6aa07db87d254f6411278d6532a3b306558"
+    sha256 cellar: :any,                 monterey:       "e82f0119fcaa62a8d554788b47c166f27fbf4b92d3ac2fecec7af4a2c4ff760d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0534aec9dbbb704e3e2673601857ea6b5e647fea64f82ac57d07fd58ca739692"
   end
 
   depends_on "cmake" => :build

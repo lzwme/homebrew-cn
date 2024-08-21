@@ -31,7 +31,10 @@ class Netcdf < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "zstd"
+  end
 
   def install
     args = %w[-DENABLE_TESTS=OFF -DENABLE_NETCDF_4=ON -DENABLE_DOXYGEN=OFF]

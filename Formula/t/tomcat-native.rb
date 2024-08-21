@@ -16,26 +16,18 @@ class TomcatNative < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6871bc6de4e15f504981b8930ccd64e3b955ae2b73ec5642376f9dbf3d5efc"
   end
 
-  depends_on "libtool" => :build
+  depends_on "tomcat" => :test
   depends_on "apr"
   depends_on "openjdk"
   depends_on "openssl@3"
 
   def install
     cd "native" do
-      system "./configure", "--prefix=#{prefix}",
-                            "--with-apr=#{Formula["apr"].opt_prefix}",
+      system "./configure", "--with-apr=#{Formula["apr"].opt_prefix}",
                             "--with-java-home=#{Formula["openjdk"].opt_prefix}",
-                            "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
-
-      # fixes occasional compiling issue: glibtool: compile: specify a tag with `--tag'
-      args = ["LIBTOOL=glibtool --tag=CC"]
-      # fixes a broken link in mountain lion's apr-1-config (it should be /XcodeDefault.xctoolchain/):
-      # usr/local/opt/libtool/bin/glibtool: line 1125:
-      # /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.8.xctoolchain/usr/bin/cc:
-      # No such file or directory
-      args << "CC=#{ENV.cc}"
-      system "make", *args
+                            "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
+                            *std_configure_args
+      system "make"
       system "make", "install"
     end
   end
@@ -50,5 +42,27 @@ class TomcatNative < Formula
 
       If $CATALINA_HOME/bin/setenv.sh doesn't exist, create it and make it executable.
     EOS
+  end
+
+  test do
+    ENV["CATALINA_BASE"] = testpath
+    tomcat = Formula["tomcat"]
+    cp_r tomcat.libexec.children, testpath
+    (testpath/"bin/setenv.sh").write <<~EOS
+      CATALINA_OPTS="$CATALINA_OPTS -Djava.library.path=#{opt_lib}"
+    EOS
+    chmod "+x", "bin/setenv.sh"
+
+    pid = spawn(tomcat.bin/"catalina", "start")
+    sleep 10
+    begin
+      system tomcat.bin/"catalina", "stop"
+    ensure
+      Process.wait pid
+    end
+
+    output = (testpath/"logs/catalina.out").read
+    assert_match(/Loaded Apache Tomcat Native library .* using APR version/, output)
+    assert_match "OpenSSL successfully initialized", output
   end
 end

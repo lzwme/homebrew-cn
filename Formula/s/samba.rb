@@ -14,13 +14,14 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ede773cb95bf6e0c7dc8657b5adbe58fe6fdff564895cdf1bc1bd3fe66bcf3d1"
-    sha256 arm64_ventura:  "62a859f4d1125e5d31f868149809016804ffe77ee0d0a358a1ffc3d625437c4e"
-    sha256 arm64_monterey: "21db0f4be3b70967f7ba146d09779f9c40c2ebd5a2814c9d3cb11fad8a5b5eeb"
-    sha256 sonoma:         "17a0f6638ff67e615fed0eace9b7654556cb61246bebc7020fbec8a5e31b0d3f"
-    sha256 ventura:        "5bb3e19312e790920ad4220c8e798ce5e780360e53349d617a5521973b161c22"
-    sha256 monterey:       "89fec77ea5a3c19fcc8a84e3ee316b86a5275663e221a107936c1e0e6ecd9877"
-    sha256 x86_64_linux:   "3b5fb16d9a48740aba18a88bff2f089f98ac032881da0a9e502c85c8ec3102d1"
+    rebuild 1
+    sha256 arm64_sonoma:   "94ab2a15519e5f655908e26079912f5890c16d928c9c9d874694452df38ccb91"
+    sha256 arm64_ventura:  "dc064ca99f0d19cf3a099c5231f6736e5ab82457680a5460f201a28071899c90"
+    sha256 arm64_monterey: "9486fe1324110797dc276c4e42fd0efcb09f1c78ec0ed4a8370068642f1aff9c"
+    sha256 sonoma:         "174105356bebc5300c04585df774f646e0b0921cbee82adb01d152ddea65bec2"
+    sha256 ventura:        "3fbebb4a3f23e51b0bd75e26ce6e81acc131b3afc083db5972419d8291e3273f"
+    sha256 monterey:       "9e686e93dcec5f11428b13fb7a2237e7737cc12ee19ad566bacfca757167d050"
+    sha256 x86_64_linux:   "85261a8a9bd4cb96935936777f4c52139c74550f69b8145ada825ebcf3af946d"
   end
 
   depends_on "bison" => :build
@@ -31,10 +32,13 @@ class Samba < Formula
   # without disabling spotlight support. So we just enable the feature for all systems.
   depends_on "icu4c"
   depends_on "krb5"
+  depends_on "ldb"
   depends_on "libtasn1"
   depends_on "popt"
   depends_on "readline"
   depends_on "talloc"
+  depends_on "tdb"
+  depends_on "tevent"
 
   uses_from_macos "flex" => :build
   uses_from_macos "perl" => :build
@@ -53,7 +57,6 @@ class Samba < Formula
 
   conflicts_with "jena", because: "both install `tdbbackup` binaries"
   conflicts_with "puzzles", because: "both install `net` binaries"
-  conflicts_with "tdb", because: "both install `tdbrestore`, `tdbtool` binaries"
 
   resource "Parse::Yapp" do
     url "https:cpan.metacpan.orgauthorsidWWBWBRASWELLParse-Yapp-1.21.tar.gz"
@@ -73,7 +76,7 @@ class Samba < Formula
     end
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}private" if OS.linux?
     system ".configure",
-           "--bundled-libraries=NONE,ldb,tdb,tevent",
+           "--bundled-libraries=NONE",
            "--disable-cephfs",
            "--disable-cups",
            "--disable-iprint",

@@ -1,8 +1,8 @@
 class Cgl < Formula
   desc "Cut Generation Library"
   homepage "https:github.comcoin-orCgl"
-  url "https:github.comcoin-orCglarchiverefstagsreleases0.60.8.tar.gz"
-  sha256 "1482ba38afb783d124df8d5392337f79fdd507716e9f1fb6b98fc090acd1ad96"
+  url "https:github.comcoin-orCglarchiverefstagsreleases0.60.9.tar.gz"
+  sha256 "558421ccd6aa91d6922dd1baa04e37aa4c75ba0472118dc11779e5d6a19bfb38"
   license "EPL-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cgl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eb184b558b0128a3815da6c1cd4acc04f14657a08744d1c8074cbebbc888dad2"
-    sha256 cellar: :any,                 arm64_ventura:  "72b917dff5690c0ddee0375cc36310eb32669ce903b4da0c5188bdbbb6891810"
-    sha256 cellar: :any,                 arm64_monterey: "7f2e18f67025c78173ebc06993a4fa83310d751b39c29579e9eafe42f3777461"
-    sha256 cellar: :any,                 sonoma:         "fd9938c8389e8337f963475f8d39e62dfab3ed14c6ee4eb9f0a9cff9d91ea761"
-    sha256 cellar: :any,                 ventura:        "181b3c9e8b6c3fe4882f27cc285dc1ca612393bc94141b044832151f084f77cd"
-    sha256 cellar: :any,                 monterey:       "ac4c93b86cf20ead288e873761ebbe77028af5fc33c92372861cfb7e062fd799"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89e4dd779e9418110fea45a3511a35d711089aa94a15e8096115bba9ef14169a"
+    sha256 cellar: :any,                 arm64_sonoma:   "79654b7ed9a9b9c474e4c8bf053e57682176e5efcb63e7274a3c827b306b4a66"
+    sha256 cellar: :any,                 arm64_ventura:  "ebf1b7f9467644c64d0baf2ae15736ae7ed7cf676ad31c5bf7f9c625da43f8db"
+    sha256 cellar: :any,                 arm64_monterey: "65c034c952249a5363b4558a1213c8319dd5217bf8f717f80122900bcd874dce"
+    sha256 cellar: :any,                 sonoma:         "1fda61fd0c019c89b0fe7bcd9accd0bcb9bd197ecbd076b6992d976c1386d97c"
+    sha256 cellar: :any,                 ventura:        "f7bf34059c2124bd1de50fbe0278cfb0ca25eb47d76be096ce65dc58da4b074d"
+    sha256 cellar: :any,                 monterey:       "38248f24ef74fe3200d8df1fd272def97d964612e2a65d079a9eef3f4ec961cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59464aa62dd9a8016b3b46d99246b734bc9eaee228eaca8aac5c757e709158ad"
   end
 
   depends_on "pkg-config" => [:build, :test]

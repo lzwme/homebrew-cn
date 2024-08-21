@@ -23,7 +23,8 @@ class Nexttrace < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e90f31d9c8689e87102573b8e21b0551a55a19a8bb0b5ec8187dcd4fee7d086c"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comnxtraceNTrace-coreissues247 is fixed and released
+  depends_on "go@1.22" => :build
 
   def install
     ldflags = %W[

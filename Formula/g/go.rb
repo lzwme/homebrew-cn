@@ -21,13 +21,14 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9ae04e3063ff69c93dff6e982d93ed8c07114cdd50db418ddbb514c0f3cbb0a2"
-    sha256 arm64_ventura:  "9ae04e3063ff69c93dff6e982d93ed8c07114cdd50db418ddbb514c0f3cbb0a2"
-    sha256 arm64_monterey: "9ae04e3063ff69c93dff6e982d93ed8c07114cdd50db418ddbb514c0f3cbb0a2"
-    sha256 sonoma:         "78c91083ca44ee58e1eeb70286ead1564f44f570aeba12c5a7a981c059cc28a2"
-    sha256 ventura:        "78c91083ca44ee58e1eeb70286ead1564f44f570aeba12c5a7a981c059cc28a2"
-    sha256 monterey:       "78c91083ca44ee58e1eeb70286ead1564f44f570aeba12c5a7a981c059cc28a2"
-    sha256 x86_64_linux:   "7ce2a2f4ebb0c620f909da574fe88b8abcf09e1c7e6acd6eb5f486a1931697c4"
+    rebuild 1
+    sha256 arm64_sonoma:   "5cc408349e666ae1c8ee789d057990f523a0cb8cc51919a913eb0df64e410d43"
+    sha256 arm64_ventura:  "5cc408349e666ae1c8ee789d057990f523a0cb8cc51919a913eb0df64e410d43"
+    sha256 arm64_monterey: "5cc408349e666ae1c8ee789d057990f523a0cb8cc51919a913eb0df64e410d43"
+    sha256 sonoma:         "68252d4fc1abb13c66c9ee088c1f97628beecac65b6c1223cf72dd517adab1b1"
+    sha256 ventura:        "68252d4fc1abb13c66c9ee088c1f97628beecac65b6c1223cf72dd517adab1b1"
+    sha256 monterey:       "68252d4fc1abb13c66c9ee088c1f97628beecac65b6c1223cf72dd517adab1b1"
+    sha256 x86_64_linux:   "8dc5e2fbbb380bd1b1f41b2be7bd1faa61b8d071231d4b193a23f1e6353f28ef"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
@@ -64,6 +65,8 @@ class Go < Formula
   end
 
   def install
+    inreplace "go.env", /^GOTOOLCHAIN=.*$/, "GOTOOLCHAIN=local"
+
     (buildpath/"gobootstrap").install resource("gobootstrap")
     ENV["GOROOT_BOOTSTRAP"] = buildpath/"gobootstrap"
 
@@ -86,7 +89,17 @@ class Go < Formula
     rm_r(libexec/"src/runtime/pprof/testdata")
   end
 
+  def caveats
+    <<~EOS
+      Homebrew's Go toolchain is configured with
+        GOTOOLCHAIN=local
+      per Homebrew policy on tools that update themselves.
+    EOS
+  end
+
   test do
+    assert_equal "local", shell_output("#{bin}/go env GOTOOLCHAIN").strip
+
     (testpath/"hello.go").write <<~EOS
       package main
 

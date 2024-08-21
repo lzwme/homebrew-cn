@@ -23,9 +23,10 @@ class ShibbolethSp < Formula
     sha256 x86_64_linux:   "ec22788a7519d49dfbf12c13f652f8c80fc8adc32a9363e40a30c31568f9483f"
   end
 
-  depends_on "apr" => :build
-  depends_on "apr-util" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "apr"
+  depends_on "apr-util"
   depends_on "boost"
   depends_on "httpd"
   depends_on "log4shib"
@@ -36,13 +37,13 @@ class ShibbolethSp < Formula
   depends_on "xml-security-c"
   depends_on "xml-tooling-c"
 
+  uses_from_macos "krb5"
+
   def install
     ENV.cxx11
+
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{etc}
       --with-xmltooling=#{Formula["xml-tooling-c"].opt_prefix}
@@ -52,7 +53,7 @@ class ShibbolethSp < Formula
       DYLD_LIBRARY_PATH=#{lib}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

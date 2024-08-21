@@ -3,18 +3,18 @@ class Graphviz2drawio < Formula
 
   desc "Convert graphviz (dot) files into draw.io  lucid (mxGraph) format"
   homepage "https:github.comhbmartingraphviz2drawio"
-  url "https:files.pythonhosted.orgpackages7eab9db7e2d8172eba962fd9978a481933bab6c592868def468aa7c045ad05a2graphviz2drawio-0.5.0.tar.gz"
-  sha256 "0bc8c1fec4b8e22e96f6991f44eba95250242aa9c748057d6f5d114bd90f3809"
+  url "https:files.pythonhosted.orgpackages2dc5bb43966bc97368fc7eed9d8a79f0bc7eba8484cf6066f687720b616e957agraphviz2drawio-1.0.0.tar.gz"
+  sha256 "5409f11cd080b28d77408817559b6481250b3053cec757ab933b92b3075606a5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7b427939751ed185abbd830b55e4d8ca5970ef464f562c0b24c0a18d6f33a51c"
-    sha256 cellar: :any,                 arm64_ventura:  "82db0e8378929fe4177f7895fa3f6c3db0319feea96015102857513979c9d8f5"
-    sha256 cellar: :any,                 arm64_monterey: "d70bbdf4ad012ac79e501e3d86ec1de65b65f511ea34e677eed6ec1313d395a7"
-    sha256 cellar: :any,                 sonoma:         "5fdf13822d27b650434bb63fdd6381c903380f98bc29f7c50ae6ce86a584d84a"
-    sha256 cellar: :any,                 ventura:        "9ed03a41a1dfa5e89a51e14b8b156c9bc499a1ea7697660e22ba589322683c64"
-    sha256 cellar: :any,                 monterey:       "196a599faf228008d2bb652f1c1a7ecb5533b0fee8574938858d2dc3cdb1ca24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bb6c647854bd92fd180328021e8534da1c0e555a35f555c4da3c018e45519c9"
+    sha256 cellar: :any,                 arm64_sonoma:   "5be0cfb80e3ba10801c328115be6cc68ba167f0e65af863feb6c7d7228dbae24"
+    sha256 cellar: :any,                 arm64_ventura:  "55ec467fafe0fdc74bc3177226b0268940bfc4e51475d102d9a45ccd9cd3cf15"
+    sha256 cellar: :any,                 arm64_monterey: "3a3aa4cdea5cac6cc4f735d080e0c67d3ba6fbbde1f118187a84463c49a93078"
+    sha256 cellar: :any,                 sonoma:         "46b1350fb6685333d1c9f9ad56666da9d1f4a323ec51c1055d41b96b40d08df1"
+    sha256 cellar: :any,                 ventura:        "712e05e48a3ff58e9ab71ba389c14e4a403bcfb9470d96eff7cc224d32698619"
+    sha256 cellar: :any,                 monterey:       "74c883818508f4f771b8b691c2f8c61faab698c5439954154e09e5985256a656"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10ceff4b739cb1c69408865b485d5a0e0b456cc41473e9e8a9ac90626e6df85"
   end
 
   depends_on "graphviz"

@@ -21,6 +21,7 @@ class Mednafen < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "flac"
   depends_on "gettext"
   depends_on "libsndfile"
   depends_on "lzo"
@@ -37,8 +38,8 @@ class Mednafen < Formula
   end
 
   on_linux do
+    depends_on "alsa-lib"
     depends_on "mesa"
-    depends_on "mesa-glu"
   end
 
   def install
@@ -56,7 +57,6 @@ class Mednafen < Formula
     # Test fails on headless CI: Could not initialize SDL: No available video device
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    cmd = "#{bin}mednafen | head -n1 | grep -o '[0-9].*'"
-    assert_equal version.to_s, shell_output(cmd).chomp
+    assert_match version.to_s, shell_output("#{bin}mednafen", 255)
   end
 end

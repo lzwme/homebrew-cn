@@ -25,8 +25,12 @@ class Reprepro < Formula
   depends_on "berkeley-db@5"
   depends_on "gpgme"
   depends_on "libarchive"
+  depends_on "libgpg-error"
   depends_on "xz"
   depends_on "zstd"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gcc"
@@ -38,14 +42,12 @@ class Reprepro < Formula
 
   def install
     system "./autogen.sh"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--with-gpgme=#{Formula["gpgme"].opt_lib}",
                           "--with-libarchive=#{Formula["libarchive"].opt_lib}",
                           "--with-libbz2=yes",
-                          "--with-liblzma=#{Formula["xz"].opt_lib}"
+                          "--with-liblzma=#{Formula["xz"].opt_lib}",
+                          *std_configure_args
     system "make", "install"
   end
 

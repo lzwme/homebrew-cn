@@ -17,8 +17,13 @@ class Minizinc < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "cbc"
+  depends_on "cgl"
+  depends_on "clp"
+  depends_on "coinutils"
   depends_on "gecode"
+  depends_on "osi"
 
   fails_with gcc: "5"
 

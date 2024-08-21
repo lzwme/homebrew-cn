@@ -4,6 +4,7 @@ class Tdb < Formula
   url "https://www.samba.org/ftp/tdb/tdb-1.4.12.tar.gz"
   sha256 "6ce4b27498812d09237ece65a0d6dfac0941610e709848ecb822aa241084cd7a"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.samba.org/ftp/tdb/"
@@ -11,21 +12,22 @@ class Tdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e03c60dc4bd4659a2f07d55b3f936fba6a4548732c78a4924b1d9db99567102"
-    sha256 cellar: :any,                 arm64_ventura:  "92de590da95180f36ef18df1c1b7a2bae72dfe7cb483c3f7141dd3249e5a4836"
-    sha256 cellar: :any,                 arm64_monterey: "3aba84cc7f913c0c2b5e5feab69664575d9fba088dce59edf43ee6c97bf69c8b"
-    sha256 cellar: :any,                 sonoma:         "3f9a3c8c78759f6bd917c8ca07b352d4bee7adcdb25d4fb9d2d04296875ce413"
-    sha256 cellar: :any,                 ventura:        "9b6d8860e4ff8be0562ff418beca64c47ffc6b6522df88af0fcb1abc6eefd692"
-    sha256 cellar: :any,                 monterey:       "4952412921c9e07fa65312f3084f0d218e32d74c949d1062d7a169f073c832e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f83948c0f11a0dfc177f1fcb59ec583bf44639b2c4fab8be95155ec1196c113c"
+    sha256 cellar: :any,                 arm64_sonoma:   "087ce2cb58a14fbf681d9fa4fdabef760b2cb59720c10afde568f9924f519542"
+    sha256 cellar: :any,                 arm64_ventura:  "636099e08034e97b5d496a621b9d0962dbf98a992f1f925e1d021215d23b64d3"
+    sha256 cellar: :any,                 arm64_monterey: "aa58b35c7f2dea471aef80a78fbc1e90361cc6c783fb321ee8781be87a35ee6f"
+    sha256 cellar: :any,                 sonoma:         "f83228b9d5dee8e140c701f797644c98d411c5f2196a4ee14f644c3a8a42871f"
+    sha256 cellar: :any,                 ventura:        "75ce6baff37c0039b05829dcac010deb642ab420f366e3181615f11092323881"
+    sha256 cellar: :any,                 monterey:       "d3b9ac9dfeea91cd2683935359481954544dee063c41e0af0ea6f5b7d06e723f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3757f7a8141b9c77fa03aed41f6718cc5e3ee694d4728cecb467bd21e2453848"
   end
 
   uses_from_macos "python" => :build
 
-  conflicts_with "samba", because: "both install `tdbrestore`, `tdbtool` binaries"
-
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--bundled-libraries=NONE",
+                          "--disable-python",
+                          "--disable-rpath",
+                          "--prefix=#{prefix}"
     system "make", "install"
   end
 

@@ -60,6 +60,7 @@ class QtAT5 < Formula
     depends_on "libsm"
     depends_on "libvpx"
     depends_on "libxcomposite"
+    depends_on "libxdamage"
     depends_on "libxkbcommon"
     depends_on "libxkbfile"
     depends_on "libxrandr"

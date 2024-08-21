@@ -24,18 +24,23 @@ class Scip < Formula
   depends_on "cppad"
   depends_on "gmp"
   depends_on "ipopt"
+  depends_on "openblas"
   depends_on "papilo"
   depends_on "readline"
   depends_on "soplex"
+  depends_on "tbb"
+
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gcc"
+  end
+
   def install
-    cmake_args = %w[
-      -DZIMPL=OFF
-    ]
-    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DZIMPL=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
     pkgshare.install "check/instances/MIP/enigma.mps"
     pkgshare.install "check/instances/MINLP/gastrans.nl"
   end

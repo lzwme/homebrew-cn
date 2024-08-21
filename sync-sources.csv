@@ -2523,7 +2523,7 @@ Homebrew-homebrew-core/Formula/h/hck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hcl2json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hcloud.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hcxtools.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hdf5-mpi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hdf5-mpi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hdf5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hdf5@1.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5@1.8.rb, Homebrew/homebrew-core, 1
@@ -3140,6 +3140,7 @@ Homebrew-homebrew-core/Formula/l/lcrack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ld-find-code-refs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/ldb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 1
@@ -6258,6 +6259,7 @@ Homebrew-homebrew-core/Formula/t/testkube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/testscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/testssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tetra.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tevent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texapp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texi2html.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texi2mdoc.rb, Homebrew/homebrew-core, 0
@@ -11594,6 +11596,7 @@ Homebrew-homebrew-cask/Casks/l/loading.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loaf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/local.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/local@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/localcan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/localizationeditor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/localxpose.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/locationsimulator.rb, Homebrew/homebrew-cask, 1

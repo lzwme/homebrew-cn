@@ -19,10 +19,21 @@ class Sh4d0wup < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "pgpdump" => :test
+
+  depends_on "gmp"
   depends_on "nettle"
   depends_on "openssl@3"
   depends_on "pcsc-lite"
+  depends_on "xz"
   depends_on "zstd"
+
+  uses_from_macos "bzip2"
+
+  # rust 1.80 build patch, upstream pr ref, https:github.comkpcyrdsh4d0wuppull32
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patches31f5e08b1c7df4025d7042dafe756e5326151158sh4d0wuprust-1.80.patch"
+    sha256 "24f3fc3919ead47c6e38c68a55d8fed0370cfddd92738519de4bd41e4da71e93"
+  end
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's

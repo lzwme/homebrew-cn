@@ -1,9 +1,9 @@
 class Epic5 < Formula
   desc "Enhanced, programmable IRC client"
   homepage "https://www.epicsol.org/"
-  url "https://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/epic5-2.1.13.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/epic5/epic5-2.1.13.tar.xz"
-  sha256 "31a60b3a0d2bbe7eed38464278f1f7f369e0a05da5197a5cbb8b05a9251d0631"
+  url "https://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/epic5-2.2.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/epic5/epic5-2.2.tar.xz"
+  sha256 "94bd21f93560013b32fe499afbfca0dd2eaec1f3b63f32fc979be4fe5a6b1670"
   license "BSD-3-Clause"
   head "https://git.epicsol.org/epic5.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Epic5 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6c36777b952d26e56acefec463a8de6c4a6254bba008d58867205d09c312d39a"
-    sha256 arm64_ventura:  "7b48f070da4284e3c4a2fb8d5e7480436b815f81c40a9d6fc3ac75c23fc69178"
-    sha256 arm64_monterey: "ae10698b79e0b7411984dd89cb91efdfcd158b6dad77ba0b7bc1fd57013624ec"
-    sha256 sonoma:         "51f0355fa90ddeb9cda75a4fab9997c3795359e1aeba9414e4f51815c3b142ed"
-    sha256 ventura:        "da22cd190847a7302c5d758b4aa26ae7496574df67dd02c9b0a1c3b929e82603"
-    sha256 monterey:       "eb652273658fe2015e2cd9b343aa2a4683881d4e61df4fc63bc4645fc6d93491"
-    sha256 x86_64_linux:   "9b97fb4e2c588d78b143d2a7bba09a3a67d0e23d05100891b3ee5fdd37a72cce"
+    sha256 arm64_sonoma:   "39e2c865107b65a7fc09c0806c18300b802835723d47c4f015c604924cc866e3"
+    sha256 arm64_ventura:  "d9904b7ad5563c69d551d6b4f38f5e4125a33d7fb446f58fff38db769d2d25bd"
+    sha256 arm64_monterey: "ea670d3bd246c1f03340d88d28445220ae0f01f3a9b1652767823e185b6903ad"
+    sha256 sonoma:         "41c37d3e27ee52ee67b3648e401b42a9d233e90a914caa1507f6bd615a69c6a9"
+    sha256 ventura:        "e41c2da7ff16c86032479cfe41cff01b942fe63e9d44e97cc102e81a2c7f9530"
+    sha256 monterey:       "ff5c82c4699af0ad3a2a5e2da1a619e30962564c8c6820971d98c1f7c225b804"
+    sha256 x86_64_linux:   "200b5eafaf44c843ea6098623d83fdef580045e14cf59a99c4adeed2ec1c3e6c"
   end
 
   depends_on "openssl@3"

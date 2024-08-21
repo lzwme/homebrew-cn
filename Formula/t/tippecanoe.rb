@@ -1,8 +1,8 @@
 class Tippecanoe < Formula
   desc "Build vector tilesets from collections of GeoJSON features"
   homepage "https:github.comfelttippecanoe"
-  url "https:github.comfelttippecanoearchiverefstags2.59.0.tar.gz"
-  sha256 "5e5acaae3331ae78789f4dba6b9c4c1c6980afb0edcc73bef80f625fb313fa88"
+  url "https:github.comfelttippecanoearchiverefstags2.60.0.tar.gz"
+  sha256 "ed5722674ba90e5e7fecdeabb671dac0ee81fc89c5f3da35cef6b50300f4ba4b"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Tippecanoe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebbd413deaffa586073a9c47e4c96021a5e4fd47c1c89c20b4d033ce7b3e6f74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b455a065681d1d8b9428b5bbc06851a520a8ea7675947850211054fda3d71dee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c095c16b5642fb3a32912450768907f8c0f9d600b9930ea19ec0ea8458fd4f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b4a379456d3ff5cb7c54a9c79f35d70e01d068122bd6756fdc597007a6f90bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4656a73f6f01dc41a8fed8bbb6eb99441599f33ec258059ef90acedc0814c56"
-    sha256 cellar: :any_skip_relocation, monterey:       "04dc5c9543deee2f6e03c4a9d07868bad9caa5d4effc43d3541cc9bc30d5e5c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76c3c4a90909d368b25752cdb32e3f801436f383c5627254e76e0f587a21f30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e8d1ebeadb91159d144828477ed7a8bc88447b9e65b1ad185f9178b9c1b2ddee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "641d984d6f6a8270375136e8b391fd8496f32f79e1c8ed866961ce903a698d51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "256b156bff367563636e4c19c809c90c78edea7b0774cf9551219e0bc00e7188"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d17567eca6f8743f1edb9151ea47127eb218c063eb2b081e25819e606bf0f287"
+    sha256 cellar: :any_skip_relocation, ventura:        "7414252ab37e6c80633bd161c9c293e04c285c03ed564e8829e775572f9407e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "988021a610dc47c80a2713e1fcaf1a5b6f2ca81a3ac0fb7f3d3c7be51a04ca58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50c67ffdf068795e317c1e4d0b0f23d805228560a947be617586ae1701def623"
   end
 
   uses_from_macos "sqlite"

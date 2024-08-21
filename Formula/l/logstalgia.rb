@@ -41,18 +41,9 @@ class Logstalgia < Formula
   end
 
   def install
-    ENV.cxx11
+    ENV.cxx11 # to build with boost>=1.85
 
-    # clang on Mt. Lion will try to build against libstdc++,
-    # despite -std=gnu++0x
-    ENV.libcxx
-
-    # For non-usrlocal installs
-    ENV.append "CXXFLAGS", "-I#{HOMEBREW_PREFIX}include"
-
-    # Handle building head.
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-
     system ".configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
                           "--without-x",

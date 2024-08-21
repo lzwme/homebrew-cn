@@ -1,8 +1,8 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "http://www.graphicsmagick.org/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.43/GraphicsMagick-1.3.43.tar.xz"
-  sha256 "2b88580732cd7e409d9e22c6116238bef4ae06fcda11451bf33d259f9cbf399f"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.44/GraphicsMagick-1.3.44.tar.xz"
+  sha256 "6ac28470d2fbd3d5f60859dd43f3cee2585e955e32896f892b4dc61dda101ea0"
   license "MIT"
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
@@ -11,14 +11,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "4327a8a8fd2f1c697fb3d0ca2c701a9a66e295becf43c0a10c5add67907f44a3"
-    sha256 arm64_ventura:  "c6c12c57731a5d6bd7a70da86e0a9cb468db8f7d8350a2ab07f22b630635a4e7"
-    sha256 arm64_monterey: "c8d23bbcbe9421ad513d5455391e58f2ec8fc07967fc86660a683555436f38f8"
-    sha256 sonoma:         "1a79f2ad8c106b7120cfb33f0f8208a0f392c39898b5549937aa52d680c2dab1"
-    sha256 ventura:        "6f966005ea5b5482d131dacb7b3760340d99d1c922dd7ae57628276992fb5dcb"
-    sha256 monterey:       "369d05d9066c18073da869dea68b0b7c6f20768bdcb9efb03ed7eea38dd755ae"
-    sha256 x86_64_linux:   "340cf9139695b165618523c21eff0e0448950e6e05e965328c4142e85169f182"
+    sha256 arm64_sonoma:   "0db18d3ae35193225727676d138e5d852d28a026f92144bb536642650bc43040"
+    sha256 arm64_ventura:  "a942f2c4c3e10168cc908f19d39b6b1b3be18fac7d5ee88c6438b9b89467df44"
+    sha256 arm64_monterey: "4b13a24a1a3705684566b2d72c5c33a7fceca5ec7a8de9e917f0b0b404e7ddd5"
+    sha256 sonoma:         "fc66e5be23539aaf9df067ccc20fb46059ad71f429305fbd0d70ce84fc4a2010"
+    sha256 ventura:        "fc8afab6aa173309a3691e3e87e4e26a7ef354a6236e121580d68b89ea5189fa"
+    sha256 monterey:       "1fa1afa1668533d75458fa12760103270781df4650c6efd64cb3d374960fcb73"
+    sha256 x86_64_linux:   "2e95a143dd858c7e5059c243517384f76b856550998a55f35c4f7e5f0d09d1b0"
   end
 
   depends_on "pkg-config" => :build

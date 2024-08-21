@@ -19,9 +19,26 @@ class Prefixsuffix < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
+  depends_on "atkmm@2.28"
+  depends_on "glib"
+  depends_on "glibmm@2.66"
+  depends_on "gtk+3"
   depends_on "gtkmm3"
+  depends_on "libsigc++@2"
 
   uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "cairomm@1.14"
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+    depends_on "pangomm@2.46"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build
@@ -29,11 +46,10 @@ class Prefixsuffix < Formula
 
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
+
     ENV.cxx11
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--disable-schemas-compile"
+    system ".configure", "--disable-silent-rules", "--disable-schemas-compile",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
