@@ -18,13 +18,14 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dbc917227305ddd5d8df6f08ecd271d292b33c2a9b3ad1b13e7d0a2367a524b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b9057bd3addfbbc25fa6c1e0ff47a64b2a4910ce1b527e78cd3eb77a534df8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb64a736ca871bc31d59b867dc5cffb37b11f323dc6f1ae68e4d1b805a8a2190"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f990a244e3078ad3f59bae9cc3438c4fefa3b9c01a7b5f0a7a47499ec6ba2674"
-    sha256 cellar: :any_skip_relocation, ventura:        "a30b793551d802af88ef79d2ab5053fa9d25cf54098aa3d20ae8e10974bd5ffd"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7ab20af570a04935f84d4dcd6df039af4ad57ee805eb3f91bcffd21f811be89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "473e0221d8fb2b6ac507a459fe5992eb65086e07f7de9b131835633a9bcb6386"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393475b9b4bf9ca5858915d40f6bde5de7e2677df5de0137329fe9037ad3adba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5de3481c9d0f3d6322f9caf042ecc826bd03a972364b9d18a9662ae1d3b15deb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3590be47241ffc9cfa573954e41613760e278baef71eb6eab94a1fed23c8b487"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3fe66c2ee9a81bbfe144674de5da16c61c01df47e900c93fb543b4fd4559cb48"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad0f108e6197c40b00260a9f07a7df379e5753be82dfd0881b2259bf4cb39038"
+    sha256 cellar: :any_skip_relocation, monterey:       "26998d1b0845981601f9d2cc73b195597215a43594f37cd543dbdce39a524591"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04ad5fe7f60fa993072e135351feb56798621e42d5a05ca32053e10362b9d723"
   end
 
   depends_on "go" => :build
@@ -42,7 +43,7 @@ class Argocd < Formula
     system "make", "cli-local"
     bin.install "distargocd"
 
-    generate_completions_from_executable(bin"argocd", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"argocd", "completion")
   end
 
   test do

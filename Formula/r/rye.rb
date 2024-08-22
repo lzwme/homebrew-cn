@@ -1,18 +1,18 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https:rye-up.com"
-  url "https:github.comastral-shryearchiverefstags0.38.0.tar.gz"
-  sha256 "16cc21660dccc9a66ed5086eb96cd1d571e1af8145982cf6e56fe918e3ca062c"
+  url "https:github.comastral-shryearchiverefstags0.39.0.tar.gz"
+  sha256 "359afd0c0badf0524cecbf66761ad499f8deb26f287c5391c8996a8914dfed7a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "daf0310b6a346141f25530884dc919d13890cadc1a95fd849d0af6c1e13839db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7739729205d86d1eb5ddc43e1d9afb248081acb0ce4700775ec29d28e09c8c43"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e545d4ab56570b31cf71bad2403eb8e0e1a46975929d2160349a460d954cc1e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2750a8dce06aa71cb7973a7ad7a9b319cb441d83328ee4cd2404a24219b99442"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce07b9f2ec6b71717392611ab7f8a28e52075792625c3e1596c15b7554b22000"
-    sha256 cellar: :any_skip_relocation, monterey:       "796f6de5176222417163f67eb6925f1d033ae2ef2c3820a9f18f0f2e0632be34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beab605fc5df80366a29d48dd20b6f82fccadbf4c1d143d90a6b4526f74fa2cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd860982e82c4720732a82691f1c6973c0bc5e4abea37e660ec6a3174c305c1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63bddc579facc960290a8f52a61d2b46f4c26466d65307c2d46b2713a8f1ebf2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11887f4526edc30f8873a5b8e91eb495977bcb9fadeecc9589612b79da7b936f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b71f2102156a7c1c4e3775834d4782d6afed1a93d14e72b0a6ad1e1fca5e1fec"
+    sha256 cellar: :any_skip_relocation, ventura:        "361f5b28eaf560613427f4a55afabd9d47d90dad122c551d3b60908d9c591943"
+    sha256 cellar: :any_skip_relocation, monterey:       "636bf1fe3401a311119026f3d0e0d23c8cee2f4a5437e25a9ef1125620d80bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21638f1f5c42b5897507bedc9c233fc37a6a5e101e0efe55868e45a7a35c1626"
   end
 
   depends_on "rust" => :build

@@ -1936,6 +1936,7 @@ Homebrew-homebrew-core/Formula/g/g2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g3log.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gabedit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gabo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gaffitter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/galen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gallery-dl.rb, Homebrew/homebrew-core, 1
@@ -3908,7 +3909,7 @@ Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-odbc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.3.rb, Homebrew/homebrew-core, 1
@@ -3920,6 +3921,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 1

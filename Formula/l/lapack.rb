@@ -3,7 +3,8 @@ class Lapack < Formula
   homepage "https:www.netlib.orglapack"
   url "https:github.comReference-LAPACKlapackarchiverefstagsv3.12.0.tar.gz"
   sha256 "eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b"
-  license "BSD-3-Clause"
+  # LAPACK is BSD-3-Clause-Open-MPI while LAPACKE is BSD-3-Clause
+  license all_of: ["BSD-3-Clause-Open-MPI", "BSD-3-Clause"]
   head "https:github.comReference-LAPACKlapack.git", branch: "master"
 
   livecheck do
@@ -34,13 +35,12 @@ class Lapack < Formula
   def install
     ENV.delete("MACOSX_DEPLOYMENT_TARGET")
 
-    mkdir "build" do
-      system "cmake", "..",
-                      "-DBUILD_SHARED_LIBS:BOOL=ON",
-                      "-DLAPACKE:BOOL=ON",
-                      *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS:BOOL=ON",
+                    "-DLAPACKE:BOOL=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

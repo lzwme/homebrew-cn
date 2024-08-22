@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages5df6f47f26e605d53e94083065ab6ff0fcbc23c00d4752cdf6ceded3c38dcfc6dvc-3.54.0.tar.gz"
-  sha256 "ea671fdd6ce584ba8a435d96a272bebc8400a926da6e136244437386b4578f18"
+  url "https:files.pythonhosted.orgpackagesd56453163398f7a4e73564b88abc4d51ec93e4aac5c3c1c39303c9b45cb63967dvc-3.54.1.tar.gz"
+  sha256 "00cbfd2dc1268af7bd8739c8e2dfdc493134d243bfc9687579a94a2646d438ef"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d5837f75e75bcdb089d5a8377f533e511a9f152698397920777f4ccb3909e160"
-    sha256 cellar: :any,                 arm64_ventura:  "151f34e699aca1cab5421d268d8cfffc2dd364203f96e8cfe0231384b8db986f"
-    sha256 cellar: :any,                 arm64_monterey: "d1c84ad1822db314fc13caf5ef966846d4c51519cdb4abf34118c8e1708039ad"
-    sha256 cellar: :any,                 sonoma:         "ffde03fa0e83a934ad35d90cf3b9e716157251e64acab139ad83b22ff45a4e8f"
-    sha256 cellar: :any,                 ventura:        "eb6c1c772d48e9e2b96082e5fc990e54273c2017050b4c5d9483c64dee6524dd"
-    sha256 cellar: :any,                 monterey:       "f4da0062e255e894ea78432391957379486728f699a07f901ee81d225426ac80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebc6ac490111a36e0de3cbe6023113d1183edde5b20eebd4569824aa567dcaa2"
+    sha256 cellar: :any,                 arm64_sonoma:   "8aacfdce3b0298cd20acb13698a34d1afc14711982cf3c1f763b316cd9c52abb"
+    sha256 cellar: :any,                 arm64_ventura:  "c71085b87787450792e3040567ccb1fc24f22a3991e23d0c149c95c2364b3375"
+    sha256 cellar: :any,                 arm64_monterey: "f08d0bd9c92fb405e77137f8a49359811b025e855fe881be0645a6d334debe50"
+    sha256 cellar: :any,                 sonoma:         "8791e4731f568c24c75d094806156873353cfae41550f767c6b261eecf1cc4d5"
+    sha256 cellar: :any,                 ventura:        "17421a9fb9d2f790a4b42cd43e61d59b71f818b2e1357ea64c15df82b48e0b2a"
+    sha256 cellar: :any,                 monterey:       "0b4064c04dc6a75cf2f04b3ad3befe0c0e69be1d9fd0fa6b09c79813b9c5236c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17fd17f65f1b0eb49876d8bf48d6c2f954e000da9d1ff758d6ca9e2318d31798"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -44,13 +44,13 @@ class Dvc < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackagesa764889100848dea8a797215dbacbcf15367e2bd797b879aaf9df5c78d7c3200aiohappyeyeballs-2.3.7.tar.gz"
-    sha256 "e794cd29ba6a14078092984e43688212a19081de3a73b6796c2fdeb3706dd6ce"
+    url "https:files.pythonhosted.orgpackages2df722bba300a16fd1cad99da1a23793fe43963ee326d012fdf852d0b4035955aiohappyeyeballs-2.4.0.tar.gz"
+    sha256 "55a1714f084e63d49639800f95716da97a1f173d46a16dfcfda0016abb93b6b2"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages805e42678cd8af232a01441b375b963a6c79943718a0cb9da90ab7e5ff14f1d3aiohttp-3.10.4.tar.gz"
-    sha256 "23a5f97e7dd22e181967fb6cb6c3b11653b0fdbbc4bb7739d9b6052890ccab96"
+    url "https:files.pythonhosted.orgpackagesca28ca549838018140b92a19001a8628578b0f2a3b38c16826212cc6f706e6d4aiohttp-3.10.5.tar.gz"
+    sha256 "f071854b47d39591ce9a17981c46790acb30518e2f83dfca8db2dfa091178691"
   end
 
   resource "aiohttp-retry" do
@@ -379,8 +379,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackages78828cbaf34a07d7d32c00ba466769f071d1cc749de2654595837da0c23ce23agoogle_api_python_client-2.141.0.tar.gz"
-    sha256 "0f225b1f45d5a6f8c2a400f48729f5d6da9a81138e81e0478d61fdd8edf6563a"
+    url "https:files.pythonhosted.orgpackagesfed21dc1b95e9fef7bec1df1e04941d9556b6e384691d2ba520777c68429230fgoogle_api_python_client-2.142.0.tar.gz"
+    sha256 "a1101ac9e24356557ca22f07ff48b7f61fa5d4b4e7feeef3bda16e5dcb86350e"
   end
 
   resource "google-auth" do
@@ -719,8 +719,8 @@ class Dvc < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesceef013ded5b0d259f3fa636bf35de186f0061c09fbe124020ce6b8db68c83afsetuptools-72.2.0.tar.gz"
-    sha256 "80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9"
+    url "https:files.pythonhosted.orgpackages980b56dabcf2b37d9152090bcd5d42e28ad312c9ba54fb1446b22dcc809dd84asetuptools-73.0.0.tar.gz"
+    sha256 "3c08705fadfc8c7c445cf4d98078f0fafb9225775b2b4e8447e40348f82597c0"
   end
 
   resource "shellingham" do

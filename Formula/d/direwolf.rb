@@ -3,32 +3,40 @@ class Direwolf < Formula
   homepage "https:github.comwb2oszdirewolf"
   url "https:github.comwb2oszdirewolfarchiverefstags1.7.tar.gz"
   sha256 "6301f6a43e5db9ef754765875592a58933f6b78585e9272afc850acf7c5914be"
-  license "GPL-2.0-only"
+  license all_of: [
+    "GPL-2.0-or-later",
+    "ISC", # externalmisc{strlcpy.c,strlcat.c} (Linux)
+    :cannot_represent, # externalgeotranz, see https:github.comexternprogeotranzblobv2.4.2readme.txt
+  ]
   head "https:github.comwb2oszdirewolf.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "f15cf78ea350bac7d0daf8663e54242eed663f577400de7630f8225c4e08e340"
-    sha256 arm64_ventura:  "494d3a0854c7d919fa8446915bec34806b387c138fd23210c05ab3677c701faf"
-    sha256 arm64_monterey: "1c437d0c62b29032faf6eb115caef44b62bc7ef7525d5a137c09eec5015a0f49"
-    sha256 sonoma:         "5ad4a23ede0053b7c587b99514c48982378ad7f5e4ae4871e8b8eea6dccb6249"
-    sha256 ventura:        "e3064f51ee693453adc1e25a4dc7e7f1617f51d070dc209c847a7459968de0dc"
-    sha256 monterey:       "16947ff3e289c953ddb75acb44215ab7f74a5128a20464cfb7f6332b4438f25d"
+    sha256                               arm64_sonoma:   "f15cf78ea350bac7d0daf8663e54242eed663f577400de7630f8225c4e08e340"
+    sha256                               arm64_ventura:  "494d3a0854c7d919fa8446915bec34806b387c138fd23210c05ab3677c701faf"
+    sha256                               arm64_monterey: "1c437d0c62b29032faf6eb115caef44b62bc7ef7525d5a137c09eec5015a0f49"
+    sha256                               sonoma:         "5ad4a23ede0053b7c587b99514c48982378ad7f5e4ae4871e8b8eea6dccb6249"
+    sha256                               ventura:        "e3064f51ee693453adc1e25a4dc7e7f1617f51d070dc209c847a7459968de0dc"
+    sha256                               monterey:       "16947ff3e289c953ddb75acb44215ab7f74a5128a20464cfb7f6332b4438f25d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b20722ff017ed04a511f79061ad26959cdb92e5c7dc1080dbc22cc05c07e374"
   end
 
   depends_on "cmake" => :build
   depends_on "gpsd"
   depends_on "hamlib"
-  # Further investigation and work on this
-  # formulae is needed to support linux builds. The upstream project
-  # provides their own mechanism for linux distribution. Brew is most
-  # valuable on macOS, where there is no other suitable package manager,
-  # so for now, restrict this formulae to macOS.
-  depends_on :macos
-  depends_on "portaudio"
+
+  on_macos do
+    depends_on "portaudio"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "systemd"
+  end
 
   def install
     inreplace "srcdecode_aprs.c", "optlocalshare", share
     inreplace "srcsymbols.c", "optlocalshare", share
+    inreplace "confCMakeLists.txt", " etcudevrules.d", " #{lib}udevrules.d"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

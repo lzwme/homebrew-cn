@@ -1,15 +1,16 @@
-class Mariadb < Formula
+class MariadbAT114 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
   # TODO: Build with `-DWITH_LIBFMT=system` when fmt >= 11
-  url "https://archive.mariadb.org/mariadb-11.5.2/source/mariadb-11.5.2.tar.gz"
-  sha256 "e25fac00aeb34610faf62182836a14e3310c0ca5d882e9109f63bd8dfdc3542d"
+  url "https://archive.mariadb.org/mariadb-11.4.3/source/mariadb-11.4.3.tar.gz"
+  sha256 "6f0017b9901bb1897de0eed21caef9ffa9d66ef559345a0d8a6f011308413ece"
   license "GPL-2.0-only"
 
   livecheck do
     url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
     strategy :json do |json|
       json["releases"]&.map do |release|
+        next unless release["release_number"]&.start_with?(version.major_minor)
         next if release["status"] != "stable"
 
         release["release_number"]
@@ -18,14 +19,20 @@ class Mariadb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cda6f1a3253d69bc36dadff3cd9ed8e3c91795eb392c9f7b1a4ea0b63c19a8e3"
-    sha256 arm64_ventura:  "6b01259939dee3c888cb040265de4bdfe727d2dcfc154acfb0edfb44eef622b9"
-    sha256 arm64_monterey: "068f3c8199c47fe7b1ff2f15584884d5d61108378a4ec13289f850ff6a80b906"
-    sha256 sonoma:         "3d8d1e1dfcd957335e72f3f34ec2fd4e8fd22b918ed919bf8904e304f8e3c6bc"
-    sha256 ventura:        "9f525784840240948014eabcc7942a3753f7ad990e537a6109adc541c78c51eb"
-    sha256 monterey:       "9c1a9410159d97546186ac23f8d17d07186987200d923a2866eb884f3a61a657"
-    sha256 x86_64_linux:   "e25bd50056c5c14b3f851c20df8a809d5453d71fac929fddd590b26fa1f876b3"
+    sha256 arm64_sonoma:   "532028a5077c4ed1e6dc822f42d555c38f92ef56435d4a7224ba00465c9efe25"
+    sha256 arm64_ventura:  "ab8932489394d589ff5b4dc4cdd5712a13879534d9d74ea35cbeadb083454bad"
+    sha256 arm64_monterey: "a0754ca4519b022e2e36e524791760c7c51dfdcb50abe6af12dd52ff2f5614ca"
+    sha256 sonoma:         "bcd6dd46688ada6ad8d07807279c734c04636457ed1590e9a41253ee22eeda71"
+    sha256 ventura:        "20729d547281558e46b55097fa4534d69106244e80cfc379d2c734c9761b21dc"
+    sha256 monterey:       "fef4724588dcde773feed1759d64f2b33f9d3aa575cf8117fb74253a0f0a1805"
+    sha256 x86_64_linux:   "7615e554fd3ef4733ff294c17f75e1874e5b470e457f92b5bec6a77075c05e10"
   end
+
+  keg_only :versioned_formula
+
+  # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-11-4/
+  # End-of-life on 2029-05-29: https://mariadb.org/about/#maintenance-policy
+  deprecate! date: "2029-05-29", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
@@ -54,12 +61,6 @@ class Mariadb < Formula
   on_linux do
     depends_on "linux-pam"
   end
-
-  conflicts_with "mysql", "percona-server",
-    because: "mariadb, mysql, and percona install the same binaries"
-
-  conflicts_with "mytop", because: "both install `mytop` binaries"
-  conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
 

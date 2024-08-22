@@ -2,17 +2,17 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
   url "https:github.comcontainerspodman.git",
-      tag:      "v5.2.1",
-      revision: "d0582c9e1e6c80cc08c3f042b91993c853ddcbc6"
+      tag:      "v5.2.2",
+      revision: "fcee48106a12dd531702d729d17f40f6e152027f"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e77b2ebe60367d662a1615db4078566cc8e0f3b1579d8229b3a54f7a7a80414c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23186cef99f70fe43119c554ecaf11e6355d0c0ae3a8c2295f9fb56f903df3b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64c7e3b78aaade16be1f39e021b823f0f9abe9c7acd1be2370cd2be9b627e9b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd8a8be29b0e2d8fb7a1c65cdaceca9fd7a38e4b330dbe50055549ca961e17a4"
-    sha256                               x86_64_linux:  "052b317810c8c31088bbd9c13598501e2bfc3c4ba629ff6bfabd0f76da8fdba4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89ec8d09204532d5164e5b53fe6d4c046bde353ea71e66be1891099c816acdfe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c52d8f4abc506cedddc813aa2c0bbc586177a6ff644f171f694981c203c4a18f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07a41b8f93a05aa265f93ff7193d472fb21ad8cedf84cf3c7892d749d0ec76d0"
+    sha256 cellar: :any_skip_relocation, ventura:       "271cadf12f04bc0bbe7a35f1ae262a87da016b9298668274af16b1ec7e078fac"
+    sha256                               x86_64_linux:  "ea1b960ea250717e42e368196c1972f9e8bd004cc8fef6d43e8333dea4d4b285"
   end
 
   depends_on "go" => :build
@@ -64,8 +64,8 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https:github.comcontainersnetavarkarchiverefstagsv1.12.1.tar.gz"
-      sha256 "71e44922204da923b9f03b1306b9b0ba82673a201f3d96afc544f4ccdd4824d3"
+      url "https:github.comcontainersnetavarkarchiverefstagsv1.12.2.tar.gz"
+      sha256 "d1e5a7e65b825724fd084b0162084d9b61db8cda1dad26de8a07be1bd6891dbc"
     end
   end
 

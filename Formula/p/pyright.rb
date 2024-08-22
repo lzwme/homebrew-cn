@@ -1,19 +1,19 @@
 class Pyright < Formula
   desc "Static type checker for Python"
   homepage "https:github.commicrosoftpyright"
-  url "https:registry.npmjs.orgpyright-pyright-1.1.376.tgz"
-  sha256 "4e6c6c8e4e97eeb489c99951c98adf233328e7ce11181188b184e1f8c2f25c8f"
+  url "https:registry.npmjs.orgpyright-pyright-1.1.377.tgz"
+  sha256 "b11dc22e92560b38ebad99a892544d9ce81e2ce995db430b3683e86db57d7710"
   license "MIT"
   head "https:github.commicrosoftpyright.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06d84cb680fa566272130340e72c7a05d690e98d5dc5b3c5468c220d400262f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06d84cb680fa566272130340e72c7a05d690e98d5dc5b3c5468c220d400262f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06d84cb680fa566272130340e72c7a05d690e98d5dc5b3c5468c220d400262f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "27276bd8caf61c325f22fb46f57e2432be9446b63ebd91c6054804014cbbfb1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "27276bd8caf61c325f22fb46f57e2432be9446b63ebd91c6054804014cbbfb1c"
-    sha256 cellar: :any_skip_relocation, monterey:       "27276bd8caf61c325f22fb46f57e2432be9446b63ebd91c6054804014cbbfb1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06d84cb680fa566272130340e72c7a05d690e98d5dc5b3c5468c220d400262f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3762bbf4d82891755e2475ef3dabc440a94bdd81b1f050387aa8fa2182d270f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3762bbf4d82891755e2475ef3dabc440a94bdd81b1f050387aa8fa2182d270f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3762bbf4d82891755e2475ef3dabc440a94bdd81b1f050387aa8fa2182d270f7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ec471c13bf01ba31babe8ace50bb840ee03a398c7ab0671078af3d0f7fae6d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ec471c13bf01ba31babe8ace50bb840ee03a398c7ab0671078af3d0f7fae6d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ec471c13bf01ba31babe8ace50bb840ee03a398c7ab0671078af3d0f7fae6d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3762bbf4d82891755e2475ef3dabc440a94bdd81b1f050387aa8fa2182d270f7"
   end
 
   depends_on "node"

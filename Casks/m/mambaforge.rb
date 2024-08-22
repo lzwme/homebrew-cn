@@ -10,11 +10,7 @@ cask "mambaforge" do
   desc "Minimal installer for conda with preinstalled support for Mamba"
   homepage "https:github.comconda-forgeminiforge"
 
-  livecheck do
-    url :url
-    regex(v?(\d+(?:[._-]\d+)+)i)
-    strategy :github_latest
-  end
+  deprecate! date: "2024-07-30", because: :discontinued
 
   auto_updates true
   conflicts_with cask: [
