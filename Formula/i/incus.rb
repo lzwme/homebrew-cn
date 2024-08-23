@@ -7,19 +7,22 @@ class Incus < Formula
   head "https:github.comlxcincus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "affea1aa6fa333b8747d8da638d54f556c7ca2a13e2e081b7e2b15377461fcaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f957202168d241ea4656e9be73d56dc5c6b789e14f8fc1ffcc74f70b5fb581"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1762d102c0ff819710110752b8b91b201faaedbf89fe634a204907fc8fd4e8f2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34c93b2706cbcc9e28456f27638d488aed652b893a10094a37f534945790f5c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b665f97c57e67f1e213a14f5d8076140146b0128bcc476afd6340f7d0490f8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "65e79f37b8e90a42792a0cdcb44b9a6e2ed9d7ff49f11771b8d7688dfaa7c18b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eaa482d6ccfbfecb3869e10fb0be5fa2ec2d032bfb3e859b2e3301517e9cdaa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f4182d138a3c690323cd3a41c918adc74070bff430fec89c3982ae90299c9a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f4182d138a3c690323cd3a41c918adc74070bff430fec89c3982ae90299c9a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f4182d138a3c690323cd3a41c918adc74070bff430fec89c3982ae90299c9a7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3655349c15f631735c5354ffbf8a81d16a2efa22f7d13028eea5646b2ac75786"
+    sha256 cellar: :any_skip_relocation, ventura:        "3655349c15f631735c5354ffbf8a81d16a2efa22f7d13028eea5646b2ac75786"
+    sha256 cellar: :any_skip_relocation, monterey:       "3655349c15f631735c5354ffbf8a81d16a2efa22f7d13028eea5646b2ac75786"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7949a48b1091acd47f41d0e2c29e7c57f491c7845bd90cb7d5f96d26aaf9696a"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdincus"
+
+    generate_completions_from_executable(bin"incus", "completion")
   end
 
   test do

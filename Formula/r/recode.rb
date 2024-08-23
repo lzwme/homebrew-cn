@@ -17,14 +17,14 @@ class Recode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebf5fa37f30212152b21e78386294f7c25217ab049414d840bcbc87738bfe110"
   end
 
-  depends_on "help2man" => :build
-  depends_on "libtool" => :build
-  depends_on "gettext"
-
   uses_from_macos "python" => :build
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system ".configure", *std_configure_args
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

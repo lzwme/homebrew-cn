@@ -4,20 +4,21 @@ class Libgr < Formula
   url "https:github.comsciappgrarchiverefstagsv0.73.7.tar.gz"
   sha256 "2584727b1413a337ef14daae1e61bdc5c946403031695b42ecfbf8bc1888d132"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "4471760a40d20c1eb0d1fa65fed678e6e37d66afe0fdadd0aa9fd4b0f6e7322f"
-    sha256 arm64_ventura:  "370d2ce18f6706f4c7ce9577c99efb4aa781429186d2e506897497e0d9054397"
-    sha256 arm64_monterey: "7071d26de1baf237f7fa72be8fcbe732c377b30b4b974c8c13fed86459a836ef"
-    sha256 sonoma:         "cad628cd58e7b8168d18a63b88947720236861b0d5838d36bd60df89ee6e59a0"
-    sha256 ventura:        "c12411fc3f1e60f1f5d4d79b8846cf0ddc9a3ec5fbb2cf4db31cd9a140c09b7f"
-    sha256 monterey:       "ba798422f8b3d7fa987c8c4e7f44ddd6d248c81501c989cb75b72ba104c68bcc"
-    sha256 x86_64_linux:   "cf780f036ec41d094e62928cc6e85067a68ad7915515da9ffe2e7f83d09b5f8a"
+    sha256 arm64_sonoma:   "fec336ec1dbb1c3566ce08deee9d7fd7e6b7549132ed2e22d900bf9dbef0c9ce"
+    sha256 arm64_ventura:  "becdedea5be352b8081b27dd59364024963840be9f61f09a2c78bcd355b7b27a"
+    sha256 arm64_monterey: "9815c78d0a03182f7e56b00ec740381394c5f83b0960a9bb8539de046215d93c"
+    sha256 sonoma:         "587f96c372ad04a8d92a541732fc0188abbcc54ddc0ca12435a8e842d9098d08"
+    sha256 ventura:        "bc3a26e21702baa178c3a6e02ba3aca677a57e339aca72ef5750dcb4f50d2769"
+    sha256 monterey:       "fc960efd05a90df2e5a8d05f78de301274ae66774da3ef04c97be5e7149eca43"
+    sha256 x86_64_linux:   "7a26ce524943d35575a9750c014937c626f00bc84d79ee4febb3672cc2d8f065"
   end
 
   depends_on "cmake" => :build
   depends_on "cairo"
+  depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "glfw"
   depends_on "jpeg-turbo"
@@ -30,12 +31,7 @@ class Libgr < Formula
 
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "ffmpeg"
-  end
-
   on_linux do
-    depends_on "ffmpeg@6"
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"

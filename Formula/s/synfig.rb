@@ -1,10 +1,12 @@
 class Synfig < Formula
   desc "Command-line renderer"
   homepage "https:synfig.org"
-  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.2synfig-1.5.2.tar.gz"
+  # TODO: Update livecheck to track only stable releases when 1.6.x is available.
+  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.2sourcesynfig-1.5.2.tar.gz"
   mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.2synfig-1.5.2.tar.gz"
   sha256 "0a7cff341eb0bcd31725996ad70c1461ce5ddb3c3ee9f899abeb4a3e77ab420e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comsynfigsynfig.git", branch: "master"
 
   livecheck do
@@ -13,13 +15,13 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1f56eb46a5bf1422a2c3345fb49e4a812ef751dba399404935ea00da9aeb38c1"
-    sha256 arm64_ventura:  "26e27b1c7dc24f2bb74a8bcbbcc77e9ab29dff4b38f239f0cf9ae43eaacdb07b"
-    sha256 arm64_monterey: "4376deb8c41e5451988b56058f11e8ea5445fffc6edc2a5316c4be26e8f977ab"
-    sha256 sonoma:         "9c5c64089bd7aa8c221a8a12f3de8efaf2676f4a99bfd42db85c2f5e617073fe"
-    sha256 ventura:        "4e60da11ecfbe746754edb822a48e180b8edac7a2f152f4558aa13d051eb6e6c"
-    sha256 monterey:       "9e9740207cabd7c388632446d21b24779b77fb421a6713843cb1f8705ab74f14"
-    sha256 x86_64_linux:   "b303fb306eb771db2efb5dbf9e1608f7fd7f7904947f9ea64698e9977c1732ac"
+    sha256 arm64_sonoma:   "215e214b9ebb1e44193cc9c9b72d79dc6f9a35a33f4bab89893c1943a553a38a"
+    sha256 arm64_ventura:  "005402c971bd3fff896a2b5953029bc47c74d9ad47c244b8876d37c0008b8acd"
+    sha256 arm64_monterey: "87580f412466c2cc5f6e871de5ae2f331831abc02d204dda705f00ca8c87e216"
+    sha256 sonoma:         "91327f9de2c7cfaa6d805338e5b7c9a4bc4f3c6e6166ee815de090f38e4b6c74"
+    sha256 ventura:        "d0eecbd0a7629c95a7e2d2b447ed88388772cb81a822cc0fb31e129fa17f108c"
+    sha256 monterey:       "a136f2dd2ce9ca0860ebbf517831b4ead42250a92e4fc2aeee0c88186f301d4e"
+    sha256 x86_64_linux:   "8756ad19dc3c0f2b49a0b07a8e07d4766df49f3aa6cdcc6ae1c95cadab4306b0"
   end
 
   depends_on "autoconf" => :build
@@ -30,7 +32,7 @@ class Synfig < Formula
 
   depends_on "cairo"
   depends_on "etl"
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg"
   depends_on "fftw"
   depends_on "fontconfig"
   depends_on "freetype"

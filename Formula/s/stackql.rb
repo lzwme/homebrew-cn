@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https:stackql.io"
-  url "https:github.comstackqlstackqlarchiverefstagsv0.5.708.tar.gz"
-  sha256 "d9e40c2fc6207547291bacd806233de297d8d3fb012690d06ea3ac804a31931f"
+  url "https:github.comstackqlstackqlarchiverefstagsv0.5.724.tar.gz"
+  sha256 "9018d10e0a95e9fd8fc6f683048511a564f295eda25661578aab5bb93f925e07"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ba8ed3ebdd5b1ef260317339c65cd3f4fc9bb29a3418a900f9621f00a6edbe7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0848d694c5bb7e1ea1122e76b67419b2dae1f41be7c7a0b68ca72a9c2d5666f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0176000a4f67d95a1223dabeafff159906c261fd3c7013ca2db9a5711b641a99"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23ac24af8fd58a0a861e775055f147de475fa3c01648034f96dcd088064d73cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a22384c0d5c515b6fad133a2d8b13a66b87914dfbe88e75a4fca41bbabe6511"
-    sha256 cellar: :any_skip_relocation, monterey:       "3292dfe2604bd1bbe343a4e76f884e03872b91ef176bf0e93acff0c0f8339767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ceead0b536b8a83580ca0718d7704b336baff8188d18590e0f39889aa5326c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbe94645b8964a90938071b16b9e28b450d080c75e776981323669446e04bd8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "371562462d8b370890de897c1f42fbb7ef8f96ba99c974e5952139a5b01a5f6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7020b74186a407288f83f36575e8d37626ed3132e70a95e6abd8e15db2f92cc5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "11cd41737558f7866d730714cdaf08b28d233a9d00f16836fdf571c091118e9a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9a91a3b20f797dbd44b1861616caf16516d74da392b4509b302ab1eeeb2a521"
+    sha256 cellar: :any_skip_relocation, monterey:       "1160e14b26c92beebdfb1c5396ccc3ba24e96eb99bba4aaf603a5defbd836e2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a9af8dcb7c0dff9774e7f80dd2baafa4f2c54e08e5588e3d9279152ef277a2e"
   end
 
   depends_on "go" => :build

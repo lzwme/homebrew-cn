@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https:raphamorim.iorio"
-  url "https:github.comraphamorimrioarchiverefstagsv0.1.7.tar.gz"
-  sha256 "1cd010b1b1e3d28b87b4c18ca30dc9837a055e1b1f29582fc4fae57a2dcf960b"
+  url "https:github.comraphamorimrioarchiverefstagsv0.1.8.tar.gz"
+  sha256 "529cae91869b2185986c3bff6db4233fdaf4242ebbc1fae20362c750510ffc04"
   license "MIT"
   head "https:github.comraphamorimrio.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad980aa9b6534f39d599f59f404303219ad7e8afb35b8e658ec7d23e16038ccf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b514401df34f765ad8c44e809fd1f36f36d40f20fdde589d8151ab6c603df2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "347e69ecee3c74e5a61a1ce0644623c1048e8cfe7cdac6be6b00d403e939782e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c40004b69e88a27c6cac0c7bb99515ab7ac0a4429fb3c246b6f6108926bced5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "07b35b2d6d88be9f58125fee7d8f459b1fbf29a04a9a2552541b2cdeb7b1a4a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "ecf027d1f66a92fc4ef0be180507b34ed6a18776bc08db73a4768c7fa730f4ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae5b47f97c3a3c0b958e5ebeb3ac77912a105da1f49dc3247d347c5d758a8a25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48b755fa2dadbb47e41b01a3b08983481933c11c81ecfadc4556775193d04cb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50e8bd2e5123bdb463d0997d206bbdbd41325795b85d8e28c3fde96268377478"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e36d754f38382e125f837ded9a2f671c4c9a322e6f8f1862dd48f6cf1dcd01ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "00fb303e378d0257e577ba7c475edbbb37fd420ae7f8ae4097a898e8471dd0ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "eaca3f969f0e6a6a263cf5c93dd4441cac68594841f5646d2f30b8088fd8f24a"
   end
 
   depends_on "rust" => :build

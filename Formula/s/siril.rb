@@ -4,21 +4,20 @@ class Siril < Formula
   url "https://free-astro.org/download/siril-1.2.3.tar.bz2"
   sha256 "8ac660542d2bec5d608eaf9bf25a25e6ba574b58b5410bdb6ad401e1f86fa756"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "f4049c40c420b8174844ba34b785415e5018116244e4b28ca558d2864c7674c5"
-    sha256 arm64_ventura:  "4f5bc9ae544f1afa038e851e6f166b9d4c1e614d5234a901a370269670746842"
-    sha256 arm64_monterey: "92a0d0e303aaad93236f7b24a7e6d2cdca3b8599632314edafed042349530eee"
-    sha256 sonoma:         "ccdbec9841ca4ea9288451aaee4db372f83b5ecb2545915c43560002122e290c"
-    sha256 ventura:        "fd680dfe41bf64caabcad453873e48ea04dca6ce0b2d92dfc3a2e9db6a6ac854"
-    sha256 monterey:       "318344d5a3a07f6d6ac4deaaa89f5bb5dd4d3058cd02890c4b1a03ecb362bddd"
-    sha256 x86_64_linux:   "e059dbcf1530ca4e6981213c00604acea83879e071cc5a24272b60174347ab3f"
+    sha256 arm64_sonoma:   "1b438076e078b90b8aa351f5e470917152d179f1f5169edc53ae2fbcf82b1eb6"
+    sha256 arm64_ventura:  "53991a72d61e988dc39666384578ce9ef0abc2a36e9404d62e0c58c103a04422"
+    sha256 arm64_monterey: "04e62c548fb17bb2efef6cd9816f415fc0eac048ef86712ba54e1236dec5590e"
+    sha256 sonoma:         "3bc7cb77db14ac2ab537206eace33c7f11c26e975293abb8208d6160463e2e6c"
+    sha256 ventura:        "22b510a8ae114cac65d26d5f14d69aee713fb6586b7aa1fd79b1ef0f6b61e448"
+    sha256 monterey:       "a28a278462d36c513a895630a49393984291f47bd2424e9b159e07a2d1f5529f"
+    sha256 x86_64_linux:   "de834dbcab8bc30d5beecf176ef0ead7535d643f8620a258d839b2753656540f"
   end
 
   depends_on "cmake" => :build
-  depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
@@ -27,7 +26,7 @@ class Siril < Formula
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "exiv2"
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg"
   depends_on "ffms2"
   depends_on "fftw"
   depends_on "gdk-pixbuf"

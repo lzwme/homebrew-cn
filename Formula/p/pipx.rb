@@ -3,26 +3,26 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https:pipx.pypa.io"
-  url "https:files.pythonhosted.orgpackages2df3c04c5cd0a5795fe6bb09d56c4892384e53cb75813fc08e5cbfa4d080664apipx-1.6.0.tar.gz"
-  sha256 "840610e00103e3d49ae24b6b51804b60988851a5dd65468adb71e5a97e2699b2"
+  url "https:files.pythonhosted.orgpackages1dbbf82df37b21669d0dbfda388e733f49fa0033ec62c847cad74183b0d262c5pipx-1.7.0.tar.gz"
+  sha256 "a6dc3d51ebd2729fc5719d8dda451977aa8c530d9014b695c43e8fd43e54766e"
   license "MIT"
   head "https:github.compypapipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23895e6550d9e89ce2e5ed7dbd97f763d4c2410e7b672e80c04e21af21b77955"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23895e6550d9e89ce2e5ed7dbd97f763d4c2410e7b672e80c04e21af21b77955"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23895e6550d9e89ce2e5ed7dbd97f763d4c2410e7b672e80c04e21af21b77955"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3dc0343427d5963e409cbb171e6a18c89e5935f815fe8b76a03eb15c8fac12fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dc0343427d5963e409cbb171e6a18c89e5935f815fe8b76a03eb15c8fac12fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "3dc0343427d5963e409cbb171e6a18c89e5935f815fe8b76a03eb15c8fac12fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78d7fea7887d5c2a209d0b5ff89b147002177198aa7b24addf685c6871323a3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9759bd871ef5ca94f0616a55a8a352a4d8dbfd577e51a3365f4e2f749c795f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9759bd871ef5ca94f0616a55a8a352a4d8dbfd577e51a3365f4e2f749c795f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9759bd871ef5ca94f0616a55a8a352a4d8dbfd577e51a3365f4e2f749c795f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e8d9087c4ff28e4ea12549d42568387b2d90f76721ae9ef3d408f96865842cd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8d9087c4ff28e4ea12549d42568387b2d90f76721ae9ef3d408f96865842cd8"
+    sha256 cellar: :any_skip_relocation, monterey:       "e8d9087c4ff28e4ea12549d42568387b2d90f76721ae9ef3d408f96865842cd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "668ec6339ace6754cd01c3fb950c7f16ea66febd059f84c5f2d10b23bd312703"
   end
 
   depends_on "python@3.12"
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages7951fd6e293a64ab6f8ce1243cf3273ded7c51cbc33ef552dce3582b6a15d587argcomplete-3.3.0.tar.gz"
-    sha256 "fd03ff4a5b9e6580569d34b273f741e85cd9e072f3feeeee3eba4891c70eda62"
+    url "https:files.pythonhosted.orgpackages7533a3d23a2e9ac78f9eaf1fce7490fee430d43ca7d42c65adabbb36a2b28ff6argcomplete-3.5.0.tar.gz"
+    sha256 "4349400469dccfb7950bb60334a680c58d88699bff6159df61251878dc6bf74b"
   end
 
   resource "click" do
@@ -31,8 +31,8 @@ class Pipx < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "platformdirs" do

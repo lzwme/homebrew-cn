@@ -1,8 +1,8 @@
 class CypherShell < Formula
   desc "Command-line shell where you can execute Cypher against Neo4j"
   homepage "https://neo4j.com"
-  url "https://dist.neo4j.org/cypher-shell/cypher-shell-5.22.0.zip"
-  sha256 "9b9e6a187aef05aeda744d655b8139d50fd1d7a9f5dea2a14c792e13c2e19113"
+  url "https://dist.neo4j.org/cypher-shell/cypher-shell-5.23.0.zip"
+  sha256 "bc2d512c888f450c1cde6ba50f20f36ffdee7e875fe0995f8d1a6c615121a9bc"
   license "GPL-3.0-only"
   version_scheme 1
 
@@ -12,13 +12,7 @@ class CypherShell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0db26ef4a8cd51d6cb6b2d6ce97285b382ad50d3979fd48783bb9e72735ba0be"
-    sha256 cellar: :any_skip_relocation, ventura:        "0db26ef4a8cd51d6cb6b2d6ce97285b382ad50d3979fd48783bb9e72735ba0be"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ea790f92a9455673a1539fa2807f1e42762f7a4422403c2364da1c09180a39c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "858a49f9955d7f10ad6e0726782eea37d114928bf70f2ee0299b5e491d45d2ca"
+    sha256 cellar: :any_skip_relocation, all: "c2bab014ac31b47ecde81f1b289f27fbab8ae880473ce85d016c23f98b774400"
   end
 
   depends_on "openjdk@21"

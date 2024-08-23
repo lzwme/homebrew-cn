@@ -21,16 +21,19 @@ class Dwdiff < Formula
     sha256 x86_64_linux:   "ed0a917b98a26ca0217e9e22fafa289fbc6f5092db481c10115811475d29007e"
   end
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "icu4c"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    gettext = Formula["gettext"]
-    icu4c = Formula["icu4c"]
-    ENV.append "CFLAGS", "-I#{gettext.include} -I#{icu4c.include}"
-    ENV.append "LDFLAGS", "-L#{gettext.lib} -L#{icu4c.lib}"
-    ENV.append "LDFLAGS", "-lintl" if OS.mac?
+    if OS.mac?
+      ENV.append "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
+      ENV.append "LDLIBS", "-lintl"
+    end
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

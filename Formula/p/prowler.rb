@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/00/53/22def043346217fdf244668487bfcedf8e362c792f2ea455806b981c65b5/prowler-4.3.3.tar.gz"
-  sha256 "fc3abde2b8241b61b30cd22d3a225e0d13f6543a9ba2b832fb5c77fe4beafaf9"
+  url "https://files.pythonhosted.org/packages/c3/42/acb1219feaaa621b2e374405e49c62144a2e9ed00aa9137f36ae4cd34d1b/prowler-4.3.5.tar.gz"
+  sha256 "10e464df2d8194ce292811a3aef0551fe623eacb56c25d9792a173a98aac1e59"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "786f56466cb0971d739ac0d52d5bd63967dd0a395e95de2528ac364f5424943f"
-    sha256 cellar: :any,                 arm64_ventura:  "ca562db3e2bddeefe84a3a55c6dbbafdf8dd72fc77c2ac12108df02afabc7b0e"
-    sha256 cellar: :any,                 arm64_monterey: "7b7d0259aa09a68e782f1e6a8bcdafbe6f9cd3a8402ff0f8acd409098c50db3a"
-    sha256 cellar: :any,                 sonoma:         "7b261120cedbf786541a209a2075f39052b36b02519c5397f0379cc241ccb673"
-    sha256 cellar: :any,                 ventura:        "1934e60049076e9f7880544cdce4536c0c5c37dbe3c5159069e2afd3d3f9dcee"
-    sha256 cellar: :any,                 monterey:       "0297a1fadeae1ffab495726e7c75e29df519184b08a6cb8b2a18aa44a55c41d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b79f1aa8f013ce56e6a4dd25ffd946a68c020e29a737ace1e286b9036468174e"
+    sha256 cellar: :any,                 arm64_sonoma:   "978e16048450a81211f01bff3af8956b9250e0e8cb43f93a6f5f253db1f5d708"
+    sha256 cellar: :any,                 arm64_ventura:  "5d68b3fdebce2d517d16cc0332d83de022ce858af94656581f8df268cd0f3977"
+    sha256 cellar: :any,                 arm64_monterey: "7f10ade9a7c39db742699eedf4f71df5232ad7c8858f55ce447fcbdba03f5b18"
+    sha256 cellar: :any,                 sonoma:         "9a220e49ca01415aaeeaa9353e924dfb1f32307a78b90b87bbf0da2238462670"
+    sha256 cellar: :any,                 ventura:        "e8a61b2ce39695c44eaa2fb5657dc1c33350c7f4b9765224dd668104fa37ac53"
+    sha256 cellar: :any,                 monterey:       "078b2b4b00c3552b3ae273ac908ae57ed3c40a4f4f04823a2090ed498e7ba6bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aae134654289159dd82207b45700c917bab99a67f0ac6ccb0712872b297b45d"
   end
 
   depends_on "cmake" => :build
@@ -37,13 +37,13 @@ class Prowler < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/4f/55/95979cc0ba980ebbdc0076b6629176668815e0689c1448d1fcb4535b209a/aiohappyeyeballs-2.3.6.tar.gz"
-    sha256 "88211068d2a40e0436033956d7de3926ff36d54776f8b1022d6b21320cadae79"
+    url "https://files.pythonhosted.org/packages/2d/f7/22bba300a16fd1cad99da1a23793fe43963ee326d012fdf852d0b4035955/aiohappyeyeballs-2.4.0.tar.gz"
+    sha256 "55a1714f084e63d49639800f95716da97a1f173d46a16dfcfda0016abb93b6b2"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/15/9c/ed427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cb/aiohttp-3.10.3.tar.gz"
-    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
+    url "https://files.pythonhosted.org/packages/ca/28/ca549838018140b92a19001a8628578b0f2a3b38c16826212cc6f706e6d4/aiohttp-3.10.5.tar.gz"
+    sha256 "f071854b47d39591ce9a17981c46790acb30518e2f83dfca8db2dfa091178691"
   end
 
   resource "aiosignal" do
@@ -192,8 +192,8 @@ class Prowler < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/a7/3f/ea907ec6d15f68ea7f381546ba58adcb298417a59f01a2962cb5e486489f/cachetools-5.4.0.tar.gz"
-    sha256 "b8adc2e7c07f105ced7bc56dbb6dfbe7c4a00acce20e2227b3f355be89bc6827"
+    url "https://files.pythonhosted.org/packages/c3/38/a0f315319737ecf45b4319a8cd1f3a908e29d9277b46942263292115eee7/cachetools-5.5.0.tar.gz"
+    sha256 "2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"
   end
 
   resource "charset-normalizer" do
@@ -287,8 +287,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/28/4d/626b37c6bcc1f211aef23f47c49375072c0cb19148627d98c85e099acbc8/google_auth-2.33.0.tar.gz"
-    sha256 "d6a52342160d7290e334b4d47ba390767e4438ad0d45b7630774533e82655b95"
+    url "https://files.pythonhosted.org/packages/0f/ae/634dafb151366d91eb848a25846a780dbce4326906ef005d199723fbbca0/google_auth-2.34.0.tar.gz"
+    sha256 "8eb87396435c19b20d32abd2f984e31c191a15284af72eb922f10e5bde9c04cc"
   end
 
   resource "google-auth-httplib2" do
@@ -397,8 +397,8 @@ class Prowler < Formula
   end
 
   resource "microsoft-kiota-authentication-azure" do
-    url "https://files.pythonhosted.org/packages/5c/3a/21929600c477eb5b1deab21db52fdd06d691950b839dd3a01a3085c480ba/microsoft_kiota_authentication_azure-1.0.0.tar.gz"
-    sha256 "752304f8d94b884cfec12583dd763ec0478805c7f80b29344e78c6d55a97bd01"
+    url "https://files.pythonhosted.org/packages/7f/4a/b20343e0c7b44f916b52546ea115b78fb328f2132d7ba54a75ac46249f33/microsoft_kiota_authentication_azure-1.1.0.tar.gz"
+    sha256 "8940084a3c1c25d1cde1d3b193ef7164dc6323e3b8200e2f695cbc937797bac6"
   end
 
   resource "microsoft-kiota-http" do
@@ -407,8 +407,8 @@ class Prowler < Formula
   end
 
   resource "microsoft-kiota-serialization-form" do
-    url "https://files.pythonhosted.org/packages/20/72/251e030ed068a56acf13cacbd764b6e79a55dffa32baec2b686e444673d6/microsoft_kiota_serialization_form-0.1.0.tar.gz"
-    sha256 "663ece0cb1a41fe9ddfc9195aa3f15f219e14d2a1ee51e98c53ad8d795b2785d"
+    url "https://files.pythonhosted.org/packages/aa/bb/bc9e51e4d8718bd4af89461037e39f4f2f63aa9bb13b1274fe4b4c4cb70d/microsoft_kiota_serialization_form-0.1.1.tar.gz"
+    sha256 "f72dd50081250d1e49111682eccf620d3c2e335195d50c096b35ec5a5ef59a54"
   end
 
   resource "microsoft-kiota-serialization-json" do
@@ -607,8 +607,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/ce/ef/013ded5b0d259f3fa636bf35de186f0061c09fbe124020ce6b8db68c83af/setuptools-72.2.0.tar.gz"
-    sha256 "80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9"
+    url "https://files.pythonhosted.org/packages/8d/37/f4d4ce9bc15e61edba3179f9b0f763fc6d439474d28511b11f0d95bab7a2/setuptools-73.0.1.tar.gz"
+    sha256 "d59a3e788ab7e012ab2c4baed1b376da6366883ee20d7a5fc426816e3d7b1193"
   end
 
   resource "shodan" do
@@ -687,8 +687,8 @@ class Prowler < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/02/51/2e0fc149e7a810d300422ab543f87f2bcf64d985eb6f1228c4efd6e4f8d4/werkzeug-3.0.3.tar.gz"
-    sha256 "097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"
+    url "https://files.pythonhosted.org/packages/0f/e2/6dbcaab07560909ff8f654d3a2e5a60552d937c909455211b1b36d7101dc/werkzeug-3.0.4.tar.gz"
+    sha256 "34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
   end
 
   resource "wrapt" do

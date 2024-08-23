@@ -3,10 +3,6 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https:www.qt.io"
-  url "https:download.qt.ioofficial_releasesqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-  mirror "https:qt.mirror.constant.comarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-  mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-  sha256 "bf5089912364f99cf9baf6c109de76a3172eec6267f148c69800575c47f90087"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -14,8 +10,36 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 1
+  revision 2
   head "https:code.qt.ioqtqt5.git", branch: "dev"
+
+  stable do
+    url "https:download.qt.ioofficial_releasesqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
+    mirror "https:qt.mirror.constant.comarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
+    mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
+    sha256 "bf5089912364f99cf9baf6c109de76a3172eec6267f148c69800575c47f90087"
+
+    # Backport support for FFMpeg 7.
+    # Ref: https:bugreports.qt.iobrowseQTBUG-125227
+    patch do
+      # Use Fedora's backport of https:github.comqtqtwebengine-chromiumcommitb30e3535717e1cb970c6e4095b412a2c5fdbce40
+      url "https:src.fedoraproject.orgrpmsqt6-qtwebengineraw864539f2140a11fda9bf3ef878a2e627f04f0b2dfqtwebengine-fix-building-with-system-ffmpeg.patch"
+      sha256 "70b8c468be1954b8dad59243069c6369d7c6eae332f154d99e3027b9119eb7c5"
+      directory "qtwebengine"
+    end
+    patch do
+      url "https:github.comqtqtwebengine-chromiumcommit65aaac35d040aef90c2e9f41a651b5a23470e457.patch?full_index=1"
+      sha256 "2875e9c534da34902fb113b4171d7a4960e6bc27f6ad45d49929ecf667856d48"
+      directory "qtwebenginesrc3rdparty"
+    end
+    patch do
+      url "https:github.comqtqtwebengine-chromiumcommitd9944bcb991c981574a229e5267e535b4eac8e1c.patch?full_index=1"
+      sha256 "11d8c7db91e76ea886dd0f30aedb3bfb33211f6ba39236d684ad63bfe80682ff"
+      directory "qtwebenginesrc3rdparty"
+    end
+    # Backport of https:github.comqtqtwebengine-chromiumcommitafcbb2eab7c5b0329ad0045782768dd2805d6a05
+    patch :DATA
+  end
 
   # The first-party website doesn't make version information readily available,
   # so we check the `head` repository tags instead.
@@ -25,13 +49,13 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cf3871fc01cfdde43ad7352803291a5b680d05b2f8c2653ab5f79c498a15f1b5"
-    sha256 cellar: :any,                 arm64_ventura:  "d7fa2aac662c9f25e8770b3ab2d5c72802304c46cdd5a8fce8ad93bffa9388b3"
-    sha256 cellar: :any,                 arm64_monterey: "fe6ab103f6afb70dff45c8eccdcf4a47fd1ec95530ea7a2b338990451975578d"
-    sha256 cellar: :any,                 sonoma:         "717760d77542ffaf69199d69ef15de96c711ab088a4528ce51c94d541d233495"
-    sha256 cellar: :any,                 ventura:        "fbe23a62ef1968615988cee985e7aa1e075295132869ebc90efd3e8a5f418863"
-    sha256 cellar: :any,                 monterey:       "bc9a8c39a4dd5c1fd36523ee6109c63881db9b6d438b2eb85949582506ed2af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "705216c67f0f0c4d712311bfb1ce4dc2cec95aa1094fc6d42596c22f966faa55"
+    sha256 cellar: :any,                 arm64_sonoma:   "e91ea08a9b8cfcbcf43b932875aeb2201eae09806e59655be08685b9acd7624d"
+    sha256 cellar: :any,                 arm64_ventura:  "6ef7081cc3284bfb4e7ec02e5f3aa94150128cab70ddd6ca9e5ddfd9df963d15"
+    sha256 cellar: :any,                 arm64_monterey: "c81a6fa0b3f95518bbb06e1c97332db4c6561bc63e528a3310863cde489d00a0"
+    sha256 cellar: :any,                 sonoma:         "dee140746e16c9d7acb484daa9f957f9cd8b337513573c3a084b3fa7476fcbf0"
+    sha256 cellar: :any,                 ventura:        "6f69293a85e2ce056bf25c9ef54ce6ccedee49f8856dec0cec9c579a3598d727"
+    sha256 cellar: :any,                 monterey:       "7df9c26be7011eae551a272b2256f9525a66a56c5a79007d82514d9b6fb7da4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e77123a7c36a4480792d8566a760ec3c80c51fe4c8f0c5171e9dbd83698fed4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -82,7 +106,7 @@ class Qt < Formula
     depends_on "alsa-lib"
     depends_on "at-spi2-core"
     # TODO: depends_on "bluez"
-    depends_on "ffmpeg@6"
+    depends_on "ffmpeg"
     depends_on "fontconfig"
     depends_on "gstreamer"
     # TODO: depends_on "gypsy"
@@ -442,3 +466,94 @@ class Qt < Formula
     system ".test"
   end
 end
+
+__END__
+diff --git aqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.cc bqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.cc
+index aaab17bdc3b9c157981f2708c680eea03657f211..737ba737872ca5df4ee9a5efe03d17573a1f2e49 100644
+--- aqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.cc
++++ bqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.cc
+@@ -142,7 +142,7 @@ bool FFmpegVideoDecoder::IsCodecSupported(VideoCodec codec) {
+ }
+
+ FFmpegVideoDecoder::FFmpegVideoDecoder(MediaLog* media_log)
+-    : media_log_(media_log) {
++    : media_log_(media_log), timestamp_map_(128) {
+   DVLOG(1) << __func__;
+   DETACH_FROM_SEQUENCE(sequence_checker_);
+ }
+@@ -371,8 +371,10 @@ bool FFmpegVideoDecoder::FFmpegDecode(const DecoderBuffer& buffer) {
+     DCHECK(packet->data);
+     DCHECK_GT(packet->size, 0);
+
+-     Let FFmpeg handle presentation timestamp reordering.
+-    codec_context_->reordered_opaque = buffer.timestamp().InMicroseconds();
++    const int64_t timestamp = buffer.timestamp().InMicroseconds();
++    const TimestampId timestamp_id = timestamp_id_generator_.GenerateNextId();
++    timestamp_map_.Put(std::make_pair(timestamp_id, timestamp));
++    packet->opaque = reinterpret_cast<void*>(timestamp_id.GetUnsafeValue());
+   }
+   FFmpegDecodingLoop::DecodeStatus decode_status = decoding_loop_->DecodePacket(
+       packet, base::BindRepeating(&FFmpegVideoDecoder::OnNewFrame,
+@@ -431,7 +433,12 @@ bool FFmpegVideoDecoder::OnNewFrame(AVFrame* frame) {
+   }
+   gfx::Size natural_size = aspect_ratio.GetNaturalSize(visible_rect);
+
+-  const auto pts = base::Microseconds(frame->reordered_opaque);
++  const auto ts_id = TimestampId(reinterpret_cast<size_t>(frame->opaque));
++  const auto ts_lookup = timestamp_map_.Get(ts_id);
++  if (ts_lookup == timestamp_map_.end()) {
++    return false;
++  }
++  const auto pts = base::Microseconds(std::get<1>(*ts_lookup));
+   auto video_frame = VideoFrame::WrapExternalDataWithLayout(
+       opaque->layout, visible_rect, natural_size, opaque->data, opaque->size,
+       pts);
+@@ -506,8 +513,10 @@ bool FFmpegVideoDecoder::ConfigureDecoder(const VideoDecoderConfig& config,
+   codec_context_->thread_count = GetFFmpegVideoDecoderThreadCount(config);
+   codec_context_->thread_type =
+       FF_THREAD_SLICE | (low_delay ? 0 : FF_THREAD_FRAME);
++
+   codec_context_->opaque = this;
+   codec_context_->get_buffer2 = GetVideoBufferImpl;
++  codec_context_->flags |= AV_CODEC_FLAG_COPY_OPAQUE;
+
+   if (decode_nalus_)
+     codec_context_->flags2 |= AV_CODEC_FLAG2_CHUNKS;
+diff --git aqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.h bqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.h
+index d02cb89c3ddf7cee0d1a79ee095eae5f52ff5111..0a2de1c623ffff7dc9c5d381344714e9ee3d2f2a 100644
+--- aqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.h
++++ bqtwebenginesrc3rdpartychromiummediafiltersffmpeg_video_decoder.h
+@@ -7,10 +7,12 @@
+
+ #include <memory>
+
++#include "basecontainerslru_cache.h"
+ #include "basefunctionalcallback.h"
+ #include "basememoryraw_ptr.h"
+ #include "basememoryscoped_refptr.h"
+ #include "basesequence_checker.h"
++#include "basetypesid_type.h"
+ #include "mediabasesupported_video_decoder_config.h"
+ #include "mediabasevideo_decoder.h"
+ #include "mediabasevideo_decoder_config.h"
+@@ -87,6 +89,20 @@ class MEDIA_EXPORT FFmpegVideoDecoder : public VideoDecoder {
+    FFmpeg structures owned by this object.
+   std::unique_ptr<AVCodecContext, ScopedPtrAVFreeContext> codec_context_;
+
++   The gist here is that timestamps need to be 64 bits to store microsecond
++   precision. A 32 bit integer would overflow at ~35 minutes at this level of
++   precision. We can't cast the timestamp to the void ptr object used by the
++   opaque field in ffmpeg then, because it would lose data on a 32 bit build.
++   However, we don't actually have 2^31 timestamped frames in a single
++   playback, so it's fine to use the 32 bit value as a key in a map which
++   contains the actual timestamps. Additionally, we've in the past set 128
++   outstanding frames for re-ordering as a limit for cross-thread decoding
++   tasks, so we'll do that here too with the LRU cache.
++  using TimestampId = base::IdType<int64_t, size_t, 0>;
++
++  TimestampId::Generator timestamp_id_generator_;
++  base::LRUCache<TimestampId, int64_t> timestamp_map_;
++
+   VideoDecoderConfig config_;
+
+   scoped_refptr<FrameBufferPool> frame_pool_;

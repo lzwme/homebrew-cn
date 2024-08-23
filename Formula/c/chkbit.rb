@@ -1,19 +1,19 @@
 class Chkbit < Formula
   desc "Check your files for data corruption"
   homepage "https:github.comlaktakchkbit"
-  url "https:github.comlaktakchkbitarchiverefstagsv5.1.2.tar.gz"
-  sha256 "08b52d40a9df13d4f194d7b633c69960bf5d78279414ff064170f63dcdcb062e"
+  url "https:github.comlaktakchkbitarchiverefstagsv5.2.0.tar.gz"
+  sha256 "6f6f2660fa917dcd2becd2bf1eb07a55a97b000beded278e9a31729c2e1607d4"
   license "MIT"
   head "https:github.comlaktakchkbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee74cb4d8512ac4c70ccd4e220c1f8b0f8f2e1f469a7bb7c8bd8127c99ea484c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee74cb4d8512ac4c70ccd4e220c1f8b0f8f2e1f469a7bb7c8bd8127c99ea484c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee74cb4d8512ac4c70ccd4e220c1f8b0f8f2e1f469a7bb7c8bd8127c99ea484c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "effd29e77a91ed040fe3ec9618a2b799d69726d66d7af70b5f505c85f4ae9312"
-    sha256 cellar: :any_skip_relocation, ventura:        "effd29e77a91ed040fe3ec9618a2b799d69726d66d7af70b5f505c85f4ae9312"
-    sha256 cellar: :any_skip_relocation, monterey:       "effd29e77a91ed040fe3ec9618a2b799d69726d66d7af70b5f505c85f4ae9312"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2faa4a7307b0a65e66528bee99854a3eee5477f96388b99b7c0fc92f29cd0c9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
+    sha256 cellar: :any_skip_relocation, monterey:       "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc68cb3135ebd1d3962e8bb5e3baa6e5f6fa744d3336ff3b0ae920b6dcc0f122"
   end
 
   depends_on "go" => :build

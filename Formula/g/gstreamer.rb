@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https:gstreamer.freedesktop.org"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   stable do
     url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.6gstreamer-1.24.6.tar.bz2"
@@ -33,13 +34,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7117eea68b6aa66fa48655419715f534b5cea71ad056bb85bc445b06bdb46ede"
-    sha256 arm64_ventura:  "af361693a3095bb767a62d462fea125fc9e9a76649e0c5394a2ca76abb8b8fc2"
-    sha256 arm64_monterey: "e9f5b6eabccb9c3a14c6b415b84c050d16b0d326101415cd01e63319091b54f6"
-    sha256 sonoma:         "ccb47132e334a626b8c12ab5ad3800da7d8116df82f105b27c5a378e0da3e170"
-    sha256 ventura:        "9e3bbf9052136e0891a42d55afb19c49ead295c304b820209e54e0b68f098fea"
-    sha256 monterey:       "8e8fec81a0a80aec30a6f9c81d63b46966b7d9502eb93b860601f50ebc47158f"
-    sha256 x86_64_linux:   "44b24d375d484e23d3bb94a7a4a1e280fc791dd60fe65b18612820a2271dab97"
+    sha256 arm64_sonoma:   "36c71043709405e0d9fb5635d9652e6907f178a4c52282f990031d63650adb95"
+    sha256 arm64_ventura:  "71559e4e88b157b5053fb91a56a4779f1b9d1106cefbbbf42c551f7e7ec9b785"
+    sha256 arm64_monterey: "3b37cde822bd3fc901f0d65f69cd1d3fb43e8cd0be0ca16b18c9913eacc500b0"
+    sha256 sonoma:         "d81326031eadba704961d25c355654c554ddeb5d0221df89f906a72991477e1e"
+    sha256 ventura:        "98ad775cf4d6d1b9efd787b9ae0e5f6127e6234dadf14cc4decd4d3bd435b46f"
+    sha256 monterey:       "d69690b8ac34e84799fc42d9cf70c6a1d8f926cacc5810ead4011db566715817"
+    sha256 x86_64_linux:   "2a94f58dabd802a738e014d3481ddfc4aacda674558de4cc3f9474d450f74cea"
   end
 
   head do
@@ -65,7 +66,7 @@ class Gstreamer < Formula
   depends_on "faac"
   depends_on "faad2"
   depends_on "fdk-aac"
-  depends_on "ffmpeg@6"
+  depends_on "ffmpeg"
   depends_on "flac"
   depends_on "gdk-pixbuf"
   depends_on "glib"
@@ -251,8 +252,26 @@ class Gstreamer < Formula
   test do
     # TODO: Improve test according to suggestions at
     #   https:github.comorgsHomebrewdiscussions3740
-    assert_match(^Total count: \d+ plugins, shell_output(bin"gst-inspect-1.0"))
     system bin"gst-validate-launcher", "--usage"
+
+    system python3, "-c", <<~EOS
+      import gi
+      gi.require_version('Gst', '1.0')
+      from gi.repository import Gst
+      print (Gst.Fraction(num=3, denom=5))
+    EOS
+
+    # FIXME: The initial plugin load takes a long time without extra permissions on
+    # macOS, which frequently causes the slower Intel macOS runners to time out.
+    # Need to allow a longer timeout or see if CI terminal can be made a developer tool.
+    #
+    # Ref: https:gitlab.freedesktop.orggstreamergstreamer-issues1119
+    skip_plugins = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if skip_plugins
+
+    assert_match(^Total count: \d+ plugin, shell_output(bin"gst-inspect-1.0"))
+    return if skip_plugins
+
     system bin"ges-launch-1.0", "--ges-version"
     system bin"gst-inspect-1.0", "libav"
     system bin"gst-inspect-1.0", "--plugin", "dvbsuboverlay"
@@ -264,13 +283,6 @@ class Gstreamer < Formula
     system bin"gst-inspect-1.0", "--plugin", "rtspclientsink"
     system bin"gst-inspect-1.0", "--plugin", "rsfile"
     system bin"gst-inspect-1.0", "hlsdemux2"
-
-    system python3, "-c", <<~EOS
-      import gi
-      gi.require_version('Gst', '1.0')
-      from gi.repository import Gst
-      print (Gst.Fraction(num=3, denom=5))
-    EOS
   end
 end
 

@@ -3,7 +3,11 @@ class JpegTurbo < Formula
   homepage "https:www.libjpeg-turbo.org"
   url "https:github.comlibjpeg-turbolibjpeg-turboreleasesdownload3.0.3libjpeg-turbo-3.0.3.tar.gz"
   sha256 "343e789069fc7afbcdfe44dbba7dbbf45afa98a15150e079a38e60e44578865d"
-  license "IJG"
+  license all_of: [
+    "IJG", # libjpeg API library and programs
+    "Zlib", # libjpeg-turbo SIMD source code
+    "BSD-3-Clause", # TurboJPEG API library and programs
+  ]
   head "https:github.comlibjpeg-turbolibjpeg-turbo.git", branch: "main"
 
   livecheck do
