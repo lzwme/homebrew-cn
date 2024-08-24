@@ -8,20 +8,15 @@ class Autopep8 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa5eefdba927b17be6fa5cfe0b544728dd0c231ec2def405a753902228b568fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56cca739cf4278dbd934677b89f0d719983c50458681ee95f2339c22e0a5ce70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c2ff29cdf04fe9126d752f6097d6cd0634763d1302c9499b6feac765d89ed1c5"
   end
 
   depends_on "python@3.12"
 
   resource "pycodestyle" do
-    url "https:files.pythonhosted.orgpackages105652d8283e1a1c85695291040192776931782831e21117c84311cbdd63f70cpycodestyle-2.12.0.tar.gz"
-    sha256 "442f950141b4f43df752dd303511ffded3a04c2b6fb7f65980574f0c31e6e79c"
+    url "https:files.pythonhosted.orgpackages43aa210b2c9aedd8c1cbeea31a50e42050ad56187754b34eb214c46709445801pycodestyle-2.12.1.tar.gz"
+    sha256 "6838eae08bbce4f6accd5d5572075c63626a15ee3e6f842df996bf62f6d73521"
   end
 
   def install

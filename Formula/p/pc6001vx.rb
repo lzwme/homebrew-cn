@@ -14,6 +14,7 @@ class Pc6001vx < Formula
     sha256 cellar: :any, arm64_monterey: "9e71228dceca49f46785e01fce810a5e7302a2d8c54e1c83f0045166d0920cc9"
     sha256 cellar: :any, sonoma:         "57526a351e01058156e0047f2f5189ecec4e388f7276ec6961e0b4bbf40fd525"
     sha256 cellar: :any, ventura:        "70f38d4be3d39e24d7182504c4b4ba6534fd4fd3aba2365f83e9e392e728a789"
+    sha256 cellar: :any, monterey:       "de195792448a2ffc5ae12853607eddc8583e2a3cca12d9b19815e71f83bccb3e"
   end
 
   depends_on "pkg-config" => :build

@@ -7,14 +7,8 @@ class Coffeescript < Formula
   head "https:github.comjashkenascoffeescript.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e07f15b72bb3182536806a3ca9449a40fa7957d6501c5f7c20e38a5bc96c219"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7454fcd2bd55ba72481506195de985a7ad153ab63cd8f41e1204e69a81467253"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8b60f70c34df82c6fb506f905b11ecf0cda8421c03fb775e19ac0a2e9f348edf"
   end
 
   depends_on "node"

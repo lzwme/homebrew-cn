@@ -1,13 +1,12 @@
 class Phive < Formula
   desc "Phar Installation and Verification Environment (PHIVE)"
   homepage "https:phar.io"
-  url "https:github.comphar-iophivereleasesdownload0.15.2phive-0.15.2.phar"
-  sha256 "2bb076753ec5d672f5e2f96a97a0fe7e8e9ec24a439eed00fd29ef942c7905f9"
+  url "https:github.comphar-iophivereleasesdownload0.15.3phive-0.15.3.phar"
+  sha256 "3f4ab8130e83bb62c2a51359e7004df95b60ad07bbd319f4b39d35a48a051e27"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "bcf4e05e84f3efd3abbefe8b1fcf8a9978923a28cbd2322e0c9e1561e807417b"
+    sha256 cellar: :any_skip_relocation, all: "8541c0554a7138cf6587885fc6ed16995a1f70f5dd5aac19efce72ea42fb8661"
   end
 
   depends_on "php"

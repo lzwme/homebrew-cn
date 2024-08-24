@@ -9,13 +9,8 @@ class CmakeLanguageServer < Formula
   head "https:github.comregen100cmake-language-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, ventura:        "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, monterey:       "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "121fcd6bee7edc1b8477636bad12a0094415aa17ef73be3d853bfae0bdfc93f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6990801bff5c6c969e674d53a254218c949c0f71468faa41f8ad32fd0afd19ff"
   end
 
   depends_on "python@3.12"

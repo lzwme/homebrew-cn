@@ -6,14 +6,8 @@ class BashLanguageServer < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, ventura:        "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, monterey:       "51ba85e12eebbb1f73c17113ee5cf4db979519a2ee8d61c31b652c841b15fda4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c002af8e83868ebb2664838b79c00f7e4405448547ea5e3d64b889ea2e4f67f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "10c27a8921363f70f037d1400912de1ec9addef631a5cc1d3cab2ab45d684368"
   end
 
   depends_on "node"

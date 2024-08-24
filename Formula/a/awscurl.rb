@@ -3,19 +3,19 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https:github.comokiganawscurl"
-  url "https:files.pythonhosted.orgpackages2daf0a58eab617da80ae724b44b93acafdcac8f55a3bfc741499657aedb8d128awscurl-0.34.tar.gz"
-  sha256 "648af1acf5f2f4ecfa25391c65c18be62340e2c2715a6a00efa1444211a2b2a0"
+  url "https:files.pythonhosted.orgpackagesc5c7956a0734953132791bedadf1e52281d110e40f0169d02ce1f94b8322ab40awscurl-0.35.tar.gz"
+  sha256 "7a7141f768900b4e9dad9bdc391896ca3e35b078206efe4d093eb8f29cac5939"
   license "MIT"
   head "https:github.comokiganawscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a5e1ba55df4cba1992cd88b264b275a522506b9c6f21aa1897fc3a5ba09cca2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bbd1e888c869412dd5ddc2bc8e124b85270d5e283c5a976e036cbca5244f1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, ventura:        "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, monterey:       "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9a4573be03d6123e350360bb6729d96c2ab9b4ffc5d3450acd2273d678a7e38"
   end
 
   depends_on "certifi"
@@ -25,8 +25,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages30af51b89a099da1900ad6d760d9b3f88a668309b4b480158e777161c5e63e29botocore-1.35.2.tar.gz"
-    sha256 "96c8eb6f0baed623a1b57ca9f24cb21d5508872cf0dfebb55527a85b6dbc76ba"
+    url "https:files.pythonhosted.orgpackages102d9243c499c1a5202cc4162654f2660e5a51a0f86e5fcc712d8c422b6b7aeebotocore-1.35.4.tar.gz"
+    sha256 "4cc51a6a486915aedc140f9d027b7e156646b7a0f7b33b1000762c81aff9a12f"
   end
 
   resource "charset-normalizer" do

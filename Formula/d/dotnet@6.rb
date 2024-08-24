@@ -3,19 +3,22 @@ class DotnetAT6 < Formula
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
   url "https:github.comdotnetinstaller.git",
-      tag:      "v6.0.125",
-      revision: "e898a826c2b7f66602c8962134ef165fb9e6d44b"
+      tag:      "v6.0.133",
+      revision: "48ad8f7176f00900ff49df9fb936bc7c8c79d345"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "74ae1e9f647dad3ca8ef8f05559e23284c0ce23163beff75749b43df90b2577d"
-    sha256 cellar: :any,                 arm64_monterey: "25fa40a478a1c3010c196bd29569675d4911cf68429fa570cfac9e75fd56254b"
-    sha256 cellar: :any,                 ventura:        "d11fcc9a7a3a3c20197ce240a871323a44041ec7ef348007152fb3c0c2d907e4"
-    sha256 cellar: :any,                 monterey:       "32cf49e5e8a0b4d431b0865d1e2d3844474259bd5fd744082264690dc7c682fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beafa491d72204af7e2aa81b7a492a211b0db984b9030063a1955c5d646de49d"
+    sha256 cellar: :any, arm64_sonoma:   "2f732d33c49d2549ca9bd05907d4e86d7c54cb5264b9bc27844118cde98fe5ea"
+    sha256 cellar: :any, arm64_monterey: "823832e04deadfb006e61f0ad100a20b6e07a38b8214ba924e77a2fe4b00d5af"
+    sha256 cellar: :any, sonoma:         "22e6078e1fc3003cad4a5d3cdcab343c76b0e4463a9f376a69a32c97aaf7d9cf"
+    sha256 cellar: :any, monterey:       "9ded0ea147313c22cc23dc5922266a649c07679321249de3a11f81fbde100be0"
+    sha256               x86_64_linux:   "56bae991404a1dc7441fada6fda22a4197f7847ba977b1734aa39bea044ea75b"
   end
 
   keg_only :versioned_formula
+
+  # https:dotnet.microsoft.comen-usplatformsupportpolicydotnet-core#lifecycle
+  deprecate! date: "2024-11-12", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -59,7 +62,11 @@ class DotnetAT6 < Formula
   patch :DATA
 
   def install
-    ENV.append_path "LD_LIBRARY_PATH", Formula["icu4c"].opt_lib if OS.linux?
+    if OS.linux?
+      ENV.append_path "LD_LIBRARY_PATH", Formula["icu4c"].opt_lib
+      ENV.append_to_cflags "-I#{Formula["krb5"].opt_include}"
+      ENV.append_to_cflags "-I#{Formula["zlib"].opt_include}"
+    end
 
     (buildpath".dotnet").install resource("dotnet-install.sh")
     (buildpath"srcSourceBuildtarballpatchesmsbuild").install resource("homebrew-msbuild-patch")

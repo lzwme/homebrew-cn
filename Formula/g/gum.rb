@@ -1,19 +1,19 @@
 class Gum < Formula
   desc "Tool for glamorous shell scripts"
   homepage "https:github.comcharmbraceletgum"
-  url "https:github.comcharmbraceletgumarchiverefstagsv0.14.3.tar.gz"
-  sha256 "954e37c4c35e877bffd5bec7c794bee254db95f8a4e005136d94c7db456db398"
+  url "https:github.comcharmbraceletgumarchiverefstagsv0.14.4.tar.gz"
+  sha256 "0570d76f513f749e64e02d56eaff4f5e9987dcf5aeeba7ed36a09af7517fb2ac"
   license "MIT"
   head "https:github.comcharmbraceletgum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "621acf770200872c2705fa5a7a72e484e985e3632540b888f6c1cd775b3b8389"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "621acf770200872c2705fa5a7a72e484e985e3632540b888f6c1cd775b3b8389"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "621acf770200872c2705fa5a7a72e484e985e3632540b888f6c1cd775b3b8389"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80073b4db98b15962b4aad3b3280a566d17240c0c046e2c55cb42ebe14fdba4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "80073b4db98b15962b4aad3b3280a566d17240c0c046e2c55cb42ebe14fdba4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e79884835afbad4c372c8ca7c45f5a51559798725ae49607d9eb8b03adec858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9efabe044600a8c4501db1db79e7b42df922bc71330aff690ff52515a30d378d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "582c9cd177eb047b75da262f3d201c6e9e554d7c996607eeb23ce221170c55f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "582c9cd177eb047b75da262f3d201c6e9e554d7c996607eeb23ce221170c55f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "582c9cd177eb047b75da262f3d201c6e9e554d7c996607eeb23ce221170c55f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "734cbfcad8f74ec515f4116dde738a44704f69aec673905a05fcd3df5a07ea00"
+    sha256 cellar: :any_skip_relocation, ventura:        "734cbfcad8f74ec515f4116dde738a44704f69aec673905a05fcd3df5a07ea00"
+    sha256 cellar: :any_skip_relocation, monterey:       "734cbfcad8f74ec515f4116dde738a44704f69aec673905a05fcd3df5a07ea00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2890323046503cfc2940e0e82e1a951dba921af47a4a4c92f1172758460091bf"
   end
 
   depends_on "go" => :build

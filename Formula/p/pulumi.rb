@@ -2,19 +2,19 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https:pulumi.io"
   url "https:github.compulumipulumi.git",
-      tag:      "v3.129.0",
-      revision: "f31c50eba22878efdf137b2195ca733ba37d5fad"
+      tag:      "v3.130.0",
+      revision: "863f5ee9c699510a0d1126ec29934cec398cbc9c"
   license "Apache-2.0"
   head "https:github.compulumipulumi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "801902b32216976fc844fa67fc58035cc5ef5277e73bb900a721057a2c2c3a66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d70b7317b523778c7a492d657f0e8034cda6ad1ff46dc0e013b3d407564ce060"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd096646df54b29951b5d0952fc81fb74a3f519c897a48d718ad42dfe95034a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db79be88c4171e2661710217a2cf82c5f038d18ae6f348153fe2dd89721920ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d5fc6b6ac9e9d590a7ab0167a97c0ad283fbd965a03fad73831a0d289831e51"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a34d439db572f7ee432a9293868b1e19a1a600f1a80e77c2b82788c9f3e922f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9dbb92ea8791b786163b737fd6451c47f9bc0909f1b97b949642ec132997d52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7422e0f6353f8d11fdbbbe26a12e7cecb68f50e00a349d41fcfed77b6f97290a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63dca9fe785582ba2191c03350cfde7920f447d61d2d4df21385cae074a7d458"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ebec82d4db8351dd51318866f77d337b82412876dcbfd4fe41ea8fbd4675eb2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "77984ba00cd641d5675d0be00f0cd921d400d9a111a9ddba7cfdcd8169a51ef6"
+    sha256 cellar: :any_skip_relocation, ventura:        "cc8cf6b77be3783cd6fcd87e13df31a18086cfa12549f96359b13eb6ff5add9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f47bcbc0adb4abc58e060bfbf8d95873e742379c7f6c88c2e949a66b9ed2ecca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69ad3d6b946c30b93716cee25fd1d39656ed538d8ae4bdfcddb126f2e3c774d1"
   end
 
   # use "go" again after https:github.compulumipulumiissues17003 is fixed and released

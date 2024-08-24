@@ -14,13 +14,8 @@ class ApacheFlink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, ventura:        "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, monterey:       "34232626d2de3280d92145dc48d802a5c3b61d9976246b67a761440df234f917"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdee41deca5c4fc6953a49b81005e4fc5da3dbc230012f34490f53fdeea80a20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "634c5f4048bd9d4512002ea98b7bc7411aee0331c5c0e6c934cd8e3b24d061fa"
   end
 
   depends_on "openjdk@11"

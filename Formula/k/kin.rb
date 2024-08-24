@@ -3,20 +3,13 @@ class Kin < Formula
 
   desc "Sane PBXProj files"
   homepage "https:github.comSerchinasticoKin"
-  url "https:files.pythonhosted.orgpackagesaba6fe193e6193675c978b493ebe8e6a606b52203e37463179ca573ebcaa18ddkin-2.1.9.tar.gz"
-  sha256 "35da507e45b733a6f391676b47995b26ca40afcb38fcb5c3f5e0d90101027dee"
+  url "https:files.pythonhosted.orgpackages4f36dcb0e16c5634d58d0ef2f771fe1e608264698394f4a184afc289d9a85bb8kin-2.1.10.tar.gz"
+  sha256 "a3cbb3b376c3d28b16b0c07ee835607690745b7a3ba7592f2534b384dd9a9eab"
   license "Apache-2.0"
   head "https:github.comSerchinasticoKin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b2ba72f179e81c3f94fb5cbf045c1a60e6560a1ec27bb80832aba1a2ba62ae1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "747006dfd30eb91047cae53ab11532077a0e50908c45270172187f6de8dbc833"
+    sha256 cellar: :any_skip_relocation, all: "ea242d6c5242419942c7fcf8b3efaeee56d9a599d8a81b1f6d2898da975f6350"
   end
 
   depends_on "python@3.12"

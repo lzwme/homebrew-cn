@@ -7,13 +7,8 @@ class WpCliCompletion < Formula
   head "https:github.comwp-cliwp-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ad157b0837b4892d9055baae3119a771dc55db7b16d4284c24a86b393c1bef2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be7a910d7b1851d7ba346ccd1e5cc7d043c0f88e397f0a6c93fd3382bd0153cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f6e6b76f262eee84b092a65a934ec84498532587caf613ab725b57337e5e8ab5"
   end
 
   def install

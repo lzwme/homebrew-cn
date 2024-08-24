@@ -11,14 +11,8 @@ class Ack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b513a91dec472642d7704cbd0b9a6ef55d7df586969e9ea7b1f2729835e95e0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d6117580720621a8437b91d378fa63378f98e59106091a182eb170c4ee25fd7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "c4efb6f3e54c984d5f57c676313e1ebfe9bdf06c6602a68f5d74d3a3d3dfa1a0"
   end
 
   head do
