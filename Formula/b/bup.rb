@@ -1,24 +1,26 @@
 class Bup < Formula
   desc "Backup tool"
   homepage "https:bup.github.io"
-  url "https:github.combupbuparchiverefstags0.33.3.tar.gz"
-  sha256 "0aa6e98352c939180e82bbb0a647afd8d1b3d5eda6771b65e694099f6b956ac5"
+  url "https:github.combupbuparchiverefstags0.33.4.tar.gz"
+  sha256 "f51284f2cb24aa653288f05aad32d6ec6ebb9546143ed7c588d40ba82f24b79a"
   license all_of: ["BSD-2-Clause", "LGPL-2.0-only"]
   head "https:github.combupbup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fa4f5c208efca04606934745fe35d2776b479f6035fa9841eca924d5e900ecb2"
-    sha256 cellar: :any,                 arm64_ventura:  "12d0542f3f0f72d356d58de92c9afa701ff0006ae233bf7ae6c11085ce70552a"
-    sha256 cellar: :any,                 arm64_monterey: "9a6c3234293a20c544e7b1ea1f79ef68f63b0bf164def7165d946511cf6f67e6"
-    sha256 cellar: :any,                 sonoma:         "be8a5f5f68a9d9d69c8fb473dc662953974ee9d1fa1aa454bd009502347ead4b"
-    sha256 cellar: :any,                 ventura:        "68679c2a19db87c9b9e9334dd9903ecb75156d4372cfe16300444d8accbcf992"
-    sha256 cellar: :any,                 monterey:       "984f9e6c5bdff86478d40bc0edc91332d606710430e5ca49005411b2a949f9b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a37bc1c9cd680141e67a6e73b31490256b6722d567f67afe1e84e556d36cfa06"
+    sha256 cellar: :any,                 arm64_sonoma:   "0318b68039fcf8b554e28288c2fc56b3b448602fecab8535cd6bc1a7df94f785"
+    sha256 cellar: :any,                 arm64_ventura:  "53a8d9dfd22c18e1a442a6897d0fc0381dc29e243a44f2b322345146c7ec3967"
+    sha256 cellar: :any,                 arm64_monterey: "a66d236fc9183a6e08731af6c11024cf22998a8fe2276421d128aebbb8431783"
+    sha256 cellar: :any,                 sonoma:         "3b3850de4518caee4d8efe70833b7050f1a7297abc4347dab46eb6c84e5baa21"
+    sha256 cellar: :any,                 ventura:        "b2175d5efffcbfc460013f608259ca44ced450038bd4e1cdfa1857c2c666e563"
+    sha256 cellar: :any,                 monterey:       "6785a85f8e7088815267b8648786cc033d1408da3922e77cce18380e657abbf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adce7c082d9fb66a0471b0728cb3c174a4a2fc1e89f3b4ac2e845ab58972b12d"
   end
 
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
+
   depends_on "python@3.12"
+  depends_on "readline"
 
   def python3
     which("python3.12")
@@ -26,6 +28,7 @@ class Bup < Formula
 
   def install
     ENV["BUP_PYTHON_CONFIG"] = "#{python3}-config"
+
     system "make", "PREFIX=#{prefix}", "install"
   end
 

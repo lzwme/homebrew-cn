@@ -6,14 +6,8 @@ class Pwned < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, ventura:        "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, monterey:       "af219c3bc8235292cadb96f309d58d2e16f9f26951d4542df3ee95b3067f3089"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc6362e175b7c449811805cca017043eb75b2b82f8fd7b4e2550559398619714"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "65ad0f5e5dadd586b0f0ee5c1606ce4533821694d92807d1694adb28b82aae01"
   end
 
   depends_on "node"

@@ -9,13 +9,8 @@ class Fortls < Formula
   head "https:github.comfortran-langfortls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, ventura:        "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, monterey:       "d05b52850e35b539f838e07367814c387a1b0dd801687028875c752130489539"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "361fa9e20b1acd15bd76e155b7cb7314172ae820431c4ebacba1fc985d4f1aac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c066910b7c8381a0be2b56213aced45bf2b6b3ec4e62c3de19a027c602607727"
   end
 
   depends_on "python@3.12"

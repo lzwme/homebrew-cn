@@ -22,7 +22,7 @@ class GoAT119 < Formula
 
   # EOL with Go 1.21 release (2023-08-08)
   # Ref: https://go.dev/doc/devel/release#policy
-  deprecate! date: "2023-08-13", because: :unsupported
+  disable! date: "2024-08-24", because: :unsupported
 
   depends_on "go" => :build
 

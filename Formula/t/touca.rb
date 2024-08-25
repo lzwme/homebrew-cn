@@ -8,14 +8,8 @@ class Touca < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9333e9833aa585a5f1d6ea2d039f1407164a389c1e1866a43dfc98e4d8f14a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06bcb1c050f7b85013fa3b5a2ad5add68369fce76012f28e13741ce507be1745"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "faec0e27e56389b412bd930fbe5f326d6301a6affef185e7345979f1b1ecc65e"
   end
 
   depends_on "certifi"

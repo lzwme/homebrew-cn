@@ -11,13 +11,8 @@ class GitGui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, ventura:        "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, monterey:       "4cbfb2806785093fd4e17010642532337530f45f139483e03b9dd83f08bc3930"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20931574b751a49578c122064cb2487dc4fd9e3e7547bf4f2d718717dbf2cc6d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "86a03739811812010cde7b2a5a6b1611f1d1bfd766c8475247245be17ff715f6"
   end
 
   depends_on "tcl-tk"

@@ -9,6 +9,7 @@ class Zurl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "29419455dd218e5cca794fef679128a0e193c14b859d8d517cef731a03d518f6"
     sha256 cellar: :any,                 arm64_ventura:  "70ab20c9abacad98555e412aa8b942d478965428f41f1f28a4a90b41012e3753"
     sha256 cellar: :any,                 arm64_monterey: "5a7f5071e096c8dead6a23493df5fe36a6e7e1b7dd6417c6b41029dd48f5517c"
     sha256 cellar: :any,                 sonoma:         "d6974d31c07fce5247d6681c9737d60c00a8288155d1f15494f6581437f346ca"

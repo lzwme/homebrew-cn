@@ -9,13 +9,8 @@ class Toot < Formula
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, sonoma:         "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, ventura:        "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, monterey:       "06c0504805d2b5992b409fc2af5a7e7f041404563f6313bce44cd8e7564c9730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f34fe1ec3b0e23a0363adc6a734a881a92ab340dc33b0fafda2f4952fc91cdeb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "721cf94063d1e683ede64cdd0c0641dbe7dba08a83a113ddca89558a453ca413"
   end
 
   depends_on "certifi"

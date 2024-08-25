@@ -9,13 +9,8 @@ class ReorderPythonImports < Formula
   head "https:github.comasottilereorder-python-imports.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, monterey:       "2184a6a4047d37b0c9cb152b9fc78a902928c1eb21acc76dbbeb3a3b964eafe8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "453f41a6a7922df6dba675524704b362bf71215209efc7c9f6da0ddc4469caf6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "438e4afc9465da45505b6c627fb9c58f68c4673e1f33914a82ccf255cc2ce182"
   end
 
   depends_on "python@3.12"

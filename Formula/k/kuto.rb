@@ -6,14 +6,8 @@ class Kuto < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, ventura:        "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, monterey:       "8cad58c77f143c7fbfd10d10df241f2b4fd1bf9f66bb1d3aaa6dfcb22ff64af6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f015ff49cc97418ef019b5830e80d66c7d545dea4f8d36b237825bef909bc61"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "d0b642c13ec7b23fd229ef06d6ab335cb2cb3eaea4785644006ab84572b0d8bf"
   end
 
   depends_on "node"

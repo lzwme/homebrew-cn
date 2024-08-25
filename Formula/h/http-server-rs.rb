@@ -18,6 +18,8 @@ class HttpServerRs < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "http-server", because: "both install a `http-server` binary"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

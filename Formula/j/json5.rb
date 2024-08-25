@@ -6,14 +6,8 @@ class Json5 < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, sonoma:         "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, ventura:        "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, monterey:       "534d5ae84344ae22db82db67bb5df3f7dcab72e007a806f7b2f58b79790c4038"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9b146e913a2062ed76d2e6f4cdfa8ad70c3605dda61a1b629f1189b1cb914ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "549882eb4bc333f0952050c2578e929cf4d653d3834467aa364ef0b07f4133d3"
   end
 
   depends_on "node"

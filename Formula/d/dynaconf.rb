@@ -8,13 +8,8 @@ class Dynaconf < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae16a3ed04f32f1764291fe0eeeec4151d1ddd397d088c26e85934dc45c1aa91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91906d1735ffd3409f662ad4395dbc5a86e59eccbcb344be99ac68d3e72aee56"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ef24e9f55aaeb333a904057639397a979f55e3c68ec33c63643b5ccbd4dc370f"
   end
 
   depends_on "python@3.12"

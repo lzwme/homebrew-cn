@@ -10,14 +10,8 @@ class Pywhat < Formula
   head "https:github.combee-sanpyWhat.git", branch: "main"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae683721117722526f328e7e38c2672219a7e0889699cb0d2ae4494c475d1ef3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e184362e5a2a4f936e45251596339088d58eb322223ea0c1fa9cc9e5b582b9d0"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, all: "f2c7083cf29a632765ecbe084712e3fd034f9b5bf3d529ad936091117e6f7bd3"
   end
 
   depends_on "python@3.12"

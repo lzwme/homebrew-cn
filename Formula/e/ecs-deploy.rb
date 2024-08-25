@@ -8,13 +8,8 @@ class EcsDeploy < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "f70502bc919d266ec26287a517f385675c465b34862a2d00f15d73848e9526ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfbc4a97ca89ced505c472b547c372c8019212b85ea0910f72f35fe1e6db7822"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0356659d777a416b9584d8f7160083fd9c7a58bdba82e8b9af8682c9b38b5f05"
   end
 
   depends_on "certifi"

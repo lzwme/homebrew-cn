@@ -6,13 +6,8 @@ class Forgit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, ventura:        "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, monterey:       "3302e0bdfc0cad63e04a3ec12cc5bc797bc92de5634dcd101c67e009d2271e60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64eb5a0d561a1af5a9733dc330239d805794d0fc4035eedcc51b6e1d83e7c4c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1bdbf7ce08e829ec7881308d2c35ac9921c6bda724c300903fcb5dc62589932f"
   end
 
   depends_on "fzf"

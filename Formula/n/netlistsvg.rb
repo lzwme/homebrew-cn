@@ -6,14 +6,8 @@ class Netlistsvg < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, ventura:        "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, monterey:       "8631b57e56cacc86f90f5ffec484dbda8fc3e8ed679bdb5549d62f4e8fc87519"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "375b90caacd7736ea74c7f6ebfc1b0fd5b4c8bde7a75be4e12e965b0221d4f1e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "13485ed6f7d18a5733d709b8806159803cbfcfa7bf1afaa6b0e3acd9a12fc200"
   end
 
   depends_on "yosys" => :test

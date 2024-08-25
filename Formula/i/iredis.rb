@@ -9,14 +9,8 @@ class Iredis < Formula
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, ventura:        "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, monterey:       "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f3d0c7ef651d8a7197611927049062a54c0c39b44f71402cdd1c2f12c6d6d92"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "067e2e60638bafdacac1370de11dfd7e84917f6691f47fa10e3d652b24ac8107"
   end
 
   depends_on "python@3.12"

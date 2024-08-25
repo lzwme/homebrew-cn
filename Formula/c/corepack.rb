@@ -11,14 +11,8 @@ class Corepack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, ventura:        "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, monterey:       "02602f24c46d8852d823a87c5e7877f8c8cb1de3cf90a9dcad3716f6d8d36988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67b27d9b337822a292d6ceb524c40d09ee459455265aec4f8c0221cf5a937db6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "7d90b3f17059a78d6b20c20afe53e1d6d91484af19bff3c8256a61d79b2e3414"
   end
 
   depends_on "node"

@@ -6,13 +6,8 @@ class PhpCodeSniffer < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, ventura:        "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8012777af1c70a7863b9b9279fae023afa537edde3ea24d7f226d18d6180b78a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d4b530645e477fb65bbde35448292c3dc1606a8d8ce04c99717412c71f23fac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "195960ef111bf7ec5ef4b25b05c544d0690f05b259f31e952f5b82d7c73aa9fb"
   end
 
   depends_on "php"

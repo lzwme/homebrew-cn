@@ -9,13 +9,8 @@ class Mackup < Formula
   head "https:github.comlramackup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, ventura:        "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, monterey:       "dac4b2e6a5dbb4b99eeb476ca7a80d7b313dab3f733474ab24c6ad02bee7637e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edcad6afdb1201c9d64101252384cb1d5b61b5430cf5deabd184510d84f6b6da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2ba1fc013f7b442bbb3d7d33c8bc98e16bba3d533754f494bdab0b71b5ff0e5c"
   end
 
   depends_on "python@3.12"

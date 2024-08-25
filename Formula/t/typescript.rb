@@ -7,14 +7,8 @@ class Typescript < Formula
   head "https:github.comMicrosoftTypeScript.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, ventura:        "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, monterey:       "25f20a66c0ccdb3f5a1dbcc8587ab3ea5e0fb54e68e550d372e560ffe830be09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab7c9619010eaef83e59fa9c5fc564a42c7bbfaa0eb47ebc6af6f99440789c0f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "822f45e678ec43dbfecc36a60c127f287df0f5d6f53f81095be64d38427bc957"
   end
 
   depends_on "node"

@@ -8,13 +8,8 @@ class Instaloader < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6182495df81f13c68aeb94a736d96d91b4e9b844ebd573df6516cdcde3b8cb5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d4acb0c849b751f95ab8f1c8df6a2c2c25ea1eb27f5a88d4a640ef73d2bf32b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fddcf94546fff664816470d0e3b99930629adde57bc3a92d0fc7f8ba016b0cd9"
   end
 
   depends_on "certifi"

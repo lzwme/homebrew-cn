@@ -9,13 +9,8 @@ class Arjun < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a449a8d94216b732b4de35818e2e41901102f57e0cdab0e4987607f8014acec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b68d893ed461d13adc0d2d6508a49f8ddf809f79f9700bfa6511fdf07b05aea1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cee8d9a1bac393738ac553f66c5e877a83d4003e1ac29bfa0d1edf67d48e5851"
   end
 
   depends_on "certifi"

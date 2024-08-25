@@ -11,14 +11,8 @@ class Pulp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5008304a966c3efaed02ef949fdfce9aa2df1e0d7dd78df531e2a635602d0bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eebc36e5f38171ab8bcc008399c5e639f3a71f91fcc19477283c98f1a87f470"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "0de9300b253bf5fa068c578ff479fc02a5371a7367bfaf9b3563122b8163ae4a"
   end
 
   depends_on "bower"

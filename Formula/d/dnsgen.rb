@@ -9,13 +9,8 @@ class Dnsgen < Formula
   head "https:github.comAlephNullSKdnsgen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "38fe8f1e5c63609f9af6c9f7be7a388f9356f2c5d2022af50062bf909b184b2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3e142090204b7f6b028c213e3eeb137390dd57bb8a47cff77ad2ef66d973ffc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9689ab64b0d53203da566b13abff7e283a3654a1f75a8c274fffbfc6abc762b5"
   end
 
   depends_on "certifi"

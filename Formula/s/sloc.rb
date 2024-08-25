@@ -6,14 +6,8 @@ class Sloc < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, sonoma:         "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, ventura:        "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, monterey:       "da504ac5fe1db696740216c4ad46508bec57b12b240e3b242b21aa348ecfb890"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67f3b6498f7ffaeec6b245a9d4fd2bd562e95637afa78e570d64aa313b651236"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "24e858bb8b1a883aa3bff9443299ab2be4b978dbede386c35047ede3958584c5"
   end
 
   depends_on "node"

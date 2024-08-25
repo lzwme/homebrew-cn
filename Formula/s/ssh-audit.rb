@@ -9,13 +9,8 @@ class SshAudit < Formula
   head "https:github.comjtestassh-audit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, ventura:        "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, monterey:       "e52d6192b5ca6851ead47cd60f94820beaf7e8daa570100fb29cfa434bea2764"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50405aed6aa6e102ad1bce2902670ff28b47b9c02d2c9adcff3c0497fbd11271"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "81e991deab1a3f781204c1999da94562f5108b142ecae92d35bad997a39c9874"
   end
 
   depends_on "python@3.12"

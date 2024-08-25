@@ -6,13 +6,8 @@ class Pmd < Formula
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, ventura:        "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, monterey:       "27df33d6de57b1f75f7be19f9e1cb5062815d3c52adb2477a201b60f251f884d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0dd600b67eaeb7142de161aa826589a3e95a1764fd2de7ea3dfc95d9df6e0d0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1be91bbcca0769b160561bec1ee9b09c82022b9bbd5237bcb532a3bb6ca31653"
   end
 
   depends_on "openjdk"

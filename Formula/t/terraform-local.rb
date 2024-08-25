@@ -8,13 +8,8 @@ class TerraformLocal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, sonoma:         "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, ventura:        "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, monterey:       "41e26ee47afa97c3562607262063110ba5327a59355e941f578ea0e4f6b2cb16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd715a2505846f42553046d5fd8efd25d2ca9bed56917d3348000d557efa573d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "06c028d4d899635a404d261672d30be008fe6e022b7336f1a1eb6cc5ed9dc7f6"
   end
 
   depends_on "localstack"

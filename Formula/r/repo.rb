@@ -10,13 +10,8 @@ class Repo < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, ventura:        "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, monterey:       "fbd3d930b5b82d64171586736a1ea8ccc1a1ca3ef20f5b988b58cd00100b5016"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c176c0e0a2ff1c1412af90e72e806fa8dc3202be400b31eba3aa835c6ed202e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a2a57c781133cac0a369f20ef1c97497a55037e69f1fc645947cd87d96e927d3"
   end
 
   uses_from_macos "python"

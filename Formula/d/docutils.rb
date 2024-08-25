@@ -8,13 +8,8 @@ class Docutils < Formula
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, ventura:        "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, monterey:       "1be754c074ea2ae9b0d8ed3d21b8b6265064c260a49dbcf6dcb3adc967d4d287"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da5189fbc044da3ad89386c3a23411f4a24bbcfa0881bb2bb106e387ed95f3a3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "efdb782075a2c40da40c41c578d4cb32a5e4e9f59de8434aa621e609a98cbede"
   end
 
   depends_on "python@3.12"

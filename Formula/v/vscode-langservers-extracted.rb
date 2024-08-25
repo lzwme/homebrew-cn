@@ -6,14 +6,8 @@ class VscodeLangserversExtracted < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc7c65e7fc3a6b6e3b8faa96ad591fa53674e1a37af47ed2f720a03b53e5ce95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c4fb83e422027cda9f1cbcd7f731e108298912148d65d5ecbaf29a8725558d3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "1d95f2ff8fdf6fd36f817214ae5435cd51d0d6490a3e01e25780f8728d4c9999"
   end
 
   depends_on "node"

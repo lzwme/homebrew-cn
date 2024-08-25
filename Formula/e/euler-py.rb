@@ -10,14 +10,8 @@ class EulerPy < Formula
   head "https:github.comiKevinYEulerPy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d2331698d82ebb953c1b63323ed4a1c4a5dc5ca69b6213ae24590a67e3569c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22166d8bb4c8e96c7d2ff89f1d0da3cdfa1630c67bfddac76ba00f75dd0a978d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a26e52b98389ea59d09c6fa089b3bdd4bdb27eb95269692f96cc5f0b4e819cfd"
   end
 
   depends_on "python@3.12"

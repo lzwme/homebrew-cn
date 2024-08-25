@@ -9,5 +9,8 @@ cask "keycastr" do
 
   app "KeyCastr.app"
 
-  zap trash: "~LibraryPreferencesio.github.keycastr.plist"
+  zap trash: [
+    "~LibraryHTTPStoragesio.github.keycastr",
+    "~LibraryPreferencesio.github.keycastr.plist",
+  ]
 end

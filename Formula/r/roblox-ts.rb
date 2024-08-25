@@ -6,14 +6,8 @@ class RobloxTs < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b51ad56d1509b0eb829a8045d248c8857decedefc0867d80d93bf928cf33ac0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a4d00dcc6b20f07804e5ddea9f08ea9d95f470d8ca07d9b4e7142b4488f6868"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "4c48e8c7de899e5c1ea2f50bdc8d15b34498c66891008caec0af899f911e3e26"
   end
 
   depends_on "node"

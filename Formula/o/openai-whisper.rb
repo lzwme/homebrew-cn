@@ -6,18 +6,17 @@ class OpenaiWhisper < Formula
   url "https:files.pythonhosted.orgpackagesd26e50ace2bf704e5ffc786d20d96403ab0d57c5d6ab8729de7fed8c436687dfopenai-whisper-20231117.tar.gz"
   sha256 "7af424181436f1800cc0b7d75cf40ede34e9ddf1ba4983a910832fcf4aade4a4"
   license "MIT"
-  revision 5
+  revision 6
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c4823602582021d71a112cee7b9fd70d7bb346231ac8a064413fbc4fa5feeae4"
-    sha256 cellar: :any,                 arm64_ventura:  "dbe1c266af6c9f768aebc92dfb02f0257b823c79835dd20569f8910736c4481d"
-    sha256 cellar: :any,                 arm64_monterey: "03f5d31004276a79c6647f3d3acfb23b1458e0b47a5622a7629c3f14bd5cd093"
-    sha256 cellar: :any,                 sonoma:         "e718c5ecde8a4a034870eb564cd0644c8980ffef1f9373562a7e88402e7c91b0"
-    sha256 cellar: :any,                 ventura:        "e2d29e93aec4325471339f521bcb0948aafcc688ab19206a6cc470378129f287"
-    sha256 cellar: :any,                 monterey:       "05ece5b230afd9939107d8c0a327968f697da8713115c2b524678be1eec28ce3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a12abfebd488c81f69346f3bd7c6cfb0bc6f51926893f19c7e298b427d3386"
+    sha256 cellar: :any,                 arm64_sonoma:   "66994757920b560b0ddba120aa779ca8b69676883716ff5ebac3ed6c72ecf112"
+    sha256 cellar: :any,                 arm64_ventura:  "d127afd6258ab3b5e1734f1c47b0178b29a55e3ebd5c317c88fe46c721e940b7"
+    sha256 cellar: :any,                 arm64_monterey: "b955e1d73e96d0f1c8ea3fd80ff4fe2edac30039cc9edbbf6bca1c6649f81fa8"
+    sha256 cellar: :any,                 sonoma:         "3a3417495a3f08fad995dc16fc457245b8dd75cd8fc23a37cc8204b6eb677bdd"
+    sha256 cellar: :any,                 ventura:        "1ad6a7853c20c84786421f592444b34cf7f0e71e8acd0b36fb324702a6f0a1a0"
+    sha256 cellar: :any,                 monterey:       "3fe3d019c3094fb814976c1573a12867858f89912387a6d472dc5af925343450"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebe5c9ee278764c7abdeb454aafa3d3009c1ce961170b7562b9089dd0e261500"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -43,8 +42,9 @@ class OpenaiWhisper < Formula
   end
 
   resource "llvmlite" do
-    url "https:files.pythonhosted.orgpackages9f3df513755f285db51ab363a53e898b85562e950f79a2e6767a364530c2f645llvmlite-0.43.0.tar.gz"
-    sha256 "ae2b5b5c3ef67354824fb75517c8db5fbe93bc02cd9671f3c62271626bc041d5"
+    # Fetch from Git hash for compatibility with the new version of `numba` below.
+    url "https:github.comnumballvmlitearchiveca123c3ae2a6f7db865661ae509862277ec5d692.tar.gz"
+    sha256 "a778c3b02f96a57a8c4c2e22cb7b2b0712cf487ac5167d459150e1b1fc42b028"
   end
 
   resource "more-itertools" do
@@ -53,14 +53,9 @@ class OpenaiWhisper < Formula
   end
 
   resource "numba" do
-    url "https:files.pythonhosted.orgpackages3c932849300a9184775ba274aba6f82f303343669b0592b7bb0849ea713dabb0numba-0.60.0.tar.gz"
-    sha256 "5df6158e5584eece5fc83294b949fd30b9f1125df7708862205217e068aabf16"
-
-    # Fix compat with numpy 2.0.1: https:github.comnumbanumbapull9683
-    patch do
-      url "https:github.comnumbanumbacommitafb3d168efa713c235d1bb4586722ad6e5dbb0c1.patch?full_index=1"
-      sha256 "5045f942be69fe12d0b0f02a4236c01c092f660ee9fa008848b7ebf5cb8fd528"
-    end
+    # Fetch from Git hash for numpy 2.1 compatibility
+    url "https:github.comnumbanumbaarchivea344e8f55440c91d40c5221e93a38ce0c149b803.tar.gz"
+    sha256 "6295d40e7f2f29dfe06a0403e6e7540f7d286df238085d61637740017acb11ee"
   end
 
   resource "regex" do

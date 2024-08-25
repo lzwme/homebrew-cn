@@ -14,14 +14,8 @@ class Isort < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, ventura:        "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, monterey:       "2190b1a4860ba5e7ad437a5c0c37a6ba8ad54f19cb4fef15f914a9710356d636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af37731a0ce2a0eca9cfad575039cf7a300ca79e0b705628d91de2130d92e03c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a491e2da01cf99435dcf1357bf1cae158f6c57377a25ff3c4f0e3cfd60dcd189"
   end
 
   depends_on "python@3.12"

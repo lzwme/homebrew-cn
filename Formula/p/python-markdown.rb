@@ -9,13 +9,8 @@ class PythonMarkdown < Formula
   head "https:github.comPython-Markdownmarkdown.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, ventura:        "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, monterey:       "616c2b362eb1ceb49e0d1e21d1725dd6b40bf9c6a36b4fa03942bdb57ea7cb28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d123ff5377049c5bc38d92cd1eaeb190c494f2b4feebe919da68914dc09fd446"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2b07b7bb754954c44444f71599b7e8a7e8455bfc3c61d625a6b56fba16c2fdeb"
   end
 
   depends_on "python@3.12"

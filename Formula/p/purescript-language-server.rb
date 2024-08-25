@@ -6,14 +6,8 @@ class PurescriptLanguageServer < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, sonoma:         "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, ventura:        "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, monterey:       "13bab131f4c76717facc48989f3449674c336a6ecde00bd1b3afc1d8d5917096"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25410574878aaeff7b211222108eb127f332f48d28ffce06069fd041455feeb9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "79af5f956fc4d788f73bab6dcbd8c44bcb235e0f94f7ced418ca15df9b0e103d"
   end
 
   depends_on "node"

@@ -9,13 +9,8 @@ class Netaddr < Formula
   head "https:github.comnetaddrnetaddr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, ventura:        "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, monterey:       "172666490f282e237f0226fc0351afdc61761e33a5b03a6ad2a2fe6894861b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ac44529ab10d5361449ac9335565ce86e1f5b03b13e1fa6111c37203765a048"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a7284179680caf2362b7b59aece0fd13ce71d9ee590609b68c8706b0baf8671c"
   end
 
   depends_on "python@3.12"

@@ -6,14 +6,8 @@ class Jsonlint < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc368b7493e0307e8011f37f29b91b296ea0adadd804484b07362f681d36fcbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9961017c6a0a18697ddf9b1f85349da345e8c7eb04a5b7cf816ab532c30e2c4b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "97762cc27f840903d10f585400d3a9019ff18813ce89ffc25cf4d13390479a13"
   end
 
   depends_on "node"

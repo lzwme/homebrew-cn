@@ -8,13 +8,8 @@ class RuffLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c8b4589c86fd49520ff93396f557b2cafea9c9914125b73857ce0e8469f7181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a8735ec52f84a69127c7bd2345cf46f08b26875df2bbb5222f4bbc9bbb6102"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ec58edb89028d26a8888d68c334bd2435ed86040e24384d44cb7bebaaf2ccc45"
   end
 
   depends_on "python@3.12"

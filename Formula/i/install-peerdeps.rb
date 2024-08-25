@@ -6,14 +6,8 @@ class InstallPeerdeps < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "e795fe1ad6a1fed06a19636c4d93c4c630ddd71a16016035d29aff99885785a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b833efc753877c4c00df8f7cff9c6df4291799e3b254eba899cbf5fdee45dd9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8b8235bb0d694175e47f0dd39cb14fdc1cf9474c25516f37b7f01a216db0d022"
   end
 
   depends_on "node"

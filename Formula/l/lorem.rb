@@ -9,14 +9,8 @@ class Lorem < Formula
   head "https:github.comper9000lorem.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "7098a9c20c1d9eab6b7b903576e883aac9f1baeb5b3a635da1cab28cb9a705a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6909c7b12382f37766ef98a96e0fc49c73e3142b0e92e5417d9f8de65f3f06e8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8b19f09aa8ff1a1e6e6dae8a356ac8ae90992a3435540b0fd71b7d39a7d3f360"
   end
 
   uses_from_macos "python"

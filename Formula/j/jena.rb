@@ -7,13 +7,8 @@ class Jena < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "13242c46df5bef7fde15f051ae719b70763fc44d39e49c43a9ce2257c0ee73a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc6ede1a41b42bc10b71462009a35bda25cfb9808d1636be2cf6e7676259f781"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "dffb5fdbed56c65060224008433699c3bb1fe28c0c7726084c695d71c56b764b"
   end
 
   depends_on "openjdk"

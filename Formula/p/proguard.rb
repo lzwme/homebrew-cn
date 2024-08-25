@@ -11,13 +11,8 @@ class Proguard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1046e12fc3e809bf98b015308135473795c43682d488b8c42e87d8af45e4f3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ac525f08798f112758472da89d5a386913263d80fc81f6622ab83b9b8ed5e5ce"
   end
 
   depends_on "openjdk"

@@ -9,13 +9,8 @@ class Awscurl < Formula
   head "https:github.comokiganawscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, ventura:        "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, monterey:       "3de1d69856cf46bed8463bd2615e9a81d49247f3785cc43aa9ec610c51d6c995"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9a4573be03d6123e350360bb6729d96c2ab9b4ffc5d3450acd2273d678a7e38"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8a19792bce680510b0d92fa0ccc1a0b3ea74f4d285e2bdeb9251f3c62abf63c9"
   end
 
   depends_on "certifi"

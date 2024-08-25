@@ -2,19 +2,19 @@ class OpeniothubServer < Formula
   desc "Server for OpenIoTHub"
   homepage "https:github.comOpenIoTHubserver-go"
   url "https:github.comOpenIoTHubserver-go.git",
-      tag:      "v1.2.7",
-      revision: "b4429c6879ad1851b32c6ecad4700c746406c72a"
+      tag:      "v1.2.10",
+      revision: "f7310370514b5b8af3deb750636cb526532488e5"
   license "MIT"
   head "https:github.comOpenIoTHubserver-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61a2b72157bb1f0c1da43ad41fcd89e924c702d7e9f0a98e205ccb24910e1eaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61a2b72157bb1f0c1da43ad41fcd89e924c702d7e9f0a98e205ccb24910e1eaf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61a2b72157bb1f0c1da43ad41fcd89e924c702d7e9f0a98e205ccb24910e1eaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "05445f8aa0378be5c7f1eac736c950695871870aec1f03bfa561bb49ae848e6d"
-    sha256 cellar: :any_skip_relocation, ventura:        "05445f8aa0378be5c7f1eac736c950695871870aec1f03bfa561bb49ae848e6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "05445f8aa0378be5c7f1eac736c950695871870aec1f03bfa561bb49ae848e6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "403b8cb974d99705529baa85d73c73a04a705d8556a8b5241015c27f8ab6de65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "640c7715e7a89f0c7e0b9ee212430fac3932ce414eca2a47f7f1e359de104fa2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "640c7715e7a89f0c7e0b9ee212430fac3932ce414eca2a47f7f1e359de104fa2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "640c7715e7a89f0c7e0b9ee212430fac3932ce414eca2a47f7f1e359de104fa2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dec2d884d8a4fa8a523ee7e93a915ff880d245df19f626f53e307648504c6437"
+    sha256 cellar: :any_skip_relocation, ventura:        "dec2d884d8a4fa8a523ee7e93a915ff880d245df19f626f53e307648504c6437"
+    sha256 cellar: :any_skip_relocation, monterey:       "dec2d884d8a4fa8a523ee7e93a915ff880d245df19f626f53e307648504c6437"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f1c53efeaa347391a0546b0dd71e20a371885883a3ed96029035ffb546d809a"
   end
 
   depends_on "go" => :build

@@ -8,13 +8,8 @@ class Litecli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a572d0d5957d894cd5839fe7e99c1f0d9fe01d921acac1fc11bd4aaeb32e7b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc74bf1829660c97ee4bd8a30b4314de9e11dd1db5ae176b5449c694609a929f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "59b7e1c37f1949a80a1cf78f52268e0842c95da95f5b8201917743064dbc6bd4"
   end
 
   depends_on "python@3.12"

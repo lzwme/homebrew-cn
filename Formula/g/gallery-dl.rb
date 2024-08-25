@@ -9,13 +9,8 @@ class GalleryDl < Formula
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ee18861028f328a4218576232ec0d55482820a23bee06f2de6a37aafddb33c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "072673cfb44a7b3caf4d89d620b06cb0bfb3bff748961a72cfdefb03d4fc7421"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3d2e76919bc10e97649d00cf61277364a68f0c04ab8898ff2d0ea1908e9b5a69"
   end
 
   depends_on "certifi"

@@ -11,13 +11,8 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c1fd43e8a5b439262c0e32e0247c814a3dff85ba34a4f684fb3fb52cefd2f1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6f011ecfcdbc0e3e02477208447de2f08248628ee190ea85b4c549197602e53"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "387268f108387a25943f9b5fe79e991deba63e372aa5c2a62e627613bf7a88b0"
   end
 
   depends_on "openjdk"

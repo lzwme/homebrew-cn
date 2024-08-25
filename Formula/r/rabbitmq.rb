@@ -11,13 +11,8 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e1cee3de3dd021bb4649fa612c9b26481b8ec2e61fdd4aa610f282b70e4265f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b81d73462277de13f6303f0dbd10f3e9748d8fdd6c5ad25b9645f75ebcd0b713"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3a40525ec4b29370df0417703805165c6af8a655f2b58e416c1be1a3d7b685bc"
   end
 
   depends_on "erlang"

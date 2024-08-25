@@ -12,13 +12,8 @@ class Plantuml < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, ventura:        "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, monterey:       "0492d42c32b924bc419258fcab1fffa0f53bca721198f279f380a1c731375e40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41fddbfe48d1c936259b4f57f677f8503bd2b7b5e49564455cf0dc1da22921ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "efb042dbbcbfb644b892216d947ed6328ff26fea2a8b23f76567f7dd0982a74d"
   end
 
   depends_on "graphviz"

@@ -8,13 +8,8 @@ class Mdformat < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "14024bedc37d382d69cf4bdc4d6da652920d83b238c17c5e4bfa5078bc40e2bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c5d61f62ab333861eccbfeaf1a7a9f4b8d09f0fc68a620a0a1c90146af14a2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "eff9cd2c34165bfde79d954fb451ba32750eee529bd9d2cf848ef5ac5c6e214d"
   end
 
   depends_on "python@3.12"

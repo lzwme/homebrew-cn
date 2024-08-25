@@ -12,13 +12,8 @@ class Glassfish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, sonoma:         "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, ventura:        "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, monterey:       "431100d5d15bb507b84b1e1cd8f65306e5ab0726b931d21870d2fc3a525eb910"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0494136d46db6567fef255427db39ad17c5e4460bd6733fc4d9cf78c13180b34"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0446d3579a1c34792baa033c3779a4b65276ca8fe23ce9d3a18baeb86acb2973"
   end
 
   # no java 22 support for glassfish 7.x

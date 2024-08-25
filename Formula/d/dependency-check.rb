@@ -11,13 +11,8 @@ class DependencyCheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, ventura:        "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, monterey:       "d881dadcedc45d6dfff42e455763f511c282b4bdebb079aa0cae6b9c0f833ade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82b3294dfedaedc0718e47dba90455b861113f5923e4f9a17a80186e691abd90"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5c6b82070703cf6c0602c7a57109ca2849ea57393aa0f77acee6a834fcd63c7a"
   end
 
   depends_on "openjdk"

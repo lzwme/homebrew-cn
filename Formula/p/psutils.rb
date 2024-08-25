@@ -8,13 +8,8 @@ class Psutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, ventura:        "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, monterey:       "e48238baab7620695b63785748c64f2f342ed45eef497abca867d109b0e84e12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ce27b130f85c8ebb56213cf7a41b460f031cd62c76c6c0d07c4f09f1f4f16d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8721074e2c724d5069bd6c8be15e93a05e1954e52de0ca09829ee638479858b5"
   end
 
   depends_on "libpaper"

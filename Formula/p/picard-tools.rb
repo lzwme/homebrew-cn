@@ -11,13 +11,8 @@ class PicardTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4c4f0a02455e8f496ce952efb7bed2beafd51f136c886b7bf9001b4e493c2a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "265f23c9a206ed3b31151e2e1f3088e0fc872c3f0389bb79d93d6a412d528891"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2bf0ac75316edab4e75e2325f166b4f30551043d241de2f97604876737f162eb"
   end
 
   depends_on "openjdk"

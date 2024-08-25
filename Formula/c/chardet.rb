@@ -8,13 +8,8 @@ class Chardet < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, ventura:        "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "db732b50f0ce62bfc6f1fe0472ad5e406617d5586299629c2d17e98233916fc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32a2dd8cdfbe1e564ea6b433c966262ed3d470420c5f34951361aef20bbd0215"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9f57b66109b6af73dde80022baa8bdafe994942f56a206ed82a6b34eb033ea63"
   end
 
   depends_on "python@3.12"

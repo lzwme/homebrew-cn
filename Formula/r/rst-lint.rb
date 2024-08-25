@@ -8,14 +8,8 @@ class RstLint < Formula
   license "Unlicense"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, ventura:        "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, monterey:       "e905e695e089e2c31d67b53fad2b3162e7e1b3c27068535ab6fe9c5eed55d367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0cb2d8ff6a65493086ab426e3391cff943cd74e3521859f3728427cc7472591"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, all: "56c00a43d134bbd568cad5f2b57f17f70322645830eedba5b4682e3407e9aa1b"
   end
 
   depends_on "python@3.12"

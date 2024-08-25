@@ -8,13 +8,8 @@ class Storm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "49413ea2ae2e639562f993bc53759064f5f58ad3b0ef9a6c7970b291c71359a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c2eb54566fbfa46638747a9b200b7ebdc4e0b605184300ff6df59413d8e3ed6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0af6f7edc25f92c2aaae19a011f58d988a348732d15a7e4655a1006728f444d2"
   end
 
   depends_on "openjdk"

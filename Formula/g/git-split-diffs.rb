@@ -6,14 +6,8 @@ class GitSplitDiffs < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, ventura:        "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, monterey:       "de5be1a8af6bf08498fa775a74b84b0fa6a43f1b0a948b41aac34eb84df5971e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e479320545a1b6326b0a5d99b932bc9c56909616c6fc950ef98f327b50712301"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f559a54e0dc235620aba00b442ab45d6b750ec24bf1570ac257fadc850a0323a"
   end
 
   depends_on "node"

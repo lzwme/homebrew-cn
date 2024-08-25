@@ -6,13 +6,8 @@ class Pandocomatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, ventura:        "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, monterey:       "a68992c6a0421a26d5f9137e92eca24b0d1e5c74836da4d57c4cce59f0d30c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a6ed15fdfced1052abeb3902281c5bf943d454cf2e4d24d43b685e4b5ef3799"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4b5303fc2c4da3be01510620566f4e9efde3adf52315956df75c884a1c920a0f"
   end
 
   depends_on "pandoc"

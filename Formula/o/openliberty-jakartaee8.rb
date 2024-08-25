@@ -11,13 +11,8 @@ class OpenlibertyJakartaee8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d4560266b5a79a53aa0bda43041fa7ff2139e2eabc100a2c41d124429042d88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9eae33ba6474d06594fbfef0a109abab0da876feacf25a57da68b653f651f8d4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f29f067e4a5ff7fa8715a3df7d152902d66ce34e99f9d64af9507e8c3766792f"
   end
 
   depends_on "openjdk"

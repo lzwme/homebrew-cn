@@ -6,14 +6,8 @@ class Epubcheck < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, ventura:        "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, monterey:       "340ea8a1d792e368fde011bd4d0f74af8e45081acc994eb80dd2cdb04da51bbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c207a874354e0a3e42777ead5f719fdaa28f279bc7b74d240e6a7c5505cf410"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "0f49db31f1124e428d4a0e574e130ba7abd35a5467426642b6d84eacb19c672b"
   end
 
   depends_on "openjdk"

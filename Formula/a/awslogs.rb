@@ -10,13 +10,8 @@ class Awslogs < Formula
   head "https:github.comjorgebastidaawslogs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, ventura:        "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, monterey:       "42632743cfda4aa1af7146be8662049c50ec15873b1559dc5f8be47eca817adb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa203c74eb963d0b630e8a22c0bc840bd4daa225e6bc506f11b300636e0c6d6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6093f7dc5fb3e178ad497b261872fb79254fd17198f0479b4e37c11066fee526"
   end
 
   depends_on "python@3.12"

@@ -19,6 +19,8 @@ class HttpServer < Formula
 
   depends_on "node"
 
+  conflicts_with "http-server-rs", because: "both install a `http-server` binary"
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]

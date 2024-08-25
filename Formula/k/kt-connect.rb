@@ -20,7 +20,7 @@ class KtConnect < Formula
   end
 
   # upstream go1.20 support report, https:github.comalibabakt-connectissues398
-  deprecate! date: "2023-08-20", because: :unmaintained
+  disable! date: "2024-08-24", because: :unmaintained
 
   # https:github.comalibabakt-connectissues398
   depends_on "go@1.19" => :build

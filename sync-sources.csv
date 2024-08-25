@@ -1688,6 +1688,7 @@ Homebrew-homebrew-core/Formula/f/falcon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fast_float.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastd.rb, Homebrew/homebrew-core, 1
@@ -2990,6 +2991,7 @@ Homebrew-homebrew-core/Formula/k/kcov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcptun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kdoctools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kdoctor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/keepassc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keepkey-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keploy.rb, Homebrew/homebrew-core, 1
@@ -3075,6 +3077,7 @@ Homebrew-homebrew-core/Formula/k/kubent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.29.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.30.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubesess.rb, Homebrew/homebrew-core, 1
@@ -4866,6 +4869,7 @@ Homebrew-homebrew-core/Formula/p/pg_top.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgbadger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgbouncer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgcli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pgcopydb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgdbf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pget.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgformatter.rb, Homebrew/homebrew-core, 1
@@ -6431,6 +6435,7 @@ Homebrew-homebrew-core/Formula/t/triton.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trivy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trojan-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/truecrack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/truetree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/truffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trufflehog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trunk.rb, Homebrew/homebrew-core, 1

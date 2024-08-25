@@ -13,6 +13,8 @@ class Beast < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866aef5c9a4b0665a8236c5e3fc491d1ca9bdb37df7daddaad5a4648a99d685b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "018aee24bf0c6acb6872084c61c13f573052a4a02fcfec563209193527a31741"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0cd65d3171bde73b59cc5d5489eb2ab07c284225e3b30c2c160de61ec29df98a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f9d2180a3cecd5c8b361318f792a34496e958081b1d9fc731dbd933673498a5"
     sha256 cellar: :any_skip_relocation, sonoma:         "a0f22074d46e0c0876a787f2807776f83010424fd0e964b1b3703bd7912dc8f1"

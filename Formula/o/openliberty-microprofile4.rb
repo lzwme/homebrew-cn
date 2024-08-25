@@ -11,13 +11,8 @@ class OpenlibertyMicroprofile4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c6d8457f13e277e86b0559eca4f21d788f791c4b72dc632c679e6d0df1e0a41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c6d8457f13e277e86b0559eca4f21d788f791c4b72dc632c679e6d0df1e0a41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c6d8457f13e277e86b0559eca4f21d788f791c4b72dc632c679e6d0df1e0a41"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c6d8457f13e277e86b0559eca4f21d788f791c4b72dc632c679e6d0df1e0a41"
-    sha256 cellar: :any_skip_relocation, ventura:        "57f5ce129792f216e5fccac9555347c1893cd351616a03f40e5528d015cafa87"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c6d8457f13e277e86b0559eca4f21d788f791c4b72dc632c679e6d0df1e0a41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4807a0ae4f1c4ce36889bfe05dba006388b1eac826b9e7f3edef41ee2e778fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c3052000c61d81f2947a26262d10a78ef278e02089be2835064cf552b826399d"
   end
 
   depends_on "openjdk"

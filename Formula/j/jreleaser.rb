@@ -6,13 +6,8 @@ class Jreleaser < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5cb09a9ecf14b9d5e6fe986996808ebfd04295042b72615b67df5c145f90381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adbfa52d246f5b0dd5eb1cac286534a613ae2b6812fffb1fb47c5489dcb0573b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5ec5cb286f23baab835fe8d934b7aa74c289b27daeebe7366e8ba1a6a3677bed"
   end
 
   depends_on "openjdk"

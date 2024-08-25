@@ -6,13 +6,8 @@ class PhpCsFixer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd029f8edd0653f86e9fc6c270aecffd76cde4130dc292b634536cda4bd8e2cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b29e792e6cb63944e7a2627d4b04df3d3ce544239729f6728082dc7eb989b68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "54c36ddbc898f40e4f819163e38d90fab8fde50ab563843891e18ddd67787d28"
   end
 
   depends_on "php"

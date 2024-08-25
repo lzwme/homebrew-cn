@@ -8,13 +8,8 @@ class Dunamai < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c78c570e217fdeee758c38b7e3775fd210db8ae69ffec4ba93c31066e4ae822"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27bc06434769c714e9a61ce3e7a1548e13940f3bd4763ea5a40ed4c5b1d30bc5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c7a9215f66563eafc21eee6b408109e12b5bb924f34d0b51245bd2be72ba999c"
   end
 
   depends_on "python@3.12"

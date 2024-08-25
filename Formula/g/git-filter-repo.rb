@@ -8,13 +8,8 @@ class GitFilterRepo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, ventura:        "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a31032bc52a3bad3c19880d00d52abc73e7215a748d64626c1d369d46334c43e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdafd98c555e8c43f9baf3a871bbf45dbb5f8577149dddc02804013da76be66a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8f7071f5bf8c0c81c00c7c3f543e8e1c80e2f4dc7351dc8b190d22eacaa15abc"
   end
 
   depends_on "python@3.12"
