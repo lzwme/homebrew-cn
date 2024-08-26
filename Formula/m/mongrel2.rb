@@ -24,6 +24,11 @@ class Mongrel2 < Formula
 
   uses_from_macos "sqlite"
 
+  on_macos do
+    # https:github.commongrel2mongrel2issues345#issuecomment-998972199
+    depends_on arch: :x86_64
+  end
+
   # Fix srcserver.c:185:23: error: #elif with no expression
   # PR ref: https:github.commongrel2mongrel2pull358
   patch do

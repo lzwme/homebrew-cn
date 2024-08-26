@@ -1,56 +1,57 @@
 class Cling < Formula
   desc "C++ interpreter"
-  homepage "https:root.cern.chcling"
-  url "https:github.comroot-projectcling.git",
-      tag:      "v0.9",
-      revision: "f3768a4c43b0f3b23eccc6075fa178861a002a10"
-  license any_of: ["LGPL-2.1-only", "NCSA"]
+  homepage "https:root.cerncling"
+  url "https:github.comroot-projectclingarchiverefstagsv1.0.tar.gz"
+  sha256 "93252c72bae2a660d9e2c718af18b767a09928078a854b2fcd77f28cc9fa71ae"
+  license all_of: [
+    { any_of: ["LGPL-2.1-only", "NCSA"] },
+    { "Apache-2.0" => { with: "LLVM-exception" } }, # llvm
+  ]
 
   bottle do
-    sha256               arm64_monterey: "ae9ec74f889a58e57f00394e3b46dd1793d975ce7dc5907c71e2e15853610a62"
-    sha256 cellar: :any, arm64_big_sur:  "82134eeea0ba90008355120b137908d828011e302b62ec97de10b152777d9651"
-    sha256               monterey:       "90f4150c5bcc027fe76db2f53948eb31e757124da337639303eee2ac768c8999"
-    sha256 cellar: :any, big_sur:        "e894d9476bc9ed0edb1ca8d3ca1d9fa6cefc8fc50befc93f1d1c25d1f1bee721"
-    sha256 cellar: :any, catalina:       "fd178b38640189a9b096d9c98fe3b1dedc934a504ddc0d3dc1c6bbfea144f09f"
-    sha256 cellar: :any, mojave:         "5135fc901ba316ca0e02f5598af21cd42a264994111252964f239b2576c7829b"
-    sha256               x86_64_linux:   "315073c45b0684a970493476b9c8476ddf90eb7d69bd5326efdf97b79ec55e25"
+    sha256 arm64_sonoma:   "5ea8c62c558034d2b35e8a07bcf60f77cad73dd55c470ef7060e53dc3bdfe758"
+    sha256 arm64_ventura:  "1e4a68506aa987b22e1dc4bf79dc6029ab256d67d1eb2156b1096301c8374ff8"
+    sha256 arm64_monterey: "d184739cbaa69fab0e41777d5f127c86b7872838f93e104b64a8e99455d4b698"
+    sha256 sonoma:         "7bcc51735312ae4301d05661c7f8ee4863212a546b4e04ce341c788bda7fa5cb"
+    sha256 ventura:        "5d31305b7d107af4feee3aae605f7d349d94e3f3776d801af575fad704c0de47"
+    sha256 monterey:       "0d27db6c6221b1ded0c2e1db375bfd2d10f402cd2de0702f4c0916761f7fdcea"
+    sha256 x86_64_linux:   "c93cc9a4cc0696cda21c4b4906e315967f82f9f2af091889d242da886a809862"
   end
-
-  # Does not build on Ventura
-  # https:github.comHomebrewhomebrew-corepull131473
-  # https:github.comroot-projectclingissues492#issuecomment-1555938334
-  deprecate! date: "2023-08-24", because: :does_not_build
 
   depends_on "cmake" => :build
 
+  uses_from_macos "python" => :build, since: :catalina
+  uses_from_macos "libedit"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  resource "clang" do
-    url "http:root.cern.chgitclang.git",
-        tag:      "cling-v0.9",
-        revision: "b7fa7dcfd21cac3d67688be9bdc83a35778e53e1"
-  end
-
   resource "llvm" do
-    url "http:root.cern.chgitllvm.git",
-        tag:      "cling-v0.9",
-        revision: "85e42859fb6de405e303fc8d92e37ff2b652b4b5"
+    url "https:github.comroot-projectllvm-projectarchiverefstagscling-llvm13-20240614-01.tar.gz"
+    sha256 "c8afe609e9319009adf4e0fcb5021b663250ffbac1212c15058effb9ae6739d8"
   end
 
   def install
-    (buildpath"src").install resource("llvm")
-    (buildpath"srctoolscling").install buildpath.children - [buildpath"src"]
-    (buildpath"srctoolsclang").install resource("clang")
-    mkdir "build" do
-      system "cmake", *std_cmake_args, "..src",
-                      "-DCMAKE_INSTALL_PREFIX=#{libexec}",
-                      "-DCLING_CXX_PATH=clang++"
-      system "make", "install"
-    end
-    bin.install_symlink libexec"bincling"
-    prefix.install_metafiles buildpath"srctoolscling"
+    # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
+    # Related: https:github.comHomebrewhomebrew-coreissues135714
+    # Related: https:github.comroot-projectclingissues457
+    inreplace "libInterpreterCMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
+
+    (buildpath"llvm").install resource("llvm")
+
+    system "cmake", "-S", "llvmllvm", "-B", "build",
+                    "-DCLING_CXX_PATH=clang++",
+                    "-DLLVM_BUILD_TOOLS=OFF",
+                    "-DLLVM_ENABLE_PROJECTS=clang",
+                    "-DLLVM_EXTERNAL_CLING_SOURCE_DIR=#{buildpath}",
+                    "-DLLVM_EXTERNAL_PROJECTS=cling",
+                    "-DLLVM_TARGETS_TO_BUILD=host;NVPTX",
+                    *std_cmake_args(install_prefix: libexec)
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    # We use an exec script as a symlink causes issues finding headers
+    bin.write_exec_script libexec"bincling"
   end
 
   test do

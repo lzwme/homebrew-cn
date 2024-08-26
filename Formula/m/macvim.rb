@@ -23,12 +23,13 @@ class Macvim < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "9eaf223d23e4aa92bb56ac0a86fe0ce886762933d502ff09429c352afd86d220"
-    sha256 cellar: :any, arm64_ventura:  "5e56402e67595c3386ff4747784b742daa2e5d03e13578c1469ed374a86c78e5"
-    sha256 cellar: :any, arm64_monterey: "dac8f35e0658d9e11bceeb72edf49f64446aee6d0b714ba858d765037f2f7137"
-    sha256 cellar: :any, sonoma:         "dffe6661d748d85d72e87f40d1d93ad79c8b36bd18e14456e11cdae03bb268d7"
-    sha256 cellar: :any, ventura:        "5d4f5ccd9c5957bda06658799845023ad7fb7c25b5eb0d68d7d29dbab1fadf95"
-    sha256 cellar: :any, monterey:       "9dc522874e8a075f64a7ba4753283db9655ec06f56adf8ac4482b0daedc3a5bb"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "87c5d934d736ea8314ad6360b89fb37f52d97570303b0aa76a02e831b4846563"
+    sha256 cellar: :any, arm64_ventura:  "71b6b7c24d64a4e44d1cb28cac091cab2eb24b3d4b56d21fb7476f45ade1b1e2"
+    sha256 cellar: :any, arm64_monterey: "4af76a0db530fcc0c45ae73739e9b97cded10a112e8bdfaf0814f4dda6f5e107"
+    sha256 cellar: :any, sonoma:         "9d5d1e4ccd460f1bb37da8af8842f223bc625d5e59ad92d16b626fb4761079c9"
+    sha256 cellar: :any, ventura:        "044f2feb442fa13e91a47952d22000933382c51dc2ed936cec1f66c5ff20278c"
+    sha256 cellar: :any, monterey:       "2436864107c5f907dea2495ed1148c26905ebc6eeda93d1f781f2c690ae42170"
   end
 
   depends_on "gettext" => :build
@@ -76,7 +77,7 @@ class Macvim < Formula
     system "make"
 
     prefix.install "srcMacVimbuildReleaseMacVim.app"
-    bin.install_symlink prefix"MacVim.appContentsbinmvim"
+    %w[gvimtutor mvim vimtutor xxd].each { |e| bin.install_symlink prefix"MacVim.appContentsbin#{e}" }
 
     # Create MacVim vimdiff, view, ex equivalents
     executables = %w[mvimdiff mview mvimex gvim gvimdiff gview gvimex]

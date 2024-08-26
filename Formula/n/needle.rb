@@ -5,6 +5,14 @@ class Needle < Formula
   sha256 "61b7259a369d04d24c0c532ecf3295fdff92e79e4d0f96abaed1552b19208478"
   license "Apache-2.0"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "d701a8da8eb60eeb86f034d27f0793e124ba4dac5155b35b95c92042f41cca65"
     sha256 cellar: :any, arm64_ventura:  "2b953b5225793b663e30652c4dcf15af21883f3161e1424cf3ae4884def4fc85"

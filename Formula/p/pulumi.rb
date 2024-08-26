@@ -17,8 +17,7 @@ class Pulumi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "69ad3d6b946c30b93716cee25fd1d39656ed538d8ae4bdfcddb126f2e3c774d1"
   end
 
-  # use "go" again after https:github.compulumipulumiissues17003 is fixed and released
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   def install
     cd ".sdk" do

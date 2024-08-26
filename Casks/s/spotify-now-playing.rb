@@ -6,10 +6,16 @@ cask "spotify-now-playing" do
   name "Spotify - now playing"
   homepage "https:github.comdavicorreiajrspotify-now-playing"
 
+  deprecate! date: "2024-08-25", because: :unmaintained
+
   app "Spotify - now playing.app"
 
   zap trash: [
     "~LibraryLogsSpotify - now playing",
     "~LibraryPreferencescom.electron.spotify-now-playing.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -15,4 +15,8 @@ cask "ssokit" do
   app "SSokit.app"
 
   zap trash: "~LibraryPreferencescn.rangaofei.SSokit.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

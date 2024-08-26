@@ -1,11 +1,19 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
-  # NOTE: 2.7 is a development version. See:
-  # https://www.isc.org/download/#Kea
+  # NOTE: the livecheck block is a best guess at excluding development versions.
+  #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
   url "https://ftp.isc.org/isc/kea/2.6.1/kea-2.6.1.tar.gz"
+  mirror "https://dl.cloudsmith.io/public/isc/kea-2-6/raw/versions/2.6.1/kea-2.6.1.tar.gz"
   sha256 "d2ce14a91c2e248ad2876e29152d647bcc5e433bc68dafad0ee96ec166fcfad1"
   license "MPL-2.0"
+
+  livecheck do
+    url "ftp://ftp.isc.org/isc/kea/"
+    # Match the final component lazily to avoid matching versions like `1.9.10` as `9.10`.
+    regex(/v?(\d+\.\d*[02468](?:\.\d+)+?)$/i)
+    strategy :page_match
+  end
 
   bottle do
     sha256 arm64_sonoma:   "198b4e13a2d22180c619d3cdd825e06c2ea6deacf1e1e0f1edb4bf8a4f811a56"

@@ -5,6 +5,13 @@ class Libpinyin < Formula
   sha256 "42c4f899f71fc26bcc57bb1e2a9309c2733212bb241a0008ba3c9b5ebd951443"
   license "GPL-3.0-or-later"
 
+  # Tags with a 90+ patch are unstable (e.g., the 2.9.91 tag is marked as
+  # pre-release on GitHub) and this regex should only match the stable versions.
+  livecheck do
+    url :stable
+    regex(^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "93f6df194768185e3a31b086804704a41fa7502925fd27ee0223f3d76a127d9e"
     sha256 cellar: :any,                 arm64_ventura:  "62ed5199739dcaae0ead97433ba897628981a6d3460a2718e4b41891c77842bc"

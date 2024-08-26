@@ -21,4 +21,8 @@ cask "shattered-pixel-dungeon" do
     "~LibraryApplication SupportShattered Pixel Dungeon",
     "~LibrarySaved Application Statecom.shatteredpixel.shatteredpixeldungeon.apple.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

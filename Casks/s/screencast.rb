@@ -10,4 +10,8 @@ cask "screencast" do
   app "Screencast.app"
 
   zap trash: "~LibraryPreferencesjp.makeitreal.Screencast.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -24,7 +24,8 @@ class Mmtabbarview < Formula
     xcodebuild "-workspace", "default.xcworkspace",
                "-scheme", "MMTabBarView",
                "-configuration", "Release",
-               "SYMROOT=build", "ONLY_ACTIVE_ARCH=YES"
+               "SYMROOT=build", "ONLY_ACTIVE_ARCH=YES",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     frameworks.install "MMTabBarViewbuildReleaseMMTabBarView.framework"
   end
 

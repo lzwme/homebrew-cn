@@ -30,7 +30,8 @@ class Launch < Formula
   def install
     rm_r("launch") # We'll build it ourself, thanks.
     xcodebuild "-configuration", "Deployment", "SYMROOT=build", "clean"
-    xcodebuild "-arch", Hardware::CPU.arch, "-configuration", "Deployment", "SYMROOT=build"
+    xcodebuild "-arch", Hardware::CPU.arch, "-configuration", "Deployment", "SYMROOT=build",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
 
     man1.install Utils::Gzip.compress("launch.1")
     bin.install "buildDeploymentlaunch"

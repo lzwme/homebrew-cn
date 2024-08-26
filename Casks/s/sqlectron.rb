@@ -13,4 +13,8 @@ cask "sqlectron" do
     "~.sqlectron.json",
     "~LibraryApplication SupportSqlectron",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

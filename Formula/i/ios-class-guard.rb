@@ -23,6 +23,7 @@ class IosClassGuard < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cfa45ab4d2e9f5ff160c3e88426c890c83d5a87997fff438e04d07cd4d68467"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b4953b61e871a9935955ce26115619c081b15a5712decba1502b1d50b8d311cc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80da4446b7d4838b965d12546d9b10ad777c24c2026248e6d49c415aad3f9771"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b63ae8b6898be42e963f77307eab235d553c049a532bc727b628fece3da6c874"
     sha256 cellar: :any_skip_relocation, ventura:        "4864bb18b6e3712c92bede68182d7d8345e35b98da0327b8bbffbfc07891ddee"
     sha256 cellar: :any_skip_relocation, monterey:       "c6ac0f4d85d53a86ee0de247c7119f776506830d4d7d2df26eb2ecebc1fa20f4"
     sha256 cellar: :any_skip_relocation, big_sur:        "159991d0922d6ea71dceb5f97c3024659f70c48fb91c0222186e8c108885db54"
@@ -40,7 +41,8 @@ class IosClassGuard < Formula
     xcodebuild "-workspace", "ios-class-guard.xcworkspace",
                "-scheme", "ios-class-guard",
                "-configuration", "Release",
-               "SYMROOT=build", "PREFIX=#{prefix}", "ONLY_ACTIVE_ARCH=YES"
+               "SYMROOT=build", "PREFIX=#{prefix}", "ONLY_ACTIVE_ARCH=YES",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "buildReleaseios-class-guard"
   end
 

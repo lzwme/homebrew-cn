@@ -25,6 +25,11 @@ class NetcdfFortran < Formula
   def install
     args = std_cmake_args + %w[-DBUILD_TESTING=OFF -DENABLE_TESTS=OFF -DENABLE_NETCDF_4=ON -DENABLE_DOXYGEN=OFF]
 
+    # Help netcdf-fortran find netcf
+    # https:github.comUnidatanetcdf-fortranissues301#issuecomment-1183204019
+    args << "-DnetCDF_LIBRARIES=#{Formula["netcdf"].opt_lib}#{shared_library("libnetcdf")}"
+    args << "-DnetCDF_INCLUDE_DIR=#{Formula["netcdf"].opt_include}"
+
     system "cmake", "-S", ".", "-B", "build_shared", *args, "-DBUILD_SHARED_LIBS=ON"
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"

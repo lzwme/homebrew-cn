@@ -3,19 +3,19 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages950065d8e8c9bc7f4989ef77ccdb4b01f242ffb54604576de523b40427f07c71aider_chat-0.50.1.tar.gz"
-  sha256 "f6c107863edd1b3316ae054784cb439cda2ac4a176c7a18e7976a614543d6ae0"
+  url "https:files.pythonhosted.orgpackagesa1e95272a722f78b820b6640d7228fc3e44d4f0fa7fb515fb90089bfceb82ea5aider_chat-0.52.1.tar.gz"
+  sha256 "e0b0733226f1fa3483fbe906a0d7124da76aae2741367fdb7ddb99e10247d5ed"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bc91fc3b6836f779d04e5d06ed3dd8bb95913f106eefba3e6059113eb6e1ff88"
-    sha256 cellar: :any,                 arm64_ventura:  "1f327295826dd043ec517f177af872780fbefbd6ecacdc2b3f94f5e5287c7bde"
-    sha256 cellar: :any,                 arm64_monterey: "46476fa0faa0246553058211649f1d640c7ff829158b3d6889d474e829d48b54"
-    sha256 cellar: :any,                 sonoma:         "76fdb3812c7502a240519772501c7bd2e51f56345145ced61a033124c5997af2"
-    sha256 cellar: :any,                 ventura:        "8f767b1cf994ed11397165a7cb6a5eff27e601ae12e5602a6e684d33055eb8a9"
-    sha256 cellar: :any,                 monterey:       "c5818bdfb872feb191071e2773ab5bcb97cd8fe5c18701c43ca9a267e9ee50f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e449c10297dfb0832a8fbd946362797cc425ed0088fff4df9c7bafed97315e3d"
+    sha256 cellar: :any,                 arm64_sonoma:   "637746197519881b9515e9fcab1110fbf8c80f6ee88a68a047d0b53f2169a557"
+    sha256 cellar: :any,                 arm64_ventura:  "986b54e6639ffa3e02c40fa90b9cab968779151c79fec7751f316c2ee8f58703"
+    sha256 cellar: :any,                 arm64_monterey: "f284674f46f7beef4a20e02954db1ff98c28c09c104aa1ae9eb44d29d0f2ee7a"
+    sha256 cellar: :any,                 sonoma:         "6229a788c3732c55fdf8590cee42091b365624face0ebbd9fcbd0688a9098e63"
+    sha256 cellar: :any,                 ventura:        "ef1af7ccb3f56f12c1048e1c44a87dc630d659ee7e5b90e4b68e82f6851706bc"
+    sha256 cellar: :any,                 monterey:       "374ba04d61a2f98cf8606a87b2ccee3c386947e5e1979b58d1e1183f1abfc70c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97115c3901cc10c6ec8c88c34694d8be09ffb6146dcfb12c615eda8e4a7f1e0d"
   end
 
   depends_on "cython" => :build # for tree-sitter-languages
@@ -30,13 +30,13 @@ class Aider < Formula
   depends_on "scipy"
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackagesb7c3112f2f992aeb321de483754c1c5acab08c8ac3388c9c7e6f3e4f45ec1c42aiohappyeyeballs-2.3.5.tar.gz"
-    sha256 "6fa48b9f1317254f122a07a131a86b71ca6946ca989ce6326fff54a99a920105"
+    url "https:files.pythonhosted.orgpackages2df722bba300a16fd1cad99da1a23793fe43963ee326d012fdf852d0b4035955aiohappyeyeballs-2.4.0.tar.gz"
+    sha256 "55a1714f084e63d49639800f95716da97a1f173d46a16dfcfda0016abb93b6b2"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages159ced427fcc46423c965a8e33673d7111b6e3b3aa7d61ca52163a720ff200cbaiohttp-3.10.3.tar.gz"
-    sha256 "21650e7032cc2d31fc23d353d7123e771354f2a3d5b05a5647fc30fea214e696"
+    url "https:files.pythonhosted.orgpackagesca28ca549838018140b92a19001a8628578b0f2a3b38c16826212cc6f706e6d4aiohttp-3.10.5.tar.gz"
+    sha256 "f071854b47d39591ce9a17981c46790acb30518e2f83dfca8db2dfa091178691"
   end
 
   resource "aiosignal" do
@@ -150,8 +150,8 @@ class Aider < Formula
   end
 
   resource "huggingface-hub" do
-    url "https:files.pythonhosted.orgpackagesec07b70a5b9c3da399a54a446a4750763c9030f47fa0491ef31a3fa8de4cb0d2huggingface_hub-0.24.5.tar.gz"
-    sha256 "7b45d6744dd53ce9cbf9880957de00e9d10a9ae837f1c9b7255fc8fa4e8264f3"
+    url "https:files.pythonhosted.orgpackages6524b98fce967b7d63700e5805b915012ba25bb538a81fcf11e97f3cc3f4f012huggingface_hub-0.24.6.tar.gz"
+    sha256 "cc2579e761d070713eaa9c323e3debe39d5b464ae3a7261c39a9195b27bb8000"
   end
 
   resource "idna" do
@@ -165,8 +165,8 @@ class Aider < Formula
   end
 
   resource "importlib-resources" do
-    url "https:files.pythonhosted.orgpackagesc89d6ee73859d6be81c6ea7ebac89655e92740296419bd37e5c8abdb5b62fd55importlib_resources-6.4.0.tar.gz"
-    sha256 "cdb2b453b8046ca4e3798eb1d84f3cce1446a0e8e7b5ef4efb600f19fc398145"
+    url "https:files.pythonhosted.orgpackages61b30412c28d21e31447e97728efcf8913afe1936692917629e6bdb847563484importlib_resources-6.4.3.tar.gz"
+    sha256 "4a202b9b9d38563b46da59221d77bb73862ab5d79d461307bcb826d725448b98"
   end
 
   resource "jinja2" do
@@ -190,8 +190,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages99cc10e292e40506ee62007f69aabd3112243ac7dda7e2b0569a60de735e2796litellm-1.43.9.tar.gz"
-    sha256 "c397a14c9b851f007f09c99e5a28606f7f122fdb4ae954931220f60e9edc6918"
+    url "https:files.pythonhosted.orgpackages341eb700420144ec1f6905650cb6d34dc6f347c7b77338a77fd63f321146d4a1litellm-1.43.19.tar.gz"
+    sha256 "b1f475f98073632f0cea6d814bb10b14b6498e5ff93b91b52dfc00445bf013ab"
   end
 
   resource "markdown-it-py" do
@@ -225,8 +225,8 @@ class Aider < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackagesbfa0a2d136a93da61f3d0e25dc71fb2a3bd20af0f4b2c3cde9d03a294f06efe9openai-1.40.6.tar.gz"
-    sha256 "2239232bcb7f4bd4ce8e02544b5769618582411cf399816d96686d1b6c1e5c8d"
+    url "https:files.pythonhosted.orgpackages8c1f310b0b5efb6178ad9f9ca4a80b2ead3cb7cbc16a1b843941bcf1c52dd884openai-1.42.0.tar.gz"
+    sha256 "c9d31853b4e0bc2dc8bd08003b462a006035655a701471695d0bfdc08529cde3"
   end
 
   resource "packaging" do
@@ -351,8 +351,8 @@ class Aider < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "tiktoken" do
