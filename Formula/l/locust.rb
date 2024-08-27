@@ -3,18 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/cf/f1/479fc56e48d6ab8479e619ddf3918a065dff800211312393c4f04180e993/locust-2.31.3.tar.gz"
-  sha256 "25f4603f24afa11ef1ee1f26b1c86a232eb9a1140be30b2a4642c12d7a7af8ae"
+  url "https://files.pythonhosted.org/packages/f2/c4/589511189a86b2ba05a10848719795fcf836beac3cb6d9fbfc7e97f530a9/locust-2.31.4.tar.gz"
+  sha256 "1f056173aefa6ba42501c3bf04bb700df9eddd165e38bb721f7b00643b68b825"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "79af9be3b149f36ecb23e3beedc2dab2374da2ab0ce94baef3ba60b07f3befb7"
-    sha256 cellar: :any,                 arm64_ventura:  "88938e800c2accfc33d0320cd6668c198f810517f7a4a2a7618c6fb91c727c36"
-    sha256 cellar: :any,                 arm64_monterey: "a285f501ba3078665c4918b562231aa2f98e5fd8f02676e1fe6f77bcfa020aa6"
-    sha256 cellar: :any,                 sonoma:         "15c8426fd0239fce22749e84288fbc98e9cd6281c347d3453f2a28af4160e82d"
-    sha256 cellar: :any,                 ventura:        "f09994b7b39e77e9d9126999f1774316da29c0bcd7b14eae8783330485ce7ee3"
-    sha256 cellar: :any,                 monterey:       "e44dd835ce408eee9740d5ccdabe2c2b54c2b2e355ab7fee0f32eb7bc4f51aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "161abdffa083b4a727203e9d8ff4b488fa68b291237cf2742a4864336b670f83"
+    sha256 cellar: :any,                 arm64_sonoma:   "046cc6ddc06b02ffaf6ee8d239bb14138d96e5922e73ba7ce2eb5fb09e863b3d"
+    sha256 cellar: :any,                 arm64_ventura:  "7bc75d40469d4ce913e92f76ccac28547e52d429bedf88631569c825e863f1a1"
+    sha256 cellar: :any,                 arm64_monterey: "72879e72dc4bb1b82493fa0b83756e47c1542085bd18919ef08200263be24eb7"
+    sha256 cellar: :any,                 sonoma:         "83304d61612b21e2d511a1e42cba4a168939fa45ad20a15af1bfe585d3af9c22"
+    sha256 cellar: :any,                 ventura:        "0f75eb070e841a98e972244c0f317551ff59dab39f05dcb56f955a624e059c70"
+    sha256 cellar: :any,                 monterey:       "4fcfa7d10c2f5a7c92dbfd8ba5ca47f081f46e3c7a599788bf943fdf30f91546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "215248e067537483e91a31df671ad9e496343e66ed7606754a9cdff5d1c70168"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -79,8 +79,8 @@ class Locust < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "itsdangerous" do
@@ -109,8 +109,8 @@ class Locust < Formula
   end
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/39/a3/3f8dac25b443ca527eddd9559b390bfb539f6ee6fb0b824427315dfe585d/pyzmq-26.1.0.tar.gz"
-    sha256 "6c5aeea71f018ebd3b9115c7cb13863dd850e98ca6b9258509de1246461a7e7f"
+    url "https://files.pythonhosted.org/packages/fd/05/bed626b9f7bb2322cdbbf7b4bd8f54b1b617b0d2ab2d3547d6e39428a48e/pyzmq-26.2.0.tar.gz"
+    sha256 "070672c258581c8e4f640b5159297580a9974b026043bd4ab0470be9ed324f1f"
   end
 
   resource "requests" do
@@ -119,8 +119,8 @@ class Locust < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/ce/ef/013ded5b0d259f3fa636bf35de186f0061c09fbe124020ce6b8db68c83af/setuptools-72.2.0.tar.gz"
-    sha256 "80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9"
+    url "https://files.pythonhosted.org/packages/8d/37/f4d4ce9bc15e61edba3179f9b0f763fc6d439474d28511b11f0d95bab7a2/setuptools-73.0.1.tar.gz"
+    sha256 "d59a3e788ab7e012ab2c4baed1b376da6366883ee20d7a5fc426816e3d7b1193"
   end
 
   resource "urllib3" do
@@ -129,8 +129,8 @@ class Locust < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/02/51/2e0fc149e7a810d300422ab543f87f2bcf64d985eb6f1228c4efd6e4f8d4/werkzeug-3.0.3.tar.gz"
-    sha256 "097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"
+    url "https://files.pythonhosted.org/packages/0f/e2/6dbcaab07560909ff8f654d3a2e5a60552d937c909455211b1b36d7101dc/werkzeug-3.0.4.tar.gz"
+    sha256 "34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
   end
 
   resource "zope-event" do

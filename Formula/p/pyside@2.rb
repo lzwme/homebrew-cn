@@ -4,7 +4,14 @@ class PysideAT2 < Formula
   # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.14-src/pyside-setup-opensource-src-5.15.14.tar.xz"
   sha256 "32651194f6a6b7bce42f04e68b1401ad2087e4789a4c8f3fb8649e86189c6372"
-  license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
+  # NOTE: We omit some licenses:
+  # 1. LICENSE.COMMERCIAL is removed from "OR" options as non-free
+  # 2. GFDL-1.3-only is only used by not installed docs, e.g. sources/{pyside2,shiboken2}/doc
+  # 3. BSD-3-Clause is only used by not installed examples
+  license all_of: [
+    { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
+    { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
+  ]
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside2/"

@@ -1,8 +1,8 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
   homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.78.tar.gz"
-  sha256 "4316a161600c7cbb995018a4eb733d226a6d05c20d4640cab3f518089b741f28"
+  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.79.tar.gz"
+  sha256 "682f3c8622c9a75905de1528f49d96a77294bfe5dc697314b0b0f3a6e34fb78b"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,13 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64fdfd53fed8b2e4de8311cf2e1917ca0cedb35373e167af181e69a9742d179f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d321f4d4b1b479436d41322b7ada7a88cd22bd51df8acc08acccd2e7bed7afc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "436e6f82335846d63955497f3ddc24e9571d4533799fc7f33e0d8df29c0db6ab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5876489febee2d5b307eee64f447e1f971a41a934a6d8f99c68efac6dece302"
-    sha256 cellar: :any_skip_relocation, ventura:        "d324ce4250596fa4d3dbd31a1b1e1ad84bcfaf7b7bd0322067e414fd42a1e515"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ce1423aee5ae2eca8f075c6ebcf9f9ecbc582fd94eb247399a738a51e5967f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3143f43153a53cfb9807272595e49c5a8b775ddc4c4fdc33ae2009d28bb23c81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d1620697f94fed6dac81414d084417f93d21fa7108f69abd8210ea302e5d9f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a85c1ae4eb49f23b0efc2bf50e77c50237c1b611a38bfffe5d0071711600083"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b15a2b6eca3ff04320fc2648d4c9214f796f3fc453b823672e09600b02626067"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f3d27d18e3403a8b4f96bb10f28db1cd48dbb639395186656e537d0e32c3ccc0"
+    sha256 cellar: :any_skip_relocation, ventura:        "2310f5ec8a2db48d2f887512ed7988216a71344a0039f165d487e5ba584d5433"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa7e3d17bae9a2ef13e136823db03842c7265971d5af6b335af794dd5feb1548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a0160355aec1102fac6a1949164b963fcd431dd5bacce883c03a4fc77eebb0b"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https:bitwarden.com"
-  url "https:github.combitwardenclientsarchiverefstagscli-v2024.8.0.tar.gz"
-  sha256 "846e73763b19fafd4b1658911bcfa9638d68784cd287b24cf23d318c59ea04fc"
+  url "https:github.combitwardenclientsarchiverefstagscli-v2024.8.1.tar.gz"
+  sha256 "73b3c7fbbc0eec52f9e3a237425d36234931a945f2249c7d77ee5219b9bfab05"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class BitwardenCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "19c58c0b6b96a9b04f591af52b2b778cac7520c3b634c60693c63681a7871ca9"
-    sha256                               arm64_ventura:  "025818071d0075751680662372a365c2c304397df30140f820c406b8c7fc9189"
-    sha256                               arm64_monterey: "7b537fc048b14d0408d3b68d3ee1c1eef32d04c1049a56a686969d942683301e"
-    sha256                               sonoma:         "a883526cefc90d85a9252e09fb9c7dbf23c63762fe8ae79971258dffccefe75a"
-    sha256                               ventura:        "53180b2adcd0f178067dc96812ed11fc2ef7df391b06a1338138dcc78cf87d0a"
-    sha256                               monterey:       "d9d4e7c0c030519946b2453c42366cb716a1f493629ae981a98383a2dd5644d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0459b354ccda5ee871d78c16e066b74d93ea6d526900f0bbe843aa931bdf8a64"
+    sha256                               arm64_sonoma:   "4f82ad983029673cfea71a5ddcc7eb764c91f46350c324b3779e7f339595c4f4"
+    sha256                               arm64_ventura:  "1a6e961c6ec89e623d883e38361d05951a4da2f687357359a9b8b6f4345ca5ef"
+    sha256                               arm64_monterey: "88eb01c45b92d03d9d30a93a56b9109f37d963e9c912f22d646bb25f9ec791c4"
+    sha256                               sonoma:         "a5b13647204ec13e9609976668b427bfb0e74f04e573d2290f07c5f5a3e69b48"
+    sha256                               ventura:        "7da71f53b3ddd2986695164c42235caeacd7ca9c4f60ac65edce602430391452"
+    sha256                               monterey:       "bd1572c39cab70da412b2c5eef16eff6fdd3172731c98044cdbf4dd91bc40d8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41ed91157d52300297af2d7fe0a5c6bc51a44ae37c46d6749d516a562f67f61e"
   end
 
   depends_on "node"

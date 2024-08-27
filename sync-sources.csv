@@ -3847,7 +3847,7 @@ Homebrew-homebrew-core/Formula/lib/libxscrnsaver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxshmfence.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxslt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxspf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libxt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libxt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxtst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxvmc.rb, Homebrew/homebrew-core, 0
@@ -5948,6 +5948,7 @@ Homebrew-homebrew-core/Formula/s/spirv-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/splint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sponge.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spoof-mac.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/spoofdpi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spotbugs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spotify-tui.rb, Homebrew/homebrew-core, 1

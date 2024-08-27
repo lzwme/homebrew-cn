@@ -5,7 +5,15 @@ class Pyside < Formula
   homepage "https://wiki.qt.io/Qt_for_Python"
   url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.7.0-src/pyside-setup-everywhere-src-6.7.0.tar.xz"
   sha256 "82eae370737df5ecf539c165d09d7c81d5fc6153a541b8d3d37b11275f9e3e8f"
-  license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
+  # NOTE: We omit some licenses even though they are in SPDX-License-Identifier or LICENSES/ directory:
+  # 1. LicenseRef-Qt-Commercial is removed from "OR" options as non-free
+  # 2. GFDL-1.3-no-invariants-only is only used by not installed docs, e.g. sources/{pyside6,shiboken6}/doc
+  # 3. BSD-3-Clause is only used by not installed examples, tutorials and build scripts
+  # 4. Apache-2.0 is only used by not installed examples
+  license all_of: [
+    { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
+    { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
+  ]
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"

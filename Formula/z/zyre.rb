@@ -1,9 +1,18 @@
 class Zyre < Formula
   desc "Local Area Clustering for Peer-to-Peer Applications"
   homepage "https:github.comzeromqzyre"
-  url "https:github.comzeromqzyrereleasesdownloadv2.0.1zyre-2.0.1.tar.gz"
-  sha256 "0ba43fcdf70fa1f35b068843a90fdf50b34d65a9be7f2c193924a87a4031a98c"
   license "MPL-2.0"
+
+  stable do
+    url "https:github.comzeromqzyrereleasesdownloadv2.0.1zyre-2.0.1.tar.gz"
+    sha256 "0ba43fcdf70fa1f35b068843a90fdf50b34d65a9be7f2c193924a87a4031a98c"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "11ad219ac17051fbf7f1799a4dc8c371ab861a925639953c42a6879433210a38"
@@ -21,6 +30,7 @@ class Zyre < Formula
 
   head do
     url "https:github.comzeromqzyre.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -30,18 +40,9 @@ class Zyre < Formula
   depends_on "czmq"
   depends_on "zeromq"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
   def install
     system ".autogen.sh" if build.head?
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "check-verbose"
     system "make", "install"

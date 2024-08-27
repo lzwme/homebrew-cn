@@ -8,6 +8,14 @@ class Cling < Formula
     { "Apache-2.0" => { with: "LLVM-exception" } }, # llvm
   ]
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sonoma:   "5ea8c62c558034d2b35e8a07bcf60f77cad73dd55c470ef7060e53dc3bdfe758"
     sha256 arm64_ventura:  "1e4a68506aa987b22e1dc4bf79dc6029ab256d67d1eb2156b1096301c8374ff8"

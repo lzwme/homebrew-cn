@@ -1,17 +1,17 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https:github.comappleswift-protobuf"
-  url "https:github.comappleswift-protobufarchiverefstags1.27.1.tar.gz"
-  sha256 "155e17578c680f8127540228570d2d74fddf37946b6a25ede76b857bf3ede722"
+  url "https:github.comappleswift-protobufarchiverefstags1.28.0.tar.gz"
+  sha256 "6bf8c176748f7424c701917bde0b0433cc09d6401489162c49dd1904847c37df"
   license "Apache-2.0"
   head "https:github.comappleswift-protobuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bee3f666a6f3e5e777080d5b2a52b9a0fd222ddda404e37502b3c011816586a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bf2e3ba488b9b1c70bc0e8cd171f877462eb92d399d81c8df19da3b18b15e79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a2c9967cbe3faa5e661813c4aa2b69f71be2e81690f9dde419ea02d6417e4b78"
-    sha256 cellar: :any_skip_relocation, ventura:       "b77a298f6fb919df816ee5f3dec818979f728512d37667e0f5cc1de6145d2a43"
-    sha256                               x86_64_linux:  "f2e68a004e4db5315349ef5944a896c9dcef7088adbf8070e28ea6dec6441591"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05b8ab33b28a6997fb5a36c325cc9f789f4b622a3f0c7ab5bbf060bb40b204c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2925d0b45603630d5921a7c40cf648720cfe9bb24702cabf13879eed5831048d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96af8d58e8725abff28e3bed07e61581ec70eb4367cdb4f08825eb3a109cff36"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e568076ce4492fe35fda0fa4527d93113639e9fce80752803baa53b874598ec"
+    sha256                               x86_64_linux:  "95be4e445ce10c012ba6df751d20c46b0c867adec28740638121f1e415d6143e"
   end
 
   depends_on xcode: ["14.3", :build]

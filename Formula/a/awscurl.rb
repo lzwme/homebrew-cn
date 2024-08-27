@@ -3,14 +3,13 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https:github.comokiganawscurl"
-  url "https:files.pythonhosted.orgpackagesc5c7956a0734953132791bedadf1e52281d110e40f0169d02ce1f94b8322ab40awscurl-0.35.tar.gz"
-  sha256 "7a7141f768900b4e9dad9bdc391896ca3e35b078206efe4d093eb8f29cac5939"
+  url "https:files.pythonhosted.orgpackagesf05368500d2e61aff7549f878a9227eea5c80eaf6ffcad7c134c576360b1bae7awscurl-0.36.tar.gz"
+  sha256 "9eb9d4949616d90dd7bf0d12a67eb3e1d3487bf08d75a7555d979811e5da1cb4"
   license "MIT"
   head "https:github.comokiganawscurl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8a19792bce680510b0d92fa0ccc1a0b3ea74f4d285e2bdeb9251f3c62abf63c9"
+    sha256 cellar: :any_skip_relocation, all: "73b5c93925559f4cdcf0ce2f67f4ebf045bf31a682b300a926f2865662b05dc8"
   end
 
   depends_on "certifi"
@@ -20,8 +19,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages102d9243c499c1a5202cc4162654f2660e5a51a0f86e5fcc712d8c422b6b7aeebotocore-1.35.4.tar.gz"
-    sha256 "4cc51a6a486915aedc140f9d027b7e156646b7a0f7b33b1000762c81aff9a12f"
+    url "https:files.pythonhosted.orgpackages6f2f3c1f7ded64677c05d0cfdb2c8f333d672ab4bb6fa38e7e3087953059db27botocore-1.35.5.tar.gz"
+    sha256 "3a0086c7124cb3b0d9f98563d00ffd14a942c3f9e731d8d1ccf0d3a1ac7ed884"
   end
 
   resource "charset-normalizer" do
@@ -40,8 +39,8 @@ class Awscurl < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "jmespath" do
