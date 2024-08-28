@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https:github.comggerganovllama.cpp"
   # CMake uses Git to generate version information.
   url "https:github.comggerganovllama.cpp.git",
-      tag:      "b3614",
-      revision: "a1631e53f6763e17da522ba219b030d8932900bd"
+      tag:      "b3639",
+      revision: "20f1789dfb4e535d64ba2f523c64929e7891f428"
   license "MIT"
   head "https:github.comggerganovllama.cpp.git", branch: "master"
 
@@ -14,13 +14,13 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7f1ac3d4d26df4cc8ccd29e22a418e92c9d2ff3e988cf75070e9e69596cb176b"
-    sha256 cellar: :any,                 arm64_ventura:  "9465b33cb6cd94031ffea54fb3d19d0247dd78bf996d42d3835dd9930f5bdd76"
-    sha256 cellar: :any,                 arm64_monterey: "586b4dd6efee90a56ddcaff91754437c94ff1c06f417eb64eb15fecf7e9535f9"
-    sha256 cellar: :any,                 sonoma:         "ac34b67a5881d09fea359694230a66ee75c7e7cd61baa580061aa5e0fbcb93ea"
-    sha256 cellar: :any,                 ventura:        "3e209b3a5fca922ff2d25203d2ec84e6b18ad58f2fd63bb03239ecaddd0b4c74"
-    sha256 cellar: :any,                 monterey:       "b1fcf19f13cb3397efdd5f4d94f8e3b322b5395eec32a24d3d3df6309f2f0e2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d287444deaeaed2ad061ef7fa0cfacdad7eb0eee6b46a184e87e093b9b133853"
+    sha256 cellar: :any,                 arm64_sonoma:   "80448d75984392735856733cdb4d2ea0fe29446ac45715b2ba827996523fc972"
+    sha256 cellar: :any,                 arm64_ventura:  "fb3215ecb81cb87476f2957e7952b3a7a1fdd886730e91e9b0ede39b33ebeb9e"
+    sha256 cellar: :any,                 arm64_monterey: "8cc58a9065ea219586f683d186f1ca5597787e6c06dbc607986df1ecc36dcfb6"
+    sha256 cellar: :any,                 sonoma:         "77abe0774cc383a1ef1478ad5fe026ee456ba5f4b07b039c3ed9819302b775e9"
+    sha256 cellar: :any,                 ventura:        "cae7e7cb82489d470f2fb08a1034d141f088f02697222e1f3d186682ae812208"
+    sha256 cellar: :any,                 monterey:       "f1910579eadfd8f533f50de23a9c9eea9916f5b4deeddcf2e5e7e24490e283d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96bfae6ec529ee4bd38d16cfc6f176df35619faae8bc74483d0812a7b22639fc"
   end
 
   depends_on "cmake" => :build

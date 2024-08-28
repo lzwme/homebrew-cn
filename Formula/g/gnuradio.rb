@@ -3,11 +3,20 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https:gnuradio.org"
-  url "https:github.comgnuradiognuradioarchiverefstagsv3.10.9.2.tar.gz"
-  sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
   head "https:github.comgnuradiognuradio.git", branch: "main"
+
+  stable do
+    url "https:github.comgnuradiognuradioarchiverefstagsv3.10.9.2.tar.gz"
+    sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgnuradiognuradiocommit19b070051c1c2b5fb6f2da8fb6422b27418c3dfa.patch?full_index=1"
+      sha256 "fedba8f2bbc2a1949df87bcfbb2814eea86bd4cbaa069985836b85accedba327"
+    end
+  end
 
   livecheck do
     url :stable
@@ -15,13 +24,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a4af712e7d48d68e56bc98bb59ce5477a64732eeeb0af48439b41e6cc1cf16c6"
-    sha256 cellar: :any,                 arm64_ventura:  "e7f79f959da42c59d9abc6acb65db49721c53f54fb72b6dceff84644f5a038e0"
-    sha256 cellar: :any,                 arm64_monterey: "1455b35e66da5ef72f9179de59dd43bd0a906e36b5963028a0dfed10dc1d85ae"
-    sha256 cellar: :any,                 sonoma:         "ed4e0397065b675db6bc0e220d82fa1733b6ff786afea8f0da3c0caeb48bc7cb"
-    sha256 cellar: :any,                 ventura:        "24279acdfbe2169c6e98eb86ee8963a4c9ca11c4be1f3142aa171d32c31af8e2"
-    sha256 cellar: :any,                 monterey:       "5f5c888803483c81488a9e738d7894f856db1de06e726c8e26dc36a36a8de45b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "838765918e3cd7249997d72f9e3438fd49a4ec0ad1d26f2b3fd38abdcad3f095"
+    sha256 cellar: :any,                 arm64_sonoma:   "10dcb782a30fb507f080d245f407c3a3d5f63b82b9703f7b61b9ff504c38dc04"
+    sha256 cellar: :any,                 arm64_ventura:  "ee0c078b2969b16744c547ec28fc15f115b17c4bc6b1b001a1cfb00a783f8052"
+    sha256 cellar: :any,                 arm64_monterey: "9d28b4f15250ff64551221af8e911fca6679ee4f6acc9933a3e48c9c32f98f64"
+    sha256 cellar: :any,                 sonoma:         "7ab9cbc9d4bd69e107af372ba9e91fe1ed16c61080b5e8507f0b6a8c4d09c416"
+    sha256 cellar: :any,                 ventura:        "6b444e5c57cca23c720ab44426bf23566e27265bc28a0fce2b4b089e71263a6a"
+    sha256 cellar: :any,                 monterey:       "facb6bcdd11b7bec275e8217574219a2e96e54beba42a2142fa4f47836597b48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "803a511be05b086783d31d720e4578739c49ebadc82a0d5cab50450108e9cd4d"
   end
 
   depends_on "cmake" => :build

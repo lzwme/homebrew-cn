@@ -1,9 +1,10 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https:github.commicrosoftvcpkg"
-  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-03-14.tar.gz"
-  version "2024.03.14"
-  sha256 "2b89635be4832ced505915bf46bbdd09d8a13ffd4c9ae11754929c7d07f1b903"
+  # Newer than what livecheck picks up, but we need it for fmt 11.
+  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-08-01.tar.gz"
+  version "2024.08.01"
+  sha256 "cb94fa640676e4577ed39fc763178f4661848b5321207c74b3ea411e45f1a95c"
   license "MIT"
   head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
@@ -21,13 +22,13 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "46f238b2d0c392052b6dd716a3e77b457b682ba1aa86a4cca642371c54fccd0e"
-    sha256 cellar: :any,                 arm64_ventura:  "4f40707d4a1ffe679812fc843f3e7de90900db537faee4522784e265391d2a25"
-    sha256 cellar: :any,                 arm64_monterey: "33f91e669876591ae9c9943310b8a5ecba6a960a1df52e991af8adba630863f0"
-    sha256 cellar: :any,                 sonoma:         "c1c4fe6676becfe1341ada5fa5f41382f005e1435b24ff70fc6ce2a52ee292a2"
-    sha256 cellar: :any,                 ventura:        "c4ed24a61213bb33934ccc0a5fb3814605898e08e45a394606e05905d942d6b1"
-    sha256 cellar: :any,                 monterey:       "a2e1475d6dd52ffa4ca63022d79931f0412473c0a995d723733c42b596bef090"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef6d8032dc2b06b1256a6d0333ee5092a3e4c42f2d48ece414746f0fa9739eeb"
+    sha256 cellar: :any,                 arm64_sonoma:   "05d39f76c60b855c77c248264968aed2dd94ebfcd554ef3302c983da45dfa484"
+    sha256 cellar: :any,                 arm64_ventura:  "17e02b956aafdf843425b42c044ebf80f337b35370c4f7491ea3726aecb2c459"
+    sha256 cellar: :any,                 arm64_monterey: "c18d4e9e5382bbbacdb6d7545a020681f6bf754f5b17eed0c3e166b0350a7578"
+    sha256 cellar: :any,                 sonoma:         "4b5aa04f210c602ad8115d43040a7cd0ee1999c24193ed415b75b9a485885def"
+    sha256 cellar: :any,                 ventura:        "6e2c26518b8a265edf71b156a779e7212f8fbbc7947fd772452e5f87fd89b181"
+    sha256 cellar: :any,                 monterey:       "e6d9148c1eb7958217105e70ec1136c7e11e788b33ec871ef085413b38332879"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b00f3192624d9f4fb500715b6c241ae8be79d793f96adbe2c30da9e3937ebfe5"
   end
 
   depends_on "cmake" => :build
@@ -48,6 +49,7 @@ class Vcpkg < Formula
                     "-DVCPKG_BASE_VERSION=#{version.to_s.tr(".", "-")}",
                     "-DVCPKG_VERSION=#{version}",
                     "-DVCPKG_DEPENDENCY_EXTERNAL_FMT=ON",
+                    "-DHOMEBREW_ALLOW_FETCHCONTENT=ON", # FIXME: Remove this
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

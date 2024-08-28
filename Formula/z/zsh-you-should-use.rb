@@ -3,7 +3,7 @@ class ZshYouShouldUse < Formula
   homepage "https:github.comMichaelAquilinazsh-you-should-use"
   url "https:github.comMichaelAquilinazsh-you-should-usearchiverefstags1.8.0.tar.gz"
   sha256 "a32337515d3c47b4d8a65e7302433d570de296741c48e3137b1d2c788e4e7d28"
-  license "GPL-3.0-or-later"
+  license "GPL-3.0-only"
 
   bottle do
     rebuild 1

@@ -1,11 +1,20 @@
 class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-86.0.tar.xz"
-  mirror "https://fossies.org/linux/misc/mkvtoolnix-86.0.tar.xz"
-  sha256 "29a9155fbba99f9074de2abcfbdc4e966ea38c16d9f6f547cf2d8d9a48152c97"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
+
+  stable do
+    url "https://mkvtoolnix.download/sources/mkvtoolnix-86.0.tar.xz"
+    mirror "https://fossies.org/linux/misc/mkvtoolnix-86.0.tar.xz"
+    sha256 "29a9155fbba99f9074de2abcfbdc4e966ea38c16d9f6f547cf2d8d9a48152c97"
+
+    # Compatibility with fmt 11. Remove in next release.
+    patch do
+      url "https://gitlab.com/mbunkus/mkvtoolnix/-/commit/b57dde69dc80b151844e0762a2ae6bca3ba86d95.diff"
+      sha256 "602e0d5fce2ef082f4aecc715352cecb632f99493b8132575ad4c8fc9239579b"
+    end
+  end
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -13,13 +22,13 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "6e1e9a95f20805baee179943e3de46f4dafd26ac89159ecfda90ddea3a621d3e"
-    sha256 cellar: :any, arm64_ventura:  "094d79990d30405b4b576e01f1807a87b7f5b01801deff701ae996b127230aa3"
-    sha256 cellar: :any, arm64_monterey: "88e22898eb6a0e2a004a26fa0c1972a29cc144bb0a1922d5d243ddaec9ef2df0"
-    sha256 cellar: :any, sonoma:         "f35bb84cb240167f206fdfee7eef839f2788e5f92b6d96352bc5041997f84844"
-    sha256 cellar: :any, ventura:        "114eb2b80e0dce42e977edaa859a8ef3e283b6512d4541a37f94fb28fffd42da"
-    sha256 cellar: :any, monterey:       "5cf493fe882637a02c5cd2dceedb90bbb2172b00c78ff66400bf180c6524bb93"
-    sha256               x86_64_linux:   "3fd17211454629853e8122aaefc1901841dd490245fdfc7f5274c471f4186ffe"
+    sha256 cellar: :any, arm64_sonoma:   "40df2a5775c076cfab6b1f1ae2f3ca8fc9e5eab65b83a9ba7258c74718f56978"
+    sha256 cellar: :any, arm64_ventura:  "d59b175055d7b202fad6241afa290ab41e0d3b56e6e059d1de37b6229fd050e1"
+    sha256 cellar: :any, arm64_monterey: "720432f783d7b8a947283d5d619932f139ac25b5ac284cdaf53ee356340611a4"
+    sha256 cellar: :any, sonoma:         "75adc2f45121b6eef16b9a30b2d001a149251f533798ae7a40ed50a1691ff77e"
+    sha256 cellar: :any, ventura:        "f38321865993e6c1f9738558f926f31f438a01da7030ac027ab2fe9ac0221d2c"
+    sha256 cellar: :any, monterey:       "632e3838f7847f9195f0330707698f3247e16588c17d563eb0069b1d1e23671e"
+    sha256               x86_64_linux:   "21d2ed6afb62cb9bfae54e58c0eaa4ee3755a181dbe09ee8022ab686931e7dbd"
   end
 
   head do

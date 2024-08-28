@@ -1,8 +1,8 @@
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https:hasura.io"
-  url "https:github.comhasuragraphql-enginearchiverefstagsv2.42.0.tar.gz"
-  sha256 "b004a5771839cd8e4108f7bf9632ccd48d475a85f95f2f48de1d01644b0f2a1d"
+  url "https:github.comhasuragraphql-enginearchiverefstagsv2.43.0.tar.gz"
+  sha256 "c4dd6c1184dd8165eaa2d0eb0037aa2f283d01220921bba381d4397c61c3e40e"
   license "Apache-2.0"
   head "https:github.comhasuragraphql-engine.git", branch: "master"
 
@@ -15,13 +15,13 @@ class HasuraCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "915184e2bb92080db4672f819539f873de6261c1def567e21a8c85f4f4406302"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcf3b411923c4f779059474ede89fa43e1b62f3a3836b1d00e81983fdfe442ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "651f9d83beee7ac94783c4f9ff55f7eae58986c0f951fa097e7697468075543d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a196ce6d4738917291d4cd3b95c6620485af5a424dd6d23c237c61c1fa2523c"
-    sha256 cellar: :any_skip_relocation, ventura:        "37562a18fed3f3edad12b95cab5cdf4c94754d06cc81886459d3a4c2d8969b61"
-    sha256 cellar: :any_skip_relocation, monterey:       "34709b52e42a9c90931a0b672746eb4f48ab99e27e15c2e5c4cc21d4abdaf64b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b132e8080a9f3fa057562a0723124f5df4556afba7f8ba8dfa800f8a487f3e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b31755ecaec474866f113ccdf2db023d7b5fb6ee9795be0842d76db978f34ca1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b31755ecaec474866f113ccdf2db023d7b5fb6ee9795be0842d76db978f34ca1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b31755ecaec474866f113ccdf2db023d7b5fb6ee9795be0842d76db978f34ca1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8993aa09f66e924cb88f4e65bca8804fc9d5f085ff9181c1bced62fbffbeb769"
+    sha256 cellar: :any_skip_relocation, ventura:        "8993aa09f66e924cb88f4e65bca8804fc9d5f085ff9181c1bced62fbffbeb769"
+    sha256 cellar: :any_skip_relocation, monterey:       "8993aa09f66e924cb88f4e65bca8804fc9d5f085ff9181c1bced62fbffbeb769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33956978aedd6f2a7a937d0b7ace0b94875ded24a45dc02f28018fd76873d042"
   end
 
   depends_on "go" => :build

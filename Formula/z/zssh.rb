@@ -33,14 +33,17 @@ class Zssh < Formula
   depends_on "lrzsz"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "readline"
   end
 
   def install
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    # Workaround for Xcode 15
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    rm_r "lrzsz-0.12.20"
+
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args
     system "make"
 
     bin.install "zssh", "ztelnet"

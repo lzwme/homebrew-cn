@@ -3,7 +3,11 @@ class Zsync < Formula
   homepage "http://zsync.moria.org.uk/"
   url "http://zsync.moria.org.uk/download/zsync-0.6.2.tar.bz2"
   sha256 "0b9d53433387aa4f04634a6c63a5efa8203070f2298af72a705f9be3dda65af2"
-  license "Artistic-2.0"
+  license all_of: [
+    "Artistic-2.0",
+    "Zlib", # zlib/
+    :public_domain, # librcksum/md4.c, libzsync/sha1.c, zlib/inflate.c
+  ]
 
   livecheck do
     url "http://zsync.moria.org.uk/downloads"
@@ -31,8 +35,7 @@ class Zsync < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

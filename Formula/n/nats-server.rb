@@ -1,8 +1,8 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https:nats.io"
-  url "https:github.comnats-ionats-serverarchiverefstagsv2.10.18.tar.gz"
-  sha256 "76982d382fef83080a8abc2e0f6f0f5da9e0e1961eeb78beb18e27a9f458f546"
+  url "https:github.comnats-ionats-serverarchiverefstagsv2.10.19.tar.gz"
+  sha256 "3098a9fe78fcaa5d8af4d8c0eb51263cded117f9b54f736085a36d0292323bbf"
   license "Apache-2.0"
   head "https:github.comnats-ionats-server.git", branch: "main"
 
@@ -12,13 +12,13 @@ class NatsServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "046e069d73cf318ad30a459b39d8d99a5a33967663ec16d7c5b2639d5112b11a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a534574b5480aa9d3abde187a6d58b63fde15225e7bfc21ef16fc78d016b9b3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ac5fa18503eeb7d8eb163e0aa9c19b08155da644b592e6b7dd3ec37ede34113"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e4bf33a2078a5b0f0d08707d96fd6e735cfa40a2185ff433f04b8cee728bc45"
-    sha256 cellar: :any_skip_relocation, ventura:        "61d79a48d06e84c709724e28f3730fafe694ff7ff382529ac4cea83d2a1eca8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b431f35689ee8678d0cc9285a0edfed50ce29627193d3ca0b4eb8b451ee7927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6efa13cba574e0efcb874eabc0a829c85b189f901fcbdf928b30f904aea6147f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44150fe95fdaef76ccffa3ea5975f27e1f3f9c74b34ec72d36ddd1babce5146d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44150fe95fdaef76ccffa3ea5975f27e1f3f9c74b34ec72d36ddd1babce5146d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44150fe95fdaef76ccffa3ea5975f27e1f3f9c74b34ec72d36ddd1babce5146d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "118b2f85d5333a8247a4a5f3114aba52a8dc628013570449df1e37f21cf9a1a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "118b2f85d5333a8247a4a5f3114aba52a8dc628013570449df1e37f21cf9a1a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "118b2f85d5333a8247a4a5f3114aba52a8dc628013570449df1e37f21cf9a1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "570469eae5fb5bd41ab18b93d564c893babe8309685d694260ef0f4b7cefeade"
   end
 
   depends_on "go" => :build

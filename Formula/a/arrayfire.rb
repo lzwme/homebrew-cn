@@ -4,19 +4,18 @@ class Arrayfire < Formula
   url "https:github.comarrayfirearrayfirereleasesdownloadv3.9.0arrayfire-full-3.9.0.tar.bz2"
   sha256 "8356c52bf3b5243e28297f4b56822191355216f002f3e301d83c9310a4b22348"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "299f14fef2c6fde1e37418dc89b69fdab58cdd64f94e1f4e6224a86e390c41b2"
-    sha256 cellar: :any,                 arm64_ventura:  "14f1b6f1fe2c8c442c1f2ad3f75a1f9b7a252a123171c9ca63192f0f18636453"
-    sha256 cellar: :any,                 arm64_monterey: "290feb9f740d79b69960f7a436b28f926acd44b57813621707a63f7931e65885"
-    sha256 cellar: :any,                 sonoma:         "013b97c42f5856df55fd820fd0b60618f6d499805ec0c521ff831393e68d2809"
-    sha256 cellar: :any,                 ventura:        "b179ae4ac1dc38da16c080993d5d970e7909a6cfdae15f93343982b78b6c8be6"
-    sha256 cellar: :any,                 monterey:       "c2b3fbc6c5e70354dd25a8c242d1f2c163ca596d72f62a6b338d0807d63badbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4635b6a5294fdd22f1de00d06eaf228ff4c9d0f400b428a9f025573dc7adb95c"
+    sha256 cellar: :any, arm64_sonoma:   "aef59074ff5628ef41c629de9af481140971fb67d0dd952cf2624ad6add73f70"
+    sha256 cellar: :any, arm64_ventura:  "e206b29e0790322ed14a06082e80a4ab2b804c79e3a98db0a134e71aa5f74ebe"
+    sha256 cellar: :any, arm64_monterey: "2e1b6dcef1a94a00aface53d21cb5ded7977d9f9f9db74606250f47f82ec6f59"
+    sha256 cellar: :any, sonoma:         "0347b552c78ae2da175819625d20bdc8de8cba7b6eb800f713a43b1690dbe3bd"
+    sha256 cellar: :any, ventura:        "f0e961ea63dc30a6b72b23afcbd9181d94d43c7a24c0f75d9add33cb9420ffdd"
+    sha256 cellar: :any, monterey:       "e0cdfa9839ea984d846c2fd7c9df45c337ae7159d07a590256896b1934d9670e"
   end
 
-  depends_on "boost" => :build
+  depends_on "boost@1.85" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "fftw"
@@ -32,6 +31,9 @@ class Arrayfire < Formula
   end
 
   fails_with gcc: "5"
+
+  # fmt 11 compatibility
+  patch :DATA
 
   def install
     # Fix for: `ArrayFire couldn't locate any backends.`
@@ -72,3 +74,88 @@ class Arrayfire < Formula
     assert_match "ArrayFire v#{version}", shell_output(".test")
   end
 end
+
+__END__
+diff --git asrcbackendcommonjitNodeIO.hpp bsrcbackendcommonjitNodeIO.hpp
+index ac149d9..edffdfa 100644
+--- asrcbackendcommonjitNodeIO.hpp
++++ bsrcbackendcommonjitNodeIO.hpp
+@@ -16,7 +16,7 @@
+ template<>
+ struct fmt::formatter<af::dtype> : fmt::formatter<char> {
+     template<typename FormatContext>
+-    auto format(const af::dtype& p, FormatContext& ctx) -> decltype(ctx.out()) {
++    auto format(const af::dtype& p, FormatContext& ctx) const -> decltype(ctx.out()) {
+         format_to(ctx.out(), "{}", arrayfire::common::getName(p));
+         return ctx.out();
+     }
+@@ -58,7 +58,7 @@ struct fmt::formatter<arrayfire::common::Node> {
+      Formats the point p using the parsed format specification (presentation)
+      stored in this formatter.
+     template<typename FormatContext>
+-    auto format(const arrayfire::common::Node& node, FormatContext& ctx)
++    auto format(const arrayfire::common::Node& node, FormatContext& ctx) const
+         -> decltype(ctx.out()) {
+          ctx.out() is an output iterator to write to.
+ 
+diff --git asrcbackendcommonArrayFireTypesIO.hpp bsrcbackendcommonArrayFireTypesIO.hpp
+index e7a2e08..5da74a9 100644
+--- asrcbackendcommonArrayFireTypesIO.hpp
++++ bsrcbackendcommonArrayFireTypesIO.hpp
+@@ -21,7 +21,7 @@ struct fmt::formatter<af_seq> {
+     }
+ 
+     template<typename FormatContext>
+-    auto format(const af_seq& p, FormatContext& ctx) -> decltype(ctx.out()) {
++    auto format(const af_seq& p, FormatContext& ctx) const -> decltype(ctx.out()) {
+          ctx.out() is an output iterator to write to.
+         if (p.begin == af_span.begin && p.end == af_span.end &&
+             p.step == af_span.step) {
+@@ -73,18 +73,16 @@ struct fmt::formatter<arrayfire::common::Version> {
+     }
+ 
+     template<typename FormatContext>
+-    auto format(const arrayfire::common::Version& ver, FormatContext& ctx)
++    auto format(const arrayfire::common::Version& ver, FormatContext& ctx) const
+         -> decltype(ctx.out()) {
+         if (ver.major() == -1) return format_to(ctx.out(), "NA");
+-        if (ver.minor() == -1) show_minor = false;
+-        if (ver.patch() == -1) show_patch = false;
+-        if (show_major && !show_minor && !show_patch) {
++        if (show_major && (ver.minor() == -1) && (ver.patch() == -1)) {
+             return format_to(ctx.out(), "{}", ver.major());
+         }
+-        if (show_major && show_minor && !show_patch) {
++        if (show_major && (ver.minor() != -1) && (ver.patch() == -1)) {
+             return format_to(ctx.out(), "{}.{}", ver.major(), ver.minor());
+         }
+-        if (show_major && show_minor && show_patch) {
++        if (show_major && (ver.minor() != -1) && (ver.patch() != -1)) {
+             return format_to(ctx.out(), "{}.{}.{}", ver.major(), ver.minor(),
+                              ver.patch());
+         }
+diff --git asrcbackendcommondebug.hpp bsrcbackendcommondebug.hpp
+index 54e74a2..07fa589 100644
+--- asrcbackendcommondebug.hpp
++++ bsrcbackendcommondebug.hpp
+@@ -12,6 +12,7 @@
+ #include <booststacktrace.hpp>
+ #include <commonArrayFireTypesIO.hpp>
+ #include <commonjitNodeIO.hpp>
++#include <fmtranges.h>
+ #include <spdlogfmtbundledformat.h>
+ #include <iostream>
+ 
+diff --git asrcbackendopenclcompile_module.cpp bsrcbackendopenclcompile_module.cpp
+index 89d382c..2c979fd 100644
+--- asrcbackendopenclcompile_module.cpp
++++ bsrcbackendopenclcompile_module.cpp
+@@ -22,6 +22,8 @@
+ #include <platform.hpp>
+ #include <traits.hpp>
+ 
++#include <fmtranges.h>
++
+ #include <algorithm>
+ #include <cctype>
+ #include <cstdio>

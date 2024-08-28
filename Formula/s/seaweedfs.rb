@@ -32,6 +32,18 @@ class Seaweedfs < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin"weed"), ".weed"
   end
 
+  def post_install
+    (var"seaweedfs").mkpath
+  end
+
+  service do
+    run [opt_bin"weed", "server", "-dir=#{var}seaweedfs", "-s3"]
+    keep_alive true
+    error_log_path var"logseaweedfs.log"
+    log_path var"logseaweedfs.log"
+    working_dir var
+  end
+
   test do
     # Start SeaweedFS master servervolume server
     master_port = free_port

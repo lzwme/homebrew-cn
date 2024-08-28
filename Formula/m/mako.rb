@@ -1,18 +1,18 @@
 class Mako < Formula
   desc "Production-grade web bundler based on Rust"
   homepage "https://makojs.dev"
-  url "https://registry.npmjs.org/@umijs/mako/-/mako-0.8.3.tgz"
-  sha256 "12e05e2dca7f6d891ce54ebf2644b6dc7b81eaca9f55dbac7b4a0bc222468bfb"
+  url "https://registry.npmjs.org/@umijs/mako/-/mako-0.8.6.tgz"
+  sha256 "476a0b4270c82d661b2b03bf6ff68475054a62e82bb266e5bb1468444374239c"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "84ee196197de41ed6a6561d346a6c4cb367a29a78b700c096e8c578149f191cf"
-    sha256                               arm64_ventura:  "a292f42c37d63b00537f6e2997185d726edc548010b55241718448b0e1f7a849"
-    sha256                               arm64_monterey: "9cf7a62f62ccb4825bef9a9151a6cf8d222f60f1764bd067ffe04d08be2c0643"
-    sha256                               sonoma:         "82fa7b1c39e7360664dea1d4fffc7fd84121747e64adb5b49eb2ab5682249d09"
-    sha256                               ventura:        "0a1184a727f4ea33dd12e385ffd78ae1a9caf5e80862223a4565fec42500b21d"
-    sha256                               monterey:       "be93be0aa478dbf65a18e2a4c81d3d5124246bf1c45c9f480ced321c75265392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "debd86e0e1425966150ebf5378d14d29fe7803a8ddeaca5e3755b4ea77df400b"
+    sha256                               arm64_sonoma:   "4062cec5c19e4cc2536092778be46c99acc3f5d0da640f5116fd29110d42881e"
+    sha256                               arm64_ventura:  "3c1e90ec953fa811c0a3f19813bcb4258aae757adafca82435400286d9a4e268"
+    sha256                               arm64_monterey: "f46d2fa7579dbe4947bc24d6089114cd595d73585af16af96f8fbf182400ac1f"
+    sha256                               sonoma:         "9bb41647f659191344657d87228852aa51ddd0897c542b0649c10c37f798a3a9"
+    sha256                               ventura:        "e314fea80f83885b1702c20edc85332b95746aa1e800b05bada2edd493e338f3"
+    sha256                               monterey:       "05cd44a8bc477ce619c77aa8eb95aa8e3d78a77190148ce20e72f5c1b56aae4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3ed6ae5578ca6216e2f8168cff1b7a173cbc6c87c8519fd5a1dd165f64ed646"
   end
 
   depends_on "node"

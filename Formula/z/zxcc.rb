@@ -3,7 +3,7 @@ class Zxcc < Formula
   homepage "https://www.seasip.info/Unix/Zxcc/"
   url "https://www.seasip.info/Unix/Zxcc/zxcc-0.5.7.tar.gz"
   sha256 "6095119a31a610de84ff8f049d17421dd912c6fd2df18373e5f0a3bc796eb4bf"
-  license "GPL-2.0-or-later"
+  license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
   livecheck do
     url :homepage
@@ -30,7 +30,7 @@ class Zxcc < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end

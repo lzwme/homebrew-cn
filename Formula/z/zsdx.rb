@@ -27,8 +27,9 @@ class Zsdx < Formula
   uses_from_macos "unzip" => :test
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DSOLARUS_INSTALL_DATADIR=#{share}"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DSOLARUS_INSTALL_DATADIR=#{share}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -1,10 +1,19 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https:github.commamba-orgmamba"
-  url "https:github.commamba-orgmambaarchiverefstagsmicromamba-1.5.8.tar.gz"
-  sha256 "4ac788dcb9f6e7b011250e66138e60ba3074b38d54b8160b8b6364a408026076"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.commamba-orgmamba.git", branch: "main"
+
+  stable do
+    url "https:github.commamba-orgmambaarchiverefstagsmicromamba-1.5.8.tar.gz"
+    sha256 "4ac788dcb9f6e7b011250e66138e60ba3074b38d54b8160b8b6364a408026076"
+
+    # fmt 11 compatibility
+    # https:github.commamba-orgmambacommit4fbd22a9c0e136cf59a4f73fe7c34019a4f86344
+    # https:github.commamba-orgmambacommitd0d7eea49a9083c15aa73c58645abc93549f6ddd
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -14,13 +23,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ef4289ffad79101e76c0371596018c0124f73149342f50258712b4cb9bf8fe0"
-    sha256 cellar: :any,                 arm64_ventura:  "0c000c017074edd8d65fd17aea263704179eb9e64f59813c045df551b921bfc2"
-    sha256 cellar: :any,                 arm64_monterey: "81cb206e47cd4a808a5fcc59f731a8b1f765b81fc167adb759c6da32de9ca82a"
-    sha256 cellar: :any,                 sonoma:         "c71bb281bc24b7ad0822832a012251138c486288c8ed9a6b7fd1cd235317918f"
-    sha256 cellar: :any,                 ventura:        "744fa02ede2eb15a615cfacb6ec89d4b9ead56769aa92b2e83cd48deb8808355"
-    sha256 cellar: :any,                 monterey:       "52df20697a157981f67ac509a19c8a52ee9909e9c43f0880782c0e5df033c915"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "436d642bd19e6e4e702aa5824d683e886f676edb15f5a3846222b5ddd0bde213"
+    sha256 cellar: :any,                 arm64_sonoma:   "1afb9aa7a03acd2e548b094606767d65c46e127ffe4fb9baa23035500fce98e2"
+    sha256 cellar: :any,                 arm64_ventura:  "b393c58a73bc75950478397eeeb0660a8d7b61430d5d5ce899f0ba1758d1d934"
+    sha256 cellar: :any,                 arm64_monterey: "be40db7dc4b57971d0ab03df04774d6efdb695b687339887b2263d4ae4f5e68e"
+    sha256 cellar: :any,                 sonoma:         "04de7edc6c6ed6266f90c202933d05c7871f21a5c863ac78922e6f91bdc79c95"
+    sha256 cellar: :any,                 ventura:        "e9848630bbdec51dff429a1be66f2bdd04f9bab7f74f66eda2b66f5d6d6082d6"
+    sha256 cellar: :any,                 monterey:       "e32509b873293b1e5200433d838f91cf39b5ea35172107949a2a15c439a25176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4aba662aab62290984efb17b398dd39526a4697c543523d2354991f2ba100cd9"
   end
 
   depends_on "cli11" => :build
@@ -92,3 +101,160 @@ class Micromamba < Formula
     assert_match "Python #{python_version}", shell_output("#{bin}micromamba run -n test python --version").strip
   end
 end
+
+__END__
+diff --git alibmambaincludemambacoremamba_fs.hpp blibmambaincludemambacoremamba_fs.hpp
+index 65c515c..0f158a8 100644
+--- alibmambaincludemambacoremamba_fs.hpp
++++ blibmambaincludemambacoremamba_fs.hpp
+@@ -1379,7 +1379,7 @@ struct fmt::formatter<::fs::u8path>
+     }
+ 
+     template <class FormatContext>
+-    auto format(const ::fs::u8path& path, FormatContext& ctx)
++    auto format(const ::fs::u8path& path, FormatContext& ctx) const
+     {
+         return fmt::format_to(ctx.out(), "'{}'", path.string());
+     }
+diff --git alibmambaincludemambaspecsversion.hpp blibmambaincludemambaspecsversion.hpp
+index 4272f18..cf69cd4 100644
+--- alibmambaincludemambaspecsversion.hpp
++++ blibmambaincludemambaspecsversion.hpp
+@@ -168,7 +168,7 @@ struct fmt::formatter<mamba::specs::VersionPartAtom>
+     }
+ 
+     template <class FormatContext>
+-    auto format(const ::mamba::specs::VersionPartAtom atom, FormatContext& ctx)
++    auto format(const ::mamba::specs::VersionPartAtom atom, FormatContext& ctx) const
+     {
+         return fmt::format_to(ctx.out(), "{}{}", atom.numeral(), atom.literal());
+     }
+@@ -188,7 +188,7 @@ struct fmt::formatter<mamba::specs::Version>
+     }
+ 
+     template <class FormatContext>
+-    auto format(const ::mamba::specs::Version v, FormatContext& ctx)
++    auto format(const ::mamba::specs::Version v, FormatContext& ctx) const
+     {
+         auto out = ctx.out();
+         if (v.epoch() != 0)
+diff --git alibmambasrcapiinstall.cpp blibmambasrcapiinstall.cpp
+index c749b24..672ee29 100644
+--- alibmambasrcapiinstall.cpp
++++ blibmambasrcapiinstall.cpp
+@@ -9,6 +9,7 @@
+ #include <fmtcolor.h>
+ #include <fmtformat.h>
+ #include <fmtostream.h>
++#include <fmtranges.h>
+ #include <reproc++run.hpp>
+ #include <reprocreproc.h>
+ 
+diff --git alibmambasrccorecontext.cpp blibmambasrccorecontext.cpp
+index 5d1b65b..6068f75 100644
+--- alibmambasrccorecontext.cpp
++++ blibmambasrccorecontext.cpp
+@@ -8,6 +8,7 @@
+ 
+ #include <fmtformat.h>
+ #include <fmtostream.h>
++#include <fmtranges.h>
+ #include <spdlogpattern_formatter.h>
+ #include <spdlogsinksstdout_color_sinks.h>
+ #include <spdlogspdlog.h>
+diff --git alibmambasrccorequery.cpp blibmambasrccorequery.cpp
+index d1ac04c..017522a 100644
+--- alibmambasrccorequery.cpp
++++ blibmambasrccorequery.cpp
+@@ -13,6 +13,7 @@
+ #include <fmtcolor.h>
+ #include <fmtformat.h>
+ #include <fmtostream.h>
++#include <fmtranges.h>
+ #include <solvevr.h>
+ #include <spdlogspdlog.h>
+ 
+diff --git alibmambasrccorerun.cpp blibmambasrccorerun.cpp
+index ec84ed5..5584cf5 100644
+--- alibmambasrccorerun.cpp
++++ blibmambasrccorerun.cpp
+@@ -15,6 +15,7 @@
+ #include <fmtcolor.h>
+ #include <fmtformat.h>
+ #include <fmtostream.h>
++#include <fmtranges.h>
+ #include <nlohmannjson.hpp>
+ #include <reproc++run.hpp>
+ #include <spdlogspdlog.h>
+diff --git alibmambatestssrcdoctest-printerarray.hpp blibmambatestssrcdoctest-printerarray.hpp
+index 123ffff..6b54468 100644
+--- alibmambatestssrcdoctest-printerarray.hpp
++++ blibmambatestssrcdoctest-printerarray.hpp
+@@ -8,6 +8,7 @@
+ 
+ #include <doctestdoctest.h>
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ 
+ namespace doctest
+ {
+diff --git alibmambatestssrcdoctest-printervector.hpp blibmambatestssrcdoctest-printervector.hpp
+index 0eb5cf0..b397f9e 100644
+--- alibmambatestssrcdoctest-printervector.hpp
++++ blibmambatestssrcdoctest-printervector.hpp
+@@ -8,6 +8,7 @@
+ 
+ #include <doctestdoctest.h>
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ 
+ namespace doctest
+ {
+diff --git amicromambasrcrun.cpp bmicromambasrcrun.cpp
+index c3af4ea..7c561af 100644
+--- amicromambasrcrun.cpp
++++ bmicromambasrcrun.cpp
+@@ -10,6 +10,7 @@
+ 
+ #include <fmtcolor.h>
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ #include <nlohmannjson.hpp>
+ #include <reproc++run.hpp>
+ #include <spdlogspdlog.h>
+diff --git alibmambasrccorepackage_info.cpp blibmambasrccorepackage_info.cpp
+index 00d80e8..8726d1c 100644
+--- alibmambasrccorepackage_info.cpp
++++ blibmambasrccorepackage_info.cpp
+@@ -11,6 +11,7 @@
+ #include <tuple>
+ 
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ 
+ #include "mambacorepackage_info.hpp"
+ #include "mambaspecsarchive.hpp"
+diff --git alibmambatestssrccoretest_satisfiability_error.cpp blibmambatestssrccoretest_satisfiability_error.cpp
+index bb33724..081367b 100644
+--- alibmambatestssrccoretest_satisfiability_error.cpp
++++ blibmambatestssrccoretest_satisfiability_error.cpp
+@@ -11,6 +11,7 @@
+ 
+ #include <doctestdoctest.h>
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ #include <nlohmannjson.hpp>
+ #include <solvsolver.h>
+ 
+diff --git alibmambapysrcmain.cpp blibmambapysrcmain.cpp
+index 94d38ce..0e82ad8 100644
+--- alibmambapysrcmain.cpp
++++ blibmambapysrcmain.cpp
+@@ -7,6 +7,7 @@
+ #include <stdexcept>
+ 
+ #include <fmtformat.h>
++#include <fmtranges.h>
+ #include <nlohmannjson.hpp>
+ #include <pybind11functional.h>
+ #include <pybind11iostream.h>

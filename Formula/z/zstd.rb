@@ -5,7 +5,11 @@ class Zstd < Formula
   mirror "http:fresh-center.netlinuxmisczstd-1.5.6.tar.gz"
   mirror "http:fresh-center.netlinuxmisclegacyzstd-1.5.6.tar.gz"
   sha256 "30f35f71c1203369dc979ecde0400ffea93c27391bfd2ac5a9715d2173d92ff7"
-  license "BSD-3-Clause"
+  license all_of: [
+    { any_of: ["BSD-3-Clause", "GPL-2.0-only"] },
+    "BSD-2-Clause", # programszstdgrep, liblibzstd.pc.in
+    "MIT", # libdictBuilderdivsufsort.c
+  ]
   head "https:github.comfacebookzstd.git", branch: "dev"
 
   # The upstream repository contains old, one-off tags (5.5.5, 6.6.6) that are
@@ -28,6 +32,7 @@ class Zstd < Formula
   depends_on "cmake" => :build
   depends_on "lz4"
   depends_on "xz"
+
   uses_from_macos "zlib"
 
   def install

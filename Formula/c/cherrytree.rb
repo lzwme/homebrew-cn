@@ -1,10 +1,44 @@
 class Cherrytree < Formula
   desc "Hierarchical note taking application featuring rich text and syntax highlighting"
   homepage "https:www.giuspen.comcherrytree"
-  url "https:www.giuspen.comsoftwarecherrytree_1.1.4.tar.xz"
-  sha256 "46cb974efe050584c2ec7bcc36eb6bb52b1360288c9da1b00746762e3bc823d8"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comgiuspencherrytree.git", branch: "master"
+
+  stable do
+    url "https:www.giuspen.comsoftwarecherrytree_1.1.4.tar.xz"
+    sha256 "46cb974efe050584c2ec7bcc36eb6bb52b1360288c9da1b00746762e3bc823d8"
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgiuspencherrytreecommitccc2d101f24a409efddb2f29e8c14002c9836a85.patch?full_index=1"
+      sha256 "6f1ee0baf40f536aae4820fcb4d51f108ed21e4168f5164e69fe190416366a36"
+    end
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgiuspencherrytreecommit76f0030e2e2b6e1488148d3828baeb8f5911eb8d.patch?full_index=1"
+      sha256 "6def501a9c094a989d5ee9cd79bda730476f4669cdcda6b03fdda096ecdf62c7"
+    end
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgiuspencherrytreecommit22142f3b44fef81e67c9bfbcdaed2f80ab2ff5de.patch?full_index=1"
+      sha256 "48f08ad7a6ef1b63656cb1a8eb5621c586f926c84bdc5178b8da566c7ca534c9"
+    end
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgiuspencherrytreecommit05233db2b25977037c7520a8316183636a262130.patch?full_index=1"
+      sha256 "53b6dbcd7b7c07bb222cad3e02567ee0978815689beb9c32f007000f0a3412b4"
+    end
+
+    # fmt 11 compatibility
+    patch do
+      url "https:github.comgiuspencherrytreecommitfc1d7499067b9db9841175b5a2d6934dc65e4522.patch?full_index=1"
+      sha256 "9b8c09e1fa82bf646fe9bd884223bb1ba4b94171a9077bb8d6af9bdc2e99b810"
+    end
+  end
 
   livecheck do
     url :homepage
@@ -12,13 +46,13 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d196ba00e013cc32ae23638035d4adfc8e62ee75288d9311f4b5fe3e0e409c49"
-    sha256 arm64_ventura:  "c78be26262606035f6e05b5ab12741b6ac78f7072d3d34a56a687068d65c3417"
-    sha256 arm64_monterey: "1ad5508d49caa1272e95a51ce5a4c47c68b5a91c7af7a7fe4d11641d0a234b92"
-    sha256 sonoma:         "daa4cf7ff12d95ed28876df597246f80dfa84682d7552ecc8f7d72bfde47080d"
-    sha256 ventura:        "abd80e3468f90fd27e0839003e638f6d2776ba902b672dbf9d5c636a15646edc"
-    sha256 monterey:       "9b1d7962d71c56022f0f8066add44e900dc28300af50c97122ffbb0426075c52"
-    sha256 x86_64_linux:   "3044c3403fc6ac03a77f217e0e96aaa8cb8940573ca90d62ccd314bbdaaf43cb"
+    sha256 arm64_sonoma:   "2aa0a4d89850ce48f9be1640bd187c1f4c3a6b0c03839c0184d8f3cf460d9990"
+    sha256 arm64_ventura:  "33acf835509cb7a5924a84e9874df91afeab28e9e204ea84cd78af13f68b4eb9"
+    sha256 arm64_monterey: "bd84b1cd146e7e183bace505cb75540a1e9757cfce0a9a623c7b67f049d3884b"
+    sha256 sonoma:         "4e5a27d81be20878eae81c58e80d7461f3a766b204ee58f7554ad7b811e8c76f"
+    sha256 ventura:        "163de01f6dbed58b67b834bc072f295dadf6a3935ea58d2dc4d01a7e21cb23bd"
+    sha256 monterey:       "a389eca43c79cd838d2f30529686896a6c27b28023a1d2fe8db4c18b7c4dd3a4"
+    sha256 x86_64_linux:   "8ddac9e4b25533b4ec3dd3496783454a282cf8de4d07b6a1527611dccd5ecefa"
   end
 
   depends_on "cmake" => :build

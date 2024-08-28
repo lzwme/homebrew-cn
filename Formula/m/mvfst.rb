@@ -4,16 +4,17 @@ class Mvfst < Formula
   url "https:github.comfacebookmvfstarchiverefstagsv2024.08.19.00.tar.gz"
   sha256 "f135b3d413e1e64544aa55345540bd132065189a0f4bb87ed933864fbfd2bdef"
   license "MIT"
+  revision 1
   head "https:github.comfacebookmvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1b39e88575c5a450d55d03fe82aa778e2627b17d015a1869a7f55d65b4790f95"
-    sha256 cellar: :any,                 arm64_ventura:  "641c44ef13fcdeb32a684c397a542443cd2a550c891b9081cd5d10e6dd57d328"
-    sha256 cellar: :any,                 arm64_monterey: "9e434cd7828635ab74d91097b024cdfe35290f23dfefedfb8efdb19cdb848152"
-    sha256 cellar: :any,                 sonoma:         "9e32f3b0c58973e8fe061136fa504da1a0240a62508ab2affe348a21cbde5422"
-    sha256 cellar: :any,                 ventura:        "c105480b40ba8eff0e2270bb3471ac89edc875f1870a51d2ba958906ea527596"
-    sha256 cellar: :any,                 monterey:       "b84693fc58e8ccc8ab83a71e74e1d6d25ad1356dfe32e84cf6c9d3ef211d296f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e1003046edcc5c0a406100bd6cfdf158e145396b504f79566f857980003cbbb"
+    sha256 cellar: :any,                 arm64_sonoma:   "1cf63de14ed00385fffa456f380f4fba864fe0bc24c51ab67a4998172c508490"
+    sha256 cellar: :any,                 arm64_ventura:  "a80cf99b509520094c7820d674565003b11d2a4291705f38c29ca240bed44b03"
+    sha256 cellar: :any,                 arm64_monterey: "abe406efba14ad0813425dec9c20f3a26d94a4c69646d471b27d20081d099f03"
+    sha256 cellar: :any,                 sonoma:         "5672337d623d72702728acfe3e4be5fbc4d8195c9711da90636d58ae481da920"
+    sha256 cellar: :any,                 ventura:        "9147a8857c3775aa124ca01a50a163107826b6713a40baf88edb97585d6bb627"
+    sha256 cellar: :any,                 monterey:       "a49f10079436d5574e416a449fc2b4008d5fd57bb3dc8c688103e8cfdc7e2a47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "705dd30ebd70d9da9c2b1877fc7a3d016f9d34bd8e170b67f77611f75a6eb62f"
   end
 
   depends_on "cmake" => [:build, :test]

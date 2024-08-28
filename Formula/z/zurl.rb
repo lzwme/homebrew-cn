@@ -5,7 +5,12 @@ class Zurl < Formula
   homepage "https:github.comfanoutzurl"
   url "https:github.comfanoutzurlreleasesdownloadv1.12.0zurl-1.12.0.tar.bz2"
   sha256 "46d13ac60509a1566a4e3ad3eaed5262adf86eb5601ff892dba49affb0b63750"
-  license "GPL-3.0-or-later"
+  license all_of: [
+    "GPL-3.0-or-later",
+    "LGPL-2.1-or-later", # srccommonprocessquit.cpp
+    "curl", # srcverifyhost.cpp
+    "MIT", # srcqzmq
+  ]
 
   bottle do
     rebuild 1
@@ -30,23 +35,6 @@ class Zurl < Formula
     depends_on "openssl@3"
   end
 
-  fails_with gcc: "5"
-
-  resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
-  end
-
-  resource "pyzmq" do
-    url "https:files.pythonhosted.orgpackages3a331a3683fc9a4bd64d8ccc0290da75c8f042184a1a49c146d28398414d3341pyzmq-25.1.2.tar.gz"
-    sha256 "93f1aa311e8bb912e34f004cf186407a4e90eec4f0ecc0efd26056bf7eda0226"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
-  end
-
   def install
     args = ["--qtselect=#{Formula["qt"].version.major}"]
     args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
@@ -57,6 +45,21 @@ class Zurl < Formula
   end
 
   test do
+    resource "packaging" do
+      url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+      sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    end
+
+    resource "pyzmq" do
+      url "https:files.pythonhosted.orgpackages3a331a3683fc9a4bd64d8ccc0290da75c8f042184a1a49c146d28398414d3341pyzmq-25.1.2.tar.gz"
+      sha256 "93f1aa311e8bb912e34f004cf186407a4e90eec4f0ecc0efd26056bf7eda0226"
+    end
+
+    resource "setuptools" do
+      url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
+      sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+    end
+
     python3 = "python3.12"
 
     conffile = testpath"zurl.conf"

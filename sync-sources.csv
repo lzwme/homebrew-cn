@@ -955,6 +955,7 @@ Homebrew-homebrew-core/Formula/c/cmix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmocka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cmockery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmockery2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cmrc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmu-pocketsphinx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmu-sphinxbase.rb, Homebrew/homebrew-core, 1
@@ -5805,6 +5806,7 @@ Homebrew-homebrew-core/Formula/s/skylighting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skymaker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slackcat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/slackdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slacknimate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slashem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleef.rb, Homebrew/homebrew-core, 1
@@ -10536,6 +10538,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sedgwick-ave-display.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/font/font-s/font-sedgwick-ave.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-send-flowers.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-server-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sevillana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-seymour-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-arabic.rb, Homebrew/homebrew-cask, 0
@@ -11883,6 +11886,7 @@ Homebrew-homebrew-cask/Casks/m/microsoft-onenote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@11.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@17.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-outlook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-powerpoint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-remote-desktop.rb, Homebrew/homebrew-cask, 0

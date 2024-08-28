@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https:openbuildservice.org"
-  url "https:github.comopenSUSEoscarchiverefstags1.8.3.tar.gz"
-  sha256 "833efb2701718b4ec17adc6d621799e8169d4490774c33e2abd089194c0c1505"
+  url "https:github.comopenSUSEoscarchiverefstags1.9.1.tar.gz"
+  sha256 "2a9a466908190bd65bab047180abb372e30ac1ca06ef2488087d14e36edf1388"
   license "GPL-2.0-or-later"
   head "https:github.comopenSUSEosc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4190de84cdf3b2986710a2568ca4d720b4888dc109703a95c84527b457669e73"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
-    sha256 cellar: :any_skip_relocation, ventura:        "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
-    sha256 cellar: :any_skip_relocation, monterey:       "80cb7356575689ca9bd7bc9ac64c1d55dc5c1522499d69adc964c88d14327806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc80e64f4b581cfc07e01dae65ac8028d241c9f651cd3916d5a789054b6db549"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32fdf1b9d5de5626e133db03159e5a6a4c06357dc9faf3c1f4bbc8997fe9576d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32fdf1b9d5de5626e133db03159e5a6a4c06357dc9faf3c1f4bbc8997fe9576d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32fdf1b9d5de5626e133db03159e5a6a4c06357dc9faf3c1f4bbc8997fe9576d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b440ae8843b0300dfd814393075b27463847bc66a699338134b3fe81b365dd4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b440ae8843b0300dfd814393075b27463847bc66a699338134b3fe81b365dd4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "b440ae8843b0300dfd814393075b27463847bc66a699338134b3fe81b365dd4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32fdf1b9d5de5626e133db03159e5a6a4c06357dc9faf3c1f4bbc8997fe9576d"
   end
 
   depends_on "cryptography"
@@ -30,8 +30,8 @@ class Osc < Formula
   uses_from_macos "libffi"
 
   resource "rpm" do
-    url "https:files.pythonhosted.orgpackages8c15ef9b3d4a0b4b9afe62fd2be374003643ea03fc8026930646ad0781bb9492rpm-0.1.0.tar.gz"
-    sha256 "0e320a806fb61c3980c0cd0c5f5faec97c73c347432902ba2955a08a7b1a034f"
+    url "https:files.pythonhosted.orgpackages441bef44b5e2fae8e398bfc58f38c25a6f0a10ea147e3e4970b7e66154017d1drpm-0.2.0.tar.gz"
+    sha256 "b92285f65c9ddf77678cb3e51aa67827426408fac34cdd8d537d8c14e3eaffbf"
   end
 
   resource "urllib3" do

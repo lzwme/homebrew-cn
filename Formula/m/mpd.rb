@@ -1,20 +1,35 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:github.comMusicPlayerDaemonMPD"
-  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.23.15.tar.gz"
-  sha256 "d2865d8f8ea79aa509b1465b99a2b8f3f449fe894521c97feadc2dca85a6ecd2"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
+  stable do
+    url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.23.15.tar.gz"
+    sha256 "d2865d8f8ea79aa509b1465b99a2b8f3f449fe894521c97feadc2dca85a6ecd2"
+
+    # Compatibility with fmt 11
+    patch do
+      url "https:github.comMusicPlayerDaemonMPDcommit3648475f871c33daa9e598c102a16e5a1a4d4dfc.patch?full_index=1"
+      sha256 "5733f66678b3842c8721c75501f6c25085808efc42881847af11696cc545848e"
+    end
+
+    # Fix missing include
+    patch do
+      url "https:github.comMusicPlayerDaemonMPDcommite380ae90ebb6325d1820b6f34e10bf3474710899.patch?full_index=1"
+      sha256 "661492a420adc11a3d8ca0c4bf15e771f56e2dcf1fd0042eb6ee4fb3a736bd12"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "75aaa76bf8c7ca80c95031dca7edb2f5d2be3be5ca4497f892991af5f46c84e1"
-    sha256 cellar: :any, arm64_ventura:  "edc7dc059af8a6e12743864c0c28350106562a28a97dd81d47c2be90a7a200e9"
-    sha256 cellar: :any, arm64_monterey: "69357ae80afb04a5280ee467d0fb57b80a4c45e7ee52a34e1900ebb3b0a19ead"
-    sha256 cellar: :any, sonoma:         "9b6fd7a48bca06aedc8b01189f34ede4885b128cd93b44b33a516b850c986dce"
-    sha256 cellar: :any, ventura:        "3264fcec94c16f31feda5ae7811f7afe0ef7577694a6824b62af86360b19e4a4"
-    sha256 cellar: :any, monterey:       "ab6395db650c07787ae9b76d68829abb7c8d651787ee4203b36a70f4f45472b0"
-    sha256               x86_64_linux:   "42f7bdc9e0f5eea39128ac7c3af0f3aac59488bbc58b12ffae15633e3ea38b92"
+    sha256 cellar: :any, arm64_sonoma:   "a0c5ec95e9166169ff6f6cde2f41d7c5af4aba7f96f69c09843706f811c18b02"
+    sha256 cellar: :any, arm64_ventura:  "a53881cb62b2a4a5ffb73c3ada4d68ae81d7b83fdd3bddbcdb0f621289e2ca45"
+    sha256 cellar: :any, arm64_monterey: "79e0919e8c4439882903acb722454e7b90ccf83b3c53c1343db1d2c37eba7484"
+    sha256 cellar: :any, sonoma:         "8e89240bcd8df2bdf4b1c77365f8bde9234b23196ca5886d511e62a4a6202637"
+    sha256 cellar: :any, ventura:        "eecfcd3df5af3e08b03eb11308b95a81188f886f8fd770847254351ba7c3defc"
+    sha256 cellar: :any, monterey:       "89927c46ef03920991d68708b95d4449a2772797e2e88e689b15d915fbcfd169"
+    sha256               x86_64_linux:   "75d0d90d316c773424592fec34f88647029259f8f71b7b3547481bfa0250c2b3"
   end
 
   depends_on "boost" => :build
