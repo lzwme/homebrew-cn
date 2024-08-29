@@ -1,18 +1,18 @@
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
   homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server"
-  url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.23.tgz"
-  sha256 "ee81c05260e29343215d333b0a32f60c6bae2b4a4025e0f4466550a786f523ca"
+  url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.24.tgz"
+  sha256 "377aa579f880c010a9db66a08f8f8a5891576b29716ca05abd738e8eda991c22"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61e17590ca5ad2b1f132773e56dceed0f7e30bccf240f452c81f81f788aae18b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61e17590ca5ad2b1f132773e56dceed0f7e30bccf240f452c81f81f788aae18b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61e17590ca5ad2b1f132773e56dceed0f7e30bccf240f452c81f81f788aae18b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80179d46d6092738668c98f416626147d4733aee9210481645efd121aa81a77d"
-    sha256 cellar: :any_skip_relocation, ventura:        "80179d46d6092738668c98f416626147d4733aee9210481645efd121aa81a77d"
-    sha256 cellar: :any_skip_relocation, monterey:       "80179d46d6092738668c98f416626147d4733aee9210481645efd121aa81a77d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95b38c618c90a8a395bb8c5b767588e4f878b0db923a66b3b48a36c8b4544c80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d83f7af6f855d86debeb06e8b6061d569350f9a0aaa23423a3f13621c4c791a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d83f7af6f855d86debeb06e8b6061d569350f9a0aaa23423a3f13621c4c791a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d83f7af6f855d86debeb06e8b6061d569350f9a0aaa23423a3f13621c4c791a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d2642d096da519939bfb387f2b10176af0ac866161eccc4ecd9580ea029244c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2642d096da519939bfb387f2b10176af0ac866161eccc4ecd9580ea029244c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2642d096da519939bfb387f2b10176af0ac866161eccc4ecd9580ea029244c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "524306dd0da5200a7f463025766be01a5a1793a8e3784ae1a351816bcd72170f"
   end
 
   depends_on "node"

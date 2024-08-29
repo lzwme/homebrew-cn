@@ -7,13 +7,14 @@ class GoAT121 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "753f1a7914bc53660aa8625690faedfe243e1dc0026d0265985321598e188386"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e70be09433f39ccefc348359ddc317acc74fca91bdfef36be59e07aef4d014f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c49b9a80d8d0e33df0de46859cf7cc89e27343d0ba7f38d09ffeab8dbb10549"
-    sha256 cellar: :any_skip_relocation, sonoma:         "76bfebd5a396fde119f4046af3d435eb28eac3974475f915e132922502e628b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e259f4ba9faf08f6816a32a5404de6fa17f7de93e85de7a12dfdf2a22f1eab6"
-    sha256 cellar: :any_skip_relocation, monterey:       "10591630d63b94757b26c708787b81700ddfc5d5c44280e869a7c8c1cf21574a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e18ce9e4b70b577f4b87a65b18d27858cfa9aa4886a71626013598050a4a1806"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3757ac40700cd4d517029a65b116d6f77566a6a94c40c4596fe1260197b0a36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b87a776feaba8fa2acf3ed011a9975889605934252863494074b611bb45bb10"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bcb9ea33785b35225901a94a79dafe6dd966772932afcded0267095ad473555"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b6a9eb12dc8b09ac64043d014e0d2c4eae6d4037eb04d2716910b1915d790846"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae6a9a23003e4d35ec7ad3c49ef019bd5eb601d3c4fbcae22855214b540f48f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc9f41285f92be8306f1d46186042b16daba3ab78977e2cba24ccb72e278d416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e99701f6ff4d7a776573f0a5b98bfd68194cc7abaa5dc28534142a8426a0f1dc"
   end
 
   keg_only :versioned_formula
@@ -25,7 +26,7 @@ class GoAT121 < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOROOT_BOOTSTRAP"] = buildpath/"gobootstrap"
+    inreplace "go.env", /^GOTOOLCHAIN=.*$/, "GOTOOLCHAIN=local"
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
@@ -45,7 +46,17 @@ class GoAT121 < Formula
     rm_r(libexec/"src/runtime/pprof/testdata")
   end
 
+  def caveats
+    <<~EOS
+      Homebrew's Go toolchain is configured with
+        GOTOOLCHAIN=local
+      per Homebrew policy on tools that update themselves.
+    EOS
+  end
+
   test do
+    assert_equal "local", shell_output("#{bin}/go env GOTOOLCHAIN").strip
+
     (testpath/"hello.go").write <<~EOS
       package main
 

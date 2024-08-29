@@ -1,8 +1,9 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https:grafana.com"
-  url "https:github.comgrafanagrafanaarchiverefstagsv11.1.4.tar.gz"
-  sha256 "6573e70deeeb1de8b90c855c0368cc56118d0350706c67313c54372238b56ea0"
+  # TODO: switch to use go1.23 when 11.3.0 is released
+  url "https:github.comgrafanagrafanaarchiverefstagsv11.2.0.tar.gz"
+  sha256 "f1727b5e99183879e30d3ca8393e328f39f6bd8b5a11690e7b6e60081f99bbd9"
   license "AGPL-3.0-only"
   head "https:github.comgrafanagrafana.git", branch: "main"
 
@@ -12,19 +13,18 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "332873b18184ced342369c31dd07727f3ec6fc1299642061e77713dbb7ebfe1d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a18a3eba302cc95f5afe3e9bb0492c81f4194b4c8a7ffabbed81d59dce2bd3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "297b2318b5177781fdfc73a5edd58ecaaa7ff9b05634bf0d90aae2a9709454bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a1ac0c97808edc4a12d92e0192bf4f6fb4de649d9ffd6ac96b111a11fc01b677"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d5255b9f03ee2341c266552ccb287ee6a02253ab9934036e5345b79d50e2218"
-    sha256 cellar: :any_skip_relocation, monterey:       "2977e546fdf06ab1ebef9b1bc94d4d643459f38b550ff5dd17d166c125166720"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a79b2bef6c8dd7362524b6a6a699053b7d4a9b49c9f26aae3a564c2ddaaf85aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "284947cbafa943186e6119c1c1fb8747e934d7ab892be1b2db472d5ba9f5310e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ab238b65f499ccbd852097e562ebc0f03c5b8c4c1b4cf98b2821184d29d973d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "902f90003d932f350fb58645415e811dc6f8dcae641b023c5c9d0adb4be9579e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "12387f6ee94b61e1a327ccec62ad668793fb9669fc09ef3c371776f1201a4fb7"
+    sha256 cellar: :any_skip_relocation, ventura:        "ebcd43744c90d19e495b874610dfa96dd3e324b4e756dbfe16e5ac3976121e74"
+    sha256 cellar: :any_skip_relocation, monterey:       "eb6e9df35d51470a2cd2c13f1d312c3d35cb5a1433afe8875526f240eaebc6a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44b17ca1a0f64c04558baf6176dcfd71e1c35cd6dbf7779f9fd5e16c262c856b"
   end
 
-  # use "go" again when https:github.comgrafanagrafanaissues89796 is resolved and released
+  depends_on "corepack" => :build
   depends_on "go@1.22" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "zlib"
@@ -33,6 +33,9 @@ class Grafana < Formula
     depends_on "fontconfig"
     depends_on "freetype"
   end
+
+  # update yarn.lock
+  patch :DATA
 
   def install
     ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"
@@ -118,3 +121,36 @@ class Grafana < Formula
     listening
   end
 end
+
+__END__
+diff --git ayarn.lock byarn.lock
+index 5f122101..b96cd364 100644
+--- ayarn.lock
++++ byarn.lock
+@@ -3233,7 +3233,7 @@ __metadata:
+   languageName: unknown
+   linkType: soft
+ 
+-"@grafanae2e-selectors@npm:11.2.0, @grafanae2e-selectors@workspace:*, @grafanae2e-selectors@workspace:packagesgrafana-e2e-selectors":
++"@grafanae2e-selectors@npm:11.2.0, @grafanae2e-selectors@npm:^11.0.0, @grafanae2e-selectors@workspace:*, @grafanae2e-selectors@workspace:packagesgrafana-e2e-selectors":
+   version: 0.0.0-use.local
+   resolution: "@grafanae2e-selectors@workspace:packagesgrafana-e2e-selectors"
+   dependencies:
+@@ -3251,17 +3251,6 @@ __metadata:
+   languageName: unknown
+   linkType: soft
+ 
+-"@grafanae2e-selectors@npm:^11.0.0":
+-  version: 11.1.0
+-  resolution: "@grafanae2e-selectors@npm:11.1.0"
+-  dependencies:
+-    "@grafanatsconfig": "npm:^1.3.0-rc1"
+-    tslib: "npm:2.6.3"
+-    typescript: "npm:5.4.5"
+-  checksum: 10010a32e8b562d0da83b008646b9928a96a79957096eed713aa67b227d8ad6055d22cc0ec26f87fd9839cfb28344d0012f49c3c823defc6e91f4ab05ed7d8c465
+-  languageName: node
+-  linkType: hard
+-
+ "@grafanaeslint-config@npm:7.0.0":
+   version: 7.0.0
+   resolution: "@grafanaeslint-config@npm:7.0.0"

@@ -1,20 +1,19 @@
 class Eigenpy < Formula
   desc "Python bindings of Eigen library with Numpy support"
   homepage "https:github.comstack-of-taskseigenpy"
-  url "https:github.comstack-of-taskseigenpyreleasesdownloadv3.8.0eigenpy-3.8.0.tar.gz"
-  sha256 "81b8d6a44fe57c14cb4b99defd0621d862cf416fab70e1f77575446739c91e38"
+  url "https:github.comstack-of-taskseigenpyreleasesdownloadv3.8.2eigenpy-3.8.2.tar.gz"
+  sha256 "a451b2eca0a634d373f4d1457c161d7d30616121f7635f2f38e8ef45e12c1300"
   license "BSD-2-Clause"
-  revision 1
   head "https:github.comstack-of-taskseigenpy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "385b3f359310d6b30436ff208af414686c4c53d3c4028dc1933214136de01758"
-    sha256 cellar: :any,                 arm64_ventura:  "e3f3c2e591767d4378dd7500eeb97fef5bf34a1773b2ae025eef5f1b256de812"
-    sha256 cellar: :any,                 arm64_monterey: "3652654ebd0698be093eed183f08be202b63b1b7716b4a3b46b074af4f02f083"
-    sha256 cellar: :any,                 sonoma:         "da21135cff267d546f9c16a2e200e3566f0247a826c596630e6514949b0cc875"
-    sha256 cellar: :any,                 ventura:        "ab007085d3acecac684dd0cb5210d79d28480f8e659eeb7c591ff30ea5f70f79"
-    sha256 cellar: :any,                 monterey:       "58e0e424a8c4c8bf77935c04a378482ff5525a9b1370c00c1b6db45ca317af57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76064a4c062f5dec430c0f6449d30bbb20db4d93e9259e1fb8d5c8949570dab8"
+    sha256 cellar: :any,                 arm64_sonoma:   "db2a53633c0d8cb9f00d8ca761fbc8843dae81bd5136fba8ee252df6bbcfc700"
+    sha256 cellar: :any,                 arm64_ventura:  "d60c0792dfef385ba10c7ed7ab926ade42f328f8165da3b44cadcb6913a39874"
+    sha256 cellar: :any,                 arm64_monterey: "a84575e8f05826dd10f84cce3100311ffd8a4ca0480df2e49351f4a8ccfc8988"
+    sha256 cellar: :any,                 sonoma:         "8801304c0dcd846230cd5f49366f7a5fe866fd2948294aacdecc4c10204ef077"
+    sha256 cellar: :any,                 ventura:        "7fde61d254cc4ede51d80e5ce8f08b456ef224098b3640601a6cae398e5eba44"
+    sha256 cellar: :any,                 monterey:       "cdc970cac504ccb7b68b6bb25b3c3a8620c53dfff46f1fe7b118d101d0cb21e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82984a0935ae68f3d13bb4da81fefcc709b883f14f367e435f03442ee1f0765d"
   end
 
   depends_on "boost" => :build
@@ -27,6 +26,16 @@ class Eigenpy < Formula
   depends_on "numpy"
   depends_on "python@3.12"
   depends_on "scipy"
+
+  # Support numpy 2, upstream patch PR, https:github.comstack-of-taskseigenpypull496
+  patch do
+    url "https:github.comstack-of-taskseigenpycommit98ec8fe8b2bcdde5b1fe2a85660cd7b7761e9e36.patch?full_index=1"
+    sha256 "fb32fd117fcd7d3bbbc751cb850fa2a8a3121a695f70269bce935352592d9067"
+  end
+  patch do
+    url "https:github.comstack-of-taskseigenpycommitb36cded3d855557bd69f63b215b9c45ecb8b0255.patch?full_index=1"
+    sha256 "ab5f5cfe66d23a1128de4340f49de28487b1ae7082bc48e71b68521fda540e5d"
+  end
 
   def python3
     "python3.12"

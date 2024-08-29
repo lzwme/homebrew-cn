@@ -6,11 +6,11 @@ class Cryfs < Formula
   url "https:github.comcryfscryfsreleasesdownload0.11.4cryfs-0.11.4.tar.gz"
   sha256 "6caca6276ce5aec40bf321fd0911b0af7bcffc44c3cb82ff5c5af944d6f75a45"
   license "LGPL-3.0"
-  revision 6
+  revision 7
   head "https:github.comcryfscryfs.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7f6fd6af116136571fcb54b4bfef29cf57132ccf1f489609eecc277b4384123d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8aa0f0aded58dd01325c470c0411ff61d6b3be3e0e8f99b4c68ae7aa8afbe47e"
   end
 
   depends_on "cmake" => :build

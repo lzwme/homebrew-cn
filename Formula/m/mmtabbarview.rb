@@ -10,6 +10,7 @@ class Mmtabbarview < Formula
     sha256 cellar: :any, arm64_ventura:  "ec634de2a8f60f6d6d09c88cc8ce9293fd94ee07ba2181a7b07a3ee2f29d99ac"
     sha256 cellar: :any, arm64_monterey: "8d752b1a6566f010c2a3c42c7248e56e15ea8c55b80a7cd6b7fc571b67f81912"
     sha256 cellar: :any, arm64_big_sur:  "10a139efa381ffffb4b38609246914c123559b80ceaf16baa96135ae4687ba5b"
+    sha256 cellar: :any, sonoma:         "f6fcf8f6b9069275523c824545c19a90f5dc31170531ea727181476f21d62fc2"
     sha256 cellar: :any, ventura:        "d7029d1e75a1a3e9fe45c92c67203ac9de958bc22b52193753db670484d31540"
     sha256 cellar: :any, monterey:       "83aa65e0eaa1ee040131cda4ec9f9c1447ebd06124b7680c754a6c6ed8786d01"
     sha256 cellar: :any, big_sur:        "a16676e466f896888d2e90cc703dd95919b242bcff90ae84d4c5be05eee3b881"

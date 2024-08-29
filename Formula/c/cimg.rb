@@ -1,8 +1,8 @@
 class Cimg < Formula
   desc "C++ toolkit for image processing"
   homepage "https://cimg.eu/"
-  url "https://cimg.eu/files/CImg_3.4.0.zip"
-  sha256 "d6b8e2ff696750d85d41eb4e6d692676584dfdf32a078caee18708f88789b6a6"
+  url "https://cimg.eu/files/CImg_3.4.1.zip"
+  sha256 "f64a69530664128278382454941b4d9bf8ba7f7f9520e9d22cd98dc535d7fb08"
   license "CECILL-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cimg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "7dff1257405256c85c26e39024064c76c621bbc33edefebb617893db023d65e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da0d47b2cbfaefc4b8f87ee053bb8308d6b9375969ef7ab7902a9c62526f761c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fb31fcec578133ea9c91c0f9849a5fa5c6f7549c5d463078015ef9b1e2df310"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fb31fcec578133ea9c91c0f9849a5fa5c6f7549c5d463078015ef9b1e2df310"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fb31fcec578133ea9c91c0f9849a5fa5c6f7549c5d463078015ef9b1e2df310"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3086d14557b85ca0f0096b4c2f59764cbe11beea6f6ed53209c1f530372abfe0"
+    sha256 cellar: :any_skip_relocation, ventura:        "3086d14557b85ca0f0096b4c2f59764cbe11beea6f6ed53209c1f530372abfe0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3086d14557b85ca0f0096b4c2f59764cbe11beea6f6ed53209c1f530372abfe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fb31fcec578133ea9c91c0f9849a5fa5c6f7549c5d463078015ef9b1e2df310"
   end
 
   fails_with gcc: "5" # C++ 17 is required

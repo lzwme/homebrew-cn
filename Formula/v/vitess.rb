@@ -15,7 +15,8 @@ class Vitess < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff51d7d5e7d198c9deb005f8f6b867298a02796768eb52b785b621716af4598e"
   end
 
-  depends_on "go" => :build
+  # use "go" again after https:github.comvitessiovitessissues16015 is fixed and released
+  depends_on "go@1.22" => :build
   depends_on "etcd"
 
   def install

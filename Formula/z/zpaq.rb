@@ -4,7 +4,7 @@ class Zpaq < Formula
   url "https:mattmahoney.netdczpaq715.zip"
   version "7.15"
   sha256 "e85ec2529eb0ba22ceaeabd461e55357ef099b80f61c14f377b429ea3d49d418"
-  license "Unlicense"
+  license all_of: ["Unlicense", "MIT", :public_domain]
   revision 1
   head "https:github.comzpaqzpaq.git", branch: "master"
 

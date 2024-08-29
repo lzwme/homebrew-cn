@@ -11,13 +11,14 @@ class OpensslAT30 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e2d78bc63785e2f0553bd5c3d29cbb7b37bccb8eb5206ebeabe9bed41976fe9f"
-    sha256 arm64_ventura:  "6b2802363164f7a1385325405f17814854ce9cd6d52fad1b5d4e04cb9832ce06"
-    sha256 arm64_monterey: "9dc5ba94b0f9c96d5532403d702bdf2cb90ec05f4739df27fc2d74978b4e157b"
-    sha256 sonoma:         "74c545025b8a0dd2e7aec990cb6ab1db1fb11b6fd4ba90a56cd2edf28d927bdd"
-    sha256 ventura:        "7ba1aea232331916b0d152c40529cb7093d46e7d3270313cf53374917c8742e6"
-    sha256 monterey:       "99312d5d3e09cfef965ae6bb402437b25d72997f1d7f3075ed67d28a100c0505"
-    sha256 x86_64_linux:   "13e934e942dcdb0a2c581655bb4532531e1e133b8c7908f898c8a10ad3b1fc42"
+    rebuild 1
+    sha256 arm64_sonoma:   "4b9d08a98550729ea96497e779d9439a665da53b1e4f7254a289057c8385d052"
+    sha256 arm64_ventura:  "1ef02be64e1b21bd37602fda904fd62f4eb19a317e905e4e48c19512b00c6826"
+    sha256 arm64_monterey: "06b6b04f2341cbfc62da8629b5a4d2387d32874d9f56b57cc94542c42c4b57c0"
+    sha256 sonoma:         "18753268f80af56418e41cdadbf92d90c812bd568a215d29d8ecca5f755bdb69"
+    sha256 ventura:        "07ade2749aa1aaf20456e56fe4122adb520a1bd11218f68f77037486b9159d95"
+    sha256 monterey:       "85aa26b13c64c1ba59666bedabd0a76b91eafc6877f49c7ace3e495dd0f53252"
+    sha256 x86_64_linux:   "8b749cbdf46421dca06c85c7ed018d2013c81d6c8f517dd54db8c3f9e1f6b972"
   end
 
   keg_only :versioned_formula
@@ -101,6 +102,9 @@ class OpensslAT30 < Formula
     system "make"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
     system "make", "test"
+
+    # Prevent `brew` from pruning the `certs` and `private` directories.
+    touch %w[certs private].map { |subdir| openssldirsubdir".keepme" }
   end
 
   def openssldir

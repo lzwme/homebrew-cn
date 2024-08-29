@@ -3912,7 +3912,7 @@ Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcrafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
@@ -4298,7 +4298,7 @@ Homebrew-homebrew-core/Formula/n/nativefier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nats-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nats-streaming-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/naturaldocs.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/nauty.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nauty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nave.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/navi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/navidrome.rb, Homebrew/homebrew-core, 1
@@ -9706,6 +9706,8 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-fasmartgothic.rb, Homebrew/ho
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-heartserif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neoxihei.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neozhisong.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-simxihei.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-simzhisong.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-gb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-mono-tc.rb, Homebrew/homebrew-cask, 1
@@ -11574,7 +11576,7 @@ Homebrew-homebrew-cask/Casks/l/licensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/liclipse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lidarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lifesize.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightform.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightgallery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lighting.rb, Homebrew/homebrew-cask, 1
@@ -12117,6 +12119,7 @@ Homebrew-homebrew-cask/Casks/n/ncar-ncl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/ndm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neat-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/neo-network-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neo4j.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neofinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neovide.rb, Homebrew/homebrew-cask, 1
@@ -12898,6 +12901,7 @@ Homebrew-homebrew-cask/Casks/r/resolutionator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/responsively.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restream-chat.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/retcon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retro-virtual-machine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retroactive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/retroarch-metal.rb, Homebrew/homebrew-cask, 0

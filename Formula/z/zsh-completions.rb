@@ -3,7 +3,17 @@ class ZshCompletions < Formula
   homepage "https:github.comzsh-userszsh-completions"
   url "https:github.comzsh-userszsh-completionsarchiverefstags0.35.0.tar.gz"
   sha256 "811bb4213622720872e08d6e0857f1dd7bc12ff7aa2099a170b76301a53f4fbe"
-  license "MIT-Modern-Variant"
+  # The maindefault license is the same as Zsh (MIT-Modern-Variant); however,
+  # the majority of completions are BSD-3-Clause. The remainder is mostly MIT.
+  # A few completions use other licenses and are specifically noted below.
+  license all_of: [
+    "MIT-Modern-Variant",
+    "BSD-3-Clause",
+    "MIT",
+    "Apache-2.0", # _cf, _hledger
+    "ISC", # _rfkill
+    "NCSA", # _include-what-you-use
+  ]
   head "https:github.comzsh-userszsh-completions.git", branch: "master"
 
   bottle do

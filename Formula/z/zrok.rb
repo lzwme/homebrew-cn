@@ -3,7 +3,8 @@ class Zrok < Formula
   homepage "https:zrok.io"
   url "https:github.comopenzitizrokarchiverefstagsv0.4.39.tar.gz"
   sha256 "767b3f405d8abfe02197d85aa8e8af822e00afb12deff5342b223843b838e23a"
-  license "Apache-2.0"
+  # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
+  license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do

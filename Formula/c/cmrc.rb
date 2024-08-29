@@ -7,28 +7,31 @@ class Cmrc < Formula
   head "https:github.comvector-of-boolcmrc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83995bde44389b6ca36674aee504fa109bfc893102e95bfbf03d7c20a09347b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "33e1b8facfc9147d12e16f1ea45cb08c26f6e4d9ee5100b298f76a0f01a475ae"
   end
 
   depends_on "cmake" => [:build, :test]
 
   def install
     (share"cmake").install "CMakeRC.cmake"
-  end
-
-  def caveats
-    <<~EOS
-      To use CMakeRC, add
-        #{opt_share}cmake
-      to your `CMAKE_MODULE_PATH`.
-    EOS
+    (share"CMakeRCcmake").install_symlink share"cmakeCMakeRC.cmake" => "CMakeRCConfig.cmake"
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~CMAKE
+    cmakelists = testpath"CMakeLists.txt"
+    cmakelists.write <<~CMAKE
       cmake_minimum_required(VERSION 3.30)
       include(CMakeRC)
     CMAKE
-    system "cmake", ".", "-DCMAKE_MODULE_PATH=#{share}cmake", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build1", "-DCMAKE_MODULE_PATH=#{share}cmake", *std_cmake_args
+
+    cmakelists.unlink
+    cmakelists.write <<~CMAKE
+      cmake_minimum_required(VERSION 3.30)
+      find_package(CMakeRC CONFIG REQUIRED)
+    CMAKE
+
+    system "cmake", "-S", ".", "-B", "build2", *std_cmake_args
   end
 end

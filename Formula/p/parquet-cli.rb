@@ -1,19 +1,20 @@
 class ParquetCli < Formula
   desc "Apache Parquet command-line tools and utilities"
   homepage "https:parquet.apache.org"
-  url "https:github.comapacheparquet-javaarchiverefstagsapache-parquet-1.14.1.tar.gz"
-  sha256 "e187ec57c60e1057f4c91a38fd9fb10a636b56b0dac5b2d25649e85901a61434"
+  url "https:github.comapacheparquet-javaarchiverefstagsapache-parquet-1.14.2.tar.gz"
+  sha256 "7c5c1dfdca534f86d290bfc0c38a0b7d275f320494090d410d6808a0e76d3b93"
   license "Apache-2.0"
-  revision 1
   head "https:github.comapacheparquet-mr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f74dba5e92a00345d9146f6e8ef53fef94ad513baaa3dc09d8f4439dfe04fe31"
+    sha256 cellar: :any_skip_relocation, all: "dcebe0fe754f7f0f9929f6243dc152492606f5dd2020c2a6f193e4350818681a"
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  # Try switching back to `openjdk` when the issue below is resolved and
+  # Hadoop dependency is updated to include the fixworkaround.
+  # https:issues.apache.orgjirabrowseHADOOP-19212
+  depends_on "openjdk@21"
 
   def install
     cd "parquet-cli" do
@@ -24,7 +25,7 @@ class ParquetCli < Formula
       (bin"parquet").write <<~EOS
         #!binsh
         set -e
-        exec "#{Formula["openjdk"].opt_bin}java" -cp "#{libexec}*" org.apache.parquet.cli.Main "$@"
+        exec "#{Formula["openjdk@21"].opt_bin}java" -cp "#{libexec}*" org.apache.parquet.cli.Main "$@"
       EOS
     end
 

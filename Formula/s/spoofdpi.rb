@@ -1,19 +1,28 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
   homepage "https:github.comxvzcSpoofDPI"
-  url "https:github.comxvzcSpoofDPIarchiverefstags0.10.12.tar.gz"
-  sha256 "1ef78cc8afaf59216619cfd17b01dcfc554524fe2ee5a8365f239ba3eef63b70"
+  url "https:github.comxvzcSpoofDPIarchiverefstagsv0.10.12.tar.gz"
+  sha256 "c3b4d903a8a210f539727bfb7afa075d4e132a2cd8402481fa55f7a0606217a2"
   license "Apache-2.0"
   head "https:github.comxvzcSpoofDPI.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5b171e4852205d9091fa34f7d526da8ee1810f78d5be4b49ce2ffad7484a2ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5b171e4852205d9091fa34f7d526da8ee1810f78d5be4b49ce2ffad7484a2ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b171e4852205d9091fa34f7d526da8ee1810f78d5be4b49ce2ffad7484a2ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38d8942292cd007b6b61b04006b308a4070162e33b566e9bdeacadd67abda435"
-    sha256 cellar: :any_skip_relocation, ventura:        "38d8942292cd007b6b61b04006b308a4070162e33b566e9bdeacadd67abda435"
-    sha256 cellar: :any_skip_relocation, monterey:       "38d8942292cd007b6b61b04006b308a4070162e33b566e9bdeacadd67abda435"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d69e49e0fdac02583937278a3be200683f5b6e4588db98e1766dc3a2bf07a4c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
+    sha256 cellar: :any_skip_relocation, monterey:       "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0052976ee942e128af65f6bfeb99120e7b58a8c61bb133bf57e48698f9b2f10"
   end
 
   depends_on "go" => :build
@@ -36,7 +45,7 @@ class Spoofdpi < Formula
     pid = fork do
       system bin"spoofdpi", "-system-proxy=false", "-port", port
     end
-    sleep 1
+    sleep 3
 
     begin
       # "nothing" is an invalid option, but curl will process it
