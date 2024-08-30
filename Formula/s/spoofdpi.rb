@@ -1,8 +1,8 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
   homepage "https:github.comxvzcSpoofDPI"
-  url "https:github.comxvzcSpoofDPIarchiverefstagsv0.10.12.tar.gz"
-  sha256 "c3b4d903a8a210f539727bfb7afa075d4e132a2cd8402481fa55f7a0606217a2"
+  url "https:github.comxvzcSpoofDPIarchiverefstagsv0.11.1.tar.gz"
+  sha256 "ebeb8c23b5c4c9b71023d893bbd29ff3211246236144fe3f6032ac31437d79a1"
   license "Apache-2.0"
   head "https:github.comxvzcSpoofDPI.git", branch: "main"
 
@@ -15,14 +15,13 @@ class Spoofdpi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b78611ee0585f1fc10af5030d7ca961b33ce93e177b086a55e851d8b1d7a58a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "81edc2ceaf186955d567cbd6226ad03a8998ac427ce53898d048f7e36a30e2fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0052976ee942e128af65f6bfeb99120e7b58a8c61bb133bf57e48698f9b2f10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "762180daee81677a556b92cc7e94021194d764602fe6ffba853055c0c5ff1257"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "762180daee81677a556b92cc7e94021194d764602fe6ffba853055c0c5ff1257"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "762180daee81677a556b92cc7e94021194d764602fe6ffba853055c0c5ff1257"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e5fd98f245afb90d314524e54935c14e3d6af174182bdc61db4b9ff053e7cec"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e5fd98f245afb90d314524e54935c14e3d6af174182bdc61db4b9ff053e7cec"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e5fd98f245afb90d314524e54935c14e3d6af174182bdc61db4b9ff053e7cec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dfad16d6e1fc587981508e5652d0b19a3658a3a5f0e68a61928d795cd5d8a7f"
   end
 
   depends_on "go" => :build

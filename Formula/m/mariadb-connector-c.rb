@@ -1,9 +1,9 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https:mariadb.orgdownload?tab=connector&prod=connector-c"
-  url "https:archive.mariadb.orgconnector-c-3.3.10mariadb-connector-c-3.3.10-src.tar.gz"
-  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.3.10-src.tar.gz"
-  sha256 "fb156c40147d375ba7ce85d554a67ce4080b2aeb523c6438030f6fe4d680378b"
+  url "https:archive.mariadb.orgconnector-c-3.4.1mariadb-connector-c-3.4.1-src.tar.gz"
+  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.1-src.tar.gz"
+  sha256 "0a7f2522a44a7369c1dda89676e43485037596a7b1534898448175178aedeb4d"
   license "LGPL-2.1-or-later"
   head "https:github.commariadb-corporationmariadb-connector-c.git", branch: "3.3"
 
@@ -23,13 +23,13 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9fecdeb4de3fca9352714ef3da8d1a3e39f24c27cc5dcce3f96af7dae2347a4d"
-    sha256 arm64_ventura:  "301289e2a7caef0989327d7fee7c421b5f2ef939cac8bc179fc605ce21c78d88"
-    sha256 arm64_monterey: "4b01573be81162ac4c70a04d2a7095d72a3b9566d036f167e8ac0b7273b2a756"
-    sha256 sonoma:         "94b265528bf4942c59609605a3012972262c2a98b95d50da90d8fa6d097b07c3"
-    sha256 ventura:        "667256ba3261c68d6b9800695cfbdea41d2c013d1704a73b4d8554b9f5ab0e12"
-    sha256 monterey:       "bbc4cedcf0901e5f98f30245a62ab7a0f7ea5e1d3e10d7e86af678ea6cf2a97e"
-    sha256 x86_64_linux:   "bee14af0524f508a0279615b0351fb082e25aa78a835c973b68e89bb2ee37d7b"
+    sha256 arm64_sonoma:   "9ab49eed7ae6ecd45418141b22d8adaa132e34d017f35f271af537a1e25f0107"
+    sha256 arm64_ventura:  "9372de968ba5aa44d100641b56f5f83776a1a983f407c6cea0825699b59b9e4e"
+    sha256 arm64_monterey: "a3af823c47ba2a1bc560cd2baaed6b55b46c1ea6f88bf9e718e78b91495b56a7"
+    sha256 sonoma:         "ab0d5e5a88633b85c506310c58a6a1708524f6bf193388c1a5908c664b161b19"
+    sha256 ventura:        "184babcbdf95cfa26185cba6a739b4e2cf8202bab863ece1e64a23346b8cf714"
+    sha256 monterey:       "fa37fe897f387a4ede7236b22e45d1009bb28f35ab373a2fb6c20c3e7a0a4ee1"
+    sha256 x86_64_linux:   "13cdebe984f4f9e6344d552fda0bd4fb304099becaf1e7918140220d87de8b45"
   end
 
   depends_on "cmake" => :build

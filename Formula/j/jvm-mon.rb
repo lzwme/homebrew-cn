@@ -22,6 +22,10 @@ class JvmMon < Formula
 
   depends_on "openjdk@8"
 
+  on_macos do
+    depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
+  end
+
   def install
     rm(Dir["bin*.bat"])
     libexec.install Dir["*"]

@@ -1,9 +1,9 @@
 class Nwchem < Formula
   desc "High-performance computational chemistry tools"
   homepage "https:nwchemgit.github.io"
-  url "https:github.comnwchemgitnwchemreleasesdownloadv7.2.2-releasenwchem-7.2.2-release.revision-74936fb9-src.2023-11-03.tar.xz"
-  version "7.2.2"
-  sha256 "037e8c80a946683d10f995a4b5eff7d8247b3c28cf1158f8f752fd2cb49227c5"
+  url "https:github.comnwchemgitnwchemreleasesdownloadv7.2.3-releasenwchem-7.2.3-release.revision-d690e065-src.2024-08-27.tar.xz"
+  version "7.2.3"
+  sha256 "7788e6af9be8681e6384b8df4df5ac57d010b2c7aa50842d735c562d92f94c25"
   license "ECL-2.0"
 
   livecheck do
@@ -13,14 +13,13 @@ class Nwchem < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_sonoma:   "3abde846447d77e53b52cc25c22a526f6aeaa05ba6ea50aea0071076b2c0c9e2"
-    sha256                               arm64_ventura:  "13b783dbbe729ec08f3c86d70cbc313c6e3fd48b92427ed11a6723b952620be0"
-    sha256                               arm64_monterey: "1f24264743a058117b4f66b4bf4c4ce3ed4cca904c12d21f0a6596a508bec7ee"
-    sha256 cellar: :any,                 sonoma:         "5f08344628651f052a4eeb75629efd8563c3c80e1cc7b064284ff35200b4ab4b"
-    sha256 cellar: :any,                 ventura:        "a5642c7083957b97c70b2d224e77c6688c4a5924c65879ace1ed04fd83976ceb"
-    sha256 cellar: :any,                 monterey:       "59ebcfc7e40cff5ce8add809d4e3f20bfcd3f9be8e3d4041c5e7944d499aae5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b928b2fffea97b3246c994e1fb21d72bed9240eef621231decfcf8c7711dee88"
+    sha256                               arm64_sonoma:   "a75b40c513a6e79f6a32aea09ce30c407df91547a3a515824775ed0597298b4c"
+    sha256                               arm64_ventura:  "d38f1ecff266e151d4b78adcf8f945aea1fa29b81201082199de0d827bb701b8"
+    sha256                               arm64_monterey: "2e5ac17baa07d607585f98883941fcd3ba9126677b006a43d93389a687644ac0"
+    sha256 cellar: :any,                 sonoma:         "1dbfcaa23350cc418b90316f2106a6814a64a1bd86cbec6595b8340a2c337109"
+    sha256 cellar: :any,                 ventura:        "8c3742ebeb7f2febbf03f276a87e44734df280057d2541fa24923870398c1568"
+    sha256 cellar: :any,                 monterey:       "e3313f92d71ef60e66f60a33f181d59b55a023ed74e2fc49ee710af4ac682b61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beb1a8edd7d819e1ba9a02b08242bcda2179a19dacf729c4dfdb0a249567e699"
   end
 
   depends_on "gcc" # for gfortran
@@ -33,27 +32,6 @@ class Nwchem < Formula
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
-
-  # fixes a performance issue due to the fact that homembrew uses OpenMP for OpenBLAS threading
-  # Remove in next release.
-  patch do
-    url "https:github.comnwchemgitnwchemcommit7ffbf689ceba4258cfe656cf979e783ee8debcdd.patch?full_index=1"
-    sha256 "fcfc2b505a3afb0cc234cd0ac587c09c4d74e295f24496c899db7dc09dc7029b"
-  end
-
-  # fix for Py_SetProgramName deprecated by python 3.11
-  # Remove in next release.
-  patch do
-    url "https:github.comnwchemgitnwchemcommitc6851de6a771a31d387e06819fce26b49391b20b.patch?full_index=1"
-    sha256 "558b4f25013b91f29b2740e4d26fa6ebae861260d8ddd169c89aea255b49b7ea"
-  end
-
-  # fix for python 3.13
-  # Remove in next release.
-  patch do
-    url "https:github.comnwchemgitnwchemcommitbc18d20d90ba1fd6efc894558bef2fdacaac28a8.patch?full_index=1"
-    sha256 "5432e8b0af47e80efb22f11774738e578919f5f857a7a3e46138a173910269d7"
-  end
 
   def install
     pkgshare.install "QA"
@@ -89,15 +67,7 @@ class Nwchem < Formula
       ENV["LIBXC_INCLUDE"] = Formula["libxc"].opt_include.to_s
       os = OS.mac? ? "MACX64" : "LINUX64"
       system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol", "USE_MPI=Y"
-      cd "tools" do
-        system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
-      end
-      mkdir_p "..bin#{os}"
-      system ENV.cc, "configdepend.c", "-o", "..bin#{os}depend.x"
-      system "make", "USE_INTERNALBLAS=1", "deps_stamp", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
-      ENV["QUICK_BUILD"] = "1"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
-      ENV.delete("QUICK_BUILD")
       bin.install "..bin#{os}nwchem"
       pkgshare.install "basislibraries"
       pkgshare.install "basislibraries.bse"

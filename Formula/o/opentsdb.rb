@@ -27,6 +27,10 @@ class Opentsdb < Formula
   depends_on "lzo"
   depends_on "openjdk@11"
 
+  on_macos do
+    depends_on arch: :x86_64 # openjdk@8 (needed to build) is not supported on ARM
+  end
+
   def install
     with_env(JAVA_HOME: Language::Java.java_home("1.8")) do
       ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"

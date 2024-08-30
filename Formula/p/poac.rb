@@ -36,9 +36,14 @@ class Poac < Formula
 
   fails_with gcc: "11" # C++20
 
+  # Allow usage of fmt 11
+  # https:github.compoac-devpoacpull975
+  patch do
+    url "https:github.compoac-devpoaccommite38d0c542538204b7e0522d07c65d0c787cb4eb9.patch?full_index=1"
+    sha256 "b1456f819f8079d6e051c95ec7b43dfc42d8f5998e7521e6534047cd2348638e"
+  end
+
   def install
-    # Allow usage of fmt 11
-    inreplace "Makefile", "fmt < 11.0.0", "fmt < 12.0.0"
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
     system "make", "RELEASE=1", "PREFIX=#{prefix}", "install"
   end

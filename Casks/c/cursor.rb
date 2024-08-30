@@ -1,9 +1,9 @@
 cask "cursor" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.40.1,2408245thnycuzj"
-  sha256 arm:   "63248e551c09c12e73e4b5a16a40a9a10510d95d7ec8d835babdf33a45adfc87",
-         intel: "0e928323848838b384f0348dda85bca1a52b6188051b00a3c42f2b6ad9482613"
+  version "0.40.3,240829epqamqp7h"
+  sha256 arm:   "de5e964cdd4597969fbd0441515c4683477db8c3f64a1c03472a2a990b241ad6",
+         intel: "824b7b6ed69958ec40e81aafdabf469ad8fa38d43c831b7f9f4e0d45e3501a28"
 
   url "https://download.todesktop.com/230313mzl4w4u92/Cursor%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}-mac.zip",
       verified: "download.todesktop.com/230313mzl4w4u92/"
@@ -26,7 +26,7 @@ cask "cursor" do
   depends_on macos: ">= :catalina"
 
   app "Cursor.app"
-  binary "#{appdir}/Cursor.app/Contents/Resources/app/bin/cursor"
+  binary "#{appdir}/Cursor.app/Contents/Resources/app/bin/code", target: "cursor"
 
   zap trash: [
     "~/.cursor",

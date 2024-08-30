@@ -1,19 +1,19 @@
 class Cyctl < Formula
   desc "Customizable UI for Kubernetes workloads"
   homepage "https:cyclops-ui.com"
-  url "https:github.comcyclops-uicyclopsarchiverefstagsv0.9.1.tar.gz"
-  sha256 "83ad0e9db37065452e27991c8af00faba2532f67900f003b6c2a2bd7e896baba"
+  url "https:github.comcyclops-uicyclopsarchiverefstagsv0.10.0.tar.gz"
+  sha256 "dbd10c95c903729d9605cac8fe713b96f5d1a11f24a526fef99e65cafbc70fb9"
   license "Apache-2.0"
   head "https:github.comcyclops-uicyclops.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "952bd85443b83b07d5cba403ad36dea3130bee9bcaa9799b9dc7634905911201"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "952bd85443b83b07d5cba403ad36dea3130bee9bcaa9799b9dc7634905911201"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "952bd85443b83b07d5cba403ad36dea3130bee9bcaa9799b9dc7634905911201"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f21eb0b047b37edbd933a740842e3cee68dd64b716e4f0f61743f464153dbdf3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f21eb0b047b37edbd933a740842e3cee68dd64b716e4f0f61743f464153dbdf3"
-    sha256 cellar: :any_skip_relocation, monterey:       "f21eb0b047b37edbd933a740842e3cee68dd64b716e4f0f61743f464153dbdf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc84c101ac9548d99654289816e1c08f36a6e9aa6dc59f6adf0bb24bcc54597a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "281d43f5e69e60389ec9204f5eac6a3984505aa27de978a057a82732feae5a09"
+    sha256 cellar: :any_skip_relocation, ventura:        "281d43f5e69e60389ec9204f5eac6a3984505aa27de978a057a82732feae5a09"
+    sha256 cellar: :any_skip_relocation, monterey:       "281d43f5e69e60389ec9204f5eac6a3984505aa27de978a057a82732feae5a09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a9a03bda0fcacd68056dde6786c2fe23b60c6fca434e3260f1635b836559e67"
   end
 
   depends_on "go" => :build

@@ -21,8 +21,13 @@ class Pygobject3 < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+
+  depends_on "cairo"
+  depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "py3cairo"
+
+  uses_from_macos "libffi"
 
   def pythons
     deps.map(&:to_formula)

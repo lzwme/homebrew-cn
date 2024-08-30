@@ -3,7 +3,7 @@ class Teleport < Formula
   homepage "https:goteleport.com"
   url "https:github.comgravitationalteleportarchiverefstagsv14.3.3.tar.gz"
   sha256 "c30cefedae3df3cacef78e385a369773820f9ed00432b3c1bd12b0026b01f144"
-  license "AGPL-3.0-or-later"
+  license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https:github.comgravitationalteleport.git", branch: "master"
 
   # As of writing, two major versions of `teleport` are being maintained
@@ -27,7 +27,7 @@ class Teleport < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "906b35b2c7dcc5bed2b1a9897b2464b113ba6c568340f3a193cfc665f041831a"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.22" => :build
   depends_on "pkg-config" => :build
   depends_on "yarn" => :build
   depends_on "libfido2"

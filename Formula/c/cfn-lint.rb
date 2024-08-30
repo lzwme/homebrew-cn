@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackagesf96178e4c6d7f88b8f155d5612008c2e6bbcd8b0d1ccf5ebcc4ba3d2211eb938cfn_lint-1.11.0.tar.gz"
-  sha256 "4e276e28df09a0e4a521c544ed4ded61c899c747095d9d46d7df6f5ab9ead171"
+  url "https:files.pythonhosted.orgpackages61a68bf3b64fe811e6d11d943e5a45fec2c1620fe0f208f7d9a4ce85d9225ae4cfn_lint-1.11.1.tar.gz"
+  sha256 "676ce33b3ef37a2d18adc6c931ed87486b4d6b728e6fe11198c7e56bb4be1234"
   license "MIT-0"
 
   livecheck do
@@ -13,13 +13,13 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e5e6f384f63a8e52fea7deb5f0900636b290a2adad7877a946eb11757162070e"
-    sha256 cellar: :any,                 arm64_ventura:  "d1f888f0ad48dc15332d1fe09e59f6d7826e4c3c9f98b36292482ee8a2b76b89"
-    sha256 cellar: :any,                 arm64_monterey: "1240d13feb9eb604c205dc2d001cd92d86e02cb87aeadb0c6be928a32278e7e2"
-    sha256 cellar: :any,                 sonoma:         "6c156aae2ddface73d5ef53a99162fc4ba623e115584524101512ced3ca29a8f"
-    sha256 cellar: :any,                 ventura:        "95a84a9d2bb5b0c82afbec394ee8bf0252a2604dc94df23487f66a835220aa76"
-    sha256 cellar: :any,                 monterey:       "0acd8db015c42cd77f841b2e3268636339038c82e5bba69b0e022777ab1d5a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "828cb8f7c59f0978d63377e63c96b766bd6023fe865b44ac1194b38c5adcebc9"
+    sha256 cellar: :any,                 arm64_sonoma:   "963fbf6b469aa567947ace2daab49a813cf570c122f8060cd832ad5de68ed155"
+    sha256 cellar: :any,                 arm64_ventura:  "d38c8e5d142c31956eb30a6083e1a1caf79ac314d289c7799aeecf55b0fe5047"
+    sha256 cellar: :any,                 arm64_monterey: "060edf96e909d6174bf337f9739b35ea387548fa38dccbd153450192f57fe9f2"
+    sha256 cellar: :any,                 sonoma:         "f69b584a189a6fb683119d8d7af5c6b88bc47e0edceac3109ca03e5ec554c837"
+    sha256 cellar: :any,                 ventura:        "f4dd1387e89a437057a03886ffada49262d3e4499dd80916228d43f8bf033d19"
+    sha256 cellar: :any,                 monterey:       "62675c91a0c457a53249458ef3f48d66599122df824db5d8b8b044fd2f359e37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc93f9f1631e5c926b2820699d4b4d878f0765a29228e394fbc122c2f3f0cb8f"
   end
 
   depends_on "rust" => :build
@@ -42,13 +42,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages59d295729dcca737eccb19bfefdd9a2fa89beb9263e84e9543163349f7007090boto3-1.35.7.tar.gz"
-    sha256 "05bd349cf260ba177924f38d721e427e2b3a6dd0fa8a18fa4ffc1b889633b181"
+    url "https:files.pythonhosted.orgpackages916439a9c9c490ad4201a88a2f3339286eedb9200cf4868b3917c002aef02233boto3-1.35.8.tar.gz"
+    sha256 "b9587131372a808bf6f99c5ed8b11be55cd113261cc3b437a917b4acc6c30bfe"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesd12f9da463c355b1f744223383c8efc817a6db1789341a842cfdbf1522840684botocore-1.35.7.tar.gz"
-    sha256 "85e4b58f2c6e54dfbf52eaee72ebc9b70188fd1716d47f626874abadcee45512"
+    url "https:files.pythonhosted.orgpackages00cd7d9250eb9734ce3c220178a63ad87ae4dd8019c1c48d48a7f014b84b9eadbotocore-1.35.8.tar.gz"
+    sha256 "4b820cf680ab5d778bd2fe4feeef1ff8a2b96d5c535d4638ab30f703ade282f8"
   end
 
   resource "jmespath" do

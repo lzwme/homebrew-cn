@@ -1777,6 +1777,7 @@ Homebrew-homebrew-core/Formula/f/findomain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/findutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/firebase-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/firefly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/firefoxpwa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fisher.rb, Homebrew/homebrew-core, 1
@@ -7690,7 +7691,7 @@ Homebrew-homebrew-cask/Casks/c/caldigit-docking-utility.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/c/caldigit-thunderbolt-charging.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calendar-366.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calhash.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/calibre.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/calibre.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/calibrite-profiler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/calmly-writer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/camed.rb, Homebrew/homebrew-cask, 0
@@ -12490,6 +12491,7 @@ Homebrew-homebrew-cask/Casks/p/phoenix-slides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/photoninja.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photosrevive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/photostickies.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photosweeper-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photosync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photozoom-pro.rb, Homebrew/homebrew-cask, 0
@@ -14078,6 +14080,7 @@ Homebrew-homebrew-cask/Casks/x/xiv-on-mac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xld.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xliff-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xlplayer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xmenu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmind@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xmplify.rb, Homebrew/homebrew-cask, 0

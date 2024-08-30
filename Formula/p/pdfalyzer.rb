@@ -3,19 +3,19 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https:github.commichelcrypt4d4muspdfalyzer"
-  url "https:files.pythonhosted.orgpackages3247d3a9c54a82c38fe33ca13a9e0264024986028773990028eea7a774481703pdfalyzer-1.14.10.tar.gz"
-  sha256 "49b641438dc5d3731d66ca478f4b781e5dcbf98569c25613453c92531aeeb08a"
+  url "https:files.pythonhosted.orgpackages0ab57448e055f672565654e07658fd5dad471d92542ae76a06d844d45f696503pdfalyzer-1.15.1.tar.gz"
+  sha256 "285bb60026c54a68215c795dc4809fed0f7640ae51796f411dbf80afb0ed486b"
   license "GPL-3.0-or-later"
   head "https:github.commichelcrypt4d4muspdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5be32900ac5dc375d046b0269d280ec5f81efe95f0e2c6569590b8af2dcd1869"
-    sha256 cellar: :any,                 arm64_ventura:  "ab9f85d274eb9bc915aa99095c6377e8c0dcf27d437ced9440a6647444049fa6"
-    sha256 cellar: :any,                 arm64_monterey: "31b83f8119631af150adb171eaa0edf14d9ccb6a2a8813344f5e6a00e9b0f680"
-    sha256 cellar: :any,                 sonoma:         "b688140e012d49f1b17196dec0ca874eaba9b0ffa10d1186050d565610ce8663"
-    sha256 cellar: :any,                 ventura:        "48eaf3e9220ac8e166c73851513b71bf384f70a0c8260a51282c6708987131a4"
-    sha256 cellar: :any,                 monterey:       "3f672ec4efdf5ce1b0553be6f2082afc2ca71f42dc01b82cad97d17543615e9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe4260009dc7e902f8d0fb56722e100b7600dc50a56fd97bfc4ee8d30a6963b3"
+    sha256 cellar: :any,                 arm64_sonoma:   "769a7f3e5d2bb0c4b03eac205437a0ae39d6c06de36e30b68bb5952bc886098b"
+    sha256 cellar: :any,                 arm64_ventura:  "7c0c18a35de44b5dfb9f1e913d8451b48fe1232a36d67c3e13f0524ae442d8aa"
+    sha256 cellar: :any,                 arm64_monterey: "fbeed5a920cd5278398252fd1ff8761bdcec1c3125dca545521d37837acfaf18"
+    sha256 cellar: :any,                 sonoma:         "18d4d0f43361089bf478521663063e1b15334c03ca81b6a375025473dae110f4"
+    sha256 cellar: :any,                 ventura:        "94f09ecf0ca2ef12d2499608f23fb03f61ecc04267abfa1704ff60e01f3ed8a6"
+    sha256 cellar: :any,                 monterey:       "163edfe4ca76a679d4df476f44366910a310e412d8cb634c7c690ee7d23e2f58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a25f8d4f994fb53fb7a47706be636ae35112389e05862393d2bb42c07c4e09b1"
   end
 
   depends_on "python@3.12"
@@ -35,14 +35,9 @@ class Pdfalyzer < Formula
     sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"
   end
 
-  resource "deprecated" do
-    url "https:files.pythonhosted.orgpackages92141e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232Deprecated-1.2.14.tar.gz"
-    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
-  end
-
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pypdf2" do
@@ -70,14 +65,9 @@ class Pdfalyzer < Formula
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
-  resource "wrapt" do
-    url "https:files.pythonhosted.orgpackages954c063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0awrapt-1.16.0.tar.gz"
-    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
-  end
-
   resource "yara-python" do
-    url "https:files.pythonhosted.orgpackages627b81789fafcc6167fe8cfd94b3813c0971a083cde142731213007e2456f35byara-python-4.5.0.tar.gz"
-    sha256 "4feecc56d2fe1d23ecb17cb2d3bc2e3859ebf7a2201d0ca3ae0756a728122b27"
+    url "https:files.pythonhosted.orgpackages2f3a0d2970e76215ab7a835ebf06ba0015f98a9d8e11b9969e60f1ca63f04ba5yara_python-4.5.1.tar.gz"
+    sha256 "52ab24422b021ae648be3de25090cbf9e6c6caa20488f498860d07f7be397930"
   end
 
   resource "yaralyzer" do

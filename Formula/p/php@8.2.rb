@@ -2,9 +2,9 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.2.22.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.22.tar.xz"
-  sha256 "8566229bc88ad1f4aadc10700ab5fbcec81587c748999d985f11cf3b745462df"
+  url "https:www.php.netdistributionsphp-8.2.23.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.23.tar.xz"
+  sha256 "81c5ae6ba44e262a076349ee54a2e468638a4571085d80bff37f6fd308e1d8d5"
   license "PHP-3.01"
 
   livecheck do
@@ -13,13 +13,13 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "38ed71cef858bce7cec469bfeeb24d94c120fdf4570ac4f6ead8a40de86477ae"
-    sha256 arm64_ventura:  "f9fa7942441d459e5813ba2665cd6195f9152e3c8a5ae9faff224512c001f7bb"
-    sha256 arm64_monterey: "7e21739e03f44e6f37719aa3304eb27c6f1f001e3dac7dac2bcdbdc0ee6b6cd7"
-    sha256 sonoma:         "0292176091d1bf75f3af5ea2c8d0821aaec8fc65ceb7dfdd8f8afdc12d94fc0a"
-    sha256 ventura:        "e1886532819e31afdac4b7cc9e3e8fc86af1712bb8a7daa6f4256091bb1fcf29"
-    sha256 monterey:       "73835cf81a1ff2d8044a42c35994c1d64c47718935d378b637f62774cf3cd628"
-    sha256 x86_64_linux:   "02755d79b5d09e41f038c63f6ea7be828f83f82224ccaa01c04144e65b8f7953"
+    sha256 arm64_sonoma:   "b4ffb93de47ac00e233b2a7e32dc40448df1455f635e5b2b2e4d33a52503fd97"
+    sha256 arm64_ventura:  "fe72c30421c49a2a09b35300490e63683128d658b74785c992d2499e787dbbab"
+    sha256 arm64_monterey: "4d4b334ead061ac33d3dd357b822ac295275ff1963e6badd380c92552af3db2a"
+    sha256 sonoma:         "2d5478b755965e5c184844054db9d77b63693ce61597879d000037c5e72521d3"
+    sha256 ventura:        "0333964a5cd32aecf2791c2a681dcf82001fab1b63f26d19bfe78ad1ae065c2c"
+    sha256 monterey:       "1642d242f537464fcca77ba9503ae3fc74691718fb80f7aa1d7175ca6cc1c8e9"
+    sha256 x86_64_linux:   "9a1bf4557907ee4ba438b3cd3410a022d1ce8ee381e0d0aff874e7fc31449af6"
   end
 
   keg_only :versioned_formula

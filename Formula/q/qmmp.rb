@@ -12,8 +12,10 @@ class Qmmp < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "5fdf9499f3a80c471492e03df8a755be67e31799abced5e32542e6a67ef19a78"
     sha256 arm64_ventura:  "6d75b373d7825e6a97716f97a274608920ff7aa81f50973446e8cc5b82bba137"
     sha256 arm64_monterey: "df531f89e2a5b959a6637041378e9da53c0a8f38a6bd2e1bbdb04c073eef4d6c"
+    sha256 sonoma:         "c0c251c58bfb213e98db5ab335cc245ac2c253239461753b361da1e1100c597f"
     sha256 ventura:        "28648897ea50fcc6ef3a119e2c351b6f44e8c503a9906512f6902e2d5c4e2949"
     sha256 monterey:       "48fd7d7f632424e93665d9d894b4c1734aae1d109eb12e8180053d5fecd77c33"
     sha256 x86_64_linux:   "abd12bd0ae508464ea099d7ea64f0813f15e388396cfdcca23e152a5168efbe3"
@@ -64,6 +66,15 @@ class Qmmp < Formula
     depends_on "musepack"
   end
 
+  on_sonoma :or_newer do
+    # Support Sonoma (BSD iconv) as qmmp has an incompatible typedef:
+    # tmpqmmp-20240828-19582-sf4k85qmmp-2.1.9srcqmmpqmmptextcodec.h:28:15:
+    # error: typedef redefinition with different types ('void *' vs 'struct __tag_iconv_t *')
+    #
+    # Issue ref: https:sourceforge.netpqmmp-devtickets1167
+    patch :DATA
+  end
+
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
@@ -109,3 +120,23 @@ class Qmmp < Formula
     system bin"qmmp", "--version"
   end
 end
+
+__END__
+diff --git asrcqmmpqmmptextcodec.h bsrcqmmpqmmptextcodec.h
+index 5242c33..7399c54 100644
+--- asrcqmmpqmmptextcodec.h
++++ bsrcqmmpqmmptextcodec.h
+@@ -21,12 +21,11 @@
+ #ifndef QMMPTEXTCODEC_H
+ #define QMMPTEXTCODEC_H
+
++#include <iconv.h>
+ #include <QByteArray>
+ #include <QStringList>
+ #include "qmmp_export.h"
+
+-typedef void *iconv_t;
+-
+ class QMMP_EXPORT QmmpTextCodec
+ {
+ public:
