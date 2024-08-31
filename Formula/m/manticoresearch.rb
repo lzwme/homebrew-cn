@@ -1,6 +1,6 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
-  homepage "https:www.manticoresearch.com"
+  homepage "https:manticoresearch.com"
   url "https:github.commanticoresoftwaremanticoresearcharchiverefstags6.2.12.tar.gz"
   sha256 "272d9e3cc162b1fe08e98057c9cf6c2f90df0c3819037e0dafa200e5ff71cef9"
   license "GPL-2.0-only" # License changes in the next release and must be removed from formula_license_mismatches
@@ -37,8 +37,6 @@ class Manticoresearch < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
-
-  conflicts_with "sphinx", because: "manticoresearch is a fork of sphinx"
 
   fails_with gcc: "5"
 

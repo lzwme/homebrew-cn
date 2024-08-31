@@ -1,10 +1,9 @@
 class GnomeAutoar < Formula
   desc "GNOME library for archive handling"
   homepage "https:github.comGNOMEgnome-autoar"
-  url "https:download.gnome.orgsourcesgnome-autoar0.4gnome-autoar-0.4.4.tar.xz"
-  sha256 "c0afbe333bcf3cb1441a1f574cc8ec7b1b8197779145d4edeee2896fdacfc3c2"
+  url "https:download.gnome.orgsourcesgnome-autoar0.4gnome-autoar-0.4.5.tar.xz"
+  sha256 "838c5306fc38bfaa2f23abe24262f4bf15771e3303fb5dcb74f5b9c7a615dabe"
   license "LGPL-2.1-or-later"
-  revision 1
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
   # even-numbered minor versions are stable, so we override the default regex
@@ -15,13 +14,13 @@ class GnomeAutoar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "06419877711b70b28bfefab656263799dc2e171385758835c8a3f3fb9c96a383"
-    sha256 cellar: :any, arm64_ventura:  "92031670a7ac7d4e194682d50b5d1e82e8f8649dde19666f51df72c15e6a1f50"
-    sha256 cellar: :any, arm64_monterey: "30c9eba06e7b6aad5c74ef031f6464200d74afa66dc7cf456dad9ad84b5b9b9b"
-    sha256 cellar: :any, sonoma:         "5d4ec86efc0c3643cf9c2928f9c1bd124bc911fdeb591a1f7be94ada8357b510"
-    sha256 cellar: :any, ventura:        "105dd6c94a1b2663cfc9f2f20763530ab2f6de724da58f4023e8297b33b2faa9"
-    sha256 cellar: :any, monterey:       "5604b33340461e53b24bd9e9152356864bb21282605b562c2c2a8214a4bb7994"
-    sha256               x86_64_linux:   "6787a6ab007ee12dccedee1c9be590a1e15d6bac032906b1225cee26cd9d31d1"
+    sha256 cellar: :any, arm64_sonoma:   "dd87d22bf4ee53a96407ff2516c9893ed0e8ed49f22300b166908756fa424092"
+    sha256 cellar: :any, arm64_ventura:  "a3cca1e7e9e0f12e2f25dcbad3698ccbc249e943d0d659225f03631f819bff3a"
+    sha256 cellar: :any, arm64_monterey: "4067fd35e3d4905a49adf80fddd05785b69981e77a0d3ca5d48b55362b837eea"
+    sha256 cellar: :any, sonoma:         "9f4b8685e8bd77328158b651a82d8bf0e746ee94dcab600a8ce8fbc3a695d245"
+    sha256 cellar: :any, ventura:        "07977233fa05e74baadaaf3767fbf16925aa9ea6b8a767491d5820f8fa6fc196"
+    sha256 cellar: :any, monterey:       "6a277a2676b485946d376fa51f6ceed08394b68d3b616d2db8692ad4b982c13e"
+    sha256               x86_64_linux:   "7fbef3923b41a565fb1b76d5cde929366f917d22e0342da607b7d8a15827a8bc"
   end
 
   depends_on "meson" => :build

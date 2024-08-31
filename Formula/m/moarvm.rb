@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
   homepage "https:moarvm.org"
-  url "https:github.comMoarVMMoarVMreleasesdownload2024.07MoarVM-2024.07.tar.gz"
-  sha256 "625241fe1578341f6099784f0ea82a62b8a638855c3b8fa604d6ce9e5024fe29"
+  url "https:github.comMoarVMMoarVMreleasesdownload2024.08MoarVM-2024.08.tar.gz"
+  sha256 "e438ed69854ae2ab5213bd6d41e6a08c1ae14c2d7a5577fea1250f86784bf74b"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4c6554bdc32cd98e00871bee60e427c773a0de141308b27ae2282397aa06857d"
-    sha256 arm64_ventura:  "8a8d69cdd896206c17b064f046323b454b9a2d7ab81b88d065b3437ab1a77389"
-    sha256 arm64_monterey: "624e25cb64bf307167daae1cc1e1d13fdda590a334d346e198346513967ce7d6"
-    sha256 sonoma:         "f4b3e450cd22a28d9d3739d505c6fd2fc21cb3b02b71184c057f4359ab05e965"
-    sha256 ventura:        "bc305ba6beb7e85e4c8ea66565486c5245331745260c24db6642b5d96974b298"
-    sha256 monterey:       "e44a7877ecc17bed11f6684887c1cb5616254180df1029a8fdf763d70c6fe6f5"
-    sha256 x86_64_linux:   "c6950e5f56ccf31ce51d30b3e1639f040fe9d193d0c26d833d154b6f034d6b97"
+    sha256 arm64_sonoma:   "383612941f0990e5e379880b4a75fa61fef3d5181f7e661a1c07665e21437dbd"
+    sha256 arm64_ventura:  "82c13996dd26b2f3b1085375fc33f03dec38d7fd4f139ab4f73556c344cc690a"
+    sha256 arm64_monterey: "0b188acf40dad6c1ce1a78cc5603ede0a4da7f414b9241180ca483f98f3db65e"
+    sha256 sonoma:         "38f811ef661ded6243ef263be1ee5ea700e3016ea8d0edf55f8499124f73bcf7"
+    sha256 ventura:        "29b691440ef0a86f7a86687d802fdb3aa34ffdcb8136ae0f64fc02ef8710a4bf"
+    sha256 monterey:       "93383a14d6e4deeda5225de8b00afa85add0a463587c68b8d3c299d717430f19"
+    sha256 x86_64_linux:   "654e7a52b998c22cba01046af8cc78b20561d0758886535568586b6fa6a1267b"
   end
 
   depends_on "pkg-config" => :build
@@ -32,8 +32,8 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https:github.comRakunqpreleasesdownload2024.07nqp-2024.07.tar.gz"
-    sha256 "ab13f2de962817bfedc971088aa6b54911c424150dc284623444ef64878af07e"
+    url "https:github.comRakunqpreleasesdownload2024.08nqp-2024.08.tar.gz"
+    sha256 "6b9835ee5c0aa9e561cc7cecc846fe496ffe432567407bf0c3c14c3f3a2711a0"
   end
 
   def install

@@ -1,13 +1,13 @@
 class Qrtool < Formula
   desc "Utility for encoding or decoding QR code"
-  homepage "https:sorairolake.github.ioqrtool"
-  url "https:github.comsorairolakeqrtoolarchiverefstagsv0.11.4.tar.gz"
-  sha256 "f783259f13388795b8894d8af661d0c5dea95ee0e7a38460174c56ad305ce7f3"
+  homepage "https://gitlab.com/sorairolake/qrtool"
+  url "https://gitlab.com/sorairolake/qrtool/-/archive/v0.11.4/qrtool-v0.11.4.tar.bz2"
+  sha256 "305c7c9adf5190704fa5777d7fd39e19552365167343e09b6c9829fcc6c87003"
   license all_of: [
     "CC-BY-4.0",
     any_of: ["Apache-2.0", "MIT"],
   ]
-  head "https:github.comsorairolakeqrtool.git", branch: "develop"
+  head "https://gitlab.com/sorairolake/qrtool.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfd094f526c6a3e4f50c3cc1ade4dfe895a335edf4c8e64faeaedd2553357513"
@@ -25,13 +25,13 @@ class Qrtool < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    outdir = Dir["targetreleasebuildqrtool-*out"].first
-    man1.install Dir["#{outdir}*.1"]
+    outdir = Dir["target/release/build/qrtool-*/out"].first
+    man1.install Dir["#{outdir}/*.1"]
   end
 
   test do
-    (testpath"output.png").write shell_output("#{bin}qrtool encode 'QR code'")
-    assert_predicate testpath"output.png", :exist?
-    assert_equal "QR code", shell_output("#{bin}qrtool decode output.png")
+    (testpath/"output.png").write shell_output("#{bin}/qrtool encode 'QR code'")
+    assert_predicate testpath/"output.png", :exist?
+    assert_equal "QR code", shell_output("#{bin}/qrtool decode output.png")
   end
 end

@@ -1,14 +1,16 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https:github.comdafny-langdafnyblobmasterREADME.md"
-  url "https:github.comdafny-langdafnyarchiverefstagsv4.7.0.tar.gz"
-  sha256 "f18f0f92ec00d5ab743bdaf0208fc1487a52e948ca72720b2bbc34374f812ba8"
+  url "https:github.comdafny-langdafnyarchiverefstagsv4.8.0.tar.gz"
+  sha256 "07799a0500bb45a5d57faebe181690a7fe93379706db2904552d236bd539491d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "020a5fb249da8a8ee49cbe96d5da92b7a816be5c7181a0f5bc0e628323601544"
-    sha256 cellar: :any_skip_relocation, monterey:       "706f29051c0fc967745e62f901049e9d5f9b82884d2c7c4aa0b1354171cdf7a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0358dbc8e9c76c3cc0100212424cfc65cf5e4b872ba28e2c1ca5a7c0a11d0e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b98343389c54f29a8bc88b71594a17addaa4c82bf0fe2f7b0e2e94a587e5b655"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36f6d698947d7dbee1c03156a329f53c4770d1038fc27d1a4b7172b5c92764d6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "abd78e9a8d15d585793a79039ee659beeef8aefb93144af098916829391797a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f98c4550316286c747157c067a608dab0a3dec08062fe87eb5fcc0c610c1882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37db21d113724ac2c4d1747894b88bd82e633bde21a7cd49bbb40ad914cf2709"
   end
 
   # Align deprecation with dotnet@6. Can be undeprecated if dependency is updated.

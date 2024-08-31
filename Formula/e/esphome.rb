@@ -3,35 +3,37 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagesb92736fae72bac314116c7dfa098a64ad6a6529aed887c05e711211ae6128e33esphome-2024.7.3.tar.gz"
-  sha256 "fb1b9675e552c83f24984794f134c327283ea3801496ab5e36fcc9d2e1063595"
+  url "https:files.pythonhosted.orgpackagesb2c488d415f62709e19c6ec33211b04e38c5420e0d8bef11b943c0132698a1b7esphome-2024.8.1.tar.gz"
+  sha256 "b5cbc253879019e14c13ebb5a25e5e392d6899a37211d3b4b02be29843b8f437"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "09991b3f42e8690935bb1fd689fd7ec1d77335aac43ebd5950090e8b91a3e810"
-    sha256 cellar: :any,                 arm64_ventura:  "768f3829ee1f302020d15de1c10fbba2d52d4b50a33c8dc7602bd57e5037d3e5"
-    sha256 cellar: :any,                 arm64_monterey: "99fd793cde9cb76db66c6f9da4ef7863687e54cec061c05e1f1142b4a000515d"
-    sha256 cellar: :any,                 sonoma:         "fce19547e527c1ed50845c3ba8d5f0839ef896a4c54acb1f3d8345241eb279b6"
-    sha256 cellar: :any,                 ventura:        "694c17d0dff9719a985f7824db557fd6b2db600c0459cb70a38e7a7e104aa0d8"
-    sha256 cellar: :any,                 monterey:       "d867c32aebdb027634fa71263c4aee23487b6ebef0681a93d15146a0b9620570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "944f91c91226da8e9ce3d00076d2ce17321ddf79ebf5f2dbc08a5f8874393720"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "024cfbb04340294733fa7e9c61b2a2ba9b34005af4ded08bc1477f8b053927b6"
+    sha256 cellar: :any,                 arm64_ventura:  "4cd88af79b89cadf26367294ef76f540e4c213e90a2071231b08c5dcc2e4c561"
+    sha256 cellar: :any,                 arm64_monterey: "56c063c880e8cc8f49791135f7db9bee399bb3f243a188426940bb7ffbc8dc83"
+    sha256 cellar: :any,                 sonoma:         "ba3115697ce3d8340988f351e211b9ccbeedff6765dfc1e1987501a3d8633731"
+    sha256 cellar: :any,                 ventura:        "c52faf9112aedf4bf6a51a5314deb6e7a75d0d41fabb50f3461c0576fa717f6e"
+    sha256 cellar: :any,                 monterey:       "ccb7d460b96b8812c29987dd0e9ea80809d650bed0c4716b48f8b0e1dd2ac162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23c9c28da1c7bd7ec0c9f698583a659c473440a6c9fb02474d23212ec76b5877"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "libmagic"
   depends_on "libyaml"
   depends_on "python@3.12"
 
   uses_from_macos "libffi"
 
   resource "aioesphomeapi" do
-    url "https:files.pythonhosted.orgpackages8e0a7c9e2f285a5d3f6e68c377cfd7ce85ad3f73ce5c133fd48b7a417e555443aioesphomeapi-24.3.0.tar.gz"
-    sha256 "70a341c0a707aa7125a4b679f50b045a10a3c22a1cf90c9e6c81fbeafd082277"
+    url "https:files.pythonhosted.orgpackages894de5b6826e7256abc0783876a382797fd26b632b860eecc61698abb46a52caaioesphomeapi-24.6.2.tar.gz"
+    sha256 "dfde91df6b115cddac95d82ca968847a7f726b2a0d0ecef6cee8c065bdbb701c"
   end
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackages3cc152b8ecc87576f8b06fd5132e3ab8550209c958fb450e6d185b15835da82caiohappyeyeballs-2.3.4.tar.gz"
-    sha256 "7e1ae8399c320a8adec76f6c919ed5ceae6edd4c3672f4d9eae2b27e37c80ff6"
+    url "https:files.pythonhosted.orgpackages2df722bba300a16fd1cad99da1a23793fe43963ee326d012fdf852d0b4035955aiohappyeyeballs-2.4.0.tar.gz"
+    sha256 "55a1714f084e63d49639800f95716da97a1f173d46a16dfcfda0016abb93b6b2"
   end
 
   resource "ajsonrpc" do
@@ -70,8 +72,8 @@ class Esphome < Formula
   end
 
   resource "chacha20poly1305-reuseable" do
-    url "https:files.pythonhosted.orgpackagesc8f5de042f4f0a3580541d173db5bb98988f525e3557651d40f04b132350ca38chacha20poly1305_reuseable-0.12.2.tar.gz"
-    sha256 "378801cc9902d881511a0d1f817f9571a63bf41bf072b0f02d2daab3ae5cf30b"
+    url "https:files.pythonhosted.orgpackagesc1ff6ca12ab8f4d804cfe423e67d7e5de168130b106a0cb749a1043943c23b6bchacha20poly1305_reuseable-0.13.2.tar.gz"
+    sha256 "dd8be876e25dfc51909eb35602b77a76e0d01a364584756ab3fa848e2407e4ec"
   end
 
   resource "charset-normalizer" do

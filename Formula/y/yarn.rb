@@ -6,7 +6,7 @@ class Yarn < Formula
   license "BSD-2-Clause"
 
   livecheck do
-    skip("1.x line is frozen and features/bugfixes only happen on 2.x")
+    skip("1.x line is frozen and features/bugfixes only happen on 2+")
   end
 
   bottle do

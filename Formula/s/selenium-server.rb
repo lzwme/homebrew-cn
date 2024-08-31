@@ -1,8 +1,8 @@
 class SeleniumServer < Formula
   desc "Browser automation for testing purposes"
   homepage "https:www.selenium.dev"
-  url "https:github.comSeleniumHQseleniumreleasesdownloadselenium-4.23.0selenium-server-4.23.1.jar"
-  sha256 "e3439d1d9a7ab671fbf347de8e934b43ab994ce00b012f259ab966e56eada3ef"
+  url "https:github.comSeleniumHQseleniumreleasesdownloadselenium-4.24.0selenium-server-4.24.0.jar"
+  sha256 "aa3bd6e9820a359a54da0cf06836ad42a7555ee13b5235ff60228f637db9bb57"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ee740b6b13d61fb753b91513189239f4cb457246a8ca959fc04056aaff3b4650"
+    sha256 cellar: :any_skip_relocation, all: "9750da5b54f62143f25350eee11aaafb867eace0c784fd1592b5a5ebb49e9cc7"
   end
 
   depends_on "openjdk"

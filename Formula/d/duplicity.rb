@@ -6,15 +6,16 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/c5/a6/99dc9081acdfbbb1d3c8cb557f468e5ac9bbf7b976472cc9e463d427ad30/duplicity-3.0.2.tar.gz"
   sha256 "3822a6c1c3c821a4c39cbbd7db17a41a58b8c41ca70ae1a1d79426bb4c6c0b44"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3c5c4fd6f23d8d6c038f80c007d6ac82309d2d6c4c298a6134634ea66cb8d4f6"
-    sha256 cellar: :any,                 arm64_ventura:  "cf37fb246cacba42b2ea2c7296782b885e2baa25d45a5dd2310625c531c988d8"
-    sha256 cellar: :any,                 arm64_monterey: "a8cf4a02d82334b3ea9316750efaafe703b0c5e5d20e7561a02d570a2104997d"
-    sha256 cellar: :any,                 sonoma:         "163f18db71c35e33d83ff6edfcbbef201ab82917c84b1997eb92d3cdcd275a5e"
-    sha256 cellar: :any,                 ventura:        "20d85583dbc43febc6daaea1b1b39146d85d3edf1567f19fa7e36ecfbee38c5f"
-    sha256 cellar: :any,                 monterey:       "3697ec0cd1c5458a505f966d67c32002a789b8ec165125c9e0198cbc823bd12b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "716681d278548a9e2b9c69ea0f900612832a1ea538b5acaf5d1e8ed27b3f3b87"
+    sha256 cellar: :any,                 arm64_sonoma:   "b02434565f245233da52df8e0e444e44ea8f7391bba667afc161d974a68dfba1"
+    sha256 cellar: :any,                 arm64_ventura:  "f8e0abfa743717a3e856872a5f7a85999ec6706d4bb1f24951095be36344b32a"
+    sha256 cellar: :any,                 arm64_monterey: "9e4cdfe6b8a725ebc3347d7367247533a7350b300dd7cf11c211ccbf5400169f"
+    sha256 cellar: :any,                 sonoma:         "735aee8407aad53ed5488ff79c01624ba843b238c311fba849d5e5f40460e9a1"
+    sha256 cellar: :any,                 ventura:        "fc1507a7b145be8a8abe137cfd39a353975875d6ae7878479d4cce7d4a7548da"
+    sha256 cellar: :any,                 monterey:       "9e157bfc48ea3a104f02a0a2c31d871c87b4c3da66766e4f51f6a86e48519749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92119548be401d3eef241bb8bf67574c319efd3e91554f0da3f8baf06efc86a8"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -395,8 +396,8 @@ class Duplicity < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/54/9a/2a43c5dbf4507f86f7c43cba4195d5e25a81c988fd7b0ea779dfc9c6973f/pyOpenSSL-21.0.0.tar.gz"
-    sha256 "5e2d8c5e46d0d865ae933bef5230090bdaf5506281e9eec60fa250ee80600cb3"
+    url "https://files.pythonhosted.org/packages/5d/70/ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8/pyopenssl-24.2.1.tar.gz"
+    sha256 "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95"
   end
 
   resource "pyparsing" do

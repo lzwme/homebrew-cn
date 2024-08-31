@@ -2,8 +2,8 @@ class PysideAT2 < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.14-src/pyside-setup-opensource-src-5.15.14.tar.xz"
-  sha256 "32651194f6a6b7bce42f04e68b1401ad2087e4789a4c8f3fb8649e86189c6372"
+  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.15-src/pyside-setup-opensource-src-5.15.15.tar.xz"
+  sha256 "21d6818b064834b08501180e48890e5fd87df2fb3769f80c58143457f548c408"
   # NOTE: We omit some licenses:
   # 1. LICENSE.COMMERCIAL is removed from "OR" options as non-free
   # 2. GFDL-1.3-only is only used by not installed docs, e.g. sources/{pyside2,shiboken2}/doc
@@ -19,12 +19,12 @@ class PysideAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4a4186d3642ff5026bdadb14ffc8e654acdf1de87831ad4835462b068bcd529c"
-    sha256 cellar: :any, arm64_ventura:  "e3b1b3030c94f991c484106f984ecfbbcfdeac968e43c5a76bcb60da5742b7c1"
-    sha256 cellar: :any, arm64_monterey: "05d245e06a0a25147ef681d960ffc093c9a7c7eb57b55e826b813b228c48f0c5"
-    sha256 cellar: :any, sonoma:         "50fe45e8fd29bdfb04898569c0782ca75760cf8d99ef9b926a25e9ae5c0d7524"
-    sha256 cellar: :any, ventura:        "7f0d51bb6c9f98e7559df7ab5569be35e0c17969cc639bea9ad852012ad485d6"
-    sha256 cellar: :any, monterey:       "560ae9c2dc98f245e43f87be4a9b4bbc750c2579d345c7d324594a00db3f574b"
+    sha256 cellar: :any, arm64_sonoma:   "2fb5231ea5c60d393c95fbb817afbc8d5bebdc1b4ad4aae8e66e9de65bb7cc14"
+    sha256 cellar: :any, arm64_ventura:  "15e1cc87d80bf3dc621fc99c8bee665eae023787c0fb0a050c01e57b3f21ceb4"
+    sha256 cellar: :any, arm64_monterey: "dea75c16bcc8c75a9873e4a6caa2d20c9c57b7872e631e98d63bd8f6f8b9809d"
+    sha256 cellar: :any, sonoma:         "c82515db47d91c7ba4f06db606e5c2fc3c898e7cda3cab42c6e6c1682840338d"
+    sha256 cellar: :any, ventura:        "9850e91ac91f3608fccfb80b0123a1e2afc9fe5e7d68e7bf041116f5af9c6752"
+    sha256 cellar: :any, monterey:       "64a5884f604c5049759a44c36680928be652626ce7173bcd6c9bcbd04964ca49"
   end
 
   keg_only :versioned_formula

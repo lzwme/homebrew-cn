@@ -1,8 +1,8 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https:hurl.dev"
-  url "https:github.comOrange-OpenSourcehurlarchiverefstags5.0.0.tar.gz"
-  sha256 "6d19d1b0ec7de44f33206b0dfd6c1c76ae61741fe9fcddd979359e061ed6f0e5"
+  url "https:github.comOrange-OpenSourcehurlarchiverefstags5.0.1.tar.gz"
+  sha256 "2b5a42fc95b74c876257a35d13b603e06f1f2c58e0ca44a2c0bb23d023227c29"
   license "Apache-2.0"
   head "https:github.comOrange-OpenSourcehurl.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Hurl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25088d0ea6e8f3e2650d12dbbde26b68ebf48039c8d6824c570671acc92b98d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e72b7c1580fe6fdc4ffcef4001ff50a7fef4c0aa691786aa63ce63d6f3df0757"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "936f829627e444b6a9ad547303eafdbefb6bad35f89166bdb225b556f8b0549a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6aece89409d1cabf15586f107de460163e4d6b8e165e68169b1c92243985cca"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c035d3809275897016712e43ee884f67af819fb215753a044a40f20fbed6dd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "b69865d6bf403be8f89b68251f3cafadaffad1bd4350f42940bb29996c0f021b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf7daee2a19c0fdedb8f0d90fbd3fa191980c0d6d8d5e0818ebdf7af59549871"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20f6bd5e3dd48632b4dfbd0aef95166b8504b21a0559a8356325abf2f416212c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84df0713ef2cf35ff01b418e6b7a96ff964d50b93ef8f38c9e0ddcbcc7873687"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "35bf3554910bbe8d63f5dee7273614070cb1e88f7fe4a1c607d59b9e8f7f67a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aeb37dec9f5e50a21152e4be7ea9cb64d82aadc04e6b3f87b6834235fab35151"
+    sha256 cellar: :any_skip_relocation, ventura:        "e57ada90e68d0b54522c650a022754484860b5c6a6fbcc69f6265015eba6f596"
+    sha256 cellar: :any_skip_relocation, monterey:       "62e3b2a5c78467e09b91626191785952c17e484f5cb9a97d87682951d320ad69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da088a0c38d10658b71d7baddf5cdb9efad45068455fc7db526a7f90d6a2fe44"
   end
 
   depends_on "pkg-config" => :build

@@ -4,16 +4,16 @@ class Acl2 < Formula
   url "https:github.comacl2acl2archiverefstags8.5.tar.gz"
   sha256 "dcc18ab0220027b90f30cd9e5a67d8f603ff0e5b26528f3aab75dc8d3d4ebc0f"
   license "BSD-3-Clause"
-  revision 20
+  revision 21
 
   bottle do
-    sha256 arm64_sonoma:   "950990850f517b2f23a0a536ae3f2a81dd8600fb702ad12b5444932b9baa89c0"
-    sha256 arm64_ventura:  "8c8c4dee9bc5b041159aafa2ee29ebc7433f5862bef46589a3fe98365ed26e4f"
-    sha256 arm64_monterey: "ab838adc58c06712cf735b2553f37431e7fa998bfa3fd2ded884184e13e18d34"
-    sha256 sonoma:         "c56551d509e45fcccb4a0eba75802732dd80fb2c9f1996ccb92aa5234e0e8a69"
-    sha256 ventura:        "f78efb615ca9592a851fc3fd3edce07334041d64d330f10d0ae01c8297b39549"
-    sha256 monterey:       "00b5a314bcc064d46e21974d4dee9b912672c58a10c435e4eeced070a07879f8"
-    sha256 x86_64_linux:   "35ec849b92aee5cd2202ad94f2855d9bbd9e5df983e3656d98898299b322d43f"
+    sha256 arm64_sonoma:   "c36470d6d7f4bd9059f8582dbc9adb98fd3610c7970e24394a0eb91896ebb6e9"
+    sha256 arm64_ventura:  "76085a6275d2d595c4f88ac564f604049e5becf9e85f615a03a47907e13e7057"
+    sha256 arm64_monterey: "6c02b4ffe52882518925923f6ec373d5974425c7e491b4698de0a0f18bee9943"
+    sha256 sonoma:         "72d61dec3596829644953e5d1cdb46204ec46937fa124b774920520425f2002a"
+    sha256 ventura:        "eb2d0451c5547334bf4888590b6bb09310222100ef616ad9f3cb9d69af5ed11c"
+    sha256 monterey:       "1e40324c3e8334462275731f4ff40bcffbe39c57669527148b36cd700e3bfbfa"
+    sha256 x86_64_linux:   "60bf210af1e7fcc25f974dee291aef16618db2b6a097b5da1c730b53b93dda59"
   end
 
   depends_on "sbcl"

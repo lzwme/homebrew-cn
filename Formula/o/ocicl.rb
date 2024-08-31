@@ -4,15 +4,16 @@ class Ocicl < Formula
   url "https:github.comociclociclarchiverefstagsv2.4.3.tar.gz"
   sha256 "722ffe7bc0d2559d758f6ebdc803357c53d0fd47612cc498047aea74ca1a481b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "7326c43203861c678e0831d570edba2bddb006e5deafb6e68c5c0808df14bbfc"
-    sha256 arm64_ventura:  "2684110457171e34d40c656974525ae343e0436ddf82bb3fd05e5db1e3ac5cb5"
-    sha256 arm64_monterey: "49c99736434593b71246b7eeba581c1e9f85f34a9d8546f84761005d6761213e"
-    sha256 sonoma:         "1ebda17ee19e3705fb24e181baa6866e75eced589063fc4d45a138deebb6baf3"
-    sha256 ventura:        "5e274dd71cf4e500c9725c2830f935dc7455035ef5cd01f26465e04c95e863bf"
-    sha256 monterey:       "1b58751628c2ff4ecebef6227abf601596349552807ce83931705f4e20f51294"
-    sha256 x86_64_linux:   "489ccd4945e213904eb47e4306ed07eddc3782269c009967caaf4264df751417"
+    sha256 arm64_sonoma:   "82501d915221b64430f5ca69f0e202d131be1bf56ce1e247f29065d02ad4b7cd"
+    sha256 arm64_ventura:  "22f4b1230a1f62b761815707b71dd01918ac29fa82d7b095c8836dac02029291"
+    sha256 arm64_monterey: "85817a302ccc86e82bbd8f9696cf5229dddf03f5ff6e6a94e4d078f384f820d4"
+    sha256 sonoma:         "c6f59d590cacd79e82751428541ccfc69f6e77a9169a20474fcea2ca1933563c"
+    sha256 ventura:        "834f3a2f7d18c904252397dbff80b8f3679cf971b4a8dad34a39721598288485"
+    sha256 monterey:       "b869271fffe25e8fa2b246be7bdb04a8ab76b7b6de18ad8044b540905a0f9e9e"
+    sha256 x86_64_linux:   "f58b60f44cadddc8b1f730f726990914e045905b314e821144a64540c6e8314e"
   end
 
   depends_on "oras"

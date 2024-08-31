@@ -1,18 +1,18 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https:www.freerdp.com"
-  url "https:github.comFreeRDPFreeRDParchiverefstags3.7.0.tar.gz"
-  sha256 "4c95055c2acd6916e4abc0b2168f201e0cec538bde4c39e25ed4b3bfdfefd047"
+  url "https:github.comFreeRDPFreeRDParchiverefstags3.8.0.tar.gz"
+  sha256 "e313934a77a0bcca3af803455dd9ea1aa2f657c598e3397325aa48e6effd450d"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "d0ed18f61aa388a485d7795df52d7f5a107c64f23d4a7c1e273d1c0179452351"
-    sha256 arm64_ventura:  "145c97e9ca7ba17e9c2dd02ef3b89191f6c900e483bc40a40d250d1fe8404e18"
-    sha256 arm64_monterey: "3ace9f5aee797a526fd2da6f03335cfc5cd5c25f04cbfd224ae55f3d88f120e7"
-    sha256 sonoma:         "b6c7afc56a6a427e98a161e1a24393799050aa1a5582e8a3d1a019a2b53978a0"
-    sha256 ventura:        "f2bd25d4000ef79024d3bd1ae880963de399be1460add9d64f5a4080182d319f"
-    sha256 monterey:       "b2a6b7fa6aa524c6de7b271be2feee98aa54b6b258283672ce845fb32312c136"
-    sha256 x86_64_linux:   "34831086a2fee1933c892d3d9344967b28d6bffd439a457c3869b3f93ddac724"
+    sha256 arm64_sonoma:   "ab64c73394aae736fdf575a169283b260db94726ecbe5921df314b40c0abff0b"
+    sha256 arm64_ventura:  "6e3001bdf3d9ba1b0f4aeff85d5de61788b783d3caa1966b5614017bb5226a4c"
+    sha256 arm64_monterey: "0a0d69d918188f2c83be63fb9fd24709b04c250510acff2c01b1975a4c49718f"
+    sha256 sonoma:         "fd7cc10c98ae3ff4c651108025c4ed7ea92982e9938a583dae56d1b139deb996"
+    sha256 ventura:        "85553e50f0512985443267b36a78f584d1afab0fbdeca1cebf0177e90fa5ea67"
+    sha256 monterey:       "b27c7d522042220ff01e3889d1f0f2984d986ec1b336ef7596142b02dfacd57c"
+    sha256 x86_64_linux:   "5a123ca4fbf5981e4e86cf2a488464d70739c0940960f222bf3b34a47270c42d"
   end
 
   head do
@@ -50,6 +50,12 @@ class Freerdp < Formula
     depends_on "libfuse"
     depends_on "systemd"
     depends_on "wayland"
+  end
+
+  # fix type conversion issue with `_Unwind_GetLanguageSpecificData`, upstream pr ref, https:github.comFreeRDPFreeRDPpull10542
+  patch do
+    url "https:github.comFreeRDPFreeRDPcommit06d8164d5669c02759894d024f285e028c2023de.patch?full_index=1"
+    sha256 "484407240002837cf9a32c6f1250c040710cdf1b78f8455565dca936c078d6c5"
   end
 
   def install

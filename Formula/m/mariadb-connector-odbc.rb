@@ -1,9 +1,9 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-odbc"
-  url "https://archive.mariadb.org/connector-odbc-3.2.2/mariadb-connector-odbc-3.2.2-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.2.2-src.tar.gz/"
-  sha256 "1dbff92d2f895e6d0c8c765a31c144b0cbdacd9947a40eb78992515f8f0507d2"
+  url "https://archive.mariadb.org/connector-odbc-3.2.3/mariadb-connector-odbc-3.2.3-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.2.3-src.tar.gz/"
+  sha256 "a2925063f0eefa5258cafe1a8bbec1582a0ea5ca43e7a78496b150fa1c021b62"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -18,13 +18,13 @@ class MariadbConnectorOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "16e696d064c3918896d1f3644cd334547d0136d13f7ccabfdc3041e54e0fe36f"
-    sha256 cellar: :any,                 arm64_ventura:  "078365f147b8b2da131c91d29d6d185607cdf2b42ece88103dfeebedd21da96b"
-    sha256 cellar: :any,                 arm64_monterey: "f2adde7b3254d5a2742ab4460b4a603c550c1d99a82a4fd287b1787628a44dab"
-    sha256 cellar: :any,                 sonoma:         "09d1f87e03817fe209893a5751b7c7e6e2e452879cb972027a3b9b6dd11f9111"
-    sha256 cellar: :any,                 ventura:        "54e9b21d2917d7cb3e9a9c07141e3a548ea632e7688565f63208636e770c3295"
-    sha256 cellar: :any,                 monterey:       "12199bfc75ec236ac747e19c8b834b258309e558775343278283a5cbe75fc532"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416141985c8eca398c134d5d6f187e1f54162f061134b27182bed9aa12f7ecb6"
+    sha256 cellar: :any,                 arm64_sonoma:   "e5d37bb151f2ad25df7aef0a05c3b8fbb5dc97dee43f606d79355566da438e4f"
+    sha256 cellar: :any,                 arm64_ventura:  "35ef2093432b4f6ddfe26b0c8be57623d93eea20ebe4341cd6ec8bbe90f50202"
+    sha256 cellar: :any,                 arm64_monterey: "3489843ff83be733e03746537a9096356cbbb7c99746fb5c9ff387c2b95444d2"
+    sha256 cellar: :any,                 sonoma:         "3e081e1b8b61bea4ddf51636db0e09e030bddb7d6b2a0dae98bffa10515ca71e"
+    sha256 cellar: :any,                 ventura:        "3ee0199b3e161b08ed49bf7918fe326dbaff985387f0a5bb2bf6bc5f7ad189f1"
+    sha256 cellar: :any,                 monterey:       "af73a0411bb3b404fb41e8aaea4dae80fd3aa17e9bd55489eb8d85fd5fa784a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb5542044d83eb4431cc3ce77f8034e1dd4984e7beb061bad0ee778d368b62d5"
   end
 
   depends_on "cmake" => :build

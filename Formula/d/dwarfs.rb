@@ -6,6 +6,11 @@ class Dwarfs < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(^(?:release[._-])?v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bf3bcf5ba84f8259d31b59e380ce6c5d181a482ae3a2e892ef7cda2af8a7357a"
     sha256 cellar: :any,                 arm64_ventura:  "f25b395ed92f5b72bd8d5401377c1996e90b46d9cc47b0b18205d2c309c6ce6f"

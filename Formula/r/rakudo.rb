@@ -1,8 +1,8 @@
 class Rakudo < Formula
   desc "Mature, production-ready implementation of the Raku language"
   homepage "https:rakudo.org"
-  url "https:github.comrakudorakudoreleasesdownload2024.07rakudo-2024.07.tar.gz"
-  sha256 "e1a92f19c3e987c84bf089947e5f17b498069949bcad1163cff516586764ae3c"
+  url "https:github.comrakudorakudoreleasesdownload2024.08rakudo-2024.08.tar.gz"
+  sha256 "1d93afafd289683676a17ab61b4b02bb7e358391d30e4f29a9a045baec868b71"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Rakudo < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bf674ff78bc0e67ea81b619558f9e37f3c40c85cefb5513ef4a7b4a91132d281"
-    sha256 arm64_ventura:  "36b8040d02621b92a1297f4d5ec73d4efc3366919489705b604d5747d7e3063c"
-    sha256 arm64_monterey: "8aaee88b521cd66923302d86423c9dfdf727d752bcd503a2e41016c9352059b7"
-    sha256 sonoma:         "a656039ba9e84c794b9ba68034f86fcd4925efc9cde9517fb9fab979850d7b67"
-    sha256 ventura:        "a10b30af6116db1313c1a9eec224f8116b9d78b8ce71d357b19688c4449e3183"
-    sha256 monterey:       "c14514e784b16c73e74624f14d35b1f36cc4178fa2cefb4e7c9ee0cd52e081ac"
-    sha256 x86_64_linux:   "545c259e30378006cc3068e69312e6bc000ef37f01bf8cba12a276f70a6989ee"
+    sha256 arm64_sonoma:   "4ddefcd1291cac711ced2ae7d5ee8995bea2afc5a9387405fc0238429bd64340"
+    sha256 arm64_ventura:  "1e90e8fdfdc06e0d39bf4f2d92de22f86603b2394b1582e6e38c23335478a937"
+    sha256 arm64_monterey: "870676e74fa6d3d319ec4b3567b0a3784d54c6639fe95f7bda9b2a9fe2ad543b"
+    sha256 sonoma:         "7468192b0359754d67b2e78a11fe53745c09643bb666414db03c6b7c30d81516"
+    sha256 ventura:        "e9b1f4cf28e5317a25f1de612157c640ac04faf34a6c9416557538e8c94a8a51"
+    sha256 monterey:       "1d01d6876ff64bf18589d280334aa3bd3fdba78f8a4387bf1c700d2c3ebb3841"
+    sha256 x86_64_linux:   "4da26095cd1e282d0093d100bc00086a8b10da3782751e2821f4dc9dbcc8229a"
   end
 
   depends_on "libtommath"

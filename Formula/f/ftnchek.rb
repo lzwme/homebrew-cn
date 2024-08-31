@@ -5,6 +5,11 @@ class Ftnchek < Formula
   sha256 "d92212dc0316e4ae711f7480d59e16095c75e19aff6e0095db2209e7d31702d4"
   license "MIT"
 
+  livecheck do
+    url "https://www.dsm.fordham.edu/~ftnchek/ftp-index.html"
+    regex(/href=.*?ftnchek[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d616372988e0f0ffee9a0c7353615c8a2da497963a9e5705624699c06ea53600"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eeca07e31edb1263e84863a38235058aecf081441f3cdae761cf556a634551f"
