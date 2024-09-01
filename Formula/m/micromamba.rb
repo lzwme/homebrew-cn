@@ -2,12 +2,11 @@ class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https:github.commamba-orgmamba"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.commamba-orgmamba.git", branch: "main"
 
   stable do
-    url "https:github.commamba-orgmambaarchiverefstagsmicromamba-1.5.8.tar.gz"
-    sha256 "4ac788dcb9f6e7b011250e66138e60ba3074b38d54b8160b8b6364a408026076"
+    url "https:github.commamba-orgmambaarchiverefstagsmicromamba-1.5.9.tar.gz"
+    sha256 "9ac3fb39fffb9a57a7cc102e885cf49d9bac47ec6446c7d8c850f6fc87b26af6"
 
     # fmt 11 compatibility
     # https:github.commamba-orgmambacommit4fbd22a9c0e136cf59a4f73fe7c34019a4f86344
@@ -23,13 +22,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1afb9aa7a03acd2e548b094606767d65c46e127ffe4fb9baa23035500fce98e2"
-    sha256 cellar: :any,                 arm64_ventura:  "b393c58a73bc75950478397eeeb0660a8d7b61430d5d5ce899f0ba1758d1d934"
-    sha256 cellar: :any,                 arm64_monterey: "be40db7dc4b57971d0ab03df04774d6efdb695b687339887b2263d4ae4f5e68e"
-    sha256 cellar: :any,                 sonoma:         "04de7edc6c6ed6266f90c202933d05c7871f21a5c863ac78922e6f91bdc79c95"
-    sha256 cellar: :any,                 ventura:        "e9848630bbdec51dff429a1be66f2bdd04f9bab7f74f66eda2b66f5d6d6082d6"
-    sha256 cellar: :any,                 monterey:       "e32509b873293b1e5200433d838f91cf39b5ea35172107949a2a15c439a25176"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4aba662aab62290984efb17b398dd39526a4697c543523d2354991f2ba100cd9"
+    sha256 cellar: :any,                 arm64_sonoma:   "f6ab67da2075c6ece2233330975ba8f6bb0198db009c8310c6c2ac35a3715d76"
+    sha256 cellar: :any,                 arm64_ventura:  "deb26d2fe125a58998a0937e8ea3991d4b3eda32c9f83143d8f588232a58874f"
+    sha256 cellar: :any,                 arm64_monterey: "b47eb2f846abeb0cafb0357bd445f5c2205919e7d0a046cd5d9cb40f1817ba30"
+    sha256 cellar: :any,                 sonoma:         "7645a88481eddb678e658c74e88485b50d91468910f26407446031039022708f"
+    sha256 cellar: :any,                 ventura:        "d7da915cb1e55d78ba1503df36e27e3c2f2dc47813773c700723619127559548"
+    sha256 cellar: :any,                 monterey:       "aed31e322d38c3891cc1de157eaea8bb11a0c583b776aaf64d65652fd1d9f0d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f346e5d3f6e55e3668e80b6ab5a3226c38e3f41b8a245736d1115eec0b81a16"
   end
 
   depends_on "cli11" => :build

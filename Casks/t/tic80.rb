@@ -17,4 +17,8 @@ cask "tic80" do
     "~LibraryApplication Supportcom.nesbox.tic",
     "~LibrarySaved Application Statecom.nesbox.tic.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

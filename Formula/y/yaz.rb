@@ -1,7 +1,10 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50SRWSRU clientsservers"
   homepage "https:www.indexdata.comresourcessoftwareyaz"
-  url "https:ftp.indexdata.compubyazyaz-5.34.1.tar.gz"
+  # TODO: Switch back to homepage if upstream confirms reupload or on next release
+  # Ref: https:github.comindexdatayazissues120
+  url "http:deb.debian.orgdebianpoolmainyyazyaz_5.34.1.orig.tar.gz"
+  mirror "https:ftp.indexdata.compubyazyaz-5.34.1.tar.gz"
   sha256 "c7fd8e0222b3b0d1115ad8e7a2ee67be7a2807624d61d5b71854bf5e167ab7a9"
   license "BSD-3-Clause"
 

@@ -20,4 +20,8 @@ cask "themeengine" do
   app "ThemeEngine.app"
 
   zap trash: "~LibraryPreferencescom.alexzielenski.ThemeEngine.LSSharedFileList.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

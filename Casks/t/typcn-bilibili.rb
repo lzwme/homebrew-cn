@@ -7,6 +7,8 @@ cask "typcn-bilibili" do
   desc "Unofficial bilibili client"
   homepage "https:github.comtypcnbilibili-mac-client"
 
+  deprecate! date: "2024-08-30", because: :unmaintained
+
   auto_updates true
 
   app "Bilibili.app"
@@ -16,4 +18,8 @@ cask "typcn-bilibili" do
     "~LibraryApplication Supportcom.typcn.bilibili",
     "~LibraryWebKitcom.typcn.bilibili",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

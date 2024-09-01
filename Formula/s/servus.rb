@@ -23,11 +23,18 @@ class Servus < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
+  depends_on "boost" => :test
+
+  # Backport missing header
+  patch do
+    url "https:github.comHBPVISServuscommit53bf825cd995a7d2f569157f20431daf0cc860f8.patch?full_index=1"
+    sha256 "bb5d44dd39b63a091c9cc89fcdfc25e914f184eac5af9256b54975cf300575a5"
+  end
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -123,8 +130,7 @@ class Servus < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lServus", "-DBOOST_TEST_DYN_LINK",
-                    "-L#{Formula["boost"].opt_lib}",
-                    "-lboost_unit_test_framework-mt",
+                    "-L#{Formula["boost"].opt_lib}", "-lboost_unit_test_framework",
                     "-std=gnu++11", "-o", "test"
     system ".test"
   end

@@ -30,15 +30,13 @@ class XmlToolingC < Formula
   depends_on "xml-security-c"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     ENV.cxx11
-
     ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@3"].opt_lib}/pkgconfig"
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 end

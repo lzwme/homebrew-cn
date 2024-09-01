@@ -16,4 +16,8 @@ cask "vial" do
     "~LibraryPreferencescom.vial.Vial.plist",
     "~LibraryPreferencesVial.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

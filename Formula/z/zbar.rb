@@ -31,8 +31,20 @@ class Zbar < Formula
 
   depends_on "pkg-config" => :build
   depends_on "xmlto" => :build
+
   depends_on "imagemagick"
   depends_on "jpeg-turbo"
+
+  on_macos do
+    depends_on "fontconfig"
+    depends_on "freetype"
+    depends_on "gettext"
+    depends_on "glib"
+    depends_on "liblqr"
+    depends_on "libomp"
+    depends_on "libtool"
+    depends_on "little-cms2"
+  end
 
   on_linux do
     depends_on "dbus"
@@ -42,14 +54,16 @@ class Zbar < Formula
 
   def install
     ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+
+    system ".configure", "--disable-silent-rules",
                           "--disable-video",
                           "--without-python",
                           "--without-qt",
                           "--without-gtk",
-                          "--without-x"
+                          "--without-x",
+                          *std_configure_args
     system "make", "install"
   end
 

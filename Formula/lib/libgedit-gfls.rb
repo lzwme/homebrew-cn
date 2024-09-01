@@ -1,19 +1,19 @@
 class LibgeditGfls < Formula
   desc "Gedit Technology - File loading and saving"
   homepage "https://gitlab.gnome.org/World/gedit/libgedit-gfls"
-  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.1.0/libgedit-gfls-0.1.0.tar.bz2"
-  sha256 "306ba5b25c73a6901069f0d535b845eb13167a7be2d15f86451ae5d9016229ca"
+  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.2.0/libgedit-gfls-0.2.0.tar.bz2"
+  sha256 "4a01265feb9764718463ff723d4a9f2287ee118a95739c94415d1d09a2d7a6b5"
   license "LGPL-3.0-or-later"
   head "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b908ad5a2177843aa20eca0d840fcd1cd55953db26e94640730732949b77ac55"
-    sha256 cellar: :any,                 arm64_ventura:  "9d8baa526a30f2fbbc2427015ff683e7fe37f63d193d0978bc71d4b7ed896b1f"
-    sha256 cellar: :any,                 arm64_monterey: "cf0e509c6f842b9a60a84a4c147cc4a58a846d259728fd88c690744251bdb586"
-    sha256 cellar: :any,                 sonoma:         "758a7186100d629e16dae6aec1eb225c4993bed19df0fa86d7dcda9eaa88428a"
-    sha256 cellar: :any,                 ventura:        "9b486b004595e3a99a88762999964460354cca03ec79a224bcdb7039e144f133"
-    sha256 cellar: :any,                 monterey:       "711aa6c8c9ff5742eab19c7104092560fb7230db248aca3bc400194df9275c00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e03f0d1f6337bb1ee3cb02a277f824ccf514b0ee1e23d6bc6ebca5336ec6c41"
+    sha256 cellar: :any,                 arm64_sonoma:   "82ac1af81efcb7893196f48966640337663111c345e800f6f61724a5d7e76fc9"
+    sha256 cellar: :any,                 arm64_ventura:  "ec53959d595fe8882ad2b174dd27b7e1b4cc95a333160f6a6a84f03b789fa753"
+    sha256 cellar: :any,                 arm64_monterey: "d25070248fbef2ace283f567ff3cbaea9f79ce1f335d5b898136da852f3d67be"
+    sha256 cellar: :any,                 sonoma:         "34f365abbd0cb49584469d32f21fd99e885f1b7981e7da34adc7535c44d781ed"
+    sha256 cellar: :any,                 ventura:        "53cec0319c92047dee1b11b34c93a2a683ff29b74c1ec13261995b87c07353f6"
+    sha256 cellar: :any,                 monterey:       "dba99132697b04b825fa5cc12aaddc490524b06d5fd2d7f5927773716ba84b11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f62b44c9e7e1d3102ab86c0e9807e06ae0366f16e4b72bd704ba64d80f6459d"
   end
 
   depends_on "gobject-introspection" => :build

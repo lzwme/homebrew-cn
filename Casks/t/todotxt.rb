@@ -8,10 +8,16 @@ cask "todotxt" do
   desc "Minimalist, keyboard-driven to-do manager"
   homepage "https:mjdescy.github.ioTodoTxtMac"
 
+  deprecate! date: "2024-08-30", because: :unmaintained
+
   app "TodoTxtMac.app"
 
   zap trash: [
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.descy.michael.todotxtmac.sfl*",
     "~LibraryPreferencescom.descy.michael.TodoTxtMac.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

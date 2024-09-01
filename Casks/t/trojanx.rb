@@ -7,6 +7,8 @@ cask "trojanx" do
   desc "Mechanism to bypass the Great Firewall"
   homepage "https:github.comJimLee1996TrojanX"
 
+  deprecate! date: "2024-08-30", because: :unmaintained
+
   depends_on macos: ">= :el_capitan"
 
   app "TrojanX.app"
@@ -18,4 +20,8 @@ cask "trojanx" do
     "~LibraryApplication SupportTrojanX",
     "~LibraryPreferencesTrojanX.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

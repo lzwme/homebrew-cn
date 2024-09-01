@@ -25,7 +25,8 @@ class Cryptominisat < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.12" => [:build, :test]
-  depends_on "boost"
+
+  uses_from_macos "zlib"
 
   def python3
     "python3.12"

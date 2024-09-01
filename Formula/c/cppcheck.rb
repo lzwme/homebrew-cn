@@ -1,8 +1,8 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https:sourceforge.netprojectscppcheck"
-  url "https:github.comdanmarcppcheckarchiverefstags2.14.2.tar.gz"
-  sha256 "9c3acea5f489336bd83a8ea33917a9a04a80c56d874bf270287e7de27acf2d00"
+  url "https:github.comdanmarcppcheckarchiverefstags2.15.0.tar.gz"
+  sha256 "98bcc40ac8062635b492fb096d7815376a176ae26749d6c708083f4637f7c0bb"
   license "GPL-3.0-or-later"
   head "https:github.comdanmarcppcheck.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Cppcheck < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "0237afd9cb49d2673655d438a0a2963144591661acc6cc38d0930d4e31de9f3a"
-    sha256 arm64_ventura:  "3f345da5f5ec736381379d5d1976a3470af543d2a37e15bdab09618d90a1bb22"
-    sha256 arm64_monterey: "fdd285c962f987018b1c7267a6de2b0bfc88eb52f76f7c5d0909d3a9f9c2e50a"
-    sha256 sonoma:         "f83f1d685cc4b6587f302bbdcb6775981350c4a4d99f4a9b2c59bd31a517c3a6"
-    sha256 ventura:        "928b4b7019859d1544f30ab904e3b00f6a8189a01c2c6faab255714c93438fa1"
-    sha256 monterey:       "cf2cabc98d005503a29afec1f8b6c789d1981ae97a76a8334207f693096e0234"
-    sha256 x86_64_linux:   "2c5aa5f9f3aadeeb489e22f56eca4ad539ddc1911a0112d591ee728f7a90544b"
+    sha256 arm64_sonoma:   "9f5ec5154d362414f230ad9b94567fc43472e654282b2d9a70a0a33d5153ab36"
+    sha256 arm64_ventura:  "0d3c433850bed501f2c819024ea16065acbec6111ca28141a5afe77704df2945"
+    sha256 arm64_monterey: "3a5d4211496ee5c5980725b239a6a896aaa5053415992764a82711679c23bcaa"
+    sha256 sonoma:         "bdfc1329eed78facd99a182463bc342d7e6a58bf679492a6a19758fac778c63c"
+    sha256 ventura:        "1207bb2fe229239e94c194ee7c7bc8b80ada5e23eebc29145c7ccbb786374e47"
+    sha256 monterey:       "fa7dc521b729821186cf9b6a0b846ed7559c03e27533108edc3447de33a0d393"
+    sha256 x86_64_linux:   "64be07e02d9965a951e708fc8e3463eb9ab7dca8e27c79e58a72e7e67b76e024"
   end
 
   depends_on "cmake" => :build
@@ -36,18 +36,17 @@ class Cppcheck < Formula
   end
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DHAVE_RULES=ON
       -DUSE_BUNDLED_TINYXML2=OFF
       -DENABLE_OSS_FUZZ=OFF
       -DPYTHON_EXECUTABLE=#{python3}
+      -DFILESDIR=#{pkgshare}
     ]
-    system "cmake", "-S", ".", "-B", "build", *args
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Move the python addons to the cppcheck pkgshare folder
-    (pkgshare"addons").install Dir.glob("addons*.py")
   end
 
   test do
@@ -84,9 +83,9 @@ class Cppcheck < Formula
     test_cpp_file_check.write <<~EOS
       int main()
       {
-      char a[10];
-      a[10] = 0;
-      return 0;
+        char a[10];
+        a[10] = 0;
+        return 0;
       }
     EOS
     output = shell_output("#{bin}cppcheck #{test_cpp_file_check} 2>&1")

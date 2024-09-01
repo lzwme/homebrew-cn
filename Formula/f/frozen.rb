@@ -1,14 +1,13 @@
 class Frozen < Formula
   desc "Header-only, constexpr alternative to gperf for C++14 users"
   homepage "https:github.comserge-sans-paillefrozen"
-  url "https:github.comserge-sans-paillefrozenarchiverefstags1.1.1.tar.gz"
-  sha256 "f7c7075750e8fceeac081e9ef01944f221b36d9725beac8681cbd2838d26be45"
+  url "https:github.comserge-sans-paillefrozenarchiverefstags1.2.0.tar.gz"
+  sha256 "ed8339c017d7c5fe019ac2c642477f435278f0dc643c1d69d3f3b1e95915e823"
   license "Apache-2.0"
   head "https:github.comserge-sans-paillefrozen.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b3ca38fbf1e4b99e8f5b9d2b4549a7a51672a8d3be35bb4a918bcf89500aeb43"
+    sha256 cellar: :any_skip_relocation, all: "43eb6ff03102e4345ff6c03cb2169f7152209e377b015120d77493f211a94022"
   end
 
   depends_on "cmake" => :build

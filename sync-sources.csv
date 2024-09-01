@@ -2584,7 +2584,7 @@ Homebrew-homebrew-core/Formula/h/hmmer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hoedown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hof.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeassistant-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/homebank.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/homebank.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/homeshick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeworlds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/honcho.rb, Homebrew/homebrew-core, 1
@@ -5934,6 +5934,7 @@ Homebrew-homebrew-core/Formula/s/spice-gtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spice-protocol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spicetify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/spidermonkey@115.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey@91.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spigot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spim.rb, Homebrew/homebrew-core, 0

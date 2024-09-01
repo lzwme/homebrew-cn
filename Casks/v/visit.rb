@@ -32,4 +32,8 @@ cask "visit" do
   app "VisIt.app"
 
   zap trash: "~LibrarySaved Application Stategov.llnl.visit.gui.savedState"
+
+  caveats do
+    requires_rosetta
+  end
 end

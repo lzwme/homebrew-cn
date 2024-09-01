@@ -3,28 +3,35 @@ class Gcalcli < Formula
 
   desc "Easily access your Google Calendar(s) from a command-line"
   homepage "https:github.cominsanumgcalcli"
-  url "https:files.pythonhosted.orgpackagese8d99d1f03b9b47c3082bf664a2f789a3aded0674dca9e0b894540d754b937ccgcalcli-4.3.0.tar.gz"
-  sha256 "d00081460276027196e8fb957880b29ba4f22ea43136f9e232a9408016abc110"
+  url "https:files.pythonhosted.orgpackagesf0a3713e440c41a9dcbace59b864097c439c0b7248c5d7bfad8a8b0fcc7ed096gcalcli-4.4.0.tar.gz"
+  sha256 "198c5046e2bd50ae4cc17fb95a27dac46cb175f91a9d9322b0e08fed577bba88"
   license "MIT"
-  revision 9
   head "https:github.cominsanumgcalcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a90dffdee7ac3f1654fc7aff36963c2e9c713de6ff15c2959ba6203fe4b05152"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0505bf5b876ab347369dc12be5c56c09b525de37ac1f6527ba43860fa1492ec5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc7efb8d8c8b1c4672743a98758555ce3df3fd87965f09faf5ff17e18e85f8a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd56e45783e6bbf67a907f7e4301429e936832136e3b598d43245688f3707738"
-    sha256 cellar: :any_skip_relocation, ventura:        "0caec4904f2159dbb8a964088f53ee04682880b95405dec68c66c8623416bda2"
-    sha256 cellar: :any_skip_relocation, monterey:       "c514ce82e428d63f1c2cc057ba5a345573a0862ed2fbae2bc246b43272d303f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eebf0efbad7d0054afffcfd89b40458376b936c04067fe05b9ae13bca30abc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65a8472a556e1acf71b7ef8ab01f6e143b684cc4433733186bca7a218ce9d7a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edbb7426e416ddac610e6681f2977f531a1cb7316f0cd398de46bb002fbb082e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fb6e08408832a39c27f447d83e34474977bee90ff733f57cfcd30e15d66ad39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b23a74a5b73950c08a30f4a57ffa9e515f615f966f0d90c2c00e9c968df831b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d82353631f52a5f662906353c649135a1dc2c110cd43e73fe0c30ff0a2f20b8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "99c9e17463af03f610f769ea8bcf7d3e530ad097c9c4274179c85b9b0b330e83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08cf07853c2d9b2ef96ae17177b1c3c864907e27760d8ff6062bb8bfe5b9f9d8"
   end
 
+  depends_on "cmake" => :build # for google_api_python_client_stubs
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build # for google_api_python_client_stubs
   depends_on "certifi"
   depends_on "python@3.12"
 
+  resource "argcomplete" do
+    url "https:files.pythonhosted.orgpackages7533a3d23a2e9ac78f9eaf1fce7490fee430d43ca7d42c65adabbb36a2b28ff6argcomplete-3.5.0.tar.gz"
+    sha256 "4349400469dccfb7950bb60334a680c58d88699bff6159df61251878dc6bf74b"
+  end
+
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackagesb34d27a3e6dd09011649ad5210bdf963765bc8fa81a0827a4fc01bafd2705c5bcachetools-5.3.3.tar.gz"
-    sha256 "ba29e2dfa0b8b556606f097407ed1aa62080ee108ab0dc5ec9d6a723a007d105"
+    url "https:files.pythonhosted.orgpackagesc338a0f315319737ecf45b4319a8cd1f3a908e29d9277b46942263292115eee7cachetools-5.5.0.tar.gz"
+    sha256 "2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"
   end
 
   resource "charset-normalizer" do
@@ -33,18 +40,23 @@ class Gcalcli < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackages31c6460b83c297c91c4f62d69aa9f04f3c5f8139a4f41c4b747c014939d5a802google-api-core-2.19.0.tar.gz"
-    sha256 "cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"
+    url "https:files.pythonhosted.orgpackages781499c2514b3ccc5aad1e0776f0ae8295c9f7153aead4f41d07dd126cecdc14google_api_core-2.19.2.tar.gz"
+    sha256 "ca07de7e8aa1c98a8bfca9321890ad2340ef7f2eb136e558cee68f24b94b0a8f"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesd4314ded7003d5a8ed4351cd716a18ccaf435c05380b86759f4ff755cdcb2456google-api-python-client-2.133.0.tar.gz"
-    sha256 "293092905b66a046d3187a99ac454e12b00cc2c70444f26eb2f1f9c1a82720b4"
+    url "https:files.pythonhosted.orgpackages99c2efec3de62b53d3ac9709aa4f4e1c475041e973578e0c448fb76355b72c27google_api_python_client-2.143.0.tar.gz"
+    sha256 "6a75441f9078e6e2fcdf4946a153fda1e2cc81b5e9c8d6e8c0750c85c7f8a566"
+  end
+
+  resource "google-api-python-client-stubs" do
+    url "https:files.pythonhosted.orgpackagesc0c760e5298981ac5ea4aaca007584680c1850f4d737edba9e5e6a7dda578f88google_api_python_client_stubs-1.27.0.tar.gz"
+    sha256 "148e16613e070969727f39691e23a73cdb87c65a4fc8133abd4c41d17b80b313"
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackagesbef6b22ef3a4b24b5b0d0fcf8426080eab66ccdfaaf73a61e37e76693c43f7f6google-auth-2.30.0.tar.gz"
-    sha256 "ab630a1320f6720909ad76a7dbdb6841cdf5c66b328d690027e4867bdfb16688"
+    url "https:files.pythonhosted.orgpackages0fae634dafb151366d91eb848a25846a780dbce4326906ef005d199723fbbca0google_auth-2.34.0.tar.gz"
+    sha256 "8eb87396435c19b20d32abd2f984e31c191a15284af72eb922f10e5bde9c04cc"
   end
 
   resource "google-auth-httplib2" do
@@ -52,9 +64,14 @@ class Gcalcli < Formula
     sha256 "38aa7badf48f974f1eb9861794e9c0cb2a0511a4ec0679b1f886d108f5640e05"
   end
 
+  resource "google-auth-oauthlib" do
+    url "https:files.pythonhosted.orgpackagescc0f1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5google_auth_oauthlib-1.2.1.tar.gz"
+    sha256 "afd0cad092a2eaa53cd8e8298557d6de1034c6cb4a740500b5357b648af97263"
+  end
+
   resource "googleapis-common-protos" do
-    url "https:files.pythonhosted.orgpackages4fbccb5c74fca58d9c37bc621642e2c2b19c004d078b472d49fb03d9fa8ffeefgoogleapis-common-protos-1.63.1.tar.gz"
-    sha256 "c6442f7a0a6b2a80369457d79e6672bb7dcbaab88e0848302497e3ec80780a6a"
+    url "https:files.pythonhosted.orgpackages533b1599ceafa875ffb951480c8c74f4b77646a6b80e80970698f2aa93c216cegoogleapis_common_protos-1.65.0.tar.gz"
+    sha256 "334a29d07cddc3aa01dee4988f9afd9b2916ee2ff49d6b757155dc0d197852c0"
   end
 
   resource "httplib2" do
@@ -63,13 +80,13 @@ class Gcalcli < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
-  resource "oauth2client" do
-    url "https:files.pythonhosted.orgpackagesa67b17244b1083e8e604bf154cf9b716aecd6388acd656dd01893d0d244c94d9oauth2client-4.1.3.tar.gz"
-    sha256 "d486741e451287f69568a4d26d70d9acd73a2bbfa275746c535b4209891cccc6"
+  resource "oauthlib" do
+    url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
+    sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
   end
 
   resource "parsedatetime" do
@@ -78,13 +95,13 @@ class Gcalcli < Formula
   end
 
   resource "proto-plus" do
-    url "https:files.pythonhosted.orgpackages912d8c7fa3011928b024b10b80878160bf4e374eccb822a5d090f3ebcf175f6aproto-plus-1.23.0.tar.gz"
-    sha256 "89075171ef11988b3fa157f5dbd8b9cf09d65fffee97e29ce403cd8defba19d2"
+    url "https:files.pythonhosted.orgpackages3efce9a65cd52c1330d8d23af6013651a0bc50b6d76bcbdf91fae7cd19c68f29proto-plus-1.24.0.tar.gz"
+    sha256 "30b72a5ecafe4406b0d339db35b56c4059064e69227b8c3bda7462397f966445"
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages5ed865adb47d921ce828ba319d6587aa8758da022de509c3862a70177a958844protobuf-4.25.3.tar.gz"
-    sha256 "25b5d0b42fd000320bd7830b349e3b696435f3b329810427a6bcce6a5492cc5c"
+    url "https:files.pythonhosted.orgpackages5fd7331ee1f3b798c34d2257c79d5426ecbe95d46d2b40ba808a29da6947f6d8protobuf-5.28.0.tar.gz"
+    sha256 "dde74af0fa774fa98892209992295adbfb91da3fa98c8f67a88afe8f5a349add"
   end
 
   resource "pyasn1" do
@@ -98,8 +115,8 @@ class Gcalcli < Formula
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages463a31fd28064d016a2182584d579e033ec95b809d8e220e74c4af6f0f2e8842pyparsing-3.1.2.tar.gz"
-    sha256 "a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad"
+    url "https:files.pythonhosted.orgpackages830813f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043apyparsing-3.1.4.tar.gz"
+    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
   end
 
   resource "python-dateutil" do
@@ -112,6 +129,11 @@ class Gcalcli < Formula
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
+  resource "requests-oauthlib" do
+    url "https:files.pythonhosted.orgpackages42f205f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85requests-oauthlib-2.0.0.tar.gz"
+    sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
+  end
+
   resource "rsa" do
     url "https:files.pythonhosted.orgpackagesaa657d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52rsa-4.9.tar.gz"
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
@@ -120,6 +142,31 @@ class Gcalcli < Formula
   resource "six" do
     url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
+  resource "types-httplib2" do
+    url "https:files.pythonhosted.orgpackages7c3db26ad300bd4e14749aa09845aa7e24694d89f3184e76423777b2d9adf62ftypes-httplib2-0.22.0.20240310.tar.gz"
+    sha256 "1eda99fea18ec8a1dc1a725ead35b889d0836fec1b11ae6f1fe05440724c1d15"
+  end
+
+  resource "types-python-dateutil" do
+    url "https:files.pythonhosted.orgpackages2311aae06ddb6a90cf8ba078be6dbe47f904d2efdf451f9859248b436c945ca4types-python-dateutil-2.9.0.20240821.tar.gz"
+    sha256 "9649d1dcb6fef1046fb18bebe9ea2aa0028b160918518c34589a46045f6ebd98"
+  end
+
+  resource "types-requests" do
+    url "https:files.pythonhosted.orgpackages5e9e7663eb27c33568b8fc20ccdaf2a1ce53a9530c42a7cceb9f552a6ff4a1d8types-requests-2.32.0.20240712.tar.gz"
+    sha256 "90c079ff05e549f6bf50e02e910210b98b8ff1ebdd18e19c873cd237737c1358"
+  end
+
+  resource "types-vobject" do
+    url "https:files.pythonhosted.orgpackagesbe43d8d88f126a7e1d5831c8af7dc81f31e3fa8af6c17799ca9ee0a14e674a74types-vobject-0.9.8.20240310.tar.gz"
+    sha256 "36ed5266f9ecf593c49a45162f47ff881d125bc5a3ed5f3975af02f7c17bcc1f"
+  end
+
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "uritemplate" do
@@ -137,7 +184,10 @@ class Gcalcli < Formula
   end
 
   test do
-    output = pipe_output("#{bin}gcalcli --client-id=foo --client-secret=bar --noauth_local_webserver list", "foo")
-    assert_match "Go to the following link in your browser:", output
+    output = shell_output("#{bin}gcalcli refresh 2>&1", 2)
+    assert_match "invalid choice: 'refresh'", output
+
+    output = shell_output("#{bin}gcalcli --version")
+    assert_match version.to_s, output
   end
 end

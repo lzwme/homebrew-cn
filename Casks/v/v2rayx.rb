@@ -29,4 +29,8 @@ cask "v2rayx" do
     "~LibraryApplication SupportV2RayX",
     "~LibraryPreferencescenmrev.V2RayX.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

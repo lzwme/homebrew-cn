@@ -28,6 +28,11 @@ class LlvmAT12 < Formula
   # We intentionally use Make instead of Ninja.
   # See: Homebrewhomebrew-coreissues35513
   depends_on "cmake" => :build
+  # sanitizer_mac.cpp:615:15: error: constexpr function never produces a constant expression [-Winvalid-constexpr]
+  # constexpr u16 GetOSMajorKernelOffset() {
+  #               ^
+  # sanitizer_mac.cpp:619:1: note: control reached end of constexpr function
+  depends_on maximum_macos: [:ventura, :build]
   depends_on "python@3.11" => :build
   depends_on "swig" => :build
 

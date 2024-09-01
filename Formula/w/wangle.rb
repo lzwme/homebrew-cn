@@ -16,7 +16,7 @@ class Wangle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c3392ddadb2cf1a003bd3844b4b012de5c01dcf6486db0337e7c3e1f5ace926"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
@@ -35,7 +35,6 @@ class Wangle < Formula
     args = ["-DBUILD_TESTS=OFF"]
     # Prevent indirect linkage with boost, libsodium, snappy and xz
     linker_flags = %w[-dead_strip_dylibs]
-    linker_flags << "-ld_classic" if OS.mac? && MacOS.version == :ventura
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if OS.mac?
 
     system "cmake", "-S", "wangle", "-B", "buildshared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
@@ -50,30 +49,32 @@ class Wangle < Formula
   end
 
   test do
-    cxx_flags = %W[
-      -std=c++17
-      -I#{include}
-      -I#{Formula["openssl@3"].opt_include}
-      -L#{Formula["gflags"].opt_lib}
-      -L#{Formula["glog"].opt_lib}
-      -L#{Formula["folly"].opt_lib}
-      -L#{Formula["fizz"].opt_lib}
-      -L#{lib}
-      -lgflags
-      -lglog
-      -lfolly
-      -lfizz
-      -lwangle
-    ]
-    if OS.linux?
-      cxx_flags << "-L#{Formula["boost"].opt_lib}"
-      cxx_flags << "-lboost_context-mt"
-      cxx_flags << "-ldl"
-      cxx_flags << "-lpthread"
+    # libsodium has no CMake file but fizz runs `find_dependency(Sodium)` so fetch a copy from mvfst
+    resource "FindSodium.cmake" do
+      url "https:raw.githubusercontent.comfacebookmvfstv2024.08.26.00cmakeFindSodium.cmake"
+      sha256 "39710ab4525cf7538a66163232dd828af121672da820e1c4809ee704011f4224"
     end
+    (testpath"cmake").install resource("FindSodium.cmake")
 
-    system ENV.cxx, pkgshare"EchoClient.cpp", *cxx_flags, "-o", "EchoClient"
-    system ENV.cxx, pkgshare"EchoServer.cpp", *cxx_flags, "-o", "EchoServer"
+    (testpath"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.5)
+      project(Echo LANGUAGES CXX)
+      set(CMAKE_CXX_STANDARD 17)
+
+      find_package(gflags REQUIRED)
+      find_package(folly CONFIG REQUIRED)
+      find_package(fizz CONFIG REQUIRED)
+      find_package(wangle CONFIG REQUIRED)
+
+      add_executable(EchoClient #{pkgshare}EchoClient.cpp)
+      target_link_libraries(EchoClient wangle::wangle)
+      add_executable(EchoServer #{pkgshare}EchoServer.cpp)
+      target_link_libraries(EchoServer wangle::wangle)
+    EOS
+
+    ENV.delete "CPATH"
+    system "cmake", ".", "-DCMAKE_MODULE_PATH=#{testpath}cmake", "-Wno-dev"
+    system "cmake", "--build", "."
 
     port = free_port
     fork { exec testpath"EchoServer", "-port", port.to_s }

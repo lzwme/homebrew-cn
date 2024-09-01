@@ -12,29 +12,28 @@ class Libcdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f9050c5671437ef41f32f01e36337d77359436c7913fe2c1eafd50c24a8e31a7"
-    sha256 cellar: :any,                 arm64_ventura:  "d37e72ea423ca2086e3f87ec773c49b0351694f893f1772591c4abc2d6bf157d"
-    sha256 cellar: :any,                 arm64_monterey: "e889940ab6cc809ad837aafa2db7a99bd3cc387d92862094ab95d6e137761217"
-    sha256 cellar: :any,                 sonoma:         "ed24ca5c4b6e751c2a4b477fa8e42a97fe5479b435afc72b645971748bd1f909"
-    sha256 cellar: :any,                 ventura:        "52d744f03a1dea741d4f29df0752d3bfc651a60bec17f88e3f56120d0950c250"
-    sha256 cellar: :any,                 monterey:       "9c9b29e42893031a882597fe254fad73a068532bcfb11bd83fb72e580a2819c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eeef15aa50abe575cfa2619864dac8112f58e7eaf577a6d27766dfb15157bac4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b4324147de4d9b3a82e0ae4239bd1306cb5e5b01d52c49e137d8002fd9999fa8"
+    sha256 cellar: :any,                 arm64_ventura:  "588bbde423941f0353de8d1079e317732c576af3b0a661aec50c83352a9047c7"
+    sha256 cellar: :any,                 arm64_monterey: "7a30b587bbba798295a3af16acff7d9974ec298d0e3b7b2f1fd92f249b140e09"
+    sha256 cellar: :any,                 sonoma:         "644cf0326dbf7d581058607b31f042e279ca25399f21d718b4d1685aa7af8017"
+    sha256 cellar: :any,                 ventura:        "f8ee293a246acd9b49b89191d8261670752a11361b536140554f7453b086e563"
+    sha256 cellar: :any,                 monterey:       "f2c5dc565e10c04952c7a9aa9233c03b10b03105b67e31150766838a10281c65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca8b063489f3ba6c851e69c3c6dd2677c1a1cdfea605c386507bb81840a4b74c"
   end
 
-  depends_on "cppunit" => :build
+  depends_on "boost" => :build
   depends_on "pkg-config" => :build
-  depends_on "boost"
   depends_on "icu4c"
   depends_on "librevenge"
   depends_on "little-cms2"
 
   def install
-    ENV.cxx11
-    # Needed for Boost 1.59.0 compatibility.
-    ENV["LDFLAGS"] = "-lboost_system-mt"
-    system "./configure", "--disable-werror",
+    system "./configure", "--disable-silent-rules",
+                          "--disable-tests",
+                          "--disable-werror",
                           "--without-docs",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
   end
 

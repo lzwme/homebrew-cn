@@ -21,6 +21,8 @@ class LeelaZero < Formula
   depends_on "cmake" => :build
   depends_on "boost"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "opencl-headers" => :build
     depends_on "opencl-icd-loader"

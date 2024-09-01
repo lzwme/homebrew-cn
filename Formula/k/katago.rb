@@ -11,19 +11,25 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fd799d8af6382c749addb08572596e375b12b38292628e5d84e33beadf2a4b7e"
-    sha256 cellar: :any,                 arm64_ventura:  "4a3e4976313381eef75470392601b7b11ade9b1ea7b27be0a1fec6256fbf0aa5"
-    sha256 cellar: :any,                 arm64_monterey: "882062014dc33837070905e3c80c89cfa09723748e70d91cf00cf60445823268"
-    sha256 cellar: :any,                 sonoma:         "99aa02a00d877b18aa253eea5ac5d838a3e8bab96bc9d940bfcae70a7dc1c22b"
-    sha256 cellar: :any,                 ventura:        "8c6f3da9c881b5539b39bf0926a371e91fbce3a27dc328633be8a17119415f6b"
-    sha256 cellar: :any,                 monterey:       "5f73fb232ac7196d0bb93cc600bbc91c1f374e5eef269ce9a74e75bbbbe5bc9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd528014652a59d84cc03acdbca5829fa83b4bac46609c032acceb6b688ebd78"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b8429e8dfd8e8ed55b43bcbe3303429a15d2198f766161223412a5aac9a26900"
+    sha256 cellar: :any,                 arm64_ventura:  "756948a27239a72cd8b6fa312fd4c3cb4fa9f20940c4158011a82e681938f5cd"
+    sha256 cellar: :any,                 arm64_monterey: "3c9d3dc8e2768770bd803e6ca8b557295275482df2b57f14b349980ddb7ec678"
+    sha256 cellar: :any,                 sonoma:         "ba24de18bcadf148cfc200afc681ab9297e640e2395de69ac43efbe5b4cbf313"
+    sha256 cellar: :any,                 ventura:        "ab482d1af11de5e268ad2465ee8feb5aa7436dbc7885cfefa677ab35c39462ef"
+    sha256 cellar: :any,                 monterey:       "27da9731aecb9f6f8bf0ce99d8d0719e2f833c9ba7342f784f3b6f952e45eb9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3033bade67d18470af58d50cf498ec6a40cb9f36cccf3a1295d60faa71f7df59"
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "libzip"
   depends_on macos: :mojave
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "eigen" => :build
+  end
 
   resource "20b-network" do
     url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170e-b20c256x2-s5303129600-d1228401921.bin.gz", using: :nounzip
@@ -41,17 +47,18 @@ class Katago < Formula
   end
 
   def install
-    cd "cpp" do
-      args = %w[-DBUILD_MCTS=1 -DNO_GIT_REVISION=1]
-      if OS.mac?
-        args << "-DUSE_BACKEND=OPENCL"
-        args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}"
-      end
-      system "cmake", ".", *args, *std_cmake_args
-      system "make"
-      bin.install "katago"
-      pkgshare.install "configs"
+    args = ["-DNO_GIT_REVISION=1"]
+    args += if OS.mac?
+      ["-DUSE_BACKEND=OPENCL", "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}"]
+    else
+      ["-DUSE_BACKEND=EIGEN"]
     end
+
+    system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "buildkatago"
+
+    pkgshare.install "cppconfigs"
     pkgshare.install resource("20b-network")
     pkgshare.install resource("30b-network")
     pkgshare.install resource("40b-network")

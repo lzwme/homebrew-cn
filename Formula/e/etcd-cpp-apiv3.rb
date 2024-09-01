@@ -16,7 +16,7 @@ class EtcdCppApiv3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcb362d41bcd81d856636f1f5673a24501f3401e434121e72e0d2769b826b889"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "etcd" => :test
 
   depends_on "abseil"
@@ -56,39 +56,28 @@ class EtcdCppApiv3 < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cc", "-std=c++17",
-                    "-I#{Formula["boost"].include}",
-                    "-I#{Formula["cpprestsdk"].include}",
-                    "-I#{Formula["grpc"].include}",
-                    "-I#{Formula["openssl@3"].include}",
-                    "-I#{Formula["protobuf"].include}",
-                    "-I#{include}",
-                    "-L#{Formula["boost"].lib}",
-                    "-L#{Formula["cpprestsdk"].lib}",
-                    "-L#{Formula["grpc"].lib}",
-                    "-L#{Formula["openssl@3"].lib}",
-                    "-L#{Formula["protobuf"].lib}",
-                    "-L#{lib}",
-                    "-lboost_random-mt",
-                    "-lboost_chrono-mt",
-                    "-lboost_thread-mt",
-                    "-lboost_system-mt",
-                    "-lboost_filesystem-mt",
-                    "-lcpprest",
-                    "-letcd-cpp-api",
-                    "-lgpr", "-lgrpc", "-lgrpc++",
-                    "-lssl", "-lcrypto",
-                    "-lprotobuf",
-                    "-o", "test_etcd_cpp_apiv3"
+    (testpath"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 3.5)
+      set(CMAKE_CXX_STANDARD 17)
+      project(test LANGUAGES CXX)
+      find_package(protobuf CONFIG REQUIRED)
+      find_package(etcd-cpp-api CONFIG REQUIRED)
+      add_executable(test_etcd_cpp_apiv3 test.cc)
+      target_link_libraries(test_etcd_cpp_apiv3 PRIVATE etcd-cpp-api)
+    CMAKE
+
+    ENV.delete "CPATH"
+    system "cmake", ".", "-Wno-dev", "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib"
+    system "cmake", "--build", "."
 
     # prepare etcd
-    etcd_pid = fork do
-      exec "#{Formula["etcd"].opt_prefix}binetcd",
-        "--force-new-cluster",
-        "--data-dir=#{testpath}",
-        "--listen-client-urls=http:127.0.0.1:#{port}",
-        "--advertise-client-urls=http:127.0.0.1:#{port}"
-    end
+    etcd_pid = spawn(
+      Formula["etcd"].opt_bin"etcd",
+      "--force-new-cluster",
+      "--data-dir=#{testpath}",
+      "--listen-client-urls=http:127.0.0.1:#{port}",
+      "--advertise-client-urls=http:127.0.0.1:#{port}",
+    )
 
     # sleep to let etcd get its wits about it
     sleep 10

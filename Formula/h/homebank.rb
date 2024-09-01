@@ -1,25 +1,25 @@
 class Homebank < Formula
   desc "Manage your personal accounts at home"
-  homepage "http:homebank.free.fr"
+  homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https:deb.debian.orgdebianpoolmainhhomebankhomebank_5.8.1.orig.tar.gz"
-  mirror "http:homebank.free.frpublicsourceshomebank-5.8.1.tar.gz"
-  sha256 "60c35feafe341aec8fed9de4b0a875dc0f5c1674c5f5804ff7190a6c6c53dc01"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.8.2.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.8.2.tar.gz"
+  sha256 "d42a45a2b28a1d7a7a95ef2f56539b9b6d954e1d8ba90948f509386f09737cb0"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:deb.debian.orgdebianpoolmainhhomebank"
-    regex(href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.orig\.ti)
+    url "https://deb.debian.org/debian/pool/main/h/homebank/"
+    regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "47b1930e189414ca9093acd78a9841adb85eb4a4e9256aed9fcf33fe94193f03"
-    sha256 arm64_ventura:  "acfdd36eea88731e1a89f4f8f9d49c648d53464108abf7454811a7aa19e18a79"
-    sha256 arm64_monterey: "35b070e0cbbd91fa64604f23544ebc0de53408b9ead1a4f625d5519db6fca571"
-    sha256 sonoma:         "c720ac9b41db8b5708faf8ea26d6e86716c96ff02baca0151480cb5ffa4676c6"
-    sha256 ventura:        "e7a91dc6b7aed9f5d8ee73c88c3e6e400d2f2f4f25819c1f240be9ef1a3487bc"
-    sha256 monterey:       "81e07a712af61832aba5ad3c50a25fa56fbadf3aa995e5806da04224c89a2aaa"
-    sha256 x86_64_linux:   "35552c6edb31ec7f2f966cd152ca32cd8f32dac5ea6737dc8c01267542bcaba2"
+    sha256 arm64_sonoma:   "bf7498628165c1721cdc2e524062c4d101f3b29af873aec3df7f5c124beec229"
+    sha256 arm64_ventura:  "b10d6e67cc5f61a0eb5591114a64cdf8cd105865690847a2c36a78ae06f53ec4"
+    sha256 arm64_monterey: "c4661ed8dfad89b53ee714abd739567d857e8b1ff98eacd7161f9a59f5ff8b22"
+    sha256 sonoma:         "10a1878b94e54aad83aec739e683ec0b7f0376110c3450af8926895a84fb72e8"
+    sha256 ventura:        "402809621caeff90fad381ee692d45275ee962dcb5783c7ca7275b5c60b43b87"
+    sha256 monterey:       "96b6e50db17ecab79ef1bc68fdca328dd2fb1b67f0670ecc725f2b7b2546e762"
+    sha256 x86_64_linux:   "c2cf7fdf60fa262efb083abc5c6ad43fe44ded311b1b549abd20e3cffa5af961"
   end
 
   depends_on "intltool" => :build
@@ -49,39 +49,19 @@ class Homebank < Formula
     depends_on "perl-xml-parser" => :build
   end
 
-  # Fix scope of 'name' variable in rep-budget.c
-  # upstream bug report, https:bugs.launchpad.nethomebank+bug2067543
-  # nixpkg patch commit, https:github.comNixOSnixpkgscommit5b15ea1e00e33223d52c3aabb821de402265b326
-  patch :DATA
-
   def install
     if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin"perl"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
+      ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 
-    system ".configure", "--with-ofx", *std_configure_args.reject { |s| s["--disable-debug"] }
-    chmod 0755, ".install-sh"
+    system "./configure", "--with-ofx", *std_configure_args.reject { |s| s["--disable-debug"] }
+    chmod 0755, "./install-sh"
     system "make", "install"
   end
 
   test do
     # homebank is a GUI application
-    system bin"homebank", "--help"
+    system bin/"homebank", "--help"
   end
 end
-
-__END__
-diff --git asrcrep-budget.c bsrcrep-budget.c
-index eb5cce6..61e2e77 100644
---- asrcrep-budget.c
-+++ bsrcrep-budget.c
-@@ -255,7 +255,7 @@ gint tmpmode;
- 	}
- 	else
- 	{
--libname:
-+libname: ;
- 	gchar *name;
-
- 		gtk_tree_model_get(model, iter,

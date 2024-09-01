@@ -59,7 +59,6 @@ class Fb303 < Formula
                     "-L#{Formula["folly"].opt_lib}", "-lfolly",
                     "-L#{Formula["glog"].opt_lib}", "-lglog",
                     "-L#{Formula["fbthrift"].opt_lib}", "-lthriftprotocol", "-lthriftcpp2",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_context-mt",
                     "-ldl"
     assert_equal "BaseService", shell_output(".test").strip
   end
