@@ -468,7 +468,7 @@ Homebrew-homebrew-core/Formula/b/bibtex2html.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibtexconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bic.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bigloo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bigloo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bigquery-emulator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bilix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binaryen.rb, Homebrew/homebrew-core, 1
@@ -7843,7 +7843,7 @@ Homebrew-homebrew-cask/Casks/c/cmd-eikana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmdtap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cncjs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cncnet.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/coccinellida.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/coccinellida.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cockatrice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cocktail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cocoapods.rb, Homebrew/homebrew-cask, 1
@@ -11983,7 +11983,7 @@ Homebrew-homebrew-cask/Casks/m/mongodbpreferencepane.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/m/mongotron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monitorcontrol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monity-helper.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mono-mdk-for-visual-studio.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mono-mdk-for-visual-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mono-mdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monodraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monofocus.rb, Homebrew/homebrew-cask, 0

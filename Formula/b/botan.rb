@@ -1,8 +1,8 @@
 class Botan < Formula
   desc "Cryptographic algorithms and formats library in C++"
   homepage "https:botan.randombit.net"
-  url "https:botan.randombit.netreleasesBotan-3.4.0.tar.xz"
-  sha256 "71843afcc0a2c585f8f33fa304f0b58ae4b9c5d8306f894667b3746044277557"
+  url "https:botan.randombit.netreleasesBotan-3.5.0.tar.xz"
+  sha256 "67e8dae1ca2468d90de4e601c87d5f31ff492b38e8ab8bcbd02ddf7104ed8a9f"
   license "BSD-2-Clause"
   head "https:github.comrandombitbotan.git", branch: "master"
 
@@ -12,16 +12,17 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "62e552684c8e60b8a9e8ded197763bc30a915ea6ebd1e5c5758461736cf3e00c"
-    sha256 arm64_ventura:  "310e7b07d00742e098ffb07e390d7b65dc5e46b4b4dcf2d755ca22f6beff5da3"
-    sha256 arm64_monterey: "5abbe804a669848b477c41d4e686a2f60d989e863bcbd3d131045d0e22d5c3b6"
-    sha256 sonoma:         "1ff4c56187ff11925e3a933ced7d5d760bb5cc02a6b305a35a48b5dcd74a65dd"
-    sha256 ventura:        "1c76422e4bd105544bddcb4d7da9f4426588c3f9ba227c5fe705c7b2259634e6"
-    sha256 monterey:       "1c1b8de720877f9c6ce3be9358a01bb59f66af53927b03540e263316c57224b1"
-    sha256 x86_64_linux:   "c72357eb490ac89c8c0ea089e618ac90e48c84c469ca0280387b83e05a973e7f"
+    sha256 arm64_sonoma:   "aa11c6a304090b87202a5dc2ab82b9b82ac761d505cddfa168d741bfea2ce728"
+    sha256 arm64_ventura:  "1c0262d4204807550d0d254d50239579e092c2fe2a3c605f0b18ca9460b199ab"
+    sha256 arm64_monterey: "eddaaff629f4803ad72d0a9b1c4337123f1f7855c442b43d1827448a8d86bbb5"
+    sha256 sonoma:         "5261549cf532913036283820da77d452cae2f549c3a61d924b7d988c64b7ad4b"
+    sha256 ventura:        "cdfa44fa31c62afcd083b4b77e7bd032fd53bd7ec40dfa4d9ee5a266e65ace01"
+    sha256 monterey:       "ae348e462be182f48e69f4182c59f883b55695c3052d4a21e4b9c73bdcb90f11"
+    sha256 x86_64_linux:   "eaa76f947d74ac3cd9501dc86d600214f5876388ebfb3ef675254e167d4f062f"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "ca-certificates"
   depends_on "python@3.12"
   depends_on "sqlite"
 
@@ -29,7 +30,7 @@ class Botan < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1400
   end
 
   fails_with :clang do
@@ -44,8 +45,7 @@ class Botan < Formula
   end
 
   def install
-    ENV.cxx11
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400
+    ENV.runtime_cpu_detection
 
     args = %W[
       --prefix=#{prefix}
@@ -53,7 +53,16 @@ class Botan < Formula
       --with-zlib
       --with-bzip2
       --with-sqlite3
+      --system-cert-bundle=#{Formula["ca-certificates"].pkgetc}cert.pem
     ]
+    args << "--with-commoncrypto" if OS.mac?
+
+    if OS.mac? && DevelopmentTools.clang_build_version <= 1400
+      ENV.llvm_clang
+
+      ldflags = %W[-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib} -lunwind]
+      args << "--ldflags=#{ldflags.join(" ")}"
+    end
 
     system python3, "configure.py", *args
     system "make", "install"

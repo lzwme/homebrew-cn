@@ -7,8 +7,8 @@ class KnotResolver < Formula
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
-    url "https://secure.nic.cz/files/knot-resolver/"
-    regex(/href=.*?knot-resolver[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://www.knot-resolver.cz/download/"
+    regex(/href=.*?knot-resolver[._-]v?(\d+(?:\.\d+)+)\.t[^>]*?>[^<]*?stable/i)
   end
 
   bottle do

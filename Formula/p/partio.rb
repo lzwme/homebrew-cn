@@ -29,12 +29,11 @@ class Partio < Formula
     args = std_cmake_args
     args << "-DPARTIO_USE_GLVND=OFF" unless OS.mac?
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "doc"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", ".", *args
+    system "cmake", "--build", "."
+    system "cmake", "--build", ".", "--target", "doc"
+    system "cmake", "--install", "."
+
     pkgshare.install "srcdata"
   end
 

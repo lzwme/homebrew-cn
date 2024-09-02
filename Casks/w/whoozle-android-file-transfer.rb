@@ -15,4 +15,8 @@ cask "whoozle-android-file-transfer" do
   binary "#{appdir}Android File Transfer for Linux.appContentsSharedSupportbinaft-mtp-mount"
 
   # No zap stanza required
+
+  caveats do
+    requires_rosetta
+  end
 end

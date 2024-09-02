@@ -1,11 +1,20 @@
 class Tectonic < Formula
   desc "Modernized, complete, self-contained TeXLaTeX engine"
   homepage "https:tectonic-typesetting.github.io"
-  url "https:github.comtectonic-typesettingtectonicarchiverefstagstectonic@0.15.0.tar.gz"
-  sha256 "3c13de312c4fe39ff905ad17e64a15a3a59d33ab65dacb0a8b9482c57e6bc6aa"
   license "MIT"
   revision 1
   head "https:github.comtectonic-typesettingtectonic.git", branch: "master"
+
+  stable do
+    url "https:github.comtectonic-typesettingtectonicarchiverefstagstectonic@0.15.0.tar.gz"
+    sha256 "3c13de312c4fe39ff905ad17e64a15a3a59d33ab65dacb0a8b9482c57e6bc6aa"
+
+    # Backport `time` update to build on newer Rust
+    patch do
+      url "https:github.comtectonic-typesettingtectoniccommit6b49ca8db40aaca29cb375ce75add3e575558375.patch?full_index=1"
+      sha256 "86e5343d1ce3e725a7dab0227003dddd09dcdd5913eb9e5866612cb77962affb"
+    end
+  end
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
   # NOTE: The `GithubLatest` strategy cannot be used here because the "latest"

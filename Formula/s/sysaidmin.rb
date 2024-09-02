@@ -3,20 +3,18 @@ class Sysaidmin < Formula
 
   desc "GPT-powered sysadmin"
   homepage "https:github.comskorokithakissysaidmin"
-  url "https:files.pythonhosted.orgpackages64c79f23e1bef4cd534f6efbddada2c3da089dbb6f15b5ecb51f089b6c196c9bsysaidmin-0.2.1.tar.gz"
-  sha256 "37f8a58c35c3fed39430c83c563e43c709cfaed6cefe23a2f1564d504597a56d"
+  url "https:files.pythonhosted.orgpackages59014f961856c3cfb32136782b119b3944466df81fb542dc6c214dc3386245f0sysaidmin-0.2.2.tar.gz"
+  sha256 "1bb2b343a0dffb9282e9a2ebddbb825e416b1cc0e9821ed25ded756c86362f47"
   license "AGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "0a4a74558e6fa430a60758712b68e6431e56c5ac17572b00a34116e13310f0e6"
-    sha256 cellar: :any,                 arm64_ventura:  "1f7354d1417b31d5db762dcc4d5ab21b923872e73fc2a762b710ca7d6fafd2c9"
-    sha256 cellar: :any,                 arm64_monterey: "b7a04bc2191c970194f70bf8b98cfa35de1b54af992d5950f8170f4165d14aef"
-    sha256 cellar: :any,                 sonoma:         "66ad937034d917e162508f0f897b0f36b90995bc8f421a7c3a9dd92c91dacbca"
-    sha256 cellar: :any,                 ventura:        "a8798426727c6f8a487fcb8e872b989a776d7ee41c3f8df0eb75e6ecae751ed4"
-    sha256 cellar: :any,                 monterey:       "fd99435770df0b9aefbd62e55df00bb2d4737aa8a53a96acf2a21cb667ef9157"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85384e02d58639ef9222788cf3cd789513b3ede9b877c77ed30d37441264b55"
+    sha256 cellar: :any,                 arm64_sonoma:   "8eb9eb431fbe90eb2bafbed0bc7d2dc2ab4936255e709e473a44191f53008c59"
+    sha256 cellar: :any,                 arm64_ventura:  "42664483aa393e80588ee038b72cead653acd91e2116daafbf1a38e372f69cef"
+    sha256 cellar: :any,                 arm64_monterey: "d976a03b014eab9f6d2610ac862647d11b0f2544d4e92c352cc63d34f1dcffb9"
+    sha256 cellar: :any,                 sonoma:         "ed90a63d485043714dc7d5b869efa3dd68ee529c1e521c9e2d5285fe452071fc"
+    sha256 cellar: :any,                 ventura:        "155b9399f2381f30e10a4f3ef50c7e10882ee358bc4dc60d1985e47e13bef3b0"
+    sha256 cellar: :any,                 monterey:       "60f36c6475388bcb8a9a46be1e8efcf7197a348c379374f948a89c6d76d5dc43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bc21d6392281c7ac9458e93570dcc73bff1ade5d029d2869cac98fd722923ed"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -49,33 +47,33 @@ class Sysaidmin < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages5c2d3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0httpx-0.27.0.tar.gz"
-    sha256 "a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"
+    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
+    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+  end
+
+  resource "jiter" do
+    url "https:files.pythonhosted.orgpackagesd71aaa64be757afc614484b370a4d9fc1747dc9237b37ce464f7f9d9ca2a3d38jiter-0.5.0.tar.gz"
+    sha256 "1d916ba875bcab5c5f7d927df998c4cb694d27dceddf3392e58beaf10563368a"
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages8f23c02b7184912fa9c634f099531a9879e2c8941cded026a56cb0a79ad76bc3openai-1.34.0.tar.gz"
-    sha256 "95c8e2da4acd6958e626186957d656597613587195abd0fb2527566a93e76770"
+    url "https:files.pythonhosted.orgpackages41809390645de4e76bf8195073f23029a9b54cd13b4294e3a5bcb56e4df1aafcopenai-1.43.0.tar.gz"
+    sha256 "e607aff9fc3e28eade107e5edd8ca95a910a4b12589336d3cbb6bfe2ac306b3c"
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
-    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
+    url "https:files.pythonhosted.orgpackages8c99d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902epydantic-2.8.2.tar.gz"
+    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
-    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackages12e30d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247pydantic_core-2.20.1.tar.gz"
+    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
   end
 
   resource "sniffio" do
@@ -84,8 +82,8 @@ class Sysaidmin < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "typing-extensions" do

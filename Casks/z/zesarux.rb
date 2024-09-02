@@ -19,4 +19,8 @@ cask "zesarux" do
     "~.zesaruxrc",
     "~LibrarySaved Application Statecom.cesarhernandez.zesarux.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,13 +1,13 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
-  homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
-  url "ftp://ftp-sop.inria.fr/indes/fp/Bigloo/bigloo-4.5b.tar.gz"
+  homepage "https:www-sop.inria.frindesfpBigloo"
+  url "ftp:ftp-sop.inria.frindesfpBigloobigloo-4.5b.tar.gz"
   sha256 "864d525ee6a7ff339fd9a8c973cc46bf9a623a3827d84bfb6e04a29223707da5"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://www-sop.inria.fr/indes/fp/Bigloo/download.html"
-    regex(/bigloo-latest\.t.+?\(([^)]+?)\)/i)
+    url "https:www-sop.inria.frindesfpBigloodownload.html"
+    regex(bigloo-latest\.t.+?\(([^)]+?)\)i)
   end
 
   bottle do
@@ -37,14 +37,18 @@ class Bigloo < Formula
   end
 
   def install
+    # Remove when included in a release:
+    # https:github.commanuel-serranobigloocommit8b2a912c7c668a2a0bfa2ec30bc68bfdd05d2d7f
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     # Force bigloo not to use vendored libraries
-    inreplace "configure", /(^\s+custom\w+)=yes$/, "\\1=no"
+    inreplace "configure", (^\s+custom\w+)=yes$, "\\1=no"
 
     # configure doesn't respect --mandir or MANDIR
-    inreplace "configure", "$prefix/man/man1", "$prefix/share/man/man1"
+    inreplace "configure", "$prefixmanman1", "$prefixsharemanman1"
 
     # configure doesn't respect --infodir or INFODIR
-    inreplace "configure", "$prefix/info", "$prefix/share/info"
+    inreplace "configure", "$prefixinfo", "$prefixshareinfo"
 
     args = %w[
       --customgc=no
@@ -64,14 +68,14 @@ class Bigloo < Formula
       args << "--disable-libbacktrace"
     end
 
-    system "./configure", *args, *std_configure_args
+    system ".configure", *args, *std_configure_args
 
     system "make"
     system "make", "install"
 
     # Install the other manpages too
     manpages = %w[bgldepend bglmake bglpp bgltags bglafile bgljfile bglmco bglprof]
-    manpages.each { |m| man1.install "manuals/#{m}.man" => "#{m}.1" }
+    manpages.each { |m| man1.install "manuals#{m}.man" => "#{m}.1" }
   end
 
   test do
@@ -80,6 +84,6 @@ class Bigloo < Formula
       (newline)
       (exit)
     EOS
-    assert_match "Hello World!\n", pipe_output("#{bin}/bigloo -i -", program)
+    assert_match "Hello World!\n", pipe_output("#{bin}bigloo -i -", program)
   end
 end

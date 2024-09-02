@@ -20,16 +20,14 @@ class Openfast < Formula
   depends_on "openblas"
 
   def install
-    args = std_cmake_args + %w[
+    args = %w[
       -DDOUBLE_PRECISION=OFF
       -DBLA_VENDOR=OpenBLAS
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "openfast"
-      bin.install "glue-codesopenfastopenfast"
-    end
+    system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args
+    system "cmake", "--build", ".", "--target", "openfast"
+    bin.install "glue-codesopenfastopenfast"
   end
 
   test do

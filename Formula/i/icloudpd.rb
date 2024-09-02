@@ -5,19 +5,19 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.23.1",
-      revision: "3593ed8c2b79cabdb72ce7b6f7c02761e5332123"
+      tag:      "v1.23.2",
+      revision: "9607f21fb7d56de11e9cf51949251353b49b4fc9"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3597bc1fe8b64aadc46d3e302ad43af0190c1f36247f8f1ab1e1ba2346408c12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12b148a4803be1bc5af81cc28bf4c10956c603190f6531626e1d22e65e85717f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ed9f6569dd45535de5a1aae1a9bf3f9ef13a86cb38e2c9b68e2b82862eb3579"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7f6aa455597e1e48a43975a20d2c70ea07109e3b56dfd774f5d81a8f48287c06"
-    sha256 cellar: :any_skip_relocation, ventura:        "3113403abd7fe7bd2ab1dfdd8930a4ef92314f686c0a22cf54fb90973e31b481"
-    sha256 cellar: :any_skip_relocation, monterey:       "a546d6ac3a1b82307fb4a6faebcdb37c4bb5f1fa492b3cd84b478b7a53709625"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cc4418baeb5de5385ccd7934892a1d785221989ff0372e1cf1a05c5a440e973"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e435afc69232b14f6209ca13f583060719c67500ead46dd38ade7ce239bf46c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cf0c9336851429fba5ecfd8d1279b7149adb2270500fc5f4b6a211ab9b38a3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c705fc5d6faf07013c3c3f0ef737dae272ff314228e45fd67e274347612e1cf6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e53d8e5d603fff93a3eb6db5bb15c46f8a59f1cb14d71fe77b493bb6e1f18f02"
+    sha256 cellar: :any_skip_relocation, ventura:        "967bcf1760991a92892815411680047d848325941dbdb54f14171bc2d9daf1ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "af90730e6d97f4088f733781a9bedf0ddc6ecd4f76ccebac4ac3d703b3d1b76b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "027217bdc1d2fa49e386133720899e9ed65ca136034f54d66dc2dbda4f383512"
   end
 
   depends_on "python@3.12"

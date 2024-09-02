@@ -20,14 +20,19 @@ class NestopiaUe < Formula
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
+
   depends_on "fltk"
   depends_on "libarchive"
   depends_on "sdl2"
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "mesa"
+  end
+
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules",
                           "--datarootdir=#{pkgshare}",
                           *std_configure_args

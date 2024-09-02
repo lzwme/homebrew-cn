@@ -5,8 +5,8 @@ class S3ql < Formula
   homepage "https:github.coms3qls3ql"
   # TODO: Try to remove `cython` and corresponding build_cython in the next release.
   # check if `python3 setup.py build_cython` is still needed in https:github.coms3qls3qlblobmaster.githubworkflowspr-ci.yml#L34
-  url "https:github.coms3qls3qlreleasesdownloads3ql-5.2.1s3ql-5.2.1.tar.gz"
-  sha256 "04981b792b82e1d0cd01aa5255ae79131dd473dc526e38e66abf815f2d6cbd8f"
+  url "https:github.coms3qls3qlreleasesdownloads3ql-5.2.2s3ql-5.2.2.tar.gz"
+  sha256 "51e94109690d435adf6bbd5d16592722ad8c10839a197b898b9ee34a0ce3a2c6"
   license "GPL-3.0-only"
 
   livecheck do
@@ -15,7 +15,7 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fcf8401cc1f91d7b0dc301a48b1353e981371e25a9a52669800758845e6346b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2f080a531d2538b608b45cadca3074e892cd27672e554a766bb952e8a1d5a15d"
   end
 
   depends_on "cython" => :build

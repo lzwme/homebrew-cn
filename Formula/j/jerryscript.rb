@@ -28,11 +28,9 @@ class Jerryscript < Formula
       -DJERRY_CMDLINE=ON
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "cmake", "--build", "."
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", ".", *args
+    system "cmake", "--build", "."
+    system "cmake", "--install", "."
   end
 
   test do

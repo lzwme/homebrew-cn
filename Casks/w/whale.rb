@@ -17,4 +17,8 @@ cask "whale" do
     "~LibraryPreferencesnet.1000ch.whale.plist",
     "~LibrarySaved Application Statenet.1000ch.whale.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

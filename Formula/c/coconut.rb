@@ -3,18 +3,18 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "https://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/b9/0f/f8b531ee6351f1f5300b28efd5444aa618b7581b802d35cb5a40e240ea10/coconut-3.1.1.tar.gz"
-  sha256 "14c5f502465f1b9dde0b0cefe5c5b6458433c724fcede5920faa2183ecebd4f2"
+  url "https://files.pythonhosted.org/packages/93/75/414f33186846444da53b4e834d5ccfb0577d0e09b997819c183fa509f70a/coconut-3.1.2.tar.gz"
+  sha256 "ef0656ee2df4594007f998f4a9c2a1b9bfbc40541a400cbaa00ccbbac50e5414"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c798770750510d063ba6a5dcdd9589b2f90812507e6b6be3e4b3554bcb8dc60b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "809cd64520fad15b178903684bc9c7cf4fb8dc9a7e0edd56ee9b095f468c3fa1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4fa49d34e455b95aeb873be72092c4c7af3c2ae73599e190eda80346f041520b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d09404f8e53f1418bc3ce106730a92aae2e6d291d10351f0e3f963bceff59de0"
-    sha256 cellar: :any_skip_relocation, ventura:        "45a61d08f8d867e33781a454304a9d582d731c37f4f7f8c36b0becd2d31cef30"
-    sha256 cellar: :any_skip_relocation, monterey:       "810e286a1dd41fa4d8522dea008fa233621d857598f01cdf254a312f5f45b1c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "206d732301f0fadf40bac54f4ea6c129599acdbc5d7197215206e0c601ee21db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "caf2ac1e1c6f0aed297ef0b9af1c49a8968c0cf4cfd8230e0b7e2cc618ae3090"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e31ea818db43d09baa443fe2af11f981a1b2e625c88b629e1eef957bf05663a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f97665b22bc5843e14c962ab685060b8eefb776ebfa14cfb01ff573ee5d8cf09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02c14e4de3171dcb73d5308375a2dd5b23f2edbf435685033235c8ba5e5a8b69"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f950454d298751f88015943d97e7dd4bc504c254aa3d70946c9e8a3e31f94c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ed68359bcf643eb9a67817660a59e2fbcf0c0b56ad9b0f072f6484a6ead0f02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bb84dd30519e83e8af41fd21ca1e4ec7df8562bee1e45a08575fa85e5b907b7"
   end
 
   depends_on "python@3.12"
@@ -35,18 +35,18 @@ class Coconut < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/5d/0f/2a8cf0881833cae8a2b50f0ce63ba4662c44473640c1feeb054f19d33459/prompt_toolkit-3.0.46.tar.gz"
-    sha256 "869c50d682152336e23c4db7f74667639b5047494202ffe7670817053fd57795"
+    url "https://files.pythonhosted.org/packages/47/6d/0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879f/prompt_toolkit-3.0.47.tar.gz"
+    sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/90/c7/6dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2/psutil-5.9.8.tar.gz"
-    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+    url "https://files.pythonhosted.org/packages/18/c7/8c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9/psutil-6.0.0.tar.gz"
+    sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
   end
 
   resource "pygments" do
@@ -55,8 +55,8 @@ class Coconut < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/aa/60/5db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44/setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https://files.pythonhosted.org/packages/6a/21/8fd457d5a979109603e0e460c73177c3a9b6b7abcd136d0146156da95895/setuptools-74.0.0.tar.gz"
+    sha256 "a85e96b8be2b906f3e3e789adec6a9323abf79758ecfa3065bd740d81158b11e"
   end
 
   resource "sniffio" do

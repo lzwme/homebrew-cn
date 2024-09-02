@@ -1,18 +1,18 @@
 class Mailpit < Formula
   desc "Web and API based SMTP testing"
   homepage "https:mailpit.axllent.org"
-  url "https:github.comaxllentmailpitarchiverefstagsv1.20.2.tar.gz"
-  sha256 "147569854fea568d530594721f008de6df1cf19a4c6a7984a5ace56dbb75eab9"
+  url "https:github.comaxllentmailpitarchiverefstagsv1.20.3.tar.gz"
+  sha256 "2a811cc8f81b84602af50417d9f0a4ae6ae7fffea8d8c98460396a20fed75f3c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c27bf26467e4605ddfccc23f49504b59b034afcb8797b2e213586eae41d0180b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88914ee3db3ea3aed71afedba834e4969eb63871a57a6ba9d8717c14df2b590a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2884ec1d60b6f3343570d2702c5469f38818e401bbe58c5fb092a2de7bdda4f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2a67464fbe717cd2d1392c63c570c82b0e7ee1e46bc423a7c81c5ae0e94f1d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "1142721fb37987ad0aa371a0963d76ee8e02f1e45a7194aeb255c4d97fb91fba"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd6a4b2af0adc73b398effed65c8c60db3e7c7f8800a8a99b84f164a0236fc20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77cfb4a17357e42e4302aac7df82ad132aef2b8d16ae483c155b514f0d64fdf4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02991877a12eb576dc749e92c19705fe33d1d70b11a24544d700fac02748a1e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c24e792b69878db2a83c41b9a5594edbaf53cfd61793e339757217644a4ab50"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dbed79b0603ddeeb88d0953ed3237fff7a40f3759acdf998e74819821745396"
+    sha256 cellar: :any_skip_relocation, sonoma:         "58a10c4d72a8068b0ddf46749f9f69fb9c5322326fb261dd9463b339271b1de0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b30c38f397001b6fd6a5909045e138f36f18253512d1f7763e6440c8361e4fb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c6d9c4a727386f7af32cdb2046bad32d9af2de34f1a38b6ecf14dc5ffcc20f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f969203aecd1368cecb71a11b4b622615c1181ae976cee23e120f625ed6ca73b"
   end
 
   depends_on "go" => :build

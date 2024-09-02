@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/80/00/89037673892a9c1a2af27ff48249ad1ad4d7ae0097be29807a67a84bdde9/checkov-3.2.230.tar.gz"
-  sha256 "0d9cb19dae6d7cebdd3974cb7e0cbff9158e83afdf9599c6ca7c6c3144a713f9"
+  url "https://files.pythonhosted.org/packages/73/44/e2f0c503d1b37d1a4f0660909e0745625dd0ec6fd01cb4dac2cb5c3082f5/checkov-3.2.240.tar.gz"
+  sha256 "37fa95ce9220f9e87d420cafa070668c72627f7ff3e7d4d22cb676cda1752264"
   license "Apache-2.0"
 
   livecheck do
@@ -17,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ed3ac34020bab697b6a7f940b8501b9404e8818fed636e7f2a9786887f21502d"
-    sha256 cellar: :any,                 arm64_ventura:  "d0c898f8c027b288b0cc14d2478100ac5b91fdb1925ee2983097092cb273ceeb"
-    sha256 cellar: :any,                 arm64_monterey: "7ad46ba0e1d209552ab6b4d17a166a18a4e7a0d02318b6c4da8f4bbfbdc7ae36"
-    sha256 cellar: :any,                 sonoma:         "ef3ac4d4913bff80039e43be9220be83deceba8866da274a5fb5f1920e5cad78"
-    sha256 cellar: :any,                 ventura:        "9d9b05039850274a7473860c4d0cca3264fab6b5efbe076223016442b37145d5"
-    sha256 cellar: :any,                 monterey:       "64d9df6ee8befd0bf6c691271871ad7cc13eba257c7d52b5f9d4544c19a199b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbe33a966314e4b751d1d3df2ef58e4f041f5b6999f86d2a38d2a6902f373f05"
+    sha256 cellar: :any,                 arm64_sonoma:   "dd9f60e3fd0b17672ab07a379b98f3603e24fdfe938d8cc16cd161535397910f"
+    sha256 cellar: :any,                 arm64_ventura:  "729fa5c0e17a1b91f1b2e512fc9a0901b3c861f31f7cba407a0aa9d52b3a72a9"
+    sha256 cellar: :any,                 arm64_monterey: "7bd01665710fd9f9414cc95e9aeeb5bbabd05da11a44212186d829c0fe214d42"
+    sha256 cellar: :any,                 sonoma:         "45f4f6429036a23cc79ea46f206acc842e9c1731cb3c18765f38ca275ceb07d1"
+    sha256 cellar: :any,                 ventura:        "3dd4ccc3ba61ddd1f7bb97495288f4329ee4f9b6e04ab11ba3df5ba43e2f1813"
+    sha256 cellar: :any,                 monterey:       "414be787005644edfe5630de31c41da069552513819a4ae121783196eb2c584e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd224fab48cad9619a17dbb3abb05c32a2e1fe5bb447def9c89a805530939a52"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -41,13 +41,13 @@ class Checkov < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/a7/64/889100848dea8a797215dbacbcf15367e2bd797b879aaf9df5c78d7c3200/aiohappyeyeballs-2.3.7.tar.gz"
-    sha256 "e794cd29ba6a14078092984e43688212a19081de3a73b6796c2fdeb3706dd6ce"
+    url "https://files.pythonhosted.org/packages/2d/f7/22bba300a16fd1cad99da1a23793fe43963ee326d012fdf852d0b4035955/aiohappyeyeballs-2.4.0.tar.gz"
+    sha256 "55a1714f084e63d49639800f95716da97a1f173d46a16dfcfda0016abb93b6b2"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/80/5e/42678cd8af232a01441b375b963a6c79943718a0cb9da90ab7e5ff14f1d3/aiohttp-3.10.4.tar.gz"
-    sha256 "23a5f97e7dd22e181967fb6cb6c3b11653b0fdbbc4bb7739d9b6052890ccab96"
+    url "https://files.pythonhosted.org/packages/ca/28/ca549838018140b92a19001a8628578b0f2a3b38c16826212cc6f706e6d4/aiohttp-3.10.5.tar.gz"
+    sha256 "f071854b47d39591ce9a17981c46790acb30518e2f83dfca8db2dfa091178691"
   end
 
   resource "aiomultiprocess" do
@@ -121,8 +121,8 @@ class Checkov < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/a7/3f/ea907ec6d15f68ea7f381546ba58adcb298417a59f01a2962cb5e486489f/cachetools-5.4.0.tar.gz"
-    sha256 "b8adc2e7c07f105ced7bc56dbb6dfbe7c4a00acce20e2227b3f355be89bc6827"
+    url "https://files.pythonhosted.org/packages/c3/38/a0f315319737ecf45b4319a8cd1f3a908e29d9277b46942263292115eee7/cachetools-5.5.0.tar.gz"
+    sha256 "2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"
   end
 
   resource "cffi" do
@@ -211,8 +211,8 @@ class Checkov < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "importlib-metadata" do
@@ -341,8 +341,8 @@ class Checkov < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/46/3a/31fd28064d016a2182584d579e033ec95b809d8e220e74c4af6f0f2e8842/pyparsing-3.1.2.tar.gz"
-    sha256 "a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad"
+    url "https://files.pythonhosted.org/packages/83/08/13f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043a/pyparsing-3.1.4.tar.gz"
+    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
   end
 
   resource "python-dateutil" do
@@ -471,13 +471,13 @@ class Checkov < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/e0/ad/bedcdccbcbf91363fd425a948994f3340924145c2bc8ccb296f4a1e52c28/yarl-1.9.4.tar.gz"
-    sha256 "566db86717cf8080b99b58b083b773a908ae40f06681e87e589a976faf8246bf"
+    url "https://files.pythonhosted.org/packages/80/1c/708f8d34fb7788c8f4fa78fa5ae0967e8a456504bdb850c6d3390edc8b8b/yarl-1.9.6.tar.gz"
+    sha256 "0bdc6a7b59efa0c34c90ef3da864f0c53e81a4640fbc461bfde9f1b0c64c3c81"
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/0e/af/9f2de5bd32549a1b705af7a7c054af3878816a1267cb389c03cc4f342a51/zipp-3.20.0.tar.gz"
-    sha256 "0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"
+    url "https://files.pythonhosted.org/packages/d3/8b/1239a3ef43a0d0ebdca623fb6413bc7702c321400c5fdd574f0b7aa0fbb4/zipp-3.20.1.tar.gz"
+    sha256 "c22b14cc4763c5a5b04134207736c107db42e9d3ef2d9779d465f5f1bcba572b"
   end
 
   def install
