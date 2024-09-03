@@ -1,16 +1,15 @@
 class Progressline < Formula
   desc "Track commands progress in a compact one-line format"
   homepage "https:github.comkattoufProgressLine"
-  url "https:github.comkattoufProgressLinearchiverefstags0.2.1.tar.gz"
-  sha256 "5ad7ff2b766f59b25f0e197e25b728e1272dc38fd3bd377480e8212f6e03abad"
+  url "https:github.comkattoufProgressLinearchiverefstags0.2.2.tar.gz"
+  sha256 "6c3ee9bdb633b2b616f3fe0c3f4535a1c307d8c031deae0d90bfdbb447061fed"
   license "MIT"
   head "https:github.comkattoufProgressLine.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f41428e7de9c5f3d81cde301ebf374fa8e5122224dd37d966219f7694a757a8e"
-    sha256 cellar: :any_skip_relocation, sonoma:       "89b0b2bff1f412f80a95381688565e84fa538fb9ec5c38921280151a24aa34d5"
-    sha256                               x86_64_linux: "f34c2797c76a7385bf4f23a6a6a6d8d146b9243734cd63698e1ed49c80a12e57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8cd9e5aa7f6599fde64b50d46e56a8798b2c2ac611de87f970c82fea287bb79d"
+    sha256 cellar: :any_skip_relocation, sonoma:       "c3cb4c78994ff6ff3b0460cd9d30340874129774953ac83e91cb800c314e2e5d"
+    sha256                               x86_64_linux: "83a77fb6a7d99fb2a1483f855db990ed18f19ee0be86d78b7567f46fb8ded34e"
   end
 
   # requires Swift 5.10

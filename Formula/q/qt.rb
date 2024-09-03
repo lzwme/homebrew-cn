@@ -358,9 +358,9 @@ class Qt < Formula
     # i.e. there is no upstream or Homebrew support.
     lib.glob("pkgconfig*.pc") do |pc|
       inreplace pc do |s|
-        s.gsub! " -L${libdir}", " -F${libdir}", false
-        s.gsub! " -lQt6", " -framework Qt", false
-        s.gsub! " -Ilib", " -I${libdir}", false
+        s.gsub! " -L${libdir}", " -F${libdir}", audit_result: false
+        s.gsub! " -lQt6", " -framework Qt", audit_result: false
+        s.gsub! " -Ilib", " -I${libdir}", audit_result: false
       end
       (libexec"libpkgconfig").install pc
     end

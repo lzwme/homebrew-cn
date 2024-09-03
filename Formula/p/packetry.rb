@@ -1,18 +1,18 @@
 class Packetry < Formula
   desc "Fast, intuitive USB 2.0 protocol analysis application for use with Cynthion"
   homepage "https:github.comgreatscottgadgetspacketry"
-  url "https:github.comgreatscottgadgetspacketryarchiverefstagsv0.2.1.tar.gz"
-  sha256 "5dfeb9c711fc10a4225002ee835ae1b8ba8dc6bc6e5fc2d5558412b66f0c716b"
+  url "https:github.comgreatscottgadgetspacketryarchiverefstagsv0.2.2.tar.gz"
+  sha256 "8bcbdd8c417cf4694c41e1e6376b95ddea6de9b809e797175dbc993884e5e051"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "175a54e0ae37d3e5e5a5fa91227f1d4d1df776800cd98b76f6c11a99b967b8e7"
-    sha256 cellar: :any,                 arm64_ventura:  "17f42acbf4030b4eb6a902e37af718c53ef7777388f01088d20fe4ec347a13f4"
-    sha256 cellar: :any,                 arm64_monterey: "8c4f7070d6358973c5e9fbfd68566bb7ad4312d45e1eaae6e6495fe515d18b9a"
-    sha256 cellar: :any,                 sonoma:         "f9f4bc124136e8c0ee69daba42a414ddc5e98a6e45dfe62e445b263f280595bd"
-    sha256 cellar: :any,                 ventura:        "9106929c228c332769cb054ebd3728ff9a2132f86214084db9c8bff6a15da616"
-    sha256 cellar: :any,                 monterey:       "7924f1b669d8ac376ed015332179ff941cef20035f9700ff6b5f9129d004c906"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33ad3be16e8f406980fab4c4b1794baae7a8a6179656b43aebd53348f9928e68"
+    sha256 cellar: :any,                 arm64_sonoma:   "85b8b560660e53195c06ebf5d634db3c4097700a76b6f4d60d2ce460bae43c2f"
+    sha256 cellar: :any,                 arm64_ventura:  "44b889a273d48b278e8497d94a89439591577050686bd546665b629792e32ca8"
+    sha256 cellar: :any,                 arm64_monterey: "3152e6d5ce557aa33222cf4df9297e01ddd61cea3c02194ce81a34b6f20e828b"
+    sha256 cellar: :any,                 sonoma:         "ad6d894f314fc3d35cc1546930be921bf8d16e2a3fb28914da20c89bd63b53e8"
+    sha256 cellar: :any,                 ventura:        "73d5241265f1881813102d1099aed521d548c3aba007f118504b486b2d49b2cd"
+    sha256 cellar: :any,                 monterey:       "a78ab01bba929557a13357d59f25c504954678cab6c3eba1f42a6613a1d763e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6511f474487ff556debcc9faadedac1236cfea72164c3241f46b5191c548fe12"
   end
 
   depends_on "pkg-config" => :build

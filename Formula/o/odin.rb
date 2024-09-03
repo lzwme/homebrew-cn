@@ -2,20 +2,20 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2024-08",
-      revision: "1a16585b10044255097e0abaa73aa4f0a422cbd1"
-  version "2024-08"
+      tag:      "dev-2024-09",
+      revision: "16c5c69a4079652e930d897823446b7e7a65bd2f"
+  version "2024-09"
   license "BSD-3-Clause"
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9c4bdd572668c9f55a76f9956d6643695862347e29bebca9e73a96ca8c7f0864"
-    sha256 cellar: :any,                 arm64_ventura:  "97e4e94646429fdb73c2cbcde033b3f7a9ff36812b49d1ca16d5bb1e9519de19"
-    sha256 cellar: :any,                 arm64_monterey: "295781e8c2a00667d90d398f9557cb34b8cdbf6c76c503885ee44a29c4ca949d"
-    sha256 cellar: :any,                 sonoma:         "71a0e2e49fd9f0d25c8cbf6d34c7d3aa360c75cc86bf56c80b2687303a2bf83e"
-    sha256 cellar: :any,                 ventura:        "5799cab2b340caddc720ca99c99d3f5798a736dc1cd757e84bf5ca347b17af1e"
-    sha256 cellar: :any,                 monterey:       "3cbeff8fc1a0b581dec9f26bf5152d34baedfe58d3c8a90968a7e04e3c7e62e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e67e3d2c82e9f76636f43567a989411dc8a0b7301ee46c72dbe1fa51d9e75657"
+    sha256 cellar: :any,                 arm64_sonoma:   "7651bdbe15c910bbf6804a358d5cd0fb14ccf7b232608d45379346e198f97efc"
+    sha256 cellar: :any,                 arm64_ventura:  "cde7e87c99f0c2a4ac5f4785b1786608cc783eed77e3c1cbfd05797d542cbc15"
+    sha256 cellar: :any,                 arm64_monterey: "c4a3a030528ddf0c177d33eead37b52a3942dfe2f391ccd1f6a0d1d7424dbbbf"
+    sha256 cellar: :any,                 sonoma:         "2cafdd472b3aeb6f9a463cb7a214ce89adc5d834711dc77f68fd57cc25e4df2f"
+    sha256 cellar: :any,                 ventura:        "fb26eff2b09d89cb3f222909f84c1cf6f521f7771ff13bc4e064d83bf3026d50"
+    sha256 cellar: :any,                 monterey:       "d823f59698e1d19f2984e94f70b4a16cfef51c42c1216573113c61b0a19e0445"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3332faaab6e3c38ca1521f7ca86087ac9d0c127dc2d49d6ce9748fb524099edc"
   end
 
   depends_on "glfw"

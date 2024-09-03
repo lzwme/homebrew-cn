@@ -95,7 +95,7 @@ class Opencascade < Formula
       (\.dylib)? # 5
     x
     inreplace (lib"cmakeopencascade").glob("*.cmake") do |s|
-      s.gsub! tbb_regex, 'libtbb\1\2.\3\5', false
+      s.gsub! tbb_regex, 'libtbb\1\2.\3\5', audit_result: false
     end
 
     bin.env_script_all_files(libexec, CASROOT: prefix)

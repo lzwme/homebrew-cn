@@ -21,7 +21,7 @@ class Wemux < Formula
   end
 
   def post_install
-    inreplace etc"wemux.conf", "change_this", ENV["USER"], false
+    inreplace etc"wemux.conf", "change_this", ENV["USER"], audit_result: false
   end
 
   def caveats

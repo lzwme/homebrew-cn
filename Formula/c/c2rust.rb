@@ -1,19 +1,18 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
   homepage "https:c2rust.com"
-  url "https:github.comimmunantc2rustarchiverefstagsv0.18.0.tar.gz"
-  sha256 "cf72bd59cac5ff31553c5d1626f130167d4f72eaabcffc27630dee2a95f4707e"
+  url "https:github.comimmunantc2rustarchiverefstagsv0.19.0.tar.gz"
+  sha256 "912c28e5e289d1a9ef1e0f6c89db97eba19eda58625ca8bdc5b513fdb3c19ba4"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d03fdb5423d27527055e3b32b9508f36c9193fbf86281940067905cbab84d97e"
-    sha256 cellar: :any,                 arm64_ventura:  "11522bd88ff17a7981e7ce5a74e3dde0c442e6e5e37d1b2497fafafa32590ecb"
-    sha256 cellar: :any,                 arm64_monterey: "59b1164ade2b95e8127d08da578babd61e9f4a8e91512cfcc67ada96f0c6c251"
-    sha256 cellar: :any,                 sonoma:         "a701e0ef919ea7b778e22394fefdc871afb9147e2b4d857d2c1a033547953580"
-    sha256 cellar: :any,                 ventura:        "bf993f3a873054447c046da901ee70fe6dbac3862f46bd4a61b9d24a26533b05"
-    sha256 cellar: :any,                 monterey:       "5e461e4891dbaae333391d924b52fef6a67d280a22da2aaf315ba747203100e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38a3389cdb64ceca21ffa56b9d41c901ac924cff6978b275d3c6d37fe3cce2f7"
+    sha256 cellar: :any,                 arm64_sonoma:   "91ba7bf44c954d674c4d17d5c4959347a4ecec307c89c467f86c2385993e9bd6"
+    sha256 cellar: :any,                 arm64_ventura:  "df6a11535c68760e4cd319d282b791d0ac53e17508bc446cb38e74f16e581862"
+    sha256 cellar: :any,                 arm64_monterey: "b153725d08d02ecf282b119fd23d9b5d8b8633719d84dae1da651babc78a6d27"
+    sha256 cellar: :any,                 sonoma:         "089d4307655cbe4654cced9487e11f5cd023c462fafbf34af5ee28f1a8bd0933"
+    sha256 cellar: :any,                 ventura:        "8a2ce457289df4ab8a952c5739fbb69eeac58bf23cfbe89ce8a7ed920c5be435"
+    sha256 cellar: :any,                 monterey:       "46195003b9ddc8e715479cba427daa7e185a9b2cb88aec55a2323b3ee31c1277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "943361f3a32563316096e1367017503c30a6b7c5ccdb666038bbf35b45f6af95"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,18 +20,6 @@ class C2rust < Formula
   depends_on "llvm"
 
   fails_with gcc: "5"
-
-  # Support LLVM 17, remove in next release
-  patch do
-    url "https:github.comimmunantc2rustcommitdf42b55eae9ecfd4380004a513a10526ef8776cf.patch?full_index=1"
-    sha256 "0bef002335192076888c236faec2edcd8cb6fb3ffd6e38994fdd7c70d19089a6"
-  end
-
-  # Support LLVM 18
-  patch do
-    url "https:github.comimmunantc2rustcommit3e09934e91613c246393bfeb0d5bbb386ae0e16a.patch?full_index=1"
-    sha256 "05b895bd49174e5e7c7a893ef7f80710ce804a6c42fc0ea398cd46ab0fa5f068"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")

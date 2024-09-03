@@ -68,7 +68,7 @@ index 4bf090f006f8fc86d45e533b33a4603efc0afac1..5d9b9622fc96c4e841d8c2833d149d9a
          tgt_os=`echo $gcctarget | sed 's.*\(darwin1[0-9]\).*\1'`
          ;;
 -      *darwin2[0-2]*)
-+      *darwin2[0-3]*)
++      *darwin2[0-4]*)
          tgt_isa=`uname -m`
          tgt_os=`echo $gcctarget | sed 's.*\(darwin2[0-9]\).*\1'`
          ;;
@@ -77,7 +77,7 @@ index 4bf090f006f8fc86d45e533b33a4603efc0afac1..5d9b9622fc96c4e841d8c2833d149d9a
        add_ldflags "-mmacosx-version-min=10.15"
        ;;
 -    *-darwin2[0-2]-*)
-+    *-darwin2[0-3]-*)
++    *-darwin2[0-4]-*)
        add_cflags  "-arch ${toolchain%%-*}"
        add_ldflags "-arch ${toolchain%%-*}"
        ;;
@@ -85,19 +85,21 @@ diff --git aconfigure bconfigure
 index ae289f77b4a1994f3a1632573193124071f793b1..513556b2f81eefb2e69350188b6d6dcded1814ed 100755
 --- aconfigure
 +++ bconfigure
-@@ -102,6 +102,7 @@ all_platforms="${all_platforms} arm64-darwin-gcc"
+@@ -102,6 +102,8 @@ all_platforms="${all_platforms} arm64-darwin-gcc"
  all_platforms="${all_platforms} arm64-darwin20-gcc"
  all_platforms="${all_platforms} arm64-darwin21-gcc"
  all_platforms="${all_platforms} arm64-darwin22-gcc"
 +all_platforms="${all_platforms} arm64-darwin23-gcc"
++all_platforms="${all_platforms} arm64-darwin24-gcc"
  all_platforms="${all_platforms} arm64-linux-gcc"
  all_platforms="${all_platforms} arm64-win64-gcc"
  all_platforms="${all_platforms} arm64-win64-vs15"
-@@ -163,6 +164,7 @@ all_platforms="${all_platforms} x86_64-darwin19-gcc"
+@@ -163,6 +165,8 @@ all_platforms="${all_platforms} x86_64-darwin19-gcc"
  all_platforms="${all_platforms} x86_64-darwin20-gcc"
  all_platforms="${all_platforms} x86_64-darwin21-gcc"
  all_platforms="${all_platforms} x86_64-darwin22-gcc"
 +all_platforms="${all_platforms} x86_64-darwin23-gcc"
++all_platforms="${all_platforms} x86_64-darwin24-gcc"
  all_platforms="${all_platforms} x86_64-iphonesimulator-gcc"
  all_platforms="${all_platforms} x86_64-linux-gcc"
  all_platforms="${all_platforms} x86_64-linux-icc"

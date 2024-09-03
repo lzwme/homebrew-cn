@@ -1436,6 +1436,7 @@ Homebrew-homebrew-core/Formula/d/dpkg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dprint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dps8m.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drake.rb, Homebrew/homebrew-core, 1
@@ -1763,6 +1764,7 @@ Homebrew-homebrew-core/Formula/f/fheroes2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fibjs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ficy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/field3d.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fierce.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fifechan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fig2dev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/figlet.rb, Homebrew/homebrew-core, 0
@@ -2408,6 +2410,7 @@ Homebrew-homebrew-core/Formula/g/grex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grin-wallet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grip.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/grizzly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groestlcoin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grok.rb, Homebrew/homebrew-core, 1
@@ -5233,6 +5236,7 @@ Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pytorch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pytouhou.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyupgrade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 1
@@ -6428,7 +6432,6 @@ Homebrew-homebrew-core/Formula/t/tremor-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trezor-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trezor-bridge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/triangle.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/trimage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trippy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/triton.rb, Homebrew/homebrew-core, 0
@@ -9384,6 +9387,7 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-ia-writer-mono.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-i/font-ia-writer-quattro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-iansui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibarra-real-nova.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-math.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-arabic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-condensed.rb, Homebrew/homebrew-cask, 1
@@ -9391,6 +9395,7 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-devanagari.rb, Homeb
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-hebrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-jp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-kr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-thai-looped.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-thai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans.rb, Homebrew/homebrew-cask, 1
@@ -10526,6 +10531,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-scheherazade-new.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-s/font-scheherazade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-schibsted-grotesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-schoolbell.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-scientifica.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-scope-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-seaweed-script.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-secular-one.rb, Homebrew/homebrew-cask, 1

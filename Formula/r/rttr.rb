@@ -24,13 +24,13 @@ class Rttr < Formula
   depends_on "doxygen" => :build
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_UNIT_TESTS=OFF"
-
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    args = %w[
+      -DBUILD_UNIT_TESTS=OFF
+      -DCMAKE_CXX_FLAGS=-Wno-deprecated-declarations
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -38,6 +38,7 @@ class Rttr < Formula
     (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <rttrregistration>
+
       static void f() { std::cout << "#{hello_world}" << std::endl; }
       using namespace rttr;
       RTTR_REGISTRATION

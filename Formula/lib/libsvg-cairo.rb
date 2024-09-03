@@ -3,7 +3,7 @@ class LibsvgCairo < Formula
   homepage "https://cairographics.org/"
   url "https://cairographics.org/snapshots/libsvg-cairo-0.1.6.tar.gz"
   sha256 "a380be6a78ec2938100ce904363815a94068fca372c666b8cc82aa8711a0215c"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
   revision 3
 
   livecheck do
@@ -28,7 +28,9 @@ class LibsvgCairo < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libsvg"
 

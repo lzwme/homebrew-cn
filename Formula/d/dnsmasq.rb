@@ -29,13 +29,13 @@ class Dnsmasq < Formula
     inreplace %w[dnsmasq.conf.example src/config.h man/dnsmasq.8
                  man/es/dnsmasq.8 man/fr/dnsmasq.8].each do |s|
       s.gsub! "/var/lib/misc/dnsmasq.leases",
-              var/"lib/misc/dnsmasq/dnsmasq.leases", false
-      s.gsub! "/etc/dnsmasq.conf", etc/"dnsmasq.conf", false
-      s.gsub! "/var/run/dnsmasq.pid", var/"run/dnsmasq/dnsmasq.pid", false
-      s.gsub! "/etc/dnsmasq.d", etc/"dnsmasq.d", false
-      s.gsub! "/etc/ppp/resolv.conf", etc/"dnsmasq.d/ppp/resolv.conf", false
-      s.gsub! "/etc/dhcpc/resolv.conf", etc/"dnsmasq.d/dhcpc/resolv.conf", false
-      s.gsub! "/usr/sbin/dnsmasq", HOMEBREW_PREFIX/"sbin/dnsmasq", false
+              var/"lib/misc/dnsmasq/dnsmasq.leases", audit_result: false
+      s.gsub! "/etc/dnsmasq.conf", etc/"dnsmasq.conf", audit_result: false
+      s.gsub! "/var/run/dnsmasq.pid", var/"run/dnsmasq/dnsmasq.pid", audit_result: false
+      s.gsub! "/etc/dnsmasq.d", etc/"dnsmasq.d", audit_result: false
+      s.gsub! "/etc/ppp/resolv.conf", etc/"dnsmasq.d/ppp/resolv.conf", audit_result: false
+      s.gsub! "/etc/dhcpc/resolv.conf", etc/"dnsmasq.d/dhcpc/resolv.conf", audit_result: false
+      s.gsub! "/usr/sbin/dnsmasq", HOMEBREW_PREFIX/"sbin/dnsmasq", audit_result: false
     end
 
     # Fix compilation on newer macOS versions.

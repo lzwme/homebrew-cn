@@ -2,19 +2,19 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https:openrct2.io"
   url "https:github.comOpenRCT2OpenRCT2.git",
-      tag:      "v0.4.13",
-      revision: "caacd4d7be8258e3e3f2b69c9d87eecc2b4ac119"
+      tag:      "v0.4.14",
+      revision: "18492da2296ac6355844c7e53a56e584ee637b6f"
   license "GPL-3.0-only"
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "006070c6c8123bc039e6b12c31de8ebe465ae1710f629ec72fd9acaa13299194"
-    sha256 cellar: :any, arm64_ventura:  "1f7615e92ed702fee21c79e774b180a8cbb88b717a35cd04d05ab2508db9f48f"
-    sha256 cellar: :any, arm64_monterey: "4c57c7239264fe74be3b577be885afcb5c20de864a3df739a90baee630736f74"
-    sha256 cellar: :any, sonoma:         "4386aa5b5cf656a72fe46c99402e1e73e2819f058bc2b8121851b4abaddd716c"
-    sha256 cellar: :any, ventura:        "45d0032453c57171c6f4bb2078bf174f8bfa7aa625acad24d4d62d1e6e0d871e"
-    sha256 cellar: :any, monterey:       "50d1bfc7c87cddbb9d0e495f52907675913d343cd7d59b3f5d7075ee411c601e"
-    sha256               x86_64_linux:   "f700047fad17997749d81e4c1736ca762f8f9d48ab03af93709ae750e004ac72"
+    sha256 cellar: :any, arm64_sonoma:   "b41b0ba5b2eb5fd41dc9abc0591e6de7d5c6a7eae6be118da900ea72d2cd7744"
+    sha256 cellar: :any, arm64_ventura:  "8c5e2a60bae7c6d5293c7da19ef07be22ff94ecc8fabdca8396ce303b3e8d142"
+    sha256 cellar: :any, arm64_monterey: "5728bb8c4c3c6cbbebc7911ead6ade7725f3396cc3f67e8015554b492d805bc9"
+    sha256 cellar: :any, sonoma:         "7e808aa325bf51b3cae1397e50a503491a8e145b486faeab3aecec8a43e7a5ff"
+    sha256 cellar: :any, ventura:        "78aca1947ee090961b372b1a103cfa3aa4b2114a75f48d696ebe1d1e6d4c27ed"
+    sha256 cellar: :any, monterey:       "6622e420b724a76b97e7d967bfb500bed008f53649959b7f44fa03a1d44bc5bf"
+    sha256               x86_64_linux:   "5878fad625d3f7a61f0e082b20c0634dd766fac1d6b70794993d5256a1d159f8"
   end
 
   depends_on "cmake" => :build
@@ -45,8 +45,8 @@ class Openrct2 < Formula
   fails_with gcc: "5" # C++17
 
   resource "title-sequences" do
-    url "https:github.comOpenRCT2title-sequencesreleasesdownloadv0.4.6title-sequences.zip"
-    sha256 "24a189cdaf1f78fb6d6caede8f1ab3cedf8ab9f819cd2260a09b2cce4c710d98"
+    url "https:github.comOpenRCT2title-sequencesreleasesdownloadv0.4.14title-sequences.zip"
+    sha256 "140df714e806fed411cc49763e7f16b0fcf2a487a57001d1e50fce8f9148a9f3"
   end
 
   resource "objects" do

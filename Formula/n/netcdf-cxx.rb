@@ -43,8 +43,8 @@ class NetcdfCxx < Formula
 
     # Remove shim paths
     inreplace [bin"ncxx4-config", lib"libnetcdf-cxx.settings"] do |s|
-      s.gsub!(Superenv.shims_pathENV.cc, ENV.cc, false)
-      s.gsub!(Superenv.shims_pathENV.cxx, ENV.cxx, false)
+      s.gsub!(Superenv.shims_pathENV.cc, ENV.cc, audit_result: false)
+      s.gsub!(Superenv.shims_pathENV.cxx, ENV.cxx, audit_result: false)
     end
   end
 

@@ -61,8 +61,8 @@ class Nghttp2 < Formula
     inreplace "Makefile.in", (SUBDIRS =) lib, "\\1"
     inreplace Dir["**Makefile.in"] do |s|
       # These don't exist in all files, hence audit_result being false.
-      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]liblibnghttp2\.la}, "\\1-lnghttp2", false)
-      s.gsub!(%r{\$[({]top_builddir[)}]liblibnghttp2\.la}, "", false)
+      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]liblibnghttp2\.la}, "\\1-lnghttp2", audit_result: false)
+      s.gsub!(%r{\$[({]top_builddir[)}]liblibnghttp2\.la}, "", audit_result: false)
     end
 
     args = %W[

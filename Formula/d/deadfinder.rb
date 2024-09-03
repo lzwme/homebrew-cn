@@ -34,7 +34,10 @@ class Deadfinder < Formula
     # Avoid references to the Homebrew shims directory
     if OS.mac?
       shims_references = Dir[libexec"extensions**ffi-*mkmf.log"].select { |f| File.file? f }
-      inreplace shims_references, Superenv.shims_path.to_s, "<**Reference to the Homebrew shims directory**>", false
+      inreplace shims_references,
+                Superenv.shims_path.to_s,
+                "<**Reference to the Homebrew shims directory**>",
+                audit_result: false
     end
   end
 

@@ -43,7 +43,10 @@ class Licensed < Formula
       libexec"gemsrugged-*vendorlibgit2buildCMakeCache.txt",
       libexec"gemsrugged-*vendorlibgit2build**CMakeFiles***",
     ].select { |f| File.file? f }
-    inreplace shims_references, Superenv.shims_path.to_s, "<**Reference to the Homebrew shims directory**>", false
+    inreplace shims_references,
+              Superenv.shims_path.to_s,
+              "<**Reference to the Homebrew shims directory**>",
+              audit_result: false
   end
 
   test do

@@ -17,9 +17,11 @@ class Libfido2 < Formula
 
   depends_on "cmake" => :build
   depends_on "mandoc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "libcbor"
   depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "systemd" # for libudev
@@ -30,36 +32,36 @@ class Libfido2 < Formula
 
     args << "-DUDEV_RULES_DIR=#{lib}udevrules.d" if OS.linux?
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "man_symlink_html"
-      system "make", "man_symlink"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", ".", *args
+    system "cmake", "--build", "."
+    system "cmake", "--build", ".", "--target", "man_symlink_html"
+    system "cmake", "--build", ".", "--target", "man_symlink"
+    system "cmake", "--install", "."
   end
 
   test do
     (testpath"test.c").write <<-EOF
-    #include <stddef.h>
-    #include <stdio.h>
-    #include <fido.h>
-    int main(void) {
-      fido_init(FIDO_DEBUG);
-       Attempt to enumerate up to five FIDOU2F devices. Five is an arbitrary number.
-      size_t max_devices = 5;
-      fido_dev_info_t *devlist;
-      if ((devlist = fido_dev_info_new(max_devices)) == NULL)
-        return 1;
-      size_t found_devices = 0;
-      int error;
-      if ((error = fido_dev_info_manifest(devlist, max_devices, &found_devices)) == FIDO_OK)
-        printf("FIDOU2F devices found: %s\\n", found_devices ? "Some" : "None");
-      fido_dev_info_free(&devlist, max_devices);
-    }
+      #include <stddef.h>
+      #include <stdio.h>
+      #include <fido.h>
+
+      int main(void) {
+        fido_init(FIDO_DEBUG);
+         Attempt to enumerate up to five FIDOU2F devices. Five is an arbitrary number.
+        size_t max_devices = 5;
+        fido_dev_info_t *devlist;
+        if ((devlist = fido_dev_info_new(max_devices)) == NULL)
+          return 1;
+        size_t found_devices = 0;
+        int error;
+        if ((error = fido_dev_info_manifest(devlist, max_devices, &found_devices)) == FIDO_OK)
+          printf("FIDOU2F devices found: %s\\n", found_devices ? "Some" : "None");
+        fido_dev_info_free(&devlist, max_devices);
+      }
     EOF
-    system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["openssl@3"].include}", "-o", "test",
-                   "-L#{lib}", "-lfido2"
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libfido2").chomp.split
+    system ENV.cc, "test.c", "-I#{include}", "-o", "test", *pkg_config_flags
     system ".test"
   end
 end

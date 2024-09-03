@@ -1,21 +1,24 @@
 cask "font-ibm-plex-sans-thai" do
-  version :latest
-  sha256 :no_check
+  version "1.0.0"
+  sha256 "1a39b37654916260791073046aa811450fd9bea63c2acb4413546636939c43a1"
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
-      branch:    "main",
-      only_path: "oflibmplexsansthai"
+  url "https:github.comIBMplexreleasesdownload%40ibm%2Fplex-sans-thai%40#{version}ibm-plex-sans-thai.zip"
   name "IBM Plex Sans Thai"
-  homepage "https:fonts.google.comspecimenIBM+Plex+Sans+Thai"
+  homepage "https:github.comIBMplex"
 
-  font "IBMPlexSansThai-Bold.ttf"
-  font "IBMPlexSansThai-ExtraLight.ttf"
-  font "IBMPlexSansThai-Light.ttf"
-  font "IBMPlexSansThai-Medium.ttf"
-  font "IBMPlexSansThai-Regular.ttf"
-  font "IBMPlexSansThai-SemiBold.ttf"
-  font "IBMPlexSansThai-Thin.ttf"
+  livecheck do
+    url :url
+    regex(%r{^@ibmplex-sans-thai@?(\d+(?:\.\d+)+)$}i)
+  end
+
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Bold.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-ExtraLight.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Light.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Medium.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Regular.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-SemiBold.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Text.otf"
+  font "ibm-plex-sans-thaifontscompleteotfIBMPlexSansThai-Thin.otf"
 
   # No zap stanza required
 end

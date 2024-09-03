@@ -24,11 +24,13 @@ class OpenBabel < Formula
   depends_on "python-setuptools" => :build
   depends_on "rapidjson" => :build
   depends_on "swig" => :build
+
   depends_on "cairo"
   depends_on "eigen"
   depends_on "python@3.12"
 
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   def python3
     "python3.12"

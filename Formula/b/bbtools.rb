@@ -39,7 +39,7 @@ class Bbtools < Formula
               k=31
               hdist=1]
 
-    system bin/"uk.sh", *args
+    system bin/"bbduk.sh", *args
     assert_match "bbushnell@lbl.gov", shell_output("#{bin}/bbmap.sh")
     assert_match "maqb", shell_output("#{bin}/bbmap.sh --help 2>&1")
     assert_match "minkmerhits", shell_output("#{bin}/bbduk.sh --help 2>&1")

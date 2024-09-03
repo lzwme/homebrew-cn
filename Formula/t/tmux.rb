@@ -48,6 +48,12 @@ class Tmux < Formula
     sha256 "b5f7bbd78f9790026bbff16fc6e3fe4070d067f58f943e156bd1a8c3c99f6a6f"
   end
 
+  # Upstream fix for macOS 15 headers, remove in next version
+  patch do
+    url "https:github.comtmuxtmuxcommit775789fbd5c4f3aa93061480cd64e61daf7fb689.patch?full_index=1"
+    sha256 "c1b61a1244f758480578888d3f89cac470271c376ea0879996b81e10b397cad0"
+  end
+
   def install
     system "sh", "autogen.sh" if build.head?
 

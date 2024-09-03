@@ -1,21 +1,24 @@
 cask "font-ibm-plex-sans-kr" do
-  version :latest
-  sha256 :no_check
+  version "1.0.0"
+  sha256 "b977effaabce2328f888db8590f0989c162cb9a9aad9d70949f3910552e6652b"
 
-  url "https:github.comgooglefonts.git",
-      verified:  "github.comgooglefonts",
-      branch:    "main",
-      only_path: "oflibmplexsanskr"
+  url "https:github.comIBMplexreleasesdownload%40ibm%2Fplex-sans-kr%40#{version}ibm-plex-sans-kr.zip"
   name "IBM Plex Sans KR"
-  homepage "https:fonts.google.comspecimenIBM+Plex+Sans+KR"
+  homepage "https:github.comIBMplex"
 
-  font "IBMPlexSansKR-Bold.ttf"
-  font "IBMPlexSansKR-ExtraLight.ttf"
-  font "IBMPlexSansKR-Light.ttf"
-  font "IBMPlexSansKR-Medium.ttf"
-  font "IBMPlexSansKR-Regular.ttf"
-  font "IBMPlexSansKR-SemiBold.ttf"
-  font "IBMPlexSansKR-Thin.ttf"
+  livecheck do
+    url :url
+    regex(%r{^@ibmplex-sans-kr@?(\d+(?:\.\d+)+)$}i)
+  end
+
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Bold.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-ExtraLight.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Light.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Medium.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Regular.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-SemiBold.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Text.otf"
+  font "ibm-plex-sans-krfontscompleteotfIBMPlexSansKR-Thin.otf"
 
   # No zap stanza required
 end

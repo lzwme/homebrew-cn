@@ -12,13 +12,14 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bf3bcf5ba84f8259d31b59e380ce6c5d181a482ae3a2e892ef7cda2af8a7357a"
-    sha256 cellar: :any,                 arm64_ventura:  "f25b395ed92f5b72bd8d5401377c1996e90b46d9cc47b0b18205d2c309c6ce6f"
-    sha256 cellar: :any,                 arm64_monterey: "a4035625ea8bb45b2720efb6df28286f67a48be32977603df1f2a1778cb35715"
-    sha256 cellar: :any,                 sonoma:         "32d494747112a9858b1d93d3dc74e08087272b1c28e2a6cf90431150ff058866"
-    sha256 cellar: :any,                 ventura:        "aeeb7fb1d99658e5c1311d79607720b0d5fbf13337e8155ddcf51a319b926093"
-    sha256 cellar: :any,                 monterey:       "7cead4241d72e2f328a1284efce7489e09fa42630fe9242a9dde41026838bf4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cafeff56db381b4ec58754b7d33326f174757845338e138a1c14f4673be3247"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d53d68f0327d5a9c71b8484b5682766a02e8cdf97eba5fe7437843fb2d194d95"
+    sha256 cellar: :any,                 arm64_ventura:  "95d1670b7371b496c8260f46c8eaa98a54cee7a518b304bc426a87a67b0b5cbe"
+    sha256 cellar: :any,                 arm64_monterey: "b5fad708142683db1d5a39513b677bbf2e6cea8b90f02ba6cff392a80a7f1fc4"
+    sha256 cellar: :any,                 sonoma:         "4fe409da2fd580c13be321889468e499dcbac6cf865e74c8a697b38fe55f4249"
+    sha256 cellar: :any,                 ventura:        "69879b81f3cc8c873f32c9b28790c5b2c0cc25743ceed3ff03ad43cebec4b1b0"
+    sha256 cellar: :any,                 monterey:       "aa6f98be3314f0f6ff565824ac9c9f3663fdc29c5f49d6996b7726c90021abe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f29359a64bc4f8746f712b6cd862427622dbb024f272379772835370886cbb"
   end
 
   depends_on "cmake" => :build
@@ -55,11 +56,6 @@ class Dwarfs < Formula
 
   fails_with :clang do
     build 1499
-    cause "Not all required C++20 features are supported"
-  end
-
-  fails_with :gcc do
-    version "11"
     cause "Not all required C++20 features are supported"
   end
 

@@ -6,10 +6,7 @@ cask "font-ibm-plex" do
   name "IBM Plex"
   homepage "https:github.comIBMplex"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  deprecate! date: "2024-09-01", because: "is now distributed with the font variants as individual packages"
 
   font "plex-#{version}IBM-Plex-MonofontscompleteotfIBMPlexMono-Bold.otf"
   font "plex-#{version}IBM-Plex-MonofontscompleteotfIBMPlexMono-BoldItalic.otf"

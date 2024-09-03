@@ -102,9 +102,9 @@ class Mold < Formula
             .each(&:unlink)
 
     inreplace testpath.glob("testelf*.sh") do |s|
-      s.gsub!(%r{(\.|`pwd`)?mold-wrapper}, lib"moldmold-wrapper", false)
-      s.gsub!(%r{(\.|`pwd`)mold}, bin"mold", false)
-      s.gsub!(-B(\.|`pwd`), "-B#{libexec}mold", false)
+      s.gsub!(%r{(\.|`pwd`)?mold-wrapper}, lib"moldmold-wrapper", audit_result: false)
+      s.gsub!(%r{(\.|`pwd`)mold}, bin"mold", audit_result: false)
+      s.gsub!(-B(\.|`pwd`), "-B#{libexec}mold", audit_result: false)
     end
 
     # The `inreplace` rules above do not work well on this test. To avoid adding
