@@ -3,7 +3,7 @@ class Log4c < Formula
   homepage "https:log4c.sourceforge.net"
   url "https:downloads.sourceforge.netprojectlog4clog4c1.2.4log4c-1.2.4.tar.gz"
   sha256 "5991020192f52cc40fa852fbf6bbf5bd5db5d5d00aa9905c67f6f0eadeed48ea"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
   head "https:git.code.sf.netplog4clog4c.git", branch: "master"
 
   livecheck do

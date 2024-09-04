@@ -4,7 +4,7 @@ class SimpleObfs < Formula
   url "https:github.comshadowsockssimple-obfs.git",
       tag:      "v0.0.5",
       revision: "a9c43588e4cb038e6ac02f050e4cab81f8228dff"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do

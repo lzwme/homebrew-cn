@@ -3,7 +3,7 @@ class Tcptunnel < Formula
   homepage "https:github.comvakuumtcptunnel"
   url "https:github.comvakuumtcptunnelarchiverefstagsv0.8.tar.gz"
   sha256 "1926e2636d26570035a5a0292c8d7766c4a9af939881121660df0d0d4513ade4"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "566b47c82002d0bebdd2d445c83e6c32640e42cbbbb9d7b818b0519b62c0f252"

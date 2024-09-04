@@ -3,7 +3,7 @@ class Puf < Formula
   homepage "https://puf.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/puf/puf/1.0.0/puf-1.0.0.tar.gz"
   sha256 "3f1602057dc47debeb54effc2db9eadcffae266834389bdbf5ab14fc611eeaf0"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb2dd937eb2ae17b8c5abb9df4e2a8639c02dfce8ae5d6a78f26a51ec5104d44"

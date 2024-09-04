@@ -3,7 +3,7 @@ class LibbitcoinBlockchain < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-blockchain"
   url "https:github.comlibbitcoinlibbitcoin-blockchainarchiverefstagsv3.8.0.tar.gz"
   sha256 "e7a3f2d2ea8275946218d734cd3d5d805c61e69eb29d1fb16e3064554bd2b584"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   revision 1
 
   bottle do

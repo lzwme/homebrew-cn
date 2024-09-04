@@ -4,7 +4,7 @@ class Libcdio < Formula
   url "https:ftp.gnu.orggnulibcdiolibcdio-2.1.0.tar.bz2"
   mirror "https:ftpmirror.gnu.orglibcdiolibcdio-2.1.0.tar.bz2"
   sha256 "8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ca64fa34030dc416bc1e3d40e6d74037ae575f3890fc2fff439ebe96e8a00218"

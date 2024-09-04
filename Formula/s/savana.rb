@@ -3,7 +3,7 @@ class Savana < Formula
   homepage "https:github.comcodehaussavana"
   url "https:search.maven.orgremotecontent?filepath=orgcodehaussavana1.2savana-1.2-install.tar.gz"
   sha256 "608242a0399be44f41ff324d40e82104b3c62908bc35177f433dcfc5b0c9bf55"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
 
   bottle do
     rebuild 1

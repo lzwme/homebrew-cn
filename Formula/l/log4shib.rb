@@ -3,7 +3,7 @@ class Log4shib < Formula
   homepage "https:wiki.shibboleth.netconfluencedisplayOpenSAMLlog4shib"
   url "https:shibboleth.netdownloadslog4shib2.0.1log4shib-2.0.1.tar.gz"
   sha256 "aad37f3929bd3d4c16f09831ff109c20ae8c7cb8b577917e3becb12f873f26df"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
 
   livecheck do
     url "https:shibboleth.netdownloadslog4shiblatest"

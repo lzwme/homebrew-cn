@@ -3,7 +3,7 @@ class Poster < Formula
   homepage "https:schrfr.github.ioposter"
   url "https:github.comschrfrposterarchiverefstags1.0.0.tar.gz"
   sha256 "1df49dfd4e50ffd66e0b6e279b454a76329a36280e0dc73b08e5b5dcd5cff451"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9391507786944573699dca31e2089215514fbc3785b8cac70bf3576db33328fc"

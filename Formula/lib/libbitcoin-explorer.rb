@@ -3,7 +3,7 @@ class LibbitcoinExplorer < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-explorer"
   url "https:github.comlibbitcoinlibbitcoin-explorerarchiverefstagsv3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   revision 2
 
   bottle do

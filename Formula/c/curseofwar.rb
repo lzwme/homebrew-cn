@@ -3,7 +3,7 @@ class Curseofwar < Formula
   homepage "https:a-nikolaev.github.iocurseofwar"
   url "https:github.coma-nikolaevcurseofwararchiverefstagsv1.3.0.tar.gz"
   sha256 "2a90204d95a9f29a0e5923f43e65188209dc8be9d9eb93576404e3f79b8a652b"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https:github.coma-nikolaevcurseofwar.git", branch: "master"
 
   bottle do

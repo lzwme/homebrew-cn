@@ -3,7 +3,7 @@ class Chadwick < Formula
   homepage "https:chadwick.sourceforge.netdocindex.html"
   url "https:downloads.sourceforge.netprojectchadwickchadwick-0.7chadwick-0.7.2chadwick-0.7.2.tar.gz"
   sha256 "f7b3af15281106e101e2ccc4cb182a3f15dbdc3327f2bcb045bfc486a8fda46e"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable

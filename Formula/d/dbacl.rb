@@ -3,7 +3,7 @@ class Dbacl < Formula
   homepage "https://dbacl.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/dbacl/dbacl/1.14.1/dbacl-1.14.1.tar.gz"
   sha256 "ff0dfb67682e863b1c3250acc441ce77c033b9b21d8e8793e55b622e42005abd"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "239b148299a11f7847b2ee32de7d24cd4cdc2f4f0dfbb36c61b57a18a6332142"

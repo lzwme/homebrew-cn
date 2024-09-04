@@ -2,8 +2,8 @@ class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https:tanka.dev"
   url "https:github.comgrafanatanka.git",
-      tag:      "v0.28.0",
-      revision: "80ffbfd423f988b14641ee38fc158919c45d8586"
+      tag:      "v0.28.1",
+      revision: "f0b1082d7712239b0855e8c50265d35582c1878a"
   license "Apache-2.0"
   head "https:github.comgrafanatanka.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Tanka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d929808064b439b98161009f51cb3e98f157b49ae9db83ef1f9bfe91d5c6dfa1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d929808064b439b98161009f51cb3e98f157b49ae9db83ef1f9bfe91d5c6dfa1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d929808064b439b98161009f51cb3e98f157b49ae9db83ef1f9bfe91d5c6dfa1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8ef553cc70b809287dfd987255255103234f13a27097ea2499699522ffcd09e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8ef553cc70b809287dfd987255255103234f13a27097ea2499699522ffcd09e"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8ef553cc70b809287dfd987255255103234f13a27097ea2499699522ffcd09e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c5c6b0b911dedd01a9bd4780c1f2052efc14f5bc80c155385933209b9899fe6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2beb1fed8e92500ae648d9c2c4ed39f7810e6e14ca19620bb9b9dbeaf34972ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2beb1fed8e92500ae648d9c2c4ed39f7810e6e14ca19620bb9b9dbeaf34972ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2beb1fed8e92500ae648d9c2c4ed39f7810e6e14ca19620bb9b9dbeaf34972ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "728c1bdcc8d17e657fb2ad23426832b1a7c7b92e6f7a763f831775f1314c613a"
+    sha256 cellar: :any_skip_relocation, ventura:        "728c1bdcc8d17e657fb2ad23426832b1a7c7b92e6f7a763f831775f1314c613a"
+    sha256 cellar: :any_skip_relocation, monterey:       "728c1bdcc8d17e657fb2ad23426832b1a7c7b92e6f7a763f831775f1314c613a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b61c71bfda2da0f477213ffb648e6fc1baa8265007baabd1f7a5ca673db4314e"
   end
 
   depends_on "go" => :build

@@ -3,7 +3,7 @@ class Shivavg < Formula
   homepage "https:sourceforge.netprojectsshivavg"
   url "https:downloads.sourceforge.netprojectshivavgShivaVG0.2.1ShivaVG-0.2.1.zip"
   sha256 "9735079392829f7aaf79e02ed84dd74f5c443c39c02ff461cfdd19cfc4ae89c4"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b6ef4461bec2d6b8a9e7e0cf2aaf02b7fc871bddcbf631318a4f7d7e5b1fa530"

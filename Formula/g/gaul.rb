@@ -3,7 +3,7 @@ class Gaul < Formula
   homepage "https://gaul.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/gaul/gaul-devel/0.1850-0/gaul-devel-0.1850-0.tar.gz"
   sha256 "7aabb5c1c218911054164c3fca4f5c5f0b9c8d9bab8b2273f48a3ff573da6570"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "619d02cf0a65573901c3b83a642203dae07540475bb5e1ea054b67e9ae1ed086"

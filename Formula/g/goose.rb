@@ -1,18 +1,18 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https:pressly.github.iogoose"
-  url "https:github.compresslygoosearchiverefstagsv3.21.1.tar.gz"
-  sha256 "f7c6b6c0a22c68dbe88025d56f8c05c4bbf947dbd9b73c26c641583ee0388e39"
+  url "https:github.compresslygoosearchiverefstagsv3.22.0.tar.gz"
+  sha256 "c624faf209caa6d666059882904a4fc90be6e225aeede0cd063bb4b6aa365c90"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c234f94292052969bd4a0f96ec356bf93ddca2e0371a47feb22953c9382b8826"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ff1f545eb1176beadcf8a1b21413015930ba18e5d071e02b9de7087b608a3ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5df331e7d99a33557e95cde3e7d89318db4ee294517ff1265bf50505d003ee29"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40ccd99de79b91979cb0a9d1542b8c76707eea54a2aff0e5d156906b9945f71d"
-    sha256 cellar: :any_skip_relocation, ventura:        "44857de7a61d2134cafaeb50dab9a129b4f61d689b5e318bf3a95c8efb75a1f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f069d20c0151a52e518a7d32c5f5ad51d53d8d90e8bb8056c8ada1e2faaf9b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "445176c88789958ff0c71af2066a76ed341082636491482720cb8fa6edfbe7c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bff5886d5b3631fed778353dc634b94ae525229c1318a15a88a3af87c456a8c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8361873d70fb75cc4bf30683aa8454ce62957d6a1958ba578e14c9cff418ac3d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c6a1cfd47a4210947d197d6838b3b239da1b4516629a5ea8a31ee62fc8420ad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "876630c334b27c9ce97fe2ced1b1c4b52ef8108fe06d856656a468a79712eddb"
+    sha256 cellar: :any_skip_relocation, ventura:        "93995b716629f85044d08224add359444af036bec452242b0cc188787e4dab2b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e93ce78c4c509755eec63035189d3bb40019c6e21d67d5f890c75d53619f6e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12cb0790d3698a472ff189792bc9163cfd25128f95436e3c0671c330f0048c5b"
   end
 
   depends_on "go" => :build

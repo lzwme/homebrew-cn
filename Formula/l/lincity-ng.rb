@@ -3,7 +3,7 @@ class LincityNg < Formula
   homepage "https:github.comlincity-nglincity-ng"
   url "https:github.comlincity-nglincity-ngarchiverefstagslincity-ng-2.0.tar.gz"
   sha256 "e05a2c1e1d682fbf289caecd0ea46ca84b0db9de43c7f1b5add08f0fdbf1456b"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 3
   head "https:github.comlincity-nglincity-ng.git", branch: "master"
 

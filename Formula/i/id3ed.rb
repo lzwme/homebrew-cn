@@ -3,7 +3,7 @@ class Id3ed < Formula
   homepage "http://code.fluffytapeworm.com/projects/id3ed"
   url "http://code.fluffytapeworm.com/projects/id3ed/id3ed-1.10.4.tar.gz"
   sha256 "56f26dfde7b6357c5ad22644c2a379f25fce82a200264b5d4ce62f2468d8431b"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee1364fbe79738671595a35b7050d96ce311d8653d317f0f3ac6a23f8e853c18"

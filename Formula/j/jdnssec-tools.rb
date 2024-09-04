@@ -3,7 +3,7 @@ class JdnssecTools < Formula
   homepage "https:github.comdblackajdnssec-tools"
   url "https:github.comdblackajdnssec-toolsreleasesdownloadv0.20jdnssec-tools-0.20.tar.gz"
   sha256 "cddc024726e11e014ff02c04135743f3cb3964ed8fe2487d17544e60230f10d6"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
   head "https:github.comdblackajdnssec-tools.git", branch: "master"
 
   livecheck do

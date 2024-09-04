@@ -4,7 +4,7 @@ class GnuShogi < Formula
   url "https://ftp.gnu.org/gnu/gnushogi/gnushogi-1.4.2.tar.gz"
   mirror "https://ftpmirror.gnu.org/gnushogi/gnushogi-1.4.2.tar.gz"
   sha256 "1ecc48a866303c63652552b325d685e7ef5e9893244080291a61d96505d52b29"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 arm64_sonoma:   "0702ff59b956256f5452b9581f38659d15820e201f91fa571eb97f814118fea1"

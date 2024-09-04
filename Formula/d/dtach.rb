@@ -3,7 +3,7 @@ class Dtach < Formula
   homepage "https://dtach.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/dtach/dtach/0.9/dtach-0.9.tar.gz"
   sha256 "32e9fd6923c553c443fab4ec9c1f95d83fa47b771e6e1dafb018c567291492f3"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "936dc52943de4d68d3acba73b5537df04e30ee6ed0e75148d7ed4270469c8675"

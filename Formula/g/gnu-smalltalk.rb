@@ -1,7 +1,7 @@
 class GnuSmalltalk < Formula
   desc "Implementation of the Smalltalk language"
   homepage "https:www.gnu.orgsoftwaresmalltalk"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 10
 
   stable do

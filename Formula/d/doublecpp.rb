@@ -3,7 +3,7 @@ class Doublecpp < Formula
   homepage "https://doublecpp.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/doublecpp/doublecpp/0.6.3/doublecpp-0.6.3.tar.gz"
   sha256 "232f8bf0d73795558f746c2e77f6d7cb54e1066cbc3ea7698c4fba80983423af"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71fdee9f989fbd4a54e2432721dfea361956dd521c386b6f5c5c3cc635b9e9f8"

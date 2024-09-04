@@ -3,7 +3,7 @@ class Nettoe < Formula
   homepage "https://nettoe.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/nettoe/nettoe/1.5.1/nettoe-1.5.1.tar.gz"
   sha256 "dbc2c08e7e0f7e60236954ee19a165a350ab3e0bcbbe085ecd687f39253881cb"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3808e963136d5f0330b4a779f8872cf3ba3a9cbeae5c555cc37bfbefd226173"

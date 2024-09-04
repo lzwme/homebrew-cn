@@ -3,7 +3,7 @@ class Wput < Formula
   homepage "https:wput.sourceforge.net"
   url "https:downloads.sourceforge.netprojectwputwput0.6.2wput-0.6.2.tgz"
   sha256 "229d8bb7d045ca1f54d68de23f1bc8016690dc0027a16586712594fbc7fad8c7"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "396180470ace5f8d7640f2097bded1f66af50bac01ba8470ea3023968bc39d6b"

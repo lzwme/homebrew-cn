@@ -3,7 +3,7 @@ class Mpegdemux < Formula
   homepage "http://www.hampa.ch/mpegdemux/"
   url "http://www.hampa.ch/mpegdemux/mpegdemux-0.1.5.tar.gz"
   sha256 "05015755d45e50cbd3018baeaa8abcedc003b1162fa28237a72ab25c1bc00023"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   livecheck do
     url :homepage

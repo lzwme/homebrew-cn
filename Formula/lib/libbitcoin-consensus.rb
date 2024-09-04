@@ -3,7 +3,7 @@ class LibbitcoinConsensus < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-consensus"
   url "https:github.comlibbitcoinlibbitcoin-consensusarchiverefstagsv3.8.0.tar.gz"
   sha256 "3f63b233a25323ff81de71a6c96455a6f5141e21cb0678a2304b36b56e771ca2"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "12ab6ca60756919e7347031905778cf42151bc6d5294cf9826a7341a69c6b3dc"

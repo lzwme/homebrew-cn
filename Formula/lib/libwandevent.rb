@@ -3,7 +3,7 @@ class Libwandevent < Formula
   homepage "https:web.archive.orgweb20220615162419https:research.wand.net.nzsoftwarelibwandevent.php"
   url "https:web.archive.orgweb20220126151045https:research.wand.net.nzsoftwarelibwandeventlibwandevent-3.0.2.tar.gz"
   sha256 "48fa09918ff94f6249519118af735352e2119dc4f9b736c861ef35d59466644a"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1520337069b3cc6c78f21ef8f4d0fe07b74ef7589f7f0cb976b0c9fde7089d0d"

@@ -3,7 +3,7 @@ class LibbitcoinServer < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-server"
   url "https:github.comlibbitcoinlibbitcoin-serverarchiverefstagsv3.8.0.tar.gz"
   sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   revision 2
 
   bottle do

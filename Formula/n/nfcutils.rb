@@ -3,7 +3,7 @@ class Nfcutils < Formula
   homepage "https:github.comnfc-toolsnfcutils"
   url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comnfc-toolsnfcutils-0.3.2.tar.gz"
   sha256 "dea258774bd08c8b7ff65e9bed2a449b24ed8736326b1bb83610248e697c7f1b"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do

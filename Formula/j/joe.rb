@@ -3,7 +3,7 @@ class Joe < Formula
   homepage "https://joe-editor.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-4.6/joe-4.6.tar.gz"
   sha256 "495a0a61f26404070fe8a719d80406dc7f337623788e445b92a9f6de512ab9de"
-  license "GPL-2.0"
+  license "GPL-1.0-or-later"
 
   livecheck do
     url :stable

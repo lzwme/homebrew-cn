@@ -4,7 +4,7 @@ class Idutils < Formula
   url "https:ftp.gnu.orggnuidutilsidutils-4.6.tar.xz"
   mirror "https:ftpmirror.gnu.orgidutilsidutils-4.6.tar.xz"
   sha256 "8181f43a4fb62f6f0ccf3b84dbe9bec71ecabd6dfdcf49c6b5584521c888aac2"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do

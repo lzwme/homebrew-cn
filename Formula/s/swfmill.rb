@@ -3,7 +3,7 @@ class Swfmill < Formula
   homepage "https://www.swfmill.org/"
   url "https://www.swfmill.org/releases/swfmill-0.3.6.tar.gz"
   sha256 "db24f63963957faec02bb14b8b61cdaf7096774f8cfdeb9d3573e2e19231548e"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   livecheck do
     url :homepage

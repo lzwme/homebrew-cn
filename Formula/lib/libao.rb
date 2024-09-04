@@ -3,7 +3,7 @@ class Libao < Formula
   homepage "https:www.xiph.orgao"
   url "https:github.comxiphlibaoarchiverefstags1.2.2.tar.gz", using: :homebrew_curl
   sha256 "df8a6d0e238feeccb26a783e778716fb41a801536fe7b6fce068e313c0e2bf4d"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:gitlab.xiph.orgxiphlibao.git", branch: "master"
 
   bottle do

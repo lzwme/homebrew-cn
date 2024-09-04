@@ -3,7 +3,7 @@ class Mpg321 < Formula
   homepage "https:mpg321.sourceforge.net"
   url "https:downloads.sourceforge.netprojectmpg321mpg3210.3.2mpg321_0.3.2.orig.tar.gz"
   sha256 "056fcc03e3f5c5021ec74bb5053d32c4a3b89b4086478dcf81adae650eac284e"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 3
 
   bottle do

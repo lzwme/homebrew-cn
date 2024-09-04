@@ -3,7 +3,7 @@ class E2tools < Formula
   homepage "https:e2tools.github.io"
   url "https:github.come2toolse2toolsreleasesdownloadv0.1.0e2tools-0.1.0.tar.gz"
   sha256 "c1a06b5ae2cbddb6f04d070e889b8bebf87015b8585889999452ce9846122edf"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "189a32d6a537cf7f38e4f935a2f6bb4f83ca9ab39140aa3e7b521f1611ed13cd"

@@ -3,7 +3,7 @@ class Zboy < Formula
   homepage "https://zboy.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/zboy/zBoy%20v0.71/zboy-0.71.tar.xz"
   sha256 "d359b87e3149418fbe1599247c9ca71e870d213b64a912616ffc6e77d1dff506"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https://svn.code.sf.net/p/zboy/code/trunk"
 
   livecheck do

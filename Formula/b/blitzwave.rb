@@ -3,7 +3,7 @@ class Blitzwave < Formula
   homepage "https:oschulz.github.ioblitzwave"
   url "https:github.comoschulzblitzwavearchiverefstagsv0.8.0.tar.gz"
   sha256 "edb0b708a0587e77b8e0aa3387b44f4e838855c17e896a8277bb80fbe79b9a63"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "358c1c33c449b774875a06bd2ec0dd68d306bf7a829ca7b79cd69d4ba9616dcb"

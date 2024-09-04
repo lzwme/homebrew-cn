@@ -3,7 +3,7 @@ class XmlCoreutils < Formula
   homepage "https://xml-coreutils.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/xml-coreutils/xml-coreutils-0.8.1.tar.gz"
   sha256 "7fb26d57bb17fa770452ccd33caf288deee1d757a0e0a484b90c109610d1b7df"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     rebuild 1

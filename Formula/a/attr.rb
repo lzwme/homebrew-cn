@@ -28,7 +28,7 @@ class Attr < Formula
 
   test do
     (testpath/"test.txt").write("Hello World!\n")
-    system bin/"attr", "-s", "name", "test.txt"
+    pipe_output "#{bin}/attr -s name test.txt", ""
     assert_match 'Attribute "name" has a 0 byte value for test.txt',
                  shell_output(bin/"attr -l test.txt")
   end

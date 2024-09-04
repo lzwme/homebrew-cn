@@ -3,7 +3,7 @@ class Mfcuk < Formula
   homepage "https:github.comnfc-toolsmfcuk"
   url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.commfcukmfcuk-0.3.8.tar.gz"
   sha256 "977595765b4b46e4f47817e9500703aaf5c1bcad39cb02661f862f9d83f13a55"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 1
 
   bottle do

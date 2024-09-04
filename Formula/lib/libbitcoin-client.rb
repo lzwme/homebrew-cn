@@ -3,7 +3,7 @@ class LibbitcoinClient < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-client"
   url "https:github.comlibbitcoinlibbitcoin-clientarchiverefstagsv3.8.0.tar.gz"
   sha256 "cfd9685becf620eec502ad53774025105dda7947811454e0c9fea30b27833840"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   revision 2
 
   bottle do

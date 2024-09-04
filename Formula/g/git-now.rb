@@ -1,7 +1,7 @@
 class GitNow < Formula
   desc "Light, temporary commits for git"
   homepage "https:github.comiwatagit-now"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   head "https:github.comiwatagit-now.git", branch: "master"
 
   stable do

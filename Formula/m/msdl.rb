@@ -4,7 +4,7 @@ class Msdl < Formula
   url "https:downloads.sourceforge.netprojectmsdlmsdlmsdl-1.2.7-r2msdl-1.2.7-r2.tar.gz"
   version "1.2.7-r2"
   sha256 "0297e87bafcab885491b44f71476f5d5bfc648557e7d4ef36961d44dd430a3a1"
-  license "GPL-3.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable

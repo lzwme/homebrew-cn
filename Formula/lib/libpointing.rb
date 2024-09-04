@@ -3,7 +3,7 @@ class Libpointing < Formula
   homepage "https:github.comINRIAlibpointing"
   url "https:github.comINRIAlibpointingreleasesdownloadv1.0.8libpointing-mac-1.0.8.tar.gz"
   sha256 "b19a701b9181be05c3879bbfc901709055c27de7995bd59ada4e3f631dfad8f2"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "2d7abf099808b966f2e79ff4ee050ae9ba2dcaa009577575a8ceceeb657e3cda"

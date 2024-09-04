@@ -52,6 +52,8 @@ class Luajit < Formula
 
     # Help the FFI module find Homebrew-installed libraries.
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: HOMEBREW_PREFIX"lib")}" if HOMEBREW_PREFIX.to_s != "usrlocal"
+    # Fix for clang >= 16, see https:github.comLuaJITLuaJITissues1266
+    ENV.append "LDFLAGS", "-Wl,-no_deduplicate" if DevelopmentTools.clang_build_version >= 1600
 
     # Pass `Q= E=@:` to build verbosely.
     verbose_args = %w[Q= E=@:]

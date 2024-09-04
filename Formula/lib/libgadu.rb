@@ -3,7 +3,7 @@ class Libgadu < Formula
   homepage "https:libgadu.net"
   url "https:github.comwojtekkalibgadureleasesdownload1.12.2libgadu-1.12.2.tar.gz"
   sha256 "28e70fb3d56ed01c01eb3a4c099cc84315d2255869ecf08e9af32c41d4cbbf5d"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c0a47f65b2950adc32a349c14f576ce66da2f34b2fc342c1f37b11dfb8ab28ed"

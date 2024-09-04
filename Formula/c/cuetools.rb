@@ -3,7 +3,7 @@ class Cuetools < Formula
   homepage "https:github.comsvendcuetools"
   url "https:github.comsvendcuetoolsarchiverefstags1.4.1.tar.gz"
   sha256 "24a2420f100c69a6539a9feeb4130d19532f9f8a0428a8b9b289c6da761eb107"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   head "https:github.comsvendcuetools.git", branch: "master"
 
   bottle do

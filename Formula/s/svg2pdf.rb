@@ -3,7 +3,7 @@ class Svg2pdf < Formula
   homepage "https:cairographics.org"
   url "https:cairographics.orgsnapshotssvg2pdf-0.1.3.tar.gz"
   sha256 "854a870722a9d7f6262881e304a0b5e08a1c61cecb16c23a8a2f42f2b6a9406b"
-  license "LGPL-2.1"
+  license "HPND-sell-variant"
   revision 2
 
   livecheck do

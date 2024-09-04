@@ -5,7 +5,7 @@ class Cryfs < Formula
   homepage "https:www.cryfs.org"
   url "https:github.comcryfscryfsreleasesdownload0.11.4cryfs-0.11.4.tar.gz"
   sha256 "6caca6276ce5aec40bf321fd0911b0af7bcffc44c3cb82ff5c5af944d6f75a45"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
   revision 7
   head "https:github.comcryfscryfs.git", branch: "develop"
 

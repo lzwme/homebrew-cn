@@ -3,7 +3,7 @@ class Epstool < Formula
   homepage "http://www.ghostgum.com.au/software/epstool.htm"
   url "https://deb.debian.org/debian/pool/main/e/epstool/epstool_3.09.orig.tar.xz"
   sha256 "1e85249d1a44f9418b1f95a3aebd8b0784dab8e49deb6417ac9b996ca08f6011"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   livecheck do
     url :homepage

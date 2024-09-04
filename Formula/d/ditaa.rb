@@ -3,7 +3,7 @@ class Ditaa < Formula
   homepage "https:ditaa.sourceforge.net"
   url "https:github.comstathissiderisditaareleasesdownloadv0.11.0ditaa-0.11.0-standalone.jar"
   sha256 "9418aa63ff6d89c5d2318396f59836e120e75bea7a5930c4d34aa10fe7a196a9"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
   revision 1
 
   bottle do

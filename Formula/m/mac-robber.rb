@@ -3,7 +3,7 @@ class MacRobber < Formula
   homepage "https://www.sleuthkit.org/mac-robber/"
   url "https://downloads.sourceforge.net/project/mac-robber/mac-robber/1.02/mac-robber-1.02.tar.gz"
   sha256 "5895d332ec8d87e15f21441c61545b7f68830a2ee2c967d381773bd08504806d"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "857246f4d354a3df452fd928e59e15667f3e713928c1da2fd207e3163892ffdb"

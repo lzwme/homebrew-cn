@@ -1,7 +1,7 @@
 class Bic < Formula
   desc "C interpreter and API explorer"
   homepage "https:github.comhexagonal-sunbic"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   stable do
     url "https:github.comhexagonal-sunbicreleasesdownloadv1.0.0bic-v1.0.0.tar.gz"

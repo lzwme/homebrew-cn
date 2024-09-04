@@ -18,7 +18,6 @@ class SbomTool < Formula
 
   depends_on "dotnet"
 
-  uses_from_macos "icu4c" => :test
   uses_from_macos "zlib"
 
   def install

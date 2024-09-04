@@ -3,7 +3,7 @@ class GitAnnexRemoteRclone < Formula
   homepage "https:github.comgit-annex-remote-rclonegit-annex-remote-rclone"
   url "https:github.comgit-annex-remote-rclonegit-annex-remote-rclonearchiverefstagsv0.8.tar.gz"
   sha256 "6da12f46d46613cc5a539057052be7d8aa5259bd973ddff2d6ee460d34cd096c"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
     rebuild 1

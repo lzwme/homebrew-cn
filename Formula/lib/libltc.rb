@@ -3,7 +3,7 @@ class Libltc < Formula
   homepage "https:x42.github.iolibltc"
   url "https:github.comx42libltcreleasesdownloadv1.3.2libltc-1.3.2.tar.gz"
   sha256 "0a6d42cd6c21e925a27fa560dc45ac80057d275f23342102825909c02d3b1249"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "51fbcf835713464c3adc121dfce5dc240a9364a9c1d597df408fa787c6caeaa7"

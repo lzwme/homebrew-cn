@@ -6,7 +6,7 @@ class Tofrodos < Formula
   url "https://deb.debian.org/debian/pool/main/t/tofrodos/tofrodos_1.7.13+ds.orig.tar.xz"
   version "1.7.13"
   sha256 "c1c33f3f0b9e8152aa5790d233e8f1e8de14510433a6143ec582eba0fb6cbfaa"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   livecheck do
     url :homepage

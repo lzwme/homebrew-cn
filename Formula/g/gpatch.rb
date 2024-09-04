@@ -4,7 +4,7 @@ class Gpatch < Formula
   url "https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz"
   mirror "https://ftpmirror.gnu.org/patch/patch-2.7.6.tar.xz"
   sha256 "ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91ebe426132b79d3a67bfbec130f267b2e709cda4fdd705c94eb9ff7536e5783"

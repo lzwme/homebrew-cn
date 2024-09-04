@@ -3,7 +3,7 @@ class Scale2x < Formula
   homepage "https:www.scale2x.it"
   url "https:github.comamadvancescale2xreleasesdownloadv4.0scale2x-4.0.tar.gz"
   sha256 "996f2673206c73fb57f0f5d0e094d3774f595f7e7e80fcca8cc045e8b4ba6d32"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "74863678d188209041dd4746830686ec7a93f2acf7dc492d647ca8f3d23802fd"

@@ -1,9 +1,9 @@
 class Quictls < Formula
   desc "TLSSSL and crypto library with QUIC APIs"
   homepage "https:github.comquictlsopenssl"
-  url "https:github.comquictlsopensslarchiverefstagsopenssl-3.1.6-quic1.tar.gz"
-  version "3.1.6-quic1"
-  sha256 "9e04f7fa98549a1c2d96b2d2299f4c32e6519958ca902d9ca9dd181337965d2e"
+  url "https:github.comquictlsopensslarchiverefstagsopenssl-3.1.7-quic1.tar.gz"
+  version "3.1.7-quic1"
+  sha256 "e7e514ea033c290f09c7250dd43a845bc1e08066b793274f3ad3fe04c76a5206"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Quictls < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "410b30bddf8d6e98afc35175059b29f9eda4274b4e52cfc3ef49569a7d869bc9"
-    sha256 arm64_ventura:  "95d54e6c6ee02ccd0e8bb506375479f0c1579b24167caf07e173d6568fb9d2e9"
-    sha256 arm64_monterey: "a3401c29b7a5485400eda090043db2714c0a82811b31aefb5c26064e222adb01"
-    sha256 sonoma:         "efce659369c4802bfb24ecb9da613ad8c49eda3cbc5429766a60d0183ad1a125"
-    sha256 ventura:        "2636d7ea3914262abb473dd078b450612fbb3680e728e28ba37884fc74872055"
-    sha256 monterey:       "dc761f230dc86d8e0cc6525de2e402fee845d63ee5498f333288a16ecf13cd47"
-    sha256 x86_64_linux:   "60fd306c3656c3705e41f20df7b7aefafda56f4559d591d36dcbbeba73c5ff20"
+    sha256 arm64_sonoma:   "73ddf68c9960767751d2c35c0e880fa2ceeeb4f54b3fc9b23bcc0acf423d249f"
+    sha256 arm64_ventura:  "d3078ce0ffe8788999f7d8544c2a87c636fdd2e179c9c43c48a5621bd0b72173"
+    sha256 arm64_monterey: "2106c4a0c2355ce50521e2e4f5f310944ae80368b415c79c7c965fdfd603d9fc"
+    sha256 sonoma:         "dd3116df5fe47c4d55cc7c51df5becbca99942f587cb97b26f246a468f69e8d6"
+    sha256 ventura:        "3882bfe6a6745e400edf6483ffb629095a1e239176b5d53830ed4c2e8b2697d4"
+    sha256 monterey:       "76595d8637073ff8c6757c9d958a0b0256a677d4ded70e98f8b78ee44e0b1b33"
+    sha256 x86_64_linux:   "d087162e7c966ef053b5f6f3fb4b1186c2aa0bb482259041a37a9a166419ec76"
   end
 
   keg_only "it conflicts with OpenSSL"

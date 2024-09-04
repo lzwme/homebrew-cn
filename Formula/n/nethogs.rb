@@ -3,7 +3,7 @@ class Nethogs < Formula
   homepage "https:raboof.github.ionethogs"
   url "https:github.comraboofnethogsarchiverefstagsv0.8.7.tar.gz"
   sha256 "957d6afcc220dfbba44c819162f44818051c5b4fb793c47ba98294393986617d"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9132083206c8e1234c9c5e4e5e1f81ef9b992eeb41f4c75d89e5906f005e53d6"

@@ -3,7 +3,7 @@ class Timedog < Formula
   homepage "https:github.comnlfiedlertimedog"
   url "https:github.comnlfiedlertimedogarchiverefstagsv1.4.tar.gz"
   sha256 "169ab408fe5c6b292a7d4adf0845c42160108fd43d6a392b95210204de49cb52"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.comnlfiedlertimedog.git", branch: "master"
 
   bottle do

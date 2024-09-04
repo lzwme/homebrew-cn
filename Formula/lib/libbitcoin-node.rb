@@ -3,7 +3,7 @@ class LibbitcoinNode < Formula
   homepage "https:github.comlibbitcoinlibbitcoin-node"
   url "https:github.comlibbitcoinlibbitcoin-nodearchiverefstagsv3.8.0.tar.gz"
   sha256 "49a2c83a01c3fe2f80eb22dd48b2a2ea77cbb963bcc5b98f07d0248dbb4ee7a9"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   revision 1
 
   bottle do

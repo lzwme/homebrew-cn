@@ -3,19 +3,12 @@ class DockerSquash < Formula
 
   desc "Docker image squashing tool"
   homepage "https:github.comgoldmanndocker-squash"
-  url "https:files.pythonhosted.orgpackages3c83c0a3cee67e2af20c7c337fd7cd49b49c9a741e785e7a4c631404a03b7a00docker-squash-1.2.0.tar.gz"
-  sha256 "33120a217fa9804530d1cf8091aacc5abf9020c6bc51c5108ae80ff8625782df"
+  url "https:files.pythonhosted.orgpackagesc9104bf67bb4e15414f2a5e2a7d20fe773c96f471223b1a4d6dd60f1fe2e6365docker_squash-1.2.1.tar.gz"
+  sha256 "ecb801ff52baf2b954d6420a82279fa035a40d3bb35ef68f21a7537d9099f05e"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bac9919bd5ef4acc169738a10bfa00027d79336aa8a3970c611eafb1a74c723c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bac9919bd5ef4acc169738a10bfa00027d79336aa8a3970c611eafb1a74c723c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bac9919bd5ef4acc169738a10bfa00027d79336aa8a3970c611eafb1a74c723c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "235626dc380c2d5fcf7861a150b866a09452a5ed53cdd732702dfb8ef8a6d575"
-    sha256 cellar: :any_skip_relocation, ventura:        "235626dc380c2d5fcf7861a150b866a09452a5ed53cdd732702dfb8ef8a6d575"
-    sha256 cellar: :any_skip_relocation, monterey:       "bac9919bd5ef4acc169738a10bfa00027d79336aa8a3970c611eafb1a74c723c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ceb79c6a655557fc2bba24148104eb5534420d116e36dfea3f285802792bc67"
+    sha256 cellar: :any_skip_relocation, all: "60d1ec514b8249196e519b362249c9c9cfcae2dddfc3889a6ce213df47b5efd9"
   end
 
   depends_on "certifi"
@@ -32,8 +25,8 @@ class DockerSquash < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "packaging" do

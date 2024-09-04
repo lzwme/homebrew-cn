@@ -3,7 +3,7 @@ class Lrdf < Formula
   homepage "https:github.comswhLRDF"
   url "https:github.comswhLRDFarchiverefstagsv0.6.1.tar.gz"
   sha256 "d579417c477ac3635844cd1b94f273ee2529a8c3b6b21f9b09d15f462b89b1ef"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2088f2cfbf3cac00eccd96cc9b7afdc8462d2e8a8e191cd2832f476270fd6daa"

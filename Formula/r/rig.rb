@@ -3,7 +3,7 @@ class Rig < Formula
   homepage "https://rig.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/rig/rig/1.11/rig-1.11.tar.gz"
   sha256 "00bfc970d5c038c1e68bc356c6aa6f9a12995914b7d4fda69897622cb5b77ab8"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256                               arm64_sonoma:   "c49772908fab4d132435015e225760d30f00d742f5e09123c71cdf90a453d3ea"

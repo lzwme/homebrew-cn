@@ -3,7 +3,7 @@ class Vcftools < Formula
   homepage "https:vcftools.github.io"
   url "https:github.comvcftoolsvcftoolsreleasesdownloadv0.1.16vcftools-0.1.16.tar.gz"
   sha256 "dbfc774383c106b85043daa2c42568816aa6a7b4e6abc965eeea6c47dde914e3"
-  license "LGPL-3.0"
+  license "LGPL-3.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "789091f23f949c8bb834001543ac748948ea8f6005f32e0a889f574a6db58cc8"

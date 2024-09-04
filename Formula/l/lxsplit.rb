@@ -3,7 +3,7 @@ class Lxsplit < Formula
   homepage "https://lxsplit.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/lxsplit/lxsplit/0.2.4/lxsplit-0.2.4.tar.gz"
   sha256 "858fa939803b2eba97ccc5ec57011c4f4b613ff299abbdc51e2f921016845056"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc985c81d249f7a8c5f38060e5e6e8c36bdb3a0aaa7c668fe44f18b587e4efcd"

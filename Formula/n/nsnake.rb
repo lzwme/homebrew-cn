@@ -3,7 +3,7 @@ class Nsnake < Formula
   homepage "https:github.comalexdantasnSnake"
   url "https:downloads.sourceforge.netprojectnsnakeGNU-Linuxnsnake-3.0.1.tar.gz"
   sha256 "e0a39e0e188a6a8502cb9fc05de3fa83dd4d61072c5b93a182136d1bccd39bb9"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https:github.comalexdantasnSnake.git", branch: "master"
 
   bottle do

@@ -3,7 +3,7 @@ class Fsw < Formula
   homepage "https:emcrisostomo.github.iofsw"
   url "https:github.comemcrisostomofswreleasesdownload1.3.9fsw-1.3.9.tar.gz"
   sha256 "9222f76f99ef9841dc937a8f23b529f635ad70b0f004b9dd4afb35c1b0d8f0ff"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     rebuild 2

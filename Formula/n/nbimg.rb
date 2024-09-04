@@ -3,7 +3,7 @@ class Nbimg < Formula
   homepage "https:github.compolivanbimg"
   url "https:github.compolivanbimgarchiverefstagsv1.2.1.tar.gz"
   sha256 "f72846656bb8371564c245ab34550063bd5ca357fe8a22a34b82b93b7e277680"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "246aad3351ee67b9e20c9c78a8ecc60e8bcfc7f0fb5ef544b07322af8206e4bf"

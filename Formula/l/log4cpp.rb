@@ -3,7 +3,7 @@ class Log4cpp < Formula
   homepage "https:log4cpp.sourceforge.net"
   url "https:downloads.sourceforge.netprojectlog4cpplog4cpp-1.1.x%20%28new%29log4cpp-1.1log4cpp-1.1.4.tar.gz"
   sha256 "696113659e426540625274a8b251052cc04306d8ee5c42a0c7639f39ca90c9d6"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable

@@ -4,7 +4,7 @@ class Hqx < Formula
   url "https:github.comgrom358hqx.git",
       tag:      "v1.2",
       revision: "124c9399fa136fb0f743417ca27dfa2ca2860c2d"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   bottle do
     rebuild 2

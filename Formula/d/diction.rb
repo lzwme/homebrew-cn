@@ -4,7 +4,7 @@ class Diction < Formula
   url "https://ftp.gnu.org/gnu/diction/diction-1.11.tar.gz"
   mirror "https://ftpmirror.gnu.org/diction/diction-1.11.tar.gz"
   sha256 "35c2f1bf8ddf0d5fa9f737ffc8e55230736e5d850ff40b57fdf5ef1d7aa024f6"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 arm64_sonoma:   "4589af49e9b3cd23f77eae06ba86dadb9b364ca88e1714b3aa4b2f169df49321"

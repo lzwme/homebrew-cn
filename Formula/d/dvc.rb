@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages9624d99ab377ab62989b61345f685b90c5666fe6cf575a56bec5c94b3ba499d3dvc-3.55.1.tar.gz"
-  sha256 "6d41391333d6dad2eb5f9110a6148d3d5290866106f9b4d8dedb9badd1d02166"
+  url "https:files.pythonhosted.orgpackagescefe30d8a9733f1edddd356766f0ec167e950e26a4717ec6f0c397da25f9510fdvc-3.55.2.tar.gz"
+  sha256 "2fbb38385753d51b25967c80e672cf9dea046bdac182c159a2c1d1f246d15ce0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4898d14b71555becbc6660b38b5b4b93f6325abe5ca7f8947644eaa4d9106d35"
-    sha256 cellar: :any,                 arm64_ventura:  "4e980a6f2aac96923f8790d68b217c4b81ea8667a76a620381f8a5488c33290d"
-    sha256 cellar: :any,                 arm64_monterey: "17bedb30dd84391d25976ba1220e8772b7597991a498bbcd98769494c5e5dc47"
-    sha256 cellar: :any,                 sonoma:         "90b0e8133719590a9dd0d147fdbade420d61186f261bbb30c820ee75786e7807"
-    sha256 cellar: :any,                 ventura:        "b420814e2dfdde437ac0c6015ac56110e711bbb7d812b994ba695e63ebe6863f"
-    sha256 cellar: :any,                 monterey:       "3e822f734219100d4f4203e65820351be61e4615b7c7be07b47c0e4f2d7dcb48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fea945a40981220401946ca90f4a774c939d19fffd74eca49b4f07d19020811"
+    sha256 cellar: :any,                 arm64_sonoma:   "bfffc9e2269c1eab0bf994de6914fa521059361faccbb4d08902d7655967ad11"
+    sha256 cellar: :any,                 arm64_ventura:  "a4419ada0bd5dedb59061438785bc6317a3f624ed75ed99fb4a5f315099f755a"
+    sha256 cellar: :any,                 arm64_monterey: "88f459e3a675ee3128f8a6933ec2c754369f39c05cb6337120a22718eda09a99"
+    sha256 cellar: :any,                 sonoma:         "57a17c27733c9ee3a2545e6285b2eeb6f7efc6c0bc0e9c30dab12475b9b4524c"
+    sha256 cellar: :any,                 ventura:        "8c6e83a4b2dc4eb6b2338e2bc36dd29c10ae00b8a96378cad17d9195f6c5c85a"
+    sha256 cellar: :any,                 monterey:       "143d927ef2c728b30d0a7fa4222fb96e0df6ffcaec2fb2669d85563060fb31fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "139ac93e731fdc81f9bd2f602c82dfdf00e7bb7facec7efcf0db25fd9396af43"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -59,8 +59,8 @@ class Dvc < Formula
   end
 
   resource "aioitertools" do
-    url "https:files.pythonhosted.orgpackages4ae6888e1d726f0846c84e14a0f2f57873819eff9278b394d632aed979c98fbdaioitertools-0.11.0.tar.gz"
-    sha256 "42c68b8dd3a69c2bf7f2233bf7df4bb58b557bca5252ac02ed5187bbc67d6831"
+    url "https:files.pythonhosted.orgpackages06de38491a84ab323b47c7f86e94d2830e748780525f7a10c8600b67ead7e9eaaioitertools-0.12.0.tar.gz"
+    sha256 "c2a9055b4fbb7705f561b9d86053e8af5d10cc845d22c32008c43490b2d8dd6b"
   end
 
   resource "aiooss2" do
@@ -79,8 +79,8 @@ class Dvc < Formula
   end
 
   resource "aliyun-python-sdk-kms" do
-    url "https:files.pythonhosted.orgpackages0da67c07e731fba854f8cd17c550e8566f884728f8d6bc8c2196f2e3d1d54ee4aliyun-python-sdk-kms-2.16.4.tar.gz"
-    sha256 "0d5bb165c07b6a972939753a128507393f48011792ee0ec4f59b6021eabd9752"
+    url "https:files.pythonhosted.orgpackagesa82c9877d0e6b18ecf246df671ac65a5d1d9fecbf85bdcb5d43efbde0d4662ebaliyun-python-sdk-kms-2.16.5.tar.gz"
+    sha256 "f328a8a19d83ecbb965ffce0ec1e9930755216d104638cd95ecd362753b813b3"
   end
 
   resource "amqp" do
@@ -829,8 +829,8 @@ class Dvc < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackagese0adbedcdccbcbf91363fd425a948994f3340924145c2bc8ccb296f4a1e52c28yarl-1.9.4.tar.gz"
-    sha256 "566db86717cf8080b99b58b083b773a908ae40f06681e87e589a976faf8246bf"
+    url "https:files.pythonhosted.orgpackagesce50dcf6d0ea0da893b23f73ea5b21fa1f96fd45e9cb4404cc6b665368b4ab19yarl-1.9.7.tar.gz"
+    sha256 "f28e602edeeec01fc96daf7728e8052bc2e12a672e2a138561a1ebaf30fd9df7"
   end
 
   resource "zc-lockfile" do

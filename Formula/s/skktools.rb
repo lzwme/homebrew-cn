@@ -3,7 +3,7 @@ class Skktools < Formula
   homepage "https:github.comskk-devskktools"
   url "https:deb.debian.orgdebianpoolmainsskktoolsskktools_1.3.4.orig.tar.gz"
   sha256 "84cc5d3344362372e0dfe93a84790a193d93730178401a96248961ef161f2168"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 2
 
   bottle do

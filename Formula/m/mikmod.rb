@@ -3,7 +3,7 @@ class Mikmod < Formula
   homepage "https://mikmod.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/mikmod/mikmod/3.2.8/mikmod-3.2.8.tar.gz"
   sha256 "dbb01bc36797ce25ffcab2b3bf625537b85b42534344e1808236ca612fbaa4cc"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable

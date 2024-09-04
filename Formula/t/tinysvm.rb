@@ -3,7 +3,7 @@ class Tinysvm < Formula
   homepage "http:chasen.org~takusoftwareTinySVM"
   url "http:chasen.org~takusoftwareTinySVMsrcTinySVM-0.09.tar.gz"
   sha256 "e377f7ede3e022247da31774a4f75f3595ce768bc1afe3de9fc8e962242c7ab8"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage

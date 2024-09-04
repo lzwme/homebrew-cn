@@ -1373,7 +1373,7 @@ Homebrew-homebrew-core/Formula/d/dnsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doc8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docbook-xsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docbook.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/docbook2x.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/docbook2x.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docfx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-buildx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-clean.rb, Homebrew/homebrew-core, 1
@@ -3151,7 +3151,6 @@ Homebrew-homebrew-core/Formula/l/lcov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ld-find-code-refs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/ldb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 1
@@ -3378,6 +3377,7 @@ Homebrew-homebrew-core/Formula/lib/libbitcoin-protocol.rb, Homebrew/homebrew-cor
 Homebrew-homebrew-core/Formula/lib/libbitcoin-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbitcoin-system.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbladerf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libblastrampoline.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbluray.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbpf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbpg.rb, Homebrew/homebrew-core, 0
@@ -7760,6 +7760,7 @@ Homebrew-homebrew-cask/Casks/c/chiaki.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/choice-financial-terminal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choosy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chrome-devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chrome-remote-desktop-host.rb, Homebrew/homebrew-cask, 0
@@ -7956,6 +7957,7 @@ Homebrew-homebrew-cask/Casks/c/cro-mag-rally.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cronnix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crossover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crosspack-avr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/crosspaste.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crunch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crushftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crypter.rb, Homebrew/homebrew-cask, 1
@@ -12934,6 +12936,7 @@ Homebrew-homebrew-cask/Casks/r/ripme.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rippling.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/ripx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/rize.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rnnoise.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/roam-research.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roam.rb, Homebrew/homebrew-cask, 0

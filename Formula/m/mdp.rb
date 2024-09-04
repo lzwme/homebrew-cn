@@ -3,7 +3,7 @@ class Mdp < Formula
   homepage "https:github.comvisit1985mdp"
   url "https:github.comvisit1985mdparchiverefstags1.0.15.tar.gz"
   sha256 "3edc8ea1551fdf290d6bba721105e2e2c23964070ac18c13b4b8d959cdf6116f"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https:github.comvisit1985mdp.git", branch: "master"
 
   bottle do

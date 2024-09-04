@@ -3,7 +3,7 @@ class Rlog < Formula
   homepage "https:github.comvgoughrlog"
   url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comrlogrlog-1.4.tar.gz"
   sha256 "a938eeedeb4d56f1343dc5561bc09ae70b24e8f70d07a6f8d4b6eed32e783f79"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "408100778814811a72a063dd53302248c2d291baa55534a3a58daf16a14a1ffe"

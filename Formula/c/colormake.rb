@@ -3,7 +3,7 @@ class Colormake < Formula
   homepage "https:github.compagekiteColormake"
   url "https:github.compagekiteColormakearchiverefstags0.9.20140503.tar.gz"
   sha256 "a3f9fae9a455ac96be1cce0371b28bda33a9af73b06fa8e4329aa2f693d68d22"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.compagekiteColormake.git", branch: "master"
 
   bottle do

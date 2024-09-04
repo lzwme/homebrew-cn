@@ -3,7 +3,7 @@ class Check < Formula
   homepage "https:libcheck.github.iocheck"
   url "https:github.comlibcheckcheckreleasesdownload0.15.2check-0.15.2.tar.gz"
   sha256 "a8de4e0bacfb4d76dd1c618ded263523b53b85d92a146d8835eb1a52932fa20a"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "62db788052873713c484655c217bb221f71c794df5df63b7a68083df8805f598"

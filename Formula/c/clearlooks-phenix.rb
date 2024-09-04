@@ -3,7 +3,7 @@ class ClearlooksPhenix < Formula
   homepage "https:github.comjpfleuryclearlooks-phenix"
   url "https:github.comjpfleuryclearlooks-phenixarchiverefstags7.0.1.tar.gz"
   sha256 "2a9b21400f9960422e31dc4dabb4f320a16b76776a9574f0986bb00e97d357f4"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
   head "https:github.comjpfleuryclearlooks-phenix.git", branch: "master"
 

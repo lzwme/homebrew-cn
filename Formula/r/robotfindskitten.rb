@@ -3,7 +3,7 @@ class Robotfindskitten < Formula
   homepage "http:robotfindskitten.org"
   url "https:downloads.sourceforge.netprojectrfkrobotfindskitten-POSIXship_it_anywayrobotfindskitten-2.8284271.702.tar.gz"
   sha256 "020172e4f4630f7c4f62c03b6ffe2eeeba5637b60374d3e6952ae5816a9f99af"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 1
   head "https:github.comrobotfindskittenrobotfindskitten.git", branch: "main"
 

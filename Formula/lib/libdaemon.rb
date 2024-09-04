@@ -3,7 +3,7 @@ class Libdaemon < Formula
   homepage "https:0pointer.delennartprojectslibdaemon"
   url "https:0pointer.delennartprojectslibdaemonlibdaemon-0.14.tar.gz"
   sha256 "fd23eb5f6f986dcc7e708307355ba3289abe03cc381fc47a80bca4a50aa6b834"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage

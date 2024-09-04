@@ -3,7 +3,7 @@ class Libcue < Formula
   homepage "https:github.comlipnitsklibcue"
   url "https:github.comlipnitsklibcuearchiverefstagsv2.3.0.tar.gz"
   sha256 "cc1b3a65c60bd88b77a1ddd1574042d83cf7cc32b85fe9481c99613359eb7cfe"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "82934a84b7755323aef43356f8239523839e05e42005233046994d33376ef104"

@@ -5,7 +5,7 @@ class Ydcv < Formula
   homepage "https:github.comfelixonmarsydcv"
   url "https:files.pythonhosted.orgpackages1f2917124ebfdea8d810774977474a8652018c04c4a6db1ca413189f7e5b9d52ydcv-0.7.tar.gz"
   sha256 "53cd59501557496512470e7db5fb14e42ddcb411fe4fa45c00864d919393c1da"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
   revision 4
   head "https:github.comfelixonmarsydcv.git", branch: "master"
 

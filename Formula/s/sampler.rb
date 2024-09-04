@@ -3,7 +3,7 @@ class Sampler < Formula
   homepage "https:sampler.dev"
   url "https:github.comsqshqsamplerarchiverefstagsv1.1.0.tar.gz"
   sha256 "8b60bc5c0f94ddd4291abc2b89c1792da424fa590733932871f7b5e07e7587f9"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0122ac71d3af643458faa2633740d3fd8256bd943ae7d212a6397ce9ff6f39a6"

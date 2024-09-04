@@ -3,7 +3,7 @@ class Gpx < Formula
   homepage "https:github.commarkwalGPXblobHEADREADME.md"
   url "https:github.commarkwalGPXarchiverefstags2.6.8.tar.gz"
   sha256 "0877de07d405e7ced8428caa9dd989ebf90e7bdb7b1c34b85b2d3ee30ed28360"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.commarkwalGPX.git", branch: "master"
 
   bottle do

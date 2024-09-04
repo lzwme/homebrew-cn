@@ -4,7 +4,7 @@ class Cheops < Formula
   url "https:files.nothingisreal.comsoftwarecheopscheops-1.3.tar.bz2"
   mirror "https:github.comlogologicalcheopsreleasesdownload1.3cheops-1.3.tar.bz2"
   sha256 "a3ce2e94f73068159827a1ec93703b5075c7edfdf5b0c1aba4d71b3e43fe984e"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url "https:files.nothingisreal.comsoftwarecheops"

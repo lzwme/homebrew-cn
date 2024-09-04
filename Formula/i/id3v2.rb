@@ -3,7 +3,7 @@ class Id3v2 < Formula
   homepage "https://id3v2.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/id3v2/id3v2/0.1.12/id3v2-0.1.12.tar.gz"
   sha256 "8105fad3189dbb0e4cb381862b4fa18744233c3bbe6def6f81ff64f5101722bf"
-  license "LGPL-2.1"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9bf6ca393764873ff61916821417e4bfbbe1564682ca2004fcbeef1525c211b7"

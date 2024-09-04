@@ -5,7 +5,7 @@ class GitRemoteHg < Formula
   homepage "https:github.comfelipecgit-remote-hg"
   url "https:github.comfelipecgit-remote-hgarchiverefstagsv0.6.tar.gz"
   sha256 "1d49ffda290c8a307d32191655bdd85015e0e2f68bb2d64cddea04d8ae50a4bf"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   revision 2
   head "https:github.comfelipecgit-remote-hg.git", branch: "master"
 

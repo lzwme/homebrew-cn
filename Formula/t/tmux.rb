@@ -1,10 +1,19 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https:tmux.github.io"
-  url "https:github.comtmuxtmuxreleasesdownload3.4tmux-3.4.tar.gz"
-  sha256 "551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa"
   license "ISC"
   revision 1
+
+  stable do
+    url "https:github.comtmuxtmuxreleasesdownload3.4tmux-3.4.tar.gz"
+    sha256 "551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa"
+
+    # Upstream fix for macOS 15 headers, remove in next version
+    patch do
+      url "https:github.comtmuxtmuxcommit775789fbd5c4f3aa93061480cd64e61daf7fb689.patch?full_index=1"
+      sha256 "c1b61a1244f758480578888d3f89cac470271c376ea0879996b81e10b397cad0"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,14 +22,14 @@ class Tmux < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "defd2c5057e1f44cd545dd8c8a79246d860a71d9be88ccbc5e8128ef2ec6f94f"
-    sha256 cellar: :any,                 arm64_ventura:  "32be1a9082ff54dc7f98f92fb91f72e00f31b9b24e3bc97434ad1a769763c057"
-    sha256 cellar: :any,                 arm64_monterey: "8903753c2b5466cb6d28524b5f9582041e0955a0a2280e6e7d269b6068cd84d2"
-    sha256 cellar: :any,                 sonoma:         "963013100e07ffe267686b21f362ad916c37070959b4d8184ac68ed1fdf1693a"
-    sha256 cellar: :any,                 ventura:        "59ce7af5006e873f2f1afb464ac9876ec111b28067495510e76c0e6a08760607"
-    sha256 cellar: :any,                 monterey:       "c6ec914966f86259aae1d8f77cc50174589013ae03733c27d644ff115269d5ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d029ba70c4e7eae66ab6928a71415bc52c4462801e3f1d8834d915b2bfffbe08"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "6b407b3351b79919c482d46134c9e83552f3e848f1c482a7deec65c36cf16d37"
+    sha256 cellar: :any,                 arm64_ventura:  "a5a47403c75e2d14370ff07641294bd361eceb8ca2dc65925e5eb7e41453d727"
+    sha256 cellar: :any,                 arm64_monterey: "2233d5fd7333fdf3da6dbe48157735c276f27cd7dd274d0e704985c9105e77b0"
+    sha256 cellar: :any,                 sonoma:         "2a085e0752332536a198aac71cd6b24a10f6feb0bf1825f90551cd6ef5e8c890"
+    sha256 cellar: :any,                 ventura:        "0648a51759f9c37ab98ff9b2558d30aa7ec07a7c7979a4107263e080382d0c0c"
+    sha256 cellar: :any,                 monterey:       "ec64b5ad6daf6bf6cb99cd2580fdf6cfee9830fcedc4971fa9be033710d1774a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05e737d00a0f331d48468c8f7f96f70e8879c5e9ffb9fcae9fb1fdae4f71bcd4"
   end
 
   head do
@@ -44,14 +53,8 @@ class Tmux < Formula
   end
 
   resource "completion" do
-    url "https:raw.githubusercontent.comimomalievtmux-bash-completionf5d53239f7658f8e8fbaf02535cc369009c436d6completionstmux"
-    sha256 "b5f7bbd78f9790026bbff16fc6e3fe4070d067f58f943e156bd1a8c3c99f6a6f"
-  end
-
-  # Upstream fix for macOS 15 headers, remove in next version
-  patch do
-    url "https:github.comtmuxtmuxcommit775789fbd5c4f3aa93061480cd64e61daf7fb689.patch?full_index=1"
-    sha256 "c1b61a1244f758480578888d3f89cac470271c376ea0879996b81e10b397cad0"
+    url "https:raw.githubusercontent.comimomalievtmux-bash-completion8da7f797245970659b259b85e5409f197b8afdddcompletionstmux"
+    sha256 "4e2179053376f4194b342249d75c243c1573c82c185bfbea008be1739048e709"
   end
 
   def install

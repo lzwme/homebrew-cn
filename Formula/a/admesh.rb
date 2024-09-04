@@ -3,7 +3,7 @@ class Admesh < Formula
   homepage "https:github.comadmeshadmesh"
   url "https:github.comadmeshadmeshreleasesdownloadv0.98.5admesh-0.98.5.tar.gz"
   sha256 "0d7994bfa587c4e958b2ac7c7d2fb90dfb6c5463d32513ada169cf710a438535"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d8be2d072ff47a331d5a749e91598d85da1079f65e2f5f9a222f3f8bb386daff"

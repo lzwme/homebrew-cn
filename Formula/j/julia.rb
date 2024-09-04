@@ -13,13 +13,13 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "efb2ea2ecada21f49143e8c3eb041c8311ce9bda20926592b4e9a78eb0858c0d"
-    sha256 cellar: :any,                 arm64_ventura:  "5cf7165a409134e6558478fe759a1d0033dae6e92bfc723ba95e85ae02068828"
-    sha256 cellar: :any,                 arm64_monterey: "21879e908d76e4dd33c2025bfa922ca8512665b3b87a1bd71dd1a244b50c265d"
-    sha256 cellar: :any,                 sonoma:         "f4ea8e1bc989f3b7a9e1696d9b4133bb6b42085322211558878803c98a878582"
-    sha256 cellar: :any,                 ventura:        "a72d4bb60872a50043f2894fa70d7c9546f5c22f2a2f56ac7f5307be1d93f3f6"
-    sha256 cellar: :any,                 monterey:       "f518cf358c04a34ce0a43947c2c3cf4687ab8f4928580e2aa5b5dd7f7ee5a77b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29a2c4acb419f6642cab1937305b7c7f9c4cbc54e525e06b0042272c3a354c13"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "a9c523fa03df3a333919f2d47f3ac0e4715b599f59911bb13aa157aae56d58a7"
+    sha256 cellar: :any, arm64_ventura:  "7ce8546e60d3a2ddf7ea2aa4f32c3968275449a696f2b4a5a7750b6cab1d2e8a"
+    sha256 cellar: :any, arm64_monterey: "354fc5fa57511bf0e741de878346508b7e0f81e998747c438874f33b8879b4a2"
+    sha256 cellar: :any, sonoma:         "1ff1bde23f8e305460df7fe17c461ed710b45ffe82f9b0dd2523a74d35aa52cb"
+    sha256 cellar: :any, ventura:        "d675053c8a99ebbe6ac37986bd171a1a29240c1ea1100ae75f97b4220d4e30b5"
+    sha256 cellar: :any, monterey:       "cd81236d6a7bf4621b6fd8db5d3bb293e74523e7ed25f3e0bd847b96a246b1e2"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -30,6 +30,7 @@ class Julia < Formula
   depends_on "ca-certificates"
   depends_on "curl"
   depends_on "gmp"
+  depends_on "libblastrampoline"
   depends_on "libgit2"
   depends_on "libnghttp2"
   depends_on "libssh2"
@@ -74,6 +75,7 @@ class Julia < Formula
       USE_SYSTEM_CURL=1
       USE_SYSTEM_GMP=1
       USE_SYSTEM_LAPACK=1
+      USE_SYSTEM_LIBBLASTRAMPOLINE=1
       USE_SYSTEM_LIBGIT2=1
       USE_SYSTEM_LIBSSH2=1
       USE_SYSTEM_LIBSUITESPARSE=0

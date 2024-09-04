@@ -4,7 +4,7 @@ class Miruo < Formula
   url "https:github.comKLabmiruoarchiverefstags0.9.6b.tar.gz"
   version "0.9.6b"
   sha256 "0b31a5bde5b0e92a245611a8e671cec3d330686316691daeb1de76360d2fa5f1"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55dcd6ea73bec9f341df715534d5bd504d048a8bee3f8d5627302cb734840f0b"

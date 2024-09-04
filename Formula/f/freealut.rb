@@ -3,7 +3,7 @@ class Freealut < Formula
   homepage "https:github.comvancegroupfreealut"
   url "https:deb.debian.orgdebianpoolmainffreealutfreealut_1.1.0.orig.tar.gz"
   sha256 "60d1ea8779471bb851b89b49ce44eecb78e46265be1a6e9320a28b100c8df44f"
-  license "LGPL-2.0"
+  license "LGPL-2.0-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0e38d6b21c45fe87a07e97bbdee177a22de254c35873f5d3b6cd17c896221af5"

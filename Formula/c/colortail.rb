@@ -4,7 +4,7 @@ class Colortail < Formula
   url "https:github.comjoakim666colortail.git",
       revision: "f44fce0dbfd6bd38cba03400db26a99b489505b5"
   version "0.3.4"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dddf27b1538766c826383b6c53477a543f0d1944cc36f49e5559b30c967fda67"

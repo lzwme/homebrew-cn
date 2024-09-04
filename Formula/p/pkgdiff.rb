@@ -3,7 +3,7 @@ class Pkgdiff < Formula
   homepage "https:lvc.github.iopkgdiff"
   url "https:github.comlvcpkgdiffarchiverefstags1.7.2.tar.gz"
   sha256 "d0ef5c8ef04f019f00c3278d988350201becfbe40d04b734defd5789eaa0d321"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     rebuild 2

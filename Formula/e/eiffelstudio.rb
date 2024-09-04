@@ -4,7 +4,7 @@ class Eiffelstudio < Formula
   url "https://ftp.eiffel.com/pub/download/22.05/pp/PorterPackage_std_106302.tar"
   version "22.05.10.6302"
   sha256 "c2ede38b19cedead58a9e075cf79d6a4b113e049c0723fe9556c4f36ee68b80d"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   revision 1
 
   livecheck do

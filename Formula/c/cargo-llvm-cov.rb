@@ -2,19 +2,19 @@ class CargoLlvmCov < Formula
   desc "Cargo subcommand to easily use LLVM source-based code coverage"
   homepage "https:github.comtaiki-ecargo-llvm-cov"
   # cannot use github tarball due to https:github.comtaiki-ecargo-llvm-covpull152#issuecomment-1107055622
-  url "https:static.crates.iocratescargo-llvm-covcargo-llvm-cov-0.6.11.crate"
-  sha256 "a18c672177efaee994adc1127c8dceb705305a9da482724227ca90969964f06b"
+  url "https:static.crates.iocratescargo-llvm-covcargo-llvm-cov-0.6.12.crate"
+  sha256 "6aae8e21e7bf0238826952065e4c5967578fbdbf2d3da58c4c8344b4be152e90"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comtaiki-ecargo-llvm-cov.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "616e9142d3eb8066f70e164926bf4fcadc6aeb9ce069b424f7f63c33c3b283aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aab8871dd22963b74f06b94079fc264e2044ac54e90618c816ad5215bdce78fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6c1b84895cfa529ffd6d227f2589acedcea5b3aceffae01506aa7f5585c92c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d95b5abb5b4bbe37aa5311766cc75f62b124617a7d5c439c6b9ff4ee697f5a95"
-    sha256 cellar: :any_skip_relocation, ventura:        "23d2f8c9fe4a28c7bda5ab4bd64f270d5ac8e75769b10bc90f68a1ebb42870e2"
-    sha256 cellar: :any_skip_relocation, monterey:       "83a60e58cc9a19d97f85e52de8dee65a9229f3363ee4431b49d26bdf277f6a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d05c7ac852d3e7c39dda93d37965bb38786c6bfbf71b5a03ff59f54321f6285"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0758a8a35bf78ee36ad11fef4bf2129c10effa17496c029d03720b4e99d4865e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bb705276f86145b6e5f94e917e0dcecf401fbf179563ee77b170ba7a3266689"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e7833fb8029f12367716c2728b96dc4bfa1ac2e3296f8edc4fa215d9e35b82d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "12f457041ff8a46987ca6bcef198882a1dd9e73e9193ef8615c7c30c9dd72065"
+    sha256 cellar: :any_skip_relocation, ventura:        "d156deda414570b3e48290081220088c9bebd2515754ff53afd6e1bc0b3212c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "414b9e7e4059df14deb474a9c4ef1f9280b9344e2818c42756d5b8b176b6d171"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b62832734412e8339329492d0f8fc5cf328670c2f01aad1182f6a25d9998b5"
   end
 
   depends_on "rust" => :build

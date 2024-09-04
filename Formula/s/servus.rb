@@ -4,7 +4,7 @@ class Servus < Formula
   url "https:github.comHBPVISServus.git",
       tag:      "1.5.2",
       revision: "170bd93dbdd6c0dd80cf4dfc5926590cc5cef5ab"
-  license "LGPL-3.0"
+  license "LGPL-3.0-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1ca10abd68ab48408bc5d5db44e2512345ceab9ba48765c61f6ac2079268dcb5"

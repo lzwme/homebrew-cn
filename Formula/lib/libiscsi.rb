@@ -3,7 +3,7 @@ class Libiscsi < Formula
   homepage "https:github.comsahlberglibiscsi"
   url "https:github.comsahlberglibiscsiarchiverefstags1.20.0.tar.gz"
   sha256 "6321d802103f2a363d3afd9a5ae772de0b4052c84fe6a301ecb576b34e853caa"
-  license "GPL-2.0"
+  license all_of: [:public_domain, "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https:github.comsahlberglibiscsi.git", branch: "master"
 
   bottle do

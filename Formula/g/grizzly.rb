@@ -1,18 +1,18 @@
 class Grizzly < Formula
   desc "Command-line tool for managing and automating Grafana dashboards"
   homepage "https:grafana.github.iogrizzly"
-  url "https:github.comgrafanagrizzlyarchiverefstagsv0.4.6.tar.gz"
-  sha256 "571c6c03dc8dd781f07c2c1201ffcc5d83600f9e65687a951ec7c0804a9a45df"
+  url "https:github.comgrafanagrizzlyarchiverefstagsv0.4.7.tar.gz"
+  sha256 "1c577c444ea7ad58fbb4500fe8c49a9b80f484be686db48feebe4fbe76591ed7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c15c0347fbc53ac5f0b66a422f8c00c1582797cdba947569e093674ef507c40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c15c0347fbc53ac5f0b66a422f8c00c1582797cdba947569e093674ef507c40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c15c0347fbc53ac5f0b66a422f8c00c1582797cdba947569e093674ef507c40"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a3784b1b1b9e0bf165c47013eac24cb4c915ac7943de50fbba479ca5b58cc961"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3784b1b1b9e0bf165c47013eac24cb4c915ac7943de50fbba479ca5b58cc961"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3784b1b1b9e0bf165c47013eac24cb4c915ac7943de50fbba479ca5b58cc961"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d289622fb2f0060f8605c2e92343aa37553721a2d861ba7444f51bfcdff17ad2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc82d70614867c5be7e756b0f7032930f0f5e17737be7e89242703fedafb6012"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc82d70614867c5be7e756b0f7032930f0f5e17737be7e89242703fedafb6012"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc82d70614867c5be7e756b0f7032930f0f5e17737be7e89242703fedafb6012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a95b5cc0bf79faf4f38ca26250c55a57cc47b4934e5af910a4efc76cb1a4ca2"
   end
 
   depends_on "go" => :build

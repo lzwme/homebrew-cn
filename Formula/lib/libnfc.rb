@@ -3,7 +3,7 @@ class Libnfc < Formula
   homepage "https:github.comnfc-toolslibnfc"
   url "https:github.comnfc-toolslibnfcreleasesdownloadlibnfc-1.8.0libnfc-1.8.0.tar.bz2"
   sha256 "6d9ad31c86408711f0a60f05b1933101c7497683c2e0d8917d1611a3feba3dd5"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
 
   bottle do
     sha256 arm64_sonoma:   "3e1ce25513819c59c110f28cfdb8cf4ecf265800d741d272ad7450805ba647f5"

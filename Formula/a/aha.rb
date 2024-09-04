@@ -3,7 +3,7 @@ class Aha < Formula
   homepage "https:github.comtheZizaha"
   url "https:github.comtheZizahaarchiverefstags0.5.1.tar.gz"
   sha256 "6aea13487f6b5c3e453a447a67345f8095282f5acd97344466816b05ebd0b3b1"
-  license "LGPL-2.1"
+  license any_of: ["LGPL-2.0-or-later", "MPL-1.1"]
   head "https:github.comtheZizaha.git", branch: "master"
 
   bottle do

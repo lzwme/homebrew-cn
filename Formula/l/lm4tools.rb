@@ -3,7 +3,7 @@ class Lm4tools < Formula
   homepage "https:github.comutziglm4tools"
   url "https:github.comutziglm4toolsarchiverefstagsv0.1.3.tar.gz"
   sha256 "e8064ace3c424b429b7e0b50e58b467d8ed92962b6a6dfa7f6a39942416b1627"
-  license "GPL-2.0"
+  license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "13fcc858d9be77a53c1d7a541d3c314c1b98e03b48c2391850912f6dba3d6c85"

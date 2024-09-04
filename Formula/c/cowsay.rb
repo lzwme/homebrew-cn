@@ -4,7 +4,7 @@ class Cowsay < Formula
   homepage "https:github.comtnalpggerank-amateur-cowsay"
   url "https:github.comtnalpggerank-amateur-cowsayarchiverefstagscowsay-3.04.tar.gz"
   sha256 "d8b871332cfc1f0b6c16832ecca413ca0ac14d58626491a6733829e3d655878b"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
   revision 1
 
   bottle do

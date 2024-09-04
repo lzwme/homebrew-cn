@@ -3,7 +3,7 @@ class Snapraid < Formula
   homepage "https:www.snapraid.it"
   url "https:github.comamadvancesnapraidreleasesdownloadv12.3snapraid-12.3.tar.gz"
   sha256 "1f27aba6e5db3929474da9c472fc4a3bc51d4a83aa5385af6b09afc9f68d6d44"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4da7ec06ad641c8d25b350c67fb8a100e0fe6d1a539deb8bb189244bdff8cb5"

@@ -3,7 +3,7 @@ class Cutter < Formula
   homepage "https:cutter.osdn.jp"
   url "https:osdn.mirror.constant.comcutter73761cutter-1.2.8.tar.gz"
   sha256 "bd5fcd6486855e48d51f893a1526e3363f9b2a03bac9fc23c157001447bc2a23"
-  license "LGPL-3.0"
+  license "LGPL-3.0-or-later"
   head "https:github.comclear-codecutter.git", branch: "master"
 
   livecheck do

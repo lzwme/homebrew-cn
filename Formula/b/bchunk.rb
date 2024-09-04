@@ -3,7 +3,7 @@ class Bchunk < Formula
   homepage "http:he.fibchunk"
   url "http:he.fibchunkbchunk-1.2.2.tar.gz"
   sha256 "e7d99b5b60ff0b94c540379f6396a670210400124544fb1af985dd3551eabd89"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.comhessubchunk.git", branch: "master"
 
   livecheck do

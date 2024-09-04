@@ -3,7 +3,7 @@ class Clutter < Formula
   homepage "https:wiki.gnome.orgProjectsClutter"
   url "https:download.gnome.orgsourcesclutter1.26clutter-1.26.4.tar.xz"
   sha256 "8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6"
-  license "LGPL-2.1"
+  license "LGPL-2.0-or-later"
 
   bottle do
     sha256 arm64_sonoma:   "bbbc51073c2efb8c71a9405c87c6bd65995ad90ed106d266d502cf57a7f44bb9"

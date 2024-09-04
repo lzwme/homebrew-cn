@@ -3,7 +3,7 @@ class BpmTools < Formula
   homepage "https://www.pogo.org.uk/~mark/bpm-tools/"
   url "https://www.pogo.org.uk/~mark/bpm-tools/releases/bpm-tools-0.3.tar.gz"
   sha256 "37efe81ef594e9df17763e0a6fc29617769df12dfab6358f5e910d88f4723b94"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   head "https://www.pogo.org.uk/~mark/bpm-tools.git", branch: "master"
 
   livecheck do

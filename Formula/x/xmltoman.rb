@@ -7,7 +7,7 @@ class Xmltoman < Formula
   homepage "https://sourceforge.net/projects/xmltoman/"
   url "https://downloads.sourceforge.net/project/xmltoman/xmltoman/xmltoman-0.4.tar.gz/xmltoman-0.4.tar.gz"
   sha256 "948794a316aaecd13add60e17e476beae86644d066cb60171fc6b779f2df14b0"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 1
 
   bottle do

@@ -3,7 +3,7 @@ class Charm < Formula
   homepage "https:github.comjujucharmstore-client"
   url "https:github.comjujucharmstore-clientarchiverefstagsv2.5.2.tar.gz"
   sha256 "3dd52c9a463bc09bedb3a07eb0977711aec77611b9c0d7f40cd366a66aa2ca03"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76693903d37a9dc93095fd09c496c21d0651a71f39b1abbce782519ea2859f6c"

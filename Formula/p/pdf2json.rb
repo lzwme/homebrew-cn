@@ -3,7 +3,7 @@ class Pdf2json < Formula
   homepage "https:github.comflexpaperpdf2json"
   url "https:github.comflexpaperpdf2jsonarchiverefstags0.71.tar.gz"
   sha256 "54878473a2afb568caf2da11d6804cabe0abe505da77584a3f8f52bcd37d9c55"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a791ed61467ee9df00b0901fed7ffb14f97295d2139f01363bf433c879e7be94"

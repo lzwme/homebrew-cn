@@ -3,7 +3,7 @@ class RipgrepAll < Formula
   homepage "https:github.comphireskyripgrep-all"
   url "https:github.comphireskyripgrep-allarchiverefstagsv0.10.6.tar.gz"
   sha256 "06cd619ad6638be206266a77fdf11034dc2dc15d97b3a057b0d6280a17334680"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   head "https:github.comphireskyripgrep-all.git", branch: "master"
 
   bottle do

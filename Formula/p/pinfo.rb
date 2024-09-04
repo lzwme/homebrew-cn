@@ -3,7 +3,7 @@ class Pinfo < Formula
   homepage "https:packages.debian.orgsidpinfo"
   url "https:github.combaszoetekouwpinfoarchiverefstagsv0.6.13.tar.gz"
   sha256 "9dc5e848a7a86cb665a885bc5f0fdf6d09ad60e814d75e78019ae3accb42c217"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   revision 1
 
   bottle do

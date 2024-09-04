@@ -3,7 +3,7 @@ class AptDater < Formula
   homepage "https:github.comDE-IBHapt-dater"
   url "https:github.comDE-IBHapt-daterarchiverefstagsv1.0.4.tar.gz"
   sha256 "a4bd5f70a199b844a34a3b4c4677ea56780c055db7c557ff5bd8f2772378a4d6"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 1
   version_scheme 1
 

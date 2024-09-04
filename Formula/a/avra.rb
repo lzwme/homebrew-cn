@@ -3,7 +3,7 @@ class Avra < Formula
   homepage "https:github.comRo5bertavra"
   url "https:github.comRo5bertavraarchiverefstags1.4.2.tar.gz"
   sha256 "cc56837be973d1a102dc6936a0b7235a1d716c0f7cd053bf77e0620577cff986"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f170628778857bc28a0cb962dc7c44904c2d4400d56e2723c3df711d05acb9d5"

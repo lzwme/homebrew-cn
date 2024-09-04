@@ -3,7 +3,7 @@ class Hexcurse < Formula
   homepage "https:github.comLonnyGomeshexcurse"
   url "https:github.comLonnyGomeshexcursearchiverefstagsv1.60.0.tar.gz"
   sha256 "f6919e4a824ee354f003f0c42e4c4cef98a93aa7e3aa449caedd13f9a2db5530"
-  license "LGPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ca7161cf90a9794229c2a7fdee93f2a8ffe0db514ff282e480f199d408fbfd"

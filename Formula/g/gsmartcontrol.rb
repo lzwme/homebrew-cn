@@ -3,7 +3,7 @@ class Gsmartcontrol < Formula
   homepage "https:gsmartcontrol.shaduri.dev"
   url "https:downloads.sourceforge.netprojectgsmartcontrol1.1.4gsmartcontrol-1.1.4.tar.bz2"
   sha256 "fc409f2b8a84cc40bb103d6c82401b9d4c0182d5a3b223c93959c7ad66191847"
-  license any_of: ["GPL-2.0", "GPL-3.0"]
+  license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   revision 1
 
   bottle do

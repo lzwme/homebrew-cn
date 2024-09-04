@@ -3,10 +3,11 @@ cask "font-zain" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflzain"
   name "Zain"
-  homepage "https:github.comgooglefontszain"
+  homepage "https:fonts.google.comspecimenZain"
 
   font "Zain-Black.ttf"
   font "Zain-Bold.ttf"

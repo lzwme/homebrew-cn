@@ -5,7 +5,7 @@ class Psftools < Formula
   # You may still find it on some mirrors but it should not be used.
   url "https://www.seasip.info/Unix/PSF/psftools-1.0.14.tar.gz"
   sha256 "dcf8308fa414b486e6df7c48a2626e8dcb3c8a472c94ff04816ba95c6c51d19e"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   version_scheme 1
 
   # The development release on the homepage uses the same filename format as

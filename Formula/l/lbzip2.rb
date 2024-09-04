@@ -4,7 +4,7 @@ class Lbzip2 < Formula
   url "https:web.archive.orgweb20170304050514archive.lbzip2.orglbzip2-2.5.tar.bz2"
   mirror "https:fossies.orglinuxprivatlbzip2-2.5.tar.bz2"
   sha256 "eec4ff08376090494fa3710649b73e5412c3687b4b9b758c93f73aa7be27555b"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do

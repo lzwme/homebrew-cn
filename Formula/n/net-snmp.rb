@@ -3,7 +3,7 @@ class NetSnmp < Formula
   homepage "http:www.net-snmp.org"
   url "https:downloads.sourceforge.netprojectnet-snmpnet-snmp5.9.4net-snmp-5.9.4.tar.gz"
   sha256 "8b4de01391e74e3c7014beb43961a2d6d6fa03acc34280b9585f4930745b0544"
-  license "Net-SNMP"
+  license all_of: ["MIT-CMU", "MIT", "BSD-3-Clause"]
   head "https:github.comnet-snmpnet-snmp.git", branch: "master"
 
   livecheck do

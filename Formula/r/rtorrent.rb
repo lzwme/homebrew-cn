@@ -3,7 +3,7 @@ class Rtorrent < Formula
   homepage "https:github.comrakshasartorrent"
   url "https:github.comrakshasartorrentreleasesdownloadv0.9.8rtorrent-0.9.8.tar.gz"
   sha256 "9edf0304bf142215d3bc85a0771446b6a72d0ad8218efbe184b41e4c9c7542af"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 3
 
   bottle do

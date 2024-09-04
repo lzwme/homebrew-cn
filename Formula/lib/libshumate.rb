@@ -31,9 +31,7 @@ class Libshumate < Formula
   depends_on "vala" => :build
 
   depends_on "cairo"
-  depends_on "cmake"
   depends_on "gdk-pixbuf"
-  depends_on "gi-docgen"
   depends_on "glib"
   depends_on "graphene"
   depends_on "gtk4"
@@ -43,8 +41,7 @@ class Libshumate < Formula
   depends_on "protobuf-c"
   depends_on "sqlite"
 
-  uses_from_macos "gperf"
-  uses_from_macos "icu4c"
+  uses_from_macos "gperf" => :build
 
   on_macos do
     depends_on "gettext"
@@ -66,7 +63,10 @@ class Libshumate < Formula
         return 0;
       }
     EOS
+
+    # TODO: remove this after rewriting icu-uc in `libpsl`'s pkg-config file
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
+
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs shumate-1.0").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

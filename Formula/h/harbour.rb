@@ -1,7 +1,7 @@
 class Harbour < Formula
   desc "Portable, xBase-compatible programming language and environment"
   homepage "https:harbour.github.io"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 2
   head "https:github.comharbourcore.git", branch: "master"
 

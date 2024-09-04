@@ -3,7 +3,7 @@ class Advancescan < Formula
   homepage "https:www.advancemame.itscan-readme.html"
   url "https:github.comamadvanceadvancescanreleasesdownloadv1.18advancescan-1.18.tar.gz"
   sha256 "8c346c6578a1486ca01774f30c3e678058b9b8b02f265119776d523358d24672"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53a0ab6f94d0b7bbafada815a25b5159ac3d0fed4073714526bbd4350ec5df63"

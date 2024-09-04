@@ -3,7 +3,7 @@ class RofsFiltered < Formula
   homepage "https:github.comgburcarofs-filtered"
   url "https:github.comgburcarofs-filteredarchiverefstagsrel-1.7.tar.gz"
   sha256 "d66066dfd0274a2fb7b71dd929445377dd23100b9fa43e3888dbe3fc7e8228e8"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     rebuild 2
