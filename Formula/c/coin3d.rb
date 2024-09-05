@@ -14,6 +14,11 @@ class Coin3d < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "109634fdffabd73998545546b0608fb74e325744326e8d5e6e5a7911c0c47c47"
     sha256 cellar: :any, arm64_ventura:  "99d3003891e5b8b7264d74feb424acfaeab6b721d82c0e90a908b79536ff9f13"

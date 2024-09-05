@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https:postgis.net"
-  url "https:download.osgeo.orgpostgissourcepostgis-3.4.2.tar.gz"
-  sha256 "c8c874c00ba4a984a87030af6bf9544821502060ad473d5c96f1d4d0835c5892"
+  url "https:download.osgeo.orgpostgissourcepostgis-3.4.3.tar.gz"
+  sha256 "f8ded505daeb8f57659da2b9e577ff71e183aaa094708d2eece2c56d93361f62"
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https:download.osgeo.orgpostgissource"
@@ -12,13 +11,13 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "98640c6921b0151bc8e6be7bf1ca08b96f9a6f77ac3bf282974a99c2ef4ad09f"
-    sha256 cellar: :any,                 arm64_ventura:  "0098f8c74af24f1ad8238c2f4eb9f25a81681a0812ad3932da4f450e2970bf33"
-    sha256 cellar: :any,                 arm64_monterey: "5b3b69b4a2cb3e8a5bfdf32b2ab71890fbcdf3661bc241e1154f1b148d6cffbe"
-    sha256 cellar: :any,                 sonoma:         "8f79f802730d1efa58df1c2e84a25a999ef9bf151ac15c093c144986c9a02d07"
-    sha256 cellar: :any,                 ventura:        "541f394419c6cb17e0bbd48e8be9f3ebd46a6ac7b9ff7c1543847c27ecd35c4f"
-    sha256 cellar: :any,                 monterey:       "bdc6e3f1f8ff0de7e3743ad2eaa8beac29d85e6b7b8a5f495ba659961b30f267"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c2a685c5b13f7dcc7bdaeda70a71af1b7b280380bd9a68369f7be31b39c8f9"
+    sha256 cellar: :any,                 arm64_sonoma:   "619e7996364ce78a8c9f34c7762e493be62f0e9467104ff1bf61fa2842266b09"
+    sha256 cellar: :any,                 arm64_ventura:  "1e7641421667a2d99c44032994c66344cab61570b4b9c6c1066702f454f33f94"
+    sha256 cellar: :any,                 arm64_monterey: "beedaffb06905e360eb99351e442f377f91f345e81bdcc7ee7f16bcba1e2a6de"
+    sha256 cellar: :any,                 sonoma:         "c50e0f3b10aea94825f983d75691cf231a0d47c681cd09ce17cd4cb2cc66ea4e"
+    sha256 cellar: :any,                 ventura:        "b606bc9a70e7a1eafb1c84c7a9e8a9e16b523ee836c1e8e4506f2df9d86636f5"
+    sha256 cellar: :any,                 monterey:       "f93e41a5b70d007775c51a065d103860ffbf661cc088df194b2217d7da2ffb01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93ec53c8041183126f144dd8628f330cd5f2b6a6a7ed9a92d096315e35f957cc"
   end
 
   head do

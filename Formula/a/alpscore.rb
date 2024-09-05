@@ -18,24 +18,27 @@ class Alpscore < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6159afbf12d22d9d08a30e69a785d9bb77e595145937857e5e8c3ceb273582d"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "boost"
   depends_on "eigen"
   depends_on "hdf5"
   depends_on "open-mpi"
 
-  on_macos do
-    depends_on "libaec"
-  end
-
   def install
-    args = std_cmake_args
-    args << "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3"
-    args << "-DALPS_BUILD_SHARED=ON"
-    args << "-DENABLE_MPI=ON"
-    args << "-DTesting=OFF"
+    # Work around different behavior in CMake-built HDF5
+    inreplace "commoncmakeALPSCommonModuleDefinitions.cmake" do |s|
+      s.sub! "set(HDF5_NO_FIND_PACKAGE_CONFIG_FILE TRUE)", ""
+      s.sub! "find_package (HDF5 1.10.2 ", "find_package (HDF5 "
+    end
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    args = %W[
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
+      -DALPS_BUILD_SHARED=ON
+      -DENABLE_MPI=ON
+      -DTesting=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -58,14 +61,18 @@ class Alpscore < Formula
       }
     EOS
 
-    args = %W[
-      -std=c++11
-      -I#{include} -I#{Formula["boost"].opt_include}
-      -L#{lib} -L#{Formula["boost"].opt_lib}
-      -lalps-accumulators -lalps-hdf5 -lalps-utilities -lalps-params
-      -lboost_filesystem-mt -lboost_system-mt -lboost_program_options-mt
-    ]
-    system ENV.cxx, "test.cpp", *args, "-o", "test"
+    (testpath"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.5)
+      project(test)
+      set(CMAKE_CXX_STANDARD 11)
+      find_package(HDF5 REQUIRED)
+      find_package(ALPSCore REQUIRED mc accumulators params)
+      add_executable(test test.cpp)
+      target_link_libraries(test ${ALPSCore_LIBRARIES})
+    EOS
+
+    system "cmake", "."
+    system "cmake", "--build", "."
     assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output(".test")
   end
 end

@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesf66a6bed45f9c2612fb8144974b68f4af0918aad53394433aa7fd19d7459131asnakemake-8.19.0.tar.gz"
-  sha256 "b99e034846a71d125b709f73f2a878bb7b3ba4af8b573b1bd7cafa738a020f44"
+  url "https:files.pythonhosted.orgpackages0db373b4b63e4bffa348af082963fa8840494a9cbf32ff923f6d8360613a1d59snakemake-8.19.1.tar.gz"
+  sha256 "59aa3a993df0693c57cc8cf3d8873a2f3fa3e13e49288959ef9da65f0b633632"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "038099e1574ebcf026598fd0f6755850544f19b15415408e358057db141001d4"
-    sha256 cellar: :any,                 arm64_ventura:  "e326452d71b40ce7561d1d977c236b74506a61da35c4c88668b815ffa14a7fb5"
-    sha256 cellar: :any,                 arm64_monterey: "fee83affbaa8ad9474e53ba64dd56bc4e6367306d8c794ca53654968046d0d43"
-    sha256 cellar: :any,                 sonoma:         "fbecfd9251c3fd7cb0014a1aa1039b5dcdce1e895bf6db02510a8539606bbaaf"
-    sha256 cellar: :any,                 ventura:        "9bbed542c1d9df745332a98d132a12dee253e8e7e0f3b393d94d532677e26c4a"
-    sha256 cellar: :any,                 monterey:       "58de0ca5ce2882fc898b3b5ee277f3c6e0c218b500003e2edb48e50c6e4a4050"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ceefebfce7261bceb77cfc010c26b58edea86195d387810c22a3509f3cb9f08"
+    sha256 cellar: :any,                 arm64_sonoma:   "0deaffb8e8c8a385fbdb62d86befc5e8768c4635fd75dfc776782ede8537c735"
+    sha256 cellar: :any,                 arm64_ventura:  "25df16fb05788fba280a56503a0048e2f0e62c0dddc4dcdde04ea9e05669ceed"
+    sha256 cellar: :any,                 arm64_monterey: "cc62456f59d83566f3970783cd1b7e3dadfb4650910bb96eb3feaf30b03e4790"
+    sha256 cellar: :any,                 sonoma:         "d98186fcac063fb67804a4304bce1b293d5c9fc99955b63240f65a0d67a69971"
+    sha256 cellar: :any,                 ventura:        "f4cfbc851dbc11f57702fba240baf5c64fd468541891a7e5b90d8c0844e0da52"
+    sha256 cellar: :any,                 monterey:       "c3129efedd1f6e83fc6aeec61b4f99af2f9d50e6d5ae70f964e9125917bc65eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71fc51889ec25b3e211c1277f8f5d2e172262b824059feffde8cfca3ceb864d8"
   end
 
   depends_on "rust" => :build
@@ -212,17 +212,6 @@ class Snakemake < Formula
   resource "snakemake-interface-storage-plugins" do
     url "https:files.pythonhosted.orgpackagesc77df5d9662f97121cc42415197bacccb7a1cc893524da1138c2fc19ef835881snakemake_interface_storage_plugins-3.3.0.tar.gz"
     sha256 "203d8f794dfb37d568ad01a6c375fa8beac36df8e488c0f9b9f75984769c362a"
-  end
-
-  resource "stopit" do
-    url "https:files.pythonhosted.orgpackages3558e8bb0b0fb05baf07bbac1450c447d753da65f9701f551dca79823ce15d50stopit-1.1.2.tar.gz"
-    sha256 "f7f39c583fd92027bd9d06127b259aee7a5b7945c1f1fa56263811e1e766996d"
-
-    # Drop setuptools dep: https:github.comglenfantstopitpull30
-    patch do
-      url "https:github.comglenfantstopitcommit9a559afdba924c444cc02fd258548029aacedd3c.patch?full_index=1"
-      sha256 "a6a7d140bbb0dbcc1dd31e2d0ce317f6bac04c2368bc15dd1f139cd7e538f5a8"
-    end
   end
 
   resource "tabulate" do

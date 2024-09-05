@@ -1,3 +1,5 @@
+# This is an exception to Homebrew policy on Python libraries. See:
+# https:github.comHomebrewhomebrew-coreissues167905#issuecomment-2328118401
 class PythonPackaging < Formula
   desc "Core utilities for Python packages"
   homepage "https:packaging.pypa.io"
@@ -9,8 +11,6 @@ class PythonPackaging < Formula
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "7423b5f0a0a2a65d981e88581abf853ea8cbf2486353f541d452d41ef5ea1e55"
   end
-
-  disable! date: "2024-10-05", because: "does not meet homebrewcore's requirements for Python library formulae"
 
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]

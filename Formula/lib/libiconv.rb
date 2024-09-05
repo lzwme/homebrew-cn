@@ -32,6 +32,9 @@ class Libiconv < Formula
   def install
     ENV.deparallelize
 
+    # Reported at https:savannah.gnu.orgbugsindex.php?66170
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

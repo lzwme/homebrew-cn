@@ -1,19 +1,19 @@
 class Aichat < Formula
   desc "All-in-one AI-Powered CLI Chat & Copilot"
   homepage "https:github.comsigodenaichat"
-  url "https:github.comsigodenaichatarchiverefstagsv0.21.0.tar.gz"
-  sha256 "1ab8b9c0c352b62be8f4002faaf5f00fe5f7459ac00974066ce801adefc176de"
+  url "https:github.comsigodenaichatarchiverefstagsv0.21.1.tar.gz"
+  sha256 "4045c89bd94809969cc15d29889f0d4e662d2c68b129b9cda66eebc738c8016a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsigodenaichat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c8ba748d0f712f69c238e053ff3e5116c23ed61c19a5adf1ceb80884abaf0b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b589c60299fd044037e7928810c4b62778ad9115f1555a0cb4dcc68f953dc45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff58411f306216147a43fc82dea08e940b824b64c585acabf0ce0a5bcc99e4c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1c4e01c64d194bc91d1bbe8b365bee25e6c47278a4403d5c9615486c309aa1f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c46df5f4f99255a28abe9bfe43b3b9acf8af3ae3420dfd7ffcd230c03307b48a"
-    sha256 cellar: :any_skip_relocation, monterey:       "04306a3720de9256c26d9a381441f0a6ad3632668c6a72611bb9f1eda15dd742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfc0ddbb658af9d307e6daaa5f1b4ce4d3eeaecdf9da086b5df7678fb90b4d26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26d187f8f22aee1d7da73ea159d6f0ac18a472b5a3ced39f3b9f6baab29baad4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a8511c8b74891733d4e57b1909b6b2ff1f1a59c61f2a9574921bbd6b9ad8dd5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "020d3e00a0a2350697afd45d0db4434b50534d627b8583b15344c1e7b29f7a9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ad09fc462d344008bd35951740c05c0845967661f4d25ae46d299633350add7"
+    sha256 cellar: :any_skip_relocation, ventura:        "17951cfbbcf6d58d1e2ff9e6df9250040dae7aa2dd341e1e2e436cfd248f0a93"
+    sha256 cellar: :any_skip_relocation, monterey:       "680df66cf5a5f86a209af2edac73e9bcf5bd75ff86b485c366c9947778902cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "803b31ce60426ef40c0b2a90c766e3fad91d920b239a201ba063c580f24de672"
   end
 
   depends_on "rust" => :build

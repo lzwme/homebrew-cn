@@ -1,8 +1,8 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https:soliditylang.org"
-  url "https:github.comethereumsolidityreleasesdownloadv0.8.25solidity_0.8.25.tar.gz"
-  sha256 "def54b5f8385ef70e102d28321d074e7f3798e9688586452c7939e6733ab273f"
+  url "https:github.comethereumsolidityreleasesdownloadv0.8.27solidity_0.8.27.tar.gz"
+  sha256 "b015e05468f3da791c8b252eb201fa5cb1f62642d6285ed2a845b142f96fc8a6"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3776cf6c80f552616c7025f7bb0ee857d01c63c89c2169cf60587ca6941a6e82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "210dbfd88b6ae0ba2b3f866227a251cab6237e5007b282096f7ba47b83ab8e45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d082c76ece97000a5a225acc88ce0bb620053f7689ed9db4e76a710c775af9ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5c485043bd2360ae0cd964f855ae46a580bf7ff233c984598a2d391d00ba20a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "90b739f4ea9b6d4f20efa6e29ef262dbdf219860134512c20798611a15664b75"
-    sha256 cellar: :any_skip_relocation, monterey:       "772116893142a13db12d0928e3f751665e7ac1c0fcc516c866fa1d77713bc8c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13496bde08ca05a14cce4b80559b7f84823855e8f35fde72b06a35f02453bb57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1af7a148cbfdd236f5006d50efe3ce949491fdecfc64299faf508c1db6e028fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8ee562c269787f983946b0bd8ddad6752e5a66d1c0631e4be7632fed49b9484"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "003ef65e343bde53baa391506860cee76d57df49561784c79ac4d185af59b11f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "780efbf9561fa353e7428750606700e886d2e1aade6de32dabf75c83356f6a81"
+    sha256 cellar: :any_skip_relocation, ventura:        "13abc2146c369088cca72f183cd0037086f739ad08b9c7946cb12716faa69f6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ddb6e0095672a2e6bcad1254eccc666fd6f156b4c66f9e7ef30c8436384dd86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13dfa3f58fa921ba8ebb716ae0c12d8b343a66729b71847f7109495d8287bc20"
   end
 
   depends_on "cmake" => :build

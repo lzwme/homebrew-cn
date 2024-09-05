@@ -25,6 +25,7 @@ class Xmlstarlet < Formula
   uses_from_macos "libxslt"
 
   def install
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"

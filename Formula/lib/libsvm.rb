@@ -12,13 +12,14 @@ class Libsvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "de3581dfe3a5f5dfbbe1a90a0a6a049c560edb28383cc7add9c0cd8c5426571d"
-    sha256 cellar: :any,                 arm64_ventura:  "d124df71f8e3b61e3be22146f40381208a816e798662d00069c4623caa868d11"
-    sha256 cellar: :any,                 arm64_monterey: "b87dcf21aa430e9e658db5b55566a096ce9c63e3838cf35dabb0572ece956c3a"
-    sha256 cellar: :any,                 sonoma:         "509e728caeda57af8a785298597e3cfff74beeb83b29bece27639a932cd62046"
-    sha256 cellar: :any,                 ventura:        "6accd6a1308997ee925774b15c7e14b76724efa09ec9c0d8ec0103394f8fd339"
-    sha256 cellar: :any,                 monterey:       "8fc8d377c9b34d581bb3f4a0260ab3824a6c010fa399452e7dc32bb5c0174bef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b53f35dddb34467e73c49f616c72dfa3305fba1728b8f65cce41d361a83a92ba"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d006681611a00c39f5d5c4f6e37cc7c5d42f269a120cc0e4aab1e98253c80f56"
+    sha256 cellar: :any,                 arm64_ventura:  "f1307e60c37f3bbe03fdd1d7a413263a8f4d9aa5fc4a29271cace961187646a9"
+    sha256 cellar: :any,                 arm64_monterey: "e736ac0ef0f1906473b8d4885e97ccd810b3ce22253575e6f8e12a5f896eab82"
+    sha256 cellar: :any,                 sonoma:         "26913bbd09a50a0370e9e8e58822a947d7a84797fdb1f0635bcd2a0d2554c6f7"
+    sha256 cellar: :any,                 ventura:        "babd0a9cfdd330e065f413ff4036cd723160e59b5336221ebe5c739282f42615"
+    sha256 cellar: :any,                 monterey:       "c2ab9b229382e55d16027889e6fadbd2b697bf1b815781f7eadfdb5d74d97a6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f61fd27993b7ba97457ade6800362c316373707475c01760770f2e99403418c"
   end
 
   def install
@@ -26,13 +27,20 @@ class Libsvm < Formula
     system "make", "CFLAGS=#{ENV.cflags}"
     system "make", "lib"
     bin.install "svm-scale", "svm-train", "svm-predict"
-    lib.install "libsvm.so.4" => shared_library("libsvm", 4)
-    lib.install_symlink shared_library("libsvm", 3) => shared_library("libsvm")
-    MachO::Tools.change_dylib_id("#{lib}libsvm.4.dylib", "#{lib}libsvm.4.dylib") if OS.mac?
     include.install "svm.h"
+
+    libsvm_files = buildpath.glob("libsvm.so.*")
+    odie "Expected exactly one `libsvm`!" if libsvm_files.count != 1
+
+    libsvm = libsvm_files.first
+    libsvm_soversion = libsvm.to_s[(?<=\.)\d+(?:\.\d+)*$]
+    lib.install libsvm => shared_library("libsvm", libsvm_soversion)
+    lib.install_symlink shared_library("libsvm", libsvm_soversion) => shared_library("libsvm")
   end
 
   test do
+    assert_path_exists libshared_library("libsvm")
+
     (testpath"train_classification.txt").write <<~EOS
       +1 201:1.2 3148:1.8 3983:1 4882:1
       -1 874:0.3 3652:1.1 3963:1 6179:1

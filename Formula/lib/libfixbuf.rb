@@ -25,17 +25,44 @@ class Libfixbuf < Formula
     sha256 x86_64_linux:   "51ff5b3d41c6d43607e2f6a10eb3a2b3d02738d72097a3fd85c71166717a72de"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "glib"
   depends_on "openssl@3"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
-    system "make"
+    system "./configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~EOS
+      #include <fixbuf/public.h>
+      #include <stdio.h>
+
+      int main() {
+          fbInfoModel_t *model = fbInfoModelAlloc();
+          if (model == NULL) {
+              printf("Failed to allocate InfoModel\\n");
+              return 1;
+          }
+
+          printf("Successfully allocated InfoModel\\n");
+          fbInfoModelFree(model);
+          return 0;
+      }
+    EOS
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libfixbuf").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    system "./test"
+
+    assert_match version.to_s, shell_output("#{bin}/ipfixDump --version 2>&1")
   end
 end

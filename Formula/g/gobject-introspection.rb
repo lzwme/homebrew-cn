@@ -7,19 +7,19 @@ class GobjectIntrospection < Formula
   url "https:download.gnome.orgsourcesgobject-introspection1.80gobject-introspection-1.80.1.tar.xz"
   sha256 "a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c1c697721fa887da0a7ecf1da74166307dda223b8cd922480d35ee7528455a79"
-    sha256 arm64_ventura:  "0c84786d152faae9223090e6fdd185bf233c556a4ead8d14fc0854d276d7fa88"
-    sha256 arm64_monterey: "af672a045ca17ed75abf4599981ca482df1dd2a28eb28962ac55ed129e906805"
-    sha256 sonoma:         "46ed11128af5bdb834a7f216fa222854fd274cab9314105b2ff73359254df56d"
-    sha256 ventura:        "03e5c450af9264cfe141056ccd91a5866eab01f3a15f22269092a0482a335eae"
-    sha256 monterey:       "965341cb99b3ce445576e7e74ec23e974a3366b8e1b5a6ae708810e10e550e4f"
-    sha256 x86_64_linux:   "57923660703711398295e51f51d1f4d976ce0220b2d116bba14c240ece504925"
+    sha256 arm64_sonoma:   "e28f50144066ecbc4215381aa26c238e8dac6ca0362b1e603784ff48dc6e5e7a"
+    sha256 arm64_ventura:  "f89a382a4431e4c45ecb3de881344e6c5cd1a4a3d5ba5e589bffbc6af4015478"
+    sha256 arm64_monterey: "e86c150176699e055c782a3ce9ae54ca7f11aa2f49cb513ea034ea8548a38daf"
+    sha256 sonoma:         "2ae0d61dd15cefe025aa2d2fcff53f59922ee4617de110dd53890b83a0c7fe87"
+    sha256 ventura:        "778bbc5bdd75e7d532116dc6db6a3e65ed7ce6382d93c9478e7f63f1635f77be"
+    sha256 monterey:       "93689c0323a853f42ba85ffab5856267b11b88d497b53faaffc60e6411f105a2"
+    sha256 x86_64_linux:   "a45a7a0410ff701fd481e4c9ae57920cb19b9676f357c956dd72e6e60b95dd29"
   end
 
   depends_on "bison" => :build
-  depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "cairo"
@@ -32,13 +32,13 @@ class GobjectIntrospection < Formula
   uses_from_macos "libffi", since: :catalina
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackagesd41b71434d9fa9be1ac1bc6fb5f54b9d41233be2969f16be759766208f49f072Mako-1.3.2.tar.gz"
-    sha256 "2a0c8ad7f6274271b3bb7467dd37cf9cc6dab4bc19cb69a4ef10669402de698e"
+    url "https:files.pythonhosted.orgpackages6703fb5ba97ff65ce64f6d35b582aacffc26b693a98053fa831ab43a437cbddbMako-1.3.5.tar.gz"
+    sha256 "48dbc20568c1d276a2698b36d968fa76161bf127194907ea6fc594fa81f943bc"
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages22024785861427848cc11e452cc62bb541006a1087cf04a1de83aedd5530b948Markdown-3.6.tar.gz"
-    sha256 "ed4f41f6daecbeeb96e576ce414c41d2d876daa9a16cb35fa8ed8c2ddfad0224"
+    url "https:files.pythonhosted.orgpackages54283af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472markdown-3.7.tar.gz"
+    sha256 "2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"
   end
 
   resource "markupsafe" do
@@ -47,8 +47,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesac110a953274017ca5c33a9831bc5e052e825d174a3551bd18924777794c8162setuptools-74.1.0.tar.gz"
+    sha256 "bea195a800f510ba3a2bc65645c88b7e016fe36709fefc58a880c4ae8a0138d7"
   end
 
   # Fix library search path on non-usrlocal installs (e.g. Apple Silicon)
@@ -59,12 +59,21 @@ class GobjectIntrospection < Formula
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
   end
 
+  # Backport removed distutils.msvccompiler
+  patch do
+    url "https:gitlab.gnome.orgGNOMEgobject-introspection-commita2139dba59eac283a7f543ed737f038deebddc19.diff"
+    sha256 "62c1e9816effdb2f2d50bc577ea36b875cdd5e38f67ddb27eb0e0c380fa29700"
+  end
+
   def install
     venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root"bin"
 
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
+    if OS.mac? && MacOS.version == :ventura && DevelopmentTools.clang_build_version == 1500
+      ENV.append "LDFLAGS", "-Wl,-ld_classic"
+    end
 
     inreplace "giscannertransformer.py", "usrshare", "#{HOMEBREW_PREFIX}share"
     inreplace "meson.build",

@@ -30,7 +30,7 @@ class Libxmlb < Formula
   depends_on "zstd"
 
   def install
-    rewrite_shebang detected_python_shebang, "srcgenerate-version-script.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "srcgenerate-version-script.py"
 
     system "meson", "setup", "build",
                     "-Dgtkdoc=false",

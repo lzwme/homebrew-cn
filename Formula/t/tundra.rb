@@ -5,9 +5,14 @@ class Tundra < Formula
   sha256 "8cc16bf466b1006b089c132e46373fa651ed9fc5ef60d147a5af689f40686396"
   license "MIT"
 
+  # Upstream has tagged some versions without creating a GitHub release, so we
+  # have to check GitHub releases until we can correctly identify the latest
+  # version from the Git tags. However, the latest release on GitHub is simply
+  # "latest" instead of a version, so we have to use the `GithubReleases`
+  # strategy until `GithubLatest` works again.
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do

@@ -22,6 +22,14 @@ class Innotop < Formula
 
   uses_from_macos "perl"
 
+  on_macos do
+    on_intel do
+      depends_on "zstd"
+    end
+
+    depends_on "zlib"
+  end
+
   resource "Devel::CheckLib" do
     url "https:cpan.metacpan.orgauthorsidMMAMATTNDevel-CheckLib-1.16.tar.gz"
     sha256 "869d38c258e646dcef676609f0dd7ca90f085f56cf6fd7001b019a5d5b831fca"

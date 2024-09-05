@@ -2475,7 +2475,7 @@ Homebrew-homebrew-core/Formula/g/guile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/guile@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gulp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gum.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gumbo-parser.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gumbo-parser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp-av.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp.rb, Homebrew/homebrew-core, 0
@@ -6868,6 +6868,7 @@ Homebrew-homebrew-core/Formula/w/wtf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wtfis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wtfutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wumpus.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wush.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wv2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wwwoffle.rb, Homebrew/homebrew-core, 0
@@ -8479,6 +8480,7 @@ Homebrew-homebrew-cask/Casks/f/fluent-reader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fluid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fluor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flutter.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/flutterflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flux.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flycast.rb, Homebrew/homebrew-cask, 1

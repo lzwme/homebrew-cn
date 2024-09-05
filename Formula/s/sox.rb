@@ -47,8 +47,9 @@ class Sox < Formula
   end
 
   def install
-    args = std_configure_args
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
+    args = std_configure_args
     args << "--with-alsa" if OS.linux?
 
     system ".configure", *args

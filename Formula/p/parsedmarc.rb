@@ -3,19 +3,19 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https:domainaware.github.ioparsedmarc"
-  url "https:files.pythonhosted.orgpackagesba78ff486b6af674b3eead567a8346782194c7e1179246241a20f9124b7f1c2dparsedmarc-8.14.1.tar.gz"
-  sha256 "13b07e3069573fd02f8038355c9b1e76a1894c8874bbbcaf4967d18523eb543b"
+  url "https:files.pythonhosted.orgpackages299524f5d01195312127ee1c31799987d041c74fdce49f512122b216d465ed61parsedmarc-8.15.0.tar.gz"
+  sha256 "676285f23bff0ff4afc1059dd4f19296c01fa3099839de42bef702e2456e2e8b"
   license "Apache-2.0"
   head "https:github.comdomainawareparsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5711c7178ce8346eb505c0590afba053826154d3fd07d38c76b8045eb6a34b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60cd0bd33b4461acff2da197fc6fae488151a6dc95964c9dd261edc05c8575e0"
-    sha256 cellar: :any,                 arm64_monterey: "50049dedd61f5a8aa7ba96010831085f0b19cf8035f1a35e3653d21957cc6277"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a3cc98837603f4f0fd10720dcd4f7ed0e9a6396d56f1e180f5db9ef9c5a98ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "005ae7a530ce9becdd2b6c4fde6de881cc0c82178d60dd4344a0315f0cfb99aa"
-    sha256 cellar: :any,                 monterey:       "f8abb7b17a20647a79ecb4012ad681f15414a116b612a2228edfa7b96bc3e419"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdc46dd3b4b5d0811405415d5a5a4dfe8f133f0156f0fc144a0cecbc7f730821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bc70c6d85188e9d7fcd7ae56f79e502f65dc04a4bd33fd5c7d0d59cbc7d42d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b07a41df1767ccfe9ef4a6c30805702133780c19f88d0f8ba059616e0167eee"
+    sha256 cellar: :any,                 arm64_monterey: "562771a203c97da5f498d8d9f0b488ae21ec1d0d7b506eac34f847e6155b0a9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6780a92ff4df923efbc53825b4bdae819ffdca84beb7c3b9d7ac2dcae7d64ec7"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b194965d1ef710b8855eb570bf2efbffa930b5e059091952a265b4fd3eca7d6"
+    sha256 cellar: :any,                 monterey:       "693b0c58f374af87f353bd895db562e2f48be01f0ebc88d40be0d52c91e4ed4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b8d6b1b9d82d1e3eab92f32cf6730a4c5db0df0eeb91938e1bfbf527f110c8d"
   end
 
   depends_on "certifi"
@@ -61,13 +61,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesbe013e6dce0f2364f1814f735a01c52c3c55d87c079daefeb6569ab7829c2520boto3-1.35.10.tar.gz"
-    sha256 "189ab1e2b4cd86df56f82438d89b4040eb140c92683f1bda7cb2e62624f20ea5"
+    url "https:files.pythonhosted.orgpackages02c3ce78127d99b9f64ac3b77c8a9a626150b32bac96c150a2005bf589cf0a50boto3-1.35.12.tar.gz"
+    sha256 "b32faab174f6f9b75fada27bcf054ab3e8846bd410ed9817d0b511109326b6b1"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages7176fd28cb2b1ab3b19b0f2602455c1757a0517fededd51356737120e6a29ce8botocore-1.35.10.tar.gz"
-    sha256 "6c8a1377b6636a0d80218115e1cd41bcceba0a2f050b79c206f4cf8d002c54d7"
+    url "https:files.pythonhosted.orgpackagesff3a05ad5df2f4e058ddb75cfc9c5ebb8bcc3d1baf3f06bf6e02e0ab746a218fbotocore-1.35.12.tar.gz"
+    sha256 "a8f8230032d090225a93763675a73c208d121bb63ed99f41ee6ad3d51b74b80d"
   end
 
   resource "cachetools" do
@@ -366,8 +366,8 @@ class Parsedmarc < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackagesce50dcf6d0ea0da893b23f73ea5b21fa1f96fd45e9cb4404cc6b665368b4ab19yarl-1.9.7.tar.gz"
-    sha256 "f28e602edeeec01fc96daf7728e8052bc2e12a672e2a138561a1ebaf30fd9df7"
+    url "https:files.pythonhosted.orgpackages656683c99ba8c134f1e0e40df559614f4f9272360e1e9c549003e8c5ff3e4fc7yarl-1.9.9.tar.gz"
+    sha256 "d58a26cbc785a0fb6ad2e733422631c7f45c364a40dbd0cabb9f0dfcdbb4940b"
   end
 
   def install

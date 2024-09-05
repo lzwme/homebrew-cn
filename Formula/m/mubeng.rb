@@ -1,31 +1,31 @@
 class Mubeng < Formula
   desc "Incredibly fast proxy checker & IP rotator with ease"
   homepage "https:github.comkitabisamubeng"
-  url "https:github.comkitabisamubengarchiverefstagsv0.14.2.tar.gz"
-  sha256 "27842f0d587ced3b79b3c5e68be7e59272b0f2e89f754e3322d17bf7eda6802c"
+  url "https:github.comkitabisamubengarchiverefstagsv0.16.0.tar.gz"
+  sha256 "78cac90976e4555d379346496655a634a9bbf21b12b978f890c66f4c870afba9"
   license "Apache-2.0"
   head "https:github.comkitabisamubeng.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe8510b61b0d7ae47875541d8c85fe16920c96653ffc328347f40c3587a94aa9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7caf666e7fc45ec393e1ed8dd0e83fa9b9e7201ce5bcbf1aa46655186826fcc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9099041232d8f366521c64e9879a27ef7f9674819835e5ae3c1f542e5b5dcd4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eeaed2f4c1eae8504113a1289d803e0ab0afca59a830b46b9ef216e489a5bcd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "8085999ee0889b9dd2c55e5df8a88566bfbea1c647824436177cb35dafa97af1"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b07bb39a9369c433d92a5a3f2a7301ea64e9b050627d9d597066706f49c8820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9989341a971db95ddad349dd0f5239e0f471bed40e5f32b4cb08fb5d8ea4e82b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0198b55b442b7e4b9201196ebfe7be547f18be66ee32a3b4f210d4a26f4be369"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0198b55b442b7e4b9201196ebfe7be547f18be66ee32a3b4f210d4a26f4be369"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0198b55b442b7e4b9201196ebfe7be547f18be66ee32a3b4f210d4a26f4be369"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e5babf80e847fd3c716617a2fa3fdbd9c0b48d01ec14ebcec745ff060fe9687"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e5babf80e847fd3c716617a2fa3fdbd9c0b48d01ec14ebcec745ff060fe9687"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e5babf80e847fd3c716617a2fa3fdbd9c0b48d01ec14ebcec745ff060fe9687"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce7bc8b6c6051bc84fa5decf3a034ef90298ffa9f8616147d4c41151c94b5232"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X ktbs.devmubengcommon.Version=#{version}"
+    ldflags = "-s -w -X github.comkitabisamubengcommon.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdmubeng"
   end
 
   test do
-    output = shell_output("#{bin}mubeng 2>&1", 1)
-    assert_match "no proxy file provided", output
+    expected = OS.mac? ? "no proxy file provided" : "has no valid proxy URLs"
+    assert_match expected, shell_output("#{bin}mubeng 2>&1", 1)
 
     assert_match version.to_s, shell_output("#{bin}mubeng --version", 1)
   end
