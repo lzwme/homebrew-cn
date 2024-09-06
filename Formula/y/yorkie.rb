@@ -1,8 +1,8 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https:yorkie.dev"
-  url "https:github.comyorkie-teamyorkiearchiverefstagsv0.4.31.tar.gz"
-  sha256 "6b9e6210c677dd6ffb88c762e6e65fd0acf21a4f324ed6859e33a83b3ed8e886"
+  url "https:github.comyorkie-teamyorkiearchiverefstagsv0.5.0.tar.gz"
+  sha256 "c442f4cae0e179d25772cda77960943eff3acf458d65cd03df430a7d34720d6e"
   license "Apache-2.0"
   head "https:github.comyorkie-teamyorkie.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e7cbd811da600ec38939d6a60c19e6f2a9fa563f5746e643322098d15f871b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e7cbd811da600ec38939d6a60c19e6f2a9fa563f5746e643322098d15f871b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e7cbd811da600ec38939d6a60c19e6f2a9fa563f5746e643322098d15f871b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "117829a6a2aefb210388fc170fe219217396870bfaa123b15f7cd8ba065397dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "117829a6a2aefb210388fc170fe219217396870bfaa123b15f7cd8ba065397dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "117829a6a2aefb210388fc170fe219217396870bfaa123b15f7cd8ba065397dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7753d24957b98b100727ac839af1b81936824410702e23eba17b6695642bd554"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"
+    sha256 cellar: :any_skip_relocation, sonoma:         "56ef53bda6cc9e6078b88c53b0faafa46c268716d61a082f31f873e14d0251a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "56ef53bda6cc9e6078b88c53b0faafa46c268716d61a082f31f873e14d0251a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "56ef53bda6cc9e6078b88c53b0faafa46c268716d61a082f31f873e14d0251a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c1ef0324e1132017576e230f2770b337102dae9522ce90d94793849b0ef1cab"
   end
 
   depends_on "go" => :build

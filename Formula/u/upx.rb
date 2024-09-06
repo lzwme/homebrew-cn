@@ -12,7 +12,7 @@ class Upx < Formula
   end
 
   # https:github.comupxupxissues612
-  deprecate! date: "2023-10-14", because: "is crashing for macOS Ventura or above"
+  disable! date: "2024-09-05", because: "is crashing for macOS Ventura or above"
 
   depends_on "cmake" => :build
   depends_on "ucl" => :build

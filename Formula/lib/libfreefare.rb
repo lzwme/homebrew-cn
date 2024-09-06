@@ -22,6 +22,10 @@ class Libfreefare < Formula
   depends_on "libnfc"
   depends_on "openssl@3"
 
+  on_macos do
+    depends_on "libusb-compat"
+  end
+
   # Upstream commit for endianness-related functions, fixes
   # https:github.comnfc-toolslibfreefareissues55
   patch do
@@ -36,9 +40,7 @@ class Libfreefare < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -50,6 +52,7 @@ class Libfreefare < Formula
         return 0;
       }
     EOS
+
     system ENV.cc, "test.c", "-L#{lib}", "-lfreefare", "-o", "test"
     system ".test"
   end

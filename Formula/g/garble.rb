@@ -1,20 +1,19 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
   homepage "https:github.comburrowersgarble"
-  url "https:github.comburrowersgarblearchiverefstagsv0.12.1.tar.gz"
-  sha256 "98ade316176d434f298bdb36e4c421e3c4c33668cfd2922d358f7f0403566500"
+  url "https:github.comburrowersgarblearchiverefstagsv0.13.0.tar.gz"
+  sha256 "22a1696ce880b34ca5ff949b6b5a42d4e370502e0b40b59eaa679eae13e45363"
   license "BSD-3-Clause"
-  revision 6
   head "https:github.comburrowersgarble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad9d97457e74c332d0b396104fd06bdfb45a575b948cebebd2d1b906f8781577"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0710bb8adb3e41b132db1a95d2e6ff48ed9ca366b8e3eb256bcf55f33e28936"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7bf92f187d254443ed06f383f677870d2d10d699bd7e06d24735f8ff75e8c57"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98073a96ccd345437b5cab868fda304e1e6dcaa3457ef75165b89e07687de003"
-    sha256 cellar: :any_skip_relocation, ventura:        "c57dcbed5a389285bbcd71891d86844ecf94deed27c334d18e688302e07276ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3af2f15ee584c8272750c699fa4423a37fc328bd46027651645ce788ea645ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99293abbb6731948f9fd9d8166e03dc26f964b343b34ba5701b2a4ff01818ce0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
+    sha256 cellar: :any_skip_relocation, sonoma:         "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
+    sha256 cellar: :any_skip_relocation, ventura:        "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
+    sha256 cellar: :any_skip_relocation, monterey:       "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "515e83bf8ff50fd75e0088951544e219cff5772a48c8bd9d321da7bc7722c5da"
   end
 
   depends_on "go" => [:build, :test]

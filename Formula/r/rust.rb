@@ -15,13 +15,14 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "96fc16c5b23a1ebf08f74357dfa11e84578b1c6884b54b16f23162530e93b2fb"
-    sha256 cellar: :any,                 arm64_ventura:  "22a7875c137cd68a01c09d6b8f2bb9ceb5dd56b3f388d68ecbe06450664fe57e"
-    sha256 cellar: :any,                 arm64_monterey: "81ad407748a18551299dc0f7e4373dc26b11a3933abf5f386d2087be2577625a"
-    sha256 cellar: :any,                 sonoma:         "78e8c7f74d9773b1c5bf79fd4b7f5aabf2ac037ea6507f7431b0a6cc7cc53ace"
-    sha256 cellar: :any,                 ventura:        "6903fc2b63bfa7a24b5e0cf0edb0e435a20e708409f11b50172c76009df05877"
-    sha256 cellar: :any,                 monterey:       "cdb924e4d733710a4068c9ddbf9693777e0be9719e40c71fae39a74f0112f018"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3678845ef50ee19dfb9898d762d73e3bd48e6c88cb4ad6de94ee86c51d23c52"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "27b8e4491b1bd94da25353f0e0e44fe2a133b586f57ecdd8751c898b0061c2aa"
+    sha256 cellar: :any,                 arm64_ventura:  "2a89e8531353eedd6134ffbd6c29b1c0a8d6d9d52c05606d151c12b8de5c80ee"
+    sha256 cellar: :any,                 arm64_monterey: "914928b356acb62c2831b379bdf3b73803b184cf16b219e3882a050516608ed2"
+    sha256 cellar: :any,                 sonoma:         "d3c785ad48b40f5926c8cc5559dc64d1c08853da290b4623f42fb08b0067f880"
+    sha256 cellar: :any,                 ventura:        "404ad76d5d69c18103c3643b3297e122e2b7d86f4d2fd33e455701efc943efa6"
+    sha256 cellar: :any,                 monterey:       "b86432bb9d57ceae6cee8beacb68b2ea07d06e0461d643844644d4ecaccd99c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3e499685020250aa4dcd1fe552189f86e735a7684743e20ce9214a6fa8c5660"
   end
 
   head do
@@ -42,6 +43,8 @@ class Rust < Formula
   uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  link_overwrite "etcbash_completion.dcargo"
 
   # From https:github.comrust-langrustblob#{version}srcstage0
   resource "cargobootstrap" do
@@ -135,6 +138,7 @@ class Rust < Formula
     system "make"
     system "make", "install"
 
+    bash_completion.install etc"bash_completion.dcargo"
     (lib"rustlibsrcrust").install "library"
     rm([
       bin.glob("*.old"),

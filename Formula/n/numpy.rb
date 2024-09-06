@@ -1,19 +1,19 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https:www.numpy.org"
-  url "https:files.pythonhosted.orgpackages54a4f8188c4f3e07f7737683588210c073478abcb542048cf4ab6fedad0b458anumpy-2.1.0.tar.gz"
-  sha256 "7dc90da0081f7e1da49ec4e398ede6a8e9cc4f5ebe5f9e06b443ed889ee9aaa2"
+  url "https:files.pythonhosted.orgpackages595f9003bb3e632f2b58f5e3a3378902dcc73c5518070736c6740fe52454e8e1numpy-2.1.1.tar.gz"
+  sha256 "d0cf7d55b1051387807405b3898efafa862997b4cba8aa5dbe657be794afeafd"
   license "BSD-3-Clause"
   head "https:github.comnumpynumpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f8b9106e874145f739e1d0d8e830abbda9c6a720d2d94123f29fcf71e904591d"
-    sha256 cellar: :any,                 arm64_ventura:  "dcc75bc8b9413a51ed4a64aa99ab66e8b44d3dfdf0b2ebda6e5c8739bb1e39ee"
-    sha256 cellar: :any,                 arm64_monterey: "33aedc58b41ba4610ac558e282b630a73feb4333d1d616bab684f0c81854bbb9"
-    sha256 cellar: :any,                 sonoma:         "4d0d6b5cbbe22218b92d7d6b2dbc9ba2e80905571100aaf43e1f2776731cd176"
-    sha256 cellar: :any,                 ventura:        "8f0b5e0fd396d9d4863e65473af1a9117ebc050bcb44b7001319acf3ac992dd3"
-    sha256 cellar: :any,                 monterey:       "c1182d179acd51e221f64d2d7e99277be91e548a1231fe2ea2f39d8e948026d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d6a36aa720449ecdad80cbf3f89b16c2089aa0a92ce9cca584616ed46f59545"
+    sha256 cellar: :any,                 arm64_sonoma:   "924c40ddf282d5c12b4376f33271b7850a51422cb275d5e4d6a088efaba20d33"
+    sha256 cellar: :any,                 arm64_ventura:  "a59680ff0599eaaedffc08d39e43886b7f30bfd4329834a80037938f52a14cce"
+    sha256 cellar: :any,                 arm64_monterey: "4c66cadb1690ea8f562ab3e6cdfe7850a7d87d434edbad84134313bda4e61e03"
+    sha256 cellar: :any,                 sonoma:         "fa860a99fcc55b4a2da17e44d0de97097f9084d04f926273a4f20c517280c318"
+    sha256 cellar: :any,                 ventura:        "462ace65c75c44be7c79a05c5a9a4bb041b1e6f811cf706c8622b27555c6a2c6"
+    sha256 cellar: :any,                 monterey:       "cc238b3c89f76848d5e2a1c995b28367fa880b841a02d9ee8f04f7670afc87a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24ef8697b15867bc22a393c6b7ead92bea61964c4b63fb5020021329ee499f96"
   end
 
   depends_on "gcc" => :build # for gfortran

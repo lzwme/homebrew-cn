@@ -7,11 +7,6 @@ class Pypy39 < Formula
   revision 1
   head "https:github.compypypypy.git", branch: "py3.9"
 
-  livecheck do
-    url "https:downloads.python.orgpypy"
-    regex(href=.*?pypy3\.9[._-]v?(\d+(?:\.\d+)+)-src\.ti)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6f37ec35ee98a5c6bcdaba34437f76375de8cc0d4084a344abf7a34955c73e90"
     sha256 cellar: :any,                 arm64_ventura:  "f3df8fd4f62e414c6971ce2fa09522940cde83933a0275cf4ebcaecad900d942"
@@ -21,6 +16,9 @@ class Pypy39 < Formula
     sha256 cellar: :any,                 monterey:       "a344b96ddc366677a1f16c2984e58ad185db7db3d1f2944c24daf9b7deb7fae9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d26b6fadffbcda3c4ece84ddc1bec2beac461732279c4ec294865474d6a02389"
   end
+
+  # https:doc.pypy.orgenlatestrelease-v7.3.17.html#pypy-versions-and-speed-pypy-org
+  deprecate! date: "2024-09-04", because: :deprecated_upstream
 
   depends_on "pkg-config" => :build
   depends_on "pypy" => :build

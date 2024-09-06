@@ -1,19 +1,19 @@
 class BigqueryEmulator < Formula
   desc "Emulate a GCP BigQuery server on your local machine"
   homepage "https:github.comgoccybigquery-emulator"
-  url "https:github.comgoccybigquery-emulatorarchiverefstagsv0.6.4.tar.gz"
-  sha256 "b33ef3823dd314ffbf4d33d3ffb314375cc6e78e025938243a81d191ed424e19"
+  url "https:github.comgoccybigquery-emulatorarchiverefstagsv0.6.5.tar.gz"
+  sha256 "afa9d2d22f8e0a600bad1cd3732b485bb9869486f479d67b2486794f378f4256"
   license "MIT"
   head "https:github.comgoccybigquery-emulator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "919fa60a9b37169b517f7577df3ac88a3399bc6371810187cf000ae13bfa5556"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "030bc76fb03c2e4d758b945ef1512f82017a38b3d009a46775b7d3640d8e3c57"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3a3bf86de58dde0912ecd37af31fc657dac5a1ab2588ae27686d254dd38b934"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a63ccc4a6de2319e88b6f74c6b5fa1da3d59c773ff3bf54d5b61085bb66571ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "33c4d4fcd8961ea40893c05190ea753de280bc5ff35153a49caf0eb07fd3391b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f63e4a07dfddc0a408dcf5aa1e106b86e36c5eba548f5550122b00af429a436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbbacfb90b781068c6b9c2ee71c330f19f1ceb5487a8b2e9ea3d9c453abc08fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de36c2b552cdbcf4e46c06237289215b423c4efda3a55f15ac9158efd4e89bea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04e8d239077ac4fa96b00b9f9d8542634262693c8be57addc4765d1393cbc3cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec9af8274042e09ea070db4411737ab4ca0433c70eb85c6bc01b8278c939f267"
+    sha256 cellar: :any_skip_relocation, sonoma:         "564f43a2518cc6f57c63e5248fbc908931b934d3c51a5a4e42845cae52ad6395"
+    sha256 cellar: :any_skip_relocation, ventura:        "be3ef77e7304af45b2d7f95dd495eb84a23532a7f9b862e46404634d3176d647"
+    sha256 cellar: :any_skip_relocation, monterey:       "68ec993e1dc9a20c56f285dc3f3c045c6b5a988989ca5c33597f817f1fe80fa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1adb5a4472cb22c6f7e9e248ec9629703554d3269ede330bcf9fb0981fc2db2"
   end
 
   # use "go" again after https:github.comgoccybigquery-emulatorissues348 is fixed and released

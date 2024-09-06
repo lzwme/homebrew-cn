@@ -1,8 +1,8 @@
 class Yaf < Formula
   desc "Yet another flowmeter: processes packet data from pcap(3)"
   homepage "https://tools.netsa.cert.org/yaf/"
-  url "https://tools.netsa.cert.org/releases/yaf-2.15.0.tar.gz"
-  sha256 "3743d2f7b9bac3ac2ee2017dc26f6d7c5775dfdf95062ef7fa29c8c793e9472f"
+  url "https://tools.netsa.cert.org/releases/yaf-2.16.0.tar.gz"
+  sha256 "b8950b232ddb830e9a9e2730b77fef703c0528894cf2102ab8b787daa4d50c9b"
   license "GPL-2.0-only"
 
   # NOTE: This should be updated to check the main `/yaf/download.html`
@@ -13,13 +13,13 @@ class Yaf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f4c454dd111e81d96fe4b7a96ffd9e5206a81d4b43f7eb5d587ac790414db79a"
-    sha256 cellar: :any,                 arm64_ventura:  "2a412f316dad9f799eb94a6ace746fcea6de0a76f1283235470820f8d7d48dff"
-    sha256 cellar: :any,                 arm64_monterey: "fe779f22669ae77e31393122ff3f286d76d832361b05fcfc749610ae99a7112f"
-    sha256 cellar: :any,                 sonoma:         "ab2ba75307eab5e71027153bbc9cedcf6a40a6700f570e8b22690a6b1f18d0be"
-    sha256 cellar: :any,                 ventura:        "6a68fde3aab87006a0e9b77db3e54489bee1c9d50db666ab7873d4e40027296d"
-    sha256 cellar: :any,                 monterey:       "e1a127564d3362b3f95ffed00d2661c1ee21ecc5e85f89547de996d3959c2af0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95a12e2afcaa5a2746a4a56dd489b04905e60a5bd716ad6774a120928a4331d7"
+    sha256 cellar: :any,                 arm64_sonoma:   "99b3ae3a27fb74180e398a84278456d40fc81293642d5a71d249b84d45340a05"
+    sha256 cellar: :any,                 arm64_ventura:  "609715f03a9d6cd50ff0533a3d90c2bb20eb88f0ae7dc0cd04b703ca05b93c10"
+    sha256 cellar: :any,                 arm64_monterey: "e62141f902e03d46a6b705804eb496b694d1fb0087077383b01476d84e439eb7"
+    sha256 cellar: :any,                 sonoma:         "00b7982890a35868fd73a9843a813ff1dd3fd39c65f15f1fb49ad76482cae9e1"
+    sha256 cellar: :any,                 ventura:        "97fe023afc62198292f548e3c409cc683f016a3521d953d074493642105ec7f7"
+    sha256 cellar: :any,                 monterey:       "026337e66c2722cfb01ae5b9a6709f2dc2fef4c63f5c5a4df0e6cbb18e2141ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d134b052c4effa8b7a492af85d3531de1f2081fd832fad0b0b0cf9a76dfb1523"
   end
 
   depends_on "pkg-config" => :build

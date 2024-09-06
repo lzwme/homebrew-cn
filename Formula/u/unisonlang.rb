@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https:github.comunisonwebunison.git",
-        tag:      "release0.5.25",
-        revision: "7301b693c8a9f9a8647de4e2b8f65e96cb3260b0"
+        tag:      "release0.5.26",
+        revision: "9af301da7fddfa21bb7b3b8b7b34cbbc14cb1e2a"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.25.tar.gz"
-      sha256 "04565fb26f7ba8367968f382ee20edaecda917c548a51a93ed7c69057f0796b7"
+      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.26.tar.gz"
+      sha256 "5562f3ff856a469182526009b2543785e7b725dd01b69f55adb0fa0ae6f00d61"
     end
   end
 
@@ -20,13 +20,13 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "588dfadbe6163e6deee17e080a4885a8174814cb709126d3c874b1cd1adbd200"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b707cf5713961b8d1b797654f9fbc876d24e4a25c91dd2085b35b670787ee395"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d19a8eab85219b6dc15a50fbbbd9d41068326480d9687269d42d3b665240c6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e59326ebe8e09b4baec2a67ee8d7766d9f8b485f404ba511cb5637894d88661b"
-    sha256 cellar: :any_skip_relocation, ventura:        "997a0883fad382246f33ca204ecc6d6f05df74958cdcf85876f10e7874faab8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2fabab188500a58f189a21cf64588160855e85db202e4d2df536ceb7e8f5da26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea921a1229683575fb6e5b8596d098beef8c7666a05b495a6f031da4a0ca14e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d185b2abbfee5b7088238e9ce5ed9480d074b17e05d6727ca965d15afb501e0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6339bf22214ddc13e99859021ef98708491a8e0bd190eccf4c6e928c9cfc4295"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c23ce3f4a38e06e4000e9edfd8a6b8a4e48bf816ef49735d1639f9fc3e4c5f6d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d0e82fe2fa0b98a9e485333ccca3a50804d69a8e1a85630df5421621045eefff"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad38c11621c4d545a347d5320fd1dd5cfe73381a0a42d2d7c0763ad3113b597b"
+    sha256 cellar: :any_skip_relocation, monterey:       "b04c66e140370e3845dea87d5156b22b598fa3d0bb39cbc3aca67dca642d1fe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ec8e143b4fae30f159a0e3817eb6b79bbef5ac8cfb686601f0c8c6f75fc8c1d"
   end
 
   head do

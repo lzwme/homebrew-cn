@@ -36,4 +36,28 @@ class Ripmime < Formula
     bin.install "ripmime"
     man1.install "ripmime.1"
   end
+
+  test do
+    (testpath/"message.eml").write <<~EOS
+      MIME-Version: 1.0
+      Subject: Test email
+      To: example@example.org
+      Content-Type: multipart/mixed;
+            boundary="XXXXboundary text"
+
+      --XXXXboundary text
+      Content-Type: text/plain;
+      name="attachment.txt"
+      Content-Disposition: attachment;
+      filename="attachment.txt"
+      Content-Transfer-Encoding: base64
+
+      SGVsbG8gZnJvbSBIb21lYnJldyEK
+
+      --XXXXboundary text--
+    EOS
+
+    system bin/"ripmime", "-i", "message.eml"
+    assert_equal "Hello from Homebrew!\n", (testpath/"attachment.txt").read
+  end
 end

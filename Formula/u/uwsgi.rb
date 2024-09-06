@@ -7,18 +7,19 @@ class Uwsgi < Formula
   head "https:github.comunbituwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "27e371c3f7bb193ac9cb226169915a0e0dc7146b1ebade6e5cd8d106a545a4e1"
-    sha256 arm64_ventura:  "14b4231f0554bb1b5a306ab8d6eba456894c72a7e3e9ba38e232224840b14f7c"
-    sha256 arm64_monterey: "0fd8a39e407a683d5651821ac6abc4db208df0791116b6c449ea48a9031bf0f5"
-    sha256 sonoma:         "b6970777bb9d9d039df5409e5920a1ef8599afa2d8f8aace25ae600f32f9255e"
-    sha256 ventura:        "e03c2f0e7665d047aaf52a17752248de26539e428e20fa71d51e3e6349a038a0"
-    sha256 monterey:       "fbb82ab342ab97f23cbf909d2d812657a6ff714ffd6c6e7ca8a7522b2891f5c6"
-    sha256 x86_64_linux:   "052a7b88f365576d5505f51a53c7ac1085c6c671696d4107875722bbecd4e73b"
+    rebuild 1
+    sha256 arm64_sonoma:   "8a0fe851ae6fc032d9edb666e21f2688285503d5f3680954262bae520664a606"
+    sha256 arm64_ventura:  "0f8603be2a9a008af7676a3563baa3e3150d1d52a4ccab1641a63a2ab69f9dc7"
+    sha256 arm64_monterey: "e4fb04cd0e8271c2389976835ad753fa4fff24f39858519083b2cc12bcef5a36"
+    sha256 sonoma:         "ff4331647474243f77905308c0399b6eac8b07f97f2336ecd5b04a83b11e0165"
+    sha256 ventura:        "aa6b6ecaad5d23ee694ca705759cd2f687b8c577335105ec8caa37ae3e602798"
+    sha256 monterey:       "abd4002d0e8c7d9d220aa4c3db11d208f0629ceac9602389afa09fe0d47d4804"
+    sha256 x86_64_linux:   "fcc5a66132b65c34b849729b0151b191e21b572b71ba4d703cd4ae8797a7b888"
   end
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
-  depends_on "pcre" # PCRE2 issue: https:github.comunbituwsgiissues2486
+  depends_on "pcre2"
   depends_on "python@3.12"
   depends_on "sqlite"
   depends_on "yajl"

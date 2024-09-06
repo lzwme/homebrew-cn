@@ -3,19 +3,19 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackagesa1e95272a722f78b820b6640d7228fc3e44d4f0fa7fb515fb90089bfceb82ea5aider_chat-0.52.1.tar.gz"
-  sha256 "e0b0733226f1fa3483fbe906a0d7124da76aae2741367fdb7ddb99e10247d5ed"
+  url "https:files.pythonhosted.orgpackages7f912ff612a0b6a4b51b70eb43a1cb77d54988627ed0c36d19037ebb6ed5c5ecaider_chat-0.55.0.tar.gz"
+  sha256 "926aee4a58db65be3aef90871ef8154aa7279e404cf6f87ab74d3f3cc7380703"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "637746197519881b9515e9fcab1110fbf8c80f6ee88a68a047d0b53f2169a557"
-    sha256 cellar: :any,                 arm64_ventura:  "986b54e6639ffa3e02c40fa90b9cab968779151c79fec7751f316c2ee8f58703"
-    sha256 cellar: :any,                 arm64_monterey: "f284674f46f7beef4a20e02954db1ff98c28c09c104aa1ae9eb44d29d0f2ee7a"
-    sha256 cellar: :any,                 sonoma:         "6229a788c3732c55fdf8590cee42091b365624face0ebbd9fcbd0688a9098e63"
-    sha256 cellar: :any,                 ventura:        "ef1af7ccb3f56f12c1048e1c44a87dc630d659ee7e5b90e4b68e82f6851706bc"
-    sha256 cellar: :any,                 monterey:       "374ba04d61a2f98cf8606a87b2ccee3c386947e5e1979b58d1e1183f1abfc70c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97115c3901cc10c6ec8c88c34694d8be09ffb6146dcfb12c615eda8e4a7f1e0d"
+    sha256 cellar: :any,                 arm64_sonoma:   "a164ecc7e7888923279e55fa4df76326ac3efdf819d9ba763d67f5ea7c438b9f"
+    sha256 cellar: :any,                 arm64_ventura:  "2c14a81e247661ad0889397ae4f4b502025942cbcb03ed530c40222170e76646"
+    sha256 cellar: :any,                 arm64_monterey: "f233c18f9584b79cc9df56f34707bc01f1ee13ca4fde79349bec9c319effc621"
+    sha256 cellar: :any,                 sonoma:         "fdf058cf7c3903fb10dc1279dc20f44006ddc93990bd26a44c2a79cbee5ebade"
+    sha256 cellar: :any,                 ventura:        "f80d83dc27fe7c31bb22de7397700be6549b91e676f0b9998b12683469265e88"
+    sha256 cellar: :any,                 monterey:       "b8dff1efe934ae74dbedbdf22acb751a094ebaed1e40c88f81545251891fbcca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b15ad67b5aea6e9ab9a2e20ad5f9987efe6d27bf4d05e95ae671afc2c13e82f0"
   end
 
   depends_on "cython" => :build # for tree-sitter-languages
@@ -145,8 +145,8 @@ class Aider < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages5c2d3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0httpx-0.27.0.tar.gz"
-    sha256 "a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"
+    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
+    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
   end
 
   resource "huggingface-hub" do
@@ -155,8 +155,8 @@ class Aider < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "importlib-metadata" do
@@ -165,8 +165,8 @@ class Aider < Formula
   end
 
   resource "importlib-resources" do
-    url "https:files.pythonhosted.orgpackages61b30412c28d21e31447e97728efcf8913afe1936692917629e6bdb847563484importlib_resources-6.4.3.tar.gz"
-    sha256 "4a202b9b9d38563b46da59221d77bb73862ab5d79d461307bcb826d725448b98"
+    url "https:files.pythonhosted.orgpackages0e6a3ac38d1458685a04fafa299dce821713a4f65e5ec30466bec07113f2f891importlib_resources-6.4.4.tar.gz"
+    sha256 "20600c8b7361938dc0bb2d5ec0297802e575df486f5a544fa414da65e13721f7"
   end
 
   resource "jinja2" do
@@ -177,6 +177,11 @@ class Aider < Formula
   resource "jiter" do
     url "https:files.pythonhosted.orgpackagesd71aaa64be757afc614484b370a4d9fc1747dc9237b37ce464f7f9d9ca2a3d38jiter-0.5.0.tar.gz"
     sha256 "1d916ba875bcab5c5f7d927df998c4cb694d27dceddf3392e58beaf10563368a"
+  end
+
+  resource "json5" do
+    url "https:files.pythonhosted.orgpackages915951b032d53212a51f17ebbcc01bd4217faab6d6c09ed0d856a987a5f42bbcjson5-0.9.25.tar.gz"
+    sha256 "548e41b9be043f9426776f05df8635a00fe06104ea51ed24b67f908856e151ae"
   end
 
   resource "jsonschema" do
@@ -190,8 +195,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages341eb700420144ec1f6905650cb6d34dc6f347c7b77338a77fd63f321146d4a1litellm-1.43.19.tar.gz"
-    sha256 "b1f475f98073632f0cea6d814bb10b14b6498e5ff93b91b52dfc00445bf013ab"
+    url "https:files.pythonhosted.orgpackagesbcdcbe154737802b7beebede5550ea3d3e499c29cbe8b030a30340907625ad05litellm-1.44.7.tar.gz"
+    sha256 "c8f8f9d80065be81580258177f3a006de86d2c4af1f9a732ac37bd317a13f042"
   end
 
   resource "markdown-it-py" do
@@ -239,9 +244,19 @@ class Aider < Formula
     sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
+  resource "pexpect" do
+    url "https:files.pythonhosted.orgpackages4292cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149dpexpect-4.9.0.tar.gz"
+    sha256 "ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"
+  end
+
   resource "prompt-toolkit" do
     url "https:files.pythonhosted.orgpackages476d0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879fprompt_toolkit-3.0.47.tar.gz"
     sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
+  end
+
+  resource "ptyprocess" do
+    url "https:files.pythonhosted.orgpackages20e516ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4eptyprocess-0.7.0.tar.gz"
+    sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
   end
 
   resource "pycodestyle" do
@@ -272,17 +287,6 @@ class Aider < Formula
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
-  end
-
-  resource "pypager" do
-    url "https:files.pythonhosted.orgpackagesa294fb3cf81608d8a5aaf5bbac7e8f331e1ccc4501d7351957b72f0a8eb0d9f5pypager-3.0.1.tar.gz"
-    sha256 "79c1fc8c4f2c9749dd58e5b29bfce48ca864a24898d1a1e0df1e7fe82d86ab44"
-
-    # Fix failure under build isolation: https:github.comprompt-toolkitpypagerpull31
-    patch do
-      url "https:github.comprompt-toolkitpypagercommit13e8c26d978a42154083cc2d846fa7f719a6d1fc.patch?full_index=1"
-      sha256 "ff9a7c85c2fa837d062ef96650ccc01cae8330f3ff0ba90a5487e92f6052aceb"
-    end
   end
 
   resource "pypandoc" do
@@ -321,8 +325,8 @@ class Aider < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
-    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+    url "https:files.pythonhosted.orgpackagescf605959113cae0ce512cf246a6871c623117330105a0d5f59b4e26138f2c9ccrich-13.8.0.tar.gz"
+    sha256 "a5ac1f1cd448ade0d59cc3356f7db7a7ccda2c8cbae9c7a90c28ff463d3e91f4"
   end
 
   resource "rpds-py" do
@@ -402,8 +406,8 @@ class Aider < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages0eaf9f2de5bd32549a1b705af7a7c054af3878816a1267cb389c03cc4f342a51zipp-3.20.0.tar.gz"
-    sha256 "0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"
+    url "https:files.pythonhosted.orgpackagesd38b1239a3ef43a0d0ebdca623fb6413bc7702c321400c5fdd574f0b7aa0fbb4zipp-3.20.1.tar.gz"
+    sha256 "c22b14cc4763c5a5b04134207736c107db42e9d3ef2d9779d465f5f1bcba572b"
   end
 
   def install
@@ -419,9 +423,12 @@ class Aider < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}aider --version")
-    assert_match "Missing these environment variables", shell_output("#{bin}aider --yes --exit")
-    ENV["OPENAI_API_KEY"] = "invalid"
-    assert_match "Incorrect API key", shell_output("#{bin}aider --yes --exit --message=test 2>&1")
+    mkdir "tmptestdir" do
+      assert_match version.to_s, shell_output("#{bin}aider --version")
+      assert_match "OPENAI_API_KEY: ✗ Not set", shell_output("#{bin}aider --yes --exit --no-check-update")
+      ENV["OPENAI_API_KEY"] = "invalid"
+      output = shell_output("#{bin}aider --yes --exit --message=test --no-check-update 2>&1")
+      assert_match "Incorrect API key", output
+    end
   end
 end

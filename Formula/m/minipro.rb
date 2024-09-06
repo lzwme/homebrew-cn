@@ -1,20 +1,19 @@
 class Minipro < Formula
   desc "Open controller for the MiniPRO TL866xx series of chip programmers"
   homepage "https://gitlab.com/DavidGriffith/minipro/"
-  url "https://gitlab.com/DavidGriffith/minipro/-/archive/0.7/minipro-0.7.tar.gz"
-  sha256 "54eb59f5fe2e1850f08baaefcf2306ed770f7cdb91b3f58e8610849334a5a6f4"
+  url "https://gitlab.com/DavidGriffith/minipro/-/archive/0.7.1/minipro-0.7.1.tar.gz"
+  sha256 "dbabd96b377ebf988b093658aeda658ed2a8a6b2097d491d2c620a01993860fc"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/DavidGriffith/minipro.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "911d41ae0c7e3c4aa875b7b19d7c32f6931ce7a7578bf78a4515520f27fe1a3c"
-    sha256 arm64_ventura:  "79fe0471094ec1a02859ee68026400d4b7ba30f18cd79e5a0731822511219b4b"
-    sha256 arm64_monterey: "aef5bd9eea3e660a93ee9bdda10001d235c17e952baa551166a3487a4eef0048"
-    sha256 sonoma:         "447645e8f9387b0dacc8c34fa9a856a87d1e4a859f24df84b0500b455ca7aee5"
-    sha256 ventura:        "858606ee62548a7d40b155bbe11b67c91c19c1cc5c0e4f83c4f38f5da3ced778"
-    sha256 monterey:       "e3cfcae0b92727c048e61175ea936835cfc488b69739712e4e3f0d35a264f43d"
-    sha256 x86_64_linux:   "9105f8925af02e82094a6863bbae438c36a6f39bdc001dd1696ff86fa36fc421"
+    sha256 arm64_sonoma:   "d4af1c31e635397d647001119015cfc8d006fa148ae1b7f5aaa8ae84afa3f091"
+    sha256 arm64_ventura:  "fd250a5ac187f8870397dbc5eeb87b9f80fc44edcd6075328faaf2fa83cfe5d7"
+    sha256 arm64_monterey: "41a8d933c4cd33bc6d23d9604cce0dd5d69e6e95c2e2e9b2e289086ebb7d4360"
+    sha256 sonoma:         "12e590dc45db3ac34e57f6e05bdb691041b351c1a7b8cbbd8e99fbe0d00c34ed"
+    sha256 ventura:        "e0ee05b22915caa7be6d52faab93af667ed9bc61dfe5834a7c4ad75654d93524"
+    sha256 monterey:       "cceb3726189c6b5eadb8cb3582bc407eb5868ecc79c4b86d7218c4b8e55fab69"
+    sha256 x86_64_linux:   "14a6130f02cf3adbd99526aabe59fdaa2f946074d30f9afadda5cbf9f271911f"
   end
 
   depends_on "pkg-config" => :build

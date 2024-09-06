@@ -2,11 +2,14 @@ class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST23, SF2 and more"
   homepage "https:kx.studioApplications:Carla"
   license "GPL-2.0-or-later"
-  head "https:github.comfalkTXCarla.git", branch: "main"
 
   stable do
     url "https:github.comfalkTXCarlaarchiverefstagsv2.5.8.tar.gz"
     sha256 "4ec96d06342ff28da4b80d4a76bc08fcaa5703726f96e5174afcdc4f7fc6195d"
+
+    # TODO: use `pyqt` and `qt` from HEAD unconditionally when new release includes Qt6 support
+    depends_on "pyqt@5"
+    depends_on "qt@5"
 
     # liblo API build patch, remove in next release
     patch do
@@ -30,15 +33,20 @@ class Carla < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "945471081c1fa496a673c4b0d86375612ff1198ccbe92dd799dfc93a8c2a893b"
   end
 
+  head do
+    url "https:github.comfalkTXCarla.git", branch: "main"
+
+    depends_on "pyqt"
+    depends_on "qt"
+  end
+
   depends_on "pkg-config" => :build
 
   depends_on "fluid-synth"
   depends_on "liblo"
   depends_on "libmagic"
   depends_on "libsndfile"
-  depends_on "pyqt@5"
   depends_on "python@3.12"
-  depends_on "qt@5"
 
   on_linux do
     depends_on "alsa-lib"

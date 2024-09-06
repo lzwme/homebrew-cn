@@ -3,7 +3,15 @@ class Assimp < Formula
   homepage "https:www.assimp.org"
   url "https:github.comassimpassimparchiverefstagsv5.4.3.tar.gz"
   sha256 "66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb"
-  license :cannot_represent
+  # NOTE: BSD-2-Clause is omitted as contribOpen3DGCo3dgcArithmeticCodec.c is not used
+  license all_of: [
+    "BSD-3-Clause",
+    "CC-PDDC",   # codeAssetLibAssjsoncencode.* (code from libb64)
+    "MIT",       # codeAssetLibM3Dm3d.h, contrib{openddlparser,pugixml,rapidjson}
+    "BSL-1.0",   # contrib{clipper,utf8cpp}
+    "Unlicense", # contribzip
+    "Zlib",      # contribunzip
+  ]
   head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do

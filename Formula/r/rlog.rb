@@ -31,6 +31,40 @@ class Rlog < Formula
     system ".configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
+
+  test do
+    (testpath"test.cpp").write <<~EOS
+      #include <stdio.h>
+      #include <unistd.h>
+      #include <rlogrlog.h>
+      #include <rlogRLogChannel.h>
+      #include <rlogRLogNode.h>
+      #include <rlogStdioNode.h>
+      int main(int argc, char **argv)
+      {
+          rlog::RLogInit(argc, argv);
+          rlog::StdioNode stdLog(STDOUT_FILENO);
+          stdLog.subscribeTo(rlog::GetGlobalChannel(""));
+          const char *name = "Dave";
+          rDebug("num = %i", 299792458);
+          int ans = 6 * 9;
+          if (ans != 42) rWarning("ans = %i, expecting 42", ans);
+          rError("I'm sorry %s, I can't do that.", name);
+      }
+    EOS
+
+    expected_outputs = [
+      "(test.cpp:13) num = 299792458",
+      "(test.cpp:15) ans = 54, expecting 42",
+      "(test.cpp:16) I'm sorry Dave, I can't do that.",
+    ]
+
+    system ENV.cxx, "-I#{include}", "-L#{lib}", "test.cpp", "-lrlog", "-o", "test"
+    output = shell_output(".test")
+    expected_outputs.each do |expected|
+      assert_match expected, output
+    end
+  end
 end
 
 # This patch solves an OSX build issue, should not be necessary for the next release according to

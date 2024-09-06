@@ -26,7 +26,7 @@ class Tcpsplit < Formula
   # Upstream has an incomplete certificate chain,
   # so fetching and livechecking no longer work.
   # Last release on 2013-02-27
-  deprecate! date: "2023-12-05", because: :unmaintained
+  disable! date: "2024-09-05", because: :unmaintained
 
   uses_from_macos "libpcap"
 

@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https:kubefirst.io"
-  url "https:github.comkonstructiokubefirstarchiverefstagsv2.5.11.tar.gz"
-  sha256 "8ece781cfc3c218d9ea0b28e06c83135d69954c39886781b518ece9476bd6072"
+  url "https:github.comkonstructiokubefirstarchiverefstagsv2.6.0.tar.gz"
+  sha256 "a39ef43404e298f6d45f891b3a78d8813c5a515baf30e9c258b4b9c9c9b538d5"
   license "MIT"
   head "https:github.comkonstructiokubefirst.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "131d55fdfa1335e869bceec534f12082691582770dd41489120851f2da06927c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44b2d28f6711a30d034b1cadc7cb861a13f4b7d68fe8592f5aa4c8fae0fcd6c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e175283e81f737098f0d9b4a79e53a2c65315ce0b5f03aaf115fe00cf40ae925"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9537fa1c474aef7f0da5f5c164e64ebe9ea7c8a6c370716a3a3d567c4dad507a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f287a8c5e2695640e083025c7084b2c2272f84a6343ce436480ab293c308a360"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbb1afb0443b6daa3133d2b2761a3fc8e0b130b1d9bdd8157cfb0f4b4d4d4452"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "552f57f7c0cc5bcd23bbcdfd0dd25ca84156ddf1288a38242d2a9917362d32be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcdc031abe5c051ef84867f19ba5aa93016d94e6c82f9164ba602efe33ed2480"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82ee44f4a47ed6a781e293a8213c53bdd3a1a9752944e80368c2afd6edcd486d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad0e043672ff53c45cfd12fc4ffda3294ef628d6cdc814046e99698ed3b591e2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e570d336aae4ff78c2b98fd426942fea5ff1411ef138fbec3f232b8f66698ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9e975174c5ecf048e235792d332ead958e6146253f55bb044392516c9506ac4"
+    sha256 cellar: :any_skip_relocation, monterey:       "4763a541cce4de8232e9adecd89571953d3532c7acb523bf1a08a7d18c7219e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbc86d3fc221aa0eb7c23c951f66870c23a9cc2665d7ce03e3ab2c97cd3497fe"
   end
 
   depends_on "go" => :build

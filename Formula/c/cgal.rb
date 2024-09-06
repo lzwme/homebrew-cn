@@ -16,7 +16,7 @@ class Cgal < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "qt@5" => [:build, :test]
+  depends_on "qt@5" => :test
   depends_on "boost"
   depends_on "eigen"
   depends_on "gmp"
@@ -29,12 +29,7 @@ class Cgal < Formula
   fails_with gcc: "5"
 
   def install
-    args = %w[
-      -DCMAKE_CXX_FLAGS='-std=c++14'
-      -DWITH_CGAL_Qt5=ON
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
