@@ -4,17 +4,16 @@ class Mosh < Formula
   url "https:github.commobile-shellmoshreleasesdownloadmosh-1.4.0mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 18
+  revision 19
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ab437b4b3c11be16309d77e4501e6c688c2c83512ac0386e2710d2a0c61d7eed"
-    sha256 cellar: :any,                 arm64_ventura:  "bbaf8774548735c4605f996aec90041e315a55d58a349711f38e08c655ede23a"
-    sha256 cellar: :any,                 arm64_monterey: "649db3de627b72c4d182c7c788c0db02e0407700e8f43cd9a98b149e5fb74d3b"
-    sha256 cellar: :any,                 sonoma:         "3d09e7fffb9ae0c631bd4609547f5cd896ab348a83b1810108de962da2820a89"
-    sha256 cellar: :any,                 ventura:        "3156da8c5d050888647c84ad13de1dba8e90b5f95a228ed8649a4f0be42854cd"
-    sha256 cellar: :any,                 monterey:       "8ce7d15882925788642adca5da629e947769be239dfeb349e48350947a4e3bab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "226a7c5680edefdc30a9b010309cd1414994125211f87591c1bafe5b5a26271c"
+    sha256 cellar: :any,                 arm64_sonoma:   "7b92fad6116d55eab1c3a30bc4fe23a1a898748c34bd6fb7e9858aa44057997b"
+    sha256 cellar: :any,                 arm64_ventura:  "62f221b0511eb193622d48b62ed79ac3a510af961020642a426ebd174c800d3b"
+    sha256 cellar: :any,                 arm64_monterey: "a8a32746f193ac559dae8a6e1485760b194366eb59c7d24a9da8bfd5c6d95247"
+    sha256 cellar: :any,                 sonoma:         "f329cfdaa16d35bbdab6bdf4d74fc8adecf8cb7903f74a0edb83e7c3f82c0aba"
+    sha256 cellar: :any,                 ventura:        "f7d09f2723953da60dae66ce0cf19b54e9cf226886aacc008cd30975e22f15d9"
+    sha256 cellar: :any,                 monterey:       "8f1570c1cee231cd37c80389f7c7f62746f1aadcdfc399fcea1bbbd882e34893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd1047209e25065ef91511999a8f80ed8fffaec8352a9614480e6cd3d51795fc"
   end
 
   head do

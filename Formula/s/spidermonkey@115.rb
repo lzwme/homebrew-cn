@@ -1,9 +1,9 @@
 class SpidermonkeyAT115 < Formula
   desc "JavaScript-C Engine"
   homepage "https:spidermonkey.dev"
-  url "https:archive.mozilla.orgpubfirefoxreleases115.14.0esrsourcefirefox-115.14.0esr.source.tar.xz"
-  version "115.14.0"
-  sha256 "8955e1b5db83200a70c6dea4b614e19328d92b406ec9a1bde2ea86333a74dab4"
+  url "https:archive.mozilla.orgpubfirefoxreleases115.15.0esrsourcefirefox-115.15.0esr.source.tar.xz"
+  version "115.15.0"
+  sha256 "effed92aa0d961871614c611259dfe3eab72e5ebfe8f2405f9bc92c5e7feae81"
   license "MPL-2.0"
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -14,13 +14,13 @@ class SpidermonkeyAT115 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "bdb96c9a84abacf0a47aca1a93efc7f57926fe61e8942b60099990f45bd88a2a"
-    sha256 cellar: :any, arm64_ventura:  "0dd41a8968edb836ac36498df074c16534a307066c0f286ecfa0539da4c7cd3c"
-    sha256 cellar: :any, arm64_monterey: "3a55d0530ffb8791f64ddaba663f25ed0c9d67bbd92d0a0449612495df2730c8"
-    sha256 cellar: :any, sonoma:         "c24b66edfd035e7a4546a68352bc3011bdfd097f915af1755c7ba79b728cf531"
-    sha256 cellar: :any, ventura:        "1ac73aea88ddd000f428edbdd9113686ede9fcf4e20ba78490ede6761992570a"
-    sha256 cellar: :any, monterey:       "c3e19e619c22f5af1d05466c983e70e724b44489a6c5d4bb62aaf8a6af94db88"
-    sha256               x86_64_linux:   "96544abac5c65a8683d518194fb3c2a499b935dae9c7dd07561ff6f81c9d6493"
+    sha256 cellar: :any, arm64_sonoma:   "c909bdf0a237d1062f9cccbece97b90f5e2dad5c158d673ce1ce781eb6de0025"
+    sha256 cellar: :any, arm64_ventura:  "a1c77c4eef8c3b150776bb685ce88b6e321e29d633dc7841ac87d37475126293"
+    sha256 cellar: :any, arm64_monterey: "8e5ee05481498bc8ab38563e732b44b9550310d7a655c7e29721ad9121d7db8e"
+    sha256 cellar: :any, sonoma:         "f1394a2ed08e02c10e2d90a90eb823efb4df8ac23056bf51b91a7f279c1326a0"
+    sha256 cellar: :any, ventura:        "0c4664ce308ec06930173d8eb89bfc9ae9d0e08fab9a78d119b50b0baa1e032b"
+    sha256 cellar: :any, monterey:       "36ca91e39296f273d1d04433d94b6d7f569b291ca968eef81ee3a01049ed1a8c"
+    sha256               x86_64_linux:   "dfb514aca444b386ee25593865c7cb90a88fa811aa3e3e186d0fe30aa218ba69"
   end
 
   depends_on "pkg-config" => :build

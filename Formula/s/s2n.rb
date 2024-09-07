@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLSSSL protocols"
   homepage "https:github.comawss2n-tls"
-  url "https:github.comawss2n-tlsarchiverefstagsv1.5.1.tar.gz"
-  sha256 "d79710d6ef089097a3b84fc1e5cec2f08d1ec46e93b1d400df59fcfc859e15a3"
+  url "https:github.comawss2n-tlsarchiverefstagsv1.5.2.tar.gz"
+  sha256 "896d9f8f8e9bd2fdcb9a21b18aede4f7afc65bde279afabc60abf97fa5069dd1"
   license "Apache-2.0"
   head "https:github.comawss2n-tls.git", branch: "main"
 
@@ -12,13 +12,13 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a098c9c60b0902dd52f1ccd00be745acd712328cade8b55772fd90f1e84516ce"
-    sha256 cellar: :any,                 arm64_ventura:  "2bdc7cb808376e920808a52026eb16c820315f1f086ff3830addce9d76194920"
-    sha256 cellar: :any,                 arm64_monterey: "1e025ecbc0532b35b4c126c092b89056fb065f37c2e1615ba1aecb0f873f459b"
-    sha256 cellar: :any,                 sonoma:         "141f9c2eb073ca7be650c9918cf4cd7dd45629e3602d22c376075f739b9d2db9"
-    sha256 cellar: :any,                 ventura:        "fcc933ab0d1e28e6d69fdaa7ca8e85edd6ceb7dccfda13df4a384694c88ef6ef"
-    sha256 cellar: :any,                 monterey:       "a695a15f45ffada1b8207e10f3cd15e7f90deca28df7be77560544fbec452d6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dc18bca6c565d2dfd65c45c18a916c6667930d60f45e53f89abd9e96cef5a1f"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7d7d4c5d9343ab609bfcfc815016e33e673c6c9e632cdb782fa06a92d9bb9c5"
+    sha256 cellar: :any,                 arm64_ventura:  "f8b7b10b87e43d89826a24ea3eda969203f7c0f3bc3b0e57334bfcbe5373eed6"
+    sha256 cellar: :any,                 arm64_monterey: "41ad9e378aed4c67862f327938300bad411b0fe5a438fa9374dcfe58b5c70151"
+    sha256 cellar: :any,                 sonoma:         "45b94c13f999f30dbf14d87f7ceac3ed6394eb9be353b032d79d5114615bca91"
+    sha256 cellar: :any,                 ventura:        "c4cbc28b325a40222246182306b11a715d547de41203241a999c9351f567099e"
+    sha256 cellar: :any,                 monterey:       "643a1c0a834c369e8d5f1ff60d44955fa372eeeccbf9a4beb47e5359ce116d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce8a6013e9ba8316d7d6e60af9d242df02ee99c6f81141ac36e94f2866aa00ce"
   end
 
   depends_on "cmake" => :build

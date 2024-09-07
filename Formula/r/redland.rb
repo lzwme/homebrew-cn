@@ -54,4 +54,75 @@ class Redland < Formula
                           "--with-sqlite=yes"
     system "make", "install"
   end
+
+  test do
+    (testpath"test.c").write <<~EOS
+      #include <stdio.h>
+      #include <redland.h>
+
+      int main(int argc, char *argv[]) {
+        librdf_world* world;
+        librdf_storage* storage;
+        librdf_model* model;
+        librdf_statement *statement;
+
+        world = librdf_new_world();
+        librdf_world_open(world);
+        storage = librdf_new_storage(world, "file", "file.rdf", NULL);
+        model = librdf_new_model(world, storage, NULL);
+        statement = librdf_new_statement_from_nodes(
+          world,
+          librdf_new_node_from_uri_string(world, (const unsigned char*) "https:example.org"),
+          librdf_new_node_from_uri_string(world, (const unsigned char*) "http:purl.orgdcelements1.1title"),
+          librdf_new_node_from_literal(world, (const unsigned char*) "Homebrew was here", NULL, 0)
+        );
+
+        librdf_model_add_statement(model, statement);
+        librdf_free_statement(statement);
+        librdf_free_model(model);
+        librdf_free_storage(storage);
+        librdf_free_world(world);
+
+        return 0;
+      }
+    EOS
+
+    (testpath"file.rdf").write <<~EOS
+      <?xml version="1.0"?>
+      <rdf:RDF xmlns:rdf="http:www.w3.org19990222-rdf-syntax-ns#"
+          xmlns:dc="http:purl.orgdcelements1.1">
+        <rdf:Description rdf:about="https:example.org">
+          <dc:title>Example Site<dc:title>
+          <dc:creator>Internet Assigned Numbers Authority<dc:creator>
+          <dc:description>
+            This domain is for use in illustrative examples in documents.
+            You may use this domain in literature without prior coordination or asking for permission.
+          <dc:description>
+        <rdf:Description>
+      <rdf:RDF>
+    EOS
+
+    includes = %W[
+      -I#{include}
+      -I#{Formula["raptor"].opt_include}raptor2
+      -I#{Formula["rasqal"].opt_include}rasqal
+    ]
+
+    libs = %W[
+      -L#{lib}
+      -L#{Formula["raptor"].opt_lib}
+      -L#{Formula["rasqal"].opt_lib}
+      -lrdf -lraptor2 -lrasqal
+    ]
+
+    system ENV.cc, *includes, "test.c", *libs, "-o", "test"
+    system testpath"test"
+
+    expected = <<~EOS
+      #{" " * 2}<rdf:Description rdf:about="https:example.org">
+      #{" " * 4}<ns0:title xmlns:ns0="http:purl.orgdcelements1.1">Homebrew was here<ns0:title>
+      #{" " * 2}<rdf:Description>
+    EOS
+    assert_match expected, (testpath"file.rdf").read
+  end
 end

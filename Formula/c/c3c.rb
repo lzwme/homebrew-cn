@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https:github.comc3langc3c"
-  url "https:github.comc3langc3carchiverefstagsv0.6.1.tar.gz"
-  sha256 "472c5026b7bf9c709208d31f3a9ae3eba920dc5a78293356a6194fca463f42f1"
+  url "https:github.comc3langc3carchiverefstagsv0.6.2.tar.gz"
+  sha256 "e39f98d5a78f9d3aa8da4ce07062b4ca93d25b88107961cbd3af2b3f6bcf8e78"
   license "LGPL-3.0-only"
   head "https:github.comc3langc3c.git", branch: "master"
 
@@ -15,18 +15,17 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ff108e3793c26142c04c07225d53df7c584a92e1ce09c38ef2fd6ba740ca0d79"
-    sha256 cellar: :any,                 arm64_ventura:  "15cf0dbfc9723a79a382b9bf4fd1804d02c5e7ba45462ff445cc6e76910c1ac6"
-    sha256 cellar: :any,                 arm64_monterey: "3c7109c6b9bb49a74dfc094317dcba1fb59eb3f75e91e40f81b7ff325d8c3e2b"
-    sha256 cellar: :any,                 sonoma:         "4ebc81a1844f6db060b5c2497e71bff1968d97110a69528e917ff8cb230275af"
-    sha256 cellar: :any,                 ventura:        "d5d8d8559ff29535a66e5432c33cc93e5ae4eaf027a5ad19379743c03538d215"
-    sha256 cellar: :any,                 monterey:       "75e72eed67a560b9246e4d386d2215c973baeaf7d37cf5a849c4b8e7a534277c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "445b92d08fba1888c8a3e579f5f4055608c0f783237c1372a8dab678c1903854"
+    sha256 cellar: :any,                 arm64_sonoma:   "cb180a4f2deaeb13edf804482822f8c5288ef438b23f66c4827de1915dde40df"
+    sha256 cellar: :any,                 arm64_ventura:  "93acc32a9a02ebbe234321dd4637646a706070bdee7890d42e6c27b662b5f36f"
+    sha256 cellar: :any,                 arm64_monterey: "72557fa0d509682eae2d080bca8805965d13346f4315bd0caa1fdb52ac12fc75"
+    sha256 cellar: :any,                 sonoma:         "dfe32cca70fa147b8dc5939f237302293b9193db44508ee4271ca2fe0af9a052"
+    sha256 cellar: :any,                 ventura:        "92f0cd5376894a8952ef89d28b2be048f1e558faa258226e6663b07d72b44626"
+    sha256 cellar: :any,                 monterey:       "31b0c19166a07d5898b0178c129d2c8a484b127936f62d82ce28fa0a9135c6fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5f5d45917d84b6db9d75d00b32473bde36bb4b9d99e6cef363031a77e444394"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
-  depends_on "z3"
+  depends_on "llvm" => :build
   depends_on "zstd"
 
   uses_from_macos "curl"
@@ -35,10 +34,36 @@ class C3c < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "llvm"
+  end
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Link dynamically to our libLLVM. We can't do the same for liblld*,
+    # since we only ship static libraries.
+    inreplace "CMakeLists.txt" do |s|
+      s.gsub!("libLLVM.so", "libLLVM.dylib") if OS.mac?
+      s.gsub!((liblld[A-Za-z]+)\.so, "\\1.a")
+    end
+
+    ENV.append "LDFLAGS", "-lzstd -lz" if OS.mac?
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DC3_LINK_DYNAMIC=#{OS.mac? ? "ON" : "OFF"}", # FIXME: dynamic linking fails the Linux build.
+                    "-DC3_USE_MIMALLOC=OFF",
+                    "-DC3_USE_TB=OFF",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    return unless OS.mac?
+
+    # The build copies LLVM runtime libraries into its `bin` directory.
+    # Let's replace those copies with a symlink instead.
+    libexec.install bin.children
+    bin.install_symlink libexec.children.select { |child| child.file? && child.executable? }
+    rm_r libexec"c3c_rt"
+    llvm = Formula["llvm"]
+    libexec.install_symlink llvm.opt_lib"clang"llvm.version.major"libdarwin" => "c3c_rt"
   end
 
   test do

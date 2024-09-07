@@ -4,7 +4,6 @@ class Cadaver < Formula
   url "https:notroj.github.iocadavercadaver-0.24.tar.gz"
   sha256 "46cff2f3ebd32cd32836812ca47bcc75353fc2be757f093da88c0dd8f10fd5f6"
   license "GPL-2.0-only"
-  head "https:github.comnotrojcadaver.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -23,17 +22,37 @@ class Cadaver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1833b0bdb9598c89320a80dd6c92137c2b3dacae8622e60b60782883d031d32"
   end
 
+  head do
+    url "https:github.comnotrojcadaver.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "neon"
   depends_on "openssl@3"
   depends_on "readline"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system ".configure", *std_configure_args,
-                          "--with-ssl=openssl",
+    if build.head?
+      ENV["LIBTOOLIZE"] = "glibtoolize"
+      system ".autogen.sh"
+    else
+      # Allow building with `neon` 33. Fixed upstream but would require regenerating configure
+      # Ref: https:github.comnotrojcadavercommit2433126db25ffd38dc11ef847614e479141cc229
+      inreplace "configure", "in 27 28 29 30 31 32; do", "in 27 28 29 30 31 32 33; do"
+    end
+    system ".configure", "--with-ssl=openssl",
                           "--with-libs=#{Formula["openssl@3"].opt_prefix}",
-                          "--with-neon=#{Formula["neon"].opt_prefix}"
+                          "--with-neon=#{Formula["neon"].opt_prefix}",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

@@ -1,8 +1,8 @@
 class I2util < Formula
   desc "Internet2 utility tools"
   homepage "https:github.comperfsonari2util"
-  url "https:github.comperfsonari2utilarchiverefstagsv5.1.2.tar.gz"
-  sha256 "27f86aa2b5f2d08c0ea99412c05764cd1a4953fe4d37e30d550d7d53c3b93c3d"
+  url "https:github.comperfsonari2utilarchiverefstagsv5.1.3.tar.gz"
+  sha256 "6f57d13a7a31c23f17834e280fff57496d63cad66331d83649f915c09fed850a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class I2util < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "568713828868369047a6edb673c19ed723501ee95a22951e5755ef967b3a330c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5180278807727aed98c0f42c553f7b75f93b1ebe9573494e12b7f6a7edbcb33b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ead09e3b35f362f8828f577927d201260952ff63637ddbc929478f627e32dd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ea50d9ecd048d84aa63bbba16e65bc31116b2ee0e59f7d3e7a7bd7162c4c4492"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4e82541ef2b3a0bf20c2c3658769e92fa7b1a2a5fce6303e09c472081a396bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c2771b19cc2a3f837b290e515e236c06b551c35b53222d543e1c960ad922ba3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5500ad8f15d515efc6405dcb15d4909ac3baa17a8808f89245d2ad81e45190b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52c6a69943271922d78c82a47ee894e3486464a21555a443490ceb15fd416abb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4c1eb6c23de99d8bbd158a619913f6f204f23b8c63a6f413da2bacc0505649b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3bf30b71256d3672b411f2eec92b99a76f4709a45d3d6e6f9633f06a34cee3f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fbaf0516c5fee7069c16329536b0917ba004df47773ecdd840226c01c672c8ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "5df96be2426f548786a6d62260c6b359d7317e688c1b9485985562daf7dc39d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4fa503635af9bbe7b7df74ecb25aaf8468762df99b5dd8d90a0a9cbc50fce36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a8088a9038586208b40e8e36df6ff88f1753d53200b0d8a96e2d88186add182"
   end
 
   depends_on "autoconf" => :build

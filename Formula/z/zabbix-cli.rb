@@ -3,8 +3,8 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https:unioslo.github.iozabbix-cli"
-  url "https:github.comunioslozabbix-cliarchiverefstags3.0.1.tar.gz"
-  sha256 "fa2788656430f4f1cd9124b15d6427d12dfe86dd1dc0ab0c110e699fb0c91e6c"
+  url "https:github.comunioslozabbix-cliarchiverefstags3.0.2.tar.gz"
+  sha256 "91c48946ef105282bd454e019e6d5b59851bf8a66eb508a4d8a89aafda518133"
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
@@ -14,13 +14,13 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dd8c9f3f3e0f879519181635530ab7b9b21ad5a62789d44cb7fa7f7883254a64"
-    sha256 cellar: :any,                 arm64_ventura:  "5c3c88e770268281fc945370c4f6e3449946e975b4fdf8b788be5d9ff415786a"
-    sha256 cellar: :any,                 arm64_monterey: "d7dee8356f861cc7847392d272ce95e57000359c264cd6ef02958f76d63cd595"
-    sha256 cellar: :any,                 sonoma:         "fde285a5f29b3c8eed2e61f42261e658edba65833987892b1973c6208d766da4"
-    sha256 cellar: :any,                 ventura:        "43506d0eab977479641eb774e6a449169c95525a7240ea539960c7a76d57372d"
-    sha256 cellar: :any,                 monterey:       "a8a8b09666b35333ab70d80e0017040ed052cea405c64373a87a812e06600c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "529c1fe324ed0ee82f3fd5bae59b2b9332bd6da754e8ea410dc23075f378d846"
+    sha256 cellar: :any,                 arm64_sonoma:   "63a9f2bfad76e85527eaa6d4ff506696025e9e6531050c49b02238e414776ac2"
+    sha256 cellar: :any,                 arm64_ventura:  "df1f8af769ed5396df63bb99b64e423fae29a0d79efd94a957f41d9158f21cc6"
+    sha256 cellar: :any,                 arm64_monterey: "61264474d06358eb67d4fe04147a5b28df11564b71b271dab4716b38d75769a5"
+    sha256 cellar: :any,                 sonoma:         "8d7d7f62bc4c572c4875c96f3011a5b5ad1992b2e43754d0be41a67137757ab0"
+    sha256 cellar: :any,                 ventura:        "4792cbd9ab3fc30e37914de9f5a31aed11b0f0964fa9493caec734428aa1c908"
+    sha256 cellar: :any,                 monterey:       "7db2cb8d619d6016195f2b271bb03d91828d0fa2bf945dfff032e4c3dfd0e5c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "620cdc15d20f74f1e8f1bb71ee804b7623511037d7530d5e6c192cf27944ce30"
   end
 
   depends_on "rust" => :build # for pydantic_core

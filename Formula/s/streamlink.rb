@@ -3,19 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackages88a91c15931891a4e225a12b54a60d6e3e643a51678d4e7253517ff8e8474703streamlink-6.9.0.tar.gz"
-  sha256 "2ca9b0b17b80bc9d09a8422c390cb38d819af5566493960bf210d8fee221c17f"
+  url "https:files.pythonhosted.orgpackagesf5b73b6f1ce1de8eb9ce8660e1fe495a492d5c454ceee66ce856f3e2d9ff59bcstreamlink-6.10.0.tar.gz"
+  sha256 "548d5fcbc3a8e1d5d29fa210a05953f85f48cae70b52ac2ebe49f90e85917521"
   license "BSD-2-Clause"
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3790ba673ba2bfa14431ae07b5883b722bc4a68880a1a225619c9fa418c8014f"
-    sha256 cellar: :any,                 arm64_ventura:  "a56a1ae7e89969b02bd0472fa72700220db8dbbc9f02ccedbc6b0da99ed7ea21"
-    sha256 cellar: :any,                 arm64_monterey: "53e355b4e46087e976d3f648977a46332fb5da8bb3c847442d4aab44dc178a81"
-    sha256 cellar: :any,                 sonoma:         "d48f7b8ddeb725ec68e6d18aab686dfb23c790205337fb2d262415f8850e0854"
-    sha256 cellar: :any,                 ventura:        "b6c7b97cdc380389bfa12f06adc50af6da98539c59760ef0e552fd1fa11722c3"
-    sha256 cellar: :any,                 monterey:       "3047a88ad78e2194b23ea905a4edfc7d74270d924c4d418f818f1c626673bb6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "780b1390d70a65eacafa5f07aa26c74a4dcc4d02ec94d194bc45df9ec598ea27"
+    sha256 cellar: :any,                 arm64_sonoma:   "0f6ecac6e4dd41ef6f0155e95c4dca7de6259dc0137ab4e7fc9f8f4d670513a4"
+    sha256 cellar: :any,                 arm64_ventura:  "76391991e1b4978c3a5468a2be20aee532bc9e56b134a57a5ca33de9d86d07e4"
+    sha256 cellar: :any,                 arm64_monterey: "a74c88b0bcb5236e00116806e5462cb08631b738bd74640d9cecfb7bb2d42743"
+    sha256 cellar: :any,                 sonoma:         "cf265e302774075e2927e8ad6f87e057a917acee74508948fc5b0716d742834d"
+    sha256 cellar: :any,                 ventura:        "83c047eee6a77825dc08c5e9ac6b624ab7a869aa05197607e4020a183b7a64b7"
+    sha256 cellar: :any,                 monterey:       "e7f4467f612549f730f91adfa5f790d4733ec9d0dde69a19b787accda8ec2ff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cad55a6b3a1cb0a527838c9be6de0e1c43e6091852cf441e3306fb5006cf497d"
   end
 
   depends_on "certifi"
@@ -45,8 +45,8 @@ class Streamlink < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "isodate" do

@@ -15,7 +15,7 @@ class GnuGetopt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0accfa7f1ff3844f5976a87e794812ffc3598251542dbb370cf0f4e43623f37"
   end
 
-  keg_only :provided_by_macos
+  keg_only :shadowed_by_macos, "macOS provides BSD getopt"
 
   depends_on "asciidoctor" => :build
   depends_on "autoconf" => :build
@@ -27,9 +27,9 @@ class GnuGetopt < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--disable-liblastlog2"
+    system ".configure", "--disable-silent-rules",
+                          "--disable-liblastlog2",
+                          *std_configure_args
 
     system "make", "getopt", "misc-utilsgetopt.1"
 

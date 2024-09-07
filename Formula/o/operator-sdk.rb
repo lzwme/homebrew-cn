@@ -36,10 +36,14 @@ class OperatorSdk < Formula
     assert_match "version: \"v#{version}\"", output
     assert_match stable.specs[:revision], output
 
-    output = shell_output("#{bin}operator-sdk init --domain=example.com --repo=github.comexamplememcached")
-    assert_match "$ operator-sdk create api", output
+    mkdir "brewtest" do
+      system "go", "mod", "init", "brewtest"
 
-    output = shell_output("#{bin}operator-sdk create api --group c --version v1 --kind M --resource --controller")
-    assert_match "$ make manifests", output
+      output = shell_output("#{bin}operator-sdk init --domain=example.com --repo=github.comexamplememcached")
+      assert_match "$ operator-sdk create api", output
+
+      output = shell_output("#{bin}operator-sdk create api --group c --version v1 --kind M --resource --controller")
+      assert_match "$ make manifests", output
+    end
   end
 end

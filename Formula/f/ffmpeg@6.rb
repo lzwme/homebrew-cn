@@ -14,13 +14,14 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "59a1fcc070a68cb00b4cc727ea94cc56d7f896234bd4113f2f1d1f9526a43636"
-    sha256 arm64_ventura:  "014ef7776c1cb8bd6b36ac9baebc4de35f0f5562920183e7eebe03535c328049"
-    sha256 arm64_monterey: "ca6907ffd75b4f3d6f19ffaa58c330f76ded2a36c3d5b85c5cf42631b9e25837"
-    sha256 sonoma:         "ae781df20eaa0f25f97d952c5afe41c992de3c283c1fbf97a47e1574f7b97ad9"
-    sha256 ventura:        "e0f37db5662325977108243edae749897e7ba34084a6e7b860d487aee9da5d54"
-    sha256 monterey:       "e9d189fc2bb954b554124894b1c0d6ed79761fc358adae73309c39ad5b1b9843"
-    sha256 x86_64_linux:   "e6a76d6257d26c5dbf43d8844c0abd28afad3d056bd7dfffc1b7bdf850a526fe"
+    rebuild 1
+    sha256 arm64_sonoma:   "4500d1804076491e8ad75360ca989bb01b72c8d796bab4c88841a83aecf1f55e"
+    sha256 arm64_ventura:  "6023e1aa5d51af6dade42514d5d91f9b0e800e6e7378561fc28c80cf86717f84"
+    sha256 arm64_monterey: "a5fbb1dab9422b1b7ee93a682e4e92efb69f4dff8062bcc1bb93597ba6fa1f85"
+    sha256 sonoma:         "67e0e5179adbefe02bedc861367d51e2d9a06ee033976f4c47cc80556d47b9bf"
+    sha256 ventura:        "1e20bb00ac434c1436c15f61636d78e599190ea00b918564e361565b91c97c1c"
+    sha256 monterey:       "fb253bb521ea1697e90d2e6482188595239d033bd3839a1dec22f740bda36784"
+    sha256 x86_64_linux:   "67784410d17b9e3b0a25a16b4486b3e7d1ec21deb507a14c0df5146da05cdd60"
   end
 
   keg_only :versioned_formula
@@ -49,7 +50,6 @@ class FfmpegAT6 < Formula
   depends_on "libxcb"
   depends_on "opencore-amr"
   depends_on "openjpeg"
-  depends_on "openvino"
   depends_on "opus"
   depends_on "rav1e"
   depends_on "rubberband"
@@ -76,8 +76,6 @@ class FfmpegAT6 < Formula
     depends_on "libarchive"
     depends_on "libogg"
     depends_on "libsamplerate"
-    depends_on "pugixml"
-    depends_on "tbb"
   end
 
   on_linux do
@@ -148,7 +146,6 @@ class FfmpegAT6 < Formula
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
       --enable-libopenjpeg
-      --enable-libopenvino
       --enable-libspeex
       --enable-libsoxr
       --enable-libzmq

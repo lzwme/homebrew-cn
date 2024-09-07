@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https:systemd.io"
-  url "https:github.comsystemdsystemdarchiverefstagsv256.4.tar.gz"
-  sha256 "7861d544190f938cac1b242624d78c96fe2ebbc7b72f86166e88b50451c6fa58"
+  url "https:github.comsystemdsystemdarchiverefstagsv256.5.tar.gz"
+  sha256 "41bb91861ab9f2f2b6cadad558ea1f8764d701452b018852146d642a850c8a8b"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -30,8 +30,7 @@ class Systemd < Formula
   head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "92df5931608cf2164af5aac2d1bb18f369ef286dfad337d047363ac1f920b594"
+    sha256 x86_64_linux: "ac713dbdd70cb89c7066620f49360aa9f7cc863e3b02caaed80150061cf697dc"
   end
 
   depends_on "coreutils" => :build

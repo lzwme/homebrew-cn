@@ -421,6 +421,7 @@ Homebrew-homebrew-core/Formula/b/bbe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bbftp-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bbot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bbtools.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bc-gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bcal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bcftools.rb, Homebrew/homebrew-core, 1
@@ -8091,6 +8092,7 @@ Homebrew-homebrew-cask/Casks/d/devtoys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devtunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devutils.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dexed.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/dfcf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dhs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diagnostics.rb, Homebrew/homebrew-cask, 1
@@ -12586,7 +12588,7 @@ Homebrew-homebrew-cask/Casks/p/pokerth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/polkadot-js.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pololu-avr-programmer-v2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/polymail.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/polypad.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/polypad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/polypane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/polyphone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomatez.rb, Homebrew/homebrew-cask, 1

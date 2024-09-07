@@ -11,32 +11,30 @@ class Xmlto < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59b67fee304cc5d7be502ba1e4013d1ceb2528dee5c51df926e07b98109457eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae8265ff1eca0fe879c1ece963369b58abe515726f99b53832a5aded92b51e58"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2947a0d38d964b133b1452fa8277d59b333980c549141b990f3f8cbfe9db5c58"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bec2a4a7797f07fc73a636a40e85cb0504da4c5e34328456c28e78c84ce95324"
-    sha256 cellar: :any_skip_relocation, sonoma:         "78d522c9bf195e417c59949a583b479d8784c81e67e8eea8beb3d85c940a2473"
-    sha256 cellar: :any_skip_relocation, ventura:        "d90e8586c846dd0f299101e6ed940d0be828821d8e1c46cb1ca00b7febf83836"
-    sha256 cellar: :any_skip_relocation, monterey:       "d86630edcfc8976b0a7a22f314b7a7062814fec16d52b90d8c1b4d850907222e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "95502b71000319da58971ea17c0dab0f326d20ce4c09d074fe4c7fe89c66d002"
-    sha256 cellar: :any_skip_relocation, catalina:       "d2c21b9b398191e21dcf6e7ac53e4dd46fb59d29173e4d8443ac296101cce58f"
-    sha256 cellar: :any_skip_relocation, mojave:         "8fca3be2271ae8e7fb646b011969ba4030f7421118a4ea6b11eca1ac0fe6979b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "1214da1d14a8f01d8b8d0ead6606207ff5a29fb7ab104d6af47e57fbca4ffcc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd0f9ea84a854c7483a7eae5320c54baa3cb956e914044a522e3c3c041ab08eb"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1cb49d979ff5540b66560c7edf4a5f6b882530764736de05cec5238917c92dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44603a27e95fdeb74994325d50a23fcc9e6994ec1ff44f9120d1633a72e01321"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "556ea7b76e3ddfb0928570c41dee6bd30ab5792c4967543131a8278d03c6bda4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e99c2ba4f2fd3758e861502cebd4681add5a6f3787e036c2cd179d4fd7aaa9d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac11deec2e89a8853c52f9257fcaf5b8951b2f8fe9328cb9f354b0f47bd458f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3965cff11de7ac70104caa7239c30fa1150ecc5749d9106899d64b0f2f15bc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db69918f37e9992e0f7b584a92244a6d75575b36d7642779d4be188aac57e355"
   end
 
   depends_on "docbook"
   depends_on "docbook-xsl"
-  # Doesn't strictly depend on GNU getopt, but macOS system getopt(1)
-  # does not support longopts in the optstring, so use GNU getopt.
-  depends_on "gnu-getopt"
 
   uses_from_macos "libxslt"
 
+  on_macos do
+    # Doesn't strictly depend on GNU getopt, but macOS system getopt(1)
+    # does not support longopts in the optstring, so use GNU getopt.
+    depends_on "gnu-getopt"
+  end
+
   def install
     # GNU getopt is keg-only, so point configure to it
-    ENV["GETOPT"] = Formula["gnu-getopt"].opt_bin/"getopt"
+    ENV["GETOPT"] = Formula["gnu-getopt"].opt_bin/"getopt" if OS.mac?
     # Prevent reference to Homebrew shim
     ENV["SED"] = "/usr/bin/sed"
     # Find our docbook catalog
@@ -45,7 +43,7 @@ class Xmlto < Formula
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1500
 
     ENV.deparallelize
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

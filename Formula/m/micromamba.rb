@@ -22,13 +22,14 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f6ab67da2075c6ece2233330975ba8f6bb0198db009c8310c6c2ac35a3715d76"
-    sha256 cellar: :any,                 arm64_ventura:  "deb26d2fe125a58998a0937e8ea3991d4b3eda32c9f83143d8f588232a58874f"
-    sha256 cellar: :any,                 arm64_monterey: "b47eb2f846abeb0cafb0357bd445f5c2205919e7d0a046cd5d9cb40f1817ba30"
-    sha256 cellar: :any,                 sonoma:         "7645a88481eddb678e658c74e88485b50d91468910f26407446031039022708f"
-    sha256 cellar: :any,                 ventura:        "d7da915cb1e55d78ba1503df36e27e3c2f2dc47813773c700723619127559548"
-    sha256 cellar: :any,                 monterey:       "aed31e322d38c3891cc1de157eaea8bb11a0c583b776aaf64d65652fd1d9f0d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f346e5d3f6e55e3668e80b6ab5a3226c38e3f41b8a245736d1115eec0b81a16"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "88b51ba79028340a5f81ce13ca35446895e29c7b8a4b2ed3442b3fcf95c69bd6"
+    sha256 cellar: :any,                 arm64_ventura:  "1789a8f976fe30c27c052c62e81d7a6bec1cfca9a7b38ce26c27548535cc6b98"
+    sha256 cellar: :any,                 arm64_monterey: "54cd8bafa37922abb9fec44eaec97c428d151bd5f79f9f88a0e024d320314957"
+    sha256 cellar: :any,                 sonoma:         "767711d0140c57c0382b7c32d3be464fb135462988447d3091cb96793c96115c"
+    sha256 cellar: :any,                 ventura:        "b29817db6aa5e8fee0d4ad73c21243b9d528577ea5cb02b1d14e34c8ebe70ff9"
+    sha256 cellar: :any,                 monterey:       "09e134355626d38fb15c547208cf040f18a20dc2b031192e724335a0c477268f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d26b77759ba7012952ee52ad0b02374042981ccb1f0abe0556fffab535c00a39"
   end
 
   depends_on "cli11" => :build
@@ -38,6 +39,7 @@ class Micromamba < Formula
   depends_on "tl-expected" => :build
 
   depends_on "fmt"
+  depends_on "libarchive"
   depends_on "libsolv"
   depends_on "lz4"
   depends_on "openssl@3"
@@ -50,15 +52,7 @@ class Micromamba < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl", since: :ventura # uses curl_url_strerror, available since curl 7.80.0
   uses_from_macos "krb5"
-  uses_from_macos "libarchive", since: :monterey
   uses_from_macos "zlib"
-
-  resource "libarchive-headers" do
-    on_monterey :or_newer do
-      url "https:github.comapple-oss-distributionslibarchivearchiverefstagslibarchive-121.40.3.tar.gz"
-      sha256 "bb972360581fe5326ef5d313ec51579b1c1a4c8a6f20a5068851032a0fa74f33"
-    end
-  end
 
   def install
     args = %W[
@@ -68,16 +62,6 @@ class Micromamba < Formula
       -DMICROMAMBA_LINKAGE=DYNAMIC
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-
-    if OS.mac? && MacOS.version >= :monterey
-      resource("libarchive-headers").stage do
-        cd "libarchivelibarchive" do
-          (buildpath"homebrewinclude").install "archive.h", "archive_entry.h"
-        end
-      end
-      args << "-DLibArchive_INCLUDE_DIR=#{buildpath}homebrewinclude"
-      ENV.append_to_cflags "-I#{buildpath}homebrewinclude"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

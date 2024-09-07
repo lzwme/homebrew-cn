@@ -3,31 +3,31 @@ class PythonBuild < Formula
 
   desc "Simple, correct PEP 517 build frontend"
   homepage "https:github.compypabuild"
-  url "https:files.pythonhosted.orgpackagesce9e2d725d2f7729c6e79ca62aeb926492abbc06e25910dd30139d60a68bcb19build-1.2.1.tar.gz"
-  sha256 "526263f4870c26f26c433545579475377b2b7588b6f1eac76a001e873ae3e19d"
+  url "https:files.pythonhosted.orgpackagesddbb4a1b7e3a7520e310cf7bfece43788071604e1ccf693a7f0c4638c59068d6build-1.2.2.tar.gz"
+  sha256 "119b2fb462adef986483438377a13b2f42064a2a3a4161f24a0cca698a07ac8c"
   license "MIT"
   head "https:github.compypabuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
-    sha256 cellar: :any_skip_relocation, ventura:        "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
-    sha256 cellar: :any_skip_relocation, monterey:       "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f685d6de8ad4b0d9779ea800b6c3b4a5f7af3caa5d4b8ea8064dff279fb6906"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
   end
 
   depends_on "python@3.12"
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pyproject-hooks" do
-    url "https:files.pythonhosted.orgpackages25c1374304b8407d3818f7025457b7366c8e07768377ce12edfe2aa58aa0f64cpyproject_hooks-1.0.0.tar.gz"
-    sha256 "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"
+    url "https:files.pythonhosted.orgpackagesc7076f63dda440d4abb191b91dc383b472dae3dd9f37e4c1e4a5c3db150531c6pyproject_hooks-1.1.0.tar.gz"
+    sha256 "4b37730834edbd6bd37f26ece6b44802fb1c1ee2ece0e54ddff8bfc06db86965"
   end
 
   def install

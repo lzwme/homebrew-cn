@@ -1,18 +1,18 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
   homepage "https:stripe.comdocsstripe-cli"
-  url "https:github.comstripestripe-cliarchiverefstagsv1.21.4.tar.gz"
-  sha256 "b6a68f63a4c6f474c077260a8a1fcec7865d24f746ca8c16fe46b64e03cb7450"
+  url "https:github.comstripestripe-cliarchiverefstagsv1.21.5.tar.gz"
+  sha256 "686fa158b5379e09b40e22efe262ef83823ae307ac34e0a610f4511d7c7876b0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "681682590cfeb1eab9fadfeaef14964e20227e98dc550959babe04e65b6fc0a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "925d466269379f7169c2df4b08b8070cdcc9beaaab809fbeb89e4f1c93432389"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53f46c2bbe3015aad4e53c3f1e9d29bc9a83344a09942973aeb8ab1b866319c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "688297000450c4b0d1e9bdce44c95f4efcb4fcddd85597106f3c2ad32482f1f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "185c5475e20684cb81573196851fb16331c9c1336ab15b92f7d4be17ef5a70be"
-    sha256 cellar: :any_skip_relocation, monterey:       "61778cdf4c49c8d2d82d34bceac006ab492693e58e3b01ab69d0885e86d7873b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e22597daadd21dcbccf34ec1158ff0bf5dd88258ce58608263e83ccf84920b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4eab747434250cee4fb894be0156db520cd39868c0ea0683a0f0791dd5a23c8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b91a0b5d703fb0f14375faafcef3839848801cf9bd54c40ccd4710aaef658bd9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd5f9e7cba7d1e59bace69466968b5fc3dcdb814e841b51a96b5f6f2a9cc483d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "15d8ab8b769b7b9b4f68904ee4372f8333da05b548f7f9c40172842fd2d4bb61"
+    sha256 cellar: :any_skip_relocation, ventura:        "111fc1b36a1e88f5c9fbe25abf646ecabe317312fd2238f898fb50a1a4a3a650"
+    sha256 cellar: :any_skip_relocation, monterey:       "85e0e995e652a3bceb52de478dbcd06f83cd6e684bc5136a9033a4dfbf9921e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2734f28366a3ea2a2ed5d5cad60ebd3ab83a19dc56a1bc0bd3d77397c078a974"
   end
 
   depends_on "go" => :build

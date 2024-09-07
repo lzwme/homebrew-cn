@@ -1,19 +1,18 @@
 class Libcoap < Formula
   desc "Lightweight application-protocol for resource-constrained devices"
   homepage "https:github.comobgmlibcoap"
-  url "https:github.comobgmlibcoaparchiverefstagsv4.3.4a.tar.gz"
-  version "4.3.4a"
-  sha256 "45f1aabbb5f710e841c91d65fc3f37c906d42e8fc44dd04979e767d3960a77cf"
+  url "https:github.comobgmlibcoaparchiverefstagsv4.3.5.tar.gz"
+  sha256 "a417ed26ec6c95c041b42353b5b6fad1602e2bf42a6e26c09863450e227b7b5f"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2838cc25f928d4364af73515af2793c3e0cc101cdeb341a349261af6245e90fd"
-    sha256 cellar: :any,                 arm64_ventura:  "a3e4f7f5076a275eddc953414e7ebef21ab7bc1de31dd9e7f8807803d32325e5"
-    sha256 cellar: :any,                 arm64_monterey: "d31e6ee6218f56fa932f1d281275cace2b74bd93417ab77c9155d8b616c6822e"
-    sha256 cellar: :any,                 sonoma:         "25f96ff147ca6109379284a132216026e6b8c2e26b5d704be4d23b2a4718de01"
-    sha256 cellar: :any,                 ventura:        "09fc71d739f47c175bb2be5c5ec76c00b013537d6d45477676f5b02908451a0b"
-    sha256 cellar: :any,                 monterey:       "6b4f746b5c9da80cd199c36a7f1154b7fd51755915f64caf4923fe463421c601"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d304c37828623c62c1c1f400f01ee2442ef19ff3d726a44c3de9778ad624ae"
+    sha256 cellar: :any,                 arm64_sonoma:   "adf74e75f33dddc9743b724da6448cac42e9d9669332117eedf66590fa1dd9d3"
+    sha256 cellar: :any,                 arm64_ventura:  "6d39dc76cecd35963892f1aed2d9e7d66389d6c92a6fcab2c1dcaed985dafecb"
+    sha256 cellar: :any,                 arm64_monterey: "2b4ba6f3f52e7168aa0d15dca716fe6d920f48414e4432f9b3de874334f0d992"
+    sha256 cellar: :any,                 sonoma:         "fb9ecfcb47c75e493c096e3d2d9da010b10dfb335b5dd60a93fe49a6fb2830f5"
+    sha256 cellar: :any,                 ventura:        "054787d4613fec89f6c5d3be9d36c2731197f1075b3f614315c3b14e4fd54c70"
+    sha256 cellar: :any,                 monterey:       "d05b051c441b6d565bca208dd13ec7176efc5022b17c188828895425024c7cda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24b2cf100856f83699fa2e395f82ae26a730c8b5ff159aaea1b50167e1c137e5"
   end
 
   depends_on "autoconf" => :build
@@ -25,9 +24,7 @@ class Libcoap < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-examples",
-                          "--disable-manpages"
+    system ".configure", "--disable-examples", "--disable-manpages", *std_configure_args
     system "make"
     system "make", "install"
   end

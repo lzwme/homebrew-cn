@@ -4,6 +4,7 @@ class KnotResolver < Formula
   url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.7.2.tar.xz"
   sha256 "5f6a227390fcd4c2d0a8028a652b55a9d863ec7be01298fe038df1d273fb9a0f"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ca3e061098bf62a05472b8848b9878323507158825dc5eba3859aec145eef2c0"
-    sha256 arm64_ventura:  "92d971d8ea1a7869f3137997f0d57eb7979f22a17c979005341b5d4b0926c9de"
-    sha256 arm64_monterey: "2331dbb17923e62fea433d75e7df52571d25afc2554d594f66a4b64ab4b1fc40"
-    sha256 sonoma:         "5baee71ea5371ab075c20a4bec31ce979151d5ea280b3879fcd554d6f7dd0c9d"
-    sha256 ventura:        "59c31aa06e7e22f558cb68e77abb32bb21ee2c5ec17c7f4a7d995685a13a66b6"
-    sha256 monterey:       "0a2a9f882b02b45fd1f579f4fbbd8c07ad435ad3c3d8b0f1016044c17d78a2bc"
-    sha256 x86_64_linux:   "a77943712ac31be3dc450e80958b4d89cb591e94c5c7d7437cdfa9de82249e5d"
+    sha256 arm64_sonoma:   "15dec163e7bf0696107328c5aa631008bc1aa80da6b3dc3f61084d95eee9fb8a"
+    sha256 arm64_ventura:  "428e8c668dd8e505cb466b61768bf68a00bec6df74f5127df4ff9ffda996fbb9"
+    sha256 arm64_monterey: "1b1abdbbd510f69ad88f4d017f49aee7f6390aba39e7db5cff0c6e261b305f6b"
+    sha256 sonoma:         "ea8eaede7c0958475f25e78427ea7c6615d25a2ad23d2f3f5464771a23b929e7"
+    sha256 ventura:        "c4599e3b84e79e3ec10205ee4301441e98d01bcc87fc4a81c5ec23bfacf93e08"
+    sha256 monterey:       "d5742ec68d6657fc91f7037b79c7c36d52715f5cfef9f368cdbccb3376cbc61c"
+    sha256 x86_64_linux:   "3153b8157b8b0da93222eb84d0565bd8c651dc95e29a8174ec438acde50666c1"
   end
 
   depends_on "meson" => :build
