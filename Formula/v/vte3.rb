@@ -83,7 +83,7 @@ class Vte3 < Formula
   end
 
   test do
-    ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
+    ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1500)
 
     (testpath/"test.c").write <<~EOS
       #include <vte/vte.h>

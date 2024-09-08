@@ -22,17 +22,20 @@ class Wasm3 < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "cmake", "--build", "."
-      bin.install "wasm3"
-    end
-    # fib32.wasm is used for testing
-    prefix.install "testlangfib32.wasm"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "buildwasm3"
   end
 
   test do
+    resource "homebrew-fib32.wasm" do
+      url "https:github.comwasm3wasm3rawae7b69b6d2f4d8561c907d1714d7e68b48cddd9etestlangfib32.wasm"
+      sha256 "80073d9035c403b6caf62252600c5bda29cf2fb5e3f814ba723640fe047a6b87"
+    end
+
+    testpath.install resource("homebrew-fib32.wasm")
+
     # Run function fib(24) and check the result is 46368
-    assert_equal "Result: 46368", shell_output("#{bin}wasm3 --func fib #{prefix}fib32.wasm 24 2>&1").strip
+    assert_equal "Result: 46368", shell_output("#{bin}wasm3 --func fib fib32.wasm 24 2>&1").strip
   end
 end

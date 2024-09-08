@@ -28,9 +28,23 @@ class Libmatroska < Formula
   depends_on "libebml"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DBUILD_SHARED_LIBS=YES", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath"test.cpp").write <<~EOS
+      #include <matroskaKaxVersion.h>
+      #include <iostream>
+
+      int main() {
+        std::cout << "libmatroska version: " << libmatroska::KaxCodeVersion << std::endl;
+        return 0;
+      }
+    EOS
+
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmatroska"
+    assert_match version.to_s, shell_output(".test")
   end
 end

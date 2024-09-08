@@ -26,9 +26,26 @@ class Libebml < Formula
   fails_with gcc: "5"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath"test.cpp").write <<~EOS
+      #include <ebmlEbmlVoid.h>
+      #include <iostream>
+
+      int main() {
+        libebml::EbmlVoid void_element;
+        void_element.SetSize(1024);
+
+        std::cout << "EbmlVoid element created with size: 1024" << std::endl;
+        return 0;
+      }
+    EOS
+
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lebml"
+    system ".test"
   end
 end

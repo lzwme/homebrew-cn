@@ -1,21 +1,19 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https:janet-lang.org"
-  url "https:github.comjanet-langjanetarchiverefstagsv1.35.2.tar.gz"
-  sha256 "947dfdab6c1417c7c43efef2ecb7a92a3c339ce2135233fe88323740e6e7fab1"
+  url "https:github.comjanet-langjanetarchiverefstagsv1.36.0.tar.gz"
+  sha256 "104aa500d4a43c2c147851823fd8b7cd06a90d01efcdff71529ff1fa68953bb4"
   license "MIT"
-  revision 1
   head "https:github.comjanet-langjanet.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "40f4f632fdbbae7b5f11b705515a1b6f324e8181ae988436471bb06d13aaf226"
-    sha256 cellar: :any,                 arm64_ventura:  "e3876dc47ec753e6f38b7743f106a5ee27b1b39dffda25ffbea526e14e281a12"
-    sha256 cellar: :any,                 arm64_monterey: "aeefa31ebc70de186e6c0a76bdb9c2c3a5b6106decf6155089d58dc16251c9b4"
-    sha256 cellar: :any,                 sonoma:         "904739f0a4fd134a20413ea1b5d374a2d19381baa57044d8dcb44955ad0aaf16"
-    sha256 cellar: :any,                 ventura:        "6ddc5a43bcbd95ab847f0e890c0948c29e5547d9f9f69ad7d1abec1e7e166569"
-    sha256 cellar: :any,                 monterey:       "096bc375b1e29a0ef618b12ade14b481bfb632df0a579126c7e39293f734452f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21ecea304e49668de1310508cb15ed1cc33512c4548bf2417b0c4b700d3bcbc9"
+    sha256 cellar: :any,                 arm64_sonoma:   "e7c36debecfa40897430a04f17e896e0d6bfb91c9fa37b807fb6e745a9061d73"
+    sha256 cellar: :any,                 arm64_ventura:  "7707626fcbfe7db67eb46ab561bbd73c25b45976923a2cad3b7a696c13d0b950"
+    sha256 cellar: :any,                 arm64_monterey: "5cba1dd7c97ea227290e96d3ca1777b145e0081609facf9080e53d123fc20dd8"
+    sha256 cellar: :any,                 sonoma:         "871eb81b94c60a5285aa57a3c5fb736e128ebd83897ecea299553ee4ce3797d7"
+    sha256 cellar: :any,                 ventura:        "2d9485db23324a40353d08dcb52882306b7894c91b6c3b3544e6bbb5760d85f0"
+    sha256 cellar: :any,                 monterey:       "5d9df5ea2af467b8046e235f2483d5e6ab98ba7ed96e8e3e71a05d4deac34529"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b06680fa89ee4af21f0985861bd923a105045f0c459243c86c4714fb4d33e3dd"
   end
 
   resource "jpm" do

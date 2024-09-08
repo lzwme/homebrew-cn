@@ -13,11 +13,13 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "e538e3816a96d54c31916b243dec6eda6f7ef4e5a32d3db49c77d957b0bfc63c"
-    sha256 cellar: :any, arm64_ventura:  "a054884f48d5e3e62f6cab93504643304fb0b097ef30c8a6b8d2e24dfc2a4395"
-    sha256 cellar: :any, arm64_monterey: "ec70f78fd7c1f1a7430533c2a4cf9768d1503835df9600f4aac860738750181b"
-    sha256 cellar: :any, sonoma:         "068cadda10a597b0293219b3db7424087454a17448ee3c087ae7c0cdeecca3f4"
-    sha256 cellar: :any, ventura:        "ccc10d2e356806eecb1bdf34e0ac4ea98d51ee9ac90831d2499e4b89903c90a0"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "5f01f35877de5721c8f174fe5ae627c253e5ea2d45604ae72920f2b0b3b481e9"
+    sha256 cellar: :any, arm64_ventura:  "2e234231324e6e0cc9ae47b16e7b1a0bd8b5a9319f44cafb3b337aee3d85209b"
+    sha256 cellar: :any, arm64_monterey: "5a3fae7b49784b9405f1f87717619bf8c4fde0439621b64fcd3db1aac4e1173c"
+    sha256 cellar: :any, sonoma:         "23f33a6156a3af65691f1428cf54ef7924a9c1537c5ae7dad1d5deee62b57803"
+    sha256 cellar: :any, ventura:        "88f0b35e9074d68bea5fc42dcc224539991a963018572716ad22d930da932b75"
+    sha256 cellar: :any, monterey:       "9704cb40bea57fed436fd5d81eed710114d81f241c3984b0279e16fc13febcb0"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -193,7 +195,11 @@ class Julia < Formula
     ]
 
     assert_equal "4", shell_output("#{bin}julia #{args.join(" ")} --print '2 + 2'").chomp
-    system bin"julia", *args, "--eval", 'Base.runtests("core")'
+
+    if OS.linux? || Hardware::CPU.arm? || MacOS.version > :monterey
+      # This test times out on 12-x86_64.
+      system bin"julia", *args, "--eval", 'Base.runtests("core")'
+    end
 
     # Check that installing packages works.
     # https:github.comorgsHomebrewdiscussions2749

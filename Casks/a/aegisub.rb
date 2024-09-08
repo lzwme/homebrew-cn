@@ -7,10 +7,8 @@ cask "aegisub" do
   desc "Create and modify subtitles"
   homepage "https:github.comAegisubAegisub"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  # https:github.comAegisubAegisubissues336
+  deprecate! date: "2024-09-06", because: :unmaintained
 
   app "Aegisub.app"
 

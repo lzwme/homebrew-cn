@@ -23,27 +23,25 @@ class Muparser < Formula
 
   def install
     ENV.cxx11 if OS.linux?
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DENABLE_OPENMP=OFF"
-      system "make", "install"
-    end
+
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_OPENMP=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include "muParser.h"
+      #include <muParser.h>
 
-      double MySqr(double a_fVal)
-      {
+      double MySqr(double a_fVal) {
         return a_fVal*a_fVal;
       }
 
-      int main(int argc, char* argv[])
-      {
+      int main() {
         using namespace mu;
-        try
-        {
+
+        try {
           double fVal = 1;
           Parser p;
           p.DefineVar("a", &fVal);
@@ -55,17 +53,15 @@ class Muparser < Formula
             fVal = a;   Change value of variable a
             std::cout << p.Eval() << std::endl;
           }
-        }
-        catch (Parser::exception_type &e)
-        {
+        } catch (Parser::exception_type &e) {
           std::cout << e.GetMsg() << std::endl;
         }
+
         return 0;
       }
     EOS
-    system ENV.cxx, "-std=c++11", "-I#{include}",
-           testpath"test.cpp", "-L#{lib}", "-lmuparser",
-           "-o", testpath"test"
+
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmuparser"
     system ".test"
   end
 end

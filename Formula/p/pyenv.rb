@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https:github.compyenvpyenv"
-  url "https:github.compyenvpyenvarchiverefstagsv2.4.11.tar.gz"
-  sha256 "92db49a5352213e519301aa1ce161c012d08835e482b10f420d188b30804b3a3"
+  url "https:github.compyenvpyenvarchiverefstagsv2.4.12.tar.gz"
+  sha256 "a67b092775f2b26defa385fb29b66cc3681f55b044eca5bffe53c911de4ab239"
   license "MIT"
   version_scheme 1
   head "https:github.compyenvpyenv.git", branch: "master"
@@ -13,13 +13,13 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7c39c8ea9596c615c33e8aab483e98c7f4b7bfa93a71e98532fad8ff9af5e4dc"
-    sha256 cellar: :any,                 arm64_ventura:  "6455e40651275e47f659b86f34df83d4199e37a19c023ef75e3d5820c6cfea52"
-    sha256 cellar: :any,                 arm64_monterey: "a72c900b69af7b5fdb824dccc2045c7eaf1c14b89f15935473246c8b2c7d9865"
-    sha256 cellar: :any,                 sonoma:         "efe72ea550737af8723d528fbd3d0ed689caaae59f94d9a0090669c7ce65534b"
-    sha256 cellar: :any,                 ventura:        "a8adc4376e624ff3af9d020a58a318ab8f588a298e8977a1631d35594f431e9d"
-    sha256 cellar: :any,                 monterey:       "7e26bfaac89bf2eee07a781a34f81137334dcf6b4ab23822b57bfeca81ddce2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34e8d56b0cb3d0b8dc57f11565da4f5e362f708026248b68ddc8a4b275632021"
+    sha256 cellar: :any,                 arm64_sonoma:   "df3a3424a5a7aec3ce6d3c4e874b44b4e0eef0feb322d0dfa50f044669d96840"
+    sha256 cellar: :any,                 arm64_ventura:  "2852285936a1d35ecb409c7c48fe830c880b124620e82e7c0f4c988ef961302d"
+    sha256 cellar: :any,                 arm64_monterey: "8f8b6a020b52c38453addc56623cf54154266ac3971599b5b53f432d5f3703a6"
+    sha256 cellar: :any,                 sonoma:         "2b4149ba7a5bfd0dc51f9f79aebc2e592d1e8d99372ffc41dda598a8194b60f8"
+    sha256 cellar: :any,                 ventura:        "5716572b7976433d6762cbdadef738798966c185b9792eb32acbabd1403bb724"
+    sha256 cellar: :any,                 monterey:       "e2df95bd2620261b54ff8b123dd82f4a5c91437a8282ac28ce0219e9c056df40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e94ee2efe51b69049e756444616861939d5ab7bb2f3e1f677215fb761517d963"
   end
 
   depends_on "autoconf"

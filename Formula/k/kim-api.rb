@@ -31,7 +31,7 @@ class KimApi < Formula
   uses_from_macos "xz"
 
   def install
-    args = std_cmake_args + [
+    args = [
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
       # adjust libexec dir
       "-DCMAKE_INSTALL_LIBEXECDIR=lib",
@@ -52,12 +52,10 @@ class KimApi < Formula
       args << "-DKIM_API_CMAKE_CXX_COMPILER=/usr/bin/g++"
     end
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "docs"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--build", "build", "--target", "docs"
+    system "cmake", "--install", "build"
   end
 
   test do

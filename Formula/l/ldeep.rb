@@ -3,19 +3,19 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https:github.comfranc-pentestldeep"
-  url "https:files.pythonhosted.orgpackagese2fe02f2a188efa0ef74a2700b21e8bca452e89a885d845abcfd5ec0c6b3087eldeep-1.0.61.tar.gz"
-  sha256 "87187cf5a446c85cdd12c24de2ab213e3873138a0e92fc3e04bac37066a8756a"
+  url "https:files.pythonhosted.orgpackages03f75301b9ff1ab0199c433acd7a4cee27682165dc95e615d27e160f80b9cc7aldeep-1.0.62.tar.gz"
+  sha256 "1424d2c6f63d6e665e87c5d4a49d366b1cfced9d544c5f31b531520788954a3d"
   license "MIT"
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3eb91f1ee81eacce09e106d1b75ed0af69ead1f8170816614177614ef7a04fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66f00d73dd7a6090c8776034ed3c49a2c182a8978458c5d3973fe9ae427ee91d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3da488cd4d0feda13a08e3dac91af8b8022261956fa5071211e857c50758a73"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10a5397268040b5156b584911bb1bd79343c65c4f4febcf5726549668267bb6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d0ee22c3dacd4080130b15376818d5771266d0227283e9320abf04706828a00"
-    sha256 cellar: :any_skip_relocation, monterey:       "801ec607cacfd5d8b9ca7357e8fc31a886b86c16d0ffb73aece8fb326cde2a60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9197af28a62844876492fd2684bbf132698429ee2947f63ea857b48ed782fd56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22746ed5fd94521d8c6728beadb801728959299cb1c59e6cf6ba3b44547ee1d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cab8935b0122b7a1eff3162027521fd03fc7ff090a2b31a8f59457aabf900b3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "873d1886067e1c7672467ac5d7530643707ca3ecd0a44dd65c425e274485912c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "53473f3a06c58bd2c1e23e281e8e3ae86fe6c7da43429ec39df9ae9502fc91e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac8caff601f3078d73a305b3ec64ed93be98e8c67c5085f8944ce8591a5c2371"
+    sha256 cellar: :any_skip_relocation, monterey:       "7298a8eae56867a00263ccd57a3b3f9abb7103b35bc9feb9204e19dfa6a6bce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fcd7050ed9fe8590dd1f9e5bca1fb6368d40f8d77e71b0f7e11a02b238044bf"
   end
 
   depends_on "cryptography"

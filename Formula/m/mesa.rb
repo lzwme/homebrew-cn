@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-24.2.1.tar.xz"
-  sha256 "fc9a495f3a9af906838be89367564e10ef335e058f88965ad49ccc3e9a3b420b"
+  url "https://mesa.freedesktop.org/archive/mesa-24.2.2.tar.xz"
+  sha256 "fd077d3104edbe459e2b8597d2757ec065f9bd2d620b8c0b9cc88c2bf9891d02"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,13 +23,13 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "fa1b5453021bb70464293aa8ecb4a4f9a38c9d4795781908666a980362bd6a57"
-    sha256 arm64_ventura:  "7604f1ccbbc2e670ea52f3f30b4fa30151b35d94a78e6d9b830fc82cc2039301"
-    sha256 arm64_monterey: "5ddbcc475e4d0a2851e116068e24df927a58e5ec72dd25e120c6b88151c9a0d8"
-    sha256 sonoma:         "d7224e1feaca0fd226bed4a527f53d9b1c494e5adb0116f184d76c1b4b02d992"
-    sha256 ventura:        "8731b6469ba684f65546b1d559d7292fff0f5efe0779e6946f2710808a7feac8"
-    sha256 monterey:       "a60a57fdec6d7f81d07c9bb10d71d6f71096586111db85088d88226a2051cc3c"
-    sha256 x86_64_linux:   "aeb781f7d394a8d0c01bf137ace7afc9c6894080a012116213a1b6a679973403"
+    sha256 arm64_sonoma:   "ef83b8e4fecdeae04ff9b04879c00a7e53477a3e484c57aa504c7069acfbb685"
+    sha256 arm64_ventura:  "81966d69090662e0ed4775a5948d945c1308942f0029bad91e5d1d79a254d57a"
+    sha256 arm64_monterey: "c2cbe117066a30c2b4412b70bd868f3a2cb36317af136bbfbc927b82f75bb828"
+    sha256 sonoma:         "115ddb20c6001b009a0d8df2764fa60e69245cf0011a417237bdf8ae1b3bffe8"
+    sha256 ventura:        "fc5cbc7e515fd41774e1d969977794fa4cbc2fea54a418ae22319d3b6b957e5c"
+    sha256 monterey:       "c38947888449d19b8822c90439d7b4be693483f6c9a3dc9053461afd4576c791"
+    sha256 x86_64_linux:   "53e4a61bec12e8199e7c002f82e20fdfbc1253e156092c0fe92bef1738338ccd"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'

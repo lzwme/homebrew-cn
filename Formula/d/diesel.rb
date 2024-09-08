@@ -7,18 +7,19 @@ class Diesel < Formula
   head "https:github.comdiesel-rsdiesel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1ea36a6c69e547713f98a97330b279be69d5b690f6c7d30321959aa6980bf79f"
-    sha256 cellar: :any,                 arm64_ventura:  "25379aa34259c1206b1daf2ff9c9d9e1c2967ed203e30d3263e8739de1ef483a"
-    sha256 cellar: :any,                 arm64_monterey: "ae2e11d241fd659c0533a66635a80ac5d567204fe15c0409bc1e8ec9a40bbb28"
-    sha256 cellar: :any,                 sonoma:         "0684d4df055decc78dc9b03fec322563cba6b9d2907a06fff9814471b2dc787a"
-    sha256 cellar: :any,                 ventura:        "d06ba8dd2ac936674894e98d8fd4d850be45c46707ee086e1d53dc0ad73b3d0b"
-    sha256 cellar: :any,                 monterey:       "8df05adc2ac176b7bc38cb6a660b8853ee707ac9acff7d99dff7a259d950326a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d472ce4cf117dd30da2695aa8001a99f73ff10abaf7f99620c8f953e84c40ea5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d75cce8c52f8c343cbcc9a94b03705e99aa480ebbcf678d612cd2fdbd98d8b9d"
+    sha256 cellar: :any,                 arm64_ventura:  "4eb44dec232aa975d392b48a41ea5cf9f5e1b548e85113175cedb354ee224c0b"
+    sha256 cellar: :any,                 arm64_monterey: "e0cc0f7623c8188e032e57a5ac1b6cb2329dfd2dfe76101a7cd9abf66c0fcf73"
+    sha256 cellar: :any,                 sonoma:         "36b15705649d70cc7a8d6f53751c9e8c5d49140c8e594639b037288768d97119"
+    sha256 cellar: :any,                 ventura:        "43ee571371293e18488964b71636a3101898f365709af26ed6cf47522e065710"
+    sha256 cellar: :any,                 monterey:       "d80e8fadf7f528f081c7591f46641530269b031e0b96e4ad6dd0d4552057d64c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dea99a1c98fc0d9376737db7737606f1a79b427dca5deced0c5b498e81f4a79f"
   end
 
   depends_on "rust" => [:build, :test]
   depends_on "libpq"
-  depends_on "mysql-client@8.4"
+  depends_on "mysql-client"
 
   uses_from_macos "sqlite"
 

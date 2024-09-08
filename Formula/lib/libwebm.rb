@@ -18,12 +18,11 @@ class Libwebm < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "macbuild" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      lib.install "libwebm.a"
-      bin.install %w[mkvparser_sample mkvmuxer_sample vttdemux webm2pes]
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    lib.install "buildlibwebm.a"
+    bin.install Dir["build{mkvparser_sample,mkvmuxer_sample,vttdemux,webm2pes}"]
+
     include.install Dir.glob("mkv*.hpp")
     (include"mkvmuxer").install Dir.glob("mkvmuxermkv*.h")
     (include"common").install Dir.glob("common*.h")
@@ -34,13 +33,26 @@ class Libwebm < Formula
   test do
     (testpath"test.cpp").write <<~EOS
       #include <mkvwriter.hpp>
-      int main()
-      {
+      #include <iostream>
+
+      int main() {
         mkvmuxer::MkvWriter writer;
+
+        std::string test_mkv = "#{testpath}test.mkv";
+
+        if (!writer.Open(test_mkv.c_str())) {
+          std::cerr << "Failed to open the MKV file." << std::endl;
+          return 1;
+        }
+
+        writer.Close();
+        std::cout << "MkvWriter test completed successfully." << std::endl;
         return 0;
       }
     EOS
-    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lwebm", "-o", "test"
+
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lwebm"
     system ".test"
+    assert_predicate testpath"test.mkv", :exist?
   end
 end

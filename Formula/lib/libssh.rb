@@ -22,21 +22,23 @@ class Libssh < Formula
   uses_from_macos "zlib"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DBUILD_STATIC_LIB=ON",
-                            "-DWITH_SYMBOL_VERSIONING=OFF",
-                            *std_cmake_args
-      system "make", "install"
-      lib.install "src/libssh.a"
-    end
+    args = %w[
+      -DBUILD_STATIC_LIB=ON
+      -DWITH_SYMBOL_VERSIONING=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    lib.install "build/src/libssh.a"
   end
 
   test do
     (testpath/"test.c").write <<~EOS
       #include <libssh/libssh.h>
       #include <stdlib.h>
-      int main()
-      {
+
+      int main() {
         ssh_session my_ssh_session = ssh_new();
         if (my_ssh_session == NULL)
           exit(-1);
@@ -44,8 +46,8 @@ class Libssh < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}", testpath/"test.c",
-           "-L#{lib}", "-lssh", "-o", testpath/"test"
+
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lssh"
     system "./test"
   end
 end

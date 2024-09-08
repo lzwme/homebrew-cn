@@ -34,10 +34,27 @@ class Itpp < Formula
     # Reported upstream at: https://sourceforge.net/p/itpp/bugs/262/
     mv "VERSION", "VERSION.txt"
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath/"test.cpp").write <<~EOS
+      #include <itpp/itcomm.h>
+      #include <iostream>
+
+      int main() {
+        itpp::BPSK bpsk;
+        itpp::bvec input_bits = "0 1 0 1";
+        itpp::vec modulated_signal;
+        bpsk.modulate_bits(input_bits, modulated_signal);
+        std::cout << "Modulated signal: " << modulated_signal << std::endl;
+        return 0;
+      }
+    EOS
+
+    system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-litpp"
+    system "./test"
   end
 end

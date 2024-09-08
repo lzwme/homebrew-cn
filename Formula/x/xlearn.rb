@@ -23,15 +23,13 @@ class Xlearn < Formula
   def install
     inreplace "CMakeLists.txt", "set(CMAKE_INSTALL_PREFIX \"xLearn\")", ""
 
-    mkdir "build" do
-      system "cmake", "..", "-DCMAKE_MACOSX_RPATH=TRUE", *std_cmake_args
-      system "make"
-      system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_MACOSX_RPATH=TRUE", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-      bin.install "xlearn_train"
-      bin.install "xlearn_predict"
-      lib.install "lib#{shared_library("libxlearn_api")}"
-    end
+    bin.install "buildxlearn_train"
+    bin.install "buildxlearn_predict"
+    lib.install "buildlib#{shared_library("libxlearn_api")}"
 
     pkgshare.install "demo"
   end

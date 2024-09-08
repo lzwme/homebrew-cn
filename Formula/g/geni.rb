@@ -1,18 +1,18 @@
 class Geni < Formula
   desc "Standalone database migration tool"
   homepage "https:github.comemilprivergeni"
-  url "https:github.comemilprivergeniarchiverefstagsv1.1.1.tar.gz"
-  sha256 "a24239a3c220e1285ef386444e03bcab3620348a4f3cf8d7cac7b6fcd985de30"
+  url "https:github.comemilprivergeniarchiverefstagsv1.1.2.tar.gz"
+  sha256 "b1ab7f06273b0d14fd5f8b41dd8baf66a1e8b979220be1ad1d27c162cdb16ee8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a4ec8f6576f76c321a8f751886bcb38a3fd403f2cf90eccf06ab9c80c9c5154"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c9a5f7b6f8ead19a108aa5964d969d3a74a2acb45da2ba07955e1da101d7772"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9846b1f612a5241c7449703f896b0ad95e2ff0058b33d2499dbaae4010128479"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e85d99e7a164955dbb55d2060c210060d5c9371bddfc58c3223011a987e5368"
-    sha256 cellar: :any_skip_relocation, ventura:        "32678ed810c9331c11e859a9e1b947e23724b747a81e65d1036ea5d0a804e2ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff2c74e9cd9642b47c81da2dac17a4bd2451fdf8697c7cb28b46d049dd389f16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18ed74a9c3748ff5cb54b8d2ecb15509316a0dd48d161b98c31987c742f0322d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "820704ef0efbaa0dea4d43c037365cc0f6962fbf2207797265be502665b4e03c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c20d99210faa7dbb5d3c209a6e7033fd3d98c8ff9d548a2525969e452b22dd76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "51620d1bde2bf1cc9d7cc5058526162b7e91e7bc70e256f10e2acf9226a9ef3d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02c7fd0e5d2dcdfb0ecd32c8bb1f49a831409489c026097591b162acd9591fa9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5cfe483e86bdc7297668582ac8859922ee2a1e42f92bf42c806e443b75ea578a"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ef4f1ab5ecbf393bbac3c48f81f4dac5d30bcfce21e4d2824d2fdb04061535b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f4a2b579700bb7880a656741b58dd8d4c219fa1c0e475454a72580bf4822ac4"
   end
 
   depends_on "rust" => :build

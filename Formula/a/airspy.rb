@@ -25,19 +25,32 @@ class Airspy < Formula
   depends_on "libusb"
 
   def install
-    args = std_cmake_args
-
-    libusb = Formula["libusb"]
-    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-1.0"
-    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_lib}#{shared_library("libusb-1.0")}"
-
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}airspy_lib_version").chomp
+    (testpath"test.c").write <<~EOS
+      #include <stdio.h>
+      #include <libairspyairspy.h>
+
+      int main() {
+        airspy_lib_version_t lib_version;
+        airspy_lib_version(&lib_version);
+
+        printf("Airspy library version: %d.%d.%d\\n",
+               lib_version.major_version,
+               lib_version.minor_version,
+               lib_version.revision);
+
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "test.c", "-L#{lib}", "-lairspy", "-o", "test"
+    assert_match version.to_s, shell_output(".test")
+
+    assert_match version.to_s, shell_output("#{bin}airspy_lib_version --version")
   end
 end

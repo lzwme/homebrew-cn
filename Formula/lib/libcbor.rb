@@ -18,27 +18,29 @@ class Libcbor < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DWITH_EXAMPLES=OFF", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    args = %w[
+      -DWITH_EXAMPLES=OFF
+      -DBUILD_SHARED_LIBS=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath"example.c").write <<-EOS
-    #include "cbor.h"
-    #include <stdio.h>
-    int main(int argc, char * argv[])
-    {
-      printf("Hello from libcbor %s\\n", CBOR_VERSION);
-      printf("Pretty-printer support: %s\\n", CBOR_PRETTY_PRINTER ? "yes" : "no");
-      printf("Buffer growth factor: %f\\n", (float) CBOR_BUFFER_GROWTH);
-    }
+      #include "cbor.h"
+      #include <stdio.h>
+
+      int main() {
+        printf("Hello from libcbor %s\\n", CBOR_VERSION);
+        printf("Pretty-printer support: %s\\n", CBOR_PRETTY_PRINTER ? "yes" : "no");
+        printf("Buffer growth factor: %f\\n", (float) CBOR_BUFFER_GROWTH);
+      }
     EOS
 
-    system ENV.cc, "-std=c99", "example.c", "-L#{lib}", "-lcbor", "-o", "example"
-    system ".example"
-    puts `.example`
+    system ENV.cc, "-std=c99", "example.c", "-o", "test", "-L#{lib}", "-lcbor"
+    system ".test"
   end
 end

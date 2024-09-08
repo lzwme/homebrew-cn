@@ -1,7 +1,7 @@
 class Xnvme < Formula
   desc "Cross-platform libraries and tools for efficient IO and low-level control"
   homepage "https:xnvme.io"
-  url "https:github.comOpenMPDKxNVMereleasesdownloadv0.7.4xnvme-src-0.7.4.tar.gz"
+  url "https:github.comxnvmexnvmereleasesdownloadv0.7.4xnvme-fat-0.7.4.tar.gz"
   sha256 "6dd17ec256a3801d28f1e068aa1f61e82cf9a42eb30fcc81322ef04f637855f9"
   license "BSD-3-Clause"
 

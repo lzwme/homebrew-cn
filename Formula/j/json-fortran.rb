@@ -21,12 +21,14 @@ class JsonFortran < Formula
   depends_on "gcc" # for gfortran
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args,
-                            "-DUSE_GNU_INSTALL_CONVENTION:BOOL=TRUE",
-                            "-DENABLE_UNICODE:BOOL=TRUE"
-      system "make", "install"
-    end
+    args = %w[
+      -DUSE_GNU_INSTALL_CONVENTION:BOOL=TRUE
+      -DENABLE_UNICODE:BOOL=TRUE
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

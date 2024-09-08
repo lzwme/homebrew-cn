@@ -22,11 +22,9 @@ class Log4cxx < Formula
   fails_with gcc: "5" # needs C++17 or Boost
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -43,6 +41,7 @@ class Log4cxx < Formula
         return 1;
       }
     EOS
+
     (testpath/"log4cxx.config").write <<~EOS
       log4j.rootLogger=debug, stdout, R
 
@@ -62,6 +61,7 @@ class Log4cxx < Formula
       log4j.appender.R.layout=org.apache.log4j.PatternLayout
       log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
     EOS
+
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-L#{lib}", "-llog4cxx"
     assert_match(/ERROR.*Foo/, shell_output("./test", 1))
   end

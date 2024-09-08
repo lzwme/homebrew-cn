@@ -27,15 +27,15 @@ class Libcds < Formula
     # Change the install library directory for x86_64 arch to `lib`
     inreplace "CMakeLists.txt", "set(LIB_SUFFIX \"64\")", ""
 
-    mkdir "_build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "_build", *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
   end
 
   test do
     (testpath"test.cpp").write <<~EOS
       #include <cdsinit.h>
+
       int main() {
         cds::Initialize();
         cds::threading::Manager::attachThread();
@@ -43,6 +43,7 @@ class Libcds < Formula
         return 0;
       }
     EOS
+
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}", "-lcds", "-lpthread"
     system ".test"
   end

@@ -1,16 +1,16 @@
 class Nginx < Formula
-  desc "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
-  homepage "https://nginx.org/"
+  desc "HTTP(S) server and reverse proxy, and IMAPPOP3 proxy server"
+  homepage "https:nginx.org"
   # Use "mainline" releases only (odd minor version number), not "stable"
-  # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.27.1.tar.gz"
+  # See https:www.nginx.comblognginx-1-12-1-13-released for why
+  url "https:nginx.orgdownloadnginx-1.27.1.tar.gz"
   sha256 "bd7ba68a6ce1ea3768b771c7e2ab4955a59fb1b1ae8d554fedb6c2304104bdfc"
   license "BSD-2-Clause"
-  head "https://hg.nginx.org/nginx/", using: :hg
+  head "https:github.comnginxnginx", branch: "master"
 
   livecheck do
     url :homepage
-    regex(%r{nginx[._-]v?(\d+(?:\.\d+)+)</a>\nmainline version}i)
+    regex(%r{nginx[._-]v?(\d+(?:\.\d+)+)<a>\nmainline version}i)
   end
 
   bottle do
@@ -31,13 +31,13 @@ class Nginx < Formula
 
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
-    (pkgshare/"src").mkpath
-    system "tar", "-cJf", (pkgshare/"src/src.tar.xz"), "."
+    (pkgshare"src").mkpath
+    system "tar", "-cJf", (pkgshare"srcsrc.tar.xz"), "."
 
     # Changes default port to 8080
-    inreplace "conf/nginx.conf" do |s|
+    inreplace "confnginx.conf" do |s|
       s.gsub! "listen       80;", "listen       8080;"
-      s.gsub! "    #}\n\n}", "    #}\n    include servers/*;\n}"
+      s.gsub! "    #}\n\n}", "    #}\n    include servers*;\n}"
     end
 
     openssl = Formula["openssl@3"]
@@ -48,19 +48,19 @@ class Nginx < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --sbin-path=#{bin}/nginx
+      --sbin-path=#{bin}nginx
       --with-cc-opt=#{cc_opt}
       --with-ld-opt=#{ld_opt}
-      --conf-path=#{etc}/nginx/nginx.conf
-      --pid-path=#{var}/run/nginx.pid
-      --lock-path=#{var}/run/nginx.lock
-      --http-client-body-temp-path=#{var}/run/nginx/client_body_temp
-      --http-proxy-temp-path=#{var}/run/nginx/proxy_temp
-      --http-fastcgi-temp-path=#{var}/run/nginx/fastcgi_temp
-      --http-uwsgi-temp-path=#{var}/run/nginx/uwsgi_temp
-      --http-scgi-temp-path=#{var}/run/nginx/scgi_temp
-      --http-log-path=#{var}/log/nginx/access.log
-      --error-log-path=#{var}/log/nginx/error.log
+      --conf-path=#{etc}nginxnginx.conf
+      --pid-path=#{var}runnginx.pid
+      --lock-path=#{var}runnginx.lock
+      --http-client-body-temp-path=#{var}runnginxclient_body_temp
+      --http-proxy-temp-path=#{var}runnginxproxy_temp
+      --http-fastcgi-temp-path=#{var}runnginxfastcgi_temp
+      --http-uwsgi-temp-path=#{var}runnginxuwsgi_temp
+      --http-scgi-temp-path=#{var}runnginxscgi_temp
+      --http-log-path=#{var}lognginxaccess.log
+      --error-log-path=#{var}lognginxerror.log
       --with-compat
       --with-debug
       --with-http_addition_module
@@ -91,31 +91,31 @@ class Nginx < Formula
       --with-stream_ssl_preread_module
     ]
 
-    (pkgshare/"src/configure_args.txt").write args.join("\n")
+    (pkgshare"srcconfigure_args.txt").write args.join("\n")
 
     if build.head?
-      system "./auto/configure", *args
+      system ".autoconfigure", *args
     else
-      system "./configure", *args
+      system ".configure", *args
     end
 
     system "make", "install"
     if build.head?
-      man8.install "docs/man/nginx.8"
+      man8.install "docsmannginx.8"
     else
-      man8.install "man/nginx.8"
+      man8.install "mannginx.8"
     end
   end
 
   def post_install
-    (etc/"nginx/servers").mkpath
-    (var/"run/nginx").mkpath
+    (etc"nginxservers").mkpath
+    (var"runnginx").mkpath
 
-    # nginx's docroot is #{prefix}/html, this isn't useful, so we symlink it
-    # to #{HOMEBREW_PREFIX}/var/www. The reason we symlink instead of patching
+    # nginx's docroot is #{prefix}html, this isn't useful, so we symlink it
+    # to #{HOMEBREW_PREFIX}varwww. The reason we symlink instead of patching
     # is so the user can redirect it easily to something else if they choose.
-    html = prefix/"html"
-    dst = var/"www"
+    html = prefix"html"
+    dst = var"www"
 
     if dst.exist?
       rm_r(html)
@@ -129,53 +129,53 @@ class Nginx < Formula
 
     # for most of this formula's life the binary has been placed in sbin
     # and Homebrew used to suggest the user copy the plist for nginx to their
-    # ~/Library/LaunchAgents directory. So we need to have a symlink there
+    # ~LibraryLaunchAgents directory. So we need to have a symlink there
     # for such cases
-    sbin.install_symlink bin/"nginx" if rack.subdirs.any? { |d| d.join("sbin").directory? }
+    sbin.install_symlink bin"nginx" if rack.subdirs.any? { |d| d.join("sbin").directory? }
   end
 
   def caveats
     <<~EOS
-      Docroot is: #{var}/www
+      Docroot is: #{var}www
 
-      The default port has been set in #{etc}/nginx/nginx.conf to 8080 so that
+      The default port has been set in #{etc}nginxnginx.conf to 8080 so that
       nginx can run without sudo.
 
-      nginx will load all files in #{etc}/nginx/servers/.
+      nginx will load all files in #{etc}nginxservers.
     EOS
   end
 
   service do
-    run [opt_bin/"nginx", "-g", "daemon off;"]
+    run [opt_bin"nginx", "-g", "daemon off;"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    (testpath/"nginx.conf").write <<~EOS
+    (testpath"nginx.conf").write <<~EOS
       worker_processes 4;
-      error_log #{testpath}/error.log;
-      pid #{testpath}/nginx.pid;
+      error_log #{testpath}error.log;
+      pid #{testpath}nginx.pid;
 
       events {
         worker_connections 1024;
       }
 
       http {
-        client_body_temp_path #{testpath}/client_body_temp;
-        fastcgi_temp_path #{testpath}/fastcgi_temp;
-        proxy_temp_path #{testpath}/proxy_temp;
-        scgi_temp_path #{testpath}/scgi_temp;
-        uwsgi_temp_path #{testpath}/uwsgi_temp;
+        client_body_temp_path #{testpath}client_body_temp;
+        fastcgi_temp_path #{testpath}fastcgi_temp;
+        proxy_temp_path #{testpath}proxy_temp;
+        scgi_temp_path #{testpath}scgi_temp;
+        uwsgi_temp_path #{testpath}uwsgi_temp;
 
         server {
           listen 8080;
           root #{testpath};
-          access_log #{testpath}/access.log;
-          error_log #{testpath}/error.log;
+          access_log #{testpath}access.log;
+          error_log #{testpath}error.log;
         }
       }
     EOS
-    system bin/"nginx", "-t", "-c", testpath/"nginx.conf"
+    system bin"nginx", "-t", "-c", testpath"nginx.conf"
   end
 end

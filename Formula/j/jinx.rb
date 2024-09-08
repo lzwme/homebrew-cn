@@ -26,11 +26,9 @@ class Jinx < Formula
     # disable building tests
     inreplace "CMakeLists.txt", "if(NOT jinx_is_subproject)", "if(FALSE)"
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      lib.install "libJinx.a"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    lib.install "buildlibJinx.a"
 
     include.install Dir["Source*.h"]
   end

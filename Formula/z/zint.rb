@@ -28,13 +28,39 @@ class Zint < Formula
     # Sandbox fix: install FindZint.cmake in zint's prefix, not cmake's.
     inreplace "CMakeLists.txt", "${CMAKE_ROOT}", "#{share}/cmake"
 
-    mkdir "zint-build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    (testpath/"test.c").write <<~EOS
+      #include <zint.h>
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+        struct zint_symbol *my_symbol;
+
+        my_symbol = ZBarcode_Create();
+        my_symbol->symbology = BARCODE_CODE128;
+        ZBarcode_Encode(my_symbol, (unsigned char *)"Test123", 7);
+        ZBarcode_Print(my_symbol, 0);
+
+        printf("Barcode successfully saved to out.png\\n");
+        ZBarcode_Delete(my_symbol);
+
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lzint"
+    system "./test"
+    assert_predicate testpath/"out.png", :exist?, "Failed to create barcode PNG"
+
     system bin/"zint", "-o", "test-zing.png", "-d", "This Text"
+    assert_predicate testpath/"test-zing.png", :exist?, "Failed to create barcode PNG"
+
+    assert_match version.to_s, shell_output("#{bin}/zint --version")
   end
 end
