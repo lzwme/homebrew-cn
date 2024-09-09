@@ -23,15 +23,37 @@ class Vrpn < Formula
   depends_on "libusb" # for HID support
 
   def install
-    mkdir "build" do
-      cmake_args = [
-        "-DVRPN_BUILD_CLIENTS:BOOL=OFF",
-        "-DVRPN_BUILD_JAVA:BOOL=OFF",
-      ]
-      cmake_args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
+    args = %w[
+      -DVRPN_BUILD_CLIENTS=OFF
+      -DVRPN_BUILD_JAVA=OFF
+      -DVRPN_USE_WIIUSE=OFF
+    ]
 
-      system "cmake", "..", *std_cmake_args, *cmake_args
-      system "make", "install"
-    end
+    args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath"test.cpp").write <<~EOS
+      #include <iostream>
+      #include <vrpn_Analog.h>
+      int main() {
+        vrpn_Analog_Remote *analog = new vrpn_Analog_Remote("Tracker0@localhost");
+        if (analog) {
+          std::cout << "vrpn_Analog_Remote created successfully!" << std::endl;
+          delete analog;
+          return 0;
+        }
+        return 1;
+      }
+    EOS
+
+    system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lvrpn"
+    system ".test"
+
+    system bin"vrpn_server", "-h"
   end
 end

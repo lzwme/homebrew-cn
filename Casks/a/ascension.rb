@@ -7,6 +7,8 @@ cask "ascension" do
   desc "ANSIASCII art viewer"
   homepage "https:github.comansiloveAscension"
 
+  deprecate! date: "2024-09-08", because: :unmaintained
+
   app "Ascension.app"
 
   zap trash: [

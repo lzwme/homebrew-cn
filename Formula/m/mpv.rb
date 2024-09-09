@@ -8,18 +8,19 @@ class Mpv < Formula
   head "https:github.commpv-playermpv.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "4dbf5f21d142921fd15db9e065d9a8676c4a20c4970b38decc75a698aeb55013"
-    sha256 arm64_ventura:  "d28db8e432434297ae11de44b9e1cd1f12dee57a2dee230b37ef04a82ffc532d"
-    sha256 arm64_monterey: "58a95b46e9b55f0739dc424a286a835f94ae02e1f29dccf97c03e6779870d2b1"
-    sha256 sonoma:         "dee2503d155630932ab26f9296c9f2fbe02135df9e6eaa7e85b329edb03427ef"
-    sha256 ventura:        "bcd8baa2f0376fb6979d5b5f690d04a250c3e4be6ed086c79d763f754e34f4de"
-    sha256 monterey:       "bbedc9e4e1b95a0db432bb6ab040af1b10de8c48a9619803c95b311bc286fb55"
-    sha256 x86_64_linux:   "3a1e0b8cc2f36392714bd044fae7066f54b353421c32c782a6f67a9736e4ffdc"
+    rebuild 2
+    sha256 arm64_sonoma:   "ce971ccc83b4bdfd0d105e693b9b039be775fbfe29868e6b67c9f98010ecb718"
+    sha256 arm64_ventura:  "dec75b6b3ec01b24685d1db985ea945ffc586b99b67b56e7ee8de23d27b5e01b"
+    sha256 arm64_monterey: "ab1e0c314ed9e88066ba548060229146c3761f86ff6c8519d5fdfa9e6bb34c7c"
+    sha256 sonoma:         "4e9c392f96563a2b779e7c9c60bddfa463b2b91e3fd0406bd6e8ace9e356bf04"
+    sha256 ventura:        "9232d665c69b49aff0cab02cd87575bdf09baafa42f7cf6c864d09873a505ee1"
+    sha256 monterey:       "de9ecd10b58e04546f3196eb8699ea8da4ea6d627311971bdee0462a3624b887"
+    sha256 x86_64_linux:   "3d95bb5352432924134fbc616c214ab4839d9fb59a831e5a3fb57e7000f4d2b2"
   end
 
   depends_on "docutils" => :build
   depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on xcode: :build
   depends_on "ffmpeg"
@@ -68,7 +69,7 @@ class Mpv < Formula
     ENV["LC_ALL"] = "C"
 
     # force meson find ninja from homebrew
-    ENV["NINJA"] = Formula["ninja"].opt_bin"ninja"
+    ENV["NINJA"] = which("ninja")
 
     # libarchive is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig" if OS.mac?

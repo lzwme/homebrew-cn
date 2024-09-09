@@ -23,7 +23,11 @@ class Dfc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gettext"
+  depends_on "gettext" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

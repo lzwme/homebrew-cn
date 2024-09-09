@@ -26,9 +26,12 @@ class Clifm < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "gettext"
   depends_on "libmagic"
   depends_on "readline"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "acl"

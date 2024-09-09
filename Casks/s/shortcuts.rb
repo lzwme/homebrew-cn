@@ -6,5 +6,11 @@ cask "shortcuts" do
   name "RestartSleepLogoutShutdownLock Shortcuts"
   homepage "https:github.comsiong1987shortcuts"
 
+  disable! date: "2024-09-08", because: :unmaintained
+
   suite "system", target: "Shortcuts"
+
+  caveats do
+    requires_rosetta
+  end
 end

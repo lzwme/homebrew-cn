@@ -603,6 +603,7 @@ Homebrew-homebrew-core/Formula/b/buildpulse-test-reporter.rb, Homebrew/homebrew-
 Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bulk_extractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bullet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bump-my-version.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bumpversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bundler-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bundletool.rb, Homebrew/homebrew-core, 1
@@ -3049,7 +3050,7 @@ Homebrew-homebrew-core/Formula/k/kore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kosli-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
@@ -5498,7 +5499,7 @@ Homebrew-homebrew-core/Formula/r/roswell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roundup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rpcgen.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rpcsvc-proto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpg-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpki-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpl.rb, Homebrew/homebrew-core, 1
@@ -9067,6 +9068,7 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-mono-complete.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-mono-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-denk-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-d/font-departure-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-devicons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-devonshire.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-dhurjati.rb, Homebrew/homebrew-cask, 1
@@ -10960,6 +10962,7 @@ Homebrew-homebrew-cask/Casks/g/gitify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitkraken-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitkraken-on-premise-serverless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitkraken.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gitlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitpigeon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitscout.rb, Homebrew/homebrew-cask, 0

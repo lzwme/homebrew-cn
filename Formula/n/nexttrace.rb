@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https:nxtrace.github.ioNTrace-core"
-  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.2.tar.gz"
-  sha256 "30a22f9d94fafcb64a26bad490803a1434f5d695a4fc7d7dcbec73be7f0329f3"
+  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.3.tar.gz"
+  sha256 "5823ade91cb2b26aa24583582b1d996170b2efdfd7038ade46c87419cab43b3b"
   license "GPL-3.0-only"
   head "https:github.comnxtraceNTrace-core.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4ec666811db32583458e57ad1e23b0a750a77259a527707d7c8fc4725c3ff5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1dcf2460793c3f74470d755e29e1f870f1b78cc64ee9825cfcc542ac906a882"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20ac6c59bd66dff27ddc8070b4c0e4d5a3235e9cd5426f8b93b95bb97c32a981"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2d6af572a724e857db8c506722c9c48fb202fe6c8ef323487ae6d75fffbac396"
-    sha256 cellar: :any_skip_relocation, ventura:        "93bcac1a533c78e8f32b65cc007f4edf5a6f2f04f9ae53589565582b15760f32"
-    sha256 cellar: :any_skip_relocation, monterey:       "477a2f3218765a281542499d21c50ef57e2db350f8b6b1d0d462168633fda045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e90f31d9c8689e87102573b8e21b0551a55a19a8bb0b5ec8187dcd4fee7d086c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "139f7d7e2df64b1c590c7619e31d2e648023c8c90084561d6a5688e682f64b44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f29e9a6e3a58b7771681e8b237afef53a552d7214f798518f48e3a14522f38f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69bd7445b228442c9942d65dd741ff3d15ce612c717495738bfb4eb93be315bc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "466fa1e40126bbee1e871156e57390cb8540932932dbb4a6cef818ddf0eef133"
+    sha256 cellar: :any_skip_relocation, ventura:        "3efb05ba7b8065b3b59f1b42ecd212bf010cda6c9e7b32711f7e4f266d1d7227"
+    sha256 cellar: :any_skip_relocation, monterey:       "c60d0d743db01e53c022b4e2b49ab3a6235dc202807d8bf1af2f23fb11873efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79017c76c2967c2c8f4d70443440c5ed62ccfb483c9cd910f7e6f345b335d747"
   end
 
   # use "go" again after https:github.comnxtraceNTrace-coreissues247 is fixed and released

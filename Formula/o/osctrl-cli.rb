@@ -1,18 +1,18 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
   homepage "https:osctrl.net"
-  url "https:github.comjmpsecosctrlarchiverefstagsv0.3.8.tar.gz"
-  sha256 "03c2c3c79357b646628458fea9344f24c6ba75bc28301eb535022f73c752b103"
+  url "https:github.comjmpsecosctrlarchiverefstagsv0.3.9.tar.gz"
+  sha256 "4d6ea5dd3597e162be586bf6125cf118a45c416eb8d1195ef8cbe52cd0bc4992"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "699da64670a658cf1d286c32477d4634f665d87b80ac484a5639c53414abf0a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "699da64670a658cf1d286c32477d4634f665d87b80ac484a5639c53414abf0a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "699da64670a658cf1d286c32477d4634f665d87b80ac484a5639c53414abf0a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0943d1f8d9df225823b2bfcce6b3fa1d29e7ff6ec6668a4303900c42f351ef40"
-    sha256 cellar: :any_skip_relocation, ventura:        "0943d1f8d9df225823b2bfcce6b3fa1d29e7ff6ec6668a4303900c42f351ef40"
-    sha256 cellar: :any_skip_relocation, monterey:       "0943d1f8d9df225823b2bfcce6b3fa1d29e7ff6ec6668a4303900c42f351ef40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19fb2dcb44b855b03dea3e943b6bfbc6dfb399590d8a1b06fad84b4bd3433885"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "10e6acb9d0ab8f71f5c1dec100658b9ac373f4e6bb2c67499ccc0ae23533e9ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "10e6acb9d0ab8f71f5c1dec100658b9ac373f4e6bb2c67499ccc0ae23533e9ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "10e6acb9d0ab8f71f5c1dec100658b9ac373f4e6bb2c67499ccc0ae23533e9ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4a93e6d0273e5ad1898ddc095162a8357761dcf213c86683692ff460d9c4c77"
   end
 
   depends_on "go" => :build

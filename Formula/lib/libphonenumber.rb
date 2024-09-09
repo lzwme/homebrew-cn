@@ -21,13 +21,11 @@ class Libphonenumber < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "googletest" => :build
   depends_on "openjdk" => :build
   depends_on "abseil"
   depends_on "boost"
   depends_on "icu4c"
   depends_on "protobuf"
-  depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
 
@@ -35,7 +33,6 @@ class Libphonenumber < Formula
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.
     system "cmake", "-S", "cpp", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17", # keep in sync with C++ standard in abseil.rb
-                    "-DGTEST_INCLUDE_DIR=#{Formula["googletest"].opt_include}",
                      *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

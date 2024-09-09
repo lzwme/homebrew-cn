@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b6/fd/126fad05418364b10b8ab78713a4adcba4ea55a8d77be4bbfec5f206efef/schemathesis-3.35.4.tar.gz"
-  sha256 "4e43101536582dadcce12b3761915e37cfe0a40e336d375827d33480da0bb27b"
+  url "https://files.pythonhosted.org/packages/70/f1/33e9c37d0f0a27fe3966b3e81d50ff2d327531a7b17a2ba0055538bad7af/schemathesis-3.35.5.tar.gz"
+  sha256 "f336d4321c9ed1d8abb997d343e64a5e509e9dc88e7c14498b8f073abe975c3d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "44bcd4bb4d62fc959c8584bfc2c47808fa18f2309091575bbfab978db059da8a"
-    sha256 cellar: :any,                 arm64_ventura:  "a7faec54ad3460f3e31dcb9508825323d3211a9764394f472d8f54191f7f170a"
-    sha256 cellar: :any,                 arm64_monterey: "2fd0fa42c25ae04555533ff217e401d24ce0d4f4649d12c614574f7fde522b40"
-    sha256 cellar: :any,                 sonoma:         "dc1d2de122be203bc6670cf336290c67ef248dc02782a742a64a405c15bc4961"
-    sha256 cellar: :any,                 ventura:        "5e66f9aea11ef3cf4723d4702a6da45fb01a0bea5db15c6376fe63ff83184efa"
-    sha256 cellar: :any,                 monterey:       "c0a89d48b794b49959df8a9ac6e47a65aa051d74007e3846f326c8dd687e887f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5e0e2c9e4a75a3c21fa7ba7fe4c2afdd714ba21b22197300fcab1a8031cf7a4"
+    sha256 cellar: :any,                 arm64_sonoma:   "07f031470da91a3b4e95acd47274bacd2b07105a241fc5ab4544bfc0458ad096"
+    sha256 cellar: :any,                 arm64_ventura:  "d05f33cbeb4e89073a6a9e64e0c49f8f43f029da56a3736e928811d5be91fed1"
+    sha256 cellar: :any,                 arm64_monterey: "9f56a6a4bcb4921078d863e23494c88c7b8ff61d7d845b791917dc1372bbb456"
+    sha256 cellar: :any,                 sonoma:         "41e133d866befd2061f4022f75e82282b301c4daacb938172d84adea4de088a8"
+    sha256 cellar: :any,                 ventura:        "86f983e76046559084d6399437a17943882acc1af0b46af95faf5e9280666f92"
+    sha256 cellar: :any,                 monterey:       "2b838477552c26f1784ce38caa861f04ba0a7f9d932263033c04ef950ae5c3eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d6f5d97672ff0961781407ecf796f4bd92f2f375659e65ca75af4efe848bb4d"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -245,8 +245,8 @@ class Schemathesis < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/23/11/aae06ddb6a90cf8ba078be6dbe47f904d2efdf451f9859248b436c945ca4/types-python-dateutil-2.9.0.20240821.tar.gz"
-    sha256 "9649d1dcb6fef1046fb18bebe9ea2aa0028b160918518c34589a46045f6ebd98"
+    url "https://files.pythonhosted.org/packages/3e/d9/9c9ec2d870af7aa9b722ce4fd5890bb55b1d18898df7f1d069cab194bb2a/types-python-dateutil-2.9.0.20240906.tar.gz"
+    sha256 "9706c3b68284c25adffc47319ecc7947e5bb86b3773f843c73906fd598bc176e"
   end
 
   resource "uri-template" do
@@ -270,8 +270,8 @@ class Schemathesis < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/1e/87/6d71456eabebf614e0cac4387c27116a0bff9decf00a70c362fe7db9394e/yarl-1.9.11.tar.gz"
-    sha256 "c7548a90cb72b67652e2cd6ae80e2683ee08fde663104528ac7df12d8ef271d2"
+    url "https://files.pythonhosted.org/packages/ba/c4/e874aafc3e83526526846c9e17c9cb15fdc12a5163f46b1fbca6a895505b/yarl-1.10.0.tar.gz"
+    sha256 "3bf10a395adac62177ba8ea738617e8de6cbb1cea6aa5d5dd2accde704fc8195"
   end
 
   def install

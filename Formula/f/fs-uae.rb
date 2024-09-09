@@ -30,9 +30,10 @@ class FsUae < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
+
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "glew"
   depends_on "glib"
   depends_on "libmpeg2"
@@ -41,6 +42,10 @@ class FsUae < Formula
 
   uses_from_macos "zip"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "libx11"

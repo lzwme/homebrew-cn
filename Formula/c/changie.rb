@@ -1,19 +1,19 @@
 class Changie < Formula
   desc "Automated changelog tool for preparing releases"
   homepage "https:changie.dev"
-  url "https:github.comminiscruffchangiearchiverefstagsv1.19.1.tar.gz"
-  sha256 "66f4401e166c3d44821f616b2a34b15f06933c0c57530f5cf0ad313b11e1a3d9"
+  url "https:github.comminiscruffchangiearchiverefstagsv1.20.1.tar.gz"
+  sha256 "0f6abc7b23cc7db940519537da133b2ac049829a9c409895a2ba1078cdcb11bd"
   license "MIT"
   head "https:github.comminiscruffchangie.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad13d74cfb333a01d404616b2bf4d0dfde2cc2b5399e1d6575aba46598932115"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4bc2763c5b3d03a36a4eb256dbe8d88993d87954132ead788cac91d9a59f2f4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bc951b73714888fb34f55e5e8925b65121bb4856a3f615ee986d34a3fe4f2b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2c6b25c44600878b3322963c79bf4f7adcfc5f888b45ad360dabd52a70dd786"
-    sha256 cellar: :any_skip_relocation, ventura:        "441b7b22b0c18fd8bb6b1af14779ed8db1deeeafd0de19da853d12969a195a17"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3247e4f6af8bb9fff54a215c87d50cb0ec22298f0ce6ca75e029aba82b0cdfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd29b8f1d68391f8d97ed9282e3f29ed1ea908f9683b88ca8c55cb7939480102"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98fd1e318885c040ed957def88f4521b5fe99c834d3fff4adc488b2b6f2b6a64"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98fd1e318885c040ed957def88f4521b5fe99c834d3fff4adc488b2b6f2b6a64"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98fd1e318885c040ed957def88f4521b5fe99c834d3fff4adc488b2b6f2b6a64"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4ebb539f611f376e79ff55943f5e83d0266a4ac4777199178161c1ebb69a52c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ebb539f611f376e79ff55943f5e83d0266a4ac4777199178161c1ebb69a52c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ebb539f611f376e79ff55943f5e83d0266a4ac4777199178161c1ebb69a52c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f3a0d43e80e102dd6e2c51a243fc2d84105844f9fbafe84646e75f003c92b36"
   end
 
   depends_on "go" => :build

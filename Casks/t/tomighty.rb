@@ -7,6 +7,8 @@ cask "tomighty" do
   desc "Pomodoro desktop timer"
   homepage "https:github.comtomightytomighty-osx"
 
+  deprecate! date: "2024-09-08", because: :unmaintained
+
   app "Tomighty.app"
 
   zap trash: "~LibraryPreferencesorg.tomighty.Tomighty.plist"

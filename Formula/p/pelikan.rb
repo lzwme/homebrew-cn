@@ -26,11 +26,13 @@ class Pelikan < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "_build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `signals'; ..buffercc_buf.c.o:(.bss+0x20): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

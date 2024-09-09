@@ -20,9 +20,10 @@ class Mednafen < Formula
     sha256 x86_64_linux:   "2b0e225a4706c1e3667c25ffa52181a63a97b2dad8e9d2f8520adbdcf1a5eb0f"
   end
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
+
   depends_on "flac"
-  depends_on "gettext"
   depends_on "libsndfile"
   depends_on "lzo"
   depends_on macos: :sierra # needs clock_gettime
@@ -32,6 +33,7 @@ class Mednafen < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     # musepack is not bottled on Linux
     # https:github.comHomebrewhomebrew-corepull92041
     depends_on "musepack"

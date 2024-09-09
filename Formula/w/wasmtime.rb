@@ -13,26 +13,25 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1ba895921bc24c40ff7fa3528791ab1299ce6b423243d9dcd875c300210d4950"
-    sha256 cellar: :any,                 arm64_ventura:  "c870f9ab8c424f78bd981f984695c15f21cc176578e1ed89e26294fadb544ec9"
-    sha256 cellar: :any,                 arm64_monterey: "3f412be8d0295b95f1c05f6f40f826be338b6a18eeeb1174de990b1915b12839"
-    sha256 cellar: :any,                 sonoma:         "7c200cc3b3d980a794db602d65b7540ab2901620cf84524155f62274a1f19703"
-    sha256 cellar: :any,                 ventura:        "9773cfb3d0ba7b4be65243c9252f32b5e582c12d37a5f4c1d3a6f77030c66421"
-    sha256 cellar: :any,                 monterey:       "61309258b29cd41fe4b1e5b4474d84ba0e58e967653a5a38f04772c37c988559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0337cb473de1e47222ebbbae453460fe34cb04ea587eddddbdd337371741f555"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8fb7f2587b2fabe74f9d613f5c5900c5c2cb8097eb72a7cb765c00080d84f556"
+    sha256 cellar: :any,                 arm64_ventura:  "1c9f6c5b76b1b0cc3087cd0f95c3fe40c00a8fe7f190f5abff80bf8f7b590a29"
+    sha256 cellar: :any,                 arm64_monterey: "b491acd14dc4de887fecabf35269c496f53ced74e46dc6475984d2f0d57313fe"
+    sha256 cellar: :any,                 sonoma:         "470552024fb64247bd0a10a99aec7fe7a7c17e793020c7be5d5692e45c5ae8df"
+    sha256 cellar: :any,                 ventura:        "3fed623ea36de436c0ddb134149a826fa0b09e22439deb8b9ef41683f4f3ef5a"
+    sha256 cellar: :any,                 monterey:       "4ccab9bcac95fa3ce8ec55606da545fbee22fb3e70d0dc4e5c7169c460df5a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39cd25f78174bcb930643b5f9f730ac22ba796d44da8968f35cae3b40cbc5ec3"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args, "--profile=fastest-runtime"
 
-    cd "cratesc-api" do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-    end
+    system "cmake", "-S", "cratesc-api", "-B", "build", "-DWASMTIME_FASTEST_RUNTIME=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

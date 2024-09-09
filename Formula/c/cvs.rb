@@ -31,11 +31,15 @@ class Cvs < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gettext"
+  depends_on "gettext" => :build
 
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "vim" => :build # a text editor must be detected by the configure script

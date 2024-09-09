@@ -18,6 +18,7 @@ class Fontforge < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
@@ -25,7 +26,6 @@ class Fontforge < Formula
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "giflib"
   depends_on "glib"
   depends_on "jpeg-turbo"
@@ -44,6 +44,7 @@ class Fontforge < Formula
 
   on_macos do
     depends_on "brotli"
+    depends_on "gettext"
   end
 
   # build patch for po translation files

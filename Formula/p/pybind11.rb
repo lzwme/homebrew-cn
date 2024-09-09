@@ -11,13 +11,8 @@ class Pybind11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32db552c7241a9a94ecb052c054a5da1a8e4bf2095ec621f52b90a4a366acef5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32db552c7241a9a94ecb052c054a5da1a8e4bf2095ec621f52b90a4a366acef5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "32db552c7241a9a94ecb052c054a5da1a8e4bf2095ec621f52b90a4a366acef5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f20f6f224a7d18ea56c93b6e8ee9eebcea956d5a471190a3bd790f83aedbfee2"
-    sha256 cellar: :any_skip_relocation, ventura:        "f20f6f224a7d18ea56c93b6e8ee9eebcea956d5a471190a3bd790f83aedbfee2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f20f6f224a7d18ea56c93b6e8ee9eebcea956d5a471190a3bd790f83aedbfee2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32db552c7241a9a94ecb052c054a5da1a8e4bf2095ec621f52b90a4a366acef5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "60413ac82c90391d1ec75248efe6b31155fd1109590a92417d4df78d78cc4729"
   end
 
   depends_on "cmake" => :build
@@ -35,17 +30,33 @@ class Pybind11 < Formula
     system "cmake", "-S", ".", "-B", "build", "-DPYBIND11_TEST=OFF", "-DPYBIND11_NOPYTHON=ON", *std_cmake_args
     system "cmake", "--install", "build"
 
+    # build an `:all` bottle.
+    inreplace share"cmakepybind11FindPythonLibsNew.cmake", "usrlocal", HOMEBREW_PREFIX
+    inreplace share"pkgconfigpybind11.pc", ^prefix=$, "\\0#{opt_prefix}"
+
     pythons.each do |python|
       # Install Python package too
       python_exe = python.opt_libexec"binpython"
-      system python_exe, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
-
-      site_packages = Language::Python.site_packages(python_exe)
-      pth_contents = "import site; site.addsitedir('#{libexecsite_packages}')\n"
-      (prefixsite_packages"homebrew-pybind11.pth").write pth_contents
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
-      bin.install libexec"binpybind11-config" => "pybind11-config-#{pyversion}"
+      (buildpath"pybind11-config-#{pyversion}").write <<~BASH
+        #!binbash
+        exec -a "$0" "#{python.opt_bin}python#{pyversion}" -m pybind11 "$@"
+      BASH
+      chmod "+x", "pybind11-config-#{pyversion}"
+      bin.install "pybind11-config-#{pyversion}"
+
+      site_packages_pybind11 = prefixLanguage::Python.site_packages(python_exe)"pybind11"
+
+      # Avoid installing duplicate files from the prefix
+      site_packages_share = site_packages_pybind11"share"
+      rm_r site_packages_share.children
+      site_packages_share.install_symlink share.children
+
+      site_packages_include = site_packages_pybind11"include"
+      rm_r site_packages_include
+      site_packages_include.install_symlink include.children
 
       next if python != pythons.max_by(&:version)
 
@@ -87,17 +98,25 @@ class Pybind11 < Formula
       system ENV.cxx, "-shared", "-fPIC", "-O3", "-std=c++11", "example.cpp", "-o", "example.so", *python_flags
       system python_exe, "example.py"
 
-      test_module = shell_output("#{python_exe} -m pybind11 --includes")
-      assert_match (libexecsite_packages).to_s, test_module
+      test_module = shell_output(
+        "#{python_exe} -m pybind11 --includes",
+      ).chomp.gsub(python.opt_prefix.to_s, HOMEBREW_PREFIX.to_s)
+      assert_match (HOMEBREW_PREFIXsite_packages"pybind11").to_s, test_module
 
-      test_script = shell_output("#{bin}pybind11-config-#{pyversion} --includes")
-      assert_match test_module, test_script
+      test_script = shell_output(
+        "#{bin}pybind11-config-#{pyversion} --includes",
+      ).chomp.gsub(python.opt_prefix.to_s, HOMEBREW_PREFIX.to_s)
+      assert_equal test_module, test_script
 
       next if python != pythons.max_by(&:version)
 
-      test_module = shell_output("#{python_exe} -m pybind11 --includes")
-      test_script = shell_output("#{bin}pybind11-config --includes")
-      assert_match test_module, test_script
+      test_module = shell_output(
+        "#{python_exe} -m pybind11 --includes",
+      ).chomp.gsub(python.opt_prefix.to_s, HOMEBREW_PREFIX.to_s)
+      test_script = shell_output(
+        "#{bin}pybind11-config --includes",
+      ).chomp.gsub(python.opt_prefix.to_s, HOMEBREW_PREFIX.to_s)
+      assert_equal test_module, test_script
     end
   end
 end

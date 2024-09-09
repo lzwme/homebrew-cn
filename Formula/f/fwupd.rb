@@ -18,6 +18,7 @@ class Fwupd < Formula
     sha256 x86_64_linux:   "ce89989817d8a5004134e11ecf44ce75fa74e266a0191224fca27fedc930d4ff"
   end
 
+  depends_on "gettext" => :build
   depends_on "gi-docgen" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -25,8 +26,8 @@ class Fwupd < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
+
   depends_on "gcab"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
@@ -41,6 +42,10 @@ class Fwupd < Formula
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "jinja2" do
     url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"

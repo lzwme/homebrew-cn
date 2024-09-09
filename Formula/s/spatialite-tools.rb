@@ -23,9 +23,22 @@ class SpatialiteTools < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "libspatialite"
+  depends_on "libxml2"
   depends_on "proj"
+  depends_on "readline"
   depends_on "readosm"
+  depends_on "sqlite"
+
+  uses_from_macos "expat"
+
+  on_macos do
+    depends_on "freexl"
+    depends_on "geos"
+    depends_on "librttopo"
+    depends_on "minizip"
+  end
 
   def install
     # See: https:github.comHomebrewhomebrewissues3328

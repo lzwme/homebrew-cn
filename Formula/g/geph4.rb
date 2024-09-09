@@ -1,8 +1,8 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
   homepage "https:geph.io"
-  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.11.0.tar.gz"
-  sha256 "b1ae2cb61b60014736855e2af35032deeed74fbf6375be4b862daeb0d98ccb24"
+  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.3.tar.gz"
+  sha256 "bedd8dca96a5e5aeff208e44c113d8a4fb97ad0fe7ac83e9568c13236ea348b5"
   license "GPL-3.0-only"
   head "https:github.comgeph-officialgeph4-client.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Geph4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b969551fe5fc15a042febd043c7115aeeebfdebcdd404db38c929d1ef0aa015d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98b34ac3a1609ecdb1202a2262620715df02b515811234e6178c8a2320c5f74a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ab4c788ab43ba1445a05e0a2a2deae60b4a74382ac8692186a801a6eac1e196"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b83883b15f77aa438293f48e1d57cabe4d59baec7e8e6d7112a4049518a46184"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1699b3c1e77e6aea105bb3ed2b9bd05ea10bf7f584fc635d2094b4fe3aede17"
-    sha256 cellar: :any_skip_relocation, monterey:       "97ea137ed7222d598f2662b0045a1a7b648d9e0722c374628fd73f22213168c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad1eb4070b78993623bc166bbd4382b72794ef2fe1b3a6c2b2de287c1a0dba1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4468710fe42a9dc7e5b0d034105d93928fe438c504849d58401bca82dee4ffd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef0ca3607b8f78c35e03140ef6246166fd736e43382849fc2e913e4840df56e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4aa738af979c77dbfd61a5e61cf303074ba0f99e4ea6a01898215844018fa0dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "956c339dee523e1b3f84f62aa88525240cb533876d7178d96576a8084b409f60"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e11e10d21e054069b2f8812938d936cdd273f8475816cfee7a3e63860e1680b"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a7daaaa76e27710425189cc2d5e07ef84f6e71c5ada0b0860f336d123969643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e785f5e3a86f74e78228be67c41eee4b82104c34ce6d7f9304a133ebda59aec2"
   end
 
   depends_on "rust" => :build
@@ -38,8 +38,8 @@ class Geph4 < Formula
   end
 
   test do
-    assert_match "Error: invalid credentials",
-     shell_output("#{bin}geph4-client sync --credential-cache ~test.db auth-password 2>&1", 1)
+    output = shell_output("#{bin}geph4-client sync --credential-cache ~test.db auth-password 2>&1", 1)
+    assert_match "incorrect credentials", output
 
     assert_match version.to_s, shell_output("#{bin}geph4-client --version")
   end

@@ -22,7 +22,6 @@ class Fourstore < Formula
   depends_on "pkg-config" => :build
 
   depends_on "dbus"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "pcre"
   depends_on "raptor"
@@ -30,6 +29,10 @@ class Fourstore < Formula
   depends_on "readline"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "util-linux"

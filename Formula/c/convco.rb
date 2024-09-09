@@ -1,19 +1,19 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https:convco.github.io"
-  url "https:github.comconvcoconvcoarchiverefstagsv0.5.2.tar.gz"
-  sha256 "f89926784a8029bc179b0d7e6bbcdc899bce488ba97b55306bfec81599f73cb2"
+  url "https:github.comconvcoconvcoarchiverefstagsv0.6.0.tar.gz"
+  sha256 "e6a7dbaddd39172927170d5d0b7aec12c7b72531d8961963e6059dd432555488"
   license "MIT"
   head "https:github.comconvcoconvco.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "99b9f53dfb5ab750477d000a1a075f31679529e2237c5b4f0e9301fce424a9d6"
-    sha256 cellar: :any,                 arm64_ventura:  "8f81761d0e28599c14bed48de60158a61a8df97dfa2a0aedb78a80826c4432ab"
-    sha256 cellar: :any,                 arm64_monterey: "bd168aa3fee6924c16fd9597ac50491de2f989d56ebcbdab74077276ad6e02c7"
-    sha256 cellar: :any,                 sonoma:         "f684c21eceb81dda556c62cda316a7c56647d6fef5ac62d59d0cbfbb8f3cdd7a"
-    sha256 cellar: :any,                 ventura:        "c03783219c168c7c2f3099fefb08379983d476526234325d00c28886e8094ded"
-    sha256 cellar: :any,                 monterey:       "188e0f576558ba2121eae6600e5deb921c07fb643e4a481ab2d2e1bbfbba8908"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efb39083abce38d692ee127f919f41345a735ace76ccee63fe39aa5bf15487df"
+    sha256 cellar: :any,                 arm64_sonoma:   "902794609fffacf8a4895bea16bc5f62fbe61d6e42e7e4b878ff6880be0e0764"
+    sha256 cellar: :any,                 arm64_ventura:  "a1690a307a760ff0779ec5bce8fea4f0e78ca4a941e8d96d048e9cbefe00b656"
+    sha256 cellar: :any,                 arm64_monterey: "0ddff4579aa41e1e7f56bf1fba06ffd19905622371cace49642c0fe54e8c6321"
+    sha256 cellar: :any,                 sonoma:         "98287b7930a2f98d2764560def4d7326e72098cb6f893f1479b45faeefad54c9"
+    sha256 cellar: :any,                 ventura:        "c09e5ad6ce54f02b3c0ad421a38b6be6166b4d8c8cc826ac7c73143ee53eef7b"
+    sha256 cellar: :any,                 monterey:       "b2def2b2af3644f4838801838ebc718dceed43d815bbb992c05f28f0c489e84d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecef0dce0dbf92b77bf0339985fa945020247ea7bfdee80c272aaa79f052fb51"
   end
 
   depends_on "pkg-config" => :build

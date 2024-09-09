@@ -11,28 +11,38 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1af7a148cbfdd236f5006d50efe3ce949491fdecfc64299faf508c1db6e028fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8ee562c269787f983946b0bd8ddad6752e5a66d1c0631e4be7632fed49b9484"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "003ef65e343bde53baa391506860cee76d57df49561784c79ac4d185af59b11f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "780efbf9561fa353e7428750606700e886d2e1aade6de32dabf75c83356f6a81"
-    sha256 cellar: :any_skip_relocation, ventura:        "13abc2146c369088cca72f183cd0037086f739ad08b9c7946cb12716faa69f6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ddb6e0095672a2e6bcad1254eccc666fd6f156b4c66f9e7ef30c8436384dd86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13dfa3f58fa921ba8ebb716ae0c12d8b343a66729b71847f7109495d8287bc20"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a560d6ec061b90cc311f53ebecb4e3c30e6aceef429acb29f8778da5c9eef23e"
+    sha256 cellar: :any,                 arm64_ventura:  "c5361e4f5335b6dbf6757a363e2b7f406453cbd923fa4d5d00d9a0daa72e4fca"
+    sha256 cellar: :any,                 arm64_monterey: "79e275db75e056304f7bf8e175d901bd3d03d1154b2db9932a9c8a9a92437477"
+    sha256 cellar: :any,                 sonoma:         "eac228004196fb11830a34941b7546418a66b5cf5d817502c687102b43154391"
+    sha256 cellar: :any,                 ventura:        "698999bf6cefa49d6ca4a7b031566de698e15e51fdfea60730054dd913481fbf"
+    sha256 cellar: :any,                 monterey:       "84094564bcae094a0c352ccd734fd06e603968146fbdf2e8384a74d79e6de0df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e9df1f48006169ff62464f56e3d1b2c0ae3fa1176b0fcef39c6f8894485e665"
   end
 
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
+  depends_on "nlohmann-json" => :build
+  depends_on "range-v3" => :build
   depends_on xcode: ["11.0", :build]
   depends_on "boost"
+  depends_on "z3"
 
   conflicts_with "solc-select", because: "both install `solc` binaries"
 
   fails_with gcc: "5"
 
+  # build patch to use system fmt, nlohmann-json, and range-v3, upstream PR ref, https:github.comethereumsoliditypull15414
+  patch do
+    url "https:github.comethereumsoliditycommitaa47181eef8fa63a6b4f52bff2c05517c66297a2.patch?full_index=1"
+    sha256 "b73e52a235087b184b8813a15a52c4b953046caa5200bf0aa60773ec4bb28300"
+  end
+
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DSTRICT_Z3_VERSION=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -45,6 +55,7 @@ class Solidity < Formula
         }
       }
     EOS
+
     output = shell_output("#{bin}solc --bin hello.sol")
     assert_match "hello.sol:HelloWorld", output
     assert_match "Binary:", output

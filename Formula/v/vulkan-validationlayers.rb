@@ -22,7 +22,6 @@ class VulkanValidationlayers < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "googletest" => :build
   depends_on "python@3.12" => :build
   depends_on "vulkan-tools" => :test
   depends_on "glslang"

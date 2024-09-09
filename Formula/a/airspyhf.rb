@@ -31,27 +31,28 @@ class Airspyhf < Formula
     args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-#{libusb.version.major_minor}"
     args << "-DLIBUSB_LIBRARIES=#{libusb.opt_libshared_library("libusb-#{libusb.version.major_minor}")}"
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath"test.c").write <<~EOS
       #include <libairspyhfairspyhf.h>
-      int main()
-      {
+
+      int main() {
         uint64_t serials[256];
         int n = airspyhf_list_devices(serials, 256);
-        if (n == 0)
-        {
+
+        if (n == 0){
           return 0;
         }
+
         return 1;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lairspyhf", "-lm", "-o", "test"
+
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lairspyhf", "-lm"
     system ".test"
     assert_match version.to_s, shell_output("#{bin}airspyhf_lib_version").chomp
   end

@@ -20,7 +20,7 @@ class Apt < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
-  depends_on "googletest" => :build
+  depends_on "gettext" => :build
   depends_on "libxslt" => :build
   depends_on "po4a" => :build
   depends_on "w3m" => :build
@@ -28,7 +28,6 @@ class Apt < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"
-  depends_on "gettext"
   depends_on "gnupg"
   depends_on "gnutls"
   depends_on "libgcrypt"
@@ -136,6 +135,7 @@ class Apt < Formula
                     "-DDPKG_DATADIR=#{Formula["dpkg"].opt_libexec}sharedpkg",
                     "-DDOCBOOK_XSL=#{Formula["docbook-xsl"].opt_prefix}docbook-xsl",
                     "-DBERKELEY_INCLUDE_DIRS=#{Formula["berkeley-db@5"].opt_include}",
+                    "-DWITH_TESTS=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

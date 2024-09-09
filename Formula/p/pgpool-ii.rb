@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https:www.pgpool.netmediawikiindex.phpMain_Page"
-  url "https:www.pgpool.netmediawikiimagespgpool-II-4.5.3.tar.gz"
-  sha256 "25ed340d7b7dc00c20e4ba763d3f9c07ba891b150d9d48af313a1351cafdd778"
+  url "https:www.pgpool.netmediawikiimagespgpool-II-4.5.4.tar.gz"
+  sha256 "d1392e74ce2807f8ae628872cb1ab7914249921180dc99df40a1d602647a10fd"
   license all_of: ["HPND", "ISC"] # ISC is only for srcutilsstrlcpy.c
 
   livecheck do
@@ -11,13 +11,13 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "0571e911ff95986a6d0e4099d624f5ddcaed372eb10213059cc7e49a57764c1f"
-    sha256 arm64_ventura:  "8e1d8a43f6dab261324fed9c3c8d0191381c77cc4b40a75d8f3799a65a9de77d"
-    sha256 arm64_monterey: "ed42365cba7a6bda22dcb459d97c66dda21680bb346fa17884095b8ea7929e95"
-    sha256 sonoma:         "c702fc0574d4121a11f7bac0237d377347e9df42f72d5029df5e868891a3291d"
-    sha256 ventura:        "ab60a2ecea5d049dab1f7282d193ef9de3be30a3fc97294f5a567f46f31466cb"
-    sha256 monterey:       "451b7fb90968fd855a7363375f1e9df33a78992742f71b8eb862318c7b50fa22"
-    sha256 x86_64_linux:   "ef8a9a5514b990da557eadbf76d1d58b8656627f8c3253f6f5d60610d8e6116f"
+    sha256 arm64_sonoma:   "e94257f4d550e65a06e4eeeda0d058fc5a13c0af6810d459cb2e258d8889c95a"
+    sha256 arm64_ventura:  "e6c6ef25b196c05f2b838206e52e55667f8e46a274dd8e957bacb970435e6613"
+    sha256 arm64_monterey: "9eccb085af5582d16e3263973604fe30e48d94ecd440aab8013235016a8aae86"
+    sha256 sonoma:         "81c69f26dbdb46ab89c873fc6afc99c37ca847ced2559e514ece31a1f1aa01f8"
+    sha256 ventura:        "515495e829260efcf080d89548fdd3efda95f92ee6244edc0dcbd54353314646"
+    sha256 monterey:       "9ec67ed16c9a3b036c86bd33eddd1d15ee2cdbe8444732325acd562f981981d1"
+    sha256 x86_64_linux:   "5e795abe5b903b131e37e956395f5a9af9a6e8ab5d8cb584210c92d7cb28eba2"
   end
 
   depends_on "libmemcached"
