@@ -1,19 +1,29 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https:groestlcoin.orggroestlcoin-core-wallet"
-  url "https:github.comGroestlcoingroestlcoinreleasesdownloadv27.0groestlcoin-27.0.tar.gz"
-  sha256 "cf8de03ef104e67aa7c0c1f69fd78e19ea6fa3e8187d890d7916c1c72a3be530"
   license "MIT"
+  revision 1
   head "https:github.comgroestlcoingroestlcoin.git", branch: "master"
 
+  stable do
+    url "https:github.comGroestlcoingroestlcoinreleasesdownloadv27.0groestlcoin-27.0.tar.gz"
+    sha256 "cf8de03ef104e67aa7c0c1f69fd78e19ea6fa3e8187d890d7916c1c72a3be530"
+
+    # miniupnpc 2.2.8 compatibility patch
+    patch do
+      url "https:github.comGroestlcoingroestlcoincommit8acdf66540834b9f9cf28f16d389e8b6a48516d5.patch?full_index=1"
+      sha256 "08ddebda702cf654f1b0cef22fb0b71ee2d97d0373e382a6ccf878738aade96a"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "40bae4088292ac22e77b60cc99a83d538c281a7d94bf2ee2466cc7975b319c54"
-    sha256 cellar: :any,                 arm64_ventura:  "18cd32907ee3d648759cef09403911b9c38c58bea8c69e666c5008bb3f9ec8bf"
-    sha256 cellar: :any,                 arm64_monterey: "d303d76c742e6d6f80c16394b318388cb57795da1ca13db288163f9282b4c0fe"
-    sha256 cellar: :any,                 sonoma:         "23b6d0947f9895cb9974137dc24ae92c304d6017926c714257d9654c5f5e4d84"
-    sha256 cellar: :any,                 ventura:        "118c66a388597c33c4eb976e48bb68671527efc3e27c92c1c800f74112ceaee8"
-    sha256 cellar: :any,                 monterey:       "53b23a96a82c60fd48372a6b46bba388defd029275312192267310045def39a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a07a117acf2e654c599b1b4d3916d42e0c3d9cdb7b13da8f184a3fa4123ea97"
+    sha256 cellar: :any,                 arm64_sonoma:   "a26c116d48f076dab3cdc4d2306a1dec7dc7acfd3f094b0f4d5fd2e7e45a4e92"
+    sha256 cellar: :any,                 arm64_ventura:  "cc1f2364ca6e1301cee3cd9af5be8aff13175a171be85fba6f82443afa93f244"
+    sha256 cellar: :any,                 arm64_monterey: "b687ce36c1ffb7951bee1f790b8a43ade4e19a9b03e1f72748a5518510f0537f"
+    sha256 cellar: :any,                 sonoma:         "0d10371f28791f79dfe2ce798d079bb476ac5abb3f868b8dff57688e325739ae"
+    sha256 cellar: :any,                 ventura:        "37f91f29b4cbcad10c84edbf305af228e2a0fc3a6f564a8f3cf0620369208d86"
+    sha256 cellar: :any,                 monterey:       "5f1d9e9d9b8ff30cdf0984abfebe6ce999d8cf14f2b27b7ef0aaf652f7b30da4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f9e5dc18d597189cee362ce0e5ea09028e3d463ab17bfe531a24e3136e95c8e"
   end
 
   depends_on "autoconf" => :build

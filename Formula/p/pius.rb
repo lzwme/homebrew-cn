@@ -2,7 +2,7 @@ class Pius < Formula
   include Language::Python::Virtualenv
 
   desc "PGP individual UID signer"
-  homepage "https:www.phildev.netpius"
+  homepage "https:github.comjaymzhpius"
   url "https:github.comjaymzhpiusarchiverefstagsv3.0.0.tar.gz"
   sha256 "3454ade5540687caf6d8b271dd18eb773a57ab4f5503fc71b4769cc3c5f2b572"
   license "GPL-2.0-only"

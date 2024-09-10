@@ -1,12 +1,12 @@
 class Ldid < Formula
   desc "Lets you manipulate the signature block in a Mach-O binary"
   homepage "https://cydia.saurik.com/info/ldid/"
-  url "https://git.saurik.com/ldid.git",
+  url "git://git.saurik.com/ldid.git",
       tag:      "v2.1.5",
       revision: "a23f0faadd29ec00a6b7fb2498c3d15af15a7100"
   license "AGPL-3.0-or-later"
   revision 1
-  head "https://git.saurik.com/ldid.git", branch: "master"
+  head "git://git.saurik.com/ldid.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e3c26343041639b82e88edf54d3af9f579876f800b7aeada94d36c807e441c27"

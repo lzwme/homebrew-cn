@@ -8,13 +8,14 @@ class Deno < Formula
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b7721546c2b27ddb503267aa1d47934624ef4b6fbce469a58f82560373858ff2"
-    sha256 cellar: :any,                 arm64_ventura:  "9d23dec3e544306fcc4a6f22ec2f63608d40144e57c6a790288d9dd5553d2c8f"
-    sha256 cellar: :any,                 arm64_monterey: "096e7402a9f3b1d18ec3a5b6638b0e9a53b86165cd14f69b56cfabb8c7a875b5"
-    sha256 cellar: :any,                 sonoma:         "57b30e1a4ab84f2d70d369dd2b0c41ab4025b8017417c1a6aa62577ce6f2afb8"
-    sha256 cellar: :any,                 ventura:        "605c5ce1c5b142cc422f36c76a2f6cc0dcdf238ef351274704fb8bb8e0d29f4a"
-    sha256 cellar: :any,                 monterey:       "a0c7f0982940b3b71d36106c3222356ea13e9436b793c7ea57f0778af0618776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c78e31f84e8c56f1ae9318e88078501acce7e95bc7d2201203267ffc4fdc2d0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ea77da1fd73beec5a8d3e0d1943df0971ac695301213b7f4f9cac51aee907c93"
+    sha256 cellar: :any,                 arm64_ventura:  "f009b4591da83f59187493eda7ecfadd341ac67991a78bf738f52153e693815b"
+    sha256 cellar: :any,                 arm64_monterey: "d4ea254c51c1d9c3e10a48e7a4f1b38ad2679e08b21a9c2c6911df69827e4033"
+    sha256 cellar: :any,                 sonoma:         "d51635a16504331353b3642e6d77919de1fec85eb42408fba6f86c528a80a683"
+    sha256 cellar: :any,                 ventura:        "bab7743fe3159c4bed32cb508479118c7dfad29d80ecd1e2268182019ec33f96"
+    sha256 cellar: :any,                 monterey:       "b1f634c18fd48550236ece847b75604190d6307f3bcc98452b69338259067722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6391b0dfae36632f4eadda4dd2557a0f493e2a3296e9486b123481279a9c64c9"
   end
 
   depends_on "cmake" => :build
@@ -100,7 +101,7 @@ class Deno < Formula
     # env args for building a release build with our python3, ninja and gn
     ENV["PYTHON"] = python3
     ENV["GN"] = buildpath"gnoutgn"
-    ENV["NINJA"] = Formula["ninja"].opt_bin"ninja"
+    ENV["NINJA"] = which("ninja")
     # build rusty_v8 from source
     ENV["V8_FROM_SOURCE"] = "1"
     # Build with llvm and link against system libc++ (no runtime dep)

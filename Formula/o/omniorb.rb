@@ -11,17 +11,20 @@ class Omniorb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8f30cde3ccdad77bf9eab6b1479eddf61b5fac1720562b583fa2f299ef611d08"
-    sha256 cellar: :any,                 arm64_ventura:  "0c95065778587f6e4b405c7db738f2a08b5aeb7fffd8e9ad0ee106e256ecebf9"
-    sha256 cellar: :any,                 arm64_monterey: "f2a6a5138718643cfd16256f7cc46040a96cab9a4daf450ed1965bceac4eebb9"
-    sha256 cellar: :any,                 sonoma:         "c5f6d4a6d03750e64208d038da5448b17d5121331f96a2b8227cd16e2854ea27"
-    sha256 cellar: :any,                 ventura:        "d637dcdb67360e997a38e45136c77874ec49239853dc0e038c6723851967051c"
-    sha256 cellar: :any,                 monterey:       "e723599e651a6da612005e20ff8081f75cd6a259c3ee000e4eb27a81624eee34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c6ed8ba241de3cc97f66834684d84262aadd78bf9f99436c7ad7a9f09255323"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6b9bad8d4f7372e0f9568276b49511e6f0f8a78ae427763f7daf8aec80731fc5"
+    sha256 cellar: :any,                 arm64_ventura:  "2a8ac392eebb30eae2e1089136751947bc68e58b74e417c0ee484e1f129758c4"
+    sha256 cellar: :any,                 arm64_monterey: "75801990b9584a9d5a7e43d526bd001cdb56d3f5f6aa004e5adc4f08195c1649"
+    sha256 cellar: :any,                 sonoma:         "a39294772af7cf6ae59acab001ebc1e03655e77d3ba759f8771c403eed49192b"
+    sha256 cellar: :any,                 ventura:        "e717811dd542866080999cfb647b3eca9181f26434ffb3fe7c1ff56bdc751f10"
+    sha256 cellar: :any,                 monterey:       "17d4cf5755cc3df5b9f260e784fef0880f729a1e818a38f0c123e4e052b6df0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da9acdba77e7fc002d59d33bf9bd5eee9517e0df6e0169f374aa5723bdf0056"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "openssl@3"
   depends_on "python@3.12"
+  uses_from_macos "zlib"
 
   resource "bindings" do
     url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.2/omniORBpy-4.3.2.tar.bz2"
@@ -36,7 +39,9 @@ class Omniorb < Formula
     inreplace "configure",
               /am_cv_python_version=`.*`/,
               "am_cv_python_version='#{xy}'"
-    system "./configure", "--prefix=#{prefix}"
+    args = ["--with-openssl"]
+    args << "--enable-cfnetwork" if OS.mac?
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
@@ -44,7 +49,7 @@ class Omniorb < Formula
       inreplace "configure",
                 /am_cv_python_version=`.*`/,
                 "am_cv_python_version='#{xy}'"
-      system "./configure", "--prefix=#{prefix}"
+      system "./configure", *std_configure_args
       ENV.deparallelize # omnipy.cc:392:44: error: use of undeclared identifier 'OMNIORBPY_DIST_DATE'
       system "make", "install"
     end

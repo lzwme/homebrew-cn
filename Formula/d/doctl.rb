@@ -1,19 +1,19 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https:github.comdigitaloceandoctl"
-  url "https:github.comdigitaloceandoctlarchiverefstagsv1.112.0.tar.gz"
-  sha256 "3ac2402e56c1ffe8472ef5143da1cf931111681c300c287c8fb6aea21a1c2d15"
+  url "https:github.comdigitaloceandoctlarchiverefstagsv1.113.0.tar.gz"
+  sha256 "9a74e5d7ca65dab98afdabe74d69d3d3c71bca512ff3d5ad6039881af1b14f4c"
   license "Apache-2.0"
   head "https:github.comdigitaloceandoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "926280890f02bd7e38a3fb9beaa65e1f71287cd005a763693c74801045df938d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "926280890f02bd7e38a3fb9beaa65e1f71287cd005a763693c74801045df938d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "926280890f02bd7e38a3fb9beaa65e1f71287cd005a763693c74801045df938d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8fe2db272d68dfedb5d1d6945230acb82eedefe0ee2e0cb6f6f278d19388af33"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fe2db272d68dfedb5d1d6945230acb82eedefe0ee2e0cb6f6f278d19388af33"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fe2db272d68dfedb5d1d6945230acb82eedefe0ee2e0cb6f6f278d19388af33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc0ae54b5c6a9363b9a48f5fd44a4e07a500b72b799a05c9a72fc24c1de88c4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f5294597ed0018569d2ff537bb2c3724bcefcf4a6758dc144651949c4aa5b79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f5294597ed0018569d2ff537bb2c3724bcefcf4a6758dc144651949c4aa5b79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f5294597ed0018569d2ff537bb2c3724bcefcf4a6758dc144651949c4aa5b79"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c4b2cec97cd1b4bd8c66e44dfd917f1b2a2aa41e8c970636140a4eb886b76d7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4b2cec97cd1b4bd8c66e44dfd917f1b2a2aa41e8c970636140a4eb886b76d7a"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4b2cec97cd1b4bd8c66e44dfd917f1b2a2aa41e8c970636140a4eb886b76d7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85b4c7768beebe760bbe9417a9b8cc79b8d1a15ff3647b6b9cbddc19812fbfb4"
   end
 
   depends_on "go" => :build

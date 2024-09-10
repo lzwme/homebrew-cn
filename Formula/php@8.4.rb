@@ -1,21 +1,21 @@
 class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive25d761623cd9eb2ed1c1e5fdefa122b89d428caf.tar.gz?commit=25d761623cd9eb2ed1c1e5fdefa122b89d428caf"
+  url "https:github.comphpphp-srcarchive837a8b60bf8f477a0ceaa40f787fe63a08d0e18d.tar.gz?commit=837a8b60bf8f477a0ceaa40f787fe63a08d0e18d"
   version "8.4.0"
-  sha256 "7e505e1020088a4c8a9d566679f2ac2ed43a7626aeccba75639ed0d6b1b3f638"
+  sha256 "b527f1226ac17100e232c21186eeab3cb6f6bb6e38f2798d6f64833ab5ffb891"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 103
-    sha256 arm64_sonoma:   "81cf974ed2f34e80d3948be140c13b631ee9df4f6537948232e836c200dcaea0"
-    sha256 arm64_ventura:  "9bc3f5ce7664481fe514551920a405237eb1d4e7ab17cdf65c9cb5ab7d702bec"
-    sha256 arm64_monterey: "8d35e08999a174a0ec3ade92d3e2cc420bb28532a7b143063db56326ec7f5fe4"
-    sha256 ventura:        "9dea205f3708caeceb172efa2c34e18d5e5677d81a6f96fcd6bb3447818af4d5"
-    sha256 monterey:       "d8fcd4f587cf1cad205448cb7109fccc3229245371d50a9f959be5d15dc0df8d"
-    sha256 x86_64_linux:   "f6a58a64f5fa31189c77de5e52f82a85196c47c8bd74da501f1535c07dd10779"
+    rebuild 104
+    sha256 arm64_sonoma:   "af85a1ffa435c2575a274166fe206e32480890eee8fc6d327d2526baaf434e32"
+    sha256 arm64_ventura:  "b39ab857519d75ec06402eb2a96c5c599aa6fbf0ba89009506fae53924295d4e"
+    sha256 arm64_monterey: "61479c9a6dbb91359e90db5d5af7eaeb6478217efb5fbacb5100cc314067e380"
+    sha256 ventura:        "c365c4338de4fc2b065d8d679444f56def72891f658a46d5ff3f918a3c7abee4"
+    sha256 monterey:       "6ecaaeca9b8f10248fa3e12201357a421e1e5ebdb101240b51b84cf42c2346f3"
+    sha256 x86_64_linux:   "8f12994c9de71c1a1968643ae98fa903129e4c0479dcae8a1fc539b4e39bcf04"
   end
 
   keg_only :versioned_formula
@@ -446,10 +446,10 @@ index 87c20089bb..879299f9cf 100644
  program_prefix="@program_prefix@"
  program_suffix="@program_suffix@"
 diff --git abuildphp.m4 bbuildphp.m4
-index 3624a33a8e..d17a635c2c 100644
+index 176d4d4144..f71d642bb4 100644
 --- abuildphp.m4
 +++ bbuildphp.m4
-@@ -425,7 +425,7 @@ dnl
+@@ -429,7 +429,7 @@ dnl
  dnl Adds a path to linkpathrunpath (LDFLAGS).
  dnl
  AC_DEFUN([PHP_ADD_LIBPATH],[
@@ -458,15 +458,15 @@ index 3624a33a8e..d17a635c2c 100644
      PHP_EXPAND_PATH($1, ai_p)
      ifelse([$2],,[
        _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -470,7 +470,7 @@ dnl
- dnl Add an include path. If before is 1, add in the beginning of INCLUDES.
+@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
  dnl
- AC_DEFUN([PHP_ADD_INCLUDE],[
--  if test "$1" != "usrinclude"; then
-+  if test "$1" != "$PHP_OS_SDKPATHusrinclude"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [
-       if test "$2"; then
+ AC_DEFUN([PHP_ADD_INCLUDE], [
+ for include_path in m4_normalize(m4_expand([$1])); do
+-  AS_IF([test "$include_path" != "usrinclude"], [
++  AS_IF([test "$include_path" != "$PHP_OS_SDKPATHusrinclude"], [
+     PHP_EXPAND_PATH([$include_path], [ai_p])
+     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
+       [INCLUDES="-I$ai_p $INCLUDES"],
 diff --git aconfigure.ac bconfigure.ac
 index 36c6e5e3e2..71b1a16607 100644
 --- aconfigure.ac

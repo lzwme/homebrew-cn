@@ -1,6 +1,6 @@
 class Cutter < Formula
   desc "Unit Testing Framework for C and C++"
-  homepage "https:cutter.osdn.jp"
+  homepage "https:github.comclear-codecutter"
   url "https:osdn.mirror.constant.comcutter73761cutter-1.2.8.tar.gz"
   sha256 "bd5fcd6486855e48d51f893a1526e3363f9b2a03bac9fc23c157001447bc2a23"
   license "LGPL-3.0-or-later"
@@ -26,12 +26,16 @@ class Cutter < Formula
     sha256 x86_64_linux:   "1f0d55c82c767d2f7d947bdc054a43d381bc6c1b2b09adc2bd3e7e8381059eb2"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "glib"
 
   uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build

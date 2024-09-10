@@ -21,6 +21,11 @@ class Bumpversion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6eb5137f99b01f2ae14129dc2911e031c740c5efe6199b6e164e22d2909fee5e"
   end
 
+  # Original and fork are both unmaintained:
+  # https:github.comperitusbumpversioncommitcc3c8cfd77380ef50eeac740efe627509a248101
+  # https:github.comc4urselfbump2versioncommitc3a1995b35335da6fa7932e4bac089992c947bba
+  deprecate! date: "2024-09-08", because: :unmaintained
+
   depends_on "python@3.12"
 
   def install

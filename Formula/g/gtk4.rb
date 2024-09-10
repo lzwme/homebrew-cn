@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.14/gtk-4.14.5.tar.xz"
-  sha256 "5547f2b9f006b133993e070b87c17804e051efda3913feaca1108fa2be41e24d"
+  url "https://download.gnome.org/sources/gtk/4.16/gtk-4.16.0.tar.xz"
+  sha256 "8ef538778c82c09870a6cc325195049caec5593c1ca37df915a7b6b10f5524ea"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "91707419b88b5d666898ba30a059897110641293f6ce1d602dfd51076e129258"
-    sha256 arm64_ventura:  "abf0b4b61f5d3c87328986dcb08ebd821879909367bf9fa9feff758e97f3bb52"
-    sha256 arm64_monterey: "b2eca390766bbe96317aed281103636b391a5948cedd24b0128aad012e2e66e3"
-    sha256 sonoma:         "77f5bef853a8cf40afe4d38e2bf5ae4c365ff24634c9d5f2b7170750408fb162"
-    sha256 ventura:        "8da15fe0eba18ef4b952dbf104b00649bbb30554b35be0c5c9800f0424fbf84c"
-    sha256 monterey:       "3a51a6b4bd19c22fe04f4c8145f826962d5687a58861dde56d70184f963c8c4e"
-    sha256 x86_64_linux:   "9e53798297c2c6e3988a73aecf5e431f5164cb3bc959a553fc84dac76001707a"
+    sha256 arm64_sonoma:   "c823e9fe6efc72166f0927e0dcdc628a65b8c3986aa63b668536dd2ac9282456"
+    sha256 arm64_ventura:  "9a048708226b36b10bb3608c26a37e915679493c257f52dafcf2d38a834a9c72"
+    sha256 arm64_monterey: "e1bac1236436a47529458292a0953b57ef7caeacf7ef180857f17af9fad893a8"
+    sha256 sonoma:         "f03c1dd6b1b4bd1057936e808d1fc53d7deedcd83f1710cbf18f43e0b38c4af5"
+    sha256 ventura:        "75808d59eda8d0f2dbaead7d6c9e086e7905cf740d44be7ca8216cb766ef4123"
+    sha256 monterey:       "614e6df4e8eb19b5a151a03063d98e4938a34869f492b1aaef203371333bf149"
+    sha256 x86_64_linux:   "f9c8d6cb9921ef899a2e2facf1692a3858925258622a4c637355176021b7abd3"
   end
 
   depends_on "docbook" => :build
@@ -65,11 +65,10 @@ class Gtk4 < Formula
 
   def install
     args = %w[
-      -Dgtk_doc=false
-      -Dman-pages=true
-      -Dintrospection=enabled
       -Dbuild-examples=false
       -Dbuild-tests=false
+      -Dintrospection=enabled
+      -Dman-pages=true
       -Dmedia-gstreamer=disabled
       -Dvulkan=disabled
     ]

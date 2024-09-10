@@ -2,18 +2,18 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https:www.duckdb.org"
   url "https:github.comduckdbduckdb.git",
-      tag:      "v1.0.0",
-      revision: "1f98600c2cf8722a6d2f2d805bb4af5e701319fc"
+      tag:      "v1.1.0",
+      revision: "fa5c2fe15f3da5f32397b009196c0895fce60820"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dc780d44c83bb66f2d2cea0d846dd23ccf63b97e8ea88541ae4ff0e55b1a9782"
-    sha256 cellar: :any,                 arm64_ventura:  "46abde811b7710d4e948c3fb985e93df68172b52b70228ad0da7fc78dd238e97"
-    sha256 cellar: :any,                 arm64_monterey: "bf80e0fec54a0855d51820cf4a3bed33c8ebdb0bb13d1fbf1b4dbf51c2aa9d37"
-    sha256 cellar: :any,                 sonoma:         "b5047193fa43ce0279e9e9345def87f70de4696b2d038967ca36447cdd6be75c"
-    sha256 cellar: :any,                 ventura:        "e85dd901b4585bf0e5fab4e12a4d8f81a38f062867b1b1a76023edc2eda4f5fb"
-    sha256 cellar: :any,                 monterey:       "6eef05d4f018e9224171832f253049aa50ef8c90e21d7d04c357684c3c6ae1ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce19b677837eeab74cfa2d0f241888c28720cb6753b72af9a4ad4c3a7e064d65"
+    sha256 cellar: :any,                 arm64_sonoma:   "64809434767d707995f88a531052d0a7e87ab994dfd1a5290a6693549f8dd810"
+    sha256 cellar: :any,                 arm64_ventura:  "0aa06f44102a9555591af2652c0acdfa2b6fdc86ab0282d3f35fe3dff1074423"
+    sha256 cellar: :any,                 arm64_monterey: "c6954cec4f2375776ff7dbbd540939b167773c28c7302a3f290e4370e460ca50"
+    sha256 cellar: :any,                 sonoma:         "59b4ba0bc0d0bbdfbf0063c86b575bca2163e5b093d9a1b7f6e04f6cf94e9661"
+    sha256 cellar: :any,                 ventura:        "22f42b7030e34ca7fa638396e2a4e00d5a5697b1fb7934d367dcce74f5890f63"
+    sha256 cellar: :any,                 monterey:       "fd3398c4cb5feb442b523dbb249befe1fc75045bf24cf02125ea92b4745d51c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ffa5ecaffab080e827990da3fba0724b5c5ca62fc8b5ed476cf022ef561e744"
   end
 
   depends_on "cmake" => :build

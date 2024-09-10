@@ -3,18 +3,18 @@ class AnsibleCreator < Formula
 
   desc "CLI tool for scaffolding Ansible Content"
   homepage "https://ansible.readthedocs.io/projects/creator/"
-  url "https://files.pythonhosted.org/packages/f4/cc/4933e56147b0c98d18507f563074d0a06eb46587e932a378795a5fef638b/ansible_creator-24.8.0.tar.gz"
-  sha256 "51bd406fe06006657bdeb2ee48edb53082d564f06e2ed876be771ef20cf9b331"
+  url "https://files.pythonhosted.org/packages/6e/1c/46c00f69a398f1d6de633706502de146428243c3280df71901794b873ca7/ansible_creator-24.9.0.tar.gz"
+  sha256 "ae3dbdf0550aef77da8866c6e297816016f32e43c53b402eb02f6553952e89bc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2d09b550aacab6a9b530c59b2b8f8e60a6bd5ee60f4086a724d5df974c2a6837"
-    sha256 cellar: :any,                 arm64_ventura:  "06d8e2af4851eda7535af8387604a183725891a330bba97064fd9019ab21f788"
-    sha256 cellar: :any,                 arm64_monterey: "67ef35e9b6f66afcdfdab3b7c289d9c8451f8989771151438c8637a135b6b488"
-    sha256 cellar: :any,                 sonoma:         "9ad62072008d0ddad44ca1021ef53540cbf14c5db7845c5cc5607858762ae7bc"
-    sha256 cellar: :any,                 ventura:        "69995510a562de4a9fe39ac9c83c0212bce5e566217dc578ae2c831abb6a3bd9"
-    sha256 cellar: :any,                 monterey:       "74d84a2bcd04e378fd08c817469a8fb8fe1864b66dfbb4cb4fb7016fb4974bad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb8b90b5145387e50fca7e84e7e5f309bcfc1890d2b316dc3cd0f33a60cfe6ae"
+    sha256 cellar: :any,                 arm64_sonoma:   "03f7fb850cd67c6c16727c6c259110190dcdfee338e34072b34b9f1e89cb3729"
+    sha256 cellar: :any,                 arm64_ventura:  "b1f37a20232e7151fcb32997826bf6052d82aa3b73dcfb7d683fd9f5b66b2498"
+    sha256 cellar: :any,                 arm64_monterey: "7206a94c85b85c55b5a46dfc2ed6893e4d695cb26d803a478b9d6e73015475ba"
+    sha256 cellar: :any,                 sonoma:         "316dfa1615a516a13e64f2d1eb257d3497d2f454426e2e4dd978d425c562475b"
+    sha256 cellar: :any,                 ventura:        "8800ce1c19d6dfc7ac60201d044718f83f3137a3568fe8195858694d64383116"
+    sha256 cellar: :any,                 monterey:       "abd7998a866c73600c61650fc97e24145837f26489826f33e5af53c12cc03da3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "667983a812e9e604e64d8af9a9ac1f422d7a37385d1957ea1cbfd71220cd4121"
   end
 
   depends_on "libyaml"

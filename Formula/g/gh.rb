@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https:cli.github.com"
-  url "https:github.comclicliarchiverefstagsv2.55.0.tar.gz"
-  sha256 "f467cfdaedd372a5c20bb0daad017a0b3f75fa25179f1e4dcdc1d01ed59e62a5"
+  url "https:github.comclicliarchiverefstagsv2.56.0.tar.gz"
+  sha256 "ed19f01df36e336472c434edfadf01a2cbe4bf07394724b064a80c8fd6a0dc1e"
   license "MIT"
   head "https:github.comclicli.git", branch: "trunk"
 
@@ -12,13 +12,13 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "848b301ea3e28c03cac9060b1dfe27b25d2949e5311b123598b959bf34b7c049"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "848b301ea3e28c03cac9060b1dfe27b25d2949e5311b123598b959bf34b7c049"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "848b301ea3e28c03cac9060b1dfe27b25d2949e5311b123598b959bf34b7c049"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4ae5a0881b7a01b6a68e45bee7bc1d89343e29594f7f2e2cb8751075130a2bd2"
-    sha256 cellar: :any_skip_relocation, ventura:        "22074fc7d13771f421a4eb3d78198df45cbf17335b3fc083c1480d4e98938ef6"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a21dbcf7d8e6e8de7b61a37784d50b92704ade19e5e8972d168319607b52db4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d9bc648156a1de5fd1faae966c08db5969299ed1819357d9bfb434eb215321a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88dccfa41d529d4a8659264e099e055234864df77487b210ac0095aff135e0b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88dccfa41d529d4a8659264e099e055234864df77487b210ac0095aff135e0b8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88dccfa41d529d4a8659264e099e055234864df77487b210ac0095aff135e0b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "595b0a901c733b090bf07a64f4f86ca123c60e3209fea8165cbadd78124c5333"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c4004ef3b9a35f53cdc16a4f61b5edfb24dce381cb26e9ccdda38707c44486e"
+    sha256 cellar: :any_skip_relocation, monterey:       "c935aaf476aa48ca59b439d9dede57a39c1c4b9179cca38d30541228885c78b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efcb50df5e76b312438082c70cbe34e1660067492d2c53e1a2fe9269c21747d8"
   end
 
   depends_on "go" => :build

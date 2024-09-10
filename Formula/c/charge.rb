@@ -23,7 +23,7 @@ class Charge < Formula
 
   # Does not work with supported Node versions
   # Last release on 2020-03-12
-  deprecate! date: "2023-12-07", because: :unmaintained
+  disable! date: "2024-09-09", because: :unmaintained
 
   depends_on "node"
 

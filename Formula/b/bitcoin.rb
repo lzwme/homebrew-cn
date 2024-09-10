@@ -9,6 +9,7 @@ class Bitcoin < Formula
     "BSL-1.0", # srctinyformat.h
     "Sleepycat", # resource("bdb")
   ]
+  revision 1
   head "https:github.combitcoinbitcoin.git", branch: "master"
 
   livecheck do
@@ -17,14 +18,13 @@ class Bitcoin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "71aab0dcf1c7ad4c153ea3e18e00c9a6e2c70d5bc0a00f1026a5f693f2fc93f8"
-    sha256 cellar: :any,                 arm64_ventura:  "d618b0c4fe2c4d6bb50251eaeb2b05084698e0e43d2aa8ffc00531e453c2bc84"
-    sha256 cellar: :any,                 arm64_monterey: "1d0b1b8ca67672ab69bf6b94d38faaa93f958ede69fff5bd6f234401ad0413c0"
-    sha256 cellar: :any,                 sonoma:         "c9813c58fcb96a7b98f2335e879bb846bcc134026d242493862b2091007afa78"
-    sha256 cellar: :any,                 ventura:        "c7f669c4b6c16558781d3ee95e11ce9b048627a822c9cd282e50ef3831ac72c2"
-    sha256 cellar: :any,                 monterey:       "fe94d256da8c4d5e6aae08d75f38e1afe81a3e94cbbd2c71ea370028c0c0f28b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6175a2cd66d5fea7074870796b79fa81be0605c0fc502f989fde29f3bcc69f1f"
+    sha256 cellar: :any,                 arm64_sonoma:   "545ca96eca61db3e8ba5abe1c8a21d5ca3895be3c23696037023b8fecfb71431"
+    sha256 cellar: :any,                 arm64_ventura:  "74596218beec67cfd41f822c1d27962a9a497031fff5001e600dc4667adf19fd"
+    sha256 cellar: :any,                 arm64_monterey: "8154c69f0f380b5ac3d278c84ff890fbf1ff6f849d93ad4395c81385c57b2d9d"
+    sha256 cellar: :any,                 sonoma:         "b3eaca532c4eaf757883c785556c2a1f66939d757d56e471a031d934bcb2ae58"
+    sha256 cellar: :any,                 ventura:        "adda2c14c11260796f49e28237ed474888c85ab2e7077fa6f1bb912526195a8d"
+    sha256 cellar: :any,                 monterey:       "19581b4780b46bfbbc50fb9f33bf3a46a1afbd36e3c1dade5ac11c10a13c5efd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f3434a672c3702b6558c90d74a9b7a4a43bf80a43ad9efb268c7c7b7b1f8c87"
   end
 
   depends_on "autoconf" => :build
@@ -72,6 +72,12 @@ class Bitcoin < Formula
   patch do
     url "https:github.comfanquakebitcoincommit9b03fb7603709395faaf0fac409465660bbd7d81.patch?full_index=1"
     sha256 "1d56308672024260e127fbb77f630b54a0509c145e397ff708956188c96bbfb3"
+  end
+
+  # miniupnpc 2.2.8 compatibility build patch
+  patch do
+    url "https:github.combitcoinbitcoincommit6338f92260523eaf7cd9c89300f4f088f9319b0d.patch?full_index=1"
+    sha256 "3544c7a1ea5c5b4e1c196fbd9fc871800b97728eec893d3980a4488e9fd1e2a8"
   end
 
   def install
