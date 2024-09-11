@@ -7,6 +7,7 @@ class Nlopt < Formula
   head "https:github.comstevengjnlopt.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6cc504a8ae9faaa179ccdc53f2c60e798d094171bfaf8cccd6b2b21daaeb29f5"
     sha256 cellar: :any,                 arm64_sonoma:   "20f0cac5105fa0ddc82842091aeb29a1efa7ad3f3a6ef6141f6fb733d0a51175"
     sha256 cellar: :any,                 arm64_ventura:  "c1d084e9e02aeea9590837a4f589c5366809bb0b2a8ffa89db52a547fb587b81"
     sha256 cellar: :any,                 arm64_monterey: "bc0304fa0a34d1331a3114d06cbeae705625ca482f3412bd89880b7d7ca4a061"

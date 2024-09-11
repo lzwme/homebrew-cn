@@ -13,6 +13,7 @@ class Libxslt < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bf13c5f7c1e76a199ed494c88c24eee4ba697acba83248566eb4e017cc9226c6"
     sha256 cellar: :any,                 arm64_sonoma:   "3c3a336b56c8384b9c2956202cc78e28271db8b627a65227f77f049d387b8c05"
     sha256 cellar: :any,                 arm64_ventura:  "fd6b363128cde585e7086df6d54c8473475a568842b6aa04add1947dae8b9135"
     sha256 cellar: :any,                 arm64_monterey: "27c8a5e233ab19a82557b33c99f4e226610859832b27c18276a49c1a3765621d"

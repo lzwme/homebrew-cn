@@ -10,6 +10,7 @@ class Unoconv < Formula
   head "https:github.comunoconvunoconv.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "da0c5318947826ae48c016e4c5b80d263c807bf0e2c18ed53a464ec11b92e50d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8af20011a8567f3c979711096d8c65dc3eeb6ee134b5138372ebe6ab7bb25f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8af20011a8567f3c979711096d8c65dc3eeb6ee134b5138372ebe6ab7bb25f8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f8af20011a8567f3c979711096d8c65dc3eeb6ee134b5138372ebe6ab7bb25f8"

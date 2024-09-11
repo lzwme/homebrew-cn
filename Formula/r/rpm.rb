@@ -15,6 +15,7 @@ class Rpm < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia: "20a568f5c98571b9bdd77c365dd6619ff67fd06b0d6118325e75fc38d417aef8"
     sha256 arm64_sonoma:  "293ed8ed214f5f4bb6be87e38d7402d16a9ad5a197a310864a926bd443d247ce"
     sha256 arm64_ventura: "f89c2a59eba2d3ba9c49ed5f789922a3ea434a1b463368ccb2ec232ce2c10ec8"
     sha256 sonoma:        "512ac33fae3b71ed269e1824e84589a935b875720679d14794891354fbb62b84"

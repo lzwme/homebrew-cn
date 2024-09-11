@@ -7,6 +7,7 @@ class Unibilium < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia:  "60a0dae5137d0f16daf0d3baae4108fad8b0be4e9e838ba2c8b0c772296a38f1"
     sha256 cellar: :any,                 arm64_sonoma:   "fe23eecccadee9f6dd9c28cab31fde6f708428b4b381080f65eb639a9757836b"
     sha256 cellar: :any,                 arm64_ventura:  "d9089f06243f3f86c73d4480e6fc7aa0bfdfc59d359c190601f8c9f13b4e38f7"
     sha256 cellar: :any,                 arm64_monterey: "2d241d597c1db3b4431147b57fdfc943f60b3ecc876808501514c5f06f544228"

@@ -7,6 +7,7 @@ class Binutils < Formula
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 
   bottle do
+    sha256                               arm64_sequoia:  "c645c3616086c374d30a1f3c1c6001f6f2562198efdf7ffea7d081eb33e36449"
     sha256                               arm64_sonoma:   "88c34d875602f7bce1ad098b0dc61df8018db8febcd8a6d4759971cae74403d7"
     sha256                               arm64_ventura:  "79dc9dfa4c4af46fe047c8c362c2cbad169d5d4c6c7d21d105e23ed1411ac3cd"
     sha256                               arm64_monterey: "f46062326982276204aa358adc611d074b5872951678bb06a82fe399b7929b4a"

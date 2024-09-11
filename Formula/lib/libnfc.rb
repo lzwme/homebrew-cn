@@ -6,6 +6,7 @@ class Libnfc < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "2b82cd576da101ec339171c4a8ded0fee90ab4cf072513c8cd0a1b99721c72f9"
     sha256 arm64_sonoma:   "3e1ce25513819c59c110f28cfdb8cf4ecf265800d741d272ad7450805ba647f5"
     sha256 arm64_ventura:  "28002ee7cadbe88fdd4a614804a813b4d46a17d4cb2a1fe7d24fe17eff04f933"
     sha256 arm64_monterey: "24d476cf0560256e53b5efb4f915ead0e5a5bf336da89395a3b8a5c0903f1caf"

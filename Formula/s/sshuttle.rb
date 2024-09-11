@@ -9,6 +9,7 @@ class Sshuttle < Formula
   head "https:github.comsshuttlesshuttle.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c41ea742795a1f00661378c35541a7ddbfef726cf9e9cea525afb0ac327b5186"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae0a3b39536919ccdf473bb80b79258c7d0641966f74a87acefa65992d762791"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cba6bfc80686df1e1f370710691d7e0070120798cc25a3427eb44f311909fac6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ecea47bc1b5b47ac0085159e39d539059a9b8898e1c58fcf957fc25ffb456cc"

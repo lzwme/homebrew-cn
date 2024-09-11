@@ -1,19 +1,20 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
   homepage "https:nfpm.goreleaser.com"
-  url "https:github.comgoreleasernfpmarchiverefstagsv2.39.0.tar.gz"
-  sha256 "cd7ce7a003275266178c55882668a88f5309cb7875ec74f71562dcc72c58ce32"
+  url "https:github.comgoreleasernfpmarchiverefstagsv2.40.0.tar.gz"
+  sha256 "c177f596c7bc75e10537422bacc376f77e840f986af092fa0fbc3b93611f862c"
   license "MIT"
   head "https:github.comgoreleasernfpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1790fe2cb7093849fc81110d7f2141d341627a48717b3a763db430e2f419db4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9af058d6666c4090768ac38e266f593faa642b9a4b6b4b075febf4b7251dfe5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a56beda6dd22daab61d928c3e1d113024ced2c3350ace76d2edf9c63ea845b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f37885f9f99d6c70a9e14a27473532252f088ae6877093bb112d373c11e6c40"
-    sha256 cellar: :any_skip_relocation, ventura:        "3692bfa454950f479d2628da194cde9f3e50ced89797d80d6702e3048cd3a9fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fb0570c3bea8b02b6b8ba10e6538e1ced0655d175822e87069c210520d72888"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f4407f80841b55b6d763b8d77d172440597d0e61f5cc17895762bd566bea580"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7254db30626be63a67ad947e13bea8b34890531236e810b80d5e218f5206523a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7254db30626be63a67ad947e13bea8b34890531236e810b80d5e218f5206523a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7254db30626be63a67ad947e13bea8b34890531236e810b80d5e218f5206523a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7254db30626be63a67ad947e13bea8b34890531236e810b80d5e218f5206523a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a4bc37b8863bfccda231bdf7e90cc97a66dbd395552b37c6ee45497f0c02fc6"
+    sha256 cellar: :any_skip_relocation, ventura:        "2a4bc37b8863bfccda231bdf7e90cc97a66dbd395552b37c6ee45497f0c02fc6"
+    sha256 cellar: :any_skip_relocation, monterey:       "2a4bc37b8863bfccda231bdf7e90cc97a66dbd395552b37c6ee45497f0c02fc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "def4645ec4d80935f3046168f38b59975c5d1e9a91e2d3b7804906c5f8211bb4"
   end
 
   depends_on "go" => :build

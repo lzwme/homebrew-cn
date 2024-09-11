@@ -6,6 +6,7 @@ class CqlProxy < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4956cf9eb3aac88e7b3706870559e78ad8d7bf2f84470b858813ec6f3f2d674e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2dc499bc83523870318cb45457c8dbf5463b38613e8ba898eb40f3cfb26ed15e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1341c402de442c3c8dc05e77ba655c372c14bdca32b36b3078be628fc62ee25"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c03fd5277a1fefba5da878800cf8c0d5efb8913a34850a60e840150f3a8c5508"

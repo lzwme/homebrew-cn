@@ -13,6 +13,7 @@ class JsonC < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "24f100e147c1d8ac5e929b07dc42b6977c4a785011fe1c0ba1fa9c1045050cb5"
     sha256 cellar: :any,                 arm64_sonoma:   "ba640ce5ab085d32c4a1dd2f631ba8940899f77c9d798ecc6ccc304598cc6ceb"
     sha256 cellar: :any,                 arm64_ventura:  "f06d21bf49bb8378ef1648221ed367e7ead751b84925b255ef0b62f14d1824dc"
     sha256 cellar: :any,                 arm64_monterey: "61480b16756199897acf340e53625706814566dcf89ecf546e267a08397a9f22"

@@ -9,6 +9,7 @@ class Parliament < Formula
   head "https:github.comduo-labsparliament.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fc025e7f291462ae8940ba2602aaad1f57549d79205483f57982bcd2577f5642"
     sha256 cellar: :any,                 arm64_sonoma:   "9f2be989f303519fb28ad485bdbc4c585fd4ee24f2316a57849b4d2fa1451ae7"
     sha256 cellar: :any,                 arm64_ventura:  "836145ee2f4070d875c8e43425b47388eb10c5df47ad95368cd98e8886614fc0"
     sha256 cellar: :any,                 arm64_monterey: "c04fe7a13b8123c5f2268055c2b09566a1f75ca9df262015a6b4366deaacc08f"

@@ -7,6 +7,7 @@ class Notation < Formula
   head "https:github.comnotaryprojectnotation.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8f154bacbf4da75dab08520d7a574bb1dbf271960290d83200b4d44260c2fbd2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8257d351a65fd2ad5b0d66c99b4bf332a067c49cb0d581b1a0b81b96c90c3af2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8257d351a65fd2ad5b0d66c99b4bf332a067c49cb0d581b1a0b81b96c90c3af2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8257d351a65fd2ad5b0d66c99b4bf332a067c49cb0d581b1a0b81b96c90c3af2"

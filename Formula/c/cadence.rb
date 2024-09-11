@@ -15,6 +15,7 @@ class Cadence < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6d0aa81958fc209119b4ad5a5d9d6cb3eef263e8f19cf90887ead6c67184c674"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abbfecc5e89d32411e27553f6bb5e33c56aace5e75c02a1937245df0a334da15"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "09ea2f95e2d7de1c05aa15fc1a492e17d0dc9208c52a2c5e4efbc64c9922866c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0752b59fb0c2cc48aed7992c6be3aee3afccd804c3ec84cf2852f3cd2a30908a"

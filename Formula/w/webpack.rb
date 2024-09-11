@@ -9,6 +9,7 @@ class Webpack < Formula
   head "https:github.comwebpackwebpack.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "54b395a592783677d59f2bb1f24ae6818dac794cb498664400e8b327b9648127"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6a2547635c2a2c6ec9630d46f966021b40481f7265bd9fa920a773d49010f50"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6a2547635c2a2c6ec9630d46f966021b40481f7265bd9fa920a773d49010f50"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b6a2547635c2a2c6ec9630d46f966021b40481f7265bd9fa920a773d49010f50"

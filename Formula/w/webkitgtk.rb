@@ -23,10 +23,12 @@ class Webkitgtk < Formula
   depends_on "python@3.12" => :build
   depends_on "ruby" => :build
   depends_on "unifdef" => :build
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "enchant"
   depends_on "fontconfig"
   depends_on "freetype"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gstreamer"
   depends_on "gtk+3"
@@ -35,12 +37,16 @@ class Webkitgtk < Formula
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
+  depends_on "libdrm"
+  depends_on "libepoxy"
   depends_on "libgcrypt"
   depends_on "libnotify"
   depends_on "libpng"
   depends_on "libsecret"
   depends_on "libsoup"
+  depends_on "libtasn1"
   depends_on "libwpe"
+  depends_on "libx11"
   depends_on "libxcomposite"
   depends_on "libxml2"
   depends_on "libxslt"
@@ -49,23 +55,14 @@ class Webkitgtk < Formula
   depends_on "little-cms2"
   depends_on "mesa"
   depends_on "openjpeg"
+  depends_on "pango"
   depends_on "sqlite"
   depends_on "systemd"
+  depends_on "wayland"
   depends_on "webp"
   depends_on "woff2"
   depends_on "wpebackend-fdo"
   depends_on "zlib"
-
-  on_linux do
-    depends_on "at-spi2-core"
-    depends_on "gdk-pixbuf"
-    depends_on "libdrm"
-    depends_on "libepoxy"
-    depends_on "libtasn1"
-    depends_on "libx11"
-    depends_on "pango"
-    depends_on "wayland"
-  end
 
   fails_with gcc: "5"
 

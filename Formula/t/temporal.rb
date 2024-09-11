@@ -12,6 +12,7 @@ class Temporal < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2767f73f31487d57c9c0928d2074a14f775f84a83fb17e9a52bbae5cc8f49a77"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7e5a6383d9aff3b052c4770293cc71298073dda59b87f0c7ac8de0ecce1c959"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a300c69f7bc771058a3c29957b42074258e5cbc3d20578b239905731d5ce5468"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "327071ea09519338ea5f6a9496cc4a407db6807a10018a5f910b9e0b975621a8"

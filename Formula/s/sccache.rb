@@ -12,6 +12,7 @@ class Sccache < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "89d55004614acb3e6c10b09e0951fa3bf882c1c2aa9955ac32da064e1d430a90"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9445c581fefc0228a6d7eb919ffe144e712202cf5f1daebbcf2704de948abae5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "507c9974e7a268b18f4c5c895b45817a328773da80337196761c2d6d70c38f60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fb8cefb8c0f8065c87e85059c699664904f5e6e2cc55bc221dd2fc6ecf662458"

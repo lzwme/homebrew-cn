@@ -11,6 +11,7 @@ class R < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7f675736071affe0f4ebfdab80e61e2ebd1f7bd2c82140586774230ad4746f72"
     sha256 arm64_sonoma:   "a9e3b6d8ce9d2606b9f182d30145c530dfdd52803359729465b616f8dcae0847"
     sha256 arm64_ventura:  "31534a8b13f93bbd484c6392792736ca9fdc91fe6a9e428747e9291fe49b6778"
     sha256 arm64_monterey: "781dc303ccb6041cbee79a17a1dc3ae5ffbacd59b5d52a04983751256dd68ae4"

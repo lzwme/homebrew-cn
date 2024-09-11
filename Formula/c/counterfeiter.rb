@@ -7,6 +7,7 @@ class Counterfeiter < Formula
   head "https:github.commaxbrunsfeldcounterfeiter.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a18e8789e60dbca665b18cdd9d4a7d968e74c5e5f9c50239933f01e141802a45"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a017ffd8f7d823ab015c3d805e37814a775e480b80fa56e5cd981948d3ba20bb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a017ffd8f7d823ab015c3d805e37814a775e480b80fa56e5cd981948d3ba20bb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a017ffd8f7d823ab015c3d805e37814a775e480b80fa56e5cd981948d3ba20bb"

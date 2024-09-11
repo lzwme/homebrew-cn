@@ -9,6 +9,7 @@ class OscCli < Formula
   revision 6
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65788bd8aec1003d2a1175cf265508cf6c17bbd7ada9056be3257226796d0334"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "897074cc2efcffd7c1921ed445bedd78127adcdac4359583ee5fdb17b1a26c6c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "897074cc2efcffd7c1921ed445bedd78127adcdac4359583ee5fdb17b1a26c6c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "897074cc2efcffd7c1921ed445bedd78127adcdac4359583ee5fdb17b1a26c6c"

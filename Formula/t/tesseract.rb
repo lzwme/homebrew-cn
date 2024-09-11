@@ -12,6 +12,7 @@ class Tesseract < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1aa1e95a7c392b42a06b10dc07ca4e3d068d4acb7d350fc8afa345187d7c0c6f"
     sha256 cellar: :any,                 arm64_sonoma:   "41f0427bedd959c89b6c0aeb4eca98801f229745d50e4aa39dfc05c31785e289"
     sha256 cellar: :any,                 arm64_ventura:  "ac7861b3d6ceb629f9618e0e5d73706196738cbb01f90bcc48418d25508b5d68"
     sha256 cellar: :any,                 arm64_monterey: "ac2c5c4c3d242f88fe1eb198e1f0d83c1d714e6db0da42f11752efa084e1e682"

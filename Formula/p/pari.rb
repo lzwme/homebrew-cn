@@ -11,6 +11,7 @@ class Pari < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9f374e2ea367b5f857b1f7c787769a46bf933472d88568a38e18b66b716d6013"
     sha256 cellar: :any,                 arm64_sonoma:   "a537929fccb4f007daa839f9aea76de73c0326dfccc48d51e55aad38d506039f"
     sha256 cellar: :any,                 arm64_ventura:  "b03d85a4d0dbfa7131b2e61d8af7979ae4c41588efba24a14f84eb7c1498d64f"
     sha256 cellar: :any,                 arm64_monterey: "5051f201b86cde5edf7185bc99c10201cc927e2008a5d0d7340789cc120f33cd"

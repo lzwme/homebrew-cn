@@ -7,6 +7,7 @@ class Rswift < Formula
   head "https:github.commac-cain13R.swift.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c065e8adefe45d7198e0e306d5da20675c5c255211b11bf63003370c3b865880"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efe3eeac92249327c135ecfd20630dd807bb81ca9684fe8e3af00416a45c58e6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04cbfe7cc830dd72eaac109a1433a1faed9d9eb8884633e0d58109e879dbfb88"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9220b75e377a66ad28a362b0902b5ce8101552e1fd0d05af2a2309fef84575f8"

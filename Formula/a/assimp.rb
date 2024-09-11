@@ -15,6 +15,7 @@ class Assimp < Formula
   head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3617c461f17de42a22ab7090b1b056b16f854f767bcbd9f46e3df1d1c2374b0b"
     sha256 cellar: :any,                 arm64_sonoma:   "6e0aead723a0156775a0e547d7c38da9893f0db854e32932e168f09b9f33df1d"
     sha256 cellar: :any,                 arm64_ventura:  "7ced67d760a444e794361406950f9cf559448bb1820ed27f151c8026df25109e"
     sha256 cellar: :any,                 arm64_monterey: "e37e55230c1dadd42cc118a8cc7b1ede59226d833731c4da7c7edd2a7f7e89e8"

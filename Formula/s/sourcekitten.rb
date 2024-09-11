@@ -8,6 +8,7 @@ class Sourcekitten < Formula
   head "https:github.comjpsimSourceKitten.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6d7185725454aa6e7cf946666dd3a66aca84965a07b3c0cb7c6d78caed08d1b1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de09af7ebff8f1fefb5daa5656ceb3d768b06ed9c1825783680acdcce96acb86"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1b65a68b37177be39565b54be6149dba1f3ba42fcabc26ced151c7f7803edc0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8dffc8ba081641777ef1d0606130582d2eb2a505926c9dd3230d17acf9336850"

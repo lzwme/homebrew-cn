@@ -8,6 +8,7 @@ class Osm2pgsql < Formula
   head "https:github.comopenstreetmaposm2pgsql.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "d7516322635d992857c605241dca1975a3744b3fa5dd8c9a21f8f49305c7df54"
     sha256 arm64_sonoma:   "a4e3b44ee3c1717a0eff88f03678d3fb88b2e7bbc1c0c1c0ac05ab8a1d605556"
     sha256 arm64_ventura:  "999c603e48cd96f0c33b1db28ef55eef999b7c24484a09dcd5d198189eca72bd"
     sha256 arm64_monterey: "42d4c065c00f567cc477c4b831cf5071c407297aa52076d7c0fc3b7ae32b1040"

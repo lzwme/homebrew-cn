@@ -7,6 +7,7 @@ class SocketVmnet < Formula
   head "https:github.comlima-vmsocket_vmnet.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "82626a0ec9933d3ce43895528e24caa58a869e61bfab800e111f340768698f70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3fdabd6b7f9902acebb939a7e291ea5f97f3e36aedf1e8fb3a18c0b1fc6c8eb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8597587e961d4482d83739489badf3cb8c6a75402692d613c045229203c8392"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a6c24f2176c97e6061015d76ad48a1c468f85b3c4198fa4f2d0e43d229a50fca"

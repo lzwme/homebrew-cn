@@ -7,6 +7,7 @@ class Openjazz < Formula
   head "https:github.comAlisterTopenjazz.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "5059610faf67f4a6416c1b59f3535c327cae6b26bafd68b52ce033310c0b844f"
     sha256 arm64_sonoma:   "07a222337046a16eb095259f2a5952d2893279bb5dea456df5db6a04d0a464a3"
     sha256 arm64_ventura:  "c5c520f1a957586f0d8a9a624db938ab0310f1beaa6b89e5b0ed8a64cef6337c"
     sha256 arm64_monterey: "df4726038828be4f5c0297724794355b57988a3418d82f184d26345c3fe29bcf"

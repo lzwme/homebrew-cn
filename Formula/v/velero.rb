@@ -11,6 +11,7 @@ class Velero < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5c0adaea93ab960034301865cdfb8275a7f6cb22f32a1a482a45f87818d52fe4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2a645c0ffd37d65a4470edfb7d7700b92d40be61505ad0c7766413a6a5f52ca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2a645c0ffd37d65a4470edfb7d7700b92d40be61505ad0c7766413a6a5f52ca"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e2a645c0ffd37d65a4470edfb7d7700b92d40be61505ad0c7766413a6a5f52ca"

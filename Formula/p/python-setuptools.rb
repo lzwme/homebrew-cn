@@ -6,6 +6,7 @@ class PythonSetuptools < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "578730d2480c6dc8b5098b1e42320f314e91104c59c85d793ac506eafd2cd06a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "578730d2480c6dc8b5098b1e42320f314e91104c59c85d793ac506eafd2cd06a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "578730d2480c6dc8b5098b1e42320f314e91104c59c85d793ac506eafd2cd06a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "578730d2480c6dc8b5098b1e42320f314e91104c59c85d793ac506eafd2cd06a"

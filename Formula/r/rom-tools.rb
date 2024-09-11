@@ -12,6 +12,7 @@ class RomTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "549a183c1161853fe7400f6830d12a28c58c17a3f05fb3b7ab9f5182dd86768f"
     sha256 cellar: :any,                 arm64_sonoma:   "579978ebf4925a56ed82e6410ca9f2f92f7328b6d0200616cb60c8b769894804"
     sha256 cellar: :any,                 arm64_ventura:  "1ddb6aa64e3bf5798ae9ff8788117e6e2b7f67722865cd2c498b774c05ee1e7c"
     sha256 cellar: :any,                 arm64_monterey: "8c684a5dbf6ca3189667c9b8bf4d3ce234be9585b7372cc0f14534c4127346cf"

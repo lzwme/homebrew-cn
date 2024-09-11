@@ -11,6 +11,7 @@ class Dnsmasq < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "74e9c9906acf3ae44bf1c019d7ea85a08673a50bb817b2936fe93ef60e3ea0df"
     sha256 arm64_sonoma:   "b6897c95d454b3d7a0d488b3cba0f525a90c951d8690929a80794aee05f48ae7"
     sha256 arm64_ventura:  "96d78b8341adb55a2f3260fa4813102e7c08bc0d61306401de5bf4f1e49843b2"
     sha256 arm64_monterey: "740412d9203cd865d9cafb9c10a3bc69ef19e44291954d7c26e48b17fd378039"

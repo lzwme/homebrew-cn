@@ -15,6 +15,7 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cca6d0008f0d7de5ce20b2fb3a2f9d7da7e21cdb6f7418d98853b717dae4463b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a4ab48a520c7b5745d2b2b8a25933e5e62f2d62da4efce13115c8ecebbe3264"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2155911d3998505f87387858ef5c427678207091bdf5f225ee6631b02f7f38a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "01e6821812ead5b97f6d3c1a30937ba758850609ae5a2a3f1fab39daa2adefd2"

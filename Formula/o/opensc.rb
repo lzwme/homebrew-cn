@@ -12,6 +12,7 @@ class Opensc < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "f42664ab93ade48bdee57762b891eaaff3b7b30bf3d9fa745de69fa33e900658"
     sha256 arm64_sonoma:   "f0107f0b54f55535c337cb76d6158f68ce02cf1f8f4f10be9a65fac14bf7c5a2"
     sha256 arm64_ventura:  "8c9ed4589ec37481862838d43f0d40954bc333ad3cf4505784e1850188652625"
     sha256 arm64_monterey: "93b0d2c9be69a6f5eb221f0ffe6ab04a80b617fb2a26a5a95a11f3d93dbf41df"

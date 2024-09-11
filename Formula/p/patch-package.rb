@@ -7,6 +7,7 @@ class PatchPackage < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dcccd910c1f42974369839c896362e5ffcb2b29c6bcc71d74b13c2590a9e0291"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "431f269a2de6319327359c7fe0ce21b7d10b4dfa92bff4557527987a5efb810e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "431f269a2de6319327359c7fe0ce21b7d10b4dfa92bff4557527987a5efb810e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "431f269a2de6319327359c7fe0ce21b7d10b4dfa92bff4557527987a5efb810e"

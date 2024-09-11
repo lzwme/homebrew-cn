@@ -9,6 +9,7 @@ class TrashCli < Formula
   head "https:github.comandreafranciatrash-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0af4f27c46f69d581e0ac85ad137e485ecfe77d3b7f11416ad95b2feb21699e1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52494b0f151cb64bcbaf135234a3dba653c62ba58acab0738238ef76a0e7e5d9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "840acb0031d2dff6846a108168e587565c668408ff198114705956afef881a4b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2260988e4f3d877e696902b51ea38df68e2b54d48abfcabe897efbe88b683883"

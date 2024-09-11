@@ -7,6 +7,7 @@ class CyclonedxGomod < Formula
   head "https:github.comCycloneDXcyclonedx-gomod.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ee584acfcfe4bb0b34c0185a6423c5f4c0d7378d846923b86e595da9e067131c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "84c98a0eaf5f6ce84c89c5a20ab14fe6e8dc6d410747b0abcda7a080d3365d86"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd4fbc1e3a87d663221a0489d5c5a2b291347399940aac387d4cd29c4cb1c4ce"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8027696149cdd3d21f2b0ce5f1855da24a76ac948324d83f9a888a8874d7c608"

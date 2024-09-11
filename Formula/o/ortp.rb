@@ -16,6 +16,7 @@ class Ortp < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4f7e1e0d2dcb59bd549e3729920f94029ee3533e50f1a99f78c2aa0e7e767304"
     sha256 cellar: :any,                 arm64_sonoma:   "62487db62cd78fa0be52249a143240fe05434b122ce781c39b204eef4cd77573"
     sha256 cellar: :any,                 arm64_ventura:  "a2fecff0f22e4f9449a317c3c0bcd74e64b3228ca51093f92db4582dc191d894"
     sha256 cellar: :any,                 arm64_monterey: "6b022c417495707da6805d978553a187e36d6c2b77b70101fd055141a8f92c4e"

@@ -16,6 +16,7 @@ class Thrift < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d0bcbb13e3dec6bf71e04da65b2c58beb85041e27743374d9801c92459154200"
     sha256 cellar: :any,                 arm64_sonoma:   "93a5538c94151be23ff7ecb1aa8dcd88738217fc7092f8b6a20d033f99c63206"
     sha256 cellar: :any,                 arm64_ventura:  "41e37eea7e17eb56ac112fcd2c6ef55dad48a162356d5d3059b7cb343e6f2712"
     sha256 cellar: :any,                 arm64_monterey: "c226249f0a56ab2f1bbcd82034309db8fa93c26e6dfe34b6fce4c146d7ba47ef"

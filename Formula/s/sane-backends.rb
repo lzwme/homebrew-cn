@@ -12,6 +12,7 @@ class SaneBackends < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "73d9e6f08781212504191af29da392c4f0896ba8b7f8192276af15b97db1d32d"
     sha256 arm64_sonoma:   "0719713dac96d44d1f64d0e427c8c210e55796d93819693e796f8712759e1f70"
     sha256 arm64_ventura:  "2c26a72e1a02d2989c5f961635c40e28da1ca235d9fec0c89f6647e326761d08"
     sha256 arm64_monterey: "aac23e69bcfcdcdaf83b2ac5cc0dca17f324621a2a034bdcacffffd4138ec99b"

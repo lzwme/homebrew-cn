@@ -21,6 +21,7 @@ class Go < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
     sha256 arm64_sonoma:   "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
     sha256 arm64_ventura:  "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
     sha256 arm64_monterey: "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"

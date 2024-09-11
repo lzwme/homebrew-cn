@@ -11,6 +11,7 @@ class Freetds < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "02317138d5c5d5980ba4ee236a52665b6729ea72d109760a67bcced7537e36bc"
     sha256 arm64_sonoma:   "6b0ba395d6481eaee3b7d22c9ba75a8acfad011574d38fb3cc7114c7703a0a31"
     sha256 arm64_ventura:  "6a3f546650f661ee8a9fbf795059331b520d79ca9b71501d40976eac02018484"
     sha256 arm64_monterey: "71626b498421c3a2fff405fabcf719cc281ee741e04015859a10d8d9b4e27903"

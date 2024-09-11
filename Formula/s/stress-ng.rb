@@ -6,6 +6,7 @@ class StressNg < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f05ee7fd31d3a35b356f0d65757d1d1e7a9501552da05d47df5e6bfdd214406b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0646a3bd5de2a42279774f18ddc66fc368191fc4455eb7642fcfab3c41de28ad"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3fb9c4b7f7f6039fdd9b4ae26615bc0305034b3a842d97b9e466971203aae7fc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "54fad38559f57aa0df41f9af48855020144a669b465d5ae0c7663c5a493f71a6"

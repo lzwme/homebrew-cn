@@ -12,6 +12,7 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a424244b18a27f8ffb436b3522d12f5f3f2747b51be1ea49ab6441f3d5ecb5a6"
     sha256 cellar: :any,                 arm64_sonoma:   "c2a6d824296ad4f8e929296ab82139aa205d9d0ac15bcc3936d94561920eb1bf"
     sha256 cellar: :any,                 arm64_ventura:  "0767deb3747266cd8ad122a4c45c670493278b851ca7bf7626a7950e5536bedc"
     sha256 cellar: :any,                 arm64_monterey: "bc7287fa3fb8e153339d2a49d7e68612ee4e0ef255e51c10922d24759762bc50"

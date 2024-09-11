@@ -7,6 +7,7 @@ class D2 < Formula
   head "https:github.comterrastructd2.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac9aeb470837b19193e39335536bda2a5ec52534797cf72de7d5b0c23c7b2dcd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf741d36373173c5b368e8cb2b10fd04eec6188cc8abae41b902204d4bc8a122"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a485c895fed104e605ca34380ce25b2108db15254de03a806a4fa086b41211da"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bee230034d2865729b942200cdbf10fcc84c319ccc0f82e81b9698668d0264ff"

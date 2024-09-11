@@ -7,6 +7,7 @@ class Proj < Formula
   head "https:github.comOSGeoproj.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "17743ff38d30867f24249bf08db7165fc409cffdd9df0d1a07dca07e5e7f41e0"
     sha256 arm64_sonoma:   "132e3f4430847e1b9291d5f54a0a97ab67b4d7e3edcc4028a5e663d92fa10abc"
     sha256 arm64_ventura:  "4c876d4d7661c895714788a75d999fa39f0710d4c9663ca83da7e3fafd7a0e1f"
     sha256 arm64_monterey: "cae02ecf57bf23576f36161fdbff13ac00b1c9df700799465a1bf65ac3ff69ca"

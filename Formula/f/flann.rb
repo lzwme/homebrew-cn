@@ -7,6 +7,7 @@ class Flann < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ddd2a7ce8e91dc4d2353065ab0195221b4f1f2d508cfc5c2c61bc4874e8eb18e"
     sha256 cellar: :any,                 arm64_sonoma:   "95cc1c8ebe8089d9f3b3cddcc4121b8758f27746f54ccb2a4e14120d31bced00"
     sha256 cellar: :any,                 arm64_ventura:  "b2c90010e7196565617ad2eece7f618f9e6ee94546e9712d45949574a510bf88"
     sha256 cellar: :any,                 arm64_monterey: "72b11ab5cb95c3635aca8a29551ed61810a407fc03ab4cef01981c1edb5e8929"

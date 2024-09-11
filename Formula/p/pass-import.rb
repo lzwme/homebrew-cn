@@ -10,6 +10,7 @@ class PassImport < Formula
   head "https:github.comroddhjavpass-import.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2b6dae01201450402849f5ca239e39aa601be234f936a3faf776bbb5e9f995ac"
     sha256 cellar: :any,                 arm64_sonoma:   "0d69b84ce9e662596c3e5dd4b2835c4d77d9d26d40a6cbe8323b8be0f110bce4"
     sha256 cellar: :any,                 arm64_ventura:  "45ceaf511092c243e8f589975704dd48c750f2e40e803f427805d9d8c1b7485b"
     sha256 cellar: :any,                 arm64_monterey: "b76b1a55b0e873930845fa0669f2626cf2a31dc42ec4f8e09e8bb7cf0b8f5d5e"

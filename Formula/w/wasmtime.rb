@@ -14,6 +14,7 @@ class Wasmtime < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "03ded9eb485a9277d51a79c8267968bdb8794eafc03ebddf9e8ce7913fae91d9"
     sha256 cellar: :any,                 arm64_sonoma:   "8fb7f2587b2fabe74f9d613f5c5900c5c2cb8097eb72a7cb765c00080d84f556"
     sha256 cellar: :any,                 arm64_ventura:  "1c9f6c5b76b1b0cc3087cd0f95c3fe40c00a8fe7f190f5abff80bf8f7b590a29"
     sha256 cellar: :any,                 arm64_monterey: "b491acd14dc4de887fecabf35269c496f53ced74e46dc6475984d2f0d57313fe"

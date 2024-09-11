@@ -7,6 +7,7 @@ class Xq < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c68bfba237d2ba1d1e700fc944092820abfca1d7ac4e92289f5e4684728c3db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"

@@ -6,6 +6,7 @@ class Procs < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e72517ce6f45e95d05646668f91d8bc4cd4bb2a0c2b247fa602572c30cc7244a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4403e855affce7f84a54fc32729e302d30324979ca3709653d1ffc22f8a5a13f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4e55542abfdf250b389dbf60b7cfaa9363268c3e944aff27f9a82dc5dd28003"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ccd5d1466ad95922827367ecf97bb07ca1e5aa1a8fad0521b712cb1f5fc417cb"

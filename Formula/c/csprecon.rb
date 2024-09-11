@@ -6,6 +6,7 @@ class Csprecon < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "59f5091c09e3518cace3d6c4a87bf792825eb473cb9c0d75b9a35d401430da22"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9c2a2612d20887802a3d6dd383ff11787d1ffaa379716155ab90e0886b4a7b8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9c2a2612d20887802a3d6dd383ff11787d1ffaa379716155ab90e0886b4a7b8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e9c2a2612d20887802a3d6dd383ff11787d1ffaa379716155ab90e0886b4a7b8"

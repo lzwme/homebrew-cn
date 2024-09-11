@@ -2048,7 +2048,6 @@ Homebrew-homebrew-core/Formula/g/ggshield.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@8.10.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/ghc@8.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
@@ -3065,6 +3064,7 @@ Homebrew-homebrew-core/Formula/k/ktfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktmpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktoblzcheck.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/ktor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-ps1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-score.rb, Homebrew/homebrew-core, 1
@@ -7117,7 +7117,7 @@ Homebrew-homebrew-core/Formula/z/zsh-navigation-tools.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/z/zsh-syntax-highlighting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-vi-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-you-should-use.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zshdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
@@ -14166,6 +14166,7 @@ Homebrew-homebrew-cask/Casks/z/zed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeebe-modeler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zeitgeist.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/z/zen-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zenbeats.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmate-vpn.rb, Homebrew/homebrew-cask, 0

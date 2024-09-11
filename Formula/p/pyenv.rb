@@ -13,6 +13,7 @@ class Pyenv < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3e2296265fde74a94e534251ff41b7d79996c520caf74d6198278df4ff3a8678"
     sha256 cellar: :any,                 arm64_sonoma:   "df3a3424a5a7aec3ce6d3c4e874b44b4e0eef0feb322d0dfa50f044669d96840"
     sha256 cellar: :any,                 arm64_ventura:  "2852285936a1d35ecb409c7c48fe830c880b124620e82e7c0f4c988ef961302d"
     sha256 cellar: :any,                 arm64_monterey: "8f8b6a020b52c38453addc56623cf54154266ac3971599b5b53f432d5f3703a6"

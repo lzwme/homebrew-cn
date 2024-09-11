@@ -13,6 +13,7 @@ class Doxygen < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "358a28534368ec74031160dc4a91f66400740594c6f81ae1ccfd720fc77b26e6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "056c2729260fb3189ec107c5e1186f7634f4fea1bc28f69a14467dc1af549c38"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cff27865073a17e2264711120fd13561c26773a6db4cff17336b8930980e1c27"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "63c7b68e43b7f03a7c9c5f95aca5244baf5794b590762004518659e54c1d9a1c"

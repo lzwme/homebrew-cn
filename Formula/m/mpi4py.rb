@@ -6,6 +6,7 @@ class Mpi4py < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "b51ba8421ae0f43cf3954780e7e16c58be0b167e2a2e07d6ef6e6d8bb636bb87"
     sha256 cellar: :any, arm64_sonoma:   "af0b502535e60fc352f583f6dc3e6f22656d51b2b8a6879e286d5746eadbaeaf"
     sha256 cellar: :any, arm64_ventura:  "3f8f8cd4ab3bf101d205bd7750a0ba506b44f19e4d4a0a77165e9cf3ad485cca"
     sha256 cellar: :any, arm64_monterey: "e5db582124c03962a6b713df7f224d0c39860e61d60ee8d7bbe3b09fd7a58648"

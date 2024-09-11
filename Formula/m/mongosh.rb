@@ -6,6 +6,7 @@ class Mongosh < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256                               arm64_sequoia:  "41e44d90c60b448dd4113d627c1e6746fa01eb89d9e5b29fca65d950506f3eeb"
     sha256                               arm64_sonoma:   "d5235447a7f286ca4fd84bb0fa5847ee1df642a0e48d6e6913ca40438a85432f"
     sha256                               arm64_ventura:  "2af348f32f5b77bc13aa4ecdd6476018e830827d180402a4f7fb5f7c5d8d9415"
     sha256                               arm64_monterey: "7931d8bf23a679832317022965bd5cfcbe07530bb8dc0492a9225eca1e2cd69f"

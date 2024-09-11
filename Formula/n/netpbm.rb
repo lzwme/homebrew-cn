@@ -16,6 +16,7 @@ class Netpbm < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "8ad9dc86e227cef0f08635144c51d1fda687c6babc0119ce75c5383fbc66a5bf"
     sha256 arm64_sonoma:   "735197099e6093d8580e2488905838ebd80c7a7b85f44c4e7403eabafebac491"
     sha256 arm64_ventura:  "1d5aef35a465aaec583593bde144260e8e6920369216b5bcb668b3d60310f7f4"
     sha256 arm64_monterey: "854f6df1d0953cc57c4974ede16c7351dba6008b8536e1bd991a9f6a1a0e7f37"

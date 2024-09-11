@@ -8,6 +8,7 @@ class Apr < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "aa4997bb5769c8a7438cc204cc7b6a366ca96e32649855e1cc3a81fbe2b1f6c3"
     sha256 cellar: :any,                 arm64_sonoma:   "d4ddf068fd1c071ac911af823e5b7b6de2a4506a1812e95bc9505c844b5524fe"
     sha256 cellar: :any,                 arm64_ventura:  "bed002cafeb67dbf1cfe8a20691cdc8ca251ae3e7404caa9e839b92cf9cfe7b2"
     sha256 cellar: :any,                 arm64_monterey: "1272fcd1a362d19f3d57340ff356e9d3f6f332d8c28ca3f95dc184736d2b2d94"

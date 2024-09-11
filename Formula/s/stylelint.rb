@@ -6,6 +6,7 @@ class Stylelint < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "85249b66c7ba3c4b86ce09b5bcf51682b152f711810612272db27b10e0131480"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "036baccc05c1efe3c025231060d639f08347b26e6123e6c687b5b48f44040f0b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "036baccc05c1efe3c025231060d639f08347b26e6123e6c687b5b48f44040f0b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "036baccc05c1efe3c025231060d639f08347b26e6123e6c687b5b48f44040f0b"

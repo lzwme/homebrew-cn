@@ -7,6 +7,7 @@ class Orbiton < Formula
   head "https:github.comxyprotoorbiton.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1c180f0e797fd4ef2dfef7386ed3141cdfaa6a4a39346cef774d3a24faf1eadc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ae3661705ff00ced573820daad425e230be7bd233d2f1ebba7f77e72cfbebb8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ae3661705ff00ced573820daad425e230be7bd233d2f1ebba7f77e72cfbebb8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4ae3661705ff00ced573820daad425e230be7bd233d2f1ebba7f77e72cfbebb8"

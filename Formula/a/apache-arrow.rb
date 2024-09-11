@@ -9,6 +9,7 @@ class ApacheArrow < Formula
   head "https:github.comapachearrow.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b53b2634707f8a0da1d06e5f6773a4f8710e983533a853aacb15062a99cea83b"
     sha256 cellar: :any,                 arm64_sonoma:   "f15a4bc0a20f958e47c9a1477f73dfabe79fdabf30d6b89deb528ed733f235ad"
     sha256 cellar: :any,                 arm64_ventura:  "881e742f08c48512d08ccadbcd870f99919cbfa427ed69b4a08d829ee00859a9"
     sha256 cellar: :any,                 arm64_monterey: "8265f26c270d968665488884b6b5aa3adcacf6df93729dde6ba098441a66c9ff"

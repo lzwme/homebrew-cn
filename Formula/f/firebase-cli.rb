@@ -7,6 +7,7 @@ class FirebaseCli < Formula
   head "https:github.comfirebasefirebase-tools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b7a5679193c1a5c6251579a130595632ad16f612259b939a2706ecbc1bae2f5b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04699a724400f740ba2e9b7f8490eb098d493d018f184577785094e589fb3e67"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04699a724400f740ba2e9b7f8490eb098d493d018f184577785094e589fb3e67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "04699a724400f740ba2e9b7f8490eb098d493d018f184577785094e589fb3e67"

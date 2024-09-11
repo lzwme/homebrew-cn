@@ -7,6 +7,7 @@ class Restic < Formula
   head "https:github.comresticrestic.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"

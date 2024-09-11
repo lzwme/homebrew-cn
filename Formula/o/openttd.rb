@@ -18,6 +18,7 @@ class Openttd < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "25bf3f5b4408feafb93f6959029c3494b2b829fb2b7ac7c9d73f3460dda1993b"
     sha256 cellar: :any, arm64_sonoma:   "1d592d47d07bb7af7c46266ec4e8c398f4e215496d6793dedfdf636b367b88e3"
     sha256 cellar: :any, arm64_ventura:  "bbb3a5562f84cef0943051db9502d831eacaaedcfdb39d1046c4986131dc4eb1"
     sha256 cellar: :any, arm64_monterey: "b3d9ee412a332d9c60734d45e717df2e70ddc113cd7301a2a84a37cc4bbd3e84"

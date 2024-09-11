@@ -9,6 +9,7 @@ class Pipx < Formula
   head "https:github.compypapipx.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb9543f8890a6a9bfc7e6a6c04b7224d4197462792c2c7b9fde167ba388453b1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35878f2b4360c9cb25d27d2eb81a8a954bf6b80aafe4b8d9b8a163682f38b59e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "35878f2b4360c9cb25d27d2eb81a8a954bf6b80aafe4b8d9b8a163682f38b59e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "35878f2b4360c9cb25d27d2eb81a8a954bf6b80aafe4b8d9b8a163682f38b59e"

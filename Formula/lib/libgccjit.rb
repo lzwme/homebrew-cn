@@ -22,6 +22,7 @@ class Libgccjit < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "fff0020242ea84f9eb7c320035410213d831968cdffd746c0fb02460d13b8625"
     sha256 arm64_sonoma:   "1f863f51416d857e367f12accc84a6163742d77eec8f3c5644c6c79c334f4fd6"
     sha256 arm64_ventura:  "7605dcefda1dc4cdfa7b14303551dcade61408d4592e0eeb4b85aaa3d93dfc62"
     sha256 arm64_monterey: "d21962af68ea264a5b6a90265e6d1c7247377d5d41f5d021488380c15e804ed7"

@@ -7,6 +7,7 @@ class AliyunCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5e4d4a3bc8c218baf2402a81970aa09631d11281e810b8f1155ff0638fd600d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd83f3b21d9fbb5cbce6fb00fa3da94963b8a73ffd5d6c8fe4d8daee20d44b3e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd83f3b21d9fbb5cbce6fb00fa3da94963b8a73ffd5d6c8fe4d8daee20d44b3e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dd83f3b21d9fbb5cbce6fb00fa3da94963b8a73ffd5d6c8fe4d8daee20d44b3e"

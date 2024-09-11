@@ -6,6 +6,7 @@ class Cython < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b6528b991c10fee63d959eec522bc66a308b85c1e061f89985ae5b1f71f67464"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8f07d2cf12f082f39de2c90f9a0d6b9b72d66a319f24642bf67f7456c2d7f1f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "704cd1687d97983d9143c14af5d3070afdc206458f76d044a4161dc0432335ed"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1302e5ad351dddd4586ae07d8031f1e8b1a4c6892d85aaaf5b90518fe2d01f9d"

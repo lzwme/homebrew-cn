@@ -14,6 +14,7 @@ class Coder < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3d2c059c625b5d3eadde23cacce54682f679e8e4e3b7b088222141ac332a01d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a88210d807a3a8b2ec0bde8fccbd31cec0a113a00c1b920de763049f32b4418"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "42eca835638f3c25492066a8e00b878cf586a679545d9801a3fe089afd838234"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4783bb8d3b058e11e690ed1fd0e0aa475f4362e448bcff6f187d27090bd44d5f"

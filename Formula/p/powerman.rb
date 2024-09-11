@@ -6,6 +6,7 @@ class Powerman < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "5b5215ba606673831980cf3a77bd0fea811c33d929ca1ec2ca057749682a50b2"
     sha256 arm64_sonoma:   "4ded224dcefa7bcd8cf88f3c2c361c3b4fde34e2739a230671fbbffcc1115921"
     sha256 arm64_ventura:  "0f6aa7fdc471762140bd9485f93e466bfe1fb17b1737963f1e42e163365a392b"
     sha256 arm64_monterey: "3da5b7a83bd6406fb856c62eed30ff3864d23c5d98f0ae4495bc058412a84752"

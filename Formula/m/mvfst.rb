@@ -7,6 +7,7 @@ class Mvfst < Formula
   head "https:github.comfacebookmvfst.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ea98e68d6475ab1d555eef6bc4079fde1cd793e63aeca829452debf751b10ee7"
     sha256 cellar: :any,                 arm64_sonoma:   "17a71f1a54a54775a03e478fda06a66b71163616fbecf938ef1cab60f2f89723"
     sha256 cellar: :any,                 arm64_ventura:  "f10067b568c23154c063b5b38449b708d6329e7b887758e2bdf68a80a36b2f01"
     sha256 cellar: :any,                 arm64_monterey: "a974f301ec1e660b2c696996918c4012b81af8eb3654db05a9f8cf296b7bed83"

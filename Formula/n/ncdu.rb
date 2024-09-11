@@ -12,6 +12,7 @@ class Ncdu < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1c49e2cc5991d8fa008a58f47e13eb9fad604631d08524364095a8031bbb2dc3"
     sha256 cellar: :any,                 arm64_sonoma:   "1cba8bbb35dc36a9686ff4182b395969cf1de154652b2d6134c2836e531b169a"
     sha256 cellar: :any,                 arm64_ventura:  "8478d4058dc184f43368ca19c32aecf5a7be3a4f7175fb41a59f5202f170288f"
     sha256 cellar: :any,                 arm64_monterey: "4abb7c99e405c3b4d7ef4179e60d7c4ab518a307df825db3dd60859ea3ae7d55"

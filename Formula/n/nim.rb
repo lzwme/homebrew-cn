@@ -12,6 +12,7 @@ class Nim < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a1d922ecfe68eda75b64f400cb0141c72c072da5b95a043b85b10678d250dfc7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d67173c53e7bebd0e0dc261e0210cbdeb24685793bf820ac99180b9c6c655d0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c51ef71c5a860ce22c8b67d7bbf15124f831b696c295684148c91e5f1d4117a3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "acd8f8aa1c431b89a15d11303eb2cbe77b7f5d798d3d8ba6ac3d4eff5e85e38e"

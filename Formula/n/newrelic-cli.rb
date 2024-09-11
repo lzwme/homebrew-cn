@@ -12,6 +12,7 @@ class NewrelicCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "10f59da565324db083d13ed7ed521d36d62d23c0cef6c2b19377d4e3773e01e4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c676f6d07de70ffe76fe48d628481acbb15236677953b565b4d2374b97af09f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1693d0bd269fc1ba93ec3b64cf5a0b5c2d98bf25148cef4aa7812f3ce35b7dac"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "25ca9ad72c237d2a12f86a24793013ac158abdef5338fb252b7d3604168fd829"

@@ -26,6 +26,7 @@ class Solana < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "54791622dd0c2cf3bbab9415c2e915d2b09508f4860eb531860b2f0e2fa84e28"
     sha256 cellar: :any,                 arm64_sonoma:   "168118e9784eea7ef94a36a367416b4dbe98da42e89bfad8a8bc489a779ebc1f"
     sha256 cellar: :any,                 arm64_ventura:  "037cfec9e920eaf2e0a652e03322b76acd24f205e2b05130c1e07c5c140937a9"
     sha256 cellar: :any,                 arm64_monterey: "1ff4d05f366991dfa681cc1f7e046c5746cf62c6cddbad6db59eef620b4edab4"

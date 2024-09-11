@@ -10,6 +10,7 @@ class SlitherAnalyzer < Formula
   head "https:github.comcryticslither.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "41f823fce463190bad6eca48a12ef85f85d8efac11155d52d539552eb84bb005"
     sha256 cellar: :any,                 arm64_sonoma:   "e5a00fdd128fdf12aba9ea11cd27f8198bff09c2d80792cfff36df59b956a36f"
     sha256 cellar: :any,                 arm64_ventura:  "009f3f234bb4067304e52ba94d0f516b23a517854c597198a56c2e0249aa2a4d"
     sha256 cellar: :any,                 arm64_monterey: "36f9c814a9307ddf15a660e436d7ffefcbc1ee5b2ed6d8dec90c7619b9f74044"

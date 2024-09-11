@@ -10,6 +10,7 @@ class CfnFormat < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01852e0de71f29d665ef1029a183939c8e29ed667874985528aaa65d62dfbcb2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cdf7fd5ee9b949f78ac6936194bd9babb805717aa6b97108ab3f1544f530441"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cdf7fd5ee9b949f78ac6936194bd9babb805717aa6b97108ab3f1544f530441"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7cdf7fd5ee9b949f78ac6936194bd9babb805717aa6b97108ab3f1544f530441"

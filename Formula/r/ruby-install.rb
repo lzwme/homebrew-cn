@@ -8,6 +8,7 @@ class RubyInstall < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f0f38dd79961d78a317bbdc6d0c72db9119812dae220526b011b653b40bf8ddc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73c1bedce047ff55b1fbabf5dea434652a014aaef1af51cfe01c48ae015c8119"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "73c1bedce047ff55b1fbabf5dea434652a014aaef1af51cfe01c48ae015c8119"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "73c1bedce047ff55b1fbabf5dea434652a014aaef1af51cfe01c48ae015c8119"

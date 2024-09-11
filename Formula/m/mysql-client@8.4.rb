@@ -10,6 +10,7 @@ class MysqlClientAT84 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "05a8ffd022ab5dcf286a2d12a6b38c21d29984b16c4229515caaf6a7867e2327"
     sha256 arm64_sonoma:   "8684e4bc1f5d8b3038c4f66a7c975169d54d539fa651dc55c8e2ea2ae5b90bc0"
     sha256 arm64_ventura:  "1b9139148713510e6b5f673422794e56db746f8fb5ef04083bd7464e79f645b9"
     sha256 arm64_monterey: "94b5558a918c6666de072ce296aa83bde2a6404bd10b945771c08fc91cdd0246"

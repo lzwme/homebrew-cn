@@ -7,6 +7,7 @@ class Shfmt < Formula
   head "https:github.commvdansh.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6b2151cc6266a7c0a21a6ec4edab774168671d81406bd127980dd5b5ebdad9d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d15598743aa7c7688b49b4a0df839805f605faaa692def2f36554c26e5136eeb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d15598743aa7c7688b49b4a0df839805f605faaa692def2f36554c26e5136eeb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d15598743aa7c7688b49b4a0df839805f605faaa692def2f36554c26e5136eeb"

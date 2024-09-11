@@ -15,6 +15,7 @@ class Buf < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"

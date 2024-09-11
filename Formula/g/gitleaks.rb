@@ -6,6 +6,7 @@ class Gitleaks < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "72fcb54a8f2993e43fe068234bd6978e32d1430f9b438e17ec4d5b06fc124b5d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6c63682bce671400e51943b8df178814c064774d046d595d36fddea5a00c671"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6184272d9d0520d2a51d0284a26d314f286bd6cc263cb4db6eeaf08dd91a41e4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f68d647a6d839e1f78a16ec1a4347d1fc5622a40e21775cddfa20367ae2807a0"

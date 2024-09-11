@@ -12,6 +12,7 @@ class Coinutils < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "750ce0c23f2af2c0387d6677502cfc0ae5d51e26abae222dc5f09330a971d697"
     sha256 cellar: :any,                 arm64_sonoma:   "5d9193efa0d87646822efcf4184544d50b3e0340d85fc65de79f24b170a09c37"
     sha256 cellar: :any,                 arm64_ventura:  "b041fbad7adfee8ff45bef91c76c6c154599b662199b350268acd4206b6c3790"
     sha256 cellar: :any,                 arm64_monterey: "1a3df4e2351ee15be1d0dd33f63516457cd82ec3ee25a018f53d79cbac19a2cc"

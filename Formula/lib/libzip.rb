@@ -12,6 +12,7 @@ class Libzip < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "9b4f54b14671678d6d42316a3420c86f61e09c48c733284e2f425a77e383ccb1"
     sha256 cellar: :any,                 arm64_sonoma:   "8ecf154f8c0bab71c0008c6f73eb8cd2df78cfa424d8bdcffc66dc95b3bf7c14"
     sha256 cellar: :any,                 arm64_ventura:  "cd7bda731a8b2e5d1a3cdf5be6b515718c56d55d16a5b45faa1a91daf9c0ca2b"
     sha256 cellar: :any,                 arm64_monterey: "a0d8bae54df1068c92ad894eddca0cd7465ecbaa3ef875c07c46bcea764bac71"

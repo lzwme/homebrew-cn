@@ -7,6 +7,7 @@ class Nghttp2 < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_sequoia:  "5c7d02e5e38397cc7ac2eaece928ce96086049905abf0be03d44df61fe74f465"
     sha256 arm64_sonoma:   "1490d262d370565e6399f14557e025dd4d3ccf3e66429aa10752f53767b09396"
     sha256 arm64_ventura:  "e8ce0af1e523291e56047e1634bb6e708586dc690c015db53284a3acf11ed002"
     sha256 arm64_monterey: "e24a10fd5248deb0c987e7b275c0c1b6c9616b00edddf190849c205e95d7b443"

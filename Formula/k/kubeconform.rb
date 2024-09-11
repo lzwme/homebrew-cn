@@ -7,6 +7,7 @@ class Kubeconform < Formula
   head "https:github.comyannhkubeconform.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "af0cffade03b33e2c18057722d21bfe30bb105981145dfd8e8ea25ed38e84f0e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9299dd255685b85b9a6c9e2230ce3a8e8370717a4a75c141dc6d7b26ab3951a7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d6ddef665045d43c94cf2b8717ef072e161e614d42674648c181aac4d2987d6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e5e2b9ceed38c66246d80ff5e266a7da28cee09f07be700fe6c21fe0e22ef3e4"

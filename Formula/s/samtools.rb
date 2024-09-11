@@ -6,6 +6,7 @@ class Samtools < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "01c0fb9d7ffc73311345a3a1aa38c3350c1686327fcfb79f657765524e267433"
     sha256 cellar: :any,                 arm64_sonoma:   "b466cf7f659e4af5fd47b7ffc9805ed8a33d43b44f627a806d7ae2b06349ea9e"
     sha256 cellar: :any,                 arm64_ventura:  "126b0c5c624a6bea08ace22d8604cc4bcd2d6492fe06228ce68dd6956f725520"
     sha256 cellar: :any,                 arm64_monterey: "27bac69761fc5479833af4ca8ebaae31edfb33d9d7512fdb6817aaa6dc344eb4"

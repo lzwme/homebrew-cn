@@ -8,6 +8,7 @@ class PodmanCompose < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia: "6a0741f4913f51b3fc2ad9ddfbef1fda656c4554e9ef8e9fa68413234d5ca67f"
     sha256 cellar: :any,                 arm64_sonoma:  "10dde7d6207bd40143e7e2c57ea1c46dab8599d541ed7fb04e3a8c673d96936a"
     sha256 cellar: :any,                 arm64_ventura: "e795544ff6e7ec30ffe28e8f27f8533f3e08d3ee587b540d5dcd95ea6a785eaa"
     sha256 cellar: :any,                 sonoma:        "030a9bd00b8ba60f8c91450d2d138f6a022503e178ac48993ddf6b9136dce7e4"

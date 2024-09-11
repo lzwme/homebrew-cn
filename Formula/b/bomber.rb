@@ -6,6 +6,7 @@ class Bomber < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9dc1109affbf410a0d1f3bc3678a08345f0af2a2a38e83d7f31d151163a5bb13"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2d9ee19477631f20213b148d7949b4cc579ed166ff85c4bb25b0b98c4ac0a0b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6476378d4fdf202c5dacf811ea22b43d73ac1a2ab334e0356c71dd431fb0d8a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "496ad89cd3de482d2c0595a43cc0407f122c41658faf22a87dfeb7c493e2a3cd"

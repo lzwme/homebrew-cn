@@ -6,6 +6,7 @@ class Neonctl < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8811f841962eddcfdacc43460cad7d160b438c4da39b2e1ae870528d81aab492"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dad61498831b8ad34f166554df6e1e56db865f31b266d9e23d9014a1102a68c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5dad61498831b8ad34f166554df6e1e56db865f31b266d9e23d9014a1102a68c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5dad61498831b8ad34f166554df6e1e56db865f31b266d9e23d9014a1102a68c"

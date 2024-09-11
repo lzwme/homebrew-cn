@@ -9,6 +9,7 @@ class Virtualenv < Formula
   head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2910ef9ae5feb293c08513b16a4f1cde6b29276d36475a0a1808567c0422c62c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d292e29a19ec140d18697ffeafb60cb0b802133889a7532ca41b865178c32562"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d292e29a19ec140d18697ffeafb60cb0b802133889a7532ca41b865178c32562"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d292e29a19ec140d18697ffeafb60cb0b802133889a7532ca41b865178c32562"

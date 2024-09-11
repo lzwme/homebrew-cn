@@ -10,6 +10,7 @@ class Shodan < Formula
   head "https:github.comachilleanshodan-python.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d391c565d76ed6430ffe84412fbb9f3f61a99ad030c037dfa8b9e4b9fa6d1c59"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c4c02a7d86286b43a79ec2c7493c3bd4dda1d57475d7abbe3a12273d8012363"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c4c02a7d86286b43a79ec2c7493c3bd4dda1d57475d7abbe3a12273d8012363"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2c4c02a7d86286b43a79ec2c7493c3bd4dda1d57475d7abbe3a12273d8012363"

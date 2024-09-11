@@ -11,6 +11,7 @@ class Nest < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "f752b4a7174c66b710b60ebb340d32d411332e06ea18d7da09660618754788c6"
     sha256                               arm64_sonoma:   "6653314027909fa7b2d3016afb0983cdd38ceb79d8103605287251419902e69a"
     sha256                               arm64_ventura:  "f8c15f21fd28ec67bd1adc7f5265123096a4b3837a54c12b39db7f02c54945a3"
     sha256                               arm64_monterey: "e29a15567400ebde27990ee78119903bca4fca61e69dbc2b63ff9791a0b6f03c"

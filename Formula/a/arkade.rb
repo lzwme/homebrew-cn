@@ -11,6 +11,7 @@ class Arkade < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5fa5490f0c1558acb8afbf9d95bed8ab3e4ab3c8609fd8e977f1b26abf750750"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5fa5490f0c1558acb8afbf9d95bed8ab3e4ab3c8609fd8e977f1b26abf750750"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fa5490f0c1558acb8afbf9d95bed8ab3e4ab3c8609fd8e977f1b26abf750750"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5fa5490f0c1558acb8afbf9d95bed8ab3e4ab3c8609fd8e977f1b26abf750750"

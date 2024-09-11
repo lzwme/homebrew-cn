@@ -23,6 +23,7 @@ class Tmux < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "79da3c04d1147057cbe3ecf344bae3126b61ff18f4d0cf7d5470b01b6b30948c"
     sha256 cellar: :any,                 arm64_sonoma:   "6b407b3351b79919c482d46134c9e83552f3e848f1c482a7deec65c36cf16d37"
     sha256 cellar: :any,                 arm64_ventura:  "a5a47403c75e2d14370ff07641294bd361eceb8ca2dc65925e5eb7e41453d727"
     sha256 cellar: :any,                 arm64_monterey: "2233d5fd7333fdf3da6dbe48157735c276f27cd7dd274d0e704985c9105e77b0"

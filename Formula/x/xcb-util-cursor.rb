@@ -6,6 +6,7 @@ class XcbUtilCursor < Formula
   license "X11"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0df531a79c1c729bab1d1ad1c798d7d4e878e7b19b506ee40e116f5c2fc9b99d"
     sha256 cellar: :any,                 arm64_sonoma:   "afc89cf5c804a91dbf73948000829a2514344fbd0f67efc1a7062de40bd9016e"
     sha256 cellar: :any,                 arm64_ventura:  "7ff6f9cf0ced07af8e9aaf033d1cf4f5a7a159519ad19474c7a0ce312e76d9a5"
     sha256 cellar: :any,                 arm64_monterey: "c1402a61728e938e9665a67b3d72204cfa71a8409b47dd94add8b92cb3d5557a"

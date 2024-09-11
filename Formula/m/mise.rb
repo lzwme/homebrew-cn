@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:mise.jdx.dev"
-  url "https:github.comjdxmisearchiverefstagsv2024.9.0.tar.gz"
-  sha256 "a8b72176a85694d1314501c984ca91596c5629b1de9b984130f378beb6787887"
+  url "https:github.comjdxmisearchiverefstagsv2024.9.1.tar.gz"
+  sha256 "5580aea6e9ded77ae5bb0e02a989ad2d96abc5979891952a315d438a3b498b81"
   license "MIT"
   head "https:github.comjdxmise.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3b007b05c023b16c4ac82216b77a3290775dec5243c588d1378c0c3550b6fbf7"
-    sha256 cellar: :any,                 arm64_ventura:  "95604046a9382d0f73526b3d9b3cf57f749b43af075a550625b5dd8af53ad943"
-    sha256 cellar: :any,                 arm64_monterey: "28e96577e4758627c05979ef01030dfecf210c433010e487f4f4d52b6d16f523"
-    sha256 cellar: :any,                 sonoma:         "74cb166b553d4900c78b3a5943886162fbac24648d936a9ac529e27f7a084363"
-    sha256 cellar: :any,                 ventura:        "afeb16a10c0227223d39cdbfb37eac9806adc741b71caaa51bde956f4f3f1752"
-    sha256 cellar: :any,                 monterey:       "df1574040f2d0882464f2d77b6844715549c0c57e97754564ecd174ba8115880"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e32a2d3a42b0d0ea75fdbbdeee930ed089e2450061568fc36e807512221e0e9e"
+    sha256 cellar: :any,                 arm64_sonoma:   "cb01bdddf327ae147b1c337e5a982e1fc3cd03106ba89ddeec5991ff28165db2"
+    sha256 cellar: :any,                 arm64_ventura:  "8fa4578a97d695f0463d6c58ff0bcd0febf26cda8c92befc6601a2f1d5e90c94"
+    sha256 cellar: :any,                 arm64_monterey: "727cae13bcfc3c26030061ff144a1c7755756978e7dbbe4dc283197e380dad8c"
+    sha256 cellar: :any,                 sonoma:         "05bbdbb1f5e499b32a1f4803229266c6f5967e6069cc60c817aa952e4d14e908"
+    sha256 cellar: :any,                 ventura:        "7f2fe500ff958b48c83aba08f74f1c3c87c240f193d4292dadc4313255a58840"
+    sha256 cellar: :any,                 monterey:       "d5132f3e42a554e18b30d65c63f9eb3b46a8c5a9b136b92f142187eb9263d0ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a990c9b9a842a49cf63d9c3f454fd3b49ee532529d77cb266e11129e84bddc24"
   end
 
   depends_on "pkg-config" => :build

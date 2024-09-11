@@ -9,6 +9,7 @@ class Sip < Formula
   head "https:github.comPython-SIPsip.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d0d884c04dce2c1c0aeb068804ab6cabfca418eaacc1124797f5e678e154716"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba635ba462ce21105b7e3782421c7a40c7b6a554178144be0acba3bb8031decf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba635ba462ce21105b7e3782421c7a40c7b6a554178144be0acba3bb8031decf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ba635ba462ce21105b7e3782421c7a40c7b6a554178144be0acba3bb8031decf"

@@ -12,6 +12,7 @@ class Libpcap < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2469721ab279d0e988bb6659dfd8bb3ab9317ca4ff20018eaa7a86f1749ba0e4"
     sha256 cellar: :any,                 arm64_sonoma:   "25f894b36f2bed3c1ec09f53b733cb79221e0264d0e995097c66a303815ac6ea"
     sha256 cellar: :any,                 arm64_ventura:  "8f55c62e20c74ecdcc8975ab8885659dd446bf6cf4b873f29695370de24b7815"
     sha256 cellar: :any,                 arm64_monterey: "1878536fd135dc9674a6c82f71f349bb7e4b57785aebaa419509b5ea1f90b89b"

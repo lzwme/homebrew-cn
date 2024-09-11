@@ -7,6 +7,7 @@ class N < Formula
   head "https:github.comtjn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"

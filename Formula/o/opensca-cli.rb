@@ -7,6 +7,7 @@ class OpenscaCli < Formula
   head "https:github.comXmirrorSecurityOpenSCA-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "91360c5d1fdcfa02c9463d380f7f38c67fdfddf1d17b90eaa08991209156c5ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc3048f9e95a7e74fc62790f8add12b99eaeb457898eb4a2bc4b30797fea1c28"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "515633284e6f6e764e03e8013f2dbbdaf051968e7b6953f705dca454714ca4af"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1005d2ae0cca98a7f18b2c2dd446f958a8ed51cf7b81a4157f236aa71fb1b0dd"

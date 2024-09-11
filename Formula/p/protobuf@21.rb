@@ -7,6 +7,7 @@ class ProtobufAT21 < Formula
 
   bottle do
     rebuild 2
+    sha256                               arm64_sequoia:  "c60679a5bf6957120d97d7882d658791153b37d51aa3157458a023baa0cbf33b"
     sha256                               arm64_sonoma:   "bc82f299ae0fffa1e5b4e93ec3dd39f0330bb06a8dfdebbb953479de3b25eb00"
     sha256                               arm64_ventura:  "a91538d1878eab72aaa22230709c372f41322377b297c6e01caf188e4e81e378"
     sha256                               arm64_monterey: "ffa13baa9584681115c2b3b0e7f6d56b6e72144aaa13bd9d924ffc0c88bbde87"

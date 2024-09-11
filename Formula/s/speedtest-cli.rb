@@ -11,6 +11,7 @@ class SpeedtestCli < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9009cb6abe976ec1ff1d444c5d641b32b33d86fdbda6207dbc6971e14be4c9a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8117d177addf62bfb9a98e708e89fd6f104585748180fd92c557fb9a9804a311"

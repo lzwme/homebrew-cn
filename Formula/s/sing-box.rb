@@ -7,6 +7,7 @@ class SingBox < Formula
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "726ec937dde37ae0b01275a51488fcadae9ec11fe98956d8340ab5de626f741a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "005318887a5478b58a5a9c2556778a1d87058cf3b92e240c84ef77ec602e028c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b75a6992207042cb65cd3d5cf6277ecd0dd8010f3b2a82ce1b7fcaffb8d35164"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aaf7c1e3c84a642a75861dc0af7c0e7fd4eb445035d7355715dcc3645067d5ff"

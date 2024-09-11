@@ -6,6 +6,7 @@ class PhraseCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "53a872bca4ad2d227f679d65f6aad88e6c151b31c052b3447415166d98b366d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19ee30fb427b144b079836de5e6b26be253d058bd20f1094bca273806283912c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1191334ab8e64dd90d0b62fcb395962eac67b669269763fee2bfd8403646afb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "465a4cdd13bad88628ff9e671871ef4385ef5dd76afe374268724d17561abac7"

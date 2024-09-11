@@ -7,6 +7,7 @@ class Woff2 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "f451e27be673ee74d5cdbbb50fa6d818ac48b0800f9daf0c27bb5995c27f8b9b"
     sha256 cellar: :any,                 arm64_sonoma:   "d410b566576b56a9659f6318591722b2c000d788be86e4c65cd28631ecd485a0"
     sha256 cellar: :any,                 arm64_ventura:  "fb62fd8c1f19bf0eabbc4e82ea9db15cb8fd74b158bc137a6e4da08a95c57759"
     sha256 cellar: :any,                 arm64_monterey: "1108c65b488acc65da207d66d8cb1c6964f4bcc23cfd29de4563d783a174d639"

@@ -7,6 +7,7 @@ class Libxt < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9de6f181593f1f0be6a7cec1a999f747dbb0f7f5bab504a9c37aa58efa1b07ab"
     sha256 cellar: :any,                 arm64_sonoma:   "08246691bf368897e4bcc80389962df8ffc1c6ec6c194f4731c754cfc275995b"
     sha256 cellar: :any,                 arm64_ventura:  "48ca6ecece618b42eb2807955ceefa5f1e9f6f1ca4a3b9eff5962e4d1ae5a123"
     sha256 cellar: :any,                 arm64_monterey: "eb7206d9e14872a778762922a39a59d06bdd5c8055474d573ad7f9c0976c6547"

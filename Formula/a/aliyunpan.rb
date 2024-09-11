@@ -7,6 +7,7 @@ class Aliyunpan < Formula
   head "https:github.comtickstepaliyunpan.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc7f228f05a9c3a15d4d29abf45d8f5c29e66d2f3e07e4ac2ea61cdd432b0b5c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"

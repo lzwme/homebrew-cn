@@ -15,6 +15,7 @@ class Cppcheck < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "3ea489375f8c4c924b50ccbe0a87d6483f11cc05eac21c6bf72cb8759587b97f"
     sha256 arm64_sonoma:   "9f5ec5154d362414f230ad9b94567fc43472e654282b2d9a70a0a33d5153ab36"
     sha256 arm64_ventura:  "0d3c433850bed501f2c819024ea16065acbec6111ca28141a5afe77704df2945"
     sha256 arm64_monterey: "3a5d4211496ee5c5980725b239a6a896aaa5053415992764a82711679c23bcaa"

@@ -1,10 +1,19 @@
 class ProxychainsNg < Formula
   desc "Hook preloader"
   homepage "https:github.comrofl0rproxychains-ng"
-  url "https:github.comrofl0rproxychains-ngarchiverefstagsv4.17.tar.gz"
-  sha256 "1a2dc68fcbcb2546a07a915343c1ffc75845f5d9cc3ea5eb3bf0b62a66c0196f"
   license "GPL-2.0-or-later"
   head "https:github.comrofl0rproxychains-ng.git", branch: "master"
+
+  stable do
+    url "https:github.comrofl0rproxychains-ngarchiverefstagsv4.17.tar.gz"
+    sha256 "1a2dc68fcbcb2546a07a915343c1ffc75845f5d9cc3ea5eb3bf0b62a66c0196f"
+
+    # Backport fix for incompatible function pointer types
+    patch do
+      url "https:github.comrofl0rproxychains-ngcommitfffd2532ad34bdf7bf430b128e4c68d1164833c6.patch?full_index=1"
+      sha256 "86b5db00415bb7d81a8dc1a3d2429ddafbf135090dc67e57620cd18cd71f3b28"
+    end
+  end
 
   bottle do
     sha256 arm64_sonoma:   "840c1349abf6f4e62edfab1d308e698463deed5a4a8089da31407998bfc819c2"

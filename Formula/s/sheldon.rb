@@ -7,6 +7,7 @@ class Sheldon < Formula
   head "https:github.comrossmacarthursheldon.git", branch: "trunk"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "cef072269673d984ad6652c14124942d829d6c09ae97e717d044b12950fae909"
     sha256 cellar: :any,                 arm64_sonoma:   "92282f5ae930b2bab08f86cf2baaffb54eb88c94847b5c1abd29a08addf9007d"
     sha256 cellar: :any,                 arm64_ventura:  "2224e9f9e5ddcf6239dfe92b269ef06d942c4cd5d548dcd31d1d235fe03617e5"
     sha256 cellar: :any,                 arm64_monterey: "7f7f7970cf7c2fcd1b10972db6ac9a2ce1fe98114d051158d775c92986cd8e1e"

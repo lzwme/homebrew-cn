@@ -7,6 +7,7 @@ class GoMd2man < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f858a454e40ffe173ef5e73fe2425d7bb6563473c0a707cbe16f90b83b6ce124"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "211420e6cb801b56ce5894f1b4e6365d801ff37ec67df5e0306d56134ecf630c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "211420e6cb801b56ce5894f1b4e6365d801ff37ec67df5e0306d56134ecf630c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "211420e6cb801b56ce5894f1b4e6365d801ff37ec67df5e0306d56134ecf630c"

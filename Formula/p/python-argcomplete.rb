@@ -6,6 +6,7 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c2d3d4142c8bb8b3b5e52965ad6a4f7d5cecf47507552699c588d951f18bcc81"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6bdf0c57cde56a841474d3c34e03ef1c7b654a507ae53a5ba6b1e8986d0149d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6bdf0c57cde56a841474d3c34e03ef1c7b654a507ae53a5ba6b1e8986d0149d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a6bdf0c57cde56a841474d3c34e03ef1c7b654a507ae53a5ba6b1e8986d0149d"

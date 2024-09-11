@@ -29,6 +29,7 @@ class Wrangler < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5362e5cf75ddb80300caabdafe660ea5ff938bdea0383f13c1124acd99b9f126"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5fe28ef202d6431e4d20c01e71926ad1e2099f6b0519020ae4326cc0b0cf9163"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5adf04c90219783c097afa4424ca7d8c01a37a840438b73ea5477e8548c3c28"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2c19fcdbf860258e889a2ba69f1b406bd2d2b84e5909674797ac9c9196612668"

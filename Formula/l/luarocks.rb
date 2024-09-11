@@ -12,6 +12,7 @@ class Luarocks < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d3c46a25116c112e7cd4dcd82e5c610c4292c9774aca0543c5eb822f87c69614"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db9ab021d46007aedf360de024d8a1741885aafa27cc9a2b65e41bed95f68783"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "db9ab021d46007aedf360de024d8a1741885aafa27cc9a2b65e41bed95f68783"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "db9ab021d46007aedf360de024d8a1741885aafa27cc9a2b65e41bed95f68783"

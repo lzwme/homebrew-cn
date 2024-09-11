@@ -7,6 +7,7 @@ class Lsd < Formula
   head "https:github.comlsd-rslsd.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1bd66cf4147ca72261c46bc2ccd83b87ba439ae94b08f8341acad2368b970d75"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8b8fe68defcb12b13129f043232501c7b26e26bee95d234af007f7efb3a74c0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "052713d1eb533cc327634f2af5b8b5c5cedd81e6d4dab490f01d27027f7bcb5a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a932036d16254f460ca5eaf97ebbdba0b8889694948cf65c70463b1dafe8bd02"

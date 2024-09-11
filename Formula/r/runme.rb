@@ -7,6 +7,7 @@ class Runme < Formula
   head "https:github.comstatefulrunme.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6289aef1ad01ec605c26dcab2b1c581a8535a8e33d35381db5a391c0d22b51b7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6289aef1ad01ec605c26dcab2b1c581a8535a8e33d35381db5a391c0d22b51b7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6289aef1ad01ec605c26dcab2b1c581a8535a8e33d35381db5a391c0d22b51b7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6289aef1ad01ec605c26dcab2b1c581a8535a8e33d35381db5a391c0d22b51b7"

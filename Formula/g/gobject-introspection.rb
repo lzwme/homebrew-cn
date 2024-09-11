@@ -10,6 +10,7 @@ class GobjectIntrospection < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sequoia:  "820c8845333c838652f962bdc24b244a0b5e854844e949f6aeb7945d554ec6a6"
     sha256 arm64_sonoma:   "e28f50144066ecbc4215381aa26c238e8dac6ca0362b1e603784ff48dc6e5e7a"
     sha256 arm64_ventura:  "f89a382a4431e4c45ecb3de881344e6c5cd1a4a3d5ba5e589bffbc6af4015478"
     sha256 arm64_monterey: "e86c150176699e055c782a3ce9ae54ca7f11aa2f49cb513ea034ea8548a38daf"

@@ -11,6 +11,7 @@ class OpensslAT30 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "0fbecf9a927e6cb2432283e6cf06cfce59067556a91b496528a6bdf66217a2e8"
     sha256 arm64_sonoma:   "5f48e4f3391e514597cf9959a95daaafc1295ce4df9a26964d3ce0cb705a041f"
     sha256 arm64_ventura:  "90d988c61932197830a7962e9dfe3997a139689489763ffa55ec54a607b69d0e"
     sha256 arm64_monterey: "4491fd5d9e0bd3f27cd45d6b3026f2f1e9f648b1dff73cd41514bdeb55d8bae4"

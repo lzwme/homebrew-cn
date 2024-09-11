@@ -10,6 +10,7 @@ class PythonGdbmAT312 < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "35da9ab64a4f626fd7f4d862de865e4f26094b2459132cd12d2492180e288964"
     sha256 cellar: :any, arm64_sonoma:   "7840935d50b840a039907e356c2b19fb27b54190a7923be1b875c13156dd4258"
     sha256 cellar: :any, arm64_ventura:  "a58e8902545870fd5e8b3181e0303fd02d63af118bf2ab590a6272616359e17f"
     sha256 cellar: :any, arm64_monterey: "417c663088633599d2b539b77a54950a12609f31405c097b372ad87f4ee22883"

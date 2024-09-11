@@ -6,6 +6,7 @@ class NpmCheckUpdates < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "37d68c93020ce8fa2605f1b7746e38de2286734d00e008b787b12d9df8e2ce15"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37d68c93020ce8fa2605f1b7746e38de2286734d00e008b787b12d9df8e2ce15"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "37d68c93020ce8fa2605f1b7746e38de2286734d00e008b787b12d9df8e2ce15"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "37d68c93020ce8fa2605f1b7746e38de2286734d00e008b787b12d9df8e2ce15"

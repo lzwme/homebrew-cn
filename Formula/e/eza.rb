@@ -6,6 +6,7 @@ class Eza < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "edf7275d0e4ae4ae7dcc1a7d202e136678ce60b2a4ce04e9c829bd99aea59fea"
     sha256 cellar: :any,                 arm64_sonoma:   "4fe7fac47c2d7958d6c16f9f46186e4fb4d89a6e53609681d2a6b0cd90c313ca"
     sha256 cellar: :any,                 arm64_ventura:  "f4d9927ad5c836436d7a05e64678554671aaade533ea9c3e297321f6339c69c8"
     sha256 cellar: :any,                 arm64_monterey: "dc965e318a6c8e871b6e13cf1d2dc09573ac2b5f2983e6bd891933ab0f221768"

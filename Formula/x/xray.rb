@@ -12,6 +12,7 @@ class Xray < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "441bb2842199a775229b590d1f87ce2c3344d255265ea54cc164af64e4977a35"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484206a5e13860d34f6cac072828c39fbbecdbe5c1df9c2c53e8342cad83a57a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "484206a5e13860d34f6cac072828c39fbbecdbe5c1df9c2c53e8342cad83a57a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "484206a5e13860d34f6cac072828c39fbbecdbe5c1df9c2c53e8342cad83a57a"

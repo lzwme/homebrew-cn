@@ -16,6 +16,7 @@ class CadenceWorkflow < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3fa19acf1273dbbda378f088c8b18cfbbb7af4fb33d3a07c025f8413aa273304"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2472be6f8e45cafb9de2f92898e933d798a08458090292eda07f3f38b4c920f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a9cc7e9a0cd2b8b62d5856b30da0f8a908c7b3ce5e1a5ce433fa621b883fa3d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d5232107997c53fe801ddcd7646a63dfb52bb5fb8577a0878d5102b6237bd287"

@@ -9,6 +9,7 @@ class Virtualenvwrapper < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3c44f1942ae31bc78a051cf8713531db12952d2dbb0af7a861b1cb5c5387ca62"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3094d9b534b38715baaa882e75ef6c41712103aab7046fe96d9767d7474b6514"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebc6610661cb199a433d78f4abd8404b3336443b411c9ddec8e764d92655ab0d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ed5137087586b7ead3c64504a2e2e9bdb479d855233b8931948c65bb4482a77"

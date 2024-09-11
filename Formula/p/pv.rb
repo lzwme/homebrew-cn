@@ -11,6 +11,7 @@ class Pv < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac34bbb8c78a13fbca713ee5031bb805f9552f73b10b5668e264f8ea8716f89b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "843ff02fb9d0a82329ac69bfff73292550c49597627391b8eb03586bb106a60a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a2b3d0d5934b8cc71c10fbdd8329db79fb4dc7f376c46a6516c3211ba5ba04e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2cb740dc49bca09d096f0e9b6687ddb6cefcb91757483771a6b9076f39cbdc2f"

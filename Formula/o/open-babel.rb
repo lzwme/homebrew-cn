@@ -10,6 +10,7 @@ class OpenBabel < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "2c59d7db4305c267949fba8d6aea3ae90a84bc65a649af40d067dab7f9ce1ea7"
     sha256 arm64_sonoma:   "f419ccc5548f2ef7476cf80f63a9202026a342955ab6636b52defa8ff4a49613"
     sha256 arm64_ventura:  "3897a0b1768ca3e0037070cb17890ca83ad9e5ac165832c97b5b3b25c4077164"
     sha256 arm64_monterey: "145b1a3f4d2d295f35bcec9e8698191caccc1798d478fc76563d7eb5301dd504"

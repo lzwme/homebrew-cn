@@ -7,6 +7,7 @@ class Googletest < Formula
   head "https:github.comgooglegoogletest.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "075aca662eb811a15c54953f21a500c22d445a652ad998d8fcfbf91228d4c6ab"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6ba5c5f2cd22dfcd0e81678c94a7d2b570d5aca9eb0c28c744dffc4f60ed488"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6d8ab0b37f041319aaf99101b2db99fee3e4ec43d760f21c41537395465c228"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d3ff95b092a34fffe8bf2b181c16e3fd0697607e8cbee65a9f6ced56039ac4b"

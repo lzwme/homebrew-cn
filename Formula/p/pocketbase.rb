@@ -6,6 +6,7 @@ class Pocketbase < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "265828b36081a40be1a473eb8d3c4a23c0cd03cfbdbee8aeff9850ed44f85927"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "650a244bd82e255fd39616fcadfb15bab84d698080d980abe209d42080e9c880"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "650a244bd82e255fd39616fcadfb15bab84d698080d980abe209d42080e9c880"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "650a244bd82e255fd39616fcadfb15bab84d698080d980abe209d42080e9c880"

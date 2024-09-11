@@ -12,6 +12,7 @@ class Xterm < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "6cce03b4873df6499e88ae23adc0c49a584e0bb4ece451a8693ccfe9b523bc14"
     sha256 arm64_sonoma:   "63cd19fc458f0576cb3c33062a3a59cda38b17079bcdebd01de82d6c469a5f6b"
     sha256 arm64_ventura:  "e23747d37f601cb0cf5de5b7dec8ab637cb93885d1ca93e21fd3f39b4300e3e5"
     sha256 arm64_monterey: "9e7d00e0399c9cfc3ca6ac9ba2a7a06078a162db2df15c81b709df1770248831"

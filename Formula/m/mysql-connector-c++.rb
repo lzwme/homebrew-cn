@@ -11,6 +11,7 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "50552a72448bc5c7bfa87c4f1cbc487964d41c125fa6f21ccee7ec7dc30f4ad4"
     sha256 cellar: :any,                 arm64_sonoma:   "194472846f7a30827dc1ce8a096bf8992921518f44cb9612755bf6a2b2dfaa4d"
     sha256 cellar: :any,                 arm64_ventura:  "9ed7b1655aa310c02e2de3f5e13ca793061fb9ea4bcaed9390e60393797c90b7"
     sha256 cellar: :any,                 arm64_monterey: "9d156aca528c8bfbc3ab7efd746fc1f88f4be17ee59b47d2171ed15765aac192"

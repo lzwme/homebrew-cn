@@ -9,6 +9,7 @@ class Nox < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e99c5aa725861fb3af5051d6203597dda5b842559ebdbfb01e410dd173a49bfc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4125816ab344b179b2ab09b3f392a75efa1c8e7fc6acb44a30709b9d31f2c94"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4125816ab344b179b2ab09b3f392a75efa1c8e7fc6acb44a30709b9d31f2c94"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e4125816ab344b179b2ab09b3f392a75efa1c8e7fc6acb44a30709b9d31f2c94"

@@ -17,6 +17,7 @@ class Subversion < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "babcf99d6491d32ac8df655f5d4c5ba4cc994a68708e8729e8985d2822ba4bb8"
     sha256 arm64_sonoma:   "559c4a78e3be6fb5dc1edd5198c5e8a6bfdcd3755392cef75c007b77e86a5d5b"
     sha256 arm64_ventura:  "ff31811eda0a1c661ecac4645c7e41a425206bff94394db1b59e199e85da6089"
     sha256 arm64_monterey: "f98360a8fdf96edfd3f41266114b074837b2e7dfcb8a5c842e3f23a82aa2796b"

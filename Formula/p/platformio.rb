@@ -10,6 +10,7 @@ class Platformio < Formula
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "443c4a3c783ffde98f33b829edc5941b8c96065f6ddfcd042cbeec681249f5e2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b54558f1c018e6a5b045232600640aba1d6ad8b4426f1121bb91525e66cd44da"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b54558f1c018e6a5b045232600640aba1d6ad8b4426f1121bb91525e66cd44da"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b54558f1c018e6a5b045232600640aba1d6ad8b4426f1121bb91525e66cd44da"

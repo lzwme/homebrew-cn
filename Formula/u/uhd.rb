@@ -15,6 +15,7 @@ class Uhd < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "a4e1b7346637c9f8fbf7952727a34c9733046c9123803ea1ac017a83bfd9cc64"
     sha256                               arm64_sonoma:   "0aa30be8f8741f6f033d4bdf9558499328b3f401d76da6ba5e46641a9ab22bdc"
     sha256                               arm64_ventura:  "bba91185c57f41b0341081ec2b0d11d1eec2d20a26ef5985a7d58afd92069ba7"
     sha256                               arm64_monterey: "908c5d7d364e45e2c76a3ac47194c7a00b012a187f7c3b06886165216f10a97d"

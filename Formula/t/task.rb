@@ -12,6 +12,7 @@ class Task < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "02f376c6638867055daefc4e58c8a6c9c47e58f33486b7f5fbf102fc46bb5d2f"
     sha256                               arm64_sonoma:   "cd7123d91d1f32ff460957a4a3d09e7b0816c407a9d604361899ce5e7bf7ad20"
     sha256                               arm64_ventura:  "0213581f5102105e16537570650842cdc1ac8a8b2bd046b588083c12842f30ee"
     sha256                               arm64_monterey: "b1f264092d279911e203a31a8378dadd2d48d1c6d4e3313f554b7c33e075a4d8"

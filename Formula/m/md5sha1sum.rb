@@ -14,6 +14,7 @@ class Md5sha1sum < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "18eabab184e2ab7e46b74aa8ff7dadd8b88239e604b64eaf64caed43846bea27"
     sha256 cellar: :any,                 arm64_sonoma:   "fdc098e39dd9d37a09189f285bcca2d3c2ebea1820dff398ac5bcb771f82a80a"
     sha256 cellar: :any,                 arm64_ventura:  "1055a4e7c14927621a28916d8847a9d07cd7c2fa3a0b7c5b9a087aa67350fbfb"
     sha256 cellar: :any,                 arm64_monterey: "6c1df5b7a603f00daa2d138d4e71d2f4e61316fb3e5de9f1dd7181a5d197feab"

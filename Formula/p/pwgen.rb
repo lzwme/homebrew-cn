@@ -6,6 +6,7 @@ class Pwgen < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "78e78f3269e5a571f309e859d1765104c3a85a227bc12292efe437ca838696bb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8d6d5e6fb87ca3906b04af23e27464f3ae52100e9f0c98ed3cbbc9701e47a1f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae06c8a28b9126b1eb4ce8e02d88b761d76ed35499de2c71881b51b247e9d612"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0c66f05513440592d1642a258992d076ff1b3c86f3646c88861aa0f4e443f6b0"

@@ -6,6 +6,7 @@ class Swig < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "95bf38d7a0ccac04b3fb52c7f19be5d57f03f27a777cc9e0415ec1aa09b02d1e"
     sha256 arm64_sonoma:   "183268434604fe51bf67ca63c6bb3adb0327b698be2214d1eb43c0d5d2ebb231"
     sha256 arm64_ventura:  "0bc1f80fdf13d7aa62a5940fa739162a00b4ae25d6d978d9f7021d08799a08ef"
     sha256 arm64_monterey: "0db87779d83c4f22f94ded633d6c3cc6edfc90be6a3c0b78899cd97f0519316d"

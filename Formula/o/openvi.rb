@@ -7,6 +7,7 @@ class Openvi < Formula
   head "https:github.comjohnsonjhOpenVi.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "254877a61321e148e338d1b6e0126999c64cf04989f49bd13e738e28623f1cdd"
     sha256 cellar: :any,                 arm64_sonoma:   "5bef581722715b0623333ce952d97101af9cee85b242affb1962cdf6c29568b3"
     sha256 cellar: :any,                 arm64_ventura:  "e4166622c59476eeae8c62392a4c9d774d83320b56a2e332e92492bd0997e91d"
     sha256 cellar: :any,                 arm64_monterey: "3336c1d08bf7bcc8eb17934cddcc378c6ced58b08e4ed51eb52a0988a6002317"

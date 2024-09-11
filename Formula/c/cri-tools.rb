@@ -7,6 +7,7 @@ class CriTools < Formula
   head "https:github.comkubernetes-sigscri-tools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "22360ee3f10a8868ce75f8f79f47a46307cd526a499948cf3a50882a7a3f0097"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0fa37dab5b7d97eafcabf743e4b0f10c9e58c0c589f01967c9944e8a3ad3b437"

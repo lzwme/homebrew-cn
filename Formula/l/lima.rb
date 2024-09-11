@@ -7,6 +7,7 @@ class Lima < Formula
   head "https:github.comlima-vmlima.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7e9eb7131cad0f52a28e731f761ec07e8c1253677b5cd93a4eed7a51a1409d91"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be8e2b92961eca2f862f1a994dbef367e86d36705a705ebfa16d21c7f1366c35"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4bd7ae7921fbd9878b421ac8234e69ce04bbb73db04152c87a17514736dd032"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3e1ad1c6e49a36e4a983070bec6c329b8dfd53713d301b5a44fe3781f9db1dba"

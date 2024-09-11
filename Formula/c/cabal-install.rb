@@ -7,6 +7,7 @@ class CabalInstall < Formula
   head "https:github.comhaskellcabal.git", branch: "3.12"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6d973fbc7b286f613320ff1a359023078ab06aa8e87209c8f785e601d452fbca"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f6c8f744e69dc10b3512979588c0730147d0f2ae09c2d990953a3cb87f0cd8a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d74da35f87ef2ebbed1f38e3bd83661579d822a86f41aa32c0c7d59af3d2e6fc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b38e6149b74b53c25b2493bf6a208ff8093a2cad6003d33ab2a0380611ebb049"

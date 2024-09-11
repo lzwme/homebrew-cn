@@ -10,6 +10,7 @@ class AwsConsole < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "27d432235f9c5db628bbc80ad9c729f693539132ce6aa2c3448db6df9e7d5151"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "546e80b2752153a74167ed67f9aa9d1ff14096137752ece57b1cd226692ca905"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "546e80b2752153a74167ed67f9aa9d1ff14096137752ece57b1cd226692ca905"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "546e80b2752153a74167ed67f9aa9d1ff14096137752ece57b1cd226692ca905"

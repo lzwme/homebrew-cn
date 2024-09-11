@@ -7,6 +7,7 @@ class Chkbit < Formula
   head "https:github.comlaktakchkbit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9971349107aa967e19ba88e18173e1fb95afc6aaf418b74a771c258d504a8309"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"

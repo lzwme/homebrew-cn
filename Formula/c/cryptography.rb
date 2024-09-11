@@ -7,6 +7,7 @@ class Cryptography < Formula
   head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6f26be8218b1fc85c08b076a3c3da06b685825751fa039127e69b6ea02120bd4"
     sha256 cellar: :any,                 arm64_sonoma:   "637373486e9a791bb115d369329f4249266893106fe54fe532bd5bd9a306758d"
     sha256 cellar: :any,                 arm64_ventura:  "40b6184167f35f9b7e1088df850a813044882eaf3c8007f3cc04e48a191fafa2"
     sha256 cellar: :any,                 arm64_monterey: "c412b8a6e300a95333a151d60551774383cde0f717d196cb2f2bf2bc8257140d"

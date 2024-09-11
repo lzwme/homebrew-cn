@@ -17,6 +17,7 @@ class Cmake < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49ea082b4fb43477f9aab332e2d1e1f9c40921d44e994f648f83a69ba33b44bb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1e7c136431f5c38e08f73d118374d69fc8055d8053d7d17fb0399c29a9bf2a9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad9ad76e14c46d5fcc727322002e230bb9fcfe71db1453defdf9875c1fd0a33b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b69067a4226484a6a3c9624dadf324987004096b7f44f88bd9b69a09d8395641"

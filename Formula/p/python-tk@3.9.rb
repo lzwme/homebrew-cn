@@ -10,6 +10,7 @@ class PythonTkAT39 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "69337728fbfe63387f3ee052e3cf13bcfea91fff4932594d8c568e5fc028b5a6"
     sha256 cellar: :any,                 arm64_sonoma:   "d3e96db3185c125a680051a4984927651a69d9ecc832189f97f1c422944d9484"
     sha256 cellar: :any,                 arm64_ventura:  "70aeb0283d3308c7a1f3a0ef6895c212499e9e3de7dc2892c815665d1e5a0a9e"
     sha256 cellar: :any,                 arm64_monterey: "46c8166a4af72baa91d6ab36862fe0cd2acdef77813cd31e9658a4b94d808456"

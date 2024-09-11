@@ -26,6 +26,7 @@ class Redis < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "13a841f5d3375fd9363a99a559bf74ea7c24e7d4853475e3e01c05d039c3010c"
     sha256 cellar: :any,                 arm64_sonoma:   "bc4c2bb74037b80b2566938f7249c1052f8e493af8ee7b57e5ee14e19c19411e"
     sha256 cellar: :any,                 arm64_ventura:  "c40b3cf2351377a3e71d5a8562b4a62e94b65cb736d3438b67465cf2aacecf2e"
     sha256 cellar: :any,                 arm64_monterey: "c749644cda76a63f76cbc39fd8f2021ab959a4e1eb8c8ff5dfe5638803c80333"

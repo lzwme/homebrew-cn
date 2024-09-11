@@ -1,8 +1,8 @@
 class Exult < Formula
   desc "Recreation of Ultima 7"
   homepage "https:exult.sourceforge.io"
-  url "https:github.comexultexultarchiverefstagsv1.8.tar.gz"
-  sha256 "dae6b7b08925d3db1dda3aca612bdc08d934ca04de817a008f305320e667faf9"
+  url "https:github.comexultexultarchiverefstagsv1.10.tar.gz"
+  sha256 "ec8f5bcc8d3a5a6ea454e67de484cf905e8c0c443257653416729a0fae8b0ec5"
   license "GPL-2.0-or-later"
   head "https:github.comexultexult.git", branch: "master"
 
@@ -12,19 +12,17 @@ class Exult < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "f2cc3026130dc563675724c1ccff8a16005d53ea2c1de7d59e3d164c1fa3958e"
-    sha256                               arm64_ventura:  "0a7fc1d5718a8254b8adf9b7783ac85baa404d8bec3e7b490b2d7a46bb153802"
-    sha256                               arm64_monterey: "28380485157dd2a521e9c72ff3baa1f1e392694f636697478606c89eb7f0e179"
-    sha256                               arm64_big_sur:  "1ac2db0c3d8b26091435336777f22f72594b0474bdd4d13092886f4630a87479"
-    sha256                               sonoma:         "0a539d1b0bba11927ecd5963e096ba9c464ef09d7ea72a8173ee5b8e36941a88"
-    sha256                               ventura:        "b08b50df709734a618a49622be3e968aff067ef1be742190c355204b30c4a98a"
-    sha256                               monterey:       "5202bc6cd443aadfb76b48c6734f03b15c0b20d3cc13eeb7ff90e0233997ce73"
-    sha256                               big_sur:        "21159eb863130508a83690868d84c499789c12d4e84594a6156846074e97ef0d"
-    sha256                               catalina:       "fc44b27ff30145ab9647dd2336513a376fee5e2884c354697a98925b324788c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8576be4d556f2f557252d541fd91efc5ca46e7d526cf014ba1a5a87d0a5a239b"
+    sha256                               arm64_sonoma:   "f69afb3ad16b3fdeea5ea6d0c73a62394d7be9def9248a97f15d8c65e6bc32c2"
+    sha256                               arm64_ventura:  "99251a0c8099a7218edeb452634b91a932bb31a39736a6382ebee51456b96474"
+    sha256                               arm64_monterey: "12cbac14ecba98181ca8c577e81ed40d98a750aca40180f52e4532aeb4c87fd1"
+    sha256                               sonoma:         "5170b7a35f26b2f9ddcd55fe28c3d8f44976efc04973dea7e5eb3d572ab8e257"
+    sha256                               ventura:        "014df8593c8b8559f08181a8fde9a503eb5bc927e4dea12e4ccb5182dd7e5f5f"
+    sha256                               monterey:       "0bee01b0b69655340e53d791d61c9a62cc0f5bea2d2e752357d8883e8165dc83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e04b77bd0b653ce3f5451850ff2ee2bcfeff84bcc98e41ff6999351098b2f406"
   end
 
   depends_on "autoconf" => :build
+  depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
@@ -36,7 +34,7 @@ class Exult < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".autogen.sh"
+    system "autoreconf", "--force", "--install", "--verbose"
 
     system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "EXULT_DATADIR=#{pkgshare}data"

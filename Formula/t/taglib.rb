@@ -7,6 +7,7 @@ class Taglib < Formula
   head "https:github.comtaglibtaglib.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "394ab63cec3e1288117fe9076afce0952b31a549db29de41c4a5f5cc8905aead"
     sha256 cellar: :any,                 arm64_sonoma:   "5b79928275529b55ab078a708cbfb98e174f7e5b7d668bf86bccb0634f443f0f"
     sha256 cellar: :any,                 arm64_ventura:  "c921c460750f74d8c025ed12189704bba122e1883c1e034b2cc86d451e81dfbe"
     sha256 cellar: :any,                 arm64_monterey: "5d012c93d5f25fded733a3b8cb3d834ab25ff121e32265d5bfcf38634b1171e5"

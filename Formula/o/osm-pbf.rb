@@ -7,6 +7,7 @@ class OsmPbf < Formula
   revision 6
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "339c9f232aa0fcfcda8d628f09efa6bdb227071208a28ababc863560e2916ae0"
     sha256 cellar: :any,                 arm64_sonoma:   "c6bb2f463c8057747690621b4e869050d29c6e0bf8e64b1dcd41226907cab110"
     sha256 cellar: :any,                 arm64_ventura:  "f84365ad813200d435f6368b3c5ce55b618210ad5d0f573804b4861b9249149f"
     sha256 cellar: :any,                 arm64_monterey: "c9cf203ec895aecbd958f5ebe16e1a6b596e6859ffac89f8726d220d2a27994e"

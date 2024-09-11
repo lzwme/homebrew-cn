@@ -12,6 +12,7 @@ class Radare2 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "4a323d5bea43f1fc689a930452e1b220e73c6d9f481b62c4fc5e7ac8aaee0fc6"
     sha256 arm64_sonoma:   "bca17b5e0bda234525315cfc1864ac91aff981573fea343ff487192db49f76bb"
     sha256 arm64_ventura:  "88d901ad50b60f6d05e1d63762757848e3ea3b8f7be23ba718ce771f9f287448"
     sha256 arm64_monterey: "1962f702cca5f81a601f9542e11a2b293d904723d73a04d0509d1d39b331e94c"

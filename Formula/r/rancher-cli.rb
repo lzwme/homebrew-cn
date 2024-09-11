@@ -12,6 +12,7 @@ class RancherCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1f196c08d2f0ff4558715ffc5471825e69c19f30a9660c67f851e3bc73418230"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a17f5922676ef886a3f1a764705f840e35c93a3a9850c133adc494c5ef884555"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "44779f012d02a8ad86f341e5004e167578d2477e4b369e2e62933be2f22affea"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c37309dab7c184b464acfed0a38a61f65690f8cc1850a048c9388db5bc70f67a"

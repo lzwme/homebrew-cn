@@ -8,6 +8,7 @@ class Make < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "f361639a5ec1a9355e12f985c511dd6631b6790452a52057032a3a07a690ca4e"
     sha256 arm64_sonoma:   "94377dc5a364da305c75fd7aa923a42897993de9edd1eb074428e13c3f2aaf93"
     sha256 arm64_ventura:  "389fd41ada645cde1c43c97f16fc829c80b2312db9c43f358ce774f19d0130d7"
     sha256 arm64_monterey: "49fa5e3e19d0793bdc32cc453a3c209697553ec1fd92964cfbdaf67c6a72a03f"

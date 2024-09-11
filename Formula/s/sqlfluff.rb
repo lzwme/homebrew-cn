@@ -8,6 +8,7 @@ class Sqlfluff < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a1ac12fc74a640e0dd91f6febf7747264a4ce7f01a3cff9f9cdbbfb2e40e88b5"
     sha256 cellar: :any,                 arm64_sonoma:   "e3a9a9d3aeb97cb74c65baf7b6e519a74e5e4d9e1bfe8b8509a49b89e2565849"
     sha256 cellar: :any,                 arm64_ventura:  "e67e264c58fa72817e7d8c6ea1f61b1eefb9a034843dd8824a04fec43d2e0b94"
     sha256 cellar: :any,                 arm64_monterey: "83ef996921c7179c7f85687d6a9bf1a0c1fdc697a8a636093cec23b7e7e53243"

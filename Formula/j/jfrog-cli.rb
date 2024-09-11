@@ -7,6 +7,7 @@ class JfrogCli < Formula
   head "https:github.comjfrogjfrog-cli.git", branch: "v2"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c7fdfb4a634b56fa34c3b5ee14b489773720cef82af519b8351f993dccf38c8a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2466d2a9b4df2364c68ecab9f228e6df45aa93bf89aacc749cf27f99fcbda5d7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2466d2a9b4df2364c68ecab9f228e6df45aa93bf89aacc749cf27f99fcbda5d7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2466d2a9b4df2364c68ecab9f228e6df45aa93bf89aacc749cf27f99fcbda5d7"

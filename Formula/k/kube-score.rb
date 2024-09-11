@@ -8,6 +8,7 @@ class KubeScore < Formula
   head "https:github.comzeglkube-score.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0bd7dccc03036884221f2e9f32f4fa1891ca8643de26d173fa2f3d61233422fd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4e98d0912c56136708f76febcb5c21aa4120694aa176c510061ec0839382d23"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "43e478d458c20b767beaf3450f8c0d2639aeac1f5f347b3f1da6a933c29a660e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e16120280e27daad25243b31ac6852b7b0952b72e1efd690e14fd1a06849be24"

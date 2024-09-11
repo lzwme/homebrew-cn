@@ -8,6 +8,7 @@ class Spdlog < Formula
   head "https:github.comgabimespdlog.git", branch: "v1.x"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "294c2eacc174d2112dcb7d43a3b952c6051da94b1c835f61859d3673c97571ea"
     sha256 cellar: :any,                 arm64_sonoma:   "94a51165d021eedd4262d15dad7c14c83f0f33eeda096d86ee762f08f831bbba"
     sha256 cellar: :any,                 arm64_ventura:  "fa3a2b18afd9c0b6211a2315d253360a9ba5bcc3256303cc8ad6cce5ebd3586c"
     sha256 cellar: :any,                 arm64_monterey: "d0c4e6684ca59fa4859bd412003c25847f9e377f1151404ce293d5aeb5d13980"

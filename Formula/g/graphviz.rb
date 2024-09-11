@@ -5,8 +5,8 @@ class Graphviz < Formula
   version_scheme 1
 
   stable do
-    url "https:gitlab.comapiv4projects4207231packagesgenericgraphviz-releases12.1.0graphviz-12.1.0.tar.xz"
-    sha256 "fa174c57b11f3ca48f096cf3d4dafa695bcc30a6ffea61804efe3f91ed9bc7ba"
+    url "https:gitlab.comapiv4projects4207231packagesgenericgraphviz-releases12.1.1graphviz-12.1.1.tar.xz"
+    sha256 "8dd4fa2a30a80e9ee4a11ad4f43f4a900d683684e824681b084a1dc86777a2a3"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,13 +16,13 @@ class Graphviz < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8c0e1b033dfc051343da9263386578280231639b81d2553cdbbe668a1ac6dddb"
-    sha256 arm64_ventura:  "3617782e9e225d89eb24b2582b057b69511fcc1b8f6d0b63f7f8a11a0596fb52"
-    sha256 arm64_monterey: "927b65455c8ef50fe0f54a7a68bb0338843019f78c9c1c61265052dd3be6bb99"
-    sha256 sonoma:         "d26fe0fd87c9c0b8e937e95840991bdd127ef5f0e56c6219e7e82bc7125a531a"
-    sha256 ventura:        "a19e53054ffb674cdb8bfdf51b899a4fa1b34ab061140eae25bdce6512fda2b1"
-    sha256 monterey:       "b6d7d71800f9bd3c63553501fe9e9ea15498cf3b8a9bb19deb640e3d4ac3fdde"
-    sha256 x86_64_linux:   "4ed2808ee6781e6d7d4623c358eaf0be7e2cfde1f9aac273daf93376dc774732"
+    sha256 arm64_sonoma:   "dd45b9ea58f4baa6813c807ea0416f302faa5e1069f8a8143044d5bd89a3aa83"
+    sha256 arm64_ventura:  "94de859a11b2f236133b2f541c00a6bed2a730c81a4bc6d729930480009881a9"
+    sha256 arm64_monterey: "5557ee94735171a98bb962f0f0a2026eab01f770a05572cdd7a0d75bb68e6c86"
+    sha256 sonoma:         "32045b867d4fba1e3fbfb64cf9b5f001aa5014e0987d7a9a9b0d4a589d4b6e7f"
+    sha256 ventura:        "11d1e6b2726cf8283a30abdcb5540c5d08709d6b8dfed8ba61d7584b3373a41d"
+    sha256 monterey:       "c32bfeb0330478975e6507829b92ea13adba64e644681451d3d8b7556c7adbf0"
+    sha256 x86_64_linux:   "52d08a6c684768e83853e1210eef6b7404cc42487eae026146a9b00342505cec"
   end
 
   head do

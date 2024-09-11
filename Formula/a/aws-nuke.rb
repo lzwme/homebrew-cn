@@ -8,6 +8,7 @@ class AwsNuke < Formula
   head "https:github.comrebuy-deaws-nuke.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "66770e8744b0d22aca716ad0bfa5e9064e50624b995e98f8af04ec6a6756c4b3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3286cec74fcdd7867c2ab1a0594b80107c75f049b04c833977814fe3e407930"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "12c5e77d73638f6bfee30759160f559aed88ab964c0af28732c76a5bcab5bdb4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "12c5e77d73638f6bfee30759160f559aed88ab964c0af28732c76a5bcab5bdb4"

@@ -10,6 +10,7 @@ class MagicWormhole < Formula
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d0127bade504c8303c58380269c590dd2b8a8d6fd06ef9829fafa85d806186a3"
     sha256 cellar: :any,                 arm64_sonoma:   "b6ab5a6f7fdcd873fd8851b33bae9087a8c54966d879c4154790f7c1bb1d1fd7"
     sha256 cellar: :any,                 arm64_ventura:  "344b881a53d273df0d68fb3c93b7a618263eac201c6620c9cbff91458ff54bff"
     sha256 cellar: :any,                 arm64_monterey: "6218b53abce4837fc0e7d57549e985e9062868051f72101912d7aea0dd11840f"

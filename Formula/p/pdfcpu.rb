@@ -6,6 +6,7 @@ class Pdfcpu < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df52f242e09d30a14e6ec4ebc23ec2ca1d877626f0544d9a2ead02f49ae373b1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d845c4b5d4641e81975f4e167fd3d1a0ee3a383cdb5dbc15740143479251408"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d845c4b5d4641e81975f4e167fd3d1a0ee3a383cdb5dbc15740143479251408"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d845c4b5d4641e81975f4e167fd3d1a0ee3a383cdb5dbc15740143479251408"

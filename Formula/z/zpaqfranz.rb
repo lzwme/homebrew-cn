@@ -14,6 +14,7 @@ class Zpaqfranz < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0acbe273512a9a2bc5b0de6ab3c75409df89958b86a14505b31832d861bd6d1d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "094dfff4b5d621440463fd95e163577f483c68b41d72d5ac295623bba1ca4e45"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "49473890245a57ce33804ef33bf7cb4d09dbb6dc278bebca43d11efd90424e49"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fc0191f5774d38d9ff996eb76590af75a7ee00262bbd016310b67914444eb447"

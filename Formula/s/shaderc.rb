@@ -27,6 +27,7 @@ class Shaderc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "61ae9437ea56042efec67fb37bd1d5cc02cda414ef660f035d6d4ef4fb37a42a"
     sha256 cellar: :any,                 arm64_sonoma:   "1c8a29c3a0edd76d3ae6e59037f48eb83e30f63083e1949838b5fe01a3224f5d"
     sha256 cellar: :any,                 arm64_ventura:  "6210cc389dffb86e727d2f3f166d73b6c7d150e8f2e7d5c2866ae7cc5cd6772d"
     sha256 cellar: :any,                 arm64_monterey: "996f8926a4ad55b1c2be2f4b7b92642fb8f39d9f7995df67d5cce9a43fc4e60d"

@@ -10,6 +10,7 @@ class Cpanminus < Formula
   head "https:github.commiyagawacpanminus.git", branch: "devel"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "652d0bd77ea57db4b55e836ccd5e095a2b0073b42406bd775fa5b1fec23004d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79c1c6d873f3ea1f5582da2544a9fcbaab6d1303d328b3877a70d63b9a355ca7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "79c1c6d873f3ea1f5582da2544a9fcbaab6d1303d328b3877a70d63b9a355ca7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "79c1c6d873f3ea1f5582da2544a9fcbaab6d1303d328b3877a70d63b9a355ca7"

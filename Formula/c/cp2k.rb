@@ -1,8 +1,8 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
   homepage "https:www.cp2k.org"
-  url "https:github.comcp2kcp2kreleasesdownloadv2024.2cp2k-2024.2.tar.bz2"
-  sha256 "cc3e56c971dee9e89b705a1103765aba57bf41ad39a11c89d3de04c8b8cdf473"
+  url "https:github.comcp2kcp2kreleasesdownloadv2024.3cp2k-2024.3.tar.bz2"
+  sha256 "a6eeee773b6b1fb417def576e4049a89a08a0ed5feffcd7f0b33c7d7b48f19ba"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b85ef0c8c0bb5e1dc8b8b10078e4e3c52fef22e8798add13a37acc90a9f277fa"
-    sha256 arm64_ventura:  "678a47ec0e02109f7e10e54cc2a0ac33662ebf9fed36540e13854d4e361e27cf"
-    sha256 arm64_monterey: "831b1783bb4a8e2660da3246f5cecdcb9d5e903e2e7d8477c725f7e409d7552a"
-    sha256 sonoma:         "352d8243211e8f6c0dc97e3d3761a0f0f6c4bfeda8fc5c368efa7bdf5ac21658"
-    sha256 ventura:        "92aceded178ca6bbe4f879a23c21defcb302a44a668526de1d989a3c37d84630"
-    sha256 monterey:       "6e6fddb40bfcdd67fb82eca9ab04fe2a19009fcbd939bc3d9caddf0fd69c9cd4"
-    sha256 x86_64_linux:   "c38c86e94d9f05e77adf596b1b4431f5ad89b98c6116c8ab335230910f5e3a1e"
+    sha256 arm64_sonoma:   "656ec352a778c93cf63db2b94fb0a8a4a625ee870cb1142577c37ff0ef955df2"
+    sha256 arm64_ventura:  "395bda322226be6c02c76f2f79c48c22d1a2cf2c1ba840862c5ddcc4f9fddaa8"
+    sha256 arm64_monterey: "2988a43d657dca0e9a8a040bf89cb0432775d20f517c6d26bb78c3c2c4a17ac5"
+    sha256 sonoma:         "34a1c2e1da903636686466c125879207cb1be94b81d7007db2bd2283441b0bd7"
+    sha256 ventura:        "492a1a316203602afc9641c274a3388892a2cf2b930b741f57138fc4c736ac7f"
+    sha256 monterey:       "9075e9f4e099b87b12cf06a413798927f997ba4c345bf676c06ea8e72123b3d5"
+    sha256 x86_64_linux:   "008ca4405c7596399de1a2c31261fa247b85603668f1f5ed86601d7ff1f9df2e"
   end
 
   depends_on "cmake" => :build

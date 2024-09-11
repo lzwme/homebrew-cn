@@ -7,6 +7,7 @@ class Buildifier < Formula
   head "https:github.combazelbuildbuildtools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "778a3d2f8e3f9d635b719dd6dbd69deb61ec5350c8bfa62e586d0165246dbe32"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1166ae3c40a598be78f7c95e0d1a7c9d76a6c611202cd39c5d3d9a3b17b75f6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1166ae3c40a598be78f7c95e0d1a7c9d76a6c611202cd39c5d3d9a3b17b75f6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1166ae3c40a598be78f7c95e0d1a7c9d76a6c611202cd39c5d3d9a3b17b75f6"

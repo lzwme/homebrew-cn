@@ -9,6 +9,7 @@ class Conan < Formula
   head "https:github.comconan-ioconan.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "689e58d748567456ff6f56c5a9b58f52e5af72825f3139c20d490910ffe143ab"
     sha256 cellar: :any,                 arm64_sonoma:   "a9812556833669e5e395048ddfcd7ab18191a954193095f031d30a13cd1c33ff"
     sha256 cellar: :any,                 arm64_ventura:  "d0e142422ab502dcb0977f139b38f59e4d70fb8011008a52c9e3d88ce5411c94"
     sha256 cellar: :any,                 arm64_monterey: "2fd68471b484091e8895cc19fdb4ae9ce8169bd11e00f7283b6559fd7b38478d"
@@ -87,6 +88,12 @@ class Conan < Formula
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
     sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
+  end
+
+  # sequoia build patch, upstream pr ref, https:github.comconan-ioconanpull16970
+  patch do
+    url "https:github.comconan-ioconancommitd4e10628223f3c4b8bf5b9458f7af00c93364759.patch?full_index=1"
+    sha256 "57e672651d220aa19b4a237b9ae5ffe49b01a65bcc6a13f526d2a71241ebd07f"
   end
 
   def install

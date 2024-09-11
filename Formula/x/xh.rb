@@ -7,6 +7,7 @@ class Xh < Formula
   head "https:github.comducaalexh.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0492a92a49b7942baa64d35b95dcd27a130e9c7be5a8443b5422cab8adc1f3cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b46d58846d7759fbe1c736006d0fe857b0492df34d6113a240d4d8cf5cd7a5a3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "030bcc197bf059e6acf36ce83dd43ed355954db088bdc9a3f2c1b95abfe754d6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8d93303512119e48518cdd265c8ef8b3d98446c5c08cf6300b825f4dbcadfb8d"

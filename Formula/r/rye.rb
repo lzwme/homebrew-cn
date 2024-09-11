@@ -6,6 +6,7 @@ class Rye < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "80470c7d044c90675df52657807f90fc5a01892c105c7f465148679468a1b26b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd860982e82c4720732a82691f1c6973c0bc5e4abea37e660ec6a3174c305c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "63bddc579facc960290a8f52a61d2b46f4c26466d65307c2d46b2713a8f1ebf2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "11887f4526edc30f8873a5b8e91eb495977bcb9fadeecc9589612b79da7b936f"

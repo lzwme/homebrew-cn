@@ -7,6 +7,7 @@ class CloudSqlProxy < Formula
   head "https:github.comGoogleCloudPlatformcloud-sql-proxy.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e37825842f5e4bda9b77a931e8673b189ec96680d23105de9d7caaaa7f7d9b66"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a395c2bda560d64c786a3b10bf720bfe783a1f21478a84e9b3e31108cdadde2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a395c2bda560d64c786a3b10bf720bfe783a1f21478a84e9b3e31108cdadde2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a395c2bda560d64c786a3b10bf720bfe783a1f21478a84e9b3e31108cdadde2"

@@ -7,6 +7,7 @@ class Ruff < Formula
   head "https:github.comastral-shruff.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a22a3ca0b3e8dd52223dabf689aeba03b849b037ca5a8dd195b2c62602106b82"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "31f056c007a4fedc49995251a97b7538e1fda9fbee024acc9981078c1853363c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7363ca1a1d89ffd186c52ffe96e1527cde525bbdf2d08fe3c83b55bc9d8f87a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eb9cec3f25f5a5a41e56b5f292e9732b059a1231be0061edbbba7990eb6199cd"

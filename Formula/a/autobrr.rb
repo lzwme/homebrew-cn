@@ -6,6 +6,7 @@ class Autobrr < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c23dec6ecb92727406ab35938a3ebecb299b92096c4202e6c8655e72ff60df58"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3bd6350c1605055f29e9792695ce19d33c1e836dacca9ce2e5cf7b5783261276"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bd6350c1605055f29e9792695ce19d33c1e836dacca9ce2e5cf7b5783261276"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3bd6350c1605055f29e9792695ce19d33c1e836dacca9ce2e5cf7b5783261276"

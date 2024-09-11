@@ -7,6 +7,7 @@ class Nnn < Formula
   head "https:github.comjarunnnn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "85a7d1985a8e9ffc523ac0e9e4d920fcd5082191bb05cb29022585e08cdb87a9"
     sha256 cellar: :any,                 arm64_sonoma:   "7773a56db688d09ee950ed2cece939fd95d229031044acbc310eda58f227c0b7"
     sha256 cellar: :any,                 arm64_ventura:  "094d843cb5247e4140b21d3145b214ac43ec3a2aa5e366779db33369c922523c"
     sha256 cellar: :any,                 arm64_monterey: "c644255f2c961e6e4804e2c9fcecdb20a9b09cfcb226b86907c43097cf9b0c25"

@@ -10,6 +10,7 @@ class ArgpStandalone < Formula
   ]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b71de47f10a604629ded46675494d28ec5189153afe353425a4f6f52ab879f29"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ded4333901f512960d2087fd1177a70c82af78f296d858e517b52d94a2585520"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f24ae027fbc894e59972455cf569fd3676dc90d87ab93e4919df9fce0698ec1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "52318bf7231650f9e0a5f956ee4ec133e34355d15c137267c6dbbc27f426d080"

@@ -7,6 +7,7 @@ class Cyctl < Formula
   head "https:github.comcyclops-uicyclops.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3c8591f2cb728e507f7430a090de9516b660a256f7c7111376548e73352d1d0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "783811b1f779d461d3389a122db8e015f11f8f35d6b88596965d44eb0a9bc5f5"

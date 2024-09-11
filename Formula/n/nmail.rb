@@ -7,6 +7,7 @@ class Nmail < Formula
   head "https:github.comd99krisnmail.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "38deada389a597e345316d02bafb241ec7a5bc1e2ceba93a9cff29655eb64983"
     sha256 cellar: :any,                 arm64_sonoma:   "97c9d30d5ed64031e65fd92bdf89db3c9bd8230b42aa01726837c72b50ca360b"
     sha256 cellar: :any,                 arm64_ventura:  "206e2e5b64ce955b20f93091c06dbc01af51aac9295b28d985305c738f38dcf4"
     sha256 cellar: :any,                 arm64_monterey: "966e491805514e0459be70572004f85eb8d8826d31f841f0748cc32fcee65aee"

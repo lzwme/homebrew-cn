@@ -3,19 +3,19 @@ class Drogon < Formula
   homepage "https:drogon.org"
   # pull from git tag to get submodules
   url "https:github.comdrogonframeworkdrogon.git",
-      tag:      "v1.9.6",
-      revision: "e78690747858f49d7ea08002083420ff046d8785"
+      tag:      "v1.9.7",
+      revision: "73406d122543f548c9d07076e16880b777bfc109"
   license "MIT"
   head "https:github.comdrogonframeworkdrogon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "96150e67616b00dae86966bf72a680bf45833279adc87eacc57d6212dcfb524f"
-    sha256 cellar: :any,                 arm64_ventura:  "a22b44abb7f95aafee6b46123020a221c44e96005e993132dd3dc45552c3c626"
-    sha256 cellar: :any,                 arm64_monterey: "b813b3be2dee020a42a6278639dc4396d1903394401085ad673eed4519c17df9"
-    sha256 cellar: :any,                 sonoma:         "e5b76a1ad30fb0f754202f7a9c873c6bbaa8744b8066e619fe9eef7da8f6f05c"
-    sha256 cellar: :any,                 ventura:        "44a3af6698e27b1713d60ddb955899b8d5bf2422f0f30b73379dc6cf6981c87e"
-    sha256 cellar: :any,                 monterey:       "96393c7e4f4c81fc9f70343e3e3066f30ca8720e5d7a1e0064e386ff1132014a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47018e883a894c296d52cb43c4ae4fb0b85dc819044e427a66e1ecd87444b04f"
+    sha256 cellar: :any,                 arm64_sonoma:   "cf7c74284852f6d0994801dcb43ec9ee803f8461c0dbe73d08b1939c5f054f98"
+    sha256 cellar: :any,                 arm64_ventura:  "84487ed585e740da2bdb68b51bee8d0e44200d0cb042fc0937715518101e96b9"
+    sha256 cellar: :any,                 arm64_monterey: "deec7b3c03c52359fa5e2ee1f00364051f544e7bf149aef99d9b1f161de0a065"
+    sha256 cellar: :any,                 sonoma:         "9241c4a8d933f212f5035a318764eae45718b055e5ff44367c2728dfca831e86"
+    sha256 cellar: :any,                 ventura:        "dc5c334e6b4e70c8691cdc35d310c389a1ba9c9f2648ec4fb8190944faee7253"
+    sha256 cellar: :any,                 monterey:       "be8f0e7ecd6bcda797c7caacd41a2b61735ea0ab7a67a5112efff31718321132"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46c2cedaf64eb00ddc705fcbaebcea12c940fbf7ca2d1a221f50a1895298490b"
   end
 
   depends_on "cmake" => [:build, :test]

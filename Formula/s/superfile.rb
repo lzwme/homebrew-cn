@@ -6,6 +6,7 @@ class Superfile < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49a9d7c1e9a72ba404c74a14020a3d6f3683baf4af59a8074218f51ff75ec5ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34d26a515756b88da4157ec7552aadb7e4adeb1dcb1d27c7c43569c7ba8c3c46"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ed99c2c5afd4c5a631594048fdf6cf85627985f99c17593166d71e5715dec74"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c6fd6b796e942c0b6631f54b64f4e9a4bc1406d46d7a579ab0df70010ac96ce8"

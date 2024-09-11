@@ -14,6 +14,7 @@ class Asciidoc < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2098100d4d2c514f3f4feed8537b843e064ac44ae347cefa40327887f40a388"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7289219aacccff18740c6234ac438cc39c8f1ebd2a31a5e5ddc5a62f222ca200"

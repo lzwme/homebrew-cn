@@ -11,6 +11,7 @@ class Msmtp < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "16a0cbf6e0c43a1f2c54b0107b477d68422a21a8bc32be12b49f65964ad2859b"
     sha256 arm64_sonoma:   "9b5033e58a0c952161ece88e2b4c554af6e7c171e7e740bf02aa5f2e74767041"
     sha256 arm64_ventura:  "56711594d87c2709e82f626e1d8296b71aa9b1071d214bc0a8c00d2a7ddeb956"
     sha256 arm64_monterey: "f6298cd53a86c6b7dc877598260ff2f0d5b93a51dd3a93d49e090365e1721a40"

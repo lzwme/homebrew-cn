@@ -9,6 +9,7 @@ class Pyinstaller < Formula
   head "https:github.compyinstallerpyinstaller.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1c190297e1f8113887bf182fb38d2cb115f142f185384494abeeb8595ec58f5c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3388ed6f59a3abbc81b26edc41f5b5bd99b9271a6f38e127cf77750f15b8f85"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74f6268571e4252c615c5c7eb1a107adaeaa72777c43b310e2785d08ac98153e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c301668a3b25babf253ce9ada3518008064fc2f84b3b6fd253cbf6e72f628976"

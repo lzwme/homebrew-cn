@@ -7,6 +7,7 @@ class Direnv < Formula
   head "https:github.comdirenvdirenv.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "99ffa6154b1b2330f414bc34ee68480db672cf3c1abaa77fe6ce9ddaa8909179"
     sha256 arm64_sonoma:   "fd210e16bd6764b33cd2e556a7f07ed579453ba19d518ec11de33edcf3c5c2c7"
     sha256 arm64_ventura:  "59af7e0d05a50eda59d60a8c2c67eb0a3491c0650a334568ae13988da3b32951"
     sha256 arm64_monterey: "2577f8c5e2c3c7d1ee2f6966e3c92a16853edb9302d78089ddfc4f8ef9efda24"

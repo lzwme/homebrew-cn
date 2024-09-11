@@ -12,6 +12,7 @@ class Serverless < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "40a382f6cdcf4825bbb0118b438aed6df7c90eb2b7059cf6ffcddcb74a7d90a6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"

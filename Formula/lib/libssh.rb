@@ -7,6 +7,7 @@ class Libssh < Formula
   head "https://git.libssh.org/projects/libssh.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ef7a07e8b469c92123e7b81ee8356820e1e6866d8e05b278cdd544d1c7d4bf97"
     sha256 cellar: :any,                 arm64_sonoma:   "0a6184ee3bcd7d1ef5deb30a1534d04a90ba4f6070eddd5a05fe75b9acc20ea1"
     sha256 cellar: :any,                 arm64_ventura:  "9de46491d931e959172d96481de25cae970c55d2b5212a8fae8224208940c42d"
     sha256 cellar: :any,                 arm64_monterey: "a9f3409bf9da4337393b2594157adf571c6c3fd5d421de079fb1bcf544a1a16d"

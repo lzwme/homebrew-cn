@@ -11,6 +11,7 @@ class Xpdf < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e775e8b4e270213c66cc926fbaf7699bb79cf52ca4d30d0d2c7bfa1a4ebccd84"
     sha256 cellar: :any,                 arm64_sonoma:   "fa1671618f3f9efa35959abd97e504bf6e08dd435e2bbf000cf195dcfee6d01c"
     sha256 cellar: :any,                 arm64_ventura:  "e5774761d4a6a79893e0d2af59ddbf9ac178662bcc31f4144f0eab744269f53b"
     sha256 cellar: :any,                 arm64_monterey: "61ac5eba04cc8ab73c4f588979d0e02a76b0b5b5475a4e9e03486e980018bdf9"

@@ -17,6 +17,7 @@ class Bear < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d5ee1857d72a3047fc59eaaf41f4ad53512744f653122acc9f9e5730d3895b7d"
     sha256 arm64_sonoma:   "8e0fbb22f81b12cff11c83225b2ec261892ac168e2e815b0f1ffea58a9f64398"
     sha256 arm64_ventura:  "0106fd9b9b5aa8f138bb5142a2111fea1c95c902b3a5921f6618ade5a058c2c7"
     sha256 arm64_monterey: "301d12ffc7e9709caeec3a60576e889f6a11f7f27ad9465c5e111b8b7e2f8c1b"

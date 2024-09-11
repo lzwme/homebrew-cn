@@ -9,6 +9,7 @@ class Sysbench < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "7d0ec825d215ef6254a94b211fac3f8e0dd8c9216161f94fb60b452736efbe9e"
     sha256 cellar: :any,                 arm64_sonoma:   "4e92ceff385e3387f6f15d7c77394c2be82ff22adafd9d00f080548bca4adfe7"
     sha256 cellar: :any,                 arm64_ventura:  "e3ee9a9bd7ff39e36970756e135e4bef97c78cd9530be51f1d2597f6a0f504bb"
     sha256 cellar: :any,                 arm64_monterey: "78ea88f48d0c55422c01c0b58c890f1dcbfa5841446c549a32186ea37fada432"

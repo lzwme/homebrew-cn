@@ -7,6 +7,7 @@ class Bed < Formula
   head "https:github.comitchynybed.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb29ee4f9d369143a3177e52c4e6e412e76baec765ecf20f16334f117d5287fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb29ee4f9d369143a3177e52c4e6e412e76baec765ecf20f16334f117d5287fe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb29ee4f9d369143a3177e52c4e6e412e76baec765ecf20f16334f117d5287fe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eb29ee4f9d369143a3177e52c4e6e412e76baec765ecf20f16334f117d5287fe"

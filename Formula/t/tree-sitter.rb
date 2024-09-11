@@ -12,6 +12,7 @@ class TreeSitter < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4d51492f80898622c26be8d01d288c0070eaaf9958a60d2a642539d89d1501ca"
     sha256 cellar: :any,                 arm64_sonoma:   "841e33489720a0e054818f83d9f030eaa4aba900e15c390f99c92a4b55f76a6f"
     sha256 cellar: :any,                 arm64_ventura:  "91064f7ea239da4f4b945c5f5049803caf5f9ccc892ad12617071c5feb9858bf"
     sha256 cellar: :any,                 arm64_monterey: "d6636df7e42af07eeaada4eebe83bf74407b861fb0c329cfa425ba107789959a"

@@ -7,6 +7,7 @@ class GoTask < Formula
   head "https:github.comgo-tasktask.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"

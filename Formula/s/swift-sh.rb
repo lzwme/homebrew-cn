@@ -7,6 +7,7 @@ class SwiftSh < Formula
   head "https:github.commxclswift-sh.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f045fa93798e24a8ea6b3c386773dfbbb4235adfe673a81d3cdb3d831508c8e7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68b78e155165e512e75065b689f34c4bdd290e014d16a75298b6869484e6e29a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7544737098ecda67ac57df17568121bb3875c1773a0e276c49298c33475f9866"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c18ed52ff47b163562ceaec064b64bdaa474fc7b96679f972aa6a5859da3d912"

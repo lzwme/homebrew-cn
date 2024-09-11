@@ -6,6 +6,7 @@ class Libfido2 < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b07f0c07f5b2bc30b51b11ab15bb6424bc6f12c2d777af1c88f5fc51eabd0456"
     sha256 cellar: :any,                 arm64_sonoma:   "af63db962f5466784b450d1052475668fdb7fd8588f6f0f52c952e4445739fda"
     sha256 cellar: :any,                 arm64_ventura:  "33c05cce853e59f211ae4dd2bac144b57d27a94537a79ffbee97c5efa34cbd4a"
     sha256 cellar: :any,                 arm64_monterey: "451806f5a0f08d301a6789d705614f2cf1c7dceeaa88005c584280f907924447"

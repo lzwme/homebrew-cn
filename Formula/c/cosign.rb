@@ -8,6 +8,7 @@ class Cosign < Formula
   head "https:github.comsigstorecosign.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8c056dffd4b568fa233e648676d41572f38aa3f268b6752f8f08f3a6ceea7e8e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ab71e2206823bbc2f2571e5effe987cc129f984a71249efedcf2e76db97434e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1a823258ce0456f64ed02fff022232cc892a02aebe97ac4c110f6eddce8b0e9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bcb3cc3863e86d5292dee1da73db379e83e95d1ae1b336b33f5aa92c89200390"

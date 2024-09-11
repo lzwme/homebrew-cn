@@ -18,6 +18,7 @@ class PerconaToolkit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "b8b8f01e01eeda5d59a009df6f4045076123b174d50c9db1a5ccfb6d9c744530"
     sha256 cellar: :any,                 arm64_sonoma:   "253a0ada81a5be15993314ed1d761cfdc7c88340c23a78ef2c2491a158d7bc8b"
     sha256 cellar: :any,                 arm64_ventura:  "14f7a30244e3aadd3e155d2e3d9d61449c268fd13f90002cb67fb933ab6c795d"
     sha256 cellar: :any,                 arm64_monterey: "dcf0182a7812e2be56d86eba45f3591bdb870205537812a7ae8ef66f11593a7a"

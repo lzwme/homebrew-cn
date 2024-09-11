@@ -7,6 +7,8 @@ cask "uncrustifyx" do
   desc "Uncrustify utility and documentation browser"
   homepage "https:github.comryanmaxwellUncrustifyX"
 
+  deprecate! date: "2024-09-09", because: :unmaintained
+
   app "UncrustifyX.app"
 
   caveats do

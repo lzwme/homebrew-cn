@@ -12,6 +12,7 @@ class Stockfish < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a5f6a739d346d51452584203e1ee9d4073a23bede03f57a2be353cbd9e414d1f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "912b422a2d146ee732c4cde82393546be33ebc530061277b76af0d0520dd31ec"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21f84fd184baf6d59bd0bb2181b9757cd7e0eefb902b8aee1caa773aaa50ff67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "18b5450bae791e55f07994c3fc5cf1b355df928e4c08e3e122d4616167de4cc4"

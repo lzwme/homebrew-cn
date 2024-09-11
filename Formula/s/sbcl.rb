@@ -11,6 +11,7 @@ class Sbcl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a3433ca92e1e98945edd572c663f5ad05efae44206aed1c7726370249662dbd3"
     sha256 cellar: :any,                 arm64_sonoma:   "3900463109b5283c27d311b8955a3fe4eba0512c2478a93032ec0bb413b217b5"
     sha256 cellar: :any,                 arm64_ventura:  "a2fae4d961359fa7303b943a8e24e803b3ce2b01b799578ef5ba19309cc7f7b6"
     sha256 cellar: :any,                 arm64_monterey: "c32a48dd2aebf829bf4a81e4b2c5a24ff813985ab31e0a228bdaea3ebba8bbd1"

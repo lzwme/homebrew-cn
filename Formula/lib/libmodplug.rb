@@ -12,6 +12,7 @@ class Libmodplug < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "586ee0ddb6205b40860132f0f8dfdb74fdef762fb32ec0e9f2d3147db7229c63"
     sha256 cellar: :any,                 arm64_sonoma:   "8e1f55e5d02306627f7aba2c819f4432c3d96ef049da3e51a0163827558c0003"
     sha256 cellar: :any,                 arm64_ventura:  "169759bd85dac1257b3abc1f9690893711c64db8d8341278ecf10c155c4e8652"
     sha256 cellar: :any,                 arm64_monterey: "44f9536bdd1d88445e94cfef5c13a40ee07a965db04804824c438746f3d3db00"

@@ -6,6 +6,7 @@ class Hello < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d933581c28ace3bc418f910aeb86aacc4465f727127b50e00b95dba985606009"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1770a992b197e450da7cf2282fdeaae855765f66609063bfb963ffb2ccf69a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb3569886bfa1c197ea1db0b0eee32f5eff574454517ca64520c34adeff90404"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a0103553329c8a010ed68a1143bf9126b0f1977fec308953e9068a9722790d9d"

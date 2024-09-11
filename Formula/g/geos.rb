@@ -11,6 +11,7 @@ class Geos < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d07e0287c32e0742bf62253fc48f3384bb385b4384973af995c1c8eef7f11361"
     sha256 cellar: :any,                 arm64_sonoma:   "7598e3f97042c2dc4442e77feb4e8d3af4cd0fe58922ad99644134be1172b815"
     sha256 cellar: :any,                 arm64_ventura:  "012ee44940537761cf2da1f0bb120389dac8f7bae8c392b849cc383402ad2d0c"
     sha256 cellar: :any,                 arm64_monterey: "6ffce2acd56557396bc6013265d9c05f4c74ba9d3ae6f5c17d82540fc9f1ae6e"

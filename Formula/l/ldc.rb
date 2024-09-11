@@ -12,6 +12,7 @@ class Ldc < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "0b6cc16a41f838dd08476e47cb12e9c5ac335b309b809e049447cb957a92cf99"
     sha256                               arm64_sonoma:   "b8c30a4ac033e903d377e07d94b3ed095f2691b56bd99d27a76d48ff665a93d4"
     sha256                               arm64_ventura:  "99251ae8e6f5bdcd6f6eb66b3999d7c4ea6960a009dfe633da27d9f75c659bc0"
     sha256                               arm64_monterey: "44ac5441951ba752a05850a2cf1bdd2ce43081a8e0734ee61ea15cbd93f4b910"

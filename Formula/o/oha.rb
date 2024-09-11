@@ -7,6 +7,7 @@ class Oha < Formula
   head "https:github.comhatoooha.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2d8394a12ef1d163a0e2a344f29cd9b21feee4fb42272872c8340274c5a6bac8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7271f86c11c845efa1ddaaac6003134b13a84bba8c9098c5181f3350fa454e07"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e231a37455a5615fbe999e4ac87abf1a8f18079b4d98fd220bb68606008112d3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9a59c9b88c86bc79446a41d7029b4773d2d36d2d12ca1a6da8b3844cfeeee24e"

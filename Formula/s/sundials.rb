@@ -11,6 +11,7 @@ class Sundials < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1706f37becde249faa65de4f19a429f7e0573700b0f5e32e3595c7fbf67c4809"
     sha256 cellar: :any,                 arm64_sonoma:   "217cb17084cd6eaf86ffa794f810b1b439681817ccefce2d588af33bfd49b2e1"
     sha256 cellar: :any,                 arm64_ventura:  "da7af9deea670031566961b0f33b27305a21131dbe44e13b175b29bc70e31a61"
     sha256 cellar: :any,                 arm64_monterey: "06ddfa44368b61e59c3cc82fd157b1f9ac24bb7e66f476f72e645bbc9064c645"

@@ -12,6 +12,7 @@ class Mysql < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "9fca608694869f9ecdb43e8ebc5d72e3d52f47f4a801f64c28c11e5ed64dcbd4"
     sha256 arm64_sonoma:   "9fb3bd842d0bc3accdeb6dc5e111711d7c15e083eb5e5fd857a41d420bad45f5"
     sha256 arm64_ventura:  "b9cb0018e37b4f8aaeacf9a488eeeedc57d8b7b5ee13d5f23c7b72a39b838fad"
     sha256 arm64_monterey: "47e6ac4b825b72312f888d1af96948095aac5dbda808c48aa0085da73b5f54f2"

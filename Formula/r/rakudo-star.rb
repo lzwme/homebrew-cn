@@ -6,6 +6,7 @@ class RakudoStar < Formula
   license "Artistic-2.0"
 
   bottle do
+    sha256 arm64_sequoia:  "bcda67793f3b23f58a794dfeb005cdd6cfb971ad2fe3a0321e63cd2c79b46308"
     sha256 arm64_sonoma:   "80a701826b5ab00507692f9e9cb825df32e2db079dd8545250034530b38cf80f"
     sha256 arm64_ventura:  "0287d3b494fe20cff5da89a8e8a1f41add2791989d6651a01e2b63ae0958f2bc"
     sha256 arm64_monterey: "e86bf57d8e5e521dfb63fca8c8b8c52628e2e30cb86068d9fa72586635a040a5"

@@ -12,6 +12,7 @@ class Mpich < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b4ba01d58d75977d7b6d8830324228948447a576ced43d881c6f83399eaa6484"
     sha256 cellar: :any,                 arm64_sonoma:   "c5b5ab7d0674675590177b2d20b37e86856128aca461a2af7dde49e7c9c70f00"
     sha256 cellar: :any,                 arm64_ventura:  "da9c6d133f71eebf83e38a3056d5dfc0498cc1f03a8b21d2b263fd4054baec0e"
     sha256 cellar: :any,                 arm64_monterey: "5fde2da657a3daf95a9638e00738c5a6c5eecfdd8f07575fad67ac30582d02e7"

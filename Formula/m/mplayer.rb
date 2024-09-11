@@ -13,6 +13,7 @@ class Mplayer < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "4d99950e65cb0275765a4b1c8b0ebfc33723d09d20b009a01751f991af55148e"
     sha256 cellar: :any,                 arm64_sonoma:   "203e6bd9b216cf53d6042de09ed3c4dc1070cd56034279b7eebf3f8f18379b10"
     sha256 cellar: :any,                 arm64_ventura:  "1b17dde1bb0e77e6b994464b92081b3be76df73ab89634c978711c5bb8f4e593"
     sha256 cellar: :any,                 arm64_monterey: "c5516ace4b68e19b4ebcce79ca80ae09bdd7a950054963241333eec4275a80b0"

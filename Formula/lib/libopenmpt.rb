@@ -12,6 +12,7 @@ class Libopenmpt < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "019402f89e3b4f0d8386510b8e3af76b292083f0cb48d1d181cf909ee67c43e1"
     sha256 cellar: :any,                 arm64_sonoma:   "2a9add55f30ad9f27363e1d9e74a2624e8cdcd54edaaf3566e831b10503d0a66"
     sha256 cellar: :any,                 arm64_ventura:  "14d67acb17b67e2b27ac95166e159c41b9f1b88e015f80539dbeddd8edeae711"
     sha256 cellar: :any,                 arm64_monterey: "9e8b831830d2451e2f82a3848eb11853c3fc6f8a216634017ad866f3284f1ec2"

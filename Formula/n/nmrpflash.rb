@@ -6,6 +6,7 @@ class Nmrpflash < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "957e95d5f65c4f36e39b43aa034084eb0c250b6863c39ad8ca7a6a3af308b3aa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7707770da6f42c1be7584a916ec0c71413daaf4d0016b21d805428937a2ae05e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea1a68cc3899bbfd347fa8ccb4f4c57eb4c67d4eb7fd0fc1597d03f4d485167f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c4ed486e5af0f6ba6a942d62fac781aefeba10ccee0538ce7da1d54981ac8740"

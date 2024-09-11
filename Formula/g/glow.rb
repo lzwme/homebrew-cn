@@ -6,6 +6,7 @@ class Glow < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "285b38283a9d92de47832c73aacb9ef46db02adf6814e2b3962a2dba321d7f9d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"

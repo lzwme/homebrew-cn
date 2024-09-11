@@ -9,6 +9,7 @@ class Yamale < Formula
   head "https:github.com23andMeYamale.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "359ebe9dfd6e1ab18d7bd5baddc24cd3ad7bc244c2d9872e7f6879e17ade25c1"
     sha256 cellar: :any,                 arm64_sonoma:   "2c5ebfc81864613bdd1e30f35b1348f8be32ca92b08874a5902e4d1c01c57917"
     sha256 cellar: :any,                 arm64_ventura:  "a7fa0ea6519e357eb573b4ee47d1983e053ad7bf3cc7d29185b536fa11bd77f5"
     sha256 cellar: :any,                 arm64_monterey: "8660b24b84321ada3030da4ac73cdf1ac2081325bf5da3f92fb1592fdee5faec"

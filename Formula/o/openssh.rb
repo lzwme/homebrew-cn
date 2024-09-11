@@ -13,6 +13,7 @@ class Openssh < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "dd5ba4347fb4e19d57c903ca90b2a5d74c135477055f7bf693c5fda72c03b519"
     sha256 arm64_sonoma:   "f484ac194ed2ff05cdaf496ee0367e937c4ddabc0361fb8320554517b64ac357"
     sha256 arm64_ventura:  "324d887462c376b8f0dc5846551ba7f2db8cb774b2bbb5ec47bff5ce3a02db43"
     sha256 arm64_monterey: "e39cea5297b10f417e37cfc9be250ba78cc9d5e16c3fb4eb8d8c399510bbef70"

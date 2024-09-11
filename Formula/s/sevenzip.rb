@@ -13,6 +13,7 @@ class Sevenzip < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65c7e8d750dda852ba3dd5a115dec5d48f325f0ba4c7a8613d8b419a036b7025"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e4c37bf5f69c3ab0d8fe655309460979fb7d386d8a3ab8a065f3f373d13c3d4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2adc083c39a4d5ea0c9ac51d7b9586a6674d889b477278491624258c090df53b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f7cc362f47157bd92d5dc6a5ec610152f84139415dc33e62dc650edd63e7ddf1"

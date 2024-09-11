@@ -7,6 +7,7 @@ class BoshCli < Formula
   head "https:github.comcloudfoundrybosh-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"

@@ -14,6 +14,7 @@ class Openvino < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fee261c029e1cc641b21c0d781fcd154c53ed2617e9501b815210bfb41c89826"
     sha256 cellar: :any,                 arm64_sonoma:   "158be96f65c4ce698c4a1becdb7803463bc0380220f608f4963d176a3550149f"
     sha256 cellar: :any,                 arm64_ventura:  "7ca9bc94eb43b524ce2c25e52132f62efadbc698a5089b4e6e4c39393dafc3e2"
     sha256 cellar: :any,                 arm64_monterey: "07f28bc29b87551d569eab64ac9e841f78a319c003579d8167ebb0d751129485"

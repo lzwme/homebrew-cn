@@ -9,6 +9,7 @@ class Gawk < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "16a0fc727b8dae5d4dbc9ff2222837411fd0e6bcd586786d67b8ec076e9f947b"
     sha256 arm64_sonoma:   "73d743d915e4c9841f9bdc289710ef4ea071ccf1f026542f1fcc8ba4a870e8f5"
     sha256 arm64_ventura:  "36265210141086740f625d2e672b6275a2247de4de1f1df9747ed51b409a5e24"
     sha256 arm64_monterey: "24956ab7119678bf5168a66ace1b5e735cede929084ff756da14ab74a1c8f63a"

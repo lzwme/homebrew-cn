@@ -23,6 +23,7 @@ class Bind < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "058707bc83fb1a27a64d8af410a4301f8a403890bf8189630c5310abad07e290"
     sha256 arm64_sonoma:   "7bee803ca6e8038b4248c7f5daf5c48692493e777609dfdb2c8da31b5d213e5f"
     sha256 arm64_ventura:  "f4fc15f36f80e29543973f45ffbf59e41d5091c029d24ee3fd5f347f303b0b18"
     sha256 arm64_monterey: "aea2af3c5417f7d91cf1dbda95adb28ae793c3afb7f4c8644e44118e18039790"

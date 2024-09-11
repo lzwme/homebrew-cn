@@ -7,6 +7,7 @@ class Whalebrew < Formula
   head "https:github.comwhalebrewwhalebrew.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "301d2f38ace71c39fa8acff98d09b240b469a64c71e0a2105f0632ca2795b950"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b20f0a59b4ddca952293210217096767bbf3641eeaf8a20d783479ec2d23029"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b9a806bb5c88d5074e037c34d4f1070b24a3c709a6c12997c256a68c12eaf44"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e3afe9d7ab8ff22f8e394da65c9f58bc4b495dd758a19c27a6d0b5961f017885"

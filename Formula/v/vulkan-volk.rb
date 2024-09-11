@@ -12,6 +12,7 @@ class VulkanVolk < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac7dce079289537a1cade33e8baaed63dfb69ad992b8e5b66ad3ff448a3b8595"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45d20ff56705f3e04787bb7af939298516a9546565ceb6ef7602fcddd7b209d3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1b2ffb01af22a4ce463af8d5d774e6e3aab76c19419fa4e3c0a2e83436a67f1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "90b83c4ea6e0c5462daae7c7462f16065e42d4942861510d6594ce4ad5652f97"

@@ -12,6 +12,7 @@ class Jsoncpp < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "10d3594fc94da872a77178a733c49ef3d34322d67fd75d2e06d10381bd02d4bf"
     sha256 cellar: :any,                 arm64_sonoma:   "fedc02b1840b83d1e98e7c65cce31fa60858cfc82489f108cfec42989adacfdc"
     sha256 cellar: :any,                 arm64_ventura:  "013a6b0f7beab209b744ef8119ca2a9a29a0c9c90da09f5012fc94fe5cc51ff1"
     sha256 cellar: :any,                 arm64_monterey: "ae110e26c1c8bcb9aa833c0393ddf26f88e3a88f1056fb52c7461dd0af5d7f96"

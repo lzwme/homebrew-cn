@@ -12,6 +12,7 @@ class Lazygit < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9380c3f904029f350d15ee734a49ca4c0781b72e17425454ee13151e0d7f711e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9380c3f904029f350d15ee734a49ca4c0781b72e17425454ee13151e0d7f711e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9380c3f904029f350d15ee734a49ca4c0781b72e17425454ee13151e0d7f711e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9380c3f904029f350d15ee734a49ca4c0781b72e17425454ee13151e0d7f711e"

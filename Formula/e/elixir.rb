@@ -7,6 +7,7 @@ class Elixir < Formula
   head "https:github.comelixir-langelixir.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ea6db2577939b0c4c9831301c0120490fffece09f8c3b11541681d9fab678baa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "424318d1e358738bae6b7962592be58a3254172872a6d78640a97e45ac475ae7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5aea5e80878f7ea14ed3fd534bf26a0c2bf3fffac5323c0bf349d7ccffb21999"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4bddc5525f797de8a69a156eea21111499d2ea0da39ae70ea8c3ecbacb6515ac"

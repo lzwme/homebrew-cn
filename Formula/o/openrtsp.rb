@@ -13,6 +13,7 @@ class Openrtsp < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "653bfd5d9b67259704443aca234c6164221f0419179ae40a7741676b35ff18e7"
     sha256 cellar: :any,                 arm64_sonoma:   "32018d3190c13a3c2aa3c3dff8ea864615e735b907883536f4f63231697d51e3"
     sha256 cellar: :any,                 arm64_ventura:  "d47acb05ac38decc4e595cc1ab4c02cb643b81848a7d645db4d2322923509f85"
     sha256 cellar: :any,                 arm64_monterey: "58bbf2ec6d6876a2a9603802bcd9b3a448ecd0841a29ecfbd9fd632bd6ff96c1"

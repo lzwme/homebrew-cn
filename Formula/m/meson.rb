@@ -7,6 +7,7 @@ class Meson < Formula
   head "https:github.commesonbuildmeson.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5e54edb7f3e2e88fd04af2c0b80ca63991334f25888035421e7da538e282123"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "538ebaeac79dccff22a262d09fa590f7e538ea24928f4a35142485e3c3feea80"

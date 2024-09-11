@@ -11,6 +11,7 @@ class Freexl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f1ad6599c594b856dcb08b7aafaddf394b0708924130fbeb53c38d0aba2215d7"
     sha256 cellar: :any,                 arm64_sonoma:   "9472c48a14d17743af81465d7d8a9bb8f8063d07c50e953b6bc305cdbcfc8b49"
     sha256 cellar: :any,                 arm64_ventura:  "1fbeb7ff7273a9e9a26eccbbc4d9943167645de04654f5ada57b399262a66eb9"
     sha256 cellar: :any,                 arm64_monterey: "d5b5f5091fde8145fb4854df71e5a0d4c85064983f0ff50e8649b66e72459436"

@@ -11,6 +11,7 @@ class Azcopy < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "436cdee5aba0c76dc62808270dda134d96efd73f7217799dd94f845282426e17"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4507cc4f4cda254231ce24bb94e9ed8d3c626c7ed44a052e4900f53650bc1b58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6620d5556d773e002a62efd67a7f55265b5c840b9d1fc9e8f218277d69d73d86"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b827dc933eb34c45b32265f4f5a066065118c13a8c91dacccd5d61b692e1e015"

@@ -7,6 +7,7 @@ class Onefetch < Formula
   head "https:github.como2shonefetch.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a460ee9d7d6114508bc266ea2e9b00fa0cab3700fd58f7a41cb33d070b092c79"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3581ef45dadca882bb57a085849fd2ec9ba44c62d677c5ab08d5944a2f4d8a1a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ca90fce57dc18ff55389d3567e3eba0a666a1d3e1c2f52b6bfe810889e6a19c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5a091696f43ba20b0a0ba4abcce19d62be22e56782979490c18b8c8f6e733d61"

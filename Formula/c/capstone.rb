@@ -7,6 +7,7 @@ class Capstone < Formula
   head "https:github.comcapstone-enginecapstone.git", branch: "next"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1bfbe3ed3ee90ede3b80ccef52d4cab75c81d215870ecd50d4bf6b30ba60b84d"
     sha256 cellar: :any,                 arm64_sonoma:   "2c1c08af469f0307469b70ff6c277d5971495db3a8c7ae38c98bd2c70745acbb"
     sha256 cellar: :any,                 arm64_ventura:  "8960b1111e9a59597c9c50a6b7ec3cfcfbc5e845d28bb2f42507a2d7bb108a71"
     sha256 cellar: :any,                 arm64_monterey: "9fadfcd6aa4f0a077472715e2c9cd8da5e64c47d4e025a944525e70835619fbb"

@@ -11,6 +11,7 @@ class Tevent < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e46049d02fd8a4331fca78b2197a3c702455f338f8100f2faf83b1ea21022d35"
     sha256 cellar: :any,                 arm64_sonoma:   "7d039f07bfffebd67e55ac0cb343ddb5947aa24d630b4c4d0ac1731d37d7b503"
     sha256 cellar: :any,                 arm64_ventura:  "4c7c644207c00731d6cd097afa536cd181a4f5f036326ec78c999d8f8c4c71fb"
     sha256 cellar: :any,                 arm64_monterey: "7fd475a600b2e91c816b8f5b79240912efdcffe568f655828cbf470e9b4bb09c"

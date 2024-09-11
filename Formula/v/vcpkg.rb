@@ -23,6 +23,7 @@ class Vcpkg < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "b86031e4012af50bc00b8b85e8c5e1630908464c6a0cb5efd475d4795c6ef16e"
     sha256 cellar: :any,                 arm64_sonoma:   "10592e7ee14a04f6efe9c56247f0bdc8596b68dc6c2e7683d6e8b650db0135ae"
     sha256 cellar: :any,                 arm64_ventura:  "85d40acd871a3b97af5149cef7e823058de2dbd5ad35f56c0f38e2fb14b9b7a0"
     sha256 cellar: :any,                 arm64_monterey: "424d45a8ff27d3c358601762b0a5b0cbf179b8549d3ae08a72522453a0e381c3"

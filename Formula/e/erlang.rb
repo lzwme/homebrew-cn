@@ -13,6 +13,7 @@ class Erlang < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d5358f8b49b0d1705556a1747905583cbc99dfc0cfea17a500f6abd78eb7f553"
     sha256 cellar: :any,                 arm64_sonoma:   "c431396f5317abe1127f09e050f09b9e95b19ba1a5182a21fc5a77699bcd7e13"
     sha256 cellar: :any,                 arm64_ventura:  "110213139fc017f108a06e1f206a5ddf7272d5807c4764ead9dd5cf6db1e620b"
     sha256 cellar: :any,                 arm64_monterey: "f69832dec4aaf28bbb576bf0b6d4e09365ba9ab8e5f70116f58873db576c57ce"

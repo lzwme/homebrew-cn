@@ -19,6 +19,7 @@ class Crystal < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7ca9761fb2ff22ca658d214264247d629315ecea9aba2fa3ffd0c949ada3bd7e"
     sha256 cellar: :any,                 arm64_sonoma:   "4317db5e0ade574b4cee637bac668e8094670689c03931f80acd1190355f00cb"
     sha256 cellar: :any,                 arm64_ventura:  "91a62195664af3bdde8e7fa0906cf870a3d0cc5a5074396b5d93bb5d0e2c0587"
     sha256 cellar: :any,                 arm64_monterey: "8ae41fb343b76f0aae3bb2b6f71954b07b9761d4ed9fbd76f90be5711e69bb84"

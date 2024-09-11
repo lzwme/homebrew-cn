@@ -7,6 +7,7 @@ class TaLib < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "0ed0d99438c7e1b4de7c2c99ae615dcf14bf36baf538babbcd4f5a97488740b5"
     sha256 cellar: :any,                 arm64_sonoma:   "f5dd264ea29a38a21cfb97a5c95a80921d8c4eaed587fd384e766f9fcbf33eb0"
     sha256 cellar: :any,                 arm64_ventura:  "8270f13fe940810e41e494cb30ee4dce662470751804681a806981d24da75ce4"
     sha256 cellar: :any,                 arm64_monterey: "42dab227aceff238ecc3b475ddffaa3d54e3da69a89c5aae08b4b4463ab2f0e9"

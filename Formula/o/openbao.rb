@@ -13,6 +13,7 @@ class Openbao < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8429c09128558e81a671bee010819504deff87226cf14fd7746d4701ed837e2c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be992d09774b947b4f8e927f13a663295c60d4727c573a6457744c0c84efbb37"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1dc122744d96e9de3c3e368314b59cb8509503b9106aad2939a5814189a5b954"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "04871dae0992fd44664c0914bae0195135e38bbc4a14dfd11024d40a795aa6a1"

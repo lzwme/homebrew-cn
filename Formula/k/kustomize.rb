@@ -12,6 +12,7 @@ class Kustomize < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3d1a81fdff68e971f4a7e45945008e702c8397b86c1a5f390c8c063bc1bf5fe8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e6d222e8a5e9bd13ae418db39804da9a84a21fcb291683d5223abe70e9f4d3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "38f0377cccfda2718997ac62aa1e7c727e7ad979717d54a1cef793547fc15a23"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c2f682df029c1aa5c463951322c80020b0ba75c1414044af032842b3618c826a"

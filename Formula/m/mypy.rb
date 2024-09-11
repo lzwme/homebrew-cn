@@ -9,6 +9,7 @@ class Mypy < Formula
   head "https:github.compythonmypy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8ba2b491e762e6c0e640b555fde8dcc3b4513041c41a759ca64da448ab1da933"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "613375bbea6b54c0a7d64088b92ec9f5c8f31b6aaf360741f65ccbb76628b5a4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cfe1c4d8f25ecf3e01355957a6d0d598334e9384b6700c3d48a2ce293e32f7e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f68bbcbd40d268be1e9310dee8f27f20929e3bc9a76f07f249453d83c23c5ab8"

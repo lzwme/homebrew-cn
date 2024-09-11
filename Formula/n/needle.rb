@@ -14,6 +14,7 @@ class Needle < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "31e25c5db4c404a0ec0d50393e36257bae9a4624753cd1da4c1b95d729ba62f0"
     sha256 cellar: :any, arm64_sonoma:   "d701a8da8eb60eeb86f034d27f0793e124ba4dac5155b35b95c92042f41cca65"
     sha256 cellar: :any, arm64_ventura:  "2b953b5225793b663e30652c4dcf15af21883f3161e1424cf3ae4884def4fc85"
     sha256 cellar: :any, arm64_monterey: "f5336518cc424b2a5daf3400d9968035966226f1372d75ad4e8d950a5bfced93"

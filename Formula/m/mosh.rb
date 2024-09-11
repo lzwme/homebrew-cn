@@ -7,6 +7,7 @@ class Mosh < Formula
   revision 19
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "44040a2601b16b26bebad5d0c8fb009f54adea06165c71b17ad118021ef31f54"
     sha256 cellar: :any,                 arm64_sonoma:   "7b92fad6116d55eab1c3a30bc4fe23a1a898748c34bd6fb7e9858aa44057997b"
     sha256 cellar: :any,                 arm64_ventura:  "62f221b0511eb193622d48b62ed79ac3a510af961020642a426ebd174c800d3b"
     sha256 cellar: :any,                 arm64_monterey: "a8a32746f193ac559dae8a6e1485760b194366eb59c7d24a9da8bfd5c6d95247"

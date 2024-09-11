@@ -6,6 +6,7 @@ class Certifi < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d53b46299ad29dfbaeb9c9d642887efb7235ddec1ed39ec144469114970fe6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c109e2f1cbdb2c868d964f8eb4816e865ffacbf9c7d187865ac9e4b729557448"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c109e2f1cbdb2c868d964f8eb4816e865ffacbf9c7d187865ac9e4b729557448"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c109e2f1cbdb2c868d964f8eb4816e865ffacbf9c7d187865ac9e4b729557448"

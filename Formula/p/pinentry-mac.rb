@@ -8,6 +8,7 @@ class PinentryMac < Formula
   head "https:github.comGPGToolspinentry.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "1759d4b87b044210921e272a7b17088619a0926cc0cf2e6575ce41a67e23dd76"
     sha256 cellar: :any, arm64_sonoma:   "d9b12bddf25fdd63200405e9d47e97b0f26f1a7072008f4a162a4904057ea793"
     sha256 cellar: :any, arm64_ventura:  "16372bcfc0e902ab575e8e1cd8413c6e2079cec95b0b932713351f1e412fc23c"
     sha256 cellar: :any, arm64_monterey: "b8cc948168aee564dee88bc7cd7d6ab027890a9f4535d2d5e097bbd7a4de9c33"

@@ -7,6 +7,7 @@ class Fmt < Formula
   head "https:github.comfmtlibfmt.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0960a214392fc344670c2fae5a698799c910743d437c0119756cab9c5395bbd2"
     sha256 cellar: :any,                 arm64_sonoma:   "244d2f9285c080d0dbef74e2741082754a82d13bf0c1da25130dbbc82d648162"
     sha256 cellar: :any,                 arm64_ventura:  "13febc98177289f86421181ee4eed45b8d47f88ae4ceb573c4106af2db355bf7"
     sha256 cellar: :any,                 arm64_monterey: "cfdbcf9079cfe3ec3148408799bdf73f1f8a8ec55e85576ba6884383a756423d"

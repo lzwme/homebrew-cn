@@ -6,6 +6,7 @@ class Sq < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac92a789727a715117040a35e3d4b3eac4c747f028d6e092899fbff5d095f9fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c783bcbcb9b86ae7849c10303b66fb66bfb14eddfdfede1c2f37491f46715f4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac698e5af7d207bf310ec7b07fc4a4e92c4684ec846bd94c08dc2afef616d93b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a3cebfcec2654133d4e5f264729e2926cc9aa8debbb799c790825ee5da4576c0"

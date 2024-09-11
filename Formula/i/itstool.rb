@@ -8,6 +8,7 @@ class Itstool < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "90e1e9d99c5a31ea0ba1c10156fcaf66a36f03e63292644a2835f85c0f44fad5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca64b6795a975cff894c9f7a7d83f350155b69b361fb8992468faddde193ad5d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca64b6795a975cff894c9f7a7d83f350155b69b361fb8992468faddde193ad5d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ca64b6795a975cff894c9f7a7d83f350155b69b361fb8992468faddde193ad5d"

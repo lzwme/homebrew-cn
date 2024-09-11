@@ -10,6 +10,7 @@ class Cookiecutter < Formula
   head "https:github.comcookiecuttercookiecutter.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fff18337d711de887276083563dcc186a8dea431497a3419db9fe1afc69da4f3"
     sha256 cellar: :any,                 arm64_sonoma:   "97e5f9f881b6556ce579578215814c5246e215c5d12c26692ef9a7c6aab51854"
     sha256 cellar: :any,                 arm64_ventura:  "2e2a04864b1afad483817bb992fc4a77de024cad96ed970909702c4b05f8e2f1"
     sha256 cellar: :any,                 arm64_monterey: "369c46ad8512583efd0e21bd2b5a7b5ed22faf755d1b79548c10178d49971b17"

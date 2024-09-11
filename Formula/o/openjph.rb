@@ -7,6 +7,7 @@ class Openjph < Formula
   head "https:github.comaous72OpenJPH.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "14515b6b4cc99afbdcda06cdd3c0aea9ab11d87690957b76f8765210b96b0414"
     sha256 cellar: :any,                 arm64_sonoma:   "097e11d077f289f14ca5efaa0aa72333ee661ed0f192e9a9e6619a8cefda63e4"
     sha256 cellar: :any,                 arm64_ventura:  "80eb2b437e53ad0b2671c5cd4be46bba92a0b4cbdd9ccb095c5c29ef3a0bae94"
     sha256 cellar: :any,                 arm64_monterey: "7be65919294cda460d103fbd792eacdb854ef5404b3dc641471e24bef73d1e72"

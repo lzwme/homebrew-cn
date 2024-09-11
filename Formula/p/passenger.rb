@@ -8,6 +8,7 @@ class Passenger < Formula
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9b1f73191f92ceb5c526b9885aad05759ac4c6e4a909cd8e0beaa0020dac4e9f"
     sha256 cellar: :any,                 arm64_sonoma:   "79f60c4023ee36c7e47b1801445cf4ba38b350cf25fcb26fe7ddc2198e52bf09"
     sha256 cellar: :any,                 arm64_ventura:  "6c184a9ae2b1a922b6f23174b3d067ac03eab16710cd7d92d3115869c8d96446"
     sha256 cellar: :any,                 arm64_monterey: "885f4d69b85b038c933c112df4678378bf46ad99b5a13f7c6ee1282585ab65d9"

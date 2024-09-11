@@ -11,6 +11,7 @@ class NodeAT20 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "bd8e7d976f5c9fbf248802eadc7c4559bb467aecab667581058205bf37188c60"
     sha256 arm64_sonoma:   "69e82b4f11cf002776892d0576fedd78a77b03dbbc5712163dad46859d40a18d"
     sha256 arm64_ventura:  "400af32a0afc9de914df08a3170c5ad751f7fa5c659e4f75f57845a98c92f6b7"
     sha256 arm64_monterey: "a89cd12cb649ba14bca37c882c4c709c18d0c276a36393676669da51e609446a"

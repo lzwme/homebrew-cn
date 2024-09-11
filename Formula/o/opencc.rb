@@ -6,6 +6,7 @@ class Opencc < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 arm64_sequoia:  "a27e13aa2de9e5c4775f1618842f8a94ba0399462295427f1c01ecb0bad59e45"
     sha256 arm64_sonoma:   "40bbcc0ea4cceadf579f5bcefded29585f45a18e42bba6ee2a0f0f8b9093f30c"
     sha256 arm64_ventura:  "517a8dfe20b621aad9d4f8fd9118794b53318f07007ee1ec1fb7081065921184"
     sha256 arm64_monterey: "addb0ef3712437c10de21dfe670291144d1fa36d6c2661016cfbdba0d6a0e9f1"

@@ -7,6 +7,7 @@ class Kind < Formula
   head "https:github.comkubernetes-sigskind.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d608a295d52a769cdefa9f49c5d84bee01e21119016dd4870960a0b85b9416f9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d20522ec44b43bfa7c01d4c71a2d87acb7280bd59c26c3f29e18aa349f462eab"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a364ca7bf349559bea646b85a29b51a7988080fe0ef513810abf8118ca6aa65"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "536aeaba5a28504851e82fd6d9b1bd6f667483d91b887a4de10ea5d4938d20fa"

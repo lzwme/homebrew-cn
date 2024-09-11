@@ -12,6 +12,7 @@ class Volta < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3f179ef8e08a6b9192a54f2c53104eb4e1633340b721cca0963b6b6428ba4f4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccc458c5dce897081ef5647f3b7546b990156ff9d4ecf0e5e853ec3183ef6361"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "564451a02fe6a260d6b6c6931dbf5a254d492dbc4e56986b1ff017395f51bb06"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "048b23b6a53de02c00868b733a5ac804daaf25490072327314a8564fff745a81"

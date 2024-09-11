@@ -6,6 +6,7 @@ class Pycparser < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9846cc9b7b96039a4e6b8500ec1c2c0e35536bac6263916d916a4691a51ca787"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"

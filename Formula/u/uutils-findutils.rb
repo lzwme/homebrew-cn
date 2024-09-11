@@ -7,6 +7,7 @@ class UutilsFindutils < Formula
   head "https:github.comuutilsfindutils.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a2b1a4305f6c079d9ce173c0f498c6f7b2caa89598fd70ff9575ac416cb3cbe3"
     sha256 cellar: :any,                 arm64_sonoma:   "1eeebb99c9740e5ea9150fccc38a24fd8e87e5a80b9c6270059b81d10e70c6ec"
     sha256 cellar: :any,                 arm64_ventura:  "6a36f901c622e3cf5a998e8d7df717f5affe8f5a6331e347adefb87e186bdbbb"
     sha256 cellar: :any,                 arm64_monterey: "91ce728daeb833d7efe8483a47b48e7938c1f023bfe491f2144e5eac60980ba5"

@@ -10,6 +10,7 @@ class Yamllint < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "b5de53b808e0998a8cd36c78d68c03767c39601b69578563c41bccd1fe17a83a"
     sha256 cellar: :any,                 arm64_sonoma:   "f4c04876473720910f72e135311c05d3fefe3208bba7d90e7904cbbc2f154051"
     sha256 cellar: :any,                 arm64_ventura:  "55c913a5745760a8c12f537a3c67fa1e97dd8dbc8e8ceb4ef7bc87d27b116279"
     sha256 cellar: :any,                 arm64_monterey: "2698561d2192e10a5566a2168f6ec3ded2bc5416970967b3667408d144b6e497"

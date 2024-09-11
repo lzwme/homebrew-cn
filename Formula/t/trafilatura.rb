@@ -3,18 +3,18 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/89/20/1028e6d81f956312aa76673092ec012a692cec2c63e87b0d6573a6d0e383/trafilatura-1.12.1.tar.gz"
-  sha256 "89891db646dd84d98fb34a2faed7ba84c22e5490007b587d0599036d35164760"
+  url "https://files.pythonhosted.org/packages/d0/cd/77e4403b61d5da59063bb65ee894cf951c6f1137658499947adc040102f5/trafilatura-1.12.2.tar.gz"
+  sha256 "4c9cb1434f7e13ef0b16cb44ee1d44e84523ec7268940b9559c374e7effc9a96"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7cafaace455793cb5707fa3444c71938d1b85c0cec49ee62e04f6f13d810554"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7b2f8d557df53182a9b25c7ee3dee7fe0a9c205015db77f64c83533c9c78698"
-    sha256 cellar: :any,                 arm64_monterey: "91dfaa4de664c44b76f0efb416b9c0e0310deecd015f0b5bddecf19ab18e225e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4278a08d79127792f47dabd2e5c38f76af77d94815c023efc73130e6a9253a57"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5610046276d7ddfe7e5dc7ce8cbc4a8f6bcce3e948eeff1c2942d422dd98a9f"
-    sha256 cellar: :any,                 monterey:       "c02ac97ef2a9d972bc27065c80962e09ce031d45236cd5dcec6ba19ce2c0b82d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "271cca5e0408a2dda2abbf8400ecfad060b7456264750beaf1caa9b0764d0125"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebad8827a170c20b970a27b10d11faedefade5aec9522f795c76e9434c0dd9ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5584944e82447b1cb0942891d08559b59d7c80701c53cab67fedfefaada56b1"
+    sha256 cellar: :any,                 arm64_monterey: "2cef65fa51b04411aa697fd839b12dd03b3820af08fd4d5bc7c26320f1dcfd29"
+    sha256 cellar: :any_skip_relocation, sonoma:         "99fcf7529e979a40dbd48df3900c9cb2c337454e3e1dcd722421703496aea506"
+    sha256 cellar: :any_skip_relocation, ventura:        "31dc173a376775e205a111c5de50f27f432d59a1a51b96a5379ed333c8acc731"
+    sha256 cellar: :any,                 monterey:       "6104a04dae5551a8a6e1538593b0c37e20c0e32d81153958c2ce7fa7d86a53bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1bd700be1cf8c9710c9634605e241b2974d6ea2744aac06223c80fa05797f09"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Trafilatura < Formula
   end
 
   resource "courlan" do
-    url "https://files.pythonhosted.org/packages/0f/47/4c32478892e8d87438eb205996ec3798b8bcb174b947cfb6cd3df45f5a5b/courlan-1.3.0.tar.gz"
-    sha256 "3868f388122f2b09d154802043fe92dfd62c3ea7a700eaae8abc05198cf8bc25"
+    url "https://files.pythonhosted.org/packages/9f/d4/50ac3848147e1c74d8f207064093dc2a62b8f51e0f615f7ba5cf5fd732f7/courlan-1.3.1.tar.gz"
+    sha256 "10858ab686470a3b1d8748d7b88199607c94e74eba3c8ade759ba4a9576d366e"
   end
 
   resource "dateparser" do
@@ -44,8 +44,8 @@ class Trafilatura < Formula
   end
 
   resource "htmldate" do
-    url "https://files.pythonhosted.org/packages/cd/71/ac70cf10ea9b58414a0d8d32593f916ab83e0d9d28c95e91879d26cffd0d/htmldate-1.8.1.tar.gz"
-    sha256 "caf1686cf75c61dd1f061ede5d7a46e759b15d5f9987cd8e13c8c4237511263d"
+    url "https://files.pythonhosted.org/packages/e2/22/7df1ee5f04210469776fbf992ee826a5da8ec9f0fd6819d01ac3f78d83d4/htmldate-1.9.0.tar.gz"
+    sha256 "90bc3c66cbb49be21888f54b9a20c0b6739497399a87789e64247fc4e04c292f"
   end
 
   resource "justext" do
@@ -59,8 +59,8 @@ class Trafilatura < Formula
   end
 
   resource "lxml-html-clean" do
-    url "https://files.pythonhosted.org/packages/c2/64/1f45e912e26b8f4c31ba7b7abf65b55a867f88582ff39d600ba07660ac82/lxml_html_clean-0.2.0.tar.gz"
-    sha256 "47c323f39d95d4cbf4956da62929c89a79313074467efaa4821013c97bf95628"
+    url "https://files.pythonhosted.org/packages/ef/b7/407da72fcd7b92fc4f41f3b8e94a733b2deae061d6d4ccf26d2c86dc1d42/lxml_html_clean-0.2.2.tar.gz"
+    sha256 "cc34178e34673025c49c3d7f4bd48754e9e4b23875df2308f43c21733d8437fb"
   end
 
   resource "python-dateutil" do

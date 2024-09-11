@@ -11,6 +11,7 @@ class Lcov < Formula
   head "https:github.comlinux-test-projectlcov.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7a5765f99a9a61a1f836eae369ab504e9c3672c5e3f1aaa755c13e21997406d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5227fd780afbeb63d61e7646e43473c15157d84840f71e397240f38adba9ca0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fea977607a4b92fa0edd2075ddc3ec1b76ea2278f18d377fe815cd15f59e3a4c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "91761101ce9137775227f043e3872a44679bd2146a5afdba847d2aeafb8b1f86"

@@ -9,6 +9,7 @@ class PipTools < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e4e5e1f2df083a08a9ecc5823f72f5e4924c72ab0dc4063224d4993bc7b54533"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cac576463253780d02b3de7afb7b0ba5548a0da843f98ff2dd3bca1efadc54d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0cac576463253780d02b3de7afb7b0ba5548a0da843f98ff2dd3bca1efadc54d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0cac576463253780d02b3de7afb7b0ba5548a0da843f98ff2dd3bca1efadc54d"

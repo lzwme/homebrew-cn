@@ -12,6 +12,7 @@ class Runit < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d257aab5dc6dc103fb59a1bec74635b42b0230343386e1efaecb93c4d511a877"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a67a746d8d0a5a5f32054250f70495ec721d896392fdef7c436fb705e5bac89"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b5382dabe0f132590739a602c4f5e5acf54c7aaff32fa0af6800ae8c330e6f3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8f052bec9af60ed628dec6fd235468b4cbb88d5b02c2570d1e1cddd0596e64be"

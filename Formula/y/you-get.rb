@@ -9,6 +9,7 @@ class YouGet < Formula
   head "https:github.comsoimortyou-get.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9f9d4e248f89a9b850a12f198880da5e382131ab258f7190f7aa713e4502356"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d25efad73bed5c8e4f9db2168a04091a3016eb250acd2b13ff70c609bbb8b49f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "146364f8654a014b96a073ed0a1930952101a8879fa44c649b4e53e5081b9534"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3fff144f83485ef99412b469080a382bb373f827021e75402867d7157789129a"

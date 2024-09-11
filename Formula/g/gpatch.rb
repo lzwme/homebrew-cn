@@ -7,6 +7,7 @@ class Gpatch < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a1dce9002b5a1f9cacd52892ab02c04fbeb1bc9b192ef7d9a55bdadf7d4f6633"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91ebe426132b79d3a67bfbec130f267b2e709cda4fdd705c94eb9ff7536e5783"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "51ff39d1b008d1f03d8dfc9d42ed483d64fea632b31f4ccf3dc15ddb2de09794"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0958a773e875dfbab2e70e80cd10a0406eed6f92352ae432b44f4bf74dcce35e"

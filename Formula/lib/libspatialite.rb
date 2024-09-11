@@ -23,6 +23,7 @@ class Libspatialite < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "cd162e7a36e33bc982374bc2e8efced6d1669810852c6bef404967dc7507eefa"
     sha256 cellar: :any,                 arm64_sonoma:   "efd80614ae13d20ae2af905b7b6a673455d5d281e14e75e6511d1d4a1fdeda8d"
     sha256 cellar: :any,                 arm64_ventura:  "1a05eb0afc04b80535b62c3f6c602ed5ef6f7eaed37cf7bc940bf4539dab1753"
     sha256 cellar: :any,                 arm64_monterey: "2222ce79b7ac80c9d858390e201da7a3bae3fb432e363b358c943171cfe0294b"

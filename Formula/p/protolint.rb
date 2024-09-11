@@ -7,6 +7,7 @@ class Protolint < Formula
   head "https:github.comyoheimutaprotolint.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "47bd82f835efaf0be33ac176ccca3e89cdf14dff10d4a1b5ef842714ce0a55c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acfe481beda6d90e195f02e5b41a56f245e43328e47235f640466dec00b9308a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "632eab480ace5de4f28e7cf7ad38f708bf0983e9d5cbc08daab0c0192fe0d475"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d779bba6728cb9412d0c1ac33081ef04751d9ab08ada4cdbdea71e29a9f4ff2a"

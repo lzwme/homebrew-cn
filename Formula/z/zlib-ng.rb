@@ -14,6 +14,7 @@ class ZlibNg < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f8ead240694d9cdf10f63ba307dee0ee00e7166e1049055463f329b3ef56f6b7"
     sha256 cellar: :any,                 arm64_sonoma:   "aac6f687053010769a39a7491a8287952e929fcbbd60055965eb46267e97a763"
     sha256 cellar: :any,                 arm64_ventura:  "aab4b10b3025404add211b6ac62ae8e95cc012990fb5fb55657f1d3f6c96e94a"
     sha256 cellar: :any,                 arm64_monterey: "b6bef36dbacd12ce1cff6f90b73c840a611a1e2775d63bedf2cc868150fa83c8"

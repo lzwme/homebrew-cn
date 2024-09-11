@@ -8,6 +8,7 @@ class Trufflehog < Formula
   head "https:github.comtrufflesecuritytrufflehog.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a41c8ca9f110b19244189b04a403f87143e4c2ff5cef8caa2a48b77d7e612118"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5186db6303d286fffcd0cdd0b8d096fe5f180ed56c41dc9d28734b2050c9017"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a6d61739542fc6d5ea1f5a1d50cf40bb343d7d613b43a8c2eac6304962cab0e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41cf59ab8fe7250bfeb280f12fdc58aeccd83b626c9987a6cbbdef7bd9367dd9"

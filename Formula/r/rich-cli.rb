@@ -9,6 +9,7 @@ class RichCli < Formula
   revision 6
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5a30279a427b63410644e64f4c6905810953f5c5c3981bea606e15e406a06d90"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8c400ad997c3f5165590b9b6a9461fa0c436ce77f5b4bb2700799dbc11853142"

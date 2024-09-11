@@ -17,6 +17,7 @@ class QtAT5 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e14777cf7756c940e5a4c9ab10ee3d345fb5b02e3e75cc4c35b09c11a7715517"
     sha256 cellar: :any,                 arm64_sonoma:   "3a497f2b6e427f72c52e52e979f655cea54e0d6eddffd1fbf3c4a25bb5eae101"
     sha256 cellar: :any,                 arm64_ventura:  "a5098835cade678eb6d9193d393c3f7d0cbec5aa4f1833184fba56c13161a097"
     sha256 cellar: :any,                 arm64_monterey: "02fff8012c9cba1d9a6e79bc500289c79fa1d64b345533b6e5ea5855d322875a"

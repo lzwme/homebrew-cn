@@ -12,6 +12,7 @@ class Pypy < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b2301fc69139f089a77227a002b737b14afa0c99619dfa7d6200d38e6ca831e0"
     sha256 cellar: :any,                 arm64_sonoma:   "e9e1692654a5a54459c12935d7d76db83e7989e1e0053060352568c463186f41"
     sha256 cellar: :any,                 arm64_ventura:  "257f74a40fdcab7bb8e7108e8194b7fa9a88b365679a3c7fa45966a6874612c3"
     sha256 cellar: :any,                 arm64_monterey: "64714ae5428b2af013f92ce9f4480de7a71dbfa670a2913bb2fc7f08bb50cf8b"

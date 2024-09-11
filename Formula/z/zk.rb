@@ -7,6 +7,7 @@ class Zk < Formula
   head "https:github.comzk-orgzk.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2405c8988dcceb909725aa8fd369d6c8808b8edbef93d60329d8211debc0eb80"
     sha256 cellar: :any,                 arm64_sonoma:   "f8f181e8d732eb66c3500a232cd4fb25f771b785389d97cf12f5095854529d10"
     sha256 cellar: :any,                 arm64_ventura:  "f550a1c9d623334fc54b9fa6974b6c833cfc18f57dd0c7ddd0b7a6cb5d79530e"
     sha256 cellar: :any,                 arm64_monterey: "f2d48a5156b155b59870c9251181083fbe13e0f3627ca0fab13ab51c26d1087e"

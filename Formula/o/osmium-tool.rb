@@ -7,6 +7,7 @@ class OsmiumTool < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ebda02a23a3f1cfa0275f71e2c5445e5f3127bc3597db4b16e1fa4b9972500de"
     sha256 cellar: :any,                 arm64_sonoma:   "f8c2f5614625cafdf9e42a325d1565e25281f9cab2f89ddbc717a05f6a768fff"
     sha256 cellar: :any,                 arm64_ventura:  "189ab4022fc116085d637ccd93ea248972a9873b5b37d6df3e26c417aee5cbef"
     sha256 cellar: :any,                 arm64_monterey: "1a168fb4ababa8829f1720b5759ffe48e620d93ebd82b713e6070bcad5e08274"

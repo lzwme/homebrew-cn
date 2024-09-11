@@ -9,6 +9,7 @@ class Uvicorn < Formula
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6b77296565d169745343f8a28ffe7736d6ca66a740ee96e8812162554df85091"
     sha256 cellar: :any,                 arm64_sonoma:   "8c799cede3122a31deb7183b004db578b3aa28b70011bcbbab025e08f01b1393"
     sha256 cellar: :any,                 arm64_ventura:  "54d237b4dfbf0a839f3b3a8d9b618dbf4127d62d99bfaa793016796c5ee47ced"
     sha256 cellar: :any,                 arm64_monterey: "25c7b749996b9ed6d5f07497fec47eac4525cf3e6a28524fe8d52205c3d9764f"

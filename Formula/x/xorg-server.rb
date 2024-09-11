@@ -6,6 +6,7 @@ class XorgServer < Formula
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
+    sha256 arm64_sequoia:  "f83ac9c1a871b36b6fd2a571f1aba3eba6ad2770d19c38bb0736b9d3c4c26fcb"
     sha256 arm64_sonoma:   "7addc20a2fb8c6957edb2f16112eaddc23f8c01c7250c53ff3a34bef1645c587"
     sha256 arm64_ventura:  "a740be8e7bbbd889c072b8e21241a5713a90fee2a7fc1b2ce6fe7980689bee83"
     sha256 arm64_monterey: "5058f086397aed7f1f60cf9e3d8f2e6fd325ea91b68d30aad7a41e62e67e00c2"

@@ -11,6 +11,7 @@ class Mtr < Formula
   head "https:github.comtraviscrossmtr.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "de2a8c8ebe004fa34eb74e44a23eda5371a0b00d794c31541369afc9383dcb59"
     sha256 cellar: :any,                 arm64_sonoma:   "d1d03f6a4f9a9e49321d656b787d4e53f1f6acad08384d68bb4ad8199bf1626e"
     sha256 cellar: :any,                 arm64_ventura:  "83d9da1de6a03855e99e0db1f8060f196fda988b187493aaad8d15b039176644"
     sha256 cellar: :any,                 arm64_monterey: "832e28a80e1b4340c19c4dc3511504672ec03ff5cb54d7294e932b7d9aa80085"
@@ -34,16 +35,14 @@ class Mtr < Formula
               "m4_esyscmd([build-auxgit-version-gen .tarball-version])",
               version.to_s
 
-    # We need to add this because nameserver8_compat.h has been removed in Snow Leopard
-    ENV["LIBS"] = "-lresolv"
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+      --disable-silent-rules
       --without-glib
       --without-gtk
+      --with-bashcompletiondir=#{bash_completion}
     ]
     system ".bootstrap.sh"
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -57,9 +56,14 @@ class Mtr < Formula
   test do
     # We patch generation of the version, so let's check that we did that properly.
     assert_match "mtr #{version}", shell_output("#{sbin}mtr --version")
-    # mtr will not run without root privileges
-    assert_match "Failure to open", shell_output("#{sbin}mtr google.com 2>&1", 1)
-    # Check that the `--json` flag is recognised.
-    assert_match "Failure to open", shell_output("#{sbin}mtr --json google.com 2>&1", 1)
+    if OS.mac?
+      # mtr will not run without root privileges
+      assert_match "Failure to open", shell_output("#{sbin}mtr google.com 2>&1", 1)
+      assert_match "Failure to open", shell_output("#{sbin}mtr --json google.com 2>&1", 1)
+    else
+      # mtr runs but won't produce useful output without extra privileges
+      assert_match "2.|-- ???", shell_output("#{sbin}mtr google.com 2>&1")
+      assert_match '"dst": "google.com"', shell_output("#{sbin}mtr --json google.com 2>&1")
+    end
   end
 end

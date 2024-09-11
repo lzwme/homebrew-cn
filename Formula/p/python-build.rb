@@ -9,6 +9,7 @@ class PythonBuild < Formula
   head "https:github.compypabuild.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d4a9e1c5df3fb300ca785a9aa478e78ee86c0c91d0acedbaba29e67a10bfcc31"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"

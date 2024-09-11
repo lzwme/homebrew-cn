@@ -12,6 +12,7 @@ class Usbutils < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "29214690f12e4b8adb6616dd47c41b43cec827637d09c1f4dab15a255050ca68"
     sha256 cellar: :any,                 arm64_sonoma:   "374ce8a0c6782808d4fd194dbfd177c779ca568e7d5b0a5687412add96cce4ed"
     sha256 cellar: :any,                 arm64_ventura:  "735a4d7ec2d7393bb3421c27583f1df30455c5a4c3b092786dfe3ee92144806e"
     sha256 cellar: :any,                 arm64_monterey: "eabe8a0f9cee89292386b2b0900677127c8827882bf43323dfb732013d6a2f1a"

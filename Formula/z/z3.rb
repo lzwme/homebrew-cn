@@ -13,6 +13,7 @@ class Z3 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "66096ed87a884dc0ffbc4129277a96da4ee80d0d51bd52041304681777197f04"
     sha256 cellar: :any,                 arm64_sonoma:   "d7a6ead5ea667caa7a45e1a623ecd386b09748ed5679b5001dda43365c961e01"
     sha256 cellar: :any,                 arm64_ventura:  "507fedcd8807ff385894fda0116da2b80f85ea538f226e67d052603312db559f"
     sha256 cellar: :any,                 arm64_monterey: "9154e1b9ca129bff2844cb26e10b9c23fb9737d7e67a61f97cd79fe868d3840b"

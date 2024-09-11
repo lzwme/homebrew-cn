@@ -11,6 +11,7 @@ class BitwardenCli < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "df76fb24942bf115385548265c82aed7279e4b33071bf333f0a6d667c192f938"
     sha256                               arm64_sonoma:   "4c5a0045ba46b89ac3858b6bfe77e8cecdb9d6ea6c845ff93df55682167a34cf"
     sha256                               arm64_ventura:  "46ace386d5b8a179a47165f09ffe21e16a0cde2b2bedc92503ea843c7836c74e"
     sha256                               arm64_monterey: "29456cf833df0a6760bc14fdef3a918cb53d357ef0bbbfb70486004cc4e11a43"

@@ -7,6 +7,7 @@ class Hidapi < Formula
   head "https:github.comlibusbhidapi.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ed4edcb94c18b6f2dfe35b9642a92bfb9198258e7c195d5100b1f84d7e9c0f41"
     sha256 cellar: :any,                 arm64_sonoma:   "8f665c92f1b3012852243abfc40b427cba3d4e581070cd4f2d8fa5dd185dd4d5"
     sha256 cellar: :any,                 arm64_ventura:  "a51ee174536f9f73d398c2b6a998df28c812a5baac14e4f07e8bb17c846d53cf"
     sha256 cellar: :any,                 arm64_monterey: "4330e0a273dcb943f27e2be002fad07c385737bd308478b73bf24be2898c9bf5"

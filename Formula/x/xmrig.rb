@@ -12,6 +12,7 @@ class Xmrig < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "27d0f6fb789504cd2f216e5e90def793af7150333e61180ca255599d942fb2f3"
     sha256 cellar: :any,                 arm64_sonoma:   "edd0b049a3afa8a78f85eb82ab06c9cbf0f89fd10e1f7f540e1b492a31eed33a"
     sha256 cellar: :any,                 arm64_ventura:  "87c40602af0dd95350df0c885450d0ea025a78cf874578c91d3f2b4069aa1136"
     sha256 cellar: :any,                 arm64_monterey: "356a15cc0f5a411aaf2672c5929da18abab1cb2a854e34b3688495f3ed8d06e2"

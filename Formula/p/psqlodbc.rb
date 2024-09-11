@@ -15,6 +15,7 @@ class Psqlodbc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "575b4d309609ae914c531bd221e3223ad0ce35805f33c7bf863003df06b8886f"
     sha256 cellar: :any,                 arm64_sonoma:   "7fd21b79605a85947cccc4e07c62b3faf8335bf859d8ea55315cf71ae9afaffa"
     sha256 cellar: :any,                 arm64_ventura:  "47d2a659777c84b1bf8f7f5995fc458ccc4fe51ff46b29bd23d956022521adcb"
     sha256 cellar: :any,                 arm64_monterey: "582f989ea86b281852f3254bfc3028dcc450beaad15611e227495107fa4f6807"

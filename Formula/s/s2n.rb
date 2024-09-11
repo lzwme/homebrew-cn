@@ -12,6 +12,7 @@ class S2n < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "aca86e4b05c07f4b72442d44855bb218b33ccec54378533212d66eb25c5e1d29"
     sha256 cellar: :any,                 arm64_sonoma:   "c7d7d4c5d9343ab609bfcfc815016e33e673c6c9e632cdb782fa06a92d9bb9c5"
     sha256 cellar: :any,                 arm64_ventura:  "f8b7b10b87e43d89826a24ea3eda969203f7c0f3bc3b0e57334bfcbe5373eed6"
     sha256 cellar: :any,                 arm64_monterey: "41ad9e378aed4c67862f327938300bad411b0fe5a438fa9374dcfe58b5c70151"

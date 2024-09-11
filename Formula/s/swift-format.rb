@@ -14,6 +14,7 @@ class SwiftFormat < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49157c51baac39dfadd866f211d81000ea409fcde74dbb66b864b621c81ef017"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c437e97e800c88f93e5888967364514d11cea08d7e51a908e42789f3edce21de"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7230ade95e61a45c86cf2f3b23847502ff79e5390d575018b970ec094d4447f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c19b042df867ea23ae2c81837c2b7c0f772a04abb55406d27f3472bca98df78f"

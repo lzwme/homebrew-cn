@@ -6,6 +6,7 @@ class K6 < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "098785a160908b11c9456e40a5c1e1f8905ad2a666342e751b2ed87069831d9c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05b9eb7cadcfc53fc874b8c2407aca643a2b1bbf0c572f14cadd437600f20123"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4597ccce1a5fd67ce47d6665a2420db14f9fdf94c8ff1f32da73a2583d564123"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1fc4b79483397fb1bb121f6fea84d7039f23fe036b465bc56adb5ef011cb2c20"

@@ -14,6 +14,7 @@ class Eigen < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "562aecb91534a41721e01fa60da28dae4cf9e6404f6811e485e651e86708eb87"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17e1238a80ca448a9e2a1090fd3c0bf54634470757e5dacc08efb730b4fb9fca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "17e1238a80ca448a9e2a1090fd3c0bf54634470757e5dacc08efb730b4fb9fca"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "17e1238a80ca448a9e2a1090fd3c0bf54634470757e5dacc08efb730b4fb9fca"

@@ -8,6 +8,7 @@ class Aztfexport < Formula
   head "https:github.comAzureaztfexport.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3334fbb3d5e7d57770565de8cad4a48c8d65e2df7b5c03bffc07708bef9f6bdc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "209bceab0e2b561838c6885d68d0e6c5df55b23c3b22a88a3b114763414d9d0c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "209bceab0e2b561838c6885d68d0e6c5df55b23c3b22a88a3b114763414d9d0c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "209bceab0e2b561838c6885d68d0e6c5df55b23c3b22a88a3b114763414d9d0c"

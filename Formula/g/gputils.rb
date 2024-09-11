@@ -11,6 +11,7 @@ class Gputils < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "002f4b80984f18e0c836c7672e342110f8a1fa7f8d45572acf70610361047d61"
     sha256 arm64_sonoma:   "c09d1d95618d889cd0dc37285588a1925872389388f636c70764b8e6d8b9eb35"
     sha256 arm64_ventura:  "973d66004e773aa92968ddcfd79781b1eead7689771fe5c0629241a77b625e26"
     sha256 arm64_monterey: "ef9e856e54329ca707dbcda0c51cd85f2351a73de705f614f5936cc71baee4ad"

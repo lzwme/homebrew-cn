@@ -9,6 +9,7 @@ class Soapysdr < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "3b347c24b493adcd9c86ed4f1dc5892f4e2a5f4fcb6c94e2d70a250fb44e6c83"
     sha256 cellar: :any,                 arm64_sonoma:   "ee59200eb0b063923ca172880d6242df8a0bd7ff193b42f0f559a3ccbae5ecb5"
     sha256 cellar: :any,                 arm64_ventura:  "e25dda6534a1db99e4733c373f83bb280afeb46927a19d64c4cdb2208a769e99"
     sha256 cellar: :any,                 arm64_monterey: "72b5f1b5b3b5558d99173774621de43d9880a6141075fb6d3752fdb437c84ed3"

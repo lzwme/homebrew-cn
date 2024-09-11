@@ -12,6 +12,7 @@ class Exiv2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a1518a087da74728c1e62876ac3bbad8c5fcbb0b22923112277b2e39b3623a03"
     sha256 cellar: :any,                 arm64_sonoma:   "efb8f139466e2367005371ce2651b1c78b2784ddf42d884b25fc2a05880a0d92"
     sha256 cellar: :any,                 arm64_ventura:  "9339cce8f0f45db0fa6be3d4f80253d1665ff9aba1c72a6e32364e6bcf2232cc"
     sha256 cellar: :any,                 arm64_monterey: "5fdaac94277da85f2fe3546dabcab241043bd21a81e70ca2d23d010a7b231b06"

@@ -1,8 +1,8 @@
 class Gradle < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https:www.gradle.org"
-  url "https:services.gradle.orgdistributionsgradle-8.10-all.zip"
-  sha256 "682b4df7fe5accdca84a4d1ef6a3a6ab096b3efd5edf7de2bd8c758d95a93703"
+  url "https:services.gradle.orgdistributionsgradle-8.10.1-all.zip"
+  sha256 "fdfca5dbc2834f0ece5020465737538e5ba679deeff5ab6c09621d67f8bb1a15"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76efc1a8a88b3b7bcfa34e464deab59ab120ab630a950d4ebf9b202a535c4e01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76efc1a8a88b3b7bcfa34e464deab59ab120ab630a950d4ebf9b202a535c4e01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76efc1a8a88b3b7bcfa34e464deab59ab120ab630a950d4ebf9b202a535c4e01"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5b4d9a4e299179c513419ff0bd1658c9f47da9454a9b276f1b08fe77b2fd2aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5b4d9a4e299179c513419ff0bd1658c9f47da9454a9b276f1b08fe77b2fd2aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5b4d9a4e299179c513419ff0bd1658c9f47da9454a9b276f1b08fe77b2fd2aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76efc1a8a88b3b7bcfa34e464deab59ab120ab630a950d4ebf9b202a535c4e01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
+    sha256 cellar: :any_skip_relocation, monterey:       "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
   end
 
   # https:github.comgradlegradleblobmasterplatformsdocumentationdocssrcdocsuserguidereleasescompatibility.adoc

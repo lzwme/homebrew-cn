@@ -12,6 +12,7 @@ class Git < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "568a71adcd3d448d34654db27f1e5ba631a5805ef8ad7b952dc4014e4dbb12dc"
     sha256 arm64_sonoma:   "5c7ecbe7bcaf95fa6ef3766d97045754d9f56c9aa86935a6f0150a23f4aab068"
     sha256 arm64_ventura:  "ac1be4aa1f685950a350862642188e6e5070d54e4e177d966e2e37aa129f8180"
     sha256 arm64_monterey: "5feb852cc15aa4ca597588a9983053b62c1574dda11427fad406b71bd1400f0f"

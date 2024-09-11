@@ -11,6 +11,7 @@ class RubyAT32 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "8725d47da8481b4cd16901184393a291c18c13bc77621824a0b36497f534bba1"
     sha256 arm64_sonoma:   "b25fb429b76a4347021ae40690e73ee2da0d6def67805e77519a937ce1550ea1"
     sha256 arm64_ventura:  "f026982cdaed591b8dac9b3b3988059f409bdcdaec03f9b62a13dc5560e2440a"
     sha256 arm64_monterey: "c5d41d65015960ff5292b99b8492dc8b1a33a3281d4505a3dc9ef701e9743282"

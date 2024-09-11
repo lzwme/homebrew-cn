@@ -11,6 +11,7 @@ class LibvirtPython < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b69a3fc0f6296fb5be68cc4106f49a0c3ca89d69981c01fabd0e5c7b462893e8"
     sha256 cellar: :any,                 arm64_sonoma:   "a34013129c6d5cb58e395b70189b62843415417d85dfd77f0c80a2f19eff21a7"
     sha256 cellar: :any,                 arm64_ventura:  "784079ea3b09073ba47daa8ff4999ad661f8bbdfae702aae0b7970190dffdc85"
     sha256 cellar: :any,                 arm64_monterey: "5634a85e29aeace4f555d1895869764d3589af81cabcd778a2354f823cfcb0be"

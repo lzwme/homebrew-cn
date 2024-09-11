@@ -8,6 +8,7 @@ class Pulumi < Formula
   head "https:github.compulumipulumi.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d403b635a8191a998a1b3d39a60eee738f423bd647629fe51d528a37c7e3a99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15759f25e6359480a02645a8dbbf3b13301190dca0ac79234fc40440716dcc8c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e87ddc4882f66c8cfb08d8a0805172fc7b544bf9eaf1965fbb216a75ed0b300"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d3e55cf482df831a3aac323cac7d0687348e6c11441181566d907e160b2a6b1e"

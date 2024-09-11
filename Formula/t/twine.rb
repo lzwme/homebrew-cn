@@ -9,6 +9,7 @@ class Twine < Formula
   head "https:github.compypatwine.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "92ac03c7e348878919e056a9ae3c3c230b0eafd460ef37ac105b249a42b60ba8"
     sha256 cellar: :any,                 arm64_sonoma:   "dc49769cf0469075adafa5ef8577326dbd04df4da6043d8ce126e43aa59902fc"
     sha256 cellar: :any,                 arm64_ventura:  "4b3f8657addd25067299494145f1dcd086c8e67a47afad652baaa88e2476e794"
     sha256 cellar: :any,                 arm64_monterey: "3d3c6c985e3c14f4a22a027070793f915f23b3aefd2d9519e1a32b5b18cc27b9"

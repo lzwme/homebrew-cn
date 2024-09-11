@@ -12,6 +12,7 @@ class Yorkie < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ab9bb5c5a647b026dd790808cee4d8b52c889f922d8e0dae638fcbd3cdca32c5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "27c1a2df71f3b6ff1a3603a3016c1aafbf73ff42e876113a171b19d993639b60"

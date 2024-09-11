@@ -12,6 +12,7 @@ class Solidity < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "8f6ed45b502ea021bf9f39d34313051972ca1f87221d5123830f9cea301aae92"
     sha256 cellar: :any,                 arm64_sonoma:   "a560d6ec061b90cc311f53ebecb4e3c30e6aceef429acb29f8778da5c9eef23e"
     sha256 cellar: :any,                 arm64_ventura:  "c5361e4f5335b6dbf6757a363e2b7f406453cbd923fa4d5d00d9a0daa72e4fca"
     sha256 cellar: :any,                 arm64_monterey: "79e275db75e056304f7bf8e175d901bd3d03d1154b2db9932a9c8a9a92437477"

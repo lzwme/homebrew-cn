@@ -7,6 +7,7 @@ class Sops < Formula
   head "https:github.comgetsopssops.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dbeafc2e473c0ce18ffe7399c7a908e645dc2fc8fbbb6673b1f54ba44c9f80aa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dab5974dd8ac923b4accda24ed7870e276be4c57c9ceea93ccbc8b9a4e17f16"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7324ab153b35c9a3a91dffa71f7439bdb2d55517a3cdbfba8c51e83563550a9a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4c5673e97c614897b740bfd2e73ccea03575604d32dc460896a3fd63673025b5"

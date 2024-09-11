@@ -6,6 +6,7 @@ class OsctrlCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "482b16cc5a60355bd8a52c8b91fe350250ce3a3496bf2d5fb4ae17395629afb8"

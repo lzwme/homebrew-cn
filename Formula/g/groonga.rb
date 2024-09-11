@@ -11,6 +11,7 @@ class Groonga < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "87a527ab33e7e801b267a47e9d3309a6078cdae410c50b983e8a78198a6a94e1"
     sha256 arm64_sonoma:   "1939364b135a0ceddca4d16d07544c1dba11e2153994915bd3ab9ae07c445197"
     sha256 arm64_ventura:  "124dd63c68b9038c3bf4d16eb336a5ad7ba829bdf5b6998cf590eb72eae53cdf"
     sha256 arm64_monterey: "45c38aff0067a6ce9a0725d62feab3bf381f2614e7a8e980b865992264ea8f5a"
