@@ -15,6 +15,7 @@ class Ompl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8ddf0b61d4b9f4b0113ccb5ce2f77d2101026a614a88b4e539c6c8e0826bbe5e"
     sha256 cellar: :any,                 arm64_sonoma:   "936f9237df933d9e854ff0abe2d5e42edcc14c3732227dc4fabd8d679175f66f"
     sha256 cellar: :any,                 arm64_ventura:  "0039002b210c5f23e460cb2a99cad82d1e6db9bc5b9544aebf0dfe3325ecda03"
     sha256 cellar: :any,                 arm64_monterey: "c0e8254f283aea3532dd73877e364182d96bf70f949db8f90f4a0aab14727922"

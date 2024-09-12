@@ -7,6 +7,7 @@ class Libpulsar < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "307ecde89686ced5cfd3f69a6dd653a4e8727c719740aec0bab0fcebf9611f97"
     sha256 cellar: :any,                 arm64_sonoma:   "c3a40c4fb6c7207494ef089b2c786d7d241998ec4eba507b60d4c9be6ee9ae5f"
     sha256 cellar: :any,                 arm64_ventura:  "79d49033ef99c7d7f34292310547d1e19fc25f6e62fe7e41b5acb2da2fe55b85"
     sha256 cellar: :any,                 arm64_monterey: "2779bc0a62b6b5da15100c6f421535037d8bd758db7d0dfaff2b8e052887de21"

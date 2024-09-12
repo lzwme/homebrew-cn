@@ -7,6 +7,7 @@ class Vfox < Formula
   head "https:github.comversion-foxvfox.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fe078c650d22d95c50f24e541f2f121e289979d46f5a17918ac8d2f130c5b884"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17a8ad3a976f53aed7f1d3c44157df1a9cb20a32b8c0f3befd5eec8cac9184d4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b9644e908403404a16afd161e80b5a2d1f672747e3de63c945f87c297fbd8c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0ce017836ae2c6254cfc8165b40a8b3ea0d3241327c05be30f66a9422fd3797c"

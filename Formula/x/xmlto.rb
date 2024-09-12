@@ -11,6 +11,7 @@ class Xmlto < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a131d56e2e03b70f96c405262bf31ab9944de622d799b7341c1fe9b07ea0e34a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aeeb037d079947e51c9e743fd1c87dcf4eaa6db340afeceb880fa1e91fe86129"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a3a8cc72243b732191e706c96bf4e9a827300d529a3226f6a4ca26ee5fef5ac"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "479938c37c2f5bda455b31dddc2a587f464b731cc887a698f0a90f89de3cd6ac"

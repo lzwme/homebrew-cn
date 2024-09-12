@@ -6,16 +6,23 @@ class Dotter < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5307fb4e60f7cb831ed7f8089534b4b7cd84b72c96e0e6099161ef39c28a9ea6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "185964ae1b8a33314762d1dff177b8d9eee3d517ac1ecbd6593e37fe92370c76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d946b97a58101cfc7e0050b7c820b6a7d3dd4662ed415a3363eb8b78cc0e27d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4af36f25c81f8ce899186039e473be1965bb8e22cfc539ef86d8599b330c95d"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a7bb2148d065ea6496c47ada4870bb7bf5382c6545cc28cdd574e50465735cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbfd42d7fb7353665f59561a6a19897cd0e27867e2298da15b45d5af5c19daaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44c4b1e3a7c37e55b65364fd3b965d31805019e695b940b89dcabf41076758cf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d86971116fbbb6265f3f4e6b069e027f2baf4d0fc2511e3ce22163001d169a81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "782718cbaa1584005e7d81f2be3db680ca20993ca41f9ab794180a460a85e5b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3460c0adc3d539180a80363587fc9bf228f7da4a93863be9987bd2142bec92ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e895cb3879073dd130383e5a53b89eab81035f49cfa0b157d452d6255ee8f5a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bdf3a8d51ed21e82b9ba4b3e5fa5b31ab2675bc9a2f79533569c6f141df7f403"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d0bd0316969c5121187063557e6804e41e1d21832b559b3aa68537599592fca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e24490c5fb2ec8d638abd76340dc2f81d6c50b0324b29c08eeafa16ab62f52f8"
   end
 
   depends_on "rust" => :build
+
+  # patch time crate to fix build with rust 1.80 and above, remove in next release
+  patch do
+    url "https:github.comSuperCuberdottercommitd5199df24e6db039c460fa37fe3279f89c3bfc63.patch?full_index=1"
+    sha256 "757e0368cb7668efedb2bab21dec67850ead3f4951a5717c9bffef8a5da75bea"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

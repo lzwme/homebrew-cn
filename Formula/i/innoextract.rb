@@ -13,6 +13,7 @@ class Innoextract < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bdb79b724eb71b85cacb7911da0fc14d442b8b668162c8745b4e6257df495c28"
     sha256 cellar: :any,                 arm64_sonoma:   "2d60ed6571f7d230035575cfe3630f7b2b7243bd911f69313dad3f981257fca6"
     sha256 cellar: :any,                 arm64_ventura:  "19c8b7a38bd209c865695899c1cbb894569756751e22706a500a97598552dc77"
     sha256 cellar: :any,                 arm64_monterey: "377142c8b5f00721c84f3a00157b7b26f270cbb3026da05f504f34f3bec80506"

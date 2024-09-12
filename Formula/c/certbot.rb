@@ -10,6 +10,7 @@ class Certbot < Formula
   head "https:github.comcertbotcertbot.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c340c1cef90b313d92753f8b6ab5eed98d9ac153447a2469e15ec02f9810577a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "81ee68af8e5fb12950544e37ea0a25fbf413a5bcdf4fe8cd6dea51fb35bd6575"

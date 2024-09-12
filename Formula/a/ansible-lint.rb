@@ -3,19 +3,19 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c2/44/8751d04184a2c4f3e60be27ef7a14f04257096303dcb8122167672d3cd6a/ansible_lint-24.7.0.tar.gz"
-  sha256 "ca2edc7e4e80cf19df4b28cbf4c118f761ce6cdd6a5ef9c8561e454ed7af5a24"
+  url "https://files.pythonhosted.org/packages/51/51/5e9ff2797c3f2ac66e9230abc240da052328694a88f423d8c78420cbb864/ansible_lint-24.9.0.tar.gz"
+  sha256 "b8c9c94c6c3bc68b43bcf7b067e286f8201e341772c7d3dbdb0364ecab2b3944"
   license all_of: ["MIT", "GPL-3.0-or-later"]
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "715d3a25454e3c2082c4db1a8c36620fa1cbda40ec8e57f69ba606c4b9412288"
-    sha256 cellar: :any,                 arm64_ventura:  "8fc022e7c7663ea9de4fac5c7118aedc18dc621ac23e061daec116cb9ec8ed62"
-    sha256 cellar: :any,                 arm64_monterey: "bf5a4d0fd401f8f40ef71ab89c817a0f0048e1e6c5ee1c908d44698790624381"
-    sha256 cellar: :any,                 sonoma:         "811c15d3fd2d2fc4909bf00946577521df68a82c843a257d97c9c5775614eaa3"
-    sha256 cellar: :any,                 ventura:        "5a57550f4c4e1539699d3eeea0da3cf28107aeb8498dd8fd8710e2216f102b39"
-    sha256 cellar: :any,                 monterey:       "8d089bd5d348637ac502d00ebf4848909504ca404b51c79e0b4a266334fc1942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6fc40b28e652b752741de9ed4ba5f12acaa5dc72d32798ce9cee6d4a46e6d26"
+    sha256 cellar: :any,                 arm64_sequoia:  "9444fe6e83ab556dd46a5dd712f9ae064210c9e3c1cc8f0ed499f01b04a781b0"
+    sha256 cellar: :any,                 arm64_sonoma:   "e4f133cf2e2a3981fda6f72fc4892b7f3f4927a19357924cc4b9f682360e6d4b"
+    sha256 cellar: :any,                 arm64_ventura:  "2e3abb322238f8db166611ec4004b962662ea1b36e0fd47413260d3dc2e247a2"
+    sha256 cellar: :any,                 arm64_monterey: "8f974774bef0f398368cc58cef4973cce7c55db0151eb69a66337c3a8ea522ea"
+    sha256 cellar: :any,                 sonoma:         "fbd05267921d39e1d16ae523bfd063d437a53ec628d1a494a164bfcded1be350"
+    sha256 cellar: :any,                 ventura:        "ef553dc3f2f4d72c520be488cb1c8aa1484f74be548ee9e34898d813dceeb5ea"
+    sha256 cellar: :any,                 monterey:       "c0e871ff410e2d257acc8b7d8e398b9572de905287a9e71e82fd91b3cd5490f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c69624ef1a40007d2d3661bc102f0ed715a63d6bbb50025498007fb72acd9621"
   end
 
   depends_on "pkg-config" => :build
@@ -61,8 +61,8 @@ class AnsibleLint < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/c0/bd/fa8ce65b0a7d4b6d143ec23b0f5fd3f7ab80121078c465bc02baeaab22dc/importlib_metadata-8.4.0.tar.gz"
-    sha256 "9a547d3bc3608b025f93d403fdd1aae741c24fbb8314df4b155675742ce303c5"
+    url "https://files.pythonhosted.org/packages/cd/12/33e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1b/importlib_metadata-8.5.0.tar.gz"
+    sha256 "71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
   end
 
   resource "jinja2" do

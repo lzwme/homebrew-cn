@@ -10,6 +10,7 @@ class Hyfetch < Formula
   head "https:github.comhykilpikonnahyfetch.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "572f0eefea4437ee1f15f0446dc6342e12c350e257f135cbafafeb362d98e6ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "caceda874883aef8d29aacfb756c2997b6694bf2b04c576950e3433f5c2053bd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "caceda874883aef8d29aacfb756c2997b6694bf2b04c576950e3433f5c2053bd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "caceda874883aef8d29aacfb756c2997b6694bf2b04c576950e3433f5c2053bd"

@@ -9,6 +9,7 @@ class Zpaq < Formula
   head "https:github.comzpaqzpaq.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d82a2ae7e022957f0f0675433d8e01622f3ce1a42c2cc7c76ce902f3685744c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1964b6de47419cc4c995b2f4796afa755213b15efc752b7dadb154bf880599e6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c2b429eb50442110fb5fa144e72fc23848d876eefd491ca2c04967e8789b21f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fe862e92dd0fc348e0a93891fb863075443841d64aaee4ee5ac56b36ad49e3dc"

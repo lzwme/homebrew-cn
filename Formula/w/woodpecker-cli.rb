@@ -7,6 +7,7 @@ class WoodpeckerCli < Formula
   head "https:github.comwoodpecker-ciwoodpecker.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dee5c59ab75c19415f80706753e118fee4c0ced01d3b775129d8d8eb076fa7fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dee5c59ab75c19415f80706753e118fee4c0ced01d3b775129d8d8eb076fa7fe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dee5c59ab75c19415f80706753e118fee4c0ced01d3b775129d8d8eb076fa7fe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dee5c59ab75c19415f80706753e118fee4c0ced01d3b775129d8d8eb076fa7fe"

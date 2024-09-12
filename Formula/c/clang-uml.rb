@@ -7,6 +7,7 @@ class ClangUml < Formula
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "96289df11ad52077394f8173f1de3159117349c817ba11c80e2135a752304013"
     sha256 cellar: :any,                 arm64_sonoma:   "ca2ac85a447a17f124d9af35041e8135c9accf744ea4fd20f695706f8679104a"
     sha256 cellar: :any,                 arm64_ventura:  "2a883f3fde53ff4c1467348172a79dae3ee2f924006d93164af879ccb544c445"
     sha256 cellar: :any,                 arm64_monterey: "783a0b9f50a1c5b064e1913b4d1a4910e4c4ec4a54ed1efe28ac437a00824fd0"

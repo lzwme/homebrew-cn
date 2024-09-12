@@ -7,6 +7,7 @@ class CargoRelease < Formula
   head "https:github.comcrate-cicargo-release.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4fa51f848efcc765df7e1e9608d5800d5afd7844b8fe21e150935b6c1e368a7d"
     sha256 cellar: :any,                 arm64_sonoma:   "0cb90de97c4fe82aaabf6c435af345d6cbc5400f5f3f3e679c1f37725473b82c"
     sha256 cellar: :any,                 arm64_ventura:  "ef226d68c47d06412bf0e47116baf300f1de4f433b2f0920d1795faf7b2d5e39"
     sha256 cellar: :any,                 arm64_monterey: "f0bfd9926ceddc368d3bb73836c678b6ba01e459579af0fc95f7d00be386c22f"

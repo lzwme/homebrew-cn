@@ -7,6 +7,7 @@ class Procmail < Formula
   license any_of: ["GPL-2.0-or-later", "Artistic-1.0-Perl"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3797ccaf0b1d12c6b04012265e1cbad538769cad66d9175e6fb0e8a7e0cfc54d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "791a9a4eb68e2bc3e190dc7ab66efa1c1516abe9457c7a6e00bfca199ae3564a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ebd812ae059d9cfcdc313028d1a967093b2fcb54745308f3ac900f17f850822"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f36e2740c6191a3cc46063e606fa3bf9bd5f5da712e7ef191722ee1ef5c85810"

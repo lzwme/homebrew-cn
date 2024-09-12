@@ -11,6 +11,7 @@ class Deark < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e31284aa5a98b58e16e21a16a32910389309f8f175839b68abc2e8980065daa0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b1830e6d9bf7cb92867dc1c8abd048ba562b52cd61a19bbd4c83092366b4aba"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "738e10caadb7b08a52202b86353cc13bbc04b81df5413e5146a85afb9c88546a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "11f1d8417345ff5b60f9eae4098b894246cb29ac7199f397f86db7a3c235dfd9"

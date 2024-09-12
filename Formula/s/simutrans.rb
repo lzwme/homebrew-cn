@@ -10,7 +10,9 @@ class Simutrans < Formula
   livecheck do
     url "https:sourceforge.netprojectssimutransfilessimutrans"
     regex(%r{href=.*?filessimutrans(\d+(?:[.-]\d+)+)}i)
-    strategy :page_match
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("-", ".") }
+    end
   end
 
   bottle do

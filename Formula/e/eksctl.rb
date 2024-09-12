@@ -8,6 +8,7 @@ class Eksctl < Formula
   head "https:github.comeksctl-ioeksctl.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8a7abd5b561fe510baa4e40d8dbe8d818c957e9dda43b8da0461a55c51067579"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7bfcd3db7da1bd7c505b555bc658b82baa2e2ecf43cd1c05e20e5932fd62146"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e27d4f898493b681c02abf304fd3beb9b32802617dd2009fe7b7ab967e52ad5a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa99e7cf294b9512093727115ae7c1a34c3ef93da4e38125145724120daeadf0"

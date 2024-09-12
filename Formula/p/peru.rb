@@ -9,6 +9,7 @@ class Peru < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any,                 arm64_sequoia:  "3cd2c85ee4ff5e5c7efef1ecd933842b70851cfb25858e800389658978720fae"
     sha256 cellar: :any,                 arm64_sonoma:   "6bbfa6021acb4de8dc1031932083f0e0ca2acc3296dec9dd87c9e77e389d9d49"
     sha256 cellar: :any,                 arm64_ventura:  "8dade0a9d43215a49d727c92312ca7bfa777ce0f4e91dea0c98944abee794ed3"
     sha256 cellar: :any,                 arm64_monterey: "806150274ee7f2e12348d7025968174a01c12cf4da437fa6c1ae191fc8e19136"

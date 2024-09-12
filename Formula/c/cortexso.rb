@@ -8,6 +8,7 @@ class Cortexso < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "c5b000f80754025ef2e26c62a74172b0b70dbde1217544f602d29e933f221b6e"
     sha256                               arm64_sonoma:   "5a40692000193b98c8274e0f4b6cd366558fc464e91fbc9222af2e16b4238b2b"
     sha256                               arm64_ventura:  "e505143e5417668b3027c83e923871bacbbaf5ac0a86bde0e0b156bfad7e0c36"
     sha256                               arm64_monterey: "0d30abe3e770dc4596348ba52c39bdeadbc270d61213a563c8f655c694858362"

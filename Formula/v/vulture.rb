@@ -10,6 +10,7 @@ class Vulture < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a6c1c144d73c8c014dadce57dec7a9c32f5360802613bd203abf09d2dd890588"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc27fcab671d00e8f19313417662667b299ee104d6b9102b0c37d8f781d317b0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7a4609f073de1e1de08c520846fa47cb61750634bdd8aae17e8f833bc063df2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "608759a9a3646d3881845e32432eea74beb25e0a535c4d33c2694487c4523841"

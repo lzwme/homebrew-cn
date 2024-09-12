@@ -14,6 +14,7 @@ class Samba < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "65248677905982cf95884cd3ae76c29d309e96ef85962d06f4d8748174448a11"
     sha256 arm64_sonoma:   "1313554b2cea443140277e014635f42b24f4ad327ed76a54abab98e0328ce50f"
     sha256 arm64_ventura:  "52ba8d7910f9ef238b2bbf1d98fcc438deb7de2da727e31b0fe3641d21d9fd30"
     sha256 arm64_monterey: "353d457204f8de6214fc10632b7af2946e2299cd050b3a2cb480ed3ab5a1b590"

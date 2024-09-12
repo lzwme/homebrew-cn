@@ -7,6 +7,7 @@ class Broot < Formula
   head "https:github.comCanopbroot.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28b4df80cc3bbc17bcc37209a8a6244bb262c8a6684245b919e4ae160262ac97"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfd9e8ce40bba6628a8e927a0fa5f15c94caf8bf5301fbfc3363a9dea7e16c2c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6828c9677283a9b9e261d6cfed4136e58333152274180fa54efd2acc0fa0ab2d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "78f64820619d6260b07ac016aae26766f21059048224033cf435bdd7ea75dd6d"

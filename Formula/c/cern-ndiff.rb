@@ -14,6 +14,7 @@ class CernNdiff < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d45e67a3d9f934e921d76dccfcbb31f4b1b3af041dac06b4505cdc4bae2fe73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e85cfeaa7bb36ccf6c86e8e8cd1c969656c81ee54f73a4b544d47b4d9ef04d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9951fa4368100f6c4d2b600e7da2d15c3c1c4031e94666fa822f935502251afd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "62a8a71d7515060897bea3dbe97136b0dac99454a403e370e859f482b4e129d3"

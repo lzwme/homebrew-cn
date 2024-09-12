@@ -11,6 +11,7 @@ class Xfig < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "f9eba9bad80e6cc3f7923c28a538a17f0f85bb60bb00522b0124e01b40d315ed"
     sha256 arm64_sonoma:   "2ce377c656dab395b95d498c03b8b3b95a1153f63cef176c3039291c55760834"
     sha256 arm64_ventura:  "ab1c86c5044e495596fe576e1c053478251d70a5faece3f221d165d29b9c3ee5"
     sha256 arm64_monterey: "39f08a4ba5383fa90cb2a4b76d0b8b5d6929843f6fac04450249e85ef647ac43"

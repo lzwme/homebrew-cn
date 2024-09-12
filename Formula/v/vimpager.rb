@@ -7,6 +7,7 @@ class Vimpager < Formula
   head "https:github.comrkitovervimpager.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3f2a6dd688af38e4777f82795806da5477f9bbc91f05f1bb567777656169652a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b414a1f47556bd96038f4314fdcc4a5794c7064990e2b464c951717043c7c0c0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd379bf4e911d29607becd56bc99a4d3c0c5fafaa5bcf422c7df37e5dc9ec2bb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b2b9ce26d12c155adb0c9e2524b67b7e8e0a41fb75ee524999ec0818ca619659"

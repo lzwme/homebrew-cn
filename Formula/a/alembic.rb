@@ -7,6 +7,7 @@ class Alembic < Formula
   head "https:github.comalembicalembic.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ee906ad610fb0e60a30def1e3bfa78a096f69ccc2d5d6a240ce3826a11e737aa"
     sha256 cellar: :any,                 arm64_sonoma:   "2d570e9a98c50078372b7a61be5ecd48fcf17c6054ac50dfdf65a02cd96f5e36"
     sha256 cellar: :any,                 arm64_ventura:  "08582785ae66e4582d2fae85c48399a9d6d3848324e7b91421bac090915ec59f"
     sha256 cellar: :any,                 arm64_monterey: "d614a766f6b4a4cf06f5438e5247140341ac00bd39127cf1691642cd354e2f0d"

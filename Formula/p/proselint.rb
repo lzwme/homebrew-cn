@@ -9,6 +9,7 @@ class Proselint < Formula
   head "https:github.comamperserproselint.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "00f87a5c0fca79be196a12ef9039b968da9bc8df7e3722f0188928369ac7b363"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "216e04dbf6fed2c35a614a601a636232030fc54b9e51901eaad0d8811f555ebc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2b1430dfe879f22305bffae6be7c84a4fe347e8cf1e2f09d1b19221695bb083"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3fef3e97aaabdb8ebdd6e0b30ce5d9ef5b25d602db9f34a94d8734145a8110d0"

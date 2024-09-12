@@ -6,6 +6,7 @@ class Kor < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "342d7e19c5cabb028f2ddd5e5177360c820309af2a630d053e355a1392486b42"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"

@@ -1,19 +1,19 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.85.2.tgz"
-  sha256 "ac2f8487e62949bfc38d9023e0709cb0b9a0fdfc9ce4944475f54b5b57a74131"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.86.1.tgz"
+  sha256 "7c51896c0b4779f8f51ddb357eab841cb20496b21a12b49e6123fdb07de6c742"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5655ecb81661b2690211a3605d2d08f55847a6fcfffd5af3d737365c33af8b1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2bc57093a4066f8352108fe0c4f7e77229a1bf0552b4e59ddd1ca28054de5de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8828507db2c463ad55b44b55b60ec8da14e060c5ee9ae130a31788ef9abdfb09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb23f895000aacc131a33ef6d8d7c1d154e86bf0e9e6a90773754b5d3e117190"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87cbb9a0ce7634ee60b7f3bb586030d1c3ffe9d6fae6d8e01ae8f9bf9919932b"
-    sha256 cellar: :any_skip_relocation, ventura:        "cba3fde39a949238cc6560bf95c378e041a70ec2ee036456412f5a232e90e332"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e440a74d77fa25f8c4319ce3e25961e74d892766eaba58fe1817343bae8070c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8facbd41179a51db24e15d092ac28934af792839c894c93b0de0b515d600c9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ae9289bcc6d15371d0866d0271f77c024b4ae6212a7f1434149d4edc695201be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2d50081277c852515ba241be4cc4124e4a7f30a9c41799b2a781f3bbc80abf3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ebd12a2952f16359be95e0fbd45170d5b3afefcf05feb499d1fb5f94d717bc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b77686fc2c057d969a4d6973eadc82b33d15ff182989c6decf126cb05265d130"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8a848cf818f7e918ca77cbd0abe350cf634baa3b1642bd3d6b94c8fdaa65a070"
+    sha256 cellar: :any_skip_relocation, ventura:        "b8029b4cfa663f136086df6f45865a424b0111bce98d2a7dab75160e22784cd2"
+    sha256 cellar: :any_skip_relocation, monterey:       "4d8b772466c8ffcb08d5fd300b31b128b3b1341cff4113fe4e8c0f12db14fb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e75d131857d1ff40e06661ecc22772ac330386211f16cf2052add986445240b0"
   end
 
   depends_on "node"

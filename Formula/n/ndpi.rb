@@ -7,6 +7,7 @@ class Ndpi < Formula
   head "https:github.comntopnDPI.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "41646281bd1053637a6160522e0466042a0f87b7f5ced6306e5200c55c768040"
     sha256 cellar: :any,                 arm64_sonoma:   "4fd20040e0ccba85f6c43d0c7f340999f31e1ea7da8dda685bf3b7ba464fd990"
     sha256 cellar: :any,                 arm64_ventura:  "b5ca45fa0c2b9221ea7faa228f3a85ccad3d073440babd8af2ad2ad3dfc019e0"
     sha256 cellar: :any,                 arm64_monterey: "dbcc91245b69a0a75a6977ba1c8d730d6e76820e1df0812a3f77a5fa0b0d3962"

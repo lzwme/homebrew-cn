@@ -7,6 +7,7 @@ class Packcc < Formula
   head "https:github.comarithypackcc.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "aed65253eb5afb1f44bad36b23acd02b0ef5f41e817cba9f284b9753ffc11763"
     sha256 arm64_sonoma:   "34ee3deeba08a37415ff82cd923ce9238e369126ef3197eeca741b4be69ccc10"
     sha256 arm64_ventura:  "e45d252d935dfc169a8d31fd840cde9353b95c5a17f3a9dff48de10961110b7d"
     sha256 arm64_monterey: "8126fe567e6bac3caf32352caefab42b66f46ad53d7cd51a24ef5642d92601a7"

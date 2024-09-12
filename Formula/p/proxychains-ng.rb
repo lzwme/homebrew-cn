@@ -16,6 +16,7 @@ class ProxychainsNg < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "98974765fe2ae812f54eac9b71dfc62814e11bb4cb360a17b4125076c4a0ccae"
     sha256 arm64_sonoma:   "840c1349abf6f4e62edfab1d308e698463deed5a4a8089da31407998bfc819c2"
     sha256 arm64_ventura:  "70b173f39b5c72b9b4bceb2f59c8fa9dff806cb320b1cfe9ecd665a55559b914"
     sha256 arm64_monterey: "f58b8cd85b1e6ce69fdcebcd7c4666f7720e8c8ca773f40a6c27669829cd4fde"

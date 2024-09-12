@@ -12,6 +12,7 @@ class CodeCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "935aa68e8ff7b354e35e61a775f9c6dd41b3be4847e56d7a56dd2e8300049f3e"
     sha256 cellar: :any,                 arm64_sonoma:   "42a7dc1bebb00d79c034a9e31e7df6b23e963043cdd1a466d00c47de78136b6e"
     sha256 cellar: :any,                 arm64_ventura:  "c29ec4e6865a970d5de489af062bd61d9e5f466f9399fd3b1ddeb97dc4486016"
     sha256 cellar: :any,                 arm64_monterey: "35d892e4b5b9bc75315e825afc62e07e32dcd2a0e43d7f101d5e12b9ac2ea1cd"

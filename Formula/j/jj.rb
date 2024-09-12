@@ -7,6 +7,7 @@ class Jj < Formula
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a624ce835eea8ce00f6e24610daddb3dcd6a1f2ba7922394d3580df5dd889b5f"
     sha256 cellar: :any,                 arm64_sonoma:   "480e79febb201bce9489537676ee8a1bcae7b9e6eb2aa2b56466f14bf19d2c8b"
     sha256 cellar: :any,                 arm64_ventura:  "3d3b0fe905ecf1b01e99d66fc81fbeb4bb5f09dad59e58ee87a17d60d64bddee"
     sha256 cellar: :any,                 arm64_monterey: "d2384491e0b6d77154408cdc00a07aa66c2e15a515dd23360f65e2a60802e588"

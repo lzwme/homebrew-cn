@@ -11,6 +11,7 @@ class Pyinvoke < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a5c616f49080d9aade8bd2a4685c2836b9d56014b447f0644b31e3f0909d5c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df2155441e4e061f37e689d85347985bcf4dcb032685c71e323295fa566206a7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "44223d17b48a193c0959da9166dc99540aeab74d3bcd57017fc4d9a5e8a2e2de"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "580d8ddd06ff9702d3bb980134429063cfc926fb1736a2de8b51fef7477f84a5"

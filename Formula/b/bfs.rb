@@ -6,6 +6,7 @@ class Bfs < Formula
   license "0BSD"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f6cb25e2c441f78aae02e45a8dd624ff887056ea33c7cd43ae4a4f1cba40c30"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0bba5ca44ee38733bd4f6b36f45b368701f7182de7acfca32180fbb7614ad69"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6be520fda5b754872b7d115e30e1908d00340e9ef286eafcce0057a8fd023141"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8707a0c519d92c6f38a4fa26a82cc23ce6553d267613eecb6ab127497916541c"

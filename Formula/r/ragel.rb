@@ -11,6 +11,7 @@ class Ragel < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c2bbe81eb822afe87192cd8b4688fe5bb9f84b2fe87ea343ef0155ff8b6590ac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41ee07f4d272aeaa30c28763be68741670e7e38c518e49fc9c214db1cdfa717d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a023336bcea614167bc5f77ed303c53e2d26319057c835f0d49c841895515a9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b4427818a8647c06fe09fffa1960f6fbf4ce2c10dee048b1880486390c151585"

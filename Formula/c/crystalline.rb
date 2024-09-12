@@ -6,6 +6,7 @@ class Crystalline < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_sequoia:  "92a637cce4061069d0d86364382f4f803af5e5de9a232dc5d1dbf300eac1c2ff"
     sha256 arm64_sonoma:   "938ea9cbfd93bd3125a7a8cc33dbffee72c4a3da123046a0a062c01f30417cec"
     sha256 arm64_ventura:  "ba4e112f794bf5db29221fed0ed9cb707325edcd4811f0b93f9573f446adbe5f"
     sha256 arm64_monterey: "c1fec8db57b45f5e32bef38f4201ee372f0265a96fd09751c1276888b1036ce6"

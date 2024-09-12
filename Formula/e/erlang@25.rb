@@ -5,6 +5,7 @@ class ErlangAT25 < Formula
   url "https:github.comerlangotpreleasesdownloadOTP-25.3.2.13otp_src_25.3.2.13.tar.gz"
   sha256 "00c2619648e05a25b39035ea51b65fc79c998e55f178cccc6c1b920f3f10dfba"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class ErlangAT25 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a8b929704f50d5d559b02c640959e0b696c7727ca73cd3ee2d52e481d8c296e2"
-    sha256 cellar: :any,                 arm64_ventura:  "59b9a57244dfa716fb1e0ea46d0fb82ebeb1671057b5f8b41e81865f7f2d57e2"
-    sha256 cellar: :any,                 arm64_monterey: "d8cc1a1c72e446ea7f037d6f73d99101a6aa7e067042df8b2b636460a968210d"
-    sha256 cellar: :any,                 sonoma:         "0828738897d74cc1287611d98f2be881fa858f2c33f45728d41bb70ad2eb8baf"
-    sha256 cellar: :any,                 ventura:        "31cf2560931de9523f1b36a05a2a085bc7bd26d85a7a027a3fd9feaa9e541b98"
-    sha256 cellar: :any,                 monterey:       "cc48c4f1ab3f8c1280fbe29b54546ea890f6a564ca6f02065646c41e18f12782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e75ab95ad14f6eb3aa8ee859bf172c46393ee8774cb714d794f07b09965562"
+    sha256 cellar: :any,                 arm64_sonoma:   "a395dfc71491c4b95aea25b495a766f27adf4589057ca6dd4091ee2c21ac4c34"
+    sha256 cellar: :any,                 arm64_ventura:  "a946e8e54089ea35dacb98012b66dab4cbd9d6ecee7a61ffa4d69a34d18a7693"
+    sha256 cellar: :any,                 arm64_monterey: "dab735ca2c1603594f1d66545c91787712e5b00c25f5f541cbfe9ceebfe671c1"
+    sha256 cellar: :any,                 sonoma:         "31384b14d4c671b2ff630931f79425d250faef4cb1530ccde6b071433eeb10e2"
+    sha256 cellar: :any,                 ventura:        "afcadfb0973e83f1cc58debc3c54bdbc27e0ed64e0f58ed45a5dfe3f683435d9"
+    sha256 cellar: :any,                 monterey:       "558edcf14a877c8ccc23a030fa156b559157076d4b74d633c0d645a8de8611ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a9150e723c42878d15665bd769412e42b6199a94295babb9af219b344901933"
   end
 
   keg_only :versioned_formula

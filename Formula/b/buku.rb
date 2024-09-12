@@ -10,6 +10,7 @@ class Buku < Formula
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ad020b8fe874fc34b16ba91ba84491625a20a194ed1bce7d5428dcf6a0c0041"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42789fd14267d57b9b0c72105cf9f9eea6a569252f7b5cefbed919c9de76c2dc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "220c3bc922a5a4ecd65e4744d3f338a6260209343aae13d8c5fd62c6220afcfa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "da1690b766a2a5d1b0b60f75d656f2e04ff569d3a13dd15ec1a2c7f9d54182ca"

@@ -11,6 +11,7 @@ class Cdi < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "40cb2ad0d01f2ed1325cb12b9f048db7413f94a4274b08d61f8f468d3bfe964d"
     sha256 cellar: :any,                 arm64_sonoma:   "8c26a7e5b5908520142602d64d6f6f3cd418d7c074a33bdce4797a46d7ef6e69"
     sha256 cellar: :any,                 arm64_ventura:  "38380367199754d9dda02b4a7ceeabed762b97f5dfced787341e99fbf87d394d"
     sha256 cellar: :any,                 arm64_monterey: "2cec357ca25bc45418fbb8e088ef6dd01eb479c15571cf34026c3d69ef8c2161"

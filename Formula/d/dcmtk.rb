@@ -12,6 +12,7 @@ class Dcmtk < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7acc30e4227a9bae7f135ea9e61eaaed861a28cb398831733550946b39584a3d"
     sha256 arm64_sonoma:   "b93d4799f022356c7ae4140f27f7aa2475dc81585ec595db1ef6d682a3dad3d0"
     sha256 arm64_ventura:  "395d941de382ca2a952d05d29ff5f9d4ff1aba7592c6fd1eb2f685f9129b34c1"
     sha256 arm64_monterey: "0856d56363ad7e76151ca34bb0622d929ad57c61d1af154a8a110ca50218a2ed"

@@ -7,6 +7,7 @@ class Pandemics < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "445777877cbca7a8c5e0c8096b16948aa2b93c2a5ae41b71cb75e660ba2710d5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba38e44b4f4b7d27ff08bb11cfc4d0ff0c3acc0643748668cdd9cca3e015f365"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba38e44b4f4b7d27ff08bb11cfc4d0ff0c3acc0643748668cdd9cca3e015f365"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ba38e44b4f4b7d27ff08bb11cfc4d0ff0c3acc0643748668cdd9cca3e015f365"

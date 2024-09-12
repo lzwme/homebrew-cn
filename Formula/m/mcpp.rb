@@ -12,6 +12,7 @@ class Mcpp < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "37f98fe44da635f01775091f8196d3eacb4b9dfcab22b5702488714ea4599cba"
     sha256 cellar: :any,                 arm64_sonoma:   "42c256dc7e6f9d09f12de8bf97cc1988d020931cc7471c8ae9402b35d57748f7"
     sha256 cellar: :any,                 arm64_ventura:  "1c08275021d44b1db481d2f802ce2b69da952ea4afe04e1a0ce9ae36243f08f1"
     sha256 cellar: :any,                 arm64_monterey: "506e27459d6f4f9fc296bcf826d113aaa659fc814f11419fa484bf38ec94888d"

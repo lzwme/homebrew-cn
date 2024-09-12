@@ -12,6 +12,7 @@ class Hdf5Mpi < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "443ba720092199276c80d61c3e1df597e68ab95cf7d37ca5a9de9b2a392bc4d1"
     sha256 cellar: :any,                 arm64_sonoma:   "1e9b0488281362ac3301b45ddd5ea9bf207d2669c96912372d40adb4248a24ee"
     sha256 cellar: :any,                 arm64_ventura:  "dc2de706c97345063ce32ce7864a40d16710bace525e6b5532e78e18c0aacdd5"
     sha256 cellar: :any,                 arm64_monterey: "1d581017bacb13a5f9f23b5f1f1a02821f6064c4ed3eec126c73f9facb3737d2"

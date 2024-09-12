@@ -6,6 +6,7 @@ class Noir < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_sequoia:  "de831b2e2eb096f136a1732de4194781c16ade6ba964a596dd089e62230d324b"
     sha256 arm64_sonoma:   "b7e5a97d3f175cab54cfd3769324a609f9f2f58503bce1e80a506fd9834e5330"
     sha256 arm64_ventura:  "23b8c73886ecf49b0c3dd90120b17650c01dea53be6abe38382690e58dd13abe"
     sha256 arm64_monterey: "a12305a19874fc221ddb315e5c51291abff970f8109d2c0f6524935a2b311e29"

@@ -6,6 +6,7 @@ class Pylyzer < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0a16d380edeb9ec7bfa5217449be67d7adacbe9c12ad5c7e5abb9b5823d20103"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ff10eb6de4ad1d6bd154d4800cf28f47898ead88f8b1df110b1ad62705048b3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f55bddced3c3fe3a0e8365c71edfb23d8af84c40d1cc2f82af52fecafd24f211"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f7f15fd85eb6c65292dab383439399a5d99c150be4a1b33e40c3670c1e19416a"

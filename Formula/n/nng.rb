@@ -11,6 +11,7 @@ class Nng < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "35ad62c01c6315565de069d7e220521976df677990aa0ff5bc0f680494d25579"
     sha256 cellar: :any,                 arm64_sonoma:   "1a0d36ec0f356b2f8dcad8279929bf3a9693ea731f23c9f2998c734bd53714f7"
     sha256 cellar: :any,                 arm64_ventura:  "ea72c4d46fc91ac9a3282df0b3988a05236ef18d51034c085204995445738716"
     sha256 cellar: :any,                 arm64_monterey: "0da1c62a33f0b3381b5dbfdf0c7fe3ba2768fa83a752efbf893de403f59e79e5"

@@ -7,6 +7,7 @@ class Rustfmt < Formula
   head "https:github.comrust-langrustfmt.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3453e109168e99adfb471b8b4742eca8a6fab9d6a8926d9f2d1dd94d09fd2edc"
     sha256 cellar: :any,                 arm64_sonoma:   "0bc41425bca0cebff19f98f92d3495022438dea06b2de92a453e9273b2dae2d1"
     sha256 cellar: :any,                 arm64_ventura:  "5f5ac9dfb767b047a324ad7d30772ea0fdf2004ea07bc3d7777db50eb477ac61"
     sha256 cellar: :any,                 arm64_monterey: "fb66b78ddb10d7e4fbedd8ceadb6bb0417bb31e6b2b31f0e3b7cf52a9ca2c729"

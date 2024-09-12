@@ -16,6 +16,7 @@ class Youtubeuploader < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8413e69a8a4adafa2ceea4f79f4d62c80fe5746e6ed98e87b99e99efe39764b4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9f9880a34bca1a12df46691445e342eb873c2b9d2f4ede24fc993af0cf87409"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "69fc55023c63fcc5e239dcae727528475f98e2505a020a3b272da725677bbf18"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cca8b4af55bf8869438269a392c9ee21d9b69330cd089f6121eb20e2ff513719"

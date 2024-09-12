@@ -10,6 +10,7 @@ class Pssh < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4a64d2ac438449e8ee20c03ecc6cc96d008f0c6b85d428a4409e3b92f0f9a4bf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bcc233d04e87e24eee8c465ae40c58a8d8419b866edf1c15f16572c724cfeba1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6274719af586dace88f196051bfff386f34588f3acb2c9fb82544c35e57bd0d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c4f36681d38878026b147f5f9fe29a41b42d3405a38e1badd02352d342c45e33"

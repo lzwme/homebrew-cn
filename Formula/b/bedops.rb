@@ -7,6 +7,7 @@ class Bedops < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "f662fcab9ba091a7ffcf39bd47ea5e41f870905a14e789a77d5024a6430281a3"
     sha256 cellar: :any,                 arm64_sonoma:   "dd564d3cdff0027c493485c2ff35c9e5d5bda6456877dcbbba375eaac4d51d5f"
     sha256 cellar: :any,                 arm64_ventura:  "dc32a609274e337d4372a480187edbef851a031ab654f7ed96d4063bc2b568dd"
     sha256 cellar: :any,                 arm64_monterey: "3db503b39d5c54fe63767b5904538ffe0e656706bf0d575d5b4aa3fbf710d491"

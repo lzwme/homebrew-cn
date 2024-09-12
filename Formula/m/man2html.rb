@@ -12,6 +12,7 @@ class Man2html < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ecc7e32cd32d246ff8e3efc5061325d43178e0ed1f32847b501af7c394540483"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57f83bcc5fc4cc1278e1e8fa671a51959ff91c4952a3a2da10f602c3331f141d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad45d9711383728beed965692eeff5cf47f26017c9a68254aa00af577e950c7e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ad45d9711383728beed965692eeff5cf47f26017c9a68254aa00af577e950c7e"

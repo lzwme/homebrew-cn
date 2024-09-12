@@ -31,7 +31,7 @@ class Rav1e < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    system "cargo", "cinstall", "--prefix", prefix, "--libdir", lib
+    system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--prefix", prefix, "--libdir", lib
   end
 
   test do

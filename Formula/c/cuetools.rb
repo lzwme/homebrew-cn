@@ -7,6 +7,7 @@ class Cuetools < Formula
   head "https:github.comsvendcuetools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c25785b0909d4b8ecee88b331ae515e491427126db45af75fbbcc1e94bd287a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d73bc896a9509dae8389723d55e686f56d361f361ce19913092d7e3c294acdd1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "66cbde230df93cb4cd662c02ff028989e141f6c2cf0e50769a60c4c3bac95c48"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6b8f56e6ee35c74523629176408833a619c16aba5b81ab260222ed1682f7f938"

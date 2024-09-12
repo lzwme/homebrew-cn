@@ -10,6 +10,7 @@ class Ccm < Formula
   head "https:github.comriptanoccm.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "39fba6eb56b8466e75887b23181ce6c3b71a9672150a3bb3d12bed1115226f4b"
     sha256 cellar: :any,                 arm64_sonoma:   "110d0383fa279c58e5f9e39fa29744036500a00fdb35e748f9097c3b018651ae"
     sha256 cellar: :any,                 arm64_ventura:  "6246dd963507a6c8f4608d9b480f9c7aa5cca92bd05d552276f3fba6dbaa967d"
     sha256 cellar: :any,                 arm64_monterey: "792c4210dd416f413530b7c00fd4ef65593f711ff3bea8bda2f9c91fe1fa7b2a"

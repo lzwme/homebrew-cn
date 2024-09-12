@@ -7,6 +7,7 @@ class CargoBundle < Formula
   head "https:github.comburtonageocargo-bundle.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "97cee1a83c22efbcaac2b88f29faf09ff8f70957ae9150c3ac6bf645151f7081"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d7d7fd8160402ae2884ef7e88e95cdaa56e163b62150e325c306ca1a2879927"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aed77abf521dcc180bb87fe548ea79961d328c5443753aab5e982e46d0667a65"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fa10b2892b2f4e59f8e5fb24921a07b70fcedadecc3e83c266e4c0da7de1b6d3"

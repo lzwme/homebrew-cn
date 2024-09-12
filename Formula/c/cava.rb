@@ -7,6 +7,7 @@ class Cava < Formula
   head "https:github.comkarlstavcava.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "6b7abdbd2b00942957380ca8770ebeb2eda39dda4ff6238afea4a46e47c45920"
     sha256 cellar: :any, arm64_sonoma:   "aa62a4d58c42b5b95be8d6f996728308730bb70eaabc4d0bf26f2599fe23e2c7"
     sha256 cellar: :any, arm64_ventura:  "480f4fb722f970d56afd1d626df91d276f0b6d8c762c53436f835dfbf8bb4df5"
     sha256 cellar: :any, arm64_monterey: "498ee144ce314d844962eef7df12b139aa5fab106dc20b6437e2ca1346bfc4a3"

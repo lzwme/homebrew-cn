@@ -7,6 +7,7 @@ class Bindgen < Formula
   head "https:github.comrust-langrust-bindgen.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dbb56aa55bb1f3804891749a4d79d0cf7a896c8bfc72c35365a24fba7eebd3a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fe50efffbbff5510d7ce03ea65aa8d082980cbd6ae1bdd5aaf8415bfa4e83a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6c1a89a88796f3c40f4df3ad756d45f49a871d28410fec99068e6df7417c967"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "20c2b8c3e2f54bdc5dc9ac084f7c4cd03ea0f0d5ca5a8e3634da54805c3e013b"

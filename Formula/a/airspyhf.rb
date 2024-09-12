@@ -7,6 +7,7 @@ class Airspyhf < Formula
   head "https:github.comairspyairspyhf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "56ba130afa6a1ad1fe9fbda09e0ae0bfefd6eb4d2e5b5a88fa28b150c2a4c1f6"
     sha256 cellar: :any,                 arm64_sonoma:   "b747dbc3b901d77c790fd984fdbaf37979b0e3e7ef0aaca8d616be09353fbe37"
     sha256 cellar: :any,                 arm64_ventura:  "5fbaa0afc4b557fad2a08babdbe97253a76ab494b81dbc402fe0ca9d5c26674a"
     sha256 cellar: :any,                 arm64_monterey: "eef302a163fb091b112c40684b5dcc04e226e95df03042cc9c77ff6e1b637f9c"

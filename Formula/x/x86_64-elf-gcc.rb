@@ -11,6 +11,7 @@ class X8664ElfGcc < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "65d5cafaa2c1489b88380c22897c26de03f89c6848d140951ec3dbe1e268360f"
     sha256 arm64_sonoma:   "e410ed798be5c4ba44d2fb9c4bf9f7506939933380bd52513c2904db67cf30bf"
     sha256 arm64_ventura:  "aac94896e8ef3a894319bbac0b172ff7c1818b43d5d3ee13ce71ebde92ffb9e4"
     sha256 arm64_monterey: "2d39f6758c078920001953818b75794ed4101e3efb21f8a339e911ca12202893"

@@ -6,6 +6,7 @@ class Advancescan < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8665f9344bd59d8d1ca29f033abc8db6616078e57fe991e781771c6e43f7113a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53a0ab6f94d0b7bbafada815a25b5159ac3d0fed4073714526bbd4350ec5df63"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac972445b713681140e05905b842621e3d5e845f4a697686f7d9d5578eb9a53b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2f031fe7a7fcb2f3184a2b5e07339d6b400c3d776d43f6b1a1a62bdaaf49eed6"

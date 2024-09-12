@@ -11,6 +11,7 @@ class Direwolf < Formula
   head "https:github.comwb2oszdirewolf.git", branch: "master"
 
   bottle do
+    sha256                               arm64_sequoia:  "fb3b2a272641595f3ea481b05ac39409f75466cdf50fc9592b3cdddeca1b3d20"
     sha256                               arm64_sonoma:   "f15cf78ea350bac7d0daf8663e54242eed663f577400de7630f8225c4e08e340"
     sha256                               arm64_ventura:  "494d3a0854c7d919fa8446915bec34806b387c138fd23210c05ab3677c701faf"
     sha256                               arm64_monterey: "1c437d0c62b29032faf6eb115caef44b62bc7ef7525d5a137c09eec5015a0f49"

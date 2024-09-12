@@ -7,6 +7,7 @@ class Yh < Formula
   head "https:github.comandreazorzettoyh.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "37b637b99befa6608662694e5100828cf4ad50a9513e57cae75febfd04e9fc96"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4719f7e1a8166248cf84ac5efe7d8bf0df277a08ed4cba8e1b071f87622dfb67"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "676027b73d92187c5394037264a16c8b1e5c175e0619db4d26b4eef92ea224d7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d48312b6e67ee8a4bd548dcbb392a296310bc7100cda5072fdd85cf700defc87"

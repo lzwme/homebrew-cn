@@ -12,6 +12,7 @@ class Botan < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "dc8310abe0f96336059827bcd80899a4587f7d497b20b55162fd087b07d3b05a"
     sha256 arm64_sonoma:   "aa11c6a304090b87202a5dc2ab82b9b82ac761d505cddfa168d741bfea2ce728"
     sha256 arm64_ventura:  "1c0262d4204807550d0d254d50239579e092c2fe2a3c605f0b18ca9460b199ab"
     sha256 arm64_monterey: "eddaaff629f4803ad72d0a9b1c4337123f1f7855c442b43d1827448a8d86bbb5"

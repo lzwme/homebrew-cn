@@ -9,6 +9,7 @@ class Pdfalyzer < Formula
   head "https:github.commichelcrypt4d4muspdfalyzer.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "841777911a51c82cd3143c9dfbcd429af9d387cd6f9a7d136205fe6a7ac78e2a"
     sha256 cellar: :any,                 arm64_sonoma:   "769a7f3e5d2bb0c4b03eac205437a0ae39d6c06de36e30b68bb5952bc886098b"
     sha256 cellar: :any,                 arm64_ventura:  "7c0c18a35de44b5dfb9f1e913d8451b48fe1232a36d67c3e13f0524ae442d8aa"
     sha256 cellar: :any,                 arm64_monterey: "fbeed5a920cd5278398252fd1ff8761bdcec1c3125dca545521d37837acfaf18"

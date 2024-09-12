@@ -10,6 +10,7 @@ class Asciinema < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "36ca2404f3b5a97cb0d056867934257e11cb2de7689f854229eda5545e7e0607"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10d155f8515514023454514b2f7898badc826c2756d064b17d7e6473a0ccbb8d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3186a5d3dfcd25a6af378ce0f1cea2ddbeb719b15140917c0729a76a51979570"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "258717dd75b271d86099190bd535fc24e6d71d78e9869491a1396e2209efae9b"

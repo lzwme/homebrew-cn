@@ -12,6 +12,7 @@ class ArpScan < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "14249f8af1f8fa4a87cec61eeed1b7d2e15bdbdf917736eeb0a0fb5ec2be5b81"
     sha256 arm64_sonoma:   "bb46467cee8e1d7b24a8e7716cbdfacd2b8697c031d26a07658b8618557ff773"
     sha256 arm64_ventura:  "190e487560ceb1e564444c501f9bd814b2401d034e792a9c44b3d5f9a65ba720"
     sha256 arm64_monterey: "be3d37daa3c51629577fb423af1cec9549a7835673a737407a6746b529bbfc58"

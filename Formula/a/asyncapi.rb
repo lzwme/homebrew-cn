@@ -6,6 +6,7 @@ class Asyncapi < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "90b61d53842762c79119d85fc6aa7d7466fcb04bc9f97253b6e4608f922a98ae"
     sha256 cellar: :any,                 arm64_sonoma:   "cd7d37909b53300a64a54179a720782e6b94fbaf1089c1b161fea5667bdff518"
     sha256 cellar: :any,                 arm64_ventura:  "cd7d37909b53300a64a54179a720782e6b94fbaf1089c1b161fea5667bdff518"
     sha256 cellar: :any,                 arm64_monterey: "cd7d37909b53300a64a54179a720782e6b94fbaf1089c1b161fea5667bdff518"

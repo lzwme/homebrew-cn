@@ -7,6 +7,7 @@ class Nfcutils < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "588fdde98a8a04e2641697c4b881cc1ec3ef7ad1cc2f57d83f93769d9e9331a0"
     sha256 cellar: :any,                 arm64_sonoma:   "abdbfc77ca2f19a173b44455a7b82cae8849449fc2eda51f9248e140d5954bb8"
     sha256 cellar: :any,                 arm64_ventura:  "5f52daea8355a598eb9226fb170019d92e831ad54dbc11eea3473a42ad34262c"
     sha256 cellar: :any,                 arm64_monterey: "d502000cd5655c0ec554e4789b846582cc8421bf69a79d1df7ffaeb0f497af9c"

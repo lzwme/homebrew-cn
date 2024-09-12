@@ -12,6 +12,7 @@ class Nvi < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4dadb4e9103dae1a849b5bd29bb0a4fb66a66ae99302541fca056fe4cd305770"
     sha256 cellar: :any,                 arm64_sonoma:   "c78ea8a45f937c0918dbbceeb33112139f86dd8c2d6c2aa12517289c3f88a7d9"
     sha256                               arm64_ventura:  "aa6ba856388d331dce1cec171db093a6846d349d3b0013bd08c3331d9d6f09f1"
     sha256                               arm64_monterey: "4172bb7673685b0e0f569ad84edbe4d568c152b419678e6146f539accd243c80"

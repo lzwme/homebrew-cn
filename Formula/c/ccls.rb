@@ -14,6 +14,7 @@ class Ccls < Formula
   head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
+    sha256                               arm64_sequoia:  "2e70185800e918fa60402951f93c0c87328ef4b9e190ed0f7f38ef67bb4e89bf"
     sha256                               arm64_sonoma:   "7492cb5f43e3bf65ec1a6a8aa9d24151154b02df4c63c2a791bf495b08d65a61"
     sha256                               arm64_ventura:  "5b3c4f1003dcad16b0221032aebd2793dea4efb500678668dedcaa118870df69"
     sha256                               arm64_monterey: "998e41d641b206a6bfeae293dae477f08a802c5b0bf368e487e7b8b504d9f1d0"

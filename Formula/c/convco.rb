@@ -7,6 +7,7 @@ class Convco < Formula
   head "https:github.comconvcoconvco.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d3935804ee673dac405a2666336683616f4e426e124b43a5ea7310e4995ed7b1"
     sha256 cellar: :any,                 arm64_sonoma:   "902794609fffacf8a4895bea16bc5f62fbe61d6e42e7e4b878ff6880be0e0764"
     sha256 cellar: :any,                 arm64_ventura:  "a1690a307a760ff0779ec5bce8fea4f0e78ca4a941e8d96d048e9cbefe00b656"
     sha256 cellar: :any,                 arm64_monterey: "0ddff4579aa41e1e7f56bf1fba06ffd19905622371cace49642c0fe54e8c6321"

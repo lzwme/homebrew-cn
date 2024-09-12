@@ -13,6 +13,7 @@ class GnupgAT14 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "3feee712ec2e654beb69d4d4270faa84490981094c1592d2fad3793229a4dfcb"
     sha256 arm64_sonoma:   "bc3e33a439e34c3e1e39a6e3d38c507d000f6cbc241ea0aa92977ffcc5eda72e"
     sha256 arm64_ventura:  "0745d4b4468cfecd559c6ddd3aa81582bde9f1def99761e8bf7989ddb9a76abf"
     sha256 arm64_monterey: "d35c8557e2e77c6074a75bf4f4e575bd0a24ed57fbd061f9bd2a06d58bf8415c"

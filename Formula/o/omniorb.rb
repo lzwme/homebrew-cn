@@ -12,6 +12,7 @@ class Omniorb < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "554da6aff52b382c04e0d3ffe80e2f012929e6f9d1f715c5712bc672d5a779e5"
     sha256 cellar: :any,                 arm64_sonoma:   "6b9bad8d4f7372e0f9568276b49511e6f0f8a78ae427763f7daf8aec80731fc5"
     sha256 cellar: :any,                 arm64_ventura:  "2a8ac392eebb30eae2e1089136751947bc68e58b74e417c0ee484e1f129758c4"
     sha256 cellar: :any,                 arm64_monterey: "75801990b9584a9d5a7e43d526bd001cdb56d3f5f6aa004e5adc4f08195c1649"

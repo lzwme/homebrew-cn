@@ -7,6 +7,7 @@ class Chsrc < Formula
   head "https:github.comRubyMetricchsrc.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cef7a27152788f3be050d6e41421efad9ff99f75af38d741cc69fb5b53d8fdb0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08c46e6a2131d9d4fb56b521ee21bd5a58ea1a98105088eadb5c9ca493517dd7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e84a115a9621004db453034e3a4ba3d63af5c24ba185e7e7aeddb856b714f488"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "54896e490041dc31baead0d87b5e5493659d87f34d8d62e13e3550596c59bada"

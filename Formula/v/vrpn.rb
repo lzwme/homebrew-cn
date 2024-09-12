@@ -7,6 +7,7 @@ class Vrpn < Formula
   head "https:github.comvrpnvrpn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "75a13c37fad4a005e8308fadcc7a98f75e9147f73fafe7c2f73709e4c3156b48"
     sha256 cellar: :any,                 arm64_sonoma:   "761817673c366cc4107359c8da2ad4d98c0b0baba8a804ac58f30d56a5ed81bc"
     sha256 cellar: :any,                 arm64_ventura:  "30798e598e05078f5ce75ca7451df08ccef3810848f61f6870a440c802c2008f"
     sha256 cellar: :any,                 arm64_monterey: "e16ae039e897123feecad339bba4ebdb34773a30924ac0046e5785c86c37e243"

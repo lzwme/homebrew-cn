@@ -6,6 +6,7 @@ class GitQuickStats < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6c8074f208f407ccd1e48052a49bf1d32070c157089175819be83c5e275e1b2e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc53ce17388a8bbc06357cfc7ca2c5d375ece86d6566a2cade7cacaafe28bab4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c02697c23bfc161e378c6dbbeadbbcc3881b58a729e9a513ad49f6dcb8b04feb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b2f0011f622daf031811c012c93896541235fa0db3f11d3aba5d733753c0a628"

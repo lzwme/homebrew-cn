@@ -12,6 +12,7 @@ class Vcprompt < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "19274660bf8229fb34bc9da7f0cd03ea347ae45e5f17c09a5d39f95a64db4bf3"
     sha256 cellar: :any,                 arm64_sonoma:   "a10dc2ebe159bd795426b839d126aae6e514f8fdc6710315cf4d4369e9616eab"
     sha256 cellar: :any,                 arm64_ventura:  "dabda586720b4a2e74cc9d64c4f53f306e589e6a213f9b906fd65e6df0135edc"
     sha256 cellar: :any,                 arm64_monterey: "68f6b1d5918c5abed9e6412109d5964f5b0652464b258dd236d31235f5b56cf3"

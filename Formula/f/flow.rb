@@ -7,6 +7,7 @@ class Flow < Formula
   head "https:github.comfacebookflow.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "839625ba9904a99d95a51fd61dd3175072b7adf964a7308fdacb054e16e3dc4e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89a2551bf906c86865c16a46681e0c27c3118bce9dd6544ab4106b4ee4eba1e5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9572f20ec33f4c869603fc702b36e865444b8fbff22fc5d796cfe398f9e448a4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "35b830434f56e12a18375a86eee4fcd34ace6f38283dae470066beaff6e57b00"

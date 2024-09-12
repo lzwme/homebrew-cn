@@ -6,6 +6,7 @@ class VulsioGost < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d6e939ab5939e9e93f532d212f6e7358dcd361b7399671533cf101310abab442"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd0cf6c27a0ffa0c1e19fc1fabc88a8a29efdfc3a38f244ec38aaae5a32a4e6e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "645f39ac41d1759d4d1fc1752f2b402b7d104c6a53bfc012ab22cc7d8bbf0ebf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "53984651214c75bf652b2a217e157410c79d062c35ffd517bde68174159e9ec5"

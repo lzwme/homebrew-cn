@@ -11,6 +11,7 @@ class Cp2k < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "59f60c35b214532923c98cb06a3b32cfb9468d76e7383252f6e2262c092ee5f7"
     sha256 arm64_sonoma:   "656ec352a778c93cf63db2b94fb0a8a4a625ee870cb1142577c37ff0ef955df2"
     sha256 arm64_ventura:  "395bda322226be6c02c76f2f79c48c22d1a2cf2c1ba840862c5ddcc4f9fddaa8"
     sha256 arm64_monterey: "2988a43d657dca0e9a8a040bf89cb0432775d20f517c6d26bb78c3c2c4a17ac5"

@@ -9,6 +9,7 @@ class ArxivLatexCleaner < Formula
   head "https:github.comgoogle-researcharxiv-latex-cleaner.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "08a84cb867183fd4be38d7f65dab02fdb523f17e1a538f2cdac8683eb221d3c2"
     sha256 cellar: :any,                 arm64_sonoma:   "5a37569df6a66eef2a53b02bbb13a782ba83f4e894022645480204fc24992602"
     sha256 cellar: :any,                 arm64_ventura:  "313087287b015b42b510f91bd9c6c7d19b8364c9bf41b8ef3aa9a8a047afce11"
     sha256 cellar: :any,                 arm64_monterey: "68cc793418d3ab532bf37f3f6e40583818eb5116520ce2ec53640ae997dadc7c"

@@ -7,6 +7,7 @@ class Chainhook < Formula
   head "https:github.comhirosystemschainhook.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ee1d70019ceef4495f0921b1344b12b092846010ba7d831cfbae5f3639e682c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d84022e09a8266a52686ed6c8ecda900051f13a4cc848daa0f6c518337cbb3ed"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a30eb3a6b72c2c0cdd41d65f55f8b4317d1261b07fbcceca6363b39bef1ed7f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a0e6da7d2520a8954d52270dda75248be81de3ff667ce6489b76a75d94d20ee7"

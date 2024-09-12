@@ -11,6 +11,7 @@ class Epstool < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f50774d3fb87855e6cb3819a97739d3f5e45806a51a79b69dbcb7d1f966738a2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18eb00ef0339393d5e9ab683d8d57856779b2ce7805dc5035a940aecf8ba86ef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6ebd99646c7f6f83b21a714cb9253c3777623618b60de83e371413e64f38abe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0c02048b19a57ec12e0cda38782ba8d062cd929730e92852c19785eec5e7fb52"

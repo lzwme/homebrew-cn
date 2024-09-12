@@ -6,6 +6,7 @@ class Dbacl < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9caea8b960e8ffc974ad321a472a70e46f5cb401dacfbef096309743c49e2c9d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "239b148299a11f7847b2ee32de7d24cd4cdc2f4f0dfbb36c61b57a18a6332142"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "09a812fe378bbee0cfaeb31af232529e2e682379077a6435fcd2acb268047825"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "66ed22f1faf6f76848af60768dc3cd915f92859fb4c527657e06768d0499e443"

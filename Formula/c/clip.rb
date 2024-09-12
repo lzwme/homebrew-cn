@@ -14,6 +14,7 @@ class Clip < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4e2ca7b930f87658ba6450ad93a84b92b8d22c807f23eb8161c6c0cf3bd4fe88"
     sha256 cellar: :any,                 arm64_sonoma:   "3113e6da1b2952a1fb192798702a682bb4a1b15528deef855728cb7747e73a6e"
     sha256 cellar: :any,                 arm64_ventura:  "35c0b71a4027266682fc887c730d90da8ed7a70376e676f083ccb77080aa487a"
     sha256 cellar: :any,                 arm64_monterey: "1eac839633823737b47b9908706b6e4fc71d868db0317505b5ced38c3bc18004"

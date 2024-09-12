@@ -10,6 +10,7 @@ class Pygitup < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a8eae527cd03ada9cef1d60403f749c5b857737a291e8c974c802b928412b88"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c35855737998db174e1881211025f98056b88b317248d42a33357e5a1898139"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0ecfc67c1a56c0bb8b55a838cfcc925423757b6313ea72a805db661dc899dd3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a6160237c7def873073d438a0dc30e54783e00ec6aad65d234c810a43cb6aaf"

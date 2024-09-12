@@ -7,6 +7,7 @@ class Pug < Formula
   head "https:github.comleg100pug.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4573eeedf5490a82cc60d450511ef2d652432db1b5a62249bf95bcaec220f97a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"

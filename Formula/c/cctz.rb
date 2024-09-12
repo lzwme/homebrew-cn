@@ -7,6 +7,7 @@ class Cctz < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "43ec1e3404f1eb3f05f967649c764aa06a7e4a8c32902214343a72676ffda5c7"
     sha256 cellar: :any,                 arm64_sonoma:   "eba6f2dc7740b64f07d96b4f408c51ed5adb7b948f7c6261155ee5da4e43c991"
     sha256 cellar: :any,                 arm64_ventura:  "dc5b93076b8c9637ebd074539ed68f79a967234d1ed59451e80b708aa438a499"
     sha256 cellar: :any,                 arm64_monterey: "2279fd2c826ddff71e1162f8b67829b34295a21f271352c0640b6f44c3e331c6"

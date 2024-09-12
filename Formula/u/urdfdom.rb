@@ -15,6 +15,7 @@ class Urdfdom < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "76feb2d39615d069a1dc8d372f39be0e56a69c1dfc12b2a52d5c77b125c01ee7"
     sha256 cellar: :any,                 arm64_sonoma:   "23ef43afad8dc543b4160fce22b692cfcbf4cb720412dbc43116eb23a56ef6c9"
     sha256 cellar: :any,                 arm64_ventura:  "662d33ada7489c772466fe72ab7efaf60aad3e05b8e083ef7e5519e948304287"
     sha256 cellar: :any,                 arm64_monterey: "93c2592a0fe16506c95af1cf603e1011ac1d0ee49cb620ed9e2605a2af9d8589"

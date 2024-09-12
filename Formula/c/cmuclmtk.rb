@@ -14,6 +14,7 @@ class Cmuclmtk < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "17749777bf2cedd02ab511ce2bab36a69389ea9c1f0b03c8a92927e3e54a5fae"
     sha256 cellar: :any,                 arm64_sonoma:   "1fe5f5fcb73a7580ae29500204bc6efb7073a5b9359dbadf0b045bc358de7697"
     sha256 cellar: :any,                 arm64_ventura:  "5c31b85c5a4c5696e53b70dca952b11cd009b4c2755dd8339d1fde8b61921047"
     sha256 cellar: :any,                 arm64_monterey: "6f336006d80dbcfce530db381fb28d6207953c9ba792f71c31f041b983b85c53"

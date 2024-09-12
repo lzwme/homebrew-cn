@@ -15,6 +15,7 @@ class Faust < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a12a10a2709187a7e8eb29af7938833924eba5a0530948a1106488e8c3b69c62"
     sha256 cellar: :any,                 arm64_sonoma:   "cbf99a14a52325f082f45f20b76bac55f04dbb5f151ca7e8182312af4bc75174"
     sha256 cellar: :any,                 arm64_ventura:  "ba73a779340c6013df8ddb47a52bd46c2d9ff1b2c682b9a33a22f1c2efcbb1ed"
     sha256 cellar: :any,                 arm64_monterey: "dc57cb1d1bd2bcb8d642b4977f4de43f4c55392e0ab3b2fc980bfbc66c1bd4cb"

@@ -12,6 +12,7 @@ class Calceph < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "384313e6d21b1cbd524d8c0942e96ea7aad6609f15a6e5d35752180c6ff69a1a"
     sha256 cellar: :any,                 arm64_sonoma:   "f3eaa36769c57dc20c5b7d0f16deeb6b45ed5c68f3f58630c727225e5d4ff586"
     sha256 cellar: :any,                 arm64_ventura:  "3ce78bef643795814bbcb10893afecf503f1b01f08534f6aa051d0bb3a27083e"
     sha256 cellar: :any,                 arm64_monterey: "eddf124a142143cec2c295f7f72577465a2ddea36d572d8b7042e940ed4753c0"

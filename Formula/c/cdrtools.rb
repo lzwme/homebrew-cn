@@ -33,6 +33,10 @@ class Cdrtools < Formula
     because: "both dvdrtools and cdrtools install binaries by the same name"
 
   def install
+    # Fix for newer clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     # Speed-up the build by skipping the compilation of the profiled libraries.
     # This could be done by dropping each occurrence of *_p.mk from the definition
     # of MK_FILES in every lib*/Makefile. But it is much easier to just remove all
@@ -40,7 +44,7 @@ class Cdrtools < Formula
     rm(Dir["lib*/*_p.mk"])
     # CFLAGS is required to work around autoconf breakages as of 3.02a
     system "smake", "INS_BASE=#{prefix}", "INS_RBASE=#{prefix}",
-           "CFLAGS=-Wno-implicit-function-declaration",
+           "CFLAGS=#{ENV.cflags}",
            "install"
     # cdrtools tries to install some generic smake headers, libraries and
     # manpages, which conflict with the copies installed by smake itself

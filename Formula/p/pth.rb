@@ -8,6 +8,7 @@ class Pth < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "ebea43fc620e5a3ca68ab4b1f05222b45ff99430e0572ad43a26ba2dc08178d2"
     sha256 cellar: :any,                 arm64_sonoma:   "2d11f5c8d0c953bd31407c69a481501bac6a990a0ca174304b0e9eae67028a6f"
     sha256 cellar: :any,                 arm64_ventura:  "fab1a0762b2bb6d4a662d7584e7e53a40c0c6e0a47173ee1b352ba5df0307d4c"
     sha256 cellar: :any,                 arm64_monterey: "43290f4af74260a674cffc3fa75fc0576a89e4040f57473e0601ff3052eca8e9"

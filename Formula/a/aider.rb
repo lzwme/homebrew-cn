@@ -9,6 +9,7 @@ class Aider < Formula
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f79ef598d4f98733a576e39173f141e719dcf367c1613bc5940802ceae32a683"
     sha256 cellar: :any,                 arm64_sonoma:   "34d16bdcfdfa569f3931b1e96260844dd4bda0bb19ca634741e3533f7dc69919"
     sha256 cellar: :any,                 arm64_ventura:  "6c950a033bbe013b91726b005531009b11aa70150d0f62b5bcf13383c1cefea6"
     sha256 cellar: :any,                 arm64_monterey: "8152a3e68787fd1928e7fae8920dc32b814a94d07935f9ab523102a3a515d6ec"

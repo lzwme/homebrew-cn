@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.48.tar.gz"
-  sha256 "c17da19a7ea4eb8a8130571319d90250b9aac3eae206446954f7e76c54720224"
+  url "https:github.comawsaws-cliarchiverefstags2.17.49.tar.gz"
+  sha256 "c456679420769114799f3e9c10dcc0b3972a6e596a720021aca6d1a226e996f4"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c06678bd77d65013c1520d374a9453de4879d360809fe7d11bbfcfef54ae3ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05177aaaaa8aebd4b70b68cf8e48730c55e93082cf2b4eff332e00e043ad09f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "423707ebe852e0c0d4ebf1f3e7d90b11051a9e01dff1c7244e3b4e0b1760f7cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "225e330fd2d05cc6b6433b621ee7cd6551f9318d049faf90b2ff8a9d7b94f349"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b3f525c37fac4b28597ec95a5846a3ff9f113c989f03b16f51cd6e906b6ae92"
-    sha256 cellar: :any_skip_relocation, monterey:       "28f3e2e51623972f5e87c7d7990095b0633c00d3bf7ca4a8cffccbc20496e8db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146ce5f2f3cd395fdfc4b75bf089af78a7abcf76575c1eac9f3beb5a057b3658"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16866ee0538cc2aadceaf86cb735564f59b64e525ee08cef47e3910718f98ce5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e87a45b6150e28b027d2a1208f0b183b5e0f3acabe29fafd0fb15aa32a10c7d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac8720c922ab083932315666599f9881ac02ec6b2d1e4d5a7b2b88b5f0dc6711"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b8c66ee822ab0f4169516ce505d489aa08be22b54180d75c9ed96e65c18403c"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b69e4754da8540e679b1f7b8159aedc24348d91421117ef72b63644560e272b"
+    sha256 cellar: :any_skip_relocation, monterey:       "87086a87f14aa58da6bba45129642fd871251912cc2a2d701b5623311b96878a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6a10d12828fb64f9104f7a8118df5b1d641064c7237e96e09ac12171f307f94"
   end
 
   depends_on "cmake" => :build

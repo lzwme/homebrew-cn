@@ -11,6 +11,7 @@ class Autobench < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e205a771a8b315d263fbfb8cac87e6cf90dec528afeb9d755908a9139a2499cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33abbf1a79c47258e22ff62a94c7d1ec19b304cce3a50780097bd65de10eac99"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1395f353dcbb83ca42019534ce574f19eabdfaf6e5fa203f9e16a5c5d199e0a0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "feb1d05812e4ccfb525567d4193b0a567498c7aefe1bdf7b9c632b3100ea3e75"

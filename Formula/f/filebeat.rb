@@ -10,6 +10,7 @@ class Filebeat < Formula
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b848f5f08eb936243e401b317061aea9df8cb79e97bdb1ea74a3c719c131a489"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbe496be27995e1fda93b832b6ab0fdfd735127fa112d4063e2dafa805c6d39d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ed3451a147b129de040da24ce6c6add7ecab25796809c3b42818c3ba79a01ec"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5bed0af5f2dd1e915ecebec31152343296072a72503bc06359a1b1c1207f5530"

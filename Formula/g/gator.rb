@@ -1,19 +1,19 @@
 class Gator < Formula
   desc "CLI Utility for Open Policy Agent Gatekeeper"
   homepage "https:open-policy-agent.github.iogatekeeperwebsitedocsgator"
-  url "https:github.comopen-policy-agentgatekeeperarchiverefstagsv3.17.0.tar.gz"
-  sha256 "21393d26eda2d07366bac5cfc6f1a0eebec140ec36003ab766536f029c751968"
+  url "https:github.comopen-policy-agentgatekeeperarchiverefstagsv3.17.1.tar.gz"
+  sha256 "0c81dd2326c017dd4e7c61745525ff8b4ce8a467fca10c96df5696cea2009db7"
   license "Apache-2.0"
   head "https:github.comopen-policy-agentgatekeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b7d3e6be06c133db52be65967c94e83fa4964404dc64ae0e8f98d973e4beede"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b7d3e6be06c133db52be65967c94e83fa4964404dc64ae0e8f98d973e4beede"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b7d3e6be06c133db52be65967c94e83fa4964404dc64ae0e8f98d973e4beede"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5239077c96d5e3be2ee98d62eb97d719f28b8bcebf28b3c6e46e26cf7cb7e99d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5239077c96d5e3be2ee98d62eb97d719f28b8bcebf28b3c6e46e26cf7cb7e99d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5239077c96d5e3be2ee98d62eb97d719f28b8bcebf28b3c6e46e26cf7cb7e99d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef854c02c09cace7a8d50466b3235002d462ad03352a7d4ae462bea906c97d40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "218fe90b680e0b662dc1b431e7f557aa7bfc5c6f73495afd03f5345946bd8fe9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "218fe90b680e0b662dc1b431e7f557aa7bfc5c6f73495afd03f5345946bd8fe9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "218fe90b680e0b662dc1b431e7f557aa7bfc5c6f73495afd03f5345946bd8fe9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d14e0ad02a6cbea5ddcfda33378e8ed8d9cd96581bb800d71f926f2b815b379c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d14e0ad02a6cbea5ddcfda33378e8ed8d9cd96581bb800d71f926f2b815b379c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d14e0ad02a6cbea5ddcfda33378e8ed8d9cd96581bb800d71f926f2b815b379c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "566d9c4a2b469d277c17bdf8e93cfd26493f84c313058115e81227da21be0bb5"
   end
 
   depends_on "go" => :build

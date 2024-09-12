@@ -7,6 +7,7 @@ class Mold < Formula
   head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f616041810d569cb715eb8d8e3fafffb61cbe1a789dd7e872174dda8ead4ca65"
     sha256 cellar: :any,                 arm64_sonoma:   "b31ee1034a1cb33149c1b5ffcddb7559d361bedebf37ec456f052730546f0aec"
     sha256 cellar: :any,                 arm64_ventura:  "9fd7bb5e5b3b8958476b0273ffa33b31741803cd019b3ebb66cdca8c7c30c26f"
     sha256 cellar: :any,                 arm64_monterey: "e167492e6bb3aff5418ac8b8989d3b0de57d75768e7c114f03cc39919cc1337c"

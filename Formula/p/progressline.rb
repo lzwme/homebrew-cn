@@ -7,9 +7,10 @@ class Progressline < Formula
   head "https:github.comkattoufProgressLine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8cd9e5aa7f6599fde64b50d46e56a8798b2c2ac611de87f970c82fea287bb79d"
-    sha256 cellar: :any_skip_relocation, sonoma:       "c3cb4c78994ff6ff3b0460cd9d30340874129774953ac83e91cb800c314e2e5d"
-    sha256                               x86_64_linux: "83a77fb6a7d99fb2a1483f855db990ed18f19ee0be86d78b7567f46fb8ded34e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af4261f2359e3299992684218d12146905f3a74b24c77e9da3d9ac7fb43a263f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cd9e5aa7f6599fde64b50d46e56a8798b2c2ac611de87f970c82fea287bb79d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3cb4c78994ff6ff3b0460cd9d30340874129774953ac83e91cb800c314e2e5d"
+    sha256                               x86_64_linux:  "83a77fb6a7d99fb2a1483f855db990ed18f19ee0be86d78b7567f46fb8ded34e"
   end
 
   # requires Swift 5.10

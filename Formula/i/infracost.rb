@@ -7,6 +7,7 @@ class Infracost < Formula
   head "https:github.cominfracostinfracost.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1ce1d05300f648e8114e305b13ff0d2fb8fe6feb71efbee9b6ca13076045fe2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e5b7bb2c8c23eb174f992a15617eb71b9b1e044d534a0b83ca968e7e74b46d9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e5b7bb2c8c23eb174f992a15617eb71b9b1e044d534a0b83ca968e7e74b46d9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2e5b7bb2c8c23eb174f992a15617eb71b9b1e044d534a0b83ca968e7e74b46d9"

@@ -6,6 +6,7 @@ class Ko < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8631b1743c1ff883a6a89b70d38d804e294423d2e9d50b69483086b2811d596a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a81d1898cb12ae86c15a5a7181dda0572c90338f423caebfee80e28566c1111"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "39741725bb79ca8ae6e740876944a1acfd9e04087eaa6c7e569a5e38c4028e49"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e77ba1346f207e1333308b8b9076c06a8f6bd0caaa8a2c45235cdbd75f0fc96"

@@ -8,6 +8,7 @@ class Chapel < Formula
   head "https:github.comchapel-langchapel.git", branch: "main"
 
   bottle do
+    sha256 arm64_sequoia:  "2d9ed5b132c2dd7ee095a4a5e4edf2cdbe573232d94403e7fa2b4d1b55c801e7"
     sha256 arm64_sonoma:   "8fef36b23b39444d16b245ebdbe8db4e9eacf700237c9a45b855481147bf38ec"
     sha256 arm64_ventura:  "9e8107f9f7a48cfd519ae6a240ad2b21a5a380d40177b7bcef8126b03447c053"
     sha256 arm64_monterey: "1cba37d433a5b4a893f9b220cf5ca0434bca0bfa383e7724ee71096a6598fc8f"

@@ -44,6 +44,8 @@ class Uudeview < Formula
   end
 
   def install
+    # Fix for newer clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
     ENV.append_to_cflags "-DSTDC_HEADERS"
     system ".configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",

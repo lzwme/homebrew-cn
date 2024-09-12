@@ -12,6 +12,7 @@ class Aptos < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1663ada72696fe3690ceb71b7f2a5a6067fd6ead66622ff983c6392b2e88cbc0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "036d29de435b5607e38cb884869a1d7245c166851083e43150e4b4a4eba16f52"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e75cb2bb62b203547c051edde37aa1103453bf0048c43c2d474b50121a8d41d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fabc3d55657d5367746a1f573f0f3324d4d2615ec048ec80fd335863de3f15f8"

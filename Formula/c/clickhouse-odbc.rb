@@ -15,6 +15,7 @@ class ClickhouseOdbc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "511592ca4aae49e95712ca4383ef893cc7c432a114d4e5d4e0ec43849a7abc6b"
     sha256 cellar: :any,                 arm64_sonoma:   "d1ec82bbcf45c1c3526a4699da073b5ce44de9c0d74b823d0350b7ca937dbffc"
     sha256 cellar: :any,                 arm64_ventura:  "be163859c30c1eb7b874d975147cf3cd3198fc02de5b24cbb0356ebdaa2ef371"
     sha256 cellar: :any,                 arm64_monterey: "c404681ad9b6d7028f1b82788aea502c01eb9aa7ef17867fdcbeefda20c7da17"

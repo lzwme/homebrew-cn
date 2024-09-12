@@ -6,6 +6,7 @@ class Catch2 < Formula
   license "BSL-1.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0adac11a4ffe885f41b99542456c148ba330f863aea9b14a704256b60c3c6b1d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e989fb335f09b75b0689a44d90e72ec074f1eb88fb86cab2bd5e6eb5519e615e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ee178fc874cbabe0d78fde8212b3b8920eea870b16b712883e65d4e0a4ae01a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9e61015751aed854f4d21cfcd7b1f97e9e6624fd4cb19e03ef421f7a1af55657"

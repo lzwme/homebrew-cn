@@ -13,6 +13,7 @@ class BoostBuild < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c752393f893651d507c3e0b2e985e7fa34948803de029c48318486189b1585db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c63aaf2e3aa3647a9acbd6a250898f6456d05715d9cf2b20bf23afca7a4ed1b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b6cce6062de22313da350f857d57d64c69be7a22775e7561c6f4733ff40822f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f97fa77800303262285787363d0750b5cf54747ddcaa9c53af35396f761269b0"

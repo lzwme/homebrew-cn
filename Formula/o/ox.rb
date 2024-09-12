@@ -7,6 +7,7 @@ class Ox < Formula
   head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "27c762b972339c18ac0b77d86130299ee18f3cfd70ad2b557ce8341debd09ca8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a139c382cd22a128f22de230c285bfd8f2191412de762cb20bb0f7717707547"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2322d27a12e8456a257d4fb8dd2956f1927ba83faf56474735cbc3337bffe6e8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "813fd47412499ae6c64bb82a62eb92f87b7728d75af8e847917141b73fd85826"

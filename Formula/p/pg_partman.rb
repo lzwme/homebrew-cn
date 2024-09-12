@@ -6,6 +6,7 @@ class PgPartman < Formula
   license "PostgreSQL"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fde075f32db1d1f8f7b3d954cd30ecb1bec6bcbf6fc838084ec468864b5f3bab"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c56840f6d344008d864863de5feff7b47c2bd0c521083d07e5ef49b4924a3809"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf48c9c38dcb45a5646e2148c49d0de6a7099ed316e52b9a3cca5faac1500b5e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eda23266bd52c4628e3882d906aa9dad2a7db08d862040c55ad8c946c4e29975"

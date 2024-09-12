@@ -7,6 +7,7 @@ class Enzyme < Formula
   head "https:github.comEnzymeADEnzyme.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "01e3f6c857f4f28ab0c338eb596a3dd25f4d71db02faaf99a3a58fe7c0bf9f90"
     sha256 cellar: :any,                 arm64_sonoma:   "4acc1ec132d5344b1a2fd5846d67616529dc1420b8957e52f387c87c4af3f31a"
     sha256 cellar: :any,                 arm64_ventura:  "02737a76fa224cff38dffcf9e4bdab1e13da22dcba1994b3f99306cf497c697e"
     sha256 cellar: :any,                 arm64_monterey: "bcd9b320147a574d0dbc6fb341fc4bd19bac77c2c0fa2f1aad67ec50ef22635e"

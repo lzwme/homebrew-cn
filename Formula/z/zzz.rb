@@ -7,6 +7,7 @@ class Zzz < Formula
   head "https:github.comOrcZzz.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fd0ee248946ce362be9296be1706999d0e32f120f86e07923d5f98f58ddd014b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87aded93dd5a70ab018880e46586b6a7c0929414def405edb1db0e1e6b7a5936"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da5ac10ecb8c990e69702b8c671a701d662ab63755a25b2fd0a90e84790f007"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1a1135d50a709f3c6a64316e5a92a6f269bdb865d21fa26e279c38344afde541"
@@ -20,6 +21,12 @@ class Zzz < Formula
   end
 
   depends_on :macos
+
+  # build patch for main function signature, upstream pr ref, https:github.comOrcZzzpull6
+  patch do
+    url "https:github.comOrcZzzcommitefb6f6314722de65e709df6dc5f94284cf12abaf.patch?full_index=1"
+    sha256 "6e92a6d87c7ddeff5308318b80f4287434cf793a4cf2b1761193b5aff2ea5867"
+  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

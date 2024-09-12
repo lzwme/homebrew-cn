@@ -9,6 +9,7 @@ class Badkeys < Formula
   head "https:github.combadkeysbadkeys.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7531d497fd1373b616ebb88f5f1201d7f1f0594a31032d3b934e83464acee51e"
     sha256 cellar: :any,                 arm64_sonoma:   "b3c315bd10c223cf517cd24a75621bc696d9cbc9f52f45c08969394dea6c1ce8"
     sha256 cellar: :any,                 arm64_ventura:  "e3604277f5e04f67c1d57bdf70780be4ce9b19efc1d540c860afeafc00a4e728"
     sha256 cellar: :any,                 arm64_monterey: "ef288acf3f669b31d26ef1660eb0bd0f9546062b10791c95655e26700227b121"

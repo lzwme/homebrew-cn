@@ -8,6 +8,7 @@ class Ccache < Formula
   head "https:github.comccacheccache.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f89e12a721fd48ed3dcfcc3eff8287ba0c1998dda77dab5a29da49611f24d473"
     sha256 cellar: :any,                 arm64_sonoma:   "99a4fa919beefde392d18a2584582573c1da1846a235dd1cb263143ff6d1b7cb"
     sha256 cellar: :any,                 arm64_ventura:  "64ddf5e321d706fc72217b93e1006fce74bd0455d44fbbf1be19d03f9dcd9655"
     sha256 cellar: :any,                 arm64_monterey: "b5e4df60ea8300de0ab06b6c3b59369b8ace64a1da2da40805209b4d1b3dfe87"

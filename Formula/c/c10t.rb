@@ -7,6 +7,7 @@ class C10t < Formula
   revision 9
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0221ec0b0d70aa261b1de4b8bf9d6233f03938cd664e7507c032b90804679deb"
     sha256 cellar: :any,                 arm64_sonoma:   "65c200e6b93a21b12be0194fa4115c56bf86a919e73a9b77a005db40bc5e00f2"
     sha256 cellar: :any,                 arm64_ventura:  "359e543872760a9b52bda1a3fce09dee9fe58ede5dc73b9ee2002f61ed95cb31"
     sha256 cellar: :any,                 arm64_monterey: "865a9cd8ba52885d3a1954bc546afd9795e70e23d93daa92defa558d1aede4ad"

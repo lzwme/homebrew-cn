@@ -7,6 +7,7 @@ class AdaUrl < Formula
   head "https:github.comada-urlada.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ee5631616c184991a427c6ccd82b4ae49928524dc61dd21444d5f31c2202421"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b8a8d3bc904c61fe3b13a2c9ea6cb1627c3b6ff2b139da50c00d5eec2f6344c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a46f54bfb577dc5bfa1431269fa1b93af030640ef7107881fe4f295045fb3475"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4a8a04764f60f6857276d5591649367b0c52527d7245248b76b8aaf7992792a2"

@@ -6,6 +6,7 @@ class DerAscii < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4b3c761e4d0e7c573dfd96fbc5f139c82aab57de49c79be3d5602a9782f252cb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04be50b0ec21794ec21769096bd228628fa8a1627a0098e10342eb15748bb850"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04be50b0ec21794ec21769096bd228628fa8a1627a0098e10342eb15748bb850"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "04be50b0ec21794ec21769096bd228628fa8a1627a0098e10342eb15748bb850"

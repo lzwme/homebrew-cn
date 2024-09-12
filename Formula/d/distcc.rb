@@ -16,6 +16,7 @@ class Distcc < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "a5141ba809a4b59ef06fb630123b18de8fae0f2fc00d82897d81903927fe73e4"
     sha256 arm64_sonoma:   "86f9db8cf49b2761bed7f067435d5e44a7e6d766f926d889b07feff6f0faf606"
     sha256 arm64_ventura:  "2e5d348a1fadf36a192c384d570935d3207c4328b56989429ccba71009218a65"
     sha256 arm64_monterey: "fbab64f137d740df58d38572b657f223ee7ac9b9b0bae4831a6a1d15b614a5c3"

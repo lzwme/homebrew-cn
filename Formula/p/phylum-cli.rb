@@ -7,6 +7,7 @@ class PhylumCli < Formula
   head "https:github.comphylum-devcli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7c789be7a57e3d4777573bab82e3492acd97f0a35df3a6f88cdd4a0a71794da6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a825f487e0b57a50176289ef53e5d77c0cc828f753d8d18d7f979e7f7dde1b0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5603cecce3a03193fa6e11fcb1829843ba18ccf9a9cb8b3ce71ea43261189753"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "93e2e7e6687ed24ae8a1ef8e2f703a55d8aaefecd285de258b63f6a8d86a8eae"

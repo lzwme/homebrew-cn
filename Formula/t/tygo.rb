@@ -8,6 +8,7 @@ class Tygo < Formula
   head "https:github.comgzuidhoftygo.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1765c1f1bba53fe6d5824cc2475a825542e7d00eb84d0cde131638a28fc2b936"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4f17c28b88367cdae42a6f18661e1e950c9437f73dc7771195d90d33b501136"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "076ab53d41892e8ec2dced7a3ed97e2f41e514dd9ff6984719566c7f8a9f3b52"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "24d969116e753863c168efc633d263f928679f48a6a8e709d773a530c2c87ea1"

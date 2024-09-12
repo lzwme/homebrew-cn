@@ -12,6 +12,7 @@ class GoCritic < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d14149ba927e9c4855fc81644ac54aa6875e6484cc22d47bb7fc608a004b9ead"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a77ac84e936fdb767303dfa002b05c7092ad0257751156dde0743050ef7023d1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d24bb21bc493d5662920c6a2453ae306ecce5390c41ce7b1ac329fd3294dd1f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a3f2d04eebe15c8a4f8cd94619c45a48f16ea7f413793bd461a61756b11b84b2"

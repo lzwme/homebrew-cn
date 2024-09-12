@@ -10,6 +10,7 @@ class VpnSlice < Formula
   head "https:github.comdlenskivpn-slice.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d270d7f94fde18010d2a79c443a5064c02596777b7e53dad4058622819593449"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f7f409f5fe1c9606d96d9c1dd48a075484d6d080be81ddd6959b219c7fc5ea3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f70962cccac91126411acd26a83dd6537528fee2884ebf613bd6fb4dc59f3ec7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fac93532860e47b154d134bb2c87edf7d9edf4ce6f012a15cc73f1477cfa4d45"

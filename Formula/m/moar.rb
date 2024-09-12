@@ -6,6 +6,7 @@ class Moar < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4ebd5a64c9f3b157f3e37d94aeac862b8fc8b03f0565c446822d9eef6fa9533d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ebd5a64c9f3b157f3e37d94aeac862b8fc8b03f0565c446822d9eef6fa9533d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ebd5a64c9f3b157f3e37d94aeac862b8fc8b03f0565c446822d9eef6fa9533d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4ebd5a64c9f3b157f3e37d94aeac862b8fc8b03f0565c446822d9eef6fa9533d"

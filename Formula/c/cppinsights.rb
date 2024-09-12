@@ -7,6 +7,7 @@ class Cppinsights < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a98eb7b557dfbbec2513985ca276c36ac0d3850d278ecdb5d7d17ed6337aa279"
     sha256 cellar: :any,                 arm64_sonoma:   "a73346fbd9edb64521a44f884289097c82361f2a0a459705dad0e8981b2f74fa"
     sha256 cellar: :any,                 arm64_ventura:  "3a1594c14be75f743a274b8f3e4093b122260d4ec82c9d67596f1141ce83d455"
     sha256 cellar: :any,                 arm64_monterey: "a1ce431bab70c47c4ec36092a09239b4786c45d1971ea1a4b670c15f8761fb60"

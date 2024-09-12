@@ -7,6 +7,7 @@ class Box2d < Formula
   head "https:github.comerincattoBox2D.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5fb381cacb973bb83acea61d445f4481e2986077925c462a72f0e42a56204761"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1004520deaab7266d3e2a3376c88c6a5ecbb0a5661fa0f758f9019a3fcaa4afa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "690e7314d93f6ce71411117355a7bbb20e80af3b6ee5e8ec3dc8a0206f8f8185"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "348e4835ab1d24fa9e5235881f7c2c1093aff7ed608830bdf505f89194190e75"

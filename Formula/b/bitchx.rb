@@ -25,6 +25,7 @@ class Bitchx < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "bb2902a6bb21cd1b2d5765652a7ef8c5b72a9ec645bab961d3d560320a96adb2"
     sha256 arm64_sonoma:   "774434de284a29888d4c9ed76671faf2903837d76a53acdfe25a8a358843c3ff"
     sha256 arm64_ventura:  "13c3a23d3e7316d509646ddbd5ee5442c096856124a4f2cc9123afee2ab66bfd"
     sha256 arm64_monterey: "2176f208cf2ef65ebe0fc9ea27d2581e21450a01f2b399aba4d0620085245bc2"

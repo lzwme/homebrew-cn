@@ -12,6 +12,7 @@ class Ethereum < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c41d5bd8eb74980e369d7c3e377e920fbd5ee96e0d7d3dabc441f014ac97968a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3d91e187a4148d481a5d9deabb4b507b75d553631d27af7a11bd99b14448027"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f8a2dac80416d7f4c2e40246c792e7cea12078fda77d5278c1ac7f23125344d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "76977435f02053dbd119ab131b480827ee6b6070cd48649c9be742b3af6eeb4d"

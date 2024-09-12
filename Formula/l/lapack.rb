@@ -14,6 +14,7 @@ class Lapack < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "83296d714b2d6e36d217c846347b6a8379c7c98abf41c78e04c6ccbe92b10c8c"
     sha256                               arm64_sonoma:   "bd21dff4c9a6b02755665bdc65ecd552225765120f99ed23c07cd60661b40c91"
     sha256                               arm64_ventura:  "146f145ece5043bc57054f286a40938090fbcbc89b3dffe65156eec700eff66a"
     sha256                               arm64_monterey: "0ac519dd79d49605b701100b8efed28473ab306956ebc5b7bd2a6e0ce6414e88"

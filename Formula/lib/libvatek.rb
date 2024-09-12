@@ -7,6 +7,7 @@ class Libvatek < Formula
   head "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "90fa70c7cfd06249ad341eb0972b4d90e902d8868cddde6ba669cdbe2e4740b9"
     sha256 cellar: :any,                 arm64_sonoma:   "0cc06fb62e01663ce4e68e119f9c250bfba4a0704e312589f30dda8e5ea173ab"
     sha256 cellar: :any,                 arm64_ventura:  "a83491dc4361af9536e53467b5fdbbd0b43e0591c0c452c76c5cc7599f101ac8"
     sha256 cellar: :any,                 arm64_monterey: "c9d734af1f8c9040363632e95b03455aded913f0acedaa1047c83d35f680f905"

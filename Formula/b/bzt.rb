@@ -9,6 +9,7 @@ class Bzt < Formula
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "62ff07db4648c6a0e3400ca4da897d160f1a600b51f5a48816f8be7615cadd90"
     sha256 cellar: :any,                 arm64_sonoma:   "9732de1b047a97034bfb543da5c03ac042fea77ade05e1f7e7fced34f445f8be"
     sha256 cellar: :any,                 arm64_ventura:  "cab30e0dcf8e6642d1cffee91b19b25507362ff590d1c1cb5b33fed23698a08b"
     sha256 cellar: :any,                 arm64_monterey: "a1dee37975d9db4f37f1c9ae24e45b37a9bafffd3aaf0a7d02105b8ce31a1d3b"

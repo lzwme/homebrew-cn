@@ -13,6 +13,7 @@ class Valkey < Formula
   head "https:github.comvalkey-iovalkey.git", branch: "unstable"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "210abf0c283cdfa88e6fb5dff21264fcdd9886d4d98427a967c64a28af0b3d3c"
     sha256 cellar: :any,                 arm64_sonoma:   "d3cd139668e121b5caa306ce301fda2614ca1b46941fe25db5a0a9b80a6ad8dd"
     sha256 cellar: :any,                 arm64_ventura:  "de9f479d5978b0bbf635299d225c3068a5e7f5aac8a410fbdf173a9cd78b3185"
     sha256 cellar: :any,                 arm64_monterey: "85a845363f2832856e4cbf131844254283b4c2c56f1a383a19bebf68be60a5d0"

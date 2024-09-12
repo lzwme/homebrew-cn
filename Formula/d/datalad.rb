@@ -8,6 +8,7 @@ class Datalad < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f927ae5a28e84218510c1842c6c9c91449499acd15a5df01f3d26b0c33862c4f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f7517916f05628ab6a6f86b4b75e6ce128753819547daab6ca8df93c2be2fa3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a19f3ac7e34e11c01389e5e6a2361a43ccd1ff507a24135056c702d1914765aa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "34e582f7190eef9f4ce445d805b48332967c4ffd5a8c6366379152742f7f46b4"

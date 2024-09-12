@@ -11,6 +11,7 @@ class Cxxtest < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9abfbc3e0eb5e5903e8e1e509c357299fd83b8fea4f0b7c33c63961491813197"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acdd395db8b77593f1d468bd9a47c10fa51b344bf50526df3fb965cde6f79ee6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74609617e8b9782eabdffe240ab7818a746ccd8eabe6ec4bce7d0cd98d240cc9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9b08f08b062b7627be2000866176fc1f00ff5c47130640ddf344a49ee827ee45"

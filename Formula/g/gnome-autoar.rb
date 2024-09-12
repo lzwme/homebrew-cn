@@ -14,6 +14,7 @@ class GnomeAutoar < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "82a0ecb8777d13f3ce427459f14143f538e2a7cb709b17436e8bfdd5418e2330"
     sha256 cellar: :any, arm64_sonoma:   "dd87d22bf4ee53a96407ff2516c9893ed0e8ed49f22300b166908756fa424092"
     sha256 cellar: :any, arm64_ventura:  "a3cca1e7e9e0f12e2f25dcbad3698ccbc249e943d0d659225f03631f819bff3a"
     sha256 cellar: :any, arm64_monterey: "4067fd35e3d4905a49adf80fddd05785b69981e77a0d3ca5d48b55362b837eea"

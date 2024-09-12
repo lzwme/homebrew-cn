@@ -14,6 +14,7 @@ class Convertlit < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "16f86a985e46d742fb6e5ad4830e0d415611c75a523c90a5dc6de3669c0f179b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cc99de9129ef3228e3c8b9998bbd227846308b35c0de66e9103ed4defef29d3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6f7298822916f88187c248ccf8c71b485eb397664fc3a84d84ca25f480de3b6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "487f8eae8213a6480a40b34b11acadb1e948090e3240ab557124c348e76a398c"

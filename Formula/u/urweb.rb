@@ -7,6 +7,7 @@ class Urweb < Formula
   revision 9
 
   bottle do
+    sha256 arm64_sequoia:  "f7a2e5822d2049c20f829894b478bf5cb4413beff6c6a212084cf0caf24e2170"
     sha256 arm64_sonoma:   "6b1cf20e87eb2695e60148e03f989674f8073e9b4122ca2e1fa11d2b73b6fbce"
     sha256 arm64_ventura:  "6f44ca686b493d46567ebf63aedc2872cb5ca20e1b72dad7d787c31e3d0fe98d"
     sha256 arm64_monterey: "b9837a19f85054bd9de1292aa7296fd083d2cc82fcca13547d51aeedbf79ecd7"

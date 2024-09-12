@@ -11,6 +11,7 @@ class Knot < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "189a055d1c3786b81bcc6163c0ad3590be8688a936242db45e89a8e63c089017"
     sha256 arm64_sonoma:   "f49c6ab26df4e8035ca51efa8f7303ef3a7a83cccd88e0a3b2e900bb7a4844f4"
     sha256 arm64_ventura:  "199069645af7ea674609b299319130b85606c328c295490dfba2cce7c5023fe1"
     sha256 arm64_monterey: "bab431230b2b292e20a9450854cb69ebf0be1e670a808f53fa3c406a2abc2086"

@@ -13,6 +13,7 @@ class Cubeb < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "82458e11a000c10cb1268c1e9118c0d0e447fc40d49bb6e0426288ea87d05e1b"
     sha256 cellar: :any, arm64_sonoma:   "478c0b66412477519eeb295fe7788436e843af7f98e10df61de6f8a942235772"
     sha256 cellar: :any, arm64_ventura:  "b16ab1b2aea0c4cec3a8015e3ead96e97c59719c655ec87d94ed5b54d81b30f8"
     sha256 cellar: :any, arm64_monterey: "506fb6090f05b4275bde1aff78c0eb1bf72959fbeac5c53018c728863ef1195f"

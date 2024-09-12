@@ -7,6 +7,7 @@ class Ocicl < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sequoia:  "533252e970cb44b29364f295447b4d96a59b0ab02c869dd1d6367acede18ab6d"
     sha256 arm64_sonoma:   "82501d915221b64430f5ca69f0e202d131be1bf56ce1e247f29065d02ad4b7cd"
     sha256 arm64_ventura:  "22f4b1230a1f62b761815707b71dd01918ac29fa82d7b095c8836dac02029291"
     sha256 arm64_monterey: "85817a302ccc86e82bbd8f9696cf5229dddf03f5ff6e6a94e4d078f384f820d4"

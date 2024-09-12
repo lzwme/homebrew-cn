@@ -9,6 +9,7 @@ class Principalmapper < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "26ff43ab706e2d6fe4bf0142d6044f3e169e6793a04ce8493f28fa287a95bf4e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ba66a19c2f3e1a1f23656651819f41e943350d3d4b23e99dfb2779e58881ef5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ba66a19c2f3e1a1f23656651819f41e943350d3d4b23e99dfb2779e58881ef5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ba66a19c2f3e1a1f23656651819f41e943350d3d4b23e99dfb2779e58881ef5"

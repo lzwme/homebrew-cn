@@ -6,6 +6,7 @@ class Libmtp < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e0faf33f3b1230922d73472334949d6d8b1265fbee9ff8bcf37898c8c4437971"
     sha256 cellar: :any,                 arm64_sonoma:   "e5fcc63cb5a7c844f964a1bca0e6e55f072d0d117bfcc2b7683e0d1bab4e39b2"
     sha256 cellar: :any,                 arm64_ventura:  "e410f7a6dab05b9bf74a0c179450d8e563f60802a2789da986841dcefd493f56"
     sha256 cellar: :any,                 arm64_monterey: "f0127838120cb34a56434b2ff8b267f4f280cbb2d06ab48fb959d0f641e92f13"

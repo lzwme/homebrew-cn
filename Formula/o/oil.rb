@@ -11,6 +11,7 @@ class Oil < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d9690ca442936dd7f511ea47b9f38dd8f1e912d750f2f973436484d9bbab5498"
     sha256 arm64_sonoma:   "3bd17a6e3a21658e3ea556d2e83658a31ebacb4c44d2cf2a545d7fcc13d4be7b"
     sha256 arm64_ventura:  "c6d90b4d1ed90b69341594a1c2cc5dad0b7589103117a8a56b1c35f67a3d1858"
     sha256 arm64_monterey: "3a6ee4291d757da8bd9c7057b6b90e596717e8594968cbe822e656cedf7eab32"

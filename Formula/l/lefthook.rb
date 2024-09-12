@@ -7,6 +7,7 @@ class Lefthook < Formula
   head "https:github.comevilmartianslefthook.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1ff454631fa0fa454378a851b27b4f9248cc0be0d8c0dd2c17d1d15bcfea5086"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1cecde163b0f88f8e86f74de8462c6d4ffe1e068a0e8669796bdc658ca57a985"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cecde163b0f88f8e86f74de8462c6d4ffe1e068a0e8669796bdc658ca57a985"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1cecde163b0f88f8e86f74de8462c6d4ffe1e068a0e8669796bdc658ca57a985"

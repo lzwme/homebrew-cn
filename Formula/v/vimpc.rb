@@ -7,6 +7,7 @@ class Vimpc < Formula
   head "https:github.comboysetsfrogvimpc.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "d7224868acdc3f21753f66baf1e1a5631651da85e89d7885f49b48137d9a1e67"
     sha256 arm64_sonoma:   "08b6a0c50415af4361a442810e8d4fb190e64f123230087604359fd00b10e654"
     sha256 arm64_ventura:  "a738652b8bbf20ab0449d5eea600f10aa602d5d7a490324c17efe2961afbbce5"
     sha256 arm64_monterey: "80a71521b623830617733116cbce155ba0598dac8604c7e19438207946ec1406"

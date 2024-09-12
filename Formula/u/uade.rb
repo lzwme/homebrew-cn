@@ -26,6 +26,7 @@ class Uade < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "273c248eab77cd0f9c20d07686fafc0d7c10e8b421b9bb4e7b04cfce17db6fbe"
     sha256 arm64_sonoma:   "ca6ab0d34ad18f7f1af0024fe14cb9cd6bef936ef02f3d77eef3d5fa369eaf58"
     sha256 arm64_ventura:  "ff3b1f1c5f687a21cd58cf8b27a057dde20cc10f416bc88dcf0397c58f9bbbe0"
     sha256 arm64_monterey: "9af83e4001e9d24b2fc574e0c878e7d4d30df953cb343d5538cc3cb4b8487daa"

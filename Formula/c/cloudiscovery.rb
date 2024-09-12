@@ -9,6 +9,7 @@ class Cloudiscovery < Formula
   revision 3
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39af9c9226b1c243584050b82916e01469fca154da540e8aa849f15cb6eb8d68"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81d891341180b4dcb85a30cd7c0210a17263516b1ff712b7b4f8576b7e5b652d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7dfc0d0262812d711e53042fe71eee446d090d76160ce7a8fcc8f15bbc2a281f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "25ed7fbaf11794c40edb655c16a888ad36fb7120b22ffd4873e5f1f07e1b69b3"

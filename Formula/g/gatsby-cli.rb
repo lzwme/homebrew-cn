@@ -7,6 +7,7 @@ class GatsbyCli < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "f7db10ee18620b1843ff8cd40dab82efe76c49c28f9cb9be0fd4c09c5dd4f010"
     sha256                               arm64_sonoma:   "b8fe2d5de1dd51bad67a53ebe805254ebd9e503a98c9812a16236eeef69c08e0"
     sha256                               arm64_ventura:  "5d245f32ae46a4fa1592417d2cf745c4a7446c3546991ab494e3f27ff6416086"
     sha256                               arm64_monterey: "25049c42733ca1a7df09263eccbcdf1be5545c41d81c33ca5b42979f1e34bc33"

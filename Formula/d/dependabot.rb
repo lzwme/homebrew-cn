@@ -7,6 +7,7 @@ class Dependabot < Formula
   head "https:github.comdependabotcli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4add3d15ddece3726d1bb617becce4e7f2fe5485da07a8de1b1e9636b4f76227"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd7e038445aeda191a9a83a923c2e9f9c6c3293e70b99d9ed80cd2b289cb69b5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8310ed4fa7c2e8f346832a29f517b0197bd3d723d1f8f1c4d7b76d0469ad7988"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "facbad6559366226753da4aab32209cdfe010a2c937095a1c3e40dfe4c17f34b"

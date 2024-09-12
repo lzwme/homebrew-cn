@@ -6,6 +6,7 @@ class AwsAuth < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d586f7428e369586475c9ee9f3b4865aa181191a54bbf60f62e99e29d0cf369f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a60b04e342a6f7740665def07e9a7851d7214d47e1da66641e4b6692c7b67067"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a60b04e342a6f7740665def07e9a7851d7214d47e1da66641e4b6692c7b67067"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a60b04e342a6f7740665def07e9a7851d7214d47e1da66641e4b6692c7b67067"

@@ -12,6 +12,7 @@ class Moon < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "75b2c4230fa647749d3bce9459c848f772eec1ac5dbf5e3cf31c79b7e987a358"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21bb3e6e553f67c336134ba4db0cdae50bf37b395515439298e9b86e0d485f3e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "15a646e0915226107ca49ab31333b08176f424bb7cb4e46abaebafb758d7ec4c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "814c4e95d77b00f13ce003c9189dd95516afc580977a75c4db88fbffddc27d9d"

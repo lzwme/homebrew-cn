@@ -13,6 +13,7 @@ class Adios2 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "4313cd9f05eb9c542c79ddd813453e8eaf33803e8742402382aea0aa52305720"
     sha256 arm64_sonoma:   "c6173e887d128c8868a087e0cb87c024d6a4eca32509f5de491875d637e18632"
     sha256 arm64_ventura:  "4063bcd651c2f7e2a7b387a8fbba8962835575e9d087f908a23f62e66a4e463d"
     sha256 arm64_monterey: "cc1db18103afaa9280c284a63976630445f3b2f1bc7eb0ff2d21300aa817a8d7"

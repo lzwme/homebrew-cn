@@ -1,19 +1,19 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
   homepage "https:developers.stellar.org"
-  url "https:github.comstellarstellar-cliarchiverefstagsv21.4.1.tar.gz"
-  sha256 "3e6c6e0162b96fc0098f2f2c9d8db48bcc18f638fb7eb82e20b09ca7579afc23"
+  url "https:github.comstellarstellar-cliarchiverefstagsv21.5.0.tar.gz"
+  sha256 "9d9209f6bde7ed5a68422ef3ff5cd37f16a2209c9c5b5676224a7132ccdfd5ec"
   license "Apache-2.0"
   head "https:github.comstellarstellar-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "238b2a02315603eb4be4b4632b74542a13a4d9c687cd7932993df07d7e0d44f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b93e6d98d550a8114f19b036199c0fd95548283789d8f2233f553a13d68a0c9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50461eec1c0b6bfdb8ddd81e9916bd3c7fded28b36dd12bea3edcba6b6508518"
-    sha256 cellar: :any_skip_relocation, sonoma:         "92d953d9ea710dcfe876404fc87b72634b9f2e5778095d84b2eea776f753347a"
-    sha256 cellar: :any_skip_relocation, ventura:        "8488c0af3e3c8a86819e2f7110c75c790554418c66f35bd308f43c18478a3bb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "16a7e92bda105afe709a1e1c36e23d1bb30a8954259eb0fd9233ac51901d57de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92707f24439158df63df9d1996161423635464df5a8d6d6e87af9438ec60ef7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64cc11be0010a21ca59f850f740ada377701fccf5a22e2cec671edb75ce269ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e218a5a89acae8caab9cd0610db20911b1e602e272dcefcb03ddd0209c6377a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9f5147f447727a36d6e86cfd727cf681669b0213f1ed21da2cb16e0f9cf2508"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67e8e90667233e0d6cc55b1481d02bcb4c8c78a1cd9f60f66e21b6a092d0fd95"
+    sha256 cellar: :any_skip_relocation, ventura:        "e49d8af8a90c4ecc1b0a72ad2728e7871a66d3ee37f0a3aad1b4e9822bf7b04b"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d6d7dfeabcc520ee2b255a6d2d818e82ffefeaa12ddeb36e495f954e3aa72df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eaec424f808bc95bef66c9abd1ce88475493ac8ccb4080b415c4da57da15406"
   end
 
   depends_on "pkg-config" => :build

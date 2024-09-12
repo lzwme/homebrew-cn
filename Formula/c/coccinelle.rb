@@ -13,6 +13,7 @@ class Coccinelle < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "6c1425bca745da7fb5ecf7ccdbe69794c317e8112aabea1b6d27907e3bafb8cf"
     sha256 arm64_sonoma:   "a36c5cfcdf9bf41142f9475fcc6ceb194241befb2e52649a4c71e53fb2602961"
     sha256 arm64_ventura:  "1393cf374ce5f991413ab0df0463ba44d40c2d82a4799e859d8b09fbab8ed42f"
     sha256 arm64_monterey: "ef00df9ef65948e04513d222ffdcad06bfc5b3a7637d4bd0db36de3d08f93678"

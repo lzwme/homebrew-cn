@@ -6,6 +6,7 @@ class Mailpit < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "318d6f8d6942af514f04443e0f84973daab5733160a6b2df6a820878e657d88f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4fe573912ba4a6a29a291d052f387fb864d3d8c255d9d174b29a08a3d3acd19"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f5cf775dd20e5f205bc8da037384b86a10b8dd26dd3230defb6b9c94c12293b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fb2ad93a6d3c89e7c7e8cc635b7fafcedd9cc32dfa4bd620ab826bd4dea8bab1"

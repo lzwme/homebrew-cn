@@ -16,6 +16,7 @@ class EyeD3 < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a575ba1abc45a414812a5241174167144ed49795f0cc1c1d36468c20e00cf7ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7dd9ef41619ee1ba37f59d0f85ec9312baa153c49e4ed2f04623f1a5a977e78"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "492d06caf21120e8d3fe5c7ed475d38c75fb911c25726dbd1f876928610fad02"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1afc95c6df87e421ba9e8528a624bd6511c365df11eb1916dde56a4df33b1700"

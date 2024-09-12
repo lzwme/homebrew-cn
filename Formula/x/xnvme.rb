@@ -6,6 +6,7 @@ class Xnvme < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e69ea284de240b3a3f743569616b8846c7d106bd2ad8339d06aa0583108bd83f"
     sha256 cellar: :any,                 arm64_sonoma:   "068b1893f5a637342821b2673d967a86f2a6a8c6bff50e7b3133e8cf6956569a"
     sha256 cellar: :any,                 arm64_ventura:  "76d887bddc8a20e8547a45c7eb151ac86d78cad34f6866c5d25af249f76c77d0"
     sha256 cellar: :any,                 arm64_monterey: "a8460f621deaeba81a4267ac2ac54063c6361fdcd1bdc9852f7793742f5b89c7"

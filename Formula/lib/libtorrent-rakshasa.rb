@@ -13,6 +13,7 @@ class LibtorrentRakshasa < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "dba858445cc6c078216fb9da10fb9ab2f1884307e83e309c0ff251993ba443d4"
     sha256 cellar: :any,                 arm64_sonoma:   "9317851dfcfae89f25254c8c5b7dde87ae5ddff6845f65067af9d181b2e53423"
     sha256 cellar: :any,                 arm64_ventura:  "379e99e3801c7e703f998612e750dd93672fd24805725ebef3b665c3c86f8b81"
     sha256 cellar: :any,                 arm64_monterey: "549f2adddde6fc9af3aaf1839225a61bbe157c0a93b32d5acf9ac019ad2877e8"

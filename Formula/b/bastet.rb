@@ -7,6 +7,7 @@ class Bastet < Formula
   revision 9
 
   bottle do
+    sha256 arm64_sequoia:  "6573987f9ba4434ee5ed34901157c7a6f7f6cfd52d00e67b5955733c34a4b0e0"
     sha256 arm64_sonoma:   "99510b92a64c32f9abda92c23c45f7700950c4b656c90c4f45dcffa7b21c0a69"
     sha256 arm64_ventura:  "b95a617b157fac8e977ed972c638ff36b388dec9c1ff2d2ae03a75eac78971bf"
     sha256 arm64_monterey: "beaa5643a5e1898e3c4a750b08b1ab48a950ccbaaed03ab258c30660cb905444"

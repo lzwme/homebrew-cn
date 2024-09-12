@@ -6,6 +6,7 @@ class CubejsCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "836952500d4bcb4d0ce3f07e3272e22ec70097e29634d9e274522893f1c1d2fd"
     sha256 cellar: :any,                 arm64_sonoma:   "b10ed36446e28a1a1f5cca85ad0b5ca4138d4adcb07442bca9ff976f954bb780"
     sha256 cellar: :any,                 arm64_ventura:  "b10ed36446e28a1a1f5cca85ad0b5ca4138d4adcb07442bca9ff976f954bb780"
     sha256 cellar: :any,                 arm64_monterey: "b10ed36446e28a1a1f5cca85ad0b5ca4138d4adcb07442bca9ff976f954bb780"

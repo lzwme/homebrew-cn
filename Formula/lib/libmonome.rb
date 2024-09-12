@@ -7,6 +7,7 @@ class Libmonome < Formula
   head "https:github.commonomelibmonome.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "28d70b7f4a63a0a406a4150add7de846c403cacbcf735188cc25758b1895c185"
     sha256 cellar: :any,                 arm64_sonoma:   "50f7458c3bb329d5a42369d4e6a225f539b053589021324722cffdfc299ebdc1"
     sha256 cellar: :any,                 arm64_ventura:  "51b270c3e2424d2a9f139f89c0b928884a65a6553a96c88f6a2714ed386db4f4"
     sha256 cellar: :any,                 arm64_monterey: "80ed33d9b675b1e28ba7edc6ec3dfdcc9b917aaa54c66917f7af2d34a5f9c522"

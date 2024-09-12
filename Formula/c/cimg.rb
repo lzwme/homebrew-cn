@@ -11,6 +11,7 @@ class Cimg < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "194a508f1b48c29b295b147a46381afadc2d3814c706b650ecc37eb35e25fa91"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "194a508f1b48c29b295b147a46381afadc2d3814c706b650ecc37eb35e25fa91"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "194a508f1b48c29b295b147a46381afadc2d3814c706b650ecc37eb35e25fa91"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "194a508f1b48c29b295b147a46381afadc2d3814c706b650ecc37eb35e25fa91"

@@ -12,6 +12,7 @@ class Wal2json < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aa482f8f7144a2234d8fc2882fa5795a99788c7343e8e688c76257ac637d7e18"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "710ff8f3b3864341881f87eb09404d769eca2e46b55ee16cb04ba6965a9663be"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e40b5c9a14fbc9201990660af9061bb67c3a14b1354b0f8dbaca18c57667103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dd10e9889a5adf9fe3868ed5b6c66abe196b1541b48cbeccae8fba619df05205"

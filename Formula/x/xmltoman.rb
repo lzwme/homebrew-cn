@@ -11,6 +11,7 @@ class Xmltoman < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd5bd5e45226df0b0e79d4dac5ef271731c96f568d275d2c4f903d9139c477b4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"

@@ -13,6 +13,7 @@ class Imapsync < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8517e7483d98d202a4e7d403b31bd5324f6709b33ec7472f16c492ce56cc7e26"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8edf209e49e0f273a7957fcdb5a463c92a815b8ba0e7e0c4555d2df638c4e43f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f96bcbd8aa6e9722ab99ae734ab8d0d3d31eb7bc146087f80a231b6b892476d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "214decc2f2c614d9d965fcde0a6cd4012185050d6594018b4c60ed8dc21c8eee"

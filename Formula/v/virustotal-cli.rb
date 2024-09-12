@@ -14,6 +14,7 @@ class VirustotalCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "25f49bea6abe1687e8f72912e4dde8b370608d4a4aa189fdb11af5e63aab1d7d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f309321a7f51f6803a98b9814f59862fc5646c0a4b0e1096b3da002ab8e3eb8b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f309321a7f51f6803a98b9814f59862fc5646c0a4b0e1096b3da002ab8e3eb8b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f309321a7f51f6803a98b9814f59862fc5646c0a4b0e1096b3da002ab8e3eb8b"

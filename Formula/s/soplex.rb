@@ -11,6 +11,7 @@ class Soplex < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d8439c33af13c1bf01f74bfaa41cddfef4b75b7dd808f7e0c4c6c6cb632deb45"
     sha256 cellar: :any,                 arm64_sonoma:   "e7fbfbf3e6de73e99af5542559db81b740c3bb7d29bb9134b2d46c7be6f74d9e"
     sha256 cellar: :any,                 arm64_ventura:  "29986777cd852a19f24dbbbd31070e11a7c46b1bcbe82f1e39c1540d12a61649"
     sha256 cellar: :any,                 arm64_monterey: "e494d975f26884d2c9e2af9f262f0db8a73cfd400c6b5c5459803ab996abf058"

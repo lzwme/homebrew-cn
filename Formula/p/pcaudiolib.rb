@@ -15,6 +15,7 @@ class Pcaudiolib < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d713da35af3fee0aeb5bb86719b8b544b4cf614df473090b93b579f0b9b47630"
     sha256 cellar: :any,                 arm64_sonoma:   "93e464880ad92fe6d01a9d7ae289de1d651e754bd7dc73ff36f997e440690ef4"
     sha256 cellar: :any,                 arm64_ventura:  "d4d3d51973306d23db005641d4ff0bf7fa253f45e40a6eb257d3444822aa5f4f"
     sha256 cellar: :any,                 arm64_monterey: "e869b2820a0891d695690497ed88f6f82e59d2c42abb9d384367fef1815cf111"

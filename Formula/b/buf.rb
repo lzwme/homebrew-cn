@@ -1,8 +1,8 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
   homepage "https:github.combufbuildbuf"
-  url "https:github.combufbuildbufarchiverefstagsv1.40.1.tar.gz"
-  sha256 "843a2eeadac212b145e653d492f55305974308347027ab45e1d178103f278168"
+  url "https:github.combufbuildbufarchiverefstagsv1.41.0.tar.gz"
+  sha256 "b9721906b0bfccffefe1d2c52e2b472dc212e40ff4be49c61d153132c3ce3371"
   license "Apache-2.0"
   head "https:github.combufbuildbuf.git", branch: "main"
 
@@ -15,14 +15,13 @@ class Buf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9ef1316096146fa3e8b1693db99e72b9d3fc8f8e0fcd25ac0d8cdd942adaf2d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10984b090afcbec007af9a433b35337754b3177ec47758e9c221b62173046713"
-    sha256 cellar: :any_skip_relocation, ventura:        "10984b090afcbec007af9a433b35337754b3177ec47758e9c221b62173046713"
-    sha256 cellar: :any_skip_relocation, monterey:       "10984b090afcbec007af9a433b35337754b3177ec47758e9c221b62173046713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e7c1a4ffa5ce2726b02a4fe9faafae0a3f5cbd9f3aa2515ba6bf662badb1421"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00a2f110fea3f3a22c1680234f075e3b9a53489697f5bd67a89d7f9192710993"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00a2f110fea3f3a22c1680234f075e3b9a53489697f5bd67a89d7f9192710993"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "00a2f110fea3f3a22c1680234f075e3b9a53489697f5bd67a89d7f9192710993"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7d3f1303ada8d4b9e6018a11f4ac5638f18b3662f14566839eae6c293e132356"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d3f1303ada8d4b9e6018a11f4ac5638f18b3662f14566839eae6c293e132356"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d3f1303ada8d4b9e6018a11f4ac5638f18b3662f14566839eae6c293e132356"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d11d90cb320017626d524d0b9375aea57cff9121dbda7b522f3dee11a24cc54a"
   end
 
   depends_on "go" => :build

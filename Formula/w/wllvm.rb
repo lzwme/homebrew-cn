@@ -10,6 +10,7 @@ class Wllvm < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2d446efe295fe4a939bd8e438dd0492c9e7692161f8cd8704a581c3f0dbce3d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbf98dd9a4969133083c1a5ff4a99a1eb585cd0d7e38cdaff296cd2ec2ccdfff"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa7b51346868a77f7cf2bff65e85d6baa23511b8285863a1d4ae107488a43e6b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3486584a33b29ab6879a93e1506a47f53fbab9111f81a1a92f3ab5d29506d850"

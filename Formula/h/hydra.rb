@@ -8,6 +8,7 @@ class Hydra < Formula
   head "https:github.comvanhauser-thcthc-hydra.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "5fde2d1c22b0a5028645283b6692517e0e15d18e1460754dc0cbe7d3918a0874"
     sha256 cellar: :any,                 arm64_sonoma:   "d9af4495a0d5abb4b06610fc318f59cbebe1e2da7add59eb6fc2b9ddbcc64329"
     sha256 cellar: :any,                 arm64_ventura:  "67bc1df2d95effb418e766e7e4c193ce5b52edd2c8afe39e026b369aa839baa9"
     sha256 cellar: :any,                 arm64_monterey: "dee157bd05914bb135e8d441e1e8046407041988a7efd9b6c95895305662f951"

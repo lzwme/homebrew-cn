@@ -25,6 +25,7 @@ class Vim < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "a04fbda83631025a04b8a1cae96e549636b33f1beb1fa901f996c76fdb591f6c"
     sha256 arm64_sonoma:   "2d92ee06491ac41c6c1fe0e6f7c3e5ab01a8d01dbca38d2c98efc421d4419862"
     sha256 arm64_ventura:  "32561daf533f6e9dd27e639da59907d2e52809819baefdb5d64b55e0b62f6eb1"
     sha256 arm64_monterey: "9eddf896d5f4497c688191a47bcd7af93f80625772c3731e10f67b750a7a5d4b"

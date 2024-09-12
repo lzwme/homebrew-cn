@@ -21,6 +21,7 @@ class PerconaXtrabackup < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "a25deef01e6c15c48c6f6717e7f8f4a0f443c6cfcd2c6483a78fdc5dc7d77b62"
     sha256 arm64_sonoma:   "ee53b681fb6173c419102e0455038787e62729d0052515d683859a6b88c0e57f"
     sha256 arm64_ventura:  "811abed7d91bda90e2d99ef4e2c9aa727cb0c073f4f696db9a65ef29b9f5ec9d"
     sha256 arm64_monterey: "927d91fab38ae58c7e4a17d2e4ff526ce7af3dc3e6074c616776e67381774da0"

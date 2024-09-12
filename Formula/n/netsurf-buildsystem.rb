@@ -7,6 +7,7 @@ class NetsurfBuildsystem < Formula
   head "https://git.netsurf-browser.org/buildsystem.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d5f2819c3e420ed6f9ecf816739b035fb1a4f0ad88acc08ba673fbc8da31c953"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "940a502f39ef0cda291801f35221b65d3d21aeee215322ad935d2b829b687e6d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "940a502f39ef0cda291801f35221b65d3d21aeee215322ad935d2b829b687e6d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "940a502f39ef0cda291801f35221b65d3d21aeee215322ad935d2b829b687e6d"

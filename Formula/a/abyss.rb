@@ -10,6 +10,7 @@ class Abyss < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a8e7619d281b75ac99653e6209267de5fa3c4c567478c7f753cf131e49fc923d"
     sha256 cellar: :any,                 arm64_sonoma:   "d51aaa3ebeee8f2d7aafddbda19f362f8964bd438cc8cd882c4d449a34215aca"
     sha256 cellar: :any,                 arm64_ventura:  "ee601d3305bf086edc4537d6e47c62ae6203c7b20a8554cf13320cecf8c534d8"
     sha256 cellar: :any,                 arm64_monterey: "53684411c7bbb832019b78dba2e84c99a8172e81b8f580ea28f8bf3791c239dc"

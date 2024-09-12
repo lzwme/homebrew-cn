@@ -44,11 +44,27 @@ class Parrot < Formula
     sha256 x86_64_linux:   "26b301714008aa6c10ecd25b10d01bf361ed4772b90af0a9d50936d2108f9013"
   end
 
+  uses_from_macos "perl" => :build
   uses_from_macos "zlib"
 
   conflicts_with "rakudo-star"
 
+  resource "Pod::Parser" do
+    on_system :linux, macos: :sonoma_or_newer do
+      url "https:cpan.metacpan.orgauthorsidMMAMAREKRPod-Parser-1.67.tar.gz"
+      sha256 "5deccbf55d750ce65588cd211c1a03fa1ef3aaa15d1ac2b8d85383a42c1427ea"
+    end
+  end
+
   def install
+    if OS.linux? || MacOS.version >= :sonoma
+      ENV.prepend_create_path "PERL5LIB", buildpath"build_depslibperl5"
+      resource("Pod::Parser").stage do
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}build_deps"
+        system "make", "install"
+      end
+    end
+
     system "perl", "Configure.pl", "--prefix=#{prefix}",
                                    "--mandir=#{man}",
                                    "--debugging=0",

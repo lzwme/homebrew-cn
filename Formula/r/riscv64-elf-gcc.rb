@@ -11,6 +11,7 @@ class Riscv64ElfGcc < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "5031d81909f9d18d78c5804c97e287ba911d0605ff0f8274a934fe2d947ebecd"
     sha256 arm64_sonoma:   "9cbd8106a4471dd260c8157d3bdac0b31539e3bf45f472d53ffb98a3c873943c"
     sha256 arm64_ventura:  "2a652369a58722b961d41b1d2d8ffcd64229b6afb14efdc4fb3f7a8b2f43b68c"
     sha256 arm64_monterey: "e00daa4dcc0d51798801eeeebbcb047e3d63455ec4985cd2f7300f1eab83cffe"

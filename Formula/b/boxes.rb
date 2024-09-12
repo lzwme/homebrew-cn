@@ -7,6 +7,7 @@ class Boxes < Formula
   head "https:github.comascii-boxesboxes.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "a174f6c6eeb2a65143f7302fb9159bac501e3f2bbd41789cfe70e8cd76be8343"
     sha256 arm64_sonoma:   "3ce2eb2156f5dc98a5e7213864e5c4d05d93ccd886a95a1e46a7be27f4b3d397"
     sha256 arm64_ventura:  "dd81b1f25a67a629079f560cea6cea0c55a59d3447777b3778efa1ed6e4b4ac0"
     sha256 arm64_monterey: "707ebb2d60f864d5b1a62b0fc0c9058089ad0f2f793a1b72eb4760457bb9486a"

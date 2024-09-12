@@ -11,6 +11,7 @@ class Unicorn < Formula
   head "https:github.comunicorn-engineunicorn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c057502419569a55dce3d7ea8bc5651934b4892c02d7853ac48bb479c6319e27"
     sha256 cellar: :any,                 arm64_sonoma:   "19357aa9fc753df6791bf5a1764dbb2fdfeed8cdcc3a6b5c8174a052558cd8e2"
     sha256 cellar: :any,                 arm64_ventura:  "4c9ea5656b2834aaa6a4fecd8bfc55ebc0b5fdd9f8ae360dca4ada9d25d7a484"
     sha256 cellar: :any,                 arm64_monterey: "fc3a7ffad1c200b9dbb4eeb843d06eb9b6edf8313d42b38c9ca58f23e70810cc"

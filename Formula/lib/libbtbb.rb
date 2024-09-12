@@ -12,6 +12,7 @@ class Libbtbb < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "346b30d901cfb35c8434ccd30b9e3a9c925c0513a7ff32a0131d6b7caf13881f"
     sha256 cellar: :any,                 arm64_sonoma:   "6a8d435f557ff501f185e5210afa482aec2fa60c91174659590baa3e0bae81e0"
     sha256 cellar: :any,                 arm64_ventura:  "917631db529c0c099316eabaf82b5913a46c928717b86ea83f7ca3468ce1c1f6"
     sha256 cellar: :any,                 arm64_monterey: "ad06c3de65ee9278e7ee01c6b031d0da7f3e983c1cd11555d270ab216c1aac34"

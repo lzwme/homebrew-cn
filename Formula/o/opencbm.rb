@@ -12,6 +12,7 @@ class Opencbm < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "9bfefe12bdc0f777c8d277620bee37fff81bf591450aef6b88ba8f82a3cdd51b"
     sha256 arm64_sonoma:   "4fb979ad0cf87979e5b6f97731c09f658b3cf09e3aade33c2b7cc8feb5da6501"
     sha256 arm64_ventura:  "735513b4928af4c14803fc656d7c6d7db607e41e0eef128f0bbd3ae94ab1cb0f"
     sha256 arm64_monterey: "7a9045bbeb039a0780d82105d34db267b90bc25149a3a5ef6f09fbe9d5668c3f"

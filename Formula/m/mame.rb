@@ -19,6 +19,7 @@ class Mame < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6092f8e361b4b6ac8e3003291d91b6169c9ee8092b23c3547546c9443a79ed1a"
     sha256 cellar: :any,                 arm64_sonoma:   "c4029304e0a87b30c989cca377926378819b6155f04fc49792232f04f3d233c0"
     sha256 cellar: :any,                 arm64_ventura:  "e76a22a0aff40d0f5a25f79f0a8d926d53ead453673b0bd36e3a8a289a6b7135"
     sha256 cellar: :any,                 arm64_monterey: "687dceaacb047e1430f9246a751f15c85c9ac8f3662f2e2baafe33f7a339ef6f"

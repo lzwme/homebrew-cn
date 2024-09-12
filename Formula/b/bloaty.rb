@@ -7,6 +7,7 @@ class Bloaty < Formula
   revision 29
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "5ece9c803b6a51a88b040f05fd9f9ecba504860be327aaae7f3fbca32ceac10d"
     sha256 cellar: :any,                 arm64_sonoma:   "0760d9714260ab1b90f47f6aa4a650693668111b2453c8aae2a9f90f3f5ed7f5"
     sha256 cellar: :any,                 arm64_ventura:  "90f8e8c37ec415bab07e5e181d040cd0ea6138953c1c2591cc02d156296cddc0"
     sha256 cellar: :any,                 arm64_monterey: "35368f7f27988976ec100daef7a5c7384c47104d2d55f8abec91d2a91fd74c15"

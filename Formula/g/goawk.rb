@@ -6,6 +6,7 @@ class Goawk < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "284e2962ac65a9bee27b84fccd3dba043958be4b66c093e679fcdaa2ec1abe83"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "809461d8c50cf9fc9b71a05e69ca05f4027888bf20d611e2fb0a2b1eaaac642c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "809461d8c50cf9fc9b71a05e69ca05f4027888bf20d611e2fb0a2b1eaaac642c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "809461d8c50cf9fc9b71a05e69ca05f4027888bf20d611e2fb0a2b1eaaac642c"

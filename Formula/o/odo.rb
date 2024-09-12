@@ -7,6 +7,7 @@ class Odo < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42a837f21b67949d9a12872adc2b2b62553071b86d947ff7640eac9547a00261"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8aa9f769724fe6c4fe7e3d0e383db74f03100a7fd90a947cc2df1835505829aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd2fad51300e663cba126f61573c740198f66f1f8a505b8907605892ab1a0c48"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6ddc4ba217251c6827fcd32c3fda2df9c294305dddc68d976072cef25c4dd768"

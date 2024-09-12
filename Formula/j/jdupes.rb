@@ -11,6 +11,7 @@ class Jdupes < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "be36bdaad3510fc56343d42b0fc7038d9341c4ae9e0ce27cc51f6a793abf5b3a"
     sha256 cellar: :any,                 arm64_sonoma:   "994e52bf99877c30b8e1dff40cb68b15107837c98f81f0dc4bae9ac4b7996270"
     sha256 cellar: :any,                 arm64_ventura:  "316c3597188922ed828074195528feddb5e1dde7729c5d95171f42cedf12ef3e"
     sha256 cellar: :any,                 arm64_monterey: "f9b2117f8e9af15c7f2daa38462b5eb20c5016698969bc320eb3129faa928ad3"

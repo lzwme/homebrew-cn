@@ -6,6 +6,7 @@ class Vet < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "53d94c32d5fd4cc2634cb38e9f07aa37df2f78d96387b444aa67363d2f814dce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cfca12afdbca5fda7fa3fd60d7bce477e56cb2c945c22ea2242a66078eac122"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21a5eac20ba25656a04d2bd93bf79c1fe94ba3284f86d491f0f647ab92ea32c2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0bb95e179a62cb55ea04eb8277b2d6b1f682aa83941197a4efa3c3cf4cd547e3"

@@ -10,6 +10,7 @@ class Cruft < Formula
   head "https:github.comcruftcruft.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0e511cb4774548d71879639ce858eabd5f4b4f26b32eb12da095a9ee95f5d08a"
     sha256 cellar: :any,                 arm64_sonoma:   "d5c040dcf8cc66e99a7bac8f76c3502564399f6a68bbe69d1a91e394f822e6a3"
     sha256 cellar: :any,                 arm64_ventura:  "3aeaed4f8515b7aae2a3159b4ebad7c19034b09d4a12540f804ce062e645d773"
     sha256 cellar: :any,                 arm64_monterey: "eee3d6d2de67e7e2658a0a9d9fcb193eaea83bb149a491fe6563eeda67b34797"

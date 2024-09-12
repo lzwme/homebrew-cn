@@ -7,6 +7,7 @@ class ContentfulCli < Formula
   head "https:github.comcontentfulcontentful-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ce849272c049d0e9c6bbbbe68689f919edd8055e1d866de651aeca1e9de77edf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "403e06a2574f3ff391f8f54176855250a8c38954418ad5d129e5a0c4880b0e4f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "403e06a2574f3ff391f8f54176855250a8c38954418ad5d129e5a0c4880b0e4f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "403e06a2574f3ff391f8f54176855250a8c38954418ad5d129e5a0c4880b0e4f"

@@ -7,6 +7,7 @@ class Pgcopydb < Formula
   head "https:github.comdimitripgcopydb.git", branch: "main"
 
   bottle do
+    sha256 arm64_sequoia:  "19bae342e0b705bc2cf5ecd05ea8d8aff97164180f10ac444230ef9cbbca53af"
     sha256 arm64_sonoma:   "f447198169c35c932e4d5c39145592ebd6fef8c1aca559069eef866a1c82e1af"
     sha256 arm64_ventura:  "0d58547a3e5a617c0e3356e46b2f051ef9fe79a3d2ff7170d70f5557390cc080"
     sha256 arm64_monterey: "2b3135ab67d28ee63f41c1af27eda76bb328ac92d125c4d7581c7ded337d2881"

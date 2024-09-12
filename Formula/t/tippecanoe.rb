@@ -11,6 +11,7 @@ class Tippecanoe < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "83048ed76bb892d272653b0ca65f49e1a396ecaa939e4ff1894c156c355ded89"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a3b7a937a05c2e5c427b50e7b34f75d78a80640e6a51fe1019bc971b8765337"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0f4a10661596f82bbeb936b457de43dd98c99d3bb087fe422ffac3ed240f9df"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0fcbed931da11b16ae58ea2aa2da5ea865eb11de3d596bd63d11bb8c3db77c47"

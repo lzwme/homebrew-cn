@@ -9,6 +9,7 @@ class CloudflareCli4 < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "235fb1ef9534ad8431339509380f26f47f47389b42031db319e49e5011d46b3a"
     sha256 cellar: :any,                 arm64_sonoma:   "66de81a8dd306d4dc04bb5dee08879db9c8ad1351eb0b768bb97c994b47152fe"
     sha256 cellar: :any,                 arm64_ventura:  "6520d624bbbb28eb2df42f0f139c3852187c632d816ce26b8c08da8bd23cd31f"
     sha256 cellar: :any,                 arm64_monterey: "47d70d8f2f118ce6dc9d075dbd5b7c99aaddb85f4dbf3ba9f4e366a1dc4ba4c9"

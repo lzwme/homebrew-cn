@@ -8,6 +8,7 @@ class Allureofthestars < Formula
   head "https:github.comAllureOfTheStarsAllure.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bdcf533595e5ae4f13cde425c0e06c515257045288acddad4b9530ce3c949394"
     sha256 cellar: :any,                 arm64_sonoma:   "f2798a7e39c570fb3f16f223658233ed9d4f273bfb079851d5b23ad7ee3279c4"
     sha256 cellar: :any,                 arm64_ventura:  "6892fd7487390e10f9a9353e0ed478bbaae9492f458cc26ce6e28bb152d9ba23"
     sha256 cellar: :any,                 arm64_monterey: "9d7499f1d328a6a4b91e22b90ded73a9ba3f4147cddff1d27e6a38a0f009378b"

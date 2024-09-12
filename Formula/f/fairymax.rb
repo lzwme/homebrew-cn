@@ -10,6 +10,7 @@ class Fairymax < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "ff66c8d9a55cb7c3567972c8c615ef9a91475322d3ede04f3c0babfcd247910e"
     sha256 arm64_sonoma:   "699b0ba8c10d2452add0b265cc336b835d61e4a2bc0ce00365519d8c3591e52c"
     sha256 arm64_ventura:  "7a431f623e9a7ffc4fe331a5ebe118265a9c0ade9222124516586591e0644286"
     sha256 arm64_monterey: "eb095e180e6f94ac2fa743df555fc7a8310f17034880868a8bc5605da3b0c681"
@@ -20,6 +21,9 @@ class Fairymax < Formula
   end
 
   def install
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+
     system "make", "install", "prefix=#{prefix}", "CC=#{ENV.cc}"
   end
 

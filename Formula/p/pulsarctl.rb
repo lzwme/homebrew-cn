@@ -8,13 +8,17 @@ class Pulsarctl < Formula
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
+  # necessary to check releases instead of Git tags. Upstream also publishes
+  # releases for multiple majorminor versions and the "latest" release
+  # may not be the highest stable version, so we have to use the
+  # `GithubReleases` strategy while this is the case.
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "893037c46c216591b6b2da8ea01b1117251b1bd99438d7b5ca3235fae69b7920"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19f7eadd75ab4255af830d38c25586f5b9508302e4570bdd3846ec3c83ea7657"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a2fb8ef9f51fb0bb0c06fb272d586112c84a467247c59ba413dfc50175df3cb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bc2c2f3963c96ee765165c4c0fd7c2503ee3d652a5a34e74446b89f5a104cf93"

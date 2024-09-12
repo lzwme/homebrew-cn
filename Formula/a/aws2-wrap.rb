@@ -9,6 +9,7 @@ class Aws2Wrap < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f4f84264aa8ebec81189bd7aacd57781b9ff6031ec30fa85ad933ab8d6d18a2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c2df355539ff6a5a97dc6576094fdf500f880d7943bc98d18bdd1bb05eb7a2f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea2d064799ec9632c9ec0550c5adf25b7f729281a69ab8f9ef3f0bf08d9d0d2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7e8245761543dba5a8c40024e84c3f4804231dd5ae4017fa8e661bf82d53005a"

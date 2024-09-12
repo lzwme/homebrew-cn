@@ -9,6 +9,7 @@ class Djhtml < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6c35d60e289d93994e7b18f95032f5b2687ea5674877d5369d0d863b2771009f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb0cd1d7c6d9df7ce258b8f13ba027bb47ee4b970f377e390a11b47ceb1106fc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c67244a3b29b0770e28ce06e0863337ab966057d02da5b7c60b5595fd7a1994"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "52e1233ebc017d9a54bc1331ace6de8efbc00bed95b6ff0e0a0828fe164a6c9d"

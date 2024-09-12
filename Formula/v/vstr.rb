@@ -11,6 +11,7 @@ class Vstr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "578ee5248bf780a885cfc3dc8a806949ded7af743c3be7e7c839fe4d190a43cd"
     sha256 cellar: :any,                 arm64_sonoma:   "54ad15b7c3afd4dadfe4f48c8da91b39efc16d597b9f7300dc67aab5c3f75a40"
     sha256 cellar: :any,                 arm64_ventura:  "50f3aa1e3a2842093e6ce37468ff013c81ca97b948fb3d7b11f66c58b95f108b"
     sha256 cellar: :any,                 arm64_monterey: "dd5f9608d327370e2be19fa4c7aaa756db7b505a192dab7ebeedf413e379f53d"

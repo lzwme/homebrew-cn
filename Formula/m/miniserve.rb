@@ -6,16 +6,24 @@ class Miniserve < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e88ed7a4692ef71f8756e12c6ee5ffacd3eabf49e46921c168d82457991f1b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43d1b1d6b117bf724e90ab833d44bb292010437de66941beb60cb106c55f3b08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a38b42d03092adc1f76c24ce2427558ffb095c4311b27dc91e0e83bc8cc9828b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "22f0b5f3b4a3e8bb50951a6e15715847e1b2e60a97042be536f2ebeaa1e235ab"
-    sha256 cellar: :any_skip_relocation, ventura:        "46cc01f37e9ce86f6cb36cab4ef6616c7dd4d112505702ec83b3f0532171ac46"
-    sha256 cellar: :any_skip_relocation, monterey:       "58cbc71a43994a41cfd1cf78ad0cb2ca0d308a7a1618c6659c519f09433dae34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2808c4c82f492fc736ba467d978e78ce3bfb5c61ad3da0e4cb394e98243243e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be43e375c504a35fcf180b59a851724831be29d7060d9f3b843109181d64f9fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d273865ba9a53f5b907704c9a16c4931adfc700a1ef791ca304855a8d6a7ec7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b40b9a228e90b806c89f7d20e5d956a69e471c353d934b32538a32388e8449b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca5058a0f23e1e5a433d7a4ed71a08b5f681c50186551b02529494591721a303"
+    sha256 cellar: :any_skip_relocation, sonoma:         "691faeff3ba624cf4c38476dca96923c4429fe9ec9f7be2c9d332d6b5fea9ff9"
+    sha256 cellar: :any_skip_relocation, ventura:        "35de9b3c07f440ebe3d4eac291850d2e7757893e87c06190fc440a462d67f502"
+    sha256 cellar: :any_skip_relocation, monterey:       "455879bb35de16f96355612fab7882901f274673d4a49cdf54ba884be04c7deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaec7cdcce89e4e2d53e5fedba84d60a8dcdf11dd3dd0846eed2681beb198bed"
   end
 
   depends_on "rust" => :build
+
+  # rust 1.80 build patch, upstream commit ref, https:github.comsvenstarominiservecommit2fbfcbfe17b5c12630ccb03b6ccd31cb4b8316cc
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchese022b2c42fbda33637b8a5c62847e8d6dd51942bminiserverust-1.80.patch"
+    sha256 "b7a4557f18e72eb106da5a47e74e4ff718330cd60cf4b6458ad09eba7f9ba9f1"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

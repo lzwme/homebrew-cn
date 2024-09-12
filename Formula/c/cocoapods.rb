@@ -7,6 +7,7 @@ class Cocoapods < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "616da75efe9421f6fdc9e3b6381f84626e8763073aff72094f30add258631dc1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"

@@ -7,6 +7,7 @@ class GruntCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6623c9c49be25c0d046324eae90919e3360542d69f9cf921b3cc47a44573c984"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2dd1c3cbca5634e0af5e6f0cdecde2700c3b28fef7995b59527cbc225cc133a7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2dd1c3cbca5634e0af5e6f0cdecde2700c3b28fef7995b59527cbc225cc133a7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2dd1c3cbca5634e0af5e6f0cdecde2700c3b28fef7995b59527cbc225cc133a7"

@@ -15,6 +15,7 @@ class Wireshark < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "76bfc1b990e65ce54f87d77059c4ce987d8b020511c80695b9756e2766a500af"
     sha256                               arm64_sonoma:   "eb2fbcad494c5c771d81b0ed2c97457f9040edab06e255ba9f66bbe4eaa13aae"
     sha256                               arm64_ventura:  "b7af5a5a1e7be6d024b458ef3eafe08bfc87435142a617daa8cd6557d1a77da8"
     sha256                               arm64_monterey: "3d893b3ae03ef775f22e14bbaa97818468c83e0f3a526a609d87c54014a8889c"

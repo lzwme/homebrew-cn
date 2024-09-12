@@ -13,6 +13,7 @@ class Nwchem < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "d86155ac7db5802fadf35c54bd5fdc64189ad7c6186c752ac78f74c214574e73"
     sha256                               arm64_sonoma:   "a75b40c513a6e79f6a32aea09ce30c407df91547a3a515824775ed0597298b4c"
     sha256                               arm64_ventura:  "d38f1ecff266e151d4b78adcf8f945aea1fa29b81201082199de0d827bb701b8"
     sha256                               arm64_monterey: "2e5ac17baa07d607585f98883941fcd3ba9126677b006a43d93389a687644ac0"

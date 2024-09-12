@@ -7,6 +7,7 @@ class JsonnetBundler < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "68bb147a2c42552de0ad48ba06125c83402858c56650e29f266443cf9974e11a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "254dc86b4ec480db94c7e1a529d71a1ccdb72924137cb9ea5a5264ec266aeed9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "254dc86b4ec480db94c7e1a529d71a1ccdb72924137cb9ea5a5264ec266aeed9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "254dc86b4ec480db94c7e1a529d71a1ccdb72924137cb9ea5a5264ec266aeed9"

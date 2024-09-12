@@ -8,6 +8,7 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3358c91fd6790bdf11dc031c2ec84936e1688296835e01a9a838de6d5ade30b9"
     sha256 cellar: :any,                 arm64_sonoma:   "5f5c813facb26d8670bb3cc198a965696979208f46748fe10b2dca2ab4884a99"
     sha256 cellar: :any,                 arm64_ventura:  "930fad00c12b2dbf0d00b90e8044f7c60336feb0fce270f8b5a49d067a0b0b85"
     sha256 cellar: :any,                 arm64_monterey: "615c0e034e105c7a9f5a487fbfe1085a2fe3db91544175cbe8244cd95544d71e"

@@ -1,19 +1,20 @@
 class Basedpyright < Formula
   desc "Pyright fork with various improvements and built-in pylance features"
   homepage "https:github.comDetachHeadbasedpyright"
-  url "https:registry.npmjs.orgbasedpyright-basedpyright-1.17.3.tgz"
-  sha256 "be803a24d595e2225aec7e400e52976d44caecf0594a468600f38a6f381137c0"
+  url "https:registry.npmjs.orgbasedpyright-basedpyright-1.17.4.tgz"
+  sha256 "454d809da7a04007fced9fbf092f9ff8bf3964c9a5516988411bd0327122afba"
   license "MIT"
   head "https:github.comdetachheadbasedpyright.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfa3edee6d9ac4b18f8b2ccab3bb740df54884bb7802767c60ca614505da98ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfa3edee6d9ac4b18f8b2ccab3bb740df54884bb7802767c60ca614505da98ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfa3edee6d9ac4b18f8b2ccab3bb740df54884bb7802767c60ca614505da98ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2a07d705ed34b3d8ca5a789e1f262115a5e7f078fd92b7d959c883227b624db9"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a07d705ed34b3d8ca5a789e1f262115a5e7f078fd92b7d959c883227b624db9"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a07d705ed34b3d8ca5a789e1f262115a5e7f078fd92b7d959c883227b624db9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfa3edee6d9ac4b18f8b2ccab3bb740df54884bb7802767c60ca614505da98ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3c599dc65fd3b1538d1970985bb6abaa03a039b7afe7d0a5700e479108aab65d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c599dc65fd3b1538d1970985bb6abaa03a039b7afe7d0a5700e479108aab65d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c599dc65fd3b1538d1970985bb6abaa03a039b7afe7d0a5700e479108aab65d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c599dc65fd3b1538d1970985bb6abaa03a039b7afe7d0a5700e479108aab65d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d188fc1301e5b0a0bef28687bb84f5c01c86011f8780fc987f099f2c07695750"
+    sha256 cellar: :any_skip_relocation, ventura:        "d188fc1301e5b0a0bef28687bb84f5c01c86011f8780fc987f099f2c07695750"
+    sha256 cellar: :any_skip_relocation, monterey:       "d188fc1301e5b0a0bef28687bb84f5c01c86011f8780fc987f099f2c07695750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c599dc65fd3b1538d1970985bb6abaa03a039b7afe7d0a5700e479108aab65d"
   end
 
   depends_on "node"

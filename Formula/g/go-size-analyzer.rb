@@ -7,6 +7,7 @@ class GoSizeAnalyzer < Formula
   head "https:github.comZxillygo-size-analyzer.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "55ff1a0491dbe4d6e3fd855082a1c59af74f4d8cb58ad4f99aabe4d651593483"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5498295ad80c0c929ae7fa2113ceefed2ef8e9438bb8dc1e71e9b7073115f718"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c10fe9f352a14a495f5a39a0e94a118d0f595c1494b705a8092105933e1953e5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f6bb06824c899c473dbf9b10f4d9688f143b1f1a4c6c9a0133bd0c95ac98f91"

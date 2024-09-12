@@ -9,6 +9,7 @@ class BcGh < Formula
   head "https:github.comgavinhowardbc.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9af57f61ddb71b5526f5dc368be715ad2f7f0d8bb159043688fb1f537fd45dfe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab1938d31e9f9a3a0b7d11b3d07fd2af727feed4af221ce7786d228b0fe48931"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "399116f8b99251e5ea0e1636c1aa3b5316e76c858fe9180a5b021ee496e5d874"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8c83c073b1c4eb4a4f15754e40c42335e8af1733fe4e21544fbc282c05591f59"

@@ -7,6 +7,7 @@ class Pastel < Formula
   head "https:github.comsharkdppastel.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a6fff0aefd40678a727cc33286dc6574d22e859f4677b89b6d6bf11780bf46fc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "846b6b902b61fdb6a487a55bca5db48281d15b2879a03c4a7c4d1734eb69785e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbf1bcaec1cd65ba7c7572372f8572f26f9fc0a34453c200fbf9268fd72b1a61"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e77251303794e9030f01de3199335e116321aaf1160e50d0a66d5efeefb7b5e"

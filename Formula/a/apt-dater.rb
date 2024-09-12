@@ -9,6 +9,7 @@ class AptDater < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "e89784e139fbbe28d5b78275b2242171bac80c2ef9499613154b3e7811c08468"
     sha256 arm64_sonoma:   "2f391ec78361caf2e94d1e63cc21f0b1f00939ada71065b215e41f798025018f"
     sha256 arm64_ventura:  "c22ae498b3b9ffaa679ccf61ce23dc2938d2acd6960db44c422269c2673cab2a"
     sha256 arm64_monterey: "fe34f1009b1e42d85afbcbbae7c61554e6ebe527112d8249430f896661c82817"

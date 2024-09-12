@@ -7,6 +7,7 @@ class CucumberCpp < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e52705eba218bc405d689160e6e28308ff0f2f33bcddf6ec85898c0cfcab1e1f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c03f2daaf1def843478d7d144500cef481190e79eb145fcc25844352223412b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8ae30b6185669938d6bf21a83a84acb8d56bc59194a4b1b28feb6b986d77da9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6b629690ec414931c52c1796dedc8e8bf5a4dfcf70c73ed7dcc4f091894ec5f3"

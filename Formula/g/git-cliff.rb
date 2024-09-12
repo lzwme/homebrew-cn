@@ -6,6 +6,7 @@ class GitCliff < Formula
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b32a5328db6de812ae1a45ad8b32fdfedd66d17138dd0de890a40f2a93830361"
     sha256 cellar: :any,                 arm64_sonoma:   "3d4f051b451ddf6dced4a64a2327aedb068e84f42b775e181ed648a294ce5b88"
     sha256 cellar: :any,                 arm64_ventura:  "d1a92c088bb3424b89199b53ae893317e246f677877d7903bf7d79ea6b96be7d"
     sha256 cellar: :any,                 arm64_monterey: "2db35980e5c9582b6589c26175274ea5733d85e17293f5dd9d5f74d4b1a172e1"

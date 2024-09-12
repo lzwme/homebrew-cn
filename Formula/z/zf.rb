@@ -7,6 +7,7 @@ class Zf < Formula
   head "https:github.comnatecraddockzf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2d95f6c234ba53316069b7cc56417ac7f79f92b03524fd7f0a454c90998020b5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fb3944d6fb6defa3210dd591eff538907deacd378c1f9860e187ef583be70c6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9cbb27192181a06a7e321d69fe6ba0807a52fff1b976f425ec7f837b82d1996b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bbf62578bf402b17a2a301147279c8a506caf3a49bc866cb80f9d7c4318a819e"

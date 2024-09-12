@@ -9,6 +9,7 @@ class Volk < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "080b10195a90e4ff41854610d997248d076318dcec02aff8f36278c78e1aae10"
     sha256 arm64_sonoma:   "3369be458932d78df5c6e4432c9be636096f0b4a798405e77737668cfc7ebce7"
     sha256 arm64_ventura:  "be2ed1dbfd99c846c715a49b552bbfc227e9073c8e3563ac4aece3a729c0e1ac"
     sha256 arm64_monterey: "1e4363cad92930dcd37f4936c9e9a035fe2acc44fb3728351de72944e1bd5b0c"

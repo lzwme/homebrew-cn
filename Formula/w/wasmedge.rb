@@ -17,6 +17,7 @@ class Wasmedge < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7e522adfb102ab520a1e1af4d5d40bbb8c1f9e63fd4f12ca6bd73aa699aa7517"
     sha256 cellar: :any,                 arm64_sonoma:   "ae12e87e096683ebc626bb18acaf435696a9dd065d982dbed2e09a0e52339934"
     sha256 cellar: :any,                 arm64_ventura:  "5dce766cd381efbbff709ca04ff314bb495552f2ee19c7ef7d8540d349ce4b28"
     sha256 cellar: :any,                 arm64_monterey: "415cea5846fc9a53a52c9cbb97b91658a5dac871b9768a1d58282b7b09d6f1da"

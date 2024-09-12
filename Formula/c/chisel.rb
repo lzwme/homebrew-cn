@@ -7,6 +7,7 @@ class Chisel < Formula
   head "https:github.comfacebookchisel.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "92fa2160807b42dd0d79091402d8b8023722679230ed86dd5c2243704e7040cc"
     sha256 cellar: :any, arm64_sonoma:   "89a8bed56025f46a5c032e263df373455be3117b3f0dee5c3fd1acdbc01def32"
     sha256 cellar: :any, arm64_ventura:  "7ee4917934831d56a5925fb22554c0dd136f8553df9c92067e4564e527371e82"
     sha256 cellar: :any, arm64_monterey: "1aa32fddf646ce4a2772d5e10b39fddbe54a6383299346321d5d0dd067388471"

@@ -38,6 +38,9 @@ class Wordnet < Formula
   end
 
   def install
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+
     (prefix/"dict").install resource("dict")
 
     # Disable calling deprecated fields within the Tcl_Interp during compilation.

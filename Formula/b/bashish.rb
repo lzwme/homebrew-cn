@@ -6,6 +6,7 @@ class Bashish < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "59c20f75c252012ce33ccf199fdd626e569343d5af03a9ccd890b43d760e04cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c3b9d7c65a09230d87d35fbc141576dc991932032e990ebdfec261ecf6c8c94"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9de9a34d40236aa4fc76c38f69fa2b30b6d66bb1d6289a7552b543300abc753c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9de9a34d40236aa4fc76c38f69fa2b30b6d66bb1d6289a7552b543300abc753c"

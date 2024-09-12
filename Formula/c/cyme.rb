@@ -7,6 +7,7 @@ class Cyme < Formula
   head "https:github.comtuna-f1shcyme.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c3a5f19cb78811ebd31250d5838ff8b849bb70cdf3554dd9e539ea919f9a269d"
     sha256 cellar: :any,                 arm64_sonoma:   "f03c742b585e910c22854123a6480a7065e49bc963eda2035044f437cc3d92ed"
     sha256 cellar: :any,                 arm64_ventura:  "b128d3a36f0883b5411b064804b6a3f408bf9a2e94214e65b97a4640b77cc5fc"
     sha256 cellar: :any,                 arm64_monterey: "8f662d1b53801dd8128ffc82071c33f60ee1d6f402c51e8bef6ee29637c1f5b4"

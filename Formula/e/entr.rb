@@ -12,6 +12,7 @@ class Entr < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d802f80cb83d3fe1cd1acb2b8e0083afa683cbe2f584a82394eb962e11608440"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d878b113e680a4cbab1f35939b63ec51fb8fedf06ae7dc8662610077184cf622"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e970b963f6409076ea40fd51487b354edaf83febd21ad4849989abd4399eaa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eb0d171f6dbe8fe018b51605dd51e32f63ae9da0cbabba079fbaf3a011bc6207"

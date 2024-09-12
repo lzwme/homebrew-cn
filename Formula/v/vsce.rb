@@ -13,6 +13,7 @@ class Vsce < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "d7d5e25141636a36255d73df15ecae04c954ec71f3066b232c28b4ce3cfd1cb4"
     sha256                               arm64_sonoma:   "48d0726cf723c7bc8a7cc6dc70ac7264acd991fb754d3f532221b30f46f69b06"
     sha256                               arm64_ventura:  "0c6eb6b03b64e309d96faf44d2472a96d7fbcd3f6159530f46dd735b30ebd8a4"
     sha256                               arm64_monterey: "3095ea99be11fdcba4cd2e1c5e347c6a11b68e32c401fd0e361262e0328b00ac"

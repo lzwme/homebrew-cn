@@ -8,6 +8,7 @@ class GitAnnex < Formula
   head "git://git-annex.branchable.com/", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "226058c335e705ad2b88e0894e05010a05bd5e700ea6039c6ec663b5c994ff04"
     sha256 cellar: :any,                 arm64_sonoma:   "968572a6c12733bdc54e44d053ca4a2f91b34518fdaf04e08dd8d74e508e179c"
     sha256 cellar: :any,                 arm64_ventura:  "4593f290b73192e5e52279ddc93a68a3c09ba19e5e0712c3de294a408c0706df"
     sha256 cellar: :any,                 arm64_monterey: "00b04d98c3a698f5cb6d336a70a007b4afd290728bcae063a9feb7d9a8e8cd67"

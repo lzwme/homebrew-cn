@@ -12,6 +12,7 @@ class Cutter < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "64e7611a4932840b48802b8f628f0d1e8cbb7b639f774def7ab734679d35e1d4"
     sha256 arm64_sonoma:   "16bad5398ee66928c15164f769470028aca2912c9b634b45c11cd708f05de11f"
     sha256 arm64_ventura:  "37e55863dc6c7a518de33492c6afe7618604ffbc4871ea756bee1782325987e4"
     sha256 arm64_monterey: "3e314f0acebc224eabaa266508356e09142f2834d7b6b2b1611d66eacc2496e3"

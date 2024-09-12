@@ -7,6 +7,7 @@ class Prjtrellis < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d82061f57b9b550b7cc95d934e10dfdf0746b1fb16203ae210a95cb026827115"
     sha256 cellar: :any,                 arm64_sonoma:   "ec5fe0a2aa4a9bb58d5b205281ac438f6da35278c37d576e2228c1c373f0d63a"
     sha256 cellar: :any,                 arm64_ventura:  "e165698d107b10d8af68aedadf5d9e4be06c41164be52fb8b7c815f8ae3f0b77"
     sha256 cellar: :any,                 arm64_monterey: "1118ded93339bb313e97d7fd94bd837a04ce042795ce884bbc10749cbefb6ca4"

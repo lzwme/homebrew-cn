@@ -23,6 +23,7 @@ class Wordplay < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "7117e25ad1d78a133f0ad6f3e68c7f203cf83387903e27d6346852b97b3c409a"
     sha256                               arm64_sonoma:   "9377c6a3b8e7db879c1cafa0a53eb303fe65e81259c2b99a912c5080fe1834fd"
     sha256                               arm64_ventura:  "e5046dfd7e922872308efed4f745399220ddc5f7f62f4d200748700d136e956a"
     sha256                               arm64_monterey: "28dcc7b1dd3d809b79e3b331309d2f3ebd4b23383e76813b0397dcc617527e48"

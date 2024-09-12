@@ -7,6 +7,7 @@ class PfetchRs < Formula
   head "https:github.comGobidevpfetch-rs.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7a631b3d3ce451c9b2441c411b5f0cd88cca783281b3413aa5e392b1ef525de0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ae1919a5fdd354ca5411453262f76901a2d93ae4e47a037f75a61a66b0cce5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e223963c790e1aca11272e120c104aba5a876c34b40e8e26b182fd72a447359"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c93bb9b25718b3517ae39f15db10eef718e3c2e79b2b9318e6357adc5ce44261"

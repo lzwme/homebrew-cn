@@ -8,6 +8,7 @@ class GitCredentialOauth < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ff39420fedd201fd8aadd2d2e970820c60e6daaa45eb2498c4d21a51d4beb23c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c684c917e7d4382144bc870ae80ee49998b385e788a756ec3bbfa01b7537820f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "99f9738ad51f4efc8f26875f5eeddf24f1c42c098e42d300665d37c46adf2377"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4d26d5207332197586ba00d0225725cceea144e4371657e5fd724b5df2358487"

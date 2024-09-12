@@ -6,6 +6,7 @@ class Htmlcxx < Formula
   license all_of: ["LGPL-2.0-only", "Apache-2.0"]
 
   bottle do
+    sha256 arm64_sequoia:  "e1cb2639240425d10dcaea3639f09ae7b7795141d85b562d5df0fd79709c6edc"
     sha256 arm64_sonoma:   "a0db079df456a6240676663a280b60f12ef280c2a83f3f4a3a7c41a9e5bd719d"
     sha256 arm64_ventura:  "a89f6f97c7cdaa4ad3734786c0a15c2bbbfd6ba703127c9239bff75e89ace62a"
     sha256 arm64_monterey: "f0b1e84a587e9c944b7e6d1952b1feea22e223897a12adf51e28f51ec9bf4e9d"

@@ -14,6 +14,7 @@ class ZabbixCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "93cd00f299eccd45f4b1e9ebc6da3f1c6cb8d07351ad91e480293fa033d82386"
     sha256 cellar: :any,                 arm64_sonoma:   "63a9f2bfad76e85527eaa6d4ff506696025e9e6531050c49b02238e414776ac2"
     sha256 cellar: :any,                 arm64_ventura:  "df1f8af769ed5396df63bb99b64e423fae29a0d79efd94a957f41d9158f21cc6"
     sha256 cellar: :any,                 arm64_monterey: "61264474d06358eb67d4fe04147a5b28df11564b71b271dab4716b38d75769a5"

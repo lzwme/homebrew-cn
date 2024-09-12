@@ -11,6 +11,7 @@ class Uffizzi < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b22c38d2105c9e5aa905523ca1179202f2aa987c6c7ae97341ef472e77db35fd"
     sha256 cellar: :any,                 arm64_sonoma:   "c0b2c5f83812a149c776fe7e98607f47d260c5f9011906b1a94d9c921f0c2eba"
     sha256 cellar: :any,                 arm64_ventura:  "2f52c0d4a6529cabb2a0433c49ca06ecc5c0c56e39db2eea2e2405572aba188d"
     sha256 cellar: :any,                 arm64_monterey: "f810f30435e058488f29c9019aad3b48976894243ed99c9738803f91c31a0ffa"

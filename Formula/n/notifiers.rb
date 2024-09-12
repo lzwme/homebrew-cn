@@ -9,6 +9,7 @@ class Notifiers < Formula
   revision 6
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6a3d99de188192f45086fe0542c758e208f7defc9caf0d2fabf269708c26746d"
     sha256 cellar: :any,                 arm64_sonoma:   "a654ba7afe3218566a3bd3eb708379ca4de2919540d8f2bd4cea386cdbcd565c"
     sha256 cellar: :any,                 arm64_ventura:  "2df8df638fd8296ee550f6ebc946c3872f3018657aa32988d328bebcf3f7fb55"
     sha256 cellar: :any,                 arm64_monterey: "a2c5191785c19b7d5c404dac5c95925b05f1243d420ddf584534da17a3f87347"

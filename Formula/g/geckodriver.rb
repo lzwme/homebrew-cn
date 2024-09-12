@@ -35,6 +35,7 @@ class Geckodriver < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "61c09a42615f9687ba921eaf49d3a5f789fe682fa3b684d73d5dfd5fb697892b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a94affedc1448a651aef77cf7272f6bc24a9d21a841ae7d065fd9fd5dc83e21"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c90b62ac37e6c8f5469360b4e42d1407d2e241f230c832d0e591d69bf17a24f6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ef272c6100a72b0f504d8cf68fbe9ca58af52761021bfe3a1255510f5432629e"

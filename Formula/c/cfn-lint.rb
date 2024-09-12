@@ -13,6 +13,7 @@ class CfnLint < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "280a691318af22453c682a6e95d64dcaaa4fde97b12ace527bed8d8d0826a0da"
     sha256 cellar: :any,                 arm64_sonoma:   "8cae89e8b6aba84d82db70b0b080ad7a773d5e08d9910e2cc725703e47a0249b"
     sha256 cellar: :any,                 arm64_ventura:  "f826d6f5ed3a5f1dae9f24ef7b7f994ac8ae19087a18ea913d332982ed68b577"
     sha256 cellar: :any,                 arm64_monterey: "dc72015402829eeea10f8ac1a5c3f96be9ea32d6f7a7cc0dcb8517305d2a7f7c"

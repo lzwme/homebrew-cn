@@ -6,6 +6,7 @@ class Vc4asm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c66f2ce86c71a5c824c8e0f19edd39b714ae56d6f3ebdfc287fa7549e66a8f2d"
     sha256 cellar: :any,                 arm64_sonoma:   "8292e0e5586e00d1e0c74c5b411ac925547a0b46dbdbd3ca54b7ffc95eed2248"
     sha256 cellar: :any,                 arm64_ventura:  "49337c5ba68c5868f9804568af0ab0fc29223eee04b6f50154fa30ef49fb23f1"
     sha256 cellar: :any,                 arm64_monterey: "af417dc649bc49003da98b9756e05da700076907cc4963818b839b817f721bc5"

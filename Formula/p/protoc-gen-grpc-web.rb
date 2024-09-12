@@ -12,6 +12,7 @@ class ProtocGenGrpcWeb < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a1380447c6c7998f1346501536727e5806611c4892671851c100ef7f242a8ce1"
     sha256 cellar: :any,                 arm64_sonoma:   "f75cc8466c6773885059bd615d775c917a64388d3208e18e99fc745857efb271"
     sha256 cellar: :any,                 arm64_ventura:  "8b7d340837605b8088c123067a58d0548dec600ce53d63ff1cd65c3f7d050b61"
     sha256 cellar: :any,                 arm64_monterey: "6d95c1d15884fdeb7fff0765a9cc927f4ee29533671f4ad64c284600ae59604b"

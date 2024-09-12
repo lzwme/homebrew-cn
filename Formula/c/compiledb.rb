@@ -9,6 +9,7 @@ class Compiledb < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42246b8db490b17f5ece55199b892ae54d4263f05d0a5e5d514616c54f0a2347"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e634ab1ba68aa04587cb327aaf5ca6875ca82b821d4b5a6dbd1054836eab33e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a22ef72db1ebbbee1c4349c5c9052b3f51080319118c3c9870ddd610d30e8e54"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1bff69f65134554069046e579e38a23b2b0af952c06d6fdcef2c2c8a4dd36446"

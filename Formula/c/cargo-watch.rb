@@ -12,6 +12,7 @@ class CargoWatch < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "285a8ab744b40f440b477dcf6bde9e864cff915ee1c4b25c158172f820bb8e43"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3318da9407a905cf94551b8812a3cf2b12e63f018dde893dba997ec4472b8246"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e474cca8cbb79931dce5e0047737d60144ca6d1341b28cdea378ed5ba17d90be"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1765bb6293864b0bc25827614844ec2e4fa84c0a341bf84af5991bc41e1f8185"

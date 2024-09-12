@@ -13,6 +13,7 @@ class Luau < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "31d32c14dac829ec421d224b3a0676fb258beee9293e8de8cba3e602d31936bb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cdc703190df61105a7ba9f2266bf8c62b03376ece42af49a19759675f6996cb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2981c6bb606bb83a177cb0db8830dba0b7b68e7c5f4c7442aa554ab1bfaef87d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "77a1cfcd7faf586a3ed23f44b371420a7f745d40aea3614eecff78cf892777ea"

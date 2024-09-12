@@ -9,6 +9,7 @@ class Duplicity < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "cb42a8892b2f30697bcaba2cdf1fc9e33b1e2d739b1438b31daec11b6bbdb3f0"
     sha256 cellar: :any,                 arm64_sonoma:   "b02434565f245233da52df8e0e444e44ea8f7391bba667afc161d974a68dfba1"
     sha256 cellar: :any,                 arm64_ventura:  "f8e0abfa743717a3e856872a5f7a85999ec6706d4bb1f24951095be36344b32a"
     sha256 cellar: :any,                 arm64_monterey: "9e4cdfe6b8a725ebc3347d7367247533a7350b300dd7cf11c211ccbf5400169f"

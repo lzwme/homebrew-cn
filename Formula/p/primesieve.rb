@@ -6,6 +6,7 @@ class Primesieve < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f7da8322e39600bdc9aca3a7cbeb25f9919bb83e3c8534ed0a979a8f022110a0"
     sha256 cellar: :any,                 arm64_sonoma:   "fa02e41a21f214425987866dad0ce74d252b5e3e7ad0f9b1f4d75ffe7dd1a1e8"
     sha256 cellar: :any,                 arm64_ventura:  "228d0bfe7758cd12500784ff76c44b9fa243fd1b86a8c747ad34d3188a9a36fb"
     sha256 cellar: :any,                 arm64_monterey: "9be7d308ad56ac5abdba3c3c730413167219b62f8158dfd0d52c061848279d24"

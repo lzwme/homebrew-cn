@@ -14,6 +14,7 @@ class Govc < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6eb65004880ea5a14d467609df112ea3889ab0b9c553c1bf28313ca365b63a7e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4abfec28c22fe0a4d6ab32a35673c1c0d6930b5b1f3842200d3e5d8438e0018"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "24962f279d00fa2f13e9d9c9fc3d444856ca992888ebbb50649c227967d57b09"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c2fcd8f59ba10d734115d2f9dd7846e2eb75920b2f27d4a53a4d544aeed83e57"

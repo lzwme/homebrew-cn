@@ -7,6 +7,7 @@ class CargoZigbuild < Formula
   head "https:github.comrust-crosscargo-zigbuild.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a7b8881900b749fde7c799609cb13c979c28eaf4878d9d53a5d7e56c9e88071"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14e2c410e2abcc14e216745f8ce16f3932c7dfe6c77b1b44840bbe8f563954ee"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b66ce12ac72d3659d3f38b5e1d50b6ed72dfccbeb27fb34c97e8fbe8122a9c5f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4cf4e792ed4c3a23e1cd54fea677ddee8003c75b6efab0eddb7329dbf8134e56"

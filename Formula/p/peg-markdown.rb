@@ -8,6 +8,7 @@ class PegMarkdown < Formula
   head "https:github.comjgmpeg-markdown.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bd7f5543b909228fcad9af4e3173b8ca657d92ca17233c99c8415716c7a575a5"
     sha256 cellar: :any,                 arm64_sonoma:   "a98a5d30c50275c60315ca49c9a5e9f8db427bf8e14dd76eed44f5d59af8b354"
     sha256 cellar: :any,                 arm64_ventura:  "b86b3203ed481c4afb9bcbd489a4803b3f1fd204c27bbed16dc42e45e16790fb"
     sha256 cellar: :any,                 arm64_monterey: "93a7ee730c2fb9c01ab25be02028ff8b25907d2a1693de10f07864b861f3be13"

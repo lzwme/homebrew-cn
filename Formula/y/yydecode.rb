@@ -7,6 +7,7 @@ class Yydecode < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b24e0faa262eecd027d92d536e2975069785ddbb69be173b74091903c6066af2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1194156e2ec7b87746123e20fc848784605d1270e8764d9868a35dd7bea55e99"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f42ef32de3ecc81a603e7b8643a321bcf7af9f564224756d8544479b2df6be7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a2b69a15d8d9928ae09b77b310408111186ee22fea50ce4d06a563f1b61cb1fa"

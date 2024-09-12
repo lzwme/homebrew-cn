@@ -7,6 +7,7 @@ class Mailsy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b3020835bf4bc4375afaf73df846d48e805448377b4a8013ae8e59480cf4981b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5eb1d27527f9b27d2bbd577ef5805e696d9b64b95d3db4f8f025899fda4d9289"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5eb1d27527f9b27d2bbd577ef5805e696d9b64b95d3db4f8f025899fda4d9289"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5eb1d27527f9b27d2bbd577ef5805e696d9b64b95d3db4f8f025899fda4d9289"

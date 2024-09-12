@@ -10,6 +10,7 @@ class Nyx < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2418c90ac48d6153d67eec88f272614746ef86db246bded5b00cb6663409cfce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9ebe3881cb8d588b9cd32fbe5717cea85ee3a3fdfcab4b6627158180683e37a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d49daa7507175a4b1b2f44a0f289460cfb28fb3829eed63b1d13401b1728b7a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "912af2b00eb9d68a3272603aef9ace42af901316258922bb48a7856610794599"

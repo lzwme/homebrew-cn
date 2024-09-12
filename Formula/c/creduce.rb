@@ -58,6 +58,7 @@ class Creduce < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "c734ec8d35505aa8bb847e3e8a0e762c083dee878ee8a9476c58e17212288ebe"
     sha256 cellar: :any,                 arm64_sonoma:   "a84e7830c2d4c2f038abf3bade992a13223b0f64ce7880f889938d791b207ce4"
     sha256 cellar: :any,                 arm64_ventura:  "4ff607af8b4a7f7b713e58c660272d700ba6ea8ad004865342205aecf1aaec4b"
     sha256 cellar: :any,                 arm64_monterey: "f2cd0d3b84053296246e0e226e80c4177da63c0a5d260fa44963c8e34ed26a59"

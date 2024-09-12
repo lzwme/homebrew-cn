@@ -18,6 +18,7 @@ class Bitcoin < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "406c2cd86948bf394c4a740d7a731dbdae72cc50bc52d36ca7a758520e238b5a"
     sha256 cellar: :any,                 arm64_sonoma:   "545ca96eca61db3e8ba5abe1c8a21d5ca3895be3c23696037023b8fecfb71431"
     sha256 cellar: :any,                 arm64_ventura:  "74596218beec67cfd41f822c1d27962a9a497031fff5001e600dc4667adf19fd"
     sha256 cellar: :any,                 arm64_monterey: "8154c69f0f380b5ac3d278c84ff890fbf1ff6f849d93ad4395c81385c57b2d9d"

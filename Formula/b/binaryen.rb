@@ -7,6 +7,7 @@ class Binaryen < Formula
   head "https:github.comWebAssemblybinaryen.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b25e6cac71cdd5bbda087ca5f26a9cb74aa6904aafd99b5aa89d6cf7532f6af1"
     sha256 cellar: :any,                 arm64_sonoma:   "e5893a0101f802e12b0decb4be1732d28e61eb5fd19c742ad75d989f25b3957a"
     sha256 cellar: :any,                 arm64_ventura:  "f48ecdbb0418e148de8b3403c2fda3be3b750c5607ab9ac73d7aeb223778b58a"
     sha256 cellar: :any,                 arm64_monterey: "14adce32c4d922526f3991e50cadc760b1e8018cda3d3c64fa76599a579efbbe"

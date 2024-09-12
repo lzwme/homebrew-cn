@@ -7,6 +7,7 @@ class GoFeatureFlagRelayProxy < Formula
   head "https:github.comthomaspoignantgo-feature-flag.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fb567be63f45d7b3c0b5f1c2ddc1ae50deac50d9395e46df413e50c79803777f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32f24b35785ce3792d4c68bb66767aeac265b606a223fb8cdf3376af98bbc06f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ae75c145d14893ba48be88a40db577bd3b2453d13964ad561dca02b94ea6859"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f8429ac096c1e380c280f69b677f1ed2d40a774aa71ee6510da1a1e769d937a4"

@@ -10,6 +10,7 @@ class Vermin < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c8d063c03e5d7ed6717a47d654d49eaca3064fde22b4dafe637f5f09f96446fd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e36fb36651f86fcb5093d034a29a33f8f9e0da02d9b2dd35ad759196494a3c06"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "18474cfbb1b70f5bf4c9e3f1afa8443491042d898f4f9c1b5768fdc49d50ca6b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "60528b1441c3bd7007cd8dad9d866ba420ec40c769fe32ec5ba31445f781b47f"

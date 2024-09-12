@@ -7,6 +7,7 @@ class Libxaw3d < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "84926ca78b2283f5c32b42e003c4a6711d208aa2c0d31e81192816561e967830"
     sha256 cellar: :any,                 arm64_sonoma:   "2bcf584c0f4e7997ce9e72a452237f102eba55f0069565eb407f5fafe5d85fb5"
     sha256 cellar: :any,                 arm64_ventura:  "ee7c26268433917e585a7acc992c04abeac87d2954fe1a3d1e8978e1d89d3832"
     sha256 cellar: :any,                 arm64_monterey: "906cc60ffd7998219e6cd38bfd86e9331193ac7cc38ec5557a751a5d76c60f91"

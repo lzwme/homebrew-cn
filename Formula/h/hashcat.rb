@@ -20,6 +20,7 @@ class Hashcat < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "06e83f034f4146c057190a75ea05d9ede88a2205db694dacf643d7e4d88b8210"
     sha256 arm64_sonoma:   "8b1640f18f1fcf6049869f3e461979401f811b1f46d1131676b0732a8b799c7b"
     sha256 arm64_ventura:  "9b4475b3b7384c8186f3e42e1cef42df899148ecb496f1fdea5c1184773cee6d"
     sha256 arm64_monterey: "d05a3da7fe49d7010b867b3fcfd5b71210a4013d1069a6eca4bb1085dec342ab"

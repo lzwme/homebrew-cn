@@ -21,6 +21,7 @@ class Pbc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_sequoia:  "566ef59675030399f76d4f7c067ca04cecaa3ebb4d9102aa480dbe39c24ba487"
     sha256 cellar: :any, arm64_sonoma:   "4e89883c3b22eccfdf0904017650418af4c2f50bc9ae41a535235ac1d235f27f"
     sha256 cellar: :any, arm64_ventura:  "e22db03b394884a0f34163c74d87b6c33210aefd98cc751d2ab61108c667fdf0"
     sha256 cellar: :any, arm64_monterey: "2397daa1cad88180149983c0f6557b6a48fa2124c24ac78a8d95dd0af9cac8a0"

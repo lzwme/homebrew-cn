@@ -7,6 +7,7 @@ class Appium < Formula
   head "https:github.comappiumappium.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "13acae494cdf2df305c09d30c99293107244c93038ac0981ff9efc28c66ea991"
     sha256 cellar: :any,                 arm64_sonoma:   "ff904d73fcd61de42bda6af4d4c14e29d55d333d2caeab46c8969fba20600570"
     sha256 cellar: :any,                 arm64_ventura:  "ff904d73fcd61de42bda6af4d4c14e29d55d333d2caeab46c8969fba20600570"
     sha256 cellar: :any,                 arm64_monterey: "ff904d73fcd61de42bda6af4d4c14e29d55d333d2caeab46c8969fba20600570"

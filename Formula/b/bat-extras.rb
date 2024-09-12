@@ -11,6 +11,7 @@ class BatExtras < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "88a1916fda3f274a6572ab61bc490a502d219ebfc0d8c6a876be3508f2512250"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f77d56bf671e40f980d54be6fe95db9b75b4846544d1551366a7c952972d864"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ffbc0b06365560c945e7ba27da1e9416e2b28ee1dbc719d63672f797293668c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2887dfd67a998d9fc5e9631463074f2361dea63e878bb1b8f6cafda07c1cada4"

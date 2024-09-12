@@ -7,6 +7,7 @@ class YaraX < Formula
   head "https:github.comVirusTotalyara-x.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e77603b195c86aad9759c2ecbd9d14c10f14ffba6aaa1b74b29e13b3b3571e47"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f65941c1ea6981605cefe7f613e360544c4b587f77d35751c0bfca583e94213"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d07c273792b3247b645228e4936fa41b7160705a51c6345b5c8e40175017ec5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d6254846e09e3abf304309a769434187d38e7547b5ad333884dff83c250df8b0"

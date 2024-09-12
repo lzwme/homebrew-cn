@@ -11,6 +11,7 @@ class Bcpp < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cfbce1532cb7a3c3941c227897698fe986d0aca44930ad297b271a435521757b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ee113bb71ff30604528082148d6fe53a44adc7ddf12b727ce05af567196a374"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b69058a8efe36e5e3208e21fc10a5d46c614f232023588069eae9050d5c584e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a91761cc59a46927a0607b28239166fa0ffff5bbe170792af5881fb028007511"

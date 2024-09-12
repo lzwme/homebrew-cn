@@ -9,6 +9,7 @@ class Cloudsplaining < Formula
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "78b0ed569918a1fa5e535cc89ae6eed241476ab930acb6a12964e5caa4c56e65"
     sha256 cellar: :any,                 arm64_sonoma:   "324ff63daac1df56c92a0ae28b2134cc12f8e495678cb265546d78949f964f3b"
     sha256 cellar: :any,                 arm64_ventura:  "0b3876c3fad9ed286ed6ae1b4b00cf7364aced950c000da3d41d060785272a4c"
     sha256 cellar: :any,                 arm64_monterey: "fef37e50dedf2c667e61f075ec8ce1a217dd090564292c0224239ac2674e3bcd"

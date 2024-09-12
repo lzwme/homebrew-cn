@@ -7,6 +7,7 @@ class Tere < Formula
   head "https:github.commgunyhotere.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9910ffc0764f94a34c856cd11736d762e23203a1d3ae96460a53be566a93509a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54719b8dfd7e1d8d4f4c9b5169efeed05410bf4359b0262218032ded09275807"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3142df42bb6de9d0cedcd83a22703ce70a69edb1d4950092673c4cabf04b5f2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3a3335ebce1d748e862505d8282bc7aa7d2434585b0e89546dfd8c56a3436797"

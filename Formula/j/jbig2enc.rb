@@ -8,6 +8,7 @@ class Jbig2enc < Formula
   head "https:github.comagljbig2enc.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e56a40c42b91521dc85adbd0e64f139996cf651ccf20566791eb025562b5c989"
     sha256 cellar: :any,                 arm64_sonoma:   "b7e975bf348576e5e3aa681fc09c15b91f4cf7542b071027fb277e35d2f09e84"
     sha256 cellar: :any,                 arm64_ventura:  "5894ec7327cf835d5c03aa7dfe077ec1976e07587fe3f7f8a8d188b07d486dda"
     sha256 cellar: :any,                 arm64_monterey: "a616b755cbdaf4d7133f6a7dde4a1a8cf59295bf627b00a3a6f022e2c0b2010f"

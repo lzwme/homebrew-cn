@@ -13,6 +13,7 @@ class FileFormula < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "251cec26310d3a9487bebee946957caf8adfb2b8d9f4c2dc4f950de05e2384fd"
     sha256 cellar: :any,                 arm64_sonoma:   "46c92c7eeddf54855344d6ca8930eaa1b4119acf988ce42455fdccd20eccb439"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe86a1022a44ac24fbd0f8b40a2ee4624335cdc6f1a865f5c5ca8df5fa07b454"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bdaf9f9b25fcf7ea6c7bdbe44ec3f3cc0d56be0dcec1bbb9c6d4a0fd8d639e9c"

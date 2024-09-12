@@ -12,6 +12,7 @@ class Udis86 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "552bcddb3008d7acd654983862ce26f6bf71969bc2e94cc2cd2d1b9e89998815"
     sha256 cellar: :any,                 arm64_sonoma:   "0a1f4f4ba4fd2a3187075c2390eab0ac8ea0e3aa49d74e6ca74752269cd383b6"
     sha256 cellar: :any,                 arm64_ventura:  "4b94655d1de023c07b206dc196d082d727fb4d912b712e4c43ace873236ec5ed"
     sha256 cellar: :any,                 arm64_monterey: "d21c7de8ded29dbf2218802883f3a2e702e338722345b06aeab3a5146b81b29e"

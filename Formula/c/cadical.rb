@@ -11,6 +11,7 @@ class Cadical < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec60f370965bce1e87cca7bbfef498c371cda9ceecfd52e81a99f22ec0cd24a8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9825a0c9c4c024f5023494de2712b28b28deab1d7cca9aa1033cf5f89d9345b0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff3003444ea747f336347ffcc6a8d6814b5456f52e7604255db0844f48891551"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e4785bb323b72519598901d2423da7c70d9d975f9588c79ca7d15cf298851286"

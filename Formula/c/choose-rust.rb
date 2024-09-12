@@ -7,6 +7,7 @@ class ChooseRust < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "177eb005765273e5f472e2a10e0eb9afe7a6afedd9d667f6a338aa99d6f5d7f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8a09173690c704c2cfa1612fc33eeec23b888baebf5a4ccb19998fcc7b8574b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "82ed2e1824a5e50d813e988e5e29bef7497a554d16765bc9499aeb413f7c293c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d57acf95592fce37b4300637b1c38989564d423de789b9fc624223f53de1c796"

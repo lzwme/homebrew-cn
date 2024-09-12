@@ -11,6 +11,7 @@ class Tinycdb < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0a223be49f8efe0bdc4716eb6b6efc5972dd7a184ace7a261b585b5860ba3790"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "84a0722cb1e3e74c5771ddf3e58ec4c6181baac4705e9d8c824b5c1a943b7b29"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b56128230eae3a7c00d7673e75878e87b17c29a1a417934f8f70e20d7672adff"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f3c14e7e96bf04a5732dbe8f3004368a95cfcfb5e8f9cc3efad43b8d4eb39982"

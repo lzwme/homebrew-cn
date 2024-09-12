@@ -7,6 +7,7 @@ class AstGrep < Formula
   head "https:github.comast-grepast-grep.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "94a3a5a35fd509d7d52a1235739f1ed021e5f9b985e034b50bbc3deb84155518"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c7a0de94bd5f4a45da0f39710e8dc79478bb483e0c47cbfffc1c50ccd76dc0a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ee79a975b82f4c159f9db7cce3da56baf55b6e0c5d7877b08c531fe59e680c0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ccf23afbb0f59c20ae55bfc5a4bde97e78f7284cc13366206fe2eca5d7b809ce"

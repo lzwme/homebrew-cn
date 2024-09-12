@@ -8,6 +8,7 @@ class Openrct2 < Formula
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "34204e23e3a7b69c46e24fdcd2597693e6da30fa80d5f90543559c5ca74186ee"
     sha256 cellar: :any, arm64_sonoma:   "b41b0ba5b2eb5fd41dc9abc0591e6de7d5c6a7eae6be118da900ea72d2cd7744"
     sha256 cellar: :any, arm64_ventura:  "8c5e2a60bae7c6d5293c7da19ef07be22ff94ecc8fabdca8396ce303b3e8d142"
     sha256 cellar: :any, arm64_monterey: "5728bb8c4c3c6cbbebc7911ead6ade7725f3396cc3f67e8015554b492d805bc9"

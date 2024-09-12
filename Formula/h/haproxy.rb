@@ -11,6 +11,7 @@ class Haproxy < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "655256eef81c57b940411a2610f495bb3ba2bf24de1c2a2d5df95d665abb4959"
     sha256 cellar: :any,                 arm64_sonoma:   "39554e401d587932d07597cd3a63634d95a46061e72202c13aefa905c36b6b8e"
     sha256 cellar: :any,                 arm64_ventura:  "b1b0d75c8349802f5a6f62f5c88650ac7fd947648ce6c483c5db0f679a2a7299"
     sha256 cellar: :any,                 arm64_monterey: "d8a25dc42ddd68ea6f19486d351375268287734a314352d99642237b4bf00f07"

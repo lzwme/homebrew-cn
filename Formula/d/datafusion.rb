@@ -7,6 +7,7 @@ class Datafusion < Formula
   head "https:github.comapachearrow-datafusion.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cb00342664222150e753541741b874e3f47ca1e5f3a8048e0e430e5941fe4651"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ca30bc0d1b3a8d853cd37b88ec7716ac0c6872fef390ee4f6735be373505b2a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f5c8c62fbcbcb99f4aeaa48d53cfa44146a59f77726ae0c10aff21520d493ee"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "af0107207e627d1ca01c83cc5249a9afc331f8ff1e16c701fd7ee1b49c28dc4a"

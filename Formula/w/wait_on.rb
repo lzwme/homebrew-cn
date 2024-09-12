@@ -7,6 +7,7 @@ class WaitOn < Formula
   license "BSD-4-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ffd8be74922f931670be9f5bb8fbea47735ddef928a74d44562bcf0e2969c01d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866722ebcb399e5524776cc6ffdd2022112287368e4fa768b8b9bbfe2a8a30cc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d6736732caacfe89a285f06256c397fefb2e47f11032f282d84e874b384fd21"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5d7664213ff9c0136cb6e8add7a2bfc87f2bf316594f9305e53a287834b12c72"

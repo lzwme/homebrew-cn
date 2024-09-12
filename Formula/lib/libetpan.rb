@@ -27,6 +27,7 @@ class Libetpan < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "28a0fa384fbe4f86bed68fea326d1cdfec1b4fc8c0b21283a00e3c268630f503"
     sha256 cellar: :any,                 arm64_sonoma:   "eb5765b64ee9833f052439c9f5b29752115b84761e569c7d7d07d35b457fe5a5"
     sha256 cellar: :any,                 arm64_ventura:  "daed620aaf4d24519d79be6cf34fdbf52386fa92c4c7880e8cf05cdccb0a787f"
     sha256 cellar: :any,                 arm64_monterey: "1d33d9e801085b4c350423a936c7e79d1b6ed20b1bd0cfd08d42ae5e5274f07d"

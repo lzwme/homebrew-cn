@@ -10,6 +10,7 @@ class YelpTools < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia:  "c1b43d5c6bb35212560be8eb27c2e2dc97506798c3090456e2ceebcf6f7e0747"
     sha256 cellar: :any,                 arm64_sonoma:   "fbae1e97dd9800a69ea65c94ce2344358543be53546bef33033e15ac820892da"
     sha256 cellar: :any,                 arm64_ventura:  "b9aaee8bdd73c94f40d388b2a71d440cb3af6b94a4232547d73221c342647fdb"
     sha256 cellar: :any,                 arm64_monterey: "fc21e8eaa199474b8995401cb18602da05b93f621aeb04e4275206aa7717eb71"

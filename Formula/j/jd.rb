@@ -6,6 +6,7 @@ class Jd < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e8fc3eccec5d7cdd882b9b457051fe4126e27a633d42c5f71921889c8d0086f1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00a6b8ffb60f702efa00a994ebc0524702950a2625910a62cc440d7b49c86a22"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "00a6b8ffb60f702efa00a994ebc0524702950a2625910a62cc440d7b49c86a22"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "00a6b8ffb60f702efa00a994ebc0524702950a2625910a62cc440d7b49c86a22"

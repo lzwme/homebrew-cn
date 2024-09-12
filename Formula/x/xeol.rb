@@ -6,6 +6,7 @@ class Xeol < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "519c4128b262741abcb12e1a5a8d8a2a867c3133fa9fdfbf6eecf7da353e0211"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cedd83abea0035cb312b407afa610f23584d4e6898332c5788f77f333cf60502"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "691960ae6a7f36c1b18e89d780834d80a9ee5d90c6aab3172aa4374c163d0bd8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4e2d3fe8a572e249940831909dfcaf6609f739683c0182c3e74c07668ff0717a"

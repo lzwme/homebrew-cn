@@ -7,6 +7,7 @@ class Jp2a < Formula
   version_scheme 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "47e42780dd8c6d6c8d4ac70e85f0c064a65811de561433671d55094059388d00"
     sha256 cellar: :any,                 arm64_sonoma:   "874626298e9ec3382fec6b0959bfd2c03de419640ada27d70547012c0fee1b9b"
     sha256 cellar: :any,                 arm64_ventura:  "cd1ddc8d78c2b8391a7fd5b69ac9357a7105a223029ca3d4a691f5a6e57f57ca"
     sha256 cellar: :any,                 arm64_monterey: "7e104bb6a94326ac330df1daeed8424a92e9ca66d02a681c892bac0ccb20df9f"

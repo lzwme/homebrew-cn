@@ -7,6 +7,7 @@ class Nuvie < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "902a34d91fc246cecdc69226062a69cba191bcf6992503f15c4f88ddad3026d6"
     sha256 cellar: :any,                 arm64_sonoma:   "5411b122bd14475a5b65b01528146f985b3af26d4e6b82c6d34c49197e1dfc0e"
     sha256 cellar: :any,                 arm64_ventura:  "93db83cb47b7c6f93b2d6adeb1d6fcf12f72920dd32185983a6d24fe0f63002e"
     sha256 cellar: :any,                 arm64_monterey: "987e483a02d53595c23a2174ba7603e2cbd03f0351ef8d1ba2cf210c73aa5540"

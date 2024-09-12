@@ -6,6 +6,7 @@ class Dcfldd < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a28ec4ab8df3647cab4cca66a369850d29ca7f4bb17ce74cb3f1be9149b06433"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37b1c9ad23641e604ddad99580bf187c658c2cefd4b961ecae719d5b2eb059fb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a1e4bce6c8af34771e2f96e5c15f22f90388a39a7f44022e9efd51e4b007a94"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "985ab7c04a8b19079d969c4984327bd680cf4e03d9352816201c6d0808270e75"

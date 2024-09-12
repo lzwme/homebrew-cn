@@ -6,6 +6,7 @@ class Ccrypt < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "030055fedb7e4f4136631b6cb57863d19dfbc34c422410ef246422471f6ee0b9"
     sha256 arm64_sonoma:   "6494f1e4ac165f00a8f1cadecc17a33175e0bc2e13d2c6111c4c0825416a43c2"
     sha256 arm64_ventura:  "8670e0da25badd930fe04316614c22caceec629bba9ae2fd4b1576f25d1c724f"
     sha256 arm64_monterey: "6df2f69dee386a1f37820245fdcf2f2f6e52389e1617b8bcd72dfae25d829207"

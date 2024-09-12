@@ -11,6 +11,7 @@ class Eccodes < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "1d431287aa633519e98774a1adc55abce3bb970085e2251d6ff5436b34449366"
     sha256 arm64_sonoma:   "e9d99218e7d0715c970de28f4195c56d86c7bee493637a79f3548e12f259abcd"
     sha256 arm64_ventura:  "fadda872316900b0e84958a47b6168f88e46b53d172a9588a29a8a7bda97cc64"
     sha256 arm64_monterey: "954f7a6b86f29010c204fc97f17e7be65cf9c3aa54c613e59945bd38022d0cf9"

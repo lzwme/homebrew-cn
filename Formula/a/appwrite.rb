@@ -6,6 +6,7 @@ class Appwrite < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6ee7a434b8b43e7ed20a91ab40df740fade43c3e13ed0b976395edad1c6b8cbb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ee7a434b8b43e7ed20a91ab40df740fade43c3e13ed0b976395edad1c6b8cbb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ee7a434b8b43e7ed20a91ab40df740fade43c3e13ed0b976395edad1c6b8cbb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6ee7a434b8b43e7ed20a91ab40df740fade43c3e13ed0b976395edad1c6b8cbb"

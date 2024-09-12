@@ -11,6 +11,7 @@ class Cdo < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "99ea564f89d7e6f1a5aed780123fa2af8d01e06041474a105273cfd1255313c4"
     sha256 cellar: :any,                 arm64_sonoma:   "a25e82ca7cf9895709729ace682d895bcb6ad1e4b352f1892818a24c5ef708d4"
     sha256 cellar: :any,                 arm64_ventura:  "28d6a461f44bc3ce62d52959cbc9495388574b50b383bfab90a68a40fea9a0df"
     sha256 cellar: :any,                 arm64_monterey: "a849bbef553f5cd4504d9e32f142591343334dc93c1cf409ea3e57f653421c2d"

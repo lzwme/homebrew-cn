@@ -11,6 +11,7 @@ class Libestr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c4ee35e1e3e47e5009e3fdb7be52737edebddcdd812e8c1811fcf73648a656cb"
     sha256 cellar: :any,                 arm64_sonoma:   "3fba48207a9ab79341e43e937560dfeae150dada3f5cb560a7a209fb45e726ef"
     sha256 cellar: :any,                 arm64_ventura:  "5acb64697d9ef2237c384b6b2f265e2c74770f218259707485fcdf99dfdca7d5"
     sha256 cellar: :any,                 arm64_monterey: "b186e7aa04c176161a97f6955e2d4cc5dff415be78213f0f842c03acd0614c4e"

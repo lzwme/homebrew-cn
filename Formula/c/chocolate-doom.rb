@@ -12,6 +12,7 @@ class ChocolateDoom < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4f000383f25ecf073d230153d43208298586091496c89fffe550b1ac3ceec679"
     sha256 cellar: :any,                 arm64_sonoma:   "d48d6cab180c6b15c33208fb7147b3f60b8817d81d8cd3a02da366f84b04d9fe"
     sha256 cellar: :any,                 arm64_ventura:  "307ee7d5f7aac248e236f8235c0de58d303693d9767f62d981dbb2de2b6dbab6"
     sha256 cellar: :any,                 arm64_monterey: "3414e9cd11236891dfd66811b14a329b63b9ccf83f24f7564ddc589d170cf501"

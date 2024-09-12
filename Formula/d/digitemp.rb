@@ -7,6 +7,7 @@ class Digitemp < Formula
   head "https:github.combcldigitemp.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e807829f6b24e85e3cb39c442aff3b400d886b16b6a17b7122df5b3ec9a92bc1"
     sha256 cellar: :any,                 arm64_sonoma:   "745ab5f0bd70e480714242d647e99eb37b290c0e308f942aad4753dd4efa53ad"
     sha256 cellar: :any,                 arm64_ventura:  "90f8b147176e4c1383934ed0992b8647b6d31f80069c6bb0803928f653911f88"
     sha256 cellar: :any,                 arm64_monterey: "8de47e480d9a46e00ca897acad3787f7c6897aefe28e63f3008aa7c736112e17"

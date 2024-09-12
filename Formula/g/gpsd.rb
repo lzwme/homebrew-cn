@@ -13,6 +13,7 @@ class Gpsd < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "9a3bb3d5594e1b63686b3d40b42f1d8dedf396b03c952a6a758d74d374c08452"
     sha256 cellar: :any,                 arm64_sonoma:   "938cf9f4d6bd4ad1ab1ef1f553921dbc6db46810fff2715f25ad8c0aae4a1258"
     sha256 cellar: :any,                 arm64_ventura:  "12a924778ab1fcc13aff5d84ac712db09bc964f85fc57b7677f1566c5e870008"
     sha256 cellar: :any,                 arm64_monterey: "7ce33dccf34d5beab1ebd4a98dfd1b3bb284be93a43e367e5bb446258da36144"

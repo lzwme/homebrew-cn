@@ -12,6 +12,7 @@ class BotanAT2 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "5c9bf72b729b6e3544a4529d7f67ff9ccbb51ebd9b74b965e664c4cba11ea86c"
     sha256 arm64_sonoma:   "26123f333ae9d3b9370ac9c25537f01905e7bd6f1d4d87efd186be3128dbf78f"
     sha256 arm64_ventura:  "a3827282841699000756d03c5d5e53c5224e67f340c7e7c5fc43d93e19a4e370"
     sha256 arm64_monterey: "291b91e6418c3be4e290f42f72bf690f05867ab19cb6d7b5a2af031a65ccf960"

@@ -12,6 +12,7 @@ class Lftp < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "7669b4af3beb44b3cf274a13b07b08a30c4a7c783beb1e70a5503895a90e0f57"
     sha256 arm64_sonoma:   "aaff61c7beb8135dfd9888ac0e7fbde05a83b3189f5610a682ed01bde537f16a"
     sha256 arm64_ventura:  "c9bb0571b5b9472a289e93b9210e1917bede06a2d5909d47eacefb0f2f042439"
     sha256 arm64_monterey: "d3d9dd22c527c2e7b97f6972a3e902ae58dbd52cac41a9f5480e350bc00cfb79"

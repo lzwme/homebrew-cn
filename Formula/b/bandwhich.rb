@@ -6,6 +6,7 @@ class Bandwhich < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "81c428a81dd167311744040e46bd79a22023a60eea28c1fe4f7d366027e12de6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "646b92317193c0a8cab6f569216bea51e1fe9b2477974db2625a8ba26dfc64c4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4e9a81c2c16eff25f9539063c87c24afd1efd3c2725b4d7c4ca770f60e19e10"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b1b2a5242fec90e51e29b59e3b8d429fcdbe6db75b67b1b03862ffcc0679461f"

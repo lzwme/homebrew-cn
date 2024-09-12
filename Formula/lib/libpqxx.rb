@@ -6,6 +6,7 @@ class Libpqxx < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d88089c7284c6e48d32ac9a8913a4592d2402ba8724cee41d3d8e99aeedf508a"
     sha256 cellar: :any,                 arm64_sonoma:   "4bbe6bc59845beb22347415487ece9596a1547125b25cb79f863a73bd00a4b91"
     sha256 cellar: :any,                 arm64_ventura:  "1430202c780b48c6105e855ea8d419d8007c64efdb31ab47e470b400d10bc09a"
     sha256 cellar: :any,                 arm64_monterey: "578bccfc4ad118c1cdb92c1dbe202656db8a284ce3c6ac1cd04112b7b1276902"

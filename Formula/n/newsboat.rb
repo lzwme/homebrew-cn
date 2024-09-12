@@ -7,6 +7,7 @@ class Newsboat < Formula
   head "https:github.comnewsboatnewsboat.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "7a2c6b9b8687811ce009ca7d9abb3f05c278dff80e203af3bb1247bf2a3730b4"
     sha256 arm64_sonoma:   "28d58efee1ea7cc0c03f9a98185994cd1688bfee53fd39c0cd1c9484280bcbdf"
     sha256 arm64_ventura:  "933a05e0defa0b2de506a788db8c918688e317194f79553a9daf4010d8c2b402"
     sha256 arm64_monterey: "9b9aa0b872d7bf443d69999358cdbeb6d9c12b4547d78f54256a9d70dbe1f3e6"

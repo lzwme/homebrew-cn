@@ -1,19 +1,20 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
   homepage "https:ryelang.org"
-  url "https:github.comrefaktorryearchiverefstagsv0.0.22.tar.gz"
-  sha256 "9cfdd55a027f2399d5a38e26f6766689e692476016c773ce0e5b2f2378dc18e8"
+  url "https:github.comrefaktorryearchiverefstagsv0.0.23.tar.gz"
+  sha256 "e28f63736d7c11a25349ee48b0118e1cba16d11a464dcadca2d947c77bc8cc83"
   license "Apache-2.0"
   head "https:github.comrefaktorrye.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6a08a33a921b461e93bc12e8c266405dfde8e23fe80ce576b0053ab1af3d326"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b5ec1deed70a606e3c8344b01c9e8db03832672b6e9fd4def35411f2060d774"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68752101d3a52ec8ecb47fd120f5f88ec57e0bd081e047adec29b19d16b8fdbb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a3b692f6571f5fd4ca8bbc73ab8c913b22fa8aed469add801be09554da79c6fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "540daae8d42a6410ee0905e18a3077c2c4a2f6b4d02153c59eb3eeaef617d7d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "27d04e6b26793d9fbb7f98364b668eed270ae5be5d98e36c390bf68db1db0f93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b9f0644b946267ee9983dc135cb91d71997faa290f22138abe715fded19781"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4383a4110a96444282cf9f075fec1b7df200712bfb92742f4feb36f9f226a6bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3a645ce39bbea36b375f2b513e693902b602db9122b0abed56f76afd1913e29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f33f1bd18a0f6dda79ca34338c41ee4512b81a05e9cf7750490627b499af4c37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb6ae42e7952351ff38fb46cf19f5b8685c0e55cb1ec265ad3ff521d76300013"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb0cab0332aebf2b4717352efaf764caa2617d85a383c1bf0e11d5d15048555e"
+    sha256 cellar: :any_skip_relocation, ventura:        "73f61bfc058e384dc9c458ebcd128d951711079f413076f60212bc9f95773e74"
+    sha256 cellar: :any_skip_relocation, monterey:       "bcd3b84691a7102b84a214664c5d415cf3f7700dc75d3c2b8d8c5b69c54cbb10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99905a85a31858ebb9384f40a7eaf63fe8b067b8eae939b26e3eec749d025bb1"
   end
 
   depends_on "go" => :build

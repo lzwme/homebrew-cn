@@ -6,6 +6,7 @@ class Bob < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cd4783bcae1d53258656cb48047b19fc4df2cd8e88cb44191b091aff92f3ef06"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c91231c2090232187cb61c1360edf4b800e96414192b9303ce6398b122c7c87c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ccdec4aff6fe1f5722953045434a965dc46964735eb2e073ca7190b402bada91"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "744336c16ff489bb345537405373109071897d396acf9bc63fdfa4b630939127"

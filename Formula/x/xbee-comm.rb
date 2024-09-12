@@ -10,6 +10,7 @@ class XbeeComm < Formula
   head "https:github.comguyzmoxbee-comm.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3a9eedfd657cad6df2ac1df6c320df225e7b9c14add897b1044fecd21d161aee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b50fa055f4f542eab3a06ef487bf7eab058d592c1b27eec56344e09e17bf9093"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "19861ec3a7e655a1371000d05898e0b7d1f169139d9e70dc0fc42943a685514f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f01389dc2aeb100a4114568be24c53b755633ef965fd9098564d439902790d3d"

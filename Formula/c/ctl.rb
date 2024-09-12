@@ -7,6 +7,7 @@ class Ctl < Formula
   head "https:github.comampasCTL.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "194f18d23d49f058dc3d8ec67493370ee81c741e6463a8688c5285e8fdf88062"
     sha256 cellar: :any,                 arm64_sonoma:   "09e00ca81ea0579317522d47dc94b7569c0ec006779af1688e321db694be4039"
     sha256 cellar: :any,                 arm64_ventura:  "7a3fd5eca1686d5396816bc4f7110e49fa03d0c4e1d5a31e4e7a1797661e9379"
     sha256 cellar: :any,                 arm64_monterey: "18d01a3812983c2dda174e54a1ba361545be2e26977520d30209a232e67bd34b"

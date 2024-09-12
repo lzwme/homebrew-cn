@@ -6,7 +6,7 @@ cask "ente-auth" do
       verified: "github.comente-ioente"
   name "Ente Auth"
   desc "Desktop client for Ente Auth"
-  homepage "https:ente.io"
+  homepage "https:ente.ioauth"
 
   livecheck do
     url :url
@@ -14,7 +14,6 @@ cask "ente-auth" do
     strategy :github_releases
   end
 
-  auto_updates true
   depends_on macos: ">= :mojave"
 
   app "Ente Auth.app"

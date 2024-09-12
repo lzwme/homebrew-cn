@@ -7,6 +7,7 @@ class BeancountLanguageServer < Formula
   head "https:github.compolarmutexbeancount-language-server.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9281b323db65a69a4702eb1acbe127d2ec1bda30c96136ce9fcf87fe44077810"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "baf8e9583f7d1861133d62ff19a74204419fb8136ad005f7575cc0946b2131b6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a579559df9351434cb4c99aa46b614e7c9104c101b0867e1030a61ae81c8cd99"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "75a1f40c9e1761b7f0826d7dd77e63c9536b76ecca613976fc3446b7f141d7d1"

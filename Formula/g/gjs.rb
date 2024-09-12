@@ -10,6 +10,7 @@ class Gjs < Formula
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "2d308a342983eb5788b96a27c46612ff4d23dc213d8f1846cda4a448d015ddef"
     sha256 arm64_sonoma:   "307d4320f5578aa3c533d3a88225ee48b2e76bc11d86968588fa9b56868ec566"
     sha256 arm64_ventura:  "174e50c45c543ca5a0c38c0f0cf91b54282789e7d61e0e915dcf81669908f1ab"
     sha256 arm64_monterey: "340bd07ecaaae88d11557c1f279ef58f1ebd586d92815b6c8cd11ff573fa3864"

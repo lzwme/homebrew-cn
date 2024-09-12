@@ -8,6 +8,7 @@ class Uwsgi < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "20d424690a47f7046ec833a3056c560928bff78880f00ed61644731f88985f67"
     sha256 arm64_sonoma:   "8a0fe851ae6fc032d9edb666e21f2688285503d5f3680954262bae520664a606"
     sha256 arm64_ventura:  "0f8603be2a9a008af7676a3563baa3e3150d1d52a4ccab1641a63a2ab69f9dc7"
     sha256 arm64_monterey: "e4fb04cd0e8271c2389976835ad753fa4fff24f39858519083b2cc12bcef5a36"

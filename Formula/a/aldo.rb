@@ -12,6 +12,7 @@ class Aldo < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "85ae21042606044840664aafe2df3fdcdbc6b00274ef715522d1e14964e51643"
     sha256 cellar: :any,                 arm64_sonoma:   "b213535da0d7e8de96c6d529a82d17beabea2b2fc54a7a0b4ef9e1e0787dc2b0"
     sha256 cellar: :any,                 arm64_ventura:  "0d999e5927c28aec07c5e74d61f3338129c4040bd34c35e12a3da993b0de90c0"
     sha256 cellar: :any,                 arm64_monterey: "434e524f42b70dd31c05c80d41808af6b68d13875376d38ef86dba496b86b609"

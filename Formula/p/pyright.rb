@@ -7,6 +7,7 @@ class Pyright < Formula
   head "https:github.commicrosoftpyright.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aa63c7ca85162af939cd602b1a52f6e140fdd379136436f43c21e149419e0e94"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa63c7ca85162af939cd602b1a52f6e140fdd379136436f43c21e149419e0e94"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa63c7ca85162af939cd602b1a52f6e140fdd379136436f43c21e149419e0e94"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa63c7ca85162af939cd602b1a52f6e140fdd379136436f43c21e149419e0e94"

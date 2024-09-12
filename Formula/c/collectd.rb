@@ -21,6 +21,7 @@ class Collectd < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "8a439840e29532604b8f7e7f69660e4f10497544a68f3fce5690394cb8de6e2d"
     sha256 arm64_sonoma:   "feeabfab71b4779d284f35c81db87618f5c27c9567cc2aa817c1ae7e525c29b0"
     sha256 arm64_ventura:  "27b3ab3603d68a565dab7e7076d0d065692c6f4621094e4b8f0b2608257c092d"
     sha256 arm64_monterey: "ea60e985f3b9fa1cea0a6ea0cdd488076c7f5fb913ed874dc97b076617c76c31"

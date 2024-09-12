@@ -10,6 +10,7 @@ class West < Formula
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0ee9cb30a99d6400d595767032d2bab05268cd74e10e0b0a20177f9a3249fe1a"
     sha256 cellar: :any,                 arm64_sonoma:   "2e4ff86ef37011283a87f21226a8da341348607d0771d91c46e1450837dc9a7c"
     sha256 cellar: :any,                 arm64_ventura:  "6f29b5b06c9469e0fd98d303478ab9dff32d1e3692ad8c3b174f3c89c0fb6431"
     sha256 cellar: :any,                 arm64_monterey: "3832e5f1e7fcf9415603ad62a3bf811baca14a68cb41563c519f3abfeea2d568"

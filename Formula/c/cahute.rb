@@ -14,6 +14,7 @@ class Cahute < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ae478bae9114f5c2358a1e9305bfbd8f91651f8feaeff01860e532e3a6da12fe"
     sha256 cellar: :any,                 arm64_sonoma:   "54a6d7f18428a643fae21ffc46d69a3452747ff1407ed29327790ad0dad0b1a9"
     sha256 cellar: :any,                 arm64_ventura:  "801089f50337607b35638f59c8b35ccf3483a51f2df4652fa0f87c895043916c"
     sha256 cellar: :any,                 arm64_monterey: "8a0d5976f9b70a6e1b1fe3694a8027791cc045cdf3c5041b50ba8b278632e288"

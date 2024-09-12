@@ -6,6 +6,7 @@ class Kubecolor < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20c4b5099aecbda1553b1efa9bf18a059d447d50fec0238c2ab8450f17da6418"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "989b6afca91ab1d58ded187951e2873166306dbf62c3ea361dfa172202618c06"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "989b6afca91ab1d58ded187951e2873166306dbf62c3ea361dfa172202618c06"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "989b6afca91ab1d58ded187951e2873166306dbf62c3ea361dfa172202618c06"

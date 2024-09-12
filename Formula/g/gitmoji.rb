@@ -7,6 +7,7 @@ class Gitmoji < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e8636483d2a1b6e409de76453d5d96a56cdf099fda6d7f3c6b077f97510b3d6c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "20259fe5b567622f215aab554610a0b9dca79b031eba8886621539ec514b845d"

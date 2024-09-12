@@ -6,6 +6,7 @@ class Bittwist < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e64d42db30bc963d5adff48234e68744566aa72f9c48ac7d833a665a8a8d3553"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58ddcb2879c84669c338f51c8539e51230b074f31cf854ddc2dd086202c92431"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "340d68a07b0e0e3b35d5033a0d374aa33d3b83507566f17f4f7fc84d120947fa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "73652da4ecec5d1abee5d6b677044a14479bf0825b27f2535e4fa9092e6e2b1e"

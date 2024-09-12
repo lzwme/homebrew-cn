@@ -9,6 +9,7 @@ class Txt2tags < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df25241f6b400f31d805f45c119c6c397525bdf9d43f43fbde62146d2692a066"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d564f82e975cc5d16fe1c708cb3538b33f2026b8397a9697237db926a14ec32f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ede44bb443145eb0cc57079a40b46525b4d738ec01633c1037acc6ad1a9607c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8bbef0cbec995e020cf34df2055d92b518a390c94a6ab2b95beec7333509697a"

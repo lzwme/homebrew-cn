@@ -7,6 +7,7 @@ class Bacon < Formula
   head "https:github.comCanopbacon.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f62e991853fd42e40beb5a20743430b19dfb01d8a6385a65f9326f843bb871c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd28de253e176bdbd42a1e77ccefabec3082177987065cbb7bd6da9c23b75c3b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c2d7f5b9a7546475cebdf3e8074c6fd60ad6b99adfbac7ec8186db825b4dcdf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f9490a35dc37d527f4f4a17a8fadc5a976ff26d7c11fb9047b3d1c8de3a9b3e5"

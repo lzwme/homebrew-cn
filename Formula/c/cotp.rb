@@ -7,6 +7,7 @@ class Cotp < Formula
   head "https:github.comreplydevcotp.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc1a651cb444dc6abba45ae42d8fa1aeec739a98dc5f49160a73f484d5e1993b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "050a2238dafc960c2ae2fc6feb44655dbadfd0559ee72e2609e1dab8e03cc1ef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5227d6c1ef90e09aa91b4eb53bd42d036cf9721e2293e6a151ef1f9e1df3fb7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b835091dd90d7e63860cb2ed9dea252768844edbd54e27e08574795e7f9bff3c"

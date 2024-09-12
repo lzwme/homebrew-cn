@@ -11,6 +11,7 @@ class Bde < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ba450634fc837b30b04dad97f450da61d39c40274926cc9e632b73e776cb9c56"
     sha256 cellar: :any,                 arm64_sonoma:   "5795f3e1c52cb98aeec7c2678f060f2e94500fb1a9dd8b68c31dbc347ec05c9e"
     sha256 cellar: :any,                 arm64_ventura:  "9056bcaab5bd65600019316eb42b502c30e614455faff16c0db65732389b662c"
     sha256 cellar: :any,                 arm64_monterey: "e0fadd564b1f8dc72f43faee5705e968c3a803b9ba71b7e2a1903c8e73100fa5"

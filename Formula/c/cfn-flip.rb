@@ -9,6 +9,7 @@ class CfnFlip < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a54688dc98ce3d61f756488f24f42382ded9071c37a0472b526e0ea280781732"
     sha256 cellar: :any,                 arm64_sonoma:   "01055e5f8a5045685b3da9ed70a81bb5fa5730454e412577ab23579b825a9c3e"
     sha256 cellar: :any,                 arm64_ventura:  "71b0e42536f22e0adfa2091d5e88392f315bf988c55e13ab6589af81d2e70711"
     sha256 cellar: :any,                 arm64_monterey: "877d34e0ac9abf259fc72838533e102b04a7e540babfcfe34614ea7621943854"

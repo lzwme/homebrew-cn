@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https:github.comintrolabrtabmaparchiverefstags0.21.4.tar.gz"
   sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https:github.comintrolabrtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,13 +15,13 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "044f39b72e342d5ed111d3a06b22ec22a4ce1b52a2c459d2424b11555a7510b7"
-    sha256                               arm64_ventura:  "2b82214040e0a479fa20b045257bbc25d8e2434e8e16d09fd2822aa4355bf607"
-    sha256                               arm64_monterey: "1ab33bdfd3292254434fabeffe0b4134604a577b640a1d172b48b0de37e6bc95"
-    sha256                               sonoma:         "c893cd17fde510783585075e15f39bf133680fd88714edc554a0192eaf570df8"
-    sha256                               ventura:        "47f0709305ba421ddbca0353ec414045e4b8f751d331419712b8010754f78127"
-    sha256                               monterey:       "d0089f725c5712c3e4f06d625eeab2590712390d72ea95bf10307d93fc759189"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66f6cb1a14b01eaf94fa9fe15b28645ead7246d98e10cd2713a1a166f78cbe0"
+    sha256                               arm64_sonoma:   "66472e8c3097335ee0bd8636ac80a31e6bb7cd104e0baf009f80b6e8f9ec13a6"
+    sha256                               arm64_ventura:  "693c3999f1b8372b6fb740bfe12b2995279307299d2d312f21f0ca63096089f6"
+    sha256                               arm64_monterey: "d045352baa053e9fa267e5dc07348046ed0b535257535bbddec1cf000bb02800"
+    sha256                               sonoma:         "2ea7d9f0acac166234ae94ed6e90b2156b6867165717281eaca82037fbe3a6d2"
+    sha256                               ventura:        "d55b3d2d30cee78028c91a0be5b94bbd6e75020bc770ae6b3803a06e73999841"
+    sha256                               monterey:       "30fec17d83d4f197fc6c82057978842273c2bbca4e8882995e3d03d2f0e196d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edc391d3a84c02ce62dd54f7c4e8c1d93b911e5c73be85281ab73752766bb78d"
   end
 
   depends_on "cmake" => [:build, :test]

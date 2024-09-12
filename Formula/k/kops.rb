@@ -12,6 +12,7 @@ class Kops < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "368814bdab15e70b1b57ac7b57176ecef9164a9eebad464742133d472ec8f7d6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27c8e94a0d9bd8b49395e1961db29af7aed84e8e9f287526accc778c6bf42614"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f36425cc9292e4e99e06840958493a0c94ee8d0952a2f6c77c6aeb690244804"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4e185c45a6b75794c2b88dcbb02e61580a970415840fa4f10156e84e413a4004"

@@ -6,6 +6,7 @@ class CodeServer < Formula
   license "MIT"
 
   bottle do
+    sha256                               arm64_sequoia:  "65428e75dcbf345ffdde5fe9f63164da030f8c6f745d14bd977ee1a4c65a4d25"
     sha256                               arm64_sonoma:   "9db9ee85af6fcac6bac2733f6d1304611fe5677baa7ae3f04aa3c97d162f3bc8"
     sha256                               arm64_ventura:  "ae4315c03c8d66f168dcbd562fe327521a9dded9a6527b660ee338b33b266395"
     sha256                               arm64_monterey: "216362c79e6bad1f27f6619b23a59ef8aa620fda3d9ba71d1ee7cc92951ca5e6"

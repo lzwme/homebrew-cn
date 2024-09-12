@@ -12,6 +12,7 @@ class Picat < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "40d2d3c516684f4f5d84b188df3f38fadaac62a9e7364dd59f3e32f25ca0e988"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41a8357957061027fa117db6f182fbd2ed1963882a2c58fee34df499bffdd42b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ada862573506f31365c089f07ddcad78f9b9584a867439de6dfa32064d070833"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5bef2001e18fe6aeaff008f15a22409507985bf7c6f87f818e83a43c4047552d"

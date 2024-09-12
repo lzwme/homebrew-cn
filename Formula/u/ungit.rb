@@ -6,6 +6,7 @@ class Ungit < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "599562a33e44c9ebb1f7633a03fa3311a85591b1253d95a2143ee70495b046a6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c22aea3141d38c78f0f4cebf19854018dd9caae6716ccbbc82cdc2f39610d8f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c22aea3141d38c78f0f4cebf19854018dd9caae6716ccbbc82cdc2f39610d8f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4c22aea3141d38c78f0f4cebf19854018dd9caae6716ccbbc82cdc2f39610d8f"

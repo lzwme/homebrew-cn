@@ -8,6 +8,7 @@ class Bamtools < Formula
   head "https:github.compezmaster31bamtools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8b07286bed8e8c1c3b1d4e063e433904f8e875a35dda8da67b1d8ffe477cacfa"
     sha256 cellar: :any,                 arm64_sonoma:   "4971914ba3c1f62ef3b16f7d7605edea2a4163f9ccfed63602b1d61df323ddb9"
     sha256 cellar: :any,                 arm64_ventura:  "58ddd12242c381fcae63a5142e1af12954965f1d4bf443c25a270fc35d5eba2d"
     sha256 cellar: :any,                 arm64_monterey: "fd3594b78acee23bf5d260ecb30dbcc32a6c51f2c57b02fcd46f6bf6e0215741"

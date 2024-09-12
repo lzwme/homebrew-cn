@@ -12,6 +12,7 @@ class Sdcc < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7348a690f707c9dada4234ec23737313fbdd1f4d4e7cb1602d03b0907d98f033"
     sha256 arm64_sonoma:   "1b9ecefe9331bd7932a5b277188f2c05bab3d883bd22e0210336ce070a068b96"
     sha256 arm64_ventura:  "a3feae25c1dc7b0e760862cdcea40bf246bb8367fb7e32713d60a72ca67b0198"
     sha256 arm64_monterey: "b8d1facd553ec7e49cfe80d7ab70e81c89bed40920e82bf4dd02c5b93b1053ab"

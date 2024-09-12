@@ -7,6 +7,7 @@ class Typstyle < Formula
   head "https:github.comEnter-tainertypstyle.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9ca1e49c1a77dfcec627842806749b66f16bca799127c1f7b2c2f07da7fe702"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e0e0ebe5fc9d00c0843af5fad4226b17bc224439f631cc9c6b5557b45f13515"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bab9421010f23ac49530ec55f85190ab620f9af363a85a390a8116fa5f87cc2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1d5a73f0970721d9e404cc5b8a053a968a22bc3cf8a778cb9633989f43abfed6"

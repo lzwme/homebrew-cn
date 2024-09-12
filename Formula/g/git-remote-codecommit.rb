@@ -10,6 +10,7 @@ class GitRemoteCodecommit < Formula
   head "https:github.comawsgit-remote-codecommit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6cb2466bdfe4ca61ad2f6d9a456d650409f35d92ad29bc36529d832f46575309"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e80c7a0305c46775c5075304d2d3a2b86a512cdaee3fc01c55430be4926fdcf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e80c7a0305c46775c5075304d2d3a2b86a512cdaee3fc01c55430be4926fdcf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e80c7a0305c46775c5075304d2d3a2b86a512cdaee3fc01c55430be4926fdcf"

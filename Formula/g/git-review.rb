@@ -10,6 +10,7 @@ class GitReview < Formula
   head "https:opendev.orgopendevgit-review.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cae9224c13007fd9cf1fb29d57163e6830642f0c041da43ba65aaff91653c74a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d319cfba612259e187ba7d3fc76b46f945212cf6472fdedfe5afe7610e28b7f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d319cfba612259e187ba7d3fc76b46f945212cf6472fdedfe5afe7610e28b7f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d319cfba612259e187ba7d3fc76b46f945212cf6472fdedfe5afe7610e28b7f"

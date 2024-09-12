@@ -17,6 +17,7 @@ class Cvs < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "395bcc270613244fc0be159a5cc843cff6696397961958634363d4b1a2241454"
     sha256 cellar: :any,                 arm64_sonoma:   "e561f130192a57e7fe98eab345f97fd548bdabb62e78a9131a91c3c87f0a4429"
     sha256 cellar: :any,                 arm64_ventura:  "b04bc5783e3ce63a89075a9f824c2f3257ddb6974f22827315bd2848a0d96a05"
     sha256 cellar: :any,                 arm64_monterey: "facb582f400a539914188f2c526148db296f6a9c626b298b6749a528a6955b6e"

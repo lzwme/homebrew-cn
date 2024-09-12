@@ -6,6 +6,7 @@ class Asm6809 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8901fd3d162f677b4d92b4225cdd3495abecc0f796627b038de9404cd07b7e23"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65cae1708e6590821edff4669047fe7069bffece2a10efbaa2ee89c5ca821210"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7180211e3a07280b05af16e0227b09eadf1ef0a9fcc846aa483851e5e63efd6c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2c1691e2574413a7d905363f77aa52f10b89e403d6de29501d84d591f6f32f74"
