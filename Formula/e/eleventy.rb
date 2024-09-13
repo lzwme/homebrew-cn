@@ -8,6 +8,7 @@ class Eleventy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "daf13d378b8b7cc0aa40563fc071e821f903190994fb4102d6d7c050142cb2fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"

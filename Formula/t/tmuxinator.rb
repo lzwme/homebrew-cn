@@ -7,6 +7,7 @@ class Tmuxinator < Formula
   head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ea12ae2e225a26706d93cd30854349d7f5e4b1e7d00618ecad751da188ac548"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f18812397a278c916be489808a93e554e690962b000e870628c34698c1168bf7"

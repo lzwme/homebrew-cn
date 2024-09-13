@@ -12,6 +12,7 @@ class Neo4j < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"

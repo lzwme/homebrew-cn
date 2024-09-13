@@ -6,6 +6,7 @@ class GrafanaAgent < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7f11acf78907be22d3b62f71392239ae54624334a0b1efcf4fcedc67f328e08f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eee11bd862010ca9c3e143bb8bec3d36accd514c14b2001321d44647694c1dab"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "754b18e81b7353246659c9cdf58911368e0215e3569cc8c532a020167f92bf68"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d3feb625e48341538e9f49392399ea3a793d9c4eaf22b4c91e62d37b367c2a3d"

@@ -33,6 +33,7 @@ class Gstreamer < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "31db92e94215659739a7340e68ff40f81cca067ff758b0c4eaeeb19210e62092"
     sha256 arm64_sonoma:   "9d246b779b36a42346004b290306cfc47e7d5ededc0d9d999579fd6d6d61d04a"
     sha256 arm64_ventura:  "70ef869e83ab51ab6ce41ad6dc0e25e45feb35212a1d1be8824452f719d26ba9"
     sha256 arm64_monterey: "cd4f6f35e5c7106882f96a1b77c89ad5a80da324845bc097ce454cb68b2b3797"

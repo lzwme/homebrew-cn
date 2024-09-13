@@ -13,6 +13,7 @@ class HppFcl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b7ea572e39be59683ab038005869064d277935d8e7b73fd6949cbea804807d94"
     sha256 cellar: :any,                 arm64_sonoma:   "c5b76ec9d73c6c3d1a21fc5c53df326193b111976d39811f653658033fba4f0a"
     sha256 cellar: :any,                 arm64_ventura:  "7fa6af2c6a84af609f2d24d3695fb26e912ef8a8f04ae79ab0ab06f611a65651"
     sha256 cellar: :any,                 arm64_monterey: "671f42a80d772939c4abd1b7a5173556ce7a64a30d99e58e71ec42cc1e980e8b"

@@ -9,6 +9,7 @@ class VapoursynthImwri < Formula
   head "https:github.comvapoursynthvs-imwri.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "c2181aa20638884de4cbc784da71627292f974809a2806262e0b71ecc7071ea5"
     sha256 cellar: :any, arm64_sonoma:   "0f9ad6460cb2b4176e9f938e9b6bc187b46a341eb13072e6df668c987e198035"
     sha256 cellar: :any, arm64_ventura:  "65bf37034b9c0b98dc82cfb26a227293d44e961c353a5699c47a879b86fa3e77"
     sha256 cellar: :any, arm64_monterey: "4a2a21d3632b637d78718a2990b27583ee6b29d4884eb85660ef75696212c5e0"

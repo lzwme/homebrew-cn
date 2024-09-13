@@ -7,6 +7,7 @@ class Trunk < Formula
   head "https:github.comtrunk-rstrunk.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b82cde9a326c740d8f9618216ead5bd2451f493f163cf9dbecabc191a9fbfe1a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "225960f46ef7bb1fd7fc1cadc4acbc5d28c63b464787f915d1412a8ed1c90063"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecf10a431d211be0fd580ecbe04d01e4905f6bbf70c9184a90b5b9371ee32d03"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f40dbc5c8b598a82ac412392d1c82c44f62d3bb2dba3c2af45bfe35957939fc5"

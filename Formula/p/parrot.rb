@@ -28,6 +28,7 @@ class Parrot < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "a51d427d1063c4e9a7bf13f9039a29fb6f9f690cfc751e6d100376435cd3c3ad"
     sha256 arm64_sonoma:   "33247f7453684d5af68220cb3aa6590adaeadeb6f4f45fe51e3e4584502e9b33"
     sha256 arm64_ventura:  "8d4542d74d3269cd5f1f8a096a8a6efb53b2300a22c1e0604c379da3499216b2"
     sha256 arm64_monterey: "91f7d2f17e362ea66be0f7706414a1241d5af6f8bce0c7054c1e0ef1ba39bad5"

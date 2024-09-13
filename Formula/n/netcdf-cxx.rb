@@ -7,6 +7,7 @@ class NetcdfCxx < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8ac7fa511800851268403152dde0226f6915c1897031c023f93808c8bc96fb42"
     sha256 cellar: :any,                 arm64_sonoma:   "e84953471784443be7fdd3f1f5bc295e2bcdad7b4a926b4e76f6f02ff205484f"
     sha256 cellar: :any,                 arm64_ventura:  "8d967dce894b455bc5647dc9416e5a4eceefbf9a710cce01d80491f5c67a6d1f"
     sha256 cellar: :any,                 arm64_monterey: "055b3191f34e7f1d0c15bd63a50a65fd496a1dd402255d47189908abb8bb6514"

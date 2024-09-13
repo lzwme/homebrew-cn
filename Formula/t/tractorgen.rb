@@ -11,6 +11,7 @@ class Tractorgen < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebcbe26005e9a8920c5ba3c85206e90ae070ab8a9ea5ad98f3cd63cb3b46dbac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e45246c589fb5d890fc9159ec649585b855eb83daec847c73a6324387bad4a2d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a07397a99a6b5a3a89e526ab1e81c5104cd253e4cad62ef38e898cae2be99ae6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1049100b1891c7793e614bd2664b64e44ea4530d747bd045c2cff706b590d293"

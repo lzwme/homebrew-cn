@@ -12,6 +12,7 @@ class Loki < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0fd3247bef756db8030f26af9ba55cb943c36af0b5f7c8a9ba502bb86d297edc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4af6a1fee9fe664f8e1aab0913ac977a9d7dc62d3a6b583bb5480d95f28a136"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "657c01bd74044dff21c3c210809e0965a84e4024e4d841f1a9e78f6a76bd84e9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "efc2b1c68ad0ee994b142fb107d0f6d526c6e194526fe6e0bef5246bf5bfd353"
@@ -21,7 +22,7 @@ class Loki < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea7a2ea7fcb0a96fdec1f464fa230cca5efb55eacaa958ed2d9a735a9aecc7b"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.22" => :build
 
   def install
     cd "cmdloki" do

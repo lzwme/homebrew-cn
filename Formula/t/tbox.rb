@@ -7,6 +7,7 @@ class Tbox < Formula
   head "https:github.comtbooxtbox.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "447244ac03ba181b706af3a81a649e3c82e4521dbac46762d6b0f3533fcbc296"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cba603567a21c953c379d310ef4e739ab85e89166ee9ca0820e6de954377c97"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2142d282316e44304970e782ded4fd7e0a8452e6ad73d0a6cf1b9a0545ec531b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "692c95557e62dda6982466fbe66a22d7ed64549f2c158d928a520c8a0ea3fedb"

@@ -11,6 +11,7 @@ class Di < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "73f6c9b4b56f9172f9730bfa8224708b755a9c271d70c06e5879cd6166438149"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1cb85ef2ac8d49ae838f9dd1532429f21d3542ddbdc4afcb2fc0b16e8ac150c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "471a2eda35ef12e75e26d879eb314db261dc04991678281798a56f9054af0bac"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ff4f6e79db0371824b4a38d86529199a3133781e48df12d5b1d79e6b51f0dc5"

@@ -1,29 +1,22 @@
 class Miniserve < Formula
   desc "High performance static file server"
   homepage "https:github.comsvenstarominiserve"
-  url "https:github.comsvenstarominiservearchiverefstagsv0.27.1.tar.gz"
-  sha256 "b65580574ca624072b1a94d59ebf201ab664eacacb46a5043ef7b81ebb538f80"
+  url "https:github.comsvenstarominiservearchiverefstagsv0.28.0.tar.gz"
+  sha256 "c4c5e12796bdae2892eff3832b66c4c04364738b62cf1429259428b03363d1f1"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be43e375c504a35fcf180b59a851724831be29d7060d9f3b843109181d64f9fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d273865ba9a53f5b907704c9a16c4931adfc700a1ef791ca304855a8d6a7ec7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b40b9a228e90b806c89f7d20e5d956a69e471c353d934b32538a32388e8449b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca5058a0f23e1e5a433d7a4ed71a08b5f681c50186551b02529494591721a303"
-    sha256 cellar: :any_skip_relocation, sonoma:         "691faeff3ba624cf4c38476dca96923c4429fe9ec9f7be2c9d332d6b5fea9ff9"
-    sha256 cellar: :any_skip_relocation, ventura:        "35de9b3c07f440ebe3d4eac291850d2e7757893e87c06190fc440a462d67f502"
-    sha256 cellar: :any_skip_relocation, monterey:       "455879bb35de16f96355612fab7882901f274673d4a49cdf54ba884be04c7deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaec7cdcce89e4e2d53e5fedba84d60a8dcdf11dd3dd0846eed2681beb198bed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5a16ad48eadc894131a875091d1b19107721c2bb36464765e42012020d9a48a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6cc10cf16ca85666a77e70f4bd57bfb157c32f0b4d5a605847bd6c687868a66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e994ff3f1800725951a60884f93fccd05badb165f1245c8419c270392d671b8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cb916ec796c97f84352cc13f63128780b62481bc8ec66a2f0c31037e69e5a94"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ccf0b0cfa48e87739289f56839e79e009ea127074c392efd6ee502c2564c1ade"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5163f3e1e1ff80ada46fc814f2da5698613cdb92e5cc5cfd726ae7cf7dc8506"
+    sha256 cellar: :any_skip_relocation, monterey:       "78cceaca14f67f7e211a310f86bf8c85c6fca302a190a90bb89cbb2ff6dd79a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78e575b93ef33f7fab95beb3203edd3648de63abdcabdca011ea001c41dc2f6d"
   end
 
   depends_on "rust" => :build
-
-  # rust 1.80 build patch, upstream commit ref, https:github.comsvenstarominiservecommit2fbfcbfe17b5c12630ccb03b6ccd31cb4b8316cc
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese022b2c42fbda33637b8a5c62847e8d6dd51942bminiserverust-1.80.patch"
-    sha256 "b7a4557f18e72eb106da5a47e74e4ff718330cd60cf4b6458ad09eba7f9ba9f1"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

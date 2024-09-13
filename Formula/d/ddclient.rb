@@ -23,7 +23,9 @@ class Ddclient < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
   uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"
@@ -47,6 +49,12 @@ class Ddclient < Formula
       url "https:cpan.metacpan.orgauthorsidCCHCHRISNNet-SSLeay-1.92.tar.gz"
       sha256 "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9"
     end
+  end
+
+  # disable automake treating warnings as error, upstream pr ref, https:github.comddclientddclientpull746
+  patch do
+    url "https:github.comddclientddclientcommit9eb4558772b84516363c960fe53c014575d80df9.patch?full_index=1"
+    sha256 "e491f223f033aad7c213cd9a1a761fefffc6220660e3f4ac150ca65e1381cf7a"
   end
 
   def install

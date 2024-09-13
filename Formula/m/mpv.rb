@@ -9,6 +9,7 @@ class Mpv < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "a3a7cd86a672e47419fe093115529b288a566b68265bdd5d3a2968caf9a96c80"
     sha256 arm64_sonoma:   "ce971ccc83b4bdfd0d105e693b9b039be775fbfe29868e6b67c9f98010ecb718"
     sha256 arm64_ventura:  "dec75b6b3ec01b24685d1db985ea945ffc586b99b67b56e7ee8de23d27b5e01b"
     sha256 arm64_monterey: "ab1e0c314ed9e88066ba548060229146c3761f86ff6c8519d5fdfa9e6bb34c7c"

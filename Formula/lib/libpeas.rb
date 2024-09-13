@@ -8,6 +8,7 @@ class Libpeas < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sequoia:  "dfd2891b012dece5689092e8f20d1184f30b0267471764abea87ee941e5364a2"
     sha256 arm64_sonoma:   "639824f6fcd4036a4fdd1c3135b4cd0ec98baad246ee00cbcf5153e8281b0fdf"
     sha256 arm64_ventura:  "6494928bddeb9d2876cb32ff8fcb40414ac4f9c6f83ce3f17e07337381be4a27"
     sha256 arm64_monterey: "a3dd9eb7c382591a9503164059828d359d09c5673ead4ce151efbfe1df8a07a9"

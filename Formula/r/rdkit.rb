@@ -15,6 +15,7 @@ class Rdkit < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a3cf9968c9efe8d8f28ef6e3a5c5b35c5ab7e698dfeb9f3f10923a0064cd47af"
     sha256 cellar: :any,                 arm64_sonoma:   "8c96c16a06b46127017e10433ab652cb86f9a7eac9b189c75100142e94304937"
     sha256 cellar: :any,                 arm64_ventura:  "0a13ac5dadeebc8a51ab6f32375de6116661aa9d99994988fb32c14e9a39112b"
     sha256 cellar: :any,                 arm64_monterey: "048f92d6d9cfb8160b25e6cb3498587f5880077f40ce98d1d7987d2e04b731f5"

@@ -21,6 +21,7 @@ class Rrdtool < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "204e4e8ca3d88f6808d1e370f4bf2614a2da964ae4b8b55b97edf837e4447cd4"
     sha256 arm64_sonoma:   "5068094067bf7166f46f60a410d8ec25f550b8bb4ec667c2d581efcfcf2b1526"
     sha256 arm64_ventura:  "d40dea08387b84b848a9142c1b48e0247312e80e29010e8c068b051ffc64b9a4"
     sha256 arm64_monterey: "37a3790cf1419f1d8b39baa4ff8e995b9e72f80ace0a289bdb3b5379e1764dc6"
@@ -32,14 +33,13 @@ class Rrdtool < Formula
 
   head do
     url "https:github.comoetikerrrdtool-1.x.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
-
   depends_on "cairo"
   depends_on "glib"
   depends_on "libpng"
@@ -57,23 +57,19 @@ class Rrdtool < Formula
   end
 
   def install
-    # fatal error: 'rubyconfig.h' file not found
-    ENV.delete("SDKROOT")
-
     args = %w[
+      --disable-silent-rules
+      --disable-lua
+      --disable-perl
+      --disable-python
+      --disable-ruby
       --disable-tcl
-      --with-tcllib=usrlib
-      --disable-perl-site-install
-      --disable-ruby-site-install
     ]
-    args << "--disable-perl" if OS.linux?
-
-    inreplace "configure", ^sleep 1$, "#sleep 1"
 
     system ".bootstrap" if build.head?
-    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
-
-    system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}", "install"
+    inreplace "configure", ^sleep 1$, "#sleep 1"
+    system ".configure", *args, *std_configure_args
+    system "make", "install"
   end
 
   test do

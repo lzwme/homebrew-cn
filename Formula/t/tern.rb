@@ -10,6 +10,7 @@ class Tern < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia:  "9b899a0da2ec942edee8511cc5a70aac01f75ffc7344829eeec5203633a596c6"
     sha256 cellar: :any,                 arm64_sonoma:   "c927fb71988f1c428da415b7b86f42187ca8f91836b707952d2843555ee3a38a"
     sha256 cellar: :any,                 arm64_ventura:  "9f43227a39c36102b07cf3b87473161543a7ab1c3abe8e24c5577fcea430495a"
     sha256 cellar: :any,                 arm64_monterey: "713f377c08ad16ede820e076a51d72c070e9ff6e02481b6423d35633477aaad7"

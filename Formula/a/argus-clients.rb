@@ -6,6 +6,7 @@ class ArgusClients < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5f744dae64c30ef8fc60183486410d2d512b83155b70e1fdf2ec85a5de20a4fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a760cca90fd565fd14745b087550293aefa4d2dfabf33be01df96c2b373631af"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a92a4ea3c8550c3428ece86db0a5fc5e9b1cfeff7ada32d0f7cd65c5ec2c5c33"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "84db26da116fab9c66e38bb8732cdc68a9ffc7da8ef2d6014e3919703a522a4d"

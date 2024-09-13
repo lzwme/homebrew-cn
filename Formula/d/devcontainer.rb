@@ -6,6 +6,7 @@ class Devcontainer < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5838ef0317746eae9049e600db863a02a09d63b414497269028f652317a9db36"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5838ef0317746eae9049e600db863a02a09d63b414497269028f652317a9db36"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5838ef0317746eae9049e600db863a02a09d63b414497269028f652317a9db36"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5838ef0317746eae9049e600db863a02a09d63b414497269028f652317a9db36"

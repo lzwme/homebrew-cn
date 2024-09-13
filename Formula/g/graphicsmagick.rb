@@ -11,6 +11,7 @@ class Graphicsmagick < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "bd6a474e794bce1fddc596d84585b93084a68274d05d0ba7e738b6286e2cdef8"
     sha256 arm64_sonoma:   "5b49a47176650baa6fe1f643865cc3ceeafad1d92958673f0f0bae392541149d"
     sha256 arm64_ventura:  "518d759a79475b2bec06f2b8395a39e4904a41ffc634b1cd40d28ff86f69b3ad"
     sha256 arm64_monterey: "f9eeb95dce4f039f74c295854a7f2641f9ce76f8632f3533151e58a6fb1febc1"

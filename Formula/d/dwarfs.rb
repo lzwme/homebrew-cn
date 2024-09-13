@@ -13,6 +13,7 @@ class Dwarfs < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "9dd27e093e3be256a48966cefa1508c915be989b2f3c2492737f3ba64f9987ae"
     sha256 cellar: :any,                 arm64_sonoma:   "d53d68f0327d5a9c71b8484b5682766a02e8cdf97eba5fe7437843fb2d194d95"
     sha256 cellar: :any,                 arm64_ventura:  "95d1670b7371b496c8260f46c8eaa98a54cee7a518b304bc426a87a67b0b5cbe"
     sha256 cellar: :any,                 arm64_monterey: "b5fad708142683db1d5a39513b677bbf2e6cea8b90f02ba6cff392a80a7f1fc4"

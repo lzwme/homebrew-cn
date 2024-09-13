@@ -15,6 +15,7 @@ class Ispc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "56173dbfa70630802d9a1b9b30167ca418aef5bfd1c44e90f94df6826e40ac60"
     sha256 cellar: :any,                 arm64_sonoma:   "41c1b1fe5223a511e995381df555f153e6208bd22e7b7644b4a2dd10823a61e7"
     sha256 cellar: :any,                 arm64_ventura:  "a567c3b6ba0323e7a1166c447ae486e33f5b4f40eef5b743444a0b9d2be9b613"
     sha256 cellar: :any,                 arm64_monterey: "be76a08cd5cba9cf2da2ae9bd6c15582bbb5817d75f3d761c36370fe04bf3ee2"

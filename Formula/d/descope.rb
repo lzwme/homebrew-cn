@@ -6,6 +6,7 @@ class Descope < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"

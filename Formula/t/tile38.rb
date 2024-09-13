@@ -8,6 +8,7 @@ class Tile38 < Formula
   head "https:github.comtidwalltile38.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "de6e712d44bb3531f6275f29b7476291ced90811ce3160b3477dc4a946887db1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66ff72e4032aa211be1173a923ac68f9daa367d1cefc9df4e745c02635603c6a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f6a68f961b3f7030636d733e044b0833ec28bd4236bb4421ca0e4b81ed96183"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fdd1f437cc9ecafe562d8f0d07cb519542c6f02ea760ad34b83bbd8a2540009c"

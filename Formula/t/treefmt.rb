@@ -7,6 +7,7 @@ class Treefmt < Formula
   head "https:github.comnumtidetreefmt.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2da9a33f81027f40724c3d9bd9b1c7f77207f4f04a568681d82d6e1319faa729"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "adb1fb8c96c398ca1540fff818c06b41ccb48df46b95166d6986bffa0fb35fe8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "adb1fb8c96c398ca1540fff818c06b41ccb48df46b95166d6986bffa0fb35fe8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "adb1fb8c96c398ca1540fff818c06b41ccb48df46b95166d6986bffa0fb35fe8"

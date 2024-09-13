@@ -7,6 +7,7 @@ class Profanity < Formula
   revision 2
 
   bottle do
+    sha256 arm64_sequoia:  "9ee78fe1e4f7ae13fa28a0edb7f2c4548c0f7e47acf6ccb7a1d9a758396af95d"
     sha256 arm64_sonoma:   "796e4f6d0df72b4fba98c6767294a0c34126e507178f62c059305e1447b1d57c"
     sha256 arm64_ventura:  "f3af3a72068af54c2a5dfed25f8b4974d484e2a1c6c04782e452999f03b04a7c"
     sha256 arm64_monterey: "026ec8f456effae8170417422b863ffcc7defd02f660f03878522e8aa73fe467"

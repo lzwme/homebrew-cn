@@ -11,6 +11,7 @@ class Openjdk < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "365a0bb14ebbc047caa8886501b8d3a8aacdfb9c3f2ea9fab3457f7e17042a08"
     sha256 cellar: :any, arm64_sonoma:   "a358fe408c5c64524cabed4da75a1d16175ebedc0477ef3870e3db75a0800302"
     sha256 cellar: :any, arm64_ventura:  "08278518189b954b7e2abe25283ef2a50b7de0a4e0bde6fbb890066aa7568dbd"
     sha256 cellar: :any, arm64_monterey: "10c80312e091cbc90ce66a61da051f0320f96752aeefa4aafdae3a402ba8b738"
@@ -36,6 +37,20 @@ class Openjdk < Formula
   uses_from_macos "unzip"
   uses_from_macos "zip"
   uses_from_macos "zlib"
+
+  on_macos do
+    if DevelopmentTools.clang_build_version == 1600
+      depends_on "llvm" => :build
+
+      fails_with :clang do
+        cause <<~EOS
+          Exception in thread "main" java.lang.ClassFormatError: StackMapTable format error: bad verification type
+            at jdk.compilercom.sun.tools.javac.Main.compile(Main.java:64)
+            at jdk.compilercom.sun.tools.javac.Main.main(Main.java:52)
+        EOS
+      end
+    end
+  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -77,6 +92,11 @@ class Openjdk < Formula
   end
 
   def install
+    if DevelopmentTools.clang_build_version == 1600
+      ENV.llvm_clang
+      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+    end
+
     boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     boot_jdk = "ContentsHome" if OS.mac?

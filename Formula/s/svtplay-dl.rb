@@ -8,6 +8,7 @@ class SvtplayDl < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6beae79c3c3cfb37551e1108e899cef74b6b29b13f294e1c834736ef3301384f"
     sha256 cellar: :any,                 arm64_sonoma:   "13b5b955556305e4a194c067d9cef78a3fca2b9d814b014f765fe53e90d513b4"
     sha256 cellar: :any,                 arm64_ventura:  "db0a356f9eefeaf546201d71432766a440796bd00e8f19fe7013aa71ae6ff2a6"
     sha256 cellar: :any,                 arm64_monterey: "d2a60b903622d13a37e5057725cd420a37d2cfba7ec809f4003aeec646baa3d4"

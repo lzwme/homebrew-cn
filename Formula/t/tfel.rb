@@ -8,6 +8,7 @@ class Tfel < Formula
   head "https:github.comthelfertfel.git", using: :git, branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "a1dbd6aedfae723113d626035fc3c0dd826006b409f4a0e02bbe844fc377ec43"
     sha256 arm64_sonoma:   "2c83f17aafe4803c5dcb76e75a1f0e065ddeb0c2a98cdde5284307c762850b73"
     sha256 arm64_ventura:  "e151a64d0af704275ff311cfef7d56d653d9ede613dc8f66b5ab44cf471d9afa"
     sha256 arm64_monterey: "349346beb4bc75a8275d72fc334d5788cf722d28675018259b61edebc9bd40e1"

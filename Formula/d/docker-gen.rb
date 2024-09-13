@@ -7,6 +7,7 @@ class DockerGen < Formula
   head "https:github.comnginx-proxydocker-gen.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "131be5f9e2c6405541879cc631100d8f878d4c69089d15d5b0d8287657f3681c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ebd783c3f9b779a5146fb28169b037b0a1a817f59a188daa635948a5ea9d566"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ebd783c3f9b779a5146fb28169b037b0a1a817f59a188daa635948a5ea9d566"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3ebd783c3f9b779a5146fb28169b037b0a1a817f59a188daa635948a5ea9d566"

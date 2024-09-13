@@ -7,6 +7,7 @@ class Duckscript < Formula
   head "https:github.comsagiegurariduckscript.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52c2e53ced6c41a99aa1d4fe7cb5088c7132a1a32f4ccd36e2b4af97352601ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f99441500bd4b4f1d679761fad30c40af7dc7507cded285b3051ed762fbb22c6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c6eaea6bb193ea64b815068454f6079dd810359a20005d5a5e3934ce5872de"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "929fd5c227aa1391145ad124780188dc9630bdc6f6eac43b7a621f1bbc34906e"

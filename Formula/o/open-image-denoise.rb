@@ -6,6 +6,7 @@ class OpenImageDenoise < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bf78ad262815065ef8b81dc58e08c6b07a7c0451c0312fc9b0b744fcdf9b4539"
     sha256 cellar: :any,                 arm64_sonoma:   "fc3c4ba67d53d8e2fa8bb99ed1c69cc307bb89c06557d711dee97901f45364a5"
     sha256 cellar: :any,                 arm64_ventura:  "01ce7b7dd522c6393a12889fcd12219d0a55b64b1acfa8d9fa825876bdff202a"
     sha256 cellar: :any,                 arm64_monterey: "b0c477236d04837d0b49d84e9704eba22a17d539bcef29755809964b6f39dab5"

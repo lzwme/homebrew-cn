@@ -8,6 +8,7 @@ class Tmt < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2f132fc82e50a6f2367e105d3adeb10e04bb4da14057015c2513405e710acb85"
     sha256 cellar: :any,                 arm64_sonoma:   "3cc22ebcd73981c5c1fa228fc9079880d7fbac0e74fbaec91d0ffe928d7a3e40"
     sha256 cellar: :any,                 arm64_ventura:  "e17e786afdb36ad5aa76ed5053fdd2e4dd6545b243e992e76b534beca3d4e7af"
     sha256 cellar: :any,                 arm64_monterey: "48a4c58013928b22781e6a07c609b384ab0bdc0b3b4d0fd2eb6535feab2bd6c5"

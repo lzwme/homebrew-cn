@@ -7,6 +7,7 @@ class Gittuf < Formula
   head "https:github.comgittufgittuf.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9fba666ad1dce2000e98d1330b93b1bc4e91c1f2632a12c04cebf20d23af2d4b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b78d7a4639cd1a2a45b60a11fe2287ac27b16e986944009a3a2cb5e14d372ba6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f78310dbc7aecf61b6e579eca9f02bd92b6356ee0ac989d781f1240015cedf95"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "55a9a79ba45dd46e45037b600c52c15aa44ae118b7189036ade1b6882fcd9402"

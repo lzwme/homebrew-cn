@@ -7,6 +7,7 @@ class Easeprobe < Formula
   head "https:github.commegaeaseeaseprobe.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c1194062c717a8f4ac3324a2fd1734e2c72065a0c74b396525d517863e713efd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d05402e176f5744a8c7c53541ad45b2c80544d58db27dc253e49c1353047679e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d05402e176f5744a8c7c53541ad45b2c80544d58db27dc253e49c1353047679e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d05402e176f5744a8c7c53541ad45b2c80544d58db27dc253e49c1353047679e"

@@ -6,6 +6,7 @@ class Opensearch < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01925a8384cc410dd911267cf2befbd4e0eb9b6385dba5aea0a629d305b9c370"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6657e9aed9a44d1f8ad873ba025063993ff27c19cedfb3accf26e9e2b7227764"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e07cd6a21e336ef4b6fb46c16a1e7ba1b5cbd9e3e7febcb129b4554842b291b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9f8f9cbb5a4e7078881633e263c51c53979ccaacf7ae6e77ce204ecf62c57cdf"

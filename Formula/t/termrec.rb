@@ -12,6 +12,7 @@ class Termrec < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2ffc2c327f5d103b6aa30f203c7a7e8e87825c9a793e14dc11384f3c75f17c33"
     sha256 cellar: :any,                 arm64_sonoma:   "cf7f8a53b45b1dac0ed84086e17c2374a27ebcd43e729e9d6be631816e795b6d"
     sha256 cellar: :any,                 arm64_ventura:  "2b08f0b04c98a5152357e074c14027a63b64ccbd4814f4c04235eef9d2862942"
     sha256 cellar: :any,                 arm64_monterey: "3c45928def623126f5999ab77cd48cc6711731a44cfa28c5746841ee19f313c3"

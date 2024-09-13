@@ -6,19 +6,26 @@ class Grin < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e5b321bcc54efc69989848712f685467873e5450f0454876a0cff7a7059bd24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "694371cd4468f6e20e871d336294c899da3bcb6dd5336b69e9508b7f60656234"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9eb4b86efe7b3cd9249382fb90745e15c6023754be316d69b9579174bcb2f90"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3b876e26b367e993930bd19ead9388789d45e0abbbca260b81d412ca591f79e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3d1c2c05e4529c7bf509d88fc7b38bedcbb82e932a63fb57d642285c334599b"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb6d8b4b66bf4ab38866c7e9042aefadb2baf04c8ae2f9a1862cb2f0af8b0890"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de037587292ec33ea496fe65c3b80c2911964e9ec07084407e27d386868fb19b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba76f2976d6dd649245dadb6477230a9c01d565d46c2a48f304559cad3cb1bfe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f2c8a77f0c2c8b8c9cbf4fa7e617f230f34cf06a2df659ee0e1f13597a83c27"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ea126bb7d7b84b7db43491fac85bf840b1214c19dcb23b951de30781b1a13aa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e1aeda72c0526805421acfdd6e567152f5e86a41b1496df37b043e56ecd7a61"
+    sha256 cellar: :any_skip_relocation, ventura:        "627e2c314c3890c88effaf1318cf9503fcc8f8a7ac031dfa95af6744b738ffe5"
+    sha256 cellar: :any_skip_relocation, monterey:       "6710b6fda61ab0fd1da1451b270d61e85abe11222ee99a9396096f20f9f7d7c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef6e2c5c6aa8fd0dfb2f68d0256fc7b128c20a5a894b58302218713cc4d9b666"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build # for libclang
   uses_from_macos "ncurses"
+
+  # rust 1.80 build patch, upstream pr ref, https:github.commimblewimblegrinpull3795
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patches1a9fc06a277d1315568d708f7379d7c96915f505grinrust-1.80.patch"
+    sha256 "5269766f6db0a8827c04790d871074c317a2b9f22b842c3f69c0bc5f7a3bcf9e"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

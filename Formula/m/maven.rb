@@ -12,6 +12,7 @@ class Maven < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "106bdaaec0342b1656442dd5d1521b3edf69df22576726110bf1d56af0d4bfef"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "106bdaaec0342b1656442dd5d1521b3edf69df22576726110bf1d56af0d4bfef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "106bdaaec0342b1656442dd5d1521b3edf69df22576726110bf1d56af0d4bfef"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "106bdaaec0342b1656442dd5d1521b3edf69df22576726110bf1d56af0d4bfef"

@@ -7,6 +7,7 @@ class Dicebear < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "002e33acdc81344ae28cbccd0bce6cbb5a8c212d0b23e0f48e003f3c94b448b7"
     sha256 cellar: :any,                 arm64_sonoma:   "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"
     sha256 cellar: :any,                 arm64_ventura:  "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"
     sha256 cellar: :any,                 arm64_monterey: "262f266530b8c354b2fdd2c2765a686f3d37e7880b13006f95b52a5ea2e009eb"

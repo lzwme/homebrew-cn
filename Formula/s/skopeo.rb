@@ -6,6 +6,7 @@ class Skopeo < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 arm64_sequoia:  "c274535e13c90d43141d0d5a9bf167cf2be9362c7a7b4d368543534735fd91d6"
     sha256 arm64_sonoma:   "fc06bdf07767613b3cb812891b1594abad5288556d5ebe6619589e7b19ef133e"
     sha256 arm64_ventura:  "e5e91e9782d5bf575e906cd7d643f33d43c39fe0d2a6fb9477ad27722abec047"
     sha256 arm64_monterey: "8facdd0e32f905a021b2c2900a2e16239fbd7709dae80bb269d183e5aeba30c0"

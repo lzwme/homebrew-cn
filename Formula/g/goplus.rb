@@ -12,6 +12,7 @@ class Goplus < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "fe0832efcd98cc11821ead934130a36a38b58990ca730a1a5ac266abd17d7cd8"
     sha256 arm64_sonoma:   "30286ecee2169db6a0e94bba10db54b4e64f1b7d9515645577b63792fafd9717"
     sha256 arm64_ventura:  "82b9263ee8902427ae05adef43e88d03b706d7777e3fa642b2469a28824e30d2"
     sha256 arm64_monterey: "41709633aaebd432c31033b3aaa859244e82916f121533c503124afdbaf8fcac"

@@ -8,4 +8,6 @@ cask "anybar" do
   homepage "https:github.comtonskyAnyBar"
 
   app "AnyBar.app"
+
+  # No zap stanza required
 end

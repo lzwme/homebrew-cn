@@ -6,6 +6,7 @@ class Dockerize < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "81c07f4f6c963011a0645c7fe3cf93d8de34931dccf93f2c16157d0f7c352e3a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8136ba1df7b4ea718f7abdcfe5f7bc2213ae359c3119b5bb405130c4c20ebb8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e109bc1300311ea26c2c71eb4b1ac20a66a3355ef0fcdfe3df037cd40aef539"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3ab9433de7d68ea6f313ffe78872dadd1cf3023f248cf8161db391dc335e8a3d"

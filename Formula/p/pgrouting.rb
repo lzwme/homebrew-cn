@@ -13,6 +13,7 @@ class Pgrouting < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "72bcce1166646529d4aeb408330cba78c6902ad638f068fbd827917860a4d5fa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b52b48a48c4b3a31d1d2108ab218e7c64642d5dfe8fe2e5542110379f206b452"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd74845f8712c27dde09e677efc5f61185286c5d4dcaffd2957e1f2f43cb078"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3d6781d06872f26d8d8241b440bdd0dc1df1e652c9c84778e37ca6aaf3f27a9d"

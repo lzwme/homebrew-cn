@@ -9,6 +9,7 @@ class Mycli < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5de5b321142932857f013a44b86faf31b4bc37772f3877cf04a32440bcc6d52e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "046dcf200432fe8f2c5fc6e3a6314c19f5a09b5284ae04078f6b06e47c324a54"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a98c689a7b7239bd825fabd67102ac38392a70e8c6fa3716eed47262ff2055e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "270d958e424a3116dee427644d89996b62dcce8f9bc784eb836a4e72d9d07a4f"

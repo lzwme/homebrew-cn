@@ -11,6 +11,7 @@ class Sui < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ad669813be72dad4077fa33ef6dd28164198b31ea9dc28f07c0909df5cfa57e1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f871ead96d02fee6aaf2bfa9c4e82db55b49ee0261f5514256e6321b45be42f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d1f62a5d57f682e3a8ed79487299054de3be77f5fac33e6c8e7760a349fc850"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8d48afc8c1a33a0c748af41932d6ce85beb6152f7cb4cdb65f47b89e6a5d94da"

@@ -10,6 +10,7 @@ class Dnsrobocert < Formula
   head "https:github.comadferranddnsrobocert.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "49bc5a6768e5a5e03afed2352d5fa203117427eb8726803aa8d368da2324cade"
     sha256 cellar: :any,                 arm64_sonoma:   "4b05804902f2bc83e53b5125d51b9e9a520b0198955460a1d4f97a4db96edd68"
     sha256 cellar: :any,                 arm64_ventura:  "d293fb6835b527ba04ffff54ff6c7636fdc28c29924c978d7730eba961b32e97"
     sha256 cellar: :any,                 arm64_monterey: "97e669bce0e938db75fc32be5995fe34e968273f54b5b89380683dbe9468a1e6"

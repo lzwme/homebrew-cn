@@ -13,6 +13,7 @@ class PhpAT81 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "417d09206aea63569ff7e4c5e7c670f29fce5afbe48aef61f8200721b1c5fe32"
     sha256 arm64_sonoma:   "9d16413bf0a809e34c40ee2bdf0245748a1980859ffaee4a9336b1f142854df5"
     sha256 arm64_ventura:  "2aff1f476a667ab5149d733c12c9edbfbe7efea269d4f9692770604cf373583f"
     sha256 arm64_monterey: "9d75391a871dc0f69fd0a8fb67d5c5c3985ca32a8f74f28d368d3a9ba007d647"

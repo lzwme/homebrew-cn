@@ -6,6 +6,7 @@ class Tracy < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ef5601dccb812f86784c050ffc090b003b18dae3f1a8e38aa2994a43628f6079"
     sha256 cellar: :any,                 arm64_sonoma:   "d6f150dd66767e47837006f661a3c36ed7cd7ad21dfe76a7c1ba8aff1820a924"
     sha256 cellar: :any,                 arm64_ventura:  "2b2b2517cdf72b57face88cc1dbf6083bfd2a2b2271e857825bc7d012fd2bf43"
     sha256 cellar: :any,                 arm64_monterey: "27320ae60ea734c462bbfcd54fbee3444eed1de85b80315c1814850d043b229e"

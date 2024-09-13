@@ -18,6 +18,7 @@ class Mariadb < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "ed3cc36a98cceadab407cdd32e975cb61c7767e2b66287326da138088d9c4626"
     sha256 arm64_sonoma:   "cda6f1a3253d69bc36dadff3cd9ed8e3c91795eb392c9f7b1a4ea0b63c19a8e3"
     sha256 arm64_ventura:  "6b01259939dee3c888cb040265de4bdfe727d2dcfc154acfb0edfb44eef622b9"
     sha256 arm64_monterey: "068f3c8199c47fe7b1ff2f15584884d5d61108378a4ec13289f850ff6a80b906"

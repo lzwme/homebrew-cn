@@ -7,6 +7,7 @@ class Nudoku < Formula
   head "https:github.comjubalhnudoku.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "f829eb3b002dc33ea48c3d58926a3ca3c5a0378941ce0b587737d4ed1a11a100"
     sha256 arm64_sonoma:   "969ddf28f4eb7014b9c44cf6bac0106f2d00306fef670f08b8d57fa08873ca9f"
     sha256 arm64_ventura:  "8e257d6a76e89ded708920215a7446a845c2ed74fe1cb31ee695de5f08129864"
     sha256 arm64_monterey: "ad835249ee203dac6d4c7fdd7b95d1395e113f6aaa0ec7a4d2d14c9405e61cc3"

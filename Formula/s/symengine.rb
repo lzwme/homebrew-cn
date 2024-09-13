@@ -6,6 +6,7 @@ class Symengine < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4052d0d8360a95363f5fb828f1c8737fb4e0e9e9e798eb820e116addf480b4cd"
     sha256 cellar: :any,                 arm64_sonoma:   "d2ab56021bd2a124b559a41a213cad940fd883a3869af2d01361b94b7fd3bd6b"
     sha256 cellar: :any,                 arm64_ventura:  "1e9bd2a99176dc1fd9476ed304dc9b21e8a0f3bf323a4a09c01dd046aad21d4f"
     sha256 cellar: :any,                 arm64_monterey: "99f948cca1c0144a48902ec86106aeb9473862e8cfce1063fbe2714dff3aeb5f"

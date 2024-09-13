@@ -7,6 +7,7 @@ class Vnstat < Formula
   head "https:github.comvergohvnstat.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "70a572931b614b41fb3e5957961a0b42f4f6da7c5804c4cfba78e8008f10ed02"
     sha256 arm64_sonoma:   "b9f2f91ebb02d0abeac163c0964816202483cde13f53832cbb390e477fa344df"
     sha256 arm64_ventura:  "ba02bb2d0ae58290104e3ee06cdc915d16007f53c45833081083f52bddb4cf6f"
     sha256 arm64_monterey: "638b93276b154fc5339c440e98961d986fae27d855a1ad22e764cffa53818735"

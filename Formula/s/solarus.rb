@@ -39,16 +39,23 @@ class Solarus < Formula
 
   fails_with gcc: "5" # needs same GLIBCXX as mesa at runtime
 
+  # Backport fix for error: GLM: GLM_GTX_matrix_transform_2d is an experimental extension
+  patch do
+    url "https://gitlab.com/solarus-games/solarus/-/commit/2200e0ccc8e2850d2a265cace96c3f548d988f2d.diff"
+    sha256 "dee33b7f334be09d358b1c6534d3230cb66038095f9d77f87d9bc285082f6393"
+  end
+
   def install
-    ENV.append_to_cflags "-I#{Formula["glm"].opt_include}"
-    ENV.append_to_cflags "-I#{Formula["physfs"].opt_include}"
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DSOLARUS_ARCH=#{Hardware::CPU.arch}",
                     "-DSOLARUS_GUI=OFF",
                     "-DSOLARUS_TESTS=OFF",
                     "-DVORBISFILE_INCLUDE_DIR=#{Formula["libvorbis"].opt_include}",
-                    "-DOGG_INCLUDE_DIR=#{Formula["libogg"].opt_include}"
+                    "-DOGG_INCLUDE_DIR=#{Formula["libogg"].opt_include}",
+                    "-DGLM_INCLUDE_DIR=#{Formula["glm"].opt_include}",
+                    "-DPHYSFS_INCLUDE_DIR=#{Formula["physfs"].opt_include}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

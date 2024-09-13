@@ -8,6 +8,7 @@ class Ncnn < Formula
   head "https:github.comTencentncnn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "781d7a8eca6f3c8fa53c00a994b13e1e7b7a0ba390366324f729294bf54a4fad"
     sha256 cellar: :any,                 arm64_sonoma:   "d9a2419af4c2b488a7547ec88a5f6596871d41944288a674bfc8ab72fe88ab5c"
     sha256 cellar: :any,                 arm64_ventura:  "a210aac4bc14c81973e6b745eed9d4900252ff2731ecf74c81d0309f0aa123ed"
     sha256 cellar: :any,                 arm64_monterey: "df8a74b93d8db0f9a87935c3133c2a881ada9e321820131d361c8a6abbb7cd8b"

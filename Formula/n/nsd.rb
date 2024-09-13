@@ -18,6 +18,7 @@ class Nsd < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7ae36d4553f3fc44b8e502fccf7029a594a6764f03d5881f7e5512641a7d565b"
     sha256 arm64_sonoma:   "3460116714f6081ea1b1ff74aa6d69af3dcd90c5afdebe393aae19af8d052224"
     sha256 arm64_ventura:  "6b051779b60b8d878dd094338c58fed35c7a54874297f3039a1c1e196b95e363"
     sha256 arm64_monterey: "7a814959891aea2529609ab8e88f382956669f2ba69d194c7c4a57bf9085454f"

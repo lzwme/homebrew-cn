@@ -10,6 +10,7 @@ class Libblastrampoline < Formula
   ]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c5952ef8dabfcddceaf5c9397f17538260d7592282f806e6eaf0125d1f35091b"
     sha256 cellar: :any,                 arm64_sonoma:   "70c25f76601949269e21048be82f671ca0d97bf5b71c11eddae338b3916b198f"
     sha256 cellar: :any,                 arm64_ventura:  "51cee0c324df3077f746332e9a428d0ca1b7d81faab257e371b2d92147b02973"
     sha256 cellar: :any,                 arm64_monterey: "254d9acb9cfb8be58703c06e621cd4df120bac6c1464eb6bdc73325b0e3002d8"
@@ -21,7 +22,19 @@ class Libblastrampoline < Formula
 
   depends_on "openblas" => :test
 
+  on_macos do
+    # Work around build failure seen with Xcode 16 and LLVM 17-18.
+    # Issue ref: https:github.comJuliaLinearAlgebralibblastrampolineissues139
+    #
+    # TODO: Try switching to `llvm` when LLVM 19 is available as error may be related to
+    # https:github.comllvmllvm-projectcommit21276fd7beb640d5fb1a10c228c9f48f620a8eac
+    depends_on "llvm@16" => :build if DevelopmentTools.clang_build_version == 1600
+  end
+
   def install
+    # Compiler selection is not supported for versioned LLVM
+    ENV["HOMEBREW_CC"] = Formula["llvm@16"].opt_bin"clang" if DevelopmentTools.clang_build_version == 1600
+
     system "make", "-C", "src", "install", "prefix=#{prefix}"
     (pkgshare"test").install "testdgemm_testdgemm_test.c"
   end

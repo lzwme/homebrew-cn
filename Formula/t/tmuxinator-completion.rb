@@ -11,6 +11,7 @@ class TmuxinatorCompletion < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1e3b63364bf606d2c968f4b0231874aee6e7ab44d73ce1e0067ea0f2a163ab9a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32c35616dd8562fb18546e47a774d8f2dface7f7e645471e24bff8d56d742c21"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "32c35616dd8562fb18546e47a774d8f2dface7f7e645471e24bff8d56d742c21"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "32c35616dd8562fb18546e47a774d8f2dface7f7e645471e24bff8d56d742c21"

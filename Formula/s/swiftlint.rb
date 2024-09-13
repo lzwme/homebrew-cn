@@ -8,6 +8,7 @@ class Swiftlint < Formula
   head "https:github.comrealmSwiftLint.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd8609da0dbf8e9396f9f5697b2650c35217f6d5443310ab8b3aeb095cadc32e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb14bb58a7fa8e390030b9890378c097385ac0d6bd50b1003946d24feb230b72"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "52e8789623ac1ec907079762083591e1f21d90ff751da9754b3db52badfe94bc"
     sha256 cellar: :any_skip_relocation, sonoma:        "30e8f88c492f67ce3d08181044c5849f1b9075ad00aac615551a42aa253cbed9"
@@ -15,10 +16,10 @@ class Swiftlint < Formula
     sha256                               x86_64_linux:  "dec908e0f1cd2b332bcf678edc36e10f7030cfc9414e733629e763283b0ada40"
   end
 
-  depends_on "swift" => :build
   depends_on macos: :ventura
-
   depends_on xcode: "8.0"
+
+  uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
   uses_from_macos "swift"
 
   def install

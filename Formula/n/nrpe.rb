@@ -6,6 +6,7 @@ class Nrpe < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "847516e87f59235f0f6216150cecdeba6393f994d820e0c46998394734f9529a"
     sha256 cellar: :any, arm64_sonoma:   "ed1b4fc625aa2edf55576d46dce47f9d1e25f0b89f8e4f855079d1be44e175d0"
     sha256 cellar: :any, arm64_ventura:  "66a47ab90443c6996a4c768ab3dd07a8843cfdbc6f94458414fa1418ad41b975"
     sha256 cellar: :any, arm64_monterey: "a9d6f414b26a3608d12424c3b5434b0e2551e00d76a9e3130784cdbdc9908b59"

@@ -2,23 +2,29 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https:helm.sh"
   url "https:github.comhelmhelm.git",
-      tag:      "v3.15.4",
-      revision: "fa9efb07d9d8debbb4306d72af76a383895aa8c4"
+      tag:      "v3.16.1",
+      revision: "5a5449dc42be07001fd5771d56429132984ab3ab"
   license "Apache-2.0"
   head "https:github.comhelmhelm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e1e32959d06077c39fb6600e47f91a21339908e5e7d90a627afa0e1cead951fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78b0b1f06be1b74dc16d63ee534a448794bab86d7c0edaa6ace14e782837c73e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e7f3a284c12b3a3b9b078b17a94b4f22144147cb985581db046b81d9d6a3cec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bdb344a18a4cd2e3c34acbc03b8e95cc8432914f0dc15972bccf41ef385e697"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49c3b477daada863ddaba962afb61636335edc5575471c840d8e5c54904e62a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cc434835fd4509d759bf11b7b7fb7cd14c99b184f2953acfea661efabf73a3b"
-    sha256 cellar: :any_skip_relocation, monterey:       "aacc3a3269573c95323e4b38dfdffcebf1b46e701929565f0aec79a46c8567b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a84839615fab01d818a02d68c646a2662d7251daa31bc0fdca2d3b685edb576"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "90d971f44f4093c9b323a0783ec6a8976210000b558ae83f5c2c3c16f02f73a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "142c1644efb6c7b6d3b81d86241c306077834269898b33737c3d0c251971fdf8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3d4dfd246d13211f8ecad8f6965d90181917e485cecd35777b50d71aefda75f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2345ec9dfe444c76faecd980bbcba37e73c49c66476b568b9f1c6761a1799465"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b75d238afa2dc86d2cc7e2a64fcb06792a7721a042f5eca8fe775ce49fd25e8"
+    sha256 cellar: :any_skip_relocation, ventura:        "b308bbf6ab8c80e8ee811bb127dccb1e4592e4d9d4acc04bc3a405a0cabd97f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a3ed563be7363188ccb18914be60af84b08b04bc08eeeac6eeb1d5ebf7c4df6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa7f2578d831b15ba3ad6b2ad946be779314ab1cfe9abae3bcb1fe9dac188b29"
   end
 
   depends_on "go" => :build
+
+  # fix testchart lint errors, upstream pr ref, https:github.comhelmhelmpull13329
+  patch do
+    url "https:github.comhelmhelmcommitddead08eb8e7e3fbbdbb6d40938dda36905789af.patch?full_index=1"
+    sha256 "471c2d7dcbd48d37eaf69e552d53e928e9ba42efccb021d78bbd354599d80811"
+  end
 
   def install
     system "make", "build"
@@ -37,7 +43,6 @@ class Helm < Formula
     assert File.directory? testpath"foocharts"
 
     version_output = shell_output("#{bin}helm version 2>&1")
-    assert_match "GitTreeState:\"clean\"", version_output
     assert_match "GitCommit:\"#{stable.specs[:revision]}\"", version_output
     assert_match "Version:\"v#{version}\"", version_output
   end

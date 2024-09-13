@@ -7,6 +7,7 @@ class EasyTag < Formula
   revision 10
 
   bottle do
+    sha256 arm64_sequoia:  "69174334e32cc36f5782d2357320dc68e49790a51ea6c1c2d9822e9566aa750f"
     sha256 arm64_sonoma:   "c20d11415ff4338da9530ca0a9fb2f155105cec63965028b5b045e3b2fa8928c"
     sha256 arm64_ventura:  "46009b3114243c1b11085877e3bc771160111652ce3cb2950c72a9aaa2702dd7"
     sha256 arm64_monterey: "fe8d835568ec1832842b1dc9978812269c5ae41bfa678248c2ef5e9ef6db4ad0"

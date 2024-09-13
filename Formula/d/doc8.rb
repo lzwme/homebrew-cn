@@ -9,6 +9,7 @@ class Doc8 < Formula
   head "https:github.comPyCQAdoc8.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4dc86c591bc6aa1533f996e2d5d91238b2ac892a38343b5b7e3405e7c51b28f9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11b134247abd0f676ba46e3be31218d423ab545af59c6ae186fe612b86c46985"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "11b134247abd0f676ba46e3be31218d423ab545af59c6ae186fe612b86c46985"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "11b134247abd0f676ba46e3be31218d423ab545af59c6ae186fe612b86c46985"

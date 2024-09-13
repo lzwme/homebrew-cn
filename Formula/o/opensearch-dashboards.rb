@@ -7,6 +7,7 @@ class OpensearchDashboards < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "29a2a2ffa16ed6b92e66477609c2fa076a732da8a4f87efc2c8912d9d05e0727"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29a2a2ffa16ed6b92e66477609c2fa076a732da8a4f87efc2c8912d9d05e0727"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "37f6b7eb860603d67c101077883535d4afc3d9292587f5f5b29141544ea57ae3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "37f6b7eb860603d67c101077883535d4afc3d9292587f5f5b29141544ea57ae3"

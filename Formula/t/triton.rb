@@ -7,6 +7,7 @@ class Triton < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebb4e410777f4fd73d5b2d9e053f6406cd7f35df730e884e73414e7980316b99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "335c7ce7476abb0b30ec27480b0eb18e60d11771ee0bed1baa90ecfe79949d0d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5d51a665b609e9e1a536e91ffc13930f695cc96265b2905e15804760f4cf8e8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "04be8789f7840d7b88ef1402e3ed3e686e5c5e115bbaa90b46633b47ba4750bb"

@@ -7,6 +7,7 @@ class Edencommon < Formula
   head "https:github.comfacebookexperimentaledencommon.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3e99ccd38f3cf9f783cf14f691c12eb6a1b07ef70c028a17a87898c1d17824b5"
     sha256 cellar: :any,                 arm64_sonoma:   "cc244ee7152780883fac719c5a00003a53ae67a33ed12ecb0ad657b329992b9d"
     sha256 cellar: :any,                 arm64_ventura:  "652607c9efb1751a9992b67768a31bf1848cf05249919cdfeabcee6f9686a8dc"
     sha256 cellar: :any,                 arm64_monterey: "9ef1e4f451a5feb65b385aa4365aa864820f5121c8f2f8b7df07e55d5cce0d06"

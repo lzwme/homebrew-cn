@@ -7,6 +7,7 @@ class Gspell < Formula
   revision 2
 
   bottle do
+    sha256 arm64_sequoia:  "7ef648e30d2a300ced7dfa60b6176ea4262bb270c03cd47f27efb7867f5a9cd4"
     sha256 arm64_sonoma:   "e3c60c553bc207bd79782ff8057f1a2a100ae83abdea680e07a80890d409de6f"
     sha256 arm64_ventura:  "176a3af6ec71a5fbe2dba3c9ab5f931e4946ebbd9786670aa2c5bce827065d95"
     sha256 arm64_monterey: "ad975f225b5ba1d0b103ec980f0ab083e3c48355e1cd95d3d9ec5924b29830ac"

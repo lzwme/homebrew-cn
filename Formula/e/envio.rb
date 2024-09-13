@@ -7,6 +7,7 @@ class Envio < Formula
   head "https:github.comenvio-clienvio.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6e7dcdcf5cfc7e9aaf4614c7d10c25646df0718e10734fd3d9732be26075d1a2"
     sha256 cellar: :any,                 arm64_sonoma:   "3210967aeb023bebaf7821b7ac27c1ff1775bc46745109b49fb519ed4a8abc9c"
     sha256 cellar: :any,                 arm64_ventura:  "636e7053c01dce88a72b925b30a718318dd3cad5beffc54182d79e7bbbbe140b"
     sha256 cellar: :any,                 arm64_monterey: "9edd1d838e14c436423b94e56839e8138281c895a59b297507b6d0bc21be3fee"

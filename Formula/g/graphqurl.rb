@@ -7,6 +7,7 @@ class Graphqurl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7d29fea61417e781508114b37928fdf1337a17d0234f83aa5a2dbbd7652eaea1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eeb0c8c2c3e60b9b3806aeec12e9bf33db690e253f67fe041019249de96c8e2c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "eeb0c8c2c3e60b9b3806aeec12e9bf33db690e253f67fe041019249de96c8e2c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eeb0c8c2c3e60b9b3806aeec12e9bf33db690e253f67fe041019249de96c8e2c"

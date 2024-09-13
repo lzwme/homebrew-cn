@@ -13,6 +13,7 @@ class Suricata < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "725043da6d0e0f7ba00757595dd897cc9627baed51039e26eed4b69bb2b3c25f"
     sha256 arm64_sonoma:   "04d5789273a379ec9f266fd9939081f5a6cc323848a293d13e25978ea5123b0b"
     sha256 arm64_ventura:  "257ab453d4ccafc933372f60ab737ab4654e6a083b99cbed130356632f105802"
     sha256 arm64_monterey: "80e9a9e85fb2f5377cbfece269ef766c06609a08585ce3e131c6cac126013511"

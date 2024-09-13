@@ -9,6 +9,7 @@ class Libgda < Formula
   revision 3
 
   bottle do
+    sha256 arm64_sequoia:  "78502d2ce3ec6ccb551bc071fdec675b27164f12972ead78da96f6c8a86fc08e"
     sha256 arm64_sonoma:   "8f97eac2e7a6acd540858999d32bf2979e26ed90ce76bd15257d03d4f3dba762"
     sha256 arm64_ventura:  "319769f163cc1bba6572a3df62bbb5b715e3f657268074a0bfe5f2ed6a209855"
     sha256 arm64_monterey: "8bfa3cf3f54e34b76e1827e56e38c5c2f2c1d37ce817c12bf29f0104da791083"

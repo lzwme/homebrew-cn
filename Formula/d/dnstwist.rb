@@ -8,6 +8,7 @@ class Dnstwist < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bc381f0295bd4fb54cab77adb9b7df79a82d9afda28741af32b455ec6d2a0d0d"
     sha256 cellar: :any,                 arm64_sonoma:   "ee2b1ec6c018dfb33492bde0c1477507df652bfbad95b362994ccc1add9d62a3"
     sha256 cellar: :any,                 arm64_ventura:  "c8cf577e9609dc8721be10cb4604f32aa38d26f590d42131019a50c2d2aa589f"
     sha256 cellar: :any,                 arm64_monterey: "eac131777b66af79240a6fe0c6d78f6c1497557455a62e2980512e3fc1511476"

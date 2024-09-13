@@ -6,6 +6,7 @@ class Vala < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "b4ea278ff3850ebc6d26343740b2bdd80fa68c9922c02b7bbb650f1d5afc884c"
     sha256 arm64_sonoma:   "08ca53b37c7464bc3990246568ca344ddfa7ee9e38b8cffdea01a5fe9c183a17"
     sha256 arm64_ventura:  "867b615ee4cb52de204837b74acb80d203c62cef97efe1b68117744390a4512b"
     sha256 arm64_monterey: "7a23986c89b3f2ee3583cf8119932b624f436c923f489d9e8bdbf79f74fa014d"

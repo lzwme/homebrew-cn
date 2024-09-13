@@ -8,6 +8,7 @@ class QuickLintJs < Formula
   head "https:github.comquick-lintquick-lint-js.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a01d77385e35693b39d0d6b53bcedc80e451adae99c17dc7736f3c1d0dde676b"
     sha256 cellar: :any,                 arm64_sonoma:   "1c699e9d0d9055c43969f64b41b42e747b072e65e84b758d02ae7997c15e353e"
     sha256 cellar: :any,                 arm64_ventura:  "5cd781a6b0b50689f316ee6d27d503ec4343bc63c59596828f46867304b4ee76"
     sha256 cellar: :any,                 arm64_monterey: "69ee58c007063145b36659d42a4c3fa045caabecc20e2a9b4254aa039d29f53a"

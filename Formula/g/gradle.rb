@@ -11,6 +11,7 @@ class Gradle < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"

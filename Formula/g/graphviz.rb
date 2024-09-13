@@ -16,6 +16,7 @@ class Graphviz < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "9ccd668bdff612a554d3c7e44c599f143e640479a98d1b03ef63c205d05f648b"
     sha256 arm64_sonoma:   "dd45b9ea58f4baa6813c807ea0416f302faa5e1069f8a8143044d5bd89a3aa83"
     sha256 arm64_ventura:  "94de859a11b2f236133b2f541c00a6bed2a730c81a4bc6d729930480009881a9"
     sha256 arm64_monterey: "5557ee94735171a98bb962f0f0a2026eab01f770a05572cdd7a0d75bb68e6c86"

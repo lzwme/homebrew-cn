@@ -11,6 +11,7 @@ class Quasi88 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0eac8fdd1ee628be1f2f760272599513d3251ec2f0781d98da27fff0f5ab9917"
     sha256 cellar: :any,                 arm64_sonoma:   "5f6e0024ba90b4ea8d6db6615f01245ebb26ad6e914d5cd5720751b5b5d22399"
     sha256 cellar: :any,                 arm64_ventura:  "c5a10d08e47dfd4e46bb9248aa8ebdb6b85ceaaf26223d2190d01d28167c27d3"
     sha256 cellar: :any,                 arm64_monterey: "52ae75a5b84dab5523b36ea0b827d783a79f419a605cc059fd453ea3e74562a3"

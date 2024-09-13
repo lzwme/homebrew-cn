@@ -7,6 +7,7 @@ class Gotify < Formula
   head "https:github.comgotifycli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b5118c65596ed810a05c95b3731c8c36a5a824dd7bfd380acb5f573944d13814"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd17f980e45205d7a3f690de4fe7992d555487acc023fa62e439f8222309307b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bf1e3860bb0d1a53948e4174fce8d13cf505f56e3409a3ece711cd769fa3acc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2ab4cbb2a80a93e69b68e61ace5035653ad900319d01fe6399e4b2da8cfb440b"

@@ -7,6 +7,7 @@ class Dockly < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "0dd40f2f0850ba036bdc93a1fc471b0ed3e4c1f8ed443245c01486a3e3f43839"
     sha256                               arm64_sonoma:   "ee7e39240a8e4017526ecb770228cc52bf30e022bff0342cf914ddf8962d6a01"
     sha256                               arm64_ventura:  "c9c59d9621bf60c835ee39a326dfe2139cca675ff1bef2e4d8d78b2bc126fd6e"
     sha256                               arm64_monterey: "453c7bcc52e314d2e1af4b261cf3e109174b4fb59786b64267e015c4cfda0aed"

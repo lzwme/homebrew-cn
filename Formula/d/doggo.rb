@@ -7,6 +7,7 @@ class Doggo < Formula
   head "https:github.commr-karandoggo.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a7a4e5358c05872461314226fddedfd444d5367c7f70e57388d7beb69fd2a24e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb99148c795246b24c22c45416117585416ac4813212087421bd3d18cc83f8e8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "260a08b5b69cfc07ba076cfac18c62c2588eee46fd24300f0582a8523dbeb099"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41758c624a2d7bbe64a6c29b9dbe99338b79518bbccb324ef5340b5360831a91"

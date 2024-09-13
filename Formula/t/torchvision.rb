@@ -14,6 +14,7 @@ class Torchvision < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0f3669b2c26705ce4406e67e6ca951cd97775df7e3055541c6c5858cccbf1f55"
     sha256 cellar: :any,                 arm64_sonoma:   "449d5dd160c92d271153c7b527588ae5e3e33beecb756364ec26ec37191bd7c6"
     sha256 cellar: :any,                 arm64_ventura:  "9983c2fb5dab25a6e9cbd66a02393bffc432e023bdf6dbe6cf422fe3269f8f73"
     sha256 cellar: :any,                 arm64_monterey: "820d5713722a6970445c4d7a4a19faa4565b2b7645a45421d8d7ba354de2db48"

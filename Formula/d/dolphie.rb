@@ -8,6 +8,7 @@ class Dolphie < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a3db63bce0efa1bdbbe7035e33ace3b816b0417b3ea7297a1062fa59e977f5ce"
     sha256 cellar: :any,                 arm64_sonoma:   "8ccf15387697da951fb7a90f26c1f141b4e387abfb6fd2df1e4f33c42cded8e9"
     sha256 cellar: :any,                 arm64_ventura:  "306660fb48fdaf88f1ba69ff81b5b03dd8deb4e63a76f93207edd17c522428d8"
     sha256 cellar: :any,                 arm64_monterey: "1dde854dbb0dd8f5a8db358a5912497915d98e5674588b68934ad954bc978cf7"

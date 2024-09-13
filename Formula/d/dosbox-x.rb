@@ -19,6 +19,7 @@ class DosboxX < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "9b772eff1c897425d8d11e6bcdefa87ebafebaaafb4b505cdab6eed99cb2c849"
     sha256 arm64_sonoma:   "7a1799bfeb379368eada7999470ec97561992190d0efdafc9bec2ebdeddc1169"
     sha256 arm64_ventura:  "d06034ea8c332aff03917656d4dc9eae12332f187466bc399be6d0357cb1ec05"
     sha256 arm64_monterey: "0ddb17ee7afe510d74420bb6c689b6da2a1f7897ad44248b4c72d1068f34c28c"

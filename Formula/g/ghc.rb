@@ -26,15 +26,15 @@ class Ghc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "4d721df11b75db14323549c9d8e763d1d61b97fa62fe4a42756c703c89ccf9d8"
-    sha256 cellar: :any,                 arm64_sonoma:   "f369912769ac4893907478f69cf2dfdf5176c1ed95ae962abbb85caf41d63e44"
-    sha256 cellar: :any,                 arm64_ventura:  "a50051c9e268cf2b124cf639a57f8c04422ba31a132316d32476abc2db857309"
-    sha256 cellar: :any,                 arm64_monterey: "cf88f8f0bc4aa0d89fec6d9506bc5500159344d19ee71deeef59ce00cc14cdbb"
-    sha256 cellar: :any,                 sonoma:         "83f9e9762faf3019cade567db83df8589c85fc6ab63b5ac5ea197c6b1f02b733"
-    sha256 cellar: :any,                 ventura:        "aa70ba4ab1cccf6b9626a9e292a04ad7ecd8d9b9ae153e203d2022a26e453c71"
-    sha256 cellar: :any,                 monterey:       "4b0478f5f42f83f64b7dc8bae45481c60b8a008f6f9b64b496755ac595fab6e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "751adff3a7106fe1bf6f272c863933d9372a2a4f11a8861af71194f9a0476435"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "c66497c1502eca61fadd32c472008252b16e98ced0356cc976b6d608bb1f84a6"
+    sha256 cellar: :any,                 arm64_sonoma:   "b19571cdba5c506d91746371da935f9119ba0b430152ab13171500310aeccfd1"
+    sha256 cellar: :any,                 arm64_ventura:  "a4ef8db08ae1add452fe6a3a4fa78741f44e0af47b0bacb736233d257d93dac3"
+    sha256 cellar: :any,                 arm64_monterey: "ff5d7b284fd740b563f58194ec6b04bcccded9ac9129f49c1879a21f9a88e1e6"
+    sha256 cellar: :any,                 sonoma:         "29a5fedd616190f976ac522b8d177b91c5232a0a724c14a3ec42fd89598ad047"
+    sha256 cellar: :any,                 ventura:        "476e2488366161a4c26bce29d7e1882021bb0067fe9d23f9a0d63a594623e7f7"
+    sha256 cellar: :any,                 monterey:       "6fd86a7600ebfa95c764803bab46752dab8dfce0408b4f682c210c76dde83234"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b153bea1e7d233e3dc154bdaa4117e4eff7b29ae8fca606a429311d9bc322696"
   end
 
   depends_on "autoconf" => :build
@@ -103,14 +103,15 @@ class Ghc < Formula
   end
 
   def install
-    # ENV.cc returns a specific version of gcc on Ubuntu, e.g. gcc-11
-    # on Ubuntu 22.04. Using this value for ENV["CC"] effectively causes
-    # the bottle (binary package) to only run on systems where a gcc-11 binary
-    # is available. This breaks on many systems including Arch Linux, Fedora
-    # and Ubuntu 24.04, as they provide gcc but not gcc-11 specifically.
+    # ENV.cc and ENV.cxx return specific compiler versions on Ubuntu, e.g.
+    # gcc-11 and g++-11 on Ubuntu 22.04. Using such values effectively causes
+    # the bottle (binary package) to only run on systems where gcc-11 and g++-11
+    # binaries are available. This breaks on many systems including Arch Linux,
+    # Fedora and Ubuntu 24.04, as they provide g** but not g**-11 specifically.
     #
-    # The workaround here is to hardcode the ENV["CC"] value to "cc".
+    # The workaround here is to hard-code both CC and CXX on Linux.
     ENV["CC"] = ENV["ac_cv_path_CC"] = OS.linux? ? "cc" : ENV.cc
+    ENV["CXX"] = ENV["ac_cv_path_CXX"] = OS.linux? ? "c++" : ENV.cxx
     ENV["LD"] = ENV["MergeObjsCmd"] = "ld"
     ENV["PYTHON"] = which("python3.12")
 

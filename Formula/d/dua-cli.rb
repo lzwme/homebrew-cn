@@ -6,6 +6,7 @@ class DuaCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1f2ac0323c3cdd2b0fd1a73258aa92fbd5d6a61203c8bf6bac397b753502a21"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6315c330f498adf21af96cefdea1379c4c4ca76358313e5bdd149f2ef1414b1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbde1b93530be443c633064f54b88ea1bd4300c6421f9d4e07a9fa261b6d4d25"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5f6285c35ec4e40ab0c527423281aefb23a01da48261b3addbf52160581e3ce4"

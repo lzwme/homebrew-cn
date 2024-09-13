@@ -7,6 +7,7 @@ class Dpp < Formula
   license "BSL-1.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b9bac32440464a7d775ef641fff284d5de50ab7ecf6c1ad37e3a137898435504"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2476590c375c79bc2b694bf10a2edd7721d3603f7738b8d6c935d487ac9655f9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a55479222fdfcb5350b7a06f509ce37a7af58d6b2f0c36807a3250b0a3169618"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "56f17de3bca828d4d844a811f40ed824827876530e8c4f3bef427c1f1c934678"

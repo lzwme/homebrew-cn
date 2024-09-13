@@ -9,6 +9,7 @@ class Diceware < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bca53edd81082b3c4948f25205a721f716b7f7c04e93b0947683293de381d60c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bade6f11a1c53d8392b0f20b367bd7bc01c39485488b7a5dacf13a7223a6dd2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bade6f11a1c53d8392b0f20b367bd7bc01c39485488b7a5dacf13a7223a6dd2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6bade6f11a1c53d8392b0f20b367bd7bc01c39485488b7a5dacf13a7223a6dd2"

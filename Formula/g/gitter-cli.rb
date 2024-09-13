@@ -7,6 +7,7 @@ class GitterCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "87461a9980501e5c6dbed7e5ccb7e4410569a82fb16019ed8a556375eee13601"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa9eccb23942bcb3eb0178bba4d6855e5087343bf22750f3b932eb7e752f3a67"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa9eccb23942bcb3eb0178bba4d6855e5087343bf22750f3b932eb7e752f3a67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa9eccb23942bcb3eb0178bba4d6855e5087343bf22750f3b932eb7e752f3a67"

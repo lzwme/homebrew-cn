@@ -7,6 +7,7 @@ class Fbthrift < Formula
   head "https:github.comfacebookfbthrift.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2661fb4b7b3769dfa9c928062bb5a44d6ecf0a8f82f858e82fb82f15472db775"
     sha256 cellar: :any,                 arm64_sonoma:   "330f2630de2cb78cd1e67d98f17e61acb04ccde1b521f124947bf3479538da09"
     sha256 cellar: :any,                 arm64_ventura:  "d8245402a48128208c29387ec810ad4fd31000a847085f4baf12461ba8264bd1"
     sha256 cellar: :any,                 arm64_monterey: "b60ea7f7e18c4c5d2a9a5fa7e71b007a01216d7976e88b2843cde69e8b21c4af"
@@ -47,6 +48,11 @@ class Fbthrift < Formula
   fails_with gcc: "5" # C++ 17
 
   def install
+    # Work around build failure with Xcode 16
+    # Issue ref: https:github.comfacebookfbthriftissues618
+    # Issue ref: https:github.comfacebookfbthriftissues607
+    ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
+
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
 

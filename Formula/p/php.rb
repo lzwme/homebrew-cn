@@ -13,6 +13,7 @@ class Php < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "64d146f9d430b7082217d7eb6f513b92624920b232b6bae01e32a26d7801de47"
     sha256 arm64_sonoma:   "56e783e27c6457b98471348dde7821c49712174386f0d97709894351d6e5f1c1"
     sha256 arm64_ventura:  "635bad1a21e3e9e31fb26b7cbee32a7d9b72a3c54976cc7cbcfe634d8bcbd146"
     sha256 arm64_monterey: "ce6d1ad6e2344d0ab7c45f1a96047ca81a7f6b583be62a748cb5a4389237f5c6"

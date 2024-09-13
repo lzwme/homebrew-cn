@@ -7,6 +7,7 @@ class Tfschema < Formula
   head "https:github.comminamijoyotfschema.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a26bacd3c1d2c3181c66869f2073433ffd6e22e5886a005d1c5f7c4cf975421d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1b3e06b4e54a071f7de0ddca39efc3c5d907d683d43ace34bb58f6c67aefb70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5226fa144a7d62a560b71935d21f5ec06bb8d012ff52a96c446e27ca071faea"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e97f4365b1120a43460e1cf0f9a315d656835844c7e74d812c6e283ff2d6009f"

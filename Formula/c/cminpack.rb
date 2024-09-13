@@ -1,28 +1,25 @@
 class Cminpack < Formula
   desc "Solves nonlinear equations and nonlinear least squares problems"
   homepage "http:devernay.free.frhackscminpackcminpack.html"
-  url "https:github.comdevernaycminpackarchiverefstagsv1.3.9.tar.gz"
-  sha256 "aa37bac5b5caaa4f5805ea5c4240e3834c993672f6dab0b17190ee645e251c9f"
+  url "https:github.comdevernaycminpackarchiverefstagsv1.3.10.tar.gz"
+  sha256 "6355776f60ebfeef63883aa02c19ab57f1ba776e43122f27cb3161e7fc277d1d"
   license "Minpack"
   head "https:github.comdevernaycminpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "86bc67892d2e77b412e515a3598ce1eaff543a6332b3a6790991f1097f21c031"
-    sha256 cellar: :any,                 arm64_sonoma:   "0e5f0c2d803c0654badea5b1190cf902b1195ddc44f8208cf2113449c07f287d"
-    sha256 cellar: :any,                 arm64_ventura:  "f94482365bf6b246bd83f4bd64fb8c0db55a6604e28d742f391a0e3909b9d979"
-    sha256 cellar: :any,                 arm64_monterey: "d040255d38ec193f4597e283360372b590d9e252f47aaf6e58c70cc386851685"
-    sha256 cellar: :any,                 sonoma:         "55d1709b8309ee871f69e4cc7b4fc905f122f71dfb187fd42d2f7bd5ba539514"
-    sha256 cellar: :any,                 ventura:        "5c23a7d0b2540058345752725d4c9f7a35d2509102b23af4494ac8a91ea361eb"
-    sha256 cellar: :any,                 monterey:       "5e63db34b0679bfc8f9798bbc43b69c17cebdfd4205025b9744b0e1df1371920"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f911f0918c2671e382f5421d0c443075c46deb900947fbb241fb088060c1c0d"
+    sha256 cellar: :any,                 arm64_sonoma:   "e0ac7bfa2fdedb96e6e90751dec4aed32528318c397aa8f90c7dcb51286e59a2"
+    sha256 cellar: :any,                 arm64_ventura:  "00662bc1aa8ee430d61ed7ff52f2c77fa2ef1239b099f137f8727ba5f157e2a8"
+    sha256 cellar: :any,                 arm64_monterey: "bde08e6279067da3d7a1140e031fe9ce6ae5f23e450d04799972cd605d991577"
+    sha256 cellar: :any,                 sonoma:         "53de4275f881a04b906f818ed70f709e4f8b4e3c7d2ddb0b73086a5900989be4"
+    sha256 cellar: :any,                 ventura:        "20ccbe51f38b6975afb3ffe4fbee044721adf9de050c7fc71eeafb57ee8d293b"
+    sha256 cellar: :any,                 monterey:       "80c2b694c9438be2f9bfe0823cd69d27fc7d7032a761d6d27234ec915cfaa613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90c1b2e9eefa5f2fa8062d148390856cf16dfa51f123c0b5fe907920edcfbfd5"
   end
 
   depends_on "cmake" => :build
-  depends_on "openblas"
 
   def install
     args = %w[
-      -DUSE_BLAS=ON
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DCMINPACK_LIB_INSTALL_DIR=lib

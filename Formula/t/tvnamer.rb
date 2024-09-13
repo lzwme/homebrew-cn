@@ -10,6 +10,7 @@ class Tvnamer < Formula
   head "https:github.comdbrtvnamer.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5bb1e06f0510e0f494948a235663919a8982c102dabcbb2d41b28781d1f9355a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2052694f5a9c996975e767709d0e9e46217904a11729bc3f07b27f2ea6ce40de"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c87efde56f3579b46e9134aa1bf0d0d6043e590980c8648502285287625dfdd3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c87efde56f3579b46e9134aa1bf0d0d6043e590980c8648502285287625dfdd3"

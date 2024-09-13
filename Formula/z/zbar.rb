@@ -11,6 +11,7 @@ class Zbar < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d75d246b7e2aafd6bd913171bd443a474616c47d73b3c7364d5c2d227161aee9"
     sha256 arm64_sonoma:   "23bfbc0c9ae6d16727058825feb8147bb7384cd4307fb6f4642ff94c9cf99c13"
     sha256 arm64_ventura:  "6d791bf71b217d0c7558f7becd6b38fcd6d3721002dd164bf01a23a356225259"
     sha256 arm64_monterey: "c7f601f54d7c8609406cb2e1fcbbb4abd8321b58849c64ba5622a6b8ac68a850"

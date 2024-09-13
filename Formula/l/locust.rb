@@ -8,6 +8,7 @@ class Locust < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "dccac2a37c13c0acacfb044ee9454d8cc95a5b01da96b159f27cf685d464e2a1"
     sha256 cellar: :any,                 arm64_sonoma:   "3400593b474ed375f8749a9627bec05a384720eb1a975f45f6a0f574f037be2d"
     sha256 cellar: :any,                 arm64_ventura:  "b9206a22fdd1837f60b46f9473dca45a1e7f41f044762dafcd9b5ebefc96ae73"
     sha256 cellar: :any,                 arm64_monterey: "fbace3783d9037435d3f188ef6ce55aa622856b1184b3a01093657a3e2604a9d"

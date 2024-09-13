@@ -6,6 +6,7 @@ class Tt < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ef6dfff15ed6f527dc363848f74c1ce20a9985b56ff68c610b26f83e7f3db6b7"
     sha256 cellar: :any,                 arm64_sonoma:   "0a115329895d87dc0a1d258ec02bb76b16b9a2bc13a1814f8ca3471fbaac1fc0"
     sha256 cellar: :any,                 arm64_ventura:  "56e548e607543f6db9108a2ad1c44ab47e3c801cb214ca8074276a3468babc91"
     sha256 cellar: :any,                 arm64_monterey: "ff07f8f970e305a29a86aa237974e0cc6f601f3aef61f89dceb1536ec695fa3a"

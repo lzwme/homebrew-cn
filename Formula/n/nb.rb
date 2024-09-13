@@ -7,6 +7,7 @@ class Nb < Formula
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "edf8b2e37b7996720299a8e0179f63c32a937043cd2062e456dfd402771d496b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "edf8b2e37b7996720299a8e0179f63c32a937043cd2062e456dfd402771d496b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "edf8b2e37b7996720299a8e0179f63c32a937043cd2062e456dfd402771d496b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "edf8b2e37b7996720299a8e0179f63c32a937043cd2062e456dfd402771d496b"

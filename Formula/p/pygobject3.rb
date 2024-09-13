@@ -1,19 +1,19 @@
 class Pygobject3 < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://pygobject.gnome.org"
-  url "https://download.gnome.org/sources/pygobject/3.48/pygobject-3.48.2.tar.xz"
-  sha256 "0794aeb4a9be31a092ac20621b5f54ec280f9185943d328b105cdae6298ad1a7"
+  url "https://download.gnome.org/sources/pygobject/3.50/pygobject-3.50.0.tar.xz"
+  sha256 "8d836e75b5a881d457ee1622cae4a32bcdba28a0ba562193adb3bbb472472212"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "32336a34cddee164b4601577a8dbe8cb510e9c69fcc1dfdb9c4d6fe3d6153c37"
-    sha256 cellar: :any, arm64_sonoma:   "03a66429468af32cc5ca8458dbff8307cf77a6ccb66ce366be318abb71e6dcb7"
-    sha256 cellar: :any, arm64_ventura:  "91bddd1d00d2c8c7e50190714c21f35e98c37d5945f23d1bbe9e49035cad8fe5"
-    sha256 cellar: :any, arm64_monterey: "6aa5972afb3ac83c880a53bc48d582df92af536f9a616fe40648b3ecd66d2ad7"
-    sha256 cellar: :any, sonoma:         "8db6ac23e2664e8a55aa4ef0d360a2150ff7165e6a209fd39eca0898298fdd4c"
-    sha256 cellar: :any, ventura:        "7be31857d1eb553331fa404029bf6f510c0ea48b83395b268909a67b3eae20c7"
-    sha256 cellar: :any, monterey:       "73c9c2554d086c379912a18614f3870dcf9fbb120e3e63a0ee67736d59eb1eeb"
-    sha256               x86_64_linux:   "e619d0cec5375d3427d05b6cac359b993546ead0f78a3b2205f950d012645d7c"
+    sha256 cellar: :any, arm64_sequoia:  "795deab77b4e616f164998005f68fed69bbd7a4a737aed2da8962fca78f1998a"
+    sha256 cellar: :any, arm64_sonoma:   "a05bdf08604e6ff3b46acf5c3fe0b6f4cfa078cf39546cd6707d47dcd5d45444"
+    sha256 cellar: :any, arm64_ventura:  "c836989426c7f07dc41aa74bbe40190f82a3afa3fdda86b9425e6e8c540b90cf"
+    sha256 cellar: :any, arm64_monterey: "6f31ebad4163c3d6dd8521a530213ab42af7ce1540c8b100be6bc2e1e1537eba"
+    sha256 cellar: :any, sonoma:         "c876cfa95857d59a75d35c7977d20c5625c8a9373bf9fb44baa008e23d182a83"
+    sha256 cellar: :any, ventura:        "30c7b2945bb444c020a7b04f16cd4440143a1fdbe1e0473e9c64df1fd8d7784f"
+    sha256 cellar: :any, monterey:       "3a66f0a3fc77a0836f9413ede8c2019f586c1ce220f29f888e52a2476914e114"
+    sha256               x86_64_linux:   "a9a30f9517916827435fd0728537c556146283271ceeae7bd02cd49c8907c096"
   end
 
   depends_on "meson" => :build

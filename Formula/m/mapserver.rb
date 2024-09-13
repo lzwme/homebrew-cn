@@ -11,6 +11,7 @@ class Mapserver < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "08fa6d2e815968e98cc2ea69cf5d67c4617b9ad269448fe66fd0c61353658628"
     sha256 cellar: :any,                 arm64_sonoma:   "8156feda4d5a44c24733ed153337f2cde96f78fd9ffaf2a3e498b23fddb7e2e9"
     sha256 cellar: :any,                 arm64_ventura:  "6a21a6a818fba2a07bb000dc9727d89da2ae6bc6ed2e2eef50a7c63667871589"
     sha256 cellar: :any,                 arm64_monterey: "a70bac0f70e22ba880f809f7a9c3d904e1dd4b09eb568e58a997b96b5e92cf0d"

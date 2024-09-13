@@ -6,6 +6,7 @@ class Tgui < Formula
   license "Zlib"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e5ef2ca959866884c8fc0438a07b3802c586993484511b9a33a204a4c43b65d1"
     sha256 cellar: :any,                 arm64_sonoma:   "c3faac1d98846f88c860ccdb7ad67eaf9a04e5084324d92b0319147e74102501"
     sha256 cellar: :any,                 arm64_ventura:  "541b10a466a04e1df0245b63c438923282c80fe604f02faf1b4bd3b53549e824"
     sha256 cellar: :any,                 arm64_monterey: "a711e18947f79d449ac31d05b9bc7dfaa5b8784f4d986e49ac082b80131f878a"

@@ -8,6 +8,7 @@ class TrojanGo < Formula
   head "https:github.comp4gefau1ttrojan-go.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f58e47fab9a183c8212343c7e2e7fb4096af8ccc3a3d6db82bcace4e2a0feaf0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9872077ff3a1ef7d427cac872b6b1ff7d3cff029c241e35a884e4b4a090e163"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "76f3e955eee77490f3104b14685a116a56697e78a77cd681a2161ae1889fc251"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ec98c6b4c3d8848c7f4f509b2dc0597ced55ca1345e6cb7df3db3cc61e8806ca"

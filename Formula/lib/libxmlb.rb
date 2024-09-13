@@ -9,6 +9,7 @@ class Libxmlb < Formula
   head "https:github.comhughsielibxmlb.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "2031c0bb9db4a9dcad02b075e0d33792062d563abd45b3590221856780dd90bb"
     sha256 cellar: :any, arm64_sonoma:   "b777a7b297501a29a04d2c6329935a82d64ae89dcf090de28c0036a700e94390"
     sha256 cellar: :any, arm64_ventura:  "e3bfe1743a29e3966da4eab2327c871912bda318318b9c6430c7fefbe1f47cdb"
     sha256 cellar: :any, arm64_monterey: "a798d76e1bc87c30496af800eee986d24f03e75e5fbde0e9555756f33ad642f8"

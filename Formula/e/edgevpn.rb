@@ -6,6 +6,7 @@ class Edgevpn < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9717cea2975a02761489cb7dabba9547d8da7bfde74f272e4be05fcf69e005e2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68cdccdf9dbcf1b161a7931699caeb7825237a7012ae4288ed0222361a397042"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "68cdccdf9dbcf1b161a7931699caeb7825237a7012ae4288ed0222361a397042"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "68cdccdf9dbcf1b161a7931699caeb7825237a7012ae4288ed0222361a397042"

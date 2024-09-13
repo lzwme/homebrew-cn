@@ -7,6 +7,7 @@ class Gqlplus < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "655578c016ff8dadbc3acec3696e90fb7fbab95af8a0f749ec4d2384ab977221"
     sha256 cellar: :any,                 arm64_sonoma:   "c4534648d55a23ab49c6fd1e3a4c3c66ee928c7b4ab4cb1c10b9e132134a81f7"
     sha256 cellar: :any,                 arm64_ventura:  "a0306aa2fa07da51f02dec57525850ec4fe73e37d044fc34cb0b722cb83d1310"
     sha256 cellar: :any,                 arm64_monterey: "ced72667294e921a6625eff47bdb23df67595692f8f5b4d1ed253eefc4b708ac"

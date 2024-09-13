@@ -12,6 +12,7 @@ class Vice < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "27ee6052b18ef33d3506287af4026da0058bafcbba1c4f2c42653b2ebff55275"
     sha256 arm64_sonoma:   "163a28f5f228bda4494e240c888a18f33d9fc92a45999d65431c91d196bb4279"
     sha256 arm64_ventura:  "649950d292263d4acd2003e830bcc8d5f53d570f71ae9b9c1d15b0ee17e95ed1"
     sha256 arm64_monterey: "f1ae86341d60851431b2500e01047610456dee0d4f5173ad0e44b921dd143859"

@@ -11,6 +11,7 @@ class Got < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "10cd292dd447dd1788394a4afa33c5a799ea6d45cb5259becb5b076e624e06c8"
     sha256 arm64_sonoma:   "2d57a6e01b060cc3d615c2bba8c8defe8faafb40d753501771d2de618e1ee1f9"
     sha256 arm64_ventura:  "498038b2805604bb2319933aa665ae25bbbaee1b6ace3e408647a23a428f5875"
     sha256 arm64_monterey: "ddc3d1f88477970346a92010dd04d65a5baab84636f5bc64c8e570f168a9e743"

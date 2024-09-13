@@ -12,6 +12,7 @@ class X8664ElfGdb < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "87279b423ede8199fa50d5f4c9305d65f2d9a0f6161a5b7f2f8bbe6cc3f90b95"
     sha256 arm64_sonoma:   "84e2e9c2884955b6e25f6bd5ee7c5a2da6eaa99184cb54e8a33a392f51b9f444"
     sha256 arm64_ventura:  "f08d41519aaa97d4deee3b0455788d90fddec1f09773054366f2f9adc93d6a57"
     sha256 arm64_monterey: "9ddbf58dbfe0118dc3242d9411b4ed07ef4907b2ebf1d4bc8ce3f5b37329767f"

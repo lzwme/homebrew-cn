@@ -6,6 +6,7 @@ class Gnmic < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9409a9551aa16fa71501e30ef5a6883416110b8504594df83664504c7f0a29b8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "297b862e0cff23071352785cdc2a137062c93b7858414f20c3699170b5960073"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "018c10287f6fe99cf2bc5526c1b88f20e449a8e1821a5d3ff024bd6e2fadc7d0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ec031ca0054a45bbb42261873d873f5ac759f5597dbad6a489f3199372ed480"

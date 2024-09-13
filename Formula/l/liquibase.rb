@@ -11,6 +11,7 @@ class Liquibase < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "089b8379fbd8bc9e5a04a86fa3afdbfb095d866904b683a440647ca12b2a4698"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "089b8379fbd8bc9e5a04a86fa3afdbfb095d866904b683a440647ca12b2a4698"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "089b8379fbd8bc9e5a04a86fa3afdbfb095d866904b683a440647ca12b2a4698"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "089b8379fbd8bc9e5a04a86fa3afdbfb095d866904b683a440647ca12b2a4698"

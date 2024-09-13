@@ -11,6 +11,7 @@ class Trailscraper < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "344d6e44b57244b4609eee66586c26f6b195f549ca2b12003b64d9db581c33c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "030fcc52b470369c9add987bab8e9de709af9404538cd8ef19418f492f28d188"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d95e86577d6e154ed190f02e7e2caaea98f6a247536e17d51ba5e331cc26d17"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "16b4ba60b4717e947005bb3aed439fe48a0d031e930a3a6dc65ee7bee45b99f8"

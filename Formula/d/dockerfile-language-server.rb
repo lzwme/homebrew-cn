@@ -8,6 +8,7 @@ class DockerfileLanguageServer < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fc0733c32b23d413bc930039532ba81099fea104efd7e50c5ad87830bb52bea0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0acd811cad164eaa55ff4fb328759defae0ee5c12995cd11fa2a2688615fbf53"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0acd811cad164eaa55ff4fb328759defae0ee5c12995cd11fa2a2688615fbf53"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0acd811cad164eaa55ff4fb328759defae0ee5c12995cd11fa2a2688615fbf53"

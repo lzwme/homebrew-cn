@@ -14,6 +14,7 @@ class Duti < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "618006e5a13a64c6efbf793329f2b5a2778533103cc00d754deeea03c99cffe8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d14d8b6965955bf2ac40e3b894a11285c734875ab1fd672ff6ce8dfeda273a1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1854cbacdb3b91f469bb877a3498a45a7dc5035520d0c62e1963929ddc4a3c86"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c753d2d0d444ec7ba4b2b1035863da1e77ae5fd5d82eb75fa7a1a41858366663"

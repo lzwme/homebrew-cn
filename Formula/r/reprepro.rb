@@ -11,6 +11,7 @@ class Reprepro < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "badeb1ae69e64807080d2a9a593d5195e784998e9fd7ac3c38666f90c3ac3aea"
     sha256 cellar: :any,                 arm64_sonoma:   "6ae8f574c8fbfa13776901135cf93d2764d7fc039d7ab6727c959310785769b6"
     sha256 cellar: :any,                 arm64_ventura:  "074ecc0f03f9b65eee888d3c80da0b236267cea25fdca49f6a77f25da6bbcb45"
     sha256 cellar: :any,                 arm64_monterey: "4bd034f17d9a86c6e85173977ad58cbb2affa18678bd471b35216337be0f050f"

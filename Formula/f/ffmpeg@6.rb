@@ -15,6 +15,7 @@ class FfmpegAT6 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "0683b353fafe8c9e59d921b590bc0689ce12e8525cbafba9fb7d654c4e9382cd"
     sha256 arm64_sonoma:   "4500d1804076491e8ad75360ca989bb01b72c8d796bab4c88841a83aecf1f55e"
     sha256 arm64_ventura:  "6023e1aa5d51af6dade42514d5d91f9b0e800e6e7378561fc28c80cf86717f84"
     sha256 arm64_monterey: "a5fbb1dab9422b1b7ee93a682e4e92efb69f4dff8062bcc1bb93597ba6fa1f85"

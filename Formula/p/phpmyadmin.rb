@@ -22,6 +22,7 @@ class Phpmyadmin < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8128020d81fb88ccf3a6f6d8237c51ed2a1a19834539fa9b2303d5feaff22667"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb34ea7ccef57d1f9a45841b4dc4bd8a6d483611bc4aeaa4d5ddfda417005864"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bd02506f7741f5c566ce1208327f2a2cf02e2295d4cb5cadb6f9f2c4fafb8ec"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2545dca90ee52f478275ff1a0da76cf27fcaf20fa7071f5cfe00f2c7fcdf1f7a"

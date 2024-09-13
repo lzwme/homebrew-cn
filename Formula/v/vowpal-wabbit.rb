@@ -30,6 +30,7 @@ class VowpalWabbit < Formula
     depends_on "sse2neon" => :build
   end
 
+  # Reported at https:github.comVowpalWabbitvowpal_wabbitissues4700
   patch :DATA
 
   def install
@@ -111,32 +112,6 @@ class VowpalWabbit < Formula
 end
 
 __END__
-diff --git aext_libsext_libs.cmake bext_libsext_libs.cmake
-index 1ef57fe..20972fc 100644
---- aext_libsext_libs.cmake
-+++ bext_libsext_libs.cmake
-@@ -107,7 +107,7 @@ endif()
- 
- add_library(sse2neon INTERFACE)
- if(VW_SSE2NEON_SYS_DEP)
--  find_path(SSE2NEON_INCLUDE_DIRS "sse2neonsse2neon.h")
-+  find_path(SSE2NEON_INCLUDE_DIRS "sse2neon.h")
-   target_include_directories(sse2neon SYSTEM INTERFACE "${SSE2NEON_INCLUDE_DIRS}")
- else()
-   # This submodule is placed into a nested subdirectory since it exposes its
-diff --git avowpalwabbitcoresrcreductionslda_core.cc bvowpalwabbitcoresrcreductionslda_core.cc
-index f078d9c..ede5e06 100644
---- avowpalwabbitcoresrcreductionslda_core.cc
-+++ bvowpalwabbitcoresrcreductionslda_core.cc
-@@ -33,7 +33,7 @@ VW_WARNING_STATE_POP
- #include "vwiologger.h"
- 
- #if defined(__ARM_NEON)
--#  include <sse2neonsse2neon.h>
-+#  include <sse2neon.h>
- #endif
- 
- #include <algorithm>
 diff --git avowpalwabbitconfigsrccli_help_formatter.cc bvowpalwabbitconfigsrccli_help_formatter.cc
 index 8cc6dfe..530d200 100644
 --- avowpalwabbitconfigsrccli_help_formatter.cc

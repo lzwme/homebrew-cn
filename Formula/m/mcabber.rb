@@ -12,6 +12,7 @@ class Mcabber < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "22148b4dac302fc1e66326cd0a1790831aa8b2a1fe8911b41944125056d2cd20"
     sha256 arm64_sonoma:   "4360dd97e2380a7f382a3b7c2ca1a0e75525b6611c72f28e65709cafe6b30bb1"
     sha256 arm64_ventura:  "7815be33fdbe1617a9bd769ddcefb123668d13957690faf188608d569570242e"
     sha256 arm64_monterey: "7e1900fb7c58c6a948cb2329a3e52f9dcdf7fe69afa5519cc7d8b096db950c31"

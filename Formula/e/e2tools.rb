@@ -6,6 +6,7 @@ class E2tools < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec19f8ce56a63808d08a26e4b612a9ed079dd9de3278e0f23f95ad79a62c8322"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "189a32d6a537cf7f38e4f935a2f6bb4f83ca9ab39140aa3e7b521f1611ed13cd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "11e1f3be71a478efda672fea5d23fc466c5d23d571809b459a56cb4967258fe3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4764d51ea5016a50dc90a7665db17f327742011eb24d6bc3635b5e4cb7e3efda"
@@ -25,12 +26,13 @@ class E2tools < Formula
   depends_on "pkg-config" => :build
   depends_on "e2fsprogs"
 
+  # disable automake treating warnings as error,
+  # upstream patch PR, https:github.come2toolse2toolspull33
+  patch :DATA
+
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -39,3 +41,17 @@ class E2tools < Formula
     assert_match "lost+found", shell_output("#{bin}e2ls test.raw")
   end
 end
+
+__END__
+diff --git aconfigure.ac bconfigure.ac
+index 53ad54a..89e9c52 100644
+--- aconfigure.ac
++++ bconfigure.ac
+@@ -11,7 +11,6 @@ AC_CONFIG_SRCDIR([e2tools.c])
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_INIT_AUTOMAKE([
+ -Wall
+--Werror
+ 1.9.6
+ foreign
+ ])

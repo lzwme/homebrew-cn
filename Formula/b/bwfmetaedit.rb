@@ -28,6 +28,10 @@ class Bwfmetaedit < Formula
   end
 
   test do
-    pipe_output("#{bin}/bwfmetaedit --out-tech", test_fixtures("test.wav"))
+    test_wav = test_fixtures("test.wav")
+    ret_status = OS.mac? ? 1 : 0
+    output = shell_output("#{bin}/bwfmetaedit --out-tech #{test_wav} 2>&1", ret_status)
+    assert_match "FileName,FileSize,Format,CodecID,Channels,SampleRate,BitRate", output
+    assert_match "#{test_wav}: Is read only", output if OS.mac?
   end
 end

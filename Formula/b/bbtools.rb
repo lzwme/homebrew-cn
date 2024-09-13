@@ -6,6 +6,7 @@ class Bbtools < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7aca68320b0babd8ba49d4970fa8e9afaf5bd56ab173dead995c2a95a4f74a95"
     sha256 cellar: :any,                 arm64_sonoma:   "5d07b7e1a1885a7d0805644ebfd6c9e6cf0754e4a79932a5eb4c2af370c8a6c7"
     sha256 cellar: :any,                 arm64_ventura:  "b3a9e7b26e4383539052b5f5528bcab52fce890bba52b0533c96eaa3be484d06"
     sha256 cellar: :any,                 arm64_monterey: "fa7711333a2a61aa3f61c173a9be1c327eb6cd7282686ed8da32a5f83426c1f2"

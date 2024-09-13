@@ -15,13 +15,15 @@ class Nanopb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1f15525c49e93031d767a77fe33cf6d63e7331341a337bac07127fc52e5b231b"
-    sha256 cellar: :any,                 arm64_ventura:  "6919bef03e1f792e010579d18b2a45f83a258d76d9dfd273ad94dee35b31e576"
-    sha256 cellar: :any,                 arm64_monterey: "260303ae3cff7074cb22c1bed0e21ebe2e2b584007ca1cca0144de576ac24861"
-    sha256 cellar: :any,                 sonoma:         "e668b434826985bb97dea2f351fd2eea1bc563c69f4ca3eb2bc5cc197e1c0015"
-    sha256 cellar: :any,                 ventura:        "be8bfe95b11aeb6c73a8298e2467104a3f5ed38d4c04be0ed182ad3094aa3a46"
-    sha256 cellar: :any,                 monterey:       "b943a65449f1614bc4c7b608adac7a8f87e62dd89c7b5e358aafb12b0ca62869"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edef625d5954c642121ad269d1e3978cec2f653d1bdd9868086e46a0b289438c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "6ec25e39bf3112ac569ed2675e70d69cd813bb8348f6b5bc8acd30885b36f32d"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a10d891af8696c797c1cde1d7feb63308077f59bd01ef2f35cf93143d856352"
+    sha256 cellar: :any,                 arm64_ventura:  "2117ba812cbfd0cbf35f01de5c340891f5a98c66c9483cb34b561572da885c1d"
+    sha256 cellar: :any,                 arm64_monterey: "a5356da9dafc82e253b2fac3e9f5f1ef32be82f64c3fb8a90c0fec460ad65261"
+    sha256 cellar: :any,                 sonoma:         "c6092653c90c43799ca8c38b40ea36c254c14a30bf5e866b6be628a097377979"
+    sha256 cellar: :any,                 ventura:        "6adaf92aa28d53af0d328a5442ba1bd02037e11ae6648eb3289dd1f58c9b37bd"
+    sha256 cellar: :any,                 monterey:       "0c41e0eb888fc35b4a19f99818e0238303b6d8bfaab9b0649046594f8967633d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2463b4ca7e9c39952ce9d60f4c52b3ebce242cdd783e78c95cea78e179e5880f"
   end
 
   depends_on "cmake" => :build
@@ -29,13 +31,13 @@ class Nanopb < Formula
   depends_on "python@3.12"
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/71/a5/d61e4263e62e6db1990c120d682870e5c50a30fb6b26119a214c7a014847/protobuf-5.27.2.tar.gz"
-    sha256 "f3ecdef226b9af856075f28227ff2c90ce3a594d092c39bee5513573f25e2714"
+    url "https://files.pythonhosted.org/packages/3c/0b/7a997c8939f698d72bdea14d57116e43d3051fffb3b2964c30938c4a08e6/protobuf-5.28.1.tar.gz"
+    sha256 "42597e938f83bb7f3e4b35f03aa45208d49ae8d5bcb4bc10b9fc825e0ab5e423"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/65/d8/10a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3/setuptools-70.3.0.tar.gz"
-    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
+    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
+    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
   end
 
   def install

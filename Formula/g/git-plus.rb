@@ -10,6 +10,7 @@ class GitPlus < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "48431bacb91c9510246ab65d2d55db00dda34b8f32fc78b3a4b671978f875198"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef42c82b5838b88df701124a18379ee8a14f2c88e365d67746498718180d373f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a11df5d95977ab8883a8d9c1da8de49d3961b2af8e603541bb89698610152d8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a3fdfb6af0edaf6640810775fdf0d3050ae8563670cdf179da8dbf1ff57dbe0"

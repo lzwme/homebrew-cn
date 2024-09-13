@@ -7,6 +7,7 @@ class Benthos < Formula
   head "https:github.comredpanda-databenthos.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8ab89ffe3f244f14faaec5e7bce0e1231a79316fbdf129e9455b991628bcef58"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ab89ffe3f244f14faaec5e7bce0e1231a79316fbdf129e9455b991628bcef58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ab89ffe3f244f14faaec5e7bce0e1231a79316fbdf129e9455b991628bcef58"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ab89ffe3f244f14faaec5e7bce0e1231a79316fbdf129e9455b991628bcef58"

@@ -10,6 +10,7 @@ class Doitlive < Formula
   head "https:github.comsloriadoitlive.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6eb0e97d6e3359fcc11100432fe94a79dabd6c3ed336f090cb633a8d1ea58f30"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2daa5f32027ff7712740051dcb330a1c848b36e0334c02cedfcea3f4a137ef85"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "946ce9358688fb5634500b7af4355a724f7862a8fb948d6a54ec1c0c10497ce1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "301116d0a62a38271ae8c912c52685033f55ced59502dde85b37f93e35335e49"

@@ -1,19 +1,19 @@
 class SpectralCli < Formula
   desc "JSONYAML linter and support OpenAPI v3.1v3.0v2.0, and AsyncAPI v2.x"
   homepage "https:stoplight.ioopen-sourcespectral"
-  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.11.1.tgz"
-  sha256 "def3583f144cb7ba6d03d6814167ab3d6a8a27fff7f575b2c2ec72f0b133cc0e"
+  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.12.0.tgz"
+  sha256 "287fffa1f1a9fe565ab8fad1dfd9b201778db7685bdc36f5ab0ef7d21565ad58"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2379f68ab9b0579b2c12a53615ab57cdc0b0e67d4e2217639db8bfb79db86f85"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f053496819d743631ea9c148461a7893d739c53c5230a42e01adc2f78178596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf2121c4406a8558364f34a6b9ee383df6414ebf8b933188b5920b030b24e684"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f04a79ba5915612e3fddff5396b02f02669b80f657403c5da5a03abaa80c667e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f04a79ba5915612e3fddff5396b02f02669b80f657403c5da5a03abaa80c667e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f04a79ba5915612e3fddff5396b02f02669b80f657403c5da5a03abaa80c667e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f04a79ba5915612e3fddff5396b02f02669b80f657403c5da5a03abaa80c667e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e93cbe50bd8a073826b62959be9f3cb87a2042f852981483f939d9fdf3b6901"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e93cbe50bd8a073826b62959be9f3cb87a2042f852981483f939d9fdf3b6901"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e93cbe50bd8a073826b62959be9f3cb87a2042f852981483f939d9fdf3b6901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f04a79ba5915612e3fddff5396b02f02669b80f657403c5da5a03abaa80c667e"
   end
 
   depends_on "node"

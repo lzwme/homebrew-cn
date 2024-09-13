@@ -11,6 +11,7 @@ class Scip < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6e13fef5755bb382ee395e983ac0ac7c3e46edfda5beb68e84a44ecaf2473ef2"
     sha256 cellar: :any,                 arm64_sonoma:   "705a97ff1ca9f055004c006185e899c99d05a12d0e5c3609f86ca675fbb57e43"
     sha256 cellar: :any,                 arm64_ventura:  "896b0868587888345ace85d2ec03f9cd265d753ad320c07ed0bba89de8b756a7"
     sha256 cellar: :any,                 arm64_monterey: "1803a116966786bdda39fd83cd1c288f76419273eea70475ee8ccd8e0880eac6"

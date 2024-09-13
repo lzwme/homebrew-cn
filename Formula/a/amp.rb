@@ -1,19 +1,28 @@
 class Amp < Formula
   desc "Text editor for your terminal"
   homepage "https:amp.rs"
-  url "https:github.comjmacdonaldamparchiverefstags0.7.0.tar.gz"
-  sha256 "d77946c042df6c27941f6994877e0e62c71807f245b16b41cf00dbf8b3553731"
   license "GPL-3.0-or-later"
   head "https:github.comjmacdonaldamp.git", branch: "main"
 
+  stable do
+    url "https:github.comjmacdonaldamparchiverefstags0.7.0.tar.gz"
+    sha256 "d77946c042df6c27941f6994877e0e62c71807f245b16b41cf00dbf8b3553731"
+
+    patch do
+      url "https:github.comjmacdonaldampcommit4ce866de7a2e1613951002ff61563a80e19a5c0c.patch?full_index=1"
+      sha256 "0837555e28ca95b366932af02cdbad41a26d1c7f57545f04616258fadc6e96ec"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0602d51ca846b298ce8a461dcb6f77fded1230508a374351dec16c2ca81adb0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f64b6e1aad3d6019eb20dd368cc31185bacf34907b46cf46941bc10b2e42887"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71335f514f8823bd44e604c8b7a68ddf9f28d5a3fb598a8246838d6dadc0ce66"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87ef68adf7b5d627d22563f4d074845c2917dfce0011f0b58929f1632a15caae"
-    sha256 cellar: :any_skip_relocation, ventura:        "fda6253e67648534e7696ab6832d4c773f224d4b41a534ff9166c60fc9b2a59d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5695be774969b81034c659f2ed38f9b2b3cd35549a189e275af15333d9ab97fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7591ce6c472ae8fc567bab641bdabc59aa721b0cb0322ea468bfc601a8a8c66"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7740df6c776c2e0520337ca8e5683f63315cbf18ad976c2ef859971ea43e4489"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aef57b839b6f12acb5fab08b71b9d3956585b4f019663230a0fc1ec867e9db51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "db8538414b3471e899497ab7462383c4ec27b23f8c648fe41458da13218bc331"
+    sha256 cellar: :any_skip_relocation, sonoma:         "754cc6905c2716c06f975fd4b151f9944d94885252510844ecb74e3bf35fc7b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3965b38fb5a5313e282da4ad32cf5e710f4636b9c6d62fce6b7f41ac63a5c70"
+    sha256 cellar: :any_skip_relocation, monterey:       "12505051e9e0c7d5dfdf69c369d993c3e5d9bb8e07bee318e7f91293edbd170f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a257eddaacb831226f45e836759ef90dbf3d2a94e302e71f2659490fcc3ed1ff"
   end
 
   depends_on "cmake" => :build

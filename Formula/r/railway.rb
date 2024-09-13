@@ -1,19 +1,20 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https:railway.app"
-  url "https:github.comrailwayappcliarchiverefstagsv3.13.0.tar.gz"
-  sha256 "6d1357709bec787d066b8c10d127e9da79126e492a4dad69a7d2abdc41d28281"
+  url "https:github.comrailwayappcliarchiverefstagsv3.14.0.tar.gz"
+  sha256 "759c7128d8abb8f56fd0ab231cba4e686a4238d43b319c8dbfed38882606f100"
   license "MIT"
   head "https:github.comrailwayappcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee6ddf95cdfc0c8044f7707a2ca211baad6e952dc403d137b09037d6de0b065d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c475db48493ed1bf6237f6e0a9dde072157531c6817d6ff40978584c5e18354"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e0f17659ca42754a09afdc2238622928a89e680f54e7341ba01feeac2f517c7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5eb75bd42e513adab64594dd8689cb49715ad08312c85ee0ef8d79b6d3197eee"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e7c5e66808dabd9e4819f541795a333d63d622cf5d10dfd6e92642524a31161"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa83021709654ccfdf1b3f4cd061ec9e736b39fcfb901d503c6b1cc16c396919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9d1989ab8be4e1e0295a9e4c35a831bd0536e7ad95f31ad190cb9533ec10416"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5bea054ee656e29fdd9769ce3c6d0bb143c8a7da5294e5dd99fafc16d5dc37a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcdb2c5f381cbd9f821d0af0ef5c34ad2e4eb065080f13fabf8b887414cc583b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f46e7949a0043bf11bcd7bf093aa9efdaf0eb66394575e49d1b8512af0e4f252"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8e2cdc9263f9832ccf3deac37f9790c569d723b852abcd7ba3f73fac92ca53b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d173a3faeae9fc05e2d806bdcae8b72c351235e83d505eac0ecd54209900ff3e"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4550ab0fdc33789ec1abf780bda4c8dd001b5c1096bf72a4edde7ee2c5bb0e9"
+    sha256 cellar: :any_skip_relocation, monterey:       "95caa5564e2875c732d8c5fed851f5684b5111ae942ca417e17246ed982bf8ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4cc5a138b7f108c86745e658d84badc955cd3c0253c5d3ed21e4598d6c4f3e6"
   end
 
   depends_on "rust" => :build

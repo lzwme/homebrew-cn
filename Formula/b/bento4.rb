@@ -27,7 +27,7 @@ class Bento4 < Formula
   conflicts_with "mp4v2", because: "both install `mp4extract` and `mp4info` binaries"
 
   def install
-    system "cmake", "-S", ".", "-B", "cmakebuild", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "cmakebuild", "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}", *std_cmake_args
     system "cmake", "--build", "cmakebuild"
     system "cmake", "--install", "cmakebuild"
 

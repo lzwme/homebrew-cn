@@ -23,6 +23,7 @@ class Micromamba < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "86b76aff2d2197307274cdafcbebc31c84e7ba98859a6b5aea72394b13deee53"
     sha256 cellar: :any,                 arm64_sonoma:   "88b51ba79028340a5f81ce13ca35446895e29c7b8a4b2ed3442b3fcf95c69bd6"
     sha256 cellar: :any,                 arm64_ventura:  "1789a8f976fe30c27c052c62e81d7a6bec1cfca9a7b38ce26c27548535cc6b98"
     sha256 cellar: :any,                 arm64_monterey: "54cd8bafa37922abb9fec44eaec97c428d151bd5f79f9f88a0e024d320314957"

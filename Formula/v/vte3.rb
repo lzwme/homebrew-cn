@@ -6,6 +6,7 @@ class Vte3 < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "e9968ae162ed90b8c97aa6c8628263a4287f83475e4bb94e3d16f4345831b4b0"
     sha256 arm64_sonoma:   "e493a594877dcc06595b725b96dd915289bdd2293f467c746a07c685aaa0e9b2"
     sha256 arm64_ventura:  "fef9c048213f11fe2cace83bd11a7c2d239bc3c4f0acad94206e7a758135f6ea"
     sha256 arm64_monterey: "f80b773894ca38262ec0dcb54581c3daf3e975a3d6cb8f3f079b921289a824fb"

@@ -25,23 +25,24 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "a04fbda83631025a04b8a1cae96e549636b33f1beb1fa901f996c76fdb591f6c"
-    sha256 arm64_sonoma:   "2d92ee06491ac41c6c1fe0e6f7c3e5ab01a8d01dbca38d2c98efc421d4419862"
-    sha256 arm64_ventura:  "32561daf533f6e9dd27e639da59907d2e52809819baefdb5d64b55e0b62f6eb1"
-    sha256 arm64_monterey: "9eddf896d5f4497c688191a47bcd7af93f80625772c3731e10f67b750a7a5d4b"
-    sha256 sonoma:         "66f81a933c00057b36e8d19f261006da0435988d7e3e6eacc3ff1d70117c9d5e"
-    sha256 ventura:        "eb050f208f53ca87d6d83cccab0d894013e3375ed746ee8e676def132ccbc354"
-    sha256 monterey:       "e50c222bc92921fd9502a35087047c7dbc41e09fd0ae6cf676b6db5bf1a032d9"
-    sha256 x86_64_linux:   "4fcdf11c4ff064cbff8e96a7059061bb093ad19ca68cea09736f1eac29762525"
+    rebuild 1
+    sha256 arm64_sonoma:   "0a6dd05df895c9ad1b06cefdeddc5979111da656fb210883fde404d7fcb69f92"
+    sha256 arm64_ventura:  "20cb42029a549f52f0cc6ae230fd40c8a01e794d8403ef3bba7cad2f0e4c8e0f"
+    sha256 arm64_monterey: "f6b9bcf81acee6d920d3e18cea818168c2ded92a202439b6795a40bcff18d29e"
+    sha256 sonoma:         "6c6eda6e7124c881d16cc72493068f30da159995e5e02ce9134c400243d51453"
+    sha256 ventura:        "b2b35049f62ea367e9e8c330c82ea1c95bc4747147ea88bee29ec2c99dd60c3b"
+    sha256 monterey:       "99906bde6c53a757d7d7a41e7292dfe50cc678ee28e3876276fc27cd23bf5fc0"
+    sha256 x86_64_linux:   "0592e4cfbe4687b32c9d5c48cdf5963fb4d84a53f63461c411f968b8fd46a8ab"
   end
 
   depends_on "gettext"
   depends_on "libsodium"
   depends_on "lua"
   depends_on "ncurses"
-  depends_on "perl"
   depends_on "python@3.12"
   depends_on "ruby"
+
+  uses_from_macos "perl"
 
   on_linux do
     depends_on "acl"

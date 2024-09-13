@@ -6,6 +6,7 @@ class DfuProgrammer < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7a7d0387f7057032f8ae1db3d76ff331977b1709f9428b6f41dedcb0652c0dba"
     sha256 cellar: :any,                 arm64_sonoma:   "6618b70e9b243bfdb165adbb46ee46c9c4dbe9d9913710351819f3055049e84b"
     sha256 cellar: :any,                 arm64_ventura:  "c7abf3562a37b1356cdd4462aa7c6ada63c4b4393a1ab3f6e1491fd113abccba"
     sha256 cellar: :any,                 arm64_monterey: "a8110021b2738f533615e1f7e961e2ef536f3a13fd3dbf2efc4d4bd1be0f7509"

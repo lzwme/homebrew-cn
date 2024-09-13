@@ -8,6 +8,7 @@ class Quicktype < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a0165ecdfca165b21db3bf3ea97076058bd2a2b58d822ea665532030f69359c8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"

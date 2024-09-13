@@ -7,6 +7,7 @@ class Fb303 < Formula
   head "https:github.comfacebookfb303.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b7f97fbb15298ab4c7a2cf6db7fe4230378c17c4e17c36063116c45867a3d43e"
     sha256 cellar: :any,                 arm64_sonoma:   "06e0fc5866d908424231e4fc28c43ea446c3c2b6f2ef7d5a9ec16eb08f20779e"
     sha256 cellar: :any,                 arm64_ventura:  "e93cde4d65afc35675fef1fa1da8efdff89131502dc3d33c11f44210663981aa"
     sha256 cellar: :any,                 arm64_monterey: "3a3f6e5291746cd314213278062625974a42111eed22132ca03492ed52d21e85"

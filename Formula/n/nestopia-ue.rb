@@ -7,6 +7,7 @@ class NestopiaUe < Formula
   head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "186ac8f3ba4e9074efc2fbf75afeb3bf01cfc9b08a0a8c752b378b14fdd6bf75"
     sha256 arm64_sonoma:   "bba218b8268f6062f2882471629ad25a240b9d0d9dd24efbafdf2cf7818b5638"
     sha256 arm64_ventura:  "d633b03ad8d1774d29f6cd3f8a433e92074cddfffc75a9d1c4fdd3a1addb2ef0"
     sha256 arm64_monterey: "115682347106093089ff1f3b045a8c5e7691bcb2b514b8792e64c4dff704ade6"

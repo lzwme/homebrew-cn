@@ -15,14 +15,15 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9564f720c852a406753153172001c65bb7d5923eea4cbabaad782d2c8b21b5c1"
-    sha256 cellar: :any,                 arm64_sonoma:   "70394bb680b22b283dc6ac7f77ea27875cd119a8b42a1c71e4f4fb38be353c41"
-    sha256 cellar: :any,                 arm64_ventura:  "fd34131aa476d59215a8649ffc6a4cc284330e1d8bbdd0832cbd28ef6fb57226"
-    sha256 cellar: :any,                 arm64_monterey: "43ef3f8a1f65df2d33e9c6cc0f521d0b4a199e4bc6b63f4df1d6501b51111930"
-    sha256 cellar: :any,                 sonoma:         "7a4c75046f28019959227300f2a373f9cf708d8fd7df01d71b11fae5ad75f4a5"
-    sha256 cellar: :any,                 ventura:        "1c482349786fde529e4eb5f8de85c6c82423d8c1d7c258c0634fc6abf5f3e2ba"
-    sha256 cellar: :any,                 monterey:       "ed2b335d562d7789463d57d0d72ff0bf8054c1e228c01ad33d3d8de43099e29c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "080b25174c4b18328c5ee27d0270afda9c844f8a54949d97ca64ed5fe09bbad9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "d9d4391883506d26a872dfed2aaecd1b4b56e24475d90987f8257d3085699253"
+    sha256 cellar: :any,                 arm64_sonoma:   "55c7257e15917f412d8dc643f1ebe78d45852b5d21adf6c9bd57aaef10b66a59"
+    sha256 cellar: :any,                 arm64_ventura:  "25298eb0770e532801a9a717e801ba85667ca1704a6cc48203c6c194f296bd42"
+    sha256 cellar: :any,                 arm64_monterey: "bed918cbd5c6d1a651dab2afb36fe4618dfe2013e1725e6dbdbf77aa088e7fed"
+    sha256 cellar: :any,                 sonoma:         "09c95049ffe8bbcd3d7d85bbdc1c2861ef9de3383af72cd2def501910b94d442"
+    sha256 cellar: :any,                 ventura:        "5440bf2de93261bd5e90369a9251c3a3778ccd9a4ae45a515b264896648b0288"
+    sha256 cellar: :any,                 monterey:       "0c78cda5623e209247941153f56b05e426e0f39fc970b7ff6eadd07db42f2d2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3620272f06ff1d93a9895197ed7e4be6cc39936a18cf276a88a86dd1ea50ecb5"
   end
 
   head do
@@ -37,7 +38,6 @@ class Curl < Formula
 
   depends_on "pkg-config" => :build
   depends_on "brotli"
-  depends_on "libidn2"
   depends_on "libnghttp2"
   depends_on "libssh2"
   depends_on "openssl@3"
@@ -47,6 +47,10 @@ class Curl < Formula
   uses_from_macos "krb5"
   uses_from_macos "openldap"
   uses_from_macos "zlib"
+
+  on_system :linux, macos: :monterey_or_older do
+    depends_on "libidn2"
+  end
 
   # Prevents segfault in julia test - https:github.comcurlcurlpull14862
   patch do
@@ -71,7 +75,6 @@ class Curl < Formula
       --with-ca-fallback
       --with-secure-transport
       --with-default-ssl-backend=openssl
-      --with-libidn2
       --with-librtmp
       --with-libssh2
       --without-libpsl
@@ -83,6 +86,18 @@ class Curl < Formula
       "--with-gssapi"
     else
       "--with-gssapi=#{Formula["krb5"].opt_prefix}"
+    end
+
+    args += if OS.mac? && MacOS.version >= :ventura
+      %w[
+        --with-apple-idn
+        --without-libidn2
+      ]
+    else
+      %w[
+        --without-apple-idn
+        --with-libidn2
+      ]
     end
 
     system ".configure", *args, *std_configure_args
@@ -97,6 +112,16 @@ class Curl < Formula
     filename = (testpath"test.tar.gz")
     system bin"curl", "-L", stable.url, "-o", filename
     filename.verify_checksum stable.checksum
+
+    # Check dependencies linked correctly
+    curl_features = shell_output("#{bin}curl-config --features").split("\n")
+    %w[brotli GSS-API HTTP2 IDN libz SSL zstd].each do |feature|
+      assert_includes curl_features, feature
+    end
+    curl_protocols = shell_output("#{bin}curl-config --protocols").split("\n")
+    %w[LDAPS RTMP SCP SFTP].each do |protocol|
+      assert_includes curl_protocols, protocol
+    end
 
     system libexec"mk-ca-bundle.pl", "test.pem"
     assert_predicate testpath"test.pem", :exist?

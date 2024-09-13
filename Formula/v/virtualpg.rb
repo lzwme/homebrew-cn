@@ -11,6 +11,7 @@ class Virtualpg < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4d37d4aac936cd744979c2906aff3e8e41d4453b69c06a22afba01485803258a"
     sha256 cellar: :any,                 arm64_sonoma:   "300b66b9b3ef1e6928eb4ee54f1c905ec917b41a09d677c15ecee7069afa2c9e"
     sha256 cellar: :any,                 arm64_ventura:  "b503ba98f3b0ef365ca8be59c9de4cf2f8a75b5a5504a1348cfe2631768dbf90"
     sha256 cellar: :any,                 arm64_monterey: "3cf246326fa5bf708a4181fc9c0c1a05b086e0ac2d74a6d6b0ecc3f0605be984"

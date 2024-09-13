@@ -7,6 +7,7 @@ class Libproxy < Formula
   head "https:github.comlibproxylibproxy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "2f1213377cf6e1babfe3388b9c32e318609e93f4bfb11fbeb020219e9f78e74f"
     sha256 cellar: :any, arm64_sonoma:   "8502495b79120ea9ad1b682050a5301035ec705e579b297e17080d155578b386"
     sha256 cellar: :any, arm64_ventura:  "a7fe2b0cdf6f3c21381ac5e069f81b699e750c8df561b2d2853998acb684cb14"
     sha256 cellar: :any, arm64_monterey: "028921c7f386ae5e359672b3328e90f853b17a1388175e2ea334af84d24d5530"

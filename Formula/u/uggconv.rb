@@ -28,6 +28,9 @@ class Uggconv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70d91fd685adcb8943530056934bc1e8f0ed0c5502a9205c6b1c8fa982fdec53"
   end
 
+  # upstream is gone
+  deprecate! date: "2024-09-11", because: :repo_removed
+
   # Add missing `#include`.
   patch :DATA
 

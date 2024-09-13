@@ -10,6 +10,7 @@ class SyslogNg < Formula
   head "https:github.comsyslog-ngsyslog-ng.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "1394ec002610da755251c64330030f79594cf3b72a57d5e75f807deb42884f7b"
     sha256 arm64_sonoma:   "a91ea6113031d8df1b24582a6cb942a74d7e5f2cefa5bd5225186bcb50dbceab"
     sha256 arm64_ventura:  "54f6cb2b3004d7f830d1bd0b430c4d5e6d2d229ba0a663b3c09bf9f8b8265ab9"
     sha256 arm64_monterey: "59d49dce7bb7fc738b91d66fa833bfb070953e5aa4f160681f21186cbdbdffb7"

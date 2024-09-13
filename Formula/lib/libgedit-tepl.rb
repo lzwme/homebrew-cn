@@ -15,6 +15,7 @@ class LibgeditTepl < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7e17b703c30ba1db715d47ee23f9d589db4f00d025fd3b0aeed10776001b1cb4"
     sha256 arm64_sonoma:   "b433544a25b334a3fc1d7e788cf8d49e99637390ff7a09ef5693bf366a3a95c2"
     sha256 arm64_ventura:  "49875c169b846727b8ac55463a86dcbb3b938c12063e9f14b2557901fde3f59e"
     sha256 arm64_monterey: "afe0dc300dee8af11b6d30b9ce59dc5790b0b9161fcf499138725b9088ee576d"

@@ -6,6 +6,7 @@ class Dotslash < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57b93864776dcf852a763679c70310cd410469472e4a0f9ba66c40319a9abdd8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abdc5444e29cba9375fbd7dcbe0dcb069b95e47713e35213616234ef06546a1e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3fe6efea846dc59ab6b4a983973c96a22716dfa5c1bffe2ae30a057bdf8f25c9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "005875e648b741696d0b17af99025601611f5a1b8f9b3d038f895ece8c526a89"

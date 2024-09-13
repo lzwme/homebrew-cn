@@ -24,6 +24,7 @@ class Macvim < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_sequoia:  "91a883ec291f35073258b081c62a8ca8e2e8edd02c923f8b53c13b71736348e1"
     sha256 cellar: :any, arm64_sonoma:   "87c5d934d736ea8314ad6360b89fb37f52d97570303b0aa76a02e831b4846563"
     sha256 cellar: :any, arm64_ventura:  "71b6b7c24d64a4e44d1cb28cac091cab2eb24b3d4b56d21fb7476f45ade1b1e2"
     sha256 cellar: :any, arm64_monterey: "4af76a0db530fcc0c45ae73739e9b97cded10a112e8bdfaf0814f4dda6f5e107"

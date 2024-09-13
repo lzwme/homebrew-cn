@@ -7,6 +7,7 @@ class TelegramDownloader < Formula
   head "https:github.comiyeartdl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c8f70ee5eac6694e75beb75b8bcef7c859e509944c603ce7ce9c6042ceba130c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f9247f52e6a8607094097df4291a7f738eb3b2f83cea844d93c8d6b77ac8851"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1922d1d5823ed2e3ce145f737f628d4c1d75deaa5996945bf3179d5f773801bc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f9e05fced8a3545d4ea40436b623261c16bfeea5147cac270153b87582161662"

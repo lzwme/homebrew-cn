@@ -39,6 +39,7 @@ class Rust < Formula
   depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkg-config"
+  depends_on "zstd"
 
   uses_from_macos "python" => :build
   uses_from_macos "curl"

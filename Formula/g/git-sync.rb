@@ -7,6 +7,7 @@ class GitSync < Formula
   head "https:github.comkubernetesgit-sync.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "464f033e179538b34691240cc0b3f28508dde28677b8d38bbde45883b05415b4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a615a47006be2b012ed1c6422dd1c3baf368f4116295c9fa98df360dae01a057"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ce5d9a6df47820cfb3df008180d243019967095689fca4b0be99be661f24f04"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7c78f89766f54d096d0942712890910f818541fb6ac9bfbaf583684a7fa6fb45"

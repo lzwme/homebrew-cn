@@ -10,6 +10,7 @@ class Gitup < Formula
   head "https:github.comearwiggit-repo-updater.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "77af0a14f0a0c1d9cff9c2de073e94fc06328742585ae0297350e214c6935ec1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a88770e34cb5a852d95297a92f3966c5b3ec3d6237ea6e498c60b1411e3429d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "27bf16a99715cd1d167af20e6715e7c821aa9fa8bde4b8a35604cfa1f4771c7a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "096beddc28f77bbe5aa4f25b5b33e1bf3443df0125cf654fba8e2613ab1c8775"

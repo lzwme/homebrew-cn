@@ -15,6 +15,7 @@ class GraphqlCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b3b93d8d2e8b80bd3ebc5918dcde22171f00e81042c287c722ca10abda75034"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c672ef9a3deeb3eb60a1d1c38f675d28a2034b681586336d3c4b027447cd9822"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c672ef9a3deeb3eb60a1d1c38f675d28a2034b681586336d3c4b027447cd9822"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c672ef9a3deeb3eb60a1d1c38f675d28a2034b681586336d3c4b027447cd9822"
@@ -31,9 +32,6 @@ class GraphqlCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
-
-    # Avoid references to Homebrew shims
-    rm("#{libexec}libnode_modulesgraphql-clinode_moduleswebsocketbuilderror.log")
   end
 
   test do

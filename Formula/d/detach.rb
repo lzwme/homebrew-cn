@@ -11,6 +11,7 @@ class Detach < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f7d0f80127112fcf6691ce7b4b90aa1fc5ee9ddee51d755b1a895f47419f2455"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5ad00a2d77cb8c391aea1df731916286b2a9758b6948397e4943f10baec5269"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "43dbfbe7fe5ea211f28aff3bd251dad03ddb486ff8230bc35084b0c8111a0058"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f208e16128573ea8b839c8fe27a6f23e72dcf99064f088e4d552aec5358cf54f"

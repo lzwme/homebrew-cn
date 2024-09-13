@@ -17,6 +17,7 @@ class Supermodel < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "55806d70707f24311eac885aa6ec3963cc508dbd397b159a7a80611392bb9c9f"
     sha256 arm64_sonoma:   "f1f9c99d443bc8fe3cfef3f8a060e8ea8ae2df8aa9c1a4a22d8eb127ba389e8b"
     sha256 arm64_ventura:  "cce8095f8cc08e5688537edbc9e77641805d6230f1cabf064437670aeec34ea9"
     sha256 arm64_monterey: "a4b9894c3b40d398cd55ec7a80dc6573fd4f69a063ad1053df35e629be9512e9"

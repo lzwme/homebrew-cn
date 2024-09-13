@@ -14,6 +14,7 @@ class Cdrtools < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "12e1334974f92d034d839c30e8d1c4ff5d8a5e7341ae9d2f4013cc6bd1b73859"
     sha256 arm64_sonoma:   "ed19c02f2ca445c89d139595e826a29bcfd41dba4c8e67c461b86deaa277af14"
     sha256 arm64_ventura:  "5bce367688103071cb34a38002f0c2dc767b3e55912c2605e27c705013ed3285"
     sha256 arm64_monterey: "954f46597d28f0a8ca1eca8de6ca79182a3904472944e484c7406663f7b6a95c"

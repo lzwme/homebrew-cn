@@ -6,6 +6,7 @@ class StripeMock < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "049d00cef5c13ddf0141ae5c3678deab3cf7ea8b9d8ef5b4901d5e29cc19eba0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ded02f29400324256a2be26681447156b7348f3be5f2e07e4adee9f38886852"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3908247f216711ac46ba909af4eb8390d57410c93ed4aa645e6f4c99811c7145"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "825d748efccaaead1c395ff3a86fd078c83d5e4bdb9de53e52abd52311d9e97b"

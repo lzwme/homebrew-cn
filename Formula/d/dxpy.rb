@@ -8,6 +8,7 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "785853ce0a3fdd0d5b781e66cc0992cc74a89525e21bedfeb039bceb47345bc2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f39a4c7c04e08f2c3296f120fcad75ae4cc6f4ef74c888aebafaf5c587bc225"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4437ddf66ed4bcb98c250287998354a02937ffcf653d15d77f82069b631fac7a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "478a1becd0b8324b07c30c80d63bb1efff46edfbd4d8dc339f9bfac47a55f52a"

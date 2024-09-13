@@ -11,6 +11,7 @@ class Dhex < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6ce6ef0c4079748f07bbfb1f8f74f39caf377df59e244555fe508c63c63367a6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68ccfb4eef2b7a798087917073187eb465e01ff7e1b3f2401c0633006a5f1fd2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f68e9a14828f6b1bcc452d2f688322b36385e432c7bdc68caa8cc8fa10eec311"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a7c9245918065f6ea1718b437f6d051a05eee5a907c718fdd91fa13221e96d0c"

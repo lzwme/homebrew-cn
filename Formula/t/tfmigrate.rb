@@ -7,6 +7,7 @@ class Tfmigrate < Formula
   head "https:github.comminamijoyotfmigrate.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "090d73c374ab8d96bf471ca71bdd015bab3eb39b59e452cbe15da3749995eed5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73e8f7ee7c9869c2b07e4107ed867e83aa5f46036b9e66485a3c828b6bb847bd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5b9cbc5bed9f99139694249d943606edff30de9437a16bf3a3f5d1f7a11f693"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f38c03df2717c63637a9fe9086a4d303b8b188d5da49206fa55d9cd84ec8801f"

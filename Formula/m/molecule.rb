@@ -3,18 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/a2/01/ebbe0ace407b82439abde26c987d477b3b116776ddf554fec1a1b3542597/molecule-24.8.0.tar.gz"
-  sha256 "140738904e9f17815780568ac408c9f73bb9e2ac721e34685a359e6d3507e677"
+  url "https://files.pythonhosted.org/packages/dc/72/1c30d07b90b56c0521abaf999e14daf75ae493405d3ee91171fed15b75ae/molecule-24.9.0.tar.gz"
+  sha256 "8548eda13c31a1ea41ba0786b29dde466cfb812617c25792151335b17a410f63"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1dd009f8652dd4dc43e0aa8172c0428d0ad6a0b4bbedc07fe232fcd0c3346228"
-    sha256 cellar: :any,                 arm64_ventura:  "9fc912e36c861e1b056383005af717c345fb93c189d00e525c7f640953fe4a2b"
-    sha256 cellar: :any,                 arm64_monterey: "87f423cf946221a5836866048aa0073d72f3fe1e8997dab43963bdf5c3a0d882"
-    sha256 cellar: :any,                 sonoma:         "0caa65f346768c3b99ad428bb6e028f8ca2d5e2d5bdbdce314be309eaf184acd"
-    sha256 cellar: :any,                 ventura:        "04046714ced4ba3e4f4b52635d9f86a74a8c99a9aebadad51b81b33ba1eb6bc1"
-    sha256 cellar: :any,                 monterey:       "14ee202231aee730e82bb4ee7d54d981a5819a7ddcb478170b2b57c7d7c58014"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39bcd1a0801c8d242b2ae48628f01fb87b766c3db6a090751a8f493ae16e8005"
+    sha256 cellar: :any,                 arm64_sonoma:   "82eba808746b3643a3a40212480b4737e808dd848caedd6952fbd21fed3fd2ab"
+    sha256 cellar: :any,                 arm64_ventura:  "e50228d5bd880101a367e405e6032cef695e5ef50ef01f1626043ad910ef4136"
+    sha256 cellar: :any,                 arm64_monterey: "b08992b01543070c116d4c8125467cf3a5e837c46ce7ec9624e62c6e1d4e91d0"
+    sha256 cellar: :any,                 sonoma:         "50e4feece39af1716344e6e33d3661efd858c4b2b16c47f4e315b2216f73f7c3"
+    sha256 cellar: :any,                 ventura:        "f400ae740293edb5607a364d9381ee4943f3cba63265b1996e7c85fc692a911a"
+    sha256 cellar: :any,                 monterey:       "4d21a2c40d5ae34e723e2bbe77ed86df20803716ef2224e1c8f3de8a055a0ef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9407bb3a3f6319b7aa3bf890ffdd3d0d78ec905604e6b0d9b1b6d76f9e69091e"
   end
 
   depends_on "rust" => :build
@@ -31,13 +31,13 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/81/81/6ca881fa0afc1f9975feb96d08e48f048d0e6542ea66cc9f67f79a403607/ansible_compat-24.7.0.tar.gz"
-    sha256 "7bc7a0c20a505a1eb6ff9877071fe20330130429087da298e25099a14f70d02f"
+    url "https://files.pythonhosted.org/packages/91/0a/2dad0b9e7aa81195ca2d430138226a5507f7903d67dcb073b475b15643fd/ansible_compat-24.9.0.tar.gz"
+    sha256 "c5a42a56dd212625cfcb1d31e51a6e0f52593691bde1fe4a78881e8b1b78a6b8"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/3c/f2/6b407947f6e2c91d4fb8a3b61958f941a077c68d0ef0a37c3c0df3d96026/ansible_core-2.17.3.tar.gz"
-    sha256 "917557065339fe36e7078e9bea47eefab6d6877f3bd435fa5f0d766d04c58485"
+    url "https://files.pythonhosted.org/packages/bd/69/86d9c9247f20ea2928195ed13d443aee410f32bcc45454ddf095bf25a140/ansible_core-2.17.4.tar.gz"
+    sha256 "44a1f30076796536ba2455cad18d36e62870f04e632e3ca2ebe970d7beacf24d"
   end
 
   resource "attrs" do
@@ -86,8 +86,8 @@ class Molecule < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "jinja2" do
@@ -166,8 +166,8 @@ class Molecule < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz"
-    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+    url "https://files.pythonhosted.org/packages/92/76/40f084cb7db51c9d1fa29a7120717892aeda9a7711f6225692c957a93535/rich-13.8.1.tar.gz"
+    sha256 "8260cda28e3db6bf04d2d1ef4dbc03ba80a824c88b0e7668a0f23126a424844a"
   end
 
   resource "rpds-py" do

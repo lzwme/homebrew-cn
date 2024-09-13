@@ -21,6 +21,7 @@ class Ffmpegthumbnailer < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a340ed41468ef95ebd63408a215134f30bb4c7882565661d2ac3e4efc7d7f6c5"
     sha256 cellar: :any,                 arm64_sonoma:   "235ab42ecf1f474a0384e45a2e78fd9f30841e5749af68eefe462b6abefde494"
     sha256 cellar: :any,                 arm64_ventura:  "937e42bc36a29d57502d71354e24b73a5be2da001d99fa1af4343e72c0f1cc69"
     sha256 cellar: :any,                 arm64_monterey: "e848acd7b52d186e84410b372e9fcc736a793bf821146a075a52d632141e197e"

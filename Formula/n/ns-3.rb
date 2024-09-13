@@ -9,6 +9,7 @@ class Ns3 < Formula
   revision 1
 
   bottle do
+    sha256                               arm64_sequoia:  "7cc734d5770d5feca1e13c28fcd783dda4fe81fbcf93ffd2d4e192629a848a24"
     sha256                               arm64_sonoma:   "95a92f33c798afcab4034cfe9e188876877fc1a03fd9c4c5448be1e5abaa5bde"
     sha256                               arm64_ventura:  "ecee931f8eb399abd996257b41b2b5da65e0acf6817722acd2e067fe55c2a715"
     sha256                               arm64_monterey: "ac7e6a0a5ea664e91e65714dfde4d5f2f617095ccad59b56a08882f0bfb583aa"

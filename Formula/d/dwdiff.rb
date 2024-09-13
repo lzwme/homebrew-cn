@@ -12,6 +12,7 @@ class Dwdiff < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "f440a8c2be059583d2da83fdc36309b25b47177c94cb96c654b6c9f9a507b196"
     sha256 arm64_sonoma:   "4ecea415e9ce886fbc53a585d4b55234dfbfce34ff47a2cbae47f4a10665d8c7"
     sha256 arm64_ventura:  "9101edfc5fa160b947b6559afb793a8fff4c104fea7986dbb8f87df87e14732b"
     sha256 arm64_monterey: "a174992f4aa3ca4e50c472fddc8104e1cef39795b4cca874827c490adbbd4f37"

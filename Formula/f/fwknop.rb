@@ -8,6 +8,7 @@ class Fwknop < Formula
   head "https:github.commrashfwknop.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "dd24ee01f0b52367ccb00111e7e3b28586cbe9b355b9461ac38175fcdaaa0b31"
     sha256 arm64_sonoma:   "3729d1321c0430837a4dfd26d0f504a4ef05d9798e37f12bf56149c0a88badc7"
     sha256 arm64_ventura:  "f30bdfd167ff41974f6df99b6305a3718fc6a032f742c71a45a8883060c09836"
     sha256 arm64_monterey: "ed89fd42fc0d208e93f3f2ea2d1441b0192cd5dbb23280029fd23bc4aa47200a"

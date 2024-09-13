@@ -6,6 +6,7 @@ class GitMediate < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d25b214e65ef7e0733b01aa8ef30572de64847324e9e7d48d2caf11feee5f6a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71de13c47e25de264c51721ea9bd639853ac2e27d37cb4b287ed82720a375c29"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a7db9e71a7784d5bdd43d615c32705edf5c13db7478cf21175839c8a62245db"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8808be675fcc86cbbe5008f61d1c612177a112c7cc84e28c449758f51e060e39"

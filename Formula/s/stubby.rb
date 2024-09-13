@@ -8,6 +8,7 @@ class Stubby < Formula
   head "https:github.comgetdnsapistubby.git", branch: "develop"
 
   bottle do
+    sha256 arm64_sequoia:  "7e9b965dcf689e5c31274e2d5ebe0ecc6f5aa7d4b3fc17a4abefdd65d94a64a8"
     sha256 arm64_sonoma:   "eec9c56666a83664194ac6612bba1c330a54d14ead67dba1100757fc303f8edb"
     sha256 arm64_ventura:  "ade3c36ec956feefe503081cabbb3eefb02e4dc45cb333433866e6bb46db49ac"
     sha256 arm64_monterey: "31e36e04775bf9c033db8519d2a893ee10f7a0b9fd55f394d1d6d9593a28bffa"

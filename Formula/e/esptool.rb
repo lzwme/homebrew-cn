@@ -9,6 +9,7 @@ class Esptool < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "41efc76e20564f5141147ce7a92f18f0fe5fd3f123c6832be8a8294b8916b6a1"
     sha256 cellar: :any,                 arm64_sonoma:   "1bea1d3fd71a60716ecea4655c11727a80c4e3b05f4bb00cb1e86af32225c713"
     sha256 cellar: :any,                 arm64_ventura:  "5cb962e470e183db67b3db7a175b98326f6e909a23e6b55de39ae634d45774ce"
     sha256 cellar: :any,                 arm64_monterey: "60fbfb222d24b267aa1958706617d070ab189b47f0a64ecd8d3a4ccd53d5c917"

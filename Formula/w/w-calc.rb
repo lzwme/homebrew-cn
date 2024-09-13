@@ -27,6 +27,9 @@ class WCalc < Formula
   depends_on "mpfr"
 
   def install
+    # Workaround for build with newer clang
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"

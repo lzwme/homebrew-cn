@@ -12,6 +12,7 @@ class Gtksourceview3 < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "224ac2e0b389c7042f62b4402665368612132e6c25715017700ad776bfff7524"
     sha256 arm64_sonoma:   "52fd0b688066b7ae0c5d9a87ddb185136dbeebd11b336ae776eeed43f4ce6399"
     sha256 arm64_ventura:  "c0e6dcec74dcad611bbd070ec935726d1a6e2ab55db8de33fd1aff89171cca21"
     sha256 arm64_monterey: "1478db6878ebe7cf4e472197126c565df4ea939aeb91470a610cfe88ce3de7b0"

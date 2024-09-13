@@ -8,6 +8,7 @@ class Sysaidmin < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ee914cce64a11b244588fc12087c132a21c6a527f7af219f13d2840cf2765973"
     sha256 cellar: :any,                 arm64_sonoma:   "8eb9eb431fbe90eb2bafbed0bc7d2dc2ab4936255e709e473a44191f53008c59"
     sha256 cellar: :any,                 arm64_ventura:  "42664483aa393e80588ee038b72cead653acd91e2116daafbf1a38e372f69cef"
     sha256 cellar: :any,                 arm64_monterey: "d976a03b014eab9f6d2610ac862647d11b0f2544d4e92c352cc63d34f1dcffb9"

@@ -7,6 +7,7 @@ class Dra < Formula
   head "https:github.comdevmatteinidra.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c29d0ea05cea25976c9bfb21536c2e165823040cdf421d3ecfa11d0ec80c4050"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c071f623204c5bd928c6e9be5c7ba5f497772933cd8095a90a6999e8b784bcff"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "361db60fa54b675027ae897e7241a53de8ea6bbe1004208bbb200566145fe517"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "46dbd4edef1ccc93cbc06d6a445e56537cf6d2f0e8ac43f94cecb628631ef2b1"
