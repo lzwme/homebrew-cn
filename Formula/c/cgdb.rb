@@ -34,10 +34,14 @@ class Cgdb < Formula
   depends_on "readline"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "ncurses"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
+
+  # patch for readline check code, upstream pr ref, https:github.comcgdbcgdbpull359
+  patch :DATA
 
   def install
     system "sh", "autogen.sh" if build.head?
@@ -51,3 +55,18 @@ class Cgdb < Formula
     system bin"cgdb", "--version"
   end
 end
+
+__END__
+diff --git aconfigure bconfigure
+index c564dc1..e13c67c 100755
+--- aconfigure
++++ bconfigure
+@@ -6512,7 +6512,7 @@ else
+ #include <stdlib.h>
+ #include <readlinereadline.h>
+
+-main()
++int main()
+ {
+ 	FILE *fp;
+ 	fp = fopen("conftest.rlv", "w");

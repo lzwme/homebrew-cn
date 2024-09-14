@@ -13,6 +13,7 @@ class RmImproved < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45fb60809e7c4e6c71f683aa81087c2985f92347819adbadad6d736a65efd62c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6083f4ee2469cd0f33a01815804822cf30f3b0184e62b4c3d256040aec36b51d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2294e77a9e860f573daf64e25bc53b6e2b32b6a565e0c727aa26321bb883c924"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "afd393bdf6a0c370043d56d35787e4cc3f1d022bf4108a9f0684ba170586bebb"

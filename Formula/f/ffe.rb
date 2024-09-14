@@ -12,6 +12,7 @@ class Ffe < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f839efe80fda0cac22ae4720abb313ff00f9de735eaab679c95a66f60be30b94"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e0dc2b044209ff16ce46325efd22682f021cd39a37f695723704fedb7ae94ba"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6439a12e9180af68d7dbdcfe34542acac6ae00b68b1dd76af01caca53b6fea70"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5d3e8b3f5351665de15fb7ea4904b873cd7c3c04cefde6f6b0534a16dc7dbef0"

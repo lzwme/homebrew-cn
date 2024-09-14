@@ -12,6 +12,7 @@ class Spigot < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f2820ca0f23f9516c1e27c3ea1488558a4912f0eb75dd361917705e02b2096ef"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb86f3da309c5adb78f3dd822284df1a561e77056ae252dcfa79e787c8601c3b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9101dda021b8f6fdfdb377750cfc9aeae90a2f050126223201c98a0d5be09732"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4a9002983a479f2f2d328b8dc3ae4f41e9d4ed5813493d77ab5caa3725c77d6c"

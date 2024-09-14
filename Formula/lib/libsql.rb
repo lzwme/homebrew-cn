@@ -12,6 +12,7 @@ class Libsql < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8fe6f5092133c17811b086a82f58fcdb22667ca3fb0b01872c42d36b1148b4c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e014288fdef773457d3d4e70686f02eb6603368138019c584b5f48479fde3aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74243f26b5bd01ac5cbc0c9b5a6c709de17a5fa6e8fc8ed3125d2414e8597982"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "88003b2780d2cb8881ed6f7f8c1cb47a4757a5836c93101296ba6c17c262e5b4"

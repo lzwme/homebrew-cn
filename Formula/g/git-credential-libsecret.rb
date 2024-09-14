@@ -11,6 +11,7 @@ class GitCredentialLibsecret < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "457d9a5690679078aac137c6a80a821cf62071e53c47136e9f97d8e7c8ac99f6"
     sha256 cellar: :any,                 arm64_sonoma:   "a321d34691f89f26a9c2c729131b1f061426b88bc2f4ac8b9e94e58b088edcf4"
     sha256 cellar: :any,                 arm64_ventura:  "c2c17bdeae78beec03c49e0bfb601d9aaf6759321e23045718b2f0ed8e8b57f1"
     sha256 cellar: :any,                 arm64_monterey: "f3f6e9e824818b0b744941bc083f967aa365da990df014ded5d04c00419cc8be"

@@ -6,6 +6,7 @@ class Libcyaml < Formula
   license "ISC"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "326caffc3d633d21af0cb1c24096ada03d9d485b2d089b9214b96db7951e5dea"
     sha256 cellar: :any,                 arm64_sonoma:   "a9147c54f5f0996413c8ae21ad22549d6ebdd3271fcd72c9e4e73c80f4db8067"
     sha256 cellar: :any,                 arm64_ventura:  "b3cf670ef44d98d11d9d9d84faeb1ebcf48bbc109ba6ab6b3e96b7297bed015e"
     sha256 cellar: :any,                 arm64_monterey: "a87c89eb5de04774d6ac71b0934791c3040c4f326b6f51f4e1717ce5bfa1a64a"

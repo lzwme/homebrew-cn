@@ -1,18 +1,17 @@
 class Macchina < Formula
   desc "System information fetcher, with an emphasis on performance and minimalism"
   homepage "https:github.comMacchina-CLImacchina"
-  url "https:github.comMacchina-CLImacchinaarchiverefstagsv6.2.0.tar.gz"
-  sha256 "16ab0690f9a998c7403e26439626ce9f70cd114898a40ecccd28c47ce25d3f78"
+  url "https:github.comMacchina-CLImacchinaarchiverefstagsv6.2.1.tar.gz"
+  sha256 "87a38bde067fadd96615899d6a8b9efdb238a4bd3859008be47b3e4c2a02c607"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d062deecf6c7a7796d970d66ccbe85587a1858486aadf4eba5b162787f42274"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47d4a742e2b74d3c45097c723560acb8e6b3dbc7b6b5d1d7b7c920936cbf7e58"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e86cd5dd31c901b20b29c887ffc24a979d9cdbf82444d64ecd96ab80b43d1f4d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74227af29e52a4dbff49acad3afc762c0be6fca7ec5b0a4ca90e892f8793cdfd"
-    sha256 cellar: :any_skip_relocation, ventura:        "dca0803702279d6aa00059ca062d6c7bc0f96208a076319a878ac1de963a1f57"
-    sha256 cellar: :any_skip_relocation, monterey:       "f03727d52e4dd67dd11d256e02cc89617baee9ad4c1ceb020187c4efcb554672"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a7be660b526305bed459befc38515c6dcf82d22a65d093a53ea6957730124d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "765abf4474d4cb68627df0bc428202918dc55cd1c68b39ba88f0303a3d418990"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b720d3c8c9568455139815334ca4496932f9f3ec7330e44aa796377ec1fb1aba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c356c873aae2486bf6ba6720f810f5b0ec193a53dd3d6d7ff756777f4d4ba555"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de544a806f0982f2899ae4c2e944594a02a0c6212c3678037baed460a221ca96"
+    sha256 cellar: :any_skip_relocation, ventura:       "f59ec7769b594b3b1991dcb05a4294f6d17da79fb53a76da03d2e308383e43d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a6d75144ef0177ae802f25d5345a52f6e7db2c81a465c30b6665f0e2f99b86"
   end
 
   depends_on "rust" => :build

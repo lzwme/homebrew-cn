@@ -6,6 +6,7 @@ class Hdt < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "85d785dfa207bd588ef5e630b9a5adde0d98bac472119547d6128e0544de7bb4"
     sha256 cellar: :any,                 arm64_sonoma:   "606b24419877439b12ba1833394854122acf1342bf10fa6801b32d213e12f1aa"
     sha256 cellar: :any,                 arm64_ventura:  "a68a7b396c8b98c042548bd50ea2fc8736e1588be1c1f0d092bcc9d150df1f32"
     sha256 cellar: :any,                 arm64_monterey: "13a72094b82ac91fe1bbaed2cfb12ffda92903715e105c1136e42c7a1a3d48d0"
@@ -30,10 +31,7 @@ class Hdt < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -57,7 +55,7 @@ class Hdt < Formula
     EOS
 
     system bin"rdf2hdt", test_file, "test.hdt"
-    assert_predicate testtest_file"test.hdt", :exist?
+    assert_predicate testpath"test.hdt", :exist?
     system bin"hdtInfo", "test.hdt"
   end
 end

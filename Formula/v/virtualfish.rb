@@ -91,6 +91,9 @@ class Virtualfish < Formula
     # The virtualenv is listed
     assert_match "new_virtualenv", shell_output('fish -c "vf ls"')
 
+    # cannot delete virtualenv on sequoia, upstream bug report, https:github.comjustinmayervirtualfishissues250
+    return if OS.mac? && MacOS.version >= :sequoia
+
     # Delete the virtualenv
     system "fish", "-c", "vf rm new_virtualenv"
     refute_path_exists testpath".virtualenvsnew_virtualenvpyvenv.cfg"

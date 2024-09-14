@@ -6,6 +6,7 @@ class Solhint < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3057b556a4bade26f52280a96f9225b904eb72b896fc03b8fa5c2ca67ca1f23e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5bcf8c9119a06cc86fa904103605f918a4f5c53a3ad14452c6d8eae2710223f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bcf8c9119a06cc86fa904103605f918a4f5c53a3ad14452c6d8eae2710223f8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5bcf8c9119a06cc86fa904103605f918a4f5c53a3ad14452c6d8eae2710223f8"

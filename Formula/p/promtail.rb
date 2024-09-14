@@ -11,6 +11,7 @@ class Promtail < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "957dff010cc8a9225376ebcf5aa8b7703ff32125630d903bc11e350e3b0f3549"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "506f13a12f0f514f595e12f852112f140f74f073441138e4a27296b0db8daa59"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fed2ee96500369fe7f4686ce7cc70326c1098172b3fc292327c8af3b85b9767"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0a765e8bbf132a7118fef37ca4d6820909d1dbb802a8c5ec3b28c3b608b9cb39"
@@ -20,7 +21,7 @@ class Promtail < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "38b2151977c3cc0355cea76bcfa194db5d5a1f8ee363304a590f2e4e6467d20e"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.22" => :build
 
   on_linux do
     depends_on "systemd"

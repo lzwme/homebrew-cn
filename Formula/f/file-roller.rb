@@ -6,6 +6,7 @@ class FileRoller < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "945e78d5be86e9e13fa0fdfbf8d7d860c254396c12cc741c8ca715e839494edf"
     sha256 arm64_sonoma:   "60b36504d219e315c40a1d02a87695a9a7d07969af197c3828fcdfd6ccd9812c"
     sha256 arm64_ventura:  "115a0a2c78fa688329b1d84faa06859c174f56bead3f8028e4657ee442e11c63"
     sha256 arm64_monterey: "db73bc657ca7657bad19d95a662faa67314bcb27496abb6696168931f58f1663"

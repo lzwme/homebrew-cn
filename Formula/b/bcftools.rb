@@ -13,6 +13,7 @@ class Bcftools < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "24923a0c1f5695cebd051f338ae43f532183f086afb5be6284a2a28b26aa3296"
     sha256 arm64_sonoma:   "c3f336afc9026b9b782a955e4105d208bab0ec6f8f1701171d3093bff70487e0"
     sha256 arm64_ventura:  "f380f5a44355aa36e14234551ef6cadd5c8cae4889af33acaa12f3759309e04b"
     sha256 arm64_monterey: "a59a1531f579d313e6d4650a47e75d93b5a978758a67b0dd417aabd507994e00"

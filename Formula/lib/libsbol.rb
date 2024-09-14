@@ -7,6 +7,7 @@ class Libsbol < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "69ae9b8d6f988efdd8c97c6d88356a91b8eb73067168ddcc71d233c367448bc3"
     sha256 cellar: :any,                 arm64_sonoma:   "c896cb97e12ea65a08e1be38e5f8b48d249445338069cb3f22bf4db3f5f8adef"
     sha256 cellar: :any,                 arm64_ventura:  "729d76ef1e1d5e94eafdc91d985e51dfa2d71f5d65c972b64c72c64e136759fb"
     sha256 cellar: :any,                 arm64_monterey: "424c45f889a942cdf2a91db6a0e27fcefed1b6300dfe2715c77971a0bb63ae6f"

@@ -7,6 +7,7 @@ class Malbolge < Formula
   license :public_domain
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a27217c73ffd65f6eeb9249e6120ec69dfbc0121bf2bd721d9270c9173f543e8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21e3313bf2fc20b33e637016710d778140383e9dbc2a4e45b14a564ddb081d30"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dbf31191633eab5119ca16eda4b541264a42261c5c7b7103e50446d1505dfc0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "05e689895ba5a84f1d6b44eab314ef7b71111ad3a19e054fb1a0b73e81a43f5a"

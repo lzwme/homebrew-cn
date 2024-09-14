@@ -7,6 +7,7 @@ class Gauge < Formula
   head "https:github.comgetgaugegauge.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2be0f6e98481d39c686c4c495014ca431fa323ddfa2a3ac06c99164ce2204dc7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a31c62d74966ffb1770b18dd4c7f9a3f0147ebfb0a8ec6ef5aadf632880fb5bb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5550ee37d4bdd8d357e22128c9fce747354dda001871ede450db29cce52b68a7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "048063ae2da128eae5799e4878f45f46be9b2bb486b33aa80af8c0b82f4491d5"

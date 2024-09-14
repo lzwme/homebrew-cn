@@ -6,6 +6,7 @@ class Fnt < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "62fa2660b909b27418509c8ce56c5bf29e611875635f7d84b1ff378fc63917db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6cd82cb4d413c71869f4dca03328912c5f32f6b1f1e30fb229cc39cb9e972c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6cd82cb4d413c71869f4dca03328912c5f32f6b1f1e30fb229cc39cb9e972c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c6cd82cb4d413c71869f4dca03328912c5f32f6b1f1e30fb229cc39cb9e972c3"

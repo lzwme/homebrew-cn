@@ -11,6 +11,7 @@ class RpkiClient < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d94bf4c5334dd1c698b5dea086994bd1984c6b24f8217ad620bfa089e73a9bb2"
     sha256 arm64_sonoma:   "aa5dde3a022e5d4fe65685d22b5e0fc5538b90cb131155681b5c613b1c4150b1"
     sha256 arm64_ventura:  "956c22aad8135b0050ce1d50439fde127dc223587c838d8fcbf7ad93b4e2888d"
     sha256 arm64_monterey: "1b7f99974f9c6aebd52a71dc87c564cb65283bb9c626aad145f461b548b63d64"

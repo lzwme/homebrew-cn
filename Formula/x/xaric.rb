@@ -41,8 +41,11 @@ class Xaric < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+
+    system ".configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          *std_configure_args
     system "make", "install"
   end
 

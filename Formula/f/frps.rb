@@ -7,6 +7,7 @@ class Frps < Formula
   head "https:github.comfatedierfrp.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "15295fa1fbe7edf8f26346f340ff8772c9e94b9f18ab9e1caddec92c3fdabc6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f37bdff3c85450dbcc4a9b515d71087a4161f34609c72e48e2f276890f4e0e0f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f37bdff3c85450dbcc4a9b515d71087a4161f34609c72e48e2f276890f4e0e0f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f37bdff3c85450dbcc4a9b515d71087a4161f34609c72e48e2f276890f4e0e0f"

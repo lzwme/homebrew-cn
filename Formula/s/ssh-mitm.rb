@@ -10,6 +10,7 @@ class SshMitm < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "d9de0e120c04dbb5ed20c712df10d427ad1915afbb764f64cd1c053de8268386"
     sha256 cellar: :any,                 arm64_sonoma:   "40dd119c95f85bc11e3f0afd03407310af7d60f6424b49b044e9f0b27897ff44"
     sha256 cellar: :any,                 arm64_ventura:  "6c6fbc4f32cc250a2c153a9d39c057e9f0f660d2c3785de8f49a6042efc3e895"
     sha256 cellar: :any,                 arm64_monterey: "e2b9368ebd2d9803b31d7011882ab60fb3c4b5b84cce065ee86b65a855dfd43b"

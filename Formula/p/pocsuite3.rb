@@ -10,6 +10,7 @@ class Pocsuite3 < Formula
   head "https:github.comknownsecpocsuite3.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "5afdcbcbf2f59760c913954e625a2be82f702825c57b8d159054e6c9ec575d6c"
     sha256 cellar: :any,                 arm64_sonoma:   "87432dc1483b8d711f44587d434d9c378e6df53728b607f61d6161ed0b866780"
     sha256 cellar: :any,                 arm64_ventura:  "23774e53c7c6b0413b209cb4b072732cccfe9079a2191c2da5f8879e34b75ad5"
     sha256 cellar: :any,                 arm64_monterey: "78ef059feda4ca1a13c005167c4d8663c401bf89d34e007470ce8ef7b7ee790e"

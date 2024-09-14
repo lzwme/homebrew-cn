@@ -7,6 +7,7 @@ class HttpServerRs < Formula
   head "https:github.comhttp-server-rshttp-server.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fe010697a6d9851c061d2939929b4e6f9750ad2612ba486b35610175da62c604"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6f29de99576b74d2398a7fc093bc700a3de1d7d5c1db98224c3750c1ae79226"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "07f0f7eaf185964fa80e46e9b0b797c8f454345fb3eb72d21ca618379c59602d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "02223f122e30366797da3e9016ce454653dc8db7a07f79fbd6392aa42dee20a3"

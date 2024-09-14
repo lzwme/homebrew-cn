@@ -9,6 +9,7 @@ class Grokmirror < Formula
   head "https:github.commricongrokmirror.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1f93cd85fa0ebf1da22345ca4f306822e9b4c229ac8f77beff1126cca8d9a6d8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4c88e8340c70615ea6eca4baefec5f9122b31d111a168077fe423d32f0255a8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4c88e8340c70615ea6eca4baefec5f9122b31d111a168077fe423d32f0255a8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d4c88e8340c70615ea6eca4baefec5f9122b31d111a168077fe423d32f0255a8"

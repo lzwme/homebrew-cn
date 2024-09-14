@@ -9,6 +9,7 @@ class Geoip2fast < Formula
   head "https:github.comrabuchaimgeoip2fast.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa3b3e3177c8a0e371f49e84ed7e843403ca14ac4d4d13363b7ef3e2102d714f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f06fa2b901560ce2690032b5cfba427793f529f506f9099a1e1bc33c0e7ed72"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f06fa2b901560ce2690032b5cfba427793f529f506f9099a1e1bc33c0e7ed72"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3f06fa2b901560ce2690032b5cfba427793f529f506f9099a1e1bc33c0e7ed72"

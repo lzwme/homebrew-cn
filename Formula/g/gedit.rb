@@ -13,6 +13,7 @@ class Gedit < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "717a753803f409879a6ca6d8bc7c9d7de00ac32c39194b864be5a7ee8d45bcc2"
     sha256 arm64_sonoma:   "dd584b18e86c5235a5489d70ff5d9e9b592029ed8695d91e4be0668d0cd57d49"
     sha256 arm64_ventura:  "bb6e0bb90be7ac45bf541e6682eca988a08178d28a37705c959cb3a0e3667e1b"
     sha256 arm64_monterey: "de2b6d26a133ad1dbe1e4e9f549210bbaa0af08753f6508d97193032be9d73f0"

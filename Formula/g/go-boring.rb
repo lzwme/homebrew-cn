@@ -12,6 +12,7 @@ class GoBoring < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d3a8bebf95e0be877fae27cbe73a5619ead13a2a1635c7a38c180646cc6c5c2f"
     sha256 arm64_sonoma:   "a10ce7882dadd6ae0a965a5c8e5bff377f790d57f2ca2fa6b2f92c1dc1b2402d"
     sha256 arm64_ventura:  "df09a9ebf2f79a2066d339e217915cd783ea68ec7e61e25ee70faa4ca9ac7069"
     sha256 arm64_monterey: "56c292eaeabc94b48d5fde63cad4fe76af0c00d8842f7c1402a095ba6a14e93c"

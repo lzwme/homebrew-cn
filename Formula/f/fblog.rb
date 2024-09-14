@@ -7,6 +7,7 @@ class Fblog < Formula
   head "https:github.combrocodefblog.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c92fef5ae7b206c467fa1527914bfb75b17c95dbe3636ddc70b1659e9a4cfe7d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2e6e7cdeed3a4a9bd776c6c2ac9619d9d2d93cbf40594fd7de1de8963eeb738"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "da055a5c2672b153e6acacbde1de4c835027561f07bf3dfa630aa2ed0aa28ce4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d16995dbfd51cd78f202acf339c2a100a739edcf6fe26156923dda5a698ed411"

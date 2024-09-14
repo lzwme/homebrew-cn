@@ -9,6 +9,7 @@ class Rojo < Formula
   head "https:github.comrojo-rbxrojo.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b347770f99c287b7be97f763d9c2a0cad3f4da666564dbc8b028658d9c2aac9b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "124502f09f177403d38bafe52c9392ce46ac6063daeb0244a1bf1c1e9df76369"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b24719dba60457c261697e46cf3a0fe187c5edd990f644271dd33348b40506c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c490667709f9c7ecdb2b5ad22591255700b981e191c6ad1d38a724a72f53a2b3"

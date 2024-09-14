@@ -7,6 +7,7 @@ class Srgn < Formula
   head "https:github.comalexpovelsrgn.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b979f052d35908c79b31ce5c1d9809577e6792f36d0b8b2e7a9a1adfd055ac8a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94465753abb628908bced6a7008b8a28210c4bf4a8912ef4cb77bbc802db8ba5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "69f8ac516cd4026b59070c52a7cc4b711c1bd8342bdef0a2add792d121ac69c1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ea0ec8e6b6c491d29decc1ee68187db93dfdcc3d7522db574b5d0c0adc2fd86d"

@@ -17,6 +17,7 @@ class GhcAT96 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "8d2a22c93cc1fe70b9a7ecf62827821d30fff6d0e28c1d3bc0112c8734f96cbf"
     sha256 cellar: :any,                 arm64_sonoma:   "892f3e1bc975073cd306ac0b0522befc7456eb2308d3de05a02d399a67ef9c7a"
     sha256 cellar: :any,                 arm64_ventura:  "c4f29aff74b822d0bdb1564459168cf2cd57e0e9a1573acd8302fcff10e18609"
     sha256 cellar: :any,                 arm64_monterey: "dd173cc86b8f680233343bba11ac738f9a210a4fcb4ac45590b36bf7941018f4"

@@ -26,6 +26,7 @@ class Vim < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "74c67d358d4fcc799e636022fccc4395045db8056b2a1f7027097df862f9ffc0"
     sha256 arm64_sonoma:   "0a6dd05df895c9ad1b06cefdeddc5979111da656fb210883fde404d7fcb69f92"
     sha256 arm64_ventura:  "20cb42029a549f52f0cc6ae230fd40c8a01e794d8403ef3bba7cad2f0e4c8e0f"
     sha256 arm64_monterey: "f6b9bcf81acee6d920d3e18cea818168c2ded92a202439b6795a40bcff18d29e"

@@ -7,6 +7,7 @@ class GulpCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e4705be7a88b79dd85745a81118909d722e59a0d3d81a2766d5ee873b4f98089"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6b78b8a649dc8b662a2fa39814d039991950450e52b20692ff9756955f642d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6b78b8a649dc8b662a2fa39814d039991950450e52b20692ff9756955f642d6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b6b78b8a649dc8b662a2fa39814d039991950450e52b20692ff9756955f642d6"

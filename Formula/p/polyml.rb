@@ -7,6 +7,7 @@ class Polyml < Formula
   head "https:github.compolymlpolyml.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "956ba9b862e294bd6ebd6efb29ab46446bbcf9d29c09dcbab2003d4ba76bc4eb"
     sha256 arm64_sonoma:   "8da7733920403e84fc73e04e2ba73e163630f063daf01d325f777c21ef2faf4c"
     sha256 arm64_ventura:  "e747d6bb96b8aaa374e27d1bb85cfa599f136ab1cfeecbdfffecc01e9dd0326f"
     sha256 arm64_monterey: "92714106cbec11b63c34e38e358e9df4702ba7db81142fc8b6ba80d6e8f36c64"

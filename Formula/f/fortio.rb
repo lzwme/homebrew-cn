@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https:fortio.org"
   url "https:github.comfortiofortio.git",
-      tag:      "v1.66.2",
-      revision: "582d82a75a3172cc40eb0fe8e807c753b2a53770"
+      tag:      "v1.66.3",
+      revision: "7074435c28f507d2ca8585a5566515901de20dcd"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -15,14 +15,12 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7845837176b4628eadddabe6af4c473ce50b9aee74b0b601638951d7dc5ca863"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40200b77bbe4ce6f7f0642b5504cda1a10b3cf609c7cb392d1675fa99cbb7760"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ecdd369b6f4f62ee6d4d329a77697023521b69c5f149b107250a141505f6161"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "192c6ed069441fd86b9a62a602ed8b130aff8568f008a17f741a8b215fb4f904"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2abf8cca7477ce14f2e7220fc427c6b6ddc04b98cd90d373eab30fd68196d0b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cf3a21b2f3b5ef2579e6113b46ea8c93bfadbe671a63c3f3aa39c63d66db3cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "651aa95613c16b678cf67f04d4f47910e5b638e726a9c665529e31b213473ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c67781eb9ce3992055dcf4f74d5bdb28f48569c893622e8a3cb906fdcf8165a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d442b03532b62a92aee446f36d56631e52de5d515a8fcaa159d36e8f15089abe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "484b49e62d67725e76ba85bb23e531f633082fd32c9a43ef53e64345bf030f27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7fd70b49da195af9909307086d550a2179def83568ac6b9de8b93c266a0cc580"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2c283a90489ac43c16e96a7947815c1ea70b778e157861666f12bf3bbf7a0fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "84b29e0a8fd5a8acc218f3b43a120cc3215d016594d63c08a8cc7b21bbf912d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65492b80f0f5356c74738c462127a48cd5113dec89b83d6ccb46f08e7d503708"
   end
 
   depends_on "go" => :build

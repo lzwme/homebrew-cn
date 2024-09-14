@@ -9,6 +9,7 @@ class EspeakNg < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "eeb1cfce58b5deb74cd23d1c29d72ace348cd7cfc76a645c94c090893201b8fb"
     sha256                               arm64_sonoma:   "e65b67177aee6493487968b1532a4ada704eed109c5d8951007df69bfa19dfeb"
     sha256                               arm64_ventura:  "d843709e08e8d930beb0f288fdd1b336d3bd628c63e2c2a812cd09748ac8a19c"
     sha256                               arm64_monterey: "1332045a6452318d5515db38903ecf5d2b9c3aef20719242412236903bf2b0c6"

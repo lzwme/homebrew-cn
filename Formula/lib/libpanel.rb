@@ -6,6 +6,7 @@ class Libpanel < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "0cadb66bebc520ded36cdc51bfda240c573e306e87f9024076b1623250e560f8"
     sha256 arm64_sonoma:   "f128a9f64a77bf5cd52335cf1bdbca30d5c5d72c4ab50db59381817e63b2e199"
     sha256 arm64_ventura:  "2690f378bfe0dca66e25e5ba37df69c79059fca808fb4a33e1e4a0a11883da17"
     sha256 arm64_monterey: "db427b5bd6ec77fe44a009b73b6a8b4a05c038674177f370a274bf0b221b5b9e"

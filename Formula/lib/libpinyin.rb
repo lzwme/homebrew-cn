@@ -13,6 +13,7 @@ class Libpinyin < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "08bab8111030ef46cbd6c3914b805ab0253c0e8903220e51c3104ac15ba4c889"
     sha256 cellar: :any,                 arm64_sonoma:   "93f6df194768185e3a31b086804704a41fa7502925fd27ee0223f3d76a127d9e"
     sha256 cellar: :any,                 arm64_ventura:  "62ed5199739dcaae0ead97433ba897628981a6d3460a2718e4b41891c77842bc"
     sha256 cellar: :any,                 arm64_monterey: "9029eba7441fd7bf391a4b7f098d1459a2800b3d38abe6ad7d684b0d754d1376"

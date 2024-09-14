@@ -12,6 +12,7 @@ class Wget2 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "6bc61f262e20d15cd1f079e71cd55e2a642fef0b66efbb77334773faef36aabe"
     sha256 arm64_sonoma:   "99ca029e3321591fa99a9af0e8b64f562dea3da226b823d35c5af55293b7a991"
     sha256 arm64_ventura:  "067870948de34bc06ebd36a69046d99fae639622d214272da2e3daac92f2f993"
     sha256 arm64_monterey: "923e704bf22d606bc90046a3b61e1ec65eee7e0ae557eb08ac3d6671849cf3e4"

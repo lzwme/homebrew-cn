@@ -12,6 +12,7 @@ class Libzdb < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9d44eafd1f0cab050d9e3ae29ac6eefe93da0a1c77218950401a4755f6b3b0db"
     sha256 cellar: :any,                 arm64_sonoma:   "3b5c6db79896a7353c41b2a8415a718db42e7653cf2e8173aad1e051094fee55"
     sha256 cellar: :any,                 arm64_ventura:  "7ac2411249ff9931effb968e5d90d3afcab3367cfa967e06c432cb54f83e8f87"
     sha256 cellar: :any,                 arm64_monterey: "5c68468472d5674dbbbad4c6b135874b512add3ab4da70d8fc39877a242236af"

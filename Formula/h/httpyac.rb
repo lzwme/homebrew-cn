@@ -6,6 +6,7 @@ class Httpyac < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8dc2ec6a22109082d4f5e5a93e19edc376041bbc0ad8473d974ca1242bc5ec98"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb21ddc576c6306588668db649ae3fd195f2f9028ec5a4ba54003df0f77b6762"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb21ddc576c6306588668db649ae3fd195f2f9028ec5a4ba54003df0f77b6762"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bb21ddc576c6306588668db649ae3fd195f2f9028ec5a4ba54003df0f77b6762"

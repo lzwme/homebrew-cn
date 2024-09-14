@@ -7,6 +7,7 @@ class Porter < Formula
   head "https:github.comgetporterporter.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8cb83d669e44e94cb5be79ae0c6cf061574bc0eeca1271ec52340835d0fcba10"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5132b84b398bfa7cc1fcc82143d0dca926be611cd13180c33cd3708e7c73e5df"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a77917b1ac5dca92cd823dc31a63763bfbf03640adb813642aa1eaebacff193f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2add51a382760271a7cec976bf34b3f9e596a70b98dfb9bb7b2b089898db2e93"

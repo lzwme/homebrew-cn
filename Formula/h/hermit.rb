@@ -6,6 +6,7 @@ class Hermit < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b9117ba72ca19673ac263da9ec4fd441d265c323460035c2c403126b180a3313"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c220df0abaddd3cb46062522fec8b741a9cf53aba2f1a81415d83f2348d530b2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "681669b16e6c7a1c781239e55d2c20212f96ea6391062bb50b96f5891fa9ed4c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e50c49956f01417343085c1e9cf05ccd0884f946e723b86a1f6e908e7461963"

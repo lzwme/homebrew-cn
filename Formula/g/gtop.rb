@@ -7,6 +7,7 @@ class Gtop < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "19886395a17a873daab79bd8e8970e7a9606d4389586123e68d875c2fd192c0f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a4641e216717d7a5a9b15b74823300c209d4b524bfb67044eef2feb1269a014"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a4641e216717d7a5a9b15b74823300c209d4b524bfb67044eef2feb1269a014"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9a4641e216717d7a5a9b15b74823300c209d4b524bfb67044eef2feb1269a014"

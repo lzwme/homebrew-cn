@@ -16,6 +16,7 @@ class Pktanon < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "06412917c998e86cc7ba70272699a10fa2d2d76d662f36640ef9b0bb773ba761"
     sha256 cellar: :any,                 arm64_sonoma:   "088984576d203e28d79b142e1d68996c88ff972f6959ad088ac80ad32780cada"
     sha256 cellar: :any,                 arm64_ventura:  "a5f1e1035cdccf58ccdffb87c9baabf590f87f97da5bbf0334b0e598d97c102c"
     sha256 cellar: :any,                 arm64_monterey: "596c0bd371e83b51b8fd5f5f0f992086db13622078e45193da2749178c280b93"

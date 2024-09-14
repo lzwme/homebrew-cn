@@ -7,6 +7,7 @@ class Sqlpage < Formula
   head "https:github.comlovasoaSQLpage.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8be827e8708deb4c51a7ba37d4483be061e457ac8f9d39d9a702f43a92f951ae"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eec506860c2e78391ce78b5cee284c8755863015279aa76ab4a39dad49d6250c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "38d549837406e8231eda9e55d10f9becda3e466c85bc025876539d362a3e9eb4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0ada889fb6308120d3c90355b22fff0a46a08cf790cbe0e9e3a629c4daebf5"

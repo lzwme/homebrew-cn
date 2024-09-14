@@ -6,6 +6,7 @@ class Grizzly < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "22b70a3f69b106bc9cba3a42ada3ed78b4f48817191387efb1b5958afde42b6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6552f7e86999cbacfd3adcb58d5602c3f4bce716a6ce7b0fc01b95953a75de90"

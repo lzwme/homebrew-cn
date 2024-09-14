@@ -10,6 +10,7 @@ class Honcho < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20992edea8bc84d10fb47cc1a39ec335356c39607349b11c3cd706a5ba1568a2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1f50a6405f33ec30d7abc2656664197e313b5ec927214c45f343471bad8366b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7353f7b038e37a1236b3bc177f309ce63fa63ac6cc89c57664701414bdf7f38"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3b5a319d41ef6ed3825d96665fa038c2019897b6c193ad49e58383acc1cb00b9"

@@ -7,6 +7,7 @@ class Sipp < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b67239ee8180fef3d4128c100680e6cde65be5198a34386da091ffb4bc95d1ec"
     sha256 cellar: :any,                 arm64_sonoma:   "72ed9a5bc30b1850ff9fe02173c0a5fe08627845cfd2f2844b141ded1b8d221c"
     sha256 cellar: :any,                 arm64_ventura:  "10ce3f796a877984b4b8f2e369651d22d087eafa7ba40a230bbbbfb03166250b"
     sha256 cellar: :any,                 arm64_monterey: "42c2c7aa062edb4ba49d21081f2c04e5d551c8ade5970285adabe06079cfc750"

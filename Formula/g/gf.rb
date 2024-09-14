@@ -7,6 +7,7 @@ class Gf < Formula
   head "https:github.comgogfgf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d81badfdb5b557c4f83ab6b7995c004e544c4a14e8ead3977017e06a3d12be0e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d81badfdb5b557c4f83ab6b7995c004e544c4a14e8ead3977017e06a3d12be0e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d81badfdb5b557c4f83ab6b7995c004e544c4a14e8ead3977017e06a3d12be0e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d81badfdb5b557c4f83ab6b7995c004e544c4a14e8ead3977017e06a3d12be0e"

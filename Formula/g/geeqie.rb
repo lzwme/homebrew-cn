@@ -11,6 +11,7 @@ class Geeqie < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "1dd37aba8eb3a3ce07e83955f19e8b1fc26abf054ee277d4685b551db5a5ed62"
     sha256 cellar: :any, arm64_sonoma:   "f4b5b7ab7d532f9ffd874084a95dfcc9fe72e97fc99268f2d2e6dbbbb2c46494"
     sha256 cellar: :any, arm64_ventura:  "339ff3d55396d64b25fe06f2d0ac9aa9227860ffc9580e2e3f97f60bc9424c01"
     sha256 cellar: :any, arm64_monterey: "eac604d18c097e6ead04402af97208018ae0bfbbdce2fa6611c37ec251a872aa"

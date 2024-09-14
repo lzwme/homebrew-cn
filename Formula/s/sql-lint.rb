@@ -7,6 +7,7 @@ class SqlLint < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4b460da40ab03af6d48fa557a567c21d06d3e5cc3718392d7daafd9d89e922a6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2365c7675f29386b8de28968310fc9dbf242c59f260ed552bc249854b41396a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2365c7675f29386b8de28968310fc9dbf242c59f260ed552bc249854b41396a5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2365c7675f29386b8de28968310fc9dbf242c59f260ed552bc249854b41396a5"

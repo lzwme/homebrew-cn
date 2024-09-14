@@ -7,6 +7,7 @@ class Squealer < Formula
   head "https:github.comowenrumneysquealer.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e4da7568fde2169f0fb08a9f0d15e997be2fcf1004fea517389e7608bca79d13"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a7041bdb10db0ffa95f42b76a87bd830d7b950ba9848379a7f0af586d0a0ecc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2943ac5832058d7766aa71a7e986a05c759a21c6b3d18febf7e95f20a7489a7b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c59845814f814552514911196624bdb2a061ba5b0cb75a9181fe8e6552e2d422"

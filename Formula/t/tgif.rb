@@ -36,7 +36,10 @@ class Tgif < Formula
   patch :DATA
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    # Workaround for newer Clang
+    inreplace "Makefile.in", "-Wall", "-Wall -Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

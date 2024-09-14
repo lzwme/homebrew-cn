@@ -7,6 +7,10 @@ cask "font-monoisome" do
   name "Monoisome"
   homepage "https:larsenwork.commonoid"
 
+  livecheck do
+    url :url
+  end
+
   font "Monoisome-Regular.ttf"
 
   # No zap stanza required

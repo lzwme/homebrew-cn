@@ -29,6 +29,7 @@ class Csound < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "e160a6ae9049e4d09126b58a1ccb411b0487045193da26206143c3898fbf515d"
     sha256 arm64_sonoma:   "ef04baac87bf252c3d3b05df83c2bfcd4442346f0854e6aee5fe3071dd03283a"
     sha256 arm64_ventura:  "f9f57bacdbec6c5f51af768ca70824710a9e5e5bc912d356c901536ffc3766cf"
     sha256 arm64_monterey: "c9b6460d1c22a445fd06ab88da81dcd3b18178b5090582d9c259c33b7eb5aaa8"

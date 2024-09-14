@@ -12,6 +12,7 @@ class RxvtUnicode < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "5e4d450d6dfc04b6953bf1899d1d3dbf70b55afba7664cce36b885aafd25b950"
     sha256 arm64_sonoma:   "70b29b652c086003e230952471da39a12032dd80242d86a631b928acc71e37ca"
     sha256 arm64_ventura:  "2f9c19525fe1dbce9500da67db6d0448f2e0e2ee26d66adeb15946ab07c55745"
     sha256 arm64_monterey: "82cee1ad76351a94e29e4d78a9ac8cb6f2931b211536dabe41b1cc25e0a4d0a4"

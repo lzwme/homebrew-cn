@@ -7,6 +7,7 @@ class Frizbee < Formula
   head "https:github.comstacklokfrizbee.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6c3f639d48aa9f2aab1f6836b2da1f17d244b968720193a9a6358b1c27a876f5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "138a05f755b59f97f49d46ea9bc304188d7f6dfb44303778ef2a0966819aa825"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "138a05f755b59f97f49d46ea9bc304188d7f6dfb44303778ef2a0966819aa825"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "138a05f755b59f97f49d46ea9bc304188d7f6dfb44303778ef2a0966819aa825"

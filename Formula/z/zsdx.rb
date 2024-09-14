@@ -7,6 +7,7 @@ class Zsdx < Formula
   head "https://gitlab.com/solarus-games/games/zsdx.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e04d5e80fee6fc551aa5f8107bbc563a5cd8d5a3a4c92a42cdf48673f43f49ce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc51b43950a65fbd9e1a3faf0d36eba2dc3495bfb6070b3949440eb38fa894ab"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf9b6d3f03eea1f2ae50f831fc5df103bcbb16c10b37b19c45cae4a4da5cb2e9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6ed8efab9ad526d5d1f3ae89725e30f4913546a49cb4d752be453365ff99bbce"

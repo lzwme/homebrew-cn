@@ -16,6 +16,7 @@ class Getmail6 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3c54257bf96d211850e6955d7e6a71bb7027876a7dfc259a7094eac51a02b6f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3c54257bf96d211850e6955d7e6a71bb7027876a7dfc259a7094eac51a02b6f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3c54257bf96d211850e6955d7e6a71bb7027876a7dfc259a7094eac51a02b6f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c3c54257bf96d211850e6955d7e6a71bb7027876a7dfc259a7094eac51a02b6f"

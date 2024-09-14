@@ -9,6 +9,7 @@ class Yewtube < Formula
   revision 7
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d5c56ccc8967e7b3b2dd80efeafa26c5875e45057752dddf13f6d954f8858d03"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "872c1323225c91a13fb51f6658506650c17a3c4f6a5dcc0f205b400a8f47a983"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c91a2258c805bf4c33d8eee39519a0c74017e7233c4f5bc0872107336cb5cf41"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e9046036c2e629ff96ff49ae91901339c1317f68657325d311ac83bae254fbd3"

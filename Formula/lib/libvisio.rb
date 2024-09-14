@@ -13,6 +13,7 @@ class Libvisio < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "87ac7f5c6b255fba3d53c09d49938f45ea373a7aaa12c8ab865ec690cafdf00b"
     sha256 cellar: :any,                 arm64_sonoma:   "9bfe32f374fdb4df86bf8ebc699f3aa29812590301e9cf081b2bb84b0b99467b"
     sha256 cellar: :any,                 arm64_ventura:  "e0c7e7d053872d13fb45dbab46fa56f56da4c1870102af9f099be704abfbed85"
     sha256 cellar: :any,                 arm64_monterey: "35c16739c618799fba69e03d20f12721acfeb83dde4145cde6858d18c787c71a"

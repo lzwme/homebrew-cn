@@ -6,6 +6,7 @@ class FaunaShell < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "12354f7a09c443078fbb589b9a5d18082bb65ce9d8c5fc91f333597dddddd32e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b65e24ac1b5a2dbaa84bb7e322769a5998a51057bdfa1d47848c3e46787d5a7b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b65e24ac1b5a2dbaa84bb7e322769a5998a51057bdfa1d47848c3e46787d5a7b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b65e24ac1b5a2dbaa84bb7e322769a5998a51057bdfa1d47848c3e46787d5a7b"

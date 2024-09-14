@@ -6,6 +6,7 @@ class Gat < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "829ddc127e5b95398e12a7e59a735c28cc42b59323d152c0ada3c8d5389b5a59"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bae9755bf798f1130c7f745c65548708502468146cf860af1b8871f2507576f7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "32188d89cba40b78509f6b6f4b74d9c7e825b945e95c2bdaa1a48798817dead0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2e467ae916e1d8256a256ed2c89a5df2b7719a790a6a4a72bf4976bd68200538"

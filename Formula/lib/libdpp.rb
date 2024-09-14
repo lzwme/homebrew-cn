@@ -6,6 +6,7 @@ class Libdpp < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e1ed132536e9545ed890967e554521781170d4cdb94b6296ef4d2bc0c775ea7e"
     sha256 cellar: :any,                 arm64_sonoma:   "a0759936e0da422d6d309aeec3169885b981e48944c4efba9af5735734543957"
     sha256 cellar: :any,                 arm64_ventura:  "8d57b4ec0e3484b19ee6b8fc7dc3af8bf46dc62d44ae991c6739a692837e1087"
     sha256 cellar: :any,                 arm64_monterey: "0195d7d7cd9eb05b10fbe61f93743510a838098e4d88cfba235ee2b7e2243ad8"

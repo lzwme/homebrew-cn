@@ -6,6 +6,7 @@ class BoostAT185 < Formula
   license "BSL-1.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fba0b0f6018b336876f2aaf895326a5c2685cc16ec14086737e157258765fd42"
     sha256 cellar: :any,                 arm64_sonoma:   "12e44a16737f9336bec87c239bb520f25fd1d11a143e9587b453bb2807b64711"
     sha256 cellar: :any,                 arm64_ventura:  "ba055d2da17d143e361321e89bc8e550e1d0c30e0543773d239936b6e124deed"
     sha256 cellar: :any,                 arm64_monterey: "f0c595c7fba3daebbe62cb53ed0d979a528b60cea000e3c8283c9828611b8ccb"
@@ -122,8 +123,8 @@ class BoostAT185 < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
-                    "-L#{Formula["zstd"].opt_lib}", "-lzstd"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-I#{include}",
+                    "-L#{lib}", "-lboost_iostreams", "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system ".test"
   end
 end

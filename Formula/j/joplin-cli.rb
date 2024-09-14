@@ -7,6 +7,7 @@ class JoplinCli < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sequoia:  "5e5fe3221c830d5daf68074d89a1dc7e90d2ef3cef9bd109db1ebe2680c27c54"
     sha256                               arm64_sonoma:   "268c55e18469316597519d382404d819ab5cc6919add24c64f8905ade49d12b2"
     sha256                               arm64_ventura:  "0556a2e4a45eeca512fe5a84dd89e074ee6f235ee836ca368b9ae9a15de88c31"
     sha256                               arm64_monterey: "bb9f103a62ec68f52a32739e367319ff5056c2a5f11ca6006926ad348e6093da"

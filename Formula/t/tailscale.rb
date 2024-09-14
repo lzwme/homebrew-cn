@@ -12,6 +12,7 @@ class Tailscale < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "640055e9ce3df887ec55d1084f5847d42909ddebd1f4a9581645317d61ba5f9f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "960ed09908d8a248f8d8148099ced57f665dad1a87d54eabbc955b0cd5a92085"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ebeaa84a277b687ddf5744563d63da73bd18a5d970f0823ac54d04a8a1577c8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "edfa50a5a79a36c05cbaa2f40410d5aef918a7b1adbbd215087629c21e4dd6d6"

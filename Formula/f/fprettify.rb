@@ -10,6 +10,7 @@ class Fprettify < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "22bf0d8c7303a0064a6b245ad44a556d5781ca3ad6855ab5c886f21dea9d35f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27bfb5c470eeb3ab6bdae65b9fd1c58b6c44eb358c159f9ca0611333ddf3c6ac"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c40bc2e5dd99d941bea03a38817fd148c1584a85c4b0ec37c3fe32ff2a8aabb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8a101c7b0dfd55728979e0fff9eeedf52967cb67d4351a74c0c114a3854ff3bc"

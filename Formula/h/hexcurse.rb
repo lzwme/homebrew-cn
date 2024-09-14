@@ -6,6 +6,7 @@ class Hexcurse < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4a7086e819b1cd96888fbd2026a5367552e1eacd579dd72fa81e275c32939499"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ca7161cf90a9794229c2a7fdee93f2a8ffe0db514ff282e480f199d408fbfd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e70c0b58b904bd8b310d02ff2c1b486e75ffab55ffda96cd3627920cdd41d4f3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c5778ff4ddb2d3d4d18c4150c34d2a73be472c239a81a243dd03f93a494a4fcb"

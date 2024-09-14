@@ -6,6 +6,7 @@ class PodmanTui < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bed1336b8d923658966a7b8da70a96a7118918169d6b8e441e08069882ff6735"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22b51f4ad020fcd26e2d9113f68d71f808a6c38adeef43e5d31183ec259e048c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b080011ec15e72a680852c2f00e85fbf5af6964ec2eab9e5a7dc04688a83a2d4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dc6f26e4ad78af5ab56b0c06a1579178984ca25cdb83789cd40ecfde4944af81"

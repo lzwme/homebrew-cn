@@ -6,6 +6,7 @@ class Librcsc < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "cf6fd6b7ec4c1edbf8554e45217d35af20109709806f656fdc2ba76a8b345a53"
     sha256 cellar: :any,                 arm64_sonoma:   "32e10d7512099663cf9488e62504a26234b7335c2d8a3678394001a7e7804ed4"
     sha256 cellar: :any,                 arm64_ventura:  "077a939210847e00dd2ab85f25f0875ea9358baed7ba7dca8ac978688c2b862a"
     sha256 cellar: :any,                 arm64_monterey: "1bb50580e569d0f194faa5559d0bfa0d72bd6ac9402792a1d9dd39fdd9d3b6c2"

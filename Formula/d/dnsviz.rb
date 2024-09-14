@@ -8,6 +8,7 @@ class Dnsviz < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e74fc8bc1e0eabf08fe6b0fe49a032212ab4fa499de6c1a9dc0bb073fdfea8b3"
     sha256 cellar: :any,                 arm64_sonoma:   "010d753c953f5784dbdcabb3a0e178b37feebc15a8849ecc60da0e06e6b1a98d"
     sha256 cellar: :any,                 arm64_ventura:  "11074313d53d5f0e1bb3bb45e5f0d2cfd360890158bb0db237acfb5fdac8b4a6"
     sha256 cellar: :any,                 arm64_monterey: "4cb91ae29fff849510d2eab470bcfe4370158db481f9ce11101661a692ff1855"

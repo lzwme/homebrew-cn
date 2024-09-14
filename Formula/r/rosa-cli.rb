@@ -12,6 +12,7 @@ class RosaCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "976220f7de4543f654886585cbda2f7ee1ef42d633e752f39268162ba55ccd16"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb6c1600c989a5b2e5635aac61060484553b98fc762326bad14353e32addead7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "228b58d014d44d2d62f124fbcde783be289b43fa004875383bc6a2bd8ca72391"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b0c896b155a964e0bc4b93090eecf3520213516d5e8d75ef7c45422064d00f23"

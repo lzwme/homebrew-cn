@@ -12,6 +12,7 @@ class Wv < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "9e1e8c136fd8b7de554c316739099764505619e18e81a69b49b40f9324ab50b6"
     sha256 arm64_sonoma:   "282ed73a67d00953c4fbd390a82f3d1148822dbe103beaa7f81cfdc92ca8194a"
     sha256 arm64_ventura:  "af7ed2ef919eb856fd37e52bce5d7d5ff8ed39785969aeb565b07c62160807c9"
     sha256 arm64_monterey: "a96f5e5c182887f42939ab725f79d4a9f31801d3f92a19da1e08da6477edcfe7"

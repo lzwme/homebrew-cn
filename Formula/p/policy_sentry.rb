@@ -9,6 +9,7 @@ class PolicySentry < Formula
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "60ca9447213752ba9cd41f8ef4b5fac7f83309df998d3a2674b5ca7bd3e20052"
     sha256 cellar: :any,                 arm64_sonoma:   "3d3b67e46bde2e7338a0165d5804dd76f5ba8f28d5a18a73e151d44d21e61c5d"
     sha256 cellar: :any,                 arm64_ventura:  "04b8a0d17f02680cbdc9c3328b45dc34483ac6d9e9fc89fd0b6e15aed7daed3e"
     sha256 cellar: :any,                 arm64_monterey: "28b56f86a2cd72411a7dd642f0bcc1ab6cdc829ec552aa8110af42e27bf59ba5"

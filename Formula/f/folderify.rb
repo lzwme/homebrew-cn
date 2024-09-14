@@ -7,6 +7,7 @@ class Folderify < Formula
   head "https:github.comlgarronfolderify.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "206eaa5fb5923b6395a4797bb41cf6761f47cf9097289cb781243d95bd19ce94"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0219485b57420beaa462004c573c9fe8b55a56b3174e527f506adfdd216a28f1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "302dbc5c7cf6c8cba6f7dfb54361b0a0e81a54ca10ad43c5410ee40770f06c53"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cd4b774735fb5a2a8e318f19c438402c3b940164df49eb437b3b3fafa4aa4893"

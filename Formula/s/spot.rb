@@ -11,6 +11,7 @@ class Spot < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1807c08d4be198ac62e9a46b8d4d9167dae88b050c90767d083765dc2b802668"
     sha256 cellar: :any,                 arm64_sonoma:   "e4c76f482118ead7179f160c066dfdf0ab3a2e1c7d00b2c90c00278921ab527f"
     sha256 cellar: :any,                 arm64_ventura:  "0820204a038373d059598cc87c0e65a9302abff79d89fe16b8726d746b6d06a8"
     sha256 cellar: :any,                 arm64_monterey: "af8c2ecf6ccf310913e30dd943b3020814adb5fd771e2884471f4b26e64c478b"

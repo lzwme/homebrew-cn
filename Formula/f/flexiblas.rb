@@ -11,6 +11,7 @@ class Flexiblas < Formula
   head "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "85c5e7cc7cb883d37d387adb373ff940259e07e71e5d3dde745aee51b657ec8d"
     sha256 arm64_sonoma:   "144a287222ffe00ffc4c12190a63b3da143f4f1392de28a00caf3386ead4d3d8"
     sha256 arm64_ventura:  "082787d3a84f8c9cc680c8c06d4ec26f7b3c09f0af57b00e3babac0d63bac2c1"
     sha256 arm64_monterey: "0d582036b81e7b61e9b8df071569ff2c3eb856b1f94f32159d6835411ee8e150"

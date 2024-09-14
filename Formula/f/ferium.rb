@@ -7,6 +7,7 @@ class Ferium < Formula
   head "https:github.comgorilla-devsferium.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "311f61117fdc972838f13d2507508bde0c497807c05df8c294bf29c2f7be7e75"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d82961f18209d69cc4dbf752e085b70300d1fa370ef3d10cae0f56abcc3342b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b43b3cf699c980a5d05a89caee5f384b60275358d3921853974104991b1dc449"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1be87cd871f574ed79b96b3b0cad43204e017f5edf10787621e1b11390070482"

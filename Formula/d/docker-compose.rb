@@ -15,6 +15,7 @@ class DockerCompose < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ff53aed5515781221a8fe42489de7808ecfd8468c446bdac1236997100c30f49"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8827e5c49364233477e63fdf8ec00e6fc9b7544d5e6c343ebb3d8bc55ad05e5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8886691ac4e0669a26b2099da1fc00cdb439c64a6511135c7b1d1d2b1080136a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a5908d539b2fb7129a042428c2c26bb8974a3ce27d59ef4bcc3365f8ce49fa6d"

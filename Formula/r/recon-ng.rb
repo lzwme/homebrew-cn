@@ -14,6 +14,7 @@ class ReconNg < Formula
 
   bottle do
     rebuild 6
+    sha256 cellar: :any,                 arm64_sequoia:  "190b33cb21debabcf966eb2f43d797db5ddefd5cdcbbe4c2aac3b1f89927f608"
     sha256 cellar: :any,                 arm64_sonoma:   "3dc206cd3f8da1fa47c3a10ffcb238c860fca78a243ada53cfea56f84fc9c9a8"
     sha256 cellar: :any,                 arm64_ventura:  "647b0fdb1772d54fa556c956c37cc80c692e8f1a86d3ec6f39436daee1c5d754"
     sha256 cellar: :any,                 arm64_monterey: "2b1905f0796d683c2f1e7f94280eb96e85ae4d87c0b86608138221a4f9dee79c"

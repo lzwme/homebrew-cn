@@ -9,6 +9,7 @@ class Texttest < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec803d226e75ee7645794e66076882e92a992b8d1a506b86b1e295966e90375c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae3a79098c5ee58b1cb655e7b2295edd208201c21683ccbbe5f759ede6feb19e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf446711e2a3519c3e8d80c044a65e569e656f81db55454f5add3f9808c2c764"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "71fdef508725b2daec109bf60c342dc4f4d2d5f5dbab07da0f18ed5c4f9da580"

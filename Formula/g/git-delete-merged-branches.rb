@@ -8,6 +8,7 @@ class GitDeleteMergedBranches < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b558858cce3a4384b26a62beb22a433321d1f979b0062d1217ad50a41c7862f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "730fe878bf84f3f1686997cbfc6282e3cfaa12800ede068169aa98afb9e38942"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "62de11e672702ebf784d738bc87a9acda1b2e678ba4fe2caad50c3592d5da8c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7e58af7faeb41355b1f3c79b1516b6badd8f5cf461ba5c7c4fca982dd913ca45"

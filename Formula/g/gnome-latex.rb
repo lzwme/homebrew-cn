@@ -22,6 +22,7 @@ class GnomeLatex < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "5f965099fe8411e158f8a2d4291109f4da14903d6a274c8fb583d83ea3d23e72"
     sha256                               arm64_sonoma:   "07b18470a11071e313f759a79419c31fd439027b51b016de4254bc6c78fac423"
     sha256                               arm64_ventura:  "852245582998816a39ba87f16633e0cfd1aa6ae72fec41411237ee2c13fc01f5"
     sha256                               arm64_monterey: "92ef5b78c6db335ff67ce5467137ba00d96f9928d458f0a5f3d455779d5f6c5d"

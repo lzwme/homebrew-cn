@@ -11,6 +11,7 @@ class Fabric < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "dee13c21743411ae2e97c5354f5e2deb28a033b1c0ea3537b411b529c3881568"
     sha256 cellar: :any,                 arm64_sonoma:   "e678a66727889cba1b4d41687dfc8cec63965c816b216bfcbc8f476c5ab27151"
     sha256 cellar: :any,                 arm64_ventura:  "aa44439db06456739c8fad795ee9b86c57b62ee0b7fc9df4989dc0922895e0da"
     sha256 cellar: :any,                 arm64_monterey: "d1ce1450a673c8cbf58d19622314dfa6fccf0e7752fa55c0d703b79bc9f87c39"

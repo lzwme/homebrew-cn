@@ -6,6 +6,11 @@ class WpebackendFdo < Formula
   license "BSD-2-Clause"
   head "https:github.comIgaliaWPEBackend-fdo.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 x86_64_linux: "b7118b8022fa68463f88f09fe48a70e41f342878addd6ef336ccfca2a446b96b"
   end

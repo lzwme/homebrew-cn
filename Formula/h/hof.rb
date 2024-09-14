@@ -14,6 +14,7 @@ class Hof < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f94e6653aa5030b3e177e6d6051f6733af0233509bb790c758bbd02a315a8a6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ccedb6755fdc995d502849ccffebb0a51e59ff3cbf6ce2232cd24d15c5bdaaf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1b413667d13da04682d19bd40c8ab78ddbf48cb8fef4a1c79479eda809e58da"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1a0b74bf4992814717e57969cc7cc23c556275138e83f9c15aa225f0f35211ff"

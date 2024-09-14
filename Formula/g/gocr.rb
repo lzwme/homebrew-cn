@@ -12,6 +12,7 @@ class Gocr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f38bbed5dfe8ae2150cab6f508e71dc9402d9f05c3c72273f3c9270dd42ff6fa"
     sha256 cellar: :any,                 arm64_sonoma:   "0d859924dd354cc1c623786533136a7ecded331ad47565f208f954ad7091e957"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "83e2ae4571c3fede1d3af4d0c46a09179275af8c8506d54843a7a01f55efc712"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "53e3f30e26e5c707e006cf08ebe4043b8f4bced950ce61bb6ba2e7926797d0a9"

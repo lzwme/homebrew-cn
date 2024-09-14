@@ -6,6 +6,7 @@ class Gabo < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fda5dd56b3f138c38682586f889d08c4923c53b3d9f04188f2a5d239e7f308ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7753da13328338cb80b969d352e4a73d7830953ac6e0ea8be895c64803ac5b27"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7753da13328338cb80b969d352e4a73d7830953ac6e0ea8be895c64803ac5b27"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7753da13328338cb80b969d352e4a73d7830953ac6e0ea8be895c64803ac5b27"

@@ -6,6 +6,7 @@ class Espflash < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "755583d45a918fe47522af55a973606d8a681257ee02d8574cead6c904c9d4c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aacb2290003780e0c3204b2b581c81cd688f76caea906949433645540ea5bd5b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef900e72da730354a8738546cdded8a2e006597a0268f0f91408e9019e57fee0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ec0350d93e1f5d2e29863592ca2cc11972f8bf26ff0ae01b1f2ca22ad33d3d2d"

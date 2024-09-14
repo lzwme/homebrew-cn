@@ -6,6 +6,7 @@ class SqlxCli < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f874214d8fb27df2f3bfb1479cdd259f2cbab8808d77b171d96af16ac57b45d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1c238a10e94db7777c013316fb503eed969fd6edad80091bd04b892ff91cda7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b88aab2146428c263aa7f20752b27fec3edd7e7784c2b0448e2be503e5bec3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "61ca0b0af77d7d65c3eb2eedce677502fe137f5436c75e12ae0e5b2f2bf4ba71"

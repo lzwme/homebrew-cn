@@ -1,20 +1,18 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https:docs.docker.combuildxworking-with-buildx"
-  url "https:github.comdockerbuildxarchiverefstagsv0.17.0.tar.gz"
-  sha256 "f846f36dc93d78e9b1c94b716279a04f1d6f58ef5d445c6615ec8e5e3a7b5efa"
+  url "https:github.comdockerbuildxarchiverefstagsv0.17.1.tar.gz"
+  sha256 "a1c81f386142908d4984836fae75b5aa37e1921e7186ec8a548c54be62fece43"
   license "Apache-2.0"
   head "https:github.comdockerbuildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "64248f719465a0a3d991bf93ac603f5ce141855b61862e2b60343137305525e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64248f719465a0a3d991bf93ac603f5ce141855b61862e2b60343137305525e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64248f719465a0a3d991bf93ac603f5ce141855b61862e2b60343137305525e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64248f719465a0a3d991bf93ac603f5ce141855b61862e2b60343137305525e2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cdedeb57dda1963363f15e965baa14471d7a2d3947a2258988b3e9fdc1e81391"
-    sha256 cellar: :any_skip_relocation, ventura:        "cdedeb57dda1963363f15e965baa14471d7a2d3947a2258988b3e9fdc1e81391"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdedeb57dda1963363f15e965baa14471d7a2d3947a2258988b3e9fdc1e81391"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "777a95efbdc0dc9e54060fcbe88d7127de5447bd04d325b3049dfa7bacd06578"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "609f730177ff2dcd1dbb7275d0f0f3c888627c6bfb20cee8d66c7e8645c6a4a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "609f730177ff2dcd1dbb7275d0f0f3c888627c6bfb20cee8d66c7e8645c6a4a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "609f730177ff2dcd1dbb7275d0f0f3c888627c6bfb20cee8d66c7e8645c6a4a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cde1988c799527007adc481e3daa5d3012a7140073585dff7a069e5d46587cc0"
+    sha256 cellar: :any_skip_relocation, ventura:       "cde1988c799527007adc481e3daa5d3012a7140073585dff7a069e5d46587cc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89c893e48e4996d48439218e4b59d67b0b238e5f86a961d802c437cd5f50cdb1"
   end
 
   depends_on "go" => :build

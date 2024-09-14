@@ -12,6 +12,7 @@ class Geogram < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d406a0d8951aaac6513fb1f110f5ef4e7e9aa349681a90f48e69f2a37226ba34"
     sha256 cellar: :any,                 arm64_sonoma:   "098a179b1206c255fb60710e15db01c4800d615dff223099eebf5845a4706c93"
     sha256 cellar: :any,                 arm64_ventura:  "de7205ed12782950c36533503a3a4a60cb530a6420866b2c80fd0aed07325af0"
     sha256 cellar: :any,                 arm64_monterey: "42de7e1ac9aff5dd48bb95a12809cbc26edb1218b3fa28b4d9c669efe565f632"

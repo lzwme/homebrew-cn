@@ -14,6 +14,7 @@ class Spades < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1e77243af347459693e838649125fbd3f772845108446692b5724b2a99d36851"
     sha256 cellar: :any,                 arm64_sonoma:   "4211f7c49c9f9b896aba38958fd60c9aa340055362222c5b1b91a96c6d8b1186"
     sha256 cellar: :any,                 arm64_ventura:  "b7648468fbc39495eae7723bb527af748e863bbff65a0d4341cb5ec8035226f3"
     sha256 cellar: :any,                 arm64_monterey: "09c312987910e391deaa36ab11a7823ada78074944af6ffcb73b46d6a02006fa"

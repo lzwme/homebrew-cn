@@ -8,6 +8,7 @@ class Hexo < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8a1d3ba84fcc6755801b4e0d7838adb598b651c8ac4648b33bcbdff5797a5a20"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "209a443cc5a02dd08fad22385e10e453b903b22ab90d0c19a825da1bcba3d6be"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "209a443cc5a02dd08fad22385e10e453b903b22ab90d0c19a825da1bcba3d6be"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "209a443cc5a02dd08fad22385e10e453b903b22ab90d0c19a825da1bcba3d6be"

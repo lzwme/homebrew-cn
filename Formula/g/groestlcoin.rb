@@ -17,6 +17,7 @@ class Groestlcoin < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "dd2ee1fee9bfc8c3bde45ade57652d3433c701c4b9462783d790c125f7523e89"
     sha256 cellar: :any,                 arm64_sonoma:   "a26c116d48f076dab3cdc4d2306a1dec7dc7acfd3f094b0f4d5fd2e7e45a4e92"
     sha256 cellar: :any,                 arm64_ventura:  "cc1f2364ca6e1301cee3cd9af5be8aff13175a171be85fba6f82443afa93f244"
     sha256 cellar: :any,                 arm64_monterey: "b687ce36c1ffb7951bee1f790b8a43ade4e19a9b03e1f72748a5518510f0537f"

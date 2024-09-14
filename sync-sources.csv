@@ -4569,7 +4569,7 @@ Homebrew-homebrew-core/Formula/o/oniguruma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onion-location.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onioncat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onionprobe.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/onlykey-agent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/onlykey-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onnxruntime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onscripter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ooniprobe.rb, Homebrew/homebrew-core, 1
@@ -4729,7 +4729,7 @@ Homebrew-homebrew-core/Formula/o/overarch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overmind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overtls.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/owamp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/owamp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/owfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxipng.rb, Homebrew/homebrew-core, 1
@@ -10465,7 +10465,7 @@ Homebrew-homebrew-cask/Casks/font/font-r/font-rosario.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-r/font-rosarivo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rouge-script.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rounded-m+.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-r/font-routed-gothic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-r/font-routed-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rowdies.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rozha-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rubik-80s-fade.rb, Homebrew/homebrew-cask, 1

@@ -7,6 +7,7 @@ class Evtx < Formula
   head "https:github.comomerbenamramevtx.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7d4bdf3638de52bd32947c04cd85ff0b0a6bc674903af2c2c3f241c7bb65ce2e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49e00953e2cf900d3aa7a0e27e780531fe92c977bc4f18568d55bb4c5f7cba9a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9af0f566e7116e4959dbfefdad90c9b742cfccc91ed339c63d251c290ace9161"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "016a23188e3a91d2d610d7facd68dbeef231fd5bffd539767001aa838197ba22"

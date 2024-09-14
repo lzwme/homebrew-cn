@@ -12,6 +12,7 @@ class Mavsdk < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e4e3c36ea9d269a4d630aefe0d4641f5793d8aa83f510fe0af93ace6e7caad4b"
     sha256 cellar: :any,                 arm64_sonoma:   "2826281f339bb270098c1cb08c9fb13bfc267a3129ca52ca2de3d5067bcbf1f3"
     sha256 cellar: :any,                 arm64_ventura:  "068b0a012e7bef9038e1720f207b3639e3b08b228bcc8d2ff257a9d27b8a796b"
     sha256 cellar: :any,                 arm64_monterey: "92179e835248569418c929fabd770cebde93aa4b2df9c78d70ed596db74e4522"

@@ -1,20 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https:github.comastral-shuv"
-  url "https:github.comastral-shuvarchiverefstags0.4.9.tar.gz"
-  sha256 "c0e2b2eb4c8c674f95fe96496fa70a5e3984958a3baf15623710bbd253219f49"
+  url "https:github.comastral-shuvarchiverefstags0.4.10.tar.gz"
+  sha256 "8cba1109fa3d709a0ea6737a997fb272da196fcfab5ac4e50716fda4c34017c1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comastral-shuv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52f2e226f609901af86fb7f442e4fcdd70f15c419e9b4ba8a582e19546907410"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9daedb4773176b01a2ca28497320db0ff487b7653f4f7f2495b93b18f7f28d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "770c847643c935e0c2c895f3680114eb9c296981ecc910316421316666066e3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9841eb6fa37bbf41695f69f0ac65f29408eb041fea4aca5586a085da739c984"
-    sha256 cellar: :any_skip_relocation, sonoma:         "661a8e9d23fa558bb409478a886e088bb4951abe4d88622c7fe74ee8a5745393"
-    sha256 cellar: :any_skip_relocation, ventura:        "6090f734974cbb39f8081062ecd62b96c54dbd7135ef17f3eab6a4de7e86ad28"
-    sha256 cellar: :any_skip_relocation, monterey:       "6365854343cbf8b637f0a34d353c56eb7c21fff34a75d2a12c8a075c68621bb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fb726d4d6e167f587a28d7680447dd9d22d32213c277bad5e63add9751ddd54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73b386891f120b9d522f53e7bb74c6a136e9b98cdffc80988bb5ddb33cf03eac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85dcac919db299a4899a61f5802804d05b384ced265aa1c74643b7f51da5b4e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b76503126ffad51d81cbf927b6e7669bb455852e6635fee6f657beeb55168d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50bdcfb5a5e9eef178d7e1d477b5a42e9309aab2180293a50a17217ee745a538"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c8aebba88f20947a8f64f67a15b47001a33452758f33bf7df06cf279de95bb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfb94faefc0a177b2d10c4d9b7bd3c5470314659dcbaa1cb01fd7f12a93aeb90"
   end
 
   depends_on "pkg-config" => :build

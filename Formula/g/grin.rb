@@ -7,6 +7,7 @@ class Grin < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a81714a88d296b266b9cc3f76a07d113637ce46c51fe2d8d44b5aa37f8819bcb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba76f2976d6dd649245dadb6477230a9c01d565d46c2a48f304559cad3cb1bfe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f2c8a77f0c2c8b8c9cbf4fa7e617f230f34cf06a2df659ee0e1f13597a83c27"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3ea126bb7d7b84b7db43491fac85bf840b1214c19dcb23b951de30781b1a13aa"

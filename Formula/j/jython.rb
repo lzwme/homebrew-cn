@@ -11,6 +11,7 @@ class Jython < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "13e057d004350aeb89d008269280f5342064efc7cb4e66779bbb7661097a4492"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f4cdcbf4f97999a663ea4251aa810cf84835e70da8a50c4bb4b0fc378a476b9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d0f3bf41ef89c336e81c06e08d2aff10a9e9917459b0a4a7a5e1dd1f6f5a9c6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c85fbc0ccfa9e3ba0b11fc2996716ed2da5578d6b385b921a50100882604d33"

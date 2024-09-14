@@ -8,6 +8,7 @@ class Flagd < Formula
   head "https:github.comopen-featureflagd.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "73d81051db67628250b3f0d715c3fd6d741971f6c4f8b482d48b9251be1ca801"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce206e7e6cbd0bcd3407b5dfdce8bad2a5a9d8cc726be122ddf8e52e91c836c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce206e7e6cbd0bcd3407b5dfdce8bad2a5a9d8cc726be122ddf8e52e91c836c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ce206e7e6cbd0bcd3407b5dfdce8bad2a5a9d8cc726be122ddf8e52e91c836c3"

@@ -6,6 +6,7 @@ class Libwebm < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49e659cf7620ec30ffecd7654da70d28120cd409ae68d7a48a646d2e57bcba1b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdcfe9ac4d4a025957c618aee58539cad66931b0d74e17f05b049337cbebe651"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21a08a2111b19d647ae24038c95ebafe8bcfb2db68d512e3e84615b27bf85c34"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6233852ce953b18eb356b7af0f5433984d770cfa50a9bf067a67469e9a4aa489"

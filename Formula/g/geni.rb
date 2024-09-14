@@ -6,6 +6,7 @@ class Geni < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "33184564ced72049ba1dfe0e779019278abbfc8459d77acab3966057c81bc50d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "820704ef0efbaa0dea4d43c037365cc0f6962fbf2207797265be502665b4e03c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c20d99210faa7dbb5d3c209a6e7033fd3d98c8ff9d548a2525969e452b22dd76"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "51620d1bde2bf1cc9d7cc5058526162b7e91e7bc70e256f10e2acf9226a9ef3d"

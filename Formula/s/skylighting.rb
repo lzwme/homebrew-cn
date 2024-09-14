@@ -7,6 +7,7 @@ class Skylighting < Formula
   head "https:github.comjgmskylighting.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f812ebcada2519e21076a6c59a62025bab920e8cb5ffd2bad58845a2937217b4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa6064604b6aace0d2f504aa79f76dd00f84f12d96918159c4a97c04ed878b9e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "83c2438d4d3cb4f0a2dfce5dbd809b7fbf4aab55822d1c72ee72fb44231f1b2e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cf6e14895f552bf586e1585e851cafa8b6455dda60aad3bb72f37a35b4d27b48"

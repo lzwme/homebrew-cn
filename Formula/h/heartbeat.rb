@@ -8,6 +8,7 @@ class Heartbeat < Formula
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b9fb0590600577811b34f36db2740278910822f79f2fbd1b1700df6500fe1e0a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95fbbce6cc097ca35e1301517a7bcd72dd5968b7ed42812c0b525400e3329c10"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "670b0d11fe1b23b86cdc2b9a81e7c330dbb1756fd64c9f35ade986423192025a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "55bda8000c9e906b265d9889f5de16c6b1fc56c4b96d02fe1e6c9c25432b68ef"

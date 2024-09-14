@@ -11,6 +11,7 @@ class Enigma < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "17fdbd4347b8e2adb9e1459f25c8669c1e3cd155099451d5ec0d6ebf70faeec2"
     sha256 arm64_sonoma:   "d3eae767601812b3250106ccaaccdfb1106e94e9e1242ef0537fbb09e47936c3"
     sha256 arm64_ventura:  "29d4ab1fe62d50bf1ff571784ce4f58bfc52bfdf1dc5c745566a59220ec0dda4"
     sha256 arm64_monterey: "d03595cec1ddb59025fcecbf6888f4aa111ea3109248dad844afff91da8589cc"

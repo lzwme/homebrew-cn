@@ -9,6 +9,7 @@ class Rawdog < Formula
   revision 8
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1ebaec94ea3222083520b1cfca49869844d24088ed1af63d6a871a769118d00a"
     sha256 cellar: :any,                 arm64_sonoma:   "942cc3edb211c502b8ae91e4a98161459a2045f0477becaeb1dfb4467eff947c"
     sha256 cellar: :any,                 arm64_ventura:  "50813ecfaa2bf53d666ed6762d96104bb6446e7fc5f450ccb856364a5df1f207"
     sha256 cellar: :any,                 arm64_monterey: "bbd289964467226e37cfcbe14d74e0769fc108da8a9896740978f8344c0758bd"

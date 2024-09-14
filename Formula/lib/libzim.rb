@@ -6,6 +6,7 @@ class Libzim < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "679cd93009e9c5e0f0ae21ddc4b39487cf6beb02417e720b6e837f77d56b1331"
     sha256 cellar: :any, arm64_sonoma:   "7568b83f08fc94270166a38329dfddce78683ec39f95fadbe58e435c07ced45e"
     sha256 cellar: :any, arm64_ventura:  "37b642fca20f63876f6680c50f572c8b6174f35f40431c82a37c7f6de3bca1af"
     sha256 cellar: :any, arm64_monterey: "2ef8b0cdc82668c43535df80f76baeb012c130fab6883f83e9eb0eaeca486200"

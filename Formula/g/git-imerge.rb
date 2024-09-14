@@ -18,6 +18,7 @@ class GitImerge < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6452fc57774b8dbee980951cd9b1810d62fe6b699a94a68ea53932777b79558b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ee561d031f2311e26f9dda25d7b501d2a74aa28a2e396bb6b1e1cb92f6c3b26"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bb4b1a2d1b17da2f34711e8234a74a0eda0d021602ab64120ae2773335badd4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fde1bc713b7bd48af84f1af32b2f9ee5c212ded7d9f63150372c09fe3f939e02"

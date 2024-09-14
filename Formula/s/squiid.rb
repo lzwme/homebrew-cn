@@ -6,6 +6,7 @@ class Squiid < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b17e72d4d22d88966111a63ae026a153f914204cbaa175fd7aaf2cadc9516b56"
     sha256 cellar: :any,                 arm64_sonoma:   "e65226dba5c635b6a7654119807167cd784609f3d6ee7fd229e066e3ddecc587"
     sha256 cellar: :any,                 arm64_ventura:  "192f669c507ed6e30b13a39574260ce3079c38dce77e290690444f4d053b0576"
     sha256 cellar: :any,                 arm64_monterey: "42573691dd99d9d27d4b8cfa669e942bb7af8fda09dca4cc58249a81a422c7f3"

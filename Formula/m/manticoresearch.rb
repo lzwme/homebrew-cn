@@ -19,6 +19,7 @@ class Manticoresearch < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "d1cc0bf982a31827707598ebfca997641504ff4807402ce3fefb7249e9898cb1"
     sha256 arm64_sonoma:   "e8c8da051f17ed8e3984e7a73b2956fe9dbb15af20f6586f7c639b82871d8b76"
     sha256 arm64_ventura:  "7af52d4fa6beb2a7fe7a7fab57d7781c50f340e1c4f164668e03ca543ffc36ba"
     sha256 arm64_monterey: "f793c0bb62386e8cc63f9657788d587c06dc742b507ac3c28d1d828d7ad00c8e"

@@ -7,6 +7,7 @@ class ErofsUtils < Formula
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "164a47a66dc73dfd0c26c7bb2d79baf65b834b420768462f109bde33369afa91"
     sha256 cellar: :any,                 arm64_sonoma:   "f0ffa1195c8c309d367c98c0c97ecfc5bf55bd4d55cfde8397cff07a29114242"
     sha256 cellar: :any,                 arm64_ventura:  "c9e4842ed8febb197edb0f3b84736b1cbb7572b833aff557a11fbb8fe5d19f80"
     sha256 cellar: :any,                 arm64_monterey: "9e1f64a8d4aa8393b1a76a9c6906996827528c51d09647ce2cfe082c7702f9e2"

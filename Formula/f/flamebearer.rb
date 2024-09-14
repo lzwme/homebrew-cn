@@ -7,6 +7,7 @@ class Flamebearer < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1b939fd19118035fcde87874cde3e22dc9c39140e23d6234c1c18c23967edca0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c60358a7a0492572ad61ea16c4747366addf4d31e360c4a59ec9561f1d725d0c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c60358a7a0492572ad61ea16c4747366addf4d31e360c4a59ec9561f1d725d0c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c60358a7a0492572ad61ea16c4747366addf4d31e360c4a59ec9561f1d725d0c"

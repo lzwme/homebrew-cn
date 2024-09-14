@@ -6,6 +6,7 @@ class Pivit < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b25623984260c936d7273f3a364c96c68ab7641e64da7f2b417fa5c9dcbb55c3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ae035fe7572033ac646c7def4bb127b88cf43ec0b5396f66ca90b20c062accb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c3d2c932012082cb53c0c9fe0f623e766873aafc218b9e134f20a59e00f14b1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "310d4a4a653caf261a9e90a1c5b7b43d5a27fc0c40732e796a2955313ad829f1"

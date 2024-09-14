@@ -7,6 +7,7 @@ class Libchaos < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "a06f03544d61ba6c17a360992f7397fcb0ed1eafb1027bb561cbe9e71c0bf2ad"
     sha256 cellar: :any,                 arm64_sonoma:   "e6b159ec85602b056a5cae0bda11203c4296f72fa6850e54e94067cf3360263d"
     sha256 cellar: :any,                 arm64_ventura:  "0e01bcaadb5cb22391c9671eed7f0a8a4852717f4ce45962f5bf088bcc025ca9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5cbe23d7c195b8cb1e7336596112bb1f84b3579cca069b5bc9b61e41c640e32f"

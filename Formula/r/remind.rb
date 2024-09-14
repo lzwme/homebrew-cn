@@ -12,6 +12,7 @@ class Remind < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "daa2eb3d762fc4c03d36d82605b0e13f06d559fb5ab2fe3004feee3685e55348"
     sha256 arm64_sonoma:   "8e0d7d21ad3cbe5015389daad463bd8f3d2dfb8931f2bb97b4763de3b7b6f9cb"
     sha256 arm64_ventura:  "2bfeae8953e8e8e13d1ac6e02b4925e186591dce2cddfcd7c4a1246ee8063863"
     sha256 arm64_monterey: "858138b7a522fbbc9bb7773b2b1d2ed9b713656fc8c950cc55e8582d6b96ddd9"

@@ -6,6 +6,7 @@ class Sniffglue < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "380179cc72c23149aaed5ef6524bc6f5f2cb6b0c441adf7cfce8d53a26026143"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5184107991133eadf3083906c31ccb12ce9c545f0d23510a791921ce27e7aa6c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5566a2eaa0cd2f09dbfafe380e78347697f1776022aedb042415e799afe19a94"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b735be9699cc3e29c84d333e042f6b3fddc2487936c22c72990c7baa501fa640"

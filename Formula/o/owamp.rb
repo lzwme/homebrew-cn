@@ -1,17 +1,18 @@
 class Owamp < Formula
   desc "Implementation of the One-Way Active Measurement Protocol"
-  homepage "https://www.internet2.edu/products-services/performance-analytics/performance-tools/"
-  url "https://software.internet2.edu/sources/owamp/owamp-3.4-10.tar.gz"
+  homepage "https:www.internet2.eduproducts-servicesperformance-analyticsperformance-tools"
+  url "https:software.internet2.edusourcesowampowamp-3.4-10.tar.gz"
   sha256 "059f0ab99b2b3d4addde91a68e6e3641c85ce3ae43b85fe9435841d950ee2fb3"
   license "Apache-2.0"
 
   livecheck do
-    url "https://software.internet2.edu/sources/owamp/"
-    regex(/href=.*?owamp[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.t/i)
+    url "https:software.internet2.edusourcesowamp"
+    regex(href=.*?owamp[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.ti)
   end
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9060c36f5f038c5d1b43cdb45319a414b214dc8ddef7745658b64ea756cd68e8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fc9777e3da78501d8a24156a754f8fea5135e97ae89d9357bef7efa06fab6d8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "103fa8cc22dd7993f374d851aa24dbb37369e5fa442304d3623f0015d0feb0d5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "07c1548f42dba72b33b71fcebfae84e881ec9c298434d77715cdc49bdcf6b8a3"
@@ -30,17 +31,23 @@ class Owamp < Formula
 
   depends_on "i2util"
 
+  # Backport fix for newer Clang
+  patch do
+    url "https:github.comperfsonarowampcommite14c6850d2e82919ca35cc591193220e4ebdc2c5.patch?full_index=1"
+    sha256 "bee4e43d43acea5088d03e7822bb5166b27bf8b12b43ada8751bd2cb3cd4a527"
+  end
+
   # Fix to prevent tests hanging under certain circumstances.
   # Provided by Aaron Brown via perfsonar-user mailing list:
-  # https://lists.internet2.edu/sympa/arc/perfsonar-user/2014-11/msg00131.html
+  # https:lists.internet2.edusympaarcperfsonar-user2014-11msg00131.html
   patch :DATA
 
   def install
     # fix implicit-function-declaration error
     # reported upstream by email
-    inreplace "owamp/capi.c", "#include <assert.h>", "#include <assert.h>\n#include <ctype.h>"
+    inreplace "owampcapi.c", "#include <assert.h>", "#include <assert.h>\n#include <ctype.h>"
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
@@ -48,18 +55,18 @@ class Owamp < Formula
   end
 
   test do
-    system bin/"owping", "-h"
+    system bin"owping", "-h"
   end
 end
 
 __END__
-diff -ur owamp-3.4/owamp/endpoint.c owamp-3.4.fixed/owamp/endpoint.c
---- owamp-3.4/owamp/endpoint.c	2014-03-21 09:37:42.000000000 -0400
-+++ owamp-3.4.fixed/owamp/endpoint.c	2014-11-26 07:50:11.000000000 -0500
+diff -ur owamp-3.4owampendpoint.c owamp-3.4.fixedowampendpoint.c
+--- owamp-3.4owampendpoint.c	2014-03-21 09:37:42.000000000 -0400
++++ owamp-3.4.fixedowampendpoint.c	2014-11-26 07:50:11.000000000 -0500
 @@ -2188,6 +2188,11 @@
          timespecsub((struct timespec*)&wake.it_value,&currtime);
 
-         wake.it_value.tv_usec /= 1000;        /* convert nsec to usec        */
+         wake.it_value.tv_usec = 1000;        * convert nsec to usec        *
 +        while (wake.it_value.tv_usec >= 1000000) {
 +            wake.it_value.tv_usec -= 1000000;
 +            wake.it_value.tv_sec++;
@@ -67,4 +74,4 @@ diff -ur owamp-3.4/owamp/endpoint.c owamp-3.4.fixed/owamp/endpoint.c
 +
          tvalclear(&wake.it_interval);
 
-         /*
+         *

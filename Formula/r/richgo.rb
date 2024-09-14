@@ -7,6 +7,7 @@ class Richgo < Formula
   head "https:github.comkyoh86richgo.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "967353f6b2bfa1c35a96f76eb85b98d3e6ea91d8b424a2655e80ab957884591b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c1bb646af1a17b66efb00c745ee6d27b14d9a5e492af3bf822e3867c7e2fde7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c1bb646af1a17b66efb00c745ee6d27b14d9a5e492af3bf822e3867c7e2fde7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7c1bb646af1a17b66efb00c745ee6d27b14d9a5e492af3bf822e3867c7e2fde7"

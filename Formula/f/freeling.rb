@@ -7,6 +7,7 @@ class Freeling < Formula
   revision 5
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "247d7a29b0f294b2907de43d169bc1a248675b87b7981c211b8283a0e4fe72a5"
     sha256 cellar: :any,                 arm64_sonoma:   "ecfc8921a5a1ce53c49dc24850bca48bb1c8877cf1784e03b5cff1e3bf2de19c"
     sha256 cellar: :any,                 arm64_ventura:  "801f54dc1051a01623a9503d4785d163125c46dfa1922fc08223d1aeeda4b4e7"
     sha256 cellar: :any,                 arm64_monterey: "75f5cd437c1988cec1a7c596b372929cdefe083cfd30bfaa9a27afa8c0cd943c"

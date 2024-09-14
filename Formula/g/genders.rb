@@ -15,6 +15,7 @@ class Genders < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e4fb31da5615e88dcc18ad6c9ef273e4af10e79bd9c3e5a1a6184988277295de"
     sha256 cellar: :any,                 arm64_sonoma:   "24687149f4c7eae6083d96d72ab233d6f15f009d86fc0aca12459f9bf7da5996"
     sha256 cellar: :any,                 arm64_ventura:  "987feaf1eba85ac7554b72e1b341779dec8e5b5785daa0cf490079345256f1d5"
     sha256 cellar: :any,                 arm64_monterey: "568666f7f26b9d68df7c5bce2db3f953b09fe9ef5e92d8adf2f48f81a6e1d388"

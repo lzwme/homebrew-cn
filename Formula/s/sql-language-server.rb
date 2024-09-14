@@ -7,6 +7,7 @@ class SqlLanguageServer < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42ed54577ebee0d08927ecfd9437c5fb34b86550f39ddbb267c8b80d91882321"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "236ad1d93cceec6914b58664d6a74deefd1fff1a40e10789c36d150bd7c14686"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ecc11126b7d5fb48941ae187fbcd52853d3e7669c4a28f24f4a6a6d458d5812"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "499c3ccad48b255dbdd91736fb19390c712857f25b7940468a6591db647a6af9"

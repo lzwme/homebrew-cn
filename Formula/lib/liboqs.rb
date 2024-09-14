@@ -11,6 +11,7 @@ class Liboqs < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39f8d94bc6ca31bce2e40151face7e2d02db662b7924ecbd9f2a066605b19048"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3d13a09430ca4d5b43704ab70d357476b7b1849822cec398158bbd2bbb9b8c8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0971baa26c5113916331dcfa4ecca341e435853a51421a183ef2dd4ad7f5315"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "918b8001f0ab62414f7ec83d49a76e46a9b7324b2f3c13dc9872a67505b01c36"

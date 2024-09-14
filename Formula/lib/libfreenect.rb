@@ -7,6 +7,7 @@ class Libfreenect < Formula
   head "https:github.comOpenKinectlibfreenect.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "933ad28174edd8c5301568af01a0a14138166bc3abf51e09232b8feb6f5610a7"
     sha256 cellar: :any,                 arm64_sonoma:   "2aee8ccf6079d0f96b58e1301986514e2de5279f13fbc6f11dcb0415137069e8"
     sha256 cellar: :any,                 arm64_ventura:  "0a7c2f69766090429451b4922549d12c0fc9863a5a02a481996814692277c554"
     sha256 cellar: :any,                 arm64_monterey: "f4451759cebfc907e6a83d2284cdcfd4250f84956623a35f59ec5904a3ff220b"

@@ -12,6 +12,7 @@ class Etsh < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "d67ffc1ce7bd60251ea6a60da6f2c4676d2ee3c32cdf22743398de0c2eb7cb05"
     sha256                               arm64_sonoma:   "94f5918f0bc1416a3a10328e6297dd831c2f65b588245cd7612bfbeedd169007"
     sha256                               arm64_ventura:  "8d172ed230004a39a1010ea98a5d6acfcf36e611a37fadb1ec4c354edd4cb42b"
     sha256                               arm64_monterey: "3ca74ea1e75dabe8babfe8e2213e5235f7f5feab2971115379a5aa8a2d40708d"

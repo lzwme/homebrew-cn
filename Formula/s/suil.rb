@@ -12,6 +12,7 @@ class Suil < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "4b56a9b28626afcc793d97786add7323f225ce0d8718a5ead21f84389dc33657"
     sha256 arm64_sonoma:   "3786a8f72e84d526393aacf88914e0e2c8846be83237c3583293a81a4501f172"
     sha256 arm64_ventura:  "2ae1dceda234d02d9345dda24395ac7b3c23420821107aa95c919d73953ad159"
     sha256 arm64_monterey: "cabdba5ebcc04aefab86262329a739b9fe072fe514294aba5188f5d48fc2988c"

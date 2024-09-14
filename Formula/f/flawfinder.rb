@@ -16,6 +16,7 @@ class Flawfinder < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42f5bed6b68e93a4761483efd269bbeb4fba2d0920f2c2ad28e67812d220429c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29f9397a8cee6ea519559666eca9fd4323259bc449543e8bc0f4afd30aeaceaa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "29f9397a8cee6ea519559666eca9fd4323259bc449543e8bc0f4afd30aeaceaa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "29f9397a8cee6ea519559666eca9fd4323259bc449543e8bc0f4afd30aeaceaa"

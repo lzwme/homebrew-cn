@@ -12,6 +12,7 @@ class Gitg < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "0af4ee0dce18044e562f13db479a27917fad5602fe6bd0ff68103e342d7ed7a1"
     sha256 arm64_sonoma:   "1caffaeae8c0c99e46b34624513085e7c8fbe27c38635277f66159b9edf517d3"
     sha256 arm64_ventura:  "c2973e35ca94c61673fa4f9861f67278a021735c11afb57d1b59035efe0c21ba"
     sha256 arm64_monterey: "2cf313c7b67b8f4e8e0656c1273872fa2786d894c84ed8bc6f608b1f543c6814"

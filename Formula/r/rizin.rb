@@ -7,6 +7,7 @@ class Rizin < Formula
   head "https:github.comrizinorgrizin.git", branch: "dev"
 
   bottle do
+    sha256 arm64_sequoia:  "9aa7f91804171ae76d2aca51e8c34d3fbb890e72e3da045453da457d7419e170"
     sha256 arm64_sonoma:   "b6d421f03bb42ad27a0538a7e24e2ff658332864d3f0bcbdc9da49e4ef43b8e3"
     sha256 arm64_ventura:  "d45f434a310b2f37e931664b2f318b8c60e5d2dcad34d7bc908df53ddfe8a856"
     sha256 arm64_monterey: "5fa93764282c486581b950a2cafdcf7f5707d4dd8de72cf88ce42395db818e26"

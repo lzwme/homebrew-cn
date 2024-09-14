@@ -7,6 +7,7 @@ class Skate < Formula
   head "https:github.comcharmbraceletskate.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6901230e1a4ee9192e8a5c5e9fe3f068484f70f14fddc742742df51264ce45d7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"

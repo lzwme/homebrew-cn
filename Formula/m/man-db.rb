@@ -12,6 +12,7 @@ class ManDb < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "27ba58e67a2b3deb04118225b9716dd8047a4c64f0969e631738cd322ddbc3c4"
     sha256 arm64_sonoma:   "2a8803f43ddac8a71bc3450156dde1ab02096cc43afc3e302bcba65eb7b6fc6c"
     sha256 arm64_ventura:  "ae98eff606a38947f0ad930f8e10cdf6005ae0a44fe1f020c595bf617a283679"
     sha256 arm64_monterey: "fb47b7738fc85725feedbdf2e51fe57e516da29d666f49b64f77f6738885a3d6"

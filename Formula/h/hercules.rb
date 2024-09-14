@@ -7,6 +7,7 @@ class Hercules < Formula
   head "https:github.comSDL-Hercules-390hyperion.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "78ca0a33df7c8ffc07c41708f6222835e1d7819b180d2a182030fa35d0a0be72"
     sha256 arm64_sonoma:   "6335c4dd89a1abb2951183b3ec1b0b08fb67a31c40f037a79c55621670343f74"
     sha256 arm64_ventura:  "5329211fef90aff4b3eee6b92b28f00aec11d8d1c4de0f6b0fd3f785e735b64e"
     sha256 arm64_monterey: "4fc79b7305696102ac6f2adc908434782ab242b87594fcd018fb03beb5c39095"

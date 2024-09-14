@@ -12,6 +12,7 @@ class Pocl < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "e395acda5088561980a3fb92513e15744755e469fdd78be1ac3d2fa3bd48c448"
     sha256 arm64_sonoma:   "7b3835607078ca4df3dbc06854f76b5e549c50d4ed09bf3563492a2be94fd620"
     sha256 arm64_ventura:  "9448e2ec4c6f9759cf5acf4ff4d8b24c50b68851599c2e873097c5441f1f5d72"
     sha256 arm64_monterey: "2d090450167c159d1083b9df2ade36d85a0d17e362c0a13f8bf08b632a80efba"

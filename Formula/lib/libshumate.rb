@@ -14,6 +14,7 @@ class Libshumate < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "f639515c44cca86b9c410be944f8adba2c248168153b844b6206169ae8e89c09"
     sha256 cellar: :any, arm64_sonoma:   "8f5438955bd5fbbfd95811eb64108c613e04f1a805393c3622d4fabf27b8d526"
     sha256 cellar: :any, arm64_ventura:  "70d8f7cef1d8a1693b170ba40d44cfaa4777356be44722b566b666c8f47799e2"
     sha256 cellar: :any, arm64_monterey: "8d9966635e9f3c62111d7541ba609bb7eed54d76025e2bfff343f6c7319d3ac7"

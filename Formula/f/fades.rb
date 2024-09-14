@@ -8,6 +8,7 @@ class Fades < Formula
   head "https:github.comPyArfades.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3725f9091d90daf2c25fd19b5efa73f0f804570e01de32ab8191b9d10dba5ca9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db9dbe6128a69d214f0b51088e23b59320ec16cb733b2f73eb0771673bd589b1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "db9dbe6128a69d214f0b51088e23b59320ec16cb733b2f73eb0771673bd589b1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "db9dbe6128a69d214f0b51088e23b59320ec16cb733b2f73eb0771673bd589b1"

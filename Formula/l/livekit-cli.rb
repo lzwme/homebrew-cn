@@ -1,20 +1,20 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.1.0.tar.gz"
-  sha256 "b49a395169381140f39a9da8308ac100626e7697862fbee1e6c49fa9d1bce657"
+  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.1.2.tar.gz"
+  sha256 "54aff2355c2935c1e8c93ce9f342267e99921a3a7276be78e30af0f20e2ab776"
   license "Apache-2.0"
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d91067d5c7cbc881226ab29dc2ed600224581f22d39b6a5e4820709fc85c564"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8644570224ebe08fd208ba778f755584ecd6b19880ea5fbf2ec6a152398adac9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8644570224ebe08fd208ba778f755584ecd6b19880ea5fbf2ec6a152398adac9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8644570224ebe08fd208ba778f755584ecd6b19880ea5fbf2ec6a152398adac9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a8600c4439b4a701ab80d9f34e6d6a8d0b337dd147defe8c999c783d72db5f4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8600c4439b4a701ab80d9f34e6d6a8d0b337dd147defe8c999c783d72db5f4b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8600c4439b4a701ab80d9f34e6d6a8d0b337dd147defe8c999c783d72db5f4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4909db963f9723900726e5120fbb3fd3fb02a163a9c056d11f26c16523fa7ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e87766a690218554c0c2bec475d43e146c1fad5b48a7ea7210caf27047a4f7dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e87766a690218554c0c2bec475d43e146c1fad5b48a7ea7210caf27047a4f7dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e87766a690218554c0c2bec475d43e146c1fad5b48a7ea7210caf27047a4f7dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e87766a690218554c0c2bec475d43e146c1fad5b48a7ea7210caf27047a4f7dc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "84e2d9263c9ae80b5edb2fffe965533c4a7cab7c7d064488065d9117efa2fff2"
+    sha256 cellar: :any_skip_relocation, ventura:        "84e2d9263c9ae80b5edb2fffe965533c4a7cab7c7d064488065d9117efa2fff2"
+    sha256 cellar: :any_skip_relocation, monterey:       "84e2d9263c9ae80b5edb2fffe965533c4a7cab7c7d064488065d9117efa2fff2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58cd8b5dd766dbbe8c3b2572de06fad06b25574cb2e0cf4b91e2ca7669bf95c9"
   end
 
   depends_on "go" => :build

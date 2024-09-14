@@ -6,6 +6,7 @@ class Dotter < Formula
   license "Unlicense"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4e22655013ce29dc3aaf2aef3f7c8a6e86fffea03467e20c2fdc521c2b5b426c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86cfd0af4c611bb66e40cfea7d2d88e231819a84cc9b52eabf1101c51744ee47"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4573660ea7606a3d479eba1a215baba32327d862981bbeb2a88028f04b21516"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d97dcb1be41061ec99862f720fb241dbbab70d158ca09896bf664291be3d6ef4"

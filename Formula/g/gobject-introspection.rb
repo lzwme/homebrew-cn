@@ -4,20 +4,17 @@ class GobjectIntrospection < Formula
 
   desc "Generate introspection data for GObject libraries"
   homepage "https:gi.readthedocs.ioenlatest"
-  url "https:download.gnome.orgsourcesgobject-introspection1.80gobject-introspection-1.80.1.tar.xz"
-  sha256 "a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8"
+  url "https:download.gnome.orgsourcesgobject-introspection1.82gobject-introspection-1.82.0.tar.xz"
+  sha256 "0f5a4c1908424bf26bc41e9361168c363685080fbdb87a196c891c8401ca2f09"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia:  "820c8845333c838652f962bdc24b244a0b5e854844e949f6aeb7945d554ec6a6"
-    sha256 arm64_sonoma:   "e28f50144066ecbc4215381aa26c238e8dac6ca0362b1e603784ff48dc6e5e7a"
-    sha256 arm64_ventura:  "f89a382a4431e4c45ecb3de881344e6c5cd1a4a3d5ba5e589bffbc6af4015478"
-    sha256 arm64_monterey: "e86c150176699e055c782a3ce9ae54ca7f11aa2f49cb513ea034ea8548a38daf"
-    sha256 sonoma:         "2ae0d61dd15cefe025aa2d2fcff53f59922ee4617de110dd53890b83a0c7fe87"
-    sha256 ventura:        "778bbc5bdd75e7d532116dc6db6a3e65ed7ce6382d93c9478e7f63f1635f77be"
-    sha256 monterey:       "93689c0323a853f42ba85ffab5856267b11b88d497b53faaffc60e6411f105a2"
-    sha256 x86_64_linux:   "a45a7a0410ff701fd481e4c9ae57920cb19b9676f357c956dd72e6e60b95dd29"
+    sha256 arm64_sequoia: "8d74abd27df2b62211a8e14c6d8900f258d5b3590956d801dae80ea4f6f1f4df"
+    sha256 arm64_sonoma:  "140e00fb8669877b8af6cbb7b0d3e3b88385e3b1478a6cf0a82aa5d78affaf62"
+    sha256 arm64_ventura: "72b7d5b987719b01b2d1a55b8401eea731299b6ae636a15e5ff1ddbbd4650f78"
+    sha256 sonoma:        "0065754b9e716fe32e180e8a130cd83f16797704b8a310fa300fa2511c42b12b"
+    sha256 ventura:       "7c874e6c4e301f867f7825084975240d3dc23311c92f460f48af59378409c1c4"
+    sha256 x86_64_linux:  "c69de82d45cb1788871624ed192f58955055696ed0ea1f714e1cd178184bb283"
   end
 
   depends_on "bison" => :build
@@ -48,8 +45,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesac110a953274017ca5c33a9831bc5e052e825d174a3551bd18924777794c8162setuptools-74.1.0.tar.gz"
-    sha256 "bea195a800f510ba3a2bc65645c88b7e016fe36709fefc58a880c4ae8a0138d7"
+    url "https:files.pythonhosted.orgpackages3e2cf0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6efsetuptools-74.1.2.tar.gz"
+    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
   end
 
   # Fix library search path on non-usrlocal installs (e.g. Apple Silicon)
@@ -58,12 +55,6 @@ class GobjectIntrospection < Formula
   patch do
     url "https:gitlab.gnome.orgtschoonjgobject-introspection-commita7be304478b25271166cd92d110f251a8742d16b.diff"
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
-  end
-
-  # Backport removed distutils.msvccompiler
-  patch do
-    url "https:gitlab.gnome.orgGNOMEgobject-introspection-commita2139dba59eac283a7f543ed737f038deebddc19.diff"
-    sha256 "62c1e9816effdb2f2d50bc577ea36b875cdd5e38f67ddb27eb0e0c380fa29700"
   end
 
   def install

@@ -8,6 +8,7 @@ class Terminator < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cd9a4da25659541b070e94573fab3ab65c370ed538f246db565da65fdb4ef53d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "977d208ffe8ac59d8a5ff0ef577ac0e6e6af388ca5bd637632227ad232a72326"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d7be7db387a5e11d7ed9f6f6e08c5638ec484680d923a2486f12f993ff1ded4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c059276169ab3dc9d3307fd648252ea3f10ab046cab0c51b3f0fa7cd8a386ff1"

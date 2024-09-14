@@ -3,19 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.50.tar.gz"
-  sha256 "cd92a1f9b4639c548514d6d8bc77300491e3841c25f6aa143a1d2a427e6ab9c7"
+  url "https:github.comawsaws-cliarchiverefstags2.17.51.tar.gz"
+  sha256 "bf24a08ad58df75de884a3195b5f823d73ae6a5f310f0f7f495018f5e7e9bb8e"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db192c7dda51b2de42fa3b4df70d4a706bed069f27ec85fd16a6d165e5dfe1af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e8f97fa869cf0988928529ae492bfd15e6082e76377c81aad4d6e3c68782b85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a64ae2d09d214505163bfc380cc4fd9fddb63c35051d6accbdc2491231edf3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "df8dd64b32928ee10a54cdf85016a08981cfbbbfb77e03854bd1eb11669eb881"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d43217c28759d0c4c5fcef35c08e469e6b5cc222d771449a8b365814525cefd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6ff8aebb527c5e0f3673dc0e13bee16d47859a22e2a11c51f56a552758914e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb99b20ab82c5753f798b1c84916ec05905f1795ef5d02dac0cdc684a269cdbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "052a06dba97e8097ee3d07c0c1b1c644aefb1c3ccb02e547333bc62c94cee797"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0198246ecee71a65723a24653cb061d212c3580aa33ad9c891509b0be86a99be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "641987fbcda14af12101716ed472c19cfb689491187d9a068afcb32d0681e0b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9bafc0d07fee1f694244b1255d7950b3221f3144d738730ec6820d45963cdf2"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb253527bb75d14f2364246d1a876957738cb554ab0f1e3b47d7bb0a42f3a821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acf6fd92d05717fd5bc12feb24e3b7e5a1826be60dbef4962338c55c4b89fdd1"
   end
 
   depends_on "cmake" => :build

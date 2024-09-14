@@ -6,6 +6,7 @@ class Pint < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "10e3d8411b0450e307e0e07b64e9e7b30a4546e77ab8b77c2ec974caaee23262"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb78b4a58af4330542f3578e0dc2566640de4773f63d393f506fb0cfcef056db"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb78b4a58af4330542f3578e0dc2566640de4773f63d393f506fb0cfcef056db"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fb78b4a58af4330542f3578e0dc2566640de4773f63d393f506fb0cfcef056db"

@@ -36,8 +36,8 @@ class Libjcat < Formula
   end
 
   def install
-    rewrite_shebang detected_python_shebang, "contribgenerate-version-script.py"
-    rewrite_shebang detected_python_shebang, "contribbuild-certs.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contribgenerate-version-script.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "contribbuild-certs.py"
 
     system "meson", "setup", "build",
                     "-Dgpg=false",

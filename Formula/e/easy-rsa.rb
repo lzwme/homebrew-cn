@@ -1,14 +1,13 @@
 class EasyRsa < Formula
   desc "CLI utility to build and manage a PKI CA"
   homepage "https:github.comOpenVPNeasy-rsa"
-  url "https:github.comOpenVPNeasy-rsareleasesdownloadv3.2.0EasyRSA-3.2.0.tgz"
-  sha256 "db8164165a109bf1f6dbf578c3341349821bb4fde5629398d82918330134b43c"
+  url "https:github.comOpenVPNeasy-rsareleasesdownloadv3.2.1EasyRSA-3.2.1.tgz"
+  sha256 "ec0fdca46c07afef341e0e0eeb2bf0cfe74a11322b77163e5d764d28cb4eec89"
   license "GPL-2.0-only"
   head "https:github.comOpenVPNeasy-rsa.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "eca7f9bc27629b7b609eba9f1bd75c937cc73767da281cc446b130925dfb19ab"
+    sha256 cellar: :any_skip_relocation, all: "3057967081df2d2d15bf9547dc7d7a25019fccd91340ecb5f801c1f6c9c71d5a"
   end
 
   depends_on "openssl@3"

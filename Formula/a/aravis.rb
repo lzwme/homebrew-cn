@@ -6,6 +6,7 @@ class Aravis < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "96d182a7e33a41f832f692201bc0bf29067db30a48d7039c0b514c076e9b205b"
     sha256 arm64_sonoma:   "e39510f09d4f2bda766c23e3f422d3040ee1225c5b8eddb8703b1318002484de"
     sha256 arm64_ventura:  "d6313e2de688f3c43580f82848e2a6a47aa382491867ceceaccfaf6f133caaea"
     sha256 arm64_monterey: "5574d293684a538839a1bf15949a0bda46905721e93718e8d04939734778d58b"

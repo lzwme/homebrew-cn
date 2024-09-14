@@ -14,6 +14,7 @@ class Mapnik < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "26640f552d65f93b7945a55e0869f5c2d05becab2b5b0784c41982a77503e8f0"
     sha256 cellar: :any,                 arm64_sonoma:   "a08567fab792639725b4e49a52bdadd453663dd6382e425e2543dc488dfa6ffc"
     sha256 cellar: :any,                 arm64_ventura:  "4a63b043bf14cfd50a5542e8675241c6688914fe04e36fe8b07404f2844bbb42"
     sha256 cellar: :any,                 arm64_monterey: "4f6dce463d60991c23de3f2671167a17b00b14293a431506211b5e4afd804803"

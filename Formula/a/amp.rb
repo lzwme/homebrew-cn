@@ -16,6 +16,7 @@ class Amp < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9c3984d37e228dc23f0b719b3d34a297359fbc30831ab3b98cd0316031aedc80"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7740df6c776c2e0520337ca8e5683f63315cbf18ad976c2ef859971ea43e4489"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aef57b839b6f12acb5fab08b71b9d3956585b4f019663230a0fc1ec867e9db51"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "db8538414b3471e899497ab7462383c4ec27b23f8c648fe41458da13218bc331"

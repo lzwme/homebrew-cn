@@ -6,6 +6,7 @@ class Fwup < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "dca6a88a34668d691a7e75c586bf1d3ed3c551da56c61631b8d90ebc20652cef"
     sha256 cellar: :any,                 arm64_sonoma:   "e483cc908d13ca2c5f77329acfc9f0a2e07c309eaa5cd654cbb92fabebb9521e"
     sha256 cellar: :any,                 arm64_ventura:  "c4a7b6a2f48c2ec1193f646f627db6a185af212913bf171be2d46ebbd8f3a90f"
     sha256 cellar: :any,                 arm64_monterey: "6ce4ca5b3844c3930db020e6088482170c4efb57dbdbb31f1bf6aff9bba05527"

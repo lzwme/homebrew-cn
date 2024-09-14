@@ -9,6 +9,7 @@ class Solarus < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "7a1ba3cba1fb09278c607e4a5864dcd8d71d7ec44b43835661185195d3b23c24"
     sha256 cellar: :any,                 arm64_sonoma:   "f26e691c890948a299006ddc3677442e381252d77ba46efb5685e0215600a515"
     sha256 cellar: :any,                 arm64_ventura:  "20fbf5ecc4020956d8d4938b8e02e0451030e504fe2f0a3493044b55e53763ef"
     sha256 cellar: :any,                 arm64_monterey: "1df04c516d36ec062f0ad18d10495aa879081a3564210dd264dd36e381410d23"

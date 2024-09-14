@@ -6,6 +6,7 @@ class Dartsim < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256                               arm64_sequoia:  "324071ed085c1271aadf3888188dbc191ffddf7826dcba046cde62852a079818"
     sha256                               arm64_sonoma:   "c678fa87d190dce71e5ec19caeb042172a4c1eefd6312814942381a907d8015f"
     sha256                               arm64_ventura:  "8df0a41bfac187753b2d80c375fb40f8b9a95362a5ed2748184e27ffe0d38bc2"
     sha256                               arm64_monterey: "8d33767ef55aab5b8c02a41ffa78a720b99e5bfc4dfec20bd7de3afd6635e93c"

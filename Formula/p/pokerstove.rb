@@ -7,6 +7,7 @@ class Pokerstove < Formula
   revision 3
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b88ef14c0527886d0b9b7f6e8862b8fcb5afd0e1a28b42feec0bd585dc4f8d01"
     sha256 cellar: :any,                 arm64_sonoma:   "7a4ec7d32579b6a7f9febfc03b36d85647af76998c400153e34e101f98a22c7d"
     sha256 cellar: :any,                 arm64_ventura:  "1091061709489217ae3bb88a361d6b2e70141d120a7dcf82ccd5eb82c63449df"
     sha256 cellar: :any,                 arm64_monterey: "1fbf1d2e7d89dd9933bac8216ab6550387d1550c30d0f8784a5d325250c8658c"

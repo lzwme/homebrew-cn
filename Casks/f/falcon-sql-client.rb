@@ -8,7 +8,7 @@ cask "falcon-sql-client" do
   desc "Free, open-source SQL client"
   homepage "https:plot.lyfree-sql-client-download"
 
-  deprecate! date: "2024-06-17", because: :repo_archived
+  deprecate! date: "2024-06-17", because: :discontinued
 
   app "Falcon SQL Client.app"
 
@@ -18,4 +18,8 @@ cask "falcon-sql-client" do
     "~LibraryPreferencescom.electron.falcon-sql-client.plist",
     "~LibrarySaved Application Statecom.electron.falcon-sql-client.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

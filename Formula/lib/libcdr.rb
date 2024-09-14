@@ -13,6 +13,7 @@ class Libcdr < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "828104e9ac0396fada40357eaf5da22f3137ee7cb91eba91ad7bd1661f7428f9"
     sha256 cellar: :any,                 arm64_sonoma:   "b4324147de4d9b3a82e0ae4239bd1306cb5e5b01d52c49e137d8002fd9999fa8"
     sha256 cellar: :any,                 arm64_ventura:  "588bbde423941f0353de8d1079e317732c576af3b0a661aec50c83352a9047c7"
     sha256 cellar: :any,                 arm64_monterey: "7a30b587bbba798295a3af16acff7d9974ec298d0e3b7b2f1fd92f249b140e09"

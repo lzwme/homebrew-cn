@@ -10,6 +10,7 @@ class Fypp < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3bbed8e78daaa42bf5b172a5d7ae5f53aeb8ecf86b2cc72ec2539e8c2d996707"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96ed097ad92dfefc28ccd5c4b31442da47a205a9c8cbab1d79a6a2bc17295893"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d9caddee587d281933e20dc009f96ab7ab04e856bde600dd0e92081f68e0ffb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9ae93051063f65a09473b0b447f68506731756ba2bff186985b972e1115f2352"

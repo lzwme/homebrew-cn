@@ -10,6 +10,7 @@ class HttpPrompt < Formula
   head "https:github.comhttpiehttp-prompt.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1f136fc6bbd29a807f206c7c721547a3790fee7dc53a9ab52c09dd09862bcdfc"
     sha256 cellar: :any,                 arm64_sonoma:   "7397a0e3dda338465615ed83d476d5e55b993e6c82c5329d7e362cc3fc42e2c6"
     sha256 cellar: :any,                 arm64_ventura:  "37d737b7e8e71f41e584dc30e8642f95df42fd4b48d30022ee67a54193850264"
     sha256 cellar: :any,                 arm64_monterey: "9541b8a0f39ba1ea494d43b0edaddc8117edc146ccb408859b4328aeca7130c7"

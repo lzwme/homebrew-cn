@@ -9,6 +9,7 @@ class Enex2notion < Formula
   revision 9
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8b49be01fa12ba5bebef8f552da44d0fddc4e1c54ce368f77b8be6eca443a573"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3c5237e24e296d5a095a38b29ac40da52de6829073c6694743a298766aac9cd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb147ed68b9452b4eaa389b3b84c179d8739527ea11cca8057f4c57cfed298ae"
     sha256 cellar: :any,                 arm64_monterey: "e0a81a94bebda956c6727ca9e6d279a791ca96f91d78a2c9bd8a87886c6573ae"

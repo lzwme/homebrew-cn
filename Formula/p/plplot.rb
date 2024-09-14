@@ -10,6 +10,7 @@ class Plplot < Formula
   revision 4
 
   bottle do
+    sha256 arm64_sequoia:  "cf6dacf91be6c1cd99f50b5913882752afdece2476827c44d3d21c236dceba07"
     sha256 arm64_sonoma:   "38f8a5391d8b19cb448e226be25d6f6b8ccadbfb24fe27ed4cf701dfbc8b54aa"
     sha256 arm64_ventura:  "486576902b6d2b2e587234bfdaecfc7ee5a58b3f50bf8d622ead6eee8952c091"
     sha256 arm64_monterey: "c9a7891722c17ce0ac1243e1400583ff61250a3ede6a1d232c2a6c9aa4a98178"

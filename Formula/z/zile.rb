@@ -33,6 +33,10 @@ class Zile < Formula
   uses_from_macos "ncurses"
 
   def install
+    # Work around Vala issue https:gitlab.gnome.orgGNOMEvala-issues1408
+    # which causes srceval.vala:87:32: error: incompatible function pointer types passing
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end

@@ -8,6 +8,7 @@ class Gfxutil < Formula
   head "https:github.comacidantheragfxutil.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "63bb7dcf0a63573ae3d930724c50172fdee932cebf3733d5862cd961fa2ff5c7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0bcf7f6998efc819378c5b42de7ef889877a8dfee552c50b19b2e936ba90730"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0346234f7ca528ca436186c2b4aa58a398756e6ac6ebaaa3329ba95b915835b2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "884219668e6a3456f9060d164c912368804a2a3f07787276933ea231bbc04a27"

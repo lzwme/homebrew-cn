@@ -6,6 +6,7 @@ class FuegoFirestore < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e5873fc3fad57f4398f1de0f6c258d23ece64e48640866669c7768c76ffcec4e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e18818cb5679bbbe3dd54d1f4f9adbb0ce55678fb034cd99e57306bd3736084"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "61a78fbab2ed526da2325b8963c6cdc8d1dbadae866ba53bb98711a33d4ff259"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5cccd36ed223be213a899ac913356c745339ca64c094643a187add03c76b41ce"

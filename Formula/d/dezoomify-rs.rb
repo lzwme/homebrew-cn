@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https:github.comlovasoadezoomify-rs"
-  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.12.4.tar.gz"
-  sha256 "e566a0d3b5ca0d43d854fe61d4179c5a0e00df7ee30db8e433794c587a3007f7"
+  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.12.5.tar.gz"
+  sha256 "aa3e34c257c6f4bda6afb485a9f787e8d99664fce0f8a87303d77f4cc7dd3c72"
   license "GPL-3.0-only"
   head "https:github.comlovasoadezoomify-rs.git", branch: "master"
 
@@ -15,14 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6108e3f3d2507cf3d9568fb550e0a553840537b39263b9aae50b0855bfdfa8d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3118a987327d95b5ef945fbaf4c598f527133daffcbb165d9609c5df68626fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6c4fcdacb5bb1864ae2cc532fe2e6e1c79b15f884f345c41a8279c579a7ab0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d739c78b279a15b59e2ffd3a91bd607108d108361fa8b6b16b768a0a49df1d3f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1dee73796118840791f484564ff0a87dcddbd4f5c56286386de070340339fa1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4b2ed19f87eba205a9144af8462aadf493f4fcf16e056ce61ffa1f79be48dd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "5043e61b079f4e06dfa2b8a641b9c0819c34c34f4d2cd02d38286bdb0b39936f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4288d4e6263d330a6858a1871e4323ec2879afd1fa03ccc6202dc6f92d04e91a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a166c70ef80e1e2424fe077b80a9fbe4a9bee71414765b0985675647a2f6a4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a87f1ed82055073136d92cf241ca2c927bfd6342e0ca0ef0c5be1b8dcffedf8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1f5a790d2f4450c3ca2d1f727eba238f43e661c71fe413541c0a0082d8dd359"
+    sha256 cellar: :any_skip_relocation, sonoma:        "643e17c2e549b671bbb15d36ed9b20aeb6a32e32dd87ca1f8cd2824dcd86eb86"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2a11962cca1a68ac66a6a349b06a01dc787c9faa113775eca345af150e1bd5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d38435fa39db5a7bace994236bd6d94c1aacb4c8f515b814accc2813d186a81"
   end
 
   depends_on "rust" => :build

@@ -9,6 +9,7 @@ class Fava < Formula
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "305155deec0f2a6f892414ca773cacc88d78f7b4cd82de204d97911bd44afb47"
     sha256 cellar: :any,                 arm64_sonoma:   "0c2cc30ce7e28439011417feee8267215da2e42ac57360fc594313939c780db8"
     sha256 cellar: :any,                 arm64_ventura:  "821e1c1e0aa4eea6e39e7bddec40e2ca57fe8154d18d8d6c12da76740c85fc2c"
     sha256 cellar: :any,                 arm64_monterey: "0761eee65a1383c06443a590b569e3bf04a65d122fc129da51012d9fbfcbef26"

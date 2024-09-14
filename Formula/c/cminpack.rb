@@ -1,19 +1,18 @@
 class Cminpack < Formula
   desc "Solves nonlinear equations and nonlinear least squares problems"
   homepage "http:devernay.free.frhackscminpackcminpack.html"
-  url "https:github.comdevernaycminpackarchiverefstagsv1.3.10.tar.gz"
-  sha256 "6355776f60ebfeef63883aa02c19ab57f1ba776e43122f27cb3161e7fc277d1d"
+  url "https:github.comdevernaycminpackarchiverefstagsv1.3.11.tar.gz"
+  sha256 "45675fac0a721a1c7600a91a9842fe1ab313069db163538f2923eaeddb0f46de"
   license "Minpack"
   head "https:github.comdevernaycminpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e0ac7bfa2fdedb96e6e90751dec4aed32528318c397aa8f90c7dcb51286e59a2"
-    sha256 cellar: :any,                 arm64_ventura:  "00662bc1aa8ee430d61ed7ff52f2c77fa2ef1239b099f137f8727ba5f157e2a8"
-    sha256 cellar: :any,                 arm64_monterey: "bde08e6279067da3d7a1140e031fe9ce6ae5f23e450d04799972cd605d991577"
-    sha256 cellar: :any,                 sonoma:         "53de4275f881a04b906f818ed70f709e4f8b4e3c7d2ddb0b73086a5900989be4"
-    sha256 cellar: :any,                 ventura:        "20ccbe51f38b6975afb3ffe4fbee044721adf9de050c7fc71eeafb57ee8d293b"
-    sha256 cellar: :any,                 monterey:       "80c2b694c9438be2f9bfe0823cd69d27fc7d7032a761d6d27234ec915cfaa613"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90c1b2e9eefa5f2fa8062d148390856cf16dfa51f123c0b5fe907920edcfbfd5"
+    sha256 cellar: :any,                 arm64_sequoia: "a3742c503095e979488e41caa028da813433223e16d138233a03b6a50566c8fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e56f9a0fa73e882dd63c5cbbb06f5fbe27db19fef627207cc5d253db3b4ccd0"
+    sha256 cellar: :any,                 arm64_ventura: "ba4c53b942a58d25cca56a66bc8b66383042b4fc675bacd71e07a88257035818"
+    sha256 cellar: :any,                 sonoma:        "fb0d98cea9e085b73c79cd908d32e853f2eed59ec62bed48fa75ea2c5695fa7e"
+    sha256 cellar: :any,                 ventura:       "86f126b5834472ae2a8db9c866c2e3233b9b29551d50a6df956015b0b8f16745"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f55468bdd04566bbf3e98f914a13aab28e016a20f3f80c63804159611f9997"
   end
 
   depends_on "cmake" => :build

@@ -14,6 +14,7 @@ class Fuego < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "ba5cd9af8fe11684d0dfffcd393417b2874849666cbe77cfcfde03d461074d5f"
     sha256                               arm64_sonoma:   "728de8edc4b06d36d3160d14071d41a398d7baf7a25e7d549d58ab577acce36e"
     sha256                               arm64_ventura:  "5e8cc9ada632b70b903ddcbf541dc53a2f32382108000988c5c8314c931a37a2"
     sha256                               arm64_monterey: "44f70fc2fc2c52d9cbe6c58cf66a1d707e9f4e8625d3f168c583dd2a5c1efbd4"

@@ -11,6 +11,7 @@ class Libnice < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "ba8cba3efa990c2900e54222096d5ea1f25cc1b85cb6f4ca891d386f4b26a48a"
     sha256 cellar: :any, arm64_sonoma:   "561998831e0aa0fd61bd6ba913249959b5990a527f3b201151acebb9ba36e166"
     sha256 cellar: :any, arm64_ventura:  "864676854f73e9d95de61dfd004f4e49e161fcca41a58b2aab7e6d2f03e1715d"
     sha256 cellar: :any, arm64_monterey: "c0b2d5e710b9748cb14804ccfc32b8f08949f4212313c0c3eed8b74fb0b2e3a9"

@@ -13,6 +13,7 @@ class Gmsh < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ed45482acf3bcbc86d9126c68718128f0ea1525f3fc546ab879f2926192791fb"
     sha256 cellar: :any,                 arm64_sonoma:   "9f3836c4ba6bc88d80f5b4b16bb75dfb424abc9cb6ad157eb66de1c0ead79f38"
     sha256 cellar: :any,                 arm64_ventura:  "b2eca4d0f50393fd431f2f4e35f6ef32b17b07f7edcca72f53ae526a2c639357"
     sha256 cellar: :any,                 arm64_monterey: "7c11588d5e558f65d930ce46f2c9587e9a846e5a7471cd8e86a7c1e7be6ebb60"

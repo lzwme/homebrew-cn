@@ -7,6 +7,7 @@ class Planck < Formula
   head "https:github.complanck-replplanck.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "200f7832692fda6dafb1bcdd27035e6b426150b554550ad72408a5dc12469565"
     sha256 cellar: :any,                 arm64_sonoma:   "d191a614bd84bcc9d260923fa40aeaa05519773c758f2731fc12724c478a9b40"
     sha256 cellar: :any,                 arm64_ventura:  "417db2a6168646c53b8bf748fc8920c97f41e362e463042fad5548106ae0b235"
     sha256 cellar: :any,                 arm64_monterey: "a2d86b54405f284660eeb8199488b1892747d60aafdc453598d85cc8b2ddd84d"

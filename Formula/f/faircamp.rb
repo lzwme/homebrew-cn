@@ -6,6 +6,7 @@ class Faircamp < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "e434d0c2c038d275e0e1e7a52bb6ea312bb02ed3cc4259dfcd98b93aeb4b0a43"
     sha256 cellar: :any, arm64_sonoma:   "5c4808170c5f902c60a38f29e58d9149a46f21b02dd097cd92cc35d61cd506c8"
     sha256 cellar: :any, arm64_ventura:  "798291ad82f253530b72c9deb1c29bba72b22b907d75e50d038d62646ab7eed0"
     sha256 cellar: :any, arm64_monterey: "1c078dd1b401f557235d6b849031becc3d04533aabd144b774caa189194bd12e"

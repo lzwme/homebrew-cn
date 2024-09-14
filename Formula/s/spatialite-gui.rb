@@ -12,6 +12,7 @@ class SpatialiteGui < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d4416d61f3cd5dae9afe7dd777c13856d91d807789be63c78ccd70cabd219b2c"
     sha256 cellar: :any,                 arm64_sonoma:   "239373bbb041e0934be1ce33589a1a2837de52b6a7f2287126ecc0027e837b74"
     sha256 cellar: :any,                 arm64_ventura:  "772be15226097ff551dac7f90fe4c351248e73a3816bfcfdfd03aa2d2537bd40"
     sha256 cellar: :any,                 arm64_monterey: "4ec7aac0c4c1533201f3080fda7e537ea85d6be82ee5f526309eea53b1652b36"

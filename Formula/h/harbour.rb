@@ -22,6 +22,7 @@ class Harbour < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "c391f2098164917feb69d3e4820c3c7495dbb84689c5fe2b5dcf5f0d5940d82c"
     sha256 cellar: :any,                 arm64_sonoma:   "7e80473b90f18a1d0825801e625bb117f69551e6d04f11fd65b113b2ab8e53cb"
     sha256 cellar: :any,                 arm64_ventura:  "ad3d5b72015a0fb027952c207b4637adb47a3535e8492cb3553e687720b20b59"
     sha256 cellar: :any,                 arm64_monterey: "b767ebd7a0e600631d6d61ce3a8bbd907f3f8fd305270ac85053684ecce5ebea"

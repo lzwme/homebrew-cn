@@ -1,18 +1,17 @@
 class Kubehound < Formula
   desc "Tool for building Kubernetes attack paths"
   homepage "https:kubehound.io"
-  url "https:github.comDataDogKubeHoundarchiverefstagsv1.5.0.tar.gz"
-  sha256 "74e794bc885999d6cae0ddc5e0e961029b33f53aab6050abbb6048a13d1289bc"
+  url "https:github.comDataDogKubeHoundarchiverefstagsv1.5.1.tar.gz"
+  sha256 "d5e934f9c468aa286aeacb007903125f0832b762972fbc8a2c151c69bd2cb529"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "198816f094b843cec5577ea41774ee34025739bef3553629ff603d95286b3741"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "289d7a2381b1f7328b38fdaf57d8ca0c75ce6ff2a532b668b2ea19be4b355704"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1116aa2b3199799d4134f696ef06fd3ee933bd8a68aa1f2b3a16f968278cc008"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77381e9ba28bb16f220f00c569084513beebf40b7d31482acc1151cf811c6b22"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3aa0eb7624f4b3cfe52527610bef57ac15c65a91e77649d6196686f539fe18a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6e6e8d931cc2f11e0c5211792245c528437fb7d659a9e751dcd5bbe62a7d5ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b02bf36003df008306ee8f2a7b40f9cf780ccd87c58774534a6ba409c545d470"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe96b25c5d1168eb0048305d23e2dfdfaa86f28a225dbaea49aa5abdeab1092e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6b6251addb416350ca3fe5aecc53d99a280a6ba8c66a7707c0c95fd5739fc40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6bdc22f9d668891993bf725919b65b0f91e8c8519c782f9515830f845b9e05b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23e689b0190f0760bd8cb3fe0aa97ed11ca122210f98711c2f1e2a957cf98886"
+    sha256 cellar: :any_skip_relocation, ventura:       "dfa367402d90a8728ec4f77c83af7226415e8b4e21d542ff7c8a303f6894eeac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c168ab5e155b62354cb26bb63d904ef41f74898e1279b921b40bb957f4ff64c3"
   end
 
   depends_on "go" => [:build, :test]

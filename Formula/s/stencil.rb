@@ -7,6 +7,7 @@ class Stencil < Formula
   head "https:github.comgetoutreachstencil.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "132465027fc4254351b88699f8e2eb544cc5aafd7babb458520e7ef882bee892"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd8711235c5bdd57afcf109fc6e1e0f80e25a8faeeae0a0effbad48b860102e9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74636ebf55d44de21f76bee54501201ea149288a2b7504f3ea4d6f24d40e7090"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "180c3b992d097cfa43f1f6f7a5855d78354d41a1087405b3269ffb9348f76a12"

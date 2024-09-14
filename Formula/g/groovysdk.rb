@@ -11,6 +11,7 @@ class Groovysdk < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1e0f74ad33dda9d9efaa30523055b7b9f2e1b71fa78aa53079bd35d36429c8f5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e0f74ad33dda9d9efaa30523055b7b9f2e1b71fa78aa53079bd35d36429c8f5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e0f74ad33dda9d9efaa30523055b7b9f2e1b71fa78aa53079bd35d36429c8f5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e0f74ad33dda9d9efaa30523055b7b9f2e1b71fa78aa53079bd35d36429c8f5"

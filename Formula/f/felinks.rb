@@ -6,6 +6,7 @@ class Felinks < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ebdbb9519964c5d841d3de3adea1dd0bda1ca6bb1ad8d45ad33a68df6674552f"
     sha256 cellar: :any,                 arm64_sonoma:   "57f61582dadfbd450b6c904a1c660e880ea35c5cfab75ef7dab2b6d471d60161"
     sha256 cellar: :any,                 arm64_ventura:  "d30b4c6241c1486776e59e9c9b11c250ae41acbc3295c8d0edcde1722f46948e"
     sha256 cellar: :any,                 arm64_monterey: "3ac7aee0b13a45548e6c122f5f6b0cdb71f072ce515ea21d295285b7983529a3"

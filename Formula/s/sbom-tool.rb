@@ -6,6 +6,14 @@ class SbomTool < Formula
   license "MIT"
   head "https:github.commicrosoftsbom-tool.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eae242ff1d396cb1507e183b38c3672c721479328ec844a87682c8f8bdeac7c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "544469250cf66b0fec62d930535356453fa4f953511c07ec6819b80658ca1845"

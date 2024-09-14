@@ -7,6 +7,7 @@ class Tsduck < Formula
   head "https:github.comtsducktsduck.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "62abde7c587ef5aa9401a392ed385bc4c14282edeafbec1d2a6d88ea41bae9a9"
     sha256 cellar: :any,                 arm64_sonoma:   "08d89289310279ea56e591018041d2303bbd041db7c3f2c43b63fd41519e8ab8"
     sha256 cellar: :any,                 arm64_ventura:  "301e4fd189875c64fdf14aeed0c1e1da7f2e202f6effa4d9440cc18e809665b3"
     sha256 cellar: :any,                 arm64_monterey: "2717f6e274d85c697158cc668f11cfbabd6a785acfe3cafa612d3ac70a6316e4"
