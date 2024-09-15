@@ -6,6 +6,7 @@ class Ghex < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "0b7bdd05fff50a48e6f55287c17557c428d11c8111995a4d16aee7fe2683f4aa"
     sha256 arm64_sonoma:   "9f4e0ef2491956e6ab73d699d2eb62c8e1e99fd0ba8559670d1effa005c901c4"
     sha256 arm64_ventura:  "377d24393d5492f132cef436b302b43d6ec8d88324934fe8da2e3f3bbf0fdefa"
     sha256 arm64_monterey: "50861d574cbbfee6159eb9727fd85491c68220876d5fad8657838a2bc09e15ee"

@@ -6,6 +6,7 @@ class Sile < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d917f65ee5c6f789430d31c28ff1129dcd59a463c103f4b6835511231ac1d25f"
     sha256 cellar: :any,                 arm64_sonoma:   "a1801ebce21ef8b73214424bb9b2c8c8bcc4e28cee8493af697094a7363a8c40"
     sha256 cellar: :any,                 arm64_ventura:  "2d9fcfe4e250baec177f8db23c8d58e053a35f6a105d2c16ddcd4324afd8f0bb"
     sha256 cellar: :any,                 arm64_monterey: "f44480f15c1d1248b2c22fb9c5cb72ae6b69b3df4da6d949ffa682b8975968d5"

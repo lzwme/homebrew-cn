@@ -7,6 +7,7 @@ class Jr < Formula
   head "https:github.comjrnd-iojr.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ede79e8ba3c27bb0ac90e9818db7f18bdbe48d84195ed9b6f81930013e2c9564"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8caec91e5e875f6d4afc1cdc07fee8258594ac4d4e5f4827585735dd9b259d2e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a96de687b0e3d6c49772ca0cf573afdc00fb0abd18fc6524b5f7ef03efff936"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "725f7752c78b6c3c923c69f8483b83f82b1ba5bdcb9945212e5f5f69213733c5"

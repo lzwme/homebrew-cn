@@ -7,20 +7,19 @@ class Awsdac < Formula
   head "https:github.comawslabsdiagram-as-code.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8290bf07e0106b14537ac54294417eeb728e43f3695b843cf8b19cca6b31a655"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8290bf07e0106b14537ac54294417eeb728e43f3695b843cf8b19cca6b31a655"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8290bf07e0106b14537ac54294417eeb728e43f3695b843cf8b19cca6b31a655"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8290bf07e0106b14537ac54294417eeb728e43f3695b843cf8b19cca6b31a655"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a1b2d2bf5a44ad3a07127c3032fcf38c7a487238f73021720bc48e4f2af8bdbb"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1b2d2bf5a44ad3a07127c3032fcf38c7a487238f73021720bc48e4f2af8bdbb"
-    sha256 cellar: :any_skip_relocation, monterey:       "a1b2d2bf5a44ad3a07127c3032fcf38c7a487238f73021720bc48e4f2af8bdbb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e73b9a8c44ae6644751a1161a74ceda06d1854e6a0213d137a9a146314a3d015"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e73b9a8c44ae6644751a1161a74ceda06d1854e6a0213d137a9a146314a3d015"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e73b9a8c44ae6644751a1161a74ceda06d1854e6a0213d137a9a146314a3d015"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac92fff7b63af4a23ca3b9752c1e9225fdd91f77950aa9d7f97cfc49993a086e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ac92fff7b63af4a23ca3b9752c1e9225fdd91f77950aa9d7f97cfc49993a086e"
   end
 
   depends_on "go" => :build
   depends_on :macos # linux build blocked by https:github.comawslabsdiagram-as-codeissues12
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdawsdac"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdawsdac"
   end
 
   test do

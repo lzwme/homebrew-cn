@@ -6,6 +6,7 @@ class Ktfmt < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "96edc276190c92a8d41329b1f227bcab7cc332fe265bb958b58dfe4c45153567"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cb3c4429048ca0e1ed17659bc7aefd91d9ffca998a865df7d055cdfca9f390b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a6c790dd70506352735b5c57f462a5dbb2110d98a4fdfb18c46cfd93b5112b1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e7e0fd43e94ad260584746f0a085373582471a27db2724eff7cf7fa1d9713753"

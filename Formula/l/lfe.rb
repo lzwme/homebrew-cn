@@ -7,6 +7,7 @@ class Lfe < Formula
   head "https:github.comlfelfe.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5e5b86e63caa39dbd4c55f8b3a865a234aac366e0a83d653c294f33ffca5c7cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebf3f14f994a161e791af262debd0db7b3d2e917f8945e57b6f151102a9aa92b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "872b7bab3542a805fa0bbb5f68ee6fccc4b141f6ec07115b2a65cefcade834cd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0dcaa4229222b7f9e85e84eb144c43ffa727bd9ac54ed78cb6f6251b12e53c70"

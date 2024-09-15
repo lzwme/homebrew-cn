@@ -7,6 +7,7 @@ class Insect < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "29f76c8e217cd55d3cda29df44ef5a8d18b795c72ffb408d2d81385ed7455bb7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a246e04de19ce3736e0c839afc375de68b0358dd475676268b30f369caf4c85f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a246e04de19ce3736e0c839afc375de68b0358dd475676268b30f369caf4c85f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a246e04de19ce3736e0c839afc375de68b0358dd475676268b30f369caf4c85f"

@@ -14,6 +14,7 @@ class MoonBuggy < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "381b64031018e20366728e5b6cb559bb042e076f238a41aa0fd32a25d6094121"
     sha256 arm64_sonoma:   "5e84d8a0372bf17fda7d55ea77d6d3cc0bf4ab2a00f938657eb30fe3b7c119bf"
     sha256 arm64_ventura:  "b7dd2c4414457a17a2f548554fb1f2c97d2eab161732ec769b893c7c5f6183d5"
     sha256 arm64_monterey: "29c7f480f819b4c35a40537fa67645616ba35ba06405c9a433d516ae7684f3a4"

@@ -7,6 +7,7 @@ class Libbpg < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "8141450054340a9cab2a9a349c2a8445eb31e7312a918f90e20c9b06d60754fd"
     sha256 cellar: :any, arm64_sonoma:   "bf5d06c9fc78777d99c50c65585e3f295046d2619adcaa0c93c5349e1a650d15"
     sha256 cellar: :any, arm64_ventura:  "6efc300826fc1217ec39625cd01b93617fb9ea95f11a88c990751fed2e27eabb"
     sha256 cellar: :any, arm64_monterey: "6a4d3e8d365795072c819aaca5b6e662e047b80ebe05b555a8f0fb1e6d898ad7"

@@ -13,6 +13,7 @@ class Metals < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "15efeb2e4a9dbe10c20faf792a9dd8652eb640c95a0193e53dbc547f7faadda0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e339283d6dbcf4d6c2183468dac067b51976bf463e9f3758abbb6817d669445"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ad0aa2ffd7d6e70c4aff59f26b45883c520fabf9949edacb3748bcec1d30e38"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e0a976e4cdf64bba7eb2d39056545aec241f25f107fb21e43a79b70905ec3ce6"

@@ -9,6 +9,7 @@ class Sickchill < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a70236940374b31d4196207afbc60f1cea24d91786e947db8d6325a3d597b23b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca63d4eadaf57c83b555b06d053c820e301127790f74d274363f898798e805cc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c7b3a360dc2ed4f29b760f4aec808c1fe4c9799af68212209b9d548d3e0a58a"
     sha256 cellar: :any,                 arm64_monterey: "d0c69a836838a645b7bbd30cc4b2728fb20d04d4bd7c897314485cd28af607cb"

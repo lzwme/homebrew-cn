@@ -7,6 +7,7 @@ class Incus < Formula
   head "https:github.comlxcincus.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a25b672915d710e1401aaf84c45656d7aa2c528d14a9319968a9331a3d4d91ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a25b672915d710e1401aaf84c45656d7aa2c528d14a9319968a9331a3d4d91ff"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a25b672915d710e1401aaf84c45656d7aa2c528d14a9319968a9331a3d4d91ff"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a25b672915d710e1401aaf84c45656d7aa2c528d14a9319968a9331a3d4d91ff"

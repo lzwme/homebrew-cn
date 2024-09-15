@@ -8,6 +8,7 @@ class IosSim < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd92e6e258c08fa9311aa30268b4ca011cdc433deaba18f2f61056c36e09431a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e73a7f221630697eab12ddbd235c47bc13274d1901ae108bd38f4cba5d5b6a8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e73a7f221630697eab12ddbd235c47bc13274d1901ae108bd38f4cba5d5b6a8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6e73a7f221630697eab12ddbd235c47bc13274d1901ae108bd38f4cba5d5b6a8"

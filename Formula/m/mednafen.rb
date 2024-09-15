@@ -11,6 +11,7 @@ class Mednafen < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "e470c0ad19de2a320749499e83cfc09e7bceeef5ba5196e27756aaec147554e7"
     sha256 arm64_sonoma:   "b72bcc13e2b1d434445671be362e53a972a3a0c87cc891eb1fcdb10f4ed248ad"
     sha256 arm64_ventura:  "6c642b401c177c0f9afe5c2676c2aa1fcffc0eba991db44fc446494e87ea4641"
     sha256 arm64_monterey: "6ee3639bd5e939d6438c536e2505724710d3f2d09ca4d251019fe3db330eec80"

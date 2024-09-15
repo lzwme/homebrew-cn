@@ -7,6 +7,7 @@ class Ktor < Formula
   head "https:github.comktorioktor-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"

@@ -12,6 +12,7 @@ class Lbdb < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3e7842c58647db76024d6190006df63c89ba288345fafd1a8f60b766d217da0c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be9937a2767a3912fa32ef9c29355603ee74fba343d2853f27c9670ac7e6b276"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1e41b9735e02227ae4fb6d111a00542e65fa91bfd2c85f04f5b81799562f22b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dfcd28b6fddeb64d97d8dd8e52dca156b3a1526bf5024c4ed0768e3e73e92b69"

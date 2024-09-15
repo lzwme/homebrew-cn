@@ -9,6 +9,7 @@ class Serveit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9f9a8523f4f530ab0bd0fad9a27c710efa442b2c964aafa32c4a747819c515b7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f9a8523f4f530ab0bd0fad9a27c710efa442b2c964aafa32c4a747819c515b7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f9a8523f4f530ab0bd0fad9a27c710efa442b2c964aafa32c4a747819c515b7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9f9a8523f4f530ab0bd0fad9a27c710efa442b2c964aafa32c4a747819c515b7"

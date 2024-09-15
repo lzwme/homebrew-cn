@@ -8,6 +8,7 @@ class Pypy39 < Formula
   head "https:github.compypypypy.git", branch: "py3.9"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a147f271d172ee225be736d5cda627ce1645f7d2e86e3989d677c113b4c452ed"
     sha256 cellar: :any,                 arm64_sonoma:   "6f37ec35ee98a5c6bcdaba34437f76375de8cc0d4084a344abf7a34955c73e90"
     sha256 cellar: :any,                 arm64_ventura:  "f3df8fd4f62e414c6971ce2fa09522940cde83933a0275cf4ebcaecad900d942"
     sha256 cellar: :any,                 arm64_monterey: "b3dae1efc53da5b765da402b5399956b4845139835e6916ab497a971bc62e890"

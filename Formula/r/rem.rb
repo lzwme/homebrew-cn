@@ -6,6 +6,7 @@ class Rem < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "18d24b6a8f332bb30a204b078ae06569a7fc851895aea755e5c3771a24b60ddd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bda72308d8fd433628ebefa28e3821f2a6be7544ae2e358d09be602b8bf8f9da"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "83fa3cbc561ea006d86be97f4e6b4d23dd3368a027e5caabd0966da44f545100"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "95518f0764af3fbec9cede76e6431255c13360bf5d78c1f7447c16f6ff79ab81"

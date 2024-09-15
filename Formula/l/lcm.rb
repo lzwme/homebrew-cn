@@ -13,6 +13,7 @@ class Lcm < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "c097ae67003698e1aa377c073a2d8ceb85c7bf1940afd96040af0b6dfd31a099"
     sha256 cellar: :any,                 arm64_sonoma:   "5d1db2950892b7453af6ef86c81e4ac03cd6b91f71b398c10d6848e5683339b7"
     sha256 cellar: :any,                 arm64_ventura:  "4a809af57394e0379df764778977115dc8b8cf6d6c5f6898d95797012a7b4924"
     sha256 cellar: :any,                 arm64_monterey: "f5afc343736b2f84e48b3d365a9424bf306fa1b0e72b70da628c7735eb90b7dd"

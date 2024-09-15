@@ -9,6 +9,7 @@ class GitBigPicture < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa7f31631c55f0b237efd83048d40e8d8603c950972a79be31cd2991dc535928"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f349a70b4e1696b630b31953b156b2aa60905b3e572b1f203ca72bc507caac8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f349a70b4e1696b630b31953b156b2aa60905b3e572b1f203ca72bc507caac8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6f349a70b4e1696b630b31953b156b2aa60905b3e572b1f203ca72bc507caac8"

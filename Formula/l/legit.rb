@@ -11,6 +11,7 @@ class Legit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9a5207fff207ffa781f4001192323f233c59e24883eab345524139ad099cfed3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a694b62cae123be0074315a42a4d6aac727c0e4f7fc8e1dd035a132a68f877e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5863ed078e9520d479ef59f271b8ccef53ea958df0e3d29a3fb9195b80bb21d9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1a7c8d69febea84183c6ac0c1192c6c56ef1e64c0302caef48a856f6ac34ee55"

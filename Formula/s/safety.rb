@@ -9,6 +9,7 @@ class Safety < Formula
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "667932c32fb92f2a9a12ed7fcd47a704f8a5f0273fb12e14ff0c750b8bc7d043"
     sha256 cellar: :any,                 arm64_sonoma:   "01652f5acb7bcfcf1d4c436de3f074232fe75fd6aa26a33994b75e9768c60898"
     sha256 cellar: :any,                 arm64_ventura:  "ad8fef9549bf40dac42f722e9f3fbdafb7a6940bb390350ebf34fb5319b697ae"
     sha256 cellar: :any,                 arm64_monterey: "09a3e5dc101321a3e358d6242907c85c845505494e1b6b163c5a5189bdfa61bc"

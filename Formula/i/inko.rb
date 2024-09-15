@@ -7,6 +7,7 @@ class Inko < Formula
   head "https:github.cominko-langinko.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "1aab8f7ef3328bf5b88bc9060fe0f36c7e8fa6ba31df2497a89dc16b83d499f1"
     sha256 cellar: :any,                 arm64_sonoma:   "124068300521f4cd528f4c5c52ed90793e2e87d96584ad7b6e113a39bc868053"
     sha256 cellar: :any,                 arm64_ventura:  "5a0a458153eed98bb9abcb55b330566895303fa97e47d9602a4dd9a0a7fe542c"
     sha256 cellar: :any,                 arm64_monterey: "e39be7fa100cbf341c629d63c27a2852b5185996f4182d07948c5fe053815f28"

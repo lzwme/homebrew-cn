@@ -7,6 +7,7 @@ class Nativefier < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8217c3f9582943a6a195dff3efcd428a54028e108693ecb6e361e38f8cda83ad"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8b34ad78186093473325fd42ce2ba129f7a112a7b1d1b978bcc016a643ae1d1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8b34ad78186093473325fd42ce2ba129f7a112a7b1d1b978bcc016a643ae1d1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c8b34ad78186093473325fd42ce2ba129f7a112a7b1d1b978bcc016a643ae1d1"

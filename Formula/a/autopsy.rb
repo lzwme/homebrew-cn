@@ -6,6 +6,7 @@ class Autopsy < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dbb4291f1325784e67d172ee19b80d1557ae45ee1e0cc9be8da5e1baf0b08374"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b7daff147ae1d82a0dee7c5f3d853b0b6015af1bf2fde65f23676feae1b7895"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b7daff147ae1d82a0dee7c5f3d853b0b6015af1bf2fde65f23676feae1b7895"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "778ab6721c38acce97a7e7bbe7e4c941ecb9c8f6a684581e26d2b24684308046"

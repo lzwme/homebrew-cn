@@ -7,6 +7,7 @@ class JsonFortran < Formula
   head "https:github.comjacobwilliamsjson-fortran.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8ffb42ea8a194a6029d0ad47bd3d4bae4adbdf8f0b14726af48afd7fc6343963"
     sha256 cellar: :any,                 arm64_sonoma:   "5e034a7f658d0ff3da94c19e60ec9ddaf77d51ae9ac42f66dfa9901e598877ea"
     sha256 cellar: :any,                 arm64_ventura:  "4f598bd25a89c0083106c0064fd8c0ea39ef1986e92d0eb11dffe277b28d9dab"
     sha256 cellar: :any,                 arm64_monterey: "1aecb3d0ca1917d36097e193c3341df8443c8e069cdd190cb2a097bc5132e715"

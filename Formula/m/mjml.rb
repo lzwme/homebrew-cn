@@ -7,6 +7,7 @@ class Mjml < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bcde646a47d51238258b06388c69a52115f850eef26ea76c218ad5e7318a2f57"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1a681f3fa1b9bfc3159325c2faa63b1cbe148e94d4cfd1a2b2c94587c30b25de"

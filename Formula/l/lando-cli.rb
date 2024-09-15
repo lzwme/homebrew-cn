@@ -12,6 +12,7 @@ class LandoCli < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d3a305e43d27240a99f679127bd247afbb401adda932f3d9a78721af40a88bce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9d8a04967096e248ac76dff7fb285bf51ab9315cb8ff0d64e59d2c7140091a8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9d8a04967096e248ac76dff7fb285bf51ab9315cb8ff0d64e59d2c7140091a8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b9d8a04967096e248ac76dff7fb285bf51ab9315cb8ff0d64e59d2c7140091a8"

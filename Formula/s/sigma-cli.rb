@@ -9,6 +9,7 @@ class SigmaCli < Formula
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9f6e9ef960c21afc0935d154b6ae0341dc31ee8e4587706f0d9e1a06cf5b3472"
     sha256 cellar: :any,                 arm64_sonoma:   "8439a0c2a45aaa1c899a5c0daadbacbae71b77147de663e7295f30cc78c2586a"
     sha256 cellar: :any,                 arm64_ventura:  "6ef0b391bacd8cdd3f9cf96109dd6ae7bc41dd2f995eeb2798101927c7d2c51f"
     sha256 cellar: :any,                 arm64_monterey: "18a93186e5c90b33d2052d22c334bfcd262cd1024eef11a615b7b36c5471d860"

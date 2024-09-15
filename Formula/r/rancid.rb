@@ -12,6 +12,7 @@ class Rancid < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b492a1542eb00fcc51a437603be9c22d399d9062684c026ca4b13d36cc294d46"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fcffc1e68b2a8ee0342ce2848d7dcd73cf3b3561351f31a0a783b1be6acae0f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad23b3238d8cdef43a40e060103a58416ffb5043abd8fb94747d467357b8cdd2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d22337b82b06224e0c44739c33fbc91b938168533acccde6d6c4293e6fd1e4a1"

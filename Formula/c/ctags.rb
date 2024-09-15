@@ -14,6 +14,14 @@ class Ctags < Formula
       url "https:gist.githubusercontent.comnaegelejd9a0f3af61954ae5a77e7raw16d981a3d99628994ef0f73848b6beffc70b5db8Ctags%20r782"
       sha256 "26d196a75fa73aae6a9041c1cb91aca2ad9d9c1de8192fce8cdc60e4aaadbcbb"
     end
+
+    # Use Debian patch to fix build with glibc 2.34+
+    patch do
+      on_linux do
+        url "https:sources.debian.orgdatamaineexuberant-ctags1%3A5.9~svn20110310-18debianpatchesuse-conventional-unused-marker.patch"
+        sha256 "65e92a8472e00386466888e441fd0f1223aabcf1d3812102f41fa34be003a668"
+      end
+    end
   end
 
   livecheck do
@@ -44,8 +52,10 @@ class Ctags < Formula
 
   # fixes https:sourceforge.netpctagsbugs312
   patch :p2 do
-    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9ctags5.8.patch"
-    sha256 "9b5b04d2b30d27abe71094b4b9236d60482059e479aefec799f0e5ace0f153cb"
+    on_macos do
+      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9ctags5.8.patch"
+      sha256 "9b5b04d2b30d27abe71094b4b9236d60482059e479aefec799f0e5ace0f153cb"
+    end
   end
 
   def install
@@ -56,6 +66,7 @@ class Ctags < Formula
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
     system ".configure", "--prefix=#{prefix}",
                           "--enable-macro-patterns",

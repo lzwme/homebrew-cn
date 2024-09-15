@@ -7,6 +7,7 @@ class Mycorrhiza < Formula
   head "https:github.combouncepawmycorrhiza.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5fa598f527febb318b388a7609ddf7f67efa34bc47cbb7a8616bd60bedfb146c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10fb3f62b3843d6038d4a2690f2db7a2460ab5ac81190de5741bdcc9b42fadeb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "26e051274d418c3ecad2a33dddb66a480afe4929aaaf117e3500e1b9ba95126a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "544510f791a2074f9928d367b0b8e7d225cc55297f008db63a0f148f80415691"

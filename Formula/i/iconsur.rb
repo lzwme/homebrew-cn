@@ -11,6 +11,7 @@ class Iconsur < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e15acf0ca74a39af601070861cc784c36a10d6ec8b423723e42f18560bb20587"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41e638854049735d75d8a5817f49c5751f423ecb8d4da508fa2546c0af6092e4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04e27b7499dedbce8368ea0bf753b37dc0ba0aa1e40afa60fbe1200f7c07363f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bc350d8b15f1417e7b52a8ea40b7a3331d9153194a43e332878d5ea89dd1fb12"

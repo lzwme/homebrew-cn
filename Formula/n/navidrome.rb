@@ -7,6 +7,7 @@ class Navidrome < Formula
   head "https:github.comnavidromenavidrome.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d6397b234958e6520eaf7224a49aa94f5333896eb65b219cd37753c38a405777"
     sha256 cellar: :any,                 arm64_sonoma:   "37ee945b3c210d57760b8132e470dfb5b7f963c7f551b7f22a3c4ae0385270b7"
     sha256 cellar: :any,                 arm64_ventura:  "a60a48c4203b74f86db04c2de1c982ba4a7fd75e44b55528818f42a3ec947a45"
     sha256 cellar: :any,                 arm64_monterey: "916cf2ac13a877e57539dcc9757f098fb00ad6e755246786ddad87bfc8de3778"

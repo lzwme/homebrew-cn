@@ -10,6 +10,7 @@ class LdidProcursus < Formula
   head "https:github.comProcursusTeamldid.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "91872492c2d43db29338cc2c11bd1cb431490b8e6b8052de1fa304d6dae3cdd6"
     sha256 cellar: :any,                 arm64_sonoma:   "9a0b13b69fa65903e4553bc77e1bbafd986f3f68a7896a3e6c2884a72a0f324e"
     sha256 cellar: :any,                 arm64_ventura:  "ce834166720b5788636ce9dfeb2b446be1a454515abde1941187d219282def09"
     sha256 cellar: :any,                 arm64_monterey: "93e84ff2e1e2da2b857b52f275128d97681cfe41e9f59f2f3222f378ef35fa37"

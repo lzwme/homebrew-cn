@@ -7,6 +7,7 @@ class Kuttl < Formula
   head "https:github.comkudobuilderkuttl.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6010669c7ec84f5932d93fa167adef32dd84d38a0d4b941f425b198b809fe7c9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca86b727630282d84095ff41272e525e266cc3a2b11106ea4db24ca49a2cd901"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "522c47471a07eeb596220d40bf2b50b60b9661fecddf5208032fe5d72e51319c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "13ac7755ba43edbc5b3703f7995a239c50ebccaafd3a2428a1258455e4a47abc"

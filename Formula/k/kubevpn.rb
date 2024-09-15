@@ -6,6 +6,7 @@ class Kubevpn < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a4ed5fe18276664830115f5891bdd77da89e1c75d0f289c1c71c3e211d03b271"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1e534b5f7ec7240900cf60b714078437b8605f195da81f64060cb0c84041730"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "95f72ab88ce032cd83ff1866f3024119163d4d61b771a5aa3ab33d741bac6f67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "84f63a07bf9ccfcdf03df6e3c6092bd2d838c0aff2d8e15eea766aca1916a145"

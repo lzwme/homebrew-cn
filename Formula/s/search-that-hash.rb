@@ -10,6 +10,7 @@ class SearchThatHash < Formula
   head "https:github.comHashPalsSearch-That-Hash.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bbdccd78ac5811f5f108eaf6b19d96cb62bec548416730e540a8ab415675a7fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74be3d3f01404fd553024c432fe62ffddb747b77a24abe4e683e341a817955d1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74be3d3f01404fd553024c432fe62ffddb747b77a24abe4e683e341a817955d1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "74be3d3f01404fd553024c432fe62ffddb747b77a24abe4e683e341a817955d1"

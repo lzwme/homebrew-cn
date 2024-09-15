@@ -9,6 +9,7 @@ class Gitless < Formula
   revision 16
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8bcbc5d09d836f357276ddc9f4083406f5cdb2970eec1b6bd87f5051837e309b"
     sha256 cellar: :any,                 arm64_sonoma:   "69850517e41bbb09758710e5a07d557d8b1ec37f14aea0c07c384aa5e7d9f6a5"
     sha256 cellar: :any,                 arm64_ventura:  "2a0595c10e3eff2323d62ff70d335ced3384f1ed87ef9b600e52afd49f16b215"
     sha256 cellar: :any,                 arm64_monterey: "d1c13b796904cc0b83713ed352b8a474956074ddcf4f203fc24928c145f2b5cc"

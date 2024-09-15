@@ -10,6 +10,7 @@ class Iocextract < Formula
   head "https:github.comInQuestiocextract.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "da885335e9050e42937ea8eb8a5d54dc4fe4590047d5a5a1a8776c5d202a69a8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a794499e5c2787574777c58fdda6dcaea39d158d9f8f917a4d3fac3e24a7db75"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "749af351dfeb370440926d47671fcbf851abb4fe94a93aada0983bd214aee2ed"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "42102096bfa9365dfc6e30d2d7cb69d00020f5b4dd57fab58ec967893c1f2d2e"

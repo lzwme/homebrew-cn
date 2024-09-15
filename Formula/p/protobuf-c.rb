@@ -4,18 +4,15 @@ class ProtobufC < Formula
   url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.0protobuf-c-1.5.0.tar.gz"
   sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
-  revision 9
+  revision 10
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "4a9f3feb96ee3c7670b22d2a4f51813ccf3cf8f920ba6dba1633d3b009b35a37"
-    sha256 cellar: :any,                 arm64_sonoma:   "49636dfd5df7def8576af5928bf8645797afe189b08fc8cbe354e13d3f118f6f"
-    sha256 cellar: :any,                 arm64_ventura:  "990e2c5b4f749231c980ba344de3630bfed02f8ec1a882fc0b9da5e1214f36a2"
-    sha256 cellar: :any,                 arm64_monterey: "90a1f307a9985cdac770980f9c10ba02005ca83d79c8587f3ae704b10f758968"
-    sha256 cellar: :any,                 sonoma:         "ed5623554239e64dfe3fb7ef95588550ad677c17da437729e0a90f76ff8153eb"
-    sha256 cellar: :any,                 ventura:        "0176121e12c36bea25aed0d2f8fd2a353f587b0c05806008d30984f20db81767"
-    sha256 cellar: :any,                 monterey:       "b5f714ea31cf2f52e637b8c4566469e00a76f1f2d432abfa6250f0afaa8f0d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b53fab733fe9ce4e1620fb0d88f4e83964689b42fdaee7539551615090c4daaf"
+    sha256 cellar: :any,                 arm64_sequoia: "646edf106738f44e084fd44b32ac6bc3074f091675b07ddfeacd47d7c09dc931"
+    sha256 cellar: :any,                 arm64_sonoma:  "8af393eca725259e5d4463cff726fe9c6ba98df9ee185b2c4eca5d911bf1030c"
+    sha256 cellar: :any,                 arm64_ventura: "804c9c5998fb563d30651f794823a979e62c170ac2853f9743f919941b60ebd1"
+    sha256 cellar: :any,                 sonoma:        "4713016dbd31b6d24dd1177efa78911962cd9ca73ad91286a027077a0a555f5c"
+    sha256 cellar: :any,                 ventura:       "80160e67d9215f70a1622da9600e849af9a04240ff1f34a3123aa0d3996f6b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd10135a5e80ac1171ebf0891bbe0a81d69d425fd2722653ec4f91170788ed4"
   end
 
   head do

@@ -6,6 +6,7 @@ class Rlog < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "17aeadbbb0c7138389b80f0cecf0c59b6a329176eda02d38a9566502110f72f4"
     sha256 cellar: :any,                 arm64_sonoma:   "408100778814811a72a063dd53302248c2d291baa55534a3a58daf16a14a1ffe"
     sha256 cellar: :any,                 arm64_ventura:  "d33c09168d248f72b7c81e8a61f3d8f69a1d13127f8f75d7526a28220e5d7f4c"
     sha256 cellar: :any,                 arm64_monterey: "cd251b465737a2c5d9cd4aaeff4a625d1c48d50778bc8c93ad4e683b04ca82c5"

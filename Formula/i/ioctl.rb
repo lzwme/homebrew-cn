@@ -11,6 +11,7 @@ class Ioctl < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9724e9148c74b8334e64b07d29cd6b6b6b09ba651e9db855fd8bf3cd01e74996"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5ee8327047f2104cdb93e70d08499f37fdfc5143b6aa32ca0c910855ff0a911"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bc512a0b33922ce5bd1092debc7e8c8cede5565e0cd066b7c17e6afbc71c40f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0f1def9b230382b6f21ede92b192a7ad1a482b5fb5e7cdd53dd2c8945094bc0a"

@@ -9,6 +9,7 @@ class Sail < Formula
   revision 5
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "467182aa0b541605a706816a7245bbb65481e926e40169db4362222a14cafa80"
     sha256 cellar: :any,                 arm64_sonoma:   "e9ccbb15749b49ac5db928bb94bc6b8759b92dc7db63fe9b0dd5df2efb64c28e"
     sha256 cellar: :any,                 arm64_ventura:  "491edc0ba6c7775ffdf64d052aecc16cf8f6618871fb7f9d572b45ed1ed81fb4"
     sha256 cellar: :any,                 arm64_monterey: "622d688b68788fe6ccae410d5ee48addbb957d17afff5a0b3c92d7e3b356269b"

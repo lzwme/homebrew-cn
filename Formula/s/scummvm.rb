@@ -1,10 +1,19 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
   homepage "https:www.scummvm.org"
-  url "https:downloads.scummvm.orgfrsscummvm2.8.1scummvm-2.8.1.tar.xz"
-  sha256 "7e97f4a13d22d570b70c9b357c941999be71deb9186039c87d82bbd9c20727b7"
   license "GPL-3.0-or-later"
   head "https:github.comscummvmscummvm.git", branch: "master"
+
+  stable do
+    url "https:downloads.scummvm.orgfrsscummvm2.8.1scummvm-2.8.1.tar.xz"
+    sha256 "7e97f4a13d22d570b70c9b357c941999be71deb9186039c87d82bbd9c20727b7"
+
+    # Backport fix for freetype 2.13.3
+    patch do
+      url "https:github.comscummvmscummvmcommit65977961b20ba97b1213b5267da0cb1efb49063b.patch?full_index=1"
+      sha256 "2eefadef10af4729f6912ce281daafe12eabce52d7f8b62fc23de30ee768eb9b"
+    end
+  end
 
   livecheck do
     url "https:www.scummvm.orgdownloads"

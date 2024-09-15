@@ -1,8 +1,8 @@
 class Abyss < Formula
   desc "Genome sequence assembler for short reads"
   homepage "https:www.bcgsc.caresourcessoftwareabyss"
-  url "https:github.combcgscabyssreleasesdownload2.3.8abyss-2.3.8.tar.gz"
-  sha256 "3c262269043f619c79ec3dcd91f5595cb141229f9a13d1a76a952b9a0bfb0d84"
+  url "https:github.combcgscabyssreleasesdownload2.3.9abyss-2.3.9.tar.gz"
+  sha256 "55f0b27b67b4486dc6cbe132c0f4c228ee4f9e86c56292a7b50633df87e3212e"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
 
   livecheck do
@@ -10,14 +10,12 @@ class Abyss < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a8e7619d281b75ac99653e6209267de5fa3c4c567478c7f753cf131e49fc923d"
-    sha256 cellar: :any,                 arm64_sonoma:   "d51aaa3ebeee8f2d7aafddbda19f362f8964bd438cc8cd882c4d449a34215aca"
-    sha256 cellar: :any,                 arm64_ventura:  "ee601d3305bf086edc4537d6e47c62ae6203c7b20a8554cf13320cecf8c534d8"
-    sha256 cellar: :any,                 arm64_monterey: "53684411c7bbb832019b78dba2e84c99a8172e81b8f580ea28f8bf3791c239dc"
-    sha256 cellar: :any,                 sonoma:         "fd91fd250b60d771640582cb02d4d7b1b50003d17cf05152a7a8fce9e63dd5e0"
-    sha256 cellar: :any,                 ventura:        "05f1bfc1159a8bd98b2258763927a02d64e691efab0440ee1c6ef386569a0506"
-    sha256 cellar: :any,                 monterey:       "b941004f43971894244fbb61163f307bc74826544f714209ac7e0578eedbdf8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce78fd4fc24e5657de9f8eba20727e0eda20b78eb47e735306c93566810da1e9"
+    sha256 cellar: :any,                 arm64_sequoia: "eab71545a0ab5f70d930a29ec2df154cd18a6c1deff38cc9aa9baa0e49076821"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1f94fa88a3c8137ab857855d083884a490e41ca9f689e388e3e9ef9c6feba85"
+    sha256 cellar: :any,                 arm64_ventura: "0656d068375b742f0fd8013615429ba6fdfcf519988f368ebfe29182413aa2fe"
+    sha256 cellar: :any,                 sonoma:        "d73c5710bda5819aaba920ed6348750f0bea013ebfcc90c8ef82fbb67e8f07e6"
+    sha256 cellar: :any,                 ventura:       "977e8325243bff9552edd3571da6c386cff159949666426e0c81b54f70277f66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a75c19295f8d2e58d1aaa762f9948c11513709d0ee85ca838fa41cb87ebae5cf"
   end
 
   head do

@@ -7,6 +7,7 @@ class Logstalgia < Formula
   revision 5
 
   bottle do
+    sha256 arm64_sequoia:  "9e8b7be5a60940996e39a2290dadf2fe4b07ee78b2cac15d504bcffe0de099da"
     sha256 arm64_sonoma:   "63b8d1d033d12bfb0d5a8dadbf8e25d8c7735f31b634cc51ad76551c10f79e91"
     sha256 arm64_ventura:  "827d02ce978922120cdb8dc135defbe0465060ee8c7d3c778def40fde470701b"
     sha256 arm64_monterey: "8a3e25918187a5b2dafb7f6e243d4c5a4e02aa7912b35f6e056f2a0717356118"

@@ -6,6 +6,14 @@ class BasisUniversal < Formula
   sha256 "0ef344cc7e3373ca9c15de2bd80512ea4ea17e09ed895febdf9e70f6c789bc27"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:[._]\d+)+)$i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebcd8c592a1947d4e93cb14f267b1597ab31e287235719f0a45c97060cdb7016"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c646119bc9142de2a5061c365320ba8e5cf9ea9fb1383ada79e0cb08cdd0b2d3"

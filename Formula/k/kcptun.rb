@@ -16,6 +16,7 @@ class Kcptun < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1c9bb979b3dff5f05de263279f5dda1b5494287b924fa1ee8f485d96bc73b60"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1c9bb979b3dff5f05de263279f5dda1b5494287b924fa1ee8f485d96bc73b60"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1c9bb979b3dff5f05de263279f5dda1b5494287b924fa1ee8f485d96bc73b60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d1c9bb979b3dff5f05de263279f5dda1b5494287b924fa1ee8f485d96bc73b60"

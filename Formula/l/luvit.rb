@@ -8,6 +8,7 @@ class Luvit < Formula
   head "https:github.comluvitluvit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2e2257cdb482d948ed335c2ab31c0c86cfcdb7810e35c6442fc0406ab8ddeaf6"
     sha256 cellar: :any,                 arm64_sonoma:   "ed6d081d3a0d4f3d89f02f5d6ff038dd9e9b9b98b0596a33e5b18bdbc598c45c"
     sha256 cellar: :any,                 arm64_ventura:  "20bc43f46fbe2135a5ca45feb75e6bd90f1825437ff5fcc3a706ee96d886e5fc"
     sha256 cellar: :any,                 arm64_monterey: "ebb8ed1a318977d2227e7f9fb9310cdbe5632f4448dd9447d9e826b1b231744b"

@@ -7,6 +7,7 @@ class Gollum < Formula
   head "https:github.comtrivagogollum.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1a14fd87fbe28f9b6d56c0db996208418e6410e00385899f2d381a9602f7b8f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50cf6d3f9112bc08aa3f73561600db725179266bab393b0e3f7f891d6b4f6a7a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "460291bccda886ab089032e4df6c5a289bfe1a0355fb81b10b1143200e306be6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ac1e8bf4e7ddbe753112b22cf9544bbc3f1f831c8878a16c9992c194c7e35fd5"

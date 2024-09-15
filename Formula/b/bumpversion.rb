@@ -12,6 +12,7 @@ class Bumpversion < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "33eef5e66a35d7cb20898f3a91e850e2f606067749a80c6819c83a9c758c9794"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07fe68b2bd290e6567e3e4b9b6c35d11e34b3b33cfbb854da01546b1a4cb55ac"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c705255f579570383d66b6b8c060e4d9df8116968fcb1945b77e42b7bad78e3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5f0f05277d67cc7d2bc05118484f0f71aaede3643c3760c34db436e9a8693422"

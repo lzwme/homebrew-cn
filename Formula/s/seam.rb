@@ -7,6 +7,7 @@ class Seam < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45d2d5cabe04b4732bd621e5122be6c13c21801bcc9f640f3c5fd75566b1b5db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7af7bf5604302bd96ca405f8a0c87899dcfb28b5a2ec42683056bd927e35e014"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7af7bf5604302bd96ca405f8a0c87899dcfb28b5a2ec42683056bd927e35e014"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7af7bf5604302bd96ca405f8a0c87899dcfb28b5a2ec42683056bd927e35e014"

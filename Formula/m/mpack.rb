@@ -8,6 +8,7 @@ class Mpack < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39ef950b3be79638f72addb1f2bd87c4c67f9bddeb55f62910175ab6c90b6dc8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93385223f8645ef28a3a518b5eb932d7b17a55bc113fd22522190c5504670b1b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6aab109b96f77c14fb2f445ef2e1da17f9bb28169c9aef6e7806f32df5b6143d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0ddea83dccaf311d5310e4147a3ba9a80523326bce98af5200e2e7bec7cc0782"

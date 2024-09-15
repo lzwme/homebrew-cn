@@ -11,6 +11,7 @@ class Choose < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ded96eb3bb8c2136e454b15bd92eba7a701c79b5d6fdeda61af960b99ab4020"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5c4fa56df4043797b8afd5d16f09ba833cb31c6623311e93f666cd658128d84"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "591ec66da1ed275c857cf18501b239665db4b24e8e75a31ccd436a753ca2f4bd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7d70433ad746562e57937e4420e86c2fa8e4bb725b7a795fe96f7025ad8f9cc2"

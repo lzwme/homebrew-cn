@@ -8,6 +8,7 @@ class Innotop < Formula
   head "https:github.cominnotopinnotop.git"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e071814f6161dc4eaa06cf898fa9862706a1343b9bec56c90e579c181d5428b8"
     sha256 cellar: :any,                 arm64_sonoma:   "85d95a6535f9faee3b036381c8bbc025c00a3bcc11e2c347ba192bab5234c8b6"
     sha256 cellar: :any,                 arm64_ventura:  "4bf05ccc4fe1ac5987fb1168a42305582784f511649a8bc75d757b0eb5aaf6c1"
     sha256 cellar: :any,                 arm64_monterey: "b35348e6b4f2b95fb7f5ff02ca5fb36bacb2eddfd85e84109563c25d1769c743"

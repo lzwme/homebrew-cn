@@ -1,19 +1,18 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https:karmada.io"
-  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.11.0.tar.gz"
-  sha256 "07aa4e1036573a960c754cd56dda2699b77c4e5f6a90618a21d7d74897cdd4f7"
+  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.11.1.tar.gz"
+  sha256 "905cc46e0b18c849c24ad5c9bcdc549da5712bc9edd7ed0c9bc0e40cfc22b5a3"
   license "Apache-2.0"
   head "https:github.comkarmada-iokarmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f5cbb50c1d49382f828ba30bb1aab67afcaea127008e026b09bb38471010f08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b38b78a2c1ed9507a69581bdcc87cd79a643b020223da69771b93fcedee8cba7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e59aa3fab0732b995b7d4ac6be3371b1c0326d9396ad3a54383c3ed2ac19d808"
-    sha256 cellar: :any_skip_relocation, sonoma:         "32e0ff1a731a92217810c438c92d037f4372ab81a36827984a58aa133ff2ebb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "3bdffe09825d315a95b68d5e8655d66c625c56c7ecdbb770c3823b26182d47d0"
-    sha256 cellar: :any_skip_relocation, monterey:       "639de4147e8bf79a4b53ffeb439cb679e9bca934e294a6c596499e64539d8b85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7332d60e0ed72539a5a5c0748c035f02f3a0a2477543ecb5e7434f28bfdbfca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74fc27efebe5c093ad528de9e4d05ea3f001aaaa3a00fd48a8ba2c080a1ea3f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e9135d3329c938ad9eba2d14b497e34def19dae243439fcd321d828ce98f855"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "04bc426e9eb7151ec43f0755135b1bf5a7780c11147822b2c4546523a91b1774"
+    sha256 cellar: :any_skip_relocation, sonoma:        "340beaa40d5151c786e4d9a9b73bee3c3782737f5d9de4ddc4c25d732cd6efed"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa32b7399d604e93cf31359bc72cc8b00b3ff3f321e6f87846d3dcf98d042cb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "731778b35d030cfd8c306e9666b1a2dbd287cae58d472ba686d9daf92a3d83b6"
   end
 
   depends_on "go" => :build

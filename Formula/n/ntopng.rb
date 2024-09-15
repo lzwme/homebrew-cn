@@ -2,23 +2,27 @@ class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https:www.ntop.orgproductstraffic-analysisntop"
   license "GPL-3.0-only"
-  revision 6
 
   stable do
-    url "https:github.comntopntopngarchiverefstags5.2.1.tar.gz"
-    sha256 "67404ccd87202864d2c3c44426e60cb59cc2e87d746c704b27e6a63d61ec7644"
+    url "https:github.comntopntopngarchiverefstags6.2.tar.gz"
+    sha256 "de6ef8d468be3272bce27719ab06d5b7eed6e4a33872528f64c930a81000ccd1"
 
     depends_on "ndpi"
+
+    # Apply Gentoo patch to force dynamically linking nDPI
+    patch do
+      url "https:gitweb.gentoo.orgrepogentoo.gitplainnet-analyzerntopngfilesntopng-5.4-ndpi-linking.patch?id=25646dfc75b15c2bcc9c80ab3aba7a6bab5eec68"
+      sha256 "ddbfb32a642e890878bef52c4c8e02232e9f11c132e348c78d47c7865d5649e0"
+    end
   end
 
   bottle do
-    sha256 arm64_sonoma:   "778b00f575e753b94aa544362dde641f028932146c84f19f73076940a301b301"
-    sha256 arm64_ventura:  "3a22cb20eff4ebe2ef15b69d8a384f03103f9d8024290b3d8aae96275d2eccf6"
-    sha256 arm64_monterey: "88fcdf863e873ff238041e7fccf65b6bd32fb357f2f682d868b8d5394cc56428"
-    sha256 sonoma:         "87ceb2c71bcbc2adfe2a5393357d477730ace4435d75bc117c507937346a71fe"
-    sha256 ventura:        "e6820a187c13bf156dfb1146783cfb1bc735cba6fec26c01bbe461459d5a0ef3"
-    sha256 monterey:       "e7c66db0a5c80caff9cf98da11c3e5fdbfb9aa9c3f2f129509e48dae3300672a"
-    sha256 x86_64_linux:   "cf9a961dfd80df66a2ff55cf417cd4e41981cbb9464e9c877fc0bdeb61e5087a"
+    sha256 arm64_sequoia: "bd1dc32c1fdffb0e1d9c23400d74c43ebf252e8d755b0a019ec87046e92e697d"
+    sha256 arm64_sonoma:  "64288684042c3564bfd3e382d15d661172a2f522e407787d82e6af6f33d309f8"
+    sha256 arm64_ventura: "aee5b881035ec900c44dd05416df622b7e9e3d3759dd3b7f9aa715f368492196"
+    sha256 sonoma:        "586aa879223843e30fc9136377aa7cd00f3edb16d015d28b14de084e58588d58"
+    sha256 ventura:       "7d636609619e74f65df6a7345ad2ea5dad6579cb3d66cb5ce96786abeb62818c"
+    sha256 x86_64_linux:  "dcf114d1ce761fb41239ff2c496edcaff98061cdc0ee28b11fc96a0737d024c5"
   end
 
   head do
@@ -31,12 +35,10 @@ class Ntopng < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gnutls" => :build
-  depends_on "json-glib" => :build
   depends_on "libtool" => :build
-  depends_on "lua" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "hiredis"
   depends_on "json-c"
   depends_on "libmaxminddb"
   depends_on "libsodium"
@@ -62,24 +64,23 @@ class Ntopng < Formula
 
   fails_with gcc: "5"
 
-  # Allow dynamic linking with nDPI
-  # upstream patch references for nDPI 4.4 API changes
-  # https:github.comntopntopngcommit4397fae2e3e4116b63ffad0f311d827cc310f464
-  # https:github.comntopntopngcommitc4119304cd47748ae1ed17c1458ebaf915fe5566
-  patch :DATA
-
   def install
+    # Remove bundled libraries
+    rm_r Dir["third-party{json-c,rrdtool}*"]
+
+    args = []
     if build.head?
       resource("nDPI").stage do
         system ".autogen.sh"
         system "make"
         (buildpath"nDPI").install Dir["*"]
       end
+    else
+      args << "--with-ndpi-includes=#{Formula["ndpi"].opt_include}ndpi"
     end
 
     system ".autogen.sh"
-    system ".configure", *std_configure_args
-    system "make"
+    system ".configure", *args, *std_configure_args
     system "make", "install", "MAN_DIR=#{man}"
   end
 
@@ -100,307 +101,3 @@ class Ntopng < Formula
     assert_match "list", shell_output("#{redis_bin}redis-cli -p #{redis_port} TYPE ntopng.trace")
   end
 end
-
-__END__
-diff --git aconfigure.ac.in bconfigure.ac.in
-index b32ae1a2d19..9c2ef3eb140 100644
---- aconfigure.ac.in
-+++ bconfigure.ac.in
-@@ -234,10 +234,8 @@ if test -d usrlocalincludendpi ; then :
- fi
-
- PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
--   NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s[ ]*$"`
--   # Use static libndpi library as building against the dynamic library fails
--   NDPI_LIB="-Wl,-Bstatic $NDPI_LIBS -Wl,-Bdynamic"
--   #NDPI_LIB="$NDPI_LIBS"
-+   NDPI_INC="$NDPI_CFLAGS"
-+   NDPI_LIB="$NDPI_LIBS"
-    NDPI_LIB_DEP=
-    ], [
-       AC_MSG_CHECKING(for nDPI source)
-diff --git aincludeNetworkInterface.h bincludeNetworkInterface.h
-index b00abe3..93b36bf 100644
---- aincludeNetworkInterface.h
-+++ bincludeNetworkInterface.h
-@@ -1047,8 +1047,8 @@ class NetworkInterface : public NetworkInterfaceAlertableEntity {
-   inline ndpi_protocol_category_t get_ndpi_proto_category(ndpi_protocol proto) { return(ndpi_get_proto_category(get_ndpi_struct(), proto)); };
-   ndpi_protocol_category_t get_ndpi_proto_category(u_int protoid);
-   void setnDPIProtocolCategory(u_int16_t protoId, ndpi_protocol_category_t protoCategory);  
--  void nDPILoadIPCategory(char *what, ndpi_protocol_category_t id);
--  void nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id);
-+  void nDPILoadIPCategory(char *what, ndpi_protocol_category_t id, char *list_name);
-+  void nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id, char *list_name);
-   int nDPILoadMaliciousJA3Signatures(const char *file_path);
- 
-   inline void setLastInterfacenDPIReload(time_t now)      { last_ndpi_reload = now;   }
-diff --git aincludeNtop.h bincludeNtop.h
-index 2f2ce14..de0fd55 100644
---- aincludeNtop.h
-+++ bincludeNtop.h
-@@ -64,6 +64,7 @@ class Ntop {
-   u_int num_cpus; **< Number of physical CPU cores. *
-   Redis *redis; **< Pointer to the Redis server. *
-   Mutex m, users_m;
-+  std::map<std::string, bool>cachedCustomLists;
- #ifndef HAVE_NEDGE
-   ElasticSearch *elastic_search; **< Pointer of Elastic Search. *
-   ZMQPublisher *zmqPublisher;
-@@ -145,6 +146,7 @@ class Ntop {
-   void checkReloadHostChecks();
-   void checkReloadAlertExclusions();
-   void checkReloadHostPools();
-+  char* getPersistentCustomListName(char *name);
-   
-  public:
-   **
-@@ -596,8 +598,8 @@ class Ntop {
-   ndpi_protocol_category_t get_ndpi_proto_category(ndpi_protocol proto);
-   ndpi_protocol_category_t get_ndpi_proto_category(u_int protoid);
-   void setnDPIProtocolCategory(u_int16_t protoId, ndpi_protocol_category_t protoCategory);  
--  void nDPILoadIPCategory(char *what, ndpi_protocol_category_t id);
--  void nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id);
-+  void nDPILoadIPCategory(char *what, ndpi_protocol_category_t id, char *list_name);
-+  void nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id, char *list_name);
-   int nDPILoadMaliciousJA3Signatures(const char *file_path);
-   void setLastInterfacenDPIReload(time_t now);
-   bool needsnDPICleanup();
-diff --git ascriptsluaflow_details.lua bscriptsluaflow_details.lua
-index 113e722..a7b185c 100644
---- ascriptsluaflow_details.lua
-+++ bscriptsluaflow_details.lua
-@@ -472,8 +472,11 @@ else
-       print(getApplicationLabel(flow["proto.ndpi"]).."<A> ")
-       print("(<A HREF=\""..ntop.getHttpPrefix().."lua")
-       print("flows_stats.lua?category=" .. flow["proto.ndpi_cat"] .. "\">")
--      print(getCategoryLabel(flow["proto.ndpi_cat"]))
--      print("<A>) ".. formatBreed(flow["proto.ndpi_breed"], flow["proto.is_encrypted"]))
-+      print(getCategoryLabel(flow["proto.ndpi_cat"]).."<A>")
-+      if(flow["proto.ndpi_cat_file"]) then
-+        print(" @ " ..flow["proto.ndpi_cat_file"])
-+      end
-+      print(") ".. formatBreed(flow["proto.ndpi_breed"], flow["proto.is_encrypted"]))
-       print(" ["..i18n("ndpi_confidence")..": "..flow.confidence.."]")
-    end
-    
-diff --git ascriptsluamoduleslists_utils.lua bscriptsluamoduleslists_utils.lua
-index 7799580..999c0ef 100644
---- ascriptsluamoduleslists_utils.lua
-+++ bscriptsluamoduleslists_utils.lua
-@@ -497,7 +497,7 @@ local function loadListItem(host, category, user_custom_categories, list, num_li
- 	   if((host == "0.0.0.0") or (host == "0.0.0.00") or (host == "255.255.255.255")) then
- 	     loadWarning(string.format("Bad IPv4 address '%s' in list '%s'", host, list.name))
- 	   else
--	     ntop.loadCustomCategoryIp(host, category)
-+	     ntop.loadCustomCategoryIp(host, category, list.name)
- 	     return "ip"
- 	   end
- 	 else
-@@ -509,7 +509,7 @@ local function loadListItem(host, category, user_custom_categories, list, num_li
-       else
- 	 -- Domain
- 	 if((not list) or (list.format ~= "ip")) then
--	    ntop.loadCustomCategoryHost(host, category)
-+	    ntop.loadCustomCategoryHost(host, category, list.name)
- 	    return "domain"
- 	 else
- 	   loadWarning(string.format("Invalid domain '%s' in list '%s'", host, list.name))
-diff --git ascriptsluamodulesmeasurementsspeedtest.lua bscriptsluamodulesmeasurementsspeedtest.lua
-index 3675e16..aae5299 100644
---- ascriptsluamodulesmeasurementsspeedtest.lua
-+++ bscriptsluamodulesmeasurementsspeedtest.lua
-@@ -10,7 +10,7 @@ local os_utils = require("os_utils")
- local json = require("dkjson")
- local ts_utils = require("ts_utils_core")
- 
--local do_trace = false
-+local do_trace = true
- local collected_results = {}
- 
- -- #################################################################
-@@ -134,7 +134,7 @@ return {
- 	 -- The function responsible for collecting the results
- 	 collect_results = collect_speedtest,
- 	 -- The granularities allowed for the probe. See supported_granularities in am_utils.lua
--	 granularities = { "hour" },
-+	 granularities = { "min" },
- 	 -- The localization string for the measurement unit (e.g. "ms", "Mbits")
- 	 i18n_unit = "field_units.mbits",
- 	 -- The localization string for the Jitter unit (e.g. "ms", "Mbits")
-diff --git ascriptsluamodulestimeseriests_utils_core.lua bscriptsluamodulestimeseriests_utils_core.lua
-index e1ec9e8..f565e78 100644
---- ascriptsluamodulestimeseriests_utils_core.lua
-+++ bscriptsluamodulestimeseriests_utils_core.lua
-@@ -879,7 +879,7 @@ function ts_utils.getPossiblyChangedSchemas()
-       "am_host:val_5mins",
-       "am_host:http_stats_hour",
-       "am_host:https_stats_hour",
--      "am_host:val_hour",
-+      "am_host:val_hour"
-    }
- end
- 
-diff --git asrcFlow.cpp bsrcFlow.cpp
-index c07fe0f..d8a56f6 100644
---- asrcFlow.cpp
-+++ bsrcFlow.cpp
-@@ -25,7 +25,7 @@
- 
- const ndpi_protocol Flow::ndpiUnknownProtocol = { NDPI_PROTOCOL_UNKNOWN,
- 						  NDPI_PROTOCOL_UNKNOWN,
--						  NDPI_PROTOCOL_CATEGORY_UNSPECIFIED };
-+						  NDPI_PROTOCOL_CATEGORY_UNSPECIFIED, NULL };
-  #define DEBUG_DISCOVERY
-  #define DEBUG_UA
-  #define DEBUG_SCORE
-@@ -5145,6 +5145,9 @@ void Flow::lua_get_min_info(lua_State *vm) {
-   lua_push_str_table_entry(vm, "proto.ndpi", get_detected_protocol_name(buf, sizeof(buf)));
-   lua_push_str_table_entry(vm, "proto.ndpi_app", ndpi_get_proto_name(iface->get_ndpi_struct(), ndpiDetectedProtocol.app_protocol));
-   lua_push_str_table_entry(vm, "proto.ndpi_cat", get_protocol_category_name());
-+
-+  if(ndpiDetectedProtocol.custom_category_userdata)
-+    lua_push_str_table_entry(vm, "proto.ndpi_cat_file", (char*)ndpiDetectedProtocol.custom_category_userdata);
-   lua_push_uint64_table_entry(vm, "proto.ndpi_cat_id", get_protocol_category());
-   lua_push_str_table_entry(vm, "proto.ndpi_breed", get_protocol_breed_name());
-   lua_push_bool_table_entry(vm, "proto.is_encrypted", isEncryptedProto());
-diff --git asrcLuaEngineNtop.cpp bsrcLuaEngineNtop.cpp
-index bd2de79..989e80a 100644
---- asrcLuaEngineNtop.cpp
-+++ bsrcLuaEngineNtop.cpp
-@@ -578,7 +578,7 @@ static int ntop_initnDPIReload(lua_State* vm) {
- * ****************************************** *
- 
- static int ntop_loadCustomCategoryIp(lua_State* vm) {
--  char *net;
-+  char *net, *listname;
-   ndpi_protocol_category_t catid;
- 
-   ntop->getTrace()->traceEvent(TRACE_DEBUG, "%s() called", __FUNCTION__);
-@@ -587,7 +587,12 @@ static int ntop_loadCustomCategoryIp(lua_State* vm) {
-   net = (char*)lua_tostring(vm, 1);
-   if(ntop_lua_check(vm, __FUNCTION__, 2, LUA_TNUMBER) != CONST_LUA_OK) return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_ERROR));
-   catid = (ndpi_protocol_category_t)lua_tointeger(vm, 2);
--  ntop->nDPILoadIPCategory(net, catid);
-+  ntop->nDPILoadIPCategory(net, catid, listname);
-+
-+  if(ntop_lua_check(vm, __FUNCTION__, 3, LUA_TSTRING) != CONST_LUA_OK) return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_ERROR));
-+  listname = (char*)lua_tostring(vm, 3);
-+
-+  ntop->nDPILoadIPCategory(net, catid, listname);
- 
-   lua_pushnil(vm);
-   return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_OK));
-@@ -596,7 +601,7 @@ static int ntop_loadCustomCategoryIp(lua_State* vm) {
- * ****************************************** *
- 
- static int ntop_loadCustomCategoryHost(lua_State* vm) {
--  char *host;
-+  char *host, *listname;
-   ndpi_protocol_category_t catid;
- 
-   ntop->getTrace()->traceEvent(TRACE_DEBUG, "%s() called", __FUNCTION__);
-@@ -605,7 +610,11 @@ static int ntop_loadCustomCategoryHost(lua_State* vm) {
-   host = (char*)lua_tostring(vm, 1);
-   if(ntop_lua_check(vm, __FUNCTION__, 2, LUA_TNUMBER) != CONST_LUA_OK) return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_ERROR));
-   catid = (ndpi_protocol_category_t)lua_tointeger(vm, 2);
--  ntop->nDPILoadHostnameCategory(host, catid);
-+
-+  if(ntop_lua_check(vm, __FUNCTION__, 3, LUA_TSTRING) != CONST_LUA_OK) return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_ERROR));
-+  listname = (char*)lua_tostring(vm, 3);
-+
-+  ntop->nDPILoadHostnameCategory(host, catid, listname);
- 
-   lua_pushnil(vm);
-   return(ntop_lua_return_value(vm, __FUNCTION__, CONST_LUA_OK));
-diff --git asrcNetworkInterface.cpp bsrcNetworkInterface.cpp
-index 15a710f..77c514b 100644
---- asrcNetworkInterface.cpp
-+++ bsrcNetworkInterface.cpp
-@@ -390,7 +390,7 @@ struct ndpi_detection_module_struct* NetworkInterface::initnDPIStruct() {
-     ndpi_load_protocols_file(ndpi_s, ntop->getCustomnDPIProtos());
- 
-   memset(d_port, 0, sizeof(d_port));
--  ndpi_set_proto_defaults(ndpi_s, 0, NDPI_PROTOCOL_UNRATED, NTOPNG_NDPI_OS_PROTO_ID,
-+  ndpi_set_proto_defaults(ndpi_s, 0, 0, NDPI_PROTOCOL_UNRATED, NTOPNG_NDPI_OS_PROTO_ID,
- 			  (char*)"Operating System",
- 			  NDPI_PROTOCOL_CATEGORY_SYSTEM_OS, d_port, d_port);
- 
-@@ -498,16 +498,16 @@ void NetworkInterface::loadProtocolsAssociations(struct ndpi_detection_module_st
- 
- * *************************************** *
- 
--void NetworkInterface::nDPILoadIPCategory(char *what, ndpi_protocol_category_t id) {
-+void NetworkInterface::nDPILoadIPCategory(char *what, ndpi_protocol_category_t id, char *list_name) {
-    ntop->getTrace()->traceEvent(TRACE_NORMAL, "%s(%p) [%s]", __FUNCTION__, ndpi_struct_shadow, what);
- 
-   if(what && ndpi_struct_shadow)
--    ndpi_load_ip_category(ndpi_struct_shadow, what, id);
-+    ndpi_load_ip_category(ndpi_struct_shadow, what, id, (void*)list_name);
- }
- 
- * *************************************** *
- 
--void NetworkInterface::nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id) {
-+void NetworkInterface::nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id, char *list_name * NOT used *) {
-    ntop->getTrace()->traceEvent(TRACE_NORMAL, "%s(%p) [%s]", __FUNCTION__, ndpi_struct_shadow, what);
- 
-   if(what && ndpi_struct_shadow)
-diff --git asrcNtop.cpp bsrcNtop.cpp
-index c386bdc..cfdf7dc 100644
---- asrcNtop.cpp
-+++ bsrcNtop.cpp
-@@ -3104,16 +3104,24 @@ void Ntop::finalizenDPIReload() {
- 
- * ******************************************* *
- 
--void Ntop::nDPILoadIPCategory(char *what, ndpi_protocol_category_t id) {
--  for(u_int i = 0; i<get_num_interfaces(); i++)
--    if(getInterface(i))  getInterface(i)->nDPILoadIPCategory(what, id);
-+void Ntop::nDPILoadIPCategory(char *what, ndpi_protocol_category_t id, char *list_name) {
-+  char *persistent_name = getPersistentCustomListName(list_name);
-+
-+  for(u_int i = 0; i<get_num_interfaces(); i++) {
-+    if(getInterface(i))
-+      getInterface(i)->nDPILoadIPCategory(what, id, persistent_name);
-+  }
- }
- 
- * ******************************************* *
- 
--void Ntop::nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id) {
--  for(u_int i = 0; i<get_num_interfaces(); i++)
--    if(getInterface(i))  getInterface(i)->nDPILoadHostnameCategory(what, id);
-+void Ntop::nDPILoadHostnameCategory(char *what, ndpi_protocol_category_t id, char *list_name) {
-+  char *persistent_name = getPersistentCustomListName(list_name);
-+
-+  for(u_int i = 0; i<get_num_interfaces(); i++) {
-+    if(getInterface(i))
-+      getInterface(i)->nDPILoadHostnameCategory(what, id, persistent_name);
-+  }
- }
- 
- * ******************************************* *
-@@ -3430,4 +3438,23 @@ void Ntop::collectContinuousResponses(lua_State* vm) {
-   cping->collectResponses(vm, true * IPv6 *);
- }
- 
-+* ******************************************* *
-+
-+*
-+  This method is needed to have a string that is not deallocated
-+  after a call, but that is persistent inside nDPI
-+*
-+char* Ntop::getPersistentCustomListName(char *list_name) {
-+  std::string key(list_name);
-+  std::map<std::string, bool>::iterator it = cachedCustomLists.find(key);
-+
-+  if(it == cachedCustomLists.end()) {
-+    * Not found *
-+    cachedCustomLists[key] = true;
-+    it = cachedCustomLists.find(key);
-+  }
-+
-+  return((char*)it->first.c_str());
-+}
-+
- #endif

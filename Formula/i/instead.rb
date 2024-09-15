@@ -6,6 +6,7 @@ class Instead < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_sequoia:  "b27debf30bd17c51b94f24b9aed4d2a5be840d0af7a177bf32b6ad9e65221f6c"
     sha256 arm64_sonoma:   "1387c5811cd5a12673f7c9ad9e0e53f1805cd4510112b4a348912d711f07d745"
     sha256 arm64_ventura:  "a787fd3c5152c2c083ac5a5ecf474649d6e84ed5b49f8b4ea02681161ad57676"
     sha256 arm64_monterey: "66f51dc5e4e785ea0c15e11a7ff63a0bd42bd9fbde2113cb8eb31100147b86e9"

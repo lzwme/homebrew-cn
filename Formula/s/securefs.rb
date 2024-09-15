@@ -4,7 +4,7 @@ class Securefs < Formula
   url "https:github.comnetheril96securefsarchiverefstagsv1.0.0.tar.gz"
   sha256 "de888359734a05ca0db56d006b4c9774f18fd9e6f9253466a86739b5f6ac3753"
   license "MIT"
-  revision 5
+  revision 6
   head "https:github.comnetheril96securefs.git", branch: "master"
 
   livecheck do
@@ -13,7 +13,7 @@ class Securefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "34eed82e456a86942d7fcfa14071107b7fcbc18bc7c238385913229e76265211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f0385f265f7745cefedfb93e30abeff9eeaffd40451ed4f21afc3fd098be655"
   end
 
   depends_on "cmake" => :build

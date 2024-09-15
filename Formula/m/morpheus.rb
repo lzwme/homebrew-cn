@@ -11,6 +11,7 @@ class Morpheus < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fed9b4e1881854ccb426eb5d08509765e3c449f3bfbe6aacece88157ff754686"
     sha256 cellar: :any,                 arm64_sonoma:   "62411dd8e6cd7ad86d4e20468224c0b2c07d4156b0985d868ef29549f916447c"
     sha256 cellar: :any,                 arm64_ventura:  "7a9e5a6470fb2c847cf7ea02ea7684a02b0bb1a964696f8dc7d9fd8423805a05"
     sha256 cellar: :any,                 arm64_monterey: "9a4bee42a65cb59f1706e24174927a7fca699eaa4fe6d766fbdd5e924c5218da"

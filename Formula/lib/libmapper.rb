@@ -1,19 +1,17 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
   homepage "http:www.libmapper.org"
-  url "https:github.comlibmapperlibmapperreleasesdownload2.4.11libmapper-2.4.11.tar.gz"
-  sha256 "971d878b650e5e28e44da2efa6499d92bb59566bca37e0a7185c958dd9bf5a12"
+  url "https:github.comlibmapperlibmapperreleasesdownload2.4.12libmapper-2.4.12.tar.gz"
+  sha256 "84eaa87c609416f152747b112d7823b293af70589449e795981d6c2f3ab36cad"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "7e20b3af4bfdf883c626c4fde810c56d77c9de10a974f3c57394a28d1ed13b5a"
-    sha256 cellar: :any,                 arm64_sonoma:   "f4a60349593e99bb9249ad1c9640186075c8f126001a7ec63021565587ce6d35"
-    sha256 cellar: :any,                 arm64_ventura:  "83196e9ca758e2da2ea5596f91b38f2f846e6112b71575d3c37bcd99af56b6d4"
-    sha256 cellar: :any,                 arm64_monterey: "f6a3c68d2e5cbdef068dc3b95bab41dbb79b39f45f8f8c7cc27bf019998fcec1"
-    sha256 cellar: :any,                 sonoma:         "a6e66887a17dd8ebc24438c56d560f47cf56cba29d1409519538374fd8ea164f"
-    sha256 cellar: :any,                 ventura:        "4f372bfd201818a54711e91d5f96bd5ca046e5a92d0c0a03ef437eef789097ef"
-    sha256 cellar: :any,                 monterey:       "7d706d4b197f0ddbf78d45f7b1373265dd0369dc9a11f9721cb7c60df3cab1a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e2655c2bd994b1a03e9c9e75135047432036cc62011c96834e935f25fb66491"
+    sha256 cellar: :any,                 arm64_sequoia: "8ea077234bd2081203a62d8850db85b2f429f0d17d2e5ee465d60a1bdb53daf2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5085301bb85a200309aacdef50ce40bfcc73754b0b48af7d2e9b01b54ca75f5c"
+    sha256 cellar: :any,                 arm64_ventura: "fb0dc4d510f7a4d4686b91007d513344cc41b54d3fa5a9b658fb8a13ea4e3ef5"
+    sha256 cellar: :any,                 sonoma:        "7d9e7f9ce666c61467d5bfb3a2ec4d8883eb1c9582bfa0b25b3b07cd3e3de6c4"
+    sha256 cellar: :any,                 ventura:       "9dc9d06fdab3767de70d2dcbf2d920356286db60176d504f0cd28c2f5d9d38c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b906b25b9ed8d6712cf8383fe4c16d20c23917fcf788a41cfc7d56f6266b6b02"
   end
 
   depends_on "autoconf" => :build

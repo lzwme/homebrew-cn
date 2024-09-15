@@ -8,6 +8,7 @@ class Lanraragi < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "f264fe10520b1a73a9431f056b4dc68712cde9b5cb37b05690934b9bc57d8f6f"
     sha256 cellar: :any,                 arm64_sonoma:   "6fae9d6c20a48326cbd9ea44d9d974ab4004af1a2321e1987d7e49d025da4908"
     sha256 cellar: :any,                 arm64_ventura:  "9ee44ada4bdaa609d91dc9f09788a5d3d6ba7b9a5b6766e2ac995e69bab890e9"
     sha256 cellar: :any,                 arm64_monterey: "f4eb81ea0f98d1f4a277bc65322cbc3fa91d953f6de27a53ed9df962d860b83b"

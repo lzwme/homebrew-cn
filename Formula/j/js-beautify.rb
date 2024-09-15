@@ -6,6 +6,7 @@ class JsBeautify < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "68d8c474b3c6b0685b296bb72eac5e1975bd42bc6ad75b14cd37ec88503aa2ae"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "479ed5ae5125c2fd803c0552ff833a0f13be1da2f5220877319c32695d7461e3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "479ed5ae5125c2fd803c0552ff833a0f13be1da2f5220877319c32695d7461e3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "479ed5ae5125c2fd803c0552ff833a0f13be1da2f5220877319c32695d7461e3"

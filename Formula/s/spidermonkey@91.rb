@@ -8,6 +8,7 @@ class SpidermonkeyAT91 < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2ecaf8e4212260b4f579a7fc466f78615adfae5c7a0e99d1976a39568fc24e6b"
     sha256 cellar: :any,                 arm64_sonoma:   "67ab8a1a5b3c43e1b0c8b28e261ac6f584ae03a18d19a0279cea2ca7cfb054d0"
     sha256 cellar: :any,                 arm64_ventura:  "a4b5607569f9d86bb90f204337c362a1e63a5333669ca3ecd2b90a945ca3d15c"
     sha256 cellar: :any,                 arm64_monterey: "6b646df4501dc6a8ac9e0ea5dd7fb604ef28177f0f67e06422fdf30176fd8fc4"

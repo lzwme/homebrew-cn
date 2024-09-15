@@ -15,6 +15,7 @@ class Ppsspp < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "c7c50831248ed3cb47400b6d23974d4f7d31427c4fbdaafef5b96ad89416dbe3"
     sha256 cellar: :any, arm64_sonoma:   "23079d8f9e9d7d8063cda464a1b0d1e3e014974a45aee5161f5a9c20a8d2668f"
     sha256 cellar: :any, arm64_ventura:  "555823fbb0fdd842f314289d18871eca2fb8e5a52fce41dbe316f187d97c6dc8"
     sha256 cellar: :any, arm64_monterey: "bce88b0d36d699a1ed9cc0f4946347d0691c9b4a7b626d031dbcbd773e9499ea"

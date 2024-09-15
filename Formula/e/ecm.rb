@@ -7,6 +7,7 @@ class Ecm < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "425a4fb200db26245c891166bbfbc2238d96f53bc94d24171adbaa58d321297c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdf32f3a049870985a1a971414a46077e2735cf8d4df10326ed5807d661601a4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "187a0f53b52d50cd1dc9989bb704dd06ffea7a96bf9d84f7fe10e9b68d0b5042"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6c6317457a68d9f3a17da094fcaa1f110243d7031e16674aea65dbb4e23adc8d"

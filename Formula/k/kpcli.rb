@@ -15,6 +15,7 @@ class Kpcli < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "559bde0ee62097435feee486965452d923c5348a83cf1ee5edb5ccb0cbe1508f"
     sha256 cellar: :any,                 arm64_sonoma:   "33155666c3fc8c92e77ea6316d876dd754981323b2857fc2c2369db55d3008dc"
     sha256 cellar: :any,                 arm64_ventura:  "68be8cc575bf50b400d97b0c7189f2d3bc2c898103fe1268c28f7b3369d40b7e"
     sha256 cellar: :any,                 arm64_monterey: "aa479794a77120fa441d92eb97d78b65920d0e814a81a6b7fa704b6973285d9d"

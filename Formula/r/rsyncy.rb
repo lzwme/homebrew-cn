@@ -9,6 +9,7 @@ class Rsyncy < Formula
   head "https:github.comlaktakrsyncy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5764b25fe445f2f76d72027f7fc76bfc69ad3444f4fd152ce90de6a1752cd87b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c11a0cdf7eac702a51d30f410f112d0edf259693d6cf8cd274ac9e64197ec3f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9a1f343d7be0ab8f49f7cc6727e65cfb935aa3c89516ce153aeaff7bedbd112"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9a80c3c46367ecdedd9738fc9e01edffd2933336840a0fa5bc56aa5014d09c71"

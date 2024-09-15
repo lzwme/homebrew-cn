@@ -17,6 +17,7 @@ class Joshuto < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb13fbe0d40a539753b2eff12cc997b0e8356e4a3870a6a7f7d58fc6ee14fffa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5654ff693e79e548559c05fe5068242ddb204bc9b96304e6554c85be3e7384e0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "515e47a07f94b1d95048ef41aaa02772879da4bde695d396fb919b41464dc88f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "499051587a419c940c465feadcc24821b13f905f1b5283fdd6c90bd78226b794"

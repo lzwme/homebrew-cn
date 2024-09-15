@@ -6,6 +6,7 @@ class Jhipster < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256                               arm64_sequoia:  "38c49444f77acc5ab51b5a9cbe3e26dd826779f3fdcc756409ee303b73b69159"
     sha256                               arm64_sonoma:   "8439eea81592493d45851b5f07d18aa561af48b91340465d349e5e96d9930ce4"
     sha256                               arm64_ventura:  "4dbccebb2a5799f4100932d0e43963d09c895a5bba90308512ba8900ce747795"
     sha256                               arm64_monterey: "119d4ed42bfcba5c31bdacd13742f207395d2f0e41c4de34cf2ddfc65240ce89"

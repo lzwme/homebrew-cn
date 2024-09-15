@@ -9,6 +9,7 @@ class Mvt < Formula
   head "https:github.commvt-projectmvt.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a135d11add0ee8a20fb28de5f992fec6f145a93ea490d2727ff812b24414a08e"
     sha256 cellar: :any,                 arm64_sonoma:   "c8ffe44fe33fab85b1a096199142b82b3e60d4a9c61278dc1b4dadb8448f1632"
     sha256 cellar: :any,                 arm64_ventura:  "08f7d90d39f957d989bf78ce9a52a0c0318ff2e484fca943b193290c676f0f17"
     sha256 cellar: :any,                 arm64_monterey: "7b58b012a3c61ba10fd45529cfb74de4181ee3e626baff04d5909b7f8b9cf0f5"

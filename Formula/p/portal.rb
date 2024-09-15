@@ -8,6 +8,7 @@ class Portal < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "32a6e23984cd3413e58f9dbb10d38cfa2f0e32240106bd163b518df70e79d057"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e333a3b75d4b33b387c0bb6749b01e44992c5c886331f91d948dc4f59dc7b1f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5582fc03d1182135f8c7e73cb4503a8cedcd5350264185551f07ce37e09986d4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f858964534d5af5cef3195b4ad2fa818f07bf79deeea55f328b9db9d04c5616a"

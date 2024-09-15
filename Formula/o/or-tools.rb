@@ -1,10 +1,9 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https:developers.google.comoptimization"
-  url "https:github.comgoogleor-toolsarchiverefstagsv9.10.tar.gz"
-  sha256 "e7c27a832f3595d4ae1d7e53edae595d0347db55c82c309c8f24227e675fd378"
+  url "https:github.comgoogleor-toolsarchiverefstagsv9.11.tar.gz"
+  sha256 "f6a0bd5b9f3058aa1a814b798db5d393c31ec9cbb6103486728997b49ab127bc"
   license "Apache-2.0"
-  revision 6
   head "https:github.comgoogleor-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +12,12 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3fd0cc967876d244b1a7456b0dc1d98606545133baf04d8930b28d912c985a70"
-    sha256 cellar: :any,                 arm64_ventura:  "9c943b3ac25a1d3d6e11ebbea68b9bd3bc9ae4216ce1c1c4f178dfcf99bcb85e"
-    sha256 cellar: :any,                 arm64_monterey: "189bd9ada8a9db5194170ee0bbc29380c077dc890e21420c1fbf568c1681e2d3"
-    sha256 cellar: :any,                 sonoma:         "7eab6a97d3f4f55e3db74762fffc0b271ab7e3c260422f0ad1155f35b552aa47"
-    sha256 cellar: :any,                 ventura:        "7f260757e05df90b01f6f1927ab15e24097687dd4380e44b806bd399baaedc97"
-    sha256 cellar: :any,                 monterey:       "5490c0750741fc9f5c932399bd3f97acfbd5f0474f075b614cd3c1751b8f1a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4620e2edbe255510b13509f8dc56412a9b6f92f3f6652a69f49d90b5d15d3151"
+    sha256 cellar: :any,                 arm64_sequoia: "6a7c407f0cb5c8dfb847c2893cff30069cd7aac94473e3a7a87cc8291bd75c71"
+    sha256 cellar: :any,                 arm64_sonoma:  "bba4a158457e216d73dbe631a2859ccec20bee080218573ea8ece7f7fc072352"
+    sha256 cellar: :any,                 arm64_ventura: "3ce1a5fc9ccf285d11dbbd8e31e8962c0f00f320b47e38c80801ab689bcf556f"
+    sha256 cellar: :any,                 sonoma:        "e6a103ee26182137bb5fb932a3cb4f616583efab2cf7d6283a00ddaddbade492"
+    sha256 cellar: :any,                 ventura:       "33d211762847d9c687e11e1b88328612ea33baaa5e87271385069d28e747c183"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad44393215920cbc489a57bb9ac02380da4fa8e1ee33bb7adbe3ed028f56e80d"
   end
 
   depends_on "cmake" => [:build, :test]

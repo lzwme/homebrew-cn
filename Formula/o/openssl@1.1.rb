@@ -13,6 +13,7 @@ class OpensslAT11 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "e49b48327359eb6f1e1a0c67f4810105d803b560cd0d70c7247f2157f7cffe61"
     sha256 arm64_sonoma:   "00fe912a43983918e60fa5b009e81347c7775c6bfbcd89ee067dc293f35547f9"
     sha256 arm64_ventura:  "eaec02db0f43d4f11ff1299ecbcbe182ea30af62b22e5cfaaf6b77d5bbbddbbb"
     sha256 arm64_monterey: "edb44a1452fe8d30491d156b0cdad749027f2daf80d4e0f04953ee2b192f7dc4"

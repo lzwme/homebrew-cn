@@ -11,6 +11,7 @@ class Shyaml < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia:  "82be47be4d662c489fd664537c63f4431e3abc7d4007c3ab93c45fe4479540ba"
     sha256 cellar: :any,                 arm64_sonoma:   "dfef640dec7d7feda0631dee64cecf64cbfa4f652fb904968aeb3559689df56d"
     sha256 cellar: :any,                 arm64_ventura:  "ca3e01a14e019cb5631b9e2650389b9dce17e669a030dec0f7e76d2a4229cb57"
     sha256 cellar: :any,                 arm64_monterey: "4af452f5d5c74a91d59137836d1ba084fb9ec74a42deffe6adfa347eb8e96bb7"

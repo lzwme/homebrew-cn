@@ -7,6 +7,7 @@ class Tm < Formula
   head "https:github.comtriggermeshtm.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b87ee9cdc5bff6989252c305af1da3540d847784eea6f895acb5cd589abdafd1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb35c98edad2b1a8ea811001ca4c9df94cd4313717622b0da3ee0b04e518e6fd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a457f9d2f739486050e6f0e952f881c804cd15eba2007375523bf5cb85e92f25"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a55ee1208229d3940370f20a88131eadeb396084a07720000c3484fa5b82d56a"

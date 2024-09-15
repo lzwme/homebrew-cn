@@ -12,6 +12,7 @@ class Kamel < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c9b39292bf67301b50525e2164b15dc97982c02e01c0e496f66630ec4244b3e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c40989bf16afdb74e7466d995143cd654dd7491e75dea6a446efbcf61a0d89d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b02d4cdcf4e441ece927c5790ddf363ba23d0685c8d24f0158fdcf8bb6b3b33"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2184e8fa2ba9590138339db6867a15323f2fd0faece3d21676da81053c7d47a2"

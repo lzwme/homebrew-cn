@@ -6,6 +6,7 @@ class LxiTools < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d93843c76e98292a902cc56309e4a5ffb7e27f1ea0a2649e54de2ac5dac97681"
     sha256 cellar: :any,                 arm64_sonoma:   "75be3338f9fca193241c6abee6c540f5e1139deab210b0f9b383c9d8984c2186"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ca1f9223772ee912d686f6652c7b699324850fb4dccc03d5a77be23c66afcf3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b6090dd52015d0d7d17a705742793a8986b9339d5e2c9aed7595f0a9b142b992"

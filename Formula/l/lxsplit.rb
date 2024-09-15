@@ -6,6 +6,7 @@ class Lxsplit < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "af8c07cc79161f9f81048ef1dadeff7098887526cf5e178ae9d80383d2a2fa53"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc985c81d249f7a8c5f38060e5e6e8c36bdb3a0aaa7c668fe44f18b587e4efcd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4428d45c02da1ebb867b6319a97c9f6be29ee09cca1ad88f17c744427d864919"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ab46abecb79808403233fab3047c75f0ca630b4925d8c704a7bf087ef9ddc671"

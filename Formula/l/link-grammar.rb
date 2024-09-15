@@ -7,6 +7,7 @@ class LinkGrammar < Formula
   head "https:github.comopencoglink-grammar.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "037a5688edf08462771455d1cd98f227fa3935259ee3665ba401d2d886f69982"
     sha256 arm64_sonoma:   "18358c44bd3d2e2a1f9890dee6ce8e200876e22d07e7a699b19ccc4ea161bdaf"
     sha256 arm64_ventura:  "e5afe2d8e8eab8fab995baabf62cf0826d367213354f9108081484c04efef4e3"
     sha256 arm64_monterey: "9246771db1a1c670fcca1dbd16716ea91e94211e9815f87c2da453de68a13188"

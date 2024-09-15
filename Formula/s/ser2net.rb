@@ -12,6 +12,7 @@ class Ser2net < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "f3a48bb90a74bc4a7523165733ec373bde6dca179f82072484590b7626e41d9a"
     sha256 arm64_sonoma:   "8b7b88a0bbbf4325b6f47ece8462d1750a624430d22cf86dd1ce04dc3c403fed"
     sha256 arm64_ventura:  "6cb048373bba9403792c7516530d82f16f55546f4ffd28834552f3cc3863a8e8"
     sha256 arm64_monterey: "84daf687cbd1d5a3868eacb728e89c836ed61c53317d72e66d87ed5f41926e40"

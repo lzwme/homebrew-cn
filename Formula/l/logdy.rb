@@ -7,6 +7,7 @@ class Logdy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b97337df265fafda2d9c799c804e889503ec51d81030d61f95a48a58d9958f66"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"

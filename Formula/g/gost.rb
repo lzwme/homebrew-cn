@@ -18,6 +18,7 @@ class Gost < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a43b59645171e6045806d8f492cd8c9fb6566785478cbb43c036308b08a50514"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a27e7e6720095678916b47236b60ba280773f57d3168450c73a81b8857c8815c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a27e7e6720095678916b47236b60ba280773f57d3168450c73a81b8857c8815c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a27e7e6720095678916b47236b60ba280773f57d3168450c73a81b8857c8815c"

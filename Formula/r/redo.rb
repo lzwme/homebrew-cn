@@ -10,6 +10,7 @@ class Redo < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "70bdafcd8ca20fdd786442756dc6aa0eef123eedc49cb2a5b340241211d5a379"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8b48f458241e4a50346dfd5b317794688a2af43c7bdc00c18e16466846b26a6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8b48f458241e4a50346dfd5b317794688a2af43c7bdc00c18e16466846b26a6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d8b48f458241e4a50346dfd5b317794688a2af43c7bdc00c18e16466846b26a6"

@@ -6,6 +6,7 @@ class Boolector < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c36e9fe92bb625ab45e83a8b889a4f29264b4a6dca0b5da3e72c133724b6ddd2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb34a8aa518c75108be45137f5f72401f2a429d5c2aa5485e4addf5f9b7e2397"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1cc2c76b073b53af089a7f14191ffaf3d2f5cc72946ad10456e56b4c05c24cb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "59043051dc8c304152d395edc3d3460af08a95922fbc0bb7014a0041be9813aa"

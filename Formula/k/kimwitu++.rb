@@ -11,6 +11,7 @@ class Kimwituxx < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3861ff2b9ae3eacfcb277bc50b6a3b1e16c608c807ff082ea2b2fe6d739f6608"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35b17dd52015ae03a53788fc887c4b4943ab78b18f16fa6194b697e16fc69c3c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a97df5c3b9f227ae34a2e87b7a4a4ec12988efeceabd2137b0dfe619da8ded6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b54a601b646e3e2b70d0ef3042a6c2180c51dbb0371078134463de043be1d4d3"

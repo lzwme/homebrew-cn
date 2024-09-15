@@ -33,6 +33,7 @@ class Ledger < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "aa9e94d70c387b75f27ec56b5c00ef82129540ad79441e91fe407d9270774073"
     sha256 cellar: :any,                 arm64_sonoma:   "d7fa6f760b136e2104925d5e0126baa56994691e111a486be71b88048acfa2ad"
     sha256 cellar: :any,                 arm64_ventura:  "9706d5b3817874dc3c3fc3696ff5c7ce1418e20b15dafaaa21d612e80b3688b3"
     sha256 cellar: :any,                 arm64_monterey: "37d03c5f94bcc3bf843ffd5c6206a2869093f0f7010c2dc91b52a6553c1d5b70"

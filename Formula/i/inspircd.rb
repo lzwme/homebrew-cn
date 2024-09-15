@@ -11,6 +11,7 @@ class Inspircd < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "0d4d6b5603c1afef4fe0bec89128310d80abd97bcbd386b161f321a008dff134"
     sha256 arm64_sonoma:   "6d5b419638b4cd48395de81d585dabf6703acd7c80d2eb600638e950c893fc36"
     sha256 arm64_ventura:  "1ad12aaa5c0fa1d3375f92a581f3415efe57c573d03f47b439c1776634a3e838"
     sha256 arm64_monterey: "23597df57c83b56bf24c0cfea5842169aa367b1357af5a43555336ecc6942082"

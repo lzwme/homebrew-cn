@@ -14,6 +14,7 @@ class Kubergrunt < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6dcabec9c600535292967d60e35f5b55983e8df395b080006058a9b885949f73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e77f63974d3cc31671f6151619ac2ec0a8478fa8d2fa1850d85ade42263f026"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e77f63974d3cc31671f6151619ac2ec0a8478fa8d2fa1850d85ade42263f026"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e77f63974d3cc31671f6151619ac2ec0a8478fa8d2fa1850d85ade42263f026"

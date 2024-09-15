@@ -12,6 +12,7 @@ class Lgogdownloader < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "ef0e17dfc9633213e67bab4e9cd7f61d6e9d8c2d91dd90bc9d5411445f524b7b"
     sha256 cellar: :any,                 arm64_sonoma:   "b26eb399d79a483a3ad61657eebdeac5caebcb444c437e21de09a7116ea4b7f2"
     sha256 cellar: :any,                 arm64_ventura:  "078b353999b81c7dcce69955bb955023a4b5b9ab4aee6ff6448606c34cf11d7b"
     sha256 cellar: :any,                 arm64_monterey: "1e895815c472df5d004da48ae5eee507808af9158502d76b786f992f04c867e6"

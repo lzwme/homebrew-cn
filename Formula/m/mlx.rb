@@ -10,6 +10,7 @@ class Mlx < Formula
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia: "0f4ec6d88501ba15d563c9f17e2dbc56479655241c9ed42beed63c5360d7b766"
     sha256 cellar: :any, arm64_sonoma:  "16f224806caab57a46bda23589b79ea86629fe25bf5277da46533116c3a7e7d5"
     sha256 cellar: :any, arm64_ventura: "2d9928c9b1d82147711a34d2c3ee23e1b690f1a666bfa617564d85812ee6a662"
     sha256 cellar: :any, sonoma:        "faa8313c3f7357be83196cd128c1786ca71a7a99db42c92866dbb2933672c617"

@@ -16,6 +16,7 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "90acdb0718f3ba9ebaf9b347999791d2b882b4747d12f2413e12a3fd0eceae64"
     sha256 cellar: :any,                 arm64_sonoma:   "93ba651f774544e0224b878b6de5afe956ce54f5dc54aa2c3d6e31e03f6b840b"
     sha256 cellar: :any,                 arm64_ventura:  "6331a210a2b7e4a7e44835ffe2d53f34efc6b32ac08eb4795a1b465a951ecfb2"
     sha256 cellar: :any,                 arm64_monterey: "2cc192ed26e63db781901d83cc33bb7aa4ef36ebe209b54761f1aae7c5f87ff2"

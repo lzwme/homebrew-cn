@@ -7,6 +7,7 @@ class Minder < Formula
   head "https:github.comstacklokminder.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45530dd933fa2991f5446f40459c6d37027e49a499b0b6d68356ba66276cc289"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a84ce8789eb3762257b89b73f0a8e74245949f7b4382e07e660f22a2409fac40"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a84ce8789eb3762257b89b73f0a8e74245949f7b4382e07e660f22a2409fac40"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a84ce8789eb3762257b89b73f0a8e74245949f7b4382e07e660f22a2409fac40"

@@ -11,6 +11,7 @@ class Silk < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "324aacc439257c4679841ffedf2c0e8282a5b7bf45020c734bc15fad9869b904"
     sha256 arm64_sonoma:   "f12e6a010a351424c14ea5b4f7d22c23bdb12e6b0da9d07259219c7f27fba4f4"
     sha256 arm64_ventura:  "912070ff680bb0dd6996a42c132d5e7148875c0983345eeaa8698d969669e3c9"
     sha256 arm64_monterey: "3fe1b2927abfedce7920056f3f555b2c6878db91bb1edabc8226e2fa1de6d4d1"

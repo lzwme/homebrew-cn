@@ -6,6 +6,7 @@ class Pickle < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2fd589bd9d5b78d0320266d1f6001e30e4ca6b9b1e84021d5d9091e066490af"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4f920dd057755ffe7ffeda8c69132b8eef968197f8afc6d6cb2c635b0ced65d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d9f2e503ecd0cb0ffbb7297c91ade88e59fae31c5d9f898f0733e57b86c72020"

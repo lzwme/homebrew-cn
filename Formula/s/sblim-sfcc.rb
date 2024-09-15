@@ -13,6 +13,7 @@ class SblimSfcc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "6f074cbf8dda6d4bcf92790a16addbdb0ee1d0d965574113544580e559515a5b"
     sha256 cellar: :any,                 arm64_sonoma:   "d16153e6113f4157639b35994c6c49b302a6583e6c092b252aafa3a3255289a5"
     sha256 cellar: :any,                 arm64_ventura:  "c8b172932d29f6725a2b1a87945ae3d5f904fd04ae045b3599e86eeb8bd103b3"
     sha256 cellar: :any,                 arm64_monterey: "0cc8c1e52119cd38c9c9e6f2b08f0083693ae35ab2d40aa8c6352ec21c60909e"

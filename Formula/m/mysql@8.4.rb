@@ -4,7 +4,7 @@ class MysqlAT84 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.2.tar.gz"
   sha256 "5657a78dc86bf0bf2227e0b05f8de5a2c447a816a112ffa26fa70083bcbe9814"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
+  revision 2
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4"
@@ -12,14 +12,12 @@ class MysqlAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "07933aaaa1781cf2a16b44385b1b4a87f26b0f7666e08e344a7bc7f2f1236588"
-    sha256 arm64_sonoma:   "b0d32979b8ad2d1b68d0a03841c2a14c1c68c3023660a7a7fd7c00b4e8908207"
-    sha256 arm64_ventura:  "938344ca32a64fd849e4e3417f66a38a296cd62bfeacd3f7b369f42c91360c18"
-    sha256 arm64_monterey: "d7df7d8f27aceebf5abb5774c2b42eac1d5ad904ae7d502b668cc2ffb568a4ab"
-    sha256 sonoma:         "2a004a4c9b74b448e072c2a7fa176dd32a8fb7951d4e71a27db31cb0d58e6506"
-    sha256 ventura:        "601271556615677c67589678a6e20810b36bc593a87aaa56fc87ce587485d0c3"
-    sha256 monterey:       "f522aff177d031fe059f1edb1f4b8cde8d9851f38713a9b6d04e98bd99412813"
-    sha256 x86_64_linux:   "f9f52fb55bb6d266168c485895b42c0c3fbed97e52e2d69ef1cd06a1bb639558"
+    sha256 arm64_sequoia: "a3b0ea26b5bfac4f4ce81a713fd2b9bae87d59a0b4600c1fc9df312b91ea4019"
+    sha256 arm64_sonoma:  "29c137771d902412b22d76941e20fd79d78f590044ce876f63c50a9c95607d9c"
+    sha256 arm64_ventura: "a81eeffa383ffafec9914e570229f457de24daec21feb450b8acd5cb6f4895b4"
+    sha256 sonoma:        "ef0745315a998d90c2cc5cea594e59029ff47d728c01a16616e572787917e405"
+    sha256 ventura:       "caec85f417493556cba663c857b7c4025a166b27dd82ce2cdb46818380849669"
+    sha256 x86_64_linux:  "d03b2875e448047c8a8ed2bd49fbd62ccaa45362f4a625509d3a6b8f1ee7c6a0"
   end
 
   keg_only :versioned_formula

@@ -6,6 +6,7 @@ class Mihomo < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8cfb141c067951aa25a98d72e0adc5d30a1ef7914881396a1256a84c6e3cdcde"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71c5bcfb6cd74315d59878da7aa24ca8149174aedd59e0a782a45d5c1f666ee8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3ac794e900ed1404e21ce27cd02cdee22f098390573a8ec5cec22d623b8edde"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "28a66c54edd68d64059eb618d386a1dc5c7cc259f93b4f73006b48dab6f28b73"

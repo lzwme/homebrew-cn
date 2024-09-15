@@ -9,6 +9,7 @@ class MuRepo < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c489ffdc7e4210b1ffc39fb871161cd495f8ac81c19f3f6510ca5598e87aac9d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ecc6ced2f1ff8a4fc6d0412356142dc30b12250a456405be87ab3b13c0654fe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f24b5dba19024ff297556f074cf0432c797148c1b6860bc316e7fdab3153679"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2746ab00ceb108999146b92cd79847dc6d4e1a0ca3a6124b775b0aa01b53b3b6"

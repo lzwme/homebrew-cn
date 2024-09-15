@@ -6,6 +6,7 @@ class Rig < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256                               arm64_sequoia:  "794a9e6df14ced7ebcdfdd890a1a51145882325ff6f196b0775f4503289ef38a"
     sha256                               arm64_sonoma:   "c49772908fab4d132435015e225760d30f00d742f5e09123c71cdf90a453d3ea"
     sha256                               arm64_ventura:  "1ffffb584e30f49d7b8c4b5dcc99141fff24697dc0512a6cfd8deba04720ef54"
     sha256                               arm64_monterey: "beffb2a7922b42831deb088af7d1f9ae0aefd703f676a1bafffa420ea96bf23c"

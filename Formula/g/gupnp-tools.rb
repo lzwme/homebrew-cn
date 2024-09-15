@@ -8,6 +8,7 @@ class GupnpTools < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "0250ac0349cfb699686b66f5e51ab129e081f96dd40202d79d56ad33d3741bc7"
     sha256 arm64_sonoma:   "e33bfb2942a1ca1efc68fe987d8a8be8c19c69c5b17f0a4b8d59d7ccd8b8b777"
     sha256 arm64_ventura:  "7e53eb43413d211922c3b631f04263d4856b30041a8fc7ffb8c427397b96fe5f"
     sha256 arm64_monterey: "c4909d493392f97185eb1f155ef2c22a084092066052acc33465c462de0542d6"

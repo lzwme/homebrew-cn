@@ -6,6 +6,7 @@ class LibsignalProtocolC < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9a8ecae4c6099cd0732fddcd94730e7e8dc361e9f625fab00279792700e64130"
     sha256 cellar: :any,                 arm64_sonoma:   "5ea0c5c2b3ae7de38ab640492eb6e0627d1bd329413a18520c93c0699309f29d"
     sha256 cellar: :any,                 arm64_ventura:  "c2e2d424032060b1ea5eaad3e977c6bc2d2704c8aa1a43c371e119c06d68f1f1"
     sha256 cellar: :any,                 arm64_monterey: "28c12c6c31a0950b035347de5e67aca8a0057793bf35feb2b4dbe1d342a2682d"

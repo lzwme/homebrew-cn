@@ -6,6 +6,7 @@ class Llgo < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "9662d4ef9ac28e8fa0fb323e72639f9ff1b8929d2b92a3310968eb21972e5df3"
     sha256 cellar: :any, arm64_sonoma:   "096384f0999a2144455e1274e974513e00fee6931a7848d00e51ee60b0314bdc"
     sha256 cellar: :any, arm64_ventura:  "f55927a3fed5185bb7046e5eea964e5384305d786f9e058c2c6e3182f1d164c2"
     sha256 cellar: :any, arm64_monterey: "8ebe3c5d24fdf1eb1e210573a430543a0fad5a7db053567dce7bede2eaa6b8c5"

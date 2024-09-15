@@ -8,6 +8,7 @@ class Mmctl < Formula
   head "https:github.commattermostmmctl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e438f2cd6a51a683e033ce697e7c660888708f59df47ca4777e44bcc4c1f14e8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "556076fdaa27b44d9cfdbc10cc906d304d1b04907dc631965c727a4818b7fa3f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f9bbd0ee1ba75322fb8a48fa6e3bbe9df725923d15bcd835484af20dfde6497"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7f9bbd0ee1ba75322fb8a48fa6e3bbe9df725923d15bcd835484af20dfde6497"

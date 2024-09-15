@@ -6,6 +6,7 @@ class Id3v2 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6d78452187f861e1e8ecf3a23a2e873e251ccda22403a855c86dff5aa6e5bb30"
     sha256 cellar: :any,                 arm64_sonoma:   "9bf6ca393764873ff61916821417e4bfbbe1564682ca2004fcbeef1525c211b7"
     sha256 cellar: :any,                 arm64_ventura:  "222ba809b014c313ebe411cff50e684b04ece17c3d2a380ac0b794b03c3aaae2"
     sha256 cellar: :any,                 arm64_monterey: "d987f37e40ed136bf3eb8a46e867dad0a78f48a1b5457085161f90404b1eee20"

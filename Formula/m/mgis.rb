@@ -8,6 +8,7 @@ class Mgis < Formula
   head "https:github.comthelferMFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b7779b3b5c38db9f720dfe50cf812955434ff9fa6eb9b42edb47583bcce28c45"
     sha256 cellar: :any,                 arm64_sonoma:   "73c148a736218658862b6627cd7c2864bc74f01afeaa7f948f4af7e0bc991c1f"
     sha256 cellar: :any,                 arm64_ventura:  "488f7e70c16abb8b4c6845717cda7df904f2d1d757614dfdd63bf80dc6d1beb5"
     sha256 cellar: :any,                 arm64_monterey: "51acb9671ffeacc21b644d28e0fc5f7f9b874b1b928e06f8d93de061d013043b"

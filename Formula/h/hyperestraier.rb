@@ -11,6 +11,7 @@ class Hyperestraier < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "18f652254c3b115ffe6fad67be39dee791ef6b8f456122618762417eef74f4cb"
     sha256 cellar: :any,                 arm64_sonoma:   "5ac8a21fdb6d25f1855c3ab56253357c1938d3fe45d35f449e23dc28dd997a38"
     sha256 cellar: :any,                 arm64_ventura:  "381f8cb7f35472802af7f859b9b5369427a9260cf2470917f74f0e43d78915ec"
     sha256 cellar: :any,                 arm64_monterey: "4c7b331c57a8dc648150b89336b93cd18c172bce495a2fe5f7e351037d640305"

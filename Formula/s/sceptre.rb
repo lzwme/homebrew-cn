@@ -8,6 +8,7 @@ class Sceptre < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "56f2088327d6df36447c7c0bd995cae0dd81d38c3e650aac68a2b7d0f7819128"
     sha256 cellar: :any,                 arm64_sonoma:   "bed8b30c10c35f934bf1de51535681835c836faf876208e161de0279d7e991ed"
     sha256 cellar: :any,                 arm64_ventura:  "50ca3f046f4b9d429c868e5441fa457f302cc4aa4959a017933ddbd8538e0c34"
     sha256 cellar: :any,                 arm64_monterey: "a26c62d5c6e1cecad589b0a569e802d9c4ef9952b49aa923f56dbcc4e89851f7"

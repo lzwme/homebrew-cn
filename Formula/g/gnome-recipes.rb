@@ -9,6 +9,7 @@ class GnomeRecipes < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sequoia:  "0dc9dc517fa5f5b06f2988ac13ac72a76bdc612f42f5dd53e5b754504164c297"
     sha256 arm64_sonoma:   "3b9c974d968a76db7c9b4c7b331f80a4c18f4ae239def0e0a14cabbc8b9a1f15"
     sha256 arm64_ventura:  "f85b23251c9f5708f83dfe7838bd5d60ebdbc9b744bffd7781bacb7c2723de98"
     sha256 arm64_monterey: "0da13a1bfba07c7d16367844b7b9374f64011b25795abded3503254b43ed833c"

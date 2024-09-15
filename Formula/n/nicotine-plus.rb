@@ -10,6 +10,7 @@ class NicotinePlus < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ffb1a2659bff33e864b545b329c3af2ed20d7463f17f1e89b17061a8c039fed6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee66410a793440590408fc0524157aa98814d693bcf5173321eee17ed31bbf29"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee66410a793440590408fc0524157aa98814d693bcf5173321eee17ed31bbf29"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ee66410a793440590408fc0524157aa98814d693bcf5173321eee17ed31bbf29"

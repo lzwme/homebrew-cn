@@ -12,6 +12,7 @@ class Logtalk < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "02fddc03fb6fbc0d7f4a88cfc877bf4da5c39a2074a93ffd1d782294a486da39"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0cce920d64c406dd3f4148bf5edb51c7c4ef735306252f562814a5841e9787f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e400e66ac05b2f8c3eaa5a6f1aa320f67e36d97886cf4b2587c81ce294aedcda"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "069b4668a120d8591c1de55f1988b6dbe629b4b60c5f5e72c1f82bda8b9cdcce"

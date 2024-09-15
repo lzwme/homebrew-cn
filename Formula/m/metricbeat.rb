@@ -8,6 +8,7 @@ class Metricbeat < Formula
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "08e8f95fb4a826cdba0fca123ea39a895eb235cd505de23a29f9134a12508402"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2a41fe3623a15d26322c48802cd3b004f8e0e1f3ce43ee773d7a4c57ef88036"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ad0d4b8f672e32867b6bc3728037935e4cdc01fa0a24db9b8fac8376ed3729b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e144c3f663df0660884bb0d8142db010d79610951b451cc33602f2c468f517eb"

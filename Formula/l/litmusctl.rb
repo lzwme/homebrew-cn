@@ -7,6 +7,7 @@ class Litmusctl < Formula
   head "https:github.comlitmuschaoslitmusctl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5bb8e0d0b88f2b444b84d0f45440017c7c57b0a9252ce72d11336fae7727dc42"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ce49aff5838d6f7fec4ed299b041e0433bd66c6accb891b5d2b79c81123ed3a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f7326ef52702108ccdbcd6ebeed0a54b88ffb553ea5cc0aafb251b68126315c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a2ba395a7a41eeae29454b6800a4503739a76429f616176169f7fb6144149ea"

@@ -8,6 +8,7 @@ class GoAT121 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f38f1b1d5915fc6e17cbb18f66cd0ed7160c61b8c9ee9269979631d190de2918"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3757ac40700cd4d517029a65b116d6f77566a6a94c40c4596fe1260197b0a36"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b87a776feaba8fa2acf3ed011a9975889605934252863494074b611bb45bb10"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4bcb9ea33785b35225901a94a79dafe6dd966772932afcded0267095ad473555"

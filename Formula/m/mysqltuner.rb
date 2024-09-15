@@ -7,6 +7,7 @@ class Mysqltuner < Formula
   head "https:github.commajorMySQLTuner-perl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4318628650fdf57da48a1c5ed8c9f6f15f7fe6ae5d59dbacfe4121ccc5e25d4c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "74f01fb8c0235b1e38e4fff0977de554aae2f6743be6d6e91c4788e0fc972373"

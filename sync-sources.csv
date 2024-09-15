@@ -2302,6 +2302,7 @@ Homebrew-homebrew-core/Formula/g/golang-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golangci-lint-langserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golangci-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golines.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gollama.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gollum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gom.rb, Homebrew/homebrew-core, 0
@@ -8405,6 +8406,7 @@ Homebrew-homebrew-cask/Casks/f/fbreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fedistar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fedora-media-writer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/feed-the-beast.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/feedflow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/feem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/feishu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fellow.rb, Homebrew/homebrew-cask, 0

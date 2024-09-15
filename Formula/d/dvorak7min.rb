@@ -8,6 +8,7 @@ class Dvorak7min < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f3a4344484d832af72a35d2759a70018fce691d9269a6c4161a7da74bae7fea0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1bf4bd048107bae98d33859486f996dcf0a7cf7a9053414c243d060960c3938"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f581243f32da61dd063a2ef9c4e8c2297b4bd556f7905d4a520009a8bf865b73"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f38e077e0ee68158e8b287d8bf9b679378cfb03a496afd2049f9b36e840ba2c8"

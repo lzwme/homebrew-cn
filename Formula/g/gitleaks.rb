@@ -1,19 +1,25 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https:github.comgitleaksgitleaks"
-  url "https:github.comgitleaksgitleaksarchiverefstagsv8.18.4.tar.gz"
-  sha256 "68829e1dcb6bf412f04354070187947896af78c1f0fbe7f697eda18417f214ad"
+  url "https:github.comgitleaksgitleaksarchiverefstagsv8.19.1.tar.gz"
+  sha256 "163eb1afe949220e309496492e271d9c905954420beb646fbe24289eb1567bc4"
   license "MIT"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "72fcb54a8f2993e43fe068234bd6978e32d1430f9b438e17ec4d5b06fc124b5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6c63682bce671400e51943b8df178814c064774d046d595d36fddea5a00c671"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6184272d9d0520d2a51d0284a26d314f286bd6cc263cb4db6eeaf08dd91a41e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f68d647a6d839e1f78a16ec1a4347d1fc5622a40e21775cddfa20367ae2807a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f23cc3f261b57ce33d0acf93c46212020c26e8a3dbd0b2768c50cbdd08761576"
-    sha256 cellar: :any_skip_relocation, ventura:        "81b2b2fe7c17ee25c5ce5d335ea68fbfd1bf4837e1ce975b0024b20b781ae187"
-    sha256 cellar: :any_skip_relocation, monterey:       "b64fb731e34902eff192e0b8b49866d6c4a6c93b8e22424070c4fd57b0140ccf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79a5b5843c46addd9abe3fba2b4c45930a8ad748b193de39db3cb2c3da0830d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74cb45c9421b8a4725ce1842f56a638b2a434ea499045eca896ed5cdf2ed57af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74cb45c9421b8a4725ce1842f56a638b2a434ea499045eca896ed5cdf2ed57af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "74cb45c9421b8a4725ce1842f56a638b2a434ea499045eca896ed5cdf2ed57af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fc3f14c5524cb0b7a7d320072eac4a62352d1e2f4110aaef0f6090ecef928b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "8fc3f14c5524cb0b7a7d320072eac4a62352d1e2f4110aaef0f6090ecef928b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26f8df67b54cca7bc71d52e8e91fda7e89f91322945238ce83dacdcda87e3692"
   end
 
   depends_on "go" => :build

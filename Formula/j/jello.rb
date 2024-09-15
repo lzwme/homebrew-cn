@@ -9,6 +9,7 @@ class Jello < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b5ab6ea2390a1ca7c256ad6b3a388af6118c092965d1fed1bd898703191a4dd8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c70f6bf5486c8c06653f3d28c44450ae67d9ade3ef710631f353da6101fe0be4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "af6054810021f2d286da8369eb5b68d60e09a52cc2199825c891b568897a0ac6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "51b0db309fbb4deb81b77a8fb954af611643b26a2b75c8ea7f2c5658d2757e37"

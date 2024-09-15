@@ -11,6 +11,7 @@ class Minuit2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4f4d6dc6e7d7acc894d490db2027d61081e3930d62bee79556573558e533012f"
     sha256 cellar: :any,                 arm64_sonoma:   "3213b214ac223a5f62a3732a66253c29c412301f53f084d3a95a8c9e1d19649a"
     sha256 cellar: :any,                 arm64_ventura:  "e6a20d02c445e4162ca9e76f9190942e68034c8c7ed58ae2a375d121b926ad98"
     sha256 cellar: :any,                 arm64_monterey: "45042b0c93bc888463851dc66e19582a1ccda8bc58efe8775724d906c16f87ea"

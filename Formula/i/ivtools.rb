@@ -7,6 +7,7 @@ class Ivtools < Formula
   revision 6
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "8c0c13fec5d7dbb494964ba3e1468c26e75d16d2fd455d067670c7509c757cdb"
     sha256 cellar: :any, arm64_sonoma:   "9aff849b29d9ff8c26c9fa6f2465fed83432940fa92e0bbf02de4ec9f056e537"
     sha256               arm64_ventura:  "983f0e8636e109d5908cb785451ccf63b0c50ca080d8ebcc9479396d92d81989"
     sha256               arm64_monterey: "40498e4bc74223a345b5558cd13a15f201cc68c79aed787d20bf9bbbacf552f9"

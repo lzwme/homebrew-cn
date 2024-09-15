@@ -23,6 +23,7 @@ class Mpd < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "1477a629f78d3a59ec276c2ed76fcee30fab741a21c3afa05fef1f26c1f4c336"
     sha256 cellar: :any, arm64_sonoma:   "a0c5ec95e9166169ff6f6cde2f41d7c5af4aba7f96f69c09843706f811c18b02"
     sha256 cellar: :any, arm64_ventura:  "a53881cb62b2a4a5ffb73c3ada4d68ae81d7b83fdd3bddbcdb0f621289e2ca45"
     sha256 cellar: :any, arm64_monterey: "79e0919e8c4439882903acb722454e7b90ccf83b3c53c1343db1d2c37eba7484"

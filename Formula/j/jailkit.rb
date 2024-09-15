@@ -13,6 +13,7 @@ class Jailkit < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "b764b91f0212400537f70e2b40f05f6df24daecb3ba8e9fabbad0d8532be2cba"
     sha256 arm64_sonoma:   "b6c0c3c1107be5a4bdc64133a96ff0825bee4f0e2e5137c8a936250b2c36c687"
     sha256 arm64_ventura:  "5e555a333e8e410170f19a4a5d6cfeb18f35b93cafeb4fa36558c67ccccc3f04"
     sha256 arm64_monterey: "9899513595b06db714f7e16c5020fc6af232e145134d950c62d755e290426489"

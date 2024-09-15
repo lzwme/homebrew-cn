@@ -7,6 +7,7 @@ class Sdb < Formula
   head "https:github.comradareorgsdb.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "36e0f0e49588d3ea3b588335bd7d7afd72218e517332c1aae818d8acb8f3bef1"
     sha256 cellar: :any,                 arm64_sonoma:   "93290582465ed3ba9fb67a8e9a609da68038bb657490a4735b8ddb75859f30ba"
     sha256 cellar: :any,                 arm64_ventura:  "97e8c8df5c36921224815910ccd8aa3fdce8f66f7b51ab2658404b16d026c659"
     sha256 cellar: :any,                 arm64_monterey: "930c20bd65468d75d7ad9c56573e19c11faf811e94300cde2aea8c14b77f7987"

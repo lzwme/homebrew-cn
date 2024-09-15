@@ -8,6 +8,7 @@ class Raven < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d9e28972310bd0feeff71dbdd85bd9f7f10a747d2aa0c816102f97aae6f7cfab"
     sha256 cellar: :any,                 arm64_sonoma:   "24358ae759b3c6c56b7061e964423ffe25861d188c3c566bfd6d86cc6e3b6e80"
     sha256 cellar: :any,                 arm64_ventura:  "53164b50efdde032b3ab29fcb6217dfecdf6780213b9cb9ccfa87fd415a47020"
     sha256 cellar: :any,                 arm64_monterey: "5dd38e2a8ba2d4e3a64d10f0816910e4990bb2e9119fe201690cace6cf676e1c"

@@ -7,6 +7,7 @@ class Phpbrew < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5313331a47dc3d43289333b1a1345dd53fcfd6b1cff99db2ee2483302288b1d8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5313331a47dc3d43289333b1a1345dd53fcfd6b1cff99db2ee2483302288b1d8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5313331a47dc3d43289333b1a1345dd53fcfd6b1cff99db2ee2483302288b1d8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5313331a47dc3d43289333b1a1345dd53fcfd6b1cff99db2ee2483302288b1d8"

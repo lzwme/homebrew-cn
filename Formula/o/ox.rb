@@ -1,20 +1,18 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
   homepage "https:github.comcurlpipeox"
-  url "https:github.comcurlpipeoxarchiverefstags0.4.6.tar.gz"
-  sha256 "ac4321f30fd7b5fbb9a4fc6e21242f7de739310c0ba36cc9a73f1791efa5ee22"
+  url "https:github.comcurlpipeoxarchiverefstags0.5.1.tar.gz"
+  sha256 "78406932f985da0ebec9bc19149c80fdae2bd24874a1635e26b18e6f4fe90537"
   license "GPL-2.0-only"
   head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "27c762b972339c18ac0b77d86130299ee18f3cfd70ad2b557ce8341debd09ca8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a139c382cd22a128f22de230c285bfd8f2191412de762cb20bb0f7717707547"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2322d27a12e8456a257d4fb8dd2956f1927ba83faf56474735cbc3337bffe6e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "813fd47412499ae6c64bb82a62eb92f87b7728d75af8e847917141b73fd85826"
-    sha256 cellar: :any_skip_relocation, sonoma:         "36ef0aed5469f91c3b4610f068a60b90ba3166b506ecda7b3a9fc661e19ed03a"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f90e6fb795d78bae5ea5521e55ef9a598baffef937cf3cf18613a19da6d77ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5a97a482ce4ed1815e6220cc8e2ee22344df059a3f72637eb8b21485e810db1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7dd50e60b67e6b33c0d804bf308ac63922259ad744a6295719c5e936407945e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba37262498cd49256d98af1837bbfe18bab3c1a2e2a2f721adf5bf0261b60f0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d416549bafbef8dedb2db4190555a0fac6cd6157b3d50fa2f14c2bfe42f07db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf258237b2bd4c87786f5a1ab75f7810ffc3231c67a3833045430ecf5abafa48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "266b01a0c8cf104ad6042a734ec8fb2973b2526030cef6511f18c4c245c3d9b4"
+    sha256 cellar: :any_skip_relocation, ventura:       "82b982bec3a8f0174e416da140be8cfd0b855d9bdf743a7592f71d3f98a1f20b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7999d04f66bcdd65205aee5203a1edfadf2e60b423cd681731b55c36be44622"
   end
 
   depends_on "rust" => :build

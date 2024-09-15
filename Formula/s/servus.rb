@@ -7,6 +7,7 @@ class Servus < Formula
   license "LGPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e4e1dc29b490f71552d5037b7eec4b049884e7ab5942f543fc65392f856f6ce0"
     sha256 cellar: :any,                 arm64_sonoma:   "1ca10abd68ab48408bc5d5db44e2512345ceab9ba48765c61f6ac2079268dcb5"
     sha256 cellar: :any,                 arm64_ventura:  "1efa83c497c61c33ffaa0217aebd141898bd6b1ae4302116d8a9e7deb1737f53"
     sha256 cellar: :any,                 arm64_monterey: "ed3be1f83df1a364a0eb5161853e369777ee882950c8a7237ee5dd10fa6cf6b4"

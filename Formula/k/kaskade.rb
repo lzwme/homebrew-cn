@@ -8,6 +8,7 @@ class Kaskade < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0595e61779ffedf97fd5999baadc46e4e1b12742686bcbae441308e5fb242d3e"
     sha256 cellar: :any,                 arm64_sonoma:   "7ee8d8e20ee2cb56892b9943b68a0aa70b1bc3dfae2161abb99fcb530ed41012"
     sha256 cellar: :any,                 arm64_ventura:  "0241b3bb918c0b0ba8c8ee633e344f9525f877a05572e8bc19a47cc0a21967d2"
     sha256 cellar: :any,                 arm64_monterey: "86341942b35c0959ee6cf5f00b208397d68fbc8caabc8f344909af5b07be45cb"

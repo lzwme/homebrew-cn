@@ -12,6 +12,7 @@ class Seexpr < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "d568f50ded114a9116f96515049ba0938ab9d348e6254c649412426edb7a6909"
     sha256 cellar: :any,                 arm64_sonoma:   "5da5b2e705b2aa90b55a91e3671c07bbad530694de37ad57d6be0441bcd4421f"
     sha256 cellar: :any,                 arm64_ventura:  "b28dd49e3d0b93c67e39ed97067547643b9254119e9bc117b575739fda21ba9d"
     sha256 cellar: :any,                 arm64_monterey: "164fa646ad87a1c238d9581a59f6d4cc2992aff2a70cb1c2467cd20eaea02823"

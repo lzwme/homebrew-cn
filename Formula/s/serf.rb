@@ -8,6 +8,7 @@ class Serf < Formula
   head "https:github.comhashicorpserf.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a4c0bca56876d18f58bbccf3b9771b404d7d8985d5abab3188de3528008a97cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "377f88039309ae3efa86e5ff575f4f3373901d3b4d98cf4e36f1a88e01289030"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4dc6c50f1b2a6a151d6a1fb0f0cd54b41854d8244efde532a704b99863df8a7d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "59a8907fb429075617af0dd136dec133ef2d3db717aefdd5d34af24bdb61b8f7"

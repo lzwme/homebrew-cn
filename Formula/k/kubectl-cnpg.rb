@@ -8,6 +8,7 @@ class KubectlCnpg < Formula
   head "https:github.comcloudnative-pgcloudnative-pg.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a2fa094354e54a0eb5f2afcc24d9f98ac3a7cd3e2662b96997b36f7d7ab99371"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08194de6003590e2995aeb969b9973fa9bdeb0d549f4c44055a20169145eca16"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fca31f527336ae2f92871afc5bb31618b61e4c14b9c8e131b015a1bb092e6576"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3976abe30219354b7703b43abdeff8c8b9b132fa7bd741bca8e88797121f1419"

@@ -9,6 +9,7 @@ class Mitie < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "609a202b9f8aa38620c3ab1f8092ccd2c7433a86c5a0547bf74a822fbbc491ef"
     sha256 cellar: :any,                 arm64_sonoma:   "206757071c813ec8b7464f15c897775fc3fa3c30520c2f28f4393139930cafa6"
     sha256 cellar: :any,                 arm64_ventura:  "f12722f2d8be28dccf40dd9a6db1daaafe471274c94d1a1f042f4ee2b44cd2d0"
     sha256 cellar: :any,                 arm64_monterey: "476290231b1f8e2bcef9c6100f7d0855dacfb9fb07d3701d440109ea42f91251"

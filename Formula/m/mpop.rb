@@ -11,6 +11,7 @@ class Mpop < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "a569988b1465027742d25890bdd39e274b425723104b33ca2f0cf76978408d05"
     sha256 arm64_sonoma:   "119c3049a55e441db8bd727062cb56fb52f93fe6b7d792c813bfb39acf534e3c"
     sha256 arm64_ventura:  "3e00c1f1065249d076e8837ec34695c18f0627f8f16acd15e937b723124b8b24"
     sha256 arm64_monterey: "7ecefccf4e929b82eb91685028bd77ef9f287b1ac1c670c88f831a321b297b9a"

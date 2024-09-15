@@ -11,6 +11,7 @@ class Pngxx < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "acf63a60a34fbd3c3491c29b7ea5081736b7ce316d6d27b7732313920f450701"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5eec08e707d28e9849abb32efc3d218abfb2ff953ee1e9ed6fe3790646713090"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ede8356bf0fad95a8d5e0ff94f9e586bcca7ca67ef24097d50bb69e3bc20173"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7ede8356bf0fad95a8d5e0ff94f9e586bcca7ca67ef24097d50bb69e3bc20173"

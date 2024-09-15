@@ -7,6 +7,7 @@ class Jscpd < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e98285802ac160668e23cd901cec1b45ff0d66fbbaa7e9e4ea1798b317dcf180"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "541ad78931d710438b9489495ff9c534354286e397e20b9c5998af960512d04c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "541ad78931d710438b9489495ff9c534354286e397e20b9c5998af960512d04c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "541ad78931d710438b9489495ff9c534354286e397e20b9c5998af960512d04c"

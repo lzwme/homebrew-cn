@@ -12,6 +12,7 @@ class Monero < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "94918e427866d89324b910d6d321ea111c08c4d216ba972a0f3dafcb0d1c920c"
     sha256 cellar: :any,                 arm64_sonoma:   "eeca3a8cd0a413a37165bf9b1534043bc3a7de27ceb3a2da218a5e4c8cd69c8c"
     sha256 cellar: :any,                 arm64_ventura:  "793f709451ab5f541d19ace5709d24eba53da6776ad99634d16b84b0e3af22b1"
     sha256 cellar: :any,                 arm64_monterey: "4f8f11e019d08e94dfb67b09f71b7bbf544fd5d6291e18d1f9b3b01d3a74dd4c"

@@ -7,6 +7,7 @@ class Mubeng < Formula
   head "https:github.comkitabisamubeng.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb91567c770f49e1605ff1f3dcad246fb9a27f8ad4de17a7d6659006e09d506b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb91567c770f49e1605ff1f3dcad246fb9a27f8ad4de17a7d6659006e09d506b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb91567c770f49e1605ff1f3dcad246fb9a27f8ad4de17a7d6659006e09d506b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eb91567c770f49e1605ff1f3dcad246fb9a27f8ad4de17a7d6659006e09d506b"

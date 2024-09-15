@@ -6,6 +6,7 @@ class Hdf5AT110 < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "b582f925e723b300ee8401f89307fdc2cb336b7ea691b61f8396890446645ceb"
     sha256 cellar: :any,                 arm64_sonoma:   "b85adcde660662f9ed6f4c9740e1c97a8ec2a1b4be7ff3185142801ce7083a5c"
     sha256 cellar: :any,                 arm64_ventura:  "7c8e8deff03df6d11099246b2ab71ed2decdcdbbc395e4803b0a12fb5d0ec672"
     sha256 cellar: :any,                 arm64_monterey: "06e03e5b27f560906f80721de89c681a56f138f239f04a71142efdb14c180e4c"

@@ -11,6 +11,7 @@ class Jruby < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "84e37f6890b8d70f4b780807c0f54a17ee73b13059a976a7565bccbbb121d3d7"
     sha256 cellar: :any,                 arm64_sonoma:   "e286b22b4d2ba7e6c4059714851c7f45339955164babebc29a4c857ba51c396b"
     sha256 cellar: :any,                 arm64_ventura:  "e286b22b4d2ba7e6c4059714851c7f45339955164babebc29a4c857ba51c396b"
     sha256 cellar: :any,                 arm64_monterey: "e286b22b4d2ba7e6c4059714851c7f45339955164babebc29a4c857ba51c396b"

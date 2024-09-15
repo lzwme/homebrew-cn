@@ -10,6 +10,7 @@ class MetaPackageManager < Formula
   head "https:github.comkdeldyckemeta-package-manager.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "d9793180783eafa70947a80701d3eab2f946aa04b10c3a84f78f97ced49105dc"
     sha256 cellar: :any,                 arm64_sonoma:   "3c661aa41d72985951d4db1da5810416857b6305206e1f5c8b22cae8455e4132"
     sha256 cellar: :any,                 arm64_ventura:  "b9a0d76db9f4f79a387eb3ff13979477e3247775c800a01672c176cd8d6513fc"
     sha256 cellar: :any,                 arm64_monterey: "7f351c590968660a291334c80c435722e2da62197b3a85f135ad7039eceab124"

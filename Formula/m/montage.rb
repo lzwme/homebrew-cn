@@ -9,6 +9,7 @@ class Montage < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "b1d5f7c20f35e617f62197124a7c5c7e43bd4fc6272cf642346f6311d1da41b3"
     sha256 cellar: :any,                 arm64_sonoma:   "322fc326957e3d7173087350a50a5e5c034223fe631e5e2d45556a4e3eb2a85b"
     sha256 cellar: :any,                 arm64_ventura:  "64bead5a3b77bd80dd4cdb5980ac40b4f140246a8dd77ffc91cc476e1d5201e0"
     sha256 cellar: :any,                 arm64_monterey: "979157185163a1e4af7de11b882687e34e86b5e8a185c046c8e468da8a7765f6"

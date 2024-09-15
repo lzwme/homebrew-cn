@@ -12,6 +12,7 @@ class Mksh < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4a7e852c89de699dd93d9e89d5c6928b416f3fc5c54211dc2cb00188d228b66"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be279888c13fec0c586f14251a00d0413a0bc835dadc07ca0c2f648c5d0b13a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f8fa2427f871cd4e4e7143244f5862988cb72e0a264c0b947c4f2f72d3655d8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9467abce8ddfd5d5dbdfda62ab8b36d020c92ae4c06805ecafd9973e20f4307"

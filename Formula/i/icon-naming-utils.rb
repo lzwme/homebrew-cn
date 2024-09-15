@@ -9,6 +9,7 @@ class IconNamingUtils < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3caca3e4bf1e45408fdd966f46f860a0fd9002f471a1fa258e9c3c66ab28b204"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4875c2788c7c77a35e9af5ecda0d4ba48ec06668ed12acd5b95b77860a8e25ca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d9b0891567661143495e9cb87f7811d66a7e980e26d403fdbd3485590f9bbf7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d9b0891567661143495e9cb87f7811d66a7e980e26d403fdbd3485590f9bbf7"

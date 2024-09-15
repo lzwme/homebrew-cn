@@ -7,6 +7,7 @@ class RpgCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eac5ec141b1ed7c251cf313ee405810c56a713d9d2eaa048aa23a324762f67ba"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c465558d84707138249a62a0e7acb64189e51d3b4946bda181777a625e0beab9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9288dfaf7d55197fd3468953aa278104a1b3d35750bbb77803cfe18131dcf292"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a1e41bc669f9d931347a38ccbbb391a2db5010060f05851a3145af651ac76052"

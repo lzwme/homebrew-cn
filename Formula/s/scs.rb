@@ -6,6 +6,7 @@ class Scs < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "6c51a4ad4ca92b9a9dc0484ea9c4f9b6322ce88e6ad236881a2b14dbf0423e7b"
     sha256 cellar: :any,                 arm64_sonoma:   "01c9ae089993b4415924308e126012b86327100bdaa9146c0aee08a9865a8c42"
     sha256 cellar: :any,                 arm64_ventura:  "d598a72de7867bfa376e0ebff3dd2c3bbb0f6e027e1c7cdc7450655e5d0e3fd9"
     sha256 cellar: :any,                 arm64_monterey: "ede06b46c1681c4fd1b78a73609c93b2447d715a9c10a2dad288a13fd251c2b6"

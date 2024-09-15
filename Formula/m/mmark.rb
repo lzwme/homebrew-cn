@@ -6,6 +6,7 @@ class Mmark < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a55606896295f39f74fde07fafeaf310b14a13523127260c33a465cf33152666"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f81aafdcf1415a6935341dd178be6e78571a93d64be0b12e7adaed3e9d01be7a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f81aafdcf1415a6935341dd178be6e78571a93d64be0b12e7adaed3e9d01be7a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f81aafdcf1415a6935341dd178be6e78571a93d64be0b12e7adaed3e9d01be7a"

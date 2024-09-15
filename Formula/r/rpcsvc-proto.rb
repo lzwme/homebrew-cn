@@ -6,6 +6,7 @@ class RpcsvcProto < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "076bec1fd5bdddb95185b92aa72a11b94e72cece029eb771edabe98cf805b91d"
     sha256 cellar: :any,                 arm64_sonoma:   "af9f762a02610698572a23013b726055104c910c96d1d9f0dd5173261f0989a1"
     sha256 cellar: :any,                 arm64_ventura:  "af81bdfc3e4e2ba5e41993f84e71ad26054d91a92bb9e65532e6fd6e553c53ea"
     sha256 cellar: :any,                 arm64_monterey: "65f7f9272dd8f9ad6bf4de8a8c31c2dfc80ab7f02ad44e8321e5cd1472f710f3"

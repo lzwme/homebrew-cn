@@ -8,6 +8,7 @@ class Iblinter < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ab02ce27d16504d8ec99411983ecec5503a128fd940bc6d0c9c13ba7347d7632"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c629f36cf48f2703306e635ad77c25ff9d6423789664bcda698403588461a598"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f71014fe66db0a03768d59175053f6d3575dcc7ea91e806cec6912d808df667"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2e63e2fe2324d295afb9bba5b8a3b7475480543fcf8145b61cb5931cda5ca97d"

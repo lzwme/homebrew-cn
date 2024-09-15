@@ -7,6 +7,7 @@ class Poac < Formula
   head "https:github.compoac-devpoac.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "a6a22dea81a6f82833163d1a7541f7b1856dbec8eca1bed9d5c0365e65e50076"
     sha256 cellar: :any,                 arm64_sonoma:   "ce280c229ec1bf6ca4f8d50a0337a7ef24f6c49447725a0237672a8e9657147c"
     sha256 cellar: :any,                 arm64_ventura:  "42bf04a9fb7254ad547e688696fbfeca929aa459a578875aafa71d8a9db01729"
     sha256 cellar: :any,                 arm64_monterey: "0c65b81b080635d90dfbcf52f436d16d01fc0fcbff37afc586b55f964f35dd9b"

@@ -9,6 +9,7 @@ class Keepassc < Formula
   revision 5
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "98ed7114cf765174d29a9884683b0aefb7cef01b5619879073dc0e598a2affaf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59ab2d959aa8bbaad5ac6c7f208a7ed22374f694bae1f96725342b9dfd2d8b70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2a9652625bc12ad0456f3f3c2d5a0cc619629e162b14bc2b58963f44aca1a2c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1a1e3179e658e703e11f18f6927cbfd0d1d23f3a0932abe737b04512eb31a303"

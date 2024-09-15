@@ -7,6 +7,7 @@ class Millet < Formula
   head "https:github.comazdavismillet.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fd0c33475ff9e3057134fe05fef6c0b174142b6834f778a0e9ef65ed2b7bc8c8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e56a397ba1ffd324d8e4f3f3708562dd24d0a038f2f36da98e2b7281ffafc6e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "10b65b5b427901100c6a0878bd0a33b3b05e035a9727825fe01637a5ffb1743c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "50cf4584a001d725de8399a2e645193427382c700f355fd930dab919a2852a53"

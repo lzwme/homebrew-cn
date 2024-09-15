@@ -4,17 +4,15 @@ class Bloaty < Formula
   url "https:github.comgooglebloatyreleasesdownloadv1.1bloaty-1.1.tar.bz2"
   sha256 "a308d8369d5812aba45982e55e7c3db2ea4780b7496a5455792fb3dcba9abd6f"
   license "Apache-2.0"
-  revision 29
+  revision 30
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5ece9c803b6a51a88b040f05fd9f9ecba504860be327aaae7f3fbca32ceac10d"
-    sha256 cellar: :any,                 arm64_sonoma:   "0760d9714260ab1b90f47f6aa4a650693668111b2453c8aae2a9f90f3f5ed7f5"
-    sha256 cellar: :any,                 arm64_ventura:  "90f8e8c37ec415bab07e5e181d040cd0ea6138953c1c2591cc02d156296cddc0"
-    sha256 cellar: :any,                 arm64_monterey: "35368f7f27988976ec100daef7a5c7384c47104d2d55f8abec91d2a91fd74c15"
-    sha256 cellar: :any,                 sonoma:         "9c2e304f0c4b2f7fb8f0837e71c270ab7c893a26af3b747ca79f73a548051bd6"
-    sha256 cellar: :any,                 ventura:        "486f6a457e96094666477fd053f81fbaa59b6c0aeef264568d32463b6b903374"
-    sha256 cellar: :any,                 monterey:       "c5e3176dfb63c50f271803dfa862e2df44f3ad581ce7e68237b4fe1044217c39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "172d62668120f6fd2aa9993ecf96e18ecd4e6eb90865d52cfd966ed336779ad0"
+    sha256 cellar: :any,                 arm64_sequoia: "ddb21006c0e861a027456d9011a38f68c491293f80d23a6dc905faa3f2e0e4b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "b93d99e35c369cb856138e780d1f9aed0525d49431224f538fc84c8b46b1dff8"
+    sha256 cellar: :any,                 arm64_ventura: "0a0b15276af1e0b7c15ec0b1972d1af753390058b28c2d719b3b9ad2838a7b89"
+    sha256 cellar: :any,                 sonoma:        "ba9ffaab5f896984c2d8507203f4b5786e1d3f7e403b0873d5867cbffc6d9289"
+    sha256 cellar: :any,                 ventura:       "5d0b745d15eda4ef7f5e70645eb9df729378a74c18a59dec50e7380dc83ade3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af245e2db2f9d27e4c412d794edac1757cd1d6c7d5f71b9b45d058b559a3e92c"
   end
 
   depends_on "cmake" => :build

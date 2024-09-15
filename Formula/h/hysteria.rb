@@ -7,6 +7,7 @@ class Hysteria < Formula
   head "https:github.comapernethysteria.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "29e1b40d948079838d545a64fa4e8d64a1dc0c930f31db51cb29141a6eaa5d7d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ed03346365a12040823d685386d635529347b7a66f8f5d545e8597aeca34be8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ed03346365a12040823d685386d635529347b7a66f8f5d545e8597aeca34be8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4ed03346365a12040823d685386d635529347b7a66f8f5d545e8597aeca34be8"

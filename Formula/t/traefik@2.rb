@@ -11,6 +11,7 @@ class TraefikAT2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "539ccc4441133e1e2e070e94820061f9a7edd1e259a9a81bed4212265f57c352"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e763d4f0ecc6401d3128fd3c8e27bcf764c30daf101ce9c84f98f398ef548572"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "03da36cfd4d51683eace476095fdef8a5f24c1b9dc18126b47e95fbdeb7c7df5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "060d93f2519f2fa293af5a5e34cfef2182b066d32c8a1733093d3f421f67a071"

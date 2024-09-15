@@ -13,6 +13,7 @@ class KitchenSync < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3a519761b19188c855fa856eb3d17351fc10132877a4f2eb4791a89a0a0bef37"
     sha256 cellar: :any,                 arm64_sonoma:   "a4429aa5f1ee46f1d6c0405bbad656a787be6258d7d212ca528e6122155b91af"
     sha256 cellar: :any,                 arm64_ventura:  "bff92ee576a17d3a49e9995fd0b867f1f38c9370deccd4aed62100a14c8348da"
     sha256 cellar: :any,                 arm64_monterey: "e6a926959adfe33034c7b1f4b2dabcd2dfe4cd7f3a75b765c4da2e7fdf796586"

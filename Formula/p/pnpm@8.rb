@@ -12,6 +12,7 @@ class PnpmAT8 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "d27023c0a4cd4905688132e77e2729c06816516b1e35d9c73fcc4f70aedb05bf"
     sha256 cellar: :any,                 arm64_sonoma:   "d27023c0a4cd4905688132e77e2729c06816516b1e35d9c73fcc4f70aedb05bf"
     sha256 cellar: :any,                 arm64_ventura:  "d27023c0a4cd4905688132e77e2729c06816516b1e35d9c73fcc4f70aedb05bf"
     sha256 cellar: :any,                 arm64_monterey: "d27023c0a4cd4905688132e77e2729c06816516b1e35d9c73fcc4f70aedb05bf"

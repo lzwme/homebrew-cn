@@ -8,6 +8,7 @@ class Sigstore < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "15ea68e1247a1910c11b3ffee3647ad659184d21c0c31785b28e6e9c7e099737"
     sha256 cellar: :any,                 arm64_sonoma:   "322543604e4980a9bfab91bf68f626263a4ce221b6016e52cb297bcece35abf3"
     sha256 cellar: :any,                 arm64_ventura:  "0f2cd2543036cc50aff8e56a674fb67744bcb51351302acdd38f4556bf2c5be7"
     sha256 cellar: :any,                 arm64_monterey: "989d496197502d94000b2772c6a7e41bae5ae4f220e3249e0a94a25a7c9a33c7"

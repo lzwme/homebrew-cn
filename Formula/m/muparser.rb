@@ -7,6 +7,7 @@ class Muparser < Formula
   head "https:github.combeltoforionmuparser.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "36af0dc46c37f63d7b95d5fbbfd6faedb587b0f66994022486b6216cc1b4a620"
     sha256 cellar: :any,                 arm64_sonoma:   "badcf6bec2378a87e78207e2b378d525a75ce0fc3511e47c7dc10fc8e5ed5fbb"
     sha256 cellar: :any,                 arm64_ventura:  "6b959115733d494a5a6cb3256853e368313eda71d1df964ae2b67496e092f55d"
     sha256 cellar: :any,                 arm64_monterey: "c2514a95c8f9e08c8c9792ecbc78397fd1c8e52069cf16fdaf87d9cc1cfc8de5"

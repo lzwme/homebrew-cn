@@ -7,6 +7,7 @@ class Minipro < Formula
   head "https://gitlab.com/DavidGriffith/minipro.git", branch: "master"
 
   bottle do
+    sha256 arm64_sequoia:  "8a24b7aefbe704caa97c6d015e14490fa4f2675ae109fae891266ab9bc0b05fb"
     sha256 arm64_sonoma:   "d4af1c31e635397d647001119015cfc8d006fa148ae1b7f5aaa8ae84afa3f091"
     sha256 arm64_ventura:  "fd250a5ac187f8870397dbc5eeb87b9f80fc44edcd6075328faaf2fa83cfe5d7"
     sha256 arm64_monterey: "41a8d933c4cd33bc6d23d9604cce0dd5d69e6e95c2e2e9b2e289086ebb7d4360"

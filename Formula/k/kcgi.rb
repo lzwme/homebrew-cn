@@ -11,6 +11,7 @@ class Kcgi < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "068e41ccf27c68c4a628d5f58605ff29f5073a39374fc9ec2b47aa042fd94b6c"
     sha256 cellar: :any,                 arm64_sonoma:   "3a05d82cb4e3c9265061d0cf05872cf12c591d4793dc6b7114232fd3ccdc3614"
     sha256 cellar: :any,                 arm64_ventura:  "4a3714eb957ab3622c4eecb9add25a5e136971ad1030e32a712f08d3571efe94"
     sha256 cellar: :any,                 arm64_monterey: "34d3a40ea1e1ab174589142b356ef3a758cead1806f823fc4413babd7e29342c"

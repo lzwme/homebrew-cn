@@ -12,6 +12,7 @@ class Log4c < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "83103a56bdf9b8b2105f679fbeb44dca1c36c46d7afcc542b080e59e6e205f51"
     sha256 arm64_sonoma:   "0a21d82a2a2ee563678a110e2462a9236de30c358b8cfa62c9b919ca09e74ba8"
     sha256 arm64_ventura:  "3d35b584c96f856ebdc672621ae867fc0d14c56b193bc25fcd3f4b122cd9e250"
     sha256 arm64_monterey: "df3a6f744304902108b48717a9bde9c4f1f19b25f04dbf4b99afb5ca8b55b9f8"

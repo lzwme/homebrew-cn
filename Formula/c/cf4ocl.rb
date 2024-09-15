@@ -8,6 +8,7 @@ class Cf4ocl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "1a609601f5b9aa94b1ae423edc608e7145c727f27a83107288eeef900a3dc4aa"
     sha256 cellar: :any,                 arm64_sonoma:   "c4ad35eb918184b01d089142977aa5ed79a8d66dca5159a91b1b95df9bcec116"
     sha256 cellar: :any,                 arm64_ventura:  "e48f59a0665212145258089b5c0f9a63eb539348b30aeb76ca4d77fcc2c8468f"
     sha256 cellar: :any,                 arm64_monterey: "fcab7173eab0b7c577e19e44c2a05f285a095a1c3045b5ce7e64d1101f42a957"

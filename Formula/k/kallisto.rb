@@ -6,6 +6,7 @@ class Kallisto < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f8d9e1a41ea5d8455fbba28f140c2d173c46355bb5c4fe14a0c2d0f50bea63f7"
     sha256 cellar: :any,                 arm64_sonoma:   "cd8d0834c5c6426824aa215d5c2f1a89d42a0adb5e8ff48b1ef4398fd432cfb9"
     sha256 cellar: :any,                 arm64_ventura:  "f823ddc6d52f2ad690007bf638560086d09b781d3b67cf934dca4dc83e189027"
     sha256 cellar: :any,                 arm64_monterey: "0680066baf90e1e27b093dc12b453ee71902d498e77b01836950f31e4ea57999"

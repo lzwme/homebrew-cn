@@ -8,6 +8,7 @@ class Postgraphile < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e0c2fcfe4e73f4224b5b6a8605933278dda3c3be9e58c4547cbb0726e095133c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d559cbf994b6369a77a7df1876d347add8774960443be089a655f28862f1400"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d559cbf994b6369a77a7df1876d347add8774960443be089a655f28862f1400"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d559cbf994b6369a77a7df1876d347add8774960443be089a655f28862f1400"

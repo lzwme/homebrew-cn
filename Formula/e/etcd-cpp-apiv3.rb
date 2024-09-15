@@ -4,17 +4,15 @@ class EtcdCppApiv3 < Formula
   url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 11
+  revision 12
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a3e301db665d32c103a3f81bb8a8c66e9d34103c6fd9dda8d14f992ef6e8c001"
-    sha256 cellar: :any,                 arm64_sonoma:   "e1bc96364d65c6369e851e5eaf0999cac7a970b0c3fb56aeaac1a1ff50b73d35"
-    sha256 cellar: :any,                 arm64_ventura:  "6ecd55cddca1782a3f385a1fb61d5bda3118a28cc1822e48aa77b56a1d295cf2"
-    sha256 cellar: :any,                 arm64_monterey: "40630894a19b0bc612bfb758f7ecd6a4b53a0d32f45e1e8d5df923e6ee6ac437"
-    sha256 cellar: :any,                 sonoma:         "b8699fa6eed21082bda02fe24785fbdde51c9ea3396cfd917ec293bf88563b04"
-    sha256 cellar: :any,                 ventura:        "4bbb79b67933a491aeaa8029c3ca576e416bfdb535aba368aa142afccf41cdae"
-    sha256 cellar: :any,                 monterey:       "b4894881b6a5a49b3a7d9ea35b6af3448a3eb1be770b056a87f085027970f76a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad979f8d5dcb46f2f32661731b739d00b00ecb09ceee3a08713a6a6e3d33bb9a"
+    sha256 cellar: :any,                 arm64_sequoia: "5179fb8de9f9198ea626b81837d671edeefc0e26e229de32425d0bacc9d25278"
+    sha256 cellar: :any,                 arm64_sonoma:  "96f9d2d14577b6e46837374de0b309e439b0f7df3a43f8c6fee6c7ec414985ed"
+    sha256 cellar: :any,                 arm64_ventura: "0607001cf6bca0a0cd2197ed101ec129520fb2715606ac6ec6462e55805f7988"
+    sha256 cellar: :any,                 sonoma:        "05148b7c32d2569d4cbf02e245da64dfe3f5dc3d352c15f4194961fde3430ba6"
+    sha256 cellar: :any,                 ventura:       "42dc51d6bd4ba0e45276489b2c7266aa6b337ba5b6dd4f534e37fdd7440f408c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cd5c65302327ae2f19fdedfee396f6b726d3e135d9addde9e641f746a302689"
   end
 
   depends_on "cmake" => [:build, :test]

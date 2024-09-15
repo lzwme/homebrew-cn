@@ -13,6 +13,7 @@ class Mysqlxx < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "5b06b157f278d4298095325e3a05118a1293fff3f542494ec594cb847fe88261"
     sha256 cellar: :any,                 arm64_sonoma:   "feb7078de4fa2eabd483aa1e96a40f76a3194e964996f7e933ee9064074ead84"
     sha256 cellar: :any,                 arm64_ventura:  "7733ee0ff347f47c24396f16366af6b46ac8ef02542b9cb8d85136d9a8c17c6b"
     sha256 cellar: :any,                 arm64_monterey: "c0c11ebc7004bae617aeafa1bc621761e829401e8763c0e89d9e3045e3d83eb2"

@@ -9,6 +9,7 @@ class Idutils < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sequoia:  "63d48bcd08d23874fff1f37a66c022c47c10c085549405f4fa8cdb4ba8d34b28"
     sha256 arm64_sonoma:   "cfeadacc331e01cf64d880d4f9b35a54870ea30594d638b58f245f4cda394469"
     sha256 arm64_ventura:  "c410f473b777ac344a863267348be1dc14f587c28f6c3a5845cc556ce52ba843"
     sha256 arm64_monterey: "072b4846a5c749954544e7b747d2951d4ee43a4bd6f024e817ac74743cdeefa7"

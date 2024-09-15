@@ -6,6 +6,7 @@ class Mosml < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "4c5e5c68a5bafb747f9bf0ebf55e7e67f6ff97ad8107a788579db55b27a5a1c9"
     sha256 cellar: :any,                 arm64_sonoma:   "baf1606f54aca14fe0f9a0e734cea0518dc817fd42fb0b755364da0fa3362e9e"
     sha256 cellar: :any,                 arm64_ventura:  "697eb51321f126674f814f5cca5c08956104eb3d4181c04aa055afbf779f068e"
     sha256 cellar: :any,                 arm64_monterey: "0bcc8223cece7f0320b69b009eda89cda3cec9fc8e10877fbd985eea878cb345"

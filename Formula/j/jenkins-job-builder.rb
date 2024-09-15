@@ -8,6 +8,7 @@ class JenkinsJobBuilder < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "12ef290867261464d3c88352dd26419c87c9e28082134ea6aae8770d9d544e9d"
     sha256 cellar: :any,                 arm64_sonoma:   "27d35e0cb99cc4b5e944180c1791f360632ce4a4d5af81f5787f59b8638f4678"
     sha256 cellar: :any,                 arm64_ventura:  "3461199b579019a29d8212850257008e45a86b35a7f166fe1930d213daaa8f35"
     sha256 cellar: :any,                 arm64_monterey: "a3bc49b1291ddf1980d71d3ef6d289cd14c245383d234743fffbe1240a24556b"

@@ -16,6 +16,7 @@ class Binwalk < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "dcfb7709dfa1a49209206833dcce7c158008c611c348c5a2a3e333640c5b4e40"
     sha256 cellar: :any,                 arm64_sonoma:   "a9c16c0ea6712b324582b678a6bb0f89186229375b2167d35697c434a3fe831e"
     sha256 cellar: :any,                 arm64_ventura:  "cbc1609002b6673a9609f3af058428e3e71f3d517c66878e2fd02d4bae4732e2"
     sha256 cellar: :any,                 arm64_monterey: "f76c9432dbfbe81f8f9031c10bde58f2deb41fad4397e45c788a541a936cf7a1"

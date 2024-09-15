@@ -11,6 +11,7 @@ class S6 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "beedd096c77c9b7809ddcd78c6121c50a3142342611a22fe250eeeb47ed2ff1d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58518d4c95e24a6b46a44e43916f9c22b7f1257633fc290a5834cc8d9780b4f6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "37fe43970f0eec3c7898c2b625ef201be5be165e864e496ec92e806026dc64d1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cec74cd51d621de4e50d4269108c53ddc78eec6923b4869db5853a67edc62a8b"

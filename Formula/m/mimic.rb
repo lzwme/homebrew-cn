@@ -9,6 +9,7 @@ class Mimic < Formula
   license all_of: ["MIT-Festival", "BSD-2-Clause", "BSD-3-Clause", "Spencer-86", "Apache-2.0", :cannot_represent]
 
   bottle do
+    sha256 arm64_sequoia:  "809c72a67bc515dc1ae83a7c03bf27c9a8bf9d38422aff57d65a58ae27a0bb1e"
     sha256 arm64_sonoma:   "27c12540e94a1f80ccfca3bd15f93a305f84e4c2233253df530dd3d7b1211140"
     sha256 arm64_ventura:  "05a0ae1e6862667edb0311db845d536bc98085e57793620e28f82a013bf58ff9"
     sha256 arm64_monterey: "d5e9edd6ea60a7c799c8d88e35f981dce913d950874ce44fa9805bb7c91c5e32"

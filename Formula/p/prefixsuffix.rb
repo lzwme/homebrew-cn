@@ -7,6 +7,7 @@ class Prefixsuffix < Formula
   revision 10
 
   bottle do
+    sha256                               arm64_sequoia:  "30ef0ba35485343f36734f212295160cedd798991dfa2abd35a6b60f7f95405e"
     sha256                               arm64_sonoma:   "6e197205c70b3923ae50f5f33bd203810348f2846a3eabaf86839a978c598426"
     sha256                               arm64_ventura:  "8a718e3a241904ac15db3d608b23d2450743cd649168f623d3033717ef604939"
     sha256                               arm64_monterey: "c61092d6a233b89eba50ad58cd33acdf79110cececfe86b4b9c00c1a8713af58"

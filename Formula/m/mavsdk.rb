@@ -5,6 +5,7 @@ class Mavsdk < Formula
       tag:      "v2.12.6",
       revision: "cee4eeaaf788c24c2f53d6b5326ff7394b6f91bf"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +13,12 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e4e3c36ea9d269a4d630aefe0d4641f5793d8aa83f510fe0af93ace6e7caad4b"
-    sha256 cellar: :any,                 arm64_sonoma:   "2826281f339bb270098c1cb08c9fb13bfc267a3129ca52ca2de3d5067bcbf1f3"
-    sha256 cellar: :any,                 arm64_ventura:  "068b0a012e7bef9038e1720f207b3639e3b08b228bcc8d2ff257a9d27b8a796b"
-    sha256 cellar: :any,                 arm64_monterey: "92179e835248569418c929fabd770cebde93aa4b2df9c78d70ed596db74e4522"
-    sha256 cellar: :any,                 sonoma:         "a824eee42e36a6466cd048df9eaa850032330f603062dae298e0f2547995a445"
-    sha256 cellar: :any,                 ventura:        "581d0930ef141eb0431450386807a19699090690febe3868e00de3927651f8f2"
-    sha256 cellar: :any,                 monterey:       "476e899dcd45040573b52705a3d6b1f8af68c437fd91489188012f2cfb741fb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7833c4f1c241fc6af95d2a89b7377adc9ea530eab564b06e8096d544ff54ab2"
+    sha256 cellar: :any,                 arm64_sequoia: "0bd5b9482c108c8188d879c13885e86161cef8a383ef507be2b0e97aaff69231"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b79d6176a230b2fa1b2c921532867b9456c3fa10f7147c43f3c214f26de7fe7"
+    sha256 cellar: :any,                 arm64_ventura: "a673b26dec8cd7b2c32b7bb2cfc8b781a1964b3fcaa37d59e1cb6885b5c11f13"
+    sha256 cellar: :any,                 sonoma:        "55891c0a700b5ade9f09cb04a426fe2bfa8454b89cec68346f1e430fdee3ee08"
+    sha256 cellar: :any,                 ventura:       "4e8dbabe9bafe541d00f96b787f92c91d8ca7a3f5f7328e55f0143e79da76dc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24632dbce8d639dc78190b2733713b4de5109ed87d1c87f585f14da9d2e8721c"
   end
 
   depends_on "cmake" => :build

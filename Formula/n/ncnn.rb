@@ -4,18 +4,16 @@ class Ncnn < Formula
   url "https:github.comTencentncnnarchiverefstags20240820.tar.gz"
   sha256 "21e7897c7a332894934800a15189915b5131dddc84b2c8d5669ff53de8c5efa4"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comTencentncnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "781d7a8eca6f3c8fa53c00a994b13e1e7b7a0ba390366324f729294bf54a4fad"
-    sha256 cellar: :any,                 arm64_sonoma:   "d9a2419af4c2b488a7547ec88a5f6596871d41944288a674bfc8ab72fe88ab5c"
-    sha256 cellar: :any,                 arm64_ventura:  "a210aac4bc14c81973e6b745eed9d4900252ff2731ecf74c81d0309f0aa123ed"
-    sha256 cellar: :any,                 arm64_monterey: "df8a74b93d8db0f9a87935c3133c2a881ada9e321820131d361c8a6abbb7cd8b"
-    sha256 cellar: :any,                 sonoma:         "5d261234b1e6dc2ec97ee43dc0b2f3693bdd1725b6a29dd642ef0551e72eb491"
-    sha256 cellar: :any,                 ventura:        "428ff9ef964293d46f81e8a6899272198b87dcff0a0366ba061214386dd98343"
-    sha256 cellar: :any,                 monterey:       "5b1ac4686398ca3d101aaf01e0e200190e68ab159d110343c501b085269349c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdea38aa95b8ecbee9fc264f0fc86757e07d49066bc62dcd3c93256f35d2ba03"
+    sha256 cellar: :any,                 arm64_sequoia: "4f40dce62661e5e3582d51dccc4c595102fdeacd9b9ceffa4e5644101b75cf77"
+    sha256 cellar: :any,                 arm64_sonoma:  "05178f5ea36342bc0dff74ea9fd538655434aaa756ae2355ef5c655fae804fe9"
+    sha256 cellar: :any,                 arm64_ventura: "bc2e76d85ab6ddaa993e546a2e73e61e06f6fe3325940e916e81349471b3a375"
+    sha256 cellar: :any,                 sonoma:        "93646ad25ee50bf3eb763801af1b58160e9c3170c76f9e70bfe7b84221bc7d2f"
+    sha256 cellar: :any,                 ventura:       "048aa9867816ab7e91ef9fba377e342b1c5becee68f74e41ecd6160c98d456ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334761f9e17e03f90a61a8b5d5bcd4476ce638d12cf964dd3a08969045613ca6"
   end
 
   depends_on "cmake" => :build

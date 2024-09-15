@@ -13,6 +13,7 @@ class KnotResolver < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "04189bca50db5055b0ded9abc57313d07ffe3ceafa7f5d397da431d83a6352cc"
     sha256 arm64_sonoma:   "15dec163e7bf0696107328c5aa631008bc1aa80da6b3dc3f61084d95eee9fb8a"
     sha256 arm64_ventura:  "428e8c668dd8e505cb466b61768bf68a00bec6df74f5127df4ff9ffda996fbb9"
     sha256 arm64_monterey: "1b1abdbbd510f69ad88f4d017f49aee7f6390aba39e7db5cff0c6e261b305f6b"

@@ -8,6 +8,7 @@ class Jabba < Formula
   head "https:github.comJabba-Teamjabba.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ca270e89401f037f27bbba15909d74e3bd2caaaaec257a68720fec024b53e3fc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7ca771e6e62bfe218b66cca1345f0fadf74231d6b5b0264816582102ade7ec4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3e0407cf46ffb79d431e20da70d23080391585438fef6681415d4bde01f8094"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "12f33d23591f130fcd82fb08d02ef355cc359819e9f690a8412b4c46486feadf"

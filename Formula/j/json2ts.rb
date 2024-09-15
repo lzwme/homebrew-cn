@@ -6,6 +6,7 @@ class Json2ts < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e85142e837bc9b2bf6a70cbe4dd728f30177c4e1e449f6c12df9b7e7a21771af"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "881d477ab9a862f5e8f570ac27f60c7384de7a9ab97b34fc7ea26c037426bb82"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "881d477ab9a862f5e8f570ac27f60c7384de7a9ab97b34fc7ea26c037426bb82"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "881d477ab9a862f5e8f570ac27f60c7384de7a9ab97b34fc7ea26c037426bb82"

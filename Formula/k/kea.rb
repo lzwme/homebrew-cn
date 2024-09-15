@@ -16,6 +16,7 @@ class Kea < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "1c084c993083468c76a0729dfb4b2b231a737fe7323f9f99f6490098cb74f147"
     sha256 arm64_sonoma:   "198b4e13a2d22180c619d3cdd825e06c2ea6deacf1e1e0f1edb4bf8a4f811a56"
     sha256 arm64_ventura:  "dd9a0ee71e6edb0445804e2acdac49e4ac9f14e954c8716f2bccf217b3c42960"
     sha256 arm64_monterey: "4d6ef86f0bc8fd533f67de887f6aa0244fa0199c82fd3f596e8ca7af6616b9fc"

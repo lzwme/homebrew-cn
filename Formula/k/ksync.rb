@@ -14,6 +14,7 @@ class Ksync < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1620949d8da595167314a38d77d648496ae8f643d95b41020ac84618cbc341a2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3552681fcab8cb7f7dfe63812571245c0da18d06393a41bf561f9e812342085"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "270b540aa1ca3ebc1986174383b922ca0c6d8638f86b782bf7f1318d5f537574"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "728e06453e95f4ec8cc1e96f0f9c3f651595dd2c23e72e9ed755fef4c3d87031"
@@ -26,7 +27,7 @@ class Ksync < Formula
   # no release since 2021-03-23, https:github.comksyncksyncissues616
   deprecate! date: "2024-08-02", because: :unmaintained
 
-  depends_on "go" => :build
+  depends_on "go@1.22" => :build
 
   # Support go 1.17, remove after next release
   # Patch is equivalent to https:github.comksyncksyncpull544,

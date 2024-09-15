@@ -18,6 +18,7 @@ class Ircii < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "68189a41b92f4a21cc0777761f3aa07167afddff19cabb1d897d472a25ba26d1"
     sha256 arm64_sonoma:   "abb7c5038b0d96a37d249ca0dd4f64ecf76f76b85849d6a9981577ce88ea2c8e"
     sha256 arm64_ventura:  "035ffb6101cca1e95d9331d6887c70e7b15f2aeeade6572fdae30c803aa9bf7e"
     sha256 arm64_monterey: "694c2884b8beaa9c03933499fda1140f421a9527ee7017f8e5063d8feec7da36"

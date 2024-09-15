@@ -7,6 +7,7 @@ class IamPolicyJsonToTerraform < Formula
   head "https:github.comfloselliam-policy-json-to-terraform.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9eeaf2786425784134e48eb7452a4690777b47ba98622eb6e21ba91cffe97fa5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa5f0cec6807f3437d92a0a71cfb29b60c615cef638b3d7468ff4c9c762e62d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "de0dd9eac2c92e6d872cb70a31297a302f86a2481ee3b8e8e88abcf400fa3638"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "de0dd9eac2c92e6d872cb70a31297a302f86a2481ee3b8e8e88abcf400fa3638"

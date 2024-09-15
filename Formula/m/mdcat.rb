@@ -1,25 +1,21 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https:github.comswsnrmdcat"
-  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.1.2.tar.gz"
-  sha256 "332c8e659a668ceeae70b0d268a46f00bf8bab696dbf7f84faa69b3c509da286"
+  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.3.1.tar.gz"
+  sha256 "5dbee35f8b582bb3a023133fc564103e49d16f10a62e7a07ddf29a06fa2d48f5"
   license "MPL-2.0"
   head "https:github.comswsnrmdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c33dd68f2f6d8d3b6cd231066eb517ea198032a947e0e08aca77ca433f5641d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8d527e63b5d2637576d2e5d0ec7967ff28fba3326a6a2f1fe8398d5ca3f4a54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc824e96ad0b6ecf285eeb8f0d2fc9cc005b19f17cb7e2f97f2eeabeaa3d3df0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "337024e0c95a589a176aaf54b2af76d8918f1138115071d676b5656a27718d6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5590516084cb1d62d9a751c8f1707137832f5016f2de5d430e3ece8b6258f69"
-    sha256 cellar: :any_skip_relocation, monterey:       "54e7faca0303e2ef5cba4d84e76e24a6cfcb0c4652852252576d5c4533c17ee9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68db6d25634ac8a5b2c2bb51a9e7f6c0b72366868b49409eacfcf400ff308274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de1043b475066485007cbbff0f2783967ea176400fcf2a99693b3d359a93f68a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81e6682f3d5969c66a7850df14c08e9d087c319abc03b4e814ec3a162d51c1fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "81cad2afa7ae25c994ba0271b9bd839a806618ae1462ecbf498f360c991f22ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cb5f851b036e667d519677d55aa5363cb9fabeeea09c25ce6887043fae9b2d4"
+    sha256 cellar: :any_skip_relocation, ventura:       "65893b080f2a0c572d95a7eb13d6ed0236fca78917a8423b0df218a0da19f4b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e343e2e7a0bf3bb4dfd856d2c00769a00155de7c10934927ba2c3041375e5afe"
   end
 
-  deprecate! date: "2024-04-05", because: :repo_archived
-
   depends_on "asciidoctor" => :build
-  depends_on "cmake" => :build
   depends_on "rust" => :build
 
   on_linux do
@@ -30,11 +26,10 @@ class Mdcat < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    outdir = Dir["targetreleasebuildmdcat-*out"].first
-    man1.install "#{outdir}mdcat.1"
-    bash_completion.install "#{outdir}completionsmdcat.bash" => "mdcat"
-    fish_completion.install "#{outdir}completionsmdcat.fish"
-    zsh_completion.install "#{outdir}completions_mdcat"
+    # https:github.comswsnrmdcat?tab=readme-ov-file#packaging
+    generate_completions_from_executable(bin"mdcat", "--completions")
+    system "asciidoctor", "-b", "manpage", "-a", "reproducible", "-o", "mdcat.1", "mdcat.1.adoc"
+    man1.install Utils::Gzip.compress("mdcat.1")
   end
 
   test do

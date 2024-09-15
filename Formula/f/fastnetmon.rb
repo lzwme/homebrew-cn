@@ -4,17 +4,15 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 17
+  revision 18
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "aaa6e4d54a1c50c139ae8297347a56869d53dd1f5ee486a0d8f9b940e88901cf"
-    sha256 cellar: :any,                 arm64_sonoma:   "fc05ea60c03e6db29af977a62bcd3e5947094e17597e10f241457c1dd6aaf003"
-    sha256 cellar: :any,                 arm64_ventura:  "25f5a6563261ecbc89f5c054e31f0f5ab6c9ee2db35343a99940c4cb66d640e0"
-    sha256 cellar: :any,                 arm64_monterey: "f9a0a5f0fe94b78c2578f38d2e3c838b0c07f8ef206368ace0c8520b06df4cf2"
-    sha256 cellar: :any,                 sonoma:         "2624f8000fad19b65288a580a125a39a30648309a6f5b174a1847913b6892e37"
-    sha256 cellar: :any,                 ventura:        "e69f494480f6ea155928c246c543a36292708a8fc8540c6df78c29d0e70a281b"
-    sha256 cellar: :any,                 monterey:       "d8e6fbc5e2576570e74e78af10d9f555e61acfe36ef1410bedd5fd7c3982d35c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b6ba35da30b7842099f58f3cb3c5d85d029213afd087d4853f6a39831f098ab"
+    sha256 cellar: :any,                 arm64_sequoia: "ec0d4983cda8c607ac8d96bee9b8f005d04fed47ce0567a9f20aaed0a1096d0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e61a5887990902b3f128aa2403b8cafa7cb0f6655ce44241e85acb6e28e72f2"
+    sha256 cellar: :any,                 arm64_ventura: "1f0208dfacddbcc041c7e79b7b64fa837cd8922834dca163bf60c593942e9e07"
+    sha256 cellar: :any,                 sonoma:        "7d612f74349e38b6747e52fa6dc8e123893c85aa2347e898efe3973c0b2370ae"
+    sha256 cellar: :any,                 ventura:       "790021c16e4e76f89a5c8beb53918f5bb16bf03ad54c6fe0f555e2e9400dd927"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b83a639a62a767cad2c3378118d3f0f3240b6b0b1ddc5a8e1539960ff8ce85"
   end
 
   depends_on "cmake" => :build

@@ -10,6 +10,7 @@ class JujuWait < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any,                 arm64_sequoia:  "a917ac4733acced0c2839cba01b05a84f07301534961be772ad350feb2d6ab33"
     sha256 cellar: :any,                 arm64_sonoma:   "586783238caaf8b1947e5f37955209eb7df05b528cddb3cccfa0e4f3ba01c7cc"
     sha256 cellar: :any,                 arm64_ventura:  "f2583a6872555a52166daae3ab7a6fe3d625f273b7f0b2fcd4d6657c48108350"
     sha256 cellar: :any,                 arm64_monterey: "06cf598be9fb449ffe7a666d2d2361b185fb47b1963353e0ef0906c8d07c24f8"

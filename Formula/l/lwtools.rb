@@ -11,6 +11,7 @@ class Lwtools < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eab3dfe12c7aeb0bf11de4c44d983b9f8fa8d6145738f440ff69bb93971a522c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "006c60eee04ec235ed358e0395e992d9158610fecba2f5b668af81b5c3e6ab74"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "182534ce1b37a6230553cee3d3e794629a0e885ab762c621eb47b59bc055e8ef"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fa3093f31f2365fd394d4f5785c12cc8fe38b8e7e99b53d422ac5b1dade6fa82"

@@ -6,6 +6,7 @@ class Mediamtx < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9ed918a2820902d877351a89da74d896e037b3a27970efcf7e28db4e1736cc3a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"

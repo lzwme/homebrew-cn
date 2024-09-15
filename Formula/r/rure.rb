@@ -9,6 +9,7 @@ class Rure < Formula
   ]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "49caf7b582c783fe879f0c47fe2c9ceb320cb18707bad968523f038da7b213f8"
     sha256 cellar: :any,                 arm64_sonoma:   "bee88478824dab1e04220f232c6985edc0b104da0988bab132b9c4865a1dfcaf"
     sha256 cellar: :any,                 arm64_ventura:  "daafe186cb2a0343ba58e00c800b4388066dfc94f94a0396ee8fc7e296f12e35"
     sha256 cellar: :any,                 arm64_monterey: "63fe7ad2bcb9b05aae352c022b39274551f08c73d299484e3f4889e55f33723e"

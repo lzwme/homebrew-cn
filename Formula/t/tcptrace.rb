@@ -9,6 +9,7 @@ class Tcptrace < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d117c6645454b8a7d360ca644eff63f362abe2ce853b5d01733c67a49ca4373"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5391990c5db4c21d094d243368443f039990ed44da3d07e0a52b2f0922a3a6a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a61be1025abf1a097a9353517bc3e3f861a3b443f42350937ca345a0befe648"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dc1e3a00440e80a1b1ad88fc3ab0c872f47bd1f9d8fa9909add44144f3703be8"

@@ -6,6 +6,7 @@ class SagittariusScheme < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e376a30fdc05b7ca8951ab2e40faf83187dd63022ecd6a6530097b3a65e10ae9"
     sha256 cellar: :any,                 arm64_sonoma:   "7c07c019c9d52cd1d90fa68930ab2e430dfa58105a44a834b6c3a919cee1436a"
     sha256 cellar: :any,                 arm64_ventura:  "397c59a96c5bc10879d42a480c3df89e829d4ff17649edf43e186b1ab10d3e80"
     sha256 cellar: :any,                 arm64_monterey: "3e7bbd920bb306791edfebd38a67635d77e1c7cd28de1b01399b72a8a7edab01"

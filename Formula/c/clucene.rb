@@ -8,6 +8,7 @@ class Clucene < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "a72d28c7e47cae2af5817ed8f2765308aa0b4eac7eafb7fa46451cd8cb6eb039"
     sha256 cellar: :any,                 arm64_sonoma:   "3923df21bb6184b548889e7d9ed0204048007bbe4fc537d57711a25db4d22558"
     sha256 cellar: :any,                 arm64_ventura:  "ecbe0c9275432a532b57742e33a764144a27b26be4801db7d2c6b024f15eff75"
     sha256 cellar: :any,                 arm64_monterey: "cbbe283763a33bd7c68aa833fef9209403f4de79cb991772dca74bb6e99b60dd"

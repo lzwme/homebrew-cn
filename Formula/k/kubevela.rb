@@ -8,6 +8,7 @@ class Kubevela < Formula
   head "https:github.comkubevelakubevela.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "83080e958660699721642342e85b1364fa921ac878e6b7d908bf0a2aa3109bfa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e83588e5ff50d564b43a22ca5f6c86b6084f3ce5b5696012bb4c7bff829a0c6d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e83588e5ff50d564b43a22ca5f6c86b6084f3ce5b5696012bb4c7bff829a0c6d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e83588e5ff50d564b43a22ca5f6c86b6084f3ce5b5696012bb4c7bff829a0c6d"

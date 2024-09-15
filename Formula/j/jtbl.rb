@@ -8,6 +8,7 @@ class Jtbl < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f256bbd4fe42e094b76de00f726e28589a0d8257bc341a91d5945794f2e22c00"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21a81be0445de58f0e890b2b6b45fe9acefc6e4aaf2843874cbcfc143f6e82e6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21a81be0445de58f0e890b2b6b45fe9acefc6e4aaf2843874cbcfc143f6e82e6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "21a81be0445de58f0e890b2b6b45fe9acefc6e4aaf2843874cbcfc143f6e82e6"

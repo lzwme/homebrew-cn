@@ -11,6 +11,7 @@ class Rarian < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "2893387ce5580afb06e529f1329102a0882f4514e65faeb4cdc65ee342b8ad81"
     sha256 arm64_sonoma:   "98833e600512fbb1258715c6748be4909216695db2a18b33e13b79e1ecdad382"
     sha256 arm64_ventura:  "0bd6d6c0dbf8af88be3de2cc58374c22a0f6754de720b408468b8687faed9991"
     sha256 arm64_monterey: "234efb4a3e23a05557f67f7166639e86e4638b722865efd6b11674a411e096c3"

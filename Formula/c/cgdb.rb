@@ -11,6 +11,7 @@ class Cgdb < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "dac79a6089d98cfbe4c2b9083d34c0558227e6888546e76c0d425550cb808f30"
     sha256 arm64_sonoma:   "f30227f01c96e73fa96c6eae457149108dc258cad4845ba3a36bdad6b3d25d67"
     sha256 arm64_ventura:  "2c71862edb76b37a42f6d41f2f461a56313bb6e56139ab78fe32ee0fe1cea7c5"
     sha256 arm64_monterey: "cf029cddf3d08875c2f363d6ed9df10bfb944830d448557784e669138a3aefa5"

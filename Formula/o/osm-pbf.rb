@@ -4,17 +4,15 @@ class OsmPbf < Formula
   url "https:github.comopenstreetmapOSM-binaryarchiverefstagsv1.5.1.tar.gz"
   sha256 "183ad76c5905c7abd35d938824320ffb82d9ca8987796018f2da8380b51cdac2"
   license "LGPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "339c9f232aa0fcfcda8d628f09efa6bdb227071208a28ababc863560e2916ae0"
-    sha256 cellar: :any,                 arm64_sonoma:   "c6bb2f463c8057747690621b4e869050d29c6e0bf8e64b1dcd41226907cab110"
-    sha256 cellar: :any,                 arm64_ventura:  "f84365ad813200d435f6368b3c5ce55b618210ad5d0f573804b4861b9249149f"
-    sha256 cellar: :any,                 arm64_monterey: "c9cf203ec895aecbd958f5ebe16e1a6b596e6859ffac89f8726d220d2a27994e"
-    sha256 cellar: :any,                 sonoma:         "8ac084b6abcdc098f4d73b982966d338c011ef137dfca018d139e52e40d0b342"
-    sha256 cellar: :any,                 ventura:        "3f4a74f87a755821abc69c51ce177cb4671719695be30611cc24b8ee332b63fd"
-    sha256 cellar: :any,                 monterey:       "32c590ab44d2dbe99962b264ca8d4c0d950013e51805540a5cba84850a471a59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3800b90519f58f7c6b0f37a34bb0fb30d70e183216c24b981e5a8a6d5a6eead"
+    sha256 cellar: :any,                 arm64_sequoia: "5f86b0e680557df6ece854d02457c6c266f18927b92dc9f28ed43b899597cfc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "24adf83b2fe7fc6010b6f333f612980909f1820ddea8e59ee89357d542ff6c1d"
+    sha256 cellar: :any,                 arm64_ventura: "89884562f91649f5bfe93e95ef69c4613874bf10a182aeda7681ff3148b2520e"
+    sha256 cellar: :any,                 sonoma:        "84b3d4fd512f521eb2d8cfccdf181af851f45f95bd0e0881ab22feddce8dcb69"
+    sha256 cellar: :any,                 ventura:       "022ee2ecd13c79af92a0b4b6a99a12f672b55044c789da5e035d3b4d5746e25d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "927c6cda348c6c730ddc0aaaac5a414613784ae214444765c70543f8cffb676d"
   end
 
   depends_on "cmake" => :build
