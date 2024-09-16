@@ -1,14 +1,13 @@
 class Pegtl < Formula
   desc "Parsing Expression Grammar Template Library"
   homepage "https:github.comtaocppPEGTL"
-  url "https:github.comtaocppPEGTLarchiverefstags3.2.7.tar.gz"
-  sha256 "d6cd113d8bd14e98bcbe7b7f8fc1e1e33448dc359e8cd4cca30e034ec2f0642d"
+  url "https:github.comtaocppPEGTLarchiverefstags3.2.8.tar.gz"
+  sha256 "319e8238daebc3a163f60c88c78922a8012772076fdd64a8dafaf5619cd64773"
   # license got changed to BSL-1.0 in main per https:github.comtaocppPEGTLcommitc7630f1649906daf08b8ddca1420e66b542bae2b
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "921ed447ab7482f1ecd1890f8953309e6078e2a9ebff25cb44935ada1891c206"
+    sha256 cellar: :any_skip_relocation, all: "4cc6917959a4a5589e44b04a3f60a2c6be767b2d5ef302af832b62804af8a342"
   end
 
   depends_on "cmake" => :build

@@ -33,7 +33,10 @@ class Xlispstat < Formula
   depends_on "libx11"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking"
+    # Fix compile with newer Clang
+    ENV.append "CC", "-Wno-implicit-int -Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1403
+
+    system "./configure", *std_configure_args
     ENV.deparallelize # Or make fails bytecompiling lisp code
     system "make"
     system "make", "install"

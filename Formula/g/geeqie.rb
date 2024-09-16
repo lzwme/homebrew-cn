@@ -4,7 +4,7 @@ class Geeqie < Formula
   url "https:github.comBestImageViewergeeqiereleasesdownloadv2.4geeqie-2.4.tar.xz"
   sha256 "f2b7d1290786fdd1afec09bbe0217f327ff1ee7c80363563e8a108d03aec77da"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "41024748e3bee25351bf48e34986cfabfd6ce5da1c2b3e6f14d24bc7fec7ce8f"
-    sha256 cellar: :any, arm64_sonoma:  "7362bdaf4e6cb325774b6e5467605ad853f8a8b3a14672c65c4168de86432495"
-    sha256 cellar: :any, arm64_ventura: "072d76f8613a395dfb817705b714fecee996dc1ca9933790c14a011894316e78"
-    sha256 cellar: :any, sonoma:        "0ba3ff0ac62dd38be5f2fdc8b3e3d28c65145191c9b29002d69d76730d8afbbf"
-    sha256 cellar: :any, ventura:       "678292a55f4abb22bffed6fee69392b1f2ae0162fccd25fefdace3b9bb851ce2"
-    sha256               x86_64_linux:  "c3bd0c59f8dbb8cdd87058ccd23321eae2c797c5416ec47271135973c8b34f89"
+    sha256 cellar: :any, arm64_sequoia: "ea8e701ee511f90d96b2619f7cf3860c24c1bfb8d23489e318f04937446bc467"
+    sha256 cellar: :any, arm64_sonoma:  "0d6f2e915b89bb36681f60bb05485db71d0e7fcf3bd8d17866e4ecba65cccb60"
+    sha256 cellar: :any, arm64_ventura: "355c39f628959783eb82caa205aa00db6710aa129c6f3bfb3fbd7e9df3579612"
+    sha256 cellar: :any, sonoma:        "e6f7b06f19c5ac08785f3145006d04b856349dfcdaf7ccdd8d993807e2c7f22c"
+    sha256 cellar: :any, ventura:       "2f169b84b5822523df8dbd600dd11b5abc97d5fc10f73f748da373bca444b317"
+    sha256               x86_64_linux:  "b68ca64973a0923dc25e2be3a189058318a92bd878b2ce4ab91052ec6c3ca5da"
   end
 
   depends_on "meson" => :build

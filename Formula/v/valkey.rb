@@ -1,8 +1,8 @@
 class Valkey < Formula
   desc "High-performance data structure server that primarily serves keyvalue workloads"
   homepage "https:valkey.io"
-  url "https:github.comvalkey-iovalkeyarchiverefstags7.2.6.tar.gz"
-  sha256 "5272f244deecd5655d805aabc71c84a7c7699bc4fa009dd7fc550806a042d512"
+  url "https:github.comvalkey-iovalkeyarchiverefstags8.0.0.tar.gz"
+  sha256 "f87fef2ba81ae4bce891b874fba58cfde2d19370a3bcac20f0e17498b33c33c0"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause", # depsjemalloc, depslinenoise, srclzf*
@@ -13,14 +13,12 @@ class Valkey < Formula
   head "https:github.comvalkey-iovalkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "210abf0c283cdfa88e6fb5dff21264fcdd9886d4d98427a967c64a28af0b3d3c"
-    sha256 cellar: :any,                 arm64_sonoma:   "d3cd139668e121b5caa306ce301fda2614ca1b46941fe25db5a0a9b80a6ad8dd"
-    sha256 cellar: :any,                 arm64_ventura:  "de9f479d5978b0bbf635299d225c3068a5e7f5aac8a410fbdf173a9cd78b3185"
-    sha256 cellar: :any,                 arm64_monterey: "85a845363f2832856e4cbf131844254283b4c2c56f1a383a19bebf68be60a5d0"
-    sha256 cellar: :any,                 sonoma:         "b9b53942e9c10157cd99511dde13f531dced1ab8a0f9cb6951af0b6f30f03f68"
-    sha256 cellar: :any,                 ventura:        "20de31a33ccff361c090da4991463f7f7566014d00ce1a80773a6c1d9f026e23"
-    sha256 cellar: :any,                 monterey:       "6c1438f58b815998b049b1fbd21d15d22dc4691b5844954a44b453d1ef38466c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d87aa424286c347de00f181b805ad13714b9747987f649f2864239d29da53904"
+    sha256 cellar: :any,                 arm64_sequoia: "cae8005dbf1d79a0821fe1b83af8fc60f4a69234758463a554202c593e14b745"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ab613c14c0635595ec2e41e77391c341fa15f3b0660be45a166c758018d970a"
+    sha256 cellar: :any,                 arm64_ventura: "19be366faa4a5130cb4e00e4a764645f1ebfc7a49d854889676d8597e054d65c"
+    sha256 cellar: :any,                 sonoma:        "a767da82905be5a2736b4390cde2f7916632747ac80a37ab6beca70e9b18ce39"
+    sha256 cellar: :any,                 ventura:       "21be39a3eac33c660db7ee2b3134b949d69e7109248d277ac4a21b86b1bc8f49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df273423a0741c10ec55306fa044ee6a1cf3e66cb3791d4571ff83d0ba9162e"
   end
 
   depends_on "openssl@3"

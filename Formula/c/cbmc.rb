@@ -2,18 +2,17 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https:www.cprover.orgcbmc"
   url "https:github.comdiffbluecbmc.git",
-      tag:      "cbmc-6.1.1",
-      revision: "b3359791bcc1a6651646920c3936ce167465db92"
+      tag:      "cbmc-6.2.0",
+      revision: "27b845c975c6bbdfb2ccc6f40bdfae6793d12277"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48a856a3945a22ade6131b4073faed0252e3992de835712b8144199a2b1e10c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "129279a698dbd5282e001d638d3d6a6a97561e56898faf68e2ead8ce8809952d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2b448cd489913fae0be75cafd97bcbe41c957800fdb4feefd304f4a92d01b38"
-    sha256 cellar: :any_skip_relocation, sonoma:         "714a151f4e5b61157ca1e83f7b59ad145c09a8da2b94e04e667ef9305a4dcf88"
-    sha256 cellar: :any_skip_relocation, ventura:        "d0bf9d9d4501d39c1cd53aab2971058f5f826cee20711a27784eeaf14472b4dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3655a6f2381a806d7f6250f67a43c234b4c5c7ab7028e07b9aac450c6c27c65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0a0d46330bb1eb42845215cd701359603fb06d881e936b70df190c1d70e5f15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "547be02ac0f433c32c3891ae903a0fd636b5f969f0d48f979fb2bb297120b997"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2498148a8885ca9dc4bf43b74223fbb6133c751cda63fb4696c77a289c05077e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf25cd38405568e00ae636911f9d99d9e11bd3af412347e35493b546f89e19e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc6541c50375420b8039db909c479357f4b6ea08c42b662c848116c545244235"
+    sha256 cellar: :any_skip_relocation, ventura:       "98ca34ae1079827e7db598a4548dd53f736c28ba675fa2ec8f071bcd9f8d6ec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5f6935072f1af26fc5559e16e5c92b06bb6da0d2a7f80e6f1c2c155215bf1e"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +24,13 @@ class Cbmc < Formula
   uses_from_macos "flex" => :build
 
   fails_with gcc: "5"
+
+  # Backport fix for CMake Error at jbmcunitCMakeLists.txt
+  # Cannot find source file: tmpunitunit_tests.cpp
+  patch do
+    url "https:github.comdiffbluecbmccommitfaf92c5354e3aaca6c70013bb75b26a271c6f63d.patch?full_index=1"
+    sha256 "7dd49f1364a24b914e13e3e16de7611db10467f1235e308d1c7fa77291171de6"
+  end
 
   def install
     # Fixes: *** No rule to make target 'bingoto-gcc',

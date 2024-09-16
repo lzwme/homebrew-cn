@@ -5,6 +5,11 @@ class Xnvme < Formula
   sha256 "6dd17ec256a3801d28f1e068aa1f61e82cf9a42eb30fcc81322ef04f637855f9"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e69ea284de240b3a3f743569616b8846c7d106bd2ad8339d06aa0583108bd83f"
     sha256 cellar: :any,                 arm64_sonoma:   "068b1893f5a637342821b2673d967a86f2a6a8c6bff50e7b3133e8cf6956569a"

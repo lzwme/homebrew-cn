@@ -3,19 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/09/b3/af891e53130cff33329d05bd9e3632c125052d26981075659b86b8620599/locust-2.31.5.tar.gz"
-  sha256 "14b2fa6f95bf248668e6dc92d100a44f06c5dcb1c26f88a5442bcaaee18faceb"
+  url "https://files.pythonhosted.org/packages/3e/ca/d09b4ffa73b5fee13dd6531ea255242b725391650e3abed6656117bcd5f2/locust-2.31.6.tar.gz"
+  sha256 "03b6da0491d6a0b905692d9ac128d9deec403f40dc605c481a90dbab5126318c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "dccac2a37c13c0acacfb044ee9454d8cc95a5b01da96b159f27cf685d464e2a1"
-    sha256 cellar: :any,                 arm64_sonoma:   "3400593b474ed375f8749a9627bec05a384720eb1a975f45f6a0f574f037be2d"
-    sha256 cellar: :any,                 arm64_ventura:  "b9206a22fdd1837f60b46f9473dca45a1e7f41f044762dafcd9b5ebefc96ae73"
-    sha256 cellar: :any,                 arm64_monterey: "fbace3783d9037435d3f188ef6ce55aa622856b1184b3a01093657a3e2604a9d"
-    sha256 cellar: :any,                 sonoma:         "3adb83232f2bfc8d2038fac7804a669acc3226535c4de91560841dc388472252"
-    sha256 cellar: :any,                 ventura:        "889e21131a48afd3bb38c704196cda166ae7dcad67eaf3bf2c28b55c58acef75"
-    sha256 cellar: :any,                 monterey:       "415d12e19336dae439f001d8d173645fe0dfdee1f105d6efbbe55e4709ce7191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fafab4fb031b315e48b0047c41726222f555f5aecbcbd76555c004bc4ddbd3c"
+    sha256 cellar: :any,                 arm64_sequoia: "9033c9c5f1cbc4bf7113ab8f25cabd9ad550278eb7d7973838aa8347452e8bbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "5bd02100d57f8bd558e255cd32e11cff00c0a42d67651830ed0a87b48ebf4f2e"
+    sha256 cellar: :any,                 arm64_ventura: "108b0f63c0e04a37a494266048be6e9a4eb2a123bd2f52d5770d10e32c0cf0d4"
+    sha256 cellar: :any,                 sonoma:        "f0ed5761e5cf909627a8935ac96047bea2d63526be1612195daa0fc9dc2a8806"
+    sha256 cellar: :any,                 ventura:       "d46dcf24b7d1db195a56131002aa139edf1c894406f0efa5c43095c54bbde4a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6937a9699bcb4c9fc64d1960b401d01ee41e7b629a31d712c61f637e1e4071e0"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -75,13 +73,13 @@ class Locust < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/17/14/3bddb1298b9a6786539ac609ba4b7c9c0842e12aa73aaa4d8d73ec8f8185/greenlet-3.0.3.tar.gz"
-    sha256 "43374442353259554ce33599da8b692d5aa96f8976d567d4badf263371fbe491"
+    url "https://files.pythonhosted.org/packages/65/1b/3d91623c3eff61c11799e7f3d6c01f6bfa9bd2d1f0181116fd0b9b108a40/greenlet-3.1.0.tar.gz"
+    sha256 "b395121e9bbe8d02a750886f108d540abe66075e61e22f7353d9acb0b81be0f0"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https://files.pythonhosted.org/packages/00/6f/93e724eafe34e860d15d37a4f72a1511dd37c43a76a8671b22a15029d545/idna-3.9.tar.gz"
+    sha256 "e5c5dafde284f26e9e0f28f6ea2d6400abd5ca099864a67f576f3981c6476124"
   end
 
   resource "itsdangerous" do
@@ -100,8 +98,8 @@ class Locust < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/08/4c/17adf86a8fbb02c144c7569dc4919483c01a2ac270307e2d59e1ce394087/msgpack-1.0.8.tar.gz"
-    sha256 "95c02b0e27e706e48d0e5426d1710ca78e0f0628d6e89d5b5a5b91a5f12274f3"
+    url "https://files.pythonhosted.org/packages/cb/d0/7555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4f/msgpack-1.1.0.tar.gz"
+    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
   end
 
   resource "psutil" do
@@ -120,13 +118,13 @@ class Locust < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6a/21/8fd457d5a979109603e0e460c73177c3a9b6b7abcd136d0146156da95895/setuptools-74.0.0.tar.gz"
-    sha256 "a85e96b8be2b906f3e3e789adec6a9323abf79758ecfa3065bd740d81158b11e"
+    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
+    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   resource "werkzeug" do

@@ -1,8 +1,8 @@
 class Fend < Formula
   desc "Arbitrary-precision unit-aware calculator"
   homepage "https:printfn.github.iofend"
-  url "https:github.comprintfnfendarchiverefstagsv1.5.1.tar.gz"
-  sha256 "2f52729dee2e775c1adc52879a95429dd00748fe183df0f744f763b7f0d2aedf"
+  url "https:github.comprintfnfendarchiverefstagsv1.5.2.tar.gz"
+  sha256 "cc8ce470b8a08ec5c5973d5251987f12bbc3baa7137295c42e7d782b7b297786"
   license "MIT"
   head "https:github.comprintfnfend.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Fend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f6e08b8986a62ae927476b00b63e33d01574bfdc3a5b75490a66320d125c1d44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ac2d93d1108b73a9b83d03f90c55901a7732fc55e16e72463f266758eed9a8f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29b629a46d3d400a37884bc354128e1dbc6fb525beaa91e7e7225196f3d58321"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a0ddfba6b074c9481d97a94efdb50b9a1af8288ef8657d553976880b89d9479"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09a5c2e47bf763a920914e1b80899bf1eb41ab099013799d060a1825f0e4ccae"
-    sha256 cellar: :any_skip_relocation, ventura:        "c4bd219849793ebd7505ecc904ecf13665b03b298420d9c0a191420bc33f3d4d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5cda829a22b4fd0db8ac940f920d95e1df1ab143291347f90947ac7e2261c121"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "992ed6f0fd44e737f6dd203b0c09a667c2c799889b4c280282198f94c84a6417"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d082d1eb3a649fab318b62292850a140c6f9509a43c585aeabb1464ad2b1604"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c70efb2ed0f28b67eca5d11db4554757ba3d20b6a6bb3c7fcb1d71c21339a12c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c7f92df9f164b30559cdc214d6e1e54d0d037a81d1cade6a8b8e4897553804e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc0440a34763f1916f0c7fccf4d6bbc6ce4e05aa35aca0b320b4d1a1462d80a6"
+    sha256 cellar: :any_skip_relocation, ventura:       "2d02fa9539e1c05d36a00ef3d13ccae2c6cb916b9f5448104544a5106a2e3211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e70f73f8834dba629f3906aa77597e82233f986ce6f4f4f3ea07c03817d05d2"
   end
 
   depends_on "pandoc" => :build

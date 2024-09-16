@@ -1,19 +1,17 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https:github.comorfgit-workspace"
-  url "https:github.comorfgit-workspacearchiverefstagsv1.5.0.tar.gz"
-  sha256 "8064f7bae8cfd049b27faaaa4536e61e578d2789970ca4ed8cec82af6dd962b8"
+  url "https:github.comorfgit-workspacearchiverefstagsv1.6.0.tar.gz"
+  sha256 "c99e821710b45d2c2639c1abea45ad9f2d63d3b5b81e19e1fd29604dca05e5e2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "10724485a02b0a6782b1640ef9b53aa36ac077963005a0582fa2422a57968010"
-    sha256 cellar: :any,                 arm64_sonoma:   "5e31cf866fa3e787ddd99792c2a035448193fe1d16e527a56f31bf1825056cf8"
-    sha256 cellar: :any,                 arm64_ventura:  "4e09723e04f3e1e933b52d6f6cdea3a92973acb76c668118978449d7561fc437"
-    sha256 cellar: :any,                 arm64_monterey: "d2602a65865a4566cf60a9f2546e366298c733d57593e9127e6fcf6a349e37ab"
-    sha256 cellar: :any,                 sonoma:         "675ee40c362d2dc544cd87caa77ac83261bbede2c2cef9b27fde0420ba1dcf48"
-    sha256 cellar: :any,                 ventura:        "11a0770afb555a3c457281605022ede5db72deb6c96ecfe80b2e20616e746a62"
-    sha256 cellar: :any,                 monterey:       "18c81743d8cf59686d331abc3023d05a05d2996cd5a8bd26fd5cbe7a4fb5d31b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9517346daa08e4593455d81ad4750eeb25901cf4e9cc7b9e4f923f2de7846b5e"
+    sha256 cellar: :any,                 arm64_sequoia: "e8748befe2d9116fdb60da448121643e9bb49401f9a1e7833343b4ef6fe5d5e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "772d39bc35073c662e160ea86d20d153bdd689f360ad7538bd524fddedaa24ee"
+    sha256 cellar: :any,                 arm64_ventura: "6e918ed11da60bb72542f68d82e950a54db29f50674de061ec6de5c76267f456"
+    sha256 cellar: :any,                 sonoma:        "300b87932cafbc4e4f4bf4576b08cb6aaa89c89fb0cca029f0c55dbb146e05e1"
+    sha256 cellar: :any,                 ventura:       "30846356f2db9395c0bb3f4bd07679a0df35d07e8d04e19a76a17b6fc5111d03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54272b0971fea5d5d82b27831cad8d4f109ea9db91031ddeb20c47885dfa293a"
   end
 
   depends_on "pkg-config" => :build

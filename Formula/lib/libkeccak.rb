@@ -1,21 +1,17 @@
 class Libkeccak < Formula
   desc "Keccak-family hashing library"
   homepage "https://codeberg.org/maandree/libkeccak"
-  url "https://codeberg.org/maandree/libkeccak/archive/1.4.tar.gz"
-  sha256 "dcf148f64d49a8146c437cb532ad418030e0cde9d39ec34a454542e6321cb7a0"
+  url "https://codeberg.org/maandree/libkeccak/archive/1.4.1.tar.gz"
+  sha256 "d7b9b9e8da629a80356ce2516c2003e2d46d3ed7a3c3178ba1f89bf1ec8e5fc3"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cb63958f5e2061215683ab01242c7d5e16758ce1ba00132c15fed70064f04d0a"
-    sha256 cellar: :any,                 arm64_sonoma:   "1d532f8660167b1e40c7e33b60e0e08eb7a68658cbb29f78ea079ed555e7e83f"
-    sha256 cellar: :any,                 arm64_ventura:  "229f095585610ccb928e3f357c19f6f8f69d8e0665aaa7f37d66bc6a47c31b9f"
-    sha256 cellar: :any,                 arm64_monterey: "6dc88c48c1034dfae26c331dca47b25e78dd703a5189b54afba0ab8581a76da0"
-    sha256 cellar: :any,                 arm64_big_sur:  "3027f0870675f39b458b59567e8532718df7c97c0980e7bce8ebd7b37ee7d9a6"
-    sha256 cellar: :any,                 sonoma:         "cc976c7f61e1552046db49a47291e9a12074189cda692c49f494c00cc30e5831"
-    sha256 cellar: :any,                 ventura:        "f3f373a75ae49059c2889de0f03ec5563420cbd7cdb2afec60d54ce8b9dca4e5"
-    sha256 cellar: :any,                 monterey:       "7d82330878eeae42738295ae7c04f61d983f4f98815990bb911167738821895c"
-    sha256 cellar: :any,                 big_sur:        "6a8a78e18b258495da04a992a3856e327b1e3a71e96b0e550bb4412be62d66b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba306ce017e0bd36ffc65dced2c59b2f44ae1644c54f6e74f8cb04d3b1faad7b"
+    sha256 cellar: :any,                 arm64_sequoia: "1d2789a7559a35c28efead797077b31cb6bc0d7d8a34bec98a7c0ffbafe0c2cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "3afd0eda437e5ae52bc5431a993291724462e982169db868e9e4f3137147ebd2"
+    sha256 cellar: :any,                 arm64_ventura: "cd2787eaf814ded617723ef57cde7272b6a0bf045e91c3dddd76f17f0da5c5de"
+    sha256 cellar: :any,                 sonoma:        "6bc4e81b10efb0680d679751bdd02db3cd93f289e3c56e0a411d0ce5d243254f"
+    sha256 cellar: :any,                 ventura:       "8269136615b749cc7a7de231bbd0a0ef05b2bb1154e5a60595db61b38a5855d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de5d1d1369bc27861a72fef93c08dfa3d4018629739083124e526922033fc586"
   end
 
   def install

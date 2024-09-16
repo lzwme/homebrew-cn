@@ -11,6 +11,7 @@ class Forge < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2e4b5e1f940c3a2bc469fd2206eb113ba24e2add15245d202cf296bda59b269d"
     sha256 cellar: :any,                 arm64_sonoma:   "653482d31c8e2546a15569be8c3f7756382a49f2e5a66dea83b61aa6a5effad8"
     sha256 cellar: :any,                 arm64_ventura:  "f25eab15726f80780cce2a23f2df9b320a2d62bc6662db8c407318bdc78a7075"
     sha256 cellar: :any,                 arm64_monterey: "beb86dc4a75fa4f6c4ac1948358c1dac9e3e45d157567c05430f44fbad218206"
@@ -41,7 +42,7 @@ class Forge < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DFG_BUILD_EXAMPLES=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

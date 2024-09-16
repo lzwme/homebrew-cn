@@ -2,7 +2,7 @@ class GnomeLatex < Formula
   desc "LaTeX editor for the GNOME desktop"
   homepage "https://gitlab.gnome.org/swilmet/gedit-tex"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   stable do
     # TODO: Rename to `gedit-tex` on the next release
@@ -22,14 +22,12 @@ class GnomeLatex < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "5f965099fe8411e158f8a2d4291109f4da14903d6a274c8fb583d83ea3d23e72"
-    sha256                               arm64_sonoma:   "07b18470a11071e313f759a79419c31fd439027b51b016de4254bc6c78fac423"
-    sha256                               arm64_ventura:  "852245582998816a39ba87f16633e0cfd1aa6ae72fec41411237ee2c13fc01f5"
-    sha256                               arm64_monterey: "92ef5b78c6db335ff67ce5467137ba00d96f9928d458f0a5f3d455779d5f6c5d"
-    sha256                               sonoma:         "28961e66d0fbf8408c0454a6e950006a7f5ff97d5e87d399c79d57d657521492"
-    sha256                               ventura:        "28a5eb18bd5e82c6ad451c3b259baa5bacfa391b628fe8bd38814c2d686c6235"
-    sha256                               monterey:       "3d8b295155ea8f76e5d2d7d3e74a0e72e5ded81cdd20a5b4ca16b2187098ea1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8281dbcc2d48a6b955f832a01947da7b5b27b536b2e650c36cddf6ec807e1116"
+    sha256                               arm64_sequoia: "828431282265734291a78fb6e98982f1f30eca79d7a2127d475c3b09f93b410a"
+    sha256                               arm64_sonoma:  "14e7fca07127c9c21270431bab6d5eb2581e66109992289065740731a58bf2e5"
+    sha256                               arm64_ventura: "14ad53df41ae72c7e7263c2486723948ae77a1a329ef5e3dcb9d8237120c2c36"
+    sha256                               sonoma:        "eaada62390dd85b57ae9ca1db1af02336897e9fa7314952d18660d426d291db9"
+    sha256                               ventura:       "f6be8408e82436fd210c48b6f73b5985d23cc055aabe7b63d7688b1f1c70f914"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4192833a27f71af1d833f898232841497ebbf0813cd5af240fbcc8ad0e0c7ef"
   end
 
   head do

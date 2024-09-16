@@ -22,6 +22,7 @@ class Scummvm < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "cfd21e92209419315ef99bfc79a8f2be58a1db981dc5dc52f8e8a68a13034ba1"
     sha256 arm64_sonoma:   "1f34c784f24a09d9c1e2a33cbbf18dedeff09e0bafd58d01716a4096b9c48b14"
     sha256 arm64_ventura:  "8baab614c52c858f80f44ba0223f43c92bc3b5ed8997c32362943a7d6cb03d35"
     sha256 arm64_monterey: "e9709285ca539ccb4afa33b6de2ff5280a59d7ed36bc64f9653aa944d2006e70"

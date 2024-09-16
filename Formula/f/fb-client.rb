@@ -2,20 +2,20 @@ class FbClient < Formula
   include Language::Python::Shebang
   include Language::Python::Virtualenv
 
-  desc "Shell-script client for https://paste.xinu.at"
-  homepage "https://paste.xinu.at"
-  url "https://paste.xinu.at/data/client/fb-2.3.0.tar.gz"
+  desc "Shell-script client for https:paste.xinu.at"
+  homepage "https:paste.xinu.at"
+  url "https:paste.xinu.atdataclientfb-2.3.0.tar.gz"
   sha256 "1164eca06eeacb4210d462c4baf1c4004272a6197d873d61166e7793539d1983"
   license "GPL-3.0-only"
   revision 2
-  head "https://git.server-speed.net/users/flo/fb", using: :git, branch: "master"
 
   livecheck do
     url :homepage
-    regex(%r{Latest release:.*?href=.*?/fb[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{Latest release:.*?href=.*?fb[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9e837f04b30cfa6e09e5963cfb5e332cbfe0d7de3fdf065e07dbef0dac2b52df"
     sha256 cellar: :any,                 arm64_sonoma:   "7ca84db50325eb47477dfcaa32aa9ded3d935e2de1d36e95049f9f76936a1f3c"
     sha256 cellar: :any,                 arm64_ventura:  "afe0f6ffe32e0e5bc872fb7c6038fc4087f8130fdbb67b9ace184f0e55eb42a9"
     sha256 cellar: :any,                 arm64_monterey: "866f9e06cb09122309446292c006dc945c6fe38a0be8083de7a0f50bbe642194"
@@ -32,12 +32,21 @@ class FbClient < Formula
   conflicts_with "spotbugs", because: "both install a `fb` binary"
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/c9/5a/e68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72/pycurl-7.45.3.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc95ae68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72pycurl-7.45.3.tar.gz"
     sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
+
+    # Remove -flat_namespace
+    # PR ref: https:github.compycurlpycurlpull855
+    on_sequoia :or_newer do
+      patch do
+        url "https:github.compycurlpycurlcommit7deb85e24981e23258ea411dcc79ca9b527a297d.patch?full_index=1"
+        sha256 "a49fa9143287398856274f019a04cf07b0c345560e1320526415e9280ce2efbc"
+      end
+    end
   end
 
   resource "pyxdg" do
-    url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb0257998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452pyxdg-0.28.tar.gz"
     sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"
   end
 
@@ -45,13 +54,13 @@ class FbClient < Formula
     venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
 
-    rw_info = python_shebang_rewrite_info(libexec/"bin/python")
+    rw_info = python_shebang_rewrite_info(libexec"binpython")
     rewrite_shebang rw_info, "fb"
 
     system "make", "PREFIX=#{prefix}", "install"
   end
 
   test do
-    system bin/"fb", "-h"
+    system bin"fb", "-h"
   end
 end

@@ -4,6 +4,7 @@ class Gedit < Formula
   url "https://download.gnome.org/sources/gedit/47/gedit-47.0.tar.xz"
   sha256 "fa4a597e34c76d4ac91431b5ae6e191c96c6b0af1702e0899ab35199edfa1bfa"
   license "GPL-2.0-or-later"
+  revision 1
 
   # gedit doesn't seem to follow the typical GNOME version scheme, so we
   # provide a regex to disable the `Gnome` strategy's version filtering.
@@ -13,14 +14,12 @@ class Gedit < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "717a753803f409879a6ca6d8bc7c9d7de00ac32c39194b864be5a7ee8d45bcc2"
-    sha256 arm64_sonoma:   "dd584b18e86c5235a5489d70ff5d9e9b592029ed8695d91e4be0668d0cd57d49"
-    sha256 arm64_ventura:  "bb6e0bb90be7ac45bf541e6682eca988a08178d28a37705c959cb3a0e3667e1b"
-    sha256 arm64_monterey: "de2b6d26a133ad1dbe1e4e9f549210bbaa0af08753f6508d97193032be9d73f0"
-    sha256 sonoma:         "f4f2363f23697b099ee4203b7b04e4fb7fcd272de677c4098a3ecfcae9520477"
-    sha256 ventura:        "225c6cc2e8c21d272519b387a48776a2ff0fffe6a1f1145a4e76aeca88f21143"
-    sha256 monterey:       "4d491cf75ae5637ad53f83930628ce2a4321c698082a33f41c546304da2cc040"
-    sha256 x86_64_linux:   "d44f0ce398f5a58684a6797d457a6056b4f976e8bce80d93b14b4e831a94e79b"
+    sha256 arm64_sequoia: "51674638d4d00e8edcbc9c8b8115928b3e287b19ec892b61a3cc926e01817567"
+    sha256 arm64_sonoma:  "1f3f0dc5ce63acb38e3e8bc5592b0c6dc16b2903382f20728f0b259204f3cc7b"
+    sha256 arm64_ventura: "b0a5bc3892329acc7c1db2524d08e727f1f9afe29829ef90c3c28dadd9ce0ee1"
+    sha256 sonoma:        "c46c1555392987486442205f6e7f9ccf818bf51dd84ad7262e9793ce781056f8"
+    sha256 ventura:       "723cb638df5de674615401a6da3f2a7c29e2c457dccc0acb0d7cc4af05281b10"
+    sha256 x86_64_linux:  "c247d18996475e1246d5ba269b0b51d85cffb542cb73acd630b5d09199a9e8cb"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

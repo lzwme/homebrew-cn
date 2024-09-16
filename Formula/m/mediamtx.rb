@@ -1,19 +1,17 @@
 class Mediamtx < Formula
   desc "Zero-dependency real-time media server and media proxy"
   homepage "https:github.combluenvironmediamtx"
-  url "https:github.combluenvironmediamtxarchiverefstagsv1.9.0.tar.gz"
-  sha256 "d7f71098cd9e102444ed711bf036ff9c188430c2fa8df6f8a4197df1a63509ff"
+  url "https:github.combluenvironmediamtxarchiverefstagsv1.9.1.tar.gz"
+  sha256 "96df7d7dd5362b6971eadcd07d738810d2a3e993ea49b71a7f41c46b43b0a17e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9ed918a2820902d877351a89da74d896e037b3a27970efcf7e28db4e1736cc3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30d05e77c8088b1ef612904fbc430720057603a90f421069716c710d74164d63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "997327e66f7f9bdc00f9820983114705d87c1fdcb454b706bb31f605b7e6f882"
-    sha256 cellar: :any_skip_relocation, ventura:        "997327e66f7f9bdc00f9820983114705d87c1fdcb454b706bb31f605b7e6f882"
-    sha256 cellar: :any_skip_relocation, monterey:       "997327e66f7f9bdc00f9820983114705d87c1fdcb454b706bb31f605b7e6f882"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52a809428679200dcc472deed6a63015f3884df669ee176005f96facaf5222aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6056b4c005cd636527cc3f13b0da9733fead5457327297d7b2fdd67049900032"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6056b4c005cd636527cc3f13b0da9733fead5457327297d7b2fdd67049900032"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6056b4c005cd636527cc3f13b0da9733fead5457327297d7b2fdd67049900032"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf7d5531989333c810ee2265b8a329b86d76a5015d2ab5b859a3c96a6939037d"
+    sha256 cellar: :any_skip_relocation, ventura:       "bf7d5531989333c810ee2265b8a329b86d76a5015d2ab5b859a3c96a6939037d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50f21e633144e78a1208cd06e2ba5d6e9d19773b717fb47248003b4a3e00fdb8"
   end
 
   depends_on "go" => :build

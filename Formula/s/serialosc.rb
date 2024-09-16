@@ -1,14 +1,26 @@
 class Serialosc < Formula
   desc "Opensound control server for monome devices"
   homepage "https:github.commonomedocsblobgh-pagesserialoscosc.md"
-  # pull from git tag to get submodules
-  url "https:github.commonomeserialosc.git",
-      tag:      "v1.4.4",
-      revision: "19ad3a211876c4434346ab2565eeec09cc949856"
+
   license "ISC"
   head "https:github.commonomeserialosc.git", branch: "main"
 
+  stable do
+    # pull from git tag to get submodules
+    url "https:github.commonomeserialosc.git",
+        tag:      "v1.4.4",
+        revision: "19ad3a211876c4434346ab2565eeec09cc949856"
+
+    # Uses fmemopen API (High Sierra) but defining a target macOS version of Leopard:
+    # https:github.commonomeserialoscpull71
+    patch do
+      url "https:github.commonomeserialosccommitc36237511f0dfd408e6c3233d6e0d880d5091d91.patch?full_index=1"
+      sha256 "34a5d7185148adfecbe5ff121378fa5d1a50b765dc1704b2ec9fffc6a9defaf1"
+    end
+  end
+
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0885fb9b13b615a8addfda474c321583a0c05aa5091905348b9d6df2cf327cba"
     sha256 cellar: :any,                 arm64_sonoma:   "c9d79b6270b3a2e19e0154148b34f315f4396e62795d13ea6ed30306ee4e152e"
     sha256 cellar: :any,                 arm64_ventura:  "dfc2861176110ab1853c2cd2f196f2081570b8280b27cd246a29d8d1879f8ce5"
     sha256 cellar: :any,                 arm64_monterey: "972d810857722ce1b6fa7dd49f9a3b62623d81269267913bea17cbe845e35413"
@@ -30,9 +42,12 @@ class Serialosc < Formula
     depends_on "systemd" # for libudev
   end
 
-  # Uses fmemopen API (High Sierra) but defining a target macOS version of Leopard:
-  # https:github.commonomeserialoscpull71
-  patch :DATA
+  # Workaround for newer Clang
+  # upstream pr ref, https:github.commonomeserialoscpull76
+  patch do
+    url "https:github.commonomeserialosccommitafd804fe63449e166004ca1d692e9b165ca64771.patch?full_index=1"
+    sha256 "8273bc3fc666886cf9ba604f4304cce474555396cfad7fab83ab2069797e0cef"
+  end
 
   def install
     system "python3", ".waf", "configure", "--prefix=#{prefix}"
@@ -51,19 +66,3 @@ class Serialosc < Formula
     assert_match version.to_s, shell_output("#{bin}serialoscd -v")
   end
 end
-__END__
-diff --git awscript bwscript
-index 5026c5c..8af6e84 100644
---- awscript
-+++ bwscript
-@@ -272,8 +272,8 @@ def configure(conf):
- 					'-Wl,--enable-stdcall-fixup'])
- 		conf.env.append_unique("WINRCFLAGS", ["-O", "coff"])
- 	elif conf.env.DEST_OS == "darwin":
--		conf.env.append_unique("CFLAGS", ["-mmacosx-version-min=10.5"])
--		conf.env.append_unique("LINKFLAGS", ["-mmacosx-version-min=10.5"])
-+		conf.env.append_unique("CFLAGS", ["-mmacosx-version-min=10.13"])
-+		conf.env.append_unique("LINKFLAGS", ["-mmacosx-version-min=10.13"])
- 
- 	if conf.options.disable_zeroconf:
- 		conf.define("SOSC_NO_ZEROCONF", True)

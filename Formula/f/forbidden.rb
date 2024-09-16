@@ -3,19 +3,18 @@ class Forbidden < Formula
 
   desc "Bypass 4xx HTTP response status codes and more"
   homepage "https:github.comivan-sincekforbidden"
-  url "https:files.pythonhosted.orgpackagesa311c27ee390aca12b1db6cc9f394a525a8e3609de31818a660dbc87a2ca9897forbidden-12.3.tar.gz"
-  sha256 "9095063d1c3a43ea3e47b736a548459dc6d21c8bd57e376c800e0c571c8a5258"
+  url "https:files.pythonhosted.orgpackagesfc974da12a39d42ca55de66d8a80340377e76b5af7e3d588f168f0218d81eb47forbidden-12.4.tar.gz"
+  sha256 "0b921ec89bc25b4ac7a1d89919809c258da36be747795857d01de6c5d8046cab"
   license "MIT"
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "edf8d5c872fa5aae22c94b763c38471738faed06538b3ebb41f17661ee1859e6"
-    sha256 cellar: :any,                 arm64_ventura:  "d3b794ccfc0d00ffcf884806b3a1275568f1fadff443d4511348d065008e9c3d"
-    sha256 cellar: :any,                 arm64_monterey: "8fe70dc3dc14dab8fa13367be50580968a5850269c439544ba7f4d2d44d67032"
-    sha256 cellar: :any,                 sonoma:         "a0783ab2c4a19824b69a5826e7296ee425f5b587ab30436b57f802b5f8fb7a87"
-    sha256 cellar: :any,                 ventura:        "41380d696f36691c6130ceaa25d7e2193928da340912248674d618cd4a313304"
-    sha256 cellar: :any,                 monterey:       "07270e96e7800dc209cf3f64de635f8fcf1ffd1657ee6f3fb480b857e53db9b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75f657cc8eadfce869dc5dd84572261e7b06a430cb26c19e6a0472a13e0fd429"
+    sha256 cellar: :any,                 arm64_sequoia: "e746a24b27b351f06c9e7bd37d5337acefa83cb1d8a4a2dfd1d4a7184c74effc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f418261c2d3e2a5059358e2f6c271569c9f2ab46c300144539a914b8d1b7f83"
+    sha256 cellar: :any,                 arm64_ventura: "aeacc250a11d10f435d4d259845d85bbcdba73b7e41b9f60594eb9839f5851da"
+    sha256 cellar: :any,                 sonoma:        "11e798bf466ce2b37a26162fbc8b9bcfa609554a5ff740602ce1f8393cc2e3a2"
+    sha256 cellar: :any,                 ventura:       "7ce1e0da31717d4c7756ba4bb9fb6d9f7e970bd308e8e9c6776f085b0231192b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38477312b6ac19d6fe37b8ea82c426f1c9a47008c042e4f2395c07bf017c7f3c"
   end
 
   depends_on "certifi"
@@ -54,13 +53,22 @@ class Forbidden < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "pycurl" do
     url "https:files.pythonhosted.orgpackagesc95ae68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72pycurl-7.45.3.tar.gz"
     sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
+
+    # Remove -flat_namespace
+    # PR ref: https:github.compycurlpycurlpull855
+    on_sequoia :or_newer do
+      patch do
+        url "https:github.compycurlpycurlcommit7deb85e24981e23258ea411dcc79ca9b527a297d.patch?full_index=1"
+        sha256 "a49fa9143287398856274f019a04cf07b0c345560e1320526415e9280ce2efbc"
+      end
+    end
   end
 
   resource "pyjwt" do
@@ -84,8 +92,8 @@ class Forbidden < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages3e2cf0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6efsetuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https:files.pythonhosted.orgpackagesa717133e1cd1e24373e1898ca3c7330f5c385b46c7091f0451e678f37245591bsetuptools-75.0.0.tar.gz"
+    sha256 "25af69c809d9334cd8e653d385277abeb5a102dca255954005a7092d282575ea"
   end
 
   resource "tabulate" do

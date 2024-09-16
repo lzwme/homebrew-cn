@@ -10,6 +10,7 @@ class PhpAT70 < Formula
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
     rebuild 5
+    sha256 arm64_sequoia:  "361a0d6061672af554c0cde25dbe864064086de5f4989c4ddec784750c63aa42"
     sha256 arm64_sonoma:   "f7a0be4576a55393afaaa5615e021905fbd4087ac4df56316338bf006d70bf5c"
     sha256 arm64_ventura:  "9e664ffe3bbca048df24fdd3e19b4a529ee21e5a5999ef91e2363e46e9078038"
     sha256 arm64_monterey: "502ef01d8146e869692b553008e05c4aa0b3d2357d8374f616ddd53f29fd98ab"
@@ -37,13 +38,17 @@ class PhpAT70 < Formula
   depends_on "curl"
   depends_on "freetds"
   depends_on "freetype"
+  depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c"
   depends_on "jpeg"
+  depends_on "krb5"
   depends_on "libpng"
   depends_on "libpq"
   depends_on "libtool"
+  depends_on "libx11"
+  depends_on "libxpm"
   depends_on "libzip"
   depends_on "openldap"
   depends_on "openssl@3"
@@ -166,7 +171,7 @@ class PhpAT70 < Formula
       --with-fpm-user=#{fpm_user}
       --with-fpm-group=#{fpm_group}
       --with-freetype-dir=#{Formula["freetype"].opt_prefix}
-      --with-gd
+      --with-gd=#{Formula["gd"].opt_prefix}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -195,6 +200,7 @@ class PhpAT70 < Formula
       --with-unixODBC=#{Formula["unixodbc"].opt_prefix}
       --with-webp-dir=#{Formula["webp"].opt_prefix}
       --with-xmlrpc
+      --with-xpm-dir=#{Formula["libxpm"].opt_prefix}
     ]
 
     if OS.mac?

@@ -3,20 +3,19 @@ class BandcampDl < Formula
 
   desc "Simple python script to download Bandcamp albums"
   homepage "https:github.comiheanyibandcamp-dl"
-  url "https:files.pythonhosted.orgpackagese54dd463bcc20602f5385e0441cd7171b1fe6b67e2bb76240ae0f2684de6c022bandcamp-downloader-0.0.15.tar.gz"
-  sha256 "2f7666c00e9cff39135d5c9fc0498bbc93d64684fcb13171cbd9584e31692ebb"
+  # Switch back to PyPI url when possible: https:github.comiheanyibandcamp-dlissues235
+  url "https:github.comiheanyibandcamp-dlarchiverefstagsv0.0.16.tar.gz"
+  sha256 "78323070f0cf2f743673172d41df42f9cf1ab88f473915f56e5b284fb4de76ec"
   license "Unlicense"
-  revision 3
   head "https:github.comiheanyibandcamp-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e1c04cf688a2571d5b016021c3b6a5968c93fb1df4023b0b64845f3b0e38d75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e1c04cf688a2571d5b016021c3b6a5968c93fb1df4023b0b64845f3b0e38d75"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2acd5eeaf73208b443d4e841d2a9246bbe3ef5dad9e99d99d077694c6b032a5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e1c04cf688a2571d5b016021c3b6a5968c93fb1df4023b0b64845f3b0e38d75"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e1c04cf688a2571d5b016021c3b6a5968c93fb1df4023b0b64845f3b0e38d75"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2acd5eeaf73208b443d4e841d2a9246bbe3ef5dad9e99d99d077694c6b032a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4998ae3d847f3efeb003970f6c03ef7d024ec8cfbea3d1d5646558cad89b89d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56055911efc483d56c9a9fd01367a3361da6455f85b51476f14ccb824ff9edb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56055911efc483d56c9a9fd01367a3361da6455f85b51476f14ccb824ff9edb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "56055911efc483d56c9a9fd01367a3361da6455f85b51476f14ccb824ff9edb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56055911efc483d56c9a9fd01367a3361da6455f85b51476f14ccb824ff9edb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "56055911efc483d56c9a9fd01367a3361da6455f85b51476f14ccb824ff9edb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e39cb8ff7f4d9a65524a60a23f69fbe153d42fc4e58bd183e2a19d7b3e11f597"
   end
 
   depends_on "certifi"
@@ -26,13 +25,8 @@ class BandcampDl < Formula
   uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackages75f8de84282681c5a8307f3fff67b64641627b2652752d49d9222b77400d02b8beautifulsoup4-4.11.2.tar.gz"
-    sha256 "bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106"
-  end
-
-  resource "chardet" do
-    url "https:files.pythonhosted.orgpackages4132cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430dchardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https:files.pythonhosted.orgpackages81bdc97d94e2b96f03d1c50bc9de04130e014eda89322ba604923e0c251eb02ebeautifulsoup4-4.13.0b2.tar.gz"
+    sha256 "c684ddec071aa120819889aa9e8940f85c3f3cdaa08e23b9fa26510387897bd5"
   end
 
   resource "charset-normalizer" do
@@ -45,29 +39,19 @@ class BandcampDl < Formula
     sha256 "37c83b0c6eb08d25defc88df0a2a4875d58a7809a9650bd6eee7afd8053cdbac"
   end
 
-  resource "docopt-ng" do
-    url "https:files.pythonhosted.orgpackages064c91ac57392aae9e44cc159f1e41859b8c9c546ef0ecb94aaee126c3854d73docopt-ng-0.8.1.tar.gz"
-    sha256 "ea6a61a288fc864eee6b22d6fe28aa202d59fc86fad05f16ff5e39cc4ea7f6e3"
-  end
-
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackages006f93e724eafe34e860d15d37a4f72a1511dd37c43a76a8671b22a15029d545idna-3.9.tar.gz"
+    sha256 "e5c5dafde284f26e9e0f28f6ea2d6400abd5ca099864a67f576f3981c6476124"
   end
 
   resource "mutagen" do
-    url "https:files.pythonhosted.orgpackagesb154d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9mutagen-1.46.0.tar.gz"
-    sha256 "6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58"
-  end
-
-  resource "pysocks" do
-    url "https:files.pythonhosted.orgpackagesbd11293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11PySocks-1.7.1.tar.gz"
-    sha256 "3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"
+    url "https:files.pythonhosted.orgpackages81e664bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77mutagen-1.47.0.tar.gz"
+    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "six" do
@@ -76,8 +60,13 @@ class BandcampDl < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+  end
+
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "unicode-slugify" do
@@ -91,8 +80,8 @@ class BandcampDl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install
@@ -100,8 +89,7 @@ class BandcampDl < Formula
   end
 
   test do
-    system bin"bandcamp-dl", "--artist=iamsleepless", "--album=rivulets"
-    assert_predicate testpath"iamsleeplessrivulets01 - rivulets.mp3", :exist?
+    (testpath".config").mkpath
     system bin"bandcamp-dl", "https:iamsleepless.bandcamp.comtrackunder-the-glass-dome"
     assert_predicate testpath"iamsleeplessunder-the-glass-domeSingle - under-the-glass-dome.mp3", :exist?
   end

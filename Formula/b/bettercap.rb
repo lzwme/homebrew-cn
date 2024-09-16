@@ -1,20 +1,18 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https:www.bettercap.org"
-  url "https:github.combettercapbettercaparchiverefstagsv2.33.0.tar.gz"
-  sha256 "7e9f145edbe07f25b1d4c5132d9d6ed322ed728249f71acced1352459faf0e97"
+  url "https:github.combettercapbettercaparchiverefstagsv2.40.0.tar.gz"
+  sha256 "33fb079d148bdbf640a6a634873dec7799430b0e949ba45007976e50c1323000"
   license "GPL-3.0-only"
   head "https:github.combettercapbettercap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "735b87d0df7687d2a75dcb44fc8ea454c7e57d3fef92bc0ae4c1cb8af3e8d8a8"
-    sha256 cellar: :any,                 arm64_sonoma:   "c10f39c22e1b841405a0de96004ff1497f0c7e0f5dca3bcba8c108d40a963b81"
-    sha256 cellar: :any,                 arm64_ventura:  "2a177b56a5def5cef15b93221ba367c52df7978b7d298f5a82a6ae70288c93a7"
-    sha256 cellar: :any,                 arm64_monterey: "fd57aeec6a8468a41f536d22be35495e46cb5e5e3783d411f5f2462076873efb"
-    sha256 cellar: :any,                 sonoma:         "1910fe533a6157e1aa96adcf4129c4db9971720ea25eed8d410101b571a4a43a"
-    sha256 cellar: :any,                 ventura:        "a03c6bb0eb579549e4517c6e0a63027c8bd9e8b7a4173f42e55e9b1358a89284"
-    sha256 cellar: :any,                 monterey:       "14e813d40077cb8fe4b80a0549302c711fa0db67a2715b189094c2af80f90165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0e202f85a71512ed82aae96a525c8f12bede800958cf4b1d9b373b007125ce6"
+    sha256 cellar: :any,                 arm64_sequoia: "8b8f6447d4dbaad6f2dbb89b801807f4670777f0dc25b905924f985c629288af"
+    sha256 cellar: :any,                 arm64_sonoma:  "5df2c794da75cf37a9edf38351bb405e54320d7d555b7b87b75128dbcfe08587"
+    sha256 cellar: :any,                 arm64_ventura: "c5a137b63baf4aab7e8d297019618615d0fba2d5d789fa9f1bead8349f9b108a"
+    sha256 cellar: :any,                 sonoma:        "dde80720f52ef5c25de0a087ff1c340419048589ffa7b61eab562089c4532ddf"
+    sha256 cellar: :any,                 ventura:       "756e19d68edbd12e72b5d7a5cb14c00c703bce3550f0c1b579d934941d3163fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c81126dabeec39c55d524922f6ed05644c9e9a2198bcc71b22b669f640390ee"
   end
 
   depends_on "go" => :build
@@ -27,7 +25,13 @@ class Bettercap < Formula
     depends_on "libnetfilter-queue"
   end
 
+  resource "ui" do
+    url "https:github.combettercapui.git",
+        revision: "6e126c470e97542d724927ba975011244127dbb1"
+  end
+
   def install
+    (buildpath"modulesuiui").install resource("ui")
     system "make", "build"
     bin.install "bettercap"
   end

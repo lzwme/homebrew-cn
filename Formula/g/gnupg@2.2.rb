@@ -23,6 +23,8 @@ class GnupgAT22 < Formula
 
   keg_only :versioned_formula
 
+  disable! date: "2025-04-01", because: :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "libassuan"

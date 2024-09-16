@@ -6,6 +6,7 @@ class Weaver < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c10ee3d986ce1eed7fad37e36db3e2c15680728bc26ed23cd918e8fff2cb30f7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb165cdf2e08fcfcb08c58b9f94071adbab0a3274b6cdae12955f24c04364c82"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e75a5cba435b5040061fcb2edd78840a8624c194fb81c28df14727b284dffa7c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f498e3cfaf9a3d298f4fca470de2f80e67163fec39843f58210027b034e5131"
@@ -22,7 +23,25 @@ class Weaver < Formula
 
   conflicts_with "service-weaver", because: "both install a `weaver` binary"
 
+  # Fetch a copy of SourceKitten in order to fix build with newer Swift.
+  resource "SourceKitten" do
+    on_sequoia :or_newer do
+      # https:github.comscribdWeaverblob1.1.5Package.resolved#L99-L100
+      url "https:github.comjpsimSourceKitten.git",
+          tag:      "0.29.0",
+          revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
+
+      # Backport of import from HEAD
+      patch :DATA
+    end
+  end
+
   def install
+    if OS.mac? && MacOS.version >= :sequoia
+      (buildpath"SourceKitten").install resource("SourceKitten")
+      system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath"SourceKitten"
+    end
+
     system "make", "install", "PREFIX=#{prefix}"
   end
 
@@ -33,3 +52,24 @@ class Weaver < Formula
     system bin"weaver", "version"
   end
 end
+
+__END__
+diff --git aSourceSourceKittenFrameworkSwiftDocs.swift bSourceSourceKittenFrameworkSwiftDocs.swift
+index 1d2473c..70de287 100644
+--- aSourceSourceKittenFrameworkSwiftDocs.swift
++++ bSourceSourceKittenFrameworkSwiftDocs.swift
+@@ -10,6 +10,14 @@
+ import SourceKit
+ #endif
+
++#if os(Linux)
++import Glibc
++#elseif os(Windows)
++import CRT
++#else
++import Darwin
++#endif
++
+  Represents docs for a Swift file.
+ public struct SwiftDocs {
+      Documented File.

@@ -1360,7 +1360,7 @@ Homebrew-homebrew-core/Formula/d/dns2tcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnscontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-wrapper.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dnsdist.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dnsdist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmasq.rb, Homebrew/homebrew-core, 0
@@ -1715,7 +1715,7 @@ Homebrew-homebrew-core/Formula/f/fauna-shell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fava.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/favirecon.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fb-client.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fb-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fb303.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fblog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fbthrift.rb, Homebrew/homebrew-core, 1
@@ -5251,7 +5251,7 @@ Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcachegrind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdae.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdmr.rb, Homebrew/homebrew-core, 1

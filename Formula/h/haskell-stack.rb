@@ -12,14 +12,13 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01c75161debb7e2ec42a2e4ecddb88873fb2689d615fac91d677c09bec5bb092"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6970c6203f7482aa1bd5059524f8620ca3a5576794fd9a81e81f77388e6e83ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97120147f0fb716e7c7c8ea99d002c8ee7e5291dc85759b53cfabcf4a7fea9aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "309d3c7521a5df32b3d6f5e11f63c503498562702f6dbe49e602bd00cbfc2733"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23904061a39a7fdb886d8557b2a67a2975639fe110a0debf266d94ccb72da877"
-    sha256 cellar: :any_skip_relocation, ventura:        "dcf124afaed9cb7c51ddcdf4c188c819bf7000084e39ce3c3cf51ea687933f01"
-    sha256 cellar: :any_skip_relocation, monterey:       "87d9810d0b59f7d8640aad06b4ebf1e052fadbd2f10345404bf7a5700bb7151a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3e8608671f3f2b024804503619e50e7402157e1da6f4e689c8137f1776ee498"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebe17a5457cd6aa4667986e50da4c10a2d62e8fada679a826cd9aa6681661a82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b6576d6d8ac9f556b439115476020b4bca320dff2d3dea510a05296073d0192"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0306a15e9eac83d5824fe35bd4ac3d56a198f0d3a4afe0149429f1e7a1863fec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fd846a3e9489aea4e074b2c4880a8a442b46a2a9ce1025f0d4985cdb1addf68"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c56477a47316be12a676dc6c9b3b733ffa6cba2dd6335fdc8b8f5af10ae31c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cc5821f3c34d5b38fc82a5d7a2aaef2d62082848134dd335d6fc7968736563d"
   end
 
   depends_on "cabal-install" => :build
@@ -37,6 +36,13 @@ class HaskellStack < Formula
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
+
+    generate_completions_from_executable(bin"stack", "--bash-completion-script", bin"stack",
+                                         shells: [:bash], shell_parameter_format: :none)
+    generate_completions_from_executable(bin"stack", "--fish-completion-script", bin"stack",
+                                         shells: [:fish], shell_parameter_format: :none)
+    generate_completions_from_executable(bin"stack", "--zsh-completion-script", bin"stack",
+                                         shells: [:zsh], shell_parameter_format: :none)
   end
 
   def caveats

@@ -1,18 +1,17 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
   homepage "https:github.compavel-odintsovfastnetmon"
-  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
-  sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
+  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.7.tar.gz"
+  sha256 "c21fcbf970214dd48ee8aa11e6294e16bea86495085315e7b370a84b316d0af9"
   license "GPL-2.0-only"
-  revision 18
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec0d4983cda8c607ac8d96bee9b8f005d04fed47ce0567a9f20aaed0a1096d0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e61a5887990902b3f128aa2403b8cafa7cb0f6655ce44241e85acb6e28e72f2"
-    sha256 cellar: :any,                 arm64_ventura: "1f0208dfacddbcc041c7e79b7b64fa837cd8922834dca163bf60c593942e9e07"
-    sha256 cellar: :any,                 sonoma:        "7d612f74349e38b6747e52fa6dc8e123893c85aa2347e898efe3973c0b2370ae"
-    sha256 cellar: :any,                 ventura:       "790021c16e4e76f89a5c8beb53918f5bb16bf03ad54c6fe0f555e2e9400dd927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b83a639a62a767cad2c3378118d3f0f3240b6b0b1ddc5a8e1539960ff8ce85"
+    sha256 cellar: :any,                 arm64_sequoia: "a236d73d50acdb76d566b71cf49b3699c4a5c41e7d5a9bd89eb4a2008075b37e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1e434f0f9900ffb3ad4c9fd4d1604c21f0d91bc4c63a404ebbaa11d2fcb075d"
+    sha256 cellar: :any,                 arm64_ventura: "59df08cc9cde588ffb7928316cb0e49de6f9ead0e58f0d720e73c003719306b3"
+    sha256 cellar: :any,                 sonoma:        "5361c5f6b3551d101a0c4285551166bb6b099f2f3750b083bd08840a61b1c217"
+    sha256 cellar: :any,                 ventura:       "5334b64428ad1b65b204bcfa193bdb8d12723a0cb815919af647fa8516a0ed4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c586516c49208fa490c84d210ce64b28a51bbe46aba78993228021c0676070f"
   end
 
   depends_on "cmake" => :build
@@ -35,13 +34,6 @@ class Fastnetmon < Formula
   end
 
   fails_with gcc: "5"
-
-  # Fix build with newer `protobuf` using open PR.
-  # PR ref: https:github.compavel-odintsovfastnetmonpull997
-  patch do
-    url "https:github.compavel-odintsovfastnetmoncommitfad8757b8986226024d549a6dfb40abbab01643e.patch?full_index=1"
-    sha256 "2da8dbdf9dc63df9f17067aef20d198123ce1338559d394f29461761e6b85f85"
-  end
 
   def install
     system "cmake", "-S", "src", "-B", "build",
