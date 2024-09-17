@@ -5,6 +5,9 @@ class Haxe < Formula
   head "https:github.comHaxeFoundationhaxe.git", branch: "development"
 
   stable do
+    # TODO: Remove `ctypes==0.21.1` pin when build fails from pointer mismatch (i.e. `luv >= 0.5.13`)
+    # Ref: https:github.comHaxeFoundationhaxecommite646e6f182c920694968ba7a28ad01ddfee4519a
+    # Ref: https:github.comHaxeFoundationhaxecommit0866067940256afc9227a75f96baee6ec64ee373
     url "https:github.comHaxeFoundationhaxe.git",
         tag:      "4.3.6",
         revision: "760c0dd9972abadceba4e72edb1db13b2a4fb315"
@@ -22,6 +25,7 @@ class Haxe < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "f46b8c3720cefeda7d771f46a73873a68e1db5e76d45102c3107644222416053"
     sha256 cellar: :any,                 arm64_sonoma:   "d0b13478d395cf9ea455a25b7b07f6536b4bac3b041ad48790e85fb105b45fbb"
     sha256 cellar: :any,                 arm64_ventura:  "4a33e2aa4d5749040521f96cba3d3d3aa713e97db701063e3566d129e8251f75"
     sha256 cellar: :any,                 arm64_monterey: "026ce9fe643c092f45b85d6fb99842261583f5d1e4ecb83f43bc7ebb94d0341f"
@@ -76,6 +80,7 @@ class Haxe < Formula
       ENV["OPAMYES"] = "1"
       ENV["ADD_REVISION"] = "1" if build.head?
       system "opam", "init", "--no-setup", "--disable-sandboxing"
+      system "opam", "exec", "--", "opam", "pin", "add", "ctypes", "0.21.1"
       system "opam", "exec", "--", "opam", "pin", "add", "haxe", buildpath, "--no-action"
       system "opam", "exec", "--", "opam", "install", "haxe", "--deps-only", "--working-dir", "--no-depexts"
       system "opam", "exec", "--", "make"

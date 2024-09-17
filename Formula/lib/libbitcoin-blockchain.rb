@@ -7,6 +7,7 @@ class LibbitcoinBlockchain < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "872a37910f440a950ae0f4e9307e7c022c05fa521bf44a34c9bf1d048b08c96b"
     sha256 cellar: :any,                 arm64_sonoma:   "98b05bbaaa471ed07081871007711a310f4d3cadcde0fd6ac7390f89d4fb4f1d"
     sha256                               arm64_ventura:  "643036ef5fdad2d2686dfd0e943e7427f2921a679ca6b65dc2d7520702f607b6"
     sha256                               arm64_monterey: "87003f5fe6734526014672e39ffa2e9654962fa068aff56fac817b31b1191b47"

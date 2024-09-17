@@ -11,15 +11,15 @@ class Detekt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e1b95136ece72d7559159bf400ec0ee770b41e907bfe6af4427cf115a445583"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "37552b190ee171edce762ee5c96c93e7c8e52bcd702f9aa98d19e378db799167"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk@21"
 
   def install
     libexec.install "detekt-cli-#{version}-all.jar"
-    # remove `--add-opens` after https:github.comdetektdetektissues5576
-    bin.write_jar_script libexec"detekt-cli-#{version}-all.jar", "detekt", "--add-opens java.basejava.lang=ALL-UNNAMED", java_version: "17"
+    bin.write_jar_script libexec"detekt-cli-#{version}-all.jar", "detekt", java_version: "21"
   end
 
   test do

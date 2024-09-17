@@ -14,6 +14,7 @@ class Picotool < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "16e96d14be7f3d63ad412bfe55a02e26b24d0becf10b8838ca3ddd658bb2f08e"
     sha256 arm64_sonoma:   "d2cdf2d3bef83207f173ee96fcb66976fe14b638fa2b941e6f16f44ab60bfc93"
     sha256 arm64_ventura:  "91dce37d751e159802bbccd9d11be16f8620197f04240c612efa6ba8bb09a393"
     sha256 arm64_monterey: "e4bf549b3d172a4f93e1f965df6d004550ff4322a40118a1caf18774d729c297"
@@ -35,11 +36,6 @@ class Picotool < Formula
   depends_on "pkg-config" => :build
   depends_on "libusb"
 
-  resource "homebrew-pico-blink" do
-    url "https:rptl.iopico-blink"
-    sha256 "4b2161340110e939b579073cfeac1c6684b35b00995933529dd61620abf26d6f"
-  end
-
   def install
     resource("pico-sdk").stage buildpath"pico-sdk"
 
@@ -50,17 +46,24 @@ class Picotool < Formula
   end
 
   test do
-    resource("homebrew-pico-blink").stage do
+    # from https:github.comraspberrypipico-examples?tab=readme-ov-file#first-examples
+    resource "homebrew-picow_blink" do
+      url "https:rptl.iopico-w-blink"
+      sha256 "ba6506638166c309525b4cb9cd2a9e7c48ba4e19ecf5fcfd7a915dc540692099"
+    end
+
+    resource("homebrew-picow_blink").stage do
       result = <<~EOS
-        File blink.uf2:
+        File blink_picow.uf2:
 
         Program Information
-         name:          blink
-         web site:      https:github.comraspberrypipico-examplestreeHEADblink
+         name:          picow_blink
+         web site:      https:github.comraspberrypipico-examplestreeHEADpico_wblink
+         features:      UART stdin  stdout
          binary start:  0x10000000
-         binary end:    0x10003198
+         binary end:    0x1003feac
       EOS
-      assert_equal result, shell_output("#{bin}picotool info blink.uf2")
+      assert_equal result, shell_output("#{bin}picotool info blink_picow.uf2")
     end
   end
 end

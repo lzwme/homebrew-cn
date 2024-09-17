@@ -3,8 +3,8 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https:unioslo.github.iozabbix-cli"
-  url "https:github.comunioslozabbix-cliarchiverefstags3.0.2.tar.gz"
-  sha256 "91c48946ef105282bd454e019e6d5b59851bf8a66eb508a4d8a89aafda518133"
+  url "https:github.comunioslozabbix-cliarchiverefstags3.0.3.tar.gz"
+  sha256 "b91d5d1314d59441bac55dc8f314057adad760ab35b04e53d60a0b60148cd701"
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
@@ -14,14 +14,12 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "93cd00f299eccd45f4b1e9ebc6da3f1c6cb8d07351ad91e480293fa033d82386"
-    sha256 cellar: :any,                 arm64_sonoma:   "63a9f2bfad76e85527eaa6d4ff506696025e9e6531050c49b02238e414776ac2"
-    sha256 cellar: :any,                 arm64_ventura:  "df1f8af769ed5396df63bb99b64e423fae29a0d79efd94a957f41d9158f21cc6"
-    sha256 cellar: :any,                 arm64_monterey: "61264474d06358eb67d4fe04147a5b28df11564b71b271dab4716b38d75769a5"
-    sha256 cellar: :any,                 sonoma:         "8d7d7f62bc4c572c4875c96f3011a5b5ad1992b2e43754d0be41a67137757ab0"
-    sha256 cellar: :any,                 ventura:        "4792cbd9ab3fc30e37914de9f5a31aed11b0f0964fa9493caec734428aa1c908"
-    sha256 cellar: :any,                 monterey:       "7db2cb8d619d6016195f2b271bb03d91828d0fa2bf945dfff032e4c3dfd0e5c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "620cdc15d20f74f1e8f1bb71ee804b7623511037d7530d5e6c192cf27944ce30"
+    sha256 cellar: :any,                 arm64_sequoia: "a995d6573ca123e8abf4ab2d72512adc804c7c727bf8e2d44216cc0374ebc0c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "504ad90fb2f1015ccf83cf809432370422355b6de0885fbfcc96ba668f3f3c9f"
+    sha256 cellar: :any,                 arm64_ventura: "5b915538af8af7ee7cf416397c865cc1323390b26c8b30b75f9e2f2c9c6c3bb5"
+    sha256 cellar: :any,                 sonoma:        "c3b0f78ebdb3f85c2de59c4487f78a94777f9d7841f9fbcd4fcabf00cbb47d67"
+    sha256 cellar: :any,                 ventura:       "53c60b704ef53b39e61e85a52fbe204622f995cedaec55535178a4fd85aa31ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8077f4470e4af68552b611bffbe87436887b15c9ee19c974dee3e86295dcf5c0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -64,8 +62,8 @@ class ZabbixCli < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "markdown-it-py" do
@@ -84,8 +82,8 @@ class ZabbixCli < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesf5520763d1d976d5c262df53ddda8d8d4719eedf9594d046f117c25a27261a19platformdirs-4.2.2.tar.gz"
-    sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
+    url "https:files.pythonhosted.orgpackagesf519f7bee3a71decedd8d7bc4d3edb7970b8e899f3caef257b0f0d623f2f7b11platformdirs-4.3.3.tar.gz"
+    sha256 "d4e0b7d8ec176b341fb03cb11ca12d0276faa8c485f9cd218f613840463fc2c0"
   end
 
   resource "prompt-toolkit" do
@@ -94,13 +92,13 @@ class ZabbixCli < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages8c99d0a5dca411e0a017762258013ba9905cd6e7baa9a3fd1fe8b6529472902epydantic-2.8.2.tar.gz"
-    sha256 "6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a"
+    url "https:files.pythonhosted.orgpackages14153d989541b9c8128b96d532cfd2dd10131ddcc75a807330c00feb3d42a5bdpydantic-2.9.1.tar.gz"
+    sha256 "1363c7d975c7036df0db2b4a61f2e062fbc0aa5ab5f2772e0ffc7191a4f4bce2"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages12e30d5ad91211dba310f7ded335f4dad871172b9cc9ce204f5a56d76ccd6247pydantic_core-2.20.1.tar.gz"
-    sha256 "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
+    url "https:files.pythonhosted.orgpackages5ccc07bec3fb337ff80eacd6028745bd858b9642f61ee58cfdbfb64451c1def0pydantic_core-2.23.3.tar.gz"
+    sha256 "3cb0f65d8b4121c1b015c60104a685feb929a29d7cf204387c7f2688c7974690"
   end
 
   resource "Pygments" do
@@ -109,8 +107,8 @@ class ZabbixCli < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagescf605959113cae0ce512cf246a6871c623117330105a0d5f59b4e26138f2c9ccrich-13.8.0.tar.gz"
-    sha256 "a5ac1f1cd448ade0d59cc3356f7db7a7ccda2c8cbae9c7a90c28ff463d3e91f4"
+    url "https:files.pythonhosted.orgpackages927640f084cb7db51c9d1fa29a7120717892aeda9a7711f6225692c957a93535rich-13.8.1.tar.gz"
+    sha256 "8260cda28e3db6bf04d2d1ef4dbc03ba80a824c88b0e7668a0f23126a424844a"
   end
 
   resource "shellingham" do

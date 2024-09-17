@@ -1,6 +1,6 @@
 cask "maccy" do
-  version "1.0.0"
-  sha256 "f989591f953efc1e0241930d2f853e7a183d2a023d4dc892d42310d259412f4f"
+  version "2.0.0"
+  sha256 "918aaa3b592eecb35d91ae1573c174bcc6b1db139dfa1c5367dff4d552308600"
 
   url "https:github.comp0dejeMaccyreleasesdownload#{version}Maccy.app.zip",
       verified: "github.comp0dejeMaccy"
@@ -14,7 +14,7 @@ cask "maccy" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :sonoma"
 
   app "Maccy.app"
 

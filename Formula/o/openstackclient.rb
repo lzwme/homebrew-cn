@@ -4,17 +4,17 @@ class Openstackclient < Formula
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
   # TODO: remove `setuptools` from pypi_formula_mappings.json after https://review.opendev.org/c/openstack/pbr/+/924216
-  url "https://files.pythonhosted.org/packages/47/f6/d65ccb1b1eafc8380df71fa33ebdcf601ec5cd78afc37716fa3d5a74d2c0/python-openstackclient-7.1.0.tar.gz"
-  sha256 "9effc299c5694220bae457778e6cd9b23aea1bc3bfcd04e3a04f8d86385a0554"
+  url "https://files.pythonhosted.org/packages/2b/4a/292ae140c1e13d6aa6f8919db57802588b93a5eaf2c3e236c86fbf5b8ec8/python-openstackclient-7.1.1.tar.gz"
+  sha256 "b10e35ffd5ff6db6ee7d0762cb1749372fe9a1063e9ba4bb8bb4b911c9ecf0ba"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab993fb02ab9d2f26d1292ff2ac871ec14851fb951962312d8009185590a4686"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8a1aca8345d4d50fe8f2f5c024428da3bc0fe3a4f2ab31bb908ba8773145538"
-    sha256 cellar: :any,                 arm64_ventura: "a22c80f2091f45da684075c3306a57f8bb1e2ccbbc866cd05555354a246ef354"
-    sha256 cellar: :any,                 sonoma:        "b2a09e2332764157cf3a53d0d7cd56bf7e841b416c7c3c7bc1b9303fd85adac7"
-    sha256 cellar: :any,                 ventura:       "35e5a696cb2d6a787b45ab966c317835b73e084d16581de7c91d521e8ab24288"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d515024de5260f810a6b713df6eb9a60932a45c121695c58375e31921bc6c78e"
+    sha256 cellar: :any,                 arm64_sequoia: "4e9a1250349446c8a48137788d0e815efd81cf97151560d08fcbed64d2e642bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b8bb08b85d81c9728262d7dc2084a6b775d29e532c6aaabc717fc9f9fd2ee9e"
+    sha256 cellar: :any,                 arm64_ventura: "bfa4660161b70462655a70001e1887d94115771e8dab6cd154c4f414a76b8676"
+    sha256 cellar: :any,                 sonoma:        "48145e8d86ea1234bcd800920922bcce13014db76e2ead583692b8526fd65a4f"
+    sha256 cellar: :any,                 ventura:       "3b825e03643e49d6c28f4209dd4bef73f980461d5ec0cff0283b3ba4c63d9083"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "868ad6a5c9ae0990cd35f76f606eff5ac1d1b59ddec47ca4a336be87c8f5d4cc"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -76,8 +76,8 @@ class Openstackclient < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "iso8601" do
@@ -201,8 +201,8 @@ class Openstackclient < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/75/a0/d7cab8409cdc7d39b037c85ac46d92434fb6595432e069251b38e5c8dd0e/platformdirs-4.3.2.tar.gz"
-    sha256 "9e5e27a08aa095dd127b9f2e764d74254f482fef22b0970773bfba79d091ab8c"
+    url "https://files.pythonhosted.org/packages/f5/19/f7bee3a71decedd8d7bc4d3edb7970b8e899f3caef257b0f0d623f2f7b11/platformdirs-4.3.3.tar.gz"
+    sha256 "d4e0b7d8ec176b341fb03cb11ca12d0276faa8c485f9cd218f613840463fc2c0"
   end
 
   resource "ply" do
@@ -336,8 +336,8 @@ class Openstackclient < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https://files.pythonhosted.org/packages/27/b8/f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74b/setuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "six" do

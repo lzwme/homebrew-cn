@@ -6,6 +6,7 @@ class Mmtabbarview < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "9ae9758b04f5cbc6068b0e41266db2fbad7065d90134060c27bc73d36d780c2d"
     sha256 cellar: :any, arm64_sonoma:   "4b4fbe5492b90614b36b8a99101acbd15b0b9ebc4b415683c273114e47d3e1cb"
     sha256 cellar: :any, arm64_ventura:  "ec634de2a8f60f6d6d09c88cc8ce9293fd94ee07ba2181a7b07a3ee2f29d99ac"
     sha256 cellar: :any, arm64_monterey: "8d752b1a6566f010c2a3c42c7248e56e15ea8c55b80a7cd6b7fc571b67f81912"
@@ -22,6 +23,14 @@ class Mmtabbarview < Formula
   depends_on :macos
 
   def install
+    # Apply workaround for Sequoia based on ViennaRSS fork's fix.
+    # This is done via inreplace as pathname has spaces.
+    # Ref: https:github.comViennaRSSMMTabBarViewcommit149fd82953a8078c4d60ce3fa855a853619eb3f9
+    if MacOS.version >= :sequoia
+      inreplace "MMTabBarViewMMTabBarViewStylesMojave Tab StyleMMMojaveTabStyle+Assets.m",
+                "@import Darwin.Availability;", ""
+    end
+
     xcodebuild "-workspace", "default.xcworkspace",
                "-scheme", "MMTabBarView",
                "-configuration", "Release",

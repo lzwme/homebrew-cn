@@ -21,6 +21,7 @@ class Hashlink < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "c4e82df868e4b04a3f1eabeb3166c81282cc6de61b4d22e469096fe6fb36e955"
     sha256 cellar: :any,                 arm64_sonoma:   "49c5e4244cc628ab69ce7dad3d7908dff8d61035d9f6c2f8298574ef35341a4e"
     sha256 cellar: :any,                 arm64_ventura:  "fd29a416c322068567b89dce7ea79f2d8977bbf87fadb3546fd2bcd253b36ba4"
     sha256 cellar: :any,                 arm64_monterey: "17054886a8d100e481b845a4a977a0aa5e5a354a4145f5911aeb837e14fae5b4"

@@ -7,6 +7,7 @@ class LibbitcoinNode < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sequoia:  "7c10e910f41ba2ef7150fac8778aebfab7e561f517adb19c2b3def228559c2d8"
     sha256 arm64_sonoma:   "af98941d96c71ee8c0c6f155e5cc1d1cb1a6fed85eae311a663671f0baf8fc4d"
     sha256 arm64_ventura:  "b77eab1650d04674e86c7b794bc0e96f70fffcb2549008bdba0f278c1aa4b589"
     sha256 arm64_monterey: "456c03407d6cb891359d728d6303b2d668bc1a1cf7cfe0d878874fc110b40a65"

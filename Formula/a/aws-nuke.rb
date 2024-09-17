@@ -1,29 +1,26 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
-  homepage "https:github.comrebuy-deaws-nuke"
-  url "https:github.comrebuy-deaws-nuke.git",
+  homepage "https:github.comekristenaws-nuke"
+  url "https:github.comekristenaws-nuke.git",
       tag:      "v2.25.0",
-      revision: "2bd22d5e5c0cf6a4011b3c08a5b1c25e2e6c75bd"
+      revision: "e71283be2a03cd23c3c84f39ac72f1200c813349"
   license "MIT"
-  head "https:github.comrebuy-deaws-nuke.git", branch: "main"
+  head "https:github.comekristenaws-nuke.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "66770e8744b0d22aca716ad0bfa5e9064e50624b995e98f8af04ec6a6756c4b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3286cec74fcdd7867c2ab1a0594b80107c75f049b04c833977814fe3e407930"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12c5e77d73638f6bfee30759160f559aed88ab964c0af28732c76a5bcab5bdb4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12c5e77d73638f6bfee30759160f559aed88ab964c0af28732c76a5bcab5bdb4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "12c5e77d73638f6bfee30759160f559aed88ab964c0af28732c76a5bcab5bdb4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f10b53d737493b2b2e4a31b34b450fa601369cb68643ea2e99b534f4e5168a0c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9bfc6b886796a4059e9440a28375985a7eb5d5ed336098c6065f0d10bb3ef7e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "9bfc6b886796a4059e9440a28375985a7eb5d5ed336098c6065f0d10bb3ef7e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9bfc6b886796a4059e9440a28375985a7eb5d5ed336098c6065f0d10bb3ef7e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c22ad093adadf1577b33212b71a82f23d0e1ae9c5e81e792186caa3c63125e2a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "094c13b3ae605804052b90da606fd15ae683c0a4da5ab917bef22516be82a3e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "094c13b3ae605804052b90da606fd15ae683c0a4da5ab917bef22516be82a3e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "094c13b3ae605804052b90da606fd15ae683c0a4da5ab917bef22516be82a3e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e90a67cbcf1afe970e0f2ec2d4a524b7ed75c0ab9a218aba1639191db5714439"
+    sha256 cellar: :any_skip_relocation, ventura:       "e90a67cbcf1afe970e0f2ec2d4a524b7ed75c0ab9a218aba1639191db5714439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49f49fb9197f645127189c5b8d64bfc281aa069c7f3d367f7b24b7bf9945acd9"
   end
 
   depends_on "go" => :build
 
   def install
-    build_xdst="github.comrebuy-deaws-nukev#{version.major}cmd"
+    build_xdst="github.comekristenaws-nukev#{version.major}cmd"
     ldflags = %W[
       -s -w
       -X #{build_xdst}.BuildVersion=#{version}
