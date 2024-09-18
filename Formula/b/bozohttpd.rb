@@ -5,6 +5,11 @@ class Bozohttpd < Formula
   sha256 "576267bc5681c52b650294c3f2a85b8c8d8c239e75e71aaba7973771f852b56d"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/"
+    regex(/href=.*?bozohttpd[._-]v?(\d+(?:\.\d+)*)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f91adb497f96847759c3427e7b14b81889547273bc078266abdcc0087e6f1c8f"
     sha256 cellar: :any,                 arm64_sonoma:  "ad727b862019134b028cc9d5ee6893755dc001ab87ebc3625eca39779be2d65a"

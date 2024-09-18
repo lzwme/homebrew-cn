@@ -1,21 +1,18 @@
 class Sleef < Formula
   desc "SIMD library for evaluating elementary functions"
   homepage "https:sleef.org"
-  url "https:github.comshibatchsleefarchiverefstags3.6.1.tar.gz"
-  sha256 "441dcf98c0f22e5d5e553d007f3b93e89eb58e4c66e340da8af5e7f67d1dc24c"
+  url "https:github.comshibatchsleefarchiverefstags3.7.tar.gz"
+  sha256 "1fb094c1ba4c9f6ba16013715d6fdbd5b893c68e1737b6115ba31e27807de591"
   license "BSL-1.0"
-  revision 1
   head "https:github.comshibatchsleef.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1b0ea11328c3aedfdb2a7fb51fef6e6293fe718afdf37060f6ee459daede4fcb"
-    sha256 cellar: :any,                 arm64_sonoma:   "58dac621386569ca8890a32919d856130bbcb7ece80e488c830c75c850dc91db"
-    sha256 cellar: :any,                 arm64_ventura:  "a8bb4e3f93058e42b93cb262aa8ad3f2cd89b2c51f8eb356c65751353546f989"
-    sha256 cellar: :any,                 arm64_monterey: "f4894c52025eb79156b03c2f3bdc6bc1472552bf38e7265fd0cd7fc7efc7e64b"
-    sha256 cellar: :any,                 sonoma:         "2df97f4bd348a0e5ac9d3ff58ccedf7e69f76c7331de73cb32379554b923f8fb"
-    sha256 cellar: :any,                 ventura:        "3baff7e2fe8c80e382d20ef465f711ffff99f19ae84071348a9b11bdbabf90b3"
-    sha256 cellar: :any,                 monterey:       "5f832edda361b8452e5500f229b7715d27d51fd14f0b0eda07bfa9c849999315"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19497fd48ec12e5753c6c76b3def0297620144abe1518c880ca5673ad18084d0"
+    sha256 cellar: :any,                 arm64_sequoia: "f314f76bab7b0a9e5c4a9c2fdce196f22a50104b9fb2a356a29fd265b0dc877b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c70ef4e6b934eab2b466aad8d12b00cd6c9521d7d8255c13e853b2db95e5b7b"
+    sha256 cellar: :any,                 arm64_ventura: "5a4428dda352365ebcb2575c19d6f7d6d31071ac0f02ee56a33dbac2a687390d"
+    sha256 cellar: :any,                 sonoma:        "4e7b7ee4466eb00f7508343e14a21bc82355cb2d6ecb7e6cf021e818316650a0"
+    sha256 cellar: :any,                 ventura:       "d7db46a5adc5a23bfe1073bb38099f6f6570b0242f1a463ac215d19463d4facd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e12c2a6d62246583630ecccc471d28e8f77b4263f551b23cdd5ec14c8dcf2265"
   end
 
   depends_on "cmake" => :build

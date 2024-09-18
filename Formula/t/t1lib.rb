@@ -30,6 +30,9 @@ class T1lib < Formula
   end
 
   def install
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
+
     system "./configure", "--prefix=#{prefix}"
     system "make", "without_doc"
     system "make", "install"

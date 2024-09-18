@@ -31,7 +31,7 @@ class Mcpp < Formula
 
   # stpcpy is a macro on macOS; trying to define it as an extern is invalid.
   # Patch from ZeroC fixing EOL comment parsing
-  # https:forums.zeroc.comforumbug-reports5445-mishap-in-slice-compilers?t=5309
+  # https:forums.zeroc.comdiscussion5445mishap-in-slice-compilers
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patches3fd7fbamcpp2.7.2.patch"
     sha256 "4bc6a6bd70b67cb78fc48d878cd264b32d7bd0b1ad9705563320d81d5f1abb71"
@@ -44,5 +44,16 @@ class Mcpp < Formula
     system ".configure", *std_configure_args,
                           "--enable-mcpplib"
     system "make", "install"
+  end
+
+  test do
+    (testpath"test.c.in").write <<~EOS
+      #define RET 5
+      int main() { return RET; }
+    EOS
+
+    (testpath"test.c").write shell_output("#{bin}mcpp test.c.in")
+    system ENV.cc, "test.c", "-o", "test"
+    assert_empty shell_output(".test", 5)
   end
 end

@@ -24,6 +24,8 @@ class Tdb < Formula
 
   uses_from_macos "python" => :build
 
+  conflicts_with "jena", because: "both install `tdbbackup`, `tdbdump` binaries"
+
   def install
     system "./configure", "--bundled-libraries=NONE",
                           "--disable-python",

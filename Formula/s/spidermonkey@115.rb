@@ -24,6 +24,8 @@ class SpidermonkeyAT115 < Formula
     sha256               x86_64_linux:   "dfb514aca444b386ee25593865c7cb90a88fa811aa3e3e186d0fe30aa218ba69"
   end
 
+  disable! date: "2025-07-01", because: :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build # https:bugzilla.mozilla.orgshow_bug.cgi?id=1857515
   depends_on "rust" => :build

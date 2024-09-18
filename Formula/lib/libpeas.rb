@@ -1,21 +1,17 @@
 class Libpeas < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  # TODO: Move to latest `spidermonkey` with gjs 1.82.x
-  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.3.tar.xz"
-  sha256 "39e3b507c29d2d01df1345e9b3380fd7a9d0aeb5b2e657d38e6c2bea5023e5f0"
+  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.5.tar.xz"
+  sha256 "376f2f73d731b54e13ddbab1d91b6382cf6a980524def44df62add15489de6dd"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia:  "dfd2891b012dece5689092e8f20d1184f30b0267471764abea87ee941e5364a2"
-    sha256 arm64_sonoma:   "639824f6fcd4036a4fdd1c3135b4cd0ec98baad246ee00cbcf5153e8281b0fdf"
-    sha256 arm64_ventura:  "6494928bddeb9d2876cb32ff8fcb40414ac4f9c6f83ce3f17e07337381be4a27"
-    sha256 arm64_monterey: "a3dd9eb7c382591a9503164059828d359d09c5673ead4ce151efbfe1df8a07a9"
-    sha256 sonoma:         "f2f09e8b8b5f98eda1a8e0f87bc6a753f8c3f9c908c2bf188aba748cb3c027e2"
-    sha256 ventura:        "c52899ef298323ccb0b7fd5b191677b3e042c08daf79da14fa919ce3bddf8fd3"
-    sha256 monterey:       "38508ba0b4be708794a42b35554f13fc7ad02d85d72b5f663f82b2718d6fb834"
-    sha256 x86_64_linux:   "2491531006192bc691a15aa39af728bdc5ce8c63091cd34e8b6758a04b8cd48f"
+    sha256 arm64_sequoia: "823a7e14c6824998266a429fb76a406048faf99ea6d530562a34ddaf3d8141d3"
+    sha256 arm64_sonoma:  "f31f15cb8a9fc7715d5cdb2c017d8e1325453e1f5882f9b11e97d3ddb64f1cbd"
+    sha256 arm64_ventura: "4fe81d0c5880a2671e0568fc8a203845b7ef0131e08296064bce9d50689c4709"
+    sha256 sonoma:        "76c211768f09e686c3e3a0eef8c7b766cff4098cf3506c04d093f18c7be94730"
+    sha256 ventura:       "a2c240b560490b396217018dff8aba7949016e508e9b2ded78653887f8338945"
+    sha256 x86_64_linux:  "6457499ae5800a12684db70edf0ef2b2138b3fd0d96cc1a0e4c69f2b41186ebd"
   end
 
   depends_on "meson" => :build
@@ -28,7 +24,7 @@ class Libpeas < Formula
   depends_on "gtk+3"
   depends_on "pygobject3"
   depends_on "python@3.12"
-  depends_on "spidermonkey@115"
+  depends_on "spidermonkey"
 
   on_macos do
     depends_on "gettext"

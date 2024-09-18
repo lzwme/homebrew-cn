@@ -8,7 +8,7 @@ class Z80dasm < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://www.tablix.org/~avian/z80dasm/"
+    url "https://geeklan.co.uk/files/"
     regex(/href=.*?z80dasm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

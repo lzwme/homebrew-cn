@@ -1,5 +1,5 @@
 cask "ocenaudio" do
-  version "3.14.2"
+  version "3.14.3"
   sha256 :no_check
 
   on_arm do
@@ -22,8 +22,8 @@ cask "ocenaudio" do
   homepage "https://www.ocenaudio.com/en"
 
   livecheck do
-    url "https://www.ocenaudio.com/changelog"
-    regex(/download\?version=v?(\d+(?:\.\d+)+)/i)
+    url :url
+    strategy :header_match
   end
 
   depends_on macos: ">= :sierra"

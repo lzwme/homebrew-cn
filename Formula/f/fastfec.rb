@@ -1,7 +1,8 @@
 class Fastfec < Formula
   desc "Extremely fast FEC filing parser written in C"
-  homepage "https:www.washingtonpost.comfastfec"
+  homepage "https:github.comwashingtonpostFastFEC"
   # Check whether PCRE linking issue is fixed in Zig at version bump.
+  # Switch to `zig` formula when supported: https:github.comwashingtonpostFastFECissues66
   url "https:github.comwashingtonpostFastFECarchiverefstags0.2.0.tar.gz"
   sha256 "d983cf9e7272700fc24642118759d6ab4185fca74b193851fa6a21e3c73964ab"
   license "MIT"
@@ -16,8 +17,15 @@ class Fastfec < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf228d820220f1c3499eced326d33d6492bcb86745db6aaaef29e41e8405f01f"
   end
 
+  depends_on "cmake" => :build # for zig resource
+  depends_on "llvm@16" => :build # for zig resource
   depends_on "pkg-config" => :build
-  depends_on "zig" => :build
+  # TODO: depends_on "zig" => :build
+  depends_on "zstd" => :build # for zig resource
+  depends_on macos: :big_sur # for zig resource - https:github.comziglangzigissues13313
+
+  uses_from_macos "ncurses" => :build # for zig resource
+  uses_from_macos "zlib" => :build # for zig resource
 
   on_macos do
     # Zig attempts to link with `libpcre.a` on Linux.
@@ -28,7 +36,28 @@ class Fastfec < Formula
     depends_on "pcre" # PCRE2 issue: https:github.comwashingtonpostFastFECissues57
   end
 
+  resource "zig" do
+    url "https:ziglang.orgdownload0.11.0zig-0.11.0.tar.xz"
+    sha256 "72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951"
+  end
+
   def install
+    resource("zig").stage do
+      ENV["NIX_LDFLAGS"] = ENV["HOMEBREW_RPATH_PATHS"].split(":").map { |p| "-rpath #{p}" }.join(" ") if OS.linux?
+
+      args = ["-DZIG_STATIC_LLVM=ON"]
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+      if OS.linux?
+        args << "-DCMAKE_C_COMPILER=#{Formula["llvm@16"].opt_bin}clang"
+        args << "-DCMAKE_CXX_COMPILER=#{Formula["llvm@16"].opt_bin}clang++"
+      end
+
+      system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: buildpath"zig")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      ENV.prepend_path "PATH", buildpath"zigbin"
+    end
+
     # Set `vendored-pcre` to `false` unconditionally when `pcre` linkage is fixed upstream.
     system "zig", "build", "-Dvendored-pcre=#{OS.linux?}"
     bin.install "zig-outbinfastfec"

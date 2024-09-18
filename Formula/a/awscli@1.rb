@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https:files.pythonhosted.orgpackages6e263a2360d0fb24b12750d38e0852beda98288c090d565ab554a0fc6a7d6bdcawscli-1.34.10.tar.gz"
-  sha256 "69fabc0e7e8b35c01e1e785ccfd843cec3db45983f508f9298f65ac76a02a3da"
+  url "https:files.pythonhosted.orgpackages0724930c674e22e30674a1b4380656f94d997bbf13d3486a5df62f94b6874782awscli-1.34.20.tar.gz"
+  sha256 "a3459bcd6bc4cd04b18bb902b182f4a8395cee9a634efa66090586f113ac7789"
   license "Apache-2.0"
 
   livecheck do
@@ -15,14 +15,12 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "16882b2da2dac9150b323e505c740e84fa3279d591f2af651ff9db5c1a03df14"
-    sha256 cellar: :any,                 arm64_sonoma:   "bfa2a8c7d5f16ad2b90a04d1292861fee993fa68fdea03b32b715fbcde713917"
-    sha256 cellar: :any,                 arm64_ventura:  "b696457f1e389993e3a13875a4d78fc1c03923db2f2459775cd40fa2988c94ab"
-    sha256 cellar: :any,                 arm64_monterey: "59309743cbd84215ecd787e939c298424386f0ac64b8702d4ac9575c5bcb0df3"
-    sha256 cellar: :any,                 sonoma:         "208ae3e00439590d0e7a4e416a254793d6655f10f13704b1990a0143c21d1d10"
-    sha256 cellar: :any,                 ventura:        "fc2ec10d9c214cd04fae62ebaf92f45cd190073ac9abf18326e72ed8ad371da8"
-    sha256 cellar: :any,                 monterey:       "85e42e03f77055aa01ac4c06a2006d0e7371488d255ffcff88c506d837d0de6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b856fc1c5896c15ccce5695f0f391006ceeae52ddae538c3a98d9712711556"
+    sha256 cellar: :any,                 arm64_sequoia: "0222ed109e0ee7461855677e9d20d8b58238028899b268cdc5de3acf8a75e105"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e99a780006ce735bbecd0c034c7ee74d7192f42e6e6e7ce177eff10d08c2b5a"
+    sha256 cellar: :any,                 arm64_ventura: "9fc13cd2da850b59d3adeb9d974685a4350ebd4584c88e4a604d9267d29c4f0c"
+    sha256 cellar: :any,                 sonoma:        "81e89c0091190742788dd997abd14f8c8c9e394cb84eca8d79f28fcb0d6a7e77"
+    sha256 cellar: :any,                 ventura:       "fdda0f0f4d6c6e964635d23802acbfbee21522b9d13854a5a469b890551604ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63e5a58e3212ae3b641fdf44d81db4f37682c145f0f6590115eab1ca9bcac06f"
   end
 
   keg_only :versioned_formula
@@ -33,8 +31,8 @@ class AwscliAT1 < Formula
   uses_from_macos "mandoc"
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages7176fd28cb2b1ab3b19b0f2602455c1757a0517fededd51356737120e6a29ce8botocore-1.35.10.tar.gz"
-    sha256 "6c8a1377b6636a0d80218115e1cd41bcceba0a2f050b79c206f4cf8d002c54d7"
+    url "https:files.pythonhosted.orgpackages5b68123156df0dc1734bab0efece4a35c5dbc6c1826e5f5bf0cb1b2b45f1344bbotocore-1.35.20.tar.gz"
+    sha256 "82ad8a73fcd5852d127461c8dadbe40bf679f760a4efb0dde8d4d269ad3f126f"
   end
 
   resource "colorama" do
@@ -53,8 +51,8 @@ class AwscliAT1 < Formula
   end
 
   resource "pyasn1" do
-    url "https:files.pythonhosted.orgpackages4aa3d2157f333900747f20984553aca98008b6dc843eb62f3a36030140ccec0dpyasn1-0.6.0.tar.gz"
-    sha256 "3a35ab2c4b5ef98e17dfdec8ab074046fbda76e281c5a706ccd82328cfc8f64c"
+    url "https:files.pythonhosted.orgpackagesbae901f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018pyasn1-0.6.1.tar.gz"
+    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
   end
 
   resource "python-dateutil" do
@@ -83,8 +81,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install

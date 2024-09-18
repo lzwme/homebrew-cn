@@ -2,20 +2,18 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https:pulumi.io"
   url "https:github.compulumipulumi.git",
-      tag:      "v3.132.0",
-      revision: "81847fedf30a1dfe7e7dabaabf15d6ca04a53bae"
+      tag:      "v3.133.0",
+      revision: "1c54d114edab147f015b02dc8da746d87bd12415"
   license "Apache-2.0"
   head "https:github.compulumipulumi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a662dcc77f75c8168f7e4d910ddd49f47d5ae4aab3cceabe283646ab69f0adf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc1412c70f86b533be9c69e57e79026e8a5ed31b17203ea79471f4974a2de31b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf7f3662d3bfe93fe9cce5c5a0ad1a4cc47eef49caaed94d945fccdadba81d56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9154250b9a241e72feac27afb58a3e75020f7b192bd52db1f20c3ef1315195ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "86e6014c8c309c38196febf39092a5072f2f99526952f8bf1d07e8bcaa957093"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f543a28cee3ef42fec9aeaf7b1ec2027bf53c0fb47c33da0b46a83dd2f76bb0"
-    sha256 cellar: :any_skip_relocation, monterey:       "37792d29bd44d37794b3d3046c61f5d7f811d82df979f0d6b9764eb27a5b5edb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65f169d521d4580ae21aee535cc2f509e6972f216a4a7c02871ecd4905c215dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5609135e4bf2fbbd9365ae6712b014a9ad32964f224c47b0978a152f985f68e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9ce84791776da864d9aae5221d8cddf4ba0ad400eddbc966c86dff326853d9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "779f86bf42c1d53de1fe2b5e64c963f42d37955ea9ad42ac536862cb5e8e2bb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7812f141cc8f863b7ec6eb45c0690a93bb3eecb9d6d1f6df3a734e8ef874f054"
+    sha256 cellar: :any_skip_relocation, ventura:       "989e8651f25a200459bcf29826b497089bafa7060511ddb68593bd535a51afe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fe858d1577398c97404c36f8b6547da00e60a8dc5a3a1c887c87a0492fd274a"
   end
 
   depends_on "go" => :build

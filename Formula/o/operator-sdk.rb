@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https:sdk.operatorframework.io"
   url "https:github.comoperator-frameworkoperator-sdk.git",
-      tag:      "v1.36.1",
-      revision: "37d2f2872bfecd6927469f384be4951805aa4caa"
+      tag:      "v1.37.0",
+      revision: "819984d4c1a51c8ff2ef6c23944554148ace0752"
   license "Apache-2.0"
   head "https:github.comoperator-frameworkoperator-sdk.git", branch: "master"
 
@@ -13,14 +13,12 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6ed0137a792acb95c3d122f29904de5959eb8eedb4ccddf17b2aec654253c62b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "785d838aae9e9bbfa8b9f9300c2db9385acc9bbf48b3d26acf6061987caa180a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71c0ac6034f0bd8b55f2f54b16707070233e42dc9e80560b5cb582952557fffd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e88d4cb4827365528a43aeadcf9dfa48a24e46d7d3f4f2bb629a7409c0cb3e0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09ae8d3dc82826e89e4fcb54f15d697d04091b7e46ce8a79ac9ff647dbde72bd"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6b9456b2e2a65da474f74fbd435d15d62515d784218653d0a3af1571c575dd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "60d19779010df0f805c1d4ebbde79d84eeb6a56fbeebc69eba432b802e708189"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78fba18534eee1cc6a6ca19c79a8e235a1e02f0b0b4b7cfec332b667fbfaae45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0429387f695927eba3b7863d0408896dc2d0f8ae50a0a436fc3b68bdabfa6539"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c4bd3816aee903cc552aa878b85afd0e9884faf42601177ccd122000a2a7e4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1508f9de26a4a4115a8b86b7559cfdb2694ce1448d0c51dbfd2f0480bff43e01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d2a2a4c571e4aeddeeec164867970e79472edf4e17e0c1fca6fcdd1f3fbd6e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "92e4fd0e3124c1d326620f2c2273935af036fbcaff097e54d7356fffd64b482d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28dbb6b9367e1ded3dc60637a4c29d758ea1c42901f8aec445d627d39142b16"
   end
 
   depends_on "go"

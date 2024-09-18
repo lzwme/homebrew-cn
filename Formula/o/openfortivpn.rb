@@ -4,6 +4,7 @@ class Openfortivpn < Formula
   url "https:github.comadrienvergeopenfortivpnarchiverefstagsv1.22.1.tar.gz"
   sha256 "9aaaae2229f01b35bf79dcc9e1c0a4363cec75084a30fd46df58c20d52bff809"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
+  head "https:github.comadrienvergeopenfortivpn.git", branch: "master"
 
   bottle do
     sha256 arm64_sequoia:  "57822a57fca8d720b5848885d49b39eb4f6ea35da9e9003bee8c122f83c58f7e"

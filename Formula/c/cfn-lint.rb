@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackages42f094f5a2b5c06520b2a01d4fb3e6510e02bb0d1d272401e7373ea8515019d0cfn_lint-1.13.0.tar.gz"
-  sha256 "5d193bc27403f3acbfcb941582596412905a13694d2bbf6d400764c6e4658341"
+  url "https:files.pythonhosted.orgpackagesb38a59db7720f415fd0d1b206af9b08e7318f0953ce01261fa05d0fb9f544ec1cfn_lint-1.14.1.tar.gz"
+  sha256 "81f5d1bf2f5b360bb27de3664c293c911d5c852a058eb08f2c19ff19af2f6222"
   license "MIT-0"
 
   livecheck do
@@ -13,12 +13,12 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cb5d6162b772363219a0153d7a6bfa83333db975b4e3055acfe78b9f2060bdfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6bebdff6cc0a00ac9bd196c7d15e07e885fcbdfc6249e678b2342b49bb7b54c"
-    sha256 cellar: :any,                 arm64_ventura: "4e5188ef9194b52c7374a46364715f86763bd08f5ef47d094ef9814ff16396ee"
-    sha256 cellar: :any,                 sonoma:        "ed8194c52b1ecf3adcccff984aafadfd09948333d77affdfe59faee72f162d14"
-    sha256 cellar: :any,                 ventura:       "9e4e101f60edf35e964fc669dadc404908d54da4302bf913864bd73d20064bf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92279e3b04165d58f0f0c228bbda20164db8dac33b3d650d4caee453a7fb277f"
+    sha256 cellar: :any,                 arm64_sequoia: "582f9e48c2314778d1e18daecf5fa519198bb99091a603ca008046d46841599a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1736127b0348ff7f5588f3fbaa0a92b7531a281a43f575830e3a603b66de119"
+    sha256 cellar: :any,                 arm64_ventura: "dee1b5e3b09870b27b25248c22110eea0d22f59e94a5df759b4f41a8f37ec36e"
+    sha256 cellar: :any,                 sonoma:        "6886e94b117391efe7189f6a650cd8e94f2627020a03fc4870afaf3abc0d0558"
+    sha256 cellar: :any,                 ventura:       "f622965287420f42c6a85a1319df62570afb632b45c1ebe8368928ab06c3bf6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5ad6b98b2969ffc227025a8b70e06b53ffc13cb81874c1c4c6077e4833d381"
   end
 
   depends_on "rust" => :build
@@ -41,13 +41,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages060e8f54a46210c7fbf3ed8b514952445b721ec1af62668607519fa12789797aboto3-1.35.18.tar.gz"
-    sha256 "fd130308f1f49d748a5fc63de92de79a995b51c79af3947ddde8815fcf0684fe"
+    url "https:files.pythonhosted.orgpackagescca48fa937739e6bf344a16088cf6c352e1ff2d7f28fcc7878fd328940aa7fe9boto3-1.35.21.tar.gz"
+    sha256 "db5fbbd10248db060f2ccce3ae17764f1641c99c8b9f51d422c26ebe25703a1e"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesa4cfe3fb940cd5c79199bb3514f294a243c7ce33f652c9b1b0eac37aaeba999bbotocore-1.35.18.tar.gz"
-    sha256 "e59da8b91ab06683d2725b6cbbb0383b30c68a241c3c63363f4c5bff59b3c0c0"
+    url "https:files.pythonhosted.orgpackagesdda40467bb54a439025c0a3b823303920a0210b9f8fe757d891d5749bf81401bbotocore-1.35.21.tar.gz"
+    sha256 "db917e7d7b3a2eed1310c6496784bc813c91f020a021c2ab5f9df7d28cdb4f1d"
   end
 
   resource "jmespath" do
@@ -86,13 +86,13 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages14153d989541b9c8128b96d532cfd2dd10131ddcc75a807330c00feb3d42a5bdpydantic-2.9.1.tar.gz"
-    sha256 "1363c7d975c7036df0db2b4a61f2e062fbc0aa5ab5f2772e0ffc7191a4f4bce2"
+    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
+    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages5ccc07bec3fb337ff80eacd6028745bd858b9642f61ee58cfdbfb64451c1def0pydantic_core-2.23.3.tar.gz"
-    sha256 "3cb0f65d8b4121c1b015c60104a685feb929a29d7cf204387c7f2688c7974690"
+    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
+    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
   end
 
   resource "python-dateutil" do

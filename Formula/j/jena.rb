@@ -15,6 +15,7 @@ class Jena < Formula
 
   conflicts_with "pwntools", because: "both install `update` binaries"
   conflicts_with "samba", because: "both install `tdbbackup` binaries"
+  conflicts_with "tdb", because: "both install `tdbbackup`, `tdbdump` binaries"
 
   def install
     env = {

@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.17.51.tar.gz"
-  sha256 "bf24a08ad58df75de884a3195b5f823d73ae6a5f310f0f7f495018f5e7e9bb8e"
+  url "https:github.comawsaws-cliarchiverefstags2.17.53.tar.gz"
+  sha256 "b1e14ad7de0b8a5efd44ad699cb5f83cc23eb92325bcb88d525a1a6b4d8fd2d9"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "052a06dba97e8097ee3d07c0c1b1c644aefb1c3ccb02e547333bc62c94cee797"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0198246ecee71a65723a24653cb061d212c3580aa33ad9c891509b0be86a99be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "641987fbcda14af12101716ed472c19cfb689491187d9a068afcb32d0681e0b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9bafc0d07fee1f694244b1255d7950b3221f3144d738730ec6820d45963cdf2"
-    sha256 cellar: :any_skip_relocation, ventura:       "cb253527bb75d14f2364246d1a876957738cb554ab0f1e3b47d7bb0a42f3a821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acf6fd92d05717fd5bc12feb24e3b7e5a1826be60dbef4962338c55c4b89fdd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dc84b8c68d59a170834865ecc393efa5c5a6f9e1890fa0755f5907a11e9c6b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e9b671e6200c7e96b8b0cedbdfb3a2d66288f9649a5b7c1317065ebd3e64380"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "012694a8543be6ce6764a728b061e14b43140c224a49a346fbc13f36918dea21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b3302472ec91f07ee94febf2f016cd6c57f8eeb1025e772a130daf90d22221d"
+    sha256 cellar: :any_skip_relocation, ventura:       "70eaf4d596023b44caa8f5d094f2f1f4bb9a66f9e1ada74422441c351aab2d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8deab102569e89f31312d412ff7c04bb5fabbe4d8592532e15e83ec4a8323df0"
   end
 
   depends_on "cmake" => :build
@@ -60,8 +60,8 @@ class Awscli < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackagesd977bd458a2e387e98f71de86dcc2ca2cab64489736004c80bc12b70da8b5488python-dateutil-2.9.0.tar.gz"
+    sha256 "78e73e19c63f5b20ffa567001531680d939dc042bf7850431877645523c66709"
   end
 
   resource "ruamel-yaml" do
@@ -70,13 +70,13 @@ class Awscli < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https:files.pythonhosted.orgpackagesd531a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0bruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
+    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27cbe754933c1ca726b0d99980612dc9da2886e76c83968c246cfb50f491a96bsetuptools-74.1.1.tar.gz"
-    sha256 "2353af060c06388be1cecbf5953dcdb1f38362f87a2356c480b6b4d5fcfc8847"
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "six" do
@@ -85,8 +85,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
-    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
+    url "https:files.pythonhosted.orgpackagese4e86ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392furllib3-1.26.20.tar.gz"
+    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
   end
 
   resource "wcwidth" do

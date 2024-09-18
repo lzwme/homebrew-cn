@@ -16,7 +16,9 @@ class Mtoc < Formula
   end
 
   depends_on "llvm" => :build
+  depends_on xcode: :build
   depends_on :macos
+
   conflicts_with "ocmtoc", because: "both install `mtoc` binaries"
 
   patch do

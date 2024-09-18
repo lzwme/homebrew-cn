@@ -17,7 +17,9 @@ class Ocmtoc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "ee2274b07ea977cf6b3b66815d5c91e9d01d1b9a7ebe8df60712aded4dc0cfbb"
   end
 
+  depends_on xcode: :build
   depends_on :macos
+
   conflicts_with "mtoc", because: "both install `mtoc` binaries"
 
   def install
