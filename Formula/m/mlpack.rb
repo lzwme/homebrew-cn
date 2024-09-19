@@ -1,20 +1,17 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https:www.mlpack.org"
-  url "https:mlpack.orgfilesmlpack-4.4.0.tar.gz"
-  sha256 "61c604026d05af26c244b0e47024698bbf150dfcc9d77b64057941d7d64d6cf6"
+  url "https:mlpack.orgfilesmlpack-4.5.0.tar.gz"
+  sha256 "aab70aee10c134ef3fe568843fe4b3bb5e8901af30ea666f57462ad950682317"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
-  revision 1
   head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2da7300cdc468b5e24de606e3a154a4a5cbab59937316e53d9f118a8fead4caa"
-    sha256 cellar: :any,                 arm64_ventura:  "d0998af6ec4fb8aeee1957e4936371b7fc587078f02cfceeda0a0cab4821d326"
-    sha256 cellar: :any,                 arm64_monterey: "73362efe455c7f4d0ab589d6602b18e57794b82cff68752de9c89fb9d739447c"
-    sha256 cellar: :any,                 sonoma:         "cf3477a7305fe5f772093d5c7a8edf7c9e4afe587e40b8c8ea52f095934425e6"
-    sha256 cellar: :any,                 ventura:        "aa20e00cd4cb387be86edd240d36ce734a62030553981356e45a860b1c588459"
-    sha256 cellar: :any,                 monterey:       "ad27e9311cf8817793845aa7b3dfbf7a1f347316f03fd06a8a95c8a1750d8dc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3cb9f195b25de1b245f5e3a775647846b3097e76302621c86c832faed0c4b62"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ca50b03e3db7e2817622163e1dce672ab01b9ddf34b50787cc8bd64b8c8e4c1"
+    sha256 cellar: :any,                 arm64_ventura: "2795f327b550595741bd54399e52576fc7cfbc46c5da3340da1953175e011220"
+    sha256 cellar: :any,                 sonoma:        "47f26da6cb96287945833af56b0e990a8d938aefbb75317e04d6bbd6a5a91ce0"
+    sha256 cellar: :any,                 ventura:       "ed7ce8c89e9d22da8bdc0393c04ff52591a675c666923dfcb7abcb2974d69d35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef590cec6b87dd20bd0a40f945c9ff841b94cc49578560aa578975c27e7d686c"
   end
 
   depends_on "cmake" => :build

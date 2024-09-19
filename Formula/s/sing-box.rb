@@ -1,20 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.4.tar.gz"
-  sha256 "30652ce0151ef46f314b25df74b402278dd7c540ba0b7f1c2c66209314afad09"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.5.tar.gz"
+  sha256 "6beaa010c14881ba29ea147566c32614dbec8c3f8993529d08664c470e099195"
   license "GPL-3.0-or-later"
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "726ec937dde37ae0b01275a51488fcadae9ec11fe98956d8340ab5de626f741a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "005318887a5478b58a5a9c2556778a1d87058cf3b92e240c84ef77ec602e028c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b75a6992207042cb65cd3d5cf6277ecd0dd8010f3b2a82ce1b7fcaffb8d35164"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aaf7c1e3c84a642a75861dc0af7c0e7fd4eb445035d7355715dcc3645067d5ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8e44e7ed928294e69780826bb6720aed6697763ebf6a60830453b3f6748a713"
-    sha256 cellar: :any_skip_relocation, ventura:        "cde5964494253b3ae1091182f54149d5eac9a74bd76ea17f2ea92753917f95f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "844f956a5148c7873d503ac925d390fab8e93ffafc189253c87ba1fb0b2aaa6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "482e746731cbea661113694af6522504d22fc0d4340d0f16c3f884e4a8a97a4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1777858cf3d6e6210c4f95757dacbee724e5c774b5c5ba86bdcf03f8dd258ea5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b97d6ec81131211b73a1a7b491ef9a95e36889b29d732d1bbdd6b34aad47e110"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2f1797c96b15bbdc25ef7ae353c09c27d6a5ed53b70a79b72308a4aac9f0f1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e71157c06489d761441c1c00d4a40b4d033f56f158ea242de5cd95f5e983b988"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c1e0d81eaccae8089e08121ab404cca4dbff83da13bac8ac089a94772252fa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4de16af9d257a4af275f44cde01457991191947efc18818a220c10845ddddc5"
   end
 
   depends_on "go" => :build

@@ -6,20 +6,21 @@ class Awscli < Formula
   url "https:github.comawsaws-cliarchiverefstags2.17.53.tar.gz"
   sha256 "b1e14ad7de0b8a5efd44ad699cb5f83cc23eb92325bcb88d525a1a6b4d8fd2d9"
   license "Apache-2.0"
+  revision 1
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dc84b8c68d59a170834865ecc393efa5c5a6f9e1890fa0755f5907a11e9c6b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e9b671e6200c7e96b8b0cedbdfb3a2d66288f9649a5b7c1317065ebd3e64380"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "012694a8543be6ce6764a728b061e14b43140c224a49a346fbc13f36918dea21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b3302472ec91f07ee94febf2f016cd6c57f8eeb1025e772a130daf90d22221d"
-    sha256 cellar: :any_skip_relocation, ventura:       "70eaf4d596023b44caa8f5d094f2f1f4bb9a66f9e1ada74422441c351aab2d73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8deab102569e89f31312d412ff7c04bb5fabbe4d8592532e15e83ec4a8323df0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb25cb25e8b24d1949de7777a73117dcf963033b7a7c3edbd2f8c9ae6bc4bc49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "706822f08eeb49e81884d25b2c8700abc0422a8f2524463bab3a77b55118f5ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ca328ebf51221b865d1c1fea6bec20a69a221993a160838fcaa4792ad2bbdb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ee00688a002f5d84a220fa3c51a50cdfeaff479291bbc29f27c30cd6d6e74d3"
+    sha256 cellar: :any_skip_relocation, ventura:       "289001cb584f582423b4c0aa11f94be4871d410c1380a2df1561319b96fb49ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23f6cf16c0af5456abe57b28329e5d2ff66f32138d79d37eb4c8d3f0da924625"
   end
 
   depends_on "cmake" => :build
   depends_on "cryptography"
-  depends_on "python@3.11" # Python 3.12 issue: https:github.comawsaws-cliissues8342
+  depends_on "python@3.12"
 
   uses_from_macos "libffi"
   uses_from_macos "mandoc"
@@ -100,7 +101,7 @@ class Awscli < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

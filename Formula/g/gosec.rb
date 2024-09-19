@@ -1,20 +1,18 @@
 class Gosec < Formula
   desc "Golang security checker"
   homepage "https:securego.io"
-  url "https:github.comsecuregogosecarchiverefstagsv2.21.2.tar.gz"
-  sha256 "35a55699e6998555f778f604851da4d026bc279bf29956600a1e5bf5aca093a5"
+  url "https:github.comsecuregogosecarchiverefstagsv2.21.3.tar.gz"
+  sha256 "a055288d34dde54efcf6d3bdc1492d8384d661bf934b345d6db9cd8fc376472d"
   license "Apache-2.0"
   head "https:github.comsecuregogosec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e7f99a0844c401bc5fcbd3ddbb390f54fcf2dd81111fed00f89ab2e9ced371f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e7f99a0844c401bc5fcbd3ddbb390f54fcf2dd81111fed00f89ab2e9ced371f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e7f99a0844c401bc5fcbd3ddbb390f54fcf2dd81111fed00f89ab2e9ced371f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e7f99a0844c401bc5fcbd3ddbb390f54fcf2dd81111fed00f89ab2e9ced371f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c1e70fe291046b67d088d0cac631d248d406557558a0da366eef841760ade47d"
-    sha256 cellar: :any_skip_relocation, ventura:        "c1e70fe291046b67d088d0cac631d248d406557558a0da366eef841760ade47d"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1e70fe291046b67d088d0cac631d248d406557558a0da366eef841760ade47d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89eb114ea6ad193953ac7cb24217527b7cced9883765c443ff4594beafd12a2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6149e9fa5db0b21d3620217c0a350ebc1579569e1f474eeb4a37bf652da0bdd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6149e9fa5db0b21d3620217c0a350ebc1579569e1f474eeb4a37bf652da0bdd2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6149e9fa5db0b21d3620217c0a350ebc1579569e1f474eeb4a37bf652da0bdd2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12584b86db4e00885a8a3b88a34bb18e37b3828d5efa93784165fd750b9c0c6d"
+    sha256 cellar: :any_skip_relocation, ventura:       "12584b86db4e00885a8a3b88a34bb18e37b3828d5efa93784165fd750b9c0c6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16c5dd2be89f15e85064e0a20e108f4a76fd6adfaa8b950c694fa956b901fe80"
   end
 
   depends_on "go"

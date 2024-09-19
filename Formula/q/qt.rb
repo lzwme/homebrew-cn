@@ -10,14 +10,13 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 2
   head "https:code.qt.ioqtqt5.git", branch: "dev"
 
   stable do
-    url "https:download.qt.ioofficial_releasesqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-    mirror "https:qt.mirror.constant.comarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-    mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.76.7.0singleqt-everywhere-src-6.7.0.tar.xz"
-    sha256 "bf5089912364f99cf9baf6c109de76a3172eec6267f148c69800575c47f90087"
+    url "https:download.qt.ioofficial_releasesqt6.76.7.2singleqt-everywhere-src-6.7.2.tar.xz"
+    mirror "https:qt.mirror.constant.comarchiveqt6.76.7.2singleqt-everywhere-src-6.7.2.tar.xz"
+    mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.76.7.2singleqt-everywhere-src-6.7.2.tar.xz"
+    sha256 "0aaea247db870193c260e8453ae692ca12abc1bd841faa1a6e6c99459968ca8a"
 
     # Backport support for FFMpeg 7.
     # Ref: https:bugreports.qt.iobrowseQTBUG-125227
@@ -49,13 +48,11 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e91ea08a9b8cfcbcf43b932875aeb2201eae09806e59655be08685b9acd7624d"
-    sha256 cellar: :any,                 arm64_ventura:  "6ef7081cc3284bfb4e7ec02e5f3aa94150128cab70ddd6ca9e5ddfd9df963d15"
-    sha256 cellar: :any,                 arm64_monterey: "c81a6fa0b3f95518bbb06e1c97332db4c6561bc63e528a3310863cde489d00a0"
-    sha256 cellar: :any,                 sonoma:         "dee140746e16c9d7acb484daa9f957f9cd8b337513573c3a084b3fa7476fcbf0"
-    sha256 cellar: :any,                 ventura:        "6f69293a85e2ce056bf25c9ef54ce6ccedee49f8856dec0cec9c579a3598d727"
-    sha256 cellar: :any,                 monterey:       "7df9c26be7011eae551a272b2256f9525a66a56c5a79007d82514d9b6fb7da4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e77123a7c36a4480792d8566a760ec3c80c51fe4c8f0c5171e9dbd83698fed4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee963ae8db1a9aa4e704a8bd7661af582803a62b98ab01ceff7a30faaf84801d"
+    sha256 cellar: :any,                 arm64_ventura: "00211c4cdb53dcacceef31a7b86d1c86ce00a3888764fa8478d60eba0b3b2efd"
+    sha256 cellar: :any,                 sonoma:        "d6ad879c3f896c504c17622c070b4203676694410f7b3b0a34a2c108250002fe"
+    sha256 cellar: :any,                 ventura:       "ef5ef408a3ecb52066f08ec0554f3a771a1fed1efd77da39eb6758532f1892d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0700ec3390554ab544a421e2aaa68f35634fafb6714369344e8718837dfba5bc"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -153,14 +150,6 @@ class Qt < Formula
   resource "webencodings" do
     url "https:files.pythonhosted.orgpackages0b02ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47webencodings-0.5.1.tar.gz"
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
-  end
-
-  # Backport fix to allow QtWebEngine to build with ninja>=1.12.0.
-  # Issue ref: https:bugreports.qt.iobrowseQTBUG-124375
-  patch do
-    url "https:github.comqtqtwebengine-chromiumcommita766045f65f934df3b5f1aa63bc86fbb3e003a09.patch?full_index=1"
-    sha256 "4d097145bf99a61704a99bf3e4b449b9bf613ae1f06efdcf44b881a045c5230c"
-    directory "qtwebenginesrc3rdparty"
   end
 
   def install

@@ -3,20 +3,18 @@ class BcGh < Formula
   # The homepage is https:git.gavinhoward.comgavinbc but the Linux CI runner
   # has issues fetching the Gitea urls so we use the official GitHub mirror instead
   homepage "https:github.comgavinhowardbc"
-  url "https:github.comgavinhowardbcreleasesdownload7.0.1bc-7.0.1.tar.xz"
-  sha256 "d6da15d968611aa3fae78b7427bd35a44afb4bdcdd9fbe6259d27ea599032fa4"
+  url "https:github.comgavinhowardbcreleasesdownload7.0.2bc-7.0.2.tar.xz"
+  sha256 "5cdaa73e42deda936bdcdb668eeaa6bc0567cac820914744a6824595fa13da1d"
   license "BSD-2-Clause"
   head "https:github.comgavinhowardbc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9af57f61ddb71b5526f5dc368be715ad2f7f0d8bb159043688fb1f537fd45dfe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab1938d31e9f9a3a0b7d11b3d07fd2af727feed4af221ce7786d228b0fe48931"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "399116f8b99251e5ea0e1636c1aa3b5316e76c858fe9180a5b021ee496e5d874"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c83c073b1c4eb4a4f15754e40c42335e8af1733fe4e21544fbc282c05591f59"
-    sha256 cellar: :any_skip_relocation, sonoma:         "647ae5d297c7c4c9c94432c6c6dc9c988efc8289144ed6d781e203c8d4b5ac0e"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b93598df94d526c9df26bbe7deb183711693d56da0ef43e43eb3b082165f0f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d003b1d72870a1f6696897856058a048107c123a6563825eb2ef8654f63311a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b997bfb3eae62ad9b5ed7b3933602112ee53af886b7cd0011c38876c906ab9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2288ca3ec202798b306d86c1b7adaea3760b5f2288af3e4024414caf7ea07be1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1c0e23ca6755904f22ae926c8daa515e279e6e81f753d41363ad61e1d4dfe41"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "adddb6b5df7415c8bcd0b20a1d74b9bd1d6760ed9d86c64f0d66a3da565c20ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78ba3c56b7820c163194dadc862a04f293bb4ab788c913e3cb67a74ded43e51a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a0bd765df0e8cf1aff61c83d7b42ae1bb8c098c658db5e2a914fd2eb46e6a6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be6bd16a61c60f59c0e6d5dd2e765bf1fe81d0140eb476646bbce18c99802c90"
   end
 
   # TODO: keg_only :provided_by_macos (replaced GNU bc since Ventura)

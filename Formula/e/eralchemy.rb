@@ -3,21 +3,17 @@ class Eralchemy < Formula
 
   desc "Simple entity relation (ER) diagrams generation"
   homepage "https:github.comeralchemyeralchemy"
-  url "https:files.pythonhosted.orgpackages874007b58c29406ad9cc8747e567e3e37dd74c0a8756130ad8fd3a4d71c796e3ERAlchemy-1.2.10.tar.gz"
-  sha256 "be992624878278195c3240b90523acb35d97453f1a350c44b4311d4333940f0d"
+  url "https:files.pythonhosted.orgpackages19055f69930e83a02360d9ed16660bdd58d9d501bffabd43d7dbbe8c14269143eralchemy-1.5.0.tar.gz"
+  sha256 "fa66a3cd324abd27ad8e65908d7af48d8198c0c185aeb22189cf40516de25941"
   license "Apache-2.0"
-  revision 7
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "9d88415eca1ebcb59ff01ae4b9526ce835b6bd1f71c54ceb7e19977d6e0271ff"
-    sha256 cellar: :any,                 arm64_sonoma:   "367acd7b96563e4125df8898bc2f1cb07b229bbbb04b78a321b19e1fc8c789b1"
-    sha256 cellar: :any,                 arm64_ventura:  "9c97192396a1913523c7cfc518ee6992bd19190ffe648b015984f5783a026ecf"
-    sha256 cellar: :any,                 arm64_monterey: "697bcb5c3612f600fa6c4792eb54ae3598478159c353d6bc727f5f5c59a3cdfe"
-    sha256 cellar: :any,                 sonoma:         "7d08e2b884b797dfac455c6a727e51170d6391784bb05df88068aa9be781475a"
-    sha256 cellar: :any,                 ventura:        "971c788786605ca57de3a4703ae9d6bf5769cab7cb3f4eeda30717edb0b14d23"
-    sha256 cellar: :any,                 monterey:       "b692bdfec78085160b99b0c0b985513ac9be3a7186f8c13271e562c073d6c295"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aa0e534f282e2a530f99e14caceced86c646d818a2092cd07d523bdb244e29d"
+    sha256 cellar: :any,                 arm64_sequoia: "d452d498ff2c9ad70a113315111586eb97087ad72efabc9f11d1d1a02387ceca"
+    sha256 cellar: :any,                 arm64_sonoma:  "e055bcdd47c8969f7cfcfa2a91f98790e67be7ec5988a6c30d2c5594ac6b2f79"
+    sha256 cellar: :any,                 arm64_ventura: "f72636b38733fa8a0e7fa45321e3b7d0b5632932be0d5c4874e8285ade43bcf4"
+    sha256 cellar: :any,                 sonoma:        "8141288b90a807f7fa65b45264525b3d3431bdbb977b61e22e8eb00cd43aaa46"
+    sha256 cellar: :any,                 ventura:       "27eeaec09061fe0ac139c6abd239a8c876b35a8d3cb542d9efc9e18c17f636f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33e02d317b404340e438a30ad0845114e11976856db134e76ff4ac7fcf6a99b0"
   end
 
   depends_on "pkg-config" => :build
@@ -27,18 +23,18 @@ class Eralchemy < Formula
   depends_on "python@3.12"
 
   resource "pygraphviz" do
-    url "https:files.pythonhosted.orgpackagesf02a3a7e5f6ba25c0a8998ded9234127c88c5c867bd03cfc3a7b18ef00876599pygraphviz-1.12.tar.gz"
-    sha256 "8b0b9207954012f3b670e53b8f8f448a28d12bdbbcf69249313bd8dbe680152f"
+    url "https:files.pythonhosted.orgpackages8c417b9a22df38bb7884012b34f2986d765691dbe41bf5e7af881dfd09f8145fpygraphviz-1.13.tar.gz"
+    sha256 "6ad8aa2f26768830a5a1cfc8a14f022d13df170a8f6fdfd68fd1aa1267000964"
   end
 
   resource "sqlalchemy" do
-    url "https:files.pythonhosted.orgpackagesb9fc327f0072d1f5231d61c715ad52cb7819ec60f0ac80dc1e507bc338919caaSQLAlchemy-2.0.27.tar.gz"
-    sha256 "86a6ed69a71fe6b88bf9331594fa390a2adda4a49b5c06f98e47bf0d392534f8"
+    url "https:files.pythonhosted.orgpackages36484f190a83525f5cefefa44f6adc9e6386c4de5218d686c27eda92eb1f5424sqlalchemy-2.0.35.tar.gz"
+    sha256 "e11d7ea4d24f0a262bccf9a7cd6284c976c5369dac21db237cff59586045ab9f"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   def install

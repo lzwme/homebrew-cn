@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.13.2.tar.gz"
-    sha256 "c537336c10ff0d9cd3673e195165667e478be92e0a8cc6664bdec5b960745c4b"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.13.3.tar.gz"
+    sha256 "b060a75a7c3d29424f1d16bfb42ee4a46055fa218b964556b81bd1885cb30d77"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.18.0.tar.gz"
@@ -19,14 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "7ca9761fb2ff22ca658d214264247d629315ecea9aba2fa3ffd0c949ada3bd7e"
-    sha256 cellar: :any,                 arm64_sonoma:   "4317db5e0ade574b4cee637bac668e8094670689c03931f80acd1190355f00cb"
-    sha256 cellar: :any,                 arm64_ventura:  "91a62195664af3bdde8e7fa0906cf870a3d0cc5a5074396b5d93bb5d0e2c0587"
-    sha256 cellar: :any,                 arm64_monterey: "8ae41fb343b76f0aae3bb2b6f71954b07b9761d4ed9fbd76f90be5711e69bb84"
-    sha256 cellar: :any,                 sonoma:         "d45f982ce8ac7caf57876f8ace5594bedc509c3ac82b86fe46e1b83b1b76d251"
-    sha256 cellar: :any,                 ventura:        "236de74af113d9604d9d72ab0c8cdba4fc0ad9a2264aab3ddd7f720d2513f275"
-    sha256 cellar: :any,                 monterey:       "e95230bde23f11f8c0a63e572c299b35393343494a6789a88a88834ad8622b8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b693aa5eef977ce6e3eeb1520ed082b03567df4e63290df98603e655b04f8a0"
+    sha256 cellar: :any,                 arm64_sequoia: "b3222832b5ead2ec11f5cc08aab91fa6300f90f296bf5810a19bc4bbf531945d"
+    sha256 cellar: :any,                 arm64_sonoma:  "7cbdf422aedae8886f37a35de838071d1ede0cffc0a2fd5fd3050f327078678b"
+    sha256 cellar: :any,                 arm64_ventura: "dd66a14acb653fbff65f4dfce594c52e5adb861f8fa72a91c52fb65e1d7fd949"
+    sha256 cellar: :any,                 sonoma:        "929cc4e4706e07a2695bd3b70f56b71b130cfdd9b083384fbbc99035e72d5a5b"
+    sha256 cellar: :any,                 ventura:       "510d31b836f3a9e978f2247e1656e50442eecefa97fd2f60251825b842c24e51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05555312f31dc74b29bb8eccd14e51f7ec0ad93c2632c3f608a91fa0f3f02588"
   end
 
   head do

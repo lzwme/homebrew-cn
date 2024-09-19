@@ -1,8 +1,8 @@
 class QtPerconaServer < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.7/6.7.0/submodules/qtbase-everywhere-src-6.7.0.tar.xz"
-  sha256 "11b2e29e2e52fb0e3b453ea13bbe51a10fdff36e1c192d8868c5a40233b8b254"
+  url "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.tar.xz"
+  sha256 "c5f22a5e10fb162895ded7de0963328e7307611c688487b5d152c9ee64767599"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -10,13 +10,11 @@ class QtPerconaServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7d05b7354bbddba75b7aa113afd2b35e59aab6a45f4ccaf74e61fc5297dba5b8"
-    sha256 cellar: :any,                 arm64_ventura:  "c2018a73accfb05d9a7a3c3b9f52fe62a662153caf7c68a0d616ea1972bffe18"
-    sha256 cellar: :any,                 arm64_monterey: "1546fa626dc78c0e12e16329c8f8a7c7686799a7da660fc91deb2e0b8514f30b"
-    sha256 cellar: :any,                 sonoma:         "4eb7ec934197e39264477d87bf7888e93658b70213320c0b09618c8c1bf93a66"
-    sha256 cellar: :any,                 ventura:        "dcc7d37417591e950049d60e3b568919d01113a3d8692c7fb684aa16d56d5d7b"
-    sha256 cellar: :any,                 monterey:       "df7a248a8e460a30ce07aec13faafa7919b183fb792000622e6cf585af383fde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96595854460237a907b8af5045dd219020b0092d1a4e984d1d120739c64466a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "947e670849543995dc54dacb68902588cfa93b615a5bb1c5e79a9ca021c1496e"
+    sha256 cellar: :any,                 arm64_ventura: "ed8f0c189f53b640a01d5ba72239ba38b4132a8fa6ddeee22e74e1e6824db08c"
+    sha256 cellar: :any,                 sonoma:        "0a6f39c07b10acf210aa381d36e36bd5402d8ac4072a0b48b9e86945315d9a69"
+    sha256 cellar: :any,                 ventura:       "d9edf8bfd3b393748f2d3d09afb7ec4704e8e105a18d7ff112b3eeccb214f7be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "603a1c17fca216c3c43c7f53459c36a595241ae169e7119f8b5f6030d4fe9a54"
   end
 
   depends_on "cmake" => [:build, :test]

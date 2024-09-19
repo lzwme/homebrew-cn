@@ -27,6 +27,10 @@ class Gtkx < Formula
   end
 
   depends_on "gobject-introspection" => :build
+  # error: 'CGWindowListCreateImage' is unavailable: obsoleted in macOS 15.0 - Please use ScreenCaptureKit instead
+  # NOTE: We could potentially use an older deployment target; however, `gtk+` has been EOL since 2020.
+  # So rather than trying to workaround obsolete APIs, the limit is a deadline to deprecate `gtk+` and dependents.
+  depends_on maximum_macos: [:sonoma, :build]
   depends_on "pkg-config" => [:build, :test]
   depends_on "at-spi2-core"
   depends_on "cairo"

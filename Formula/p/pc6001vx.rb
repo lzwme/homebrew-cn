@@ -5,16 +5,14 @@ class Pc6001vx < Formula
   url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.9_src.tar.gz"
   sha256 "6819cbf3a883a5b613c3b7f29255aa935afdb0c2dcb14c04e644d5b24be117c1"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   head "https:github.comeighttailsPC6001VX.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "0734e27c0498560e32afeaf382ac7a228d691741440a0bbfd633624513ccf229"
-    sha256 cellar: :any, arm64_ventura:  "b40cf6a5735daacca9e76539caffbb1cb864f14f74625edbe9f5004361fc9712"
-    sha256 cellar: :any, arm64_monterey: "9e71228dceca49f46785e01fce810a5e7302a2d8c54e1c83f0045166d0920cc9"
-    sha256 cellar: :any, sonoma:         "57526a351e01058156e0047f2f5189ecec4e388f7276ec6961e0b4bbf40fd525"
-    sha256 cellar: :any, ventura:        "70f38d4be3d39e24d7182504c4b4ba6534fd4fd3aba2365f83e9e392e728a789"
-    sha256 cellar: :any, monterey:       "de195792448a2ffc5ae12853607eddc8583e2a3cca12d9b19815e71f83bccb3e"
+    sha256 cellar: :any, arm64_sonoma:  "f637d73fb2b4cc282009ec31ff733b3c2a387743acd93dc8a07c589bf913be70"
+    sha256 cellar: :any, arm64_ventura: "c382fb9d7d83f11567071fe8a8f9992efb7b05b945d6c0316ec65a142cee6f8f"
+    sha256 cellar: :any, sonoma:        "b1f76365c1fd422dd0a7ea60d38c3c62a12e4a66bedb8dd5592c0905d20ddba4"
+    sha256 cellar: :any, ventura:       "ebc9b5019ca6e11e1dded702b91d39630b8e1d6f04c30c3ec6f0312251953c98"
   end
 
   depends_on "pkg-config" => :build
