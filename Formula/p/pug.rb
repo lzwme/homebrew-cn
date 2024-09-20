@@ -1,20 +1,18 @@
 class Pug < Formula
   desc "Drive terraform at terminal velocity"
   homepage "https:github.comleg100pug"
-  url "https:github.comleg100pugarchiverefstagsv0.5.1.tar.gz"
-  sha256 "1287ba25924ce593c20d6537b5a14e854bf16c9f433f83bc7ea344c62870ccb1"
+  url "https:github.comleg100pugarchiverefstagsv0.5.2.tar.gz"
+  sha256 "e2992860bbb47b20359435a7a3676d4a99929744efac9551b2b472dd5f9b8cc2"
   license "MPL-2.0"
   head "https:github.comleg100pug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4573eeedf5490a82cc60d450511ef2d652432db1b5a62249bf95bcaec220f97a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "393c61ef762f7e69212602573bf7ac529da1c0d76cf45c9245045f8d4966e605"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03f6e374300f5a14efa826b6e5b6747b981600542f6f28f6c84b7931b8ad6777"
-    sha256 cellar: :any_skip_relocation, ventura:        "03f6e374300f5a14efa826b6e5b6747b981600542f6f28f6c84b7931b8ad6777"
-    sha256 cellar: :any_skip_relocation, monterey:       "03f6e374300f5a14efa826b6e5b6747b981600542f6f28f6c84b7931b8ad6777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fb702e3e0d7ef83068011a3260385a777c48c6e87dc4225d75a7dff1c1025f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d156ed70060f4de355e31d72a0f04ebb00f50d17323098d035cf2dfe46a2363f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d156ed70060f4de355e31d72a0f04ebb00f50d17323098d035cf2dfe46a2363f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d156ed70060f4de355e31d72a0f04ebb00f50d17323098d035cf2dfe46a2363f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2724b0d63b9cb84d7961224009952ee92c56626666b20f48222a1cb318d0115d"
+    sha256 cellar: :any_skip_relocation, ventura:       "2724b0d63b9cb84d7961224009952ee92c56626666b20f48222a1cb318d0115d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a33377c4c450328c492d548b055d805a3ad68f52a1da9bc16e3ee112a0de548"
   end
 
   depends_on "go" => :build

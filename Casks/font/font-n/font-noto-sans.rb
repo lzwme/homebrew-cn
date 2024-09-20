@@ -1,6 +1,6 @@
 cask "font-noto-sans" do
-  version "2.013"
-  sha256 "9fd595dd701d7ea103a9ba8a9cfdcf0c35c5574ef754fecabe718eadad8bccde"
+  version "2.014"
+  sha256 "1dffbaf31a0a699ee2c57dfb60c1a628010425301dd076cfb485adbe017352c1"
 
   url "https:github.comnotofontslatin-greek-cyrillicreleasesdownloadNotoSans-v#{version}NotoSans-v#{version}.zip",
       verified: "github.comnotofonts"
@@ -12,8 +12,8 @@ cask "font-noto-sans" do
     regex(^NotoSans-v?(\d+(?:\.\d+)+)$i)
   end
 
-  font "NotoSansunhintedvariableNotoSans-Italic[wdth,wght].ttf"
-  font "NotoSansunhintedvariableNotoSans[wdth,wght].ttf"
+  font "NotoSansunhintedvariable-ttfNotoSans-Italic[wdth,wght].ttf"
+  font "NotoSansunhintedvariable-ttfNotoSans[wdth,wght].ttf"
   font "NotoSansunhintedttfNotoSans-Black.ttf"
   font "NotoSansunhintedttfNotoSans-BlackItalic.ttf"
   font "NotoSansunhintedttfNotoSans-Bold.ttf"

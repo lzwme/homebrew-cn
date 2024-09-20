@@ -9,14 +9,8 @@ class PythonBuild < Formula
   head "https:github.compypabuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d4a9e1c5df3fb300ca785a9aa478e78ee86c0c91d0acedbaba29e67a10bfcc31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4ea94bfdc112f2ae7026b4eef2353969fca988ea4d80f57a76ef28b0796cf1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "058b5a61e8df225c99753f870b5f23801dccd34d79bc2193f7e8c2b0f8cc3895"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3af731d79dae765ec4189d4b411ef8f86b20fe27ff997e99a2870a156459beab"
   end
 
   depends_on "python@3.12"
@@ -33,6 +27,9 @@ class PythonBuild < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # Ensure uniform bottles by replacing a `usrlocal` reference in a comment.
+    inreplace libexec"libpython3.12site-packagesbuildenv.py", "usrlocal", HOMEBREW_PREFIX
   end
 
   test do

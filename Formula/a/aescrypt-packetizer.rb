@@ -33,28 +33,20 @@ class AescryptPacketizer < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on xcode: :build
-
   def install
     if build.head?
-      cd "linux"
-      system "autoreconf", "-ivf"
+      cd "Linux"
+      system "autoreconf", "--force", "--install", "--verbose"
 
-      args = %W[
-        prefix=#{prefix}
-        --disable-gui
-      ]
+      args = ["--disable-gui"]
       args << "--enable-iconv" if OS.mac?
 
-      system ".configure", *args
+      system ".configure", *args, *std_configure_args
       system "make", "install"
     else
-      cd "src" do
-        system "make"
-
-        bin.install "aescrypt"
-        bin.install "aescrypt_keygen"
-      end
+      system "make"
+      bin.install "srcaescrypt"
+      bin.install "srcaescrypt_keygen"
       man1.install "manaescrypt.1"
     end
 

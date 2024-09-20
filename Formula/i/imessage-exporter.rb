@@ -1,19 +1,17 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https:github.comReagentXimessage-exporter"
-  url "https:github.comReagentXimessage-exporterarchiverefstags2.0.1.tar.gz"
-  sha256 "44b31f41a5b1397e252f7a62e887f7c0fe9a26e481bfe2474747650776067974"
+  url "https:github.comReagentXimessage-exporterarchiverefstags2.1.0.tar.gz"
+  sha256 "2b2fde44443af835e6da6d4d1b58fa9fd830c96bc0258202184e56edaa98e73a"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7eb4d6ba31ce90cf725013bc585534897b0a41afe39a161d58869a7421f34967"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6525eb9788300f1c26f1b86dad9322f46cbdb15b856a2c8eb4941af964cf4242"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1617a9e265102f4dc49a8a645d05b91a918305596db7bb5d10ae416dfdfbdbf1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b10c1f865f071ebd6feabe2b769556345a7114e38956a1d8e475382bb6fa9db"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3de134831148ae0f7b3190e25287653f9ac6bf3813d133d5a39ba8b8f46f54c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "46d9adcc731017c28002f88af049d628b5e963f22dc81a4f3db319d25bf39daa"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb42f1fcd7fede1a1511ba7efc750689b5ae4e3c28517bea2b8a2bb4b51f7276"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "690b4b7f094f3f1e96dbf5f999df601905ffcfdd3f6f7e5a42e6cf98613d38eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c5048a2e77d17e99976fe521d22f2d085afc6f444c75599ad307fe6d08a7b90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab1b2566752e90e340e2f09a55c0b863d1cf2af78ac7385dd0a04fc5b6580336"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f26a2641aa5a63a53a8636216f0a38e2f6f0ebdfe66cbf8bec3fed856d80d288"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c1bd14edfe89984dc06541c16cffeb2920baf1d16e4cb81aed3b3ff4ea50964a"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d208775a8ef4e2b0774cb8aae7cfdf3e838c99141ede4b45bba1a635e33dbe3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a890fa8ecead7419f68370966edb0ccca834d3cf40b8fd8fdb5a06f064dd4d76"
   end
 
   depends_on "rust" => :build

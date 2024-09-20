@@ -1,10 +1,9 @@
 class Mydumper < Formula
   desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
   homepage "https:launchpad.netmydumper"
-  url "https:github.commydumpermydumperarchiverefstagsv0.16.5-1.tar.gz"
-  sha256 "02cf1034e64f1beb45c5a37b6fffb100b2d928d8dd37a31407a6f97c18d36181"
+  url "https:github.commydumpermydumperarchiverefstagsv0.16.7-3.tar.gz"
+  sha256 "ef6a331f78cdb037837c885bef6b8b1e944fcb8c510d69881f4e6879dfa882d9"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,14 +12,12 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "37ea9e9922f3d7200867f06c205287f36e2cb3c5287940476b0b916ddd1f887e"
-    sha256 cellar: :any,                 arm64_sonoma:   "fbb4ce17a024efb4bd7033db10281236a2e1328871ecec778b955ca25368bb41"
-    sha256 cellar: :any,                 arm64_ventura:  "0a1bc1806a13cbbbc02d472e79b7d6369b93066571c5642ecbe9a9202beb684f"
-    sha256 cellar: :any,                 arm64_monterey: "9031331ed5614e060b959765d6d78856273f3bd55cdddd09fe143536e5410b09"
-    sha256 cellar: :any,                 sonoma:         "adb353bb7aa6180f769c78686dabe53306c8b8f513547796ece5a03e828b9a27"
-    sha256 cellar: :any,                 ventura:        "7198ea58a45d4ca3c82dbc6d2171b1476407a121c8292d54eaf787dc53b82907"
-    sha256 cellar: :any,                 monterey:       "a6c167f4fa35f6adf3bae9a15917436e096b3abc3cbc628795b4829f0dd8e97e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1780467f83103f8cbd1ce0a4ac83d5c5d4c81527dc1263ffa698e5c072ae1eb6"
+    sha256 cellar: :any,                 arm64_sequoia: "87d82e116b47e38f4670763cc072d2d89e5ff4befe5cfd1ede4a4ef9e65d31a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9dcc40bb8793c6bf17edcd4537c8ba40c42c5c546b58361b7d26c9c3c54f19e"
+    sha256 cellar: :any,                 arm64_ventura: "04e4d241f9d5aa42e7e93c0ebee612938ebaddb8e1f6f8526273ed1e575781d8"
+    sha256 cellar: :any,                 sonoma:        "fee17d13281d1d9ddfae34a4f105a08532061b4f0ff2edf5c473013738faf3b0"
+    sha256 cellar: :any,                 ventura:       "2a0d3ebb34f4e417c7c94d70b7aeae8cf91dd49b77f167c81555c0a456c9f1fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9914ac0d0ed2cebeee1a534d5573a928663eda6a59703019431fdfb63ffde5fd"
   end
 
   depends_on "cmake" => :build

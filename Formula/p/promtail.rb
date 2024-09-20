@@ -1,8 +1,8 @@
 class Promtail < Formula
   desc "Log agent for Loki"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.1.1.tar.gz"
-  sha256 "d53a46e3ee51a258f49f865cc5795fe05ade1593237709417de0e1395b5a21cf"
+  url "https:github.comgrafanalokiarchiverefstagsv3.2.0.tar.gz"
+  sha256 "480994460326bf3a3723713e7385d8f02b16f00f7fc1db8ee374f7ffe496e6ba"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -11,17 +11,15 @@ class Promtail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "957dff010cc8a9225376ebcf5aa8b7703ff32125630d903bc11e350e3b0f3549"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "506f13a12f0f514f595e12f852112f140f74f073441138e4a27296b0db8daa59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fed2ee96500369fe7f4686ce7cc70326c1098172b3fc292327c8af3b85b9767"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a765e8bbf132a7118fef37ca4d6820909d1dbb802a8c5ec3b28c3b608b9cb39"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b1e5d55dd8916240931bf9a47a270e1cb887f69bd40d00bdb17d7ce6a5eb2057"
-    sha256 cellar: :any_skip_relocation, ventura:        "c917279cda38db0f8381427079c368050c0b842ee9ba3fbbcbf1e4b001d02eae"
-    sha256 cellar: :any_skip_relocation, monterey:       "7930d43cc63ac11772d0423493ea336ae723a03106b9b8f1b22bb23a210cafbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38b2151977c3cc0355cea76bcfa194db5d5a1f8ee363304a590f2e4e6467d20e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14286caea90a877c145a22d3a74d01ed7055bdef2ec4b19c8f9ec972ab10ba01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1c4f916c13a8a40579dc30c93087e30884ffefbb2127b73f42e4a0f6595edaa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bda02a7e771f2efd2078cb28ddaa412d05c8476094d8bfc8e40c5ac8a7eed19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b982bec44ed1abbf170ebf76f31b445ab4af3266ab752930a55be363d50306f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "0843a405103264d93660ac576baad58cdab3fe9a4e41570d9e2291e79d037519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96d037e5eb44c6d28e50724e3a6a2ba902c53328ddefda689b19e71ae7613cee"
   end
 
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   on_linux do
     depends_on "systemd"

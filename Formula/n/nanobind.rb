@@ -53,11 +53,17 @@ class Nanobind < Formula
       project(test_nanobind)
 
       find_package(Python #{python_version} COMPONENTS Interpreter Development.Module REQUIRED)
+
+      if(FIND_NANOBIND_USING_PYTHON)
+        execute_process(
+          COMMAND "${Python_EXECUTABLE}" -m nanobind --cmake_dir
+          OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE nanobind_ROOT COMMAND_ERROR_IS_FATAL ANY)
+      endif()
       find_package(nanobind CONFIG REQUIRED)
       nanobind_add_module(my_ext my_ext.cpp)
     CMAKE
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DFIND_NANOBIND_USING_PYTHON=OFF", *std_cmake_args
     system "cmake", "--build", "build"
 
     cd "build" do
@@ -65,26 +71,22 @@ class Nanobind < Formula
     end
 
     ENV.delete("CMAKE_PREFIX_PATH")
-    cmakelists.unlink
-    cmakelists.write <<~CMAKE
-      cmake_minimum_required(VERSION 3.27)
-      project(test_nanobind)
-
-      # Ensure that nanobind can be found only via `execute_process` below.
-      set(CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH FALSE)
-      set(CMAKE_FIND_USE_CMAKE_SYSTEM_PATH FALSE)
-      find_package(Python #{python_version} COMPONENTS Interpreter Development.Module REQUIRED)
-      execute_process(
-        COMMAND "${Python_EXECUTABLE}" -m nanobind --cmake_dir
-        OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE nanobind_ROOT COMMAND_ERROR_IS_FATAL ANY)
-      find_package(nanobind CONFIG REQUIRED)
-      nanobind_add_module(my_ext my_ext.cpp)
-    CMAKE
-
     prefix_path_dirs = deps.filter_map { |dep| dep.to_formula.opt_prefix if !dep.build? || dep.test? }
+    cmake_find_args = %W[
+      -DCMAKE_MAKE_PROGRAM=make
+      -DCMAKE_C_COMPILER=#{ENV.cc}
+      -DCMAKE_CXX_COMPILER=#{ENV.cxx}
+      -DCMAKE_PREFIX_PATH='#{prefix_path_dirs.join(";")}'
+      -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=OFF
+      -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=OFF
+    ]
+    # Ensure that nanobind can by found only using `python3 -m nanobind`.
+    cmake_failure = "cmake -S . -B build-failure #{cmake_find_args.join(" ")} 2>&1"
+    assert_match 'Could not find a package configuration file provided by "nanobind"', shell_output(cmake_failure, 1)
+
     system "cmake", "-S", ".", "-B", "build-python",
-                    "-DCMAKE_PREFIX_PATH=#{prefix_path_dirs.join(";")}",
-                    *std_cmake_args
+                    "-DFIND_NANOBIND_USING_PYTHON=ON",
+                    *cmake_find_args, *std_cmake_args
     system "cmake", "--build", "build-python"
 
     cd "build-python" do

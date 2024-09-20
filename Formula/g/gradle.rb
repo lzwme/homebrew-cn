@@ -11,14 +11,8 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a305b21269985234e2e28eb0537db40b98b6b0150c98da8ce8c2c10838b6064b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9932cfacbdb888c1666c13327d7870115a5b2e621819e365491aa5468f56a85"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "dd3f1b22c4e7913630335240a1209cbf4679763a08587d1b97b76b8d0286996f"
   end
 
   # https:github.comgradlegradleblobmasterplatformsdocumentationdocssrcdocsuserguidereleasescompatibility.adoc
@@ -29,6 +23,10 @@ class Gradle < Formula
     libexec.install %w[bin docs lib src]
     env = Language::Java.overridable_java_home_env
     (bin"gradle").write_env_script libexec"bingradle", env
+
+    # Ensure we have uniform bottles.
+    inreplace libexec"srcjvm-servicesorggradlejvmtoolchaininternalLinuxInstallationSupplier.java",
+              "usrlocal", HOMEBREW_PREFIX
   end
 
   test do

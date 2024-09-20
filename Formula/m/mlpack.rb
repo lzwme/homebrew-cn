@@ -7,22 +7,20 @@ class Mlpack < Formula
   head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "9ca50b03e3db7e2817622163e1dce672ab01b9ddf34b50787cc8bd64b8c8e4c1"
-    sha256 cellar: :any,                 arm64_ventura: "2795f327b550595741bd54399e52576fc7cfbc46c5da3340da1953175e011220"
-    sha256 cellar: :any,                 sonoma:        "47f26da6cb96287945833af56b0e990a8d938aefbb75317e04d6bbd6a5a91ce0"
-    sha256 cellar: :any,                 ventura:       "ed7ce8c89e9d22da8bdc0393c04ff52591a675c666923dfcb7abcb2974d69d35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef590cec6b87dd20bd0a40f945c9ff841b94cc49578560aa578975c27e7d686c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "18ae29440f9b633ce4e67e63d5b54131587facb18ee38ad222e6dbe6db21f441"
+    sha256 cellar: :any,                 arm64_ventura: "78f145ea6c52f9474b1284d1cd5ae5ef87eb1879e7c38e118b58a1171dcaeec4"
+    sha256 cellar: :any,                 sonoma:        "c940e4b76ff1f06c2a5850cf98f6b81436a9e2114658d3205500470c351d3ad8"
+    sha256 cellar: :any,                 ventura:       "b41d0333a89ff7310e0b2ca93314c20cb49241e4fcf10f6a8f46418f420b8010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c87e0d6ed36859efb4486844c3fea80f6d6ca4970405e0e864e1e233bfee4e95"
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
 
   depends_on "armadillo"
-  depends_on "boost"
   depends_on "cereal"
   depends_on "ensmallen"
-  depends_on "graphviz"
 
   resource "stb_image" do
     url "https:raw.githubusercontent.comnothingsstb0bc88af4de5fb022db643c2d8e549a0927749354stb_image.h"

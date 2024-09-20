@@ -1,8 +1,8 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.1.1.tar.gz"
-  sha256 "d53a46e3ee51a258f49f865cc5795fe05ade1593237709417de0e1395b5a21cf"
+  url "https:github.comgrafanalokiarchiverefstagsv3.2.0.tar.gz"
+  sha256 "480994460326bf3a3723713e7385d8f02b16f00f7fc1db8ee374f7ffe496e6ba"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -12,17 +12,15 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0fd3247bef756db8030f26af9ba55cb943c36af0b5f7c8a9ba502bb86d297edc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4af6a1fee9fe664f8e1aab0913ac977a9d7dc62d3a6b583bb5480d95f28a136"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "657c01bd74044dff21c3c210809e0965a84e4024e4d841f1a9e78f6a76bd84e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efc2b1c68ad0ee994b142fb107d0f6d526c6e194526fe6e0bef5246bf5bfd353"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5f62f84a90d138339ebbeaae5a4c4806fb6d6b75691fb17c1efa18611a3c205"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa739b150b7bd189a16b49bf580dc0acb16308356d87b267d7cda7e353425c8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "5faae058b798fa4698f49c0c59cc1156885f4f3212acd388367c31cede7e4bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea7a2ea7fcb0a96fdec1f464fa230cca5efb55eacaa958ed2d9a735a9aecc7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0872ab7bcdb48c30adfdfac2cfa074ed91a38a844cff30e1e58b91ef3637268d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdd399ce349ccc3dbe018633ad1246b10b9cf49c0cb212cd2fd77098b1a9347c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce4f69dea696a2b60fbcf002aad3f9e9e83bc4eb5c63b421c49d0a6da5aab88b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2b9dc90acec4d4652d1cb928bc66f8f8f0b3670f4a0702528906af69e6d6a9f"
+    sha256 cellar: :any_skip_relocation, ventura:       "f79c108fa96653ca6cab978d2f73023942e3cd1cb2347ec5f25e6a5fce4ff3b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5669b934c60e13a35ee40afa74684066f4cf8133639a2dd84ed8cf1769803002"
   end
 
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   def install
     cd "cmdloki" do

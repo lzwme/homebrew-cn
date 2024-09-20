@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v17.3.1",
-      revision: "66269445606da32c52be605feba6d70fc1a8fb0d"
+      tag:      "v17.4.0",
+      revision: "b92ee59097e3701a887e0fc2983f5477fb164a60"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -13,14 +13,12 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65f8656055c0909b01771c03b5e30a1bfb124cccc6cc97d3ee22786ebc6953a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddf9ad74b212afea252cffe24b2570bd8de4b034a4ea0716cfa4c73928ad449d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddf9ad74b212afea252cffe24b2570bd8de4b034a4ea0716cfa4c73928ad449d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ddf9ad74b212afea252cffe24b2570bd8de4b034a4ea0716cfa4c73928ad449d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e5a4034254ad89e677140d848b711f8384e759b53ff2bb08177d3d1e27e0921"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e5a4034254ad89e677140d848b711f8384e759b53ff2bb08177d3d1e27e0921"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e5a4034254ad89e677140d848b711f8384e759b53ff2bb08177d3d1e27e0921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0453b1018739bb72a9ebff9c66d064a4936fbb8f8a204deac7cf3f10a65fe655"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a31ee0ee3eb427e55428b8b58c2a153be563313579a796f575e0ec6e72007c3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a31ee0ee3eb427e55428b8b58c2a153be563313579a796f575e0ec6e72007c3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a31ee0ee3eb427e55428b8b58c2a153be563313579a796f575e0ec6e72007c3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e9c111084a6128dd45a780095b27dcefb1bc72264c8547f2fc52dba42d2bfec9"
+    sha256 cellar: :any_skip_relocation, ventura:       "e9c111084a6128dd45a780095b27dcefb1bc72264c8547f2fc52dba42d2bfec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd0c750ce5f49812071358527f402a5137cfe2bddcb4d50602df9b5a01d224d4"
   end
 
   depends_on "go" => :build

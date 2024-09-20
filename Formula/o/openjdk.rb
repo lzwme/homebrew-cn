@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk22uarchiverefstagsjdk-22.0.2-ga.tar.gz"
-  sha256 "c423015bda77bea13e0a13f4dc705972c2185c3c6e6e30b183f733f2b95aa1a4"
+  url "https:github.comopenjdkjdk23uarchiverefstagsjdk-23-ga.tar.gz"
+  sha256 "02e2c3b356c00c3cc7efcca2fbd37723f55349677a1de483a9be8a43f327de76"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,14 +11,12 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "365a0bb14ebbc047caa8886501b8d3a8aacdfb9c3f2ea9fab3457f7e17042a08"
-    sha256 cellar: :any, arm64_sonoma:   "a358fe408c5c64524cabed4da75a1d16175ebedc0477ef3870e3db75a0800302"
-    sha256 cellar: :any, arm64_ventura:  "08278518189b954b7e2abe25283ef2a50b7de0a4e0bde6fbb890066aa7568dbd"
-    sha256 cellar: :any, arm64_monterey: "10c80312e091cbc90ce66a61da051f0320f96752aeefa4aafdae3a402ba8b738"
-    sha256 cellar: :any, sonoma:         "9f84e386dcc5dca1ecdab63724b6dffc967e8a212ef4673d981ec60b733ce43b"
-    sha256 cellar: :any, ventura:        "b73fa3f093d1153afa5baf376346521d7cc863fe679287b7abf57a180aa7a651"
-    sha256 cellar: :any, monterey:       "84795b272691e9ee02b9a0bb9fba35552c1ae8d3b977be2468dc71e57aa4e42f"
-    sha256               x86_64_linux:   "8493873d21bcda50b1cf5644a2e7582fddf1ac6936ed23e1d2c6ada6d10ee7eb"
+    sha256 cellar: :any, arm64_sequoia: "d11c49812b114460b90942c45f02becf69bdcffe48b8cd4514472302262f3518"
+    sha256 cellar: :any, arm64_sonoma:  "368d0cb33d3bf5651710c10be277d9a2e53d93d3488dc73c28fdb8eceaf07e91"
+    sha256 cellar: :any, arm64_ventura: "be0af8218d0903caa6219714efc9c807145e03f3598d70a7ca81ab4e1bfcc20b"
+    sha256 cellar: :any, sonoma:        "ceb6b3cce2e6824c31ad5e494dddc171e923e73e2f1a7f44fefa7fed70c1bd3c"
+    sha256 cellar: :any, ventura:       "ae27754ab1f09b846be1df1c921643728dc6731e87df731cd841fd699c2db786"
+    sha256               x86_64_linux:  "1818846f24b8e089d014cf49cc10163c9ddaeba96ee3e150c3f1981d5a98d628"
   end
 
   keg_only :shadowed_by_macos
@@ -71,24 +69,31 @@ class Openjdk < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https:download.java.netjavaGAjdk22.0.1c7ec1332f7bb44aeba2eb341ae18aca48GPLopenjdk-22.0.1_macos-aarch64_bin.tar.gz"
-        sha256 "b949a3bc13e3c5152ab55d12e699dfa6c8b00bedeb8302b13be4aec3ee734351"
+        url "https:download.java.netjavaGAjdk22.0.2c9ecb94cd31b495da20a27d4581645e89GPLopenjdk-22.0.2_macos-aarch64_bin.tar.gz"
+        sha256 "3dab98730234e1a87aec14bcb8171d2cae101e96ff4eed1dab96abbb08e843fd"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk22.0.1c7ec1332f7bb44aeba2eb341ae18aca48GPLopenjdk-22.0.1_macos-x64_bin.tar.gz"
-        sha256 "5daa4f9894cc3a617a5f9fe2c48e5391d3a2e672c91e1597041672f57696846f"
+        url "https:download.java.netjavaGAjdk22.0.2c9ecb94cd31b495da20a27d4581645e89GPLopenjdk-22.0.2_macos-x64_bin.tar.gz"
+        sha256 "e8b3ec7a7077711223d31156e771f11723cd7af31c2017f1bd2eda20855940fb"
       end
     end
     on_linux do
       on_arm do
-        url "https:download.java.netjavaGAjdk22.0.1c7ec1332f7bb44aeba2eb341ae18aca48GPLopenjdk-22.0.1_linux-aarch64_bin.tar.gz"
-        sha256 "0887c42b9897f889415a6f7b88549d38af99f6ef2d1117199de012beab0631eb"
+        url "https:download.java.netjavaGAjdk22.0.2c9ecb94cd31b495da20a27d4581645e89GPLopenjdk-22.0.2_linux-aarch64_bin.tar.gz"
+        sha256 "25fba2bd5585e1e9923134dc827f2bd5a2beaca3d242ae00b7e68c152faf7ba6"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk22.0.1c7ec1332f7bb44aeba2eb341ae18aca48GPLopenjdk-22.0.1_linux-x64_bin.tar.gz"
-        sha256 "133c8b65113304904cdef7c9103274d141cfb64b191ff48ceb6528aca25c67b1"
+        url "https:download.java.netjavaGAjdk22.0.2c9ecb94cd31b495da20a27d4581645e89GPLopenjdk-22.0.2_linux-x64_bin.tar.gz"
+        sha256 "41536f115668308ecf4eba92aaf6acaeb0936225828b741efd83b6173ba82963"
       end
     end
+  end
+
+  # Fix build with `--with-harfbuzz=system`.
+  # https:github.comopenjdkjdkpull19739
+  patch do
+    url "https:github.comopenjdkjdkcommitba5a4670b8ad86fefb41a939752754bf36aac9dc.patch?full_index=1"
+    sha256 "ff6c66f3fa81bef3fb18e88196c520cfa867aa5d57ebf26574635723b4d06d16"
   end
 
   def install

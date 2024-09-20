@@ -12,14 +12,8 @@ class Neo4j < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
-    sha256 cellar: :any_skip_relocation, sonoma:         "acbcc86bd703dd71220ad921843c72df30f8a73b0291d157a7d3d139f27913cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "acbcc86bd703dd71220ad921843c72df30f8a73b0291d157a7d3d139f27913cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "acbcc86bd703dd71220ad921843c72df30f8a73b0291d157a7d3d139f27913cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a96c2cf085392c178fc5178bf4f34f64d771f85f7ecdc757efc4e2415837098"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "41bd232865678761a9903c5ae1eccb56bafd0763cb66a767ac0462e18d4e82db"
   end
 
   depends_on "cypher-shell"
@@ -36,8 +30,13 @@ class Neo4j < Formula
     # Install jars in libexec to avoid conflicts
     libexec.install Dir["*"]
 
+    bash_completion.install (libexec/"bin/completion").children
+    # Ensure uniform bottles by replacing comments that reference `/usr/local`.
+    inreplace bash_completion.children, "/usr/local", HOMEBREW_PREFIX
+    rm_r libexec/"bin/completion"
+
     # Symlink binaries
-    bin.install Dir["#{libexec}/bin/neo4j{,-shell,-import,-shared.sh,-admin}"]
+    bin.install libexec.glob("bin/neo4j*")
     bin.env_script_all_files(libexec/"bin", env)
 
     # Adjust UDC props

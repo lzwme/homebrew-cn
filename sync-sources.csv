@@ -6664,6 +6664,7 @@ Homebrew-homebrew-core/Formula/v/vilistextum.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vimpager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vimpc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vimtutor-sequel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vineyard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 1
@@ -7689,6 +7690,7 @@ Homebrew-homebrew-cask/Casks/c/cacher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cad-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caffeine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cahier.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/caido.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cakebrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cakebrewjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calcservice.rb, Homebrew/homebrew-cask, 0
@@ -11839,7 +11841,7 @@ Homebrew-homebrew-cask/Casks/m/medis.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meetingbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megacmd.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 1

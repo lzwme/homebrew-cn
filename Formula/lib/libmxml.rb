@@ -17,13 +17,10 @@ class Libmxml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c46e4fd4d9fd79ebeff1183abe4fca41d7d92698f418a9f01c1705c6b78b368f"
   end
 
-  depends_on xcode: :build # for docsetutil
   depends_on "pkg-config" => :test
 
   def install
-    system ".configure", "--disable-debug",
-                          "--enable-shared",
-                          "--prefix=#{prefix}"
+    system ".configure", "--enable-shared", *std_configure_args
     system "make"
     system "make", "install"
   end

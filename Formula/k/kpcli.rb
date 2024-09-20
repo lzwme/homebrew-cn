@@ -5,8 +5,8 @@ class Kpcli < Formula
 
   desc "Command-line interface to KeePass database files"
   homepage "https://kpcli.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.1.1.pl"
-  sha256 "cb218a556a33718d8eae4eb6595f5e0bdb0d63226964f89fd4beded87e0d2ff4"
+  url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.1.2.pl"
+  sha256 "86fc820bc7945cd9b577583efe4127565951268902860256ceea100795ddf23f"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -15,14 +15,12 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "559bde0ee62097435feee486965452d923c5348a83cf1ee5edb5ccb0cbe1508f"
-    sha256 cellar: :any,                 arm64_sonoma:   "33155666c3fc8c92e77ea6316d876dd754981323b2857fc2c2369db55d3008dc"
-    sha256 cellar: :any,                 arm64_ventura:  "68be8cc575bf50b400d97b0c7189f2d3bc2c898103fe1268c28f7b3369d40b7e"
-    sha256 cellar: :any,                 arm64_monterey: "aa479794a77120fa441d92eb97d78b65920d0e814a81a6b7fa704b6973285d9d"
-    sha256 cellar: :any,                 sonoma:         "fd8c07ee426c94f22065a1c59b607fb66bd5235c8bc172a5924febee27b7152c"
-    sha256 cellar: :any,                 ventura:        "b05a8fb6ef004a8195da91fa5ec51f97f85fc7d0eeff83530bda74ef24c2b41b"
-    sha256 cellar: :any,                 monterey:       "b484dcf196bde0a0b7ee91a78f55a4bc2c97333696da10b0dd455d9f92398a0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89a57ade5394124b9730282133177b2576533a53eca63ee9555caa7c781f6f4e"
+    sha256 cellar: :any,                 arm64_sequoia: "1b1b125eaccde0591df6ba5466c7b8cac603fa10a9feb52259675a477cb3499b"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f87120e6d10687726c614522ffc22cf6a901e65734f40044756ae508c8802c1"
+    sha256 cellar: :any,                 arm64_ventura: "bf1547ebf1f3b46d6e872c17f79580f3025ee33b70903a56b47f53747b45a80d"
+    sha256 cellar: :any,                 sonoma:        "da87e293162f2e51b66c6247d7d9d763fbe92cf6f42f6e5b5edccf68055f344b"
+    sha256 cellar: :any,                 ventura:       "226beef4ff77b9c7dfad42a2c844eef911f95a90d8ea7007e53c9bca63c08ece"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede73ef4880f2c1f13dcd9e94b2936d305b1f9dd48b327cae3e13123c98d5bfa"
   end
 
   depends_on "readline"

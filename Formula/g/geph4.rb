@@ -1,8 +1,8 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
   homepage "https:geph.io"
-  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.3.tar.gz"
-  sha256 "bedd8dca96a5e5aeff208e44c113d8a4fb97ad0fe7ac83e9568c13236ea348b5"
+  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.6.tar.gz"
+  sha256 "acc8cf566dabeb9b3c7c7f87ad8ee5829c29299adf62c6efb90649155ff93e23"
   license "GPL-3.0-only"
   head "https:github.comgeph-officialgeph4-client.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Geph4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cf94f4739a3c4ca46076916b1e2317513ec0efcd7cc9d6ddc3476c0f279af7b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4468710fe42a9dc7e5b0d034105d93928fe438c504849d58401bca82dee4ffd7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef0ca3607b8f78c35e03140ef6246166fd736e43382849fc2e913e4840df56e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4aa738af979c77dbfd61a5e61cf303074ba0f99e4ea6a01898215844018fa0dd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "956c339dee523e1b3f84f62aa88525240cb533876d7178d96576a8084b409f60"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e11e10d21e054069b2f8812938d936cdd273f8475816cfee7a3e63860e1680b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a7daaaa76e27710425189cc2d5e07ef84f6e71c5ada0b0860f336d123969643"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e785f5e3a86f74e78228be67c41eee4b82104c34ce6d7f9304a133ebda59aec2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7abc3643e3a35cd857f60027a833c961015bef866658c711e1c5c2d6f8064708"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "532f484f37db8b8ab8abf51945ad08a9f70cbe7dbec32d90930e89f3d13eb854"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77563f6df4fcfbe9a6857670038e0c20c3e03a550a28ece8fb1b246b1ba0e134"
+    sha256 cellar: :any_skip_relocation, sonoma:        "226bb64628a868d165f8d48b552c8400c9b89d930588fb676c831a7d5201c24e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c4972bf03766343d265e7e31822a13b3842e367e12a4a3c283a8dcc12507566b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b8248137d3de995458973c6cf80f6cf3b9e07fd43950e0d2b81dd762c064a05"
   end
 
   depends_on "rust" => :build

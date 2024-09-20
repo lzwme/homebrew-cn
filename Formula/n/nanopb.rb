@@ -4,10 +4,9 @@ class Nanopb < Formula
 
   desc "C library for encoding and decoding Protocol Buffer messages"
   homepage "https://jpa.kapsi.fi/nanopb/docs/index.html"
-  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.8.tar.gz"
-  sha256 "d685e05fc6e56fd7e4e3cacc71f45bd91d90c0455257603ed98a39d2b0f1dd4b"
+  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.tar.gz"
+  sha256 "096a12331959590f5879f1039b2b6e32c887be58069e3bf1589aee949a420f51"
   license "Zlib"
-  revision 2
 
   livecheck do
     url "https://jpa.kapsi.fi/nanopb/download/"
@@ -15,15 +14,12 @@ class Nanopb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "6ec25e39bf3112ac569ed2675e70d69cd813bb8348f6b5bc8acd30885b36f32d"
-    sha256 cellar: :any,                 arm64_sonoma:   "9a10d891af8696c797c1cde1d7feb63308077f59bd01ef2f35cf93143d856352"
-    sha256 cellar: :any,                 arm64_ventura:  "2117ba812cbfd0cbf35f01de5c340891f5a98c66c9483cb34b561572da885c1d"
-    sha256 cellar: :any,                 arm64_monterey: "a5356da9dafc82e253b2fac3e9f5f1ef32be82f64c3fb8a90c0fec460ad65261"
-    sha256 cellar: :any,                 sonoma:         "c6092653c90c43799ca8c38b40ea36c254c14a30bf5e866b6be628a097377979"
-    sha256 cellar: :any,                 ventura:        "6adaf92aa28d53af0d328a5442ba1bd02037e11ae6648eb3289dd1f58c9b37bd"
-    sha256 cellar: :any,                 monterey:       "0c41e0eb888fc35b4a19f99818e0238303b6d8bfaab9b0649046594f8967633d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2463b4ca7e9c39952ce9d60f4c52b3ebce242cdd783e78c95cea78e179e5880f"
+    sha256 cellar: :any,                 arm64_sequoia: "e565dfe652e29a83bafdb07c65f79ae1c6eec3481b38c16cb19e05d6b0474129"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4bababae240e00a31b80d33ca35435ba367a4e8058fc2a15c07ab4f5b416cc0"
+    sha256 cellar: :any,                 arm64_ventura: "cca3662f717c4a90c24a8e2bd8ef214a884d2023ae5844630adbfa27b2c4543e"
+    sha256 cellar: :any,                 sonoma:        "a6ffcad93f6e937b070e8abf4a30128ef1ab66f7a44a111c9c39696488d06fe0"
+    sha256 cellar: :any,                 ventura:       "132d3b26b75e83e90b0799cc1180adf89b603d3a35f73683eca7bd54df8cf15f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b71c7cdc6bd1c8f1eccb7b123c47e1e56cd6ea8471eecebc8c3dfce29ed16e2a"
   end
 
   depends_on "cmake" => :build
@@ -31,13 +27,13 @@ class Nanopb < Formula
   depends_on "python@3.12"
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/3c/0b/7a997c8939f698d72bdea14d57116e43d3051fffb3b2964c30938c4a08e6/protobuf-5.28.1.tar.gz"
-    sha256 "42597e938f83bb7f3e4b35f03aa45208d49ae8d5bcb4bc10b9fc825e0ab5e423"
+    url "https://files.pythonhosted.org/packages/b1/a4/4579a61de526e19005ceeb93e478b61d77aa38c8a85ad958ff16a9906549/protobuf-5.28.2.tar.gz"
+    sha256 "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https://files.pythonhosted.org/packages/27/b8/f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74b/setuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   def install

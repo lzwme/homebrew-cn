@@ -23,8 +23,6 @@ class Chuck < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "39c0fac876395360fcc3de2cb8cb18d75d6ccdbc969f7ade067ff2a08268cb17"
   end
 
-  depends_on xcode: :build
-
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 

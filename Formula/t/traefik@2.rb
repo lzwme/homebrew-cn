@@ -1,8 +1,8 @@
 class TraefikAT2 < Formula
   desc "Modern reverse proxy"
   homepage "https:traefik.io"
-  url "https:github.comtraefiktraefikreleasesdownloadv2.11.9traefik-v2.11.9.src.tar.gz"
-  sha256 "3b955575cb175f17c30b56af6c43882f543b2eac773ff3245d757b8ed77fae01"
+  url "https:github.comtraefiktraefikreleasesdownloadv2.11.10traefik-v2.11.10.src.tar.gz"
+  sha256 "8d4fa675979dd2c2638fc5dfebd6c1c1bc9ab8888a70392328db688a785ffc8d"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class TraefikAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66a3fa633fc0641642cdf49e3979fb4c99fd1aa0d709ec64f3536dd136a352f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bbf9fbd68f05a8cd10331381114726bb3e572c61ccbea3a1263856d64d17cd9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c636702621f20b515565f27f5b48864f5cc18c36a8abe9fc70a362e97126fea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5d2a1a8167116aec0252b00213b03e5e372e2b5111752a807a94a7b6b3019d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "c91181b656d8db3c41cd9b5babb4177c2f13cbb9e006c40e9199e3381f2f5cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "410ec23bf8f540278212867e46cd44c0d7bc2c1e12befda451836966021d68ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87bdf969e2cc41a9c64c82efaadb37176b4ef02591cd49c09a352dad8b17536b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e21e597c86d7135f84002810130a209f4df0ac0153545a66d7e4e25069b71701"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f0fdda2aa0ba2acd8f8880f36e65cbe35e8b00bea487a49157a1412b08695d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af343f51adcbe9a336490d6f4380faca6d29fce34cd3dab454698077d7fab830"
+    sha256 cellar: :any_skip_relocation, ventura:       "3617dac2a39b891f385cd2c32bea50fc3ea13e6cb3bcff7693e112a083ec0d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16151e944ff606cb37a50e49d948097c8397115f2d5bbfa88dd7d39bc19c20bc"
   end
 
   keg_only :versioned_formula

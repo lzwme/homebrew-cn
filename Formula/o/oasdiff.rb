@@ -6,6 +6,12 @@ class Oasdiff < Formula
   license "Apache-2.0"
   head "https:github.comTufinoasdiff.git", branch: "main"
 
+  # Livecheck against GitHub latest releases is necessary because there was a v1.6.0 release after v2.1.2.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c62a4efbc1a388e4541f7f19c8cd8554b2bdc8c1271867f702e04cd5ce65bfd4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c62a4efbc1a388e4541f7f19c8cd8554b2bdc8c1271867f702e04cd5ce65bfd4"

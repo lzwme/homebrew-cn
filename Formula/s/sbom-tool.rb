@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https:github.commicrosoftsbom-tool"
-  url "https:github.commicrosoftsbom-toolarchiverefstagsv2.2.8.tar.gz"
-  sha256 "f7017b0a38cd8fee05024ccb6dbfd9e450219fa3b34bd21a2eaed47eebe2feeb"
+  url "https:github.commicrosoftsbom-toolarchiverefstagsv2.2.9.tar.gz"
+  sha256 "013dbd84214ae9b41918138fc0292570b0819cb9284a860363eb2532dda204e5"
   license "MIT"
   head "https:github.commicrosoftsbom-tool.git", branch: "main"
 
@@ -15,13 +15,11 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eae242ff1d396cb1507e183b38c3672c721479328ec844a87682c8f8bdeac7c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "544469250cf66b0fec62d930535356453fa4f953511c07ec6819b80658ca1845"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34adeb45f26b3604f96eb214acabd3272c2e93ecbf54949f54a696457f267388"
-    sha256 cellar: :any_skip_relocation, sonoma:         "28b70b2c81c8fd0617b836d69ab2278aea47929984ea4700156a7550658c11cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "44d9ce3dde4cc6b82cd66bf94d3cdf8389d78a9e51f1f2378934c01a02f8329b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2aabfaa7ea134f570d9b1a9e1e7e47b96b81a64bc39b776c101372009a7ab663"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9818d2779d7859ebca588ac7c9480a8143d3940d8db59ca9f900fddc44ab8c85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8187fac2b281d8031bbd3d86954f3fc71f5ab236ec08538a34f9752d8a59463b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29bd6d62c85ca6c92d32909b3a9ec9d85ddbe1ea0273535b3dd834e2fb98e52f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27604c0023bba19d5473c6ced252ab3ce2e7e5e40eb64d039e63b5ba06c5a454"
+    sha256 cellar: :any_skip_relocation, ventura:       "22d665ec20d1d79556a310d4457cb5222ad3078e957c3d8017824b9b88f07bf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31114583c0e2dbc15dd4fe35b5ac88085057fc012e04e9bfe7359eae9dc7f54b"
   end
 
   depends_on "dotnet"

@@ -1,19 +1,17 @@
 class Descope < Formula
   desc "Command-line utility for performing common tasks on Descope projects"
   homepage "https:www.descope.com"
-  url "https:github.comdescopedescopecliarchiverefstagsv0.8.8.tar.gz"
-  sha256 "f702ec192820018a9466cf2e21c3fc0a77740c6d942e3e2f7a45ab2c1768a03c"
+  url "https:github.comdescopedescopecliarchiverefstagsv0.8.9.tar.gz"
+  sha256 "05b55018ab56ed06175c17f14055cef6994e3715c0bb79411c566b678fd9e547"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "798ba9359419fba430cf9d1bfbbbe36cc4058e728262e2783ceac5c50357cb67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c3a783b831fab284e76c362612390b298078ae34da917b4dca92db541a7ce7ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3a783b831fab284e76c362612390b298078ae34da917b4dca92db541a7ce7ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3a783b831fab284e76c362612390b298078ae34da917b4dca92db541a7ce7ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ace06aa3a496acedb5193a82d359ecce3257f3e9bfde1ad52c1feffae75ee1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78ace8c3e696368ff9ecd38df3529695c27acb1b1d7da6acbc0b959feddc7058"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ace8c3e696368ff9ecd38df3529695c27acb1b1d7da6acbc0b959feddc7058"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "78ace8c3e696368ff9ecd38df3529695c27acb1b1d7da6acbc0b959feddc7058"
+    sha256 cellar: :any_skip_relocation, sonoma:        "677bad1470b3aa9fdc1ab6ecdb86d008ab6d6abc14480b4e21d6bbacba2e1df9"
+    sha256 cellar: :any_skip_relocation, ventura:       "677bad1470b3aa9fdc1ab6ecdb86d008ab6d6abc14480b4e21d6bbacba2e1df9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f14fd9ad06f75806da26e799678b8533f61e41140efafe341343912caba8ba1"
   end
 
   depends_on "go" => :build

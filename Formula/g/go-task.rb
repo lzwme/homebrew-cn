@@ -1,20 +1,18 @@
 class GoTask < Formula
   desc "Task is a task runnerbuild tool that aims to be simpler and easier to use"
   homepage "https:taskfile.dev"
-  url "https:github.comgo-tasktaskarchiverefstagsv3.39.0.tar.gz"
-  sha256 "f46948b0febe05e316fb71c504856cacc225fd386fee22dc96f025e91fa747f9"
+  url "https:github.comgo-tasktaskarchiverefstagsv3.39.2.tar.gz"
+  sha256 "ab61fcbda930ef3f69ba721b3d0dcf531ad0928bbabb17650de607580382f405"
   license "MIT"
   head "https:github.comgo-tasktask.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d2cce7dca59074bedead99b3bed0a48edbe3d938f42cae0ce67ef211ad80a19"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34b0c041313d4add2921cd3426c7bd0abbde89a85de65213b996dae7c690cb46"
-    sha256 cellar: :any_skip_relocation, ventura:        "34b0c041313d4add2921cd3426c7bd0abbde89a85de65213b996dae7c690cb46"
-    sha256 cellar: :any_skip_relocation, monterey:       "34b0c041313d4add2921cd3426c7bd0abbde89a85de65213b996dae7c690cb46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416a486b00c5b90372e185a8b7a850b5ff1aad58dfbea4365aa8ec938ba82e4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98bc5533f4346774d1d0be8d4dbef3b49dcb0cd23c800c755fbf81ec54140823"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98bc5533f4346774d1d0be8d4dbef3b49dcb0cd23c800c755fbf81ec54140823"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "98bc5533f4346774d1d0be8d4dbef3b49dcb0cd23c800c755fbf81ec54140823"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88dfd524666a722fdcd71a907ed8438dff972ec892121e5f135b047f8aea4109"
+    sha256 cellar: :any_skip_relocation, ventura:       "88dfd524666a722fdcd71a907ed8438dff972ec892121e5f135b047f8aea4109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c4393051d36a8839dd3c35de507283db01d5dd3b44574a08026acf3c95ffceb"
   end
 
   depends_on "go" => :build

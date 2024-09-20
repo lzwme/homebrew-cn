@@ -1,9 +1,10 @@
 class Scala < Formula
   desc "JVM-based programming language"
   homepage "https:www.scala-lang.org"
-  url "https:github.comlampepfldottyreleasesdownload3.5.0scala3-3.5.0.tar.gz"
+  url "https:github.comscalascala3releasesdownload3.5.0scala3-3.5.0.tar.gz"
   sha256 "bacad178623f1940dae7d75c54c75aaf53f14f07ae99803be730a1d7d51a612d"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https:www.scala-lang.orgdownload"
@@ -11,10 +12,12 @@ class Scala < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "10318ae0301e9a1f7aebce892c512c20c1df2678a1df297568769ec80ae31fe7"
+    sha256 cellar: :any_skip_relocation, all: "374e847bf9fb8ffd7384b194fefe3922542c60e1b543f20993ec507c041335c6"
   end
 
-  depends_on "openjdk"
+  # Switch back to `openjdk` when supported:
+  # https:docs.scala-lang.orgoverviewsjdk-compatibilityoverview.html
+  depends_on "openjdk@21"
 
   conflicts_with "pwntools", because: "both install `common` binaries"
 
@@ -24,7 +27,7 @@ class Scala < Formula
     libexec.install "maven2"
     libexec.install "VERSION"
     prefix.install "bin"
-    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env
+    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env("21")
 
     # Set up an IntelliJ compatible symlink farm in 'idea'
     idea = prefix"idea"

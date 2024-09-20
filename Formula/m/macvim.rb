@@ -2,9 +2,9 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https:github.commacvim-devmacvim"
-  url "https:github.commacvim-devmacvimarchiverefstagsrelease-179.tar.gz"
-  version "9.1.0"
-  sha256 "ca515226e199cee3e59942509b9b6ae16c9cb1fc9b7e620b521807222895c710"
+  url "https:github.commacvim-devmacvimarchiverefstagsrelease-180.tar.gz"
+  version "9.1.0727"
+  sha256 "e1bc74beb3ee594503b5e1e20a9d075b5972bbaa642a91921116531475f46a6f"
   license "Vim"
   head "https:github.commacvim-devmacvim.git", branch: "master"
 
@@ -23,14 +23,11 @@ class Macvim < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia:  "91a883ec291f35073258b081c62a8ca8e2e8edd02c923f8b53c13b71736348e1"
-    sha256 cellar: :any, arm64_sonoma:   "87c5d934d736ea8314ad6360b89fb37f52d97570303b0aa76a02e831b4846563"
-    sha256 cellar: :any, arm64_ventura:  "71b6b7c24d64a4e44d1cb28cac091cab2eb24b3d4b56d21fb7476f45ade1b1e2"
-    sha256 cellar: :any, arm64_monterey: "4af76a0db530fcc0c45ae73739e9b97cded10a112e8bdfaf0814f4dda6f5e107"
-    sha256 cellar: :any, sonoma:         "9d5d1e4ccd460f1bb37da8af8842f223bc625d5e59ad92d16b626fb4761079c9"
-    sha256 cellar: :any, ventura:        "044f2feb442fa13e91a47952d22000933382c51dc2ed936cec1f66c5ff20278c"
-    sha256 cellar: :any, monterey:       "2436864107c5f907dea2495ed1148c26905ebc6eeda93d1f781f2c690ae42170"
+    sha256 cellar: :any, arm64_sequoia: "5821209c314b1901c55f5d0899a10bd68929f4b5ff9f28a34bb01fc1b6619c25"
+    sha256 cellar: :any, arm64_sonoma:  "e7b2ee7c445f16c9865c79e4773eacef83bd811712cdf351dcbbc0115e96a108"
+    sha256 cellar: :any, arm64_ventura: "324bcc655e385bd60a16e55b22741c50099e4f8c6523ff48e437f5740ae49918"
+    sha256 cellar: :any, sonoma:        "f3bb80a2665bad75a82ae738ecfc06117c1c99d7c55a4601805c21dda2ff314d"
+    sha256 cellar: :any, ventura:       "3c8f838819b8da6dc55bbe419d4b6117c693aeee76b27e806bddfa6dae1d8298"
   end
 
   depends_on "gettext" => :build

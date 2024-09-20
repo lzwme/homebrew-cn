@@ -21,7 +21,6 @@ class GhzWeb < Formula
   end
 
   depends_on "go" => :build
-  depends_on xcode: :build
 
   def install
     ldflags = "-s -w -X main.version=#{version}"

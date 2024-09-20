@@ -18,7 +18,6 @@ class AwsSsoCli < Formula
   end
 
   depends_on "go" => :build
-  depends_on xcode: :build
 
   def install
     ldflags = %W[
