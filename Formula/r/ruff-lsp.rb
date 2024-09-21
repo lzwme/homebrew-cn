@@ -3,12 +3,12 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https:github.comastral-shruff-lsp"
-  url "https:files.pythonhosted.orgpackages7756a1836adc11c516f75fb7f468b238cdd5d4a248fe9113176b002d09f02ecfruff_lsp-0.0.56.tar.gz"
-  sha256 "5d2622d22032944d54b0a0e84e16048d081d3c8716bf2bac5a155227ffe1d78a"
+  url "https:files.pythonhosted.orgpackages96b0ddbd3ead49d20741462874032c5238ee99be755bf9838c9f96470ddfbaa8ruff_lsp-0.0.57.tar.gz"
+  sha256 "559b72ba460d0b90aab66ca11785b90ad8c6931509eb56db7dea2a8922bf41a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bb3be64e078cc24572c42d5e431dcdbc8f045aa3e94873cf897a8dfca69048d8"
+    sha256 cellar: :any_skip_relocation, all: "d29a83e84aae61bd7830e2d2e141e27610e6cbff76f4d232af5b0c6107794cb8"
   end
 
   depends_on "python@3.12"
@@ -20,8 +20,8 @@ class RuffLsp < Formula
   end
 
   resource "cattrs" do
-    url "https:files.pythonhosted.orgpackagesf29c22b4010404d899d7012474f1539c4163b22e77ca55f444e945c2095dbddecattrs-24.1.0.tar.gz"
-    sha256 "8274f18b253bf7674a43da851e3096370d67088165d23138b04a1c04c8eaf48e"
+    url "https:files.pythonhosted.orgpackages3cba08912e7e6e796fa7d5da1aaf3f53235ee6b2a73ec51d93bdf69b77b1c0d1cattrs-24.1.1.tar.gz"
+    sha256 "16e94a13f9aaf6438bd5be5df521e072b1b00481b4cf807bcb1acbd49f814c08"
   end
 
   resource "lsprotocol" do

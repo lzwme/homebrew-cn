@@ -1,8 +1,8 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
   homepage "https:www.vapoursynth.com"
-  url "https:github.comvapoursynthvapoursyntharchiverefstagsR70.tar.gz"
-  sha256 "59c813ec36046be33812408ff00e16cae63c6843af6acf4e34595910a80e267b"
+  url "https:github.comvapoursynthvapoursyntharchiverefstagsR70.11.tar.gz"
+  sha256 "41af974964a20aec670f5d2b235e043cb9c3a68db90fa39cc57c609c7d8baa91"
   license "LGPL-2.1-or-later"
   head "https:github.comvapoursynthvapoursynth.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d79f8ef83d94a4907c14c9668e624534fae85e2147686399469c278d84acd1ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "2985dc4e9fadc09e1a4825b05f03991bdc79fc63ff94eab0365a6303874a2fbf"
-    sha256 cellar: :any,                 arm64_ventura: "217af49cb954058882ed4a217f60986dc8337c31376999dadd1d593f429d2ab5"
-    sha256 cellar: :any,                 sonoma:        "df39bdc45b16212157ebb877649347b095a8c91340a0595e84a130df0c727790"
-    sha256 cellar: :any,                 ventura:       "d66ea7ba907f9e2b76e81cc0d470780303159963b75da3b25a454e67e6b791d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4601aed6b1236828233e683bc442f8b8f64adf18c26b2324e4b64e52c7255ea0"
+    sha256 cellar: :any,                 arm64_sequoia: "00f8997cd247f6641329259f623e336b4feb18fae032c019be475ae1cc3c8258"
+    sha256 cellar: :any,                 arm64_sonoma:  "edd1d5fb540852a089b5057ca3e3944b1345f36f5757a856f697e41b46631e66"
+    sha256 cellar: :any,                 arm64_ventura: "40c48176bf091f4948180c5b723b6076dc7a535e41b7a74f01134f8e8f0bbcfe"
+    sha256 cellar: :any,                 sonoma:        "409300fef9042815e20413da07b62ad3a11466dda308dbed4d2efc48862390b6"
+    sha256 cellar: :any,                 ventura:       "e8165b80231eca4a2b62332ec5708e0ab4fd0966d2bddff5a13a1b3daa3720a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcd5fade367963b7decaa5e8022319b8f2a8996e9941aac1d492d5e71d9a8bac"
   end
 
   depends_on "autoconf" => :build

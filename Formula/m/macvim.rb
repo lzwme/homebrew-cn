@@ -32,7 +32,7 @@ class Macvim < Formula
 
   depends_on "gettext" => :build
   depends_on "libsodium" => :build
-  depends_on xcode: :build
+  depends_on xcode: :build # for xcodebuild
   depends_on "cscope"
   depends_on "lua"
   depends_on :macos

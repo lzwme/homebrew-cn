@@ -6,14 +6,8 @@ class Cgal < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3114d90ceaac3cc3b1c54f644b875dd3bec0649a8ca110286e1f20c69e7200d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca93e7df5a46e3faf900422c23919a8bc5e9851ce690d98ae97d758176c91540"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca93e7df5a46e3faf900422c23919a8bc5e9851ce690d98ae97d758176c91540"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca93e7df5a46e3faf900422c23919a8bc5e9851ce690d98ae97d758176c91540"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4b1b6e98b428e1df572307c483c8ad4aaaf0e13b1c06ece4f031991c921f4ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4b1b6e98b428e1df572307c483c8ad4aaaf0e13b1c06ece4f031991c921f4ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4b1b6e98b428e1df572307c483c8ad4aaaf0e13b1c06ece4f031991c921f4ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca93e7df5a46e3faf900422c23919a8bc5e9851ce690d98ae97d758176c91540"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "70d4bde9024c3e8215eaeba6043275bbd71e7b5635d36710515726808c60db09"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -33,6 +27,21 @@ class Cgal < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Ensure that the various `Find*` modules look in HOMEBREW_PREFIX.
+    # This also helps guarantee uniform bottles.
+    inreplace_files = %w[
+      CGAL_Common.cmake
+      FindESBTL.cmake
+      FindGLPK.cmake
+      FindIPE.cmake
+      FindLASLIB.cmake
+      FindMKL.cmake
+      FindOSQP.cmake
+      FindOpenMesh.cmake
+      FindSuiteSparse.cmake
+    ]
+    inreplace inreplace_files.map { |file| lib"cmakeCGAL"file }, "usrlocal", HOMEBREW_PREFIX
   end
 
   test do

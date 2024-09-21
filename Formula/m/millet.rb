@@ -1,20 +1,18 @@
 class Millet < Formula
   desc "Language server for Standard ML (SML)"
   homepage "https:github.comazdavismillet"
-  url "https:github.comazdavismilletarchiverefstagsv0.14.6.tar.gz"
-  sha256 "4367ef80056ab8a05bfef44d75725c63513126aa4cdfb970ff1c21e70ff65089"
+  url "https:github.comazdavismilletarchiverefstagsv0.14.7.tar.gz"
+  sha256 "5971d48101549ceeb2cdee4e3863c52821fd438c1e27a40dd8892220f447f4b6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comazdavismillet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fd0c33475ff9e3057134fe05fef6c0b174142b6834f778a0e9ef65ed2b7bc8c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e56a397ba1ffd324d8e4f3f3708562dd24d0a038f2f36da98e2b7281ffafc6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10b65b5b427901100c6a0878bd0a33b3b05e035a9727825fe01637a5ffb1743c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50cf4584a001d725de8399a2e645193427382c700f355fd930dab919a2852a53"
-    sha256 cellar: :any_skip_relocation, sonoma:         "214761dcbef9aafcf4403d96ed44a55713a7c51c567bf8676006e8d9b01d52ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "4d8806b8754c80610e9981525c26dc16eecfdd4736fcca13beb333823d181b31"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6eebe59963a0b53c470bc0005f3321f8330ddd13e037752ee48e5decf3d1f3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e0753bbc7aa809f8a9ac5f6eb04df8d5c078619093cce64493f7df0bfd29fca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f28322be48cbcab756a89b808173b794070b574e7d1bee162848cb1e4155967"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "469d45f934becf09462d6f5a24970eab07b142ee95d591813870819f6d5ed985"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a81e0d2237392a1a8fa19f9cf0127eec2b119dfc266c836b74de7047202be89d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "183a1eaa2cca28c6e5ea44cdde478c691504dbbb4ca8f017f4cc670557984f42"
+    sha256 cellar: :any_skip_relocation, ventura:       "29169df7ccdaf3422f073d9a771c999eaa5fc0e2018ad867bfe3eac9e6793e4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96064a8f9bbfe20287b0c8e122f9df0dd67bb91f81dcea4e7e69c16345449885"
   end
 
   depends_on "rust" => :build

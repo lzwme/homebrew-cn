@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
   homepage "https:launchpad.netmydumper"
-  url "https:github.commydumpermydumperarchiverefstagsv0.16.7-3.tar.gz"
-  sha256 "ef6a331f78cdb037837c885bef6b8b1e944fcb8c510d69881f4e6879dfa882d9"
+  url "https:github.commydumpermydumperarchiverefstagsv0.16.7-4.tar.gz"
+  sha256 "21770d744bbb22d5293518a3e2b8321e3afdb03de144a26f19ebe4a357c0c952"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "87d82e116b47e38f4670763cc072d2d89e5ff4befe5cfd1ede4a4ef9e65d31a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9dcc40bb8793c6bf17edcd4537c8ba40c42c5c546b58361b7d26c9c3c54f19e"
-    sha256 cellar: :any,                 arm64_ventura: "04e4d241f9d5aa42e7e93c0ebee612938ebaddb8e1f6f8526273ed1e575781d8"
-    sha256 cellar: :any,                 sonoma:        "fee17d13281d1d9ddfae34a4f105a08532061b4f0ff2edf5c473013738faf3b0"
-    sha256 cellar: :any,                 ventura:       "2a0d3ebb34f4e417c7c94d70b7aeae8cf91dd49b77f167c81555c0a456c9f1fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9914ac0d0ed2cebeee1a534d5573a928663eda6a59703019431fdfb63ffde5fd"
+    sha256 cellar: :any,                 arm64_sequoia: "fbc5f031e7c065d72587d3b21a5870813a46616d138817ae086d0cbcec6db0d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "807ef28d6b27ee0f29ff3d43e34817dea0063865383568dcc3a1d93904b6c63b"
+    sha256 cellar: :any,                 arm64_ventura: "31ac7d9a1ba66dccdb15268db5aa227e8fecd50a0467562d1db0a2b805b5f031"
+    sha256 cellar: :any,                 sonoma:        "973628b522af33a243482ed57b939abaf2599841901c8d98c638fa62dfe8f093"
+    sha256 cellar: :any,                 ventura:       "c73e7209e0a611b84ab8f773103229adc1b5fbddf54a5cc56971c96abe57de13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "620de89584ae5573f42e824317a2d779620d5e9374ee260e124793e19df9c205"
   end
 
   depends_on "cmake" => :build

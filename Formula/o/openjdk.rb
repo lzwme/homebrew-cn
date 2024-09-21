@@ -11,19 +11,21 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "d11c49812b114460b90942c45f02becf69bdcffe48b8cd4514472302262f3518"
-    sha256 cellar: :any, arm64_sonoma:  "368d0cb33d3bf5651710c10be277d9a2e53d93d3488dc73c28fdb8eceaf07e91"
-    sha256 cellar: :any, arm64_ventura: "be0af8218d0903caa6219714efc9c807145e03f3598d70a7ca81ab4e1bfcc20b"
-    sha256 cellar: :any, sonoma:        "ceb6b3cce2e6824c31ad5e494dddc171e923e73e2f1a7f44fefa7fed70c1bd3c"
-    sha256 cellar: :any, ventura:       "ae27754ab1f09b846be1df1c921643728dc6731e87df731cd841fd699c2db786"
-    sha256               x86_64_linux:  "1818846f24b8e089d014cf49cc10163c9ddaeba96ee3e150c3f1981d5a98d628"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "ababf9f922e2c91039ac07209e7e66ee1d5e55f7cbadae25597ce2d1324e328f"
+    sha256 cellar: :any, arm64_sonoma:  "0ba02cbe94e2fc2b1aec69f0e9a624cc8944055170f1b7ca4241ad4fc3b3ac7c"
+    sha256 cellar: :any, arm64_ventura: "e4d1c93665666a4b66b8b47d381e0ce2e1a7d3d615f20739ae216f92cd8d64e5"
+    sha256 cellar: :any, sonoma:        "caaf8ccee728ec17e0ceb124433c8a627084446c79a1041baf8908b8fd5c78a0"
+    sha256 cellar: :any, ventura:       "e2804a8040a8fd46fed466f103391f314be906e64d5c349963ee81cdd8e13742"
+    sha256               x86_64_linux:  "82fc99187027bf29857ea070a092b41ce76169bbedad8a91177c60f1d405829d"
   end
 
   keg_only :shadowed_by_macos
 
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
-  depends_on xcode: :build
+  depends_on xcode: :build # for metal
+  depends_on "freetype"
   depends_on "giflib"
   depends_on "harfbuzz"
   depends_on "jpeg-turbo"
@@ -53,7 +55,6 @@ class Openjdk < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "fontconfig"
-    depends_on "freetype"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxi"
@@ -122,6 +123,7 @@ class Openjdk < Formula
       --with-version-build=#{revision}
       --without-version-opt
       --without-version-pre
+      --with-freetype=system
       --with-giflib=system
       --with-harfbuzz=system
       --with-lcms=system
@@ -137,8 +139,13 @@ class Openjdk < Formula
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
+      # Allow unbundling `freetype` on macOS
+      inreplace "makeautoconflib-freetype.m4", '= "xmacosx"', '= ""'
+
       %W[
         --enable-dtrace
+        --with-freetype-include=#{Formula["freetype"].opt_include}
+        --with-freetype-lib=#{Formula["freetype"].opt_lib}
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
@@ -146,7 +153,6 @@ class Openjdk < Formula
         --with-x=#{HOMEBREW_PREFIX}
         --with-cups=#{HOMEBREW_PREFIX}
         --with-fontconfig=#{HOMEBREW_PREFIX}
-        --with-freetype=system
         --with-stdc++lib=dynamic
       ]
     end

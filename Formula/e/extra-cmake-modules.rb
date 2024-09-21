@@ -12,12 +12,8 @@ class ExtraCmakeModules < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42961b34dad3b6b7ebbf3eb0b3619e5487800b3435c3208661bf9fbf300d9cf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42961b34dad3b6b7ebbf3eb0b3619e5487800b3435c3208661bf9fbf300d9cf7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "42961b34dad3b6b7ebbf3eb0b3619e5487800b3435c3208661bf9fbf300d9cf7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cefb9795390363bc8cdc6f8c930de5a451efbe0eb658138f19be3d35d3318d6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "cefb9795390363bc8cdc6f8c930de5a451efbe0eb658138f19be3d35d3318d6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42961b34dad3b6b7ebbf3eb0b3619e5487800b3435c3208661bf9fbf300d9cf7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5a172ff30c38ea9f5bd85b5d3d0493edfc7ae63c907491c402946ec5eda5f520"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,6 +28,10 @@ class ExtraCmakeModules < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Ensure uniform bottles.
+    inreplace_files = %w[prefix.sh.cmake prefix.sh.fish.cmake].map { |f| share/"ECM/kde-modules"/f }
+    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
   end
 
   test do

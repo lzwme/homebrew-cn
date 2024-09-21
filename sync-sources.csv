@@ -1623,6 +1623,7 @@ Homebrew-homebrew-core/Formula/e/erlang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/erlang@26.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 1
@@ -6643,6 +6644,7 @@ Homebrew-homebrew-core/Formula/v/verilator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vermin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/verovio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vert.x.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/veryfasttree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vespa-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vexctl.rb, Homebrew/homebrew-core, 1
@@ -6775,7 +6777,6 @@ Homebrew-homebrew-core/Formula/w/wayland.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/waypoint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wazero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wb32-dfu-updater_cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wcslib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wcurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdc.rb, Homebrew/homebrew-core, 1

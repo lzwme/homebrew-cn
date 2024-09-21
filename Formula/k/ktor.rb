@@ -1,20 +1,18 @@
 class Ktor < Formula
   desc "Generates Ktor projects through the command-line interface"
   homepage "https:github.comktorioktor-cli"
-  url "https:github.comktorioktor-cliarchiverefstags0.2.0.tar.gz"
-  sha256 "03c7d45cd5c73600fbbd20b194668b3e3844fc77e652394ddd75ad9e19d481c0"
+  url "https:github.comktorioktor-cliarchiverefstags0.2.1.tar.gz"
+  sha256 "63a98fe44f912c9305e513d7c0428e06afdeb0f35c2088b1d500c9c9235f5226"
   license "Apache-2.0"
   head "https:github.comktorioktor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2477ed41bf2cfe39653ddc1e61cd370eb8a79574798621aef5c3adfed537661"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0eb5d96c0bafe248c56d9434420403cf7e3d106aaf4da2397d2a090ce84cf787"
-    sha256 cellar: :any_skip_relocation, ventura:        "0eb5d96c0bafe248c56d9434420403cf7e3d106aaf4da2397d2a090ce84cf787"
-    sha256 cellar: :any_skip_relocation, monterey:       "0eb5d96c0bafe248c56d9434420403cf7e3d106aaf4da2397d2a090ce84cf787"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ed8ea3a6a761a8f040b936e3cb4ee5a6a95e02989cc94dd1837fcbdbd3a3172"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da21184d7653719644bd43e485f9a9fe5209bbd5760ee408123339fcb7d31235"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da21184d7653719644bd43e485f9a9fe5209bbd5760ee408123339fcb7d31235"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da21184d7653719644bd43e485f9a9fe5209bbd5760ee408123339fcb7d31235"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2db82b992dcc990a985a350ec48691e463d6aceec3f92da717e8b93a1829290"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2db82b992dcc990a985a350ec48691e463d6aceec3f92da717e8b93a1829290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4dbabc68d684985930c294bdcc47ab59007dd4f7570191eaf17f2d879699ca7"
   end
 
   depends_on "go" => :build

@@ -19,9 +19,7 @@ class SignalCli < Formula
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
   depends_on "gradle" => :build
   depends_on "protobuf" => :build
-  # libsignal-client requires a specific version of rustc
-  # https:github.comsignalapplibsignalblob#{libsignal-client.version}rust-toolchain
-  depends_on "rustup" => :build
+  depends_on "rust" => :build
 
   depends_on "openjdk@21"
 

@@ -19,7 +19,6 @@ class ClozureCl < Formula
   end
 
   # https:github.comClozurecclissues11
-  depends_on xcode: :build
   depends_on arch: :x86_64
   depends_on macos: :catalina # The GNU assembler frontend which ships macOS 10.14 is incompatible with clozure-ccl: https:github.comClozurecclissues271
 

@@ -93,14 +93,13 @@ class Bash < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "2dc853662f375e5a8e8d86fa5b41280d9ab317f31c9086c3da9c9d2ceae6d271"
-    sha256 arm64_sonoma:   "1f93264ad5646699b5554ad4a96ca1303a813876065d5c0782fa653f9a50ad83"
-    sha256 arm64_ventura:  "ea989ff2c61e7df3bcd0d38e37ad129d4430548e7adb27b3ec4454dd22d04dff"
-    sha256 arm64_monterey: "a5caba455076b5d77bd236b15bb81f3583de927ec2ef64c1484726045b28419f"
-    sha256 sonoma:         "d6e82bc0f21d7b40b9f86d4bdbbf64fbbfa2e81a91c73e937961ac440125037d"
-    sha256 ventura:        "eff1cd8839cbae9047ea96b0a47d389f268334e0bc28e2784be72c978839d3a4"
-    sha256 monterey:       "7b217658847a31a831fa8a10cd7555c96dd4e730904ee853a0cbffb5b38c7b85"
-    sha256 x86_64_linux:   "3356e96db216679c7b3fafcc805c8fddfe83be148d7cf6ece35c7d3ac59b0e5d"
+    rebuild 1
+    sha256 arm64_sequoia: "d7d27acac0ee30be07e8ba0fc1f7e10d363fca5f9b5fdc559f9ab8a97cabc588"
+    sha256 arm64_sonoma:  "98e771f838e301fc17c2f5b8884284cc4028d63836f6fd0643f662e59aec429e"
+    sha256 arm64_ventura: "b610a5faa9dbce2bd929bef9589a3a62ded29604c4838b8d88823c1e8706b6bb"
+    sha256 sonoma:        "e9c48cc5e0c6989da2e1e65a00ae0e3ec4e6224fbf07be977afec9ff3f4ea069"
+    sha256 ventura:       "a0ec71db5277088bc9edc3230dfa9913d7912cd64de2ffc2ed845779ae17e388"
+    sha256 x86_64_linux:  "61455ffe073cc7e5295ca1f26f727fea3a854f103a1e28fecb488cd6b1e7b9dd"
   end
 
   def install
@@ -112,11 +111,24 @@ class Bash < Formula
     # Homebrew's bash instead of /bin/bash.
     ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
 
+    bash_loadables_path=[
+      "#{lib}/bash",
+      # Stock Bash paths; keep them for backwards compatibility.
+      "/usr/local/lib/bash",
+      "/usr/lib/bash",
+      "/opt/local/lib/bash",
+      "/usr/pkg/lib/bash",
+      "/opt/pkg/lib/bash",
+      ".",
+    ].join(":")
+    ENV.append_to_cflags "-DDEFAULT_LOADABLE_BUILTINS_PATH='\"#{bash_loadables_path}\"'"
+
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_equal "hello", shell_output("#{bin}/bash -c \"echo -n hello\"")
+    assert_equal "hello", shell_output("#{bin}/bash -c 'echo -n hello'")
+    assert_equal "csv is a shell builtin\n", shell_output("#{bin}/bash -c 'enable csv; type csv'")
   end
 end

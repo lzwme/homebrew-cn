@@ -3,20 +3,17 @@ class Bilix < Formula
 
   desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https:github.comHFrost0bilix"
-  url "https:files.pythonhosted.orgpackages1af583c35a59e43453033deeecdc19893cedf9558fa601068890f68544e6235fbilix-0.18.8.tar.gz"
-  sha256 "582b4ff828cf7b7edb4bbcabe4a6384f1d2c94f3304afcba126297cc5a02c3fe"
+  url "https:files.pythonhosted.orgpackages5c120f885cee77471123a3c82da85bd1934af00aed213910987bbe5b2296997dbilix-0.18.9.tar.gz"
+  sha256 "8ab1be9bcc661369cbeba95439c09716778b6b42b2505a3eaddb45175688e247"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "daddcb26d628e20d144b25e481148fc5403fd02697bc0e9c7bc307bcf6cc29a8"
-    sha256 cellar: :any,                 arm64_sonoma:   "b8cea8c7f62604b187eb6b9366781b0f9464f769c9bdc479cb77ccec7b008041"
-    sha256 cellar: :any,                 arm64_ventura:  "98dec4832a1f3665f5f7ae50a42bf68b81254a41907bf3f133c9b5dedab3dc6e"
-    sha256 cellar: :any,                 arm64_monterey: "c10d255bea6ddbcd5c168d10826b4f2a7e3269a9626d71e26121d3680d0c07f1"
-    sha256 cellar: :any,                 sonoma:         "b70bc296de177a3a45b663dfd792d18e897d6a27ed7dcda8abed561d54963971"
-    sha256 cellar: :any,                 ventura:        "741e4eb3de75ae4122bd604e32e20c9148d06601892567d77b56c4781315cafa"
-    sha256 cellar: :any,                 monterey:       "76f100515aae71fcca1a482c7778b20d3cd0dd5c6d36022ced52814d5f05fd11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8afc39a690cd23096d3d5d51376ac5ab6e245762f0948488dc1cbc43d8370fd"
+    sha256 cellar: :any,                 arm64_sequoia: "3c1bf5d778d225991d475b0a9bb0b5cd7a5d0d7fdfa716e2efead270e6e06e07"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ac52e2b1442a512b5d95afaed8c94e490eb81a094383cdb62decd2c45719e86"
+    sha256 cellar: :any,                 arm64_ventura: "81834600e7ec4f40a0b1de992dd50b19dbe64c75c394ab6e8265d7e95bfb5187"
+    sha256 cellar: :any,                 sonoma:        "bb3560ea7d81e94d31c673bf731e1554eb2c9e4b54c9511260b1c1fe762206fc"
+    sha256 cellar: :any,                 ventura:       "23b45844931656b65d2cff1453f505daa9a6da1709461a1e36a08e3f5d6e8987"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cec138f9906f79186214cc2571a6ef4dfd8a84b26131d8125b67405b1a3abb0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -24,8 +21,8 @@ class Bilix < Formula
   depends_on "python@3.12"
 
   resource "aiofiles" do
-    url "https:files.pythonhosted.orgpackagesaf41cfed10bc64d774f497a86e5ede9248e1d062db675504b41c320954d99641aiofiles-23.2.1.tar.gz"
-    sha256 "84ec2218d8419404abcb9f0c02df3f34c6e0a68ed41072acfb1cef5cbc29051a"
+    url "https:files.pythonhosted.orgpackages0b03a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237aiofiles-24.1.0.tar.gz"
+    sha256 "22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c"
   end
 
   resource "annotated-types" do
@@ -34,8 +31,8 @@ class Bilix < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagese6e3c4c8d473d6780ef1853d630d581f70d655b4f8d7553c6997958c283039a2anyio-4.4.0.tar.gz"
-    sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"
+    url "https:files.pythonhosted.orgpackagesa04466874c5256e9fbc30103b31927fd9341c8da6ccafd4721b2b3e81e6ef176anyio-4.5.0.tar.gz"
+    sha256 "c5a275fe5ca0afd788001f58fca1e69e29ce706d746e317d660e21f70c530ef9"
   end
 
   resource "beautifulsoup4" do
@@ -89,8 +86,8 @@ class Bilix < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages5c2d3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0httpx-0.27.0.tar.gz"
-    sha256 "a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"
+    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
+    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
   end
 
   resource "hyperframe" do
@@ -99,8 +96,13 @@ class Bilix < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+  end
+
+  resource "jeepney" do
+    url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "json5" do
@@ -114,8 +116,8 @@ class Bilix < Formula
   end
 
   resource "m3u8" do
-    url "https:files.pythonhosted.orgpackages8e305c68c06b042208d0386faa13593ea96bc5ca1c2b7a0a6f95be6a41efd44fm3u8-5.0.0.tar.gz"
-    sha256 "33f795fe9e31074537e52b52c75f5b04a1741db686aba2b06b4ff4664c27f0a4"
+    url "https:files.pythonhosted.orgpackages9ba573697aaa99bb32b610adc1f11d46a0c0c370351292e9b271755084a145e6m3u8-6.0.0.tar.gz"
+    sha256 "7ade990a1667d7a653bcaf9413b16c3eb5cd618982ff46aaff57fe6d9fa9c0fd"
   end
 
   resource "markdown-it-py" do
@@ -129,8 +131,8 @@ class Bilix < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages205f00d891817d4031bbf4e846a99834bf949a76714c10a726833aa184176772protobuf-5.27.1.tar.gz"
-    sha256 "df5e5b8e39b7d1c25b186ffdf9f44f40f810bbcc9d2b71d9d3156fee5a9adf15"
+    url "https:files.pythonhosted.orgpackagesb1a44579a61de526e19005ceeb93e478b61d77aa38c8a85ad958ff16a9906549protobuf-5.28.2.tar.gz"
+    sha256 "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
   end
 
   resource "pycryptodome" do
@@ -144,13 +146,13 @@ class Bilix < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages0dfcccd0e8910bc780f1a4e1ab15e97accbb1f214932e796cff3131f9a943967pydantic-2.7.4.tar.gz"
-    sha256 "0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"
+    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
+    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages02d0622cdfe12fb138d035636f854eb9dc414f7e19340be395799de87c1de6f6pydantic_core-2.18.4.tar.gz"
-    sha256 "ec3beeada09ff865c344ff3bc2f427f5e6c26401cc6113d77e372c3fdac73864"
+    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
+    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
   end
 
   resource "pygments" do
@@ -164,8 +166,8 @@ class Bilix < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
-    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+    url "https:files.pythonhosted.orgpackages927640f084cb7db51c9d1fa29a7120717892aeda9a7711f6225692c957a93535rich-13.8.1.tar.gz"
+    sha256 "8260cda28e3db6bf04d2d1ef4dbc03ba80a824c88b0e7668a0f23126a424844a"
   end
 
   resource "sniffio" do
@@ -174,19 +176,13 @@ class Bilix < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "typing-extensions" do
     url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
     sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
-  end
-
-  # Fix JSON decode errors due to HTML changes: https:github.comHFrost0bilixpull231
-  patch do
-    url "https:github.comHFrost0bilixcommitf47a3d27c7cf50bb053147affb4994e9a262ef69.patch?full_index=1"
-    sha256 "241ec1499d84f2e34844993fcb504145c2366eb727f0beb1c2557989cb687bd2"
   end
 
   def install

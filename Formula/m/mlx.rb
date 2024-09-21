@@ -25,7 +25,7 @@ class Mlx < Formula
   depends_on "python@3.12"
 
   on_arm do
-    depends_on xcode: ["15.0", :build]
+    depends_on xcode: ["15.0", :build] # for metal
   end
 
   on_intel do
