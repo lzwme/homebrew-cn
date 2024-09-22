@@ -5,6 +5,8 @@ class Boost < Formula
   head "https:github.comboostorgboost.git", branch: "master"
 
   stable do
+    # TODO: Drop single-threaded libraries at version bump.
+    #   https:github.comHomebrewhomebrew-corepull182995
     url "https:github.comboostorgboostreleasesdownloadboost-1.86.0boost-1.86.0-b2-nodocs.tar.xz"
     sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
 

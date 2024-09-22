@@ -1,10 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https:github.commicrosoftvcpkg"
-  # Newer than what livecheck picks up, but we need it for fmt 11.
-  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-08-01.tar.gz"
-  version "2024.08.01"
-  sha256 "cb94fa640676e4577ed39fc763178f4661848b5321207c74b3ea411e45f1a95c"
+  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-09-18.tar.gz"
+  version "2024.09.18"
+  sha256 "8e4cf8a6ff5ba392bdbbd0adbe01fbe50dd1515c87a9be22e198a43b36621688"
   license "MIT"
   head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
@@ -22,15 +21,12 @@ class Vcpkg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "b86031e4012af50bc00b8b85e8c5e1630908464c6a0cb5efd475d4795c6ef16e"
-    sha256 cellar: :any,                 arm64_sonoma:   "10592e7ee14a04f6efe9c56247f0bdc8596b68dc6c2e7683d6e8b650db0135ae"
-    sha256 cellar: :any,                 arm64_ventura:  "85d40acd871a3b97af5149cef7e823058de2dbd5ad35f56c0f38e2fb14b9b7a0"
-    sha256 cellar: :any,                 arm64_monterey: "424d45a8ff27d3c358601762b0a5b0cbf179b8549d3ae08a72522453a0e381c3"
-    sha256 cellar: :any,                 sonoma:         "54b860b600668ffbcaa7c6b6d07b65a90838416130bc97666c109356fd945315"
-    sha256 cellar: :any,                 ventura:        "77541573ffdd20b86077203e84ec021bc27f694129ee0035f769bdf6705babeb"
-    sha256 cellar: :any,                 monterey:       "0e1c7c1f620dd81a4b92ff63d95cfd47303e08c97d44138716b925d7749c26c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21114027d1a6c1b626f819d895be844c351a576c2ba0cc30ae8efea482fd1395"
+    sha256 cellar: :any,                 arm64_sequoia: "793df037aebbd784c10d75f36ad5d3a613a9fde12eaf23eccf03302bccb4ba34"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3191187631c3ae0a71bb56fd019587889920a95cd6f732ecd90198d698f96e4"
+    sha256 cellar: :any,                 arm64_ventura: "ffe21ba6c57a90895b1cfe8099183f78fcb01e07eadd38fa3fbbdcd49d52452d"
+    sha256 cellar: :any,                 sonoma:        "329c6f47304149abb6b9c22b920910cc7e0208d1f5abf5f3c7d06e73f66a344e"
+    sha256 cellar: :any,                 ventura:       "9af04ed835a02a4a4d230b2157cd10abbe81b82444b1719617b7fcf23d962c31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c740e42abebf07dee7de269b621cb4b16179746e07d0db38b13af1de95e63ef"
   end
 
   depends_on "cmake" => :build

@@ -42,7 +42,7 @@ class Embulk < Formula
       sha256 "ce537f21a2cfc34cf91fc834d8d1c663c6f3b5bca57cacd45fd4c47ede71c303"
     end
     testpath.install resource("jruby-complete")
-    jruby = "jruby=file:#{testpath}jruby-complete-9.4.8.0.jar"
+    jruby = "jruby=file:#{testpath}jruby-complete-#{resource("jruby-complete").version}.jar"
 
     (testpath"config.yml").write <<~EOS
       in:
@@ -61,7 +61,9 @@ class Embulk < Formula
         type: stdout
     EOS
 
-    system bin"embulk", "-X", jruby, "gem", "install", "embulk", "embulk-input-http", "msgpack"
+    ENV["GEM_HOME"] = testpath"gems"
+    system bin"embulk", "-X", jruby, "gem", "install", "embulk", "--version", version.to_s
+    system bin"embulk", "-X", jruby, "gem", "install", "embulk-input-http", "msgpack"
     assert_match <<~EOS.chomp, shell_output("#{bin}embulk -X #{jruby} preview config.yml")
       +-------------+-----------------------------+--------------+----------------+
       | number:long |          command_run:string | count:string | percent:double |

@@ -1,18 +1,18 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
   homepage "https:roaringbitmap.org"
-  url "https:github.comRoaringBitmapCRoaringarchiverefstagsv4.1.6.tar.gz"
-  sha256 "f6f2555da357332f709fd99afe5f136a8104a18c937fbd2c688f4c826c215489"
+  url "https:github.comRoaringBitmapCRoaringarchiverefstagsv4.1.7.tar.gz"
+  sha256 "ea235796c074c3a8a8c3e5c84bb5f09619723b8e4913cf99cc349f626c193569"
   license "Apache-2.0"
   head "https:github.comRoaringBitmapCRoaring.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37e2843d3f35a73ac5b522e96f78f8b8b84e3ec8b6bb94608b68792772e927ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8539a8c12bfe4505efb15ed285fbc3331cdb1017978234704a47f0b9dc69d52a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9558dc5882ed047a0c9d9c5c293e2b5d629dd888d6dc12c5924c9f352ab6f7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d352d98d738b69091d782ebea735c426839b5088f255b8dd8ac193c9e6e1abb"
-    sha256 cellar: :any_skip_relocation, ventura:       "465d4f72f2e7ebc2c85345476ff7f972eefc9afcfac40412086d0d24b1c393ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6618c155036cc9c66de2bebb2b2e426a6d6387c93fac9eca25a6486e45517bb4"
+    sha256 cellar: :any,                 arm64_sequoia: "ef549b264bd279860bcbadc87864cec5190e57c3882888b95267451e175ea4fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "2857bbee90abe21ce2d93b5c488e1cd6fa9255616afc9911fc557dc4e5b60813"
+    sha256 cellar: :any,                 arm64_ventura: "385c81cdf434511632b69202b26f345e45e754f962003fb6a4104be547437419"
+    sha256 cellar: :any,                 sonoma:        "f62195ead3f17955a7556234a242c05ffbfc3fb4095664ffb266ab6ff2565124"
+    sha256 cellar: :any,                 ventura:       "087c06168a0a8b59f9c35f8621d36438d08f2281bb4040eb0ec5bcc006b883cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c21c57c37ae9a2bbd7e4097743da1d3ee0e4b468b667a71c7287254d739ccd6"
   end
 
   depends_on "cmake" => :build
@@ -20,7 +20,9 @@ class Croaring < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DENABLE_ROARING_TESTS=OFF",
-                    "-DROARING_BUILD_STATIC=ON",
+                    "-DROARING_BUILD_STATIC=OFF",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DROARING_BUILD_LTO=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

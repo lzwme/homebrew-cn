@@ -1,9 +1,8 @@
 class Unxip < Formula
   desc "Fast Xcode unarchiver"
   homepage "https:github.comsaagarjhaunxip"
-  url "https:github.comsaagarjhaunxip.git",
-      tag:      "v3.0",
-      revision: "aeb6160a8a8e8b2bdc2e0b9f747a4b941046c624"
+  url "https:github.comsaagarjhaunxiparchiverefstagsv3.0.tar.gz"
+  sha256 "3e2b841eb06462110a83f90584d7e0c4bcac90de23ccd45d2eba6a29066a7e2d"
   license "LGPL-3.0-only"
   head "https:github.comsaagarjhaunxip.git", branch: "main"
 
@@ -17,18 +16,28 @@ class Unxip < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "039ceba020c663073c09912b6c25230a4735cff3bf775074e5d3e4bba5591c1d"
   end
 
-  depends_on xcode: :build
-  depends_on :macos
   depends_on macos: :monterey
+
   uses_from_macos "swift"
 
+  # Uses Compression framework on macOS
+  on_linux do
+    depends_on "xz"
+    depends_on "zlib"
+  end
+
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    args = %w[--disable-sandbox --configuration release]
+    args += %W[-Xcc -I#{HOMEBREW_PREFIX}include -Xlinker -L#{HOMEBREW_PREFIX}lib] if OS.linux?
+
+    system "swift", "build", *args
     bin.install ".buildreleaseunxip"
   end
 
   test do
     assert_equal "unxip #{version}", shell_output("#{bin}unxip --version").strip
+    # On Linux we don't have `xar` or XAR support in `libarchive`
+    return if OS.linux?
 
     # Create a sample xar archive just to satisfy a .xip header, then test
     # the failure case of expanding to a non-existent directory

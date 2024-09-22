@@ -1,20 +1,18 @@
 class Kubelogin < Formula
   desc "OpenID Connect authentication plugin for kubectl"
   homepage "https:github.comint128kubelogin"
-  url "https:github.comint128kubeloginarchiverefstagsv1.29.0.tar.gz"
-  sha256 "549800acb06b54ec8ae1c768dfd583da262d485d0adad2c1893843067f087e7f"
+  url "https:github.comint128kubeloginarchiverefstagsv1.30.0.tar.gz"
+  sha256 "4f17cbc7f9bc25f493cc4b7eeb05d1be1f908735186a763c78c77bd6b3931d5b"
   license "Apache-2.0"
   head "https:github.comint128kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5a61efb7bf5390f4f50bb10c9dce2730a958979076d05c9f8feec076eaf1233d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "764973f37e431c74f7086800f173f7ea3a14423fc0dfa3307286d6c7a035f49c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28defe4fdc6cf1664ff22e9e1956a4d945fc60a8000b982a3b30156e214aa091"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a662416ea97e6ca3ce2829c5a9facdb4f4494c5bd999d7b05345624e62d49eb8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98f59153fdf6f17a1d77495a636e74010ce4ca954b85eb8819a89db4bff54607"
-    sha256 cellar: :any_skip_relocation, ventura:        "2df9ade5f9a9365a573fde9629bd39008d68a1e0c2de6691a999d350b0948aa4"
-    sha256 cellar: :any_skip_relocation, monterey:       "03f07e951cc281cee46702fbdbce6a58bf566b79ce20da5b3439760db2b4391a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "926f87f447d807de00235dccc5d332785388f6d544a18b82768902bbf14bffbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02137d9600043aa450cfc08f6af3d87148cc78cf12b1e4d21b8d62faf8f76ce0"
+    sha256 cellar: :any_skip_relocation, ventura:       "02137d9600043aa450cfc08f6af3d87148cc78cf12b1e4d21b8d62faf8f76ce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860459b6a19c08d26e060e4d047bc6e86f2588ea936f06fc5123818e43f3d6ec"
   end
 
   depends_on "go" => :build

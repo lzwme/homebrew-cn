@@ -1,8 +1,8 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https:blog.alexellis.iokubernetes-marketplace-two-year-update"
-  url "https:github.comalexellisarkadearchiverefstags0.11.25.tar.gz"
-  sha256 "8c508b0020922b3cc3e3ef3160ce36aea429f754b98f0d5b368d9b7928f52488"
+  url "https:github.comalexellisarkadearchiverefstags0.11.26.tar.gz"
+  sha256 "ee57bcd304ff091350683ddd377160814fd3133b397f625a45053fab46894c21"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Arkade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "362c7c9bd4337b2ed55c5ec2f0ea27cb044c7b3d2455d6dfe6aafbff146f3dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "362c7c9bd4337b2ed55c5ec2f0ea27cb044c7b3d2455d6dfe6aafbff146f3dfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "362c7c9bd4337b2ed55c5ec2f0ea27cb044c7b3d2455d6dfe6aafbff146f3dfd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6660df000ca0afe16b23ff6a72afe0da978144a954c4e83e4fa3df81aab71024"
-    sha256 cellar: :any_skip_relocation, ventura:       "6660df000ca0afe16b23ff6a72afe0da978144a954c4e83e4fa3df81aab71024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf14859011dbab6855b4a2e96f9bc7e17c5603c8e5e28c979a204fc50116d0ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e01bf7c786c22ed33898d13b8e4ad4ff529a42d8333170f3be5d23c16ae3106c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e01bf7c786c22ed33898d13b8e4ad4ff529a42d8333170f3be5d23c16ae3106c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e01bf7c786c22ed33898d13b8e4ad4ff529a42d8333170f3be5d23c16ae3106c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4018176909bd9bff9267c87221df26f81147e83e00950513cd04d66155ff8968"
+    sha256 cellar: :any_skip_relocation, ventura:       "4018176909bd9bff9267c87221df26f81147e83e00950513cd04d66155ff8968"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65b055a98c3384245fbd68335e2e0027c834cb3d6fddb0c77ade131912380b89"
   end
 
   depends_on "go" => :build

@@ -2983,6 +2983,7 @@ Homebrew-homebrew-core/Formula/k/kakoune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kalign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kalker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kallisto.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kamal-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kamel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kanif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kapacitor.rb, Homebrew/homebrew-core, 1
@@ -4091,7 +4092,7 @@ Homebrew-homebrew-core/Formula/m/minuit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mist-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mit-scheme.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mit-scheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mitie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mix-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mjml.rb, Homebrew/homebrew-core, 0
@@ -5584,7 +5585,7 @@ Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safeint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/safety.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salt-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samba.rb, Homebrew/homebrew-core, 1
@@ -5763,6 +5764,7 @@ Homebrew-homebrew-core/Formula/s/shyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sickchill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sickle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sidekick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/siege.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sigi.rb, Homebrew/homebrew-core, 1
@@ -9910,6 +9912,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-neonderthaw.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-n/font-nerko-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-neucha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-neuton.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-n/font-new-computer-modern.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-new-rocker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-new-tegomin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-new-york.rb, Homebrew/homebrew-cask, 0
@@ -14289,6 +14292,8 @@ codello-homebrew-brewery/Casks/bw-control.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/favtool.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/font-cambria.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-chalet.rb, codello/homebrew-brewery, 1
+codello-homebrew-brewery/Casks/font-copperplate-gothic-light.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/Casks/font-copperplate-gothic-std.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-corbel.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-hk-grotesk.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-quebec-serial.rb, codello/homebrew-brewery, 1

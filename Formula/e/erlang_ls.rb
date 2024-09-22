@@ -4,14 +4,16 @@ class ErlangLs < Formula
   url "https:github.comerlang-lserlang_lsarchiverefstags0.53.0.tar.gz"
   sha256 "e35383dd316af425a950a65d56e7e8179b0d179c3d6473be05306a9b3c0b0ef5"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a1daae656b510dfc3ce5866c6659555caeda398414583fef40d31592614575f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82d4a67f0748171a2cfffc49fa815679f588ccf09f5753a8444edf75faa3fa43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82ff31be3e24ecbe8f33130d8bb8689f1a7232132fda5097f301efed6edcf400"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b97ce65d54578a71bf48f9e640a10bddc12b4737657cad05f9272e05809cba4"
-    sha256 cellar: :any_skip_relocation, ventura:       "457616735423883340a12c0a6c2a820a459df61de4f2fda81214b29273d504ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "014c2357044609044d5b8048eb5c1c4712fe521490a41ec75592b39cef08b1b9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c29526bbfe1346a66184bf374fba51e3e083bb311445aa9f1c078e6dabac7151"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ada77a1615752881d5632cefc36b9f06c1bed8ee4f990d9ac8e64a7086ceb644"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "706d5776200376589006984147ec10b73030740cc8ebb46c45e1d826cc113856"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0240ba4ac93d48f3c18cfa706323067f2df880675560ed461db9c2f2bfc9fb2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "bee4af0a940d8466677c241bf50d7f06f0c3c9f878b3feddb8301b1e10971fad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a20377b55bff8fa003408fa66bb344cfd6a48c8d0f054b1a99698e83fd589643"
   end
 
   depends_on "erlang"

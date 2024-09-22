@@ -1,20 +1,18 @@
 class Aliyunpan < Formula
   desc "Command-line client tool for Alibaba aDrive disk"
   homepage "https:github.comtickstepaliyunpan"
-  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.3.tar.gz"
-  sha256 "390a298c7f429a7c47f82be9b666d8a4231b4d74724cb671de6cad25963cb6b9"
+  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.4.tar.gz"
+  sha256 "fc657cc752c6818f6658ce46cb3931004f55b7bb536de25be56f80a756ecd911"
   license "Apache-2.0"
   head "https:github.comtickstepaliyunpan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc7f228f05a9c3a15d4d29abf45d8f5c29e66d2f3e07e4ac2ea61cdd432b0b5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe0582846d6cc82dbed07dc32676e9a860f7aafb0efcfa10e100b4b4924a9b19"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb2bc6105e6669ba6281b6c0fb0ca6642ec1d30515e028203b943e76caf645ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd0222b76cee305087787bcdd745102d274253fe64e19eb0fccbb7491a7940ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f569e3b67095bfcaef12ad472152f4c0f37ce5179c103b8d61ad5e0b91025575"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f569e3b67095bfcaef12ad472152f4c0f37ce5179c103b8d61ad5e0b91025575"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f569e3b67095bfcaef12ad472152f4c0f37ce5179c103b8d61ad5e0b91025575"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95236bc14906d4459ccc5384feaaf5eb13bc65ab505dd43b7dfe2124d22ffbdc"
+    sha256 cellar: :any_skip_relocation, ventura:       "95236bc14906d4459ccc5384feaaf5eb13bc65ab505dd43b7dfe2124d22ffbdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d4a976ba7fcee08561b378a671bc31f5cbc089e7f058d838c85fe8efe25b67f"
   end
 
   depends_on "go" => :build

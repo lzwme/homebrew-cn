@@ -27,15 +27,6 @@ class PythonPackaging < Formula
     end
   end
 
-  def caveats
-    <<~EOS
-      Additional details on upcoming formula removal are available at:
-      * https:github.comHomebrewhomebrew-coreissues157500
-      * https:docs.brew.shPython-for-Formula-Authors#libraries
-      * https:docs.brew.shHomebrew-and-Python#pep-668-python312-and-virtual-environments
-    EOS
-  end
-
   test do
     pythons.each do |python|
       system python, "-c", "import packaging"

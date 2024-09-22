@@ -3,18 +3,18 @@ class Forbidden < Formula
 
   desc "Bypass 4xx HTTP response status codes and more"
   homepage "https:github.comivan-sincekforbidden"
-  url "https:files.pythonhosted.orgpackagesfc974da12a39d42ca55de66d8a80340377e76b5af7e3d588f168f0218d81eb47forbidden-12.4.tar.gz"
-  sha256 "0b921ec89bc25b4ac7a1d89919809c258da36be747795857d01de6c5d8046cab"
+  url "https:files.pythonhosted.orgpackagesfb2d15265f7965c1fe2ae251767b23d583f0d0d10b2d76e56af9a2643efdf652forbidden-12.5.tar.gz"
+  sha256 "5d40cb6b5e553b59d590ff2aac913f6da14f28706fd0e17f9fd36ddf707b7779"
   license "MIT"
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e746a24b27b351f06c9e7bd37d5337acefa83cb1d8a4a2dfd1d4a7184c74effc"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f418261c2d3e2a5059358e2f6c271569c9f2ab46c300144539a914b8d1b7f83"
-    sha256 cellar: :any,                 arm64_ventura: "aeacc250a11d10f435d4d259845d85bbcdba73b7e41b9f60594eb9839f5851da"
-    sha256 cellar: :any,                 sonoma:        "11e798bf466ce2b37a26162fbc8b9bcfa609554a5ff740602ce1f8393cc2e3a2"
-    sha256 cellar: :any,                 ventura:       "7ce1e0da31717d4c7756ba4bb9fb6d9f7e970bd308e8e9c6776f085b0231192b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38477312b6ac19d6fe37b8ea82c426f1c9a47008c042e4f2395c07bf017c7f3c"
+    sha256 cellar: :any,                 arm64_sequoia: "6ad4fe9e6b6977fac21dc411950c6f6276350de759341f5a6ddfe042021a33cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "4520c19c1749ffe51bcd321001dfc046140de595d0dc974a0a8115e555a24253"
+    sha256 cellar: :any,                 arm64_ventura: "d876b5b78e207257c47f35f4ab79f29bc0d360b16f34f62fe64907a1a8e34263"
+    sha256 cellar: :any,                 sonoma:        "46850ba1024bbed47f337eb903a071a35102b7a392508c4b979e266d59696d89"
+    sha256 cellar: :any,                 ventura:       "3bd818706b606f439095f8b591b38fc6572b92965f61dace5ca0a4f09d29ae46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbceff432ecc523a9a34209c6910b6b3b17fc2e9dbdce46707c85bf2d30f5080"
   end
 
   depends_on "certifi"
@@ -92,8 +92,8 @@ class Forbidden < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesa717133e1cd1e24373e1898ca3c7330f5c385b46c7091f0451e678f37245591bsetuptools-75.0.0.tar.gz"
-    sha256 "25af69c809d9334cd8e653d385277abeb5a102dca255954005a7092d282575ea"
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "tabulate" do

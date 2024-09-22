@@ -4,6 +4,7 @@ class Gleam < Formula
   url "https:github.comgleam-langgleamarchiverefstagsv1.5.0.tar.gz"
   sha256 "0342babfbd6d8201ae00b6b0ef5e0b181bce5690c703ffae8dd02542e024c4c2"
   license "Apache-2.0"
+  revision 1
   head "https:github.comgleam-langgleam.git", branch: "main"
 
   livecheck do
@@ -12,21 +13,19 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dfb6fcb2f6ffb26e1a68e54a7ff2765b57b3daaa2ccd5b2479d39bbdb44dc4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "542c7cf17f6d29eeb76fccefca21dc332193bcd08f678b768f4fae16d9901391"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ee506792677b596f5994ffb85a00a3b1fcf9ce1a8e8f9d8c09cac475dae05b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "904f53ba393f3d603b3fd99368cc8cbefd09f31634be18eecd1db55d7988d343"
-    sha256 cellar: :any_skip_relocation, ventura:       "e485670fa98c9a400e58716c465fb52b04d0f6659671a882bee8ffa3f71c11c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b879ad99b995ae6e78117f0db3231a007f3243bdaf93d151cbe6300609620252"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "293fee21b68b162349528735735d4a5e64dc68dedd8bf4836a35d41d530b1436"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72a3afa8905d3142685ab9b2af5b8394c8f143b7eb8913cf16121728f0186bbf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "948428cd21bf47aa29c557622cb731aeca67288cb65e2286f1eee97172b2d12c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a28daf1cf8998d7781aec7ce975f02bca07270f15b53660779321d2e49d86a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "f4c8db62793928696d6c8490aa3bc1a39a58038ec23b3b1f95604637bc139924"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff1b2e327d3d7583af5a1ed4abbf306e9e2ca16fb982612925c5b9cde9f49a8a"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "erlang"
   depends_on "rebar3"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "compiler-cli")

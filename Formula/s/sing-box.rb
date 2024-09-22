@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.5.tar.gz"
-  sha256 "6beaa010c14881ba29ea147566c32614dbec8c3f8993529d08664c470e099195"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.6.tar.gz"
+  sha256 "09412fcc7b3a56c325886af090fb88b2cd8a61984856da43e2d16ff203f3a267"
   license "GPL-3.0-or-later"
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1777858cf3d6e6210c4f95757dacbee724e5c774b5c5ba86bdcf03f8dd258ea5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b97d6ec81131211b73a1a7b491ef9a95e36889b29d732d1bbdd6b34aad47e110"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2f1797c96b15bbdc25ef7ae353c09c27d6a5ed53b70a79b72308a4aac9f0f1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e71157c06489d761441c1c00d4a40b4d033f56f158ea242de5cd95f5e983b988"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c1e0d81eaccae8089e08121ab404cca4dbff83da13bac8ac089a94772252fa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4de16af9d257a4af275f44cde01457991191947efc18818a220c10845ddddc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e15943214c500b01dd3e31d5b3a562860287de1a6d46445713685ba02fd33c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df2db37bb6525dab44486679c451b2f25915efc6aed2eab3c89d7fc08a907bd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c85b1ed450f60451e241f60508318cdaed0d3c5fea098a0fd6c63513b6fa1cba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3d6e7602fedc708b1cb50336c17df02e0b23f76696ffdd8cb1f8c669e67bbe2"
+    sha256 cellar: :any_skip_relocation, ventura:       "c99562b7ab549ad683413cb172b9eda76598464a2eb273d0e7f6634f1467ffd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5bcbe136dabcbbce4e4788d5ff771d1cbcfd85d68f31c595afcda30b33fb3d9"
   end
 
   depends_on "go" => :build

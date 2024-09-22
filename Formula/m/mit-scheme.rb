@@ -1,15 +1,15 @@
 class MitScheme < Formula
-  desc "MITGNU Scheme development tools and runtime library"
-  homepage "https:www.gnu.orgsoftwaremit-scheme"
-  url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
-  mirror "https:ftpmirror.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
+  desc "MIT/GNU Scheme development tools and runtime library"
+  homepage "https://www.gnu.org/software/mit-scheme/"
+  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
   sha256 "2c5b5bf1f44c7c2458da79c0943e082ae37f1752c7d9d1ce0a61f7afcbf04304"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https:ftp.gnu.orggnumit-schemestable.pkg?C=M&O=D"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/?C=M&O=D"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
     strategy :page_match
   end
 
@@ -24,11 +24,6 @@ class MitScheme < Formula
     sha256 x86_64_linux:   "0e910ffb8aff109164099832f8d465f54e9e0c731a0580cb0c794970e3f6ce11"
   end
 
-  # Has a hardcoded compile check for ApplicationsXcode.app
-  # Dies on "configure: error: SIZEOF_CHAR is not 1" without Xcode.
-  # https:github.comHomebrewhomebrew-x11issues103#issuecomment-125014423
-  depends_on xcode: :build
-
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
 
@@ -37,14 +32,14 @@ class MitScheme < Formula
   end
 
   resource "bootstrap" do
-    url "https:ftp.gnu.orggnumit-schemestable.pkg12.1mit-scheme-12.1-svm1-64le.tar.gz"
+    url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-svm1-64le.tar.gz"
     sha256 "2c5b5bf1f44c7c2458da79c0943e082ae37f1752c7d9d1ce0a61f7afcbf04304"
   end
 
   def install
     resource("bootstrap").stage do
       cd "src"
-      system ".configure", "--prefix=#{buildpath}staging", "--without-x"
+      system "./configure", "--prefix=#{buildpath}/staging", "--without-x"
       system "make"
       system "make", "install"
     end
@@ -55,37 +50,37 @@ class MitScheme < Formula
 
     # Take care of some hard-coded paths
     %w[
-      6001edextra.scm
-      6001floppy.scm
-      compileretcdisload.scm
-      edwintechinfo.scm
-      edwinunix.scm
+      6001/edextra.scm
+      6001/floppy.scm
+      compiler/etc/disload.scm
+      edwin/techinfo.scm
+      edwin/unix.scm
     ].each do |f|
-      inreplace f, "usrlocal", prefix
+      inreplace f, "/usr/local", prefix
     end
 
-    inreplace "microcodeconfigure" do |s|
-      s.gsub! "usrlocal", prefix
+    inreplace "microcode/configure" do |s|
+      s.gsub! "/usr/local", prefix
 
       # Fixes "configure: error: No MacOSX SDK for version: 10.10"
-      # Reported 23rd Apr 2016: https:savannah.gnu.orgbugsindex.php?47769
-      s.gsub!(SDK=MacOSX\$\{MACOS\}$, "SDK=MacOSX#{MacOS.sdk.version}") if OS.mac?
+      # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
+      s.gsub!(/SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}") if OS.mac?
     end
 
-    inreplace "edwincompile.sh" do |s|
-      s.gsub! "mit-scheme", bin"mit-scheme"
+    inreplace "edwin/compile.sh" do |s|
+      s.gsub! "mit-scheme", bin/"mit-scheme"
     end
 
-    ENV.prepend_path "PATH", buildpath"stagingbin"
+    ENV.prepend_path "PATH", buildpath/"staging/bin"
 
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}", "--without-x"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}", "--without-x"
     system "make"
     system "make", "install"
   end
 
   test do
-    # https:www.cs.indiana.edupubscheme-repositorycodenumprimes.scm
-    (testpath"primes.scm").write <<~EOS
+    # https://www.cs.indiana.edu/pub/scheme-repository/code/num/primes.scm
+    (testpath/"primes.scm").write <<~EOS
       ;
       ; primes
       ; By Ozan Yigit
@@ -116,10 +111,10 @@ class MitScheme < Formula
     EOS
 
     output = shell_output(
-      "#{bin}mit-scheme --load primes.scm --eval '(primes<= 72)' < devnull",
+      "#{bin}/mit-scheme --load primes.scm --eval '(primes<= 72)' < /dev/null",
     )
     assert_match(
-      ;Value: \(2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71\),
+      /;Value: \(2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71\)/,
       output,
     )
   end

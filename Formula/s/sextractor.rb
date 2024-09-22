@@ -6,6 +6,8 @@ class Sextractor < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sequoia:  "a7f3f31267c07643f9e3a7ced91716a987f07b9eaf4c5eb3243ea7dd159c4c1c"
+    sha256 arm64_sonoma:   "9761efd0ae4eec0be229834d9808204849eab6417f207253161113bdaa970340"
     sha256 arm64_ventura:  "f890f87b25e094dab7f32d4e7a28d0ee9d951ce118344f6ec38ceb9d7ce37bb6"
     sha256 arm64_monterey: "d0cba7ea8b343695f081803d00db959a4b981f80c075a9b0934ff47a1ccc36f0"
     sha256 arm64_big_sur:  "00d3ecf36384e6b66201a1aaea674759b64774a8d835f34cd2589b046152dca2"
@@ -22,6 +24,12 @@ class Sextractor < Formula
   depends_on "cfitsio"
   depends_on "fftw"
   depends_on "openblas"
+
+  # Switch finite to std::isfinite for ICC and GCC, remove in next release
+  patch do
+    url "https:github.comastromaticsextractorcommitced65570cb5b7073361dbf2c3c60631c3f54d0f9.patch?full_index=1"
+    sha256 "a037f0ece38d7ad57ff831615f22f1d0017a699a78c9c7525c78b4b20cb621be"
+  end
 
   def install
     openblas = Formula["openblas"]

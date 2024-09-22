@@ -25,6 +25,21 @@ class Ledger < Formula
       url "https:github.comledgerledgercommit46207852174feb5c76c7ab894bc13b4f388bf501.patch?full_index=1"
       sha256 "8aaf8daf4748f359946c64488c96345f4a4bdf928f6ec7a1003610174428599f"
     end
+
+    # Backport fixes to build with `boost` 1.86.0
+    # Ref: https:github.comledgerledgerpull2381
+    patch do
+      url "https:github.comledgerledgercommitad93c185644cfcb14fe4a673e74a0cb5c954a4b4.patch?full_index=1"
+      sha256 "3d2db6b116cd7e8a1051ac7f92853f72c145ff0487f2f4e12e650ee7ec9e67b0"
+    end
+    patch do
+      url "https:github.comledgerledgercommit4f4cc1688a8e8a7c03f18603cc5a4159d9c89ca3.patch?full_index=1"
+      sha256 "938d62974ee507b851239b6525c98c8cb1c81e24e8ae2939d4675d97a8ec8f67"
+    end
+    patch do
+      url "https:github.comledgerledgercommit5320c9f719a309ddacdbe77181cabeb351949013.patch?full_index=1"
+      sha256 "9794113b28eabdcfc8b900eafc8dc2c0698409c0b3d856083ed5e38818289ba1"
+    end
   end
 
   livecheck do
@@ -33,19 +48,18 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "aa9e94d70c387b75f27ec56b5c00ef82129540ad79441e91fe407d9270774073"
-    sha256 cellar: :any,                 arm64_sonoma:   "d7fa6f760b136e2104925d5e0126baa56994691e111a486be71b88048acfa2ad"
-    sha256 cellar: :any,                 arm64_ventura:  "9706d5b3817874dc3c3fc3696ff5c7ce1418e20b15dafaaa21d612e80b3688b3"
-    sha256 cellar: :any,                 arm64_monterey: "37d03c5f94bcc3bf843ffd5c6206a2869093f0f7010c2dc91b52a6553c1d5b70"
-    sha256 cellar: :any,                 sonoma:         "d55ed9442b00f1db45976256fdabc1876a3b9d7d00e58ddb1533702a32682619"
-    sha256 cellar: :any,                 ventura:        "5d95809213044fc8056ca3b642c21d22b3ca2ebce5750fd6a7477e2d96dc55af"
-    sha256 cellar: :any,                 monterey:       "f51d0330df39298a2a313b7c25b3bfa0b6a110471b954d630d02910108d237a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a5e1d2c1d8a3c8841191e3a2d6f1a0932cdfe7bdfd9df55e1681af1f349704"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e739f7a2ee6e2d44b607aaacf253df09f0d9fda48f32c78a6201e2e53a4dcbc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "f971e44953f6db8f4756fd4a6a440c3bf014eca8831ce1dc8defc04b366c73a3"
+    sha256 cellar: :any,                 arm64_ventura: "c3ab50d8df4c398f04cc6595f292a9659e7904f09d6e6f165d47333c99c44d31"
+    sha256 cellar: :any,                 sonoma:        "c999180f1c610065777bb800aea211dde3a6bbfc1c44a7f4cdebc251f4615174"
+    sha256 cellar: :any,                 ventura:       "747dbb2eafdce945665f1f695158b45c3ca72a3e2e147020b6d16508bf814c11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffb701b5cd3c4d98e9d7f2c3940ef8862c6199309648660d8da9d97e1c0bdda2"
   end
 
   depends_on "cmake" => :build
   depends_on "texinfo" => :build # for makeinfo
-  depends_on "boost@1.85"
+  depends_on "boost"
   depends_on "gmp"
   depends_on "gpgme"
   depends_on "mpfr"
@@ -66,7 +80,7 @@ class Ledger < Formula
       --jobs=#{ENV.make_jobs}
       --output=build
       --prefix=#{prefix}
-      --boost=#{Formula["boost@1.85"].opt_prefix}
+      --boost=#{Formula["boost"].opt_prefix}
       --
       -DBUILD_DOCS=1
       -DBUILD_WEB_DOCS=1

@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/29616/cdo-2.4.3.tar.gz"
-  sha256 "4a608b70ee1907b45e149ad44033bb47d35b7da96096553193bd362ca9d445eb"
+  url "https://code.mpimet.mpg.de/attachments/download/29646/cdo-2.4.4.tar.gz"
+  sha256 "fc00a71dc83d9c90b172f08e0ae71e1fd3162760461600cd25cf0dfb78ff9453"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,14 +11,12 @@ class Cdo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "99ea564f89d7e6f1a5aed780123fa2af8d01e06041474a105273cfd1255313c4"
-    sha256 cellar: :any,                 arm64_sonoma:   "a25e82ca7cf9895709729ace682d895bcb6ad1e4b352f1892818a24c5ef708d4"
-    sha256 cellar: :any,                 arm64_ventura:  "28d6a461f44bc3ce62d52959cbc9495388574b50b383bfab90a68a40fea9a0df"
-    sha256 cellar: :any,                 arm64_monterey: "a849bbef553f5cd4504d9e32f142591343334dc93c1cf409ea3e57f653421c2d"
-    sha256 cellar: :any,                 sonoma:         "d92f8dc4653a35d503127cafe05bf6bec0050acee4652c7a6559e0246a47c96f"
-    sha256 cellar: :any,                 ventura:        "6819d4f3d7a6c6e6998744b0ee74aa597fb385a726acbc50c0579128db45829d"
-    sha256 cellar: :any,                 monterey:       "de7dfd4cb01f9f62a8f86f311fdbb3b382ce7f68638bc23af610be77b61a79ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "747b6f8db4306bbdc77ea5da108189d34286b958922c28966d239027a9a0e60f"
+    sha256 cellar: :any,                 arm64_sequoia: "598a77f949c80129c50f354699ba568f54bf8d09c79c74ffbead6ec21b91a17c"
+    sha256 cellar: :any,                 arm64_sonoma:  "522c20efb0a397c700f7b9918f97a6caa8d057bd8c22443036618730581fb2c7"
+    sha256 cellar: :any,                 arm64_ventura: "98d2101dd877c76cd8249a6dee5b00b28a808b3195d99521fb543050261c08a2"
+    sha256 cellar: :any,                 sonoma:        "4e758b6926d3fc4b6ba2b7def5bad665b6db55acd40265dea6200e22e0531724"
+    sha256 cellar: :any,                 ventura:       "b8a0397605f05ee8e41b39971e14cde4fca1fd07e4bc4d043c69cc31017988e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91374bb2f13c0d2e127d96228816087545133ddaa012dfb5bef06a155a9df7ac"
   end
 
   depends_on "eccodes"
