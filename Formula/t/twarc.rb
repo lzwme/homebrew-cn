@@ -6,17 +6,10 @@ class Twarc < Formula
   url "https:files.pythonhosted.orgpackages8aedac80b24ece6ee552f6deb39be34f01491cff4018cca8c5602c901dc08ecftwarc-2.14.0.tar.gz"
   sha256 "fa8ee3052d8b9678231bea95d1bdcbabb3968d35c56a8d1fcedc8982e8c66a66"
   license "MIT"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a627ce6fdeb5f708bb3a9ab10ba1242feed9c0cdcff1e1a9f49bb7b29f730df5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3de4162ca74a164282d30cbc4efb492e4d721bca6578adc9216829f89fbbb2a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3de4162ca74a164282d30cbc4efb492e4d721bca6578adc9216829f89fbbb2a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3de4162ca74a164282d30cbc4efb492e4d721bca6578adc9216829f89fbbb2a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a308887a5405f6b4790107f37ee5e64df9db4c7bc62b8bc2bc69644e6f0485ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "a308887a5405f6b4790107f37ee5e64df9db4c7bc62b8bc2bc69644e6f0485ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "b574446fefa471f8d0865c53b8197be1aaf8cc161ff40576048b34e945df7d54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cbd74bee630eb654f852cf1b1d09d3b0418235efdda6ac9863013319fe27490"
+    sha256 cellar: :any_skip_relocation, all: "067281a7e5cee48c5c36552e5d1c773c287c2283382114e650c93caccaffd941"
   end
 
   depends_on "certifi"
@@ -43,18 +36,18 @@ class Twarc < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages76217a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75chumanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https:files.pythonhosted.orgpackages5db1c8f05d5dc8f64030d8cc71e91307c1daadf6ec0d70bcd6eabdfd9b6f153fhumanize-4.10.0.tar.gz"
+    sha256 "06b6eb0293e4b85e8d385397c5868926820db32b9b654b932f57fa41c23c9978"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "oauthlib" do
@@ -83,13 +76,13 @@ class Twarc < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
+    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install

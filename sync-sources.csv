@@ -2351,6 +2351,7 @@ Homebrew-homebrew-core/Formula/g/govc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govulncheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gowsdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goyacc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpatch.rb, Homebrew/homebrew-core, 0
@@ -14201,6 +14202,7 @@ Homebrew-homebrew-cask/Casks/z/zoho-docs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-workdrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoom-for-it-admins.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/z/zoom-m3-edit-and-play.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zotero.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zotero@beta.rb, Homebrew/homebrew-cask, 0

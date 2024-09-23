@@ -6,11 +6,11 @@ class Iredis < Formula
   url "https:files.pythonhosted.orgpackages7a80ac86d397fa0b931cfa0121ed23549a245e706b4b34e4bfc491bcd4123acfiredis-1.15.0.tar.gz"
   sha256 "70c3c3d260c1f1a49145b3242a054ae1a5142021d49c72c199760874ab2c069c"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "067e2e60638bafdacac1370de11dfd7e84917f6691f47fa10e3d652b24ac8107"
+    sha256 cellar: :any_skip_relocation, all: "92647bfd6bdf90ac784cc025598e2c384ed8ad6a4532a7f9dac42af5cfc6427a"
   end
 
   depends_on "python@3.12"
@@ -21,8 +21,8 @@ class Iredis < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "mistune" do
@@ -36,13 +36,13 @@ class Iredis < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackagesccc625b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126caprompt_toolkit-3.0.43.tar.gz"
-    sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
+    url "https:files.pythonhosted.orgpackages476d0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879fprompt_toolkit-3.0.47.tar.gz"
+    sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-dateutil" do
@@ -51,8 +51,8 @@ class Iredis < Formula
   end
 
   resource "redis" do
-    url "https:files.pythonhosted.orgpackagesebfc8e822fd1e0a023c5ff80ca8c469b1d854c905ebb526ba38a90e7487c9897redis-5.0.3.tar.gz"
-    sha256 "4973bae7444c0fbed64a06b87446f79361cb7e4ec1538c022d696ed7a5015580"
+    url "https:files.pythonhosted.orgpackages4810defc227d65ea9c2ff5244645870859865cba34da7373477c8376629746ecredis-5.0.8.tar.gz"
+    sha256 "0c5b10d387568dfe0698c6fad6615750c24170e548ca2deac10c649d463e9870"
   end
 
   resource "six" do

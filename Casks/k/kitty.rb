@@ -8,7 +8,7 @@ cask "kitty" do
   homepage "https:github.comkovidgoyalkitty"
 
   conflicts_with cask: "kitty@nightly"
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :big_sur"
 
   app "kitty.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)

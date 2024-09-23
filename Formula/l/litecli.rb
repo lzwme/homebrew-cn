@@ -6,9 +6,10 @@ class Litecli < Formula
   url "https:files.pythonhosted.orgpackages4d1d4e033f1f9777c734d1fa6503b73c486f4bd8b574dbec47ba03ababb62fablitecli-1.12.3.tar.gz"
   sha256 "dd707c1bc04047aa6dba1916d204be47003aa383cf638bbe0f1d70bc6571d681"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77ce3029b4545b65fde5d5e012d69e79dc3880bf41236172e62b01c97c9a1f41"
+    sha256 cellar: :any_skip_relocation, all: "ca41e73e2f8b3e9b23f38126bb60a21cb6e9992fe8608cf6cb5d40dc81367720"
   end
 
   depends_on "python@3.12"
@@ -26,8 +27,8 @@ class Litecli < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "prompt-toolkit" do
@@ -38,11 +39,6 @@ class Litecli < Formula
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "sqlparse" do

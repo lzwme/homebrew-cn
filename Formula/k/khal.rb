@@ -6,18 +6,16 @@ class Khal < Formula
   url "https:files.pythonhosted.orgpackagesd358665551b1fea58a70d0f70fb539d2cd6be9ec106f36023d62c3ec5c7b2de1khal-0.11.3.tar.gz"
   sha256 "a8ccbcc43fc1dbbc464e53f7f1d99cf15832be43a67f38700e535d99d9c1325e"
   license "MIT"
+  revision 1
   head "https:github.compimutilskhal.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "25fe02a5d214754b85b107024aa94aacb8a1c28f3a86ec4b62104070d6b439d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f3fbc8049b7c7513cdb4b6bf81f4f36cd486686c28a7aa14e0a1d0b4cf85ac9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f8a596c34d193ecd89c0cd948ecb094d51b3703423a2e415ecc26371b958471"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5650a4455364dd5c93e6b88cc96f654b8ee48fcd845bd68212194efb40f47146"
-    sha256 cellar: :any_skip_relocation, sonoma:         "287062cef51ae2527f3419df8dac967cfac2a14a4ece4865f0c1213b550e46c4"
-    sha256 cellar: :any_skip_relocation, ventura:        "f31c81152c8a813ff954d6dda621b176db3761344d2b4b24cd3a7de2e37c3410"
-    sha256 cellar: :any_skip_relocation, monterey:       "0cb181fc7d1fb9cf96e2ceb0f3aad5adcefd09b1b4b1f1f0a391ce1965a4450e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de66343179e652332444261662cb30fbe20f5da76bde6f4d729d4afac3ad5002"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "255914ea36c2c9b3e2b8179a07ffac83152d7c69e68029b662c251898f404619"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "255914ea36c2c9b3e2b8179a07ffac83152d7c69e68029b662c251898f404619"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "255914ea36c2c9b3e2b8179a07ffac83152d7c69e68029b662c251898f404619"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b32526245a4e6b59c24bfe7b88b79f4587ecdf5732e17c21308509947a0f5cda"
+    sha256 cellar: :any_skip_relocation, ventura:       "b32526245a4e6b59c24bfe7b88b79f4587ecdf5732e17c21308509947a0f5cda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "255914ea36c2c9b3e2b8179a07ffac83152d7c69e68029b662c251898f404619"
   end
 
   depends_on "python@3.12"
@@ -38,23 +36,23 @@ class Khal < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "icalendar" do
-    url "https:files.pythonhosted.orgpackages6c23187a28257fe26848d07af225cef86abe3712561bd8af93cbd3a64d6eb6eaicalendar-5.0.11.tar.gz"
-    sha256 "7a298bb864526589d0de81f4b736eeb6ff9e539fefb405f7977aa5c1e201ca00"
+    url "https:files.pythonhosted.orgpackages3cd8ada43e4872aab3bfaf2cc2e09b2d2a5d83f771bfc58ba6a63904a5067db8icalendar-5.0.13.tar.gz"
+    sha256 "92799fde8cce0b61daa8383593836d1e19136e504fa1671f471f98be9b029706"
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pytz" do
-    url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
-    sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
+    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
+    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pyxdg" do
@@ -68,8 +66,8 @@ class Khal < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "tzlocal" do
@@ -78,8 +76,8 @@ class Khal < Formula
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackagesbb185312d4b55ab8f69cb82de25a68ed2efd303409bc564f403623f561e8cfdeurwid-2.5.3.tar.gz"
-    sha256 "9c9129a07027794d7250e3bcf2f64cbdf59a35d001d670b507f72c7c2e4bb3b5"
+    url "https:files.pythonhosted.orgpackages85b7516b0bbb7dd9fc313c6443b35d86b6f91b3baa83d2c4016e4d8e0df5a5e3urwid-2.6.15.tar.gz"
+    sha256 "9ecc57330d88c8d9663ffd7092a681674c03ff794b6330ccfef479af7aa9671b"
   end
 
   resource "wcwidth" do

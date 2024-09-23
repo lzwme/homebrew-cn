@@ -6,17 +6,15 @@ class Khard < Formula
   url "https:files.pythonhosted.orgpackages0d00215a69d2ae96cac511a6594116958bf13e210dd24f78c48f5ffaf039edeckhard-0.19.1.tar.gz"
   sha256 "59f30a0da3c3da3eb04f4dbe18ee4763913b685d99ec8418fd574a88c491c490"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9b2c8fb26f1aa5971e0003a83ee62f487fc4d5cf3764aba7aa210dc92c3a30b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12c493c9abf94b3f10b017495a3b449c4cc39157d9fb0011e8883f5ad74e3dc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5b035c1c64cb832d196d05d31e19e560e634563911a24e27bdc6b7cfe5bcdc3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be118a4d08c2218ca87117c9736e19d022c62e610d511853eb6c28df2234f805"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1036b2f525fdd11fa8403a8df63cfa70564c732b4e229759bc8469da1f4c6c32"
-    sha256 cellar: :any_skip_relocation, ventura:        "da152b6cbeb428e9f78d5441f4a1634008058400a4d179e7faf5456843300b4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "07e0937662235e3fd83a9003ee0b429f605657d1ad7870cf431178fc1d46ab35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3424b22114f87f72ce97b058b29852a940af162d93695c1905ad5522a6580b0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dacd018c2c3d83389801225a85f64ea89fabfe16eee2f46150527d1ebd8a28a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37ca59ac0e7e22e14583b1e8675bde01efe9b8426b7a5a2ef341c64f87268ec7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "43f1e2b0bbdbe145388e8bc5a516535652c3a10ad6253fa2462e87cbbbd7205a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa7c6c810a38fe1a596bdaa10ca48b008ababad4b510241358b1430e9d79d3cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "44f7928787d9ead6e0b26a1dc620195cf0c4d42ceef5ad1017a214c00008456d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2744fd9ad7e0683787ca0336e8c04ea5cd6aebdb9fcb383f596aecb715f3004"
   end
 
   depends_on "python@3.12"
@@ -27,13 +25,13 @@ class Khard < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "ruamel-yaml" do
@@ -57,8 +55,8 @@ class Khard < Formula
   end
 
   resource "vobject" do
-    url "https:files.pythonhosted.orgpackagesdace27c48c0e39cc69ffe7f6e3751734f6073539bf18a0cfe564e973a3709a52vobject-0.9.6.1.tar.gz"
-    sha256 "96512aec74b90abb71f6b53898dd7fe47300cc940104c4f79148f0671f790101"
+    url "https:files.pythonhosted.orgpackagesbf61cd63d29d987e5dd8c971571e68c32e4fc365b17155556808c6d99e0fd0c7vobject-0.9.7.tar.gz"
+    sha256 "ab727bf81de88984ada5c11f066f1e1649903d3e3d7ec91f1ce968172afd5256"
   end
 
   def install
