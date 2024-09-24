@@ -1183,6 +1183,7 @@ Homebrew-homebrew-core/Formula/c/cycode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cypher-shell.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cyphernetes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyrus-sasl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/czg.rb, Homebrew/homebrew-core, 1
@@ -2135,6 +2136,7 @@ Homebrew-homebrew-core/Formula/g/git-secret.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-secrets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-series.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-sizer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-spice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-split-diffs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-ssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-standup.rb, Homebrew/homebrew-core, 1
@@ -2299,6 +2301,7 @@ Homebrew-homebrew-core/Formula/g/gofumpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gojq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokey.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golang-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golangci-lint-langserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/golangci-lint.rb, Homebrew/homebrew-core, 1
@@ -3069,6 +3072,7 @@ Homebrew-homebrew-core/Formula/k/ktlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktmpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktoblzcheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ktor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-ps1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-score.rb, Homebrew/homebrew-core, 1
@@ -3255,6 +3259,7 @@ Homebrew-homebrew-core/Formula/l/llvm@14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@17.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llvm@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm4tools.rb, Homebrew/homebrew-core, 1
@@ -3613,6 +3618,7 @@ Homebrew-homebrew-core/Formula/lib/libnftnl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnghttp2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnghttp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libngspice.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libnice-gstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnids.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnl.rb, Homebrew/homebrew-core, 1
@@ -5559,7 +5565,6 @@ Homebrew-homebrew-core/Formula/r/rust-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rustfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1

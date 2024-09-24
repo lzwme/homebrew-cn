@@ -14,7 +14,7 @@ class VagrantCompletion < Formula
   end
 
   # https:www.hashicorp.combloghashicorp-adopts-business-source-license
-  deprecate! date: "2023-09-27", because: "will change its license to BUSL on the next release"
+  disable! date: "2024-09-27", because: "will change its license to BUSL on the next release"
 
   def install
     bash_completion.install "contribbashcompletion.sh" => "vagrant"

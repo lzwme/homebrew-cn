@@ -4,15 +4,16 @@ class Enzyme < Formula
   url "https:github.comEnzymeADEnzymearchiverefstagsv0.0.150.tar.gz"
   sha256 "9a6cdfef009f86996479d8ceb63bae3341df9f4394c62509d3e8ae2e0cadac22"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https:github.comEnzymeADEnzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "74b42077af5b3297de1a73d40564f0134cd3e4200b4b25ba1fa5349ee10174bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "e59fc2868ee5f6d7c7c47ec08ad0341bd436e45f32b9d48e8080972b13819cf7"
-    sha256 cellar: :any,                 arm64_ventura: "3ff6fb6653d78498ee29f3ed379d7445df228cb2261e725f76c7ad0e3db95e18"
-    sha256 cellar: :any,                 sonoma:        "7a299609f039b5d7fc3c5d74aa35ba727d3d177d993a4924950dd297e9e203d4"
-    sha256 cellar: :any,                 ventura:       "7be870f50da0b786033dae4ce3486da9404649020f1bb3ff743940f7e391fe46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45e44a19203691684fee565424bc3c35dc80525b2883922f1ee891930b493a4f"
+    sha256 cellar: :any,                 arm64_sequoia: "0aa59cb38517ba45179d4499c36eef7dba05838762f11401563e916ca0898b05"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a229bc43778b80cf011626b7423b33e56553a8c51c419467533e1da3013aef5"
+    sha256 cellar: :any,                 arm64_ventura: "36cb7c3acedded961f6ad650f568582b996d8acfe7ec7dedcdd30542c3dad7d0"
+    sha256 cellar: :any,                 sonoma:        "322ca2de57cdabf40610c4ed94efa473a42d8ea827f595dd5fa7c9c59538486d"
+    sha256 cellar: :any,                 ventura:       "9557b8185c83f3c18eae1146a3400896c029b17a118f8c0f55ac49c6b17d104a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a235a0d2067b4d833b702e45bef7a9344cf4bebca05109eca8e5e11af5672aaa"
   end
 
   depends_on "cmake" => :build

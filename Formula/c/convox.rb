@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https:convox.com"
-  url "https:github.comconvoxconvoxarchiverefstags3.18.11.tar.gz"
-  sha256 "86f82d31c7cc11195f59d47938196bf92d6ea4f665e0fe62eb5345486cc8e4c2"
+  url "https:github.comconvoxconvoxarchiverefstags3.19.0.tar.gz"
+  sha256 "e95e47d6ffaebc9c8cf39765932b6303cdab96df488a1b11f9c1a928b35a89f1"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,24 +12,23 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a84f27a00898a54ea1606312f965f28f18fc6ed0c432de932f34493e4e210366"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "203eaa7da0cd79edddaefa4bc6ef38323f5da7c7d1dec2addc31843317d9dd0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67b33885eb47882488210a98b69718e97ca7bb84eeb8c0a3a7db467b2f41f91c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf2198a3b0bfcbe654d0797c8f06aeec37060c08035942477e2a57e6c12adb1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b123e043ada873e376321d8023a2648d194dc5947455878518cdfe1e03a2b9c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "507d5ab304d9cb83e8a7bc418f6568f0e651bcb191e8064a279756820eefb56f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b489956f7a2d3a265a0827f45a746d06b639bbefd3cb2a2d59c16464e9b9a69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "884fc0f8eebf88b9f8722638ff3593371795d14cad8d9cd289682ee9a61c0ce7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f9cd83295cfef0e1adaadcf98224a84677c52f75cd3b064bb2437e7f7d18a9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f55cb8c4299133b1ec311608f8b951f57c3ffdd947d3832688e4a2d18de0f0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "87f707cdc550c4c0ca99c8bc0874dea495dd5a8dba5b60c2e2bab4f33e0fe3fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7a3121f9079055ab7c9442a4df8a576d26aa0668494cc38563771bfb15f38bb"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b92838ac084f77f50a3153b871cee741df4625c782076409958b01672b42897"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94ba9f21d009c88c174e838dc2ffbd7e07dc5038a18ab78fb98d604d2390c124"
   end
 
   depends_on "go" => :build
+  depends_on "pkg-config" => :build
+
+  on_linux do
+    depends_on "systemd" # for libudev
+  end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", "-mod=readonly", *std_go_args(ldflags:), ".cmdconvox"
   end
 

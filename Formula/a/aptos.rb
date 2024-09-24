@@ -12,17 +12,18 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34a3e4997abd60172fe213f65ffa0fcee8f00df921ada7ea07aeb4d2de32b13c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "630fee62cd288dce870873fba7376e057e4a49b6c06379105b685fb3c20efffc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "634680f145c1c4fd62a1fabb46aae7d42944b21f004d4f3aa2affabe46970459"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98a354b8ba6faef706e8db6207a941d28258c0daa23b97cf12b7af342e0b3b30"
-    sha256 cellar: :any_skip_relocation, ventura:       "81a6ea50e541bd7f0fc97fbe49ba72edd9664590331b9fba80a83a39fb352874"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2ad14b66dd889e278df704d7abe181f07d37637a5fed8fa1a1b2f44b75ed21e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "383a10d2d0e0e9ff03d4c994e7c830575c1d5f2d3ef7184a1f8aab0717aac8fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1235578eac1e6e0541b432f563d13dfdb0d9fce6fd9326e3a5aa722da3d7afc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "afbba60ab7449bf52e444b960d6ed35c279362cbcabd7f67c24ee41eff1f2a9f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9631f242d87e8898ebbc6dc8aeec5f88b0577026572f0d02aeea3de44d9d1e42"
+    sha256 cellar: :any_skip_relocation, ventura:       "78c1c494a0af2ce2d2438dafa7fa0b72720ec69eb4f28b63c8b8acd1acc15ef6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a729432b4dcccf8e3a7753fe5b952d34d1cfed2730fb853dfeadc127c702c0b"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
-  depends_on "rustfmt" => :build
+
   uses_from_macos "llvm" => :build
 
   on_linux do
@@ -39,8 +40,9 @@ class Aptos < Formula
   end
 
   def install
-    # FIXME: Figure out why cargo doesn't respect .cargoconfig.toml's rustflags
-    ENV["RUSTFLAGS"] = "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
+    # FIXME: Look into a different way to specify extra RUSTFLAGS in superenv as they override .cargoconfig.toml
+    # Ref: https:github.comHomebrewbrewblobmasterLibraryHomebrewextendENVsuper.rb#L65
+    ENV.append "RUSTFLAGS", "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
     system "cargo", "install", *std_cargo_args(path: "cratesaptos"), "--profile=cli"
   end
 

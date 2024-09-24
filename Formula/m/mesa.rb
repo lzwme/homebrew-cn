@@ -20,17 +20,16 @@ class Mesa < Formula
     { "GPL-1.0-or-later" => { with: "Linux-syscall-note" } }, # include/drm-uapi/sync_file.h
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # include/drm-uapi/{d3dkmthk.h,dma-buf.h,etnaviv_drm.h}
   ]
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia:  "e19df43117b858e2a65935066adec7381234fcbbb5477bebaa7e3e30d8cf299d"
-    sha256 arm64_sonoma:   "ef83b8e4fecdeae04ff9b04879c00a7e53477a3e484c57aa504c7069acfbb685"
-    sha256 arm64_ventura:  "81966d69090662e0ed4775a5948d945c1308942f0029bad91e5d1d79a254d57a"
-    sha256 arm64_monterey: "c2cbe117066a30c2b4412b70bd868f3a2cb36317af136bbfbc927b82f75bb828"
-    sha256 sonoma:         "115ddb20c6001b009a0d8df2764fa60e69245cf0011a417237bdf8ae1b3bffe8"
-    sha256 ventura:        "fc5cbc7e515fd41774e1d969977794fa4cbc2fea54a418ae22319d3b6b957e5c"
-    sha256 monterey:       "c38947888449d19b8822c90439d7b4be693483f6c9a3dc9053461afd4576c791"
-    sha256 x86_64_linux:   "53e4a61bec12e8199e7c002f82e20fdfbc1253e156092c0fe92bef1738338ccd"
+    sha256 arm64_sequoia: "4a13c5c72e13f57b944fa6f0c66dbc8133b4f33b1a3f076d8494e7b47fedc119"
+    sha256 arm64_sonoma:  "85f8b77f6dff9bb47aeb82001e40c120a8828227063d9a447e87ba6a38d0eae5"
+    sha256 arm64_ventura: "4d6107ebd85c3e25882508c93c1b827906bb186ef4c1107af849f52a6f7f9c1c"
+    sha256 sonoma:        "1c2e1cee7a201517a132a73ce1c63c84ec1eee281688f99f95a581a7290d978e"
+    sha256 ventura:       "d215bebd942bf63e546dc18ddb696fd6be8465d1b5acd6d0cea31f3256adc35c"
+    sha256 x86_64_linux:  "825646c675509f0d2c8365a16df061424d1f3c8fd831552585b642fb384ca149"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'

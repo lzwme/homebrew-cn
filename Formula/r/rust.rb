@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https:www.rust-lang.org"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https:static.rust-lang.orgdistrustc-1.81.0-src.tar.gz"
@@ -15,14 +16,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "976612b55f2634f28d7ecd00253fab4cd179b352ed5e998c862de2d193690a34"
-    sha256 cellar: :any,                 arm64_sonoma:   "e435ab78fdd28d1d422cfb2fc053e56fd4d529b284ff2546e8fe30aacc183712"
-    sha256 cellar: :any,                 arm64_ventura:  "567f85fc6853432ce4bcbd3a336067a2544b59c2b9a17272a1afa8aecd8fa873"
-    sha256 cellar: :any,                 arm64_monterey: "00cd15f19928821fbb8fa658f6bc54118e8b8871eaeee8245dcc1d87d8cc0e27"
-    sha256 cellar: :any,                 sonoma:         "62353b21e9ffd4ff946fbaedc91b796985172379b8eaf77eebe39859b0dea31d"
-    sha256 cellar: :any,                 ventura:        "3ac85eed3480bd7d2da271e68013f30b1e44376e9cd468ac86f3fb90e6b0cbf2"
-    sha256 cellar: :any,                 monterey:       "1768b11223edc7a14d22fdbe07365422112dd7af21a4b520df2a92068425cd87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01f58715374b8362b17d665beb02f74a2f9ec40e4451eae91a88b04776ae3511"
+    sha256 cellar: :any,                 arm64_sequoia: "b4fb0882454f41c387466c0a96687703475b4a0708dba7bdc05aa0c2e9621c96"
+    sha256 cellar: :any,                 arm64_sonoma:  "832b6fff80c5e0071049752764d8be9c31ce821ccb121d3e833c45c67ba9a74f"
+    sha256 cellar: :any,                 arm64_ventura: "a4665458ecf6a676775858d854039c455fb6eb4055d31da491c367470314eccf"
+    sha256 cellar: :any,                 sonoma:        "e2e2790090816a3b1f3b1ed3768590e375c353feb592e6b322d9d65799e1e6d8"
+    sha256 cellar: :any,                 ventura:       "2bbe05da9d41ec5e0c57b03c612ef575bfd446c69d663db0d0d2e7f44c854374"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f1e40fddfa6a38167c3f3a067724131b6a10172c552b21282d32219c1a8807"
   end
 
   head do
@@ -35,7 +34,7 @@ class Rust < Formula
 
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm"
+  depends_on "llvm@18"
   depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkg-config"
@@ -46,6 +45,8 @@ class Rust < Formula
   uses_from_macos "zlib"
 
   link_overwrite "etcbash_completion.dcargo"
+  # These used to belong in `rustfmt`.
+  link_overwrite "bincargo-fmt", "bingit-rustfmt", "binrustfmt", "binrustfmt-*"
 
   # From https:github.comrust-langrustblob#{version}srcstage0
   resource "cargobootstrap" do
@@ -102,12 +103,13 @@ class Rust < Formula
                 'curl = { version = "\\1", features = ["force-system-lib-on-osx"] }'
     end
 
-    # rustfmt and rust-analyzer are available in their own formulae.
+    # rust-analyzer is available in its own formula.
     tools = %w[
       analysis
       cargo
       clippy
       rustdoc
+      rustfmt
       rust-analyzer-proc-macro-srv
       rust-demangler
       src
@@ -116,7 +118,7 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{Formula["llvm"].opt_prefix}
+      --llvm-root=#{Formula["llvm@18"].opt_prefix}
       --enable-llvm-link-shared
       --enable-profiler
       --enable-vendor
@@ -174,6 +176,13 @@ class Rust < Formula
     assert_equal "Hello World!\n", shell_output(".hello")
     system bin"cargo", "new", "hello_world", "--bin"
     assert_equal "Hello, world!", cd("hello_world") { shell_output("#{bin}cargo run").split("\n").last }
+
+    assert_match <<~EOS, shell_output("#{bin}rustfmt --check hello.rs", 1)
+       fn main() {
+      -  println!("Hello World!");
+      +    println!("Hello World!");
+       }
+    EOS
 
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {

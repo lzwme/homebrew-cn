@@ -10,23 +10,21 @@ class Ccls < Formula
   url "https:github.comMaskRaycclsarchiverefstags0.20240202.tar.gz"
   sha256 "355ff7f5eb5f24d278dda05cccd9157e89583272d0559d6b382630171f142d86"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia:  "2e70185800e918fa60402951f93c0c87328ef4b9e190ed0f7f38ef67bb4e89bf"
-    sha256                               arm64_sonoma:   "7492cb5f43e3bf65ec1a6a8aa9d24151154b02df4c63c2a791bf495b08d65a61"
-    sha256                               arm64_ventura:  "5b3c4f1003dcad16b0221032aebd2793dea4efb500678668dedcaa118870df69"
-    sha256                               arm64_monterey: "998e41d641b206a6bfeae293dae477f08a802c5b0bf368e487e7b8b504d9f1d0"
-    sha256                               sonoma:         "417b048477613be53f4aeb16b11cd60da20163342f6643d108256325f52825b0"
-    sha256                               ventura:        "a9099ef1c527080d63783fc4620850e7bc2d93061e84c54aa706da49d024932d"
-    sha256                               monterey:       "89adaa6d420d1f21b4a176fb77ddc1236e0a102009956b5ac0efd6eb6844cd5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26999d25d86872987728832416459e7291fd221f916fe7678a6af06b11623150"
+    sha256                               arm64_sequoia: "456e64f301999bde6fd6fbb722c567394889be93b89488052936f14e35f96a92"
+    sha256                               arm64_sonoma:  "62c9aa4d98c0d97dadcbde5f70d5b47725d1dc360fd2f017472baae37336fad1"
+    sha256                               arm64_ventura: "9e105743aa472cc07f74892abe7b3a1bce9c9c0b6ab53405dfdee0548b04ef01"
+    sha256                               sonoma:        "e1e19b603b8825c9d9552a75e23a8436066b0cc7fbc22ec155c467a3e8c619cb"
+    sha256                               ventura:       "2582130416de11b29dd35833f983f2f865fea39e52f3e046b86c822f5bd47444"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "057d51586172d98b836683ed9e2ba3fc12abdde0b3de8451c60b73f543792cdb"
   end
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
-  depends_on "llvm"
+  depends_on "llvm@18"
   depends_on macos: :high_sierra # C++ 17 is required
 
   fails_with gcc: "5"
@@ -38,6 +36,7 @@ class Ccls < Formula
   end
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: llvm.opt_lib)}" if OS.linux?
     resource_dir = Utils.safe_popen_read(llvm.opt_bin"clang", "-print-resource-dir").chomp
     resource_dir.gsub! llvm.prefix.realpath, llvm.opt_prefix
     system "cmake", "-S", ".", "-B", "build", "-DCLANG_RESOURCE_DIR=#{resource_dir}", *std_cmake_args

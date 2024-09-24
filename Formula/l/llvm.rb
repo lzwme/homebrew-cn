@@ -1,8 +1,8 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https:llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-18.1.8llvm-project-18.1.8.src.tar.xz"
-  sha256 "0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.0llvm-project-19.1.0.src.tar.xz"
+  sha256 "5042522b49945bc560ff9206f25fb87980a9b89b914193ca00d961511ff0673c"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -13,15 +13,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "433c029d4c09ba4d1897b25cc92e6e6df585e3d248146684de6d3087efdef633"
-    sha256 cellar: :any,                 arm64_sonoma:   "3a724923cede4bd596f0a4114c5fdf7e675bfec5a125ebc76f51968b6c504848"
-    sha256 cellar: :any,                 arm64_ventura:  "3f04b1fa80df148acf12f32fb13e1d37005bfc8e7efaf9b7f59141af084d099d"
-    sha256 cellar: :any,                 arm64_monterey: "bca2c4fef76ffedd9ed1f04ecc07361004e4669d2a2637a6a9b67846f3a03db6"
-    sha256 cellar: :any,                 sequoia:        "d73b31cae91959212a292b34c7f65328dfad1488c8a75cbc4cafeda755de4473"
-    sha256 cellar: :any,                 sonoma:         "80253a944737a43bc05bce4c8e9730a0df3115c93a80139ba9a61889bf816ee8"
-    sha256 cellar: :any,                 ventura:        "d2457ec110cec85b21ea93d4cfd68538dd0bc079a2163f6cab78b71bdd9b763d"
-    sha256 cellar: :any,                 monterey:       "25f0593969cfeac2eb69925cfda4556fba81228d64bd9dd5f93b6a9bea9cd299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae14bc6846afd9200f04941136d74b725e6886eb625e09df8cfa67bde91dd801"
+    sha256 cellar: :any,                 arm64_sequoia: "7fafb395fbcf1f3364dd2f0a5af4a5956027993c4ea9cc8e36b8367d8e9a5726"
+    sha256 cellar: :any,                 arm64_sonoma:  "7397168396c6554dfa28db397cc5f08d0274c1c3b766f585754a8edf9f5e3bbb"
+    sha256 cellar: :any,                 arm64_ventura: "480adde82e79b0116a201b69e2410de1365fbfe6964a84e7688e88dff2cc956b"
+    sha256 cellar: :any,                 sonoma:        "f90310d94adf1a4b1b5ac8cef9e7461f837d81ad17d4752c3dd664265dfe7479"
+    sha256 cellar: :any,                 ventura:       "7adfafe60764b040a45232002142cc10551cf155ed1ce7d889ba917b2b6716ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea0cb7a811893181ef275571fd368e94ca7f3b475b21086de6c253d595583bce"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -74,6 +71,7 @@ class Llvm < Formula
       libcxx
       libcxxabi
       libunwind
+      pstl
     ]
 
     unless versioned_formula?
@@ -149,7 +147,7 @@ class Llvm < Formula
 
       args << "-DLLVM_BUILD_LLVM_C_DYLIB=ON"
       args << "-DLLVM_ENABLE_LIBCXX=ON"
-      args << "-DLIBCXX_PSTL_CPU_BACKEND=libdispatch"
+      args << "-DLIBCXX_PSTL_BACKEND=libdispatch"
       args << "-DLIBCXX_INSTALL_LIBRARY_DIR=#{libcxx_install_libdir}"
       args << "-DLIBCXXABI_INSTALL_LIBRARY_DIR=#{libcxx_install_libdir}"
       args << "-DDEFAULT_SYSROOT=#{macos_sdk}" if macos_sdk
@@ -390,7 +388,9 @@ class Llvm < Formula
       llvm_version = Utils.safe_popen_read(bin"llvm-config", "--version").strip
       soversion = Version.new(llvm_version).major.to_s
       soversion << "git" if llvm_version.end_with?("git")
-      soversion << "rc" if llvm_version.end_with?("rc")
+      if (match = llvm_version.match(-rc\d*$))
+        soversion << match[0]
+      end
 
       # Install versioned symlink, or else `llvm-config` doesn't work properly
       lib.install_symlink "libLLVM.dylib" => "libLLVM-#{soversion}.dylib"
@@ -455,8 +455,8 @@ class Llvm < Formula
 
     if llvm_version.end_with?("git")
       soversion << "git"
-    elsif llvm_version.end_with?("rc")
-      soversion << "rc"
+    elsif (match = llvm_version.match(-rc\d*$))
+      soversion << match[0]
     else
       assert_equal version, llvm_version
     end
@@ -667,9 +667,10 @@ class Llvm < Formula
         }
       EOS
 
+      rpath_flag = "-Wl,-rpath,#{lib}#{Hardware::CPU.arch}-unknown-linux-gnu" if OS.linux?
       system bin"clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
-                             "-I#{lib}clang#{llvm_version_major}include",
-                             "omptest.c", "-o", "omptest"
+                          "-I#{lib}clang#{llvm_version_major}include",
+                          rpath_flag.to_s, "omptest.c", "-o", "omptest"
       testresult = shell_output(".omptest")
 
       sorted_testresult = testresult.split("\n").sort.join("\n")

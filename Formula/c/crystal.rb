@@ -2,6 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https:github.comcrystal-langcrystalarchiverefstags1.13.3.tar.gz"
@@ -19,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3222832b5ead2ec11f5cc08aab91fa6300f90f296bf5810a19bc4bbf531945d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cbdf422aedae8886f37a35de838071d1ede0cffc0a2fd5fd3050f327078678b"
-    sha256 cellar: :any,                 arm64_ventura: "dd66a14acb653fbff65f4dfce594c52e5adb861f8fa72a91c52fb65e1d7fd949"
-    sha256 cellar: :any,                 sonoma:        "929cc4e4706e07a2695bd3b70f56b71b130cfdd9b083384fbbc99035e72d5a5b"
-    sha256 cellar: :any,                 ventura:       "510d31b836f3a9e978f2247e1656e50442eecefa97fd2f60251825b842c24e51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05555312f31dc74b29bb8eccd14e51f7ec0ad93c2632c3f608a91fa0f3f02588"
+    sha256 cellar: :any,                 arm64_sequoia: "5aa2e173319ce6046863435a71b5d667c75f8a2626d61c245c4f363d610300fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c0f592d5f97816bce89b6ef168aced798db5fad2f1f888a36d0eaad5e9f8042"
+    sha256 cellar: :any,                 arm64_ventura: "f647848a070379a03cb87c794192103366222400a09f5b5ec2ee208d8e96464c"
+    sha256 cellar: :any,                 sonoma:        "4d2ceeb8a472bc42ae5b5ea327431b6a5e092092d9b757bdf920be73469ec652"
+    sha256 cellar: :any,                 ventura:       "ebddab757a7e74dffc1c9c502117535b857e32edac785a1179230609a1b90274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "635e081e16f035c14bc8fd42d7988a9dc23556fb8a5ed807d732bdbdfb4f698b"
   end
 
   head do
@@ -39,7 +40,7 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm"
+  depends_on "llvm@18"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
@@ -99,7 +100,7 @@ class Crystal < Formula
       ENV.prepend_path "CRYSTAL_LIBRARY_PATH", dep.opt_lib
     end
 
-    crystal_install_dir = bin
+    crystal_install_dir = OS.linux? ? libexec : bin
     stdlib_install_dir = pkgshare
 
     # Avoid embedding HOMEBREW_PREFIX references in `crystal` binary.
@@ -109,7 +110,6 @@ class Crystal < Formula
     release_flags = ["release=true", "FLAGS=--no-debug"]
     crystal_build_opts = release_flags + [
       "CRYSTAL_CONFIG_LIBRARY_PATH=#{config_library_path}",
-      "CRYSTAL_CONFIG_LIBRARY_RPATH=#{config_library_path}",
       "CRYSTAL_CONFIG_PATH=#{config_path}",
       "interpreter=true",
     ]
@@ -153,6 +153,14 @@ class Crystal < Formula
     fish_completion.install "etccompletion.fish" => "crystal.fish"
 
     man1.install "mancrystal.1"
+
+    return unless OS.linux?
+
+    # Wrapper script so that Crystal can find libraries in HOMEBREW_PREFIX
+    (bin"crystal").write_env_script(
+      crystal_install_dir"crystal",
+      LD_RUN_PATH: "${LD_RUN_PATH:+${LD_RUN_PATH}:}#{HOMEBREW_PREFIX}lib",
+    )
   end
 
   test do

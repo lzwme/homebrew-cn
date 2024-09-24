@@ -6,22 +6,20 @@ class Odin < Formula
       revision: "16c5c69a4079652e930d897823446b7e7a65bd2f"
   version "2024-09"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "bc23108507d97367ea953c6324baad9055543bb37d25a5dbefa01f9eed499a30"
-    sha256 cellar: :any,                 arm64_sonoma:   "ab56c361293b37e438e208570b0b0672bd7880fb8f34ba16dcde72e59a538263"
-    sha256 cellar: :any,                 arm64_ventura:  "0315ddfb713a361af3e9f718e0e2589af867b1fa6f5938a59bd38062f1b0001c"
-    sha256 cellar: :any,                 arm64_monterey: "3fbf54dc55468e995f7197377f4c25bd1dddbbc965976183a6685518c7e3ee38"
-    sha256 cellar: :any,                 sonoma:         "19cfebb66a3aa6270c385a1eadef48b4103bf1cf3cff240fd6d399acb86850a1"
-    sha256 cellar: :any,                 ventura:        "4850be318071e3603e3b22c014586a8b59f005d5e7c71ff5c773b2e3392041e0"
-    sha256 cellar: :any,                 monterey:       "51e6fa7c53828a3cbc95723dd38a75280fd9a524c5e92962340b692bf2d88392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a007c1c815520797e87fffc4afb8ab140c228332c7b6fd2711396b9230db8850"
+    sha256 cellar: :any,                 arm64_sequoia: "ca1ffb74d254d439598d235e6e0b910e2910a787122a97e07fed7c25ff1def5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "cafb4b0cb46f16f62d2edb2dae78b52b46794f9159e8672ff73b274253317cfe"
+    sha256 cellar: :any,                 arm64_ventura: "02843c1967c216de6a16bf40dd10f56f407594a7d397581c2bd6b6554b5acf65"
+    sha256 cellar: :any,                 sonoma:        "d7e7e910ad5b0145316da8a1c7a7fa3b58343e79ddb71c4d949f9d1aee486ee6"
+    sha256 cellar: :any,                 ventura:       "481cc7dfe9909bc7ed0a925002885b2367d5f9a0fd83d8fe8fc36c6bfffb9b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d333a913381a0ecd3cc5c5222c707f20cc2337797f7197a5d069995798ab7bfa"
   end
 
   depends_on "glfw"
-  depends_on "llvm"
+  depends_on "llvm@18"
   depends_on "raylib"
 
   fails_with gcc: "5" # LLVM is built with GCC
@@ -33,6 +31,7 @@ class Odin < Formula
 
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
+    ENV["LLVM_CONFIG"] = (llvm.opt_bin"llvm-config").to_s
 
     # Delete pre-compiled binaries which brew does not allow.
     buildpath.glob("vendor***.{lib,dll,a,dylib,so,so.*}").map(&:unlink)

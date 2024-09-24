@@ -4,22 +4,21 @@ class ClangUml < Formula
   url "https:github.combkryzaclang-umlarchiverefstags0.5.4.tar.gz"
   sha256 "445ae69e9ef7dcc50d0352dcd79d8c55994a7bebd84684f95405fd81168338c4"
   license "Apache-2.0"
+  revision 1
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "96289df11ad52077394f8173f1de3159117349c817ba11c80e2135a752304013"
-    sha256 cellar: :any,                 arm64_sonoma:   "ca2ac85a447a17f124d9af35041e8135c9accf744ea4fd20f695706f8679104a"
-    sha256 cellar: :any,                 arm64_ventura:  "2a883f3fde53ff4c1467348172a79dae3ee2f924006d93164af879ccb544c445"
-    sha256 cellar: :any,                 arm64_monterey: "783a0b9f50a1c5b064e1913b4d1a4910e4c4ec4a54ed1efe28ac437a00824fd0"
-    sha256 cellar: :any,                 sonoma:         "200736ce230a15a5af25d76b07efff3fe91d14077756b76be8ce401a698998ad"
-    sha256 cellar: :any,                 ventura:        "04014ddaf6aec03abf7611453987ba21c734b5c134d51b08a75b612a03fa44ec"
-    sha256 cellar: :any,                 monterey:       "33a5a27ed337b5d8f7c8ed1f31c4b95048aa666ab4ee0453bf93bbb8a15d7571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f3a9baf770cdd7cec9ae43c83c558b4cf9cd49621047bbcd9e8fec5ecc42126"
+    sha256 cellar: :any,                 arm64_sequoia: "9927bed78f589e47e24c8eacf0fcb3e136982dfe4f3120b2cc18435dce43ac8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "93dca4721249fe73a856e83c43042b92341552a8904995b508a0c68c28cf554c"
+    sha256 cellar: :any,                 arm64_ventura: "98c57248f12fda4f74a6a0ed0bba7312a89f4e96c5946050a9d1bf221611c73a"
+    sha256 cellar: :any,                 sonoma:        "a544e1ed6d5dc78353b4997ee5ec34704ebeae01d8d5fcdca372a9439a61f2ec"
+    sha256 cellar: :any,                 ventura:       "0b8240b547f5a67695d217c0ebba55ba9b19fa2806aa9e817e19ec396c95522c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca0cb3bc5af05f8471c9ef49a18a9e16a0c05de75343ae90f4ea46ac6207a33e"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => :build
-  depends_on "llvm"
+  depends_on "llvm@18"
   depends_on "yaml-cpp"
 
   fails_with gcc: "5"
@@ -30,6 +29,7 @@ class ClangUml < Formula
   end
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: llvm.opt_lib)}" if OS.linux?
     args = %w[
       -DBUILD_TESTS=OFF
     ]

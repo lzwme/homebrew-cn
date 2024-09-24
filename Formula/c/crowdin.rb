@@ -1,8 +1,8 @@
 class Crowdin < Formula
   desc "Command-line tool that allows to manage your resources with crowdin.com"
   homepage "https:support.crowdin.comcli-tool"
-  url "https:github.comcrowdincrowdin-clireleasesdownload4.1.2crowdin-cli.zip"
-  sha256 "0f4c31e7bd2953516eca843ad993cdd6ff630bdb51ac9bae41eb7c0fcc36bfe3"
+  url "https:github.comcrowdincrowdin-clireleasesdownload4.2.0crowdin-cli.zip"
+  sha256 "d79f336e0630e053ffbd056c4acf6db7d55c8ac056a519ff0f839188cdb83d86"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a3bf3b09301002b1dc6e7026f4f4bf6b347bb19016e03b879f79e6548911f500"
+    sha256 cellar: :any_skip_relocation, all: "cd8d4dc9622b3f89b4abaa5c717a3e183468f5d193426121ed80ac78fe365617"
   end
 
   depends_on "openjdk"

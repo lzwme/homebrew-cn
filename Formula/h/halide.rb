@@ -4,6 +4,7 @@ class Halide < Formula
   url "https:github.comhalideHalidearchiverefstagsv18.0.0.tar.gz"
   sha256 "1176b42a3e2374ab38555d9316c78e39b157044b5a8e765c748bf3afd2edb351"
   license "MIT"
+  revision 1
   head "https:github.comhalideHalide.git", branch: "main"
 
   livecheck do
@@ -12,14 +13,12 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "fbf7682184dfb37cd35090b6db0de25e1cac05643ef72af3468736ffbf9fba5d"
-    sha256 cellar: :any,                 arm64_sonoma:   "6b2031a500ff63249751eb8725c9fa6c210ecf153bdc804457fa283bb46202de"
-    sha256 cellar: :any,                 arm64_ventura:  "037f742560f3417064e29caf7ebf6357fb26a3f4fed5b29e03ffb3eea9ff3fce"
-    sha256 cellar: :any,                 arm64_monterey: "7e710e9a3c2220c90378e70989135cba62f9825c636418d61091b4abd02b9c68"
-    sha256 cellar: :any,                 sonoma:         "48adc9932630c4ee63b8b6e5feecadd68facf79946a899401988fe6bfe2a0033"
-    sha256 cellar: :any,                 ventura:        "87b1adb8078cd4a56bc1be2db7bad8d750a69bc2a5a884ea7bfdc11314b93827"
-    sha256 cellar: :any,                 monterey:       "f748e6696e228dac1329f3404d7c74d727ce773fd3d1266b856c658630bd9f00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d64368c6dbfc946f2d471139666b3fe0eadfcc49d8b2eaaadd5f52465ef91f8b"
+    sha256 cellar: :any,                 arm64_sequoia: "337d62bf6f959d1d169fb53a7c188f91dfff9d711885b6aff7e7a699e95c693b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4b08ec36e64c194e2d0b25973528438e5a3630b9160b6cbeec05964446951ef"
+    sha256 cellar: :any,                 arm64_ventura: "51f91908f26d48c0d9cadefedb86cf362f61a706a7f94ce76284ade185cca665"
+    sha256 cellar: :any,                 sonoma:        "e4585a4da8f90cad8e65e647e381fac0242cae2da58200b43e6502ffc4eb3a38"
+    sha256 cellar: :any,                 ventura:       "cb74ce65fd1d11bc3829432dc7e4a0eec1521b1372968d22ac29382f6d5a1db3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28101a52f9af445d2601475e476ad1a6da766d5bcb275d714107ad6b0305c823"
   end
 
   depends_on "cmake" => :build

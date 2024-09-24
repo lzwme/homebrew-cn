@@ -4,6 +4,7 @@ class C3c < Formula
   url "https:github.comc3langc3carchiverefstagsv0.6.2.tar.gz"
   sha256 "e39f98d5a78f9d3aa8da4ce07062b4ca93d25b88107961cbd3af2b3f6bcf8e78"
   license "LGPL-3.0-only"
+  revision 1
   head "https:github.comc3langc3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -15,14 +16,12 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b38dac4258f1e9081225a61fdb0e5a27bae4d5edd00807f46c2ba5e2ac39ad0f"
-    sha256 cellar: :any,                 arm64_sonoma:   "cb180a4f2deaeb13edf804482822f8c5288ef438b23f66c4827de1915dde40df"
-    sha256 cellar: :any,                 arm64_ventura:  "93acc32a9a02ebbe234321dd4637646a706070bdee7890d42e6c27b662b5f36f"
-    sha256 cellar: :any,                 arm64_monterey: "72557fa0d509682eae2d080bca8805965d13346f4315bd0caa1fdb52ac12fc75"
-    sha256 cellar: :any,                 sonoma:         "dfe32cca70fa147b8dc5939f237302293b9193db44508ee4271ca2fe0af9a052"
-    sha256 cellar: :any,                 ventura:        "92f0cd5376894a8952ef89d28b2be048f1e558faa258226e6663b07d72b44626"
-    sha256 cellar: :any,                 monterey:       "31b0c19166a07d5898b0178c129d2c8a484b127936f62d82ce28fa0a9135c6fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5f5d45917d84b6db9d75d00b32473bde36bb4b9d99e6cef363031a77e444394"
+    sha256 cellar: :any,                 arm64_sequoia: "6fceff3b368580212fb57c1c31daebf31d53f7555b16d16b8a5822ed9847311b"
+    sha256 cellar: :any,                 arm64_sonoma:  "57a190baa5a539f891b28fa56d7dccb0bd6169b6d9e819c0bb1467913511348d"
+    sha256 cellar: :any,                 arm64_ventura: "f30e7fb7d4e2b89579730d76d23bc815242115d8e805127565602a75597d46aa"
+    sha256 cellar: :any,                 sonoma:        "6b509cd22bdbee60382b5e430e7e2961c7ac18dd4eb228667cd753122fd146f9"
+    sha256 cellar: :any,                 ventura:       "efc433ad4eefc49ad65ccbf8b544cd51efc156ebad455c2f30feaf3493ded940"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35aa7fa878153939fbfb9bbdcb517efced0c22b7488a52d6b0cf00b8072de953"
   end
 
   depends_on "cmake" => :build

@@ -21,7 +21,7 @@ class DockerMachineParallels < Formula
   end
 
   # https:github.comParallelsdocker-machine-parallelsissues111
-  deprecate! date: "2023-09-19", because: :unmaintained
+  disable! date: "2024-09-23", because: :unmaintained
 
   depends_on "go" => :build
   depends_on "docker-machine"

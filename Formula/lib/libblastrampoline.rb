@@ -25,9 +25,6 @@ class Libblastrampoline < Formula
   on_macos do
     # Work around build failure seen with Xcode 16 and LLVM 17-18.
     # Issue ref: https:github.comJuliaLinearAlgebralibblastrampolineissues139
-    #
-    # TODO: Try switching to `llvm` when LLVM 19 is available as error may be related to
-    # https:github.comllvmllvm-projectcommit21276fd7beb640d5fb1a10c228c9f48f620a8eac
     depends_on "llvm@16" => :build if DevelopmentTools.clang_build_version == 1600
   end
 

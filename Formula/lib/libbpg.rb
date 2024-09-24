@@ -18,7 +18,7 @@ class Libbpg < Formula
   end
 
   # Test fails, email sent to upstream on Aug 2023, no response
-  deprecate! date: "2023-09-26", because: :unmaintained
+  disable! date: "2024-09-26", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "yasm" => :build
