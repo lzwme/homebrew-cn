@@ -3,18 +3,16 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https:github.comlanguitarpass-git-helper"
-  url "https:github.comlanguitarpass-git-helperarchiverefstagsv2.0.0.tar.gz"
-  sha256 "04a48285af405e1358139bb83193484b198e7b19f782f1b97165b62d2c964bfd"
+  url "https:github.comlanguitarpass-git-helperarchiverefstagsv3.0.0.tar.gz"
+  sha256 "3b0cda7a5eae2e93cc1ccec0ea02716db5a2ce3105c6d631f20fa20152b7a163"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7abf528867c4773880eeaf96a61583677c6df91d1d33cb6260851995f0977f2c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7abf528867c4773880eeaf96a61583677c6df91d1d33cb6260851995f0977f2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7abf528867c4773880eeaf96a61583677c6df91d1d33cb6260851995f0977f2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "161f83037615891ef298cf97940553757ed09c84da60a404c509b08a9b270101"
-    sha256 cellar: :any_skip_relocation, ventura:        "161f83037615891ef298cf97940553757ed09c84da60a404c509b08a9b270101"
-    sha256 cellar: :any_skip_relocation, monterey:       "161f83037615891ef298cf97940553757ed09c84da60a404c509b08a9b270101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e320b0f7dcf2d5ecdc49312d2504817267b4bbf3b17a02c0aeb06b37f5e7a6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e09e51c4bb4f74a853d43b12ec2b1f6f700c76a3e41c8674c9e40aadad58813"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e09e51c4bb4f74a853d43b12ec2b1f6f700c76a3e41c8674c9e40aadad58813"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef6bb158d8dfc0bb5de0253bd4bb1847f9a3af05de9d9bfb32f71499ef1c3c31"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef6bb158d8dfc0bb5de0253bd4bb1847f9a3af05de9d9bfb32f71499ef1c3c31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a78a4695879b2336e70ae38c98c86c89c488832e0e34f41374b12bad29aaf9"
   end
 
   depends_on "gnupg" => :test

@@ -3,20 +3,18 @@ class ArcadeLearningEnvironment < Formula
 
   desc "Platform for AI research"
   homepage "https:github.comFarama-FoundationArcade-Learning-Environment"
-  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.9.1.tar.gz"
-  sha256 "eaf60c7c3a6450decff3deee02b0c46224537d322cc2f77abed565a835f2d524"
+  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.10.0.tar.gz"
+  sha256 "b7cfa312c2c538f4e03e0b308c32f66c335f87b9cd4d495698601063ea9d65b7"
   license "GPL-2.0-only"
   head "https:github.comFarama-FoundationArcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7290eb7ab4df35df600c3022dab4f06be12413312be37ae8bcfa167a83d6481c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c66ca8dc6877ca4ecd9406148f9966449e609d7b63987201623032fad2e962b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c47d6a2b25720585467ee85d20f01e5b858aa3a0af60e64ed170dd38bbb7689c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ed8a7b7508464018414bf23e631fdaa3599769d9b35f3bc078388965da580e7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3819f81278dd9d54f34a0803c2d6e061f886848f06d3613fe2b26cb20d564753"
-    sha256 cellar: :any_skip_relocation, ventura:        "019a9596a7e5216ec35c0b0b6ae59a67c0e9148fd0ae6a8f0191c87a727ccce7"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9fa5e4a90b2af1ee1d5d29dfc0a15a0db1ca155d346ba78c4a8aac99072bdc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a8b7a583376f261fd5e93ab4c185d8fce92c415117930938969646d0a66d30c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c85f7f36681ca8b495730c491dfe272ab56227baa3a2b0751d5499764251edc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93d00bffd2207730debe347ff06466b3dded6e595c279b7a7be3c900445d2545"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f33a67f675aa6cc418b3f9de04a35ba83e423deeb9dc662946d5b179784b54d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "46307c897806fdcf0ddf6d5d1a7e3710c288dde8bc2d3172463d0a5de176c5d6"
+    sha256 cellar: :any_skip_relocation, ventura:       "98da0b96f2b25bbc46d80fe470b91bc5cdfd564dc6554c970153c3f17b20b5b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14129b42c2db132cfcf8a25309c349e95241663a247d08e8ce0116eadda6390e"
   end
 
   depends_on "cmake" => :build

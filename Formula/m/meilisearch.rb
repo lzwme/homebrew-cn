@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https:docs.meilisearch.com"
-  url "https:github.commeilisearchmeilisearcharchiverefstagsv1.10.1.tar.gz"
-  sha256 "171106e786222b11cf11975a208eaf1312af4461c491af53eef15a6628a6c7a7"
+  url "https:github.commeilisearchmeilisearcharchiverefstagsv1.10.2.tar.gz"
+  sha256 "d209bc617be767bcd8e58d722bc3ca8d662bdcc83823017d33cf0094179bc62d"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,14 +14,12 @@ class Meilisearch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c820dbf9a6235585a1a8fda9c8ee6c4b92fdaaa5595b776d280b9270af8d3d5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdc16d377b568506b45e8a35e36751153be9a8f97a3fe76714f4446a5522f8fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76c8d8ff034116f94b0cde8c437da5f70081df93163afa3ab25905c90c4b0ccc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88c5fb0ebec7d039b5c8714c73064f56fb2a25865ad10ddb752bea0c79821a0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5367f90d1641050c049cf4f288f6df8c681b84daae9f8aafa4988da1d898d06a"
-    sha256 cellar: :any_skip_relocation, ventura:        "76fdef0c46fa824aea1063272bcd56c13f905a296f6eb356bbfef961af5a3ed9"
-    sha256 cellar: :any_skip_relocation, monterey:       "ee1d1b419955e467d5ca94ce6fe0fb7574f27b7b6ee138eb76080c9680650b74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95864e2f475ed3f73ad98723ed9c7547a8287f458997f6376af78bc1154af37a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7264882172be4c732c72d9ea429e45f06907b3e9c5a337ee02ff1dcee8dff704"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6c11a5192fe979954f96fe9609915a79ee044c508f32d78aaf0b6a5f65f2efd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f75cb5481e5525556dade4506db9af42c7c19be9df390c7be8be82d94ec7265"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3506f962673497ddadbfeb6440de8399eaf2ceea43cb846d7794301d52f1d5bd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a787367b62bb8708fc5cb2ab86b09b387b0ad4f57735f0c60deff316fed035b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbcd52ccb92e0abd8f84bf8b329a3622a5fbc7a976046afb19fb7527f14a0ff3"
   end
 
   depends_on "rust" => :build

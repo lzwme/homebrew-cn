@@ -6,12 +6,13 @@ class SpirvLlvmTranslator < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5b98f214b493c4923f8404e662321ff0e0946cc6a13deab71132052b7356b559"
-    sha256 cellar: :any,                 arm64_sonoma:  "489b8d9d57221a75d790c4dacb37a08de3e69dc93b14d413a5a5a5409783680f"
-    sha256 cellar: :any,                 arm64_ventura: "02bd03a07e219281b557e6774d3fd24d5859c776fafd3c145a52afb1f8a41eef"
-    sha256 cellar: :any,                 sonoma:        "1319a331c15041133d588459d477c8560d6a2322eb2febd6e0d536f479ff9616"
-    sha256 cellar: :any,                 ventura:       "fcca22e86795849db9f1aeb0470743e34a8ce62abefe8aeaa4ee233f57980dec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34b6346ed7638882655be66794959cda5e2874875c036b0c31a07d61ae3ba891"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1e1ea25bca360dbccac89a44cbfa4bf15149ed6fa55705adf967fdfb0b242bfb"
+    sha256 cellar: :any,                 arm64_sonoma:  "394b8ff05d67d990a80a3233e5d7d2ba7971866a2655722c264757b6b47d2344"
+    sha256 cellar: :any,                 arm64_ventura: "970fd5b11b71181316fd0745fa0b56ec16e1c85931661fa67700c69be23e3e5d"
+    sha256 cellar: :any,                 sonoma:        "f50723f11d988cade73b5dcc3854a9a78ffcba09c059907d3e680b5e5d47f674"
+    sha256 cellar: :any,                 ventura:       "004186cd11e65065ea321f8ced16b392b9de9da5331536a7f87777abe14b97b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8685364941984a8503bc8f47d98c5307bcb415bfe5dc3c17b6f6978e9aba2e2a"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +30,8 @@ class SpirvLlvmTranslator < Formula
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: llvm.opt_lib)}" if OS.linux?
     system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DLLVM_BUILD_TOOLS=ON",
                     "-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=#{Formula["spirv-headers"].opt_prefix}",
                     *std_cmake_args

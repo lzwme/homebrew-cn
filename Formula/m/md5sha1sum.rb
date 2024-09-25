@@ -29,7 +29,9 @@ class Md5sha1sum < Formula
 
   depends_on "openssl@3"
 
-  conflicts_with "coreutils", because: "both install `md5sum` and `sha1sum` binaries"
+  on_sonoma :or_older do
+    conflicts_with "coreutils", because: "both install `md5sum` and `sha1sum` binaries"
+  end
 
   def install
     openssl = Formula["openssl@3"]

@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
-  homepage "https:docs.brev.dev"
-  url "https:github.combrevdevbrev-cliarchiverefstagsv0.6.287.tar.gz"
-  sha256 "fdc3fb57e8082bdabd3b35e2aaa8c237e7a131b45fe2be020d6582e49729c9de"
+  homepage "https:www.brev.dev"
+  url "https:github.combrevdevbrev-cliarchiverefstagsv0.6.293.tar.gz"
+  sha256 "01bc48ba507a4bd0b4f38bcc8c30575feec9e5d34d11bcb6422b01f3e1cd9d54"
   license "MIT"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,14 +14,12 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d3427ac1c181bd67c5d944df347c41a64625208dca54491e258035962600a756"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "234bb1a50884465b6551cb2d0cbe45ea82cc256a68502d6a3f4bf5f1640406b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cc9e47075860742203122fb235c5636c1c457eebb568ac7b97c67458383933d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b417a4c8959db5858a26427a5128ffb8fb3509705f313ceb48cd18e5c9e38563"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46c3da624d0f26bba44d658e1939d078db06c699410ec9ffd0fbacbabcc9f1e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "04ef9cbe9a15342f476bdccab638d75c6941abd93a86c5bbed93c3351620395c"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb0b22af3da3943051e081c63ed2156cd0588ae4af13e32d19c0f1fa8ee556a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c6dc47cf374c604a6af7d685c6915b24f334208eac99b7b11f0ad11e5bbc115"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5627ed649c6a14f30056309e2337e1e7ab9a8f046d0bbd95eb1c377e08225d8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "116cb9ae7c7b4309ee16ad6bba9c1f84a8045d2af6aa8b5a6401bfd350a48f69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26cd07a33d47201cefbce996a2c5a920157c193019bd0ec85c17b512d595647c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cbf6d728df89a62f6627323fdd904d0349454df1da3049181c41ac65e519c24"
+    sha256 cellar: :any_skip_relocation, ventura:       "abe627ad9e6d435794f766edb68a71440d6778ef2ee667b23ea443ded57fb008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135a13b0c6a1019ed46e73228c91dac69674053de2fe8db2f3b90eccf9cc3d26"
   end
 
   depends_on "go" => :build

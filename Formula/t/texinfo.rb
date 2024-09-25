@@ -7,14 +7,13 @@ class Texinfo < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "86e1d9c9fadd4254c9041dada352b019d21f55c0d9e322c89aa1c6ee37d98929"
-    sha256 arm64_sonoma:   "6390c0f99e487620c1ab5471117786f8155eef3bc252be0f19a2f85839678466"
-    sha256 arm64_ventura:  "609fbc841b8caa53166976593f38e3b2a180f7a1fd0810eb5a42a3a1c4ed0b31"
-    sha256 arm64_monterey: "f0595a72efd5e41c0eea39fc5b91dec688dd3ac46139654504f5cde2f168c3db"
-    sha256 sonoma:         "b6d2c72b0b1002d1792ee4a77f66f94b768f9ee7db02be49802015eedac0abe8"
-    sha256 ventura:        "a61657f46186aa315cce906490c62518a038c52b8701a0239338fbe52e829025"
-    sha256 monterey:       "0bc745d2f4832de01270c41ba136c4f59be478b416342448d61b4b7e5c191fd1"
-    sha256 x86_64_linux:   "7a870bba36f9be99ca36018004d5ac591818279fd71725e4a3269e965281cace"
+    rebuild 1
+    sha256 arm64_sequoia: "9082daa6193349571bd407956bc3fb549368a7347ccbb0a86b5758dbbaccf126"
+    sha256 arm64_sonoma:  "aa6c8308ee525e1e4ed0b472ca83e9f93eb87b41b4e2194bc32dda0daaf83400"
+    sha256 arm64_ventura: "c2c12504461c084e4b5e57007d6089b7a93a976be08799875e72e5cc88050e76"
+    sha256 sonoma:        "74052641f0b6ae249d7910f1a5b08d7a74f2074c0f8c5996d4425d020caddc57"
+    sha256 ventura:       "5a8459fa51586034fa392457e581e24536b026ae1fad182253ecfd19a6db1bbf"
+    sha256 x86_64_linux:  "72a305001a5d11e454e7deaace1e8a08cd1f3f9914d00145ec34da0871d9a6aa"
   end
 
   uses_from_macos "ncurses"
@@ -35,7 +34,7 @@ class Texinfo < Formula
   def post_install
     info_dir = HOMEBREW_PREFIX/"share/info/dir"
     info_dir.delete if info_dir.exist?
-    info_dir.dirname.glob("*.info") do |f|
+    info_dir.dirname.glob(["*.info", "*.info.gz"]) do |f|
       quiet_system("#{bin}/install-info", "--quiet", f, info_dir)
     end
   end

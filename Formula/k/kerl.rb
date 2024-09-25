@@ -7,7 +7,8 @@ class Kerl < Formula
   head "https:github.comkerlkerl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0bb9b435fdad340f08bc6dd37877aa75041019eccf6b145b4a558c444e6b855"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5c6a6d8332eeea9cc03e8bbdf5cb26b8f85a6cb636e1127c17907fd9832c8d45"
   end
 
   def install
@@ -15,6 +16,7 @@ class Kerl < Formula
 
     bash_completion.install "bash_completionkerl"
     zsh_completion.install "zsh_completion_kerl"
+    fish_completion.install "fish_completionkerl.fish"
   end
 
   test do

@@ -20,6 +20,8 @@ class GitSpice < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "ghostscript", because: "both install `gs` binary"
+
   def install
     ldflags = "-s -w -X main._version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin"gs")

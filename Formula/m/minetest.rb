@@ -2,6 +2,7 @@ class Minetest < Formula
   desc "Free, open source voxel game engine and game"
   homepage "https:www.minetest.net"
   license "LGPL-2.1-or-later"
+  revision 1
 
   stable do
     url "https:github.comminetestminetestarchiverefstags5.9.1.tar.gz"
@@ -24,12 +25,12 @@ class Minetest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "883006c0b92b264f44b3be436d961c78e9cc1aad2a27e86243c566ea11657a41"
-    sha256 cellar: :any, arm64_sonoma:  "356346e62a73c3abd5aa26b938230c5522ee02642a9d91b86c6a8390f761439d"
-    sha256 cellar: :any, arm64_ventura: "79169ab7d2226e23bd877dcaac48effc607bcbcccbe9e0c7173f8fc223a7dc19"
-    sha256 cellar: :any, sonoma:        "86e5ea34a76d5d73fcb9e429a67ad464f9df73408d39e2e30a8bbeaa4a5afd9e"
-    sha256 cellar: :any, ventura:       "89629873d1fea0c717bfc6937574106c6a421e4e376428929c33cdb6cc464ab2"
-    sha256               x86_64_linux:  "6708859348bde047c9a966021a741d313c1c43eef7f34234f6dcb153ccdcd110"
+    sha256 cellar: :any, arm64_sequoia: "31b38964edc4fb6bad8830a28bf4db4f34befb6256b6924a68d9e0b74a4905e5"
+    sha256 cellar: :any, arm64_sonoma:  "91eae1529bf5e5906dad91a3b40cd07ac2e7b2541d6146cc16b57cfdf6dd48de"
+    sha256 cellar: :any, arm64_ventura: "c8beb0ff42ab5a252851e0cfdf4c47a4b82bef7224de6f23c23d685fbbc0bd67"
+    sha256 cellar: :any, sonoma:        "94b69871386736f7d31e3626f2860e7014666fd1385152f8f9657c66c296e9e8"
+    sha256 cellar: :any, ventura:       "cbf8d020363989b3bbf8de24546e14132ef4c2dc6a1afbfddadf55d4e3fd886f"
+    sha256               x86_64_linux:  "1e7820a19108f1d61a5cc26d35ab8a65e3d12eb3b46aafd38ab052bf8bd2bd10"
   end
 
   head do

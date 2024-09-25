@@ -30,7 +30,7 @@ class GccAT5 < Formula
   # This should be removed in the next release of GCC if fixed by apple; this is an xcode bug,
   # but this patch is a work around committed to GCC trunk
   on_macos do
-    if MacOS::Xcode.version >= "10.2"
+    if OS.mac? && MacOS::Xcode.version >= "10.2"
       patch do
         url "https:raw.githubusercontent.comHomebrewformula-patches91d57ebe88e17255965fa88b53541335ef16f64agcc%405gcc5-xcode10.2.patch"
         sha256 "6834bec30c54ab1cae645679e908713102f376ea0fc2ee993b3c19995832fe56"
@@ -110,7 +110,7 @@ class GccAT5 < Formula
       args << "--with-system-zlib"
 
       # System headers may not be in usrinclude
-      sdk = MacOS.sdk_path_if_needed
+      sdk = OS::Mac.sdk_path_if_needed
       if sdk
         args << "--with-native-system-header-dir=usrinclude"
         args << "--with-sysroot=#{sdk}"

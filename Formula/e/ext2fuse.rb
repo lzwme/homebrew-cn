@@ -7,7 +7,8 @@ class Ext2fuse < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf8a8ab7893e4703857cc93f41853567140bb2713e90dffd0db844d916d83ce9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe9d3ea0a65c95de091aecb536ee498015bdc07b7c12e4367617cf9e78c76941"
   end
 
   depends_on "e2fsprogs"

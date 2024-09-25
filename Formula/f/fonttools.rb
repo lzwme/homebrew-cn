@@ -3,18 +3,18 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https:github.comfonttoolsfonttools"
-  url "https:files.pythonhosted.orgpackages515438a74ffda513f6bc3d642dc4fbeeccbd21c2fe4db637b47dd2d1c1bd43bffonttools-4.54.0.tar.gz"
-  sha256 "9f3482ff1189668fa9f8eafe8ff8541fb154b6f0170f8477889c028eb893c6ee"
+  url "https:files.pythonhosted.orgpackages111d70b58e342e129f9c0ce030029fb4b2b0670084bbbfe1121d008f6a1e361cfonttools-4.54.1.tar.gz"
+  sha256 "957f669d4922f92c171ba01bef7f29410668db09f6c02111e22b2bce446f3285"
   license "MIT"
   head "https:github.comfonttoolsfonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "513e95668613a05777b8c585987e2d666da15d46a094fb1cb49f524314526008"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5f601aaa6f2beb584f88668a39c16a7d27ef03e6c5c7d292dbd1d85fe4146e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28f3ad7a7d365a590b62547f506382770f0042741800421e78dbb799ec974584"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c68833d51efe8aa480c06114cc19973922c387c82527c80dc69e06a0870a29cb"
-    sha256 cellar: :any_skip_relocation, ventura:       "389c6a1307875b82258607d9ab6b9864cfd7cf6bb875a3f3da69a3f7bcb4154b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba1c3afa0c35ccd96f7a62cc88584f94b4e632ad06477c020e17ed444ffa0805"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "547cc7fa352c17eaf56b471cb6d8017e42c374ccf194e34832153384f6f41b8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81ecdfabd98cfd41453c5e4d413e2cc0b531c36f3ede68dcb62291c2b90d32da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "261ee9640f02c3e0ab908dbc9dc64e7368142f213a51e2529f0e886af5093a43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "542f3fb9fc5d65f6188b1cc4eafb3fe2430b8d1257dd44ac11d24e81102cb2cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7a4fcb65cbc9bd024b712ebc11b4ced3bed1eb94b59dd545a6964f05dd6d363"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d6473b1ce2ae00ef7427679b108fb339ddf90e4795910a75fbaf7e60cd461f1"
   end
 
   depends_on "python@3.12"

@@ -1,18 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https:github.comfacebookincubatorfizz"
-  url "https:github.comfacebookincubatorfizzreleasesdownloadv2024.09.16.00fizz-v2024.09.16.00.tar.gz"
-  sha256 "e516e1dd32c466491ad6dfad7b25335d92e80f755bbaa52d34f4431063d28e7b"
+  url "https:github.comfacebookincubatorfizzreleasesdownloadv2024.09.23.00fizz-v2024.09.23.00.tar.gz"
+  sha256 "becb7ba4a31f18afe1f92d0effabcc22edd41e82a83d8710e02ea3a12f2c8b95"
   license "BSD-3-Clause"
   head "https:github.comfacebookincubatorfizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2bd5418e2c481711322bfe2531e7691f52edcfee0ee3781fe95caf7b5cb30821"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb08c3c5e3648b84d4a2afb557395f89a066ab0a5bf156377498ecef5995c46b"
-    sha256 cellar: :any,                 arm64_ventura: "42bcf72b28c82a121ce6016cd39529202cfffc72a71f53696d13c82f59e63564"
-    sha256 cellar: :any,                 sonoma:        "0e6a9227acb47a557690472c32071b0e108bbe3dc1bdb9be47e8de72ba11e904"
-    sha256 cellar: :any,                 ventura:       "5b77295f015cc0f3e6a97bd9e3ee994028f2a842fe2ba88cfbe52088219cabac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc73b796e55cba395050b090b6172cdd3324ac2eebfbd05b626220734560a49c"
+    sha256 cellar: :any,                 arm64_sequoia: "b4aacbc606834d1e43ec0542127290317b94c56039baaa2be3398617f8eaad18"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8d2d4e24de5a1f638f851030ff77a5c5575adc92352b0e60689ff53b495db1e"
+    sha256 cellar: :any,                 arm64_ventura: "d233b44733885d782218b4c6994e442cf5eb3ed6ed36c794cf1eba378ac5ae5a"
+    sha256 cellar: :any,                 sonoma:        "c2e9ddc1a653bf24d6f12517b4414f3d7b3df30728b23d4bfb0f28ad1ae00893"
+    sha256 cellar: :any,                 ventura:       "44d6a31084c32ebde12504bfd8019d4a5c3e8fd9b6443a54e32ddd8fba23b489"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc4da05a32df0704a3e6666277019475ae2d84ab4f4640f23c75ab5fb83786ad"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -123,18 +123,22 @@ class CodecovCli < Formula
   end
 
   test do
-    require "securerandom"
-
     assert_equal "codecovcli, version #{version}\n", shell_output("#{bin}codecovcli --version")
 
-    # Unfortunately `shell_output` doesn't capture standard error
-    output = shell_output(["#{bin}codecovcli create-report --commit-sha #{SecureRandom.hex(40)}",
-                           "--slug testrepo --token #{SecureRandom.hex(10)} 2>&1"].join(" "))
+    (testpath"coverage.json").write <<~EOS
+      {
+        "meta": { "format": 2 },
+        "files": {},
+        "totals": {
+          "covered_lines": 0,
+          "num_statements": 0,
+          "percent_covered": 100,
+        }
+      }
+    EOS
 
-    ["No config file could be found. Ignoring config.",
-     "Process Report creating complete",
-     "Report creating failed: {\"detail\":\"Not valid tokenless upload\"}"].each do |l|
-       assert_match l, output
-     end
+    output = shell_output("#{bin}codecovcli do-upload --commit-sha=mocksha --dry-run 2>&1")
+    assert_match "Found 1 coverage files to report", output
+    assert_match "Process Upload complete", output
   end
 end

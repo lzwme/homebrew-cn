@@ -6,8 +6,8 @@ class RofsFiltered < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a07f54de644092a439c5ae5a537aca17499ea8b1dad446bb1610f1fb30aaf5cf"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae07e1e4a0daa79c067329aeafc4078dd7f74c793ccb1a2ade7c3dedf0f05ade"
   end
 
   depends_on "cmake" => :build

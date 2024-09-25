@@ -7,7 +7,8 @@ class Ext4fuse < Formula
   head "https:github.comgerardext4fuse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5dc94c281e33bde87ef6c239f7ac37ad6653e72d002359ffb01d0f50f1e8278c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0f92633dbef2c93356457d0c0a45b16b5376ca739b20f7a3bc6e6f74298f1f7c"
   end
 
   depends_on "pkg-config" => :build

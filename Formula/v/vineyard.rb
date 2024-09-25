@@ -9,11 +9,13 @@ class Vineyard < Formula
   revision 3
 
   bottle do
-    sha256 arm64_sequoia: "372217d845366fd9983bed6d58ca20b7e3818cf8fb1d6c45908d4c870501a8f7"
-    sha256 arm64_sonoma:  "a0c381bbbf4debb2c173d5e29604b935537f75479a786c98efbede7b3ac6ba29"
-    sha256 arm64_ventura: "9a77263854d8ee0c611eb0e1a4e36c33e0c0ff51fb6e73d36e2c0bd4db965616"
-    sha256 sonoma:        "0659c3ce7f76f389aab68230d1a90c318b2ccc178a63a06bb993db5f5dd6a05c"
-    sha256 ventura:       "c8975c1528ed68e2380e26a866e9e457e667443c4762eda0811c255e1a823929"
+    rebuild 1
+    sha256                               arm64_sequoia: "f443f244add2120f42c3ffe1177aaf0db6a0a12280ee39e890fa4e4edfe18808"
+    sha256                               arm64_sonoma:  "455f9c91e16b9f48a90386b646fd77e840ac8d4367b1a813484d2829f3e31596"
+    sha256                               arm64_ventura: "fdadc16b06ee0a61b136156b78caa0a86e6675f454f81b294d27de39116b9359"
+    sha256                               sonoma:        "4905ecd40b9494d664029463e97a78820ec5de1a6e43f4d59a8a4c8288fbb69e"
+    sha256                               ventura:       "486a2c285506dc241034b56d36b2bd88c5f6c69aea2bb2a489ac7728c6a92bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e56a3247d661ce03e6cafb3b3bc144a4824e390b308fd6ccd26a2012a3bac08"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -113,21 +115,13 @@ class Vineyard < Formula
 
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm.opt_lib
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm.opt_lib if DevelopmentTools.clang_build_version >= 1500
 
     # Remove Homebrew's lib directory from LDFLAGS as it is not available during
     # `shell_output`.
     ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"
 
-    if OS.linux?
-      ENV.append "LDFLAGS", "-L#{llvm.opt_lib}#{Hardware::CPU.arch}-unknown-linux-gnu"
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{llvm.opt_lib}#{Hardware::CPU.arch}-unknown-linux-gnu"
-    end
-
-    # macos AppleClang doesn't support -fopenmp
     system "cmake", "-S", testpath, "-B", testpath"build",
-                    "-DCMAKE_C_COMPILER=#{llvm.bin}clang",
-                    "-DCMAKE_CXX_COMPILER=#{llvm.bin}clang++",
                     *std_cmake_args
     system "cmake", "--build", testpath"build"
 

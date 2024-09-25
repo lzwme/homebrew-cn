@@ -16,18 +16,26 @@ class Orbuculum < Formula
     sha256 cellar: :any, arm64_ventura: "f760943e7594b9e1489341e0960375c0acabb46ca2758d303dc6b6e07cb09e67"
     sha256 cellar: :any, sonoma:        "30dbcf1b1a0c3b492c3f4058fd1b63177b3223d81c76306334ad87420041a81e"
     sha256 cellar: :any, ventura:       "ee99b891380579be06c4419f1952676469845ba51b3a3832d99f0f949ccd9097"
+    sha256               x86_64_linux:  "e426f5df95dd41d4fcc31f85851f4a4b5a91f5211c3b756dfb900829ab437d9c"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "capstone"
-  depends_on "libelf"
   depends_on "libusb"
   depends_on "sdl2"
   depends_on "zeromq"
 
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "libelf"
+  end
+
+  on_linux do
+    depends_on "elfutils"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

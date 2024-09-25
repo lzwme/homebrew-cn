@@ -1,18 +1,18 @@
 class Kubelogin < Formula
   desc "OpenID Connect authentication plugin for kubectl"
   homepage "https:github.comint128kubelogin"
-  url "https:github.comint128kubeloginarchiverefstagsv1.30.0.tar.gz"
-  sha256 "4f17cbc7f9bc25f493cc4b7eeb05d1be1f908735186a763c78c77bd6b3931d5b"
+  url "https:github.comint128kubeloginarchiverefstagsv1.30.1.tar.gz"
+  sha256 "3a9f71a1b0192c5fee6656bbe5190579756ce1d5fcde0446c28d985039182068"
   license "Apache-2.0"
   head "https:github.comint128kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "baaebfe34d1c093d17fcc7bdce8aba5dbaafc46a6329e239f92ce9bfb8fe4a8a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02137d9600043aa450cfc08f6af3d87148cc78cf12b1e4d21b8d62faf8f76ce0"
-    sha256 cellar: :any_skip_relocation, ventura:       "02137d9600043aa450cfc08f6af3d87148cc78cf12b1e4d21b8d62faf8f76ce0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860459b6a19c08d26e060e4d047bc6e86f2588ea936f06fc5123818e43f3d6ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0904aac4d1114c91a22ad60f5636c49cb0749bcd2642cf6de6a7c80a4b86600"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0904aac4d1114c91a22ad60f5636c49cb0749bcd2642cf6de6a7c80a4b86600"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0904aac4d1114c91a22ad60f5636c49cb0749bcd2642cf6de6a7c80a4b86600"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79a25d589eb0d14d62486b695e4967439c9b1251a799aa4ab225962ea6338138"
+    sha256 cellar: :any_skip_relocation, ventura:       "79a25d589eb0d14d62486b695e4967439c9b1251a799aa4ab225962ea6338138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1067dea64447c01fd83bb764147fd2cbf0852f754e2301ff1d7bc7012e43207"
   end
 
   depends_on "go" => :build

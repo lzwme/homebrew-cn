@@ -4,37 +4,35 @@ class Shaderc < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comgoogleshadercarchiverefstagsv2024.2.tar.gz"
-    sha256 "c25e24d47c911b808266684d9c75ee09a390a5c537c17465eb15ea6905e702c3"
+    url "https:github.comgoogleshadercarchiverefstagsv2024.3.tar.gz"
+    sha256 "d5c68b5de5d4c7859d9699054493e0a42a2a5eb21b425d63f7b7dd543db0d708"
 
     resource "glslang" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupglslang.git",
-          revision: "fa9c3deb49e035a8abcabe366f26aac010f6cbfb"
+          revision: "467ce01c71e38cf01814c48987a5c0dadd914df4"
     end
 
     resource "spirv-headers" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupSPIRV-Headers.git",
-          revision: "2acb319af38d43be3ea76bfabf3998e5281d8d12"
+          revision: "2a9b6f951c7d6b04b6c21fe1bf3f475b68b84801"
     end
 
     resource "spirv-tools" do
       # https:github.comgoogleshadercblobknown-goodknown_good.json
       url "https:github.comKhronosGroupSPIRV-Tools.git",
-          revision: "0cfe9e7219148716dfd30b37f4d21753f098707a"
+          revision: "01c8438ee4ac52c248119b7e03e0b021f853b51a"
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "df89f0679140f630df19c1faf5d0bc62819257e46c9714d56092d2082a121b52"
-    sha256 cellar: :any,                 arm64_sonoma:   "75a5c3c0170541f38928bc7370c230892cceaa9a7fe9e43dd6f53479c2e686d7"
-    sha256 cellar: :any,                 arm64_ventura:  "a23023cef71372bca68efa098a1bebb8a0baab3214f9d3ad434c9e05bd96d768"
-    sha256 cellar: :any,                 arm64_monterey: "d071ac282a4f7142ce6a2ed53d9f776e5b570d236b9cde4c812b7d9e1b53bb51"
-    sha256 cellar: :any,                 sonoma:         "d3911e1746dfd2e49d4900ef5b8253fd30b95df4090d3facc1e95670dd06715b"
-    sha256 cellar: :any,                 ventura:        "5c293e476300072c0933fc56f09badd670770dda5faf6c37cfa2f1ee8de75780"
-    sha256 cellar: :any,                 monterey:       "02cac858fd503282319ffa2b010bc1499c10c8f041f3cde51853a8e57ee38871"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8be0eba9af14d9b4b9f8826cee5e347c7c894be37c50795232e30188a53f934c"
+    sha256 cellar: :any,                 arm64_sequoia: "1b081f14c99cdb93b9e75ff5cb457989fdc8660a9e3bb764e4b9046cfcddaaa4"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0563a0b3c9a0ca136fbfe1d0a0218d8a61d0eab13e308a80536ced0dc2acd25"
+    sha256 cellar: :any,                 arm64_ventura: "81e4be8a39cc4b197772a215230c78fb86f61c3c41898f15adb7409b991c6c98"
+    sha256 cellar: :any,                 sonoma:        "d7908e7504c77cbaad0cc90c172b94b509bed194e1c82f5c01dbeb24ff1bd086"
+    sha256 cellar: :any,                 ventura:       "753ab423ad44a3357d5cbef987d43990f1173e9ba95b1f0b95da7272e06b83a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "810f75d4cdd8b07b1fdecd9a100fad7eb332662421c7d880feb524e0a4e03b4e"
   end
 
   head do

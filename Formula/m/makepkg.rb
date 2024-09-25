@@ -30,7 +30,7 @@ class Makepkg < Formula
   uses_from_macos "python" => :build
   uses_from_macos "libxslt"
 
-  on_macos do
+  on_sonoma :or_older do
     depends_on "coreutils" => :test # for md5sum
   end
 
