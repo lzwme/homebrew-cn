@@ -3,17 +3,17 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
-  url "https://files.pythonhosted.org/packages/d4/c7/b7e4b96a0e7d9b94fe953e1b55b3573bec498bac05f72e61e5a0e979e2c7/esptool-4.8.0.tar.gz"
-  sha256 "f933150b5753e7501024e4d237fe078a77913a0cb7e2f08197ef8d70306b1b53"
+  url "https://files.pythonhosted.org/packages/5c/6b/3ce9bb7f36bdef3d6ae71646a1d3b7d59826a478f3ed8a783a93a2f8f537/esptool-4.8.1.tar.gz"
+  sha256 "dc4ef26b659e1a8dcb019147c0ea6d94980b34de99fbe09121c7941c8b254531"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d8ab4a992cdb45c3cf813267b05e573dd42437c5605f0e8bb458155e5ead008d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1befe86009f2dc70cc8d4423414eab75060b3a902c1e3f0ce3f083df20bf76a4"
-    sha256 cellar: :any,                 arm64_ventura: "35ac746d4fb7d398bc3bfb7a629684d6c38a75dad7d97fbd94de34e79e6479fe"
-    sha256 cellar: :any,                 sonoma:        "e315dd083e58423179467ac095aa1b9c17b424ba6252a735c2b8506fa2578257"
-    sha256 cellar: :any,                 ventura:       "25acc5e5731a8bd3e75de8d2b3705f16bfbc7718c10609dfd12b5b3e1b6e6233"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6851b97200b94de7c4bad9bb8d86234258d1071a38e054e84de6b8b8ea83675d"
+    sha256 cellar: :any,                 arm64_sequoia: "a6c251c00bcd0db0cf7a24cfc19d019964af4348784c3b6cf68698f8d5f859e9"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c1fbe4c38793bf1cf0e35d5d9346f4022a559e8a6200ce96adc7409e834b148"
+    sha256 cellar: :any,                 arm64_ventura: "5b948b967078deeadf91209ae140128962fb97d30ec2a1c1a83e83dfce58355b"
+    sha256 cellar: :any,                 sonoma:        "189fbee589d3a52bcdea881875a157354051a5c48890698832e917d714e9fb1d"
+    sha256 cellar: :any,                 ventura:       "b46ee19677f2c554294b68c86e235abdc413f157dbd780f2ff98d25ac449f5c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f00cc619d59c94294a641f12c44f4079f3e3a6a1cb64655895b0a06a0a850911"
   end
 
   depends_on "cryptography"

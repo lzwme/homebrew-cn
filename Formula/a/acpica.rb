@@ -1,8 +1,8 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
-  homepage "https:www.intel.comcontentwwwusendevelopertopic-technologyopenacpicaoverview.html"
-  url "https:downloadmirror.intel.com819451acpica-unix-20240321.tar.gz"
-  sha256 "54a299487925fd3e0551c95f9d5cee4f4984930273983eff67aa5cd46f8f338b"
+  homepage "https:github.comacpicaacpica"
+  url "https:downloadmirror.intel.com831952acpica-unix2-20240827.tar.gz"
+  sha256 "d540e982f1391c2e5ee57c391d73035b40ba4fb2a98cee626db6ed12db59a737"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
   head "https:github.comacpicaacpica.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Acpica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d2e7600b19a48c02e30e1033e0dd5d2d2074cf43f9f7aaf5d22ac21c19de76e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aca6ac27a50ddca345af0b68560b7ed98f99cc7f1e1f54e05baa9dc3ab2d8256"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fc6c354fbf85c390a73453899e19012702ce2b3f70892fddec69cbdb3999d72"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37f3095f9e790bea7e22700aaee279bb701634b2433b497c79ef9e427556b20b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d9463522f0ba27672ad9481cc8b61446fdb687a38f7304697c5fd1eae28ff38"
-    sha256 cellar: :any_skip_relocation, ventura:        "08911b72f49ee6010719948991cbc0477cfc415d5bba6727e8e037ef9b7c194c"
-    sha256 cellar: :any_skip_relocation, monterey:       "75b6722b526aa97a9b61da965c99200903ba36a7699a4da20603333e8020dbef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13212ac69dfdbe188c0b91a0d80de8e99483dc76c90d60c62b016ba75469c769"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b31e8c7f95deee0bd189976e2c0a5a97cb11b04a3a3ec436a638b6966ba72422"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ace6ea218550e822c41196257feb968d985866d37c7ece028c8b9741c74bfcbb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2eb8e278dfce3b743399d9ec82bab589fc02db5c5e5ed15dd8ce44843e5942b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "97b4de1502aff4b2dc06e1e056397f4c013137a2d439b3047d967caaf7182c73"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c535e6f6302cf90254d1f89d51e5ba8d082f4cc86d1a8c2a51975dc91dfeab5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "332dfe0f91060ad3d0aa3d8ce4b7d747da6dcc77f92b0fcd51f4cdbde1ac4a71"
   end
 
   uses_from_macos "bison" => :build
@@ -27,6 +25,9 @@ class Acpica < Formula
   uses_from_macos "m4" => :build
 
   def install
+    # fix acpixf.h case issue, upstream bug report, https:github.comacpicaacpicaissues971
+    File.rename "sourceincludeACPIXF.H", "sourceincludeacpixf.h"
+
     # ACPI_PACKED_POINTERS_NOT_SUPPORTED:
     # https:github.comacpicaacpicaissues781#issuecomment-1718084901
     system "make", "PREFIX=#{prefix}", "OPT_CFLAGS=\"-DACPI_PACKED_POINTERS_NOT_SUPPORTED\""

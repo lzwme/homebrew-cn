@@ -2,8 +2,8 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https:cadenceworkflow.io"
   url "https:github.comubercadence.git",
-      tag:      "v1.2.12",
-      revision: "f3350d0da50887770d7c365dc270703ff26b4178"
+      tag:      "v1.2.13",
+      revision: "f6e4360c99e083e4b64c7b3b3e781c8205074e79"
   license "MIT"
   head "https:github.comubercadence.git", branch: "master"
 
@@ -16,14 +16,12 @@ class CadenceWorkflow < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3fa19acf1273dbbda378f088c8b18cfbbb7af4fb33d3a07c025f8413aa273304"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2472be6f8e45cafb9de2f92898e933d798a08458090292eda07f3f38b4c920f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a9cc7e9a0cd2b8b62d5856b30da0f8a908c7b3ce5e1a5ce433fa621b883fa3d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5232107997c53fe801ddcd7646a63dfb52bb5fb8577a0878d5102b6237bd287"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa8bef8f4f8ff7e721c780417bca865500468a35d491a59cd32b0d07d849d3ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "6003cdd0950385cf0453cfbf5f06321255f2c526f2b2d181510d174d31fb58a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b7b24e99141d445d7a62607b7f130b5f1f3f701946a02a1d6f199c2b8743c01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "670f6605b97fa449c129aee7d6ee51ca4a7f2e8a7f8846773e5eaef585b2bda0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "205a9723f7e6df58788e4877f7bb2c10f01523954eebb6aa3a72ba0ba638e971"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8745c730e6d878189ec1c5b7bc3ced909127323cd1603d09996cdce6349916e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "92d5c58f4c29946bcc120b4f16fbd3d72672cf46d4ee3bb6f3df7f88eaea2cb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef3dc802ab13fc51e00722a4a699d0ff1df040162505eb94762fcf86b3a4e747"
+    sha256 cellar: :any_skip_relocation, ventura:       "204e80cbaa6284a7f5198f98f411c815b988ed4b0cb82e3ee7accfd8298e844b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f2ac143064b276e89649214a4ba8b344bfcfbca905b5157a8d041e1319af38f"
   end
 
   depends_on "go" => :build

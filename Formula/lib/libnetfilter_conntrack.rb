@@ -1,8 +1,8 @@
 class LibnetfilterConntrack < Formula
   desc "Library providing an API to the in-kernel connection tracking state table"
   homepage "https://www.netfilter.org/projects/libnetfilter_conntrack/"
-  url "https://www.netfilter.org/pub/libnetfilter_conntrack/libnetfilter_conntrack-1.0.9.tar.bz2"
-  sha256 "67bd9df49fe34e8b82144f6dfb93b320f384a8ea59727e92ff8d18b5f4b579a8"
+  url "https://www.netfilter.org/pub/libnetfilter_conntrack/libnetfilter_conntrack-1.1.0.tar.xz"
+  sha256 "67edcb4eb826c2f8dc98af08dabff68f3b3d0fe6fb7d9d0ac1ee7ecce0fe694e"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,8 +11,7 @@ class LibnetfilterConntrack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b663529724c11852abaf98fc2ab0a6d82a2d9895d7f6431aef68ebb0ad92be6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae07370b1802d6089195cb605b4010635126ca6f6f37d20023c5f19ff9b833e6"
   end
 
   depends_on "pkg-config" => [:build, :test]

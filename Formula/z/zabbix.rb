@@ -12,12 +12,13 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "092577ccd73c5f95c4ee97a47df953b0ea629711ffb44fc5a11bc2ba0e6dbf3f"
-    sha256 arm64_sonoma:  "acbe166691f3ac22d62c53b45f28133bbb00d153761ef81a25c3c37c86b99d53"
-    sha256 arm64_ventura: "bf6a2375885e698bb107645aa9c8faaa608e8035e96e6228c21491ff8b6ad961"
-    sha256 sonoma:        "c8b9fb3c311ff754ccd55e5c88a478869561311d6d008b13a1b52278b0bc8bae"
-    sha256 ventura:       "c507d2514ea1d4045e78707383b1460d8ee6087c15ce87ab87e534b0e6dad0e1"
-    sha256 x86_64_linux:  "3ed10534cdce3a4e255c29179d675619d3b126631dc312d1f584b0c3fd0442b3"
+    rebuild 1
+    sha256 arm64_sequoia: "20b5924a3f4eec8a1f9eafdd459f6b7198586434b1d64b191c2022d774ae48a1"
+    sha256 arm64_sonoma:  "0fdf1fc44b067082fe5bf0f7df3a703a7be2bdfaac0695b99746508a977e65cf"
+    sha256 arm64_ventura: "3f601e9a20984d1919d55ed14998ecbe678c7150379c3b72e29b4275614ca521"
+    sha256 sonoma:        "086326103709a6c3eb340aa374ef5fc81b38481c6a0fb9f22ae8a16f1c972a25"
+    sha256 ventura:       "c146f602125ac121162029a259f694fac4560912a0e547d3af98d443a6249f89"
+    sha256 x86_64_linux:  "4b79b6130b1f79994d08117e5722023d6de15ff47ce44f94755d5ca06bad377a"
   end
 
   depends_on "pkg-config" => :build
@@ -27,6 +28,7 @@ class Zabbix < Formula
   def install
     args = %W[
       --enable-agent
+      --enable-ipv6
       --with-libpcre2
       --sysconfdir=#{pkgetc}
       --with-openssl=#{Formula["openssl@3"].opt_prefix}

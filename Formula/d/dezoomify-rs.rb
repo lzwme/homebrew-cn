@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https:github.comlovasoadezoomify-rs"
-  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.12.5.tar.gz"
-  sha256 "aa3e34c257c6f4bda6afb485a9f787e8d99664fce0f8a87303d77f4cc7dd3c72"
+  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.13.0.tar.gz"
+  sha256 "b10bbb08d1e0f135f9db98a264e1b07dc05520b1968f433de2282cd74f004ebc"
   license "GPL-3.0-only"
   head "https:github.comlovasoadezoomify-rs.git", branch: "master"
 
@@ -15,12 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a166c70ef80e1e2424fe077b80a9fbe4a9bee71414765b0985675647a2f6a4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a87f1ed82055073136d92cf241ca2c927bfd6342e0ca0ef0c5be1b8dcffedf8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1f5a790d2f4450c3ca2d1f727eba238f43e661c71fe413541c0a0082d8dd359"
-    sha256 cellar: :any_skip_relocation, sonoma:        "643e17c2e549b671bbb15d36ed9b20aeb6a32e32dd87ca1f8cd2824dcd86eb86"
-    sha256 cellar: :any_skip_relocation, ventura:       "a2a11962cca1a68ac66a6a349b06a01dc787c9faa113775eca345af150e1bd5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d38435fa39db5a7bace994236bd6d94c1aacb4c8f515b814accc2813d186a81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6108be976ce125b6bff8f8ac0e3e961d9241c9c516d45ee136cdc1462ce689be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff85552168051685953432ef73daf408f75b248aac71a5823f94cc1ba76f17c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e1400a24bb9c455275a4d7fe2dd522bb6f54bc5e9a1f631fd0290ed657e0e96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d89fe6376c15244f784963fd9ea1bc5226088978f95c8a47c8eb41da9ac6ef3"
+    sha256 cellar: :any_skip_relocation, ventura:       "5088562b5587179e0f31b706a5028a786b1e251dcc33bdce1aa4a1889392ae62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3db821d32bdad848d8d4241afec374f212cf335fce3320831313faf90de84b4"
   end
 
   depends_on "rust" => :build

@@ -8,16 +8,13 @@ class Luvit < Formula
   head "https:github.comluvitluvit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "2e2257cdb482d948ed335c2ab31c0c86cfcdb7810e35c6442fc0406ab8ddeaf6"
-    sha256 cellar: :any,                 arm64_sonoma:   "ed6d081d3a0d4f3d89f02f5d6ff038dd9e9b9b98b0596a33e5b18bdbc598c45c"
-    sha256 cellar: :any,                 arm64_ventura:  "20bc43f46fbe2135a5ca45feb75e6bd90f1825437ff5fcc3a706ee96d886e5fc"
-    sha256 cellar: :any,                 arm64_monterey: "ebb8ed1a318977d2227e7f9fb9310cdbe5632f4448dd9447d9e826b1b231744b"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4237394b4ac43b8066fd13464282869aae5665c900c4bb981465aba60fc5196"
-    sha256 cellar: :any,                 sonoma:         "fa82bfb69e426f3103200b2f78d2ced2f69202072ea07c6303c2949be5265dcd"
-    sha256 cellar: :any,                 ventura:        "4588bc9f5c49c4d3c4a9683abcc56ba9ecc7ef4112252d0df5357f9690116d6d"
-    sha256 cellar: :any,                 monterey:       "9b9cbe57a9bcfd827641084cb1b3cf942e5c4967d9fc6e87cbf5bcd1ab73b67c"
-    sha256 cellar: :any,                 big_sur:        "92b1351e005d37bbdf7018bcefeeaf461d65b973121b5fc540fff23cdf067925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e701f35d1f4adb5e8a60e05768ec142e58c271e8c222821ad27c21445e8839de"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6b60306e827d1ae928e60c37b00b83ca10a5bdfb02b0a67812e1eb999827c96d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0eb78bcb741a4096ecfdfcbf8656f73a1a36de52027ac2a1f001b646ff5c260"
+    sha256 cellar: :any,                 arm64_ventura: "4617df0255020cc2092491fcae316e8b24bb3dbad41199d478adc2347354be1d"
+    sha256 cellar: :any,                 sonoma:        "f339f8f017f800383975270f241aa1b422581d9bbb23968a3a93f1a414bb406c"
+    sha256 cellar: :any,                 ventura:       "a8ccb357aa21457d1faf621fda482fa4f70997121f31fd77256974a79d409e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f938d579e8d759b9880b38f4f8ad8aa6caab85b0e500c3a082b611a003e7ad1"
   end
 
   depends_on "cmake" => :build

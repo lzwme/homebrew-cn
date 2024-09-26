@@ -24,6 +24,7 @@ class Nemu < Formula
   depends_on "ncurses"
   depends_on "openssl@3"
 
+  uses_from_macos "libxml2"
   uses_from_macos "sqlite"
 
   on_linux do

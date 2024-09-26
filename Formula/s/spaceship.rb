@@ -3,18 +3,18 @@ class Spaceship < Formula
   # site cert issue, https:github.comspaceship-promptspaceship-promptissues1431
   # homepage "https:spaceship-prompt.sh"
   homepage "https:github.comspaceship-promptspaceship-prompt"
-  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.16.1.tar.gz"
-  sha256 "15e6834ad464f57ef475fd880454b0d008c2beea9af0ad644df89962b595d792"
+  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.16.2.tar.gz"
+  sha256 "8892708e4c6c6a0ddff8dbe433e8384606d9a6b73b2cab48ac5ef80adc1a018a"
   license "MIT"
   head "https:github.comspaceship-promptspaceship-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69e858a3de1d8635970c03a48f20578d765ff17813c98bcac6de8caa7632aac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3720bd2d85501bc182ee6de0aafb7d3ea64cecc8b10f05174452393b7448f229"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e4302cc00eaf7cae05cc2fc0d6a2d79e4ff131322e7b34716488830f001382b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "839c90899696703d56e3c85c8f57ebecfaa0972d55346e69f793a439d016bd2d"
-    sha256 cellar: :any_skip_relocation, ventura:       "cf4bace6d2ae2e68716acdb7c599dca624f49f7f9f7282239dbbb03447aaac3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a431aa02bc2ff2360a69bb5866c399b670b778bdfd553f629c5548a89bf062"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb5665cb4cfed8f23122e2eac1ca73e778154fb54f960b3842ff025f05700b67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f6e0071cffbfe42f213775718d2e36e983cad93650ca50983f55615971bae89"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a182a6d3c1ccbdfab3851cc27630e8969496257e4795d83853d54355ba833cfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d68bfe382f70f476391acfa3a73925a76f79e94695a7ffeb46ac190c0daad23"
+    sha256 cellar: :any_skip_relocation, ventura:       "73cdfa1d1f6b3f357d46b105b6e391913dcb6b47bf7408570e207a154ed12f5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a26efe9322c2016fc56d433668eec2aa937aac0d2c61467cb6b8a0c4ef0b3117"
   end
 
   depends_on "zsh-async"

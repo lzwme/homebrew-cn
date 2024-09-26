@@ -8,7 +8,7 @@ class Tinymist < Formula
 
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,9 +25,7 @@ class Tinymist < Formula
   depends_on "rust" => :build
 
   def install
-    cd "cratestinymist" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "cratestinymist")
   end
 
   test do

@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https:goteleport.com"
-  url "https:github.comgravitationalteleportarchiverefstagsv14.3.3.tar.gz"
-  sha256 "c30cefedae3df3cacef78e385a369773820f9ed00432b3c1bd12b0026b01f144"
+  url "https:github.comgravitationalteleportarchiverefstagsv16.4.0.tar.gz"
+  sha256 "fd8d0fe968bd863e3657e0cdfe7d3a5e90b0663b1efe396802f1880d2a6dde79"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https:github.comgravitationalteleport.git", branch: "master"
 
@@ -18,19 +18,20 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b782a358b35e34c01b520d3c707feff865740886c945221471a045a22e982984"
-    sha256 cellar: :any,                 arm64_sonoma:   "327c97012b954c9e17e46926ff6d46e919bc9a32ca55ccf9dce95e0bf1c1b8b0"
-    sha256 cellar: :any,                 arm64_ventura:  "f569c4a8b34f93e23bb76d05e76df1b16b22f7a8cc36c2d9916e67c7873be825"
-    sha256 cellar: :any,                 arm64_monterey: "4e7c7c7d068bf972f65dff941b457db1a663cf26ac163e274a303ccfd6b4759b"
-    sha256 cellar: :any,                 sonoma:         "04bf1dceb7b1dc5864dd0c7f9e192fb0972791f3c9ee9be9e7914ae9471f1101"
-    sha256 cellar: :any,                 ventura:        "1283a664b51ebfc02a78163ba49739a6d990ec023f1898b7dba672cccfb60362"
-    sha256 cellar: :any,                 monterey:       "5f098515fa8e90a07e8274e44fb1ad24cb61db1fa74ed10106d78c82d4f4677d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "906b35b2c7dcc5bed2b1a9897b2464b113ba6c568340f3a193cfc665f041831a"
+    sha256 cellar: :any,                 arm64_sequoia: "655ed41855aadea238493f847ed5ef38031773656a73e703af59b967a6993e0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c1a8dfcb8206e79aa19887f46bbd91d8076d380e2a30daa7adc5a04359ec77d"
+    sha256 cellar: :any,                 arm64_ventura: "5138439b1b1930de2b6635ccefc6f274076d566a6e2470efd0bebaa5a053e412"
+    sha256 cellar: :any,                 sonoma:        "2470914809568d757d5e3ed065feaef37571636bfce8b407c39ff996a1fa8aeb"
+    sha256 cellar: :any,                 ventura:       "5f28fc33e1f52fe77279855ef1d14ac8025b08301a910d1ebabf559f9e694bfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0390a3014408096fdc6b1dfe66df9376edb4d9af86f053ad2d37276932d34280"
   end
 
+  depends_on "corepack" => :build
   depends_on "go@1.22" => :build
   depends_on "pkg-config" => :build
-  depends_on "yarn" => :build
+  depends_on "rust" => :build
+  depends_on "rustup" => :build
+  depends_on "wasm-pack" => :build
   depends_on "libfido2"
   depends_on "node"
   depends_on "openssl@3"
@@ -43,6 +44,10 @@ class Teleport < Formula
   conflicts_with "tctl", because: "both install `tctl` binaries"
 
   def install
+    ENV.prepend_path "PATH", Formula["rustup"].bin
+    system "rustup", "default", "stable"
+    system "rustup", "set", "profile", "minimal"
+
     ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }
     bin.install Dir["build*"]
   end

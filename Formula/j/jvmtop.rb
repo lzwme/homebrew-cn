@@ -7,7 +7,8 @@ class Jvmtop < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f8d349142f3bcc5b90e06245a32942918f8664ddf65ca537432bdc81f5b081d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b9fabbeac0618290d38994f556f5de9288b33c2e23c7dd00e1892d111c23c4ce"
   end
 
   depends_on "openjdk@8"

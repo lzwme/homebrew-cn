@@ -1,13 +1,12 @@
 class BashLanguageServer < Formula
   desc "Language Server for Bash"
   homepage "https:github.combash-lspbash-language-server"
-  url "https:registry.npmjs.orgbash-language-server-bash-language-server-5.4.0.tgz"
-  sha256 "398971fee90b72014d72ca63b163e8f19d3c7db9528de8e43075c2ffa579b7b2"
+  url "https:registry.npmjs.orgbash-language-server-bash-language-server-5.4.2.tgz"
+  sha256 "864f609c18c8d2657b69f94d050bed977ac3fb8371c9dca784c2eeaeaad1d57b"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "10c27a8921363f70f037d1400912de1ec9addef631a5cc1d3cab2ab45d684368"
+    sha256 cellar: :any_skip_relocation, all: "9062a6bfcfd895728ee8166b0b20002df24c5e3e65ebb40121d37f82d6e9cc7b"
   end
 
   depends_on "node"
