@@ -1,19 +1,17 @@
 class Bkt < Formula
   desc "CLI utility for caching the output of subprocesses"
   homepage "https:www.bkt.rs"
-  url "https:github.comdimo414bktarchiverefstags0.8.0.tar.gz"
-  sha256 "c8b99f4540a3a083368db7d42d6947aa37217b32b443d97972e4536ed9404469"
+  url "https:github.comdimo414bktarchiverefstags0.8.1.tar.gz"
+  sha256 "c8c8cc6f03d0fd35c4ace0ad81e437c41c6bb7778f5caafb3dbb1904b2b0c4f5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9deb1f5f1d4a1ff0c7c37580e317bad793b6a0d95cf18b84378d6e705fbc555f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f208dd72de9d4518a0624dc5cbaefa7edebd76e1b59af107d705ce36ad0ed7c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f43a7716573ea97ca8d771a0aca2d0eeba2f3b4fb0a7c961acd00443fd515a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4918fde1784c5f9857c270c071ca1419db44a34c8750e85313fa96d02cd8648"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5474740470603f46600633932c9aea50fc6521aa78231f9663645c03fc3bb039"
-    sha256 cellar: :any_skip_relocation, ventura:        "003091dc33df2f6e13ed64cbe9ece53d6b5facb1799b7cb237b878c570e51681"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cdcd41e666dc4c82cf59e768ac9a0fbeb47733c07a963d9f27df861d58e4db6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8b0cbe97719769610f00faecb17cf49de17b5837b3cb23a102c28b133e0840f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c9b11cb72eee4a2791a5accc9d325934004dcc97f741d18530a19f0d93e5d18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94b062a26c16243e7131ba960a751c69320a2ca2a181ce8e56cfbf49fc53c88d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "31bd800e3d07048d1938701bcbc12a81222eaebfa5c2654585774defefab93e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "724039c2d9082e63585935895e54396f079440eaec8a0bbc8b142a6c5b38a524"
+    sha256 cellar: :any_skip_relocation, ventura:       "7543fed4a370c38f58147c1664c3f3533b9b1d1b4614bd70be908150e447e206"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "769d5594fd70d6e6e0294999a6ff4c09bea44e3625dcc0cfd13ad62358e39543"
   end
 
   depends_on "rust" => :build

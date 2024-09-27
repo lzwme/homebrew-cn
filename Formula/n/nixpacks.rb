@@ -1,20 +1,18 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
   homepage "https:nixpacks.com"
-  url "https:github.comrailwayappnixpacksarchiverefstagsv1.28.1.tar.gz"
-  sha256 "fea44901f63d0dacb811473cf8326ed23321ad44c8225c098675650866606718"
+  url "https:github.comrailwayappnixpacksarchiverefstagsv1.29.0.tar.gz"
+  sha256 "87f4589f0fc79f0035b993f3a8d01b63216e24b526f0a00a677c8607e8ba342f"
   license "MIT"
   head "https:github.comrailwayappnixpacks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e6cd9b4556c5fbf4276e241546ad1acf1750425cbfdaf0d41baf57cf108a773a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b30d8777f6642adc8ead5163ea14608ffa76c6e1356105786d97520f1bab95da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ee7bde2ce0b973e8749d9b465953ccce0f672964539ed4998d509fdb0b783cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f06ecb9bea68edabae62bee6fc6d3579ca607a1605b5f2bf252edc8f08f55585"
-    sha256 cellar: :any_skip_relocation, sonoma:         "99419bea1a928028c5af4439c69e02a30fe97173b104bfa0dce18bfcafbac9c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b538f592c65d1246d8ef5108c334467658793959909c93bdcbf7331e32926a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "2375236ff31c54b7fceb72dd88394a45797e3ac7ef83d5622a244f50ce98323c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42947e06d66e370bb48762f6ad1940ed066c4085e3641631cbf4c2db1a36aeeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42dc1d0a9fc119a543854845762b2c37fdcd4fd871bbbab5a7a2031dd9bdbfb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5499786fdc884da9402e8b1a544b637b640957e63fc71d74294584cc80d2b11e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "afd17ac18b50da2d358c0b3a035862e41bee0c0507984e5b15ff754338592ef7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f0eed4d6b82de58a7b348e18490cb105ad47718a6d3968ed741d55b8fa6efb60"
+    sha256 cellar: :any_skip_relocation, ventura:       "6ed56913ba2ee5cdfe03902f85d232a63946b89ca597e8f098a20ea46881732a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f37cfc472fa48b5611923f01371bf871e874b97a3c811d9f0f76c620d2a7708"
   end
 
   depends_on "rust" => :build

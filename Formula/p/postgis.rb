@@ -1,8 +1,8 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https:postgis.net"
-  url "https:download.osgeo.orgpostgissourcepostgis-3.4.3.tar.gz"
-  sha256 "f8ded505daeb8f57659da2b9e577ff71e183aaa094708d2eece2c56d93361f62"
+  url "https:download.osgeo.orgpostgissourcepostgis-3.5.0.tar.gz"
+  sha256 "ca698a22cc2b2b3467ac4e063b43a28413f3004ddd505bdccdd74c56a647f510"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "69bcaed51c7fdc66e58141621dbe28a010bcb2ce3d57e789a21cdc0b05e741e7"
-    sha256 cellar: :any,                 arm64_sonoma:   "619e7996364ce78a8c9f34c7762e493be62f0e9467104ff1bf61fa2842266b09"
-    sha256 cellar: :any,                 arm64_ventura:  "1e7641421667a2d99c44032994c66344cab61570b4b9c6c1066702f454f33f94"
-    sha256 cellar: :any,                 arm64_monterey: "beedaffb06905e360eb99351e442f377f91f345e81bdcc7ee7f16bcba1e2a6de"
-    sha256 cellar: :any,                 sonoma:         "c50e0f3b10aea94825f983d75691cf231a0d47c681cd09ce17cd4cb2cc66ea4e"
-    sha256 cellar: :any,                 ventura:        "b606bc9a70e7a1eafb1c84c7a9e8a9e16b523ee836c1e8e4506f2df9d86636f5"
-    sha256 cellar: :any,                 monterey:       "f93e41a5b70d007775c51a065d103860ffbf661cc088df194b2217d7da2ffb01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93ec53c8041183126f144dd8628f330cd5f2b6a6a7ed9a92d096315e35f957cc"
+    sha256 cellar: :any,                 arm64_sequoia: "e57c841702c1e0c30b81d9367d9feefadcd4b28a33cf924e06393a351e2322ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "80871d3a8a1e1a05d6c0648804db2a183d51be185e6906f8a7ed065eb7dcba6f"
+    sha256 cellar: :any,                 arm64_ventura: "44de180e1cb654d0e33c17866f91e36a77d2fee4bb6a5cddab76b590317a5cec"
+    sha256 cellar: :any,                 sonoma:        "74849f51528ca96d95cb632b834cf5d878b6b7d32a9bdea03c4537303a5f6dbb"
+    sha256 cellar: :any,                 ventura:       "24e5a4aac1f5a336c60c3288536faa60e58010c515be5c9b00d0e0ff5950b397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aed9e03c0e08aa2e784300fc317ff233a6614f156534cabc0c7707c485f458c"
   end
 
   head do

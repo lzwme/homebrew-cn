@@ -7,20 +7,19 @@ class Kubeconform < Formula
   head "https:github.comyannhkubeconform.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "af0cffade03b33e2c18057722d21bfe30bb105981145dfd8e8ea25ed38e84f0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9299dd255685b85b9a6c9e2230ce3a8e8370717a4a75c141dc6d7b26ab3951a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d6ddef665045d43c94cf2b8717ef072e161e614d42674648c181aac4d2987d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5e2b9ceed38c66246d80ff5e266a7da28cee09f07be700fe6c21fe0e22ef3e4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6ae62caf12452ef0e925d92a6081a6a5684a757b5575adff826021bfd154fc10"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed5cf861eab09f6a297c8797fdec584555095d12a60439ed1ccbf8f0a7f11bcd"
-    sha256 cellar: :any_skip_relocation, monterey:       "25ff3e90617a97ebae91009127b3c71ba393554d4e7dd3f525f47c5cedeee713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "161bdbd38289ca34e13dea30bc62d28875690f2f2a3546d3672dc4af392d9c1e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79a09d5e396be8bf3ac812ed61250b6a5e1354bf887099618669924aa5893355"
+    sha256 cellar: :any_skip_relocation, ventura:       "79a09d5e396be8bf3ac812ed61250b6a5e1354bf887099618669924aa5893355"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e7733199b192aaeb2aa7bf21b41afacbf1eed5a26532164ef3a917f7b8feeb"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdkubeconform"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), ".cmdkubeconform"
 
     (pkgshare"examples").install Dir["fixtures*"]
   end
@@ -33,5 +32,7 @@ class Kubeconform < Formula
 
     assert_match "ReplicationController bob is invalid",
       shell_output("#{bin}kubeconform #{testpath}invalid.yaml", 1)
+
+    assert_match version.to_s, shell_output("#{bin}kubeconform -v")
   end
 end

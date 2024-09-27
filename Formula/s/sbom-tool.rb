@@ -15,6 +15,7 @@ class SbomTool < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea0180cdb70b1aa227c07f460824d360726bc38476904158899795854017a2ac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8187fac2b281d8031bbd3d86954f3fc71f5ab236ec08538a34f9752d8a59463b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "29bd6d62c85ca6c92d32909b3a9ec9d85ddbe1ea0273535b3dd834e2fb98e52f"
     sha256 cellar: :any_skip_relocation, sonoma:        "27604c0023bba19d5473c6ced252ab3ce2e7e5e40eb64d039e63b5ba06c5a454"

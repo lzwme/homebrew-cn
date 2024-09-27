@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https:argoproj.github.iocd"
   url "https:github.comargoprojargo-cd.git",
-      tag:      "v2.12.3",
-      revision: "6b9cd828c6e9807398869ad5ac44efd2c28422d6"
+      tag:      "v2.12.4",
+      revision: "27d1e641b6ea99d9f4bf788c032aeaeefd782910"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -18,14 +18,12 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9e359d5300eaf8be22007df81021b723576f4146fed09ea5517300c7048e482"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a4e866b0e9d62e6e48ea624cff87e65b999a07e63645ba8b7de6c6049fa05ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83dd13187acc6e4114b7ecf6abb76e6ca17586d5103f68e8dfa468e437d14979"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a9329ee81009530b9d3c66dd2d2e85eafb831eda6641fec836460c57b22d33b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f022d7813f194b38333842dca4b83f316f6319fcfb910f23930f8ebffaffa6ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "b30b12086c454b6baee4271ac7926991f1ccdd418d0f0db499f1a7e6c2531e10"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc2296c1289221b4df4b452da6c55dca2b8f86c861e768aeee457f22b8fc49aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08fb62d6d036890d5f13066a43d0b6c5fe767ba525577cca02cda2c49032624c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59d945e81cc454c66c8b066bbd96a7f7e8337d488223663dafa369fd23779312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b39c289492875fac7e77134febaf9938c74899bc92328488f4c7e6b5662447c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bfe85d53371a603507bc5ee184a83f199f863e260658706731359da31dad20c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7bfd55e4faf3c2d4b2f83b51f3a9465a9b97f157b7f75c5f06ac969c8315ed6b"
+    sha256 cellar: :any_skip_relocation, ventura:       "aec3fe067d85c71600fcf768d3dbbf4995deb61ceaa60b0a2c87a3e0a0120a39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc692fb3e9615f2fc63487df78406101115ad139402c22cdb8a5183a61184dd1"
   end
 
   depends_on "go" => :build

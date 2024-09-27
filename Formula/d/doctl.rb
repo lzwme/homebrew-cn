@@ -1,20 +1,18 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https:github.comdigitaloceandoctl"
-  url "https:github.comdigitaloceandoctlarchiverefstagsv1.114.0.tar.gz"
-  sha256 "a19ab6a36f65ebf39786f79f3c53caadab508874f84fb5d701f04191c0b27408"
+  url "https:github.comdigitaloceandoctlarchiverefstagsv1.115.0.tar.gz"
+  sha256 "08c33702fa29d321b7ab005d16ddbc40d4acc6b0c1141080a127b820ae871156"
   license "Apache-2.0"
   head "https:github.comdigitaloceandoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2391332a7d73c9f90fc32df67f305f863ffceb71b4dba922a68ef182961ecf30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2391332a7d73c9f90fc32df67f305f863ffceb71b4dba922a68ef182961ecf30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2391332a7d73c9f90fc32df67f305f863ffceb71b4dba922a68ef182961ecf30"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2391332a7d73c9f90fc32df67f305f863ffceb71b4dba922a68ef182961ecf30"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26f8fa39d52aa2c5f5d8c7409aef142410703cbcc1328f67728a18453f78d202"
-    sha256 cellar: :any_skip_relocation, ventura:        "26f8fa39d52aa2c5f5d8c7409aef142410703cbcc1328f67728a18453f78d202"
-    sha256 cellar: :any_skip_relocation, monterey:       "26f8fa39d52aa2c5f5d8c7409aef142410703cbcc1328f67728a18453f78d202"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fefeece44eadcae6f782eaed2ff7d72bafd966c5c3260c5588c083bd570db051"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9192d752b3a2f754fdb044b62bc4a8c538c0338efff3d11471cef59c09b3b43d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9192d752b3a2f754fdb044b62bc4a8c538c0338efff3d11471cef59c09b3b43d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9192d752b3a2f754fdb044b62bc4a8c538c0338efff3d11471cef59c09b3b43d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "124d2cd4360c0184a3eebc3080e058038ea971b7d2710c996d29b2e06b6d4559"
+    sha256 cellar: :any_skip_relocation, ventura:       "124d2cd4360c0184a3eebc3080e058038ea971b7d2710c996d29b2e06b6d4559"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f00ea0a6bdab755814aec14728854848816ecdd8a55a5f3a456fcab128cbc90"
   end
 
   depends_on "go" => :build

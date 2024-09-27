@@ -26,8 +26,6 @@ class Aggregate < Formula
 
   deprecate! date: "2024-05-04", because: :repo_removed
 
-  conflicts_with "crush-tools", because: "both install an `aggregate` binary"
-
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403

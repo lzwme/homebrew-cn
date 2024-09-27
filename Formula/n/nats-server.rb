@@ -1,8 +1,8 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https:nats.io"
-  url "https:github.comnats-ionats-serverarchiverefstagsv2.10.20.tar.gz"
-  sha256 "598704e96ea92fd74283526c9b6044df8b54e4cdccf9ddc5e25a52249c44424a"
+  url "https:github.comnats-ionats-serverarchiverefstagsv2.10.21.tar.gz"
+  sha256 "660d5ed95e920377ea26bd23795921ce881816a0ad8a70238de230d44f11f330"
   license "Apache-2.0"
   head "https:github.comnats-ionats-server.git", branch: "main"
 
@@ -12,14 +12,12 @@ class NatsServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "160e7ac66e50970a43cb283d12b4d986b2366ff61d6b95e7a9c7769b5aa14540"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b20ac44cbc64a7159359e57b093e44d0c163739d31f29f11b21b5addd4fdedf6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b20ac44cbc64a7159359e57b093e44d0c163739d31f29f11b21b5addd4fdedf6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b20ac44cbc64a7159359e57b093e44d0c163739d31f29f11b21b5addd4fdedf6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b0397cf4734dc4f8ffcc31c2b8910d92d488f677b2dc74c58781eb3850fcc426"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0397cf4734dc4f8ffcc31c2b8910d92d488f677b2dc74c58781eb3850fcc426"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0397cf4734dc4f8ffcc31c2b8910d92d488f677b2dc74c58781eb3850fcc426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76b94a909d99c303728172a6f16d80c90d3fc0889d4461fcbb3b39576b8ff433"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89b46431ed0df1f68b75bbc0e1d1cf98aa98fb14d7871dd38abc7bb9348472a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b46431ed0df1f68b75bbc0e1d1cf98aa98fb14d7871dd38abc7bb9348472a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89b46431ed0df1f68b75bbc0e1d1cf98aa98fb14d7871dd38abc7bb9348472a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7dbf27e32359dc71bd240a6eff48145b80fb035a07872962cf7b4debf95d7c8e"
+    sha256 cellar: :any_skip_relocation, ventura:       "7dbf27e32359dc71bd240a6eff48145b80fb035a07872962cf7b4debf95d7c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0bb3330c98fe780a9bbece94c45c342557a5639995f70199f3fa339a44b9aa5"
   end
 
   depends_on "go" => :build

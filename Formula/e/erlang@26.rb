@@ -9,7 +9,7 @@ class ErlangAT26 < Formula
 
   livecheck do
     url :stable
-    regex(^OTP[._-]v?(\d+(?:\.\d+)+)$i)
+    regex(^OTP[._-]v?(26(?:\.\d+)+)$i)
   end
 
   bottle do

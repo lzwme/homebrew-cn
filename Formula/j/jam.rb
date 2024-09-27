@@ -28,8 +28,6 @@ class Jam < Formula
   # until further notice."
   deprecate! date: "2023-11-02", because: :unmaintained
 
-  conflicts_with "ftjam", because: "both install a `jam` binary"
-
   # * Ensure <unistd.h> is included on macOS, fixing the following error:
   #   `make1.c:392:8: error: call to undeclared function 'unlink'`.
   # * Fix a typo that leads to an undeclared function error:

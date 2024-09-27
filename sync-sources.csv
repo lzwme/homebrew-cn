@@ -939,8 +939,6 @@ Homebrew-homebrew-core/Formula/c/clpbar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clucene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clusterawsadm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clusterctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/clutter-gtk.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/clutter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cmake-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmake-language-server.rb, Homebrew/homebrew-core, 1
@@ -1118,7 +1116,6 @@ Homebrew-homebrew-core/Formula/c/cruft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crunch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/crunchy-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/crush-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cryfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cryptography.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cryptol.rb, Homebrew/homebrew-core, 1
@@ -1202,7 +1199,6 @@ Homebrew-homebrew-core/Formula/d/dante.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/daq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/darcs.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/darglint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dark-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkhttpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
@@ -1267,7 +1263,6 @@ Homebrew-homebrew-core/Formula/d/delve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/demumble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/denominator.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/density.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dep-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dependabot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dependency-check.rb, Homebrew/homebrew-core, 1
@@ -1920,7 +1915,6 @@ Homebrew-homebrew-core/Formula/f/fstrm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fswatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ftgl.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/ftjam.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ftnchek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fuc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuego-firestore.rb, Homebrew/homebrew-core, 1
@@ -3218,7 +3212,6 @@ Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lincity-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/link-grammar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linkerd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linklint.rb, Homebrew/homebrew-core, 0
@@ -3408,7 +3401,6 @@ Homebrew-homebrew-core/Formula/lib/libcds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcello.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcerf.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libchamplain.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libchaos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libchewing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libclc.rb, Homebrew/homebrew-core, 1
@@ -5217,11 +5209,9 @@ Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
@@ -5231,7 +5221,6 @@ Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
@@ -5240,7 +5229,6 @@ Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
@@ -6882,6 +6870,7 @@ Homebrew-homebrew-core/Formula/w/wstunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wtf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wtfis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wtfutil.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wthrr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wumpus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wush.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wv.rb, Homebrew/homebrew-core, 0
@@ -6928,7 +6917,6 @@ Homebrew-homebrew-core/Formula/x/xcode-build-server.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/x/xcode-kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodegen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodes.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/x/xcproj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcprojectlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xctesthtmlreport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcv.rb, Homebrew/homebrew-core, 1
@@ -6943,7 +6931,6 @@ Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xh.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/x/xhyve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xidel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xinput.rb, Homebrew/homebrew-core, 0

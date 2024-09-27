@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.87.0",
-      revision: "63ab4b3a150070583632e08505e455017db547a1"
+      tag:      "v1.90.0",
+      revision: "8d38a7fcd5329824a8071757954ca64704e885ff"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3a9378609c725adb22064d6fbbc91853cdb14f15d37a9340e1c4ea62310354f"
-    sha256 cellar: :any,                 arm64_sonoma:  "758996f27333f63588341e71babeb6d1b60970be041e9dd510673a2e3ec64e1b"
-    sha256 cellar: :any,                 arm64_ventura: "0f37f0380cc424fff0c6ccf59527a550212488dad6dc46f458be9a578b8eff0e"
-    sha256 cellar: :any,                 sonoma:        "cc9817d0b54ad20fb7b808445127ac825e19c6a4e5259f664914368914cf1022"
-    sha256 cellar: :any,                 ventura:       "e597ad143393edd456b3dbdef052b4ba3d82d0cfbfa55b942654eb6a807cf4b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1208d850247c44577117d0682fa820c3b8090015ddc89c77dfc5d2d86ecb7fde"
+    sha256 cellar: :any,                 arm64_sequoia: "6df92349f1ada238a93d6e06a5cb4265c802e4c67604a16645beaba26de0cb99"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3448aa12bed32f49f9aa1b476f3a475c7944c626f27e9386e2f7d7ac57905eb"
+    sha256 cellar: :any,                 arm64_ventura: "610f2b277fad39ba15b189cdf05407c261eaa4dd0ba6d062020e1401e885f317"
+    sha256 cellar: :any,                 sonoma:        "be8141582b681f9e62a2bba593051422c7a09a55ee51d08d5fc2c4cd9f8cb417"
+    sha256 cellar: :any,                 ventura:       "80b24e3ddafe8ebebbc0fcf483d7c6ad8c95717cd9f5f01b67ee4d66c5c3af50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe81aef7ee10c0f033eac4cde9c208c11340c6e092e3876059f46888e5f31031"
   end
 
   depends_on "autoconf" => :build
@@ -112,8 +112,8 @@ class Semgrep < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "importlib-metadata" do
@@ -197,8 +197,8 @@ class Semgrep < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagese8abcb61a4b87b2e7e6c312dce33602bd5884797fd054e0e53205f1c27cf0f66protobuf-4.25.4.tar.gz"
-    sha256 "0dc4a62cc4052a036ee2204d26fe4d835c62827c855c8a03f29fe6da146b380d"
+    url "https:files.pythonhosted.orgpackages67dd48d5fdb68ec74d70fabcc252e434492e56f70944d9f17b6a15e3746d2295protobuf-4.25.5.tar.gz"
+    sha256 "7f8249476b4a9473645db7f8ab42b02fe1488cbe5fb72fddd445e0665afd8584"
   end
 
   resource "pygments" do
@@ -237,8 +237,8 @@ class Semgrep < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages3e2cf0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6efsetuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "tomli" do
@@ -291,6 +291,9 @@ class Semgrep < Formula
       ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}lib"
       # Set path to libev for our static linking logic
       ENV["SEMGREP_LIBEV_ARCHIVE_PATH"] = "#{HOMEBREW_PREFIX}liblibev.a"
+      # Opam's solver times out when it is set to the default of 60.0
+      # See: https:github.comHomebrewhomebrew-corepull191306
+      ENV["OPAMSOLVERTIMEOUT"] = "1200"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }

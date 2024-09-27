@@ -4,16 +4,16 @@ class ProtocGenJs < Formula
   url "https:github.comprotocolbuffersprotobuf-javascriptarchiverefstagsv3.21.4.tar.gz"
   sha256 "8cef92b4c803429af0c11c4090a76b6a931f82d21e0830760a17f9c6cb358150"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comprotocolbuffersprotobuf-javascript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "11d90ad5ca368c7b698e4fe28d13e7c71371fe85bedd34a9afdd06c7a28886b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8538372ecc9e3239beeb872fb7c56d41164d0aa7f538a1f7b6ddc80b61758bb"
-    sha256 cellar: :any,                 arm64_ventura: "979f6a627242b10faa2faf29c7f43047d710e091187ae5302c0afdac7dfc6c4a"
-    sha256 cellar: :any,                 sonoma:        "7b0a7b88e1bf43233f280e6e358ffa4cd84b133a50025bf00031d491e99fb906"
-    sha256 cellar: :any,                 ventura:       "899e9f13317648d9c5f80fe4161e77c0d2b6f58f9d7096bca8f5ac13a83676c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d9e3e5253a5c70c8fc5f5c3e075690033151da5a340b8c57fca85b2d8458ce"
+    sha256 cellar: :any,                 arm64_sequoia: "77c2c092386684372d8a228e5a1b107b008898117104feef491b6283bd1dd25c"
+    sha256 cellar: :any,                 arm64_sonoma:  "7544980adc91f9214cd364b48e180afa3a51573bdaff74f434a0b145989d0d6f"
+    sha256 cellar: :any,                 arm64_ventura: "2f2c45a57da4ec466bd629fe83163e46deaba79e9534ac60957594ce675dd979"
+    sha256 cellar: :any,                 sonoma:        "255f728321c7def862a5162bd92c41ca96bb0168e852d102a3a79288a7c73ca8"
+    sha256 cellar: :any,                 ventura:       "447d1c305f96d8c8780b8a692031a71bb1380336d521f41ed70d0a9ef1ff32c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db9d43324d19e7286a18a995f09a7f05edd90d53537839bee5b1c602568c2f3"
   end
 
   depends_on "pkg-config" => :build

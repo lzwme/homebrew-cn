@@ -1,28 +1,18 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
   homepage "https:github.comrizsottoBear"
+  url "https:github.comrizsottoBeararchiverefstags3.1.5.tar.gz"
+  sha256 "4ac7b041222dcfc7231c6570d5bd76c39eaeda7a075ee2385b84256e7d659733"
   license "GPL-3.0-or-later"
-  revision 8
   head "https:github.comrizsottoBear.git", branch: "master"
 
-  stable do
-    url "https:github.comrizsottoBeararchiverefstags3.1.4.tar.gz"
-    sha256 "a1105023795b3e1b9abc29c088cdec5464cc9f3b640b5078dc90a505498da5ff"
-
-    # fmt 11 compatibility
-    patch do
-      url "https:github.comrizsottoBearcommit8afeafe61299c87449023d63336389f159b55808.patch?full_index=1"
-      sha256 "40d273a1f1497c2e593fc657a0cdf45831da308c00e3425e5eddb790afceb45f"
-    end
-  end
-
   bottle do
-    sha256 arm64_sequoia: "8e05e2846e3e73fb303b0f830e0f3b1e12fc5a6fee38db9704db80884f1de629"
-    sha256 arm64_sonoma:  "93d5a521be30785a71418435be63563cfd9b4367e647b86defa65dfe4ab98c67"
-    sha256 arm64_ventura: "ff56f51692f83e132b8325fa2692076d910687301b2bc6567f6a6dfe01fd039a"
-    sha256 sonoma:        "ef5218b91e136a905fc0e90327c16ab4c88e46042b96e9d6726a812eb1da44a1"
-    sha256 ventura:       "2fec1159f7dbcc7ba2b0e9b190d90e2e2646d5eff35b39521a95a03e6ce56cf5"
-    sha256 x86_64_linux:  "e8b5e228916688d811ddc8a2df803f36abf23e431a8a48cb1819293a9503c805"
+    sha256 arm64_sequoia: "191e6f19b2974fcb755023fa9c3de7fd50f0ea7102d924d89b12f497f1c3bbbd"
+    sha256 arm64_sonoma:  "745935baffa1fe3eab819766318b44ad7b9e7ccfebed486ecac9c50fdbbfb435"
+    sha256 arm64_ventura: "49274e41b436dc8934795ccb943ad04ff231afea4ed8076a84e31c74ffbb273d"
+    sha256 sonoma:        "99cf0aa69d3312ed79949e3f3339aa42f035967b358d396a85f66b6fca34a73b"
+    sha256 ventura:       "524299345fc222f676de04d26390b8beefd9922a67e8e4d00557593562bd0f9b"
+    sha256 x86_64_linux:  "7e900824c6ebd921369518987b9ef731591747a40f297b54c61c7b25fce5d273"
   end
 
   depends_on "cmake" => :build

@@ -11,14 +11,13 @@ class Chafa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "4088a5399d141f648698c3b92236fa58d2596e784004ae8c79972a973698cb40"
-    sha256 cellar: :any,                 arm64_sonoma:   "4b6496dea9a09c8e11facaaedcd7e4900d7ff74304032e89755930b15ceb2f1a"
-    sha256 cellar: :any,                 arm64_ventura:  "ad976beba9aab5ce79b64e1c86be92b6098a1ca95687e644630ef28b5a39be2f"
-    sha256 cellar: :any,                 arm64_monterey: "d198bfeabc561f979e4e40a304374098008cc3b054ffcf90ee108b1dc13370ac"
-    sha256 cellar: :any,                 sonoma:         "9de0cf619fbfbf15a68c43674e130e75e049c974c92e13b3e2d091ca89657e47"
-    sha256 cellar: :any,                 ventura:        "3ac89af501682d724878ead0fc7306958207f4a97f351a9dedd6b7937d953009"
-    sha256 cellar: :any,                 monterey:       "509de37d41c8b7383beec276a0a59cd5755935c05d7af53890e16a8cb9c6f0bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5934a8cd7f811ec13d46cb490b218624498cc528b7ea403d3bfc0891427531b5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "fb39aa9778e6e1b6b8231e89a1439168aa4d72c364badc5fb1281fb7bdfa5027"
+    sha256 cellar: :any,                 arm64_sonoma:  "e231f1d4599a8ffa3780f1fa8c085206d97876c76245e24caa1fb1f0eefa5185"
+    sha256 cellar: :any,                 arm64_ventura: "92213744cc0d2d3cfb63210c74d568bc419b9e05b931a4fd071fc52d3a86c7e6"
+    sha256 cellar: :any,                 sonoma:        "39e3b4f3b35bced06080783c4133c4eb1afed485e1926d7bc528a6dab35bc30c"
+    sha256 cellar: :any,                 ventura:       "d1f6bb9bbcc462334e74ce56d03175287047ebffe0353b5bcb788288a9a15ba4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b445b25ec0a944c92043b4eca33e65a3150e4f2c2e168dfecb8ed9c21000e78"
   end
 
   depends_on "pkg-config" => :build
@@ -26,6 +25,8 @@ class Chafa < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
+  depends_on "libavif"
   depends_on "librsvg"
   depends_on "libtiff"
   depends_on "webp"
@@ -45,6 +46,6 @@ class Chafa < Formula
     output = shell_output("#{bin}/chafa #{test_fixtures("test.png")}")
     assert_equal 3, output.lines.count
     output = shell_output("#{bin}/chafa --version")
-    assert_match(/Loaders:.* JPEG.* SVG.* TIFF.* WebP/, output)
+    assert_match(/Loaders:.* AVIF.* JPEG.* JXL.* SVG.* TIFF.* WebP/, output)
   end
 end

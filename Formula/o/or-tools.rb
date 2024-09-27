@@ -4,6 +4,7 @@ class OrTools < Formula
   url "https:github.comgoogleor-toolsarchiverefstagsv9.11.tar.gz"
   sha256 "f6a0bd5b9f3058aa1a814b798db5d393c31ec9cbb6103486728997b49ab127bc"
   license "Apache-2.0"
+  revision 1
   head "https:github.comgoogleor-tools.git", branch: "stable"
 
   livecheck do
@@ -12,12 +13,12 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6a7c407f0cb5c8dfb847c2893cff30069cd7aac94473e3a7a87cc8291bd75c71"
-    sha256 cellar: :any,                 arm64_sonoma:  "bba4a158457e216d73dbe631a2859ccec20bee080218573ea8ece7f7fc072352"
-    sha256 cellar: :any,                 arm64_ventura: "3ce1a5fc9ccf285d11dbbd8e31e8962c0f00f320b47e38c80801ab689bcf556f"
-    sha256 cellar: :any,                 sonoma:        "e6a103ee26182137bb5fb932a3cb4f616583efab2cf7d6283a00ddaddbade492"
-    sha256 cellar: :any,                 ventura:       "33d211762847d9c687e11e1b88328612ea33baaa5e87271385069d28e747c183"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad44393215920cbc489a57bb9ac02380da4fa8e1ee33bb7adbe3ed028f56e80d"
+    sha256 cellar: :any,                 arm64_sequoia: "d96a2474dcec3e479e493f9a2feea94fdba14d1142c3a03fd955a2ebe8ccabf0"
+    sha256 cellar: :any,                 arm64_sonoma:  "b334335e402ba2def5df45083b409feee658658fb144f91125f12c82846327fb"
+    sha256 cellar: :any,                 arm64_ventura: "944b2e33feaf16cbc65b85c389dc7c51b24c49cca9ff174a356cf7af617b7726"
+    sha256 cellar: :any,                 sonoma:        "e9a11426f2c10f3f084bbcfcac027b9c888b7b73be0d7db45bf16f6ca7530d35"
+    sha256 cellar: :any,                 ventura:       "bca479d83dbef1eef8370315db6e2258ab265fb23850a9404d5fd1c63b55b1b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813619753bab47c09c9eadea6d600301d90699ad56cb490104650b4663266586"
   end
 
   depends_on "cmake" => [:build, :test]

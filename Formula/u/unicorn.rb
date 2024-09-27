@@ -1,8 +1,8 @@
 class Unicorn < Formula
   desc "Lightweight multi-architecture CPU emulation framework"
   homepage "https:www.unicorn-engine.org"
-  url "https:github.comunicorn-engineunicornarchiverefstags2.1.0.tar.gz"
-  sha256 "7085001b6f707c8a072d998d1a027e26892d65348e658f07a5d38f206f58dfec"
+  url "https:github.comunicorn-engineunicornarchiverefstags2.1.1.tar.gz"
+  sha256 "8740b03053162c1ace651364c4c5e31859eeb6c522859aa00cb4c31fa9cbbed2"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later", # glib, qemu
@@ -10,12 +10,12 @@ class Unicorn < Formula
   head "https:github.comunicorn-engineunicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b15ab7353cb27bd748c59549d65dab193fd5addb9fd6bdb11783b1a8fa90489b"
-    sha256 cellar: :any,                 arm64_sonoma:  "38881d75368afffaddf2bf6d1ecdc12ef3729aa2ae7e85dd007c1abff6a12d74"
-    sha256 cellar: :any,                 arm64_ventura: "5b4faa1a4a296d32b69fc29665883c012961e50c0f79ff8638d028eca4efa559"
-    sha256 cellar: :any,                 sonoma:        "eac9ed24f43e550b97f9eccc9338779650b2a059bada6540b64153f329270ae8"
-    sha256 cellar: :any,                 ventura:       "e82d38fcf74fcf7770f621839adab576c7b1e10f6a60837fdf117499dad46574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e73f7be8e9871cbf1fe86aecd85ebe5ae9e8ff921679b516b6ae4df67dd4c45"
+    sha256 cellar: :any,                 arm64_sequoia: "d883e9c493f37e9bb7e98824a64d2ecfbee8d03ce0a3bfce3558a3805ac9ae16"
+    sha256 cellar: :any,                 arm64_sonoma:  "b73d76012c194c5b982c12a36a380f7d3db64dbc828c3566ed783e8955a59640"
+    sha256 cellar: :any,                 arm64_ventura: "8cb9b6e44b8f70a0e9cf1da0ba23dc7f9a0cbafaa5e2044f83166918dc5560e0"
+    sha256 cellar: :any,                 sonoma:        "e435e55606cdbc842e79367eac3dc8974267616f08ea95b890c2086c634137b0"
+    sha256 cellar: :any,                 ventura:       "aeb5bf15f1613f87677b7bb539cac1bc9b3fcd339f06881437058ed19ac5313a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8935edc693fe1e8f5756c96913bf9de63aed9d22be914ef6a7b40dff96686e61"
   end
 
   depends_on "cmake" => :build
