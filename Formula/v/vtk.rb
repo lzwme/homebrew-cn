@@ -8,11 +8,12 @@ class Vtk < Formula
   head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "a6d060405e7844225ed969c2dc0d328b6cb5e1bf993bad721499212a9b19cdc7"
-    sha256 cellar: :any,                 arm64_ventura: "3552f4bb3cc892effa6faf1d396970766b17bf00a1b2cb3d7e2e517704445b78"
-    sha256 cellar: :any,                 sonoma:        "a1181428bc9bba8466d299865c219da4019881aa156f56b357c5110acbd3ea07"
-    sha256 cellar: :any,                 ventura:       "8f230f92cdec1497ced5ce3de44f8813c50a97dbe009301ebd63c5795fa0f639"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5a6434bc59780b7369f16932b23d103f0b7f68750a8db8a939bfa63fa0710fa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "52785c8ac91993b76918a78686e63f1ae53ada730e463308cb87325da1f65841"
+    sha256 cellar: :any,                 arm64_ventura: "e9ffe1a3428d109c871d0fda9127e06bb8e5d2f7ed4aaeb35808c387e786659b"
+    sha256 cellar: :any,                 sonoma:        "d9ddbb1ac51c4eea1e8985978a0a6b6354ffcd3d077e52e20552bff0b4a3fdf1"
+    sha256 cellar: :any,                 ventura:       "717cf55c5e9105da6bf00def7678b20194adb9cf21a4c402b9cf0e97ec0b6ec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb218cf265e0d6745f02cf2feb990c7a12504367c72c4e52b7c15fcc4f2b1495"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -115,6 +116,10 @@ class Vtk < Formula
 
     # https:github.comHomebrewlinuxbrew-corepull21654#issuecomment-738549701
     args << "-DOpenGL_GL_PREFERENCE=LEGACY"
+
+    # Help vtk find hdf5 1.14.4.x
+    # https:github.comHomebrewhomebrew-corepull170959#issuecomment-2295288143
+    args << "-DHDF5_INCLUDE_DIR=#{Formula["hdf5"].opt_include}"
 
     args << "-DVTK_USE_COCOA:BOOL=ON" if OS.mac?
 

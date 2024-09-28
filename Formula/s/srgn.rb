@@ -1,20 +1,18 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
   homepage "https:github.comalexpovelsrgn"
-  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.1.tar.gz"
-  sha256 "1300d0490a21988f5bdbdb291457c1ebfa1140a05c9c94b29a0df898dc383791"
+  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.2.tar.gz"
+  sha256 "cf7fea4756104cd9d955feb4dc07f62f2636e1b23a287394eb55116d2ea5dbd0"
   license "MIT"
   head "https:github.comalexpovelsrgn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b979f052d35908c79b31ce5c1d9809577e6792f36d0b8b2e7a9a1adfd055ac8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94465753abb628908bced6a7008b8a28210c4bf4a8912ef4cb77bbc802db8ba5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69f8ac516cd4026b59070c52a7cc4b711c1bd8342bdef0a2add792d121ac69c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea0ec8e6b6c491d29decc1ee68187db93dfdcc3d7522db574b5d0c0adc2fd86d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "447d51aa62eabd08370e1bc52d50f886acd5124dcdc9f94fba88dcd1ec5f68e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "941d3709de9bfc0096e67afdab30fc6f82ecbde46eb39976c83823876ac19dbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "2959bfcfc4c4b0f0d526038598de846be04a1047a741f8f6c309d7b40bb211c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "363eb438d088f65394a7ec6b9475716eb19c7951c60e2e82a2c7ea31628f26a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c682d3f95bf9b1cfa87e3c31593b458b4ab5721f94197dcbffc7b613e3de0b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6e7afeaeb48ad63419c7e46f0d21ac243cdf8f2dc8f9318ee029d2a8d36927"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09e34437888947b146d175aec0b2f17efe6a8bceaeff990d9b9528ab15f8a785"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72102cc57ddd466d8ad7bafca0c6c91afdae10e6988c05815e42d11526a8ece6"
+    sha256 cellar: :any_skip_relocation, ventura:       "218bf094d83593e05a38216cd255d5ad9a6b79fc0e6175ca333eabaa2a2d7f8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cd8955c85ff0afcd3da960803a7a7d01f3c29036a4f17eaad5b4e93d05fdf9a"
   end
 
   depends_on "rust" => :build

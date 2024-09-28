@@ -4,14 +4,15 @@ class Kallisto < Formula
   url "https:github.compachterlabkallistoarchiverefstagsv0.51.1.tar.gz"
   sha256 "a8bcc23bca6ac758f15e30bb77e9e169e628beff2da3be2e34a53e1d42253516"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a87ec16d9a8ee8725e6c62d55b425cff6dbaa60a1ac78a9c9af42cc09e398784"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b289981fda59f2eeae5c3c595c6687d483f937396df395b6c66d1801dbbb3e5"
-    sha256 cellar: :any,                 arm64_ventura: "f4ec21b4a72b069c9c1b27ac8b8d9f15c7e983b48179101eae428a6a807bc197"
-    sha256 cellar: :any,                 sonoma:        "549cfd8cf077f6036e208b84e37b7fbfaa65cb9606f6490aa2ed7dbf56dedbad"
-    sha256 cellar: :any,                 ventura:       "0c03d4c62821f87a5f356546b45c3b18af91d43f6537e0bb95ad6b594b44960d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8415604e9af3bef4b404268c124db94afd6ccc5c47eeca27c5d5a41012948d7"
+    sha256 cellar: :any,                 arm64_sequoia: "952ef6635a1537aeb609ea82597d95e6411a5cf351e5916a5507acf833f9fa0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd9eb12bce6d33e5640a0e0c0fc3f76f8f68c4732e09e22398740132d42af405"
+    sha256 cellar: :any,                 arm64_ventura: "1628bb7528f5118ab8a2739b279604dd01fcb6b1175e01fc6c93246e5b6a62eb"
+    sha256 cellar: :any,                 sonoma:        "872bfc8d27e0c9d83e7c35e67904492807acae02d145d79491289cd1f343fa91"
+    sha256 cellar: :any,                 ventura:       "368d851057292860af1245b39a7daa8ec873a2bcd64fdc8a6bdbf5186d1f53f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a85a57db730f00c05d2adeff1493065baa6d23480bd36db9ca5f5e17634f42b9"
   end
 
   depends_on "cmake" => :build

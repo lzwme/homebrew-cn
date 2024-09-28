@@ -1,19 +1,9 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https:tmux.github.io"
+  url "https:github.comtmuxtmuxreleasesdownload3.5tmux-3.5.tar.gz"
+  sha256 "2fe01942e7e7d93f524a22f2c883822c06bc258a4d61dba4b407353d7081950f"
   license "ISC"
-  revision 1
-
-  stable do
-    url "https:github.comtmuxtmuxreleasesdownload3.4tmux-3.4.tar.gz"
-    sha256 "551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa"
-
-    # Upstream fix for macOS 15 headers, remove in next version
-    patch do
-      url "https:github.comtmuxtmuxcommit775789fbd5c4f3aa93061480cd64e61daf7fb689.patch?full_index=1"
-      sha256 "c1b61a1244f758480578888d3f89cac470271c376ea0879996b81e10b397cad0"
-    end
-  end
 
   livecheck do
     url :stable
@@ -22,15 +12,12 @@ class Tmux < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "79da3c04d1147057cbe3ecf344bae3126b61ff18f4d0cf7d5470b01b6b30948c"
-    sha256 cellar: :any,                 arm64_sonoma:   "6b407b3351b79919c482d46134c9e83552f3e848f1c482a7deec65c36cf16d37"
-    sha256 cellar: :any,                 arm64_ventura:  "a5a47403c75e2d14370ff07641294bd361eceb8ca2dc65925e5eb7e41453d727"
-    sha256 cellar: :any,                 arm64_monterey: "2233d5fd7333fdf3da6dbe48157735c276f27cd7dd274d0e704985c9105e77b0"
-    sha256 cellar: :any,                 sonoma:         "2a085e0752332536a198aac71cd6b24a10f6feb0bf1825f90551cd6ef5e8c890"
-    sha256 cellar: :any,                 ventura:        "0648a51759f9c37ab98ff9b2558d30aa7ec07a7c7979a4107263e080382d0c0c"
-    sha256 cellar: :any,                 monterey:       "ec64b5ad6daf6bf6cb99cd2580fdf6cfee9830fcedc4971fa9be033710d1774a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05e737d00a0f331d48468c8f7f96f70e8879c5e9ffb9fcae9fb1fdae4f71bcd4"
+    sha256 cellar: :any,                 arm64_sequoia: "981ba63b0f09a3f42968805b4a7ce9b6b3198152646ba201b6d8dbdf7f736929"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2532c0bb5a7aa570c8454f6cd4f4df08fc6606345a8e9fc7e56f7b7b61a38c5"
+    sha256 cellar: :any,                 arm64_ventura: "d81b0f00925d5b6e2568875512bcf8666d19d196d619313946cb715e5fda4839"
+    sha256 cellar: :any,                 sonoma:        "bafcf00422fcde3845487181f872688946966e5caabec6ea9ae0eac9aee40e3c"
+    sha256 cellar: :any,                 ventura:       "5863900439737e5eb23779055a2aedab1c3513bb48a36aadc629c3fb66a98d6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e57b135585e80c982946d364053337171184bdb1cd75eba1cb3efc8768358ee"
   end
 
   head do

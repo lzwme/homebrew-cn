@@ -1,17 +1,17 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https:github.comorhungit-cliff"
-  url "https:github.comorhungit-cliffarchiverefstagsv2.6.0.tar.gz"
-  sha256 "0018be6e72a3133dbcd2e17ee4e12bbdc8d2762a38624d9590beced871314f9d"
+  url "https:github.comorhungit-cliffarchiverefstagsv2.6.1.tar.gz"
+  sha256 "96d2759bb276bfddf4f6653a06afe2982d0bdc9678a5d2cb3880685a681a8a3e"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4afdc3629b2f9645b9e4555d0ed73c2a3abdbfa4848c5c3ddc5db5167146045b"
-    sha256 cellar: :any,                 arm64_sonoma:  "98df5ea956f2cea18f2091836a8009d8d096f4ee67596c2a9fd7b9e084f7432e"
-    sha256 cellar: :any,                 arm64_ventura: "f8add7302dccecf2d781e79cfb11fce2c550aa405c80e74175bf9de09f4142aa"
-    sha256 cellar: :any,                 sonoma:        "b4ba71bf2d674735ecf3361f0b4b981fbc4ce0e870ea37546def840352f309ca"
-    sha256 cellar: :any,                 ventura:       "ce7277129c4899679972f7d2e75d0c8f61795f91a5b9fef661545787c7520e2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5f407ea310146ed09c929fbf858840cefa3f0ea5387b2667a3d52f27c88e0b0"
+    sha256 cellar: :any,                 arm64_sequoia: "e38be5334e0b66baf08b69e292d52f27abc22aea4970dc14c1d3c2ededc8e841"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbb83919485ca184cb109f6f3aa27719251dfd9efc9b534c57132819055ccb64"
+    sha256 cellar: :any,                 arm64_ventura: "a3dab23f71833ee3ed1a818fd8633242f59375690029f4f16c006a9af4f0f6df"
+    sha256 cellar: :any,                 sonoma:        "13d20ac72e3f380d6aab5f4f0160be881b252b5f5501d79f047f7b2b66507a8f"
+    sha256 cellar: :any,                 ventura:       "adc87f385c104c034cbb0914e81ba5b1fcf774d6f3d7e92998eaa57dea5a4c46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d736d2e383cb6c3eb64091b40d8c71b2f9a510a6131767bf47c46efd413af7d"
   end
 
   depends_on "pkg-config" => :build

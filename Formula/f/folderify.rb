@@ -1,19 +1,17 @@
 class Folderify < Formula
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https:github.comlgarronfolderify"
-  url "https:github.comlgarronfolderifyarchiverefstagsv4.0.0.tar.gz"
-  sha256 "8a103f496cacc0fec72bb0d3847a630e38c49dba98dd334bbf89cb6273ec8b64"
+  url "https:github.comlgarronfolderifyarchiverefstagsv4.0.1.tar.gz"
+  sha256 "803c76b3a19e27341a2ca19d1ae13570ede1d358b6e0e0aa3ce94774f7e91626"
   license "MIT"
   head "https:github.comlgarronfolderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "206eaa5fb5923b6395a4797bb41cf6761f47cf9097289cb781243d95bd19ce94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0219485b57420beaa462004c573c9fe8b55a56b3174e527f506adfdd216a28f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "302dbc5c7cf6c8cba6f7dfb54361b0a0e81a54ca10ad43c5410ee40770f06c53"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd4b774735fb5a2a8e318f19c438402c3b940164df49eb437b3b3fafa4aa4893"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ccd32e6a64d7325cb151b84b678737285322a329659ae32dc4706405d39e179b"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bb9b2ce71041402517f138f1e83fa829a8996d4a57d0cc715fa297eea8f41d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "028c0a48489a0ec026c236ab146ab56c8984c788e814bef94b606c7dde1d96ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0377959ef22d1d9cdb3096c942509a13d67e2099ae920b177bf4c09069889f98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c088613df48459a03671af899ab83b0d79e02578619f23d4fc76745b589ded57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9dcdd63ad4517c037168f65f2d807390bdc57130d18928638e7897ec0f96d56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06fb3ae5e03410f001cf053fcca9b4e0bc82774a83e193bce97cd2c06e13568f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a9a0f5d528167cfe3f475acd3b8196860667dc9719b4aac9a68ab52d4fb1bba"
   end
 
   depends_on "rust" => :build

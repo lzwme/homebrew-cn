@@ -3,10 +3,9 @@ class Torchvision < Formula
 
   desc "Datasets, transforms, and models for computer vision"
   homepage "https:github.compytorchvision"
-  url "https:github.compytorchvisionarchiverefstagsv0.17.0.tar.gz"
-  sha256 "55e395d5c7d9bf7658c82ac633cac2224aa168e1bfe8bb5b2b2a296c792a3500"
+  url "https:github.compytorchvisionarchiverefstagsv0.19.1.tar.gz"
+  sha256 "083e75c467285595ec3eb3c7aa8493c19e53d7eb42f13046fb56a07c8897e5a8"
   license "BSD-3-Clause"
-  revision 11
 
   livecheck do
     url :stable
@@ -14,12 +13,12 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "812c446f668fa6467a3fbbaed405f16638d51467293c10aa60c75ecfe1fc9873"
-    sha256 cellar: :any,                 arm64_sonoma:  "c456f270651c12b17afca72e3ebe8940a413cd5739172f5db10b8eced17374a6"
-    sha256 cellar: :any,                 arm64_ventura: "610867f01b53419678fe03a7d6650c64c353ee1d1ea18f35b75944571e10991e"
-    sha256 cellar: :any,                 sonoma:        "f352835f242ea258ae4f39db723fa2e8f686696380954d7409a04b29874a3263"
-    sha256 cellar: :any,                 ventura:       "1d7a5003c763489d6d5e93a841b08aeb1d8ebbf1a99825768025341754c817a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1a683babdd1acd5a495481b49d003c4b9fcc7705dbfb69eb1711b52a6e69d1a"
+    sha256 cellar: :any,                 arm64_sequoia: "5a1b6d729c2e3d039e3ccea262764d442bbd5993815850e762790a52a81ad2a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "9180e25c850189a8f5bd51512758bfb671e46efadf5ff7609dd34d553060ef6f"
+    sha256 cellar: :any,                 arm64_ventura: "69665bfdbc14bc07b6b344a4919c78c6bf89c401b52ffdffd71c441938953312"
+    sha256 cellar: :any,                 sonoma:        "272f58db99105bceca7e33ebf135f71fbcc6e3900082600d74ee5f12f37397a7"
+    sha256 cellar: :any,                 ventura:       "db376520a2dc03ac1a2ad7cf742126ec5e138572109f4997d1e9be15365fc907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5de0ae1b6c65a6c14b8b8546e4d4728c047efd0bcc8ca47ff5c5a84b32c94d"
   end
 
   depends_on "cmake" => :build
@@ -38,26 +37,6 @@ class Torchvision < Formula
     depends_on "libomp"
   end
 
-  resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
-  end
-
-  resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
-  end
-
-  resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
-  end
-
-  resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -74,9 +53,10 @@ class Torchvision < Formula
 
     # We depend on pytorch, but that's a separate formula, so install a `.pth` file to link them.
     # This needs to happen _before_ we try to install torchvision.
+    # NOTE: This is an exception to our usual policy as building `pytorch` is complicated
     site_packages = Language::Python.site_packages(python3)
-    pytorch = Formula["pytorch"].opt_libexec
-    (libexecsite_packages"homebrew-pytorch.pth").write pytorchsite_packages
+    pth_contents = "import site; site.addsitedir('#{Formula["pytorch"].opt_libexecsite_packages}')\n"
+    (venv.site_packages"homebrew-pytorch.pth").write pth_contents
 
     venv.pip_install_and_link(buildpath, build_isolation: false)
 

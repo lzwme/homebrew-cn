@@ -4,7 +4,7 @@ class Netcdf < Formula
   url "https:github.comUnidatanetcdf-carchiverefstagsv4.9.2.tar.gz"
   sha256 "bc104d101278c68b303359b3dc4192f81592ae8640f1aee486921138f7f88cb7"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comUnidatanetcdf-c.git", branch: "main"
 
   livecheck do
@@ -13,16 +13,12 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a055e1aefdcd737a2d87f344a92fa8102e66c8f851db2a5d58c280cd12bce1aa"
-    sha256 cellar: :any,                 arm64_sonoma:   "0a1d427355953eb8813e807e5e4fca3768e406b7f5da08da04aa32da35630250"
-    sha256 cellar: :any,                 arm64_ventura:  "cbb92b7e255f0e91be5a329c3dc512841003d4246b4d390850ce24ecd782aab3"
-    sha256 cellar: :any,                 arm64_monterey: "785772ae3a29c723c9c574794dd33eff744ce91e22ea212183b299a5083e442c"
-    sha256 cellar: :any,                 arm64_big_sur:  "bf70180d4cc7b917c969d6616d946dd4e8c3ba7d657599ae528efa6023ff1858"
-    sha256 cellar: :any,                 sonoma:         "41cd2050077bd9f37c7294d19a5d61540cfb0d8d175e232cb60984dc5747f99f"
-    sha256 cellar: :any,                 ventura:        "731dc8e39faaa4f0a9a0f04c351361850f6881a51ff90d31bc6f238677ff2e2e"
-    sha256 cellar: :any,                 monterey:       "74818d4e93793cfcbc11bc9abbe6dd6db6477f826fa4b588dedebf25dbdde6c5"
-    sha256 cellar: :any,                 big_sur:        "17e88d132cb7705347a2a43921893de7ca1c1020734fdf66886f35e2eb751e13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56154fb4f179e5c3fa2db54a2949f3842e629e2aaa293f9e2a20176bc5de7583"
+    sha256 cellar: :any,                 arm64_sequoia: "016f4defbc70f7932c40c75671487b35221e30519b2c1f16983db14573b65f6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1e3c2b95509a7b7ff02ea59a6c9fbce906dbab8a310c771df782d1b1b1e6cfc"
+    sha256 cellar: :any,                 arm64_ventura: "dca2073eafc069fbc52a1a0c4c60aefd1e43e921dcda35474ea84696519bf482"
+    sha256 cellar: :any,                 sonoma:        "b8072f889abbd500fd7219d6c25bf83c727f783a9df124c695919ce61bfedb6a"
+    sha256 cellar: :any,                 ventura:       "4e6a2e031559d64f3d1f0bed7e970e5802d85413251281ee50e27826c3ec14b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf90052e1c43052e67c31b8c79636eaffa666c60ba86064713c3f704e9774cc7"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +48,10 @@ class Netcdf < Formula
     # Remove shim paths
     inreplace [bin"nc-config", lib"pkgconfignetcdf.pc", lib"cmakenetCDFnetCDFConfig.cmake",
                lib"libnetcdf.settings"], Superenv.shims_pathENV.cc, ENV.cc
+
+    # Fix bad flags, breaks vtk build
+    # https:github.comHomebrewhomebrew-corepull170959#discussion_r1744656193
+    inreplace lib"cmakenetCDFnetCDFTargets.cmake", "hdf5_hl-shared;hdf5-shared;", "hdf5_hl;hdf5;"
   end
 
   test do

@@ -1,30 +1,29 @@
 class Octave < Formula
   desc "High-level interpreted language for numerical computing"
-  homepage "https://octave.org/index.html"
-  url "https://ftp.gnu.org/gnu/octave/octave-9.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/octave/octave-9.2.0.tar.xz"
+  homepage "https:octave.orgindex.html"
+  url "https:ftp.gnu.orggnuoctaveoctave-9.2.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orgoctaveoctave-9.2.0.tar.xz"
   sha256 "21417afb579105b035cac0bea09201522e384893ae90a781b8727efa32765807"
   license "GPL-3.0-or-later"
+  revision 1
 
-  # New tarballs appear on https://ftp.gnu.org/gnu/octave/ before a release is
+  # New tarballs appear on https:ftp.gnu.orggnuoctave before a release is
   # announced, so we check the octave.org download page instead.
   livecheck do
-    url "https://octave.org/download"
-    regex(%r{Octave\s+v?(\d+(?:\.\d+)+)(?:\s*</[^>]+?>)?\s+is\s+the\s+latest\s+stable\s+release}im)
+    url "https:octave.orgdownload"
+    regex(%r{Octave\s+v?(\d+(?:\.\d+)+)(?:\s*<[^>]+?>)?\s+is\s+the\s+latest\s+stable\s+release}im)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "02f7cc330a2375c96920796a281e93087399509754c41fdd25f83794f1396690"
-    sha256 arm64_ventura:  "f89bc978f60040fdc82e5d1f2fe16ff26c5ab94fe2795ad75bd0bd776f9772ff"
-    sha256 arm64_monterey: "4878ff0d0ff235453053b256207c625cfda8133440eb1edceacfbc5c4f2a8685"
-    sha256 sonoma:         "4fbbbdc08918039d20113559a8daaad2edeca34581784fc6c5c0ec93d379c28d"
-    sha256 ventura:        "e5ddc3cba4721722c34a319bb097b4c84c4c4e29a3318139af1513ff8a905612"
-    sha256 monterey:       "939a246d08b1bae6d6682700cbb8c361867544046dce81efeade8a544963a212"
-    sha256 x86_64_linux:   "6287c397454f4d4c2c6e1871d0cbcd92e363fbb26f605242f264572c1be4c7f6"
+    sha256 arm64_sonoma:  "eaba3042a683132820050d28e43c85f2a12b56f20af27c2712e7be396a428e25"
+    sha256 arm64_ventura: "f261ca0b6b3a4024228d3f0f5c14c0a59f6bc41b09d0a5500caee4841dd61f4b"
+    sha256 sonoma:        "0a7e9049bb310f613b1145f83f3dc5a73f01d37862acabe773ade658686761d5"
+    sha256 ventura:       "bf27e37a8e660d94a4bf4c1614b5a8229eda97530c1be46d9905d8f01a1505cf"
+    sha256 x86_64_linux:  "b3b7c0c2eb41dfba1154bd368921a79e6a1a30408f90295060d94e7a201da093"
   end
 
   head do
-    url "https://hg.savannah.gnu.org/hgweb/octave", branch: "default", using: :hg
+    url "https:hg.savannah.gnu.orghgweboctave", branch: "default", using: :hg
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,8 +32,8 @@ class Octave < Formula
     depends_on "librsvg" => :build
   end
 
-  # Complete list of dependencies at https://wiki.octave.org/Building
-  depends_on "gnu-sed" => :build # https://lists.gnu.org/archive/html/octave-maintainers/2016-09/msg00193.html
+  # Complete list of dependencies at https:wiki.octave.orgBuilding
+  depends_on "gnu-sed" => :build # https:lists.gnu.orgarchivehtmloctave-maintainers2016-09msg00193.html
   depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
   depends_on "arpack"
@@ -88,15 +87,15 @@ class Octave < Formula
 
   def install
     # Default configuration passes all linker flags to mkoctfile, to be
-    # inserted into every oct/mex build. This is unnecessary and can cause
+    # inserted into every octmex build. This is unnecessary and can cause
     # cause linking problems.
-    inreplace "src/mkoctfile.in.cc",
-              /%OCTAVE_CONF_OCT(AVE)?_LINK_(DEPS|OPTS)%/,
+    inreplace "srcmkoctfile.in.cc",
+              %OCTAVE_CONF_OCT(AVE)?_LINK_(DEPS|OPTS)%,
               '""'
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["qt"].opt_libexec/"lib/pkgconfig" if OS.mac?
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["qt"].opt_libexec"libpkgconfig" if OS.mac?
 
-    system "./bootstrap" if build.head?
+    system ".bootstrap" if build.head?
     args = [
       "--disable-silent-rules",
       "--enable-shared",
@@ -125,45 +124,48 @@ class Octave < Formula
       system "aclocal"
     end
 
-    system "./configure", *args, *std_configure_args
-    system "make", "all"
+    system ".configure", *args, *std_configure_args
+    # https:github.comHomebrewhomebrew-corepull170959#issuecomment-2351023470
+    ENV.deparallelize do
+      system "make", "all"
+    end
 
     # Avoid revision bumps whenever fftw's, gcc's or OpenBLAS' Cellar paths change
-    inreplace "src/mkoctfile.cc" do |s|
+    inreplace "srcmkoctfile.cc" do |s|
       s.gsub! Formula["fftw"].prefix.realpath, Formula["fftw"].opt_prefix
       s.gsub! Formula["gcc"].prefix.realpath, Formula["gcc"].opt_prefix
     end
 
     # Make sure that Octave uses the modern texinfo at run time
-    rcfile = buildpath/"scripts/startup/site-rcfile"
-    rcfile.append_lines "makeinfo_program(\"#{Formula["texinfo"].opt_bin}/makeinfo\");"
+    rcfile = buildpath"scriptsstartupsite-rcfile"
+    rcfile.append_lines "makeinfo_program(\"#{Formula["texinfo"].opt_bin}makeinfo\");"
 
     system "make", "install"
   end
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system bin/"octave", "--eval", "(22/7 - pi)/pi"
+    system bin"octave", "--eval", "(227 - pi)pi"
     # This is supposed to crash octave if there is a problem with BLAS
-    system bin/"octave", "--eval", "single ([1+i 2+i 3+i]) * single ([ 4+i ; 5+i ; 6+i])"
+    system bin"octave", "--eval", "single ([1+i 2+i 3+i]) * single ([ 4+i ; 5+i ; 6+i])"
     # Test basic compilation
-    (testpath/"oct_demo.cc").write <<~EOS
-      #include <octave/oct.h>
-      DEFUN_DLD (oct_demo, args, /*nargout*/, "doc str")
+    (testpath"oct_demo.cc").write <<~EOS
+      #include <octaveoct.h>
+      DEFUN_DLD (oct_demo, args, *nargout*, "doc str")
       { return ovl (42); }
     EOS
-    system bin/"octave", "--eval", <<~EOS
-      mkoctfile ('-v', '-std=c++11', '-L#{lib}/octave/#{version}', 'oct_demo.cc');
+    system bin"octave", "--eval", <<~EOS
+      mkoctfile ('-v', '-std=c++11', '-L#{lib}octave#{version}', 'oct_demo.cc');
       assert(oct_demo, 42)
     EOS
     # Test FLIBS environment variable
-    system bin/"octave", "--eval", <<~EOS
+    system bin"octave", "--eval", <<~EOS
       args = strsplit (mkoctfile ('-p', 'FLIBS'));
       args = args(~cellfun('isempty', args));
-      mkoctfile ('-v', '-std=c++11', '-L#{lib}/octave/#{version}', args{:}, 'oct_demo.cc');
+      mkoctfile ('-v', '-std=c++11', '-L#{lib}octave#{version}', args{:}, 'oct_demo.cc');
       assert(oct_demo, 42)
     EOS
     ENV["QT_QPA_PLATFORM"] = "minimal"
-    system bin/"octave", "--gui"
+    system bin"octave", "--gui"
   end
 end

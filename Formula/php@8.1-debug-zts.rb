@@ -1,20 +1,18 @@
 class PhpAT81DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.1.29.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.1.29.tar.xz"
-  sha256 "288884af60581d4284baba2ace9ca6d646f72facbd3e3c2dd2acc7fe6f903536"
+  url "https:www.php.netdistributionsphp-8.1.30.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.1.30.tar.xz"
+  sha256 "f24a6007f0b25a53cb7fbaee69c85017e0345b62089c2425a0afb7e177192ed1"
   license "PHP-3.01"
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia:  "904e8acf180ef25d6983b0f2e644564e4e6acbd53cf40643af8d67ac6a78b94e"
-    sha256 arm64_sonoma:   "2f9c04429ececc025f6cd457ae9a4d2500319da6ae60175c39e4fbb493ca370f"
-    sha256 arm64_ventura:  "8ceae5a5a880a810a03b38b279fb133959ce78c6043b5789d1501bceea1c5ba3"
-    sha256 arm64_monterey: "86f575468d4ed09570d1410ac6632c0d5cb0b6ae9810a3c6f524fa391b44ea43"
-    sha256 ventura:        "c1126f8de36055cd05977240b2b0ad28ba79e48cdaa1576f077a6403399cd24d"
-    sha256 monterey:       "616c30d377c27dbfdc9f9397f2579638c27d3671dbfd9a74fe642f914749df47"
-    sha256 x86_64_linux:   "d72ec6fa2e7db16c453c30ab2a25c45f367f59b0f9f7509683108015dc722061"
+    sha256 arm64_sequoia: "fab33e275cd0404128762f62f15452f6c3c7c043e23e6202752375ca20cc5681"
+    sha256 arm64_sonoma:  "5216b6e8af7f4ca8e5dda73a674d9d3d2b03c8940e165854f64e7468cb53166b"
+    sha256 arm64_ventura: "d01963adeb3bcc3422e321cf5249d21020fceda4633297c15ab69cb4667c9042"
+    sha256 ventura:       "625adbb4da55363223c76a779ab2ddf001582e70c792a9ff80225296c31f27b5"
+    sha256 x86_64_linux:  "a7ac433931b3b8a0cec1af94f465b6ce5839ba77ed6629019938c07c808cb1dc"
   end
 
   keg_only :versioned_formula
@@ -56,6 +54,11 @@ class PhpAT81DebugZts < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  patch do
+    url "https:raw.githubusercontent.comshivammathurphp-src-backportscdffd95a7e107a6345814e3778cde795ad596044patches0007-Fix-PEAR-installation-with-libxml2.13.patch?full_index=1"
+    sha256 "7fc8056131e9fa95fe10430a47f8c6dddf7bce859b046dcbba9cc7aabcc56469"
   end
 
   def install

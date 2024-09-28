@@ -1,19 +1,17 @@
 class Actionlint < Formula
   desc "Static checker for GitHub Actions workflow files"
   homepage "https:rhysd.github.ioactionlint"
-  url "https:github.comrhysdactionlintarchiverefstagsv1.7.1.tar.gz"
-  sha256 "f53808c46db1ac2aa579b00f4a12a8acdf6eaf85a382091ce051dea33b18d7b4"
+  url "https:github.comrhysdactionlintarchiverefstagsv1.7.2.tar.gz"
+  sha256 "df74bf4789cbb9c631b92da5d27ed1f3565fea0f7bb62bb5840c2b99ea999f57"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4659f9ed86be188cf49b0835bab640270c8ce1f96ac0aae832ef42cdbbec1ad4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c0c108779f28976420fccc0628a80b47abbce66a10292ffcc55bdc6750c2666"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c0c108779f28976420fccc0628a80b47abbce66a10292ffcc55bdc6750c2666"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c0c108779f28976420fccc0628a80b47abbce66a10292ffcc55bdc6750c2666"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0524b6fe37c904c06ded09f171d6a71323a1ed3c568658f2fac65a64c2fa9954"
-    sha256 cellar: :any_skip_relocation, ventura:        "0524b6fe37c904c06ded09f171d6a71323a1ed3c568658f2fac65a64c2fa9954"
-    sha256 cellar: :any_skip_relocation, monterey:       "0524b6fe37c904c06ded09f171d6a71323a1ed3c568658f2fac65a64c2fa9954"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2d56dfd91f6e3f4a50705e5040a9350744cf1e16d26ff8afb4261f9598e56f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd091f0094698ab4a70c59bb1decda06233774d18033eadf3f78e6a58da18911"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd091f0094698ab4a70c59bb1decda06233774d18033eadf3f78e6a58da18911"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd091f0094698ab4a70c59bb1decda06233774d18033eadf3f78e6a58da18911"
+    sha256 cellar: :any_skip_relocation, sonoma:        "67a28ffb80b98a3b5803cfe5566a5b1869225acdfd4421109df4fc374b2d9585"
+    sha256 cellar: :any_skip_relocation, ventura:       "67a28ffb80b98a3b5803cfe5566a5b1869225acdfd4421109df4fc374b2d9585"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c930ff0b3243018f7ef51dbc33eef22ab3fb1b584917f4303e1722f1d248eca"
   end
 
   depends_on "go" => :build

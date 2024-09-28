@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/14/c1/23a79458daf4a48aeba4b37faef5761071b142f6f8347ec0de88734d6c4f/schemathesis-3.36.1.tar.gz"
-  sha256 "67043bb96aa72f29c00e0ee4008f98117e0964024a7c8fe953db3d476dcab16c"
+  url "https://files.pythonhosted.org/packages/1a/30/c898a523cfb35967fa9547f329939626f58718fbf232c0e5766870e27b36/schemathesis-3.36.2.tar.gz"
+  sha256 "9a29e59c1f632eaa33d873dc46312a95813b3f1a28033080289b03d3826f8175"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e8314559bf788173ab6d7c21a0aa3f601feee48eaa970095dea89e016ef5c00"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd2451bec0fac453a3c54795e957585086dcb5562399bd0cfcf67ef1ca12819c"
-    sha256 cellar: :any,                 arm64_ventura: "3d2cf23ec961f0b6704d3ab119a2b197bc3a2e192cdee293f5e044468f93cfe4"
-    sha256 cellar: :any,                 sonoma:        "c92ab29656dd2ff0b509f1391d5f50c6066aac9ccd808ccc9d4589242a094c12"
-    sha256 cellar: :any,                 ventura:       "7563c7bf6320ddda2c03bb222d4100bc3c71a37bbefd2e138b7e94abdb2e53a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a7da9f67d7c292d127e9d24b1cd0b5c486cc683dbf77a5f9b8bc7c974ae5e50"
+    sha256 cellar: :any,                 arm64_sequoia: "b352d094b3f9a8dc81dff3bb08944b7d03c2b022ae42aacb9862229d0c4b6e60"
+    sha256 cellar: :any,                 arm64_sonoma:  "4484afeed3bf439b0d81d210f54d119fdebcabc991e0adce61558d6102c72e8f"
+    sha256 cellar: :any,                 arm64_ventura: "7a4fbd6fba4922e0d0454f7c0f8ad904cccff48963f4a4fe37af886abc8506d9"
+    sha256 cellar: :any,                 sonoma:        "e0f9161b72f358d70c2c80ab4e9a5fe0a48cf926a8001c108e90c8d123604f78"
+    sha256 cellar: :any,                 ventura:       "21721538b2a51e7262f7bfe8390598eba2ed67636b0c8aa094c5e03e8d8dc2e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2bfbf93ec8199d984ad0fcd073f6d1c7935e2a54b64a7929d3f0d7bc8deee6a"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -224,8 +224,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/42/b4/e25c3b688ef703d85e55017c6edd0cbf38e5770ab748234363d54ff0251a/starlette-0.38.6.tar.gz"
-    sha256 "863a1588f5574e70a821dadefb41e4881ea451a47a3cd1b4df359d4ffefe5ead"
+    url "https://files.pythonhosted.org/packages/65/d2/89a812386fff01247481fb5a9709b4eac1e16753a9ff2915ec6c23cad108/starlette-0.39.1.tar.gz"
+    sha256 "33c5a94f64d3ab2c799b2715b45f254a3752f229d334f1562a3aaf78c23eab95"
   end
 
   resource "starlette-testclient" do
@@ -269,8 +269,8 @@ class Schemathesis < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/e4/3d/4924f9ed49698bac5f112bc9b40aa007bbdcd702462c1df3d2e1383fb158/yarl-1.11.1.tar.gz"
-    sha256 "1bb2d9e212fb7449b8fb73bc461b51eaa17cc8430b4a87d87be7b25052d92f53"
+    url "https://files.pythonhosted.org/packages/27/6e/b26e831b6abede32fba3763131eb2c52987f574277daa65e10a5fda6021c/yarl-1.13.0.tar.gz"
+    sha256 "02f117a63d11c8c2ada229029f8bb444a811e62e5041da962de548f26ac2c40f"
   end
 
   def install
