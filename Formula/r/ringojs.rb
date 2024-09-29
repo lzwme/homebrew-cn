@@ -11,24 +11,24 @@ class Ringojs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b257e897b4c3c6a0eda925822044fea179a8668bc9fb9ef0d73b65787c03204"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b257e897b4c3c6a0eda925822044fea179a8668bc9fb9ef0d73b65787c03204"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b257e897b4c3c6a0eda925822044fea179a8668bc9fb9ef0d73b65787c03204"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94a3251d5edc63236b82b66b85c8fb99e86af58409fbbde8e87da8e52d329b5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "94a3251d5edc63236b82b66b85c8fb99e86af58409fbbde8e87da8e52d329b5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b257e897b4c3c6a0eda925822044fea179a8668bc9fb9ef0d73b65787c03204"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "fdb1ddd59e1f97eb6b776de6710f8bf9dc96c8e9cede250c0a1bdec08475e643"
   end
 
   depends_on "openjdk@17"
 
   def install
     rm Dir["bin*.cmd"]
+    rm_r "docker"
+
+    # Ensure bottles are uniform. The `usrlocal` references are all in comments.
+    inreplace %w[modulesfs.js modulesglobals.js], "usrlocal", HOMEBREW_PREFIX
+
     libexec.install Dir["*"]
     bin.install Dir["#{libexec}bin*"]
-    env = { RINGO_HOME: libexec }
-    env.merge! Language::Java.overridable_java_home_env("17")
-    bin.env_script_all_files libexec"bin", env
+    java_env = { RINGO_HOME: libexec }
+    java_env.merge! Language::Java.overridable_java_home_env("17")
+    bin.env_script_all_files libexec"bin", java_env
   end
 
   test do

@@ -1029,6 +1029,7 @@ Homebrew-homebrew-core/Formula/c/convertlit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/convmv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/convox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cookiecutter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/coordgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copilot.rb, Homebrew/homebrew-core, 1
@@ -3000,6 +3001,7 @@ Homebrew-homebrew-core/Formula/k/kcptun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kdoctools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kdoctor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kea.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/keep-sorted.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keepassc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keepkey-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keploy.rb, Homebrew/homebrew-core, 1
@@ -3884,6 +3886,7 @@ Homebrew-homebrew-core/Formula/m/mactop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macvim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/madplay.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/maeparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mafft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic-wormhole.rb, Homebrew/homebrew-core, 1
@@ -7752,7 +7755,7 @@ Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatology.rb, Homebrew/homebrew-cask, 0
@@ -11539,6 +11542,7 @@ Homebrew-homebrew-cask/Casks/k/kui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kvirc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kyokan-bob.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lab.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/label-live.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/labplot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/laconvolver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lagrange.rb, Homebrew/homebrew-cask, 1
@@ -11953,6 +11957,7 @@ Homebrew-homebrew-cask/Casks/m/minitimer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minitube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miniwol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minizincide.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/minstaller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mints.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mipony.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miro.rb, Homebrew/homebrew-cask, 0
@@ -14369,3 +14374,7 @@ shivammathur-homebrew-php/Formula/php@8.4-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.4-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.5-debug-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.5-debug.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.5-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.5.rb, shivammathur/homebrew-php, 1

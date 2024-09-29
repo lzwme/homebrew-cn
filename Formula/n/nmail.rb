@@ -1,19 +1,18 @@
 class Nmail < Formula
   desc "Terminal-based email client for Linux and macOS"
   homepage "https:github.comd99krisnmail"
-  url "https:github.comd99krisnmailarchiverefstagsv4.67.tar.gz"
-  sha256 "e081a0b1da4be25dc0e09a676c472f84d57639be5bd88b7aac6af60f0ea49f12"
+  url "https:github.comd99krisnmailarchiverefstagsv5.1.16.tar.gz"
+  sha256 "d0c9063521264acc73f70ef66cbc8830015df60395ca463d35518313ad7e8c61"
   license "MIT"
   head "https:github.comd99krisnmail.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "648bcef4ec6117d0fc467077a56d6dc12900adeb400ce21cf79e72c0eaef2b71"
-    sha256 cellar: :any,                 arm64_sonoma:  "72d63d6fe5cf11886ffc40aad972711af587a30d59afc2a9079687bde2953fca"
-    sha256 cellar: :any,                 arm64_ventura: "d7561f32b7ebf62678250c010025f00d884c367c7022b73e8323eda2915ce048"
-    sha256 cellar: :any,                 sonoma:        "5279169e721aab95a500c9a7ff63bf5c9cfffafda3a03fe4d2a60f56f280d2ff"
-    sha256 cellar: :any,                 ventura:       "1d8d16f017ae3b95bbfa6aa0197199767f773449a17d60a2b6768161de1816c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c95192610e313b69ff43687a95ccea1fc7f922b764c2b6770cb14c9334e7f9b5"
+    sha256 cellar: :any,                 arm64_sequoia: "d653464563c657bfc1e80da2f845c7a5391d02295abb953b12b0e3067ca9211e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9fa74005eb1d0af3d7faffd46edd571c4311aa8098eb0665fcd9b2e401ad19d"
+    sha256 cellar: :any,                 arm64_ventura: "dfcfdbb039fecbbb08eb7277afc65111adce697bc37995972d4a003297028cfb"
+    sha256 cellar: :any,                 sonoma:        "c5e8e7611405e1ba684844fe593d0cae96c63c44b646fdcf3b25096a4c01da30"
+    sha256 cellar: :any,                 ventura:       "d8f7596bbb987a1078d794b4cb79163dc5a2cff6e3bdc721cdeb2c8ffa562ab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbfea8f0f2ba09f73cece1da29ce85af4301fe65f6872e2e99c1b0947d73708"
   end
 
   depends_on "cmake" => :build
@@ -45,7 +44,7 @@ class Nmail < Formula
   test do
     (testpath".nmailmain.conf").write "user = test"
     output = shell_output("#{bin}nmail --confdir #{testpath}.nmail 2>&1", 1)
-    assert_match "error: user not specified in config file", output
+    assert_match "error: imaphost not specified in config file", output
 
     assert_match version.to_s, shell_output("#{bin}nmail --version")
   end

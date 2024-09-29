@@ -69,12 +69,7 @@ class PostgresqlAT14 < Formula
       --with-uuid=e2fs
       --with-extra-version=\ (#{tap.user})
     ]
-    if OS.mac?
-      args += %w[
-        --with-bonjour
-        --with-tcl
-      ]
-    end
+    args += %w[--with-bonjour --with-tcl] if OS.mac?
 
     # PostgreSQL by default uses xcodebuild internally to determine this,
     # which does not work on CLT-only installs.
@@ -89,12 +84,11 @@ class PostgresqlAT14 < Formula
                                     "pkgincludedir=#{include}#{name}",
                                     "includedir_server=#{include}#{name}server",
                                     "includedir_internal=#{include}#{name}internal"
+    return unless OS.linux?
 
-    if OS.linux?
-      inreplace libname"pgxssrcMakefile.global",
-                "LD = #{HOMEBREW_PREFIX}HomebrewLibraryHomebrewshimslinuxsuperld",
-                "LD = #{HOMEBREW_PREFIX}binld"
-    end
+    inreplace libname"pgxssrcMakefile.global",
+              "LD = #{Superenv.shims_path}ld",
+              "LD = #{HOMEBREW_PREFIX}binld"
   end
 
   def post_install
@@ -162,8 +156,6 @@ class PostgresqlAT14 < Formula
     caveats += <<~EOS
       This formula has created a default database cluster with:
         initdb --locale=C -E UTF-8 #{postgresql_datadir}
-      For more details, read:
-        https:www.postgresql.orgdocs#{version.major}app-initdb.html
     EOS
 
     caveats

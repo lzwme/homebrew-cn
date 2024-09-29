@@ -2,8 +2,8 @@ class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
   homepage "https:px.dev"
   url "https:github.compixie-iopixie.git",
-      tag:      "releasecliv0.8.3",
-      revision: "a68986a7b279e369d6b1103b4558b5298ce461d0"
+      tag:      "releasecliv0.8.4",
+      revision: "7a468a416fa6fc5762460ad844a9ed06ed80d0f0"
   license "Apache-2.0"
   head "https:github.compixie-iopixie.git", branch: "main"
 
@@ -13,14 +13,12 @@ class Pixie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fcefa36a55d389699f63313c3152ef00403dc30a162da01d91cbae2a1d091991"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd94e56a22fa17b865699270a47b2b9065f4c822a9161ae7ff3c7fdcae5082bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e7d7d5353bef50e7a967c25d565e018fe4940f5d80b60f2e52572663818e684"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99a417c244525ad5d1317c38f1b439d96eb18ecc71f02cbb643352e16d7dbbb6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9eb7213d113e4fc3b02ac5fbbe63ed19ffa5b25cc5c2e7aa5455fa07ece02ba2"
-    sha256 cellar: :any_skip_relocation, ventura:        "895200bc071528e5a9ecaaf4dbf075e3b5129d3c865fe45e13e11d455f5b9ccb"
-    sha256 cellar: :any_skip_relocation, monterey:       "e064f20416072902e3585319a37d7c9d092a1dfbefc1f10b996694b98f8d1aec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2ecb9a98e1f85afa1aeb83ab47d5c32caab8ec23b87c721abe7ce9f2e872e8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18e20e27a7db8e12ccbf4a172e6486d6831cdcdb41e1f76b0800f55bf239e9c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ad18273604f5d22def4144d9cdaf237b2da6d3f2564e8cceefe9b96525e530b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4853ed8ecbc90fa4358c0f5772e91d64047c44c1ba96919c5e9e410d20f49a42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85b4659b8f54d8f8756faf25924a0bc204cd8511fe66e2bb854d202273887466"
+    sha256 cellar: :any_skip_relocation, ventura:       "b411cacab9ce597c41e24a2ac2345266b3794eea16cf740dbfc6cff1f4b6cb07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f5cb05bfa5fa22ebd63bfa33866f3a6750058a3442e6ded36d0cc53c6cda570"
   end
 
   depends_on "go" => :build

@@ -3,13 +3,13 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https:github.commikfgallery-dl"
-  url "https:files.pythonhosted.orgpackages4e1069926f779acea5f0a606ec60902ff24f946d3f819e748bec7f2470553a65gallery_dl-1.27.4.tar.gz"
-  sha256 "dbccb9b14f689cf1c8aa54c8633210f89d8a12526871bbb029037f139d09188f"
+  url "https:files.pythonhosted.orgpackages4abc61d9f68f0b25a0bbd9a732690dfe059e5476f19757daa869d4b181f1037fgallery_dl-1.27.5.tar.gz"
+  sha256 "abf6f2591bdbceb57a2a33c80e32495a5d1f92b96e18472fac848f2b3f1227ee"
   license "GPL-2.0-only"
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "08a353f1335707808194b07441371777bbb28e7b7e8adbb742be4a31cb18bedf"
+    sha256 cellar: :any_skip_relocation, all: "370ddb2ad7d6028c9d0b88e5fa754627c562ec6f85913b70087ec4f040e9a7ea"
   end
 
   depends_on "certifi"
@@ -21,8 +21,8 @@ class GalleryDl < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "requests" do
@@ -31,8 +31,8 @@ class GalleryDl < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install

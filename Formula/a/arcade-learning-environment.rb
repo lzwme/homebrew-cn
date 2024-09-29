@@ -3,18 +3,18 @@ class ArcadeLearningEnvironment < Formula
 
   desc "Platform for AI research"
   homepage "https:github.comFarama-FoundationArcade-Learning-Environment"
-  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.10.0.tar.gz"
-  sha256 "b7cfa312c2c538f4e03e0b308c32f66c335f87b9cd4d495698601063ea9d65b7"
+  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.10.1.tar.gz"
+  sha256 "7e0473de29b63f59054f8a165a968cf5a168bd9c07444d377a1f70401d268894"
   license "GPL-2.0-only"
   head "https:github.comFarama-FoundationArcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c85f7f36681ca8b495730c491dfe272ab56227baa3a2b0751d5499764251edc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93d00bffd2207730debe347ff06466b3dded6e595c279b7a7be3c900445d2545"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f33a67f675aa6cc418b3f9de04a35ba83e423deeb9dc662946d5b179784b54d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46307c897806fdcf0ddf6d5d1a7e3710c288dde8bc2d3172463d0a5de176c5d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "98da0b96f2b25bbc46d80fe470b91bc5cdfd564dc6554c970153c3f17b20b5b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14129b42c2db132cfcf8a25309c349e95241663a247d08e8ce0116eadda6390e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69ba3f3965d52884eb1950417efcf0a5d19a8db48d11aedd12af59fe92e8c8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0696c90decbb6dfba17039e5468ec72c4a4cd7b70b0949907420c0ef35760627"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38cd6881049eaf3df3b4e17c76b0af82ef47a8bf4c5bc0f9a41dcddeb183afd4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39f422f6998769392d97cbe6bbbc4af38c9e860d7643c7dc684e0ab4e6bd8818"
+    sha256 cellar: :any_skip_relocation, ventura:       "32f6fa20cd2fd7bbadb84681eef5c665aafd5a070f40044d5211dcb34490087c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f2cf58da8b8b441eca30c9f193af76d08137e52926d1c3444a4f8820c8376a2"
   end
 
   depends_on "cmake" => :build

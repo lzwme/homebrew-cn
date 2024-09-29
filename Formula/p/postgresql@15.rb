@@ -11,14 +11,13 @@ class PostgresqlAT15 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "df021a4e3cbe85490ae3b101858eec3a3021bf233d660993c55a678f63aa5c50"
-    sha256 arm64_sonoma:   "36ba5e5ef042b45c89d84052445a2a13e19dfbcb8e50dfc86acaab614c50e843"
-    sha256 arm64_ventura:  "76756e3609146a20e413312e3ac1e8cdf824eaed37ee72a52c4e8fe5b757e1b0"
-    sha256 arm64_monterey: "002341794de10ec8cebad3abc1e71b30d86ccdfef18d0299a69a62a5b4615e4c"
-    sha256 sonoma:         "7f84bf6248857b6e0c87f7c2b429a815c8e8f6d86f2e81acbe0b3fece72ebb5d"
-    sha256 ventura:        "200d30ee9c824ba78fa7258be4f916ac7af6ad5c8e4d1d3628fca79c30eff90d"
-    sha256 monterey:       "401d4759b87e7a1640bca297e951bee7ddf98383ebed2257278ed633a99867b2"
-    sha256 x86_64_linux:   "780ef5fb6b44b598d8e855c51c4f671c7fd153d03bbd6cceba0f33abd2ed1f49"
+    rebuild 1
+    sha256 arm64_sequoia: "f62ead6c7e2a1a98e568387c93d00739381e3c146fd74b0a08653c501f88f4c6"
+    sha256 arm64_sonoma:  "3faba25b019841450c38dc20fbb0e2df2f80773e8bc078dda91aaee9d3cbc6cd"
+    sha256 arm64_ventura: "121d933b4a1d366d80e59154c7fbb95c35771206a427683d6ffd53ca7243951f"
+    sha256 sonoma:        "738d98a146abb1e78053b8e75f278806d436ba511e0ff54b06c4a9fd5aa70ced"
+    sha256 ventura:       "47b1673010e4d1a799ff10adcc6b271bb2402706ce30147366f34609312aed08"
+    sha256 x86_64_linux:  "ef2abb463fad512ec48ed6328fd1e8c66becf9c160edbaed619fead1791159a9"
   end
 
   keg_only :versioned_formula
@@ -26,8 +25,8 @@ class PostgresqlAT15 < Formula
   # https:www.postgresql.orgsupportversioning
   deprecate! date: "2027-11-11", because: :unsupported
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "icu4c"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
@@ -45,6 +44,10 @@ class PostgresqlAT15 < Formula
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
@@ -56,8 +59,10 @@ class PostgresqlAT15 < Formula
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
 
     # Fix 'libintl.h' file not found for extensions
-    ENV.prepend "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include}"
+    if OS.mac?
+      ENV.prepend "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
+      ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include}"
+    end
 
     args = std_configure_args + %W[
       --datadir=#{opt_pkgshare}
@@ -80,12 +85,7 @@ class PostgresqlAT15 < Formula
       --with-uuid=e2fs
       --with-extra-version=\ (#{tap.user})
     ]
-    if OS.mac?
-      args += %w[
-        --with-bonjour
-        --with-tcl
-      ]
-    end
+    args += %w[--with-bonjour --with-tcl] if OS.mac?
 
     # PostgreSQL by default uses xcodebuild internally to determine this,
     # which does not work on CLT-only installs.
@@ -107,12 +107,11 @@ class PostgresqlAT15 < Formula
                                     "pkgincludedir=#{include}postgresql",
                                     "includedir_server=#{include}postgresqlserver",
                                     "includedir_internal=#{include}postgresqlinternal"
+    return unless OS.linux?
 
-    if OS.linux?
-      inreplace lib"postgresqlpgxssrcMakefile.global",
-                "LD = #{HOMEBREW_PREFIX}HomebrewLibraryHomebrewshimslinuxsuperld",
-                "LD = #{HOMEBREW_PREFIX}binld"
-    end
+    inreplace lib"postgresqlpgxssrcMakefile.global",
+              "LD = #{Superenv.shims_path}ld",
+              "LD = #{HOMEBREW_PREFIX}binld"
   end
 
   def post_install
@@ -141,8 +140,6 @@ class PostgresqlAT15 < Formula
     <<~EOS
       This formula has created a default database cluster with:
         initdb --locale=C -E UTF-8 #{postgresql_datadir}
-      For more details, read:
-        https:www.postgresql.orgdocs#{version.major}app-initdb.html
     EOS
   end
 
@@ -162,6 +159,6 @@ class PostgresqlAT15 < Formula
     assert_equal (opt_lib"postgresql").to_s, shell_output("#{bin}pg_config --pkglibdir").chomp
     assert_equal (opt_include"postgresql").to_s, shell_output("#{bin}pg_config --pkgincludedir").chomp
     assert_equal (opt_include"postgresqlserver").to_s, shell_output("#{bin}pg_config --includedir-server").chomp
-    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}pg_config --cppflags")
+    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}pg_config --cppflags") if OS.mac?
   end
 end

@@ -122,6 +122,7 @@ class Qt < Formula
     depends_on "minizip"
     depends_on "nss"
     depends_on "opus"
+    depends_on "pango"
     depends_on "pulseaudio"
     depends_on "sdl2"
     depends_on "snappy"

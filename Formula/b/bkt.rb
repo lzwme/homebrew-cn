@@ -1,17 +1,17 @@
 class Bkt < Formula
   desc "CLI utility for caching the output of subprocesses"
   homepage "https:www.bkt.rs"
-  url "https:github.comdimo414bktarchiverefstags0.8.1.tar.gz"
-  sha256 "c8c8cc6f03d0fd35c4ace0ad81e437c41c6bb7778f5caafb3dbb1904b2b0c4f5"
+  url "https:github.comdimo414bktarchiverefstags0.8.2.tar.gz"
+  sha256 "d9128a13070ebc564bcc70210062bdd60eb757fd0f5d075c50e9aa7f714c6562"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c9b11cb72eee4a2791a5accc9d325934004dcc97f741d18530a19f0d93e5d18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94b062a26c16243e7131ba960a751c69320a2ca2a181ce8e56cfbf49fc53c88d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31bd800e3d07048d1938701bcbc12a81222eaebfa5c2654585774defefab93e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "724039c2d9082e63585935895e54396f079440eaec8a0bbc8b142a6c5b38a524"
-    sha256 cellar: :any_skip_relocation, ventura:       "7543fed4a370c38f58147c1664c3f3533b9b1d1b4614bd70be908150e447e206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "769d5594fd70d6e6e0294999a6ff4c09bea44e3625dcc0cfd13ad62358e39543"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b10047b912e99a0490844b80c06ad838dd05f85ff7e9e87f5c25447993b72ce7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc1910c62ee9d66bb773f0633106edb03345905393999a29f056ab59b570e583"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ead41eec54fe52160bacbcd5305a521e7704c5fc6b19082aebb03163d0b02ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fef406248481dabdb5e53ad4eb26be1f6984dbb261597a4f02e34a410d0b5141"
+    sha256 cellar: :any_skip_relocation, ventura:       "4d516657009e7793b2f9e2e3ee08a9349d613346481b4f03581f1cfd4a948851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f933949ff5c0945bc66c55380e42ca9e96d4292c241ba2ed8a147ea35e4b0a0"
   end
 
   depends_on "rust" => :build

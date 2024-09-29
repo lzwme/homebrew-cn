@@ -1,25 +1,26 @@
 class Tinymist < Formula
   desc "Language server for Typst"
   homepage "https:github.comMyriad-Dreamintinymist"
-  url "https:github.comMyriad-Dreamintinymistarchiverefstagsv0.11.20.tar.gz"
-  sha256 "19d28b1c7c9fed755a3bf599c9dc4147755b7ff12a329a328fa392db10af4bb6"
+  url "https:github.comMyriad-Dreamintinymistarchiverefstagsv0.11.22.tar.gz"
+  sha256 "ebb0fde8edca6daed57129a377616344284e1f870e48051ce5401814153d355c"
   license "Apache-2.0"
   head "https:github.comMyriad-Dreamintinymist.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc72e3502a4e8376c150d31435bf1ef262c8782cdd22124ee33c301dfbe0b196"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dbe220c73cbb2c16819961dabd61c869c15cd0c09b3dca1558caaefa6e02da7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1e6dc9850a7bacfa8340bbc79b39ad4c3bce045d61b7134aab24439c8a0cd78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23d56e80b57d48ccba473a4903c9b1296731ffb6f0d96b99cee3775770712b70"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3719086352ff4c2e8316e8750c57c0a32c845bbef4f2dbee3104aad95324845d"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c627dee7a902528344d888ed9a6a578531cfc634d664d580dc303e2d204e95b"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d80704a40787f9350959d1553b87de06f4a55f66805407e2fa020ebb33937ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be31d2a3086fd27c33afe6e39eba0226382d234802ccfe2b341291236ff8e881"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "badf41077c9f76def0cdb24348c247704fc8a24a2ae10b5d4276ec4d6d79bc50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35c9bae7fd4df1b992ed0d5e54874001bed5f8d61da41aef4834f299f41a269e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b944b8c45bc42a7adcbaeeb828f74ab332348a654455ea7ac35fe57e8c5d6f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59180f2cb63309ff5ed3681baa87c7bf83798081a97ba0cd7ca65e766cb05380"
+    sha256 cellar: :any_skip_relocation, ventura:       "5a6c8b0d6acafd103f0e27e0433590605eaaf48c3f35233e76e19f750c2c9ba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1ad825ccf7aee6721cf6acd65edba12892b0b2c0175a063e444d29ddf8e424e"
   end
 
   depends_on "rust" => :build

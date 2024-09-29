@@ -3,20 +3,18 @@ class OpenaiWhisper < Formula
 
   desc "General-purpose speech recognition model"
   homepage "https:github.comopenaiwhisper"
-  url "https:files.pythonhosted.orgpackagesd26e50ace2bf704e5ffc786d20d96403ab0d57c5d6ab8729de7fed8c436687dfopenai-whisper-20231117.tar.gz"
-  sha256 "7af424181436f1800cc0b7d75cf40ede34e9ddf1ba4983a910832fcf4aade4a4"
+  url "https:files.pythonhosted.orgpackageseda981f65f3443778a1e1088e80089fc970f1f160abec2bfc3d71abfed8cbc34openai-whisper-20240927.tar.gz"
+  sha256 "5b322442b03704e245e3d6d3a577d7a3845f884e50edbf15990cb26a134dffff"
   license "MIT"
-  revision 6
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "6aa7014aa354ee1e0ad976809c20418418d3b9b0aba9dd4f1b25c39f874e4563"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9e20ff32487f20a7407a963660acb80ac7504399a268cef506ecdcad84f4ea9"
-    sha256 cellar: :any,                 arm64_ventura: "cb137d6275e08c473b45b15cf0c82453f9753e3fa92f17ef4ad65ea371c35c64"
-    sha256 cellar: :any,                 sonoma:        "c1f8bf9910466d3b75158d3ddf241fa22a8f10060e4cd4f0b66230fa9b54e31c"
-    sha256 cellar: :any,                 ventura:       "8f21d5a3619efa297849c3b2b2a10948b32baf6d6fbd8300912b880bb79066bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b64ba105ab3b2f73cf353d6ee5e92ef117ed9391facad3bd329403a0fcf6965"
+    sha256 cellar: :any,                 arm64_sequoia: "4092af8c5fad2fee89cd1f28b82b626e50b19d176f2ef219e0cd0bb756a56e75"
+    sha256 cellar: :any,                 arm64_sonoma:  "56f16928126b8bee871d9318a75b5b45dd75bb986c894791a3256162d05e3077"
+    sha256 cellar: :any,                 arm64_ventura: "e6350871277be207c949e3167831437174a2d46e9d7c58d62da81d3496763ce0"
+    sha256 cellar: :any,                 sonoma:        "b4dec42f4aa1753adf2f1220dd2543649d0652d952b47131116f8b3a0c0939a9"
+    sha256 cellar: :any,                 ventura:       "fa170824bcd2e7d2435c1316cdd0bb4c10d1eb615f102b3ccd8593867a8c9c4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0d9d31767023ccc24c34d321d558b3a354f328f76938157c640ee5fdfdc5060"
   end
 
   depends_on "rust" => :build # for tiktoken

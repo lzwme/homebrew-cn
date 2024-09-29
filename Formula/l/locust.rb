@@ -3,17 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/2e/2d/67502e099fc5d84dc5969429e1909e6f12c326a804a8db543dbc4b1bf58d/locust-2.31.7.tar.gz"
-  sha256 "e31af05ca19d1801ef719fa7a5c55eb3b8573d1808a9efc5bffa91df1ba85c47"
+  url "https://files.pythonhosted.org/packages/ff/0e/5b9a118625e79657703f154731728ed5e22118f688b496ec6e85de4cbe1d/locust-2.31.8.tar.gz"
+  sha256 "b240c0d3e1724317d9211e81e99fbe42a3469071ef4d34d2ae6a727776d56377"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1588aee94a65b23e9c42a62f016b8d1fb6dda48ef85ec416d6837c8517258982"
-    sha256 cellar: :any,                 arm64_sonoma:  "3689b2fe59a6a8dd67b207a147e78a81a493f79a60b0d75a3ce226581a4745a3"
-    sha256 cellar: :any,                 arm64_ventura: "71e8aecb157ac572dc96f1af17e66617e80787bbc9abbc44f147b5da51f6aba7"
-    sha256 cellar: :any,                 sonoma:        "0b8273a74f2fcd1c12a0f0b7e1c4b2eb390edbd71f6fe4e9914e45d6ed00bb17"
-    sha256 cellar: :any,                 ventura:       "2e62f77771fb69e7dd4558ad0ee8adbf52947bad6775846b84c8829257d86b62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a31e6cbc1bd539f96901fbc63013cb82f0e56bac77339c024342a6a416ff6ab"
+    sha256 cellar: :any,                 arm64_sequoia: "3ce5235fc743f5169b09828c859d6e40aa1074c65e6e0f0ddde2aa012a36fedf"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f9069b34a52891ebba0872f68b5e8bb0795ee8de42c37eaa52a6d2232ef3fa4"
+    sha256 cellar: :any,                 arm64_ventura: "e454c044e86554703b953b16ecd5230c21ba2828189bbaf7a4c765ba20ccedc0"
+    sha256 cellar: :any,                 sonoma:        "d78b490d5fb44ed2df68d06acef2e89a01662c19558fe68162319d477f3b32ff"
+    sha256 cellar: :any,                 ventura:       "cbd3a0ffd087f815c3a6d916007be8667a2ef938ea6b62654889695cd9814572"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7d40c1eed675e7715313fd52d1cae5b7b11b3d12c651f96ac0cf9a463a18dcb"
   end
 
   depends_on "cmake" => :build # for pyzmq

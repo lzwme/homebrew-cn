@@ -1,19 +1,17 @@
 class CargoMake < Formula
   desc "Rust task runner and build tool"
   homepage "https:github.comsagieguraricargo-make"
-  url "https:github.comsagieguraricargo-makearchiverefstags0.37.16.tar.gz"
-  sha256 "bf3e46b94416f8c426fd3af41c37dcb015d2b593886bb2eceba8cc0def39f1fb"
+  url "https:github.comsagieguraricargo-makearchiverefstags0.37.17.tar.gz"
+  sha256 "6338725e9910e7e579143ad4d4dddda950c2ea7244b747d502f8bc27af267333"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b9049737e1ef91bac22d9ccc3cc266177515607718a28550a9e15a3c8380354c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dfe95fa630b7e6e21ec9ddb0442f96420cc385170ab50f101069ba962bec328"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfb436f9360c89158122188bf95f8ea44aef81bb6b086dad7edb2fabaf7508c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c57b1110b8a7b3d13e9422724cd6b8895d4591c0761bd996f75417700993ff3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1b5a2d2783faa25916916710c3765869b9dec3e4212b77c552a5c0bebd152a12"
-    sha256 cellar: :any_skip_relocation, ventura:        "2fb182684e7cd31ead508eb283a01d89eb637fd87d87fec901ed938357bb6eff"
-    sha256 cellar: :any_skip_relocation, monterey:       "20ee8d085af2b62c6895265ece1b0796d39a33542cf9b901be3f207e834008ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d35c8302a3b7b94a32eee6d592ea4d2592a9cc891b8e942b483e8492a11a955"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f358a30e13066704a369e2b0c2497c38070854b44af6d529d37ace9601c5f4fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73bed2ebb1050021798ed4a7c62270e0b2f6e27b86428c65ab167090f4509f33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4436d9f012eaf5bff70f995878c0d856f29e9a5353dd58c0431cafd5eafdb405"
+    sha256 cellar: :any_skip_relocation, sonoma:        "649d48b81aace3671cd16abb689ffbd7af2c091419c7a03ae5c3e7024b9048b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "27087e81249a4637064355b6c8d7c295cc66530af9482a0670aac602630d9b0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2499c9947652d6277f864996571dc67c20b361f5c2f432514137ad88e5eb648"
   end
 
   depends_on "rust" => :build

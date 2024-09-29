@@ -13,12 +13,13 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "016f4defbc70f7932c40c75671487b35221e30519b2c1f16983db14573b65f6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1e3c2b95509a7b7ff02ea59a6c9fbce906dbab8a310c771df782d1b1b1e6cfc"
-    sha256 cellar: :any,                 arm64_ventura: "dca2073eafc069fbc52a1a0c4c60aefd1e43e921dcda35474ea84696519bf482"
-    sha256 cellar: :any,                 sonoma:        "b8072f889abbd500fd7219d6c25bf83c727f783a9df124c695919ce61bfedb6a"
-    sha256 cellar: :any,                 ventura:       "4e6a2e031559d64f3d1f0bed7e970e5802d85413251281ee50e27826c3ec14b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf90052e1c43052e67c31b8c79636eaffa666c60ba86064713c3f704e9774cc7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "70dfa63c3d6c0bc99c87e3396640dab20168be0922c86220b37249f12aca32b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "1de9848cbbca463fb680cd0d9046eb0074c4fc5a576c6ec170226b7e8003e29c"
+    sha256 cellar: :any,                 arm64_ventura: "de58c0589a531564788da724ea83373d9a7d6e5eb85eb59106fc8141be027edc"
+    sha256 cellar: :any,                 sonoma:        "3c20b4751784056cefd18fc1c3d6d8c5f000a2f3cfdd0ae17889d2d3f7f7fb04"
+    sha256 cellar: :any,                 ventura:       "55bfa492d1653d4b73ef9cb288d4133e00ec101427d406461f20d379dadc7d12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d08319d7d9cc73b8dbdea396221f5c499a3db2f50933640af1407e2140875a22"
   end
 
   depends_on "cmake" => :build
@@ -48,10 +49,6 @@ class Netcdf < Formula
     # Remove shim paths
     inreplace [bin"nc-config", lib"pkgconfignetcdf.pc", lib"cmakenetCDFnetCDFConfig.cmake",
                lib"libnetcdf.settings"], Superenv.shims_pathENV.cc, ENV.cc
-
-    # Fix bad flags, breaks vtk build
-    # https:github.comHomebrewhomebrew-corepull170959#discussion_r1744656193
-    inreplace lib"cmakenetCDFnetCDFTargets.cmake", "hdf5_hl-shared;hdf5-shared;", "hdf5_hl;hdf5;"
   end
 
   test do
