@@ -1,20 +1,18 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https:d2lang.com"
-  url "https:github.comterrastructd2archiverefstagsv0.6.6.tar.gz"
-  sha256 "5af111718346a3e16d04f8f7461d089543f0f57c4abf39969b47dad648834144"
+  url "https:github.comterrastructd2archiverefstagsv0.6.7.tar.gz"
+  sha256 "2e66d0012202070dccda6b8fdd8f13cbbf316e23d97fa94327908e4e87b685e5"
   license "MPL-2.0"
   head "https:github.comterrastructd2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac9aeb470837b19193e39335536bda2a5ec52534797cf72de7d5b0c23c7b2dcd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf741d36373173c5b368e8cb2b10fd04eec6188cc8abae41b902204d4bc8a122"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a485c895fed104e605ca34380ce25b2108db15254de03a806a4fa086b41211da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bee230034d2865729b942200cdbf10fcc84c319ccc0f82e81b9698668d0264ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "573e15a0bfdadceb76379461a9886034eb6073cd696bcad86ed06633402f57d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "e556a55c957e25eb4ea3536c65bf41084832402a25695164682f3119b1f1ddcd"
-    sha256 cellar: :any_skip_relocation, monterey:       "67eda2bf9e104706533218155cedf4e92a2355c77305bea3c0790be2e2fdea88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa66cbbfa24de6f1c3a6b0881e25c66346232180f7f5a36de41823b84058732e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59498cd5019df052264e524cc6b34a70ffdf89faf6ff2bb1ed759c5a2680c509"
+    sha256 cellar: :any_skip_relocation, ventura:       "59498cd5019df052264e524cc6b34a70ffdf89faf6ff2bb1ed759c5a2680c509"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a265f42290d383fc9a88106dd1914c4bd6dfd92b6f9cbbe2db96091119274fb3"
   end
 
   depends_on "go" => :build

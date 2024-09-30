@@ -4,17 +4,16 @@ class Clangql < Formula
   url "https:github.comAmrDeveloperClangQLarchiverefstags0.6.0.tar.gz"
   sha256 "a3ccd60735a57effe8a2aa9ee80ff3fabd1dc0a186365e20b506aa442edc3ac5"
   license "MIT"
+  revision 1
   head "https:github.comAmrDeveloperClangQL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "309b19aea89e37e7bcd3972fd3d040505f47f4eaf324d3e60062dd6c147577c7"
-    sha256 cellar: :any,                 arm64_sonoma:   "dbc98d292a756d55349252eb6b7ef7ba89417928f2dcb300665c16f6d1ae59c8"
-    sha256 cellar: :any,                 arm64_ventura:  "3a0eb7447e69d4fc62f832b6b392ea5069e50b291c7ea9b7cb1d4e438a27c8c1"
-    sha256 cellar: :any,                 arm64_monterey: "85bc2eabea8e81c16da89f60a4ff077f8e53ef505244fdcc25cbb68394a79484"
-    sha256 cellar: :any,                 sonoma:         "e269b472367849b0c751912a3b11135ebc817aab0fe2c0b05f11fdf4656e2508"
-    sha256 cellar: :any,                 ventura:        "c3de99b620d3b8d8191e2af49a5c705d1c9a75f5a9c6aaf0c21d75babd673e00"
-    sha256 cellar: :any,                 monterey:       "02eb426cd8bde020723c39b704873b3c4fba928856210911dbfef4217ab8949b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a14c174a32003873e6dbbafd965b2683c3f91312b48a34819fc4b543a61cd7e"
+    sha256 cellar: :any,                 arm64_sequoia: "4a41fd14cbcc68edc77e341d8725671075aa6a3c9bfc400e4b0d667eb60f2cc9"
+    sha256 cellar: :any,                 arm64_sonoma:  "991a56a1b490e0ef3a1f427b7178a58a91e2f498b14ff1f78952ed3e0b7ebf87"
+    sha256 cellar: :any,                 arm64_ventura: "567287dde36428bbcc0092fe2a5a7a10c4a0447666ee0f1004fb618dd2384f64"
+    sha256 cellar: :any,                 sonoma:        "2625be86efa34744aa3929ded98338ed025bb3ef7cd68c9c82802baf57570853"
+    sha256 cellar: :any,                 ventura:       "78882cfb83f2dec937e239ebe80a5fcc044ac734bd17be36c21770dd644d6933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cf09677c105b5159e9e11373df883b123a5fce1c448b64b5cf7ebc9c1311eca"
   end
 
   depends_on "rust" => :build

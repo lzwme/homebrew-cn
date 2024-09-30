@@ -3,17 +3,17 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https:github.comcondagrayskull"
-  url "https:files.pythonhosted.orgpackagesa817fe98abd598296f807c1a2b062c56cfc2bfbfa69f475c7eee69af6a3320f8grayskull-2.7.2.tar.gz"
-  sha256 "ecd76a2fa13e82524e0d7db82d13df802fc8e10c8240556bb1e7c6454d7b92c2"
+  url "https:files.pythonhosted.orgpackages959face91b84daf25219c9b902b492683a245afb9b697210fe6be0653bf1ef14grayskull-2.7.3.tar.gz"
+  sha256 "9396245439584b92d656fdefb03d6911b5987f91a5ae714772ddcb338768cbb9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f15d5bdd93cc9fd8a113f1fe5800955c5c7450fd9a1dc6e69b3da0219d4bedff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3906817a722b95c0632c968d23e4a30547cc1c4d966858a91e74b2b1200d0e29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec5d38488c4db61a8dfeea526bffef8ffb39f5d35b5ced516f06128518e00448"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa9c2e467def3b10ef1e59c084b651f2be34b12862e19a5da47d81c605b1b096"
-    sha256 cellar: :any_skip_relocation, ventura:       "f9c08af718de03636d363d440ee92b57d5ca17b7666dbb474a7383a075604e28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c42be4067bcf821bd288c3bb04495fe693782aa39c63c14d2e6efe62e57f2d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb2499d0c0fd259979ffefc168733d11cd3e357a559f1c92d4b2ec1e0252abbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "951002e8b0b93026ab91a819a939d6303a345f2b0e56f17ee146e2078ce59377"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57f574e82a375e9e2eb4d22f662cf825a07f65467f013406d603cdd30898c6da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f22f80f0759a2b4b3c383626586582381e35541edc6975c08e87e53f30edc52a"
+    sha256 cellar: :any_skip_relocation, ventura:       "b71832fc1457205a34e848a0ef88b0db8e50f00ed3a44bd6e7d0815c13f56602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8c9c864353c61a042cad04baf91aa53085034eeeea4f46348a64210537669af"
   end
 
   depends_on "cmake" => :build

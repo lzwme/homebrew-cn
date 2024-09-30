@@ -1,17 +1,17 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https:rye-up.com"
-  url "https:github.comastral-shryearchiverefstags0.40.0.tar.gz"
-  sha256 "cbd50e53bc1e57e5d5d0102775cb1c822695acb5024814be7eeb78e654e046df"
+  url "https:github.comastral-shryearchiverefstags0.41.0.tar.gz"
+  sha256 "d3a73f7ce2b837dff7fd81928f12cfd1a2d701efc810b5f0d902ae10ca4354b6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90bc49decde5878fa7f19c95122bb8cc9ee98684510b8ad62e864a7a9c603c14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3290f96e5244ab9a66cd0c4e8558eee2f7e997d32dd29eb3a88020cbb4e7b401"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf8351aa6d97599d78f0ac6ba6990ee400f9c6e093bcfef30fa9a47ec21b14f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9aafcc34b5d172e399b934c6f52ac43b46613a43fcdb0fe17723dbec9aa11b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7482356c3e5bba5453731e393ee02737464052d37ae12f6963c86e71ed511502"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74063d1ffd6cb25e1fcdf42dbca930e2caa81ce4843c4c8543f83c02cc59e923"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac78e0e5c036bf46a8ffa4deebf7ccc87b0f8c22998bb2a23047d3c0d4272d85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8155ef2512db6c362e73e7a884674119f8294551343150c938f9631c99049b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2890ad2a437df14750bbb65e7407f6d04b054f3dc1a3deac7a33223917a46d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a49389f2221123d72419e00e7ee6516b07416d4daa7b0c91b5747fadfb740ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "4db58aae4410a0c841b599684acce0f77682b79fd88bc79a3697a6e1b1a53123"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4154afc1517d204c0ea739d61cb8ae498d0b7500a7c4cd7200a4a25d08a14ba5"
   end
 
   depends_on "rust" => :build

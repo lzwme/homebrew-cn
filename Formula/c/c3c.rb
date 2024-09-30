@@ -4,7 +4,7 @@ class C3c < Formula
   url "https:github.comc3langc3carchiverefstagsv0.6.2.tar.gz"
   sha256 "e39f98d5a78f9d3aa8da4ce07062b4ca93d25b88107961cbd3af2b3f6bcf8e78"
   license "LGPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comc3langc3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -16,42 +16,43 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6fceff3b368580212fb57c1c31daebf31d53f7555b16d16b8a5822ed9847311b"
-    sha256 cellar: :any,                 arm64_sonoma:  "57a190baa5a539f891b28fa56d7dccb0bd6169b6d9e819c0bb1467913511348d"
-    sha256 cellar: :any,                 arm64_ventura: "f30e7fb7d4e2b89579730d76d23bc815242115d8e805127565602a75597d46aa"
-    sha256 cellar: :any,                 sonoma:        "6b509cd22bdbee60382b5e430e7e2961c7ac18dd4eb228667cd753122fd146f9"
-    sha256 cellar: :any,                 ventura:       "efc433ad4eefc49ad65ccbf8b544cd51efc156ebad455c2f30feaf3493ded940"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35aa7fa878153939fbfb9bbdcb517efced0c22b7488a52d6b0cf00b8072de953"
+    rebuild 2
+    sha256 cellar: :any, arm64_sequoia: "d488a63b27a6a18fe9e59c311134825cacfef3619ea91da0735b47d29930b5cf"
+    sha256 cellar: :any, arm64_sonoma:  "8edab84fb832b61e809264d3291c61a173feddaa97ca7d769646cb2f76e7b480"
+    sha256 cellar: :any, arm64_ventura: "50055c81de8b6863611c6a9e865b84676127fa75666e657d7216cd85ad6602af"
+    sha256 cellar: :any, sonoma:        "23781283ba1e2d5cf7298d0f5f05289257c5e0d364bdf89514051fc2918a84de"
+    sha256 cellar: :any, ventura:       "8a51c9cf989584c5aa0d496d45f9d6a4ba355341c507cb5f239f89231082ed5c"
+    sha256               x86_64_linux:  "4036b3f850ea5debfe6da393675295ae920c3b3ccb6900e5877324edb1addcf9"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm" => :build
+  depends_on "lld"
+  depends_on "llvm"
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "libedit"
-  uses_from_macos "libxml2"
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "llvm"
-  end
+  # Linking dynamically with LLVM fails with GCC.
+  fails_with :gcc
 
   def install
-    # Link dynamically to our libLLVM. We can't do the same for liblld*,
-    # since we only ship static libraries.
-    inreplace "CMakeLists.txt" do |s|
-      s.gsub!("libLLVM.so", "libLLVM.dylib") if OS.mac?
-      s.gsub!((liblld[A-Za-z]+)\.so, "\\1.a")
-    end
+    args = [
+      "-DC3_LINK_DYNAMIC=ON",
+      "-DC3_USE_MIMALLOC=OFF",
+      "-DC3_USE_TB=OFF",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DLLVM=#{Formula["llvm"].opt_libshared_library("libLLVM")}",
+      "-DLLD_COFF=#{Formula["lld"].opt_libshared_library("liblldCOFF")}",
+      "-DLLD_COMMON=#{Formula["lld"].opt_libshared_library("liblldCommon")}",
+      "-DLLD_ELF=#{Formula["lld"].opt_libshared_library("liblldELF")}",
+      "-DLLD_MACHO=#{Formula["lld"].opt_libshared_library("liblldMachO")}",
+      "-DLLD_MINGW=#{Formula["lld"].opt_libshared_library("liblldMinGW")}",
+      "-DLLD_WASM=#{Formula["lld"].opt_libshared_library("liblldWasm")}",
+    ]
 
-    ENV.append "LDFLAGS", "-lzstd -lz" if OS.mac?
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DC3_LINK_DYNAMIC=#{OS.mac? ? "ON" : "OFF"}", # FIXME: dynamic linking fails the Linux build.
-                    "-DC3_USE_MIMALLOC=OFF",
-                    "-DC3_USE_TB=OFF",
-                    *std_cmake_args
+    ENV.append "LDFLAGS", "-lzstd -lz"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

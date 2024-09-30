@@ -4,15 +4,15 @@ class EtcdCppApiv3 < Formula
   url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 13
+  revision 14
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "db4364829b5524b0c8185b61c817f218185ad7a62451ac11a01c37d30ed083a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "257407348c7633437ce42f73f954fb78496ea661ed72ee14661b09c80bb19a0b"
-    sha256 cellar: :any,                 arm64_ventura: "b725a602642116027a4089c112ec6ddccc25ca286d584486accc6a5befdde676"
-    sha256 cellar: :any,                 sonoma:        "135cb3152bae82dcc00a7a25ecaa14dbfb886ae822a970d1540f5013c44a5cb5"
-    sha256 cellar: :any,                 ventura:       "aec9663a2f4624c76eb6c89769986ba2b554688f8166521522589c13235dde96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8525fc254709d4880181c5918e28584570f6516ef24658b1a98d5bfa2048e5a"
+    sha256 cellar: :any,                 arm64_sequoia: "20f82f903c044f30052624d69290f367cb7248ae3ff900cd73c97cdde5335980"
+    sha256 cellar: :any,                 arm64_sonoma:  "89a4f902089ae743c5f9184688b541eb3d3f26b07913b6005b028acef95e0a26"
+    sha256 cellar: :any,                 arm64_ventura: "f33bd97d8719d53827ec7cce7db75fd73f0099da61d8c13e5ea4fbe12b834afa"
+    sha256 cellar: :any,                 sonoma:        "c65b3c92fedd6054081e76acad4563f760668aeb24045234207826ce681b7d34"
+    sha256 cellar: :any,                 ventura:       "25591125d3f5cc23e6758e50c85fb4561b477c02aa72cd68e28a2c841ff9e854"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b576c7af75c11d05ae1eb34132d64617b16c2d41dbe43e7c70ce0a25a4be9dd"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,6 +28,13 @@ class EtcdCppApiv3 < Formula
   depends_on "re2"
 
   fails_with gcc: "5"
+
+  # Fix for removal of GPR_ASSERT macro in grpc.
+  # https:github.cometcd-cpp-apiv3etcd-cpp-apiv3pull281
+  patch do
+    url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3commitece56adf4d01658a5f0668a3618c97153665581c.patch?full_index=1"
+    sha256 "f3686647436045a9a53b05f81fae02d5a5a2025d5ce78a66aca0ade85c1a99c6"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

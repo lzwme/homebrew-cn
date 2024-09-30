@@ -3,14 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https:toot.bezdomni.net"
-  url "https:files.pythonhosted.orgpackages81be185a52bc194f00e02875b3dd3161ac8022e5cd6c365b5e90baa65c5ce229toot-0.44.1.tar.gz"
-  sha256 "2887ba4c81c0a28448b260804ba6ac1f16178c188cd3a04621912acf764c9bd7"
+  url "https:files.pythonhosted.orgpackages0584ca6d145997a2a28af90224efd5fb39ebdc2084c0ac6788539c2e589174c7toot-0.45.0.tar.gz"
+  sha256 "ba209fe60c22f4efda7d882381492ca8639d52c60b6012eb1a10ae1ca70db7cf"
   license "GPL-3.0-only"
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "721cf94063d1e683ede64cdd0c0641dbe7dba08a83a113ddca89558a453ca413"
+    sha256 cellar: :any_skip_relocation, all: "ae7150d7fca935831a85338e672ad45949bc7351bac16e697501a038a1e48190"
   end
 
   depends_on "certifi"
@@ -33,8 +32,8 @@ class Toot < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "requests" do
@@ -43,8 +42,8 @@ class Toot < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "term-image" do
@@ -53,8 +52,8 @@ class Toot < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages4b34f5f4fbc6b329c948a90468dd423aaa3c3bfc1e07d5a76deec269110f2f6etomlkit-0.13.0.tar.gz"
-    sha256 "08ad192699734149f5b97b45f1f18dad7eb1b6d16bc72ad0c2335772650d7b72"
+    url "https:files.pythonhosted.orgpackagesb109a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fatomlkit-0.13.2.tar.gz"
+    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
   end
 
   resource "typing-extensions" do
@@ -63,8 +62,8 @@ class Toot < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   resource "urwid" do
@@ -73,8 +72,8 @@ class Toot < Formula
   end
 
   resource "urwidgets" do
-    url "https:files.pythonhosted.orgpackages606de7847c2a472bf16b87e4ecc3764bb059631fa5453d4148f3bb5cdd81e301urwidgets-0.2.0.tar.gz"
-    sha256 "d41acf9d9f8d576cb580bc042919b209c5aeeb60e1f81052809c63f31c4e7688"
+    url "https:files.pythonhosted.orgpackages91cc4e2469c469e72c68a45b1750854a496e15f21718ae8e3bc22cf7d89f7459urwidgets-0.2.1.tar.gz"
+    sha256 "f9f2bcd2949da1105c287806dab773aa7bdf5852226cdb128aaf3004136f3eef"
   end
 
   resource "wcwidth" do

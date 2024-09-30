@@ -1,18 +1,18 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https:ohmyposh.dev"
-  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv23.15.0.tar.gz"
-  sha256 "988f846e77a1fc6f4afb42bbd98f9fdfc16fa9473ebbbad1fb20dd6311a257b2"
+  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv23.15.1.tar.gz"
+  sha256 "749ae1ea4a02334ea01714ccac5cbcf8cf98e49397985cc35311ba5b157480e9"
   license "MIT"
   head "https:github.comJanDeDobbeleeroh-my-posh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a1dc3f011be0fe9f4539ad0f689266a21fd5d8cde46a8acf4b040146b449e71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "833f4af48810d443fa0dd0763c5be42d2d12622f82e4ac679035596605ad516a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d101728b884b0716fd50651a89f0dd762283743c92e983d6c8875639f1b187f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3480360c1ba8c7561666134035299a01fb7912bceb0b5f3b6bc6e4ea45a56fdc"
-    sha256 cellar: :any_skip_relocation, ventura:       "78d254305e25c3f867041c3502197273955b5f358154c2590471e268c78e745a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b468b3b37165ed7169f36ed974e89c44eb0bc9546662af651e20c41a7d82b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5971df2bfee413a759b490da9c9c63d08dd56cbed93c3e756a8e89efd843e1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2919174f44e86254b0a068ffa43e1380de6d16dfe77002ee7bea37d3b47882ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d7dd6553f4aae959921e1663a6e95477c030a833ac9318af4930d91252a16e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b34fee03025f6fb5453dc366288487ed1aba9ead81154701bfbce7a7c4ebb21"
+    sha256 cellar: :any_skip_relocation, ventura:       "c99ff2753f9e85407a424c0a36be1ecc2c56f771b7cfbb182ed96ea748e2369f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e250e1c07987d9d7e81b550970ad756750e01589a3b650057b69d1f6064a073d"
   end
 
   depends_on "go" => :build

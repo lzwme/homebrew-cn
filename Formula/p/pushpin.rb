@@ -4,16 +4,15 @@ class Pushpin < Formula
   url "https:github.comfastlypushpinreleasesdownloadv1.40.1pushpin-1.40.1.tar.bz2"
   sha256 "64b6486160ecffdac9d6452463e980433800858cc0877c40736985bf67634044"
   license "Apache-2.0"
+  revision 1
   head "https:github.comfastlypushpin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6db2fbf28fd3a8d8d09771be1099ef6fe4785969549a15aa40a36886c7381774"
-    sha256 cellar: :any,                 arm64_ventura:  "e5a25a6a9f938389eb5c79fd9cfb34e2c32b21d47b9ba3298a9663cd2d226658"
-    sha256 cellar: :any,                 arm64_monterey: "db4f9f00d9f1c8a25f84d97cb4ff4fc76e5c52cb4066840d5dc8c84f6417436b"
-    sha256 cellar: :any,                 sonoma:         "91b627cae4341f2a020902c8e4b199bb7f0df6cc65be8d6693c78e9df80b6e04"
-    sha256 cellar: :any,                 ventura:        "be07922ebf6f03ef1e54174b3ccfc192d3e9a4b043099f2f5eb7b484eaf3738e"
-    sha256 cellar: :any,                 monterey:       "d76c6ab9088e1f5579ddcbf2b623bf986407b17b8776f82e8765e5b2d36f55eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3a98c98a38e3d4d7e1b65f4e5a080f42293ac2bb28522c06e52dc1bf46f7a00"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d120efbfadd608cd604b66470462a3e4488f69b86e46808797d230d25790303"
+    sha256 cellar: :any,                 arm64_ventura: "0e40cbd84d4f05265640af260ebe60817491fc1025aa38589912ece4b4ee7998"
+    sha256 cellar: :any,                 sonoma:        "77d2d0fb0619c56b39c9cef7ffcc21d41a47be7b9886842feb157164090c336d"
+    sha256 cellar: :any,                 ventura:       "a9eb99d74245913f4e521c113fb5b2abcdd6ad97db162f86abae790efb27534f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848d95a2cf6027fd9c0bdb99b34fe0d7a70b86784a40365bd7c432506b70e2e2"
   end
 
   depends_on "boost" => :build
@@ -25,10 +24,6 @@ class Pushpin < Formula
   depends_on "qt"
   depends_on "zeromq"
   depends_on "zurl"
-
-  on_intel do
-    depends_on "mongrel2"
-  end
 
   fails_with gcc: "5"
 

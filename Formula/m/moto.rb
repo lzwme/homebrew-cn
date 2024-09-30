@@ -3,17 +3,17 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/11/11/5dfe1bb81a2ec3861ee9004573a665ced822389ff9ef4307fa3703177002/moto-5.0.15.tar.gz"
-  sha256 "57aa8c2af417cc64a0ddfe63e5bcd1ada90f5079b73cdd1f74c4e9fb30a1a7e6"
+  url "https://files.pythonhosted.org/packages/26/72/f7ec295a6a0b7211b5784efba783c1225c56e998a14d608abf5b2715d7b5/moto-5.0.16.tar.gz"
+  sha256 "f4afb176a964cd7a70da9bc5e053d43109614ce3cab26044bcbb53610435dff4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "296f16091211eba123a2fd5ab23502443f5e8e540c466ec8e795e8913e323efe"
-    sha256 cellar: :any,                 arm64_sonoma:  "b9986c4e4213c20fa5329004a60bd5b530ac6cc504024005141b67fd82433a06"
-    sha256 cellar: :any,                 arm64_ventura: "daf20a95b6d2c829cf05815457ce3fac32903c4100ff63583b6dce435c79f373"
-    sha256 cellar: :any,                 sonoma:        "c0255017f5e9686f56d7a04fa4ea335cf512423d64c77e141daf45813a9eafd1"
-    sha256 cellar: :any,                 ventura:       "fad3e4c5eb18b69e3072365b906d2b23a62bb1551972f1e09c3b5e59984cc0ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "257640a9194207995b76e11a6007c4c39684c9a9debdf99099b3ff56d7fb6ab2"
+    sha256 cellar: :any,                 arm64_sequoia: "1dcef2f1bb9c0e2fb58d82bf863c6fffb3f5420a637f716430cd3a2c40ac251d"
+    sha256 cellar: :any,                 arm64_sonoma:  "335264b97499c91a2242b5a75997113416ddad7c068a88f47e3b8ceceed8b660"
+    sha256 cellar: :any,                 arm64_ventura: "424f5537f6955fc292c31f286b272689deade6bd85f0306e6cde5c61c97936a2"
+    sha256 cellar: :any,                 sonoma:        "f39ae0f46a93c53725e14642ded19a4c826e662b5f3334be932f460f62129654"
+    sha256 cellar: :any,                 ventura:       "90b559631905316898f824438ba02f8b14be12237e6171cfdda4cbfd146ab999"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3a8f30b4040244775e8d3815629c515f8a307f30301e49de8e1558df2c5b01b"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -53,18 +53,18 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c2/e4/b3438c3493a5b534f86308809029dc72c854b6007c331c03893345799a35/boto3-1.35.24.tar.gz"
-    sha256 "be7807f30f26d6c0057e45cfd09dad5968e664488bf4f9138d0bb7a0f6d8ed40"
+    url "https://files.pythonhosted.org/packages/25/d8/f7bc41e01e83eaad1ec297cfb675c1f98cc59450b1f4a76b93a1e31a2b09/boto3-1.35.29.tar.gz"
+    sha256 "7bbb1ee649e09e956952285782cfdebd7e81fc78384f48dfab3d66c6eaf3f63f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/44/68/8c6e4e8d7ec73f4daa0a1411dd0b3efcb06ed77c8d02ae95c90b85afdcbc/botocore-1.35.24.tar.gz"
-    sha256 "1e59b0f14f4890c4f70bd6a58a634b9464bed1c4c6171f87c8795d974ade614b"
+    url "https://files.pythonhosted.org/packages/41/23/482871ed269fa0c832f98c840686b4ef18662b3fb800eab48a48817d286c/botocore-1.35.29.tar.gz"
+    sha256 "4ed28ab03675bb008a290c452c5ddd7aaa5d4e3fa1912aadbdf93057ee84362b"
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/7d/ad/bd8d1e361d4851d61e8ff8a8f69c4d3fb5c1e513d1f40dbeea9e16474c17/cfn_lint-1.14.2.tar.gz"
-    sha256 "34343ec06fc9a08d8947fa1cd61d1e8ad3430ee745654099752da6f7d72f880d"
+    url "https://files.pythonhosted.org/packages/ba/13/fef6a6db8ad90f99c8d661c61c27263e1ef35da27932e0a3ac580f6a8694/cfn_lint-1.15.1.tar.gz"
+    sha256 "b7d9296b10ca1fe0840efb1351dbe1648602e0aed60a875f738f0b125fe5a5a1"
   end
 
   resource "charset-normalizer" do

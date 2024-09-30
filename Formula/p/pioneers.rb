@@ -17,14 +17,24 @@ class Pioneers < Formula
     sha256 x86_64_linux:   "3efeb1b6c8a348562ebb969cbd877612cefe83e65b54bd52533f9bed290f8bc9"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+3"
   depends_on "librsvg" # svg images for gdk-pixbuf
+  depends_on "pango"
 
   uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "at-spi2-core"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl-xml-parser" => :build

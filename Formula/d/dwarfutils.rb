@@ -34,6 +34,8 @@ class Dwarfutils < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "orbuculum", because: "both install `dwarfdump` binaries"
+
   def install
     system "sh", "autogen.sh" if build.head?
     system ".configure", *std_configure_args, "--enable-shared"

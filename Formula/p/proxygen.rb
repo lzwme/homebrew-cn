@@ -7,25 +7,28 @@ class Proxygen < Formula
   head "https:github.comfacebookproxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b6d07f1b6d3a8190d61aaaca6be4a40b783741d4727c7b1a2af18e61ba0d1d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "a194933e436c02ce9d1e82c919891065fa52760c47a532cdea593604d67979ab"
-    sha256 cellar: :any,                 arm64_ventura: "e99210d646243c327d70651be523c48c770d79457d2fc00f91db749beee9533f"
-    sha256 cellar: :any,                 sonoma:        "db590f5391cc55a948d06e2b20dda0654a9cc953210b3b27eafbc372c65ec6a9"
-    sha256 cellar: :any,                 ventura:       "49ce3efc6bcfc2b44968413c7da19cd20aa8561cfff7dc27710282b23ec3aae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a190a0adca25512029bee53d6d9a8f84295916c4ce5616cd7ee9727b70b8a8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a111cb150ef354a606612d9cc3fe5e20dc9f45a8e702bffc254554aa0f555a0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5d548d22d79ea7c4cf0e1d21c530288d5153b571ed190e174cebc9cdfc25a78"
+    sha256 cellar: :any,                 arm64_ventura: "98cf5f863599a6cfe898d7701c22a9a65d2a6e2d2e2a38be3a43533947f29eda"
+    sha256 cellar: :any,                 sonoma:        "8788ca662033eb4449556f81fe1d26aabf65929bd2fc5f2cb2c188ed82174bce"
+    sha256 cellar: :any,                 ventura:       "9bab2e2abd2cf7d0f0f618373eb61e7a21ceba6f9c21153122f274f12b92a47f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f67353a11f982166dcb8fcc044495b49466e6bd7e5dc1444d81addf4abfad3dc"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
-  depends_on "libsodium"
+  depends_on "glog"
   depends_on "mvfst"
   depends_on "openssl@3"
   depends_on "wangle"
   depends_on "zstd"
+
   uses_from_macos "gperf" => :build
   uses_from_macos "python" => :build
   uses_from_macos "zlib"
@@ -33,12 +36,17 @@ class Proxygen < Formula
   conflicts_with "hq", because: "both install `hq` binaries"
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    if OS.mac?
+      args += [
+        "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+        "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs",
+      ]
+    end
+
+    system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
   end
 
   test do

@@ -37,6 +37,8 @@ class Orbuculum < Formula
     depends_on "elfutils"
   end
 
+  conflicts_with "dwarfutils", because: "both install `dwarfdump` binaries"
+
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

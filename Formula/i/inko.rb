@@ -4,17 +4,16 @@ class Inko < Formula
   url "https:releases.inko-lang.org0.16.0.tar.gz"
   sha256 "7850dc9b0f6e544977a6eb3854022131f30e49e43b99f47cc5aefb77e0b97c32"
   license "MPL-2.0"
+  revision 1
   head "https:github.cominko-langinko.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1aab8f7ef3328bf5b88bc9060fe0f36c7e8fa6ba31df2497a89dc16b83d499f1"
-    sha256 cellar: :any,                 arm64_sonoma:   "124068300521f4cd528f4c5c52ed90793e2e87d96584ad7b6e113a39bc868053"
-    sha256 cellar: :any,                 arm64_ventura:  "5a0a458153eed98bb9abcb55b330566895303fa97e47d9602a4dd9a0a7fe542c"
-    sha256 cellar: :any,                 arm64_monterey: "e39be7fa100cbf341c629d63c27a2852b5185996f4182d07948c5fe053815f28"
-    sha256 cellar: :any,                 sonoma:         "5496e292a1a0c997d4dc9b2186fad744477f6a099e4a2cef5af26fbffba62952"
-    sha256 cellar: :any,                 ventura:        "2946c18386aa5b8580ba3090bcb04ddf1aa83897b0dd3aa9c640e0d63ab45440"
-    sha256 cellar: :any,                 monterey:       "f59fd21bf0a37707ab4e4449426120fc117bcaf98a533291356c078891f19cc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7523e21bcda9eb359d1a208a4e9a71a147b6b3984c5e125a109c739ff8f7721"
+    sha256 cellar: :any,                 arm64_sequoia: "dfe49ede4263ebeb9337104cc3c70e97d2348a4c9dadc57b6595f0b066f02000"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebbc0a383ee4e2bcbb0c0628a89bfd08338296935327e129eb3d34e53e68ca94"
+    sha256 cellar: :any,                 arm64_ventura: "be38b32949b5f9e0f291c910cfa193604b93056f1498004723f1d16af038da02"
+    sha256 cellar: :any,                 sonoma:        "b4fd1b5448f2284f943a7c3fcd0c01df2d81341e6f10e253b08acb22a62f013c"
+    sha256 cellar: :any,                 ventura:       "90f90e0d1d5719c6fbd26502f4b3d0c87e08f1f857c4af151971fd061fc8fb8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10cacd5af2ce222ed3f5610f52f59516f0b9847d8b10d0761d60e4f00d7037fc"
   end
 
   depends_on "coreutils" => :build

@@ -32,13 +32,13 @@ class Writerperfect < Formula
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
   depends_on "libodfgen"
+  depends_on "librevenge"
   depends_on "libwpd"
   depends_on "libwpg"
   depends_on "libwps"
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 end

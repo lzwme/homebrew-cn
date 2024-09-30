@@ -4,7 +4,7 @@ class Castxml < Formula
   url "https:github.comCastXMLCastXMLarchiverefstagsv0.6.8.tar.gz"
   sha256 "b517a9d18ddb7f71b3b053af61fc393dd81f17911e6c6d53a85f3f523ba8ad64"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comCastXMLcastxml.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c3e6096ebeb212633387dfb4079e70693de0ed8fe2e8716472aafff37893fdf9"
-    sha256 cellar: :any,                 arm64_sonoma:  "64879e3d57f14f5d78eff1825bc615c3cf528d0252e358c5b9c9c63bc0425989"
-    sha256 cellar: :any,                 arm64_ventura: "3da47ccd6c2df92725b72f393a4497b0856bc6a2245ddaaecb22393c46aba3b9"
-    sha256 cellar: :any,                 sonoma:        "68bcb12975621cd10264a035306e402260f707a0ad409f25600f19c4bfab1234"
-    sha256 cellar: :any,                 ventura:       "caf54e3bde83c17344c9ebd6780959c241c3096152ecd0cbc62b553cd2f0bde3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497247f119be0b5baa9940d48e25ecc0b20af5f8e04a7d3cfe64e27e5cdaf3a0"
+    sha256 cellar: :any,                 arm64_sequoia: "09eeab9e19404218b6f4257df621f695da81d4a16d2d139a81e3816efde16798"
+    sha256 cellar: :any,                 arm64_sonoma:  "5902e2b5e7ee77601d3b3b5134e3c75fcf6fd9d1514d944355f0ee750bf3eddf"
+    sha256 cellar: :any,                 arm64_ventura: "5022195efbecd4ab3e41df8d8f71409064e55c849883e6240abad8124e75f150"
+    sha256 cellar: :any,                 sonoma:        "e02a0e5c39a33f65d4f0b3f4c264468e78fe6e6384b886eee80ebf4860371699"
+    sha256 cellar: :any,                 ventura:       "44e174548e6919d4f02f7bd072a950a139157ee8d0bf9d2c71f9ae7c70470f66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e4147162020b86e4f1418c85731fb7fe430985d90dcd955b9cdcbfef4d1d8a6"
   end
 
   depends_on "cmake" => :build

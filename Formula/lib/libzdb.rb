@@ -12,28 +12,27 @@ class Libzdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9d44eafd1f0cab050d9e3ae29ac6eefe93da0a1c77218950401a4755f6b3b0db"
-    sha256 cellar: :any,                 arm64_sonoma:   "3b5c6db79896a7353c41b2a8415a718db42e7653cf2e8173aad1e051094fee55"
-    sha256 cellar: :any,                 arm64_ventura:  "7ac2411249ff9931effb968e5d90d3afcab3367cfa967e06c432cb54f83e8f87"
-    sha256 cellar: :any,                 arm64_monterey: "5c68468472d5674dbbbad4c6b135874b512add3ab4da70d8fc39877a242236af"
-    sha256 cellar: :any,                 sonoma:         "5fb1183dd63ab68fe2b9950ba8b5b6573c359a9696eb604973e135c37dc18a2a"
-    sha256 cellar: :any,                 ventura:        "d1093fca14675094c5ee76a56a26a0d1940baea3aa1bce5778c8780f4cb20992"
-    sha256 cellar: :any,                 monterey:       "42defdd2bcfb137b12c3ccd858071293b77357dce9252ea0a41e4c66022a44a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b7fcc0e587c5370091190d157fbc725cf4ad4d9373904092878a7aa88746228"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c97a8bf09b5b6149e9b00055c7a41bdc44d30d24dba89057d10c692c66775ac8"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b8ddfd01835494761c61f79bbf0268ed9970eda906751f394345132ee8f1e99"
+    sha256 cellar: :any,                 arm64_ventura: "2a68a90b4ae8eaf45dce9319688be51e9cbbed3f8906492641b04d7b03db03b2"
+    sha256 cellar: :any,                 sonoma:        "a60352d7b1e4544558bb754abfa0d792f4b30dec3ef8e3d36243885fde8005c2"
+    sha256 cellar: :any,                 ventura:       "a1d91f504e85283dade237952dd3872e28d253065de94e63ee3dd1b1509dfab6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac6ae172d51fd94fc04a71798011d683d07d46f0e52b5de22968289e74fd01a"
   end
 
   depends_on "libpq"
   depends_on macos: :high_sierra # C++ 17 is required
   depends_on "mysql-client"
-  depends_on "openssl@3"
   depends_on "sqlite"
-
-  fails_with gcc: "5"
 
   patch :DATA # Fix build error my mysql-client 8.3.0 https://bitbucket.org/tildeslash/libzdb/issues/67/build-error-with-mysql-83
 
   def install
-    system "./configure", *std_configure_args
+    # Reduce linkage on macOS from `mysql-client`
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
+
+    system "./configure", "--disable-silent-rules", "--enable-sqliteunlock", *std_configure_args
     system "make", "install"
     (pkgshare/"test").install Dir["test/*.{c,cpp}"]
   end

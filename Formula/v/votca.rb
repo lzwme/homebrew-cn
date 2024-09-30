@@ -1,20 +1,17 @@
 class Votca < Formula
   desc "Versatile Object-oriented Toolkit for Coarse-graining Applications"
   homepage "https:www.votca.org"
-  url "https:github.comvotcavotcaarchiverefstagsv2024.1.tar.gz"
-  sha256 "74d447f976a7d5c05ec65ab99f52b75379cafa3b40b8bc3b9b328f8402bc53dc"
+  url "https:github.comvotcavotcaarchiverefstagsv2024.2.tar.gz"
+  sha256 "704d50f64bbfa2e19d0aa4b5726ac35c20c3b9b45554be5f1e1417d430e31c24"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "3a5fdf358b3ba9f8626d6430c5941aef5b975fadee79a5b147325ce07a1f5895"
-    sha256 cellar: :any,                 arm64_sonoma:   "99fedc9b85634f468a7e4682910f80741540ec142a76dc25a6274abbbadd11ce"
-    sha256 cellar: :any,                 arm64_ventura:  "24f0bb5d366aa024007b616564143df01cfdfc912441e8011e036974ab2c8273"
-    sha256 cellar: :any,                 arm64_monterey: "82184cadf874cc9cce63f290f5a7c035938d8f731632b113eb38546fadcb94cc"
-    sha256 cellar: :any,                 sonoma:         "bf88a4c0818a02a027791f1b786014ea8615597c1b4bc461d370270ba2f91d51"
-    sha256 cellar: :any,                 ventura:        "66f200ae21a2fe9ff8b524bebc36cb52d2af1f4e29d6565830585db5f1f7d1a0"
-    sha256 cellar: :any,                 monterey:       "5d8b58ac3e94b1d33aca9ad48c218a2ef112cc6466749daf4801d3b0acced78a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c698934a60c802666b3466925e19e85019410e4d67fc648192a189a77cc9241"
+    sha256 cellar: :any,                 arm64_sequoia: "c851db85234aa35aa9155aaa4872a04aa58324f08fbb47bc3788541792b1d661"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec44f7aac765b4b81260bcc1de2ea076b4b78c2dfa4bf7d993da8c74335bf2bc"
+    sha256 cellar: :any,                 arm64_ventura: "1c9dbd430fc9300fcc282269f596cada4beb8839ce7446dcde32194da234e3bc"
+    sha256 cellar: :any,                 sonoma:        "eef20cb56c41ed7c1d2413cdeaa5a4f9f3726e97798697cf601621a65d862f35"
+    sha256 cellar: :any,                 ventura:       "52dbdf32d36464cbc1bfc044246ca8f981410c9ecbf31e6b1e7e6f5eaaadc78e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4703fa99a47953c9648d617c618b4b810b768607225f5acec6b4f0e1a8ce99"
   end
 
   depends_on "cmake" => :build

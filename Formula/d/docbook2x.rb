@@ -30,6 +30,7 @@ class Docbook2x < Formula
 
   depends_on "docbook"
 
+  uses_from_macos "expat"
   uses_from_macos "libxslt"
   uses_from_macos "perl"
 

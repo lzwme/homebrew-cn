@@ -13,12 +13,13 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "337d62bf6f959d1d169fb53a7c188f91dfff9d711885b6aff7e7a699e95c693b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4b08ec36e64c194e2d0b25973528438e5a3630b9160b6cbeec05964446951ef"
-    sha256 cellar: :any,                 arm64_ventura: "51f91908f26d48c0d9cadefedb86cf362f61a706a7f94ce76284ade185cca665"
-    sha256 cellar: :any,                 sonoma:        "e4585a4da8f90cad8e65e647e381fac0242cae2da58200b43e6502ffc4eb3a38"
-    sha256 cellar: :any,                 ventura:       "cb74ce65fd1d11bc3829432dc7e4a0eec1521b1372968d22ac29382f6d5a1db3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28101a52f9af445d2601475e476ad1a6da766d5bcb275d714107ad6b0305c823"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "473c921b2a49ac91ddc541b66c654c6a903beaf4451be49e855cb97fb25de7d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "472ddf8483f0d0b9ab2c195d4cd4c31e4f852621039201a7dabd5cfdd24a9088"
+    sha256 cellar: :any,                 arm64_ventura: "b7fac3254a4d060e2a5f00c50a7edcb59054b3a14dc503c185677a09aa9a9dbe"
+    sha256 cellar: :any,                 sonoma:        "39d1d2350927c1157c49cd44359aad84c3f8107da3dfca7b7cad8ce24258350d"
+    sha256 cellar: :any,                 ventura:       "40166a65e5f5b86d5f8ae2f981a3f436a0a69b27c7cebf141867eb9c31cacfa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637ff487189822f7d0ea5c1f0cee6c4737f7f9364c1149f4636deac39baddee8"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +27,7 @@ class Halide < Formula
   depends_on "flatbuffers"
   depends_on "jpeg-turbo"
   depends_on "libpng"
+  depends_on "lld"
   depends_on "llvm"
   depends_on "python@3.12"
 
@@ -51,14 +53,18 @@ class Halide < Formula
     builddir = buildpath"build"
     (builddir"_depswabt-src").install resource("wabt")
 
-    system "cmake", "-S", ".", "-B", builddir,
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DHalide_INSTALL_PYTHONDIR=#{prefixLanguage::Python.site_packages(python3)}",
-                    "-DHalide_SHARED_LLVM=ON",
-                    "-DPYBIND11_USE_FETCHCONTENT=OFF",
-                    "-DFLATBUFFERS_USE_FETCHCONTENT=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_WABT=#{builddir}_depswabt-src",
-                    *std_cmake_args
+    site_packages = prefixLanguage::Python.site_packages(python3)
+    rpaths = [rpath, rpath(source: site_packages"halide")]
+    args = [
+      "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
+      "-DHalide_INSTALL_PYTHONDIR=#{site_packages}",
+      "-DHalide_SHARED_LLVM=ON",
+      "-DPYBIND11_USE_FETCHCONTENT=OFF",
+      "-DFLATBUFFERS_USE_FETCHCONTENT=OFF",
+      "-DFETCHCONTENT_SOURCE_DIR_WABT=#{builddir}_depswabt-src",
+    ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
+    system "cmake", "-S", ".", "-B", builddir, *args, *std_cmake_args
     system "cmake", "--build", builddir
     system "cmake", "--install", builddir
   end

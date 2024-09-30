@@ -25,9 +25,9 @@ class YelpTools < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "itstool"
+  depends_on "libxml2"
   depends_on "python@3.12"
 
-  uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
   resource "lxml" do
@@ -46,7 +46,7 @@ class YelpTools < Formula
     ENV.prepend_path "PATH", venv.root/"bin"
 
     resource("yelp-xsl").stage do
-      system "./configure", *std_configure_args, "--disable-silent-rules"
+      system "./configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
       ENV.append_path "PKG_CONFIG_PATH", share/"pkgconfig"
     end

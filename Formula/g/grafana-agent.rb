@@ -1,19 +1,17 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
   homepage "https:grafana.comdocsagent"
-  url "https:github.comgrafanaagentarchiverefstagsv0.43.0.tar.gz"
-  sha256 "56ef6a3f013aac5addc97c84301e27f6eeac2d3ee823c3ea0be6e21db35fb981"
+  url "https:github.comgrafanaagentarchiverefstagsv0.43.3.tar.gz"
+  sha256 "99d48af06ac8e2c8c6696508e53a06e1bab4e1dc3bbcd5146e9f0066fef1e9ae"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7f11acf78907be22d3b62f71392239ae54624334a0b1efcf4fcedc67f328e08f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eee11bd862010ca9c3e143bb8bec3d36accd514c14b2001321d44647694c1dab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "754b18e81b7353246659c9cdf58911368e0215e3569cc8c532a020167f92bf68"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3feb625e48341538e9f49392399ea3a793d9c4eaf22b4c91e62d37b367c2a3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9f64dbf7298ccb5d82e78355ea1679f45a624301c957a654d57031e68d6b16b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "b54072fd96e4b9f8e6c810c3a24742a3b9791044e164f84d9b56b3fa90d4dd48"
-    sha256 cellar: :any_skip_relocation, monterey:       "894777cbceac36e673172edb73f60d761d349879b9e00ce7dabd8bdb1f2a626e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc5f720ebbcbfa8d77b702e013c5dd95d72458fd28ef2fff61ab8e9ecb34a627"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df50c15aefcf0ef5966448c86bd08deb85084c685de2ad4b2f0dd8cc2f5a018"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27b23bd0769a183852d016149b1345504265653d08f1c68bbbe0fb6bff8a7997"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "508566ffd9692fdb49c66bff04865eb87d5953da70e5a4eaafa34088c1cf3e7a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fd2bbd05f143fc7608acc767166f975176da4ce25c47dd8c03f387c761f9ec4"
+    sha256 cellar: :any_skip_relocation, ventura:       "c44eae56d3105734dd889a4e952084b55af19e7c36a6d02068f5a369e165d984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a64752034facb371210f5da42f490635b21ee9690d19e405dece66f2622d87e4"
   end
 
   # use "go" again when https:github.comgrafanaagentissues6972 is resolved and released

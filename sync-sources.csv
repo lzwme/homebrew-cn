@@ -1795,6 +1795,7 @@ Homebrew-homebrew-core/Formula/f/flake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flake8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flamebearer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flamegraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/flang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flarectl.rb, Homebrew/homebrew-core, 1
@@ -3242,6 +3243,7 @@ Homebrew-homebrew-core/Formula/l/livestreamer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0

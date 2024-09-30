@@ -1,17 +1,16 @@
 class Cgal < Formula
   desc "Computational Geometry Algorithms Library"
   homepage "https:www.cgal.org"
-  url "https:github.comCGALcgalreleasesdownloadv5.6.1CGAL-5.6.1.tar.xz"
-  sha256 "cdb15e7ee31e0663589d3107a79988a37b7b1719df3d24f2058545d1bcdd5837"
+  url "https:github.comCGALcgalreleasesdownloadv6.0CGAL-6.0.tar.xz"
+  sha256 "6b0c9b47c7735a2462ff34a6c3c749d1ff4addc1454924b76263dc60ab119268"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "70d4bde9024c3e8215eaeba6043275bbd71e7b5635d36710515726808c60db09"
+    sha256 cellar: :any_skip_relocation, all: "cef0370592c5f913bfe5b34cae9189a28cb50c0b7e9b072a16b808e05697aec2"
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "qt@5" => :test
+  depends_on "qt" => :test
   depends_on "boost"
   depends_on "eigen"
   depends_on "gmp"
@@ -38,10 +37,12 @@ class Cgal < Formula
       FindLASLIB.cmake
       FindMKL.cmake
       FindOSQP.cmake
-      FindOpenMesh.cmake
       FindSuiteSparse.cmake
     ]
     inreplace inreplace_files.map { |file| lib"cmakeCGAL"file }, "usrlocal", HOMEBREW_PREFIX
+
+    # These cause different bottles to be built between macOS and Linux for some reason.
+    %w[README.md readme.md].each { |file| (buildpathfile).unlink if (buildpathfile).exist? }
   end
 
   test do
@@ -62,7 +63,6 @@ class Cgal < Formula
       typename CGAL::Coercion_traits<A,B>::Type
       binary_func(const A& a , const B& b){
           typedef CGAL::Coercion_traits<A,B> CT;
-          CGAL_static_assertion((CT::Are_explicit_interoperable::value));
           typename CT::Cast cast;
           return cast(a)*cast(b);
       }
@@ -75,22 +75,22 @@ class Cgal < Formula
         std::istream_iterator<Point> end;
         Triangulation t;
         t.insert(begin, end);
-        if(argc == 3)  do not test Qt5 at runtime
+        if(argc == 3)  do not test Qt6 at runtime
           CGAL::draw(t);
         return EXIT_SUCCESS;
        }
     EOS
     (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.1...3.15)
-      find_package(CGAL COMPONENTS Qt5)
+      find_package(CGAL COMPONENTS Qt6)
       add_definitions(-DCGAL_USE_BASIC_VIEWER -DQT_NO_KEYWORDS)
-      include_directories(surprise BEFORE SYSTEM #{Formula["qt@5"].opt_include})
+      include_directories(surprise BEFORE SYSTEM #{Formula["qt"].opt_include})
       add_executable(surprise surprise.cpp)
-      target_include_directories(surprise BEFORE PUBLIC #{Formula["qt@5"].opt_include})
-      target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt5)
+      target_include_directories(surprise BEFORE PUBLIC #{Formula["qt"].opt_include})
+      target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt6)
     EOS
-    system "cmake", "-L", "-DQt5_DIR=#{Formula["qt@5"].opt_lib}cmakeQt5",
-           "-DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}",
+    system "cmake", "-L", "-DQt6_DIR=#{Formula["qt"].opt_lib}cmakeQt6",
+           "-DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}",
            "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
     system "cmake", "--build", ".", "-v"
     assert_equal "15\n15", shell_output(".surprise").chomp
