@@ -3,20 +3,18 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https:github.compython-jsonschemacheck-jsonschema"
-  url "https:files.pythonhosted.orgpackages3a6346ada3bfef271aa4c5ccc86a01a2ca521bfa3a0d7b083dbe76e8adcc460ccheck_jsonschema-0.29.2.tar.gz"
-  sha256 "a633aae257f16e5298853edf18fd30ab94878fd88bd6b91902cd7158151c675d"
+  url "https:files.pythonhosted.orgpackages6160de055ac749fd6445e0a1c852ea5fc4726632fa3c19bd040f8e1315b87156check_jsonschema-0.29.3.tar.gz"
+  sha256 "3838b6d6da536496516d08a1779e7a11737628f84b444fe95d397b96fc8cc73f"
   license "Apache-2.0"
   head "https:github.compython-jsonschemacheck-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "4c585ab3341fccfcb7226ca8e0666624c2434b3b57af6e897ed7096f6e46ff4b"
-    sha256 cellar: :any,                 arm64_sonoma:   "55bce02dd85ac5e37ecb082831a1ea7dbafd4a721e20918d320eee97f84b918f"
-    sha256 cellar: :any,                 arm64_ventura:  "9500e5d3891b968b7a32e45b105dc155ea94a1bd1a1dd3264c36b12a994ee7ab"
-    sha256 cellar: :any,                 arm64_monterey: "0c7e4859ad03af9bcb0846045af0634d33f333e03b355c915996a35ee82ab393"
-    sha256 cellar: :any,                 sonoma:         "4c8e12ca76cbd6b3b8ced712beda8fe7513c2ceb7c1097284c97704c1de63f93"
-    sha256 cellar: :any,                 ventura:        "cec345de004b6c7944114dcadea27120bb3110a7d58ea579481c61016f8ba69e"
-    sha256 cellar: :any,                 monterey:       "87145065e6c23badda7b7cd08eb1b7c79cc5c87bd327f9450dc983e69e565705"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cdc90ad5862430feca7a9af066fa857720bbe7944cf319493ea0e46cab7646c"
+    sha256 cellar: :any,                 arm64_sequoia: "9f799f0c420887d28d0893179639c8b36e1457bbeb5e12cf2e332edf9afbdd26"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fa0986167503e9b264ab8e70b9f7f972adff01dddb36ec35bf132cc81b0bf81"
+    sha256 cellar: :any,                 arm64_ventura: "abb95fae156dccabf99c514506d8cd237d9d0865e09bd07f68e745b80efa740c"
+    sha256 cellar: :any,                 sonoma:        "6e653264fe615ebd01bb3aae37899d37303e19c985a9a6da300a4d5bd8639547"
+    sha256 cellar: :any,                 ventura:       "ecb3f04f85cf3653675620b7fa7df4965b9f080dd8e9d744622fefd5b6b3c4c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b4e975dcb51572671dbb50ddcdb914101f76d27cef90192202bb29da1c55fdb"
   end
 
   depends_on "rust" => :build
@@ -49,8 +47,8 @@ class CheckJsonschema < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "isoduration" do
@@ -124,8 +122,8 @@ class CheckJsonschema < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackages2311aae06ddb6a90cf8ba078be6dbe47f904d2efdf451f9859248b436c945ca4types-python-dateutil-2.9.0.20240821.tar.gz"
-    sha256 "9649d1dcb6fef1046fb18bebe9ea2aa0028b160918518c34589a46045f6ebd98"
+    url "https:files.pythonhosted.orgpackages3ed99c9ec2d870af7aa9b722ce4fd5890bb55b1d18898df7f1d069cab194bb2atypes-python-dateutil-2.9.0.20240906.tar.gz"
+    sha256 "9706c3b68284c25adffc47319ecc7947e5bb86b3773f843c73906fd598bc176e"
   end
 
   resource "uri-template" do
@@ -134,8 +132,8 @@ class CheckJsonschema < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   resource "webcolors" do

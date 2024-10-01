@@ -7,6 +7,7 @@ class SwaggerCodegen < Formula
   head "https:github.comswagger-apiswagger-codegen.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1dd19c43691e0f9e40a4d23bffa3e526277e5d06221f34a03478d7cf05034525"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1f75f4d99cb7218ebd34847372dadb3070501559282f2128ef1dd7dcfe6675b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9efde2a2a793e26108b45ed7988fe2490e3d2b84fe0e93d29031e7688d2d821e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1f75f4d99cb7218ebd34847372dadb3070501559282f2128ef1dd7dcfe6675b"

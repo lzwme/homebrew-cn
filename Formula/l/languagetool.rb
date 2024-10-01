@@ -13,6 +13,7 @@ class Languagetool < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c26d8e5411371399984b4885cb6ffd4eccf8eae64f3ea7b362c34d21b22b6f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0869f074714fb4c31fa49c57af0dc47609176b9f00d6258239a31502e2ec0c37"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e9389d2adcd583ec4e1885b48d2e7325c50ac70a9cc292e5dbc1403ef34ca4e0"
     sha256 cellar: :any_skip_relocation, sonoma:        "a0271c888c528c6392a9f96798dc665bc98ab84c6ecf2cb28ec0a03862979874"

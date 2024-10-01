@@ -32,6 +32,7 @@ class Opencv < Formula
   depends_on "glog"
   depends_on "harfbuzz"
   depends_on "jpeg-turbo"
+  depends_on "jsoncpp"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "numpy"
@@ -51,7 +52,6 @@ class Opencv < Formula
   on_macos do
     depends_on "glew"
     depends_on "imath"
-    depends_on "jsoncpp"
     depends_on "libarchive"
   end
 

@@ -23,7 +23,9 @@ class OsmiumTool < Formula
   depends_on "boost"
   depends_on "lz4"
 
+  uses_from_macos "bzip2"
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   def install
     protozero = Formula["libosmium"].opt_libexec"include"

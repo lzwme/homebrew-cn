@@ -23,6 +23,7 @@ class Xmlstarlet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c682deca05e96d3b8d42c2ab783a36cf06f6a6e3733cc4830395f9db26d51b3"
   end
 
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   def install

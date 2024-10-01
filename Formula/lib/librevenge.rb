@@ -26,6 +26,8 @@ class Librevenge < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
 
+  uses_from_macos "zlib"
+
   def install
     system "./configure", *std_configure_args,
                           "--without-docs",

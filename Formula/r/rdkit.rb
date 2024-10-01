@@ -16,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e7de2819e18663a44f2671d735c0e9eee43a65c8744234434e7d0fbe5f7a9cf0"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe02041bae92cd4f30bb07a7b7eaf8f41380bea5441bf22493bb12b80582e79d"
-    sha256 cellar: :any,                 arm64_ventura: "88eef74234bd10abcd81b396811840c67aaddd51ba588fca752a2a58f7020a48"
-    sha256 cellar: :any,                 sonoma:        "3b348c2f9bca7425fe544a0e527232204b74fadf65225ff744cec03554af2f1b"
-    sha256 cellar: :any,                 ventura:       "9e005669b34baa90269a9da960b37f192a015336cc3b36b72a048e1396851d10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2728d26c52a5ce95b98e5f9354932c8556e3ffbde8ad6340af5fbc95b8be931"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "7037436f7dd820eb9a6bf062d8ac724d97bd9b5fd1c269de1f7981698587ff88"
+    sha256 cellar: :any,                 arm64_sonoma:  "8901e8d1946cffb1810524c003ffc4424078037efc0b6b73de274d6fbb1cd1b7"
+    sha256 cellar: :any,                 arm64_ventura: "8de1b84bedd61a137f223a38c42278b8f389a4aa4cd50cb1ed34401d1d6a4b88"
+    sha256 cellar: :any,                 sonoma:        "4dc2bafd2f99c04fb7adb37e75d8203c549401c2fe3b9291fa9b1ce3e1e98f3b"
+    sha256 cellar: :any,                 ventura:       "37d8191f6e36cafaa6fe80edbd8e3bd8fc7e3ca66302e643fc6ae9ed5c067aa3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d0cb71514d8459ebb22439074ca38139fdb2ce2eff21abcd41e13227feadb9"
   end
 
   depends_on "catch2" => :build
@@ -36,6 +36,7 @@ class Rdkit < Formula
   depends_on "coordgen"
   depends_on "eigen"
   depends_on "freetype"
+  depends_on "inchi"
   depends_on "maeparser"
   depends_on "numpy"
   depends_on "py3cairo"
@@ -66,6 +67,8 @@ class Rdkit < Formula
       -DCMAKE_MODULE_LINKER_FLAGS=#{python_rpaths.map { |path| "-Wl,-rpath,#{path}" }.join(" ")}
       -DCMAKE_REQUIRE_FIND_PACKAGE_coordgen=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_maeparser=ON
+      -DCMAKE_REQUIRE_FIND_PACKAGE_Inchi=ON
+      -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}inchi
       -DRDK_INSTALL_INTREE=OFF
       -DRDK_BUILD_SWIG_WRAPPERS=OFF
       -DRDK_BUILD_AVALON_SUPPORT=ON
@@ -92,6 +95,7 @@ class Rdkit < Formula
       # Re-use installed libraries when building modules for other PostgreSQL versions
       s.sub!(^find_package\(PostgreSQL, "find_package(Cairo REQUIRED)\nfind_package(rdkit REQUIRED)\n\\0")
       s.sub! 'set(pgRDKitLibs "${pgRDKitLibs}${pgRDKitLib}', 'set(pgRDKitLibs "${pgRDKitLibs}RDKit::${pgRDKitLib}'
+      s.sub! ";${INCHI_LIBRARIES};", ";"
       # Add RPATH for PostgreSQL cartridge
       s.sub! '"-Wl,-dead_strip_dylibs ', "\\0-Wl,-rpath,#{loader_path}.. "
     end

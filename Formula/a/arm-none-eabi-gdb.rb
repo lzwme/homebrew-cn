@@ -1,9 +1,9 @@
 class ArmNoneEabiGdb < Formula
   desc "GNU debugger for arm-none-eabi cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-15.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-15.1.tar.xz"
-  sha256 "38254eacd4572134bca9c5a5aa4d4ca564cbbd30c369d881f733fb6b903354f2"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-15.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-15.2.tar.xz"
+  sha256 "83350ccd35b5b5a0cba6b334c41294ea968158c573940904f00b92f76345314d"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,14 +12,12 @@ class ArmNoneEabiGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "8aa6516741febc7a72d83fbe9917e073e4dd072c6313be8652732acd06b1bc59"
-    sha256 arm64_sonoma:   "1f2012ea2f5c260fb5403802612d9f67caf6049aa0941b4e2623f3d4d802e145"
-    sha256 arm64_ventura:  "dd0f5fd927cc14f6d445edc65ccc2b74d5cd17ba3bbda0dff0c6bd7b6fda5088"
-    sha256 arm64_monterey: "3419beec438e06d8a30b95dc62055f57ff61fd2b18b48945c485801496a8651a"
-    sha256 sonoma:         "3b5d49f771d77f4848fbc910de65aeb60b41f776d6a3dbf7e81e4045c3eb0977"
-    sha256 ventura:        "fb66b64cea0bb9a72f28d9405ec616f5390c02791f984db1a414f1a3a5b6d2b4"
-    sha256 monterey:       "d648d0e4d2a1117ed0f9b9f091cedf3c99a994837667dec9da1bbbc4f79c2e96"
-    sha256 x86_64_linux:   "655212621e11ca1ba708b18fb42402be25b0bb7ea572de0e8bbb5353bab15aa1"
+    sha256 arm64_sequoia: "8d12b9460513e5bd65e277f93d18820586e5c60b2fa77c8a4d004ca726d4c5e3"
+    sha256 arm64_sonoma:  "b622bad8c729ae5729a360ceecc6d1dd4e1a4eed548690cd58bd5658d7df6190"
+    sha256 arm64_ventura: "1f1cebfe112fbf5f212540933f688cf9e62048398bcb6ff929dcb26e7e158d12"
+    sha256 sonoma:        "c811be1ebede8b1a61ac5c5216747a35259752a73e18cd31a51626baa8bdb2f0"
+    sha256 ventura:       "a72c317ae741291dd584c49bd156274d94dae0c68fa4351705009b204ae774c7"
+    sha256 x86_64_linux:  "b28862237c73b0d267501180db088ce1cfd828fc7cfa298c7e1000be38c6e729"
   end
 
   depends_on "arm-none-eabi-gcc" => :test
@@ -28,6 +26,7 @@ class ArmNoneEabiGdb < Formula
   depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 
+  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   on_system :linux, macos: :ventura_or_newer do

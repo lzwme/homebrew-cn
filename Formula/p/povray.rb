@@ -32,6 +32,8 @@ class Povray < Formula
   depends_on "libtiff"
   depends_on "openexr"
 
+  uses_from_macos "zlib"
+
   def install
     ENV.cxx11
 

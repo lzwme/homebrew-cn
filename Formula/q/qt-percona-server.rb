@@ -10,11 +10,12 @@ class QtPerconaServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "947e670849543995dc54dacb68902588cfa93b615a5bb1c5e79a9ca021c1496e"
-    sha256 cellar: :any,                 arm64_ventura: "ed8f0c189f53b640a01d5ba72239ba38b4132a8fa6ddeee22e74e1e6824db08c"
-    sha256 cellar: :any,                 sonoma:        "0a6f39c07b10acf210aa381d36e36bd5402d8ac4072a0b48b9e86945315d9a69"
-    sha256 cellar: :any,                 ventura:       "d9edf8bfd3b393748f2d3d09afb7ec4704e8e105a18d7ff112b3eeccb214f7be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "603a1c17fca216c3c43c7f53459c36a595241ae169e7119f8b5f6030d4fe9a54"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "f9b42c6f4de923d6b7c452dfa6454d3ff30219fdc4c99a9a3f17539add805fc1"
+    sha256 cellar: :any,                 arm64_ventura: "cb4ec5ba83c47e9e5aa42db405fd3e6c9d3d6ddb7cc70822b1c354fa2b18a25e"
+    sha256 cellar: :any,                 sonoma:        "a86a2fa03ffa2b31216c6d1977eb083c93c5216557f3e48d233b30bdbe4ec4cd"
+    sha256 cellar: :any,                 ventura:       "407ed5bbddd3bdfe6f8b13b5902f8a49c3458d8fbe662e08979c8333928cd8d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85701a4da17e54dde8b2cd09d26e7e73edf4e3c4cbdbc9a5a02935e208cbbfd4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,7 +30,7 @@ class QtPerconaServer < Formula
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_STAGING_PREFIX=#{prefix}
 
       -DFEATURE_sql_ibase=OFF
@@ -39,14 +40,15 @@ class QtPerconaServer < Formula
       -DFEATURE_sql_psql=OFF
       -DFEATURE_sql_sqlite=OFF
 
-      -DMySQL_LIBRARY=#{Formula["percona-server"].opt_lib}/#{shared_library("libperconaserverclient")}
+      -DMySQL_LIBRARY=#{Formula["percona-server"].opt_lib/shared_library("libperconaserverclient")}
     ]
+    # Workaround for missing libraries failure in CI dependent tests when `percona-server`
+    # is unlinked due to conflict handling but not re-linked before linkage test
+    args << "-DCMAKE_INSTALL_RPATH=#{Formula["percona-server"].opt_lib}" if OS.linux?
 
-    cd "src/plugins/sqldrivers" do
-      system "cmake", "-S", ".", "-B", "build", *args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-    end
+    system "cmake", "-S", "src/plugins/sqldrivers", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

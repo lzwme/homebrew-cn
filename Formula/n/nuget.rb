@@ -1,8 +1,8 @@
 class Nuget < Formula
   desc "Package manager for Microsoft development platform including .NET"
   homepage "https://www.nuget.org/"
-  url "https://dist.nuget.org/win-x86-commandline/v6.11.0/nuget.exe"
-  sha256 "133b9c1efdc8d86bdccae9e296c9e4bc45a6d6472368611aa96b51b3e75fd2e3"
+  url "https://dist.nuget.org/win-x86-commandline/v6.11.1/nuget.exe"
+  sha256 "c0ddc9cb0633c4607da7e8028eb4f91248c8b74e45a68b0c79fcfa7d78c2a481"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Nuget < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6706b2a51e71261d40d69583575bb2954baf3f2518174bc8b1594c11f995bb5d"
+    sha256 cellar: :any_skip_relocation, all: "e1f4e36d6acc5460499cb712dfa3e16853f9c6112bbb4da3adffbee04a7f64fc"
   end
 
   depends_on "mono"

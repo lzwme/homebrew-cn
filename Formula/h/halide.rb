@@ -13,13 +13,13 @@ class Halide < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "473c921b2a49ac91ddc541b66c654c6a903beaf4451be49e855cb97fb25de7d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "472ddf8483f0d0b9ab2c195d4cd4c31e4f852621039201a7dabd5cfdd24a9088"
-    sha256 cellar: :any,                 arm64_ventura: "b7fac3254a4d060e2a5f00c50a7edcb59054b3a14dc503c185677a09aa9a9dbe"
-    sha256 cellar: :any,                 sonoma:        "39d1d2350927c1157c49cd44359aad84c3f8107da3dfca7b7cad8ce24258350d"
-    sha256 cellar: :any,                 ventura:       "40166a65e5f5b86d5f8ae2f981a3f436a0a69b27c7cebf141867eb9c31cacfa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637ff487189822f7d0ea5c1f0cee6c4737f7f9364c1149f4636deac39baddee8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "6f89eeee118f390658d2a52a67e41996ce89fcd058684961b27423d3b117eea9"
+    sha256 cellar: :any,                 arm64_sonoma:  "e76b080cba6f9754412e6df3562d6e03bbf601233a84d9364c4d63ab98d2029c"
+    sha256 cellar: :any,                 arm64_ventura: "b7dd542219917916ff63c94e29a2869cfbcf9758843c35f9990c06bed44e1348"
+    sha256 cellar: :any,                 sonoma:        "ddd5a3737ec06e925dbfab1487021b3785ef8bcdb300e9163242b9a60c394873"
+    sha256 cellar: :any,                 ventura:       "2f7c424d4540af2ae08aff4f90a019e83fbbd18a97b76571b7ad1456d638b83f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f58f0eaa4f149d8685fd1f166cf3224995a89621c20e06a39fe0386e1ab71dd"
   end
 
   depends_on "cmake" => :build
@@ -62,8 +62,9 @@ class Halide < Formula
       "-DPYBIND11_USE_FETCHCONTENT=OFF",
       "-DFLATBUFFERS_USE_FETCHCONTENT=OFF",
       "-DFETCHCONTENT_SOURCE_DIR_WABT=#{builddir}_depswabt-src",
+      "-DCMAKE_SHARED_LINKER_FLAGS=-llldCommon",
     ]
-    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
+    odie "CMAKE_SHARED_LINKER_FLAGS can be removed from `args`" if build.bottle? && version > "18.0.0"
     system "cmake", "-S", ".", "-B", builddir, *args, *std_cmake_args
     system "cmake", "--build", builddir
     system "cmake", "--install", builddir

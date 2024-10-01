@@ -12,11 +12,13 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "f4cc33b60eec6295c5bce880a6bfeeb77b9b42bc3c59914c38f9fefecacf0ae8"
-    sha256 cellar: :any, arm64_sonoma:  "216ed0ba35c0aede3d0b7edb13c20425574a31c4ac8b2f9e1023e8c6fcbc0861"
-    sha256 cellar: :any, arm64_ventura: "447a15f0b773bf097f158181c57ff0568c07b5476929af4d8aa7add8c81cf02d"
-    sha256 cellar: :any, sonoma:        "d95b30baa99589aab50c01d91e26eee3e866c07600052646a4033803e7b32a8b"
-    sha256 cellar: :any, ventura:       "7830c67c89f757c1196d1240205ec22cf00b2bc969bc70514c026bff0d919355"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "48c32f1d7bfe4fc9f793b51b139b87060230ee31a30908bae9e0670d9b580a21"
+    sha256 cellar: :any,                 arm64_sonoma:  "c791ae601e361b2a4073238ad07b19e4ab188ddfc37e82f95adb05ab0085b4e8"
+    sha256 cellar: :any,                 arm64_ventura: "ed73d7e80372c6a9867d961aac012f4a1de50418cb170a9bbff6cfb48b2ece6a"
+    sha256 cellar: :any,                 sonoma:        "fa68872e1fa3661da7cf68ab7b9094cfe2b8c751ef189172a2b15359c3b26abc"
+    sha256 cellar: :any,                 ventura:       "a497d4a231bbd6426657a4e6d5b64e8840b42c5bdba8b8d47cc7accdfe300e77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "865098e0774cbe9b78399747b9949cb5522912649517f54f6bad4f03c31b9482"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +29,9 @@ class Flang < Formula
   def llvm
     Formula["llvm"]
   end
+
+  # Building with GCC fails at linking with an obscure error.
+  fails_with :gcc
 
   def install
     # NOTE: Setting `BUILD_SHARED_LIBRARIES=ON` causes the just-built flang to throw ICE.
@@ -44,11 +49,34 @@ class Flang < Formula
     ]
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
 
+    ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
     install_prefix = OS.mac? ? libexec : prefix
     system "cmake", "-S", "flang", "-B", "build", *args, *std_cmake_args(install_prefix:)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
     return if install_prefix == prefix
+
+    # Convert LTO-generated bitcode in our static archives to MachO.
+    # Not needed on Linux because of `-ffat-lto-objects`
+    # See equivalent code in `llvm.rb`.
+    install_prefix.glob("lib*.a").each do |static_archive|
+      mktemp do
+        system llvm.opt_bin"llvm-ar", "x", static_archive
+        rebuilt_files = []
+
+        Pathname.glob("*.o").each do |bc_file|
+          file_type = Utils.safe_popen_read("file", "--brief", bc_file)
+          next unless file_type.match?(^LLVM (IR )?bitcode)
+
+          rebuilt_files << bc_file
+          system ENV.cc, "-fno-lto", "-Wno-unused-command-line-argument",
+                         "-x", "ir", bc_file, "-c", "-o", bc_file
+        end
+
+        system llvm.opt_bin"llvm-ar", "r", static_archive, *rebuilt_files if rebuilt_files.present?
+      end
+    end
 
     libexec.find do |pn|
       next if pn.directory?
@@ -89,5 +117,10 @@ class Flang < Formula
 
     system bin"flang-new", "-v", "test.f90", cxx_stdlib, "-o", "test"
     assert_equal "Done", shell_output(".test").chomp
+
+    system "ar", "x", lib"libFortranCommon.a"
+    testpath.glob("*.o").each do |object_file|
+      refute_match(^LLVM (IR )?bitcode, shell_output("file --brief #{object_file}"))
+    end
   end
 end

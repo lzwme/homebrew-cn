@@ -19,8 +19,22 @@ class Paps < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "cairo"
   depends_on "fmt"
+  depends_on "glib"
   depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  # Apply open PR to fix build with recent `glib`. This restores behavior before
+  # https:gitlab.gnome.orgGNOMEglib-commitc583162cc6d7078ff549c72615617092b0bc150a
+  # PR ref: https:github.comdovpapspull71
+  patch do
+    url "https:github.comdovpapscommite6ec698be127822661e31f7fca7d2e0107944b24.patch?full_index=1"
+    sha256 "52848f9618dab9bc98c1554cc8a7a0b3ce419cfca53781b909d543ec4e4b27ea"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

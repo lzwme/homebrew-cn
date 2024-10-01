@@ -3,19 +3,17 @@ class Abi3audit < Formula
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
   homepage "https:github.comtrailofbitsabi3audit"
-  url "https:files.pythonhosted.orgpackagesfc9f30f21d93b511e250e5fd4987efffc48e3d840048d9a1fbdbb8f70e2f2387abi3audit-0.0.14.tar.gz"
-  sha256 "2466815dd3fed35342a708f129962eebb8533eac7bc3bca864c8124b03580e4b"
+  url "https:files.pythonhosted.orgpackagesf875fb78347ed058522cd5864dfa0e049a3b83e1ca361a6ba75552141a8c76a5abi3audit-0.0.17.tar.gz"
+  sha256 "d05299c2b4ca2d4897c7ed417fc89ed9ac684cb50542e13287bb129e8499de89"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d6c3c3cef13a7f755adecd806c475ab5b42ee91718d7ddc0f2976a7e83b596e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ecbcf0d2258782d2310235bd19eb9457f20ad646f4d971a05de62b7c2dfaee8a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ecbcf0d2258782d2310235bd19eb9457f20ad646f4d971a05de62b7c2dfaee8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "28c4a9b0060fccaf8535cfcdf8c74a3064fd7417e6b158877825a0e7c38a7aa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6384e9edb179b26adacc2059d96e4250634fbae6910cd084b15b8b80db7c6f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cb791e016888506579366f40bb8da95ea3d44eac4cfaf1ba0e116422fff87c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cb791e016888506579366f40bb8da95ea3d44eac4cfaf1ba0e116422fff87c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0cb791e016888506579366f40bb8da95ea3d44eac4cfaf1ba0e116422fff87c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af235d672541e41f0a4d2bce6b9cffaa93e408d3b393d882927aa03f29ba7c76"
+    sha256 cellar: :any_skip_relocation, ventura:       "af235d672541e41f0a4d2bce6b9cffaa93e408d3b393d882927aa03f29ba7c76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83380b4065b2918d46ba242129a8e5e5af8a1bda2105935cfbcc5d5cb195c8c4"
   end
 
   depends_on "cmake" => :build
@@ -27,23 +25,23 @@ class Abi3audit < Formula
   end
 
   resource "abi3info" do
-    url "https:files.pythonhosted.orgpackages3ba83223100090d37f36054159e761ab06694186ee32f6576b5dc4817d18921babi3info-2024.6.25.tar.gz"
-    sha256 "e94bf88025c4bee77ebe0ff24a39b103dce646345de5e21f9fdfc8f9a00c1830"
+    url "https:files.pythonhosted.orgpackagesbdd1530627a1f5280ae3f53a18017835afa35d6bed29db1e5dd8273787e190a0abi3info-2024.9.24.tar.gz"
+    sha256 "aa4b62c87f8461c72a12f7d9c5900e353d1f40a14cda9dab30686c68d2968cd9"
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "cattrs" do
-    url "https:files.pythonhosted.orgpackages1e57c6ccd22658c4bcb3beb3f1c262e1f170cf136e913b122763d0ddd328d284cattrs-23.2.3.tar.gz"
-    sha256 "a934090d95abaa9e911dac357e3a8699e0b4b14f8529bcc7d2b1ad9d51672b9f"
+    url "https:files.pythonhosted.orgpackages6465af6d57da2cb32c076319b7489ae0958f746949d407109e3ccf4d115f147ccattrs-24.1.2.tar.gz"
+    sha256 "8028cfe1ff5382df59dd36474a86e02d817b06eaf8af84555441bac915d2ef85"
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackagesc202a95f2b11e207f68bc64d7aae9666fed2e2b3f307748d5123dffb72a1bbeacertifi-2024.7.4.tar.gz"
-    sha256 "5a1e7645bc0ec61a09e26c36f6106dd4cf40c6db3a1fb6352b0244e7fb057c7b"
+    url "https:files.pythonhosted.orgpackagesb0ee9b19140fe824b367c04c5e1b369942dd754c4c5462d5674002f75c4dedc1certifi-2024.8.30.tar.gz"
+    sha256 "bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"
   end
 
   resource "charset-normalizer" do
@@ -52,8 +50,8 @@ class Abi3audit < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "kaitaistruct" do
@@ -77,13 +75,13 @@ class Abi3audit < Formula
   end
 
   resource "pefile" do
-    url "https:files.pythonhosted.orgpackages78c53b3c62223f72e2360737fd2a57c30e5b2adecd85e70276879609a7403334pefile-2023.2.7.tar.gz"
-    sha256 "82e6114004b3d6911c77c3953e3838654b04511b8b66e8583db70c65998017dc"
+    url "https:files.pythonhosted.orgpackages034f2750f7f6f025a1507cd3b7218691671eecfd0bbebebe8b39aa0fe1d360b8pefile-2024.8.26.tar.gz"
+    sha256 "3ff6c5d8b43e8c37bb6e6dd5085658d658a7a0bdcd20b6a07b1fcfc1c4e9d632"
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesf5520763d1d976d5c262df53ddda8d8d4719eedf9594d046f117c25a27261a19platformdirs-4.2.2.tar.gz"
-    sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
+    url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
+    sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
   end
 
   resource "pyelftools" do
@@ -107,8 +105,8 @@ class Abi3audit < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
-    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+    url "https:files.pythonhosted.orgpackages927640f084cb7db51c9d1fa29a7120717892aeda9a7711f6225692c957a93535rich-13.8.1.tar.gz"
+    sha256 "8260cda28e3db6bf04d2d1ef4dbc03ba80a824c88b0e7668a0f23126a424844a"
   end
 
   resource "six" do
@@ -122,8 +120,8 @@ class Abi3audit < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install

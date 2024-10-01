@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https:github.comseaweedfsseaweedfs"
   url "https:github.comseaweedfsseaweedfs.git",
-      tag:      "3.73",
-      revision: "6063a889ed61b4e3ef29360faa5d7623a4a70364"
+      tag:      "3.74",
+      revision: "e3fa87bcc18d3600f9f3b9ef99407509e8ee3383"
   license "Apache-2.0"
   head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3063f6df8c9a6bd5060d06ce8968e94b044743b8e448fae983418258a4b22943"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f39b5db2aef10b009955de56d9c28e3ab05995d129514abf746a7456260ffcf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98a675b001a67dcaae860b674b2917b7ec3249c5abc8ec1752a109c29d316b1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91a8e5ac87cde446d058e203961f7fc47f1af17c7f2cfc6666012f4d784ee7b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bebb781741d6675394fd5eea0b3c4bd8ca48717c7dea1bc1bb3ac9b444cd8e55"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5fca7c3d51aad6284b1b07424927e99eba62083b7a3efb3c7bf6e6d629a2a1c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4336b22680ed592d8dda69927d0d50d60b3c7165347b43f0650d689f1c5e303a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c5205a2bc4723bd4f0fd8e5b2b803351b530f0795701d39e58177466f10b8e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84d15280202b5acafb09bad71993920b5f1ca31b7b50eb01f12debd465f8dcb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d700b0c666988987a7c0b17d121869bd9942f0be6c679da249c005667123df4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "37ee03d69f3517ea857e56637dab688355887c1bc11e41d95898a9b3fe8a8d01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bea239c98fff77701fa249ac623db35abd1db1aa44f943138a13428c4eecc81f"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f4f1759ff8afa934132ca56537992553e8c4b550d33c610345bc58a8006aba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d04cab08ee46a210b0d4a7adf3167008ebe6eaa42c3098fa2929d9a7825e419e"
   end
 
   depends_on "go" => :build

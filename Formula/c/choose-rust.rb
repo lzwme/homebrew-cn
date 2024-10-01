@@ -1,23 +1,17 @@
 class ChooseRust < Formula
   desc "Human-friendly and fast alternative to cut and (sometimes) awk"
   homepage "https:github.comtheryangearychoose"
-  url "https:github.comtheryangearychoosearchiverefstagsv1.3.4.tar.gz"
-  sha256 "6c711901bb094a1241a2cd11951d5b7c96f337971f8d2eeff33f38dfa6ffb6ed"
+  url "https:github.comtheryangearychoosearchiverefstagsv1.3.5.tar.gz"
+  sha256 "3a0a90f850026518b8ebf208ed83b7cb331b4f590dbf1ffa24b3bcc880fc392b"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "177eb005765273e5f472e2a10e0eb9afe7a6afedd9d667f6a338aa99d6f5d7f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8a09173690c704c2cfa1612fc33eeec23b888baebf5a4ccb19998fcc7b8574b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82ed2e1824a5e50d813e988e5e29bef7497a554d16765bc9499aeb413f7c293c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d57acf95592fce37b4300637b1c38989564d423de789b9fc624223f53de1c796"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f009a6ef6eb59df17bf53037237cb94c97d9f8a00e6a20de63d1952fde5fc56b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f277fb855f5c90aa54b1b4cbaf4071866b93100a435d406730eb4cc8682f20d"
-    sha256 cellar: :any_skip_relocation, ventura:        "38fc4f96b6ed022b5d0a0066155e7aeb98e9b27bc95368a2b86dc98c49e13faf"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb7a88d2f6a7ea5dbc28602995baab358344289b590446d003e861fe3460f40f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b2fa7efa2e78068e948a7991caa5d2a92b346af9118c1e775405a1ae5fc80b61"
-    sha256 cellar: :any_skip_relocation, catalina:       "da599fbd49ceee7815a21a1589b34f96d65efd6366d4ea286969f7b8efe0075c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1040d82ce5edb40b14f394947486e4cb07bfb4e1fdc0a387365a56debd5d07a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "624e46f9b93a985364511ac154c7422b5381df03135f53c8e76b9e3835dbd411"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d96bd902f1354e8bebea59affcbc8c30191d74267676752fe40cafde6143b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6865d250d589cd9f6442c0b0f29c52fc7378b502b6b9e88b9bd67efa857443d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d23cecc087a0c1fbd706b5c7e6f814ad02cd55a9b58c13d4bf664778772efd28"
+    sha256 cellar: :any_skip_relocation, ventura:       "858c6ba1eb70feada7ff5ab29ab0fdefc686b3a1bd359eb12d3d4c4aebbb1a1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50588ec24467aee1338680e0a329505764c0f7d90e6cd1902383784428a6d19"
   end
 
   depends_on "rust" => :build

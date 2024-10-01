@@ -3,19 +3,17 @@ class Archey4 < Formula
 
   desc "Simple system information tool written in Python"
   homepage "https:github.comHorlogeSkynetarchey4"
-  url "https:files.pythonhosted.orgpackagesdc9a8a0921ed2df4da26197f98b0f6a8b3af1fa232cc898a13e719e9ed396e95archey4-4.14.3.0.tar.gz"
-  sha256 "31ce86c6642becd11a9879a63557ed5cef3f552cd9cfe798299414a9c5745056"
+  url "https:files.pythonhosted.orgpackagesa7bdf70b613520c3f683eff6b9ffe5a31ba142bcc1b206db3181606b8e440193archey4-4.15.0.0.tar.gz"
+  sha256 "1cf158ab799fa8a5d15deab0a48df306d2788c81de44d0242c3ab1dfa84865ac"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e84cfe6d01bb43dd7b52e7b9537ba8d474270bf83f0ec7c23ebe6d809af1dea4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b518af92de8367f515be97385419b0f1917143c5d9486ae9f360ac813ca27e50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32b8f3ec7f10da235ed8547dab063d706069721b52ebcda71807f91fbe7ed938"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0226ba7100274cb0edadaac048ad27feb0989ba11dc508460d72bc14bdf15850"
-    sha256 cellar: :any_skip_relocation, sonoma:         "330dc2fbf198aee47c86f4692664f2f1fbdce4e8fc2e42a7f858b19de7c3d7f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "0edc05acda306481d567574e99c06ce07a2e6b3440fd5ea84b5abb0e0dc5132e"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0694a7459bc572be8473d4c8fc2403659fc9bb3ada4b37a86fb780d08c31e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93aabca2dc5ac82a21a9b0ed445d0ecf267aa936288f7d08a3616fd544e4548b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "314aba3d4c8073174d747aa1fb8e1545f314192cacfb645095b3d2a3e98fd3bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ecfede2e3a95f640dccc8ab438b305106a136ff54d274a352345714583b658e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "745c57cc1d25ec22232f2f18dc749efab686a5f0e400b770619a077e57bb33f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "027039416868461c0677c8730ff9516c924bb4858bb550f72f03592a1283742b"
+    sha256 cellar: :any_skip_relocation, ventura:       "fd17101816fd3161bab756c7b7e3de305e8ae842a5dfaca5bfa530f49fa5bdb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d615751b4231817a6ff3e3a04be453a8d187f1022d35a3979ec4529fc876f7"
   end
 
   depends_on "python@3.12"

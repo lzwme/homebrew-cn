@@ -1,8 +1,8 @@
 class Libpq < Formula
   desc "Postgres C API library"
   homepage "https:www.postgresql.orgdocscurrentlibpq.html"
-  url "https:ftp.postgresql.orgpubsourcev16.4postgresql-16.4.tar.bz2"
-  sha256 "971766d645aa73e93b9ef4e3be44201b4f45b5477095b049125403f9f3386d6f"
+  url "https:ftp.postgresql.orgpubsourcev17.0postgresql-17.0.tar.bz2"
+  sha256 "7e276131c0fdd6b62588dbad9b3bb24b8c3498d5009328dba59af16e819109de"
   license "PostgreSQL"
 
   livecheck do
@@ -11,18 +11,18 @@ class Libpq < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "690e93839874986ddbad2fb91609cc1c1646eb100418943e4de8dec9c46dd7ab"
-    sha256 arm64_sonoma:   "5cba324d7dbc763dc432f818202484e06ec870bfaf715ad19ca6871dc7b75c05"
-    sha256 arm64_ventura:  "62dd2f49e9640e9640120ee3083c8f219f2fe2461e5f8a8a5a4ec8391f0db964"
-    sha256 arm64_monterey: "e07a4c790f4636657b8cd1b3a8aa2ea2d2577b730155f652891adcc6289dc034"
-    sha256 sonoma:         "2b117f12c88d4f2997d3bf4f301b573463404647318b37c29258c3dd19d6917a"
-    sha256 ventura:        "de4417cac91699e60bdac34b0149e546cf93ea1b2980a7266fcb55bf79517ec9"
-    sha256 monterey:       "ac626a8e1367aea8de8baa98c631155ecde517c4f68c56996ebab1d4be46cc7c"
-    sha256 x86_64_linux:   "5daa7fec5ec79c409374861c339882727ada3d5691f3ba97cbe06525a6213f08"
+    sha256 arm64_sequoia: "b0ce742bd7027442b48fd665367048856c44bdc0aad8b8189aa2015456d96e5c"
+    sha256 arm64_sonoma:  "85f7d3d183a0959b8fec6f888b5b69f409281da844499e8ac32ba4ec7d6a2ed9"
+    sha256 arm64_ventura: "f0b36a3460c0f1fa450aad4b2d686fea44a7eb3e04ee75b3b034fda38f10f9d8"
+    sha256 sonoma:        "cb6b96bd419f966dd7865f8fdfd193ebe6fb59d551c9b248473d87e385426b7c"
+    sha256 ventura:       "513bc08c47e1638fd77209dfb8cc5f8be2fc48e308687613d924e2ae1fcb6c3e"
+    sha256 x86_64_linux:  "2ecaed074cd7bc5ed53aad3d8ee71862192451a946caa3c27d44c75cd02f5bd4"
   end
 
   keg_only "conflicts with postgres formula"
 
+  depends_on "docbook" => :build
+  depends_on "docbook-xsl" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
   # GSSAPI provided by Kerberos.framework crashes when forked.
@@ -30,6 +30,10 @@ class Libpq < Formula
   depends_on "krb5"
   depends_on "openssl@3"
 
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
+  uses_from_macos "libxml2" => :build
+  uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "zlib"
 
   on_linux do
@@ -37,6 +41,8 @@ class Libpq < Formula
   end
 
   def install
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
+
     system ".configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--with-gssapi",

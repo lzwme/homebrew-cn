@@ -6,6 +6,11 @@ class Capstone < Formula
   license "BSD-3-Clause"
   head "https:github.comcapstone-enginecapstone.git", branch: "next"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1bfbe3ed3ee90ede3b80ccef52d4cab75c81d215870ecd50d4bf6b30ba60b84d"
     sha256 cellar: :any,                 arm64_sonoma:   "2c1c08af469f0307469b70ff6c277d5971495db3a8c7ae38c98bd2c70745acbb"

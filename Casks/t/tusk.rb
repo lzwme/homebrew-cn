@@ -8,7 +8,7 @@ cask "tusk" do
   homepage "https:github.comklaudiosinanitusk"
 
   # https:github.comklaudiosinanituskissues381
-  deprecate! date: "2023-01-15", because: :unmaintained
+  disable! date: "2024-09-30", because: :unmaintained
 
   app "Tusk.app"
 

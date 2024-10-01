@@ -7,13 +7,8 @@ class Tmuxinator < Formula
   head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "188a4f8454878969426828dae469d6c013d13988fd646cc311b55272bf2c21ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "188a4f8454878969426828dae469d6c013d13988fd646cc311b55272bf2c21ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "188a4f8454878969426828dae469d6c013d13988fd646cc311b55272bf2c21ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "974aa5f23c3f16005bb4b2db37fa729818f62d7f2e3a3960bf862834b130ef1d"
-    sha256 cellar: :any_skip_relocation, ventura:       "974aa5f23c3f16005bb4b2db37fa729818f62d7f2e3a3960bf862834b130ef1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "188a4f8454878969426828dae469d6c013d13988fd646cc311b55272bf2c21ec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f212df9e9c4a67b19bdd885170998c3dea7d35383230451cbcf173f912058744"
   end
 
   depends_on "ruby"
@@ -47,6 +42,10 @@ class Tmuxinator < Formula
     system "gem", "install", "--ignore-dependencies", "tmuxinator-#{version}.gem"
     bin.install libexec"bintmuxinator"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+
+    # Make sure tmuxinator checks HOMEBREW_PREFIX for data files. Also ensures uniform bottles.
+    inreplace_files = libexec.glob("gemsxdg-*libxdgbase_dir{,extended}.rb")
+    inreplace inreplace_files, "usrlocal", HOMEBREW_PREFIX
   end
 
   test do

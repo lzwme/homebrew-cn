@@ -6,25 +6,23 @@ class Ccls < Formula
   #       https:github.comHomebrewhomebrew-corepull106939
   #       https:github.comMaskRaycclsissues786
   #       https:github.comMaskRaycclsissues895
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https:github.comMaskRaycclsarchiverefstags0.20240202.tar.gz"
-  sha256 "355ff7f5eb5f24d278dda05cccd9157e89583272d0559d6b382630171f142d86"
+  url "https:github.comMaskRaycclsarchiverefstags0.20240505.tar.gz"
+  sha256 "4ea6d90a9f93d5503e59c3bd0e5568ab262ff3dcf1b7539b50a0ede4a0e32fea"
   license "Apache-2.0"
-  revision 2
   head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "456e64f301999bde6fd6fbb722c567394889be93b89488052936f14e35f96a92"
-    sha256                               arm64_sonoma:  "62c9aa4d98c0d97dadcbde5f70d5b47725d1dc360fd2f017472baae37336fad1"
-    sha256                               arm64_ventura: "9e105743aa472cc07f74892abe7b3a1bce9c9c0b6ab53405dfdee0548b04ef01"
-    sha256                               sonoma:        "e1e19b603b8825c9d9552a75e23a8436066b0cc7fbc22ec155c467a3e8c619cb"
-    sha256                               ventura:       "2582130416de11b29dd35833f983f2f865fea39e52f3e046b86c822f5bd47444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "057d51586172d98b836683ed9e2ba3fc12abdde0b3de8451c60b73f543792cdb"
+    sha256                               arm64_sequoia: "dd72e908ed43995d6078af01f9f8021cc61799445271d3a040e63e056b230a7f"
+    sha256                               arm64_sonoma:  "d150928cd70c213296534660ec53275dd35434863c11546978b19be11ba8078e"
+    sha256                               arm64_ventura: "ceff1c27a290bce123dab0bdf9b15644b372f6f2d4c14a03104a01bd13eccd40"
+    sha256                               sonoma:        "74a2bbdcfd5fe6ed74bc05e17af99edd7ca22e0d264d71aa4624e2c64f60cc95"
+    sha256                               ventura:       "cdfec2cf7d5027ac4ebf5dc41ffac54b2a41c8a14fe55a02f8c7edffaa96a867"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30f6d1754edadb51e6f534c6624b00af338e61fca00abfbf2b296522c356b14a"
   end
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
-  depends_on "llvm@18"
+  depends_on "llvm"
   depends_on macos: :high_sierra # C++ 17 is required
 
   fails_with gcc: "5"

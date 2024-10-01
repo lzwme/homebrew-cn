@@ -12,6 +12,7 @@ class Hadoop < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "947ff1f70270d1f4028678211dfdf773be119bafcbbf15e4a7f24fe90996fb0f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3bc4d1af76f0d40746abffa84b42508f1ef53eda3d612b03e5c1f4144bb4826a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bc4d1af76f0d40746abffa84b42508f1ef53eda3d612b03e5c1f4144bb4826a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3bc4d1af76f0d40746abffa84b42508f1ef53eda3d612b03e5c1f4144bb4826a"

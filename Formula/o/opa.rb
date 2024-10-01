@@ -1,20 +1,18 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https:www.openpolicyagent.org"
-  url "https:github.comopen-policy-agentopaarchiverefstagsv0.68.0.tar.gz"
-  sha256 "5c7f985b70d69f208af12d14c2d73ef802ec8fdb6025795f94f1edd9ced82033"
+  url "https:github.comopen-policy-agentopaarchiverefstagsv0.69.0.tar.gz"
+  sha256 "1048675edb03e3d6c72a95d9fe3334eb17b63296d0bf8c1b220bd70602877b3a"
   license "Apache-2.0"
   head "https:github.comopen-policy-agentopa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b3ac9bc7d9b005382ef5041900080e4238448b712546cda0d2f7b189c20cf5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f51b78f9064809462d314ebe94b884ab6fc4fb7055bde0411ccbec61d3857086"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c72849b93d763dc4bc5ddf9f1b82b6e011b7ca000f43a9f5b50831a66f5f410"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ca95050dc9667ce013f80ecdd9ffeafb3ee3965645b5aaeceb959fdb0bfd35a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7ed17b217b88f9bb6c5d8caf9e529b08228008792dc570e52095f5e7b26e35c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3ae19bd8a00ac33ca29821f8c6e576e89d8ca4a4cfad0e8fbedbeb97426106b"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc579cbf20037cbc383ca689ba1e9dbe1801d29fc7851711b860b4a8aa1673fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43b2afc11087f944531ac894d7dd9b6b3c8d4a3d724909879adf904b33460a7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e83db47e02982c3fa24a8354fdd7b654c593953d9d4ec04b4d5376ea511e1f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f1561f1c7bfce6411cb8e0ee109cacc77d0446c9373084de77eec41300ace9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0af7005edaef4b73acb66603a3718e9ba354d9f9179ca4cad32d4acd89c2c83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4e536e222d36fef62b07922d2f8e6e343b8876133a1fed3605c8ac409267aea"
+    sha256 cellar: :any_skip_relocation, ventura:       "616febbc5474c059029fce73fc3585a7919e2d364284bcd6ffda9fe3016de579"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97eb07c1e015110e89ab1e26851ce13c70e417ea124f2b590af2dfd6f4bceb06"
   end
 
   depends_on "go" => :build

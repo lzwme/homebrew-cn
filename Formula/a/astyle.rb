@@ -1,8 +1,8 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.2.tar.bz2"
-  sha256 "f7e8e1ac4aa314a6645fa7016d882da381a8e1020c83462a2ca26cb25d8f3cbb"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.3.tar.bz2"
+  sha256 "10ed7c8f974ecce35c1778f1616f04ca93c3d3bfc1a017aa251396041b670efc"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
@@ -12,14 +12,12 @@ class Astyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "51f6bf9f370aa1df90b75786854b2c259bd44a0c1232036629619f4b9ed4f78c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed781ce723abfeb78d363a125024a8feb42c8ff753680c128bb19b3b004239e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e28fdab307ff15f08fa7974be9b96d6468513d8ba155e268310546a03fa3f35a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cc94cb50944600554149d9eea162f4f69e581440b269548519b0181f2e03c03"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bf41c7fac4c187d8cbcf6809ec48dac025d3da1119d4b3404c9d079d6544bc9d"
-    sha256 cellar: :any_skip_relocation, ventura:        "657ee1deda8b7edfed3b2839e6253cbbd07a73b368702c96545cb5f22e933623"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9cb9bde8b99a290e870e05392e081cdff26fcaf9ac55151ae79a0511d3fdd43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09006c65f29de4f9fa6800b54b74c679ca3c30770138cd1b6f945f7d55a2e15e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad536ea81692c30f9673464842af1bacd552c9f35c89182b115db0fbea8c8497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87f8e2164c3f59912f55821a8df67aced5825af66d0961ec30cccfc6a5e17961"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ec1e3d132175fd17977408f62eb9166ea074e15fb1f0fbbc265c5b27ccecc72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6459362cf3206806ee923f68864b4fce93492be13df696a560cecaf4d2b423d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e801e9bdac7a84fb385976f53cc80eab7cdfecebdadd6717141362c5b0f9901d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57336148e71215a695ab72252b452300c3a55919094710fb35e40000189d6df"
   end
 
   depends_on "cmake" => :build

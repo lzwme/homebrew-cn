@@ -21,8 +21,8 @@ class Quazip < Formula
   depends_on xcode: :build
   depends_on "qt"
 
-  uses_from_macos "zlib" => :test
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   fails_with gcc: "5" # C++17
 

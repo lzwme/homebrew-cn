@@ -61,6 +61,49 @@ class DotnetAT6 < Formula
   # Issue ref: https:github.comdotnetsource-buildissues2795
   patch :DATA
 
+  # Backport fix to build with Clang 19
+  # Ref: https:github.comdotnetruntimecommit043ae8c50dbe1c7377cf5ad436c5ac1c226aef79
+  def clang19_patch
+    <<~EOS
+      diff --git asrccoreclrvmcomreflectioncache.hpp bsrccoreclrvmcomreflectioncache.hpp
+      index 08d173e61648c6ebb98a4d7323b30d40ec351d94..12db55251d80d24e3765a8fbe6e3b2d24a12f767 100644
+      --- asrccoreclrvmcomreflectioncache.hpp
+      +++ bsrccoreclrvmcomreflectioncache.hpp
+      @@ -26,6 +26,7 @@ template <class Element, class CacheType, int CacheSize> class ReflectionCache
+
+           void Init();
+
+      +#ifndef DACCESS_COMPILE
+           BOOL GetFromCache(Element *pElement, CacheType& rv)
+           {
+               CONTRACTL
+      @@ -102,6 +103,7 @@ template <class Element, class CacheType, int CacheSize> class ReflectionCache
+               AdjustStamp(TRUE);
+               this->LeaveWrite();
+           }
+      +#endif  !DACCESS_COMPILE
+
+       private:
+            Lock must have been taken before calling this.
+      @@ -141,6 +143,7 @@ template <class Element, class CacheType, int CacheSize> class ReflectionCache
+               return CacheSize;
+           }
+
+      +#ifndef DACCESS_COMPILE
+           void AdjustStamp(BOOL hasWriterLock)
+           {
+               CONTRACTL
+      @@ -170,6 +173,7 @@ template <class Element, class CacheType, int CacheSize> class ReflectionCache
+               if (!hasWriterLock)
+                   this->LeaveWrite();
+           }
+      +#endif  !DACCESS_COMPILE
+
+           void UpdateHashTable(SIZE_T hash, int slot)
+           {
+    EOS
+  end
+
   def install
     if OS.linux?
       ENV.append_path "LD_LIBRARY_PATH", Formula["icu4c"].opt_lib
@@ -70,6 +113,7 @@ class DotnetAT6 < Formula
 
     (buildpath".dotnet").install resource("dotnet-install.sh")
     (buildpath"srcSourceBuildtarballpatchesmsbuild").install resource("homebrew-msbuild-patch")
+    (buildpath"srcSourceBuildtarballpatchesruntimeclang19.patch").write clang19_patch
 
     # The source directory needs to be outside the installer directory
     (buildpath"installer").install buildpath.children

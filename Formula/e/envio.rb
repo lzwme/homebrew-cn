@@ -1,18 +1,18 @@
 class Envio < Formula
   desc "Modern And Secure CLI Tool For Managing Environment Variables"
   homepage "https:envio-cli.github.iohome"
-  url "https:github.comenvio-clienvioarchiverefstagsv0.6.0.tar.gz"
-  sha256 "1a827ecee53299e060a2ce45cbb2215f3ca6c48fc5baf05b2d5a46018fb09bc7"
+  url "https:github.comenvio-clienvioarchiverefstagsv0.6.1.tar.gz"
+  sha256 "24cd7c485226be7f7921a95ae4edaf3cb510c90a339c51e51423c3eb4deee6dc"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comenvio-clienvio.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6f9c00fe287c8ebf79a3ebf056fc75920e6432c9f43670986d5030785e9f19c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "09379bc1ca4cf919ccc0cd4805d71751a592b6cd6e9e02aba5801110e9a863c4"
-    sha256 cellar: :any,                 arm64_ventura: "d6ba9b0de7405d4746fc3a013b3c4f61b03c4309e411d7d2bce9f67e144a750a"
-    sha256 cellar: :any,                 sonoma:        "4799418cc8413d5234ed4cd932c43948e68bfe81fdbb0de3edaaa5facad29fde"
-    sha256 cellar: :any,                 ventura:       "061f3651361cdee4e101a665217b8b56d0f299a0c0add00d6181ab8cec5c1c22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5fb8bf937cbf6f79d55c7ee9d42bd0d9ec51206c59038f0685f51c42b260be2"
+    sha256 cellar: :any,                 arm64_sequoia: "f0d968440fe2fcddd6c39d2541817b3cd51267e520d06ecd2cb1e80f03ffd4a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a0588163752bdb12f4b0d8e91646345b8c798006cf240328703d1e0a508ebce"
+    sha256 cellar: :any,                 arm64_ventura: "4f5305056a8165baf2b45d71b2a94f9800792923949c44a30c030d8b0072ef49"
+    sha256 cellar: :any,                 sonoma:        "6812bb1eca12a3c74c542d967d2930bbeb2a0a77ab4b0d3f04eba9df5196063c"
+    sha256 cellar: :any,                 ventura:       "777f696105129c6c3c49944c45854d9cc3f5f63cd2e5913d6692e2337c684f88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61427474955a6e35804f605178403e2ac41bda326841faf024ba873b88824c0d"
   end
 
   depends_on "pkg-config" => :build

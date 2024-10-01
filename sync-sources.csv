@@ -2737,6 +2737,7 @@ Homebrew-homebrew-core/Formula/i/immortal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immudb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imposm3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inadyn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/inchi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/include-what-you-use.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/incus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/indicators.rb, Homebrew/homebrew-core, 1
@@ -13488,6 +13489,7 @@ Homebrew-homebrew-cask/Casks/s/synfigstudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/synology-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-cloud-station-backup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-drive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/synology-image-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-note-station-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-photo-station-uploader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-surveillance-station-client.rb, Homebrew/homebrew-cask, 0
@@ -13877,6 +13879,7 @@ Homebrew-homebrew-cask/Casks/v/videofusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/videostream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vidl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vieb.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vienna-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vienna.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vimcal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vimediamanager.rb, Homebrew/homebrew-cask, 1
@@ -14027,6 +14030,7 @@ Homebrew-homebrew-cask/Casks/w/wifiman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifispoof.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/winbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/winclone.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/windows-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windows95.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/windscribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windterm.rb, Homebrew/homebrew-cask, 1

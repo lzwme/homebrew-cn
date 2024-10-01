@@ -32,6 +32,7 @@ class GerbilScheme < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gcc"
