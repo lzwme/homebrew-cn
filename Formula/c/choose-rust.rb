@@ -1,17 +1,17 @@
 class ChooseRust < Formula
   desc "Human-friendly and fast alternative to cut and (sometimes) awk"
   homepage "https:github.comtheryangearychoose"
-  url "https:github.comtheryangearychoosearchiverefstagsv1.3.5.tar.gz"
-  sha256 "3a0a90f850026518b8ebf208ed83b7cb331b4f590dbf1ffa24b3bcc880fc392b"
+  url "https:github.comtheryangearychoosearchiverefstagsv1.3.6.tar.gz"
+  sha256 "3d28dc39339dbf5c6197eb803b199661d6d261bc827c194b31b19d1afad01487"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "624e46f9b93a985364511ac154c7422b5381df03135f53c8e76b9e3835dbd411"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d96bd902f1354e8bebea59affcbc8c30191d74267676752fe40cafde6143b2d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6865d250d589cd9f6442c0b0f29c52fc7378b502b6b9e88b9bd67efa857443d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d23cecc087a0c1fbd706b5c7e6f814ad02cd55a9b58c13d4bf664778772efd28"
-    sha256 cellar: :any_skip_relocation, ventura:       "858c6ba1eb70feada7ff5ab29ab0fdefc686b3a1bd359eb12d3d4c4aebbb1a1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50588ec24467aee1338680e0a329505764c0f7d90e6cd1902383784428a6d19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad17bcef06080d2bfb71bb181c458c30e52d9d7286984e773f19421549090901"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3a242fc57b9ead20e8eb5d1d60d14b3f3a53512a6bfd4765dc4fe08655a812d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bf5781d97c33bfbff80f26fe6816e931b3e3e95517f827f67946fcc02325321"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a95a7d6cd3898ea70ce60d04af20ede743fd8a77cb200ae68616dd5fbe82b300"
+    sha256 cellar: :any_skip_relocation, ventura:       "1843f24e22d57a1eb64fb96ce845cdad40e9c84d5199cee8002c3aa2ca0fe11a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95d29a0116297a407d108626121d3be663f3c856345a279f3e5a0f17887834d"
   end
 
   depends_on "rust" => :build

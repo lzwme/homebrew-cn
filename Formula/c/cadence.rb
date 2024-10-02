@@ -1,8 +1,8 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
-  homepage "https:github.comonflowcadence"
-  url "https:github.comonflowcadencearchiverefstagsv0.42.12.tar.gz"
-  sha256 "268cd577dc9ad6d6d0f0295ab37c32cc1c03576351b2c7901954c4eab351b0b5"
+  homepage "https:cadence-lang.org"
+  url "https:github.comonflowcadencearchiverefstagsv1.0.0.tar.gz"
+  sha256 "e2a67ab00bfbf568937a9f9931dff75895560e4313e660db55dd39790b3f98ec"
   license "Apache-2.0"
   head "https:github.comonflowcadence.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Cadence < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6d0aa81958fc209119b4ad5a5d9d6cb3eef263e8f19cf90887ead6c67184c674"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abbfecc5e89d32411e27553f6bb5e33c56aace5e75c02a1937245df0a334da15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09ea2f95e2d7de1c05aa15fc1a492e17d0dc9208c52a2c5e4efbc64c9922866c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0752b59fb0c2cc48aed7992c6be3aee3afccd804c3ec84cf2852f3cd2a30908a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "177a8d6c4696f16a8cbb2f536e365b0d720fcc516445b639c7e3dcfd89e94207"
-    sha256 cellar: :any_skip_relocation, ventura:        "3759d62268114d9b3e45c0bf87719b222087dd2e5f81209e2d9bfce9570f738a"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ac12d80d54c94dd9ebc3677c5b87265fd70c1e5b2fe8f66895390dedd83ca10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "533c535cf8dbf6914a5e32f45bb13af816dd4adc9c134c008ebab09024fc1e5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e28b50599a90b80d38bff11c2d27e488260245638cab29f26feef42ddc46fd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e28b50599a90b80d38bff11c2d27e488260245638cab29f26feef42ddc46fd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e28b50599a90b80d38bff11c2d27e488260245638cab29f26feef42ddc46fd1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1438e767cbc3670d2b0247dfe7e3e5602547c99115d488f269c0741c3a3b9f3d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1438e767cbc3670d2b0247dfe7e3e5602547c99115d488f269c0741c3a3b9f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab221d41be2a181655fa45efd14aa9b8afd1e570ebfb7c9a75e8980b63d6e430"
   end
 
   depends_on "go" => :build
@@ -34,9 +32,24 @@ class Cadence < Formula
   end
 
   test do
+    # from https:cadence-lang.orgdocstutorialhello-world
     (testpath"hello.cdc").write <<~EOS
-      pub fun main(): Int {
-        return 0
+      access(all) contract HelloWorld {
+
+           Declare a public (access(all)) field of type String.
+          
+           All fields must be initialized in the initializer.
+          access(all) let greeting: String
+
+           The initializer is required if the contract contains any fields.
+          init() {
+              self.greeting = "Hello, World!"
+          }
+
+           Public function that returns our friendly greeting!
+          access(all) view fun hello(): String {
+              return self.greeting
+          }
       }
     EOS
     system bin"cadence", "hello.cdc"

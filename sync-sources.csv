@@ -480,6 +480,7 @@ Homebrew-homebrew-core/Formula/b/bindfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bindgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bingrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binkd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/binsider.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binwalk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioawk.rb, Homebrew/homebrew-core, 1
@@ -1679,6 +1680,7 @@ Homebrew-homebrew-core/Formula/f/fabio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fabric-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fabric-installer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fabric.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/facad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fades.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fail2ban.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faircamp.rb, Homebrew/homebrew-core, 0
@@ -5030,6 +5032,7 @@ Homebrew-homebrew-core/Formula/p/poetry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pokerstove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy_sentry.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/polkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polyglot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/polyml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polynote.rb, Homebrew/homebrew-core, 1
@@ -5087,6 +5090,7 @@ Homebrew-homebrew-core/Formula/p/principalmapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prips.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/privoxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prjtrellis.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/probe-rs-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/procmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/procps.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/procps@3.rb, Homebrew/homebrew-core, 0
@@ -5429,6 +5433,7 @@ Homebrew-homebrew-core/Formula/r/reop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reorder-python-imports.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/repopack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reposurgeon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reprepro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reproc.rb, Homebrew/homebrew-core, 1
@@ -5519,6 +5524,7 @@ Homebrew-homebrew-core/Formula/r/rpmspectool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rqlite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rrdtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsc_2fa.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rsgain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rslint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsnapshot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rst-lint.rb, Homebrew/homebrew-core, 1

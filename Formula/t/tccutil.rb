@@ -4,14 +4,13 @@ class Tccutil < Formula
 
   desc "Utility to modify the macOS Accessibility Database (TCC.db)"
   homepage "https:github.comjacobsalmelatccutil"
-  url "https:github.comjacobsalmelatccutilarchiverefstagsv1.4.0.tar.gz"
-  sha256 "b585da1cc342e2880a601c88ff0e4d8fd65f22146bd1f581a3f41608c76d0523"
+  url "https:github.comjacobsalmelatccutilarchiverefstagsv1.5.0.tar.gz"
+  sha256 "2f5b27f689cfb7d4799cae7ea9a22a5b016f877130b6ac91d7bf2437fa908787"
   license "GPL-2.0-or-later"
   head "https:github.comjacobsalmelatccutil.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "4150efc45f31a7391b91b0ee03926dcea9235ab187611181822024198b44302a"
+    sha256 cellar: :any_skip_relocation, all: "5c4eac0eba9ac4c36acdd18e6b4cd83a8e52594e00810cea23c5e5b0417f7ece"
   end
 
   depends_on :macos

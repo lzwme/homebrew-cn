@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https:werf.io"
-  url "https:github.comwerfwerfarchiverefstagsv2.10.7.tar.gz"
-  sha256 "f06a2ea3721790a8f9b9df2ba72796a413ac2a04cfb2bfbe09b28e268aca2f76"
+  url "https:github.comwerfwerfarchiverefstagsv2.10.9.tar.gz"
+  sha256 "8ec9790612188142120af030a3e312c35bf0ea5c324432f59a00fd73a53e4384"
   license "Apache-2.0"
   head "https:github.comwerfwerf.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f87b1aa4a258084ccc8e79dcb3ce3b7bd0de8f340b5e5f51ed972685954ea88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a56e09b41843b4785724df427d8455deead858e26112063f7a53c6edbdef7395"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6451db014e6d9875446b77393e25409ab48b38e81d8466303fbf6aa1e01fb25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe07b6a88d863e2e56c10f620e65a32fbac7a2fa0aaac6c5928c45e9acdbaf0c"
-    sha256 cellar: :any_skip_relocation, ventura:       "0867264e32a3bf56b8eb05f5bc578d7d071cf4d2ebb4b75af8254c2ab1e46e59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee78d5788f19eaf1775c66c5f206beab215f01efde02ec7f8f036d6095dd767"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb468b4c23e5451513d8ebec142222a72c3fc231062dfd804afb56254dd5b0a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "059ab1156be0c82337e8b1e2d7e731483b3c1dbc6deda135201c82e07771bc0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a4d6e1c37878cb59a32f2d2dda4c779731918156aa154b98a01e939451d0edc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "397ea239b4cc0530fbac17eb34cd7f0268a402d6e15ccbb4250d006c9d3b5559"
+    sha256 cellar: :any_skip_relocation, ventura:       "f15ee87f5b4a11d2bff74c2a69e177c1a31204f216f0f6109ef6cadd13a7fcf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b18566422f3fa8ea2e430c4f86d8a04bbdd9175a365840b112eb5fe3778cdb89"
   end
 
   depends_on "go" => :build

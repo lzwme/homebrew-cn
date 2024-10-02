@@ -1,9 +1,9 @@
 class GoAT122 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.22.7.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.22.7.src.tar.gz"
-  sha256 "66432d87d85e0cfac3edffe637d5930fc4ddf5793313fe11e4a0f333023c879f"
+  url "https://go.dev/dl/go1.22.8.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.22.8.src.tar.gz"
+  sha256 "df12c23ebf19dea0f4bf46a22cbeda4a3eca6f474f318390ce774974278440b8"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,14 +20,12 @@ class GoAT122 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "435f6ae9eeaa801606f8bce0ad94257526e9d9e16a1bfed968bd5d0570a4acc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e815b924a1a0c4e020660a05fd4fc8defe0e83a340007e5e52edb184bdcabdc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8c1ccc2d88b298b3cc1c844b408684d7d4fba4a8d9c6e25bc1280566ad46bab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9535b80342f84a7dc6202bbd9789886edd1bd35f21757995a9bb404734601120"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2d05455fd385f2677ed451969b1cf2ceca5a8654045473f61e26a88637722407"
-    sha256 cellar: :any_skip_relocation, ventura:        "bfa9ba4c62d9508da52b41acc031bfb0188da9452a9cc9e882f12300ccdd4a36"
-    sha256 cellar: :any_skip_relocation, monterey:       "60a5948e8f15e97bbb1071f827054bf587f1dd03ac13b720a7445ceea9162928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a3f954ce1267c53c0cf751f5d12a8f99d7e784f993f9b083aed3c9bdf582151"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24d9692d879a7f2a28496fa4a56623d6923f165fc785bf34130540bba72f0552"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58c4d9b85f17e4cd3ff03ab7652651670cd18a07b6a0ba4e79f91ef0db152bf2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da3ea54d04ea72e184cfdc940e201a990e9f36f80d47f0ab06e2006d18242d08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c7fa28d88bd76b0086ff372cb94a434a92c6f30b0702c53c9da990612f3cabc"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff03a1ddf0200c70de3957d4a39893125539bbcff541a7bf33bdbc64ea1baf31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4548d936889c0d66cfcd50c21f4266c7da0a3afeadd21cb687cc1d0be7ae38"
   end
 
   keg_only :versioned_formula

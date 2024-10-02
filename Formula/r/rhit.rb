@@ -1,20 +1,18 @@
 class Rhit < Formula
   desc "Nginx log explorer"
   homepage "https:dystroy.orgrhit"
-  url "https:github.comCanoprhitarchiverefstagsv2.0.2.tar.gz"
-  sha256 "df66222b70e9f84d8e7af0916a5df6b346139ba78ee4bbd26d5e5e1fb3c9ddfc"
+  url "https:github.comCanoprhitarchiverefstagsv2.0.3.tar.gz"
+  sha256 "a3f45fcc2c07c9a7251ee6e8dd631cf12d4b506e63cebe05b38cc549f58937d6"
   license "MIT"
   head "https:github.comCanoprhit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f75c2d7342c66be7d89ab7161185038b71cd4f783781447e1250e091e3a01fdc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cacb61ec43357ad044b6350841ea92fc66badbc2140723b30611517d977d882d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d5f43e930d1d64d3b128e891d80f737f0ab80cfc41968aabdafa541557b95e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20104e46446720d9a8b5d38f89b365114e3023c4f91cad1c90493a8cd210e696"
-    sha256 cellar: :any_skip_relocation, sonoma:         "35dc3ca082da24aa64bebc49b725f7b4ffee899ac512cbeb78d98115ab72d639"
-    sha256 cellar: :any_skip_relocation, ventura:        "9459d1cd6d1b80004abd10589bcef3c4ac168851bb579aaa77aa71db8d47765b"
-    sha256 cellar: :any_skip_relocation, monterey:       "55b97eaeb16a6e90dc57efd19e7f1a027c12b91df93d7f6b29bad637d94fb583"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9595fa93164dd8f63c6cbddc6f2eca6e40f7b44ac7e46d312edfd421e030866"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d35ab9a4feb045988b0a4674d5eff78cb9391d6f13e401e3a572335d9ac8a2e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3ece0f944acf5198d2a8558a8eb2f4fb9808835e5d0db37e5c2532a168d0ddc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4764df4672c1d9f7f329beed7ab7891c150a8a93e003df43c2f3275ebcbc7d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f1a862f4e55cff0d2b4ca8c77e53e0f064d2fcf78a9e1f07296a0cd3b1374ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "77022fe12a1bb7e2a6c035218f55d4bd6930871fb60e72d94d4f109d460643c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a1dd27646aebe1267cee8eb08ff5fdae2038912685c0bf670005335a24b054"
   end
 
   depends_on "rust" => :build

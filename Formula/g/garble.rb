@@ -4,17 +4,16 @@ class Garble < Formula
   url "https:github.comburrowersgarblearchiverefstagsv0.13.0.tar.gz"
   sha256 "22a1696ce880b34ca5ff949b6b5a42d4e370502e0b40b59eaa679eae13e45363"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comburrowersgarble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acce39931c080a560f3e718d6717dcb05e045e211ade8a1b2e8095194a1ab448"
-    sha256 cellar: :any_skip_relocation, sonoma:         "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
-    sha256 cellar: :any_skip_relocation, ventura:        "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
-    sha256 cellar: :any_skip_relocation, monterey:       "22a6ded5cae8b50a57daa03a7181bc0966220d456c45724fc31866b08f063837"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "515e83bf8ff50fd75e0088951544e219cff5772a48c8bd9d321da7bc7722c5da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66adb20a7487209047ba4a832f3ffa48fbfbd11648576f1e44a36d9bc323b000"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66adb20a7487209047ba4a832f3ffa48fbfbd11648576f1e44a36d9bc323b000"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "66adb20a7487209047ba4a832f3ffa48fbfbd11648576f1e44a36d9bc323b000"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b580f40bd6c84a9ad3e1510b991c43d44bd7af9fd8c24a2c09e1baf422f9a9a"
+    sha256 cellar: :any_skip_relocation, ventura:       "2b580f40bd6c84a9ad3e1510b991c43d44bd7af9fd8c24a2c09e1baf422f9a9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cef9008c232f3d5b648fa4b3450fa02747b77e42ad0d283c231feb94752c6858"
   end
 
   depends_on "go" => [:build, :test]

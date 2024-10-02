@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/libvirt-10.7.0.tar.xz"
-  sha256 "ca757322eed998013b21f474c6c0c15dc08320ba6c8bae54aa16a93a1c3b7054"
+  url "https://download.libvirt.org/libvirt-10.8.0.tar.xz"
+  sha256 "57e3e8238d31a197f1b26b958bd2be71f99f271a822132afa66f70b7c2100984"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "f5d40cfa8ccc38aec6efc39840185f079a1ed3a557f504912599bf64b2a81f2f"
-    sha256 arm64_sonoma:   "41e99d6ffe8c13d58270e6b325dd824eae6b68c22b790bdb8221484fbed2c27b"
-    sha256 arm64_ventura:  "2b015649eb888517520df400de58bac7127bc24ef7af71f63e9720073970dc31"
-    sha256 arm64_monterey: "f3d85a99580795f635ffe65cfd2d67eda64e0fc2ec2a2928022ac1e5373239f0"
-    sha256 sonoma:         "bd0f85a285e0fe8ab45ed4eb82901e26d3999229fb59aa88d6d890871fc0cfbf"
-    sha256 ventura:        "80218b79121cb518e0e4a1ed1439826660e7a782ae371c62a2e9b6ffb48a85b3"
-    sha256 monterey:       "d58f916f7b04f599d128dfe4e4d5a26bab7433a66000dd2af70088f937dad70f"
-    sha256 x86_64_linux:   "5f2dbd9aef8e194299fb4a7023dbe0b81c2b07f9bfbabe9df80a7d40e015a534"
+    sha256 arm64_sequoia: "6cf56bb7bc4686a8ae7b391d554b7c8a0687e35168ae1be46d7d7eddba2a77ee"
+    sha256 arm64_sonoma:  "7221d068813a8a988714176a0b361a6d676ef73d2384e08cb44aaf5ec4ede606"
+    sha256 arm64_ventura: "0f795db46c0817aef141bba47c5ce81a28e63571e12f486e3841cd920cc9a818"
+    sha256 sonoma:        "57ad31b785f13deedd5876e0976c136cfa249a280f2f006c6629cda57274b867"
+    sha256 ventura:       "0025df5aa1ec2befd8a194e66a32898d1acba7f0a92fc5d5a9ffdcccb4ddc4bd"
+    sha256 x86_64_linux:  "1ad2af8fc03269cb7375fc88956b917d978c9fb0623b6b0c55f7746e5004dc90"
   end
 
   depends_on "docutils" => :build
@@ -30,6 +28,7 @@ class Libvirt < Formula
 
   depends_on "glib"
   depends_on "gnutls"
+  depends_on "json-c"
   depends_on "libgcrypt"
   depends_on "libiscsi"
   depends_on "libssh2"

@@ -1,20 +1,18 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
   homepage "https:fna-xna.github.io"
-  url "https:github.comFNA-XNAFAudioarchiverefstags24.09.tar.gz"
-  sha256 "696ef2a0fb4c6208f239f21803ff3f39041d92db1769cf19e390782be07430b6"
+  url "https:github.comFNA-XNAFAudioarchiverefstags24.10.tar.gz"
+  sha256 "9d123c5f20ead7824f718b5840b87b432dbf51a0514214e30c41b4ee32a344e0"
   license "Zlib"
   head "https:github.comFNA-XNAFAudio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b5429882fd12da1f178d9bcb8ddfbe56dc51b545a844645920dba4d4f22e7527"
-    sha256 cellar: :any,                 arm64_sonoma:   "2610e0a6df98f7a1ba145c308f9dc427b504bcedbdbf5a4ce40b894e11163744"
-    sha256 cellar: :any,                 arm64_ventura:  "87a5f90472e36a7c0a39d988e73e858f6a7783de56d190c1df2bf6730d0b565c"
-    sha256 cellar: :any,                 arm64_monterey: "629f3e0e84195a346e00f4c11533e4250cbf6b0b993c39e9fda8df66a8fe74aa"
-    sha256 cellar: :any,                 sonoma:         "26f0b456993313104a10ee2748d1f7f862ff7da59f8b681b1a4128ef00ef53e5"
-    sha256 cellar: :any,                 ventura:        "68d06f85475f01e4e14ac2f8745012ed8de992f7d9e787c484d6595ef95467d8"
-    sha256 cellar: :any,                 monterey:       "58b97cbd947995f4980770bbc451db37b0cdcdc8217d1106151d1cdce36f633e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d2eeaf9fadcf29ce664273d7da3fed06e6875c9dca758fd38fcd401a823f1f3"
+    sha256 cellar: :any,                 arm64_sequoia: "ce8247177d54550211702a13c418cc243d1035aec60684057ec98316c962ae84"
+    sha256 cellar: :any,                 arm64_sonoma:  "06d082b71a48a42d79c8b0eee9e328b18ddb0e00fcc69f48bc59dfd12d23fed8"
+    sha256 cellar: :any,                 arm64_ventura: "d0222fa949501b83ee23bee4c4168e15d874084e47a1a243cc5063085cd5eb82"
+    sha256 cellar: :any,                 sonoma:        "3c0d4aa208663ba5011139e6449793c8444caa4e8721bf0313d9f8d297beb306"
+    sha256 cellar: :any,                 ventura:       "e38584cc332fad98e20690bc8d656cd883a703df267fb8044f9903a47ecce26e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ec2485cace2e4875630c2ba9c12d7eada0f5e77c0131c0032e8c3c9b76f500b"
   end
 
   depends_on "cmake" => :build

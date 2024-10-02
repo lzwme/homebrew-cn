@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.23.1.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.23.1.src.tar.gz"
-  sha256 "6ee44e298379d146a5e5aa6b1c5b5d5f5d0a3365eabdd70741e6e21340ec3b0d"
+  url "https://go.dev/dl/go1.23.2.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.23.2.src.tar.gz"
+  sha256 "36930162a93df417d90bd22c6e14daff4705baac2b02418edda671cdfa9cd07f"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -21,14 +21,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
-    sha256 arm64_sonoma:   "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
-    sha256 arm64_ventura:  "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
-    sha256 arm64_monterey: "f1d3ecd5e98fd66f0d1a8471b63bfac4508a3b89d2a96c4b2a87243b50866fcd"
-    sha256 sonoma:         "bae66c6a3b31f38c026f90b1e6eba9636842d2a91de23bdafa13f1214c75d764"
-    sha256 ventura:        "bae66c6a3b31f38c026f90b1e6eba9636842d2a91de23bdafa13f1214c75d764"
-    sha256 monterey:       "bae66c6a3b31f38c026f90b1e6eba9636842d2a91de23bdafa13f1214c75d764"
-    sha256 x86_64_linux:   "25ede0356b19c3966a03ef18bb489a8c1c57f3b3a2090cc6d0980be088bc4127"
+    sha256 arm64_sequoia: "719329749bebde70f295cacf645c45ae155fda041bc92c50119997a0dd00e522"
+    sha256 arm64_sonoma:  "719329749bebde70f295cacf645c45ae155fda041bc92c50119997a0dd00e522"
+    sha256 arm64_ventura: "719329749bebde70f295cacf645c45ae155fda041bc92c50119997a0dd00e522"
+    sha256 sonoma:        "57c7e66ca7ea40cb376a54c278f763cba6a9f6cd737799c6f20ea025950293a9"
+    sha256 ventura:       "57c7e66ca7ea40cb376a54c278f763cba6a9f6cd737799c6f20ea025950293a9"
+    sha256 x86_64_linux:  "6de4daee05bd091a7c29aee73e93bde102c560392d5114e3e92b7d1fae0fbcf4"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.

@@ -1,8 +1,8 @@
 class LibvirtPython < Formula
   desc "Libvirt virtualization API python binding"
   homepage "https://www.libvirt.org/"
-  url "https://download.libvirt.org/python/libvirt-python-10.7.0.tar.gz"
-  sha256 "8fd4edcb3f3c23cadb4053096c941e026456b5a7b5a635c1cebad044143aba53"
+  url "https://download.libvirt.org/python/libvirt-python-10.8.0.tar.gz"
+  sha256 "10cddc61c6bc5659c0eaa3e4c71f3d97c95abf327a51c207affb2e5f49f19f60"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b69a3fc0f6296fb5be68cc4106f49a0c3ca89d69981c01fabd0e5c7b462893e8"
-    sha256 cellar: :any,                 arm64_sonoma:   "a34013129c6d5cb58e395b70189b62843415417d85dfd77f0c80a2f19eff21a7"
-    sha256 cellar: :any,                 arm64_ventura:  "784079ea3b09073ba47daa8ff4999ad661f8bbdfae702aae0b7970190dffdc85"
-    sha256 cellar: :any,                 arm64_monterey: "5634a85e29aeace4f555d1895869764d3589af81cabcd778a2354f823cfcb0be"
-    sha256 cellar: :any,                 sonoma:         "a064f4eda29c9f56301bcc59ac9dff2e6ab9bf93f1e3c665ab08ab784d8be22d"
-    sha256 cellar: :any,                 ventura:        "bd0dfeb57b8ea5077660bb5604d7ec7bbd67a659cba0a021d103b1bd72be25f9"
-    sha256 cellar: :any,                 monterey:       "00ff18f15f08861b1edb40975b6e0062e06c44ebe4097848989910231251068e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bf873fdd6ad76b18b5ebc4043bc596ed42c0e3d433fa10bba6a20a7f87a4091"
+    sha256 cellar: :any,                 arm64_sequoia: "d1e5e493a836179896350ef3ea44a6626aba24fef6564064a665858c57fc9df3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba5fcf6e3732415bdb2dd9fe8598f32bc869c949e9010710da0dd422a5c66843"
+    sha256 cellar: :any,                 arm64_ventura: "355bcdfa84c218bf0965b20437fe641f087feac497a842e815832245ef768cb9"
+    sha256 cellar: :any,                 sonoma:        "a0d32c7b2eb10df36ae16d2fb97544bc6d6ea0173f09de286982e5edf4c005b6"
+    sha256 cellar: :any,                 ventura:       "193970d5cc76fad094030ba042c22f6e78c9f17d2c2213019e9ea53fa5254467"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed5f424499195fff0e6471ba50cbf2317a84a5239446e9ff6b2b93ad42dffa8a"
   end
 
   depends_on "pkg-config" => :build

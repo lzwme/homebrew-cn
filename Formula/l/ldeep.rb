@@ -3,18 +3,18 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https:github.comfranc-pentestldeep"
-  url "https:files.pythonhosted.orgpackages47267de861659cc1a758f1cce229da915aaaf682ec96f7944edfa356f25809cbldeep-1.0.68.tar.gz"
-  sha256 "1eda40bc4afb0a98a63b7c13eed72574fee116da73dbcd974ba1a1aaf64baeb5"
+  url "https:files.pythonhosted.orgpackages561e7984edfb4e96a60b1f39779bbc170c082c1794edc6e5cd3ff756b7949160ldeep-1.0.69.tar.gz"
+  sha256 "5378365c90577833f2772cedd85ccc2288dba0c4156063cc2a45c46074617200"
   license "MIT"
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44c291245dd73376c5cde727c8236f98281774a4e4ff815a66a857a581101b0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b5b6f124d77605e3758d3ebc53038019ea135b3f6b82c49ff02031e137fc79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a15563d6ccbe26c90f173ab8a35c517d807bc43ce0ea24a872e52123443bf21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f39f3946d19db31fc3da91bd72ae8463310bf425c2d22eb48f5cc7abe330fce2"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a3e969b2430435f607ed272246fd6f6db5daecbf627fa45ba82b09cbba523dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f9c021fe5aa8c712b88fb77d4ccdb4e0f3358772433e796442d9510534d68e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac5ccc36d95aa9297e5fdcb26033c974ca125e1daa470580e6d6e56e5f098943"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2c44dd33284f0a6284b657c78ee52b9de12b44c55286e2b5087137e3ad2f421"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "baeed8afc58969fbc2795f7645dad93fdf52a404c1d86ee38cd8b34c6cdde666"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b37c8d987c35e16898fae565c3f0e8a35de065f90003f3a6622e3694a090e6e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "06189c745cc938055bdd0bdb08cea1e6dc7deec57908336cab830d0a6c699740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b11aee4eb6083480fb73fe8eb4893e0f3a3f155d3f55469e3fe541d949fb4314"
   end
 
   depends_on "cryptography"

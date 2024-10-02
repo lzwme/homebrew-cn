@@ -3,18 +3,18 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackages9cd85566e9e4cea465b4ff9416ab47a0b980c549727f6cc9a6b9be98b2cf3a1cggshield-1.32.0.tar.gz"
-  sha256 "16f8323695790f57f52d23f23417b15bd7c8f60afcfaeb8179a238c50656b0ad"
+  url "https:files.pythonhosted.orgpackages30143fddab1e72546c6aba3d6044c871d06fe2a0081a277389c08348ae21a74eggshield-1.32.1.tar.gz"
+  sha256 "baa8f47ee0b1ff0c6038bc7681fc11380a093eb6939422d9db699345f604159e"
   license "MIT"
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "762516d991e943458bb63688782597c89917cdf1b222e0ba03ea62721c0635e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "03e38e30411625dc7dc5332a2b4e518632b24cde032f47ff8d6140e59af021fd"
-    sha256 cellar: :any,                 arm64_ventura: "0183f1ff07edcc944e5f360c3a24fbece817bb32d73f16b1eb7a93a1e934b1ec"
-    sha256 cellar: :any,                 sonoma:        "04034236f2060d1fe3a9e551e6d960173d7b87a6f163eaad1a694d52ff76c367"
-    sha256 cellar: :any,                 ventura:       "45b00fb912bccc6a5901b60be623063b1c5146ce6e087acc330bc64e08380b02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1dfbafe7c91464ddf2e238d0510882258be14a4a96879e89e2d54f82b31437c"
+    sha256 cellar: :any,                 arm64_sequoia: "8b7400d487cfc3f306f825b2484b098b083aebc5fa5ad2b5b5b3dafee01b507b"
+    sha256 cellar: :any,                 arm64_sonoma:  "c841eec9dede6ca429406a371df79b6efc979592651a76e8e8fb9d4b00f11b8c"
+    sha256 cellar: :any,                 arm64_ventura: "f1a2eb26ed5e42b869e4a29291324491bbd3a7462bf25596facc0819b3d08059"
+    sha256 cellar: :any,                 sonoma:        "defe6fe2fdd0a22dda5ea6117c72573cd83c54061cf0077c1ebc28cd57811574"
+    sha256 cellar: :any,                 ventura:       "898c8eeac3d9a35d3421ff51333783b22cfc4932d4ee0e5ce2a52f5ec46bbb7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84cbc563658ba39caba013f99fc391856c33ce69dc564c8ff0fdb37aa6fc7259"
   end
 
   depends_on "certifi"
