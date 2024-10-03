@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https:open62541.org"
-  url "https:github.comopen62541open62541archiverefstagsv1.4.4.tar.gz"
-  sha256 "8d92d4d7b293612efcd87bfe3b833fc2a953d83e4d58045a9186b6cacaad4c58"
+  url "https:github.comopen62541open62541archiverefstagsv1.4.5.tar.gz"
+  sha256 "0112b7c348f2e6bab96ac03a0005f99fe5de872d7f54e44a75cfe3af2fa55b13"
   license "MPL-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Open62541 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6f968afcfd12ec742fbbfe25c196b34968e808568f52eac1d16d577d74919e78"
-    sha256 cellar: :any,                 arm64_sonoma:   "ecf92b2374290a7507643e9a2e64d4fcae14ba5f3879334360e59ff4ce0b0026"
-    sha256 cellar: :any,                 arm64_ventura:  "7734ce615d9d9d601a290de41dd2397e52b4e400dc3ec8a5c89bb3113a5940be"
-    sha256 cellar: :any,                 arm64_monterey: "a572926a8cd09d7d277044da3c66e0ca5953661b1e7842ec0f4f55ea37a5cf47"
-    sha256 cellar: :any,                 sonoma:         "23fa02d4c9d88af431af5b36782c76dea94713618f65c2ee5901dea323e7eeb8"
-    sha256 cellar: :any,                 ventura:        "b50be8010c892ffbd1cf36d09eedf20cf4e56d2ab3adace458bc7bbd7ee98ef7"
-    sha256 cellar: :any,                 monterey:       "92178d27493c2a2bce4940278bb6e658890a731334b75134c9009715d463cdfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "721dd67aa3523b8fcae6a1aca7220e0c3e9df0b5e86e90d3f6295cf09021cf75"
+    sha256 cellar: :any,                 arm64_sequoia: "c6c897eddc043405c61a799356ac4efda7e9ceb9bc9c6e30cac6f5503ecfea42"
+    sha256 cellar: :any,                 arm64_sonoma:  "983ec2138b851569aebbf3089f14e320de8eeb74caae83df944feeae0bd7dc62"
+    sha256 cellar: :any,                 arm64_ventura: "cb792ce7d2a71ee8a3120ab18d036b1aec7fc5f3c497ed018470fc9b7b1a066d"
+    sha256 cellar: :any,                 sonoma:        "8b846f41a4b4ee97b73bf66db9cdb69928b07a13c8ec2091de9c4dbd5575f725"
+    sha256 cellar: :any,                 ventura:       "bf9177233a2b689847691043d41b399db2b9d24784db491e72dcd9cfc9d71bbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d88ab86cd136983365cf96b4962859cebd80ea4f5bcb24ed48d6591ffc600125"
   end
 
   depends_on "cmake" => :build

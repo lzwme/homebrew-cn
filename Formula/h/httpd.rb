@@ -31,7 +31,7 @@ class Httpd < Formula
   def install
     # fixup prefix references in favour of opt_prefix references
     inreplace "Makefile.in",
-      '#@@ServerRoot@@#$(prefix)#', '#@@ServerRoot@@'"##{opt_prefix}#"
+      '#@@ServerRoot@@#$(prefix)#', "\#@@ServerRoot@@##{opt_prefix}#"
     inreplace "docs/conf/extra/httpd-autoindex.conf.in",
       "@exp_iconsdir@", "#{opt_pkgshare}/icons"
     inreplace "docs/conf/extra/httpd-multilang-errordoc.conf.in",

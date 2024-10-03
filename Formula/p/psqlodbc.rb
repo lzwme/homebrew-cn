@@ -1,8 +1,8 @@
 class Psqlodbc < Formula
   desc "Official PostgreSQL ODBC driver"
   homepage "https:odbc.postgresql.org"
-  url "https:github.compostgresql-interfacespsqlodbcarchiverefstagsREL-17_00_0001.tar.gz"
-  sha256 "34136e5aecd44dbffa175c6b234e67e3955f63d0f4004e7f2cbc813303ebbdc2"
+  url "https:github.compostgresql-interfacespsqlodbcarchiverefstagsREL-17_00_0002.tar.gz"
+  sha256 "fc89244b4a57e325a4687a89a909934d19f17938fd5dd7f274703e74c950bed9"
   license "LGPL-2.0-or-later"
   head "https:github.compostgresql-interfacespsqlodbc.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Psqlodbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "908ca6087a4287d945a128bbdcea55d36356a8fb9fbd242a9311de08f13a7b3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "73a13b7a4eed784a6d759103f1bf6e5b4259ec17ac18b7f261876dccd4278c4d"
-    sha256 cellar: :any,                 arm64_ventura: "8cc962567391448a8b2d66028b5f45d8f786918656fb3c7373ab7a79ae7328fc"
-    sha256 cellar: :any,                 sonoma:        "1c3fe2901fee35067ce9ab50a0ce2e6574feb26271c5a1d23adbe2983a3d0113"
-    sha256 cellar: :any,                 ventura:       "966d74db2ce2abc788d55d7ba5ec300b31e4845c0b84fdc15ca8578790919d11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eec9ffb65aaf1198987c9e0aff7946bf9732c7e670f7de9504779308c44d1892"
+    sha256 cellar: :any,                 arm64_sequoia: "66bdefe8888c3b21d3367b20f67f1c70df8c0010316ac962de35f526ed9c69f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a15cf041cf278dc277ed9c92b6e9c4d0c6b9e51da2325d7fe6d5d0d01e932abb"
+    sha256 cellar: :any,                 arm64_ventura: "1720b7a92e2b3dd220b2b774a8a9a2059bb163ae285ccf4722a4097aaacc83d8"
+    sha256 cellar: :any,                 sonoma:        "e939ca501c7086b5f4e9e97b650e57c9fbbdaac67863a347397be9feda7f3899"
+    sha256 cellar: :any,                 ventura:       "78b3a75149c0d3aed3b3a4e28d8163619bd04c6875d05b7496063b213414dacb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4cc06fbf46ee154170d14a3d4ae5850a731e70d8af9e58ff216a9283f249b47"
   end
 
   depends_on "autoconf" => :build

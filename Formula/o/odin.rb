@@ -2,20 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2024-09",
-      revision: "16c5c69a4079652e930d897823446b7e7a65bd2f"
-  version "2024-09"
+      tag:      "dev-2024-10",
+      revision: "af9ae4897ad9e526d74489ddd12cfae179639ff3"
+  version "2024-10"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ca1ffb74d254d439598d235e6e0b910e2910a787122a97e07fed7c25ff1def5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "cafb4b0cb46f16f62d2edb2dae78b52b46794f9159e8672ff73b274253317cfe"
-    sha256 cellar: :any,                 arm64_ventura: "02843c1967c216de6a16bf40dd10f56f407594a7d397581c2bd6b6554b5acf65"
-    sha256 cellar: :any,                 sonoma:        "d7e7e910ad5b0145316da8a1c7a7fa3b58343e79ddb71c4d949f9d1aee486ee6"
-    sha256 cellar: :any,                 ventura:       "481cc7dfe9909bc7ed0a925002885b2367d5f9a0fd83d8fe8fc36c6bfffb9b3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d333a913381a0ecd3cc5c5222c707f20cc2337797f7197a5d069995798ab7bfa"
+    sha256 cellar: :any,                 arm64_sequoia: "aca4aec0e727515e10a3c5c552eababb6f0a74805340307c06c8615091130d70"
+    sha256 cellar: :any,                 arm64_sonoma:  "513d0754a3c9953e1cd7f237889a27e0b56f0739ff5ae685f32c385399d836d6"
+    sha256 cellar: :any,                 arm64_ventura: "9875168b45d9a80a76c8f072ef1a959732f796cf8a6c1754a87e070af47452c0"
+    sha256 cellar: :any,                 sonoma:        "ce6be3726f1d2f0016ab6b02b069762b5dadea013a0a07d5dcd955bc2993122e"
+    sha256 cellar: :any,                 ventura:       "b94bf5def1e815e33345d3acc769a9d17897b0a6c16fdfba83c2c78b7e525796"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0ed5c0aed4747f0f2001ebd47726da716259cd22ee8ff102be6330053528f83"
   end
 
   depends_on "glfw"
@@ -56,7 +55,13 @@ class Odin < Formula
       "vendorraylibmacos-arm64"
     end
 
-    ln_s Formula["glfw"].lib"libglfw3.a", buildpath"vendorglfwlibdarwinlibglfw3.a"
+    glfw_installpath = if OS.linux?
+      "vendorglfwlib"
+    else
+      "vendorglfwlibdarwin"
+    end
+
+    ln_s Formula["glfw"].lib"libglfw3.a", buildpathglfw_installpath"libglfw3.a"
 
     ln_s Formula["raylib"].lib"libraylib.a", buildpathraylib_installpath"libraylib.a"
     # This is actually raylib 5.0, but upstream had not incremented this number yet when it released.
@@ -166,6 +171,9 @@ class Odin < Formula
         fmt.println(glfw.GetVersion())
       }
     EOS
-    system bin"odin", "run", "glfw.odin", "-file"
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["glfw"].lib if OS.linux?
+    system bin"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=true",
+      "-extra-linker-flags:\"-L#{Formula["glfw"].lib}\""
+    system bin"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=false"
   end
 end

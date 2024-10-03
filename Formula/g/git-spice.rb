@@ -1,8 +1,8 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https:github.comabhinavgit-spice"
-  url "https:github.comabhinavgit-spicearchiverefstagsv0.6.0.tar.gz"
-  sha256 "34b5161ca642bb70269c45b9726137832eb95737465c6134995de5be2e1ef1d6"
+  url "https:github.comabhinavgit-spicearchiverefstagsv0.7.0.tar.gz"
+  sha256 "cfef3ebaaf750d83ae9480663f256c611a9abffd2fd6af95398187313e11fa1e"
   license all_of: [
     "GPL-3.0-or-later",
     "BSD-3-Clause", # internalkomplete{komplete.go, komplete_test.go}
@@ -10,12 +10,12 @@ class GitSpice < Formula
   head "https:github.comabhinavgit-spice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35dc3ca3f64796368719d9e3a8d5f3300a76c5c3895bf714119be542cc543b33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35dc3ca3f64796368719d9e3a8d5f3300a76c5c3895bf714119be542cc543b33"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "35dc3ca3f64796368719d9e3a8d5f3300a76c5c3895bf714119be542cc543b33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "440c9e3825ccd9c786bc50be608d2493702c262e973d6e4287eb087951e0dde0"
-    sha256 cellar: :any_skip_relocation, ventura:       "440c9e3825ccd9c786bc50be608d2493702c262e973d6e4287eb087951e0dde0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f11a3fce1d8a9e8dacce5b64a8338af99e4754aac2447b006b64cdbaf2f4107c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca908bb6e964f706c4e369f76c8a28566a70524532ce202bf35c847f561211e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca908bb6e964f706c4e369f76c8a28566a70524532ce202bf35c847f561211e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca908bb6e964f706c4e369f76c8a28566a70524532ce202bf35c847f561211e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2e082872f5301e821398a345a35d47921baf1146326e1d9d11c4c0e344d3b49d"
+    sha256 cellar: :any_skip_relocation, ventura:       "2e082872f5301e821398a345a35d47921baf1146326e1d9d11c4c0e344d3b49d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e13a55d1031914733756c2f9779a04de4f2f2052b0f0175fce2e6b6ec61862a"
   end
 
   depends_on "go" => :build

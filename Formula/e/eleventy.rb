@@ -1,21 +1,18 @@
 class Eleventy < Formula
   desc "Simpler static site generator"
   homepage "https:www.11ty.dev"
-  url "https:registry.npmjs.org@11tyeleventy-eleventy-2.0.1.tgz"
-  sha256 "08236b693a3a1076b32f6bcba45ae132fbadf1fc2c52eae0cc33951bcd2163dd"
+  url "https:registry.npmjs.org@11tyeleventy-eleventy-3.0.0.tgz"
+  sha256 "821cd03bbaecf7dd657db6d20e3373e62fc30d78c44828b1334672294f924ec1"
   license "MIT"
   head "https:github.com11tyeleventy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "daf13d378b8b7cc0aa40563fc071e821f903190994fb4102d6d7c050142cb2fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecfe465a1b07add1f0c6bdf3fb6accef3abcbf2fd81db6eae155da26a235a477"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bac187fe950966d6957443d4248b67f596ef7a1e5484d752d7801c4fbe7b07e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "bac187fe950966d6957443d4248b67f596ef7a1e5484d752d7801c4fbe7b07e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "bac187fe950966d6957443d4248b67f596ef7a1e5484d752d7801c4fbe7b07e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6c5486cb85e23084f7fb25e156b8859803caffcf1ec844d9dd19e8d69faf697"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b66c70dea8df5e3fac4f1801024d57dc533df2d12bdf016983527f12c18700a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "b66c70dea8df5e3fac4f1801024d57dc533df2d12bdf016983527f12c18700a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
   end
 
   depends_on "node"

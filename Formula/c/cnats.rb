@@ -1,17 +1,17 @@
 class Cnats < Formula
   desc "C client for the NATS messaging system"
   homepage "https:github.comnats-ionats.c"
-  url "https:github.comnats-ionats.carchiverefstagsv3.8.3.tar.gz"
-  sha256 "fe7e9ce7636446cc3fe0f47f6a235c4783299e00d5e5c4a1f8689d20707871db"
+  url "https:github.comnats-ionats.carchiverefstagsv3.9.1.tar.gz"
+  sha256 "56836bb30a2da93eaa6df0dfa27e796e6be0933b5b3d4d83b5c76d3b80304290"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8dbc0dfe3a1c5d1f6e9697d5ae1684e08b47b70bffeddac7055976c2db88e827"
-    sha256 cellar: :any,                 arm64_sonoma:  "5313e1ab40c693392b473e20735012468c11d604c8dce0771e5e4365bb85b50d"
-    sha256 cellar: :any,                 arm64_ventura: "90c1f71965440c9508ad163498039c8b0d9087a13cc6d5b15d55dd1ccd813092"
-    sha256 cellar: :any,                 sonoma:        "eac52c7af9164d06bd205e6a03869ffb45a0a0b6866edc42a0cdc14d2d32f7bb"
-    sha256 cellar: :any,                 ventura:       "16576f9e74940e99cc6a45905243a314995c15b7d7e4ea1ddbcea0a37a8a45d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13fb1eac5d3a45f5d4af454db698d88476985069c65c23e7618501aad22e089b"
+    sha256 cellar: :any,                 arm64_sequoia: "4048aab049238b3973504ecca6c09eee64097e344a5c233a8ed6c13b89cdde15"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9ecd9f8bd0e02961699b17bd1fcdc3dd561ff0e98612b7859560836e539194d"
+    sha256 cellar: :any,                 arm64_ventura: "4c8191751fedea59c00d3f4411e501bc4da323ee55f23031a201cf6f8154fee2"
+    sha256 cellar: :any,                 sonoma:        "a1c6d852e068568d59be12ce391306d8445fc8e26edd686851791102d2d970ec"
+    sha256 cellar: :any,                 ventura:       "f1f0aede9202ebf802dd168400e81234cf68c01d03e955c3f8d6286fd4a9a547"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d69e37e34e3d3bf1abd1b198069042c424542a65d126256407e4198d1856b7"
   end
 
   depends_on "cmake" => :build

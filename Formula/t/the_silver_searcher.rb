@@ -30,15 +30,15 @@ class TheSilverSearcher < Formula
   depends_on "pcre"
   depends_on "xz"
 
-  def install
-    # Stable tarball does not include pre-generated configure script
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make"
-    system "make", "install"
+  uses_from_macos "zlib"
 
-    bash_completion.install "ag.bashcomp.sh"
+  def install
+    ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")
+    # Stable tarball does not include pre-generated configure script
+    system ".autogen.sh"
+    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "make"
+    system "make", "install", "bashcompdir=#{bash_completion}"
   end
 
   test do

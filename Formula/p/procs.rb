@@ -1,5 +1,5 @@
 class Procs < Formula
-  desc "Modern replacement for ps written by Rust"
+  desc "Modern replacement for ps written in Rust"
   homepage "https:github.comdalanceprocs"
   url "https:github.comdalanceprocsarchiverefstagsv0.14.6.tar.gz"
   sha256 "3d5cd529c858ca637b166bac908e0d8429c33bdfa9d8db6282f36d5732e4e30a"

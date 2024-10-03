@@ -7,6 +7,8 @@ class Ortp < Formula
     url "https:gitlab.linphone.orgBCpublicortp-archive5.3.84ortp-5.3.84.tar.bz2"
     sha256 "e0b539a0021c8b6babca5efddc9362954148824f59c4c316d772a124ebbb51bd"
 
+    depends_on "mbedtls"
+
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
     # https:github.comBelledonneCommunicationsbctoolbox
     resource "bctoolbox" do
@@ -27,6 +29,8 @@ class Ortp < Formula
   head do
     url "https:gitlab.linphone.orgBCpublicortp.git", branch: "master"
 
+    depends_on "openssl@3"
+
     resource "bctoolbox" do
       url "https:gitlab.linphone.orgBCpublicbctoolbox.git", branch: "master"
     end
@@ -34,30 +38,25 @@ class Ortp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "mbedtls"
 
   def install
     odie "bctoolbox resource needs to be updated" if build.stable? && version != resource("bctoolbox").version
 
     resource("bctoolbox").stage do
       args = ["-DENABLE_TESTS_COMPONENT=OFF", "-DBUILD_SHARED_LIBS=ON"]
-      args << "-DCMAKE_C_FLAGS=-Wno-error=unused-parameter" if OS.linux?
-      system "cmake", "-S", ".", "-B", "build",
-                      *args,
-                      *std_cmake_args(install_prefix: libexec)
+      args += ["-DENABLE_MBEDTLS=OFF", "-DENABLE_OPENSSL=ON"] if build.head?
+
+      system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}lib" if OS.linux?
-    cflags = ["-I#{libexec}include"]
-    cflags << "-Wno-error=maybe-uninitialized" if OS.linux?
+    ENV.append_to_cflags "-I#{libexec}include"
 
     args = %W[
       -DCMAKE_PREFIX_PATH=#{libexec}
-      -DCMAKE_C_FLAGS=#{cflags.join(" ")}
-      -DCMAKE_CXX_FLAGS=-I#{libexec}include
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_DOC=NO
       -DENABLE_UNIT_TESTS=NO

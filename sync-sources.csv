@@ -53,6 +53,7 @@ Homebrew-homebrew-core/Formula/a/aescrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aespipe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/afflib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/afl++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afl-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afsctool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aften.rb, Homebrew/homebrew-core, 0
@@ -1112,6 +1113,7 @@ Homebrew-homebrew-core/Formula/c/croaring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/croc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cromwell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cronolog.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/crossplane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crosstool-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crowdin.rb, Homebrew/homebrew-core, 1
@@ -5715,6 +5717,7 @@ Homebrew-homebrew-core/Formula/s/serveit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/serverless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/service-weaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/servus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/setconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/setweblocthumb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seven-kingdoms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sevenzip.rb, Homebrew/homebrew-core, 1
@@ -6165,6 +6168,7 @@ Homebrew-homebrew-core/Formula/s/sysaidmin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sysbench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sysdig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/syslog-ng.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sysprof.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sysstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/systemc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/systemd.rb, Homebrew/homebrew-core, 1
@@ -8376,6 +8380,7 @@ Homebrew-homebrew-cask/Casks/e/eve-launcher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/evernote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/evkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exactscan.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/excalidrawz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exfalso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exifcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exifrenamer.rb, Homebrew/homebrew-cask, 0
@@ -11484,6 +11489,7 @@ Homebrew-homebrew-cask/Casks/k/keycastr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keyclu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keycombiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keycue.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/keyguard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keymanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keymapp.rb, Homebrew/homebrew-cask, 0

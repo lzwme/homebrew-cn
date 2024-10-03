@@ -6,6 +6,11 @@ class ProbeRsTools < Formula
   license "Apache-2.0"
   head "https:github.comprobe-rsprobe-rs.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d84e0446b2ce2ff46054933885c58fecc607907233de2a8914e01ad91676a9d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "099d23a256deba345a765ef686d69f2a7c82f3ea6f733c3e00d788922dde1aaa"

@@ -22,6 +22,8 @@ class Fpdns < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "68319dfe4e90d4370c9571a6b540536ff203da441bdf83b387818a1c6b6eed8d"
   end
 
+  deprecate! date: "2024-10-02", because: :repo_archived
+
   uses_from_macos "perl"
 
   resource "Net::DNS" do
