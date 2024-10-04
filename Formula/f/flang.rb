@@ -1,8 +1,8 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https:flang.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.0llvm-project-19.1.0.src.tar.xz"
-  sha256 "5042522b49945bc560ff9206f25fb87980a9b89b914193ca00d961511ff0673c"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.1llvm-project-19.1.1.src.tar.xz"
+  sha256 "d40e933e2a208ee142898f85d886423a217e991abbcd42dd8211f507c93e1266"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -12,28 +12,22 @@ class Flang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "48c32f1d7bfe4fc9f793b51b139b87060230ee31a30908bae9e0670d9b580a21"
-    sha256 cellar: :any,                 arm64_sonoma:  "c791ae601e361b2a4073238ad07b19e4ab188ddfc37e82f95adb05ab0085b4e8"
-    sha256 cellar: :any,                 arm64_ventura: "ed73d7e80372c6a9867d961aac012f4a1de50418cb170a9bbff6cfb48b2ece6a"
-    sha256 cellar: :any,                 sonoma:        "fa68872e1fa3661da7cf68ab7b9094cfe2b8c751ef189172a2b15359c3b26abc"
-    sha256 cellar: :any,                 ventura:       "a497d4a231bbd6426657a4e6d5b64e8840b42c5bdba8b8d47cc7accdfe300e77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "865098e0774cbe9b78399747b9949cb5522912649517f54f6bad4f03c31b9482"
+    sha256 cellar: :any,                 arm64_sequoia: "8c19642094226f3747877879c38f28d8234ea60a66116d5f0746513597c911a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3cc8c6d272d3b4134ec1686a694cba57d9048247d63339b95431d36154272526"
+    sha256 cellar: :any,                 arm64_ventura: "36ae2867b2b8ae3c043a28b9a01ab15b479506f74b998393549aa3affa951245"
+    sha256 cellar: :any,                 sonoma:        "33daec5a65f9ff33dadfa3daabd36bbc9cfbef65fa21a6bbb0d2b2053175547a"
+    sha256 cellar: :any,                 ventura:       "3dc9bb74ab722231bdcc3cf12ff5dbd401708740e41f3f295bf45f2156a9bc00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12de15e093df57abef3f592e498915c6bbed9d89ac2d4b395568c881f1896927"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
-  depends_on "zstd"
-  uses_from_macos "zlib"
-
-  def llvm
-    Formula["llvm"]
-  end
 
   # Building with GCC fails at linking with an obscure error.
   fails_with :gcc
 
   def install
+    llvm = Formula["llvm"]
     # NOTE: Setting `BUILD_SHARED_LIBRARIES=ON` causes the just-built flang to throw ICE.
     args = %W[
       -DCLANG_DIR=#{llvm.opt_lib}cmakeclang

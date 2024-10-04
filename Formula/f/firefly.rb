@@ -1,8 +1,8 @@
 class Firefly < Formula
   desc "Create and manage the Hyperledger FireFly stack for blockchain interaction"
   homepage "https:hyperledger.github.iofireflylatest"
-  url "https:github.comhyperledgerfirefly-cliarchiverefstagsv1.3.1.tar.gz"
-  sha256 "d2b0420b37c1ce6195e0739b2341502e65fea23c3ddd41cd55159ea237e01f23"
+  url "https:github.comhyperledgerfirefly-cliarchiverefstagsv1.3.2.tar.gz"
+  sha256 "843dee9fabc787dedf5768735f353187349bb759583d5fa3c977969f3688e516"
   license "Apache-2.0"
   head "https:github.comhyperledgerfirefly-cli.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Firefly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8df1982dfc1fe2f818e2c8762ced6b16390f1ae85a36616f9362ca18ff92abd9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aa882c225163110ccf449a1a35b324724cc6cfd11a1f671cd437329688a18f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e777e7aac58c177aad15d9e3f174c5aaced3a6f1ea31099991eca326b47f2cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2024d3903e2a956ece3d20aef8c6b806829ffac3c02f261d1d0ed1ceb67cdcdd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18d5aee81d0e4941a66805680fc0d397a958029d9979586fa73428202a76c281"
-    sha256 cellar: :any_skip_relocation, ventura:        "c393d7ffe35d00d3c267908e3a4511c7189d3ffe2578cafe816db42a9c7f32e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "91cc49ed362308ae1f6a691588f174aabcbeac6a92c9f9690d0428ed65ebf55d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19c7752cc7b75887c29cd5e153340c0ee8bf984ba6c04ca6ec3a12b583f62f34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "943dbc946523546a3c4b775a6373d290993c8d0bd07e0d0381e1cc4e77cf81ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd0f8daa3f920d243b7b392cb5da1fc85e81b815b552986aed651022aa049108"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "678aa4fdcc452e75b65e81bba862e72be253acfa98d2ff32cd821dd150427457"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fcc22601d4581cbe07d0fb4be06d86de7315cfbf4a309b4f279cb62ff8f81e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "45e9c74fb60e7347f00f85041af876938a17c569eaf01e51718f925e02da8165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79948f373e847c8d3ac8c2ae65fe5b2832a5d0e29ca307a4bd6b4cbd40b40df1"
   end
 
   depends_on "go" => :build

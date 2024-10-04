@@ -1,19 +1,19 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https:zrok.io"
-  url "https:github.comopenzitizrokarchiverefstagsv0.4.40.tar.gz"
-  sha256 "dcec641cd0932c426eba0285308b19330714c186e800fe7a6470d6af38e6d403"
+  url "https:github.comopenzitizrokarchiverefstagsv0.4.41.tar.gz"
+  sha256 "aa7adb3cc25ea192afadbb8e7e99d51e5ae2244c1abab62068d313fac5865291"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37f7a2d041425db1cf6963f92fe1241b1b22bd96566d4ecbf13ea8accfa205cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61141b95f9bfbe255412088290aa2c1898422c33471dbb9a49de2839c85ac5fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0cb47dc3a4a35cc4d2fdfc6a227630552bc4af9a5ebaeb2ff7fa946ef82f1ef3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00fb3b36ca00b41275130397552d827e03b11b89be9b158af31507675ec07a7b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c20f83ce46599e469342f29e5138e12fad34b1962972a06e87164dcab9526443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57338970d49df24b6cee44136710468bf7efcd53d371b1179ba7a7dafb9f5983"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d27e13cb498f612bcff87682c9755b71fe5254013a2f1a205d7b1ad537a85e79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13ce271557bc9e12a740eeed2d3593b3610aca95627e76efaafebd74d5271f3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c190bafd3076f34eb132b639675dfa75b5e64c315317c0a11ce21a5de4163888"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69fc5ace4e39c11836309803bc51d95f7585557f899c72760d1f066da0217856"
+    sha256 cellar: :any_skip_relocation, ventura:       "9283cde532a46bbc8503c6f14ea869ea46afc6a736010f8ea02125f60cf93969"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9135827cce30646269f8aa52f8d58fc3c1c0a7c1cd63041e09c80911b91086bd"
   end
 
   depends_on "go" => :build

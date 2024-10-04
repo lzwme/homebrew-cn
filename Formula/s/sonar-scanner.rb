@@ -7,7 +7,8 @@ class SonarScanner < Formula
   head "https:github.comSonarSourcesonar-scanner-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "64219f0b6138017bced084185550e6d402a43fa4c2f9e01d59c0b8629e461563"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5e24f759a690b4abb55737325a6c9e94d42b2235abd0e93021306d6016d967e6"
   end
 
   depends_on "openjdk"
@@ -20,7 +21,7 @@ class SonarScanner < Formula
     ln_s etc"sonar-scanner.properties", libexec"confsonar-scanner.properties"
     bin.env_script_all_files libexec"bin",
                               SONAR_SCANNER_HOME: libexec,
-                              JAVA_HOME:          Formula["openjdk"].opt_prefix
+                              JAVA_HOME:          Language::Java.overridable_java_home_env[:JAVA_HOME]
   end
 
   test do

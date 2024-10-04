@@ -4,8 +4,8 @@ class Neovim < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comneovimneovimarchiverefstagsv0.10.1.tar.gz"
-    sha256 "edce96e79903adfcb3c41e9a8238511946325ea9568fde177a70a614501af689"
+    url "https:github.comneovimneovimarchiverefstagsv0.10.2.tar.gz"
+    sha256 "546cb2da9fffbb7e913261344bbf4cf1622721f6c5a67aa77609e976e78b8e89"
 
     # TODO: Remove when the following commit lands in a release.
     # https:github.comneovimneovimcommitfa79a8ad6deefeea81c1959d69aa4c8b2d993f99
@@ -56,14 +56,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "1e9fb8392d0d76bc9c1c0feb5333bf5581c177840752d58ee5a23fe710240251"
-    sha256 arm64_sonoma:   "1c72330a7a7c7a0fd1bc94a7f6ca24ec35791624cca20400c36020a136f0cc60"
-    sha256 arm64_ventura:  "7bbb635a92be0cc70bb1a03e1554f03a8a4d823730221b6f62a8c7387e55a8e5"
-    sha256 arm64_monterey: "58f575f2eae27d34177889fc2f43dd92f2e5fc2f334d96a46aee4969a6294f90"
-    sha256 sonoma:         "8b19ae8a53fe5cd4f655410f7a89a3ce62b3ac69facbb1cb9e6bf7c7e361a7be"
-    sha256 ventura:        "8e7dafb241ed5e625262fc72e8275b1466bf189b86d1698f5e255f95e25409f8"
-    sha256 monterey:       "1ccff5bcf6d6dc0285e38b3e1cfa449ba82b86796e34643681f79ed53c47b500"
-    sha256 x86_64_linux:   "63f1e8c34873378647fe1a0759ae8c465419bacb76ff7276e3bd2eaac5836f77"
+    sha256 arm64_sequoia: "be2e4da3a98a4b08c2547ea4eb2eb46097772175db962a561e6c825474daa578"
+    sha256 arm64_sonoma:  "7ddb9f6f9fdefdf2905b3704ab15ab9f9e1270223cdc775646cea6fce6a9501e"
+    sha256 arm64_ventura: "3005a00e39203d2971b2993a9fd63d3db730798c697279d43eb6d2408e7e896b"
+    sha256 sonoma:        "2ff5bdc6a9ede9d409055b73162c26d821e4788838a7bddf0991f7930d61430a"
+    sha256 ventura:       "b6e38a65b0c7d110b1d9b2b860bafb79534a131e9f3fc396ed45e767170f01f8"
+    sha256 x86_64_linux:  "d541db2153930dca721b05df7105389d1c8fe51ea88fd4a74c09b83eacd8c219"
   end
 
   head do

@@ -1,20 +1,18 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https:ordinals.com"
-  url "https:github.comordinalsordarchiverefstags0.20.0.tar.gz"
-  sha256 "6d0c61e7657b1a76717a7c93109bbc5de0e11c27733098a3ee972d3b7b407d72"
+  url "https:github.comordinalsordarchiverefstags0.20.1.tar.gz"
+  sha256 "707ad4c912cb67a53ba55cd4818743774f0f3ecdf84aa092d1bc0c92ab770600"
   license "CC0-1.0"
   head "https:github.comordinalsord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a2cf7be4bd716b58e1a83b42bdd0316774a17b7f44176e1e602de476e2c61944"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5c25a2646af6cfd11773436d95a4924850b03c6d9c97420f9679e4125648e75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70a702d1f1db605cc5c661b89d658a6a2bfb0f981ff35947aac2631b4f97c8c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "241cf0c83aa50d199e723cfb9669324ba4e1490e9ba7c30683d015d4a6fd0904"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1edf24dd01838d5bdebb5b2360008db2b7ec5be35d3c15ddd9abcc31f29f24e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e7030adf86d6b58695947b8efe9517288b152d6925e87bfa16b23d8c8dc520d"
-    sha256 cellar: :any_skip_relocation, monterey:       "10a9282b42ebfa6e08610a510d05614a67909b92932a3270d72db9ba09cc911b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17096fd535dd5ed2f999fcaa63f543d9189026f606a77de755b233b5d451ccea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d68baf72e45728db7115f0ba622ffe495ebd0e470aebf4f1faed3182deaf6d3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec9701edf9a9009b457629d8cc768b0d950f7dff6ce6ea948a4c193fae1402b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4ddb82c4a097989e5de0bb2daeb92fff2a00ecbd01632ee295353f9a641e4f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad67d5506e2785bc2436b0ff6d3ba40b60cdcfd6e3a2cbab6a6a486ae2830ffb"
+    sha256 cellar: :any_skip_relocation, ventura:       "4487381de431bb97b3295c5d539377409a6c256910b763c2a07be75d8e170b3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "534a70caad9a16c645ca6637e747d38790ea8a7273f11c496f212b3fb0d24452"
   end
 
   depends_on "pkg-config" => :build

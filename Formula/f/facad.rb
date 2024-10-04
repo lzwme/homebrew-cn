@@ -1,17 +1,17 @@
 class Facad < Formula
   desc "Modern, colorful directory listing tool for the command-line"
   homepage "https:github.comyellow-footed-honeyguidefacad"
-  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv1.4.0.tar.gz"
-  sha256 "466569e116fd31ff03ee18b3b581d74735ea447f481ba88bdd8c037c8ad85365"
+  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.1.0.tar.gz"
+  sha256 "53da76af9871c16e20920f4cb31c40a10cb16fce9e3719aee8d285ea2e07ec5b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff14bbb65978cf2ce48a2a49b8ae16748402e59c51dfd679029a91f8ee2b5e34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e646eec1669105d667d3730c53f9d88912d30dfaec11e710b447899d1f0000e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c75d440cf95ed681ed31d19a42e6c2e554e69fcc5063eaa13822f8a74d8918d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63205c07eb2bebadcbbdb48acb657bce23b51327cdbc23ccb11d24b491ac3ae9"
-    sha256 cellar: :any_skip_relocation, ventura:       "03991ac6158ce90c59ab43ecfe088b8ba2600957930fd669cb38b4add448a499"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0b356f2d9d9f46103c022a14f4ab5610722574d50cb26b95425004ef17fd66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3926a4003a884cc951e6aa9e508559c48562af6ddecb409aba80c534eddfc36a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "954bae0abf57386d9eb6b0b6d4a0c56c47c32830c8011d12d9a9c5f0a5da1efb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b6420b2d62a336d9e10acc79c3520da64528a1534e6fda2131fb082d5a69895"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cc8f5c02656dbe61fd31a532a8dfe04829a2e655ea5887fcf574026e35b76c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "1fb48e40db1229d8e5a60bd30594273ea9d01b6957933601f30f23340c0aa8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "635ba534207a91a9d7acd6df1ebb480545f075203bb1a7d4e8abbf1bb89444a4"
   end
 
   depends_on "meson" => :build

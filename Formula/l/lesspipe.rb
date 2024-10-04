@@ -1,8 +1,8 @@
 class Lesspipe < Formula
   desc "Input filter for the pager less"
   homepage "https:www-zeuthen.desy.de~friebelunixlesspipe.html"
-  url "https:github.comwofr06lesspipearchiverefstagsv2.14.tar.gz"
-  sha256 "8da921f34b428f6347a37c36b167a523bbacada7dbdd952b708f554012867b67"
+  url "https:github.comwofr06lesspipearchiverefstagsv2.15.tar.gz"
+  sha256 "dd65d211f0f817b4c361c434fd09ecbcd4a642636f3dc0fc1c575f2fa88506ac"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later", # sxw2txt
@@ -11,8 +11,7 @@ class Lesspipe < Formula
   ]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "51b462f428e3845d2615cb9456f0f62fce329f655a92f20df86f7a9692ca2355"
+    sha256 cellar: :any_skip_relocation, all: "be6cc23028f51b8d31017e3c22acb6ea86c799fe96271c37cf9588b386e2db3a"
   end
 
   uses_from_macos "perl"

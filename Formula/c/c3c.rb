@@ -1,10 +1,9 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https:github.comc3langc3c"
-  url "https:github.comc3langc3carchiverefstagsv0.6.2.tar.gz"
-  sha256 "e39f98d5a78f9d3aa8da4ce07062b4ca93d25b88107961cbd3af2b3f6bcf8e78"
+  url "https:github.comc3langc3carchiverefstagsv0.6.3.tar.gz"
+  sha256 "b6c51c19bcbad68de9caf98ad6cf399aa7a643d2fff82cee6cd2807aa532bdc7"
   license "LGPL-3.0-only"
-  revision 2
   head "https:github.comc3langc3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -16,13 +15,12 @@ class C3c < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_sequoia: "d488a63b27a6a18fe9e59c311134825cacfef3619ea91da0735b47d29930b5cf"
-    sha256 cellar: :any, arm64_sonoma:  "8edab84fb832b61e809264d3291c61a173feddaa97ca7d769646cb2f76e7b480"
-    sha256 cellar: :any, arm64_ventura: "50055c81de8b6863611c6a9e865b84676127fa75666e657d7216cd85ad6602af"
-    sha256 cellar: :any, sonoma:        "23781283ba1e2d5cf7298d0f5f05289257c5e0d364bdf89514051fc2918a84de"
-    sha256 cellar: :any, ventura:       "8a51c9cf989584c5aa0d496d45f9d6a4ba355341c507cb5f239f89231082ed5c"
-    sha256               x86_64_linux:  "4036b3f850ea5debfe6da393675295ae920c3b3ccb6900e5877324edb1addcf9"
+    sha256 cellar: :any, arm64_sequoia: "a74c6bdfea0083c9b475938b1bf6914b9c73edb9df58ed09e9505ea0d8cb3181"
+    sha256 cellar: :any, arm64_sonoma:  "9379e0611283f58e649b34ec762765f009caa1a38b5b5a57c324ca9922736ada"
+    sha256 cellar: :any, arm64_ventura: "3ccf1d2b5b3dd349d9c3e9dd2151e4fcc620ccabc7ee9000d8eab3767d64a068"
+    sha256 cellar: :any, sonoma:        "029b16211faf59d737995a6fbebd2df076edb8e1d191a432230bd85ff26e424c"
+    sha256 cellar: :any, ventura:       "e92d6f0202d19f5a75df3b2cd66509502e2b16722816232bd397368ceba961e0"
+    sha256               x86_64_linux:  "9feef7d3979c930d23546baa06726ac0b652a8932221387b6eb53d2d53b53166"
   end
 
   depends_on "cmake" => :build

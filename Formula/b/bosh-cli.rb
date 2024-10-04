@@ -1,20 +1,18 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https:bosh.iodocscli-v2"
-  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.7.2.tar.gz"
-  sha256 "9238a5d169717d731e7c10ea428e85b24094c63f37db1b94647dbc58e79610f0"
+  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.8.0.tar.gz"
+  sha256 "e1fff48200497ee5fc1088518249808043981694cb8671323735cd1dd009b107"
   license "Apache-2.0"
   head "https:github.comcloudfoundrybosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "432dd1ce8734f62338e02cf8e4e6530c99af811115a8161e0f20d66e0d10ad6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "47ee9b6bf747f2786730b769fcb04dde269ab80a77d490d35bf6779e89b1b9cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "47ee9b6bf747f2786730b769fcb04dde269ab80a77d490d35bf6779e89b1b9cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "47ee9b6bf747f2786730b769fcb04dde269ab80a77d490d35bf6779e89b1b9cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da28e7692c75bd26e49c6088c196696845b192ae32cba15fff99a1c74ca07ff2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a6c6bef16272db8b90567993770c2edbb935aac4ba6c8a5b76c8ca8645d029c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a6c6bef16272db8b90567993770c2edbb935aac4ba6c8a5b76c8ca8645d029c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a6c6bef16272db8b90567993770c2edbb935aac4ba6c8a5b76c8ca8645d029c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "63a2eccb8499cfbaee850f6ff38eb2345b217c0317dc7fae0791407853ed7625"
+    sha256 cellar: :any_skip_relocation, ventura:       "63a2eccb8499cfbaee850f6ff38eb2345b217c0317dc7fae0791407853ed7625"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079dfaf2cb01ca799fba42f9eec8caef5b921fe4d2b928c0e6da13949da8cc54"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,7 @@ class Openimageio < Formula
   url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.16.0.tar.gz"
   sha256 "e5438e28d34a5b0a09428ed77ec310edd47c141db1b259364859110847e161e7"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
   livecheck do
@@ -14,12 +14,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bdd3123fa0c9b7328cf05c6ae94a618701ca2722935203aca3f0284b63fdfecd"
-    sha256 cellar: :any,                 arm64_sonoma:  "00dc8103f37626467cbfc243e3e83d0bf21f26eb3b42373362333a22e86734a7"
-    sha256 cellar: :any,                 arm64_ventura: "5f59bd6438eddc7cd8a3f3d14560c84320095abefb30fdf3e35a1f54462f4d2c"
-    sha256 cellar: :any,                 sonoma:        "da23543e8acaeb10e1e984801cea19443a62fdabe5a92214ac44a59fdf1cce79"
-    sha256 cellar: :any,                 ventura:       "35f1682488c0a90be472e73e83e4ada611f5ece7f535b7af3a98c8249dd2157c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b78f6ae83f5d072a29a9f3180275b8566fab9caaf35483dd95c5c6a55c8c20"
+    sha256 cellar: :any,                 arm64_sequoia: "e4745e282ce38a19c4bc7183cceaf43e5375759a4c57d47a69b15225ee640a63"
+    sha256 cellar: :any,                 arm64_sonoma:  "506fa226e7dced0a7eb35a00bb2c9d63d2a35bf204ec294f02654cac0afe5bc4"
+    sha256 cellar: :any,                 arm64_ventura: "152f273dbdb00eb8bf0aee21c0b5d6e77262d0bdbffaf47491be3b90e54cc521"
+    sha256 cellar: :any,                 sonoma:        "d1cf558ffe0aa1e9b624fe5074431d2058cb0409238d5b2e24eb6d477f348e8d"
+    sha256 cellar: :any,                 ventura:       "fbd2811178a38c55e306d5985ff87a3fe9ed7785703274fde545cd7b39214a4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd3a2ee00a6e2a17dace308cf0f471a00c1b877c590021d7d9db337e82f248ca"
   end
 
   depends_on "cmake" => :build

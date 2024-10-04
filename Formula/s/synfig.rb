@@ -6,7 +6,7 @@ class Synfig < Formula
   mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.2synfig-1.5.2.tar.gz"
   sha256 "0a7cff341eb0bcd31725996ad70c1461ce5ddb3c3ee9f899abeb4a3e77ab420e"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comsynfigsynfig.git", branch: "master"
 
   livecheck do
@@ -15,13 +15,11 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "215e214b9ebb1e44193cc9c9b72d79dc6f9a35a33f4bab89893c1943a553a38a"
-    sha256 arm64_ventura:  "005402c971bd3fff896a2b5953029bc47c74d9ad47c244b8876d37c0008b8acd"
-    sha256 arm64_monterey: "87580f412466c2cc5f6e871de5ae2f331831abc02d204dda705f00ca8c87e216"
-    sha256 sonoma:         "91327f9de2c7cfaa6d805338e5b7c9a4bc4f3c6e6166ee815de090f38e4b6c74"
-    sha256 ventura:        "d0eecbd0a7629c95a7e2d2b447ed88388772cb81a822cc0fb31e129fa17f108c"
-    sha256 monterey:       "a136f2dd2ce9ca0860ebbf517831b4ead42250a92e4fc2aeee0c88186f301d4e"
-    sha256 x86_64_linux:   "8756ad19dc3c0f2b49a0b07a8e07d4766df49f3aa6cdcc6ae1c95cadab4306b0"
+    sha256 arm64_sonoma:  "cf897c7b4ca90d3b11d4280d4c9f87792e47c331de1a8ae8f2dc8b7e77364a6f"
+    sha256 arm64_ventura: "8a4aa8b68252349f620914abe3d341c5a096fd76a8987a3187ee7b014e45b54e"
+    sha256 sonoma:        "5a683d57ebd562483d473d9355e502a01e06d62e97b17de7c7cee471a0347fdb"
+    sha256 ventura:       "16e823e3f072aaaf8889377bf704702445677555e2850080d1f5a2a21af18fc3"
+    sha256 x86_64_linux:  "7333419b778418bcbd3300a5f6d72bc69e8eaf429addb58dd450d34355b1df6d"
   end
 
   depends_on "autoconf" => :build

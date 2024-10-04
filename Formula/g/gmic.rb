@@ -4,6 +4,7 @@ class Gmic < Formula
   url "https:gmic.eufilessourcegmic_3.4.2.tar.gz"
   sha256 "9abd8377693715f87104bdbe077d45ecb00cf19f57c29f425eacda07c745fe8a"
   license "CECILL-2.1"
+  revision 1
   head "https:github.comGreycLabgmic.git", branch: "master"
 
   livecheck do
@@ -12,14 +13,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "744ffa706d2f8d2a0a537b89a04ae07a62a1abd40b641608be5280a2549bc007"
-    sha256 cellar: :any,                 arm64_sonoma:   "8b21e5f73a66d2d0858a10059528fb513a391ef521abc8c02126f557ad26c1cf"
-    sha256 cellar: :any,                 arm64_ventura:  "5e2ac62336afbb6e9ece59aa80ddddeb4f39b10a3e251e4e8e8dbb599db1bdea"
-    sha256 cellar: :any,                 arm64_monterey: "e381a0959ffeef741995b364675454662a051767c700d446db7705a5343da843"
-    sha256 cellar: :any,                 sonoma:         "6830114554844fd69e9b827c4e64b0562d67fbb7ed38744063df4e15e492158e"
-    sha256 cellar: :any,                 ventura:        "a7d6989a592b7ed15094739c560a4217d8e73a324f2950f52035988066b16dc8"
-    sha256 cellar: :any,                 monterey:       "80cc2df53b946fcce8b149fa5db57801ed33fb9f7ed85c0b3c8652cb5249c548"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76eec063601965ff78985ab1ce29d9f532829b5b159d6d7fc74d6a2a94936be3"
+    sha256 cellar: :any,                 arm64_sequoia: "0f6aea0f8a903364aa0ce16c5b93e3ce5c8f1731032a7afce6bb47168fdb9173"
+    sha256 cellar: :any,                 arm64_sonoma:  "02d1a9cfde9f30969677d3f80bf7aef5b347624f4614dfadacbe70b46a79a381"
+    sha256 cellar: :any,                 arm64_ventura: "f756f70c63c0d7feecc96db001c33b3b508815470afd70772bac0b1827c48960"
+    sha256 cellar: :any,                 sonoma:        "159958616267b4f92a1b73e1451a9b15925cb5a90695d6f91cf58516c9e3f732"
+    sha256 cellar: :any,                 ventura:       "e852a229fe12e7370b5537cd355b3b06188f9ab1a400002bedab9b4b733ae3ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c27705afeffa586eab9809e5fad8d8da3d63650b2d1043730e80e4a8b723b911"
   end
 
   depends_on "cmake" => :build

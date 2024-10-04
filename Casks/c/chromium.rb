@@ -14,7 +14,7 @@ cask "chromium" do
     "eloston-chromium",
     "freesmug-chromium",
   ]
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "chrome-macChromium.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)

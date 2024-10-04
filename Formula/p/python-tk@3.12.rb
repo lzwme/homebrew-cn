@@ -1,8 +1,8 @@
 class PythonTkAT312 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz"
-  sha256 "85a4c1be906d20e5c5a69f2466b00da769c221d6a684acfd3a514dbf5bf10a66"
+  url "https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz"
+  sha256 "73ac8fe780227bf371add8373c3079f42a0dc62deff8d612cd15a618082ab623"
   license "Python-2.0"
 
   livecheck do
@@ -10,14 +10,12 @@ class PythonTkAT312 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "17b17d440aee24f8e9babca035c3f1edc306d2502fe51e2ce1298e038b31175c"
-    sha256 cellar: :any,                 arm64_sonoma:   "5f22d21be5bfd8054cdadf53295769253af110f601055bb5e7d38d3cd8daa2db"
-    sha256 cellar: :any,                 arm64_ventura:  "4dbbbba395a9f95aee1dd7a5340a740b05a5f167970000e009be65f34917cc04"
-    sha256 cellar: :any,                 arm64_monterey: "c5c03ce5a3f39491e93d115231ffac7d1a7c6f90b6e10d2498ba11db4bf58bc9"
-    sha256 cellar: :any,                 sonoma:         "8d5f84dd0068d72b10559e6cae03b1da742b2d7088a983c31f3d110560f5b47b"
-    sha256 cellar: :any,                 ventura:        "bcc763cc850927d6c42ae74a792ad10fe0a72f5c7082d11b3469c908e8735a6f"
-    sha256 cellar: :any,                 monterey:       "d60217dab21db273f65069c760563416e0d098e4ad76f927f6cd616ac044a62e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52dfe8eab42a78e4249c8e4ca1cede14535e61b81facffb1b96929eeba08ef79"
+    sha256 cellar: :any,                 arm64_sequoia: "b74d20895d8265b5d1b516b15f4635a08292dc9bba5320e3431175404d0eff55"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb2896eee554c65ff8f090d1b735069f18c5173eacdf48f6ce611ac40830e158"
+    sha256 cellar: :any,                 arm64_ventura: "8d5187355e686dd00bc67d34eabea5de4322f895481b93b59cfbcd69e934acbb"
+    sha256 cellar: :any,                 sonoma:        "ea617358b902cd7dbb8d707ec2c8c8b64504e4477bd144c0d46eb4eef1e083b8"
+    sha256 cellar: :any,                 ventura:       "bdc83ffabea42a940aaf23c565d73769daa27661c297d925e40d10ff0d8d581a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1183fd08283e6b54d53ea9673dc38bd22a3546082b66be835d711bd46dc372f7"
   end
 
   depends_on "python@3.12"

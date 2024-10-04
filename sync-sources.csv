@@ -4859,7 +4859,7 @@ Homebrew-homebrew-core/Formula/p/pdftoipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdnsd.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pdnsrec.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pdnsrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pedump.rb, Homebrew/homebrew-core, 1
@@ -8197,7 +8197,7 @@ Homebrew-homebrew-cask/Casks/d/drata-agent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/draw-things.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drawbot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/drawio.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/drawpile.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/drawpile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dremel-slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drivedx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drivethrurpg.rb, Homebrew/homebrew-cask, 0
@@ -8600,6 +8600,7 @@ Homebrew-homebrew-cask/Casks/f/fujifilm-x-raw-studio.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/f/fujitsu-scansnap-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/functionflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/funter.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/furtherance.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/futubull.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/futurerestore-gui.rb, Homebrew/homebrew-cask, 1
@@ -12573,6 +12574,7 @@ Homebrew-homebrew-cask/Casks/p/pitchperfect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pivy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixel-check.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pixel-picker.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/pixel-shift-combiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pixelorama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixelsnap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pktriot.rb, Homebrew/homebrew-cask, 0
