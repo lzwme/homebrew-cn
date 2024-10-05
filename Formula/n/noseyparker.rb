@@ -1,20 +1,18 @@
 class Noseyparker < Formula
   desc "Finds secrets and sensitive information in textual data and Git history"
   homepage "https:github.compraetorian-incnoseyparker"
-  url "https:github.compraetorian-incnoseyparkerarchiverefstagsv0.19.0.tar.gz"
-  sha256 "cfa74ef3e2e3472823ac712f384e4fbc99f84cc9a9752cf4d22266b4e93921ca"
+  url "https:github.compraetorian-incnoseyparkerarchiverefstagsv0.20.0.tar.gz"
+  sha256 "517655be7377a9636dbf15ede998f4229a47ada1e3844e086e50c6fd137b5574"
   license "Apache-2.0"
   head "https:github.compraetorian-incnoseyparker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5cf700af2b80048d164bdec615f76ad3188c7d42e741d000f2aaf68b1caab001"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73451211b1237ce2225dbd5a9cae670157855bc01539e74a88530edd11450f09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03b0627b0dc3f78e9e7f9eb4c7ea59825ce5cdaba2238a672ba267f82ca73bf0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bdb05e0bd2c3702f2f866f3c4ad3e9379995fb30c4bea806072d49719b77d32"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f0df42f329e6028c4c041b521cf0db2733fbf2ba8f48f2c5e20ed568cb8d6cd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e0651a8ca823494887e7b0d89f88355c21db86fc1d063d267ac9ea1a77ec63a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7f6d40fc849c8eb7ee88e2b046bf8e5708ea78a9b7606bb9f64140edba1f068"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00ef9f997cfd2e90f6d0414985ba9e75653918d77ae47e9fc66f3f8be466038"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b889595bce7f5825c70e7fa77b63feb13b276879c79d21688c046d4adeca9a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9efd9e3d3ce4e0fb0e5a6b7f7ffc04b964b2ac93b83afca277212ba34e2323bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "215e0dc70e747e537246982a4e6b78b13f46cf72dee5c9202eab69b622fbd8bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35ad9ac233495d3b233c0c416f48fb8661e7a5bdfc0ddd802a1080095d06c245"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b7812e53e4ffa48a2df49b45efa317f71655a84f5a45dbed9b732619044ab8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f661d1b8128a4b07fc26709247c751e779e471fa786bb47bc01fddcd38cf5b2b"
   end
 
   depends_on "boost" => :build

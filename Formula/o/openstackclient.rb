@@ -9,12 +9,13 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "32c41a893b36a7f10461cd05ba549d7eb36555f4446b2702f4f208364d23c460"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ab7c804ff9786745e4d49786129cd56e3b01cfb31857aa9707787d43d3d62f3"
-    sha256 cellar: :any,                 arm64_ventura: "9286520a7da27b14e53be370b5f882654c7827f39ef00ce6ccc14a4761e0ca3a"
-    sha256 cellar: :any,                 sonoma:        "75fd08d3cf157146011ea81b6cc1edba208e77545d68a88e192249274149ef97"
-    sha256 cellar: :any,                 ventura:       "b8dd1411745aad1769ee86cbe95dcf7bfc2018c8f83bdb14500ec5bd64d6da9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa9bdc0242438d419c91ec275a12f42c18e5f129672b26c2a76eb8fe64251791"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9d1690ce4b6910335d06eaf379b95818e9aea7c22470504af4f69eae80bc30e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "0078cb3676ea66ec7367c962054476a5d98785cb708ff3a28b3c7d59ccf51180"
+    sha256 cellar: :any,                 arm64_ventura: "dc603615259b88391943b2a2c8ff483629b4986119198fa5ebdfc3300929cb84"
+    sha256 cellar: :any,                 sonoma:        "ecf016f911caee6f1b69ac00610218898210e077759cba158c3e23b2d36ea02c"
+    sha256 cellar: :any,                 ventura:       "c8fcb3946db3ef542f4d441cff886858978aa5498239f484a5da09eef794ce5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dba32f9b3a2323a5f577564aad9cf0c4f4f282c2fb7d38863a39016b9a71cbc"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -118,6 +119,11 @@ class Openstackclient < Formula
   resource "jsonschema-specifications" do
     url "https://files.pythonhosted.org/packages/f8/b9/cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4b/jsonschema_specifications-2023.12.1.tar.gz"
     sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+  end
+
+  resource "keystoneauth-websso" do
+    url "https://files.pythonhosted.org/packages/fc/ed/87bc1d0bc54b56c2fd8ce51e32a1078f2e51e7ab02f40c7cac4fd2fd33d2/keystoneauth_websso-0.1.1.tar.gz"
+    sha256 "787d29389c93263774d14c7c6b87241afcad0a85bf26cc73e608c89cf475f6a6"
   end
 
   resource "keystoneauth1" do
@@ -356,8 +362,8 @@ class Openstackclient < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/74/5b/e025d02cb3b66b7b76093404392d4b44343c69101cc85f4d180dd5784717/tzdata-2024.1.tar.gz"
-    sha256 "2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd"
+    url "https://files.pythonhosted.org/packages/e1/34/943888654477a574a86a98e9896bae89c7aa15078ec29f490fef2f1e5384/tzdata-2024.2.tar.gz"
+    sha256 "7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"
   end
 
   resource "urllib3" do

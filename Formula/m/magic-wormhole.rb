@@ -3,21 +3,18 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https:github.commagic-wormholemagic-wormhole"
-  url "https:files.pythonhosted.orgpackages9d7b9320062c8b11e58dccd079dd62e3525bf1dac7f2b441c885d64a7ca7f045magic-wormhole-0.15.0.tar.gz"
-  sha256 "be2563b5c5547ba333bc6608f048004c8f36d556139bf2ffe3d9f41da2797006"
+  url "https:files.pythonhosted.orgpackages1a55b82ace1c0c090bc6f629a93f3fb1ed60436731b166de2454d1585532c86fmagic-wormhole-0.16.0.tar.gz"
+  sha256 "14e6c146898dbda7a6d190262623a69419955363e7e434d64aad2d233d6d94c9"
   license "MIT"
-  revision 1
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "d0127bade504c8303c58380269c590dd2b8a8d6fd06ef9829fafa85d806186a3"
-    sha256 cellar: :any,                 arm64_sonoma:   "b6ab5a6f7fdcd873fd8851b33bae9087a8c54966d879c4154790f7c1bb1d1fd7"
-    sha256 cellar: :any,                 arm64_ventura:  "344b881a53d273df0d68fb3c93b7a618263eac201c6620c9cbff91458ff54bff"
-    sha256 cellar: :any,                 arm64_monterey: "6218b53abce4837fc0e7d57549e985e9062868051f72101912d7aea0dd11840f"
-    sha256 cellar: :any,                 sonoma:         "f12297023393214d67ddd8bcee16d3fb54f1805d399490608edab397d50091f6"
-    sha256 cellar: :any,                 ventura:        "782cf77a58819ebb16128be22ab49bb3ed0b359f8774cc345ce4700a49e16955"
-    sha256 cellar: :any,                 monterey:       "6b7a41b6afa7c9bd22f339d1f1f2b1e984c52cbd45d4f38a61490b3deaab70eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ecacd554605fff7744ad176acc39b89e10fd141fd9ad4f5144c63f260f20112"
+    sha256 cellar: :any,                 arm64_sequoia: "19de0a8a829263e8cd5a4add80f8b9ad93fe317f3b8a45cb1ec90a042ea69747"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb3f09e8cd974dd3f7a092cc3c0e5a112ea629115d287b6023abaab95e10ef0f"
+    sha256 cellar: :any,                 arm64_ventura: "51b42906cc499a3c9eb207f8302c498ce833f298270a8c99e2dbc8792071b100"
+    sha256 cellar: :any,                 sonoma:        "797e256edb2794079c1a21cfaa171322a60c191cc6b8c604d41bf93f98b536b7"
+    sha256 cellar: :any,                 ventura:       "c4150286a171cb246fd956a8a5c4774bbe2a9016a65911643d0048f8297ff10b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1b5ed9c387defa7c5f13edfa4435054754f796209ef76b34bc2a68be63dd9d"
   end
 
   depends_on "cryptography"
@@ -37,8 +34,8 @@ class MagicWormhole < Formula
   end
 
   resource "automat" do
-    url "https:files.pythonhosted.orgpackages7a7b9c3d26d8a0416eefbc0428f168241b32657ca260fb7ef507596ff5c2f6c4Automat-22.10.0.tar.gz"
-    sha256 "e56beb84edad19dcc11d30e8d9b895f75deeb5ef5e96b84a467066b3b84bb04e"
+    url "https:files.pythonhosted.orgpackages8d2dede4ad7fc34ab4482389fa3369d304f2fa22e50770af706678f6a332fa82automat-24.8.1.tar.gz"
+    sha256 "b34227cf63f6325b8ad2399ede780675083e439b20c323d376373d8ee6306d88"
   end
 
   resource "click" do
@@ -49,11 +46,6 @@ class MagicWormhole < Formula
   resource "constantly" do
     url "https:files.pythonhosted.orgpackages4d6fcb2a94494ff74aa9528a36c5b1422756330a75a8367bf20bd63171fc324dconstantly-23.10.4.tar.gz"
     sha256 "aa92b70a33e2ac0bb33cd745eb61776594dc48764b06c35e0efd050b7f1c7cbd"
-  end
-
-  resource "hkdf" do
-    url "https:files.pythonhosted.orgpackagesc3be327e072850db181ce56afd51e26ec7aa5659b18466c709fa5ea2548c935fhkdf-0.0.3.tar.gz"
-    sha256 "622a31c634bc185581530a4b44ffb731ed208acf4614f9c795bdd70e77991dca"
   end
 
   resource "humanize" do
@@ -67,8 +59,8 @@ class MagicWormhole < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "incremental" do
@@ -82,13 +74,13 @@ class MagicWormhole < Formula
   end
 
   resource "pyasn1" do
-    url "https:files.pythonhosted.orgpackages4aa3d2157f333900747f20984553aca98008b6dc843eb62f3a36030140ccec0dpyasn1-0.6.0.tar.gz"
-    sha256 "3a35ab2c4b5ef98e17dfdec8ab074046fbda76e281c5a706ccd82328cfc8f64c"
+    url "https:files.pythonhosted.orgpackagesbae901f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018pyasn1-0.6.1.tar.gz"
+    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
   end
 
   resource "pyasn1-modules" do
-    url "https:files.pythonhosted.orgpackagesf700e7bd1dec10667e3f2be602686537969a7ac92b0a7c5165be2e5875dc3971pyasn1_modules-0.4.0.tar.gz"
-    sha256 "831dbcea1b177b28c9baddf4c6d1013c24c3accd14a1873fffaa6a2e905f17b6"
+    url "https:files.pythonhosted.orgpackages1d676afbf0d507f73c32d21084a79946bfcfca5fbc62a72057e9c23797a737c9pyasn1_modules-0.4.1.tar.gz"
+    sha256 "c28e2dbf9c06ad61c71a075c7e0f9fd0f1b0bb2d2ad4377f240d33ac2ab60a7c"
   end
 
   resource "pynacl" do
@@ -107,25 +99,13 @@ class MagicWormhole < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
-    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "spake2" do
-    url "https:files.pythonhosted.orgpackages600bbb5eca8e18c38a10b1c207bbe6103df091e5cf7b3e5fdc0efbcad7b85b60spake2-0.8.tar.gz"
-    sha256 "c17a614b29ee4126206e22181f70a406c618d3c6c62ca6d6779bce95e9c926f4"
-
-    # Update versioneer script for 3.12. Remove if mergedreleased
-    # https:github.comwarnerpython-spake2pull15
-    patch do
-      url "https:github.comwarnerpython-spake2commit5079cc963305c8aa6465e2a4bbbb08781fb49d3b.patch?full_index=1"
-      sha256 "2e095162aeb910eb5ca399763499b414b400bcf5cf59fd851f5810d7b6d11646"
-    end
+    url "https:files.pythonhosted.orgpackagesc54b32ad65f8ff5c49254e218ccaae8fc16900cfc289954fb372686159ebe315spake2-0.9.tar.gz"
+    sha256 "421fc4a8d5ac395af7af0206ffd9e6cdf188c105cb1b883d9d683312bb5a9334"
   end
 
   resource "tqdm" do
@@ -144,8 +124,8 @@ class MagicWormhole < Formula
   end
 
   resource "txtorcon" do
-    url "https:files.pythonhosted.orgpackages39ebdd87610a296ac02aba6a67668e5811e43078ea32d261e0c8eb2d43d6e67ctxtorcon-23.11.0.tar.gz"
-    sha256 "71f85ae93d76d726510059c9ed74e608bc5a5c9f7d103853b49e414280406a2f"
+    url "https:files.pythonhosted.orgpackagesb99f7815b07d8bc775d9578d9131267bb7ce3e91e31305688736ed796ae724d1txtorcon-24.8.0.tar.gz"
+    sha256 "befe19138d9c8c5307b6ee6d4fe446d0c201ffd1cc404aeb265ed90309978ad0"
   end
 
   resource "typing-extensions" do
@@ -159,8 +139,8 @@ class MagicWormhole < Formula
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackagesab4570929649a48b49a71a470bdd84e078110fb5a91e5d74bfe07d65e02b4f03zope.interface-7.0.1.tar.gz"
-    sha256 "f0f5fda7cbf890371a59ab1d06512da4f2c89a6ea194e595808123c863c38eff"
+    url "https:files.pythonhosted.orgpackagesc8837de03efae7fc9a4ec64301d86e29a324f32fe395022e3a5b1a79e376668ezope.interface-7.0.3.tar.gz"
+    sha256 "cd2690d4b08ec9eaf47a85914fe513062b20da78d10d6d789a792c0b20307fb1"
   end
 
   def install

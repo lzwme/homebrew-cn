@@ -1,18 +1,18 @@
 class Viddy < Formula
   desc "Modern watch command"
   homepage "https:github.comsachaosviddy"
-  url "https:github.comsachaosviddyarchiverefstagsv1.1.5.tar.gz"
-  sha256 "abc01bc4eae92f6fbf11ea220f1ef8ee88e48f80b090e09d0c5d5e4cf23d9065"
+  url "https:github.comsachaosviddyarchiverefstagsv1.1.6.tar.gz"
+  sha256 "54b1d530276f441afdb5fe989f31efbb54eca934c71a808c0627b60b6b5c6a95"
   license "MIT"
   head "https:github.comsachaosviddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43015ce049479dbf069f0bbf6aa194748dfd853cce65457c9f239d58db591cd3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98dd8b7044e558011fca0bc95f3633871f6c0f67d01233184b69f3512e546e8b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "76104110cc4785febdb44a2dd3862ce63e257180ffe3279f8b9994360e169eae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "793b688972baa4cfc8ffc97574eaaca452ec103358bfa93e374b348920545946"
-    sha256 cellar: :any_skip_relocation, ventura:       "0595711bf25f8a4fd4f992beafe0e945c0b8a4b2a18b0d11312f98bbd0fdf96b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "057f9ffa5ba094fc9c2e75ba4de808eabc9a6e24a9292919c28a57cd505185fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc72a9f85a92d2fd33b410890e58d4338b8f4d65ccc380d68ec1637d59e13a0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09f0f191d1b87ff861e7a55ee78e123d96a10e6eaade40f20ad44ba2822edb76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a54db326ecbeed84c3553284e5f2b2871695a631a8d68a93e0312b14ce72f3b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84ce51de84a877b925fa2c2c53f8176a653adfbaea4ad9ec732279c9651c273a"
+    sha256 cellar: :any_skip_relocation, ventura:       "78861d780e972d23161c93e3b2718ffee87b7e1e79d428511501c5b292b97476"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c066445f426fe60e7a5178de80fb1c2b7c3a4a372e3d3df497b65720a820937"
   end
 
   depends_on "rust" => :build

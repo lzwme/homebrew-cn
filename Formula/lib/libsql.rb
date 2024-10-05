@@ -1,8 +1,8 @@
 class Libsql < Formula
   desc "Fork of SQLite that is both Open Source, and Open Contributions"
   homepage "https:turso.techlibsql"
-  url "https:github.comtursodatabaselibsqlreleasesdownloadlibsql-server-v0.24.25source.tar.gz"
-  sha256 "93ce5ca3faf5b9809fa32b32b318c2d0903b30608e347786232f85a81c08fe66"
+  url "https:github.comtursodatabaselibsqlreleasesdownloadlibsql-server-v0.24.26source.tar.gz"
+  sha256 "6755463f25a08d0ede7124cb160810210ef15ed95b9f11cb2fb9ea8b64f425a1"
   license "MIT"
   head "https:github.comtursodatabaselibsql.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Libsql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ca93ad5def9b4745a331f82ccd3344f75bc921c123797b1e8aba787bf489860"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57dab7be33da3c82cd77629506733a985818df4dcab1157fbadffa936ced6e4d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8026e5c85098ba4c7b5769c71adabb2983503684e4f1f0710c33d6ac9882db4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86c43c082c3e227e486a3fac597788a7d5b68e0eac59b55940be23ae273c6834"
-    sha256 cellar: :any_skip_relocation, ventura:       "829b7f5c5de6b4f9943b55a34454bff0196fc8ad201ec5ba0b5499f03a936d18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee99673a18ffea70885451484a2a91ebc7c20088774200cc0d2a716798415e48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33768b73d75f7645b8be5ebd99abd891f65b24c211b6def41d15a2943576fa60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3cc9874896e737b4072356666e4f0f43a3d5ae146086416dee5d1308bedf4a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3c2c492a9771ba52423249ccfd8450100a6d25c1a23f53b1f7c1c8c36fca0b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dbc062f022409113fc3f6f31d98b2e01609efccbd9ebf607e49cb37a2a66ef29"
+    sha256 cellar: :any_skip_relocation, ventura:       "542552687a873a9134a9196743e966ffdac7e37fa84e1e4cb0305262bb88779e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76a77401d666b661cb14e481eb78dbbb7d68648ef18c1446dcdeae780489f61c"
   end
 
   depends_on "rust" => :build

@@ -16,12 +16,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b4fb0882454f41c387466c0a96687703475b4a0708dba7bdc05aa0c2e9621c96"
-    sha256 cellar: :any,                 arm64_sonoma:  "832b6fff80c5e0071049752764d8be9c31ce821ccb121d3e833c45c67ba9a74f"
-    sha256 cellar: :any,                 arm64_ventura: "a4665458ecf6a676775858d854039c455fb6eb4055d31da491c367470314eccf"
-    sha256 cellar: :any,                 sonoma:        "e2e2790090816a3b1f3b1ed3768590e375c353feb592e6b322d9d65799e1e6d8"
-    sha256 cellar: :any,                 ventura:       "2bbe05da9d41ec5e0c57b03c612ef575bfd446c69d663db0d0d2e7f44c854374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f1e40fddfa6a38167c3f3a067724131b6a10172c552b21282d32219c1a8807"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5ac9af77ca0af21928aea2c4ff945b4c2641cf3cd6fe5a05f900407c022b67b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee7e4b14245fdc2cc0eb624e32dd19cd90c68a13fd0ce8880dc9d227f26a0250"
+    sha256 cellar: :any,                 arm64_ventura: "7c44e804a2d41c2367420779c3abe4b07bfdd369372d92115f63d5d41a25b52b"
+    sha256 cellar: :any,                 sonoma:        "61ca738cfd88cd304a4983148a74e6e06cc076842b1bb8625e8b7022362249f2"
+    sha256 cellar: :any,                 ventura:       "764f9261722fb7759009d0a2a294d191eda51facae1be7721f3e028856fe9f13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9226705d4c61a4fd96a004db47492db39a71e78cc34c8b1eb6c02aef25e22a1"
   end
 
   head do
@@ -73,6 +74,10 @@ class Rust < Formula
     end
   end
 
+  def llvm
+    Formula["llvm@18"]
+  end
+
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https:docs.rsopenssllatestopenssl#manual
@@ -118,7 +123,7 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{Formula["llvm@18"].opt_prefix}
+      --llvm-root=#{llvm.opt_prefix}
       --enable-llvm-link-shared
       --enable-profiler
       --enable-vendor
@@ -149,11 +154,19 @@ class Rust < Formula
   end
 
   def post_install
-    Dir["#{lib}rustlib***.dylib"].each do |dylib|
+    lib.glob("rustlib***.dylib") do |dylib|
       chmod 0664, dylib
       MachO::Tools.change_dylib_id(dylib, "@rpath#{File.basename(dylib)}")
       MachO.codesign!(dylib) if Hardware::CPU.arm?
       chmod 0444, dylib
+    end
+    return unless OS.mac?
+
+    # Symlink our LLVM here to make sure the adjacent binrust-lld can find it.
+    # Needs to be done in `postinstall` to avoid having `change_dylib_id` done on it.
+    lib.glob("rustlib*lib") do |dir|
+      # Use `ln_sf` instead of `install_symlink` to avoid resolving this into a Cellar path.
+      ln_sf llvm.opt_libshared_library("libLLVM"), dir
     end
   end
 

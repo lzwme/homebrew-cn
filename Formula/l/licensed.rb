@@ -2,19 +2,17 @@ class Licensed < Formula
   desc "Cache and verify the licenses of dependencies"
   homepage "https:github.comgithublicensed"
   url "https:github.comgithublicensed.git",
-      tag:      "v4.5.0",
-      revision: "b83dac625d37b9e5c5151569b011be2a57816e38"
+      tag:      "v5.0.0",
+      revision: "20ccab13f3e8738cf12543ef78da3469bf63c249"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9a31a87888b0b0db0e68f848f5b4a329a339cb08791a75aa6cbc075a63a4f7c7"
-    sha256 cellar: :any,                 arm64_sonoma:   "d4b7ad01ee7de55961e95f82b808d2bba758459c8fb79d768df1d9489941223a"
-    sha256 cellar: :any,                 arm64_ventura:  "2f4b5e92a768349a8167efc94cbe602be17c7af4899cc827c534107bf336b18c"
-    sha256 cellar: :any,                 arm64_monterey: "25fac47c545d7442c1d7b4aba19cca2b6d103ec7e09c17565ac7eaf32cfd4b17"
-    sha256 cellar: :any,                 sonoma:         "ebc8d31605c467416f0a693bb3214dff84948b0788d00f9a19c7ffb18bd89366"
-    sha256 cellar: :any,                 ventura:        "23a1d65eafe0f8902da4ebe265d9d81de979f53a0818233dad818922f95fcc94"
-    sha256 cellar: :any,                 monterey:       "d1ba0b84009f3ff750e71a2acccfd54583223b53275e991f993aca29ea1abe48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "216517ba4f2526dc918c7c5350a068b59ceb876c7c8b4fa1eea14038976e3c43"
+    sha256 cellar: :any,                 arm64_sequoia: "990ad6b8f14675784a86be75e7b9f21be512f96e9730629b25fcfe505955bdbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f6aadedd0c21c9020adefe0afe9e04a2c86a4462ce171624b25f98a61e65e52"
+    sha256 cellar: :any,                 arm64_ventura: "53e1e619abf7a41e12b4577e5ad797d0a9fb9c1d7ab4cb53dd233d4bd1622619"
+    sha256 cellar: :any,                 sonoma:        "17b2447ccfac484d354e9b46b36b4d800c1b342cf4109f5f1b7b8c920a3b752c"
+    sha256 cellar: :any,                 ventura:       "7c0e78d953be402d8a7591fc514d38eb24dfdb6c4489e423b569c81e9825e56a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6efb61e7c4ea635c3307aa38fc200af81299fedc3907fb66d33f2f2f84783626"
   end
 
   depends_on "cmake" => :build

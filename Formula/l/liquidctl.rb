@@ -10,16 +10,16 @@ class Liquidctl < Formula
   head "https:github.comliquidctlliquidctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8967c0a518082e101272224ebc5bfe571d14b02e320965bb82d978ea00117e9c"
-    sha256 cellar: :any,                 arm64_sonoma:   "dddbd4c30271c6717ab045cf0eba23390cbc3a0ebfab7e1b5d8ffece9f006b98"
-    sha256 cellar: :any,                 arm64_ventura:  "1308ad56bf8a75dff8e4b5e783ce784855af973f885f3d41633be40206415d3a"
-    sha256 cellar: :any,                 arm64_monterey: "4f03cef66d179bef3468d8a7d0e8bb1c255756187d500dc7db41812eca6c2908"
-    sha256 cellar: :any,                 sonoma:         "b38fe5a79d3164a75712f641f856bba28f9e9b3e90eaab05a58dc9161d1b3c58"
-    sha256 cellar: :any,                 ventura:        "f6a06c19cc0de7bffad467829f92a6f691568b57812a0e47c8d7eade663ed3fe"
-    sha256 cellar: :any,                 monterey:       "d013462cb9d268a02ac316b471b047f7856d87851129fb9e02ce42f026f45c46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9f93a1689b0f6f32187d300046a9fcb4e16d105a591def6f33d7f63731478ae"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3a828e867857e71756dc5ffba6c1e36ccfc98e7260b760abf7bdf13bc22ed5a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0771969d4789fd3052849f504137a81635fb0fd94a7e4be89126738fc1df50b"
+    sha256 cellar: :any,                 arm64_ventura: "23301c4754b90c1dc5ca433dd93d3187a324bd93fc903386098163fc2c17b36a"
+    sha256 cellar: :any,                 sonoma:        "142261df22f7c5dfc176422dd5070df2131297c0d17b37f58d2763c0c1463097"
+    sha256 cellar: :any,                 ventura:       "aa8d1e1e04c0b86ff2ee5eab36d15520844419b668701683015c9f3128102819"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "613025bf740c77d369eca1eb1fba8e2fcd759d82d6e95f9d923060de6e35bc89"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "hidapi"
   depends_on "libusb"
   depends_on "pillow"
@@ -45,14 +45,8 @@ class Liquidctl < Formula
   end
 
   resource "hidapi" do
-    url "https:files.pythonhosted.orgpackages950ec106800c94219ec3e6b483210e91623117bfafcf1decaff3c422e18af349hidapi-0.14.0.tar.gz"
-    sha256 "a7cb029286ced5426a381286526d9501846409701a29c2538615c3d1a612b8be"
-
-    # patch to build with Cython 3+, remove in next release
-    patch do
-      url "https:github.comtrezorcython-hidapicommit749da6931f57c4c30596de678125648ccfd6e1cd.patch?full_index=1"
-      sha256 "e3d70eb9850c7be0fdb0c31bf575b33be5c5848def904760a6ca9f4c3824f000"
-    end
+    url "https:files.pythonhosted.orgpackagesbf6f90c536b020a8e860f047a2839830a1ade3e1490e67336ecf489b4856eb7bhidapi-0.14.0.post2.tar.gz"
+    sha256 "6c0e97ba6b059a309d51b495a8f0d5efbcea8756b640d98b6f6bb9fdef2458ac"
   end
 
   resource "pyusb" do
@@ -61,26 +55,13 @@ class Liquidctl < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages65d810a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3setuptools-70.3.0.tar.gz"
-    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   def install
-    python3 = "python3.12"
-    venv = virtualenv_create(libexec, python3)
-
-    # Use brewed hidadpi: https:github.comtrezorcython-hidapiissues54
-    # TODO: For hidapi>0.14, replace with ENV["HIDAPI_SYSTEM_HIDAPI"] = ENV["HIDAPI_WITH_LIBUSB"] = "1"
-    resource("hidapi").stage do
-      inreplace "setup.py" do |s|
-        s.gsub! "system_hidapi = 0", "system_hidapi = 1"
-        s.gsub! "usrincludehidapi", "#{Formula["hidapi"].opt_include}hidapi"
-      end
-      venv.pip_install Pathname.pwd
-    end
-
-    venv.pip_install resources.reject { |r| r.name == "hidapi" }
-    venv.pip_install_and_link buildpath
+    ENV["HIDAPI_SYSTEM_HIDAPI"] = ENV["HIDAPI_WITH_LIBUSB"] = "1"
+    virtualenv_install_with_resources
 
     man_page = buildpath"liquidctl.8"
     # setting the is_macos register to 1 adjusts the man page for macOS
@@ -91,6 +72,6 @@ class Liquidctl < Formula
   end
 
   test do
-    shell_output "#{bin}liquidctl list --verbose --debug"
+    system bin"liquidctl", "list", "--verbose", "--debug"
   end
 end

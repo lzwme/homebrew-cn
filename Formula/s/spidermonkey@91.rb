@@ -19,7 +19,7 @@ class SpidermonkeyAT91 < Formula
   end
 
   # Has been EOL since 2022-09-20
-  deprecate! date: "2024-02-22", because: :unsupported
+  disable! date: "2024-09-09", because: :unsupported
 
   depends_on "autoconf@2.13" => :build
   depends_on "pkg-config" => :build

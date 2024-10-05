@@ -12,12 +12,13 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8c19642094226f3747877879c38f28d8234ea60a66116d5f0746513597c911a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3cc8c6d272d3b4134ec1686a694cba57d9048247d63339b95431d36154272526"
-    sha256 cellar: :any,                 arm64_ventura: "36ae2867b2b8ae3c043a28b9a01ab15b479506f74b998393549aa3affa951245"
-    sha256 cellar: :any,                 sonoma:        "33daec5a65f9ff33dadfa3daabd36bbc9cfbef65fa21a6bbb0d2b2053175547a"
-    sha256 cellar: :any,                 ventura:       "3dc9bb74ab722231bdcc3cf12ff5dbd401708740e41f3f295bf45f2156a9bc00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12de15e093df57abef3f592e498915c6bbed9d89ac2d4b395568c881f1896927"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "43f998f47d3d630e4608e623c940e2da55f2d17001c3bc1b31d35a5d777508c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3455791e65ee7cade86f560d8cf9fe5be72f39e6a57bc89954d968082c9796c"
+    sha256 cellar: :any,                 arm64_ventura: "0a2d563c57363556e7ab2b1eb56962a89fe6687e719d94a6d49254f70f4aa2e3"
+    sha256 cellar: :any,                 sonoma:        "e7bd66f9fdc25ec2199b150faecbbbe8ab6f1d7215e8c10bc474b9951d541f3d"
+    sha256 cellar: :any,                 ventura:       "8b46e1b73bb5beee405c7230168018f710a40d58917fa63ce2e2fd486cceca5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c25452be8cfc8925a34d8725cd7bfc96d74b5b190f3edc1b2e3887d970d1649"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,10 @@ class Flang < Formula
 
   # Building with GCC fails at linking with an obscure error.
   fails_with :gcc
+
+  def flang_driver
+    "flang-new"
+  end
 
   def install
     llvm = Formula["llvm"]
@@ -44,12 +49,25 @@ class Flang < Formula
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
 
     ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
-    install_prefix = OS.mac? ? libexec : prefix
+    install_prefix = libexec
     system "cmake", "-S", "flang", "-B", "build", *args, *std_cmake_args(install_prefix:)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    return if install_prefix == prefix
+    libexec.find do |pn|
+      next if pn.directory?
+
+      subdir = pn.relative_path_from(libexec).dirname
+      (prefixsubdir).install_symlink pn
+    end
+
+    # Our LLVM is built with exception-handling, which requires linkage with the C++ standard library.
+    # TODO: Remove this ifwhen we've rebuilt LLVM with `LLVM_ENABLE_EH=OFF`.
+    cxx_stdlib = OS.mac? ? "-lc++" : "-lstdc++"
+    cxx_stdlib << "\n"
+    (libexec"binflang.cfg").atomic_write cxx_stdlib
+
+    return if OS.linux?
 
     # Convert LTO-generated bitcode in our static archives to MachO.
     # Not needed on Linux because of `-ffat-lto-objects`
@@ -72,17 +90,17 @@ class Flang < Formula
       end
     end
 
-    libexec.find do |pn|
-      next if pn.directory?
-
-      subdir = pn.relative_path_from(libexec).dirname
-      (prefixsubdir).install_symlink pn
-    end
-
     # The `flang-new` driver expects `libLTO.dylib` to be in the same prefix,
     # but it actually lives in LLVM's prefix.
-    liblto = Formula["llvm"].opt_libshared_library("libLTO")
-    ln_sf liblto, libexec"lib"
+    ln_sf Formula["llvm"].opt_libshared_library("libLTO"), install_prefix"lib"
+  end
+
+  def caveats
+    <<~EOS
+      Homebrew LLVM is built with LLVM_ENABLE_EH=ON, so binaries built by `#{flang_driver}`
+      require linkage to the C++ standard library. `#{flang_driver}` is configured to do this
+      automatically.
+    EOS
   end
 
   test do
@@ -104,12 +122,10 @@ class Flang < Formula
       end
     FORTRAN
 
-    cxx_stdlib = OS.mac? ? "-lc++" : "-lstdc++"
-
-    system bin"flang-new", "-v", "hello.f90", cxx_stdlib, "-o", "hello"
+    system binflang_driver, "-v", "hello.f90", "-o", "hello"
     assert_equal "Hello World!", shell_output(".hello").chomp
 
-    system bin"flang-new", "-v", "test.f90", cxx_stdlib, "-o", "test"
+    system binflang_driver, "-v", "test.f90", "-o", "test"
     assert_equal "Done", shell_output(".test").chomp
 
     system "ar", "x", lib"libFortranCommon.a"

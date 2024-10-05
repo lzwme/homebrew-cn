@@ -54,7 +54,6 @@ Homebrew-homebrew-core/Formula/a/aespipe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/afflib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afl++.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/afl-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/afsctool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aften.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aftman.rb, Homebrew/homebrew-core, 1
@@ -985,7 +984,6 @@ Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cogl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coin3d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cointop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coinutils.rb, Homebrew/homebrew-core, 1
@@ -1361,7 +1359,7 @@ Homebrew-homebrew-core/Formula/d/dns2tcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnscontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnscrypt-wrapper.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dnsdist.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dnsdist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnsgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmasq.rb, Homebrew/homebrew-core, 0
@@ -1621,7 +1619,6 @@ Homebrew-homebrew-core/Formula/e/erdtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erigon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/erlang@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@26.rb, Homebrew/homebrew-core, 1
@@ -1979,8 +1976,6 @@ Homebrew-homebrew-core/Formula/g/gcc@10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@13.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gcc@5.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gcc@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@9.rb, Homebrew/homebrew-core, 1
@@ -1997,7 +1992,6 @@ Homebrew-homebrew-core/Formula/g/gdcm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdk-pixbuf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gdmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive@2.rb, Homebrew/homebrew-core, 1
@@ -2818,7 +2812,6 @@ Homebrew-homebrew-core/Formula/i/irssi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/isa-l.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/isc-dhcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/isl.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/isl@0.18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iso-codes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/isort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ispc.rb, Homebrew/homebrew-core, 1
@@ -3513,8 +3506,6 @@ Homebrew-homebrew-core/Formula/lib/libgit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.7.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libglade.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libglademm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgnt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgosu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgpg-error.rb, Homebrew/homebrew-core, 0
@@ -4781,6 +4772,7 @@ Homebrew-homebrew-core/Formula/p/pandocomatic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pango.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pangomm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pangomm@2.46.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/paperjam.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/paperkey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/papilo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/paps.rb, Homebrew/homebrew-core, 1
@@ -5265,7 +5257,6 @@ Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcachegrind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qdae.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdmr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qemu.rb, Homebrew/homebrew-core, 0
@@ -6714,7 +6705,6 @@ Homebrew-homebrew-core/Formula/v/vmtouch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vncsnapshot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vnstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vnu.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/voldemort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volta.rb, Homebrew/homebrew-core, 1
@@ -6982,7 +6972,6 @@ Homebrew-homebrew-core/Formula/x/xorg-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xorgproto.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xorgrgb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xorriso.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xpa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xpdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xpipe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xplanet.rb, Homebrew/homebrew-core, 1

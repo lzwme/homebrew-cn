@@ -1,18 +1,18 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https:github.combrocodefblog"
-  url "https:github.combrocodefblogarchiverefstagsv4.12.0.tar.gz"
-  sha256 "7033d56393fc95535839d232ad380c017945210c354f9040150c394c4728bb90"
+  url "https:github.combrocodefblogarchiverefstagsv4.13.0.tar.gz"
+  sha256 "1bf50a4b7f1775dba0bacfb5e7709baf8abebd3e4cca2f728a1976950b0d2a2e"
   license "WTFPL"
   head "https:github.combrocodefblog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25e770797ed78cfd233776299ba4edd67c9b3fd2e197ac8e2047415df4f857a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1db408cea0ecad8cabccd49f0f4b7a3d3ae99aec163340e405d57bf963d1d37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c98c817c5cd2d995e98a32c55dbeaa3190f71197c19ccd4336b17847839d3585"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1346b8e5793f8e75d257051df1cce8fbbcd0f0628b6009ee6ea09f371e21f601"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5f522e6a1b86ebba7dd5a1bf647e1650e0feaccd2f3db1d7294a56cbb333e4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28499b9c4489f9c04ffa1b48b1aebf38355ba27994d8df6dd33349b839b85bee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a22a1f6a193eb2cf7be48a91f43ac78ad8e627e3677ff1b0a318ac5a43ed7bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4d15872508ab2026829d06485452a6b6050ad17247a6c96088e9dce7c1b96e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c849c7d66d2b5d3904c9fec687eff8554d69d4dd849031354471dc5eb160a32b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "093ae9649047ff2c0ee5e57d0b90a8c46b83f27482303f92f5549c31387e029a"
+    sha256 cellar: :any_skip_relocation, ventura:       "df68c21a6673bda9d7b0dc4cf0c576a39e13f3133ccfb1d58e868b4b07f891fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2035f95975a7cc0b6aaa637318e4b42ce7a98f9539a7d7e63637acc337fcff3e"
   end
 
   depends_on "rust" => :build

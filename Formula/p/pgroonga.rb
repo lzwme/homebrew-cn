@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.2.3.tar.gz"
-  sha256 "93df838222f3536700de3bf0de9305eff1660c6c6c098b4039a52d7f62cc4e7c"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.2.4.tar.gz"
+  sha256 "591aa7cbd4920e01211c0a74e36e6b286aa332d55892615df1c389eb66fd5bff"
   license "PostgreSQL"
 
   livecheck do
@@ -11,13 +11,12 @@ class Pgroonga < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5cb2d9f25149f25bcdac03224fc611916ff283cf3cfbb11d548e32a7e5b852ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "46711e110276f4fb5a9246abccbe99e7d4f5aa3c19332955a3ab9ef282e9f697"
-    sha256 cellar: :any,                 arm64_ventura: "13babb327a1e856b0242e20f7745bbf34c66e12d856f9177a0db1547cef62211"
-    sha256 cellar: :any,                 sonoma:        "3887bc78ddcbc5cf27393216e06f8f938dc495973d64ea1a016683f9a4ba3650"
-    sha256 cellar: :any,                 ventura:       "96ec1d2238e9ef73652894e8228450e23298ceffddd5e3052753f04b0f825451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c5ab20f474e559474eae8cf5180dcb1aa3d7364ec418c19f4081c75c7c78ffa"
+    sha256 cellar: :any,                 arm64_sequoia: "7dee11d56208c67b9beafece4b6a7c7404da6dfa676886360881b90bf91e5679"
+    sha256 cellar: :any,                 arm64_sonoma:  "2158f0b6232901d491cdfaa4711379b96c4c62015d1c229706b0421362703c26"
+    sha256 cellar: :any,                 arm64_ventura: "ec4693dc5b4f3cd0c6f1cfdd3080537491bc5b7a5c4f4ef202fb88c8cf12dc5a"
+    sha256 cellar: :any,                 sonoma:        "7aaa568304d039b29b0104586c6bc059ba3ea6b2786908a3e2e55a3cfbd6b1b9"
+    sha256 cellar: :any,                 ventura:       "3c40a14775b2b5f4caba6baeec0717e64537294d697c5b5bf709ef111b3c010d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97e067ef693da8269ef9fccfee8f787704dc019714b4637b723d481d8e050b32"
   end
 
   depends_on "pkg-config" => :build

@@ -8,14 +8,13 @@ class Csvkit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f50172e23c737002cc4483f81dc2fdb34e6472a15455e40b36d4daa7474d4c54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5bd5c2370d9a07c3eaf12d482b500345e65fa8f18235790c7cd4055999f587b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "586ae6b586507fe4ed0b3385e57ce36e3651eec68ffc7d978616532fa2a65447"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fa1370dd6fbb0f87ae034c917fb44b90e6d9280b24e8941d1516f5f0dae2bfe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62603f3c9d9ebe54cda330b65a05840b48661cdb21cbd278aea18d760629b661"
-    sha256 cellar: :any_skip_relocation, ventura:        "11f6eb94986b44e5a347832d5cda83f47c93cc712db970410d0320ba86cb274b"
-    sha256 cellar: :any_skip_relocation, monterey:       "4095c2751186b0af7ee64d43c711797b0b72dafa81785353d80b491a5aad162a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "440773b3dd892846c2ec615537fd8cdcb2eff880934044c314be04632ba8943d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd187791a38c1fde0f23ca5d7acac82ca41544874246417fe813e653b8b30551"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00649aec0d216a9713b52284d9ea2bfc3b4f71d6585f6b62707d09a3b7124cd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7a28cf5eff3e79c4a415dd525bc41b8e887dfb9006676a20ac16b5c3dd58f30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab34e4c429c90f07114c9f0937e624995e93ab21e2a6135dbf0c3010f33aef8b"
+    sha256 cellar: :any_skip_relocation, ventura:       "772a8072e63c44237c3d35d4e614ef6720917f47aab4814a38876363f813e2ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f81584bda065418163346367996df7d739526bc083d68bce08b0addecb8de9d1"
   end
 
   depends_on "python@3.12"
@@ -121,7 +120,7 @@ class Csvkit < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    virtualenv_install_with_resources(link_manpages: true)
   end
 
   test do

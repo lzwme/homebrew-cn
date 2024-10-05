@@ -51,7 +51,7 @@ class Swig < Formula
       %}
     EOS
     (testpath"setup.py").write <<~EOS
-      #!usrbinenv python3
+      #!usrbinenv python3.12
       from distutils.core import setup, Extension
       test_module = Extension("_test", sources=["test_wrap.c", "test.c"])
       setup(name="test",
@@ -60,14 +60,14 @@ class Swig < Formula
             py_modules=["test"])
     EOS
     (testpath"run.py").write <<~EOS
-      #!usrbinenv python3
+      #!usrbinenv python3.12
       import test
       print(test.add(1, 1))
     EOS
 
     ENV.remove_from_cflags(-march=\S*)
     system bin"swig", "-python", "test.i"
-    system "python3", "setup.py", "build_ext", "--inplace"
-    assert_equal "2", shell_output("python3 .run.py").strip
+    system "python3.12", "setup.py", "build_ext", "--inplace"
+    assert_equal "2", shell_output("python3.12 .run.py").strip
   end
 end

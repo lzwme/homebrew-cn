@@ -3,18 +3,18 @@ class Gcalcli < Formula
 
   desc "Easily access your Google Calendar(s) from a command-line"
   homepage "https:github.cominsanumgcalcli"
-  url "https:files.pythonhosted.orgpackagesb066db883aef2db06fe6795e510f520b845e6db2b5b99922910236b7d06ef942gcalcli-4.5.0.tar.gz"
-  sha256 "fb3b7b2f4a086581ed5141b5a0f61822ef374ea782707e736b7711ecc35a0574"
+  url "https:files.pythonhosted.orgpackages68b8c3f3b8c73c9740eeb592e31f3f1092485ce8809fd7137d7c776a0b0d3567gcalcli-4.5.1.tar.gz"
+  sha256 "bbc8d6b9ce40d0be0535ffec3bb3384761400c7fbf1d67716e7d0e5fe9c6f2d5"
   license "MIT"
   head "https:github.cominsanumgcalcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9b047282b4a42ff2ad8b832bb70e6a97674b5b99aa2b5eedde8093389f643dc9"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ce8d0415aa650e71511666c0b2df8cc15a405e8d03f4f24e8ee2c560f83cc9f"
-    sha256 cellar: :any,                 arm64_ventura: "ac78b8831e00c0074069df0b5fba0a1a2033d5eac6255d6f873e6745b7215d56"
-    sha256 cellar: :any,                 sonoma:        "fdf66e8fb83a79d24fb9b2a45c21649ef5a80af5e7288ed9df2403fd3f0f198d"
-    sha256 cellar: :any,                 ventura:       "351389b7394df6993b4e91da2d779b16d79cd92e888a615be3fa821ce4bf16c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e4febfddb191170a2b14a254c3bd916bf2738ee7cc76f88585978304a2f8cb"
+    sha256 cellar: :any,                 arm64_sequoia: "1d62e9a6aee962bbe05a149624e3c99b767e1ce5cf5ba5eb8d5e08c8cfc8cfe7"
+    sha256 cellar: :any,                 arm64_sonoma:  "683cf9b04a852454c085751381787be10502543c69515e43901f8efa45537a1f"
+    sha256 cellar: :any,                 arm64_ventura: "267c34406dffbd70ccca671925a2a0ba632aa37befb17b615cedcf13bcf98ba9"
+    sha256 cellar: :any,                 sonoma:        "441052bada8a6814969b586f0c5264d372706b8afc89e3a1d669505e1493bbc1"
+    sha256 cellar: :any,                 ventura:       "b25044a7e369760293922c987cd05d9efbd975032800ca2a8810598d1e801979"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b11aa1d792848e8e882128611738379e7d36b9b1338ad4c4f48ff8e15f15146"
   end
 
   depends_on "cmake" => :build # for google_api_python_client_stubs
