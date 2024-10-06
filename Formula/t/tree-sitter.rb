@@ -1,10 +1,21 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https:tree-sitter.github.io"
-  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.23.2.tar.gz"
-  sha256 "ad81a585e399093bcba2fab179bf8971fdebaf701758af20d84d21f24fdf1b50"
   license "MIT"
   head "https:github.comtree-sittertree-sitter.git", branch: "master"
+
+  # Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https:github.comtree-sittertree-sitterarchiverefstagsv0.24.1.tar.gz"
+    sha256 "7adb5bb3b3c2c4f4fdc980a9a13df8fbf3526a82b5c37dd9cf2ed29de56a4683"
+
+    # Fix `.pc` file generation. Remove at next release.
+    # https:github.comtree-sittertree-sitterpull3745
+    patch do
+      url "https:github.comtree-sittertree-sittercommit079c69313fa14b9263739b494a47efacc1c91cdc.patch?full_index=1"
+      sha256 "d2536bd31912bf81b2593e768159a31fb199fe922dafb22b66d7dfba0624cc25"
+    end
+  end
 
   livecheck do
     url :stable
@@ -12,12 +23,13 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e9da2fa57f0c73ea494355d7a52f7ef7d3f8444aba8b4ae61e12b416a1eb9a0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f49dea31a86dfb5980ca4e37fcf2e2d882c9a9764929f158be695428d721628"
-    sha256 cellar: :any,                 arm64_ventura: "acc9782da86f99e4d63e1221fd607697ef7bad0c2496333848255ebec40761c6"
-    sha256 cellar: :any,                 sonoma:        "db9aa777f191470076974ec5263692995de9a9b125612e30e9f61238f5f5e904"
-    sha256 cellar: :any,                 ventura:       "7717d5834c25f228d5769b914aa47ee42e98cb82a1fa0cb510d8bb117b826442"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2ede1fcbca769ac6422debbd49fb41ee0af98bfad66153cb58bcd5a10e398ce"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c38fb31907c808f4ea3b888a416147f143b9dd34e3247f168be845f9b13102ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ebe5cdfc4d228e41e722d4a806bc727bb2dd3d00d7c86f12ef9939796d41bfc"
+    sha256 cellar: :any,                 arm64_ventura: "b700c06d13eddfaf83edf4dfed45ccb7a096ef85c3bc05ecd0ac4fd69b6aa8d0"
+    sha256 cellar: :any,                 sonoma:        "503f7eceee26d8bd10fda3bdf62bfcd30cbfba7a7f385c01296542be79b87237"
+    sha256 cellar: :any,                 ventura:       "462f3c6ecd458e75e4a3ae22d71f2e85ce7c1debf09b735ef9adf294e6227555"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03906c550859cbc081475a4f8ee38321abb7899223f8ad8fb85efbe12d4f25b3"
   end
 
   depends_on "rust" => :build

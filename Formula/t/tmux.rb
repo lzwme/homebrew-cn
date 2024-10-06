@@ -1,8 +1,8 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https:tmux.github.io"
-  url "https:github.comtmuxtmuxreleasesdownload3.5tmux-3.5.tar.gz"
-  sha256 "2fe01942e7e7d93f524a22f2c883822c06bc258a4d61dba4b407353d7081950f"
+  url "https:github.comtmuxtmuxreleasesdownload3.5atmux-3.5a.tar.gz"
+  sha256 "16216bd0877170dfcc64157085ba9013610b12b082548c7c9542cc0103198951"
   license "ISC"
 
   livecheck do
@@ -12,12 +12,12 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "981ba63b0f09a3f42968805b4a7ce9b6b3198152646ba201b6d8dbdf7f736929"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2532c0bb5a7aa570c8454f6cd4f4df08fc6606345a8e9fc7e56f7b7b61a38c5"
-    sha256 cellar: :any,                 arm64_ventura: "d81b0f00925d5b6e2568875512bcf8666d19d196d619313946cb715e5fda4839"
-    sha256 cellar: :any,                 sonoma:        "bafcf00422fcde3845487181f872688946966e5caabec6ea9ae0eac9aee40e3c"
-    sha256 cellar: :any,                 ventura:       "5863900439737e5eb23779055a2aedab1c3513bb48a36aadc629c3fb66a98d6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e57b135585e80c982946d364053337171184bdb1cd75eba1cb3efc8768358ee"
+    sha256 cellar: :any,                 arm64_sequoia: "5e371680cf27c72d30e70f57087bef3fadb408e1881a58839137625c10919f64"
+    sha256 cellar: :any,                 arm64_sonoma:  "58e253aca23e3deb4b6e171419047cba7283a51cba51962351f5e51661d53437"
+    sha256 cellar: :any,                 arm64_ventura: "7cfc60d84d3ec0ba61580633d7add6ffc0eeaa07ec27ceb2380fe434530c90bb"
+    sha256 cellar: :any,                 sonoma:        "2e10a69a7d9828300ef1ec19f139c6d7eef7522d451e8812073460c4ba61ac28"
+    sha256 cellar: :any,                 ventura:       "7d823e8b277d302563902e25b9e75594ad46f1996f9e53e5bb70d89c910bf092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8f77441d2c3db824f04268e62e1db8f240cbff682b12b40a77f5f3ae12f5a94"
   end
 
   head do
@@ -53,16 +53,12 @@ class Tmux < Formula
       --sysconfdir=#{etc}
     ]
 
-    if OS.mac?
-      # tmux finds the `tmux-256color` terminfo provided by our ncurses
-      # and uses that as the default `TERM`, but this causes issues for
-      # tools that link with the very old ncurses provided by macOS.
-      # https:github.comHomebrewhomebrew-coreissues102748
-      args << "--with-TERM=screen-256color" if MacOS.version < :sonoma
-      args << "--enable-utf8proc" if MacOS.version >= :high_sierra
-    else
-      args << "--enable-utf8proc"
-    end
+    # tmux finds the `tmux-256color` terminfo provided by our ncurses
+    # and uses that as the default `TERM`, but this causes issues for
+    # tools that link with the very old ncurses provided by macOS.
+    # https:github.comHomebrewhomebrew-coreissues102748
+    args << "--with-TERM=screen-256color" if OS.mac? && MacOS.version < :sonoma
+    args << "--enable-utf8proc" if OS.linux? || MacOS.version >= :high_sierra
 
     ENV.append "LDFLAGS", "-lresolv"
     system ".configure", *args, *std_configure_args

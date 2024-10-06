@@ -2,6 +2,7 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https:neovim.io"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https:github.comneovimneovimarchiverefstagsv0.10.2.tar.gz"
@@ -19,6 +20,8 @@ class Neovim < Formula
 
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https:github.comorgsHomebrewdiscussions3611
+    # NOTE: The `install` method assumes that the parser name follows the final `-`.
+    #       Please name the resources accordingly.
     resource "tree-sitter-c" do
       url "https:github.comtree-sittertree-sitter-carchiverefstagsv0.21.3.tar.gz"
       sha256 "75a3780df6114cd37496761c4a7c9fd900c78bee3a2707f590d78c0ca3a24368"
@@ -56,12 +59,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "be2e4da3a98a4b08c2547ea4eb2eb46097772175db962a561e6c825474daa578"
-    sha256 arm64_sonoma:  "7ddb9f6f9fdefdf2905b3704ab15ab9f9e1270223cdc775646cea6fce6a9501e"
-    sha256 arm64_ventura: "3005a00e39203d2971b2993a9fd63d3db730798c697279d43eb6d2408e7e896b"
-    sha256 sonoma:        "2ff5bdc6a9ede9d409055b73162c26d821e4788838a7bddf0991f7930d61430a"
-    sha256 ventura:       "b6e38a65b0c7d110b1d9b2b860bafb79534a131e9f3fc396ed45e767170f01f8"
-    sha256 x86_64_linux:  "d541db2153930dca721b05df7105389d1c8fe51ea88fd4a74c09b83eacd8c219"
+    sha256 arm64_sequoia: "b74c4a50c70b5d6b869ffec9956e971d14ea7f26e73e1ae058f355267f1226a5"
+    sha256 arm64_sonoma:  "e39e1ac56d8a0c6c89d418ec494c5a3b67c08c630d7f1b82841fc070c3d50bc0"
+    sha256 arm64_ventura: "6446e3d5b4aded7afd64eb05e4ddf072e04a439cb2bcd574c1f5360918fabb4b"
+    sha256 sonoma:        "c59c7dfebb14003e8830fef8e225a12f205293ec72437cac67bfc48ea4888a1b"
+    sha256 ventura:       "35bf10802691b493670fc8af1e15e7b1fae5bab2cbee0b07b1b8f67ac83c13dd"
+    sha256 x86_64_linux:  "37003f89843037c1b019c33defba09696a6dea359875ee2b8ba85a36d11a838a"
   end
 
   head do
@@ -78,33 +81,40 @@ class Neovim < Formula
   depends_on "tree-sitter"
   depends_on "unibilium"
 
-  uses_from_macos "unzip" => :build
-
-  on_linux do
-    depends_on "libnsl"
-  end
-
   def install
-    resources.each do |r|
-      r.stage(buildpath"deps-buildbuildsrc"r.name)
-    end
+    if build.head?
+      cmake_deps = (buildpath"cmake.depsdeps.txt").read.lines
+      cmake_deps.each do |line|
+        next unless line.match?(TREESITTER_[^_]+_URL)
 
-    if build.stable?
-      cd "deps-buildbuildsrc" do
-        Dir["tree-sitter-*"].each do |ts_dir|
-          cd ts_dir do
-            if ts_dir == "tree-sitter-markdown"
-              cp buildpath"cmake.depscmakeMarkdownParserCMakeLists.txt", "CMakeLists.txt"
-            else
-              cp buildpath"cmake.depscmakeTreesitterParserCMakeLists.txt", "CMakeLists.txt"
-            end
-            parser_name = ts_dir[^tree-sitter-(\w+)$, 1]
-            system "cmake", "-S", ".", "-B", "build", "-DPARSERLANG=#{parser_name}", *std_cmake_args
-            system "cmake", "--build", "build"
-            system "cmake", "--install", "build"
-          end
+        parser, parser_url = line.split
+        parser_name = parser.delete_suffix("_URL")
+        parser_sha256 = cmake_deps.find { |l| l.include?("#{parser_name}_SHA256") }.split.last
+        parser_name = parser_name.downcase.tr("_", "-")
+
+        resource parser_name do
+          url parser_url
+          sha256 parser_sha256
         end
       end
+    end
+
+    resources.each do |r|
+      source_directory = buildpath"deps-buildbuildsrc"r.name
+      build_directory = buildpath"deps-buildbuild"r.name
+
+      parser_name = r.name.split("-").last
+      cmakelists = case parser_name
+      when "markdown" then "MarkdownParserCMakeLists.txt"
+      else "TreesitterParserCMakeLists.txt"
+      end
+
+      r.stage(source_directory)
+      cp buildpath"cmake.depscmake"cmakelists, source_directory"CMakeLists.txt"
+
+      system "cmake", "-S", source_directory, "-B", build_directory, "-DPARSERLANG=#{parser_name}", *std_cmake_args
+      system "cmake", "--build", build_directory
+      system "cmake", "--install", build_directory
     end
 
     # Point system locations inside `HOMEBREW_PREFIX`.
@@ -119,22 +129,20 @@ class Neovim < Formula
     # Replace `-dirty` suffix in `--version` output with `-Homebrew`.
     inreplace "cmakeGenerateVersion.cmake", "--dirty", "--dirty=-Homebrew"
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DLUV_LIBRARY=#{Formula["luv"].opt_libshared_library("libluv")}",
-                    "-DLIBUV_LIBRARY=#{Formula["libuv"].opt_libshared_library("libuv")}",
-                    "-DLPEG_LIBRARY=#{Formula["lpeg"].opt_libshared_library("liblpeg")}",
-                    *std_cmake_args
-
+    args = [
+      "-DLUV_LIBRARY=#{Formula["luv"].opt_libshared_library("libluv")}",
+      "-DLIBUV_LIBRARY=#{Formula["libuv"].opt_libshared_library("libuv")}",
+      "-DLPEG_LIBRARY=#{Formula["lpeg"].opt_libshared_library("liblpeg")}",
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   def caveats
-    return if latest_head_version.blank?
-
     <<~EOS
-      HEAD installs of Neovim do not include any tree-sitter parsers.
-      You can use the `nvim-treesitter` plugin to install them.
+      `--HEAD` installs also require:
+        brew install --HEAD utf8proc
     EOS
   end
 

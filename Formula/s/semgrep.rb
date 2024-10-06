@@ -7,6 +7,7 @@ class Semgrep < Formula
       tag:      "v1.90.0",
       revision: "8d38a7fcd5329824a8071757954ca64704e885ff"
   license "LGPL-2.1-only"
+  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -15,12 +16,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6df92349f1ada238a93d6e06a5cb4265c802e4c67604a16645beaba26de0cb99"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3448aa12bed32f49f9aa1b476f3a475c7944c626f27e9386e2f7d7ac57905eb"
-    sha256 cellar: :any,                 arm64_ventura: "610f2b277fad39ba15b189cdf05407c261eaa4dd0ba6d062020e1401e885f317"
-    sha256 cellar: :any,                 sonoma:        "be8141582b681f9e62a2bba593051422c7a09a55ee51d08d5fc2c4cd9f8cb417"
-    sha256 cellar: :any,                 ventura:       "80b24e3ddafe8ebebbc0fcf483d7c6ad8c95717cd9f5f01b67ee4d66c5c3af50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe81aef7ee10c0f033eac4cde9c208c11340c6e092e3876059f46888e5f31031"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1302aa9ce454fd54dea55e50ec77037a915723ea1ffb727ee17b1b2d9a3dd279"
+    sha256 cellar: :any,                 arm64_sonoma:  "e996cb8bff08190320cfeb8464de5f7b4488c12a0423c7928ab9fe21f19b6ff1"
+    sha256 cellar: :any,                 arm64_ventura: "b241544ce5068cd2d6ce6c2d65423422504769d3a8829783542938bcedf65a59"
+    sha256 cellar: :any,                 sonoma:        "8c313d2cd7c8eb7dac6c7735753afd864c9ec85209fd57b3a84f544f73f9ae00"
+    sha256 cellar: :any,                 ventura:       "33191794a1a953b93f44a6fa2918d2e726e77a1e3f5b4f6b6b8de1677a9402ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f45de2d13de665fa7ce3142979db921428a15af3705d4022be29b063fad6c09"
   end
 
   depends_on "autoconf" => :build
@@ -276,6 +278,28 @@ class Semgrep < Formula
     # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
+    # build fails with uuidm 0.9.9
+    inreplace "semgrep.opam", ^\s+"uuidm"$, "\\0 {= \"0.9.8\"}"
+    odie "remove the `inreplace` for semgrep.opam!" if build.bottle? && version > "1.90.0"
+
+    # Ensure dynamic linkage to our libraries
+    inreplace "srcmainflags.sh" do |s|
+      s.gsub!("$(brew --prefix libev)liblibev.a", Formula["libev"].opt_libshared_library("libev"))
+      s.gsub!("$(pkg-config gmp --variable libdir)libgmp.a", Formula["gmp"].opt_libshared_library("libgmp"))
+      s.gsub!(
+        "$(pkg-config tree-sitter --variable libdir)libtree-sitter.a",
+        Formula["tree-sitter"].opt_libshared_library("libtree-sitter"),
+      )
+      s.gsub!(
+        "$(pkg-config libpcre --variable libdir)libpcre.a",
+        Formula["pcre"].opt_libshared_library("libpcre"),
+      )
+      s.gsub!(
+        "$(pkg-config libpcre2-8 --variable libdir)libpcre2-8.a",
+        Formula["pcre2"].opt_libshared_library("libpcre2-8"),
+      )
+    end
+
     ENV.deparallelize
     Dir.mktmpdir("opamroot") do |opamroot|
       ENV["OPAMROOT"] = opamroot
@@ -289,8 +313,6 @@ class Semgrep < Formula
       ENV["OPAMNODEPEXTS"] = ENV["OPAMYES"] = "1"
       # Set library path so opam + lwt can find libev
       ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}lib"
-      # Set path to libev for our static linking logic
-      ENV["SEMGREP_LIBEV_ARCHIVE_PATH"] = "#{HOMEBREW_PREFIX}liblibev.a"
       # Opam's solver times out when it is set to the default of 60.0
       # See: https:github.comHomebrewhomebrew-corepull191306
       ENV["OPAMSOLVERTIMEOUT"] = "1200"

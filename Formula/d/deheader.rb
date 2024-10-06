@@ -3,8 +3,8 @@ class Deheader < Formula
 
   desc "Analyze C/C++ files for unnecessary headers"
   homepage "http://www.catb.org/~esr/deheader/"
-  url "http://www.catb.org/~esr/deheader/deheader-1.10.tar.gz"
-  sha256 "909d2683a3e62da54bfc660814b4d8af93f582e23858810cc41bfa081571f593"
+  url "http://www.catb.org/~esr/deheader/deheader-1.11.tar.gz"
+  sha256 "553fd064a0e46ff5a88efd121e68d7613c5ffa405d1e7f775ce03111eae30882"
   license "BSD-2-Clause"
 
   livecheck do
@@ -13,8 +13,7 @@ class Deheader < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "fa33da4be1663b6022f8fd5ca847d56f779d8d69538ad3035e034af160a15b02"
+    sha256 cellar: :any_skip_relocation, all: "2caa30192b0b43e4892d9742d759b65d3cee8109c87e7169fd371a896cfd424e"
   end
 
   head do
@@ -22,18 +21,15 @@ class Deheader < Formula
     depends_on "xmlto" => :build
   end
 
-  depends_on "python@3.12"
+  uses_from_macos "python"
 
   def install
-    if build.head?
-      ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-      system "make"
-    end
+    system "make", "XML_CATALOG_FILES=#{etc}/xml/catalog" if build.head?
 
     bin.install "deheader"
     man1.install "deheader.1"
 
-    rewrite_shebang detected_python_shebang, bin/"deheader"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), bin/"deheader"
   end
 
   test do

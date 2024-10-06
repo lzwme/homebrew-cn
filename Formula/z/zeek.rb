@@ -2,8 +2,8 @@ class Zeek < Formula
   desc "Network security monitor"
   homepage "https:www.zeek.org"
   url "https:github.comzeekzeek.git",
-      tag:      "v7.0.2",
-      revision: "270429bfeacbcc21eabe1a73f26707e68d418abf"
+      tag:      "v7.0.3",
+      revision: "7a73f817929b72b8c7acf697bf52b7267606a207"
   license "BSD-3-Clause"
   head "https:github.comzeekzeek.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Zeek < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e9238f9f37be30fcfa92dc11ed7259d3ab1287b88e7e177fcf1802011a0d9a7b"
-    sha256 arm64_sonoma:  "c8a307ef512be74896e10127dd59c7fa83da759e687316aaf157325fade2e39e"
-    sha256 arm64_ventura: "8936cc5158c3ef75c98ff2ca44c717b76efd7a440792c3e8fc825a4ffc62ef13"
-    sha256 sonoma:        "a22bff21c931d4ee13d7602ac2aff19069883fb6a8aab4e734849b01916d95fc"
-    sha256 ventura:       "1c9a68e484f45d61c602f9aaf37f409a553e22c4d1a42a5d98de532012f75e93"
-    sha256 x86_64_linux:  "178d0ba515a540139f8b8d8f253600ebb1532b0fe10be27063a224e8e63b72c2"
+    sha256 arm64_sequoia: "be8812a1a9728ec6543eef9a482e08e493e258dda6011d2c035cad0240c11fe4"
+    sha256 arm64_sonoma:  "820069d04e13c8d7eafbe3966bbe59df13aa755cff97fb43031e3c592c8520f8"
+    sha256 arm64_ventura: "adb11ac63825891b81e52de62fb1f9a344b5e8732076a72f6cb68e6aac15891f"
+    sha256 sonoma:        "af3c43886608c1ff484e4dc23e61575575bb2917c62973e81121bc23b9233e28"
+    sha256 ventura:       "72c689e7c41b3b2fd9616ace93fbd6de32d22d0f1ba36924f884495619f90efb"
+    sha256 x86_64_linux:  "6f187468383bcc4406755a8b1d5152767b6890537fab116e83b436f68d9d967f"
   end
 
   depends_on "bison" => :build

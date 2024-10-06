@@ -1,18 +1,18 @@
 class Slackdump < Formula
   desc "Export Slack data without admin privileges"
   homepage "https:github.comrusqslackdump"
-  url "https:github.comrusqslackdumparchiverefstagsv2.5.12.tar.gz"
-  sha256 "f68f8edf78bd1c959217a69cd9c895e64fba3e4e69084f0fddc286615b1d150a"
+  url "https:github.comrusqslackdumparchiverefstagsv2.5.13.tar.gz"
+  sha256 "dd9eaccdb89c2a4fe43becf9beb7cd55a54f658d14abec871abc3304080a544e"
   license "GPL-3.0-only"
   head "https:github.comrusqslackdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a24beef5ee1ae066d96951f3c6488cfc0b6e5c00c9246070d26dd62d4fe08e7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a24beef5ee1ae066d96951f3c6488cfc0b6e5c00c9246070d26dd62d4fe08e7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a24beef5ee1ae066d96951f3c6488cfc0b6e5c00c9246070d26dd62d4fe08e7a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c915d5a962afecc08bf2886a2afef3745a0c9edc71f4bc84adf21f9aa90214a5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c915d5a962afecc08bf2886a2afef3745a0c9edc71f4bc84adf21f9aa90214a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79df357913866ea71bd5262de507790701de5e0e89e91e3cf64236aed14532a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbaa32b00f147a4de223ba06d68a5833b4b7fbe1b321f88b8d2a23499c582c61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbaa32b00f147a4de223ba06d68a5833b4b7fbe1b321f88b8d2a23499c582c61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbaa32b00f147a4de223ba06d68a5833b4b7fbe1b321f88b8d2a23499c582c61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e66019a0559be94ad98ba17de2647a3d4fe44d49620a8732dff211cfb0e3e50"
+    sha256 cellar: :any_skip_relocation, ventura:       "3e66019a0559be94ad98ba17de2647a3d4fe44d49620a8732dff211cfb0e3e50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1de375b9bb82a8e22b5c7d95cf1f367b2d6c01742ac178de84d2abfab1f189dc"
   end
 
   depends_on "go" => :build

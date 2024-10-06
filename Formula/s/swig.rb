@@ -24,23 +24,22 @@ class Swig < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "python-setuptools" => :test
-  depends_on "python@3.12" => :test
   depends_on "pcre2"
+
+  uses_from_macos "python" => :test
+  uses_from_macos "zlib"
 
   def install
     ENV.append "CXXFLAGS", "-std=c++11" # Fix `nullptr` support detection.
     system ".autogen.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     (testpath"test.c").write <<~EOS
-      int add(int x, int y)
-      {
+      int add(int x, int y) {
         return x + y;
       }
     EOS
@@ -50,24 +49,25 @@ class Swig < Formula
       extern int add(int x, int y);
       %}
     EOS
-    (testpath"setup.py").write <<~EOS
-      #!usrbinenv python3.12
-      from distutils.core import setup, Extension
-      test_module = Extension("_test", sources=["test_wrap.c", "test.c"])
-      setup(name="test",
-            version="0.1",
-            ext_modules=[test_module],
-            py_modules=["test"])
+    (testpath"pyproject.toml").write <<~EOS
+      [project]
+      name = "test"
+      version = "0.1"
+
+      [tool.setuptools]
+      ext-modules = [
+        {name = "_test", sources = ["test_wrap.c", "test.c"]}
+      ]
     EOS
     (testpath"run.py").write <<~EOS
-      #!usrbinenv python3.12
       import test
       print(test.add(1, 1))
     EOS
 
     ENV.remove_from_cflags(-march=\S*)
     system bin"swig", "-python", "test.i"
-    system "python3.12", "setup.py", "build_ext", "--inplace"
-    assert_equal "2", shell_output("python3.12 .run.py").strip
+    system "python3", "-m", "venv", ".venv"
+    system testpath".venvbinpip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
+    assert_equal "2", shell_output("#{testpath}.venvbinpython3 .run.py").strip
   end
 end

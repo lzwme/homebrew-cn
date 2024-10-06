@@ -1,8 +1,8 @@
 class Oasdiff < Formula
   desc "OpenAPI Diff and Breaking Changes"
   homepage "https:www.oasdiff.com"
-  url "https:github.comTufinoasdiffarchiverefstagsv1.10.25.tar.gz"
-  sha256 "878018d77b349d76811da8ff677ebc1e195581a1e148ff38d81c42d7c4d56b93"
+  url "https:github.comTufinoasdiffarchiverefstagsv1.10.26.tar.gz"
+  sha256 "678203c0e94ee7b6946419867eb6fd4d22cf2a9b6d6434e9be7431736b196807"
   license "Apache-2.0"
   head "https:github.comTufinoasdiff.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Oasdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eb649f4a71464ac369ce586767bbd7819046c27a42824083eae49ce28436261"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb649f4a71464ac369ce586767bbd7819046c27a42824083eae49ce28436261"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8eb649f4a71464ac369ce586767bbd7819046c27a42824083eae49ce28436261"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3415274bc963f1ee079394b5dc8f5a4d57313456254dbf6c992d4a85a297b67"
-    sha256 cellar: :any_skip_relocation, ventura:       "b3415274bc963f1ee079394b5dc8f5a4d57313456254dbf6c992d4a85a297b67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f68bbd076053fcdfde02ac41cec7ec895511b451d187f76d998466bf92afe2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2dddd150d2efa0a5eafff1bff8fd7d8f9ce827da3aaf772627cb38ebba6f03e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2dddd150d2efa0a5eafff1bff8fd7d8f9ce827da3aaf772627cb38ebba6f03e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2dddd150d2efa0a5eafff1bff8fd7d8f9ce827da3aaf772627cb38ebba6f03e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a836a76ab34d95dac6a382abe6c13d1b520fbb044f724803771be1cf36bef4cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a836a76ab34d95dac6a382abe6c13d1b520fbb044f724803771be1cf36bef4cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a17e1c228cc2615d618f4bdedcb36297b0f56fbaf92cf646b18912e9474493aa"
   end
 
   depends_on "go" => :build

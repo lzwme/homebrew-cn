@@ -1,18 +1,18 @@
 class Wthrr < Formula
   desc "Weather Companion for the Terminal"
   homepage "https:github.comttytmwthrr-the-weathercrab"
-  url "https:github.comttytmwthrr-the-weathercrabarchiverefstagsv1.2.0.tar.gz"
-  sha256 "6dbad5cf37fc364ec383f3c04cb4c676b0be8b760c06c0b689d1a04fc082c66c"
+  url "https:github.comttytmwthrr-the-weathercrabarchiverefstagsv1.2.1.tar.gz"
+  sha256 "ff5b47f2046ebefa9ff28cb52ece49a06f7b89230578801c338c77802aa721e0"
   license "MIT"
   head "https:github.comttytmwthrr-the-weathercrab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7123670512710361d2f70dc58f080a71c423e560c82c9a17b597a661595f4cc3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24ef173a19782510f7d3ad16b0c8af7f2eee4ab450b9f0e6ed536677523c2d0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bba93a070e6d97685a70aeb241d03abd390e5044ab30272abda2e26f01ba02c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "153f1ac8df16ffdaed4b9b8ac340c99abf3980fb7a762649b00c53f1993df221"
-    sha256 cellar: :any_skip_relocation, ventura:       "a22a40a694871ae04aefb5df671b0bfd5c9594de31bf8c058077a6c7de677d8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ef3d52887274f149bda3757fd5044900312081789394a721aaae022073088e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "762cc039b08678cc91207e5aba373a9926b4d7f6bd14b154080ec4c9f0144778"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423b5d934ed4948e6f91ff46bb6122fe3ef4801357cbe1323abe055e63a4bac4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5c71252f0517231d9b7ea64314591586df9419d5529029c4ef1d7b6ca73b315"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0a81d0cd757022468358c46c11db2ed9e34baefce396c4403ded61b65088f6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b4fdbcd8131123e488055b26f86a6ef912445e4a200b915a9ae4f561a45a753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0d8bda45cf33d2ec34c043302a42b9551d9d7c33dbdc0421c80ccb599db8219"
   end
 
   depends_on "pkg-config" => :build
