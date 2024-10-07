@@ -205,6 +205,7 @@ Homebrew-homebrew-core/Formula/a/argon2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argp-standalone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argtable.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/argtable3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argus-clients.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argyll-cms.rb, Homebrew/homebrew-core, 1
@@ -2154,7 +2155,6 @@ Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbucket.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitea.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gitfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/github-keygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-markdown-toc.rb, Homebrew/homebrew-core, 1
@@ -3255,7 +3255,6 @@ Homebrew-homebrew-core/Formula/l/llvm@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@17.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@18.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/llvm@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm4tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lmdb.rb, Homebrew/homebrew-core, 0
@@ -3647,6 +3646,7 @@ Homebrew-homebrew-core/Formula/lib/libpaho-mqtt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpanel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpano.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpaper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libparserutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpciaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpcl.rb, Homebrew/homebrew-core, 1
@@ -3871,6 +3871,8 @@ Homebrew-homebrew-core/Formula/lib/libzzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/m-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/m1ddc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/m4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/m68k-elf-binutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/m68k-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mabel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mac-robber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/macchina.rb, Homebrew/homebrew-core, 1
