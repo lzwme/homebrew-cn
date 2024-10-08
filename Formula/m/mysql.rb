@@ -1,30 +1,30 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  homepage "https://dev.mysql.com/doc/refman/9.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.0/mysql-9.0.1.tar.gz"
+  homepage "https:dev.mysql.comdocrefman9.0en"
+  url "https:cdn.mysql.comDownloadsMySQL-9.0mysql-9.0.1.tar.gz"
   sha256 "18fa65f1ea6aea71e418fe0548552d9a28de68e2b8bc3ba9536599eb459a6606"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 3
+  revision 4
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dev.mysql.comdownloadsmysql?tpl=files&os=src"
+    regex(href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 arm64_sequoia: "7d3c4494fe892cba4354a5b99676b0e8d038a903a57ee22630a7a64feff88f2f"
-    sha256 arm64_sonoma:  "0fc64a850a7d862eb3143ff163175e46151d094e0ccbc5aa1ae3817716d3c3cb"
-    sha256 arm64_ventura: "26f1f9195f2b5e280161a4b4973eedda29ebbfa7b35cdcadd884df90b70ed104"
-    sha256 sonoma:        "4410a402f65201900d058dca22f5ec1b859c03ea7fc56f976a3389b085ea1914"
-    sha256 ventura:       "05ab9d92e182e65eaa36b68c09cc816d2b7da038a50f5802fb360e6231106774"
-    sha256 x86_64_linux:  "5ed448269e91700b0add6b35220314637342ae008d4aee525cdb86c0784c76f1"
+    sha256 arm64_sequoia: "16dd296951c11dd0c603b0fdb10ae2a3be136abcd5badf97c5e6102178550b1f"
+    sha256 arm64_sonoma:  "c3b543fbe170198e59a25548b8e4f616c2b029b1ea53dc07e9eb3c6a9897a37c"
+    sha256 arm64_ventura: "58fd92a9ba6c8ec16e9962d850fd3995982275ee337cc0a2b845dbf93124aab6"
+    sha256 sonoma:        "15d27df2b4f2061f29b1250603bccd5b6e8fb5940517364a3d09a78974b77761"
+    sha256 ventura:       "442a458937a726755d13c170621b8e1c9694608cc9f140e71db10eb96da15f42"
+    sha256 x86_64_linux:  "522984610cd481928f33d0b3383306538c72231583b3dadcab2f8058848c1384"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "abseil"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -56,8 +56,13 @@ class Mysql < Formula
     cause "Requires C++20"
   end
 
+  # Patch out check for Homebrew `boost`.
+  # This should not be necessary when building inside `brew`.
+  # https:github.comHomebrewhomebrew-test-botpull820
+  patch :DATA
+
   def datadir
-    var/"mysql"
+    var"mysql"
   end
 
   def install
@@ -65,16 +70,16 @@ class Mysql < Formula
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
     keep = %w[boost duktape libbacktrace libcno lz4 rapidjson unordered_dense]
-    (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
     if OS.linux?
       # Disable ABI checking
-      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
 
       # Work around build issue with Protobuf 22+ on Linux
-      # Ref: https://bugs.mysql.com/bug.php?id=113045
-      # Ref: https://bugs.mysql.com/bug.php?id=115163
-      inreplace "cmake/protobuf.cmake" do |s|
+      # Ref: https:bugs.mysql.combug.php?id=113045
+      # Ref: https:bugs.mysql.combug.php?id=115163
+      inreplace "cmakeprotobuf.cmake" do |s|
         s.gsub! 'IF(APPLE AND WITH_PROTOBUF STREQUAL "system"', 'IF(WITH_PROTOBUF STREQUAL "system"'
         s.gsub! ' INCLUDE REGEX "${HOMEBREW_HOME}.*")', ' INCLUDE REGEX "libabsl.*")'
       end
@@ -84,25 +89,26 @@ class Mysql < Formula
       # Undefined symbols for architecture arm64:
       #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
       #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<std::runtime_error>(std::runtime_error) ...
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
     end
 
+    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=share/doc/#{name}
-      -DINSTALL_INCLUDEDIR=include/mysql
-      -DINSTALL_INFODIR=share/info
-      -DINSTALL_MANDIR=share/man
-      -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DINSTALL_PLUGINDIR=lib/plugin
+      -DINSTALL_DOCDIR=sharedoc#{name}
+      -DINSTALL_INCLUDEDIR=includemysql
+      -DINSTALL_INFODIR=shareinfo
+      -DINSTALL_MANDIR=shareman
+      -DINSTALL_MYSQLSHAREDIR=sharemysql
+      -DINSTALL_PLUGINDIR=libplugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
-      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}/bison
+      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}bison
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
-      -DWITH_ICU=#{Formula["icu4c"].opt_prefix}
+      -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_BOOST=boost
       -DWITH_EDITLINE=system
@@ -120,21 +126,21 @@ class Mysql < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix/"mysql-test").cd do
-      system "./mysql-test-run.pl", "status", "--vardir=#{buildpath}/mysql-test-vardir"
+    (prefix"mysql-test").cd do
+      system ".mysql-test-run.pl", "status", "--vardir=#{buildpath}mysql-test-vardir"
     end
 
     # Remove the tests directory
-    rm_r(prefix/"mysql-test")
+    rm_r(prefix"mysql-test")
 
     # Fix up the control script and link into bin.
-    inreplace prefix/"support-files/mysql.server",
-              /^(PATH=".*)(")/,
-              "\\1:#{HOMEBREW_PREFIX}/bin\\2"
-    bin.install_symlink prefix/"support-files/mysql.server"
+    inreplace prefix"support-filesmysql.server",
+              ^(PATH=".*)("),
+              "\\1:#{HOMEBREW_PREFIX}bin\\2"
+    bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath/"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~EOS
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -145,16 +151,16 @@ class Mysql < Formula
   end
 
   def post_install
-    # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
+    # Make sure the varmysql directory exists
+    (var"mysql").mkpath
 
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (datadir/"mysql/general_log.CSM").exist?
+    unless (datadir"mysqlgeneral_log.CSM").exist?
       ENV["TMPDIR"] = nil
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
+      system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
     end
   end
 
@@ -175,7 +181,7 @@ class Mysql < Formula
       To connect run:
           mysql -u root
     EOS
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
+    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
       s += <<~EOS
 
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
@@ -186,27 +192,65 @@ class Mysql < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
+    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
     keep_alive true
-    working_dir var/"mysql"
+    working_dir var"mysql"
   end
 
   test do
-    (testpath/"mysql").mkpath
-    (testpath/"tmp").mkpath
+    (testpath"mysql").mkpath
+    (testpath"tmp").mkpath
 
-    args = %W[--no-defaults --user=#{ENV["USER"]} --datadir=#{testpath}/mysql --tmpdir=#{testpath}/tmp]
-    system bin/"mysqld", *args, "--initialize-insecure", "--basedir=#{prefix}"
+    args = %W[--no-defaults --user=#{ENV["USER"]} --datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
+    system bin"mysqld", *args, "--initialize-insecure", "--basedir=#{prefix}"
     port = free_port
-    pid = spawn(bin/"mysqld", *args, "--port=#{port}")
+    pid = spawn(bin"mysqld", *args, "--port=#{port}")
     begin
       sleep 5
 
-      output = shell_output("#{bin}/mysql --port=#{port} --user=root --password= --execute='show databases;'")
+      output = shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
       assert_match "information_schema", output
-      system bin/"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+      system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
     ensure
       Process.kill "TERM", pid
     end
   end
 end
+
+__END__
+diff --git aCMakeLists.txt bCMakeLists.txt
+index 438dff720c5..47863c17e23 100644
+--- aCMakeLists.txt
++++ bCMakeLists.txt
+@@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
+ MYSQL_CHECK_FIDO()
+ MYSQL_CHECK_FIDO_DLLS()
+
+-IF(APPLE)
+-  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
+-  IF(EXISTS ${HOMEBREW_BASE}includeboost)
+-    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
+-      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-        MESSAGE(FATAL_ERROR
+-          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
+-          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
+-          "Including headers from ${HOMEBREW_BASE}include "
+-          "will break the build.\n"
+-          "Please use WITH_${SYSTEM_LIB}=bundled\n"
+-          "or do 'brew uninstall boost' or 'brew unlink boost'"
+-          )
+-      ENDIF()
+-    ENDFOREACH()
+-  ENDIF()
+-  # Ensure that we look in usrlocalinclude or opthomebrewinclude
+-  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
+-    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}include)
+-      BREAK()
+-    ENDIF()
+-  ENDFOREACH()
+-ENDIF()
+-
+ IF(WITH_AUTHENTICATION_WEBAUTHN OR
+   WITH_AUTHENTICATION_CLIENT_PLUGINS)
+   IF(WITH_FIDO STREQUAL "system" AND
