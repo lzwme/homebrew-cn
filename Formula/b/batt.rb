@@ -2,14 +2,14 @@ class Batt < Formula
   desc "Control and limit battery charging on Apple Silicon MacBooks"
   homepage "https:github.comcharlie0129batt"
   url "https:github.comcharlie0129batt.git",
-    tag:      "v0.3.0",
-    revision: "1b3c26035f0d60e2f0c62b901f2ffed9428fb3e7"
+    tag:      "v0.3.1",
+    revision: "a7fedaf3ea1cceacf8b35c6d64277ee5a9d1963c"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e46e909a49f8575cd256f9463309fa6dec034b10f91d331c7c190ebe0b65f840"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d77617cc54fecaf0fe7dd999c7f8e63e6308e285dfcc943bfa626b5dc060de6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f293f52c6e6cd08d3843e5529396b86a473002d248a87c3c9cb3191604ecf8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61bd7790a82f2269b9a0ce1585c57564d03be4e4ac89b8f0d8843c0073a688e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "198bd7bb9a808f0a9e4cb1a31b7e9c2a72d690ba1d07ebddf78b6d0ce0b6dd03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6eff598159b263327b8b562ab32f5e5e7157c20f25cbecfa08b48eda794c4c43"
   end
 
   depends_on "go" => :build
@@ -17,27 +17,26 @@ class Batt < Formula
   depends_on :macos
 
   def install
-    # batt does not provide separate control for AllowNonRootAccess.
-    # Normally it's changed during service file installation,
-    # but brew service supersedes that, leaving a daemon refusing to
-    # talk to anything non-root. Changing the defaults here.
-    inreplace "conf.go", "AllowNonRootAccess:      false,",
-                         "AllowNonRootAccess:      true,"
-    # Limit config path to Homebrew prefix. The socket remains in varrun
-    # to deter non-root invocation of daemon
-    inreplace ["conf.go", "README.md"], "etcbatt.json", etc"batt.json"
-    # Due to local changes version tag would show v0.2.1-dirty
-    system "make", "VERSION=v#{version}"
-    inreplace "hackcc.chlc.batt.plist", "pathtobatt", bin"batt"
-    system "plutil", "-insert", "ProcessType", "-string", "Background",
-                     "--", "hackcc.chlc.batt.plist"
+    # Point to the correct path for the binary
+    inreplace "hackcc.chlc.batt.plist", "pathtobatt", opt_bin"batt"
+    # Limit config path to Homebrew prefix.
+    system "plutil", "-insert", "ProgramArguments",
+           "-string", "--config=#{etc}batt.json", "-append",
+           "--", "hackcc.chlc.batt.plist"
+    # Allow non-root access to the battery controller.
+    system "plutil", "-insert", "ProgramArguments",
+           "-string", "--always-allow-non-root-access", "-append",
+           "--", "hackcc.chlc.batt.plist"
+    # Due to local changes version tag would show vx.x.x-dirty, override VERSION.
+    # GOTAGS is set to disable built-in installuninstall commands when building for Homebrew.
+    system "make", "GOTAGS=brew", "VERSION=v#{version}"
     bin.install "binbatt"
     prefix.install "hackcc.chlc.batt.plist"
   end
 
   def caveats
     <<~EOS
-      The service must be running before most of batt's commands will work.
+      The batt service must be running before most of batt's commands will work.
     EOS
   end
 
@@ -49,7 +48,7 @@ class Batt < Formula
   test do
     # NB: assumes first run of batt, with no previous config.
     assert_match "config file #{etc}batt.json does not exist, using default config",
-      shell_output("#{bin}batt daemon 2>&1", 1) # Non-root daemon exits with 1
+      shell_output("#{bin}batt daemon --config=#{etc}batt.json 2>&1", 1) # Non-root daemon exits with 1
     assert_match "failed to connect to unix socket.",
       shell_output("#{bin}batt status 2>&1", 1) # Cannot connect to daemon
   end

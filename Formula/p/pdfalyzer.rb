@@ -19,6 +19,7 @@ class Pdfalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a25f8d4f994fb53fb7a47706be636ae35112389e05862393d2bb42c07c4e09b1"
   end
 
+  depends_on "openssl@3"
   depends_on "python@3.12"
 
   resource "anytree" do

@@ -4,18 +4,17 @@ class Openstackclient < Formula
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
   # TODO: remove `setuptools` from pypi_formula_mappings.json after https://review.opendev.org/c/openstack/pbr/+/924216
-  url "https://files.pythonhosted.org/packages/8a/8c/4573a1abacafd00f76bba1c1c377a5fdbf86dd19ebe6eb71eb8603be93a4/python-openstackclient-7.1.2.tar.gz"
-  sha256 "84b6f1726fcb92a314d9dc93318848075da247b798314842d1b152f336441a5d"
+  url "https://files.pythonhosted.org/packages/a4/5b/039a64dee3e0a6bbe83baae2955217617d3142402eae8e9052385416826c/python-openstackclient-7.1.3.tar.gz"
+  sha256 "421b0804259325908762544c19feb09243e367348bbfa3a4d515a4c1184226e7"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "9d1690ce4b6910335d06eaf379b95818e9aea7c22470504af4f69eae80bc30e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "0078cb3676ea66ec7367c962054476a5d98785cb708ff3a28b3c7d59ccf51180"
-    sha256 cellar: :any,                 arm64_ventura: "dc603615259b88391943b2a2c8ff483629b4986119198fa5ebdfc3300929cb84"
-    sha256 cellar: :any,                 sonoma:        "ecf016f911caee6f1b69ac00610218898210e077759cba158c3e23b2d36ea02c"
-    sha256 cellar: :any,                 ventura:       "c8fcb3946db3ef542f4d441cff886858978aa5498239f484a5da09eef794ce5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dba32f9b3a2323a5f577564aad9cf0c4f4f282c2fb7d38863a39016b9a71cbc"
+    sha256 cellar: :any,                 arm64_sequoia: "ca032b35003823b921d2b2ef493a5f586659bb83383f2b57b2efa287e7cfc407"
+    sha256 cellar: :any,                 arm64_sonoma:  "165fc1762cd0c88406155406bd8cfbb9e7a753dbb4acbf375aea70ca1fb20977"
+    sha256 cellar: :any,                 arm64_ventura: "b3f673afda8aa95dff985de9c46d7fc9d75011f22f480aea569914fd79824d0b"
+    sha256 cellar: :any,                 sonoma:        "a9a68ec4db7934158270c7f5b48f9d66152b72394eaf65714ab64f600f16b7e8"
+    sha256 cellar: :any,                 ventura:       "b71ac4ad3eacf4130cc428d86185b61c65c88266a9ddfec4c606da95f4a51a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "587bfbb3e8e451b527ba3092c5f9ae103c5dffbbecc6b3ba2b2d40a8fe37ce25"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -117,8 +116,8 @@ class Openstackclient < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/f8/b9/cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4b/jsonschema_specifications-2023.12.1.tar.gz"
-    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+    url "https://files.pythonhosted.org/packages/10/db/58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352/jsonschema_specifications-2024.10.1.tar.gz"
+    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
   resource "keystoneauth-websso" do

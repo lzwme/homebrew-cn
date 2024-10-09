@@ -1,18 +1,18 @@
 class Deadfinder < Formula
   desc "Finds broken links"
   homepage "https:rubygems.orggemsdeadfinder"
-  url "https:github.comhahwuldeadfinderarchiverefstags1.4.2.tar.gz"
-  sha256 "4986349e100bc3dd06c9063a61b072e266549a7c5d67e0b787646e529b54e4b7"
+  url "https:github.comhahwuldeadfinderarchiverefstags1.4.4.tar.gz"
+  sha256 "65be55ddea901827b033b5b9c94edb8ceba5c83f70af38e99f340d4239c902d6"
   license "MIT"
   head "https:github.comhahwuldeadfinder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "483894cf4b3e99decc906ca0e96a2ce042e6f14367d4b0586330e12cc9982ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0df3b04ac10560f8a2c3385b9f6da7f62be3d42b79b3b77116d8ea356dba9bb"
-    sha256 cellar: :any,                 arm64_ventura: "7b87883997ac8098f578acc6952f90ee9822f8f9c96fd095b2215e8b73ce2811"
-    sha256 cellar: :any,                 sonoma:        "bc10cd63a742be1a04baf2b573747b9220a349509c5d5f9016774acb0446a0ab"
-    sha256 cellar: :any,                 ventura:       "0672a08e2d8f0323eebb69688f26f3fe2298d8e68e72b95edbfeec1602916b1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "564455831dd75636dba3b0c6cc1e30410399e958ec700fd3ff4ee12a824aa03f"
+    sha256 cellar: :any,                 arm64_sequoia: "85435034ec7c61873c5ce16758d97d5f006d14d7293b6b1d675c3c0b7097b59e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5f626e7d3b0dd45139a4ee5bb5b28373c1afb970a6cd6a9f911559ee5b52eab"
+    sha256 cellar: :any,                 arm64_ventura: "a5e6d89f92472c86095c31e191d6015c59e8a7bda91a1d50ca1747c6d0236042"
+    sha256 cellar: :any,                 sonoma:        "2debc32e465180735991d140398a510c1dec980533bcfa6e3858f32325487ba0"
+    sha256 cellar: :any,                 ventura:       "547df6f7924cfb7b4071fd481993460b26890eacc9e9e37b7aa84b86ed7944c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "532eb37efcd65401cdc221972b3e25cf648aae3c0b3b1c9cff6a231b1fe1329e"
   end
 
   depends_on "ruby"

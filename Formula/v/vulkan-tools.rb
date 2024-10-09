@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.296.tar.gz"
-  sha256 "a44b5456f473dae0b6d15c23d3b1eb461bb8ef58867271abd641d99735a54b6c"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.297.tar.gz"
+  sha256 "95bffa39d90f3ec81d8e3a0fa6c846ac1a10442152cc0b6d0d6567ce48932f89"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "47f50859981f13ae096b81e512353d7a038561f2b5c3994b4c3728172b96c4e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc6e873fe5cf454783a410bde0ca985fd57cdefd5a7976a1df21dea2dce428cf"
-    sha256 cellar: :any,                 arm64_ventura: "9afeade2b8acf5999a8013e11b29f0dcc59f4d0c2939ab78bd3d03680bb0340c"
-    sha256 cellar: :any,                 sonoma:        "b3efe004bd4eddb0235d79ed9e779b93b03f7ce954327c34328b651e5da6fc79"
-    sha256 cellar: :any,                 ventura:       "80e88886f39d70433b768950de83192946377ccc9023d21d9c95c620f0eb4cb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3071e30552325cc54d5a483749d8bcf1674d6e890bc5f3b3aee239085166cfa3"
+    sha256 cellar: :any,                 arm64_sequoia: "d5987458c7432d9b9d368de44aca9d5904e9277250b2fe7d0e63522bb974b448"
+    sha256 cellar: :any,                 arm64_sonoma:  "b968281bb23c2280fa8e826b60fa51bb0f0fd799e296aa7a79b27e9cb7271746"
+    sha256 cellar: :any,                 arm64_ventura: "258748e54c9d0a3d9c4d8928522bc0e05f7989c2518ede87c24367a348bac427"
+    sha256 cellar: :any,                 sonoma:        "699dcc27a7e0d5c800268f3695d64770b38304dc26e3a61eb8ee47259655430f"
+    sha256 cellar: :any,                 ventura:       "f00430fc8b30553d483c4dc40a12377e61f1bd4ae604ef4b8afc927bff2f2a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1866aced1452db4db4f25f04aee6a1caa6e7697e2de1ac8b359dfb56b374b87"
   end
 
   depends_on "cmake" => :build

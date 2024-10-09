@@ -1,18 +1,18 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https:github.comjqnatividadqsv"
-  url "https:github.comjqnatividadqsvarchiverefstags0.135.0.tar.gz"
-  sha256 "de2bf3ba3d0f4bc71a2628cb558e878da24e312c9addcbe3958c5169540d980c"
+  url "https:github.comjqnatividadqsvarchiverefstags0.136.0.tar.gz"
+  sha256 "12149c7d84a3f1a28a65bb6e82a5d87b3f2f886e1142be90233e1507158f94a0"
   license any_of: ["MIT", "Unlicense"]
   head "https:github.comjqnatividadqsv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec14051a3490b3e62d17146bbe81b1cf1f809610976886efe5f2981697f0f76d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08f6a596a28787289e045c173576cfd30bd81705b1916842fd19046aa8c6d8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "58f746661889ae0d1a58d1d91cef2e455a99a49763bc8b4613de9671572d518a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "047fb9f90eb501c7c7ab6bca1d766212143496176dcbc96061a007d72b20388d"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ba695ad12f15dc8591866f848e7032ba7738a9f9a86edf2030c654bdd48e0fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "985c11f31db0f95f557129d6e223b0608b4d3d8b85e04ab5ba09bd083f79616b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60d56abdf8f4e8f2a7ec12d848aaf01754f17a401dd50e403275cbf20d1faaba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2048215e3a795558b3ea8c164990b1e7cbbfdd7dcb28b16bd256024f8f88c2e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e1db731c78b3f828bc1812f1f59fdb3b1f519ef72a7f33c342994aeef0c15ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8a0b7171f5e6308b3b4aaa5fb07ec9174e1ee6f074296bb435fa8479bdf2bfa"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea01cb419ed8127ae0c7f577555d06fc240739bb8d7397b142dec2c89146c8cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c64c80f1489938d081fd381a87336576dd8ca380f2afb176f1d5a9f77304618"
   end
 
   depends_on "rust" => :build

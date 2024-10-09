@@ -20,6 +20,8 @@ class Partio < Formula
   depends_on "doxygen" => :build
   depends_on "python@3.12"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "freeglut"
     depends_on "mesa"
