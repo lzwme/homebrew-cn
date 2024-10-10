@@ -4,22 +4,22 @@ class Crystalline < Formula
   url "https:github.comelbywancrystallinearchiverefstagsv0.14.1.tar.gz"
   sha256 "caa8cc661abc2ba63194983aae46e87c896d89c228a158521e40c34375d738f7"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sequoia: "325a6b36db0895dd4d690b735bc2d51b610e2484418551ea4f6d79068036f28f"
-    sha256 arm64_sonoma:  "7dc766c53c793bd6a983e774d12e039e237a10ed8494d19879a8e1f05fb9864e"
-    sha256 arm64_ventura: "3cd0459c1bb8ffcda56a1cbf1febf08d9be15ffa5d966a0f118e077e6b4a3bb6"
-    sha256 sonoma:        "f64cd7d8667ee0f0a002360f27c435580a227ad655608352bf413ade68f2edb9"
-    sha256 ventura:       "53e251e0463de322579586df86942fc5e9e5df8ac67a9497c91cf8b7e2b74a19"
-    sha256 x86_64_linux:  "e3326305c34cd0c58d44a0f13188f870c3f28d13dfbeac8e966e7b4b89dc55f9"
+    sha256 arm64_sequoia: "2c0bdae15a8c547f60aa6fa3bfb7be017765220a52a502042df386772bf7e078"
+    sha256 arm64_sonoma:  "f80fba1300229e2723ab10499d28f3543dc8f22f9f9e7fb832ba1ffa70aa9210"
+    sha256 arm64_ventura: "4c1591c4b6bab0a830b0bf897610cdaf0c96a4f3f7c2aeb84cb12af1a862933a"
+    sha256 sonoma:        "a48d4440196fb81924b499468e1eba5cd4089b70a12a0c54be1e9b486d677c11"
+    sha256 ventura:       "9036bf406494a7d96c7d7580a0587168641fab0cb753ee27a749ec49a624e092"
+    sha256 x86_64_linux:  "5d2f756c55564ca49e939d310670b3fd6c868f483fb4ef93da63b57374198fdf"
   end
 
   depends_on "bdw-gc"
   depends_on "crystal"
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm@18"
+  depends_on "llvm"
   depends_on "pcre2"
 
   def install

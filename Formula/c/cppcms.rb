@@ -30,6 +30,8 @@ class Cppcms < Formula
   depends_on "pcre"
   depends_on "python@3.12"
 
+  uses_from_macos "zlib"
+
   def install
     ENV.cxx11
 

@@ -4,17 +4,18 @@ class Meson < Formula
   url "https:github.commesonbuildmesonreleasesdownload1.5.2meson-1.5.2.tar.gz"
   sha256 "f955e09ab0d71ef180ae85df65991d58ed8430323de7d77a37e11c9ea630910b"
   license "Apache-2.0"
+  revision 1
   head "https:github.commesonbuildmeson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "46e1bb718943bb802ca3947191ef98b3f9c51e39be47a87f825060741f45e44e"
+    sha256 cellar: :any_skip_relocation, all: "a3b43478b98b0d04f647668cb8740c8e75446a9dd15a34587fde96bebbf401c7"
   end
 
   depends_on "ninja"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def install
-    python3 = "python3.12"
+    python3 = "python3.13"
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
     bash_completion.install "datashell-completionsbashmeson"

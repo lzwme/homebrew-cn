@@ -6,10 +6,10 @@ class Woof < Formula
   url "https:github.comsimon-budigwoofarchiverefstagswoof-20220202.tar.gz"
   sha256 "cf29214aca196a1778e2f5df1f5cc653da9bee8fc2b19f01439c750c41ae83c1"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "f5dd93c7a711b1b98e9eaf0d892ce187468505064e615cce360ac3c4354e4437"
+    sha256 cellar: :any_skip_relocation, all: "85edeaa4bfcf9350a5d1822bb96d1381174a359a4f036f11c71c16829177bd87"
   end
 
   depends_on "python@3.12"

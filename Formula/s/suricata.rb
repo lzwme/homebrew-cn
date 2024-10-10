@@ -32,6 +32,7 @@ class Suricata < Formula
   depends_on "python@3.12"
 
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"

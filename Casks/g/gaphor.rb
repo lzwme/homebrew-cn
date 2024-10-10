@@ -1,8 +1,11 @@
 cask "gaphor" do
-  version "2.26.0"
-  sha256 "1c160fdf854f83de4503a3d45b3ab1c39fa841b278c5430dd2e599f5cdb6a4b2"
+  arch arm: "arm", intel: "intel"
 
-  url "https:github.comgaphorgaphorreleasesdownload#{version}Gaphor-#{version}.dmg",
+  version "2.27.0"
+  sha256 arm:   "22977a35ae01a410a1a15cffa85867dd35d718db9753d0f3615d427b6fc0059a",
+         intel: "17f6dcb0f862658d5ba08bff6a5e4ed1d1b36fd9232a4601b5b5a751f4289028"
+
+  url "https:github.comgaphorgaphorreleasesdownload#{version}Gaphor-#{version}-#{arch}.dmg",
       verified: "github.comgaphorgaphor"
   name "Gaphor"
   desc "UMLSysML modelling tool"
@@ -18,8 +21,4 @@ cask "gaphor" do
     "~.cachegaphor",
     "~.localsharegaphor",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

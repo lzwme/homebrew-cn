@@ -4,21 +4,21 @@ class Pygit2 < Formula
   url "https:files.pythonhosted.orgpackages5377d33e2c619478d0daea4a50f9ffdd588db2ca55817c7e9a6c796fca3b80efpygit2-1.15.1.tar.gz"
   sha256 "e1fe8b85053d9713043c81eccc74132f9e5b603f209e80733d7955eafd22eb9d"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
+  revision 1
   head "https:github.comlibgit2pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ee652799500f2047ba9148139f6429aaceb72294f860870d2d210cd109c1c960"
-    sha256 cellar: :any,                 arm64_sonoma:   "c40189ab0e23eb85eabcf943b96af06d1755fb8010dc0e778bdf469ececc9127"
-    sha256 cellar: :any,                 arm64_ventura:  "284f0a71c7e9943e1bd17e75fd3f51813cb3b485ead845dcc7a9c0d762823c96"
-    sha256 cellar: :any,                 arm64_monterey: "287473b85ae42e77e229752cba29156be6138ae9f04781c7ee64bd8feab711e8"
-    sha256 cellar: :any,                 sonoma:         "a09f033d21cb1491f78293f404599b6b89c322d0076b38da75dc2bba54552fb0"
-    sha256 cellar: :any,                 ventura:        "2c36769afae51b497cb0e6a286c427f253b539328b3ec44c02c71542995ffa60"
-    sha256 cellar: :any,                 monterey:       "87aa41266403f72dbe453928ef2e6b2742e90f50f0b697c16ab59fc827661770"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0470b2b8f8d41c65e39de0b01187c88112415d057cd52f8b881f9b97819c2359"
+    sha256 cellar: :any,                 arm64_sequoia: "3af08338fa5ba19e98695c35b161a5d1bc303ba10cd597080bb88b9d5583c0eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "67d67d9fa2bc7be9a5f6c5ad100802c20fc71ed5b1caf65eefbadc32ecf97eba"
+    sha256 cellar: :any,                 arm64_ventura: "b82f3db0d926461e7e83916a927b7da690e5f7d804bf3cb86b836350e1d3009e"
+    sha256 cellar: :any,                 sonoma:        "4988a98e6c01150046eb183b661e3866b7a5d2bc5daf45d9a2d5222838a2918d"
+    sha256 cellar: :any,                 ventura:       "ad03b6d4edd0172bee62bc5394194b634ff1db63c1ba6e2e0b92df1dbaefee53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ec4345179520c99772b5578d896862ee721f03ed35658ddeff75b615371f132"
   end
 
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "cffi"
   depends_on "libgit2"
 

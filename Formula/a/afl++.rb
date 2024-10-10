@@ -4,21 +4,20 @@ class Aflxx < Formula
   url "https:github.comAFLplusplusAFLplusplusarchiverefstagsv4.21c.tar.gz"
   sha256 "11f7c77d37cff6e7f65ac7cc55bab7901e0c6208e845a38764394d04ed567b30"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "bc36a276193f8bc347b58ede62c96289e5f4760c49df5b34880af7e1b096adef"
-    sha256 arm64_sonoma:  "007e43ccfcd0ababf4201c61ca8bd5af261aa2d8ccd92554dbe07f90466adf08"
-    sha256 arm64_ventura: "19152794969e4f6a35db1cfce3bba890a624ce00d60f0eb562fa9ded84026af7"
-    sha256 sonoma:        "0c1fb8e9a68cb26013482eb476e1b137193aba3c4b99e45ea53d16adc602a2a3"
-    sha256 ventura:       "e1339535ffd0683a2f9159054ed40d603a2071398a90acc0b76c470810a2e0b5"
-    sha256 x86_64_linux:  "e303493ba40b6ba430be07a4eaabe3ed65c86308dbdff712be5c16a527f808bf"
+    sha256 arm64_sequoia: "250f5dba6ce572051f67ae75d75eabcd3613dde3f2927b45bb8cfe72e4e5dac4"
+    sha256 arm64_sonoma:  "dc4b1f173c884c94f425778e0d165a4d1fdd59417eb271b70fa626af3174d2ec"
+    sha256 arm64_ventura: "c99ff3ce07a26dd30716e22afe46b2872d645db463291cb2ef720edee6662bdb"
+    sha256 sonoma:        "ac11de1cd176ad455ba1c4d325ecba42a1db02c431921a1094463cbcbf6bedf0"
+    sha256 ventura:       "170d170077ea53a2a78f4c7926762f722ded361f8e7e08a3681f2fea55e64638"
+    sha256 x86_64_linux:  "2f635704b9c3171d441c263f6d528caa79643e875e44ab96d605176ee2f46d03"
   end
 
   depends_on "coreutils" => :build
   depends_on "llvm"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   # The Makefile will insist on compiling with LLVM clang even without this.
   fails_with :clang

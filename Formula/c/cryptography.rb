@@ -4,23 +4,23 @@ class Cryptography < Formula
   url "https:files.pythonhosted.orgpackagesdeba0664727028b37e249e73879348cc46d45c5c1a2a2e81e8166462953c5755cryptography-43.0.1.tar.gz"
   sha256 "203e92a75716d8cfb491dc47c79e17d0d9207ccffcbcb35f598fbe463ae3444d"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
+  revision 1
   head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6f26be8218b1fc85c08b076a3c3da06b685825751fa039127e69b6ea02120bd4"
-    sha256 cellar: :any,                 arm64_sonoma:   "637373486e9a791bb115d369329f4249266893106fe54fe532bd5bd9a306758d"
-    sha256 cellar: :any,                 arm64_ventura:  "40b6184167f35f9b7e1088df850a813044882eaf3c8007f3cc04e48a191fafa2"
-    sha256 cellar: :any,                 arm64_monterey: "c412b8a6e300a95333a151d60551774383cde0f717d196cb2f2bf2bc8257140d"
-    sha256 cellar: :any,                 sonoma:         "90b17c05aad76724d3d8b1cd3fd18b765911b34d7abcadd09e98681c17581d0f"
-    sha256 cellar: :any,                 ventura:        "5c2ade6777251ed43998efd39c1c3869205ceb50d5086b1333e7a15ee8c18cab"
-    sha256 cellar: :any,                 monterey:       "d9ba8d1fc9306edabb94b5fe4ef46694dc110af6846c2a933acf776570c8f546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d1ef4342de33eeb4c6d4bd4653ba1463611d9592bf4e3570a7fc4a2e9fbfb01"
+    sha256 cellar: :any,                 arm64_sequoia: "ae96ccba63bdbe1eff0b7ea6e0b078f25fe5096f984c21438544637f7529aa41"
+    sha256 cellar: :any,                 arm64_sonoma:  "118a0fa32bf78f22a2f7608a60b74b0973c3843c9b784aba9163c030d3125c37"
+    sha256 cellar: :any,                 arm64_ventura: "00b9970c80945b39299d5277711ecfa86581d011712bbb57af8ab658ba04f2d5"
+    sha256 cellar: :any,                 sonoma:        "9dbcef69a8eaeb9c03c6ad42dd0dcd9ce4a3eaf16305956a1b197417ce78f4b6"
+    sha256 cellar: :any,                 ventura:       "7225b21872c1e684420016b3fcf16d576044debc04a80fb96f579015b5d275c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f617322ca036b4c6390bc7fa4b84128382eaf59b6853ebe57b8f2c29b56f2dc"
   end
 
   depends_on "maturin" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"

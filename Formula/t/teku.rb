@@ -2,18 +2,18 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https:docs.teku.consensys.net"
   url "https:github.comConsenSysteku.git",
-      tag:      "24.10.0",
-      revision: "234f711a6cc91012a6e0afa6a64dabf87f6e4dcc"
+      tag:      "24.10.1",
+      revision: "29c81b86ff45c1a2eba961488e51df45308b2eeb"
   license "Apache-2.0"
   head "https:github.comConsenSysteku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a0c9e9ce88525ca67368f4c13ac600ded14a66d55915d1fa864b719a1e5fff4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a0c9e9ce88525ca67368f4c13ac600ded14a66d55915d1fa864b719a1e5fff4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a0c9e9ce88525ca67368f4c13ac600ded14a66d55915d1fa864b719a1e5fff4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f68fecd4abe6c25d6dd485b0c46afa47b226bea43f76ac0f527970cf38ddd79"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f68fecd4abe6c25d6dd485b0c46afa47b226bea43f76ac0f527970cf38ddd79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a0c9e9ce88525ca67368f4c13ac600ded14a66d55915d1fa864b719a1e5fff4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bea813bfa205480b5bdd52f23d8d8ff69adaca60ca3aa9114c76d2224ae9e00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bea813bfa205480b5bdd52f23d8d8ff69adaca60ca3aa9114c76d2224ae9e00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bea813bfa205480b5bdd52f23d8d8ff69adaca60ca3aa9114c76d2224ae9e00"
+    sha256 cellar: :any_skip_relocation, sonoma:        "210ede5b31f9d5343085549e546116cf37dd51a8a32a1c065276753e5ffd415a"
+    sha256 cellar: :any_skip_relocation, ventura:       "210ede5b31f9d5343085549e546116cf37dd51a8a32a1c065276753e5ffd415a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bea813bfa205480b5bdd52f23d8d8ff69adaca60ca3aa9114c76d2224ae9e00"
   end
 
   depends_on "gradle" => :build

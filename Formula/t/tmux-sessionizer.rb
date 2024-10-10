@@ -1,17 +1,17 @@
 class TmuxSessionizer < Formula
   desc "Tool for opening git repositories as tmux sessions"
   homepage "https:github.comjrmoultontmux-sessionizer"
-  url "https:github.comjrmoultontmux-sessionizerarchiverefstagsv0.4.2.tar.gz"
-  sha256 "0f9369a045ebe181202fcf5f292bbdd836f25b47ca9da1702351a725693631f5"
+  url "https:github.comjrmoultontmux-sessionizerarchiverefstagsv0.4.3.tar.gz"
+  sha256 "e7baf324409af475a96d2b034a2ecdb46452feb7d0ef3ddc41e834475063a1f7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a03c3a2bfd283dfb14fe55e4c50fafeea446acf0c228d6979b67a05e2642f0b1"
-    sha256 cellar: :any,                 arm64_sonoma:  "3028161e6f942c0b24c1ceb2b1a8d5843b24907cc27ee207f85fe06c9d3bc8e7"
-    sha256 cellar: :any,                 arm64_ventura: "7a603d0a09c2c6b64ea010427559a18651a8fe1e5149feca7dfc996c389f2ad5"
-    sha256 cellar: :any,                 sonoma:        "903e07fd37d645a9f8d092e9af335b5a0341602d329a4e494f91da9c26f9fe18"
-    sha256 cellar: :any,                 ventura:       "34f6b6758df67acd10f91c6d74885d0cc7045a62637bd573e7cc2346af005f63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd989d2d8fd9f7cf38648263c92502269c53d2ebdace30ea98017f4da1c2a9d7"
+    sha256 cellar: :any,                 arm64_sequoia: "856bb1845ddc7b122b5e1c1411f3b1efec1b10f7f7d8cd7825516e3d64985093"
+    sha256 cellar: :any,                 arm64_sonoma:  "4eecde07cbf456447348407bfbeb168d9bbb5ab7422b5afc987f6f00343f0c48"
+    sha256 cellar: :any,                 arm64_ventura: "0c2dca00b8329eb11bff783dce4470c945dd510f857ab4ccbe51beef8c025123"
+    sha256 cellar: :any,                 sonoma:        "37a87c8526ba8cc58245e68aa4b098c902190dfb39f6eb142aaa8c50b5d2f49b"
+    sha256 cellar: :any,                 ventura:       "e5dd40efaae2b712ff400f6f427961f5d69dbc07ac9151610341e6c8a38c125a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdfd99713dca02e0cf69606d685cb4898748f3c98122a4a1e310499b3c9ccfad"
   end
 
   depends_on "pkg-config" => :build

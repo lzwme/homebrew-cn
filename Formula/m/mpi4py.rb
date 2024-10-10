@@ -4,23 +4,22 @@ class Mpi4py < Formula
   url "https:github.commpi4pympi4pyreleasesdownload4.0.0mpi4py-4.0.0.tar.gz"
   sha256 "820d31ae184d69c17d9b5d55b1d524d56be47d2e6cb318ea4f3e7007feff2ccc"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "b51ba8421ae0f43cf3954780e7e16c58be0b167e2a2e07d6ef6e6d8bb636bb87"
-    sha256 cellar: :any, arm64_sonoma:   "af0b502535e60fc352f583f6dc3e6f22656d51b2b8a6879e286d5746eadbaeaf"
-    sha256 cellar: :any, arm64_ventura:  "3f8f8cd4ab3bf101d205bd7750a0ba506b44f19e4d4a0a77165e9cf3ad485cca"
-    sha256 cellar: :any, arm64_monterey: "e5db582124c03962a6b713df7f224d0c39860e61d60ee8d7bbe3b09fd7a58648"
-    sha256 cellar: :any, sonoma:         "623f199ac2973c68186eccba9126fc3c9845bd2ca5f28eeba2da167df66d745e"
-    sha256 cellar: :any, ventura:        "b4f16e256a6eae84ce6ba36302267080010e9d03ea6bc84098ac19652a0388f9"
-    sha256 cellar: :any, monterey:       "406ac34f87b65a4227b974a1b5f39d20f499a5783900618d6253c206cb051658"
-    sha256               x86_64_linux:   "75879be194af8dc54e5a70960f0fef8e289e10482f85f377e4e298eacd7f6c51"
+    sha256 cellar: :any, arm64_sequoia: "9a95ba33840080c35ea9db9966dc12fb7a568c7ce16314b668c12fc68adca7d5"
+    sha256 cellar: :any, arm64_sonoma:  "64b593673a2cb086eb1ddca34612551a718e2378b3089ee92e1d8f0445d8f16d"
+    sha256 cellar: :any, arm64_ventura: "99c17af7c851561b4ddd126786b78ef408951f66543248294364f04adbd71de8"
+    sha256 cellar: :any, sonoma:        "0ae9bf46e9e2b972d2b3525ae6266b835cb45e1c0da56db341ee90e154b3e8ab"
+    sha256 cellar: :any, ventura:       "5048281eb20ebc2ef3ae0599cb8a7a654023ace09714cbadba0d2def87119142"
+    sha256               x86_64_linux:  "05e76123237f12f59d14c3dfe9a0bb3a2e62a4fa3f05546852da24da6802278c"
   end
 
   depends_on "open-mpi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

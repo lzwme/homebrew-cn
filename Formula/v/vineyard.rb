@@ -9,12 +9,13 @@ class Vineyard < Formula
   revision 5
 
   bottle do
-    sha256                               arm64_sequoia: "0a4c7a287dc84c6b6a8d145417f73ed2f29b8a67117a3be26ce2d04eefe797a3"
-    sha256                               arm64_sonoma:  "85e45b63d6a9e5ab1a1e0ea89cb2b53244bd6506354e3417fe53e931973001d4"
-    sha256                               arm64_ventura: "6796cd52bf0417e7623908c733ea43cce3d0d5e42f645a797303bc125bfd81ff"
-    sha256                               sonoma:        "d89b7489800fe95f4baf35b757c8256d27d05c68e8ae8da0e996ca391740815d"
-    sha256                               ventura:       "1be8793b2288dd5b35ba36f6b0155fb0da166732a0190cfcf7ebefc6c694f78c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0552a3a41bf3818d22cc29402590d13d39b5ebc09c94b02081b90165e59058b6"
+    rebuild 1
+    sha256                               arm64_sequoia: "e0b3bb0b7d5d1d05ae0209c60e848be0ed63d9fdc7db6ff9b7cc51ce62b864b0"
+    sha256                               arm64_sonoma:  "ab2d74aa237dffa7d8c3c6cfbcd3849644e1b2c202c0dc502e8ec4b929c1cd1f"
+    sha256                               arm64_ventura: "fd10aa8b7085f27018464b8bf91ac28d0f6b983d1e9c0ef32eb0435726245915"
+    sha256                               sonoma:        "5676475adc6e6b9b58ab403d418fd14423128887c0436f17cf7f863d8bd36044"
+    sha256                               ventura:       "ec2c89c0a1c723efc3ac0b21c58f83f1158f86c7a54d728107b83b0ca39cf9c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df83d67107663ce1c59b1f7c5ea63c1d4bab4608a6cce6a35ca48df509f85ac4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -27,7 +28,6 @@ class Vineyard < Formula
   depends_on "etcd-cpp-apiv3"
   depends_on "gflags"
   depends_on "glog"
-  depends_on "grpc"
   depends_on "hiredis"
   depends_on "libgrape-lite"
   depends_on "open-mpi"

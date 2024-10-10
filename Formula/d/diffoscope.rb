@@ -6,21 +6,20 @@ class Diffoscope < Formula
   url "https://files.pythonhosted.org/packages/9d/54/ccf85796762417128d65cff7656256d9302de155cd9501030f3ff63f7dd5/diffoscope-277.tar.gz"
   sha256 "d2d4236d7b72be8344b0c7a19506350a7b17d316bcd79d7bfc113e10400b0e10"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f6e64b7b5639e23a48cecf73d2d8c9ffd7fc67ff6793cfd6dd852a429f96d3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc07751e5489b158db3060bb59731c5164a36c02af8993ae7b5861e1418396fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc07751e5489b158db3060bb59731c5164a36c02af8993ae7b5861e1418396fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc07751e5489b158db3060bb59731c5164a36c02af8993ae7b5861e1418396fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0e1ce71a8df3e24909dae076d09e899563d71b2338bff99127787a85b35063ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e1ce71a8df3e24909dae076d09e899563d71b2338bff99127787a85b35063ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e1ce71a8df3e24909dae076d09e899563d71b2338bff99127787a85b35063ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83d4b2b0ae750c2bd710f5d76980fdb97d615a5ff9341722768e9b2be1671190"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15235ead4ec926211159a1771f76ed4011504ac97a5c6105052758743aaec1e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15235ead4ec926211159a1771f76ed4011504ac97a5c6105052758743aaec1e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "15235ead4ec926211159a1771f76ed4011504ac97a5c6105052758743aaec1e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7491436a71bd949ca636dd5eb9484f826391008c863ee46126d3f8e34b1a2dfc"
+    sha256 cellar: :any_skip_relocation, ventura:       "7491436a71bd949ca636dd5eb9484f826391008c863ee46126d3f8e34b1a2dfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6a982d5d59a9ad19f649790bb427a4d2b956c491f8389011d72ba5c1ba49d03"
   end
 
   depends_on "libarchive"
   depends_on "libmagic"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/75/33/a3d23a2e9ac78f9eaf1fce7490fee430d43ca7d42c65adabbb36a2b28ff6/argcomplete-3.5.0.tar.gz"
@@ -43,7 +42,7 @@ class Diffoscope < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources
     venv.pip_install buildpath
 

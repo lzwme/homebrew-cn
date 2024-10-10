@@ -1,18 +1,18 @@
 class Cog < Formula
   desc "Containers for machine learning"
   homepage "https:cog.run"
-  url "https:github.comreplicatecogarchiverefstagsv0.9.25.tar.gz"
-  sha256 "6b45f5f3c4e9524e62f7421c5124e247209e409b235f6633bc7d1a318357fc6f"
+  url "https:github.comreplicatecogarchiverefstagsv0.9.26.tar.gz"
+  sha256 "46ae16f928c8591622c8c61c44bce029a9a5202b5d65609ce505686d935f4e08"
   license "Apache-2.0"
   head "https:github.comreplicatecog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8d3d4bfd28962ca035a05bb1f4cd70a27ee5515ac6e330d85b4dda5715d64ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8d3d4bfd28962ca035a05bb1f4cd70a27ee5515ac6e330d85b4dda5715d64ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8d3d4bfd28962ca035a05bb1f4cd70a27ee5515ac6e330d85b4dda5715d64ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7de6268a5262b57bce31da59efc95cfacb2ef0fb8ab0038dfed54fa8ab2e9ce8"
-    sha256 cellar: :any_skip_relocation, ventura:       "7de6268a5262b57bce31da59efc95cfacb2ef0fb8ab0038dfed54fa8ab2e9ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0de62f5d5620ed27a65806a38c5a7092989002595bc79632f62ca442cd082b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
+    sha256 cellar: :any_skip_relocation, sonoma:        "056ca086a31900b35b9e0517483cad9da89665d5f3250a8f628191bbaf96dc39"
+    sha256 cellar: :any_skip_relocation, ventura:       "056ca086a31900b35b9e0517483cad9da89665d5f3250a8f628191bbaf96dc39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "727ce1d0bcb33af40b10b67a6750b3994fc24ab29fa4cc75f5873d6bd2e01efe"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https:www.uvicorn.org"
-  url "https:files.pythonhosted.orgpackages0a96ee52d900f8e41cc35eaebfda76f3619c2e45b741f3ee957d6fe32be1b2aauvicorn-0.31.0.tar.gz"
-  sha256 "13bc21373d103859f68fe739608e2eb054a816dea79189bc3ca08ea89a275906"
+  url "https:files.pythonhosted.orgpackages7687a886eda9ed495a3a4506d5a125cd07c54524280718c4969bde88f075fe98uvicorn-0.31.1.tar.gz"
+  sha256 "f5167919867b161b7bcaf32646c6a94cdbd4c3aa2eb5c17d36bb9aa5cfd8c493"
   license "BSD-3-Clause"
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f8f19eb23d3b2b9d81591445a1aff694e70ff4e829fe54ba33a3d5d686cac563"
-    sha256 cellar: :any,                 arm64_sonoma:  "10a287808d79e8888a969637e29ab7fb477d05fcab862667b633834c0dd28ae2"
-    sha256 cellar: :any,                 arm64_ventura: "61ecf1a603335160f371dc1333db46cd1ffb5d75b4e83f1643a8b441a89bf5be"
-    sha256 cellar: :any,                 sonoma:        "dfae37a5ff333514b0d12eb78c906add6901a84260ee60e059cce29690e5c333"
-    sha256 cellar: :any,                 ventura:       "343df83f3ab6f2fd658babf5b342b6f4cb04f373de403935c4e98ecf42ba85f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8edefd86ac2ede9dab4d89b800555d13de57d4684a3c4ca6194ad100922411bd"
+    sha256 cellar: :any,                 arm64_sequoia: "8f317d7ea380f31ad835920f794b3d0e7549b63cd2d764ba8ae9410ff384b19d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e38faed23744dd4f295330695542c5064f562d3ca780fe77c28bef7f12f895d1"
+    sha256 cellar: :any,                 arm64_ventura: "bbac94e9b39058437c3b2cfb737862fd4206da10ea94a45d340f0230813f32b8"
+    sha256 cellar: :any,                 sonoma:        "7e3596e899aeca698fb52583d382f363ef243fa3e951b2bf8369f03f0f6e3f70"
+    sha256 cellar: :any,                 ventura:       "4054baa5dcbf6aa1de4f3dd9d7a25f451acec98bcdc70d07afe5f717406500de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fb10ddb2f99bbfdf8dee17f39c2039cc901fd2d11aa9e1d1a2b24fef476b9b"
   end
 
   depends_on "rust" => :build

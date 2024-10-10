@@ -24,6 +24,8 @@ class RobotFramework < Formula
   depends_on "cryptography"
   depends_on "python@3.12"
 
+  uses_from_macos "zlib"
+
   resource "attrs" do
     url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
     sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"

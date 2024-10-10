@@ -5232,6 +5232,7 @@ Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-gdbm@3.13.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
@@ -5244,11 +5245,13 @@ Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-tk@3.13.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.12.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python@3.13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 1
@@ -6643,7 +6646,7 @@ Homebrew-homebrew-core/Formula/v/vcdimager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcftools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcluster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcpkg.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vcprompt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vcprompt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vcsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vde.rb, Homebrew/homebrew-core, 1
@@ -7343,6 +7346,7 @@ Homebrew-homebrew-cask/Casks/a/anylist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anypointstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anythingllm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anytype.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/anytype@alpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anytype@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ao.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/apache-couchdb.rb, Homebrew/homebrew-cask, 0
@@ -7731,6 +7735,7 @@ Homebrew-homebrew-cask/Casks/c/canon-eos-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/canon-ufrii-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cantata.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/canva.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/capacities.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/capcut.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caprine.rb, Homebrew/homebrew-cask, 1
@@ -8152,6 +8157,7 @@ Homebrew-homebrew-cask/Casks/d/disk-inventory-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diskcatalogmaker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diskmaker-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaperture.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/displaybuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaycal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaylink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displays.rb, Homebrew/homebrew-cask, 0
@@ -10509,8 +10515,7 @@ Homebrew-homebrew-cask/Casks/font/font-r/font-ropa-sans.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-r/font-rosario.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rosarivo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rouge-script.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-r/font-rounded-m+.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-r/font-rounded-mplus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-r/font-rounded-mplus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-r/font-routed-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rowdies.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-rozha-one.rb, Homebrew/homebrew-cask, 1
@@ -11274,6 +11279,7 @@ Homebrew-homebrew-cask/Casks/i/imagej.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagemin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/imageoptim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/imaging-edge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imazing-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imazing-profile-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imazing.rb, Homebrew/homebrew-cask, 0
@@ -12844,6 +12850,7 @@ Homebrew-homebrew-cask/Casks/q/quarto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quassel-client.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quassel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quaternion.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/q/quba.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qudedup-extract-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/querious.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quick-app-ide.rb, Homebrew/homebrew-cask, 0
@@ -13654,6 +13661,7 @@ Homebrew-homebrew-cask/Casks/t/thunder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thunderbird.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thunderbird@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thunderbird@daily.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thunderbird@esr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thyme.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/ti-connect-ce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ti-smartview-ce-for-the-ti-84-plus-family.rb, Homebrew/homebrew-cask, 0
@@ -14270,6 +14278,7 @@ Homebrew-homebrew-cask/Casks/z/zxpinstaller.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zy-player.rb, Homebrew/homebrew-cask, 1
 nicerloop-homebrew-nicerloop/Formula/acloudguru-sandbox.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/download-windows-esd.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/gcli.rb, nicerloop/homebrew-nicerloop, 1
@@ -14306,6 +14315,7 @@ nicerloop-homebrew-nicerloop/Formula/svgcleaner.rb, nicerloop/homebrew-nicerloop
 nicerloop-homebrew-nicerloop/Formula/tccplus.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/video-transcoding.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/warc2html.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/windows-esd-to-iso.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/wine-scripts.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/8bitdo-firmware-updater.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/airdisplay-client.rb, nicerloop/homebrew-nicerloop, 0

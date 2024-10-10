@@ -29,6 +29,8 @@ class Retdec < Formula
   depends_on "openssl@3"
   depends_on "python@3.12"
 
+  uses_from_macos "zlib"
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
