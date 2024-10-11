@@ -28,6 +28,12 @@ class ErlangAT26 < Formula
   depends_on "wxwidgets" # for GUI apps like observer
 
   uses_from_macos "libxslt" => :build
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "mesa-glu"
+  end
 
   resource "html" do
     url "https:github.comerlangotpreleasesdownloadOTP-26.2.5.4otp_doc_html_26.2.5.4.tar.gz"

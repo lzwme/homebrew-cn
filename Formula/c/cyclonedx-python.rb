@@ -9,16 +9,17 @@ class CyclonedxPython < Formula
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d85335d4587ef8b866ad4416f744d9118811e49e3d553024e87ed32b09a43e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e3c8805f199f1fd57aee21f9c274f4f65943d4561a5ea94361b504124477ff2"
-    sha256 cellar: :any,                 arm64_ventura: "637fdaed5766f2462d5d90229009d6aeba8c4ebf555637cdcd337689b71fe245"
-    sha256 cellar: :any,                 sonoma:        "29def44cc393f2f3567ed21e40b5374c9e742e471ba16e4e78e3979f2e82c81d"
-    sha256 cellar: :any,                 ventura:       "6297ff6ea82efebc0f0608fb6c5167a5a45cbdcdda2e8bd0b5e67c0229ec9580"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6393c0c64957ccc6aa99bc70e34ba713b4851f152d01a40332195222f319b8a7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0fa94572b2b44ccf47c239b233e2d0dfa8fc4244afde3c156503f9e699a71b63"
+    sha256 cellar: :any,                 arm64_sonoma:  "159d2e9c796c9e7a74d9ce743e1449a3f22b660c12ff9cb4adfbcef648ac4c39"
+    sha256 cellar: :any,                 arm64_ventura: "746c8e0548deb3a5d7a1eb71060ec498e57d3048d2d6469f77b7e2c9b7ec082e"
+    sha256 cellar: :any,                 sonoma:        "4f54dd251205bd160a4a16f558a4d9470c714f4261ff8d29bcabe2d4b90369bc"
+    sha256 cellar: :any,                 ventura:       "5fa975c1f192060004096d7ffe689f5dd823ed7bf335c370389c017f0464dfb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "850e9d061e82d54d5a33c63e67124019e5fec4016fa6729a150f4988c3337fd8"
   end
 
   depends_on "rust" => :build # for rpds-py
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -44,8 +45,8 @@ class CyclonedxPython < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https:files.pythonhosted.orgpackages5b56c25ea3b800379cbf89583ce3c7700464be510842845c1652a8f765bc2abbcyclonedx_python_lib-7.6.1.tar.gz"
-    sha256 "42e510e957c2ce9c71dd33020e43ce53fe6d0c854cfdc3c56e854e9461e846eb"
+    url "https:files.pythonhosted.orgpackages368fa2de02ce7263312b51cb3946593b608ef996949295b69b31a9ed0e71ec92cyclonedx_python_lib-7.6.2.tar.gz"
+    sha256 "31186c5725ac0cfcca433759a407b1424686cdc867b47cc86e6cf83691310903"
   end
 
   resource "defusedxml" do
@@ -79,8 +80,8 @@ class CyclonedxPython < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
-    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+    url "https:files.pythonhosted.orgpackages10db58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352jsonschema_specifications-2024.10.1.tar.gz"
+    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
   resource "license-expression" do
@@ -109,8 +110,8 @@ class CyclonedxPython < Formula
   end
 
   resource "py-serializable" do
-    url "https:files.pythonhosted.orgpackagesc68b20e68984aead213310991174e858147e876bb976cf225ebd09b82709d0e4py_serializable-1.1.1.tar.gz"
-    sha256 "f268db3afc42c8786da6dc64a8a36e33a82cf65cdcff22d1188b0927f6d4cfa9"
+    url "https:files.pythonhosted.orgpackages16cf6e482507764034d6c41423a19f33fdd59655052fdb2ca4358faa3b0bcfd1py_serializable-1.1.2.tar.gz"
+    sha256 "89af30bc319047d4aa0d8708af412f6ce73835e18bacf1a080028bb9e2f42bdb"
   end
 
   resource "pyparsing" do
@@ -154,8 +155,8 @@ class CyclonedxPython < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackages3ed99c9ec2d870af7aa9b722ce4fd5890bb55b1d18898df7f1d069cab194bb2atypes-python-dateutil-2.9.0.20240906.tar.gz"
-    sha256 "9706c3b68284c25adffc47319ecc7947e5bb86b3773f843c73906fd598bc176e"
+    url "https:files.pythonhosted.orgpackages31f8f6ee4c803a7beccffee21bb29a71573b39f7037c224843eff53e5308c16etypes-python-dateutil-2.9.0.20241003.tar.gz"
+    sha256 "58cb85449b2a56d6684e41aeefb4c4280631246a0da1a719bdbe6f3fb0317446"
   end
 
   resource "uri-template" do

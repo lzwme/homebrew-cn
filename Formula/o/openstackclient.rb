@@ -9,19 +9,20 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ca032b35003823b921d2b2ef493a5f586659bb83383f2b57b2efa287e7cfc407"
-    sha256 cellar: :any,                 arm64_sonoma:  "165fc1762cd0c88406155406bd8cfbb9e7a753dbb4acbf375aea70ca1fb20977"
-    sha256 cellar: :any,                 arm64_ventura: "b3f673afda8aa95dff985de9c46d7fc9d75011f22f480aea569914fd79824d0b"
-    sha256 cellar: :any,                 sonoma:        "a9a68ec4db7934158270c7f5b48f9d66152b72394eaf65714ab64f600f16b7e8"
-    sha256 cellar: :any,                 ventura:       "b71ac4ad3eacf4130cc428d86185b61c65c88266a9ddfec4c606da95f4a51a4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "587bfbb3e8e451b527ba3092c5f9ae103c5dffbbecc6b3ba2b2d40a8fe37ce25"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "06ec67cd270dadbef7bf0c26daa760fd5c59b9156c70449efa393cf5f6a22955"
+    sha256 cellar: :any,                 arm64_sonoma:  "65f156bf65cb0b9560091e72a605a9630c893422761cf95d2f002458a8226cd2"
+    sha256 cellar: :any,                 arm64_ventura: "3d9fc8b0f4a2b9fc9a2bb82a3423fac2a636b2b0e4f934e33d607220164f239b"
+    sha256 cellar: :any,                 sonoma:        "109754a97f00fa86f157a7f6cde74fbce1c723c187ba23cc7c266f6c6a242ffc"
+    sha256 cellar: :any,                 ventura:       "d5f0d4f6176aedf7d3af438bc8155f0a5d7c6cdb3673bd68331b1f1c09d0842f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cde7d1edda41373290b456da96a0b933cdf452f7c673b1f1b2167f233d1abb1"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "pyinotify" do
     on_linux do
@@ -46,8 +47,8 @@ class Openstackclient < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "cliff" do

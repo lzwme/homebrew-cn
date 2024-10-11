@@ -28,7 +28,10 @@ class Librealsense < Formula
   depends_on "libusb"
 
   on_linux do
+    depends_on "mesa"
+    depends_on "mesa-glu"
     depends_on "openssl@3"
+    depends_on "systemd"
   end
 
   def install

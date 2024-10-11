@@ -9,15 +9,13 @@ class OnlykeyAgent < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "721db5ab1fa1e95c876e7d8c92aed89fe0d85688072c8710c8f168149a686375"
-    sha256 cellar: :any,                 arm64_sonoma:   "c7cb8403034bb4e162ff467f786eca2907e179adc0ba565b68a50b02d259f23e"
-    sha256 cellar: :any,                 arm64_ventura:  "22a47bfffce9d5a5a0693247ca23391d2a46fd9329ebc2faf3fed820a5dc30c9"
-    sha256 cellar: :any,                 arm64_monterey: "a82d7d8c0addca8a9df7458f0d4d7de2ca0a30e527624b7684fe5302d9544c90"
-    sha256 cellar: :any,                 sonoma:         "3bd3d77be82cb2fe39e9b8bc1bd47f6f2834ab03ff6c34da0f5821adb3075a0f"
-    sha256 cellar: :any,                 ventura:        "eac0d79fe461401b24d4388ca21ac2dae43eec0e8c626bd27f0361fe04990bc5"
-    sha256 cellar: :any,                 monterey:       "2c6153c9e3783c6547433949dd2659376c33f8145a689f6c996c2db6f67f56b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be0ded589edf430a6570c175b163a428422ba613da9579eee1c44a830b3e05f7"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "3b5b5a0528b572263ae0762f938f356683a62128a8a565255237a70054d87d14"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b199481eb3a297e9e0cc3292f65cb47467322d58a0fd3244f5e355a78044f63"
+    sha256 cellar: :any,                 arm64_ventura: "d8b0793556d59810a96169653c6db59bb598c64f11b001c48062ff7ecf7cb4a9"
+    sha256 cellar: :any,                 sonoma:        "9effb4f7cf068eae7d90212a033693bb8bc72250136fd48f858aaac2d07226d2"
+    sha256 cellar: :any,                 ventura:       "9668068bba931bf6a6ef7a31e726e43aa9a3d54c7c62704d24cd2877a3b580df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "858dbabb5ebc998b6a33e97fd1b2fc31b4b97c87b3c592b7102b2aaa57a4fafa"
   end
 
   depends_on "pkg-config" => :build
@@ -26,7 +24,7 @@ class OnlykeyAgent < Formula
   depends_on "gnupg"
   depends_on "hidapi"
   depends_on "libusb"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "aenum" do
     url "https://files.pythonhosted.org/packages/d0/f8/33e75863394f42e429bb553e05fda7c59763f0fd6848de847a25b3fbccf6/aenum-3.1.15.tar.gz"
@@ -44,8 +42,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do

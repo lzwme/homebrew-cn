@@ -8,12 +8,13 @@ class YtDlp < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bc59850c36d574efa266e8396ef9c8333c2e7444ad0574e63cf3e47955ddb49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57dbee2988111bcee9f7b88291cc75a05e5aa7450e07512981d177a8cc329824"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba5fecbedec374b85bae2892279848ba857de9e146d0fdef3244f386f101b0d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "531b46cdf2faab1c6dacb5792b3da06a18f4ca73ad6255e00699a3a4fabd5298"
-    sha256 cellar: :any_skip_relocation, ventura:       "0749a7d17f191d26ab7fa10c38870c8ec9579edac78a1cca5172e51163d6fc6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7199123024c349c27269fe980d10448157b0d1fe79b8ad5acf00a20f8cae0362"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "036bc4c740204540225a357131a02c9f2360ac04c0bd1dc02c67736b527bdacb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f258b6c44f79982142b8f2a927418cef99e8d18487aa99d7be8831c1a3c8e83a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "47813ad663149f4e90d23a68b21995f5888bfefa690b626245aeba019d26105a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79da0b707053301b59e9d8d8e15022b3c82bc1bad80325b14654c592a115e9cc"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8e1d62cfd6db891042089d92c184bfebb6ef34d7ca15597c0482cc38028ac12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2bf40ed580b358e9c265d88b929cc9dac3a8e2fe1da85aa0cdea04acb3cddad"
   end
 
   head do
@@ -27,7 +28,7 @@ class YtDlp < Formula
   end
 
   depends_on "certifi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "brotli" do
     url "https:files.pythonhosted.orgpackages2fc2f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787bBrotli-1.1.0.tar.gz"

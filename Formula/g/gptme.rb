@@ -3,18 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https:gptme.orgdocs"
-  url "https:files.pythonhosted.orgpackages4dd1010d2a8c0d799dc2ebf7d7387e2a9b3a2d0ddfedcfb24add346a43713016gptme-0.19.2.tar.gz"
-  sha256 "7ac8423e08b132760f211a664056fe2d9af90bd2c21222886351b796fff27a23"
+  url "https:files.pythonhosted.orgpackages2f2a983ea2f82b7d57b2f1178411d0918113b293f337f44f9ad03b81474c3771gptme-0.20.0.tar.gz"
+  sha256 "17604fd3dc148b0c565a78eecf9c2971dab9a78a356663902cf43b24dae75927"
   license "MIT"
   head "https:github.comErikBjaregptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ced44bc675b4e3fb096e9c77969a40d2105badce4d4faf6138a55c10c6214f31"
-    sha256 cellar: :any,                 arm64_sonoma:  "b13be2a008f4f4b82a55a3889275dd92d2dfdbcdfc71469c13fff9562863bf5d"
-    sha256 cellar: :any,                 arm64_ventura: "cfec376c3c850ea14f43c69bec66c84d0fc340ecbfa2a95a3e9d2c224561c53e"
-    sha256 cellar: :any,                 sonoma:        "3aa99d7434816956db1ca2ec7a618c0907e4b90c6b44b6269c382d842a7a1d6c"
-    sha256 cellar: :any,                 ventura:       "d7a620170bf2d7ad45215cbbac04e139a66472a3296b2c34d21844c941a96458"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a4ec0309fa2bc0101df8496338af5e77957ccf6fa48adb8b27bdde117dbce5c"
+    sha256 cellar: :any,                 arm64_sequoia: "f1d99e0b58971e800a6cfa666ab599719f8446e1b0a31cabc6dc405ae997e3c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "b87daf152a9de5c0a015d494b3826392308b59f7ff71c08a4b10534a4a92699a"
+    sha256 cellar: :any,                 arm64_ventura: "4e5d6726a8cc8bca3f4681cd5ac9a27e95dbb66e90914fde76982182947082de"
+    sha256 cellar: :any,                 sonoma:        "2a3d5ce891a222fbfbc9d4251268d2f6e10811b7ebdcf9516190dc7838031206"
+    sha256 cellar: :any,                 ventura:       "50db8fa530531490634b0f4743626c46f632465b1ac05f5867537b01c7b55a01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b052b1eff055f6d668dcaa3705ce2895542aae69617eeb0769bb109ff68b396e"
   end
 
   depends_on "rust" => :build
@@ -51,8 +51,8 @@ class Gptme < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -101,8 +101,8 @@ class Gptme < Formula
   end
 
   resource "huggingface-hub" do
-    url "https:files.pythonhosted.orgpackages3d883598259f226c37279e219810cc47cdeec39da1d07ad2e8c146af410d2cc6huggingface_hub-0.25.1.tar.gz"
-    sha256 "9ff7cb327343211fbd06e2b149b8f362fd1e389454f3f14c6db75a4999ee20ff"
+    url "https:files.pythonhosted.orgpackagesdffd5f81bae67096c5ab50d29a0230b8374f0245916cca192f8ee2fada51f4f6huggingface_hub-0.25.2.tar.gz"
+    sha256 "a1014ea111a5f40ccd23f7f7ba8ac46e20fa3b658ced1f86a00c75c06ec6423c"
   end
 
   resource "idna" do
@@ -121,8 +121,8 @@ class Gptme < Formula
   end
 
   resource "jiter" do
-    url "https:files.pythonhosted.orgpackages3a87f3d746e8d87b9f04683266d23ae730435cb646e88064c324407a0c0a98e3jiter-0.6.0.tar.gz"
-    sha256 "5b3e2b9e8fbd57d176b97e5530a20514cd20d7f98d02e11140b309537897dac0"
+    url "https:files.pythonhosted.orgpackages26ef64458dfad180debd70d9dd1ca4f607e52bb6de748e5284d748556a0d5173jiter-0.6.1.tar.gz"
+    sha256 "e19cd21221fc139fb032e4112986656cb2739e9fe6d84c13956ab30ccc7d4449"
   end
 
   resource "lxml" do
@@ -151,8 +151,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackageseea017e5f6c026f03ad469175bc73e84eb589965a9983fb641c528ee908e56b8openai-1.51.1.tar.gz"
-    sha256 "a4908d68e0a1f4bcb45cbaf273c5fbdc3a4fa6239bb75128b58b94f7d5411563"
+    url "https:files.pythonhosted.orgpackages95649a5279138b5ea6c2f0e5443d5d93b4510cb87fa6fe7be0c92b837087124eopenai-1.51.2.tar.gz"
+    sha256 "c6a51fac62a1ca9df85a522e462918f6bb6bc51a8897032217e453a0730123a6"
   end
 
   resource "packaging" do
@@ -261,8 +261,8 @@ class Gptme < Formula
   end
 
   resource "tokenizers" do
-    url "https:files.pythonhosted.orgpackages023a508a4875f69e12b08fb3dabfc746039fe763838ff45d6e42229ed09a41c2tokenizers-0.20.0.tar.gz"
-    sha256 "39d7acc43f564c274085cafcd1dae9d36f332456de1a31970296a6b8da4eac8d"
+    url "https:files.pythonhosted.orgpackagesd7fb373b66ba58cbf5eda371480e4e051d8892ea1433a73f1f92c48657a699a6tokenizers-0.20.1.tar.gz"
+    sha256 "84edcc7cdeeee45ceedb65d518fffb77aec69311c9c8e30f77ad84da3025f002"
   end
 
   resource "tomlkit" do

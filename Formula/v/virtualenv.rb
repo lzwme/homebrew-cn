@@ -9,19 +9,20 @@ class Virtualenv < Formula
   head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f2b20dbdec6d5561d0c126c4ec8bc627e9a6e846c0182abbbee382beca9abf0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f2b20dbdec6d5561d0c126c4ec8bc627e9a6e846c0182abbbee382beca9abf0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f2b20dbdec6d5561d0c126c4ec8bc627e9a6e846c0182abbbee382beca9abf0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fdc37ba06e5d9e41781d0c2523e9d71f2ad43d3b328eaa8397245592b1db20c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "fdc37ba06e5d9e41781d0c2523e9d71f2ad43d3b328eaa8397245592b1db20c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aa0ae038e837ac7726ce3c9dcc0ad399567cc4490c84e9f848d2a500721e915"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ce1b84c047934f33e3e5374bb11a32a34b2e5447139012bf54c99fb37eb707c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ce1b84c047934f33e3e5374bb11a32a34b2e5447139012bf54c99fb37eb707c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ce1b84c047934f33e3e5374bb11a32a34b2e5447139012bf54c99fb37eb707c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "289136ae1fe80ca772018604aeedfbdb15ce002d15ec142a59acfa119f4b8c8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "289136ae1fe80ca772018604aeedfbdb15ce002d15ec142a59acfa119f4b8c8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3518a5231c088a5c51b15289df55391c9abcafa7111b9701fd06eb46f42b4e8"
   end
 
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "distlib" do
-    url "https:files.pythonhosted.orgpackagesc491e2df406fb4efacdf46871c25cde65d3c6ee5e173b7e5a4547a47bae91920distlib-0.3.8.tar.gz"
-    sha256 "1530ea13e350031b6312d8580ddb6b27a104275a31106523b8f123787f494f64"
+    url "https:files.pythonhosted.orgpackages0ddd1bec4c5ddb504ca60fc29472f3d27e8d4da1257a854e1d96742f15c1d02ddistlib-0.3.9.tar.gz"
+    sha256 "a60f20dea646b8a33f3e7772f74dc0b2d0772d2837ee1342a00645c81edf9403"
   end
 
   resource "filelock" do

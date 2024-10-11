@@ -9,19 +9,17 @@ class Todoman < Formula
   head "https:github.compimutilstodoman.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc5345df6be7f10b2cea9a53b4b14bd4648b5b021c48f74faf1657ddc026f6ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7bf6c5dec96c8fb238cd1b972c3d352be548e8e2610dec4943d34426b5382b69"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "330cbadb3883c67fb1dab96fba318dc5f3a2d32b1fe492a460a9bac35d7bf190"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca6185c3a7242abe09eab8d78c23585fae98957132cb702e278f9fd8f47e22e4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d63bd7534dd9d4131d527a6949551c88cf50ebc575f06ba697a17f61aebc5cd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e35a9e9ff8638c1cea70cb9994bee9afd203a59582b874703f6c58251393312d"
-    sha256 cellar: :any_skip_relocation, monterey:       "67ec73375b040a8d836b74b8eca7072ccab5b8450404d6d3a9b4c87429ead964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f31099a4e89da4db04bc0c253b485de92a6ccf1b0c1edc025d3118cf4b07f287"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0781231ff24e4cff6911d8d020c9264982e430ce7ca19fb2d286ad7e2a1921eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "0781231ff24e4cff6911d8d020c9264982e430ce7ca19fb2d286ad7e2a1921eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
   end
 
   depends_on "jq" # Needed for ZSH completions.
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   conflicts_with "bash-snippets", because: "both install `todo` binaries"
   conflicts_with "devtodo", because: "both install a `todo` binary"
@@ -42,13 +40,13 @@ class Todoman < Formula
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages76217a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75chumanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https:files.pythonhosted.orgpackages6a4064a912b9330786df25e58127194d4a5a7441f818b400b155e748a270f924humanize-4.11.0.tar.gz"
+    sha256 "e66f36020a2d5a974c504bd2555cf770621dbdbb6d82f94a6857c0b1ea2608be"
   end
 
   resource "icalendar" do
-    url "https:files.pythonhosted.orgpackages6c23187a28257fe26848d07af225cef86abe3712561bd8af93cbd3a64d6eb6eaicalendar-5.0.11.tar.gz"
-    sha256 "7a298bb864526589d0de81f4b736eeb6ff9e539fefb405f7977aa5c1e201ca00"
+    url "https:files.pythonhosted.orgpackagesafce127d44302810184b1680ba5e0ab588325cf427d1a5e8c8479dd2cec80e97icalendar-6.0.0.tar.gz"
+    sha256 "7ddf60d343f3c1f716de9b62f6e80ffd95d03cab62464894a0539feab7b5c76e"
   end
 
   resource "parsedatetime" do
@@ -57,13 +55,13 @@ class Todoman < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pytz" do
-    url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
-    sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
+    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
+    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pyxdg" do
@@ -77,13 +75,18 @@ class Todoman < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+  end
+
+  resource "tzdata" do
+    url "https:files.pythonhosted.orgpackagese134943888654477a574a86a98e9896bae89c7aa15078ec29f490fef2f1e5384tzdata-2024.2.tar.gz"
+    sha256 "7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages936cf40b1ffc0f1b81a51ebc66615d1177a590ac23d6e300921a047a20f5dbd4urwid-2.6.4.tar.gz"
-    sha256 "bc302170fdbdda0aded2787ba66006af939dcff967606e9840a6f2af149adf12"
+    url "https:files.pythonhosted.orgpackages85b7516b0bbb7dd9fc313c6443b35d86b6f91b3baa83d2c4016e4d8e0df5a5e3urwid-2.6.15.tar.gz"
+    sha256 "9ecc57330d88c8d9663ffd7092a681674c03ff794b6330ccfef479af7aa9671b"
   end
 
   resource "wcwidth" do

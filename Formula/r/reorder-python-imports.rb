@@ -9,11 +9,11 @@ class ReorderPythonImports < Formula
   head "https:github.comasottilereorder-python-imports.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "438e4afc9465da45505b6c627fb9c58f68c4673e1f33914a82ccf255cc2ce182"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "b75b313135de7f1b47f4b7e2a1355bcdd3ce952195c13e144f688a79ebc460cc"
   end
 
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "classify-imports" do
     url "https:files.pythonhosted.orgpackages7eb66cdc486fced92110a8166aa190b7d60435165119990fc2e187a56d15144bclassify_imports-4.2.0.tar.gz"

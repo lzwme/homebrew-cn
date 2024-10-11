@@ -7,12 +7,13 @@ class Cog < Formula
   head "https:github.comreplicatecog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3343952291b3eee0656ba53c3f4a9342432071fc1701f03054a5e5d4afe1f20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "056ca086a31900b35b9e0517483cad9da89665d5f3250a8f628191bbaf96dc39"
-    sha256 cellar: :any_skip_relocation, ventura:       "056ca086a31900b35b9e0517483cad9da89665d5f3250a8f628191bbaf96dc39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "727ce1d0bcb33af40b10b67a6750b3994fc24ab29fa4cc75f5873d6bd2e01efe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1390df0181cb0ef8b0242b1dcfaac6d4664f048cbab4ed152958da80fddac13"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1390df0181cb0ef8b0242b1dcfaac6d4664f048cbab4ed152958da80fddac13"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1390df0181cb0ef8b0242b1dcfaac6d4664f048cbab4ed152958da80fddac13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9efc2498a44d8a592ee387cd61dba64a61921bbee0c35f80515007376509cf1"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9efc2498a44d8a592ee387cd61dba64a61921bbee0c35f80515007376509cf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd585b656aba69ff06f0747eecd4cbe9967627ffc20de4d0838cd0c53d008ea5"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Cog < Formula
     # Prevent Makefile from running `pip install build` by manually creating wheel.
     # Otherwise it can end up installing binary wheels.
     system python3, "-m", "pip", "wheel", "--verbose", "--no-deps", "--no-binary=:all:", "."
-    (buildpath"pkgdockerfileembed").install buildpath.glob("cog-*.whl").first => "cog.whl"
+    (buildpath"pkgdockerfileembed").install buildpath.glob("cog-*.whl").first
 
     ldflags = %W[
       -s -w
