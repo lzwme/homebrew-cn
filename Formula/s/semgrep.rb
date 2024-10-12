@@ -4,10 +4,9 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.90.0",
-      revision: "8d38a7fcd5329824a8071757954ca64704e885ff"
+      tag:      "v1.91.0",
+      revision: "1de480b1638ce20814e238f93429d96c9685d99e"
   license "LGPL-2.1-only"
-  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -16,13 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1302aa9ce454fd54dea55e50ec77037a915723ea1ffb727ee17b1b2d9a3dd279"
-    sha256 cellar: :any,                 arm64_sonoma:  "e996cb8bff08190320cfeb8464de5f7b4488c12a0423c7928ab9fe21f19b6ff1"
-    sha256 cellar: :any,                 arm64_ventura: "b241544ce5068cd2d6ce6c2d65423422504769d3a8829783542938bcedf65a59"
-    sha256 cellar: :any,                 sonoma:        "8c313d2cd7c8eb7dac6c7735753afd864c9ec85209fd57b3a84f544f73f9ae00"
-    sha256 cellar: :any,                 ventura:       "33191794a1a953b93f44a6fa2918d2e726e77a1e3f5b4f6b6b8de1677a9402ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f45de2d13de665fa7ce3142979db921428a15af3705d4022be29b063fad6c09"
+    sha256 cellar: :any,                 arm64_sequoia: "99455084d848bb7076e0dbd3594e5c1579ae67bbba7025ebb030cf0740af26b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b5fab43a496f0cb30d513b5c557ccd18a8f2fbf837cc132b635fcd2807548ba"
+    sha256 cellar: :any,                 arm64_ventura: "8e2756c002829516bb99db22076be99e884354027d196e712ecb377c36239a86"
+    sha256 cellar: :any,                 sonoma:        "25b8db90142db7bd0a7b1cacc7ce974591fb8376a99805ee899951d77000f66d"
+    sha256 cellar: :any,                 ventura:       "ab763d272df4c4c98abb4efce28c81a37adbc8532139ae379b557bcb62bc5e81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6435502a87edfe0a0b1b4001995b8ac9dca74a0ce81f6803bdea438c7bdf3d"
   end
 
   depends_on "autoconf" => :build
@@ -59,13 +57,13 @@ class Semgrep < Formula
   end
 
   resource "bracex" do
-    url "https:files.pythonhosted.orgpackagesacf1ac657fd234f4ee61da9d90f2bae7d6078074de2f97cb911743faa8d10a91bracex-2.5.tar.gz"
-    sha256 "0725da5045e8d37ea9592ab3614d8b561e22c3c5fde3964699be672e072ab611"
+    url "https:files.pythonhosted.orgpackagesd66c57418c4404cd22fe6275b8301ca2b46a8cdaa8157938017a9ae0b3edf363bracex-2.5.post1.tar.gz"
+    sha256 "12c50952415bfa773d2d9ccb8e79651b8cdb1f31a42f6091b804f6ba2b4a66b6"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -129,8 +127,8 @@ class Semgrep < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
-    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+    url "https:files.pythonhosted.orgpackages10db58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352jsonschema_specifications-2024.10.1.tar.gz"
+    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
   resource "markdown-it-py" do
@@ -244,8 +242,8 @@ class Semgrep < Formula
   end
 
   resource "tomli" do
-    url "https:files.pythonhosted.orgpackagesc03fd7af728f075fb08564c5949a9c95e44352e23dee646869fa104a3b2060a3tomli-2.0.1.tar.gz"
-    sha256 "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
+    url "https:files.pythonhosted.orgpackages35b9de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264btomli-2.0.2.tar.gz"
+    sha256 "d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"
   end
 
   resource "typing-extensions" do
@@ -277,10 +275,6 @@ class Semgrep < Formula
     # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
     # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
-    # build fails with uuidm 0.9.9
-    inreplace "semgrep.opam", ^\s+"uuidm"$, "\\0 {= \"0.9.8\"}"
-    odie "remove the `inreplace` for semgrep.opam!" if build.bottle? && version > "1.90.0"
 
     # Ensure dynamic linkage to our libraries
     inreplace "srcmainflags.sh" do |s|

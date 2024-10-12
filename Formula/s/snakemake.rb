@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesad6c9d984ccd2fb6cbb68edafa2e510b9b7b58060a38d5959b4fdbeb161bcec9snakemake-8.20.6.tar.gz"
-  sha256 "ecf62b26ff041925985229b76bd15e3fbdef10baa03aa003406a9a10e40132c2"
+  url "https:files.pythonhosted.orgpackages6da7e36f14571207429055afdbffbc8d93baf3ec2b06e95df74ed7c2e7c758dfsnakemake-8.20.7.tar.gz"
+  sha256 "9c8d75a4b270a31282d33170264a098698f055b8433c45610bfd364e5d6c5a91"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "838c9823eff5b0b2b79a5c24da1356c05c98602401be757e2b5ffff6d3902204"
-    sha256 cellar: :any,                 arm64_sonoma:  "498754cb310e675ea21eb0efb4dbcc6b704c96a0522ab137a69ea3a7ce0359ea"
-    sha256 cellar: :any,                 arm64_ventura: "ff163d2aafac2cbcfd57432a978a2c4ec7f33a113113b06aaa727a6ca18fe121"
-    sha256 cellar: :any,                 sonoma:        "c54869c67c546f07024bce0fc2c5a15d9c87e73edaee1b2ef8e34b72a300b390"
-    sha256 cellar: :any,                 ventura:       "badc45d7e17c7d1445e486e132f98a5558ff87bf5fec92a4a697d1e45d7089ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2be711a4895b88979d271cd684ba59200b76e0f47c2bf90a1de804a63f67ae6b"
+    sha256 cellar: :any,                 arm64_sequoia: "30be39f97856ea8f6972a92564bb5cc37023a4de2ae1d1f0e63864210023141f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a211ff9e9f2fa3acd1a570755f6f0d693faf5f4accfaa4eb8d4b2dfe327a692"
+    sha256 cellar: :any,                 arm64_ventura: "3972330bd8c28350a2c3e3bacbb555cead625a0acb15cc9179364a29df0db524"
+    sha256 cellar: :any,                 sonoma:        "c94442ee284a72d5ff05feb454d3ed1b8090dc0d37b28a1cd9b42546321aff9a"
+    sha256 cellar: :any,                 ventura:       "d51097bed6bcf421bc5edc204af8f754158dadf85282a10a7c0bec55f5d36324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "350fd426ed33d93c1f01a9dacc56c86d2ef6f2881007255e51f7089d90eac6fc"
   end
 
   depends_on "rust" => :build
@@ -39,8 +39,8 @@ class Snakemake < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "conda-inject" do
@@ -99,8 +99,8 @@ class Snakemake < Formula
   end
 
   resource "immutables" do
-    url "https:files.pythonhosted.orgpackages7d6327f038a28ff2110bc04908a047817fd316d5a16ae06d0d3707732dee8013immutables-0.20.tar.gz"
-    sha256 "1d2f83e6a6a8455466cd97b9a90e2b4f7864648616dfa6b19d18f49badac3876"
+    url "https:files.pythonhosted.orgpackages69410ccaa6ef9943c0609ec5aa663a3b3e681c1712c1007147b84590cec706a0immutables-0.21.tar.gz"
+    sha256 "b55ffaf0449790242feb4c56ab799ea7af92801a0a43f9e2f4f8af2ab24dfc4a"
   end
 
   resource "jinja2" do
@@ -114,8 +114,8 @@ class Snakemake < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
-    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+    url "https:files.pythonhosted.orgpackages10db58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352jsonschema_specifications-2024.10.1.tar.gz"
+    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
   resource "jupyter-core" do
@@ -124,8 +124,8 @@ class Snakemake < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
+    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
   end
 
   resource "nbformat" do

@@ -15,12 +15,13 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "20a568f5c98571b9bdd77c365dd6619ff67fd06b0d6118325e75fc38d417aef8"
-    sha256 arm64_sonoma:  "293ed8ed214f5f4bb6be87e38d7402d16a9ad5a197a310864a926bd443d247ce"
-    sha256 arm64_ventura: "f89c2a59eba2d3ba9c49ed5f789922a3ea434a1b463368ccb2ec232ce2c10ec8"
-    sha256 sonoma:        "512ac33fae3b71ed269e1824e84589a935b875720679d14794891354fbb62b84"
-    sha256 ventura:       "f15f6180f92ee0f5da9f430d1dd9d9c94d8d1edc3361958a7d971c92dabfea82"
-    sha256 x86_64_linux:  "0e48055f9f4476e08991b874320681dca27610ac55e8e7ca8a770769ec92aeb6"
+    rebuild 1
+    sha256 arm64_sequoia: "39c91308dcd8fad7a1a2837e30c995b5a6d549c15dd5588919934a17d8661ac7"
+    sha256 arm64_sonoma:  "67ba99b7cd54a54ffe9d4e796ba945e4904246d80fad9db4f2a14f0e1fb5a5bf"
+    sha256 arm64_ventura: "2c4154695367e44ba42ef63657f982be51f112d58c70f4ce0820e023b5cc6229"
+    sha256 sonoma:        "90955f283776a74e8a473776cdf8b4799aac9bbc5599256712ed0ccc9267356d"
+    sha256 ventura:       "00422982de3adedc6ce6dbdc8167f2309a7891e4f482ad78d066638c9121dcb4"
+    sha256 x86_64_linux:  "67f635814320965ab61fd82e699b5b3e9d2a9d3774b7cdc78dc5d994b80ce33f"
   end
 
   depends_on "cmake" => :build
@@ -69,8 +70,9 @@ class Rpm < Formula
     inreplace "pythonCMakeLists.txt", "${Python3_SITEARCH}", prefixLanguage::Python.site_packages(python3)
 
     # WITH_INTERNAL_OPENPGP and WITH_OPENSSL are deprecated
+    rpaths = [rpath, rpath(source: lib"rpm")]
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DCMAKE_INSTALL_SHAREDSTATEDIR=#{var}lib
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}

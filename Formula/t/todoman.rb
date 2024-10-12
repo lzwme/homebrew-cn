@@ -3,19 +3,18 @@ class Todoman < Formula
 
   desc "Simple CalDAV-based todo manager"
   homepage "https:todoman.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesfd60dbd18038cfe5a795d2e427b3ae4112c340966ed2d3a70303a4d59d7313ebtodoman-4.4.0.tar.gz"
-  sha256 "0b7beeb8c73bfa299147288d9b657bc4e0e288febb84e198ef72cb1412af9db6"
+  url "https:files.pythonhosted.orgpackages866f6d765dbfe855b8d8f881672dc251a7f5fe558ce46c165367fe96aca5a95atodoman-4.5.0.tar.gz"
+  sha256 "2e81dba7b34a2cba6fe74f381c579500ab525ebf3f82847e56127c69d382f121"
   license "ISC"
   head "https:github.compimutilstodoman.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0781231ff24e4cff6911d8d020c9264982e430ce7ca19fb2d286ad7e2a1921eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "0781231ff24e4cff6911d8d020c9264982e430ce7ca19fb2d286ad7e2a1921eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90d8afa66f2d255c3c19ec266fa234246e2087ec4726b3e56ab6e53b29a77ff3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3192caf6ebc642ffa76145ade0db63f852a69123317c012e73d5eed568616de5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3192caf6ebc642ffa76145ade0db63f852a69123317c012e73d5eed568616de5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3192caf6ebc642ffa76145ade0db63f852a69123317c012e73d5eed568616de5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f54a18bc2134dae96cf4104b9c19f755c9c5e4af2352f5929d720df5655d070"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f54a18bc2134dae96cf4104b9c19f755c9c5e4af2352f5929d720df5655d070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3192caf6ebc642ffa76145ade0db63f852a69123317c012e73d5eed568616de5"
   end
 
   depends_on "jq" # Needed for ZSH completions.
@@ -57,11 +56,6 @@ class Todoman < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
-  end
-
-  resource "pytz" do
-    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pyxdg" do

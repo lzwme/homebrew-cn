@@ -3,23 +3,23 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https:cli.codecov.io"
-  url "https:files.pythonhosted.orgpackages1295de52912654670293bd26d2bf7e52ff96ddccac0dc0af08f226cf97ef85d2codecov-cli-0.7.5.tar.gz"
-  sha256 "c6992229a4d6212cbe1cd4021628a46c67f592582ed40716598810e08b48bc91"
+  url "https:files.pythonhosted.orgpackages20d0ee70dee2101a001a5c49ca524340fba89497dfe2dcf80e2b776dbd2d61decodecov-cli-0.7.6.tar.gz"
+  sha256 "bb8f61d28afd146f14c55f023fa8fd2d3d90ebc1ad41fe157c12e4d135514e05"
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0d3f2611a0d2fcf4eb34d3b711ce9b2cf9df14c8e9de295169dfa6e3267d4226"
-    sha256 cellar: :any,                 arm64_sonoma:  "097c9f0e90b47c15aa04370f3559db3412393168c3e99a617999db6d6ce44038"
-    sha256 cellar: :any,                 arm64_ventura: "e02bac0d1c8be04268953dc1b22ecaa6e2cb0df77dc993780d7b219a0ece5691"
-    sha256 cellar: :any,                 sonoma:        "1903f60860be95811635bbdb0276a74fc4a35b96347ebd9ec0fccc6d0a69e0d5"
-    sha256 cellar: :any,                 ventura:       "1c2abc497b7c78ce493649c989d3d0f6a67123cddc94a93f16bdb4d1457bfb26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35429ebcccf97c854b3dd9229f5cb55eaf2b67fbbd08c1d2bc5c1e04588d170b"
+    sha256 cellar: :any,                 arm64_sequoia: "8a824bf6f9be7c3f85c7d7b557d25bff4807a57c085b72ce46387d46eeaea3e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3e6f3240e6d74fb40d5da46fb595a806d9503c7c65d00af6e4e5664b7dd1e30"
+    sha256 cellar: :any,                 arm64_ventura: "3690e5c1443f98d78c67b586b992e69316265b5c6c8c9f6cb1e392ff9552d295"
+    sha256 cellar: :any,                 sonoma:        "b60ec73211b5361cfe4af2ef233af34602691e57de821c447f8c0b8fb4206189"
+    sha256 cellar: :any,                 ventura:       "d913b1d0ff0a335eb18cd430b4beedc956e5701320942343f1099c920fb8cec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62c15a69b6923c08d60123c63fea33beca3f952581a5eb0e3a28364e8becce9c"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "anyio" do
     url "https:files.pythonhosted.orgpackages7849f3f17ec11c4a91fe79275c426658e509b07547f874b14c1a526d86a83fc8anyio-4.6.0.tar.gz"
@@ -32,8 +32,8 @@ class CodecovCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -102,8 +102,8 @@ class CodecovCli < Formula
   end
 
   resource "test-results-parser" do
-    url "https:files.pythonhosted.orgpackagesfa1f35f5b23beb148c36285bfe9722adeaef976814670ebf9bd8129356a283c8test_results_parser-0.1.0.tar.gz"
-    sha256 "0034281a4b406d7f072fc5ac1f5e44660e3c23bc92f2e7284862ee097f9626ee"
+    url "https:files.pythonhosted.orgpackagesa64d2df785a23ccec80f427a61e5dcb6ecde5884cdd57b964fafbfe90e40d741test_results_parser-0.5.1.tar.gz"
+    sha256 "0da5124eee0783d49b27005ddcf94c708026fe8eb7435c8ce44edd5716cec0cf"
   end
 
   resource "tree-sitter" do

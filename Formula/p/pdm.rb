@@ -3,19 +3,18 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https:pdm.fming.dev"
-  url "https:files.pythonhosted.orgpackagesf49ab7bbf626d17354f8d64d6a5f930e420d79f4e46cc293edddf7c1ff0672a0pdm-2.19.1.tar.gz"
-  sha256 "7fe235a9cb27b7ec17b762dc85bc9ae71e0776e4b7a8b6f64203f24bb915aa2c"
+  url "https:files.pythonhosted.orgpackages17e6f1477c70257e565a73404371078b3952d8e320fbd2bf23fa05a004780004pdm-2.19.2.tar.gz"
+  sha256 "efb39264569181d0375536ef81c556648f16b540d429a53715730490a2283567"
   license "MIT"
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "384c1fa1db6dd3ba6ba62f33587ecd024ba3222fe565e8e2fa6bd43df978430f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ed3e4a4f2792ca1ae6a684eef3a033e47e91328c0204a966649de6df169869f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9b9f9449d468d4368ec4e7c606ff1fcf945cc8501096ed2cd05e9d9171a0c2a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "006b0a01abf2cbf27f08654f48faef616f236f463c163ab5eae1629679fba564"
-    sha256 cellar: :any_skip_relocation, ventura:       "3bdb57eb724d4ba5baf1f176df71d8af66117a4925e6474b81754539c2185f5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0364c329b2521e1f73f19010867ff6d271f610f5de8de8f2559e6f040ef0c855"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dda82f1b294ccccc90fdf860621dc2f6778afe940d5a97a1fd492e23466eb65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e227cb377eb9d67659b606dbfcf851f47a6bd073a43c7c970dc4d277b75afb67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff63e122f3b8f0fe0fd30883853a448e6111b0eb8cbfe3cb05f94e9ce8559f96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0bbf597aa20c761b5eedeff6dda0ef90461e20a0eac9e1fe4a5b1048324afd7a"
+    sha256 cellar: :any_skip_relocation, ventura:       "10909410da57956658e59462854ad2aa4754f2f2cdcf7e191a2d48c7123158c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18d7faad0a5c38b9ada6083f6af040bd417f6b56944296a378e0b201e0df5773"
   end
 
   depends_on "certifi"
@@ -102,8 +101,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https:files.pythonhosted.orgpackages20446c67d7c874633f020acdd3b8d097e2a11643eea45d8cb4916f0f411661cfpbs_installer-2024.10.8.tar.gz"
-    sha256 "9dbadd399d50f4f1d46df5ee4cfe1da2ba7bb70f16e7d82329df492befa738bc"
+    url "https:files.pythonhosted.orgpackagesef8335d8150c84a7b83bffcb130a4afef1424267d8a11b3bf54035030ce9811apbs_installer-2024.10.10.tar.gz"
+    sha256 "228bba8e78134c407ee6637da6a5a16479aaa702332bfb1b95d873fc00802305"
   end
 
   resource "platformdirs" do

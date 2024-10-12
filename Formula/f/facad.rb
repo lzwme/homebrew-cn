@@ -1,17 +1,17 @@
 class Facad < Formula
   desc "Modern, colorful directory listing tool for the command-line"
   homepage "https:github.comyellow-footed-honeyguidefacad"
-  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.16.0.tar.gz"
-  sha256 "6cf3963807c038b34c87c57535b3a0f0949211af4dd6f5c477ca477b2a33232d"
+  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.18.0.tar.gz"
+  sha256 "2c4b487fce0046767e37fbbfe77e530b38d4184a5a82710c9fdd74d184b71f0a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "499a5ff9653b60e5d3c7b15ee1d8f1bfea6ccb8bcf475c3328f0dab1a3f7749d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9915b596c25f62e7ab0d7b0bbd6041f32a27f464c13cef51addad0ab5020312"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9cf1da0a282d4e1a0bf31c598c32db9a6a4e3951e1a2fc2c30e3f0acbb4599aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b363eb1e46b109bb18f46070f270b321212d0dbfaf94c45225fbb0a5d14d5f40"
-    sha256 cellar: :any_skip_relocation, ventura:       "f42572f8063a0f5310fdd8e59808760e181e26c2573fd47ae3b2c61c9cbe5ff9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e670c18d58062da8f93ede3e9e58931495f91b5066d1e85154b1ff152ffd3380"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c254eed36076c6b8d245084f8a81728d821eaac846c0b51a9e464062181efe27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52e69e6903590f5b7a7908b0c31a714a841ecf57905a93cc26dd8e4ad7790308"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d67892e3de277927b006478e9beae4039db3e02f7c4ca599a06bb9ec9078721f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d109477775cc9e45648c9713d16452dbb3453449a3b52ad6a085f116cf2393c1"
+    sha256 cellar: :any_skip_relocation, ventura:       "f358dd6f18d143fc6af661391998eaad63d3d11a54e7d89aba4cbc328049667b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62058b41a686d0bf5aa4e55b0efb2dadd14778b52a9591991b1fe69bd60d9adb"
   end
 
   depends_on "meson" => :build

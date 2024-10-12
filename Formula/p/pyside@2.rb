@@ -18,19 +18,22 @@ class PysideAT2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "2a18d3d225e93333d6c8d1ef3ff4600ef93b57f1349b652b38d5cc06adaed6bc"
-    sha256 cellar: :any, arm64_sonoma:  "790b699c7c8b2c8661a9c87071da19e7a684401b09d10364ba420afa0f1b8ac0"
-    sha256 cellar: :any, arm64_ventura: "98f0de431b0fd516596e41df5203051b3ee999c6acb3c3475aebe399dccbd1cf"
-    sha256 cellar: :any, sonoma:        "2629043ff748a72a706180cb6cfa31c6b87c61df28a9944918231e758889d892"
-    sha256 cellar: :any, ventura:       "dc681795199bbb8e5000042b3d38a7083f8eefdcee403b0152289def8657b0dd"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "178bfac28b6aea96909460a6d7ce44db7e640a846a48a964b4fb9364c0dbbb86"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab18344204faa467c824c8d4da6e1e5d80dd0e43d7e48998e3f90e95bb956639"
+    sha256 cellar: :any,                 arm64_ventura: "8735843b33c4a02bfa3dce6082e5da613f6c942849e6808d5251b5a592a49803"
+    sha256 cellar: :any,                 sonoma:        "7a4c28bdc958a68d72769376e82a0b8b4e222ceefa3622028e534ac006fbf147"
+    sha256 cellar: :any,                 ventura:       "2536223a55281bada5fd2502933b5573f50073871e23e6b17badeb881038e608"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1abdac7d89bd080d31759b882b67af2f5a4870339ab0ee4731daa4571b2bf673"
   end
 
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "pkg-config" => :test
   depends_on "llvm"
-  depends_on "python@3.10"
+  depends_on "python@3.12"
   depends_on "qt@5"
 
   uses_from_macos "libxml2"
@@ -49,12 +52,18 @@ class PysideAT2 < Formula
     sha256 "ede69549176b7b083f2825f328ca68bd99ebf8f42d245908abd320093bac60c9"
   end
 
-  # Apply Debian patches to support newer Clang
+  # Apply Debian patches to support newer Clang and Python 3.12
   # Upstream issue ref: https://bugreports.qt.io/browse/PYSIDE-2268
   patch do
     url "http://deb.debian.org/debian/pool/main/p/pyside2/pyside2_5.15.14-1.debian.tar.xz"
     sha256 "a0dae3cc101b50f4ce1cda8076d817261feaa66945f9003560a3af2c0a9a7cd8"
-    apply "patches/shiboken2-clang-Fix-clashes-between-type-name-and-enumera.patch",
+    apply "patches/Shiboken-Fix-the-oldest-shiboken-bug-ever.patch",
+          "patches/PyEnum-make-forgiving-duplicates-work-with-Python-3.11.patch",
+          "patches/Fix-tests-sample_privatector-sample_privatedtor-failing-w.patch",
+          "patches/Python-3.12-Fix-the-structure-of-class-property.patch",
+          "patches/Support-running-PySide-on-Python-3.12.patch",
+          "patches/Final-details-to-enable-3.12-wheel-compatibility.patch",
+          "patches/shiboken2-clang-Fix-clashes-between-type-name-and-enumera.patch",
           "patches/shiboken2-clang-Fix-and-simplify-resolveType-helper.patch",
           "patches/shiboken2-clang-Remove-typedef-expansion.patch",
           "patches/shiboken2-clang-Fix-build-with-clang-16.patch",
@@ -65,7 +74,7 @@ class PysideAT2 < Formula
   end
 
   def python3
-    "python3.10"
+    "python3.12"
   end
 
   def install
@@ -91,7 +100,6 @@ class PysideAT2 < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DPYTHON_EXECUTABLE=#{which(python3)}",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
-                    "-DFORCE_LIMITED_API=yes",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -132,11 +140,14 @@ class PysideAT2 < Formula
         return 0;
       }
     EOS
+
+    ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs shiboken2").chomp.split
+    python_version = Language::Python.major_minor_version(python3)
     rpaths = []
-    rpaths += ["-Wl,-rpath,#{lib}", "-Wl,-rpath,#{Formula["python@3.10"].opt_lib}"] unless OS.mac?
-    system ENV.cxx, "-std=c++11", "test.cpp",
-           "-I#{include}/shiboken2", "-L#{lib}", "-lshiboken2.abi3", *rpaths,
-           *pyincludes, *pylib, "-o", "test"
+    rpaths += ["-Wl,-rpath,#{lib}", "-Wl,-rpath,#{Formula["python@#{python_version}"].opt_lib}"] unless OS.mac?
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}",
+                    *pkg_config_flags, *rpaths, *pyincludes, *pylib
     system "./test"
   end
 end

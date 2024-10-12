@@ -54,25 +54,18 @@ class VirtManager < Formula
     sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
   end
 
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.match?(^python@\d\.\d+$) }
-        .map { |f| f.opt_libexec"binpython" }
-  end
-
   def install
-    pythons.each do |python|
-      venv = virtualenv_create(libexec, python)
-      venv.pip_install resources
+    python3 = "python3.13"
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources
 
-      # Restore disabled egg_info command
-      inreplace "setup.py", "'install_egg_info': my_egg_info,", ""
-      system libexec"binpython", "setup.py", "configure", "--prefix=#{prefix}"
-      ENV["PIP_CONFIG_SETTINGS"] = "--global-option=--no-update-icon-cache --no-compile-schemas"
-      venv.pip_install_and_link buildpath
+    # Restore disabled egg_info command
+    inreplace "setup.py", "'install_egg_info': my_egg_info,", ""
+    system libexec"binpython", "setup.py", "configure", "--prefix=#{prefix}"
+    ENV["PIP_CONFIG_SETTINGS"] = "--global-option=--no-update-icon-cache --no-compile-schemas"
+    venv.pip_install_and_link buildpath
 
-      prefix.install libexec"share"
-    end
+    prefix.install libexec"share"
   end
 
   def post_install

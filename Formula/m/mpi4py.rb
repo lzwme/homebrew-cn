@@ -1,18 +1,17 @@
 class Mpi4py < Formula
   desc "Python bindings for MPI"
   homepage "https:mpi4py.github.io"
-  url "https:github.commpi4pympi4pyreleasesdownload4.0.0mpi4py-4.0.0.tar.gz"
-  sha256 "820d31ae184d69c17d9b5d55b1d524d56be47d2e6cb318ea4f3e7007feff2ccc"
+  url "https:github.commpi4pympi4pyreleasesdownload4.0.1mpi4py-4.0.1.tar.gz"
+  sha256 "f3174b245775d556f4fddb32519a2066ef0592edc810c5b5a59238f9a0a40c89"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "9a95ba33840080c35ea9db9966dc12fb7a568c7ce16314b668c12fc68adca7d5"
-    sha256 cellar: :any, arm64_sonoma:  "64b593673a2cb086eb1ddca34612551a718e2378b3089ee92e1d8f0445d8f16d"
-    sha256 cellar: :any, arm64_ventura: "99c17af7c851561b4ddd126786b78ef408951f66543248294364f04adbd71de8"
-    sha256 cellar: :any, sonoma:        "0ae9bf46e9e2b972d2b3525ae6266b835cb45e1c0da56db341ee90e154b3e8ab"
-    sha256 cellar: :any, ventura:       "5048281eb20ebc2ef3ae0599cb8a7a654023ace09714cbadba0d2def87119142"
-    sha256               x86_64_linux:  "05e76123237f12f59d14c3dfe9a0bb3a2e62a4fa3f05546852da24da6802278c"
+    sha256 cellar: :any, arm64_sequoia: "557a93e747f7b13041f6104ecb537616e6d6080bc485e6964d8b6ab7699e7af1"
+    sha256 cellar: :any, arm64_sonoma:  "2d6bba0738377bf1c10bf44a51de01c4fe125f25ff30277a85150f7c62f1932f"
+    sha256 cellar: :any, arm64_ventura: "6087645f1f222cd2a5efe80274895f5da76190f7fdae53c19a41442a4ea26372"
+    sha256 cellar: :any, sonoma:        "c6df8310a13fdf5f75d7d3dac7e5696d643fcdb487182185d77fcc3aaa897138"
+    sha256 cellar: :any, ventura:       "8a5f05db2cc8ddf8dd771a04001b324e1d148610f7cf18134cfb08dd9fc72a07"
+    sha256               x86_64_linux:  "d5850a6a3d6c4cc24c46f1d6054c71aaa1773f377b6887794761d2eca9467a96"
   end
 
   depends_on "open-mpi"

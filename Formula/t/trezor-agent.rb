@@ -1,28 +1,34 @@
 class TrezorAgent < Formula
   include Language::Python::Virtualenv
 
-  desc "Hardware SSHGPG agent for Trezor, Keepkey & Ledger"
+  desc "Hardware SSHGPG agent for Trezor and Ledger"
   homepage "https:github.comromanztrezor-agent"
+  # NOTE: On version bumps, check if `bleak`'s OS-specific extra_packages need to be updated.
+  # These are required to avoid losing resources since the packages are resolved based on native OS.
+  # Ref: https:github.comhbldhbleakblobdeveloppyproject.toml#L28-L40
   url "https:files.pythonhosted.orgpackages11bcaa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
   revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cf5dd8fd1c6dd007964f1e81ec9218e3dc1d5d9f1bb545fe84caf215856221b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b921ca2520b8c663f0f7a281de0f80233ec71aeaa1e5f6cdffcf8248183d65c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ab6e698fb20adc705a359d0c3385b39d6b98cce041e4609a3009de6da934c8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68a141cce758ffa8ff2f55c359d821d03786bcd6ed0fee2c72de57401c1cc6fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "dcf4a3c22308bec19c31bd8421416bd9d92a280b6e4bc447c4bdab60f37b307f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59269110bdfa3b35e7d8e7f9132916ab56fd010dec905625e00d25e942666799"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "dacc7fc74d74d54215962f62c6948843120620146af5838229a60e232cdc350e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e914176c9062e1a752008b02f8b8bc0a76d43288e0b98aa63dd2eb7b3dd4ed2c"
+    sha256 cellar: :any,                 arm64_ventura: "ba7b811fdaa9ff3d59b29c1e45fc10b79b0e6aa38da02142c87f15a729b60720"
+    sha256 cellar: :any,                 sonoma:        "2b76dfb6751857d5387d3b9f22c8ee251e7b57d856507b73d1696995a03dec8e"
+    sha256 cellar: :any,                 ventura:       "024ae9d0f2390a10361747958666828d4523a49a562cb3b8087a77e383cd8bd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d2b8c93baeac6e51a9aea22b9edd114dda2c18f45f904f13b8b3ae42107870"
   end
 
+  depends_on "pkg-config" => :build # for hidapi resource
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "libusb"
+  depends_on "hidapi"
+  depends_on "libsodium" # for pynacl
+  depends_on "libusb" # for libusb1
   depends_on "pillow"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "backports-shutil-which" do
     url "https:files.pythonhosted.orgpackagesa02251b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5backports.shutil_which-3.5.2.tar.gz"
@@ -35,13 +41,13 @@ class TrezorAgent < Formula
   end
 
   resource "bleak" do
-    url "https:files.pythonhosted.orgpackages0376733131e2935f4fcdc7a0dd47cbc5090e12d578297804fb0482575db43f3cbleak-0.22.2.tar.gz"
-    sha256 "09010c0f4bd843e7dcaa1652e1bfb2450ce690da08d4c6163f0723aaa986e9fe"
+    url "https:files.pythonhosted.orgpackagesfb9615750b50c0018338e2cce30de939130971ebfdf4f9d6d56c960f5657daadbleak-0.22.3.tar.gz"
+    sha256 "3149c3c19657e457727aa53d9d6aeb89658495822cd240afd8aeca4dd09c045c"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -62,6 +68,11 @@ class TrezorAgent < Formula
   resource "construct-classes" do
     url "https:files.pythonhosted.orgpackages83d3e42d3cc9eab95995d5349ec51f6d638028b9c21e7e8ac6bea056b36438b8construct-classes-0.1.2.tar.gz"
     sha256 "72ac1abbae5bddb4918688713f991f5a7fb6c9b593646a82f4bf3ac53de7eeb5"
+  end
+
+  resource "dbus-fast" do
+    url "https:files.pythonhosted.orgpackages0a37a27e7f2dc6a18b5dcee70ffb08013a33770c2154a51fb5e2c04a7f4169fadbus_fast-2.24.3.tar.gz"
+    sha256 "9042a1b565ecac4f8e04df79376de1d1d31e4c82eddb6e71e8b8d82d0c94dd3d"
   end
 
   resource "docutils" do
@@ -92,16 +103,6 @@ class TrezorAgent < Formula
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
-  end
-
-  resource "keepkey" do
-    url "https:files.pythonhosted.orgpackages3038558d9a2dd1fd74f50ff4587b4054496ffb69e21ab1138eb448f3e8e2f4a7keepkey-6.3.1.tar.gz"
-    sha256 "cef1e862e195ece3e42640a0f57d15a63086fd1dedc8b5ddfcbc9c2657f0bb1e"
-  end
-
-  resource "keepkey-agent" do
-    url "https:files.pythonhosted.orgpackages65724bf47a7bc8dc93d2ac21672a0db4bc58a78ec5cee3c4bcebd0b4092a9110keepkey_agent-0.9.0.tar.gz"
-    sha256 "47c85de0c2ffb53c5d7bd2f4d2230146a416e82511259fad05119c4ef74be70c"
   end
 
   resource "ledger-agent" do
@@ -270,14 +271,15 @@ class TrezorAgent < Formula
   end
 
   def install
-    # Help gcc to find libusb headers on Linux.
-    ENV.append "CFLAGS", "-I#{Formula["libusb"].opt_include}libusb-1.0" unless OS.mac?
-
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resources.reject { |r|
-      r.name == "python-daemon" || (OS.mac? ? r.name == "dbus-fast" : r.name.start_with?("pyobjc"))
-    }
-    venv.pip_install_and_link buildpath
+    ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
+    ENV["SODIUM_INSTALL"] = "system"
+    without = ["python-daemon"]
+    without += if OS.mac?
+      ["dbus-fast"]
+    else
+      resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+    end
+    venv = virtualenv_install_with_resources(without:)
 
     # Workaround breaking change in `setuptools`: https:pagure.iopython-daemonissue94
     resource("python-daemon").stage do
@@ -290,5 +292,8 @@ class TrezorAgent < Formula
   test do
     output = shell_output("#{bin}trezor-agent identity@myhost 2>&1", 1)
     assert_match "Trezor not connected", output
+
+    # Check versions of resources as resolver may not pick correct versions of non-OS extra packages
+    system libexec"binpython", "-m", "pip", "check"
   end
 end

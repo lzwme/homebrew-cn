@@ -3,26 +3,29 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.18.0.tar.gz"
-  sha256 "3092f3f4d824240a8966d6af90c8b59ec4931eff98d213e0552125357df812f5"
+  url "https:github.comml-exploremlxarchiverefstagsv0.18.1.tar.gz"
+  sha256 "6a86ccb0cb54e45bcc782ed4ca878935e64f24fbc38497f65e606e43d3280f8c"
   # Main license is MIT while `metal-cpp` resource is Apache-2.0
   license all_of: ["MIT", "Apache-2.0"]
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "f7ff101103bf279545eac047d541024a48e33458b9a59da57fdc0869ab147645"
-    sha256 cellar: :any, arm64_sonoma:  "c5c15e6a9fe01c0aae89927cb71dd72e3ed281e66c311474d6c09275eb37d0cb"
-    sha256 cellar: :any, arm64_ventura: "f83b7f2dac77b9fdc4629cf68a9df9bae4ad4b8ed08960769f487c7ccc16a848"
-    sha256 cellar: :any, sonoma:        "2645899802a81eba22e5a7c5818b5d7bff24b87191fe94346e0b8bbe827fbfc7"
-    sha256 cellar: :any, ventura:       "1534d48abc18af9a957b83606135f597d51f9c11adbfa731815cf59a6fd7b8e0"
+    sha256 cellar: :any, arm64_sequoia: "5f5e0298961712ffa8f424593fd0d22a2a6d3f172e193a74492eb3acf5599ffe"
+    sha256 cellar: :any, arm64_sonoma:  "4d44552bcaf9e498f2875f63819708ae0b2d7456a44bfb5de1803dfde6964337"
+    sha256 cellar: :any, arm64_ventura: "67141b5129d4ece72e93b4d8c91e0d0064464d35c499b5fcfc50d1b62359dea8"
+    sha256 cellar: :any, sonoma:        "45450229616ac9199edda2ce7a357f27f6fbbfea5824922090aa452d04d28c0c"
+    sha256 cellar: :any, ventura:       "b2b6d970ca97169702bf0953794d8ab866ff5ae819aebb82bf9f2f36aa2e8494"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt" => :build
+  depends_on "nanobind" => :build
   depends_on "nlohmann-json" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "robin-map" => :build
   depends_on :macos
   depends_on macos: :ventura
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   on_arm do
     depends_on xcode: ["15.0", :build] # for metal
@@ -47,19 +50,8 @@ class Mlx < Formula
     sha256 "1ee2dde74a3f9506af9ad61d7638a5e87b5e891b5e36a5dd3d5f412a8ce8dd03"
   end
 
-  # https:github.comml-exploremlxblobv#{version}pyproject.toml#L4
-  resource "nanobind" do
-    url "https:files.pythonhosted.orgpackages3148dea3d75657366b5a75b9d57a4e4fa7b224d98e8385f72fc7762d504533dfnanobind-2.1.0-py3-none-any.whl"
-    sha256 "a613a2ce750fee63f03dc8a36593be2bdc2929cb4cea56b38fafeb74b85c3a5f"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27cbe754933c1ca726b0d99980612dc9da2886e76c83968c246cfb50f491a96bsetuptools-74.1.1.tar.gz"
-    sha256 "2353af060c06388be1cecbf5953dcdb1f38362f87a2356c480b6b4d5fcfc8847"
-  end
-
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
@@ -67,14 +59,11 @@ class Mlx < Formula
     (buildpath"gguflib").install resource("gguflib")
 
     mlx_python_dir = prefixLanguage::Python.site_packages(python3)"mlx"
-    venv = virtualenv_create(buildpath"venv", python3)
-    venv.pip_install [resource("nanobind"), resource("setuptools")]
-    ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     # We bypass brew's dependency provider to set `FETCHCONTENT_TRY_FIND_PACKAGE_MODE`
     # which redirects FetchContent_Declare() to find_package() and helps find our `fmt`.
     # To re-block fetches, we use the not-recommended `FETCHCONTENT_FULLY_DISCONNECTED`.
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: mlx_python_dir)}
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
@@ -88,7 +77,7 @@ class Mlx < Formula
       "-DMLX_ENABLE_X64_MAC=ON"
     end
 
-    ENV["CMAKE_ARGS"] = args.join(" ")
+    ENV["CMAKE_ARGS"] = (args + std_cmake_args).join(" ")
     ENV[build.head? ? "DEV_RELEASE" : "PYPI_RELEASE"] = "1"
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}"
 

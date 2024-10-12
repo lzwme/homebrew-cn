@@ -9,13 +9,13 @@ class OnlykeyAgent < Formula
   revision 4
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "3b5b5a0528b572263ae0762f938f356683a62128a8a565255237a70054d87d14"
-    sha256 cellar: :any,                 arm64_sonoma:  "8b199481eb3a297e9e0cc3292f65cb47467322d58a0fd3244f5e355a78044f63"
-    sha256 cellar: :any,                 arm64_ventura: "d8b0793556d59810a96169653c6db59bb598c64f11b001c48062ff7ecf7cb4a9"
-    sha256 cellar: :any,                 sonoma:        "9effb4f7cf068eae7d90212a033693bb8bc72250136fd48f858aaac2d07226d2"
-    sha256 cellar: :any,                 ventura:       "9668068bba931bf6a6ef7a31e726e43aa9a3d54c7c62704d24cd2877a3b580df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "858dbabb5ebc998b6a33e97fd1b2fc31b4b97c87b3c592b7102b2aaa57a4fafa"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "3bc1c41071e79281d21ccaa85fd1b87d5f1f19717bddaf99acf907a2b737ff57"
+    sha256 cellar: :any,                 arm64_sonoma:  "8de381ef7b7bc4090f0ada090cc3283e93caae73e2c6bb21289e8dec92091474"
+    sha256 cellar: :any,                 arm64_ventura: "54e82c2ddbf51c18373cd22bd2de3aad772e0966515f64e6eaab4391468ef94e"
+    sha256 cellar: :any,                 sonoma:        "337a19fd7c24f60f7914229d925549f6eb76294978be74f60715998a2f242f55"
+    sha256 cellar: :any,                 ventura:       "d4d0a4371dd9bf1e10b0af8f367556710e738a630999e7757d457b0ab0088b86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7907f513c458b0cdcf8bfc995a366ebaef25805ba4efac3f2d55c925820d7d4"
   end
 
   depends_on "pkg-config" => :build
@@ -23,7 +23,8 @@ class OnlykeyAgent < Formula
   depends_on "cryptography"
   depends_on "gnupg"
   depends_on "hidapi"
-  depends_on "libusb"
+  depends_on "libsodium" # for pynacl
+  depends_on "libusb" # for pyusb
   depends_on "python@3.13"
 
   resource "aenum" do
@@ -192,7 +193,8 @@ class OnlykeyAgent < Formula
   end
 
   def install
-    ENV["HIDAPI_SYSTEM_HIDAPI"] = ENV["HIDAPI_WITH_LIBUSB"] = "1"
+    ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
+    ENV["SODIUM_INSTALL"] = "system"
     venv = virtualenv_install_with_resources without: "python-daemon"
 
     # Workaround breaking change in `setuptools`: https://pagure.io/python-daemon/issue/94
