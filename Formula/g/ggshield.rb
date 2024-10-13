@@ -9,18 +9,19 @@ class Ggshield < Formula
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8b7400d487cfc3f306f825b2484b098b083aebc5fa5ad2b5b5b3dafee01b507b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c841eec9dede6ca429406a371df79b6efc979592651a76e8e8fb9d4b00f11b8c"
-    sha256 cellar: :any,                 arm64_ventura: "f1a2eb26ed5e42b869e4a29291324491bbd3a7462bf25596facc0819b3d08059"
-    sha256 cellar: :any,                 sonoma:        "defe6fe2fdd0a22dda5ea6117c72573cd83c54061cf0077c1ebc28cd57811574"
-    sha256 cellar: :any,                 ventura:       "898c8eeac3d9a35d3421ff51333783b22cfc4932d4ee0e5ce2a52f5ec46bbb7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84cbc563658ba39caba013f99fc391856c33ce69dc564c8ff0fdb37aa6fc7259"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5f39014dbbd22d1461222ec30b0420e4f00d9168099e5ba8aed6a52b2f839aa7"
+    sha256 cellar: :any,                 arm64_sonoma:  "9db1f7de3890a159ba7f45ee89aeb3bef6bb4f6e8d0b4a29fadde2b628f9c01a"
+    sha256 cellar: :any,                 arm64_ventura: "f969f50d66e6a7dc545bee32d556fdcba44586005184f1c6fc6b458818d25941"
+    sha256 cellar: :any,                 sonoma:        "7fe9275a98e952947e0553184cfddae7b9f851bdd52c1aabde3a9dea905b947d"
+    sha256 cellar: :any,                 ventura:       "e163405f1057704f4545b886cf4a6f1c281c32bcce2c3af585069bf4508be80d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b94474c632240caa7c158b3f70afe4f038f64a85a3e40d6ac0f6fbfa28e5ec47"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackagesffd78d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2charset-normalizer-3.1.0.tar.gz"

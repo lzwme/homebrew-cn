@@ -1,8 +1,8 @@
 class Pulsarctl < Formula
   desc "CLI for Apache Pulsar written in Go"
   homepage "https:streamnative.io"
-  url "https:github.comstreamnativepulsarctlarchiverefstagsv3.3.1.8.tar.gz"
-  sha256 "cfd3493cd2116c625048d9b23715dd474da4b8a3bb6c27365f7f90328fb2ec8c"
+  url "https:github.comstreamnativepulsarctlarchiverefstagsv3.3.1.9.tar.gz"
+  sha256 "63131a703b3d74251b84587f6d50f32511f668a6bcb83a1d09396fad774bc5c5"
   license "Apache-2.0"
   head "https:github.comstreamnativepulsarctl.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Pulsarctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd8e37d00d22d688adf6957c2ff171290e77fc402698df3c89c9d7a34d12ae47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "137c783ca54b9a56ca5e5e985fdeab241d92793595752a0301737a05ef8b46c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa0a3bbf92d117020a08185462e184bfcba1c281bdec876652dcab03e10c7821"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4fc9a3b2dcb8fae8ad0286d38607b0271ab617443d5999b8a47df7227e021e0c"
-    sha256 cellar: :any_skip_relocation, ventura:       "99da3238780189df25afd82b2c4ddbcf05464d680ec4d38ad906266ab8283227"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203fbab1217d6249285c301cb483377a98e47c415e7bca4e88e6992352d84a26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21686a2137d2b32d3b66ba793e2f39ac9c30f156227ac46a1b2a25cbbdcabf50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75d6849556bb0db347f48adfa6ea24d076c42784a1b64b02e495c237273e9dd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "04f3048667bff15ea5db8a8495a737dfd7a0bb16559468b9659569af2e73b2ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "905e47107b802c2d4b7859cebae7b695a9c13f72b4f8589e42dfd7c9e34c1ddf"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c0bcbddeb411da378dffda38cf651fbe6bdbe7ed7510fb805635d82c1121ff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb62a81bd0e70ec2ae4dcc7de4ed46a5892fcddacea36e94b8237de331839b41"
   end
 
   depends_on "go" => :build

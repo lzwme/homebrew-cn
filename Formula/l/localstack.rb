@@ -8,19 +8,20 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "03ac1e3728cb7956b17c5b9999e999d3d2d36fb38f8e25617100f6c2d6a2fc33"
-    sha256 cellar: :any,                 arm64_sonoma:  "6615dc0b5d10c770dc5655356d1ac3f4c53adf99fa965feea573e860c9ef737b"
-    sha256 cellar: :any,                 arm64_ventura: "18d82f9b18f2fe3b1ef4b3074689b590259699f727b2156ab7515700e22b5f3a"
-    sha256 cellar: :any,                 sonoma:        "cb4e7c283ac882da477896a160aa78ebe4d67eccf1bf0c8e7af44d2ab13d7b33"
-    sha256 cellar: :any,                 ventura:       "3f5ff23e224c2251002c9fb3279494e7db6b2a9f4892cd153338b657311602e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9bc317dc804d5b369db42b5313d185e3b1f8d2d1006f5951a0a7a7e45e4afc3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bc517a26a4a5fb8e09acc27effa02167af89e441f8dfec85b8c61bc6d4cf318b"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f031b82eb322194a74303d822fa4c20ada057a0090b55ef970aa10f521d837a"
+    sha256 cellar: :any,                 arm64_ventura: "c024c5ab79b2e232ea6b57cbde639a8807aa0a3e2edd7f3e79aa029cfd9ac9d9"
+    sha256 cellar: :any,                 sonoma:        "5eb541a4c3ac373fa54500e97a864120c1e29a9db3d3f6eb38b04264dce54e68"
+    sha256 cellar: :any,                 ventura:       "9013ae1e5293743fed294f04aa147b452c0a762514c38e71085a02171a077fca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d06655740dd41db721a16b64646f180074d50b66ec100dc77b2d7973418b5d0"
   end
 
   depends_on "docker" => :test
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "build" do
     url "https://files.pythonhosted.org/packages/7d/46/aeab111f8e06793e4f0e421fcad593d547fb8313b50990f31681ee2fb1ad/build-1.2.2.post1.tar.gz"
@@ -33,8 +34,8 @@ class Localstack < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do

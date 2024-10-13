@@ -15,12 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "99455084d848bb7076e0dbd3594e5c1579ae67bbba7025ebb030cf0740af26b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b5fab43a496f0cb30d513b5c557ccd18a8f2fbf837cc132b635fcd2807548ba"
-    sha256 cellar: :any,                 arm64_ventura: "8e2756c002829516bb99db22076be99e884354027d196e712ecb377c36239a86"
-    sha256 cellar: :any,                 sonoma:        "25b8db90142db7bd0a7b1cacc7ce974591fb8376a99805ee899951d77000f66d"
-    sha256 cellar: :any,                 ventura:       "ab763d272df4c4c98abb4efce28c81a37adbc8532139ae379b557bcb62bc5e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6435502a87edfe0a0b1b4001995b8ac9dca74a0ce81f6803bdea438c7bdf3d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6c03e1b4d561e5fe1837150aaaa07036725122405628910a367ac69a1c91b0f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ec695b928e37576be5b91476c32478b2aecbc7407b382e33a11a23139acc537"
+    sha256 cellar: :any,                 arm64_ventura: "20fa7a03d1d084736c8339235fde3c69d0e4b5b336544da66c760039aa27eda8"
+    sha256 cellar: :any,                 sonoma:        "f4c2f695f1d95a39a84a4c5da93a894724c60f83d98dd8d89d26f7f796f5aabc"
+    sha256 cellar: :any,                 ventura:       "7b8be52ec074617f7170f1aee9cc7c2406900e7a31cb122f8ea0ab845bfe77f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331ea4d04e0cd3485dfd540ac4816094e4c76e7dbd6096d408a51e3087c5592b"
   end
 
   depends_on "autoconf" => :build
@@ -37,7 +38,7 @@ class Semgrep < Formula
   depends_on "libev"
   depends_on "pcre"
   depends_on "pcre2"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "sqlite"
   depends_on "tree-sitter"
 
@@ -231,11 +232,6 @@ class Semgrep < Formula
     sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
-  resource "ruamel-yaml-clib" do
-    url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
-    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
-  end
-
   resource "setuptools" do
     url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
     sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
@@ -272,10 +268,6 @@ class Semgrep < Formula
   end
 
   def install
-    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
-    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
     # Ensure dynamic linkage to our libraries
     inreplace "srcmainflags.sh" do |s|
       s.gsub!("$(brew --prefix libev)liblibev.a", Formula["libev"].opt_libshared_library("libev"))
@@ -330,7 +322,7 @@ class Semgrep < Formula
     end
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
-    venv = virtualenv_create(libexec, "python3.12")
+    venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources.reject { |r| r.name == "glom" }
 
     # Replace `imp` usage: https:github.commahmoudglomcommit1f883f0db898d6b15fcc0f293225dcccc16b2a57

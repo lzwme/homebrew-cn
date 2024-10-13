@@ -9,11 +9,12 @@ class GalleryDl < Formula
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1f771e430eaa9b8f8500ddf6fe6a2b12515577633d1da9ed898d8701dee01d5d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8983d8abfc7d69646811362d99bf3089be0fae84f8bff948c119eb1c46c897fe"
   end
 
   depends_on "certifi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"

@@ -3,18 +3,20 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https:www.ansible.com"
+  # TODO: migrate to `python@3.13` with ansible 11 (ansible-core 2.18)
   url "https:files.pythonhosted.orgpackagesd723ae30b280ebad1f19fa012c0410aaf7d50cd741a5786bd60a2ecba42d2cd4ansible-10.5.0.tar.gz"
   sha256 "ba2045031a7d60c203b6e5fe1f8eaddd53ae076f7ada910e636494384135face"
   license "GPL-3.0-or-later"
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6caba102dff952fa97a986f358ce4bb7635febc40ba2864acfb74d8e6952a419"
-    sha256 cellar: :any,                 arm64_sonoma:  "e160be947169f2f98546c6d18752723bf0d6b0a8fb2c0edbf71e813f2cf2d662"
-    sha256 cellar: :any,                 arm64_ventura: "ad23549f94dfb932d9b7b28eae829c0c06eedb3f5fdc5ca865585624e220aea5"
-    sha256 cellar: :any,                 sonoma:        "c39141d8eacc59498366b9e7e0442a88e830ce7ef1f44f5c2cf018ce10a4c077"
-    sha256 cellar: :any,                 ventura:       "8d813ee5b6e3e0796ba72697ee48f93b81a25de6547d229d79b7113d41fea4b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42d18b036b675acf4de5d250d05db1abe6696b1cd6c620d3cc7c84843621f187"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4135e4faf541afc2ae9886420fc109037701e1b961fb06495f642af7d3d9844a"
+    sha256 cellar: :any,                 arm64_sonoma:  "415a3d08607d22e8f6a02c329ed29a916f0e1a858e453614636617c0e4e35c5c"
+    sha256 cellar: :any,                 arm64_ventura: "4fc0cc59d45bd64b2594ad0535a50006b1a0638d99d11d262780cf1af3c328cb"
+    sha256 cellar: :any,                 sonoma:        "b7d4362af464ceff324351adcd096d8d05e1a50ebcb33521eb36b529a8f32b9a"
+    sha256 cellar: :any,                 ventura:       "3b63c20769f88fe3938b2a5cb4ecda400d180dc7579a53d210166386925a83ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ce35653811c5facec161c0ca8f971977a733d4fdf6f27437c2c5cef15958a05"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -22,9 +24,10 @@ class Ansible < Formula
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # TODO: migrate to `python@3.13` with ansible 11 (ansible-core 2.18)
 
   uses_from_macos "krb5"
   uses_from_macos "libxml2", since: :ventura
@@ -528,15 +531,10 @@ class Ansible < Formula
     sha256 "627ad26769b6831130239182afcb195f64fbf494626bc9eb4b2ac8170de5b775"
   end
 
-  def python3
-    "python3.12"
-  end
-
   def install
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources.reject { |r| r.name == "ansible-core" }
+    ENV["SODIUM_INSTALL"] = "system"
+    venv = virtualenv_install_with_resources without: "ansible-core"
     venv.pip_install_and_link resource("ansible-core")
-    venv.pip_install_and_link buildpath
   end
 
   test do
@@ -549,6 +547,7 @@ class Ansible < Formula
         - name: ping
           ping:
     EOS
+    python3 = "python#{Language::Python.major_minor_version libexec"binpython"}"
     (testpath"hosts.ini").write [
       "localhost ansible_connection=local",
       " ansible_python_interpreter=#{which(python3)}",

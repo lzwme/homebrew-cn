@@ -8,17 +8,18 @@ class Datasette < Formula
   head "https:github.comsimonwdatasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9a8911296a620880ef077699e9b26f2a7bd09bea515a5029ad29bb8981b9729b"
-    sha256 cellar: :any,                 arm64_sonoma:  "673cf60372c1d9d11f97bb2c6de861d0b179a130ac2859decf6996ff8b2ba838"
-    sha256 cellar: :any,                 arm64_ventura: "cd52aebc46a38d008bf883f4905c50504cfd92293fa44951170b130ebf79ac12"
-    sha256 cellar: :any,                 sonoma:        "da4a441ee62637947e8ce51677f14df382996ffd62940b66c6daca3dc24be1ae"
-    sha256 cellar: :any,                 ventura:       "f6445269d1bd13eed27ebffd578a567899a0378abf463e0e83030e78797063d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cd5a24bc03d5be7d767acd5b67d46cc5ac3cc40671a416cbe93cc1b4d48f7d1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6df91bb9f45d5491c87f74ebb42676ac2dbab518bea3ecf59dfeed5bb4e9fbd4"
+    sha256 cellar: :any,                 arm64_sonoma:  "88684f7c66fed5ef13f206cc443eb0e0e34858c90ab16453c9c174efd0c48421"
+    sha256 cellar: :any,                 arm64_ventura: "e7d5f6253dd4cb34f8b5afbc745b8862447147d79fb029fb94f65763a89108f2"
+    sha256 cellar: :any,                 sonoma:        "e53e578039a61000d6bbafc119b89b3b7f03b6e1abc1d1905f86bba730debcab"
+    sha256 cellar: :any,                 ventura:       "07cf44c1cca5bf8c88e91bebaf5fe663d8c316f6137b18c2b82d8f085a8b2717"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b16e959a84b8a39a84e52501823a7aec150c5b38a2a7b3a314440d56155f2b86"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "aiofiles" do
     url "https:files.pythonhosted.orgpackages0b03a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237aiofiles-24.1.0.tar.gz"
@@ -101,8 +102,8 @@ class Datasette < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
+    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
   end
 
   resource "mergedeep" do
@@ -146,8 +147,8 @@ class Datasette < Formula
   end
 
   resource "uvicorn" do
-    url "https:files.pythonhosted.orgpackages0a96ee52d900f8e41cc35eaebfda76f3619c2e45b741f3ee957d6fe32be1b2aauvicorn-0.31.0.tar.gz"
-    sha256 "13bc21373d103859f68fe739608e2eb054a816dea79189bc3ca08ea89a275906"
+    url "https:files.pythonhosted.orgpackages7687a886eda9ed495a3a4506d5a125cd07c54524280718c4969bde88f075fe98uvicorn-0.31.1.tar.gz"
+    sha256 "f5167919867b161b7bcaf32646c6a94cdbd4c3aa2eb5c17d36bb9aa5cfd8c493"
   end
 
   def install

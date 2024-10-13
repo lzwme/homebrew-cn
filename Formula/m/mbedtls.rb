@@ -24,7 +24,7 @@ class Mbedtls < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
 
   def install
     inreplace "includembedtlsmbedtls_config.h" do |s|
@@ -38,7 +38,7 @@ class Mbedtls < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_SHARED_MBEDTLS_LIBRARY=On",
-                    "-DPython3_EXECUTABLE=#{which("python3.12")}",
+                    "-DPython3_EXECUTABLE=#{which("python3.13")}",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DGEN_FILES=OFF",
                     *std_cmake_args

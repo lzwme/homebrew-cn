@@ -1460,7 +1460,7 @@ Homebrew-homebrew-core/Formula/d/dsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dspdfviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dssim.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dstack.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dstack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dstask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsvpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dtach.rb, Homebrew/homebrew-core, 0
@@ -2921,7 +2921,7 @@ Homebrew-homebrew-core/Formula/j/jq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jreleaser.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/jrnl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jrnl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jrsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jrtplib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jruby.rb, Homebrew/homebrew-core, 0
@@ -9432,6 +9432,7 @@ Homebrew-homebrew-cask/Casks/font/font-h/font-holtwood-one-sc.rb, Homebrew/homeb
 Homebrew-homebrew-cask/Casks/font/font-h/font-homemade-apple.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-homenaje.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-honk.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-h/font-host-grotesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubballi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubot-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-humor-sans.rb, Homebrew/homebrew-cask, 0
@@ -11623,6 +11624,7 @@ Homebrew-homebrew-cask/Casks/l/lectrote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/ledger-live.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leech.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leela.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/legcord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lego-mindstorms-ev3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lehreroffice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lemonlime.rb, Homebrew/homebrew-cask, 1

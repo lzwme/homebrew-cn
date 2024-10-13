@@ -9,17 +9,18 @@ class Fava < Formula
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7ee8a25b51900cc31b5344f3dfcc8f9d253c785a1883fa13528d7f08b302f560"
-    sha256 cellar: :any,                 arm64_sonoma:  "859c710901aeecde72b4b53f68c50fb20cde58d0df174330c88009234b52de60"
-    sha256 cellar: :any,                 arm64_ventura: "95261194d9e606808267176448550cd218027f8e8588cffb31c67f115ff0a5fc"
-    sha256 cellar: :any,                 sonoma:        "859f9d818f25d2dda580d328ffaee95d8efa23bfd2f5b7969a8cf21f1db90bad"
-    sha256 cellar: :any,                 ventura:       "33286a89087e98383b255c70c86e4a032eb0b53ac73c57b503fde10188b18d74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46ae6dc71ddee1b98c41f6d14db3023240fd7e46179ec8f1cd7caafa43c5c102"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f98b460460e675a13f0cb462ad1d906cb2476d5f8c0917d1a80b47abb2268358"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f3acb2b323420fe6d5a19cf69041871ea9a2261678041fbf5c334ab73151b17"
+    sha256 cellar: :any,                 arm64_ventura: "4275a683df863adfdaf8b21695fb329212dbb4f64be3c9bd205ee29b310b7ee8"
+    sha256 cellar: :any,                 sonoma:        "d26010bdb968617cc54b3022e0a2b64d4d66492b03d176fc43f9901d90a01163"
+    sha256 cellar: :any,                 ventura:       "379f4fb0f5e6d2e01b48c7fe21d932ddbaceec049402a0ad3458293b3981ebb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7690ba0b9293271d7100c6f7e1754c6043e46aba2be7fa7b9106e3910bfc59d5"
   end
 
   depends_on "rust" => :build # for watchfiles
   depends_on "certifi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -50,8 +51,8 @@ class Fava < Formula
   end
 
   resource "bottle" do
-    url "https:files.pythonhosted.orgpackages877eeae463f832f64b3a1cb640384d155079e7dd2905116ab925e9bb04f66e75bottle-0.13.1.tar.gz"
-    sha256 "a48852dc7a051353d3e4de3dd5590cd25de370bcfd94a72237561e314ceb0c88"
+    url "https:files.pythonhosted.orgpackages1bfb97839b95c2a2ea1ca91877a846988f90f4ca16ee42c0bb79e079171c0c06bottle-0.13.2.tar.gz"
+    sha256 "e53803b9d298c7d343d00ba7d27b0059415f04b9f6f40b8d58b5bf914ba9d348"
   end
 
   resource "cachetools" do

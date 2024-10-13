@@ -3,19 +3,18 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https:github.comremarshal-projectremarshal"
-  url "https:files.pythonhosted.orgpackagesaee798e22a9d62ee2c086da94f6aafeee5e7c3a68197d761cc22c90e7e949afbremarshal-0.18.0.tar.gz"
-  sha256 "8fd29ba9d5931f5ee2c54f902b11b26cd3bbca0ad8b3d6f39ca48255284f71dd"
+  url "https:files.pythonhosted.orgpackages47e9c1c440ddd94b8a909dde84bb8afc841159f5b4eba2d1c52b1fbc8c6346d6remarshal-0.19.1.tar.gz"
+  sha256 "0b52f0231ce80cd2683e7f5ab32174b5a163d0d38f096b0d658dd609b80a9b56"
   license "MIT"
   head "https:github.comremarshal-projectremarshal.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbb59f67b559e23f1f753d59ed14abe4480629c2ecd136956a629b070068dc5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a37f7612a8aff3ecfa898545a4378c30a663f6ddbb057b8edde10ab09386e902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b85a726195027c768025551799b5caf18204f15c1df77b42919187283ea953a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6f20ac0594ce4a0ab1e75ebca41114eaf8c0cbc169900200a6c623c2f99651c"
-    sha256 cellar: :any_skip_relocation, ventura:       "2419097e325c43da8ac103b72fb62a4aa5375d95ff1f8f2f34e5c895d4e71191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f96b4eb29477bf7e984652007a6301bf5e1dddd25c9e47bea5d8f2c36b49e86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06cb23335b9ead81a1eb04add7baeb472d8b1cc4201ff900eedfee5607e359cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "096efa1e9019e43e71acac49f6829c5ca92cedfab0efc1af9a1b9f9554ed5fef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "657164e8bcf19dcd59137beeb3ec86e035f60a38ab133b6b670638dd51c3d040"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a04f3ea965f1a3b7935e05e15bbd5477f65ebce4de12de6bac655dde30430c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "88bdb10b73340fef512fdb18982892da36914ab02a3b9c9990d1dd334df9fd11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b9c659dbb64c166cf65b2aa2140ad8a450aee10cba5cdfecd67e47f7b6c4368"
   end
 
   depends_on "libyaml"
@@ -64,8 +63,8 @@ class Remarshal < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages2bab18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8tomlkit-0.12.5.tar.gz"
-    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
+    url "https:files.pythonhosted.orgpackagesb109a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fatomlkit-0.13.2.tar.gz"
+    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
   end
 
   resource "u-msgpack-python" do
@@ -74,10 +73,6 @@ class Remarshal < Formula
   end
 
   def install
-    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
-    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
     virtualenv_install_with_resources
   end
 

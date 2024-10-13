@@ -9,16 +9,17 @@ class Djlint < Formula
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "32eafd4e474af074b07c586646354fc9f8254279c0881ec4e64b46d8266a1cb6"
-    sha256 cellar: :any,                 arm64_sonoma:  "57fa7be0848f587bd413785e301d4cb926c9556ca210df02c17f167a06e450dd"
-    sha256 cellar: :any,                 arm64_ventura: "2f733f032f688a974d4fec431aaf18e171fdce352094a3355fbaacd9da87a60f"
-    sha256 cellar: :any,                 sonoma:        "0693758610c3fd4e272c047aa024f8e514edb2a6d8b0bcc57eecba59a00ebb01"
-    sha256 cellar: :any,                 ventura:       "3b607982992a6bdf05191541388a8ec95a5f0d97622a1109141521020743a15a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "185a10480b969353fcbefee165c9d6b3729037b6c81b1d74fe16137ec9c00b23"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "091bed21d32b9ff2262763230a9868cf6daaba98990ce743c6f96362ffc83058"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd671663ffd2b3f74bacc3f8e283be9d56db4d7d2a4830dfaa5cb94b344b54dd"
+    sha256 cellar: :any,                 arm64_ventura: "e5475003140e226d0a878349272351cf2646e31916c8476e6cf33555cc7f9e12"
+    sha256 cellar: :any,                 sonoma:        "e2e31dc4a8f0b68e47f01100fbba2a4101581832e39fb5070779fe867c7a361a"
+    sha256 cellar: :any,                 ventura:       "93f1475e06b2ab21badf46c9d32285df5d2526fda2842a63b6ca135d8624a81b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d6f788dc20965e44d4f19d1610ef237cef267aaff1b6b720dbfddb9e3a931b"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "click" do
     url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"

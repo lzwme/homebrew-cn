@@ -1,18 +1,18 @@
 class Pipet < Formula
   desc "Swiss-army tool for web scraping, made for hackers"
   homepage "https:github.combjesuspipet"
-  url "https:github.combjesuspipetarchiverefstags0.2.2.tar.gz"
-  sha256 "66e93172ad9e6706044bac6e815053a85312896588de1306102e65aa40db7569"
+  url "https:github.combjesuspipetarchiverefstags0.3.0.tar.gz"
+  sha256 "9fb35bcc4be8b7655a4075c3b2bf7b0368ae7bb97e9e6dbbcf00422c8e18cc6b"
   license "MIT"
   head "https:github.combjesuspipet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d469becb32ebbedcc44206826e2158e73ff5396b410c3ef45e75ff34deeb3e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d469becb32ebbedcc44206826e2158e73ff5396b410c3ef45e75ff34deeb3e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d469becb32ebbedcc44206826e2158e73ff5396b410c3ef45e75ff34deeb3e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a58e3beebefc4356d5f14cd1f7800ae71c39a4baa73cdfe23b96339a7b9d0426"
-    sha256 cellar: :any_skip_relocation, ventura:       "a58e3beebefc4356d5f14cd1f7800ae71c39a4baa73cdfe23b96339a7b9d0426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa415e76fd5af27cab8de96ee16bc41e7637d8536ae22f7f3a3cba324a4d628"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "560a89ed526f7be6a13af3eaaa88fa4bbd108a488a251d1f562a4ef7af9a5e38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "560a89ed526f7be6a13af3eaaa88fa4bbd108a488a251d1f562a4ef7af9a5e38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "560a89ed526f7be6a13af3eaaa88fa4bbd108a488a251d1f562a4ef7af9a5e38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80d52f08edf8293bf7c71ae75dfff7e79df2575251bff9f6c9b5041a0168d8e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "80d52f08edf8293bf7c71ae75dfff7e79df2575251bff9f6c9b5041a0168d8e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "524fe9b1d57b91baafd8ebad6440a9745e6659fdf95ddf2c956226f649ebbc1f"
   end
 
   depends_on "go" => :build
