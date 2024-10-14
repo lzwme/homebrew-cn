@@ -1,17 +1,17 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https:lmod.readthedocs.io"
-  url "https:github.comTACCLmodarchiverefstags8.7.52.tar.gz"
-  sha256 "bacfda5f7c70c3514bfffb6f17550c16102942089d98b658ea681adaee1bd5f3"
+  url "https:github.comTACCLmodarchiverefstags8.7.53.tar.gz"
+  sha256 "5e7ed1a5acfee76abfd96f2ffa3af69d49052b9e88a04ab18d87d18a538c4834"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a94221d9cee3610d8c2f8e103296240b59601e26e29474543b392b63299396d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15ae39be7b60d4b6a4b077df02824dc481a49640702efc060432c01b41b514d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc3c48f77937028198e27ccf0b9c37c01815e415d75baccae7f15e541875db86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b26b4a9bb58b24dd7e85ce8c32fbb92188ddcca985d8894c06301659a78d7ab1"
-    sha256 cellar: :any_skip_relocation, ventura:       "f27b459ba1e10701100a5d1f6162c80492421bb76ca65cd318bba46bbc6cd4a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a375c73ad2f5668ad89d09ca07bf7730cc4d8eb609d2c669632f54e23666c86c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7f89cc87742f2d1196bc0fad3dacc43be40d21136723189cbf23ece89f3a24d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a56018bcbee0602a805a6dc109b157ed8768dfd15d846d3102a29095c8e84e03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "20d6dd789dd3ba4c8f0f24d170340c4348a524881caf0f5802dd128497db5b18"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80620eaa145726e23265a8b7a6d77180f6b4235f5fbd0661aeeccaa32233e668"
+    sha256 cellar: :any_skip_relocation, ventura:       "6042f267182adca68fe69f98ee9e6bb56968912d815b480b95bae74b09a54abd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "343f599971e406ede650a5196da07f20c1b1f09ee597ab7a2ca9a89a64f31e56"
   end
 
   depends_on "luarocks" => :build

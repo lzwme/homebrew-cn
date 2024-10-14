@@ -17,13 +17,15 @@ class Cog < Formula
   end
 
   depends_on "go" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
 
   conflicts_with "cocogitto", because: "both install `cog` binaries"
 
-  def install
-    python3 = "python3.12"
+  def python3
+    "python3.13"
+  end
 
+  def install
     # Prevent Makefile from running `pip install build` by manually creating wheel.
     # Otherwise it can end up installing binary wheels.
     system python3, "-m", "pip", "wheel", "--verbose", "--no-deps", "--no-binary=:all:", "."

@@ -8,16 +8,17 @@ class Sqlfluff < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "918c57b52b35ea927c8b209269783f763e07d7636ae8bab07d88f9a4a1413d75"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed2e9a72bc289ddccbc89d5fb822630cb71a41c63def9c14f2b4271e27056f1c"
-    sha256 cellar: :any,                 arm64_ventura: "2c0895878198a02c94e17f020abc5038e8f11ae416c91487df357ccc7aab9ed6"
-    sha256 cellar: :any,                 sonoma:        "a8a55c78280b695ed5f3fb9aa4d617e3bdb711c0e0cf69d0e9b0231aa3d1b8b6"
-    sha256 cellar: :any,                 ventura:       "ae1e035acdc57171fdeeededfa095cadff4a80e650f0fc3d0e005cc0e734066e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89b864ab67f28fd36ef168600f6e52ee53ec8f4a0767a7c7800c0d448631cd3c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "541ea51651f57fd8dfb4f9b86e17bb4bbe55c85e036b714e111996577203991f"
+    sha256 cellar: :any,                 arm64_sonoma:  "08bd4b44659d4f4a1bb6e1d252158f9110e6aa0d6f598eb5d6394d0774917dd5"
+    sha256 cellar: :any,                 arm64_ventura: "5819a52f2c2bb3200ecaeac4ac164aacf5d6e91d3b5268454787d9659ed2cf4e"
+    sha256 cellar: :any,                 sonoma:        "729eb196658909adff0bf9c7442caf7e8325b34fde97448152dc2a9f04ccc9ca"
+    sha256 cellar: :any,                 ventura:       "a24b40979ec10fcc9e2c36b0a8a0266e493aaca26ecc3783ada016f35e53be40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec820e2e1920a9012de8ec013538aec7309d57cdbe73e033c388214365432794"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"

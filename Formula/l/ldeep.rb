@@ -9,16 +9,17 @@ class Ldeep < Formula
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a22a77d32421266c1c9796d8260d2841df42f47f6238a6a58405ee56e3d9e963"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4225eebc5fdf90b0eb7f79b2cfd5d315bac39dc1e46c95fa46e5ffe7fcaae453"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8de0ea495bf0d041eab2f27b27edc2f003ebaecd270e7728b9b1f9bf5ec70893"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46b539f49b82c5d96a303beee50503c223fd5bea9b5015b0b3b96fb1d417c301"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ba96adcd1422897c74dfda023ffed3773515a97c6c157807f5f7206d5437991"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5dfa635d46dcfc607c21868b270fd36070c8087fbdb231b1330c5f68fb9004"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "608bd79ade375e4d8f8e396aa85e271abde1ebb1da3bf9b2b2b3ab8105f6d837"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de86e07e3e32a39f76799afaf1a0ac85cc5b8f8fc15b926acd7e509a62bab5b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4dbcaeddf072375b1bf997d78ff42baf70e02c3db2d9f4a2c6dded673b9d648c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da7542d8e5cc4522761204bfce8ada06b2be863d39ea5d256265a16c9f509de4"
+    sha256 cellar: :any_skip_relocation, ventura:       "be0a33d0259a468b6c2cccce13757141b5f635e03089a52d3576171919c584cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10603c243f1c1059d91876bd4ed7c71f1f4a39086f6d3f7ee2e5273162af34e5"
   end
 
   depends_on "cryptography"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "krb5"
 
@@ -87,6 +88,9 @@ class Ldeep < Formula
     sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
   end
 
+  # support py3.13 build
+  patch :DATA
+
   def install
     virtualenv_install_with_resources
   end
@@ -96,3 +100,18 @@ class Ldeep < Formula
     assert_match "[!] Unable to open connection with ldap:127.0.0.1:389", output
   end
 end
+
+__END__
+diff --git apyproject.toml bpyproject.toml
+index c432644..9a5854d 100644
+--- apyproject.toml
++++ bpyproject.toml
+@@ -19,7 +19,7 @@ dependencies = [
+     "termcolor >= 2.3.0, < 3",
+     "tqdm >= 4.26.0, < 5",
+ ]
+-requires-python = ">=3.8.1,<3.13"
++requires-python = ">=3.8.1,<3.14"
+ readme = "README.rst"
+ keywords = [
+     "pentesting security windows active-directory networks",

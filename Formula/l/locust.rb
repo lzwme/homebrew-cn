@@ -8,18 +8,19 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ce5235fc743f5169b09828c859d6e40aa1074c65e6e0f0ddde2aa012a36fedf"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f9069b34a52891ebba0872f68b5e8bb0795ee8de42c37eaa52a6d2232ef3fa4"
-    sha256 cellar: :any,                 arm64_ventura: "e454c044e86554703b953b16ecd5230c21ba2828189bbaf7a4c765ba20ccedc0"
-    sha256 cellar: :any,                 sonoma:        "d78b490d5fb44ed2df68d06acef2e89a01662c19558fe68162319d477f3b32ff"
-    sha256 cellar: :any,                 ventura:       "cbd3a0ffd087f815c3a6d916007be8667a2ef938ea6b62654889695cd9814572"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7d40c1eed675e7715313fd52d1cae5b7b11b3d12c651f96ac0cf9a463a18dcb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "99f88782f03f7f7be260c504124277771055e8d770cd77f429130e4f29f4b71e"
+    sha256 cellar: :any,                 arm64_sonoma:  "3aeaf2f227b9fd0ad93758071b34e74fb25b81ca6647795dcf19c4da9efdd39f"
+    sha256 cellar: :any,                 arm64_ventura: "19182684b6fc4f4b525b874b4e9c7af8e090fa5132bfc919a03c97f284798442"
+    sha256 cellar: :any,                 sonoma:        "083a93e43dadd53107978ef3dc79f46e7da5d8865624a937d30a11b234ca9d7c"
+    sha256 cellar: :any,                 ventura:       "dfac9152268f7f818f4bc6c51c6742eb664c445a8519d183789b9c45bd70dd7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8904c106dabf73b9bbdb8860070f122a00ae7d3ebe2841e7610570a723981595"
   end
 
   depends_on "cmake" => :build # for pyzmq
   depends_on "ninja" => :build # for pyzmq
   depends_on "certifi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "zeromq"
 
   resource "blinker" do
@@ -33,8 +34,8 @@ class Locust < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -63,8 +64,8 @@ class Locust < Formula
   end
 
   resource "gevent" do
-    url "https://files.pythonhosted.org/packages/27/24/a3a7b713acfcf1177207f49ec25c665123f8972f42bee641bcc9f32961f4/gevent-24.2.1.tar.gz"
-    sha256 "432fc76f680acf7cf188c2ee0f5d3ab73b63c1f03114c7cd8a34cebbe5aa2056"
+    url "https://files.pythonhosted.org/packages/72/91/e870ada18283016ee8e87d182fa2a092fedbc3d08c361e10800347de21d3/gevent-24.10.2.tar.gz"
+    sha256 "96e7bab9de56e0aca3858b8bc9c71f4eb0c0e12b7cf3cbfd170b62ce68cf71d7"
   end
 
   resource "geventhttpclient" do
@@ -93,8 +94,8 @@ class Locust < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https://files.pythonhosted.org/packages/b4/d2/38ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8f/markupsafe-3.0.1.tar.gz"
+    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
   end
 
   resource "msgpack" do
@@ -138,8 +139,8 @@ class Locust < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/c8/83/7de03efae7fc9a4ec64301d86e29a324f32fe395022e3a5b1a79e376668e/zope.interface-7.0.3.tar.gz"
-    sha256 "cd2690d4b08ec9eaf47a85914fe513062b20da78d10d6d789a792c0b20307fb1"
+    url "https://files.pythonhosted.org/packages/e4/1f/8bb0739aba9a8909bcfa2e12dc20443ebd5bd773b6796603f1a126211e18/zope_interface-7.1.0.tar.gz"
+    sha256 "3f005869a1a05e368965adb2075f97f8ee9a26c61898a9e52a9764d93774f237"
   end
 
   def install

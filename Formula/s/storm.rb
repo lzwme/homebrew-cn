@@ -8,16 +8,18 @@ class Storm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ce0e2d92dacba7041e54790d524b9f9953716371a536a2261b4999f876b49b09"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "96c59b0cd0af1e7e1b181d6303e2342d142603ebf7eacff6f954493b954cd51a"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.12"
+
+  uses_from_macos "python"
 
   def install
     libexec.install Dir["*"]
     (bin/"storm").write_env_script libexec/"bin/storm", Language::Java.overridable_java_home_env
-    rewrite_shebang detected_python_shebang, libexec/"bin/storm.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), libexec/"bin/storm.py"
   end
 
   test do

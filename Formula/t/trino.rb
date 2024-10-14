@@ -13,12 +13,14 @@ class Trino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "923910db1b795010a01ccd3215f2999e442e9c823eb97595b6a1568b56bf091a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c684a0f0590aa1abc4d0b7fcd472c5ee38ffc41d33dbcc2f9a35cd588c4f4aaf"
   end
 
   depends_on "gnu-tar" => :build
   depends_on "openjdk"
-  depends_on "python@3.12"
+
+  uses_from_macos "python"
 
   resource "trino-src" do
     url "https:github.comtrinodbtrinoarchiverefstags461.tar.gz", using: :nounzip
@@ -52,7 +54,7 @@ class Trino < Formula
       inreplace libexec"etcjvm.config", %r{^-agentpath:usrlibtrinobinlibjvmkill.so$\n}, ""
     end
 
-    rewrite_shebang detected_python_shebang, libexec"binlauncher.py"
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), libexec"binlauncher.py"
     (bin"trino-server").write_env_script libexec"binlauncher", Language::Java.overridable_java_home_env
 
     resource("trino-cli").stage do

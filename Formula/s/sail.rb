@@ -8,19 +8,20 @@ class Sail < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5670384079408ece28272167db16e7f026bda89f8c27fba44af4ef3bc285c9bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf2d4e87a3514e5a7b74826f6f09335340aa1c1bb2f4dbcead5d104c87fc86e9"
-    sha256 cellar: :any,                 arm64_ventura: "4ece6d4768ad98496261d0896436595cb6601fc4a2eeb87766cda1dad1c5a304"
-    sha256 cellar: :any,                 sonoma:        "8fd3657e5f6aa3bb22fe6853f405a9e2222bf6bc9da2bf6a7545d44ef85c7d64"
-    sha256 cellar: :any,                 ventura:       "7aa7f409f8367353cbe26e15511ea7d9018cec710638da1f3af87980ef3f41d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22eb432172b6a95c7f61362828bc70643a8962fe16e88f999c2913fdb901220a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c5230d1ee95b761262cf4e61f0d0d986ba104b723b946bee99434298e0f45d1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "60d1aaebe283bf61354372824082c570505b1445f293f49165010be6bf6d9555"
+    sha256 cellar: :any,                 arm64_ventura: "fae5bfa89044192fc9e2125ed0eff5b342f051c13161226593f9274a1b8fa4ff"
+    sha256 cellar: :any,                 sonoma:        "c1c2bb13b7b5a91134fd13438c51fad2ea9614b0b0f3507ea20bb604f9fa07db"
+    sha256 cellar: :any,                 ventura:       "dfb6bdfbde42ca87dcf65f0f243564002e1aa933102ceb0965ca0884e3ebb1e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c01e5309c1ef1a0968403f685b36e07f1e2df0c7f482f8e6bdccece60a879b1"
   end
 
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/e4/7e/d95e7d96d4828e965891af92e43b52a4cd3395dc1c1ef4ee62748d0471d0/bcrypt-4.2.0.tar.gz"
@@ -28,8 +29,8 @@ class Sail < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -78,8 +79,8 @@ class Sail < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https://files.pythonhosted.org/packages/b4/d2/38ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8f/markupsafe-3.0.1.tar.gz"
+    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
   end
 
   resource "packaging" do
@@ -103,8 +104,8 @@ class Sail < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "requests" do

@@ -7,25 +7,21 @@ class Uv < Formula
   head "https:github.comastral-shuv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f40ba0a7075dc16718c02d06fe148e2a8d499927e12d6c49687d878516338cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b5784290147688eea6a4f56768fad4d91d3e5deffb115b9654480fd4dc9cbf1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4185f832dce916cc4ed56cff66bfe8425d77e3a6cfa5943c0c4fa74cc2f09c81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24140f93de77707faf478817edae86a7fd4a24803f1248d383a2acef8a008ddf"
-    sha256 cellar: :any_skip_relocation, ventura:       "49c9d7c253c9fb977668371934f3324261c41f84cf23e48900bb3cadc6ae99a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7a5a1ab8c5875fa52bd6651dcf3efb45bd1db90886f9c3a84f62fb6aa08a8d0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "911095baf321a83c67b7737664dd612da1aa950c700b74004482ee2e7939c640"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "618adb8e92f1f3ba2ccb3ea4a25c055feb0946a189893cf81547c4c64f9a79c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85b3f0f0d095e41c05d9e9ffb0fee9323d3a1c39c86357166aab44c8c98e5a48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e366fa14b9670f9580b8ad2b9981648ac73e50918f35ad6e23dec506b45edcd"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba44663faeef060cffb92b37eecda516e6012f5c03f250748116af87a7c117f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "650dbd6a5486aa0621157a45ae23d5b5c445f98a502e5745197ff4b362181b0f"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
 
   uses_from_macos "python" => :test
+  uses_from_macos "bzip2"
   uses_from_macos "xz"
-
-  on_linux do
-    # On macOS, bzip2-sys will use the bundled lib as it cannot find the system or brew lib.
-    # We only ship bzip2.pc on Linux which bzip2-sys needs to find library.
-    depends_on "bzip2"
-  end
 
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user

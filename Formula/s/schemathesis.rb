@@ -8,18 +8,19 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "058437d93780a07d2b5b1e7bdb563f02786d107c227abcadd712ffa0a36b3fd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "232e0b87bb713377cfd35b20289966a6474ae5a3c5aabc84a95971912abea221"
-    sha256 cellar: :any,                 arm64_ventura: "0a90a687f4d2468d5d833d866b039c6a78da750e0bfac14cc267bcec3ee24036"
-    sha256 cellar: :any,                 sonoma:        "bbd816836759b7290b62ba9905c2f035a1b1b6f2c2feab44e6ee087026fba280"
-    sha256 cellar: :any,                 ventura:       "12e565123e12ae72eb9c73358d4452dc4eea2f826ae5a54893170884e91072a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e82523d89c1faed0de60d7627800cf4c6c2a206b8509386049c770ba7b8e2b5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "53abcb36a721e80397900cd9276e38a6956ed8ae97c01363828710aeca689cf0"
+    sha256 cellar: :any,                 arm64_sonoma:  "da7083a0c0aa67d0c2c6a5b57ed40679f9dcd2921ce9b2a9275a0b2adb3cb062"
+    sha256 cellar: :any,                 arm64_ventura: "379dec3608127417d1e6e4815437336b1ba21527599032240995fc2b901ad2b1"
+    sha256 cellar: :any,                 sonoma:        "bd3cd8bf8455fcaa50d4d15a1571f444ff4e6a8e65dc092fbfa511f65a6096f9"
+    sha256 cellar: :any,                 ventura:       "99a01db4837487b33a3907e263cb14beeb8065b1e2af0d14d62731ff2f9fe221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02fcf195d712afd16f5148c8aed185e0b61693e86b7a815ee1082987c854188b"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   conflicts_with "st", because: "both install `st` binaries"
 
@@ -89,8 +90,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/28/32/6513cd7256f38c19a6c8a1d5ce9792bcd35c7f11651989994731f0e97672/hypothesis-6.113.0.tar.gz"
-    sha256 "5556ac66fdf72a4ccd5d237810f7cf6bdcd00534a4485015ef881af26e20f7c7"
+    url "https://files.pythonhosted.org/packages/4c/a2/c5b13ffc887e6175c55bce438e233679aab6d3dcabbcfa8de94f75ba42b8/hypothesis-6.115.0.tar.gz"
+    sha256 "0603fdfa80b0866997ea8a618ca62c468fa03b902b2d3559a4b485dba0630e51"
   end
 
   resource "hypothesis-graphql" do
@@ -274,8 +275,8 @@ class Schemathesis < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/46/fe/2ca2e5ef45952f3e8adb95659821a4e9169d8bbafab97eb662602ee12834/yarl-1.14.0.tar.gz"
-    sha256 "88c7d9d58aab0724b979ab5617330acb1c7030b79379c8138c1c8c94e121d1b3"
+    url "https://files.pythonhosted.org/packages/ed/21/75ded903445bf9201f10c7c361b0776a67c7284ad5ef38af62fd38cc32c3/yarl-1.15.1.tar.gz"
+    sha256 "02e1c9e36528de270c22c06aac6a5a1de8cc870fafefb5e90e5b35cb8985d0b2"
   end
 
   def install

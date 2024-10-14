@@ -8,10 +8,11 @@ class RuffLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d29a83e84aae61bd7830e2d2e141e27610e6cbff76f4d232af5b0c6107794cb8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b8322356abd470ee27ddd18114380716de176723e69fd6ef3a2740d4a819c356"
   end
 
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "ruff"
 
   resource "attrs" do
@@ -20,8 +21,8 @@ class RuffLsp < Formula
   end
 
   resource "cattrs" do
-    url "https:files.pythonhosted.orgpackages3cba08912e7e6e796fa7d5da1aaf3f53235ee6b2a73ec51d93bdf69b77b1c0d1cattrs-24.1.1.tar.gz"
-    sha256 "16e94a13f9aaf6438bd5be5df521e072b1b00481b4cf807bcb1acbd49f814c08"
+    url "https:files.pythonhosted.orgpackages6465af6d57da2cb32c076319b7489ae0958f746949d407109e3ccf4d115f147ccattrs-24.1.2.tar.gz"
+    sha256 "8028cfe1ff5382df59dd36474a86e02d817b06eaf8af84555441bac915d2ef85"
   end
 
   resource "lsprotocol" do

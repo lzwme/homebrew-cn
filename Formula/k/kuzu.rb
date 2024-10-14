@@ -18,7 +18,8 @@ class Kuzu < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.12" => :build
+
+  uses_from_macos "python" => :build
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1400

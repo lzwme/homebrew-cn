@@ -1697,7 +1697,7 @@ Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fast_float.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastfec.rb, Homebrew/homebrew-core, 1
@@ -1832,7 +1832,6 @@ Homebrew-homebrew-core/Formula/f/fluent-bit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fluid-synth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flux.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fluxctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flvmeta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flvstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flyctl.rb, Homebrew/homebrew-core, 1
@@ -3045,7 +3044,6 @@ Homebrew-homebrew-core/Formula/k/kn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knot-resolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/knot.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/known_hosts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kommit.rb, Homebrew/homebrew-core, 1
@@ -5396,6 +5394,7 @@ Homebrew-homebrew-core/Formula/r/readpe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reattach-to-user-namespace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rebar3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/recc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/recode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recon-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recoverjpeg.rb, Homebrew/homebrew-core, 0
@@ -13946,7 +13945,7 @@ Homebrew-homebrew-cask/Casks/v/virtualbuddy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualbuddy@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualc64.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualdj.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/virtualgl.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/virtualgl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualhereserver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualhostx.rb, Homebrew/homebrew-cask, 0

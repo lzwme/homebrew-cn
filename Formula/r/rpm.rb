@@ -15,19 +15,19 @@ class Rpm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "39c91308dcd8fad7a1a2837e30c995b5a6d549c15dd5588919934a17d8661ac7"
-    sha256 arm64_sonoma:  "67ba99b7cd54a54ffe9d4e796ba945e4904246d80fad9db4f2a14f0e1fb5a5bf"
-    sha256 arm64_ventura: "2c4154695367e44ba42ef63657f982be51f112d58c70f4ce0820e023b5cc6229"
-    sha256 sonoma:        "90955f283776a74e8a473776cdf8b4799aac9bbc5599256712ed0ccc9267356d"
-    sha256 ventura:       "00422982de3adedc6ce6dbdc8167f2309a7891e4f482ad78d066638c9121dcb4"
-    sha256 x86_64_linux:  "67f635814320965ab61fd82e699b5b3e9d2a9d3774b7cdc78dc5d994b80ce33f"
+    rebuild 2
+    sha256 arm64_sequoia: "13c5452de71ad6162ef07c7712a9419734da128ea6c1d443abb7756a2a105551"
+    sha256 arm64_sonoma:  "dd2ff5b5bb9efbe1fff85619dd3d221291eb530f7d94558867c981a170bb54e4"
+    sha256 arm64_ventura: "64e55e92671e5947a51e69aaa7e95fad907f8b9790cc8481414e31144a6640c0"
+    sha256 sonoma:        "fda6009a2e5190fd74e8edb9cf8fe46d001d2fcacd71265eeb8c133b351cb3ae"
+    sha256 ventura:       "983e017cd82c4a2ff5b150fa9755c2a948d4e9566eccf216e407f29a568764f1"
+    sha256 x86_64_linux:  "66c98e854bc22abb034a74b2bbb44fcf3332c5a783250a971fc38f43768aa596"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gawk" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
 
   depends_on "gettext"
   depends_on "libarchive"
@@ -53,7 +53,7 @@ class Rpm < Formula
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

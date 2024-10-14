@@ -1,17 +1,17 @@
 class Sidekick < Formula
   desc "Deploy applications to your VPS"
   homepage "https:github.comMightyMoudsidekick"
-  url "https:github.comMightyMoudsidekickarchiverefstagsv0.6.3.tar.gz"
-  sha256 "15525dcd4cd2dca9bf109b93b6ad771ca51b7a88449d0fabf43dcd8dd3ed0bd1"
+  url "https:github.comMightyMoudsidekickarchiverefstagsv0.6.4.tar.gz"
+  sha256 "e82ce6217dd6650f2b63b9cc369ac4385b80d5ba7206a4301e623509ecbd46a2"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45adfa0f7640f06983f46e8a56599f58d347ade6c65e273bc1bb748d5c18c467"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45adfa0f7640f06983f46e8a56599f58d347ade6c65e273bc1bb748d5c18c467"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "45adfa0f7640f06983f46e8a56599f58d347ade6c65e273bc1bb748d5c18c467"
-    sha256 cellar: :any_skip_relocation, sonoma:        "283ed8b1d05a515100fb1a2654698ed49bd860fb43ec0606ed0dd279fa1d0781"
-    sha256 cellar: :any_skip_relocation, ventura:       "283ed8b1d05a515100fb1a2654698ed49bd860fb43ec0606ed0dd279fa1d0781"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366a5fd8e25c7fe85cfece626d62ccbb273254f1d9ee3c259796bd0980c42790"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "489df5c3af88a3fac2a2b35fd66ccd216b14be62f9f0cbd9b6a40c17f41f97b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489df5c3af88a3fac2a2b35fd66ccd216b14be62f9f0cbd9b6a40c17f41f97b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "489df5c3af88a3fac2a2b35fd66ccd216b14be62f9f0cbd9b6a40c17f41f97b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f69d0faa834c79e843c817a23b5051edfcdf9117aebb05ebec908146433aec91"
+    sha256 cellar: :any_skip_relocation, ventura:       "f69d0faa834c79e843c817a23b5051edfcdf9117aebb05ebec908146433aec91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d013a5b201b43321b17c5c75031eeb47df2191c963ef7888e4120702640a3542"
   end
 
   depends_on "go" => :build

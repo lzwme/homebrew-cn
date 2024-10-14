@@ -9,17 +9,18 @@ class Uvicorn < Formula
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8f317d7ea380f31ad835920f794b3d0e7549b63cd2d764ba8ae9410ff384b19d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e38faed23744dd4f295330695542c5064f562d3ca780fe77c28bef7f12f895d1"
-    sha256 cellar: :any,                 arm64_ventura: "bbac94e9b39058437c3b2cfb737862fd4206da10ea94a45d340f0230813f32b8"
-    sha256 cellar: :any,                 sonoma:        "7e3596e899aeca698fb52583d382f363ef243fa3e951b2bf8369f03f0f6e3f70"
-    sha256 cellar: :any,                 ventura:       "4054baa5dcbf6aa1de4f3dd9d7a25f451acec98bcdc70d07afe5f717406500de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fb10ddb2f99bbfdf8dee17f39c2039cc901fd2d11aa9e1d1a2b24fef476b9b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "087d97f9768bcd44f80d0d0ef3fcafc56a99335b25d97f2b3a17233b426b3a04"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b852e1c6fa7079b9b9b11c5a805a2906e08934838615ebc545797d2143250f9"
+    sha256 cellar: :any,                 arm64_ventura: "ab9dba37ca13b39a8373d7bef1aa9f3f5cc790d65a4a4c0e285c17b029782bda"
+    sha256 cellar: :any,                 sonoma:        "49fe70e58948a90a93b05a3f7b4677f7ee058305eeb42f54200da8d9594b5fa3"
+    sha256 cellar: :any,                 ventura:       "d063f20f35490c92377ef5171f03e53ef77c51ecfed84f43f62820b1f273d956"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4873a129d072481793cac940198a78e0f1aba8078035e280d072ca7adf0671a"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "anyio" do
     url "https:files.pythonhosted.orgpackages7849f3f17ec11c4a91fe79275c426658e509b07547f874b14c1a526d86a83fc8anyio-4.6.0.tar.gz"
@@ -39,6 +40,9 @@ class Uvicorn < Formula
   resource "httptools" do
     url "https:files.pythonhosted.orgpackages671dd77686502fced061b3ead1c35a2d70f6b281b5f723c4eff7a2277c04e4a2httptools-0.6.1.tar.gz"
     sha256 "c6e26c30455600b95d94b1b836085138e82f177351454ee841c148f93a9bad5a"
+
+    # relax cython version constraint, upstream pr ref, https:github.comMagicStackhttptoolspull101
+    patch :DATA
   end
 
   resource "idna" do
@@ -62,8 +66,8 @@ class Uvicorn < Formula
   end
 
   resource "uvloop" do
-    url "https:files.pythonhosted.orgpackagesbcf1dc9577455e011ad43d9379e836ee73f40b4f99c02946849a44f7ae64835euvloop-0.20.0.tar.gz"
-    sha256 "4603ca714a754fc8d9b197e325db25b2ea045385e8a3ad05d3463de725fdf469"
+    url "https:files.pythonhosted.orgpackagescf3da150e044b5bc69961168b024c531d21b63acd9948b7d681b03e551be01e1uvloop-0.21.0b1.tar.gz"
+    sha256 "5e12901bd67c5ba374741fc497adc44de14854895c416cd0672b2e5b676ca23c"
   end
 
   resource "watchfiles" do
@@ -111,3 +115,62 @@ class Uvicorn < Formula
     Process.wait pid
   end
 end
+
+__END__
+diff --git ahttptoolsparserparser.c bhttptoolsparserparser.c
+index 1b64e55..4a59122 100644
+--- ahttptoolsparserparser.c
++++ bhttptoolsparserparser.c
+@@ -9937,7 +9937,7 @@ static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
+                 unsigned char *bytes = (unsigned char *)&val;
+                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                               bytes, sizeof(val),
+-                                              is_little, !is_unsigned);
++                                              is_little, !is_unsigned, 0);
+                 Py_DECREF(v);
+                 if (likely(!ret))
+                     return val;
+@@ -10133,7 +10133,7 @@ static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+                 unsigned char *bytes = (unsigned char *)&val;
+                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                               bytes, sizeof(val),
+-                                              is_little, !is_unsigned);
++                                              is_little, !is_unsigned, 0);
+                 Py_DECREF(v);
+                 if (likely(!ret))
+                     return val;
+diff --git ahttptoolsparserurl_parser.c bhttptoolsparserurl_parser.c
+index c9e646a..e9a5f01 100644
+--- ahttptoolsparserurl_parser.c
++++ bhttptoolsparserurl_parser.c
+@@ -5547,7 +5547,7 @@ static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
+                 unsigned char *bytes = (unsigned char *)&val;
+                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                               bytes, sizeof(val),
+-                                              is_little, !is_unsigned);
++                                              is_little, !is_unsigned, 0);
+                 Py_DECREF(v);
+                 if (likely(!ret))
+                     return val;
+@@ -5743,7 +5743,7 @@ static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+                 unsigned char *bytes = (unsigned char *)&val;
+                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                               bytes, sizeof(val),
+-                                              is_little, !is_unsigned);
++                                              is_little, !is_unsigned, 0);
+                 Py_DECREF(v);
+                 if (likely(!ret))
+                     return val;
+diff --git asetup.py bsetup.py
+index 200e6f6..adca1f8 100644
+--- asetup.py
++++ bsetup.py
+@@ -15,7 +15,7 @@ CFLAGS = ['-O2']
+
+ ROOT = pathlib.Path(__file__).parent
+
+-CYTHON_DEPENDENCY = 'Cython(>=0.29.24,<0.30.0)'
++CYTHON_DEPENDENCY = 'Cython>=0.29.24'
+
+
+ class httptools_build_ext(build_ext):

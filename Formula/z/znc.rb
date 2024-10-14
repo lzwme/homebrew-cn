@@ -12,12 +12,13 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9fce3b5382b0380bd66254957e18fb3267cb018171b9036d310e66e87eb4024a"
-    sha256 arm64_sonoma:  "ca7e81f997a2088cf8be05e8d91fa58cf1624c10a380af761183cf4e56874e3d"
-    sha256 arm64_ventura: "32335d86196df89e0b2cf68b111267f04b14f258c0393fe0eaf86add7c1950e8"
-    sha256 sonoma:        "fd03a0c2c63620847014975e8a4ee5e9c182a5a60e936b3b1970545d4fbfb816"
-    sha256 ventura:       "f92a3827ecaf2aac78a5ff213cc1aef5bb11b11e8dd185ff60b933497659f916"
-    sha256 x86_64_linux:  "8410bceeaa10743e520ba2cb0e9e160a0a689d9096a6a2134ff0f58873326f2b"
+    rebuild 1
+    sha256 arm64_sequoia: "66bd22a960fb7c962c14e05775de0084b15e61cdb3daff6e0965bee1df478020"
+    sha256 arm64_sonoma:  "9675fb4efd12afe3eb02badcadb5ba488f94d99ca81dc6e81d97c72b4210aee9"
+    sha256 arm64_ventura: "ed309306734a2c19162fd11d39b4934fde7c61842476b12068f40d49e21ff759"
+    sha256 sonoma:        "38066e27e527d7450626cd2d8abb259afd01de1f210220aa4e9d96cb5549da6c"
+    sha256 ventura:       "2a7cf664302d64bf2a7eb9bdf102371d6a0156f20076d82f8ef269c0a8df59c3"
+    sha256 x86_64_linux:  "3930226096cf81a182bb476d5ead701fc3e7581b1e648cf3f8bcc9e24c640719"
   end
 
   depends_on "cmake" => :build
@@ -25,12 +26,12 @@ class Znc < Formula
   depends_on "boost"
   depends_on "icu4c@75"
   depends_on "openssl@3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "zlib"
 
   def install
-    python3 = "python3.12"
+    python3 = "python3.13"
     xy = Language::Python.major_minor_version python3
 
     # Fixes: CMake Error: Problem with archive_write_header(): Can't create 'swigpyrun.h'

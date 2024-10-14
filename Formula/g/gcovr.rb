@@ -3,18 +3,18 @@ class Gcovr < Formula
 
   desc "Reports from gcov test coverage program"
   homepage "https:gcovr.com"
-  url "https:files.pythonhosted.orgpackagesa0394cef4a5bc70dbf625b3c0dfc4fe675d24bca570e72b3b2a371761471baa5gcovr-8.1.tar.gz"
-  sha256 "6a07a15bdfdc200af1960932792012e4e26c239c8a9f585b60d1b46d072ca439"
+  url "https:files.pythonhosted.orgpackages32217f9967a2d5a37d8f77e793ba4c173d0e1e59195028c997a9947b73b652f4gcovr-8.2.tar.gz"
+  sha256 "9a1dddd4585d13ec77555db5d6b6a31ee81587ea6fc604ff9fcd232cb0782df5"
   license "BSD-3-Clause"
   head "https:github.comgcovrgcovr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbb2f5451e7b3f7979e95e99c93adb89b871c2462f5b3e2b7ccc8ffaefceb843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c16090ce2ae4ddb4a703d370fd1fecac71128c9bff8d3e7cb8a6159f6b0ad28f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "343206a5ba7414d9030eedf7042fd4ebd31911eecb87f79f42697a8d184714b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13855533230c000d29e8e6e0c46afea8a2b90a61d45e588da05e28b602dc6279"
-    sha256 cellar: :any_skip_relocation, ventura:       "814dad51f9bc7137c8472711d2641c815abeedde3d544c8b3bdcbe8c1f4afda6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0d81b770f4c989df9812a5097d441415f4d68229633492ff617349bab723eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f7f77441e25db28d5cc139e25d0da7ea0b9b2b0c7bbb58993940ab5657fde4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06781eb1ecbc23c17eea3c2afae02943ab7426a182a624e7c4646cb5567de0ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a25c3ff943643010a69b455916cd4013d3cdf8cc8f3d5feffd3268fed8acba1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "899ad67d226162abaa2605d48206670ca0fae72cebeb6723296b3040ce510c35"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d862a1fbff7976bcd5b23216d3967b5689a3af5d667fa5b9b2b6fa06481370c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdae1740841ad220dbbe6daff2479e5e3f0a3988d0777e61d2dbb5eee557d766"
   end
 
   depends_on "python@3.13"

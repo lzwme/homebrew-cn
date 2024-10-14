@@ -15,23 +15,21 @@ class Soapysdr < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "3b347c24b493adcd9c86ed4f1dc5892f4e2a5f4fcb6c94e2d70a250fb44e6c83"
-    sha256 cellar: :any,                 arm64_sonoma:   "ee59200eb0b063923ca172880d6242df8a0bd7ff193b42f0f559a3ccbae5ecb5"
-    sha256 cellar: :any,                 arm64_ventura:  "e25dda6534a1db99e4733c373f83bb280afeb46927a19d64c4cdb2208a769e99"
-    sha256 cellar: :any,                 arm64_monterey: "72b5f1b5b3b5558d99173774621de43d9880a6141075fb6d3752fdb437c84ed3"
-    sha256 cellar: :any,                 sonoma:         "7bb7356090f0398c9ace3fd4067122925581dbd83de3b9465d83bd572e38eae9"
-    sha256 cellar: :any,                 ventura:        "403895702ca2e9225a66b01ddfd0e69ba0aab0dd5df105812780e70142c48703"
-    sha256 cellar: :any,                 monterey:       "a6018b446f7827ef40e21a60f40b401fc85da58b65ef0a5905174c8eae926744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f10dcf27a18c96fcdd36c27ab64bfd87dd38285117d142399a038e76de230c2"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "2cd1b0106c59df55ee3022f0e426718979343f8c0791a1cbf189a0230b582967"
+    sha256 cellar: :any,                 arm64_sonoma:  "037c6ec56ece7b022d890f8c42f9e8b7e012ec9a641901d4d73a961a8f7f069d"
+    sha256 cellar: :any,                 arm64_ventura: "d091d29209ae4319ddb8db5f2bc8c3f828953db36b619f2288df08c6cb2f2db1"
+    sha256 cellar: :any,                 sonoma:        "e90833db385d8e3ce0c8eb4f138834d1da1db6879ca46be2f5f52a4f68957e44"
+    sha256 cellar: :any,                 ventura:       "dbbc7e560136986fb5604d2c752890d5ee299725768fa61dc5ddd2bfd2e73be0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1227202d6306ddbc0d33b3f94904cc51b6ebfd61802fd411fb51fdd306e2f4a"
   end
 
   depends_on "cmake" => :build
   depends_on "swig" => :build
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

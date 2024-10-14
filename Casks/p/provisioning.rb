@@ -6,5 +6,7 @@ cask "provisioning" do
   name "Provisioning"
   homepage "https:github.comchockenberryProvisioning"
 
+  deprecate! date: "2024-10-13", because: :unmaintained
+
   qlplugin "Provisioning-#{version}Provisioning.qlgenerator"
 end

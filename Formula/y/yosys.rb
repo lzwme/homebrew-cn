@@ -9,21 +9,22 @@ class Yosys < Formula
   head "https:github.comYosysHQyosys.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "2a04f4b241f947cc6bb50b8a114cc2db3c055954804ef9cb29bd9da389955577"
-    sha256 arm64_sonoma:  "2e3f002dce8463250271d2336fe6e4e2baf67d82667724d4eeab13f7c84668f9"
-    sha256 arm64_ventura: "98f1878f83244b947945b7c3ab47cede4b41f08c822dc51329206e28129136f7"
-    sha256 sonoma:        "6ee0575c1c3d11a57d54f8342e6c225f6df7fc69eb5e8d840cfe59c07af91a64"
-    sha256 ventura:       "7eb3b7f050b2ae09c3c5c229f4f7c55995d52786cf84ea18ba759fcf932fbc3e"
-    sha256 x86_64_linux:  "62b4b41163de8ee55b179fa2262e163c949848263236e4ec175cca2b83c51e5c"
+    rebuild 1
+    sha256 arm64_sequoia: "150eebb45764504b9a880dd687cebd53b03bcefcde9d95ae94aa2f0208cd02d4"
+    sha256 arm64_sonoma:  "4c8a43953c8c65268234ab6dd32faab5d77e1aafa02513601c665946599253f0"
+    sha256 arm64_ventura: "fd87846951f944ee26825d5b7c4b169134edf5eee47cd2dd799f62a37ef1f5ac"
+    sha256 sonoma:        "a4b36a3d497ac225130467786bb24aa33cfd2749026b3cdcfd1167bfa26b9c6f"
+    sha256 ventura:       "aeba8681e8a94da79198633b8805fdd277084131f839bffb29ba5cce882440f9"
+    sha256 x86_64_linux:  "0a2052e45f665a9dd64754613ed4466eaccdecdd37326ce2726105bc39e3d2cd"
   end
 
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.12"
   depends_on "readline"
 
   uses_from_macos "flex"
   uses_from_macos "libffi", since: :catalina
+  uses_from_macos "python"
   uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 

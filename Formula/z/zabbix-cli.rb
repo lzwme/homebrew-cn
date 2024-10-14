@@ -14,17 +14,18 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aee43e33776bb5aa4d107ce9be5785722577822e6c2967cda9741b0aec430f40"
-    sha256 cellar: :any,                 arm64_sonoma:  "b25a65a43949cfa380d280b38e4b314a4d655cafa0922f4af261c7c36efbf444"
-    sha256 cellar: :any,                 arm64_ventura: "4010961d342d1f8e6dc8a7017d66f7f1e86e26956719ee7192a543d3eebbb069"
-    sha256 cellar: :any,                 sonoma:        "633c579f0442c1ff877f82879ace6d7a8155290884f57c63a99311307fa58e35"
-    sha256 cellar: :any,                 ventura:       "ab20db6df830f8bd9f94614f5e624e53c5eb81ba878f8c4a78ac276609c80ca9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91d95f1d85eaaf24cdd379dcc069e7fd7b2462c6bf5e5cb0bcff3a7c2cc7d8aa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1eb5c75ff205b31476e2df9fc663d9bcfb34ee7237c532bb4998fe3d19b994d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "b843d371ef98c628e496b00e52d1ee817a3509773203ce12da4027b21219360a"
+    sha256 cellar: :any,                 arm64_ventura: "f40a7b0f9f064e16ae16801343ddde6ba58e83a0be372c7c6f54a14319035712"
+    sha256 cellar: :any,                 sonoma:        "06e93aebacd8751e63b9dcb204aa8af2bc7c45931ea203d09b1b6889115b5441"
+    sha256 cellar: :any,                 ventura:       "972fca339090131c7181fba748099b9f0bf914fab034a218b93869b7d68a29f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88c43a72ea3ef596da80f3491a8692735acb0f7c2a8c308ea46229276d1811ef"
   end
 
   depends_on "rust" => :build # for pydantic_core
   depends_on "certifi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "annotated-types" do
     url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
@@ -32,8 +33,8 @@ class ZabbixCli < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackages7849f3f17ec11c4a91fe79275c426658e509b07547f874b14c1a526d86a83fc8anyio-4.6.0.tar.gz"
-    sha256 "137b4559cbb034c477165047febb6ff83f390fc3b20bf181c1fc0a728cb8beeb"
+    url "https:files.pythonhosted.orgpackageseb276fa26db273f2454d25104b3327192fca83a08eec62f8d61c1078d4a4ed66anyio-4.6.1.tar.gz"
+    sha256 "936e6613a08e8f71a300cfffca1c1c0806335607247696ac45f9b32c63bfb9aa"
   end
 
   resource "click" do
@@ -52,8 +53,8 @@ class ZabbixCli < Formula
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages17b05e8b8674f8d203335a62fdfcfa0d11ebe09e23613c3391033cbba35f7926httpcore-1.0.5.tar.gz"
-    sha256 "34a38e2f9291467ee3b44e89dd52615370e152954ba21721378a87b2960f7a61"
+    url "https:files.pythonhosted.orgpackagesb644ed0fa6a17845fb033bd885c03e842f08c1b9406c86a2e60ac1ae1b9206a6httpcore-1.0.6.tar.gz"
+    sha256 "73f6dbd6eb8c21bbf7ef8efad555481853f5f6acdeaff1edb0694289269ee17f"
   end
 
   resource "httpx" do
@@ -107,8 +108,8 @@ class ZabbixCli < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesf805686acde8e7d0b29d2a74000db230ce4a6bc4188f26f56cc8ca46e5ee1c10rich-13.9.0.tar.gz"
-    sha256 "06ff5147711c0f6cec2cdbb247a6cff251268a66d700c2557699bfe104fc0bf4"
+    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
+    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
   end
 
   resource "shellingham" do
@@ -143,13 +144,13 @@ class ZabbixCli < Formula
   end
 
   resource "tomli" do
-    url "https:files.pythonhosted.orgpackagesc03fd7af728f075fb08564c5949a9c95e44352e23dee646869fa104a3b2060a3tomli-2.0.1.tar.gz"
-    sha256 "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
+    url "https:files.pythonhosted.orgpackages35b9de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264btomli-2.0.2.tar.gz"
+    sha256 "d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"
   end
 
   resource "tomli-w" do
-    url "https:files.pythonhosted.orgpackages49056bf21838623186b91aedbda06248ad18f03487dc56fbc20e4db384abde6ctomli_w-1.0.0.tar.gz"
-    sha256 "f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"
+    url "https:files.pythonhosted.orgpackagesd419b65f1a088ee23e37cdea415b357843eca8b1422a7b11a9eee6e35d4ec273tomli_w-1.1.0.tar.gz"
+    sha256 "49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33"
   end
 
   resource "typer" do

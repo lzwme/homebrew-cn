@@ -3,18 +3,17 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/26/72/f7ec295a6a0b7211b5784efba783c1225c56e998a14d608abf5b2715d7b5/moto-5.0.16.tar.gz"
-  sha256 "f4afb176a964cd7a70da9bc5e053d43109614ce3cab26044bcbb53610435dff4"
+  url "https://files.pythonhosted.org/packages/63/8a/0e0cca7520d8ec0f003ff039ba44079d819ac44c0d8413bcc48f932b78f3/moto-5.0.17.tar.gz"
+  sha256 "165a291ac0b983f53a09f67f9841f72214c5a1b0c56392d88f7035a6a8718fca"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7a85f7e8d64e5abb64097aef7987ff27a074349e67ef1f367853114798b32236"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a4d658e735abb28b7eebe4aabb3eccea530c1346d92f526d2162910b65f878e"
-    sha256 cellar: :any,                 arm64_ventura: "52033b7b9436ebb65b97367794c9558d3cf19adb4e09c08004b40f1273089917"
-    sha256 cellar: :any,                 sonoma:        "b7505b76ab5b6b8732954570639e49a0ca3b541fcc7b1b54fcba0fcaf5d84226"
-    sha256 cellar: :any,                 ventura:       "97651afcfa5df673a8a6fc3b15902a9e7a32242d7443c02f7776ca90c7520145"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84e150d558e0bd03487a2d0970d5c74e0ba1b2421e2ccb237111327c13926693"
+    sha256 cellar: :any,                 arm64_sequoia: "192eaf62ff276c5635221ab1c28d74510c9a4c5bc9aed544da834daadff9b4ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "a931a7b959212f9b50f8c304b44ce97b4237f816ca59877c50b4add3c7b4a71d"
+    sha256 cellar: :any,                 arm64_ventura: "2af1253f84b6477c60c3b9dbabe175be7c92b771a9a9b3cdb4318984b7e4cae5"
+    sha256 cellar: :any,                 sonoma:        "f87a957829c1d4a7a3db40317e87c99c8c35a2cff08a5727c1ff8bfaa0587e2b"
+    sha256 cellar: :any,                 ventura:       "2af21bf0309fd0b325489d1b62ae647bf3c2da917ee52c7f983a73e234e3a9a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01a07fcecd3fbf129f3f0317f530175a5701b047bcf32da9b2a0af53f3f629bb"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -219,8 +218,8 @@ class Moto < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/83/08/13f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043a/pyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
+    url "https://files.pythonhosted.org/packages/8c/d5/e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2/pyparsing-3.2.0.tar.gz"
+    sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
   end
 
   resource "python-dateutil" do
