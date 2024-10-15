@@ -1,9 +1,10 @@
 class Yo < Formula
   desc "CLI tool for running Yeoman generators"
-  homepage "https://yeoman.io"
-  url "https://registry.npmjs.org/yo/-/yo-5.0.0.tgz"
+  homepage "https:yeoman.io"
+  url "https:registry.npmjs.orgyo-yo-5.0.0.tgz"
   sha256 "4395888eda54803a590d20d92b285c4abebd81402908b5becdf9cbc6cbeba65f"
   license "BSD-2-Clause"
+  head "https:github.comyeomanyo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dec76e0ab001840b2d057f4ed4dbb084944cc44b662f93e811a5fdce9bd80904"
@@ -20,11 +21,11 @@ class Yo < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/yo --version")
-    assert_match "Everything looks all right!", shell_output("#{bin}/yo doctor")
+    assert_match version.to_s, shell_output("#{bin}yo --version")
+    assert_match "Everything looks all right!", shell_output("#{bin}yo doctor")
   end
 end

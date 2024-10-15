@@ -4,7 +4,7 @@ class Postgis < Formula
   url "https:download.osgeo.orgpostgissourcepostgis-3.5.0.tar.gz"
   sha256 "ca698a22cc2b2b3467ac4e063b43a28413f3004ddd505bdccdd74c56a647f510"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url "https:download.osgeo.orgpostgissource"
@@ -12,12 +12,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d913f54c143e0e9b337d937e073b24154551afdde170684cef38dba97775a76"
-    sha256 cellar: :any,                 arm64_sonoma:  "87ea1025ce6ed0ce9e730f0d5a4407cba8401c2ddb7764da6f23747fef8ebfd7"
-    sha256 cellar: :any,                 arm64_ventura: "3e07780afdad3d357bb161486cff039bbe2405c927d5a0496e3d953e0ec261f9"
-    sha256 cellar: :any,                 sonoma:        "28e0be391de47fd1a43004d97b936150981cb487705f03ad3dcf953487e559d1"
-    sha256 cellar: :any,                 ventura:       "c9e815e7eadcbb98f3c300f6423c898a9b03722069e4be418f11c8f1cab910b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "550b55cf3a1239227186df25a073d18bbcbd7bfc3244a5e31c47ca12b9ad26b0"
+    sha256 cellar: :any,                 arm64_sequoia: "1475c86516e0742c4e2c17dd2448e8558d1e667c147541f3b2138b44cef7e882"
+    sha256 cellar: :any,                 arm64_sonoma:  "53a0adaed31b76a05107a68100b1ab125606382284cfb9d8f9273c29edf09007"
+    sha256 cellar: :any,                 arm64_ventura: "11965d9e7e045c49de06fbd5c56ce691f3a3dce58609c8222c4e63e0eb1aed7e"
+    sha256 cellar: :any,                 sonoma:        "cacaa42cd77f40971c19cd7a1a111445a8b89a9c15837268730d8d1229c23c20"
+    sha256 cellar: :any,                 ventura:       "84e1407f13bbdbe6e38fd6ee9601827de1d56002abf098f82875d55519b95857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d8158003b11518ac2b8acabce0f8a195a76bfe28e1f850ed2cf28adc6da933f"
   end
 
   head do

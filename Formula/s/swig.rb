@@ -5,6 +5,11 @@ class Swig < Formula
   sha256 "fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url "https:sourceforge.netprojectsswigrss?path=swig"
+    regex(%r{url=.*?swig[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256 arm64_sequoia:  "95bf38d7a0ccac04b3fb52c7f19be5d57f03f27a777cc9e0415ec1aa09b02d1e"
     sha256 arm64_sonoma:   "183268434604fe51bf67ca63c6bb3adb0327b698be2214d1eb43c0d5d2ebb231"

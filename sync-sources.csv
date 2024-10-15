@@ -902,6 +902,7 @@ Homebrew-homebrew-core/Formula/c/clib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/click.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clickhouse-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clickhouse-odbc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/clickhouse-sql-parser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cliclick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clifm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clinfo.rb, Homebrew/homebrew-core, 1
@@ -7054,7 +7055,7 @@ Homebrew-homebrew-core/Formula/y/ykdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ykman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ykpers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yle-dl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/yo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yorkie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yosys.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/you-get.rb, Homebrew/homebrew-core, 1

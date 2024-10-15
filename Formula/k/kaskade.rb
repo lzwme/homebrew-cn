@@ -3,17 +3,17 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https:github.comsauljabinkaskade"
-  url "https:files.pythonhosted.orgpackages824152505808e039f11fe60a61286c2e7728c0f25a7efea2b37e3bf1a8f9a2a5kaskade-2.3.6.tar.gz"
-  sha256 "3f65859dc2f303a8c61787e113db12afe8e458d0e9fb607426c892e3be153032"
+  url "https:files.pythonhosted.orgpackages147bfa38da904d8e4b83ad5d957907629f382c3cae929318cb829c18bbdd964fkaskade-2.3.7.tar.gz"
+  sha256 "15ba36c466cdaef95065fe2f7ac60ff699891429ad2ea0769656998efce6de04"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "20b5127dcfc6a17411dba211bf61a5eca23bcece5fa977982fde108dde0a7a80"
-    sha256 cellar: :any,                 arm64_sonoma:  "3141be24fbeba831d57883edd37814b23f38c0b315c3fb62935ae7de85be54ee"
-    sha256 cellar: :any,                 arm64_ventura: "edcf79792a8574295e9d1e7419b363725d9c35e71a6eabaee59c3c08e38a2a58"
-    sha256 cellar: :any,                 sonoma:        "c7a956bee65695c30c5872e71b1b51888add8af551f9a4fd2efbcf149ab11339"
-    sha256 cellar: :any,                 ventura:       "6a092e7fde6db9428afd99dc3b854e42723387484056a34f9f302d6b872b7e66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d41418c5d9e5739ea74036d70475f61784d31e2f0a24a379063c80bbe0e0d8"
+    sha256 cellar: :any,                 arm64_sequoia: "69e955d1729575110dc996a9ad21a00f24910dd163303219195815a16fc1dd1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa50063a5eea90b36402e75803b706e0832fffb020edf2aa96f96ae876e88e48"
+    sha256 cellar: :any,                 arm64_ventura: "b37bcd00949c927b96cd53eb53e4b917dcc849d6534f40e878f83ca7a8bf52ad"
+    sha256 cellar: :any,                 sonoma:        "8c72fd38ca9787248573cedb92acb38d40f474b7b1a3cc5d3a14ca86f943c2db"
+    sha256 cellar: :any,                 ventura:       "5afc27780982ced40c0d1da97dd591c48cbae1cbd4624229596e3b9efc6c51f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5baa42b3b0351b8f6d0b78f7dfdc4053be18733248e79747a28d4022935269d7"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -151,9 +151,6 @@ class Kaskade < Formula
     sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
-  # patch to support py3.13, upstream pr ref, https:github.comsauljabinkaskadepull48
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
   end
@@ -168,36 +165,3 @@ class Kaskade < Formula
     Process.wait(pid)
   end
 end
-
-__END__
-diff --git aPKG-INFO bPKG-INFO
-index 3cfafaa..51f2c2e 100644
---- aPKG-INFO
-+++ bPKG-INFO
-@@ -7,7 +7,7 @@ License: MIT
- Keywords: kafka,kaskade
- Author: Saúl Piña
- Author-email: sauljabin@gmail.com
--Requires-Python: >=3.10,<3.13
-+Requires-Python: >=3.10,<3.14
- Classifier: Environment :: Console
- Classifier: License :: OSI Approved :: MIT License
- Classifier: Operating System :: MacOS
-@@ -217,4 +217,3 @@ kaskade consumer -b my-kafka:9092 -x auto.offset.reset=earliest \
- ## Development
-
- For development instructions see [DEVELOPMENT.md](https:github.comsauljabinkaskadeblobmainDEVELOPMENT.md).
--
-diff --git apyproject.toml bpyproject.toml
-index 44bf5dd..07262e7 100644
---- apyproject.toml
-+++ bpyproject.toml
-@@ -22,7 +22,7 @@ packages = [
- ]
-
- [tool.poetry.dependencies]
--python = ">=3.10 <3.13"
-+python = ">=3.10 <3.14"
- cloup = "^3.0"
- textual =  "^0.83"
- confluent-kafka = {extras = ["avro", "json", "protobuf"], version = "^2.6"}

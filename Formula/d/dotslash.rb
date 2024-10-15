@@ -1,17 +1,17 @@
 class Dotslash < Formula
   desc "Simplified executable deployment"
   homepage "https:dotslash-cli.com"
-  url "https:github.comfacebookdotslasharchiverefstagsv0.4.2.tar.gz"
-  sha256 "5d54dce858e306b201e1023d9b3d884355b22b1c2f920d98f957f64993eaa44e"
+  url "https:github.comfacebookdotslasharchiverefstagsv0.4.3.tar.gz"
+  sha256 "88c599392a6135208935889ecbefaafe8d5fc12e08baadb4d83658247501eb5b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a052a95ff14495b80fae7f1169ab8dc8642812ca22412ca610f71ab0f3b301"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "036d5d79578e244d1773dcc76932172ad245e781e72f3f19f2f79e5be4cb94fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07ac4ff140abce52f4190acdf5a2a94f57df7f739d9fd15243297f0cefa94196"
-    sha256 cellar: :any_skip_relocation, sonoma:        "761844c0cf5a845c1f6d56b8707bc8b8414d33c6e2aa8149cf32030183e022cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "d9e99219a44e170e40e4a22b4babc306e53d22e5fede5514973eb2e975376eb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b87d109c40065d9281f2dad425b38adbb84f3fd2d8d067e4b4c5094121febcd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "015492727f9c99f567dc69252b0bb86ccebec14c6cd036626c82a292a04545d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03ececb48fa448a9a5fb839df4134d57679502db5ae82ec37d4a0ecd60194b66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c43d5403b8b3597e224031465cc3873c95a8ee26b14c209fcb7bf509ccf141cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fae55211639f161f387252c223a25c853ad4bdee836d676b823a4670205331cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "af6b2e1b6615bd14e05c8be41abf947c9ba02d6417e3a7f9750f848fb0b5630e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59d69ed4f0ba3c8363193ec7042184ce85b86445ec68fd10aa18acf76928e295"
   end
 
   depends_on "rust" => :build

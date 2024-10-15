@@ -3,20 +3,18 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https:python-poetry.org"
-  url "https:files.pythonhosted.orgpackages07c741108195c39ac1010054ef6b3b445894cee79e8ec73f086b73da94a01901poetry-1.8.3.tar.gz"
-  sha256 "67f4eb68288eab41e841cc71a00d26cf6bdda9533022d0189a145a34d0a35f48"
+  url "https:files.pythonhosted.orgpackages2984dbf6db6ecf3cbb2926c05a0b831bb03559c15b700d9836c8afc9022bcedbpoetry-1.8.4.tar.gz"
+  sha256 "5490f8da66d17eecd660e091281f8aaa5554381644540291817c249872c99202"
   license "MIT"
-  revision 2
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f07f2e007f07f2547cf9fa6d95e01f4802d05099b31fd5dded9bd46b46103449"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2388b9f1161532ebb133b226ea249870bf684fdce86fb03536ab481e1d43d602"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "36aad963de3056cd650bcfdbe715dd46fa55b2d8bf37af883f3fbf5f3507d2cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f74e9a33fcc8b169493b76342d98ec5efd882fae8e6c2f502dfd74744ec24d6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "0e740977f890f500069fcd930f6650d94df703263d23d313ea0c5b6c273a7115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24e53f2a6e0a6b24c90ccb8aebb8becd2c66039d4be66ce4d6ce72d03157a21d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91ce26bbdaa5338c7b27303cf80b6a4f78b0e0dc38bd81d7a68e13c03066c2c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13d287875b8ee1fd1e691e7c69a9afba3805f024959c76f7492a8a3350d6741b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa43a3370f7c8caf16339200d722410e81528e75e4ffebd71950e3fc78690f6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "245357cc442e7100c48aee1851307109664f36749609a86d6563771f12bd028f"
+    sha256 cellar: :any_skip_relocation, ventura:       "cad975a6c1253043a0b27dc3265651b4ae361e67737174515ae9984e88aff000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f977efa979974929e26227085dd8c7851a9bb101907e2b66a0f27147d06025eb"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -121,8 +119,8 @@ class Poetry < Formula
   end
 
   resource "pkginfo" do
-    url "https:files.pythonhosted.orgpackages4fa1f00755330cb34bc19b1ba744b9880c51a9b1ed8526039354736d5f4dfb0dpkginfo-1.11.1.tar.gz"
-    sha256 "2e0dca1cf4c8e39644eed32408ea9966ee15e0d324c62ba899a393b3c6b467aa"
+    url "https:files.pythonhosted.orgpackages6fc34f625ca754f4063200216658463a73106bf725dc27a66b84df35ebe7468cpkginfo-1.11.2.tar.gz"
+    sha256 "c6bc916b8298d159e31f2c216e35ee5b86da7da18874f879798d0a1983537c86"
   end
 
   resource "platformdirs" do
@@ -131,8 +129,8 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https:files.pythonhosted.orgpackagesf2db20a9f9cae3f3c213a8c406deb4395698459fd96962cea8f2ccb230b1943cpoetry_core-1.9.0.tar.gz"
-    sha256 "fa7a4001eae8aa572ee84f35feb510b321bd652e5cf9293249d62853e1f935a2"
+    url "https:files.pythonhosted.orgpackagesc75c3609519b7d890ced542fe327ea26a7c8ea55ef298c323c46cca2a011c1cbpoetry_core-1.9.1.tar.gz"
+    sha256 "7a2d49214bf58b4f17f99d6891d947a9836c9899a67a5069f52d7b67217f61b8"
   end
 
   resource "poetry-plugin-export" do
@@ -181,8 +179,8 @@ class Poetry < Formula
   end
 
   resource "trove-classifiers" do
-    url "https:files.pythonhosted.orgpackages161455ceb59dabf95f554b5368fdabe8d370165a25f817a23d809ad6c87a0b06trove_classifiers-2024.9.12.tar.gz"
-    sha256 "4b46b3e134a4d01999ac5bc6e528afcc10cc48f0f724f185f267e276005768f4"
+    url "https:files.pythonhosted.orgpackages1051be10158183105d970d7bfc81401cf6076c13844a5869c24c72889f4bf658trove_classifiers-2024.10.13.tar.gz"
+    sha256 "b820fc6f9544543afa15e5d9cfc426cde3b20fc2246dff6f019b835731508cef"
   end
 
   resource "urllib3" do

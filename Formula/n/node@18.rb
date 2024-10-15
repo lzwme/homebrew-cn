@@ -28,7 +28,7 @@ class NodeAT18 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c@75"
@@ -52,11 +52,14 @@ class NodeAT18 < Formula
 
   fails_with gcc: "5"
 
+  # py3.13 build patch
+  patch :DATA
+
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3.12")
+    ENV["PYTHON"] = which("python3.13")
 
     args = %W[
       --prefix=#{prefix}
@@ -117,3 +120,26 @@ class NodeAT18 < Formula
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
   end
 end
+
+__END__
+diff --git a/configure b/configure
+index 711a3014..29ebe882 100755
+--- a/configure
++++ b/configure
+@@ -4,6 +4,7 @@
+ # Note that the mix of single and double quotes is intentional,
+ # as is the fact that the ] goes on a new line.
+ _=[ 'exec' '/bin/sh' '-c' '''
++command -v python3.13 >/dev/null && exec python3.13 "$0" "$@"
+ command -v python3.12 >/dev/null && exec python3.12 "$0" "$@"
+ command -v python3.11 >/dev/null && exec python3.11 "$0" "$@"
+ command -v python3.10 >/dev/null && exec python3.10 "$0" "$@"
+@@ -24,7 +25,7 @@ except ImportError:
+   from distutils.spawn import find_executable as which
+ 
+ print('Node.js configure: Found Python {}.{}.{}...'.format(*sys.version_info))
+-acceptable_pythons = ((3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (3, 6))
++acceptable_pythons = ((3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (3, 6))
+ if sys.version_info[:2] in acceptable_pythons:
+   import configure
+ else:

@@ -29,4 +29,6 @@ cask "linkliar" do
               "LibraryApplication Supportio.github.halo.linkdaemon",
               "LibraryApplication SupportLinkLiar",
             ]
+
+  # No zap stanza required
 end

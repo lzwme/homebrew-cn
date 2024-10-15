@@ -8,11 +8,7 @@ cask "sparkleshare" do
   desc "Tool to sync with any Git repository instantly"
   homepage "https:sparkleshare.org"
 
-  livecheck do
-    url "https:github.comhbonsSparkleSharereleases"
-    regex(sparkleshare[._-]?mac[._-]?(\d+(?:\.\d+)*)\.zipi)
-    strategy :page_match
-  end
+  deprecate! date: "2024-10-14", because: :discontinued
 
   app "SparkleShare.app"
 
