@@ -3,18 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https:copier.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages0f3256044ea18ea1c6dc9a00714cbaf7c0ff7e5f486adbfefc28f5ca72a14064copier-9.3.1.tar.gz"
-  sha256 "e8515c082149f771268e8bc7fe400891d96e765797f5dac9fbae191f6427a24c"
+  url "https:files.pythonhosted.orgpackages9f394cd083ca92635a92432cdb441108205751fed98feb5d0cfc53073d97372acopier-9.4.0.tar.gz"
+  sha256 "83b6b777b1e2e7cf13479ebfabe7ce4c02861c97bed9f533d5dce0b4822ab1d5"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "71de96db822e58ed6a24fe820bc290c950e3b19e9cdacddd19f26d6e2b358fb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "018dc3e152cfaebf70022296062efbab587737892a5ec5deeeb0e94eb6517545"
-    sha256 cellar: :any,                 arm64_ventura: "a52c8ea344b044c0d2cc6d1be65f85d2acf7b6d1a075e7f94941c25dcc40e49a"
-    sha256 cellar: :any,                 sonoma:        "6ca480576c6e47a6f8cf18d23b8fe25d4de36817b0b1fdcb652d9ee223ae9c07"
-    sha256 cellar: :any,                 ventura:       "b3e1765736cc41e0d3b4c4de2fb1b4c3b0f7a845fb4c9cfd66ee3dd45403a255"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f148984c1c7e084d727cb1307f111ef9b0d810003ca624518baeec80bf96ec"
+    sha256 cellar: :any,                 arm64_sequoia: "00433345cf50a5d95b6f66d0ed11a6d659ac0b64862765112d4734203b49c4bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e436d2c1aa4e97534e7a6b83af0593f7a418b61915afd6bf2448a99fc11a893"
+    sha256 cellar: :any,                 arm64_ventura: "7634e788f4080f8e420a5039deaee1364b941fcaebb56cbaffdd5fd0a52febeb"
+    sha256 cellar: :any,                 sonoma:        "c0233ca35e58207028df9168dcc57a665c36f8ef139ce152b0d3363dad1430f5"
+    sha256 cellar: :any,                 ventura:       "b7a4acec31b8276f1ac94ed6acc4a36d45afdcf5a0d4ef7d2ff94c7c119af1d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c800176237b2552a113d437cc35a57f21e35c68275eaebf5b902f080cf177de"
   end
 
   depends_on "rust" => :build

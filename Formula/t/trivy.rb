@@ -7,12 +7,13 @@ class Trivy < Formula
   head "https:github.comaquasecuritytrivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5c9ebf3cfdcb16b8983edb58dbee88c4ab5d6b8f1bfbb71b441b1da355263a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e60fda2eae6b51c56ba931edbb8d14fe6b3de00f92f7abfb71783146a9b5006"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e42c7d017a0cf3d40ee782dc0816d696ee838d32972eefc1b2c63eb6b2845c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d60e5e62e5ecbe923d849211b520ce52dcf673860e7c0e0c7131b1a1aaa361b4"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f1806fbcd121934dc49b77565b5548824f885eca8c2469cf8fbad031db62e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1c2bea8daffdc3e79d9d7c6335a41a6087b4bbc1d91a8710fa89d589b25601"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "214f42d042a70c57c5f45a882552a84f9793ff5adc6f6333012da284cb1bedc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b7cd621e4bf46d52e265f2ebbefa31b081703a5fc85594de928bad290bee8d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "091165be3248814252412d523de3bf04694d48e2b7bb88fc33f8f7bb36afd291"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8599d4bdb0596a37f59aa9af629ae38cde753a421264b91bb75a5bb9028ec258"
+    sha256 cellar: :any_skip_relocation, ventura:       "71dafd06534015be5397d9e444c408424b37e785d2489f2375984aa89f96636e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0034a04ecb06da90e0f6b710ea890d3de2d27b1e598a241f8a5cda626101b8c2"
   end
 
   depends_on "go" => :build
@@ -24,6 +25,8 @@ class Trivy < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmdtrivy"
     (pkgshare"templates").install Dir["contrib*.tpl"]
+
+    generate_completions_from_executable(bin"trivy", "completion")
   end
 
   test do

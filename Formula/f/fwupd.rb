@@ -3,18 +3,18 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https:github.comfwupdfwupd"
-  url "https:github.comfwupdfwupdreleasesdownload2.0.0fwupd-2.0.0.tar.xz"
-  sha256 "60a62b850e2c3a818f3178cb1de0f632b1e04c6ab07c02483af398940713548a"
+  url "https:github.comfwupdfwupdreleasesdownload2.0.1fwupd-2.0.1.tar.xz"
+  sha256 "04226d0c689a56cc51de017e736f18f1f5e951b9a7c1b18e3281eb923c435891"
   license "LGPL-2.1-or-later"
   head "https:github.comfwupdfwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "fed0cf431e6dca495a2257061ccd5c0ab212c458fb006c0410d5a056752159c0"
-    sha256 arm64_sonoma:  "d893e48a58bf493132b7633c758e44159c44686ed57869a09e24f013d3f1a009"
-    sha256 arm64_ventura: "73adaf9d75b4184f8315afc341f0f72d2b620ebcf804218f24a2bad2c4307e40"
-    sha256 sonoma:        "9ba5fa0c05d0780f4bfd7e7e633bd850d2237fe9452dd30441bd5e5964ee61c0"
-    sha256 ventura:       "3da4d235721deac49543a3297e7e05aceaff8d0caf6990fad046488a3e64ae75"
-    sha256 x86_64_linux:  "b47413186119a04504022b58651fcad83e5c6bf10c4b3775e869552bfaba777f"
+    sha256 arm64_sequoia: "659c89da91376502a404700b63afd3591b222c0c342de99611d1dc5afcb1fdc6"
+    sha256 arm64_sonoma:  "ca396b71e06d3a1216be63544f462a83c539ba4ee5745999d4f8fe79a0659f6c"
+    sha256 arm64_ventura: "73ea0b5e952b5f14460a48c0367f20e7520fd0758921864b4b440d0328b73fdf"
+    sha256 sonoma:        "51540021d772f6fcc2039086c39bcc6499665fa678ffb32def303111d25955e4"
+    sha256 ventura:       "b08e95f65d87d070691efb4c212c97c5d95290358fea72031a9e93c8e3cef5a0"
+    sha256 x86_64_linux:  "da0d2f3c1f1bce9c2240e4fbb0458242f7722aa05a865b35a77142d86e148e62"
   end
 
   depends_on "gettext" => :build
@@ -53,8 +53,8 @@ class Fwupd < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
+    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
   end
 
   def python3

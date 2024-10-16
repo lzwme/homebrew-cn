@@ -1,9 +1,9 @@
 cask "anytype@beta" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.42.29"
-  sha256 arm:   "7f162fd775592b0bda2091e3e71e6fe2f5f8bfc61a804bdd471b4b71f4c870c7",
-         intel: "c061a2160831afe0294da785bfe523428204443ac09fc2537738d49a2887c686"
+  version "0.42.45"
+  sha256 arm:   "bd623bd44a33b46d1a970615f8fd674cbe9e59ca98c7dfa4f6d9da44e3353749",
+         intel: "eeb7f88e08a0b08bc0254f593b6231b9a342c6114f62f8bd4148e62a34ded583"
 
   url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-beta-mac-#{arch}.dmg",
       verified: "anytype-release.fra1.cdn.digitaloceanspaces.com/"
@@ -12,7 +12,7 @@ cask "anytype@beta" do
   homepage "https://anytype.io/"
 
   livecheck do
-    url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/beta-mac.yml"
+    url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/beta-mac.yml?v=#{Time.new.to_i}"
     strategy :electron_builder do |yaml|
       yaml["version"]&.sub(/[._-]beta.*$/i, "")
     end

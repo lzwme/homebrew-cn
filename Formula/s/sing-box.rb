@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.7.tar.gz"
-  sha256 "5b015352f3434bb780af01a6b1f6c0fe706166d6c44a69547e29892f0920b944"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.10.0.tar.gz"
+  sha256 "eb7af91189122bcb748912e205cdddb8b434c69bea67cfbe1a4082a577380814"
   license "GPL-3.0-or-later"
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0c3fad04156536913923598d8be9f1e58dbe4af3db02862fb38ef163fef5cc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "723bf69007ad133f5402bab05e6321acb9f5590d34247d61c933afa141650971"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed53a679aff7836c27fd550f14e8f6cc5043866cda27e6954f8a7c9fa7be9ad0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3cc509019a4b0a1a2c77698e5464c5496649d9f1a26b3c0981aed41d38fd0f6"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c9f49aaf22185842dd5db717fef0aefe6d172125d0f5a6390773d61e10fb633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e94ac0c51446320b728f8c81d00c74a016635f18785bb47e5d80ecb16945bb87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d9ab25addacb4fc30d86e5f2425068e58e8ed860e3d398697aff6411fb7ef7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82cb004a3bbac552feffa9f47b6d8d259180a11e63059a1b890decf34885e109"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6670c58e590b460861b7983dd06538aadf22051e5f68088612bbce3ca163cf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48feedb531fd61aaa8b2bd4a0d914b8df255c26501cb763d42261a86df247df9"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f0da4a6b9df4142554aa50145f7c4433e84f872d438e2dbf2a328842af28d09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3278b77c9609d6451730768884500a115144686b31c4b9225afdb438957e4d93"
   end
 
   depends_on "go" => :build

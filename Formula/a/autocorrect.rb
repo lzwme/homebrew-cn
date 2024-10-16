@@ -1,18 +1,18 @@
 class Autocorrect < Formula
   desc "Linter and formatter to improve copywriting, correct spaces, words between CJK"
   homepage "https:huacnlee.github.ioautocorrect"
-  url "https:github.comhuacnleeautocorrectarchiverefstagsv2.12.0.tar.gz"
-  sha256 "b1363155ef4a3e7379a1ac6540389f350955b3ea63e585143cfb539d1f63f8c5"
+  url "https:github.comhuacnleeautocorrectarchiverefstagsv2.13.0.tar.gz"
+  sha256 "4848b672a779a67c0649098ba5ff58cd89dd69bd3bc8bda159889190971ced76"
   license "MIT"
   head "https:github.comhuacnleeautocorrect.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc9c393239c1a01bd10d2d3842c53d769d320cb0491a63a7c8896bc6622eb182"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b7407c0376017ef3880f17743419717e7d5b4bc4954e69502e6e5c03b97c596"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f8cf1ff667a784fc91a3d10afd86b6bbaecc8844d0ff072d501b867b18034c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a43c298b348197a7e3c2f867454336bd370101724dc90cb6305598789a5a4457"
-    sha256 cellar: :any_skip_relocation, ventura:       "7f1de8a41a9bf187c51bd8ca3dd01e0d553ee3f981a13460b64028c617b9959d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e53e4ff41271e2bceffa43d128df889821b5a488c52c43b6d23dae41d18d4346"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "126c4443939b2cef7e021ad75e5d804fd50dd7774838fc8b0942c4504a5e3d60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "044aa971fccd7031d76d25d136985458c48ced2783896ce44f5925de0b042df1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "770f65cacce8ca073d71dbd8ae467a4ca3eee7534fe3bc0344501d71c804864c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e7c3abed394d0786f1f03f30943db6a0b488a7bd28fc9db62645a878ed7135c"
+    sha256 cellar: :any_skip_relocation, ventura:       "38a657d539fef5f0f2e0e09adabbc41ed57a8eb16fcbcd9a33a00b8814521315"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5123a57f0663c808a602c82aa4e4055c160e06270dbc28b2637daf2c1c840261"
   end
 
   depends_on "rust" => :build

@@ -1339,6 +1339,7 @@ Homebrew-homebrew-core/Formula/d/dislocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/displayplacer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dissent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distcc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/distill-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distribution.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distrobox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dita-ot.rb, Homebrew/homebrew-core, 1
@@ -4084,6 +4085,7 @@ Homebrew-homebrew-core/Formula/m/minicom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidjvu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidlna.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minigraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/minijinja-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minikube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minimal-racket.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minimap2.rb, Homebrew/homebrew-core, 1
@@ -11848,7 +11850,7 @@ Homebrew-homebrew-cask/Casks/m/markdownmdimporter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marked.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/markedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markright.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mars.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marsedit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marshallofsound-google-play-music-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marta.rb, Homebrew/homebrew-cask, 0

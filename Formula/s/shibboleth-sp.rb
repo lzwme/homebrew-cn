@@ -4,7 +4,7 @@ class ShibbolethSp < Formula
   url "https://shibboleth.net/downloads/service-provider/3.4.1/shibboleth-sp-3.4.1.tar.bz2"
   sha256 "bffe3e62e46d86cc75db1093b77fa1456b30da7c930a13708afa0139c8a8acc1"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://shibboleth.net/downloads/service-provider/latest/"
@@ -12,16 +12,12 @@ class ShibbolethSp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "5f9d2ea91d30aea4c625a41b46d92d6c8f2046efc425aa7d420e76f50185f3d2"
-    sha256 arm64_sonoma:   "dd40b2194765feea63309c8b7c23abdab493d83bd9c3a430c780dfe8b2b17db4"
-    sha256 arm64_ventura:  "c99c11c8ebc76a48690cfe691b9ceb24839f2c720a28e147acbf49107222e730"
-    sha256 arm64_monterey: "dd191ccaf4626eccceea95ba9a5df763d9504c2e2b6acb45351376ab4c35308d"
-    sha256 arm64_big_sur:  "2deccabb99d0c1687834eaad2700ab6e9a175352c589842b8c14ef305461bf83"
-    sha256 sonoma:         "bc88e9e428f073a1466a892029d4ce76ae95d15ce260a4e448974a5255b4628b"
-    sha256 ventura:        "6aac334d8fce2141b7468ccc14afbbd89ab01a6ea5af50b115ec1f7c3bcb078c"
-    sha256 monterey:       "81b3cc3e0f6a464de58f59bbf7a7b972a464ed9e2d43f4c9a803139aa3a1d119"
-    sha256 big_sur:        "ccf778c36c9beea10ccb74d9a46c062af6509be8b7068cbfc4c9b922fc0b6d83"
-    sha256 x86_64_linux:   "ec22788a7519d49dfbf12c13f652f8c80fc8adc32a9363e40a30c31568f9483f"
+    sha256 arm64_sequoia: "a9586efb0a7b274074ed45bd22b33737a881571e95d3324bf64ed8d17cca7072"
+    sha256 arm64_sonoma:  "36723380e18cab9652db4801a9dabb60fa26c5092e2aabd0b35853e70b99fb9b"
+    sha256 arm64_ventura: "e8544b105025133d3c6e9d9ea2119ed0d41fd8caf79eb97771cf0de80c341623"
+    sha256 sonoma:        "1618cd8310354dde562fea2d079d96eb8ab2b1309588ac365435df416f37f4b7"
+    sha256 ventura:       "86bf86c47d12d6db98fe3d8925f6a2eaf7d6cd417b1aa052d781e6cf0d6fee8f"
+    sha256 x86_64_linux:  "75409a8d3ecf93e527e7243f9c1b3e523e9e1d7246835c2806bb77afce5b46e9"
   end
 
   depends_on "pkg-config" => :build

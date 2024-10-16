@@ -18,9 +18,9 @@ class Ponyc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.12" => :build
 
   uses_from_macos "llvm" => [:build, :test]
+  uses_from_macos "python" => :build
   uses_from_macos "zlib"
 
   # We use LLVM to work around an error while building bundled `google-benchmark` with GCC

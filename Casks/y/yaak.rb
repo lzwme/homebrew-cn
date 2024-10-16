@@ -1,9 +1,9 @@
 cask "yaak" do
   arch arm: "aarch64", intel: "x64"
 
-  version "2024.11.0"
-  sha256 arm:   "36429f7c835a6f172422429f9858e7b82dd0af7e0f9d413203469f03d0c7de39",
-         intel: "9178605aa68329313c7c9595f20b077ba00007bea3032870a497637d88d0bec0"
+  version "2024.11.2"
+  sha256 arm:   "a83805a2d40140fe9152a32d2eb1d0a1dbe1b8726cf032e7c1c9a48bf21add57",
+         intel: "95f2fe63466be668971708594174e9587e6bfc4cff58283c9817cc49e0b05c68"
 
   url "https:github.comyaakappappreleasesdownloadv#{version}Yaak_#{version}_#{arch}.dmg",
       verified: "github.comyaakappapp"
@@ -18,7 +18,8 @@ cask "yaak" do
     end
   end
 
-  depends_on macos: ">= :high_sierra"
+  auto_updates true
+  depends_on macos: ">= :ventura"
 
   app "yaak.app"
 

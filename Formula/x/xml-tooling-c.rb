@@ -4,6 +4,7 @@ class XmlToolingC < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/xmltooling-3.2.4.tar.bz2"
   sha256 "92db9b52f28f854ba2b3c3b5721dc18c8bd885c1e0d9397f0beb3415e88e3845"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -11,16 +12,12 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f76efd3281936cb832a574976783f056e66766f473d849aae63c746e188d6f39"
-    sha256 cellar: :any,                 arm64_sonoma:   "672e8c185c451dad3d04b70756130b8d634115a694ae4cfbdf559d2876685d27"
-    sha256 cellar: :any,                 arm64_ventura:  "ae4ac6f8e8c3316ecde0a3ee93a9ccb6378cda802cc091cd171a4730e677f17f"
-    sha256 cellar: :any,                 arm64_monterey: "5a8b264c7570c6ad106eb2edd451c11157373f206346eb8a4b8998e9ed62a851"
-    sha256 cellar: :any,                 arm64_big_sur:  "abcb3207ed424a52d6b5555c63fe484f34022b09c5e25c8ae3dd99bb898c5ad5"
-    sha256 cellar: :any,                 sonoma:         "6d21ebd6fb31b2e87a6cd17b2f445f044d9f9a570c0797ecf63d278bf56f5dc2"
-    sha256 cellar: :any,                 ventura:        "079ed64f572a73735ec306bb7d011e3ffe429c496001fafc1498937d8684a78a"
-    sha256 cellar: :any,                 monterey:       "df0f4a56208757543bb35a7f56d5c56b68699a7422af4f908d83d4ec585cdc4d"
-    sha256 cellar: :any,                 big_sur:        "d9b9cc4501d19a476a3f2a0dbde388b3d50102518bd54cf018e642ff881f042b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6e7112c339d983cd2238781a912a5b972b49e6290f0ba17ccfa8835bf19ad2b"
+    sha256 cellar: :any,                 arm64_sequoia: "eb00e1cff98cfc36357bef956745b382933939db6375472ba7ac47c2495880fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "3199b66a057117eaf57d8dec705b1bb740caa61592bedbaa39d9621752495f65"
+    sha256 cellar: :any,                 arm64_ventura: "5298aed9afab194823a2022bd5d427ede7a9e873768fedbdbef32803724aa6cb"
+    sha256 cellar: :any,                 sonoma:        "08f0cd68263afff7da8a4fbe2469280373d5d285be2048c1d9ccae6ae27b2d19"
+    sha256 cellar: :any,                 ventura:       "fef897bcdae12eb52327097b65e334de1030745f6cf33b26570600ddb14f2b5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd9bff2c71f2b6d1c1985ec9d60ec89135100d6465d71a78a6635b02a7d7d25"
   end
 
   depends_on "pkg-config" => :build
