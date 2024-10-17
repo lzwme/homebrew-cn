@@ -12,18 +12,23 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9236475a08366f0e20ae97f6fdf41c29c39900c80f23bd0f59fe40327e5d366"
-    sha256 cellar: :any,                 arm64_sonoma:  "c66acf552133be876be8803043761659ad584705a908895deddffa20f0c75b85"
-    sha256 cellar: :any,                 arm64_ventura: "4da2bb10b8b82b531e831e7bfb74d2334564e1d167822e8a61ddb7ffa692d4de"
-    sha256 cellar: :any,                 sonoma:        "c2112d276dc8944fefa9dba94bcadabcb2d86490feb6cb3708bc466295fd83d3"
-    sha256 cellar: :any,                 ventura:       "3bd574ef303421acf9c9315ffeec107e21623fa4f67d703911df11b8e56ddb83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da8f5ad6da01f2fe575de1f649cd93301ae1c09be862c4943221d7598fa6ee09"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ae7aaf447b52b3dc9a34dedd3808590c391a38fd6e2e8148294f9be549c34a07"
+    sha256 cellar: :any,                 arm64_sonoma:  "0de7e45d5c9355699cc3733fd9e810d48f9055c65695fa073683ca7cfb4ed75f"
+    sha256 cellar: :any,                 arm64_ventura: "6083d15f2a7e7a1066c0114999bf5053ed2bb404285ed5f16c54e75e14a95584"
+    sha256 cellar: :any,                 sonoma:        "a9ac836d92b2e5a3afa541f979901e37951be559d293db9faea7f263c02ec006"
+    sha256 cellar: :any,                 ventura:       "c974c2e6cbf21debf65f7f49d3b2309021e82ea92ae85f68148608a66996cdff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ed9e7378926a0daff58f1535d454a7f249cab733e59fbd63f262fa7dce2cc2"
   end
 
   depends_on "ruby"
 
   on_macos do
     depends_on "terminal-notifier"
+  end
+
+  def fastlane_gem_home
+    "${HOME}.localsharefastlane#{Formula["ruby"].version.major_minor}.0"
   end
 
   def install
@@ -34,10 +39,10 @@ class Fastlane < Formula
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
     (bin"fastlane").write_env_script libexec"binfastlane",
-      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}bin:$PATH",
+      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}bin:#{fastlane_gem_home}bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
-      GEM_HOME:                        libexec.to_s,
-      GEM_PATH:                        libexec.to_s
+      GEM_HOME:                        "${FASTLANE_GEM_HOME:-#{fastlane_gem_home}}",
+      GEM_PATH:                        "${FASTLANE_GEM_HOME:-#{fastlane_gem_home}}:#{libexec}"
 
     # Remove vendored pre-built binary
     terminal_notifier_dir = libexec.glob("gemsterminal-notifier-*vendorterminal-notifier").first
@@ -49,6 +54,13 @@ class Fastlane < Formula
         terminal_notifier_dir,
       )
     end
+  end
+
+  def caveats
+    <<~EOS
+      Fastlane will install additional gems to FASTLANE_GEM_HOME, which defaults to
+        #{fastlane_gem_home}
+    EOS
   end
 
   test do

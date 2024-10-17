@@ -17,7 +17,6 @@ class Fbthrift < Formula
 
   depends_on "bison" => :build # Needs Bison 3.1+
   depends_on "cmake" => [:build, :test]
-  depends_on "python@3.12" => :build
   depends_on "boost"
   depends_on "double-conversion"
   depends_on "fizz"
@@ -32,6 +31,7 @@ class Fbthrift < Formula
   depends_on "zstd"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "zlib"
 
   on_macos do

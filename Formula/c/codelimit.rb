@@ -3,18 +3,17 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackages9b54f6fe026726846c0504da0f641e00738c4dbb2ba527dc642344186571fda8codelimit-0.9.5.tar.gz"
-  sha256 "73556a83abb85b1595bd016c980f789d4c484bb1925c9f1dadb914fb62f3e91d"
+  url "https:files.pythonhosted.orgpackagese82c6989c481e2635c4e464edcc8a5b1d142312539e005afed22575e3fb0bc0ccodelimit-0.10.0.tar.gz"
+  sha256 "735e4f699aca08d69f821f50aa76eabfdb4be9ad0c879a5d3ad097684fda3c1c"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4be61ba00cdf1cca28c428158a5248499a148914cb66cf394da364c92fe67de4"
-    sha256 cellar: :any,                 arm64_sonoma:  "475a383f4cb5d808913f1c2f4634cc0d0d6cae4b02b03f5f916bfc8cd1b763fb"
-    sha256 cellar: :any,                 arm64_ventura: "7c0b76151f43abf450e54f3465ff54384f03eaedeb6558e46fb925db82d2e433"
-    sha256 cellar: :any,                 sonoma:        "83cfb51426941a07585833184d7514495cda0d525f029815cfc920bdaab87bf8"
-    sha256 cellar: :any,                 ventura:       "f54665b05dd7617433c3436dfd63ad9b8f6179d209db6a6e399dcfd3be3b9e29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b3ff5f8de49d2cdcacc25fd1b43bd8a1f75041c32031d3e640199cdd3806b2a"
+    sha256 cellar: :any,                 arm64_sequoia: "c9219aec8b34682d23a53175da684f1135736131c0981b442fdcad5fe547dedb"
+    sha256 cellar: :any,                 arm64_sonoma:  "f140125e7c16c476e43b17189ebd3a00df7614f544e89a0c4ecdfc2621cb6929"
+    sha256 cellar: :any,                 arm64_ventura: "06a5088152838c7cd54b78068c658c1542f76fe576e5681d5377ccfbfc03e28d"
+    sha256 cellar: :any,                 sonoma:        "ea657682c35f3516e3d6cf672c26a3247cf13f687194bd970a9f1ef96f8b24cd"
+    sha256 cellar: :any,                 ventura:       "247c2791574a348b433725e97b875e2688cb803a1dc0f79471598baee9430e7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8a0cb1ff777c9f62423094728627ec863ca38d7e6f9ee88837ee1541307b7f2"
   end
 
   depends_on "certifi"
@@ -122,12 +121,9 @@ class Codelimit < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages46fe2ca2e5ef45952f3e8adb95659821a4e9169d8bbafab97eb662602ee12834yarl-1.14.0.tar.gz"
-    sha256 "88c7d9d58aab0724b979ab5617330acb1c7030b79379c8138c1c8c94e121d1b3"
+    url "https:files.pythonhosted.orgpackages5ef5ea4447f08264c84c1fa549b3b481640091b28692866becdd2255dbc4f6cdyarl-1.15.3.tar.gz"
+    sha256 "fbcff47f8ba82467f203037f7a30decf5c724211b224682f7236edb0dcbb5b95"
   end
-
-  # patch to support python 3.13, upstream pr ref, https:github.comgetcodelimitcodelimitpull40
-  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -142,31 +138,3 @@ class Codelimit < Formula
     assert_includes shell_output("#{bin}codelimit check #{testpath}test.py"), "Refactoring not necessary"
   end
 end
-
-__END__
-diff --git aPKG-INFO bPKG-INFO
-index 0886644..76828c6 100644
---- aPKG-INFO
-+++ bPKG-INFO
-@@ -5,7 +5,7 @@ Summary:
- License: GPL-3.0-or-later
- Author: Rob van der Leek
- Author-email: robvanderleek@gmail.com
--Requires-Python: >=3.10,<3.13
-+Requires-Python: >=3.10,<3.14
- Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
- Classifier: Programming Language :: Python :: 3
- Classifier: Programming Language :: Python :: 3.10
-diff --git apyproject.toml bpyproject.toml
-index 2aac7b2..a9625db 100644
---- apyproject.toml
-+++ bpyproject.toml
-@@ -10,7 +10,7 @@ readme = "README.md"
- codelimit = "codelimit.__main__:cli"
- 
- [tool.poetry.dependencies]
--python = ">=3.10,<3.13"
-+python = ">=3.10,<3.14"
- pygments = "^2.13.0"
- requests = "^2.28.2"
- typer = "^0.9.0"

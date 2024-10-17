@@ -1,9 +1,9 @@
 cask "psst" do
-  version "0.1.0,20240925.164916"
+  version "0.1.0,20241016.211350"
   sha256 :no_check
 
-  url "https:nightly.linkjpochylapsstworkflowsbuildmasterPsst.dmg.zip",
-      verified: "nightly.linkjpochylapsstworkflowsbuildmaster"
+  url "https:nightly.linkjpochylapsstworkflowsbuildmainPsst.dmg.zip",
+      verified: "nightly.linkjpochylapsstworkflowsbuildmain"
   name "Psst"
   desc "Spotify client"
   homepage "https:github.comjpochylapsst"

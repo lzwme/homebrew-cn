@@ -1,17 +1,17 @@
 class Toxiproxy < Formula
   desc "TCP proxy to simulate network & system conditions for chaos & resiliency testing"
   homepage "https:github.comshopifytoxiproxy"
-  url "https:github.comShopifytoxiproxyarchiverefstagsv2.10.0.tar.gz"
-  sha256 "f6ed552edce83bab7ecccbfa4aab9d6fbac42ff152498e8fddf760691f7152a5"
+  url "https:github.comShopifytoxiproxyarchiverefstagsv2.11.0.tar.gz"
+  sha256 "642b6f590ef5b26418663983aa1d86f9120c8c1339034116a08da4d2231e0504"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f0c6fcf9fe2a64336f148ae700ab533e03238ab7dee434adb0e2db59bc25967"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f0c6fcf9fe2a64336f148ae700ab533e03238ab7dee434adb0e2db59bc25967"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f0c6fcf9fe2a64336f148ae700ab533e03238ab7dee434adb0e2db59bc25967"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e69245b262509513e2a12671e72d104156abb8eb7ea7d3901542342b1de6e1a1"
-    sha256 cellar: :any_skip_relocation, ventura:       "e69245b262509513e2a12671e72d104156abb8eb7ea7d3901542342b1de6e1a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9566d50a0e832b6db409fd354a84ebfe69732554e39c86ff41a3c19cc35179cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "247537befa839cfa0c4a8e6d01b215796a8df7cfdecb958d626b8bd89a4625dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "247537befa839cfa0c4a8e6d01b215796a8df7cfdecb958d626b8bd89a4625dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "247537befa839cfa0c4a8e6d01b215796a8df7cfdecb958d626b8bd89a4625dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f3c7b314262d9c223dc749765f3603b3eeb8226b05168fc2aef7c0e67fdaf6a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f3c7b314262d9c223dc749765f3603b3eeb8226b05168fc2aef7c0e67fdaf6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfc24ff1aaab01335f8425a1c94bbcf5d4d3db94f3fe9f7c20d3f49c9442cacd"
   end
 
   depends_on "go" => :build

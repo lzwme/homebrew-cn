@@ -1,18 +1,18 @@
 class Frizbee < Formula
   desc "Throw a tag at and it comes back with a checksum"
   homepage "https:github.comstacklokfrizbee"
-  url "https:github.comstacklokfrizbeearchiverefstagsv0.1.3.tar.gz"
-  sha256 "72ca8ec701036c925e587e15e7a05c2f7cbd219f2fa36d7945c064a47606b911"
+  url "https:github.comstacklokfrizbeearchiverefstagsv0.1.4.tar.gz"
+  sha256 "73f6d7e9e9b507425b8c58101e6eab933aad27372cc531ffd110e283a6ff2d3e"
   license "Apache-2.0"
   head "https:github.comstacklokfrizbee.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4de1ee319f3d51c1d41ee8b66d88ee57f26b61df700971543e7a5e224ab21ed4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4de1ee319f3d51c1d41ee8b66d88ee57f26b61df700971543e7a5e224ab21ed4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4de1ee319f3d51c1d41ee8b66d88ee57f26b61df700971543e7a5e224ab21ed4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "699788017804b1137bc8fc7339b0428cd3572865c58ba2332042105e619e5fc7"
-    sha256 cellar: :any_skip_relocation, ventura:       "699788017804b1137bc8fc7339b0428cd3572865c58ba2332042105e619e5fc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d376457880a10e2f3a87ba9a232b7a55780598ef696a515ceb0233808a56f54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0224be773cbc5ad5a8963a64f453a34c41afc445e882f8916460b785dacc4477"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0224be773cbc5ad5a8963a64f453a34c41afc445e882f8916460b785dacc4477"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0224be773cbc5ad5a8963a64f453a34c41afc445e882f8916460b785dacc4477"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85afa669459e2d6ed3d3de922bf53b552c1a8b601601c8c817c08e2a664ac6b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "85afa669459e2d6ed3d3de922bf53b552c1a8b601601c8c817c08e2a664ac6b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69c9c04e318f31faf936ed3a35cfcfd352e2c379bc7b1d1f99f6d138ca631190"
   end
 
   depends_on "go" => :build

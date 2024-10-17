@@ -3,19 +3,18 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https:github.comfranc-pentestldeep"
-  url "https:files.pythonhosted.orgpackages2392618f60c1a399e9fe7fc41495631026eb15f3e10c3005d2a447f6f1c25089ldeep-1.0.70.tar.gz"
-  sha256 "c3af636af9b6410a743992acf8a0b8a4cfc303ddef7190f26b24300e79336d74"
+  url "https:files.pythonhosted.orgpackages7f9f121148071d5e825f00120ec589d2e8c21868eb78465850cbfb095118c6e7ldeep-1.0.72.tar.gz"
+  sha256 "4591f267f82c2cebf2150f49f04fe72d062c6bd83f67d6984ea360f3a32a5183"
   license "MIT"
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "608bd79ade375e4d8f8e396aa85e271abde1ebb1da3bf9b2b2b3ab8105f6d837"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de86e07e3e32a39f76799afaf1a0ac85cc5b8f8fc15b926acd7e509a62bab5b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4dbcaeddf072375b1bf997d78ff42baf70e02c3db2d9f4a2c6dded673b9d648c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da7542d8e5cc4522761204bfce8ada06b2be863d39ea5d256265a16c9f509de4"
-    sha256 cellar: :any_skip_relocation, ventura:       "be0a33d0259a468b6c2cccce13757141b5f635e03089a52d3576171919c584cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10603c243f1c1059d91876bd4ed7c71f1f4a39086f6d3f7ee2e5273162af34e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8d00e22a5b7d9038ff4b20b31cc7b8f92f679db6bf06549e446a82445f3a983"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f3d11c306402792b706150499ec3a5cdb060e0e1745a4bf2b4c1af84b09669f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "154cc239a047bd4046ba80bd44a45ee7815cc4a3bf63d8e3ba7a303c404e5ca1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fcb9d6d26af6f21daba8a79c3697c423825e08c9f25abb05110d38ddcc99c491"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d4fa8b5e42dd84e9cf2a799f29bea4e6eaec2cf4785722ee0ca6d1f14335073"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "206536ca643fa87021d68af9c51aa7514af22cbc9a9a106abc967acc4c4a307e"
   end
 
   depends_on "cryptography"

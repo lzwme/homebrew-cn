@@ -1,14 +1,14 @@
 class T1lib < Formula
-  desc "C library to generate/rasterize bitmaps from Type 1 fonts"
-  homepage "https://www.t1lib.org/"
-  url "https://www.ibiblio.org/pub/linux/libs/graphics/t1lib-5.1.2.tar.gz"
-  mirror "https://fossies.org/linux/misc/old/t1lib-5.1.2.tar.gz"
+  desc "C library to generaterasterize bitmaps from Type 1 fonts"
+  homepage "https:www.t1lib.org"
+  url "https:www.ibiblio.orgpublinuxlibsgraphicst1lib-5.1.2.tar.gz"
+  mirror "https:fossies.orglinuxmiscoldt1lib-5.1.2.tar.gz"
   sha256 "821328b5054f7890a0d0cd2f52825270705df3641dbd476d58d17e56ed957b59"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https://www.ibiblio.org/pub/Linux/libs/graphics/"
-    regex(/href=.*?t1lib[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.ibiblio.orgpubLinuxlibsgraphics"
+    regex(href=.*?t1lib[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,9 +34,60 @@ class T1lib < Formula
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "without_doc"
     system "make", "install"
     share.install "Fonts" => "fonts"
+  end
+
+  test do
+    # T1_SetString seems to fail on macOS with "(E) T1_SetString(): t1_abort: Reason: unable to fix subpath break?"
+    # https:github.comHomebrewhomebrew-corepull194149#issuecomment-2412940237
+    (testpath"test.c").write <<~C
+      #include <stdio.h>
+      #include <stdlib.h>
+      #include <t1lib.h>
+
+      int main( void)
+      {
+        int i;
+        T1_SetBitmapPad(16);
+
+        if ((T1_InitLib(NO_LOGFILE)==NULL)){
+          fprintf(stderr, "Initialization of t1lib failed\\n");
+          return EXIT_FAILURE;
+        }
+
+        for( i=0; i<T1_GetNoFonts(); i++){
+          printf("FontID=%d, Font=%s\\n", i, T1_GetFontFilePath(i));
+          printf("FontID=%d, Metrics=%s\\n", i, T1_GetAfmFilePath(i));
+           T1_DumpGlyph(T1_SetString( i, "Test", 0, 0, T1_KERNING, 25.0, NULL));
+        }
+
+        T1_CloseLib();
+        return EXIT_SUCCESS;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lt1", "-o", "test"
+
+    testpath.install_symlink Formula["t1lib"].opt_share"fontsafmbchr.afm"
+    testpath.install_symlink Formula["t1lib"].opt_share"fontstype1bchr.pfb"
+    (testpath"FontDataBase").write "1\nbchr.afm\n"
+    (testpath"t1lib.config").write <<~EOS
+      FONTDATABASE=.FontDataBase
+      ENCODING=.
+      AFM=.
+      TYPE1=.
+    EOS
+
+    expected_output = <<~EOS
+      FontID=0, Font=.bchr.pfb
+      FontID=0, Metrics=.bchr.afm
+    EOS
+
+    with_env(T1LIB_CONFIG: testpath"t1lib.config") do
+      assert_equal expected_output, shell_output(".test")
+    end
   end
 end

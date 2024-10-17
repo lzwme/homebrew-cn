@@ -44,6 +44,6 @@ class ThreeBody < Formula
       撞()'").strip
     assert_equal "\"半人马星系\"", shell_output("#{bin}3body -c '给 三体世界坐标 以 \"半人马星系\"; 广播(三体世界坐标);'").strip
     assert_equal "", shell_output("#{bin}3body -c '冬眠(1000); 二向箔清理(); 毁灭();'").strip
-    assert_equal "[builtin function]", shell_output("#{bin}3body -c '智子工程'").strip
+    assert_equal "[builtin function]", shell_output("#{bin}3body -c '程心'").strip
   end
 end

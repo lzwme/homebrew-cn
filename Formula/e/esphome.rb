@@ -3,18 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagesea2b131578f2dcb9d9e1199b204fd235fecb32325aadded9fe7d1af80f7310acesphome-2024.9.2.tar.gz"
-  sha256 "caa9569b11706d3ac593372ffec80521af032b30348ae7e2f2b78fe6fe9a401a"
+  url "https:files.pythonhosted.orgpackagescaa32af850b170bdcd05328622daef7e356ec37da9b0f04626e20970c164e157esphome-2024.10.0.tar.gz"
+  sha256 "a74480529d4814214132ae68e665bcb37ba41a7cd34cd6c0e2e0a0d538c43c1a"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2060e59b1f42728e4b0f4ae6cf1f39203920326d7a2713d391242aaa39fc028d"
-    sha256 cellar: :any,                 arm64_sonoma:  "48eb42c225da0611d071fff1f7a866a92f7283fd94ffac03eeee2ed4dbcb82a2"
-    sha256 cellar: :any,                 arm64_ventura: "23d30f820b22066c7052c37225d6a6a1cca8dd7ab96285b022b2a761a8d77d39"
-    sha256 cellar: :any,                 sonoma:        "393afc07be16d85aba4ec42a1d6c4842c38ba72ed92c3fd4d20c8a9c4f95f36c"
-    sha256 cellar: :any,                 ventura:       "b74e2688b814563bdaa0b225ae934107ce8eb58371a6d3d0f426dcbc0460b885"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7ee7ea3347e83ed36120827b169f7e3afaf6338690445dcdf42726cdcff17b5"
+    sha256 cellar: :any,                 arm64_sequoia: "fbd7ec317b3de1feab28719312d9e60237a17402c8ad931a148e0f5c2605bfaa"
+    sha256 cellar: :any,                 arm64_sonoma:  "d30b4da54c0a3aec77c770e70adb9c7039c76b9f9ce3973fdab2d2eee9d3792d"
+    sha256 cellar: :any,                 arm64_ventura: "e5bd9fb39db391db7bb2a6fda5e179b0e012e396368dd485e31426be7ef43aad"
+    sha256 cellar: :any,                 sonoma:        "365acd1f6f9576be16945bd4df8a5fc546cb0e431687a1f0f6d9d83d484eca27"
+    sha256 cellar: :any,                 ventura:       "5bf9320e5a91c487fd462c439304d173f76b6cd3107ad22716276f6d33e56d4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5340f3dcf28147700d36bbe6b05b237cc717a66bd8ad3ceb5961e8b82e7b49c7"
   end
 
   depends_on "certifi"
@@ -43,8 +42,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackages7849f3f17ec11c4a91fe79275c426658e509b07547f874b14c1a526d86a83fc8anyio-4.6.0.tar.gz"
-    sha256 "137b4559cbb034c477165047febb6ff83f390fc3b20bf181c1fc0a728cb8beeb"
+    url "https:files.pythonhosted.orgpackages9f0945b9b7a6d4e45c6bcb5bf61d19e3ab87df68e0601fa8c5293de3542546ccanyio-4.6.2.post1.tar.gz"
+    sha256 "4c8bc31ccdb51c7f7bd251f51c609e038d63e34219b44aa86e47576389880b4c"
   end
 
   resource "argcomplete" do
@@ -75,11 +74,6 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackagesc1ff6ca12ab8f4d804cfe423e67d7e5de168130b106a0cb749a1043943c23b6bchacha20poly1305_reuseable-0.13.2.tar.gz"
     sha256 "dd8be876e25dfc51909eb35602b77a76e0d01a364584756ab3fa848e2407e4ec"
-  end
-
-  resource "chardet" do
-    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -172,24 +166,24 @@ class Esphome < Formula
     sha256 "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
   end
 
+  resource "puremagic" do
+    url "https:files.pythonhosted.orgpackagesd5cedc3a664654f1abed89d4e8a95ac3af02a2a0449c776ccea5ef9f48bde267puremagic-1.27.tar.gz"
+    sha256 "7cb316f40912f56f34149f8ebdd77a91d099212d2ed936feb2feacfc7cbce2c1"
+  end
+
   resource "pyelftools" do
     url "https:files.pythonhosted.orgpackages88560f2d69ed9a0060da009f672ddec8a71c041d098a66f6b1d80264bf6bbdc0pyelftools-0.31.tar.gz"
     sha256 "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99"
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages830813f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043apyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
+    url "https:files.pythonhosted.orgpackages8cd5e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2pyparsing-3.2.0.tar.gz"
+    sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
   end
 
   resource "pyserial" do
     url "https:files.pythonhosted.orgpackages1e7dae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082pyserial-3.5.tar.gz"
     sha256 "3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"
-  end
-
-  resource "python-magic" do
-    url "https:files.pythonhosted.orgpackagesdadb0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130python-magic-0.4.27.tar.gz"
-    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
   end
 
   resource "pyyaml" do

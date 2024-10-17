@@ -3,18 +3,17 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/c3/74/31c5d3691d5d60f8718144b2ca01be23199c5e2c530760246d7ecc186498/charmcraft-3.2.1.tar.gz"
-  sha256 "fe98c91d007c2093332708350d4c0a7ee43e9df18c0082a1e7f864297dc149ed"
+  url "https://files.pythonhosted.org/packages/12/80/b464c8b5e44c93315de664e6398c9132d837ed2f4d468cf366fc5beeb418/charmcraft-3.2.2.tar.gz"
+  sha256 "eab931c9a37756c8f4eeabe55d98aa4862cb92474702e16b4224f31b1c0708e9"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "3c66acad7a17f0aa1e372f5e19df43560390277f28ea1680041fe1199d35a48e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f04dd53422e30465f01ddb82d1fbd1601b72fcc6570d6ea09a8e30c97d94625"
-    sha256 cellar: :any,                 arm64_ventura: "6a80374ba250fb1a30774a001932bed3fec34e7f35faaf6a174f7fb6a73ee16c"
-    sha256 cellar: :any,                 sonoma:        "043c59ffd5fb192479a0daa2fa56d4c554c071e7acc91206fad6049e5fbdd87d"
-    sha256 cellar: :any,                 ventura:       "152cfce948bdcdf8157c61951b2aaae313f1dcce19d05e45dff71ee35af9728b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a60c8668e9c12c4154950f84fc73bdd1a16b4b254775ef81a071d539115a4d3"
+    sha256 cellar: :any,                 arm64_sequoia: "cb33e32a690ea5e623b1c7f4b7bc115848d474076713bfa63cf1a97cb9f1d9c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "58ec03aab7c1cbb41d3294627a4b086ed476559002aa7ab09365986f0ccd0cb2"
+    sha256 cellar: :any,                 arm64_ventura: "5a9adacd37de4b6cd2c2e44c7b1bbedd35c4a3e9b8b741c4a5bfa8ead717c772"
+    sha256 cellar: :any,                 sonoma:        "57553210dfe0636b8a1b392baa0aa6033f6198cb9cc3c1bdea6ef4bade19d3ad"
+    sha256 cellar: :any,                 ventura:       "585f188fd54a4837ece91c91b6819eade7f842920d1ce77a5a3767de5e0586a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d33b4c08d9065a3ea35c7c43d29d638d7b7a83b1b73e277c9a3956e3c24862b"
   end
 
   depends_on "rust" => :build
@@ -231,8 +230,8 @@ class Charmcraft < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/83/08/13f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043a/pyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
+    url "https://files.pythonhosted.org/packages/8c/d5/e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2/pyparsing-3.2.0.tar.gz"
+    sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
   end
 
   resource "pyrfc3339" do
@@ -296,8 +295,8 @@ class Charmcraft < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/27/b8/f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74b/setuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https://files.pythonhosted.org/packages/07/37/b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409/setuptools-75.2.0.tar.gz"
+    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
   end
 
   resource "six" do

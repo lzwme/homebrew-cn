@@ -18,17 +18,18 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5f1bdf5a5b31dc764a55698577c19de2c1ccde0ccf322bd9bfe1358e56400c64"
-    sha256 cellar: :any,                 arm64_sonoma:  "b73510f701cd0569475b07a41ce28f16b52a53b09dac212e903c738ba90eaed1"
-    sha256 cellar: :any,                 arm64_ventura: "f40d73a708d4a11ce83b600ee8849fcc5c8555cd0dd46360b5be4727ce5271df"
-    sha256 cellar: :any,                 sonoma:        "8543bffab2b8e48870f206f27434fd03c24922ca8b14037a22974bda5dd8f4ed"
-    sha256 cellar: :any,                 ventura:       "20ff272c8048fc60e2e05f1d93a832b1767ac1c417afbf31e40c1c6e6e9911dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68b4b2de730a82e884fe2bbbb2da13a95e90e1738c9365d7524ad71cea374cf8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "598835c05a74e678ade6d90621fa68265d029d14b8784f7255563d5ac25c3849"
+    sha256 cellar: :any,                 arm64_sonoma:  "a46172e6bf63d5646fe33e1cc339fedaafc3b46962693ae37e6a35b4f8e268d2"
+    sha256 cellar: :any,                 arm64_ventura: "d991849e39b8863e7bd75c8ab031857b47f86345da67515bad45030f6a653753"
+    sha256 cellar: :any,                 sonoma:        "c63d5d09cb9bc59833a89ec5958dba15662282c89a4fb0afd8dd07ddfa87bf9c"
+    sha256 cellar: :any,                 ventura:       "46129d9f616da66c0f66d7825341b7e417f386351fa22d4ed210ad6194e4bcad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e1bbd5983de7e8668c37a1d665362c09065049313f97f2534c5d5e54d3c9087"
   end
 
   depends_on "cmake" => :build
   depends_on "node"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "yuicompressor"
 
   uses_from_macos "llvm" => :build
@@ -178,7 +179,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: Formula["python@3.12"].opt_bin"python3.12" }
+    emscript_env = { PYTHON: Formula["python@3.13"].opt_bin"python3.13" }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|
