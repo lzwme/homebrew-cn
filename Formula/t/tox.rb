@@ -3,17 +3,17 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/7d/35/c9a296b276c594b59dbdf71a7b9ad8a4d10f08c86b4696e399cc619ac1a7/tox-4.22.0.tar.gz"
-  sha256 "acc6c627cb3316585238d55d2b633e132fea1bdb01b9d93b56bce7caea6ae73d"
+  url "https://files.pythonhosted.org/packages/d6/40/559622c78758a041c2e62fe2f753d4570d3bfbfbe985266bd25ddb3e696d/tox-4.23.0.tar.gz"
+  sha256 "a6bd7d54231d755348d3c3a7b450b5bf6563833716d1299a1619587a1b77a3bf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13d3e99ce4cd6b2f9216f2c9fd93d62ce6fae9ddd6b34e397fef42dae69fc861"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13d3e99ce4cd6b2f9216f2c9fd93d62ce6fae9ddd6b34e397fef42dae69fc861"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "13d3e99ce4cd6b2f9216f2c9fd93d62ce6fae9ddd6b34e397fef42dae69fc861"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0b0b7d80704b1060c91790f00d8e770ed89ee3da995ea9209594ad43f2f967a"
-    sha256 cellar: :any_skip_relocation, ventura:       "a0b0b7d80704b1060c91790f00d8e770ed89ee3da995ea9209594ad43f2f967a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd350a0f263e31ed49ba68b1a9880a44f2d64aba0add87a5af662bfe4984fbda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dc8a879475cc7d756ae4d748e918e8398b540a11fa6b44a13a8207bab8b9de8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dc8a879475cc7d756ae4d748e918e8398b540a11fa6b44a13a8207bab8b9de8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5dc8a879475cc7d756ae4d748e918e8398b540a11fa6b44a13a8207bab8b9de8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f5b893752f8cff696b68ac9dd7ac5a420ae8a30b9a56b4110ce39bb76cd5b9b"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f5b893752f8cff696b68ac9dd7ac5a420ae8a30b9a56b4110ce39bb76cd5b9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d369f0b960ac8dfd5f733c383c0a72503259bd4394449bf0f131037eb7b34807"
   end
 
   depends_on "python@3.13"

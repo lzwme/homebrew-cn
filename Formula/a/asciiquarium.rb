@@ -1,18 +1,14 @@
-require "languageperl"
-
 class Asciiquarium < Formula
-  include Language::Perl::Shebang
-
   desc "Aquarium animation in ASCII art"
-  homepage "https:robobunny.comprojectsasciiquariumhtml"
-  url "https:robobunny.comprojectsasciiquariumasciiquarium_1.1.tar.gz"
+  homepage "https://robobunny.com/projects/asciiquarium/html/"
+  url "https://robobunny.com/projects/asciiquarium/asciiquarium_1.1.tar.gz"
   sha256 "1b08c6613525e75e87546f4e8984ab3b33f1e922080268c749f1777d56c9d361"
   license "GPL-2.0-or-later"
   revision 5
 
   livecheck do
-    url "https:robobunny.comprojectsasciiquarium"
-    regex(href=.*?asciiquarium[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://robobunny.com/projects/asciiquarium/"
+    regex(/href=.*?asciiquarium[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -31,17 +27,17 @@ class Asciiquarium < Formula
   depends_on "perl"
 
   resource "Curses" do
-    url "https:cpan.metacpan.orgauthorsidGGIGIRAFFEDCurses-1.45.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED/Curses-1.45.tar.gz"
     sha256 "84221e0013a2d64a0bae6a32bb44b1ae5734d2cb0465fb89af3e3abd6e05aeb2"
   end
 
   resource "Term::Animation" do
-    url "https:cpan.metacpan.orgauthorsidKKBKBAUCOMTerm-Animation-2.6.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/K/KB/KBAUCOM/Term-Animation-2.6.tar.gz"
     sha256 "7d5c3c2d4f9b657a8b1dce7f5e2cbbe02ada2e97c72f3a0304bf3c99d084b045"
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
     resources.each do |r|
       r.stage do
@@ -50,14 +46,9 @@ class Asciiquarium < Formula
       end
     end
 
-    # Disable dynamic selection of perl which may cause segfault when an
-    # incompatible perl is picked up.
-    # https:github.comHomebrewhomebrew-coreissues4936
-    rewrite_shebang detected_perl_shebang, "asciiquarium"
-
     chmod 0755, "asciiquarium"
     bin.install "asciiquarium"
-    bin.env_script_all_files(libexec"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
@@ -75,7 +66,7 @@ class Asciiquarium < Formula
 
     require "pty"
     ENV["TERM"] = "xterm"
-    PTY.spawn(bin"asciiquarium") do |stdout, stdin, _pid|
+    PTY.spawn(bin/"asciiquarium") do |stdout, stdin, _pid|
       sleep 5
       stdin.write "q"
       output = begin

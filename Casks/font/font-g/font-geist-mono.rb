@@ -1,6 +1,6 @@
 cask "font-geist-mono" do
-  version "1.4.0"
-  sha256 "70423ceba8d5f768a9a9a9cb56c449a5307d20679d951113acdf38d7107a548b"
+  version "1.4.01"
+  sha256 "ae3112093f124621ec579c3849167df954f80feacd7870bfcc2f62f739830fc1"
 
   url "https:github.comvercelgeist-fontreleasesdownload#{version}GeistMono-v#{version}.zip",
       verified: "github.comvercelgeist-font"
@@ -12,16 +12,16 @@ cask "font-geist-mono" do
     strategy :github_latest
   end
 
-  font "GeistMonootfGeistMono-Black.otf"
-  font "GeistMonootfGeistMono-Bold.otf"
-  font "GeistMonootfGeistMono-Light.otf"
-  font "GeistMonootfGeistMono-Medium.otf"
-  font "GeistMonootfGeistMono-Regular.otf"
-  font "GeistMonootfGeistMono-SemiBold.otf"
-  font "GeistMonootfGeistMono-Thin.otf"
-  font "GeistMonootfGeistMono-UltraBlack.otf"
-  font "GeistMonootfGeistMono-UltraLight.otf"
-  font "GeistMonovariableGeistMono[wght].ttf"
+  font "otfGeistMono-Black.otf"
+  font "otfGeistMono-Bold.otf"
+  font "otfGeistMono-Light.otf"
+  font "otfGeistMono-Medium.otf"
+  font "otfGeistMono-Regular.otf"
+  font "otfGeistMono-SemiBold.otf"
+  font "otfGeistMono-Thin.otf"
+  font "otfGeistMono-UltraBlack.otf"
+  font "otfGeistMono-UltraLight.otf"
+  font "variableGeistMono[wght].ttf"
 
   # No zap stanza required
 end

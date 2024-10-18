@@ -8,6 +8,7 @@ cask "pearcleaner" do
   desc "Utility to uninstall apps and remove leftover files from olduninstalled apps"
   homepage "https:itsalin.comappInfo?id=pearcleaner"
 
+  auto_updates true
   depends_on macos: ">= :ventura"
 
   app "Pearcleaner.app"

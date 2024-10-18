@@ -1,21 +1,12 @@
 class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https:julialang.org"
+  # Use the `-full` tarball to avoid having to download during the build.
+  # TODO: Check if we can unbundle `curl`: https:github.comJuliaLangDownloads.jlissues260
+  url "https:github.comJuliaLangjuliareleasesdownloadv1.11.1julia-1.11.1-full.tar.gz"
+  sha256 "a49b804de6e86a03fe26c73f58851eaee1ff243d7204f2b5ae4dbc5c1dc2758d"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https:github.comJuliaLangjulia.git", branch: "master"
-
-  stable do
-    # Use the `-full` tarball to avoid having to download during the build.
-    # TODO: Check if we can unbundle `curl`: https:github.comJuliaLangDownloads.jlissues260
-    url "https:github.comJuliaLangjuliareleasesdownloadv1.11.0julia-1.11.0-full.tar.gz"
-    sha256 "8d77780cd04484e21f9c3805be6b1bd56a69bcbe6caedf2485e899205d85c874"
-
-    # Backport fix for linkage on Linux
-    patch do
-      url "https:github.comJuliaLangjuliacommit77c5875b3cbe85e7fb0bb5a7e796809c901ede95.patch?full_index=1"
-      sha256 "8b49b2a2cc5572e5ec5ab207bc0d1f69bb687422deeb0a4371a2e1e09935ee3f"
-    end
-  end
 
   livecheck do
     url :stable
@@ -23,12 +14,12 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4f80970fe9ae7e7c2a73a0d83a2c492132270b6fcf5189dc3479fde669fd11c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "7407fa62af3db8d5fbf993c35c656c2732d92b80f147ac55df13f6015e2f63a2"
-    sha256 cellar: :any,                 arm64_ventura: "58978ac84513240b16d162ca972f24e7004c8e110a82fabd5a647486e3a1a8ba"
-    sha256 cellar: :any,                 sonoma:        "38643d3835346ebb22a21e3ba6677f3be2f452dc31069b063433ff02a82fe194"
-    sha256 cellar: :any,                 ventura:       "0cd4e46dcdea9d7f3d6337cfd72bef0da967656c5b4e0c05d3f284c9e1a1ef99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd7ba7236d89887deaa639cd7932e0585eb2268cd6ce18f58c6e00d10300db66"
+    sha256 cellar: :any,                 arm64_sequoia: "3b2539c87cfe9806329260581fc67be5bc2c86ea093e1e51a06ca180a11e31ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "4cc98c936169dcc782b9c25c33c2ed2970a15472c19196ece265c73c695f7d0e"
+    sha256 cellar: :any,                 arm64_ventura: "030f65d72a6defa11b745578c309204e0524256ff4bdbf3dfba014abb28774d3"
+    sha256 cellar: :any,                 sonoma:        "8729de1cbe4595e6410284e7806dbe32868cf1aa58b5aaec1b53e9f1f2836bd6"
+    sha256 cellar: :any,                 ventura:       "4a84666af1dc53c87a29c6d717601626190f6137166d3029ecc060d7f54797d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c202ab099227ac14559c988c050b92a8a1a346c9796141e418839686fa05ebf8"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

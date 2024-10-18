@@ -1,8 +1,4 @@
-require "languageperl"
-
 class SqlTranslator < Formula
-  include Language::Perl::Shebang
-
   desc "Manipulate structured data definitions (SQL and more)"
   homepage "https:github.comdbsrgitssql-translator"
   url "https:cpan.metacpan.orgauthorsidIILILMARISQL-Translator-1.62.tar.gz"
@@ -107,11 +103,6 @@ class SqlTranslator < Formula
                                   "INSTALLSITEMAN1DIR=#{man1}",
                                   "INSTALLSITEMAN3DIR=#{man3}"
     system "make", "install"
-
-    # Disable dynamic selection of perl which may cause segfault when an
-    # incompatible perl is picked up.
-    # https:github.comHomebrewhomebrew-coreissues4936
-    rewrite_shebang detected_perl_shebang, *bin.children
 
     bin.env_script_all_files libexec"bin", PERL5LIB: ENV["PERL5LIB"]
   end

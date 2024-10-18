@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https:dstack.ai"
-  url "https:files.pythonhosted.orgpackages7e0448d1f99ff04e868c83e8656bb0919fe8f139130bc866acbe9555e47d3f81dstack-0.18.18.tar.gz"
-  sha256 "164407af8b3d06cd31b73a2ba91704a930e3fe6db19f9bca71545636c647bc2a"
+  url "https:files.pythonhosted.orgpackages2834be6e7458f0c93badd9621b60734ec0e2c4e1b4b6ec960a678699bb5b8db8dstack-0.18.19.tar.gz"
+  sha256 "133b7a5006755aefa1a886f19f8010c51986b2f20c3241992accb44bb92579ca"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "49508b211282522c948c2c2ff04d73a7a4675004606ae2368dc39ec0dad8b789"
-    sha256 cellar: :any,                 arm64_sonoma:  "45272dd47805c599691a0aebebd8be5c8ca3f3562e0cfdb80636406806062a9e"
-    sha256 cellar: :any,                 arm64_ventura: "b9a87c5e03fdad1b0977e4e5dc7500467cdfa1a3380c16f5538c6c05f5111c15"
-    sha256 cellar: :any,                 sonoma:        "faf4ebe4e2a317957e5362cce5e3fdc4f3a4ae884f39fd77505f2628d13521a6"
-    sha256 cellar: :any,                 ventura:       "5145c4292746ff58c1954bde680e1e1231033f7f0f2f8572412555be111a7e20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78b739150cdd34b27bb08d9b1c4c233e0c6d410978e0ceed30b453a7a0da82e2"
+    sha256 cellar: :any,                 arm64_sequoia: "941e6c4679e1c8cd3d03a8d1f16a5651af59636a25775a80559b2f89069599af"
+    sha256 cellar: :any,                 arm64_sonoma:  "1484b8f929598c1efcc107be67ffa7d814d5753c3dd6deb3d76a36acd0e60913"
+    sha256 cellar: :any,                 arm64_ventura: "5ef11044378e688dbfc42dc862aac632222a329462a98ff79b391c4227a98bcd"
+    sha256 cellar: :any,                 sonoma:        "9fd15279a112ceace772fb1f171eb1277e224ab2163d9d913c311f9fff8fbcad"
+    sha256 cellar: :any,                 ventura:       "e60a673d036b4bec092ed737d1683539eb0c5c6c5fd0974d7efd8a871c2543a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a5e6cc9e5b6d1ee376e6fd6b3effb78fb5c9ab00c35d50485fd32a7d617e017"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -131,13 +131,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesc8a5ad69a27300d02d6393a7725cdcab8e21b02ad1db819b4459989fb2ca2126boto3-1.35.41.tar.gz"
-    sha256 "e74bc6d69c04ca611b7f58afe08e2ded6cb6504a4a80557b656abeefee395f88"
+    url "https:files.pythonhosted.orgpackages04e4a60d99f727766d9801f4e14dca7e2df0245831844411562d81e0df2cc179boto3-1.35.42.tar.gz"
+    sha256 "a5b00f8b82dce62870759f04861747944da834d64a64355970120c475efdafc0"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesfc1887ed003aaeca9e5394aac387c934ab8071d4cd21dcde3df71b490042d4d3botocore-1.35.41.tar.gz"
-    sha256 "8a09a32136df8768190a6c92f0240cd59c30deb99c89026563efadbbed41fa00"
+    url "https:files.pythonhosted.orgpackagesd30c2bcd566397ab06661b222b9b5156ba0c40d5a97d3727c88ccaefea275cb4botocore-1.35.42.tar.gz"
+    sha256 "af348636f73dc24b7e2dc760a34d08c8f2f94366e9b4c78d877307b128abecef"
   end
 
   resource "cached-classproperty" do
@@ -546,8 +546,8 @@ class Dstack < Formula
   end
 
   resource "sentry-sdk" do
-    url "https:files.pythonhosted.orgpackages806359640a54963747d2c4b2d149412b2024abed13bacd4e8d16ae5babb97da0sentry_sdk-2.16.0.tar.gz"
-    sha256 "90f733b32e15dfc1999e6b7aca67a38688a567329de4d6e184154a73f96c6892"
+    url "https:files.pythonhosted.orgpackagesb1837d0956a71ac894717099be3669ca7b8f164bccbcfb570b2f02817d0a0068sentry_sdk-2.17.0.tar.gz"
+    sha256 "dd0a05352b78ffeacced73a94e86f38b32e2eae15fff5f30ca5abb568a72eacf"
   end
 
   resource "simple-term-menu" do
@@ -636,8 +636,8 @@ class Dstack < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages5ef5ea4447f08264c84c1fa549b3b481640091b28692866becdd2255dbc4f6cdyarl-1.15.3.tar.gz"
-    sha256 "fbcff47f8ba82467f203037f7a30decf5c724211b224682f7236edb0dcbb5b95"
+    url "https:files.pythonhosted.orgpackages357f7765096fcf00ddeebfa594b0b446851be93f22d538c4cbba61d07b37555ayarl-1.15.4.tar.gz"
+    sha256 "a0c5e271058d148d730219ca4f33c5d841c6bd46e05b0da60fea7b516906ccd3"
   end
 
   resource "zipp" do
