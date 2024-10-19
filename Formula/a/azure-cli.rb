@@ -6,6 +6,7 @@ class AzureCli < Formula
   url "https:github.comAzureazure-cliarchiverefstagsazure-cli-2.65.0.tar.gz"
   sha256 "e9d4503b82eca5c78ef0acbe83ad229e35821caef200d7b290f06c66e5749bcf"
   license "MIT"
+  revision 1
   head "https:github.comAzureazure-cli.git", branch: "dev"
 
   livecheck do
@@ -15,13 +16,12 @@ class AzureCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "a61db9082f4b688c3dc00b595ecaa7cb2658786740d4c577b7c6f4e291ef0447"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca44bcfd45b698538b26c58c19f8c8eac98d2d9463c3b23d3f761729894bf442"
-    sha256 cellar: :any,                 arm64_ventura: "5cc569dddb312f6d8054603076a17ac0c25635c32b4f1c1a628838e212830274"
-    sha256 cellar: :any,                 sonoma:        "7ba5980beb33127de872d213d8ae6c5d1221a85d2c812de8795e4614229b529f"
-    sha256 cellar: :any,                 ventura:       "2cf80661b412e7b6ed1d88529a33ad8b688709bb463f92278ec66619a2ea9f47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d4102331281e026f189acc43cac23567dddca6df8762bb476a77f48ad0038d"
+    sha256 cellar: :any,                 arm64_sequoia: "0ab9339062e93991d8da79e4f4b06e546ba9dbe336a870111d690163fc44166c"
+    sha256 cellar: :any,                 arm64_sonoma:  "30117a42ef78a755542541366cc6782789648cf3100dcd8d81bee670fbff94ad"
+    sha256 cellar: :any,                 arm64_ventura: "c6b68ac1f45900568175ba06e4473cb5d94622e6a6a79a7875cc2fe4649e3a69"
+    sha256 cellar: :any,                 sonoma:        "292b5dd4cf4ea62e181d12ae9dc65d98b5ed967bc48dabe6863793e5148b634d"
+    sha256 cellar: :any,                 ventura:       "cf492d1bed972a254e83981bc21b7310b1673cbf15f29fbad9fa618cdf11c287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4868c1e88575e0660810b20471d26f9b5235e6f29d605cf40979823ad5568be"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -592,6 +592,11 @@ class AzureCli < Formula
   resource "paramiko" do
     url "https:files.pythonhosted.orgpackagesccaf11996c4df4f9caff87997ad2d3fd8825078c277d6a928446d2b6cf249889paramiko-3.4.0.tar.gz"
     sha256 "aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
+  end
+
+  resource "pip" do
+    url "https:files.pythonhosted.orgpackages4d87fb90046e096a03aeab235e139436b3fe804cdd447ed2093b0d70eba3f7f8pip-24.2.tar.gz"
+    sha256 "5b5e490b5e9cb275c879595064adce9ebd31b854e3e803740b72f9ccf34a45b8"
   end
 
   resource "pkginfo" do

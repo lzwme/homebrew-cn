@@ -4335,7 +4335,6 @@ Homebrew-homebrew-core/Formula/n/ncmpcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncnn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncompress.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/ncp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncrack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncspot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncurses.rb, Homebrew/homebrew-core, 0
@@ -4659,7 +4658,6 @@ Homebrew-homebrew-core/Formula/o/openliberty-webprofile8.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/o/openliberty-webprofile9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openlibm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmama.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/openmodelica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmotif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openrct2.rb, Homebrew/homebrew-core, 1
@@ -4985,7 +4983,6 @@ Homebrew-homebrew-core/Formula/p/pkg-config-wrapper.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/pkg-config.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgdiff.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pkger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pktanon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pla.rb, Homebrew/homebrew-core, 1
@@ -5725,6 +5722,7 @@ Homebrew-homebrew-core/Formula/s/seven-kingdoms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sevenzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sextractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sf-pwgen.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfcgal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfml.rb, Homebrew/homebrew-core, 1
@@ -5817,7 +5815,6 @@ Homebrew-homebrew-core/Formula/s/six.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sjk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skaffold.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/skaffold@1.39.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skeema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ski.rb, Homebrew/homebrew-core, 0
@@ -7208,6 +7205,7 @@ Homebrew-homebrew-cask/Casks/a/adguard-vpn@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adguard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adguard@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adium.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/adlock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adobe-acrobat-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adobe-acrobat-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adobe-air.rb, Homebrew/homebrew-cask, 0

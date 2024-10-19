@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackages9a895ccd53a101c8cf395d35ab3989f985dfc3faa3beb5a64b2b8631b2a94295cfn_lint-1.17.1.tar.gz"
-  sha256 "dd8deb1e0a8678991bd0bf41f305ccaaea2a4e0adac0bd42aed467659238c4be"
+  url "https:files.pythonhosted.orgpackagesd23caddcac7a96bd729943f684bcc6f7b47e810b7c5365aec0bcd160d41502f8cfn_lint-1.17.2.tar.gz"
+  sha256 "2ac2e41fbacc30b77cf4ac0f07d31593217afd7a52a10f83f0c124da74f58586"
   license "MIT-0"
 
   livecheck do
@@ -13,12 +13,12 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c130a44af0022a0cd3b464b0f0d5b7cf3dbbff9257b36ecfb79263db708f9f63"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5fe76ef2d3c2430099d5d8cb7d5cc7b1a6a06ce25dffefd034c33c06b0b796d"
-    sha256 cellar: :any,                 arm64_ventura: "1437d4094241b00a6084c6cad4208d0149156d0522fc348c3b1729768e50dea3"
-    sha256 cellar: :any,                 sonoma:        "cb196d1edbedaaf958d4c2eff6a1472f8fb34beff99f3ca48ecc06d1dabe365a"
-    sha256 cellar: :any,                 ventura:       "ecab28965eabfc0a1a8bcf6cd94d77251d1bb63016fe45a9e9772789db1f2342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a515ee66c76c2b162b81e16d55a8687b1532a7a8be69972518fbd34f5b96d5dc"
+    sha256 cellar: :any,                 arm64_sequoia: "134b2fa7e6be64731bf0c5384c08c25b8cadc17a5be688d0093d102fdcaab922"
+    sha256 cellar: :any,                 arm64_sonoma:  "52eca489174b9f9bb9fb8c3bd7ef2aa966e72d711d9501f6261640c2ed90b18d"
+    sha256 cellar: :any,                 arm64_ventura: "d630e9a34615f8fcede342f24cf72a68ab61e9547e9a0efc238558b62e0ec671"
+    sha256 cellar: :any,                 sonoma:        "7f64c408926d64310d7697330c81008583b6222526527991c76ab5b94d5ee85f"
+    sha256 cellar: :any,                 ventura:       "b3bc14796519300f59bdfdd318d7e441442e07242003642c6f99522d7836dd8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65bfe399f89a41dfb56941092e2dd5607e0c7961c20d6f3dae67fe138291e8a"
   end
 
   depends_on "rust" => :build
