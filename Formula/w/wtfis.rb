@@ -3,20 +3,18 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https:github.compirxthepilotwtfis"
-  url "https:files.pythonhosted.orgpackagesc88ed8005d43adcfd263723de2ee643eb2a6a48e645a9338202c7eda800a0df5wtfis-0.10.0.tar.gz"
-  sha256 "1a364350e51d3daca0fba2135207f5eb5234cebd43ac40bda82f7e7b6817bf36"
+  url "https:files.pythonhosted.orgpackagesffa8a8cd5b79094cb68c9e76291829773a3146646bc8b532b936702c5c013259wtfis-0.10.1.tar.gz"
+  sha256 "c3c0d3ef1fef20222bc3cb96f2b69a00e9714e468277fd87cf20c051de253331"
   license "MIT"
-  revision 1
   head "https:github.compirxthepilotwtfis.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8edaebfe7244f4b62fbf5d1cfa9e6e74e4c64b0c8078e936de5921d213963b1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "10fbc8ac70f0f2f2368c20442159aa825ab28318fec6da6ee2ef9975a38911f5"
-    sha256 cellar: :any,                 arm64_ventura: "b4932bf1016d8a57b0b3ce1b250d2659e9f4a8814a4ddf9421c4571d2bf211d9"
-    sha256 cellar: :any,                 sonoma:        "92a2cac9870b15e5287060b55aaa72f278cc3c20cb76e6a0d1e2bb25e0b3b5b5"
-    sha256 cellar: :any,                 ventura:       "aca48d0c6692b73e422f82436c01a0c6e47f3b21caa27336cf1bb24cc2bb1825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb86298dc26a72937773ab265748917f2b1b82211bebc3000ebbb7d4442cd40"
+    sha256 cellar: :any,                 arm64_sequoia: "bca719141593d21ed35b5ead8ae0b09dcbf9420d452400fddf97b10f727ee6c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe35d8415761a9aa99a93570b5f72d613682b4782c03b6acc4b09cb8a5c63de7"
+    sha256 cellar: :any,                 arm64_ventura: "5b930e5e323634a47a4c4fea6c4fa4c500cd736c15ac466cb4d93433f2d726ec"
+    sha256 cellar: :any,                 sonoma:        "2807190eb306dc7526c4c0e17e92b27c7c517de8492484b063d4d1408b2d8f2e"
+    sha256 cellar: :any,                 ventura:       "7783ddc318b4fc537e11e331e5dcf72075f83b5faa74012365839125d712bf03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "322c471df108be3ef1f3bf8deb0fe90f075c186c6a5ff292b9ea41a204004946"
   end
 
   depends_on "rust" => :build

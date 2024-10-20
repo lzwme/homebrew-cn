@@ -1,8 +1,8 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https:github.comKhronosGroupVulkan-ValidationLayers"
-  url "https:github.comKhronosGroupVulkan-ValidationLayersarchiverefstagsv1.3.298.tar.gz"
-  sha256 "bd9696ff425b8d0609ac40157ea2b54a6034d783f9a2d9660b130b2ba150615e"
+  url "https:github.comKhronosGroupVulkan-ValidationLayersarchiverefstagsv1.3.299.tar.gz"
+  sha256 "90401df60bb6e540d22510dad95d616c9a5a92db64d9db7a177f78d643c56d10"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-ValidationLayers.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanValidationlayers < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3296c2317c795c8db834f19c27e71d527a5c34ef27023de2d32250b298ea44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5c3b6bc3ba570dc0eb0f686c9261785fa196e4fa28f908bb49af93fc214b9c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb42470cb690df954f97d7bd79d07be74aae9673b70f8d9a385baad6512225ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25b63eb02367b2cd4eb539802da1ab7fe4678753ea67ee196aca2eb5242a878b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4acf16b4d7a13cda9277b001c0c2cdbd693631aa0b82ba99c6b3d1590838d9a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4a790df5d9be2018741f7e5e752879de2290687b29d9cf4b4f20af12565b11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a32f162ac99c8bbfe82562a8d3e52204be0c700fe9363857b34e7843bbfca71c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b98005cb22a1304a83ec040ad3962c524ffdb566ad8b0bae76bc5e446c6e4d6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "47a2d3aaffc0266ebb3790138fb951268a3136a01f85970248bc3605e3168193"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d6e2a94c46a7771f3167bbd1680c14f301218496429e882dab67ae3380394af"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fede56df63af4bfc307e7181b069dd901f115fdf078982d4209841f84d3f915"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edc0812312887ce59c2c7655751b5ad69c2b504990b176013a534a47c063cc02"
   end
 
   depends_on "cmake" => :build
@@ -39,13 +39,13 @@ class VulkanValidationlayers < Formula
   # https:github.comKhronosGroupVulkan-ValidationLayersblobv#{version}scriptsknown_good.json#L32
   resource "SPIRV-Headers" do
     url "https:github.comKhronosGroupSPIRV-Headers.git",
-        revision: "50bc4debdc3eec5045edbeb8ce164090e29b91f3"
+        revision: "252dc2df08f58e0e50c8437edc0e77eacdfb7559"
   end
 
   # https:github.comKhronosGroupVulkan-ValidationLayersblobv#{version}scriptsknown_good.json#L46
   resource "SPIRV-Tools" do
     url "https:github.comKhronosGroupSPIRV-Tools.git",
-        revision: "fcf994a619608c2bdb505189f6e325b1a6b4f294"
+        revision: "a832c13331256f351938984da39c7506214e5fbb"
   end
 
   def install

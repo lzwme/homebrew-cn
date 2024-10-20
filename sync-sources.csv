@@ -743,7 +743,7 @@ Homebrew-homebrew-core/Formula/c/cdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdecl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdk.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cdk8s.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cdk8s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdktf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdlabelgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdo.rb, Homebrew/homebrew-core, 0
@@ -9123,6 +9123,7 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-doppio-one.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-d/font-dorsa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-dosis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-dotgothic16.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-d/font-doto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-dotum.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-dotumche.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-doulos-sil.rb, Homebrew/homebrew-cask, 0
@@ -9186,6 +9187,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-exo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-expletus-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-explora.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-ezra-sil.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-f/font-faculty-glyphic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fahkwang.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fairfax.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-familjen-grotesk.rb, Homebrew/homebrew-cask, 1
@@ -13234,6 +13236,7 @@ Homebrew-homebrew-cask/Casks/s/simplex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simplistic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simply-fortran.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simsim.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/singlebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singlecrystal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singularity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sioyek.rb, Homebrew/homebrew-cask, 1
