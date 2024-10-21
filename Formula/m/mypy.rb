@@ -3,19 +3,18 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https:www.mypy-lang.org"
-  url "https:files.pythonhosted.orgpackagesf970196a3339459fe22296ac9a883bbd998fcaf0db3e8d9a54cf4f53b722cad4mypy-1.12.0.tar.gz"
-  sha256 "65a22d87e757ccd95cbbf6f7e181e6caa87128255eb2b6be901bb71b26d8a99d"
+  url "https:files.pythonhosted.orgpackages1703744330105a74dc004578f47ec27e1bf66b1dd5664ea444d18423e41343bdmypy-1.12.1.tar.gz"
+  sha256 "f5b3936f7a6d0e8280c9bdef94c7ce4847f5cdfc258fbb2c29a8c1711e8bb96d"
   license "MIT"
   head "https:github.compythonmypy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96054e0223d3a4fac0de88d8de6975c16079ab9db7189e70828db72cf32ada8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae81c57e163517e1fe9106f8cd1d904b527d1ace75ddbb128adbf2f0662eceef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "823368210026cacd450fb771016fd43df55c70d1b025650603f26f8835da7759"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fcb712bd96d29a48a65812d2eb152748f8ab2b487b99aea520faf502a61ad38"
-    sha256 cellar: :any_skip_relocation, ventura:       "609f4d89d4dd2aaae363b2600a8d01cd6dcb9821f5c4dafcb68949d6a2d3f26f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32019750df6b4a336c0ab29744f7267ce470fb6b4bcf30adcf00b6e7965687ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b7ed095d8f8d5474bbffdf558125c450ab8ad179814f1ae419c0d19afa54310"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "420882aa04df35bcd002aa58a87e87e1bf04d482326ab181ffdd49f13f37c2ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bd7340cf15d64aaba7e6f75ff4fe440db058dccfc5a2dbad8e6caec432dcb76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9840bd05c9d7cd89c2950ee8e04a0599b60e196dd29ca5af2bae6315deea38db"
+    sha256 cellar: :any_skip_relocation, ventura:       "44683578af3c12dcdbcbd0b59c742dc0b8839bbf1496ebda1dd4e5dffd1773d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e203956c2c9be78de7f77de2bc8616be8ce17f35b5dcf5adfff7661c7d96bf2"
   end
 
   depends_on "python@3.13"

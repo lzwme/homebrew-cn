@@ -2,17 +2,17 @@ class ThorsMongo < Formula
   desc "Mongo API and Serialization library"
   homepage "https:github.comLoki-AstariThorsMongo"
   url "https:github.comLoki-AstariThorsMongo.git",
-      tag:      "4.5.02",
-      revision: "f8e71f06d6a1f541b858b8a85d5b8a9bdd7be8a4"
+      tag:      "4.6.02",
+      revision: "099303908620fbc44b535db3d32acc2ca0e9eb04"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "465b58b204932cd16457b88bcfce136a661a75d4f7c9634f3191779156d89d44"
-    sha256 cellar: :any,                 arm64_sonoma:  "4790ca98e3a7d379a2eb3a19e4972cfbdb92699db28b33fa9a5f2e633b30792b"
-    sha256 cellar: :any,                 arm64_ventura: "d32fa675865ee0a73a3a040b444b571b2b0129415352b6d0c21c137816109c36"
-    sha256 cellar: :any,                 sonoma:        "9d3d9be81af02ed291612a23a93ea76c4f85a3c5e5d07928d296eb06b1a95aea"
-    sha256 cellar: :any,                 ventura:       "15d613a81c72f1efd7243f96f1f188580124609545ce7400f1d27c7b46337834"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be622227f6ba81056a8a982a3019fa6661df7a859d62525d54c7c6d1ed627d85"
+    sha256 cellar: :any,                 arm64_sequoia: "15f86b32d54040b2a3524e00249327976516e12a6a218a492b383d1e6b06b1b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7c7bb3252dfed1c711d3c119e51bea89256cc022384a3259b01ad1bd70826ba"
+    sha256 cellar: :any,                 arm64_ventura: "b3d740fb3102b34b85941995fea4a473eef709decaeea4dcdf52608e95689a03"
+    sha256 cellar: :any,                 sonoma:        "f2090fa2b637687796ec84b7fd9e73e48e10b2f34c4fdfe3a35b8d1ddcc835fb"
+    sha256 cellar: :any,                 ventura:       "1e83087aad1665bd603b41792c83a6364dd91333d1f6069d4db629b823062a2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a71263be827427206e5b78b9c5a442120f14aa779ebde55020c9eddfe8deb30"
   end
 
   depends_on "libyaml"

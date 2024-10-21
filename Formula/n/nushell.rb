@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https:www.nushell.sh"
-  url "https:github.comnushellnushellarchiverefstags0.99.0.tar.gz"
-  sha256 "db9799a164e21798d7c7da800623069c056f30e6b35d7cb03bdea796f3a4aae8"
+  url "https:github.comnushellnushellarchiverefstags0.99.1.tar.gz"
+  sha256 "2d7c779b90e6382516db74d2a4b902764ae4e739c4b1b0d615521c7d8082c0d5"
   license "MIT"
   head "https:github.comnushellnushell.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c86aa175ca075607e55a4782d17b3d3a8e3d37cd54c504dcf8044824d0a03519"
-    sha256 cellar: :any,                 arm64_sonoma:  "116ecae034bfb81b9a4f43bfa5476b90ce0fe8c094b61b33dcc8ed04f70467b2"
-    sha256 cellar: :any,                 arm64_ventura: "5e8913acfb1ea94022f486f1cd06e99690068549dbcb91c73f49e810635e74f5"
-    sha256 cellar: :any,                 sonoma:        "6725e25f7aa3b23abdd33a7155ec60b81183fbeff757b962e82ba60759ef2f66"
-    sha256 cellar: :any,                 ventura:       "5bd6e172c7027f08ccdbd9f838c481154c0d386c4b678b509569f3ce9047a81e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "178424bdc6edeb9abda6f1ba8c65cc9297708a17066bd14bd88ba82af976fe1d"
+    sha256 cellar: :any,                 arm64_sequoia: "09e3a9ba7fb307221ac4d35682167bf4a183d6d9ca72a3e35298d5579440e0fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "236e26d099fddd37abe65a25dfd88df3d60edef4856d71d2895b1e44870ca195"
+    sha256 cellar: :any,                 arm64_ventura: "c88745fd444f60976163c53d4a2678957388f5cb5f0c394b30d4ebbd84abb984"
+    sha256 cellar: :any,                 sonoma:        "1dcef691ed9099af09668c21d50234264f4b89383c4bf8fa447dfab45ef4985f"
+    sha256 cellar: :any,                 ventura:       "780b4e8f07a31f92816c4ea2d67eeeffd5e1a5f2dad1889a424b605329a6fccd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5547ca0016dd5d3f4dfb4b4474e58dcfd91bf7a089a2837d66b10c86ee79c211"
   end
 
   depends_on "rust" => :build

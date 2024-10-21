@@ -3,24 +3,24 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https:robotframework.org"
-  url "https:files.pythonhosted.orgpackagesdf8bb4bb3daf4e11a1b1793ff136d8eeb80a53b44581e3a4f6746274246dc876robotframework-7.1.zip"
-  sha256 "34796d387e182b36f05d82f3bbc802bd6a30192ebf1e03c76d2086d0d04faaff"
+  url "https:files.pythonhosted.orgpackagesd285824b95cd3fcaf0eb6c353481b415871da4186e6414ba06a99772a48b960erobotframework-7.1.1.zip"
+  sha256 "f85919c68c4d0837006e5f09dde1ef689f082eba2e7e64d5758753f9ee8bfea9"
   license "Apache-2.0"
   head "https:github.comrobotframeworkrobotframework.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e0709b663e861bfcc885aa5f84444898f46079e716a4e0c5fe730b55bfad5a84"
-    sha256 cellar: :any,                 arm64_sonoma:  "57bdd63625cf1ea1219f54b16c72517f89b93702c34c5599f401297201ef34e5"
-    sha256 cellar: :any,                 arm64_ventura: "ffca38f1f5b683dba23d98e9ea35e9a2f1e6ac292464d9e34da3d718c46e1e8c"
-    sha256 cellar: :any,                 sonoma:        "2a5f96bbd5184992463837d3aa07c1a58bdb499fcb0bcc52b2ca4899d14f8db9"
-    sha256 cellar: :any,                 ventura:       "15a66854f0130cf8812504f42dde992803f7227a8f0a9dbace91bc402c9bfcef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dff6777df1e95c845f13802c5151ffa228cf6409bb7386f2da2c601917fd81e8"
+    sha256 cellar: :any,                 arm64_sequoia: "85021b49e6d8945e24e44cb5989cb2a7a32082037292d121a59284c53be16401"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec81bb1a717b0861eb38d5fa1e7618bc122d2cd4463c42620d9dfcb79b859548"
+    sha256 cellar: :any,                 arm64_ventura: "aab631daa7ff04ac8578c54d2a06b8960ba110e4c9d39295102b15b2da425775"
+    sha256 cellar: :any,                 sonoma:        "af4e5212c4be1fd71ef02a08f3d15d061455dbbec47f0e60a0789bc09277e492"
+    sha256 cellar: :any,                 ventura:       "24fce9ee9322df17692891851adb00801c4428f90dbbe570b6b546cef9834abd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bf758dab49665320d4166fbc75a506bc19cd5930e822a5bbfeb641fb931636c"
   end
 
   depends_on "rust" => :build # for bcrypt
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "libsodium" # for pynacl
   depends_on "python@3.13"
 
   uses_from_macos "zlib"
@@ -111,8 +111,8 @@ class RobotFramework < Formula
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackages9a03ab0e9509be0c6465e2773768ec25ee0cb8053c0b91471ab3854bbf2294b2trio-0.26.2.tar.gz"
-    sha256 "0346c3852c15e5c7d40ea15972c4805689ef2cb8b5206f794c9c19450119f3a4"
+    url "https:files.pythonhosted.orgpackages17d1a83dee5be404da7afe5a71783a33b8907bacb935a6dc8c69ab785e4a3eedtrio-0.27.0.tar.gz"
+    sha256 "1dcc95ab1726b2da054afea8fd761af74bad79bd52381b84eae408e983c76831"
   end
 
   resource "trio-websocket" do

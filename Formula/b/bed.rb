@@ -1,18 +1,18 @@
 class Bed < Formula
   desc "Binary editor written in Go"
   homepage "https:github.comitchynybed"
-  url "https:github.comitchynybedarchiverefstagsv0.2.6.tar.gz"
-  sha256 "253284d71fb328d521f4e3db5b94cfa977c196030ca867d6764f99c44370ceb3"
+  url "https:github.comitchynybedarchiverefstagsv0.2.7.tar.gz"
+  sha256 "dea9265b5a78e91851059c1c726ac40490825f107f8db6ae7db67965b92599c3"
   license "MIT"
   head "https:github.comitchynybed.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c2364667eb42d8ef6d08d8d1ecda4ac01283c182865a3f1a27d4ac2218b335d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c2364667eb42d8ef6d08d8d1ecda4ac01283c182865a3f1a27d4ac2218b335d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c2364667eb42d8ef6d08d8d1ecda4ac01283c182865a3f1a27d4ac2218b335d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "606271733f51efc9b38698c50ea1714433033c4e945bea392a5ad2f5ab9f8f8b"
-    sha256 cellar: :any_skip_relocation, ventura:       "606271733f51efc9b38698c50ea1714433033c4e945bea392a5ad2f5ab9f8f8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "037bb974d7566422fec95308fb5a766edcbbf041b2079206130f09f26c81bef2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70be9ac18596e2cf7227ed3af58184f21e82e06a78ae69488b25d744cd4ae80d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70be9ac18596e2cf7227ed3af58184f21e82e06a78ae69488b25d744cd4ae80d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70be9ac18596e2cf7227ed3af58184f21e82e06a78ae69488b25d744cd4ae80d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1caa69d4199395f000ddc54c77ac7ddd010fc7550c00416a28e3e226f9d646de"
+    sha256 cellar: :any_skip_relocation, ventura:       "1caa69d4199395f000ddc54c77ac7ddd010fc7550c00416a28e3e226f9d646de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dde45e54c61af4c574016a87eb755d9f8288664a4ec6824eeac75520a9634cf"
   end
 
   depends_on "go" => :build
