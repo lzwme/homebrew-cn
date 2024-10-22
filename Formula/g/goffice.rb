@@ -63,7 +63,7 @@ class Goffice < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <goffice/goffice.h>
       int main()
       {
@@ -73,7 +73,7 @@ class Goffice < Formula
           libgoffice_shutdown (void);
           return 0;
       }
-    EOS
+    C
     libxml2 = if OS.mac?
       "#{MacOS.sdk_path}/usr/include/libxml2"
     else

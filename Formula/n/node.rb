@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v22.9.0/node-v22.9.0.tar.xz"
-  sha256 "a55aeb368dee93432f610127cf94ce682aac07b93dcbbaadd856df122c9239df"
+  url "https://registry.npmmirror.com/-/binary/node/v22.10.0/node-v22.10.0.tar.xz"
+  sha256 "3180710d3130ad9df01466abf010e408d41b374be54301d1480d10eca73558e0"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "cf11099a798826240964dcf984741456b73218f177dd16d8ec56be676e1f29d0"
-    sha256 arm64_sonoma:  "68dee27224d3715ce86766563d89a834c03d7d9b35eee7150c25d94ba29c8b1e"
-    sha256 arm64_ventura: "d9b7844150021e8ec32468c6e5cdec4f0863988643eab4b0578d8e16baaaefa0"
-    sha256 sonoma:        "df14e1b67ee62cf9a33300f59f3d6ff6c4280f76dfcaf5279baa673b874ad9f0"
-    sha256 ventura:       "9be7c7082adc46119a6c52ea413a5437094d33c894b4c833136387aa953bfb12"
-    sha256 x86_64_linux:  "9447d0936c6b3eb34cccaae5f55f8886f5c920dcb17743ac9569505c78b9b30c"
+    sha256 arm64_sequoia: "8873a7d069ab23b64ae759a120aad341efc70d52d40ae7f516929749c989ab32"
+    sha256 arm64_sonoma:  "b720787c6a939c9297b3bb2afed61f7575320d0f96b19e80326e1d1c64742a8b"
+    sha256 arm64_ventura: "cebda79d7078e012a35c515b596f5751d06cfe473ff0b6e4d12a0690698196c0"
+    sha256 sonoma:        "ee69651ab2feba623a36be22e913a3f2d1b7b62221606407e5cbfe1f9e24a350"
+    sha256 ventura:       "c41631ba7b8183681ca13c2259f20223b448f050103174d5bd8a4acec033fa06"
+    sha256 x86_64_linux:  "1dbea0b65a46aedeeeb95d766c4754fa4bbe214d162e0ea58c0f6396bd67da6b"
   end
 
   depends_on "pkg-config" => :build
@@ -49,8 +48,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-10.8.3.tgz"
-    sha256 "b7dc7eb48d7479b93668e913c7ad686ab2aa71c705d4a56b5323d1bffdba2972"
+    url "https://registry.npmjs.org/npm/-/npm-10.9.0.tgz"
+    sha256 "c12def16fe3efdc80b1e652d60903d807ac4b78b9e7c3e76f633f4b13a32897c"
   end
 
   def install

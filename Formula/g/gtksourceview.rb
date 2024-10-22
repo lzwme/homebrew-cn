@@ -68,14 +68,14 @@ class Gtksourceview < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gtksourceviewgtksourceview.h>
 
       int main(int argc, char *argv[]) {
         GtkWidget *widget = gtk_source_view_new();
         return 0;
       }
-    EOS
+    C
     ENV.libxml2
     atk = Formula["atk"]
     cairo = Formula["cairo"]

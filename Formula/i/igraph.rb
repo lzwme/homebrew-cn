@@ -55,7 +55,7 @@ class Igraph < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <igraph.h>
       int main(void) {
         igraph_real_t diameter;
@@ -66,7 +66,7 @@ class Igraph < Formula
         printf("Diameter = %f\\n", (double) diameter);
         igraph_destroy(&graph);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}igraph", "-L#{lib}",
                    "-ligraph", "-lm", "-o", "test"
     assert_match "Diameter = 8", shell_output(".test")

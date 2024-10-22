@@ -1,26 +1,26 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https:aka.mskiotadocs"
-  url "https:github.commicrosoftkiotaarchiverefstagsv1.19.0.tar.gz"
-  sha256 "39d7b64a6da36fd34ad887159a89640c7f2bd3bc921b8c787480374f04628f66"
+  url "https:github.commicrosoftkiotaarchiverefstagsv1.19.1.tar.gz"
+  sha256 "8a6d0d31d71a90edea434df6df4a8bfa96d70e781e64b72e490e295a2accf1d9"
   license "MIT"
   head "https:github.commicrosoftkiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab074e15fdae5c836c81ae19c8e339150947c82a4e1efc639456429ec2b7862b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a10f7f7355a83251ea704c4c14243a1e3ddc22bd49d38eea5a553fd1ca587e84"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10a391964f4a7b146d9db31e7ae4ec462318fbd596b6fb39d1e258a616a1b0de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0bc1e4294e0577800927e03d862875877093f9fae7db4e49d2d885c6674599e"
-    sha256 cellar: :any_skip_relocation, ventura:       "330d081563bc910d265c8865827f44413d331785c8d1afea2f6cbedc059e59e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c093b4380d75606e739e11123632a8c943ac4f5ff42ef83c6d4785d9c71bbdce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "773165c339daae8be3322b8cdea5245793cca4dfbaba1d52885f5729d8e62faa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "683b449961baff5e428a13c279ce3ad921da43a40b2f50975ea14a463a2fa72d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "96ee70830d45bfddaeacbb1c81dddc47f0bca33cdb0a03a9b9abddf54cf8b6f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5060354f292aba6b9d7d70d93c86815ad25dd6fd4653f913cf7a13ad6069527"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2dc54748aa339a651604f7a1a748f71f455ab1d9cc8cee66696aa40f048c69a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c65a764bd7f811755436ca5149f166b46a4277611bb188ba9ed7eeb2ba7ae0fb"
   end
 
   depends_on "dotnet"
 
-  # compiler version mismatch patch, upstream pr ref, https:github.commicrosoftkiotapull5548
+  # compiler version mismatch patch, upstream pr ref, https:github.commicrosoftkiotapull5606
   patch do
-    url "https:github.commicrosoftkiotacommit13f564c59a29db31339e587d1d788fba433978fc.patch?full_index=1"
-    sha256 "5c026bbf483d9e8053c6b89d9815308dad1ac27cc8bb16f711ce5b6648a80cf8"
+    url "https:github.commicrosoftkiotacommitfb91d056b08660452d8d30bd6dddfa4024e97594.patch?full_index=1"
+    sha256 "4188a55d5e125af0be275d2421a4a9886bf7bb7b8099aee3f58a9853d166cd94"
   end
 
   def install

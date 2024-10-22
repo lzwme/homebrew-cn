@@ -33,14 +33,14 @@ class Deheader < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       int main(void) {
         printf("%s", "foo");
         return 0;
       }
-    EOS
+    C
     assert_equal "121", shell_output("#{bin}/deheader test.c | tr -cd 0-9")
   end
 end

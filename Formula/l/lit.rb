@@ -36,7 +36,7 @@ class Lit < Formula
   test do
     ENV.prepend_path "PATH", Formula["llvm"].opt_bin
 
-    (testpath/"example.c").write <<~EOS
+    (testpath/"example.c").write <<~C
       // RUN: cc %s -o %t
       // RUN: %t | FileCheck %s
       // CHECK: hello world
@@ -46,7 +46,7 @@ class Lit < Formula
         printf("hello world");
         return 0;
       }
-    EOS
+    C
 
     (testpath/"lit.site.cfg.py").write <<~EOS
       import lit.formats

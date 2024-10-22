@@ -29,14 +29,14 @@ class DeviceMapper < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libdevmapper.h>
 
       int main() {
         if (DM_STATS_REGIONS_ALL != UINT64_MAX)
           exit(1);
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ldevmapper", "test.c", "-o", "test"
     system testpath"test"
   end

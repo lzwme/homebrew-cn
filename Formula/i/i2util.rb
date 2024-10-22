@@ -31,7 +31,7 @@ class I2util < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <I2utilutil.h>
       #include <string.h>
 
@@ -41,7 +41,7 @@ class I2util < Formula
         if (buf[0] != 190 || buf[1] != 239) return 1;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lI2util", "-o", "test"
     system ".test"
   end

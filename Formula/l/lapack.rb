@@ -45,7 +45,7 @@ class Lapack < Formula
   end
 
   test do
-    (testpath"lp.c").write <<~EOS
+    (testpath"lp.c").write <<~C
       #include "lapacke.h"
       int main() {
         void *p = LAPACKE_malloc(sizeof(char)*100);
@@ -54,7 +54,7 @@ class Lapack < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "lp.c", "-I#{include}", "-L#{lib}", "-llapacke", "-o", "lp"
     system ".lp"
   end

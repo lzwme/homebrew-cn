@@ -32,7 +32,7 @@ class Daq < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <daq.h>
@@ -52,7 +52,7 @@ class Daq < Formula
         assert(module == NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ldaq", "-ldaq_static_pcap", "-lpcap", "-lpthread", "-o", "test"
     assert_match "[pcap] - Type: 0xb", shell_output(".test")
   end

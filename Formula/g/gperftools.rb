@@ -51,7 +51,7 @@ class Gperftools < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~CC
       #include <assert.h>
       #include <gperftoolstcmalloc.h>
 
@@ -64,11 +64,11 @@ class Gperftools < Formula
 
         return 0;
       }
-    EOS
+    CC
     system ENV.cc, "test.c", "-L#{lib}", "-ltcmalloc", "-o", "test"
     system ".test"
 
-    (testpath"segfault.c").write <<~EOS
+    (testpath"segfault.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -79,7 +79,7 @@ class Gperftools < Formula
         free(ptr);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "segfault.c", "-L#{lib}", "-ltcmalloc", "-o", "segfault"
     system ".segfault"
   end

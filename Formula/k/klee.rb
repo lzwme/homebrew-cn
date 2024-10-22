@@ -130,7 +130,7 @@ class Klee < Formula
   # Test adapted from
   # http:klee.github.iotutorialstesting-function
   test do
-    (testpath"get_sign.c").write <<~EOS
+    (testpath"get_sign.c").write <<~C
       #include "kleeklee.h"
 
       int get_sign(int x) {
@@ -147,7 +147,7 @@ class Klee < Formula
         klee_make_symbolic(&a, sizeof(a), "a");
         return get_sign(a);
       }
-    EOS
+    C
 
     ENV["CC"] = llvm.opt_bin"clang"
 

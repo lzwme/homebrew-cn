@@ -44,7 +44,7 @@ class Gl2ps < Formula
     else
       "GL"
     end
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <#{glu}/glut.h>
       #include <gl2ps.h>
 
@@ -73,7 +73,7 @@ class Gl2ps < Formula
         fclose(fp);
         return 0;
       }
-    EOS
+    C
     if OS.mac?
       system ENV.cc, "-L#{lib}", "-lgl2ps", "-framework", "OpenGL", "-framework", "GLUT",
                      "-framework", "Cocoa", "test.c", "-o", "test"

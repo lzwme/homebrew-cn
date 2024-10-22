@@ -1,21 +1,20 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
   homepage "https:github.combrainboxdotccDPP"
-  url "https:github.combrainboxdotccDPPreleasesdownloadv10.0.32DPP-10.0.32.tar.gz"
-  sha256 "b366c0eb05539208e8d6c81f59de87b2aa6158250968d1bd6360676d576851e7"
+  url "https:github.combrainboxdotccDPPreleasesdownloadv10.0.33DPP-10.0.33.tar.gz"
+  sha256 "75ee7b32c9d46bde6d02b46b3a907302865a4ee4a965ef8a575b7417bb0a46fe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d977977d4ac22288d30548b82e3358f494b5d6f64e51d370c4f8df06f1ecc924"
-    sha256 cellar: :any,                 arm64_sonoma:  "4656e6702663a308e57643ee4feb5bd746d2bbc2ff06445bf3f01e3c2e4f3921"
-    sha256 cellar: :any,                 arm64_ventura: "e8f4483d710c3c98738b62140becaad0aeb2017dce8732f6d9ceeba2422b64a5"
-    sha256 cellar: :any,                 sonoma:        "3ec206aabfffc6de9c3511cf1a069b3e6d631fef0688ea681d1729969dc17a7e"
-    sha256 cellar: :any,                 ventura:       "e50da46249ae37dd800a7ffc8a8448226fcacfe9a80568669fec87d4bb96c977"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5973b055af4262f2c7cc1f91a92039fd32f896bcabd0f778e00b0272e6345cf"
+    sha256 cellar: :any,                 arm64_sequoia: "b74d20fca81278d8e2782cb62d544345bbb30576121b95d7235c808acf90451f"
+    sha256 cellar: :any,                 arm64_sonoma:  "72d1ae4dc59cf54b92c9f3fbaa2268d4b6d84fedb27edbc5f43fa99363253128"
+    sha256 cellar: :any,                 arm64_ventura: "d85ca68f2f50e343d1819b04a9743d11253d814eb33b4b2d93deef6b2ddce79d"
+    sha256 cellar: :any,                 sonoma:        "82c15d119900c2fb27f175303db49078b2c719ad3aca726ba44ced02ff54d79f"
+    sha256 cellar: :any,                 ventura:       "41e03eef9b54f4c66c6fa4fde6e840ffc0ae441e6d16d759166c5fd218ea981f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27afd26ce4fa887dcc24922061c97e77089f55231abf569a424a46ae43aef998"
   end
 
   depends_on "cmake" => :build
-  depends_on "libsodium"
   depends_on "openssl@3"
   depends_on "opus"
   depends_on "pkg-config"

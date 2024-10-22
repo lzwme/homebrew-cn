@@ -31,7 +31,7 @@ class Judy < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <Judy.h>
 
@@ -60,7 +60,7 @@ class Judy < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lJudy", "-o", "test"
     system "./test"

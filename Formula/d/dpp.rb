@@ -72,9 +72,9 @@ class Dpp < Formula
       int twice(int i);
     EOS
 
-    (testpath"c.c").write <<~EOS
+    (testpath"c.c").write <<~C
       int twice(int i) { return i * 2; }
-    EOS
+    C
 
     (testpath"foo.dpp").write <<~EOS
       #include "c.h"

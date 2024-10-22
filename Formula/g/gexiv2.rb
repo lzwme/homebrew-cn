@@ -45,13 +45,13 @@ class Gexiv2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gexiv2/gexiv2.h>
       int main() {
         GExiv2Metadata *metadata = gexiv2_metadata_new();
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{HOMEBREW_PREFIX}/include/glib-2.0",

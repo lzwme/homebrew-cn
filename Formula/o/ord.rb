@@ -1,18 +1,18 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https:ordinals.com"
-  url "https:github.comordinalsordarchiverefstags0.21.0.tar.gz"
-  sha256 "9270d0d2a6b681a46925b2b95b285fa9583af7a1d71da2f9198b3b1fec400c95"
+  url "https:github.comordinalsordarchiverefstags0.21.1.tar.gz"
+  sha256 "fd0c44e3e516e67f30665069e913cd6d87e149d3c9fa747a83e21b1fd9117bc8"
   license "CC0-1.0"
   head "https:github.comordinalsord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17269ef0d55ba8a67b1c5ac97b9860f4162d450af91bd5f62021e642f0393ef0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91b126ef90133d3863bb1d2a87b26810c0a74733e8675955100dc01cc4660377"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "420c4ef4e3b463554bebd966ce8a2facb1dc882d9ee6694a0049c200cd9aad1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c8f426b8e7cfce9cabb91daf85c43077b24cff6b6fc89ac6a0bf707f02d4547"
-    sha256 cellar: :any_skip_relocation, ventura:       "52c36bffaad1dd137234735102c5d13366fef003d127bf4fc58fe4fd389f3496"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2971d25a4c54573f3a099e50dd3b0923cfab398640e01b4e40b63eece467a6c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b72a0fa364ff3a4e99cd40ec161d179d71f10b0145a2b800e061e8883a7882"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "247bf797527e7009c6aa948c8f5aeab70de44aa65d6a259ffab27eb146ccbd51"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9772ad559cb4eba5463a52ef1204d276e26bbfcdf4f1ced00f67b5b17102e9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6e12943f2bcd97726d603c267e6eb9d0409cb035fb7101f26ab9d0234459698"
+    sha256 cellar: :any_skip_relocation, ventura:       "282d7ef89f86c133b986748e1afc55bcc4b29231f4dcd21e758f75d89417b38c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6331a8341b3496664ffd46232a1ba45163698754b2b33b7fc2a3316eca7acea3"
   end
 
   depends_on "pkg-config" => :build

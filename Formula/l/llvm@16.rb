@@ -280,7 +280,7 @@ class LlvmAT16 < Formula
     assert_equal (libshared_library("libLLVM-#{soversion}")).to_s,
                  shell_output("#{bin}llvm-config --libfiles").chomp
 
-    (testpath"omptest.c").write <<~EOS
+    (testpath"omptest.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <omp.h>
@@ -291,7 +291,7 @@ class LlvmAT16 < Formula
           }
           return EXIT_SUCCESS;
       }
-    EOS
+    C
 
     system bin"clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
                            "-I#{lib}clang#{llvm_version_major}include",
@@ -307,14 +307,14 @@ class LlvmAT16 < Formula
     EOS
     assert_equal expected_result.strip, sorted_testresult.strip
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       int main()
       {
         printf("Hello World!\\n");
         return 0;
       }
-    EOS
+    C
 
     (testpath"test.cpp").write <<~EOS
       #include <iostream>
@@ -334,9 +334,9 @@ class LlvmAT16 < Formula
     assert_equal "Hello World!", shell_output(".test").chomp
 
     # To test `lld`, we mock a broken `ld` to make sure it's not what's being used.
-    (testpath"fake_ld.c").write <<~EOS
+    (testpath"fake_ld.c").write <<~C
       int main() { return 1; }
-    EOS
+    C
     (testpath"bin").mkpath
     system ENV.cc, "-v", "fake_ld.c", "-o", "binld"
     with_env(PATH: "#{testpath}bin:#{ENV["PATH"]}") do
@@ -428,12 +428,12 @@ class LlvmAT16 < Formula
           std::cout << "Hello Plugin World!" << std::endl;
         }
       EOS
-      (testpath"test_plugin_main.c").write <<~EOS
+      (testpath"test_plugin_main.c").write <<~C
         extern void run_plugin();
         int main() {
           run_plugin();
         }
-      EOS
+      C
       system bin"clang++", "-v", "-o", "test_plugin.so",
              "-shared", "-fPIC", "test_plugin.cpp", "-L#{opt_lib}",
              "-stdlib=libc++", "-rtlib=compiler-rt",
@@ -479,10 +479,10 @@ class LlvmAT16 < Formula
     assert_includes shell_output("#{bin}scan-build make scanbuildtest 2>&1"),
                     "warning: Use of memory after it is freed"
 
-    (testpath"clangformattest.c").write <<~EOS
+    (testpath"clangformattest.c").write <<~C
       int    main() {
           printf("Hello world!"); }
-    EOS
+    C
     assert_equal "int main() { printf(\"Hello world!\"); }\n",
       shell_output("#{bin}clang-format -style=google clangformattest.c")
 

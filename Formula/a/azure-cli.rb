@@ -6,7 +6,7 @@ class AzureCli < Formula
   url "https:github.comAzureazure-cliarchiverefstagsazure-cli-2.65.0.tar.gz"
   sha256 "e9d4503b82eca5c78ef0acbe83ad229e35821caef200d7b290f06c66e5749bcf"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comAzureazure-cli.git", branch: "dev"
 
   livecheck do
@@ -16,12 +16,12 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0ab9339062e93991d8da79e4f4b06e546ba9dbe336a870111d690163fc44166c"
-    sha256 cellar: :any,                 arm64_sonoma:  "30117a42ef78a755542541366cc6782789648cf3100dcd8d81bee670fbff94ad"
-    sha256 cellar: :any,                 arm64_ventura: "c6b68ac1f45900568175ba06e4473cb5d94622e6a6a79a7875cc2fe4649e3a69"
-    sha256 cellar: :any,                 sonoma:        "292b5dd4cf4ea62e181d12ae9dc65d98b5ed967bc48dabe6863793e5148b634d"
-    sha256 cellar: :any,                 ventura:       "cf492d1bed972a254e83981bc21b7310b1673cbf15f29fbad9fa618cdf11c287"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4868c1e88575e0660810b20471d26f9b5235e6f29d605cf40979823ad5568be"
+    sha256 cellar: :any,                 arm64_sequoia: "488b39e0651702ef0a6348e30fb70e145345f9adf10c9668d6fc5e85d705cd34"
+    sha256 cellar: :any,                 arm64_sonoma:  "c54394e89e8204384361711cc4e5dfc60f60bfbaa73e08d3f3303e33f781cb4a"
+    sha256 cellar: :any,                 arm64_ventura: "ac400ced9bb4a99d7d59027d25e1f8938df1fd1f576332bc339027e05988a5d7"
+    sha256 cellar: :any,                 sonoma:        "5dd03ec0d4c1208128047d0fc5195eaa35f9b2434a9383e5cbd07eaeac40376e"
+    sha256 cellar: :any,                 ventura:       "97522e3cf55b965c346241acef2924df59a6a0fc41834446c3d9b5153b99d5df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56d940a680102f1fbfac60161433455be00755411b05b24b251e5def44c3555b"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -30,7 +30,7 @@ class AzureCli < Formula
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "openssl@3"
-  depends_on "python@3.12"
+  depends_on "python@3.11"
 
   uses_from_macos "libffi"
 
@@ -594,11 +594,6 @@ class AzureCli < Formula
     sha256 "aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
   end
 
-  resource "pip" do
-    url "https:files.pythonhosted.orgpackages4d87fb90046e096a03aeab235e139436b3fe804cdd447ed2093b0d70eba3f7f8pip-24.2.tar.gz"
-    sha256 "5b5e490b5e9cb275c879595064adce9ebd31b854e3e803740b72f9ccf34a45b8"
-  end
-
   resource "pkginfo" do
     url "https:files.pythonhosted.orgpackages546a42056522e1d79fa9768712782f37365ef786d905e4efeed6db44cad1803bpkginfo-1.8.2.tar.gz"
     sha256 "542e0d0b6750e2e21c20179803e40ab50598d8066d51097a0e382cba9eb02bff"
@@ -724,7 +719,7 @@ class AzureCli < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    venv = virtualenv_create(libexec, "python3.12", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3.11", system_site_packages: false, without_pip: false)
     venv.pip_install resources
 
     # Get the CLI components we'll install

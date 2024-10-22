@@ -97,14 +97,14 @@ class Gtkx3 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtk/gtk.h>
 
       int main(int argc, char *argv[]) {
         gtk_disable_setlocale();
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs gtk+-3.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

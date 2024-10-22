@@ -35,7 +35,7 @@ class Iniparser < Formula
       key = value
     EOS
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       #include <iniparser/iniparser.h>
@@ -52,7 +52,7 @@ class Iniparser < Formula
         iniparser_freedict(ini);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-liniparser"
     assert_equal "Parsed value: value", shell_output("./test")

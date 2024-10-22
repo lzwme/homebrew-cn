@@ -73,13 +73,13 @@ class Lasso < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <lasso/lasso.h>
 
       int main() {
         return lasso_init();
       }
-    EOS
+    C
     system ENV.cc, "test.c",
                    "-I#{Formula["glib"].include}/glib-2.0",
                    "-I#{Formula["glib"].lib}/glib-2.0/include",

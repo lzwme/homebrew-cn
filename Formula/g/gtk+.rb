@@ -115,14 +115,14 @@ class Gtkx < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gtkgtk.h>
 
       int main(int argc, char *argv[]) {
         GtkWidget *label = gtk_label_new("Hello World!");
         return 0;
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs gtk+-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"

@@ -61,14 +61,14 @@ class Gwyddion < Formula
 
   test do
     system bin/"gwyddion", "--version"
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libgwyddion/gwyddion.h>
 
       int main(int argc, char *argv[]) {
         const gchar *string = gwy_version_string();
         return 0;
       }
-    EOS
+    C
     atk = Formula["atk"]
     cairo = Formula["cairo"]
     fftw = Formula["fftw"]

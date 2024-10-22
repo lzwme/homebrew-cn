@@ -26,7 +26,7 @@ class Inih < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       #include <ini.h>
@@ -57,7 +57,7 @@ class Inih < Formula
           }
           return 0;
       }
-    EOS
+    C
 
     (testpath"test.ini").write <<~EOS
       [protocol]             ; Protocol configuration

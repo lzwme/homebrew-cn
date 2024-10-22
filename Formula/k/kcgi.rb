@@ -37,7 +37,7 @@ class Kcgi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <sys/types.h>
       #include <stdarg.h>
       #include <stddef.h>
@@ -53,7 +53,7 @@ class Kcgi < Formula
         khttp_parse(&r, NULL, 0, &pages, 1, 0);
         return 0;
       }
-    EOS
+    C
     flags = %W[
       -L#{lib}
       -lkcgi

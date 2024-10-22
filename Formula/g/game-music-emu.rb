@@ -34,7 +34,7 @@ class GameMusicEmu < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gmegme.h>
       int main(void)
       {
@@ -49,7 +49,7 @@ class GameMusicEmu < Formula
           return -1;
         }
       }
-    EOS
+    C
 
     if OS.mac?
       ubsan_libdir = Dir["#{MacOS::CLT::PKG_PATH}usrlibclang*libdarwin"].first

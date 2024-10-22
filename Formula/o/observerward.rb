@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.10.9.tar.gz"
-  sha256 "4f3a739a6083d9f58d9f2f3e97c659b50a0b0bbaab325ff920d7042a966e702b"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.10.21.tar.gz"
+  sha256 "26d51a1e10396986dcfec62674444a107d75559511bc67b3056e848370166d64"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f1a20cdf2b58044ff318562fcc7a2ab43e6e1349f7c3e87338b831ca12e237f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "627d10dc2e456ee3930b478095dacf459ba6c816a0eea4ac621af227faee7831"
-    sha256 cellar: :any,                 arm64_ventura: "a0d551da65846a90fd808f22798db4997a3b41cdf744fc9c63894de2da93f4ce"
-    sha256 cellar: :any,                 sonoma:        "59f513d30e079d23506f46068fedbf81f7f57fd2296515987a9e5efc475c0fcb"
-    sha256 cellar: :any,                 ventura:       "78a60b611afb3d304723f01aec94f8af55ae6ae365c773850e2db96c8abd0633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20a88b07f8f8d0fc0e68495aa755253867d59ccb2c7fd9aa56f444907b8740b5"
+    sha256 cellar: :any,                 arm64_sequoia: "5c33984a9937f1166b308d63a9ead3210aab8127441cc438155bf15bae35e6b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "21028fd336053259e999a3b8171530833d30c1359f4bb13bf1f7913364105c0d"
+    sha256 cellar: :any,                 arm64_ventura: "73714ccd745e40c9a23bc14cfae3075d38e4f106d46e991e843a0e8ec07b0271"
+    sha256 cellar: :any,                 sonoma:        "f9397fcef44d80a74e3944bf7ca74f446dfa4e590f7b0dd74b702d7401b75af2"
+    sha256 cellar: :any,                 ventura:       "9b3a664cfb97d97cb0634df017528f21ae55e05ee24aad2efac71b428a4eae01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7926614a480e7a4def9282fe81975c5303eaa3eb7fcb19592f9ce09c8b6e556d"
   end
 
   depends_on "rust" => :build

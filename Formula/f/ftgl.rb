@@ -60,7 +60,7 @@ class Ftgl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <FTGL/ftgl.h>
       #include <stdio.h>
 
@@ -74,7 +74,7 @@ class Ftgl < Formula
 
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs ftgl").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

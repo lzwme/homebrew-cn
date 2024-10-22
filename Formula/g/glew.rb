@@ -70,7 +70,7 @@ class Glew < Formula
     else
       "GL"
     end
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <GLglew.h>
       #include <#{glut}glut.h>
 
@@ -83,7 +83,7 @@ class Glew < Formula
         }
         return 0;
       }
-    EOS
+    C
     flags = %W[-L#{lib} -lGLEW]
     if OS.mac?
       flags << "-framework" << "GLUT"

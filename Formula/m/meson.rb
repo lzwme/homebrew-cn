@@ -1,14 +1,13 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https:mesonbuild.com"
-  url "https:github.commesonbuildmesonreleasesdownload1.5.2meson-1.5.2.tar.gz"
-  sha256 "f955e09ab0d71ef180ae85df65991d58ed8430323de7d77a37e11c9ea630910b"
+  url "https:github.commesonbuildmesonreleasesdownload1.6.0meson-1.6.0.tar.gz"
+  sha256 "999b65f21c03541cf11365489c1fad22e2418bb0c3d50ca61139f2eec09d5496"
   license "Apache-2.0"
-  revision 1
   head "https:github.commesonbuildmeson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a3b43478b98b0d04f647668cb8740c8e75446a9dd15a34587fde96bebbf401c7"
+    sha256 cellar: :any_skip_relocation, all: "77eb91483991e1b615c3fe1dcea843e43706ac3eb011b0556fcf70e3a3e097fb"
   end
 
   depends_on "ninja"
@@ -27,21 +26,26 @@ class Meson < Formula
     # for fulfilling dependencies rather than just `usrlocal`.
     mesonbuild = prefixLanguage::Python.site_packages(python3)"mesonbuild"
     usr_local_files = %w[
+      compilersmixinsapple.py
       coredata.py
-      options.py
       dependenciesboost.py
       dependenciescuda.py
+      dependenciesmisc.py
       dependenciesqt.py
+      options.py
       scriptspython_info.py
       utilsuniversal.py
-      compilersmixinsapple.py
     ].map { |f| mesonbuildf }
     usr_local_files << (bash_completion"meson")
 
     # Passing `build.stable?` ensures a failed `inreplace` won't fail HEAD installs.
     inreplace usr_local_files, "usrlocal", HOMEBREW_PREFIX, audit_result: build.stable?
 
-    opt_homebrew_files = %w[dependenciesboost.py compilersmixinsapple.py].map { |f| mesonbuildf }
+    opt_homebrew_files = %w[
+      dependenciesboost.py
+      dependenciesmisc.py
+      compilersmixinsapple.py
+    ].map { |f| mesonbuildf }
     inreplace opt_homebrew_files, "opthomebrew", HOMEBREW_PREFIX, audit_result: build.stable?
 
     # Ensure meson uses our `var` directory.

@@ -26,7 +26,7 @@ class Jansson < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <jansson.h>
       #include <assert.h>
 
@@ -39,7 +39,7 @@ class Jansson < Formula
         json_decref(json);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ljansson", "-o", "test"
     system ".test"
   end

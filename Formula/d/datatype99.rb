@@ -17,7 +17,7 @@ class Datatype99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <datatype99.h>
       #include <stdio.h>
 
@@ -45,7 +45,7 @@ class Datatype99 < Formula
           printf("%d", sum(tree));
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["metalang99"].opt_include}", "-o", "test"
     assert_equal "28", shell_output(".test")
   end

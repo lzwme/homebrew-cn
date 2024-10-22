@@ -99,14 +99,14 @@ class Gtk4 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtk/gtk.h>
 
       int main(int argc, char *argv[]) {
         gtk_disable_setlocale();
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk4").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags

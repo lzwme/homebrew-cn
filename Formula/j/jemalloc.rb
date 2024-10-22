@@ -51,7 +51,7 @@ class Jemalloc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <jemallocjemalloc.h>
 
@@ -65,7 +65,7 @@ class Jemalloc < Formula
          Dump allocator statistics to stderr
         malloc_stats_print(NULL, NULL, NULL);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ljemalloc", "-o", "test"
     system ".test"
   end

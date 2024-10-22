@@ -48,14 +48,14 @@ class Gspell < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gspell/gspell.h>
 
       int main(int argc, char *argv[]) {
         const GList *list = gspell_language_get_available();
         return 0;
       }
-    EOS
+    C
 
     icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     ENV.prepend_path "PKG_CONFIG_PATH", icu4c.opt_lib/"pkgconfig"

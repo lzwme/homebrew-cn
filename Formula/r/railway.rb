@@ -1,18 +1,18 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https:railway.app"
-  url "https:github.comrailwayappcliarchiverefstagsv3.15.3.tar.gz"
-  sha256 "60ccb129a192cb4da23d42c1252b1bdc4fd58d27419735c1b7f4fdb3016274c1"
+  url "https:github.comrailwayappcliarchiverefstagsv3.17.4.tar.gz"
+  sha256 "fd2de790d0b2a52cc7b2ae823a309a58d16982646d2310e5f885f7776a904933"
   license "MIT"
   head "https:github.comrailwayappcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eec231c84c5e60633f96e503d2a123dc5492665ed532fb10ba04687ed16db17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be81537c91e8680018b1ea927c25aaa55f7264062ba1b85b4cf371810acb5454"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1db299255df7d03a2394438992c65752647c831e603f22f2f82a3d4498f4130d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "abd1d2452f8654c174208039e877cadd74945e56bee9c6beb5017f51856473a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "035b9f33dccf7c79942e0b72a1c854d3e39109b295e5e647cf320c5a0ff1c0ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78a13078d4b23c09446350433abc55fbcb5e6286d20027e23bffa72943741836"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a971902bccc3e11bd69cfa2b7cf5b95e9aee0416e61e6470234556bf4fc47f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54c19d791489d35be0f3b6ee2dc358074924c7feb3a9f376ff55dfb3131e6531"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80cb15a22538a9a315be47076d148e0124bc4a77cfd8ea7aecbf582577a4b346"
+    sha256 cellar: :any_skip_relocation, sonoma:        "588f0b6c60b475b27d6c728a81f9a3820b5982f2be923772da5131d990d1d0b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "03a0b89ce1dbcc6f52856c0b0e17ffcc98eb4c98446d01bc341ffd97727cc889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a86c5c3a473b066eec2d6ac86e2c401d39fb9023bd1933d7902a39d588c4631"
   end
 
   depends_on "rust" => :build

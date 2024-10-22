@@ -34,13 +34,13 @@ class GsettingsDesktopSchemas < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gdesktop-enums.h>
 
       int main(int argc, char *argv[]) {
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{HOMEBREW_PREFIX}/include/gsettings-desktop-schemas", "test.c", "-o", "test"
     system "./test"
   end

@@ -33,7 +33,7 @@ class Frei0r < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <frei0r.h>
 
       int main()
@@ -45,7 +45,7 @@ class Frei0r < Formula
           return 1;
         }
       }
-    EOS
+    C
     system ENV.cc, "-L#{lib}", "test.c", "-o", "test"
     system ".test"
   end

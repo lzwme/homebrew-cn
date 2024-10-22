@@ -36,7 +36,7 @@ class Gtkdatabox < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtkdatabox.h>
 
       int main(int argc, char *argv[]) {
@@ -44,7 +44,7 @@ class Gtkdatabox < Formula
         GtkWidget *db = gtk_databox_new();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gtkdatabox").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

@@ -32,12 +32,12 @@ class Flawfinder < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       int demo(char *a, char *b) {
         strcpy(a, "\n");
         strcpy(a, gettext("Hello there"));
       }
-    EOS
+    C
     assert_match("Hits = 2\n", shell_output("#{bin}flawfinder test.c"))
   end
 end

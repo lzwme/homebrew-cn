@@ -56,14 +56,14 @@ class Gerbv < Formula
     # executable (GUI) test
     system bin"gerbv", "--version"
     # API test
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gerbv.h>
 
       int main(int argc, char *argv[]) {
         double d = gerbv_get_tool_diameter(2);
         return 0;
       }
-    EOS
+    C
     atk = Formula["atk"]
     cairo = Formula["cairo"]
     fontconfig = Formula["fontconfig"]

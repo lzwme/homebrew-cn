@@ -28,7 +28,7 @@ class Enet < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <enetenet.h>
       #include <stdio.h>
 
@@ -41,7 +41,7 @@ class Enet < Formula
         }
         atexit (enet_deinitialize);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lenet", "-o", "test"
     system testpath"test"
   end

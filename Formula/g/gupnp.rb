@@ -44,7 +44,7 @@ class Gupnp < Formula
     gssdp_version = Formula["gssdp"].version.major_minor.to_s
 
     system bin/"gupnp-binding-tool-#{gnupnp_version}", "--help"
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libgupnp/gupnp-control-point.h>
 
       static GMainLoop *main_loop;
@@ -65,7 +65,7 @@ class Gupnp < Formula
 
         return 0;
       }
-    EOS
+    C
 
     libxml2 = if OS.mac?
       "-I#{MacOS.sdk_path}/usr/include/libxml2"

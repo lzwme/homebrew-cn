@@ -38,14 +38,14 @@ class JsonGlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <json-glib/json-glib.h>
 
       int main(int argc, char *argv[]) {
         JsonParser *parser = json_parser_new();
         return 0;
       }
-    EOS
+    C
 
     gettext = Formula["gettext"]
     glib = Formula["glib"]

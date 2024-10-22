@@ -47,7 +47,7 @@ class GlibOpenssl < Formula
   end
 
   test do
-    (testpath/"gtls-test.c").write <<~EOS
+    (testpath/"gtls-test.c").write <<~C
       #include <gio/gio.h>
       #include <string.h>
       int main (int argc, char *argv[])
@@ -58,7 +58,7 @@ class GlibOpenssl < Formula
         else
           return 1;
       }
-    EOS
+    C
 
     # From `pkg-config --cflags --libs gio-2.0`
     gettext = Formula["gettext"]

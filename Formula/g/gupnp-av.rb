@@ -38,7 +38,7 @@ class GupnpAv < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libgupnp-av/gupnp-av.h>
 
       int main(int argc, char *argv[]) {
@@ -52,7 +52,7 @@ class GupnpAv < Formula
 
         return 0;
       }
-    EOS
+    C
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs gupnp-av-1.0 glib-2.0").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"

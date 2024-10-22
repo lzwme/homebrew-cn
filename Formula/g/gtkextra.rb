@@ -41,13 +41,13 @@ class Gtkextra < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gtkextragtkextra.h>
       int main(int argc, char *argv[]) {
         GtkWidget *canvas = gtk_plot_canvas_new(GTK_PLOT_A4_H, GTK_PLOT_A4_W, 0.8);
         return 0;
       }
-    EOS
+    C
     atk = Formula["atk"]
     cairo = Formula["cairo"]
     fontconfig = Formula["fontconfig"]

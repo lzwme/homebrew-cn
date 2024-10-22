@@ -74,14 +74,14 @@ class Gedit < Formula
     # main executable test
     system bin/"gedit", "--version"
     # API test
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gedit/gedit-debug.h>
 
       int main(int argc, char *argv[]) {
         gedit_debug_init();
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs gedit").chomp.split
     flags << "-Wl,-rpath,#{lib}/gedit" if OS.linux?

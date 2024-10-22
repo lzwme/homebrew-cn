@@ -29,14 +29,14 @@ class LiquidDsp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <liquidliquid.h>
       int main() {
         if (!liquid_is_prime(3))
           return 1;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lliquid"
     system ".test"
   end

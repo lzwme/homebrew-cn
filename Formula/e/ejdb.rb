@@ -42,7 +42,7 @@ class Ejdb < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <ejdb2ejdb2.h>
 
       #define RCHECK(rc_)          \\
@@ -114,7 +114,7 @@ class Ejdb < Formula
         RCHECK(rc);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "-I#{include}ejdb2", "test.c", "-L#{lib}", "-lejdb2", "-o", testpath"test"
     system ".test"

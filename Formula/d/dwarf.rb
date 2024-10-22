@@ -47,13 +47,13 @@ class Dwarf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
 
       int main(int argc, char *argv[]) {
         printf("hello world\\n");
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test"
     if OS.mac?
       output = shell_output("#{bin}dwarf -c 'pp $mac' test")

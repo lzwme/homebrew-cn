@@ -16,13 +16,13 @@ class Debugbreak < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <debugbreak.h>
       int main() {
         debug_break(); * will break into debugger *
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-o", "test"
     pid = Process.spawn(".test")
     assert_equal Signal.list.fetch("TRAP"), Process::Status.wait(pid).termsig

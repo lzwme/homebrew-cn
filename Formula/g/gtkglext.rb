@@ -133,14 +133,14 @@ class Gtkglext < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gtkgtkgl.h>
 
       int main(int argc, char *argv[]) {
         int version_check = GTKGLEXT_CHECK_VERSION(1, 2, 0);
         return 0;
       }
-    EOS
+    C
     atk = Formula["atk"]
     cairo = Formula["cairo"]
     fontconfig = Formula["fontconfig"]

@@ -89,14 +89,14 @@ class Fwupd < Formula
 
   test do
     # check apps like gnome-firmware can link
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <fwupd.h>
       int main(int argc, char *argv[]) {
         FwupdClient *client = fwupd_client_new();
         g_assert_nonnull(client);
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs fwupd").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

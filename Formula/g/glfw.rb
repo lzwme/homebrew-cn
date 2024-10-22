@@ -45,7 +45,7 @@ class Glfw < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #define GLFW_INCLUDE_GLU
       #include <GLFWglfw3.h>
       #include <stdlib.h>
@@ -56,7 +56,7 @@ class Glfw < Formula
         glfwTerminate();
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}", "-L#{lib}", "-lglfw"

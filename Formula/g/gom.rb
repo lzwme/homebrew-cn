@@ -35,14 +35,14 @@ class Gom < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gom/gom.h>
 
       int main(int argc, char *argv[]) {
         GType type = gom_error_get_type();
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[

@@ -52,14 +52,14 @@ class GnomeAutoar < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gnome-autoargnome-autoar.h>
 
       int main(int argc, char *argv[]) {
         GType type = autoar_extractor_get_type();
         return 0;
       }
-    EOS
+    C
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib"pkgconfig"
     flags = shell_output("pkg-config --cflags --libs gnome-autoar-0").chomp.split

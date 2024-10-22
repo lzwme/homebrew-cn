@@ -47,7 +47,7 @@ class GnuComplexity < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       void free_table(uint32_t *page_dir) {
           // The last entry of the page directory is reserved. It points to the page
           // table itself.
@@ -66,7 +66,7 @@ class GnuComplexity < Formula
           }
           free_frame((page_frame_t)page_dir);
       }
-    EOS
+    C
     system bin/"complexity", "-t", "3", "./test.c"
   end
 end

@@ -34,14 +34,14 @@ class Fcgi < Formula
   end
 
   test do
-    (testpath"testfile.c").write <<~EOS
+    (testpath"testfile.c").write <<~C
       #include "fcgi_stdio.h"
       #include <stdlib.h>
       int count = 0;
       int main(void){
         while (FCGI_Accept() >= 0){
         printf("Request number %d running on host %s", ++count, getenv("SERVER_HOSTNAME"));}}
-    EOS
+    C
     system ENV.cc, "testfile.c", "-L#{lib}", "-lfcgi", "-o", "testfile"
     assert_match "Request number 1 running on host", shell_output(".testfile")
   end

@@ -34,7 +34,7 @@ class Geos < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdarg.h>
       #include <geos_c.h>
@@ -58,7 +58,7 @@ class Geos < Formula
           printf("Intersection(A, B): %s\\n", wkt_inter);
           return 0;
       }
-    EOS
+    C
 
     cflags = shell_output("#{bin}/geos-config --cflags").split
     libs = shell_output("#{bin}/geos-config --clibs").split

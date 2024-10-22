@@ -1,19 +1,17 @@
 class Procs < Formula
   desc "Modern replacement for ps written in Rust"
   homepage "https:github.comdalanceprocs"
-  url "https:github.comdalanceprocsarchiverefstagsv0.14.6.tar.gz"
-  sha256 "3d5cd529c858ca637b166bac908e0d8429c33bdfa9d8db6282f36d5732e4e30a"
+  url "https:github.comdalanceprocsarchiverefstagsv0.14.7.tar.gz"
+  sha256 "e8abcd188213ea68835cce92519cfcdb70315cc1821eb3f74cc6e967ddce28ca"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e72517ce6f45e95d05646668f91d8bc4cd4bb2a0c2b247fa602572c30cc7244a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4403e855affce7f84a54fc32729e302d30324979ca3709653d1ffc22f8a5a13f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4e55542abfdf250b389dbf60b7cfaa9363268c3e944aff27f9a82dc5dd28003"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ccd5d1466ad95922827367ecf97bb07ca1e5aa1a8fad0521b712cb1f5fc417cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2909d4628c4bf5843b2eab75f852441b8c56e24fc0b62c01e30d7265a2806621"
-    sha256 cellar: :any_skip_relocation, ventura:        "4574390e642c603741eb0287f9e3981317adc6b5e8120f582ffd13bf67b48f4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "852537ba382ae6f8bc2b8d34b909b9605a1f4d03c1eb013f4e1f3d66129b3cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "876c46b01fd03352905ed95b0d5a0cbf5e22b3b9ea9dc2e6150762d2b86fc7b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beaa93e63f9d03536433469ac0c25825a6cba32707801784a70d03c54ee17a5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59c301874edb0c84a26f43f62ae8ef1443f6c89393c2606904941c42ade04938"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "090e31996499d6b8b1b0b9e6aa09044cef0d417d249aefacbcc30e908e3e2e94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a350e112db6a193d7e4de3da71b7c021fdc0e574a60d70f12cc4f6c87eaff96"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d61505cd0717ddde1da398a4a6cad50eb019bb4cd34041e96a84df9aea98d0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46ee7d77e189377c996b0499f7a192a112e30b30d656d7d01721d37d19525fb3"
   end
 
   depends_on "rust" => :build

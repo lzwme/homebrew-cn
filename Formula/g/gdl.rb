@@ -61,14 +61,14 @@ class Gdl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gdl/gdl.h>
 
       int main(int argc, char *argv[]) {
         GType type = gdl_dock_object_get_type();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gdl-3.0").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

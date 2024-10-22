@@ -44,7 +44,7 @@ class Fann < Formula
     desired_error = 0.001
     max_epochs = 500000
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <fann.h>
       int main()
       {
@@ -65,7 +65,7 @@ class Fann < Formula
           fann_destroy(ann);
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lfann", "-lm", "-o", "test"
     output = shell_output(testpath/"test")

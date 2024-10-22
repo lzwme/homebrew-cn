@@ -74,12 +74,12 @@ class IncludeWhatYouUse < Formula
     (testpath"indirect.h").write <<~EOS
       #include "direct.h"
     EOS
-    (testpath"main.c").write <<~EOS
+    (testpath"main.c").write <<~C
       #include "indirect.h"
       int main() {
         return (int)function();
       }
-    EOS
+    C
     expected_output = <<~EOS
       main.c should add these lines:
       #include "direct.h"   for function

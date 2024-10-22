@@ -15,7 +15,7 @@ class Jsmn < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <jsmn.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -88,7 +88,7 @@ class Jsmn < Formula
         }
         return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test"
     system ".test"
   end

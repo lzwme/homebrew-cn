@@ -37,13 +37,13 @@ class Hidapi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "hidapi.h"
       int main(void)
       {
         return hid_exit();
       }
-    EOS
+    C
 
     flags = ["-I#{include}hidapi", "-L#{lib}"]
     flags << if OS.mac?

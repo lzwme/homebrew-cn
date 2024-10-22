@@ -71,14 +71,14 @@ class Gitg < Formula
     # Disable this part of test on Linux because display is not available.
     assert_match version.to_s, shell_output("#{bin}/gitg --version") if OS.mac?
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libgitg/libgitg.h>
 
       int main(int argc, char *argv[]) {
         GType gtype = gitg_stage_status_file_get_type();
         return 0;
       }
-    EOS
+    C
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgit2@1.7"].opt_lib/"pkgconfig"
     flags = shell_output("pkg-config --cflags --libs libgitg-1.0").chomp.split

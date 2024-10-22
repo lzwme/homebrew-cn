@@ -57,7 +57,7 @@ class Gd < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "gd.h"
       #include <stdio.h>
 
@@ -76,7 +76,7 @@ class Gd < Formula
         fclose(pngout);
         gdImageDestroy(im);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgd", "-o", "test"
     system ".test"
     assert_path_exists "#{testpath}test.png"

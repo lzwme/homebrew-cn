@@ -33,7 +33,7 @@ class Lightning < Formula
 
   test do
     # from https://www.gnu.org/software/lightning/manual/lightning.html#incr
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <lightning.h>
       static jit_state_t *_jit;
@@ -55,7 +55,7 @@ class Lightning < Formula
         finish_jit();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-llightning", "-o", "test"
     system "./test"
   end

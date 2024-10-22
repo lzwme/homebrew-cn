@@ -50,7 +50,7 @@ class Jam < Formula
       Main jamtest : jamtest.c ;
     EOS
 
-    (testpath"jamtest.c").write <<~EOS
+    (testpath"jamtest.c").write <<~C
       #include <stdio.h>
 
       int main(void)
@@ -58,7 +58,7 @@ class Jam < Formula
           printf("Jam Test\\n");
           return 0;
       }
-    EOS
+    C
 
     assert_match "Cc jamtest.o", shell_output(bin"jam")
     assert_equal "Jam Test", shell_output(".jamtest").strip

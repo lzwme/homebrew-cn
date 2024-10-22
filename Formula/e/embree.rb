@@ -48,7 +48,7 @@ class Embree < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <embree4rtcore.h>
 
@@ -58,7 +58,7 @@ class Embree < Formula
         rtcReleaseDevice(device);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lembree4"
     assert_match "Embree Ray Tracing Kernels #{version} ()", shell_output(".a.out")

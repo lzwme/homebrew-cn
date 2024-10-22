@@ -49,14 +49,14 @@ class Gtksourceview4 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtksourceview/gtksource.h>
 
       int main(int argc, char *argv[]) {
         gchar *text = gtk_source_utils_unescape_search_text("hello world");
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gtksourceview-4").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

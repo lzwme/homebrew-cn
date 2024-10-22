@@ -55,7 +55,7 @@ class Getdns < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <getdnsgetdns.h>
       #include <stdio.h>
 
@@ -81,7 +81,7 @@ class Getdns < Formula
         getdns_context_destroy(context);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "-o", "test", "test.c", "-L#{lib}", "-lgetdns"
     system ".test"
   end

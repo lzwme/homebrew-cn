@@ -25,14 +25,14 @@ class Faudio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <FAudio.h>
       int main(int argc, char const *argv[])
       {
         FAudio *audio;
         return FAudioCreate(&audio, 0, FAUDIO_DEFAULT_PROCESSOR);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lFAudio", "-o", "test"
     system ".test"
   end

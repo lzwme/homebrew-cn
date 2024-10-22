@@ -66,7 +66,7 @@ class Hdf5AT110 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "hdf5.h"
       int main()
@@ -74,7 +74,7 @@ class Hdf5AT110 < Formula
         printf("%d.%d.%d\\n", H5_VERS_MAJOR, H5_VERS_MINOR, H5_VERS_RELEASE);
         return 0;
       }
-    EOS
+    C
     system bin"h5cc", "test.c"
     assert_equal version.to_s, shell_output(".a.out").chomp
 

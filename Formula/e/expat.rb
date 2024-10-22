@@ -44,7 +44,7 @@ class Expat < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "expat.h"
 
@@ -77,7 +77,7 @@ class Expat < Formula
 
         return result;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lexpat", "-o", "test"
     assert_equal "tag:str|data:Hello, world!|", shell_output(".test")
   end

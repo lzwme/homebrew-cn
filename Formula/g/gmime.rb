@@ -66,7 +66,7 @@ class Gmime < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <gmimegmime.h>
       int main (int argc, char **argv)
@@ -78,7 +78,7 @@ class Gmime < Formula
           return 1;
         }
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs gmime-#{version.major}.0").strip.split
     system ENV.cc, "-o", "test", "test.c", *flags

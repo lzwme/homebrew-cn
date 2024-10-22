@@ -222,14 +222,14 @@ class Emscripten < Formula
 
     ENV["NODE_OPTIONS"] = "--no-experimental-fetch"
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       int main()
       {
         printf("Hello World!");
         return 0;
       }
-    EOS
+    C
 
     system bin"emcc", "test.c", "-o", "test.js", "-s", "NO_EXIT_RUNTIME=0"
     assert_equal "Hello World!", shell_output("node test.js").chomp

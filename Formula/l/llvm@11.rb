@@ -214,7 +214,7 @@ class LlvmAT11 < Formula
   test do
     assert_equal prefix.to_s, shell_output("#{bin}llvm-config --prefix").chomp
 
-    (testpath"omptest.c").write <<~EOS
+    (testpath"omptest.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <omp.h>
@@ -225,7 +225,7 @@ class LlvmAT11 < Formula
           }
           return EXIT_SUCCESS;
       }
-    EOS
+    C
 
     clean_version = version.to_s[(\d+\.?)+]
 
@@ -243,14 +243,14 @@ class LlvmAT11 < Formula
     EOS
     assert_equal expected_result.strip, sorted_testresult.strip
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       int main()
       {
         printf("Hello World!\\n");
         return 0;
       }
-    EOS
+    C
 
     (testpath"test.cpp").write <<~EOS
       #include <iostream>
@@ -351,12 +351,12 @@ class LlvmAT11 < Formula
           std::cout << "Hello Plugin World!" << std::endl;
         }
       EOS
-      (testpath"test_plugin_main.c").write <<~EOS
+      (testpath"test_plugin_main.c").write <<~C
         extern void run_plugin();
         int main() {
           run_plugin();
         }
-      EOS
+      C
       system bin"clang++", "-v", "-o", "test_plugin.so",
              "-shared", "-fPIC", "test_plugin.cpp", "-L#{opt_lib}",
              "-stdlib=libc++", "-rtlib=compiler-rt",
@@ -394,10 +394,10 @@ class LlvmAT11 < Formula
     assert_includes shell_output("#{bin}scan-build #{bin}clang++ scanbuildtest.cpp 2>&1"),
       "warning: Use of memory after it is freed"
 
-    (testpath"clangformattest.c").write <<~EOS
+    (testpath"clangformattest.c").write <<~C
       int    main() {
           printf("Hello world!"); }
-    EOS
+    C
     assert_equal "int main() { printf(\"Hello world!\"); }\n",
       shell_output("#{bin}clang-format -style=google clangformattest.c")
 

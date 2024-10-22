@@ -38,7 +38,7 @@ class Jerryscript < Formula
     (testpath"test.js").write "print('Hello, Homebrew!');"
     assert_equal "Hello, Homebrew!", shell_output("#{bin}jerry test.js").strip
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "jerryscript.h"
 
@@ -58,7 +58,7 @@ class Jerryscript < Formula
         jerry_cleanup();
         return (run_ok ? 0 : 1);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}",
                    "-ljerry-core", "-ljerry-port-default", "-ljerry-ext", "-lm"
     assert_equal "1 + 2 = 3", shell_output(".test").strip, "JerryScript can add number"

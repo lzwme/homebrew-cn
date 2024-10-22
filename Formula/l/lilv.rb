@@ -50,14 +50,14 @@ class Lilv < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <lilv/lilv.h>
 
       int main(void) {
         LilvWorld* const world = lilv_world_new();
         lilv_world_free(world);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}/lilv-0", "-L#{lib}", "-llilv-0", "-o", "test"
     system "./test"
 

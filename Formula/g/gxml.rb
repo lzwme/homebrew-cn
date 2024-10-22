@@ -44,14 +44,14 @@ class Gxml < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gxml/gxml.h>
 
       int main(int argc, char *argv[]) {
         GType type = gxml_document_get_type();
         return 0;
       }
-    EOS
+    C
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libxml2"].opt_lib/"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libxml-2.0 gxml-0.20").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

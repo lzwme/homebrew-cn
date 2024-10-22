@@ -18,7 +18,7 @@ class Interface99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <interface99.h>
       #include <stdio.h>
 
@@ -59,7 +59,7 @@ class Interface99 < Formula
         VCALL(t, scale, 5);
         printf("%d %d", VCALL(r, perim), VCALL(t, perim));
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["metalang99"].opt_include}", "-o", "test"
     assert_equal "24 60 120 300", shell_output(".test")
   end

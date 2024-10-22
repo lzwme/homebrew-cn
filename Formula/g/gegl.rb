@@ -70,7 +70,7 @@ class Gegl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gegl.h>
       gint main(gint argc, gchar **argv) {
         gegl_init(&argc, &argv);
@@ -78,7 +78,7 @@ class Gegl < Formula
         gegl_exit();
         return 0;
       }
-    EOS
+    C
     system ENV.cc,
            "-I#{Formula["babl"].opt_include}/babl-0.1",
            "-I#{Formula["glib"].opt_include}/glib-2.0",

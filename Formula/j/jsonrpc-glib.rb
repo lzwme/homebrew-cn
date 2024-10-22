@@ -36,14 +36,14 @@ class JsonrpcGlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <jsonrpc-glib.h>
 
       int main(int argc, char *argv[]) {
         JsonrpcInputStream *stream = jsonrpc_input_stream_new(NULL);
         return 0;
       }
-    EOS
+    C
     pkg_config_cflags = shell_output("pkg-config --cflags --libs jsonrpc-glib-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_cflags
     system "./test"

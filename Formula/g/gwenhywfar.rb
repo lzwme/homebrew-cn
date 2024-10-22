@@ -63,7 +63,7 @@ class Gwenhywfar < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gwenhywfargwenhywfar.h>
 
       int main()
@@ -71,7 +71,7 @@ class Gwenhywfar < Formula
         GWEN_Init();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_c"
     system ".test_c"
 

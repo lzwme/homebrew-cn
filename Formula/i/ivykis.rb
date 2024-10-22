@@ -34,7 +34,7 @@ class Ivykis < Formula
   end
 
   test do
-    (testpath"test_ivykis.c").write <<~EOS
+    (testpath"test_ivykis.c").write <<~C
       #include <stdio.h>
       #include <iv.h>
       int main()
@@ -43,7 +43,7 @@ class Ivykis < Formula
         iv_deinit();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test_ivykis.c", "-L#{lib}", "-livykis", "-o", "test_ivykis"
     system ".test_ivykis"
   end

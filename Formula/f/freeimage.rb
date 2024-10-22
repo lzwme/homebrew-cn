@@ -52,7 +52,7 @@ class Freeimage < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <FreeImage.h>
       int main() {
@@ -60,7 +60,7 @@ class Freeimage < Formula
          FreeImage_DeInitialise();
          exit(0);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lfreeimage", "-o", "test"
     system ".test"
   end

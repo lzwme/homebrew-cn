@@ -37,14 +37,14 @@ class Graphene < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <graphene-gobject.h>
 
       int main(int argc, char *argv[]) {
       GType type = graphene_point_get_type();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs glib-2.0 graphene-1.0").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"

@@ -89,7 +89,7 @@ class Flexiblas < Formula
   test do
     assert_match "Active Default: #{blas_backends.first} (System)", shell_output("#{bin}/flexiblas print")
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
@@ -114,7 +114,7 @@ class Flexiblas < Formula
         if (fabs(C[4]-21) > 1.e-5) abort();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}/flexiblas", "-L#{lib}", "-lflexiblas", "-o", "test"
 
     blas_backends.each do |backend|

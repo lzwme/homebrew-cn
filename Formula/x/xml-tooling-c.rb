@@ -1,10 +1,9 @@
 class XmlToolingC < Formula
   desc "Provides a higher level interface to XML processing"
   homepage "https://wiki.shibboleth.net/confluence/display/OpenSAML/XMLTooling-C"
-  url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/xmltooling-3.2.4.tar.bz2"
-  sha256 "92db9b52f28f854ba2b3c3b5721dc18c8bd885c1e0d9397f0beb3415e88e3845"
+  url "https://shibboleth.net/downloads/c++-opensaml/3.3.0/xmltooling-3.3.0.tar.bz2"
+  sha256 "0a2c421be976f3a44b876d6b06ba1f6a2ffbc404f4622f8a65a66c3ba77cb047"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -12,12 +11,12 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eb00e1cff98cfc36357bef956745b382933939db6375472ba7ac47c2495880fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "3199b66a057117eaf57d8dec705b1bb740caa61592bedbaa39d9621752495f65"
-    sha256 cellar: :any,                 arm64_ventura: "5298aed9afab194823a2022bd5d427ede7a9e873768fedbdbef32803724aa6cb"
-    sha256 cellar: :any,                 sonoma:        "08f0cd68263afff7da8a4fbe2469280373d5d285be2048c1d9ccae6ae27b2d19"
-    sha256 cellar: :any,                 ventura:       "fef897bcdae12eb52327097b65e334de1030745f6cf33b26570600ddb14f2b5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd9bff2c71f2b6d1c1985ec9d60ec89135100d6465d71a78a6635b02a7d7d25"
+    sha256 cellar: :any,                 arm64_sequoia: "e0ef902c27cf8bfa73f4c0f6bee15ec69d9f8a63bfd8b34006b495b9802d7340"
+    sha256 cellar: :any,                 arm64_sonoma:  "ceef02c1031a06a879a79db01b058b32933da2ba8fa64d956844f9bd2fc35cec"
+    sha256 cellar: :any,                 arm64_ventura: "fa0690dbfc52ee1b79aed3b3d3d768470c6a40da769165959d581b644959b540"
+    sha256 cellar: :any,                 sonoma:        "6893f239e822a225d47b76d1fdddb881e1eb9b3ffd5f230fd4c7779f2befd848"
+    sha256 cellar: :any,                 ventura:       "7c31c534202e7ee09a6b43c0a68f75b17bcddc27d6e25df419383419d60a79e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2342976e7b86e5826af7d8634ae96c3abc75b1fae9a80436d7e513278887e0e9"
   end
 
   depends_on "pkg-config" => :build

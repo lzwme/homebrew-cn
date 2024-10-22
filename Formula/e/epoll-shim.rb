@@ -31,7 +31,7 @@ class EpollShim < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <sysepoll.h>
 
       #include <fcntl.h>
@@ -46,7 +46,7 @@ class EpollShim < Formula
         close(ep);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}libepoll-shim", "-lepoll-shim"
     system ".a.out"
   end

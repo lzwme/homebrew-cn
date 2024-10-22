@@ -52,14 +52,14 @@ class GeocodeGlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <geocode-glib/geocode-glib.h>
 
       int main(int argc, char *argv[]) {
         GeocodeLocation *loc = geocode_location_new(1.0, 1.0, 1.0);
         return 0;
       }
-    EOS
+    C
     pkg_config_flags = shell_output("pkg-config --cflags --libs geocode-glib-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
     system "./test"

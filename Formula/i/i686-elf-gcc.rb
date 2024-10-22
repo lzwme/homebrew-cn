@@ -50,14 +50,14 @@ class I686ElfGcc < Formula
   end
 
   test do
-    (testpath/"test-c.c").write <<~EOS
+    (testpath/"test-c.c").write <<~C
       int main(void)
       {
         int i=0;
         while(i<10) i++;
         return i;
       }
-    EOS
+    C
 
     system bin/"i686-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     output = shell_output("#{Formula["i686-elf-binutils"].bin}/i686-elf-objdump -a test-c.o")

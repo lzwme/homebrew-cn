@@ -40,7 +40,7 @@ class Glktermw < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "glk.h"
       #include "glkstart.h"
 
@@ -57,7 +57,7 @@ class Glktermw < Formula
       {
           glk_exit();
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lglktermw", "-lncurses", "-o", "test"
     system "echo test | ./test"
   end

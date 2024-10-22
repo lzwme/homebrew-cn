@@ -83,7 +83,7 @@ class GobjectIntrospection < Formula
   end
 
   test do
-    (testpath"main.c").write <<~EOS
+    (testpath"main.c").write <<~C
       #include <girepository.h>
 
       int main (int argc, char *argv[]) {
@@ -91,7 +91,7 @@ class GobjectIntrospection < Formula
         g_assert_nonnull(repo);
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gobject-introspection-1.0").strip.split
     system ENV.cc, "main.c", "-o", "test", *pkg_config_flags

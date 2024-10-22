@@ -100,7 +100,7 @@ class Grokj2k < Formula
       sha256 "c23c1848002082e128f533dc3c24a49fc57329293cc1468cc9dc36339b1abcac"
     end
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <grokgrok.h>
 
       int main () {
@@ -113,7 +113,7 @@ class Grokj2k < Formula
         grk_object_unref(&image->obj);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgrokj2k", "-o", "test"
     system ".test"
 

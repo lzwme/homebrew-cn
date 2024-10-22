@@ -77,14 +77,14 @@ class GtkMacIntegration < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gtkosxapplication.h>
 
       int main(int argc, char *argv[]) {
         gchar *bundle = gtkosx_application_get_bundle_path();
         return 0;
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs gtk-mac-integration-gtk3").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"

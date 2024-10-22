@@ -1,18 +1,17 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https:www.freerdp.com"
-  url "https:github.comFreeRDPFreeRDParchiverefstags3.8.0.tar.gz"
-  sha256 "e313934a77a0bcca3af803455dd9ea1aa2f657c598e3397325aa48e6effd450d"
+  url "https:github.comFreeRDPFreeRDParchiverefstags3.9.0.tar.gz"
+  sha256 "a1d2946c67037bf6bb8aa2f0441c7cacd5e92c835d776cecffb4fcdbaa45ec4f"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "93a2d51f524e50144df33eef37b6c28453e3fc6d621eb5ebdaa9fa0a97db7ec8"
-    sha256 arm64_sonoma:  "087f88ef9f89502d167f38904921945de1d9148c2561ecfc5675d5b98d1eb653"
-    sha256 arm64_ventura: "2c1bfddae3bd24c7200d0fc83dc75538d3b2385249aa4b02617246be2790c462"
-    sha256 sonoma:        "3d73c5479a4f054a61d1bf435e2be79b1b7a6bbbed4e4ac92b244e2aab503cae"
-    sha256 ventura:       "9724c26beb61d2ea7ae37064b5315b87162f9619903b1b5a6012a6891ba1916e"
-    sha256 x86_64_linux:  "99e2380d3e06d44dd8428b2e255ad06ccfe8168971e28ae2aa3b66fb13e061f3"
+    sha256 arm64_sequoia: "a59834f722ac8e7b244d262ef196972423cbfbc1a1680a415469d014609a6b10"
+    sha256 arm64_sonoma:  "54bdcd11025d600e11c2399a9eba84bcf2ba6e9dd021c286f3a373191815dd17"
+    sha256 arm64_ventura: "0829fe39942971533ded8813040eefc1f0402b2cea340185c5861971f1031121"
+    sha256 sonoma:        "bc2b2296a58056a0a06f44795d2e0d6da68450aa8f9a1cc88f200a2c601bca32"
+    sha256 ventura:       "53b54485ee6cdd2453f7720c63c80bc37160b331c5a5af9c8249b1d996119a5a"
+    sha256 x86_64_linux:  "dcfa625c94fb8653ba99889f29f38fa671ebb0f51eeb246dc99ff6c42d79c146"
   end
 
   head do
@@ -52,12 +51,6 @@ class Freerdp < Formula
     depends_on "libfuse"
     depends_on "systemd"
     depends_on "wayland"
-  end
-
-  # fix type conversion issue with `_Unwind_GetLanguageSpecificData`, upstream pr ref, https:github.comFreeRDPFreeRDPpull10542
-  patch do
-    url "https:github.comFreeRDPFreeRDPcommit06d8164d5669c02759894d024f285e028c2023de.patch?full_index=1"
-    sha256 "484407240002837cf9a32c6f1250c040710cdf1b78f8455565dca936c078d6c5"
   end
 
   def install

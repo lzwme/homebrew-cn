@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https:fastlane.tools"
-  url "https:github.comfastlanefastlanearchiverefstags2.224.0.tar.gz"
-  sha256 "148b0327bdedd4e48c492224fd58182abcb904b690607420b70d4747d2979186"
+  url "https:github.comfastlanefastlanearchiverefstags2.225.0.tar.gz"
+  sha256 "1cbe6d1f65d17df7d6e546d7c44539c7859258d9e0b1d879c2a5cad8418a17f2"
   license "MIT"
   head "https:github.comfastlanefastlane.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Fastlane < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ae7aaf447b52b3dc9a34dedd3808590c391a38fd6e2e8148294f9be549c34a07"
-    sha256 cellar: :any,                 arm64_sonoma:  "0de7e45d5c9355699cc3733fd9e810d48f9055c65695fa073683ca7cfb4ed75f"
-    sha256 cellar: :any,                 arm64_ventura: "6083d15f2a7e7a1066c0114999bf5053ed2bb404285ed5f16c54e75e14a95584"
-    sha256 cellar: :any,                 sonoma:        "a9ac836d92b2e5a3afa541f979901e37951be559d293db9faea7f263c02ec006"
-    sha256 cellar: :any,                 ventura:       "c974c2e6cbf21debf65f7f49d3b2309021e82ea92ae85f68148608a66996cdff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ed9e7378926a0daff58f1535d454a7f249cab733e59fbd63f262fa7dce2cc2"
+    sha256 cellar: :any,                 arm64_sequoia: "d08573cc0c92e784eb522b5fe9b09a10e25be6d4d9def337898128ececd06458"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec46c7590e7e5dbaf039c8da0f8314cf927ff0f07a69fe08f86129e9d0b0b3d9"
+    sha256 cellar: :any,                 arm64_ventura: "0be7fcce1a104b88819cccff28131270f0ca1ee4d3e7452c27700417cfa768ad"
+    sha256 cellar: :any,                 sonoma:        "1df4e5dbcf77b482846db30400ed097fa16c711696eb1e10a4d961628314929f"
+    sha256 cellar: :any,                 ventura:       "f30bef6bf557e174e309bbd4c477bc1534868a02b7f27415687399491184d573"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da628b7772479bf2db8fba92b7cb363fb87d3d8a5c51f1686cfeb378eb69bb77"
   end
 
   depends_on "ruby"

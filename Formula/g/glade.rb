@@ -63,14 +63,14 @@ class Glade < Formula
     # fails in Linux CI with (glade:20337): Gtk-WARNING **: 21:45:31.876: cannot open display:
     system bin/"glade", "--version" if OS.mac?
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gladeui/glade.h>
 
       int main(int argc, char *argv[]) {
         gboolean glade_util_have_devhelp();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gladeui-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
