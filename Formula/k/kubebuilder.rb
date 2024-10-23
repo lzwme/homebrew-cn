@@ -2,20 +2,18 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https:github.comkubernetes-sigskubebuilder"
   url "https:github.comkubernetes-sigskubebuilder.git",
-      tag:      "v4.2.0",
-      revision: "c7cde5172dc8271267dbf2899e65ef6f9d30f91e"
+      tag:      "v4.3.0",
+      revision: "eae8b2182a65df49eb04ed63d6c45043b454905c"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d111447850cc6b4143bee6ea02a7b3e0cae325d90bcb6fcc18ac46c0e1c18f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73a57fd8b5d0deeb081bf01ef6753ba8e6231d0bb80aafb824efbbf00f0625f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73a57fd8b5d0deeb081bf01ef6753ba8e6231d0bb80aafb824efbbf00f0625f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73a57fd8b5d0deeb081bf01ef6753ba8e6231d0bb80aafb824efbbf00f0625f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fa236123d554acf17ec671b3053b8eb5e753cd1b0cf94116baeb608d6d32ed90"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa236123d554acf17ec671b3053b8eb5e753cd1b0cf94116baeb608d6d32ed90"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa236123d554acf17ec671b3053b8eb5e753cd1b0cf94116baeb608d6d32ed90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0512a456e48b127621cb99afdf314f30e15034550c0a04381eaea509329f124"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7860e00b9d761d20361903d544cf6f65de0660196837439310e75c21799464b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7860e00b9d761d20361903d544cf6f65de0660196837439310e75c21799464b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7860e00b9d761d20361903d544cf6f65de0660196837439310e75c21799464b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b68410ccb1257390c4f51b61b1a034975024365272c82c49d4a3d7d1294cc266"
+    sha256 cellar: :any_skip_relocation, ventura:       "b68410ccb1257390c4f51b61b1a034975024365272c82c49d4a3d7d1294cc266"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8260ad68fc4ad2c57f09f0c89a3621c9c578d7f98d327afc172002e001a8b89"
   end
 
   depends_on "go"

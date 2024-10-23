@@ -4,15 +4,14 @@ class Feedgnuplot < Formula
   url "https:github.comdkoganfeedgnuplotarchiverefstagsv1.62.tar.gz"
   sha256 "7a3854c3620f7cc6bf5bf13546f5e8cbead2bb1afedd455b9ecabf367a6e78df"
   license any_of: ["GPL-1.0-or-later", "Artistic-1.0"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c786d208bf90d15994a7a5b859011f609f24566f95a391282d5d0165a2e9a3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f9e9864b476ed173d64685c560ad0fef12ee1c1a34b8a327ec18eac76d9cea4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f9e9864b476ed173d64685c560ad0fef12ee1c1a34b8a327ec18eac76d9cea4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7c786d208bf90d15994a7a5b859011f609f24566f95a391282d5d0165a2e9a3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f9e9864b476ed173d64685c560ad0fef12ee1c1a34b8a327ec18eac76d9cea4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f9e9864b476ed173d64685c560ad0fef12ee1c1a34b8a327ec18eac76d9cea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf6086004f0dde7ef683af3389c7c28352bd24705d4216bfae9d1ba1184db53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6265ef15bfe79ba7eb98b7c726fddcf19819ffa4ee0f613af37df07d396c48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85639667a8f91888be75bf1f0fb1074b6f23adf6d3e2a4ec3048efaceed0d53e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f6265ef15bfe79ba7eb98b7c726fddcf19819ffa4ee0f613af37df07d396c48"
+    sha256 cellar: :any_skip_relocation, ventura:       "85639667a8f91888be75bf1f0fb1074b6f23adf6d3e2a4ec3048efaceed0d53e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40767525dd58b22625351aef13957ca8c923e7c7aff998f0c00a92a1bdcca51d"
   end
 
   depends_on "gnuplot"

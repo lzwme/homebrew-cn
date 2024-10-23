@@ -4,7 +4,7 @@ class Sslmate < Formula
   url "https://packages.sslmate.com/other/sslmate-1.9.1.tar.gz"
   sha256 "179b331a7d5c6f0ed1de51cca1c33b6acd514bfb9a06a282b2f3b103ead70ce7"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://packages.sslmate.com/other/"
@@ -12,15 +12,12 @@ class Sslmate < Formula
   end
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "24aa12ced1cf885ba948fd57dfecab21141366667d3bc97a0c092c8dfa3e9a3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c52eea8ffcdd759de0bb3cb1d6cd8d540b7b7923e13c1fec0a41c8bddb1f6f1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c52eea8ffcdd759de0bb3cb1d6cd8d540b7b7923e13c1fec0a41c8bddb1f6f1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c52eea8ffcdd759de0bb3cb1d6cd8d540b7b7923e13c1fec0a41c8bddb1f6f1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1099c1cd94fa37d7eba861e8b1ef68b3bdf13f6d5750c6d15e82736e7333109c"
-    sha256 cellar: :any_skip_relocation, ventura:        "1099c1cd94fa37d7eba861e8b1ef68b3bdf13f6d5750c6d15e82736e7333109c"
-    sha256 cellar: :any_skip_relocation, monterey:       "1099c1cd94fa37d7eba861e8b1ef68b3bdf13f6d5750c6d15e82736e7333109c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4ec200b4bec7150dba1b0d590dabee471de7683ccf7281e9612ca549a8edd7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
+    sha256 cellar: :any_skip_relocation, sonoma:        "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb4a80e5c90b0d869a6c6734e7c768ae81ec3112890c72034cd74071cc08b20a"
   end
 
   uses_from_macos "perl"

@@ -4,17 +4,15 @@ class SqlTranslator < Formula
   url "https:cpan.metacpan.orgauthorsidIILILMARISQL-Translator-1.62.tar.gz"
   sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8286ae5a290d9c0dba2eb87b91c8212c21f4caf3252616c457eeb9929fb0e813"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78517f7f8c11b9e601ed833b1d9d150504bf1025593cc5118eb28b8aca635395"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9130885a44e325a2bac38b12376f2256999c29ec25ebe9c68205abadfd6626b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9130885a44e325a2bac38b12376f2256999c29ec25ebe9c68205abadfd6626b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "abfe61301d558ba8458966977b541d98287ee8eb61f7f2561a4b82aa93ba40b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c2d1a17220491814d9cb9e728b17c78f1ed7de30403d956f612dc95e25d3221"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c2d1a17220491814d9cb9e728b17c78f1ed7de30403d956f612dc95e25d3221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e6eb190aaf0e23c87a415f8794c292bf9443b6d8c65ada6736693392fe74608"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dd6884ab19aeeb5423ef3df3fa1cd27f1168385cc20e6698b29de481e38ed4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6dd6884ab19aeeb5423ef3df3fa1cd27f1168385cc20e6698b29de481e38ed4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71f7b2c9530c2e5aa5485d59994e1c02496e4089f259a3a2b7fda64d77609749"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b1a1fecd8bbbf18e8b569021cf91917b4bd0e9247798433bbde8e7a1d43285c"
+    sha256 cellar: :any_skip_relocation, ventura:       "8cfcf2ebb680afcd5e2c0ebd8bba4e5e11b70c3e9aa77463822b489c256494cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aad013b468ccc8eb007b96d2fd66ca07c3cb67448bf4134d954174945f3be5af"
   end
 
   uses_from_macos "perl"

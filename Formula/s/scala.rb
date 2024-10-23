@@ -1,8 +1,8 @@
 class Scala < Formula
   desc "JVM-based programming language"
   homepage "https:www.scala-lang.org"
-  url "https:github.comscalascala3releasesdownload3.5.1scala3-3.5.1.tar.gz"
-  sha256 "a517e80971559e7121df3c81f476d464adeaad0f781aade25d7d9f5864bf97da"
+  url "https:github.comscalascala3releasesdownload3.5.2scala3-3.5.2.tar.gz"
+  sha256 "899de4f9aca56989ce337d8390fbf94967bc70c9e8420e79f375d1c2ad00ff99"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Scala < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4fb2e210f8003f7989a7fba07c6f338717bdc5ae5f60e5b22488d0974fca70f1"
+    sha256 cellar: :any_skip_relocation, all: "7a0c887cea761759face114d09e5b29559dac305e7695dd9c0273f039f8edf1e"
   end
 
   # Switch back to `openjdk` when supported:

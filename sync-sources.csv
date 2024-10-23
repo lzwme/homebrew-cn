@@ -3152,6 +3152,7 @@ Homebrew-homebrew-core/Formula/l/launchdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lbfgspp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbzip2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lc0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lcdf-typetools.rb, Homebrew/homebrew-core, 1
@@ -3776,7 +3777,7 @@ Homebrew-homebrew-core/Formula/lib/libucl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libunibreak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuninameslist.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunwind-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunwind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libupnp.rb, Homebrew/homebrew-core, 1
@@ -5831,6 +5832,7 @@ Homebrew-homebrew-core/Formula/s/slackdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slacknimate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slashem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleef.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sleek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleepwatcher.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sleuthkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slides.rb, Homebrew/homebrew-core, 1
@@ -6774,6 +6776,7 @@ Homebrew-homebrew-core/Formula/w/wangle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/waon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wapm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wartremover.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wasi-libc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-micro-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-tools.rb, Homebrew/homebrew-core, 1
@@ -7129,6 +7132,7 @@ Homebrew-homebrew-core/Formula/z/zsh-history-substring-search.rb, Homebrew/homeb
 Homebrew-homebrew-core/Formula/z/zsh-lovers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zsh-navigation-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-syntax-highlighting.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zsh-system-clipboard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-vi-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-you-should-use.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 0
@@ -11213,6 +11217,7 @@ Homebrew-homebrew-cask/Casks/h/httpie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hubstaff.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hue-topia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hugin.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/huly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hummingbird.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hush.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hwsensors.rb, Homebrew/homebrew-cask, 1

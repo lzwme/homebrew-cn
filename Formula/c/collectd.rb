@@ -2,7 +2,7 @@ class Collectd < Formula
   desc "Statistics collection and monitoring daemon"
   homepage "https:collectd.org"
   license "MIT"
-  revision 7
+  revision 8
 
   stable do
     url "https:storage.googleapis.comcollectd-tarballscollectd-5.12.0.tar.bz2"
@@ -21,14 +21,12 @@ class Collectd < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "8a439840e29532604b8f7e7f69660e4f10497544a68f3fce5690394cb8de6e2d"
-    sha256 arm64_sonoma:   "feeabfab71b4779d284f35c81db87618f5c27c9567cc2aa817c1ae7e525c29b0"
-    sha256 arm64_ventura:  "27b3ab3603d68a565dab7e7076d0d065692c6f4621094e4b8f0b2608257c092d"
-    sha256 arm64_monterey: "ea60e985f3b9fa1cea0a6ea0cdd488076c7f5fb913ed874dc97b076617c76c31"
-    sha256 sonoma:         "964fc480f251425f36043c3f88bd14bb43314e122ef1adbd3715e935c8593076"
-    sha256 ventura:        "7ca3d7a8572daa17aa7f11b861c043b09b3f407023d4e64af19f1417f5f9e3ba"
-    sha256 monterey:       "b92aff0140b2d791ba48e7a17e7ab7e522e07f4024589217090dca4b838c8c85"
-    sha256 x86_64_linux:   "02684fac023ca6b20bc8a4dddc1a03005a0003201455200ba313be29ba4dab25"
+    sha256 arm64_sequoia: "58f7a44814b1a467e4f68fcf719069fe352920ce6e800fc5d60e8ad2e6af1332"
+    sha256 arm64_sonoma:  "ceb6cf730de48b1f6eadfc3784060f0b6ed437c3a4fcb7f991e75853eb0d8295"
+    sha256 arm64_ventura: "756fa1c1b080652bc6654718c11f5955b1a674b319eb848609e0416415a0cde1"
+    sha256 sonoma:        "74e6ebaf66605da54399207a4f083833b39a90f6ff9edb92c82673f874af5e09"
+    sha256 ventura:       "cea97da9e5ba92d5d02fb688cc72bf698f245e5d849f44f2d3419f64f1ed5000"
+    sha256 x86_64_linux:  "5e73f288cbe0d9d1bd8e35b1782593ab8ef268d41bd05e34913bc63678d926d1"
   end
 
   head do

@@ -4,16 +4,15 @@ class ExtractUrl < Formula
   url "https:github.comm3m0ryh0l3extracturlarchiverefstagsv1.6.2.tar.gz"
   sha256 "5f0b568d5c9449f477527b4077d8269f1f5e6d6531dfa5eb6ca72dbacab6f336"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f169a0f7a1fff066bdf267b67b46595ea0da8fb157af360cb3e01fe6ef3b1d51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eef6247cb3184212f0cecd7f0c7795a56e53c67a19470314c17e4ae50d8f79cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef4852ea2709ac8d635cf366557669d9d0ab30fafd43fc73c542e29b1a7c1209"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1480cb0931ab9a63632b6a9f09c60484f4096f50db9692b3bdc40fafd800c937"
-    sha256 cellar: :any_skip_relocation, ventura:       "3595f0dfb0b4ceacbab89fe4a037d19bbd08b560d0e6c4eaafed88f05401263a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97df796fd86bf3cda4b8722898be68d047334b34b642f90366b0d979d350695"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07d5950507abddf2124e3327888d40a80fe013caab73fcb3ee917258cb541859"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "388031e9b2d1cc1bb1769b5ff6c0dfc2970d331ef77b773e9c91e09a1c9b1c03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b97be35fd8b8f65e9279919a8591b68ec203d62bca48a770c18e7ba68df773f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7003ca22244c8eb39c0ed2d364467258633fbf667ffb620e3de6e2e8abaef933"
+    sha256 cellar: :any_skip_relocation, ventura:       "f56056378bcb02706ac9521a8a23bf58c4317d4c8289e1ea68a4231581d87e40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b595a9f2511b3993c121584da5ec45017388e0d1cb680000f070a36e05e5a0a"
   end
 
   uses_from_macos "ncurses"

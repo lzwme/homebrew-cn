@@ -4,17 +4,15 @@ class GetFlashVideos < Formula
   url "https:github.commonsieurvideoget-flash-videosarchiverefstags1.25.99.03.tar.gz"
   sha256 "37267b41c7b0c240d99ed1f5e7ba04d00f98a8daff82ac9edd2b12c3bca83d73"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a811dc4868f63871e793262bdc8e600c4db0c7cb2d765185cb3c9a9cd6c169fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad7d390da6c1be03c3de2e092694f00b52c9ab7904bd0d6077113a144c7cace4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d868b0de04638b31496b1eade51c9d4c482d2d3dc96414a29e5b32e93fce112"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed15861be06bfdb23115de813dc02c7518d4c1f04ecd47c6fe01e3ecddd25de4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "36c2d69e934ed8768b4f826acb7a644e88a33de80b1394dbd858144c8e8a1ad2"
-    sha256 cellar: :any_skip_relocation, ventura:        "0211c7949bc8379c91fd941e9880e5932d5e4c33caad811a98239ab6fe4fcc08"
-    sha256 cellar: :any_skip_relocation, monterey:       "de42f123f13f8e838ea63a756015eea195ac1817637a85a7cef66e38a2e94b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34d196f6695aef76cf0d3fb4db79f423c4a4987963e0f9fdf91d40236d044c09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e9585360bd6c0eedbb61d69471027f381bb98b90ec603d27e6054c070ff0bcd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c98e92953a3439040ea3927924daf3752535f29b6f090d7110f2f4f27cd07aec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5250458e7b842b0c47b8a0bf82d080088f1a15991b08b7c4b6b54a1af2694ecd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b85cf6d7f8b77d4c8e49a4229bb1f65dbd7d5bdf46e278dd6222eb30e002ade1"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b38c8850c54efd5fcec94048eb5e35452647c1f85d2852f49d312ec4e120bd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc6d8ca49c01ff7cf2af1d97ff3e287ee30617b40bda0db332f794768cdbdca3"
   end
 
   depends_on "rtmpdump"

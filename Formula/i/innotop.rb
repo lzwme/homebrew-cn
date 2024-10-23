@@ -4,18 +4,16 @@ class Innotop < Formula
   url "https:github.cominnotopinnotoparchiverefstagsv1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 9
+  revision 10
   head "https:github.cominnotopinnotop.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e071814f6161dc4eaa06cf898fa9862706a1343b9bec56c90e579c181d5428b8"
-    sha256 cellar: :any,                 arm64_sonoma:   "85d95a6535f9faee3b036381c8bbc025c00a3bcc11e2c347ba192bab5234c8b6"
-    sha256 cellar: :any,                 arm64_ventura:  "4bf05ccc4fe1ac5987fb1168a42305582784f511649a8bc75d757b0eb5aaf6c1"
-    sha256 cellar: :any,                 arm64_monterey: "b35348e6b4f2b95fb7f5ff02ca5fb36bacb2eddfd85e84109563c25d1769c743"
-    sha256 cellar: :any,                 sonoma:         "7a66b736dd4226d3ad4f98627a1b7fb79cfeaa1f2cafa6826cea701ed3697b30"
-    sha256 cellar: :any,                 ventura:        "d948152a68a84aa2e82d18d8b8b182bf206d161d0b5f9ff1482c2082fcf48a0d"
-    sha256 cellar: :any,                 monterey:       "c5e9dfe2530c6c898db115ab583987749cd60f4a8d82726b6028c71076533e00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8198b82e42c0544d11edc1e668830ec0c84af94efc06694c9390b901f49c15bf"
+    sha256 cellar: :any,                 arm64_sequoia: "a17005507753da73e8a13a96b378233d51dd27cc395eecbbf71fd7206bc40acf"
+    sha256 cellar: :any,                 arm64_sonoma:  "49218a88a5c4b0bc005ca1dd974b408551dacad3514bf86c99635f96da787393"
+    sha256 cellar: :any,                 arm64_ventura: "cf8f414fe93aa6ab94e1b8f56abec847fce802bd9774d64eae50a1fc4dc6e1e3"
+    sha256 cellar: :any,                 sonoma:        "df181fa1cebc759da9f19b1c67977842b505195301a3a37b82f745f8b7217753"
+    sha256 cellar: :any,                 ventura:       "4ab714cc8fea0aa2936abe48a665f2e66ce0516e8dfff847be69b105402db2aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5983d9ca80837dcc86692cb8a9a17963543cd71ad3cb599887cbc47a600840e"
   end
 
   depends_on "mysql-client"

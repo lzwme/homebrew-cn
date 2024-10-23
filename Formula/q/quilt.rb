@@ -12,14 +12,13 @@ class Quilt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "300aaf57449c7c1c30380e5929e87be22f452314aaa4ee70098e9152356a8605"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "502671863bf107d3681e09299effd69c594f030f82aa44213efc142c63ac826d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af866881737fac5051ef085909b232d15486658dd38312db8c22a01c3756ca20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "367878f8dd8271300992bb0f1d0477e72ed4d0ce6803b05b30c85fbbc8d0acbb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e935a3ddbba6609ab5cebc2d17d93350decaf956c79c08364f92cfb697fb037"
-    sha256 cellar: :any_skip_relocation, ventura:        "af866881737fac5051ef085909b232d15486658dd38312db8c22a01c3756ca20"
-    sha256 cellar: :any_skip_relocation, monterey:       "367878f8dd8271300992bb0f1d0477e72ed4d0ce6803b05b30c85fbbc8d0acbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa56add5a120e209251cc06d9e9f08d742fd011d8d590bd65c9cfee13c81d87b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2b6755e89daa3a57fa60ad323cf75e0600cbd35b2149148546d023be74b24a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2b6755e89daa3a57fa60ad323cf75e0600cbd35b2149148546d023be74b24a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "beda4b671dafc8440a3d73d8512d6ebfdb079ec999080db08085f76858d5be3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2b6755e89daa3a57fa60ad323cf75e0600cbd35b2149148546d023be74b24a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "beda4b671dafc8440a3d73d8512d6ebfdb079ec999080db08085f76858d5be3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10a962d1f5d639afac31216ef075e670aedf9b302e3f2fd5d79c9c9e51865384"
   end
 
   depends_on "coreutils"
@@ -40,7 +39,7 @@ class Quilt < Formula
       args << "--with-stat=/usr/bin/stat" # on macOS, quilt expects BSD stat
       if MacOS.version >= :ventura
         args << "--with-diff=#{Formula["diffutils"].opt_bin}/diff"
-        args << "--with-patch=#{Formula["gpatch"].opt_bin}/patch"
+        args << "--with-patch=#{Formula["gpatch"].opt_bin}/gpatch"
       end
     else
       args << "--with-sed=#{Formula["gnu-sed"].opt_bin}/sed"

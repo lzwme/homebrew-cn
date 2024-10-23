@@ -5,17 +5,15 @@ class Help2man < Formula
   mirror "https:ftpmirror.gnu.orghelp2manhelp2man-1.49.3.tar.xz"
   sha256 "4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "302508e981921582b36f4846678b1ea739815f9bcc7b9cf96b0b40b3197ba9e3"
-    sha256 cellar: :any,                 arm64_sonoma:   "cbbe4be42473a8911941a77ab20a064a3e5429c943d8fd55b187008e1687009e"
-    sha256 cellar: :any,                 arm64_ventura:  "c875f5b7412c9b503a3a6c855530d01d014217eba3589e6618b1a0678e0790ee"
-    sha256 cellar: :any,                 arm64_monterey: "e2bc370f6b6e9bed84fc77b6ca5536c545299b63f4898303dcdbc3af7324a13f"
-    sha256 cellar: :any,                 sonoma:         "c7be1329f64b7162d1ae7505f998630f88b58751c84c0240317a77841e250c8a"
-    sha256 cellar: :any,                 ventura:        "d70c0e7c8cd5293d48c2c93071c8262ba9116b257fe85622623c7ab3e61b3a7a"
-    sha256 cellar: :any,                 monterey:       "9e5ca214c3b4bcdf56e59e3c389dc86678dc33c1d9961a5764a8dba8f63cd1ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49b4060b6a6027b81ea7a68db3b32d91d704a55d01bcb1c73e750963259e64f2"
+    sha256 cellar: :any,                 arm64_sequoia: "253c91cfe267b4e6d99516e9b6243db8de63cd2090feba9a411f0de56ffdc003"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fff08f6e2f1e2c1a116771d2cec67f02fd4e5157c5a7468299d625d8708c9c2"
+    sha256 cellar: :any,                 arm64_ventura: "ec4c0a8ad5435ebce1cdcc50850121a465da5d591e02cb3264d0b1ddd367dfd5"
+    sha256 cellar: :any,                 sonoma:        "e7fee7c80e8f8b0db71ed8f91789676f01f0c25ea7a36dddbe6ac4132a371ffe"
+    sha256 cellar: :any,                 ventura:       "f50814222c4bf9afb2f0430b65e058bd893eabd43036e2e8083cb8213b69f10b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2fe8b82eddc849ea8cb7b7c2f5a2452bf3bfb5fd8af84e18f5689c1f6966a02"
   end
 
   depends_on "gettext"

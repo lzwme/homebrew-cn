@@ -1,13 +1,12 @@
 class Hblock < Formula
   desc "Adblocker that creates a hosts file from multiple sources"
   homepage "https:hblock.molinero.dev"
-  url "https:github.comhectormhblockarchiverefstagsv3.4.5.tar.gz"
-  sha256 "625913da6d402af5b2704a19dce97a0ea02299c30897e70b9ebcee7734c20adc"
+  url "https:github.comhectormhblockarchiverefstagsv3.5.0.tar.gz"
+  sha256 "99de5c6231f2495efaecf53db957272d216c652c2fb795c8d30a2f2e490e8098"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d4a7729a5bfcc2f71e04bbcf5d271c63ff768a82558b7389c15c90bf293aecca"
+    sha256 cellar: :any_skip_relocation, all: "48eaecd5237d1af40c892ffbdc72cd7f2e33489c57f0defde3972b261b4832fc"
   end
 
   uses_from_macos "curl"

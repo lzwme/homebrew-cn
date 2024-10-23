@@ -1,18 +1,18 @@
 class Glasskube < Formula
   desc "Missing Package Manager for Kubernetes"
   homepage "https:glasskube.dev"
-  url "https:github.comglasskubeglasskubearchiverefstagsv0.24.0.tar.gz"
-  sha256 "2a3c30777dc21333d07f4cb2b0882823bad99b5142dc13d32f7b700b00abb3f3"
+  url "https:github.comglasskubeglasskubearchiverefstagsv0.25.0.tar.gz"
+  sha256 "fcd6bbb2f964a74834e230db6426f9096b7f6b2f4ae0ce241b4c17a1d15d2c9d"
   license "Apache-2.0"
   head "https:github.comglasskubeglasskube.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bed4bac71a05c4bed2274ba076130e7d95de294b499a73d6cc2ac1d9a0637708"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bed4bac71a05c4bed2274ba076130e7d95de294b499a73d6cc2ac1d9a0637708"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bed4bac71a05c4bed2274ba076130e7d95de294b499a73d6cc2ac1d9a0637708"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d50dfc262768fd3fed1dec5727c4f65f1f049eab58d32db1e03bc2a86510075e"
-    sha256 cellar: :any_skip_relocation, ventura:       "d50dfc262768fd3fed1dec5727c4f65f1f049eab58d32db1e03bc2a86510075e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b52491b8e7f9352eee1e1643b087c1e938e831b2066b13c7e255a05fba195dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26434ed3ab1f2f5945b6fd34a27fc50f784f2aa8eeb70809068f5c951b3a4c4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26434ed3ab1f2f5945b6fd34a27fc50f784f2aa8eeb70809068f5c951b3a4c4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26434ed3ab1f2f5945b6fd34a27fc50f784f2aa8eeb70809068f5c951b3a4c4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "663656e3fe152032e25b9c0bb91e6f51214fcdc7a1d42eca19ceae5c691d548d"
+    sha256 cellar: :any_skip_relocation, ventura:       "663656e3fe152032e25b9c0bb91e6f51214fcdc7a1d42eca19ceae5c691d548d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb9ea281153ed4389e2ba5f4200f50896394ca00095716b691b759833273ad19"
   end
 
   depends_on "go" => :build

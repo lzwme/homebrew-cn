@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH serverclient for POSIX-based system"
   homepage "https:matt.ucc.asn.audropbeardropbear.html"
-  url "https:matt.ucc.asn.audropbearreleasesdropbear-2024.85.tar.bz2"
-  sha256 "86b036c433a69d89ce51ebae335d65c47738ccf90d13e5eb0fea832e556da502"
+  url "https:matt.ucc.asn.audropbearreleasesdropbear-2024.86.tar.bz2"
+  sha256 "e78936dffc395f2e0db099321d6be659190966b99712b55c530dd0a1822e0a5e"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Dropbear < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "99ea6ec88ce13db09061ed158a21799705665cfdc42cdca89143270d05f580fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b065409784d08f2f399e6825aeec939262bdf0f83b55de7b0116dec210215c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ccc4def7f687eefdf87d3a858be0b7a816f1125d0f65177c00e1ac2e089934d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e9de7a77f87fe18ce1854b4fe9f44222ae44c8def0b5f0a4b5121e95a20809f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17249ee6fac027c1d89c516ca5df610788517670677c080bb2544ed837048f28"
-    sha256 cellar: :any_skip_relocation, ventura:        "724b8f22390efad2c3c37cf8fcb6b8955426fdd947c1133385d5cc9256f29baf"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b9dba9e11a11b3cc9a26c6ef8e388c6e98b350ef1643204932ff2e20aab718c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "415ec7081d0c72c66973224e1a8c49f0917b329a2ab54730162600fac88446ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e29395a023ddb759271d39c25e8d617ba5c4289e58fea0209b7271566c4c2e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "017e16888e6f0d05adbade2eee8ac8fa380ed4d47cf3dbb14a139f8274e98bdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "86fb52679bb14e9b71bccc1e1fa720bbd66d30d8c8799f21cf4ab2ab978687a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "001918a57d55adfc29571bb1344a5fd4872e2b05ba0b1bb2ee640c40ecb48c81"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f9dd80d129c81a4169499b49e5492e9f20ecd783cc39a02b6ef1e4d2f0c75d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e27cd4a21c7a4f699ca726bb5d8b5220acb47258e86eca69e5580ea7d0501d6d"
   end
 
   head do

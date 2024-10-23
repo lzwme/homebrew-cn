@@ -8,17 +8,16 @@ class Po4a < Formula
   url "https:github.commquinsonpo4aarchiverefstagsv0.73.tar.gz"
   sha256 "ad5edc38bf004807843622fddbf67bd5ac604fc16e14c2bfefa7b07718ad21f3"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.commquinsonpo4a.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5fe715e649ecfe10e34afa9267f1f701f721928cb46125a1a343d756926c4905"
-    sha256 cellar: :any,                 arm64_sonoma:   "a09fb125ad7fea46bbb7232cba8ce63f55a165c8c77014b9e9289c3eb8552824"
-    sha256 cellar: :any,                 arm64_ventura:  "c9e18ecceb0a7f3ee689e70b86d90db67cc40b8ae971686dfbba769a20ee185e"
-    sha256 cellar: :any,                 arm64_monterey: "93b8d9c3d60e71500d9b55a40a3b15d3254f7f04867f83f5c0bcb61c414f9582"
-    sha256 cellar: :any,                 sonoma:         "825f68c8de8bc9bc154df8f20a2b6473a484b568d2597d58ec8435a0289c7c83"
-    sha256 cellar: :any,                 ventura:        "8d0bf7207983ceda3b02297a1551b63cbb5e1e0ff028c33c36eb09ee31e9175c"
-    sha256 cellar: :any,                 monterey:       "c5c404bf52ca1612f7c5b576ee1873e3ecf36ed200ff97c416eade35eaf53827"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82498f8b16403c22749e9d69831ce23994916e108b48217ace6c8f6f0dae0962"
+    sha256 cellar: :any,                 arm64_sequoia: "afb479bc9624626a1f950a4f201fda2d5e959b59f414b0d87b6a6e8cc2baaae4"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d74dc1e677bfaf935771544981f7f44ffdd3b5f661e0df07748e5c71849420a"
+    sha256 cellar: :any,                 arm64_ventura: "7a4016850542e5ab42173906e8ed86d13fe971b7161103ca49abb787fbdad05c"
+    sha256 cellar: :any,                 sonoma:        "aea5106a47029e857b9c5ec0ac0a87e87b4cf7843717251df7b41a0461b84a34"
+    sha256 cellar: :any,                 ventura:       "b0c068aac3d53b27fde2125a35bc474b019e5fc3cee5102d1c2b0b3a32a708e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c667b5f9d44d0d116b73b0524d100d362aa202a414c69ee6ce06f68ae9ae0f70"
   end
 
   depends_on "docbook-xsl" => :build

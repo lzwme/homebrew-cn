@@ -3,17 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagescaa32af850b170bdcd05328622daef7e356ec37da9b0f04626e20970c164e157esphome-2024.10.0.tar.gz"
-  sha256 "a74480529d4814214132ae68e665bcb37ba41a7cd34cd6c0e2e0a0d538c43c1a"
+  url "https:files.pythonhosted.orgpackages5d668eb737616b90caf602789418749f6d27ddea3524a4cf438738acc985618fesphome-2024.10.1.tar.gz"
+  sha256 "b3ef72a2a38b58251349e31a1b71cc0c8ea4c1f8793406fe9cb0c4eea1b23cce"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fbd7ec317b3de1feab28719312d9e60237a17402c8ad931a148e0f5c2605bfaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "d30b4da54c0a3aec77c770e70adb9c7039c76b9f9ce3973fdab2d2eee9d3792d"
-    sha256 cellar: :any,                 arm64_ventura: "e5bd9fb39db391db7bb2a6fda5e179b0e012e396368dd485e31426be7ef43aad"
-    sha256 cellar: :any,                 sonoma:        "365acd1f6f9576be16945bd4df8a5fc546cb0e431687a1f0f6d9d83d484eca27"
-    sha256 cellar: :any,                 ventura:       "5bf9320e5a91c487fd462c439304d173f76b6cd3107ad22716276f6d33e56d4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5340f3dcf28147700d36bbe6b05b237cc717a66bd8ad3ceb5961e8b82e7b49c7"
+    sha256 cellar: :any,                 arm64_sequoia: "95522216f9187003f7e0076c0e2b8180454059f42ecd3ad2f74d4b65106c9749"
+    sha256 cellar: :any,                 arm64_sonoma:  "9156b8968476eb4e859056767967e2dedd494f7a6454c7f93fe39ef06cf5cbea"
+    sha256 cellar: :any,                 arm64_ventura: "ea28b5f8c7ce75880ff59b681a2f8af423808c9411817f00b7ee944da5214818"
+    sha256 cellar: :any,                 sonoma:        "c6c53423a43d115ee85ccbb4c56e6c06c28441589e87012033cb30f2c91fdcce"
+    sha256 cellar: :any,                 ventura:       "ef21815f3927261f6ffd6084e376580b24b5bf1d58dd7a446bd0a000790266ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2263cd3a3ffd6df672cd89f33303577ac6933684f6667ffabccd5bf2d3c82902"
   end
 
   depends_on "certifi"
@@ -67,8 +67,8 @@ class Esphome < Formula
   end
 
   resource "bottle" do
-    url "https:files.pythonhosted.orgpackages877eeae463f832f64b3a1cb640384d155079e7dd2905116ab925e9bb04f66e75bottle-0.13.1.tar.gz"
-    sha256 "a48852dc7a051353d3e4de3dd5590cd25de370bcfd94a72237561e314ceb0c88"
+    url "https:files.pythonhosted.orgpackages1bfb97839b95c2a2ea1ca91877a846988f90f4ca16ee42c0bb79e079171c0c06bottle-0.13.2.tar.gz"
+    sha256 "e53803b9d298c7d343d00ba7d27b0059415f04b9f6f40b8d58b5bf914ba9d348"
   end
 
   resource "chacha20poly1305-reuseable" do
@@ -137,8 +137,8 @@ class Esphome < Formula
   end
 
   resource "marshmallow" do
-    url "https:files.pythonhosted.orgpackages7040faa10dc4500bca85f41ca9d8cefab282dd23d0fcc7a9b5fab40691e72e76marshmallow-3.22.0.tar.gz"
-    sha256 "4972f529104a220bb8637d595aa4c9762afbe7f7a77d82dc58c1615d70c5823e"
+    url "https:files.pythonhosted.orgpackagesb74105580fed5798ba8032341e7e330b866adc88dfca3bc3ec86c04e4ffdc427marshmallow-3.23.0.tar.gz"
+    sha256 "98d8827a9f10c03d44ead298d2e99c6aea8197df18ccfad360dae7f89a50da2e"
   end
 
   resource "noiseprotocol" do

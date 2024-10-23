@@ -1,8 +1,8 @@
 class Metabase < Formula
   desc "Business intelligence report server"
   homepage "https:www.metabase.com"
-  url "https:downloads.metabase.comv0.50.30metabase.jar"
-  sha256 "e7907cd15eb171654cfe0486ad0ddb87dec01628303ae310ff4cc77320c171f1"
+  url "https:downloads.metabase.comv0.50.31metabase.jar"
+  sha256 "a8ea867139fdfa3b17acf293836ede5a0e0b0e1285d2d3989195e5973c72238c"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,7 +11,7 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "798178f1de5a5896fd04a08bc6eb561395fbdb6e272144d1ec17e7bacd914ef9"
+    sha256 cellar: :any_skip_relocation, all: "e7c91edc6177c1a127751ad5d4bae90e67c773d3ab20b58b2ea0060ca512b2ec"
   end
 
   head do

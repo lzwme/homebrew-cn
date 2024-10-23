@@ -4,17 +4,15 @@ class Rex < Formula
   url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.14.3.tar.gz"
   sha256 "027d3042ef940b67590e5989e96f22ae1e67ba744895c5dd3db569c05137025c"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20f59893fa2dda833429d39b23d872855fe7a54c7bc3422dfdb7f04437bacd13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4ed59ecebc57d3c14c8c4556a1ffb351bd1471b4e02675f60b4fd97938da2c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cbae6519c968141a6c04d9ac0c139a81d3877b3b483be31094532d0290a61a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cbae6519c968141a6c04d9ac0c139a81d3877b3b483be31094532d0290a61a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33c3755cd59ff9682953fcc3110d947dc02946f8695682350e9a866fe9d312ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "d431a10b19c69e47309f1576fd60087ebd3ebbf3a8c461c3d6f31262032e1200"
-    sha256 cellar: :any_skip_relocation, monterey:       "d431a10b19c69e47309f1576fd60087ebd3ebbf3a8c461c3d6f31262032e1200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b00c01f568cace9db429eacff7c4fdbfe0e783cc0916de189701453fd32f3de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49854aab380ff396dd1c568f7d1b7c07a20c45605d2bc4291547b78bcd7cbfa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49854aab380ff396dd1c568f7d1b7c07a20c45605d2bc4291547b78bcd7cbfa3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28f9d5c2dccc713ef2932b7729b3f3db7d0fb531296baeafcb172f8edbd01cdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6aa08eababab26f1f6289fa0b9b2972ace6dc5ee1490a7051359b012ae17a1c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "9519ba8a26e671d3f9641dc9c6a9a8f4c2a92bfd706dacdbdd26cd65f5db4109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe7bfc1cc381d522463acac9e58df8a317390982c2281087b5a7448daeafa478"
   end
 
   uses_from_macos "perl", since: :big_sur

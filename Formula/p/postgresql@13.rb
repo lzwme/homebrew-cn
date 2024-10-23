@@ -4,7 +4,7 @@ class PostgresqlAT13 < Formula
   url "https:ftp.postgresql.orgpubsourcev13.16postgresql-13.16.tar.bz2"
   sha256 "c9cbbb6129f02328204828066bb3785c00a85c8ca8fd329c2a8a53c1f5cd8865"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https:ftp.postgresql.orgpubsource"
@@ -12,12 +12,12 @@ class PostgresqlAT13 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "158a9ee506544cf1ecf9af1cf6e1e5ea4b2fa08a2eca9724a087231329eba376"
-    sha256 arm64_sonoma:  "b0071fc3f4501a7754d968d3af954b335106ae8f08865fefdcb697b6e8450a3d"
-    sha256 arm64_ventura: "0ec176f0ebdacea442ad24d6f89c5267907f801f55c3278c3c5e2fbf0f91ddb2"
-    sha256 sonoma:        "df091773afc542362ad28d5f6269b586b7cc9d60669bf37bc7c7315a3c5248bf"
-    sha256 ventura:       "4902b5ecf09643f500fa3103cf2b911f5ef8a8860feade0fdaa7d46971742921"
-    sha256 x86_64_linux:  "b1e4194470387321d0dfc7ddcf072c11ff383941e0501d356c5d046ab24d893f"
+    sha256 arm64_sequoia: "145d3aae678816850467b0e12d0f829693c0f07bac5de41f77e7dda6f31e9055"
+    sha256 arm64_sonoma:  "9f62a95810706df6bf7d7f9e71bfeb1e351b33a0741ce4f05209a19129e207ce"
+    sha256 arm64_ventura: "17b9defacee45a35a715562587237ac0c058f86f76acaff53f69c3badf159981"
+    sha256 sonoma:        "bd5e236f9fb27efac82c555a42a0d3c39e0429e4ade5da6f3e78b4481a33204c"
+    sha256 ventura:       "13d1d9130de9c3fbafb7e78eb433c514d271501cfbc16eb708004e34265f30ea"
+    sha256 x86_64_linux:  "41481352184d8be652457d8b9f442afa22b42be1d38991ec0b70ce8b07e703b1"
   end
 
   keg_only :versioned_formula

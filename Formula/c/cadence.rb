@@ -1,8 +1,8 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
   homepage "https:cadence-lang.org"
-  url "https:github.comonflowcadencearchiverefstagsv1.1.0.tar.gz"
-  sha256 "67e2db6e812e87da43193d89a99ae140ec282156debf375cd67ad3236b1cc204"
+  url "https:github.comonflowcadencearchiverefstagsv1.2.1.tar.gz"
+  sha256 "650969954075e63323d7cfdb5ad4aac5cdf96ba03110117133dc6ad6efd81b1b"
   license "Apache-2.0"
   head "https:github.comonflowcadence.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Cadence < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1f12e107d96cac65debbf9bb2d4a986b5de9beb5b419f502ed2e8e652c2db4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1f12e107d96cac65debbf9bb2d4a986b5de9beb5b419f502ed2e8e652c2db4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1f12e107d96cac65debbf9bb2d4a986b5de9beb5b419f502ed2e8e652c2db4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3789a923e6206c7c5fcafcf02044142ca1e8cc0fc32a023ba98556d8829582f3"
-    sha256 cellar: :any_skip_relocation, ventura:       "3789a923e6206c7c5fcafcf02044142ca1e8cc0fc32a023ba98556d8829582f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef37008fbd2a488747471d1967de2eb6ea4ef39d50750e587e9b3adb61027fec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620788649bcb56931a3abc072a3dcc88b412dca884e0c8a247d10053e0fd73f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "620788649bcb56931a3abc072a3dcc88b412dca884e0c8a247d10053e0fd73f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "620788649bcb56931a3abc072a3dcc88b412dca884e0c8a247d10053e0fd73f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a4692236874141ecdf43de812c119e12145271cfde7349bf408b5af7ee85e78"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a4692236874141ecdf43de812c119e12145271cfde7349bf408b5af7ee85e78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a5879690e712f51e7852d38fd68a4e38c7f91adb782b223855578bb2826aeec"
   end
 
   depends_on "go" => :build

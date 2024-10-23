@@ -4,6 +4,7 @@ class NotmuchMutt < Formula
   url "https://notmuchmail.org/releases/notmuch-0.38.3.tar.xz"
   sha256 "9af46cc80da58b4301ca2baefcc25a40d112d0315507e632c0f3f0f08328d054"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
   livecheck do
@@ -11,14 +12,12 @@ class NotmuchMutt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "32096e64265140be4430d5c5bed09c2f23c7758a07b347556ab76bc42717debf"
-    sha256 cellar: :any,                 arm64_sonoma:   "a97fab20e7c81079f03221d342cf9ffb337d707cf1fc2aecf62701f4c8fd4728"
-    sha256 cellar: :any,                 arm64_ventura:  "c12fcbb4288c848b59e8ac48617ee928afbd665cc3248d4d2ac2e6f09b593690"
-    sha256 cellar: :any,                 arm64_monterey: "e5786019af8789331d40ff9fb9a4c46dda6f87b7abdfe5db90a71e9040ca6d81"
-    sha256 cellar: :any,                 sonoma:         "657f1ad5b9745b42ec3a2032649be0cb4efe672ce769e0b3fb1a79e83b884a06"
-    sha256 cellar: :any,                 ventura:        "8c78f44d4e17370507862ed51fd8bb5d9d21179936f8d4b19cbac4545a9d65ef"
-    sha256 cellar: :any,                 monterey:       "2347f01ea978ab5b3a02b29fd22477b92e1ec01d638645ab1b10b566e19299bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac3f56a93fa7667eabf2b95a59ed431ea30d81cbe9fde8bc673eeda2feb76eda"
+    sha256 cellar: :any,                 arm64_sequoia: "f8e6267e15ba67f6952b2af6f7b7a544ad07d4464c710b659f93dafcbe91a171"
+    sha256 cellar: :any,                 arm64_sonoma:  "23020e1c1bff402445cdd9099bc0ea7395b6d64c1c5c8dcd25955ac00b9b5a97"
+    sha256 cellar: :any,                 arm64_ventura: "88995f4ddbd5790dd5f4dfdb3fb922bb4c31d1fc0b8ba69c4e80a0c052848d41"
+    sha256 cellar: :any,                 sonoma:        "f63f141a9a62d1245784c09573d7ccd2d19f385c4f1675a657ba75b227e22a2b"
+    sha256 cellar: :any,                 ventura:       "a95b08d75d12c468eeb8c6e256db0e654b1b348ceadfb4475dd53a127c40891f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2bf3fd1b806f84210edbfd26c718506ed9c6c3af7e93bf32c1c15b61856899c"
   end
 
   depends_on "notmuch"

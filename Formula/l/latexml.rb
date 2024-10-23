@@ -4,6 +4,7 @@ class Latexml < Formula
   url "https:dlmf.nist.govLaTeXMLreleasesLaTeXML-0.8.8.tar.gz"
   sha256 "7d2bbe2ce252baf86ba3f388cd0dec3aa4838f49d612b9ec7cc4ff88105badcc"
   license :public_domain
+  revision 1
   head "https:github.combrucemillerLaTeXML.git", branch: "master"
 
   livecheck do
@@ -12,14 +13,12 @@ class Latexml < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "040e8dac4270f6fdce06e02f3207b299f42bc7dca89fc62ec5c301ca88e73e54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a351624c5d9d2bfd7677d0ffd6fb668e4c54e275cd4c982cbffb79e4926bdb7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de88d8e11f36af59d1204faa0f8320be926b0defc32181a54def19adfbdd6996"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "006ca6a54f04c5cd277b0a344f875239c4f6f8b93d14b5a128e9e20d5f6217e3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee8c922049f9064789f168fb6dd8a3e228742d0daa0630abb4739670ce499cc3"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3c4eefb90a0231baad14a534f7f2f88ef0f04797cc6dcdc19ed569bc3a39dea"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8f5ef16a02f7149ae90fccf463fc96ddcabf8f9c373a85d07df575755b8d6af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "655b5fc8ce93e7695cf0188242882d7c65c3f11283a5288b3280ce1db0b13832"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a37c6fd0d637c43e26e452ceb11ae7dcb92c395fb857a031e49530e3cd3a1f14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb545c7e7242db92803f0576ed29431209e64bdfccd0247a6d23afa5cc39cd82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e38b026b0b334cc52d75564b715319a30001d6399acd836d19c7024d98ee0372"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fdb835e5e6e8f1c7036f8660d177b7d1010a6409734f2171993f7a76ff5a32f4"
+    sha256 cellar: :any_skip_relocation, ventura:       "b2273557c72715d4b7705c008f0baf9c6c20e5e2cb91fe35c26246e9bc452f82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ccca1cfac575c937655ad5ae0482606378c56aa463d303a91493983727f584f"
   end
 
   depends_on "pkg-config" => :build

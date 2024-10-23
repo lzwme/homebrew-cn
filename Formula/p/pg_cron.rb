@@ -4,15 +4,15 @@ class PgCron < Formula
   url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.4.tar.gz"
   sha256 "52d1850ee7beb85a4cb7185731ef4e5a90d1de216709d8988324b0d02e76af61"
   license "PostgreSQL"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "761f569a42613c25ad934f27d9a33700bee8fae46611cf65afeb44c2e94e7490"
-    sha256 cellar: :any,                 arm64_sonoma:  "37b2a1792f507b0c9056330b9692b020c051990c267796206d9a49e323e434cd"
-    sha256 cellar: :any,                 arm64_ventura: "7cbf1d31f5e7b621db839a14a0769870dbb9f438b3b435bb5346976909f41974"
-    sha256 cellar: :any,                 sonoma:        "0ee4c33e3afc5c2938a29a01f7e1c1796d004799c85e916a02e68caa9f75631d"
-    sha256 cellar: :any,                 ventura:       "b661444235d90028484e30f5c2c5482f2ffb37c411589e2b47cc2d29f5f57361"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716af477c814e3dc4fda5bbaf25b11a278b0ae93fdda8d5ebd37e1c0c12e5bb8"
+    sha256 cellar: :any,                 arm64_sequoia: "0e3405e81c0a9cd72737ace18b03c7bab3f628b2eecc90dfee060cb11fcc8f2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "fcae9666effa620d2671ddac687d6278e9a4cb37377045db37c57b78b1bc05d1"
+    sha256 cellar: :any,                 arm64_ventura: "2e3e52857674d76f7597b01179bfcbffec3c3fc07c3d5d26e47225b5839c9c10"
+    sha256 cellar: :any,                 sonoma:        "bbc13204d53324ab935d664ebdf5d93cf0d7309a68ec00abf04311f9e8651b0a"
+    sha256 cellar: :any,                 ventura:       "09dd67e9dc4b56b8ba4288293c8c89ce686f774b5b41fba182f82f882b933272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1bcd0a3e67e633137b4a02e74998e5b1276961bac3c9aba6c8390022f4ca675"
   end
 
   depends_on "postgresql@14" => [:build, :test]

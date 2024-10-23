@@ -4,16 +4,16 @@ class Weechat < Formula
   url "https:weechat.orgfilessrcweechat-4.4.2.tar.xz"
   sha256 "d4df289a9c5bca03a6d4fae006e52037064ef03bad6fbe959c538f3197434dec"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comweechatweechat.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "414ec5dbac1074369636c3abf3f63bd55eebf2aaa27cc1da1843a30a83794f5e"
-    sha256 arm64_sonoma:  "f3e1dc302a9662e1fb11ff5231a202a6b103fa682e35c758148d5450f1c4b564"
-    sha256 arm64_ventura: "c06b518c8f0863961f92d9f534892fb8e2d011bea9f95509ced75b76211834ba"
-    sha256 sonoma:        "b017f4c2c74e7d56dbe6c17e24bbe2d2d54b42bb0512e3ae5e1b86846d7683a1"
-    sha256 ventura:       "01e96a9d1400742e0cd922c9cda4af40dc9bb35b5628057613f5e8bb0705dc03"
-    sha256 x86_64_linux:  "bec747add7e5341a1f76711402538da57090812daad10276f7d745e6bf86bcb4"
+    sha256 arm64_sequoia: "b767a24e99e8f11a445abd015355d06acb78a7c75d202bde85b4af5566019b47"
+    sha256 arm64_sonoma:  "a533bda3a59faeb5aa8e8f283173a42d4c07f38032570616b2370aad40cc76d8"
+    sha256 arm64_ventura: "60c6ab13d61bea9d885f5c1eb38765653b3765804760e5ca5b6160b38437b858"
+    sha256 sonoma:        "5bca5158ce803c901d1db1a5c7c4bb57915852c4a83d9645ee8ac8ffcfe607e5"
+    sha256 ventura:       "503e2083f302de253c49b3eee14a16f914960c733354550f8d916868bd3c6062"
+    sha256 x86_64_linux:  "70d404f12926f8fe36492c2084724ce46720bbb3eb305ce3134cca1efaac98f7"
   end
 
   depends_on "asciidoctor" => :build

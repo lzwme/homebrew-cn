@@ -1,18 +1,18 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https:dystroy.orgbroot"
-  url "https:github.comCanopbrootarchiverefstagsv1.44.1.tar.gz"
-  sha256 "f0fe553e89b4173023cd35896ff9f94100b9605a23455a00562ed329962440ae"
+  url "https:github.comCanopbrootarchiverefstagsv1.44.2.tar.gz"
+  sha256 "e1b78354c21680914a07ed4b856257c83ef873b878ef281bd2d1aed7fcba3828"
   license "MIT"
   head "https:github.comCanopbroot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4214ca804b43deb2916ca2d6427c6f802eeb917d16b6e85b37da58bdaadd55fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adeb4d4a9cb8db7bd051730eb627ab8d8e91a10a99a9997b2d4baa7a6580760e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd86dee631e1fa281b8821c6c63d6b6cc45f11117cb9b0d4916734ed02eb68dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc9da55131b3cc844fcc2b4fcf014d13afac74007d5613f4cf5c38b9326c65c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "927304ad739f5b9c3f3a5ed11296e23c75407fc8f579bf9b83565f0105b448ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b93b3d29a4085e09e4cb304e6ae9c8126d8a2630113c9377da52a8895534335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a94de1e614521fab990d17d959bb71d2351311384517c7ad0b5e83ef8e1fd04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b4ba173f2232e82fe75e3d3acd846d89af63e6b5cb7b21f1aec992234bb2f19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d68abb5035d1de6302fef8705ea8ff8da8a7604f7e4054469f445dfc00e0edf4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "518d3f8ff6274c925f4df10afd26472c54b6af326f83a2f355467f722e90070a"
+    sha256 cellar: :any_skip_relocation, ventura:       "436906062760a229b4a72c07402029e64c7c6980e8199f229b3c96b7e709d912"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b407acb85b70f6fb9077d67d51ab77c77c537595b7a8fd50e1427c72b45cc6b3"
   end
 
   depends_on "rust" => :build

@@ -4,18 +4,16 @@ class Abricate < Formula
   url "https:github.comtseemannabricatearchiverefstagsv1.0.1.tar.gz"
   sha256 "5edc6b45a0ff73dcb4f1489a64cb3385d065a6f29185406197379522226a5d20"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https:github.comtseemannabricate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b6b72078ed6855b2db59381b920405a5025e15ec92624637bfa3ed774f131e4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e05f6bc80f04e8706e082b21e944921b6de7811be3388f099dfb9df298825da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "312093ac29b9f9c387d802172e05fbed5ea0cf0d0ef664718ecc1d7a520b2361"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff3521c9a86fbf51387785500f2006106a11362c5223923e00191db3d43c1d1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17a15ded172e09a0c28affc08139e8f63998fa83004ec234c18d391c85be3664"
-    sha256 cellar: :any_skip_relocation, ventura:        "4db0a30d1cd363a5e26b12cece47161f817bf37374030ced0c343e1c3f462bb0"
-    sha256 cellar: :any_skip_relocation, monterey:       "f658b5d10292077b2862e50d33dd7b4e1cffa40e69fbdda0ecf4841d3338710c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "346086c1c023b982321bab45d20316d1c25e9f47437bf95350a026bc4fd71d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e7f6393112a6a35dce42b72269577f9a625cb161185fc24075afc326e057ad7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35e1dff52eb0bf1df021f9fa7cfe0e1a09df089e6bfc4af6c87e07a0f52db655"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1019399ae72e1e4b793e287b92c2b000b6680f44c60faa2aa63e61683fae70c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f72cb3d2b9f6d42fe8ff2ff6c72d9dab66d5e7a5f867ae384ae06f2477c8e53c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e64a514eafd58745186e9302e4a5fa0d9da4eb9e686ff15ec3fa53c29b9b3a3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ccff5939400556b14677e73e48b33f8794781a62ed6df468bef9d240ecaffb4"
   end
 
   depends_on "bioperl"

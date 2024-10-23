@@ -4,7 +4,7 @@ class Clipsafe < Formula
   url "https://waxandwane.org/download/clipsafe-1.1.tar.gz"
   sha256 "7a70b4f467094693a58814a42d272e98387916588c6337963fa7258bda7a3e48"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url :homepage
@@ -12,14 +12,12 @@ class Clipsafe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "862b39c5e931b4a28547bacfbe6eb131bf50c16bb7457ddeff56011fa30f271a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91b31f7605e795f36954fef299c34ad311f4fef9027c17a5b1aca9b1857a90a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33aef7e7318060323a89a5ebed54c1d5c7e43a9b619cc53754861d4657945b04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3d6523aefd213badb6fb3f1e7a86e30fd5b55ea8e3d5f47dc8f81295c7ae51a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c2c34da679ba2bfe1272ef889bb9c3b9e3903f283d3a0172bfd5880905a7061"
-    sha256 cellar: :any_skip_relocation, ventura:        "75d525db9a9a87535939f4ab93da60fc9556b840215409c9638e0c786e93642f"
-    sha256 cellar: :any_skip_relocation, monterey:       "776c8b8c979c2036a3f4935632657472efc166fb8172569b5bf13e4edb64d699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "482bf9166e3c141f09074f15614b2b04c19ea49b4fc9e1ff773b922563100d2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f89dd5bba339827c6fe702e1bb88c77ef5bd58e30b464129c7ff2e6b72d2120"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5ae9bff8d772fa615a3e159c320a243211726b81664e11def14db996a23d6e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "289ae273376bacbbf897381fef5c151aad366d4e1ccc1bcbf6699301b01674bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8281bce81f78a416ee70c5fb1df8c86aea559c868576110c08734923e903187e"
+    sha256 cellar: :any_skip_relocation, ventura:       "6625778c29a89af7ba98e2eec0e67aba28c2cb47e485580eca23ab1fdbe3f7db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bd51459f433734d20a9d13266afbbf23ddd6603b95f35818387d507de902205"
   end
 
   uses_from_macos "perl"

@@ -5,6 +5,7 @@ class Imapsync < Formula
   # NOTE: The mirror will return 404 until the version becomes outdated.
   sha256 "b85853c676940cfefdde2b1fa45ffb4fc7780275c32f8b8deb353c8a063e1051"
   license "NLPL"
+  revision 1
   head "https:github.comimapsyncimapsync.git", branch: "master"
 
   livecheck do
@@ -13,14 +14,12 @@ class Imapsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8517e7483d98d202a4e7d403b31bd5324f6709b33ec7472f16c492ce56cc7e26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8edf209e49e0f273a7957fcdb5a463c92a815b8ba0e7e0c4555d2df638c4e43f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f96bcbd8aa6e9722ab99ae734ab8d0d3d31eb7bc146087f80a231b6b892476d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "214decc2f2c614d9d965fcde0a6cd4012185050d6594018b4c60ed8dc21c8eee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2792cb717bf0bfb14b3201ca35210bb73c468c1e837876e6036b0233cc07db71"
-    sha256 cellar: :any_skip_relocation, ventura:        "231e639c77b7e96090239390deb489042fb95732dfa05d6685207c83ef958aca"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8365356e611c663d8633477157ea9bc340788570faac7a04cd808a866188e88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6ad6d83c11f4cfb2dfcbc11796de7b07909f0904c4541cdf749a6243396f69e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "960856f358c0d1426a2c292f489a1260c9fbf43f8129fb54403714b4375c0429"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4004298124fe2313df06859f011a236d032e989476c4a33802b7ef053f8f789"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "05b3412162cd311bf3a5ddd78d6bfcea258eb8435a13990058f107e1ada5f2f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0641b76b15aca5a1f6c08dcc7c8a36b0dfa76a4d5573a4f690e2f837a3cbc28"
+    sha256 cellar: :any_skip_relocation, ventura:       "75f700341b793ed2b70dda1e545506fca9df3a7d4eb58fc3390e98917c739671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e8fd22ccf3708f6bfaf8f0e9718c596f23b6da13787e7b2b5adbccb07c0624c"
   end
 
   depends_on "pod2man" => :build

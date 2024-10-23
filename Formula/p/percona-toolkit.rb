@@ -4,7 +4,7 @@ class PerconaToolkit < Formula
   url "https://www.percona.com/downloads/percona-toolkit/3.6.0/source/tarball/percona-toolkit-3.6.0.tar.gz"
   sha256 "48c2a0f7cfc987e683f60e9c7a29b0ca189e2f4b503f6d01c5baca403c09eb8d"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 1
+  revision 2
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
@@ -13,15 +13,12 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "b8b8f01e01eeda5d59a009df6f4045076123b174d50c9db1a5ccfb6d9c744530"
-    sha256 cellar: :any,                 arm64_sonoma:   "253a0ada81a5be15993314ed1d761cfdc7c88340c23a78ef2c2491a158d7bc8b"
-    sha256 cellar: :any,                 arm64_ventura:  "14f7a30244e3aadd3e155d2e3d9d61449c268fd13f90002cb67fb933ab6c795d"
-    sha256 cellar: :any,                 arm64_monterey: "dcf0182a7812e2be56d86eba45f3591bdb870205537812a7ae8ef66f11593a7a"
-    sha256 cellar: :any,                 sonoma:         "9c80e8122754a1f5f3e81470cb65bc2bb17e9cd7cd7b6f9fd533234d8ee2471c"
-    sha256 cellar: :any,                 ventura:        "337b5b24fed8ed055b48bbff8669c25ba6cb24cfa5ffd88b03b4e91d6540a326"
-    sha256 cellar: :any,                 monterey:       "3b5cb112c48f8d53f4d7c35b85072a248dbe9d8bea5d4d047aeb3052248f5253"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d300c45095b1a1f61220eed15243b8fa3aa8bb62e93837fd7be546f0dc9d6c12"
+    sha256 cellar: :any,                 arm64_sequoia: "a1134b153a117ab438762c198f47170b24eb8b09aa4bc5eecfd0c5511dc6e8e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f0de6236a3b694a6d6789fd33546ccbbf7fafd3926f6c428693c67bfba1c6de"
+    sha256 cellar: :any,                 arm64_ventura: "b2946e3784bab092642da4a5031e9ca0607accd6952584d026c5b00b46e2bee6"
+    sha256 cellar: :any,                 sonoma:        "6d42bf7568d502d97272e1ebbf7a3cf5c7b996b46d028310acdcf38ad0cb601a"
+    sha256 cellar: :any,                 ventura:       "7f01e906b9474648465bb533e93ed918b27f295e6ad00b056e0ce03b1687c829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ebe3d5dc418029eb174269d47e4b2d7f74bff8581f11653b5de8b48a6514a00"
   end
 
   depends_on "go" => :build

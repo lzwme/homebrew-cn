@@ -98,12 +98,13 @@ class Bash < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "066b7eba204091b70860d2f17d0dd65201900b3e3ca32de87a746ed1baf13332"
-    sha256 arm64_sonoma:  "bdd38f4c77fa9684697ba3b6b1c428f36271fe5e8b8d202ff85c0a4e49e79d2e"
-    sha256 arm64_ventura: "5cb55d97e9fd0f7c927092fb06378d1093d80750265ea0fbb54aebcce75c8bea"
-    sha256 sonoma:        "f054309f0c7f7f403697f7c66032c783ce8bf39e72305db284bcb59d19c1fabf"
-    sha256 ventura:       "95ec9564b680f8273924315288be760c40a90b73f8e1d87965a0a87ab5396a0f"
-    sha256 x86_64_linux:  "4b18fa19b1a009c863e3858d4dc2efe96e586d72f441b4eb31428e624226eb7b"
+    rebuild 1
+    sha256 arm64_sequoia: "bbfa520d0ddc11d3230c85d3a542f1665d52e461dad651adca3e372939d80763"
+    sha256 arm64_sonoma:  "6f41bcb71005164c1c72f4117d2635d63bbfa4a8e01a599ad776e68b5dd7b3fa"
+    sha256 arm64_ventura: "93bf8f67f2a81606400d36057373d40ba8e78e13f6df52d0d03d99e811c8b965"
+    sha256 sonoma:        "2889699aab77b51ad10ebceb566b2e35368b1bf8e423e40452cca0482e06da85"
+    sha256 ventura:       "8edad046fe3f173f229ad667aa97c819a7491bbf716d19caf2924b0892412994"
+    sha256 x86_64_linux:  "cf656843709a32e900c8e4e971cf0d0c3c0c568215ded674b1fccf5b7154f97f"
   end
 
   def install
@@ -115,20 +116,16 @@ class Bash < Formula
     # Homebrew's bash instead of /bin/bash.
     ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
 
-    bash_loadables_path=[
-      "#{lib}/bash",
-      # Stock Bash paths; keep them for backwards compatibility.
-      "/usr/local/lib/bash",
-      "/usr/lib/bash",
-      "/opt/local/lib/bash",
-      "/usr/pkg/lib/bash",
-      "/opt/pkg/lib/bash",
-      ".",
-    ].join(":")
-    ENV.append_to_cflags "-DDEFAULT_LOADABLE_BUILTINS_PATH='\"#{bash_loadables_path}\"'"
+    # Allow bash to find loadable modules in lib/bash.
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: lib/"bash")}"
+    # FIXME: Setting `-rpath` flags don't seem to work on Linux.
+    ENV.prepend_path "HOMEBREW_RPATH_PATHS", rpath(target: lib/"bash") if OS.linux?
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+
+    (include/"bash/builtins").install lib/"bash/loadables.h"
+    pkgshare.install lib.glob("bash/Makefile*")
   end
 
   test do

@@ -4,6 +4,7 @@ class Kpcli < Formula
   url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.1.2.pl"
   sha256 "86fc820bc7945cd9b577583efe4127565951268902860256ceea100795ddf23f"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1b1b125eaccde0591df6ba5466c7b8cac603fa10a9feb52259675a477cb3499b"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f87120e6d10687726c614522ffc22cf6a901e65734f40044756ae508c8802c1"
-    sha256 cellar: :any,                 arm64_ventura: "bf1547ebf1f3b46d6e872c17f79580f3025ee33b70903a56b47f53747b45a80d"
-    sha256 cellar: :any,                 sonoma:        "da87e293162f2e51b66c6247d7d9d763fbe92cf6f42f6e5b5edccf68055f344b"
-    sha256 cellar: :any,                 ventura:       "226beef4ff77b9c7dfad42a2c844eef911f95a90d8ea7007e53c9bca63c08ece"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede73ef4880f2c1f13dcd9e94b2936d305b1f9dd48b327cae3e13123c98d5bfa"
+    sha256 cellar: :any,                 arm64_sequoia: "0991d50f7bbfb5497cdc6f11451ae4afc7bc401f8fb42c22ed2fe2462f76fc3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0e888f834e59b0f689b1a09b8a57a7b14486ed4e59ab57059148997426a9cfe"
+    sha256 cellar: :any,                 arm64_ventura: "cb5613547fabf4a3c64c63fca89d0dbb9ce89929af775e1b197dae269ad9c9f9"
+    sha256 cellar: :any,                 sonoma:        "3ac9362b734c246ac1712a6ca6ac6add3b4aece7d4855093f6bf60ec16069629"
+    sha256 cellar: :any,                 ventura:       "01e84f2fd256f2da77d888af856f78f44448516c862d567a9cebdc77ec507ec2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb39a1f8a11283be6f40c6c81bbf904cccea244f1ff6db0bb7c71e8da682e2c"
   end
 
   depends_on "readline"

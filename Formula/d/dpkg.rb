@@ -14,14 +14,13 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "f1e77676b025a5421dca15145646afa0b9f790a38701d46d196ef8c7112d3712"
-    sha256 arm64_sonoma:   "04254678226ca3ead8f4b54a575cfb9fbb7cdffaaf88b142ca32b20bd50d8f2b"
-    sha256 arm64_ventura:  "17e4f6e7ab267206354c7510faef21b95381fcf400896f7210ae7962f11d48f8"
-    sha256 arm64_monterey: "90073e1eb0d904942d72f4345cc26f60cb59131492faa0f48681b9d26223a3b9"
-    sha256 sonoma:         "a12b3a07225e4d2942cd167e959229960036d39fe05a3398bac21622e66b2aba"
-    sha256 ventura:        "cee1baa5c095a9c2b9caaf3a4dcd286c1395913de390c353d75c0c5119f0b976"
-    sha256 monterey:       "7cdba20b144378fc51930a184f8d36dcd75a874aac59854c0449a1e6633defa5"
-    sha256 x86_64_linux:   "3a16719f2fabf68e87664c86bf8aefc32a3f92abadaea2bb87770b5d01ea7bc0"
+    rebuild 1
+    sha256 arm64_sequoia: "632c77820685109fab85a7a9005ea0ff31f9b233255ab4576a40dce0dc2d7e3b"
+    sha256 arm64_sonoma:  "c11f60eea8a970e8591cf8eef0d8e54271fd4d6aea50a32a38086de4c4b1c016"
+    sha256 arm64_ventura: "4e017baab049af69ae0b79ea18f06eb535d09ab37670b1742edec4379d8a1061"
+    sha256 sonoma:        "f6b46cbb8a54524252dd02ae1c887a81f872941fb29305c15e05d30076352324"
+    sha256 ventura:       "3e731ec82fe0a567a1737341d6800cd76786ba5c545b146a925f858f7c3db1c1"
+    sha256 x86_64_linux:  "919ea8d9f51c3016d23cd7885ed19b36de0cd9554d4b931b2fa4318969343170"
   end
 
   depends_on "pkg-config" => :build
@@ -54,7 +53,11 @@ class Dpkg < Formula
     # Since 1.18.24 dpkg mandates the use of GNU patch to prevent occurrences
     # of the CVE-2017-8283 vulnerability.
     # https://www.openwall.com/lists/oss-security/2017/04/20/2
-    ENV["PATCH"] = Formula["gpatch"].opt_bin/"patch"
+    ENV["PATCH"] = if OS.mac?
+      Formula["gpatch"].opt_bin/"gpatch"
+    else
+      Formula["gpatch"].opt_bin/"patch"
+    end
 
     # Theoretically, we could reinsert a patch here submitted upstream previously
     # but the check for PERL_LIB remains in place and incompatible with Homebrew.

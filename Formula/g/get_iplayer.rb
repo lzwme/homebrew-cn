@@ -4,17 +4,16 @@ class GetIplayer < Formula
   url "https:github.comget-iplayerget_iplayerarchiverefstagsv3.35.tar.gz"
   sha256 "048ff5f9bd5c6c0f51a05fd0c97eb137029d1950b594384a920c3c674f121e8c"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comget-iplayerget_iplayer.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f1c79e1af002a808fb4f42e10dff6358dfca0838e4a7de585e909a86eb30f82d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa7b3acc3812e519bf72aacdda6cffd84d7f19e07a39a220e4f10d570675d8fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "065d0cef0fb0834145ea1b794f540be554de639404a2849f6f62d425349b3fe2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "065d0cef0fb0834145ea1b794f540be554de639404a2849f6f62d425349b3fe2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80e39e9e718785e13d5f737f8c0ca86b2f64657307d69f05ee08cccb51ca076f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f88939072c58bc84a1badf03210a4fb1eacfb84540eb7296eb7b40218e8e87df"
-    sha256 cellar: :any_skip_relocation, monterey:       "f88939072c58bc84a1badf03210a4fb1eacfb84540eb7296eb7b40218e8e87df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3948f275bf3d1142d6136f8ded46abe7601f1bd8300e8a5f01265770b3de350c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2afa41ecf4c919fd5aa50ff71dd890a03305f169aed50c5291ce06086cfe64a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2afa41ecf4c919fd5aa50ff71dd890a03305f169aed50c5291ce06086cfe64a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a33980bca4250bdd0bbf352c024e87c702e089ea33189e28b1112900b31f4bcd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92c8f4689603554af4b398623e280c7732517face497be8d05a6501c880b3ba1"
+    sha256 cellar: :any_skip_relocation, ventura:       "f0147cd1affbbbbdf25b08a716e2820d63593c29c9fe369434151e33603ff2ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b73722b70117c80021fe22930c045724bb3748154aa05b41db371280241efda"
   end
 
   depends_on "atomicparsley"

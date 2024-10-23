@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https:kuma.io"
-  url "https:github.comkumahqkumaarchiverefstags2.8.4.tar.gz"
-  sha256 "c40e88ad618c5afd88b2458e6a5e5d773345f52a90f970e95ca71b5fcc0740b1"
+  url "https:github.comkumahqkumaarchiverefstags2.9.0.tar.gz"
+  sha256 "21f2353ad23e688d6c87be012b53e8cac9d6e2269a2acf486b6622855b3abe64"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kumactl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a58c775c2d8f8e1b6847407131d31051bf069bf593d944c478c9422a367661d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a58c775c2d8f8e1b6847407131d31051bf069bf593d944c478c9422a367661d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a58c775c2d8f8e1b6847407131d31051bf069bf593d944c478c9422a367661d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04ae22843cb3df97e831db8616de924067b10162224baecb974b0530190af5ec"
-    sha256 cellar: :any_skip_relocation, ventura:       "04ae22843cb3df97e831db8616de924067b10162224baecb974b0530190af5ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ace041a1d4d2c98e98df5ac29b497c8d3e4edfd3ef2762b3fe296d26793ec56c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "726483ebec55231cb0366621452d90ee668c9861f50a0139320698a9d9616b4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "726483ebec55231cb0366621452d90ee668c9861f50a0139320698a9d9616b4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "726483ebec55231cb0366621452d90ee668c9861f50a0139320698a9d9616b4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7c1c6bc51c4133e3c6af9c97facba3c4d393d557061a3888387c5c405afcd28"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7c1c6bc51c4133e3c6af9c97facba3c4d393d557061a3888387c5c405afcd28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73aa97bcbe455e1a84a1f3c3e0f5a5039b402b95567e6e403aa30843f1d024e"
   end
 
   depends_on "go" => :build

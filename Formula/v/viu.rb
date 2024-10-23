@@ -1,20 +1,18 @@
 class Viu < Formula
   desc "Simple terminal image viewer written in Rust"
   homepage "https:github.comatanunqviu"
-  url "https:github.comatanunqviuarchiverefstagsv1.5.0.tar.gz"
-  sha256 "9682be1561f7a128436bd2e45d1f8f7146ca1dd7f528a69bd3c171e4e855474b"
+  url "https:github.comatanunqviuarchiverefstagsv1.5.1.tar.gz"
+  sha256 "bd1bc61367420dcbb1ab46df53a46fd7d35379960c9ab39bbccb7ace5afaeb62"
   license "MIT"
   head "https:github.comatanunqviu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bb007aa864e69c7936012bee5a5fb5db2e0a2137a5203f71f01a049aeea31d39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45cfcb1acbd7e19baa29fcbc4a0bd4027f3bfb7110bef2c31b4efd3e332c36bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7f6b33f89da3410d9cf4f52c8e619b7d47e3389f559ce74711581c5bf6a1e68"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f048a4285ab17c0c33301504ad730131e9a79bd206488851dd667800ec2816b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7450084c0cfc1232993ba43aee5662691c148dd7af2c95859d5e5e05e5b0827"
-    sha256 cellar: :any_skip_relocation, ventura:        "709237cca3b5b6095b1f25458c7cb7e4a512dcd0f05d9b4eb8126ccdda5581b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c7901a2d48ca4300a67502bf3c1237f65cb9c816332ed603aab9066941f08ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "add357623e3978dad925fa66bc8ef8040644da3e9d2f1809bd2e3228f7eb1ced"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "298b762aae2f3d85767ff186854b274d75b684276c91bb9048a17142cb690e04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8518d30560a1d752ced697787cd009e895e13e72c2d07f59413321f487abea9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6bd7363df65a5b02121c0ba2ad2267983432e70a1a4396dbd5dab19a8c4c673"
+    sha256 cellar: :any_skip_relocation, sonoma:        "392053a600ae8d3a24db90f17c2e1ff88a4a00d047c15ec94c112cd193b9d70b"
+    sha256 cellar: :any_skip_relocation, ventura:       "22194f25fab54b3543e2902d2b028d9767a00788bbc69eb4bc9591ee7682aaee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da1bdb071e5a0e473a01d3cfbbbd88546184c20c61b0fd14b9b941b449474f3f"
   end
 
   depends_on "rust" => :build

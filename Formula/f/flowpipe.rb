@@ -5,6 +5,14 @@ class Flowpipe < Formula
   sha256 "0efc8e21eaf5ac57948c8bdb4e772382aa0d45311fd26f2e913f1774228a1676"
   license "AGPL-3.0-only"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c6d8ad459566cddd256ffebe7155c3079b439e73f77bb6a94de3fe61fe02d5d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "117aae11da97a130e1175276b8cfb44a9239d202df63fd4ac38c5b762ada338a"

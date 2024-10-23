@@ -8,17 +8,15 @@ class Xmltoman < Formula
   url "https://downloads.sourceforge.net/project/xmltoman/xmltoman/xmltoman-0.4.tar.gz/xmltoman-0.4.tar.gz"
   sha256 "948794a316aaecd13add60e17e476beae86644d066cb60171fc6b779f2df14b0"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd5bd5e45226df0b0e79d4dac5ef271731c96f568d275d2c4f903d9139c477b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
-    sha256 cellar: :any_skip_relocation, ventura:        "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
-    sha256 cellar: :any_skip_relocation, monterey:       "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5690e906d64cedbdd8f98ba039f638dabac00067996ac5a95c0cb8d19702c8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89d762e0509fc153a86b20d8071f20b86514f079eed038ae78c44bf47d33c53b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89d762e0509fc153a86b20d8071f20b86514f079eed038ae78c44bf47d33c53b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89d762e0509fc153a86b20d8071f20b86514f079eed038ae78c44bf47d33c53b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50221d09be7e7840727a931f8d771b2ee35c587870a070ac0b71115ac8636eb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "50221d09be7e7840727a931f8d771b2ee35c587870a070ac0b71115ac8636eb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f936fff8828e2d4766a273f91521c76e87e3895d43d0a8cc823a18b214f910"
   end
 
   uses_from_macos "perl"

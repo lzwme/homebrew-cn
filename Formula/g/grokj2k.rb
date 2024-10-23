@@ -6,6 +6,7 @@ class Grokj2k < Formula
       tag:      "v13.0.1",
       revision: "4b1049297bfb93a0f2afbe598f4dab92545ee1ad"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "910f7814e8a277f91e2025d3ce63ef893a0c510258b66b1f959e6c92adef49e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "79d6aa802e6bbd05f9419aa0e4e4b1a3983726512950807622ce6bcee03b44ac"
-    sha256 cellar: :any,                 arm64_ventura: "6d8a3a6279986948e768e01ab5ea2664c57e4ddab9223dc020edbff1b2395b34"
-    sha256 cellar: :any,                 sonoma:        "7e673d821b739675a709a6f20920b7bf290f3c5c5993b7c5416218c6decb6f90"
-    sha256 cellar: :any,                 ventura:       "1652e8c9704c3cf12ba9ab4433f0db3654ca3430d21b8eee0bf22ee1f5600c31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4856d40704907d83ffad6b465f99613fbde60592abdb215dfc65f851ecd5808"
+    sha256 cellar: :any,                 arm64_sequoia: "58dfe423810794c2595923d5d9e7abb452dcad85b40b9f4c98749f136a5a771d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f21704c74f8dc06776204ad4c0a58542e98f1547b8d516ba20828d2ac3c57410"
+    sha256 cellar: :any,                 arm64_ventura: "de74ecf571e653a544424ea6d448e84e3ecd461100824e3d33d382dba4fafa8e"
+    sha256 cellar: :any,                 sonoma:        "975512767859e6ea6b65ee19596cd09375d10ec224dc0f3d7daebde8ab03d243"
+    sha256 cellar: :any,                 ventura:       "543cf0939cfe32eb7f35e5c5c26ba0bf85646c261580bba9fb9ce9a6b75ed172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c1c38b58a780f45247ca444fc92540cd0d3a66d95b3af14a789e23d8151f48a"
   end
 
   depends_on "cmake" => :build
