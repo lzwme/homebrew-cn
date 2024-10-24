@@ -14,11 +14,12 @@ class GitMediate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "54dd625814a87c231bc8d8fc83ddb4b3366ca87f068a0a6f63e17ace1e842744"
   end
 
-  depends_on "ghc@9.6" => :build
-  depends_on "haskell-stack" => :build
+  depends_on "cabal-install" => :build
+  depends_on "ghc" => :build
 
   def install
-    system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do

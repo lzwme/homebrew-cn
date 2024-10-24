@@ -1,21 +1,25 @@
 class PhpAT82DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.2.24.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.24.tar.xz"
-  sha256 "80a5225746a9eb484475b312d4c626c63a88a037d8e56d214f30205e1ba1411a"
+  url "https:www.php.netdistributionsphp-8.2.25.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.25.tar.xz"
+  sha256 "330b54876ea1d05ade12ee9726167332058bccd58dffa1d4e12117f6b4f616b9"
   license "PHP-3.01"
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "5c6ac9dc321f619a63214ef06f411814b9aef63fcadc358a7797678a435f31df"
-    sha256 arm64_sonoma:  "32242e41a6ca16b9bd36b1334f5089c3ec1761ed7d0ebcbfaf4b77e50ed9daaf"
-    sha256 arm64_ventura: "50d9e242457d5caba338048ce932ea9139f8929daec36462fe09169e94f201be"
-    sha256 ventura:       "b11395802560d4573cdb30e1b374d3965708d788ccf45e1c43e74962da1f4280"
-    sha256 x86_64_linux:  "72da6cc3c25b29a275fc63a4457c56c8647ea82124175c8de20ec627a872c574"
+    sha256 arm64_sequoia: "815a460e98c01127e2de92f39b9219860fec287bfcf95e1a1372015cc7389815"
+    sha256 arm64_sonoma:  "70e22f4f29171765f249ce5d69765159af94bb3ebb3f1ef87624af975689fed4"
+    sha256 arm64_ventura: "3ef56f4116e4e86a6c1338d80503bdd692bd798d4bdf287e8717549f0f596638"
+    sha256 ventura:       "e05b81a900c25587be83506ba30e9323763712b5c7ac649ae5d82426b8100950"
+    sha256 x86_64_linux:  "128cb92636614c191ba0c877d98abaf536b41cb75ccb6795aab2f4d730926edd"
   end
 
   keg_only :versioned_formula
+
+  # Security Support Until 31 Dec 2026
+  # https:www.php.netsupported-versions.php
+  deprecate! date: "2026-12-31", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
@@ -31,7 +35,7 @@ class PhpAT82DebugZts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"

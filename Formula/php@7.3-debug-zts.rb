@@ -5,16 +5,15 @@ class PhpAT73DebugZts < Formula
   version "7.3.33"
   sha256 "4924cb54e5ecd0c84a6fe723f5eb05141cad9cd210abee42a1dab564867c9cc8"
   license "PHP-3.01"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 6
-    sha256 arm64_sequoia: "6086e17c2ea73561cc6e2cce60c526ee4991e2a4b9fabda28c5e34ae86d4bd5e"
-    sha256 arm64_sonoma:  "f637853bb46a7ce333e94a00cb32dcec62913ce2ec2161702460715d246211eb"
-    sha256 arm64_ventura: "b170a33782c5c541194aff1d99b8f3f134cfc9067cf2b9e5cad4fadaaa2ec923"
-    sha256 ventura:       "6b11a634cb322d43f1609996cf2833b234f2216dcd83cb7c27e24b3f59eafc63"
-    sha256 x86_64_linux:  "cc555cd0387d00bd4ea2dcf43d721b98617cbb1a43324de219ea4c46e9241f33"
+    sha256 arm64_sequoia: "a697f65bdce00c5316190937e27139d990828fcae5e1c065350a1c70168c3583"
+    sha256 arm64_sonoma:  "b7f858771b169ac6325be00b77ec3de9ccbb5c066868f803895d3bbfc52327b1"
+    sha256 arm64_ventura: "188e57b4142a397d7c47faabef19be7d6784b1b8331272ebbd3f9179250ac324"
+    sha256 ventura:       "c7be231dd9043547e9bf0ac0c8750f22a4ee8e1bd8cb09dff344ad62929da8d7"
+    sha256 x86_64_linux:  "975f608194d3aa87c0e2c5c8f8b09c131e1bc0df5c6e3b2ce0c49bf2647706f0"
   end
 
   keg_only :versioned_formula
@@ -40,7 +39,7 @@ class PhpAT73DebugZts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -85,6 +84,10 @@ class PhpAT73DebugZts < Formula
       inreplace "mainreentrancy.c", "readdir_r(dirp, entry)", "readdir_r(dirp, entry, result)"
     end
 
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV.append "CXX", "-std=c++17"
+    ENV.libcxx if ENV.compiler == :clang
+
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"
 
@@ -113,9 +116,6 @@ class PhpAT73DebugZts < Formula
               "your httpd config to use the prefork MPM"
 
     inreplace "sapifpmphp-fpm.conf.in", ";daemonize = yes", "daemonize = no"
-
-    # Required due to icu4c dependency
-    ENV.cxx11
 
     config_path = etc"php#{version.major_minor}-debug-zts"
     # Prevent system pear config from inhibiting pear install
@@ -174,7 +174,7 @@ class PhpAT73DebugZts < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@75"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

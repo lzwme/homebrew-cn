@@ -1,20 +1,18 @@
 class Nghttp2 < Formula
   desc "HTTP2 C Library"
   homepage "https:nghttp2.org"
-  url "https:github.comnghttp2nghttp2releasesdownloadv1.63.0nghttp2-1.63.0.tar.gz"
-  mirror "http:fresh-center.netlinuxwwwnghttp2-1.63.0.tar.gz"
-  sha256 "9318a2cc00238f5dd6546212109fb833f977661321a2087f03034e25444d3dbb"
+  url "https:github.comnghttp2nghttp2releasesdownloadv1.64.0nghttp2-1.64.0.tar.gz"
+  mirror "http:fresh-center.netlinuxwwwnghttp2-1.64.0.tar.gz"
+  sha256 "20e73f3cf9db3f05988996ac8b3a99ed529f4565ca91a49eb0550498e10621e8"
   license "MIT"
 
   bottle do
-    sha256 arm64_sequoia:  "5c7d02e5e38397cc7ac2eaece928ce96086049905abf0be03d44df61fe74f465"
-    sha256 arm64_sonoma:   "1490d262d370565e6399f14557e025dd4d3ccf3e66429aa10752f53767b09396"
-    sha256 arm64_ventura:  "e8ce0af1e523291e56047e1634bb6e708586dc690c015db53284a3acf11ed002"
-    sha256 arm64_monterey: "e24a10fd5248deb0c987e7b275c0c1b6c9616b00edddf190849c205e95d7b443"
-    sha256 sonoma:         "8bf2e26f765f1e145e8f7fba8a9cd869498b867ca7e4c5b5c852248fb6cc72b4"
-    sha256 ventura:        "3640220afb57c9119758f684438af9f36eaeb7b1270f5387683b9415e5cf5202"
-    sha256 monterey:       "2896740b3d373771797a09e29dd1c6a65e64e3f02482295dd395e5dd06460ee9"
-    sha256 x86_64_linux:   "7a0b6480bad985d920b7d2394a05bfd8e56ad09df98b2a3e78bd2e847a3420fd"
+    sha256 arm64_sequoia: "e626538d43446893a19c27979bf5bc759328bad620c7f4b2fec5749163095b54"
+    sha256 arm64_sonoma:  "468740e1514254893cc0152051cc585c58e2198cf5a23f858acbdc77036e1843"
+    sha256 arm64_ventura: "2a11bcd1f34969b3b0bc1c139620f6f6fd292dff88877ac6a8bcc4ff14e1957f"
+    sha256 sonoma:        "f48ec7a32430def92612eaabad4c44a2107ea427457e6403eae124c0fb309114"
+    sha256 ventura:       "21dd2b43f676e1d8258efc200739a496085040c9e12bce1bad585599f9c9a44b"
+    sha256 x86_64_linux:  "b23ec98444cb5163f6f488604afe11c47c76b7e35c28f4aa1e63e0b521679f30"
   end
 
   head do

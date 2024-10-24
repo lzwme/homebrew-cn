@@ -5,17 +5,22 @@ class PhpAT81Zts < Formula
   mirror "https:fossies.orglinuxwwwphp-8.1.30.tar.xz"
   sha256 "f24a6007f0b25a53cb7fbaee69c85017e0345b62089c2425a0afb7e177192ed1"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "308a35cb604f2e3f0e2687e186bbd258f5045facc0d4a1999862a297d6af7762"
-    sha256 arm64_sonoma:  "9e0e0b5fe6f933f70859bfb39bd2cb789b91b6452eb178a96342220acb295f21"
-    sha256 arm64_ventura: "13aa6b8b4ac1a86f37dac4a6a8091796005b631f6c34f7780e24b9b6ff74a7f7"
-    sha256 ventura:       "3365a0c400a21e1023118191acc3cf674385d281859f2a9b44ea9c5a461d02a1"
-    sha256 x86_64_linux:  "c0eb4345653b19c066377c35356c86dd2183dc2c1e7116a6ee0b6876804e9a29"
+    sha256 arm64_sequoia: "f9aac73b0725412323b51955468d31658323ec1597f62683fd187105d803f785"
+    sha256 arm64_sonoma:  "0f248e258ad1003c37bf780204dd7e8d236d25d56c7d754e0b24108304202dc1"
+    sha256 arm64_ventura: "4e459bce3121b16e2988074a216c1c8bf242a47adfe40d7051e086b787637d21"
+    sha256 ventura:       "bbf392dd9473640a4651b5b01f4332f3025246ba3cc89e7ebf9d8b3a87283934"
+    sha256 x86_64_linux:  "cd31a293f24c6295a7e804c4ee80bbf069f55920c5bd2ff4c3eb203437a4259a"
   end
 
   keg_only :versioned_formula
+
+  # Security Support Until 31 Dec 2025
+  # https:www.php.netsupported-versions.php
+  deprecate! date: "2025-12-31", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
@@ -31,7 +36,7 @@ class PhpAT81Zts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -56,12 +61,16 @@ class PhpAT81Zts < Formula
     patch :DATA
   end
 
-  patch do
-    url "https:raw.githubusercontent.comshivammathurphp-src-backportscdffd95a7e107a6345814e3778cde795ad596044patches0007-Fix-PEAR-installation-with-libxml2.13.patch?full_index=1"
-    sha256 "7fc8056131e9fa95fe10430a47f8c6dddf7bce859b046dcbba9cc7aabcc56469"
-  end
-
   def install
+    # Backport fix for libxml2 >= 2.13
+    # Ref: https:github.comphpphp-srccommit67259e451d5d58b4842776c5696a66d74e157609
+    inreplace "extxmlcompat.c",
+              "!= XML_PARSER_ENTITY_VALUE && parser->parser->instate != XML_PARSER_ATTRIBUTE_VALUE)",
+              "== XML_PARSER_CONTENT)"
+
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV["ICU_CXXFLAGS"] = "-std=c++17"
+
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"
 

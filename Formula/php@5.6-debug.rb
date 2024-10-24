@@ -1,20 +1,19 @@
 class PhpAT56Debug < Formula
   desc "General-purpose scripting language"
   homepage "https:secure.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchived0f67eac32713f3fce7a40983c242bec788ca82e.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchive5efb194ea3d54460a321f804140776909de61426.tar.gz"
   version "5.6.40"
-  sha256 "c536f1d8f416b91244126c91982d938c3fe55b8b8acc70b5db425c53b7f8ffb0"
+  sha256 "62708d8f19bf4d7539587a046c4c92a428d7787391682bcd71bec1bf2b0edfdb"
   license "PHP-3.01"
-  revision 10
+  revision 11
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 6
-    sha256 arm64_sequoia: "c4067c7654115f550605e6af66b4b250b5e63b905d7227e027476f257b957a04"
-    sha256 arm64_sonoma:  "643d16f2d4cd8be131201de2a6d66d4687eb799039cdf6129716d27f6f74ca9e"
-    sha256 arm64_ventura: "f03d9b557ca03f611c8f48ad1733a2a830faed2b01fcb578e8c7521cf366021f"
-    sha256 ventura:       "e671700b631f9e541a5376a1759b42b418237ba54ba0f32a87871a9e2e35f602"
-    sha256 x86_64_linux:  "c05c370bb40f445b442c4d270faf28b9479f3ab3862a37a8dd3c32125720f398"
+    sha256 arm64_sequoia: "d03e36a2d54ac57dff32d37bee0ec4246956e4ce2323519fbb44fa548769587e"
+    sha256 arm64_sonoma:  "2783749117fdacdcd2c70e739163f4aeceeebf16d5b1768c2de75b265622e31b"
+    sha256 arm64_ventura: "6f1038cf0b70abd371b47d99af24e318dfde7d49911fb4a531cdeedcb3efb439"
+    sha256 ventura:       "1b02651b0cb25a41b16017321e725f08a9bb87ce843bc286e7e3209a86d2b1f7"
+    sha256 x86_64_linux:  "1a5310aa4daa3ee1fe1a219c4851862530e2d2962fb64a8afeea9637db29a28d"
   end
 
   keg_only :versioned_formula
@@ -39,7 +38,7 @@ class PhpAT56Debug < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -81,6 +80,13 @@ class PhpAT56Debug < Formula
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
     ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
 
+    # icu4c 61.1 compatibility
+    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV.append "CXX", "-std=c++17"
+    ENV.libcxx if ENV.compiler == :clang
+
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"
 
@@ -111,12 +117,6 @@ class PhpAT56Debug < Formula
 
     # API compatibility with tidy-html5 v5.0.0 - https:github.comhtacgtidy-html5issues224
     inreplace "exttidytidy.c", "buffio.h", "tidybuffio.h"
-
-    # Required due to icu4c dependency
-    ENV.cxx11
-
-    # icu4c 61.1 compatibility
-    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
 
     config_path = etc"php#{php_version}"
     # Prevent system pear config from inhibiting pear install
@@ -171,7 +171,7 @@ class PhpAT56Debug < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@75"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

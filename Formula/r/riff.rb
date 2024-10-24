@@ -1,17 +1,17 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https:github.comwallesriff"
-  url "https:github.comwallesriffarchiverefstags3.3.4.tar.gz"
-  sha256 "da157aa6c3ee506cb0398580289673b69b441fed32708d421f0284e237b4a72f"
+  url "https:github.comwallesriffarchiverefstags3.3.5.tar.gz"
+  sha256 "fab34e7d4386003b772bc8c0ab322bf504951d8f50063d61feb140443fbb5144"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fe53aa0d968acb5b03007790bf572081f26eb65c8936aea05ac04c319ccfc2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da7fae8c8f82e6f671885c260146101b3982e5ecf9787a1d13fcf056e6b52233"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2535664b4f878faef779a8a1ce5df936e27f475f6dc5f7d4021917dd3b508a17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bba9251a71c3a200393d3eedacb76b15264a9f862252882469180b790bb0b656"
-    sha256 cellar: :any_skip_relocation, ventura:       "9235021ba62ae7dad3bf21736a414feb00bf3c985bf6992565989a33b0797175"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c1281d97ca180810fc2525875e9d356d2a7021e5413f3ae2a7fbca339806fa7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35bb5a1a837e4f8c069221979187bf6e79d5868fa5141e292aff5b171bdf6144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f0212f9b4f63b076ae034a426e5baef04a7eeea9d28fba51c136e8c6e9dd311"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c5adda5167c53c1faf9b9ebc70896921c8f7f48d1e8fb91f53351b21e7eb5dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a41de4abe3d95a7e72d51a66fd00dc5c719599de6e59827978831a38896f89c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "078eed67eda5f2c6699875105e99de07c5de57a457cfae1cf431277e39e73251"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eed816269ebcbfed70d4e4f895b21143b55df88bf99695c95c6f304cb465cac"
   end
 
   depends_on "rust" => :build

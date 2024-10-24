@@ -12,6 +12,7 @@ cask "via" do
 
   zap trash: [
     "~LibraryApplication SupportVIA",
+    "~LibraryApplication Supportvia-nativia",
     "~LibraryLogsVIA",
     "~LibraryPreferencesorg.via.configurator.plist",
   ]

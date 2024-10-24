@@ -1,10 +1,9 @@
 class Libvisio < Formula
   desc "Interpret and import Visio diagrams"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
-  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.7.tar.xz"
-  sha256 "8faf8df870cb27b09a787a1959d6c646faa44d0d8ab151883df408b7166bea4c"
+  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.8.tar.xz"
+  sha256 "b4098ffbf4dcb9e71213fa0acddbd928f27bed30db2d80234813b15d53d0405b"
   license "MPL-2.0"
-  revision 10
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,12 +11,12 @@ class Libvisio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ebebaceb54777a026f7a0cfe6e3b9282dc40d359416a0a6ab9236ac0faad4d02"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc2b2c30cf2e3df7f21a9b0518a454c1490182f555c32e80db1a944b1323991a"
-    sha256 cellar: :any,                 arm64_ventura: "84ba4a807fe220d9226d6de48f093c3c9eeb68d55d6026cbd2829454b7294158"
-    sha256 cellar: :any,                 sonoma:        "789b83140d9161fe4856e7c6c5dba97dea622c2ed05d736dcb0b99195f21f2c9"
-    sha256 cellar: :any,                 ventura:       "c6a08f0171c8df5718e886f36b8285d8701ecfce6c6c5d439c088f4d69b559fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c864ef2b4a42cb7e3b1b7aea3c8c0c3eb79d4df2de9ac3e1ff747c4d3ba6072"
+    sha256 cellar: :any,                 arm64_sequoia: "2f884941e46d24f5876b22335b23a5e47b281e9d247f0985abcfcb696b541632"
+    sha256 cellar: :any,                 arm64_sonoma:  "39996bb979bce409ea8f627ec91631639b2983088321151be65682eeae68cc60"
+    sha256 cellar: :any,                 arm64_ventura: "d4a544d287a4efbc6a0e64feab31c88ebcdde01638e2be00af3b31435caf861b"
+    sha256 cellar: :any,                 sonoma:        "841ccde30a15eaee84f5a0da8446e76a7e47e9de6647fea95a940ec884ae8048"
+    sha256 cellar: :any,                 ventura:       "02401c43b58709247512e961611253c56f84e574d75983d71b80724eb18e90f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e26c35ccc5e22ce9cce7fcf009c0c9c31a3f44348af3b3655d854d7b7e1726c"
   end
 
   depends_on "boost" => :build

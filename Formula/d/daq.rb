@@ -1,21 +1,19 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https:www.snort.org"
-  url "https:github.comsnort3libdaqarchiverefstagsv3.0.16.tar.gz"
-  mirror "https:fossies.orglinuxmisclibdaq-3.0.16.tar.gz"
-  sha256 "20c641c5a8a6c230c2753eb3e0b1b493810942dbd4b1828a4462bb18a4f43f82"
+  url "https:github.comsnort3libdaqarchiverefstagsv3.0.17.tar.gz"
+  mirror "https:fossies.orglinuxmisclibdaq-3.0.17.tar.gz"
+  sha256 "2adfb70d07611743204db580c6603e2b16b9f5d1d32e5656f3c291995e3252a1"
   license "GPL-2.0-only"
   head "https:github.comsnort3libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ba2920fbcb126b556b281ee8c93ba65674ee4f2f61bd8d15d2c00d51caa20cb5"
-    sha256 cellar: :any,                 arm64_sonoma:   "56ffd6bde4a21115ed0f56b5d885987620185ae3e87023a7d7dc93baf14714c5"
-    sha256 cellar: :any,                 arm64_ventura:  "f4b7323cc11e7757b64ad35cfc15bfe8da536ca53db54fbc142981ed54b2f9bc"
-    sha256 cellar: :any,                 arm64_monterey: "6c728dfaf576071e4d5013f4beb7c3f927f0f19e22f33deda9b643537dfd1168"
-    sha256 cellar: :any,                 sonoma:         "91941c2be144e6da116150841034b3020da3bcaa6592aa077941f0ade9164278"
-    sha256 cellar: :any,                 ventura:        "62b8545946e6e9ab4e4eb2e3905f6fc798cb566a9993b4f9ca38fcfc3597b607"
-    sha256 cellar: :any,                 monterey:       "056783898fb32fe292edb380d238dae45f35e6bd997ebb725789539573c5ce6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85f28b42b340f0c4d5f1b9fd9b569de64b593d8c55170745e71f3b36bd4acd94"
+    sha256 cellar: :any,                 arm64_sequoia: "ff282bb63d1ebd08c2acb847c883851ac3487f2488abb6b8fd3482da1801655a"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc59e4bb69a94ad3acdb3d87854b02d5169f3502881c20b8a32ec56d58161a11"
+    sha256 cellar: :any,                 arm64_ventura: "8a7f4ff2d1e3bdf0d693924afe1d836b601d14459888b4ae2d59c159bcc33487"
+    sha256 cellar: :any,                 sonoma:        "09a56d487e4805fc5e297d34dcad3259ffbfce76f8a16e99b798a27270cab3a8"
+    sha256 cellar: :any,                 ventura:       "eefe2f055bfabeb5c9eb019956858c2d7274405f34892280d8e5988f287b344f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0245b7f5625ff425f49493e4d40e3af288880e6ec8a6d1d872522c1f81f124ae"
   end
 
   depends_on "autoconf" => :build

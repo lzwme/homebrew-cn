@@ -1,18 +1,18 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https:github.comchainguard-devmelange"
-  url "https:github.comchainguard-devmelangearchiverefstagsv0.14.4.tar.gz"
-  sha256 "00c1876ece13c9e808f872cdbf0e0130763913fb79f15f3850c12912d3a516da"
+  url "https:github.comchainguard-devmelangearchiverefstagsv0.14.7.tar.gz"
+  sha256 "a761d60b83d2a83d0bfedba94d8472ffa5b130600c7cf54eeea4f96b53f1e28b"
   license "Apache-2.0"
   head "https:github.comchainguard-devmelange.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6b1ff3fde3e474bade8f3ef8f03e72a7cb2baac7133e8769f8e70a765b07fe9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6b1ff3fde3e474bade8f3ef8f03e72a7cb2baac7133e8769f8e70a765b07fe9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6b1ff3fde3e474bade8f3ef8f03e72a7cb2baac7133e8769f8e70a765b07fe9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a501287f57f02d5e3d203af6c57128641f133bc586a8ba6216de5a0c51514710"
-    sha256 cellar: :any_skip_relocation, ventura:       "a501287f57f02d5e3d203af6c57128641f133bc586a8ba6216de5a0c51514710"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbdb06d4b20bd9d712c668c631d2ca407604c3a2a833101aa94bcde7051d4023"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ae14366bda1f5bff1f5de4d447d577d36b3d7f62d607a1f144be1a373bb64d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ae14366bda1f5bff1f5de4d447d577d36b3d7f62d607a1f144be1a373bb64d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ae14366bda1f5bff1f5de4d447d577d36b3d7f62d607a1f144be1a373bb64d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf45bb920a3742c9eac9063d291e2e729439d64b906218dda0873c7fb71ed040"
+    sha256 cellar: :any_skip_relocation, ventura:       "bf45bb920a3742c9eac9063d291e2e729439d64b906218dda0873c7fb71ed040"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31d36844f4e18a25648dfb693228c57f6799fd0aba9654c6c22ee3daaba14f9c"
   end
 
   depends_on "go" => :build

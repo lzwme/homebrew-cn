@@ -1,8 +1,8 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
   homepage "https:flowpipe.io"
-  url "https:github.comturbotflowpipearchiverefstagsv0.9.1.tar.gz"
-  sha256 "0efc8e21eaf5ac57948c8bdb4e772382aa0d45311fd26f2e913f1774228a1676"
+  url "https:github.comturbotflowpipearchiverefstagsv1.0.0.tar.gz"
+  sha256 "c4d6f3f13de1b9027d2a9a33621afb16beb5b50c5586fb96b4ca1134d2521e92"
   license "AGPL-3.0-only"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,14 +14,12 @@ class Flowpipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c6d8ad459566cddd256ffebe7155c3079b439e73f77bb6a94de3fe61fe02d5d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "117aae11da97a130e1175276b8cfb44a9239d202df63fd4ac38c5b762ada338a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87e668d41968d796e297759ab784fa89014989ee2401438078e4e91d1c7d7fbb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6892b0162b7535f46a1a2f6548c8f8ade0c5414b40bd559370300b087728f11"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b589f0d8df7ebfa9930653bbb3f98e80facfe903c063c2b6d59904ad471068b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "0b3973216a2daeea5e5a4c608846a68fbb081df05f58d30888ec7a255a27c611"
-    sha256 cellar: :any_skip_relocation, monterey:       "bff7212615286e8fc15fa626d650a31624e3e3829e02e92707b216026e53ca9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f15c0cdfc4893aa599df17e330d78e5193a5c11aad2a370b4f055f7ccc674492"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4912a0ba4e81fe164fd5d22f6acaae197cc0d0f809734d1db780ff1117b1ae3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ed17a1667c62c9d95bfda314cb3d183e5e2928123c25d91cbccd5e674b16c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef27cf26884c8478c843590ed84dedf77bf23e29ac8bc949a1abac32d76eefa8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fdf3f14c42a187e5f087743f7acf53e990303555427b3ded146557c828a4105"
+    sha256 cellar: :any_skip_relocation, ventura:       "8096e2502189ee3d8103a398a8c63703e2e5df3edafbee623d3d5216aebab9ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7120e4d132f804a6b37ba253333056e3fe2c47ad0ce0a008da7585d2d89678ef"
   end
 
   depends_on "corepack" => :build
@@ -45,14 +43,18 @@ class Flowpipe < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}flowpipe -v")
+    ENV["FLOWPIPE_INSTALL_DIR"] = testpath".flowpipe"
+    ENV["FLOWPIPE_CONFIG_PATH"] = testpath
 
-    ret_status = OS.mac? ? 1 : 0
-    output = shell_output(bin"flowpipe mod list 2>&1", ret_status)
-    if OS.mac?
-      assert_match "Error: could not create sample workspace", output
-    else
-      assert_match "No mods installed.", output
-    end
+    (testpath"flowpipe_config.yml").write <<~EOS
+      workspace:
+        path: "#{testpath}workspace"
+      mods: []
+    EOS
+
+    output = shell_output("#{bin}flowpipe mod list")
+    assert_match "No mods installed.", output
+
+    assert_match version.to_s, shell_output("#{bin}flowpipe -v")
   end
 end

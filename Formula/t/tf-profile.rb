@@ -1,22 +1,18 @@
 class TfProfile < Formula
   desc "CLI tool to profile Terraform runs"
   homepage "https:github.comdatarootsiotf-profile"
-  url "https:github.comdatarootsiotf-profilearchiverefstagsv0.4.0.tar.gz"
-  sha256 "9f505b980149c8ffe29089f772391a9230bf6527f18ad56eb158305d752e1ee8"
+  url "https:github.comdatarootsiotf-profilearchiverefstagsv0.5.0.tar.gz"
+  sha256 "cfc5b9c68188f3cac1318b24d0b53ba4cae8af325ae5332865e1f0c92905b20b"
   license "MIT"
   head "https:github.comdatarootsiotf-profile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "04527d6579538a00dd90c798782c63527abf3e9439d2fe9dd1ef200ba68a907e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40caf3f66f08e25fc07275866f62f83beb5a181cda8e8a669b5de97adc834be5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55e6cb67d424f1ba45cd147a430d6c8043618af1cd8cd458c7c104b0cd0c1328"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55e6cb67d424f1ba45cd147a430d6c8043618af1cd8cd458c7c104b0cd0c1328"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55e6cb67d424f1ba45cd147a430d6c8043618af1cd8cd458c7c104b0cd0c1328"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e6cb79f0ab6946769de3dc290e1acd821ed0fb5e6c98e85fd3fc757b3ad3db40"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff30b5edb01d8ad7cdd65444dc1b65610a0fa083648a2619196ecb4e162af09b"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff30b5edb01d8ad7cdd65444dc1b65610a0fa083648a2619196ecb4e162af09b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff30b5edb01d8ad7cdd65444dc1b65610a0fa083648a2619196ecb4e162af09b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44ab3149686e3434357a4ae92e190b9d2f0cd0977c87799a7bc7386d75a5af47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "55fc5b3eff827ab558666e9c4b398da3b813185347583fc9b7f86fc9a8fc8f63"
+    sha256 cellar: :any_skip_relocation, ventura:       "55fc5b3eff827ab558666e9c4b398da3b813185347583fc9b7f86fc9a8fc8f63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fa07426feb28fb5add75bf78c5c11884f62ba74783161b861d70783149eccab"
   end
 
   depends_on "go" => :build

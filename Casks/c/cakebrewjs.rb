@@ -1,6 +1,6 @@
 cask "cakebrewjs" do
-  version "2.65"
-  sha256 "0b2fc384b78530a27e62e2da8ca5de8320420f53627e9f70933f434f4a6374c9"
+  version "2.67"
+  sha256 "baa5ff7636f84ec03675067426fe34442ca1034db55d0406f31a1e56a5d54acb"
 
   url "https://downloads.sourceforge.net/cakebrewjs/cakebrewjs-#{version}-Darwin.dmg"
   name "cakebrewjs"
@@ -18,6 +18,7 @@ cask "cakebrewjs" do
     "~/Library/Application Support/cakebrewjs",
     "~/Library/Caches/cakebrewjs",
     "~/Library/Caches/CakebrewJs2App",
+    "~/Library/Caches/shemeshg/Cakebrewjs2",
     "~/Library/Preferences/com.electron.cakebrewjs.helper.plist",
     "~/Library/Preferences/com.electron.cakebrewjs.plist",
     "~/Library/Preferences/com.shemeshg.Cakebrewjs2.plist",

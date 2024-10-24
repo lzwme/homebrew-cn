@@ -1,13 +1,12 @@
-class Singularity < Formula
+class Apptainer < Formula
   desc "Application container and unprivileged sandbox platform for Linux"
   homepage "https:apptainer.org"
-  url "https:github.comapptainersingularityreleasesdownloadv3.8.7singularity-3.8.7.tar.gz"
-  sha256 "3329f2e583f84a8343cb2c0380a1d6cbceafae7d1e633b5cbcadf7143eac859b"
+  url "https:github.comapptainerapptainerreleasesdownloadv1.3.4apptainer-1.3.4.tar.gz"
+  sha256 "c6ccfdd7c967e5c36dde8711f369c4ac669a16632b79fa0dcaf7e772b7a47397"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7fda321fe287a169d10aa8fb0410139dedfeb6d750c7a2085bfd789938602e34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f19af1d189f432345055e8c68ab8b07408d6925ff399faaa95c3d226ed98712"
   end
 
   # No relocation, the localstatedir to find configs etc is compiled into the program
@@ -20,10 +19,6 @@ class Singularity < Formula
   depends_on "squashfs"
 
   def install
-    inreplace "pkgutilsingularityconfconfig.go" do |s|
-      unsquashfs_dir = Formula["squashfs"].bin.to_s
-      s.sub!((directive:"mksquashfs path), "default:\"#{unsquashfs_dir}\" \\1")
-    end
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
@@ -41,7 +36,7 @@ class Singularity < Formula
   end
 
   test do
-    assert_match(There are [0-9]+ container file, shell_output("#{bin}singularity cache list"))
+    assert_match(There are [0-9]+ container file, shell_output("#{bin}apptainer cache list"))
     # This does not work inside older github runners, but for a simple quick check, run:
     # singularity exec library:alpine cat etcalpine-release
   end

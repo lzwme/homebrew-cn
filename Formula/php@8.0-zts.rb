@@ -5,21 +5,24 @@ class PhpAT80Zts < Formula
   version "8.0.30"
   sha256 "ea4a8d291f031921fafddd4878d12db1329391d9e8450ccb96aebb823a230aae"
   license "PHP-3.01"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 5
-    sha256 arm64_sequoia: "df225555dad39ddb4f265f0da26b25855c28f0f73d7bc71108687b2470fc8b75"
-    sha256 arm64_sonoma:  "e2ff92070b9616dea75ac4085e6d7995479b501026ed0a0b7fcc4eb75243454b"
-    sha256 arm64_ventura: "f3187577aabf5ddbcb3fd1b68ddcf8aa03a506f3229cba1387fd14d128ce3a9d"
-    sha256 ventura:       "c509f4650aafce3029833053e1bdb28bcc8ba5095474337644ec9a88d4e2bffb"
-    sha256 x86_64_linux:  "8022555c361e3e3459fa9b9fed9577f94837cad3bfedeef0e68b8a694aef4867"
+    sha256 arm64_sequoia: "4f38329d0f4ff655c663e768654250e9b6e02a53bf3769373e44bbeac98407ce"
+    sha256 arm64_sonoma:  "ee0a8cabde8838737386d9f9ca7f8d21dfa3ecc4b8bc402523eea0ca3a8b40fe"
+    sha256 arm64_ventura: "e3e9dcffbcb0cbdeae3a6f0a74de489c89526bed13b0ccf9cd2f28078b100810"
+    sha256 ventura:       "d7d165b3b563eab61759fc2a0c2fd11f67fc9dcccc059c17a20650431ba3e986"
+    sha256 x86_64_linux:  "7a762ac7f1a173720453f9b1696a6f4e4f7f70eb05e551638de2a81f85a2e621"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2023-11-26", because: :versioned_formula
+  # This PHP version is not supported upstream as of 2023-11-26.
+  # Although, this was built with back-ported security patches,
+  # we recommended to use a currently supported PHP version.
+  # For more details, refer to https:www.php.neteol.php
+  deprecate! date: "2023-11-26", because: :deprecated_upstream
 
   depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
@@ -35,7 +38,7 @@ class PhpAT80Zts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -67,6 +70,9 @@ class PhpAT80Zts < Formula
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
       ENV.append "LDFLAGS", "-lresolv"
     end
+
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV["ICU_CXXFLAGS"] = "-std=c++17"
 
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"

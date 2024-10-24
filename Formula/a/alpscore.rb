@@ -8,12 +8,13 @@ class Alpscore < Formula
   head "https:github.comALPSCoreALPSCore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b0b37cab12958e277e30b3a5a7c02ecfef33e3b6d99c962503776b049f436d63"
-    sha256 cellar: :any,                 arm64_sonoma:  "db8dc89b1424e97e6f82b09c0b8fd51c5ae9f2e8a12bfac8f77c59b80524b687"
-    sha256 cellar: :any,                 arm64_ventura: "8a97f12d5020decbb6af615cef1b06f095cf61050ee1da2d07640c4463ed98a4"
-    sha256 cellar: :any,                 sonoma:        "6e3428ea16b46226e1cb905ca2626720e33826779c6de5083508113d208a7f25"
-    sha256 cellar: :any,                 ventura:       "6d0ad2d5d76f50ae49277b54a30b933ad6f9978dcbcfa9bd0dfccd1607245669"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74a4fe1f03be0984b0a8858af603e3edf6b3c41a5671413aa3774727024a6973"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "29c6ede223583eed8c36de8efc88aa516fc5a7ef2c2e95e2608ec560dce28271"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7de097346c1a2dc6f21b04cc6a5e1b226de60e863af74ee8fc93a9273e04dd1"
+    sha256 cellar: :any,                 arm64_ventura: "b190400e560789f65a14137da3b2ea97bc320578dafdda367d38dac3a10b854d"
+    sha256 cellar: :any,                 sonoma:        "c92e9a635a0c4b249bbe3c7ac3eedd003791547c0ac24536414e4e51048e7014"
+    sha256 cellar: :any,                 ventura:       "5efb507ba18bf0ee8dab3ccce424d3accb15e5a6a3a8386460bd286fd1a117d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8aa15df04e08a496efa4df6c4884e2ca3214fd7374f35fe04264240da43b232"
   end
 
   depends_on "cmake" => [:build, :test]

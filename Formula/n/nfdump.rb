@@ -1,20 +1,18 @@
 class Nfdump < Formula
   desc "Tools to collect and process netflow data on the command-line"
   homepage "https:github.comphaagnfdump"
-  url "https:github.comphaagnfdumparchiverefstagsv1.7.4.tar.gz"
-  sha256 "8cf76ad0b4e3c1e7edf9532ec7508b11f125adcfcdac5010fd7eec8fe792cfd8"
+  url "https:github.comphaagnfdumparchiverefstagsv1.7.5.tar.gz"
+  sha256 "f7d1df04fe66a173613a13d1b632062150cd63d08ed9299cc2560f519ed33e2e"
   license "BSD-3-Clause"
   head "https:github.comphaagnfdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e9c04f86eb62658e20cc3819e101b29b09ce7d12fcecd2c7889b9a8f61554d92"
-    sha256 cellar: :any,                 arm64_sonoma:   "42fa76feef300134d762f24e8d44867855ad1f43641fec68998d39df23dce6cb"
-    sha256 cellar: :any,                 arm64_ventura:  "543982b0fe73e4278ae50a28305e2503f6f0923114b0793e5f848a49055d6b92"
-    sha256 cellar: :any,                 arm64_monterey: "798c9f5fa5609a306c20de9a6521792152aefd2e027f8144ec6f4a6a342aaca5"
-    sha256 cellar: :any,                 sonoma:         "f1e1729415f6311951d6a910d1a616c0b608eec317285be862559cc735a92a92"
-    sha256 cellar: :any,                 ventura:        "830e40010f31f0e9487b018b27b7a9539adec2d19d33b1a6c35c358e8b0eea41"
-    sha256 cellar: :any,                 monterey:       "a9123fe3397f88570182367261c1c6b30a323e4da4a1427bcb200898149bcdb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64b660aaaa2bea081d802e32c32af4d2869b8a421cefb000467758b106f20847"
+    sha256 cellar: :any,                 arm64_sequoia: "2580a47d32b5db7291a9efa169555635a153a350bf6f71230bf3dca3f77dfa44"
+    sha256 cellar: :any,                 arm64_sonoma:  "102c5b2a3223fd8f117641e010393d65dc130d735935bd922f884935ca0200c0"
+    sha256 cellar: :any,                 arm64_ventura: "3f58eeb1890c44433bc6d9f5d2ae6149d61e7c096b314a5db085e1f016fe0fd8"
+    sha256 cellar: :any,                 sonoma:        "d2b137c45686e51add29a118e911cba1ccce6f5130bc3931bd1f18107388c573"
+    sha256 cellar: :any,                 ventura:       "16fae0c19979d8231228f7a89e522e6d3b26d85ad2b4b04bf7f8d87d795a0eb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02cc68a0eaba6773c36aa54c53ee077ee2f2279e628671a4dacb15c529e2a02"
   end
 
   depends_on "autoconf" => :build

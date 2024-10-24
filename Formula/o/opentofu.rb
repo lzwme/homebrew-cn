@@ -1,18 +1,18 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https:opentofu.org"
-  url "https:github.comopentofuopentofuarchiverefstagsv1.8.3.tar.gz"
-  sha256 "36295ac570bb4d9f72c2488a75a3e8e0509bd112430e766818081c1df2cb65ec"
+  url "https:github.comopentofuopentofuarchiverefstagsv1.8.4.tar.gz"
+  sha256 "89eb05e7ed1b20e3d0c799758b2cfc8d6dc212e8a09b20d9eaf03017be4d74e6"
   license "MPL-2.0"
   head "https:github.comopentofuopentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a64c811f9ee32d0495132643ede9b31123378571ca3ddd90ba497d0adc25cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a64c811f9ee32d0495132643ede9b31123378571ca3ddd90ba497d0adc25cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "89a64c811f9ee32d0495132643ede9b31123378571ca3ddd90ba497d0adc25cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edce89dfdd0aece61c8b791e6df15f36048a4bbbc63844ce5e18401d4f06fc77"
-    sha256 cellar: :any_skip_relocation, ventura:       "edce89dfdd0aece61c8b791e6df15f36048a4bbbc63844ce5e18401d4f06fc77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05c3ff5180dac3e5dd29732baa35eec909245b7d2fe45fbcd67be2a5411d8086"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dea327dea9b167df7183f6c756a4834603b704bf0392e88a3ea8c1a25edff6ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dea327dea9b167df7183f6c756a4834603b704bf0392e88a3ea8c1a25edff6ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dea327dea9b167df7183f6c756a4834603b704bf0392e88a3ea8c1a25edff6ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21d40f47e42e227255c94d84b715c1a406b49afe5e0b140cca8fc64eee3bbd14"
+    sha256 cellar: :any_skip_relocation, ventura:       "21d40f47e42e227255c94d84b715c1a406b49afe5e0b140cca8fc64eee3bbd14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea4be6b4ae8cad01e010514712826ded9740b861684ca1c34af97491b8fb8b66"
   end
 
   depends_on "go" => :build

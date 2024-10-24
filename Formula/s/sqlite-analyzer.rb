@@ -1,9 +1,9 @@
 class SqliteAnalyzer < Formula
   desc "Analyze how space is allocated inside an SQLite file"
   homepage "https://www.sqlite.org/"
-  url "https://www.sqlite.org/2024/sqlite-src-3460100.zip"
-  version "3.46.1"
-  sha256 "def3fc292eb9ecc444f6c1950e5c79d8462ed5e7b3d605fd6152d145e1d5abb4"
+  url "https://www.sqlite.org/2024/sqlite-src-3470000.zip"
+  version "3.47.0"
+  sha256 "f59c349bedb470203586a6b6d10adb35f2afefa49f91e55a672a36a09a8fedf7"
   license "blessing"
 
   livecheck do
@@ -11,14 +11,12 @@ class SqliteAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d7e6989618d698199c326ae533437c4e555cbf8554b58ea2f44e1f9f055df71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7ce6728deffcb45dea25ba6921622ccde1d1ab4bf4bb1bc51ee60a7006732cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b00a5bafcfa9c81567fec9e2007f85b55ca580f5caaf59a00c20288550620c88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e31e40ffd4812d5137099279bc29c74d14f15c30d3e1c765b25aa4513424d31a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7ee7b8a0d9967a8a0bf002f29ef188e3d577f91edbde418b3077cd94170b68a"
-    sha256 cellar: :any_skip_relocation, ventura:        "140b7f60ab6ac6637d84c5a3571ba8f7b561352205b280ba8ebea9eef30248d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f9b5c2acd7ecc8617d3e072f444ba38eebf907e28bfdb0e29c78a11b75ab61f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c359a37822510fec0e67c9c909c7bffd9c2632c783cfd505f73050f40a5dd199"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52220d0b6f1ddd14637b7cb56736421234e2a9cb6621f62fe049e362c7a5a4e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a49322029ea4052f821967f2e3c6b886c88a22f27dc2ffd92aaf6a613eddf18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "edd8f2a17ff75d1c72ba4f6e246a448eb4b96bc1342178dc27fe17683a6228ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a26a443de2daa8ff777f05661d8f98738f2e17f34ed7325e1f4751088c70a13e"
+    sha256 cellar: :any_skip_relocation, ventura:       "454b0f61c466a65a6a9232028c46612d87be30a263c35332c975528a17e015f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50ecfee6225abb5fe56fde310cb500015b3ead9f6baabbd7badda0cbe0c6e9c"
   end
 
   uses_from_macos "sqlite" => :test

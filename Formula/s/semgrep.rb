@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.92.0",
-      revision: "458d3d0eac373b98f153973bb9923c972c05048f"
+      tag:      "v1.93.0",
+      revision: "09228d4cd954a0f686beac5788dbd48dc0decc26"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3a13a6d01bea7fef0ac58d182b385d80242d218d471a28909a16925d4f15eb9d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d62f139fedb840dea152603e01504f8aebd1ff9fa59f28e39616cb5d4ab6a7d9"
-    sha256 cellar: :any,                 arm64_ventura: "c9b52f4391b0e24db76c0e6699f721735e7780a00972e75cb00b19e8d08884b6"
-    sha256 cellar: :any,                 sonoma:        "2cea477177e4c225dfa5f9bd68ace31298cad03879bc3b238cd25ab87192b06a"
-    sha256 cellar: :any,                 ventura:       "b6d013a2055d44cc08d0f7e14dbdca10c3fe4a00e20f007ac79afed26b381380"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d85828c9f24cac34872b3bae3496140ed19cfd56edadbe7dad748e1c6e363b1"
+    sha256 cellar: :any,                 arm64_sequoia: "7a193ac223541f93fce2ce57c3b306539683107d87367661f82bdad02aa38546"
+    sha256 cellar: :any,                 arm64_sonoma:  "763d175e424459ee8033a276c88497167252ff679ffaf843a7e89b2f17d57d8f"
+    sha256 cellar: :any,                 arm64_ventura: "f8943eafe7c518a93969d482644da00dff88725fab143d3cb7c82eea4d07a7db"
+    sha256 cellar: :any,                 sonoma:        "6ec91928a8cb6d151516d119d21718aae4d03f6734582eeaf5c507009ad8c409"
+    sha256 cellar: :any,                 ventura:       "aab9c31f94584b0af0bab470350b67f224a8198f896b537eddb24b57b957c9df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c7b4156230181e7a02ac1d6b500dd81d20ad0a6edb04aa4fe49a85ceb49e02c"
   end
 
   depends_on "autoconf" => :build

@@ -178,6 +178,7 @@ Homebrew-homebrew-core/Formula/a/appium.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apprise.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/appstream-glib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/appstream.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/apptainer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/appwrite.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apr-util.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apr.rb, Homebrew/homebrew-core, 0
@@ -3268,6 +3269,7 @@ Homebrew-homebrew-core/Formula/l/lmod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lnav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lndir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/loc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/localai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/localstack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/localtunnel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/locateme.rb, Homebrew/homebrew-core, 0
@@ -5708,6 +5710,7 @@ Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sequoia-sq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serf.rb, Homebrew/homebrew-core, 1
@@ -5806,7 +5809,6 @@ Homebrew-homebrew-core/Formula/s/simutrans.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/since.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sing-box.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/singular.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/singularity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sipcalc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sipp.rb, Homebrew/homebrew-core, 1
@@ -7882,6 +7884,7 @@ Homebrew-homebrew-cask/Casks/c/cncnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coccinellida.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cockatrice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cocktail.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cocoapacketanalyzer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cocoapods.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cocoarestclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coconutbattery.rb, Homebrew/homebrew-cask, 0
@@ -11216,6 +11219,7 @@ Homebrew-homebrew-cask/Casks/h/http-toolkit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/httpie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hubstaff.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hue-topia.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/huggingchat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hugin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/huly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hummingbird.rb, Homebrew/homebrew-cask, 0
@@ -13267,6 +13271,7 @@ Homebrew-homebrew-cask/Casks/s/sketch-toolbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sketch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sketch@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sketchbook.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sketchup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skiff.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/skim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/skitch.rb, Homebrew/homebrew-cask, 0

@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.9.tar.xz"
-  sha256 "7416b9c06c735c6569b9b3f5fca959307bd228cfb91c318df0aa173bca68b021"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.10.tar.xz"
+  sha256 "948ede1c9ebdc2fdbb91a12776f23b33df326ff01bcf0ce062e5bfe3260d1bcb"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "87484a73ea59d38269e8f9b4c4f13f2368c882f6d60a10f3168dba8adba35593"
+    sha256 x86_64_linux: "89e28d65c7454fdc54385d8d2e01f1f1c611270e6802bd869616f512dfbd8ab3"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -93,14 +93,24 @@ class Apt < Formula
     sha256 "8b87d145337dec1ee754d30871d0b105c180ad4c92c7dc0c7fadd76cec8c57d3"
   end
 
+  resource "Class::Inspector" do
+    url "https:cpan.metacpan.orgauthorsidPPLPLICEASEClass-Inspector-1.36.tar.gz"
+    sha256 "cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e"
+  end
+
+  resource "File::ShareDir" do
+    url "https:cpan.metacpan.orgauthorsidRREREHSACKFile-ShareDir-1.118.tar.gz"
+    sha256 "3bb2a20ba35df958dc0a4f2306fc05d903d8b8c4de3c8beefce17739d281c958"
+  end
+
   resource "XS::Parse::Keyword::Builder" do
-    url "https:cpan.metacpan.orgauthorsidPPEPEVANSXS-Parse-Keyword-0.42.tar.gz"
-    sha256 "7e498879e7813c9a7ecf4296c74774a32e40131e3a64efcc63c8010c0eb11382"
+    url "https:cpan.metacpan.orgauthorsidPPEPEVANSXS-Parse-Keyword-0.46.tar.gz"
+    sha256 "65a2726a910079499ad4bb83c4178059da43306ae92c8734c8fa17c02f22a01d"
   end
 
   resource "Syntax::Keyword::Try" do
-    url "https:cpan.metacpan.orgauthorsidPPEPEVANSSyntax-Keyword-Try-0.29.tar.gz"
-    sha256 "cc320719d3608daa9514743a43dac2be99cb8ccd989b1fefa285290cb1d59d8f"
+    url "https:cpan.metacpan.orgauthorsidPPEPEVANSSyntax-Keyword-Try-0.30.tar.gz"
+    sha256 "f068f0b9c71fff8fef6d8a9e9ed6951cb7a52b976322bd955181cc5e7b17e692"
   end
 
   def install

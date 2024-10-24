@@ -1,9 +1,9 @@
 class Nopoll < Formula
   desc "Open-source C WebSocket toolkit"
   homepage "https://www.aspl.es/nopoll/"
-  url "https://www.aspl.es/nopoll/downloads/nopoll-0.4.8.b429.tar.gz"
-  version "0.4.8.b429"
-  sha256 "4031f2afd57dbcdb614dd3933845be7fcf92a85465b6228daab3978dc5633678"
+  url "https://www.aspl.es/nopoll/downloads/nopoll-0.4.9.b462.tar.gz"
+  version "0.4.9.b462"
+  sha256 "80bfa3e0228e88e290dd23eb94d9bb1f4d726fb117c11cfb048cbdd1d71d379a"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,18 +12,12 @@ class Nopoll < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "ca546d12e5367e79113dc4fa29efd8bd795a7caee90a04383664675b1bd15dfc"
-    sha256 cellar: :any,                 arm64_sonoma:   "101340e01f272b13f94d734cf940c2fd4c766bddb373c4524ed234ef7720d65b"
-    sha256 cellar: :any,                 arm64_ventura:  "506b43f4c6599606a2d963ebc96fbb6fe0d513227a241bdf2be7645dce62fb62"
-    sha256 cellar: :any,                 arm64_monterey: "67fa34a544afa84b26e296f7c5614eb4f5d676f907a83048ee5912d256d80e9a"
-    sha256 cellar: :any,                 arm64_big_sur:  "549c85f59b6565f42734f55c461ddf7c6d6d5a501456d99bbae0baae769bc258"
-    sha256 cellar: :any,                 sonoma:         "4ed8a78deaa4520ddff1b8c930f54b0be76364f5badf24d64b689398edda4647"
-    sha256 cellar: :any,                 ventura:        "6f6519530b264e20b7f569d15a409d000fa1aa1eddaf0d8c148e08b0a9bb2066"
-    sha256 cellar: :any,                 monterey:       "9ef66c711085d89346b8982c3f637aa6d97b8bfcb82fc3a69112c980c435b930"
-    sha256 cellar: :any,                 big_sur:        "786ad31fb592a5d8c9ea666714417e157833a68d639061466b283e744b06ce93"
-    sha256 cellar: :any,                 catalina:       "963a65db0b4c29a2c00e434b405d4dabc766b9179d4cd3765493af5f72668625"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34cef30326e6770bf5ed11ee2a1788f5ec7cee86ce39c36cfcf419909073b337"
+    sha256 cellar: :any,                 arm64_sequoia: "c3e56788b97b459d0c22ab331bc493bcdd0351d50e52b8691bd83ea77f7e59e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a269b4003f8ea4330e1deaf825e7eb3f09bce0fde98d0877ad07f4fad0cd20e"
+    sha256 cellar: :any,                 arm64_ventura: "3e06f4dfc41ee91d605dbf475fc05e21949926bee077814db7a112675064bc90"
+    sha256 cellar: :any,                 sonoma:        "e975ca89eb4c551a44f51e0a18a32f284f37378a0c4b12241aa0453b2379d712"
+    sha256 cellar: :any,                 ventura:       "6bb22066512d52292136ca4639e83d7b8598d0b076fb8b722ee80c3b0e7ce3a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "233ad48b7c725a46695aa3b60261610281ffd81cb010f58fd089b2bd0c4fbbd1"
   end
 
   depends_on "openssl@3"
