@@ -1,17 +1,17 @@
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
   homepage "https:github.comraineorshinenpm-check-updates"
-  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-17.1.4.tgz"
-  sha256 "0dd5adab51e033dab4f5c2a7f9097cec2a9ff704c5933a1a34afaee695370e66"
+  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-17.1.5.tgz"
+  sha256 "d65088b1dcc6ec1fa36f6f6f1f9903885551a80484fae475ed3a18e9ddac4d25"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "206d0abffc40c2289ae8c5ccdc73e23b5ebe4dc274f294b1bd34f85c99af2402"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "206d0abffc40c2289ae8c5ccdc73e23b5ebe4dc274f294b1bd34f85c99af2402"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "206d0abffc40c2289ae8c5ccdc73e23b5ebe4dc274f294b1bd34f85c99af2402"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7f6bf52e2462ade92160246aed55ed882670343ae273183b370fe1340647c0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7f6bf52e2462ade92160246aed55ed882670343ae273183b370fe1340647c0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "206d0abffc40c2289ae8c5ccdc73e23b5ebe4dc274f294b1bd34f85c99af2402"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93e1641fc91e68cf908eb83d4db12fa8461f2624ea27c027767cb9f131341d78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93e1641fc91e68cf908eb83d4db12fa8461f2624ea27c027767cb9f131341d78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93e1641fc91e68cf908eb83d4db12fa8461f2624ea27c027767cb9f131341d78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5bf7b7cf4a557f778fd1f7d085b758f5d48cefa6827586646cee4f919b3728a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "5bf7b7cf4a557f778fd1f7d085b758f5d48cefa6827586646cee4f919b3728a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93e1641fc91e68cf908eb83d4db12fa8461f2624ea27c027767cb9f131341d78"
   end
 
   depends_on "node"

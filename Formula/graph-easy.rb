@@ -16,6 +16,6 @@ class GraphEasy < Formula
   end
 
   test do
-    system "#{bin}/graph-easy", "-h"
+    system bin/"graph-easy", "-h"
   end
 end

@@ -11,6 +11,6 @@ class ImprovWifiSerialClient < Formula
   end
 
   test do
-    system "#{bin}improv-wifi-serial-client", "--version"
+    system bin"improv-wifi-serial-client", "--version"
   end
 end

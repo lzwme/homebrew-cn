@@ -1,21 +1,19 @@
 cask "anytype@alpha" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.42.27"
-  sha256 arm:   "1d3366fe8ce6ea0b66aec78f9731ba4e182c1971c56c8475b3d584f59139e24c",
-         intel: "49664837bdf3603010f8ceb74bbd8982b0cb75b0662550ae5b35535da6eba8c1"
+  version "0.43.1"
+  sha256 arm:   "8ee6ad74bb4b4ca5f618d32a5fecfe3ade8dd9f13e17f1e0a8ab0d4c8942f8f9",
+         intel: "ad07a867cd5be151ac834bb3d94015551b9670f5972739c24f49800b2921db84"
 
-  url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-alpha-mac-#{arch}.dmg",
+  url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-mac-#{arch}.dmg",
       verified: "anytype-release.fra1.cdn.digitaloceanspaces.com/"
   name "Anytype"
   desc "Local-first and end-to-end encrypted notes app"
   homepage "https://anytype.io/"
 
   livecheck do
-    url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/alpha-mac.yml"
-    strategy :electron_builder do |yaml|
-      yaml["version"]&.sub(/[._-]alpha.*$/i, "")
-    end
+    url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/alpha-mac.yml?v=#{Time.new.to_i}"
+    strategy :electron_builder
   end
 
   auto_updates true

@@ -2,7 +2,6 @@ class F2c < Formula
   desc "Fortran to C translator"
   homepage "https://www.netlib.org/f2c/"
   url "http://deb.debian.org/debian/pool/main/f/f2c/f2c_20240504.orig.tar.xz"
-  version "20240504"
   sha256 "12a129a1a8d9a1446f29c0a126b29e8d6a3537266921ad1851bda9933b08221b"
 
   livecheck do
@@ -30,7 +29,7 @@ class F2c < Formula
 
   test do
     # check if executable doesn't error out
-    system "#{bin}/f2c", "--version"
+    system bin/"f2c", "--version"
 
     # hello world test
     (testpath/"test.f").write <<~EOS
@@ -40,7 +39,7 @@ class F2c < Formula
             stop
             end
     EOS
-    system "#{bin}/f2c", "test.f"
+    system bin/"f2c", "test.f"
     assert_predicate (testpath/"test.c"), :exist?
     system ENV.cc.to_s, "-O", "-o", "test", "test.c", "-I#{Formula["libf2c"].opt_include}",
 "-L#{Formula["libf2c"].opt_lib}", "-lf2c"

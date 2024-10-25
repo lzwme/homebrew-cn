@@ -22,6 +22,6 @@ class Icode < Formula
   end
 
   test do
-    system "#{bin}icode", "--version"
+    system bin"icode", "--version"
   end
 end

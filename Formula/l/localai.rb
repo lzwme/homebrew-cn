@@ -3,17 +3,17 @@ class Localai < Formula
 
   desc "OpenAI alternative"
   homepage "https:localai.io"
-  url "https:github.commudlerLocalAIarchiverefstagsv2.21.1.tar.gz"
-  sha256 "11526b3e582c464f6796fd8db959d4ee64f401b2f8eee461562aa193e951e448"
+  url "https:github.commudlerLocalAIarchiverefstagsv2.22.1.tar.gz"
+  sha256 "154c32325bd1edf5fc08fdcd85c337ab6615393e2834c896fb27dbeb13e52322"
   license "MIT"
 
   bottle do
-    sha256 arm64_sequoia: "c4bb8af9aaf37487babcab1492476d58bbe7a2b9ad35b72ed4f55ffa13003e14"
-    sha256 arm64_sonoma:  "03f32aa33e9e5b7b49a26b46ff3fada2a1e3be5dca70350e98678f0e5d68bd6b"
-    sha256 arm64_ventura: "6690dfe78d6bb085649e0735d0c42e83a7ad9d7d7f38a7a5f4cdcce0ab7dedfb"
-    sha256 sonoma:        "d4c7249263f81740b721f1faf1cb02078ffda35b6e50bf2ba466354d05e81591"
-    sha256 ventura:       "e8ece394e3ddc7b931286785a9b8be520872e7a300c7b84f610e64303e6758fd"
-    sha256 x86_64_linux:  "1186c9912454b1530b1261d8b84fdc2bcd66873f0f9d5c9f0cb2c25ae8a992dc"
+    sha256 arm64_sequoia: "ffdd5911e143ab06159a314cc5789a102939f6697378960c4c2a78fba30d0dbe"
+    sha256 arm64_sonoma:  "19040a814fed943c66858fbfcdef70552fbefc089526acb60cc74c818a42ed88"
+    sha256 arm64_ventura: "5c57dbb1d94222cd2baec49ba0ded1cce004fc4767a1dbaba9a6df02a6b3f493"
+    sha256 sonoma:        "2e8e0b7c31304982aace3ca9d3ebeaabdd2b5721156472505830c57c3038db1d"
+    sha256 ventura:       "3923840bffb0c62e74015a50087048990d3bbfcdf1ccd9a2bda6a61fa6a5b8a5"
+    sha256 x86_64_linux:  "c362c41adf070c84e7feed970f7c619f55a0e87262c9016be945e7ae9ba0104b"
   end
 
   depends_on "abseil" => :build
@@ -30,12 +30,16 @@ class Localai < Formula
   depends_on "wget"
 
   resource "grpcio-tools" do
-    url "https:files.pythonhosted.orgpackages9f30cd31c3a04814eb880d5e78cea768240c92fb5adaa158814c2b166356a0c6grpcio_tools-1.64.0.tar.gz"
-    sha256 "fa4c47897a0ddb78204456d002923294724e1b7fc87f0745528727383c2260ad"
+    url "https:files.pythonhosted.orgpackagese7f862e15867651b72f6f95313e21d81f5f1c210b69a4cc664aecf52ec4c8a53grpcio_tools-1.67.0.tar.gz"
+    sha256 "181b3d4e61b83142c182ec366f3079b0023509743986e54c9465ca38cac255f8"
+  end
+
+  def python3
+    which("python3.12")
   end
 
   def install
-    ENV["PYTHON"] = python3 = which("python3.12")
+    ENV["PYTHON"] = python3
 
     venv = virtualenv_create(libexec, python3)
     venv.pip_install(resources, build_isolation: false)

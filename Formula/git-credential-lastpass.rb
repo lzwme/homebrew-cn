@@ -19,7 +19,7 @@ class GitCredentialLastpass < Formula
   end
 
   test do
-    system "#{bin}git-credential-lastpass", "--version"
+    system bin"git-credential-lastpass", "--version"
     assert_equal "", `#{bin}git-credential-lastpass --version`
   end
 end

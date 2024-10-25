@@ -1,15 +1,17 @@
 class LinuxPam < Formula
   desc "Pluggable Authentication Modules for Linux"
   homepage "https:github.comlinux-pamlinux-pam"
-  url "https:github.comlinux-pamlinux-pamreleasesdownloadv1.6.1Linux-PAM-1.6.1.tar.xz"
-  sha256 "f8923c740159052d719dbfc2a2f81942d68dd34fcaf61c706a02c9b80feeef8e"
+  url "https:github.comlinux-pamlinux-pamreleasesdownloadv1.7.0Linux-PAM-1.7.0.tar.xz"
+  sha256 "57dcd7a6b966ecd5bbd95e1d11173734691e16b68692fa59661cdae9b13b1697"
   license any_of: ["BSD-3-Clause", "GPL-1.0-only"]
   head "https:github.comlinux-pamlinux-pam.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "52a7fb9aec444e5cd3a7bb53318a375f65757c485782a6430bcde5e0754b915e"
+    sha256 x86_64_linux: "a68f91985d2eef7e9010c081438d58a7d8301ce0dc1caee5f34187cdc70ba90b"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "libnsl"
   depends_on "libprelude"
@@ -17,24 +19,10 @@ class LinuxPam < Formula
   depends_on "libxcrypt"
   depends_on :linux
 
-  skip_clean :la
-
   def install
-    args = %W[
-      --disable-db
-      --disable-silent-rules
-      --disable-selinux
-      --includedir=#{include}security
-      --oldincludedir=#{include}
-      --enable-securedir=#{lib}security
-      --sysconfdir=#{etc}
-      --with-xml-catalog=#{etc}xmlcatalog
-      --with-libprelude-prefix=#{Formula["libprelude"].opt_prefix}
-    ]
-
-    system ".configure", *std_configure_args, *args
-    system "make"
-    system "make", "install"
+    system "meson", "setup", "build", "--sysconfdir=#{etc}", "-Dsecuredir=#{lib}security", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

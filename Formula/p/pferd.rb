@@ -3,19 +3,17 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackagesed530ee89a40c7a3156ac35262b7f9e897f367e1fb753fcd5bfae6d8660b1a0bpferd-3.5.2.tar.gz"
-  sha256 "4ab6ec9b55ba63e174353819ccb33abb0a9f1c2fea6177ded268eb1ad4bee23f"
+  url "https:files.pythonhosted.orgpackagesfedf6bfddef4d6b1cb7645f536368a32f9fff68a23c4c283d234b21ef2e056fbpferd-3.6.0.tar.gz"
+  sha256 "4fce35cb61a75e99b0ba8aed3ffef98c84b4059f4c424f966c37fb6b73f83dd1"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc8c2655e7b96dc39448a69ca64836984b81ee18e6b8c211b135c5921c4370c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8227b8903555ccbf2f23ce30aa02f9c88a2088b19bd803b19aa11567ef0664dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a2a69184c6f0234711b8b12faac905a246add265bf64c7a125302bd41d5962c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bceac20d87f0d2856441121d74727aa74593b2e5b111fede2e566be28b1c5ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "936c2f8b852acb8378e81fa430a45a59b8671adce71bb4c6a07bf1b18f2045fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558d89a8de62ec8d853d797885edc3b02df8387b96bce759bbc9ec0761c3cd17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d9eb3356d5d93ce42ff3194bccdcc633bd7ad4950bb31e41bb2026c6c5f459"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b4280db5bcd1f1b6c3311037104cd668f735a77f31659f0e4e7958ec0dc187"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ada8f0c63925ae20a05a2e80cd9d6759dddc8d48a4e9ae0a0ddc431cb1038797"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c59b1dba9614ef5b0210482ee9ffeab3bbcefe91e7dfa7c4464b45b2467ba74b"
+    sha256 cellar: :any_skip_relocation, ventura:       "76baa46504d58f93cb80b76c3c3ce37bf080107204af1c9631c50d18261bf2a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "480e3e32f6a4d455de139f8cd8e1c367a16478ab28ba40669ed644b43e962d2f"
   end
 
   depends_on "certifi"
@@ -47,8 +45,8 @@ class Pferd < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackagescf3d2102257e7acad73efc4a0c306ad3953f68c504c16982bbdfee3ad75d8085frozenlist-1.4.1.tar.gz"
-    sha256 "c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"
+    url "https:files.pythonhosted.orgpackages8fed0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3frozenlist-1.5.0.tar.gz"
+    sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
   end
 
   resource "idna" do
@@ -107,8 +105,8 @@ class Pferd < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesd9e9cf9ef5245d835065e6673781dbd4b8911d352fb770d56cf0879cf11b7ee1rich-13.9.3.tar.gz"
+    sha256 "bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
   end
 
   resource "soupsieve" do
@@ -117,8 +115,8 @@ class Pferd < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackagesed2175ded903445bf9201f10c7c361b0776a67c7284ad5ef38af62fd38cc32c3yarl-1.15.1.tar.gz"
-    sha256 "02e1c9e36528de270c22c06aac6a5a1de8cc870fafefb5e90e5b35cb8985d0b2"
+    url "https:files.pythonhosted.orgpackages2352e9766cc6c2eab7dd1e9749c52c9879317500b46fb97d4105223f86679f93yarl-1.16.0.tar.gz"
+    sha256 "b6f687ced5510a9a2474bbae96a4352e5ace5fa34dc44a217b0537fec1db00b4"
   end
 
   def install

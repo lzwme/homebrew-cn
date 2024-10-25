@@ -4,6 +4,7 @@ class Libphonenumber < Formula
   url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.48.tar.gz"
   sha256 "71bd662c7fc9e6e0275412529a28e1da464afab3dbee4387089ad8f88f96ae59"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6091b1275a057e97c0b6dabb267f708b23a982db4e819b313dab2c0124185e24"
-    sha256 cellar: :any,                 arm64_sonoma:  "c44320a397ad8a0ae2883fa9208166af0f3189177bf4a5b4f5facf5fab328398"
-    sha256 cellar: :any,                 arm64_ventura: "734bfe8c44e06b04132019dba5a1ab5691cb99c3ca67a46711c28a1c2d6dad84"
-    sha256 cellar: :any,                 sonoma:        "79f7d7c4e18f859a21f76d516a3a001e0dbd1f1bceccbf10675d76b97dde9df8"
-    sha256 cellar: :any,                 ventura:       "5c5e7861d774938f0524d4dea5169824ed27abaa02b567b9a15092fd813c32f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c70167b35b2341958d234bd248b51157fdff9332994ee9c90b21f663cac11204"
+    sha256 cellar: :any,                 arm64_sequoia: "d60363e0adfb4fb0a80f6709b54ce570d6cfd8f990bf8e314979f31c52264811"
+    sha256 cellar: :any,                 arm64_sonoma:  "26e2c1e5ab7cd49035418257d7546167c958107140d7a6fba1e559d886bee4aa"
+    sha256 cellar: :any,                 arm64_ventura: "cbd95dd7dae4fbdd58445e4c9e3c779a85783fab9f1ea6b9f039cfe07ca4fdab"
+    sha256 cellar: :any,                 sonoma:        "4055afb21a91b8b36fef2ca47d72564fb5ef94aa40ab92609cc4ce8826ff8c9c"
+    sha256 cellar: :any,                 ventura:       "8fdf1fb93ac73d3abf7d8987f87d519fa14bcd000af50e3bbb96959268e2fa44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b21b7142d6937fad5fe3fd193d96d879ed1afa8cc2100462d6a24a6e481dc2b"
   end
 
   depends_on "cmake" => :build

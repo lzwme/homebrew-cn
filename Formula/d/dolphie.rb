@@ -3,17 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackagesea18e8f82e3efe0e14dc9803ffdba58e313e7031ec0432cbcc7ffad958280247dolphie-6.2.0.tar.gz"
-  sha256 "37c9ff8a05dc21aae974efc03a0b4f45c10d05252e3c7f9476e928a78281ed23"
+  url "https:files.pythonhosted.orgpackages08acafa2ecafdda4925ea9dda709216f5746df56e42d65dffbb94071c5bd77f5dolphie-6.3.0.tar.gz"
+  sha256 "6d3a4cd3fa48c8524b4b142189269787c29bd6950c0ff8f606e293501d7c0ece"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dc9de016ba2751ee3abd8fc276bcc6bc06cbe6fd99f7d1902c6599e039bdf4c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "4205f41e7bb8b117f06651988d405622386fe447bb30505abb14fc76eff90004"
-    sha256 cellar: :any,                 arm64_ventura: "731db0d58538e45abe62c8928a79776dba81f8923c85f5722f6ab7d2e326b12b"
-    sha256 cellar: :any,                 sonoma:        "01194d178c4ce83af9a9b538183fb654858ae657b3087fceb94021d50d6cf336"
-    sha256 cellar: :any,                 ventura:       "674b53c346b61bf43a258a466c097d3a67a7f8b6943282ec5b5feca59fc56819"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24c1e07acf46bb60f3b2e27746f095f3fdeb2a3fe2888f46282ba275a2e62fb"
+    sha256 cellar: :any,                 arm64_sequoia: "229edde937cee279603e9e1af8c60c12e654998dd52ed2d66770bd63567a20b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "96265ed35695bdbb0cdf7a0b194c3b7f9476661d6fb03ef2bac82b503b6513aa"
+    sha256 cellar: :any,                 arm64_ventura: "b368eaf344d719dc37bf471497a24a64063403741d8b8eecd24ba2d79c244b32"
+    sha256 cellar: :any,                 sonoma:        "275739852714586cbcc839dfc454ce1109a87eec5a11f439e3b7c1d972dd854e"
+    sha256 cellar: :any,                 ventura:       "3033ed16cddcf5e9a2f806b7be8cba060269ba078a6baaf0b79d2f18ea8f6266"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f153e444a6fab0c3ae579d80bd7650dfb78bd9924238c838d630c6c1d4015230"
   end
 
   depends_on "rust" => :build # for orjson
@@ -67,8 +67,8 @@ class Dolphie < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackages9e03821c8197d0515e46ea19439f5c5d5fd9a9889f76800613cfac947b5d7845orjson-3.10.7.tar.gz"
-    sha256 "75ef0640403f945f3a1f9f6400686560dbfb0fb5b16589ad62cd477043c4eee3"
+    url "https:files.pythonhosted.orgpackages8044d36e86b33fc84f224b5f2cdf525adf3b8f9f475753e721c402b1ddef731eorjson-3.10.10.tar.gz"
+    sha256 "37949383c4df7b4337ce82ee35b6d7471e55195efa7dcb45ab8226ceadb0fe3b"
   end
 
   resource "packaging" do
@@ -102,23 +102,23 @@ class Dolphie < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesd9e9cf9ef5245d835065e6673781dbd4b8911d352fb770d56cf0879cf11b7ee1rich-13.9.3.tar.gz"
+    sha256 "bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
+    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
   end
 
   resource "sqlparse" do
-    url "https:files.pythonhosted.orgpackages7382dfa23ec2cbed08a801deab02fe7c904bfb00765256b155941d789a338c68sqlparse-0.5.1.tar.gz"
-    sha256 "bb6b4df465655ef332548e24f08e205afc81b9ab86cb1c45657a7ff173a3a00e"
+    url "https:files.pythonhosted.orgpackages651610f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574sqlparse-0.4.4.tar.gz"
+    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackagescf0b58ec0dbcd92a5121fdae972f09de71b5bc38d389bab53a638e24349f904dtextual-0.83.0.tar.gz"
-    sha256 "fc3b97796092d9c7e685e5392f38f3eb2007ffe1b3b1384dee6d3f10d256babd"
+    url "https:files.pythonhosted.orgpackagesd686525031f6bbfa4671fa66a4a5c088c3e9aa53f32d1b51a9bf2b900b3b1f32textual-0.84.0.tar.gz"
+    sha256 "fb89717960fea7a539823fa264252f7be1c84844e4b8d27360e6d4edb36846a8"
   end
 
   resource "textual-autocomplete" do

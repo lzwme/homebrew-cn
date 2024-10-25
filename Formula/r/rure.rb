@@ -1,20 +1,20 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https:github.comrust-langregextreeHEADregex-capi"
-  url "https:github.comrust-langregexarchiverefstags1.11.0.tar.gz"
-  sha256 "1642eeb71536d58128ac798af242efafee1d4689c71d211028227e17ac20aeba"
+  url "https:github.comrust-langregexarchiverefstags1.11.1.tar.gz"
+  sha256 "b346bd18b614325bafa15130f5ea0f3fc0712f19f2090069fdc164e3f83325b8"
   license all_of: [
     "Unicode-TOU",
     any_of: ["Apache-2.0", "MIT"],
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "27991ffcdefcaed4e27f7e655f9231925eaa08944fcbbb9fcc6c8a5baf2ba626"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a60a850c8382c558d81cfbbce2fb07934675f1eb75bb316f8793bcea783a0d1"
-    sha256 cellar: :any,                 arm64_ventura: "b64bc9a03e10f2f6e085c6def90c0532323e4dbd28e5f1c646bba1a3b0ec6710"
-    sha256 cellar: :any,                 sonoma:        "ff0a4f91add4db84e53515a9c13b4f0baca568e45b747b7fea831904dd5aeaa7"
-    sha256 cellar: :any,                 ventura:       "72502d7205d13a27a3bda51b74600f166f463d8071b9e36d051d4485ac8e9007"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9593aabb99329a532f68ea5b2590b6982b36c77263137ccaaf6a92ca1bf72a42"
+    sha256 cellar: :any,                 arm64_sequoia: "2c5a4892338686036abbec370b25232b93e0c729d9e5ae7f9fb6e0d0fe8b623e"
+    sha256 cellar: :any,                 arm64_sonoma:  "87c6daa3212314431070b578bc71d4c859f9730ed787987b9eedd4359e3afe62"
+    sha256 cellar: :any,                 arm64_ventura: "dc07b8e0b0ccdc26fde897a2c0c3a13fe962f301fe078bffccffb263328bbfd0"
+    sha256 cellar: :any,                 sonoma:        "28f4e15683930a740c5f030306ac769f7671a0d4c32536756f9d096470041933"
+    sha256 cellar: :any,                 ventura:       "4de2e95dd8c24f9b16c4f371df152e2e7ac2376bb0e2de16b1ef2fae0abb5d31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "012c9ed074329023e7b518d7829db5e5020dc92f1ae81872ca41fa8550ed273f"
   end
 
   depends_on "rust" => :build

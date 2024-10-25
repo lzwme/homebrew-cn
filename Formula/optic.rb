@@ -16,7 +16,7 @@ class Optic < Formula
   end
 
   test do
-    system "#{bin}optic", "--version"
+    system bin"optic", "--version"
     assert_equal "#{version}\n", `#{bin}optic --version`
   end
 end

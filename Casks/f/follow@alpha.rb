@@ -1,23 +1,23 @@
-cask "follow@nightly" do
-  version "0.1.0-nightly.20241023"
-  sha256 "55446a907000f5a5f5911cd461413d7bfdb483d0f5ca11256f52dc7dbad6ecf3"
+cask "follow@alpha" do
+  version "0.0.1-alpha.22"
+  sha256 "372d62924841a9082ce618bff2964cf4d0b10706b79da73aa93d51f0432033dc"
 
-  url "https:github.comRSSNextFollowreleasesdownloadnightly-#{version}Follow-#{version}-macos-universal.dmg",
+  url "https:github.comRSSNextFollowreleasesdownloadv#{version}Follow-#{version}-macos-universal.dmg",
       verified: "github.comRSSNextFollow"
-  name "Follow Nightly"
+  name "Follow"
   desc "Information browser"
   homepage "https:follow.is"
 
   livecheck do
     url :url
-    regex(^nightly[._-]v?(\d+(?:\.\d+)+(?:[._-]nightly[._-]?\d+)?)$i)
+    regex(^v?(\d+(?:\.\d+)+(?:[._-]alpha[._-]?\d+)?)$i)
   end
 
   conflicts_with cask: [
     "follow",
-    "follow@alpha",
+    "follow@nightly",
   ]
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :catalina"
 
   app "Follow.app"
 

@@ -1,8 +1,8 @@
 class MacosScripts < Formula
   desc "Various command-line utility scripts for macOS"
   homepage "https:github.comnicerloopmacos-scripts"
-  url "https:github.comnicerloopmacos-scriptsarchiverefstagsv1.9.3.tar.gz"
-  sha256 "d58263a70ce9d25fec89ee7f13c7d20605329e3360b348f75c97633bf3be3257"
+  url "https:github.comnicerloopmacos-scriptsarchiverefstagsv1.9.4.tar.gz"
+  sha256 "036670857fa69970b64cfbe85ab3ca09d466b8d308de9b521ffa5ed313ac30f9"
 
   def install
     bin.install "brew-bundle-leaves"
@@ -19,5 +19,10 @@ class MacosScripts < Formula
     bin.install "webloc-to-url"
     bin.install "xcode-command-line-tools-reinstall"
     bin.install "xcode-uninstall"
+    bin.install "brewup.sh" => "brewup"
+    bin.install "brewbump.sh" => "brewbump"
+    bin.install "brewfetch.sh" => "brewfetch"
+    bin.install "brewstyleaudit.sh" => "brewstyleaudit"
+    bin.install "docker-host.sh" => "docker-host"
   end
 end

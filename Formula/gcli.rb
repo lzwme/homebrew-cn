@@ -6,6 +6,7 @@ class Gcli < Formula
   license "BSD-2-Clause"
 
   depends_on "curl"
+  depends_on "pkg-config"
 
   def install
     system ".configure", "--prefix=#{prefix}"
@@ -13,6 +14,6 @@ class Gcli < Formula
   end
 
   test do
-    system "#{bin}gcli", "version"
+    system bin"gcli", "version"
   end
 end

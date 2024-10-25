@@ -15,6 +15,6 @@ class Orbicfg < Formula
   end
 
   test do
-    system "#{bin}orbicfg"
+    system bin"orbicfg"
   end
 end

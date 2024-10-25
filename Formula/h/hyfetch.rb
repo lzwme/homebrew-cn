@@ -3,33 +3,21 @@ class Hyfetch < Formula
 
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
   homepage "https:github.comhykilpikonnahyfetch"
-  url "https:files.pythonhosted.orgpackagesbbaf0c4590b16c84073bd49b09ada0756fd9bd75b072e3ba9aec73101f0cc9f4HyFetch-1.4.11.tar.gz"
-  sha256 "9fa2c9c049ebaf0ad6d4e8e076ce90e64a4b9276946a1d2ffb6912bb1a4aa327"
+  url "https:files.pythonhosted.orgpackages1f7d7acc8fd22a1a4861f6a3833fbba8d1ffc6d118d143a4cbaab7f998867b4eHyFetch-1.99.0.tar.gz"
+  sha256 "ddeb422fd797c710f0ad37d584fac466df89e39feddeef765492b2c0b529616e"
   license "MIT"
-  revision 1
   head "https:github.comhykilpikonnahyfetch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b754e3cd3c2e292dcf7bcf6e9f429241f8d10e1cde3e606d97ab1ccedcbe1d8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b754e3cd3c2e292dcf7bcf6e9f429241f8d10e1cde3e606d97ab1ccedcbe1d8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b754e3cd3c2e292dcf7bcf6e9f429241f8d10e1cde3e606d97ab1ccedcbe1d8a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74af52c7460c51175930a3b44b67817b284a259583b1cfe810437d8f16ab5f06"
-    sha256 cellar: :any_skip_relocation, ventura:       "74af52c7460c51175930a3b44b67817b284a259583b1cfe810437d8f16ab5f06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece3b8c1f3d62805822839f483448ca8c70c401419a8644595df47f3e9a32404"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2adf143cdacc67ab16db6094d2bc2fb3f79137d9a0546836ad24a5036fe16769"
+    sha256 cellar: :any_skip_relocation, ventura:       "2adf143cdacc67ab16db6094d2bc2fb3f79137d9a0546836ad24a5036fe16769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"
   end
 
   depends_on "python@3.13"
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
-  end
-
-  resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
-  end
 
   def install
     virtualenv_install_with_resources

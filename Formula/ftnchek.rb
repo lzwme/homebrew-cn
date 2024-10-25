@@ -25,6 +25,6 @@ class Ftnchek < Formula
   end
 
   test do
-    system "#{bin}/ftnchek", "--version"
+    system bin/"ftnchek", "--version"
   end
 end

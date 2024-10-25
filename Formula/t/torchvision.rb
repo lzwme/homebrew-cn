@@ -6,6 +6,7 @@ class Torchvision < Formula
   url "https:github.compytorchvisionarchiverefstagsv0.19.1.tar.gz"
   sha256 "083e75c467285595ec3eb3c7aa8493c19e53d7eb42f13046fb56a07c8897e5a8"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5a1b6d729c2e3d039e3ccea262764d442bbd5993815850e762790a52a81ad2a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "9180e25c850189a8f5bd51512758bfb671e46efadf5ff7609dd34d553060ef6f"
-    sha256 cellar: :any,                 arm64_ventura: "69665bfdbc14bc07b6b344a4919c78c6bf89c401b52ffdffd71c441938953312"
-    sha256 cellar: :any,                 sonoma:        "272f58db99105bceca7e33ebf135f71fbcc6e3900082600d74ee5f12f37397a7"
-    sha256 cellar: :any,                 ventura:       "db376520a2dc03ac1a2ad7cf742126ec5e138572109f4997d1e9be15365fc907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5de0ae1b6c65a6c14b8b8546e4d4728c047efd0bcc8ca47ff5c5a84b32c94d"
+    sha256 cellar: :any,                 arm64_sequoia: "9c465c861116f5dbec7b375f48b2fda9ad273632a372f681647ab77157d05401"
+    sha256 cellar: :any,                 arm64_sonoma:  "16506991bd75837ff07807a22a4c15367d3a44d81f8dbb9e412aa46533b46e0f"
+    sha256 cellar: :any,                 arm64_ventura: "163ee42a74b4ab7c0fc3f424e29da87929a36b67c23ae409473be505c0fb8f97"
+    sha256 cellar: :any,                 sonoma:        "569b195c4bde41d5ec1d0c253c38f06b6701ba49b260adf9889626c73b669499"
+    sha256 cellar: :any,                 ventura:       "fdd303661561260dc204dcdfd14f9b6ae617e6b2c6416118e3e33924735cfa55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1090d1598b7a517694b51c14a33b835db4609fe71adfd9af7196719e8c5f07"
   end
 
   depends_on "cmake" => :build

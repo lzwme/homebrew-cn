@@ -25,12 +25,13 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9ab4bf1ee348fe082f4bd55418b0004e37e2c4e02b145e1547dd3ec30551fba0"
-    sha256 arm64_sonoma:  "9c3a9718fa9690a749d26b2a5c74362520b26617827d49bec8237b68e55384a2"
-    sha256 arm64_ventura: "ef07a3be799515df373da0d5bde74298cea4c6cdfde77f7f3eda491ec9bcd8bc"
-    sha256 sonoma:        "899adf0532102067c8f50f13a21ee1caf5e137f4cade37579269573f41367fad"
-    sha256 ventura:       "69ae385f5629fb4859d9d99c64f138beca36dba670aabbaf7647a7f89fb49296"
-    sha256 x86_64_linux:  "774c736c4924d8c5c2a5e202518da2120c1368d04c2bb544fb6dabafc521fc73"
+    rebuild 1
+    sha256 arm64_sequoia: "bf7505aeb81c0fd4d57db61fa01d9f69aa247f57ecf25d70bbb0039f7c6c07c7"
+    sha256 arm64_sonoma:  "ee4735058a8da0dd054de60ba419b5f0811145ee60e2ee7935bd6181a541cdec"
+    sha256 arm64_ventura: "a74c65b7f80c626c8ccb1998a7638e46687244417117c37a32ee2398e879e945"
+    sha256 sonoma:        "fcd74a4ff7ad6c0f65f4ec90fe343229dc638a1b63c66b8b7910a6a5329526e4"
+    sha256 ventura:       "f757116ef95cd7f48c3dda1adc4d722aef93c0042e894cb9feba02a50452a305"
+    sha256 x86_64_linux:  "2415081ac35153173b97fcb766ba60ad7b4362fcd1682fa622a0425293434967"
   end
 
   depends_on "gettext"
@@ -60,6 +61,8 @@ class Vim < Formula
 
     # vim doesn't require any Python package, unset PYTHONPATH.
     ENV.delete("PYTHONPATH")
+
+    ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
 
     # We specify HOMEBREW_PREFIX as the prefix to make vim look in the
     # the right place (HOMEBREW_PREFIXsharevim{vimrc,vimfiles}) for

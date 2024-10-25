@@ -18,6 +18,6 @@ class Svgasm < Formula
   end
 
   test do
-    system "#{bin}svgasm", "-h"
+    system bin"svgasm", "-h"
   end
 end

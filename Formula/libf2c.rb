@@ -2,7 +2,6 @@ class Libf2c < Formula
   desc "Support librariy for f2c translated applications"
   homepage "http://www.netlib.org/f2c/"
   url "http://deb.debian.org/debian/pool/main/libf/libf2c2/libf2c2_20240504.orig.tar.xz"
-  version "20240504"
   sha256 "85989f4f1ec3db3b1581bd16a807be3bb3a1f547f7fe7ba4e074d02710521aef"
 
   livecheck do

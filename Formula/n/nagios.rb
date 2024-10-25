@@ -1,8 +1,8 @@
 class Nagios < Formula
   desc "Network monitoring and management system"
   homepage "https://www.nagios.org/"
-  url "https://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.5.6/nagios-4.5.6.tar.gz"
-  sha256 "10749a488fe372c659191562e43f4409c54907b9501e3a588759560927d9c98e"
+  url "https://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.5.7/nagios-4.5.7.tar.gz"
+  sha256 "83da5f1e4fc4d864e18916ef3809df42fb2917a8629d311ae574b3fe2b841db5"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nagios < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a6368434e35f510a0db719718bc2d51e58e6ccac5625234fce9d21375454aece"
-    sha256 arm64_sonoma:  "ca135fe42ef3f2dfb7edf011305b1d85734b83e444c733886de0f4b9133937e3"
-    sha256 arm64_ventura: "35afbec30039f2e5b39c014d15dc540cb580cfab7223303230e4bf6d97be752e"
-    sha256 sonoma:        "bad4bf479dc68c61f35d068492ef23b83cc8ec74a6a7118f529a2b6f67aafdda"
-    sha256 ventura:       "5518a6656c76555c5216eaebadebeeb19f917589096cb8a5ff7f3463143ee822"
-    sha256 x86_64_linux:  "8b4e9f353c459a4fc5a521361d2a3530eb8f97b8cb92c1044561524fc9aceb78"
+    sha256 arm64_sequoia: "54c32dc527dd7af04e3342067757564e2a65f82d2fe86d7a5e9ae6acf8ade110"
+    sha256 arm64_sonoma:  "9927fee4a339eeec23b3bdcf406482bd65bc853d2f82f0ac4709e9c06f786b1e"
+    sha256 arm64_ventura: "63336ee3e17ee07b143311ddd639af869d44206c0fb12386dd760fc5bc1ea3cf"
+    sha256 sonoma:        "508f4868f8290a86cd20b384ed884aebbef8fb791b7bf2cb8382095ee6c15180"
+    sha256 ventura:       "a543302c16e445538e5cc0d0068d41ace40e0c4713f11977a1fe4dff1b8587ae"
+    sha256 x86_64_linux:  "3175ce1df62fa7c15f8e1a65ac53635a5d2a39a8ca4fef39277dbb67b9ac7d88"
   end
 
   depends_on "gd"

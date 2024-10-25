@@ -6,6 +6,11 @@ class Melange < Formula
   license "Apache-2.0"
   head "https:github.comchainguard-devmelange.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ae14366bda1f5bff1f5de4d447d577d36b3d7f62d607a1f144be1a373bb64d8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ae14366bda1f5bff1f5de4d447d577d36b3d7f62d607a1f144be1a373bb64d8"

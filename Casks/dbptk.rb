@@ -1,6 +1,6 @@
 cask "dbptk" do
-  version "2.9.2"
-  sha256 "3eb682f0d320c796139d02c61e5d43ecae7deea523f71385264e98cd65964783"
+  version "2.10.0"
+  sha256 "a586cae45c40c9d82bc85e27d9edb563e0ddb46ce4c96d48b4e5fabc964b592c"
 
   url "https:github.comkeepsdbptk-desktopreleasesdownloadv#{version}dbptk-desktop-#{version}.dmg",
       verified: "github.comkeepsdbptk-desktop"

@@ -1,11 +1,11 @@
 cask "anytype@beta" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.42.51"
-  sha256 arm:   "df4fb706d571bbae661bd74e08f826b3b12a9ec27f86a8a7d456985c4dc0a7c0",
-         intel: "195f5b30453cb5b29e0e346c5ef4e02097e2447fdbdd66a48a34ba1420a27a71"
+  version "0.43.1"
+  sha256 arm:   "8ee6ad74bb4b4ca5f618d32a5fecfe3ade8dd9f13e17f1e0a8ab0d4c8942f8f9",
+         intel: "ad07a867cd5be151ac834bb3d94015551b9670f5972739c24f49800b2921db84"
 
-  url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-beta-mac-#{arch}.dmg",
+  url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-mac-#{arch}.dmg",
       verified: "anytype-release.fra1.cdn.digitaloceanspaces.com/"
   name "Anytype"
   desc "Local-first and end-to-end encrypted notes app"
@@ -13,9 +13,7 @@ cask "anytype@beta" do
 
   livecheck do
     url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/beta-mac.yml?v=#{Time.new.to_i}"
-    strategy :electron_builder do |yaml|
-      yaml["version"]&.sub(/[._-]beta.*$/i, "")
-    end
+    strategy :electron_builder
   end
 
   auto_updates true

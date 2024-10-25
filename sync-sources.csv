@@ -8545,6 +8545,7 @@ Homebrew-homebrew-cask/Casks/f/folding-at-home@beta.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/f/foldingtext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foldit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/follow.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/follow@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/follow@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/folx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontbase.rb, Homebrew/homebrew-cask, 0
@@ -11600,6 +11601,7 @@ Homebrew-homebrew-cask/Casks/l/lagrange.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lando.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lando@edge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/landrop.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/langgraph-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/languagetool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lantern.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lapce.rb, Homebrew/homebrew-cask, 1
@@ -14300,7 +14302,6 @@ nicerloop-homebrew-nicerloop/Formula/download-windows-esd.rb, nicerloop/homebrew
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/gcli.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-keepassxc.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-lastpass.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-rbw.rb, nicerloop/homebrew-nicerloop, 1

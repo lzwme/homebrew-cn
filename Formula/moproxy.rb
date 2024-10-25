@@ -12,6 +12,6 @@ class Moproxy < Formula
   end
 
   test do
-    system "#{bin}moproxy", "--help"
+    system bin"moproxy", "--help"
   end
 end

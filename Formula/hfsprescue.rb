@@ -17,6 +17,6 @@ class Hfsprescue < Formula
   end
 
   test do
-    system hfsprescue "-v"
+    system bin/"hfsprescue", "--version"
   end
 end

@@ -12,6 +12,6 @@ class Pdfjam < Formula
   end
 
   test do
-    system "#{bin}pdfjam", "-h"
+    system bin"pdfjam", "-h"
   end
 end
