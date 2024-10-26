@@ -1,9 +1,9 @@
 class Xterm < Formula
   desc "Terminal emulator for the X Window System"
   homepage "https://invisible-island.net/xterm/"
-  url "https://invisible-mirror.net/archives/xterm/xterm-394.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_394.orig.tar.gz"
-  sha256 "a2a0cb206eb0423dedc34794f5c2d38c83390d2dd1106b66aba0960c3a976c7a"
+  url "https://invisible-mirror.net/archives/xterm/xterm-395.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_395.orig.tar.gz"
+  sha256 "286e3caa5938eae38e202827621567629dfeaae689e8070b413ca11398093dc8"
   license "X11"
 
   livecheck do
@@ -12,14 +12,12 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "6cce03b4873df6499e88ae23adc0c49a584e0bb4ece451a8693ccfe9b523bc14"
-    sha256 arm64_sonoma:   "63cd19fc458f0576cb3c33062a3a59cda38b17079bcdebd01de82d6c469a5f6b"
-    sha256 arm64_ventura:  "e23747d37f601cb0cf5de5b7dec8ab637cb93885d1ca93e21fd3f39b4300e3e5"
-    sha256 arm64_monterey: "9e7d00e0399c9cfc3ca6ac9ba2a7a06078a162db2df15c81b709df1770248831"
-    sha256 sonoma:         "37cd98e0e48d5d28223351b7338293220e91bbbdfc9da8f27ed0a9f2e1c4a054"
-    sha256 ventura:        "245a2fa5459903ae789e77ae56a0d515289e0650402638c3f5214da38b6c3faf"
-    sha256 monterey:       "dfa13604b2ed71ef8155e788bce2cb0a1ad172f1156dbaac09838e75c3365c31"
-    sha256 x86_64_linux:   "e5f2aaf508e55746fa8b104f76dcd4d2cd2aa6b06c981be93118cf0ca8f3279d"
+    sha256 arm64_sequoia: "6da345bd09ba755ca3a9d0ad8396df2e544f832d4c94f24f2d480e26fdc08afe"
+    sha256 arm64_sonoma:  "cc6e912e60d57b2abc2dc8bb14fa4aa6ba5a8724738e336df333461c914ba76f"
+    sha256 arm64_ventura: "e302212168d002ea6334cfb5152f68d7f7df6e82bd5775b1f084151ae69e0cb9"
+    sha256 sonoma:        "f52d6fd12e09e504106fc27267b67b50da3f7866371ed4197df3d10029d3178b"
+    sha256 ventura:       "104061b3dda6a3387ddb6327201fee127367f8ebc30879d9b29cf48bb0a978c1"
+    sha256 x86_64_linux:  "47fc6b48c2f4ca679c4970ac0ee320c484ac1acee8d5a5ef1a4b9d988148087e"
   end
 
   depends_on "fontconfig"

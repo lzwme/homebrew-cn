@@ -1,18 +1,18 @@
 class Tenv < Formula
   desc "OpenTofu  Terraform  Terragrunt  Atmos version manager"
   homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv3.2.5.tar.gz"
-  sha256 "7cd572ecdfa3903fc4f2848872be832144dd3412306c78d8dfeb7a322508bfcc"
+  url "https:github.comtofuutilstenvarchiverefstagsv3.2.7.tar.gz"
+  sha256 "141e8cffdcc27476620da4ac9164ac8d5474d4cb644dc2131e53bd5e8effde51"
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a6f80424c0cc0282e2d1b46c4486c5b810b717a0d3b67e85d725d2f7db37e03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a6f80424c0cc0282e2d1b46c4486c5b810b717a0d3b67e85d725d2f7db37e03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a6f80424c0cc0282e2d1b46c4486c5b810b717a0d3b67e85d725d2f7db37e03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af1334db715e0e094d43198699bb85f595548390e6bf28af9eadc5d158bf0c80"
-    sha256 cellar: :any_skip_relocation, ventura:       "af1334db715e0e094d43198699bb85f595548390e6bf28af9eadc5d158bf0c80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b8ad9e21b67e41717db47bbe1988d14dcab3e4908bf52666a414a5d736a174"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "589bcd8c368ee38d59e038fe441b52ce1182463b7f15fb1cbd09ee4860dc82ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "589bcd8c368ee38d59e038fe441b52ce1182463b7f15fb1cbd09ee4860dc82ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "589bcd8c368ee38d59e038fe441b52ce1182463b7f15fb1cbd09ee4860dc82ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87bcce5e0ef92336a57fe28e839dd749505a6d457fe2ba6b4367bcca2b46568b"
+    sha256 cellar: :any_skip_relocation, ventura:       "87bcce5e0ef92336a57fe28e839dd749505a6d457fe2ba6b4367bcca2b46568b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75a2a972d043c8d8e96e0272826cde2e92ad8a0c3f4ea49a989e091ea55b9327"
   end
 
   depends_on "go" => :build
@@ -23,12 +23,6 @@ class Tenv < Formula
   conflicts_with "atmos", because: "both install atmos binary"
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
   conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
-
-  # bump bubbletea to 1.1.2 to build with ansi 0.4.0, upstream pr ref, https:github.comtofuutilstenvpull268
-  patch do
-    url "https:github.comtofuutilstenvcommita5431705ce34bfbe3a12f6b069106025c6fd8cbd.patch?full_index=1"
-    sha256 "f727a5ac69a438c76709491f2591f75fec1ceb1f9bde66654746e7d7b413eafa"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "0"

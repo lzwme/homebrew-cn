@@ -8,12 +8,13 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f05c120e6fe6c628e0cf356f84a6af83acac6edc19657d1dc13ea8568b58c316"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad35e2a859e98c99d3110c800b8c841b839a513fd83f593ed1fe289d153905c2"
-    sha256 cellar: :any,                 arm64_ventura: "b52c2d0062abf2208c7e9275d22d91f4d592e92ed47fabd1730d6c4506e4cbbf"
-    sha256 cellar: :any,                 sonoma:        "b1532f4b5a5faaee72e966808f619b1d9dd4e430ca211593c6a5d1726110753e"
-    sha256 cellar: :any,                 ventura:       "c0a62eaf17ffb5c809a43caa896906bb589cdc036f1ca432325c9e1a7c125ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c51c780ec6def898f164f516e5b44a1ba56fcc6a9d3b9cec16ec4bc4c752f67e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "82bb783d1ee697229e0045d7988ea1584e4ee880ecd6c952ca47407e1485bb92"
+    sha256 cellar: :any,                 arm64_sonoma:  "35d55278b96aa53726987aee86efa4066979f1ff7fbcc5a5bb6d135399e4d48a"
+    sha256 cellar: :any,                 arm64_ventura: "c27fd67b280057580a09af13259c8103e6234a96205b6d0c1b4691a58116758c"
+    sha256 cellar: :any,                 sonoma:        "f5a519e67bacd5c60e79d0d4960188deee646a341582524113d543db018ef01c"
+    sha256 cellar: :any,                 ventura:       "755966d1e00d48f42f002ec35bef8c118b7acfe0a15ff01a6a68f81bc4c6b7aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba44f8929debc6ea97eb4e2bb3c14728b6a2e77bb1e873265bd3c0782a99f55"
   end
 
   depends_on "cmake" => :build
@@ -89,11 +90,6 @@ class Bbot < Formula
   resource "dnspython" do
     url "https:files.pythonhosted.orgpackagesb54a263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829dnspython-2.7.0.tar.gz"
     sha256 "ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1"
-  end
-
-  resource "docutils" do
-    url "https:files.pythonhosted.orgpackagesaeedaefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9docutils-0.21.2.tar.gz"
-    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
   end
 
   resource "filelock" do
@@ -197,8 +193,8 @@ class Bbot < Formula
   end
 
   resource "python-daemon" do
-    url "https:files.pythonhosted.orgpackages845097b81327fccbb70eb99f3c95bd05a0c9d7f13fb3f4cfd975885110d1205apython-daemon-3.0.1.tar.gz"
-    sha256 "6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5"
+    url "https:files.pythonhosted.orgpackages54cdd62884732e5d6ff6906234169d06338d53e37243c60cf73679c8942f9e42python_daemon-3.1.0.tar.gz"
+    sha256 "fdb621d7e5f46e74b4de1ad6b0fff6e69cd91b4f219de1476190ebdd0f4781df"
   end
 
   resource "pyyaml" do
@@ -297,13 +293,13 @@ class Bbot < Formula
   end
 
   resource "xmltodict" do
-    url "https:files.pythonhosted.orgpackages58400d783e14112e064127063fbf5d1fe1351723e5dfe9d6daad346a305f6c49xmltodict-0.12.0.tar.gz"
-    sha256 "50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21"
+    url "https:files.pythonhosted.orgpackages500551dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958fxmltodict-0.14.2.tar.gz"
+    sha256 "201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"
   end
 
   resource "xmltojson" do
-    url "https:files.pythonhosted.orgpackagesdced1d658daeb13fdf59aa90984f94452e76c9ab494bb53bf3ad6cbd37e6e320xmltojson-2.0.2.tar.gz"
-    sha256 "10719660409bd1825507e04d2fa4848c10591a092613bcd66651c7e0774f5405"
+    url "https:files.pythonhosted.orgpackagesc5bd7ff42737e3715eaf0e46714776c2ce75c0d509c7b2e921fa0f94d031a1ffxmltojson-2.0.3.tar.gz"
+    sha256 "68a0022272adf70b8f2639186172c808e9502cd03c0b851a65e0760561c7801d"
   end
 
   resource "yara-python" do
@@ -312,14 +308,7 @@ class Bbot < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "python-daemon"
-
-    # Workaround breaking change in `setuptools`: https:pagure.iopython-daemonissue94
-    resource("python-daemon").stage do
-      inreplace "version.py", "import setuptools.extern.packaging.version", ""
-      inreplace "version.py", "self.validate_version(version)", ""
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources
   end
 
   test do

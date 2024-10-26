@@ -17,8 +17,7 @@ class BigqueryEmulator < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1adb5a4472cb22c6f7e9e248ec9629703554d3269ede330bcf9fb0981fc2db2"
   end
 
-  # use "go" again after https:github.comgoccybigquery-emulatorissues348 is fixed and released
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   uses_from_macos "llvm" => :build
   uses_from_macos "netcat" => :test
@@ -28,7 +27,7 @@ class BigqueryEmulator < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    ldflags = "-s -w -X main.version=#{version} -X main.revision=Homebrew"
+    ldflags = "-s -w -X main.version=#{version} -X main.revision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), ".cmdbigquery-emulator"
   end
 

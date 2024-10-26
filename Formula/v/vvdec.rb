@@ -1,20 +1,18 @@
 class Vvdec < Formula
   desc "Fraunhofer Versatile Video Decoder"
   homepage "https:github.comfraunhoferhhivvdec"
-  url "https:github.comfraunhoferhhivvdecarchiverefstagsv2.3.0.tar.gz"
-  sha256 "91ab0c64a6f43627add65cfd2c14d074ad5830105d63fa013af274960efd4e6d"
+  url "https:github.comfraunhoferhhivvdecarchiverefstagsv3.0.0.tar.gz"
+  sha256 "090688c2f9beebd4e8a2ec197a5b9429803498cd3c91fbec62fe7718a8268114"
   license "BSD-3-Clause-Clear"
   head "https:github.comfraunhoferhhivvdec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "51f1cb1b75a6ee13ab78a306ac5de3852a15d05dac0d4b53bd8953af4fda36d2"
-    sha256 cellar: :any,                 arm64_sonoma:   "6f2e30713b549361d1b26911e7d88fef58a812b1ec952999fe4d0c24826f9568"
-    sha256 cellar: :any,                 arm64_ventura:  "d24841de4c36eb454ca6a5be7c844de3eb2fea61e217e16a24d2f2323e08029d"
-    sha256 cellar: :any,                 arm64_monterey: "0a8dab227c7af3092bc2ccb69776cdab2cdeab89199f2f8f01de429460950b2c"
-    sha256 cellar: :any,                 sonoma:         "fc5acfcf9a37e3400762c0a288b7a51e63a7199a54e1d571f7051a93b4069384"
-    sha256 cellar: :any,                 ventura:        "3340379e3962efd8a7249f800bb32bb6db45fe3e855e8c44cb6ff6ae6666269b"
-    sha256 cellar: :any,                 monterey:       "5f0b0da9be046b8087595eeb4c8178f7cc634b8ba7c36ad187fe7852fa89d754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146e7f0178046b0118807463f1d4a16323a390d34c7c6d7e10fe3c1de1860f39"
+    sha256 cellar: :any,                 arm64_sequoia: "b956fabeb934f949925f8671518902161fd38277e72106964a43b49c48d8c031"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f9c6a6c8c81c797a68a0b25487784e3dc66a5e0ca7972900d65a2dab9793de6"
+    sha256 cellar: :any,                 arm64_ventura: "2554098c8f97cff5cc2b85325a3e53bfc311e9faa9ee2051d9d80e8f20bae1bb"
+    sha256 cellar: :any,                 sonoma:        "b1fc2efdf0309717ea11531baccc04c608255d388239c0c4718786e3f3dca834"
+    sha256 cellar: :any,                 ventura:       "618b27f29d85a69c088a927c66f463abad82db277f31090e5d71fba38b41857e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba30c7153eef5cfcd61dab7bc0b615dadb12b4d6243d98386349237f60534221"
   end
 
   depends_on "cmake" => :build

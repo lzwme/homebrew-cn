@@ -12,13 +12,13 @@ class TrezorAgent < Formula
   revision 6
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "dacc7fc74d74d54215962f62c6948843120620146af5838229a60e232cdc350e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e914176c9062e1a752008b02f8b8bc0a76d43288e0b98aa63dd2eb7b3dd4ed2c"
-    sha256 cellar: :any,                 arm64_ventura: "ba7b811fdaa9ff3d59b29c1e45fc10b79b0e6aa38da02142c87f15a729b60720"
-    sha256 cellar: :any,                 sonoma:        "2b76dfb6751857d5387d3b9f22c8ee251e7b57d856507b73d1696995a03dec8e"
-    sha256 cellar: :any,                 ventura:       "024ae9d0f2390a10361747958666828d4523a49a562cb3b8087a77e383cd8bd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d2b8c93baeac6e51a9aea22b9edd114dda2c18f45f904f13b8b3ae42107870"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "d30a423e7bb16cb85bd82c747656b8cf5f565f22322153f65e3f680c599b943b"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ac21208ac317825a5fdd587048a1391270b5cdc97df69607e2b381d0c5c9606"
+    sha256 cellar: :any,                 arm64_ventura: "ee85d4ac6e1a6951e37cfa77ec7ff46eac91fb9cb0c858feb51dc0c5dba69db5"
+    sha256 cellar: :any,                 sonoma:        "7aaad0a948426ba6ae82128e18501ebed5f2279c9e3d1f0dfd00f0fa38e79fb6"
+    sha256 cellar: :any,                 ventura:       "ff6bd171a518ccbd6aaa4d6f8f6c1e0b9b14f843cebf10268c556fededd98984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea07ce42c9c3de33f2c307f30522d41a43809ad90096078f3d48657be95b1942"
   end
 
   depends_on "pkg-config" => :build # for hidapi resource
@@ -206,8 +206,8 @@ class TrezorAgent < Formula
   end
 
   resource "python-daemon" do
-    url "https:files.pythonhosted.orgpackages845097b81327fccbb70eb99f3c95bd05a0c9d7f13fb3f4cfd975885110d1205apython-daemon-3.0.1.tar.gz"
-    sha256 "6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5"
+    url "https:files.pythonhosted.orgpackages54cdd62884732e5d6ff6906234169d06338d53e37243c60cf73679c8942f9e42python_daemon-3.1.0.tar.gz"
+    sha256 "fdb621d7e5f46e74b4de1ad6b0fff6e69cd91b4f219de1476190ebdd0f4781df"
   end
 
   resource "python-gnupg" do
@@ -231,8 +231,8 @@ class TrezorAgent < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
+    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
   end
 
   resource "six" do
@@ -273,20 +273,12 @@ class TrezorAgent < Formula
   def install
     ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
     ENV["SODIUM_INSTALL"] = "system"
-    without = ["python-daemon"]
-    without += if OS.mac?
+    without = if OS.mac?
       ["dbus-fast"]
     else
       resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end
-    venv = virtualenv_install_with_resources(without:)
-
-    # Workaround breaking change in `setuptools`: https:pagure.iopython-daemonissue94
-    resource("python-daemon").stage do
-      inreplace "version.py", "import setuptools.extern.packaging.version", ""
-      inreplace "version.py", "self.validate_version(version)", ""
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources(without:)
   end
 
   test do

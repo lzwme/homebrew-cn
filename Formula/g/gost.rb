@@ -15,7 +15,7 @@ class Gost < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de78cc69979d46baeb0727157ea88dc6b6f3c263258e2d99c32040c5a9abd28c"
   end
 
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   conflicts_with "vulsio-gost", because: "both install `gost` binaries"
 
@@ -27,7 +27,7 @@ class Gost < Formula
   test do
     bind_address = "127.0.0.1:#{free_port}"
     fork do
-      exec "#{bin}gost -L #{bind_address}"
+      exec bin"gost", "-L", bind_address
     end
     sleep 2
     output = shell_output("curl -I -x #{bind_address} https:github.com")

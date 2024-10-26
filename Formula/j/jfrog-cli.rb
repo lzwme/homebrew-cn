@@ -1,18 +1,18 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https:www.jfrog.comconfluencedisplayCLIJFrog+CLI"
-  url "https:github.comjfrogjfrog-cliarchiverefstagsv2.71.0.tar.gz"
-  sha256 "6f2fdfd26c3546644f2654fc4ee94e3d5aa32e388311fb82a3af363a27f1a25b"
+  url "https:github.comjfrogjfrog-cliarchiverefstagsv2.71.1.tar.gz"
+  sha256 "ef4af045ccdeb5305c60d8ac1e1faebd6e4501486737d8198034d4606edbbeb6"
   license "Apache-2.0"
   head "https:github.comjfrogjfrog-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6fde70251bc984a167a4e54a2ece8cc4817ef0f650a0319e0ed5dbdddfa5022"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6fde70251bc984a167a4e54a2ece8cc4817ef0f650a0319e0ed5dbdddfa5022"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6fde70251bc984a167a4e54a2ece8cc4817ef0f650a0319e0ed5dbdddfa5022"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec233824dfe1e5d6886b7e7452f6731dceb1da1ed2c3193cd4029a86692bba06"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec233824dfe1e5d6886b7e7452f6731dceb1da1ed2c3193cd4029a86692bba06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d29ddcf8cf74704688564c1fad9b78c48cf75040a81bb82d800c7514cd6f97b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afa94ad09ac1d3b6d21da2d997b270a4355c2487bbf4b3b1ce522726eca5fc96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afa94ad09ac1d3b6d21da2d997b270a4355c2487bbf4b3b1ce522726eca5fc96"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "afa94ad09ac1d3b6d21da2d997b270a4355c2487bbf4b3b1ce522726eca5fc96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e83935c29f007b8a10b9d554eae9d4842e005f5072d03f5f144774d4fa2e024"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e83935c29f007b8a10b9d554eae9d4842e005f5072d03f5f144774d4fa2e024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1dfc41d30cefbddaced71d7561547ecdab9e9cd41393e4196336362e3c4e59"
   end
 
   depends_on "go" => :build

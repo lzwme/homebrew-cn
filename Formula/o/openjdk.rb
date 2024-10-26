@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk23uarchiverefstagsjdk-23-ga.tar.gz"
-  sha256 "02e2c3b356c00c3cc7efcca2fbd37723f55349677a1de483a9be8a43f327de76"
+  url "https:github.comopenjdkjdk23uarchiverefstagsjdk-23.0.1-ga.tar.gz"
+  sha256 "0e058ae2956871aafc5be33960b6e0f8dd954d234d590d249bcb3b619b579a0a"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,13 +11,12 @@ class Openjdk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "ababf9f922e2c91039ac07209e7e66ee1d5e55f7cbadae25597ce2d1324e328f"
-    sha256 cellar: :any, arm64_sonoma:  "0ba02cbe94e2fc2b1aec69f0e9a624cc8944055170f1b7ca4241ad4fc3b3ac7c"
-    sha256 cellar: :any, arm64_ventura: "e4d1c93665666a4b66b8b47d381e0ce2e1a7d3d615f20739ae216f92cd8d64e5"
-    sha256 cellar: :any, sonoma:        "caaf8ccee728ec17e0ceb124433c8a627084446c79a1041baf8908b8fd5c78a0"
-    sha256 cellar: :any, ventura:       "e2804a8040a8fd46fed466f103391f314be906e64d5c349963ee81cdd8e13742"
-    sha256               x86_64_linux:  "82fc99187027bf29857ea070a092b41ce76169bbedad8a91177c60f1d405829d"
+    sha256 cellar: :any, arm64_sequoia: "5cba5c9149f823770a7aa5ddd12f8e0d48263284bfc8151b066d9c60b5945f04"
+    sha256 cellar: :any, arm64_sonoma:  "176f8199a78576ee2c58ff0991fe39715f5bfa2b3696f1524dd02d189b2bbecb"
+    sha256 cellar: :any, arm64_ventura: "28f082ca3d5a172b9991546169f74fbe1f69a9dbd3e96dc0fe02aa35e0332454"
+    sha256 cellar: :any, sonoma:        "0af938cb313d757ceadccb67ecb37ea8744de3a672ec23ee7fd19afd1ed9ff98"
+    sha256 cellar: :any, ventura:       "c682b196a6eb18f671c7f995d9c48ce8e88db01767822283f4ab3f74b3c51ce6"
+    sha256               x86_64_linux:  "873413e010c1bf4a928801aa74bd8d20fb8053a6bc303a74486ad17653d35e9e"
   end
 
   keg_only :shadowed_by_macos
@@ -37,20 +36,6 @@ class Openjdk < Formula
   uses_from_macos "unzip"
   uses_from_macos "zip"
   uses_from_macos "zlib"
-
-  on_macos do
-    if DevelopmentTools.clang_build_version == 1600
-      depends_on "llvm" => :build
-
-      fails_with :clang do
-        cause <<~EOS
-          Exception in thread "main" java.lang.ClassFormatError: StackMapTable format error: bad verification type
-            at jdk.compilercom.sun.tools.javac.Main.compile(Main.java:64)
-            at jdk.compilercom.sun.tools.javac.Main.main(Main.java:52)
-        EOS
-      end
-    end
-  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -98,11 +83,6 @@ class Openjdk < Formula
   end
 
   def install
-    if DevelopmentTools.clang_build_version == 1600
-      ENV.llvm_clang
-      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
-    end
-
     boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     boot_jdk = "ContentsHome" if OS.mac?
@@ -157,6 +137,10 @@ class Openjdk < Formula
       ]
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
+
+    if DevelopmentTools.clang_build_version == 1600
+      args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
+    end
 
     system "bash", "configure", *args
 

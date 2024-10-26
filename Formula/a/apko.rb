@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https:github.comchainguard-devapko"
-  url "https:github.comchainguard-devapkoarchiverefstagsv0.19.3.tar.gz"
-  sha256 "4c7afbbc1877bbf18efc8c999c383600584edfd6f93a88dd714c81fafc49103f"
+  url "https:github.comchainguard-devapkoarchiverefstagsv0.19.4.tar.gz"
+  sha256 "74c0bff58c81a364d27fc36b0c401523da775b0942685662f84b4bf18a72c210"
   license "Apache-2.0"
   head "https:github.comchainguard-devapko.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f800880a373f2b7cea7582837433e8f1d3edc7bf2b0d4a37fb4eba53caf1620e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f800880a373f2b7cea7582837433e8f1d3edc7bf2b0d4a37fb4eba53caf1620e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f800880a373f2b7cea7582837433e8f1d3edc7bf2b0d4a37fb4eba53caf1620e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d5474d717f6322a972214b1862439892a8d8d5472f026b9d0ac3a50bb92dc1a"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d5474d717f6322a972214b1862439892a8d8d5472f026b9d0ac3a50bb92dc1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5de2e2972ed13f7d355d76d55453f62bd289c7e50b377402d8efaff6eb285639"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87ea97cd953173af174be19a2412e98e7a76311b8bdb603f3d8fe57ed27dd78f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87ea97cd953173af174be19a2412e98e7a76311b8bdb603f3d8fe57ed27dd78f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "87ea97cd953173af174be19a2412e98e7a76311b8bdb603f3d8fe57ed27dd78f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16910ef119d00e9ff17ced6b6f4a4c7d77820edf9d16cd275332fbfe810b387f"
+    sha256 cellar: :any_skip_relocation, ventura:       "16910ef119d00e9ff17ced6b6f4a4c7d77820edf9d16cd275332fbfe810b387f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f062e323dd62173eeb6bea0ae28b9db563f1bfc577f5d36856a3b686ba537a87"
   end
 
   depends_on "go" => :build
@@ -53,11 +53,9 @@ class Apko < Formula
       environment:
         PATH: usrsbin:sbin:usrbin:bin
 
-      # no keys found for arch loongarch64 and releases [edge],
-      # so constraint the archs to x86_64 and aarch64
+      # only key found for arch riscv64 [edge],
       archs:
-        - x86_64
-        - aarch64
+        - riscv64
     EOS
     system bin"apko", "build", testpath"test.yml", "apko-alpine:test", "apko-alpine.tar"
     assert_predicate testpath"apko-alpine.tar", :exist?

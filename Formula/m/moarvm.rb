@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
   homepage "https:moarvm.org"
-  url "https:github.comMoarVMMoarVMreleasesdownload2024.09MoarVM-2024.09.tar.gz"
-  sha256 "ea9b3b7ed126ce45619b8b5a4091ac2586603c9160130799a7d3e12795c14d24"
+  url "https:github.comMoarVMMoarVMreleasesdownload2024.10MoarVM-2024.10.tar.gz"
+  sha256 "055cfeefa3ea081039b75b2a89f6ea063cb3a489643e3dc8db8497a9a02372c9"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a0b1a2c9714db7d2c0d76c3d2df65a13c31187a7383be3aa7a936253f9f58247"
-    sha256 arm64_sonoma:  "d9cac2444f40b5875197dba7e46749c6ec80d9d5a54f90cd400a1ad91f901105"
-    sha256 arm64_ventura: "cfd13314ef8d3cbcaf359e4b30582c57d40a540304ed8b03a3fc99de03d46251"
-    sha256 sonoma:        "b7b8dc363c62cfc68f786f9157ee5270ad1b4cadd9be1191b4ce5cf217d41f7b"
-    sha256 ventura:       "c90f145721c8235ce88cee88f3e3a94888ea2c7078612958c4bf2e46eadb3fa2"
-    sha256 x86_64_linux:  "45430cc52404c0862038ccf969210ba2844cdafad607a5bad528f7704ea368e3"
+    sha256 arm64_sequoia: "cc350b8017771fd519ed075e4bf082378865be6bfcc17cf8a75220d7ee01c2cb"
+    sha256 arm64_sonoma:  "7a5dc98c674af42fa378e985b5e7eb28685f3e0462aa55974863a07e4467d39a"
+    sha256 arm64_ventura: "e0be9123ffd4e854a66e7b53715f12bf8b52a22235c91991c2b87c3277a12997"
+    sha256 sonoma:        "963779bbab8068da8c1270962ba705791e382df6cfc96b7d1f81c4338fcdddc9"
+    sha256 ventura:       "525b5f32f60932437b95c9baa1b96192eb2384719ac8a6578fac28533f80dd9d"
+    sha256 x86_64_linux:  "7f1969a3430c43b3054da1962359607cadb30064ed2721cc39b1a03d29bf61ad"
   end
 
   depends_on "pkg-config" => :build
@@ -31,8 +31,8 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https:github.comRakunqpreleasesdownload2024.09nqp-2024.09.tar.gz"
-    sha256 "03de709b6353c4cc80aeb8ba2ef3fe54ec4bfe04ea6a10c631ca560b58cb181d"
+    url "https:github.comRakunqpreleasesdownload2024.10nqp-2024.10.tar.gz"
+    sha256 "1fd1ea24af91fa64f72880af8351de5970c3499dc89699a435572eee0cf5f482"
   end
 
   def install

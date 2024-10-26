@@ -1,18 +1,18 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https:runme.dev"
-  url "https:github.comstatefulrunmearchiverefstagsv3.9.0.tar.gz"
-  sha256 "6d355baa97a2e3876fceb2b3fe42249b2ff83703677cb8ae28ec963079a9a322"
+  url "https:github.comstatefulrunmearchiverefstagsv3.9.2.tar.gz"
+  sha256 "80ba7a64a37ed6696fb7f9015509185e13fbd662706854b1e7ad955182a0b3dd"
   license "Apache-2.0"
   head "https:github.comstatefulrunme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2236694e928ed8135b080c69f42e161837f8aaa459856422d546749daa7db6fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2236694e928ed8135b080c69f42e161837f8aaa459856422d546749daa7db6fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2236694e928ed8135b080c69f42e161837f8aaa459856422d546749daa7db6fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "491cca0b246c5ed09080d122bc7bc680ab1711628f527d30b30eb65a87b7d755"
-    sha256 cellar: :any_skip_relocation, ventura:       "491cca0b246c5ed09080d122bc7bc680ab1711628f527d30b30eb65a87b7d755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ade6102705080c01ff732ccd968e883b7cdec9c255d74c3dcfdce95256afcfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43ca62eaecb5e69417a862c20af49bfeec00961ffc8c38c237f6e1fe87ae5b77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43ca62eaecb5e69417a862c20af49bfeec00961ffc8c38c237f6e1fe87ae5b77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "43ca62eaecb5e69417a862c20af49bfeec00961ffc8c38c237f6e1fe87ae5b77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b92b8b63d52c5f50047826d7bb3e73bf378bcb5a52cf7008ff17518e3d7dc002"
+    sha256 cellar: :any_skip_relocation, ventura:       "b92b8b63d52c5f50047826d7bb3e73bf378bcb5a52cf7008ff17518e3d7dc002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b57cb251303090585ff79c116fd9b72c104fbb9740c3830c7cc2f3658e0f983"
   end
 
   depends_on "go" => :build

@@ -3,17 +3,17 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/03/f7/c3b81fe7780333daf6ea90658a599c222bbaca0acdccd1db020c8c002724/sqlfluff-3.2.4.tar.gz"
-  sha256 "a027ded8bea1f10a4de6173e3f02363cba37ab9e344432292553549a24028931"
+  url "https://files.pythonhosted.org/packages/33/31/9ad9e98fc8d7bfd739204b0ee20f81840332754abe6f80ed53bb40875764/sqlfluff-3.2.5.tar.gz"
+  sha256 "39822db2c6ad7dac9f6e43d36a3d086c503c051b09665d14a5bdf644770f6ef6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "716f96fa2197a4c7207bfcd4adf70d878bd35d4693bca7765a9a7fb23f297261"
-    sha256 cellar: :any,                 arm64_sonoma:  "7afc5f50638eec5b6b236a69653776d506a768d1d73949f8b94ae28f1edacc45"
-    sha256 cellar: :any,                 arm64_ventura: "190f3e55e39a95d0b2de6b3f2a044cdf338974dab33b585b6367e226216f9671"
-    sha256 cellar: :any,                 sonoma:        "39583c8e7456505aa9c9e3d08be3df36e7da184dd1ab926691d5e1517cdbcabd"
-    sha256 cellar: :any,                 ventura:       "42c9d6e20b6eb6794bbe55a44ea81a5e34a2169a9888a2e076e97be0a17b8560"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dc0c4b9beacccc0f2dd3f4eef4dfa4678b946f5e11652b0920ca29fdf261063"
+    sha256 cellar: :any,                 arm64_sequoia: "63b32dfaeac3b3254449e844792c25479ef2dbd5e4686a17037802a1072cace6"
+    sha256 cellar: :any,                 arm64_sonoma:  "867efca404aedc4b8b369f872217c8b2ecbc9da6cde12f533490c688044fb43e"
+    sha256 cellar: :any,                 arm64_ventura: "e23b2b25f67810dae721ef703c10369335b1b3313ff4fdd7658d5092505a6719"
+    sha256 cellar: :any,                 sonoma:        "7dbddf23d1d38bb7a88203144c8cc2f9623bec535cb423d7cd175205060c2f06"
+    sha256 cellar: :any,                 ventura:       "2f18579b1f4fab2af5060038b5740598d58732c6feec45fc7dea56ca5dde6885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "965f8b131ae188b8069af2b7b1777b807bb030d9793bd024126d6913416f61b7"
   end
 
   depends_on "libyaml"
@@ -55,8 +55,8 @@ class Sqlfluff < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b4/d2/38ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8f/markupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do

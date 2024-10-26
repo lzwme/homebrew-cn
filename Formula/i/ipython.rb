@@ -3,19 +3,18 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackagesf72148db7d9dd622b9692575004c7c98f85f5629428f58596c59606d36c51b58ipython-8.28.0.tar.gz"
-  sha256 "0d0d15ca1e01faeb868ef56bc7ee5a0de5bd66885735682e8a322ae289a13d1a"
+  url "https:files.pythonhosted.orgpackages85e0a3f36dde97e12121106807d80485423ae4c5b27ce60d40d4ab0bab18a9dbipython-8.29.0.tar.gz"
+  sha256 "40b60e15b22591450eef73e40a027cf77bd652e757523eebc5bd7c7c498290eb"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef36b2e65beca69cf1c7be6e48377b5907310e62be72760ad28df190ecc6e849"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef36b2e65beca69cf1c7be6e48377b5907310e62be72760ad28df190ecc6e849"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef36b2e65beca69cf1c7be6e48377b5907310e62be72760ad28df190ecc6e849"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e35ba6c049d5125b6fe8efd2bfeafc4badfaff9e0bfe5417d9991dbaf5d1c84d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e35ba6c049d5125b6fe8efd2bfeafc4badfaff9e0bfe5417d9991dbaf5d1c84d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef36b2e65beca69cf1c7be6e48377b5907310e62be72760ad28df190ecc6e849"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57644bacc3221aa6171fceed5309e684105af359d190743bf27ea889c460dee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57644bacc3221aa6171fceed5309e684105af359d190743bf27ea889c460dee1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57644bacc3221aa6171fceed5309e684105af359d190743bf27ea889c460dee1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2bde16917a1eff6ace3d9372792332cf6cbb88545c36a6713be2823f6cce40c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "2bde16917a1eff6ace3d9372792332cf6cbb88545c36a6713be2823f6cce40c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57644bacc3221aa6171fceed5309e684105af359d190743bf27ea889c460dee1"
   end
 
   depends_on "python@3.13"

@@ -4,24 +4,28 @@ class Mockolo < Formula
   url "https:github.comubermockoloarchiverefstags2.1.1.tar.gz"
   sha256 "6707a0a7b73822f9c6cf986a73a9adc452b3052e38b87169432c0893948861da"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5900b760035156f21faaddbc8a8ffed59f70444d12307e3f98e725801fdfdeef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75af27726b09a0df48665d7dbe8a28a84c1eb742f50ebfbf9339ed95d18792b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "463d59df9541d099375564265fc22dbee15bbf2dd17291d3eb080685ed427a91"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "006af0dbe99288c6ae3d1f9158d4f9e53200164d73eec4e2ddff909959efb452"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5fc054bf963825952b6b816075eee5687a0d9b5c96db29752a21a38bd71c34a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "2887686548ea5cdaea1c68071e2f612bc6070d514c314a7cbb10e1298bb96223"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae6e8446da621f10ff13da985fcd4ad3faa743275c8290412b1da9191a1b4dc4"
-    sha256                               x86_64_linux:   "cc8e52f71953f6b23002b0572060b58849463ab0c5399454012b1173b222cf7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52b3fb229429ecbbdbb5364d7d4380183b7fd70f805ca5846b8e36b52642bd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c247e590442eaed00151e9f0a89d6dd6bacc6ea41316f64a5a737e7da726985"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a91db23727d736125f17987131edb5c8f0a4634724b0cff6f73c7a6986315c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7a3cbecc795c95ef277406051c4d87904fe770c83c3ff9f70f7e95f5cb13930"
+    sha256 cellar: :any_skip_relocation, ventura:       "b15049d8170ece9b3fc1461ff3a5e21dbdbda971032d39e83d741a2dab320f52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0dfa912abfa8ec8b1156c687e5a1a5ac8a90526a38a3c6fa531fdfae35dfbe"
   end
 
   depends_on xcode: ["14.0", :build]
 
-  uses_from_macos "swift"
+  uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox", "--product", "mockolo"
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+    system "swift", "build", *args, "-c", "release", "--product", "mockolo"
     bin.install ".buildreleasemockolo"
   end
 

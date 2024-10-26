@@ -4,26 +4,29 @@ class SwiftOutdated < Formula
   url "https:github.comkiliankoeswift-outdatedarchiverefstags0.9.0.tar.gz"
   sha256 "b6ee31edc45711c6425d047fe1b4f177da2498201dab5d94dbe86d8bd483419c"
   license "MIT"
+  revision 1
   head "https:github.comkiliankoeswift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fc5744d2973db6a56fe041b6a9a4a1a8b479ab287ad7d7ff7f328995c3a3d770"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e51d1646a256b47a32512952ba7fa916f1744b11c3c09ddc3c5a576845ed270a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f64533b814302cc8f16f49ce3af1ffdc261f3c2a4a5659dc55ba70fcc9251472"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f60b56ed944d4428552ab6802d4ed69808eae4c4411223701c3fbcd1cf74d2a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "476390766ef47a7427e44c7292238c009dc5859cdcc8908e99b74cf9516a9292"
-    sha256 cellar: :any_skip_relocation, ventura:        "baa8fc055b4b1df5bf20951f476ecd99f657711205508a36591cc1f189baa355"
-    sha256 cellar: :any_skip_relocation, monterey:       "b27aeed8749c5062d7a666ca041a77be76bcc785d19446d0007bc7d4d62af3e3"
-    sha256                               x86_64_linux:   "4723925318b3bbb4b9d000c519c3e5956fc3bd5073e6315e2be4cbf306b089ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56a726e5f73cfc65075dfb810e92cd9b75721bacc4a5c4ac824b7725345baf56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba510240616bdc16f3c756002a8bbb5368753b2a58d1edfb86b95876d5ac0e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02ed4a34e55f8078b31d691593855fae0e42b8e3605050c6ff0e3ee2ffd21f73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "632eac750a169e76150a4f5c304cb2a0fbb71ffd29780fcfa9eb397766af775f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c7831671b39aee111e79ac7c31f40f68c58c5d02286ff4d52e9ab5112a4d2f02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c59bab3634d884340765c698e24977dbe5edc9f405dbcbcb97c017014ba05db0"
   end
 
-  depends_on xcode: ["13", :build]
-  depends_on macos: :monterey
+  depends_on xcode: ["13.3", :build]
 
-  uses_from_macos "swift"
+  uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+    system "swift", "build", *args, "-c", "release"
     bin.install ".buildreleaseswift-outdated"
   end
 

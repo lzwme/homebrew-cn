@@ -12,12 +12,13 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b6bafa4c7faa6bf1167e9147850c96051e9fa5e463d7208a1c37d43524ff2a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49e77611b7e449adcea5b5cff01245eca2291c9590b7ebe7c08f937f7782a862"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99f8253dd310aafaa065fe67446a893d833e74f158ab5176bfe2ac85217884f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59860719333c52b6ff86bef7c4319e961b79fe93f6967828799a6f445c34d31c"
-    sha256 cellar: :any_skip_relocation, ventura:       "e098104d9cf735ee32f168742e67469f7d6b16743566ad710070182aa583028d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4572d3c2dfaa7b7cc8abcd331d1a893d69dcd7a422967f2c6a4eeb24bfb8e6f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3cb0676fe41612dcb88ffca3f6bb3c9fa040524d307fc6e1a92b8dbb02e28e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba6f975848ff1ae513e52b472a71d3e62de5773824763c1b519432ac99be6631"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7d34119a5b78eed48b09b29470eea253b92ce1168e158c711d25f166528e8c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d553d6321b325321f2a1989ac1cfb40417df8b714cd4e94dbc02910df2f68032"
+    sha256 cellar: :any_skip_relocation, ventura:       "1212d146dc8c9bb8e8f40b85bf3986852b6e7c523f5d867538bf2063a0f4cbf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0ac02af1e51d564be9abffff647c71f4b8d4f6060c1a9aadbfb9997a445f69"
   end
 
   depends_on "pkg-config" => :build
@@ -31,7 +32,8 @@ class Gitoxide < Formula
     # See: https:github.comByrongitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
     features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
-    generate_completions_from_executable(bin"gix", "completions", "-s")
+    generate_completions_from_executable(bin"gix", "completions", "-s", base_name: "gix")
+    generate_completions_from_executable(bin"ein", "completions", "-s", base_name: "ein")
   end
 
   test do

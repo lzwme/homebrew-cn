@@ -4,29 +4,32 @@ class Publish < Formula
   url "https:github.comJohnSundellPublisharchiverefstags0.9.0.tar.gz"
   sha256 "e098a48e8763d3aef9abd1a673b8b28b4b35f8dbad15218125e18461104874ca"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comJohnSundellPublish.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "db9748a2faf569ceb6dfe4e605adf0165c154082a1bb7fdd4e23dde2468e9114"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e44b652c06d262df22d5c4401a6d9bb5656d595e2b40a06251c49909fe920cc8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "191eff0e5440c1fef78775f497ca8ba619c6ed4211105566449e7154d8c3fc8d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edc955e9e2cece8065b4683a4fdad37a905fbfcfd84a2de5d4ee3ba95362bb8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3db116daa803e90c79d10199e93b32eadb1c09bfa186345122261122fe2452f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "30f82563fe7d34323003a9f312c9d433803d8e8798366f54d48f0df3f011f5b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fea104781c15f8799fe321f8ab6fd0a3a0c120e24250af828282b52923500ca"
-    sha256                               x86_64_linux:   "b59fbd87fcbee58d181d557dc3214408d476673d3d40c1b67b518c2ca414bd80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12bb9d41814cacbe362e02d37825f9eabb5c2c228d2502441389a31deff9cd06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d595b1f7732f64fd874095b0c17ec22b77d7261fa83e0324f4657bfd8dbbedf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "75ad288c89a4abfff3648d4628b71133b15a9da2a7e85ea2ce72558c8b6a5ced"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4653f1571901ea7091329d5f935e8a5c05b2c7a5d9a8c8751b9a0ad6052547e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e568dd197329c4fe8ef509c03dbc0071615353caccd1fca8307b97a039fa08c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbf8d184068be460c2c8fb09aa1faad7180b1341bd50f670d7ca97a6d93e8672"
   end
 
   # https:github.comJohnSundellPublish#system-requirements
-  depends_on xcode: ["12.5", :build]
+  depends_on xcode: ["13.0", :build]
   # missing `libswift_Concurrency.dylib` on big_sur`
   depends_on macos: :monterey
 
-  uses_from_macos "swift"
+  uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+    system "swift", "build", *args, "-c", "release"
     bin.install ".buildreleasepublish-cli" => "publish"
   end
 

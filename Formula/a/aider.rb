@@ -3,29 +3,27 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages9461f78dfd9f9f153cf2cffdc7cf3590c1d4e3bc9a79953dbccc30e7529ae63aaider_chat-0.59.1.tar.gz"
-  sha256 "5e7ccb8c6b8054563d8c84a20f9d44dafd7f8f2e5fbb68275aa722386f2572f3"
+  url "https:files.pythonhosted.orgpackagesa03debfc0c6c818c88855aac34bb195c5738c473b84c89293a75db604eb9de3aaider_chat-0.60.0.tar.gz"
+  sha256 "79517259e5a9c7d565d0b792cd5abdccf7fe2a19a7762a288c39bb28de51d952"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "77863957bc70d3cac83dade12bfdc0b8ec84a66a86e94300a54d221e208c9387"
-    sha256 cellar: :any,                 arm64_sonoma:  "82046e2a7bc6f751196e32183be855f962fb00dbf7e1f88a05fd72b5af38242b"
-    sha256 cellar: :any,                 arm64_ventura: "5d74cd69104ce3559aad0a8a807aed77d53d4f6ee3b90098d17c95ac19b10a88"
-    sha256 cellar: :any,                 sonoma:        "f04562e9631a5ec8351a7c387d55b3657e83b2c2306f5a782993e0b819f11158"
-    sha256 cellar: :any,                 ventura:       "d05862dae7e3dea423968a2b19d151a8203e644326f2717f023bb0ab72675938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c46b141231ef2fbd12e67fecf1ee63b906fdf2f5f891cdf1a0d394504717c1fd"
+    sha256 cellar: :any,                 arm64_sequoia: "c351b683e61e04d7d3919e407349af2379490398148bbbdcfff3aa782140a605"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0444e7ab6751f4850ec899be273029b5781867d788deb63249eb474282f20c9"
+    sha256 cellar: :any,                 arm64_ventura: "abf48e682d3bf9e62d2b1490c10df853b80a5f312965f7bed2a1142486c70331"
+    sha256 cellar: :any,                 sonoma:        "b70b66546502d4294426ef1b1cc4f8e6eb3f3905ad0bb27650aca81d38c2e7b0"
+    sha256 cellar: :any,                 ventura:       "1e226c04c5abc032d808b9d9c1a514eb9ec4151dff1d2898e934a22005dbdd74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5cdd5d382e7aee2d3091fbf9992c3331f2636f17253aa7ac7e62810f629c702"
   end
 
-  depends_on "cython" => :build # for tree-sitter-languages
-  depends_on "python-setuptools" => :build # for tree-sitter-languages
   depends_on "rust" => :build # for pydantic_core
   depends_on "certifi"
   depends_on "cffi"
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # py3.13 support issue, https:github.comAider-AIaiderissues1984
   depends_on "scipy"
 
   resource "aiohappyeyeballs" do
@@ -81,6 +79,11 @@ class Aider < Formula
   resource "configargparse" do
     url "https:files.pythonhosted.orgpackages708a73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783eConfigArgParse-1.7.tar.gz"
     sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+  end
+
+  resource "cython" do
+    url "https:files.pythonhosted.orgpackages844db720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aacython-3.0.11.tar.gz"
+    sha256 "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
   end
 
   resource "diff-match-patch" do
@@ -343,6 +346,11 @@ class Aider < Formula
     sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+  end
+
   resource "smmap" do
     url "https:files.pythonhosted.orgpackages8804b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baasmmap-5.0.1.tar.gz"
     sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
@@ -419,8 +427,11 @@ class Aider < Formula
     sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    python3 = "python3.12"
     venv = virtualenv_install_with_resources without: "tree-sitter-languages"
 
     # Requires building languages outside `setup.py`: https:github.comgrantjenkspy-tree-sitter-languagespull65

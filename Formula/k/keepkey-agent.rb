@@ -9,13 +9,13 @@ class KeepkeyAgent < Formula
   revision 9
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "cf3cfe644beb655b7bc7ff031292e9ebf2a05c4356815f24af6bbb295dc4e116"
-    sha256 cellar: :any,                 arm64_sonoma:  "42dee0c562b9636bcc9fb06171f5808cb9e68052af00ded9f34a8f2422f147a5"
-    sha256 cellar: :any,                 arm64_ventura: "31a262bc9e3c20b85ba3658df71543a70208ec862d6b6dd3cb4800796b4a10c7"
-    sha256 cellar: :any,                 sonoma:        "7798f5a119621468b0d81c0bb78af6a2facbea65bae2a2e8bca15123d6a8c432"
-    sha256 cellar: :any,                 ventura:       "9156f398471cf629b5389a4252b04cdf6c1238407a6256d4b29bd2b9246f38f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd80c7e201077fcc73a8966faba3dfa0f3864abd1ddf08026218b91bf320f6cf"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "7e90d14fa8b17a73432c81dd5263c8938d838a9c2ca07a6efe92d395ec0afd18"
+    sha256 cellar: :any,                 arm64_sonoma:  "25a71155c8223d39c8771688dca8688cd393dbdd7576d2bf5c5fc422b395e0ce"
+    sha256 cellar: :any,                 arm64_ventura: "bacd017684971a7c487abacccd142604b9e95dbb87feaa33f4df4708b90dcb02"
+    sha256 cellar: :any,                 sonoma:        "3cb946e6ed2147b95a96498286e46cc78789e84e563d8f7b2d28746835e47da8"
+    sha256 cellar: :any,                 ventura:       "1d37cf891ee502ab5651ef1dd2a9abd198424ac0968cc81637101ef17f1f17f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d977a585788997b34e907e44f9857618969c795401963147cd53bc9430b09c5"
   end
 
   depends_on "pkg-config" => :build # for hidapi resource
@@ -98,8 +98,8 @@ class KeepkeyAgent < Formula
   end
 
   resource "python-daemon" do
-    url "https:files.pythonhosted.orgpackages845097b81327fccbb70eb99f3c95bd05a0c9d7f13fb3f4cfd975885110d1205apython-daemon-3.0.1.tar.gz"
-    sha256 "6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5"
+    url "https:files.pythonhosted.orgpackages54cdd62884732e5d6ff6906234169d06338d53e37243c60cf73679c8942f9e42python_daemon-3.1.0.tar.gz"
+    sha256 "fdb621d7e5f46e74b4de1ad6b0fff6e69cd91b4f219de1476190ebdd0f4781df"
   end
 
   resource "semver" do
@@ -108,8 +108,8 @@ class KeepkeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
+    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
   end
 
   resource "six" do
@@ -130,14 +130,7 @@ class KeepkeyAgent < Formula
   def install
     ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
     ENV["SODIUM_INSTALL"] = "system"
-    venv = virtualenv_install_with_resources without: "python-daemon"
-
-    # Workaround breaking change in `setuptools`: https:pagure.iopython-daemonissue94
-    resource("python-daemon").stage do
-      inreplace "version.py", "import setuptools.extern.packaging.version", ""
-      inreplace "version.py", "self.validate_version(version)", ""
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources
   end
 
   test do

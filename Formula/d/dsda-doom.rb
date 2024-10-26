@@ -12,14 +12,13 @@ class DsdaDoom < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "d4e2ccab37036b645fa2231a35192821636bd19cf98187fdc25c6583cb755076"
-    sha256 arm64_sonoma:   "359b7e1a81d020b38b7dc6287c6f60972856800e01fc9cc1a15940fa25437471"
-    sha256 arm64_ventura:  "1398fc65c31d451ddcb211996ff7d943423a5b4d9381b05a071a5a0a48e7a0c4"
-    sha256 arm64_monterey: "c7f4f8bc2a7e986e3c0ad0a4e1088054d383b03a69c3e3581d59db174a592133"
-    sha256 sonoma:         "a78ac514eae403080fd5eaa49eae5caa5271096036767548fd3d6002b00dff35"
-    sha256 ventura:        "021b491c09132d2dde8fca6a04ffc4ad37b095675550b5b13ab9f90a564eef6a"
-    sha256 monterey:       "5d2bf9b4364e72f54858a6876e9eb754ebe3e649c632f897022440429d51e242"
-    sha256 x86_64_linux:   "e72de95ce47417de04b74b5e50a4d39daf0095479d92dee8114a26a492da3136"
+    rebuild 1
+    sha256 arm64_sequoia: "bacfaeac66a0fd8e690d5f31d10ad4bdbce5604697621ce794b05e92f8d3caa7"
+    sha256 arm64_sonoma:  "43b06c5a9dae4d1aa0ecd808632a514d936eaf454938669bb4a2ca829f59f60a"
+    sha256 arm64_ventura: "4ccd31d4faadc9668c18f76dce66b15cbf4a3d532ba5eb70bacac9f12635c975"
+    sha256 sonoma:        "8d51672c564f29c99dde26a2467891d694f2b20cc5583533cef73422b834ee9a"
+    sha256 ventura:       "5388a5838ec2cc16b00dead941cdbe0fef94932a9dab8a062ff2ab5a24771f76"
+    sha256 x86_64_linux:  "218b49d3cd11dc7e8e7edfce04f537ae7c223460a09679b5bcb5b4bfbc0810b4"
   end
 
   depends_on "cmake" => :build
@@ -76,6 +75,7 @@ class DsdaDoom < Formula
   end
 
   test do
+    ENV["HOME"] = testpath
     ENV["XDG_DATA_HOME"] = testpath
 
     expected_output = "dsda-doom v#{version.major_minor_patch}"

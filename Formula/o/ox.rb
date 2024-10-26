@@ -1,18 +1,18 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
   homepage "https:github.comcurlpipeox"
-  url "https:github.comcurlpipeoxarchiverefstags0.6.7.tar.gz"
-  sha256 "cfed456ebe31dbe5fd13fc87ec4cb7e24d8b989f5878e14963c0a534ca5259e7"
+  url "https:github.comcurlpipeoxarchiverefstags0.6.8.tar.gz"
+  sha256 "b9abee1d63057df8417968751c7a9fb57420a3c03cdeac26f19b598df0face32"
   license "GPL-2.0-only"
   head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c407d267f9448c5ad7bb4b7f1d067358d5df8f4faa1acb9ed6268d23483a121"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e796365299ca67bd1113ebad3bd484f3e37034038824b20106fce6fe44ab9e1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "56a7ce8d3363a69fa68f4a93c68efe6cd5f1ac096647360a97a80a457e604a7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43088160e3d767fcce27bff75412f696e9095ba2bc034e2ab5fd9210abd20c42"
-    sha256 cellar: :any_skip_relocation, ventura:       "fc36c63c2cbd10a21c8bd1e3a88c5bb70e32fbeb44f7a74c55f35e6840a1f7b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff772ea71cb617978958e752e399bb05427b7a17d900ab10e2e06bf5b0d7d260"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d076edaf2dd4f1249ad581f9054dd1c96efdaed6c5545b55763fe52ff0ba80e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2f6f279a7f9be3239c1572a957d03964110f25382d1055806262cfc48edcad0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "236c930b951329ed393799b2bb958227b52f824f02d09c6c06f21b4e74b9f272"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d305a4a6cb35c28bbf8c7f65a1ff2f9e2ffb29cee68387c8527e1f568c29f44"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f90b3e79a1c3f0fed9cab016235c2c170a4c52bf0ac12d4d9031d424d29d76d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4421e39fb46aadde568cc93b1c8dea68544d0c53ef797a346d1e263b9a195143"
   end
 
   depends_on "rust" => :build
@@ -22,8 +22,13 @@ class Ox < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}ox --version")
+
     # Errno::EIO: Inputoutput error @ io_fread - devpts0
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+
+    # create an empty oxrc config file to bypass config setup
+    touch testpath".oxrc"
 
     require "pty"
     ENV["TERM"] = "xterm"

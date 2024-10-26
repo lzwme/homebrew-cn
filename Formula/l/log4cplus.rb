@@ -1,8 +1,8 @@
 class Log4cplus < Formula
   desc "Logging Framework for C++"
   homepage "https:sourceforge.netplog4cpluswikiHome"
-  url "https:downloads.sourceforge.netprojectlog4cpluslog4cplus-stable2.1.1log4cplus-2.1.1.tar.xz"
-  sha256 "a1d8e67a207f90a9dd4f82b28a1f3ac6dead5a80c2bed071277a9e865698a82b"
+  url "https:downloads.sourceforge.netprojectlog4cpluslog4cplus-stable2.1.2log4cplus-2.1.2.tar.xz"
+  sha256 "fbdabb4ef734fe1cc62169b23f0b480cc39127ac7b09b810a9c1229490d67e9e"
   license all_of: ["Apache-2.0", "BSD-2-Clause"]
 
   livecheck do
@@ -11,26 +11,25 @@ class Log4cplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0c8f6c4ca96257a9deceb1dbb47c5957fb5cc977718a5424e2598563942c15ad"
-    sha256 cellar: :any,                 arm64_sonoma:   "4ddfdeb6e15d5f1574b231af82c36026d1cf71febace1c1ffaf88ad8313f0395"
-    sha256 cellar: :any,                 arm64_ventura:  "32be0936cf139beb9fe91fc99c94970099d052b9dd29d6f6c67e3269de3142a9"
-    sha256 cellar: :any,                 arm64_monterey: "fa920ab9e524159f4b435a2c911e721568e1ec70eb0cb3532ab582883a5a3ceb"
-    sha256 cellar: :any,                 sonoma:         "22a32b40fddc514edb3e1e64f7d184e420116c940c7f34a044cb3ba729955bbc"
-    sha256 cellar: :any,                 ventura:        "585325a99b63b4323932e9811196b496fc3426516ef7728243773a41bdcf08c7"
-    sha256 cellar: :any,                 monterey:       "6fb4f1b70586607de4741f45793c6b0a3770c77e2824818448653b0c474d4d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcece8684fc7a7537ede4ed961dbf7642d6fafe260210ece0ad155bf0621ee1b"
+    sha256 cellar: :any,                 arm64_sequoia: "c2330f21e0b3c6f379e155d8270f758067c67d5086bad74350dd6841114f70ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "8035d145371eff042f792dc7a2627c9b67a3f20530fb2f66e07e7b4bd25eeb93"
+    sha256 cellar: :any,                 arm64_ventura: "b60bac8e9aaf34f6b81055d7ebc3578462e1e144855e1e3d416e54fa87346fab"
+    sha256 cellar: :any,                 sonoma:        "b3cbcf75711ecb77bbf59942f30e8e6767105753b5363cc8cd8ca5d13201314b"
+    sha256 cellar: :any,                 ventura:       "7c62fc3ea51cc81fae1f97f5649898fdb567667b67d99fd419347e237b636fcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "038cc5359e99cc5e80a899304e02f22c54156539c5b3db4e03516982ebdb3c12"
   end
+
+  depends_on "pkg-config" => [:build, :test]
 
   def install
     ENV.cxx11
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
     # https:github.comlog4cpluslog4cplusblob65e4c3docsexamples.md
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <log4cpluslogger.h>
       #include <log4cplusloggingmacros.h>
       #include <log4cplusconfigurator.h>
@@ -47,9 +46,10 @@ class Log4cplus < Formula
         LOG4CPLUS_WARN(logger, LOG4CPLUS_TEXT("Hello, World!"));
         return 0;
       }
-    EOS
-    system ENV.cxx, "-std=c++11", "-I#{include}", "-L#{lib}",
-                    "test.cpp", "-o", "test", "-llog4cplus"
+    CPP
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs log4cplus").chomp.split
+    system ENV.cxx, "-std=c++11", "-o", "test", "test.cpp", *pkg_config_flags
     assert_match "Hello, World!", shell_output(".test")
   end
 end

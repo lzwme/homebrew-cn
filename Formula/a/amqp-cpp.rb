@@ -1,8 +1,8 @@
 class AmqpCpp < Formula
   desc "C++ library for communicating with a RabbitMQ message broker"
   homepage "https:github.comCopernicaMarketingSoftwareAMQP-CPP"
-  url "https:github.comCopernicaMarketingSoftwareAMQP-CPParchiverefstagsv4.3.26.tar.gz"
-  sha256 "2baaab702f3fd9cce40563dc1e23f433cceee7ec3553bd529a98b1d3d7f7911c"
+  url "https:github.comCopernicaMarketingSoftwareAMQP-CPParchiverefstagsv4.3.27.tar.gz"
+  sha256 "af649ef8b14076325387e0a1d2d16dd8395ff3db75d79cc904eb6c179c1982fe"
   license "Apache-2.0"
   head "https:github.comCopernicaMarketingSoftwareAMQP-CPP.git", branch: "master"
 
@@ -12,16 +12,12 @@ class AmqpCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "74e1edc0a534f527c3f9cfa5dcedc1a21f1d6c37220887ad03bd48c686c06ae4"
-    sha256 cellar: :any,                 arm64_sonoma:   "7a65fc4786cbc69389a293510b277cfeb36c168f049053f290f59f1e45d77f58"
-    sha256 cellar: :any,                 arm64_ventura:  "f65f76531ab89061aed98f55056ef7a920dd3368d8d738c0615b9d52956745ce"
-    sha256 cellar: :any,                 arm64_monterey: "29327632ff96b7dd4cf5721039ad8001ab758f14a528f6b0ca7cb4ee37740ff8"
-    sha256 cellar: :any,                 arm64_big_sur:  "065b8751feca819dd49671549d29f038bf41d59076b60ff53aa36da2b974eeae"
-    sha256 cellar: :any,                 sonoma:         "ab4ca6c2e6805e7447b569541e22452400be0f9133c4cc995993d9e4936eaf48"
-    sha256 cellar: :any,                 ventura:        "7ddb6e8142b7f99ea479a274a21c2e75a0317f1dc48d895744e1b3d396192173"
-    sha256 cellar: :any,                 monterey:       "a717607eb6c8014424dad81ecb9e5e55926800a32a2855e6b666bee9f2800dc1"
-    sha256 cellar: :any,                 big_sur:        "1a0b91a113adaaf303a4187051af2f49f52bbedfa84ae5a672be63158f332c85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08f42f6efd8ed844adc09fa2d7b226c9d955c7e681527fe7d941926dc7c7098b"
+    sha256 cellar: :any,                 arm64_sequoia: "d42884b0048b3524ff2503b74e3606a415534df02f36b76daa738005f801c660"
+    sha256 cellar: :any,                 arm64_sonoma:  "6088a49ef4492292f4643805af8808a6d3942a1f3b4e1fda5b29aefb08bc96c6"
+    sha256 cellar: :any,                 arm64_ventura: "052fb79e01072ebee63a343fca762f19fb3d3586502e6049c0e8666db559663e"
+    sha256 cellar: :any,                 sonoma:        "58aa9b3ed88fa9452bab84e4265c04ff686abb23cfefd9ce1b40066fa50cdacd"
+    sha256 cellar: :any,                 ventura:       "a0549cf3274f68d0dd55199876406836104d0df3af6dbc4ffa56031a2b8859ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ccf7cf9045f334afa3df40778602bdf1382d681c0ae5811ac34e6863906fcb"
   end
 
   depends_on "cmake" => :build

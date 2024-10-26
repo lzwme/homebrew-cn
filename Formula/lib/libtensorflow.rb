@@ -1,19 +1,17 @@
 class Libtensorflow < Formula
   desc "C interface for Google's OS library for Machine Intelligence"
   homepage "https:www.tensorflow.org"
-  url "https:github.comtensorflowtensorflowarchiverefstagsv2.17.0.tar.gz"
-  sha256 "9cc4d5773b8ee910079baaecb4086d0c28939f024dd74b33fc5e64779b6533dc"
+  url "https:github.comtensorflowtensorflowarchiverefstagsv2.18.0.tar.gz"
+  sha256 "d7876f4bb0235cac60eb6316392a7c48676729860da1ab659fb440379ad5186d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "477ce008e39e00e796943567febefb90e8441646874d462c427d31bd95d12e8e"
-    sha256 cellar: :any,                 arm64_sonoma:   "8e4a82146a74aa096d1be11656c92759e830fb83313e6d2bb5719e8fcbe3dde8"
-    sha256 cellar: :any,                 arm64_ventura:  "40ce21dfab8a35c13f70085321879d099ce7e73d12079f9fe2290d4d59928212"
-    sha256 cellar: :any,                 arm64_monterey: "0c8b7bfa030bc4f473a031b439d867fbcb0d50665f70d710722eb243a97c26f0"
-    sha256 cellar: :any,                 sonoma:         "80185f9442e34c44f22050d45e240ac18b3b8a9ecdaceac88e59226735570608"
-    sha256 cellar: :any,                 ventura:        "62bcbe8e635620043db0ffbf8c325af8abb6af956f04789f5ffe38e270b42527"
-    sha256 cellar: :any,                 monterey:       "2d0cab07fa85225d28caf185aed68819793645515c731c2b253136dbdb6b6dc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "159e6c5e1f543cb01ab3dae0019e6a8211aec0985ec8273cb5e4b34832cdfae1"
+    sha256 cellar: :any,                 arm64_sequoia: "9295aa55cc7f99f0021c13230ebcebe9270a7ef1535e576d48b5054087a2ad6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6abf790f545c5ba17533eb1abe081dbdcdcc27a82911553e1340670a094eb659"
+    sha256 cellar: :any,                 arm64_ventura: "0c852319c52d4794afa128be413c79f939ab7a267572eb6311f5432b0d3d7c67"
+    sha256 cellar: :any,                 sonoma:        "15aa6eda5eb1f9dc710eb775f69be11ca913f728cb7f07560638ef0eebe273b5"
+    sha256 cellar: :any,                 ventura:       "da2cc0d4ab5534253c27924fa2072c8e30bae529d100974d8ff18421d1d55ee1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50ad77474753dcdee580cb3141fcf6068d6850400ba1ba555d41fcb67ea5fd9"
   end
 
   depends_on "bazelisk" => :build
@@ -22,17 +20,6 @@ class Libtensorflow < Formula
 
   on_macos do
     depends_on "gnu-getopt" => :build
-  end
-
-  resource "homebrew-test-model" do
-    url "https:github.comtensorflowmodelsrawv1.13.0sampleslanguagesjavatrainingmodelgraph.pb"
-    sha256 "147fab50ddc945972818516418942157de5e7053d4b67e7fca0b0ada16733ecb"
-  end
-
-  # Backport fix for installation of some headers
-  patch do
-    url "https:github.comtensorflowtensorflowcommit364b0cae088b7199a479899ef7bd99ddb9441728.patch?full_index=1"
-    sha256 "86a225177dcee2965a1d2aa7cd5df3179365cf8ba637ba94d7fd61693f9a9fbb"
   end
 
   def install
@@ -104,6 +91,11 @@ class Libtensorflow < Formula
   end
 
   test do
+    resource "homebrew-test-model" do
+      url "https:github.comtensorflowmodelsrawv1.13.0sampleslanguagesjavatrainingmodelgraph.pb"
+      sha256 "147fab50ddc945972818516418942157de5e7053d4b67e7fca0b0ada16733ecb"
+    end
+
     (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <tensorflowcc_api.h>
@@ -111,6 +103,7 @@ class Libtensorflow < Formula
         printf("%s", TF_Version());
       }
     EOS
+
     system ENV.cc, "test.c", "-L#{lib}", "-ltensorflow", "-o", "test_tf"
     assert_equal version, shell_output(".test_tf")
 

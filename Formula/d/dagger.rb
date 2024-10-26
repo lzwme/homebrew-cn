@@ -2,8 +2,8 @@ class Dagger < Formula
   desc "Portable devkit for CICD pipelines"
   homepage "https:dagger.io"
   url "https:github.comdaggerdagger.git",
-      tag:      "v0.13.5",
-      revision: "dc83928c3a13d6b315bf0953befde001ec359238"
+      tag:      "v0.13.6",
+      revision: "00ec4e9ccc41d6e79e5b41f28d278ad74b41f9a7"
   license "Apache-2.0"
   head "https:github.comdaggerdagger.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Dagger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c73c2f2c7b06158d3212825821564933f4f5f200722d548110cd7537715f1ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c73c2f2c7b06158d3212825821564933f4f5f200722d548110cd7537715f1ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c73c2f2c7b06158d3212825821564933f4f5f200722d548110cd7537715f1ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0021637565cfd1301e33be931b7674cd55a807baed4ad9a0f01d5d06ba7a78ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "0021637565cfd1301e33be931b7674cd55a807baed4ad9a0f01d5d06ba7a78ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53f2a82b82cf6673ff6be46af8e181ff2ce59f744b66d07a27bedc9380aa9c49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05247ddd3f905fcf20d7a11ba064a5d5e3eb0e10a001a8fc7782dd25cfcfe914"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05247ddd3f905fcf20d7a11ba064a5d5e3eb0e10a001a8fc7782dd25cfcfe914"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "05247ddd3f905fcf20d7a11ba064a5d5e3eb0e10a001a8fc7782dd25cfcfe914"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19f05b5be8ebed3503a66a27a2823029a61b3690fb730e435be885f1ed111e27"
+    sha256 cellar: :any_skip_relocation, ventura:       "19f05b5be8ebed3503a66a27a2823029a61b3690fb730e435be885f1ed111e27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4635e8444bc709617f3bbc6bb72a3a13b481d29c02835e26c1f7bd60b8ec6fdd"
   end
 
   depends_on "go" => :build

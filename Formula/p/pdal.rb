@@ -1,8 +1,8 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https:www.pdal.io"
-  url "https:github.comPDALPDALreleasesdownload2.8.0PDAL-2.8.0-src.tar.bz2"
-  sha256 "8a6d7646912a4e7a382f06451b14a1f5f2e8aa4e0b391dc91c30701222198b77"
+  url "https:github.comPDALPDALreleasesdownload2.8.1PDAL-2.8.1-src.tar.bz2"
+  sha256 "0e8d7deabe721f806b275dda6cf5630a8e43dc7210299b57c91f46fadcc34b31"
   license "BSD-3-Clause"
   head "https:github.comPDALPDAL.git", branch: "master"
 
@@ -17,12 +17,12 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a25042b13f64a56887847c637ad85aab17c4ce08a19c06060ce345f5e6bd689f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9671dee48a02a2c78c165396c216baf6b475195d8f9e5edc7a0d93d9830555c4"
-    sha256 cellar: :any,                 arm64_ventura: "7b3a5b812869b67f33d1a9b654ff94f32d3f04c49cbf96612918aeca1633f631"
-    sha256 cellar: :any,                 sonoma:        "d07fb31b3f5ca9f2508aaa5316d11ce7f4882b51a6a660fb34b7035750e4da34"
-    sha256 cellar: :any,                 ventura:       "e6157fa9e4d634dc0b792798acc7268aa6071838ac38093edadb0536219913bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0fc029b89a567e31ab49e4b6828e7450d09543e1179a504f94d6d0498745e33"
+    sha256 cellar: :any,                 arm64_sequoia: "ce5799eddec979fe2765b90fbd99a1136a78fe6f10333bdd480e9c07e4862af9"
+    sha256 cellar: :any,                 arm64_sonoma:  "04aa160e3d11fac4908f83ac146570d911ed9f9bbe2191101cb325df009ca3bd"
+    sha256 cellar: :any,                 arm64_ventura: "d0cab2aa3ed05dcc5094685680c4f5ce313bcd3edf9be2f0e36e07530127f7c1"
+    sha256 cellar: :any,                 sonoma:        "5c1281aeb4f1359ce3b9bb0f4badc759450fec87bb57616d3c931f0273769598"
+    sha256 cellar: :any,                 ventura:       "d93613d6a2b99a9dc10755f04527fda45c49060f55537141d8883992044316c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e256bb9ef10a9c945863e420130e6d0dd36e7e36973946e69034de723f49585"
   end
 
   depends_on "cmake" => :build

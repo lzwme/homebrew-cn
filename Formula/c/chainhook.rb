@@ -6,6 +6,11 @@ class Chainhook < Formula
   license "GPL-3.0-only"
   head "https:github.comhirosystemschainhook.git", branch: "develop"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ee1d70019ceef4495f0921b1344b12b092846010ba7d831cfbae5f3639e682c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d84022e09a8266a52686ed6c8ecda900051f13a4cc848daa0f6c518337cbb3ed"
