@@ -33,7 +33,7 @@ class Stormlib < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <StormLib.h>
 
@@ -41,7 +41,7 @@ class Stormlib < Formula
         printf("%s", STORMLIB_VERSION_STRING);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c"
     assert_equal version.to_s, shell_output(".test")
   end

@@ -26,7 +26,7 @@ class OpenclHeaders < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <CLopencl.h>
 
@@ -34,7 +34,7 @@ class OpenclHeaders < Formula
         printf("opencl.h standalone test PASSED.");
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}"
     assert_equal "opencl.h standalone test PASSED.", shell_output(".test")

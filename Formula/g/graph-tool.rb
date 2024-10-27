@@ -4,8 +4,8 @@ class GraphTool < Formula
   desc "Efficient network analysis for Python 3"
   homepage "https:graph-tool.skewed.de"
   # TODO: Update build for matplotlib>=3.9.0 to use `--config-settings=setup-args=...` for system dependencies
-  url "https:downloads.skewed.degraph-toolgraph-tool-2.78.tar.bz2"
-  sha256 "806f5358a4492123a8c11217235fd1393230ad5c21c45b4c39ec6d5ea37a2a25"
+  url "https:downloads.skewed.degraph-toolgraph-tool-2.79.tar.bz2"
+  sha256 "52a254942e75ed3070dea70e692ae101877bbef1009e43ec62fe1806a8de0154"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,12 +14,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "d408f50117519b8ca39f3d48bf61ad82ab69a154c7ac9140d96519d0ea019e9c"
-    sha256                               arm64_sonoma:  "88430a30ce1b9936bf21d737973b67702d823f9ff9b8c18194d2b15f7175d333"
-    sha256                               arm64_ventura: "3d08fdbb0c92e257a2306ba48c648d86e9801516e8c2f0384216518ec856c57a"
-    sha256                               sonoma:        "4893c584372ac8ede04a8523ca28f94ff9dfae08e48976c82357018554063104"
-    sha256                               ventura:       "69a2a97f7d7cb68eee641727f07163ec0ce91ad40406a958c93d7517a68a8422"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f9c2d0a7dca72025ae9144d546b8291409e8d3e2d474a019f1e279ba31da829"
+    sha256                               arm64_sequoia: "1c5f0441c6fcb2bed7f598eb3a395fbe1147464f0dbf4ccefefdceb66a8c40ee"
+    sha256                               arm64_sonoma:  "bf69664aba8fd00d9bba649ed2791e7c52e7a668d868c6cf268c36dbf1388bda"
+    sha256                               arm64_ventura: "98d395866c408c29c3f2c0cb61849c5859fca98016a06d5672ec8279ea620faa"
+    sha256                               sonoma:        "2e948f5b247f856f97d8c8c4ce385bafe9d8fd3c743f43141e16cde4a460aca3"
+    sha256                               ventura:       "1006d3491d1f20b9f5901380e3daf4107da10e11d95341a467f1deb9d1dcbfba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f75b68e77f43c0f0e14144f139164b72ad3acd7511285673a30193817ecadd2"
   end
 
   depends_on "ninja" => :build

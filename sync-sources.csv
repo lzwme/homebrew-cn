@@ -1701,7 +1701,7 @@ Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fast_float.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastfec.rb, Homebrew/homebrew-core, 1
@@ -5230,6 +5230,7 @@ Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python-freethreading.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.13.rb, Homebrew/homebrew-core, 0
@@ -5572,6 +5573,7 @@ Homebrew-homebrew-core/Formula/r/rush-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust-parallel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rust-script.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
@@ -8178,6 +8180,7 @@ Homebrew-homebrew-cask/Casks/d/docker-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/docker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockmate.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/dockside.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockstation.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockx.rb, Homebrew/homebrew-cask, 0
@@ -12777,7 +12780,7 @@ Homebrew-homebrew-cask/Casks/p/proximity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proxy-audio-device.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/proxyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prudent.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/p/prusaslicer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/prusaslicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psi-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psst.rb, Homebrew/homebrew-cask, 1

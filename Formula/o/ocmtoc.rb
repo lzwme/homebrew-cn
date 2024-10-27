@@ -37,9 +37,9 @@ class Ocmtoc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       __attribute__((naked)) int start() {}
-    EOS
+    C
 
     args = %W[
       -nostdlib

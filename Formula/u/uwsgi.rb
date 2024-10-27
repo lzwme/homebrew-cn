@@ -1,19 +1,18 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https:uwsgi-docs.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackagese146fb08706bc5d922584a5aaed1f73e7a17313310aa34615c74406112ea04a6uwsgi-2.0.27.tar.gz"
-  sha256 "3ee5bfb7e6e9c93478c22aa8183eef35b95a2d5b14cca16172e67f135565c458"
+  url "https:files.pythonhosted.orgpackages24c2d58480aadc9a1f420dd96fc43cf0dcd8cb5ededb95cab53743529c23b6cduwsgi-2.0.28.tar.gz"
+  sha256 "79ca1891ef2df14508ab0471ee8c0eb94bd2d51d03f32f90c4bbe557ab1e99d0"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.comunbituwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "307b7d6a364e78b15cfa828dd20c3ca2af375ada89ed5528c51de2cfcbf514eb"
-    sha256 arm64_sonoma:  "f98f73e917ff6e3922636d0eb26755242fa7160eac55c602ffd45a9d8837dadf"
-    sha256 arm64_ventura: "d7fa70e41832d86bc117555b5c61bb42b9b0ebfebb04bb72cb945f99f4659e66"
-    sha256 sonoma:        "cf8a186c83de295e8ed927009c2464b491e51baee916aa7e307d889acd87a523"
-    sha256 ventura:       "8e663a77d7f16771b348a5f36386248e943ccd3a0cf4749fc4b062e67e784211"
-    sha256 x86_64_linux:  "9cd8cf3206897f9191d32fca3e22c567c20d68db781cd6265fb1d0174ad36a48"
+    sha256 arm64_sequoia: "f57a1a48e3c6a9e34a580a47448ef9b4f7859b307871efcacc7fb30ac80269ff"
+    sha256 arm64_sonoma:  "9a19faaa101548dc4a49f8c9cc187cd7ada753a8752867073af55f1bc1fcbd59"
+    sha256 arm64_ventura: "3ddd8691d4daf943cc326623d205ae7b4b7a751d1199e4119474becc166e6b0d"
+    sha256 sonoma:        "91ac6f68d094cfb448ff535b849ce94461e7f84331d5c53d6de313a93c330648"
+    sha256 ventura:       "8ff239f69cbc9fbb85c9ba4296f4805b96d9b146237b481c11ee82cfb411e2fe"
+    sha256 x86_64_linux:  "837e3580174d833939e92f51d97664d092d0cd4e4f1ad167429f743aaeed865b"
   end
 
   depends_on "pkg-config" => :build
@@ -103,7 +102,7 @@ class Uwsgi < Formula
     pid = fork do
       exec "#{bin}uwsgi --http-socket 127.0.0.1:#{port} --protocol=http --plugin python3 -w helloworld"
     end
-    sleep 2
+    sleep 4
 
     begin
       assert_match "Hello World", shell_output("curl localhost:#{port}")

@@ -41,14 +41,14 @@ class OpenImageDenoise < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <OpenImageDenoiseoidn.h>
       int main() {
         OIDNDevice device = oidnNewDevice(OIDN_DEVICE_TYPE_DEFAULT);
         oidnCommitDevice(device);
         return oidnGetDeviceError(device, 0);
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lOpenImageDenoise"
     system ".a.out"
   end

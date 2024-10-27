@@ -42,7 +42,7 @@ class Pkcs11Helper < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <pkcs11-helper-1.0pkcs11h-core.h>
@@ -51,7 +51,7 @@ class Pkcs11Helper < Formula
         printf("Version: %08x", pkcs11h_getVersion ());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, testpath"test.c", "-I#{include}", "-L#{lib}",
                    "-lpkcs11-helper", "-o", "test"
     system ".test"

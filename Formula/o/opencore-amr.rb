@@ -30,14 +30,14 @@ class OpencoreAmr < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <opencore-amrwb/dec_if.h>
       int main(void) {
         void *s = D_IF_init();
         D_IF_exit(s);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lopencore-amrwb", "-o", "test"
     system "./test"

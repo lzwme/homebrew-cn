@@ -24,7 +24,7 @@ class Tbox < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <tboxtbox.h>
       int main()
       {
@@ -35,7 +35,7 @@ class Tbox < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltbox", "-lm", "-pthread", "-o", "test"
     assert_equal "hello tbox!\n", shell_output(".test")
   end

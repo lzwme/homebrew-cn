@@ -25,20 +25,20 @@ class UniAlgo < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.0.2)
       project(utf8_norm LANGUAGES CXX)
       find_package(uni-algo CONFIG REQUIRED)
       add_executable(utf8_norm utf8_norm.cpp)
       target_link_libraries(utf8_norm PRIVATE uni-algo::uni-algo)
-    EOS
+    CMAKE
 
-    (testpath"utf8_norm.cpp").write <<~EOS
+    (testpath"utf8_norm.cpp").write <<~CPP
       #include <uni_algonorm.h>
       int main() {
         return (una::norm::to_nfc_utf8("W\\u0302") == "Ŵ") ? 0 : 1;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH:STRING=#{opt_lib}"
     system "cmake", "--build", "build"

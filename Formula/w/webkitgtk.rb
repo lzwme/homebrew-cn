@@ -88,7 +88,7 @@ class Webkitgtk < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtk/gtk.h>
       #include <webkit2/webkit2.h>
 
@@ -141,7 +141,7 @@ class Webkitgtk < Formula
           gtk_widget_destroy(window);
           return TRUE;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.1").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

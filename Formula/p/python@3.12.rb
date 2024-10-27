@@ -163,7 +163,7 @@ class PythonAT312 < Formula
     end
 
     # Resolve HOMEBREW_PREFIX in our sysconfig modification.
-    inreplace "Libsysconfig.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX
+    inreplace "Libsysconfig.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
 
     if OS.linux?
       # Python's configure adds the system ncurses include entry to CPPFLAGS

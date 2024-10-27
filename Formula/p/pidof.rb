@@ -47,7 +47,7 @@ class Pidof < Formula
 
   test do
     assert_match "pidof version #{version}", shell_output(bin/"pidof -v")
-    (testpath/"homebrew_testing.c").write <<~EOS
+    (testpath/"homebrew_testing.c").write <<~C
       #include <unistd.h>
       #include <stdio.h>
 
@@ -57,7 +57,7 @@ class Pidof < Formula
         sleep(10);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "homebrew_testing.c", "-o", "homebrew_testing"
     (testpath/"homebrew_testing").chmod 0555
 

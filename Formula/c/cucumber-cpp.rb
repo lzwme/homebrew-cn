@@ -46,21 +46,21 @@ class CucumberCpp < Formula
 
     system "gem", "install", "cucumber:9.1.1", "cucumber-wire:7.0.0", "--no-document"
 
-    (testpath"featurestest.feature").write <<~EOS
+    (testpath"featurestest.feature").write <<~CUCUMBER
       Feature: Test
         Scenario: Just for test
           Given A given statement
           When A when statement
           Then A then statement
-    EOS
+    CUCUMBER
     (testpath"featuresstep_definitionscucumber.wire").write <<~EOS
       host: localhost
       port: 3902
     EOS
-    (testpath"featuressupportwire.rb").write <<~EOS
+    (testpath"featuressupportwire.rb").write <<~RUBY
       require 'cucumberwire'
-    EOS
-    (testpath"test.cpp").write <<~EOS
+    RUBY
+    (testpath"test.cpp").write <<~CPP
       #include <cucumber-cppgeneric.hpp>
       GIVEN("^A given statement$") {
       }
@@ -68,7 +68,7 @@ class CucumberCpp < Formula
       }
       THEN("^A then statement$") {
       }
-    EOS
+    CPP
 
     cxx_args = %W[
       -std=c++17

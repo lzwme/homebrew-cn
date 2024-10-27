@@ -34,11 +34,11 @@ class ExtraCmakeModules < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test)
       find_package(ECM REQUIRED)
-    EOS
+    CMAKE
     system "cmake", "."
 
     expected = "ECM_DIR:PATH=#{HOMEBREW_PREFIX}/share/ECM/cmake"

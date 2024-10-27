@@ -46,7 +46,7 @@ class Pnetcdf < Formula
 
   # These tests were converted from the netcdf formula.
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "pnetcdf.h"
       int main()
@@ -54,12 +54,12 @@ class Pnetcdf < Formula
         printf(PNETCDF_VERSION);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lpnetcdf",
                    "-o", "test"
     assert_equal `.test`, version.to_s
 
-    (testpath"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~FORTRAN
       program test
         use mpi
         use pnetcdf
@@ -80,7 +80,7 @@ class Pnetcdf < Formula
           if (status = nf_noerr) call abort
         end subroutine check
       end program test
-    EOS
+    FORTRAN
     system "mpif90", "test.f90", "-L#{lib}", "-I#{include}", "-lpnetcdf",
                        "-o", "testf"
     system ".testf"

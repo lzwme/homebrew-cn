@@ -28,14 +28,14 @@ class Xtrans < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xtrans/Xtrans.h"
 
       int main(int argc, char* argv[]) {
         Xtransaddr addr;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

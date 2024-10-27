@@ -53,7 +53,7 @@ class Qdbm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <depot.h>
       #include <stdlib.h>
       #include <stdio.h>
@@ -77,7 +77,7 @@ class Qdbm < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lqdbm", "-o", "test"
     assert_equal "mike, 00-12-34-56", shell_output("./test").chomp

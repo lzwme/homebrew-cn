@@ -67,7 +67,7 @@ class Theora < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <theoratheora.h>
 
       int main()
@@ -77,7 +77,7 @@ class Theora < Formula
           theora_info_clear(&inf);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ltheora", "-o", "test"
     system ".test"
   end

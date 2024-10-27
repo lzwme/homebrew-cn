@@ -42,7 +42,7 @@ class Mpir < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <mpir.h>
       #include <stdlib.h>
 
@@ -55,7 +55,7 @@ class Mpir < Formula
         if (mpz_get_si (j) != 5 || mpz_get_si (k) != 1) abort();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmpir", "-o", "test"
     system ".test"
   end

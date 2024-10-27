@@ -21,7 +21,7 @@ class Sse2neon < Formula
   test do
     %w[sse2neon sse2neonsse2neon].each do |include_path|
       test_name = include_path.tr("", "-")
-      (testpath"#{test_name}.c").write <<~EOS
+      (testpath"#{test_name}.c").write <<~C
         #include <assert.h>
         #include <#{include_path}.h>
 
@@ -34,7 +34,7 @@ class Sse2neon < Formula
           assert(_mm_movemask_epi8(_mm_cmpeq_epi8(v, z)) == 0xFFFF);
           return 0;
         }
-      EOS
+      C
 
       system ENV.cc, "#{test_name}.c", "-o", test_name
       system testpathtest_name

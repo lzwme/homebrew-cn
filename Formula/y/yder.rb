@@ -41,7 +41,7 @@ class Yder < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <yder.h>
 
@@ -51,7 +51,7 @@ class Yder < Formula
         y_close_logs();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lyder", "-o", "test"
     system ".test"
   end

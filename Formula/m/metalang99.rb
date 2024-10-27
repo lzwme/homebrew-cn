@@ -16,7 +16,7 @@ class Metalang99 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <metalang99.h>
 
@@ -28,7 +28,7 @@ class Metalang99 < Formula
         ML99_ASSERT_EQ(factorial(v(4)), v(24));
         printf("%d", ML99_EVAL(factorial(v(5))));
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-o", "test"
     assert_equal "120", shell_output(".test")

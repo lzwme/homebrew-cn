@@ -35,13 +35,13 @@ class Sccache < Formula
   end
 
   test do
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         puts("Hello, world!");
         return 0;
       }
-    EOS
+    C
     system bin"sccache", "cc", "hello.c", "-o", "hello-c"
     assert_equal "Hello, world!", shell_output(".hello-c").chomp
   end

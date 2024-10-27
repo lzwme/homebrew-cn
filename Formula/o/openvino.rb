@@ -152,7 +152,7 @@ class Openvino < Formula
   test do
     pkg_config_flags = shell_output("pkg-config --cflags --libs openvino").chomp.split
 
-    (testpath"openvino_available_devices.c").write <<~EOS
+    (testpath"openvino_available_devices.c").write <<~C
       #include <openvinocopenvino.h>
 
       #define OV_CALL(statement) \
@@ -174,12 +174,12 @@ class Openvino < Formula
           ov_core_free(core);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "#{testpath}openvino_available_devices.c", *pkg_config_flags,
                    "-o", "#{testpath}openvino_devices_test"
     system "#{testpath}openvino_devices_test"
 
-    (testpath"openvino_available_frontends.cpp").write <<~EOS
+    (testpath"openvino_available_frontends.cpp").write <<~CPP
       #include <openvinofrontendmanager.hpp>
       #include <iostream>
 
@@ -187,15 +187,15 @@ class Openvino < Formula
         std::cout << ov::frontend::FrontEndManager().get_available_front_ends().size();
         return 0;
       }
-    EOS
-    (testpath"CMakeLists.txt").write <<~EOS
+    CPP
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.13)
       project(openvino_frontends_test)
       set(CMAKE_CXX_STANDARD 11)
       add_executable(${PROJECT_NAME} openvino_available_frontends.cpp)
       find_package(OpenVINO REQUIRED COMPONENTS Runtime ONNX TensorFlow TensorFlowLite Paddle PyTorch)
       target_link_libraries(${PROJECT_NAME} PRIVATE openvino::runtime)
-    EOS
+    CMAKE
 
     system "cmake", testpath.to_s
     system "cmake", "--build", testpath.to_s

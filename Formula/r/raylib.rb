@@ -49,7 +49,7 @@ class Raylib < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <raylib.h>
       int main(void)
@@ -57,7 +57,7 @@ class Raylib < Formula
           int num = GetRandomValue(42, 1337);
           return 42 <= num && num <= 1337 ? EXIT_SUCCESS : EXIT_FAILURE;
       }
-    EOS
+    C
     flags = if OS.mac?
       %w[
         -framework Cocoa

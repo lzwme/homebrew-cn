@@ -1,10 +1,9 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https:adios2.readthedocs.io"
-  url "https:github.comornladiosADIOS2archiverefstagsv2.10.1.tar.gz"
-  sha256 "ce776f3a451994f4979c6bd6d946917a749290a37b7433c0254759b02695ad85"
+  url "https:github.comornladiosADIOS2archiverefstagsv2.10.2.tar.gz"
+  sha256 "14cf0bcd94772194bce0f2c0e74dba187965d1cffd12d45f801c32929158579e"
   license "Apache-2.0"
-  revision 2
   head "https:github.comornladiosADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "45eea725a5eeb5f9d065c31dbffea0821061147d36c546b02d20e68bb06fc699"
-    sha256 arm64_sonoma:  "1b79ef697ee8019e54647b75ca7affa975964690c18fe4541c9cc6aa2869583e"
-    sha256 arm64_ventura: "117b6e49f7c01a30d1803a20fc83eacaccf87062b29fe27d4696296939e304f3"
-    sha256 sonoma:        "441101e346a040cebd96933dcc8f5ab6a132c593ef214f53e5299c7230d66ef9"
-    sha256 ventura:       "380c9e3bf734c0a84ea23fa5ead042611038690ec0d51909611f7045288e17e7"
-    sha256 x86_64_linux:  "725afb074ae040294d78d5d18a61cfe82fcb041b2206d1e119f446fc70c4a194"
+    sha256 arm64_sequoia: "502983bb973c584e61ea4325857019308d37ed7876149ca8b692e462a7350e96"
+    sha256 arm64_sonoma:  "f85ec0a3210c79e1730d3f7f71c88de5f75fe6a4a9ca9449935ebd2e97145044"
+    sha256 arm64_ventura: "e75a203fbaa7987772e61ba24b66419ae5a5e1b69d8f29524d431330accb9caf"
+    sha256 sonoma:        "5caafa5a27988407eb69e25b2a1f03a61d584af7d152efbc90b2f197586a6f2e"
+    sha256 ventura:       "f22fdaa080f998c8ecd24b826c148ad60bc587a7acc3f0c49171e8d61ddcb7a3"
+    sha256 x86_64_linux:  "6eccf49dc0677c2e62f0a5fdc69872e35552137b6339ebccca057795480be4bf"
   end
 
   depends_on "cmake" => :build

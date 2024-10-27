@@ -56,7 +56,7 @@ class Fizz < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <fizzclientAsyncFizzClient.h>
       #include <iostream>
 
@@ -64,9 +64,9 @@ class Fizz < Formula
         auto context = fizz::client::FizzClientContext();
         std::cout << toString(context.getSupportedVersions()[0]) << std::endl;
       }
-    EOS
+    CPP
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES CXX)
       set(CMAKE_CXX_STANDARD 17)
@@ -77,7 +77,7 @@ class Fizz < Formula
 
       add_executable(test test.cpp)
       target_link_libraries(test fizz::fizz)
-    EOS
+    CMAKE
 
     ENV.delete "CPATH"
     system "cmake", ".", *std_cmake_args

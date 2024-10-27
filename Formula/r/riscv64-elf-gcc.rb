@@ -50,14 +50,14 @@ class Riscv64ElfGcc < Formula
   end
 
   test do
-    (testpath/"test-c.c").write <<~EOS
+    (testpath/"test-c.c").write <<~C
       int main(void)
       {
         int i=0;
         while(i<10) i++;
         return i;
       }
-    EOS
+    C
     system bin/"riscv64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf64-littleriscv",
                  shell_output("#{Formula["riscv64-elf-binutils"].bin}/riscv64-elf-objdump -a test-c.o")

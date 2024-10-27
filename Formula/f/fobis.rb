@@ -37,21 +37,21 @@ class Fobis < Formula
   end
 
   test do
-    (testpath"test-mod.f90").write <<~EOS
+    (testpath"test-mod.f90").write <<~FORTRAN
       module fobis_test_m
         implicit none
         character(*), parameter :: message = "Hello FoBiS"
       end module
-    EOS
+    FORTRAN
 
-    (testpath"test-prog.f90").write <<~EOS
+    (testpath"test-prog.f90").write <<~FORTRAN
       program fobis_test
         use iso_fortran_env, only: stdout => output_unit
         use fobis_test_m, only: message
         implicit none
         write(stdout,'(A)') message
       end program
-    EOS
+    FORTRAN
 
     system bin"FoBiS.py", "build", "-compiler", "gnu"
     assert_match "Hello FoBiS", shell_output(testpath"test-prog")

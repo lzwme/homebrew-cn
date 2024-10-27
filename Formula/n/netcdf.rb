@@ -52,7 +52,7 @@ class Netcdf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "netcdf_meta.h"
       int main()
@@ -60,7 +60,7 @@ class Netcdf < Formula
         printf(NC_VERSION);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
     assert_equal version.to_s, `.test`

@@ -81,7 +81,7 @@ class Pkgconf < Formula
     assert_equal "-lfoo", shell_output("#{bin}pkgconf --libs-only-l foo").strip
     assert_equal "-Iusrincludefoo", shell_output("#{bin}pkgconf --cflags foo").strip
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <libpkgconflibpkgconf.h>
 
@@ -89,7 +89,7 @@ class Pkgconf < Formula
         assert(pkgconf_compare_version(LIBPKGCONF_VERSION_STR, LIBPKGCONF_VERSION_STR) == 0);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}pkgconf", "-L#{lib}", "-lpkgconf"
     system ".a.out"

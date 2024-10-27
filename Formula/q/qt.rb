@@ -367,7 +367,7 @@ class Qt < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION #{Formula["cmake"].version})
 
       project(test VERSION 1.0.0 LANGUAGES CXX)
@@ -390,7 +390,7 @@ class Qt < Formula
         Qt6::Sql Qt6::Concurrent Qt6::3DCore Qt6::Svg Qt6::Quick3D
         Qt6::Network Qt6::NetworkAuth Qt6::Gui Qt6::WebEngineCore
       )
-    EOS
+    CMAKE
 
     (testpath"test.pro").write <<~EOS
       QT       += core svg 3dcore network networkauth quick3d \
@@ -403,7 +403,7 @@ class Qt < Formula
       INCLUDEPATH += #{Formula["vulkan-headers"].opt_include}
     EOS
 
-    (testpath"main.cpp").write <<~EOS
+    (testpath"main.cpp").write <<~CPP
       #undef QT_NO_DEBUG
       #include <QCoreApplication>
       #include <Qt3DCore>
@@ -442,7 +442,7 @@ class Qt < Formula
         }
         return 0;
       }
-    EOS
+    CPP
 
     ENV["QT_VULKAN_LIB"] = Formula["vulkan-loader"].opt_libshared_library("libvulkan")
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]

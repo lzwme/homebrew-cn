@@ -50,7 +50,7 @@ class Zyre < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <zyre.h>
 
@@ -62,7 +62,7 @@ class Zyre < Formula
         zyre_test(true);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lzyre", "-o", "test"
     system ".test"

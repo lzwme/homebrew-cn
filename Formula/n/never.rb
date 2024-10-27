@@ -50,7 +50,7 @@ class Never < Formula
     EOS
     assert_match "Hello World!", shell_output("#{bin}never -f hello.nev")
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "object.h"
       void test_one()
       {
@@ -62,7 +62,7 @@ class Never < Formula
         test_one();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnev", "-o", "test"
     system ".test"
   end

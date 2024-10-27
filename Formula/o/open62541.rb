@@ -35,7 +35,7 @@ class Open62541 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <open62541client_config_default.h>
       #include <assert.h>
 
@@ -44,7 +44,7 @@ class Open62541 < Formula
         assert(client != NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, ".test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lopen62541"
     system ".test"
   end

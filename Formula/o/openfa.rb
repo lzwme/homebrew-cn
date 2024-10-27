@@ -30,7 +30,7 @@ class Openfa < Formula
   end
 
   test do
-    (testpath/"testopenfa.c").write <<~EOS
+    (testpath/"testopenfa.c").write <<~C
       #include "openfa.h"
       #include "openfam.h"
       #include <assert.h>
@@ -49,7 +49,7 @@ class Openfa < Formula
         assert (j==0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "testopenfa.c", "-L#{lib}", "-lopenfa", "-o", "testopenfa"
     system "./testopenfa"
   end

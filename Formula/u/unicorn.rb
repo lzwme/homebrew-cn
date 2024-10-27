@@ -28,7 +28,7 @@ class Unicorn < Formula
   end
 
   test do
-    (testpath"test1.c").write <<~EOS
+    (testpath"test1.c").write <<~C
       * Adapted from https:www.unicorn-engine.orgdocstutorial.html
        * shamelessly and without permission. This almost certainly needs
        * replacement, but for now it should be an OK placeholder
@@ -70,7 +70,7 @@ class Unicorn < Formula
         puts("Emulation complete.");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", testpath"test1", testpath"test1.c",
                    "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
     system testpath"test1"

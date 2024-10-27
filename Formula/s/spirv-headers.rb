@@ -28,14 +28,14 @@ class SpirvHeaders < Formula
   test do
     cp pkgshare"testsexample.cpp", testpath
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
 
       add_library(SPIRV-Headers-example
                   ${CMAKE_CURRENT_SOURCE_DIR}example.cpp)
       target_include_directories(SPIRV-Headers-example
                   PRIVATE ${SPIRV-Headers_SOURCE_DIR}include)
-    EOS
+    CMAKE
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

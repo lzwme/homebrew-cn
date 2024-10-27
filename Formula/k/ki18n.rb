@@ -54,7 +54,7 @@ class Ki18n < Formula
     qt = Formula["qt"]
     qt_major = qt.version.major
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       include(FeatureSummary)
       find_package(ECM #{version} NO_MODULE)
@@ -71,7 +71,7 @@ class Ki18n < Formula
       find_package(LibIntl)
       set_package_properties(LibIntl PROPERTIES TYPE REQUIRED)
       add_subdirectory(autotests)
-    EOS
+    CMAKE
 
     cp_r (pkgshare/"autotests"), testpath
 

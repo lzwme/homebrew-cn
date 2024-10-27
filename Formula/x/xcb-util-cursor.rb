@@ -45,7 +45,7 @@ class XcbUtilCursor < Formula
     flags = shell_output("pkg-config --cflags --libs xcb-util xcb-cursor").chomp.split
     assert_includes flags, "-I#{include}"
     assert_includes flags, "-L#{lib}"
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <xcb/xcb.h>
       #include <xcb/xcb_util.h>
       #include <xcb/xcb_cursor.h>
@@ -64,7 +64,7 @@ class XcbUtilCursor < Formula
         xcb_cursor_t cid = xcb_cursor_load_cursor(ctx, "watch");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", *flags
   end
 end

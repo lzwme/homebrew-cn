@@ -40,7 +40,7 @@ class Soci < Formula
   end
 
   test do
-    (testpath/"test.cxx").write <<~EOS
+    (testpath/"test.cxx").write <<~CPP
       #include "soci/soci.h"
       #include "soci/empty/soci-empty.h"
       #include <string>
@@ -53,7 +53,7 @@ class Soci < Formula
       {
         soci::session sql(backEnd, connectString);
       }
-    EOS
+    CPP
     system ENV.cxx, "-o", "test", "test.cxx", "-std=c++11", "-L#{lib}", "-lsoci_core", "-lsoci_empty"
     system "./test"
   end

@@ -26,12 +26,12 @@ class Scc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       int main(void) {
         return 0;
       }
-    EOS
+    C
 
     expected_output = <<~EOS
       Language,Lines,Code,Comments,Blanks,Complexity,Bytes,Files,ULOC

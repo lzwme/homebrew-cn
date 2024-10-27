@@ -19,16 +19,16 @@ class Plog < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(TestPlog)
       find_package(plog REQUIRED)
 
       add_executable(test_plog test.cpp)
       include_directories(${PLOG_INCLUDE_DIRS})
-    EOS
+    CMAKE
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <plogLog.h>  Step1: include the headers
       #include "plogInitializersRollingFileInitializer.h"
 
@@ -50,7 +50,7 @@ class Plog < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Debug", *std_cmake_args
     system "cmake", "--build", "build", "--target", "test_plog"

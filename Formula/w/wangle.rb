@@ -55,7 +55,7 @@ class Wangle < Formula
     end
     (testpath"cmake").install resource("FindSodium.cmake")
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(Echo LANGUAGES CXX)
       set(CMAKE_CXX_STANDARD 17)
@@ -69,7 +69,7 @@ class Wangle < Formula
       target_link_libraries(EchoClient wangle::wangle)
       add_executable(EchoServer #{pkgshare}EchoServer.cpp)
       target_link_libraries(EchoServer wangle::wangle)
-    EOS
+    CMAKE
 
     ENV.delete "CPATH"
     system "cmake", ".", "-DCMAKE_MODULE_PATH=#{testpath}cmake", "-Wno-dev"

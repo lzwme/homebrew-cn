@@ -89,14 +89,14 @@ class Vte3 < Formula
   test do
     ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1500)
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <vte/vte.h>
 
       int main(int argc, char *argv[]) {
         guint v = vte_get_major_version();
         return 0;
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs vte-2.91").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

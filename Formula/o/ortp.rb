@@ -69,7 +69,7 @@ class Ortp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "ortplogging.h"
       #include "ortprtpsession.h"
       #include "ortpsessionset.h"
@@ -78,7 +78,7 @@ class Ortp < Formula
         ORTP_PUBLIC void ortp_init(void);
         return 0;
       }
-    EOS
+    C
     linker_flags = OS.mac? ? %W[-F#{frameworks} -framework ortp] : %W[-L#{lib} -lortp]
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-I#{libexec}include", *linker_flags
     system ".test"

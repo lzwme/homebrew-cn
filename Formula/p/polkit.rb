@@ -53,7 +53,7 @@ class Polkit < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <glib.h>
       #include <polkitpolkit.h>
 
@@ -67,7 +67,7 @@ class Polkit < Formula
         g_object_unref(group);
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs polkit-gobject-1").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags

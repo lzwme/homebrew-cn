@@ -34,11 +34,11 @@ class Ohcount < Formula
   end
 
   test do
-    (testpath"test.rb").write <<~EOS
+    (testpath"test.rb").write <<~RUBY
       # comment
       puts
       puts
-    EOS
+    RUBY
     stats = shell_output("#{bin}ohcount -i test.rb").lines.last
     assert_equal ["ruby", "2", "1", "33.3%"], stats.split[0..3]
   end

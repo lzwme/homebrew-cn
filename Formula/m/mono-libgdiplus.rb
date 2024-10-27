@@ -61,11 +61,11 @@ class MonoLibgdiplus < Formula
   test do
     # Since no headers are installed, we just test that we can link with
     # libgdiplus
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       int main() {
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lgdiplus", "-o", "test"
   end
 end

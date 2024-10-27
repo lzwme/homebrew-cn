@@ -47,7 +47,7 @@ class Ucl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
        simplified version of
        https:github.comkorczisuclblobHEADexamplessimple.c
       #include <stdio.h>
@@ -77,7 +77,7 @@ class Ucl < Formula
           ucl_free(in);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lucl", "-o", "test"
     system ".test"
   end

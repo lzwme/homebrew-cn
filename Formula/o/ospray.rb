@@ -69,7 +69,7 @@ class Ospray < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <osprayospray.h>
       int main(int argc, const char **argv) {
@@ -78,7 +78,7 @@ class Ospray < Formula
         ospShutdown();
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lospray"
     system ".a.out"

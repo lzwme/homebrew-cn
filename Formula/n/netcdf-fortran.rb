@@ -42,7 +42,7 @@ class NetcdfFortran < Formula
   end
 
   test do
-    (testpath"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~FORTRAN
       program test
         use netcdf
         integer :: ncid, varid, dimids(2)
@@ -60,7 +60,7 @@ class NetcdfFortran < Formula
           if (status = nf90_noerr) call abort
         end subroutine check
       end program test
-    EOS
+    FORTRAN
     system "gfortran", "test.f90", "-L#{lib}", "-I#{include}", "-lnetcdff",
                        "-o", "testf"
     system ".testf"

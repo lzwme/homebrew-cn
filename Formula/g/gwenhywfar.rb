@@ -78,7 +78,7 @@ class Gwenhywfar < Formula
     system ENV.cxx, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_cpp"
     system ".test_cpp"
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.29)
       project(test_gwen)
 
@@ -94,7 +94,7 @@ class Gwenhywfar < Formula
                       gwenhywfar::gui-cpp
                       gwenhywfar::gui-qt5
       )
-    EOS
+    CMAKE
 
     args = std_cmake_args
     args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix"libcmakeQt5"}"

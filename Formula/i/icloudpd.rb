@@ -5,19 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.23.4",
-      revision: "6e9c6c69996a39d0e7f77c9fd4f9b160b4b8bcdd"
+      tag:      "v1.24.0",
+      revision: "0e608f6fa412bbfa32fa711a73afad8070492991"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e5634affe49cdcfbadeb6d018e4ad0fd9c9070cfabea164c0035d2669a97470"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef3c858d3d4864cb7a43fbe96c7aaee719c2baac4fd8d83b2e11329a9aa963c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b6237e497e13bc03b3ce470b3057769a769d64b310db19c16c00c82d4952edb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f008dabcdaaf6d44e07509886ea4c93c80afe9e167b2bce495a18ec27a211052"
-    sha256 cellar: :any_skip_relocation, ventura:       "a315418fe0fc8371e430351dfa7c50ccb47328888ba88c840b3cf44d39fddba0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff6764b794922a9f87db9489fb350f62c5ee2e5c64f2fabeca7c73f95a75e84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94565c94aa0e30b0c6fe64ef0e33984a4e935760fd9d20f681643d2adf7a50d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a006608d738088edb6830ebb508cfa8b24697b201480a7f862d8584bae7ea27b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca89d5a2c8e0954282aa1c7952891b2cdd6fc987dc57d5635f789e3c888f4509"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e53841ecf3e85108dfef4d26acb3ff9f38c616dec83e909c743d73ce4451a065"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b3c8ec8054fd1d3043952484cc18b460206f08309e54696be8f2ba722751a87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa4110cfabbb99557ddde3d631be03c1373262ba136ebbc3b7eaa343190100e"
   end
 
   depends_on "python@3.13"
@@ -37,8 +36,8 @@ class Icloudpd < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "click" do
@@ -57,8 +56,8 @@ class Icloudpd < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagese8ace349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72aidna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "itsdangerous" do
@@ -77,8 +76,8 @@ class Icloudpd < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackages03b16ca3c2052e584e9908a2c146f00378939b3c51b839304ab8ef4de067f042jaraco_functools-4.0.2.tar.gz"
-    sha256 "3460c74cd0d32bf82b9576bbb3527c4364d5b27a21f5158a62aed6c4b42e23f5"
+    url "https:files.pythonhosted.orgpackagesab239894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013jaraco_functools-4.1.0.tar.gz"
+    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
   end
 
   resource "jinja2" do
@@ -97,13 +96,13 @@ class Icloudpd < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackages920dad6a82320cb8eba710fd0dceb0f678d5a1b58d67d03ae5be14874baa39e0more-itertools-10.4.0.tar.gz"
-    sha256 "fe0e63c4ab068eac62410ab05cccca2dc71ec44ba8ef29916a0090df061cf923"
+    url "https:files.pythonhosted.orgpackages517865922308c4248e0eb08ebcbe67c95d48615cc6f27854b6f2e57143e9178fmore-itertools-10.5.0.tar.gz"
+    sha256 "5482bfef7849c25dc3c6dd53a6173ae4795da2a41a80faea6700d9f5846c5da6"
   end
 
   resource "piexif" do
@@ -131,6 +130,11 @@ class Icloudpd < Formula
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
+  resource "srp" do
+    url "https:files.pythonhosted.orgpackagesf4a3f74ae47c52ef866e3e454c3f863fb2a73eb41803d12d20349b62a3924f36srp-1.0.21.tar.gz"
+    sha256 "866813bcf521189a1563e6ca3112b6f54fdf725a410a2dbebb6f0d84b82a1f1d"
+  end
+
   resource "tqdm" do
     url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
     sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
@@ -156,9 +160,9 @@ class Icloudpd < Formula
     sha256 "005da479b04134cdd9dd602d1ee7c49d79de0537610d653674cc6cbde222b8a1"
   end
 
-  resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages0fe26dbcaab07560909ff8f654d3a2e5a60552d937c909455211b1b36d7101dcwerkzeug-3.0.4.tar.gz"
-    sha256 "34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
+  resource "Werkzeug" do
+    url "https:files.pythonhosted.orgpackagesd4f90ba83eaa0df9b9e9d1efeb2ea351d0677c37d41ee5d0f91e98423c7281c9werkzeug-3.0.6.tar.gz"
+    sha256 "a8dd59d4de28ca70471a34cba79bed5f7ef2e036a76b3ab0835474246eb41f8d"
   end
 
   # support python 3.13

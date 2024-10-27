@@ -61,7 +61,7 @@ class TreeSitter < Formula
     EOS
     system bin"tree-sitter", "test"
 
-    (testpath"test_program.c").write <<~EOS
+    (testpath"test_program.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       #include <tree_sitterapi.h>
@@ -87,7 +87,7 @@ class TreeSitter < Formula
         ts_parser_delete(parser);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
     assert_equal "tree creation failed", shell_output(".test_program")
   end

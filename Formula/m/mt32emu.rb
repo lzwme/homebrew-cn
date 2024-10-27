@@ -32,13 +32,13 @@ class Mt32emu < Formula
   end
 
   test do
-    (testpath"mt32emu-test.c").write <<~EOS
+    (testpath"mt32emu-test.c").write <<~C
       #include "mt32emu.h"
       #include <stdio.h>
       int main() {
         printf("%s", mt32emu_get_library_version_string());
       }
-    EOS
+    C
 
     system ENV.cc, "mt32emu-test.c", "-I#{include}", "-L#{lib}", "-lmt32emu", "-o", "mt32emu-test"
     assert_match version.to_s, shell_output(".mt32emu-test")

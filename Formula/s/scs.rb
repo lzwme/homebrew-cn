@@ -26,7 +26,7 @@ class Scs < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <rw.h>
       #include <scs.h>
       #include <util.h>
@@ -42,7 +42,7 @@ class Scs < Formula
         _scs_free_data(d); _scs_free_data(k); _scs_free_sol(sol);
         return result - SCS_SOLVED;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}scs", "-L#{lib}", "-lscsindir",
                    "-o", "testscsindir"
     system ".testscsindir"

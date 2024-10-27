@@ -54,7 +54,7 @@ class Mdxmini < Formula
 
   test do
     resource("test_song").stage testpath
-    (testpath"mdxtest.c").write <<~EOS
+    (testpath"mdxtest.c").write <<~C
       #include <stdio.h>
       #include "libmdxminimdxmini.h"
 
@@ -66,7 +66,7 @@ class Mdxmini < Formula
           mdx_get_title(&mdx, title);
           printf("%s\\n", title);
       }
-    EOS
+    C
     system ENV.cc, "mdxtest.c", "-L#{lib}", "-L#{Formula["sdl2"].opt_lib}", "-lmdxmini", "-lSDL2", "-o", "mdxtest"
 
     result = shell_output("#{testpath}mdxtest #{testpath}pop-00.mdx #{testpath}").chomp

@@ -56,7 +56,7 @@ class Ppl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <ppl_c.h>
       #ifndef PPL_VERSION_MAJOR
       #error "No PPL header"
@@ -65,7 +65,7 @@ class Ppl < Formula
         ppl_initialize();
         return ppl_finalize();
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lppl_c", "-lppl", "-o", "test"
     system ".test"
   end

@@ -186,21 +186,21 @@ class MingwW64 < Formula
   end
 
   test do
-    (testpath/"hello.c").write <<~EOS
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       #include <windows.h>
       int main() { puts("Hello world!");
         MessageBox(NULL, TEXT("Hello GUI!"), TEXT("HelloMsg"), 0); return 0; }
-    EOS
-    (testpath/"hello.cc").write <<~EOS
+    C
+    (testpath/"hello.cc").write <<~CPP
       #include <iostream>
       int main() { std::cout << "Hello, world!" << std::endl; return 0; }
-    EOS
-    (testpath/"hello.f90").write <<~EOS
+    CPP
+    (testpath/"hello.f90").write <<~FORTRAN
       program hello ; print *, "Hello, world!" ; end program hello
-    EOS
+    FORTRAN
     # https://docs.microsoft.com/en-us/windows/win32/rpc/using-midl
-    (testpath/"example.idl").write <<~EOS
+    (testpath/"example.idl").write <<~MIDL
       [
         uuid(ba209999-0c6c-11d2-97cf-00c04f8eea45),
         version(1.0)
@@ -214,7 +214,7 @@ class MingwW64 < Formula
             [out] int outArray[INT_ARRAY_LEN]
         );
       }
-    EOS
+    MIDL
 
     ENV["LC_ALL"] = "C"
     ENV.remove_macosxsdk if OS.mac?

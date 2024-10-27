@@ -68,7 +68,7 @@ class Tracker < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libtracker-sparql/tracker-sparql.h>
 
       gint main(gint argc, gchar *argv[]) {
@@ -109,7 +109,7 @@ class Tracker < Formula
 
         return 0;
       }
-    EOS
+    C
 
     icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
     ENV.prepend_path "PKG_CONFIG_PATH", icu4c.opt_lib/"pkgconfig"

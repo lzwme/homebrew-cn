@@ -52,7 +52,7 @@ class Sdl2Ttf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <SDL2SDL_ttf.h>
 
       int main()
@@ -61,7 +61,7 @@ class Sdl2Ttf < Formula
           TTF_Quit();
           return success;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
     system ".test"
   end

@@ -34,7 +34,7 @@ class Mpfi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <mpfi.h>
 
       int main()
@@ -44,7 +44,7 @@ class Mpfi < Formula
         mpfi_clear(x);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
                    "-L#{lib}", "-lmpfi",

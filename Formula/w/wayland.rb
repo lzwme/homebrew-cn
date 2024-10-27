@@ -31,7 +31,7 @@ class Wayland < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "wayland-server.h"
       #include "wayland-client.h"
 
@@ -40,7 +40,7 @@ class Wayland < Formula
         struct wl_protocol_logger *logger;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}"
     system "./test"
   end

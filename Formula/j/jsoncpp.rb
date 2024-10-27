@@ -41,7 +41,7 @@ class Jsoncpp < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(TestJsonCpp)
 
@@ -50,9 +50,9 @@ class Jsoncpp < Formula
 
       add_executable(test test.cpp)
       target_link_libraries(test jsoncpp_lib)
-    EOS
+    CMAKE
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <jsonjson.h>
       int main() {
           Json::Value root;
@@ -62,7 +62,7 @@ class Jsoncpp < Formula
           stream1.str("[1, 2, 3]");
           return Json::parseFromStream(builder, stream1, &root, &errs) ? 0: 1;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"

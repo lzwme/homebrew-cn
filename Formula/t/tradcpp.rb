@@ -38,10 +38,10 @@ class Tradcpp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #define FOO bar
       FOO
-    EOS
+    C
     assert_match "bar", shell_output(bin/"tradcpp ./test.c")
   end
 end

@@ -43,7 +43,7 @@ class Vstr < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       // based on http://www.and.org/vstr/examples/ex_hello_world.c
       #define VSTR_COMPILE_INCLUDE 1
       #include <vstr.h>
@@ -69,7 +69,7 @@ class Vstr < Formula
         vstr_free_base(s1);
         vstr_exit();
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lvstr", "-o", "test"
     system "./test"

@@ -59,7 +59,7 @@ class Alpscore < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <alpsmcapi.hpp>
       #include <alpsmcmcbase.hpp>
       #include <alpsaccumulators.hpp>
@@ -74,9 +74,9 @@ class Alpscore < Formula
         p["myparam"] = 1.0;
         cout << set["a"] << endl << p["myparam"] << endl;
       }
-    EOS
+    CPP
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test)
       set(CMAKE_CXX_STANDARD 11)
@@ -84,7 +84,7 @@ class Alpscore < Formula
       find_package(ALPSCore REQUIRED mc accumulators params)
       add_executable(test test.cpp)
       target_link_libraries(test ${ALPSCore_LIBRARIES})
-    EOS
+    CMAKE
 
     system "cmake", "."
     system "cmake", "--build", "."

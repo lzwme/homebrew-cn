@@ -39,7 +39,7 @@ class Norm < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <normApi.h>
 
@@ -51,7 +51,7 @@ class Norm < Formula
         NormDestroyInstance(i);
         return 0;
       }
-    EOS
+    C
     system ENV.cxx, "test.c", "-L#{lib}", "-lnorm", "-o", "test"
     system ".test"
   end

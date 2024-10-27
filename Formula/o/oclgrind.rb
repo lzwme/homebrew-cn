@@ -47,7 +47,7 @@ class Oclgrind < Formula
   end
 
   test do
-    (testpath"rot13.c").write <<~EOS
+    (testpath"rot13.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -151,7 +151,7 @@ class Oclgrind < Formula
 
         puts(buf2);
       }
-    EOS
+    C
 
     system ENV.cc, "rot13.c", "-o", "rot13", "-L#{lib}", "-loclgrind-rt"
     output = shell_output("#{bin}oclgrind .rot13 2>&1").chomp

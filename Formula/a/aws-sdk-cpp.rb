@@ -2,8 +2,8 @@ class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
   homepage "https:github.comawsaws-sdk-cpp"
   url "https:github.comawsaws-sdk-cpp.git",
-      tag:      "1.11.420",
-      revision: "2cde9b1786bdbb3182faa93ce28d6e44ac2fe7e0"
+      tag:      "1.11.435",
+      revision: "0e8f2e3315ce6f9bd46a2cad8c379823c950404a"
   license "Apache-2.0"
   head "https:github.comawsaws-sdk-cpp.git", branch: "main"
 
@@ -12,12 +12,12 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0f8cb17ed2035e8544940fcc4e760e3f5d34934670a7607d899489d25c08e68f"
-    sha256 cellar: :any,                 arm64_sonoma:  "98dd61af5dc947d0abdfe209e4f6d5c0cfd71714769fb085d1624558c6992c47"
-    sha256 cellar: :any,                 arm64_ventura: "f9b9abfbf0718d0561e64f2f491133b0498755a07b608552eafe75d4ee00d2e8"
-    sha256 cellar: :any,                 sonoma:        "bdac7c5f8f12203d318d2947659b209912421e6c0b810d948bafac4a883620dc"
-    sha256 cellar: :any,                 ventura:       "60ac1626a8bddeb232ea49ef8a64af3959b4835ffb96de48a52b0a3cb7758182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbc93a135866b616d5e896f2a14342ba65fcf9b2ebe76440682b856bd2a81830"
+    sha256 cellar: :any,                 arm64_sequoia: "5068b633653b39bf03014e42ba30d4b92016b1243413780fa18b2fd55ba9d6d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "372735ff4b52a1cb2dbef9afa3451d7cb11bbb518b6d3c39fd18663a634d0e22"
+    sha256 cellar: :any,                 arm64_ventura: "94ab578f9c939462908c1dba27c1d55ed7aef52a93221631d3cab1136d96851b"
+    sha256 cellar: :any,                 sonoma:        "f9bb384fbc31fa195dc4d78776b69a178791c3a001eea863232da6b1c670b260"
+    sha256 cellar: :any,                 ventura:       "8903ed4a1a18496622719c59229025110d9e56695648a3612b7b24b3de9e6048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd758fd28cd0c9182bd686bd8d3bb0404a478b958112df8f0ccee0bc5fc22942"
   end
 
   depends_on "cmake" => :build

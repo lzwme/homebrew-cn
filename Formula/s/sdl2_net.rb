@@ -49,7 +49,7 @@ class Sdl2Net < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <SDL2SDL_net.h>
 
       int main()
@@ -58,7 +58,7 @@ class Sdl2Net < Formula
           SDLNet_Quit();
           return success;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_net", "-o", "test"
     system ".test"

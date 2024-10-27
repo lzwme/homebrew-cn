@@ -24,14 +24,14 @@ class Scons < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       int main()
       {
         printf("Homebrew");
         return 0;
       }
-    EOS
+    C
     (testpath/"SConstruct").write "Program('test.c')"
     system bin/"scons"
     assert_equal "Homebrew", shell_output("#{testpath}/test")

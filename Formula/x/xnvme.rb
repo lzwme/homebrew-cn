@@ -47,7 +47,7 @@ class Xnvme < Formula
     assert_match "tbytes: 1073741824", output
 
     # Verify library usage using a ramdisk of 1GB
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <libxnvme.h>
 
@@ -66,7 +66,7 @@ class Xnvme < Formula
 
         return 0;
       }
-    EOS
+    C
 
     # Build the example using pkg-config for build-options
     flags = shell_output("pkg-config xnvme --libs --cflags").strip

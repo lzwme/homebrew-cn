@@ -35,7 +35,7 @@ class Zint < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <zint.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -53,7 +53,7 @@ class Zint < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lzint"
     system "./test"

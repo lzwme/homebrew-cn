@@ -51,23 +51,23 @@ class Portaudio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "portaudio.h"
 
       int main(){
         printf("%s",Pa_GetVersionInfo()->versionText);
       }
-    EOS
+    C
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include "portaudiocppSystem.hxx"
 
       int main(){
         std::cout << portaudio::System::versionText();
       }
-    EOS
+    CPP
 
     system ENV.cc, testpath"test.c", "-I#{include}", "-L#{lib}", "-lportaudio", "-o", "test"
     system ENV.cxx, testpath"test.cpp", "-I#{include}", "-L#{lib}", "-lportaudiocpp", "-o", "test_cpp"

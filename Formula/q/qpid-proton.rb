@@ -40,7 +40,7 @@ class QpidProton < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "proton/message.h"
       #include "proton/messenger.h"
       int main()
@@ -52,7 +52,7 @@ class QpidProton < Formula
           messenger = pn_messenger(NULL);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lqpid-proton", "-o", "test"
     system "./test"
   end

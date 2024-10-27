@@ -28,14 +28,14 @@ class Nopoll < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <nopoll.h>
       int main(void) {
         noPollCtx *ctx = nopoll_ctx_new();
         nopoll_ctx_unref(ctx);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}/nopoll", "-L#{lib}", "-lnopoll",
            "-o", "test"
     system "./test"

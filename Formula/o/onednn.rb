@@ -31,14 +31,14 @@ class Onednn < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <oneapidnnldnnl.h>
       int main() {
         dnnl_engine_t engine;
         dnnl_status_t status = dnnl_engine_create(&engine, dnnl_cpu, 0);
         return !(status == dnnl_success);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ldnnl", "-o", "test"
     system ".test"
   end

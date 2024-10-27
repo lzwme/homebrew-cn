@@ -35,7 +35,7 @@ class Libxc < Formula
 
   test do
     # Common test files for both cmake and plain
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <xc.h>
       int main()
@@ -44,14 +44,14 @@ class Libxc < Formula
         xc_version(&major, &minor, &micro);
         printf("%d.%d.%d", major, minor, micro);
       }
-    EOS
-    (testpath/"test.f90").write <<~EOS
+    C
+    (testpath/"test.f90").write <<~FORTRAN
       program lxctest
         use xc_f03_lib_m
       end program lxctest
-    EOS
+    FORTRAN
     # Simple cmake example
-    (testpath / "CMakeLists.txt").write <<~EOS
+    (testpath / "CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.6)
       project(test_libxc LANGUAGES C Fortran)
       find_package(Libxc CONFIG REQUIRED)
@@ -59,7 +59,7 @@ class Libxc < Formula
       target_link_libraries(test_c PRIVATE Libxc::xc)
       add_executable(test_fortran test.f90)
       target_link_libraries(test_fortran PRIVATE Libxc::xcf03)
-    EOS
+    CMAKE
     # Test cmake build
     system "cmake", "-B", "build"
     system "cmake", "--build", "build"

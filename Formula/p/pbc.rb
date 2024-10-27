@@ -55,7 +55,7 @@ class Pbc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <pbcpbc.h>
       #include <assert.h>
 
@@ -85,7 +85,7 @@ class Pbc < Formula
         pairing_clear(pairing);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{Formula["gmp"].lib}", "-lgmp", "-L#{lib}",
                    "-lpbc", "-o", "test"
     system ".test"

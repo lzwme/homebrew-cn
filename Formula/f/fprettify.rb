@@ -27,7 +27,7 @@ class Fprettify < Formula
 
   test do
     system bin"fprettify", "--version"
-    (testpath"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~FORTRAN
       program demo
       integer :: endif,if,elseif
       integer,DIMENSION(2) :: function
@@ -41,7 +41,7 @@ class Fprettify < Formula
       print*,endif
       endif
       end program
-    EOS
+    FORTRAN
     system bin"fprettify", testpath"test.f90"
     ENV.fortran
     system ENV.fc, testpath"test.f90", "-o", testpath"test"

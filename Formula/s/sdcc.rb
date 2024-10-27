@@ -46,11 +46,11 @@ class Sdcc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       int main() {
         return 0;
       }
-    EOS
+    C
     system bin/"sdcc", "-mz80", "#{testpath}/test.c"
     assert_predicate testpath/"test.ihx", :exist?
   end

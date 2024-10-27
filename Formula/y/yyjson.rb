@@ -26,7 +26,7 @@ class Yyjson < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <yyjson.h>
 
       int main() {
@@ -50,7 +50,7 @@ class Yyjson < Formula
 
         yyjson_doc_free(doc);
       }
-    EOS
+    C
 
     expected_output = <<~EOS
       name: John

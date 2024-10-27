@@ -35,7 +35,7 @@ class Snap7 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "snap7.h"
       int main()
       {
@@ -43,7 +43,7 @@ class Snap7 < Formula
         Cli_Destroy(&Client);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsnap7"
     system "./test"
   end

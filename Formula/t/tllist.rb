@@ -19,7 +19,7 @@ class Tllist < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <tllist.h>
 
@@ -31,7 +31,7 @@ class Tllist < Formula
 
         printf("%zu", tll_length(an_integer_list));
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-o", "test"
 

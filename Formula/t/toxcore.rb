@@ -33,7 +33,7 @@ class Toxcore < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <toxtox.h>
       int main() {
         TOX_ERR_NEW err_new;
@@ -43,7 +43,7 @@ class Toxcore < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}toxcore", testpath"test.c",
                    "-L#{lib}", "-ltoxcore", "-o", "test"
     system ".test"

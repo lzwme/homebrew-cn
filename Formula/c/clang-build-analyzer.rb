@@ -30,9 +30,9 @@ class ClangBuildAnalyzer < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<~EOS
+    (testpath"test.cxx").write <<~CPP
       int main() {}
-    EOS
+    CPP
     ENV.clang
     system ENV.cxx, "-c", "-ftime-trace", testpath"test.cxx"
     system bin"ClangBuildAnalyzer", "--all", testpath, "test.db"

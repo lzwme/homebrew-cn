@@ -83,14 +83,14 @@ class Rtabmap < Formula
     ENV.delete "CPATH" if OS.mac? && MacOS::CLT.installed?
 
     rtabmap_dir = lib"rtabmap-#{version.major_minor}"
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.10)
       project(test)
       find_package(RTABMap REQUIRED COMPONENTS core)
       add_executable(test test.cpp)
       target_link_libraries(test rtabmap::core)
-    EOS
-    (testpath"test.cpp").write <<~EOS
+    CMAKE
+    (testpath"test.cpp").write <<~CPP
       #include <rtabmapcoreRtabmap.h>
       #include <stdio.h>
       int main()
@@ -99,7 +99,7 @@ class Rtabmap < Formula
         printf(RTABMAP_VERSION);
         return 0;
       }
-    EOS
+    CPP
 
     args = std_cmake_args
     args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?

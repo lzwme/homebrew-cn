@@ -49,7 +49,7 @@ class VulkanVolk < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "volk.h"
 
@@ -63,7 +63,7 @@ class VulkanVolk < Formula
           return 1;
         }
       }
-    EOS
+    C
     system ENV.cc, testpath"test.c",
            "-I#{include}", "-L#{lib}",
            "-I#{Formula["vulkan-headers"].include}",

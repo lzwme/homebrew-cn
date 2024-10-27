@@ -47,7 +47,7 @@ class Msgpack < Formula
                  "Upstream has bumped `SOVERSION`! The workaround in the `install` method can be removed"
 
     # Reference: https:github.commsgpackmsgpack-cblobc_masterQUICKSTART-C.md
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <msgpack.h>
       #include <stdio.h>
 
@@ -77,7 +77,7 @@ class Msgpack < Formula
              puts("");
          }
       }
-    EOS
+    C
 
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lmsgpack-c"
     assert_equal "1\n2\n3\n", `.test`

@@ -55,7 +55,7 @@ class Pmdmini < Formula
 
   test do
     resource("test_song").stage testpath
-    (testpath"pmdtest.c").write <<~EOS
+    (testpath"pmdtest.c").write <<~C
       #include <stdio.h>
       #include "libpmdminipmdmini.h"
 
@@ -67,7 +67,7 @@ class Pmdmini < Formula
           pmd_get_title(title);
           printf("%s\\n", title);
       }
-    EOS
+    C
     system ENV.cc, "pmdtest.c", "-L#{lib}", "-lpmdmini", "-o", "pmdtest"
     result = `#{testpath}pmdtest #{testpath}dd06.m #{testpath}`.chomp
     assert_equal "mus #06", result

@@ -136,15 +136,15 @@ class Vtk < Formula
     vtk_cmake_module = vtk_dir"VTK-vtk-module-find-packages.cmake"
     assert_match Formula["boost"].version.to_s, vtk_cmake_module.read, "VTK needs to be rebuilt against Boost!"
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
       project(Distance2BetweenPoints LANGUAGES CXX)
       find_package(VTK REQUIRED COMPONENTS vtkCommonCore CONFIG)
       add_executable(Distance2BetweenPoints Distance2BetweenPoints.cxx)
       target_link_libraries(Distance2BetweenPoints PRIVATE ${VTK_LIBRARIES})
-    EOS
+    CMAKE
 
-    (testpath"Distance2BetweenPoints.cxx").write <<~EOS
+    (testpath"Distance2BetweenPoints.cxx").write <<~CPP
       #include <cassert>
       #include <vtkMath.h>
       int main() {
@@ -153,18 +153,18 @@ class Vtk < Formula
         assert(vtkMath::Distance2BetweenPoints(p0, p1) == 3.0);
         return 0;
       }
-    EOS
+    CPP
 
     system "cmake", ".", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DVTK_DIR=#{vtk_dir}"
     system "make"
     system ".Distance2BetweenPoints"
 
-    (testpath"Distance2BetweenPoints.py").write <<~EOS
+    (testpath"Distance2BetweenPoints.py").write <<~PYTHON
       import vtk
       p0 = (0, 0, 0)
       p1 = (1, 1, 1)
       assert vtk.vtkMath.Distance2BetweenPoints(p0, p1) == 3
-    EOS
+    PYTHON
 
     system bin"vtkpython", "Distance2BetweenPoints.py"
   end

@@ -1,19 +1,17 @@
 class Darcs < Formula
   desc "Distributed version control system that tracks changes, via Haskell"
   homepage "https://darcs.net/"
-  url "https://hackage.haskell.org/package/darcs-2.18.3/darcs-2.18.3.tar.gz"
-  sha256 "14abd862927abe4387d226d013a4e6655317f29f8b0721991a17fdd883f8e69a"
+  url "https://hackage.haskell.org/package/darcs-2.18.4/darcs-2.18.4.tar.gz"
+  sha256 "f4bc276f2f785c8f8c9bcf97288f124a4e907540140213fe47b1049e2d240338"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fb416212ff5a4d443454522e6938697a9d959e2fe3eff545dc2c069f22e96dd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35f0cf18f12c485e5c17c9e40a72bffe3c041bfccd2c52fa6e8c417c83754494"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "beeef441e9e24f1d7a5e72dd5c29188432217aae6b151afdf0d7de17b8c3ca30"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d14752765fad87efc247348ed1a21ccd8d4a5521d009a5e60bfeac2c18be725f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b485e4a05ef77b5fdd966d3a25a9028705a25fde4fe466f53a7bf0eeeadd0e0a"
-    sha256 cellar: :any_skip_relocation, ventura:        "48df8f4180b112bde9d59dad1c431820b3ad8a24272a4ad685d4bcb0aaad4ffa"
-    sha256 cellar: :any_skip_relocation, monterey:       "b7d0cb2a23030f9ed0a267a6ba82fda9bc5fd2625877c174328f0aa2d0ffe7e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "048f27d034b24f118f8022a96753a58621c801475979e03b4509f381c6b85b42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ab51d3124d6071463a5e68555cb466acc9411a8962450abf3ebdd23272a3a7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16c95a9b58eb5f73267878a640c60efe5265aaebe46a5b50a088a6cc58771964"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1109f1290bde12f969e687acb3eeaecb167eb6ab53a88c2f2bcaa1e170243ad5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d72e2013f16f2b4c07b3f73bebc8576d412bd9d505ecc27f2a8d3d633ec7269"
+    sha256 cellar: :any_skip_relocation, ventura:       "3fee618610376d14ced94634aa36472da02617369051d6e3e33de74a7b6f5f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84301f6b1449333210b9c3ae435e09f83e7967c5d33761c089186426c9d834de"
   end
 
   depends_on "cabal-install" => :build

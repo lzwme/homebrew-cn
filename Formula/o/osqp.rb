@@ -38,7 +38,7 @@ class Osqp < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
       project(osqp_demo LANGUAGES C)
       find_package(osqp CONFIG REQUIRED)
@@ -48,10 +48,10 @@ class Osqp < Formula
 
       add_executable(osqp_demo_static osqp_demo.c)
       target_link_libraries(osqp_demo_static PRIVATE osqp::osqpstatic -lm)
-    EOS
+    CMAKE
 
     # from https:github.comosqposqpblobHEADtestsdemotest_demo.h
-    (testpath"osqp_demo.c").write <<~EOS
+    (testpath"osqp_demo.c").write <<~C
       #include <assert.h>
       #include <osqp.h>
 
@@ -93,7 +93,7 @@ class Osqp < Formula
         c_free(settings);
         return 0;
       }
-    EOS
+    C
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"

@@ -1,8 +1,8 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
   homepage "https:libgit2.github.com"
-  url "https:github.comlibgit2libgit2archiverefstagsv1.8.2.tar.gz"
-  sha256 "184699f0d9773f96eeeb5cb245ba2304400f5b74671f313240410f594c566a28"
+  url "https:github.comlibgit2libgit2archiverefstagsv1.8.3.tar.gz"
+  sha256 "868810a5508d41dd7033d41bdc55312561f3f916d64f5b7be92bc1ff4dcae02a"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   head "https:github.comlibgit2libgit2.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Libgit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9284d0ff64158a23a702818a8c4822755f6da3344445b65769fdce4b3721e6ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f7b8801042541d71967c11a49f1d323b2b0b3ac466f41417b53e1ef525e0c3f"
-    sha256 cellar: :any,                 arm64_ventura: "ad3ea8e1f3180d5701e4ba977d7f27d3909b3fba6e6907b7f135e0afb4da2e12"
-    sha256 cellar: :any,                 sonoma:        "9ff3b55ea7ec27dfda365ce710d3d21fcfe0bef952521e6901e268c5258f3bbe"
-    sha256 cellar: :any,                 ventura:       "efdcd3317260809b700d7edf47d117ebd5f3e024664ba8e8646b4764d850b585"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db478f04a5cdc7196b5988fe99e95292d6038edd289531b9ff96fa181e23f642"
+    sha256 cellar: :any,                 arm64_sequoia: "3c4301f0b1ca9da9fbdfb6cbdc81f8861536430b27345c5b91b5d769e65bef1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b1184ed75abe9d13a857009586b4c5cad527954b9d34c517187b65b637a403f7"
+    sha256 cellar: :any,                 arm64_ventura: "221af531057d896d0c87777f80681a6f98a4538a8bacd837fe830cf286493fcd"
+    sha256 cellar: :any,                 sonoma:        "5158fc1520cc16900600df3dd3de98ff9399985e4d268b28f08d4dd64449c30b"
+    sha256 cellar: :any,                 ventura:       "5a8a55d88f7102da9b34bca4f1740f939aba56f20d731825427d2482177e9b25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1efa723113d8eea3dccb1ef6cb92faf714d40a5026eb3d5d08f4ad15b2ea11d3"
   end
 
   depends_on "cmake" => :build

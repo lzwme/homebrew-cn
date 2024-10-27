@@ -51,7 +51,7 @@ class Opusfile < Formula
 
   test do
     resource("sample").stage { testpath.install Pathname.pwd.children(false).first => "sample.opus" }
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <opus/opusfile.h>
       #include <stdlib.h>
       int main(int argc, const char **argv) {
@@ -66,7 +66,7 @@ class Opusfile < Formula
         op_free(of);
         return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{Formula["opus"].include}/opus",
                              "-L#{lib}",
                              "-lopusfile",

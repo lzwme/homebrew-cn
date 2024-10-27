@@ -55,7 +55,7 @@ class WebpPixbufLoader < Formula
     system "#{Formula["webp"].opt_bin}cwebp", test_fixtures("test.png"), "-o", "test.webp"
 
     # Sample program to load a .webp file via gdk-pixbuf.
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gdk-pixbufgdk-pixbuf.h>
 
       gint main (gint argc, gchar **argv)  {
@@ -71,7 +71,7 @@ class WebpPixbufLoader < Formula
         g_object_unref(pixbuf);
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
     system ENV.cc, "test.c", "-o", "test_loader", *flags

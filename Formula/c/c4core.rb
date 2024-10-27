@@ -25,7 +25,7 @@ class C4core < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(c4core_test)
 
@@ -33,9 +33,9 @@ class C4core < Formula
 
       add_executable(c4core_test test.cpp)
       target_link_libraries(c4core_test c4core::c4core)
-    EOS
+    CMAKE
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "c4charconv.hpp"  header file for character conversion utilities
       #include "c4format.hpp"    header file for formatting utilities
       #include <iostream>
@@ -58,7 +58,7 @@ class C4core < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

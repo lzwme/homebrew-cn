@@ -48,7 +48,7 @@ class Neon < Formula
   test do
     port = free_port
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <unistd.h>
@@ -68,7 +68,7 @@ class Neon < Formula
           ne_session_destroy(sess);
           return ec;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}/neon", "-L#{lib}", "-lneon", "-o", "test"
 
     fork do

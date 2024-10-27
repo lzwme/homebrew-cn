@@ -49,7 +49,7 @@ class Sdl12Compat < Formula
     assert_predicate lib"libSDLmain.a", :exist?
     assert_equal version.to_s, shell_output("#{bin}sdl-config --version").strip
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <SDL.h>
 
       int main(int argc, char* argv[]) {
@@ -57,7 +57,7 @@ class Sdl12Compat < Formula
         SDL_Quit();
         return 0;
       }
-    EOS
+    C
     flags = Utils.safe_popen_read(bin"sdl-config", "--cflags", "--libs").split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"

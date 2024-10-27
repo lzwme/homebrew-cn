@@ -33,7 +33,7 @@ class JsonFortran < Formula
   end
 
   test do
-    (testpath"json_test.f90").write <<~EOS
+    (testpath"json_test.f90").write <<~FORTRAN
       program example
       use json_module, RK => json_RK
       use iso_fortran_env, only: stdout => output_unit
@@ -49,7 +49,7 @@ class JsonFortran < Formula
       call json%destroy(p)
       if (json%failed()) error stop 'error'
       end program example
-    EOS
+    FORTRAN
     system "gfortran", "-o", "test", "json_test.f90", "-I#{include}",
                        "-L#{lib}", "-ljsonfortran"
     system ".test"

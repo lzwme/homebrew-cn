@@ -47,7 +47,7 @@ class MinizipNg < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <stdint.h>
       #include <time.h>
@@ -58,7 +58,7 @@ class MinizipNg < Formula
         zipFile hZip = zipOpen2_64("test.zip", APPEND_STATUS_CREATE, NULL, NULL);
         return hZip != NULL && mz_zip_close(NULL) == MZ_PARAM_ERROR ? 0 : 1;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
     system ".test"

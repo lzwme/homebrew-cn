@@ -17,7 +17,7 @@ class Numactl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <numa.h>
       int main() {
         if (numa_available() >= 0) {
@@ -26,7 +26,7 @@ class Numactl < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lnuma", "-o", "test"
     system ".test"
   end

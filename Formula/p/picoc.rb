@@ -45,13 +45,13 @@ class Picoc < Formula
   end
 
   test do
-    (testpath/"brew.c").write <<~EOS
+    (testpath/"brew.c").write <<~C
       #include <stdio.h>
       int main(void) {
         printf("Homebrew\n");
         return 0;
       }
-    EOS
+    C
     assert_match "Homebrew", shell_output("#{bin}/picoc brew.c")
   end
 end

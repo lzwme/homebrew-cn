@@ -33,7 +33,7 @@ class Orcania < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <orcania.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -60,7 +60,7 @@ class Orcania < Formula
           printf("Test passed successfully");
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lorcania", "-o", "test"
     system ".test"
   end

@@ -46,14 +46,14 @@ class Rubyfmt < Formula
   end
 
   test do
-    (testpath"test.rb").write <<~EOS
+    (testpath"test.rb").write <<~RUBY
       def foo; 42; end
-    EOS
-    expected = <<~EOS
+    RUBY
+    expected = <<~RUBY
       def foo
         42
       end
-    EOS
+    RUBY
     assert_equal expected, shell_output("#{bin}rubyfmt -- #{testpath}test.rb")
   end
 end

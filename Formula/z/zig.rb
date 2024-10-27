@@ -74,13 +74,13 @@ class Zig < Formula
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
     # https:github.comziglangzigissues10377
     ENV.delete "CPATH"
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         fprintf(stdout, "Hello, world!");
         return 0;
       }
-    EOS
+    C
     system bin"zig", "cc", "hello.c", "-o", "hello"
     assert_equal "Hello, world!", shell_output(".hello")
   end

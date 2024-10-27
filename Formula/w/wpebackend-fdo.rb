@@ -32,13 +32,13 @@ class WpebackendFdo < Formula
   end
 
   test do
-    (testpath"wpe-fdo-test.c").write <<~EOS
+    (testpath"wpe-fdo-test.c").write <<~C
       #include "wpefdo.h"
       #include <stdio.h>
       int main() {
         printf("%u.%u.%u", wpe_fdo_get_major_version(), wpe_fdo_get_minor_version(), wpe_fdo_get_micro_version());
       }
-    EOS
+    C
     ENV.append_to_cflags "-I#{include}wpe-fdo-1.0 -I#{Formula["libwpe"].opt_include}wpe-1.0"
     ENV.append "LDFLAGS", "-L#{lib}"
     ENV.append "LDLIBS", "-lWPEBackend-fdo-1.0"

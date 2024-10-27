@@ -18,7 +18,7 @@ class RobinMap < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.12)
       project(robinmap_test)
 
@@ -30,8 +30,8 @@ class RobinMap < Formula
       add_executable(robinmap_test main.cpp)
 
       target_link_libraries(robinmap_test PRIVATE tsl::robin_map)
-    EOS
-    (testpath"main.cpp").write <<~EOS
+    CMAKE
+    (testpath"main.cpp").write <<~CPP
       #include <iostream>
       #include <tslrobin_map.h>
 
@@ -46,7 +46,7 @@ class RobinMap < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "robinmap_test"

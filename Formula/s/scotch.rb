@@ -73,7 +73,7 @@ class Scotch < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <scotch.h>
@@ -83,7 +83,7 @@ class Scotch < Formula
         printf("%d.%d.%d", major, minor, patch);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lscotch", "-lscotcherr",
                              "-pthread", "-L#{Formula["zlib"].opt_lib}", "-lz", "-lm"
     assert_match version.to_s, shell_output("./a.out")

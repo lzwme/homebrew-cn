@@ -41,14 +41,14 @@ class Ulfius < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <ulfius.h>
       int main() {
         struct _u_instance instance;
         ulfius_init_instance(&instance, 8081, NULL, NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lulfius", "-o", "test"
     system ".test"
   end

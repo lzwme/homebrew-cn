@@ -54,14 +54,14 @@ class M68kElfGcc < Formula
   end
 
   test do
-    (testpath/"test-c.c").write <<~EOS
+    (testpath/"test-c.c").write <<~C
       int main(void)
       {
         int i=0;
         while(i<10) i++;
         return i;
       }
-    EOS
+    C
     system bin/"m68k-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf32-m68k",
                  shell_output("#{Formula["m68k-elf-binutils"].bin}/m68k-elf-objdump -a test-c.o")

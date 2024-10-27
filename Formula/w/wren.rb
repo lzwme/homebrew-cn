@@ -37,7 +37,7 @@ class Wren < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include "wren.h"
@@ -54,7 +54,7 @@ class Wren < Formula
         printf("1 + 2 = %d\\n", (int) wrenGetSlotDouble(vm, 0));
         wrenFreeVM(vm);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lwren", "-o", "test"
     assert_equal "1 + 2 = 3", shell_output(".test").strip
   end

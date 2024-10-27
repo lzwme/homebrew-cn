@@ -80,7 +80,7 @@ class X264 < Formula
 
   test do
     assert_match version.to_s.delete("r"), shell_output("#{bin}/x264 --version").lines.first
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdint.h>
       #include <x264.h>
 
@@ -92,7 +92,7 @@ class X264 < Formula
           x264_picture_clean(&pic);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "-L#{lib}", "test.c", "-lx264", "-o", "test"
     system "./test"
   end

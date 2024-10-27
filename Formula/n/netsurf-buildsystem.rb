@@ -35,13 +35,13 @@ class NetsurfBuildsystem < Formula
       include $(NSBUILD)/Makefile.subdir
     EOS
 
-    (testpath/"src/main.c").write <<~EOS
+    (testpath/"src/main.c").write <<~C
       #include <stdio.h>
       int main() {
         printf("Hello, world!");
         return 0;
       }
-    EOS
+    C
 
     args = %W[
       NSSHARED=#{pkgshare}

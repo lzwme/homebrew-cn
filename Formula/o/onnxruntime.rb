@@ -41,7 +41,7 @@ class Onnxruntime < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <onnxruntimeonnxruntime_c_api.h>
       #include <stdio.h>
       int main()
@@ -49,7 +49,7 @@ class Onnxruntime < Formula
         printf("%s\\n", OrtGetApiBase()->GetVersionString());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", testpath"test.c",
            "-L#{lib}", "-lonnxruntime", "-o", testpath"test"
     assert_equal version, shell_output(".test").strip

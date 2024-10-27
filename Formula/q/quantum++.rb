@@ -18,7 +18,7 @@ class Quantumxx < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.15)
       project(qpp_test)
       set(CMAKE_CXX_STANDARD 17)
@@ -26,8 +26,8 @@ class Quantumxx < Formula
       find_package(qpp REQUIRED)
       add_executable(qpp_test qpp_test.cpp)
       target_link_libraries(qpp_test PUBLIC ${QPP_LINK_DEPS} libqpp)
-    EOS
-    (testpath"qpp_test.cpp").write <<~EOS
+    CMAKE
+    (testpath"qpp_test.cpp").write <<~CPP
       #include <iostream>
       #include <qppqpp.h>
 
@@ -35,7 +35,7 @@ class Quantumxx < Formula
           using namespace qpp;
           std::cout << disp(transpose(0_ket)) << std::endl;
       }
-    EOS
+    CPP
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     assert_equal "1  0", shell_output(".buildqpp_test").chomp

@@ -54,14 +54,14 @@ class Tcc < Formula
   end
 
   test do
-    (testpath/"hello-c.c").write <<~EOS
+    (testpath/"hello-c.c").write <<~C
       #include <stdio.h>
       int main()
       {
         puts("Hello, world!");
         return 0;
       }
-    EOS
+    C
     assert_equal "Hello, world!\n", shell_output("#{bin}/tcc -run hello-c.c")
   end
 end

@@ -52,7 +52,7 @@ class Openmama < Formula
   test do
     system bin"mamalistenc", "-?"
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <mamamama.h>
       #include <stdio.h>
       int main() {
@@ -65,7 +65,7 @@ class Openmama < Formula
           printf("%s\\n", version);
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmama", "-o", "test"
     assert_includes shell_output(".test"), version.to_s

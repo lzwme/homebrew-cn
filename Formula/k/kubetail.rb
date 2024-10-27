@@ -1,8 +1,8 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.0.4.tar.gz"
-  sha256 "926784290f5aaced8842d295fe5de4b35a7cb0c9ce7f562119b5192457d0e4ca"
+  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.0.5.tar.gz"
+  sha256 "63a341f0723f6543bb395bcde399e1a1799303f21f99fff41387c8483f0a4a55"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eda2e02d780c851a17ddec7e49ae605971bccea2606c2ec679d755ac46e20561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da9f485455943d8712637bc708b083cefd2900189129649466748e998db79f5e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f76da40d65fc566c760e3a08334414d84036ff649f9dafe97e009ad3df896eae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21ad57c72490bcba60f4a519772a32422b74d34cd4fb64ebd24a5170c7543422"
-    sha256 cellar: :any_skip_relocation, ventura:       "8977a08462fb23ec6a0f8c255b86b7678e86529899169fcb1c9ad03c3e7cc071"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fd55e5edbf7f6df914fd776d1e15bea441f46e44ed160cb19979197596a5eb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d7f25caafec7079cc865ca0c411f5fd3c03c31ab750ac5f2826ac431ac8181b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8d2d2414050f49b12066f2fecad6227e97b69a4b46570e62d6f60fb328f2bc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d87b94297797476c4cfd0e31c9e35453f74037b2ce084e6d10aeddc42d658c90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3824727dcf2192852080279aa5d264ede8a4f54d5d26028e2d5f22583128d5b9"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab7bd4519b44fa2dc7857d77241d67a1a95f56797e9dd6b4672e33bea10c5966"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52d004164f9b68d880b66f020dd0de1121dd4d04375155a83ea8d51cbc27fb1"
   end
 
   depends_on "go" => :build

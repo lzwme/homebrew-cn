@@ -59,14 +59,14 @@ class Redo < Formula
     assert_predicate man1"redo.1", :exist?
 
     # Test is based on https:redo.readthedocs.ioenlatestcookbookhello
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <stdio.h>
 
       int main() {
         printf("Hello, world!\\n");
         return 0;
       }
-    EOS
+    C
     (testpath"hello.do").write <<~EOS
       redo-ifchange hello.c
       cc -o $3 hello.c -Wall

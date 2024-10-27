@@ -6,15 +6,15 @@ class CloudformationCli < Formula
   url "https:files.pythonhosted.orgpackages5146e1a0bad01e7e1f14b7e3190d73818c4a903f44aeb228dfcabd18d197a0bfcloudformation-cli-0.2.38.tar.gz"
   sha256 "1dfc73847d7bc293036762434b758d7b76806f28367dfa6b50f1d9da5f51f4e8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8450f4810bec921b186423bb5761cf07e5a59dfb13dcfe2fb06f4cd542766411"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f2e48576c49a1529ccdaa70952a4bc00ac2a4ecee93ed64ee47eeaad0f5b3b2"
-    sha256 cellar: :any,                 arm64_ventura: "88deed94c974ef0bafadc678c1de314621ef7bb3cd6c56bc6634b52d5ac30a80"
-    sha256 cellar: :any,                 sonoma:        "6ac8b2570baad7052321a0b04c4c8e13ccb24431484148a7bde5ef1c93a89953"
-    sha256 cellar: :any,                 ventura:       "7a547a3c70ea1247e002ca4b5f86341247627a1848c54fc7cf6f1f9bbbf7ed88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6264facd6d4dbdeff62210e8adb087aa207a175107e64afdd4b826eabedf044"
+    sha256 cellar: :any,                 arm64_sequoia: "5a526b2d629741626a6ef6a6412be1410afc8c405abb3bc7e5f43953ffb9e199"
+    sha256 cellar: :any,                 arm64_sonoma:  "c31044d5cad03d51094dafe94b01eb512f1a4206370d2939119429fc8612774d"
+    sha256 cellar: :any,                 arm64_ventura: "2dd5cbdcd216279b4f840341941f1f6c1421fa4528207eca1730a773fb64a20b"
+    sha256 cellar: :any,                 sonoma:        "25d0ae62f71de3e9cbdae6d031bc82253dd435bf92f12f76f711d7df4ff665f5"
+    sha256 cellar: :any,                 ventura:       "40c1471061c405f2579a0d200bb6f56fbbc8b1c41ee90fed21f4e70897a4b373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b9d14eaf55ea3e0dd43657ad06a5546c183d4589e57b2f7b4abea795fe24d66"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -41,13 +41,13 @@ class CloudformationCli < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesb82910988ceaa300ddc628cb899875d85d9998e3da4803226398e002d95b2741boto3-1.35.39.tar.gz"
-    sha256 "670f811c65e3c5fe4ed8c8d69be0b44b1d649e992c0fc16de43816d1188f88f1"
+    url "https:files.pythonhosted.orgpackages73c6a18789b17138bc4f3001bfee42c07f85b9432475f5e8188c5699d481a376boto3-1.35.49.tar.gz"
+    sha256 "ddecb27f5699ca9f97711c52b6c0652c2e63bf6c2bfbc13b819b4f523b4d30ff"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesf728d83dbd69d7015892b53ada4fded79a5bc1b7d77259361eb8302f88c2da81botocore-1.35.39.tar.gz"
-    sha256 "cb7f851933b5ccc2fba4f0a8b846252410aa0efac5bfbe93b82d10801f5f8e90"
+    url "https:files.pythonhosted.orgpackages16c320c4d7df35b7a93a4999c881beaf38dbf91fd7c82c28d876c3cdd0959fe3botocore-1.35.49.tar.gz"
+    sha256 "07d0c1325fdbfa49a4a054413dbdeab0a6030449b2aa66099241af2dac48afd8"
   end
 
   resource "cfn-flip" do
@@ -56,8 +56,8 @@ class CloudformationCli < Formula
   end
 
   resource "cfn-lint" do
-    url "https:files.pythonhosted.orgpackagescfe895fd33c9a28fc93da3ab6d42e4596e1bac4381aa86b7dc86db37d74920f3cfn_lint-1.16.1.tar.gz"
-    sha256 "e7b6a2fbb39368974044e7ecd109bed56224cf11b9bd92ebeb5e8ae5d5754725"
+    url "https:files.pythonhosted.orgpackages8082142f1f3333e02cad6f545d7f5ad3eae6303fe98b80e4f23830f1aa4ce1c7cfn_lint-1.18.1.tar.gz"
+    sha256 "09139c4260897ada66034b57c9d9979cc2ec25856660d8f114f373dc4f70a34a"
   end
 
   resource "charset-normalizer" do
@@ -96,8 +96,8 @@ class CloudformationCli < Formula
   end
 
   resource "hypothesis" do
-    url "https:files.pythonhosted.orgpackagesc9031348ccb88bd3df1f1848afdea74c4c1dd42e75d1be9d022123d8f3cb180ahypothesis-6.114.1.tar.gz"
-    sha256 "15ea6e4bb297276351ada18f172c60049c117a91040154ea620c632cc4c53e88"
+    url "https:files.pythonhosted.orgpackagesdb6ea35037db3b8ab6e6bcf799a2bbf8457340fb2b072036076a8819e6aaa834hypothesis-6.115.5.tar.gz"
+    sha256 "4768c5fb426b305462ed31032d6e216a31daaefb1dc3134fdf2795b7961d7cb3"
   end
 
   resource "idna" do
@@ -136,8 +136,8 @@ class CloudformationCli < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "mpmath" do
@@ -151,8 +151,8 @@ class CloudformationCli < Formula
   end
 
   resource "networkx" do
-    url "https:files.pythonhosted.orgpackages362b20ad9eecdda3f1b0dc63fb8f82d2ea99163dbca08bfa392594fc2ed81869networkx-3.4.1.tar.gz"
-    sha256 "f9df45e85b78f5bd010993e897b4f1fdb242c11e015b101bd951e5c0e29982d8"
+    url "https:files.pythonhosted.orgpackagesfd1d06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937fnetworkx-3.4.2.tar.gz"
+    sha256 "307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1"
   end
 
   resource "ordered-set" do
@@ -231,8 +231,8 @@ class CloudformationCli < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
+    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
   end
 
   resource "six" do
@@ -266,8 +266,8 @@ class CloudformationCli < Formula
   end
 
   resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages0fe26dbcaab07560909ff8f654d3a2e5a60552d937c909455211b1b36d7101dcwerkzeug-3.0.4.tar.gz"
-    sha256 "34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
+    url "https:files.pythonhosted.orgpackagesd4f90ba83eaa0df9b9e9d1efeb2ea351d0677c37d41ee5d0f91e98423c7281c9werkzeug-3.0.6.tar.gz"
+    sha256 "a8dd59d4de28ca70471a34cba79bed5f7ef2e036a76b3ab0835474246eb41f8d"
   end
 
   def install

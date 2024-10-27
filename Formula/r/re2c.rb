@@ -27,7 +27,7 @@ class Re2c < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       unsigned int stou (const char * s)
       {
       #   define YYCTYPE char
@@ -44,7 +44,7 @@ class Re2c < Formula
               *
           }
       }
-    EOS
+    C
     system bin"re2c", "-is", testpath"test.c"
   end
 end

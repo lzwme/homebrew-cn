@@ -42,7 +42,7 @@ class Vectorscan < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <hshs.h>
       int main()
@@ -50,7 +50,7 @@ class Vectorscan < Formula
         printf("hyperscan v%s", hs_version());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
     assert_match version.to_s, shell_output(".test")
   end

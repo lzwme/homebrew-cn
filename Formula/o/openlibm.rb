@@ -29,13 +29,13 @@ class Openlibm < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "openlibm.h"
       int main (void) {
         printf("%.1f", cos(acos(0.0)));
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}openlibm",
            "-o", "test"
     assert_equal "0.0", shell_output(".test")

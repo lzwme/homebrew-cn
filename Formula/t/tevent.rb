@@ -37,7 +37,7 @@ class Tevent < Formula
 
   test do
     # https://tevent.samba.org/tevent_events.html#Immediate
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <unistd.h>
       #include <tevent.h>
@@ -69,7 +69,7 @@ class Tevent < Formula
         talloc_free(mem_ctx);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-ltevent", "-L#{Formula["talloc"].opt_lib}", "-ltalloc"
     system "./test"

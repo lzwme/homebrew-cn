@@ -29,15 +29,15 @@ class Burst < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.8.2)
       project(TestBurst)
       find_package(Burst 3.1.1 REQUIRED)
 
       add_executable(test_burst test_burst.cpp)
       target_link_libraries(test_burst PRIVATE Burst::burst)
-    EOS
-    (testpath"test_burst.cpp").write <<~EOS
+    CMAKE
+    (testpath"test_burst.cpp").write <<~CPP
       #include <burstalgorithmradix_sortradix_sort_seq.hpp>
 
       #include <cassert>
@@ -57,7 +57,7 @@ class Burst < Formula
           );
           assert((strings == std::vector<std::string>{"d", "cc", "bbb", "aaaa"}));
       }
-    EOS
+    CPP
     cmake_args = std_cmake_args + ["-DCMAKE_BUILD_TYPE=Debug"]
     system "cmake", "-S", ".", "-B", "build", *cmake_args
     system "cmake", "--build", "build", "--target", "test_burst"

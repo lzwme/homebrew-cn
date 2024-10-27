@@ -52,13 +52,13 @@ class ClangUml < Formula
 
     # Initialize a minimal C++ CMake project and try to generate a
     # PlantUML diagram from it
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <stddef.h>
       namespace A {
         struct AA { size_t s; };
       }
       int main(int argc, char** argv) { A::AA a; return 0; }
-    EOS
+    CPP
     (testpath".clang-uml").write <<~EOS
       compilation_database_dir: build
       output_directory: diagrams
@@ -69,7 +69,7 @@ class ClangUml < Formula
             namespaces:
               - A
     EOS
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.15)
 
       project(clang-uml-test CXX)
@@ -77,7 +77,7 @@ class ClangUml < Formula
       set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
       add_executable(clang-uml-test test.cc)
-    EOS
+    CMAKE
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
 

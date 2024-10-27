@@ -1,8 +1,8 @@
 class Rubberband < Formula
   desc "Audio time stretcher tool and library"
   homepage "https://breakfastquay.com/rubberband/"
-  url "https://breakfastquay.com/files/releases/rubberband-3.3.0.tar.bz2"
-  sha256 "d9ef89e2b8ef9f85b13ac3c2faec30e20acf2c9f3a9c8c45ce637f2bc95e576c"
+  url "https://breakfastquay.com/files/releases/rubberband-4.0.0.tar.bz2"
+  sha256 "af050313ee63bc18b35b2e064e5dce05b276aaf6d1aa2b8a82ced1fe2f8028e9"
   license "GPL-2.0-or-later"
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
@@ -12,16 +12,12 @@ class Rubberband < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "0dbc4dfca618f3b7772772a96a267cf39e8a81f2da4e369d11faa47d2892a857"
-    sha256 cellar: :any, arm64_sonoma:   "83e5b2a1828926769eb43c37b1ed95fc6acb52b7b80717c628248ba06dcc4b59"
-    sha256 cellar: :any, arm64_ventura:  "206c609c7172b67789074a7cf6d7f488754c36385c8fa192be5b7d79250baa9f"
-    sha256 cellar: :any, arm64_monterey: "b5f0bd10292d5ae466dbd52a08675add720790e38844439fae7539fd90ac8ab3"
-    sha256 cellar: :any, arm64_big_sur:  "bb6f008e5ae2b65ddc195607d321fd533fcf99a0a0e3e4438dc1f960fbf9a11f"
-    sha256 cellar: :any, sonoma:         "6b10db46321e2be0e9925e568ea4d6877aa160b14ca1c3d57bedb0a75c417ee3"
-    sha256 cellar: :any, ventura:        "b4650ed709c4c90115f039c4b0d7ad0261a68894a509607d09f1eea066f97884"
-    sha256 cellar: :any, monterey:       "97ea0bae9d8ff2f4b0fd8ca64f7f1a12497f1b4c24929b39f02d5e5081da3980"
-    sha256 cellar: :any, big_sur:        "7092e475181f31763ba9c7b86d00cde1913357543eb2ed3759b696e7add68650"
-    sha256               x86_64_linux:   "be989026114a7f007ae1d5dba0ba2f98bb47da7b3023ff60f4d873f1d45a1bc5"
+    sha256 cellar: :any, arm64_sequoia: "5ac29718f68b181de61e81dd42bc85cc74cb1fc4ed5fdca541a94224bc43feaa"
+    sha256 cellar: :any, arm64_sonoma:  "d510bad14f78b8a3e7be16f5c49a78fb3638f686ec1c04c2cb28310b49e4ead7"
+    sha256 cellar: :any, arm64_ventura: "066c9310bb2eb10817aa44bc17eb1a3ce20f47b4c66e4381b097c8625caef7ff"
+    sha256 cellar: :any, sonoma:        "3bcd1310c98256b7a382f3b5bbdf1e22a060bb41989fab028122e0b5cd87e6af"
+    sha256 cellar: :any, ventura:       "d2b9fac38088ef6014be7d725f07b5d16aa92e22b1dc56046aa2390005379194"
+    sha256               x86_64_linux:  "982c2036c3528e0ae338680ba6baff4e8a0cd5ee16a2bafe4673e9cdea4d9e05"
   end
 
   depends_on "meson" => :build

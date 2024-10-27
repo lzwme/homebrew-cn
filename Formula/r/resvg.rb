@@ -39,7 +39,7 @@ class Resvg < Formula
     system bin"usvg", testpath"circle.svg", testpath"test.svg"
     assert_predicate testpath"test.svg", :exist?
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <resvg.h>
@@ -65,7 +65,7 @@ class Resvg < Formula
         resvg_tree_destroy(tree);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lresvg", "-o", "test"
     assert_equal "160 35", shell_output(".test #{test_fixtures("test.svg")}").chomp
   end

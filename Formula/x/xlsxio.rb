@@ -25,7 +25,7 @@ class Xlsxio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <unistd.h>
@@ -39,7 +39,7 @@ class Xlsxio < Formula
         }
         return xlsxiowrite_close(handle);
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxio_read", "-lxlsxio_write", "-o", "test"
     system ".test"

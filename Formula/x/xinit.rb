@@ -107,7 +107,7 @@ class Xinit < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <xcbxcb.h>
 
@@ -118,7 +118,7 @@ class Xinit < Formula
         xcb_disconnect(connection);
         return 0;
       }
-    EOS
+    C
     xcb = Formula["libxcb"]
     system ENV.cc, ".test.c", "-o", "test", "-I#{xcb.include}", "-L#{xcb.lib}", "-lxcb"
     exec bin"xinit", ".test", "--", Formula["xorg-server"].bin"Xvfb", ":1"

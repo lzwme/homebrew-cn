@@ -80,7 +80,7 @@ class Mpich < Formula
   end
 
   test do
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <mpi.h>
       #include <stdio.h>
 
@@ -96,12 +96,12 @@ class Mpich < Formula
         MPI_Finalize();
         return 0;
       }
-    EOS
+    C
     system bin"mpicc", "hello.c", "-o", "hello"
     system ".hello"
     system bin"mpirun", "-np", "4", ".hello"
 
-    (testpath"hellof.f90").write <<~EOS
+    (testpath"hellof.f90").write <<~FORTRAN
       program hello
       include 'mpif.h'
       integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
@@ -111,7 +111,7 @@ class Mpich < Formula
       print*, 'node', rank, ': Hello Fortran world'
       call MPI_FINALIZE(ierror)
       end
-    EOS
+    FORTRAN
     system bin"mpif90", "hellof.f90", "-o", "hellof"
     system ".hellof"
     system bin"mpirun", "-np", "4", ".hellof"

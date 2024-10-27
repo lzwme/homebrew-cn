@@ -29,7 +29,7 @@ class Sophus < Formula
 
   test do
     cp pkgshare"exampleshello_so3.cpp", testpath
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION #{Formula["cmake"].version})
       project(HelloSO3)
 
@@ -39,7 +39,7 @@ class Sophus < Formula
       find_package(Sophus REQUIRED)
       add_executable(HelloSO3 hello_so3.cpp)
       target_link_libraries(HelloSO3 Sophus::Sophus)
-    EOS
+    CMAKE
 
     system "cmake", "-S", ".", "-B", "build", "-DSophus_DIR=#{share}Sophus"
     system "cmake", "--build", "build"

@@ -57,7 +57,7 @@ class Redland < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <redland.h>
 
@@ -86,7 +86,7 @@ class Redland < Formula
 
         return 0;
       }
-    EOS
+    C
 
     (testpath"file.rdf").write <<~EOS
       <?xml version="1.0"?>

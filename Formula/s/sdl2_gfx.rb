@@ -43,7 +43,7 @@ class Sdl2Gfx < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <SDL2/SDL2_imageFilter.h>
 
       int main()
@@ -51,7 +51,7 @@ class Sdl2Gfx < Formula
         int mmx = SDL_imageFilterMMXdetect();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lSDL2_gfx", "-o", "test"
     system "./test"
   end

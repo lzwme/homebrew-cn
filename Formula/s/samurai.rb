@@ -31,13 +31,13 @@ class Samurai < Formula
         command = #{ENV.cc} $in -o $out
       build hello: cc hello.c
     EOS
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <stdio.h>
       int main() {
         puts("Hello, world!");
         return 0;
       }
-    EOS
+    C
     system bin"samu"
     assert_match "Hello, world!", shell_output(".hello")
   end

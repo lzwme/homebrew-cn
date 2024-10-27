@@ -24,7 +24,7 @@ class Scriptisto < Formula
   end
 
   test do
-    (testpath"hello-c.c").write <<~EOS
+    (testpath"hello-c.c").write <<~C
       #!usrbinenv scriptisto
 
        scriptisto-begin
@@ -38,7 +38,7 @@ class Scriptisto < Formula
         puts("Hello, world!");
         return 0;
       }
-    EOS
+    C
     assert_equal "Hello, world!\n", shell_output("#{bin}scriptisto .hello-c.c")
   end
 end

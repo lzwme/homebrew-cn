@@ -26,7 +26,7 @@ class Pcapplusplus < Formula
   end
 
   test do
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.12)
       project(TestPcapPlusPlus)
       set(CMAKE_CXX_STANDARD 11)
@@ -36,9 +36,9 @@ class Pcapplusplus < Formula
       add_executable(test test.cpp)
       target_link_libraries(test PUBLIC PcapPlusPlus::Pcap++)
       set_target_properties(test PROPERTIES NO_SYSTEM_FROM_IMPORTED ON)
-    EOS
+    CMAKE
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cstdlib>
       #include <pcapplusplusPcapLiveDeviceList.h>
       int main() {
@@ -51,7 +51,7 @@ class Pcapplusplus < Formula
         }
         return 0;
       }
-    EOS
+    CPP
 
     system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build", "--target", "test"

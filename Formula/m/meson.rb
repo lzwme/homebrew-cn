@@ -53,13 +53,13 @@ class Meson < Formula
   end
 
   test do
-    (testpath"helloworld.c").write <<~EOS
+    (testpath"helloworld.c").write <<~C
       #include <stdio.h>
       int main(void) {
         puts("hi");
         return 0;
       }
-    EOS
+    C
     (testpath"meson.build").write <<~EOS
       project('hello', 'c')
       executable('hello', 'helloworld.c')

@@ -37,7 +37,7 @@ class TemplateGlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <tmpl-glib.h>
 
       int main(int argc, char *argv[]) {
@@ -45,7 +45,7 @@ class TemplateGlib < Formula
         g_assert_nonnull(locator);
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs template-glib-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

@@ -48,10 +48,10 @@ class Cgrep < Formula
   end
 
   test do
-    (testpath"t.rb").write <<~EOS
+    (testpath"t.rb").write <<~RUBY
       # puts test comment.
       puts "test literal."
-    EOS
+    RUBY
 
     assert_match ":1", shell_output("#{bin}cgrep --count --comment test t.rb")
     assert_match ":1", shell_output("#{bin}cgrep --count --literal test t.rb")

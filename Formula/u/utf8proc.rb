@@ -22,7 +22,7 @@ class Utf8proc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <string.h>
       #include <utf8proc.h>
 
@@ -30,7 +30,7 @@ class Utf8proc < Formula
         const char *version = utf8proc_version();
         return strnlen(version, sizeof("1.3.1-dev")) > 0 ? 0 : -1;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lutf8proc", "-o", "test"
     system ".test"

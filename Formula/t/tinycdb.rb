@@ -46,7 +46,7 @@ class Tinycdb < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <fcntl.h>
       #include <cdb.h>
@@ -67,7 +67,7 @@ class Tinycdb < Formula
         cdb_make_finish(&cdbm);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lcdb", "-o", "test"
     system "./test"
     return unless OS.linux?

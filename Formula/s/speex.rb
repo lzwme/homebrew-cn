@@ -35,7 +35,7 @@ class Speex < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <speex/speex.h>
 
       int main()
@@ -51,7 +51,7 @@ class Speex < Formula
 
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lspeex", "-o", "test"
     system "./test"
   end

@@ -32,7 +32,7 @@ class Zix < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "zix/attributes.h"
       #include "zix/string_view.h"
 
@@ -75,7 +75,7 @@ class Zix < Formula
       #if defined(__GNUC__)
       #  pragma GCC diagnostic pop
       #endif
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}/zix-0", "-o", "test"
     system "./test"
   end

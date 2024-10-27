@@ -30,7 +30,7 @@ class Zimg < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <zimg.h>
 
@@ -41,7 +41,7 @@ class Zimg < Formula
         assert(ZIMG_MATRIX_UNSPECIFIED == format.matrix_coefficients);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lzimg", "-o", "test"
     system ".test"
   end

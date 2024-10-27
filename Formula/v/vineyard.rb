@@ -71,7 +71,7 @@ class Vineyard < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <memory>
 
@@ -87,9 +87,9 @@ class Vineyard < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
 
       project(vineyard-test LANGUAGES C CXX)
@@ -99,7 +99,7 @@ class Vineyard < Formula
       add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}test.cc)
       target_include_directories(vineyard-test PRIVATE ${VINEYARD_INCLUDE_DIRS})
       target_link_libraries(vineyard-test PRIVATE ${VINEYARD_LIBRARIES})
-    EOS
+    CMAKE
 
     # Remove Homebrew's lib directory from LDFLAGS as it is not available during
     # `shell_output`.

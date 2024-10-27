@@ -71,10 +71,10 @@ class X8664LinuxGnuBinutils < Formula
     return if OS.linux?
 
     (testpath/"sysroot").install resource("homebrew-sysroot")
-    (testpath/"hello.c").write <<~EOS
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() { printf("hello!\\n"); }
-    EOS
+    C
 
     ENV.remove_macosxsdk
     system ENV.cc, "-v", "--target=x86_64-pc-linux-gnu", "--sysroot=#{testpath}/sysroot", "-c", "hello.c"

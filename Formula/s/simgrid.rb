@@ -53,7 +53,7 @@ class Simgrid < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <simgrid/engine.h>
@@ -62,7 +62,7 @@ class Simgrid < Formula
         printf("%f", simgrid_get_clock());
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsimgrid",
                    "-o", "test"

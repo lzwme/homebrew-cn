@@ -48,7 +48,7 @@ class SimpleTiles < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <simple-tilessimple_tiles.h>
 
       int main(){
@@ -56,7 +56,7 @@ class SimpleTiles < Formula
         simplet_map_free(map);
         return 0;
       }
-    EOS
+    C
     cflags = shell_output("pkg-config --cflags simple-tiles").chomp.split
     system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
     system ".test"

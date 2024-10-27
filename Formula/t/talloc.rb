@@ -32,7 +32,7 @@ class Talloc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <talloc.h>
       int main()
       {
@@ -47,7 +47,7 @@ class Talloc < Formula
         talloc_free(tmp_ctx);
         return ret;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltalloc", "-o", "test"
     system testpath/"test"
   end

@@ -37,11 +37,11 @@ class Qbs < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       int main() {
         return 0;
       }
-    EOS
+    C
 
     (testpath/"test.qbs").write <<~EOS
       import qbs

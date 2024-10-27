@@ -82,14 +82,14 @@ class Gdcm < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<~EOS
+    (testpath"test.cxx").write <<~CPP
       #include "gdcmReader.h"
       int main(int, char *[])
       {
         gdcm::Reader reader;
         reader.SetFileName("file.dcm");
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "-isystem", "#{include}gdcm-3.0", "-o", "test.cxx.o", "-c", "test.cxx"
     system ENV.cxx, "-std=c++11", "test.cxx.o", "-o", "test", "-L#{lib}", "-lgdcmDSED"

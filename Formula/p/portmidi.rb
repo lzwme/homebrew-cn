@@ -51,7 +51,7 @@ class Portmidi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <portmidi.h>
 
       int main()
@@ -63,7 +63,7 @@ class Portmidi < Formula
         else
             return 1;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lportmidi", "-o", "test"
     system ".test"
   end

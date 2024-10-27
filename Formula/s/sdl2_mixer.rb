@@ -87,7 +87,7 @@ class Sdl2Mixer < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <SDL2SDL_mixer.h>
 
@@ -98,7 +98,7 @@ class Sdl2Mixer < Formula
           Mix_Quit();
           return success == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
-    EOS
+    C
     system ENV.cc, "-I#{Formula["sdl2"].opt_include}SDL2",
            "test.c", "-L#{lib}", "-lSDL2_mixer", "-o", "test"
     system ".test"

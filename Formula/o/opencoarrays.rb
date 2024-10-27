@@ -33,7 +33,7 @@ class Opencoarrays < Formula
   end
 
   test do
-    (testpath"tally.f90").write <<~EOS
+    (testpath"tally.f90").write <<~FORTRAN
       program main
         use iso_c_binding, only : c_int
         use iso_fortran_env, only : error_unit
@@ -52,7 +52,7 @@ class Opencoarrays < Formula
         sync all
         if (this_image()==1) write(*,*) "Test passed"
       end program
-    EOS
+    FORTRAN
     system bin"caf", "tally.f90", "-o", "tally"
     system bin"cafrun", "-np", "3", "--oversubscribe", ".tally"
     assert_match Formula["open-mpi"].opt_lib.to_s, shell_output("#{bin}caf --show")

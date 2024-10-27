@@ -47,7 +47,7 @@ class Cgal < Formula
 
   test do
     # https:doc.cgal.orglatestTriangulation_2Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https:doc.cgal.orglatestAlgebraic_foundationsAlgebraic_foundations_2interoperable_8cpp-example.html
-    (testpath"surprise.cpp").write <<~EOS
+    (testpath"surprise.cpp").write <<~CPP
       #include <CGALExact_predicates_inexact_constructions_kernel.h>
       #include <CGALTriangulation_2.h>
       #include <CGALdraw_triangulation_2.h>
@@ -79,8 +79,8 @@ class Cgal < Formula
           CGAL::draw(t);
         return EXIT_SUCCESS;
        }
-    EOS
-    (testpath"CMakeLists.txt").write <<~EOS
+    CPP
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.1...3.15)
       find_package(CGAL COMPONENTS Qt6)
       add_definitions(-DCGAL_USE_BASIC_VIEWER -DQT_NO_KEYWORDS)
@@ -88,7 +88,7 @@ class Cgal < Formula
       add_executable(surprise surprise.cpp)
       target_include_directories(surprise BEFORE PUBLIC #{Formula["qt"].opt_include})
       target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt6)
-    EOS
+    CMAKE
     system "cmake", "-L", "-DQt6_DIR=#{Formula["qt"].opt_lib}cmakeQt6",
            "-DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}",
            "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."

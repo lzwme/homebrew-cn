@@ -47,7 +47,7 @@ class Wasmtime < Formula
 
     # Example from https:docs.wasmtime.devexamples-c-hello-world.html to test C library API,
     # with comments removed for brevity
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -151,7 +151,7 @@ class Wasmtime < Formula
         wasm_byte_vec_delete(&error_message);
         exit(1);
       }
-    EOS
+    C
 
     system ENV.cc, "hello.c", "-I#{include}", "-L#{lib}", "-lwasmtime", "-o", "hello"
     expected = <<~EOS

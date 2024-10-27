@@ -25,14 +25,14 @@ class Termbox < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <termbox.h>
       int main() {
          we can't test other functions because the CI test runs in a
          non-interactive shell
         tb_set_clear_attributes(42, 42);
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-ltermbox", "-o", "test"
     system ".test"

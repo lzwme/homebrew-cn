@@ -71,13 +71,13 @@ class Fbthrift < Formula
   end
 
   test do
-    (testpath"example.thrift").write <<~EOS
+    (testpath"example.thrift").write <<~THRIFT
       namespace cpp tamvm
 
       service ExampleService {
         i32 get_number(1:i32 number);
       }
-    EOS
+    THRIFT
 
     system bin"thrift1", "--gen", "mstch_cpp2", "example.thrift"
     assert_predicate testpath"gen-cpp2", :exist?
@@ -88,7 +88,7 @@ class Fbthrift < Formula
 
     # Test CMake package to make sure required dependencies without linkage are kept,
     # Link to `FBThrift::transport` as it uses path to `zstd` shared library
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES CXX)
 
@@ -98,7 +98,7 @@ class Fbthrift < Formula
 
       add_executable(test test.cpp)
       target_link_libraries(test FBThrift::transport)
-    EOS
+    CMAKE
     system "cmake", ".", *std_cmake_args
     system "cmake", "--build", "."
   end

@@ -29,17 +29,17 @@ class Uncrustify < Formula
   end
 
   test do
-    (testpath"t.c").write <<~EOS
+    (testpath"t.c").write <<~C
       #include <stdio.h>
       int main(void) {return 0;}
-    EOS
+    C
 
-    expected = <<~EOS
+    expected = <<~C
       #include <stdio.h>
       int main(void) {
       \treturn 0;
       }
-    EOS
+    C
 
     system bin"uncrustify", "-c", doc"htdocsdefault.cfg", "t.c"
     assert_equal expected, (testpath"t.c.uncrustify").read

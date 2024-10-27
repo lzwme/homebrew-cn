@@ -39,14 +39,14 @@ class Threadweaver < Formula
 
     kf = "KF#{version.major}"
     (testpath/"CMakeLists.txt").unlink
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(HelloWorld LANGUAGES CXX)
       find_package(ECM REQUIRED NO_MODULE)
       find_package(#{kf}ThreadWeaver REQUIRED NO_MODULE)
       add_executable(ThreadWeaver_HelloWorld HelloWorld.cpp)
       target_link_libraries(ThreadWeaver_HelloWorld #{kf}::ThreadWeaver)
-    EOS
+    CMAKE
 
     system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "cmake", "--build", "."

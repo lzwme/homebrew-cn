@@ -27,7 +27,7 @@ class Snappystream < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<~EOS
+    (testpath"test.cxx").write <<~CPP
       #include <iostream>
       #include <fstream>
       #include <iterator>
@@ -47,7 +47,7 @@ class Snappystream < Formula
           std::copy(std::istream_iterator<char>(isnstrm), std::istream_iterator<char>(), std::ostream_iterator<char>(std::cout));
         }
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cxx", "-o", "test",
                     "-L#{lib}", "-lsnappystream",
                     "-L#{Formula["snappy"].opt_lib}", "-lsnappy"

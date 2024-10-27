@@ -34,12 +34,12 @@ class Usbredir < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <usbredirparser.h>
       int main() {
         return usbredirparser_create() ? 0 : 1;
       }
-    EOS
+    C
     system ENV.cc, "test.c",
                    "-L#{lib}",
                    "-lusbredirparser",

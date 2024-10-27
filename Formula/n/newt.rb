@@ -56,13 +56,13 @@ class Newt < Formula
     ENV["TERM"] = "xterm"
     system python3, "-c", "import snack"
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #import <newt.h>
       int main() {
         newtInit();
         newtFinished();
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lnewt"
     system ".test"
   end

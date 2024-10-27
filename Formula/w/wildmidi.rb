@@ -29,7 +29,7 @@ class Wildmidi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <wildmidi_lib.h>
       #include <stdio.h>
       #include <assert.h>
@@ -38,7 +38,7 @@ class Wildmidi < Formula
         assert(version != 0);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lWildMidi"
     system ".a.out"

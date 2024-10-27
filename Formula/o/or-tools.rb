@@ -63,14 +63,14 @@ class OrTools < Formula
 
   test do
     # Linear Solver & Glop Solver
-    (testpath"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
       project(test LANGUAGES CXX)
       find_package(ortools CONFIG REQUIRED)
       add_executable(simple_lp_program #{pkgshare}simple_lp_program.cc)
       target_compile_features(simple_lp_program PUBLIC cxx_std_17)
       target_link_libraries(simple_lp_program PRIVATE ortools::ortools)
-    EOS
+    CMAKE
     cmake_args = []
     build_env = {}
     if OS.mac?

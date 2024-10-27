@@ -165,7 +165,7 @@ class PythonAT310 < Formula
     end
 
     # Resolve HOMEBREW_PREFIX in our sysconfig modification.
-    inreplace "Libsysconfig.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX
+    inreplace "Libsysconfig.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
 
     # Disable _tkinter - this is built in a separate formula python-tk
     inreplace "setup.py", "DISABLED_MODULE_LIST = []", "DISABLED_MODULE_LIST = ['_tkinter']"

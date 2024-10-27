@@ -40,10 +40,10 @@ class Fortls < Formula
 
   test do
     system bin"fortls", "--help"
-    (testpath"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~FORTRAN
       program main
       end program main
-    EOS
+    FORTRAN
     system bin"fortls", "--debug_filepath", testpath"test.f90", "--debug_symbols", "--debug_full_result"
   end
 end

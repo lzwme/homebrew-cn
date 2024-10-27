@@ -47,13 +47,13 @@ class CeresSolver < Formula
 
   test do
     cp pkgshare/"examples/helloworld.cc", testpath
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(helloworld)
       find_package(Ceres REQUIRED COMPONENTS SuiteSparse)
       add_executable(helloworld helloworld.cc)
       target_link_libraries(helloworld Ceres::ceres)
-    EOS
+    CMAKE
 
     system "cmake", "."
     system "make"

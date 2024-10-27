@@ -32,7 +32,7 @@ class VulkanUtilityLibraries < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <vulkanlayervk_layer_settings.h>
       int main() {
@@ -48,7 +48,7 @@ class VulkanUtilityLibraries < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-o", "test"
     system ".test"
   end

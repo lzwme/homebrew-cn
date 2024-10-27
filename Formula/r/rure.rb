@@ -28,13 +28,13 @@ class Rure < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <rure.h>
       int main(int argc, char **argv) {
         rure *re = rure_compile_must("a");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lrure", "-o", "test"
     system ".test"
   end

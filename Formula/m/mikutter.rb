@@ -299,7 +299,7 @@ class Mikutter < Formula
   end
 
   test do
-    (testpath/".mikutter/plugin/test_plugin/test_plugin.rb").write <<~EOS
+    (testpath/".mikutter/plugin/test_plugin/test_plugin.rb").write <<~RUBY
       # -*- coding: utf-8 -*-
       Plugin.create(:test_plugin) do
         require 'logger'
@@ -317,7 +317,7 @@ class Mikutter < Formula
           nil
         end
       end
-    EOS
+    RUBY
     system bin/"mikutter", "plugin_depends",
            testpath/".mikutter/plugin/test_plugin/test_plugin.rb"
     system bin/"mikutter", "--plugin=test_plugin", "--debug"

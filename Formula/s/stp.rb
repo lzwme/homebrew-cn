@@ -67,7 +67,7 @@ class Stp < Formula
     EOS
     assert_equal "sat", shell_output("#{bin}stp --SMTLIB2 prob.smt").chomp
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "stpc_interface.h"
       #include <assert.h>
       int main() {
@@ -84,7 +84,7 @@ class Stp < Formula
         vc_Destroy(vc);
         return 0;
       }
-    EOS
+    C
 
     expected_output = <<~EOS
       COUNTEREXAMPLE BEGIN:\s

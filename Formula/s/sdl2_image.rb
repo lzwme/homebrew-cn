@@ -58,7 +58,7 @@ class Sdl2Image < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <SDL2SDL_image.h>
 
       int main()
@@ -68,7 +68,7 @@ class Sdl2Image < Formula
           IMG_Quit();
           return result == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
     system ".test"
   end

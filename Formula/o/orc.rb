@@ -33,7 +33,7 @@ class Orc < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/orcc --version 2>&1")
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <orc/orc.h>
 
       int main(int argc, char *argv[]) {
@@ -42,7 +42,7 @@ class Orc < Formula
         }
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}/orc-0.4", "-L#{lib}", "-lorc-0.4", "-o", "test"
     system "./test"

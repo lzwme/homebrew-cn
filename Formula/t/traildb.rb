@@ -45,7 +45,7 @@ class Traildb < Formula
 
   test do
     # Check that the library has been installed correctly
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <traildb.h>
       #include <assert.h>
       int main() {
@@ -57,7 +57,7 @@ class Traildb < Formula
         tdb* t1 = tdb_init();
         assert(tdb_open(t1, path) == 0);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ltraildb", "-o", "test"
     system ".test"
 

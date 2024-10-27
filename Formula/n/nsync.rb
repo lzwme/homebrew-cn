@@ -25,7 +25,7 @@ class Nsync < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <nsync.h>
       #include <stdio.h>
 
@@ -36,7 +36,7 @@ class Nsync < Formula
         nsync_mu_unlock(&mu);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lnsync", "-o", "test"
     system ".test"

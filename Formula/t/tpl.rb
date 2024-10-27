@@ -36,7 +36,7 @@ class Tpl < Formula
   end
 
   test do
-    (testpath"store.c").write <<~EOS
+    (testpath"store.c").write <<~C
       #include <tpl.h>
 
       int main(int argc, char *argv[]) {
@@ -53,9 +53,9 @@ class Tpl < Formula
           tpl_dump(tn, TPL_FILE, "users.tpl");
           tpl_free(tn);
       }
-    EOS
+    C
 
-    (testpath"load.c").write <<~EOS
+    (testpath"load.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <tpl.h>
@@ -74,7 +74,7 @@ class Tpl < Formula
           }
           tpl_free(tn);
       }
-    EOS
+    C
 
     system ENV.cc, "store.c", "-I#{include}", "-L#{lib}", "-ltpl", "-o", "store"
     system ENV.cc, "load.c", "-I#{include}", "-L#{lib}", "-ltpl", "-o", "load"

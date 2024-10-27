@@ -70,9 +70,9 @@ class Mold < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       int main(void) { return 0; }
-    EOS
+    C
 
     linker_flag = case ENV.compiler
     when ^gcc(-(\d|10|11))?$ then "-B#{libexec}mold"

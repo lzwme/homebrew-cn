@@ -24,7 +24,7 @@ class Openh264 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <welscodec_api.h>
       int main() {
         ISVCDecoder *dec;
@@ -32,7 +32,7 @@ class Openh264 < Formula
         WelsDestroyDecoder (dec);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lopenh264", "-o", "test"
     system ".test"
   end

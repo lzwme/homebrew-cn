@@ -1,9 +1,9 @@
 class Libopenmpt < Formula
   desc "Software library to decode tracked music files"
   homepage "https://lib.openmpt.org/libopenmpt/"
-  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.10+release.autotools.tar.gz"
-  version "0.7.10"
-  sha256 "093713c1c1024f4f10c4779a66ceb2af51fb7c908a9e99feb892d04019220ba1"
+  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.11+release.autotools.tar.gz"
+  version "0.7.11"
+  sha256 "53a798b8c6e2e1f695e8ad05e93a0c1b53199e5aa9981837c41696b370520767"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,12 +12,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e8d394a740c4eb41a712912425ea07232f42e58ce73c347b0733ded7f87d11da"
-    sha256 cellar: :any,                 arm64_sonoma:  "9cea48d20fbb747270305aa204cb2c98c9ddfdf2068fe56ec97a9a12a6c8923e"
-    sha256 cellar: :any,                 arm64_ventura: "649e6bb41c1ed05089dec969ceecc1409151af2f6910c93bc29756801e4ab73e"
-    sha256 cellar: :any,                 sonoma:        "cb5a6a282ecc27874578de9ff4b7c994785b998139a6062c796b0b4169af378d"
-    sha256 cellar: :any,                 ventura:       "5d7d658999ea49e2982530c63de3395fdf9b10b0a1371d739432e971efc1996b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a88a98085d13090ea51204fed7dc08d8376e36ffe263b747cd86250544f350"
+    sha256 cellar: :any,                 arm64_sequoia: "4c55d2b299eb41fb88b0e70f03003345a7af441b295a7f4ff78192306c0c4f2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e42111554ae99e8adb8fe771f32bcdf0f2888b44ace85257978c6c4bb10d8d92"
+    sha256 cellar: :any,                 arm64_ventura: "8e3aa6d00546017834ead3c25294ff641e6b43ecd5800b0406ecd8b3f92ec1e6"
+    sha256 cellar: :any,                 sonoma:        "4dc46cf8470b1fa5e6488654a7f14fb1d5f10df791f527880dfdd0df25e031f0"
+    sha256 cellar: :any,                 ventura:       "38f249fa3572310ea39bd2121dbbd570a44a6268c85a1b33181bc9fca3d55bf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e9a78aff7e1f92feeba7dc9e54cb2eaec554140965e5c91c984a4ae01d4af8a"
   end
 
   depends_on "pkg-config" => :build

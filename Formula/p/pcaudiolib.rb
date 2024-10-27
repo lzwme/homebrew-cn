@@ -46,7 +46,7 @@ class Pcaudiolib < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <pcaudiolibaudio.h>
 
@@ -59,7 +59,7 @@ class Pcaudiolib < Formula
         audio_object_destroy(my_audio);
         return error;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lpcaudio"
     system ".test"

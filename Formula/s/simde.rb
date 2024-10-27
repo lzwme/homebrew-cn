@@ -20,7 +20,7 @@ class Simde < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <simdearmneon.h>
       #include <simdex86sse2.h>
@@ -34,7 +34,7 @@ class Simde < Formula
         assert(simde_mm_movemask_epi8(simde_mm_cmpeq_epi8(v, z)) == 0xFFFF);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test"
     system ".test"

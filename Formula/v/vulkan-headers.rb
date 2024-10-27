@@ -23,7 +23,7 @@ class VulkanHeaders < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <vulkanvulkan_core.h>
 
@@ -31,7 +31,7 @@ class VulkanHeaders < Formula
         printf("vulkan version %d", VK_VERSION_1_0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test"
     system ".test"
   end

@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.8.tar.gz"
-  sha256 "6872b11674abb742d4d2164f0e6920a212c2d55faa6bf729b62bd11b94197ab8"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.9.tar.gz"
+  sha256 "062779c084796f7792f717d640ec2f09407bf5b6560a9e668c73934609052468"
   license "GPL-3.0-only"
   head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
@@ -15,12 +15,12 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c32f26e7e647860a97d77d86141afdf00104bd4c62205a0cd3769b32c855f62f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0c9f0702e42cfc4dd5cb18093c978803d6f1fff252d458dd3e5fdb48d8cf1d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1224110f574fa3f5e7fbfab05c7209a039570df3923e5ae040ec18e608807184"
-    sha256 cellar: :any_skip_relocation, sonoma:        "300d68d91cfe48e3c22cd0773ceaa8dffd99e5857affac0adbea8f7196ae9559"
-    sha256 cellar: :any_skip_relocation, ventura:       "25710593fd9db2389ec2abe22301998eb05f568cba858c71e0c0ee09acd6ddb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57c4a038f0d7fed5cd6af8805488b69f87ca4bed6f23d932b5d5f78af3c1e620"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b37b95f189b3359b7c688e9a5544137e25369b48d1398a871e5e80b36c8ccdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "452956aa8493574c4b12f11bf719ab38139a6edc605315356672f25c209f6706"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1fdbb7e1437abdb809d53ff3adb55ef953c19e32256c9243c29bb63c5f02dc4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f7648540c61b92f95628fb1b7724b38567750895dbf15dd499a99d43fd12a13"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a1e68eb17abf629ed8af4cc957e75f4d4da83d7e5369f87dc2e1b8d305144aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4ee9f7b071ac3e83a76933183e92a44b0545456ea5910dfd259c98732744110"
   end
 
   depends_on "rust" => :build

@@ -60,7 +60,7 @@ class Glib < Formula
 
   def install
     python = "python3.13"
-    inreplace %w[gioxdgmimexdgmime.c glibgutils.c], "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX
+    inreplace %w[gioxdgmimexdgmime.c glibgutils.c], "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
     # Avoid the sandbox violation when an empty directory is created outside of the formula prefix.
     inreplace "giomeson.build", "install_emptydir(glib_giomodulesdir)", ""
 

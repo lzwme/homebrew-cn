@@ -72,7 +72,7 @@ class Seal < Formula
     File.delete testpath"examplesCMakeLists.txt"
 
     # Chip in a new "CMakeLists.txt" for example code tests
-    (testpath"examplesCMakeLists.txt").write <<~EOS
+    (testpath"examplesCMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.12)
       project(SEALExamples VERSION #{version} LANGUAGES CXX)
       # Executable will be in ..bin
@@ -99,7 +99,7 @@ class Seal < Formula
 
       # Link Microsoft SEAL
       target_link_libraries(sealexamples SEAL::seal_shared)
-    EOS
+    CMAKE
 
     system "cmake", "-S", "examples", "-B", "build", "-DHEXL_DIR=#{lib}cmake"
     system "cmake", "--build", "build", "--target", "sealexamples"

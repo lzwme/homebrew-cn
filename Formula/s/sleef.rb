@@ -29,7 +29,7 @@ class Sleef < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <math.h>
       #include <sleef.h>
@@ -38,7 +38,7 @@ class Sleef < Formula
           double a = M_PI  6;
           printf("%.3f\\n", Sleef_sin_u10(a));
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lsleef"
     assert_equal "0.500\n", shell_output(".test")
   end

@@ -40,18 +40,18 @@ class Swig < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       int add(int x, int y) {
         return x + y;
       }
-    EOS
+    C
     (testpath"test.i").write <<~EOS
       %module test
       %inline %{
       extern int add(int x, int y);
       %}
     EOS
-    (testpath"pyproject.toml").write <<~EOS
+    (testpath"pyproject.toml").write <<~TOML
       [project]
       name = "test"
       version = "0.1"
@@ -60,11 +60,11 @@ class Swig < Formula
       ext-modules = [
         {name = "_test", sources = ["test_wrap.c", "test.c"]}
       ]
-    EOS
-    (testpath"run.py").write <<~EOS
+    TOML
+    (testpath"run.py").write <<~PYTHON
       import test
       print(test.add(1, 1))
-    EOS
+    PYTHON
 
     ENV.remove_from_cflags(-march=\S*)
     system bin"swig", "-python", "test.i"

@@ -24,13 +24,13 @@ class FortranLanguageServer < Formula
   test do
     assert_equal version.to_s, shell_output("#{bin}fortls --version").strip
     # test file taken from main repository
-    (testpath"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~FORTRAN
       PROGRAM myprog
       USE test_free, ONLY: scaled_vector
       TYPE(scaled_vector) :: myvec
       CALL myvec%set_scale(scale)
       END PROGRAM myprog
-    EOS
+    FORTRAN
     expected_output = <<~EOS
       Testing parser
         File = "#{testpath}test.f90"

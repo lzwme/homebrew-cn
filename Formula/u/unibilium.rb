@@ -44,7 +44,7 @@ class Unibilium < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <unibilium.h>
       #include <stdio.h>
 
@@ -56,7 +56,7 @@ class Unibilium < Formula
         printf("%s", unibi_terminfo_dirs);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lunibilium", "-o", "test"
     assert_match %r{\A#{Formula["ncurses"].opt_share}terminfo:}o, shell_output(".test")
   end

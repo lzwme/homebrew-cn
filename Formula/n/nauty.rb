@@ -52,7 +52,7 @@ class Nauty < Formula
     assert_match "100 graphs : n=114; e=171; mindeg=3; maxdeg=3; regular", out2
 
     # test that the library is installed and linkable-against
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #define MAXN 1000
       #include <nautynauty.h>
 
@@ -63,7 +63,7 @@ class Nauty < Formula
         nauty_check(WORDSIZE, m, n, NAUTYVERSIONID);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}nauty", "-L#{lib}", "-lnauty", "-o", "test"
     system ".test"
   end
