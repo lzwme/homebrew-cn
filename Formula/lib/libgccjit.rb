@@ -130,7 +130,7 @@ class Libgccjit < Formula
   end
 
   test do
-    (testpath"test-libgccjit.c").write <<~EOS
+    (testpath"test-libgccjit.c").write <<~C
       #include <libgccjit.h>
       #include <stdlib.h>
       #include <stdio.h>
@@ -179,7 +179,7 @@ class Libgccjit < Formula
           gcc_jit_result_release (result);
           return 0;
       }
-    EOS
+    C
 
     gcc_major_ver = Formula["gcc"].any_installed_version.major
     gcc = Formula["gcc"].opt_bin"gcc-#{gcc_major_ver}"

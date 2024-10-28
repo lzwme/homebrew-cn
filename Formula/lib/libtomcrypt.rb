@@ -33,7 +33,7 @@ class Libtomcrypt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -71,7 +71,7 @@ class Libtomcrypt < Formula
               return EXIT_FAILURE;
           }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltomcrypt", "-o", "test"
     assert_equal "passed", shell_output(".test").strip
   end

@@ -49,7 +49,7 @@ class Libu2fServer < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <u2f-serveru2f-server.h>
       int main()
       {
@@ -68,7 +68,7 @@ class Libu2fServer < Formula
         u2fs_global_done();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lu2f-server"
     system ".test"
   end

@@ -40,7 +40,7 @@ class Libantlr3c < Formula
   end
 
   test do
-    (testpath"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~C
       #include <antlr3.h>
       int main() {
         if (0) {
@@ -48,7 +48,7 @@ class Libantlr3c < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "hello.c", "-L#{lib}", "-lantlr3c", "-o", "hello", "-O0"
     system testpath"hello"
   end

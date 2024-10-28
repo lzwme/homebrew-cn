@@ -62,14 +62,14 @@ class Libgweather < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libgweather/gweather.h>
 
       int main(int argc, char *argv[]) {
         GType type = gweather_info_get_type();
         return 0;
       }
-    EOS
+    C
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
     pkg_config_flags = shell_output("pkg-config --cflags --libs gweather4").chomp.split
     system ENV.cc, "-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE=1", "test.c", "-o", "test", *pkg_config_flags

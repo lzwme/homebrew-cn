@@ -28,7 +28,7 @@ class Libpsl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <string.h>
@@ -49,7 +49,7 @@ class Libpsl < Formula
 
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lpsl"
     system ".test"

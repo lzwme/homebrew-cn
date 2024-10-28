@@ -19,7 +19,7 @@ class Cereal < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cerealtypesunordered_map.hpp>
       #include <cerealtypesmemory.hpp>
       #include <cerealarchivesbinary.hpp>
@@ -67,7 +67,7 @@ class Cereal < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
     system ".test"
     assert_predicate testpath"out.cereal", :exist?

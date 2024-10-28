@@ -36,7 +36,7 @@ class Cddlib < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "setoper.h"
       #include "cdd.h"
 
@@ -88,7 +88,7 @@ class Cddlib < Formula
         dd_free_global_constants();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}cddlib", "-L#{lib}", "-lcdd", "-o", "test"
     assert_equal "3.66667", shell_output(".test").split[-1]
   end

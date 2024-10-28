@@ -26,7 +26,7 @@ class Libmnl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <unistd.h>
@@ -40,7 +40,7 @@ class Libmnl < Formula
         struct mnl_socket *nl;
         char buf[MNL_SOCKET_BUFFER_SIZE];
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmnl", "-o", "test"
   end

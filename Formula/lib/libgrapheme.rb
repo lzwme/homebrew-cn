@@ -30,7 +30,7 @@ class Libgrapheme < Formula
   end
 
   test do
-    (testpath/"example.c").write <<~EOS
+    (testpath/"example.c").write <<~C
       #include <grapheme.h>
 
       int
@@ -38,7 +38,7 @@ class Libgrapheme < Formula
       {
         return (grapheme_next_word_break_utf8("Hello World!", SIZE_MAX) != 5);
       }
-    EOS
+    C
     system ENV.cc, "example.c", "-I#{include}", "-L#{lib}", "-lgrapheme", "-o", "example"
     system "./example"
   end

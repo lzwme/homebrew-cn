@@ -33,7 +33,7 @@ class Hayai < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <hayaihayai.hpp>
       #include <iostream>
       int main() {
@@ -45,7 +45,7 @@ class Hayai < Formula
       {
         std::cout << "Hayai works!" << std::endl;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lhayai_main", "-o", "test"
     system ".test"

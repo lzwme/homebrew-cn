@@ -41,13 +41,13 @@ class Libscrypt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libscrypt.h>
       int main(void) {
         char buf[SCRYPT_MCF_LEN];
         libscrypt_hash(buf, "Hello, Homebrew!", SCRYPT_N, SCRYPT_r, SCRYPT_p);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lscrypt", "-o", "test"
     system ".test"
   end

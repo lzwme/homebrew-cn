@@ -44,7 +44,7 @@ class Libsail < Formula
   test do
     system bin"sail-imaging", "decode", test_fixtures("test.png")
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <sailsail.h>
 
       int main(int argc, char **argv)
@@ -56,7 +56,7 @@ class Libsail < Formula
 
           return 0;
       }
-    EOS
+    C
 
     cflags = shell_output("#{Formula["pkg-config"].opt_bin}pkg-config --cflags sail").strip.split
     libs   = shell_output("#{Formula["pkg-config"].opt_bin}pkg-config --libs sail").strip.split

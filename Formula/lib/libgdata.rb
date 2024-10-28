@@ -65,14 +65,14 @@ class Libgdata < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gdata/gdata.h>
 
       int main(int argc, char *argv[]) {
         GType type = gdata_comment_get_type();
         return 0;
       }
-    EOS
+    C
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"

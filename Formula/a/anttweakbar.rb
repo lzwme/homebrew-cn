@@ -47,13 +47,13 @@ class Anttweakbar < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <AntTweakBar.h>
       int main() {
         TwBar *bar;  TwBar is an internal structure of AntTweakBar
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lAntTweakBar", "-o", "test"
     system ".test"
   end

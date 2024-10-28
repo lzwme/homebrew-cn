@@ -50,7 +50,7 @@ class Forge < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <forge.h>
       #include <iostream>
 
@@ -58,7 +58,7 @@ class Forge < Formula
       {
           std::cout << fg_err_to_string(FG_ERR_NONE) << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lforge", "-o", "test"
     assert_match "Success", shell_output(".test")
   end

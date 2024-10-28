@@ -43,7 +43,7 @@ class Libmps < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "mps.h"
       #include "mpscawl.h"
       #include "mpscamc.h"
@@ -54,7 +54,7 @@ class Libmps < Formula
         mps_res_t res = mps_arena_create(&arena, mps_arena_class_vm(), 1024*1024);
         return (res == MPS_RES_OK) ? 0 : 1;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmps", "-o", "test"
     system ".test"
   end

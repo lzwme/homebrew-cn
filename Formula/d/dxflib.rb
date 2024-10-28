@@ -49,7 +49,7 @@ class Dxflib < Formula
   test do
     resource("testfile").stage testpath
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <dxflib/dl_dxf.h>
       #include <dxflib/dl_creationadapter.h>
 
@@ -71,7 +71,7 @@ class Dxflib < Formula
         if (!dxf->in("cube.dxf", &f)) return 1;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test",
            "-I#{include}/dxflib", "-L#{lib}", "-ldxflib"

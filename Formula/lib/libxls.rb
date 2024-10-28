@@ -34,7 +34,7 @@ class Libxls < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -57,7 +57,7 @@ class Libxls < Formula
           }
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsreader", "-o", "test"
     system ".test", pkgshare"test2.xls"

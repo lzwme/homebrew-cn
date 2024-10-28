@@ -31,7 +31,7 @@ class Ginac < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <ginac/ginac.h>
       using namespace std;
@@ -48,7 +48,7 @@ class Ginac < Formula
         cout << poly << endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}",
                                 "-L#{Formula["cln"].lib}",
                                 "-lcln", "-lginac", "-o", "test",

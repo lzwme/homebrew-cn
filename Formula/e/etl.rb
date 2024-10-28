@@ -27,14 +27,14 @@ class Etl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ETLmisc>
       int main(int argc, char *argv[])
       {
         int rv = etl::ceil_to_int(5.5);
         return 6 - rv;
       }
-    EOS
+    CPP
     flags = %W[
       -I#{include}ETL
       -lpthread

@@ -36,7 +36,7 @@ class Libspiro < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <spiroentrypoints.h>
       #include <bezctx.h>
 
@@ -57,7 +57,7 @@ class Libspiro < Formula
         SpiroCPsToBezier1(path, sizeof(path)sizeof(spiro_cp), 1, &bc, &done);
         return done == 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lspiro", "-o", "test"
     system ".test"
   end

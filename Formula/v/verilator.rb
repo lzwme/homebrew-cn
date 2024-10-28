@@ -1,20 +1,18 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https:www.veripool.orgwikiverilator"
-  url "https:github.comverilatorverilatorarchiverefstagsv5.028.tar.gz"
-  sha256 "02d4b6f34754b46a97cfd70f5fcbc9b730bd1f0a24c3fc37223397778fcb142c"
+  url "https:github.comverilatorverilatorarchiverefstagsv5.030.tar.gz"
+  sha256 "b9e7e97257ca3825fcc75acbed792b03c3ec411d6808ad209d20917705407eac"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
   head "https:github.comverilatorverilator.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "86d5089dbc7b6fda7be55c3660990ab0e735ca5236fe2eb9df3382d1d86ed299"
-    sha256 arm64_sonoma:   "3c10f1aae874605da7c4a4c0ec14796ee5b6777b063cd8a0f48822d7009a721b"
-    sha256 arm64_ventura:  "5f9002c993fe84421f2a4c571b4fab5d39de309adcea37d3871fb6376e2f6dcc"
-    sha256 arm64_monterey: "19fb0e165de3619a24042e6b0f65e95f431a419f4998fd94920d5662e1179e60"
-    sha256 sonoma:         "9743a9f0330921a39d8998d53c035c321f61546984b3c0b31923d359fc26d6e1"
-    sha256 ventura:        "feef2a655441433628976ea8b67e8ab95f37d63c492ee3ed61f72f44388ac625"
-    sha256 monterey:       "b3e4ed2ad6fbe4e1e8719533fc0e12031c16e59a3ce2e0bb5f7e49993077fb47"
-    sha256 x86_64_linux:   "6b2f9b5dee679f685b6f7e858a09e56a8ed521859aeaddd2550f563c84a8473f"
+    sha256 arm64_sequoia: "89b842e26be55b8801f4c1acb4e8ff69832b41ab1275fe9af5ce2e2be2d7169f"
+    sha256 arm64_sonoma:  "5891c341e03ec64f2fa05999d80391aa8f3f0873cdf73ed096821fd55718c553"
+    sha256 arm64_ventura: "7ce77901dc02a1459a2e9526a30a0d4586ff2704ac1366ba9b5f12e4427de9e3"
+    sha256 sonoma:        "aff2df390996f738267cce2450c75bc00e793d06a9b346423e0964a165c1c115"
+    sha256 ventura:       "abd173206449d6d2d80971dc099acea2b6ab0efdd5e2805947b775d12808f472"
+    sha256 x86_64_linux:  "5f911e440b3cbacf2732bedf833ae2ce7efb0f4e0577ab9f26f6fff0f843520b"
   end
 
   depends_on "autoconf" => :build

@@ -26,13 +26,13 @@ class Libnfnetlink < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libnfnetlink/libnfnetlink.h>
 
       int main() {
         int i = NFNL_BUFFSIZE;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnfnetlink", "-o", "test"
   end

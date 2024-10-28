@@ -31,10 +31,10 @@ class Cpio < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath/"test.cc").write <<~CPP
       #include <iostream>
       #include <string>
-    EOS
+    CPP
     system "ls #{testpath} | #{bin}/cpio -ov > #{testpath}/directory.cpio"
     assert_path_exists "#{testpath}/directory.cpio"
   end

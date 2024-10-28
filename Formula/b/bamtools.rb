@@ -41,14 +41,14 @@ class Bamtools < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "apiBamWriter.h"
       using namespace BamTools;
       int main() {
         BamWriter writer;
         writer.Close();
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}bamtools", "-L#{lib}",
                     "-lbamtools", "-lz", "-o", "test"
     system ".test"

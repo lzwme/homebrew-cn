@@ -53,7 +53,7 @@ class Libshumate < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <shumate/shumate.h>
 
       int main(int argc, char *argv[]) {
@@ -61,7 +61,7 @@ class Libshumate < Formula
         snprintf(version, 32, "%d.%d.%d", SHUMATE_MAJOR_VERSION, SHUMATE_MINOR_VERSION, SHUMATE_MICRO_VERSION);
         return 0;
       }
-    EOS
+    C
 
     # TODO: remove this after rewriting icu-uc in `libpsl`'s pkg-config file
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?

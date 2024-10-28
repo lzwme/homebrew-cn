@@ -20,7 +20,7 @@ class Libnl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <netlinknetlink.h>
       #include <netlinkroutelink.h>
 
@@ -51,7 +51,7 @@ class Libnl < Formula
 
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libnl-3.0 libnl-route-3.0").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

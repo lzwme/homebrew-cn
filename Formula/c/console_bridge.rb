@@ -28,13 +28,13 @@ class ConsoleBridge < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <console_bridgeconsole.h>
       int main() {
         CONSOLE_BRIDGE_logDebug("Testing Log");
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lconsole_bridge", "-std=c++11",
                     "-o", "test"
     system ".test"

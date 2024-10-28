@@ -46,13 +46,13 @@ class Assimp < Formula
 
   test do
     # Library test.
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <assimpImporter.hpp>
       int main() {
         Assimp::Importer importer;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "-std=c++11", "test.cpp", "-L#{lib}", "-lassimp", "-o", "test"
     system ".test"
 

@@ -45,14 +45,14 @@ class Libnotify < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libnotify/notify.h>
 
       int main(int argc, char *argv[]) {
         g_assert_true(notify_init("testapp"));
         return 0;
       }
-    EOS
+    C
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs libnotify").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"

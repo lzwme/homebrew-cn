@@ -37,7 +37,7 @@ class Glibmm < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <glibmm.h>
 
       int main(int argc, char *argv[])
@@ -45,7 +45,7 @@ class Glibmm < Formula
          Glib::ustring my_string("testing");
          return 0;
       }
-    EOS
+    CPP
     flags = shell_output("pkg-config --cflags --libs glibmm-2.68").chomp.split
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
     system "./test"

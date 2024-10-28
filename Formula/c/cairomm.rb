@@ -37,7 +37,7 @@ class Cairomm < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cairomm/cairomm.h>
 
       int main(int argc, char *argv[])
@@ -46,7 +46,7 @@ class Cairomm < Formula
          Cairo::RefPtr<Cairo::Context> cr = Cairo::Context::create(surface);
          return 0;
       }
-    EOS
+    CPP
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs cairo cairomm-1.16").chomp.split
     system ENV.cxx, "-std=c++17", "test.cpp", *pkg_config_cflags, "-o", "test"

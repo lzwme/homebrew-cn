@@ -1,20 +1,18 @@
 class Restic < Formula
   desc "Fast, efficient and secure backup program"
   homepage "https:restic.net"
-  url "https:github.comresticresticarchiverefstagsv0.17.1.tar.gz"
-  sha256 "cba3a5759690d11dae4b5620c44f56be17a5688e32c9856776db8a9a93d6d59a"
+  url "https:github.comresticresticarchiverefstagsv0.17.2.tar.gz"
+  sha256 "ac52843c40bc9b520bb8dbbbaeda6afec7a35c59753b8cbf11348dd734896ed1"
   license "BSD-2-Clause"
   head "https:github.comresticrestic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e051743592db32fb515d36b15cc86ad4ee8d4e44883cdbd9132f4505b08ecc16"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6ffe8afb7893a4314617d105aa42c655dcd0d9111a690e706fff2d07cd8718f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6ffe8afb7893a4314617d105aa42c655dcd0d9111a690e706fff2d07cd8718f"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6ffe8afb7893a4314617d105aa42c655dcd0d9111a690e706fff2d07cd8718f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4db1d954f06b3cfff815a5c60849f3c565f4e2f92d9a13a42e2a5a7e4c4c253b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01df0b8c186c74010c224c651fdbed0cf37e812ba583127a1267df41c5ec7673"
+    sha256 cellar: :any_skip_relocation, ventura:       "01df0b8c186c74010c224c651fdbed0cf37e812ba583127a1267df41c5ec7673"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3d8528225b381f3d74decf95d057cd65834360536dd4b2aa5732977ac9cfa6"
   end
 
   depends_on "go" => :build

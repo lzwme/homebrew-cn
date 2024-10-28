@@ -26,7 +26,7 @@ class Libmxml < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <mxml.h>
 
       int main()
@@ -38,14 +38,14 @@ class Libmxml < Formula
         tree = mxmlLoadFile(NULL, NULL, fp);
         fclose(fp);
       }
-    EOS
+    C
 
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~C
       <?xml version="1.0" encoding="UTF-8"?>
       <test>
         <text>I'm an XML document.<text>
       <test>
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs mxml4").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

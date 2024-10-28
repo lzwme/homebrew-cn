@@ -41,7 +41,7 @@ class Itpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <itpp/itcomm.h>
       #include <iostream>
 
@@ -53,7 +53,7 @@ class Itpp < Formula
         std::cout << "Modulated signal: " << modulated_signal << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-litpp"
     system "./test"

@@ -32,7 +32,7 @@ class Cpputest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "CppUTestCommandLineTestRunner.h"
 
       TEST_GROUP(HomebrewTest)
@@ -47,7 +47,7 @@ class Cpputest < Formula
       {
         return CommandLineTestRunner::RunAllTests(ac, av);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lCppUTest", "-o", "test"
     assert_match "OK (1 tests", shell_output(".test")
   end

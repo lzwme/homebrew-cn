@@ -55,7 +55,7 @@ class Libtecla < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <locale.h>
       #include <libtecla.h>
 
@@ -66,7 +66,7 @@ class Libtecla < Formula
         if (!gl) return 1;
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-ltecla", "-lcurses", "-o", "test"
     system "./test"

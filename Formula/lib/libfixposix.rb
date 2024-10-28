@@ -34,7 +34,7 @@ class Libfixposix < Formula
   end
 
   test do
-    (testpath"mxstemp.c").write <<~EOS
+    (testpath"mxstemp.c").write <<~C
       #include <stdio.h>
 
       #include <lfp.h>
@@ -55,7 +55,7 @@ class Libfixposix < Formula
 
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "mxstemp.c", libshared_library("libfixposix"), "-o", "mxstemp"
     system ".mxstemp"
   end

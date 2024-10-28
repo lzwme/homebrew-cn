@@ -46,14 +46,14 @@ class Libspelling < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libspelling.h>
 
       int main(int argc, char *argv[]) {
         SpellingChecker *checker = spelling_checker_get_default();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs libspelling-1").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"

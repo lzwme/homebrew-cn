@@ -32,7 +32,7 @@ class Libosip < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <sys/time.h>
       #include <osip2/osip.h>
 
@@ -43,7 +43,7 @@ class Libosip < Formula
             return -1;
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-losip2", "-o", "test"
     system "./test"
   end

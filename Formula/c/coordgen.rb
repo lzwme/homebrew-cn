@@ -29,7 +29,7 @@ class Coordgen < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <coordgensketcherMinimizer.h>
 
@@ -49,7 +49,7 @@ class Coordgen < Formula
         std::cout << c1 << "  " << c2;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}", "-lcoordgen"
     assert_equal "(-50, 0)  (0, 0)", shell_output(".test")

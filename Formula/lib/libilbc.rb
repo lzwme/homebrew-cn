@@ -29,7 +29,7 @@ class Libilbc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <ilbc.h>
       #include <stdio.h>
 
@@ -40,7 +40,7 @@ class Libilbc < Formula
         printf("%s", version);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lilbc", "-o", "test"
     system ".test"

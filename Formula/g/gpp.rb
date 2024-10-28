@@ -40,7 +40,7 @@ class Gpp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}gpp --version")
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #define FOO This is
       #define BAR a message.
       #define concat #1 #2
@@ -50,7 +50,7 @@ class Gpp < Formula
       #else
       This is not output.
       #endif
-    EOS
+    CPP
 
     assert_match "This is a message.\nThis is output.", shell_output("#{bin}gpp #{testpath}test.cpp")
   end

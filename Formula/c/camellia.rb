@@ -43,13 +43,13 @@ class Camellia < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include "camellia.h"
       int main() {
         CamImage image; // CamImage is an internal structure of Camellia
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lCamellia", "-o", "test"
     system "./test"

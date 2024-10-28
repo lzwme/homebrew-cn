@@ -50,7 +50,7 @@ class Libvorbis < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <assert.h>
       #include "vorbis/vorbisfile.h"
@@ -62,7 +62,7 @@ class Libvorbis < Formula
         printf("Encoded by: %s\\n", ov_comment(&vf,-1)->vendor);
         return 0;
       }
-    EOS
+    C
     testpath.install resource("oggfile")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lvorbisfile",
                    "-o", "test"

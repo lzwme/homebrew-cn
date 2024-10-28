@@ -33,7 +33,7 @@ class AcesContainer < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "acesaces_Writer.h"
 
       int main()
@@ -41,7 +41,7 @@ class AcesContainer < Formula
           aces_Writer x;
           return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lAcesContainer", "-o", "test"
     system ".test"
   end

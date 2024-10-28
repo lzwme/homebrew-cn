@@ -40,14 +40,14 @@ class Libxft < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xft/Xft.h"
 
       int main(int argc, char* argv[]) {
         XftFont font;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{Formula["freetype"].opt_include}/freetype2", "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

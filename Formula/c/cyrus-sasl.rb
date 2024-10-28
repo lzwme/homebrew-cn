@@ -36,7 +36,7 @@ class CyrusSasl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <saslsaslutil.h>
       #include <assert.h>
       #include <stdio.h>
@@ -48,7 +48,7 @@ class CyrusSasl < Formula
         printf("%u %s", len, buf);
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-o", "test", "test.cpp", "-I#{include}", "-L#{lib}", "-lsasl2"
     assert_equal "20 SGVsbG8sIHdvcmxkIQ==", shell_output(".test")

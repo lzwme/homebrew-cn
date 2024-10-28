@@ -49,7 +49,7 @@ class Libaacs < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "libaacs/aacs.h"
       #include <stdio.h>
 
@@ -61,7 +61,7 @@ class Libaacs < Formula
         printf("%d.%d.%d", major_v, minor_v, micro_v);
         return(0);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-laacs",
                    "-o", "test"
     system "./test"

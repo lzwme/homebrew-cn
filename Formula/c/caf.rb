@@ -34,7 +34,7 @@ class Caf < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <cafall.hpp>
       using namespace caf;
@@ -45,7 +45,7 @@ class Caf < Formula
         });
       }
       CAF_MAIN()
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lcaf_core", "-o", "test"
     system ".test"
   end

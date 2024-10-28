@@ -30,7 +30,7 @@ class Libsais < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libsais.h>
       #include <stdlib.h>
       int main() {
@@ -50,7 +50,7 @@ class Libsais < Formula
         }
         return 1;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsais", "-o", "test"
     system ".test"
   end

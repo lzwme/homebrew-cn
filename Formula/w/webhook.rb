@@ -1,22 +1,18 @@
 class Webhook < Formula
   desc "Lightweight, configurable incoming webhook server"
   homepage "https:github.comadnanhwebhook"
-  url "https:github.comadnanhwebhookarchiverefstags2.8.1.tar.gz"
-  sha256 "a1e3eb2231e5631ebb374b76a79c3bac9cbdc7010974395e2d5e4e2e62ffd187"
+  url "https:github.comadnanhwebhookarchiverefstags2.8.2.tar.gz"
+  sha256 "c233a810effc24b5ed5653f4fa82152f288ec937d5744a339f7066a6cbccc565"
   license "MIT"
   head "https:github.comadnanhwebhook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f06296f12373497182c9b20aae699a342a8ae7de176bafa4fdd4d363a2398c02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc567cc60391ce928df72e3e2ef625e77ad1707e03eb66f6213916cec614e4fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77bd89b8b9ae6eb5a74a166d2616b6f80e80c3c43fcbabe10268aaecec07eb76"
-    sha256 cellar: :any_skip_relocation, ventura:        "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "234b20e6404e53867004ae3a96ea21e59cdf2c72c79a00175193560f61363eae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "991f9bb7960fc618cf27455b18480a581f4ed96282d3202e727132420106d48b"
+    sha256 cellar: :any_skip_relocation, ventura:       "991f9bb7960fc618cf27455b18480a581f4ed96282d3202e727132420106d48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3a9af4020f1dee92642e36d5282f1a96b5c2c47dbb9914300600a13b7298d2"
   end
 
   depends_on "go" => :build

@@ -44,7 +44,7 @@ class Libswiftnav < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <swiftnavedc.h>
@@ -63,7 +63,7 @@ class Libswiftnav < Formula
           exit(0);
         }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L", lib, "-lswiftnav", "-o", "test"
     system ".test"
   end

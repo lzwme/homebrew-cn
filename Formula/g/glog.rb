@@ -30,7 +30,7 @@ class Glog < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <gloglogging.h>
       #include <iostream>
       #include <memory>
@@ -39,7 +39,7 @@ class Glog < Formula
         google::InitGoogleLogging(argv[0]);
         LOG(INFO) << "test";
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}",
                     "-lglog", "-I#{Formula["gflags"].opt_lib}",
                     "-L#{Formula["gflags"].opt_lib}", "-lgflags",

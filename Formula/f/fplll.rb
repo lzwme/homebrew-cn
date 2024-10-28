@@ -36,7 +36,7 @@ class Fplll < Formula
     (testpath"m2.fplll").write("[[17 42 4][50 75 108][11 47 33]][100 101 102]")
     assert_equal "[107 88 96]\n", `#{bin"fplll"} -a cvp m2.fplll`
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <fplll.h>
       #include <vector>
       #include <stdio.h>
@@ -49,7 +49,7 @@ class Fplll < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system "pkg-config", "fplll", "--cflags"
     system "pkg-config", "fplll", "--libs"
     pkg_config_flags = `pkg-config --cflags --libs gmp mpfr fplll`.chomp.split

@@ -31,7 +31,7 @@ class Googletest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <string>
       #include <string_view>
       #include <vector>
@@ -54,7 +54,7 @@ class Googletest < Formula
         EXPECT_EQ(sv, "test");
         EXPECT_THAT(vsv, testing::ElementsAre("test"));
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lgtest", "-lgtest_main", "-pthread", "-o", "test"
     system ".test"
   end

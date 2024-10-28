@@ -77,7 +77,7 @@ class Libetpan < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libetpanlibetpan.h>
       #include <string.h>
       #include <stdlib.h>
@@ -86,7 +86,7 @@ class Libetpan < Formula
       {
         printf("version is %d.%d",libetpan_get_version_major(), libetpan_get_version_minor());
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-letpan", "-o", "test"
     system ".test"
   end

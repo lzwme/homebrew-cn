@@ -49,11 +49,11 @@ class Libxaw3d < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <X11/Xaw3d/Label.h>
       int main() { printf("%d", sizeof(LabelWidget)); }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test"
     output = shell_output("./test").chomp
     assert_match "8", output

@@ -28,7 +28,7 @@ class Libansilove < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <ansilove.h>
 
       int main(int argc, char *argv[])
@@ -42,7 +42,7 @@ class Libansilove < Formula
         ansilove_savefile(&ctx, "example.png");
         ansilove_clean(&ctx);
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lansilove", "-o", "test"
     system ".test"

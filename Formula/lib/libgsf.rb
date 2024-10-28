@@ -42,7 +42,7 @@ class Libgsf < Formula
 
   test do
     system bin"gsf", "--help"
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gsfgsf-utils.h>
       int main()
       {
@@ -50,7 +50,7 @@ class Libgsf < Formula
           gsf_init (void);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}libgsf-1",
            "-I#{Formula["glib"].opt_include}glib-2.0",
            "-I#{Formula["glib"].opt_lib}glib-2.0include",

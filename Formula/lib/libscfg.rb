@@ -32,7 +32,7 @@ class Libscfg < Formula
       key2 = value2
     EOS
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include "scfg.h"
@@ -55,7 +55,7 @@ class Libscfg < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lscfg", "-o", "test"
     assert_match "Successfully loaded 'test.cfg'", shell_output("./test")

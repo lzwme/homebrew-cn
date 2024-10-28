@@ -41,7 +41,7 @@ class Gecode < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <gecodedriver.hh>
       #include <gecodeint.hh>
       #include <QtWidgetsQtWidgets>
@@ -73,7 +73,7 @@ class Gecode < Formula
         Script::run<Test, DFS, Options>(opt);
         return 0;
       }
-    EOS
+    CPP
 
     args = %W[
       -std=c++11

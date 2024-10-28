@@ -25,7 +25,7 @@ class Libsoundio < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <soundiosoundio.h>
 
       int main() {
@@ -39,7 +39,7 @@ class Libsoundio < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lsoundio", "-o", "test"
     system ".test"
   end

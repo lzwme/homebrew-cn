@@ -36,7 +36,7 @@ class Libapplewm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <X11/Xlib.h>
       #include <X11/extensions/applewm.h>
       #include <stdio.h>
@@ -51,7 +51,7 @@ class Libapplewm < Formula
         XAppleWMSetFrontProcess(disp);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
       "-I#{include}", "-L#{lib}", "-L#{Formula["libx11"].lib}",

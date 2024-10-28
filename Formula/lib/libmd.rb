@@ -29,7 +29,7 @@ class Libmd < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <string.h>
@@ -50,7 +50,7 @@ class Libmd < Formula
           putchar('\\n');
           return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmd", "-o", "test"
     assert_equal "900150983cd24fb0d6963f7d28e17f72", shell_output("./test").chomp
   end

@@ -35,7 +35,7 @@ class Libghthash < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <string.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -70,7 +70,7 @@ class Libghthash < Formula
 
         return result;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lghthash", "-o", "test"
     system ".test"
   end

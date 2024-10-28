@@ -38,7 +38,7 @@ class Libxvmc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xlib.h"
       #include "X11/extensions/XvMClib.h"
 
@@ -46,7 +46,7 @@ class Libxvmc < Formula
         XvPortID *port_id;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

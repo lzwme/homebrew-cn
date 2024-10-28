@@ -32,7 +32,7 @@ class Cctz < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <ctime>
       #include <iostream>
       #include <string>
@@ -56,7 +56,7 @@ class Cctz < Formula
       #endif
         std::cout << format("UTC: %Y-%m-%d %H:%M:%S\\n", tm_utc) << format("Local: %Y-%m-%d %H:%M:%S\\n", tm_local);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cc", "-I#{include}", "-L#{lib}", "-std=c++11", "-lcctz", "-o", "test"
     system testpath"test"
   end

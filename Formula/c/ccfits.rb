@@ -43,14 +43,14 @@ class Ccfits < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <CCfits/CCfits>
       #include <iostream>
       int main() {
         CCfits::FITS::setVerboseMode(true);
         std::cout << "the answer is " << CCfits::VTbyte << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lCCfits"
     assert_match "the answer is -11", shell_output("./test")

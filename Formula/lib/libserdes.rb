@@ -33,7 +33,7 @@ class Libserdes < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <err.h>
       #include <stddef.h>
       #include <systypes.h>
@@ -50,7 +50,7 @@ class Libserdes < Formula
         serdes_destroy(serdes);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lserdes", "-o", "test"
     system ".test"
   end

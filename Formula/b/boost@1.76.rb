@@ -88,7 +88,7 @@ class BoostAT176 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <boostalgorithmstring.hpp>
       #include <string>
       #include <vector>
@@ -106,7 +106,7 @@ class BoostAT176 < Formula
         assert(strVec[1]=="b");
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{Formula["boost@1.76"].opt_include}", "test.cpp", "-std=c++14", "-o", "test"
     system ".test"
   end

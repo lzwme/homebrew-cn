@@ -33,7 +33,7 @@ class Libaribcaption < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <aribcaptiondecoder.h>
 
       int main(int argc, char *argv[]) {
@@ -43,7 +43,7 @@ class Libaribcaption < Formula
         aribcc_context_free(ctx);
         return 0;
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs libaribcaption").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"

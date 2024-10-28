@@ -35,7 +35,7 @@ class Libssh < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libssh/libssh.h>
       #include <stdlib.h>
 
@@ -46,7 +46,7 @@ class Libssh < Formula
         ssh_free(my_ssh_session);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lssh"
     system "./test"

@@ -48,7 +48,7 @@ class Libdivsufsort < Formula
     EOS
 
     ["", "64"].each do |suffix|
-      (testpath"test#{suffix}.c").write <<~EOS
+      (testpath"test#{suffix}.c").write <<~C
         #include <stdio.h>
         #include <stdlib.h>
         #include <string.h>
@@ -73,7 +73,7 @@ class Libdivsufsort < Formula
             free(SA);
             return 0;
         }
-      EOS
+      C
 
       system ENV.cc, "test#{suffix}.c", "-I#{include}", "-L#{lib}", "-ldivsufsort#{suffix}", "-o", "test#{suffix}"
       assert_equal expected_output, shell_output(testpath"test#{suffix}")

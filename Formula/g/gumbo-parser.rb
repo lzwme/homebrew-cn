@@ -27,7 +27,7 @@ class GumboParser < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include "gumbo.h"
 
       int main() {
@@ -35,7 +35,7 @@ class GumboParser < Formula
         gumbo_destroy_output(&kGumboDefaultOptions, output);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lgumbo", "-o", "test"
     system "./test"
   end

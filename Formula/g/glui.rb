@@ -41,7 +41,7 @@ class Glui < Formula
 
   test do
     if OS.mac?
-      (testpath"test.cpp").write <<~EOS
+      (testpath"test.cpp").write <<~CPP
         #include <cassert>
         #include <GLglui.h>
         int main() {
@@ -49,12 +49,12 @@ class Glui < Formula
           assert(glui != nullptr);
           return 0;
         }
-      EOS
+      CPP
       system ENV.cxx, "-framework", "GLUT", "-framework", "OpenGL", "-I#{include}",
         "-L#{lib}", "-lglui", "-std=c++11", "test.cpp"
       system ".a.out"
     else
-      (testpath"test.cpp").write <<~EOS
+      (testpath"test.cpp").write <<~CPP
         #include <cassert>
         #include <GLglui.h>
         #include <GLglut.h>
@@ -64,7 +64,7 @@ class Glui < Formula
           assert(glui != nullptr);
           return 0;
         }
-      EOS
+      CPP
       system ENV.cxx, "-I#{include}", "-std=c++11", "test.cpp",
         "-L#{lib}", "-lglui", "-lglut", "-lGLU", "-lGL"
       if ENV["DISPLAY"]

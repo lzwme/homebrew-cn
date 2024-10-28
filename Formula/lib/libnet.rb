@@ -26,7 +26,7 @@ class Libnet < Formula
 
   test do
     flags = shell_output("pkg-config --libs --cflags libnet").chomp.split
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdint.h>
       #include <libnet.h>
@@ -36,7 +36,7 @@ class Libnet < Formula
         printf("%s", libnet_version());
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", *flags, "-o", "test"
     assert_match version.to_s, shell_output(".test")

@@ -53,7 +53,7 @@ class LibsoupAT2 < Formula
 
   test do
     # if this test start failing, the problem might very well be in glib-networking instead of libsoup
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libsoup/soup.h>
 
       int main(int argc, char *argv[]) {
@@ -65,7 +65,7 @@ class LibsoupAT2 < Formula
         g_object_unref(session);
         return 0;
       }
-    EOS
+    C
 
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libsoup-2.4").chomp.split

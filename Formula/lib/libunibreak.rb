@@ -30,7 +30,7 @@ class Libunibreak < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <unibreakbase.h>
       #include <linebreak.h>
       #include <assert.h>
@@ -53,7 +53,7 @@ class Libunibreak < Formula
 
         return memcmp(output, expected, sizeof(output)) != 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lunibreak"
     system ".test"

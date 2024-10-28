@@ -36,7 +36,7 @@ class Libharu < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "hpdf.h"
 
       int main(void)
@@ -55,7 +55,7 @@ class Libharu < Formula
 
         return result;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-lz", "-lm", "-o", "test"
     system ".test"
   end

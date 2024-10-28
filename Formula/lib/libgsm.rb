@@ -76,7 +76,7 @@ class Libgsm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gsm.h>
 
       int main()
@@ -88,7 +88,7 @@ class Libgsm < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lgsm", "-o", "test"
     system "./test"
   end

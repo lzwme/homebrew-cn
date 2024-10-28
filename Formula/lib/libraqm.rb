@@ -28,13 +28,13 @@ class Libraqm < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <raqm.h>
 
       int main() {
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c",
                    "-I#{include}",

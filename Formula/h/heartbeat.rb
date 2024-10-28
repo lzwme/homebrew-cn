@@ -2,24 +2,24 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https:www.elastic.cobeatsheartbeat"
   url "https:github.comelasticbeats.git",
-      tag:      "v8.15.2",
-      revision: "26daf71e4ec87172523af7f0e916cba9f79dc0d0"
+      tag:      "v8.15.3",
+      revision: "bbed3ae55602e83f57c62de85b57a3593aa49efa"
   license "Apache-2.0"
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c7d0f039387af0e895370f5a566062d806f01dbed5f1505f238260aefd75651"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d80be675d7c85742214786d7c38b46c41c2034eeccf433db9d7c6f2fc4f29214"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "26a9d278e089244b39310acedbf6179faf95eb08b8bc9ba01aed129ae1dd43dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa60acc469553f05291aecd4ad6cd51d7df09a4e0408969bb29c0566cdef7c61"
-    sha256 cellar: :any_skip_relocation, ventura:       "da42911e49b5267904d1afc01e70091542301a33ba8480d36c4f938bcc77d68c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "829596118e75773038117a4ce09b62f9734845677037f85c47ff4b6b0490f468"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6113519f910332309fb639e2b7b03bc99b1b9b6a3f3a76040d879249449c568"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad1a4dad8aad9407f5cfc54b03d72c7d65abc3652047d141e81f2c23545c7c8b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb9e0bc1f034c0c7f1a4914747892bba65d20edf7059ef4be28fe41f1a004687"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bddf58fac8536bed40493d19fe6b783fc1a8b94a7f07d781d9f2100f2ba506cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "343dc7dd42afc4577e924a5cfeafe76b9f67cf8fd034da3a4f819c75a30f30d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad795c28f00b925ecd571b2da11050d1a6ae9418efa39f27457c96ce1ba5620a"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
+  depends_on "python@3.12" => :build
 
-  uses_from_macos "python" => :build
   uses_from_macos "netcat" => :test
 
   def install

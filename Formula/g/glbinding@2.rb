@@ -40,14 +40,14 @@ class GlbindingAT2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <glbindingglgl.h>
       #include <glbindingBinding.h>
       int main(void)
       {
         glbinding::Binding::initialize();
       }
-    EOS
+    CPP
     open_gl = OS.mac? ? ["-framework", "OpenGL"] : ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
                     "-I#{include}", *open_gl,

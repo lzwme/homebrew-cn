@@ -50,7 +50,7 @@ class Libdill < Formula
     # Issue ref: https:github.comsustriklibdillissues208
     ENV["CC"] = Formula["llvm"].opt_bin"clang" if Hardware::CPU.arm?
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libdill.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -68,7 +68,7 @@ class Libdill < Formula
           msleep(now() + 5000);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ldill", "-o", "test"
     system ".test"
   end

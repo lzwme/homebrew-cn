@@ -27,7 +27,7 @@ class Libpaper < Formula
     assert_match "A4: 210x297 mm", shell_output("#{bin}paper --all")
     assert_match "paper #{version}", shell_output("#{bin}paper --version")
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <paper.h>
       int main()
       {
@@ -35,7 +35,7 @@ class Libpaper < Formula
         int ret = paperinit();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpaper", "-o", "test"
     system ".test"
   end

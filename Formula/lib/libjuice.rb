@@ -23,7 +23,7 @@ class Libjuice < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "juicejuice.h"
 
@@ -48,7 +48,7 @@ class Libjuice < Formula
 
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ljuice", "-o", "test"
     system ".test"

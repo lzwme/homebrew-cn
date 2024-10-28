@@ -44,14 +44,14 @@ class LibspellingAT02 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libspelling.h>
 
       int main(int argc, char *argv[]) {
         SpellingChecker *checker = spelling_checker_get_default();
         return 0;
       }
-    EOS
+    C
 
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     pkg_config_cflags = shell_output("pkg-config --cflags --libs libspelling-1").chomp.split

@@ -29,7 +29,7 @@ class Curlcpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <ostream>
 
@@ -69,7 +69,7 @@ class Curlcpp < Formula
           }
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lcurlcpp", "-lcurl", "-o", "test"
     system ".test"

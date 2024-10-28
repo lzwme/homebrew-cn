@@ -50,14 +50,14 @@ class Gtksourceviewmm3 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <gtksourceviewmm.h>
 
       int main(int argc, char *argv[]) {
         Gsv::init();
         return 0;
       }
-    EOS
+    CPP
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs gtksourceviewmm-3.0").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkg_config_cflags

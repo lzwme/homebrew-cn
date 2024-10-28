@@ -36,7 +36,7 @@ class Libnxml < Formula
       <root>Hello world!<child>This is a child element.<child><root>
     EOS
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <nxml.h>
 
       int main(int argc, char **argv) {
@@ -69,7 +69,7 @@ class Libnxml < Formula
         nxmle_free(data);
         exit(0);
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs nxml").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

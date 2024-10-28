@@ -22,7 +22,7 @@ class Libxlsxwriter < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "xlsxwriter.h"
 
       int main() {
@@ -35,7 +35,7 @@ class Libxlsxwriter < Formula
 
           return workbook_close(workbook);
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxwriter", "-o", "test"
     system ".test"

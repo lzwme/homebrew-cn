@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https:www.djcbsoftware.nlcodemu"
-  url "https:github.comdjcbmureleasesdownloadv1.12.6mu-1.12.6.tar.xz"
-  sha256 "f8a539b687c999678fd7cd37cc4ab15ee5e87801027d982ba195b3a9cb53b761"
+  url "https:github.comdjcbmureleasesdownloadv1.12.7mu-1.12.7.tar.xz"
+  sha256 "d916ba9b8ada90996b37eedf7f5fc70c35eb77f47fd933a502fbe0dccf2a6529"
   license "GPL-3.0-or-later"
   head "https:github.comdjcbmu.git", branch: "master"
 
@@ -18,14 +18,12 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "45155d92040b72dcc56696539a31ef8256eda650ad4566f09b825d977242ef30"
-    sha256 cellar: :any, arm64_sonoma:   "ed4d895407f56e18649323d631f1ac9a2b0829e3c4760c94a0dedd4ac276e848"
-    sha256 cellar: :any, arm64_ventura:  "744f9257dffb1fb1b91830f196053277eaf21fdd3c64c2bbd5276b047e73af51"
-    sha256 cellar: :any, arm64_monterey: "b1fd957c5632c2be1fbd11e8c80c0515f238bba508e153780c374df692fdd00d"
-    sha256 cellar: :any, sonoma:         "7f6de42add1b3fcf5ab61834f8a711704d620de2f591a6be47bd37e7814f1cb0"
-    sha256 cellar: :any, ventura:        "08646f67ee4e951b576fd509ad1674271df6a1f4f401bf742720e44e4da349a7"
-    sha256 cellar: :any, monterey:       "40b5c936a5ec11df7713ec71d6e294bfb9ae1277a498ee03b6d841d68fb02fbd"
-    sha256               x86_64_linux:   "e6a5eba6771253822c8b167942045bb04c99e90074d28144c3fb88faae8cefb2"
+    sha256 cellar: :any, arm64_sequoia: "b6a33fa31f3573014104a07185888b360edd54b6b53ed1787f8f5c53638146ac"
+    sha256 cellar: :any, arm64_sonoma:  "02a8fabc201b66024940d4b3f4bd37478d0ee5c3555c1c5cab2487f2f2dac363"
+    sha256 cellar: :any, arm64_ventura: "f7066054702fa006ff01baa15f7db74c31e68ed0214adf9685130633288191fb"
+    sha256 cellar: :any, sonoma:        "a740ad58e95867017d049e98f5592f4a119cbaf8a222bf8a923372a26531bd91"
+    sha256 cellar: :any, ventura:       "7a340cd2dc7302b87806544dd67ee2a4adb39e61b4d2fd6aa299f2f5a4901864"
+    sha256               x86_64_linux:  "45f957add52e578e5f6c3bedf66d0116ceb27472c1beba965badf64095920b00"
   end
 
   depends_on "emacs" => :build

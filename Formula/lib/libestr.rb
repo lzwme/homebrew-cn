@@ -42,14 +42,14 @@ class Libestr < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "stdio.h"
       #include <libestr.h>
       int main() {
         printf("%s\\n", es_version());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lestr", "-o", "test"
     system ".test"
   end

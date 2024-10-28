@@ -29,7 +29,7 @@ class LibnetfilterQueue < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <errno.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -52,7 +52,7 @@ class LibnetfilterQueue < Formula
         struct mnl_socket *nl;
         char buf[NFQA_CFG_F_MAX];
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmnl", "-o", "test"
   end

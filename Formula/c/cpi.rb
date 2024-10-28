@@ -29,18 +29,18 @@ class Cpi < Formula
   end
 
   test do
-    (testpath"test1.cpp").write <<~EOS
+    (testpath"test1.cpp").write <<~CPP
       #include <iostream>
       int main()
       {
         std::cout << "Hello world" << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     assert_match "Hello world", shell_output("#{bin}cpi #{testpath}test1.cpp")
 
-    (testpath"test2.cpp").write <<~EOS
+    (testpath"test2.cpp").write <<~CPP
       #include <iostream>
       #include <cmath>
       #include <cstdlib>
@@ -52,7 +52,7 @@ class Cpi < Formula
           return 0;
       }
        CompileOptions: -lm
-    EOS
+    CPP
 
     assert_match "1.41421", shell_output("#{bin}cpi #{testpath}test2.cpp 2")
   end

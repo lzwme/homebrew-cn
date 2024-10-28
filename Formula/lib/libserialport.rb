@@ -28,14 +28,14 @@ class Libserialport < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libserialport.h>
       int main() {
        struct sp_port *list_ptr = NULL;
        sp_get_port_by_name("some port", &list_ptr);
        return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lserialport",
                    "-o", "test"
     system "./test"

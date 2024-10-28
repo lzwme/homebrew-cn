@@ -31,7 +31,7 @@ class Libtpms < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libtpmstpm_library.h>
 
       int main()
@@ -43,7 +43,7 @@ class Libtpms < Formula
           }
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltpms", "-o", "test"
     system ".test"
   end

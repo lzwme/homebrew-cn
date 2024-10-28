@@ -77,7 +77,7 @@ class Bullet < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "LinearMathbtPolarDecomposition.h"
       int main() {
         btMatrix3x3 I = btMatrix3x3::getIdentity();
@@ -85,7 +85,7 @@ class Bullet < Formula
         polarDecompose(I, u, h);
         return 0;
       }
-    EOS
+    CPP
 
     cxx_lib = if OS.mac?
       "-lc++"

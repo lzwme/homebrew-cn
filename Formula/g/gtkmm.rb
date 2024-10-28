@@ -47,14 +47,14 @@ class Gtkmm < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <gtkmm.h>
 
       int main(int argc, char *argv[]) {
         Gtk::Label label("Hello World!");
         return 0;
       }
-    EOS
+    CPP
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gtkmm-2.4").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkg_config_flags

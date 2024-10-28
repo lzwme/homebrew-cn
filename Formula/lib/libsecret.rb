@@ -46,7 +46,7 @@ class Libsecret < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libsecret/secret.h>
 
       const SecretSchema * example_get_schema (void) G_GNUC_CONST;
@@ -71,7 +71,7 @@ class Libsecret < Formula
           example_get_schema();
           return 0;
       }
-    EOS
+    C
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs libsecret-1").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"

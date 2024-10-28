@@ -39,7 +39,7 @@ class Libjwt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <jwt.h>
 
@@ -48,7 +48,7 @@ class Libjwt < Formula
         if (jwt_new(&jwt) != 0) return 1;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-ljwt", "-o", "test"
     system ".test"
   end

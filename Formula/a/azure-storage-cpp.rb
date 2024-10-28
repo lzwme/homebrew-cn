@@ -38,7 +38,7 @@ class AzureStorageCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <wascommon.h>
       #include <wasstorage_account.h>
       using namespace azure;
@@ -50,7 +50,7 @@ class AzureStorageCpp < Formula
         }
         catch(...){ return 1; }
       }
-    EOS
+    CPP
     flags = ["-std=c++11", "-I#{include}",
              "-I#{Formula["boost"].include}",
              "-I#{Formula["openssl@3"].include}",

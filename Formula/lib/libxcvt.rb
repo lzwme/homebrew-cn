@@ -32,7 +32,7 @@ class Libxcvt < Formula
   test do
     assert_match "1920", shell_output(bin/"cvt 1920 1200 75")
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libxcvt/libxcvt.h>
       #include <assert.h>
       #include <stdio.h>
@@ -42,7 +42,7 @@ class Libxcvt < Formula
         assert(pmi->hdisplay == 1920);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "./test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lxcvt"
     system "./test"
   end

@@ -25,7 +25,7 @@ class G3log < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS.gsub("TESTDIR", testpath)
+    (testpath"test.cpp").write <<~CPP.gsub("TESTDIR", testpath)
       #include <g3logg3log.hpp>
       #include <g3loglogworker.hpp>
       int main()
@@ -37,7 +37,7 @@ class G3log < Formula
         LOG(DEBUG) << "Hello World";
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lg3log", "-o", "test"
     system ".test"
     Dir.glob(testpath"test.g3log.*.log").any?

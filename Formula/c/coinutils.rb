@@ -52,13 +52,13 @@ class Coinutils < Formula
 
     testpath.install resource("homebrew-coin-or-tools-data-sample-p0201-mps")
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <CoinMpsIO.hpp>
       int main() {
         CoinMpsIO mpsIO;
         return mpsIO.readMps("#{testpath}p0201.mps");
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{opt_include}coinutilscoin",
       "-L#{opt_lib}", "-lCoinUtils"

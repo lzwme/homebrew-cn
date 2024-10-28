@@ -28,7 +28,7 @@ class Librtlsdr < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "rtl-sdr.h"
 
       int main()
@@ -36,7 +36,7 @@ class Librtlsdr < Formula
         rtlsdr_get_device_count();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lrtlsdr", "-o", "test"
     system ".test"
   end

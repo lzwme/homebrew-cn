@@ -30,7 +30,7 @@ class LibomemoC < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <signal_protocol.h>
       #include <session_builder.h>
       #include <session_cipher.h>
@@ -101,7 +101,7 @@ class LibomemoC < Formula
 
         return 0;
       }
-    EOS
+    C
     pkg_config = shell_output("pkg-config --cflags --libs libomemo-c").chomp.split
     system ENV.cc, "test.c", *pkg_config, "-o", "test"
     system ".test"

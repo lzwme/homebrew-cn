@@ -157,7 +157,7 @@ class Libsigrok < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libsigrok/libsigrok.h>
 
       int main() {
@@ -170,14 +170,14 @@ class Libsigrok < Formula
         }
         return 0;
       }
-    EOS
+    C
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libsigrok").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~C
       import sigrok.core as sr
       sr.Context.create()
-    EOS
+    C
   end
 end

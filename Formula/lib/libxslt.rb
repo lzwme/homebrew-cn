@@ -66,13 +66,13 @@ class Libxslt < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/xslt-config --version")
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libexslt/exslt.h>
       int main(int argc, char *argv[]) {
         exsltCryptoRegister();
         return 0;
       }
-    EOS
+    C
     flags = shell_output("#{bin}/xslt-config --cflags --libs").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags, "-lexslt"
     system "./test"

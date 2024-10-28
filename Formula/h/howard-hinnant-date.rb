@@ -26,7 +26,7 @@ class HowardHinnantDate < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "datetz.h"
       #include <iostream>
 
@@ -34,7 +34,7 @@ class HowardHinnantDate < Formula
         auto t = date::make_zoned(date::current_zone(), std::chrono::system_clock::now());
         std::cout << t << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++1y", "-L#{lib}", "-ldate-tz", "-o", "test"
     system ".test"
   end

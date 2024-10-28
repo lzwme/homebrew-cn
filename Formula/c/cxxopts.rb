@@ -24,7 +24,7 @@ class Cxxopts < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <cstdlib>
       #include <cxxopts.hpp>
@@ -48,7 +48,7 @@ class Cxxopts < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cc", "-I#{include}", "-o", "test"
     assert_equal "echo string", shell_output(".test -e 'echo string'").strip

@@ -50,7 +50,7 @@ class Cppcms < Formula
   end
 
   test do
-    (testpath/"hello.cpp").write <<~EOS
+    (testpath/"hello.cpp").write <<~CPP
       #include <cppcms/application.h>
       #include <cppcms/applications_pool.h>
       #include <cppcms/service.h>
@@ -89,7 +89,7 @@ class Cppcms < Formula
               return -1;
           }
       }
-    EOS
+    CPP
 
     port = free_port
     (testpath/"config.json").write <<~EOS

@@ -16,14 +16,14 @@ class AdamstarkAudiofile < Formula
   end
 
   test do
-    (testpath"audiofile.cc").write <<~EOS
+    (testpath"audiofile.cc").write <<~CPP
       #include "AudioFile.h"
       int main(int argc, char* *argv) {
         AudioFile<double> audioFile;
         AudioFile<double>::AudioBuffer abuf;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17",
            "-I#{include}",

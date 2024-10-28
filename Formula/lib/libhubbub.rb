@@ -31,7 +31,7 @@ class Libhubbub < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <hubbub/parser.h>
 
@@ -47,7 +47,7 @@ class Libhubbub < Formula
           hubbub_parser_destroy(parser);
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lhubbub"
     system "./test"

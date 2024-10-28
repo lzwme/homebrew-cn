@@ -56,7 +56,7 @@ class Glm < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <glmvec2.hpp> glm::vec2
       int main()
       {
@@ -71,7 +71,7 @@ class Glm < Formula
         };
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{include}", testpath"test.cpp", "-o", "test"
     system ".test"
   end

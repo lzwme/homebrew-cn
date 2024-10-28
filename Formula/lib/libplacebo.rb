@@ -74,13 +74,13 @@ class Libplacebo < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libplaceboconfig.h>
       #include <stdlib.h>
       int main() {
         return (pl_version() != NULL) ? 0 : 1;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lplacebo"
     system ".test"

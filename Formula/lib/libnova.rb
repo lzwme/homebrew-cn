@@ -38,7 +38,7 @@ class Libnova < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libnova/julian_day.h>
 
       int main(void)
@@ -48,7 +48,7 @@ class Libnova < Formula
         JD = ln_get_julian_from_sys();
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnova", "-o", "test"
     system "./test"

@@ -34,7 +34,7 @@ class Liblc3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "lc3.h"
       #include <stdio.h>
       #include <stdlib.h>
@@ -84,7 +84,7 @@ class Liblc3 < Formula
 
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-llc3", "-o", "test"
     system ".test"

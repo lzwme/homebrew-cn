@@ -85,7 +85,7 @@ class Ispc < Formula
     system bin"ispc", "--arch=#{arch}", "--target=#{target}", testpath"simple.ispc",
                        "-o", "simple_ispc.o", "-h", "simple_ispc.h"
 
-    (testpath"simple.cpp").write <<~EOS
+    (testpath"simple.cpp").write <<~CPP
       #include "simple_ispc.h"
       int main() {
         float vin[9], vout[9];
@@ -93,7 +93,7 @@ class Ispc < Formula
         ispc::simple(vin, vout, 9);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{testpath}", "-c", "-o", testpath"simple.o", testpath"simple.cpp"
     system ENV.cxx, "-o", testpath"simple", testpath"simple.o", testpath"simple_ispc.o"
 

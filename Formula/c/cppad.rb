@@ -36,7 +36,7 @@ class Cppad < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cassert>
       #include <cppadlocaltemp_file.hpp>
       #include <cppadutilitythread_alloc.hpp>
@@ -47,7 +47,7 @@ class Cppad < Formula
         assert(ok);
         return static_cast<int>(!ok);
       }
-    EOS
+    CPP
 
     system ENV.cxx, "#{pkgshare}examplegeneralacos.cpp", "-std=c++11", "-I#{include}",
                     "-L#{lib}", "-lcppad_lib",

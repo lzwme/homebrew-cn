@@ -71,7 +71,7 @@ class Capnp < Formula
     EOS
     system bin"capnp", "compile", "-oc++", testpath"person.capnp"
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "person.capnp.h"
       #include <capnpmessage.h>
       #include <capnpserialize-packed.h>
@@ -83,7 +83,7 @@ class Capnp < Formula
         std::cout << person.getName().cStr() << ": "
                   << person.getEmail().cStr() << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-c", testpath"test.cpp", "-I#{include}", "-o", "test.o", "-fPIC", "-std=c++1y"
     system ENV.cxx, "-shared", testpath"test.o", "-L#{lib}", "-fPIC", "-lcapnp", "-lkj"
   end

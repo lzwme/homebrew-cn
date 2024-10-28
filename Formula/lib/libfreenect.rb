@@ -32,7 +32,7 @@ class Libfreenect < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <libfreenectlibfreenect.h>
 
@@ -46,7 +46,7 @@ class Libfreenect < Formula
         freenect_shutdown(ctx);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lfreenect"
     system ".test"

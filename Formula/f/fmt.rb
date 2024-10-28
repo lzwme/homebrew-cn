@@ -30,7 +30,7 @@ class Fmt < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <string>
       #include <fmtformat.h>
@@ -40,7 +40,7 @@ class Fmt < Formula
         std::cout << str;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test",
                   "-I#{include}",

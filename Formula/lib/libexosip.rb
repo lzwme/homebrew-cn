@@ -43,7 +43,7 @@ class Libexosip < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <netinet/in.h>
       #include <eXosip2/eXosip.h>
 
@@ -69,7 +69,7 @@ class Libexosip < Formula
 
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-leXosip2", "-o", "test"
     system "./test"
   end

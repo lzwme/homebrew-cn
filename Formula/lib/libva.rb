@@ -40,14 +40,14 @@ class Libva < Formula
     %w[libva libva-drm libva-wayland libva-x11].each do |name|
       assert_match "-I#{include}", shell_output("pkg-config --cflags #{name}")
     end
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <vava.h>
       int main(int argc, char *argv[]) {
         VADisplay display;
         vaDisplayIsValid(display);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lva"
     system ".test"
   end

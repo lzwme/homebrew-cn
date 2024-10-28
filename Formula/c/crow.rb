@@ -21,13 +21,13 @@ class Crow < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <crow.h>
       int main() {
         crow::SimpleApp app;
         CROW_ROUTE(app, "")([](const crow::request&, crow::response&) {});
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
     system ".test"

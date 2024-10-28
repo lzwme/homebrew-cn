@@ -1,8 +1,8 @@
 class Vttest < Formula
   desc "Test compatibility of VT100-compatible terminals"
   homepage "https://invisible-island.net/vttest/"
-  url "https://invisible-mirror.net/archives/vttest/vttest-20240708.tgz", using: :homebrew_curl
-  sha256 "c195449eb2d2299ca3c0a24788a9aab569fe41c2e0e83128b5c29ba96e5abb1b"
+  url "https://invisible-mirror.net/archives/vttest/vttest-20241024.tgz", using: :homebrew_curl
+  sha256 "2ad38a70da6b51827c1e4028e12ffd7ec40e6105c4b4256f17382a5139686a48"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Vttest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ccdcaaabe61dece07d72f9b6077b0387c6f3a42ae1d678b6c5269e4aeb861271"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69c97efb95a1b780b9ca1702a22084de2830c512db6df2f5e4b34bfe13c4fc8b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "713a46c6a0df4a65d990814d46d956862776ccfc5be0931c08466206b8cdf5d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "77819cca774ece7bb3374e5ad014b47ac6cd26ef614facc5faa82e10adb51942"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7ffde78f54131579ce5915951fa80fcb65deb3fb907caef736ffb1e23f23822"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5b0a9c2ec0f68c7c2b0d8e9ba2770d0ca7b714da718f96c0a112cfb3f41bb98"
-    sha256 cellar: :any_skip_relocation, monterey:       "94015c34c88bbfb880374ee0e8bd8b2c57ff95afe2c728cfc2a9c04443642dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11e8aede521accf9eb5c66a9d6651d5c6934b37bbe022edec647ab2bcd210f0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b454ecb1d95645914843ccd38e553fb58ae916bde12e1a9b70782fdbcef06fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43c1eec9186566572783363f3a044c8c588743890a1afb14166b593ebb95cf92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "35538f94fc006b8516a573e5fcd51d65e0018447ab3ea9914f6fa66b68fc1a2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af7675213f40e7da708812b5dedf3b937604f426e5ebf8cf25c2644d4c928e4a"
+    sha256 cellar: :any_skip_relocation, ventura:       "1d8e344b214f6c419b92f5097afb8ef2cde58c3b465c74d30a6a0419eabd0cda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "694281cc76bc4872e4cbde4ed312f472cc6e9fd7a55a6e7781eeb4fd3863e706"
   end
 
   def install

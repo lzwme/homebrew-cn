@@ -35,7 +35,7 @@ class Ctemplate < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <string>
       #include <ctemplatetemplate.h>
@@ -44,7 +44,7 @@ class Ctemplate < Formula
         dict.SetValue("NAME", "Jane Doe");
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
                     "-lctemplate_nothreads", "-o", "test"

@@ -62,13 +62,13 @@ class Devil < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ILil.h>
       int main() {
         ilInit();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lIL", "-lILU"
     system ".test"

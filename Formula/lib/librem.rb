@@ -34,14 +34,14 @@ class Librem < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdint.h>
       #include <rere.h>
       #include <remrem.h>
       int main() {
         return (NULL != vidfmt_name(VID_FMT_YUV420P)) ? 0 : 1;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{opt_lib}", "-lrem", "-o", "test"
     system ".test"
   end

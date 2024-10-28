@@ -29,7 +29,7 @@ class Libplctag < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <libplctag.h>
 
@@ -39,7 +39,7 @@ class Libplctag < Formula
         plc_tag_destroy(tag);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lplctag", "-o", "test"
     system ".test"
   end

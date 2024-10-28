@@ -27,7 +27,7 @@ class Libb64 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <string.h>
       #include <b64/cencode.h>
       int main()
@@ -40,7 +40,7 @@ class Libb64 < Formula
         if (memcmp(buf,"AQIDBA==",8)) return(-1);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lb64", "-o", "test"
     system "./test"
   end

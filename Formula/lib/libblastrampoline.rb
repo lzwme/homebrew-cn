@@ -37,7 +37,7 @@ class Libblastrampoline < Formula
   test do
     cp pkgshare"testdgemm_test.c", testpath
 
-    (testpath"api_test.c").write <<~EOS
+    (testpath"api_test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <libblastrampoline.h>
@@ -54,7 +54,7 @@ class Libblastrampoline < Formula
         printf("%s", libs[0]->libname);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "dgemm_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "dgemm_test"
     system ENV.cc, "api_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "api_test"

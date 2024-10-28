@@ -46,7 +46,7 @@ class Libpgm < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <pgmpgm.h>
 
       int main(void) {
@@ -56,7 +56,7 @@ class Libpgm < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}pgm-5.3", "-L#{lib}", "-lpgm", "-o", "test"
     system ".test"
   end

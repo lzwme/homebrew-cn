@@ -41,14 +41,14 @@ class LibgeditAmtk < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <amtk/amtk.h>
 
       int main(int argc, char *argv[]) {
         amtk_init();
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libgedit-amtk-5").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

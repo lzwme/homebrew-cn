@@ -41,14 +41,14 @@ class Librttopo < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <librttopo.h>
 
       int main(int argc, char *argv[]) {
         printf("%s", rtgeom_version());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lrttopo", "-o", "test"
     assert_equal stable.version.to_s, shell_output("./test")
   end

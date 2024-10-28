@@ -52,7 +52,7 @@ class Libgnt < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gnt/gnt.h>
 
       int main() {
@@ -61,7 +61,7 @@ class Libgnt < Formula
 
           return 0;
       }
-    EOS
+    C
 
     flags = [
       "-I#{Formula["glib"].opt_include}/glib-2.0",

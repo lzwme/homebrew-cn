@@ -37,7 +37,7 @@ class Libmarpa < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <marpa.h>
       int main(void)
       {
@@ -46,7 +46,7 @@ class Libmarpa < Formula
         marpa_c_init (&marpa_configuration);
         g = marpa_g_new (&marpa_configuration);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lmarpa", "-o", "test"
     system ".test"
   end

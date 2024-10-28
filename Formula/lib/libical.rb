@@ -40,14 +40,14 @@ class Libical < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #define LIBICAL_GLIB_UNSTABLE_API 1
       #include <libical-gliblibical-glib.h>
       int main(int argc, char *argv[]) {
         ICalParser *parser = i_cal_parser_new();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lical-glib",
                    "-I#{Formula["glib"].opt_include}glib-2.0",
                    "-I#{Formula["glib"].opt_lib}glib-2.0include"

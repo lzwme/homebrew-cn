@@ -34,14 +34,14 @@ class Cpprestsdk < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <cppresthttp_client.h>
       int main() {
         web::http::client::http_client client(U("https:example.com"));
         std::cout << client.request(web::http::methods::GET).get().extract_string().get() << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cc", "-std=c++11",
                     "-I#{Formula["boost"].include}", "-I#{Formula["openssl@3"].include}", "-I#{include}",
                     "-L#{Formula["boost"].lib}", "-L#{Formula["openssl@3"].lib}", "-L#{lib}",

@@ -41,7 +41,7 @@ class Libepoxy < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
 
       #include <epoxygl.h>
       #ifdef OS_MAC
@@ -68,7 +68,7 @@ class Libepoxy < Formula
           #endif
           return 0;
       }
-    EOS
+    C
     args = %w[-lepoxy]
     args += %w[-framework OpenGL -DOS_MAC] if OS.mac?
     args += %w[-o test]

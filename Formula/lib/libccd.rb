@@ -29,7 +29,7 @@ class Libccd < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <ccdconfig.h>
       #include <ccdvec3.h>
@@ -42,7 +42,7 @@ class Libccd < Formula
           ccd_vec3_origin, NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lccd"
     system ".test"
   end

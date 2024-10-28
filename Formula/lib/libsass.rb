@@ -37,7 +37,7 @@ class Libsass < Formula
 
   test do
     # This will need to be updated when devel = stable due to API changes.
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <sasscontext.h>
       #include <string.h>
 
@@ -58,7 +58,7 @@ class Libsass < Formula
           return strcmp(sass_context_get_output_string(ctx), "a {\\n  color: blue; }\\n  a:hover {\\n    color: red; }\\n") != 0;
         }
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsass"
     system ".test"
   end

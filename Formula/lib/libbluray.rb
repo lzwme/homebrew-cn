@@ -48,14 +48,14 @@ class Libbluray < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libbluray/bluray.h>
       int main(void) {
         BLURAY *bluray = bd_init();
         bd_close(bluray);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lbluray", "-o", "test"
     system "./test"

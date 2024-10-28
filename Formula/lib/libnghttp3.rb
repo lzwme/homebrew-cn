@@ -26,7 +26,7 @@ class Libnghttp3 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <nghttp3nghttp3.h>
 
       int main(void) {
@@ -37,7 +37,7 @@ class Libnghttp3 < Formula
         nghttp3_qpack_decoder_del(decoder);
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs libnghttp3").chomp.split
     system ENV.cc, "test.c", *flags, "-o", "test"

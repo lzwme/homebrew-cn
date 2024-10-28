@@ -48,7 +48,7 @@ class Libmpd < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <libmpdlibmpd.h>
@@ -64,7 +64,7 @@ class Libmpd < Formula
           mpd_free(mpd);
           return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}libmpd-1.0", "-L#{lib}", "-lmpd"
     system ".test"
   end

@@ -28,13 +28,13 @@ class Libdrm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libdrm/drm.h>
       int main(int argc, char* argv[]) {
         struct drm_gem_open open;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ldrm"
   end
 end

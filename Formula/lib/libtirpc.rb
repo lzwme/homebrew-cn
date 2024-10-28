@@ -18,7 +18,7 @@ class Libtirpc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <rpc/rpc.h>
       #include <rpc/xdr.h>
       #include <stdio.h>
@@ -32,7 +32,7 @@ class Libtirpc < Formula
         printf("xdr_int succeeded");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}/tirpc", "-ltirpc", "-o", "test"
     system "./test"
   end

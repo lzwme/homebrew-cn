@@ -35,7 +35,7 @@ class Duktape < Formula
     (testpath"test.js").write "console.log('Hello Homebrew!');"
     assert_equal "Hello Homebrew!", shell_output("#{bin}duk test.js").strip
 
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <stdio.h>
       #include "duktape.h"
 
@@ -46,7 +46,7 @@ class Duktape < Formula
         duk_destroy_heap(ctx);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cc", "-o", "test", "-I#{include}", "-L#{lib}", "-lduktape", "-lm"
     assert_equal "1 + 2 = 3", shell_output(".test").strip, "Duktape can add number"
   end

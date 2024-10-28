@@ -30,7 +30,7 @@ class GoogleBenchmark < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <string>
       #include <benchmarkbenchmark.h>
       static void BM_StringCreation(benchmark::State& state) {
@@ -39,7 +39,7 @@ class GoogleBenchmark < Formula
       }
       BENCHMARK(BM_StringCreation);
       BENCHMARK_MAIN();
-    EOS
+    CPP
     flags = ["-I#{include}", "-L#{lib}", "-lbenchmark", "-pthread"] + ENV.cflags.to_s.split
     system ENV.cxx, "-o", "test", "test.cpp", *flags
     system ".test"

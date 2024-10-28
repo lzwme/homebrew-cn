@@ -36,7 +36,7 @@ class LibcapNg < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <cap-ng.h>
 
@@ -45,7 +45,7 @@ class LibcapNg < Formula
         if(capng_have_permitted_capabilities() > -1)
           printf("ok");
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcap-ng", "-o", "test"
     assert_equal "ok", `.test`
     system python3, "-c", "import capng"

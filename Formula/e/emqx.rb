@@ -1,8 +1,8 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https:www.emqx.io"
-  url "https:github.comemqxemqxarchiverefstagsv5.8.0.tar.gz"
-  sha256 "dcacbe46468d16bcf8eb9cf8fb4d3326543fd5f23dc9dd00c846430423b011a4"
+  url "https:github.comemqxemqxarchiverefstagsv5.8.1.tar.gz"
+  sha256 "ff58eef9dceb65047f172032c552e72bf311b0c667bcde044f972bf2a49f712b"
   license "Apache-2.0"
   head "https:github.comemqxemqx.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Emqx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "01b3613a0e05709eaa48f9cfb513d3930276d74291fe64a2bf37fb57159cefbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ba9f5a7b282d3d6e3a069ddd709223c4f350bc865f1ddabd6d0f183b5b17e23"
-    sha256 cellar: :any,                 arm64_ventura: "214e7a0e6b6fbea90980484243f21bdfa81f132405b698fb64dbfbe24bfe457e"
-    sha256 cellar: :any,                 sonoma:        "f9b42cdb13bde70e43ea988541205f11dfa9a0c0fbb660ce1392eca68a6def2d"
-    sha256 cellar: :any,                 ventura:       "643c0e23b20e14e3d1122735e359aaffe32e566ad85c23b3e8a6680585454f78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4af003e1799e922393423f6474df79879481050913eb224cdc8bb7735870fb5c"
+    sha256 cellar: :any,                 arm64_sequoia: "28978517344567b2ee25488239787263b52d7e24a932ec59f8c3caf5c1451427"
+    sha256 cellar: :any,                 arm64_sonoma:  "425fcbdad0a90f309780f5cc21c6ffbc6b955f7e7f12413596fb58fe0a797377"
+    sha256 cellar: :any,                 arm64_ventura: "0bd478ba07c32541474c443ad5e0794a42e956294cc9f6321ee7ea3f334fcf59"
+    sha256 cellar: :any,                 sonoma:        "f31dd7562b9f7d15a86d5326d3b4156054cb1143355446a284550e21ea2ddeb7"
+    sha256 cellar: :any,                 ventura:       "cf55e5b2e1c167e59e16a7369ac9d46b77e7c4e661b20a9bee0657702511a4d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6492f171d8db6d841c8b6fb16ff811147d1c022fe47d0f864b1bb0c2979e951d"
   end
 
   depends_on "autoconf"  => :build
@@ -44,8 +44,6 @@ class Emqx < Formula
   end
 
   conflicts_with "cassandra", because: "both install `nodetool` binaries"
-
-  patch :DATA
 
   def install
     ENV["PKG_VSN"] = version.to_s
@@ -84,55 +82,3 @@ class Emqx < Formula
     system bin"emqx", "stop"
   end
 end
-
-__END__
-diff --git aappsemqx_auth_kerberosrebar.config bappsemqx_auth_kerberosrebar.config
-index 8649b8d0..738f68f8 100644
---- aappsemqx_auth_kerberosrebar.config
-+++ bappsemqx_auth_kerberosrebar.config
-@@ -3,5 +3,5 @@
- {deps, [
-     {emqx, {path, "..emqx"}},
-     {emqx_utils, {path, "..emqx_utils"}},
--    {sasl_auth, "2.3.0"}
-+    {sasl_auth, "2.3.2"}
- ]}.
-diff --git aappsemqx_bridge_kafkarebar.config bappsemqx_bridge_kafkarebar.config
-index fd905658..99d576f8 100644
---- aappsemqx_bridge_kafkarebar.config
-+++ bappsemqx_bridge_kafkarebar.config
-@@ -10,7 +10,7 @@
-     {emqx_connector, {path, "....appsemqx_connector"}},
-     {emqx_resource, {path, "....appsemqx_resource"}},
-     {emqx_bridge, {path, "....appsemqx_bridge"}},
--    {sasl_auth, "2.3.0"}
-+    {sasl_auth, "2.3.2"}
- ]}.
- 
- {shell, [
-diff --git amix.exs bmix.exs
-index b9031a70..7c977ab1 100644
---- amix.exs
-+++ bmix.exs
-@@ -215,7 +215,7 @@ defmodule EMQXUmbrella.MixProject do
- 
-   # in conflict by emqx_connector and system_monitor
-   def common_dep(:epgsql), do: {:epgsql, github: "emqxepgsql", tag: "4.7.1.2", override: true}
--  def common_dep(:sasl_auth), do: {:sasl_auth, "2.3.0", override: true}
-+  def common_dep(:sasl_auth), do: {:sasl_auth, "2.3.2", override: true}
-   def common_dep(:gen_rpc), do: {:gen_rpc, github: "emqxgen_rpc", tag: "3.4.0", override: true}
- 
-   def common_dep(:system_monitor),
-diff --git arebar.config brebar.config
-index 551ec665..ccf2d239 100644
---- arebar.config
-+++ brebar.config
-@@ -100,7 +100,7 @@
-     {snabbkaffe, {git, "https:github.comkafka4beamsnabbkaffe.git", {tag, "1.0.10"}}},
-     {hocon, {git, "https:github.comemqxhocon.git", {tag, "0.43.3"}}},
-     {emqx_http_lib, {git, "https:github.comemqxemqx_http_lib.git", {tag, "0.5.3"}}},
--    {sasl_auth, "2.3.0"},
-+    {sasl_auth, "2.3.2"},
-     {jose, {git, "https:github.compotatosaladerlang-jose", {tag, "1.11.2"}}},
-     {telemetry, "1.1.0"},
-     {hackney, {git, "https:github.comemqxhackney.git", {tag, "1.18.1-1"}}},

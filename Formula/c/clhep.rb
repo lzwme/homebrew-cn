@@ -32,7 +32,7 @@ class Clhep < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <Vector/ThreeVector.h>
 
@@ -43,7 +43,7 @@ class Clhep < Formula
         std::cout << " cos(theta): " << aVec.cosTheta() << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "-L#{lib}", "-lCLHEP", "-I#{include}/CLHEP",
            testpath/"test.cpp", "-o", "test"
     assert_equal "r: 3.74166 phi: 1.10715 cos(theta): 0.801784",

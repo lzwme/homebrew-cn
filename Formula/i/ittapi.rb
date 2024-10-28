@@ -26,7 +26,7 @@ class Ittapi < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ittnotify.h>
 
       __itt_domain* domain = __itt_domain_create("Example.Domain.Global");
@@ -38,7 +38,7 @@ class Ittapi < Formula
         __itt_task_end(domain);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-I#{include}",
                     "-L#{lib}", "-littnotify"

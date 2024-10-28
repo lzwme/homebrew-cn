@@ -41,7 +41,7 @@ class Gtkmm3 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <gtkmm.h>
 
       class MyLabel : public Gtk::Label {
@@ -50,7 +50,7 @@ class Gtkmm3 < Formula
       int main(int argc, char *argv[]) {
         return 0;
       }
-    EOS
+    CPP
 
     flags = shell_output("pkg-config --cflags --libs gtkmm-3.0").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags

@@ -46,13 +46,13 @@ class Libfreefare < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <freefare.h>
       int main() {
         mifare_desfire_aid_new(0);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lfreefare", "-o", "test"
     system ".test"

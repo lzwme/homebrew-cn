@@ -30,7 +30,7 @@ class Libdom < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <dom/dom.h>
       #include <stdint.h>
 
@@ -40,7 +40,7 @@ class Libdom < Formula
         dom_exception ex = dom_string_create(data, 4, &str);
         return ex == DOM_NO_ERR ? 0 : 1;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libdom").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

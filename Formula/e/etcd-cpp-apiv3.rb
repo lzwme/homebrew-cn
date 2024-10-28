@@ -50,7 +50,7 @@ class EtcdCppApiv3 < Formula
   test do
     port = free_port
 
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <etcdClient.hpp>
 
@@ -60,7 +60,7 @@ class EtcdCppApiv3 < Formula
         auto response = etcd.get("foo").get();
         std::cout << response.value().as_string() << std::endl;
       }
-    EOS
+    CPP
 
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)

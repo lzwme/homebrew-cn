@@ -69,7 +69,7 @@ class BerkeleyDb < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <assert.h>
       #include <string.h>
       #include <db_cxx.h>
@@ -89,7 +89,7 @@ class BerkeleyDb < Formula
 
         assert(db.close(0) == 0);
       }
-    EOS
+    CPP
     flags = %W[
       -I#{include}
       -L#{lib}

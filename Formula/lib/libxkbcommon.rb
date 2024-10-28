@@ -48,7 +48,7 @@ class Libxkbcommon < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <xkbcommonxkbcommon.h>
       int main() {
@@ -56,7 +56,7 @@ class Libxkbcommon < Formula
           ? EXIT_FAILURE
           : EXIT_SUCCESS;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxkbcommon",
                    "-o", "test"

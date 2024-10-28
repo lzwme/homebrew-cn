@@ -37,7 +37,7 @@ class Libdivecomputer < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libdivecomputercontext.h>
       #include <libdivecomputerdescriptor.h>
       #include <libdivecomputeriterator.h>
@@ -52,7 +52,7 @@ class Libdivecomputer < Formula
         dc_iterator_free(iterator);
         return 0;
       }
-    EOS
+    C
     flags = %W[
       -I#{include}
       -L#{lib}

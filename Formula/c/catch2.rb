@@ -23,7 +23,7 @@ class Catch2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <catch2catch_all.hpp>
       TEST_CASE("Basic", "[catch2]") {
         int x = 1;
@@ -35,7 +35,7 @@ class Catch2 < Formula
           REQUIRE(x == 1);
         }
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lCatch2Main", "-lCatch2", "-o", "test"
     system ".test"
   end

@@ -43,7 +43,7 @@ class Libsoxr < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <soxr.h>
 
       int main()
@@ -56,7 +56,7 @@ class Libsoxr < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-L#{lib}", "test.c", "-lsoxr", "-o", "test"
     system ".test"
   end

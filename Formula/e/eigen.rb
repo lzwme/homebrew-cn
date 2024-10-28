@@ -28,7 +28,7 @@ class Eigen < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <Eigen/Dense>
       using Eigen::MatrixXd;
@@ -41,7 +41,7 @@ class Eigen < Formula
         m(1,1) = m(1,0) + m(0,1);
         std::cout << m << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}/eigen3", "-o", "test"
     assert_equal %w[3 -1 2.5 1.5], shell_output("./test").split
   end

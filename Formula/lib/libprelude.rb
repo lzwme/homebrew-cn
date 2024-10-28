@@ -71,7 +71,7 @@ class Libprelude < Formula
     assert_equal prefix.to_s, shell_output(bin/"libprelude-config --prefix").chomp
     assert_equal version.to_s, shell_output(bin/"libprelude-config --version").chomp
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libprelude/prelude.h>
 
       int main(int argc, const char* argv[]) {
@@ -81,16 +81,16 @@ class Libprelude < Formula
           return -1;
         }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lprelude", "-o", "test"
     system "./test"
 
-    (testpath/"test.py").write <<~EOS
+    (testpath/"test.py").write <<~C
       import prelude
       idmef = prelude.IDMEF()
       idmef.set("alert.classification.text", "Hello world!")
       print(idmef)
-    EOS
+    C
     assert_match(/classification:\s*text: Hello world!/, shell_output("#{python3} test.py"))
   end
 end

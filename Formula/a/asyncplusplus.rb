@@ -22,7 +22,7 @@ class Asyncplusplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <async++.h>
 
@@ -66,7 +66,7 @@ class Asyncplusplus < Formula
           });
           std::cout << "The sum of {1, 2, 3, 4} is" << std::endl << r << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lasync++", "--std=c++11", "-o", "test"
     assert_equal "10", shell_output(".test").chomp.lines.last
   end

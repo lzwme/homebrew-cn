@@ -36,7 +36,7 @@ class Libspectrum < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "libspectrum.h"
       #include <assert.h>
 
@@ -45,7 +45,7 @@ class Libspectrum < Formula
         assert(strcmp(libspectrum_version(), "#{version}") == 0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lspectrum", "-o", "test"
     system "./test"
   end

@@ -28,7 +28,7 @@ class Blaze < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <blaze/Math.h>
 
@@ -47,7 +47,7 @@ class Blaze < Formula
           blaze::DynamicMatrix<int> C = A * B;
           std::cout << "C =\\n" << C;
       }
-    EOS
+    CPP
 
     expected = <<~EOS
       C =

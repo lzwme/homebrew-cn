@@ -38,7 +38,7 @@ class Libxres < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xlib.h"
       #include "X11/extensions/XRes.h"
 
@@ -46,7 +46,7 @@ class Libxres < Formula
         XResType client;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lXRes"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

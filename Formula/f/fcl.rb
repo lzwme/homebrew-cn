@@ -32,14 +32,14 @@ class Fcl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <fclgeometryshapebox.h>
       #include <cassert>
 
       int main() {
         assert(fcl::Boxd(1, 1, 1).computeVolume() == 1);
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}",
                     "-I#{Formula["eigen"].include}eigen3",

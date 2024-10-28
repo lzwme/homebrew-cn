@@ -40,7 +40,7 @@ class Libfixbuf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <fixbuf/public.h>
       #include <stdio.h>
 
@@ -55,7 +55,7 @@ class Libfixbuf < Formula
           fbInfoModelFree(model);
           return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libfixbuf").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

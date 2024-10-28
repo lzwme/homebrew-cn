@@ -1,19 +1,10 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
   homepage "https:dosbox-staging.github.io"
+  url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.82.0.tar.gz"
+  sha256 "a3f63f86bf203ba28512e189ce6736cdb0273647e77a62ce47ed3d01b3b4a88d"
   license "GPL-2.0-or-later"
   head "https:github.comdosbox-stagingdosbox-staging.git", branch: "main"
-
-  stable do
-    url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.81.2.tar.gz"
-    sha256 "6676a3b6957c144a80ca8c3ffec2a0bec0320274382f23af9c57dd1c20b2eb1b"
-
-    # Backport fix to bypass SDL wraps on macOS
-    patch do
-      url "https:github.comdosbox-stagingdosbox-stagingcommit9f0fc1dc762010e5f7471d01c504d817a066cae3.patch?full_index=1"
-      sha256 "20b009216d877138802c698fc9aa89ea1c2becc3c13c06bdcf388ffe7a63bef2"
-    end
-  end
 
   # New releases of dosbox-staging are indicated by a GitHub release (and
   # an announcement on the homepage), not just a new version tag.
@@ -23,14 +14,12 @@ class DosboxStaging < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "48aa9079f0008e0c3e9f841f3d91ae891a27021f592918b95da2afa35b642c49"
-    sha256 arm64_sonoma:   "d9c7de5c2c373cbd38b42779d5af89ca1c3efc2a236e2d1be1885db9c17404a4"
-    sha256 arm64_ventura:  "b253f715e507d4a1231a11ebc5cecd3f47efea1c6d5f70ff31047bdeb9e93677"
-    sha256 arm64_monterey: "9ec95a30a281c9aad5be2661f76ae7dbb931da3f9459ccc105769beb829e260c"
-    sha256 sonoma:         "76a1633bbde50f79c9f5d93ddc1c90706b9b145d792aba00d0c1ec78e002cab5"
-    sha256 ventura:        "eef0af318fbd3fcc85fc8285ebe8308e9385a18c49beba38eb0d2d7bbc7aa1fb"
-    sha256 monterey:       "b94ee1b1cca29f8bf00be43aeff3eeacf93bbf77da4ab710b1ded3c53ebb3f84"
-    sha256 x86_64_linux:   "dda24c081c9437844203c3624888ab07298f74c0b29f5dca250c9e071b764a7f"
+    sha256 arm64_sequoia: "b4459a8981e6641db94c96e2d32920527d94cfafb287df5506edd8fc2ac328e2"
+    sha256 arm64_sonoma:  "6950d63dad00ad337f09c11dbc5817b7d7260b29afb14f87b71a3052b1fb2726"
+    sha256 arm64_ventura: "64265c0ff0d6211d766f08ce22c72032c888120866ca92834980f2aa56b6a9a0"
+    sha256 sonoma:        "d3573b89df240f1369d2b069012992697affb4cbc0f72666bae7f9f12f5cc023"
+    sha256 ventura:       "fc3e42f4cdea9607d9f99e227e07f9d4a1d4483d36fed9017dae754d8cc6fba4"
+    sha256 x86_64_linux:  "4db81ea132af948b33d6856c3b1c28b0e7c142ee9e443b55d299f46f77326822"
   end
 
   depends_on "meson" => :build

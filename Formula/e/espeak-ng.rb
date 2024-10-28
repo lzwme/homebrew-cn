@@ -44,7 +44,7 @@ class EspeakNg < Formula
       "AUDIO_OUTPUT_PLAYBACK"
     end
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <espeakspeak_lib.h>
       #include <iostream>
       #include <cstring>
@@ -72,7 +72,7 @@ class EspeakNg < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lespeak-ng", "-o", "test"
     system ".test"

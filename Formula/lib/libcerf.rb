@@ -34,7 +34,7 @@ class Libcerf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <cerf.h>
       #include <complex.h>
       #include <math.h>
@@ -48,7 +48,7 @@ class Libcerf < Formula
         if (fabs(cimag(a)+0.156454) > 1.e-6) abort();
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcerf", "-o", "test"
     system "./test"

@@ -44,7 +44,7 @@ class Cadical < Formula
     result = shell_output("#{bin}cadical simple.cnf", 20)
     assert_match "s UNSATISFIABLE", result
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cadical.hpp>
       #include <cassert>
       int main() {
@@ -57,7 +57,7 @@ class Cadical < Formula
         assert(res > 0);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lcadical", "-o", "test", "-std=c++11"
     system ".test"
   end

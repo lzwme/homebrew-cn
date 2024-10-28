@@ -27,14 +27,14 @@ class Libunwind < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libunwind.h>
       int main() {
         unw_context_t uc;
         unw_getcontext(&uc);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lunwind", "-o", "test"
     system ".test"
   end

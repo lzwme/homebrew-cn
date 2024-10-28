@@ -32,13 +32,13 @@ class Libcddb < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <cddb/cddb.h>
       int main(void) {
         cddb_track_t *track = cddb_track_new();
         cddb_track_destroy(track);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lcddb", "-o", "test"
     system "./test"
   end

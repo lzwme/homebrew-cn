@@ -21,7 +21,7 @@ class Liburing < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <liburing.h>
       int main() {
@@ -29,7 +29,7 @@ class Liburing < Formula
         assert(io_uring_queue_init(1, &ring, 0) == 0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{opt_lib}", "-luring", "-o", "test"
     system ".test"
   end

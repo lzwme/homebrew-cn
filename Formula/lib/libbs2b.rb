@@ -47,7 +47,7 @@ class Libbs2b < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <bs2b/bs2b.h>
 
       int main()
@@ -59,7 +59,7 @@ class Libbs2b < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lbs2b", "-o", "test"
     system "./test"
   end

@@ -33,12 +33,12 @@ class Hypre < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "HYPRE_struct_ls.h"
       int main(int argc, char* argv[]) {
         HYPRE_StructGrid grid;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test"
     system ".test"

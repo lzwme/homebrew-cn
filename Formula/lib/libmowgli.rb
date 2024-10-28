@@ -32,7 +32,7 @@ class Libmowgli < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <mowgli.h>
 
       int main(int argc, char *argv[]) {
@@ -45,7 +45,7 @@ class Libmowgli < Formula
         mowgli_object_unref(r);
         return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}libmowgli-2", "-o", "test", "test.c", "-L#{lib}", "-lmowgli-2"
     system ".test"
   end

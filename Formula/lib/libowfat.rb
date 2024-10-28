@@ -31,13 +31,13 @@ class Libowfat < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libowfatstr.h>
       int main()
       {
         return str_diff("a", "a");
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lowfat", "-o", "test"
     system ".test"
   end

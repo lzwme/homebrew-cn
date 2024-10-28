@@ -29,7 +29,7 @@ class Ancient < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ancientancient.hpp>
 
       int main(int argc, char **argv)
@@ -37,7 +37,7 @@ class Ancient < Formula
         std::optional<ancient::Decompressor> decompressor;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lancient", "-o", "test"
     system ".test"

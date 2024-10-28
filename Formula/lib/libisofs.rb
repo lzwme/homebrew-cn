@@ -42,7 +42,7 @@ class Libisofs < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdint.h>
       #include <libisofs/libisofs.h>
 
@@ -51,7 +51,7 @@ class Libisofs < Formula
         iso_lib_version(&major, &minor, &micro);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lisofs", "-o", "test"
     system "./test"
   end

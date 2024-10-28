@@ -42,7 +42,7 @@ class Cpr < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <curlcurl.h>
       #include <cprcpr.h>
@@ -53,7 +53,7 @@ class Cpr < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     args = %W[
       -I#{include}

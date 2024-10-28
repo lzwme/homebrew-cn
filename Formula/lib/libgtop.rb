@@ -39,14 +39,14 @@ class Libgtop < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <glibtop/sysinfo.h>
 
       int main(int argc, char *argv[]) {
         const glibtop_sysinfo *info = glibtop_get_sysinfo();
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[

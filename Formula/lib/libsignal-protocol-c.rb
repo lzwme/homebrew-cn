@@ -33,7 +33,7 @@ class LibsignalProtocolC < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <signal_protocol.h>
       #include <session_builder.h>
       #include <session_cipher.h>
@@ -104,7 +104,7 @@ class LibsignalProtocolC < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}signal",
                    "-L#{lib}", "-lsignal-protocol-c",
                    "-o", "test"

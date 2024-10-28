@@ -45,7 +45,7 @@ class ClickhouseCpp < Formula
   end
 
   test do
-    (testpath"main.cpp").write <<~EOS
+    (testpath"main.cpp").write <<~CPP
       #include <clickhouseclient.h>
 
       #include <exception>
@@ -82,7 +82,7 @@ class ClickhouseCpp < Formula
 
           return exit_code;
       }
-    EOS
+    CPP
 
     args = %W[
       -std=c++17

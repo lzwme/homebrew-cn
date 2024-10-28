@@ -64,7 +64,7 @@ class Allegro < Formula
   end
 
   test do
-    (testpath"allegro_test.cpp").write <<~EOS
+    (testpath"allegro_test.cpp").write <<~CPP
       #include <assert.h>
       #include <allegro5allegro5.h>
 
@@ -74,7 +74,7 @@ class Allegro < Formula
         }
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "allegro_test.cpp", "-I#{include}", "-L#{lib}",
                     "-lallegro", "-lallegro_main", "-o", "allegro_test"

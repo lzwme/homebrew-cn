@@ -32,14 +32,14 @@ class Libspectre < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libspectre/spectre.h>
 
       int main(int argc, char *argv[]) {
         const char *text = spectre_status_to_string(SPECTRE_STATUS_SUCCESS);
         return 0;
       }
-    EOS
+    C
     flags = %W[
       -I#{include}
       -L#{lib}

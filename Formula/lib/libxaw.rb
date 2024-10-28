@@ -46,14 +46,14 @@ class Libxaw < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xaw/Text.h"
 
       int main(int argc, char* argv[]) {
         XawTextScrollMode mode;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

@@ -35,7 +35,7 @@ class Liblo < Formula
   end
 
   test do
-    (testpath/"lo_version.c").write <<~EOS
+    (testpath/"lo_version.c").write <<~C
       #include <stdio.h>
       #include "lo/lo.h"
       int main() {
@@ -44,7 +44,7 @@ class Liblo < Formula
         printf("%s", version);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "lo_version.c", "-I#{include}", "-L#{lib}", "-llo", "-o", "lo_version"
     lo_version = `./lo_version`
     assert_equal version.to_str, lo_version

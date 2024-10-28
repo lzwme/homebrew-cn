@@ -35,7 +35,7 @@ class Cpptest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <assert.h>
       #include <cpptest.h>
 
@@ -53,7 +53,7 @@ class Cpptest < Formula
         assert(ts.run(output));
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lcpptest", "-o", "test"
     system ".test"
   end

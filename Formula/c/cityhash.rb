@@ -35,7 +35,7 @@ class Cityhash < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdio.h>
       #include <inttypes.h>
       #include <city.h>
@@ -46,7 +46,7 @@ class Cityhash < Formula
         printf("%" PRIx64 "\\n", result);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lcityhash", "-o", "test"
     assert_equal "ab7a556ed7598b04", shell_output(".test").chomp
   end

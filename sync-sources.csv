@@ -6126,6 +6126,7 @@ Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supervisor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/surelog.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/surfer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/surfraw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/suricata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/svg2pdf.rb, Homebrew/homebrew-core, 1
@@ -8165,6 +8166,7 @@ Homebrew-homebrew-cask/Casks/d/displaybuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaycal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaylink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displays.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/distroav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/divvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dixa.rb, Homebrew/homebrew-cask, 1
@@ -12318,7 +12320,6 @@ Homebrew-homebrew-cask/Casks/o/objectivesharpie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objektiv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-advanced-scene-switcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-backgroundremoval.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/obs-ndi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-virtualcam.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-websocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs.rb, Homebrew/homebrew-cask, 1

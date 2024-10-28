@@ -90,14 +90,14 @@ class GrpcAT154 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <grpcgrpc.h>
       int main() {
         grpc_init();
         grpc_shutdown();
         return GRPC_STATUS_OK;
       }
-    EOS
+    CPP
     ENV.prepend_path "PKG_CONFIG_PATH", lib"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"

@@ -91,14 +91,14 @@ class Icecream < Formula
     system opt_libexec"iceccbingcc", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output(".hello-c")
 
-    (testpath"hello-cc.cc").write <<~EOS
+    (testpath"hello-cc.cc").write <<~CPP
       #include <iostream>
       int main()
       {
         std::cout << "Hello, world!" << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system opt_libexec"iceccbing++", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output(".hello-cc")
 
@@ -113,14 +113,14 @@ class Icecream < Formula
     system opt_libexec"iceccbinclang", "-o", "hello-clang", "hello-clang.c"
     assert_equal "Hello, world!\n", shell_output(".hello-clang")
 
-    (testpath"hello-cclang.cc").write <<~EOS
+    (testpath"hello-cclang.cc").write <<~CPP
       #include <iostream>
       int main()
       {
         std::cout << "Hello, world!" << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system opt_libexec"iceccbinclang++", "-o", "hello-cclang", "hello-cclang.cc"
     assert_equal "Hello, world!\n", shell_output(".hello-cclang")
   end

@@ -55,7 +55,7 @@ class Clp < Formula
   test do
     resource("coin-or-tools-data-sample-p0033-mps").stage testpath
     system bin"clp", "-import", testpath"p0033.mps", "-primals"
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ClpSimplex.hpp>
       int main() {
         ClpSimplex model;
@@ -64,7 +64,7 @@ class Clp < Formula
         status = model.primal();
         return status;
       }
-    EOS
+    CPP
     pkg_config_flags = `pkg-config --cflags --libs clp`.chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags
     system ".a.out"

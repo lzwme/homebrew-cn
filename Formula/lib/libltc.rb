@@ -25,7 +25,7 @@ class Libltc < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
        stripped-down copy of:
        https:raw.githubusercontent.comx42libltc87d45b3testsexample_encode.c
       #include <stdio.h>
@@ -92,7 +92,7 @@ class Libltc < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lltc", "-lm", "-o", "test"
     system ".test"
     assert (testpath"foobar").file?

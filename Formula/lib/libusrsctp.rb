@@ -29,14 +29,14 @@ class Libusrsctp < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <unistd.h>
       #include <usrsctp.h>
       int main() {
         usrsctp_init(0, NULL, NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lusrsctp", "-lpthread", "-o", "test"
     system ".test"
   end

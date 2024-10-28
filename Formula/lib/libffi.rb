@@ -37,7 +37,7 @@ class Libffi < Formula
   end
 
   test do
-    (testpath"closure.c").write <<~EOS
+    (testpath"closure.c").write <<~C
       #include <stdio.h>
       #include <ffi.h>
 
@@ -83,7 +83,7 @@ class Libffi < Formula
 
         return 0;
       }
-    EOS
+    C
 
     flags = ["-L#{lib}", "-lffi", "-I#{include}"]
     system ENV.cc, "-o", "closure", "closure.c", *(flags + ENV.cflags.to_s.split)

@@ -49,13 +49,13 @@ class Liboil < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <liboil/liboil.h>
       int main(int argc, char** argv) {
         oil_init();
         return 0;
       }
-    EOS
+    C
 
     flags = ["-I#{include}/liboil-0.3", "-L#{lib}", "-loil-0.3"] + ENV.cflags.to_s.split
     system ENV.cc, "test.c", "-o", "test", *flags

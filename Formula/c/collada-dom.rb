@@ -40,7 +40,7 @@ class ColladaDom < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <dae.h>
       #include <daedaeDom.h>
@@ -52,7 +52,7 @@ class ColladaDom < Formula
         cout << GetCOLLADA_VERSION() << endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}collada-dom2.5",
                     "-L#{lib}", "-lcollada-dom2.5-dp", "-o", "test"
 

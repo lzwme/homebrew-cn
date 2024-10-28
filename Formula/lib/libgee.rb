@@ -45,14 +45,14 @@ class Libgee < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gee.h>
 
       int main(int argc, char *argv[]) {
         GType type = gee_traversable_stream_get_type();
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[

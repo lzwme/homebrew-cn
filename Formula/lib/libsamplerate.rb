@@ -40,7 +40,7 @@ class Libsamplerate < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <samplerate.h>
       int main() {
@@ -56,7 +56,7 @@ class Libsamplerate < Formula
         assert(res == 0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{opt_lib}", "-lsamplerate", "-o", "test"
     system ".test"
   end

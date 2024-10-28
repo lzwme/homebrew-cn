@@ -34,14 +34,14 @@ class Libedit < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <histedit.h>
       int main(int argc, char *argv[]) {
         EditLine *el = el_init(argv[0], stdin, stdout, stderr);
         return (el == NULL);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-ledit", "-I#{include}"
     system "./test"
   end

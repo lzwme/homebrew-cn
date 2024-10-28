@@ -28,7 +28,7 @@ class Libslirp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <string.h>
       #include <stddef.h>
@@ -42,7 +42,7 @@ class Libslirp < Formula
         Slirp* ctx = slirp_new(&cfg, NULL, NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lslirp", "-o", "test"
     system "./test"
   end

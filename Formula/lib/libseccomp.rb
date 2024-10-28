@@ -35,7 +35,7 @@ class Libseccomp < Formula
   test do
     ver_major, ver_minor, = version.to_s.split(".")
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <seccomp.h>
       int main(int argc, char *argv[])
       {
@@ -44,7 +44,7 @@ class Libseccomp < Formula
         if(SCMP_VER_MINOR != #{ver_minor})
           return 1;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lseccomp", "-o", "test"
     system ".test"

@@ -27,7 +27,7 @@ class Libvatek < Formula
   end
 
   test do
-    (testpath"vatek_test.c").write <<~EOS
+    (testpath"vatek_test.c").write <<~C
       #include <vatek_sdk_device.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -45,7 +45,7 @@ class Libvatek < Formula
               return EXIT_FAILURE;
           }
       }
-    EOS
+    C
     system ENV.cc, "vatek_test.c", "-I#{include}vatek", "-L#{lib}", "-lvatek_core", "-o", "vatek_test"
     assert_equal "passed", shell_output(".vatek_test").strip
   end

@@ -2,24 +2,23 @@ class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https:www.elastic.coproductsbeatsauditbeat"
   url "https:github.comelasticbeats.git",
-      tag:      "v8.15.2",
-      revision: "26daf71e4ec87172523af7f0e916cba9f79dc0d0"
+      tag:      "v8.15.3",
+      revision: "bbed3ae55602e83f57c62de85b57a3593aa49efa"
   license "Apache-2.0"
   head "https:github.comelasticbeats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01cc337d1eadc11dc73ad2e5b9254381f29220c2f1d40734021b661c2e2a19d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3023bf9851e49a15b319ea77db8ee5ecdf505c7b6369b3595b79bce13362dedd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "950dab79289f88600c2a54c58f43c443f2513194e8fb72e019fdd3e69efa6a8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8290ce55bde3da33af026070e5e00aa746718c8256c61e878182966614a11418"
-    sha256 cellar: :any_skip_relocation, ventura:       "e09f90d32b3b348b92ab96d8c1aef830655a4d2c5b2e39c114af78c77d0958bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0d7b50c67312e15bf1fe50c107b3f378626641306cd20fed97fcabd2f285e3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf71c056f84059d3f8770a52feb4f8d8b56a8d933c7e713f3e0875e79a7bbd7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b93c1be047de0e7921ac73e79344e719a7fa3f8300d99332aadaaf449d250035"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e4227e4e1a59c03c297b3264648d93db6d398acb8aa422529655e131856c7cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49139426b7e93a007b9d3595270febb7d9e6fe38ca7d4dce7687bb1b5be208e1"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b292873c0d7348cce2bcfa3696cae42fa71d865d54808255f84cc6bc70141d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab74b033b8f57c315da79962edb67c41b0535a3831c46d64992826c956808925"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
-
-  uses_from_macos "python" => :build
+  depends_on "python@3.12" => :build
 
   def install
     # remove non open source files

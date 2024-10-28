@@ -48,11 +48,11 @@ class Cppinsights < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       int main() {
         int arr[5]{2,3,4};
       }
-    EOS
+    CPP
     assert_match "{2, 3, 4, 0, 0}", shell_output("#{bin}insights .test.cpp")
   end
 end

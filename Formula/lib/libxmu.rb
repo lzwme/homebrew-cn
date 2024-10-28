@@ -37,7 +37,7 @@ class Libxmu < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xlib.h"
       #include "X11/Xmu/Xmu.h"
 
@@ -45,7 +45,7 @@ class Libxmu < Formula
         XmuArea area;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lXmu"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

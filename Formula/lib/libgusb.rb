@@ -54,7 +54,7 @@ class Libgusb < Formula
   test do
     system bin"gusbcmd", "-h"
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <gusb.h>
 
       int main(int argc, char *argv[]) {
@@ -62,7 +62,7 @@ class Libgusb < Formula
         g_assert_nonnull(context);
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs gusb").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

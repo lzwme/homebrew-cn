@@ -36,7 +36,7 @@ class Antlr4CppRuntime < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath/"test.cc").write <<~CPP
       #include <antlr4-runtime.h>
       int main(int argc, const char* argv[]) {
           try {
@@ -46,7 +46,7 @@ class Antlr4CppRuntime < Formula
           }
           return 0 ;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "-I#{include}/antlr4-runtime", "test.cc",
                     "-L#{lib}", "-lantlr4-runtime", "-o", "test"
     system "./test"

@@ -98,7 +98,7 @@ class BoostPython3 < Formula
   end
 
   test do
-    (testpath"hello.cpp").write <<~EOS
+    (testpath"hello.cpp").write <<~CPP
       #include <boostpython.hpp>
       char const* greet() {
         return "Hello, world!";
@@ -107,7 +107,7 @@ class BoostPython3 < Formula
       {
         boost::python::def("greet", greet);
       }
-    EOS
+    CPP
 
     pyincludes = shell_output("#{python3}-config --includes").chomp.split
     pylib = shell_output("#{python3}-config --ldflags --embed").chomp.split

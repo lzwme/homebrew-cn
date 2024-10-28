@@ -18,13 +18,13 @@ class CppGsl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <gslgsl>
       int main() {
         gsl::span<int> z;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++14"
     system ".test"
   end

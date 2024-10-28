@@ -30,13 +30,13 @@ class Grt < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <GRTGRT.h>
       int main() {
         GRT::GestureRecognitionPipeline pipeline;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lgrt", "-o", "test"
     system ".test"
   end

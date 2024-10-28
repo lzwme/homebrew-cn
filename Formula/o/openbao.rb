@@ -3,7 +3,7 @@ class Openbao < Formula
   homepage "https:openbao.org"
   url "https:github.comopenbaoopenbao.git",
       tag:      "v2.0.2",
-      revision: "d7abf404f9f928a64b53fa2ff9192e00a9449b0a"
+      revision: "96853bb4de27ab8ffd1b0c2898c691460d43edeb"
   license "MPL-2.0"
   head "https:github.comopenbaoopenbao.git", branch: "main"
 
@@ -13,12 +13,13 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62362d1dc6cb0a349fa366b8030a721a02f36f10749df9dd9daeffe9dff705cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "580d3d675ab691f7e77b42fdc51002986d50ddfd23c651bf1c02de4cdc025e78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c200c2f1ad16a473b92d4e9f4a625768b93dcaca6d5cb2358fe30586b27c9024"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d252649f081e0a679217f7ea50464f65901d3946356fac5fd3ae571bd8d61d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "299e3a653200ff5b7bcd45e7f2c2fd3738a13d66c6d60871505e0174f69713ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e1c9912a430bb581bc64ae59cdb39ebbac486fab2c3f27bcfe1a383a261d5b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dcd3f86dcea6e0cc2be156adddfd60736cc95ba74b44372ff5cd370473a849a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b755adfde26f3c9e7efaf241da78b00b5c7b3cae815f3ea2c591079b745a0a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f05acc1a92bc289eb1f6296ef7d378e3c260ce882815ba4bc8826cea793573d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e47a002aa13ea1f489db2ce634779f303aa3d7bfe737de3184610350238c55bb"
+    sha256 cellar: :any_skip_relocation, ventura:       "4306de08507771cc02ad3bab677ac148b844ddea9c74c757bd8c058d51c980ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695b69e0d426b78233958bd8cb836a457da6787d91e1f0ff6bf821d4ab2fb0e2"
   end
 
   depends_on "go" => :build

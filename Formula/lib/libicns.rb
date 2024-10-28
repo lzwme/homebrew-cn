@@ -44,7 +44,7 @@ class Libicns < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "icns.h"
       int main(void)
@@ -55,7 +55,7 @@ class Libicns < Formula
         icns_image_t  iconImage;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-L#{lib}", "-licns", testpath"test.c", "-o", "test"
     system ".test"
   end

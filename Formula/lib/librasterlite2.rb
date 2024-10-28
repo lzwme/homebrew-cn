@@ -71,7 +71,7 @@ class Librasterlite2 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <unistd.h>
       #include <stdio.h>
@@ -109,7 +109,7 @@ class Librasterlite2 < Formula
 
           return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs rasterlite2").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

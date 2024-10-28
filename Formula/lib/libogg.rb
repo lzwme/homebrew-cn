@@ -37,7 +37,7 @@ class Libogg < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <ogg/ogg.h>
       #include <stdio.h>
 
@@ -63,7 +63,7 @@ class Libogg < Formula
 
         return 0;
       }
-    EOS
+    C
     testpath.install resource("oggfile")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-logg",
                    "-o", "test"

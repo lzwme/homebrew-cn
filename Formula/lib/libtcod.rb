@@ -40,7 +40,7 @@ class Libtcod < Formula
   end
 
   test do
-    (testpath"version-c.c").write <<~EOS
+    (testpath"version-c.c").write <<~C
       #include <libtcodlibtcod.h>
       #include <stdio.h>
       int main()
@@ -48,10 +48,10 @@ class Libtcod < Formula
         puts(TCOD_STRVERSION);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ltcod", "version-c.c", "-o", "version-c"
     assert_equal version.to_s, shell_output(".version-c").strip
-    (testpath"version-cc.cc").write <<~EOS
+    (testpath"version-cc.cc").write <<~CPP
       #include <libtcodlibtcod.hpp>
       #include <iostream>
       int main()
@@ -59,7 +59,7 @@ class Libtcod < Formula
         std::cout << TCOD_STRVERSION << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "-I#{include}", "-L#{lib}", "-ltcod", "version-cc.cc", "-o", "version-cc"
     assert_equal version.to_s, shell_output(".version-cc").strip
   end

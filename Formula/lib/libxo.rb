@@ -27,13 +27,13 @@ class Libxo < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <libxoxo.h>
       int main() {
         xo_set_flags(NULL, XOF_KEYS);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxo", "-o", "test"
     system ".test"
   end

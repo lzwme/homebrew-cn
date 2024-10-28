@@ -30,14 +30,14 @@ class Libaio < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libaio.h>
 
       int main(int argc, char *argv[])
       {
         struct io_event *event;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-laio", "-o", "test"
     system "./test"

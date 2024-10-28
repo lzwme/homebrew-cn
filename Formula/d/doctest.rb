@@ -19,7 +19,7 @@ class Doctest < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
       #include <doctestdoctest.h>
       TEST_CASE("Basic") {
@@ -32,7 +32,7 @@ class Doctest < Formula
           REQUIRE(x == 1);
         }
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
     system ".test"

@@ -38,7 +38,7 @@ class Cryptopp < Formula
   test do
     # Test program modified from:
     #   https:www.cryptopp.comwikiAdvanced_Encryption_Standard
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #ifdef NDEBUG
       #undef NDEBUG
       #endif
@@ -89,7 +89,7 @@ class Cryptopp < Formula
         assert(plain == recovered);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cc", "-I#{include}", "-L#{lib}",
                     "-lcryptopp", "-o", "test"
     system ".test"

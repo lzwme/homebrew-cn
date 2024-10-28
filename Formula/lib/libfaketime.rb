@@ -33,7 +33,7 @@ class Libfaketime < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <time.h>
 
@@ -41,7 +41,7 @@ class Libfaketime < Formula
         printf("%d\\n",(int)time(NULL));
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test"
     assert_match "1230106542", shell_output("TZ=UTC #{bin}faketime -f '2008-12-24 08:15:42' .test").strip
   end

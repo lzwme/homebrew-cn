@@ -43,7 +43,7 @@ class Libhandy < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gtk/gtk.h>
       #include <handy.h>
       int main(int argc, char *argv[]) {
@@ -52,7 +52,7 @@ class Libhandy < Formula
         HdyLeaflet *leaflet = HDY_LEAFLET (hdy_leaflet_new ());
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libhandy-1").strip.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

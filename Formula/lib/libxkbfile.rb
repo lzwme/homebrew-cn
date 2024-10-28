@@ -34,7 +34,7 @@ class Libxkbfile < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <X11/XKBlib.h>
       #include "X11/extensions/XKBfile.h"
@@ -43,7 +43,7 @@ class Libxkbfile < Formula
         XkbFileInfo info;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

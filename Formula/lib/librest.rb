@@ -54,7 +54,7 @@ class Librest < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <rest/rest-proxy.h>
 
@@ -65,7 +65,7 @@ class Librest < Formula
 
         return EXIT_SUCCESS;
       }
-    EOS
+    C
     glib = Formula["glib"]
     libsoup = Formula["libsoup@2"]
     flags = %W[

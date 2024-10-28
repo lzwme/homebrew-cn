@@ -65,14 +65,14 @@ class Dartsim < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <dartdart.hpp>
       int main() {
         auto world = std::make_shared<dart::simulation::World>();
         assert(world != nullptr);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
                     "-L#{Formula["assimp"].opt_lib}", "-lassimp",

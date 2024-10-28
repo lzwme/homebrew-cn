@@ -30,7 +30,7 @@ class Libnfs < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #if defined(__linux__)
       # include <systime.h>
       #endif
@@ -50,7 +50,7 @@ class Libnfs < Formula
 
         return result;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lnfs", "-o", "test"
     system ".test"
   end

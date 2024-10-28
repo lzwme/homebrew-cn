@@ -44,7 +44,7 @@ class Libwebsockets < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <opensslssl.h>
       #include <libwebsockets.h>
 
@@ -57,7 +57,7 @@ class Libwebsockets < Formula
         lws_context_destroy(context);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{Formula["openssl@3"].opt_prefix}include",
                    "-L#{lib}", "-lwebsockets", "-o", "test"
     system ".test"

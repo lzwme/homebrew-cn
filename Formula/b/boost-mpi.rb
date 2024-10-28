@@ -76,7 +76,7 @@ class BoostMpi < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <boostmpi.hpp>
       #include <iostream>
       #include <boostserializationstring.hpp>
@@ -102,7 +102,7 @@ class BoostMpi < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
     boost = Formula["boost"]
     args = ["-L#{lib}",

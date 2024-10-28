@@ -58,14 +58,14 @@ class LibgeditTepl < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <tepltepl.h>
 
       int main(int argc, char *argv[]) {
         GType type = tepl_file_get_type();
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs libgedit-tepl-6").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

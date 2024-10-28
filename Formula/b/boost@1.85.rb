@@ -76,7 +76,7 @@ class BoostAT185 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <boostalgorithmstring.hpp>
       #include <boostiostreamsdevicearray.hpp>
       #include <boostiostreamsdeviceback_inserter.hpp>
@@ -122,7 +122,7 @@ class BoostAT185 < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lboost_iostreams", "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system ".test"

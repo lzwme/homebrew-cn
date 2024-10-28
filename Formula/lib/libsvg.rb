@@ -55,7 +55,7 @@ class Libsvg < Formula
       <?xml version="1.0" encoding="utf-8"?>
       <svg xmlns:svg="http:www.w3.org2000svg" height="72pt" width="144pt" viewBox="0 -20 144 72"><text font-size="12" text-anchor="left" y="0" x="0" font-family="Times New Roman" fill="green">sample text here<text><svg>
     EOS
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "svg.h"
 
@@ -124,7 +124,7 @@ class Libsvg < Formula
 
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}", "-L#{lib}", "-lsvg",

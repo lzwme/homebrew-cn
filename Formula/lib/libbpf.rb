@@ -20,7 +20,7 @@ class Libbpf < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "bpflibbpf.h"
       #include <stdio.h>
 
@@ -28,7 +28,7 @@ class Libbpf < Formula
         printf("%s", libbpf_version_string());
         return(0);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lbpf", "-o", "test"
     system ".test"
   end

@@ -48,7 +48,7 @@ class Librealsense < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <librealsense2rs.h>
       #include <stdio.h>
       int main()
@@ -56,7 +56,7 @@ class Librealsense < Formula
         printf(RS2_API_VERSION_STR);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-o", "test"
     assert_equal version.to_s, shell_output(".test").strip
   end

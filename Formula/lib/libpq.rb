@@ -67,7 +67,7 @@ class Libpq < Formula
   end
 
   test do
-    (testpath"libpq.c").write <<~EOS
+    (testpath"libpq.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <libpq-fe.h>
@@ -90,7 +90,7 @@ class Libpq < Formula
 
           return 0;
         }
-    EOS
+    C
     system ENV.cc, "libpq.c", "-L#{lib}", "-I#{include}", "-lpq", "-o", "libpqtest"
     assert_equal "Connection to database attempted and failed", shell_output(".libpqtest")
   end

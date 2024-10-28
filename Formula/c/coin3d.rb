@@ -98,14 +98,14 @@ class Coin3d < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <InventorSoDB.h>
       int main() {
         SoDB::init();
         SoDB::cleanup();
         return 0;
       }
-    EOS
+    CPP
 
     opengl_flags = if OS.mac?
       ["-Wl,-framework,OpenGL"]

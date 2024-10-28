@@ -19,7 +19,7 @@ class HopscotchMap < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <tslhopscotch_set.h>
       #include <cassert>
 
@@ -29,7 +29,7 @@ class HopscotchMap < Formula
         assert(s.count(3) == 1);
         return(0);
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++14", "test.cc", "-I#{include}", "-o", "test"
     system ".test"
   end

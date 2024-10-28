@@ -36,16 +36,16 @@ class Beagle < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "libhmsbeagleplatform.h"
       int main() { return 0; }
-    EOS
-    (testpath"T.java").write <<~EOS
+    CPP
+    (testpath"T.java").write <<~JAVA
       class T {
         static { System.loadLibrary("hmsbeagle-jni"); }
         public static void main(String[] args) {}
       }
-    EOS
+    JAVA
     system ENV.cxx, "-I#{include}libhmsbeagle-1", testpath"test.cpp", "-o", "test"
     system ".test"
     system Formula["openjdk@11"].bin"javac", "T.java"

@@ -65,7 +65,7 @@ class Bde < Formula
   test do
     # bde tests are incredibly performance intensive
     # test below does a simple sanity check for linking against bsl.
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bsl_string.h>
       #include <bslma_default.h>
       int main() {
@@ -73,7 +73,7 @@ class Bde < Formula
         bsl::string string(bslma::Default::globalAllocator());
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{include}", "test.cpp", "-L#{lib}", "-lbsl", "-o", "test"
     system ".test"
   end

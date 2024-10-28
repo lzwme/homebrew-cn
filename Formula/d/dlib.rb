@@ -49,14 +49,14 @@ class Dlib < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <dliblogger.h>
       dlib::logger dlog("example");
       int main() {
         dlog.set_level(dlib::LALL);
         dlog << dlib::LINFO << "The answer is " << 42;
       }
-    EOS
+    CPP
     system ENV.cxx, "-pthread", "-std=c++14", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
     assert_match(INFO.*example: The answer is 42, shell_output(".test"))

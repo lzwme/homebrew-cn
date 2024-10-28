@@ -19,7 +19,7 @@ class Argparse < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <argparseargparse.hpp>
 
       int main(int argc, char *argv[]) {
@@ -32,7 +32,7 @@ class Argparse < Formula
         std::cout << "Color: " << color;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-o", "test"
     assert_equal "Color: blue", shell_output(".test --color blue").strip
   end

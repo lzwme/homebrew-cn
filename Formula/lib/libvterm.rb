@@ -29,13 +29,13 @@ class Libvterm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <vterm.h>
 
       int main() {
         vterm_free(vterm_new(1, 1));
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lvterm", "-o", "test"
     system "./test"

@@ -34,7 +34,7 @@ class LibvoAacenc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <vo-aacenc/cmnMemory.h>
 
       int main()
@@ -45,7 +45,7 @@ class LibvoAacenc < Formula
         cmnMemFree(uid, pMem);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lvo-aacenc", "-o", "test"
     system "./test"
   end

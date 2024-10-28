@@ -40,7 +40,7 @@ class Libdbi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <dbi/dbi.h>
       int main(void) {
@@ -50,7 +50,7 @@ class Libdbi < Formula
         dbi_shutdown_r(instance);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ldbi", "-o", "test"
     system "./test"
   end

@@ -57,7 +57,7 @@ class Gismo < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <gismo.h>
       using namespace gismo;
       int main()
@@ -69,7 +69,7 @@ class Gismo < Formula
         M.setOnes();
         gsInfo << M*v << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}gismo", "-std=c++14", "-o", "test"
     assert_equal %w[4 4], shell_output(".test").split
   end

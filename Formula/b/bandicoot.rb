@@ -44,14 +44,14 @@ class Bandicoot < Formula
 
   test do
     # Create a test script that compiles a program
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <bandicoot>
 
       int main(int argc, char** argv) {
         std::cout << coot::coot_version::as_string() << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}", "-lbandicoot", "-o", "test"
 
     # Check that the coot version matches with the formula version

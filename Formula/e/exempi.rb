@@ -34,7 +34,7 @@ class Exempi < Formula
   test do
     cp test_fixtures("test.jpg"), testpath
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <exempi/xmp.h>
       #include <exempi/xmpconsts.h>
@@ -59,7 +59,7 @@ class Exempi < Formula
         xmp_terminate();
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}/exempi-2.0", "-L#{lib}", "-lexempi"
     system "./test"

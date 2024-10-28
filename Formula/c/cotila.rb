@@ -19,7 +19,7 @@ class Cotila < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <cotilacotila.h>
 
@@ -40,7 +40,7 @@ class Cotila < Formula
         static_assert(s == 2.);
         std::cout << s << std::endl;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-o", "test"
     assert_equal "2\n", shell_output(".test")

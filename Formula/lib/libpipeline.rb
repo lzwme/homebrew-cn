@@ -28,7 +28,7 @@ class Libpipeline < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <pipeline.h>
       int main() {
         pipeline *p = pipeline_new();
@@ -36,7 +36,7 @@ class Libpipeline < Formula
         pipeline_command_args(p, "cat", NULL);
         return pipeline_run(p);
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lpipeline", "-o", "test"
     assert_match "Hello world", shell_output("./test")
   end

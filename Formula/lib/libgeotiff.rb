@@ -50,7 +50,7 @@ class Libgeotiff < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "geotiffio.h"
       #include "xtiffio.h"
       #include <stdlib.h>
@@ -76,7 +76,7 @@ class Libgeotiff < Formula
         XTIFFClose(tif);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgeotiff",
                    "-L#{Formula["libtiff"].opt_lib}", "-ltiff", "-o", "test"

@@ -34,13 +34,13 @@ class AmqpCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <amqpcpp.h>
       int main()
       {
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-o",
                     "test", "-lamqpcpp"
     system ".test"

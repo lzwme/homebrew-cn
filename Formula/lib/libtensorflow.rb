@@ -96,13 +96,13 @@ class Libtensorflow < Formula
       sha256 "147fab50ddc945972818516418942157de5e7053d4b67e7fca0b0ada16733ecb"
     end
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <tensorflowcc_api.h>
       int main() {
         printf("%s", TF_Version());
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-ltensorflow", "-o", "test_tf"
     assert_equal version, shell_output(".test_tf")

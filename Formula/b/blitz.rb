@@ -33,7 +33,7 @@ class Blitz < Formula
   end
 
   test do
-    (testpath"testfile.cpp").write <<~EOS
+    (testpath"testfile.cpp").write <<~CPP
       #include <blitzarray.h>
       #include <cstdlib>
 
@@ -43,7 +43,7 @@ class Blitz < Formula
         A = 17, 2, 97;
         cout << "A = " << A << endl;
         return 0;}
-    EOS
+    CPP
 
     system ENV.cxx, "testfile.cpp", "-o", "testfile"
     output = shell_output(".testfile")

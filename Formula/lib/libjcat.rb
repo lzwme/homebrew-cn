@@ -49,14 +49,14 @@ class Libjcat < Formula
 
   test do
     system bin"jcat-tool", "-h"
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <jcat.h>
       int main(int argc, char *argv[]) {
         JcatContext *ctx = jcat_context_new();
         g_assert_nonnull(ctx);
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     gnutls = Formula["gnutls"]

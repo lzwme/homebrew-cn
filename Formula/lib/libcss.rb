@@ -30,13 +30,13 @@ class Libcss < Formula
   end
 
   test do
-    (testpath/"test.css").write <<~EOS
+    (testpath/"test.css").write <<~CSS
       body {
         background-color: #FFFFFF;
       }
-    EOS
+    CSS
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <libcss/libcss.h>
 
@@ -52,7 +52,7 @@ class Libcss < Formula
         css_select_ctx_destroy(ctx);
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libcss").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_flags

@@ -43,7 +43,7 @@ class Libxfont2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stddef.h>
       #include <X11/fonts/fontstruct.h>
       #include <X11/fonts/libxfont2.h>
@@ -52,7 +52,7 @@ class Libxfont2 < Formula
         xfont2_init(NULL);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
       "-I#{include}", "-I#{Formula["xorgproto"].include}",

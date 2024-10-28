@@ -41,7 +41,7 @@ class Glbinding < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <glbindingglgl.h>
       #include <glbindingglbinding.h>
       #include <GLFWglfw3.h>
@@ -49,7 +49,7 @@ class Glbinding < Formula
       {
         glbinding::initialize(glfwGetProcAddress);
       }
-    EOS
+    CPP
     open_gl = if OS.mac?
       ["-I#{include}glbinding3rdparty", "-framework", "OpenGL"]
     else

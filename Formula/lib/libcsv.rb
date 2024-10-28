@@ -37,13 +37,13 @@ class Libcsv < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <csv.h>
       int main(void) {
         struct csv_parser p;
         csv_init(&p, CSV_STRICT);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcsv", "-o", "test"
     system ".test"
   end

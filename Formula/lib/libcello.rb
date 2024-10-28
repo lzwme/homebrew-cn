@@ -35,7 +35,7 @@ class Libcello < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include "Cello.h"
 
       int main(int argc, char** argv) {
@@ -47,7 +47,7 @@ class Libcello < Formula
         }
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lCello", "-lpthread", "-o", "test"
     system ".test"
   end

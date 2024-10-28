@@ -39,7 +39,7 @@ class LibfuseAT2 < Formula
   end
 
   test do
-    (testpath"fuse-test.c").write <<~EOS
+    (testpath"fuse-test.c").write <<~C
       #define FUSE_USE_VERSION 21
       #include <fusefuse.h>
       #include <stdio.h>
@@ -48,7 +48,7 @@ class LibfuseAT2 < Formula
         printf("%d\\n", fuse_version());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "fuse-test.c", "-L#{lib}", "-I#{include}", "-D_FILE_OFFSET_BITS=64", "-lfuse", "-o", "fuse-test"
     system ".fuse-test"
   end

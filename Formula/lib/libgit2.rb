@@ -38,7 +38,7 @@ class Libgit2 < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <git2.h>
       #include <assert.h>
 
@@ -47,7 +47,7 @@ class Libgit2 < Formula
         assert(options & GIT_FEATURE_SSH);
         return 0;
       }
-    EOS
+    C
     libssh2 = Formula["libssh2"]
     flags = %W[
       -I#{include}

@@ -18,12 +18,13 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78c95a83a7a78efc5b54831e8bd88baecb267420a7ca91f5f6eeef7ed4b599d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "f89b0881d62f18bbf416869f6af90af93a646a754780946d3130e8c2aad27f91"
-    sha256 cellar: :any,                 arm64_ventura: "eb36a71b3fb9d913059b0c8008cb0351bb343e677d379a11ad7be3b5a25844ae"
-    sha256 cellar: :any,                 sonoma:        "f6d50500f58a0f0587ddc7bdf3e32e86a6cd7b4ef6703648cba28aeaaf4bdab7"
-    sha256 cellar: :any,                 ventura:       "e99a3b2db5ec23401d94849dac5fcbf501e55109ef346dc5a510690bfb1dd6ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba3c74973a7d3e40cb161e765fd6acf50b054a5e33aabcad97322c0ff21d0508"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e0d0967fd9746a2b4866622e6e1a603accab12c5113c2bf06c9bdb61d5a3f318"
+    sha256 cellar: :any,                 arm64_sonoma:  "f81c1d6f84a2806042817aa10c4a8037f6dc2304ffe788c2f9f64f47dead2758"
+    sha256 cellar: :any,                 arm64_ventura: "157562e3fe8a69faa47ccbe88e4e6464f5038efc36fd5ccbcd0ee446d5cd7fb8"
+    sha256 cellar: :any,                 sonoma:        "711446bd9f39dd76631ae83263e4f35283dedd4fdea125527dcea1abae89dea1"
+    sha256 cellar: :any,                 ventura:       "8ddfe99bddc8df0ae446df70fd3495d4b272d1ae6aac391367748409c39fbce5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c06871e41efc59d2d71452437236586d7bee1c8a2efce4d539e650008ff341f"
   end
 
   depends_on "cmake" => :build
@@ -218,8 +219,6 @@ class Emscripten < Formula
     ENV.remove_macosxsdk if OS.mac?
     # Avoid errors on Linux when other formulae like `sdl12-compat` are installed
     ENV.delete "CPATH"
-
-    ENV["NODE_OPTIONS"] = "--no-experimental-fetch"
 
     (testpath"test.c").write <<~C
       #include <stdio.h>

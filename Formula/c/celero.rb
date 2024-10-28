@@ -31,7 +31,7 @@ class Celero < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <celeroCelero.h>
       #include <chrono>
       #include <thread>
@@ -47,7 +47,7 @@ class Celero < Formula
       BENCHMARK(DemoSleep, TwiceBaseline, 60, 1) {
         std::this_thread::sleep_for(std::chrono::microseconds(20000));
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-L#{lib}", "-lcelero", "-o", "test"
     system ".test"
   end

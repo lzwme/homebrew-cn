@@ -64,7 +64,7 @@ class Libsigrokdecode < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libsigrokdecode/libsigrokdecode.h>
 
       int main() {
@@ -76,7 +76,7 @@ class Libsigrokdecode < Formula
         }
         return 0;
       }
-    EOS
+    C
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libsigrokdecode").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

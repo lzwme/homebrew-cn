@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://dev.mysql.com/downloads/connector/cpp/"
-  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-9.0.0-src.tar.gz"
-  sha256 "ed711b4f7b1ffdfc9a76048e195aff287e2d15dddebe0bca851b09e141422b30"
+  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-9.1.0-src.tar.gz"
+  sha256 "70fb6ca28ac154a5784090b3d8cc4f91636c208cf07c0000e3d22f72b557be13"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,14 +11,12 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "50552a72448bc5c7bfa87c4f1cbc487964d41c125fa6f21ccee7ec7dc30f4ad4"
-    sha256 cellar: :any,                 arm64_sonoma:   "194472846f7a30827dc1ce8a096bf8992921518f44cb9612755bf6a2b2dfaa4d"
-    sha256 cellar: :any,                 arm64_ventura:  "9ed7b1655aa310c02e2de3f5e13ca793061fb9ea4bcaed9390e60393797c90b7"
-    sha256 cellar: :any,                 arm64_monterey: "9d156aca528c8bfbc3ab7efd746fc1f88f4be17ee59b47d2171ed15765aac192"
-    sha256 cellar: :any,                 sonoma:         "be2ef544d3ed696df68265af2b48912588be5594197bcba7e293d6e71b9e0e44"
-    sha256 cellar: :any,                 ventura:        "95d4c09ec9e0a02e612848b4e63dc1e33cc2e3e656b0644fdf6f3a4ebeddb8a2"
-    sha256 cellar: :any,                 monterey:       "e40f820b8ce1d46f257ed98006474b20c571c2f25431bbda1a1bde30d1766a93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aad48ad2b6b9a0624aa16f28190f3f2a58b704da6a1f795e9529b8e0bc48acf"
+    sha256 cellar: :any,                 arm64_sequoia: "aa6ade504277d3b6ebf8398ab34e4660b36cacaf68f5c9c73eacf62c3d6e5a71"
+    sha256 cellar: :any,                 arm64_sonoma:  "baaf6c94e9737b438d72163723d10371f929d41d9198982beaea24146f00b4c8"
+    sha256 cellar: :any,                 arm64_ventura: "44180c3c927e34b69e002ab693d5c70fee42f93ab2f3e5649f1918964f996ff7"
+    sha256 cellar: :any,                 sonoma:        "1f1f78f79e2092b73d4b8bf40b8928e05fa9b8ccf940d1e6fb7ac20d4975f7e0"
+    sha256 cellar: :any,                 ventura:       "981b1f46457bdd762cce824b7a6aca648eb81ca9bb6305439f957399ba1df218"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ddd4cb5fd3252d55eaccd437d45acf06606f0ef04a3bddf59b34aab23aa4369"
   end
 
   depends_on "cmake" => :build

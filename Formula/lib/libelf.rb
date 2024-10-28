@@ -59,7 +59,7 @@ class Libelf < Formula
                    "D8031C040CD8048656C6C6F20776F726C640A"
     File.binwrite(testpath/"elf", [elf_content].pack("H*"))
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gelf.h>
       #include <fcntl.h>
       #include <stdio.h>
@@ -74,7 +74,7 @@ class Libelf < Formula
         printf("%d-bit ELF\\n", gelf_getclass(e) == ELFCLASS32 ? 32 : 64);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}/libelf",
                    "-lelf", "-o", "test"

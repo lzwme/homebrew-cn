@@ -18,7 +18,7 @@ class Gcem < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <gcem.hpp>
 
@@ -27,7 +27,7 @@ class Gcem < Formula
         std::cout << gcem::factorial(x) << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
     assert_equal "3628800\n", shell_output(".test")

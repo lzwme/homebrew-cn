@@ -25,7 +25,7 @@ class Libffcall < Formula
   end
 
   test do
-    (testpath/"callback.c").write <<~EOS
+    (testpath/"callback.c").write <<~C
       #include <stdio.h>
       #include <callback.h>
 
@@ -46,7 +46,7 @@ class Libffcall < Formula
         free_callback(callback);
         return 0;
       }
-    EOS
+    C
     flags = ["-L#{lib}", "-lffcall", "-I#{lib}/libffcall-#{version}/include"]
     system ENV.cc, "-o", "callback", "callback.c", *(flags + ENV.cflags.to_s.split)
     output = shell_output("#{testpath}/callback")

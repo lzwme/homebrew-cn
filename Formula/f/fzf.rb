@@ -1,20 +1,18 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https:github.comjunegunnfzf"
-  url "https:github.comjunegunnfzfarchiverefstagsv0.55.0.tar.gz"
-  sha256 "805383f71bca7f8fb271ecd716852aea88fd898d5027d58add9e43df6ea766da"
+  url "https:github.comjunegunnfzfarchiverefstagsv0.56.0.tar.gz"
+  sha256 "45880ac4175535bf1b298598fbc404ae8ad455ebde804ed5336237759507dc76"
   license "MIT"
   head "https:github.comjunegunnfzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a2bba9c0344013459e6e19292e9307899a50f08a8c3f1309228fae67843d3a5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ac2f272f6106c5266de224e982bcb9a05c291cfb84a6d797bc759f1a854f499"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ac2f272f6106c5266de224e982bcb9a05c291cfb84a6d797bc759f1a854f499"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ac2f272f6106c5266de224e982bcb9a05c291cfb84a6d797bc759f1a854f499"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c964cfe2f826a26f2f7216938152489838480b1ca300b5a70889da9a8fe8e231"
-    sha256 cellar: :any_skip_relocation, ventura:        "c964cfe2f826a26f2f7216938152489838480b1ca300b5a70889da9a8fe8e231"
-    sha256 cellar: :any_skip_relocation, monterey:       "c964cfe2f826a26f2f7216938152489838480b1ca300b5a70889da9a8fe8e231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46cf359fa71ad2128170b543989fd28d9ceca2b6ca661e9de70b5d79f6ad9763"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef9174a5fc4c017e4d0b8206512a80ac14718fd01b7bddcc2f0a7f75bf93534b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef9174a5fc4c017e4d0b8206512a80ac14718fd01b7bddcc2f0a7f75bf93534b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef9174a5fc4c017e4d0b8206512a80ac14718fd01b7bddcc2f0a7f75bf93534b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d4f3a54d3cdc689255bec580befa0bd4a0700bfa4522ef20c3ac6f8e8208d9a"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d4f3a54d3cdc689255bec580befa0bd4a0700bfa4522ef20c3ac6f8e8208d9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81cfbe8b2ed036b77ba3ee31541d83eaa37357e1db729bcab47f807cb1014f0e"
   end
 
   depends_on "go" => :build

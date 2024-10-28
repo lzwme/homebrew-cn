@@ -40,7 +40,7 @@ class Libtermkey < Formula
     system "make", "install", "PREFIX=#{prefix}"
   end
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <termkey.h>
       #include <stdio.h>
 
@@ -54,7 +54,7 @@ class Libtermkey < Formula
         printf("libtermkey initialized and destroyed successfully\\n");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-ltermkey", "-I#{include}"
     assert_match "libtermkey initialized and destroyed successfully", shell_output("./test")
   end

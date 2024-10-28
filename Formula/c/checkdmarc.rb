@@ -3,14 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https:domainaware.github.iocheckdmarc"
-  url "https:files.pythonhosted.orgpackagesb4f30e4108ec0939ed21524e8fb2638725cca48ae750a837b09d3f6695092419checkdmarc-5.5.0.tar.gz"
-  sha256 "d775f566f8fdd584adb9a26e792cfe1565cdf6bd50c54fe7b6d8443ce6db68cf"
+  url "https:files.pythonhosted.orgpackages93a4376826eff1d7ed93a2b50c9909551a1d700b7faabfa2171a91319c23a29dcheckdmarc-5.6.2.tar.gz"
+  sha256 "e4b3aed8d77597c03f2c67629c06ff82845ef05b6331c268590f3f80184d5897"
   license "Apache-2.0"
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "a9606704c0776409c67bed4b84f5a9b3ba213a8ca1d7740ec3e43db57081828f"
+    sha256 cellar: :any_skip_relocation, all: "98a6fba0d7e18b88e95949a7192c82399bff8930f1f00eabf02b3fd544277ddd"
   end
 
   depends_on "certifi"
@@ -38,8 +37,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackagesee7f6e5498685dacae497d6ee8c45cbe489e901b3ffbcedbe897e5a87cc4213bpublicsuffixlist-1.0.2.20241010.tar.gz"
-    sha256 "a726d826bc3b6704995ce0ca144d87768060e18e1df39e6e57f2c645671c0df9"
+    url "https:files.pythonhosted.orgpackages16ccb59718161bcd7d15053dd3358da8fae0f0fbc24ff42729e42669e7019442publicsuffixlist-1.0.2.20241026.tar.gz"
+    sha256 "bc24c7b391c55b6d5ded6d06fd6f76ba003617d25ba84e88c261c71dbeab754b"
   end
 
   resource "pyleri" do
@@ -60,6 +59,11 @@ class Checkdmarc < Formula
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
     sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+  end
+
+  resource "xmltodict" do
+    url "https:files.pythonhosted.orgpackages500551dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958fxmltodict-0.14.2.tar.gz"
+    sha256 "201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"
   end
 
   def install

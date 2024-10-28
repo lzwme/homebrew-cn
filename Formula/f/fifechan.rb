@@ -45,7 +45,7 @@ class Fifechan < Formula
   end
 
   test do
-    (testpath"fifechan_test.cpp").write <<~EOS
+    (testpath"fifechan_test.cpp").write <<~CPP
       #include <fifechan.hpp>
       int main(int n, char** c) {
         fcn::Container* mContainer = new fcn::Container();
@@ -54,7 +54,7 @@ class Fifechan < Formula
         }
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "fifechan_test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lfifechan", "-o", "fifechan_test"
     system ".fifechan_test"

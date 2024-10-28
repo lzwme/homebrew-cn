@@ -52,7 +52,7 @@ class LibsvgCairo < Formula
       <svg xmlns:svg="http://www.w3.org/2000/svg" height="72pt" width="144pt" viewBox="0 -20 144 72"><text font-size="12" text-anchor="left" y="0" x="0" font-family="Times New Roman" fill="green">sample text here</text></svg>
     EOS
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include "svg-cairo.h"
 
@@ -113,7 +113,7 @@ class LibsvgCairo < Formula
           printf("SUCCESS\\n");
           return 0;
       }
-    EOS
+    C
 
     cairo = Formula["cairo"]
     system ENV.cc, "test.c", "-I#{include}", "-I#{cairo.opt_include}/cairo", "-L#{lib}", "-lsvg-cairo", "-o", "test"

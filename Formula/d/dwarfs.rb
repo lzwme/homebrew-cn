@@ -109,7 +109,7 @@ class Dwarfs < Formula
     assert_path_exists "sharemanman1mkdwarfs.1"
     assert compare_file bin"mkdwarfs", "binmkdwarfs"
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <dwarfsversion.h>
 
@@ -121,7 +121,7 @@ class Dwarfs < Formula
         std::cout << major << "." << minor << "." << patch << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     # ENV.llvm_clang doesn't work in the test block
     ENV["CXX"] = Formula["llvm"].opt_bin"clang++" if OS.mac? && DevelopmentTools.clang_build_version < 1500

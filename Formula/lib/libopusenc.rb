@@ -42,7 +42,7 @@ class Libopusenc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <opusenc.h>
       #include <assert.h>
       #include <stdint.h>
@@ -70,7 +70,7 @@ class Libopusenc < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-Wall",
                    "-I#{Formula["opus"].opt_include}/opus",
                    "-I#{include}/opus",

@@ -75,7 +75,7 @@ class Folly < Formula
     # Force use of Clang rather than LLVM Clang
     ENV.clang if OS.mac?
 
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <follyFBVector.h>
       int main() {
         folly::fbvector<int> numbers({0, 1, 2, 3});
@@ -86,7 +86,7 @@ class Folly < Formula
         assert(numbers[6] == 12);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}",
                     "-lfolly", "-o", "test"
     system ".test"

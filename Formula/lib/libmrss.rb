@@ -33,7 +33,7 @@ class Libmrss < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <mrss.h>
 
@@ -57,7 +57,7 @@ class Libmrss < Formula
 
         return 0;
       }
-    EOS
+    C
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs mrss").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"

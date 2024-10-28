@@ -40,7 +40,7 @@ class Libxmp < Formula
 
   test do
     test_mod = "#{pkgshare}/give-me-an-om.mod"
-    (testpath/"libxmp_test.c").write <<~EOS
+    (testpath/"libxmp_test.c").write <<~C
       #include <stdio.h>
       #include "xmp.h"
 
@@ -60,7 +60,7 @@ class Libxmp < Formula
           puts(mi.mod->name);
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "libxmp_test.c", "-L#{lib}", "-lxmp", "-o", "libxmp_test"
     assert_equal "give me an om", shell_output("\"#{testpath}/libxmp_test\" #{test_mod}").chomp

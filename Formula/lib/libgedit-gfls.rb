@@ -31,7 +31,7 @@ class LibgeditGfls < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <gfls/gfls.h>
 
@@ -45,7 +45,7 @@ class LibgeditGfls < Formula
         gfls_finalize();
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs libgedit-gfls-1").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags

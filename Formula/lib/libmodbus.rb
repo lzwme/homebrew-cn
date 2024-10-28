@@ -26,7 +26,7 @@ class Libmodbus < Formula
   end
 
   test do
-    (testpath"hellomodbus.c").write <<~EOS
+    (testpath"hellomodbus.c").write <<~C
       #include <modbus.h>
       #include <stdio.h>
       int main() {
@@ -46,7 +46,7 @@ class Libmodbus < Formula
         mb = 0;
         return (p == 0);
       }
-    EOS
+    C
     system ENV.cc, "hellomodbus.c", "-o", "foo", "-L#{lib}", "-lmodbus",
       "-I#{include}libmodbus", "-I#{include}modbus"
     system ".foo"

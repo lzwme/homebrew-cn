@@ -19,7 +19,7 @@ class Libdivide < Formula
   end
 
   test do
-    (testpath"libdivide-test.c").write <<~EOS
+    (testpath"libdivide-test.c").write <<~C
       #include "libdivide.h"
       #include <assert.h>
 
@@ -39,7 +39,7 @@ class Libdivide < Formula
         assert(result == 15);
         return 0;
       }
-    EOS
+    C
 
     macro_suffix = Hardware::CPU.arm? ? "NEON" : "SSE2"
     ENV.append_to_cflags "-I#{include} -DLIBDIVIDE_#{macro_suffix}"

@@ -13,4 +13,10 @@ cask "pallotron-yubiswitch" do
   end
 
   app "yubiswitch.app"
+
+  zap trash: [
+    "LibraryLaunchDaemonscom.pallotron.yubiswitch.helper.plist",
+    "LibraryPrivilegedHelperToolscom.pallotron.yubiswitch.helper",
+    "~LibraryPreferencescom.pallotron.yubiswitch.plist",
+  ]
 end

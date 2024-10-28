@@ -32,7 +32,7 @@ class DoubleConversion < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <double-conversionbignum.h>
       #include <stdio.h>
       int main() {
@@ -43,7 +43,7 @@ class DoubleConversion < Formula
           printf("%s", buf);
           return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cc", "-L#{lib}", "-ldouble-conversion", "-o", "test"
     assert_equal "1234567890ABCDEF", `.test`
   end

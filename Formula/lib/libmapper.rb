@@ -28,14 +28,14 @@ class Libmapper < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include "mappermapper.h"
       int main() {
         printf("%s", mpr_get_version());
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lmapper", "-o", "test"
     assert_match version.to_s, shell_output(".test")
   end

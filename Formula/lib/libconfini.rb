@@ -23,7 +23,7 @@ class Libconfini < Formula
 
   test do
     (testpath"test.ini").write "[users]\nknown_users = alice, bob, carol\n"
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <confini.h>
 
       static int callback (IniDispatch * disp, void * v_other) {
@@ -46,7 +46,7 @@ class Libconfini < Formula
         }
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, testpath"test.c", "-I#{include}", "-L#{lib}", "-lconfini", "-o", "test"
     assert_match "Known Users: alice, bob, carol", shell_output(testpath"test").chomp

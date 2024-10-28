@@ -42,13 +42,13 @@ class Globjects < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <globjectsglobjects.h>
       int main(void)
       {
         globjects::init();
       }
-    EOS
+    CPP
     flags = ["-std=c++11"]
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test", "test.cpp", *flags,

@@ -58,7 +58,7 @@ class CmuSphinxbase < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "cmd_ln.h"
 
       int main(int argc, char **argv) {
@@ -69,7 +69,7 @@ class CmuSphinxbase < Formula
         cmd_ln_free_r(config);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lsphinxbase", "-I#{include}sphinxbase", "-o", "test"
     system ".test"
   end

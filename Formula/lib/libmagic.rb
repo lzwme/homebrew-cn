@@ -40,7 +40,7 @@ class Libmagic < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
 
@@ -53,7 +53,7 @@ class Libmagic < Formula
           // Prints the MIME type of the file referenced by the first argument.
           puts(magic_file(cookie, argv[1]));
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs #{name}").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     cp test_fixtures("test.png"), "test.png"

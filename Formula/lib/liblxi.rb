@@ -32,14 +32,14 @@ class Liblxi < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <lxi.h>
       #include <stdio.h>
 
       int main() {
         return lxi_init();
       }
-    EOS
+    C
 
     args = %W[-I#{include} -L#{lib} -llxi]
     args += %W[-L#{Formula["libtirpc"].opt_lib} -ltirpc] if OS.linux?

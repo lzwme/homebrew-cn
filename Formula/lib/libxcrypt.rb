@@ -39,7 +39,7 @@ class Libxcrypt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <crypt.h>
       #include <errno.h>
       #include <stdio.h>
@@ -64,7 +64,7 @@ class Libxcrypt < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcrypt", "-o", "test"
     system ".test"
   end

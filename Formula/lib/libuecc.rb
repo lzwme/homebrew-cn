@@ -37,7 +37,7 @@ class Libuecc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdlib.h>
       #include <libuecc/ecc.h>
 
@@ -48,7 +48,7 @@ class Libuecc < Formula
 
           return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include}/libuecc-#{version}", "-L#{lib}", "-o", "test", "test.c", "-luecc"
     system "./test"
   end

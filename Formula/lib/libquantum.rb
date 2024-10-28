@@ -32,7 +32,7 @@ class Libquantum < Formula
   end
 
   test do
-    (testpath/"qtest.c").write <<~EOS
+    (testpath/"qtest.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <time.h>
@@ -49,7 +49,7 @@ class Libquantum < Formula
         printf("The Quantum RNG returned %i!\\n", result);
         return 0;
       }
-    EOS
+    C
     args = [
       "-O3",
       "-L#{lib}",

@@ -42,14 +42,14 @@ class Libxmlb < Formula
   test do
     system bin"xb-tool", "-h"
 
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <xmlb.h>
       int main(int argc, char *argv[]) {
         XbBuilder *builder = xb_builder_new();
         g_assert_nonnull(builder);
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     xz = Formula["xz"]

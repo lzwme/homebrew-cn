@@ -19,7 +19,7 @@ class Functionalplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <fplusfplus.hpp>
       #include <iostream>
       int main() {
@@ -27,7 +27,7 @@ class Functionalplus < Formula
         if (fplus::all_the_same(things))
           std::cout << "All things being equal." << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-I#{include}", "-o", "test"
     assert_match "All things being equal.", shell_output(".test")
   end

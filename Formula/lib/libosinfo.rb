@@ -59,7 +59,7 @@ class Libosinfo < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <osinfoosinfo.h>
 
@@ -74,7 +74,7 @@ class Libosinfo < Formula
         }
         return 0;
       }
-    EOS
+    C
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[

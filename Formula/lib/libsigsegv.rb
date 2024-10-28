@@ -40,7 +40,7 @@ class Libsigsegv < Formula
 
   test do
     # Sourced from tests/efault1.c in tarball.
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "sigsegv.h"
 
       #include <errno.h>
@@ -77,7 +77,7 @@ class Libsigsegv < Formula
         printf ("Test passed");
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lsigsegv", "-o", "test"
     assert_match "Test passed", shell_output("./test")

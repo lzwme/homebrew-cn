@@ -35,7 +35,7 @@ class Charls < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <charlscharls.h>
       #include <iostream>
 
@@ -44,7 +44,7 @@ class Charls < Formula
         std::cout << "ok" << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-lcharls", "-o", "test"
     assert_equal "ok", shell_output(testpath"test").chomp

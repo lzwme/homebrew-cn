@@ -19,7 +19,7 @@ class Indicators < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <indicatorscursor_control.hpp>
       #include <indicatorsprogress_bar.hpp>
       #include <vector>
@@ -56,7 +56,7 @@ class Indicators < Formula
         show_console_cursor(true);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
     output = shell_output(".test")
 

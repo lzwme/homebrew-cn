@@ -90,7 +90,7 @@ class Ice < Formula
 
     port = free_port
 
-    (testpath"Test.cpp").write <<~EOS
+    (testpath"Test.cpp").write <<~CPP
       #include <IceIce.h>
       #include <Hello.h>
 
@@ -108,7 +108,7 @@ class Ice < Formula
         adapter->activate();
         return 0;
       }
-    EOS
+    CPP
 
     system bin"slice2cpp", "Hello.ice"
     system ENV.cxx, "-DICE_CPP11_MAPPING", "-std=c++11", "-c", "-I#{include}", "-I.", "Hello.cpp"

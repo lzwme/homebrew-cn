@@ -30,7 +30,7 @@ class Libwapcaplet < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <libwapcaplet/libwapcaplet.h>
 
@@ -44,7 +44,7 @@ class Libwapcaplet < Formula
           printf("%.*s", (int) lwc_string_length(str), lwc_string_data(str));
           lwc_string_destroy(str);
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lwapcaplet", "-o", "test"
     assert_equal "Hello world!", shell_output(testpath/"test")

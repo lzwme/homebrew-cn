@@ -31,12 +31,12 @@ class Libretls < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <tls.h>
       int main() {
         return tls_init();
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-ltls"
     system "./test"
   end

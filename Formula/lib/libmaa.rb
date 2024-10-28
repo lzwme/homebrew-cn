@@ -30,7 +30,7 @@ class Libmaa < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOS
+    (testpath"test.c").write <<~C
       * basetest.c -- Test base64 and base26 numbers
        * Created: Sun Nov 10 11:51:11 1996 by faith@dict.org
        * Copyright 1996, 2002 Rickard E. Faith (faith@dict.org)
@@ -112,7 +112,7 @@ class Libmaa < Formula
 
          return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmaa", "-o", "test"
     system ".test"
   end

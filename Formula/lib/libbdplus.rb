@@ -43,7 +43,7 @@ class Libbdplus < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libbdplus/bdplus.h>
       int main() {
         int major = -1;
@@ -52,7 +52,7 @@ class Libbdplus < Formula
         bdplus_get_version(&major, &minor, &micro);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lbdplus", "-o", "test"
     system "./test"
   end

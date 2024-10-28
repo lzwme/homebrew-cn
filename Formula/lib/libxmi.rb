@@ -39,7 +39,7 @@ class Libxmi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <xmi.h>
@@ -74,7 +74,7 @@ class Libxmi < Formula
         miDeletePaintedSet (paintedSet);
         return 0;
       }
-    EOS
+    C
 
     expected = <<~EOS
       330022220044440033330022220000000000000000000000000\n300000000000000000000000000000000000000000000000000

@@ -36,7 +36,7 @@ class Crc32c < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cassert>
       #include <crc32ccrc32c.h>
       #include <cstdint>
@@ -49,7 +49,7 @@ class Crc32c < Formula
         assert(result == expected);
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lcrc32c", "-std=c++11", "-o", "test"
     system ".test"
