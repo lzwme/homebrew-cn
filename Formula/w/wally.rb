@@ -32,7 +32,7 @@ class Wally < Formula
   end
 
   test do
-    (testpath"wally.toml").write <<~EOS
+    (testpath"wally.toml").write <<~TOML
       [package]
       name = "testtest"
       version = "0.1.0"
@@ -40,7 +40,7 @@ class Wally < Formula
       realm = "server"
       registry = "https:github.comUpliftGameswally-index"
       [dependencies]
-    EOS
+    TOML
 
     system bin"wally", "install"
     assert_predicate testpath"wally.lock", :exist?

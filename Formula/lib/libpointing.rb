@@ -28,7 +28,7 @@ class Libpointing < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <pointingpointing.h>
       #include <iostream>
       int main() {
@@ -40,7 +40,7 @@ class Libpointing < Formula
         std::cout << std::endl ;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lpointing", "-o", "test"
     system ".test"
   end

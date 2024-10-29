@@ -47,7 +47,7 @@ class Libmspub < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <librevenge-stream/librevenge-stream.h>
       #include <libmspub/MSPUBDocument.h>
       int main() {
@@ -55,7 +55,7 @@ class Libmspub < Formula
           libmspub::MSPUBDocument::isSupported(&docStream);
           return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-lrevenge-stream-0.0",
                     "-I#{Formula["librevenge"].include}/librevenge-0.0",
                     "-lmspub-0.1", "-I#{include}/libmspub-0.1",

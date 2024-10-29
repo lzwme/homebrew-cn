@@ -39,13 +39,13 @@ class River < Formula
   end
 
   test do
-    (testpath"example-config.toml").write <<~EOS
+    (testpath"example-config.toml").write <<~TOML
       [system]
         [[basic-proxy]]
         name = "Example Config"
         [basic-proxy.connector]
         proxy_addr = "127.0.0.1:80"
-    EOS
+    TOML
     system bin"river", "--validate-configs", "--config-toml", testpath"example-config.toml"
 
     [

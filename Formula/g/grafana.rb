@@ -20,7 +20,6 @@ class Grafana < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a991b2b28dd98b90bf7c03da0683beb57f17f28554c47a2aead4c9eac2fe00dd"
   end
 
-  depends_on "corepack" => :build
   depends_on "go" => :build
   depends_on "node" => :build
 
@@ -34,11 +33,15 @@ class Grafana < Formula
 
   def install
     ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"
+
+    ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
+    system "corepack", "enable", "--install-directory", buildpath
+
     system "make", "gen-go"
     system "go", "run", "build.go", "build"
 
-    system "yarn", "install"
-    system "yarn", "build"
+    system buildpath"yarn", "install"
+    system buildpath"yarn", "build"
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

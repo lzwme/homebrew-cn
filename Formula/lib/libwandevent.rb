@@ -35,7 +35,7 @@ class Libwandevent < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <systime.h>
       #include <libwandevent.h>
 
@@ -43,7 +43,7 @@ class Libwandevent < Formula
         wand_event_init();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lwandevent", "-o", "test"
     system ".test"
   end

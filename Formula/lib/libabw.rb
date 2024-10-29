@@ -83,7 +83,7 @@ class Libabw < Formula
       </abiword>
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <stdio.h>
       #include <string.h>
       #include <librevenge-stream/librevenge-stream.h>
@@ -107,7 +107,7 @@ class Libabw < Formula
         printf("ok\\n");
         return 0;
       }
-    EOS
+    CPP
 
     assert_equal shell_output("#{bin}/abw2text test.abw"), "This word is bold.\n"
 

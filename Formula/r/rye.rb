@@ -30,14 +30,14 @@ class Rye < Formula
   end
 
   test do
-    (testpath"pyproject.toml").write <<~EOS
+    (testpath"pyproject.toml").write <<~TOML
       [project]
       name = "testproj"
       requires-python = ">=3.9"
       version = "1.0"
       license = {text = "MIT"}
 
-    EOS
+    TOML
     system bin"rye", "add", "requests==2.24.0"
     system bin"rye", "sync"
     assert_match "requests==2.24.0", (testpath"pyproject.toml").read

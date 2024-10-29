@@ -42,7 +42,7 @@ class Libvncserver < Formula
   end
 
   test do
-    (testpath"server.cpp").write <<~EOS
+    (testpath"server.cpp").write <<~CPP
       #include <rfbrfb.h>
       int main(int argc,char** argv) {
         rfbScreenInfoPtr server=rfbGetScreen(&argc,argv,400,300,8,3,4);
@@ -50,7 +50,7 @@ class Libvncserver < Formula
         rfbInitServer(server);
         return(0);
       }
-    EOS
+    CPP
 
     system ENV.cc, "server.cpp", "-I#{include}", "-L#{lib}",
                    "-lvncserver", "-o", "server"

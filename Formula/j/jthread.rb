@@ -37,7 +37,7 @@ class Jthread < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <jthread/jthread.h>
       using namespace jthread;
 
@@ -48,7 +48,7 @@ class Jthread < Formula
         jm->Unlock();
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-ljthread",
                     "-o", "test"

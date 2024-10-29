@@ -33,14 +33,14 @@ class Libzim < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <zimversion.h>
       int main(void) {
         zim::printVersions();  first line should print "libzim <version>"
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lzim", "-o", "test", "-std=c++11"
 
     # Assert the first line of output contains "libzim <version>"

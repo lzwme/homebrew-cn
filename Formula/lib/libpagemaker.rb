@@ -41,12 +41,12 @@ class Libpagemaker < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libpagemaker/libpagemaker.h>
       int main() {
         libpagemaker::PMDocument::isSupported(0);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-I#{Formula["librevenge"].include}/librevenge-0.0",
                     "-I#{include}/libpagemaker-0.0",

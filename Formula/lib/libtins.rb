@@ -35,12 +35,12 @@ class Libtins < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <tinstins.h>
       int main() {
         Tins::Sniffer sniffer("en0");
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-ltins", "-o", "test"
   end
 end

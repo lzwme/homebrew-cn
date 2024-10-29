@@ -1,18 +1,18 @@
 class Recc < Formula
   desc "Remote Execution Caching Compiler"
   homepage "https://buildgrid.gitlab.io/recc"
-  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.2.28/buildbox-1.2.28.tar.gz"
-  sha256 "99ad6fdfe77a604137adc10209d0a17b36cef88471431779d37bd4d6f056d919"
+  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.2.29/buildbox-1.2.29.tar.gz"
+  sha256 "faae24ee32141611a7396f66e2389adf60d7c6d62a836d1fd911fc42cc36bc4f"
   license "Apache-2.0"
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "6fc53a7beaef3c42a9d6ca9c32886e6778f78e07d6cf3da275895371a68dfa22"
-    sha256 arm64_sonoma:  "37a934a83618f2f7af2d25fb43ae4028ed63a577c9bc457cf7b3956d54e487f7"
-    sha256 arm64_ventura: "9992c0a387b88ca642083654cdc9c15db037f480b0f91112adac72f30d239972"
-    sha256 sonoma:        "9247834b695e6d45b4a72ea99ff92eac7c56450187a0e83f787f58e37cdcff6c"
-    sha256 ventura:       "cf58f04004e1dc906873fa69f3648eef9731a687d48033f6cdb3bbbbdd5757bb"
-    sha256 x86_64_linux:  "5e8cc04e03ca9fdc09cd5aa6c957cdac75149742e371999428b6edb8d6463c59"
+    sha256 arm64_sequoia: "0211d81adb12346a2d04af5c67286603e29f6389a46e5fb14c85cfa6427761f6"
+    sha256 arm64_sonoma:  "65c3ce76910f4845e1292afb5b1caf5503a14af783c7a2ba97cae4d2e9116335"
+    sha256 arm64_ventura: "e2d7aae8532e63425e112d888d7848cfa26a8d4e4a85fa621695afc819a39d71"
+    sha256 sonoma:        "f4e408f830928f4dff7b6dc15ddfacc5ec974f53fd1fe50475c0664a35742002"
+    sha256 ventura:       "ef78077ed912b301822f206a0b57e601a1d6e0c506385ca3751ad74fdf02c69f"
+    sha256 x86_64_linux:  "bc8b661541487673e07873bc0be1cd2af40882c16ef281b485188ffa0a11bd8e"
   end
 
   depends_on "cmake" => :build

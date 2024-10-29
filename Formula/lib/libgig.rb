@@ -36,7 +36,7 @@ class Libgig < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libgig/gig.h>
       #include <iostream>
       using namespace std;
@@ -46,7 +46,7 @@ class Libgig < Formula
         cout << gig::libraryName() << endl;
         return 0;
       }
-    EOS
+    CPP
     args = %W[
       -L#{lib}/libgig
       -lgig

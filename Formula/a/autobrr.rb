@@ -43,13 +43,13 @@ class Autobrr < Formula
 
     port = free_port
 
-    (testpath"config.toml").write <<~EOS
+    (testpath"config.toml").write <<~TOML
       host = "127.0.0.1"
       port = #{port}
       logLevel = "INFO"
       checkForUpdates = false
       sessionSecret = "secret-session-key"
-    EOS
+    TOML
 
     pid = fork do
       exec bin"autobrr", "--config", "#{testpath}"

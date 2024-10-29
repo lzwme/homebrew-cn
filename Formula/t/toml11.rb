@@ -24,11 +24,11 @@ class Toml11 < Formula
   end
 
   test do
-    (testpath"test.toml").write <<~EOS
+    (testpath"test.toml").write <<~TOML
       test_str = "a test string"
-    EOS
+    TOML
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "toml.hpp"
       #include <iostream>
 
@@ -38,7 +38,7 @@ class Toml11 < Formula
           std::cout << "test_str = " << test_str << std::endl;
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
     assert_equal "test_str = a test string\n", shell_output(".test")

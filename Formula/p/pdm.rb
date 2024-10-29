@@ -181,7 +181,7 @@ class Pdm < Formula
   end
 
   test do
-    (testpath"pyproject.toml").write <<~EOS
+    (testpath"pyproject.toml").write <<~TOML
       [project]
       name = "testproj"
       requires-python = ">=3.9"
@@ -191,7 +191,7 @@ class Pdm < Formula
       [build-system]
       requires = ["pdm-backend"]
       build-backend = "pdm.backend"
-    EOS
+    TOML
     system bin"pdm", "add", "requests==2.31.0"
     assert_match "dependencies = [\n    \"requests==2.31.0\",\n]", (testpath"pyproject.toml").read
     assert_predicate testpath"pdm.lock", :exist?

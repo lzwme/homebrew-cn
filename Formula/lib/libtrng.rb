@@ -35,7 +35,7 @@ class Libtrng < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <trngyarn2.hpp>
       #include <trngnormal_dist.hpp>
       int main()
@@ -45,7 +45,7 @@ class Libtrng < Formula
         (void)normal(R);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-ltrng4"
     system ".test"
   end

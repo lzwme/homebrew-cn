@@ -45,7 +45,7 @@ class LibbitcoinNetwork < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinnetwork.hpp>
       int main() {
         const bc::network::settings configuration;
@@ -54,7 +54,7 @@ class LibbitcoinNetwork < Formula
         assert(network.top_block().hash() == bc::null_hash);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",

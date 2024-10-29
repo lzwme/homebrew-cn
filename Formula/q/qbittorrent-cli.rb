@@ -33,10 +33,10 @@ class QbittorrentCli < Formula
 
   test do
     port = free_port
-    (testpath"config.qbt.toml").write <<~EOS
+    (testpath"config.qbt.toml").write <<~TOML
       [qbittorrent]
       addr = "http:127.0.0.1:#{port}"
-    EOS
+    TOML
 
     output = shell_output("#{bin}qbt app version --config #{testpath}config.qbt.toml 2>&1", 1)
     assert_match "could not get app version", output

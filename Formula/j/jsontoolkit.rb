@@ -34,7 +34,7 @@ class Jsontoolkit < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <sourcemetajsontoolkitjson.h>
       #include <sourcemetajsontoolkitjsonl.h>
       #include <sourcemetajsontoolkitjsonpointer.h>
@@ -86,7 +86,7 @@ class Jsontoolkit < Formula
         std::cout << "JSON Toolkit works!" << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++20", "-I#{include}",
        "-L#{lib}",

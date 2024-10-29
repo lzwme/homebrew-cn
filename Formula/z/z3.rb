@@ -13,18 +13,19 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec1e28f290cfe0e65bce86cb3eda70a43d6e9d773bbf22d3f832c1d73ad24682"
-    sha256 cellar: :any,                 arm64_sonoma:  "921e56e3b2283594f609ab011e0bbef138cfed882ffeb52cddac9764625ed2d8"
-    sha256 cellar: :any,                 arm64_ventura: "847cd3f2c750dd91147e13d33362ecfd137c64a2221addbd2248097cb06b2326"
-    sha256 cellar: :any,                 sonoma:        "dbe25e9ee99069a6c24b1b52fa688419f62d3949aac464f4984fa0c94d259271"
-    sha256 cellar: :any,                 ventura:       "8819a26a9165a9e2e309d07a32db67e4f6d12eea025c87fa2d35c588b9393b85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bd64aa186c1c10f51035e910c94dc3aca79a3d3a75002a268fcd6f8d8c8e7a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4be29dafaf9f041f46684866c182efd08970bd8600f6bbe43e771ca1fb6b1c87"
+    sha256 cellar: :any,                 arm64_sonoma:  "61ecbfb6496b696fb9ed7aee129bc4973d3f5c127590a1c14967544a05735721"
+    sha256 cellar: :any,                 arm64_ventura: "af39185d9cb16d4af24ec7781618750b1bdfcf795557dbc641403db939ed0fdb"
+    sha256 cellar: :any,                 sonoma:        "8eea09139dc8827731f816d8bbd6babc9f859ab24f9eb019a7eaf1d1bab005bf"
+    sha256 cellar: :any,                 ventura:       "d0e27e707910cd91decf89a28917f1bf29d4d64286204f07513efa598cf0400c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9fee510a5d1b26819ba6a1244e6f86745a117255e5ca5c8e9c8117d8b50a020"
   end
 
   depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
 
   fails_with gcc: "5"
 
@@ -37,7 +38,7 @@ class Z3 < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install

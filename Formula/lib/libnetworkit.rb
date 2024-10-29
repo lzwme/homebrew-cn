@@ -40,7 +40,7 @@ class Libnetworkit < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <networkitgraphGraph.hpp>
       int main()
       {
@@ -48,7 +48,7 @@ class Libnetworkit < Formula
         NetworKit::Graph g(5);
         return 0;
       }
-    EOS
+    CPP
     omp_flags = OS.mac? ? ["-I#{Formula["libomp"].opt_include}"] : []
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lnetworkit", "-o", "test", *omp_flags
     system ".test"

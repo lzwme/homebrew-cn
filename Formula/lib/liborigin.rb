@@ -30,7 +30,7 @@ class Liborigin < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <liborigin/OriginFile.h>
 
@@ -38,7 +38,7 @@ class Liborigin < Formula
           std::cout << "liborigin version: " << liboriginVersionString() << std::endl;
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lorigin", "-o", "test"
     assert_match version.to_s, shell_output("./test")

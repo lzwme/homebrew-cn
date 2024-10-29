@@ -35,7 +35,7 @@ class Libzen < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <ZenLibZtring.h>
       #include <iostream>
       int main() {
@@ -43,7 +43,7 @@ class Libzen < Formula
         std::cout << myString.To_UTF8() << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lzen", "-o", "test"
     system ".test"
   end

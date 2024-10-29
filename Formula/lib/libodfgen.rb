@@ -44,12 +44,12 @@ class Libodfgen < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libodfgen/OdfDocumentHandler.hxx>
       int main() {
         return ODF_FLAT_XML;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test",
       "-lrevenge-0.0",
       "-I#{Formula["librevenge"].include}/librevenge-0.0",

@@ -31,7 +31,7 @@ class Bacon < Formula
 
     crate = testpath"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -39,13 +39,13 @@ class Bacon < Formula
             assert_eq!(1 + 1, 2);
           }
         }
-      EOS
-      (crate"Cargo.toml").write <<~EOS
+      RUST
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
         license = "MIT"
-      EOS
+      TOML
 
       system bin"bacon", "--init"
       assert_match "[jobs.check]", (crate"bacon.toml").read

@@ -32,7 +32,7 @@ class Liblerc < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <Lerc_c_api.h>
       #include <Lerc_types.h>
       int main() {
@@ -42,7 +42,7 @@ class Liblerc < Formula
 
         return 0 ;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cc", "-std=gnu++17",
                     "-I#{include}",

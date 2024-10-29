@@ -36,12 +36,12 @@ class Libwps < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libwps/libwps.h>
       int main() {
         return libwps::WPS_OK;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-o", "test",
                   "-lrevenge-0.0",
                   "-I#{Formula["librevenge"].include}/librevenge-0.0",

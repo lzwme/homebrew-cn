@@ -29,7 +29,7 @@ class LibsigcxxAT2 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <sigc++/sigc++.h>
 
       void somefunction(int arg) {}
@@ -39,7 +39,7 @@ class LibsigcxxAT2 < Formula
          sigc::slot<void, int> sl = sigc::ptr_fun(&somefunction);
          return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp",
                    "-L#{lib}", "-lsigc-2.0", "-I#{include}/sigc++-2.0", "-I#{lib}/sigc++-2.0/include", "-o", "test"
     system "./test"

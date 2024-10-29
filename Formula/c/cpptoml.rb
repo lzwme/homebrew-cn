@@ -50,9 +50,9 @@ class Cpptoml < Formula
       }
     CPP
 
-    (testpath"brew.toml").write <<~EOS
+    (testpath"brew.toml").write <<~TOML
       str = "Hello, Homebrew."
-    EOS
+    TOML
 
     system ENV.cxx, "-std=c++11", "-I#{include}", "test.cc", "-o", "test"
     assert_equal "Hello, Homebrew.", shell_output(".test").strip

@@ -1042,7 +1042,6 @@ Homebrew-homebrew-core/Formula/c/coq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/core-lightning.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coredns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coreos-ct.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/corepack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coreutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corkscrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/corral.rb, Homebrew/homebrew-core, 1
@@ -1728,6 +1727,7 @@ Homebrew-homebrew-core/Formula/f/fb303.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fblog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fbthrift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fceux.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fcft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fcgi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fcgiwrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fcitx-remote-for-osx.rb, Homebrew/homebrew-core, 1
@@ -1858,6 +1858,7 @@ Homebrew-homebrew-core/Formula/f/fontconfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fontforge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fonts-encodings.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fonttools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/foot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forbidden.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/forcecli.rb, Homebrew/homebrew-core, 1
@@ -4443,6 +4444,7 @@ Homebrew-homebrew-core/Formula/n/node@14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@20.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/node@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node_exporter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodebrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodeenv.rb, Homebrew/homebrew-core, 0
@@ -7939,6 +7941,7 @@ Homebrew-homebrew-cask/Casks/c/concept2-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/confectionery.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/conferences.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/confluent-cli.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/connect-fonts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/connectiq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/connectmenow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/console.rb, Homebrew/homebrew-cask, 1
@@ -9382,6 +9385,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-grechen-fuemen.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-g/font-grenze-gotisch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-grenze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-grey-qo.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-g/font-greybeard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-griffy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gruppo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gudea.rb, Homebrew/homebrew-cask, 1
@@ -10950,6 +10954,7 @@ Homebrew-homebrew-cask/Casks/font/font-z/font-zhudou-sans.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-z/font-zhuque-fangsong.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-z/font-zilla-slab-highlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-z/font-zilla-slab.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-z/font-zpix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/g-desktop-suite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gactions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/galaxybudsclient.rb, Homebrew/homebrew-cask, 1
@@ -13495,7 +13500,6 @@ Homebrew-homebrew-cask/Casks/s/subsurface.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/subsync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subtitle-master.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subtools.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/suitcase-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunloginclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunlogincontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunsama.rb, Homebrew/homebrew-cask, 0

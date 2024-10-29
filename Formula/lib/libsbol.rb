@@ -44,7 +44,7 @@ class Libsbol < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "sbolsbol.h"
 
       using namespace sbol;
@@ -54,7 +54,7 @@ class Libsbol < Formula
         doc.write("test.xml");
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11",
                     "-ISystemLibraryFrameworksPython.frameworkHeaders",
                     "-I#{Formula["raptor"].opt_include}raptor2",

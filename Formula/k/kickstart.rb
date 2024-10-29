@@ -30,7 +30,7 @@ class Kickstart < Formula
     #
     (testpath"{{file_name}}.txt").write("{{software_project}} is awesome!")
 
-    (testpath"template.toml").write <<~EOS
+    (testpath"template.toml").write <<~TOML
       name = "Super basic"
       description = "A very simple template"
       kickstart_version = 1
@@ -44,7 +44,7 @@ class Kickstart < Formula
       name = "software_project"
       default = "kickstart"
       prompt = "Which software project is awesome?"
-    EOS
+    TOML
 
     # Run template interpolation
     system bin"kickstart", "--no-input", testpath.to_s

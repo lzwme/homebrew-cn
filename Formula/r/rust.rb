@@ -231,11 +231,11 @@ class Rust < Formula
 
   test do
     system bin"rustdoc", "-h"
-    (testpath"hello.rs").write <<~EOS
+    (testpath"hello.rs").write <<~RUST
       fn main() {
         println!("Hello World!");
       }
-    EOS
+    RUST
     system bin"rustc", "hello.rs"
     assert_equal "Hello World!\n", shell_output(".hello")
     system bin"cargo", "new", "hello_world", "--bin"

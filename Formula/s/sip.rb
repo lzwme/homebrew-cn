@@ -43,7 +43,7 @@ class Sip < Formula
   end
 
   test do
-    (testpath"pyproject.toml").write <<~EOS
+    (testpath"pyproject.toml").write <<~TOML
       # Specify sip v6 as the build system for the package.
       [build-system]
       requires = ["sip >=6, <7"]
@@ -52,7 +52,7 @@ class Sip < Formula
       # Specify the PEP 566 metadata for the project.
       [tool.sip.metadata]
       name = "fib"
-    EOS
+    TOML
 
     (testpath"fib.sip").write <<~EOS
        Define the SIP wrapper to the (theoretical) fib library.

@@ -45,7 +45,7 @@ class Libkml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "kmlregionatorregionator_qid.h"
       #include "gtestgtest.h"
 
@@ -71,7 +71,7 @@ class Libkml < Formula
         testing::InitGoogleTest(&argc, argv);
         return RUN_ALL_TESTS();
       }
-    EOS
+    CPP
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libkml gtest").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++14", "-o", "test"

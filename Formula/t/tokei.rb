@@ -32,7 +32,7 @@ class Tokei < Formula
   end
 
   test do
-    (testpath"lib.rs").write <<~EOS
+    (testpath"lib.rs").write <<~RUST
       #[cfg(test)]
       mod tests {
           #[test]
@@ -40,7 +40,7 @@ class Tokei < Formula
               println!("It works!");
           }
       }
-    EOS
+    RUST
     system bin"tokei", "lib.rs"
   end
 end

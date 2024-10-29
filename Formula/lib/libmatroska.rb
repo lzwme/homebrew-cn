@@ -35,7 +35,7 @@ class Libmatroska < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <matroskaKaxVersion.h>
       #include <iostream>
 
@@ -43,7 +43,7 @@ class Libmatroska < Formula
         std::cout << "libmatroska version: " << libmatroska::KaxCodeVersion << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmatroska"
     assert_match version.to_s, shell_output(".test")

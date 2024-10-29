@@ -47,7 +47,7 @@ class LibbitcoinNode < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinnode.hpp>
       int main() {
         libbitcoin::node::settings configuration;
@@ -56,7 +56,7 @@ class LibbitcoinNode < Formula
         assert(configuration.refresh_transactions == true);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",

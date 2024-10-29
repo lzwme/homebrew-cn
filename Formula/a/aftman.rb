@@ -35,10 +35,10 @@ class Aftman < Formula
   end
 
   test do
-    (testpath"aftman.toml").write <<~EOS
+    (testpath"aftman.toml").write <<~TOML
       [tools]
       rojo = "rojo-rbxrojo@7.2.1"
-    EOS
+    TOML
 
     system bin"aftman", "install", "--no-trust-check"
 

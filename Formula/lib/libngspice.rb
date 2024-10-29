@@ -48,7 +48,7 @@ class Libngspice < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cstdlib>
       #include <ngspice/sharedspice.h>
       int ng_exit(int status, bool immediate, bool quitexit, int ident, void *userdata) {
@@ -57,7 +57,7 @@ class Libngspice < Formula
       int main() {
         return ngSpice_Init(NULL, NULL, ng_exit, NULL, NULL, NULL, NULL);
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lngspice", "-o", "test"
     system "./test"
   end

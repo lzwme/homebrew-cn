@@ -34,7 +34,7 @@ class Himalaya < Formula
 
   test do
     # See https:github.comsoywodhimalaya#configuration
-    (testpath".confighimalayaconfig.toml").write <<~EOS
+    (testpath".confighimalayaconfig.toml").write <<~TOML
       name = "Your full name"
       downloads-dir = "abspathtodownloads"
       signature = """
@@ -59,7 +59,7 @@ class Himalaya < Formula
       smtp-login = "your.email@gmail.com"
       smtp-auth  = "passwd"
       smtp-passwd = { cmd = "echo password" }
-    EOS
+    TOML
 
     assert_match "Error: cannot login to imap server", shell_output(bin"himalaya 2>&1", 1)
   end

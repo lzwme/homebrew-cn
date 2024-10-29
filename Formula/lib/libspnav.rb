@@ -32,7 +32,7 @@ class Libspnav < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <spnav.h>
 
       int main() {
@@ -40,7 +40,7 @@ class Libspnav < Formula
         if (connected) spnav_close();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lspnav", "-lm", "-o", "test"
     system ".test"
   end

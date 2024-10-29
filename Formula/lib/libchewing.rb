@@ -31,7 +31,7 @@ class Libchewing < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdlib.h>
       #include <chewingchewing.h>
       int main()
@@ -49,7 +49,7 @@ class Libchewing < Formula
           chewing_delete(ctx);
           return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lchewing", "-o", "test"
     system ".test"
   end

@@ -45,7 +45,7 @@ class LibbitcoinClient < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinclient.hpp>
       class stream_fixture
         : public libbitcoin::client::stream
@@ -100,7 +100,7 @@ class LibbitcoinClient < Formula
         assert(to_string(capture.out[0]) == "blockchain.fetch_history3");
         assert(libbitcoin::encode_base16(capture.out[2]) == "f85beb6356d0813ddb0dbb14230a249fe931a13578563412");
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",

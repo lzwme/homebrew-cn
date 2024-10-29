@@ -55,7 +55,7 @@ class Libsolv < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <solvpool.h>
       #include <solvrepo.h>
 
@@ -66,7 +66,7 @@ class Libsolv < Formula
 
         pool_free(pool);
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lsolv", "-o", "test"
     system ".test"
   end

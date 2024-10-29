@@ -43,12 +43,12 @@ class Libwpd < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libwpd/libwpd.h>
       int main() {
         return libwpd::WPD_OK;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp",
                    "-I#{Formula["librevenge"].opt_include}/librevenge-0.0",
                    "-I#{include}/libwpd-0.10",

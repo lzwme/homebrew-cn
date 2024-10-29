@@ -28,7 +28,7 @@ class Log4cxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <log4cxx/logger.h>
       #include <log4cxx/propertyconfigurator.h>
       int main() {
@@ -40,7 +40,7 @@ class Log4cxx < Formula
 
         return 1;
       }
-    EOS
+    CPP
 
     (testpath/"log4cxx.config").write <<~EOS
       log4j.rootLogger=debug, stdout, R

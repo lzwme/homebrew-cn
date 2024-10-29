@@ -66,12 +66,12 @@ class Libetonyek < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <libetonyekEtonyekDocument.h>
       int main() {
         return libetonyek::EtonyekDocument::RESULT_OK;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{Formula["librevenge"].include}librevenge-0.0",
                     "-I#{include}libetonyek-0.1",

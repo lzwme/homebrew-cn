@@ -58,7 +58,7 @@ class LibbitcoinSystem < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinsystem.hpp>
       int main() {
         const auto block = bc::chain::block::genesis_mainnet();
@@ -69,7 +69,7 @@ class LibbitcoinSystem < Formula
         std::cout << message << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp",
                     "-I#{boost.include}",
                     "-L#{lib}", "-lbitcoin-system",

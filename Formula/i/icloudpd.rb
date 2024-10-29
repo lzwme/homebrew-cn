@@ -5,18 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.24.0",
-      revision: "0e608f6fa412bbfa32fa711a73afad8070492991"
+      tag:      "v1.24.1",
+      revision: "e8121e6dd7db697b136ebe98490a9219058bfa6d"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94565c94aa0e30b0c6fe64ef0e33984a4e935760fd9d20f681643d2adf7a50d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a006608d738088edb6830ebb508cfa8b24697b201480a7f862d8584bae7ea27b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca89d5a2c8e0954282aa1c7952891b2cdd6fc987dc57d5635f789e3c888f4509"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e53841ecf3e85108dfef4d26acb3ff9f38c616dec83e909c743d73ce4451a065"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b3c8ec8054fd1d3043952484cc18b460206f08309e54696be8f2ba722751a87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa4110cfabbb99557ddde3d631be03c1373262ba136ebbc3b7eaa343190100e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97ced6377beb6a41bcb800a0a2434e2f12c89c918f9a1c2a8ed3d0c1b632cc7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "305178747d6429e18a7cb3e78f34dbb8b492a37de0749da37303dcd74dc9788e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d797fa3e29699982c14186734d144ca6a2d96fa0048b82d08decaaebd8d068b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7046235e8a0be640269ca91265abf42a8d11cff7571678101232c89d2d7206b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "74000c6f764df01c9d0e04f74460b06881094b76aa4af3dd00f59e46ac667fdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c1809be4f02c772a768affe0bd9862f437afaa3abd34bc0d8fdc6aa3903842d"
   end
 
   depends_on "python@3.13"

@@ -9,6 +9,14 @@ cask "augur" do
 
   app "augur.app"
 
+  zap trash: [
+    "~LibraryApplication Supportaugur",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsnet.augur.augur.sfl*",
+    "~LibraryLogsaugur",
+    "~LibraryPreferencesnet.augur.augur.plist",
+    "~LibrarySaved Application Statenet.augur.augur.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

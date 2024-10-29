@@ -37,7 +37,7 @@ class LibxmlxxAT4 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libxml++/libxml++.h>
 
       int main(int argc, char *argv[])
@@ -47,7 +47,7 @@ class LibxmlxxAT4 < Formula
          xmlpp::Element *rootnode = document.create_root_node("homebrew");
          return 0;
       }
-    EOS
+    CPP
     command = "#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml++-4.0"
     flags = shell_output(command).strip.split
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags

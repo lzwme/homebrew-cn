@@ -45,7 +45,7 @@ class LibbitcoinProtocol < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinprotocol.hpp>
       int main() {
         libbitcoin::protocol::zmq::message instance;
@@ -53,7 +53,7 @@ class LibbitcoinProtocol < Formula
         assert(!instance.empty());
         assert(instance.size() == 1u);
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",

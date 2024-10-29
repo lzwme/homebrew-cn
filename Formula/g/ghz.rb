@@ -30,14 +30,14 @@ class Ghz < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}ghz -v 2>&1")
-    (testpath"config.toml").write <<~EOS
+    (testpath"config.toml").write <<~TOML
       proto = "greeter.proto"
       call = "helloworld.Greeter.SayHello"
       host = "0.0.0.0:50051"
       insecure = true
       [data]
       name = "Bob"
-    EOS
+    TOML
     assert_match "open greeter.proto: no such file or directory",
       shell_output("#{bin}ghz --config config.toml 2>&1", 1)
   end

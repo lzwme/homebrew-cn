@@ -37,7 +37,7 @@ class Libucl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <ucl++.h>
       #include <string>
       #include <cassert>
@@ -50,7 +50,7 @@ class Libucl < Formula
         assert(obj[std::string("foo")].string_value() == "bar");
         assert(obj[std::string("section")][std::string("flag")].bool_value());
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lucl", "-o", "test"
     system ".test"
   end

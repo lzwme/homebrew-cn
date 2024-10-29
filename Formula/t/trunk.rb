@@ -31,13 +31,13 @@ class Trunk < Formula
 
   test do
     ENV["TRUNK_CONFIG"] = testpath"Trunk.toml"
-    (testpath"Trunk.toml").write <<~EOS
+    (testpath"Trunk.toml").write <<~TOML
       trunk-version = ">=0.19.0"
 
       [build]
       target = "index.html"
       dist = "dist"
-    EOS
+    TOML
 
     assert_match "Configuration {\n", shell_output("#{bin}trunk config show")
 

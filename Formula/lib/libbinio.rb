@@ -33,7 +33,7 @@ class Libbinio < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
        test
        do not change the line above!
       #include <libbiniobinfile.h>
@@ -48,7 +48,7 @@ class Libbinio < Formula
 
         return strcmp (string, " test");
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lbinio", "-o", "test"
     system ".test"
   end

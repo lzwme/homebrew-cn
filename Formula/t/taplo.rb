@@ -36,12 +36,12 @@ class Taplo < Formula
 
   test do
     test_file = testpath"invalid.toml"
-    (testpath"invalid.toml").write <<~EOS
+    (testpath"invalid.toml").write <<~TOML
       # INVALID TOML DOC
       fruit = []
 
       [[fruit]] # Not allowed
-    EOS
+    TOML
 
     output = shell_output("#{bin}taplo lint #{test_file} 2>&1", 1)
     assert_match "expected array of tables", output

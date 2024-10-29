@@ -281,14 +281,14 @@ class LlvmAT15 < Formula
       }
     C
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       int main()
       {
         std::cout << "Hello World!" << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     # Testing default toolchain and SDK location.
     system bin"clang++", "-v",
@@ -386,13 +386,13 @@ class LlvmAT15 < Formula
         refute_match(libunwind, lib)
       end
 
-      (testpath"test_plugin.cpp").write <<~EOS
+      (testpath"test_plugin.cpp").write <<~CPP
         #include <iostream>
         __attribute__((visibility("default")))
         extern "C" void run_plugin() {
           std::cout << "Hello Plugin World!" << std::endl;
         }
-      EOS
+      CPP
       (testpath"test_plugin_main.c").write <<~C
         extern void run_plugin();
         int main() {
@@ -431,7 +431,7 @@ class LlvmAT15 < Formula
     EOS
     system bin"mlir-opt", "--split-input-file", "--verify-diagnostics", "test.mlir"
 
-    (testpath"scanbuildtest.cpp").write <<~EOS
+    (testpath"scanbuildtest.cpp").write <<~CPP
       #include <iostream>
       int main() {
         int *i = new int;
@@ -440,7 +440,7 @@ class LlvmAT15 < Formula
         std::cout << *i << std::endl;
         return 0;
       }
-    EOS
+    CPP
     assert_includes shell_output("#{bin}scan-build make scanbuildtest 2>&1"),
                     "warning: Use of memory after it is freed"
 

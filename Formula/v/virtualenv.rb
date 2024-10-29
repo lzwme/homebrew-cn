@@ -3,18 +3,18 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https:virtualenv.pypa.io"
-  url "https:files.pythonhosted.orgpackages107f192dd6ab6d91ebea7adf6c030eaf549b1ec0badda9f67a77b633602f66acvirtualenv-20.27.0.tar.gz"
-  sha256 "2ca56a68ed615b8fe4326d11a0dca5dfbe8fd68510fb6c6349163bed3c15f2b2"
+  url "https:files.pythonhosted.orgpackages8cb37b6a79c5c8cf6d90ea681310e169cf2db2884f4d583d16c6e1d5a75a4e04virtualenv-20.27.1.tar.gz"
+  sha256 "142c6be10212543b32c6c45d3d3893dff89112cc588b7d0879ae5a1ec03a47ba"
   license "MIT"
   head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fffd040d4c2380da273741048b882fdf5515cb2d8274765a72ae6aad6634da1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fffd040d4c2380da273741048b882fdf5515cb2d8274765a72ae6aad6634da1e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fffd040d4c2380da273741048b882fdf5515cb2d8274765a72ae6aad6634da1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "498b180a8409a544933d80403b43d732f670f75c3d30e6de6ae670b2ca2d6208"
-    sha256 cellar: :any_skip_relocation, ventura:       "498b180a8409a544933d80403b43d732f670f75c3d30e6de6ae670b2ca2d6208"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8255659b0a2613160da72e12f2c3b73ad98bb9a4b2a37fcc1dd984526f88b721"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11fce5f2b079b35fc1e4648678c4767c7b50debdef4412a52c8a0afc35445754"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11fce5f2b079b35fc1e4648678c4767c7b50debdef4412a52c8a0afc35445754"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11fce5f2b079b35fc1e4648678c4767c7b50debdef4412a52c8a0afc35445754"
+    sha256 cellar: :any_skip_relocation, sonoma:        "898494253c6d2066bac72c5cbe923c4d277c3ea808f21a52972994351a4ff8a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "898494253c6d2066bac72c5cbe923c4d277c3ea808f21a52972994351a4ff8a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "474032101317938d6cd1eb869e1adf8523bd1a79ecde2e8bf7e237df4972fa80"
   end
 
   depends_on "python@3.13"

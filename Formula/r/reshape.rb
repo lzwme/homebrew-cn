@@ -24,7 +24,7 @@ class Reshape < Formula
   end
 
   test do
-    (testpath"migrationstest.toml").write <<~EOS
+    (testpath"migrationstest.toml").write <<~TOML
       [[actions]]
       type = "create_table"
       name = "users"
@@ -38,7 +38,7 @@ class Reshape < Formula
         [[actions.columns]]
         name = "name"
         type = "TEXT"
-    EOS
+    TOML
 
     assert_match "SET search_path TO migration_test",
       shell_output("#{bin}reshape generate-schema-query")

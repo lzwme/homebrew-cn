@@ -63,7 +63,7 @@ class Libpinyin < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <pinyin.h>
 
       int main()
@@ -84,7 +84,7 @@ class Libpinyin < Formula
 
           return 0;
       }
-    EOS
+    CPP
     glib = Formula["glib"]
     flags = %W[
       -I#{include}libpinyin-#{version}

@@ -1,20 +1,18 @@
 class Katana < Formula
   desc "Crawling and spidering framework"
   homepage "https:github.comprojectdiscoverykatana"
-  url "https:github.comprojectdiscoverykatanaarchiverefstagsv1.1.0.tar.gz"
-  sha256 "d95921d3a4f01b5bdc60416f943d67b1622b222066e3e701f873d2947483b0a7"
+  url "https:github.comprojectdiscoverykatanaarchiverefstagsv1.1.1.tar.gz"
+  sha256 "8a22c1d940ddebad1b857c76edc21daa69f04bc5425c1e78680c05acc236d559"
   license "MIT"
   head "https:github.comprojectdiscoverykatana.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7547b3381f3f37a42ff0d640f4cdb47aa998c782eaad5450d720de9c295c84a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3aa8fbaa11155801f8d41d2e8bca59df6c848ff5684adbf3ce9958665ec691f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f337c4f91d142a3f72cfd1568a46761bd728d2970b004b640106b8f94708ff5e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "882c599862fa1cde6101ff80b3fc103294e9b76e705a1486d35b28d3ec06f224"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eaa45d8fdd61cfc2f7ce2602ef45fbbf530811890fe789b777f9ee8ffc5a5695"
-    sha256 cellar: :any_skip_relocation, ventura:        "00c70f58bc0c7fc7e51640fca83a73fe93656a5f85a6445fd28972a986b71934"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d2d71f63d2f100eb8709c1e30ac51e88dd4eb23de9ab07bc507e94f1cc66be4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eade19ed36dee4d421a2148e1bbed74e45b3601b84e0668460b7a4dd02833ba9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "591d926469cc2912114357fa56b38b3ce7abd66f353661748673b4137eab7175"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44f6733ebfbd43ebc273a04aba6ba97bd7ff5c7a50027e733d4a1595a35cdcf9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8eb093df19667a3296d38be2fbcfdf0fe30880aaa3917eb587d88bd4cccdfefb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e5a8b6c66ed3731fbf64d93718c004ab85b6b22195bed8d06a762c87977cb772"
+    sha256 cellar: :any_skip_relocation, ventura:       "56b94160bd49f2b9074d5f53eb175e0e592d62a882fb91512725dfe2a96446a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6930774a96299596c233d288bf3b54e0e606651e603982d28000c53abf21cbc3"
   end
 
   depends_on "go" => :build

@@ -39,7 +39,7 @@ class Libmediainfo < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #define _UNICODE
       #include <iostream>
       #include <string>
@@ -67,7 +67,7 @@ class Libmediainfo < Formula
           media_info.Close();
           return 1;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lmediainfo", "-o", "test"
     system ".test", test_fixtures("test.m4a")
   end

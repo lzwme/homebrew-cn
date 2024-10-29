@@ -42,14 +42,14 @@ class Libpulsar < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath/"test.cc").write <<~CPP
       #include <pulsar/Client.h>
 
       int main (int argc, char **argv) {
         pulsar::Client client("pulsar://localhost:6650");
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"

@@ -27,13 +27,13 @@ class Loc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdio.h>
       int main() {
         println("Hello World");
         return 0;
       }
-    EOS
+    CPP
     system bin"loc", "test.cpp"
   end
 end

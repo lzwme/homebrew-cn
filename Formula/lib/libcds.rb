@@ -34,7 +34,7 @@ class Libcds < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cdsinit.h>
 
       int main() {
@@ -43,7 +43,7 @@ class Libcds < Formula
         cds::Terminate();
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}", "-lcds", "-lpthread"
     system ".test"

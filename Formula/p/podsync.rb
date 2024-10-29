@@ -29,7 +29,7 @@ class Podsync < Formula
   test do
     port = free_port
 
-    (testpath"config.toml").write <<~EOS
+    (testpath"config.toml").write <<~TOML
       [server]
       port = #{port}
 
@@ -43,7 +43,7 @@ class Podsync < Formula
       [feeds]
         [feeds.ID1]
         url = "https:www.youtube.comchannelUCxC5Ls6DwqV0e-CYcAKkExQ"
-    EOS
+    TOML
 
     pid = fork do
       exec bin"podsync"

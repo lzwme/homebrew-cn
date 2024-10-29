@@ -38,13 +38,13 @@ class Librevenge < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <librevenge/librevenge.h>
       int main() {
         librevenge::RVNGString str;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-lrevenge-0.0",
                    "-I#{include}/librevenge-0.0", "-L#{lib}"
   end

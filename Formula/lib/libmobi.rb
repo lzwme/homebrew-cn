@@ -31,7 +31,7 @@ class Libmobi < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <mobi.h>
       int main() {
         MOBIData *m = mobi_init();
@@ -41,7 +41,7 @@ class Libmobi < Formula
         mobi_free(m);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lmobi", "-o", "test"
     system ".test"
   end

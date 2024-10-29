@@ -34,13 +34,13 @@ class Libpqxx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <pqxxpqxx>
       int main(int argc, char** argv) {
         pqxx::connection con;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpqxx",
            "-I#{include}", "-o", "test"
     # Running .test will fail because there is no running postgresql server

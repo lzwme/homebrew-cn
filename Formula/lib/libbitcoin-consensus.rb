@@ -52,7 +52,7 @@ class LibbitcoinConsensus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <string>
       #include <vector>
       #include <assert.h>
@@ -105,7 +105,7 @@ class LibbitcoinConsensus < Formula
         assert(result == libbitcoin::consensus::verify_result_tx_invalid);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp",
                     "-I#{libexec}include",
                     "-L#{lib}", "-L#{libexec}lib",

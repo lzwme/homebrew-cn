@@ -39,7 +39,7 @@ class LibvirtGlib < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libvirt-gconfig/libvirt-gconfig.h>
       #include <libvirt-glib/libvirt-glib.h>
       #include <libvirt-gobject/libvirt-gobject.h>
@@ -49,7 +49,7 @@ class LibvirtGlib < Formula
         gvir_interface_get_type();
         return 0;
       }
-    EOS
+    CPP
     libxml2 = if OS.mac?
       "#{MacOS.sdk_path}/usr/include/libxml2"
     else

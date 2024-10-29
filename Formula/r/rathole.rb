@@ -48,14 +48,14 @@ class Rathole < Formula
     bind_port = free_port
     service_port = free_port
 
-    (testpath"rathole.toml").write <<~EOS
+    (testpath"rathole.toml").write <<~TOML
       [server]
       bind_addr = "127.0.0.1:#{bind_port}"#{" "}
       default_token = "1234"#{" "}
 
       [server.services.foo]
       bind_addr = "127.0.0.1:#{service_port}"
-    EOS
+    TOML
 
     read, write = IO.pipe
     fork do

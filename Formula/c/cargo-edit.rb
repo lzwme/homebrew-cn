@@ -41,14 +41,14 @@ class CargoEdit < Formula
     crate = testpath"demo-crate"
     mkdir crate do
       (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
 
         [dependencies]
         clap = "2"
-      EOS
+      TOML
 
       system bin"cargo-set-version", "set-version", "0.2.0"
       assert_match 'version = "0.2.0"', (crate"Cargo.toml").read

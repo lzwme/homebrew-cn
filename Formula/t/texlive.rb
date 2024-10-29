@@ -411,9 +411,14 @@ class Texlive < Formula
               "selfautoparent:texmf", "selfautodir:sharetexmf"
 
     # icu4c 75+ needs C++17
+    # TODO: Remove in 2025 release
     ENV.append "CXXFLAGS", "-std=gnu++17"
 
-    args = std_configure_args + [
+    # Work around build failure on Intel Sonoma after updating to Xcode 16
+    # sh: line 1: 27478 Segmentation fault: 11  luajittex -ini -jobname=luajittex -progname=luajittex luatex.ini ...
+    ENV.O1 if DevelopmentTools.clang_build_version == 1600 && Hardware::CPU.intel?
+
+    args = [
       "--disable-dvisvgm", # needs its own formula
       "--disable-missing",
       "--disable-native-texlive-build", # needed when doing a distro build
@@ -424,7 +429,6 @@ class Texlive < Formula
       "--enable-build-in-source-tree",
       "--enable-shared",
       "--enable-compiler-warnings=yes",
-      "--with-banner-add=#{tap.user}",
       "--with-system-clisp-runtime=system",
       "--with-system-cairo",
       "--with-system-freetype2",
@@ -440,6 +444,7 @@ class Texlive < Formula
       "--with-system-potrace",
       "--with-system-zlib",
     ]
+    args << "--with-banner-add=#{tap.user}" if tap
 
     args << if OS.mac?
       "--without-x"
@@ -448,7 +453,7 @@ class Texlive < Formula
       "--with-xdvi-x-toolkit=xaw"
     end
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
     system "make", "texlinks"
@@ -466,9 +471,21 @@ class Texlive < Formula
     # Create tlmgr config file.  This file limits the actions that the user
     # can perform in 'system' mode, which would write to the cellar.  'tlmgr' should
     # be used with --usermode whenever possible.
-    (share"texmf-configtlmgrconfig").write <<~EOS
-      allowed-actions=candidates,check,dump-tlpdb,help,info,list,print-platform,print-platform-info,search,show,version,init-usertree
-    EOS
+    actions = %w[
+      candidates
+      check
+      dump-tlpdb
+      help
+      info
+      init-usertree
+      list
+      print-platform
+      print-platform-info
+      search
+      show
+      version
+    ]
+    (share"texmf-configtlmgrconfig").write "allowed-actions=#{actions.join(",")}\n"
 
     # Delete some Perl scripts that are provided by existing formulae as newer versions.
     rm bin"latexindent" # provided by latexindent formula
@@ -561,7 +578,7 @@ class Texlive < Formula
     assert_match "revision", shell_output("#{bin}tlmgr --version")
     assert_match "AMS mathematical facilities for LaTeX", shell_output("#{bin}tlmgr info amsmath")
 
-    (testpath"test.latex").write <<~EOS
+    (testpath"test.latex").write <<~LATEX
       \\documentclass[12pt]{article}
       \\usepackage[utf8]{inputenc}
       \\usepackage{amsmath}
@@ -587,7 +604,7 @@ class Texlive < Formula
       \\lipsum[5]
 
       \\end{document}
-    EOS
+    LATEX
 
     assert_match "Output written on test.dvi", shell_output("#{bin}latex #{testpath}test.latex")
     assert_predicate testpath"test.dvi", :exist?

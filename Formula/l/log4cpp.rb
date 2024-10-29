@@ -37,7 +37,7 @@ class Log4cpp < Formula
   end
 
   test do
-    (testpath"log4cpp.cpp").write <<~EOS
+    (testpath"log4cpp.cpp").write <<~CPP
       #include <log4cppCategory.hh>
       #include <log4cppPropertyConfigurator.hh>
       #include <log4cppOstreamAppender.hh>
@@ -62,7 +62,7 @@ class Log4cpp < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "log4cpp.cpp", "-L#{lib}", "-llog4cpp", "-o", "log4cpp"
     system ".log4cpp"
   end

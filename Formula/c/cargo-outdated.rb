@@ -62,7 +62,7 @@ class CargoOutdated < Formula
 
     crate = testpath"demo-crate"
     mkdir crate do
-      (crate"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -72,7 +72,7 @@ class CargoOutdated < Formula
 
         [dependencies]
         libc = "0.1"
-      EOS
+      TOML
 
       (crate"lib.rs").write "use libc;"
 

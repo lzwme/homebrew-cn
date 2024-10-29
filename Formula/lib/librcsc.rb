@@ -36,13 +36,13 @@ class Librcsc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <rcscrcg.h>
       int main() {
         rcsc::rcg::PlayerT p;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-L#{lib}", "-lrcsc"
     system ".test"
   end

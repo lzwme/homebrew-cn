@@ -38,14 +38,14 @@ class LibtorrentRakshasa < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <string>
       #include <torrenttorrent.h>
       int main(int argc, char* argv[])
       {
         return strcmp(torrent::version(), argv[1]);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-ltorrent"
     system ".test", version.to_s
   end

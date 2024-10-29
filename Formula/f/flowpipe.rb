@@ -1,8 +1,8 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
   homepage "https:flowpipe.io"
-  url "https:github.comturbotflowpipearchiverefstagsv1.0.1.tar.gz"
-  sha256 "d911d652e8d5c35f9aa4f65997269d0ed46f71175f8c6c83c8934745ead683bf"
+  url "https:github.comturbotflowpipearchiverefstagsv1.0.2.tar.gz"
+  sha256 "5e8a54ae8f26de64c7b0ee906bebe36396364ea3d7f2c9098ecf9585ba916f77"
   license "AGPL-3.0-only"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,22 +14,25 @@ class Flowpipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59f1536fb04247694c43f4ffb104cc4201d6f551a3573654b7a02bf0421afa9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "333418eb7f0a0d2a457d8cf4778a5f24f3441f5d0014a5292fcc1013e7f9ec01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bba7fe16cfbd4cd143a29371cfcd0dbb90ea48701df1ed7ca904595ec9135a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a394399a0b7f562e4786adb4a8b058361235de871050e98800c775970f6843a"
-    sha256 cellar: :any_skip_relocation, ventura:       "077212975697fb8ea0e318583896682abab386f6b8b65e5c91081c64226b306a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716ed32b0fd61be265b62e347a21c1a219a3200434ae94400f22617a4fbfe044"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc55463b2e57142c31f20e3a79a920aca266acf63d0d86ccd1a1ed05b4f2b766"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2326c6d402c0d4190700cb93abca15c4f365a1d0a80708216092d50a8556f6b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "446396483feccbfead6753687098a7ef377a258593b3f6c2dbec93ea91c66a9a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "223803a8a3fd787e5b065f308e3e49da0678059321467033ec203ded31cae0e8"
+    sha256 cellar: :any_skip_relocation, ventura:       "c0afd6b380a527805d1122c6957bbe6d707b0d82b86ea3c0d6574f4578d6ea0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9cb0359f1eea710d15fee1f34dd57d22b545710ddc06c8d6f42c22d4fd00ba0"
   end
 
-  depends_on "corepack" => :build
   depends_on "go" => :build
   depends_on "node" => :build
 
   def install
+    ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
+
+    system "corepack", "enable", "--install-directory", buildpath
+
     cd "uiform" do
-      system "yarn", "install"
-      system "yarn", "build"
+      system buildpath"yarn", "install"
+      system buildpath"yarn", "build"
     end
 
     ldflags = %W[

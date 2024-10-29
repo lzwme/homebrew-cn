@@ -44,7 +44,7 @@ class LibbitcoinDatabase < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoindatabase.hpp>
       using namespace libbitcoin::database;
       using namespace libbitcoin::chain;
@@ -55,7 +55,7 @@ class LibbitcoinDatabase < Formula
         assert(cache.size() == 1u);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",

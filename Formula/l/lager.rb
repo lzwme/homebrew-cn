@@ -26,7 +26,7 @@ class Lager < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <lagerstate.hpp>
       #include <string>
@@ -45,7 +45,7 @@ class Lager < Formula
         state2.set(2);
         std::cout << state2.get() << std::endl;  2
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "test.cpp", "-o", "test"
     system ".test"

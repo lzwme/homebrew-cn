@@ -37,14 +37,14 @@ class Libsquish < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath/"test.cc").write <<~CPP
       #include <stdio.h>
       #include <squish.h>
       int main(void) {
         printf("%d", GetStorageRequirements(640, 480, squish::kDxt1));
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-o", "test", "test.cc", "-L#{lib}", "-lsquish"
     assert_equal "153600", shell_output("./test")
   end

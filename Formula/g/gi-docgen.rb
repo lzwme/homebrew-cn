@@ -62,7 +62,7 @@ class GiDocgen < Formula
   end
 
   test do
-    (testpath"brew.toml").write <<~EOS
+    (testpath"brew.toml").write <<~TOML
       [library]
       description = "Homebrew gi-docgen formula test"
       authors = "Homebrew"
@@ -70,7 +70,7 @@ class GiDocgen < Formula
       browse_url = "https:github.comHomebrewbrew"
       repository_url = "https:github.comHomebrewbrew.git"
       website_url = "https:brew.sh"
-    EOS
+    TOML
 
     (testpath"brew.gir").write <<~EOS
       <?xml version="1.0"?>

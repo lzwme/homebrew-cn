@@ -1,19 +1,17 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
   homepage "https:github.comyonahdkor"
-  url "https:github.comyonahdkorarchiverefstagsv0.5.5.tar.gz"
-  sha256 "053b7ed1ac76c8dee9a43d06d8ea4252ad9f4796a63f9cf3e27f887eee5401e2"
+  url "https:github.comyonahdkorarchiverefstagsv0.5.6.tar.gz"
+  sha256 "a655d04eadde49c23fa8171248423304adb6db1da695df19b28863b90cae8e3a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "342d7e19c5cabb028f2ddd5e5177360c820309af2a630d053e355a1392486b42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3cee3cce2ac99b591a381ce3e2c93286110881c866acc07f303b733dfd6125c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49408898059b677e032a69f4609254e6e67bdc23e0c2f87be85799afb210eb5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "49408898059b677e032a69f4609254e6e67bdc23e0c2f87be85799afb210eb5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "49408898059b677e032a69f4609254e6e67bdc23e0c2f87be85799afb210eb5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e634e7499ba0c9628a01bba64de5bbdbd411d2e91b31de05f35b8e7bce36db3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba38a28dac4a58367ce3f4277013227adedd4e9b3ac16abbd0624c050a6aa431"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba38a28dac4a58367ce3f4277013227adedd4e9b3ac16abbd0624c050a6aa431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df19b69c5ac4a9c000d0b1df27c1d955d1676c19ed64e6afaa763d10aa9cf47c"
   end
 
   depends_on "go" => :build

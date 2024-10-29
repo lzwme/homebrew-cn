@@ -32,14 +32,14 @@ class Libprotoident < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <libprotoident.h>
 
       int main() {
         lpi_init_library();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lprotoident", "-o", "test"
     system ".test"
   end

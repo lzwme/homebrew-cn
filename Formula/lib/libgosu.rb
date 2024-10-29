@@ -39,7 +39,7 @@ class Libgosu < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdlib.h>
       #include <GosuGosu.hpp>
 
@@ -63,7 +63,7 @@ class Libgosu < Formula
           MyWindow window;
           window.show();
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lgosu", "-I#{include}", "-std=c++17"
 

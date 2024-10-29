@@ -33,7 +33,7 @@ class CargoAbout < Formula
 
     crate = testpath"demo-crate"
     mkdir crate do
-      (crate"srcmain.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~RUST
         #[cfg(test)]
         mod tests {
           #[test]
@@ -41,13 +41,13 @@ class CargoAbout < Formula
             assert_eq!(1 + 1, 2);
           }
         }
-      EOS
-      (crate"Cargo.toml").write <<~EOS
+      RUST
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
         license = "MIT"
-      EOS
+      TOML
 
       system bin"cargo-about", "init"
       assert_predicate crate"about.hbs", :exist?

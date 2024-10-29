@@ -45,7 +45,7 @@ class LibbitcoinBlockchain < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <bitcoinblockchain.hpp>
       int main() {
         static const auto default_block_hash = libbitcoin::hash_literal("14508459b221041eab257d2baaa7459775ba748246c8403609eb708f0e57e74b");
@@ -55,7 +55,7 @@ class LibbitcoinBlockchain < Formula
         assert(instance.hash() == default_block_hash);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-I#{libexec}include",

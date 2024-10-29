@@ -44,7 +44,7 @@ class Libff < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <libffalgebracurvesedwardsedwards_pp.hpp>
 
       using namespace libff;
@@ -53,7 +53,7 @@ class Libff < Formula
         edwards_pp::init_public_params();
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}", "-lff", "-o", "test"
     system ".test"

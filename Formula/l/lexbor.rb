@@ -26,7 +26,7 @@ class Lexbor < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <lexborhtmlparser.h>
       int main() {
         static const lxb_char_t html[] = "<div>Hello, World!<div>";
@@ -37,7 +37,7 @@ class Lexbor < Formula
         lxb_html_document_destroy(document);
         return EXIT_SUCCESS;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-llexbor", "-o", "test"
     system ".test"
   end

@@ -35,7 +35,7 @@ class Jrtplib < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <jrtplib3/rtpsessionparams.h>
       using namespace jrtplib;
       int main() {
@@ -43,7 +43,7 @@ class Jrtplib < Formula
         sessionparams.SetOwnTimestampUnit(1.0/8000.0);
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-ljrtp",
                     "-o", "test"

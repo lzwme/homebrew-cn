@@ -32,13 +32,13 @@ class Libmpdclient < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <mpdclient.h>
       int main() {
         mpd_connection_new(NULL, 0, 30000);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lmpdclient", "-o", "test"
     system ".test"
   end

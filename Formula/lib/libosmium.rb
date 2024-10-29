@@ -50,7 +50,7 @@ class Libosmium < Formula
       <osm>
     EOS
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cstdlib>
       #include <iostream>
       #include <osmiumioxml_input.hpp>
@@ -61,7 +61,7 @@ class Libosmium < Formula
         while (osmium::memory::Buffer buffer = reader.read()) {}
         reader.close();
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-lexpat", "-o", "libosmium_read", "-pthread"
     system ".libosmium_read", "test.osm"

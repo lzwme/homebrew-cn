@@ -49,7 +49,7 @@ class Joern < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       void print_number(int x) {
         std::cout << x << std::endl;
@@ -59,7 +59,7 @@ class Joern < Formula
         print_number(42);
         return 0;
       }
-    EOS
+    CPP
 
     assert_match "Parsing code", shell_output("#{bin}joern-parse test.cpp")
     assert_predicate testpath"cpg.bin", :exist?

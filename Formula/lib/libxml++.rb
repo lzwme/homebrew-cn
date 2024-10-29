@@ -35,7 +35,7 @@ class Libxmlxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libxml++/libxml++.h>
 
       int main(int argc, char *argv[])
@@ -45,7 +45,7 @@ class Libxmlxx < Formula
          xmlpp::Element *rootnode = document.create_root_node("homebrew");
          return 0;
       }
-    EOS
+    CPP
     ENV.libxml2
     gettext = Formula["gettext"]
     glib = Formula["glib"]

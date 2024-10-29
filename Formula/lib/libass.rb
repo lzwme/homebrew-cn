@@ -51,7 +51,7 @@ class Libass < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "assass.h"
       int main() {
         ASS_Library *library;
@@ -73,7 +73,7 @@ class Libass < Formula
           return 1;
         }
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lass", "-o", "test"
     system ".test"
   end

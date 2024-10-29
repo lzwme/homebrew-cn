@@ -27,7 +27,7 @@ class Libolm < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <vector>
       #include <stdlib.h>
@@ -46,7 +46,7 @@ class Libolm < Formula
         cout << output;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cc, "test.cpp", "-L#{lib}", "-lolm", "-lstdc++", "-o", "test"
     assert_equal "A2daxT/5zRU1zMffzfosRYxSGDcfQY3BNvLRmsH76KU", shell_output("./test").strip

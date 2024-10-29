@@ -52,14 +52,14 @@ class CargoUdeps < Formula
     crate = testpath"demo-crate"
     mkdir crate do
       (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
 
         [dependencies]
         clap = "3"
-      EOS
+      TOML
 
       output = shell_output("cargo udeps 2>&1", 101)
       # `cargo udeps` can be installed on Rust stable, but only runs with cargo with `cargo +nightly udeps`

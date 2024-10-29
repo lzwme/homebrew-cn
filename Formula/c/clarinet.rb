@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https:www.hiro.soclarinet"
-  url "https:github.comhirosystemsclarinetarchiverefstagsv2.10.0.tar.gz"
-  sha256 "c8b85de0c67a3ec83c7f5a0a813e60dd3820e4469a411aeda5e9a100bdc8b48a"
+  url "https:github.comhirosystemsclarinetarchiverefstagsv2.11.0.tar.gz"
+  sha256 "411f33c26682a43f6323c84bc93ad924dc51ee45971f6607912ea296a045c243"
   license "GPL-3.0-only"
   head "https:github.comhirosystemsclarinet.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bb05d1ed87e04c6c35421ddb593718149a278083fca73f5fd06ad7c1581c956"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d6601a4f9b639d66593cd83f91442cb13152a61d6faf9a89c764aee2422e5f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe450c2f8b4011301d86029382aa0b08af1b490c5a1ec3c278d12a6145f968a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4edeb57c3de71a4d0c4279152963ee093b21fc3311dab7eeb7907c75841f4d43"
-    sha256 cellar: :any_skip_relocation, ventura:       "7034a4b15a821468527ffe1f3658e84814b54a70f65a83e562996e3023616f41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f647dcd1830501a5bf76ff09ffbce4da400cbdbd8b4eb8cfa30173087f0230a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "948135b900e5d34488e8b5a34dc16eebd5d17c6e6121c4ca0fa37a2a6289b873"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fb661d1dc86a58f0e2bd62f8ed41bfcb51b0e9e0b0bce012565502b5548c5a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "185969e885d5d652218933d03b5a0c8a00f0e5d021dc7976f9a0d7d644f0ebf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2fefd2f387d9513ec4d8023eec1a94137bb8c01a7464eb8babce415648a73883"
+    sha256 cellar: :any_skip_relocation, ventura:       "2eb6ce80063e90be1bfd66ceb0f962b8128a1080aae4436b8dd724ef1941d8a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a12af4106d957173acab2348767e98b1446917b4e96ed220629836fff46f0b"
   end
 
   depends_on "rust" => :build

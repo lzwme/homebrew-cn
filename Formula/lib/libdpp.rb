@@ -28,7 +28,7 @@ class Libdpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <dppdpp.h>
 
       int main() {
@@ -49,7 +49,7 @@ class Libdpp < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "-L#{lib}", "-I#{include}", "test.cpp", "-o", "test", "-ldpp"
     assert_match "Connection error", shell_output(".test 2>&1", 1)
   end

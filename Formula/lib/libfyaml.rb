@@ -25,7 +25,7 @@ class Libfyaml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #ifdef HAVE_CONFIG_H
       #include "config.h"
       #endif
@@ -38,7 +38,7 @@ class Libfyaml < Formula
         std::cout << fy_library_version() << std::endl;
         return EXIT_SUCCESS;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lfyaml", "-o", "test"
     assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal version.to_s, shell_output("#{testpath}test").strip

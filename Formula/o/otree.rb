@@ -1,20 +1,18 @@
 class Otree < Formula
   desc "Command-line tool to view objects (JSONYAMLTOML) in TUI tree widget"
   homepage "https:github.comfioncatotree"
-  url "https:github.comfioncatotreearchiverefstagsv0.2.0.tar.gz"
-  sha256 "58ff9da6ed8653787082771377d6a7e099b187651f3e288856a7eb1f58355c81"
+  url "https:github.comfioncatotreearchiverefstagsv0.3.0.tar.gz"
+  sha256 "63a63b09af2186d2bc3aa8631989f1fbdeb7659d7f1857be7fae1e0af4d42fde"
   license "MIT"
   head "https:github.comfioncatotree.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4a7c9a77e048fd48aafaf6cde49a86e7e590c2e3c9c06aab768cbe56d558906b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f4b04b2aae647bd6d76aa701fb9169daaccc83662c3f4b94698d380444dae9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9709bd34263c5a6dfb0d1cde0dbe30fb513a4776818e25ab699bb252e5806da9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49e6a2a79ae6a2bb8ddbaafbcf8289819d3e27b3632cf0362029186527b46091"
-    sha256 cellar: :any_skip_relocation, sonoma:         "011c3bcce610e133634eba74da4db716c97a6e259c8bc697851554778fb7aaa3"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ee61f2347a0cf82b6c47456d4ab85bcfc6a2c6f7917f8af0bcd7021c098b64c"
-    sha256 cellar: :any_skip_relocation, monterey:       "041038d7b1e7f796b590cbed781d2b9757be05c427307a5d2302bca795ec9c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ca571bf420fc505f2665110ade42e35ee4a6e32c813e7f979a35f9d188c3425"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "065cd405c1aece0c6b42f4634056969a3beea49263140cd5227515e3220bb0ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb70a7a0af610aeca065fb00950f4810cc1a78618c45f48c69f5ca462a330ef2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6fc182480520ba8b09966d55887ab5315e449cb1f3d4af1ead0788d2fb2c41c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ba8f2709bce3ec34adc7911c233d1c95ce34d75f8da01e2bdea3afad5ecd5f7"
+    sha256 cellar: :any_skip_relocation, ventura:       "b56cc29e18911359278a7618e2a8e667433a90ebd532fe76ad4f841588a57c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95f451a551bbb740a4356ba67f43d68fa9018ccdd2bc774a5dc3e72482d3fcfc"
   end
 
   depends_on "rust" => :build

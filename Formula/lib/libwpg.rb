@@ -34,12 +34,12 @@ class Libwpg < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libwpg/libwpg.h>
       int main() {
         return libwpg::WPG_AUTODETECT;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp",
                    "-I#{Formula["librevenge"].opt_include}/librevenge-0.0",
                    "-I#{include}/libwpg-0.3",

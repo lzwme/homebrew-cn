@@ -32,7 +32,7 @@ class Libwebm < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <mkvwriter.hpp>
       #include <iostream>
 
@@ -50,7 +50,7 @@ class Libwebm < Formula
         std::cout << "MkvWriter test completed successfully." << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lwebm"
     system ".test"

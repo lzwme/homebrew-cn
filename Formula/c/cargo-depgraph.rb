@@ -38,14 +38,14 @@ class CargoDepgraph < Formula
     crate = testpath"demo-crate"
     mkdir crate do
       (crate"srcmain.rs").write " Dummy file"
-      (crate"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~TOML
         [package]
         name = "demo-crate"
         version = "0.1.0"
 
         [dependencies]
         rustc-std-workspace-core = "1.0.0" # explicitly empty crate for testing
-      EOS
+      TOML
       expected = <<~EOS
         digraph {
             0 [ label = "demo-crate" shape = box]

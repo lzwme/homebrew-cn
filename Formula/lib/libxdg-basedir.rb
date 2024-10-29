@@ -31,7 +31,7 @@ class LibxdgBasedir < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <basedir.h>
       int main() {
         xdgHandle handle;
@@ -39,7 +39,7 @@ class LibxdgBasedir < Formula
         xdgWipeHandle(&handle);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lxdg-basedir", "-o", "test"
     system ".test"
   end

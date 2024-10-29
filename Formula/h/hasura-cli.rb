@@ -23,6 +23,8 @@ class HasuraCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b28dab837f5e89e4f3d2e21351274f68d2447049e7138a76c55e230f552968e3"
   end
 
+  deprecate! date: "2024-10-29", because: "uses `node@18`, which is deprecated"
+
   depends_on "go" => :build
   depends_on "node@18" => :build
 

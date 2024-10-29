@@ -30,7 +30,7 @@ class LibgrapeLite < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <grapegrape.h>
 
@@ -47,7 +47,7 @@ class LibgrapeLite < Formula
          finalize
         grape::FinalizeMPIComm();
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cc", "-std=c++11",
                     "-I#{Formula["glog"].include}",

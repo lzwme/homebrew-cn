@@ -7,6 +7,7 @@ class Semgrep < Formula
       tag:      "v1.93.0",
       revision: "09228d4cd954a0f686beac5788dbd48dc0decc26"
   license "LGPL-2.1-only"
+  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -15,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a193ac223541f93fce2ce57c3b306539683107d87367661f82bdad02aa38546"
-    sha256 cellar: :any,                 arm64_sonoma:  "763d175e424459ee8033a276c88497167252ff679ffaf843a7e89b2f17d57d8f"
-    sha256 cellar: :any,                 arm64_ventura: "f8943eafe7c518a93969d482644da00dff88725fab143d3cb7c82eea4d07a7db"
-    sha256 cellar: :any,                 sonoma:        "6ec91928a8cb6d151516d119d21718aae4d03f6734582eeaf5c507009ad8c409"
-    sha256 cellar: :any,                 ventura:       "aab9c31f94584b0af0bab470350b67f224a8198f896b537eddb24b57b957c9df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c7b4156230181e7a02ac1d6b500dd81d20ad0a6edb04aa4fe49a85ceb49e02c"
+    sha256 cellar: :any,                 arm64_sequoia: "3ba2d479494e7608f6dedef101dfb6cf3a0a8d683cff5ad394cc44a38e4adc75"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d2487791c49923592086ea1ced4c7b08d5fe1de27976813542e1e7a92b63d9d"
+    sha256 cellar: :any,                 arm64_ventura: "4d697771722e16a11a08666c1f610a8e4e4e7e790079c2dbb099b6921c014a3b"
+    sha256 cellar: :any,                 sonoma:        "d41601294198b4039ae6f8284b7bfab3729882fbe7fae0f59945c7918fbbf45b"
+    sha256 cellar: :any,                 ventura:       "1076d2da0962b75babeac0f4b06df77ea595755c8ae243422a9e4d08ec7f56d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e23265f432598bcdb4f4d7c4c6310be90a50598d19b8d27a52898f8196fb83f"
   end
 
   depends_on "autoconf" => :build
@@ -335,7 +336,9 @@ class Semgrep < Formula
 
     venv.pip_install_and_link buildpath"cli"
 
-    generate_completions_from_executable(bin"semgrep", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin"semgrep", "--legacy",
+                                         shells:                 [:fish, :zsh],
+                                         shell_parameter_format: :click)
   end
 
   test do
