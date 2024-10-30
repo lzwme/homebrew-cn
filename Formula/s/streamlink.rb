@@ -145,7 +145,7 @@ class Streamlink < Formula
       refute_match "Could not find metadata", output
     else
       output = shell_output("#{bin}streamlink --ffmpeg-no-validation -l debug '#{url}'", 1)
-      assert_match "Could not get video info - LOGIN_REQUIRED", output
+      assert_match(Could not get video info - LOGIN_REQUIRED|plugin does not support VOD content, output)
     end
   end
 end

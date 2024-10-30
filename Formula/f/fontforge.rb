@@ -8,13 +8,13 @@ class Fontforge < Formula
   head "https:github.comfontforgefontforge.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 arm64_sequoia: "c847e100b5a96a03d1c09119a24141b63714eabe9a6c5228be66c620a089283e"
-    sha256 arm64_sonoma:  "52e4ee7c9795fcd5d0a78f8e1af5d0fa3d6359ed17a44776882713961c984e64"
-    sha256 arm64_ventura: "7407da2b13369840b2a560717591af390cce5251a1fa676aab13402d05f2ef9e"
-    sha256 sonoma:        "6581ae0f6cf1c1cbbda62250b2711da937baaa463df83c2a53ac58f366601cdf"
-    sha256 ventura:       "29c86e972e84fa5bc6ae2a98f2a5ebc324037950da146b5d486159996100b12c"
-    sha256 x86_64_linux:  "ca389200fda1b853af47605d84eaff5a4ee72273f38964fd83aa2ed8b639610e"
+    rebuild 4
+    sha256 arm64_sequoia: "f3efe932a2d7e72caf599601b82ee40144cb2ea3a1bef0afd5698b20ab11ff94"
+    sha256 arm64_sonoma:  "0d843c5837f6634f8f3c2c2c2862f427f651d24670383e1a470a3e933e6065b4"
+    sha256 arm64_ventura: "a6c3b3307443666523cc29b8bec912c6b1f933fe96580f061478b257ad0a992f"
+    sha256 sonoma:        "174995c9c06977e05958d535f7065c443ecbd9b1a64f97c232f83296852866b9"
+    sha256 ventura:       "ca33c447dc43b3f8d73bd42eb933b1fe1882794898cf387e4f22714d20ee6420"
+    sha256 x86_64_linux:  "91cc737d5d5ff50542c7737cfe8f8f693d64a103b07839d7047a21cb9149e1ee"
   end
 
   depends_on "cmake" => :build
@@ -53,13 +53,16 @@ class Fontforge < Formula
     sha256 "e784c4c0fcf28e5e6c5b099d7540f53436d1be2969898ebacd25654d315c0072"
   end
 
-  # Replace distutils for python 3.12+: https:github.comfontforgefontforgepull5423
-  patch :DATA
+  def python3
+    "python3.13"
+  end
 
   def install
-    args = %w[
+    args = %W[
       -DENABLE_GUI=OFF
       -DENABLE_FONTFORGE_EXTRAS=ON
+      -DPython3_EXECUTABLE=#{which(python3)}
+      -DPYHOOK_INSTALL_DIR=#{Language::Python.site_packages(python3)}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -69,7 +72,7 @@ class Fontforge < Formula
 
   def caveats
     on_macos do
-      <<~EOS
+      <<~TEXT
         This formula only installs the command line utilities.
 
         FontForge.app can be downloaded directly from the website:
@@ -77,7 +80,7 @@ class Fontforge < Formula
 
         Alternatively, install with Homebrew Cask:
           brew install --cask fontforge
-      EOS
+      TEXT
     end
   end
 
@@ -87,10 +90,9 @@ class Fontforge < Formula
       sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
     end
 
-    python = Formula["python@3.13"].opt_bin"python3.13"
     system bin"fontforge", "-version"
     system bin"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
-    system python, "-c", "import fontforge; fontforge.font()"
+    system python3, "-c", "import fontforge; fontforge.font()"
 
     resource("homebrew-testdata").stage do
       ffscript = "fontforge.open('Ambrosia.sfd').generate('#{testpath}Ambrosia.woff2')"
@@ -102,22 +104,3 @@ class Fontforge < Formula
     assert_match "Web Open Font Format (Version 2)", fileres
   end
 end
-
-__END__
-diff --git apyhookCMakeLists.txt bpyhookCMakeLists.txt
-index dd48054..53708f1 100644
---- apyhookCMakeLists.txt
-+++ bpyhookCMakeLists.txt
-@@ -20,8 +20,11 @@ target_link_libraries(psMat_pyhook PRIVATE Python3::Module)
- # FindPython3 provides Python3_SITEARCH, but this is an absolute path
- # So do it ourselves, getting the prefix-relative path instead
- if(NOT DEFINED PYHOOK_INSTALL_DIR)
-+  if(APPLE)
-+    set(_PYHOOK_SYSCONFIG_PREFIX " 'posix_prefix',")
-+  endif()
-   execute_process(
--    COMMAND "${Python3_EXECUTABLE}" -c "import distutils.sysconfig as sc; print(sc.get_python_lib(prefix='', plat_specific=True,standard_lib=False))"
-+    COMMAND "${Python3_EXECUTABLE}" -c "import sysconfig as sc; print(sc.get_path('platlib',${_PYHOOK_SYSCONFIG_PREFIX} vars={'platbase': '.'}))"
-     RESULT_VARIABLE _pyhook_install_dir_result
-     OUTPUT_VARIABLE PYHOOK_INSTALL_DIR
-     OUTPUT_STRIP_TRAILING_WHITESPACE)

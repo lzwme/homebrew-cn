@@ -1,8 +1,8 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
   homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.84.tar.gz"
-  sha256 "25394810711d554b26a1e63f525363c8579464f818f1af0630fff6f602a57128"
+  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.85.tar.gz"
+  sha256 "ffb323c261834dd6f3b376ecacc4d8759f4bfe40dbf01314afa37a5f1f40ff4d"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aac4301a61fbee01422dd51ec629f54dc3100853fd009fd19ae961187d8de3ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c4ff8bae145f4cacbaef262ae462c0ad219a0cf4ac061dcefb3830bc0cd924a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dca34512c48a440709ae11aac44dd64daa32d9e7e5d05395d7d941b2d75b7f3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04781f2a0437618b132ef4467e988047cfaad5a06baa746fde28211665194567"
-    sha256 cellar: :any_skip_relocation, ventura:       "3e4a211fae1a6ec03f2143a6ea3b00b785ef0c07e838a51357dbb516bdfc2cf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "772251a256c2d2ca5ad3537dd6f45028114e1e56a8fbb165da33d34a3201b88c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cff14d049f0050b1dc0ef4239b50931a9b668455ed19463b64bb6fd98228e15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb3e743f0ed425b2b3cdb78c9e87f2059c5984fc54acb5394fd3cab9cb22b513"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d1990d6cd057131da27fe97de8b0927a92f105dea4d7ee411fe627fd893d1c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96e7a1d12ac09b447d8fdb49b47ff58a83ae0a811a764e06f956e0cc0d7ef9b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e10ddde52ac790724301dbaa4eeffc92ecb40649758a7e0bf97e867915e71a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61d92326dc54075fcb72c5de8955219b8d6c9839ea054d7d98008ab7c24c550"
   end
 
   depends_on "go" => :build

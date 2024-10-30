@@ -27,12 +27,13 @@ class WasiLibc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41e50492f948e7884a698f6d3d5f70463f3c93a69b30aeee5cbd122af245dd8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41e50492f948e7884a698f6d3d5f70463f3c93a69b30aeee5cbd122af245dd8b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "41e50492f948e7884a698f6d3d5f70463f3c93a69b30aeee5cbd122af245dd8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41e50492f948e7884a698f6d3d5f70463f3c93a69b30aeee5cbd122af245dd8b"
-    sha256 cellar: :any_skip_relocation, ventura:       "41e50492f948e7884a698f6d3d5f70463f3c93a69b30aeee5cbd122af245dd8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1558c51c7c69c2a4dc568a0f16ec3a132e8264b33942b8b23d617c5cd943f00"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
+    sha256 cellar: :any_skip_relocation, sonoma:        "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
+    sha256 cellar: :any_skip_relocation, ventura:       "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32bf0d734a80239892bcaa7c605aea4021e2e45bd2b906231219ab743da488c0"
   end
 
   depends_on "llvm" => [:build, :test]
@@ -57,13 +58,26 @@ class WasiLibc < Formula
       "WASM_NM=#{Formula["llvm"].opt_bin}llvm-nm",
       "INSTALL_DIR=#{share}wasi-sysroot",
     ]
+
+    # See targets at:
+    # https:github.comWebAssemblywasi-sdkblob5e04cd81eb749edb5642537d150ab1ab7aedabe9CMakeLists.txt#L14-L15
+    targets = %w[
+      wasm32-wasi
+      wasm32-wasip1
+      wasm32-wasip2
+      wasm32-wasip1-threads
+      wasm32-wasi-threads
+    ]
+
+    # See target flags at:
+    # https:github.comWebAssemblywasi-sdkblob5e04cd81eb749edb5642537d150ab1ab7aedabe9cmakewasi-sdk-sysroot.cmake#L117-L135
     target_flags = Hash.new { |h, k| h[k] = [] }
-    target_flags["wasm32-wasip1-threads"] << "THREAD_MODEL=posix"
+    targets.each { |target| target_flags[target] << "THREAD_MODEL=posix" if target.end_with?("-threads") }
     target_flags["wasm32-wasip2"] << "WASI_SNAPSHOT=p2"
-    targets = %w[wasm32-wasi wasm32-wasip1 wasm32-wasip1-threads wasm32-wasip2]
 
     targets.each do |target|
       system "make", *make_args, "TARGET_TRIPLE=#{target}", "install", *target_flags[target]
+      system "make", "clean"
     end
   end
 

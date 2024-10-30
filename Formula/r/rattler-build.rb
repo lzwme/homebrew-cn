@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https:github.comprefix-devrattler-build"
-  url "https:github.comprefix-devrattler-buildarchiverefstagsv0.28.1.tar.gz"
-  sha256 "c4de62bcc4191bc7e41ae04ca4126d0f10e5792b6e058bd0aadcdbe47f245d0d"
+  url "https:github.comprefix-devrattler-buildarchiverefstagsv0.28.2.tar.gz"
+  sha256 "fe2b0fe1ac8b14d2896dc2c18dcd4ff1a2c971995fec68b77e42bf6a8cf6441b"
   license "BSD-3-Clause"
   head "https:github.comprefix-devrattler-build.git", branch: "main"
 
@@ -15,12 +15,12 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a521a697a6d990d1b8154d436eeb92529afcd77d69060b4ae52dfaff900cafa5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc97a42acfa1eb3ef22e7085fe056a19021ea6d69eb5b73b4be6568674121927"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "09ae1733549f47e33287cf7ea3d81ceb676617d457b23670fc961fcfe881ac61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e3c467a87a9b04ad49b79239dde9dafda0181428bb64a4108cc2cb57c9d7bfb"
-    sha256 cellar: :any_skip_relocation, ventura:       "589d3134440c14ab7bf080428b9cbb3bfc767c0834b2f723a29e2a6b732a86c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e019281fe2c561f0072a4c55a19d3856855880c828cc34c96e601ec7bf4611"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "841aa188db17c5ea9fe25d5486e2913dd4ca0a75a2ed10442c674ba477e2ac57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75844d45dd47847bddfc40327aec6eb9a430394bbdd65cf657a6a3f904caa990"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "78c2c88f12e96a7792fa5f576136aa7c964f502d2a31bd4bf818af5fd1b388af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99ea92aea6601ea5c7efe8d78b407580d49d1a712b72d84c6dd45afe8f2938a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d97cb5aebfc7d8da6cb7f2228acdd7af5082c65e06c4f5b2c651fb15f3cfa279"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3c6dc7d76501cbc218bf1136476784d0233cc686c23d08652a92ee8f191010"
   end
 
   depends_on "pkg-config" => :build

@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.10.21.tar.gz"
-  sha256 "26d51a1e10396986dcfec62674444a107d75559511bc67b3056e848370166d64"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2024.10.29.tar.gz"
+  sha256 "b2cb45e2d564e4e0a8b3a10c38971bf1907e2ae90438e6370aa687545715eefd"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5c33984a9937f1166b308d63a9ead3210aab8127441cc438155bf15bae35e6b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "21028fd336053259e999a3b8171530833d30c1359f4bb13bf1f7913364105c0d"
-    sha256 cellar: :any,                 arm64_ventura: "73714ccd745e40c9a23bc14cfae3075d38e4f106d46e991e843a0e8ec07b0271"
-    sha256 cellar: :any,                 sonoma:        "f9397fcef44d80a74e3944bf7ca74f446dfa4e590f7b0dd74b702d7401b75af2"
-    sha256 cellar: :any,                 ventura:       "9b3a664cfb97d97cb0634df017528f21ae55e05ee24aad2efac71b428a4eae01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7926614a480e7a4def9282fe81975c5303eaa3eb7fcb19592f9ce09c8b6e556d"
+    sha256 cellar: :any,                 arm64_sequoia: "2a3c874f1852dc33bb7645cf32631401b4691c09ae614a184757fc2bfd5d6f4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "352a7842e2b58ff94887b09d3b354fc3d652922f3bd980b0834694f761691c7a"
+    sha256 cellar: :any,                 arm64_ventura: "bc38a9880ca00d8602477cfb3c1ac06c341a72bb52f0abef5726c6717a672d16"
+    sha256 cellar: :any,                 sonoma:        "7c8258c75f3c36737b36308f115dfb8d0738704dc028f35bdad73f9bad2698d9"
+    sha256 cellar: :any,                 ventura:       "2a52c94c7a9b09fcd22e87269fb145e9775152f97fa2c55440c81f6d9930a285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8725b9eaccd9a3b714d4cf720b8b394d177f31bb427e00d13cf107d157673bc3"
   end
 
   depends_on "rust" => :build

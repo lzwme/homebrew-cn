@@ -4,26 +4,24 @@ class Zorba < Formula
   url "https:github.com28mseczorbaarchiverefstags3.1.tar.gz"
   sha256 "05eed935c0ff3626934a5a70724a42410fd93bc96aba1fa4821736210c7f1dd8"
   license "Apache-2.0"
-  revision 19
+  revision 20
 
   bottle do
-    sha256 arm64_sequoia:  "c748d5b310b5949922950639ab308a570420a1814ac18791afd40fcee4748c29"
-    sha256 arm64_sonoma:   "76020d9803bf9f2c53dfe4abed2556ecaffa1a76da175c3d1212798b4b6bb5b4"
-    sha256 arm64_ventura:  "1d4b6b753efab82657b360c0e2c7a42ee1b7b4e4ce9b3a36175a6986bdcc70dc"
-    sha256 arm64_monterey: "d76750b3bcafe33f0a73276d0f6f1af6e4e20bc852c9051d5721bba72847545f"
-    sha256 sonoma:         "888b611e99c01579f1766d2a4ac32580b67e8720eb8fb16f2bca1734da4ee131"
-    sha256 ventura:        "52dff33ef2a07234108bfa1ae7f7147d993f1a1fcf27b9d4be36b5a587f22b48"
-    sha256 monterey:       "65458012718d8c612cff221ec17e165504d6db79692fcd860a0cf4b757bac5fb"
+    sha256 arm64_sequoia: "531dae378c0007fe5b28d122ad9e03158f87653321070f53fa7a8016125611b7"
+    sha256 arm64_sonoma:  "7bfa2637276cbc0fbade2f450da1b68e88fb7aedd944ce83a658014ac035607e"
+    sha256 arm64_ventura: "b8760ea3d7df545813b9f333fcf49c6dd9187558b3701e281383336a3e62c674"
+    sha256 sonoma:        "368e4b11f65d08b39c602a001f26719b491d92b03ac98de86719d7a86ddbdcb5"
+    sha256 ventura:       "7b79034310f8f4f18b21d777540d03279dd7de8ba6e9950f722ca2b93439992e"
   end
 
   # https:github.com28mseczorbaissues232
   # no longer build due to `'boostfilesystemconvenience.hpp' file not found`
-  deprecate! date: "2024-05-01", because: :unmaintained
+  disable! date: "2025-05-01", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "openjdk" => :build
   depends_on "flex"
-  depends_on "icu4c"
+  depends_on "icu4c@74"
   depends_on "xerces-c"
 
   uses_from_macos "libxml2"

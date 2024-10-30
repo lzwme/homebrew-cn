@@ -1,18 +1,18 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https:github.comfacebookmvfst"
-  url "https:github.comfacebookmvfstarchiverefstagsv2024.10.21.00.tar.gz"
-  sha256 "4f94bdc266744b77257a7c16716c353bf38cc0f59372dbe7779b5e10bde37fe1"
+  url "https:github.comfacebookmvfstarchiverefstagsv2024.10.28.00.tar.gz"
+  sha256 "cafe975b1dc0ba6656fcaffea3c7281816e919bbfd1a7c6969fb38f9ae700b40"
   license "MIT"
   head "https:github.comfacebookmvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2e761155cf09a0e9bc9387d70816d02d923399f9a989c0a94473eed3977b7bbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "4e0884b21d3f22c8fed647196e95401bc38e8d9197a6c91d438f2cc49df6e79e"
-    sha256 cellar: :any,                 arm64_ventura: "9032fda2f17fdeebf850272a27561df95a0047c593d61bc0bb12a9afaf8d45c6"
-    sha256 cellar: :any,                 sonoma:        "be678764c3eb40145405e2214236b3c4efae5257afe88561bdd91f6a1c7f52fa"
-    sha256 cellar: :any,                 ventura:       "7510d4be53b012728b2d36851b712e7a1114e8447f141351fb81031917518226"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bc2190215ead8e71395a636f1d37d9fd4bdf39622087f8c759865ad46fa763b"
+    sha256 cellar: :any,                 arm64_sequoia: "bdd47349aa3c65df36076b033a4cfe48591faa1d929ac8c9eba9c5cd810f8702"
+    sha256 cellar: :any,                 arm64_sonoma:  "4835c9c41fb4e623c5e52aef5f2fdd6e5a87f5277654f82e809cce249e2a7e5b"
+    sha256 cellar: :any,                 arm64_ventura: "62c5f722d44eba4caba76d7aead447ac5645ebf5995f9d37a988e00fac2b1b35"
+    sha256 cellar: :any,                 sonoma:        "09fb2d1531c3ff387583d480078137343208d58cc4ff11e92723b54862da71db"
+    sha256 cellar: :any,                 ventura:       "b4c7207849515ab79ed3c2ecc53f905a8145eaa561ebe78d878480b1fb396ee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "112790fc22bd1137db9a1593826e73a9aaa6ca778827f7fcddc76491f223cbc5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -74,7 +74,7 @@ class Mvfst < Formula
                 "--host", "127.0.0.1", "--port", server_port.to_s
     ) do |stdin, _, stderr|
       stdin.write "Hello world!\n"
-      Timeout.timeout(15) do
+      Timeout.timeout(60) do
         stderr.each do |line|
           break if line.include? "Client received data=echo Hello world!"
         end

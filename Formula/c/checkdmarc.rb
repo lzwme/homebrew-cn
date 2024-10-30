@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https:domainaware.github.iocheckdmarc"
-  url "https:files.pythonhosted.orgpackages93a4376826eff1d7ed93a2b50c9909551a1d700b7faabfa2171a91319c23a29dcheckdmarc-5.6.2.tar.gz"
-  sha256 "e4b3aed8d77597c03f2c67629c06ff82845ef05b6331c268590f3f80184d5897"
+  url "https:files.pythonhosted.orgpackages6ddbc049cd2df379cf13c3474a8caf142ca6d4e6cffa06fe1cc1966dc8b28679checkdmarc-5.7.3.tar.gz"
+  sha256 "7b3981c946dca2690a7c0e5effdab2c64e6f27e4e03f8aa39f510548c92f9fb2"
   license "Apache-2.0"
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "98a6fba0d7e18b88e95949a7192c82399bff8930f1f00eabf02b3fd544277ddd"
+    sha256 cellar: :any_skip_relocation, all: "2713396083dbb2dadb8f42d25114601bf44944c092f36072acc8238715184d74"
   end
 
   depends_on "certifi"
@@ -36,14 +36,24 @@ class Checkdmarc < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
+  resource "pem" do
+    url "https:files.pythonhosted.orgpackages058616c0b6789816f8d53f2f208b5a090c9197da8a6dae4d490554bb1bedbb09pem-23.1.0.tar.gz"
+    sha256 "06503ff2441a111f853ce4e8b9eb9d5fedb488ebdbf560115d3dd53a1b4afc73"
+  end
+
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackages16ccb59718161bcd7d15053dd3358da8fae0f0fbc24ff42729e42669e7019442publicsuffixlist-1.0.2.20241026.tar.gz"
-    sha256 "bc24c7b391c55b6d5ded6d06fd6f76ba003617d25ba84e88c261c71dbeab754b"
+    url "https:files.pythonhosted.orgpackages67347115d3f2feaa118612ac6bdc5ff56b81a2da74fa6dc8529c967c4299b6ddpublicsuffixlist-1.0.2.20241029.tar.gz"
+    sha256 "690aee4646ac151590c20a7b87d9dcb6bab1aa7ea2616e602e579f746e57d937"
   end
 
   resource "pyleri" do
     url "https:files.pythonhosted.orgpackages936a4a2a8a05a4945b253d40654149056ae03b9d5747f3c1c423bb93f1e6d13fpyleri-1.4.3.tar.gz"
     sha256 "17ac2a2e934bf1d9432689d558e9787960738d64aa789bc3a6760c2823cb67d2"
+  end
+
+  resource "pyopenssl" do
+    url "https:files.pythonhosted.orgpackages5d70ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8pyopenssl-24.2.1.tar.gz"
+    sha256 "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95"
   end
 
   resource "requests" do

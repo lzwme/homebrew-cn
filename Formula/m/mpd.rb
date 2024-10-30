@@ -2,7 +2,7 @@ class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:github.comMusicPlayerDaemonMPD"
   license "GPL-2.0-or-later"
-  revision 4
+  revision 5
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
   stable do
@@ -23,12 +23,12 @@ class Mpd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "8a12b2f699b5e35306f0202e23a8e70c4d4c91afb31d69dffd52d7bd5d6c9d48"
-    sha256 cellar: :any, arm64_sonoma:  "c075df5f4127773fd783ca601fe9c3db60aa44c258938c5d98f5ac2521e4f260"
-    sha256 cellar: :any, arm64_ventura: "81a28f9ac47a7ced4f3478668c8e191b4f3dd3be8f79618ec92ed9676ac413f7"
-    sha256 cellar: :any, sonoma:        "6e679a66d2b7620c4e17432701859b21aa702974380779f7cba8499a83544960"
-    sha256 cellar: :any, ventura:       "ec80333810dcdc8404eeac11a94ed3ac9517dd7a6a73035a16bcd38b1b12474a"
-    sha256               x86_64_linux:  "0686b5d3e7579ca2fa949fe9c85869a9808699eb58db6524fa73b5e4e3e03f73"
+    sha256 cellar: :any, arm64_sequoia: "09ada07179621fa0c75bdbb9010113ffe5c2ff628b9a7902cba8a6dd459e5f24"
+    sha256 cellar: :any, arm64_sonoma:  "639c51290d4d81e33cb6a4e6374024bee0ba0b99dc7f32ed65bab975c34602d9"
+    sha256 cellar: :any, arm64_ventura: "03b124dfbdf5cce8840532298633c70f5c1a3975eacac56d7cbcb73554fd356f"
+    sha256 cellar: :any, sonoma:        "6df121ee4629803d5a2738d993d56d162b79205f4ba3d5deeb59b595c3f21bb9"
+    sha256 cellar: :any, ventura:       "7db725675049f78c715a6075225d12ecad29bbe444dfe6876d3d18cf1fbcc8b0"
+    sha256               x86_64_linux:  "da144de2f7057fbbad115ac632d917f7f2d2994b82e293d0fc3598335916f069"
   end
 
   depends_on "boost" => :build
@@ -43,12 +43,14 @@ class Mpd < Formula
   depends_on "flac"
   depends_on "fluid-synth"
   depends_on "fmt"
+  depends_on "game-music-emu"
   depends_on "glib"
   depends_on "icu4c@75"
   depends_on "lame"
   depends_on "libao"
   depends_on "libgcrypt"
   depends_on "libid3tag"
+  depends_on "libmikmod"
   depends_on "libmpdclient"
   depends_on "libnfs"
   depends_on "libogg"
@@ -102,6 +104,8 @@ class Mpd < Formula
       -Dupnp=pupnp
       -Dvorbisenc=enabled
       -Dwavpack=enabled
+      -Dgme=enabled
+      -Dmikmod=enabled
       -Dsystemd_system_unit_dir=#{lib}systemdsystem
       -Dsystemd_user_unit_dir=#{lib}systemduser
     ]

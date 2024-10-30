@@ -23,7 +23,11 @@ class FirebaseCli < Formula
   end
 
   test do
-    assert_match "Failed to authenticate", shell_output("#{bin}firebase init", 1)
+    # Skip `firebase init` on self-hosted Linux as it has different behavior with nil exit status
+    if !OS.linux? || ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+      assert_match "Failed to authenticate", shell_output("#{bin}firebase init", 1)
+    end
+
     output = pipe_output("#{bin}firebase login:ci --interactive --no-localhost", "dummy-code")
     assert_match "Unable to authenticate", output
   end

@@ -1,20 +1,18 @@
 class Poutine < Formula
   desc "Security scanner that detects vulnerabilities in build pipelines"
   homepage "https:boostsecurityio.github.iopoutine"
-  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.15.1.tar.gz"
-  sha256 "27d9b8dd00223c20334ed923b8183da83e84499efe8250965857447d133d7197"
+  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.15.2.tar.gz"
+  sha256 "0737ec8b06e810c841efb6cc7b9254d84ab68024056a0de1b47a9ba95a47cb38"
   license "Apache-2.0"
   head "https:github.comboostsecurityiopoutine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dab2937ff6c86e9a313e1cd818dd9e646d8678eb602f3a623df8625f02997060"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dab2937ff6c86e9a313e1cd818dd9e646d8678eb602f3a623df8625f02997060"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dab2937ff6c86e9a313e1cd818dd9e646d8678eb602f3a623df8625f02997060"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dab2937ff6c86e9a313e1cd818dd9e646d8678eb602f3a623df8625f02997060"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb2fa60fb704ac26838f998d1d8274b5b1553752bd829e5830a592aa2436a086"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb2fa60fb704ac26838f998d1d8274b5b1553752bd829e5830a592aa2436a086"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb2fa60fb704ac26838f998d1d8274b5b1553752bd829e5830a592aa2436a086"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0476d5625c0d5d326711f440b1e39c7969c9787897807cd13ac6f5194ccd30cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0a9b993f109cb405560b6fe56ee96c37821799136e1cd17a8c3cc59e019166f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0a9b993f109cb405560b6fe56ee96c37821799136e1cd17a8c3cc59e019166f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0a9b993f109cb405560b6fe56ee96c37821799136e1cd17a8c3cc59e019166f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc03b2abddf13bc45943f1eb9f418fe02d130c5181a149649f9313b61c601ed3"
+    sha256 cellar: :any_skip_relocation, ventura:       "fc03b2abddf13bc45943f1eb9f418fe02d130c5181a149649f9313b61c601ed3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "923a996afe2139aa7f987968f4b6b8c39792cb8f9124afd08c800b3e550bd7c5"
   end
 
   depends_on "go" => :build

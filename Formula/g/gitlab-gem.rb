@@ -1,19 +1,17 @@
 class GitlabGem < Formula
   desc "Ruby client and CLI for GitLab API"
   homepage "https:narkoz.github.iogitlab"
-  url "https:github.comNARKOZgitlabarchiverefstagsv5.0.0.tar.gz"
-  sha256 "c08305b376275be73b6da01c14d3e004d49860925770e8e2f760afc3abedd629"
+  url "https:github.comNARKOZgitlabarchiverefstagsv5.1.0.tar.gz"
+  sha256 "fdb4cab8f09258b9b8a70b3cddd618dc19a10303124a9176dd7ca5ed70f98ce4"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "36c12c66b5d5631481cf0116c72e00d2c2cc92005e52dd7b98171ba9f958adba"
-    sha256 cellar: :any,                 arm64_sonoma:   "febf8cba6b5ae71c41b70021c74e77a73c8bd847f802cdbdae2e566bf77b7543"
-    sha256 cellar: :any,                 arm64_ventura:  "931cefa46d0818baa052c7e7a5917ed19d326fb86102e992a96a4a7ae93f9b2a"
-    sha256 cellar: :any,                 arm64_monterey: "4ccf47ef97c42469e4cb87bcf7d503272be1094a28b6bdff085fbe9c4cc9e7ab"
-    sha256 cellar: :any,                 sonoma:         "15a26b3093df8a0515358081e6f8094266cac0a9c4b08ef602d2d7f65d686e1a"
-    sha256 cellar: :any,                 ventura:        "b4a8f2e1308a8f33fac73aaf6b8beb9990e81db11f636bc065e3f5366a0a4918"
-    sha256 cellar: :any,                 monterey:       "9c4df067b814a648b95734bd9cc1daec717d96fff81098436cd97d924198da39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47c3f066efa9e4efd26169ee94ecae0cdd4059dd7593795210e387e636e44aff"
+    sha256 cellar: :any,                 arm64_sequoia: "dfdc4e6149913dbcd7d195dbcd7ed62a379762b842a2acc9a9d1f953ef51ee7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c63a00b6eb58d0017fc0e8a5b6bcbaea12321cee802ca87e949ee16e2bfd953c"
+    sha256 cellar: :any,                 arm64_ventura: "2328f3c454e5485f1b09e828fbf2cbf66801a47ef3f756211b6b6f88b7d3cb39"
+    sha256 cellar: :any,                 sonoma:        "632c41da4d5717a0512eb4a0bf62c46b13d0c98628908cc08e289f2741a84ea6"
+    sha256 cellar: :any,                 ventura:       "215ec1a5e1f75fcaa14877c63a09bf30fe66471b713f6e75df12b784ad2dd28e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93acf3468f972d534c094ac34b504f5476f6755d77a6b4265ea70fd7d4e12fa9"
   end
 
   depends_on "ruby"

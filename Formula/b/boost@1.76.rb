@@ -4,23 +4,22 @@ class BoostAT176 < Formula
   url "https:boostorg.jfrog.ioartifactorymainrelease1.76.0sourceboost_1_76_0.tar.bz2"
   sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
   license "BSL-1.0"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "c7c8cc8bd09779df0a40a6fe16d8e612f6a5d174dd88acbde286318467d209a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "07110e60f42479e7799caf5df0804f6b81b9ca3030c07cdfef75c472378caf28"
-    sha256 cellar: :any,                 arm64_ventura: "2f8a3286570c5712de16e37aa64be508ff50db5769b969b103f60516f947366e"
-    sha256 cellar: :any,                 sonoma:        "7d651936577579b8db24bd0a653ffc318c2e8a7067a6ae59f6a79f1ba1daddde"
-    sha256 cellar: :any,                 ventura:       "f414216de17cfe464e62e35ad1d5ee7b66a9cd0bf730d6a6dc44c02653231843"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d7e35e3faf5fa529284cba3dd88b3a247417deca04bef1dd0debc28962ef649"
+    sha256 cellar: :any,                 arm64_sequoia: "5fa1820397b30bc594fc77f937a99af346f8e41340d532a13f59e31c7076f0ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf2654e857a043032de6fe7fc6c8388a52ee86338dbbfdedc28617bac22f2df4"
+    sha256 cellar: :any,                 arm64_ventura: "3966bc23fe94abc372ddb6b2c1d07846ee9c1b2c99793a125c73f36c5f43d0af"
+    sha256 cellar: :any,                 sonoma:        "f570c9d3c4e1d1cef19a21761de8b2dc6748445da6dc067457d5e950c023dd1a"
+    sha256 cellar: :any,                 ventura:       "5879acd1c2d7f1067f365f9cb705ffd0aeb5dec9a8346ce3ec770e4220ddeb2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6c27b35876867779cfab02b6db3f56595494935da83e1b8c5a3bd4401c4aeae"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2023-12-14", because: :versioned_formula
+  disable! date: "2024-12-14", because: :versioned_formula
 
-  depends_on "icu4c"
+  depends_on "icu4c@74"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -46,7 +45,7 @@ class BoostAT176 < Formula
     end
 
     # libdir should be set by --prefix but isn't
-    icu4c_prefix = Formula["icu4c"].opt_prefix
+    icu4c_prefix = Formula["icu4c@74"].opt_prefix
     bootstrap_args = %W[
       --prefix=#{prefix}
       --libdir=#{lib}

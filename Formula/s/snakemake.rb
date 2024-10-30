@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages0a39f54ba1e762cca8d0e9e83072498d57a0f91801e93eb826750ceb972203efsnakemake-8.24.1.tar.gz"
-  sha256 "0559831260cdfb216d9c20f7e8465d841333935eac15f62787cec6d266efbf01"
+  url "https:files.pythonhosted.orgpackages6505fe1fb360c5c8cd506b2bf13f5911b3c3d983f18cd44eb734e78e15fa33c0snakemake-8.25.0.tar.gz"
+  sha256 "a9cf1ab8e7c33a6e928f191fc83572e8add8d8383465a036910526d01081bddc"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6451b9840be96e2ccf97b49292f712fa0025c907ec82ef90b4e71dbfe16c6ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "706efa2dd0b8121c79df77760f7c1a692dfdfae9c0ed0f9b2649e7ee10d46c6d"
-    sha256 cellar: :any,                 arm64_ventura: "21c450017db8e8c8bc126bbcbefe6cfb0608c0438c0b66cc44a6cc33cb468795"
-    sha256 cellar: :any,                 sonoma:        "9cd4d5de0610b3be076d5154c4994bd9efaa713e3462c00330a831df512e3e11"
-    sha256 cellar: :any,                 ventura:       "f79591a4bb1958004f9f16615decd4bddbafa8efbcbd69fb92d865be992efe47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f78f62a1907f9f17362302c75c24625eb5aa565546f05b1524b9c8ed201462da"
+    sha256 cellar: :any,                 arm64_sequoia: "3f4d54c2ffdfd1d9b422316e489d06769ab50ed29426892f8dbe590606191100"
+    sha256 cellar: :any,                 arm64_sonoma:  "c379f46a8f667abd7895a3c94968706d3f0a27f1435f58f90b5a34d11f2d8eb6"
+    sha256 cellar: :any,                 arm64_ventura: "2ae47e7e6ee508eb074076799a825a15e0db152f62ed7eb7c8abc3cf5f0e55da"
+    sha256 cellar: :any,                 sonoma:        "fde020e92935a3819989e4e8580701b4fbb236e7c040e988334c693a91ec7fa3"
+    sha256 cellar: :any,                 ventura:       "ea4679eecf851711ba5bd3100c75cca9819fc8ddfafc0f5c4ee08901c6d85b97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7dad9a36851c011e2a24506257bf572fee63621934849fec2663d710e4f10b8"
   end
 
   depends_on "rust" => :build

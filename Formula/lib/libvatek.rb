@@ -1,18 +1,18 @@
 class Libvatek < Formula
   desc "User library to control VATek chips"
   homepage "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2"
-  url "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2archiverefstagsv3.12.0.tar.gz"
-  sha256 "faca25847372c28cd2413aefa0603939f7cf27b3da63d44b2098d1dfc6ba447a"
+  url "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2archiverefstagsv3.12.1.tar.gz"
+  sha256 "293a9d8f271fe960c987b0c620bbc1daacaf1fba00374c3431cab990456ba516"
   license "BSD-2-Clause"
   head "https:github.comVisionAdvanceTechnologyIncvatek_sdk_2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b05ac468d198d998ae0c898c9fc945c94983f6553f2cd090e875b8662a1930b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "46cbe7591574b20c78783a75531b03d6023940bfade5e5ad6939cb5f7177c89d"
-    sha256 cellar: :any,                 arm64_ventura: "dece6252e632da7ce099efc42887490b4a553171a230dce1a3abb3cadd9bdcb0"
-    sha256 cellar: :any,                 sonoma:        "863d533a61288d03623e1cdf452cacff8b0cbdac3371ce1d08d393f0f0a69b85"
-    sha256 cellar: :any,                 ventura:       "6553ec80fc667db42ac118df76e4eca294af7cb1e593ab66bcfce2ad28f0959b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d8dba1c0a8cb772bf4f728603d1f6a766a329c9bf7e0efe23abb2eda8b7ebb"
+    sha256 cellar: :any,                 arm64_sequoia: "1e231d20c397029d363b48b1d685a4ed1710ea69e1cf4408c7bcbd758418b425"
+    sha256 cellar: :any,                 arm64_sonoma:  "c081fd50a34d94aefe63df4c343975be869bbfad3b0215a5daaa6b306a8b46d7"
+    sha256 cellar: :any,                 arm64_ventura: "adbf2c5ff43b6d27ff6fee7e2e58c8a4468387e50ae96c227ffb91dd055f94f3"
+    sha256 cellar: :any,                 sonoma:        "1451fcbafaed9feedeedd0acb7b96a08f5b039ee713e308b569162680eb125f9"
+    sha256 cellar: :any,                 ventura:       "1e5c0363747da7a46a013899694315c0d01226c2251f7fd00e208218dd99ac53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09d2064162ff257be56fd39c20b6af3626943f328097a8e715515d5e4ea2c592"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Libvatek < Formula
       int main()
       {
           hvatek_devices hdevices = NULL;
-          vatek_result devcount = vatek_device_list_enum(DEVICE_BUS_USB, service_transform, &hdevices, 0);
+          vatek_result devcount = vatek_device_list_enum(DEVICE_BUS_USB, service_transform, &hdevices);
           if (is_vatek_success(devcount)) {
               printf("passed\\n");
               return EXIT_SUCCESS;

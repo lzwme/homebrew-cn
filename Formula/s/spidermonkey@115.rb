@@ -1,9 +1,9 @@
 class SpidermonkeyAT115 < Formula
   desc "JavaScript-C Engine"
   homepage "https:spidermonkey.dev"
-  url "https:archive.mozilla.orgpubfirefoxreleases115.16.1esrsourcefirefox-115.16.1esr.source.tar.xz"
-  version "115.16.1"
-  sha256 "c3bb5a210738ca0f8cd26aa53fc4a07560db079c06cd0421cf35af4035029367"
+  url "https:archive.mozilla.orgpubfirefoxreleases115.17.0esrsourcefirefox-115.17.0esr.source.tar.xz"
+  version "115.17.0"
+  sha256 "80f184a102a743ee75401e86dd86af0be5f1e5ebf07c81119d9ca77422d716c3"
   license "MPL-2.0"
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -14,12 +14,12 @@ class SpidermonkeyAT115 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "5272e08a1053b485d6867860dac79d81b1ce2d2cede410a320b2f5c9ced88ec0"
-    sha256 cellar: :any, arm64_sonoma:  "d5c5d00c2388db33b774986dad363720ac17232fbcf739fe53335dceee94a3b9"
-    sha256 cellar: :any, arm64_ventura: "a7aeff6b44d801e64c2d2ca494979e5f0f018e3210e351c3bb4e2b85458a1864"
-    sha256 cellar: :any, sonoma:        "dfc76f1c89614322b69c99de81ffbd2a236e7c6a1b00e7da54ad020d407c8c21"
-    sha256 cellar: :any, ventura:       "cbb0c5dd4f32172621544725ffe4f29d2d0d627d70dd8f144ebf6e9c02680d61"
-    sha256               x86_64_linux:  "38b3320e66501ca3e03b3e91486e220274599414bfbebec6fbcec97751d297d9"
+    sha256 cellar: :any, arm64_sequoia: "fc7b509c409269ff12d90688db8c2ef6a514192fd8ef09cd58e20f58f4522243"
+    sha256 cellar: :any, arm64_sonoma:  "018944569221ed66a86c06080dae54d317a0793a0958564b7e442afa39c12d0c"
+    sha256 cellar: :any, arm64_ventura: "a7f1457251791e299c39d963959441cf9bcf545ef3a21e2397fe05d66016cf51"
+    sha256 cellar: :any, sonoma:        "038cc4b1c0f9e7e0dedb2960287e9795f04d1ae87c10f0a77bb4d5811fae506f"
+    sha256 cellar: :any, ventura:       "d2e013dd43a53855c74cacd3304603d01f94d6a9b5b71c93da7a8a3e37b4aa35"
+    sha256               x86_64_linux:  "4544b1d2b6aeec16443630e967a2145ac5ee5c960d37ada6eecd00b317cbd2eb"
   end
 
   disable! date: "2025-07-01", because: :versioned_formula

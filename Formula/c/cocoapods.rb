@@ -1,20 +1,17 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
   homepage "https:cocoapods.org"
-  url "https:github.comCocoaPodsCocoaPodsarchiverefstags1.15.2.tar.gz"
-  sha256 "324a13efb2c3461f489c275462528e9e721f83108d09d768d2049710d82d933c"
+  url "https:github.comCocoaPodsCocoaPodsarchiverefstags1.16.1.tar.gz"
+  sha256 "71855f746ba021cbf17809b971c428515fa3db1afd2b9dbd8f87c656ef967591"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "616da75efe9421f6fdc9e3b6381f84626e8763073aff72094f30add258631dc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "441ca48d1042282ed261390fab8dfce1a56335340a98ae579b080b3f8c4e941a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8961b95489c08fc5b163b09455e6172f5fdee7dcfacdad1c2bf569c28a476d8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8961b95489c08fc5b163b09455e6172f5fdee7dcfacdad1c2bf569c28a476d8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "8961b95489c08fc5b163b09455e6172f5fdee7dcfacdad1c2bf569c28a476d8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf569151db36690ef517de97d64643d8a3425d88a214709fdc422d0494e5a5ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b7540c2d75c431e7954cefb4f156718a6e8c87caafb8b236f5966e7f0944668"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b7540c2d75c431e7954cefb4f156718a6e8c87caafb8b236f5966e7f0944668"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b7540c2d75c431e7954cefb4f156718a6e8c87caafb8b236f5966e7f0944668"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c89b08df220841347a82abfb31fd4b65ae5c7c411bf079092361cb1bda016c0c"
+    sha256 cellar: :any_skip_relocation, ventura:       "c89b08df220841347a82abfb31fd4b65ae5c7c411bf079092361cb1bda016c0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0f6625b5ae17fc7157f439c3f78c6033342df3677267cfa58576c6153364e24"
   end
 
   depends_on "pkg-config" => :build

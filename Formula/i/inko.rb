@@ -1,18 +1,18 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https:inko-lang.org"
-  url "https:releases.inko-lang.org0.17.0.tar.gz"
-  sha256 "d97e1b898fd3de946dab5559c587cab0bcf7f3df40a43266d5b9e0a14f03202a"
+  url "https:releases.inko-lang.org0.17.1.tar.gz"
+  sha256 "752c1881b7029f76f7a900ace23fbc5b81e1ceebea214c7f998c03284fd92dba"
   license "MPL-2.0"
   head "https:github.cominko-langinko.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d54272ae0638dfabf26a73708365218cec4bfe02248eb628fa4570eac9e69e10"
-    sha256 cellar: :any,                 arm64_sonoma:  "d16b0f9c5ddf61d12fed1756537aa712f9b0ba82f5d45dca924e3605611c99c1"
-    sha256 cellar: :any,                 arm64_ventura: "768d5f7db84747116d1fc6c59cf1fe3f046f5b4e3ac1fd0bc0fc8806b7f76b6d"
-    sha256 cellar: :any,                 sonoma:        "f194d58ffad8d207d24544d78ff0d5c05c471aad34cb1910e3f8102b3d6d9f17"
-    sha256 cellar: :any,                 ventura:       "f8deb56f32f1bef8c16b4435a65aea0fda2c70d32ff7df074b1e9bfb3bb30d31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ede8a28659804084deaedd7a5936ccb5ad6bb3283ce9ffc6079ea008dc993c4"
+    sha256 cellar: :any,                 arm64_sequoia: "a6a054979919629af9dc5b93c3caa53863e8035085c9d0f4816d0ceaead78133"
+    sha256 cellar: :any,                 arm64_sonoma:  "17e298645d17fc2f4b0aaa29d622be52b5ef2c467e65fa044eec038cc726749b"
+    sha256 cellar: :any,                 arm64_ventura: "4f19eba4d1fd8a58ed8b21b56c1b8dd8912f6768e62d6d617bd1cf2d9de5a2fb"
+    sha256 cellar: :any,                 sonoma:        "cb722f459dc312af8b58b861afb37d4cbcfb3bd506ed3ddca32c0bfd8acc15eb"
+    sha256 cellar: :any,                 ventura:       "84c3dc1eb5b4e187055055c654f523d8c6be3d59f992857aa3dd4433013cad70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afedc35fa2c235553e564dba014a3840e38de0dee25b271f67c83208da1cacb6"
   end
 
   depends_on "coreutils" => :build

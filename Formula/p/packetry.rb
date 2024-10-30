@@ -1,17 +1,17 @@
 class Packetry < Formula
   desc "Fast, intuitive USB 2.0 protocol analysis application for use with Cynthion"
   homepage "https:github.comgreatscottgadgetspacketry"
-  url "https:github.comgreatscottgadgetspacketryarchiverefstagsv0.3.0.tar.gz"
-  sha256 "dfb25d42288a20f1377624736da3199214ca89d1f85029b9fd8ac7b4060c3de0"
+  url "https:github.comgreatscottgadgetspacketryarchiverefstagsv0.4.0.tar.gz"
+  sha256 "2f2e36500fd29a46bf9043cf3b9a8dde6d14864ac7e6a1782cdce573b81859ee"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4350ea8867c8f2feea2d41f68f2b741b3f18d32c3381b4abeed57c488c741084"
-    sha256 cellar: :any,                 arm64_sonoma:  "466b9385c055dc9dcadfbfbb22bb1fdc5df9c65dbafb03d4f4fff57b4467faba"
-    sha256 cellar: :any,                 arm64_ventura: "c49c3db0dad1b457096bd6d5861f8bc90c22618bd14a6f17ec7fdcdb095d65d1"
-    sha256 cellar: :any,                 sonoma:        "8bc540cd04ed99f989671a2459225d36889c68d6af04a9e0fafa24cd68c4e368"
-    sha256 cellar: :any,                 ventura:       "09018cd616ad904ad97285d403771486fde01ef30012a120cf00fc108dd9d108"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ae955238f9298dd121de5a8de6b431f06bdae5987c1b4545d570e4aae44ff8f"
+    sha256 cellar: :any,                 arm64_sequoia: "22c49ae08e3854c4719cd38f6946c7a23f937d95f2af9d4f124adb5d85418fdf"
+    sha256 cellar: :any,                 arm64_sonoma:  "1522f63e422bbab63675874bdf08cf8696ffd5478eb9c7986928dc5226eae06b"
+    sha256 cellar: :any,                 arm64_ventura: "ac33c2598d3ab7e4ba32c23b306510eea957383caddcbd8f9a8d4ec4fde0564e"
+    sha256 cellar: :any,                 sonoma:        "08dddc60262a32e355af6a43d70c1eaa0c782d482c61f958891359d672405005"
+    sha256 cellar: :any,                 ventura:       "21ddfa4541496350dada1a3ec6361180ae1a70c2d5bf3920cc92c1190437f376"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46ab971b2e7e71791bf0e2bfbcbc2a8d89beed2069f3b82b9c096a6f17914273"
   end
 
   depends_on "pkg-config" => :build

@@ -3,18 +3,18 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackages8f7c94f61e5a8bc4a8bfa4667c05395d0b0d3530ab794d2009bdde686ac47a50ggshield-1.32.2.tar.gz"
-  sha256 "094aa8ed89e30dca750586bf608180edf053bdfd5ced9046e20f85426501f82e"
+  url "https:files.pythonhosted.orgpackagesf2bd333890c00e3e91a7c35709ada1eec80e7cb05010f6a351dc100dc1a50192ggshield-1.33.0.tar.gz"
+  sha256 "722f35f696b99ede1ee14cc469b61784d58f7f08c3a9b3d7d71e6e1107dc54d2"
   license "MIT"
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e4b880201527014037cee0154b2c1fab497a9c132411ff8e4693935c379d26f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "798bae50ae6d0d648b2c91c4765dfd0ff87d68cb2923bf687ea9bd5563a4e05b"
-    sha256 cellar: :any,                 arm64_ventura: "fc15f0d415698aa6634d0e7776aa0dd382a43084c56f41a057875fa39a17cda0"
-    sha256 cellar: :any,                 sonoma:        "74fdb26bbaf39bef305032175b78037c5ebc357fc2bdef8c37ddbb6bb3b6de1c"
-    sha256 cellar: :any,                 ventura:       "7e44170ec2a9a72c2f7260f0e895e36f7433ca0d86caa8fd7d3ac6bd9dd00c4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2e7cea2922e0ac8165e6ae29b4b1dff4d2e72f4222723b8e364c54ea0d7172c"
+    sha256 cellar: :any,                 arm64_sequoia: "13ddd533b8b36957b57391d878831a30f00857d65f31dcaac71a3baf37a0099e"
+    sha256 cellar: :any,                 arm64_sonoma:  "373b6b6391ead707d3e3ff548eb41c4303429bb94850ce1879b4b0701ec5f4a3"
+    sha256 cellar: :any,                 arm64_ventura: "395e6040cb1941856104273c2a30bf638d10dc6f1680832fc5be35bb441e2c8a"
+    sha256 cellar: :any,                 sonoma:        "3ef08b19f4772f85d604c787d221c9332e7a1996e7df67a9f55b25f8010ae017"
+    sha256 cellar: :any,                 ventura:       "410517ed5852bbd66991698b2deab0ff5d5ba47a38fee8fbedb1ae246e3dce85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "017f0aca69052a1925b713bcf3b91b9d796779f0167fa3f8db5823731b871ab8"
   end
 
   depends_on "certifi"
@@ -108,8 +108,8 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
-    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
+    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
+    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
   end
 
   resource "typing-extensions" do

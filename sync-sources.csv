@@ -29,6 +29,7 @@ Homebrew-homebrew-core/Formula/a/acl2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/acme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/acpica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/act.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/action-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/action-validator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actions-batch.rb, Homebrew/homebrew-core, 1
@@ -2695,7 +2696,7 @@ Homebrew-homebrew-core/Formula/i/icon-naming-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iconsur.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icoutils.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/icu4c.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/icu4c@74.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@75.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3ed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3lib.rb, Homebrew/homebrew-core, 1
@@ -4998,7 +4999,6 @@ Homebrew-homebrew-core/Formula/p/planck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plantuml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/platformio.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/platypus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plog.rb, Homebrew/homebrew-core, 1
@@ -5064,7 +5064,6 @@ Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgraphile.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/postgresql@10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@13.rb, Homebrew/homebrew-core, 1
@@ -6543,7 +6542,6 @@ Homebrew-homebrew-core/Formula/u/udptunnel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/udunits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ufbt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uffizzi.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/u/ufraw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uftp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uftrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uggconv.rb, Homebrew/homebrew-core, 0
@@ -6785,6 +6783,7 @@ Homebrew-homebrew-core/Formula/w/waon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wapm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wartremover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasi-libc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wasi-runtimes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-micro-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-tools.rb, Homebrew/homebrew-core, 1
@@ -7106,6 +7105,7 @@ Homebrew-homebrew-core/Formula/z/zip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zipkin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zita-convolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zix.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zizmor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib.rb, Homebrew/homebrew-core, 1
@@ -11028,6 +11028,7 @@ Homebrew-homebrew-cask/Casks/g/gitee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfiend.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitfox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/github-copilot-for-xcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/github.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/github@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/githubpulse.rb, Homebrew/homebrew-cask, 1
@@ -11837,6 +11838,7 @@ Homebrew-homebrew-cask/Casks/m/mailmate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailmate@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailplane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailspring.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mailsteward.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailtrackerblocker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/maintenance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/majsoul-plus.rb, Homebrew/homebrew-cask, 1

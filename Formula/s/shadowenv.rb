@@ -1,17 +1,17 @@
 class Shadowenv < Formula
   desc "Reversible directory-local environment variable manipulations"
   homepage "https:shopify.github.ioshadowenv"
-  url "https:github.comShopifyshadowenvarchiverefstags3.0.2.tar.gz"
-  sha256 "263889408e47008803e4e91a309050df82963349d81e8777a3d1a1a924d29c6c"
+  url "https:github.comShopifyshadowenvarchiverefstags3.0.3.tar.gz"
+  sha256 "ad04e1d5ae88e358f0ee6ec987bd88b7f8c489409fafc6286690aeacb074ddea"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e93a45b2872541cde83f6c9767293d5b84630a1cbf631f1b73e067afd689890"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef3dee141fac1bf7c108a5bf44bad36daa5187815f3703a16305d48419a2f077"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "826f0909baaffef8f7468ab1b06f70c4adafac3020c19ae22661ed1e545cc85b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57fc8d8ab168c72711f5aea11c5087c36505a2f7d1b4bf82142e3755e4144899"
-    sha256 cellar: :any_skip_relocation, ventura:       "cb06cc05fa5c8d0650f6e6dbfd6062b5eaa0645a4882369fdb7d041580e0db91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46be71c90fcf022dfcbe045fd27d471edcc6cdcaab7690b7f22d73b08dc595bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a3aa92e6d4f3d71f2096def300b3d503b06af579212990958fb29a5cf53dac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "926abc552d85283e6507cd2668bdf5af33ce5d2b0a3515fc14ab3a9250d8c6d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "801c925456a0220534c28009729ddb366a5925a61857c3ea053d39d6b44982b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a584d3fa65f210eb2ea6dffd8d50b59b6cab767f11b7e97cf9bb2dde03fa2f2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "50f747135333edf3cc9f6252e6e4abc86ee20523c285af87a0d6411b843ae0d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4209ba91154dc46bc9254f7117cc25f46a7bc9ee0ce160321cc91d3a1bc81380"
   end
 
   depends_on "rust" => :build
@@ -29,10 +29,10 @@ class Shadowenv < Formula
       EXAMPLE3:b
       EXAMPLE_PATH:a:b:d
       ---
-      EXAMPLE:
-      EXAMPLE2:b
-      EXAMPLE3:b
-      EXAMPLE_PATH:a:b:d
+      EXAMPLE:a
+      EXAMPLE2:
+      EXAMPLE3:a
+      EXAMPLE_PATH:c:d
     EOM
     environment = "export EXAMPLE2=b EXAMPLE3=b EXAMPLE_PATH=a:b:d;"
     hash = "1256a7c3de15e864"

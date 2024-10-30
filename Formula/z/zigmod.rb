@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https:nektro.github.iozigmod"
-  url "https:github.comnektrozigmodarchiverefstagsr92.tar.gz"
-  sha256 "04f37e09d722c3e23236eebd1f9e5789f1b601bd8763aa6fd2a818a2eb3d9e17"
+  url "https:github.comnektrozigmodarchiverefstagsr93.tar.gz"
+  sha256 "302162e6ba66ee8abe028b5d61fe1c474ec50eadfb6481dc782702126fddb639"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "184ef826dd28530282a1c36f20af008b5fb585f9fe93045852b951b6bf21964e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2df959c37b381d5e86591e524e1436c34e08a02b500d65263275d70e37d7826"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4f82b78fe59aedb5032c1533b4ed06e0a47371fc99e8f603d1bc2e88c744a7c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24cfea13595d29638d26ae4fcaa44927b7d8110c4eeff3167ec545f9722f370b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c92b51115a4d517aeccc86498c53f7539cbef96947641a4b743f710f29439f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "e806121aa5f08d5861fc53b5861a17fc0bab594eabc0022b8b7052a7c713ae3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "68b7d2fec5703629d4beee47c2c620a676b56eddb8e46129686267b86a025474"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2e136103711512118cc29a116c2c4b5846570a0f0d28c698aabd9f3121f15a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "420f7558e02cced834ae9109dfb12b93a864510c582af36d097cbb25a3379fc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ada99291a14a4b050d9021469d4912be19098785d6d557ccfd09f7613dbce43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6dde24eaa99843a68b0f5c59f95c3a7116afd326b315d8a30f519cd6eb099c79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61702ca7b0671790b8598c55957f3cd53b6f215907be3add1f9de06f3da746ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "dfd79a1b16483e86d85867b7494952d6a9c05dbc26c0924fd952106370e41500"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41a39652f9ed4f90a02280a3064bfa9a16746fda7af518d886280e86dceeb068"
   end
 
   depends_on "pkg-config" => :build

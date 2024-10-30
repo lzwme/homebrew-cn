@@ -21,7 +21,7 @@ class LibbitcoinNode < Formula
 
   # About 2 years since request for release with support for recent `boost`.
   # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
-  deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
+  disable! date: "2024-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

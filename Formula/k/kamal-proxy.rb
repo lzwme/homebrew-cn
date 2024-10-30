@@ -1,17 +1,17 @@
 class KamalProxy < Formula
   desc "Lightweight proxy server for Kamal"
   homepage "https:kamal-deploy.org"
-  url "https:github.combasecampkamal-proxyarchiverefstagsv0.8.1.tar.gz"
-  sha256 "8bd93ab1d5b7c141f85c6a92842bf639d39616a8065e8a7f8cc5a75cd73fe74a"
+  url "https:github.combasecampkamal-proxyarchiverefstagsv0.8.2.tar.gz"
+  sha256 "dcb6ba86a0eb8771884f4bad110b3ac28334516c05cf02e52e70dd1434fa0cad"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "844290dc5569f97864f081af1f9ae9a23018f63adfff1a5b8ea55e1eefbc51e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "844290dc5569f97864f081af1f9ae9a23018f63adfff1a5b8ea55e1eefbc51e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "844290dc5569f97864f081af1f9ae9a23018f63adfff1a5b8ea55e1eefbc51e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a166d749e7d70f894b66c62e8c6af0720f1af5ae35e7bb9c96ec3e4db79382ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "a166d749e7d70f894b66c62e8c6af0720f1af5ae35e7bb9c96ec3e4db79382ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e08edbba451dc4346e0d45027b4e60aa07051103b946466be2336b33f285cf98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f2299580f86be5dfbbe42f9181a8330191d6092672e4d2f4aa86227264c4ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27f2299580f86be5dfbbe42f9181a8330191d6092672e4d2f4aa86227264c4ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "27f2299580f86be5dfbbe42f9181a8330191d6092672e4d2f4aa86227264c4ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42ef7b193be5835f13c2c3abd144fdcbf4179d4cf41da38c26f3652610bb262a"
+    sha256 cellar: :any_skip_relocation, ventura:       "42ef7b193be5835f13c2c3abd144fdcbf4179d4cf41da38c26f3652610bb262a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cb885d5b0167d06fa67b8b67231eecdcc6f42ae8d8dc4d1890c80fb2d7550b5"
   end
 
   depends_on "go" => :build

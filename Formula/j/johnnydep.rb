@@ -3,18 +3,17 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https:github.comwimglennjohnnydep"
-  url "https:files.pythonhosted.orgpackagese557ccdd7ab46a4a06fae442555fe90a02d551009d765b79b99a942b2df330c5johnnydep-1.20.5.tar.gz"
-  sha256 "eacee79094c7820b089619a6b8ac2a1b62692db2e518eaeb03f8efa549bfaf04"
+  url "https:files.pythonhosted.orgpackages96709c3b8bc5ef6620efd46fd3b075439a8068637f4b4176a59d81e9d2373685johnnydep-1.20.6.tar.gz"
+  sha256 "751a1d74d81992c45b31d4094ef42ec4287b0628a443d02a21523f1175b82e2f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "3a40d16cf3d1713bbf8f6887a87be7e452ba9ddc1d297a94264d3448f47e6087"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f0d84456e51f71a5a3750526b475e5bd123a5afde597b9a5d858ccb1000309c"
-    sha256 cellar: :any,                 arm64_ventura: "7d4362418eb82758f72097c4a05a54982e4b28fd42a0c452170725a6637dd5cf"
-    sha256 cellar: :any,                 sonoma:        "49e5ab4d6e4fc95c046b422f8085b53dd66dd7b064de11900ea03a012aa17969"
-    sha256 cellar: :any,                 ventura:       "52f56c3a49c20540babf75f1999ca745f88ae1aca7e1ac2d54641b36e4eacff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b6b46add6f5753af33ce77c79926ad6e9d18a6343359f1b84ecb96eb80f6c1b"
+    sha256 cellar: :any,                 arm64_sequoia: "81e1ee32a7ec861d280708ac2d06304a795658377cb9153bc0600368363d1f1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c00ece50e174a7612b360ab836c27a2ab5e8b120856847b0d637ca15dee1dea"
+    sha256 cellar: :any,                 arm64_ventura: "3699fbfcdfcbcd3ec9ec8180a18280a5d3df7ac2e74e7b910a0081fe00d53909"
+    sha256 cellar: :any,                 sonoma:        "4eea94989813c8cb15b0743e1d982ebc7a1f2306cc355379df8d10be21b4d95f"
+    sha256 cellar: :any,                 ventura:       "15529e60f9ee2272f6389c84576a1274ee5f5ba2d82ebd2d3a832cdea4fe0c31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad06847d4a80c665aeb4775ce0800cd4c8b4c633d850913d60f86eff6d7350f2"
   end
 
   depends_on "libyaml"

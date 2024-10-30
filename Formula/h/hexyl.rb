@@ -1,20 +1,18 @@
 class Hexyl < Formula
   desc "Command-line hex viewer"
   homepage "https:github.comsharkdphexyl"
-  url "https:github.comsharkdphexylarchiverefstagsv0.14.0.tar.gz"
-  sha256 "5205fa1a483c66997f5a7179cdd1a277ebb5e0a743bb269a962d20b29dd735f8"
+  url "https:github.comsharkdphexylarchiverefstagsv0.15.0.tar.gz"
+  sha256 "017ab7fe18caa3d13427fb13fd6050a9d8bf9aa26d1e1fe02924dfd7f86cd3cf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsharkdphexyl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6b2af9349bf553f61e7ff4865edefe059e8c40f67c0e75fb2c24916671397f7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47840f2ffb16fcb2d4a78556a79c00e2cd18d5cbe723c358eaa92b1edf5e7a72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb8d7ef2f04405b08e996f6a44d5fe934bf762da6406fadef831be353fc7eac9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa4f47a4a455618ec36efd674ce9f34139161d19d013ecf62de726af8fa7cfd1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e639fa05686f3707032fe01755a2e9a1ef17b3ece0574681f784112981e834d"
-    sha256 cellar: :any_skip_relocation, ventura:        "ffa62bb30bf6d67ca78143753ed9ef5f52dae96bee8f86f331f704ee3c89b153"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b42c01944d81f20cc9e880aecdecd2231f8449907c87fbead6364746a35a6f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9017bafc48b6087ec8b236e3f62906d75ac882d6a5207058e50016048047a6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a44a4b5ee249e86b36143290bbec04a32083ef81fa43567540c769dc6815a10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b91fa9babb7eb57011c2f3238efbabb1d969e889828dd90cbee76553887a0548"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d8c155d4810f8f56c72f75f815ffabdc5d9d4f8bcf39f27d8dc856df0fcbe78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fc12c9a965ad23a423263b9928e016749fc842e69938f09f1477e5f28388db2"
+    sha256 cellar: :any_skip_relocation, ventura:       "29f47c94ac8862688184af7d2461eab6c3ec32040da86576b9390292ff0a0d03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "582a2dad400f4e342ab3f76f9c020c65117da35af0d3360d6306e2a32c853057"
   end
 
   depends_on "pandoc" => :build

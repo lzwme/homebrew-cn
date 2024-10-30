@@ -3,19 +3,17 @@ class Woob < Formula
 
   desc "Web Outside of Browsers"
   homepage "https://woob.tech/"
-  url "https://files.pythonhosted.org/packages/cf/10/3eb104a43ab4ff3109109883382bdfee663412e8fda2967d0ab220479240/woob-3.6.tar.gz"
-  sha256 "3765f4c54baeb4a837053f6d0ce82e54cee851aa3c8707a72aa8cd63d4304a76"
+  url "https://files.pythonhosted.org/packages/85/f3/a2dc1bb679de004aa1e48c8b77b5d5b9bca3007b2f25e0c39f850a009186/woob-3.7.tar.gz"
+  sha256 "b1d7113ba87a9b947c13a1e3b4bb4fa616ba3037092b54912fc3fee2647d1b2f"
   license "LGPL-3.0-or-later"
-  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "0b4a6b27903d6e1d552574713f5cf4fcb233d5ee02c5f4084d4665974cdd1f95"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0391f1a69d510a3c49d538ca6eb22469c86c630b1f39ca208c8a831e0490561"
-    sha256 cellar: :any,                 arm64_ventura: "b497f60f68a44dd8e255a6aed43ef35ed5f9b22f35170857efc15a74197a0d68"
-    sha256 cellar: :any,                 sonoma:        "fb07afbcccae9dacf1a7f5dff9a85d999c777bf0fd61e3a59e1a28e27550a58c"
-    sha256 cellar: :any,                 ventura:       "b460c89047db4b50932b085217a0f809b29933a18d3a1f1eed0172b554aef441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42575e8cf1e94f2e7c164b25fdc9aae504331f4204970fd3620ab7f9431230e6"
+    sha256 cellar: :any,                 arm64_sequoia: "544f50fd03f5c1f7c551bdced33e363da67253e7f16e4f258b2e33c8b7bb38d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "63f1ff18a0ae23684f16d99bec2c631a09288534396b4871e87ee4256600e54b"
+    sha256 cellar: :any,                 arm64_ventura: "5fa75ab650ca499865656bcd684aa113672df2b59bc41c79571f4902bc790583"
+    sha256 cellar: :any,                 sonoma:        "1e2193ee7da151398d2eade58cf409a2f94732abdcd35f648d57ff9e62e880e8"
+    sha256 cellar: :any,                 ventura:       "e049ae78a0a5a1af6800cf1ee86e8c26d81d7eb8dca7e72f178e68e140aea155"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e999afa8f7ee9c7963c8ac5887494976877351bd587db3b9b6e15b3abd0f07e"
   end
 
   depends_on "certifi"
@@ -88,18 +86,23 @@ class Woob < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/aa/9e/1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95/rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https://files.pythonhosted.org/packages/d9/e9/cf9ef5245d835065e6673781dbd4b8911d352fb770d56cf0879cf11b7ee1/rich-13.9.3.tar.gz"
+    sha256 "bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
   end
 
   resource "six" do
     url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
+  resource "termcolor" do
+    url "https://files.pythonhosted.org/packages/37/72/88311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5/termcolor-2.5.0.tar.gz"
+    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
   end
 
   resource "unidecode" do
@@ -110,12 +113,6 @@ class Woob < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
     sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
-  end
-
-  # Drop setuptools dep: https://gitlab.com/woob/woob/-/merge_requests/876
-  patch do
-    url "https://gitlab.com/woob/woob/-/commit/3283c4c1a935cc71acea98b2d8c88bc4bf28f643.diff"
-    sha256 "3625eecd756b6d246a23b2ce70f62deab5413605bd607c1b94e9502b4a1d6a1b"
   end
 
   def install

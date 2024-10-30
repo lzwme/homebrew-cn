@@ -22,13 +22,19 @@ class Gptline < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "certifi"
+  depends_on "freetype"
   depends_on "jpeg-turbo"
+  depends_on "libraqm"
+  depends_on "libtiff"
   depends_on "libyaml"
+  depends_on "little-cms2"
   depends_on "pillow"
   depends_on "python@3.13"
+  depends_on "webp"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
+  uses_from_macos "zlib"
 
   resource "annotated-types" do
     url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"

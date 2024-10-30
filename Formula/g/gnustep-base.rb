@@ -4,6 +4,7 @@ class GnustepBase < Formula
   url "https:github.comgnusteplibs-basereleasesdownloadbase-1_30_0gnustep-base-1.30.0.tar.gz"
   sha256 "00b5bc4179045b581f9f9dc3751b800c07a5d204682e3e0eddd8b5e5dee51faa"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -17,14 +18,12 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8430a86df0234c7051da2d855d23d787d43d0c9ecdfad49c3fb317aa070bcc43"
-    sha256 cellar: :any,                 arm64_sonoma:   "c147affcd59c6d9d1537d51569073c60905367407198c99bc6bd6baf38f21f08"
-    sha256 cellar: :any,                 arm64_ventura:  "d673128135ac72b65c4ac7968125c90c890362d2eb7f95f85d343c00e3b4a370"
-    sha256 cellar: :any,                 arm64_monterey: "a4302e0cbe7837a2b73ec760a82c3ccce8d2f999922570103f443e1346e78210"
-    sha256 cellar: :any,                 sonoma:         "454142aa68dc511e98e55a83934874c5b5e7a8bdcaedd2ddd9c961ec67455e59"
-    sha256 cellar: :any,                 ventura:        "1e0b3e5f607789b19eef999082ac660ab341c1d301c1bb7de4dd7b51c7b9e644"
-    sha256 cellar: :any,                 monterey:       "73c8784c0168881336f054d764103ef3ade4400c749c15facf7560d5a59a2ae2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "703eade0a2484596b5dc6e4cee9b8b1b4d80c72d21de83a459d9189db28edc4a"
+    sha256 cellar: :any,                 arm64_sequoia: "e6779e9ab227fc0a4263a177698054336437ea08f985c3605aed692361e5bce1"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d3546948a52c7946960bc75fe46a14c0cfef1eb6382e7059bde3abc6289b331"
+    sha256 cellar: :any,                 arm64_ventura: "323d0c1ec262b559b455d4cb6b25a637f60768716b5982e1fd1d65ba047476c5"
+    sha256 cellar: :any,                 sonoma:        "b00d56e75fba957c5fb343384b214e345bd38e307da422d136351ff73496b1e7"
+    sha256 cellar: :any,                 ventura:       "4c41b940447d94a2cbbe1a67eb838f4a99b6d20547f0574b87d5030d1fb79a35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9528f61500db30bc0eb553baa434d504b624406cf0da2090d8070d532cab339c"
   end
 
   depends_on "gnustep-make" => :build
