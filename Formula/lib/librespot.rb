@@ -1,18 +1,18 @@
 class Librespot < Formula
   desc "Open Source Spotify client library"
   homepage "https:github.comlibrespot-orglibrespot"
-  url "https:github.comlibrespot-orglibrespotarchiverefstagsv0.5.0.tar.gz"
-  sha256 "1af039ba08a2ad0d7b9758e8133229085845d1386018b90b455f011df27ee8df"
+  url "https:github.comlibrespot-orglibrespotarchiverefstagsv0.6.0.tar.gz"
+  sha256 "9ec881edb11e37d31a2b41dd30d56a3413445eedb720e1b0d278567dccfca8fc"
   license "MIT"
   head "https:github.comlibrespot-orglibrespot.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eda0f748e6fd8fa6bdc2d3d053a5f77b26fb82cdd7d5dcdf51015c8f30dfac37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83dc29f08d811c6a5f66e148728ae492a35c11943aac64ea154c36545461c5ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c5d16ee77dddba07e723c150bcc144a167cd983ba65409a350fff5a6dca6a23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55cb2f725d55730f4b3dcef1e19fb5315d772cd48fdeb07e8e88b85008b7ef3f"
-    sha256 cellar: :any_skip_relocation, ventura:       "da63fdd238553968dbaa0b1e68cabc8994e236d248014d256b066a2a1964399e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff80fbc9321c22cc8c06aa39e9c7fe58c6d7d6ce5eb71f671c949c9562392cd7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a2cafcfec99611b21e631568c66d6f48fb44fe253082d3fe4243ffb5ff4735"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee2f9df22c5a0ea8db290f7bc39e14312023c478b740a1b78d6553dd195ad0be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e157e7a2cc3a41cb25808eacbc7baaa78af346439c3ed6b0f8b15863e275adec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b377d7559eb6deab957dee9efbf6c8d0b855142619a798e1b2b0a9b61700db6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "451ba2f00bf2198de8ba55476b7bd6f63a59aabf6d1e344dcd8dea7caaf391c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6561e113b24cb1d2d6e3a5850090e3bfa2a82950388c5fe7fb698dc3b6a333f2"
   end
 
   depends_on "rust" => :build

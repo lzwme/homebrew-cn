@@ -1,8 +1,8 @@
 class Fetchmail < Formula
   desc "Client for fetching mail from POP, IMAP, ETRN or ODMR-capable servers"
   homepage "https://www.fetchmail.info/"
-  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.4/fetchmail-6.4.39.tar.xz"
-  sha256 "75109a1f307b538155fa05f5ef298e8298cb4deae95aed24c16b38d36ff0a186"
+  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.5/fetchmail-6.5.0.tar.xz"
+  sha256 "42611aea4861a5311e5116843f01c203dceadf440bf2eb1b4a43a445f2977668"
   license all_of: [
     "LGPL-2.1-or-later",
     "ISC",
@@ -17,14 +17,12 @@ class Fetchmail < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "531a98d2af949d23b2de33b7e9cedfe3c7aa39a49d59f52023531d3184ba6119"
-    sha256 cellar: :any, arm64_sonoma:   "91549ee97ce356ed5b3b7004a06f04195d528413f2dbf02fdda99cac0c162090"
-    sha256 cellar: :any, arm64_ventura:  "104754306bfc7cf87ab281d313496931d9b34252efdf981e512dbd1d4f101e0c"
-    sha256 cellar: :any, arm64_monterey: "6cdcdf18636df7649a006751f4f2e0c548c6d1d23f687dcb8ae57caf9402040b"
-    sha256 cellar: :any, sonoma:         "ea579492596d6f2972e800ebbaf5936dad15801a64b61d6bd7af4f1da05461ca"
-    sha256 cellar: :any, ventura:        "b1bfc5a0f4903f38135411c86eeb8e800e413a5c3f4209d7d992fa12d786e5d4"
-    sha256 cellar: :any, monterey:       "0910b99beb30cdae8fed6132f2d8dd934d4d0210b8b83e01a4a7902e0203a95e"
-    sha256               x86_64_linux:   "913eaf667d5718b8b1a58ccc8d3c531dc45257ae0e8cbb23304d283daf30f91c"
+    sha256 cellar: :any, arm64_sequoia: "b76509619fe246396587c9803f98bfbef6462a7b9a06b5b0a32e234811d31656"
+    sha256 cellar: :any, arm64_sonoma:  "7c195c68726a64d224126e5430233cc6458ec80c1fb905c7e305bc18bec704aa"
+    sha256 cellar: :any, arm64_ventura: "bd350d81590e440f7bd507e35d2cf9447c571f54580d25a4fa06acfa33e38eb5"
+    sha256 cellar: :any, sonoma:        "abb7e44d3200d2a6f0f9b5fed7bef9f235fa366b736a9c1cb991f9abc63e166a"
+    sha256 cellar: :any, ventura:       "c02640540d7246853572eb0b478823e2cd8facb085bb0f9dabdb536921b2c1fa"
+    sha256               x86_64_linux:  "8480cfc2b3f6ea0090c6ece015bba18b356be0ea024c39c7956f3e8aa44a27a4"
   end
 
   depends_on "openssl@3"

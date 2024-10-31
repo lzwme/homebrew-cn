@@ -2,20 +2,18 @@ class Caf < Formula
   # Renamed from libccpa
   desc "Implementation of the Actor Model for C++"
   homepage "https:www.actor-framework.org"
-  url "https:github.comactor-frameworkactor-frameworkarchiverefstags1.0.1.tar.gz"
-  sha256 "635bdd6e3b70886f1d9aa75c48e5bdb4084afae1f159bbfe5ea91f99b0460f6b"
+  url "https:github.comactor-frameworkactor-frameworkarchiverefstags1.0.2.tar.gz"
+  sha256 "ef4dd00ca7c59cd61dc336b6a8efbd6150ca85c404d213ecb61f6bcee4094ffc"
   license "BSD-3-Clause"
   head "https:github.comactor-frameworkactor-framework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f89384b764f867a22939a255260073cf37f0915824c1ec8c35efaeaaa15bb343"
-    sha256 cellar: :any,                 arm64_sonoma:   "1e12a584df05f1cec7122920ced89d6bb99c55878a673da31bb66ed8c741b4e0"
-    sha256 cellar: :any,                 arm64_ventura:  "c0790aeb9aef8cdd4379c4b06112871709ddf81b103068d92247f506bfa602fc"
-    sha256 cellar: :any,                 arm64_monterey: "61a7b91ff6b083dbaa10e24be3cdfeb693d3e2c6e81c95a66804b5d6d9fc08c0"
-    sha256 cellar: :any,                 sonoma:         "4d6531af952489110db600767de32e33bd70c0e65ce6ce9214fbe07f6365194f"
-    sha256 cellar: :any,                 ventura:        "ee77d8ccc34bdb1b0050a094936ef9d2395abd9e42a55a3d170c573547ccc21b"
-    sha256 cellar: :any,                 monterey:       "3d5ce3f385d9e01f38bf6621b1c0d3a7fb8177880c86b25d551142adae5c669c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f5dc9a456f8b1e63432bc16068cb1d33f0b88b2b2224223033c3018ba13ee4c"
+    sha256 cellar: :any,                 arm64_sequoia: "9537e004e941d95aac0be101fdb15af8482210717eec4ff76dcb467837cbbe18"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b8e61e0a9dba95d2b2894b31a370cddacfc030bd1ac9d8876fa3c80e9ed88c6"
+    sha256 cellar: :any,                 arm64_ventura: "acbf088b4337573a0710635d25ae8bb4828a8913b552443206b1c92ed0a555cc"
+    sha256 cellar: :any,                 sonoma:        "418ac2c0d3b64145b22f801ba4868490d9306babce62ce2e315da9ccf4b8228d"
+    sha256 cellar: :any,                 ventura:       "0d94e1fd5b0d827b48ae36871873a7f574635ca36256616912bfc1a3f02b390a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "891cd444eefd7ff0c2ca32273b9d7734a43a33f6758b343a126dfb99a8006b3d"
   end
 
   depends_on "cmake" => :build

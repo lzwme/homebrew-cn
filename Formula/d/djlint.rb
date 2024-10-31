@@ -3,19 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https:djlint.com"
-  url "https:files.pythonhosted.orgpackagesa4eeac8ee551ec04d5a214e62d008f40bf309574f103416482e03fb61fbad61cdjlint-1.35.2.tar.gz"
-  sha256 "318de9d4b9b0061a111f8f5164ecbacd8215f449dd4bd5a76d2a691c815ee103"
+  url "https:files.pythonhosted.orgpackagesa7e64b633476fa2ebbd09ade007f052617227fb0c250e7f708d6e56e9f6c4b85djlint-1.35.3.tar.gz"
+  sha256 "780ea3e25662fca89033fa96ecf656099954d6f81dce039eac90f4bba3cbe850"
   license "GPL-3.0-or-later"
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "091bed21d32b9ff2262763230a9868cf6daaba98990ce743c6f96362ffc83058"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd671663ffd2b3f74bacc3f8e283be9d56db4d7d2a4830dfaa5cb94b344b54dd"
-    sha256 cellar: :any,                 arm64_ventura: "e5475003140e226d0a878349272351cf2646e31916c8476e6cf33555cc7f9e12"
-    sha256 cellar: :any,                 sonoma:        "e2e31dc4a8f0b68e47f01100fbba2a4101581832e39fb5070779fe867c7a361a"
-    sha256 cellar: :any,                 ventura:       "93f1475e06b2ab21badf46c9d32285df5d2526fda2842a63b6ca135d8624a81b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d6f788dc20965e44d4f19d1610ef237cef267aaff1b6b720dbfddb9e3a931b"
+    sha256 cellar: :any,                 arm64_sequoia: "04bb1798a649665570e347bf7cbd38d947858feafae9418cd9f7fc974c02b136"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e64ef2caf8253730dbed8a6c85a5b1daf5809d1f7d3211112add95d9c17ce5e"
+    sha256 cellar: :any,                 arm64_ventura: "08ab0847f7b63d3833ce85e61e15c5659e747cc8389019a8ae54cd6d39c176b0"
+    sha256 cellar: :any,                 sonoma:        "681c1310dfb432f8531751735194ce8081e7f9228bf97b670dcdc376ecf605d2"
+    sha256 cellar: :any,                 ventura:       "2ce06d7c8da53ab842f1a881164707075df59675c7ffbdc8b6efeff3024b4ec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a97c66e933845157a0ea08b5d4f5ccb4ef9a5930ec64ea8221689566391f4b42"
   end
 
   depends_on "libyaml"
@@ -82,8 +81,8 @@ class Djlint < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagese934bef135b27fe1864993a5284ad001157ee9b5538e859ac90f5b0e8cc8c9ectqdm-4.66.6.tar.gz"
+    sha256 "4bdd694238bef1485ce839d67967ab50af8f9272aab687c0d7702a01da0be090"
   end
 
   def install

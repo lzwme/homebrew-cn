@@ -1,20 +1,18 @@
 class Naabu < Formula
   desc "Fast port scanner"
   homepage "https:github.comprojectdiscoverynaabu"
-  url "https:github.comprojectdiscoverynaabuarchiverefstagsv2.3.1.tar.gz"
-  sha256 "48d69813363c0236cd3ee24ec71f96bd404e6f11ed09264d37172d9000d5ebb8"
+  url "https:github.comprojectdiscoverynaabuarchiverefstagsv2.3.2.tar.gz"
+  sha256 "bfe1e5752902d28cf8ff4f3194e1bab97e457813c202d98b0c54ad10bd9b52f3"
   license "MIT"
   head "https:github.comprojectdiscoverynaabu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1c5fa6ea9a5dfe005927f4d4a71786baa81b4c40f8f2fe5a3a144f1a63dfa6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59614ba0b594cdd14bf01f9b4b0a57c15c93c17fd2765b70403ba3599cc6d213"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e475ef023c121d74a47f396118118f967a5e796f288eae7e7a4a643b1718a6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67233f93a4169d346b05651428f366fb1cbcc6a727afda2caf59c641f0d21e72"
-    sha256 cellar: :any_skip_relocation, sonoma:         "703a341778e74c1057337b132239281cbb56d5a4a215c897a7080aa8e0ab372a"
-    sha256 cellar: :any_skip_relocation, ventura:        "c03c7f073c04dc754198f756c4a3bd18fd629e5609c358aab4c76bc1f885f481"
-    sha256 cellar: :any_skip_relocation, monterey:       "f62101b1ff75db46f2a15d9eba914fe8b6735a459849483aa18144539188ddbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9208c17030923067a553bda48f6dff91ab20e71e8a07c4cdd04c82d4e507b660"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a824daef7ad067a9cab585eb9bcf5a4053493c89e80b142f4199a2bb4f99592"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d1819b138a60629f17be3215ac2d458846775118facb0cc8e723e74e856443d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c626d427e77628a2eb75a690fda8285b8b4f131e227795391426e6957a89c75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a396034b7c31ed86158d6c10104cddac1288eced847de8a1709dda91f8ce0e8"
+    sha256 cellar: :any_skip_relocation, ventura:       "8938367a3c27711389826e9576e89e6068ee837c0ba15f2cd0c2c0495ef3693e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e13d192fc067df0882cbd88fb60178cadd5e3369c406d05c915ed7153599fc10"
   end
 
   depends_on "go" => :build

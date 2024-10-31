@@ -1,21 +1,18 @@
 class GitCredentialOauth < Formula
   desc "Git credential helper that authenticates in browser using OAuth"
   homepage "https:github.comhickfordgit-credential-oauth"
-  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.13.2.tar.gz"
-  sha256 "ee894f81c63dbfc9ff7fc59affce3cedca85e9ef3d7b10ea6f0af86e712418d7"
+  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.13.3.tar.gz"
+  sha256 "294c101155872d1a440aad31e0e8e85159a41fefa19c83ef86b6d22a5184d189"
   license "Apache-2.0"
   head "https:github.comhickfordgit-credential-oauth.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ff39420fedd201fd8aadd2d2e970820c60e6daaa45eb2498c4d21a51d4beb23c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c684c917e7d4382144bc870ae80ee49998b385e788a756ec3bbfa01b7537820f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99f9738ad51f4efc8f26875f5eeddf24f1c42c098e42d300665d37c46adf2377"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d26d5207332197586ba00d0225725cceea144e4371657e5fd724b5df2358487"
-    sha256 cellar: :any_skip_relocation, sonoma:         "35fdb037a9fbb443ccdbcbd31da1b8a1a86949b9a060855cfd2c7971bc586e1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "7736b8dec4d2ae0251bc131ce81ee889b266a8d09519bab77d8976f7a062c9b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "69ecc891b5e930f0ec0b2c37bdbccd02232ae2b58b21f6a8f35420e109ebe9c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b07ccb69689e7fa321e3e0567612dd2423f83a2b33af12a32ccf0976e0b18dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "313c9263d6ae9b35174b260203a6ea638609663d2e7d80ce250d1c96d1bc8d13"
+    sha256 cellar: :any_skip_relocation, ventura:       "313c9263d6ae9b35174b260203a6ea638609663d2e7d80ce250d1c96d1bc8d13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86a85230ce4f7c854ae3b816ba3c35ffab8aa99b601f4aaedd565a7440ff7bb"
   end
 
   depends_on "go" => :build

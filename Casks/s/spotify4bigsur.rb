@@ -11,4 +11,9 @@ cask "spotify4bigsur" do
 
   # Renamed for clarity: app name is inconsistent with its branding.
   app "SpotifyMain.app", target: "Spotify4BigSur.app"
+
+  zap trash: [
+    "~LibraryApplication Scriptsbackert.SpotifyMain.SpotifyWidget",
+    "~LibraryContainersbackert.SpotifyMain.SpotifyWidget",
+  ]
 end

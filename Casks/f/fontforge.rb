@@ -10,7 +10,7 @@ cask "fontforge" do
 
   livecheck do
     url :url
-    regex(^FontForge[._-]v?(\d+(?:-\d+)+)-([0-9a-f]+)\.app\.dmgi)
+    regex(^FontForge[._-]v?(\d+(?:-\d+)+)-(\h+)\.app\.dmgi)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)

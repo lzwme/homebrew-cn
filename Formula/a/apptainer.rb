@@ -1,12 +1,12 @@
 class Apptainer < Formula
   desc "Application container and unprivileged sandbox platform for Linux"
   homepage "https:apptainer.org"
-  url "https:github.comapptainerapptainerreleasesdownloadv1.3.4apptainer-1.3.4.tar.gz"
-  sha256 "c6ccfdd7c967e5c36dde8711f369c4ac669a16632b79fa0dcaf7e772b7a47397"
+  url "https:github.comapptainerapptainerreleasesdownloadv1.3.5apptainer-1.3.5.tar.gz"
+  sha256 "fe1c977da952edf1056915b2df67ae2203ef06065d4e4901a237c902329306b2"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f19af1d189f432345055e8c68ab8b07408d6925ff399faaa95c3d226ed98712"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "41666d7fa1dfb3d85292f4f864a90d834bf8ff823fe6234d7b4d94f1d14a5197"
   end
 
   # No relocation, the localstatedir to find configs etc is compiled into the program

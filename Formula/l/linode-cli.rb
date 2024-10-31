@@ -3,18 +3,18 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https:github.comlinodelinode-cli"
-  url "https:files.pythonhosted.orgpackages97be070c32c1d2223a037fbb57d3d4be109b8449c29605d5279fda8b96747506linode_cli-5.53.1.tar.gz"
-  sha256 "f317f9e0e3f60e049b02acccaf8b7561e3ba09fdf9a1913eb4205faea3130374"
+  url "https:files.pythonhosted.orgpackages91a3dc6fe962ca17ad1d00f6a9193205e910d1874f639e1ba2027359e5ee1cfflinode_cli-5.54.0.tar.gz"
+  sha256 "213b195239343bb4af5ceb23fec503f7da493ce66f39c2d5d48e9abd5e8979db"
   license "BSD-3-Clause"
   head "https:github.comlinodelinode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3992df311e1dad01f3fcb0c4feee2be1a0601268270aed92c49394857b57c4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e51bb13fe08ef4bf02d69a4d5e6f4f069636d7a7ce34d89fc77d8f07a5cbb7d5"
-    sha256 cellar: :any,                 arm64_ventura: "6d2f2a3a434799d2e50f5bbd83f94023166abff3fd14635af1fea0b2e611057a"
-    sha256 cellar: :any,                 sonoma:        "b96e06a42878d1b821652545eab1f969820bbf6fa00214b71cff8edcc44278b6"
-    sha256 cellar: :any,                 ventura:       "2c60900642aa13f294b475bc16d0263e60c17a9855c8a54354d4c14856801e2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eafb2e9ac691b4af70a6e308548c602f38da6f9b1778e173f0fcac79ad22cb6"
+    sha256 cellar: :any,                 arm64_sequoia: "2c2c31e97da389b43bb01936dfe4b7715cf566d898947cf516b65146c8dda980"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bb517179741f9dc4457cff3b7c5fff2493ad2a957ad9668cb34b0398f4c8e72"
+    sha256 cellar: :any,                 arm64_ventura: "c84b9ecec3bdc69e15f760cb75c9ed17929fb9fa1f49469f7321b4055902e204"
+    sha256 cellar: :any,                 sonoma:        "dea39d6ab40263dbfc58e8860aeabcec8ea453b42966adfa8a72037b424154ee"
+    sha256 cellar: :any,                 ventura:       "1a26663b3f037c3b10c454444aefd37fbd3aa62af0d4e70d58b387a8798a273d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e44ea3a891d49af6b7a1d1ce57eeab27b807db2d9db48cacdd40d67ec032cd47"
   end
 
   depends_on "certifi"

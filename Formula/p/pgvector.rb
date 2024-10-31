@@ -1,18 +1,17 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
   homepage "https:github.compgvectorpgvector"
-  url "https:github.compgvectorpgvectorarchiverefstagsv0.7.4.tar.gz"
-  sha256 "0341edf89b1924ae0d552f617e14fb7f8867c0194ed775bcc44fa40288642583"
+  url "https:github.compgvectorpgvectorarchiverefstagsv0.8.0.tar.gz"
+  sha256 "867a2c328d4928a5a9d6f052cd3bc78c7d60228a9b914ad32aa3db88e9de27b0"
   license "PostgreSQL"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c15fe20140648ded883016f6edcf606926b1654ecb2b82b73e035c0dfc7bf50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe198adaaa6588303ae2032c61cf8dd535ad06e9860780335dfacd4396ed19a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c7f23fe6998cf78b81613cbe4c0378fae3ce4ef486e10c3bf7eed6323d6b337"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9f6ed112975cb8a21208609fa5773c37bb74ca6ea112159b4a7f33ca2238c18"
-    sha256 cellar: :any_skip_relocation, ventura:       "b8058a3a989357e9e6ac1bd7784b6bd77f107c960d088da487e716cf1dee2ddb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5020858a996ba215f18234bc25e7552edae986911cfe0206980c5c8d0affc45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0ea074a0dd35acc1957c1f2f6d90df297a16d7e47f94368b85e3a309e9540fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01a8036c0a03daa290fca07e915e406356fd36cdbd084117e9246d772955b438"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d0edb94eda91ef957b4497c0173c33579f860843d6c105d5668f1ceb86d11a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9e229a72dbc9e7b8e4587389823caa307fc1ee0f2338e45140a49e4ece5c4eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "21e40f77e8afca2fae9303cc45216b53ec79d48ebc3f8d7cd79b2fa8a22aa6ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7765039d7b20e78006e2ff2c3b197185a9c80e8b930a384b8e5feeb88eaf3afa"
   end
 
   depends_on "postgresql@14" => [:build, :test]

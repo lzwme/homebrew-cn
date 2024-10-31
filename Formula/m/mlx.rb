@@ -3,18 +3,30 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.19.1.tar.gz"
-  sha256 "b6b76d5ddbe4ff7c667425fec2a67dc0abd258b734e708b1b45fd73910a2dc83"
   # Main license is MIT while `metal-cpp` resource is Apache-2.0
   license all_of: ["MIT", "Apache-2.0"]
   head "https:github.comml-exploremlx.git", branch: "main"
 
+  # TODO: Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https:github.comml-exploremlxarchiverefstagsv0.19.1.tar.gz"
+    sha256 "b6b76d5ddbe4ff7c667425fec2a67dc0abd258b734e708b1b45fd73910a2dc83"
+
+    # Fix running tests in VMs.
+    # https:github.comml-exploremlxpull1537
+    patch do
+      url "https:github.comml-exploremlxcommit1a992e31e835d05638a6f3cd53d4b136996a63c9.patch?full_index=1"
+      sha256 "fd3a19a756e581840046e4b49365622025e2589bd33914602350a18c7ed0e2c2"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "fae107bca31ed887a7453c0845d0c66f1cf45b18b09e0f7698e74f602880defb"
-    sha256 cellar: :any, arm64_sonoma:  "a9b070476c444b7407224965cec8a49b12f02b92b042dae2e9d40ab12a2e6182"
-    sha256 cellar: :any, arm64_ventura: "d7e79b2ea1eec1da86b1a885d4f2c22ff01473012358b6497b281b479db057dc"
-    sha256 cellar: :any, sonoma:        "d6a32fecfa02768d75db1c0c946e6445b9352932f0d0d3610a460c770e13e52f"
-    sha256 cellar: :any, ventura:       "338bd1feb8f6fe12e15088c988c8202065afd566f5fcab58deafb5800106a11f"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "8d95b1fec7643617c266d3c4ccf1700654241a68c6d1d07a3d977c6c721ac18c"
+    sha256 cellar: :any, arm64_sonoma:  "058d61257c495ad8ce9f86e2f0753b0df84494fc2fcf242a5a5c58a7c7e54b06"
+    sha256 cellar: :any, arm64_ventura: "6f01ec4b713c37b2afff3d4f76125ad98b6f7001240488460ce331af03fa50d2"
+    sha256 cellar: :any, sonoma:        "3f5ccf6675d82014f6ed1f27845eb04f3bfeb7a0beaa203e982a277d6b649f69"
+    sha256 cellar: :any, ventura:       "69f8f83d3ab154e999363aab5a106322580f2e39d80d1bb3a29958ae394c803d"
   end
 
   depends_on "cmake" => :build
@@ -52,13 +64,6 @@ class Mlx < Formula
 
   def python3
     "python3.13"
-  end
-
-  # Fix running tests in VMs.
-  # https:github.comml-exploremlxpull1537
-  patch do
-    url "https:github.comml-exploremlxcommit3f425113e8e1e8a142e3655e6eef26ed95e68594.patch?full_index=1"
-    sha256 "8ac529f592fc3ff5af49882ef8c3129969dbfd7037b388952ae42f1fc0b2d8e7"
   end
 
   def install

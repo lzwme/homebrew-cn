@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for CC++"
   homepage "https:conan.io"
-  url "https:files.pythonhosted.orgpackagesaa867c91c3f15121c2fea24b5de005f337133cbd22ff3dfa323e452c98a8972dconan-2.9.0.tar.gz"
-  sha256 "48af849f67d99f8ffb472173989fb701cfb8e91c9df3cd10a67535cad8d2c689"
+  url "https:files.pythonhosted.orgpackages5dc360d2a828ea2df1ba23dbe44cc0421fac04d5244ef64571d4eb7c6be1d55aconan-2.9.1.tar.gz"
+  sha256 "98e3a2366be1980100746250655fdbd1deafc6534a67220441790c40ce73361a"
   license "MIT"
   head "https:github.comconan-ioconan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "38022c2962f7df05eb5742191ebea342ad0ba75725578b6fdeba4a9399b6df6e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6328e1657d99be20e6bde3fc633485c5c17fb6f23fe7aa67fc886812266a6ed4"
-    sha256 cellar: :any,                 arm64_ventura: "24f7793918f63eae705fe97f1fa148b433a840dba111d645efe27eb8e0a2a733"
-    sha256 cellar: :any,                 sonoma:        "9ecb69f4f5fb3cca389fd4b170d1a98f7a6635928644fdeda9a1d48c91ed4c4a"
-    sha256 cellar: :any,                 ventura:       "40ca91e6955aad118cb7b71c0e37a8786e6f0e9318d20bfeb858f828ca7bf9be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "723f2baf8696cbb0e6e88f23d2bfed85b08966828beb085feab0d751dc65dcef"
+    sha256 cellar: :any,                 arm64_sequoia: "0edb9e78aa84235eacf2a0748710fdc610bd3d289edc59d982af1fe1956782b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "35f2db3387d433dd4df259b5364acb0bafd7e08a21e2839a419ea78292abd00e"
+    sha256 cellar: :any,                 arm64_ventura: "fc7253ccf4ff420c621d34fc6f821488f5b537f4a6eeaf1f27480899754e1b08"
+    sha256 cellar: :any,                 sonoma:        "d160b2f1a357f4dc4c87919d371612bbe11ae586fbfd35969a8239463d346c12"
+    sha256 cellar: :any,                 ventura:       "5c85f69239499e1dd46779beda54842e0fc9b15d4d6c235b87a35fdc8f948bc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d2b8795bbacc7ef2da520a9ab2486574cda61af95ce944eeccc94b78e4ddade"
   end
 
   depends_on "pkg-config" => :build

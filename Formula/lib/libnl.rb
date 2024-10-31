@@ -1,12 +1,12 @@
 class Libnl < Formula
   desc "Netlink Library Suite"
   homepage "https:github.comthom311libnl"
-  url "https:github.comthom311libnlreleasesdownloadlibnl3_10_0libnl-3.10.0.tar.gz"
-  sha256 "49b3e2235fdb58f5910bbb3ed0de8143b71ffc220571540502eb6c2471f204f5"
+  url "https:github.comthom311libnlreleasesdownloadlibnl3_11_0libnl-3.11.0.tar.gz"
+  sha256 "2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 x86_64_linux: "1a9b2071dd76f8b2d35c2064fa5305dabaf610e0f408c50024ce8bcc7902ba28"
+    sha256 x86_64_linux: "4f38d449757989f549668b55ff19e6d5a19d574c720bb15e3543b15564db966b"
   end
 
   depends_on "bison" => :build

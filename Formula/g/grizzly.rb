@@ -1,23 +1,23 @@
 class Grizzly < Formula
   desc "Command-line tool for managing and automating Grafana dashboards"
   homepage "https:grafana.github.iogrizzly"
-  url "https:github.comgrafanagrizzlyarchiverefstagsv0.5.0.tar.gz"
-  sha256 "d2a90e702d77bb0ac9e5a995d24650ad3510cc01f1a96b9a5cef51f35942dd2d"
+  url "https:github.comgrafanagrizzlyarchiverefstagsv0.6.0.tar.gz"
+  sha256 "aa75c2fd7d52607e9d52a3531c496fc3ec84c6844a1aecaede7f04eeb2408737"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbae00810ecdad4fd3d2902309fde77c33f45866802abbe8c536c7270fabc60d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbae00810ecdad4fd3d2902309fde77c33f45866802abbe8c536c7270fabc60d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cbae00810ecdad4fd3d2902309fde77c33f45866802abbe8c536c7270fabc60d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e0e87d34c94f83ee3211c857af91b61e49f8a49fb3a25789befe6c41f3d32bf"
-    sha256 cellar: :any_skip_relocation, ventura:       "1e0e87d34c94f83ee3211c857af91b61e49f8a49fb3a25789befe6c41f3d32bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4e1cb3f2a3b65ea00731a50e7cd00b2d19a379db3f5e3429ca71f0f161bf7d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a20f521bb3ae13405678789d52a07ee6f19354626683e68e1a8f62d8d56a831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a20f521bb3ae13405678789d52a07ee6f19354626683e68e1a8f62d8d56a831"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a20f521bb3ae13405678789d52a07ee6f19354626683e68e1a8f62d8d56a831"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a94e90480ae8eadaf52343c7b83ee56204cffdc47093701a23e6a70b738a5df7"
+    sha256 cellar: :any_skip_relocation, ventura:       "a94e90480ae8eadaf52343c7b83ee56204cffdc47093701a23e6a70b738a5df7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cb9ea3eda63a25f7f85872dc2a18c70b3950d958620c715922e2f910f3dd0ff"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version}"
+    ldflags = "-s -w -X github.comgrafanagrizzlypkgconfig.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin"grr"), ".cmdgrr"
   end
 

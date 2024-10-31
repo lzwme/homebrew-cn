@@ -1,21 +1,18 @@
 class Rtl433 < Formula
   desc "Program to decode radio transmissions from devices"
   homepage "https:github.commerbananrtl_433"
-  url "https:github.commerbananrtl_433archiverefstags23.11.tar.gz"
-  sha256 "1260c58400bf35832ac1b76cb3cccf3dc1335ffa2416909c63c7d7060c74663b"
+  url "https:github.commerbananrtl_433archiverefstags24.10.tar.gz"
+  sha256 "e5ab1597a723bf9e0eaa56be988b23dae3670471c6472510ba07b3b588407dcb"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.commerbananrtl_433.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "abecb01e4de144058b3db8eac1c0d6fcd16994f43e97ced92ac43cdc47f0a218"
-    sha256 cellar: :any,                 arm64_sonoma:   "71a64b3bc46e45f9544e4b2c764c2cf329f4965b59701e897521aa3b53a117f8"
-    sha256 cellar: :any,                 arm64_ventura:  "12c177662b3019a2f15bacd8819eb3ca3b52c4540824c48536d947ecc0d8ab3b"
-    sha256 cellar: :any,                 arm64_monterey: "f7ea74abe442aef36c1edcb15cd7d4d3ea13b4da8c7cbc48afbb1c997273f430"
-    sha256 cellar: :any,                 sonoma:         "143e9c0e0dcbbb4a7bc71cc40f6e512abc5da84d64e42a5f2fc7fb47c398af05"
-    sha256 cellar: :any,                 ventura:        "a9064756df95ef0d25eb9f568c5f581e35692300aa9c1356af3fd18a5e491863"
-    sha256 cellar: :any,                 monterey:       "c12dacc2821a946d1418483cd3c01c2818535111077357ae7668e9f5ce5c7ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86592dfc6a02ae7867d13268f978d45ee86a762eeb4673a21dcf4c60fe466929"
+    sha256 cellar: :any,                 arm64_sequoia: "32f8c90c98bff20b7f7a74bebc611fc3c3d917a1c19ee9a6558ed85d3338fdac"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c95bbf6fc2409649172688480da895fbc382128c7e98d613d02fb115dd6237f"
+    sha256 cellar: :any,                 arm64_ventura: "58b0d9e8ac9e8959f4a7c99416ab07ee70027ac05edbb2e52dd0af4db90f8c8c"
+    sha256 cellar: :any,                 sonoma:        "411281a288eec7b0b4210191aec08ba5cb8798eb5bad69f120f3d6f8faf28ae1"
+    sha256 cellar: :any,                 ventura:       "2c2b71299c4dfaaf7a6f531d0d0532d77f3d45c821cfe25a054afd7814bfeb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f45fedbaa73f2e0d800e6e64d52a209c4d242c9291ff82022907b915a542ed64"
   end
 
   depends_on "cmake" => :build

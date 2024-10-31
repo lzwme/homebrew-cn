@@ -11,6 +11,11 @@ cask "fedora-media-writer" do
   desc "Tool to write Fedora images to portable media files"
   homepage "https:docs.fedoraproject.orgen-USquick-docscreating-and-using-a-live-installation-image"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on macos: ">= :mojave"
 
   app "FedoraMediaWriter.app"

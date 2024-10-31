@@ -10,17 +10,13 @@ class Plplot < Formula
   revision 4
 
   bottle do
-    sha256 arm64_sequoia:  "cf6dacf91be6c1cd99f50b5913882752afdece2476827c44d3d21c236dceba07"
-    sha256 arm64_sonoma:   "38f8a5391d8b19cb448e226be25d6f6b8ccadbfb24fe27ed4cf701dfbc8b54aa"
-    sha256 arm64_ventura:  "486576902b6d2b2e587234bfdaecfc7ee5a58b3f50bf8d622ead6eee8952c091"
-    sha256 arm64_monterey: "c9a7891722c17ce0ac1243e1400583ff61250a3ede6a1d232c2a6c9aa4a98178"
-    sha256 arm64_big_sur:  "148662ac1efb63325a193e069fb65bed3ccee4c0288613d819c4f821ec3d8ba8"
-    sha256 sonoma:         "14d2949c2de92effaa6a67d3fabfc070ffb9f51746e3cb91044960d0540181de"
-    sha256 ventura:        "4e805b3ba1621186f2fae3e8d2f117915fdfbac9aaaf90678f0676f51956f584"
-    sha256 monterey:       "a2da58214519cf354a3e0e6d5e40b3d2b3e7e0fc654701e8d0fe0520b95f7c9d"
-    sha256 big_sur:        "840dc348629f2e2c23697475587ccc48822c4ad710b5497319340de6d3c6e401"
-    sha256 catalina:       "9edc31f3d0fccb7d70c782da8ebd425cca7e332d4adcd1550e5ff7ed4c67b4f1"
-    sha256 x86_64_linux:   "2bce940b801bd4cf968b7c7a3e220ce1f80ee3c29f6fac58d38de1151669b144"
+    rebuild 1
+    sha256 arm64_sequoia: "9305edca28268f6aed4efa7da578545c70d5feec4c2161da9f0e60aca9d3ace0"
+    sha256 arm64_sonoma:  "bdc0cc407dee50cc18fe7b6b37db420f9331acb5b63b534931337fa151bf1d95"
+    sha256 arm64_ventura: "93efe317d3c6e9e265061402aec9a37c332d15420261e47faa3a5c3f06a4aa02"
+    sha256 sonoma:        "fe49328f9a4c77b4ef5890371504401147804bb4254525186f1f85a651a740e0"
+    sha256 ventura:       "32fde8a89d5580c4e09d9fac911a5ac0c5ee2c745a967109e1c130600c30fce7"
+    sha256 x86_64_linux:  "91ae9fc5f0d6d1ba8d8bb494bee3304655c35a7c8fa224baad1b9427a3ca3848"
   end
 
   depends_on "cmake" => :build
@@ -37,7 +33,12 @@ class Plplot < Formula
   end
 
   def install
-    args = std_cmake_args + %w[
+    # These example files end up with references to the Homebrew build
+    # shims unless we tweak them:
+    inreplace "examples/c/Makefile.examples.in", "@CC@", ENV.cc
+    inreplace "examples/c++/Makefile.examples.in", "@CXX@", ENV.cxx
+
+    args = %w[
       -DPL_HAVE_QHULL=OFF
       -DENABLE_ada=OFF
       -DENABLE_d=OFF
@@ -55,32 +56,9 @@ class Plplot < Formula
       -DPLD_xwin=OFF
     ]
 
-    # std_cmake_args tries to set CMAKE_INSTALL_LIBDIR to a prefix-relative
-    # directory, but plplot's cmake scripts don't like that
-    args.map! { |x| x.start_with?("-DCMAKE_INSTALL_LIBDIR=") ? "-DCMAKE_INSTALL_LIBDIR=#{lib}" : x }
-
-    # Also make sure it already exists:
-    lib.mkdir
-
-    mkdir "plplot-build" do
-      system "cmake", "..", *args
-      system "make"
-      # These example files end up with references to the Homebrew build
-      # shims unless we tweak them:
-      inreplace "examples/c/Makefile.examples", %r{^CC = .*/}, "CC = "
-      inreplace "examples/c++/Makefile.examples", %r{^CXX = .*/}, "CXX = "
-      system "make", "install"
-    end
-
-    # fix rpaths
-    cd (lib.to_s) do
-      Dir["*.dylib"].select { |f| File.ftype(f) == "file" }.each do |f|
-        MachO::Tools.dylibs(f).select { |d| d.start_with?("@rpath") }.each do |d|
-          d_new = d.sub("@rpath", opt_lib.to_s)
-          MachO::Tools.change_install_name(f, d, d_new)
-        end
-      end
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_libdir: lib)
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

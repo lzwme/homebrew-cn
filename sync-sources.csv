@@ -557,6 +557,7 @@ Homebrew-homebrew-core/Formula/b/bootterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bore-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/borgbackup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/borgmatic.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/boring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boringtun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bork.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bosh-cli.rb, Homebrew/homebrew-core, 1
@@ -3134,6 +3135,7 @@ Homebrew-homebrew-core/Formula/l/lager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lame.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lammps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lando-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/langgraph-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/languagetool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lanraragi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lapack.rb, Homebrew/homebrew-core, 1
@@ -6696,6 +6698,7 @@ Homebrew-homebrew-core/Formula/v/vineyard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vips.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vipsdisp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virgil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
@@ -6913,7 +6916,7 @@ Homebrew-homebrew-core/Formula/w/wy60.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wzprof.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x11vnc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x264.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/x265.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/x265.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x3270.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/x86_64-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/x86_64-elf-gcc.rb, Homebrew/homebrew-core, 0
@@ -14231,6 +14234,7 @@ Homebrew-homebrew-cask/Casks/y/yate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yattee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yealink-meeting.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yed.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yellowdot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yemuzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yep.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yes24-ebook.rb, Homebrew/homebrew-cask, 0

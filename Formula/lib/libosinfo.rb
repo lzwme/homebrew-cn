@@ -1,8 +1,8 @@
 class Libosinfo < Formula
   desc "Operating System information database"
   homepage "https:libosinfo.org"
-  url "https:releases.pagure.orglibosinfolibosinfo-1.11.0.tar.xz"
-  sha256 "1bf96eec9e1460f3d1a713163cca1ff0d480a3490b50899292f14548b3a96b60"
+  url "https:releases.pagure.orglibosinfolibosinfo-1.12.0.tar.xz"
+  sha256 "ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libosinfo < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "25a8b9d60fbc6c908da6f27684deb9b86ed49023ffa76ce2575af8e861c44d10"
-    sha256 arm64_sonoma:   "5acd188d4c078e794e31e12701323a9d549c2db6dd09c0903060d3f5526378d6"
-    sha256 arm64_ventura:  "ecbf5376391dd7932c61d6112f86cbdb2f7bf3f7f457694157abea71cdf289f9"
-    sha256 arm64_monterey: "a7d126750cd6bc8fc8abb8433c3835da6ebfba0dbc0a8a6b19273648334f69c6"
-    sha256 sonoma:         "9ae4b3ac7101c25433bafebdbfe01aa6ab8a3340173c426513fcf214a1ed14b8"
-    sha256 ventura:        "6ddc2d382c032be8472373fa603c3b9b0d5238cc5e2219e736377c19d61df384"
-    sha256 monterey:       "556d1cddbdc4c90e958754ee315c8f2e4f3b63ee59b5d00015debbf8bfc783ed"
-    sha256 x86_64_linux:   "c17b5a93160795024c5be3de4e763140cf9aac0e14df7b396b5c480fbc83faf6"
+    sha256 arm64_sequoia: "cf2259dd949ebcdd2cb0c9ea883d0f67abe07c351af73869cf6bfd300f24161f"
+    sha256 arm64_sonoma:  "948b6a24382554b4f305e2273217f9e95e2928afc3df1819ce6ab37199c5d66e"
+    sha256 arm64_ventura: "56c9fcb470ba6c18017696c84b0ac0efac45842166e440f6ce507102c167b964"
+    sha256 sonoma:        "a9ddacdeac8d20b1a918ba60006a08eccc0d8b1b9296324eec944278a1a9aac1"
+    sha256 ventura:       "44b619cc3c7a49a8ead42200b497313def8ea75111587cfcc97eced74b542293"
+    sha256 x86_64_linux:  "42ed4e3587f00f42ac72e46d24c9baea274589e693f404d469297e7caf185b7f"
   end
 
   depends_on "gobject-introspection" => :build

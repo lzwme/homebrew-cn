@@ -7,24 +7,24 @@ class Fbthrift < Formula
   head "https:github.comfacebookfbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad6215564b2b74e114fca3c4a93de1805364fa7dadf59991ceec41fb9d257640"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a83bb1da3a716ff76ec216031b719bb4134b12751b2e02f608b63b22407e402"
-    sha256 cellar: :any,                 arm64_ventura: "d83ee789c9c0b1ab49f7c5c62b331df8a737b57be3d1087584af1bfbb94ebb63"
-    sha256 cellar: :any,                 sonoma:        "7ea5c01374c5f6945b21785f93b5b120ba08e229484f29412ad5036357f83df5"
-    sha256 cellar: :any,                 ventura:       "86eef111a3007fe6bb72915cf184929b4972d46285e81a6e97f93d248c61738a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef3504d8efa32cf9c6de3ee78f1441edea47f84c5c465d7f6c8b0dcddfdc6092"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "06cd3110c6dec108df5cd091ed1f3860e2c35ea4c46a7a5ee3962b56bf32d405"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b16e7c2d20c46afc464255563168d312c9ba540b21eb57a7270bfd44fc96dc7"
+    sha256 cellar: :any,                 arm64_ventura: "84e934e0e96d1755f7bc41893f6f01f65093c5c2dcabbeb086da208f8f23d13f"
+    sha256 cellar: :any,                 sonoma:        "20affe8d79807ebdcc952fb4fd65912d4a2a3e5f4c74db6f21ce87f00fed4026"
+    sha256 cellar: :any,                 ventura:       "5b8eb65560355b6790ebbb0f1856ce3b6963761b5b64e18ab55cc7b9101e7e31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b7e3f8a647ac68d2c633dd7f4a31d58d7aad48eff3d12ce1e7dacb55203c95f"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
   depends_on "cmake" => [:build, :test]
-  depends_on "boost"
+  depends_on "mvfst" => [:build, :test]
   depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
-  depends_on "mvfst"
   depends_on "openssl@3"
   depends_on "wangle"
   depends_on "xxhash"
@@ -36,6 +36,10 @@ class Fbthrift < Formula
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "boost"
   end
 
   fails_with :clang do

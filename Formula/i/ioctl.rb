@@ -1,8 +1,8 @@
 class Ioctl < Formula
   desc "Command-line interface for interacting with the IoTeX blockchain"
   homepage "https:docs.iotex.io"
-  url "https:github.comiotexprojectiotex-corearchiverefstagsv2.0.5.tar.gz"
-  sha256 "4bae3a7cab765e7f40e1ca45cfb15b45b7f424fc212bcd3c6c6c76aa5097b2b6"
+  url "https:github.comiotexprojectiotex-corearchiverefstagsv2.0.6.tar.gz"
+  sha256 "e3b331ca1420521c32a7e263a9c25f0bace351260bdce91df3ef91c99149d254"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b689a3a17ed37e19332933c16f483b6007b46b6515ddbb5d8cc38ebd5381a92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ccedb2294befd63d5407b815e8d9fd921ec3c8f1e55557433bff4019c3e1ae5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "377378e4d401ea46f9a7b14ce55825f0266d8545aa1f475746afedf9bd8c601c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c588792a9e9ff7070d22ae00ddfa4605487ab700b2ef45247ac0e7037d177165"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ab524952a1e79e9563f8737aa355308c96560b5a76a68eb61e5526145c6d4a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e08365302dd8f3b8f6206f682b2bb44d54f114416e845a23802ca9d5bbb6999"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bbace2eec7303cb8b224a37d395cd5acad9f11ed807c4ca49025d14726ec150"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3f6bfa399d5c692f15074036b45d6312c926784ff0ddda9a7e3a4ea52bbfeb5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7178b224531c70aa89fcc7053f502b457786973233edeb53fe266f3ea09d5eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ddd806b695b8c46f0a8b0100d3887dd0e55a95d65ad497c58915cfd02b3068e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a1d5fdefd7edf2b9dad821d6474d19f6a07c4783b1830fe034266a861db5a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4152362e68415a10c69cf56b531dc0bf13c973462e6dd3d4b019b309b1bffba"
   end
 
   depends_on "go" => :build

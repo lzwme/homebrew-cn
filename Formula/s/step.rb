@@ -1,25 +1,25 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https:smallstep.com"
-  url "https:github.comsmallstepclireleasesdownloadv0.27.5step_0.27.5.tar.gz"
-  sha256 "b2e5e3c4bf2ed0b99a65bea649b66032ced94388cc08af569ee53ff299a14e18"
+  url "https:github.comsmallstepclireleasesdownloadv0.28.0step_0.28.0.tar.gz"
+  sha256 "de06779efb5eca1bf3f3da52c69bf3cf23460b5ee0bf9f8ac3986c61588cc9b5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "001623d26b11678b3909b69c556b44bca86ff1814b251edb087e864e22bddc06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eafcff5ba922636b81f3c3c74f79a547482ef130a0ed02b67624c69a3761e419"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "153012d6ae22e193add33e2984c0e4833c922c3a61e6ee144ce8e37d9e80fb71"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ade247b235cde3593c556a279648f034346f997fecea3c7d3f160fabb5d24061"
-    sha256 cellar: :any_skip_relocation, ventura:       "31098b478a6813ac0187b002677c5210f27a42ef64f1374042217409247885bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "324bec6e8eae955df91cb90cdac66a5829d490a0043569fd0bb836af7385f965"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6974faa9a7ec826e607528d6b74db7c0e146ac33408995a7dcf0697cf8ac1977"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a2afb2e9047cffc13791ba9b1e64d01773643a2e6ee8b653e1ab834c39496c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be761bacbe59dac151c9537ade8c3c5949b53e8706ae84c82096384146c6aa94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45441c73398e27e0007f24ea847138d7816e9076d571d15b32a03a23423cdea3"
+    sha256 cellar: :any_skip_relocation, ventura:       "1e57faa45bedb216e9ab818b7fa030c152ff12b37f6e27dbe45723a1d892ae63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7cd3dd419bc3122c214067e062ece1067cb1b9e5425da663bd4affa7de1b0d2"
   end
 
   depends_on "go" => :build
 
   # certificates is not always in sync with step, see discussions in https:github.comsmallstepcertificatesissues1925
   resource "certificates" do
-    url "https:github.comsmallstepcertificatesreleasesdownloadv0.27.4step-ca_0.27.4.tar.gz"
-    sha256 "6ac5ba0c183c87c6039c052de1d79082ac5df474d90ce026121607302f06ce6d"
+    url "https:github.comsmallstepcertificatesreleasesdownloadv0.28.0step-ca_0.28.0.tar.gz"
+    sha256 "41e0833f8ad63055928a5e01764612a5d19c2339502602aefdfdd4169191bdd1"
   end
 
   def install

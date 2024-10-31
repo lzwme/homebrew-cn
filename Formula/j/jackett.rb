@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https:github.comJackettJackett"
-  url "https:github.comJackettJackettarchiverefstagsv0.22.860.tar.gz"
-  sha256 "59603373757479e17a029ab65ffd25e9efafbb4b28457880673b23e609a8e2ad"
+  url "https:github.comJackettJackettarchiverefstagsv0.22.862.tar.gz"
+  sha256 "636081893a237675a09e4b9e5cf7854af75bb52b380acaef172e4a0fd0d67fbd"
   license "GPL-2.0-only"
   head "https:github.comJackettJackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "377dbed68e949624d98c345553cf728478f8d9309d87b3b663b8204ca2f23eff"
-    sha256 cellar: :any,                 arm64_sonoma:  "befcbda2b95e37018d90b425eac1e7265027761a11f56f0371852335a2800738"
-    sha256 cellar: :any,                 arm64_ventura: "ff3b85f72aac74ee114f2bd911026a6313520af8177cd0f03a60aaeb2d18a608"
-    sha256 cellar: :any,                 sonoma:        "2c8c0c04e88d9523bd5046eedd575d2987925929f7b214f3c3b5f61cf34e9c1d"
-    sha256 cellar: :any,                 ventura:       "769c91da7aeda8237edc76139c4e6a5f3578aa40bb39b9ea80a56575d72a2304"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a2311544d4546f188da43157ea56e3cdae2c80303c1e43de45d9177294ea7bf"
+    sha256 cellar: :any,                 arm64_sequoia: "da4b5c66389d0d5ac4783235df3318e7b36dec50075bcd83a42b1f2b5cca2d80"
+    sha256 cellar: :any,                 arm64_sonoma:  "e52251ba58c65308bccee3373136b5265f3996670aab0b1368eb6aef6975b734"
+    sha256 cellar: :any,                 arm64_ventura: "f0f3958582ff6802a1b0e31d6ae45637d62ee0fb3ef4fa0d587204dcb7ad7a5c"
+    sha256 cellar: :any,                 sonoma:        "5fc07d4ef477ccc9f4933e506253fe2dad93b1b963c1d96f3647c8ec82755302"
+    sha256 cellar: :any,                 ventura:       "9d153f73772ef9b7af0189052eb0851d3eef111819e8655b9b18ce4d6d728e7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eabba390f6584ab594d4a127084e2e88239cde180507da74a13231bfc5ad8cf1"
   end
 
   depends_on "dotnet"
