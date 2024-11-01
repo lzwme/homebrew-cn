@@ -4,14 +4,15 @@ class LibspellingAT02 < Formula
   url "https://gitlab.gnome.org/GNOME/libspelling/-/archive/0.2.1/libspelling-0.2.1.tar.bz2"
   sha256 "5393a9b93fda445598348a47c42d1ad13586c0bcf35dfd257afd613fd31812c1"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "c1936dea7e24ec7f2df1f1fbfb3723ad01b76777ea758c907eb343ec8b6cd9c7"
-    sha256 cellar: :any, arm64_sonoma:  "eba6e2cde91f01fcd798d1fb5616e7b3ed5339c47757042df5e0ac9b79f0e4ed"
-    sha256 cellar: :any, arm64_ventura: "ec0050d13a32dd4fbb40b947fb6e2ad57b85684fab90a678b36d525844b1220d"
-    sha256 cellar: :any, sonoma:        "c57a664e8e205f97e7eaab2e256291809e7c84b7bd25a519f4161da3a8725fbc"
-    sha256 cellar: :any, ventura:       "ad27fc3dae6f6886eeb12453ba7f3a07e2877ca5ccec7cb57f69e4bafdbeedaa"
-    sha256               x86_64_linux:  "81033ad6a55589c5afd8102fc146ac68bf648be05b9773f4fd438184e3d18b22"
+    sha256 cellar: :any, arm64_sequoia: "2cd2a76ecb4d0c55efe4f3ad8f58bc8a6a8c077bc453ef004f0285aa071a24a2"
+    sha256 cellar: :any, arm64_sonoma:  "b652f34c8392f88a799e5285224b9af15781c556b4badd43b93d0689e55e91cb"
+    sha256 cellar: :any, arm64_ventura: "9bac22470da786b43ab4cee4811ec97315593e6ca65a845cb50ceab4cbcdae2e"
+    sha256 cellar: :any, sonoma:        "b9696d798a8832c3ecf34dd3cac5f7213b830e6f37ce80bb2013a44449673b3d"
+    sha256 cellar: :any, ventura:       "6d90b748623f6bca87717ef60777ac623a3a12478c234af42acb24c44b116ed7"
+    sha256               x86_64_linux:  "524fb06ad25e8e6a8ca34c3cdde8a9089557b17bac93039aeefb3f357cd0c5fa"
   end
 
   keg_only :versioned_formula
@@ -26,7 +27,7 @@ class LibspellingAT02 < Formula
   depends_on "glib"
   depends_on "gtk4"
   depends_on "gtksourceview5"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "pango"
 
   on_macos do

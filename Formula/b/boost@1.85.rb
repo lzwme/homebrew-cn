@@ -4,20 +4,20 @@ class BoostAT185 < Formula
   url "https:github.comboostorgboostreleasesdownloadboost-1.85.0boost-1.85.0-b2-nodocs.tar.xz"
   sha256 "09f0628bded81d20b0145b30925d7d7492fd99583671586525d5d66d4c28266a"
   license "BSL-1.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89217c11274eb27e508edff118f536746a48342d3f1db378211f5e501220473a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a64cc5762740b3d70d5d79c3ff04862ae04a55d68d7565cb899a274b9cf5b7bb"
-    sha256 cellar: :any,                 arm64_ventura: "b98090ed4bee9c8278cbe968735cc6d9805f051ac7546898a5e81f5c022db64c"
-    sha256 cellar: :any,                 sonoma:        "ee12e94698e97af0fcf036dc5eb325454483f2185e225946b665823bfd62b960"
-    sha256 cellar: :any,                 ventura:       "15d38e3288a8b8337e3ebca37f1078d40d9df408d77737c7828a2ce159fbb1a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "850490fea598c80674fe349ac6a7bec85e6b840805d08635e38892de1ad0cd05"
+    sha256 cellar: :any,                 arm64_sequoia: "663d20076d5f0eca3aeaaad6e8b3dfb7face08b889e7aaf534205bb06c599d84"
+    sha256 cellar: :any,                 arm64_sonoma:  "349ee1eab75de938bf98b797b56062aedff7f007817dd13e6196176454e24c4f"
+    sha256 cellar: :any,                 arm64_ventura: "32994c90a2429d6ffbdeb5f504d266bf044e6e3c0048d8b4056bc77de0ed5b8c"
+    sha256 cellar: :any,                 sonoma:        "6d6e43ab14638792e56d3e5b1ebce85ac3e6fce5910a4067e0aeef6be095c492"
+    sha256 cellar: :any,                 ventura:       "9a408e7ff44e78626c2408df18fa9a006ee9095d8ad8b7f5faebb61173a6ab0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78218534456473132b31b8e7918bdcc65c094452096a3be240c06c83e0c9724b"
   end
 
   keg_only :versioned_formula
 
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "xz"
   depends_on "zstd"
 
@@ -35,7 +35,8 @@ class BoostAT185 < Formula
     end
 
     # libdir should be set by --prefix but isn't
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
     bootstrap_args = %W[
       --prefix=#{prefix}
       --libdir=#{lib}

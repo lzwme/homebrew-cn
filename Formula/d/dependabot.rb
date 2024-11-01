@@ -1,18 +1,18 @@
 class Dependabot < Formula
   desc "Tool for testing and debugging Dependabot update jobs"
   homepage "https:github.comdependabotcli"
-  url "https:github.comdependabotcliarchiverefstagsv1.56.0.tar.gz"
-  sha256 "be6793ae0c099fc3fafef37b6b2ee9c69f8ecce6a5f5f8f4bda31780a6560374"
+  url "https:github.comdependabotcliarchiverefstagsv1.57.0.tar.gz"
+  sha256 "71cf1048899dd050134dc5ac817ec5f86852de8396fd367b63a51f8577ab8178"
   license "MIT"
   head "https:github.comdependabotcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a42a46771394f1e51b875a7cc4296e627c4744c9e8b308e487bb46925d6b9391"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a42a46771394f1e51b875a7cc4296e627c4744c9e8b308e487bb46925d6b9391"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a42a46771394f1e51b875a7cc4296e627c4744c9e8b308e487bb46925d6b9391"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6341d63108fe9546637598a7b4f646e9db0e2fff2a464659f381debf00ef859b"
-    sha256 cellar: :any_skip_relocation, ventura:       "6341d63108fe9546637598a7b4f646e9db0e2fff2a464659f381debf00ef859b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee8b7f1a524cf0eb787084e97e611bd2f840bf98cc8185e92d8c19b1210283f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa7def2aa38f70ee9c5a7b9bc9415bdbd36a334396d451824d61158119e85fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aa7def2aa38f70ee9c5a7b9bc9415bdbd36a334396d451824d61158119e85fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8aa7def2aa38f70ee9c5a7b9bc9415bdbd36a334396d451824d61158119e85fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ff554ec563b70b7d3e50837b6ef36fde6024839638212cf061e5f683a10357f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ff554ec563b70b7d3e50837b6ef36fde6024839638212cf061e5f683a10357f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d74e9b82e68fa4fd6d3b268633a296035cab1ce83932ee7fdd2537d906f58ec"
   end
 
   depends_on "go" => :build

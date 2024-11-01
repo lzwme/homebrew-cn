@@ -4,7 +4,7 @@ class Ncmpcpp < Formula
   url "https:rybczak.netncmpcppstablencmpcpp-0.9.2.tar.bz2"
   sha256 "faabf6157c8cb1b24a059af276e162fa9f9a3b9cd3810c43b9128860c9383a1b"
   license "GPL-2.0-or-later"
-  revision 18
+  revision 19
 
   livecheck do
     url "https:rybczak.netncmpcppinstallation"
@@ -12,12 +12,12 @@ class Ncmpcpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "87e6097bb1197995aac78dac724f227bdcbcd17b253bcb0d7caa3e6e79e59a5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "67d73c172be28c9f644500ca34a6a809429e84ac9865908ea3f3067f8f9b1cb8"
-    sha256 cellar: :any,                 arm64_ventura: "eb1c978c8fdaa32c2a91812d31f6187e8c513ff44a4a6c327f64174d985f2d2e"
-    sha256 cellar: :any,                 sonoma:        "9017705dc5879ee65956fd43d43bf75bf0afa36df5d01a5dd5194903b5f86a94"
-    sha256 cellar: :any,                 ventura:       "20feeb1d157ac235c2bf18c7a50d43a9284bdbc8b1c0d29e6fe8ee924a52aab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91d3832e67611b3860d18102d8648982326ebb7e91869d3d237eeeecb5693d7e"
+    sha256 cellar: :any,                 arm64_sequoia: "3e9fd5119dc58fef9d8d0fa4f5e26ad68d777df16c19fb47674b7e7f0e910b00"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fd604cd6d2094ab0b6a8b904a6d5b9c2b409c52c24ca7ab090bcc3abfbad2e8"
+    sha256 cellar: :any,                 arm64_ventura: "05e9b88fb40c43f54fa994c3d953c4a85010f2ffe1fc3be63713af7c39934700"
+    sha256 cellar: :any,                 sonoma:        "495e51045de2902f8ac3d13845e4c210576328aae67c8dedecb81b09bd83377a"
+    sha256 cellar: :any,                 ventura:       "ab52d5fd05a6587ea18eb84ff0860df33cb66c30405fc70f683c28182bc6f78b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35f0ea3a8ebe207c8581f45a7cf18a407b7ab07e28e5dadc608d619c5ed8c505"
   end
 
   head do
@@ -31,7 +31,7 @@ class Ncmpcpp < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "fftw"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libmpdclient"
   depends_on "ncurses"
   depends_on "readline"

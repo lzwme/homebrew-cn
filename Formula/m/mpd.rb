@@ -2,7 +2,7 @@ class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:github.comMusicPlayerDaemonMPD"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
   stable do
@@ -20,15 +20,19 @@ class Mpd < Formula
       url "https:github.comMusicPlayerDaemonMPDcommite380ae90ebb6325d1820b6f34e10bf3474710899.patch?full_index=1"
       sha256 "661492a420adc11a3d8ca0c4bf15e771f56e2dcf1fd0042eb6ee4fb3a736bd12"
     end
+
+    # Backport support for ICU 76+
+    # Ref: https:github.comMusicPlayerDaemonMPDpull2140
+    patch :DATA
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "09ada07179621fa0c75bdbb9010113ffe5c2ff628b9a7902cba8a6dd459e5f24"
-    sha256 cellar: :any, arm64_sonoma:  "639c51290d4d81e33cb6a4e6374024bee0ba0b99dc7f32ed65bab975c34602d9"
-    sha256 cellar: :any, arm64_ventura: "03b124dfbdf5cce8840532298633c70f5c1a3975eacac56d7cbcb73554fd356f"
-    sha256 cellar: :any, sonoma:        "6df121ee4629803d5a2738d993d56d162b79205f4ba3d5deeb59b595c3f21bb9"
-    sha256 cellar: :any, ventura:       "7db725675049f78c715a6075225d12ecad29bbe444dfe6876d3d18cf1fbcc8b0"
-    sha256               x86_64_linux:  "da144de2f7057fbbad115ac632d917f7f2d2994b82e293d0fc3598335916f069"
+    sha256 cellar: :any, arm64_sequoia: "8331fad50323d97217240e745b7023718b1514389693a69fcb1a2574e9e8c8c9"
+    sha256 cellar: :any, arm64_sonoma:  "f10b98cff481aa4a5f953a490c50c9a36bee49a5343a2a5c10a15bb26994c579"
+    sha256 cellar: :any, arm64_ventura: "ae555fc405b962ba4196d6acf4bb14cffd1b9103153038cea92f4cfaed34936f"
+    sha256 cellar: :any, sonoma:        "6216d61f9f25b1053c62b2eeb9eec0918db32b147fc3de0478cf95191b5c2be2"
+    sha256 cellar: :any, ventura:       "52fc3ccad0b75045b551ffc3e54fab067bbb915393dc7965e3261b48a00450b5"
+    sha256               x86_64_linux:  "3c9bfb4c2d78a0f206733f9ae9da65ffe160987b12aac875f3a68ee79883c813"
   end
 
   depends_on "boost" => :build
@@ -45,7 +49,7 @@ class Mpd < Formula
   depends_on "fmt"
   depends_on "game-music-emu"
   depends_on "glib"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "lame"
   depends_on "libao"
   depends_on "libgcrypt"
@@ -164,3 +168,38 @@ class Mpd < Formula
     end
   end
 end
+
+__END__
+diff --git asrclibicumeson.build bsrclibicumeson.build
+index 92f9e6b1f..3d52213a9 100644
+--- asrclibicumeson.build
++++ bsrclibicumeson.build
+@@ -1,5 +1,7 @@
+-icu_dep = dependency('icu-i18n', version: '>= 50', required: get_option('icu'))
+-conf.set('HAVE_ICU', icu_dep.found())
++icu_i18n_dep = dependency('icu-i18n', version: '>= 50', required: get_option('icu'))
++icu_uc_dep = dependency('icu-uc', version: '>= 50', required: get_option('icu'))
++have_icu = icu_i18n_dep.found() and icu_uc_dep.found()
++conf.set('HAVE_ICU', have_icu)
+ 
+ icu_sources = [
+   'CaseFold.cxx',
+@@ -13,7 +15,7 @@ if is_windows
+ endif
+ 
+ iconv_dep = []
+-if icu_dep.found()
++if have_icu
+   icu_sources += [
+     'Util.cxx',
+     'Init.cxx',
+@@ -44,7 +46,8 @@ icu = static_library(
+   icu_sources,
+   include_directories: inc,
+   dependencies: [
+-    icu_dep,
++    icu_i18n_dep,
++    icu_uc_dep,
+     iconv_dep,
+     fmt_dep,
+   ],

@@ -3,18 +3,17 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https:github.comblacklanternsecuritybbot"
-  url "https:files.pythonhosted.orgpackagescf90bc1e93d6bb2963f56c86cc7ac1a42953256575bc26a0d034661af6b3b3bbbbot-2.1.0.tar.gz"
-  sha256 "fd51e0cf0631c619df8893c6a4c44d474c4957bb89067ad32fcde22003688fd4"
+  url "https:files.pythonhosted.orgpackagese7b02aa36074e28982e2b8c083210d6dbd48bce11cdfd1980ded2bd0efbb6c94bbot-2.1.1.tar.gz"
+  sha256 "a8f68a58b3a0a32a8fbf5a0e1f32bebe1b0c9cde0a8f4c5a2bc4e7d6011ac838"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "82bb783d1ee697229e0045d7988ea1584e4ee880ecd6c952ca47407e1485bb92"
-    sha256 cellar: :any,                 arm64_sonoma:  "35d55278b96aa53726987aee86efa4066979f1ff7fbcc5a5bb6d135399e4d48a"
-    sha256 cellar: :any,                 arm64_ventura: "c27fd67b280057580a09af13259c8103e6234a96205b6d0c1b4691a58116758c"
-    sha256 cellar: :any,                 sonoma:        "f5a519e67bacd5c60e79d0d4960188deee646a341582524113d543db018ef01c"
-    sha256 cellar: :any,                 ventura:       "755966d1e00d48f42f002ec35bef8c118b7acfe0a15ff01a6a68f81bc4c6b7aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba44f8929debc6ea97eb4e2bb3c14728b6a2e77bb1e873265bd3c0782a99f55"
+    sha256 cellar: :any,                 arm64_sequoia: "fb1a3476ccd45aacf73ca7680ef2f33765e17aa90b0c863dac1a1e050c899226"
+    sha256 cellar: :any,                 arm64_sonoma:  "03f1865e93d0abecd1107c5b726a797dce0c03d72604b1a4a3680cfe02ac85fd"
+    sha256 cellar: :any,                 arm64_ventura: "5ab87abd0e71057a18d24029f579aed3036c2f1067401331f296802fbf709980"
+    sha256 cellar: :any,                 sonoma:        "a2b5898fc5615ce3923062ab41e1db1f36de51adee64f3c5581b5b97d5b69d1f"
+    sha256 cellar: :any,                 ventura:       "723e38300af67d75e6518eece933e619b501c4d833b5fc1af52155d7dd1f5ed9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da92de3eee4f2e2fe2499f1f32503ba73a08232dbbc76fd009cbd344e245f940"
   end
 
   depends_on "cmake" => :build
@@ -163,8 +162,8 @@ class Bbot < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
-    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+    url "https:files.pythonhosted.orgpackages26102a30b13c61e7cf937f4adf90710776b7918ed0a9c434e2c38224732af310psutil-6.1.0.tar.gz"
+    sha256 "353815f59a7f64cdaca1c0307ee13558a0512f6db064e92fe833784f08539c7a"
   end
 
   resource "ptyprocess" do
@@ -238,8 +237,8 @@ class Bbot < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
-    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
+    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
+    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
   end
 
   resource "sniffio" do

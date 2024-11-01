@@ -3,10 +3,9 @@ class Mapnik < Formula
   homepage "https:mapnik.org"
   # needs submodules
   url "https:github.commapnikmapnik.git",
-      tag:      "v4.0.2",
-      revision: "5f327ff3c88d8acca7c5db15b598258eea363aa7"
+      tag:      "v4.0.3",
+      revision: "e7a2bacb5d70f9c5fe0941906ce19137c0928522"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:github.commapnikmapnik.git", branch: "master"
 
   livecheck do
@@ -15,12 +14,12 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fa50fbcf7bccfda8776f66b624a66b0d8efa750afa93881403879c857bd26638"
-    sha256 cellar: :any,                 arm64_sonoma:  "471145019614d7468a9eb6a823381af41b07a46619e3d06d9059cb539bcfe83c"
-    sha256 cellar: :any,                 arm64_ventura: "b665c7179dca160990c2b21ba5fbac88ced96c9718591b8bf271c28d903053a2"
-    sha256 cellar: :any,                 sonoma:        "82f415996ea6d244779903c718a1196338f3b9efe72ea14a0d64ca119484bba0"
-    sha256 cellar: :any,                 ventura:       "ce2d965f33b79c612bbce543d3320e8f96e4d96b9ea5a4a5d1bf68ae1f84bc57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "258fb4ed55478f0fbf50e74ef23ba9d2da75af065eb294849c613aadcffe7672"
+    sha256 cellar: :any,                 arm64_sequoia: "86a1973107192483e56afc52bd35816bf01e26b3a1ef7807ab3b1c435e42be33"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f37bbd2fb8eea6e916bc61a095b565d4accc6e069fa1e972176c64601e7b263"
+    sha256 cellar: :any,                 arm64_ventura: "f2bb49b9b0b0d309602ce583fd2995fc78f39a20362cad393ab94fd02906e79e"
+    sha256 cellar: :any,                 sonoma:        "6456dd2ae519b7fdc9fb4e7af4772f58f79a03b479883b03d684c9fc72d328ad"
+    sha256 cellar: :any,                 ventura:       "38e56462fc630947acced5aa2be34012c3508b432e766087222a24c6ae5625a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c85f85edaee90e4360c626aac4bf85dc5077348c4ce5b7a759134c457a4ba27c"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +29,7 @@ class Mapnik < Formula
   depends_on "freetype"
   depends_on "gdal"
   depends_on "harfbuzz"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libpq"

@@ -2699,6 +2699,7 @@ Homebrew-homebrew-core/Formula/i/iconsur.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icoutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icu4c@74.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@75.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/icu4c@76.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3ed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3tool.rb, Homebrew/homebrew-core, 0
@@ -6820,7 +6821,7 @@ Homebrew-homebrew-core/Formula/w/webfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webhook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webkit2png.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/webkitgtk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/webkitgtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webp-pixbuf-loader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/webpack.rb, Homebrew/homebrew-core, 1

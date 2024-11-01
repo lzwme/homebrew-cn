@@ -4,21 +4,21 @@ class Nuspell < Formula
   url "https:github.comnuspellnuspellarchiverefstagsv5.1.6.tar.gz"
   sha256 "5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3b957ee134c236462ecffd48f31b6099a881359cad7f3d104c458389a9080de3"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0cc74c79b30f86b3e20a90a6f6abd75c9d5c048ecfa8be58000e961e6260701"
-    sha256 cellar: :any,                 arm64_ventura: "a475126aa1ef8141f7acfed5cf7d6bf94b854675e5680dc28455c121e97225ca"
-    sha256 cellar: :any,                 sonoma:        "9d73cd5176f879c4d2ba855b879b005888b7f501f02dba868915a09e01ceb968"
-    sha256 cellar: :any,                 ventura:       "e4236a6e4cb09f6fd4957a089f929e5c3475c70878698e5a6bfb7fc33e33ce72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a61b3f7e409ed97a7610dd2796e98e5b40eaac9df9883c6efe4ed2a7c6c0d1b"
+    sha256 cellar: :any,                 arm64_sequoia: "36f7270654e68ddfc9778b1e8e44d50b84e2f3af1d9da22e7ef904352665ee1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "fdef7d9831fbc25f5d118a8588614fe70cb274c26746d20fbedb1d4e820e3aad"
+    sha256 cellar: :any,                 arm64_ventura: "25326f25f21894062a81c8f854d2d2c0fbcd4fa42e36178e67ab10badb99aade"
+    sha256 cellar: :any,                 sonoma:        "0133410cf4271b33aae4c074884a8e5c6cd4eea1f02c7c4bb6ccb9caa845dafe"
+    sha256 cellar: :any,                 ventura:       "5a22de305a727f7a0b1b7bba8712fc5a6dece9c3e7df3c0c23798cd93009dbbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4173a44483183ed87307a0880afcaa4c8504c10186da722dc5893edaaeac0b"
   end
 
   depends_on "cmake" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :test
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args

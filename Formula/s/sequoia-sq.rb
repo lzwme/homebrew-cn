@@ -1,18 +1,18 @@
 class SequoiaSq < Formula
   desc "Sequoia-PGP command-line tool"
   homepage "https://sequoia-pgp.org"
-  url "https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v0.38.0/sequoia-sq-v0.38.0.tar.gz"
-  sha256 "9fd32ad0de3388804e21205003821710d2faf99d5c85a50bd97da3e7e480921b"
+  url "https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v0.39.0/sequoia-sq-v0.39.0.tar.gz"
+  sha256 "ee63c606adbfedeb32fbeacb522eac0f6a0a7358710da21fc602b2f8f74f7726"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/sequoia-pgp/sequoia-sq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "755883385b8e76d746a2b650ea666c452a48155827b7b2ec4954ee04cac25ae5"
-    sha256 cellar: :any,                 arm64_sonoma:  "befeb6ebd04855f7ea0f39e9174a37764cc8b04c44a41a8f8a1c93e41da2c347"
-    sha256 cellar: :any,                 arm64_ventura: "a5f1dc477dd1d5efedf1a359551459ca8df2512a728eb0c0a7b541f3131209c4"
-    sha256 cellar: :any,                 sonoma:        "0bb7808ed663609eb3b0da94ed3913584b5d328727c22fcde1675f90607f06ba"
-    sha256 cellar: :any,                 ventura:       "5424e7caa7d7251310915c59f44495389759e537134cccd537faa3aeba41ff04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "796d6f2f76734d83ce360fc3c985cacbf0ca2e860154d6f912bfc495c9b80048"
+    sha256 cellar: :any,                 arm64_sequoia: "399f0eb12f7826faa46c840654c4f30dd72a9a4aa73a588349561580d7909a33"
+    sha256 cellar: :any,                 arm64_sonoma:  "d226bb9a3faf7e65153e78e0b9e5e93b5a93e2a10fd9e0760f3fe29c3b759f6c"
+    sha256 cellar: :any,                 arm64_ventura: "5148dcbce461efb29c93b22c780d97a611a22dd1194845ae69f05387a20df6a4"
+    sha256 cellar: :any,                 sonoma:        "90b75da5bcafd8dbe70ca0518c341522a8247e9894dc3f460d06bc8742e59037"
+    sha256 cellar: :any,                 ventura:       "6c94c68285da17d5d23e52ca78aa171b8cb736643acef15887d80df3afc8ddd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "211ca28358057f23ca265b763c11658c782a30480dd8fc1bc5f5ad27392dd36c"
   end
 
   depends_on "capnp" => :build

@@ -34,6 +34,8 @@ class Pixi < Formula
   end
 
   def install
+    ENV["PIXI_VERSION"] = Utils.safe_popen_read("git", "describe", "--tags").chomp.delete_prefix("v") if build.head?
+
     ENV["PIXI_SELF_UPDATE_DISABLED_MESSAGE"] = <<~EOS
       `self-update` has been disabled for this build.
       Run `brew upgrade pixi` instead.

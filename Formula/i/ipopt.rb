@@ -7,14 +7,13 @@ class Ipopt < Formula
   head "https:github.comcoin-orIpopt.git", branch: "stable3.14"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "009c5caaad3fe3b204c0428bbb99037ee7c814ea2c908566721215099983420c"
-    sha256 cellar: :any,                 arm64_sonoma:   "7ab15709c6d8d0911bac33f38b65f047766108a3b291b8f00a6ce765e9db0fc3"
-    sha256 cellar: :any,                 arm64_ventura:  "f7ee0132a291e546eb7e0cf1be44b4a453896a96af88ce091e9e622b9def7914"
-    sha256 cellar: :any,                 arm64_monterey: "2b8567b6ed6a773a7c5e1506d6dd0c7928d985a1f105907eceabe00dc43f4fe1"
-    sha256 cellar: :any,                 sonoma:         "16cd7b2d2c01d59f4882ba61649da6c9c1f90ce08e3fae3cc3b26eae9016afc6"
-    sha256 cellar: :any,                 ventura:        "9d25a0a32684759aed13bb1dd854437d9f4a21b02531652aa7af202bc2eec8c7"
-    sha256 cellar: :any,                 monterey:       "a6523b45e35985d5e080eed53398ad47ef7c7a3d4bb0b0cc78c2c5620fdade11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3807673210056f3d94d69ca81ec6321b80376c48de6015b93b29692ab5d409"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f27c151e814d4c9a0caeb33bb0a584c5d885121ec6a70a0586b330b8485779fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a7c783b3ccd11860b615afc874ead0f60700a7f97dde4d5752a4444778aa86d"
+    sha256 cellar: :any,                 arm64_ventura: "5e623167a75d4f3516f6e2b50c61578bd3222f18c63abb7d5483c95dd2a0c53b"
+    sha256 cellar: :any,                 sonoma:        "fb86b1e3c17ed6cfb6b44bf1fcaca4a989a62335b364baa36490b4f0003675b8"
+    sha256 cellar: :any,                 ventura:       "467af1d0edd4ee1beb1ef2496bf277992988c8599b3082467f5be3d6891cd85b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e2c7ebb501bd2b73e5c847f1f5e82dcedfd3a9528de22c6848e9393cedaede6"
   end
 
   depends_on "openjdk" => :build
@@ -46,6 +45,11 @@ class Ipopt < Formula
   resource "test" do
     url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
     sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
+  end
+
+  resource "miniampl" do
+    url "https:github.comdpominiamplarchiverefstagsv1.0.tar.gz"
+    sha256 "b836dbf1208426f4bd93d6d79d632c6f5619054279ac33453825e036a915c675"
   end
 
   def install
@@ -93,9 +97,12 @@ class Ipopt < Formula
 
   test do
     testpath.install resource("test")
-    pkg_config_flags = `pkg-config --cflags --libs ipopt`.chomp.split
+    pkg_config_flags = shell_output("pkg-config --cflags --libs ipopt").chomp.split
     system ENV.cxx, "exampleshs071_cpphs071_main.cpp", "exampleshs071_cpphs071_nlp.cpp", *pkg_config_flags
     system ".a.out"
-    system bin"ipopt", "#{Formula["ampl-mp"].opt_pkgshare}examplewb"
+
+    resource("miniampl").stage do
+      system bin"ipopt", "exampleswb"
+    end
   end
 end

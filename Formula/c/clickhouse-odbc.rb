@@ -5,7 +5,7 @@ class ClickhouseOdbc < Formula
   url "https:github.comClickHouseclickhouse-odbcarchiverefstagsv1.2.1.20220905.tar.gz"
   sha256 "ca8666cbc7af9e5d4670cd05c9515152c34543e4f45e2bc8fa94bee90d724f1b"
   license "Apache-2.0"
-  revision 5
+  revision 6
   head "https:github.comClickHouseclickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -14,18 +14,18 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "40be2f72f18aa863a3e929298f52d222bcdec799d0b53ed8a5646795af61257b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c459a141032eaf70f4f6b0b71fc9355c88a387f87e8b6c0ad37cc213639f8a5"
-    sha256 cellar: :any,                 arm64_ventura: "0f98513d8f7541af8540d6dab6118eb9f3511056f9e96d197a4c333de4577e65"
-    sha256 cellar: :any,                 sonoma:        "03686cc156b0de1824ab04e1e5f8db037e8f8209c756235361059b1eec7feae8"
-    sha256 cellar: :any,                 ventura:       "bc95d4201a9cc1b760aed05b9cbe3ceb0761ffa94c82b1053b5799e1a12e2a96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c76a973dfadd8f90847be90776ab666cb9248f81e2159e5b4ba34374b44a8b"
+    sha256 cellar: :any,                 arm64_sequoia: "0c6b0acad4b807f6107d995f47eae04bdce3ad7c64c6f4a0cf31eb98dd7c2c2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "04ca343b2b2849c9a11510e111341dc1f119beccf9ca8a2d09e2d85f95432343"
+    sha256 cellar: :any,                 arm64_ventura: "668def88586c374c2e51eb199bd908b65336029aa74de957b4b7b53e55eba806"
+    sha256 cellar: :any,                 sonoma:        "4f8477fd4142bfb2ccd7f56f4deb8190a444f258e91697f689879fa65ad087e5"
+    sha256 cellar: :any,                 ventura:       "34a27423851185c72717d6f0fc2eb2055d11846a0b5527024daa7065e68427d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "688ff9bea0da387640e6a46228e136b2a001740c33d75bdaec9232d1c83b4027"
   end
 
   depends_on "cmake" => :build
   depends_on "folly" => :build
   depends_on "pkg-config" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "poco"
 

@@ -4,7 +4,7 @@ class Yaz < Formula
   url "https:ftp.indexdata.compubyazyaz-5.34.2.tar.gz"
   sha256 "ab45cf48036fc6da7493815c033b5db2b1e7a34632caed1a43e9cdef745b9618"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.
@@ -14,12 +14,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a44b7c5887c5410210f7230a0e93df46cbf48e60b2143758bca4474085471e4b"
-    sha256 cellar: :any,                 arm64_sonoma:  "59f257290e52e8a37120a212aebdd115bd4af7b7626e33eea8723837febb4aba"
-    sha256 cellar: :any,                 arm64_ventura: "ef0e15a7a7b4b15bd4fb0d96adb25e78c13923a72e39b8782532eb491a56e841"
-    sha256 cellar: :any,                 sonoma:        "222ffaea50dbac82503e2c18962b36e48df74b71ee37a2106df5df20d042d3e1"
-    sha256 cellar: :any,                 ventura:       "427fa3664a5f33412422f793a0a3ef9807908df1a19fc43c39346a923e152797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4889df9aa745f8b29329d00159ace539d451bbb71f4714604756b1496d3780a4"
+    sha256 cellar: :any,                 arm64_sequoia: "a8cd36bbbeec630fa947578396b92b8ad37c0ba907f457f6618cc37240b2fb66"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2c3bf144a59efe29632027782e983de77e92f0aacade22b812c873433992dfc"
+    sha256 cellar: :any,                 arm64_ventura: "8f6a66d5ca7c55b904adf90e11ca423e038bf387d1591557c715b94bbea0a983"
+    sha256 cellar: :any,                 sonoma:        "c22b67c417f5ed789fe8e9b3785ebccdb49077d17ed9b158911472bc7734dbd5"
+    sha256 cellar: :any,                 ventura:       "b9b0851e6eb1a3141f1667b685b05b1379d17c74fd6e6bc0b19fb0c78352a012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57fc1bff0c4788bf37030172238c5be3f2c0d2a0f93025c1c63f45869e86d5af"
   end
 
   head do
@@ -36,7 +36,7 @@ class Yaz < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gnutls"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
 
   uses_from_macos "libxml2"
@@ -47,15 +47,17 @@ class Yaz < Formula
       ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
       system ".buildconf.sh"
     end
-    system ".configure", *std_configure_args,
-                          "--with-gnutls",
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
+    system ".configure", "--with-gnutls",
+                          "--with-icu=#{icu4c.opt_prefix}",
                           "--with-xml2",
-                          "--with-xslt"
+                          "--with-xslt",
+                          *std_configure_args
     system "make", "install"
 
     # Replace dependencies' cellar paths, which can break build for dependents
     # (like `metaproxy` and `zebra`) after a dependency is versionrevision bumped
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
     inreplace bin"yaz-config" do |s|
       s.gsub! Formula["gnutls"].prefix.realpath, Formula["gnutls"].opt_prefix
       s.gsub! icu4c.prefix.realpath, icu4c.opt_prefix

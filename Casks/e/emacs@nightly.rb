@@ -1,8 +1,8 @@
 cask "emacs@nightly" do
   arch arm: "arm64-11", intel: "x86_64-10_12"
 
-  version "2024-10-30_00-09-06,679c0c7b940687a63937a361d0439c68b7bf4d51"
-  sha256 "5b8014325a59a23c943d87ff904f732748e762b81b9582aad0db584c9f1fbfe4"
+  version "2024-10-31_00-09-07,2c062dfdf50970766db179ccbad7ce71c541cd72"
+  sha256 "faf4b79226660858305a0cdd48b9edc391f1acce6bd2699afd80991f3459ba4c"
 
   url "https://emacsformacosx.com/emacs-builds/Emacs-#{version.csv.first}-#{version.csv.second}-universal.dmg"
   name "Emacs"
@@ -12,7 +12,7 @@ cask "emacs@nightly" do
   livecheck do
     url "https://emacsformacosx.com/atom/daily"
     regex(/href=.*?Emacs[._-]v?(\d+-\d+-\d+_\d+-\d+-\d+)[._-](\h+)[._-]universal\.dmg/i)
-    strategy :page_match do |page|
+    strategy :page_match do |page, regex|
       match = page.match(regex)
       next if match.blank?
 

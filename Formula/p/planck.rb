@@ -4,23 +4,23 @@ class Planck < Formula
   url "https:github.complanck-replplanckarchiverefstags2.28.0.tar.gz"
   sha256 "44f52e170d9a319ec89d3f7a67a7bb8082354f3da385a83bd3c7ac15b70b9825"
   license "EPL-1.0"
-  revision 1
+  revision 2
   head "https:github.complanck-replplanck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "874accd782f10a5f5a4db2cce9a93685a6d8870bb690ba50e03d7b031e0d5e43"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e32895adba1538c3742dba78a4b977d29728f73fb7a9dd26a59a39a5109b0d7"
-    sha256 cellar: :any,                 arm64_ventura: "143f7292d49dc89a1b47ab31afb60abed7005d255b928291f3d8a4d487554799"
-    sha256 cellar: :any,                 sonoma:        "25b9a936439fb8dd86a2d785dfbb8efe2bc4291d3a499c4f6ae842707954e195"
-    sha256 cellar: :any,                 ventura:       "731953b187241b471da6a5fdde2aaf6993ece5ea15f6e89939b7503ea9df063d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff4e184c10536dc97e098e26ae6a7ec13d652d40f4f4f92cc5cae6829ff8788"
+    sha256 cellar: :any,                 arm64_sequoia: "ab34e0ef0e2e78aa190ca2ba821bd8e4ccfc7f4ba3b79fc1d7a74c697095512e"
+    sha256 cellar: :any,                 arm64_sonoma:  "96f747019fe7702ddf88fa4d7d2267b6031436df2417073f3bbcabb8c6b5d66d"
+    sha256 cellar: :any,                 arm64_ventura: "342f71f4a83296fa7754cc6244c4979a8976f0a4a5a6ea1ebad661ad6d6e329e"
+    sha256 cellar: :any,                 sonoma:        "d8d0fd48c44530bc3ef14f7eaa733c596356a686c6acba27da55224a936d0172"
+    sha256 cellar: :any,                 ventura:       "0ed48e120f059d43836251a16464488a85e46826a428838317bdef1bda516bea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f73054a3ff20c391c8f63196e146ff267143c1c3f72a4177d205f63bd2a1aa6"
   end
 
   depends_on "clojure" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on xcode: :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libzip"
 
   uses_from_macos "vim" => :build # for xxd

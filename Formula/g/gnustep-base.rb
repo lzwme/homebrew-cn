@@ -4,7 +4,7 @@ class GnustepBase < Formula
   url "https:github.comgnusteplibs-basereleasesdownloadbase-1_30_0gnustep-base-1.30.0.tar.gz"
   sha256 "00b5bc4179045b581f9f9dc3751b800c07a5d204682e3e0eddd8b5e5dee51faa"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -18,12 +18,12 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e6779e9ab227fc0a4263a177698054336437ea08f985c3605aed692361e5bce1"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d3546948a52c7946960bc75fe46a14c0cfef1eb6382e7059bde3abc6289b331"
-    sha256 cellar: :any,                 arm64_ventura: "323d0c1ec262b559b455d4cb6b25a637f60768716b5982e1fd1d65ba047476c5"
-    sha256 cellar: :any,                 sonoma:        "b00d56e75fba957c5fb343384b214e345bd38e307da422d136351ff73496b1e7"
-    sha256 cellar: :any,                 ventura:       "4c41b940447d94a2cbbe1a67eb838f4a99b6d20547f0574b87d5030d1fb79a35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9528f61500db30bc0eb553baa434d504b624406cf0da2090d8070d532cab339c"
+    sha256 cellar: :any,                 arm64_sequoia: "ea43137e462651bed14654d6f3568cc8492737a08f5c46d8be3e20af283e69ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "ecf6464f4da0a825cc66b56634ca7c2cf002206e329ed1675744b69fa054ee85"
+    sha256 cellar: :any,                 arm64_ventura: "1e74001b2ebbe64808248f9ea1fcf883f8214b94acb11034e1a588026d835c01"
+    sha256 cellar: :any,                 sonoma:        "c656ea5e74ef316bdff831a8179ca085f5a8339f5b347ee9385fff91ebada811"
+    sha256 cellar: :any,                 ventura:       "9afc177e4bb6eaea89c6920e9fc2574037596b5976034c0d861d9195ae9ac933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f9704b5d7ceae3cf1d3500f852493a7d9dc8dd37d75ee58566f8003907a4dd"
   end
 
   depends_on "gnustep-make" => :build
@@ -32,11 +32,14 @@ class GnustepBase < Formula
   depends_on "gnutls"
 
   uses_from_macos "llvm" => :build
-  uses_from_macos "icu4c", since: :monterey
   uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
+
+  on_system :linux, macos: :big_sur_or_older do
+    depends_on "icu4c@76"
+  end
 
   on_linux do
     depends_on "libobjc2"
@@ -58,7 +61,7 @@ class GnustepBase < Formula
       Formula["gnustep-make"].share"GNUstepMakefiles"
     end
 
-    if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
+    if OS.mac? && MacOS.version > :big_sur && (sdk = MacOS.sdk_path_if_needed)
       ENV["ICU_CFLAGS"] = "-I#{sdk}usrinclude"
       ENV["ICU_LIBS"] = "-L#{sdk}usrlib -licucore"
 
@@ -69,7 +72,7 @@ class GnustepBase < Formula
     # Don't let gnustep-base try to install its makefiles in cellar of gnustep-make.
     inreplace "Makefile.postamble", "$(DESTDIR)$(GNUSTEP_MAKEFILES)", share"GNUstepMakefiles"
 
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install", "GNUSTEP_HEADERS=#{include}",
                               "GNUSTEP_LIBRARY=#{share}",
                               "GNUSTEP_LOCAL_DOC_MAN=#{man}",

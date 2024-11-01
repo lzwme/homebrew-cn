@@ -10,7 +10,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 1
+  revision 2
   head "https:code.qt.ioqtqt5.git", branch: "dev"
 
   stable do
@@ -18,6 +18,13 @@ class Qt < Formula
     mirror "https:qt.mirror.constant.comarchiveqt6.76.7.2singleqt-everywhere-src-6.7.2.tar.xz"
     mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.76.7.2singleqt-everywhere-src-6.7.2.tar.xz"
     sha256 "0aaea247db870193c260e8453ae692ca12abc1bd841faa1a6e6c99459968ca8a"
+
+    # Backport fix for Xcode 16. Remove in the next release
+    patch do
+      url "https:github.comqtqtwebengine-chromiumcommit8c5cf527c520edf9cd96c143af02ac94966fc2af.patch?full_index=1"
+      sha256 "ab14d8559c0470cc28f6ba279015dac9e7411135f5f58c285c6a7cf5995e61b4"
+      directory "qtwebenginesrc3rdparty"
+    end
 
     # Backport support for FFMpeg 7.
     # Ref: https:bugreports.qt.iobrowseQTBUG-125227
@@ -49,11 +56,11 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "de0596d68828545edb19f9b4fdbd4231f55665ffe24445982cde1d8cab158e76"
-    sha256 cellar: :any,                 arm64_ventura: "15292f50c614f96b44909d9e6bd7740332d6f0aaea7d58867b72b4a92bcc91c6"
-    sha256 cellar: :any,                 sonoma:        "dde328f798bab68dfec97e5e0531cbc2047f22d350bb59fc7bfdf5fd739f1ded"
-    sha256 cellar: :any,                 ventura:       "b4fb7663f99e75b5e46e909002c415f0e7619bf5c5d2370071ebd4e1683e3182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "660595e4ee37395e5929df612556de6dc044bec8937f9e7ce584d10e8a593c74"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cce143feaaf4313fce8e2c629fe780fba324d3c236557e32d38922adf32baa5"
+    sha256 cellar: :any,                 arm64_ventura: "0a89190a64c3b01aa8b5dd1e6765e36324d6b8052b014b924ce9103306c1a828"
+    sha256 cellar: :any,                 sonoma:        "2f03e9bc0f5e972cc6b855fb99692633e02bf3b056ea8baaf2d746a336167327"
+    sha256 cellar: :any,                 ventura:       "3511f11648298d490738a29bfef25e390e7efc4f384180801bf17958d7f74364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e104265db526482192495daaf3073929b850d8fe496e1a1c424f3e28f8454d9f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -73,7 +80,7 @@ class Qt < Formula
   depends_on "glib"
   depends_on "harfbuzz"
   depends_on "hunspell"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "jasper"
   depends_on "jpeg-turbo"
   depends_on "libb2"

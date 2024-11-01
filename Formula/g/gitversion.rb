@@ -1,17 +1,17 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https:gitversion.net"
-  url "https:github.comGitToolsGitVersionarchiverefstags6.0.3.tar.gz"
-  sha256 "a366c4d389bbca023da4ca2a214df91863acf58e939d7425ae7f31020560a5c2"
+  url "https:github.comGitToolsGitVersionarchiverefstags6.0.4.tar.gz"
+  sha256 "766dc4f7b79a9caa344f2a32ecaabd559346a6a7d74ce1340735ab7a8a2582d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1806492f1168477f56eff16cdc6498fe1443ccea6542a8852d9e5634115fa722"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f30d0e043f33345d99f134d01cd0c8f46d24387dd469f7f31174ac61116f6a1"
-    sha256 cellar: :any,                 arm64_ventura: "1bd2a1d16bb3a77b6ac6e1a5b7d97334783ca801b640676520458269ebdbcdf2"
-    sha256 cellar: :any,                 sonoma:        "48db4cb5ccda2db42ffc1977cc3c20fad1f85b4ae8f08e24c83229823ed9cb35"
-    sha256 cellar: :any,                 ventura:       "f7d5f43b4ef7e5d37f39d8611353a8934ea94fef00a48501f33b14536f512cbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d4a377267b3df42e79e60ff1a353ab2d8e5a6a1fa56a1e578e975527fec7fe"
+    sha256 cellar: :any,                 arm64_sequoia: "1dda0d82f91e723ea70609c458d83b9b9bb7b3982e8d52b7aea5e1cf35714b38"
+    sha256 cellar: :any,                 arm64_sonoma:  "56e13ee7c213f32fe8c3388c6e70c6fb2cbd9a9149585d98cd843da4de8d5d10"
+    sha256 cellar: :any,                 arm64_ventura: "b6408b94f75edc80f8952fa1cc3105d42e3cafb9ff8de81ff7909c55358a993f"
+    sha256 cellar: :any,                 sonoma:        "0ef11d130e0b4a431279f245fb3972e17480c3c9de34a3a4ca086477577aa68c"
+    sha256 cellar: :any,                 ventura:       "3d9efd399a978d43eddc6d66a34946a838171afc16f5da7ded0848fdaa38b018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0c376d77a35462b2a2f8071b9b766f64e41b3788339fc0dbf64224c3b45f4d3"
   end
 
   depends_on "dotnet"

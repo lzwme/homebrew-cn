@@ -3,17 +3,17 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https:github.compypapipenv"
-  url "https:files.pythonhosted.orgpackages8c464743dd471f4f04f0f257237410dc3a06d50df566e77be864569a7420e651pipenv-2024.3.0.tar.gz"
-  sha256 "bd542b63103a684a909e3af26cd11d2cc39b0acf4a2a8525835b18360e58de9a"
+  url "https:files.pythonhosted.orgpackages3e8a52eb8fcbd3e09c64ab569551b101c98e92e79b7cdff987b66480aa6c46a3pipenv-2024.3.1.tar.gz"
+  sha256 "c0c920af9a349cd9b25594e62319c1ce33152f3621b3d5afb022387759939d7b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5706f9de5757e9c4499ff435f2b7071cf3aa81911104010c0d64e58642e1883a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5706f9de5757e9c4499ff435f2b7071cf3aa81911104010c0d64e58642e1883a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5706f9de5757e9c4499ff435f2b7071cf3aa81911104010c0d64e58642e1883a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4de9d119d7a082286555edfdc82f6ff39f5208eb0ce2ccbbb3792126dffc1c5a"
-    sha256 cellar: :any_skip_relocation, ventura:       "4de9d119d7a082286555edfdc82f6ff39f5208eb0ce2ccbbb3792126dffc1c5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ba8596c6b7760362a14bf674076fa1963bd03ae66aec041dec0977af511c31e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a172fce96f294e50506b557c08385e5ba8dccd1c618b832b9e493ce6cb6d1f30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a172fce96f294e50506b557c08385e5ba8dccd1c618b832b9e493ce6cb6d1f30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a172fce96f294e50506b557c08385e5ba8dccd1c618b832b9e493ce6cb6d1f30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba7002dcab72c4ca093867339afa25c3ef620a39235ad6147deb9e3dead438d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba7002dcab72c4ca093867339afa25c3ef620a39235ad6147deb9e3dead438d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2232258fe6165177ba4184ce3e85e4233ad18b8f0e8ffc58643c2799d1c9715b"
   end
 
   depends_on "certifi"

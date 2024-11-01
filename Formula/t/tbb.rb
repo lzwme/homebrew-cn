@@ -1,18 +1,17 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https:github.comoneapi-srconeTBB"
-  url "https:github.comoneapi-srconeTBBarchiverefstagsv2021.13.0.tar.gz"
-  sha256 "3ad5dd08954b39d113dc5b3f8a8dc6dc1fd5250032b7c491eb07aed5c94133e1"
+  url "https:github.comoneapi-srconeTBBarchiverefstagsv2022.0.0.tar.gz"
+  sha256 "e8e89c9c345415b17b30a2db3095ba9d47647611662073f7fbf54ad48b7f3c2a"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "423a3e3a64c1e4b6017b7fdd8502d8ff2d06499bbfeca17b62468ae1cc68fd12"
-    sha256 cellar: :any,                 arm64_sonoma:  "57789640687904d6d8c822155954c0b006c201d34c6643b0e5d53d65e8ce2213"
-    sha256 cellar: :any,                 arm64_ventura: "0ea6ba691c129ec848b72c92f718ea9f81518c96d3d56dd5f86b662734c88e67"
-    sha256 cellar: :any,                 sonoma:        "cbf74a0bd402c542100a193f0546faf3dc628ccc066bdea0ba47153d91d3066d"
-    sha256 cellar: :any,                 ventura:       "ba5b6f2c28dfa700f3a30ef9b87dbe89c8759bf216486d6c3ff9fb534c62d09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b2de387a215e9cbb8be2350422c8ec97e28df7d0d2cf6122afba3c39894dc9"
+    sha256 cellar: :any,                 arm64_sequoia: "38fdf780cbe726dfd23dc3f44a8404e493dd15a25f789192eb07078c424315b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "395ce725fdf9f2729a6dfc987bfbd6593252c3052e93ec739d8b2f28b257214b"
+    sha256 cellar: :any,                 arm64_ventura: "c2d23d00a088900e6d6ec91a75ec2f3b972740790ef4156ac28cbbf4d187f3a4"
+    sha256 cellar: :any,                 sonoma:        "a273e031b766bc13c5203afd089a92a97147bd6ffe9eccc8c4b11b58e69b4d8e"
+    sha256 cellar: :any,                 ventura:       "fed7b2e7350ce93f50338acaa44258efd637800f97eae90af0fad84533d848fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92e0fbee4d1f60809fb238ccaf5bd89a9b97c08afc93378f083dace474521ef4"
   end
 
   depends_on "cmake" => :build

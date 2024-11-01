@@ -4,6 +4,7 @@ class Libvisio < Formula
   url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.8.tar.xz"
   sha256 "b4098ffbf4dcb9e71213fa0acddbd928f27bed30db2d80234813b15d53d0405b"
   license "MPL-2.0"
+  revision 1
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -11,17 +12,17 @@ class Libvisio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f884941e46d24f5876b22335b23a5e47b281e9d247f0985abcfcb696b541632"
-    sha256 cellar: :any,                 arm64_sonoma:  "39996bb979bce409ea8f627ec91631639b2983088321151be65682eeae68cc60"
-    sha256 cellar: :any,                 arm64_ventura: "d4a544d287a4efbc6a0e64feab31c88ebcdde01638e2be00af3b31435caf861b"
-    sha256 cellar: :any,                 sonoma:        "841ccde30a15eaee84f5a0da8446e76a7e47e9de6647fea95a940ec884ae8048"
-    sha256 cellar: :any,                 ventura:       "02401c43b58709247512e961611253c56f84e574d75983d71b80724eb18e90f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e26c35ccc5e22ce9cce7fcf009c0c9c31a3f44348af3b3655d854d7b7e1726c"
+    sha256 cellar: :any,                 arm64_sequoia: "c15aee39fd82305afa238f8b1c75202284ff9b0d5d261226343ffcd53cdb0064"
+    sha256 cellar: :any,                 arm64_sonoma:  "983ffaa320faf381b16d3f1593ba000e7d8e18cbd39501a06191a6f29c553a36"
+    sha256 cellar: :any,                 arm64_ventura: "0f6f5116ca551ef8b0f5139d49de28f4e45fe192954f38ba4606608f17dbb3b4"
+    sha256 cellar: :any,                 sonoma:        "6a5606558f7bf409f7efd1787a1337895d2b2f4db4cf256a8b138e5f0114322a"
+    sha256 cellar: :any,                 ventura:       "f954859d9ab8bac097995131b4322e10cbe544fe2fc21f75493b0fd9b04d0334"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c94de8e456f793629b0325a003292735f212e9ddcdd18dee9dc3f6c74845981"
   end
 
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "librevenge"
 
   uses_from_macos "gperf" => :build

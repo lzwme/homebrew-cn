@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-24.2.5.tar.xz"
-  sha256 "733d0bea242ed6a5bb5c806fe836792ce7f092d45a2f115b7b7e15897c9dd96f"
+  url "https://mesa.freedesktop.org/archive/mesa-24.2.6.tar.xz"
+  sha256 "2b68c4a6f204c1999815a457299f81c41ba7bf48c4674b0b2d1d8864f41f3709"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,12 +23,12 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "27f93d2f56586058bbb444602921c15bed3d4c27c5c936b3a0a21ebfbd833587"
-    sha256 arm64_sonoma:  "77a34866295872ce2ce0a66778a158e44f5e8da716086042b3e43dd0daa8a54c"
-    sha256 arm64_ventura: "1b8056e4caccf47ec823cbfb7cf09c7df0ef269bcc09e68ae4ecbce7441b3367"
-    sha256 sonoma:        "e1e7542fea5fcafc5b5bd9518cfa5ccecae2553fe2544d602324e6dac2afe1b7"
-    sha256 ventura:       "a5e0f9c5ee5da190b4b50d659d5146d2fb9d879b323b7f68b2c2dc9e8269a3a2"
-    sha256 x86_64_linux:  "1bd785c722c5c5108668e32b52d9d73b2490ac1edcd3e2637a4b45ba8e7792d7"
+    sha256 arm64_sequoia: "f1708458428ecc0f73b87d79dde84c81df35d9374191d25c30064e660a6c705a"
+    sha256 arm64_sonoma:  "78c6a7c5dfc251efbf218a3e946736f0610dee83045219ce720ed33930fb2b4f"
+    sha256 arm64_ventura: "d746888600473abc46619a9d06f0bb89aa6fcf821802386aad1f447fc2d95959"
+    sha256 sonoma:        "7a24e3c85b09d0eda512940991424860548f22eae20bcb4cd5a0e63d7fd3f36d"
+    sha256 ventura:       "81c7c9fa471b25600fc6e48d8d49a586e76ad9ac10e9b8d4b1cf8f31209756d6"
+    sha256 x86_64_linux:  "65d97bb0b716ff6ee542c7802af2f40935091d37d01acc3b561fc8d8c2e82b73"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -73,13 +73,13 @@ class Mesa < Formula
   fails_with gcc: "5"
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/67/03/fb5ba97ff65ce64f6d35b582aacffc26b693a98053fa831ab43a437cbddb/Mako-1.3.5.tar.gz"
-    sha256 "48dbc20568c1d276a2698b36d968fa76161bf127194907ea6fc594fa81f943bc"
+    url "https://files.pythonhosted.org/packages/fa/0b/29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dc/mako-1.3.6.tar.gz"
+    sha256 "9ec3a1583713479fae654f83ed9fa8c9a4c16b7bb0daba0e6bbebff50c0d983d"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do

@@ -2,29 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https:gstreamer.freedesktop.org"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.8gstreamer-1.24.8.tar.bz2"
-    sha256 "41fd1325acebb69cec23a46c6c2fe68b4bcf9b25c392b94ffadb3b222bb2422b"
-
-    # Fix build failure with new gobject-introspection
-    # https:gitlab.freedesktop.orggstreamergstreamer-merge_requests7554
-    patch do
-      url "https:gitlab.freedesktop.orggstreamergstreamer-commitf1aedd65f4c276578b767b4555ba7cdf68fe024b.diff"
-      sha256 "830de511c0c6c53fc96b16acc03d433c0942ab5686afca5d3386dd77cc7d7c13"
-    end
-
-    # Backport fix for build of gst-plugins-rs when using uninstalled pkgconfig files
-    patch do
-      url "https:gitlab.freedesktop.orggstreamergstreamer-commit6ce72488face35277643d3781d3da7c4f95d5e1e.diff"
-      sha256 "e8526ba4da7a92904a0e55608bacb3ca823f60c398a922877b5945f65c5ddbfb"
-    end
+    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.9gstreamer-1.24.9.tar.bz2"
+    sha256 "3b284fa1c3b5cf0b1ad6eab64d506c2e1d62e37578ef8c0eb6dce3668ae76b77"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.8gst-plugins-rs-gstreamer-1.24.8.tar.bz2"
-      sha256 "a355edefea2d2de555fad9702079fe219e6c071198fe811a4692b5b48cb7b139"
+      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.9gst-plugins-rs-gstreamer-1.24.9.tar.bz2"
+      sha256 "417881ccd886e0962261f9181faa341f1073ee262775e04f2e8aedaa9ab97fb1"
 
       # Backport support for newer `dav1d`
       # upstream commit ref, https:gitlab.freedesktop.orggstreamergst-plugins-rs-commit7e1ab086de00125bc0d596f9ec5d74c9b82b2cc0
@@ -41,12 +27,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a5576c21dab94fc9c28601ef04f9cd0123487bd4463d8a09c1d1ae6559ce20bc"
-    sha256 arm64_sonoma:  "f2e2f8f293e6bfaa73ff7c895821cb9ee65b206d3acb35a7861eda69a820c6cf"
-    sha256 arm64_ventura: "5a1cf77e565ee0bbd28604791eacf639beed88187d0b2e580837b99d72d429e2"
-    sha256 sonoma:        "0905f16154384d989c9b1172ab675ce661889c0171db2b62e51c47d4976b2c1a"
-    sha256 ventura:       "f14b0f768064ed6f8470cf97c9d8212d496cc4fa097180d21893b303c6db0d83"
-    sha256 x86_64_linux:  "86271f07798f0ba2b0cbd5b503fe02eefb7c6b80329113a62f31a9492c2eb4bb"
+    sha256 arm64_sequoia: "a59de05bbdd7b4315f9529f58a629418d0ac6940a2ccc10c498b1b82d788618b"
+    sha256 arm64_sonoma:  "184fb2e198d2c9cb58f1505f3ef2f7b612c121f5e01361bfb886a87755111a48"
+    sha256 arm64_ventura: "21f113cda43ea3453ccf38f8d1f1063874d080198ffd8f1b832b69f6ba597976"
+    sha256 sonoma:        "3a61ee545ecd40fa8a3bf305b0214dc3c0e3baa88ac82468f261bec08d5a19ca"
+    sha256 ventura:       "b4f1ef41a80f2caef924c46f62c85e58de0dccd2827dd211c72d76de430cae93"
+    sha256 x86_64_linux:  "f1c7e6129f1b872f7dba50b1d9c5118b669f63ef480fafbe754c231195c059e0"
   end
 
   head do

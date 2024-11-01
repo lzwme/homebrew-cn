@@ -1,17 +1,18 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
-  homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.46.2.tar.xz"
+  homepage "https:webkitgtk.org"
+  url "https:webkitgtk.orgreleaseswebkitgtk-2.46.2.tar.xz"
   sha256 "5aae1c5c0a30d5e9c5831652b6f1bdefc31d75e0ad81cb40185b0aed92ce79b6"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
-    url "https://webkitgtk.org/releases/"
-    regex(/webkitgtk[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
+    url "https:webkitgtk.orgreleases"
+    regex(webkitgtk[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.ti)
   end
 
   bottle do
-    sha256 x86_64_linux: "33f76b88c88f05d138998269d3d819a9f0346165595c654768c67fe76af6d0aa"
+    sha256 x86_64_linux: "1a3eee4048cb2c6a312e8573c1611ebd84c8cb9bdc03543893a917ef5df4b5bd"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,7 @@ class Webkitgtk < Formula
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "harfbuzz"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
@@ -67,6 +68,12 @@ class Webkitgtk < Formula
 
   fails_with gcc: "5"
 
+  # Backport support for ICU 76+
+  patch do
+    url "https:github.comWebKitWebKitcommit63f7badbada070ebaadd318b2801818ecf7e7ea0.patch?full_index=1"
+    sha256 "0fd1774e02d0c8c91b100aa6189da28df28a65f3d683f87e0e806a80340305dc"
+  end
+
   def install
     args = %W[
       -DPORT=GTK
@@ -88,44 +95,44 @@ class Webkitgtk < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~C
-      #include <gtk/gtk.h>
-      #include <webkit2/webkit2.h>
+    (testpath"test.c").write <<~C
+      #include <gtkgtk.h>
+      #include <webkit2webkit2.h>
 
       static void destroyWindowCb(GtkWidget* widget, GtkWidget* window);
       static gboolean closeWebViewCb(WebKitWebView* webView, GtkWidget* window);
 
       int main(int argc, char* argv[])
       {
-          // Initialize GTK+
+           Initialize GTK+
           gtk_init(&argc, &argv);
 
-          // Create an 800x600 window that will contain the browser instance
+           Create an 800x600 window that will contain the browser instance
           GtkWidget *main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
           gtk_window_set_default_size(GTK_WINDOW(main_window), 800, 600);
 
-          // Create a browser instance
+           Create a browser instance
           WebKitWebView *webView = WEBKIT_WEB_VIEW(webkit_web_view_new());
 
-          // Put the browser area into the main window
+           Put the browser area into the main window
           gtk_container_add(GTK_CONTAINER(main_window), GTK_WIDGET(webView));
 
-          // Set up callbacks so that if either the main window or the browser instance is
-          // closed, the program will exit
+           Set up callbacks so that if either the main window or the browser instance is
+           closed, the program will exit
           g_signal_connect(main_window, "destroy", G_CALLBACK(destroyWindowCb), NULL);
           g_signal_connect(webView, "close", G_CALLBACK(closeWebViewCb), main_window);
 
-          // Load a web page into the browser instance
-          webkit_web_view_load_uri(webView, "https://www.webkitgtk.org/");
+           Load a web page into the browser instance
+          webkit_web_view_load_uri(webView, "https:www.webkitgtk.org");
 
-          // Make sure that when the browser area becomes visible, it will get mouse
-          // and keyboard events
+           Make sure that when the browser area becomes visible, it will get mouse
+           and keyboard events
           gtk_widget_grab_focus(GTK_WIDGET(webView));
 
-          // Make sure the main window and all its contents are visible
+           Make sure the main window and all its contents are visible
           gtk_widget_show_all(main_window);
 
-          // Run the main GTK+ event loop
+           Run the main GTK+ event loop
           gtk_main();
 
           return 0;
@@ -147,9 +154,9 @@ class Webkitgtk < Formula
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
     # While we cannot open a browser window in CI, we can make sure that the test binary runs
     # and produces the expected warning.
-    assert_match "cannot open display", shell_output("#{testpath}/test 2>&1", 1)
+    assert_match "cannot open display", shell_output("#{testpath}test 2>&1", 1)
 
     # Test the JavaScriptCore interpreter.
-    assert_match "Hello World", shell_output("#{libexec}/webkit2gtk-4.1/jsc -e \"debug('Hello World');\" 2>&1")
+    assert_match "Hello World", shell_output("#{libexec}webkit2gtk-4.1jsc -e \"debug('Hello World');\" 2>&1")
   end
 end

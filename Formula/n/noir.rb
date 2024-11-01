@@ -1,19 +1,17 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https:github.comowasp-noirnoir"
-  url "https:github.comowasp-noirnoirarchiverefstagsv0.17.0.tar.gz"
-  sha256 "16d82dfd3e7891cbc60eb5282b8e1086c97a09baf0a4af73ba4263776d7c5b39"
+  url "https:github.comowasp-noirnoirarchiverefstagsv0.18.0.tar.gz"
+  sha256 "b2b8d19fe8e31e215247b68058d6e6dd135abaeaa340451271b99532aace6c73"
   license "MIT"
 
   bottle do
-    sha256 arm64_sequoia:  "de831b2e2eb096f136a1732de4194781c16ade6ba964a596dd089e62230d324b"
-    sha256 arm64_sonoma:   "b7e5a97d3f175cab54cfd3769324a609f9f2f58503bce1e80a506fd9834e5330"
-    sha256 arm64_ventura:  "23b8c73886ecf49b0c3dd90120b17650c01dea53be6abe38382690e58dd13abe"
-    sha256 arm64_monterey: "a12305a19874fc221ddb315e5c51291abff970f8109d2c0f6524935a2b311e29"
-    sha256 sonoma:         "a961806c811709ef492e0a72b430211c7fcdd0eb53d67f0187ea3ebb3b556e0f"
-    sha256 ventura:        "c659361f9ec8751ddca8da8abcc4893e9b75baa7c559c725f69222cbe1f24e49"
-    sha256 monterey:       "904138d87a29f98a71150b1995da3ca70be66b95aa4a5ba4dcf33b676b3903b1"
-    sha256 x86_64_linux:   "b8cf1677ac6ebcaf7c8a6d45027163472c04de27dd7772d6f9c5bcd6caa09f62"
+    sha256 arm64_sequoia: "82a5441f2cf17eee51adada0b31fdb6ef0e8be9a88a6dcf6b4777b6a108a472b"
+    sha256 arm64_sonoma:  "1707c1726f42c3f140cb2219124fc2b84057471ae6b63ae2ad004b2afc20a833"
+    sha256 arm64_ventura: "12e5b3785f03297720bc51821a3e5d29a2b792bbc83eeb5247b8c41adfeba94c"
+    sha256 sonoma:        "ef2f021de9becc60f2c82c366f7196d8158cf63622ce7477f53aeda23ab819f6"
+    sha256 ventura:       "abebb321c9372c55049c3be46e31ff329aba0e97c1a58996b3549b40525fea6b"
+    sha256 x86_64_linux:  "7d39875447a40d3e021c021a97cae689412329b50bd5ff6cc811adc779f87db6"
   end
 
   depends_on "bdw-gc"

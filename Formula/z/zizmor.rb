@@ -1,17 +1,17 @@
 class Zizmor < Formula
-  desc "CLI tool for finding security issues in GitHub Actions setups"
+  desc "Find security issues in GitHub Actions setups"
   homepage "https:github.comwoodruffwzizmor"
-  url "https:github.comwoodruffwzizmorarchiverefstagsv0.1.3.tar.gz"
-  sha256 "e76db16b7f4157a1381cbc3b3cc5d3236379294e3e0b9cd0551d54725bf8ea8b"
+  url "https:github.comwoodruffwzizmorarchiverefstagsv0.1.4.tar.gz"
+  sha256 "4c064b8f46f22fe3cf7e9dc9b029acf12e18c1bcb4aa817b21b2d0f0a90e24d2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aca186daa7a8636495790696ea0c3973f4f9644e8136a941a8fdf5a957096aa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0854d674d6dd8fb467fc103692be00267da5bae1aa109de50d40d33226bf624d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d514ed91cc9526a790948e0010380cb191a7dcfb2437c8d4879cec5c181a0302"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b55c87fa830f907c0267ef18922b87d9be5e6d596cb81d7e3d2fe935300196d"
-    sha256 cellar: :any_skip_relocation, ventura:       "c287563f4962520b2b6ecd1ea7cc786fc775f64977434ff7dc71fe7e606d310e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4661dc813c792da375f5de8d415a3742de58fa9e6a80a2f45f156bbcd61fae36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "780eb17d4a2ceb3ac5934534076d3ddfb3fddebef76652dcfa327eb059a62dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cf4dbdcca7e6bb06833f298ed843ddab8a095411e69e381f90394d0b7f76630"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "798d796e35f1685d84e40586b3ebb811c4dde71b1af5d0ab752d1d90d1856b67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6decf91b5bc32b0f6575586985764e93a3b365cafd31887a7a0f507f1929a402"
+    sha256 cellar: :any_skip_relocation, ventura:       "f6d8b4768107b476af56f3dad5d93febd6274cdb9f14f96b81d086cc1e7a4dc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94a1238884a3fa3e72b063dbc8a9ae04df2333f9a7cdc2245ac018b18d10335e"
   end
 
   depends_on "pkg-config" => :build

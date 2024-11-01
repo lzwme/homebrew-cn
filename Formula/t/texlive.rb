@@ -8,7 +8,7 @@ class Texlive < Formula
   mirror "https:ftp.tu-chemnitz.depubtughistoricsystemstexlive2024texlive-20240312-source.tar.xz"
   sha256 "7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96"
   license :cannot_represent
-  revision 2
+  revision 3
   head "https:github.comTeX-Livetexlive-source.git", branch: "trunk"
 
   livecheck do
@@ -34,12 +34,12 @@ class Texlive < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "8df2b87b3e5dd1e8cbcf411ba01087f44124a7c0798e2ea92b6f1ab539882bc5"
-    sha256 arm64_sonoma:  "789c9b7588798cba955bd5b4ed904f50cd96440cf249d9a6e4639faa925a471a"
-    sha256 arm64_ventura: "39e722eb05f849c70152f8017034402eabd4406b560f77a56dacfc9528f4ea4d"
-    sha256 sonoma:        "d36fab3f2d82a1874455c600b49b0257fa36bbde33b0307c9f9b249961cf5eed"
-    sha256 ventura:       "75a57de98c2735f315d51dedb9c0102d39fda3ab0dcea3a37ae666619849eac0"
-    sha256 x86_64_linux:  "109a5919769a185f04fd1c1c34a462fbc07371e68fd25da3eb3d0dd7585e5a24"
+    sha256 arm64_sequoia: "d48b45c0eec8b09a66346f83935bec59db4fffc386189e990101fef3698f967c"
+    sha256 arm64_sonoma:  "8da78aea8a3984ee945484459267bde9a981ec3aea1ddaf65486c009e21014b4"
+    sha256 arm64_ventura: "c377511a9a069e926864b84da29ec1b947e4f9d55fcb0e32732d2222f344e023"
+    sha256 sonoma:        "d3a6f5fc610f32ee5438a836a248e5b72cefdf09cc6d7a7b514ef019ba07cc79"
+    sha256 ventura:       "fa109f6a8813e1cf08dedefd4a66f3204f427b57cb25ca6f0f0ad1784c2b7bc4"
+    sha256 x86_64_linux:  "75296912aab28aad7c0669d9f9f37a95dfc14b826d10c3b6e96af92d904781bb"
   end
 
   depends_on "pkg-config" => :build
@@ -52,7 +52,7 @@ class Texlive < Formula
   depends_on "gmp"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libx11"

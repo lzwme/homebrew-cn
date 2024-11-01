@@ -4,14 +4,15 @@ class Freerdp < Formula
   url "https:github.comFreeRDPFreeRDParchiverefstags3.9.0.tar.gz"
   sha256 "a1d2946c67037bf6bb8aa2f0441c7cacd5e92c835d776cecffb4fcdbaa45ec4f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "a59834f722ac8e7b244d262ef196972423cbfbc1a1680a415469d014609a6b10"
-    sha256 arm64_sonoma:  "54bdcd11025d600e11c2399a9eba84bcf2ba6e9dd021c286f3a373191815dd17"
-    sha256 arm64_ventura: "0829fe39942971533ded8813040eefc1f0402b2cea340185c5861971f1031121"
-    sha256 sonoma:        "bc2b2296a58056a0a06f44795d2e0d6da68450aa8f9a1cc88f200a2c601bca32"
-    sha256 ventura:       "53b54485ee6cdd2453f7720c63c80bc37160b331c5a5af9c8249b1d996119a5a"
-    sha256 x86_64_linux:  "dcfa625c94fb8653ba99889f29f38fa671ebb0f51eeb246dc99ff6c42d79c146"
+    sha256 arm64_sequoia: "d0389909074b092cba7ff7e0f2ea45353223bf7e2db21f155c1d3cdda432edc7"
+    sha256 arm64_sonoma:  "893d3f63e9d26d03b70a36432c8e226b79c5a451db1b80f6aeaff25b61f217c8"
+    sha256 arm64_ventura: "ab68bfe5dd9fbca26172f850a0b1ae0f4421fd75a2ced3aa111b2a5c6aa8b4fc"
+    sha256 sonoma:        "2f59a023351939d112131480db417e6d44501ab0026be78f4419b25b84ae5ee1"
+    sha256 ventura:       "7c79507c0f96dd4be1205a5e4cbb5043bb689bc5bec31532bdeac6975227231e"
+    sha256 x86_64_linux:  "3df042e5d31336ee9802d5b27d901f8c67993b83c3b85585103af86726243f47"
   end
 
   head do
@@ -46,7 +47,7 @@ class Freerdp < Formula
     depends_on "alsa-lib"
     depends_on "ffmpeg"
     depends_on "glib"
-    depends_on "icu4c@75"
+    depends_on "icu4c@76"
     depends_on "krb5"
     depends_on "libfuse"
     depends_on "systemd"

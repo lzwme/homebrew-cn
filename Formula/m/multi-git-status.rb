@@ -1,13 +1,12 @@
 class MultiGitStatus < Formula
   desc "Show uncommitted, untracked and unpushed changes for multiple Git repos"
   homepage "https:github.comfboendermulti-git-status"
-  url "https:github.comfboendermulti-git-statusarchiverefstags2.2.tar.gz"
-  sha256 "d26a71cd2efd80416c28d59632665341bc393d2d5fdde20dd588f959b0faea6a"
+  url "https:github.comfboendermulti-git-statusarchiverefstags2.3.tar.gz"
+  sha256 "2634b4b8b3d69a397f5462ec1d72a77d5b395f363ed8e1aabfbf7e5e4172f93f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fac5b19bd31bb3fd744b2603b9b8f58636d6d51902a046c5d5fbcc774515d1ad"
+    sha256 cellar: :any_skip_relocation, all: "011ea78413856d20a26c71c4cdcc1b7909ce6ab7075544c716359079eb4f3b06"
   end
 
   def install

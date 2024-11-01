@@ -1,19 +1,17 @@
 class DuoUnix < Formula
   desc "Two-factor authentication for SSH"
   homepage "https:www.duosecurity.comdocsduounix"
-  url "https:github.comduosecurityduo_unixarchiverefstagsduo_unix-2.0.3.tar.gz"
-  sha256 "40ddbaf65ed40295c8d0fe12bd3d03adac1a4e3e35e921adfc3bfe6222bb23c7"
+  url "https:github.comduosecurityduo_unixarchiverefstagsduo_unix-2.0.4.tar.gz"
+  sha256 "e77512725dedb23b3e8094ca3153fc3ffe51d3c32cd9dd56779480a93625de90"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "148f069d954247522b2ea4252373c2434c29c1dc80639161984569c293959dc3"
-    sha256 arm64_sonoma:   "fc0b173a69d84964d44d9616ad725119dbbcb5a359473e7f8339bc3795fc0c6d"
-    sha256 arm64_ventura:  "e3406c6617c72b424477d186ef26d93848b43cad42c20eef95127be81baf9a21"
-    sha256 arm64_monterey: "e98d79b5654f368ec202c873ea2d9e4af78aee88cbafbab2376bc4d1391ccdc5"
-    sha256 sonoma:         "7de4955e9f11895d1b4e6a28dfc114336c2d04a4624365f1ddba1a9d2cb51b89"
-    sha256 ventura:        "ce5454947eb551248e26ecf6943c7a3afd396566b7ba2a46b7a23501ef913d55"
-    sha256 monterey:       "9157772cb2846e60155cfe25cf99c0611cad9fa2095d9b6f1dfa499b78d58d6f"
-    sha256 x86_64_linux:   "1eef942f8266c30780c182b349ca27dcf69ea31fa3eeab16a9767bfe597aad77"
+    sha256 arm64_sequoia: "a5a83f2592c5b682bf178fab0175c3c6038005821e6c06c7df552df9239f2c39"
+    sha256 arm64_sonoma:  "1a74a2f536ed3aa4f3f17bb99771de85ac79a9f8ad08ae48009c3c923ccd3ee2"
+    sha256 arm64_ventura: "8c35a0ef94b4b3b4b73e5e28d8b76bf9f5bb07498532ebfc3dd824c481872b79"
+    sha256 sonoma:        "01ba2b5a22076ea198c6295fce94d20526507e1009b8669fd65d7425899c6cb4"
+    sha256 ventura:       "3271ea0c7e12aa40fc6f5fce6040b99c9f4378f767c8583459ea566af706d72d"
+    sha256 x86_64_linux:  "3d3f20a51db6e5642f7c85185081d89d38566b977c4d7c14406e115f34c78183"
   end
 
   depends_on "autoconf" => :build
@@ -26,6 +24,7 @@ class DuoUnix < Formula
   end
 
   def install
+    File.write("build-date", time.to_i)
     system ".bootstrap"
     system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

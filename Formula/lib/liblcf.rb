@@ -2,7 +2,7 @@ class Liblcf < Formula
   desc "Library for RPG Maker 20002003 games data"
   homepage "https:easyrpg.org"
   license "MIT"
-  revision 3
+  revision 4
   head "https:github.comEasyRPGliblcf.git", branch: "master"
 
   stable do
@@ -17,17 +17,17 @@ class Liblcf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1d9e646c81b640cbaf17ad905eebeb66d6dac978a888cb1fafeca5a78611179"
-    sha256 cellar: :any,                 arm64_sonoma:  "256529d43242a8972f90f8bb52b9615ee958ed6f87e61a9a40f70c135ece3a4a"
-    sha256 cellar: :any,                 arm64_ventura: "04509b3dff6ce0ec1858f8ba1b2baa3361aa4aa5e74b8ca9384508f26f76a574"
-    sha256 cellar: :any,                 sonoma:        "857e6875f3089228ddde5f8ece70abef84e6e065355d4d10f5398aca2888ffa9"
-    sha256 cellar: :any,                 ventura:       "dc5f05d256ad44a4f20f434a78b98ddba9d88f65ff31670c336dbc5acd0ee3f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e16c8a8486531339e8df25b6cc14de1165f922e83d2458faf2716376d489b10e"
+    sha256 cellar: :any,                 arm64_sequoia: "6355bad431149665ce69b11026f48ccb0ae58505476fb0e6557fb136a11f865b"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a91602aa71bc7965bc685914619e140d2b76a13459d648c88deb4de928ead63"
+    sha256 cellar: :any,                 arm64_ventura: "974f251736ba73d68903ad6ca9b46af831eb158b371690cfc699dffd0f209023"
+    sha256 cellar: :any,                 sonoma:        "e4e8950dcb83fcbebbce42dd72e3ae62b63eacef56530c97af1d4e9347eeb7c9"
+    sha256 cellar: :any,                 ventura:       "2acbd7fde87895999e6d46da68e7d3af88f0079be342a02c20490c58b34d2748"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36aa0604b238176ba7e17c14c9c29e80c6c84bf292feb443b7bb32ec02488f88"
   end
 
   depends_on "cmake" => :build
   depends_on "expat" # Building against `liblcf` fails with `uses_from_macos`
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
 
   def install
     system "cmake", "-S", ".", "-B", "build",

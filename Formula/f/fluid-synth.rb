@@ -1,18 +1,18 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https:www.fluidsynth.org"
-  url "https:github.comFluidSynthfluidsyntharchiverefstagsv2.3.7.tar.gz"
-  sha256 "38d1d910783ab67c07a4d859d1aa95525979ff352b927e25b1ae894c774bb4c4"
+  url "https:github.comFluidSynthfluidsyntharchiverefstagsv2.4.0.tar.gz"
+  sha256 "fd4d216a3030abc56a339985ab0506328660cd77b2d71dd98c240c58c03d8f7f"
   license "LGPL-2.1-or-later"
   head "https:github.comFluidSynthfluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "93169858f36ac1c5c05ee0a33b7915d225293a37791216eb76add08ddf583c92"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a8bdbaa07ed3267210d2e8302051a3d52ba77045e31669a29c7e9c51abf6a85"
-    sha256 cellar: :any,                 arm64_ventura: "5523b1da2a36d2bb21018f5d42c0a7fa70805152d420f90b07ed6dd443528fad"
-    sha256 cellar: :any,                 sonoma:        "c0e9e06ea4bbebe1f1046ffaaa34307f5ec1e48700527158e5fd52e10b3bafa2"
-    sha256 cellar: :any,                 ventura:       "54ee310558af6ba11862093a7ecffaf49e8b3df2de2d163ce1479a965bd3bfa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ecf538ac13e3db27c0add9fb7973b3b2a37c549d3ec60609279df308f3f62bc"
+    sha256 cellar: :any,                 arm64_sequoia: "5872180e75e90bb83e4929c10f64639fddcc341a8e1f5516589c2b7803baba7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "99d675800c64673ba3f77fe7c5ae89ed149e053d18ccd38f6facde7eaffb9cbc"
+    sha256 cellar: :any,                 arm64_ventura: "1b14f8eac778e1601baa6534df6aacc3db1e84c150c34c1542eedce9402afcf2"
+    sha256 cellar: :any,                 sonoma:        "421f8fea695b9891048becefa4036bb1c8ddda017c4187d91071890213bb82ee"
+    sha256 cellar: :any,                 ventura:       "2773618749ec8705a63a2f60d0ba35c2c4b448d5d32722a7b6704db2390c06d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae6257f67ab94ff5a3f830a55b0c0cc76623bad2c1130593df13c06e12f98aa3"
   end
 
   depends_on "cmake" => :build

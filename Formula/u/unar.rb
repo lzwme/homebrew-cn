@@ -4,16 +4,16 @@ class Unar < Formula
   url "https:github.comMacPawXADMasterarchiverefstagsv1.10.8.tar.gz"
   sha256 "652953d7988b3c33f4f52b61c357afd1a7c2fc170e5e6e2219f4432b0c4cd39f"
   license "LGPL-2.1-or-later"
-  revision 3
+  revision 4
   head "https:github.comMacPawXADMaster.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4f1958e4685c8f612da2716e61aa50bf3ef09aa9f0f24fb053dbf87ff13543a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "32926d24931d2431fc1de377976d2be0e3bb9d081c41b96ffb88ac01c79abcd0"
-    sha256 cellar: :any,                 arm64_ventura: "b38a14f5b704caecf2f1cdbddbd3850f4f47500710a38843e28ac4a3da066c9c"
-    sha256 cellar: :any,                 sonoma:        "f2e10ae563fdc2433297285c858ecd768a74de3d4dfc85d64a2fe083c5980b9f"
-    sha256 cellar: :any,                 ventura:       "f5f982cfeeb2e0fb4830116fd4fa99eaeff3102afd7d972efe5c66a167d1e8d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f862f808fa584872c7e7e8de2430327cd2745634f0529d2fbc5d8fc54468b03a"
+    sha256 cellar: :any,                 arm64_sequoia: "fd858a235952d2155533a89449ae435c0a6f67853f5c0f729ba3586cb6fb3bdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a62cfd49e413c678551cf87b8a40f9ae1a45841e6cef0bae5672acdc7b87231e"
+    sha256 cellar: :any,                 arm64_ventura: "75504644bb166e35917edd1850d61f5ed209615a4892d3a444220532c1a29b9f"
+    sha256 cellar: :any,                 sonoma:        "7e6806c94ca6f3742b35a0dabc4233e5d3dc09363a1a5cc0e8c5c18a13e0ee15"
+    sha256 cellar: :any,                 ventura:       "b6f8500cb6592bf5c4f3d42f878cd59bb485349854f06293ff7f3d55418b106c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc17e96d8712f07a59b54b930faad63ddc4f33a69d90c925ca0a7d07bbd79b15"
   end
 
   depends_on xcode: :build
@@ -24,7 +24,7 @@ class Unar < Formula
 
   on_linux do
     depends_on "gnustep-base"
-    depends_on "icu4c@75"
+    depends_on "icu4c@76"
     depends_on "libobjc2"
     depends_on "wavpack"
   end

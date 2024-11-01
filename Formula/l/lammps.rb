@@ -1,12 +1,12 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
   homepage "https:docs.lammps.org"
-  url "https:github.comlammpslammpsarchiverefstagsstable_29Aug2024.tar.gz"
+  url "https:github.comlammpslammpsarchiverefstagsstable_29Aug2024_update1.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
-  version "20240829"
-  sha256 "6112e0cc352c3140a4874c7f74db3c0c8e30134024164509ecf3772b305fde2e"
+  version "20240829-update1"
+  sha256 "3aea41869aa2fb8120fc4814cab645686f969e2eb7c66aa5587e500597d482dc"
   license "GPL-2.0-only"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -27,13 +27,12 @@ class Lammps < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5b581262cd98e2c79b89882fdafb83ac0bde0bd37be5285bc5c6d2426b33a7b3"
-    sha256 cellar: :any,                 arm64_ventura:  "b7accba094e2ca417c737492f5223c6cafbd864c3466a2e23985160ff37d5466"
-    sha256 cellar: :any,                 arm64_monterey: "b8e3d38d52cedab8ed377b4424e83bd36b6a9f6e1f148c4f128748286e5b2ca8"
-    sha256 cellar: :any,                 sonoma:         "51e16b825b69c5bb59b75b3b88a2ee7fc02f82b296dd0b6e335c0313c8ecdc70"
-    sha256 cellar: :any,                 ventura:        "dc6cddae1cbd649dfcc6e01a852e30d866729dfd6fb88cd8e20ab1d34589a9ce"
-    sha256 cellar: :any,                 monterey:       "1951d9aabdc07cf991bf0613b1895ca46a705957a0b666ecdee38b4e82bd309f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bebcbb2129c3580d79f51e68843300dbb90c332312ab11f1aa23aa82a102f9af"
+    sha256 cellar: :any,                 arm64_sequoia: "5648e80b5ead42c21c3ceae7c1a5017980ecde4fdaa30626a7649f5e76096ccb"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f7a3497fcc46ce6c7fb3f6f19f2c46e56f9077a6a8c06ac9d324883079cbea4"
+    sha256 cellar: :any,                 arm64_ventura: "c3a87090d0391ca8d5ca85ac6718940df364b0bf3559789e9ca63173f243811c"
+    sha256 cellar: :any,                 sonoma:        "e1270a540fd2b607ae04d7a5f60fa590a1dbd2e320d69b6b25adca87257bd256"
+    sha256 cellar: :any,                 ventura:       "e6fbf42af750a5be28c2d3e2de55f37935dabbcc9c6c1a09529ef40cdfaa60fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441b6ae8f42e2809ca13388dabee6969007a295a91ed32b8388f4cd517e9050c"
   end
 
   depends_on "cmake" => :build
@@ -55,21 +54,24 @@ class Lammps < Formula
 
   def install
     %w[serial mpi].each do |variant|
-      system "cmake", "-S", "cmake", "-B", "build_#{variant}",
-                      "-C", "cmakepresetsall_on.cmake",
-                      "-C", "cmakepresetsnolib.cmake",
-                      "-DPKG_INTEL=no",
-                      "-DPKG_KIM=yes",
-                      "-DLAMMPS_MACHINE=#{variant}",
-                      "-DBUILD_MPI=#{(variant == "mpi") ? "yes" : "no"}",
-                      "-DBUILD_OMP=#{(variant == "serial") ? "no" : "yes"}",
-                      "-DBUILD_SHARED_LIBS=yes",
-                      "-DFFT=FFTW3",
-                      "-DWITH_GZIP=yes",
-                      "-DWITH_JPEG=yes",
-                      "-DWITH_PNG=yes",
-                      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                      *std_cmake_args
+      args = [
+        "-S", "cmake", "-B", "build_#{variant}",
+        "-C", "cmakepresetsall_on.cmake",
+        "-C", "cmakepresetsnolib.cmake",
+        "-DPKG_INTEL=no",
+        "-DPKG_KIM=yes",
+        "-DLAMMPS_MACHINE=#{variant}",
+        "-DBUILD_MPI=#{(variant == "mpi") ? "yes" : "no"}",
+        "-DBUILD_OMP=#{(variant == "serial") ? "no" : "yes"}",
+        "-DBUILD_SHARED_LIBS=yes",
+        "-DFFT=FFTW3",
+        "-DWITH_GZIP=yes",
+        "-DWITH_JPEG=yes",
+        "-DWITH_PNG=yes",
+        "-DCMAKE_INSTALL_RPATH=#{rpath}"
+      ]
+      args << "-DOpenMP_CXX_FLAGS=-I#{Formula["libomp"].opt_include}" if OS.mac?
+      system "cmake", *args, *std_cmake_args
       system "cmake", "--build", "build_#{variant}"
       system "cmake", "--install", "build_#{variant}"
     end

@@ -4,6 +4,7 @@ class NodeAT22 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v22.10.0/node-v22.10.0.tar.xz"
   sha256 "3180710d3130ad9df01466abf010e408d41b374be54301d1480d10eca73558e0"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,12 +12,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "528222d35a5ae846cd673c0b91a77e6fa3050d2de0c94091cd1b6c4a39656855"
-    sha256 arm64_sonoma:  "53825ab98fe302132d5dafe83eb0c10d8d46ebdc8c8a1fb388cf8457d8aa3015"
-    sha256 arm64_ventura: "68baa5fc58da403c1814e3bec8672d51e355de633f0021b23250c6d06f52f42b"
-    sha256 sonoma:        "f6bb645a21a91bbe99c9218e4122afa78e2714332be2adc84092cf422eb195cd"
-    sha256 ventura:       "80345d2d38bc6feb5c6134abe390cb527525854859a2b2386c715d026cac7509"
-    sha256 x86_64_linux:  "022797bdca863afb7a3ae77ea096fca338e2f75b613355f75e649618388b21bf"
+    sha256 arm64_sequoia: "7271f0cf7c7919dda639e1a28e2e32e399ec10bc1450ff6770feffaed8051192"
+    sha256 arm64_sonoma:  "98945146b9db1ad35584625a8b1f719bdf2b3dfb03b71589e4df8eb1d226880d"
+    sha256 arm64_ventura: "1e3cf6db11d112c1553cade95c61ce3b504b1932418fafb50eb72b8a9c31f31b"
+    sha256 sonoma:        "bf7088ab13b39cacfd6c67303ef1cc372947fef2e611a48e51cc3d582c329df4"
+    sha256 ventura:       "77bf8d7313803fe9e377c9e771469f9c69119e42032680046a69e7d6ef6af98e"
+    sha256 x86_64_linux:  "0be876d6dd808681cec3012dcbc63d964d408e1cab72b1217e4d1da3ca8f3a82"
   end
 
   keg_only :versioned_formula
@@ -29,7 +30,7 @@ class NodeAT22 < Formula
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@3"
@@ -49,6 +50,12 @@ class NodeAT22 < Formula
   end
 
   fails_with gcc: "5"
+
+  # Backport support for ICU 76+
+  patch do
+    url "https://github.com/nodejs/node/commit/81517faceac86497b3c8717837f491aa29a5e0f9.patch?full_index=1"
+    sha256 "79a5489617665c5c88651a7dc364b8967bebdea5bdf361b85572d041a4768662"
+  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)

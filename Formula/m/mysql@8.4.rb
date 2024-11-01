@@ -4,7 +4,7 @@ class MysqlAT84 < Formula
   url "https:cdn.mysql.comDownloadsMySQL-8.4mysql-8.4.3.tar.gz"
   sha256 "7ac9564c478022f73005ff89bbb40f67b381fc06d5518416bdffec75e625b818"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
+  revision 2
 
   livecheck do
     url "https:dev.mysql.comdownloadsmysql8.4.html?tpl=files&os=src&version=8.4"
@@ -12,12 +12,12 @@ class MysqlAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d86fc7ccf6fae37997d8d1e63c9c66fc443213f117647321146f9a942af359f9"
-    sha256 arm64_sonoma:  "27efb47c16fe0ef0e90688af2b27fdfe7e1b3999db8132c0e9a7efcfe761a4c0"
-    sha256 arm64_ventura: "35934673b552765809f42662121a2067c9661b4c538adf2ae8948adfcdabbee5"
-    sha256 sonoma:        "a49812b5955b44a50fcfd24440a39ccc19835d1e69288015dd023fff34b3ad91"
-    sha256 ventura:       "8459510264ebb688c5968665702f7e3a55c78459aa473ef75d3fbc2685cd92e4"
-    sha256 x86_64_linux:  "1ed1c5636c1c03977baea7f1ee4094a85b4ced6c4799e3deaf9c316855d0bec6"
+    sha256 arm64_sequoia: "8d71e43837fb2301af72dbff7f61d307073da59bf552e667a3ce28e26a0030c7"
+    sha256 arm64_sonoma:  "f01b14786760bb6e30fe263c275c14055812827312a6705e24aed0e737d97ca3"
+    sha256 arm64_ventura: "57bbfb7a66f2e9787bb6b0698bd216d2b0354aa452a8325c25c1d074fede0788"
+    sha256 sonoma:        "ef02879d294553c94c0ab123e88c2fb1381914c9feb0dc2e7ef718b4070e0ebe"
+    sha256 ventura:       "8faccfa98f9b0e7489002cf8eb75bf3b87bc8d8473dd4e49beac985bd803fdac"
+    sha256 x86_64_linux:  "1725721615d2e970ad51ed1243ab4af21f3691e73740572d09551217ce80d6f5"
   end
 
   keg_only :versioned_formula
@@ -26,7 +26,7 @@ class MysqlAT84 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "abseil"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -92,7 +92,8 @@ class MysqlAT84 < Formula
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
     end
 
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts

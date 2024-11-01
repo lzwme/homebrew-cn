@@ -4,21 +4,21 @@ class Apngasm < Formula
   url "https:github.comapngasmapngasmarchiverefstags3.1.10.tar.gz"
   sha256 "8171e2c1d37ab231a2061320cb1e5d15cee37642e3ce78e8ab0b8dfc45b80f6c"
   license "Zlib"
-  revision 13
+  revision 14
   head "https:github.comapngasmapngasm.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "2d444cec3ef5d87bf413c3301e57694afffa0c1ec51d433263e2cc95d89b266b"
-    sha256                               arm64_sonoma:  "5295b412245ce613f0d55fdd649ba21912882d48b3ec5ee7d1f7c3b3467be20b"
-    sha256                               arm64_ventura: "52256178a1979d8f85508d7c272840791bafeca1ef4c4bc036dc38304500bb04"
-    sha256                               sonoma:        "f687ee190ad2460ec32fb4a9792449c130b1d1317de72561f9fdc5068553eb5a"
-    sha256                               ventura:       "394141501308f60470f4b3a6205b057cf067423da675d1283136020758aaa0f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9c0d5bea8288502309fc70b025fe030fb2067053242a0315afbe04b304988bf"
+    sha256                               arm64_sequoia: "9ab6d41b1207fda23093f453b7a01dd53de9ed4ce3afceba84e04d285bc24b86"
+    sha256                               arm64_sonoma:  "34179cfc45bd2d0de38857a16074e94eb377f7fbd0da8bd7bb71f94c0c4ed943"
+    sha256                               arm64_ventura: "0633ef0217bfae8ff34422403729eb063321bc7264847ea2d6e25d1b9bf06436"
+    sha256                               sonoma:        "83e5b9b112bb3bfbc35b42e764738a652bdf6ac715c03d9e2a049930d9518fe5"
+    sha256                               ventura:       "18facc88d2285faeea0dc9bd2d3fcb75744fdaccbc2c14b4c8404a6dda00313b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "786c541183a6c3e45bbf3bb74141bc0570bb664dbf3e20ce71f6e7f2674c0166"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libpng"
   depends_on "lzlib"
   depends_on macos: :catalina

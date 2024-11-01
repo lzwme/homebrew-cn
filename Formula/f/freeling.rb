@@ -4,20 +4,22 @@ class Freeling < Formula
   url "https:github.comTALP-UPCFreeLingreleasesdownload4.2FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f0f0e3c141692fe62d6d1b4392ed2455083426962709498d85676ca1ecfef542"
-    sha256 cellar: :any,                 arm64_sonoma:  "b80d16a431b0d304eccbce5229b4cba351b240598218ac966e506071953235c3"
-    sha256 cellar: :any,                 arm64_ventura: "62077347e29ff817974bf37bfd12ff801c826963597776ee276db726fdb5497b"
-    sha256 cellar: :any,                 sonoma:        "38ed7b6262161ba1b7974dbe1ee3c839bc66de5cf3a710e208bc4b8ebb44801f"
-    sha256 cellar: :any,                 ventura:       "0501691716a64df0b3ed7dfaf77c5de04d6b6e1ddb6a5a16ab3ddb13d6c224cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2965621d075c50b1dfd196ca2dff63add2d3b6c2c9bd8521674fb2241e27178"
+    sha256 cellar: :any,                 arm64_sequoia: "bb16cae69ece5d45a27ec4e4a7c19f767bae6e86adde1b7c6cc62eebf5f0f332"
+    sha256 cellar: :any,                 arm64_sonoma:  "32f84651b83687a37d38186b3ca30ed6d1a756de7b8079350a58e29779a8a916"
+    sha256 cellar: :any,                 arm64_ventura: "6049a2e53d726ad543ba69b973fc23d7296146d74e2620ae5aebb6ddcacfa684"
+    sha256 cellar: :any,                 sonoma:        "d55210dda67692917cf299ae755baf1ab8cc97903c8b7258f2f5169f403b3727"
+    sha256 cellar: :any,                 ventura:       "2d54a7d0dba20a3e9674bff837ad222745650f66598d8a24d50f40d3d1bc92eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c64d78b21c012aed472e1345e742211129771abe3c3c3250bc965283f6141fc"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
+
+  uses_from_macos "zlib"
 
   conflicts_with "dynet", because: "freeling ships its own copy of dynet"
   conflicts_with "eigen", because: "freeling ships its own copy of eigen"

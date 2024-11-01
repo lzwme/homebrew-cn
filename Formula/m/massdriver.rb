@@ -1,8 +1,8 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https:www.massdriver.cloud"
-  url "https:github.commassdriver-cloudmassarchiverefstags1.10.2.tar.gz"
-  sha256 "56fa2d2de5aa520f545c0699c40794b2d241bf671213e497916a411422e30f1f"
+  url "https:github.commassdriver-cloudmassarchiverefstags1.10.3.tar.gz"
+  sha256 "aa31bc09fcaa94bcc023db8ce35473ec2a5b79a964b89c0d51279f000e2cf5af"
   license "Apache-2.0"
   head "https:github.commassdriver-cloudmass.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23576b1c578d5611a1ae94387f30bf01b313d12c7aaf1c52c86c8f40474c0001"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23576b1c578d5611a1ae94387f30bf01b313d12c7aaf1c52c86c8f40474c0001"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23576b1c578d5611a1ae94387f30bf01b313d12c7aaf1c52c86c8f40474c0001"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8936b0c69323eb40bb9e16ca3e9859125614cf4f429a52f886f9c3f8f56068d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "8936b0c69323eb40bb9e16ca3e9859125614cf4f429a52f886f9c3f8f56068d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "701df1c565c8da5663b62daf7df36f014e0a370f6afce8b2db322677622d5e00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4047239b003e8b4d9fc5e731a6eca32abadfc1a85ebb2647ea19896154ce785e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4047239b003e8b4d9fc5e731a6eca32abadfc1a85ebb2647ea19896154ce785e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4047239b003e8b4d9fc5e731a6eca32abadfc1a85ebb2647ea19896154ce785e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6946ca7546a43f55d41287bb0f24604bb992ae6fe372e5969920913e6cbaa11a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6946ca7546a43f55d41287bb0f24604bb992ae6fe372e5969920913e6cbaa11a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f348d26f088f1ae074238a6718b5ac723a2a88ec672ce05458f16dce1b9f8f4d"
   end
 
   depends_on "go" => :build

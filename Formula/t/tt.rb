@@ -1,17 +1,17 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https:github.comtarantooltt"
-  url "https:github.comtarantoolttreleasesdownloadv2.5.0tt-2.5.0-complete.tar.gz"
-  sha256 "aac32608eef800e2d1742e94dfb35fb3f06d40584d6387c03b79e20233db5512"
+  url "https:github.comtarantoolttreleasesdownloadv2.5.1tt-2.5.1-complete.tar.gz"
+  sha256 "1668f7842dfbc158486a6fa6f2d0b96cfcacfdfe38d2356d18c74c01d39f6631"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f1925c0a9063dca3df87efc214c54e7dc31e606a9e1c8ff56d989218c16eb86f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5fccaa916c393eea0be0a34855d8b4d88cc58c0940be1825dd985966129a7e7"
-    sha256 cellar: :any,                 arm64_ventura: "dcf3624897c709765465595090f73cdc0c417fc84bac6b23862d06e5e57b6302"
-    sha256                               sonoma:        "c8d79c86fab7edcbcc2dd9af18199f5be6950d885822b3940bacf02856b3d9d8"
-    sha256                               ventura:       "5de457c2e4c7a081ca401f1a15a5c463743a8283a2b3bd4594ccef4c59165dee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47e61b3c3a437e5768af70a7b30a9520857502a04194b4a8cd38d2520c1727af"
+    sha256 cellar: :any,                 arm64_sequoia: "c5ac88f957377efdcafdc2a444f2f87434f60b2579817b44379da3c2a11cc29b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8a979f07948f545c2cea8511d1f869af7de6dc0a74f06028541309b31f7be6d"
+    sha256 cellar: :any,                 arm64_ventura: "51d4cf4016a5b94cbb5767b62a3a155b577dc880036cefedc2dea5d7a534883a"
+    sha256                               sonoma:        "76f2b6df86f033e64eb71cc6b606ca1b339a8b39b3b077e0062d1bc32c107467"
+    sha256                               ventura:       "6554678c3b83c011df6efbb35e1b4c2dd3a3718db87eb6422166f8cea92fd7a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7517f26fa7dfead01987fbb093e3b4bfe8e2869af74dba0c984b87deb18901ef"
   end
 
   depends_on "go" => :build

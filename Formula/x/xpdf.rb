@@ -26,6 +26,8 @@ class Xpdf < Formula
   depends_on "libpng"
   depends_on "qt"
 
+  uses_from_macos "cups"
+
   conflicts_with "pdf2image", "pdftohtml", "poppler",
     because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 

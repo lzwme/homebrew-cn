@@ -5,6 +5,7 @@ class Spidermonkey < Formula
   version "128.4.0"
   sha256 "074014e1c26144e10707b12a271176a4b6b67021e91444b613edae38d188febc"
   license "MPL-2.0"
+  revision 1
   head "https:hg.mozilla.orgmozilla-central", using: :hg
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -15,19 +16,19 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "a27fa441e7b1627082ca112ab0ad673a3f8c42a09c997a8a08e67c746c01eeac"
-    sha256 cellar: :any, arm64_sonoma:  "6979d1717c489653932787d6fbe3025a322f42bacb8b2d777b68b9aa02a937fc"
-    sha256 cellar: :any, arm64_ventura: "2633b556c4a74ec89042a8cb3fe891b77caaa18813f0913a6099c750c92366a5"
-    sha256 cellar: :any, sonoma:        "75053c82bd98b258596784a79f9b1e2f2293336dacbc281f4135f413781a9fd4"
-    sha256 cellar: :any, ventura:       "bed0f30f6a8641ddde2d9b3ff778b1ec4157b0d8474b79508ccdd18387ea06d2"
-    sha256               x86_64_linux:  "9eebc0a50624911ab0214214a81583d98f26de5349c93663a6212499625d0a37"
+    sha256 cellar: :any, arm64_sequoia: "61b7051e96d04b5b6ddacc8ee0800b243b4ea2453bd795c07980958f93f4d174"
+    sha256 cellar: :any, arm64_sonoma:  "88ab4784c34102c8fb93c8915cdcbd1ac7496460ffe84b5a30bea713d29be343"
+    sha256 cellar: :any, arm64_ventura: "ec7e958ab256a5962f4ba60c12b368dc8609d0f156ddf23657bb54612db09287"
+    sha256 cellar: :any, sonoma:        "88c0d75a9e74c2979b9e7afe93d4e615032508fa92c4ebd3b0ca26e2436b9f69"
+    sha256 cellar: :any, ventura:       "be20966c58859beea2f86f730aed999e4adb9222a2ff4350b94952e0adcd8c0e"
+    sha256               x86_64_linux:  "d0664eeb42fb30dceab87318b21513762cc47dda62a91b21e1870421fc08ad81"
   end
 
   depends_on "cbindgen" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.13" => :build
   depends_on "rust" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "nspr"
   depends_on "readline"
 
@@ -57,6 +58,10 @@ class Spidermonkey < Formula
   end
 
   def install
+    # Workaround for ICU 76+
+    # Issue ref: https:bugzilla.mozilla.orgshow_bug.cgi?id=1927380
+    inreplace "jsmoz.configure", '"icu-i18n >= 73.1"', '"icu-i18n >= 73.1 icu-uc"'
+
     ENV.runtime_cpu_detection
 
     if OS.mac?

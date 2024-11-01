@@ -2,7 +2,7 @@ class Tectonic < Formula
   desc "Modernized, complete, self-contained TeXLaTeX engine"
   homepage "https:tectonic-typesetting.github.io"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.comtectonic-typesettingtectonic.git", branch: "master"
 
   stable do
@@ -31,12 +31,12 @@ class Tectonic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "241db42c1447078e8e0482edcc66a29913ca412bf69de14ba04392df4a9200f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3c07400585937c7a0e7391d4ed6b038a4839552a6cbcf838b9ab521de9decfd"
-    sha256 cellar: :any,                 arm64_ventura: "eb6d3c4e2539a5c35c6cdfba38731d9512a098cf9f5161a2ce71560298752be6"
-    sha256 cellar: :any,                 sonoma:        "c384757312754a13da913bacaaf00bc6fda14ecbb8b2b11380ba69e380c9eb01"
-    sha256 cellar: :any,                 ventura:       "c021e77bb90017445aa1e7f6ad2497211112596d0d9de3e193ec9a9256b7c519"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6bcf34b8ef21be00079a5790a763db9e10d6c95bbc3193f51a10a735f7b54f2"
+    sha256 cellar: :any,                 arm64_sequoia: "ec1722650c30319f61d56d7d8cca8db7cc9e076ad4893606facfbd9ee69ae7b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "721748a97a49ff72d7104f4ac681a9bb4dc45b03918dc8ad381ad8222ed0fc66"
+    sha256 cellar: :any,                 arm64_ventura: "60ddb06cede028376f301c6943862850df6a94dc51d019c2c0a7d8a34e1ad39f"
+    sha256 cellar: :any,                 sonoma:        "94aae850c22adffae6daa088513cd87f5c33fc51413e3548fd781990d6743e6f"
+    sha256 cellar: :any,                 ventura:       "a45fab4582fb61a2a8c09c4556c4c450c6a21bfda04fd3e8c0bd6e2a5ece07c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf78eafd736c3ef80d839669766e9c4ceb283772facbbe8aaa236084d6eda476"
   end
 
   depends_on "pkg-config" => :build
@@ -44,9 +44,15 @@ class Tectonic < Formula
   depends_on "freetype"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libpng"
   depends_on "openssl@3"
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "fontconfig"
+  end
 
   def install
     if OS.mac?

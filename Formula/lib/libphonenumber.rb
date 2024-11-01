@@ -4,7 +4,7 @@ class Libphonenumber < Formula
   url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.48.tar.gz"
   sha256 "71bd662c7fc9e6e0275412529a28e1da464afab3dbee4387089ad8f88f96ae59"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,19 +12,19 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d60363e0adfb4fb0a80f6709b54ce570d6cfd8f990bf8e314979f31c52264811"
-    sha256 cellar: :any,                 arm64_sonoma:  "26e2c1e5ab7cd49035418257d7546167c958107140d7a6fba1e559d886bee4aa"
-    sha256 cellar: :any,                 arm64_ventura: "cbd95dd7dae4fbdd58445e4c9e3c779a85783fab9f1ea6b9f039cfe07ca4fdab"
-    sha256 cellar: :any,                 sonoma:        "4055afb21a91b8b36fef2ca47d72564fb5ef94aa40ab92609cc4ce8826ff8c9c"
-    sha256 cellar: :any,                 ventura:       "8fdf1fb93ac73d3abf7d8987f87d519fa14bcd000af50e3bbb96959268e2fa44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b21b7142d6937fad5fe3fd193d96d879ed1afa8cc2100462d6a24a6e481dc2b"
+    sha256 cellar: :any,                 arm64_sequoia: "38ef9cee23d2d79e921798b69659a05c64d160bc3056950d73f0da611b4b1539"
+    sha256 cellar: :any,                 arm64_sonoma:  "2df987eaa15935f4d7e4f3a9cc05021d6ee85a3df91a0e9d1b8514fde662874b"
+    sha256 cellar: :any,                 arm64_ventura: "ba10f398fc5d923ee0c62dc5dce3e634e09c4f92fc4409ec72ef8aa872ab7af0"
+    sha256 cellar: :any,                 sonoma:        "f6ede1871a2efe7f8a588e43ac740d4329bd100aaa3072cc220809aa4a73768f"
+    sha256 cellar: :any,                 ventura:       "7ee52c97febf86bcd4118d1033bff32c375ed4ca3cd2c02a95ed03ec0bd31eef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03d2b27d569032ef54dad037b6d3e565a56c9990e69e136d4518f8eb927e081c"
   end
 
   depends_on "cmake" => :build
   depends_on "openjdk" => :build
   depends_on "abseil"
   depends_on "boost"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "protobuf"
 
   fails_with gcc: "5" # For abseil and C++17

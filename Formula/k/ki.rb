@@ -7,6 +7,7 @@ class Ki < Formula
   head "https:github.comKotlinkotlin-interactive-shell.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "330ff80f542bcfdde3309e437525259e0cab61b373d0ad8239188a01049b8c3f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce1c2bff302746a72187c41054af8a7918291d8a60b14eb9e5382a85e6854739"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "48be2a1031fc2bf7fdac348fb639a7d2feb6f4cf0c357b77a750d8c2c3fac901"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "14cbfb27e03216a1e02e9058a30bc2ff3523fc2f29b00790a7fc3eb13b7148c9"

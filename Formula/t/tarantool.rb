@@ -4,7 +4,7 @@ class Tarantool < Formula
   url "https:download.tarantool.orgtarantoolsrctarantool-3.2.0.tar.gz"
   sha256 "16a6d54a67f5f954cf784175dfcdb2b549c04ed1414e76256743e1fd4a560289"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
 
@@ -14,16 +14,17 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "5f117fd009f89af0abf902bf998672b39245686d690fffb3dc6b05b02660a8f8"
-    sha256 cellar: :any,                 arm64_ventura: "680685e7c6f484fe77b29fafcea65f9e8a5bf4c2871a66acccf3b329f4dda354"
-    sha256 cellar: :any,                 sonoma:        "2461f907aa5caf3d445e70a1dc67184102d0aa337f5851264cf8de41ac25e3ec"
-    sha256 cellar: :any,                 ventura:       "ab6593510eeafe2e45c94ecb3dfc564d5d65ded360f28577b9e473221c753135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35fc9a3a07fbda58c72b8cda1f3211a3c4825478729c85dac7db80156f76f41"
+    sha256 cellar: :any,                 arm64_sequoia: "bff37ca289d3df826b015ea6ebe52768f4008d048ab0f65a4270c0824b556a95"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1ee7443668cf4daa12d94c7bfbbd862d496d3db39b85de6e0c60dfaa13e7541"
+    sha256 cellar: :any,                 arm64_ventura: "825a3045ee59043164ec703ab617a8ad10f56fd7e07b311c89e049330d8ee985"
+    sha256 cellar: :any,                 sonoma:        "fc0549f96990073d51f54e713c8f22166afcd2dec10292c285ddb4ce6333d452"
+    sha256 cellar: :any,                 ventura:       "827542a4434d9851158db60471ce0ce2c9d24a8aac2bf5f1fa3629c08fa6905c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c42bbd3188fb78a41fc23f9f65cc63e9a59f42ec3bad4e02e6f8891b8ac7f32a"
   end
 
   depends_on "cmake" => :build
   depends_on "curl" # curl 8.4.0+
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"
@@ -36,44 +37,33 @@ class Tarantool < Formula
   end
 
   def install
-    # Avoid keeping references to Homebrew's clangclang++ shims
-    inreplace "srctriviaconfig.h.cmake",
-              "#define COMPILER_INFO \"@CMAKE_C_COMPILER_ID@-@CMAKE_C_COMPILER_VERSION@\"",
-              "#define COMPILER_INFO \"usrbinclang usrbinclang++\""
+    # Workaround for clang >= 16 until upstream fix is available[^1].
+    # Also, trying to apply LuaJIT commit[^2] worked on Xcode 16 but caused issue on Xcode 15.
+    #
+    # [^1]: https:github.comtarantooltarantoolissues10566
+    # [^2]: https:github.comLuaJITLuaJITcommit2240d84464cc3dcb22fd976f1db162b36b5b52d5
+    ENV.append "LDFLAGS", "-Wl,-no_deduplicate" if DevelopmentTools.clang_build_version >= 1600
 
-    args = std_cmake_args
-    args << "-DCMAKE_INSTALL_MANDIR=#{doc}"
-    args << "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}"
-    args << "-DCMAKE_INSTALL_LOCALSTATEDIR=#{var}"
-    args << "-DENABLE_DIST=ON"
-    args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}"
-    args << "-DREADLINE_ROOT=#{Formula["readline"].opt_prefix}"
-    args << "-DENABLE_BUNDLED_LIBCURL=OFF"
-    args << "-DENABLE_BUNDLED_LIBYAML=OFF"
-    args << "-DENABLE_BUNDLED_ZSTD=OFF"
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
+    args = %W[
+      -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
+      -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
+      -DENABLE_DIST=ON
+      -DCURL_ROOT=#{Formula["curl"].opt_prefix}
+      -DCURL_ROOT_DIR=#{Formula["curl"].opt_prefix}
+      -DICU_ROOT=#{icu4c.opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DREADLINE_ROOT=#{Formula["readline"].opt_prefix}
+      -DENABLE_BUNDLED_LIBCURL=OFF
+      -DENABLE_BUNDLED_LIBUNWIND=OFF
+      -DENABLE_BUNDLED_LIBYAML=OFF
+      -DENABLE_BUNDLED_ZSTD=OFF
+    ]
 
-    if OS.mac?
-      if MacOS.version >= :big_sur
-        sdk = MacOS.sdk_path_if_needed
-        lib_suffix = "tbd"
-      else
-        sdk = ""
-        lib_suffix = "dylib"
-      end
-
-      args << "-DCURL_ROOT=#{Formula["curl"].opt_prefix}"
-      args << "-DCURSES_NEED_NCURSES=ON"
-      args << "-DCURSES_NCURSES_INCLUDE_PATH=#{sdk}usrinclude"
-      args << "-DCURSES_NCURSES_LIBRARY=#{sdk}usrliblibncurses.#{lib_suffix}"
-      args << "-DICONV_INCLUDE_DIR=#{sdk}usrinclude"
-    else
-      args << "-DENABLE_BUNDLED_LIBUNWIND=OFF"
-      args << "-DCURL_ROOT=#{Formula["curl"].opt_prefix}"
-    end
-
-    system "cmake", ".", *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   def post_install

@@ -1,24 +1,18 @@
 class Microplane < Formula
   desc "CLI tool to make git changes across many repos"
   homepage "https:github.comClevermicroplane"
-  url "https:github.comClevermicroplanearchiverefstagsv0.0.34.tar.gz"
-  sha256 "289b3df07b3847fecb0d815ff552dad1b1b1e4f662eddc898ca7b1e7d81d6d7c"
+  url "https:github.comClevermicroplanearchiverefstagsv0.0.35.tar.gz"
+  sha256 "b8bdb4ae49a0354cc0a79dd4c91dddcf75167b02dc0b3060f071c27740ab58ff"
   license "Apache-2.0"
   head "https:github.comClevermicroplane.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8dc27e2d55bf0879b38b4b87ba5ab8e681201cbb581802eec1d61da95ab876b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37602331969805e506841912f3d581e39089a4442ad241d2d009d2ff5bce8ea2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bce2fccdf3bad8a263e334f78998abfa7e25153c3bd1c66fff8e538981bd481b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "895647aa25e00a690a137ab0fae64e72f075d6bedd3d0f9f9105acc7e3c5c90a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "77690629610337917ade2bca586af39148e89df15ce4b1887018c1fdec12fc7d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e0da037aee498ba387dcb993b8f6735b70b8ffb98f250e08b391f5635220aa76"
-    sha256 cellar: :any_skip_relocation, ventura:        "6dc454b63246b9866a58af5a0766c074e504c050d38fd3437bdf3dbbc12211d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0e54ff13e444e476d6eea2798aa1966937488b4e8f2472be9cf024933b74604"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9b4d8f8734017c00dfb4c94d77b0eba42bc0daf01ab637a1d6b239d40b939daa"
-    sha256 cellar: :any_skip_relocation, catalina:       "bf2395a35907393bb6603b764e1dd748752ca4cd4e93b64033a6c1942e4aa5b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ca59189a783f9dc449507d44a21773beff53a90ace19c25181a6cce6ea77121"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8725ec0214b5f37d9bd5ab7ef3025df23b281b22b34c15d6dc65276752e0ca86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8725ec0214b5f37d9bd5ab7ef3025df23b281b22b34c15d6dc65276752e0ca86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8725ec0214b5f37d9bd5ab7ef3025df23b281b22b34c15d6dc65276752e0ca86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecca91e14f27f6c65b4dbde35187fd369c309b23d5898e6e7121daac41fc6ea0"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecca91e14f27f6c65b4dbde35187fd369c309b23d5898e6e7121daac41fc6ea0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42b83dffc0c0573172f2217ac257cf0ea2f2df2d763570d1b26652868b53ec96"
   end
 
   depends_on "go" => :build

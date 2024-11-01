@@ -4,15 +4,15 @@ class PostgresqlAT11 < Formula
   url "https://ftp.postgresql.org/pub/source/v11.22/postgresql-11.22.tar.bz2"
   sha256 "2cb7c97d7a0d7278851bbc9c61f467b69c094c72b81740b751108e7892ebe1f0"
   license "PostgreSQL"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 arm64_sequoia: "48826bee58bcadc0a4b18d8d29035f6a2d0d3db6aca0a3a3092737e1c61ac172"
-    sha256 arm64_sonoma:  "907b7dbc60759c0c57190cafb731e0c2f21656c57446e840e1b196b6c9328411"
-    sha256 arm64_ventura: "03cb9eeca30faca0fb2ec618d06ba1586131946369719b5f8e2b26164cd82918"
-    sha256 sonoma:        "073b6df762a77ad05e26432acf5ba013bfbbb3eef3422a5ca9b92bedae3f20e3"
-    sha256 ventura:       "a26c992b153361df8807d93c2edad126fef8a0ddb14e2be66aa2cf843ce01698"
-    sha256 x86_64_linux:  "9d4313a790a776e4ed357c0778d00d17575ebef3f19dde4aca7dc8c546ffcd80"
+    sha256 arm64_sequoia: "465e5d787088e8430b34127706cef775e370465e397cd7a0f8d1f9f6e100b250"
+    sha256 arm64_sonoma:  "9a90a8863e2249ddec6fdfc780234245c627bb712167c9d4ae049724d7603d57"
+    sha256 arm64_ventura: "c49160f76e1c932fbad47d7a46bfac677fa08b48c1a81ece6a2bfd221dba4421"
+    sha256 sonoma:        "1d2800bd5a00502a1e12af09bc83fbe2cbb5ad7f94fbf043bf7e1a2c78e41ff2"
+    sha256 ventura:       "cd1b4cedfee0cf1c3bd27f19be06f520543af8dd9d8ddad488bc7f35be8b2483"
+    sha256 x86_64_linux:  "28741909116720116113759f20a2532b4c40452d4019162b0dc2339d5f088b79"
   end
 
   keg_only :versioned_formula
@@ -21,7 +21,7 @@ class PostgresqlAT11 < Formula
   deprecate! date: "2023-11-09", because: :unsupported
 
   depends_on "pkg-config" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "readline"
 
