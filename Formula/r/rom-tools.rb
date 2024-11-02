@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https:mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0270.tar.gz"
-  version "0.270"
-  sha256 "0364b670478883902c2bc618908192b0590235b47fbe073fcac2d13b82541437"
+  url "https:github.commamedevmamearchiverefstagsmame0271.tar.gz"
+  version "0.271"
+  sha256 "79960f4c57715b2d08c3eba12933d04dd91ad1d95b0c1059306a75bf07fd6027"
   license "GPL-2.0-or-later"
   head "https:github.commamedevmame.git", branch: "master"
 
@@ -12,13 +12,12 @@ class RomTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d0c7ee46a831e851b2787a8b08ea8ddbc93d028a474070137b6f9eb720a15ebf"
-    sha256 cellar: :any,                 arm64_sonoma:  "29cd86192232dcd3f9fc32c2bf1c7786020ae3ec550e8e22feffa841b020baaa"
-    sha256 cellar: :any,                 arm64_ventura: "1c51b245d105c0fd2fd1adce87776cd934e39cc7eefb8cf4b8b2c22310c8dbfe"
-    sha256 cellar: :any,                 sonoma:        "65993ff76b6a7323bc8e1f80cfa7a9ee4b577d127ac4c3cf4f62a38650b5d25b"
-    sha256 cellar: :any,                 ventura:       "2d656db9ede30cc18853777a5f91bce6abc31e38c1df8d87f1529c6f2a097b32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d7748e0f990ebb79414dbd83129fb282a400f7426a079538f1f26085494be48"
+    sha256 cellar: :any,                 arm64_sequoia: "b2eb83be31464686651a0bb20ef4972c0bd3dbf078398e80d34dd523c8e794f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f71cb382e8b12163ec8b6a11fda3144965f030fa73694fe7a58b743ed638b016"
+    sha256 cellar: :any,                 arm64_ventura: "4a1315f0d240806caf1893eb498eeb5e20552cb42dc826ed3b0e4636e96fa7e6"
+    sha256 cellar: :any,                 sonoma:        "ef52bb5e686b66e57b6add49d1bf6b2a2beaa9cb372cce6161dc2a6fb68d41bb"
+    sha256 cellar: :any,                 ventura:       "e41c45ccbc9339a555166f6a71c9e9d67478c950a9dc486adccee53798d5912d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b69f68717b8f183d79fed2730becdd2a4564aa91ffaceed8613f373e3f1936"
   end
 
   depends_on "asio" => :build
@@ -40,13 +39,6 @@ class RomTools < Formula
     depends_on "pulseaudio" => :build
     depends_on "qt" => :build
     depends_on "sdl2_ttf" => :build
-  end
-
-  # Support alternate Qt libexec directories
-  # PR ref: https:github.commamedevmamepull12870
-  patch do
-    url "https:github.commamedevmamecommitf1604dbe7e51f519bb98cf4c52c8b0e41184384b.patch?full_index=1"
-    sha256 "42204cbf23c6a20a8b2dba515ce50e119870b5037fe224da45c53782170fb1df"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https:flang.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.2llvm-project-19.1.2.src.tar.xz"
-  sha256 "3666f01fc52d8a0b0da83e107d74f208f001717824be0b80007f529453aa1e19"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.3llvm-project-19.1.3.src.tar.xz"
+  sha256 "324d483ff0b714c8ce7819a1b679dd9e4706cf91c6caf7336dc4ac0c1d3bf636"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -12,15 +12,16 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "27ac24add409b9d5625b9b76be498d28e9679f5b623e7bba4bdce7ab5e0f8fd4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccb62aacc3bf88d1d90cd54c0a9a46853e81db56da569f2c06447e347e9171c7"
-    sha256 cellar: :any,                 arm64_ventura: "af6152f4c4bfa44381dcf315e4fe410c42049564b644985ea956ae77ead11a4d"
-    sha256 cellar: :any,                 sonoma:        "d20e249d059695374646c2630c062de6ce1104033ab5b582121639053ec0a610"
-    sha256 cellar: :any,                 ventura:       "663de6e3ba2a070367cb0c8fd4c7eb42182d844342835f1ed18c80f4c10bcd07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5708a60af8feca789467e0e03ceddd2f3e38532b082ed0e238487e18c7675c53"
+    sha256 cellar: :any,                 arm64_sequoia: "fdd2c87834a1ec92f4d87d8c0703c2e7bdfd15cadc72174fd768962f174588f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ecf637bff4bd02c2c4c77344603a065f6b61310eb1243869c9e0e17002f1d06c"
+    sha256 cellar: :any,                 arm64_ventura: "2683519b08dd29be67ac74e10dce1bff82133c25ab3a8f3ea83a0ce32628b4bf"
+    sha256 cellar: :any,                 sonoma:        "48b935fdba8b67b0efa4f2a292d9dc0ebf0d60b45972f25f476e51f2e98612df"
+    sha256 cellar: :any,                 ventura:       "9cc0bd144901f4261199a629a5adc712204cac15241e0ddb1bcf517cad896ace"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9157954980e2051622073b1252c7db1ca504764fc351ae2e17b6f582305f68f6"
   end
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "llvm"
 
   # Building with GCC fails at linking with an obscure error.
@@ -34,6 +35,7 @@ class Flang < Formula
     llvm = Formula["llvm"]
     # NOTE: Setting `BUILD_SHARED_LIBRARIES=ON` causes the just-built flang to throw ICE.
     args = %W[
+      -G Ninja
       -DCLANG_DIR=#{llvm.opt_lib}cmakeclang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
@@ -46,6 +48,8 @@ class Flang < Formula
       -DMLIR_DIR=#{llvm.opt_lib}cmakemlir
     ]
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
+    # Linking takes an absurd amount of memory. Try to limit it to no more than 4GB per link job.
+    args << "-DLLVM_RAM_PER_LINK_JOB=#{4 * 1024}" if ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
     install_prefix = libexec

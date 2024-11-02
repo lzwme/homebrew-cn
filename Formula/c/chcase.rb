@@ -10,7 +10,7 @@ class Chcase < Formula
   end
 
   # internet archive capture, https://web.archive.org/web/20210731164711/http://primaledge.ca/chcase
-  disable! date: "2024-02-22", because: "Site is gone and no license for the script"
+  disable! date: "2024-02-22", because: :no_license
 
   # add a shebang so that brew properly sets it executable
   patch :DATA

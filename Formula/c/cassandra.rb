@@ -20,7 +20,7 @@ class Cassandra < Formula
 
   depends_on "libev"
   depends_on "openjdk@17"
-  depends_on "python@3.11" # required 3.6-3.11
+  depends_on "python@3.11" # required 3.8-3.11, https:github.comapachecassandrablobtrunkbincqlsh#L65-L73
 
   conflicts_with "emqx", because: "both install `nodetool` binaries"
 

@@ -18,11 +18,6 @@ class GnuGetopt < Formula
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"
 
-  depends_on "asciidoctor" => :build
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "pkg-config" => :build
-
   on_linux do
     keg_only "conflicts with util-linux"
   end

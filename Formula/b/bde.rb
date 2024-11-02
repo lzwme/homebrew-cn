@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https:github.combloombergbde"
-  url "https:github.combloombergbdearchiverefstags4.14.0.0.tar.gz"
-  sha256 "b6dbc5438b666b15548192e2faf9bf80305c1a63aec45182bf8838084521fdb1"
+  url "https:github.combloombergbdearchiverefstags4.16.1.0.tar.gz"
+  sha256 "32bb1912b6c37b11ca86c87a7295adeca928ef816014926da089088e5a843d6d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class Bde < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "62983ce5639b46b9489403ccbf11468c34a1c6f7ae94059a27df903561b8cad1"
-    sha256 cellar: :any,                 arm64_sonoma:  "171defd5302883ad5af86eed46c38547f5fd23e37c782341b9818ea1c73e876d"
-    sha256 cellar: :any,                 arm64_ventura: "579723d1b3070b33a7ce734c606c2ac4c773d907442b95323c3f8619a9f2b561"
-    sha256 cellar: :any,                 sonoma:        "af0fc982ce22e35239e1de3d645b008cdde31f0495bd9e021c40f061ce4121e2"
-    sha256 cellar: :any,                 ventura:       "73b5fb36ed2c5410759ac52946631d210d90a8e27fadbdcb0adb209ab94587c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00bc4f3329b797923a1f3996fc3f61a5124136a54d41b793b2475ad207f38760"
+    sha256 cellar: :any,                 arm64_sequoia: "934e52e46f5efff74a846378b931dda85b21d0a47039fdc7e362445a28a6d568"
+    sha256 cellar: :any,                 arm64_sonoma:  "eee9621db68ba4e039acac1b384be033bf779f8b17856b61a220ea05ef63da47"
+    sha256 cellar: :any,                 arm64_ventura: "292257df4ef9f7e16098a88b4149a0882caaf45b9df07a24926c24773b169976"
+    sha256 cellar: :any,                 sonoma:        "42cd88a057de2e123e710f8e42c8ad636d82650d48e52cec020b3fe27fb3600d"
+    sha256 cellar: :any,                 ventura:       "659df6906e225ca217ceebff0f469712f8fe83eb7d012e8de0e945a59a93f7ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87dcfaea08789f78092daf1658160f1ac5806bc42ee5b76308898c1b9ba8ba2a"
   end
 
   depends_on "cmake" => :build
@@ -26,15 +25,11 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https:github.combloombergbde-toolsarchiverefstags4.8.0.0.tar.gz"
-    sha256 "49fdfb3a3e2c4803ba8a9bfa680cb50943c41ef1e6b1725087b877557b82bd35"
+    url "https:github.combloombergbde-toolsarchiverefstags4.13.0.0.tar.gz"
+    sha256 "d70ab85eb1a4325f3d569a6b7ea0f0a44a6143fd91905ab5fbaa5e1fed111a68"
   end
 
   def install
-    # TODO: `bde-tools` did not have a matching tag for 4.14.0.0. Check if it's in sync again in the next release.
-    # odie "bde-tools resource needs to be updated" if version != resource("bde-tools").version
-    odie "Check if bde-tools resource version is in sync again" if version > "4.14.0.0"
-
     (buildpath"bde-tools").install resource("bde-tools")
 
     # Use brewed pcre2 instead of bundled sources

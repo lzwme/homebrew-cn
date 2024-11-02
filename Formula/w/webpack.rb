@@ -3,18 +3,18 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https:webpack.js.org"
-  url "https:registry.npmjs.orgwebpack-webpack-5.95.0.tgz"
-  sha256 "f2af5e3bd812296e13230723c11a8bb9338cb175fc4d852934abf4868569d27e"
+  url "https:registry.npmjs.orgwebpack-webpack-5.96.1.tgz"
+  sha256 "0f6b03262c764b8ed22edc182bed56ba8671b0ac272b187f2bb44e087aa4f04e"
   license "MIT"
   head "https:github.comwebpackwebpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d06566fabf801d582c5631556e09defb51058f5864a4fe861b012f50e58449e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d06566fabf801d582c5631556e09defb51058f5864a4fe861b012f50e58449e8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d06566fabf801d582c5631556e09defb51058f5864a4fe861b012f50e58449e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce1453a5aa3752e4776f4a21718a41eb61cf523cebfe752c4a4aa75235a66056"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce1453a5aa3752e4776f4a21718a41eb61cf523cebfe752c4a4aa75235a66056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d06566fabf801d582c5631556e09defb51058f5864a4fe861b012f50e58449e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a56adbfd19b54122450d07eade1ccb0b7036c0bbf3f913b46ee1470966796cef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a56adbfd19b54122450d07eade1ccb0b7036c0bbf3f913b46ee1470966796cef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a56adbfd19b54122450d07eade1ccb0b7036c0bbf3f913b46ee1470966796cef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f406292a75bd168924df2c4d9c12764b4d07ac12e834ed8e904586ebec80204b"
+    sha256 cellar: :any_skip_relocation, ventura:       "f406292a75bd168924df2c4d9c12764b4d07ac12e834ed8e904586ebec80204b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56adbfd19b54122450d07eade1ccb0b7036c0bbf3f913b46ee1470966796cef"
   end
 
   depends_on "node"

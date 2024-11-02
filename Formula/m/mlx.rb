@@ -3,18 +3,18 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.19.2.tar.gz"
-  sha256 "0a53f9542c40a27efc9902e2d59223e3c6b0b6c581fff51b513a754f6c95a601"
+  url "https:github.comml-exploremlxarchiverefstagsv0.19.3.tar.gz"
+  sha256 "1d53ad70eaae89aed42f763c1c5e44668a9b14f6ed194da85e5705a37e50dca6"
   # Main license is MIT while `metal-cpp` resource is Apache-2.0
   license all_of: ["MIT", "Apache-2.0"]
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "9c58e96218dcfe702b8ab1f38842142aed03bba6b09f2f2f2bb114283b349a0b"
-    sha256 cellar: :any, arm64_sonoma:  "91116c08c56480d3b6c9a9a9f7403a5a3c9612570530365b10d7e85476c1acf9"
-    sha256 cellar: :any, arm64_ventura: "a4c1ef12420d052758211e9409b26376d23b5205dde25cfec4d1cea895dceaa3"
-    sha256 cellar: :any, sonoma:        "dd7aa13a5d0c2fefac387fd2db4c2eddf00e3432662b946a0ab5e68af43f046a"
-    sha256 cellar: :any, ventura:       "e0231ce4b8361eee5d08564aaf1ddf67e14c27ed27b50217e0a2f4278933b31b"
+    sha256 cellar: :any, arm64_sequoia: "53d4d36ee979de8a24bd10f82beb516ec8df071322decf1414eae63c21a28332"
+    sha256 cellar: :any, arm64_sonoma:  "cd8db1b575eb52bae1f4fb84a582c15e73ef3983323a5d1aa616908ec2c5eca8"
+    sha256 cellar: :any, arm64_ventura: "29edffa90d370a54c59be479318ca26383e9dc6a4b5d8ad619970d68363c4d84"
+    sha256 cellar: :any, sonoma:        "f2ae59e427bd699d49fddd886688d7400ff617bda96017c1a0048c69f7783fc2"
+    sha256 cellar: :any, ventura:       "6d063bf9bd4a658c8cb1edbdfab4a2ed7dd83b5daba272989fad8be9b7d73c0d"
   end
 
   depends_on "cmake" => :build

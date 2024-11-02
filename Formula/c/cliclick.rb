@@ -18,6 +18,7 @@ class Cliclick < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "65b6fcb0620720f8cc572bd3cc7ab260664e39629b9ff4fdf26e5fa24f81e6ea"
   end
 
+  depends_on maximum_macos: [:sonoma, :build] # https:github.comBlueMcliclickissues178
   depends_on :macos
 
   def install

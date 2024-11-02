@@ -1,18 +1,18 @@
 class Sqlpage < Formula
   desc "Web application framework, for creation of websites with simple database queries"
   homepage "https:sql.ophir.dev"
-  url "https:github.comlovasoaSQLpagearchiverefstagsv0.30.0.tar.gz"
-  sha256 "abc0e3d39d733d4f4c811346d243ff42bb139519f852f8d71dc9090d6d7f56b0"
+  url "https:github.comlovasoaSQLpagearchiverefstagsv0.30.1.tar.gz"
+  sha256 "f91f3798614c27146979d6b1127a7a1f24707d63720665bd37aff66ad5e22b36"
   license "MIT"
   head "https:github.comlovasoaSQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2accff43c8d2ec499de41be8b7be4b2cfd0628d2b7b17be0cd7ab09a01470138"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58bce1e11b1ee0543dbbb9e214b0640b6a19e3d50f3e32787d58019b4d0cccf8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f750ed3559fa892a93aa3983b78a2e445e1874ca79fae177231a1511b85c68f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1a426ded93a6274a7a91d4418e9aaa3e93603415bb1c9f6683f88fe7c599a82"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef76467bf207a52524e7a14d01df5c2b374b78cd8177631ec35468b2f1b22322"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a9ce2116fe3807b13b0be43adc49b780179c4fae6d824632dd04aeb115694f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29ebde56d3e50773d9d75589bafbf4c66cf849f8c04249abf36041eac9e4f535"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "469b5500fa326d9310de22d895f9af4b437df8cbbc565d83efc6157d0f2a2109"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57503e66ebe5cdb17ff1da6975297f1aa9908dcbfbf622413116049d81ec48c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e1971ce65f663cd963453d3e7ded079e01914d828fa527d57ff30b8ed32940f"
+    sha256 cellar: :any_skip_relocation, ventura:       "a77d0b17e4fe5e94535ce71f2c7fee1027403720dca5ca36277afd7c4727462f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63e431755a67019ab3944228a37ca069e4eea322287218e88eafeb758add3956"
   end
 
   depends_on "rust" => :build

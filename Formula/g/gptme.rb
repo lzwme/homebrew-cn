@@ -3,18 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https:gptme.orgdocs"
-  url "https:files.pythonhosted.orgpackages3f99e8832c5be1ae9a1341a09511ec7af3496f2d0749bb97c4473c376a936558gptme-0.21.0.tar.gz"
-  sha256 "791786af7cdc520224ee968c178cc1e1b3fab06673678ae8462c0a2a294ab4ca"
+  url "https:files.pythonhosted.orgpackages7f59d4297b56180caf0f2845cee135df58bf6167d1839323e2e50bb02f829134gptme-0.22.0.tar.gz"
+  sha256 "8757e37f20aa9e1f08e9c87c226055eef1fc10f7bb5e03ff99bec4439bb7c147"
   license "MIT"
   head "https:github.comErikBjaregptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c146f9a5d3ddc091eb4a7c22d45dc8832299dd5ffef9f4f4a7417af908de373f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b41332aff7c678b18368b842c7e51505fd50bbd774d5fbb55258d5a62f77dc98"
-    sha256 cellar: :any,                 arm64_ventura: "8414af0bc5a14c3f618a22933f727aa2695929d3602d23870bcd2f8b92025608"
-    sha256 cellar: :any,                 sonoma:        "40b7a471403440ba0982df760baf373ecbaed50a69f0c68b94d1eeba76bcd99e"
-    sha256 cellar: :any,                 ventura:       "322fdc7a0821e6dba51766d968c656e82f9dec088e358abfcca7e790c2465e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "565c21c7a55cf26f920f35b666534cd374886bdfb2dcba7be8710a967e3dbb37"
+    sha256 cellar: :any,                 arm64_sequoia: "d367d1fdf6fbe8072fd14042ecf2163ea9f0064bcfa6d60e753101123ca94e66"
+    sha256 cellar: :any,                 arm64_sonoma:  "a78952c96830b55a9953d95858d20767f4f22e6b4c9dfe543fbd14f69a1da23c"
+    sha256 cellar: :any,                 arm64_ventura: "ff4f208fec0071317d49262992f1bf09343fd00521620e5381955b194fb58c32"
+    sha256 cellar: :any,                 sonoma:        "f3b3802f042a6b88e2072cf31c757c4bb0151be4db4f3e5f757047695e2c4b5d"
+    sha256 cellar: :any,                 ventura:       "7e0af2f482c207683bae5cd60d47c46864b1eb365fe088631000f3f2c5ebe61b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f683c3cd28b71fe71a8d2ddb5f4288f90c7844980da8bce7fe5414747cc5279"
   end
 
   depends_on "rust" => :build
@@ -101,8 +101,8 @@ class Gptme < Formula
   end
 
   resource "huggingface-hub" do
-    url "https:files.pythonhosted.orgpackages4499c8fdef6fe09a1719e5e5de24b012de5824889168c96143f5531cab5af42bhuggingface_hub-0.26.1.tar.gz"
-    sha256 "414c0d9b769eecc86c70f9d939d0f48bb28e8461dd1130021542eff0212db890"
+    url "https:files.pythonhosted.orgpackagesd5a8882ae5d1cfa7c9c5be32feee4cee56d9873078913953423e47a756da110dhuggingface_hub-0.26.2.tar.gz"
+    sha256 "b100d853465d965733964d123939ba287da60a547087783ddff8a323f340332b"
   end
 
   resource "idna" do
@@ -121,8 +121,8 @@ class Gptme < Formula
   end
 
   resource "jiter" do
-    url "https:files.pythonhosted.orgpackages26ef64458dfad180debd70d9dd1ca4f607e52bb6de748e5284d748556a0d5173jiter-0.6.1.tar.gz"
-    sha256 "e19cd21221fc139fb032e4112986656cb2739e9fe6d84c13956ab30ccc7d4449"
+    url "https:files.pythonhosted.orgpackagesac3d4ca1c6b8d1d15ea747da474891f9879c0f0777e2e44e87c0be81657ed016jiter-0.7.0.tar.gz"
+    sha256 "c061d9738535497b5509f8970584f20de1e900806b239a39a9994fc191dad630"
   end
 
   resource "lxml" do
@@ -151,8 +151,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackagesa5781c4658043cdbb7faf7f388cbb3902d5f8b9a307e10f2021b1a8a4b0b8b15openai-1.52.2.tar.gz"
-    sha256 "87b7d0f69d85f5641678d414b7ee3082363647a5c66a462ed7f3ccb59582da0d"
+    url "https:files.pythonhosted.orgpackages83fc77552f9ddd40ac32fe44c591c5a0918a050aea6ce62a3f22fc7d8fe0359aopenai-1.53.0.tar.gz"
+    sha256 "be2c4e77721b166cce8130e544178b7d579f751b4b074ffbaade3854b6f85ec5"
   end
 
   resource "packaging" do
@@ -271,8 +271,8 @@ class Gptme < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagese934bef135b27fe1864993a5284ad001157ee9b5538e859ac90f5b0e8cc8c9ectqdm-4.66.6.tar.gz"
+    sha256 "4bdd694238bef1485ce839d67967ab50af8f9272aab687c0d7702a01da0be090"
   end
 
   resource "traitlets" do

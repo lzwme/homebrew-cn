@@ -1,10 +1,9 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https:tarantool.org"
-  url "https:download.tarantool.orgtarantoolsrctarantool-3.2.0.tar.gz"
-  sha256 "16a6d54a67f5f954cf784175dfcdb2b549c04ed1414e76256743e1fd4a560289"
+  url "https:download.tarantool.orgtarantoolsrctarantool-3.2.1.tar.gz"
+  sha256 "604566ceacb4db9ea6b4f2e29dbed587a9e5721abb49b764906e1a8b19153ea9"
   license "BSD-2-Clause"
-  revision 2
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
 
@@ -14,12 +13,12 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bff37ca289d3df826b015ea6ebe52768f4008d048ab0f65a4270c0824b556a95"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1ee7443668cf4daa12d94c7bfbbd862d496d3db39b85de6e0c60dfaa13e7541"
-    sha256 cellar: :any,                 arm64_ventura: "825a3045ee59043164ec703ab617a8ad10f56fd7e07b311c89e049330d8ee985"
-    sha256 cellar: :any,                 sonoma:        "fc0549f96990073d51f54e713c8f22166afcd2dec10292c285ddb4ce6333d452"
-    sha256 cellar: :any,                 ventura:       "827542a4434d9851158db60471ce0ce2c9d24a8aac2bf5f1fa3629c08fa6905c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c42bbd3188fb78a41fc23f9f65cc63e9a59f42ec3bad4e02e6f8891b8ac7f32a"
+    sha256 cellar: :any,                 arm64_sequoia: "fb1af47e6109d954e5fefad0702033a1de5df468439e8b8d3c0db829d0e1d1bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "43b2194ea7f5e4b508773a9a57800766f10c7917d1e9fe6e8f137024c4bbba4f"
+    sha256 cellar: :any,                 arm64_ventura: "1d35b655dadb1fd04ea5823216af216ef01f23e029c0f11cf9d2b4aab2bebb13"
+    sha256 cellar: :any,                 sonoma:        "a8b380cd42970a801f88e927efd72f0018d6a9ed61c1e0b368e01523bb2c7d42"
+    sha256 cellar: :any,                 ventura:       "30adcc9c64a39a3d36349588d30997a39ce431eb2dcba245ec7a0bbe0c1a33b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd641a562b4b4a0aa03f07bedb97fdbc6367470ac86151053eee845222505eff"
   end
 
   depends_on "cmake" => :build
@@ -59,6 +58,7 @@ class Tarantool < Formula
       -DENABLE_BUNDLED_LIBUNWIND=OFF
       -DENABLE_BUNDLED_LIBYAML=OFF
       -DENABLE_BUNDLED_ZSTD=OFF
+      -DLUAJIT_NO_UNWIND=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

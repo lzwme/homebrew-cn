@@ -22,7 +22,7 @@ class GrpcAT154 < Formula
 
   keg_only :versioned_formula
 
-  deprecate! date: "2024-02-25", because: :versioned_formula
+  disable! date: "2024-10-31", because: :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

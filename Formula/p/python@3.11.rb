@@ -168,9 +168,6 @@ class PythonAT311 < Formula
       args << "--with-dbmliborder=bdb"
     end
 
-    # Resolve HOMEBREW_PREFIX in our sysconfig modification.
-    inreplace "Libsysconfig.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
-
     # We want our readline! This is just to outsmart the detection code,
     # superenv makes cc always find includeslibs!
     if OS.linux?

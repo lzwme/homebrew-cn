@@ -10,7 +10,7 @@ class Finatra < Formula
     sha256 cellar: :any_skip_relocation, all: "adbf00cd007ff84e48376228209f6ad7f73d34dea489cfe762267ab42d0252d1"
   end
 
-  disable! date: "2024-09-09", because: "library with minimal downloads"
+  disable! date: "2024-09-09", because: "is a library with minimal downloads"
 
   def install
     libexec.install Dir["*"]

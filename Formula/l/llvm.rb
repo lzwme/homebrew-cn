@@ -1,11 +1,22 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https:llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.2llvm-project-19.1.2.src.tar.xz"
-  sha256 "3666f01fc52d8a0b0da83e107d74f208f001717824be0b80007f529453aa1e19"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
+
+  stable do
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.3llvm-project-19.1.3.src.tar.xz"
+    sha256 "324d483ff0b714c8ce7819a1b679dd9e4706cf91c6caf7336dc4ac0c1d3bf636"
+
+    # Backport relative `CLANG_CONFIG_FILE_SYSTEM_DIR` patch.
+    # Remove in LLVM 20.
+    # https:github.comllvmllvm-projectpull110962
+    patch do
+      url "https:github.comllvmllvm-projectcommit1682c99a8877364f1d847395cef501e813804caa.patch?full_index=1"
+      sha256 "2d0a185e27ff2bc46531fc2c18c61ffab521ae8ece2db5b5bed498a15f3f3758"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d432f24a0f2d6d719f24181df8b27308d0923dea5acb51fb42d13c79cc20610b"
-    sha256 cellar: :any,                 arm64_sonoma:  "25fb3ca0bca2324a9ba64d4d0776c04eac78dc24ad5645218e7dd9a5ac8fcb8b"
-    sha256 cellar: :any,                 arm64_ventura: "a6deb72445b89b4528f56fadb811332406f01d6c294a25cb9c9e9c417e35ab88"
-    sha256 cellar: :any,                 sonoma:        "3f4adf15aae3229808a4a351a33c93a0bda8548f75c3ffcf8b8fbd96a4f567fe"
-    sha256 cellar: :any,                 ventura:       "5a218d82a37c5983a73fec61826278e49e7788e72131ca01b1808c0bcac4ba8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbe203fbaa00f4d9b3ac5548a35c39da513f3cbe8a19f4068e0a7a58fac865e"
+    sha256 cellar: :any,                 arm64_sequoia: "19873681a95ca87aa8a88ef5c5a548e437dbe4c74ad16f88c4c556a9beb87bc3"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f4bd09057f2badf19be728784804bd46c4dcfa94b42e56908a1879000baf6eb"
+    sha256 cellar: :any,                 arm64_ventura: "fd9b1bd61321fd36b0618c9702e4ffa492ec2edcb66c859faf521a4607df6368"
+    sha256 cellar: :any,                 sonoma:        "88c63f0c4c1a63b427dedc325cf26831f37604c749a2777a376bf6416c958f79"
+    sha256 cellar: :any,                 ventura:       "d0f1a642be8a52e2dfb342b0405b8e584ff822ab4309bdf629efa1a6ed1ad196"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "479d06278bca8d5a7b8863f003ca127641ffef9c734976eee34fe8c0cc01d763"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -49,8 +60,26 @@ class Llvm < Formula
   # Fails at building LLDB
   fails_with gcc: "5"
 
+  # Support simplified triples in version config files.
+  # https:github.comllvmllvm-projectpull111387
+  patch do
+    url "https:github.comllvmllvm-projectcommit88dd0d33147a7f46a3c9df4aed28ad4e47ef597c.patch?full_index=1"
+    sha256 "0acaa80042055ad194306abb9843a94da24f53ee2bb819583d624391a6329b90"
+  end
+
+  # Fix triple config loading for clang-cl
+  # https:github.comllvmllvm-projectpull111397
+  patch do
+    url "https:github.comllvmllvm-projectcommita3e8b860788934d7cc1489f850f00dcfd9d8b595.patch?full_index=1"
+    sha256 "6d8403fec7be55004e94de90b074c2c166811903ad4921fd76274498c5a60a23"
+  end
+
   def python3
     "python3.13"
+  end
+
+  def clang_config_file_dir
+    etc"clang"
   end
 
   def install
@@ -116,6 +145,8 @@ class Llvm < Formula
       -DLLVM_ENABLE_Z3_SOLVER=#{versioned_formula? ? "OFF" : "ON"}
       -DLLVM_OPTIMIZED_TABLEGEN=ON
       -DLLVM_TARGETS_TO_BUILD=all
+      -DLLVM_USE_RELATIVE_PATHS_IN_FILES=ON
+      -DLLVM_SOURCE_PREFIX=.
       -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
       -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_LUA=OFF
@@ -126,6 +157,8 @@ class Llvm < Formula
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}
       -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF
       -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
+      -DCLANG_CONFIG_FILE_SYSTEM_DIR=#{clang_config_file_dir.relative_path_from(bin)}
+      -DCLANG_CONFIG_FILE_USER_DIR=~.configclang
     ]
 
     if tap.present?
@@ -156,7 +189,6 @@ class Llvm < Formula
       args << "-DLIBCXX_INSTALL_LIBRARY_DIR=#{libcxx_install_libdir}"
       args << "-DLIBUNWIND_INSTALL_LIBRARY_DIR=#{libunwind_install_libdir}"
       args << "-DLIBCXXABI_INSTALL_LIBRARY_DIR=#{libcxx_install_libdir}"
-      args << "-DDEFAULT_SYSROOT=#{macos_sdk}" if macos_sdk
       runtimes_cmake_args << "-DCMAKE_INSTALL_RPATH=#{libcxx_rpaths.join("|")}"
 
       # Disable builds for OSes not supported by the CLT SDK.
@@ -412,6 +444,25 @@ class Llvm < Formula
       system "usrlibexecPlistBuddy", "-c", "Add:CompatibilityVersion integer 2", "Info.plist"
       xctoolchain.install "Info.plist"
       (xctoolchain"usr").install_symlink [bin, include, lib, libexec, share]
+
+      # Install a major-versioned symlink that can be used across minorpatch version upgrades.
+      xctoolchain.parent.install_symlink xctoolchain.basename.to_s => "LLVM#{soversion}.xctoolchain"
+
+      # Write config files for each macOS major version so that this works across OS upgrades.
+      # TODO: replace this with a call to `MacOSVersion.kernel_major_version` once this is in a release tag:
+      #   https:github.comHomebrewbrewpull18674
+      {
+        11 => 20,
+        12 => 21,
+        13 => 22,
+        14 => 23,
+        15 => 24,
+      }.each do |macos_version, kernel_version|
+        write_config_files(macos_version, kernel_version, Hardware::CPU.arch)
+      end
+
+      # Also write an unversioned config file as fallback
+      write_config_files("", "", Hardware::CPU.arch)
     end
 
     # Install Vim plugins
@@ -445,8 +496,34 @@ class Llvm < Formula
     end
   end
 
+  # We use the extra layer of indirection in `arch` because the FormulaAuditOnSystemConditionals
+  # doesn't want to let us use `Hardware::CPU.arch` outside of `install` or `post_install` blocks.
+  def write_config_files(macos_version, kernel_version, arch)
+    clang_config_file_dir.mkpath
+
+    arches = Set.new([:arm64, :x86_64])
+    arches << arch
+
+    arches.each do |target_arch|
+      target_triple = "#{target_arch}-apple-darwin#{kernel_version}"
+      (clang_config_file_dir"#{target_triple}.cfg").atomic_write <<~CONFIG
+        --sysroot=#{MacOS::CLT::PKG_PATH}SDKsMacOSX#{macos_version}.sdk
+      CONFIG
+    end
+  end
+
+  def post_install
+    return unless OS.mac?
+    return if (clang_config_file_dir"#{Hardware::CPU.arch}-apple-darwin#{OS.kernel_version.major}.cfg").exist?
+
+    write_config_files(MacOS.version.major, OS.kernel_version.major, Hardware::CPU.arch)
+  end
+
   def caveats
     s = <<~EOS
+      CLANG_CONFIG_FILE_SYSTEM_DIR: #{clang_config_file_dir}
+      CLANG_CONFIG_FILE_USER_DIR:   ~.configclang
+
       LLD is now provided in a separate formula:
         brew install lld
 
@@ -513,6 +590,9 @@ class Llvm < Formula
       }
     CPP
 
+    system bin"clang-cpp", "-v", "test.c"
+    system bin"clang-cpp", "-v", "test.cpp"
+
     # Testing default toolchain and SDK location.
     system bin"clang++", "-v",
            "-std=c++11", "test.cpp", "-o", "test++"
@@ -528,6 +608,7 @@ class Llvm < Formula
         toolchain_path = "LibraryDeveloperCommandLineTools"
         cpp_base = (MacOS.version >= :big_sur) ? MacOS::CLT.sdk_path : toolchain_path
         system bin"clang++", "-v",
+               "--no-default-config",
                "-isysroot", MacOS::CLT.sdk_path,
                "-isystem", "#{cpp_base}usrincludec++v1",
                "-isystem", "#{MacOS::CLT.sdk_path}usrinclude",
@@ -543,6 +624,7 @@ class Llvm < Formula
       if OS.mac? && MacOS::Xcode.installed?
         cpp_base = (MacOS::Xcode.version >= "12.5") ? MacOS::Xcode.sdk_path : MacOS::Xcode.toolchain_path
         system bin"clang++", "-v",
+               "--no-default-config",
                "-isysroot", MacOS::Xcode.sdk_path,
                "-isystem", "#{cpp_base}usrincludec++v1",
                "-isystem", "#{MacOS::Xcode.sdk_path}usrinclude",

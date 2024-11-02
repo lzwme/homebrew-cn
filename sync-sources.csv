@@ -1473,7 +1473,7 @@ Homebrew-homebrew-core/Formula/d/dtc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dtm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dtools.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dtrx.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dtrx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dua-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duc.rb, Homebrew/homebrew-core, 1
@@ -2398,7 +2398,7 @@ Homebrew-homebrew-core/Formula/g/grails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grammarly-languageserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grantlee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grap.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/graph-tool.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/graph-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphicsmagick.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphite2.rb, Homebrew/homebrew-core, 1
@@ -5478,6 +5478,7 @@ Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rinetd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ringojs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rip2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripgrep-all.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripmime.rb, Homebrew/homebrew-core, 0
@@ -6788,6 +6789,7 @@ Homebrew-homebrew-core/Formula/w/wapm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wartremover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasi-libc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasi-runtimes.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wasm-component-ld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-micro-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-tools.rb, Homebrew/homebrew-core, 1
@@ -7842,6 +7844,7 @@ Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clean-me.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0

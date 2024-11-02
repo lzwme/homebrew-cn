@@ -348,9 +348,6 @@ class Swift < Formula
       ], '"$ORIGIN"', "\"$ORIGIN:#{ENV["HOMEBREW_RPATH_PATHS"]}\""
     end
 
-    # Paired with llbuild patch
-    inreplace workspace"llbuildPackage.swift", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
-
     extra_cmake_options = if OS.mac?
       %W[
         -DSQLite3_INCLUDE_DIR=#{MacOS.sdk_for_formula(self).path}usrinclude

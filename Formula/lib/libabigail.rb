@@ -1,12 +1,12 @@
 class Libabigail < Formula
   desc "ABI Generic Analysis and Instrumentation Library"
   homepage "https://sourceware.org/libabigail/"
-  url "https://mirrors.kernel.org/sourceware/libabigail/libabigail-2.5.tar.xz"
-  sha256 "7cfc4e9b00ae38d87fb0c63beabb32b9cbf9ce410e52ceeb5ad5b3c5beb111f3"
+  url "https://mirrors.kernel.org/sourceware/libabigail/libabigail-2.6.tar.xz"
+  sha256 "3bfa8ba753ff27722baa7f73b15a475f8a4599355e47439108423d1912bb5469"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 x86_64_linux: "290aa7b00f998aee8c38adee01016462fd4f13151915ec15078bc0b4eaf94e3b"
+    sha256 x86_64_linux: "39bfad0c9e5cbb11821b3ee99ae6e599d84a20343eb8ae49294c88d2514da12a"
   end
 
   head do
@@ -21,6 +21,7 @@ class Libabigail < Formula
   depends_on "elfutils"
   depends_on "libxml2"
   depends_on :linux
+  depends_on "xxhash"
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

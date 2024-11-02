@@ -3,20 +3,10 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https:gnuradio.org"
+  url "https:github.comgnuradiognuradioarchiverefstagsv3.10.11.0.tar.gz"
+  sha256 "9ca658e6c4af9cfe144770757b34ab0edd23f6dcfaa6c5c46a7546233e5ecd29"
   license "GPL-3.0-or-later"
-  revision 10
   head "https:github.comgnuradiognuradio.git", branch: "main"
-
-  stable do
-    url "https:github.comgnuradiognuradioarchiverefstagsv3.10.9.2.tar.gz"
-    sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
-
-    # fmt 11 compatibility
-    patch do
-      url "https:github.comgnuradiognuradiocommit19b070051c1c2b5fb6f2da8fb6422b27418c3dfa.patch?full_index=1"
-      sha256 "fedba8f2bbc2a1949df87bcfbb2814eea86bd4cbaa069985836b85accedba327"
-    end
-  end
 
   livecheck do
     url :stable
@@ -24,14 +14,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c0f7ea0947305c6b59ca5c40bd4bfbaca337e44e1c6ea86c66a3b75581b01091"
-    sha256 cellar: :any,                 arm64_sonoma:   "10dcb782a30fb507f080d245f407c3a3d5f63b82b9703f7b61b9ff504c38dc04"
-    sha256 cellar: :any,                 arm64_ventura:  "ee0c078b2969b16744c547ec28fc15f115b17c4bc6b1b001a1cfb00a783f8052"
-    sha256 cellar: :any,                 arm64_monterey: "9d28b4f15250ff64551221af8e911fca6679ee4f6acc9933a3e48c9c32f98f64"
-    sha256 cellar: :any,                 sonoma:         "7ab9cbc9d4bd69e107af372ba9e91fe1ed16c61080b5e8507f0b6a8c4d09c416"
-    sha256 cellar: :any,                 ventura:        "6b444e5c57cca23c720ab44426bf23566e27265bc28a0fce2b4b089e71263a6a"
-    sha256 cellar: :any,                 monterey:       "facb6bcdd11b7bec275e8217574219a2e96e54beba42a2142fa4f47836597b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "803a511be05b086783d31d720e4578739c49ebadc82a0d5cab50450108e9cd4d"
+    sha256 cellar: :any,                 arm64_sequoia: "7ec009a094c19e4e8c1e571eb75f96de4fe9bd4f548f8d9bf62624db3d26cdc0"
+    sha256 cellar: :any,                 arm64_sonoma:  "40af9aef9f7ea3c20382a83b2dfac6d266bb878f794e29f37fae48586a52c817"
+    sha256 cellar: :any,                 arm64_ventura: "81ffaefac7c1071d583d1fda1a8e983631d5a92dfaed2c0303a0d707189c6bc5"
+    sha256 cellar: :any,                 sonoma:        "8978473787443aba09d87521d58c95cec3f25f600a0b0cce9239215cf45a08ad"
+    sha256 cellar: :any,                 ventura:       "a7b187907b41b8650ee46ec299a960b510152b710dd834c5b499303769beca7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1d5533ba2cab9c4f9c31d0eb212af0602fbfcbfcb10dc763fb4f292f3778e97"
   end
 
   depends_on "cmake" => :build
@@ -157,12 +145,6 @@ class Gnuradio < Formula
   resource "setuptools" do
     url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
     sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
-  end
-
-  # Allow qwt 6.3+
-  patch do
-    url "https:github.comgnuradiognuradiocommitca344658756dab10a762571c51acf92c00c066c1.patch?full_index=1"
-    sha256 "7e16ca70d07ce61bc16870f756acc194eb893e22703c53ed2826f5cf90dc7f4e"
   end
 
   def python3

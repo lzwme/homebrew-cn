@@ -2,7 +2,7 @@ class Chakra < Formula
   desc "Core part of the JavaScript engine that powers Microsoft Edge"
   homepage "https:github.comchakra-coreChakraCore"
   license "MIT"
-  revision 8
+  revision 9
   head "https:github.comchakra-coreChakraCore.git", branch: "master"
 
   stable do
@@ -37,13 +37,13 @@ class Chakra < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "0312de0964e13f78d77a70f2ce9fb07a551698c2845572797c5bcfee70445a22"
-    sha256 cellar: :any,                 ventura:      "eee806adf9099aa00c3680bdb59e3e2cd995e85020d97654a84c668375d463bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "de0544b3bb920d7764b0a51ea1e591512f06791bc1ae18ddea9be6f6b33bf740"
+    sha256 cellar: :any,                 sonoma:       "7b16aa6c8b2677f2dba55987d78f4cc867d357aeba2b6b3d97e76e42c6c69c4b"
+    sha256 cellar: :any,                 ventura:      "dc7589f199baf02f63525cd1b5adb4e971d87b9c2369eb3e031dd4234acefac6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb090973883ca8832598f8d020bb6c3454567a7a1dd8537325a636be45fb0300"
   end
 
   depends_on "cmake" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "python" => :build
@@ -55,6 +55,8 @@ class Chakra < Formula
   def install
     # Use ld_classic to work around 'ld: Assertion failed: (0 && "lto symbol should not be in layout")'
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+    # Workaround to build with ICU 76+
+    ENV.append_to_cflags "-DU_SHOW_CPLUSPLUS_HEADER_API=0"
 
     icu4c_dep = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
     args = %W[
@@ -64,17 +66,18 @@ class Chakra < Formula
     ]
     # LTO requires ld.gold, but Chakra has no way to specify to use that over regular ld.
     args << "--lto-thin" if OS.mac? && !Hardware::CPU.arm?
-    # JIT is not supported on ARM
-    args << "--no-jit" if Hardware::CPU.arm?
+    # JIT is not supported on ARM and build fails since Xcode 16
+    args << "--no-jit" if Hardware::CPU.arm? || DevelopmentTools.clang_build_version >= 1600
 
-    # Build dynamically for the shared library
     system ".build.sh", *args
-    # Then statically to get a usable binary
-    system ".build.sh", "--static", *args
 
-    bin.install "outReleasech" => "chakra"
+    libexec.install "outReleasech" => "chakra"
     include.install Dir["outReleaseinclude*"]
     lib.install "outRelease#{shared_library("libChakraCore")}"
+
+    # Non-statically built chakra expects libChakraCore to be in the same directory
+    bin.install_symlink libexec"chakra"
+    libexec.install_symlink lib.children
   end
 
   test do

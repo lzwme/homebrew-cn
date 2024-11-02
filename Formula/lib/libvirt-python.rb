@@ -1,10 +1,9 @@
 class LibvirtPython < Formula
   desc "Libvirt virtualization API python binding"
   homepage "https://www.libvirt.org/"
-  url "https://download.libvirt.org/python/libvirt-python-10.8.0.tar.gz"
-  sha256 "10cddc61c6bc5659c0eaa3e4c71f3d97c95abf327a51c207affb2e5f49f19f60"
+  url "https://download.libvirt.org/python/libvirt-python-10.9.0.tar.gz"
+  sha256 "44833fc6017fc88e43586a78c028a89fa1e1c1bae5089160c62356308ac9a37a"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://download.libvirt.org/python/"
@@ -12,12 +11,12 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "48b21a0fb616ce0ce88d25d154f80413048663203f3f51fa5cee1a896ccb0572"
-    sha256 cellar: :any,                 arm64_sonoma:  "55f710ee5e0b87a16bfe5846815d0752f5c8709e7c8f05eb810fc2fbde1c670d"
-    sha256 cellar: :any,                 arm64_ventura: "56304a392beb82de4643f9340c12ce8eb5897ea77e70199eb6cb23260c60094d"
-    sha256 cellar: :any,                 sonoma:        "0c7e52aeec5da8fd63c41f89f9ae94bb0468968f1c3a0e7f9832ad97e2b83291"
-    sha256 cellar: :any,                 ventura:       "8f8a8dd947b66f9f3e8e19d514e9c6d45e12fb367794dadc74348150338da0ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89ae778e521efc4642dc55328e5197dfa65a4ef7668aa677b94a059f02f51b71"
+    sha256 cellar: :any,                 arm64_sequoia: "265ee75ccfc21afcbbe6d42833ee4a5e325a0c7d2a28554ed2f2c8153de646cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "0280c0041fcc1803c3aaee9aa656ac8083f2ab12a262fdb2d06826ea0f2a2958"
+    sha256 cellar: :any,                 arm64_ventura: "b6a289ec7937206de11591a9378d194ba9d355cd3cbf41d72aa978b5eb8a2913"
+    sha256 cellar: :any,                 sonoma:        "62dd88bf8a1bb4c88f42c356e6e792aa7455b505e5a4d5d7a30455dd107d29e8"
+    sha256 cellar: :any,                 ventura:       "1bcbf2671d75df950d68f23419158d425f6859296780235e01e21b9c8f7386ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "083260eab1d2a1223373b8512eb0cdb79c33b70c9331908a75aa2c382473c4fa"
   end
 
   depends_on "pkg-config" => :build

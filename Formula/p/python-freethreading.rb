@@ -6,17 +6,17 @@ class PythonFreethreading < Formula
   license "Python-2.0"
 
   livecheck do
-    url "https:www.python.orgftppython"
-    regex(%r{href=.*?v?(\d(?:\.\d+)*)?["' >]}i)
+    formula "python"
   end
 
   bottle do
-    sha256 arm64_sequoia: "0f9eacb0bec71b324566294066d636a6751cad6ec1ea493c2190561335b40cdd"
-    sha256 arm64_sonoma:  "cb8a80b3a41c4009d517824be20caa6eb9e271094dfff34c61c5a486d3d03c91"
-    sha256 arm64_ventura: "d484dfb4fa51152a1aa9fc5984737e2626b6d29855be58bfc553d75a3e29e001"
-    sha256 sonoma:        "af65642e4704fda3fde02840c5ec241277d027fd86792ac77731797a439fba76"
-    sha256 ventura:       "1900e44a812afbf9fdd70d5f3f27b4653e6348d4d7df729caef07eecf17841d9"
-    sha256 x86_64_linux:  "1ae107bce7c691a26d1718752790269ff290dd07f2626b99c2556305de72c57b"
+    rebuild 1
+    sha256 arm64_sequoia: "98c43c254a600fcb8c1701369bc501db0fa4df72a2ad20d7e22cdc55e085fc2d"
+    sha256 arm64_sonoma:  "f43cbd1d65a4dee79c5b040903c3755372d408073181d01cee47a52f453774b5"
+    sha256 arm64_ventura: "5e1dfec49650c6c31cad7e38e2a198282b2f928494952db25ed47b016bc8c8ed"
+    sha256 sonoma:        "faaeaaf1ae388ae484ad3fba8cb7a2595954605511f9b505efc4b8baf2d93a00"
+    sha256 ventura:       "74c1f457660802b6f76250908167f448d6c951c6ccce345778cb92d69b5c55f3"
+    sha256 x86_64_linux:  "7edd046e94be530008b8aa7cf8af55772ec95eb31f2e00fbfd079c758c9b7bf5"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -29,6 +29,8 @@ class PythonFreethreading < Formula
   depends_on "sqlite"
   depends_on "xz"
 
+  # not actually used, we just want this installed to ensure there are no conflicts.
+  uses_from_macos "python" => :test
   uses_from_macos "bzip2"
   uses_from_macos "expat"
   uses_from_macos "libedit"
@@ -163,9 +165,6 @@ class PythonFreethreading < Formula
       args << "--with-dbmliborder=bdb"
     end
 
-    # Resolve HOMEBREW_PREFIX in our sysconfig modification.
-    inreplace "Libsysconfig__init__.py", "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX, audit_result: false
-
     # Allow python modules to use ctypes.find_library to find homebrew's stuff
     # even if homebrew is not a usrlocallib. Try this with:
     # `brew install enchant && pip install pyenchant`
@@ -282,8 +281,10 @@ class PythonFreethreading < Formula
     mv bin"idle#{version.major_minor}", bin"idle#{version.major_minor}t"
     mv bin"pydoc#{version.major_minor}", bin"pydoc#{version.major_minor}t"
 
-    # Remove python3.13 named executables
-    (bin.children - bin.glob("*#{version.major_minor}t*")).map(&:unlink)
+    # Remove files that conflict with the main python3 formula
+    [bin, lib, lib"pkgconfig", include].each do |directory|
+      (directory.glob("*python*") - directory.glob("*#{version.major_minor}t*")).map(&:unlink)
+    end
     rm_r share
   end
 

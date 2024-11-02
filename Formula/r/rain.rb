@@ -1,17 +1,17 @@
 class Rain < Formula
   desc "Command-line tool for working with AWS CloudFormation"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.18.0.tar.gz"
-  sha256 "b742cfbbb89740f4633fc9811dce9bac2d91612b9c9384d07439152f5af29daa"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.19.0.tar.gz"
+  sha256 "6cd3dd2466d5a4db2fb8d2043482a77290eed727ec84cc2d532f7cb1abd3cab3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d07861d59a5a7f3068d5af8b115f5989316d28881f34056011cb35377ce0adea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "746c7098911d7ef1622558e15d7417dde92a0705ff95afdd726e72964ffcc2e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "482ed5343e7e9769c54d9ec01a27c27a1c02bb1c546639fb3d64ae2fb150249d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "357f6b3bad8aa45f97fd12db6d59ff628a15a488ecf070b263dca9be7d33cc40"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1d19407cc8bbc05a5f8925a068e4d6cf0e9bf88717756e298597ff9519df805"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bec2dc501c23b57c177876e1d2a35f080fa0786220dfc9872e087203ea9f000d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aaa22065927b47340852392c682fb2891284f8acfc9acab153da5489ba1513d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "672d69fa258dfc8aeac57584c0fd4951c965d793a9f80942659404123c86e8da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1428e079488494516b35d2176713cddc565de6bea23aee3dcfda807d0255f35b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ee151a63b3d07bc3eea77e3a434c1a41f900260646aa7b657d2cc81929028c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d904e5d03b165e106119bce4923e935661ac83bb615a37aabcee9b0fa6231ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed122de0ed205d625603b841a38ab741f6c3a475d99dce15ff0334371bb2e510"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,7 @@ class Swiftplantuml < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ff206c13b69d39e3f86ac489e8c505cbe7095cf424521692d5b76eeb2393e07"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "494bb09eb5cc7d9dabcfdac317baf2b5939edcbbba51bcde099bea9d1068cb58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bdc52a8007de3f0043a220e2a26ace19bdfd906d52b5157a49a1b148466cfc0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c5e3a4d3fe71467bd150d18789322c7cc0a842d54077c6932b173ebee3ab7fd1"
@@ -17,7 +18,33 @@ class Swiftplantuml < Formula
   depends_on xcode: ["12.2", :build]
   depends_on :macos
 
+  # Fetch a copy of SourceKitten in order to fix build with newer Swift
+  resource "SourceKitten" do
+    if DevelopmentTools.clang_build_version >= 1600
+      # https:github.comMarcoEidingerSwiftPlantUMLblob0.8.1Package.resolved#L5-L11
+      url "https:github.comjpsimSourceKitten.git",
+          tag:      "0.32.0",
+          revision: "817dfa6f2e09b0476f3a6c9dbc035991f02f0241"
+
+      # Backport of import from HEAD
+      patch :DATA
+    end
+  end
+
   def install
+    if DevelopmentTools.clang_build_version >= 1600
+      res = resource("SourceKitten")
+      (buildpath"SourceKitten").install res
+
+      pin_version = JSON.parse(File.read("Package.resolved"))
+                        .dig("object", "pins")
+                        .find { |pin| pin["package"] == "SourceKitten" }
+                        .dig("state", "version")
+      odie "Check if SourceKitten patch is still needed!" if pin_version != res.version
+
+      system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath"SourceKitten"
+    end
+
     system "make", "install", "prefix=#{prefix}"
   end
 
@@ -25,3 +52,24 @@ class Swiftplantuml < Formula
     system bin"swiftplantuml", "--help"
   end
 end
+
+__END__
+diff --git aSourceSourceKittenFrameworkSwiftDocs.swift bSourceSourceKittenFrameworkSwiftDocs.swift
+index 1d2473c..70de287 100644
+--- aSourceSourceKittenFrameworkSwiftDocs.swift
++++ bSourceSourceKittenFrameworkSwiftDocs.swift
+@@ -10,6 +10,14 @@
+ import SourceKit
+ #endif
+
++#if os(Linux)
++import Glibc
++#elseif os(Windows)
++import CRT
++#else
++import Darwin
++#endif
++
+  Represents docs for a Swift file.
+ public struct SwiftDocs {
+      Documented File.

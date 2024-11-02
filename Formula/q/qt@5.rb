@@ -11,6 +11,7 @@ class QtAT5 < Formula
   mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.15singleqt-everywhere-opensource-src-5.15.15.tar.xz"
   sha256 "b423c30fe3ace7402e5301afbb464febfb3da33d6282a37a665be1e51502335e"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
     url "https:download.qt.ioofficial_releasesqt5.15"
@@ -18,12 +19,12 @@ class QtAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1afd63dc1e62e946c88c80e4192be654df4ac2fc11b82a0f71cd64c0f08fbfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0cfeeacfefeb3c3158b03fd3b35e04bdc72d627148bb00c4bc8f196b4d2c360"
-    sha256 cellar: :any,                 arm64_ventura: "0acdf9040c7100ed5750d146191f51d055888f05cb25e57b6cd551d5c11017fc"
-    sha256 cellar: :any,                 sonoma:        "57fb8ee5275428ee49452441bac8e0145c7cb2a6e3247a6f782359b56470df31"
-    sha256 cellar: :any,                 ventura:       "37819927d329989f6b6e6b76e71ecce8f1731488a4b95356d98ff34d6a31fcb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c8ac60dbe7163744f27d127a8d5e47f6074ab21e6412a156d5a6cf5b71bf7c3"
+    sha256 cellar: :any,                 arm64_sequoia: "9f33572ec04eb567b77cae909103d44d683ffc0a8bc3f82e233295b08ab03db8"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f5ade389b95d6a6a22182b3f32226a4898d57f9ae42dd75f5e8a981fdc5733e"
+    sha256 cellar: :any,                 arm64_ventura: "9bdec0a078264792e9cab58857256b9f0a807e1e02540b9ef5eaaff69a5518df"
+    sha256 cellar: :any,                 sonoma:        "7043762c8e365015465cdf63088adb97fc001a926bed6f580f2d285a48323795"
+    sha256 cellar: :any,                 ventura:       "a3b7360aa4f68bda77bd8179179919124b637c755aa6f45177686b3302e50e5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9513a9892a3ee5288253bbfa22bd1e0309b9b7f179e254ee1a4a3364284c12a1"
   end
 
   keg_only :versioned_formula
@@ -62,7 +63,7 @@ class QtAT5 < Formula
     depends_on "expat"
     depends_on "fontconfig"
     depends_on "harfbuzz"
-    depends_on "icu4c@75"
+    depends_on "icu4c@76"
     depends_on "libdrm"
     depends_on "libevent"
     depends_on "libice"

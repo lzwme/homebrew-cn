@@ -1,19 +1,17 @@
 class RushParallel < Formula
   desc "Cross-platform command-line tool for executing jobs in parallel"
   homepage "https:github.comshenwei356rush"
-  url "https:github.comshenwei356rusharchiverefstagsv0.5.6.tar.gz"
-  sha256 "57450967bd222964f4865d7884b358d391e30d6eee8951b149f34f8642a32958"
+  url "https:github.comshenwei356rusharchiverefstagsv0.5.7.tar.gz"
+  sha256 "07d0fc8b4247625a8a62dcd7e337a9bc16f7e25a5ced7e96ee08cdc88fbb2dc6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dec8fcf099e7d8f5a089ea85cc14ce075a941dda2977a2922ba93db6fa313663"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc134bdeb1f45da45415da9afd754faedda3216c381a40e4ad276fdf0a4f0d5d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84527df6822a3c96fbe1f3bd5f64842dacd941ad635353a8492be7544d75ce99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a7ccbfe97e582202faab7204fafef37033cd0ee5d7c9b32ee352e9435f140d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f72c193f784b9daa4842fd6142587e35ae4d0af1910a9c024e7a03db339d837e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c1b6bcab40fb133dcbb72d87cb9adc6b1e1dbcfaabd1165585fef689533150c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "9fc430bf28d8d0575cbc824582cb143027ea0995eaeb430a64bf4e342783fd74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b750c49b1316b191f32c638041be3bf67dfbbd33991ecf67a14a96cff91bd9b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b19b561b17ee16f2946bce38dd6ef72155d4ab8be74e7bd3a8beb04b3f6289ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c94523d738e9056eacc4ca23b2ce0df8edd92ba41b5764f18de15f4c7834712b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61a1adac65b0a06a60888e851bb9a68cbaf4f04e3c2149d47112fc6ee63bf237"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9de7203510209e835862f7ac42e8bc2ef0c5d31a15c12457c78023a80b05b2f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "817896f3adb411f9cba80905a2b0abe37e9682aa9a1cf4a450ff092dfdb5c5f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a3bc3a16c056b10512c7ca52b26f05168e661cc7ae8ee16e81cd965ba775c19"
   end
 
   depends_on "go" => :build

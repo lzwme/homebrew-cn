@@ -3,15 +3,13 @@ class Flit < Formula
 
   desc "Simplified packaging of Python modules"
   homepage "https:github.compypaflit"
-  url "https:files.pythonhosted.orgpackagesb1a6e9227cbb501aee4fa4a52517d3868214036a7b085d96bd1e4bbfc67ad6c6flit-3.9.0.tar.gz"
-  sha256 "d75edf5eb324da20d53570a6a6f87f51e606eee8384925cd66a90611140844c7"
+  url "https:files.pythonhosted.orgpackagesc32901c1ab00b1040c0de30f4dfd74cbaa26586e190bdcf12b1fd6783ea7dad4flit-3.10.0.tar.gz"
+  sha256 "dadca58d5097db62884d25d70b572f104954927daadc8cee449739215b7237fd"
   license "BSD-3-Clause"
-  revision 6
   head "https:github.compypaflit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "15a5a0c1290f83d1f8d081b1ace9f69e5c1b9975be9a64ee8e1930576aba4dcb"
+    sha256 cellar: :any_skip_relocation, all: "9db339bbb39de12ab3ab639f3f26bed7ced3a3baa499db6dcc89632737c7519b"
   end
 
   depends_on "certifi"
@@ -28,8 +26,8 @@ class Flit < Formula
   end
 
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"
-    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+    url "https:files.pythonhosted.orgpackages529289cceb9c49f3e6c72091304636c5ebc2fc48c546742bbf8a6a474e48e666flit_core-3.10.0.tar.gz"
+    sha256 "6d904233178b3c924f665947ac7d286f2ac799fb69087e39e56ceb4084724a97"
   end
 
   resource "idna" do

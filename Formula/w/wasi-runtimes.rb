@@ -1,8 +1,8 @@
 class WasiRuntimes < Formula
   desc "Compiler-RT and libc++ runtimes for WASI"
   homepage "https:wasi.dev"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.2llvm-project-19.1.2.src.tar.xz"
-  sha256 "3666f01fc52d8a0b0da83e107d74f208f001717824be0b80007f529453aa1e19"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.3llvm-project-19.1.3.src.tar.xz"
+  sha256 "324d483ff0b714c8ce7819a1b679dd9e4706cf91c6caf7336dc4ac0c1d3bf636"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
 
@@ -11,17 +11,19 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c15d547e848cda42bffcb56e8d797f81482495ff45207c808e214274617a8e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0effbd63bd850eef30b7d75d73b8b863b91a9dc74d532e6ca762ad11d49b9ec4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9918fe74820758f11a0a6412e957764c155886d6c999fba9a9e822f2d7b75d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1840dfe57ce81fdeb13e63f89aa90569e572935db233f6a34597dae63fd1e12"
-    sha256 cellar: :any_skip_relocation, ventura:       "a077d43170858dc3121b56320315028cb625447e888b2d6265c98b6c24b4d164"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13c5e9e2ee72e70baeee0882d2b35a5b75137e4628ca839462d8df932585184e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a416ceb547e428f6fa7ba55c1f955889504dc92ad62ad0c23d3e52c0aca4dff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827a14dab71af9ca068ebe22e3e5a8cefb87f3f69f93011d9e9c4feb36d054b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "10a1a47517183e7b2e92f45dffae7142b261332a2a187c37677690684d69c30a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ada587bb34d56e564ad457584c1e100ae5b505dc16d79e9e22840353106234ff"
+    sha256 cellar: :any_skip_relocation, ventura:       "17bb1834271dbed6588418961a23891cd2682b3f717bb1d82157dbaf87fc4519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2e167df3de25498aca9b287f2880d99a0b20de5e2710166063a8dd4ad5912f"
   end
 
   depends_on "cmake" => :build
   depends_on "lld" => [:build, :test]
   depends_on "wasi-libc" => [:build, :test]
+  depends_on "wasm-component-ld" => [:build, :test]
   depends_on "wasmtime" => :test
   depends_on "llvm"
 
@@ -53,6 +55,9 @@ class WasiRuntimes < Formula
       -DCMAKE_C_COMPILER_WORKS=ON
       -DCMAKE_CXX_COMPILER_WORKS=ON
       -DCMAKE_SYSROOT=#{wasi_libc.opt_share}wasi-sysroot
+      -DCMAKE_FIND_FRAMEWORK=NEVER
+      -DCMAKE_VERBOSE_MAKEFILE=ON
+      -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{HOMEBREW_LIBRARY_PATH}cmaketrap_fetchcontent_provider.cmake
     ]
     # Compiler flags taken from:
     # https:github.comWebAssemblywasi-sdkblob5e04cd81eb749edb5642537d150ab1ab7aedabe9cmakewasi-sdk-sysroot.cmake#L65-L75
@@ -75,7 +80,10 @@ class WasiRuntimes < Formula
     (pkgshare"lib").install_symlink "wasi" => "wasip1"
     (pkgshare"lib").install_symlink "wasi" => "wasip2"
 
-    clang_resource_dir = Pathname.new(Utils.safe_popen_read(llvm.opt_bin"clang", "-print-resource-dir").chomp)
+    clang_resource_dir = Utils.safe_popen_read(llvm.opt_bin"clang", "-print-resource-dir").chomp
+    clang_resource_dir.sub! llvm.prefix.realpath, llvm.opt_prefix
+    clang_resource_dir = Pathname.new(clang_resource_dir)
+
     clang_resource_include_dir = clang_resource_dir"include"
     clang_resource_include_dir.find do |pn|
       next unless pn.file?
@@ -84,7 +92,8 @@ class WasiRuntimes < Formula
       target = pkgsharerelative_path
       next if target.exist?
 
-      target.parent.install_symlink pn
+      target.parent.mkpath
+      ln_s pn, target
     end
 
     target_configuration = Hash.new { |h, k| h[k] = {} }
@@ -93,7 +102,8 @@ class WasiRuntimes < Formula
       # Configuration taken from:
       # https:github.comWebAssemblywasi-sdkblob5e04cd81eb749edb5642537d150ab1ab7aedabe9cmakewasi-sdk-sysroot.cmake#L227-L271
       configuration = target_configuration[target]
-      configuration[:threads] = configuration[:pic] = target.end_with?("-threads") ? "ON" : "OFF"
+      configuration[:threads] = target.end_with?("-threads") ? "ON" : "OFF"
+      configuration[:pic] = target.end_with?("-threads") ? "OFF" : "ON"
       configuration[:flags] = target.end_with?("-threads") ? ["-pthread"] : []
 
       cflags = ENV.cflags&.split || []
@@ -130,7 +140,7 @@ class WasiRuntimes < Formula
         -DLIBCXX_ENABLE_FILESYSTEM:BOOL=ON
         -DLIBCXX_ENABLE_ABI_LINKER_SCRIPT:BOOL=OFF
         -DLIBCXX_CXX_ABI=libcxxabi
-        -DLIBCXX_CXX_ABI_INCLUDE_PATHS=#{testpath}libcxxabiinclude
+        -DLIBCXX_CXX_ABI_INCLUDE_PATHS=#{buildpath}libcxxabiinclude
         -DLIBCXX_HAS_MUSL_LIBC:BOOL=ON
         -DLIBCXX_ABI_VERSION=2
         -DLIBCXXABI_ENABLE_EXCEPTIONS:BOOL=OFF
@@ -157,6 +167,16 @@ class WasiRuntimes < Formula
       system "cmake", "-S", "runtimes", "-B", "runtimes-#{target}", *target_cmake_args, *common_cmake_args
       system "cmake", "--build", "runtimes-#{target}"
       system "cmake", "--install", "runtimes-#{target}"
+
+      triple = Utils.safe_popen_read(llvm.opt_bin"clang", "--target=#{target}", "--print-target-triple").chomp
+      config_file = "#{triple}.cfg"
+
+      (buildpathconfig_file).write <<~CONFIG
+        --sysroot=#{HOMEBREW_PREFIX}sharewasi-sysroot
+        -resource-dir=#{HOMEBREW_PREFIX}sharewasi-runtimes
+      CONFIG
+
+      (etc"clang").install config_file
     end
     (share"wasi-sysrootincludec++v1").mkpath
     touch share"wasi-sysrootincludec++v1.keepme"
@@ -184,18 +204,11 @@ class WasiRuntimes < Formula
     CPP
 
     clang = Formula["llvm"].opt_bin"clang"
-    wasm_args = %W[
-      --sysroot=#{HOMEBREW_PREFIX}sharewasi-sysroot
-      -resource-dir=#{HOMEBREW_PREFIX}sharewasi-runtimes
-    ]
     targets.each do |target|
-      # FIXME: Needs a working `wasm-component-ld`.
-      next if target.include?("wasip2")
-
-      system clang, "--target=#{target}", *wasm_args, "-v", "test.c", "-o", "test-#{target}"
+      system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
       assert_equal "the answer is 42", shell_output("wasmtime #{testpath}test-#{target}")
 
-      system "#{clang}++", "--target=#{target}", *wasm_args, "-v", "test.cc", "-o", "test-cxx-#{target}"
+      system "#{clang}++", "--target=#{target}", "-v", "test.cc", "-o", "test-cxx-#{target}"
       assert_equal "hello from C++ main with cout!", shell_output("wasmtime #{testpath}test-cxx-#{target}").chomp
     end
   end

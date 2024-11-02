@@ -1,18 +1,18 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloadertools written in Golang"
   homepage "https:docs.iyear.metdl"
-  url "https:github.comiyeartdlarchiverefstagsv0.17.6.tar.gz"
-  sha256 "956e5630de32940baa0e2a1effa702a53457e3fa31bddd7cc32829219f3abc6b"
+  url "https:github.comiyeartdlarchiverefstagsv0.17.7.tar.gz"
+  sha256 "10fec235481ad25ccf0314af083150a642ccb4a46db7bea2ac0865b798711db8"
   license "AGPL-3.0-only"
   head "https:github.comiyeartdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfc0ddb0ede3462c041af7b2bf045ba9c964ee09937ede46e76ba25d92d4d570"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d176cf27702c8db460375a8df02f6aa1c64e7b6e677ceb307606e3b37457b3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e86f7e1ba64441a54899b32973f3bcc00f94cce11cea0686e01ba8bc189f1f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db5d158014f45c14b5bd7e486e34e4bbc3383902bf5db55249229755d885c784"
-    sha256 cellar: :any_skip_relocation, ventura:       "f1b9a90e493afad7cb2e58b2218fc368cab4a9a5569e549be57484d818238f5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c02138fc563cfca03dd4f5114874eda30cacb68425b5b07b0365d247cac850a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8073e3eaf39c58ca99c8a050f164efe6aa431ce0895f12f4b091628ac435370"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bab8645b04e2546a408ea07a1ab858ec8abd78a10f18e8c42f04585dfd893473"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "283ac7dc06b8288f5e74ab62862f2eef704a4031c5ea6c51edfe001e0900ecb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c1bc78c5814693dfbea03c61caa179b1388380135c8429b087649401f08585d"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ed00f11f02c5710d8c03a3260cd6ee1dcfc96d3ce39b6f7f2b781fb09e8ea0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2624dcc75d3db01579f625c9bf4a9e225641d73e2e4a577ef935efb7c1fcefea"
   end
 
   depends_on "go" => :build

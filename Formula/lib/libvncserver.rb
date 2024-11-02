@@ -13,6 +13,7 @@ class Libvncserver < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "2e4a9940ea503e6376dfc8c1d216b3ac97cda0a03c74c7acc1a10ec1fcd430b4"
     sha256 cellar: :any,                 arm64_sonoma:   "7c3d95ce451303d3e11655c9a0f050e8804a73a2f4cb1ae5549846fa6b4b7c31"
     sha256 cellar: :any,                 arm64_ventura:  "5212065cfd69a225a5daa89fe45a7677d2a2716970f69d7015b4206b6b90b633"
     sha256 cellar: :any,                 arm64_monterey: "44455a6842335f99c4722e9fb89da75c1ce7af49778ee66bb08670e3ece665ab"
@@ -35,6 +36,7 @@ class Libvncserver < Formula
                     "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}",
                     "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_libshared_library("libjpeg")}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    "-DWITH_EXAMPLES=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "ctest", "--test-dir", "build", "--verbose"

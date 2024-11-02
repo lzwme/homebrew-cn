@@ -18,7 +18,6 @@ class ProtobufAT21 < Formula
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
 
@@ -59,10 +58,9 @@ class ProtobufAT21 < Formula
 
     pip_args = ["--config-settings=--build-option=--cpp_implementation"]
     pythons.each do |python|
-      build_isolation = Language::Python.major_minor_version(python) >= "3.12"
       pyext_dir = prefixLanguage::Python.site_packages(python)"googleprotobufpyext"
       with_env(LDFLAGS: "-Wl,-rpath,#{rpath(source: pyext_dir)} #{ENV.ldflags}".strip) do
-        system python, "-m", "pip", "install", *pip_args, *std_pip_args(build_isolation:), ".python"
+        system python, "-m", "pip", "install", *pip_args, *std_pip_args(build_isolation: true), ".python"
       end
     end
 

@@ -15,7 +15,7 @@ cask "wljs-notebook" do
   # `version` when this happens.
   livecheck do
     url :url
-    regex(wljs[._-]notebook[._-]v?(\d+(?:\.\d+)+)i)
+    regex(wljs[._-]notebook[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmgi)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]

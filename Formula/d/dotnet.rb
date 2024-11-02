@@ -6,26 +6,30 @@ class Dotnet < Formula
       tag:      "v8.0.8",
       revision: "e78e8a64f20e61e1fea4f24afca66ad1dc56285f"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89f252e00a7ac506f5fbfc0efdbab5086159bd2a86ae4ab6a6707af88ea488de"
-    sha256 cellar: :any,                 arm64_sonoma:  "50abbee44b6927be4287f50c404184dfbb5237f55c49e2a8f06fdca141bd1316"
-    sha256 cellar: :any,                 arm64_ventura: "2ccdc26a62d0d87a1277650ad838e3adad997490cef5769c98bf1438e10dea86"
-    sha256 cellar: :any,                 sonoma:        "abe7c53c2604a406c78df963f5c6df453e854ca7c7e658884c12135618ac117a"
-    sha256 cellar: :any,                 ventura:       "d4b62b0c6a11732a7b227ec2fc5827e3cc8a00a0260b5fdd761f7713afc64c8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "093c5bfbc0e6c9ac34104de80fb7b4b9c3123f796a20e0bdf9fe3b646c27e1b3"
+    sha256 cellar: :any,                 arm64_sequoia: "ea299c5472d772f5bf8a8a1dce36ead86414113fcc2475b2f5a542657d2629b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0978f5c891ed544c589e6ed3ca0391abf2a93d85fb59d562d07a02b295a8a2f"
+    sha256 cellar: :any,                 arm64_ventura: "93939e3425948fcf22baebd4ec5a03f67d47305e5d6f928d47cb70841d23d3f4"
+    sha256 cellar: :any,                 sonoma:        "b234644e4bcc96cf9d378ac2b229de39c7110f7f884e1192727059495fdcfcc8"
+    sha256 cellar: :any,                 ventura:       "aeaeb3a3e629b3c5d406e3b0bcf46b2ffcf96e6a7cc132dcbad0dcb6770abd73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cb8586bb9259586a60fbbdc50bf4cc727646c4f8c8e28323907d8dd10c5a948"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.13" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "openssl@3"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "krb5"
   uses_from_macos "zlib"
+
+  on_sonoma do
+    depends_on xcode: :build if DevelopmentTools.clang_build_version == 1600
+  end
 
   on_linux do
     depends_on "libunwind"
@@ -35,6 +39,12 @@ class Dotnet < Formula
   # Upstream only directly supports and tests llvmclang builds.
   # GCC builds have limited support via community.
   fails_with :gcc
+
+  # Backport fix for error loading BuildXL service index
+  patch do
+    url "https:github.comdotnetdotnetcommit18b5c7e1b125468f483a697ba8809c0a2412a762.patch?full_index=1"
+    sha256 "76ede810166cf718fe430a8b155da07ca245ec9174b73b3471baf413bbd42460"
+  end
 
   # Backport fix to build with Xcode 16
   patch do
