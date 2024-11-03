@@ -6,25 +6,30 @@ class Staq < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f29a73fe7f84e7ba37c5b09f433ecbf3388ab8131b2e185a7890cb42d444c025"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "609b7cff660d38139392cb80745e992ea20998886c38c9f3e1b99fae0c4540f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55e15069ca3e7830d6d5147f60d03dafd118a8636390d0c0584f5e03af46985d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b693740d394888d92fa991b20a5740a2cd27dc28aa29a26a9b232128220f95eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "4fc208e0bae6d80eeaa8d440cf13634dc93b07eb0f2fdb138480c0e4f39e4188"
-    sha256 cellar: :any_skip_relocation, monterey:       "68ebaa20a66420c76631803f6285345b27eb71eaa4dfb4f2e95dd3208dcd1f04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbbc33cbd8374d3218dcf4da026f5733bd8bed35b8ccbe1c493e9b2618970eca"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4a78fb5391ce391ef6df17138cd12b2cdb940b6826ad87f31ae4c28e879d1f87"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab344e9a41f34a721802904a1f216f9e386c7b4b90036f5058a1d62d5c969ced"
+    sha256 cellar: :any,                 arm64_ventura: "64702f48420ef83e1d3d6286b332a785db0cc0860ae9d1ba553171155df563bf"
+    sha256 cellar: :any,                 sonoma:        "0e2d26ec6e834188613c7c9005c871922ecc6b5e9c92c9da7195b3121f663df3"
+    sha256 cellar: :any,                 ventura:       "ba4e7fab6b78e93d8fe4bec9dac21bff7cb88f33101d6d69cf17f8671677a42f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78b7917bca6fd1e92003d7fd4fd308eae7d764f65eecb6cd8a8c41e0a1bfe9f7"
   end
 
   depends_on "cmake" => :build
+  depends_on "gmp"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-D", "INSTALL_SOURCES=ON", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DINSTALL_SOURCES=ON",
+                    "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=devnull", # skip unused FetchContent
+                    "-DPython3_EXECUTABLE=devnull", # skip macOS usrbinpython3
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath"input.qasm").write <<~EOS
+    (testpath"input.qasm").write <<~QASM
       OPENQASM 2.0;
       include "qelib1.inc";
 
@@ -33,14 +38,14 @@ class Staq < Formula
       h q[0];
       h q[0];
       measure q->c;
-    EOS
-    assert_equal <<~EOS, shell_output("#{bin}staq -O3 .input.qasm").chomp
+    QASM
+    assert_equal <<~QASM, shell_output("#{bin}staq -O3 .input.qasm").chomp
       OPENQASM 2.0;
       include "qelib1.inc";
 
       qreg q[1];
       creg c[1];
       measure q[0] -> c[0];
-    EOS
+    QASM
   end
 end

@@ -1,9 +1,9 @@
 class Chuck < Formula
   desc "Concurrent, on-the-fly audio programming language"
   homepage "https:chuck.cs.princeton.edu"
-  url "https:chuck.cs.princeton.edureleasefileschuck-1.5.3.2.tgz"
-  mirror "https:chuck.stanford.edureleasefileschuck-1.5.3.2.tgz"
-  sha256 "7926211292af59f81ce823db9deda981f98c0cf784ab62d3b66c57dfc92f9561"
+  url "https:chuck.cs.princeton.edureleasefileschuck-1.5.4.0.tgz"
+  mirror "https:chuck.stanford.edureleasefileschuck-1.5.4.0.tgz"
+  sha256 "e54b2911ba973af263f6d75dc76c67125d3dac1174eb0fc8a74e4c103469f653"
   license "GPL-2.0-or-later"
   head "https:github.comccrmachuck.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Chuck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fcf2a39d521d4e408451846e552eb0805b1b161a68900fba6b36d31272d6af9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "845a2197850e11934791706e546e19eef0389e5bb333e2da69716939172cc90d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "93127aa767a2e2c2d4ae6270c0b0f53c58237523566501e482768f822ad817ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "942128e70de99ff782d2d689f5b61e3f9efcbc684362f1143552a6ad660e7dc1"
-    sha256 cellar: :any_skip_relocation, ventura:       "39c8833c8cdad6f850ba57947dd0a7bd49785dae6a34faf0f5135bc5d205be0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db7d66cec811e15aab6d0466333703685fa68fa734eb1d6252e7744e88c04860"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "090d47f6c400c7ab8b052d1ad54f414097bffa035eef65c2165376970c15141f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13aeec37aab73a4c6e42a3844ebb586cf628eab4dac2da6678ebb1c461701531"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a4720b44f24104809122cea5ae9baafe31f347708c8f1b70ea6e5c2b9979c5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "67e72554378db4b7645a8d9e9dc3bb32471169392aff9b8acfb64b28f04ae1e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "ebf345bca3754e178e1600ffd3714e47c61e9f86371a2b333664c52c51566a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa4723a9200c5fa4974a9d626409edeb80daecd49e48d44e20fc885435f8a1a"
   end
 
   uses_from_macos "bison" => :build

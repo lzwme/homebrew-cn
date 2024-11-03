@@ -1,12 +1,12 @@
-class Repopack < Formula
+class Repomix < Formula
   desc "Pack repository contents into a single AI-friendly file"
-  homepage "https:github.comyamadashyrepopack"
-  url "https:registry.npmjs.orgrepopack-repopack-0.1.43.tgz"
-  sha256 "514942244a9e5dac52730994979d91006bb536386f7f7a412d6c16f6a44fbf2e"
+  homepage "https:github.comyamadashyrepomix"
+  url "https:registry.npmjs.orgrepomix-repomix-0.2.1.tgz"
+  sha256 "9fd247249747d94215925ad7a58fc29df56ba3adb018e0c5213ba5e38819dde1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8b9b0a7b32ad546f01dbd57ab8531fc5e97bf46476f8eca612aa99183d5b081e"
+    sha256 cellar: :any_skip_relocation, all: "4e98557fe499a1152cf9a9993c3043cd5c90812b8a7741a25d8927bb4cd7b206"
   end
 
   depends_on "node"
@@ -17,14 +17,14 @@ class Repopack < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}repopack --version")
+    assert_match version.to_s, shell_output("#{bin}repomix --version")
 
     (testpath"test_repo").mkdir
     (testpath"test_repotest_file.txt").write("Test content")
 
-    output = shell_output("#{bin}repopack #{testpath}test_repo")
+    output = shell_output("#{bin}repomix #{testpath}test_repo")
     assert_match "Packing completed successfully!", output
-    assert_match <<~EOS, (testpath"repopack-output.txt").read
+    assert_match <<~EOS, (testpath"repomix-output.txt").read
       ================================================================
       Repository Structure
       ================================================================

@@ -5,18 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.24.1",
-      revision: "e8121e6dd7db697b136ebe98490a9219058bfa6d"
+      tag:      "v1.24.2",
+      revision: "2967f82b5a5794bb551565e55312ffe17e97b955"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97ced6377beb6a41bcb800a0a2434e2f12c89c918f9a1c2a8ed3d0c1b632cc7b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "305178747d6429e18a7cb3e78f34dbb8b492a37de0749da37303dcd74dc9788e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d797fa3e29699982c14186734d144ca6a2d96fa0048b82d08decaaebd8d068b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7046235e8a0be640269ca91265abf42a8d11cff7571678101232c89d2d7206b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "74000c6f764df01c9d0e04f74460b06881094b76aa4af3dd00f59e46ac667fdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c1809be4f02c772a768affe0bd9862f437afaa3abd34bc0d8fdc6aa3903842d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "051fdc9d5d031ec870e9a63b7e7b77a44fb05747a672fbf11010972dacec652d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4de92253fb890ef558c1f14cd87c3f66ac8f528aaab362fb393dc5df99b56c36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da1a4820192dcedaf61f335923d6930643fb0acc5125a7e29ea8ead5b8340b0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d2f356ac98fcd94315cdee0ea6244da9ed3d9dcdd1cfc2c6163f014558ebfde"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba54f0f6c140b64c9ef4aef4bd2be247367d60b17999c5cc15cf2b38b3546c93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab3ba7e757c267a8057c93f158b7d342bbe9dd18d32eecf4996f99491ef87d4f"
   end
 
   depends_on "python@3.13"
@@ -131,8 +131,8 @@ class Icloudpd < Formula
   end
 
   resource "srp" do
-    url "https:files.pythonhosted.orgpackagesf4a3f74ae47c52ef866e3e454c3f863fb2a73eb41803d12d20349b62a3924f36srp-1.0.21.tar.gz"
-    sha256 "866813bcf521189a1563e6ca3112b6f54fdf725a410a2dbebb6f0d84b82a1f1d"
+    url "https:files.pythonhosted.orgpackages8dfb9210875dd162d3977580407b1c5ce6e779e770b8197a0de76819144a9755srp-1.0.22.tar.gz"
+    sha256 "f330d0ec7387e2ac8577487b164963155d4a031bca6e2024f1b0930eb92baa5d"
   end
 
   resource "tqdm" do
@@ -161,8 +161,8 @@ class Icloudpd < Formula
   end
 
   resource "Werkzeug" do
-    url "https:files.pythonhosted.orgpackagesd4f90ba83eaa0df9b9e9d1efeb2ea351d0677c37d41ee5d0f91e98423c7281c9werkzeug-3.0.6.tar.gz"
-    sha256 "a8dd59d4de28ca70471a34cba79bed5f7ef2e036a76b3ab0835474246eb41f8d"
+    url "https:files.pythonhosted.orgpackages32afd4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49werkzeug-3.1.1.tar.gz"
+    sha256 "8cd39dfbdfc1e051965f156163e2974e52c210f130810e9ad36858f0fd3edad4"
   end
 
   # support python 3.13

@@ -21,7 +21,6 @@ class Flang < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "llvm"
 
   # Building with GCC fails at linking with an obscure error.
@@ -35,7 +34,6 @@ class Flang < Formula
     llvm = Formula["llvm"]
     # NOTE: Setting `BUILD_SHARED_LIBRARIES=ON` causes the just-built flang to throw ICE.
     args = %W[
-      -G Ninja
       -DCLANG_DIR=#{llvm.opt_lib}cmakeclang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
@@ -48,8 +46,6 @@ class Flang < Formula
       -DMLIR_DIR=#{llvm.opt_lib}cmakemlir
     ]
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
-    # Linking takes an absurd amount of memory. Try to limit it to no more than 4GB per link job.
-    args << "-DLLVM_RAM_PER_LINK_JOB=#{4 * 1024}" if ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
     install_prefix = libexec

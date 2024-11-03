@@ -1,8 +1,8 @@
 class Valgrind < Formula
   desc "Dynamic analysis tools (memory, debug, profiling)"
   homepage "https://www.valgrind.org/"
-  url "https://sourceware.org/pub/valgrind/valgrind-3.23.0.tar.bz2"
-  sha256 "c5c34a3380457b9b75606df890102e7df2c702b9420c2ebef9540f8b5d56264d"
+  url "https://sourceware.org/pub/valgrind/valgrind-3.24.0.tar.bz2"
+  sha256 "71aee202bdef1ae73898ccf7e9c315134fa7db6c246063afc503aef702ec03bd"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Valgrind < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "ec946434ff0bd9aef26966875b372c72276c640196ce7bb0e4f938ab2ccf64d6"
+    sha256 x86_64_linux: "37cf4305e207439f29115bd84ef3c9f2b27291c300c0fe3ba243df15bb6868b2"
   end
 
   head do

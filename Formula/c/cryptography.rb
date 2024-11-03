@@ -17,32 +17,12 @@ class Cryptography < Formula
 
   depends_on "maturin" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
-
-  resource "maturin" do
-    url "https:files.pythonhosted.orgpackages512831a650d9209d873b6aec759c944bd284155154d7a01f7f541786d7c435camaturin-1.7.4.tar.gz"
-    sha256 "2b349d742a07527d236f0b4b6cab26f53ebecad0ceabfc09ec4c6a396e3176f9"
-  end
-
-  resource "semantic-version" do
-    url "https:files.pythonhosted.orgpackages7d31f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595semantic_version-2.10.0.tar.gz"
-    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
-    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
-  end
-
-  resource "setuptools-rust" do
-    url "https:files.pythonhosted.orgpackagesd36b99a1588d826ceb108694ba00f78bc6afda10ed5d72d550ae8f256af1f7b4setuptools_rust-1.10.2.tar.gz"
-    sha256 "5d73e7eee5f87a6417285b617c97088a7c20d1a70fcea60e3bdc94ff567c29dc"
-  end
 
   def pythons
     deps.map(&:to_formula)
@@ -51,34 +31,20 @@ class Cryptography < Formula
   end
 
   def install
-    ENV.append_path "PATH", buildpath"bin"
-    # Resources need to be installed in a particular order, so we can't use `resources.each`.
-    resources_in_install_order = %w[setuptools setuptools-rust semantic-version]
-
+    # TODO: Avoid building multiple times as binaries are already built in limited API mode
     pythons.each do |python3|
-      buildpath_site_packages = buildpathLanguage::Python.site_packages(python3)
-      ENV.append_path "PYTHONPATH", buildpath_site_packages
-
-      resources_in_install_order.each do |r|
-        resource(r).stage do
-          system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath), "."
-        end
-      end
-
       system python3, "-m", "pip", "install", *std_pip_args, "."
-
-      ENV.remove "PYTHONPATH", buildpath_site_packages
     end
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from cryptography.fernet import Fernet
       key = Fernet.generate_key()
       f = Fernet(key)
       token = f.encrypt(b"homebrew")
       print(f.decrypt(token))
-    EOS
+    PYTHON
 
     pythons.each do |python3|
       assert_match "b'homebrew'", shell_output("#{python3} test.py")

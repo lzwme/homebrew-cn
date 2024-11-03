@@ -7,8 +7,7 @@ class LlvmAT15 < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
-    url :stable
-    regex(^llvmorg[._-]v?(15(?:\.\d+)+)$i)
+    skip "No longer developed or maintained"
   end
 
   bottle do

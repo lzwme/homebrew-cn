@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.9.tar.gz"
-  sha256 "062779c084796f7792f717d640ec2f09407bf5b6560a9e668c73934609052468"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.10.tar.gz"
+  sha256 "c98492ab03c10aa2d51a3846c0fae7e0fc7a35221114f6c1d2ffbd48b584720d"
   license "GPL-3.0-only"
   head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
@@ -15,12 +15,12 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b37b95f189b3359b7c688e9a5544137e25369b48d1398a871e5e80b36c8ccdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "452956aa8493574c4b12f11bf719ab38139a6edc605315356672f25c209f6706"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1fdbb7e1437abdb809d53ff3adb55ef953c19e32256c9243c29bb63c5f02dc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f7648540c61b92f95628fb1b7724b38567750895dbf15dd499a99d43fd12a13"
-    sha256 cellar: :any_skip_relocation, ventura:       "6a1e68eb17abf629ed8af4cc957e75f4d4da83d7e5369f87dc2e1b8d305144aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4ee9f7b071ac3e83a76933183e92a44b0545456ea5910dfd259c98732744110"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a4d1eb8831595a82a22a07b1204431bcd2d23a83da1cdd610140dbda7abb766"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66cb42a988654fcb334c7af13f856c9f5dc22dae9575230f1868872b7474a6b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52410547722227c0dfbffbc9b5c63ec9591c1f9e5497bc508d1fe2f9cdc5e7ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cad1e966e0b2e4b3ab45c32dc06951dc96f919dc9ee8d78565bc786db6f72dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "86897a20b46846d7a6ed172733c541c23c8541e3cf1000569e140b4ee64b625e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dabae970a6380098f6000e07e89d3cca83e537702514d11a4df45ca08802070e"
   end
 
   depends_on "rust" => :build

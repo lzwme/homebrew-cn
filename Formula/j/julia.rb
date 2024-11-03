@@ -8,9 +8,13 @@ class Julia < Formula
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https:github.comJuliaLangjulia.git", branch: "master"
 
+  # Upstream creates GitHub releases for both stable and LTS versions, so the
+  # "latest" release on GitHub may be an LTS version instead of a "stable"
+  # version. This checks the first-party download page, which links to the
+  # `stable` tarballs from the newest releases on GitHub.
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https:julialang.orgdownloads"
+    regex(href=.*?julia[._-]v?(\d+(?:\.\d+)+)[._-]full\.ti)
   end
 
   bottle do

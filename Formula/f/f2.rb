@@ -1,22 +1,18 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
   homepage "https:github.comayoisaiahf2"
-  url "https:github.comayoisaiahf2archiverefstagsv1.9.1.tar.gz"
-  sha256 "fbeb4540c4afe4aa25565685ee7ef7498449da7fc5f5b70a0e303b15c6e35f71"
+  url "https:github.comayoisaiahf2archiverefstagsv2.0.0.tar.gz"
+  sha256 "caf671bfdc24af09045a5f682a42d275f728408fde44af8e37ec34a8d88222df"
   license "MIT"
   head "https:github.comayoisaiahf2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b7ac240c241125e6a836e6e226da5e970d49317aee274a340b73d3aabe935d9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "880773abf1e0dad9df8028ad85e46ed692da2a2df022aadb9dce65831afe5ccc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f3cff57e22dcad2cf8dce94843c59d4a23fd505afe60e3587fc49ffb1540e71e"
-    sha256 cellar: :any_skip_relocation, ventura:        "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00ebec8aaa2a5d08b8516bc009e658923f3a55eb9df0d92ee8effd98207fabed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb1609ef3e52b072d3294aef38d927424e6c534789661ebfce4162f012121e89"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb1609ef3e52b072d3294aef38d927424e6c534789661ebfce4162f012121e89"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb1609ef3e52b072d3294aef38d927424e6c534789661ebfce4162f012121e89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f72c41655b4bdb9df3e1ee74ca7404b0b11e82a9d1557bf7492cf3f800088083"
+    sha256 cellar: :any_skip_relocation, ventura:       "f72c41655b4bdb9df3e1ee74ca7404b0b11e82a9d1557bf7492cf3f800088083"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e82a4234da20b24657ce3e44861d715029f62c7e04423739bfb5f88ff8d48ec6"
   end
 
   depends_on "go" => :build

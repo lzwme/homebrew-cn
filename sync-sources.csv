@@ -1329,6 +1329,7 @@ Homebrew-homebrew-core/Formula/d/diffutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/digdag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/digitemp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dillo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dipc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dirac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direnv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direvent.rb, Homebrew/homebrew-core, 0
@@ -3608,6 +3609,7 @@ Homebrew-homebrew-core/Formula/lib/libmpeg2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmrss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmspub.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libmsquic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmtp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmusicbrainz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmwaw.rb, Homebrew/homebrew-core, 1
@@ -3957,6 +3959,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/markdown-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 1
@@ -5445,7 +5448,7 @@ Homebrew-homebrew-core/Formula/r/reop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reorder-python-imports.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repo.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/repopack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/repomix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reposurgeon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reprepro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reproc.rb, Homebrew/homebrew-core, 1

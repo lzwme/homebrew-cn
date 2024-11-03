@@ -7,7 +7,7 @@ cask "font-karla-tamil-upright" do
       branch:    "main",
       only_path: "oflkarlatamilupright"
   name "Karla Tamil Upright"
-  homepage "https:fonts.google.comspecimenKarla"
+  homepage "https:fonts.google.comspecimenKarla+Tamil+Upright"
 
   font "KarlaTamilUpright-Bold.ttf"
   font "KarlaTamilUpright-Regular.ttf"

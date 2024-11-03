@@ -1,17 +1,17 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https:github.comaome510spotify-player"
-  url "https:github.comaome510spotify-playerarchiverefstagsv0.20.0.tar.gz"
-  sha256 "a0708da71e30c0d213bb9f840fad4e3667ce4348d4a9dcdd6370d00b9ac2bda3"
+  url "https:github.comaome510spotify-playerarchiverefstagsv0.20.1.tar.gz"
+  sha256 "03f0f7a4bdec27f3bd3a068977a0a76051d57b18a715ef8b2966ddd0dbf2f8cb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b2a250500afcb2b48272232ce33a78f2658b1bd40237637ed9cd80b05bbba16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dae0d7841d13499426d9ad5983fd0a5fca450630b0e582db1162070254f155ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7171536db6580037b3806119cfe255303e4bcfe15c66d20e81db0db84d84e31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac086bc837a7fbf5ed6e523a3754ca4b2b30c75f7e977a79125d1a3876b90e19"
-    sha256 cellar: :any_skip_relocation, ventura:       "ecc13bf53831bf708fc340c9dc4b8cd1646442d6f19898ea32e9492658961034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e6caa7b76a29776f9696ffd0c6171fabf19ceb1f65991d55b7bce92e2fd4b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a04c0fd1574990c9aec97fd8277811cef910d600fc4d0944a286bcd8c28d6ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04d0a8b1e7c4813d426c622b77f4cb4ad9b1aa259740e242b2f9cfcf7959fa90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71282260d1d8586979cb79ef8e09768cece764f263ea8490522f85e855cc895f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eaa2747dde032e2bbc65e69ed4c1cb2782d12c14aea2e39ad1fc67f9f8a54cf4"
+    sha256 cellar: :any_skip_relocation, ventura:       "e71c64d912ccaf3cd32dc3386919b5a044606a7086068540d3b96c93fc1a1152"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c041601fc350ab56541baa4d78fec92cf02d302b298dd2eb4c3267beef2a14e3"
   end
 
   depends_on "rust" => :build

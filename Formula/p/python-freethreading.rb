@@ -10,13 +10,13 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "98c43c254a600fcb8c1701369bc501db0fa4df72a2ad20d7e22cdc55e085fc2d"
-    sha256 arm64_sonoma:  "f43cbd1d65a4dee79c5b040903c3755372d408073181d01cee47a52f453774b5"
-    sha256 arm64_ventura: "5e1dfec49650c6c31cad7e38e2a198282b2f928494952db25ed47b016bc8c8ed"
-    sha256 sonoma:        "faaeaaf1ae388ae484ad3fba8cb7a2595954605511f9b505efc4b8baf2d93a00"
-    sha256 ventura:       "74c1f457660802b6f76250908167f448d6c951c6ccce345778cb92d69b5c55f3"
-    sha256 x86_64_linux:  "7edd046e94be530008b8aa7cf8af55772ec95eb31f2e00fbfd079c758c9b7bf5"
+    rebuild 2
+    sha256 arm64_sequoia: "32d7f7f0e2656048b58b2ddde7cc64bd1c89ecad3bf055d67ffc54bfd65cd488"
+    sha256 arm64_sonoma:  "f4cbdc28c038b51c8a010483c0c3f8e0a3f268c77821878a2ea3362ecd227a9e"
+    sha256 arm64_ventura: "756128eb32481fdca1d3c5251bf85428aa46829503ecea8265e7bcf11e4ec51b"
+    sha256 sonoma:        "bda3183a044054bb71e716806c25d94409bba2959c9fa8363a8a26dd719e7128"
+    sha256 ventura:       "2eb3d08648994751b0adb9e51ff8279f8084b230fb787db1e3ea80b2f42189a3"
+    sha256 x86_64_linux:  "6daceb67da4ef3b087c9e46f636b42632261380bb971208d6e747c878d835a77"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -282,6 +282,7 @@ class PythonFreethreading < Formula
     mv bin"pydoc#{version.major_minor}", bin"pydoc#{version.major_minor}t"
 
     # Remove files that conflict with the main python3 formula
+    bin.glob("{idle,pydoc}3").map(&:unlink)
     [bin, lib, lib"pkgconfig", include].each do |directory|
       (directory.glob("*python*") - directory.glob("*#{version.major_minor}t*")).map(&:unlink)
     end
@@ -335,9 +336,14 @@ class PythonFreethreading < Formula
     mv (site_packages"bin").children, bin
     rmdir site_packages"bin"
 
-    rm_r(bin"pip")
+    rm [bin"pip", bin"pip3"]
     mv bin"wheel", bin"wheel#{version.major_minor}t"
     mv bin"pip#{version.major_minor}", bin"pip#{version.major_minor}t"
+
+    # post_install happens after link
+    (HOMEBREW_PREFIX"bin").install_symlink (%w[pip wheel].map do |executable|
+      bin"#{executable}#{version.major_minor}t"
+    end)
 
     # Mark Homebrew python as externally managed: https:peps.python.orgpep-0668#marking-an-interpreter-as-using-an-external-package-manager
     # Placed after ensurepip since it invokes pip in isolated mode, meaning

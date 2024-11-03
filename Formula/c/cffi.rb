@@ -15,7 +15,6 @@ class Cffi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49b146e624fa887497252f89c76d8e7cfcdc4d9a4ec444a5b8db856324198cf"
   end
 
-  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "pycparser"

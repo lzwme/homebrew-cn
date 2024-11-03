@@ -5,8 +5,13 @@ class Pdns < Formula
   sha256 "f570640427041f4c5c5470d16eff951a7038c353ddc461b2750290ce99b2e3c2"
   license "GPL-2.0-or-later"
 
+  # The first-party download page (https:www.powerdns.comdownloads) isn't
+  # always updated for newer versions, so for now we have to check the
+  # directory listing page where `stable` tarballs are found. We should switch
+  # back to checking the download page ifwhen it is reliably updated with each
+  # release, as it doesn't have to transfer nearly as much data.
   livecheck do
-    url "https:www.powerdns.comdownloads"
+    url "https:downloads.powerdns.comreleases"
     regex(href=.*?pdns[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
