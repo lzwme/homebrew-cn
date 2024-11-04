@@ -6,17 +6,16 @@ class Toxcore < Formula
   url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.19c-toxcore-0.2.19.tar.gz"
   sha256 "8b418f6470db085cf59a9915685613556556df2bf427148f1814b7b118628594"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comTokTokc-toxcore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "70c7c932af4f833ca24d75838f2ca224a044d04e0f07d09efde7d4f4d795276c"
-    sha256 cellar: :any,                 arm64_sonoma:   "30300b815fc78338acd0212162d90350e4df76fd1316e3949d5ee4a70f118f0f"
-    sha256 cellar: :any,                 arm64_ventura:  "11b04f785c0d8b0a37aa08c3552135550fd14c49162ad00fa4062c7548a6a36a"
-    sha256 cellar: :any,                 arm64_monterey: "dd944ecb1a42d3b983bb829599ce4a313ca2960f9e8d11e5e415d9ff09ff0b4c"
-    sha256 cellar: :any,                 sonoma:         "afd20cc220e1f69c5ad5774d5e26705398ad07ff26a21920041300aced468a30"
-    sha256 cellar: :any,                 ventura:        "4e55959905584119032dd94df6c00a50dce07917d38043767f34693b0a41fab4"
-    sha256 cellar: :any,                 monterey:       "178acfc2f014001508a1cba3040a7ed8fa0d2f49c078fe031027e2110aa62b99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2435483d57733f5aaf0d3222f8709013dc98bb778c89be1c6c0477954b8b686c"
+    sha256 cellar: :any,                 arm64_sequoia: "8115a1b7420fe04e3317b34b23089616c585c58741bf3248e3b2004d09b49a74"
+    sha256 cellar: :any,                 arm64_sonoma:  "4447d4c8882c0f794fd933d3b771306acf67e8f3638ae7125f08b5bda5c1851d"
+    sha256 cellar: :any,                 arm64_ventura: "e4bb9510c529cc113e795c9063c331976f7bdd1dcdb8e8285150b4925f877406"
+    sha256 cellar: :any,                 sonoma:        "4f9b719b1748fb5e54996a487c301857d5d40c2104a41a2d60d86c6b1eb40abc"
+    sha256 cellar: :any,                 ventura:       "5ce4ae2f7d9270d9912b2fb3a8a332626b21bae85e73b816d50c43cb41bb1b5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28260047bfcfeb5441f1b73d8f58eaad3d1609bc0660a4b54e79467ca32771a4"
   end
 
   depends_on "cmake" => :build

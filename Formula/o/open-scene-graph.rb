@@ -90,7 +90,7 @@ class OpenSceneGraph < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <osgVersion>
       using namespace std;
@@ -99,7 +99,7 @@ class OpenSceneGraph < Formula
           cout << osgGetVersion() << endl;
           return 0;
         }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-losg", "-o", "test"
     assert_match version.to_s, shell_output(".test")
   end

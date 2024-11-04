@@ -28,9 +28,9 @@ class OpenclClhppHeaders < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <CLopencl.hpp>
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-c", "-I#{include}", "-I#{Formula["opencl-headers"].include}"
   end
 end

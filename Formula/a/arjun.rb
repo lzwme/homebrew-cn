@@ -3,14 +3,12 @@ class Arjun < Formula
 
   desc "HTTP parameter discovery suite"
   homepage "https:github.coms0md3vArjun"
-  url "https:files.pythonhosted.orgpackagesbb97ed0189286d98aaf92322a06e23b10fc6c298e0ee9a43cd69ab614a1f76cfarjun-2.2.6.tar.gz"
-  sha256 "15dbc0abf5efcbbe4ba1892ad8edb08fa5efc41bb2ebaadd0be01e47e70240fc"
+  url "https:files.pythonhosted.orgpackages0422c5b969720d2802de2248c2aac0414ee5ae234887cfe150564d591c73fb23arjun-2.2.7.tar.gz"
+  sha256 "b193cdaf97bf7b0e8cd91a41da778639e01fd9738d5f666a8161377f475ce72e"
   license "AGPL-3.0-only"
-  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "8e07304d1647f03c1786b511ff65d3c19d313deb5b314a3219e1b93f9be8a30b"
+    sha256 cellar: :any_skip_relocation, all: "3c27e0658509ce22d7f7b8cd626c203f2b024f2228bdf476891d9bf987101630"
   end
 
   depends_on "certifi"

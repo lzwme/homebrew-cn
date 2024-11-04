@@ -1,19 +1,18 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.21.tar.gz"
-  sha256 "ed2d704d058389eb4c97d62080c64fa96fcc230be663ec8958f35764d229c463"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.22.tar.gz"
+  sha256 "979b819994fdf4260a19bf276aef407da9c1d9d294bee44fc7a1f600c1ce5696"
   license "MIT"
-  revision 3
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4addeef09e330f210354da1d2f0593e88621616320057ba2cdc388f76a447e29"
-    sha256 cellar: :any,                 arm64_sonoma:  "3de5bf3ab193cc551e1a843a7ffdf01ef2f28248979079a8b1b390eaa8a052d9"
-    sha256 cellar: :any,                 arm64_ventura: "46c910c967b0de95eb0131df3821ca428e91d03c4d0910c6dc1502fc895ffd98"
-    sha256 cellar: :any,                 sonoma:        "7eea02846ca205288ab639fe55a41f9fb81598f2f4f111c58b3adb157bf8fae6"
-    sha256 cellar: :any,                 ventura:       "6c295cfa1ef859951ed5855f962c6a8249173f6cd180322091646b4bee817126"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596296f78997c0c66c9cfc01b900ba54782d1500fc2f47ede41c7dc29116b968"
+    sha256 cellar: :any,                 arm64_sequoia: "e6ad4eba79b3e0aae64d01aaeb64fcdfd5bf6b32f899665fb3c78b61e7568a9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6fc59bb74de453bfca634f0eb8005aa8d6734bfa0f9e07bb54ce12d122ec570"
+    sha256 cellar: :any,                 arm64_ventura: "01c666e8b8eb423b602d9aca72ac34367627f1a1b5efacbcb4c96723cbd1ccb8"
+    sha256 cellar: :any,                 sonoma:        "b3f00435e72d7ceee48e0191999f50c2e644d003c25490688426bb118600e585"
+    sha256 cellar: :any,                 ventura:       "f316475978784dbb9829ed69d81a45f0eb1273bbce78a77c18bea25043215b99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0c201a1a56fc38f517d2e4388dc81571f2f25283ce7a97e6a2677c079085df8"
   end
 
   depends_on "nettle" => :build

@@ -33,7 +33,7 @@ class Pagmo < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
 
       #include <pagmoalgorithm.hpp>
@@ -71,7 +71,7 @@ class Pagmo < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lpagmo",
                     "-std=c++17", "-o", "test"

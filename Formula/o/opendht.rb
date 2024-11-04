@@ -48,7 +48,7 @@ class Opendht < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <opendht.h>
       int main() {
         dht::DhtRunner node;
@@ -60,7 +60,7 @@ class Opendht < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lopendht", "-o", "test"
     system ".test"
   end

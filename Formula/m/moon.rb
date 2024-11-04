@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https:moonrepo.devmoon"
-  url "https:github.commoonrepomoonarchiverefstagsv1.29.3.tar.gz"
-  sha256 "1dbeff46df1f72b873c1f75837d0c778076bf295e6e20144542740695f95d2b2"
+  url "https:github.commoonrepomoonarchiverefstagsv1.29.4.tar.gz"
+  sha256 "4d34851b666805ee368edbe9aa679605122f63bd1bc7bab5d4de52463b8aa6c7"
   license "MIT"
   head "https:github.commoonrepomoon.git", branch: "master"
 
@@ -12,16 +12,18 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91993c98ad960fa2db9bade21f7b2e3e1170b1046d5ba8a9550ceb6fd84c7b44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "476798f19a7741d2ffc3819920984b61184912588c90bf62bb552072a49ec6e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1863456c7ff7f9d3342d72ff0c1b1c7c6627193767f1f83986f970988a0d7b1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "573e9abdff93cf975e9ed49061e4ee13264d7a1f8d74b8f93826b53751200dec"
-    sha256 cellar: :any_skip_relocation, ventura:       "823ea2b664b5fb826225fda0631512bda0ec0dd9cba0a8351dd1fb465dbc1fab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3388c678d5d443a46fd4bd53e9bcb39d1ff87e4b2bd517b0322c17126ee5cf34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f54f43f234aafe238b3fd58dbb71f6562e5775214b10d6d67954bbea1673bcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83219e8ea564e4871dd1824e454612e911982f2ad86ad9ac33f16e9dad08fab0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8929cd336235661dccf2cca43d7925df261a0e21f8c6f57c53d58b274d0877a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1c6b7e484e83bbac3a60208ead76ce6fa16216e6e5720653ddee66619f392a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "cdcfe069cf63edc5fba6c3c7dbca9d4b2984c6b30d74092303ac98dea8204baa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fef0cfb489bc789fe14e585fe36af1123c4c4cc16d7aec333feeae81f12f16a"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "bzip2"
 
   on_linux do
     depends_on "openssl@3"

@@ -1,20 +1,18 @@
 class Flawz < Formula
   desc "Terminal UI for browsing security vulnerabilities (CVEs)"
   homepage "https:github.comorhunflawz"
-  url "https:github.comorhunflawzarchiverefstagsv0.2.2.tar.gz"
-  sha256 "743b5b687b702ed24245111b988680b546fef479855309d87057ce6ac8ff465b"
+  url "https:github.comorhunflawzarchiverefstagsv0.3.0.tar.gz"
+  sha256 "c5d30dfa1c07f5e5337f88c8a44c4c22307f5ade7ba117ef6370c39eb3e588b0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comorhunflawz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "693340e4af8411af31923c490337f7ebc80f6b69458e1b97959f3ebbffa6f5df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b19ab4fbb6411b2a2c870e0f6503e908c1002e3ba1226e88326c05f5dcdad84b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0ffb604c728350b02f048cf73a8244d3e8f22c0dd0b7f3877967fa604f5aed8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18b1de55cdc164a2867875556b275fbd1da985f8fbd1b68b49d858b1c9e9c023"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f376b5b28925674a8a5a4040b5b6412ad583980f8f10d979c81b34fc4427930f"
-    sha256 cellar: :any_skip_relocation, ventura:        "bfee18af52a59af4fc11f6ffca201a358a4321f381db0c6c35dff8cf9815665f"
-    sha256 cellar: :any_skip_relocation, monterey:       "2897e6cffcb9d31f2987c967876b138038b1ed94c0b1bcf537af2804936c9f36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68a195329fff395c89e34b535c7ee89a09e4f8133cde2b96013b175ba2e0c6dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d9fc11d84d25830195e9ff2e2948ebcfe100365b6e9e4a87d1e8f4df5831616"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c262ad502b668ddc1247d88148c60681ad589dbe985cb7bfe930b0f018edaa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b80ac08fa94ce919947113bf419e77e9f90fffe30eb34bb53b4b5ddf973ae739"
+    sha256 cellar: :any_skip_relocation, sonoma:        "413d100567192fc3159025d8bf445f7b5b902d3f80e6060c6f79f894dcd99aef"
+    sha256 cellar: :any_skip_relocation, ventura:       "65ca1612a2345783cc1b7e2b071ab5789ee052aa1e323ff55a9f7974e5680f03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "917ae375e82d69e1c5952feeee931ebb6f2c18d48c0722ba06da19ebef69aa84"
   end
 
   depends_on "pkg-config" => :build

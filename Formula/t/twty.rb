@@ -20,7 +20,7 @@ class Twty < Formula
 
   # see discussions in https:github.commattntwtyissues28
   # and https:github.comorakarorainbowstreamissues342
-  deprecate! date: "2024-08-18", because: "twitter API changed"
+  deprecate! date: "2024-08-18", because: "uses the old, unsupported Twitter API"
 
   depends_on "go" => :build
 

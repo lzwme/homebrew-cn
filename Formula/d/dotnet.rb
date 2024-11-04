@@ -3,18 +3,17 @@ class Dotnet < Formula
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
   url "https:github.comdotnetdotnet.git",
-      tag:      "v8.0.8",
-      revision: "e78e8a64f20e61e1fea4f24afca66ad1dc56285f"
+      tag:      "v8.0.10",
+      revision: "8922fe64a1903ed4e35e24568efb056b3e0fad43"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea299c5472d772f5bf8a8a1dce36ead86414113fcc2475b2f5a542657d2629b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0978f5c891ed544c589e6ed3ca0391abf2a93d85fb59d562d07a02b295a8a2f"
-    sha256 cellar: :any,                 arm64_ventura: "93939e3425948fcf22baebd4ec5a03f67d47305e5d6f928d47cb70841d23d3f4"
-    sha256 cellar: :any,                 sonoma:        "b234644e4bcc96cf9d378ac2b229de39c7110f7f884e1192727059495fdcfcc8"
-    sha256 cellar: :any,                 ventura:       "aeaeb3a3e629b3c5d406e3b0bcf46b2ffcf96e6a7cc132dcbad0dcb6770abd73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cb8586bb9259586a60fbbdc50bf4cc727646c4f8c8e28323907d8dd10c5a948"
+    sha256 cellar: :any,                 arm64_sequoia: "197cb068d41882513946c97853080a27b7c314ffd8f42296b663d2a6a19277c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee8e38b1f895f854eb38256ce40ae985613b2c005881a64d58de86a7e0b9e24d"
+    sha256 cellar: :any,                 arm64_ventura: "474fd3ad1582cf4f406654ec9b015e975569705c451e7f55d1a609a35b2da9ad"
+    sha256 cellar: :any,                 sonoma:        "ef18da376e2734a3b327840e99aac667dd43b5c797e6b651aa875ed56644e2c4"
+    sha256 cellar: :any,                 ventura:       "75c23fb3c05ac68ec3a3c22203e6829a8f80f5a2f22a3453bce1a4eff83338ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8bc8e2a21f664c9e49fba79e66c6e0fe53d8ad2eba046703ad536e47e5bb675"
   end
 
   depends_on "cmake" => :build

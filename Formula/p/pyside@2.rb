@@ -126,7 +126,7 @@ class PysideAT2 < Formula
     pyincludes = shell_output("#{python}-config --includes").chomp.split
     pylib = shell_output("#{python}-config --ldflags --embed").chomp.split
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <shiboken.h>
       int main()
       {
@@ -135,7 +135,7 @@ class PysideAT2 < Formula
         assert(!module.isNull());
         return 0;
       }
-    EOS
+    CPP
     rpaths = []
     rpaths += ["-Wl,-rpath,#{lib}", "-Wl,-rpath,#{Formula["python@3.10"].opt_lib}"] unless OS.mac?
     system ENV.cxx, "-std=c++11", "test.cpp",

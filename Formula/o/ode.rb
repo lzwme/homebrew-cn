@@ -43,14 +43,14 @@ class Ode < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <ode/ode.h>
       int main() {
         dInitODE();
         dCloseODE();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-I#{include}/ode", "-L#{lib}", "-lode",
                    "-L#{Formula["libccd"].opt_lib}", "-lccd", "-lm", "-lpthread",
                    "-o", "test"

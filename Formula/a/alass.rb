@@ -25,17 +25,17 @@ class Alass < Formula
   end
 
   test do
-    (testpath"reference.srt").write <<~EOS
+    (testpath"reference.srt").write <<~SRT
       1
       00:00:00,000 --> 00:00:01,000
       This is the first subtitle.
-    EOS
+    SRT
 
-    (testpath"incorrect.srt").write <<~EOS
+    (testpath"incorrect.srt").write <<~SRT
       1
       00:00:01,000 --> 00:00:02,000
       This is the first subtitle.
-    EOS
+    SRT
 
     output = shell_output("#{bin}alass-cli reference.srt incorrect.srt output.srt").strip
     assert_match "shifted block of 1 subtitles with length 0:00:00.000 by -0:00:01.000", output

@@ -26,7 +26,7 @@ class Jam < Formula
   # The last Perforce release of Jam was version 2.6 in August of 2014. We will
   # keep the Perforce-controlled links and information posted here available
   # until further notice."
-  deprecate! date: "2023-11-02", because: :unmaintained
+  disable! date: "2024-11-03", because: :unmaintained
 
   # * Ensure <unistd.h> is included on macOS, fixing the following error:
   #   `make1.c:392:8: error: call to undeclared function 'unlink'`.

@@ -36,7 +36,7 @@ class Opencsg < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <opencsg.h>
       class Test : public OpenCSG::Primitive {
         public:
@@ -46,7 +46,7 @@ class Opencsg < Formula
       int main(int argc, char** argv) {
         Test test;
       }
-    EOS
+    CPP
     gl_lib = OS.mac? ? ["-framework", "OpenGL"] : ["-lGL"]
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lopencsg", *gl_lib
     system "./test"

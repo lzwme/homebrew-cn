@@ -30,6 +30,7 @@ class Kapacitor < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1a33c443bf07f988db3116c35ab0753ae92b017d117d82d522bac20ecd94e35f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18df0fe28a2f236b9e83280d13fb1628da163b43010b1ab2e278d596be334154"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fc56e944c7205bf82e6f09e0fd6acb2671813abff062cb5358c3e10aa34240b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "077bb8e7923a28559b7fca1bf0e5da9a5bed8cbc2ec066292145e0ea0b61edb3"

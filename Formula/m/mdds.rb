@@ -42,12 +42,12 @@ class Mdds < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <mdds/flat_segment_tree.hpp>
       int main() {
         mdds::flat_segment_tree<unsigned, unsigned> fst(0, 4, 8);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-std=c++17",
                     "-I#{include.children.first}"

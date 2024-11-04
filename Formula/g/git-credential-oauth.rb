@@ -1,18 +1,18 @@
 class GitCredentialOauth < Formula
   desc "Git credential helper that authenticates in browser using OAuth"
   homepage "https:github.comhickfordgit-credential-oauth"
-  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.13.3.tar.gz"
-  sha256 "294c101155872d1a440aad31e0e8e85159a41fefa19c83ef86b6d22a5184d189"
+  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.13.4.tar.gz"
+  sha256 "fa3f2de33b5a3f5d59aaa48073603eeea5405d750e5264e507c9cd8049f2cc89"
   license "Apache-2.0"
   head "https:github.comhickfordgit-credential-oauth.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a721f6c5816dda4be104c1f39f9f4bffa025777f9277312132cf0f2dea811b49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "313c9263d6ae9b35174b260203a6ea638609663d2e7d80ce250d1c96d1bc8d13"
-    sha256 cellar: :any_skip_relocation, ventura:       "313c9263d6ae9b35174b260203a6ea638609663d2e7d80ce250d1c96d1bc8d13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86a85230ce4f7c854ae3b816ba3c35ffab8aa99b601f4aaedd565a7440ff7bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bb87e1ddd6a3b9e8a5e215786f3387abea7c5243f356545aa547dbe36640714"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bb87e1ddd6a3b9e8a5e215786f3387abea7c5243f356545aa547dbe36640714"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bb87e1ddd6a3b9e8a5e215786f3387abea7c5243f356545aa547dbe36640714"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14257aec08dcf92ca92b1013b81f6129a19a03c98ce11f0c5f2e26f97e828933"
+    sha256 cellar: :any_skip_relocation, ventura:       "14257aec08dcf92ca92b1013b81f6129a19a03c98ce11f0c5f2e26f97e828933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3e5d9af07a696b7efd6b288c72cc0e24e8ef3379810644275861ada5aaed2f7"
   end
 
   depends_on "go" => :build

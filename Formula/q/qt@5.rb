@@ -11,7 +11,7 @@ class QtAT5 < Formula
   mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.15singleqt-everywhere-opensource-src-5.15.15.tar.xz"
   sha256 "b423c30fe3ace7402e5301afbb464febfb3da33d6282a37a665be1e51502335e"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
-  revision 1
+  revision 2
 
   livecheck do
     url "https:download.qt.ioofficial_releasesqt5.15"
@@ -19,12 +19,12 @@ class QtAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9f33572ec04eb567b77cae909103d44d683ffc0a8bc3f82e233295b08ab03db8"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f5ade389b95d6a6a22182b3f32226a4898d57f9ae42dd75f5e8a981fdc5733e"
-    sha256 cellar: :any,                 arm64_ventura: "9bdec0a078264792e9cab58857256b9f0a807e1e02540b9ef5eaaff69a5518df"
-    sha256 cellar: :any,                 sonoma:        "7043762c8e365015465cdf63088adb97fc001a926bed6f580f2d285a48323795"
-    sha256 cellar: :any,                 ventura:       "a3b7360aa4f68bda77bd8179179919124b637c755aa6f45177686b3302e50e5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9513a9892a3ee5288253bbfa22bd1e0309b9b7f179e254ee1a4a3364284c12a1"
+    sha256 cellar: :any,                 arm64_sequoia: "e5c91906dc55e3db8d08b6c6fb2b88d20002dbd354b38217a4895f5778ff30ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "edc57e4e22e53d76b10cecd2c1e9d7ad4569078a9efd51e9710d4b758174b7d9"
+    sha256 cellar: :any,                 arm64_ventura: "d1c567b934d8d26d5adbc7582014e93dcdd6c613260d1b9657000558775f0974"
+    sha256 cellar: :any,                 sonoma:        "f1027df9b92489c085d94b94c9853e67f6061133a219444815ccd5c96989f309"
+    sha256 cellar: :any,                 ventura:       "90894c59d79b044ac5f1cbb0e3a7d769d6ced812c5d5253ae574f37a04a20710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad78e47f11ab2fc4a232fe01664e65ee49cda567cd4abc7878537119d8fac2b0"
   end
 
   keg_only :versioned_formula

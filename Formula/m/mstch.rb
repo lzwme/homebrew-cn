@@ -46,7 +46,7 @@ class Mstch < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <mstchmstch.hpp>
       #include <cassert>
       #include <string>
@@ -56,7 +56,7 @@ class Mstch < Formula
 
         assert(mstch::render(view, context) == "Hello, world");
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lmstch", "-std=c++11", "-o", "test"
     system ".test"

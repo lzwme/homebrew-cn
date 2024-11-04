@@ -66,7 +66,7 @@ class Pybind11 < Formula
   end
 
   test do
-    (testpath"example.cpp").write <<~EOS
+    (testpath"example.cpp").write <<~CPP
       #include <pybind11pybind11.h>
 
       int add(int i, int j) {
@@ -77,12 +77,12 @@ class Pybind11 < Formula
           m.doc() = "pybind11 example plugin";
           m.def("add", &add, "A function which adds two numbers");
       }
-    EOS
+    CPP
 
-    (testpath"example.py").write <<~EOS
+    (testpath"example.py").write <<~PYTHON
       import example
       example.add(1,2)
-    EOS
+    PYTHON
 
     pythons.each do |python|
       python_exe = python.opt_libexec"binpython"

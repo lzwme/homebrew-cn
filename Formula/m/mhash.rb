@@ -41,13 +41,13 @@ class Mhash < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include "mhash.h"
       int main() {
         MHASH td;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lmhash", "-o", "test"
     system "./test"
   end

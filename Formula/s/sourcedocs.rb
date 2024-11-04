@@ -20,8 +20,36 @@ class Sourcedocs < Formula
   depends_on xcode: ["12.0", :build, :test]
   uses_from_macos "swift"
 
+  # Workaround until SourceKitten dependency is updated
+  # Ref: https:github.comSourceDocsSourceDocspull83
+  resource "SourceKitten" do
+    if DevelopmentTools.clang_build_version >= 1600
+      # https:github.comSourceDocsSourceDocsblob2.0.1Package.resolved#L32-L38
+      url "https:github.comjpsimSourceKitten.git",
+          tag:      "0.32.0",
+          revision: "817dfa6f2e09b0476f3a6c9dbc035991f02f0241"
+
+      # Backport of import from HEAD
+      patch :DATA
+    end
+  end
+
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    args = ["--disable-sandbox", "--configuration", "release"]
+    if DevelopmentTools.clang_build_version >= 1600
+      res = resource("SourceKitten")
+      (buildpath"SourceKitten").install res
+
+      pin_version = JSON.parse(File.read("Package.resolved"))
+                        .dig("object", "pins")
+                        .find { |pin| pin["package"] == "SourceKitten" }
+                        .dig("state", "version")
+      odie "Check if SourceKitten patch is still needed!" if pin_version != res.version
+
+      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath"SourceKitten"
+    end
+
+    system "swift", "build", *args
     bin.install ".buildreleasesourcedocs"
   end
 
@@ -44,3 +72,24 @@ class Sourcedocs < Formula
     end
   end
 end
+
+__END__
+diff --git aSourceSourceKittenFrameworkSwiftDocs.swift bSourceSourceKittenFrameworkSwiftDocs.swift
+index 1d2473c..70de287 100644
+--- aSourceSourceKittenFrameworkSwiftDocs.swift
++++ bSourceSourceKittenFrameworkSwiftDocs.swift
+@@ -10,6 +10,14 @@
+ import SourceKit
+ #endif
+
++#if os(Linux)
++import Glibc
++#elseif os(Windows)
++import CRT
++#else
++import Darwin
++#endif
++
+  Represents docs for a Swift file.
+ public struct SwiftDocs {
+      Documented File.

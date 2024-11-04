@@ -34,7 +34,7 @@ class MesaGlu < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <GL/glu.h>
 
       int main(int argc, char* argv[]) {
@@ -53,7 +53,7 @@ class MesaGlu < Formula
         gluEndPolygon(tobj);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{include}", "test.cpp", "-L#{lib}", "-lGLU"
   end
 end

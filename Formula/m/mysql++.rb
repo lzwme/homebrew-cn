@@ -43,7 +43,7 @@ class Mysqlxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <mysql++/cmdline.h>
       int main(int argc, char *argv[]) {
         mysqlpp::examples::CommandLine cmdline(argc, argv);
@@ -52,7 +52,7 @@ class Mysqlxx < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{Formula["mysql-client"].opt_include}/mysql",
                     "-L#{lib}", "-lmysqlpp", "-o", "test"
     system "./test", "-u", "foo", "-p", "bar"

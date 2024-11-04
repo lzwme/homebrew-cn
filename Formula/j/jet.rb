@@ -1,20 +1,18 @@
 class Jet < Formula
   desc "Type safe SQL builder with code generation and auto query result data mapping"
   homepage "https:github.comgo-jetjet"
-  url "https:github.comgo-jetjetarchiverefstagsv2.11.1.tar.gz"
-  sha256 "a046e5982eb972825b2dce80548ff1e77dfdaaea2f3dea016e6e5d376cbbc822"
+  url "https:github.comgo-jetjetarchiverefstagsv2.12.0.tar.gz"
+  sha256 "4003b5c8188937031bd0a89e8442b5afb9c687e8b488d31eccbaa2895c42b4e9"
   license "Apache-2.0"
   head "https:github.comgo-jetjet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5b1cdb00eb754236e1a868cfffb86d43819837a71a1eb802da5dcdd6dd2cf95b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8e365e76e3e2b3bbc4e7a257dfe3ad1004bf5ffc2163c3852c94dc11f380f0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "772811a7e784d95d4215cb5fee17f1fa305f5aa7c7340375b6737573ae4c17c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08621eb4c223ed9171115e5e7cf4db9c408194e43ca76031bc2d653692eaea0a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff0a49e6c0567d7992a054f8d2b9b68cd4ed785bb20de9a5d30ab75da36eb63c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1542b742bfab00324695753c04d3376bde37343fd00b0718718c0bd6d8b5426"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8ee73142506f7f5830b70a1c5a6a7ea8ff1043c1ec9ce01de0c0669e4873101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3fcb0048ffc0776f975baea12887b6f12c61baa197372041a79cbe9123239cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c010d2b36641394ac115bb7fc445e9e5e291128900d0a78ed443c820ea2a41f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f45fc3dbb06636d172e43877f9aa3ad5a540d759259340f81b46b1fce44acb5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "291b20bb8a1ad9fbfb041a62970c1e28d44d7c5c0015d9bcf719ca6b8f9b9558"
+    sha256 cellar: :any_skip_relocation, sonoma:        "506860133d5ea4bc6d3c83f119a3ff666381326185ec29317e218fb74f81a49d"
+    sha256 cellar: :any_skip_relocation, ventura:       "54bd30e44b46376d305b9c6de7350ba5eb33282c767413ddd625be5323d86be0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59978daf20497c7dda0ec7dde02caba7958a832bd0c90a30f8258d8d278b88a8"
   end
 
   depends_on "go" => :build

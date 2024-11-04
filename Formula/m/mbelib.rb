@@ -36,7 +36,7 @@ class Mbelib < Formula
   end
 
   test do
-    (testpath"mb.cpp").write <<~EOS
+    (testpath"mb.cpp").write <<~CPP
       extern "C" {
       #include "mbelib.h"
       }
@@ -45,7 +45,7 @@ class Mbelib < Formula
         mbe_synthesizeSilencef(float_buf);
         return (float_buf[0] != 0);
       }
-    EOS
+    CPP
     system ENV.cxx, "mb.cpp", "-o", "test", "-L#{lib}", "-lmbe"
     system ".test"
   end

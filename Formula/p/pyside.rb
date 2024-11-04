@@ -117,7 +117,7 @@ class Pyside < Formula
       ]
     end
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <shiboken.h>
       int main()
       {
@@ -126,7 +126,7 @@ class Pyside < Formula
         assert(!module.isNull());
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp",
                     "-I#{include}/shiboken6",
                     "-L#{lib}", "-lshiboken6.abi3",

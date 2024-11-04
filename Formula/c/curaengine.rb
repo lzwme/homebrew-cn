@@ -53,7 +53,7 @@ class Curaengine < Formula
   test do
     testpath.install resource("fdmextruder_defaults")
     testpath.install resource("fdmprinter_defaults")
-    (testpath"t.stl").write <<~EOS
+    (testpath"t.stl").write <<~STL
       solid t
         facet normal 0 -1 0
          outer loop
@@ -63,7 +63,7 @@ class Curaengine < Formula
          endloop
         endfacet
       endsolid Star
-    EOS
+    STL
 
     system bin"CuraEngine", "slice", "-j", "fdmprinter.def.json", "-l", "#{testpath}t.stl"
   end

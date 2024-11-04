@@ -36,7 +36,7 @@ class OpenMesh < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <OpenMesh/Core/IO/MeshIO.hh>
       #include <OpenMesh/Core/Mesh/PolyMesh_ArrayKernelT.hh>
@@ -72,7 +72,7 @@ class OpenMesh < Formula
           return 0;
       }
 
-    EOS
+    CPP
     flags = %W[
       -I#{include}
       -L#{lib}

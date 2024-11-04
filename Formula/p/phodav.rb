@@ -37,7 +37,7 @@ class Phodav < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libphodav/phodav.h>
       #include <glib.h>
       int main() {
@@ -58,7 +58,7 @@ class Phodav < Formula
         g_object_unref(phodav);
         return 0;
       }
-    EOS
+    CPP
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].lib/"pkgconfig" if OS.mac?
     flags = shell_output("pkg-config --libs --cflags libphodav-3.0").chomp.split

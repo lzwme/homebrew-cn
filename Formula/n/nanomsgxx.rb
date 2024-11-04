@@ -63,7 +63,7 @@ class Nanomsgxx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <nnxxmessage.h>
       #include <nnxxpair.h>
@@ -83,7 +83,7 @@ class Nanomsgxx < Formula
         std::cout << msg << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lnnxx"
 

@@ -34,7 +34,7 @@ class Pngxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <png++/png.hpp>
       int main() {
         png::image<png::rgb_pixel> image(200, 300);
@@ -42,7 +42,7 @@ class Pngxx < Formula
         if (image.get_height() != 300) return 2;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test"
     system "./test"
   end

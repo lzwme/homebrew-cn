@@ -47,7 +47,7 @@ class Ompl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <omplbasespacesRealVectorBounds.h>
       #include <cassert>
       int main(int argc, char *argv[]) {
@@ -56,7 +56,7 @@ class Ompl < Formula
         bounds.setHigh(5);
         assert(bounds.getVolume() == 5 * 5 * 5);
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}ompl-#{version.major_minor}", "-L#{lib}", "-lompl", "-o", "test"
     system ".test"

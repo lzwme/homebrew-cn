@@ -58,7 +58,7 @@ class Nuspell < Formula
       hello
     EOS
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <fstream>
       #include <nuspelldictionary.hxx>
@@ -81,7 +81,7 @@ class Nuspell < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
     icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
                 .to_formula

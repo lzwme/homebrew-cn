@@ -20,7 +20,7 @@ class Numcpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <NumCpp.hpp>
 
@@ -30,7 +30,7 @@ class Numcpp < Formula
           for (int i = 0; i < nc::shape(a).cols; ++i)
               std::cout << a[i] << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}"
     assert_equal "1\n5\n9\n", shell_output(".test")
   end

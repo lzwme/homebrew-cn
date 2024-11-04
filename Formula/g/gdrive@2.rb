@@ -18,7 +18,7 @@ class GdriveAT2 < Formula
 
   keg_only :versioned_formula
 
-  deprecate! date: "2023-11-20", because: :repo_archived
+  disable! date: "2024-11-20", because: :repo_archived
 
   depends_on "go" => :build
 

@@ -28,7 +28,7 @@ class Onedpl < Formula
   test do
     tbb = Formula["tbb"]
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <oneapidplexecution>
       #include <oneapidplalgorithm>
       #include <array>
@@ -41,7 +41,7 @@ class Onedpl < Formula
           assert(i==arr.at(i));
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{tbb.opt_lib}", "-ltbb", "-I#{tbb.opt_include}",
                     "-I#{prefix}stdlib", "-I#{include}", "-o", "test"
     system ".test"

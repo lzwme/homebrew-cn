@@ -27,7 +27,7 @@ class ParallelHashmap < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <string>
       #include <parallel_hashmapphmap.h>
@@ -48,7 +48,7 @@ class ParallelHashmap < Formula
           std::cout << "baz:" << examples["baz"] << std::endl;
           return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
     assert_equal "foo:a\nbar:b\nbaz:c\n", shell_output(".test")
   end

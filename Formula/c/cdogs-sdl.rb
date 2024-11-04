@@ -49,7 +49,11 @@ class CdogsSdl < Formula
     pid = fork do
       exec bin"cdogs-sdl"
     end
-    sleep 7
+
+    max_sleep_time = 90
+    time_slept = 0
+    time_slept += sleep(5) while !(testpath".configcdogs-sdl").exist? && time_slept < max_sleep_time
+
     assert_predicate testpath".configcdogs-sdl",
                      :exist?, "User config directory should exist"
   ensure

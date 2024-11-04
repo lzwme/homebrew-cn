@@ -37,7 +37,7 @@ class Opus < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <opus.h>
 
       int main(int argc, char **argv)
@@ -61,7 +61,7 @@ class Opus < Formula
         }
         return err;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{include}/opus", testpath/"test.cpp",
            "-L#{lib}", "-lopus", "-o", "test"
     system "./test"

@@ -35,14 +35,14 @@ class PangommAT246 < Formula
     system "meson", "install", "-C", "build"
   end
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <pangomm.h>
       int main(int argc, char *argv[])
       {
         Pango::FontDescription fd;
         return 0;
       }
-    EOS
+    CPP
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs pangomm-1.4").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", *pkg_config_cflags, "-o", "test"

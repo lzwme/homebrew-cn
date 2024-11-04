@@ -14,6 +14,7 @@ class Ucommon < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "8d1eb9d2f6984eb37ce94f421122cdddce8070132ddf9b911dae8ed69accadea"
     sha256 arm64_sonoma:   "aef98eb17b5948c37b54052b5695cbc7de0e3ebfed947973ccf5df6bc99280db"
     sha256 arm64_ventura:  "2f5710346714a1abd916b61ac2f8cdb3935ffb8f25d975e9188b102aa0d2cfc9"
     sha256 arm64_monterey: "38d325d005640c936e08eee001469b019b63be1a604a4cb7ef2def41f2dda2eb"
@@ -33,6 +34,9 @@ class Ucommon < Formula
     depends_on "gettext"
   end
 
+  # Workaround for macOS 15 SDK adding SO_BINDTODEVICE in sys/socket.h
+  patch :DATA
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", "--with-sslstack=gnutls", "--with-pkg-config", *std_configure_args
@@ -42,7 +46,7 @@ class Ucommon < Formula
   test do
     system bin/"ucommon-config", "--libs"
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <commoncpp/string.h>
       #include <iostream>
 
@@ -51,9 +55,24 @@ class Ucommon < Formula
         std::cout << test_string << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lucommon"
     system "./test"
   end
 end
+
+__END__
+diff --git a/corelib/socket.cpp b/corelib/socket.cpp
+index 76a52273..04dae257 100644
+--- a/corelib/socket.cpp
++++ b/corelib/socket.cpp
+@@ -3023,7 +3023,7 @@ int Socket::bindto(socket_t so, const char *host, const char *svc, int protocol)
+     if(host && !strcmp(host, "*"))
+         host = NULL;
+ 
+-#if defined(SO_BINDTODEVICE) && !defined(__QNX__)
++#if defined(SO_BINDTODEVICE) && !defined(__QNX__) && !defined(__APPLE__)
+     if(host && !strchr(host, '.') && !strchr(host, ':')) {
+         struct ifreq ifr;
+         memset(&ifr, 0, sizeof(ifr));

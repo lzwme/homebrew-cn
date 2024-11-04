@@ -33,13 +33,13 @@ class Nanoflann < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <nanoflann.hpp>
       int main() {
         nanoflann::KNNResultSet<size_t> resultSet(1);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11"
     system ".test"
   end

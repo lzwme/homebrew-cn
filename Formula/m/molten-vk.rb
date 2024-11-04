@@ -185,7 +185,7 @@ class MoltenVk < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <vulkanvulkan.h>
       int main(void) {
         const char *extensionNames[] = { "VK_KHR_surface" };
@@ -199,7 +199,7 @@ class MoltenVk < Formula
         vkCreateInstance(&instanceCreateInfo, NULL, &inst);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "-o", "test", "test.cpp", "-I#{include}", "-I#{libexec"include"}", "-L#{lib}", "-lMoltenVK"
     system ".test"
   end

@@ -17,6 +17,7 @@ class X11vnc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "9456fa709c106e9b1bd0501fa329ac203f4e1df4458cc73ce44a6dbde525b26c"
     sha256 cellar: :any,                 arm64_sonoma:   "7173e891559711b0819828a51c0e0ba2a2759120b7a1fecabeb03bc0610b9d8a"
     sha256 cellar: :any,                 arm64_ventura:  "149fbe8e1ec220543b848e416642d67c02c291dff1d92be07ab795c5dcff68ae"
     sha256 cellar: :any,                 arm64_monterey: "1a1da7cf49c8db71624ab470a44a19fadeb7a2c7097aee491b84dbd00cf6eae2"
@@ -39,6 +40,7 @@ class X11vnc < Formula
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"
 

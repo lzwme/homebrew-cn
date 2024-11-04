@@ -31,7 +31,7 @@ class Muparser < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <muParser.h>
 
@@ -60,7 +60,7 @@ class Muparser < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lmuparser"
     system ".test"

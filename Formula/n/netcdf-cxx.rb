@@ -46,7 +46,7 @@ class NetcdfCxx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <netcdf>
 
@@ -66,7 +66,7 @@ class NetcdfCxx < Formula
           auto data = dataFile.addVar("data", netCDF::ncInt, {xDim, yDim});
           data.putVar(dataOut);
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-I#{include}", "-lnetcdf-cxx4", "-o", "test"
     system ".test"
   end

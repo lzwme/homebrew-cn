@@ -1,19 +1,17 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https:github.comtummychowgit-absorb"
-  url "https:github.comtummychowgit-absorbarchiverefstags0.6.15.tar.gz"
-  sha256 "630e61a6edf1e244c38145bda98a522217c34d3ab70a3399af1f29f19e7ced26"
+  url "https:github.comtummychowgit-absorbarchiverefstags0.6.16.tar.gz"
+  sha256 "d0fac448801674a4d4d5d42d6ef2d2e21545ad66755023c531a273a47893a573"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "aca945b8aef34abbac4f2c98a725a55bc61963c5b2f05c6ec6036d02deb19a08"
-    sha256 cellar: :any,                 arm64_sonoma:   "4ba2cc5db7997e70fe3126dcb72ce6b90ecc448522f84ecf256dbf83aa5b0f03"
-    sha256 cellar: :any,                 arm64_ventura:  "3b0d0c694199a5737537e350d1f94a3c5578ad01f37fa606426961d815597a90"
-    sha256 cellar: :any,                 arm64_monterey: "58047813577676e3087030dec2bcefa9092585097d206befda82b16d3a01cf65"
-    sha256 cellar: :any,                 sonoma:         "646e551cecba255be82b580462b9065fd74fb01cf2c889d2a62306fcd79e523d"
-    sha256 cellar: :any,                 ventura:        "518701a348b6de56793560858a17266daf8edd0fca2d87890170e5244109ba67"
-    sha256 cellar: :any,                 monterey:       "d9322e1a225a00b72517d640d4afe1998179343908bdbc8f256418049b703b1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94fa2414eb3c9ed63e09ab896610c45810e68d430e236696c6edd10990926008"
+    sha256 cellar: :any,                 arm64_sequoia: "642563694d9d397f39c68368965fa1f80b0e76840ce400f4f92c7e3b07dfe7e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "717cf20e7c9341f2d20b0b17d6e188b6e1c3e2795409df79642cf6efd6bd7811"
+    sha256 cellar: :any,                 arm64_ventura: "47e0e651f3848fb5b07fff7d43853725b573aa69d98c9ec03fb78492f58098d0"
+    sha256 cellar: :any,                 sonoma:        "09fe5516b5b7a42fd378a7b63ecbbbc945b03f4ee6a183e175c689b4b6c95034"
+    sha256 cellar: :any,                 ventura:       "cf1478d96f79469824668a92b25b6d40d47fc8abc14a8ac2df4891db8701cc75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca35199361f91362a640963a2b19fd16b741613b22552d142690055fadb7e70c"
   end
 
   depends_on "pkg-config" => :build

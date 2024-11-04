@@ -12,7 +12,7 @@ class Gpm < Formula
   end
 
   # https:tip.golang.orgdocgo1.22
-  disable! date: "2024-08-03", because: "go get is no longer supported outside of a module"
+  disable! date: "2024-08-03", because: "runs `go get` outside of a module, which is no longer supported"
 
   depends_on "go"
 

@@ -38,13 +38,13 @@ class Osi < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <OsiSolverInterface.hpp>
 
       int main() {
         OsiSolverInterface *si;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lOsi",
                     "-I#{include}osicoin",
                     "-I#{Formula["coinutils"].include}coinutilscoin",

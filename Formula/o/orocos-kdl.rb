@@ -41,7 +41,7 @@ class OrocosKdl < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <kdlframes.hpp>
       int main()
       {
@@ -51,7 +51,7 @@ class OrocosKdl < Formula
         assert(v1==v2);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
                     "-o", "test"
     system ".test"

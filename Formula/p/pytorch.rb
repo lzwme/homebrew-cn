@@ -148,7 +148,7 @@ class Pytorch < Formula
 
   test do
     # test that C++ libraries are available
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <torchtorch.h>
       #include <iostream>
 
@@ -156,25 +156,25 @@ class Pytorch < Formula
         torch::Tensor tensor = torch::rand({2, 3});
         std::cout << tensor << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}torchcsrcapiinclude",
                     "-L#{lib}", "-ltorch", "-ltorch_cpu", "-lc10"
     system ".test"
 
     # test that the `torch` Python module is available
-    system libexec"binpython", "-c", <<~EOS
+    system libexec"binpython", "-c", <<~PYTHON
       import torch
       t = torch.rand(5, 3)
       assert isinstance(t, torch.Tensor), "not a tensor"
       assert torch.distributed.is_available(), "torch.distributed is unavailable"
-    EOS
+    PYTHON
     return unless OS.mac?
 
     # test that we have the MPS backend
-    system libexec"binpython", "-c", <<~EOS
+    system libexec"binpython", "-c", <<~PYTHON
       import torch
       assert torch.backends.mps.is_built(), "MPS backend is not built"
-    EOS
+    PYTHON
   end
 end

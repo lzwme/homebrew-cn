@@ -1,19 +1,18 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https:www.numpy.org"
-  url "https:files.pythonhosted.orgpackages4bd18a730ea07f4a37d94f9172f4ce1d81064b7a64766b460378be278952de75numpy-2.1.2.tar.gz"
-  sha256 "13532a088217fa624c99b843eeb54640de23b3414b14aa66d023805eb731066c"
+  url "https:files.pythonhosted.orgpackages25ca1166b75c21abd1da445b97bf1fa2f14f423c6cfb4fc7c4ef31dccf9f6a94numpy-2.1.3.tar.gz"
+  sha256 "aa08e04e08aaf974d4458def539dece0d28146d866a39da5639596f4921fd761"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comnumpynumpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ee05c1dc6ae5c2b979185366671d2001fc9eb3e9992772759c09cbd082d9cf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "f817053b37b367828004a068572c344b22ec9c1cf697e2c7827f22cb4762be7d"
-    sha256 cellar: :any,                 arm64_ventura: "24a9db255e759e7dd4dd6c5e23c69c1882c494db5d99eb3d4318e8e817458fe1"
-    sha256 cellar: :any,                 sonoma:        "775342f4ab756239003b82987eeac565893c84da6e2aadd4869a14138805bd43"
-    sha256 cellar: :any,                 ventura:       "a3d6ef5a502e48ab43b27a14d3d50a5b434cc78f6518e285236fbf5ed27e0b8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76202d1b5235a66a494d0e6e6c8d707fe4ad854e9999afc0ae1cc1eec1b8a95"
+    sha256 cellar: :any,                 arm64_sequoia: "2f200bdc987706a148d0d27b8e04a4985919115143143269434f14b7c3cf5862"
+    sha256 cellar: :any,                 arm64_sonoma:  "57282ea0d427a55fcc107b3bd583ce94cf7f052e649f2d9151033e32c1e7226c"
+    sha256 cellar: :any,                 arm64_ventura: "4a3f265f4767d15e1dc9ae74285a202b54933d376f78e29a4bee654153a35eb3"
+    sha256 cellar: :any,                 sonoma:        "9d673e339b3e923d3fc44bb94f02c7c4e293a0cbf5d7349645d328b6716ccc6c"
+    sha256 cellar: :any,                 ventura:       "c886bcf4c4d8321b64438895adc823f069583fc335decece51fb39095b68aebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4c1045279d796d31b8583083d81651090ec41aa9e46b2badfc0d5333fa5d0a"
   end
 
   depends_on "gcc" => :build # for gfortran

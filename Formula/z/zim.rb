@@ -61,7 +61,8 @@ class Zim < Formula
   end
 
   test do
-    ENV["LC_ALL"] = "en_US.UTF-8"
+    # Workaround for https:github.comzim-desktop-wikizim-desktop-wikiissues2665
+    ENV["LC_ALL"] = (OS.mac? && MacOS.version >= :sequoia) ? "C" : "en_US.UTF-8"
     ENV["LANG"] = "en_US.UTF-8"
 
     mkdir_p %w[NotesHomebrew HTML]

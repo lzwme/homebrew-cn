@@ -4,18 +4,15 @@ class Carla < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https:github.comfalkTXCarlaarchiverefstagsv2.5.8.tar.gz"
-    sha256 "4ec96d06342ff28da4b80d4a76bc08fcaa5703726f96e5174afcdc4f7fc6195d"
+    url "https:github.comfalkTXCarlaarchiverefstagsv2.5.9.tar.gz"
+    sha256 "226fb5d646b7541b82035080190e7440df1f92372fb798b4ad49289570e5ad81"
 
-    # TODO: use `pyqt` and `qt` from HEAD unconditionally when new release includes Qt6 support
+    # TODO: Remove in 2.6.0
+    depends_on maximum_macos: [:sonoma, :build]
+
+    # TODO: Use `pyqt` and `qt` from HEAD in 2.6.0
     depends_on "pyqt@5"
     depends_on "qt@5"
-
-    # liblo API build patch, remove in next release
-    patch do
-      url "https:github.comfalkTXCarlacommit9370483b0a278eab6462c33b16e53377f7fffc6c.patch?full_index=1"
-      sha256 "eb9d9c45eaa95cb7756a0b0c38f7f2bd456a3ee3a0096a60d2fdd6af44bd1a49"
-    end
   end
 
   livecheck do
@@ -24,13 +21,11 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ec1291381e671d32533a89d49ac8422f0c33fb88f9ad4738798f011028c2599c"
-    sha256 cellar: :any,                 arm64_ventura:  "56f402f64745b913bc0645dbf7fa8ba50ad420b982379c06a887d764bc873a03"
-    sha256 cellar: :any,                 arm64_monterey: "929e274b0219f74c23be1c65f9cdda50e3b5f8b9ae38ffd1afc0f55d0f535213"
-    sha256 cellar: :any,                 sonoma:         "3da956c57828aff90102bb0a76f37bfdf13b1b0dd0f5f6dfaf0a951e52aa7b17"
-    sha256 cellar: :any,                 ventura:        "8f378e081f6fb5ab948a97d31741b42e6dc51cd273219239a1e24873b9cb9403"
-    sha256 cellar: :any,                 monterey:       "2640474117ea51fa88e1289ee017bf440c6c00631339ddff05b9affa91e49f88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "945471081c1fa496a673c4b0d86375612ff1198ccbe92dd799dfc93a8c2a893b"
+    sha256 cellar: :any,                 arm64_sonoma:  "56213e765979dbe90d105907e5f9eb20d00f90290c63147d5c04de5ecf3d5baf"
+    sha256 cellar: :any,                 arm64_ventura: "ea3005ad3619d14e4c1c7f75f60c9af86e0a21fc927ac5dd3dcf136ace5eef0b"
+    sha256 cellar: :any,                 sonoma:        "6199f9867bff7d8fe10d49e29e46a5f3986f54ccb90c993398ab7b69e6d5839e"
+    sha256 cellar: :any,                 ventura:       "20e04d81cc37f87d5277f7e94882d9d4b5bdda0f3c61e4ed2ecda1f4c85b3ecc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "133ea99c321c48bdba588d22f2c7ae064fb0d82730c815b1b6bb7f681b942c8b"
   end
 
   head do

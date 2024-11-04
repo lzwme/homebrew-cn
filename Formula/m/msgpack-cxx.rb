@@ -26,7 +26,7 @@ class MsgpackCxx < Formula
 
   test do
     # Reference: https:github.commsgpackmsgpack-cblobcpp_masterQUICKSTART-CPP.md
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <msgpack.hpp>
       #include <vector>
       #include <string>
@@ -54,7 +54,7 @@ class MsgpackCxx < Formula
         std::vector<std::string> rvec;
         obj.convert(rvec);
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++14", "-o", "test", "test.cpp", "-I#{include}"
     assert_equal "[\"Hello\",\"MessagePack\"]\n", `.test`

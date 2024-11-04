@@ -40,7 +40,7 @@ class MysqlConnectorCxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <mysqlx/xdevapi.h>
       int main(void)
@@ -53,7 +53,7 @@ class MysqlConnectorCxx < Formula
         ::std::cout <<"ERROR: " << err << ::std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}",
                     "-L#{lib}", "-lmysqlcppconnx", "-o", "test"
     output = shell_output("./test")

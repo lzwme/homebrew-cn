@@ -1603,6 +1603,7 @@ Homebrew-homebrew-core/Formula/e/enpass-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ensmallen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/enter-tex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/entityx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/entr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envchain.rb, Homebrew/homebrew-core, 1
@@ -2239,7 +2240,6 @@ Homebrew-homebrew-core/Formula/g/gnirehtet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnmic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-autoar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-common.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gnome-latex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-recipes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 0

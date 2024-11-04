@@ -26,7 +26,7 @@ class Octomap < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cassert>
       #include <octomapoctomap.h>
       int main() {
@@ -34,7 +34,7 @@ class Octomap < Formula
         assert(tree.size() == 0);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}",
                     "-loctomath", "-loctomap", "-o", "test"
     system ".test"

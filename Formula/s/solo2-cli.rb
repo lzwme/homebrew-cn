@@ -7,6 +7,7 @@ class Solo2Cli < Formula
   head "https:github.comsolokeyssolo2-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0eeda3ebb79864789018e56cdd4bf347b798478c754f9f3be29e26ce788cc604"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac06ba094da706b68c527fa6904187aa9c2d21fd26246bf9a343a4a14a4d8dd9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c876fcb91927f6c382994c92cbd8fcf3041d12ee2e43f6239c325bd852d4d3b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "30c6fd9a7c4eaa8345fc68740a10232ffe26755d9c19b3bd4f7f86e650471d3e"

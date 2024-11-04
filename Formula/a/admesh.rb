@@ -28,7 +28,7 @@ class Admesh < Formula
 
   test do
     # Test file is the beginning of block.stl from admesh's source
-    (testpath"test.stl").write <<~EOS
+    (testpath"test.stl").write <<~STL
       SOLID Untitled1
       FACET NORMAL  0.00000000E+00  0.00000000E+00  1.00000000E+00
       OUTER LOOP
@@ -38,7 +38,7 @@ class Admesh < Formula
       ENDLOOP
       ENDFACET
       ENDSOLID Untitled1
-    EOS
+    STL
     system bin"admesh", "test.stl"
   end
 end

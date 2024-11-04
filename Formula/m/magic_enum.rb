@@ -21,7 +21,7 @@ class MagicEnum < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <magic_enum.hpp>
 
@@ -33,7 +33,7 @@ class MagicEnum < Formula
         std::cout << c1_name << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++17", "-o", "test"
     assert_equal "RED\n", shell_output(testpath"test")
