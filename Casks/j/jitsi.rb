@@ -10,8 +10,9 @@ cask "jitsi" do
 
   livecheck do
     url "https:download.jitsi.orgjitsimacosxsparkleupdates.xml"
-    strategy :sparkle do |item|
-      item.url[-(\d+(?:\.\d+)*)\.dmgi, 1]
+    regex(-(\d+(?:\.\d+)*)\.dmgi)
+    strategy :sparkle do |item, regex|
+      item.url[regex, 1]
     end
   end
 

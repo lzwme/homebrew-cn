@@ -13,7 +13,7 @@ class Portaudio < Formula
     regex(href=.*?pa[._-]stable[._-]v?(\d+)(?:[._-]\d+)?\.ti)
     strategy :page_match do |page, regex|
       # Modify filename version (190700) to match formula version (19.7.0)
-      page.scan(regex).map { |match| match&.first&.scan(\d{2})&.map(&:to_i)&.join(".") }
+      page.scan(regex).map { |match| match[0].scan(\d{2}).map(&:to_i).join(".") }
     end
   end
 

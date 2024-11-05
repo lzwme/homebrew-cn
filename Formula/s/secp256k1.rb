@@ -1,19 +1,17 @@
 class Secp256k1 < Formula
   desc "Optimized C library for EC operations on curve secp256k1"
   homepage "https:github.combitcoin-coresecp256k1"
-  url "https:github.combitcoin-coresecp256k1archiverefstagsv0.5.1.tar.gz"
-  sha256 "081f4730becba2715a6b0fd198fedd9e649a6caaa6a7d6d3cf0f9fa7483f2cf1"
+  url "https:github.combitcoin-coresecp256k1archiverefstagsv0.6.0.tar.gz"
+  sha256 "785bb98e7d6705c51c8dfa8ac3af6aa2ccfa3774714d51c0b9e28fac1146e9f1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "63acff5cca20cf35d418316d11fab3930384c3f5d2b6f67def6ff90c38dcae25"
-    sha256 cellar: :any,                 arm64_sonoma:   "dc8c68c51ab101aef56121fa672050640af6e127f3b8d9480126dd2215dd0d0e"
-    sha256 cellar: :any,                 arm64_ventura:  "826e86e829d68f144751d76eef24068c9d636fea551317a64cf9bb4be0eded86"
-    sha256 cellar: :any,                 arm64_monterey: "2915c652a10d2c5c66c0771dfdb6fc6804b977b1a7d736341011d9922d64588f"
-    sha256 cellar: :any,                 sonoma:         "6871a2013ba7afbee1d24689f7c7fdeb31a0270a8fe11221f251635b69b59578"
-    sha256 cellar: :any,                 ventura:        "9af6633c71705d1afc05088794ee92d1228d3977e5c4d8fd201688f98eb9838b"
-    sha256 cellar: :any,                 monterey:       "3acade7a85c214c000f252f9fba12ea8f2452e3fd2109fd6eb936f91f4aeade5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56286a0823e4e9c0145223c6b08cb2e7624e4ccc7a07b3f3435794a2bcfbed76"
+    sha256 cellar: :any,                 arm64_sequoia: "df425b521f46c58e13a1bb877d7a59fdeaf405ec020c530c6052bcab8108b007"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1e59f7f9158c265009d9e68474320514d4275e3fc4ddd9c90b97e690fbb51c1"
+    sha256 cellar: :any,                 arm64_ventura: "7d62c4478e434647dd715759c7c1e5d6d891823b835e102c01458ae41cf278c6"
+    sha256 cellar: :any,                 sonoma:        "11d1cfee8f09a6a398cb05161e3b132634385f9ea17f3f1be9816777fa5fc693"
+    sha256 cellar: :any,                 ventura:       "29a61d5ddeb1e6b5a9d6ced52e059530e8cc1cd0d734a8258d6b48847506dcc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "021cdad1de96cc81c67a779074717150bd1aa5eff164ecc10d91226871a805dd"
   end
 
   depends_on "autoconf" => [:build]

@@ -1,13 +1,12 @@
 class Utf8cpp < Formula
   desc "UTF-8 with C++ in a Portable Way"
   homepage "https:github.comnemtrifutfcpp"
-  url "https:github.comnemtrifutfcpparchiverefstagsv4.0.5.tar.gz"
-  sha256 "ffc668a310e77607d393f3c18b32715f223da1eac4c4d6e0579a11df8e6b59cf"
+  url "https:github.comnemtrifutfcpparchiverefstagsv4.0.6.tar.gz"
+  sha256 "6920a6a5d6a04b9a89b2a89af7132f8acefd46e0c2a7b190350539e9213816c0"
   license "BSL-1.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7b192e8de004db12cbfa005df7bcbdf878cfe9728c75388f3280469f1d9cd263"
+    sha256 cellar: :any_skip_relocation, all: "bd37e8f689dc81593f8c8be6e074b4c97f4cd0f0881ee9c9735cb6d75a2f603e"
   end
 
   depends_on "cmake" => [:build, :test]

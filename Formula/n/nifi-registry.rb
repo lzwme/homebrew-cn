@@ -1,13 +1,13 @@
 class NifiRegistry < Formula
   desc "Centralized storage & management of NiFi/MiNiFi shared resources"
   homepage "https://nifi.apache.org/projects/registry"
-  url "https://www.apache.org/dyn/closer.lua?path=/nifi/1.28.0/nifi-registry-1.28.0-bin.zip"
-  mirror "https://archive.apache.org/dist/nifi/1.28.0/nifi-registry-1.28.0-bin.zip"
-  sha256 "6422273f1a19f15a1e8a3c4ec33f0384c8456acb5ae2726465eb37cca90e5b5b"
+  url "https://www.apache.org/dyn/closer.lua?path=/nifi/2.0.0/nifi-registry-2.0.0-bin.zip"
+  mirror "https://archive.apache.org/dist/nifi/2.0.0/nifi-registry-2.0.0-bin.zip"
+  sha256 "ba4c42a2f534b094e1d4b7a4cd83a63f3e23c8515bfecffc39e2f19dbeb8925c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b82edf4439edff14c22465efdba07c159b5e3db0ab55499cf4ab757b9c1317ee"
+    sha256 cellar: :any_skip_relocation, all: "4c7b3993059e3b4d8a3bec68bf9de55c73e4ae9e2cf53e68f2c39e93b23a8ffc"
   end
 
   depends_on "openjdk"

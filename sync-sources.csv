@@ -1263,6 +1263,7 @@ Homebrew-homebrew-core/Formula/d/deadfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debianutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debugbreak.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/decasify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/defaultbrowser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/define.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deheader.rb, Homebrew/homebrew-core, 0
@@ -8108,6 +8109,7 @@ Homebrew-homebrew-cask/Casks/d/deepnest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepstream.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deezer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/default-folder-x.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/default-handler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/defold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@beta.rb, Homebrew/homebrew-cask, 1
@@ -9186,6 +9188,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-edu-tas-beginner.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-e/font-edu-vic-wa-nt-beginner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-edwin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-el-messiri.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-e/font-eldur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-electrolize.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-elice-digital-baeum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-elsie-swash-caps.rb, Homebrew/homebrew-cask, 1
@@ -14002,6 +14005,7 @@ Homebrew-homebrew-cask/Casks/v/vitamin-r.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vivaldi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vivaldi@snapshot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vivid.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/viz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vk-calls.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vk-messenger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vlc-setup.rb, Homebrew/homebrew-cask, 0
@@ -14337,7 +14341,6 @@ nicerloop-homebrew-nicerloop/Formula/kindletool.rb, nicerloop/homebrew-nicerloop
 nicerloop-homebrew-nicerloop/Formula/libcmis.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/libf2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/moproxy.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/opc-diag.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/optic.rb, nicerloop/homebrew-nicerloop, 1

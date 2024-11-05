@@ -1,9 +1,9 @@
 cask "jdkmon" do
   arch arm: "-aarch64", intel: ""
 
-  version "21.0.5"
-  sha256 arm:   "c2aebe13baf22532eb99f0b475b86f7883e6596cf1e770718a35a0cb1f171abe",
-         intel: "675f65122a48267fa81642fcf26f26abc7c22b59c52c50d8e6eddd615f5279fd"
+  version "21.0.7"
+  sha256 arm:   "6df912ab075cc7fcaf1550dd2ec68c33b5535f7e7cc1a209af6b96b087b387f3",
+         intel: "8712e97eb884c62ec900189e09efed1431634daa6a6bdd2d6fad16ffcecbf216"
 
   url "https:github.comHanSoloJDKMonreleasesdownload#{version}JDKMon-#{version}#{arch}.pkg"
   name "jdkmon"

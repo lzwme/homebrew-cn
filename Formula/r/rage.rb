@@ -1,20 +1,18 @@
 class Rage < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https:str4d.xyzrage"
-  url "https:github.comstr4dragearchiverefstagsv0.10.0.tar.gz"
-  sha256 "34c39c28f8032c144a43aea96e58159fe69526f5ff91cb813083530adcaa6ea4"
+  url "https:github.comstr4dragearchiverefstagsv0.11.0.tar.gz"
+  sha256 "f5c37b27428ad2b9ed91f0c691612dd0f91044d17565edf177fb676be4af1d35"
   license any_of: ["MIT", "Apache-2.0"]
   head "https:github.comstr4drage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "202d0052dd387139980340ba7988fcd8a3406fb3fe08de49f999b32209bb9f04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe679e4dd957148d5c62d465aae7f451c0160ef7ec02629abecc31ef48a76355"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5528b1d13be084d4889823a2343aa3ce5c194add31ddb1f845f9b48673ecdd8a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6c1eb10260bdc634ff9e9c6a0ccd160b8d6761d0f60cf4a134b166b04de8499"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be1b5a328299875623fcb7b72469eb8522d3ff549e0f263442bf313f60b51bcb"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4d186b9ef6805e18cd695adfd9eb5608797a3332633f73cdcae1fe8401106d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b92ec9a3f5c4413663aa63c657d22c63b75c66a146f860c4e36f6c9d83955d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7c4f61c4674059a51330260e541601e4b639a65805c22c9e42c5e7764f4353d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c01e7c4ba4c3cfad0a74c14ff32b25e4642f0962056e73518226cc71c121e88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a525b3085b4ffdd6ac02bb665e1c765eb3ebcfbf7addff382273f6466550e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bbf8f7d72e70891850c66013159c2b961618b376b368404efb55d5d78bd6b84"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0be2efd3da88b4926c5a0e1b2aa2c6d5148a8c6ff1117bf796c026df175fa882"
+    sha256 cellar: :any_skip_relocation, ventura:       "583714adf952ec6658bcdf237f795dc052436ddf144db192875a7dca991de6eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ce0166f53aa84b5dead2794a9b27d23e53bf863db4399ef470bebb7b3af34c"
   end
 
   depends_on "rust" => :build

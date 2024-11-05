@@ -1,18 +1,18 @@
 class ThreeBody < Formula
   desc "三体编程语言 Three Body Language written in Rust"
   homepage "https:github.comrustq3body-lang"
-  url "https:github.comrustq3body-langarchiverefstags0.6.3.tar.gz"
-  sha256 "bcdf74ac50c9132e359e6eed1e198edc5db126be979608849dd410460e822aac"
+  url "https:github.comrustq3body-langarchiverefstags0.6.4.tar.gz"
+  sha256 "403f9ffe82ba251c8b4375edef7ac1145e450fd5b2073bbd7792b120b757139c"
   license "MIT"
   head "https:github.comrustq3body-lang.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c86e0b06c8e264a8a7ae0d33591c69380625989bc1aec6c4a0727cc216f95fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3ae4e7e9acafbfe587790151944084e09afeafa43415555567fbe9c817dbcfa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "131aa9b76e07145d6588677be7d671ead9dd935197c3beab53e2f591d7a6d17f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e14620a0ad363e7dec91f812f786f76f7a8065ca39a209e00b9d816c961fb6cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9b8a2d05f18d2a9c7ea644127975c7ff746430fe3b86d9791fa273aeeab0151"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0304bbd3d0106edee56473df768b6bef99ee07c5a17b85e8b4d3333e7a2333fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81d6df11101a4a3aba526ecb12e891698c1013059e640762ca8f36bb3e516934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18660a523356ec28fa10832564a6c9c0c01ac77b8cdedec4eb1d48fdd9c355d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a4fc21bc3aa8fa4b2dcff99e2b516fd9966ce1d357ec073e20c16badc95535a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a88c23365f089a3b54948eb08e7d948a16ada665993a29a6a22804e4c18ff044"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc3783e06c220819e6f45d9dbe9985ed1dd1444239eae88067ee1b106faf95cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f00c06ae97d39f94a34c5ad7370f70c30ebe8880de5189c7bfc0250f39db4be"
   end
 
   depends_on "rust" => :build

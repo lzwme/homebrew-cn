@@ -4,6 +4,7 @@ class Echidna < Formula
   url "https:github.comcryticechidnaarchiverefstagsv2.2.5.tar.gz"
   sha256 "148504b6881727265f4fd87c699cf521b0cb8bb7b0dea4cba42b97e2d588ec16"
   license "AGPL-3.0-only"
+  revision 1
   head "https:github.comcryticechidna.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9e94bf4c97bafd0e1fc251dce2b29121ec3bbdbd520d48bd03a0de4ee3f435d"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf4de3a986d90a16181fb6e2894a8087d152444cc04a0d22537871a95e606044"
-    sha256 cellar: :any,                 arm64_ventura: "3e9d815f85799ddab0c9be12f6cf5b401cb54f726d1175620ac6ffd1db036b6d"
-    sha256 cellar: :any,                 sonoma:        "0c6aef5bb39540cbaa2c82b0bfea6a96776a2959a3325f463eb36f9de0dc1fe6"
-    sha256 cellar: :any,                 ventura:       "5823671499b3db472bbca4c4d6e005577037e9d9f74f333e6fa27fa8fe8cd99f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e7f76399aa45c6dca6bca5202ca791a6882b127f814ffffed81a2125e29911c"
+    sha256 cellar: :any,                 arm64_sequoia: "15434151c4692b9edb45d66c0ea7924edc304e20ebf9fa37400874fcc089e8fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac97f82cfe20ee7565794496ac1e129d9d119fd3f00366e98ea27d0da838e716"
+    sha256 cellar: :any,                 arm64_ventura: "f081bc8f4e357a66b581cc8b1977f25431e03e1de544313cbe622f946dba9a19"
+    sha256 cellar: :any,                 sonoma:        "6ba066a900d1d2d64e25e19db0115f2187106bbf16d1bb0f929034f2b4d14a2d"
+    sha256 cellar: :any,                 ventura:       "e6a88f34daca135244362e116d954ee333e036b621656e70dfc4db2b4aa943cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3e2796402ea85f7f013c4cd11827e6f65b462247df88ba8c6ad08c3f510f0c"
   end
 
   depends_on "ghc@9.6" => :build

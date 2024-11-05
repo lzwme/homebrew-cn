@@ -3,15 +3,15 @@ class DotnetAT6 < Formula
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
   url "https:github.comdotnetinstaller.git",
-      tag:      "v6.0.133",
-      revision: "48ad8f7176f00900ff49df9fb936bc7c8c79d345"
+      tag:      "v6.0.135",
+      revision: "9b2a203ee661f837f50486a8caedc688e05dedc4"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma: "3eb824051504d2753ab5cca847f0b943bc4dc05fb403558d18fe18c5532c3845"
-    sha256 cellar: :any,                 sonoma:       "2f19620dfb82a8bcbcec0a68175426c64ff43e3fa231cf9d05ef21e8616572b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffe54b54568dd28475dde52acdcd69cba25cd2b4a94ec568908e164477024045"
+    sha256 cellar: :any,                 arm64_sequoia: "d4504f7537d39b828fd1090b071d7500b32c1159dec10ce28ab7defa25fe34ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "6112bc7fb910dc62bb68aa2f9bdd93ce9c47d396c8949b46432b9011440e6722"
+    sha256 cellar: :any,                 sonoma:        "2e850d8505cdb3c220370b3cb94b724f446af5009a4429971745ae5e41788e34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c656cdbcf9e10e6961b82a4ac9f6f7a96aca9e0705eed54b54676584bfc4d983"
   end
 
   keg_only :versioned_formula
@@ -22,7 +22,7 @@ class DotnetAT6 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.13" => :build
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "openssl@3"
 
   uses_from_macos "llvm" => :build
@@ -41,7 +41,6 @@ class DotnetAT6 < Formula
   # Apple Silicon build fails due to latest dotnet-install.sh downloading x64 dotnet-runtime.
   # We work around the issue by using an older working copy of dotnet-install.sh script.
   # Bug introduced with https:github.comdotnetinstall-scriptspull314
-  # TODO: Remove once script is fixed.
   # Issue ref: https:github.comdotnetinstall-scriptsissues318
   resource "dotnet-install.sh" do
     url "https:raw.githubusercontent.comdotnetinstall-scriptsdac53157fcb7e02638507144bf5f8f019c1d23a8srcdotnet-install.sh"
@@ -49,7 +48,6 @@ class DotnetAT6 < Formula
   end
 
   # Fixes race condition in MSBuild.
-  # TODO: Remove with 6.0.3xx or later.
   resource "homebrew-msbuild-patch" do
     url "https:github.comdotnetmsbuildcommit64edb33a278d1334bd6efc35fecd23bd3af4ed48.patch?full_index=1"
     sha256 "5870bcdd12164668472094a2f9f1b73a4124e72ac99bbbe43028370be3648ccd"
@@ -63,7 +61,7 @@ class DotnetAT6 < Formula
   # Backport fix to build with Clang 19
   # Ref: https:github.comdotnetruntimecommit043ae8c50dbe1c7377cf5ad436c5ac1c226aef79
   def clang19_patch
-    <<~EOS
+    <<~PATCH
       diff --git asrccoreclrvmcomreflectioncache.hpp bsrccoreclrvmcomreflectioncache.hpp
       index 08d173e61648c6ebb98a4d7323b30d40ec351d94..12db55251d80d24e3765a8fbe6e3b2d24a12f767 100644
       --- asrccoreclrvmcomreflectioncache.hpp
@@ -100,7 +98,89 @@ class DotnetAT6 < Formula
 
            void UpdateHashTable(SIZE_T hash, int slot)
            {
-    EOS
+    PATCH
+  end
+
+  # Backport fix to build with Xcode 16 (copying unixasmmacrosarm64.inc to unixasmmacrosamd64.inc for Intel macOS)
+  # Ref: https:github.comdotnetruntimecommit562efd6824762dd0c1826cc99e006ad34a7e9e85
+  def xcode16_patch
+    <<~'PATCH'
+      diff --git asrccoreclrpalincunixasmmacrosamd64.inc bsrccoreclrpalincunixasmmacrosamd64.inc
+      index 976cc825f2eb4..4997e18b39858 100644
+      --- asrccoreclrpalincunixasmmacrosamd64.inc
+      +++ bsrccoreclrpalincunixasmmacrosamd64.inc
+      @@ -17,7 +17,12 @@
+       .endm
+
+       .macro PATCH_LABEL Name
+      +#if defined(__APPLE__)
+      +        .alt_entry C_FUNC(\Name)
+      +        .private_extern C_FUNC(\Name)
+      +#else
+               .global C_FUNC(\Name)
+      +#endif
+       C_FUNC(\Name):
+       .endm
+
+      diff --git asrccoreclrpalincunixasmmacrosarm64.inc bsrccoreclrpalincunixasmmacrosarm64.inc
+      index 976cc825f2eb4..4997e18b39858 100644
+      --- asrccoreclrpalincunixasmmacrosarm64.inc
+      +++ bsrccoreclrpalincunixasmmacrosarm64.inc
+      @@ -17,7 +17,12 @@
+       .endm
+
+       .macro PATCH_LABEL Name
+      +#if defined(__APPLE__)
+      +        .alt_entry C_FUNC(\Name)
+      +        .private_extern C_FUNC(\Name)
+      +#else
+               .global C_FUNC(\Name)
+      +#endif
+       C_FUNC(\Name):
+       .endm
+
+      diff --git asrccoreclrvmarm64asmhelpers.S bsrccoreclrvmarm64asmhelpers.S
+      index ebfefd693f074..48c91e65a098d 100644
+      --- asrccoreclrvmarm64asmhelpers.S
+      +++ bsrccoreclrvmarm64asmhelpers.S
+      @@ -176,8 +176,7 @@ NESTED_END ThePreStub, _TEXT
+
+       LEAF_ENTRY ThePreStubPatch, _TEXT
+           nop
+      -.globl C_FUNC(ThePreStubPatchLabel)
+      -C_FUNC(ThePreStubPatchLabel):
+      +PATCH_LABEL ThePreStubPatchLabel
+           ret lr
+       LEAF_END ThePreStubPatch, _TEXT
+
+      @@ -607,8 +606,12 @@ NESTED_END ResolveWorkerAsmStub, _TEXT
+       #ifdef FEATURE_READYTORUN
+
+       NESTED_ENTRY DelayLoad_MethodCall_FakeProlog, _TEXT, NoHandler
+      -C_FUNC(DelayLoad_MethodCall):
+      +#if defined(__APPLE__)
+      +    .alt_entry C_FUNC(DelayLoad_MethodCall)
+      +#endif
+           .global C_FUNC(DelayLoad_MethodCall)
+      +C_FUNC(DelayLoad_MethodCall):
+      +
+           PROLOG_WITH_TRANSITION_BLOCK
+
+           add x0, sp, #__PWTB_TransitionBlock  pTransitionBlock
+      @@ -627,8 +630,11 @@ NESTED_END DelayLoad_MethodCall_FakeProlog, _TEXT
+
+       .macro DynamicHelper frameFlags, suffix
+       NESTED_ENTRY DelayLoad_Helper\suffix\()_FakeProlog, _TEXT, NoHandler
+      -C_FUNC(DelayLoad_Helper\suffix):
+      +#if defined(__APPLE__)
+      +    .alt_entry C_FUNC(DelayLoad_Helper\suffix)
+      +#endif
+           .global C_FUNC(DelayLoad_Helper\suffix)
+      +C_FUNC(DelayLoad_Helper\suffix):
+
+           PROLOG_WITH_TRANSITION_BLOCK
+
+    PATCH
   end
 
   def install
@@ -114,6 +194,7 @@ class DotnetAT6 < Formula
     (buildpath".dotnet").install resource("dotnet-install.sh")
     (buildpath"srcSourceBuildtarballpatchesmsbuild").install resource("homebrew-msbuild-patch")
     (buildpath"srcSourceBuildtarballpatchesruntimeclang19.patch").write clang19_patch
+    (buildpath"srcSourceBuildtarballpatchesruntimexcode16.patch").write xcode16_patch if OS.mac?
 
     # The source directory needs to be outside the installer directory
     (buildpath"installer").install buildpath.children
@@ -128,26 +209,22 @@ class DotnetAT6 < Formula
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
 
       # Fix Clang 15 error: definition of builtin function '__cpuid'.
-      # Remove if following fix is backported to .NET 6.0.1xx
       # Ref: https:github.comdotnetruntimecommit992cf8c97cc71d4ca9a0a11e6604a6716ed4cefc
       inreplace "srcruntimesrccoreclrvmamd64unixstubs.cpp",
                 ^ *void (__cpuid|__cpuidex)\([^}]*}$,
                 "#if !__has_builtin(\\1)\n\\0\n#endif"
 
       # Fix missing macOS conditional for system unwind searching.
-      # Remove if following fix is backported to .NET 6.0.1xx
       # Ref: https:github.comdotnetruntimecommit97c9a11e3e6ca68adf0c60155fa82ab3aae953a5
       inreplace "srcruntimesrcnativecorehostapphoststaticCMakeLists.txt",
                 "if(CLR_CMAKE_USE_SYSTEM_LIBUNWIND)",
                 "if(CLR_CMAKE_USE_SYSTEM_LIBUNWIND AND NOT CLR_CMAKE_TARGET_OSX)"
 
       # Work around arcade build failure with BSD `sed` due to non-compatible `-i`.
-      # Remove if following fix is backported to .NET 6.0.1xx
       # Ref: https:github.comdotnetarcadecommitb8007eed82adabd50c604a9849277a6e7be5c971
       inreplace "srcarcadeengSourceBuild.props", "\"sed -i ", "\"sed -i.bak " if OS.mac?
 
       # Rename patch fails on case-insensitive systems like macOS
-      # TODO: Remove whenever patch is no longer used
       rename_patch = "0001-Rename-NuGet.Config-to-NuGet.config-to-account-for-a.patch"
       (Pathname("srcnuget-clientengsource-build-patches")rename_patch).unlink if OS.mac?
 
@@ -169,15 +246,15 @@ class DotnetAT6 < Formula
   end
 
   def caveats
-    <<~EOS
+    <<~TEXT
       For other software to find dotnet you may need to set:
         export DOTNET_ROOT="#{opt_libexec}"
-    EOS
+    TEXT
   end
 
   test do
     target_framework = "net#{version.major_minor}"
-    (testpath"test.cs").write <<~EOS
+    (testpath"test.cs").write <<~CSHARP
       using System;
 
       namespace Homebrew
@@ -191,8 +268,9 @@ class DotnetAT6 < Formula
           }
         }
       }
-    EOS
-    (testpath"test.csproj").write <<~EOS
+    CSHARP
+
+    (testpath"test.csproj").write <<~XML
       <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
           <OutputType>Exe<OutputType>
@@ -208,7 +286,8 @@ class DotnetAT6 < Formula
           <Compile Include="test.cs" >
         <ItemGroup>
       <Project>
-    EOS
+    XML
+
     system bin"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath"test.csproj"
     assert_equal "#{testpath}test.dll,a,b,c\n",
                  shell_output("#{bin}dotnet run --framework #{target_framework} #{testpath}test.dll a b c")

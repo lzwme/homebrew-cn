@@ -2,22 +2,17 @@ class Mas < Formula
   desc "Mac App Store command-line interface"
   homepage "https:github.commas-climas"
   url "https:github.commas-climas.git",
-      tag:      "v1.8.6",
-      revision: "560c89af2c1fdf0da9982a085e19bb6f5f9ad2d0"
+      tag:      "v1.8.7",
+      revision: "4405807010987802c0967bbf349c08808062b824"
   license "MIT"
   head "https:github.commas-climas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1051571e2d5530b951dd282096ea3fd013d2861239afc55d3880050aaab592be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b11bfefcb43e9a423ff301f7bbc29b0fb86044bf93442f243c5a8a67d8d4869"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e49511dd1283813c4420aec9fc3b3167d18f9fdbb51d82b1e479b628d5312342"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "379d46e2657be295321f1603dc1df28130ea0b5b264ceb192a9ba488d77c7a98"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "918a1484de106940f7bebc936e1ded87d7b65652054b09204887ad0651937ec4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24e3057991ea1eed52eb4a27c0f17d794106770621e5a8bb975477dae135b82d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6ef7788e28c46cdc0f916812f49dfeb1fabf2240a8c36f33ce34bcfb9df1502f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b313f2f66d028cb7782c108d6e502ce73ccb9c08fac3bece0b057fcce5c4689"
-    sha256 cellar: :any_skip_relocation, big_sur:        "50b50f51219143fcb69c730b52b74011a76104f66348ea727d0200f7b375ae25"
-    sha256 cellar: :any_skip_relocation, catalina:       "d241d3b9156b033f3d2c31684a44de726297e07fd9bd5e3ccc4c36e4f1c3baf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f79bc1592e59900e5f876a255259a0aed774069109e2b608ffcac46bac66b52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bae1f14f8522dc16f69b00371ae12221b6550456dd12ed0238df72cdd68f20e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3a4df50b78219917927a482dfde491edc3524d41211fea9e507ac7a47700b1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7915e683c7579d8289934b4eb162997b74ab0cf0ad8378dd6158872965f07cdf"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7862ed579d42f662bbb41d4611452444e3cecfe747c09774a2cbdfd844c448a"
   end
 
   depends_on :macos

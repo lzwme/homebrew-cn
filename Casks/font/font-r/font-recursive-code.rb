@@ -2,9 +2,10 @@ cask "font-recursive-code" do
   version "1.085"
   sha256 "cbcbdf7a0e181d284a9235e09ed5f3873e527bc5dd1d977df71cdc1ff937da02"
 
-  url "https:github.comarrowtyperecursivereleasesdownloadv#{version}ArrowType-Recursive-#{version}.zip"
+  url "https:github.comarrowtyperecursivereleasesdownloadv#{version}ArrowType-Recursive-#{version}.zip",
+      verified: "github.comarrowtyperecursive"
   name "Recursive Code"
-  homepage "https:github.comarrowtyperecursive"
+  homepage "https:www.recursive.design"
 
   font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-BoldItalic-#{version}.ttf"
   font "ArrowType-Recursive-#{version}Recursive_CodeRecMonoSemicasualRecMonoSemicasual-Bold-#{version}.ttf"

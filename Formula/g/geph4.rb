@@ -1,8 +1,8 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
   homepage "https:geph.io"
-  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.13.tar.gz"
-  sha256 "96d70f0a0c82f1b259e8e3203e69422445b249b967e2d67c08b5171321c7a692"
+  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.99.14.tar.gz"
+  sha256 "b25c7212183f53c87640bf02a803c9d7ca8e4d535b1ca3b645fb5fb3f2705133"
   license "GPL-3.0-only"
   head "https:github.comgeph-officialgeph4-client.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Geph4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03c1d62fa10a08fb83523dadf87868e1bb3aa631615dd98d4e7d59cbd51e32d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c75c1acd89b506940e76150e901c207aed81d1f1cb0035c0629bf463fc37030f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad4034441d3feefc6e86347bb11ae4926bb743a2f8a23cdd305e447454aeffca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6da00947d1ed069ca6ac457db7d688f34eed11f735c28350e9a0923680d7da8c"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d748d9407777a06dd152fb1e224c2892506281765796c503fccc51ef0da5ad1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a1cb6a39079930de96c3b0825dff016ac6f275437074f0d8b3d80c2eda1f67a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afff3fa0448ffa6fedfdc7194b7eb874469f4e0c872e31f76f64f1e1f7dbe932"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5e795cf710eb54bcf76200508e5c7e94687e09624d390462b31f201a633bc98"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "231efa6d7e2673154c221d60d4a7985299d51163ebbe226772c2a835b6a69312"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef371e7bd9f18485ef126cfb1576100b7c0034cd85ce0efaec44c566eb19844d"
+    sha256 cellar: :any_skip_relocation, ventura:       "33fe6116fa6fb1faa191ad63ac84ffcb9132234d29e52f4920004c5e9c4e94b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18d33466939a9b026a8585647609c09ff2caac057a5f41dfcdf4cb255b49d1a2"
   end
 
   depends_on "rust" => :build

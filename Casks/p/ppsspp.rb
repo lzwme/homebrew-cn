@@ -1,6 +1,6 @@
 cask "ppsspp" do
-  version "1.17.1"
-  sha256 "b0b2e1ea7c2e00690e41cd0fafef2ebed39d072c933443b571389f2620763ff1"
+  version "1.18.1"
+  sha256 "6926796c544464ce28691d099c71861d29967366542a4b37c6e60575ec782b3f"
 
   url "https:github.comhrydgardppssppreleasesdownloadv#{version}PPSSPPSDL-macOS-v#{version}.zip",
       verified: "github.comhrydgardppsspp"

@@ -1,19 +1,17 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.59_20240723/wrapper_3.5.59_src.tar.gz"
-  sha256 "3b47e7facdd1208ae2570eac301da748a006b551744f3e8db3825bf4ea5c6e06"
+  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.60_20241102/wrapper_3.5.60_src.tar.gz"
+  sha256 "877896e14f375c0c881c3a50f8ee910bc6504b388fbbfe65128e79d763d08717"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "024094de8513e469be859a01d18aeff8d0ba0adfc531d24db7e42bc1253d1485"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3686c79400a6d08357b9732a90552c682e79d20e0452a7f3fa5ed9a0a9b306c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afec02b0f155c2b525aae172c8a4769e8b6083dae7ec542d08c762422c21a8f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d59c6dbb00c3831526d7a2c3d06d559c242ec36c27f527b29d2a7e49e6ded3a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77f657d48b8c15e8902bb346d2f3081b5b705cd74f7965bcfe626a7ca0f69e4a"
-    sha256 cellar: :any_skip_relocation, ventura:        "b13c9d5321c9239ad342dc4375203df491e1ec89ff072a9214d6aee1ec131c6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "52d7a21a1b0a06e1b4311718b4926f58a446dc125f761edade0e1898888243f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "187b9c59b2589c36223445d0b0fd9d4985dccaeca299ed046ffca2c1b2565f6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42546aa39dbdb2b9d5feebca3bd30ed59c2b670820b75656687a7bc6b499d8a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfc916da6dab2ba80be5b9c1c2a059c3faceb43fbe6b3b6f11fbd2c687179514"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "456932779eafcff80ba5af62f8fc39dde78c8aa43ec7fad22e54ebd973ff92e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5aeac6598fb9e5846713be61e6e2ba9615b3bae5eacbfdebb66d81ad85c6a5dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "7fb3083e15a6e97c975342669b73f15c88f8cc5b5b3a75b3202a939626117463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "873539f87543ccc1140bd5d2eee6cae4528f0b5081962155a255bdf1dacb0e88"
   end
 
   depends_on "ant" => :build

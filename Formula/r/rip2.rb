@@ -7,12 +7,13 @@ class Rip2 < Formula
   head "https:github.comMilesCranmerrip2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a4d759abfa23e78e1cd6afdd0028703fdc0ab458b236a4bae9a49efd6c0cc83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73f460615657d60899f49dc1213c930fa141966d10f127c3986cc15f01f930d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bdb15ca69ebc0004751ec3f2757fbd14ddef1f90dec9bb570277dbf45b3f777"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68a7c61b77e9ee7fc0c1d1ee2749f743b0ffcee9dc733e6ad21888fc526914cc"
-    sha256 cellar: :any_skip_relocation, ventura:       "4558e844f0c8e1e59dc51830319e4b1844801cc9db0c49f57e9ce1182157fe39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19e49acfea663691ff2881a5f09ada40b93b83948f96c50466d74f2d1401549e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff9fa277be23b426860e37d9658620d46311bc5b0065fa7c232f2ab769f779d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "500d7e065612b003b3e31d5f91f43aa5995c3afad06b6533936a5997b0f62cf3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "de13d5079f302c386719362cfb65011110b3a8faa7c5845af68a8b2a69159b46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8fa85b00767c7def700c5b647df482986260e2f7e7b5903a8fe26f53e95092e"
+    sha256 cellar: :any_skip_relocation, ventura:       "48d407f40d865a6637c32bd7f2f497364ae490fcda84876a9a25920a7d9b448f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1457c0bf5d20f130a3456f408e935d7815641b9acf470b9cb7bcfbc4a01e8965"
   end
 
   depends_on "rust" => :build
@@ -20,7 +21,7 @@ class Rip2 < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"rip", "completions")
+    generate_completions_from_executable(bin"rip", "completions", base_name: "rip")
     (share"elvishlibrip.elv").write Utils.safe_popen_read(bin"rip", "completions", "elvish")
     (share"powershellcompletions_rip.ps1").write Utils.safe_popen_read(bin"rip", "completions", "powershell")
     (share"nucompletionsrip.nu").write Utils.safe_popen_read(bin"rip", "completions", "nushell")

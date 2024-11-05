@@ -3,17 +3,17 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/76/ce/19f364c867423e4f5aceabec23c21ee5d3633f9f518d687a39336e324235/moto-5.0.19.tar.gz"
-  sha256 "e6c6e1558f65c01fe1b3b5cc7ee35b474167fe3600326990f54601d75a7ea639"
+  url "https://files.pythonhosted.org/packages/7b/27/3dc1036bfa2544ba806647ff9bd3900043c2c6f91988a5ae22840b338ef6/moto-5.0.20.tar.gz"
+  sha256 "24b1319cc66f81f40817a57ac80602a5f1862669bdd621f0d96ab989a6578255"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1ac2105aecbcd0307a5779b8d287d22a9b7b1b36af4f2751635c989a7ea21fc3"
-    sha256 cellar: :any,                 arm64_sonoma:  "0184b8b9d29513609782a4e0e781713f07daab7bff205df38e3a24f7880c5fc9"
-    sha256 cellar: :any,                 arm64_ventura: "5b72960e96a36e79a1e279b477714566b8296a5a288adfe3655d349ee2331f47"
-    sha256 cellar: :any,                 sonoma:        "4c8a60867f3d6ba4ae7cc7c26d1b6ad17012381d42c992030c0a4d1b041c0235"
-    sha256 cellar: :any,                 ventura:       "de5ffa1d6c08ed125d87fa0d457bf14f3ee16e831eefac1a8baf290c9be601d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a6fc1b4789aeb3a1fdc0cfb355580586102ce695e241aa92792f552e3f9de35"
+    sha256 cellar: :any,                 arm64_sequoia: "a5155a738348658ad7fbc46e8162a2e5d752da2f3e85b770f3a7bd5c356e7d5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a91a28cc798ffb94b06b5346459ecd40b82048f5d1e1d42d0ea73dcb8f0d2256"
+    sha256 cellar: :any,                 arm64_ventura: "b62984b077cd4246bd4d2fbd9d119466a3ac0230727fdbdd79d1282c36487142"
+    sha256 cellar: :any,                 sonoma:        "949bcdf3b34db53bb48183c95dec7991560024dd3a07ad073a476aa78a8d8f1b"
+    sha256 cellar: :any,                 ventura:       "8f18ffe8d497cc07cbe62dcfeca4d4701df129ce9be084db2af54348b5c88f8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d523837b719d1c770299d0e229ccb914410a133a5a891658e1d434ceec46fc74"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -293,8 +293,8 @@ class Moto < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/32/af/d4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49/werkzeug-3.1.1.tar.gz"
-    sha256 "8cd39dfbdfc1e051965f156163e2974e52c210f130810e9ad36858f0fd3edad4"
+    url "https://files.pythonhosted.org/packages/9f/e7/58868f1a95bd6f2ffa0a26af212675fb74be2a4c4bfa3541077b0ca14ad3/werkzeug-3.1.2.tar.gz"
+    sha256 "f471a4cd167233077e9d2a8190c3471c5bc520c636a9e3c1e9300c33bced03bc"
   end
 
   resource "wrapt" do

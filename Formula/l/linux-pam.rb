@@ -7,14 +7,14 @@ class LinuxPam < Formula
   head "https:github.comlinux-pamlinux-pam.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "a68f91985d2eef7e9010c081438d58a7d8301ce0dc1caee5f34187cdc70ba90b"
+    rebuild 1
+    sha256 x86_64_linux: "25349579d56222786116f3d058bf872934732859e6744a74037d064f23df040d"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "libnsl"
-  depends_on "libprelude"
   depends_on "libtirpc"
   depends_on "libxcrypt"
   depends_on :linux

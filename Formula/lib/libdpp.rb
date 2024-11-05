@@ -1,17 +1,17 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
   homepage "https:github.combrainboxdotccDPP"
-  url "https:github.combrainboxdotccDPPreleasesdownloadv10.0.34DPP-10.0.34.tar.gz"
-  sha256 "58eee75e81ac305db0b71a8cd4b821ff3cabcdfa0575e56ba5e4ce543531bd2f"
+  url "https:github.combrainboxdotccDPPreleasesdownloadv10.0.35DPP-10.0.35.tar.gz"
+  sha256 "46efde92ec6aba7f3e2b7ad17af2ffa4a18fc0bf3b3566a03f7131784ff7fdc8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a075bd776660c37b349ef2e6c86ad37c5813ed9e33648f3fe47888262b2574ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bb8f8d74451bd379aad11459903bc3c2a2c9cdb27984693a3806542be615bc1"
-    sha256 cellar: :any,                 arm64_ventura: "aaade5bfb2eaadc80cb5486d6c942d04c2082c1be4190aecf7716f0d6623f28a"
-    sha256 cellar: :any,                 sonoma:        "81ec988d349f7149e529c7bb078e8fe4b4b3ac9a260c36550583227a47ddce2f"
-    sha256 cellar: :any,                 ventura:       "228260124303ed832363531f72a943c496618a99fef085342a0b566c21aa60e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ce18c7568f4a581a82a211f6e68d61bf3c63150b59276e61a840827fb97bbb2"
+    sha256 cellar: :any,                 arm64_sequoia: "6ba9d843c0b55a1bd4d06054715b4c5c498b056f49d47a4b9950956e976c79d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e50bc8d8544325681519650fd73aa770ddb774d76272bdfcba88efe8efd96ba"
+    sha256 cellar: :any,                 arm64_ventura: "71e4e422d2baccc8315be500444c14bcf5825cb823f5eaf9a1b17cd4d9022bb7"
+    sha256 cellar: :any,                 sonoma:        "3a61a2ebcc9bae68592d37614494fb07ea138ded82d26f2cb56781378517075a"
+    sha256 cellar: :any,                 ventura:       "2c41ce2640725e6f503e7bec5c4df3b7b1c4c5cdaae6643d65a472709c14c409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fffb302d055218650557cc3f06e2f454ffda90fb0f8985c9212ab48a4a782799"
   end
 
   depends_on "cmake" => :build
