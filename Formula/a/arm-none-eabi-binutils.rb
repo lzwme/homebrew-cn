@@ -11,14 +11,13 @@ class ArmNoneEabiBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "3ede55fd67ae38d15ea1a383a32c230ddb0a2d6057bfd044b22243220ec48773"
-    sha256 arm64_sonoma:   "458b71485352dd068e53201d3dfd0ae417f79e384be6c816c698ed91a5a21807"
-    sha256 arm64_ventura:  "9461459c5f9f830ffbd029b10ae10e89b54e031a654364843d2cc481dc408168"
-    sha256 arm64_monterey: "1104d62a87e30a3700af18eecb281a22211cf48d90e270430c63c7d69facc0f1"
-    sha256 sonoma:         "503af491e4b77482a66f288f54c29a9d00c2ebeab5567cd68199c635e51c96f7"
-    sha256 ventura:        "452522df713af1ba29de9deff36d6fab797968184ce125db047c65ab55a76e2d"
-    sha256 monterey:       "f91d4b2fbbf3a0f2320f98c4ab78449276331d68956383a2e11c266d06ac9955"
-    sha256 x86_64_linux:   "b76702db7f7daed88627a97c16ffc1d028ad34f3a6fcf2fc8e8c1ee6d16d562e"
+    rebuild 1
+    sha256 arm64_sequoia: "79e64e093d75dac53fc108ddb4a81c6aa9ad3e7ff3e38ddb170b749259d4a393"
+    sha256 arm64_sonoma:  "2928334e9880b74d00dfb640d909bfcbce23b3afeb0b25898cc6d7ff8a236dbf"
+    sha256 arm64_ventura: "438273581d790ad5519989cbdabbfa655abffa60e33ceeb9445a91a31d2c58bb"
+    sha256 sonoma:        "2c2d9de7c9a63d13257b9fb85cd959578321cd9dc38d7073095827ff8f906907"
+    sha256 ventura:       "5a55da2c132a5906d455fe7d054a1f76aadc82b71cc701a90e6677907bdd2cbc"
+    sha256 x86_64_linux:  "ee375c801fe9d934f983b43c293390c9d4318cdb02403560799a845746ce0597"
   end
 
   depends_on "pkg-config" => :build
@@ -38,6 +37,7 @@ class ArmNoneEabiBinutils < Formula
            "--infodir=#{info}/#{target}",
            "--with-system-zlib",
            "--with-zstd",
+           "--enable-multilib",
            "--disable-nls"
     system "make"
     system "make", "install"

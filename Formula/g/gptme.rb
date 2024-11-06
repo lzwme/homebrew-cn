@@ -9,18 +9,19 @@ class Gptme < Formula
   head "https:github.comErikBjaregptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d367d1fdf6fbe8072fd14042ecf2163ea9f0064bcfa6d60e753101123ca94e66"
-    sha256 cellar: :any,                 arm64_sonoma:  "a78952c96830b55a9953d95858d20767f4f22e6b4c9dfe543fbd14f69a1da23c"
-    sha256 cellar: :any,                 arm64_ventura: "ff4f208fec0071317d49262992f1bf09343fd00521620e5381955b194fb58c32"
-    sha256 cellar: :any,                 sonoma:        "f3b3802f042a6b88e2072cf31c757c4bb0151be4db4f3e5f757047695e2c4b5d"
-    sha256 cellar: :any,                 ventura:       "7e0af2f482c207683bae5cd60d47c46864b1eb365fe088631000f3f2c5ebe61b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f683c3cd28b71fe71a8d2ddb5f4288f90c7844980da8bce7fe5414747cc5279"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a0ab584de6e9efc8cb7c676424e2977a164d51d0114264e406c2a721553e86e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "88a31b848db393b36b67a02dab69679079815a2f61b0c30ece07af4016de35ea"
+    sha256 cellar: :any,                 arm64_ventura: "535e9aa947ef9865b697560afa123108b1da4c6189a9334dc4116b1c13e31790"
+    sha256 cellar: :any,                 sonoma:        "5c84bf4f2eec553b724163580dc464e2e0ec365009574b546c88f1f338b66a87"
+    sha256 cellar: :any,                 ventura:       "10ea9b8daf335497a60ce93af3beb646f7627da508f81a48566faaa1849da76e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fbaf6d91117b36f24e198195ee435cec39a1830c4fc16dc9f89740933d7c7c9"
   end
 
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -151,8 +152,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages83fc77552f9ddd40ac32fe44c591c5a0918a050aea6ce62a3f22fc7d8fe0359aopenai-1.53.0.tar.gz"
-    sha256 "be2c4e77721b166cce8130e544178b7d579f751b4b074ffbaade3854b6f85ec5"
+    url "https:files.pythonhosted.orgpackages6d152bf6bb16e49c5a56beae6586aa83785578a875c544349f84a2ccac38e221openai-1.54.0.tar.gz"
+    sha256 "df2a84384314165b706722a7ac8988dc33eba20dd7fc3b939d138110e608b1ce"
   end
 
   resource "packaging" do
@@ -231,8 +232,8 @@ class Gptme < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesd9e9cf9ef5245d835065e6673781dbd4b8911d352fb770d56cf0879cf11b7ee1rich-13.9.3.tar.gz"
-    sha256 "bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "six" do
@@ -261,8 +262,8 @@ class Gptme < Formula
   end
 
   resource "tokenizers" do
-    url "https:files.pythonhosted.orgpackagesd7fb373b66ba58cbf5eda371480e4e051d8892ea1433a73f1f92c48657a699a6tokenizers-0.20.1.tar.gz"
-    sha256 "84edcc7cdeeee45ceedb65d518fffb77aec69311c9c8e30f77ad84da3025f002"
+    url "https:files.pythonhosted.orgpackages9a6e4368d065ab4ab9157a28412df7106f1b2cb7448895059d9f5b6f965689f6tokenizers-0.20.2.tar.gz"
+    sha256 "05c95c59b200c2fcf9b2da2d17df9236fb7a6df4136cfb251dfaa8803c0127fd"
   end
 
   resource "tomlkit" do

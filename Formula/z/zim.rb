@@ -9,12 +9,8 @@ class Zim < Formula
   head "https:github.comzim-desktop-wikizim-desktop-wiki.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7de8af4f17bfe1037320ec5f244d48ebcc19f27ca170113ad00e9d2c485f761"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7de8af4f17bfe1037320ec5f244d48ebcc19f27ca170113ad00e9d2c485f761"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7de8af4f17bfe1037320ec5f244d48ebcc19f27ca170113ad00e9d2c485f761"
-    sha256 cellar: :any_skip_relocation, ventura:       "b7de8af4f17bfe1037320ec5f244d48ebcc19f27ca170113ad00e9d2c485f761"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e2bf98837d14211336ff07437d707f5e6418f18f9cd0209661a765c7e548ed9"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "f4824f56d36bfe7a27b6e5ca299247eb1e1a85416c112506303164ce6ac9f28f"
   end
 
   depends_on "pkg-config" => :build

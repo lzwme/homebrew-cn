@@ -9,12 +9,8 @@ class NicotinePlus < Formula
   head "https:github.comnicotine-plusnicotine-plus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46eb3f81ef052c61ac9773805d61a9bf899b0046c3838af24762a00204508be1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46eb3f81ef052c61ac9773805d61a9bf899b0046c3838af24762a00204508be1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46eb3f81ef052c61ac9773805d61a9bf899b0046c3838af24762a00204508be1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46eb3f81ef052c61ac9773805d61a9bf899b0046c3838af24762a00204508be1"
-    sha256 cellar: :any_skip_relocation, ventura:       "46eb3f81ef052c61ac9773805d61a9bf899b0046c3838af24762a00204508be1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "908e029ce3d7145c98aed1039e75399718f33adb0182ddf2cf2aac91a58df20a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1efbc77356619bdb2f9ab67519031f51fa3e19eb262f890b805ca5df9aaf66f6"
   end
 
   depends_on "adwaita-icon-theme"

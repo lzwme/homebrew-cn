@@ -3,19 +3,12 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https:github.comszaghiFoBiS"
-  url "https:files.pythonhosted.orgpackages533a5533ab0277977027478b4c1285bb20b6beb221b222403b10398fb24e81a2FoBiS.py-3.0.5.tar.gz"
-  sha256 "ef23fde4199277abc693d539a81e0728571c349174da6b7476579f82482ab96c"
+  url "https:files.pythonhosted.orgpackagesa5c8fb717e93c9554c1f03e414da53be4d2950fc6a3106ba89cbaaca96b47994FoBiS.py-3.0.6.tar.gz"
+  sha256 "e5f9f1bfc656167ab05c79ec5a25446626c3e65294545627daaa2280ce1dc7e9"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53df92c1b0b300b7bf005bad0a66a53de1285fe28be922e36d70876e9c123463"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53df92c1b0b300b7bf005bad0a66a53de1285fe28be922e36d70876e9c123463"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53df92c1b0b300b7bf005bad0a66a53de1285fe28be922e36d70876e9c123463"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53df92c1b0b300b7bf005bad0a66a53de1285fe28be922e36d70876e9c123463"
-    sha256 cellar: :any_skip_relocation, ventura:       "53df92c1b0b300b7bf005bad0a66a53de1285fe28be922e36d70876e9c123463"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6ce8ec984624bd49fe0d7dbb0992e79342f2b1de44e9ebd306c43eb2afd0bfb"
+    sha256 cellar: :any_skip_relocation, all: "7a5a53146bc60384d9b42d1c64e3d32d79e0a8bbb7501de9c5ce3a75ca075474"
   end
 
   depends_on "gcc" # for gfortran

@@ -8,13 +8,8 @@ class Cppman < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc25ca046e07528bf51627478442fe66aec5b37d555a455055306f2f1055454d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc25ca046e07528bf51627478442fe66aec5b37d555a455055306f2f1055454d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc25ca046e07528bf51627478442fe66aec5b37d555a455055306f2f1055454d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc25ca046e07528bf51627478442fe66aec5b37d555a455055306f2f1055454d"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc25ca046e07528bf51627478442fe66aec5b37d555a455055306f2f1055454d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbac744f610f3797efce095958a4d43f045b4a10b791ef4e65173e6239aaed49"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "99e2b6f2d4e19e53b81d116cc38d64fdb4043c42e431cacdc5bea3e1d119e9d2"
   end
 
   depends_on "python@3.13"
@@ -50,6 +45,9 @@ class Cppman < Formula
 
   def install
     virtualenv_install_with_resources
+    # NOTE: Excluding bash completion which uses GNU xargs so has issues on macOS
+    fish_completion.install_symlink libexec"sharefishvendor_completions.dcppman.fish"
+    zsh_completion.install_symlink libexec"sharezshvendor-completions_cppman"
   end
 
   test do

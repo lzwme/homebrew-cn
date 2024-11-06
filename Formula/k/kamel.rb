@@ -1,8 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https:camel.apache.org"
-  url "https:github.comapachecamel-karchiverefstagsv2.4.0.tar.gz"
-  sha256 "0535bb2c9c0c48f75bccd8a36c2bc866dd0b7959034ee18e473b08ff210ca9e4"
+  url "https:github.comapachecamel-karchiverefstagsv2.5.0.tar.gz"
+  sha256 "6daf43eddcc495623c6d72873126d517c311bddb33b9760ff6a393746ac99645"
   license "Apache-2.0"
   head "https:github.comapachecamel-k.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Kamel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c9b39292bf67301b50525e2164b15dc97982c02e01c0e496f66630ec4244b3e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c40989bf16afdb74e7466d995143cd654dd7491e75dea6a446efbcf61a0d89d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b02d4cdcf4e441ece927c5790ddf363ba23d0685c8d24f0158fdcf8bb6b3b33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2184e8fa2ba9590138339db6867a15323f2fd0faece3d21676da81053c7d47a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0ff32a5706a43a102fd7dfba4bd1e2454cd582bd79a806483045e289a223715"
-    sha256 cellar: :any_skip_relocation, ventura:        "cdea98c5b849557f80f53e1b38ff9c38c158167b9985ead997dae82851275a46"
-    sha256 cellar: :any_skip_relocation, monterey:       "371bc6dcd5e84c3a9331ad7f83652370227debae3c9f0e3d690916869209c327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ad1923625c5a29ab872919b2613cab5d89e53d216cbfb36821d432ab1a517a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9d4aab56cc3091e565478d7690bb37bbd89379b72248b09729cfd6f0b50dc3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9d4aab56cc3091e565478d7690bb37bbd89379b72248b09729cfd6f0b50dc3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9d4aab56cc3091e565478d7690bb37bbd89379b72248b09729cfd6f0b50dc3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12742f199c61f434187c4987b7e7d497457b4da53f8d0af923cc8f6a7dd61677"
+    sha256 cellar: :any_skip_relocation, ventura:       "12742f199c61f434187c4987b7e7d497457b4da53f8d0af923cc8f6a7dd61677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "600a8d5222d7278cf7e1f79ec0114204ed7244ea088c802c1a2ac37edebc2a20"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https:xtls.github.io"
-  url "https:github.comXTLSXray-corearchiverefstagsv24.10.31.tar.gz"
-  sha256 "b61102ce87c61fa97c001cb08bb3ad794ff7184e2457bc58fe71206e53dcee83"
+  url "https:github.comXTLSXray-corearchiverefstagsv24.11.5.tar.gz"
+  sha256 "4610b318778ceca55c83c803fc62064e3379aa6ed33c47499f1483576ea0b41f"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https:github.comXTLSXray-core.git", branch: "main"
 
@@ -12,24 +12,24 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62a05f995d4783bbbe62bf262965c7a61446fcbfb5bad868f9670b726cb790f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62a05f995d4783bbbe62bf262965c7a61446fcbfb5bad868f9670b726cb790f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "62a05f995d4783bbbe62bf262965c7a61446fcbfb5bad868f9670b726cb790f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7edcc9ab743f6be9f11abea6601541f3bb9fc052917310e88f575c13af58131"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7edcc9ab743f6be9f11abea6601541f3bb9fc052917310e88f575c13af58131"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c5bb4d795541223f92b6832fdecb5f581dd8cca29fac1f9c241f85a592933a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0a95ecce40bcfca9a17b08f7141abcf9b7c8b1152b8aa461f94ae2e209f3d6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0a95ecce40bcfca9a17b08f7141abcf9b7c8b1152b8aa461f94ae2e209f3d6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0a95ecce40bcfca9a17b08f7141abcf9b7c8b1152b8aa461f94ae2e209f3d6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "400afaa9387b8ec926816d1d7bd9d2820dbed04f2981a554ca4babcc005be8af"
+    sha256 cellar: :any_skip_relocation, ventura:       "400afaa9387b8ec926816d1d7bd9d2820dbed04f2981a554ca4babcc005be8af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "889e9dbc6e81b3a23ef491175318cf604a1fb47f4e52e1957304fb84c40f0fee"
   end
 
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https:github.comv2flygeoipreleasesdownload202409260052geoip.dat"
-    sha256 "334bd38a791c41a6b95f3afec7350c8a86ac9b2a9dde1e63c80d183edcb81af4"
+    url "https:github.comv2flygeoipreleasesdownload202410310053geoip.dat"
+    sha256 "2762fa0a7d1728089b7723b7796cb5ca955330a3fa2e4407fa40e480fbf9cea7"
   end
 
   resource "geosite" do
-    url "https:github.comv2flydomain-list-communityreleasesdownload20240920063125dlc.dat"
-    sha256 "aeefcd8b3e5b27c22e2e7dfb6ff5e8d0741fd540d96ab355fd00a0472f5884a7"
+    url "https:github.comv2flydomain-list-communityreleasesdownload20241104071109dlc.dat"
+    sha256 "dbda1fe2eeea9cf0ea02f69be0e1db27a5034d331d78f84a1ea6770c1e9f0166"
   end
 
   resource "example_config" do

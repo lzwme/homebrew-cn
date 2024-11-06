@@ -1,17 +1,18 @@
 class Grin < Formula
   desc "Minimal implementation of the Mimblewimble protocol"
   homepage "https:grin.mw"
-  url "https:github.commimblewimblegrinarchiverefstagsv5.3.3.tar.gz"
-  sha256 "f10bb5454120b9d8153df1fa8dd8f527f0420f3026b03518e0df8dc8895dc38b"
+  url "https:github.commimblewimblegrinarchiverefstagsv5.3.3_rebuild.tar.gz"
+  version "5.3.3_rebuild"
+  sha256 "c3bd99e02e078c81cd4c5f1bfe8d666c09fa6697b7bc14c5611e94c404b032d8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "721f60007ef15d390dade33f2263a7d1d7d99dc35944824ebc29d78f64b2869f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcb00117fbbd30fd499af18797efaceeb80ac034a5e209e3747bfb4303c2e609"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c0b317cc1b6d3121b628c7a86429f400f7e4247d6f374c0bbf94d553c0bb794"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38c5456560cd5e0d35a0086589fa709947091647545e4b5a50be3a3cf423e57b"
-    sha256 cellar: :any_skip_relocation, ventura:       "95c878f8c5a355046aa021e41a96f607bd893df168124b5e8930f048709947dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4c00e5bd2c766ae605b711264ea3c55f76c5a39d5761cb9ec34b971d90e3e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c9a59db44f28be5b8881f1fdeaaee14c4a9bbb88f64af340432063937d5144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "016c32b7f78ce489e3b614ebca55c8423d128596eb69d179c5a548c77e8eabdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f1070ecae9f77da9eeddd752741253aeb35ff8ce9873adff32c0ea5ccc38373"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e5a87e330211cc6c7fafe708a14d046deabeef84807b29412a891bdf92c2497"
+    sha256 cellar: :any_skip_relocation, ventura:       "81bcf9a008bd16e053b27118f8583812ca9c757f26ff86d92b674f06cf990405"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f2a3640f0e5637c5f6f2896a87413f30a844775cdaf13753058b4a5da24d990"
   end
 
   depends_on "rust" => :build

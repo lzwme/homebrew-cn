@@ -12,12 +12,8 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ce14d3d0a0d03398dcc0c730019871ce33b746a3ef21bbd9f68d844da3701a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ce14d3d0a0d03398dcc0c730019871ce33b746a3ef21bbd9f68d844da3701a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ce14d3d0a0d03398dcc0c730019871ce33b746a3ef21bbd9f68d844da3701a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee7305ebe8bdc866e13aff7a471e02d58306e74b40d2683a94c3e8ea96bcacda"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee7305ebe8bdc866e13aff7a471e02d58306e74b40d2683a94c3e8ea96bcacda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce14d3d0a0d03398dcc0c730019871ce33b746a3ef21bbd9f68d844da3701a2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "346b09e24e2b3ac175a00f03b67490df9d30a58086e39e447198d851ded2a96a"
   end
 
   depends_on "zookeeper" => :test
@@ -29,6 +25,7 @@ class Druid < Formula
   end
 
   def install
+    rm_r "quickstart/tutorial"
     libexec.install Dir["*"]
 
     %w[

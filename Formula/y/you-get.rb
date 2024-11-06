@@ -9,15 +9,16 @@ class YouGet < Formula
   head "https:github.comsoimortyou-get.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bafc5d5d91a772f38bc134830e6841f222b8cc1d7070d2c2427a4aa6bcfed0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a52b05849945520bcd8aeff458358127f29fffd583639c4489950b7fd5c25346"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01568a2dce093060697dcd39cb36609a584d5323a1caa42ca6a546586d0d5076"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d9babbd967c9beb68d6e08a9fa4f7b4d3a90d61bf1ec4715e1776f00eddedcd"
-    sha256 cellar: :any_skip_relocation, ventura:       "44a775b683865ba5d95cc014b619abb1eac7d3593775a174622ef0a7cb8ae8ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "919d3f808e317229b5e32a4eecb1ec539388287d56fd177fe36900c74a9b3dab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a19a25f252fdf9e745696c92b25e2f94a68c35a14bb5abb5d9c9173bbd2b88f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b69e1ed11567beb060af0dc1ca6b866a50d0852c7462cc5171a59946183bfeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9dbeb9ccf0eeccdbd16b292d3845af8870d04a98580abe63218e6719fd8e9b0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd18933cb33bd106f69dd548b93ed663ce3cb408eab047232fca5d6b8d46fb38"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b3e140c94f095b8fc2bc91382a75ca76f639bbef56c9be89f5f70b31e603138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "307a7aa5cf2a671b668a8129406d209ad209872c16bd511c4ba969a8fc54a0c7"
   end
 
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "rtmpdump"
 
   resource "dukpy" do
@@ -28,6 +29,12 @@ class YouGet < Formula
   resource "mutf8" do
     url "https:files.pythonhosted.orgpackagesca313c57313757b3a47dcf32d2a9bad55d913b797efc8814db31bed8a7142396mutf8-1.0.6.tar.gz"
     sha256 "1bbbefb67c2e5a57104750bb04b0912200b57b2fa9841be245279e83859cb346"
+  end
+
+  # Fix for compatibility with YouTube html change
+  patch do
+    url "https:github.comsoimortyou-getcommit1c9c0f3ed1b8466239fa8656523658ccce8bb489.patch?full_index=1"
+    sha256 "3f00c40cde45e2e05a0a2704781e6618667fe71227dd6c42edd6ff8eb5a81e3a"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https:cluster-api.sigs.k8s.io"
-  url "https:github.comkubernetes-sigscluster-apiarchiverefstagsv1.8.4.tar.gz"
-  sha256 "ae3e103dc2f42d0dbc0ea88448cc3fd0642fe8c2bd9e051241c1a4ec48fed1ed"
+  url "https:github.comkubernetes-sigscluster-apiarchiverefstagsv1.8.5.tar.gz"
+  sha256 "ddf3034d93af6da086791bdfd8ddfa1101e03080e81e41ac8a9d1ebfc57f6e06"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigscluster-api.git", branch: "main"
 
@@ -17,12 +17,12 @@ class Clusterctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5848283087bba7bbb2c97febdb23730dbfaa0ad505e60f86a900d61c3f9d78f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e613b6b2510ce25213350b9abc1f8554f79851a22d6ebbcba73bc3222974f55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "19557563e1846c90bf2cf723201d9a67f59a5115a815815199458c8c235b4b69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2185c494c00f88068d89c7ba58005bee9e77965bbe809dba6a89a8db6f4538e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "453ea6630c0a8fd1339422867f8bf4de3c937fbe536330957e80f18b6fbe6720"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f45ee044824aa5d7fc7d72372d2bcd7ea5c5a9fa94208bddd5c22506b27e610a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05428df05da7552b596f083638695f62d4ea6732c7f6488a150b927e8d4bda4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60f46a963688ab4aa7e70e2fabfa7bd2744f4d6eaba0aa8f7d6992cbcc0f8a6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e524218ef69908f1db5f05b63bcb7c889a29def6da569d1f2d4a881e29dbdc50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1fcb1780603f0a9e0dc9008d9c1cc7e2604ebecd6ba8447cee201be9c510a8a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3ce43f69a107e82d99ef1382e4f62467a26d8def282e91c5468d0199231afd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26af4cd0cf2b17cc953abae4606f4d217f26b2266bf4a4282c0378f083eb64af"
   end
 
   depends_on "go" => :build

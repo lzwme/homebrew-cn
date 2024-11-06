@@ -1,18 +1,18 @@
 class Tbls < Formula
   desc "CI-Friendly tool for document a database"
   homepage "https:github.comk1LoWtbls"
-  url "https:github.comk1LoWtblsarchiverefstagsv1.79.0.tar.gz"
-  sha256 "32d01d26bd4ffedef397ffe30588d43961a134bcae87ff97cfe9a5973be68f84"
+  url "https:github.comk1LoWtblsarchiverefstagsv1.79.1.tar.gz"
+  sha256 "cc42e68e5c3127cf070de36c558a1ad164914def90a3469b76096d12c9d00f12"
   license "MIT"
   head "https:github.comk1LoWtbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a4be8cd03675824a26910747253624b5d7bc4f90e471caf609f4cd58f3e76c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c8f237f7ce7d16a8578c67255a266fdbf7ce5fc083b965e049bdf9b078b0bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f762fd522eb3ee43aec17002b50c5bc11106b57d4884194f8e52d7f8da81fab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef4e4b6eb73ca4ebc67c61edb07c9b45eb2409438c7031d53b824b6281e1c45b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b64b33f97619fee9205c3f36a4cdb35e27bcee55a4e25beeed62da3bc30527b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf3c27af1d045414f9729fbf7e021766d3829929d5797dda2c8a36e8a0e6b482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94c1e3b26702d287e8e9b7cccc15e0acfa3033a0fa69c21e47c19e275fa2f4e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddd69cc86aa24d97db0b3523fa02f3d6098bce28e321a86c54abb09396770542"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "64dd3e7a760dad5448bbbf4a8e645ea8d1e17b561130328a104bcb7dffc97d5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a6ff162c25d350b99a8c9304759230e42ca775cc5d80731392efe298e78c0fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "2b67e4046fda9d7bff7f6fb22856155152e54034ee3d61ba1ae36ecfcb359293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45664b11aca02fb153b6f48a16f6c5e141b4c4172ca50c2dd7093189ed605945"
   end
 
   depends_on "go" => :build

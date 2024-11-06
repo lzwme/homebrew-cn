@@ -11,14 +11,13 @@ class ArmNoneEabiGcc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "7e99a55c38570d03ab85afd156bad3a40153405d8e8427ab4e75e8291a472acb"
-    sha256 arm64_sonoma:   "110e080cf05531cf7d97c9efc1c39b23b2bd2bec38cf536814d94ea6b0103c27"
-    sha256 arm64_ventura:  "7eb18a5b0768335ec37cd994e073e7c7bd8b3e32437c6c8fa8966f4014eecc42"
-    sha256 arm64_monterey: "7feb6f35385f0c35b2b74ef2b735ba1040e4fbf82a3386ffa6e97a92a07cc755"
-    sha256 sonoma:         "7ff497dd7128127e645c9994e914a4fd72feefa12a1010e6f99abaa758467c47"
-    sha256 ventura:        "7e3aa22bd54f564cd5c51a381b3822ceb6b0b3d19a04eceb2040691a26ab581e"
-    sha256 monterey:       "1d4d2b9c82111c5e906ae204ec2905a6e9ca2d06e5a0487e62451b9b65e10676"
-    sha256 x86_64_linux:   "b5bb4cee7a5e1d1a6eb896b40854911a4616e98a0b66b6a8590a9b481a8b308e"
+    rebuild 1
+    sha256 arm64_sequoia: "8e305ee8c0e20c1b564fccfc99323299cc6ffddaf11580d76147652877b9427a"
+    sha256 arm64_sonoma:  "ba090c0e1edf67f4c296b0736f846e91a88fd5f025a36d6c591318335ab3c5d3"
+    sha256 arm64_ventura: "c4781a8220513ae8349f095aafc98c0888c87e4a30ffec6b612db060925ab463"
+    sha256 sonoma:        "fb64dd7fe3f1649ebc44fd3c07cc037c82d5bd4912bc589da57a3aef68038744"
+    sha256 ventura:       "d9c0d10771917347fe966f9cb521ad475680edb26c8e44f2dd69c3b216d50e7d"
+    sha256 x86_64_linux:  "ef2a69f1cd4ece9bed1eabafd85cdae65bd5d7bdf165cd6ca6cbb8e967ca845b"
   end
 
   depends_on "arm-none-eabi-binutils"
@@ -42,6 +41,8 @@ class ArmNoneEabiGcc < Formula
                              "--with-ld=#{Formula["arm-none-eabi-binutils"].bin}/arm-none-eabi-ld",
                              "--enable-languages=c,c++,objc,lto",
                              "--enable-lto",
+                             "--enable-multilib",
+                             "--with-multilib-list=aprofile,rmprofile",
                              "--with-system-zlib",
                              "--with-zstd",
                              *std_configure_args

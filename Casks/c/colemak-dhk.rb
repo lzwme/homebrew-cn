@@ -11,7 +11,10 @@ cask "colemak-dhk" do
   livecheck do
     url "https:raw.githubusercontent.comColemakModsmod-dhmastermacOSColemak%20DHk.bundleContentsInfo.plist"
     strategy :xml do |xml|
-      xml.elements["key[text()='CFBundleVersion']"]&.next_element&.text&.strip
+      version = xml.elements["key[text()='CFBundleVersion']"]&.next_element&.text
+      next if version.blank?
+
+      version.strip
     end
   end
 

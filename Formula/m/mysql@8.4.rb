@@ -75,14 +75,6 @@ class MysqlAT84 < Formula
     if OS.linux?
       # Disable ABI checking
       inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
-
-      # Work around build issue with Protobuf 22+ on Linux
-      # Ref: https:bugs.mysql.combug.php?id=113045
-      # Ref: https:bugs.mysql.combug.php?id=115163
-      inreplace "cmakeprotobuf.cmake" do |s|
-        s.gsub! 'IF(APPLE AND WITH_PROTOBUF STREQUAL "system"', 'IF(WITH_PROTOBUF STREQUAL "system"'
-        s.gsub! ' INCLUDE REGEX "${HOMEBREW_HOME}.*")', ' INCLUDE REGEX "libabsl.*")'
-      end
     elsif DevelopmentTools.clang_build_version <= 1400
       ENV.llvm_clang
       # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
@@ -127,7 +119,7 @@ class MysqlAT84 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix"mysql-test").cd do
+    cd prefix"mysql-test" do
       system ".mysql-test-run.pl", "status", "--vardir=#{buildpath}mysql-test-vardir"
     end
 

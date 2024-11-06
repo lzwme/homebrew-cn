@@ -556,7 +556,7 @@ Homebrew-homebrew-core/Formula/b/bootloadhid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bootterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bore-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/borgbackup.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/borgmatic.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/borgmatic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boringtun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bork.rb, Homebrew/homebrew-core, 1
@@ -5206,7 +5206,6 @@ Homebrew-homebrew-core/Formula/p/py3cairo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pybind11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycodestyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycparser.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pydocstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-ccache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-pip-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-virtualenv.rb, Homebrew/homebrew-core, 1
@@ -7218,6 +7217,7 @@ Homebrew-homebrew-cask/Casks/a/accurics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ace-link.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/acorn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/acreom.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/acronis-true-image-cleanup-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/acronis-true-image.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/active-trader-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activedock.rb, Homebrew/homebrew-cask, 0
@@ -10498,6 +10498,7 @@ Homebrew-homebrew-cask/Casks/font/font-r/font-rationale.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-r/font-ravi-prakash.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-readex-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-recursive-code.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-r/font-recursive-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-recursive-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-recursive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-r/font-red-hat-display.rb, Homebrew/homebrew-cask, 1
@@ -11258,6 +11259,7 @@ Homebrew-homebrew-cask/Casks/h/hyper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hyper@canary.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hyperbackupexplorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hypercal.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hyperconnect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ia-markdown-dictionary.rb, Homebrew/homebrew-cask, 0
@@ -11456,6 +11458,7 @@ Homebrew-homebrew-cask/Casks/j/jellybeansoup-netflix.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/j/jellyfin-media-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jellyfin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jenkins-menu.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jet-pilot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-gateway.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-space.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https:xwmx.github.ionb"
-  url "https:github.comxwmxnbarchiverefstags7.14.5.tar.gz"
-  sha256 "1927cfbc6deb99ba0a4e26f2fd7d50f2e0f05dad41269ba12a6166b5b6976c77"
+  url "https:github.comxwmxnbarchiverefstags7.14.6.tar.gz"
+  sha256 "6915bb40e9416f2ab9751e566ead3167e8470a81fc1200bdd12f504e145e9e4d"
   license "AGPL-3.0-or-later"
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4636e8f586ca8f4aab67ac12636f5e9e45b5a8db06fb90a6b5272ea2ff1fe86a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4636e8f586ca8f4aab67ac12636f5e9e45b5a8db06fb90a6b5272ea2ff1fe86a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4636e8f586ca8f4aab67ac12636f5e9e45b5a8db06fb90a6b5272ea2ff1fe86a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b7d07d393dc0c4092ae3b725304902edc56a67f3af6c9d04443a5f76456af1f"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b7d07d393dc0c4092ae3b725304902edc56a67f3af6c9d04443a5f76456af1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4636e8f586ca8f4aab67ac12636f5e9e45b5a8db06fb90a6b5272ea2ff1fe86a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0cf01c32b0b42019926036d006e2d78d0a4a0a43093b6a8be0d505ba096c698"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0cf01c32b0b42019926036d006e2d78d0a4a0a43093b6a8be0d505ba096c698"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0cf01c32b0b42019926036d006e2d78d0a4a0a43093b6a8be0d505ba096c698"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53aa02c1ddef8179cd9413b4fce4961b8d7058a24e35569136d00e335adf5b75"
+    sha256 cellar: :any_skip_relocation, ventura:       "53aa02c1ddef8179cd9413b4fce4961b8d7058a24e35569136d00e335adf5b75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0cf01c32b0b42019926036d006e2d78d0a4a0a43093b6a8be0d505ba096c698"
   end
 
   depends_on "bat"

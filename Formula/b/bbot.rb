@@ -6,14 +6,15 @@ class Bbot < Formula
   url "https:files.pythonhosted.orgpackages8c3d52618a163cb60c6d8ed53b364c2c984780881a918e6bb19dc6f11247ce58bbot-2.1.2.tar.gz"
   sha256 "896d8983af0effa96ee0203be8b2aa21ca95566123e4e17fef5dc66596c5811f"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8f1acd1b060f80f0782b123733605a28e9eada4588f7214e8dc08a41bd62e79f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5749e518ff1c28cca575520f9b01ef8077040c6e9e317afc6b4c82e958911cf1"
-    sha256 cellar: :any,                 arm64_ventura: "ba0a8fb512bbce052588ac238e1df8210b383e4e04d9f76183c364675d5de0d6"
-    sha256 cellar: :any,                 sonoma:        "837bbb261b7f02da7988f07f79ba7bd7457168d6fccad9fa04a6ea6c4130b6c7"
-    sha256 cellar: :any,                 ventura:       "65145307b0c738f3a3027cbf4ca69469eced4abd1748be5411541cb9290ac677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1316a7a226ba10e3a318faa52d7b755a7c67b78eee3786c3dc984c4b59e114e"
+    sha256 cellar: :any,                 arm64_sequoia: "791ea33599d2df7d7ff75a63ed4d3563637018f0c7e59bfff7557802df11069b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1b3755dcda96b42400aca6e599e82595375317f6ebaf665db6c35943e8166dc"
+    sha256 cellar: :any,                 arm64_ventura: "fae5ccc078a8118dcfef332014abce3eea7a013b6200148b1d2096bd79106c33"
+    sha256 cellar: :any,                 sonoma:        "670b9381304573272f05614e97ba0c5d05004f686ea2600c2efb8f07f4f78f3a"
+    sha256 cellar: :any,                 ventura:       "f41e1a79cd90ce380fd845f086518ae08e3259997af9ccb2405db8f9a4a71612"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "898509365c668fa1859f73344abc896fdb2c8a3ccfb6cb83aed59b73c54c0465"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +43,8 @@ class Bbot < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackagesa1fce81a2e2a6e4247444fe632c8ffaff5c1bcc3adf85ae87d08158724f419fdansible_core-2.15.12.tar.gz"
-    sha256 "5fde82cd3928d9857ad880782c644f27d3168b0f25321d5a8d6befa524aa1818"
+    url "https:files.pythonhosted.orgpackages69dd05343f635cb26df641c8366c5feb868ef5e2b893c625b04a6cb0cf1c7bfeansible_core-2.15.13.tar.gz"
+    sha256 "f542e702ee31fb049732143aeee6b36311ca48b7d13960a0685afffa0d742d7f"
   end
 
   resource "ansible-runner" do
@@ -262,8 +263,8 @@ class Bbot < Formula
   end
 
   resource "tldextract" do
-    url "https:files.pythonhosted.orgpackagesdbedc92a5d6edaafec52f388c2d2946b4664294299cebf52bb1ef9cbc44ae739tldextract-5.1.2.tar.gz"
-    sha256 "c9e17f756f05afb5abac04fe8f766e7e70f9fe387adb1859f0f52408ee060200"
+    url "https:files.pythonhosted.orgpackages4a4feee4bebcbad25a798bf55601d3a4aee52003bebcf9e55fce08b91ca541a9tldextract-5.1.3.tar.gz"
+    sha256 "d43c7284c23f5dc8a42fd0fee2abede2ff74cc622674e4cb07f514ab3330c338"
   end
 
   resource "typing-extensions" do
