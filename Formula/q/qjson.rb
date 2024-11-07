@@ -32,13 +32,13 @@ class Qjson < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <qjson-qt5parser.h>
       int main() {
         QJson::Parser parser;
         return 0;
       }
-    EOS
+    CPP
     flags = ["-I#{Formula["qt@5"].opt_include}"]
     flags += if OS.mac?
       [

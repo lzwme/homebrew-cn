@@ -38,7 +38,7 @@ class Vrpn < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <vrpn_Analog.h>
       int main() {
@@ -50,7 +50,7 @@ class Vrpn < Formula
         }
         return 1;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lvrpn"
     system ".test"

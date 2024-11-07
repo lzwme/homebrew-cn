@@ -1,8 +1,8 @@
 class Dtc < Formula
   desc "Device tree compiler"
   homepage "https://git.kernel.org/pub/scm/utils/dtc/dtc.git"
-  url "https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.7.1.tar.xz"
-  sha256 "398098bac205022b39d3dce5982b98c57f1023f3721a53ebcbb782be4cf7885e"
+  url "https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.7.2.tar.xz"
+  sha256 "92d8ca769805ae1f176204230438fe52808f4e1c7944053c9eec0e649b237539"
   license any_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   head "https://git.kernel.org/pub/scm/utils/dtc/dtc.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Dtc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f29a70e4bd3164a430701c5432fe44b372be1be0518e1899fc729bbb7a188e5f"
-    sha256 cellar: :any,                 arm64_sonoma:   "eb7120f37159256116e64121d375138261b8c72ffe81ef7291a3857d0360b732"
-    sha256 cellar: :any,                 arm64_ventura:  "9416a7697631acefd2250e195b4d5ce86869edd2748bf9410caa9fe81b93cd38"
-    sha256 cellar: :any,                 arm64_monterey: "4e0f9913316c81c08a81fa2a19e5894f96d423dae10ba0aef3f91575d6b6a919"
-    sha256 cellar: :any,                 sonoma:         "22883f387048656f036c886b165f7091caad013cc124380dbdb069da4b53e868"
-    sha256 cellar: :any,                 ventura:        "299d6048d7cf4f916f32c11bf1eb9ef4c0d48213f76080ee9ac2abb42112a049"
-    sha256 cellar: :any,                 monterey:       "c357239b7a902f9d8233eb2bab55cecc6c44e4cffb01961e4335bbfd260cf904"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa403b6f99b65c894707c311af4e5ca1c4defa454543aaed245e229a38a0217c"
+    sha256 cellar: :any,                 arm64_sequoia: "4b99efbc9d6522d1237038a22fc3417fa282d979e94db58a783a4b0ef934a9bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "20ee0f26c62898f07838b78489cad21b358d329f1dd3fa57bd63916e479db084"
+    sha256 cellar: :any,                 arm64_ventura: "0bc0e5c7f5681e49a92833da2abecfbd10d11d7c938cab0c668df1aedec703da"
+    sha256 cellar: :any,                 sonoma:        "e4eb4991109e9112f5edb62b92cec046239268ecedf2de275e21c9be7302016b"
+    sha256 cellar: :any,                 ventura:       "e3702ff36779cb65af9bf30d5ae6be3bf2a03320567edbf0821251abc66c4113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d1c865cba2244acd9bb059eae7fa4377506b64438ce12608f8f87d01e6640"
   end
 
   depends_on "pkg-config" => :build

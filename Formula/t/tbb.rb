@@ -63,7 +63,7 @@ class Tbb < Formula
     assert_path_exists lib"libtbb.a"
     assert_path_exists lib"libtbbmalloc.a"
 
-    (testpath"cores-types.cpp").write <<~EOS
+    (testpath"cores-types.cpp").write <<~CPP
       #include <cstdlib>
       #include <tbbtask_arena.h>
 
@@ -73,13 +73,13 @@ class Tbb < Formula
           const auto type = numa_nodes.front();
           return size != 1 || type != tbb::task_arena::automatic ? EXIT_SUCCESS : EXIT_FAILURE;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "cores-types.cpp", "--std=c++14", "-DTBB_PREVIEW_TASK_ARENA_CONSTRAINTS_EXTENSION=1",
                                       "-L#{lib}", "-ltbb", "-o", "core-types"
     system ".core-types"
 
-    (testpath"sum1-100.cpp").write <<~EOS
+    (testpath"sum1-100.cpp").write <<~CPP
       #include <iostream>
       #include <tbbblocked_range.h>
       #include <tbbparallel_reduce.h>
@@ -102,7 +102,7 @@ class Tbb < Formula
         std::cout << total << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "sum1-100.cpp", "--std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
     assert_equal "5050", shell_output(".sum1-100").chomp

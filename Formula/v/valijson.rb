@@ -19,13 +19,13 @@ class Valijson < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <valijsonschema.hpp>
       #include <valijsonadaptersjsoncpp_adapter.hpp>
       #include <valijsonutilsjsoncpp_utils.hpp>
 
       int main (void) { std::cout << "Hello world"; }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{Formula["jsoncpp"].opt_lib}", "-ljsoncpp", "-o", "test"
     system ".test"
   end

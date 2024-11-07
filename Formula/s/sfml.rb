@@ -59,13 +59,13 @@ class Sfml < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "Time.hpp"
       int main() {
         sf::Time t1 = sf::milliseconds(10);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-I#{include}SFMLSystem", testpath"test.cpp",
            "-L#{lib}", "-lsfml-system", "-o", "test"
     system ".test"

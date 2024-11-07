@@ -13,7 +13,7 @@ class Unxip < Formula
     sha256                               x86_64_linux:  "e8ce3607ab1d6aeb51833fc2862c38e28068d172d00b865a89cd2d305ebf69a3"
   end
 
-  depends_on macos: :monterey
+  depends_on macos: :sonoma
 
   uses_from_macos "swift", since: :sonoma
 

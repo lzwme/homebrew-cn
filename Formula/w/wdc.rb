@@ -38,7 +38,7 @@ class Wdc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <webdavclient.hpp>
       #include <cassert>
       #include <string>
@@ -55,7 +55,7 @@ class Wdc < Formula
         auto check_connection = client->check();
         assert(!check_connection);
       }
-    EOS
+    CPP
     pugixml = Formula["pugixml"]
     curl_args = ["-lcurl"]
     if OS.linux?

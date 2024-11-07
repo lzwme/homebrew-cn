@@ -34,7 +34,7 @@ class Tdlib < Formula
   end
 
   test do
-    (testpath"tdjson_example.cpp").write <<~EOS
+    (testpath"tdjson_example.cpp").write <<~CPP
       #include "tdtelegramtd_json_client.h"
       #include <iostream>
 
@@ -44,7 +44,7 @@ class Tdlib < Formula
         std::cout << "Client created: " << client;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "tdjson_example.cpp", "-L#{lib}", "-ltdjson", "-o", "tdjson_example"
     assert_match "Client created", shell_output(".tdjson_example")

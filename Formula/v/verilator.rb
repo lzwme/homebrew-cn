@@ -52,7 +52,7 @@ class Verilator < Formula
          initial begin $display("Hello World"); $finish; end
       endmodule
     EOS
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "Vtest.h"
       #include "verilated.h"
       int main(int argc, char **argv, char **env) {
@@ -62,7 +62,7 @@ class Verilator < Formula
           delete top;
           exit(0);
       }
-    EOS
+    CPP
     system bin"verilator", "-Wall", "--cc", "test.v", "--exe", "test.cpp"
     cd "obj_dir" do
       system "make", "-j", "-f", "Vtest.mk", "Vtest"

@@ -1,8 +1,8 @@
 class Fossil < Formula
   desc "Distributed software configuration management"
   homepage "https://www.fossil-scm.org/home/"
-  url "https://fossil-scm.org/home/tarball/version-2.24/fossil-src-2.24.tar.gz"
-  sha256 "e6f5a559369bf16baf539e69e6d0cea5a6410efa9a6e7f160c7a4932080413be"
+  url "https://fossil-scm.org/home/tarball/version-2.25/fossil-src-2.25.tar.gz"
+  sha256 "611cfa50d08899eb993a5f475f988b4512366cded82688c906cf913e5191b525"
   license "BSD-2-Clause"
   head "https://www.fossil-scm.org/", using: :fossil
 
@@ -12,14 +12,12 @@ class Fossil < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c642f8df75725e973c7cf30951651ce536baaad12d4dc5c3959920d88078c0b5"
-    sha256 cellar: :any,                 arm64_sonoma:   "57017ccd96af0539aa018cf48940242f0c5b32cd2fd31ce25e7faa047924e644"
-    sha256 cellar: :any,                 arm64_ventura:  "40dc9b1f55904916ebdc854d88dc6573ba919f43e2266d0323a954c1e6d68243"
-    sha256 cellar: :any,                 arm64_monterey: "65798cc7241b7a750814d3b16329a93824ee82a2e71356403ac8b038dfbbd831"
-    sha256 cellar: :any,                 sonoma:         "41c32d18fcbd268a84b05586b899ef809f6a39ee6143e3fc6bb7cd688490ae50"
-    sha256 cellar: :any,                 ventura:        "7228d43abc37ca6b88547e00f8903d60187e3466204fad3f888c911f2bdd16f8"
-    sha256 cellar: :any,                 monterey:       "6f7266e8686f5fff3931c68ec351c09924c291dd650cafdcaeed934c4cf0ad6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ea54ffd2dad970235c48c33224d53069af59082106b1639ea91f99c2ccaff70"
+    sha256 cellar: :any,                 arm64_sequoia: "b4abf6653c8cd939f8171f95453330bc2e4439767f4b78676f653b83f06fe8a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "f881ded2bbd635a81e887032669862624abf09cc9ff55e75f3555d339bf97e6b"
+    sha256 cellar: :any,                 arm64_ventura: "b352c541a28f690ad7372a6fed1705a88c64c96cf916e2d4ff213e622d7a0375"
+    sha256 cellar: :any,                 sonoma:        "f42cb6c3e9b92de4fe063b03e11c0dd4172685674a83fb979d6f3b9844f476a4"
+    sha256 cellar: :any,                 ventura:       "5ac1165bf2d9ab8b48e381366352d75c56dae82c1281f880543a4223ebafaab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b2813cf9265f20b08b1cacc05ab6d884d1c8ed0b16c2b3e3d5577779e637097"
   end
 
   depends_on "openssl@3"

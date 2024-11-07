@@ -36,7 +36,7 @@ class Rttr < Formula
 
   test do
     hello_world = "Hello World"
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <rttrregistration>
 
@@ -52,7 +52,7 @@ class Rttr < Formula
           type::invoke("f", {});
       }
        outputs: "Hello World"
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lrttr_core", "-o", "test"
     assert_match hello_world, shell_output(".test")
   end

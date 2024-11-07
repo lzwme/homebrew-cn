@@ -56,7 +56,7 @@ class Uhdm < Formula
 
   test do
     # Create a minimal .uhdm file and ensure executables work
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cassert>
       #include <stdlib.h>
       #include "uhdmconstant.h"
@@ -78,7 +78,7 @@ class Uhdm < Formula
         assert(vpi_get(vpiSize, vpi_handle) == 12345);
         assert(vpi_get_str(vpiDecompile, vpi_handle) == std::string("decompile"));
       }
-    EOS
+    CPP
 
     flags = shell_output("pkg-config --cflags --libs UHDM").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", "-fPIC", "-std=c++17", *flags

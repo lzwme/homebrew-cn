@@ -33,13 +33,13 @@ class Qtkeychain < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <qt6keychainkeychain.h>
       int main() {
         QKeychain::ReadPasswordJob job(QLatin1String(""));
         return 0;
       }
-    EOS
+    CPP
     flags = ["-I#{Formula["qt"].opt_include}"]
     flags += if OS.mac?
       [

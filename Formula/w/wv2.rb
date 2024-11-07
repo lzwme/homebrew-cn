@@ -59,7 +59,7 @@ class Wv2 < Formula
   test do
     testpath.install resource("testole.doc")
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cstdlib>
       #include <iostream>
       #include <string>
@@ -105,7 +105,7 @@ class Wv2 < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     wv2_flags = shell_output("#{bin}/wv2-config --cflags --libs").chomp.split
     system ENV.cxx, "test.cpp", "-L#{Formula["libgsf"].lib}",

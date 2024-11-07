@@ -202,12 +202,12 @@ class Root < Formula
   end
 
   test do
-    (testpath"test.C").write <<~EOS
+    (testpath"test.C").write <<~C
       #include <iostream>
       void test() {
         std::cout << "Hello, world!" << std::endl;
       }
-    EOS
+    C
 
     # Test ROOT command line mode
     system bin"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
@@ -221,14 +221,14 @@ class Root < Formula
                  shell_output("#{bin}root -l -b -n -q test.C+")
 
     # Test linking
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <TString.h>
       int main() {
         std::cout << TString("Hello, world!") << std::endl;
         return 0;
       }
-    EOS
+    CPP
     flags = %w[cflags libs ldflags].map { |f| "$(#{bin}root-config --#{f})" }
     flags << "-Wl,-rpath,#{lib}root"
     shell_output("$(#{bin}root-config --cxx) test.cpp #{flags.join(" ")}")

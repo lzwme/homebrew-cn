@@ -23,7 +23,7 @@ class TlExpected < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <tlexpected.hpp>
 
@@ -50,7 +50,7 @@ class TlExpected < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test"
     assert_equal <<~EOS, shell_output(".test")
       Result: 2

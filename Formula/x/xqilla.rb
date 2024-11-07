@@ -34,7 +34,7 @@ class Xqilla < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <xqilla/xqilla-simple.hpp>
 
@@ -49,7 +49,7 @@ class Xqilla < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", testpath/"test.cpp", "-o", testpath/"test",
                     "-I#{include}", "-I#{Formula["xerces-c"].opt_include}",
                     "-L#{lib}", "-lxqilla",

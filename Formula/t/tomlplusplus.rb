@@ -28,7 +28,7 @@ class Tomlplusplus < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <toml++toml.hpp>
 
@@ -48,7 +48,7 @@ class Tomlplusplus < Formula
         std::cout << "Title: " << data["title"].value_or("No title") << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs tomlplusplus").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++17", "-o", "test"

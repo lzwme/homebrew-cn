@@ -1,8 +1,8 @@
 class Scip < Formula
   desc "Solver for mixed integer programming and mixed integer nonlinear programming"
   homepage "https://scipopt.org"
-  url "https://scipopt.org/download/release/scip-9.1.1.tgz"
-  sha256 "fd68a7ecc3c9086a68ef7ed0421381e811130f4c7dcb2c13ae69744577abd5cf"
+  url "https://scipopt.org/download/release/scip-9.2.0.tgz"
+  sha256 "f2a1d568ba0801742df062df17b5a1ced9aec8647057050899e9017807280ff3"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c423a30bee48e5284391a79873d16b96ca882db083453fb6447c580fc43b56d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8266df90b7d371ff4c19e22e86889bc1077557c2614321a519df874da2e8d3e2"
-    sha256 cellar: :any,                 arm64_ventura: "d9110e241635f0f7931bcc420a2609a986f2dc75b047bed89d38410de169f781"
-    sha256 cellar: :any,                 sonoma:        "d5c77cc3b140064843a11d9b46a8eafdc632f442faac6ba9949ec4d3531d2906"
-    sha256 cellar: :any,                 ventura:       "041816294d0ef034027386f9e7f947c60fb3d5714b7499350af605750ef8c71e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe8b303f263ba6898325423fdd354a00d4d565652f2b51b4a84eea7f3ecee0be"
+    sha256 cellar: :any,                 arm64_sequoia: "072edd52f6ce89e7fc81d084916be719688a866c1dd31a2f9ede2a64cb084ae4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1399b0eff655005f402a11adcc096347374729aadd5ad9d7ce295a0fcaae960"
+    sha256 cellar: :any,                 arm64_ventura: "6621bb96a6bf7f511dcbe740811708df215f64cc88f20ed730136c462186510f"
+    sha256 cellar: :any,                 sonoma:        "9ee388681826cbb9dd84fcf0c4a74c2724955d80ce6f2b6cf59d05a3e8d55dd2"
+    sha256 cellar: :any,                 ventura:       "5e33bec282deb0b3386d8795620dffd1da18ea626867084029f28d30e5e4d59c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1515635c7bb25f232df54d00ebe6d247775f6d23a470adf000cc71d01cfd3d69"
   end
 
   depends_on "cmake" => :build

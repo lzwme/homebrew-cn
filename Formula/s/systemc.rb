@@ -28,13 +28,13 @@ class Systemc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "systemc.h"
 
       int sc_main(int argc, char *argv[]) {
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=gnu++17", "-L#{lib}", "-lsystemc", "test.cpp"
     system ".a.out"
   end

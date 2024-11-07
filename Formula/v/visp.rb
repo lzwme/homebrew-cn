@@ -129,7 +129,7 @@ class Visp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <visp3corevpConfig.h>
       #include <iostream>
       int main()
@@ -138,7 +138,7 @@ class Visp < Formula
                 "." << VISP_VERSION_PATCH << std::endl;
         return 0;
       }
-    EOS
+    CPP
     pkg_config_flags = shell_output("pkg-config --cflags --libs visp").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", *pkg_config_flags
     assert_equal version.to_s, shell_output(".test").chomp

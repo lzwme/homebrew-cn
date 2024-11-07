@@ -1,27 +1,18 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https:lima-vm.io"
+  url "https:github.comlima-vmlimaarchiverefstagsv1.0.0.tar.gz"
+  sha256 "49dd844715f99e86a80e13e1f37ab55e11a775aa68c099bce4f4cbf5666260c4"
   license "Apache-2.0"
   head "https:github.comlima-vmlima.git", branch: "master"
 
-  stable do
-    url "https:github.comlima-vmlimaarchiverefstagsv0.23.2.tar.gz"
-    sha256 "fc21295f78d717efc921f8f6d1ec22f64da82bfe685d0d2d505aee76c53da1ff"
-
-    # The head no longer needs QEMU on macOS hosts
-    # https:github.comlima-vmlimacommitdf05b810183ce999e36933f0dba7c25fa20245c
-    depends_on "qemu"
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7e9eb7131cad0f52a28e731f761ec07e8c1253677b5cd93a4eed7a51a1409d91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be8e2b92961eca2f862f1a994dbef367e86d36705a705ebfa16d21c7f1366c35"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4bd7ae7921fbd9878b421ac8234e69ce04bbb73db04152c87a17514736dd032"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e1ad1c6e49a36e4a983070bec6c329b8dfd53713d301b5a44fe3781f9db1dba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c2e69a572afa3a3cf895643ede988c87dc0622dae4aebc539d5564d820845841"
-    sha256 cellar: :any_skip_relocation, ventura:        "08d6dc709086c26b7082ceb2303c96f4141ef27244e997e1944235d242fc57fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca6ccd5bb69fe6616c813562e8cfe73f3009f78e83ae67ced098305442450609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "741e9c7345e15f04b8feaf5034868f00fc3ff792226c485ab2e7679803411e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f77a81bfe0ae3f92c8b43c819ea09051f8176f32fcb16f53828ceb925443a788"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d365371f6f33cd27d66ea4a310967cfd129e23be822f70349a02b6d55979697"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa4313273644e5abadb1ce3e98925be9a0338578ed3debc29a1846e2a8caf990"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e6a2db42dddd644e8eb869ad7e0ed7ff021cd97008f92c4742fc4c92d7cd7c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "722b95f10917891d036d9194d40fea2454029071327ca314397faa72f09541d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11d3a4c3c385ed52581acc3d90db5ce047667b49eb90d921a4adf1bbdbff329a"
   end
 
   depends_on "go" => :build

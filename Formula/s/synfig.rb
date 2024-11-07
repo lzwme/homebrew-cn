@@ -81,7 +81,7 @@ class Synfig < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stddef.h>
       #include <synfigversion.h>
       int main(int argc, char *argv[])
@@ -89,7 +89,7 @@ class Synfig < Formula
         const char *version = synfig::get_version();
         return 0;
       }
-    EOS
+    CPP
 
     ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg@6"].opt_lib"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libavcodec synfig").chomp.split

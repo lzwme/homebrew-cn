@@ -34,7 +34,7 @@ class Rlog < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdio.h>
       #include <unistd.h>
       #include <rlogrlog.h>
@@ -52,7 +52,7 @@ class Rlog < Formula
           if (ans != 42) rWarning("ans = %i, expecting 42", ans);
           rError("I'm sorry %s, I can't do that.", name);
       }
-    EOS
+    CPP
 
     expected_outputs = [
       "(test.cpp:13) num = 299792458",

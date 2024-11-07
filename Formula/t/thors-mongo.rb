@@ -40,7 +40,7 @@ class ThorsMongo < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "ThorSerializeJsonThor.h"
       #include "ThorSerializeSerUtil.h"
       #include <sstream>
@@ -71,7 +71,7 @@ class ThorsMongo < Formula
           std::cerr << "OK";
           return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++20", "test.cpp", "-o", "test",
            "-I#{include}", "-L#{lib}", "-lThorSerialize", "-lThorsLogging", "-ldl"
     system ".test"

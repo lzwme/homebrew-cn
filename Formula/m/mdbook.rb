@@ -1,20 +1,18 @@
 class Mdbook < Formula
   desc "Create modern online books from Markdown files"
   homepage "https:rust-lang.github.iomdBook"
-  url "https:github.comrust-langmdBookarchiverefstagsv0.4.40.tar.gz"
-  sha256 "550da7ff02ef62c60db6e813b6dbae65b9ed3d491186ea74929536feaceea94b"
+  url "https:github.comrust-langmdBookarchiverefstagsv0.4.41.tar.gz"
+  sha256 "9a38dbb6c28d5d58c34644074e113b0b80cea89e39bba70a126ee69a2e5f477c"
   license "MPL-2.0"
   head "https:github.comrust-langmdBook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c307bedaa0b8a8da66de509090a253265013bf0941ff880b968ac4949b9f301"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de768491d1722ae1216aa8762d97e918b92574f145726d4165e6f1bd6e591137"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1775bcc2b1ffa7804ba02fc1e0cc89f0cc4ac5ebfd94feb862bac64651c63a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a15f906316765f4c739c35a789d183e62e8a2c5224e5b6b53d3ea54bd413709d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e26e5f383147047c1cbf6835c881780182807432d3e1a205fecd832d01e30ba2"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7c941a4bebd6d86740e4efb0cc608cf47ec61aa712494e82089eeac37c79ba4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c54a28f0ca20468ef39150831cae3e031754c7b9bbcb8f038414c647e24eb3ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "830dc6a4a5448d5c1305adc27012f36474f5517393400aa7d7b4c15c191f18a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d40690b0930022da1e51d47ccaffa45e81489d9901d3f14a38e03633cb11ef3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae9674ac4cf2aa94b596a7ed8bee6ec15f1ee07203c3ef9252fd716289f1447a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e68d5854802c8c7a26a3154cd3ed844e40167d5ed1ad053c390c75ad12b40d92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a721e90f3c4a4ec3ad64be333becbe93e88f97350ff05b5636c55661c72e4f4d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2375e1d82400c13285326418427c8da807365a028681bbc2dcef04fdf192609"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fecaf3da5fccb410185dafe00dfaeba127a318cc182765b500da9ff1ba60cc91"
   end
 
   depends_on "rust" => :build

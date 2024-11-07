@@ -29,7 +29,7 @@ class Tlx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <tlxmathaggregate.hpp>
       int main()
       {
@@ -39,7 +39,7 @@ class Tlx < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-ltlx", "-o", "test", "-std=c++17"
     system ".test"
   end

@@ -98,13 +98,13 @@ class SpiceGtk < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <spice-client.h>
       #include <spice-client-gtk.h>
       int main() {
         return spice_session_new() ? 0 : 1;
       }
-    EOS
+    CPP
     ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c"].lib}/pkgconfig"
     system ENV.cc, "test.cpp",
                    *shell_output("pkg-config --cflags --libs spice-client-gtk-3.0 ").chomp.split,

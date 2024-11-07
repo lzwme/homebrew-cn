@@ -44,7 +44,7 @@ class Rtmidi < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "RtMidi.h"
       int main(int argc, char **argv, char **env) {
         RtMidiIn midiin;
@@ -52,7 +52,7 @@ class Rtmidi < Formula
         std::cout << "Input ports: " << midiin.getPortCount() << "\\n"
                   << "Output ports: " << midiout.getPortCount() << "\\n";
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11", "-I#{include}rtmidi", "-L#{lib}", "-lrtmidi"
     # Only run the test on macOS since ALSA initialization errors on Linux CI.
     # ALSA lib seq_hw.c:466:(snd_seq_hw_open) open devsndseq failed: No such file or directory

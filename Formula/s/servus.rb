@@ -40,7 +40,7 @@ class Servus < Formula
 
   test do
     # Embed "serializeable" test from the servus 1.5.0 source
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #define BOOST_TEST_MODULE servus_serializable
       #include <boosttestunit_test.hpp>
 
@@ -129,7 +129,7 @@ class Servus < Formula
            default toJson (unimplemented)
           BOOST_CHECK_THROW( obj.toJSON(), std::runtime_error );
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lServus", "-DBOOST_TEST_DYN_LINK",
                     "-L#{Formula["boost"].opt_lib}", "-lboost_unit_test_framework",
                     "-std=gnu++11", "-o", "test"

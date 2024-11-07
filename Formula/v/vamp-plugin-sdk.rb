@@ -45,7 +45,7 @@ class VampPluginSdk < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "vamp-sdkPlugin.h"
       #include <vamp-sdkPluginAdapter.h>
 
@@ -53,7 +53,7 @@ class VampPluginSdk < Formula
 
       const VampPluginDescriptor *
       vampGetPluginDescriptor(unsigned int version, unsigned int index) { return NULL; }
-    EOS
+    CPP
 
     flags = if OS.mac?
       ["-Wl,-dylib"]

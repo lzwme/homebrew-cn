@@ -18,7 +18,7 @@ class Xsimd < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <vector>
       #include <type_traits>
 
@@ -42,7 +42,7 @@ class Xsimd < Formula
         if(!std::is_same<mock_align, unaligned_mode>::value) abort();
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-o", "test"
     system ".test"

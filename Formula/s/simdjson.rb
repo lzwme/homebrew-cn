@@ -32,7 +32,7 @@ class Simdjson < Formula
 
   test do
     (testpath"test.json").write "{\"name\":\"Homebrew\",\"isNull\":null}"
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <iostream>
       #include <simdjson.h>
       int main(void) {
@@ -40,7 +40,7 @@ class Simdjson < Formula
         simdjson::dom::element json = parser.load("test.json");
         std::cout << json["name"] << std::endl;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11",
            "-I#{include}", "-L#{lib}", "-lsimdjson", "-o", "test"

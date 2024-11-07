@@ -36,7 +36,7 @@ class Wiiuse < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <wiiuse.h>
       int main()
       {
@@ -45,7 +45,7 @@ class Wiiuse < Formula
         wiiuse_cleanup(wiimotes, wiimoteCount);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-l", "wiiuse", "-o", "test"
     system ".test"
   end

@@ -39,7 +39,7 @@ class SimpleAmqpClient < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <SimpleAmqpClientSimpleAmqpClient.h>
       #include <string>
       int main() {
@@ -50,7 +50,7 @@ class SimpleAmqpClient < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lSimpleAmqpClient", "-o", "test"
     system ".test"
   end

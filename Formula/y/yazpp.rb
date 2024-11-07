@@ -35,7 +35,7 @@ class Yazpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <yazpp/zoom.h>
 
@@ -52,7 +52,7 @@ class Yazpp < Formula
         }
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}/src",
                     "-L#{lib}", "-lzoompp", "-o", "test"

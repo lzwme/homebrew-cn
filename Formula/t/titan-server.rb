@@ -25,7 +25,7 @@ class TitanServer < Formula
   # community has forked the project to janusgraph
   # https:github.comthinkaureliustitanissues1393
   # https:github.comthinkaureliustitanissues1392
-  disable! date: "2025-01-01", because: :unmaintained
+  disable! date: "2025-01-01", because: :does_not_build
 
   on_linux do
     depends_on "openjdk"

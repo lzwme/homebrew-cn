@@ -1,18 +1,18 @@
 class Lychee < Formula
   desc "Fast, async, resource-friendly link checker"
   homepage "https:lychee.cli.rs"
-  url "https:github.comlycheeverselycheearchiverefstagslychee-v0.16.1.tar.gz"
-  sha256 "ee61627083c80459e0f6a48c11cd910711c86b744a294b6a00f7072dffa1b04b"
+  url "https:github.comlycheeverselycheearchiverefstagslychee-v0.17.0.tar.gz"
+  sha256 "78b006105363ce0e989401124fd8bcb0b60d697db2cb29c71f2cdd7f5179c91c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comlycheeverselychee.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "49f4fb0ea2630a4462cd308fd07159871134b617d04ee4fe8b822f1b3ab833f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1232583501b21c4ee9315dd68a64a4d4bae16c10837981a1e8f0b6ea45f79399"
-    sha256 cellar: :any,                 arm64_ventura: "a1023e1168f68db6715051a1c16246fac45c009d9509b24e2f3990a4ac3134d2"
-    sha256 cellar: :any,                 sonoma:        "134df392c7219a9ef99e64d1263e483b6677d44f8180c9cb6ce4701e2936b9d1"
-    sha256 cellar: :any,                 ventura:       "cda14df0d4a466aa06feef91dc35f5fde6df916a7db24ea0bf7809dfa07b2fd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d261886646d80ed00a9ba4d5f72154d5c104e40489b1b3c16f6c112bfe7908fd"
+    sha256 cellar: :any,                 arm64_sequoia: "fd08ad63d8bf01cad1bf845bda209397218872d7f452873422e8eb031927276f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e29b8c7cefb1bd156456181e715ee8e330b2fae0e62908c0e3fd8a4a74637ca5"
+    sha256 cellar: :any,                 arm64_ventura: "4be250f24fc411d3ebb8fd19464cc6e9efd863b38b2891614f58b1ca73e6c8f8"
+    sha256 cellar: :any,                 sonoma:        "ad87802e428804db30d5fefb56653256b2df60e20004f53eec60b283a838c290"
+    sha256 cellar: :any,                 ventura:       "c9dab3e8116a866e63a32389841e2095ae8dd0dcb9511c49eb8057eda026db71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a77915e38f5ecadbd1c52dc78f03233b0e4fbe0c0b9c665a989f5b8be79a939e"
   end
 
   depends_on "rust" => :build

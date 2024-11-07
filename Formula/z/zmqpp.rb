@@ -37,13 +37,13 @@ class Zmqpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <zmqppzmqpp.hpp>
       int main() {
         zmqpp::frame frame;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lzmqpp", "-o", "test", "-std=c++11"
     system ".test"
   end

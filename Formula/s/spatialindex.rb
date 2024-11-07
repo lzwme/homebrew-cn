@@ -34,7 +34,7 @@ class Spatialindex < Formula
   test do
     # write out a small program which inserts a fixed box into an rtree
     # and verifies that it can query it
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <spatialindexSpatialIndex.h>
 
       using namespace std;
@@ -80,7 +80,7 @@ class Spatialindex < Formula
 
           return (q_vis.matches.size() == 1) ? 0 : 1;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lspatialindex", "-o", "test"
     system ".test"
   end

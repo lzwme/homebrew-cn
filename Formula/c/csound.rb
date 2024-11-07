@@ -29,11 +29,12 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a05d1bd227660cc14892c69e3c39b118a13f07489d95f523a829414002983b3e"
-    sha256 arm64_sonoma:  "7f34328910d03145c44651cb1adff7d7e8c69d18583d16479ac034dc59af98bf"
-    sha256 arm64_ventura: "2cc3d217bf0460beb295df5a74ea9174de44ac555e33600dde92889e70f775d4"
-    sha256 sonoma:        "c8a42e87b28da8e8805cd4ab3d4cfcc95fc9d4bb08a0355afc82390f9f4cec94"
-    sha256 ventura:       "3b495d0ecf546e4d645b5f6aff257dc4b3f183cad5a58be7a524b1a15eb93d79"
+    rebuild 1
+    sha256 arm64_sequoia: "c7b3678be39fa2ada7ebad51325aed51d21b7b5eb523843c4bfe8d95d5dc2ee0"
+    sha256 arm64_sonoma:  "0850bed4c09a449a302d64a0fd2e9276874c71fb0623a8c32d85097b7c31d6fd"
+    sha256 arm64_ventura: "8e12ae6a32c9204a1809e8bc07a8b6b53d5f38351f62a5993374a70b00aadeb8"
+    sha256 sonoma:        "b1e9791dad3293beb6f67eac9f5d616ec6063cb5b22108a71de9dd0ae08ccdc7"
+    sha256 ventura:       "a76a9a9f213cb160632eb024ba95858ff5989e621c95fe7b70b3a280d8df4384"
   end
 
   depends_on "asio" => :build
@@ -57,7 +58,7 @@ class Csound < Formula
   depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "portmidi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "stk"
   depends_on "wiiuse"
 
@@ -97,7 +98,7 @@ class Csound < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install

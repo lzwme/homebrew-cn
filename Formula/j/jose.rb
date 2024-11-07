@@ -6,6 +6,7 @@ class Jose < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "2bc631abff8a3ef0688dad54e842ea31860feb6c6b4b4ea01fcc3a22044dd16d"
     sha256 cellar: :any, arm64_sonoma:   "1af1eb0f697cd897bbedac36674670646b82cae369c752f4718500f5f1f324ef"
     sha256 cellar: :any, arm64_ventura:  "77b2d20d1a63a7f669930cdb9d8804722ed939a10efa9634c1f7635e61643634"
     sha256 cellar: :any, arm64_monterey: "4e01f021271f496483c1ce088c3c717eca63cee78498a2ecc778ca75e65f76bd"
@@ -22,6 +23,13 @@ class Jose < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
+
+  # Apply upstream PR to fix build on macOS to use `-exported_symbol`
+  # PR ref: https:github.comlatchsetjosepull163
+  patch do
+    url "https:github.comlatchsetjosecommit228d6782235238ed0d03eb2443caf530b377ffd5.patch?full_index=1"
+    sha256 "14e147b1541a915badefa46535999c17fe3f04d2ba4754775b928e4d5e97ce1a"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

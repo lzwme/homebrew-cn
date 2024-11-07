@@ -371,7 +371,7 @@ class QtAT5 < Formula
       SOURCES  += main.cpp
     EOS
 
-    (testpath"main.cpp").write <<~EOS
+    (testpath"main.cpp").write <<~CPP
       #include <QCoreApplication>
       #include <QDebug>
 
@@ -381,7 +381,7 @@ class QtAT5 < Formula
         qDebug() << "Hello World!";
         return 0;
       }
-    EOS
+    CPP
 
     # Work around "error: no member named 'signbit' in the global namespace"
     ENV.delete "CPATH"

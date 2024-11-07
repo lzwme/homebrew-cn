@@ -19,7 +19,7 @@ class RapidfuzzCpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <rapidfuzzfuzz.hpp>
       #include <string>
       #include <iostream>
@@ -30,7 +30,7 @@ class RapidfuzzCpp < Formula
           std::string b = "abab";
           std::cout << rapidfuzz::fuzz::ratio(a, b) << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-o", "test"
     assert_equal "50", shell_output(".test").strip
   end

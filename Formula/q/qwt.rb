@@ -54,13 +54,13 @@ class Qwt < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <qwt_plot_curve.h>
       int main() {
         QwtPlotCurve *curve1 = new QwtPlotCurve("Curve 1");
         return (curve1 == NULL);
       }
-    EOS
+    CPP
     qt = Formula["qt"]
     if OS.mac?
       system ENV.cxx, "test.cpp", "-o", "out",

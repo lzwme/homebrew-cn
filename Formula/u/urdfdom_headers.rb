@@ -27,7 +27,7 @@ class UrdfdomHeaders < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <urdf_modelpose.h>
       int main() {
         double quat[4];
@@ -35,7 +35,7 @@ class UrdfdomHeaders < Formula
         rot.getQuaternion(quat[0], quat[1], quat[2], quat[3]);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, shell_output("pkg-config --cflags urdfdom_headers").chomp, "test.cpp", "-std=c++11", "-o", "test"
     system ".test"
   end

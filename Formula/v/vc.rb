@@ -26,7 +26,7 @@ class Vc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <VcVc>
 
       using Vc::float_v;
@@ -39,7 +39,7 @@ class Vc < Formula
        int main(){
          return 0;
        }
-    EOS
+    CPP
     extra_flags = []
     extra_flags += ["-lm", "-lstdc++"] unless OS.mac?
     system ENV.cc, "test.cpp", "-std=c++11", "-L#{lib}", "-lVc", *extra_flags, "-o", "test"

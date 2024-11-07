@@ -7,6 +7,7 @@ class Comby < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "02e4b812a3a7196017189b30aba83d058f72fbe37107c554c517538eeb153fee"
     sha256 cellar: :any, arm64_sonoma:   "6547d31a4235741700836ce54b0fdf64bbc0ca2ac42e31ce003c1d86bef079f0"
     sha256 cellar: :any, arm64_ventura:  "0c2cc4ae48e83842879b731399da84e9eb6891bf2c62a10087250db18c257a38"
     sha256 cellar: :any, arm64_monterey: "c5e30b40a5bfca4e550da1ff541deeb4a467eef42298de85c72110e373b68c11"
@@ -37,6 +38,8 @@ class Comby < Formula
     ENV["OPAMYES"] = "1"
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
+    # Workaround for https:github.comcomby-toolscombyissues381
+    system "opam", "exec", "--", "opam", "pin", "add", "tar-unix", "2.6.0"
     system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
 
     ENV.prepend_path "LIBRARY_PATH", opamroot"defaultlibhack_parallel" # for -lhp
@@ -46,27 +49,25 @@ class Comby < Formula
   end
 
   test do
-    expect = <<~EXPECT
-      --- devnull
-      +++ devnull
+    expect = <<~DIFF
+      --- test.c
+      +++ test.c
       @@ -1,3 +1,3 @@
        int main(void) {
       -  printf("hello world!");
       +  printf("comby, hello!");
        }
-    EXPECT
+    DIFF
 
-    input = <<~INPUT
-      EOF
+    (testpath"test.c").write <<~C
       int main(void) {
         printf("hello world!");
       }
-      EOF
-    INPUT
+    C
 
     match = 'printf(":[1] :[2]!")'
     rewrite = 'printf("comby, :[1]!")'
 
-    assert_equal expect, shell_output("#{bin}comby '#{match}' '#{rewrite}' .c -stdin -diff << #{input}")
+    assert_equal expect, shell_output("#{bin}comby '#{match}' '#{rewrite}' test.c -diff")
   end
 end

@@ -49,7 +49,7 @@ class Xgboost < Formula
   test do
     cp_r (pkgshare"demo"), testpath
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <xgboostc_api.h>
       #include <iostream>
 
@@ -97,7 +97,7 @@ class Xgboost < Formula
         std::cout << "Test completed successfully" << std::endl;
         return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lxgboost", "-o", "test"
     system ".test"

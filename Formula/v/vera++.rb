@@ -26,7 +26,7 @@ class Veraxx < Formula
   # luabind resource tarball is no longer available so does not build.
   # Also uses unmaintainedEOL versions of `boost` and `lua` as resources.
   # Last release on 2015-01-22
-  deprecate! date: "2024-10-09", because: :unmaintained
+  deprecate! date: "2024-10-09", because: :does_not_build
 
   depends_on "cmake" => :build
 

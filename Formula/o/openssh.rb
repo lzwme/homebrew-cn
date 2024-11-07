@@ -13,12 +13,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2ba0e61df6c04f777659a421a6937411cd95ef2c035316d9295191d3bc68c244"
-    sha256 arm64_sonoma:  "699ae8ec8c7b253b48ffb936f7ecffc34a4a9d5bd776711f045c9f764f982ffd"
-    sha256 arm64_ventura: "66d29a2929b68f63cfd37238299a4fe6553ae0e49379aa75492b48da773e3958"
-    sha256 sonoma:        "57286063c3fc2873ff7ae968457632e064cf6c6616fd73b61c9302f5a414f455"
-    sha256 ventura:       "97383292a3b259beba9375cc7ffdf193f81c40c70299793aee6fd4bcac753ce0"
-    sha256 x86_64_linux:  "dcc2214edc8aff762f7ffa125767e4636c332c0c533b7bac0af13adc4bc8a9b5"
+    rebuild 1
+    sha256 arm64_sequoia: "d7941094cacc59b5c2ab1d64343751205ef31b7f9517b19bb2a128d6c3583226"
+    sha256 arm64_sonoma:  "6305fa9baff789a76925f68d983a7b402f2db8b2652baab7775a97477975ff53"
+    sha256 arm64_ventura: "f8245cffebafb4f31939f333eb903fcf7db285bcf6c0257e84644384602d827a"
+    sha256 sonoma:        "ab855f72ee7b1443d30256c6098c7f8593a6779c7ae6e9e2e12f6082c7406920"
+    sha256 ventura:       "6c763c4b4f845df7bb4ee967a85108835fc6382920b6461c3487546f4fab60a7"
+    sha256 x86_64_linux:  "84eb498f82816692da68f55d9bbc02bf8d7fb575f40c7efa008b6e9ac0738079"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -100,9 +101,18 @@ class Openssh < Formula
 
     buildpath.install resource("com.openssh.sshd.sb")
     (etc"ssh").install "com.openssh.sshd.sb" => "org.openssh.sshd.sb"
+
+    # Don't hardcode Cellar paths in configuration files
+    inreplace etc"sshsshd_config", prefix, opt_prefix
   end
 
   test do
+    (etc"ssh").find do |pn|
+      next unless pn.file?
+
+      refute_match HOMEBREW_CELLAR.to_s, pn.read
+    end
+
     assert_match "OpenSSH_", shell_output("#{bin}ssh -V 2>&1")
 
     port = free_port

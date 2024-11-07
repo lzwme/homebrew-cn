@@ -3,8 +3,8 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https:unioslo.github.iozabbix-cli"
-  url "https:github.comunioslozabbix-cliarchiverefstags3.2.0.tar.gz"
-  sha256 "f2c829d11cddeb73d0166d7e89829602c339059725c06deda97a349ff58816c7"
+  url "https:github.comunioslozabbix-cliarchiverefstags3.3.0.tar.gz"
+  sha256 "962e5e36698d06ab7d71729f234d0b782c01671545f24e81a01ecf9cc71d7d30"
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
@@ -14,12 +14,12 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad3f2f991d526166096b84a57f9764e4584b87e3132ec1b80396f3bf2bbfcb81"
-    sha256 cellar: :any,                 arm64_sonoma:  "6938740ee0077a5119967f0775d0c41a95dbeb892652ff1428e5be47fee90f55"
-    sha256 cellar: :any,                 arm64_ventura: "09d5addbd6ab98d16972748ea0c4dc1449fbe7dae988e69b22f02add1955f580"
-    sha256 cellar: :any,                 sonoma:        "aa3408dfdfb247df5b2044e7b7da6be167862142217ecbbf332b0ab9816967fe"
-    sha256 cellar: :any,                 ventura:       "25e659fd0afb6f03049e203199e0e2941eb6fee5f18fba7996faeead1a7d74f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f92dd3185c347c145c922e9ee24225b32c0278025da34f9324cb6cbb658ea58"
+    sha256 cellar: :any,                 arm64_sequoia: "2c51f30d0c34eb47552cfcbd42e1c4efcf1d8b93e7401ee74571a54882d5717c"
+    sha256 cellar: :any,                 arm64_sonoma:  "55966306d87544a4a16b618d48c34f906f788b4e0a0a7a7f28edf04f59f47f38"
+    sha256 cellar: :any,                 arm64_ventura: "1c96ddc2da8cd2f4fb21e3ea461905247a43fe948f69ea780cb8b015cd5cbe49"
+    sha256 cellar: :any,                 sonoma:        "819169619fb1a87d887c092e68501d9c74bdc78ba952b918782b457d75173e55"
+    sha256 cellar: :any,                 ventura:       "b72451841695cc761549b5a9b657fb07d1713628b471ab89cf893922d9ba299d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "722df867b9871d7d429e8c2dfad41742f2b679e48780ac90d549ba0c80a3f1a3"
   end
 
   depends_on "rust" => :build # for pydantic_core

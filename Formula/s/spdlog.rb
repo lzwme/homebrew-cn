@@ -49,7 +49,7 @@ class Spdlog < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "spdlogsinksbasic_file_sink.h"
       #include <iostream>
       #include <memory>
@@ -65,7 +65,7 @@ class Spdlog < Formula
           return 1;
         }
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{Formula["fmt"].opt_lib}", "-lfmt", "-o", "test"
     system ".test"

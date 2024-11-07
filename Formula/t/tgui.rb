@@ -39,7 +39,7 @@ class Tgui < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <TGUITGUI.hpp>
       #include <TGUIBackendSFML-Graphics.hpp>
       int main()
@@ -48,7 +48,7 @@ class Tgui < Formula
         text.setString("Hello World");
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}",
       "-L#{lib}", "-L#{Formula["sfml"].opt_lib}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",

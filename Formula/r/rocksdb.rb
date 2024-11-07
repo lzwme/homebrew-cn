@@ -60,7 +60,7 @@ class Rocksdb < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <assert.h>
       #include <rocksdboptions.h>
       #include <rocksdbmemtablerep.h>
@@ -69,7 +69,7 @@ class Rocksdb < Formula
         Options options;
         return 0;
       }
-    EOS
+    CPP
 
     extra_args = []
     if OS.mac?

@@ -1,18 +1,18 @@
 class Papilo < Formula
   desc "Parallel Presolve for Integer and Linear Optimization"
   homepage "https:www.scipopt.org"
-  url "https:github.comscipoptpapiloarchiverefstagsv2.3.1.tar.gz"
-  sha256 "7491ebec89480b124e24c74e05d5fd4bb289ed7ada01f218145734ad65ec3fd8"
+  url "https:github.comscipoptpapiloarchiverefstagsv2.4.0.tar.gz"
+  sha256 "280d5472563cdb9f1e7e69f55a580522f7bbb2b2789aa14de56e80d707291421"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a5eebdb6be06d3aeca007dbdb30692b21aaa6f298531a194d783ec5a48f2e23d"
-    sha256 cellar: :any,                 arm64_sonoma:  "426c9cbda9247dbc835d9ffb5d4e282425877e697a6b8677aa2baf3cbe526afb"
-    sha256 cellar: :any,                 arm64_ventura: "2b38a6f936a7a09ab0b30a5363cca533f286776dd88cbca5669695e88e6ac755"
-    sha256 cellar: :any,                 sonoma:        "f4cc5a507afd948db0978cfbf0ae492291353c57a09aac181bed5c7707e2d1da"
-    sha256 cellar: :any,                 ventura:       "78e9849c6b3d9e3756739f8eca4ba098a1d179360c45b12d2a2fac400c5192c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f7b8bb39a67a66786a9eca8cb64a25fe72ff3e6b3315e0dc5f14abc736763b"
+    sha256 cellar: :any,                 arm64_sequoia: "f181f07411bcef5669f4c4d2a769b9a3157deb2a8d428d5e8d4c3a46415a4ee1"
+    sha256 cellar: :any,                 arm64_sonoma:  "613fe9ccc6da2d5d13414c1d38e412c62de3edbd61c679f01228746ea0df00f6"
+    sha256 cellar: :any,                 arm64_ventura: "8424cf40fbfc95dbfaa446c0c7eb52f75761361f88fb550a06316ec822753260"
+    sha256 cellar: :any,                 sonoma:        "460dbc5c2b135468875f927bac6d28d6cbd140c80b7c47a4189260140ac648c6"
+    sha256 cellar: :any,                 ventura:       "2c05102d8924401362fea746b4de06c4e1fe7da5ec40561ca919d8deff2aee79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e7385021b38540c3df6c929407058ae895bb82e53dc417d9ba68f679347a416"
   end
 
   depends_on "cmake" => :build

@@ -34,7 +34,7 @@ class Voroxx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include "voro++.hh"
       double rnd() { return double(rand())/RAND_MAX; }
       int main() {
@@ -43,7 +43,7 @@ class Voroxx < Formula
         if (fabs(con.sum_cell_volumes() - 1) > 1.e-8) abort();
         con.draw_cells_gnuplot("test.gnu");
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-I#{include}/voro++", "-L#{lib}",
                     "-lvoro++"
     system "./a.out"

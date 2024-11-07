@@ -25,7 +25,7 @@ class RangeV3 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <rangev3all.hpp>
       #include <iostream>
       #include <string>
@@ -35,7 +35,7 @@ class RangeV3 < Formula
         ranges::for_each( s, [](char c){ std::cout << c << " "; });
         std::cout << std::endl;
       }
-    EOS
+    CPP
     stdlib_ldflag = OS.mac? ? "-lc++" : "-lstdc++"
     flags = [stdlib_ldflag]
     flags << "-stdlib=libc++" if OS.mac?

@@ -67,7 +67,7 @@ class Torchvision < Formula
   test do
     # test that C++ libraries are available
     # See also https:github.compytorchvisionissues2134#issuecomment-1793846900
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <assert.h>
       #include <torchscript.h>
       #include <torchtorch.h>
@@ -78,7 +78,7 @@ class Torchvision < Formula
         auto& ops = torch::jit::getAllOperatorsFor(torch::jit::Symbol::fromQualString("torchvision::nms"));
         assert(ops.size() == 1);
       }
-    EOS
+    CPP
     pytorch = Formula["pytorch"]
     openmp_flags = if OS.mac?
       libomp = Formula["libomp"]

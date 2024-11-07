@@ -10,18 +10,14 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sequoia: "32d7f7f0e2656048b58b2ddde7cc64bd1c89ecad3bf055d67ffc54bfd65cd488"
-    sha256 arm64_sonoma:  "f4cbdc28c038b51c8a010483c0c3f8e0a3f268c77821878a2ea3362ecd227a9e"
-    sha256 arm64_ventura: "756128eb32481fdca1d3c5251bf85428aa46829503ecea8265e7bcf11e4ec51b"
-    sha256 sonoma:        "bda3183a044054bb71e716806c25d94409bba2959c9fa8363a8a26dd719e7128"
-    sha256 ventura:       "2eb3d08648994751b0adb9e51ff8279f8084b230fb787db1e3ea80b2f42189a3"
-    sha256 x86_64_linux:  "6daceb67da4ef3b087c9e46f636b42632261380bb971208d6e747c878d835a77"
+    rebuild 3
+    sha256 arm64_sequoia: "a042fee9b1a8365594b2d7d3ceb301f6e2ae2fdb905f2739e522c1c76ec90514"
+    sha256 arm64_sonoma:  "9912054d2a8e93d4f9c5de192b62457916a6f83025aa146986b7ae6ef2ba49c3"
+    sha256 arm64_ventura: "713a261152ec34bbb0c52493dc88b6fef1120b5b923ba05c5af2858d02dc08de"
+    sha256 sonoma:        "f67bfb69abf1b1431be36831c218bc60c4d3765a7dc614cfc3bef57ce2625c4c"
+    sha256 ventura:       "1f5cf3c29f401ae75f796457c9f6253f59fedb23c368789db3835b70bccf2cb3"
+    sha256 x86_64_linux:  "16860c5c2990ba76679f67ffc08142ee3c0df759caac776abcd69d61a43cc036"
   end
-
-  # setuptools remembers the build flags python is built with and uses them to
-  # build packages later. Xcode-only systems need different flags.
-  pour_bottle? only_if: :clt_installed
 
   depends_on "pkg-config" => :build
   depends_on "mpdecimal"
@@ -142,13 +138,6 @@ class PythonFreethreading < Formula
     cppflags       = ["-I#{HOMEBREW_PREFIX}include"]
 
     if OS.mac?
-      if MacOS.sdk_path_if_needed
-        # Help Python's build system (setuptoolspip) to build things on SDK-based systems
-        # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-        cflags  << "-isysroot #{MacOS.sdk_path}"
-        ldflags << "-isysroot #{MacOS.sdk_path}"
-      end
-
       # Enabling LTO on Linux makes libpython3.*.a unusable for anyone whose GCC
       # install does not match the one in CI _exactly_ (major and minor version).
       # https:github.comorgsHomebrewdiscussions3734
@@ -348,7 +337,7 @@ class PythonFreethreading < Formula
     # Mark Homebrew python as externally managed: https:peps.python.orgpep-0668#marking-an-interpreter-as-using-an-external-package-manager
     # Placed after ensurepip since it invokes pip in isolated mode, meaning
     # we can't pass --break-system-packages.
-    (lib_cellar"EXTERNALLY-MANAGED").write <<~EOS
+    (lib_cellar"EXTERNALLY-MANAGED").write <<~PYTHON
       [externally-managed]
       Error=To install Python packages system-wide, try brew install
        xyz, where xyz is the package you are trying to
@@ -377,11 +366,11 @@ class PythonFreethreading < Formula
        file. Failure to do this can result in a broken Homebrew installation.
 
        Read more about this behavior here: <https:peps.python.orgpep-0668>
-    EOS
+    PYTHON
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -434,7 +423,7 @@ class PythonFreethreading < Formula
           split_prefix = f"#{HOMEBREW_PREFIX}optpython-{split_module}@#{version.major_minor}tlibexec"
           if os.path.isdir(split_prefix):
               sys.path.append(split_prefix)
-    EOS
+    PYTHON
   end
 
   def caveats
@@ -472,7 +461,7 @@ class PythonFreethreading < Formula
                  shell_output("#{python3} -Sc 'import dbm.gnu' 2>&1", 1)
 
     # Verify that the selected DBM interface works
-    (testpath"dbm_test.py").write <<~EOS
+    (testpath"dbm_test.py").write <<~PYTHON
       import dbm
 
       with dbm.ndbm.open("test", "c") as db:
@@ -481,7 +470,7 @@ class PythonFreethreading < Formula
           assert list(db.keys()) == [b"foo \\xbd"]
           assert b"foo \\xbd" in db
           assert db[b"foo \\xbd"] == b"bar \\xbd"
-    EOS
+    PYTHON
     system python3, "dbm_test.py"
 
     system bin"pip#{version.major_minor}t", "list", "--format=columns"

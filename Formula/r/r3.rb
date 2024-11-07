@@ -47,14 +47,14 @@ class R3 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "r3.h"
       int main() {
           node * n = r3_tree_create(1);
           r3_tree_free(n);
           return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-o", "test",
                   "-L#{lib}", "-lr3", "-I#{include}r3"
     system ".test"

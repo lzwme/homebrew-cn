@@ -52,7 +52,7 @@ class Symengine < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <symengineexpression.h>
       using SymEngine::Expression;
       int main() {
@@ -61,7 +61,7 @@ class Symengine < Formula
         auto equality = eq(ex+1, expand(ex));
         return equality == true;
       }
-    EOS
+    CPP
     lib_flags = [
       "-L#{Formula["gmp"].opt_lib}", "-lgmp",
       "-L#{Formula["mpfr"].opt_lib}", "-lmpfr",

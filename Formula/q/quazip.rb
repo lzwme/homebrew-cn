@@ -50,13 +50,13 @@ class Quazip < Formula
       QMAKE_RPATHDIR += #{lib}
     EOS
 
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <quazipquazip.h>
       int main() {
         QuaZip zip;
         return 0;
       }
-    EOS
+    CPP
 
     system Formula["qt"].bin"qmake", "test.pro"
     system "make"

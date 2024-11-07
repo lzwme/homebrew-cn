@@ -25,12 +25,12 @@ class SpiceProtocol < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <spice/protocol.h>
       int main() {
         return (SPICE_LINK_ERR_OK == 0) ? 0 : 1;
       }
-    EOS
+    CPP
 
     system ENV.cc, "test.cpp", "-I#{include}/spice-1", "-o", "test"
     system "./test"

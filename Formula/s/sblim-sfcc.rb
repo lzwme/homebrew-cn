@@ -53,13 +53,13 @@ class SblimSfcc < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <cimccimc.h>
       int main()
       {
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lcimcclient", "-o", "test"
     system ".test"
   end

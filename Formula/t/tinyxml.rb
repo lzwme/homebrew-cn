@@ -68,11 +68,11 @@ class Tinyxml < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" ?>
       <Hello>World<Hello>
-    EOS
-    (testpath"test.cpp").write <<~EOS
+    XML
+    (testpath"test.cpp").write <<~CPP
       #include <tinyxml.h>
 
       int main()
@@ -81,7 +81,7 @@ class Tinyxml < Formula
         doc.LoadFile();
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-ltinyxml", "-o", "test"
     system ".test"
   end

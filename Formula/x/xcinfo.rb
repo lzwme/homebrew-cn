@@ -1,9 +1,15 @@
 class Xcinfo < Formula
   desc "Tool to get information about and install available Xcode versions"
   homepage "https:github.comxcodereleasesxcinfo"
-  url "https:github.comxcodereleasesxcinfoarchiverefstags1.0.3.tar.gz"
-  sha256 "b22f56193e4de8b71bbdaf99c17cec03f291d333d095311ad7aab74b5fb50c5a"
   license "MIT"
+  head "https:github.comxcodereleasesxcinfo.git", branch: "master"
+
+  stable do
+    # TODO: Remove maximum_macos on the next release and update license
+    url "https:github.comxcodereleasesxcinfoarchiverefstags1.0.3.tar.gz"
+    sha256 "b22f56193e4de8b71bbdaf99c17cec03f291d333d095311ad7aab74b5fb50c5a"
+    depends_on maximum_macos: [:sonoma, :build]
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3df6418afc61ae23e1f303b405cdf6c24dff3a0fed304e1a0a7ba9e59be44e84"

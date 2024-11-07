@@ -1,18 +1,18 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
   homepage "https:trunkrs.dev"
-  url "https:github.comtrunk-rstrunkarchiverefstagsv0.21.2.tar.gz"
-  sha256 "de7180e8602bf43adfcee761c7c635d44aa5708876ec8f1c1c41d10f505d682d"
+  url "https:github.comtrunk-rstrunkarchiverefstagsv0.21.3.tar.gz"
+  sha256 "634ff0086304b164b90e9d55699199c90f5b69a7793c8f36aeb4da7fa81bd4d4"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comtrunk-rstrunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7a93782623889cac425129d02746b2083f0df4c7fd75d063dfa0f92ffb468d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6fee5cdd2a95b1c6e9ccd1ee103b28ff71093ecee54c40fa7a62cd21a9da332"
-    sha256 cellar: :any,                 arm64_ventura: "8579266ffae9ba6083057e1291f19d9e5d0baab49e963f1e63e9320561c6732b"
-    sha256 cellar: :any,                 sonoma:        "60c43f9f4f43c04b2e94761ab994c5ca52f837944c40ec3b3ecb870e22181d51"
-    sha256 cellar: :any,                 ventura:       "f04352ff28ec0a7160f93e0717e44c9f1a2335d1dec0e74ca9b1a575221fc358"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "701f17ca1d2aadcd8cf35736d42cb4293692e156051f14c4efdc37869b19110d"
+    sha256 cellar: :any,                 arm64_sequoia: "c05ecf115102091e538d89f83965d6e4028867fdf7cb513e3fa94b0fba7abc56"
+    sha256 cellar: :any,                 arm64_sonoma:  "acea7cd315bb9ff854c4c5322dbd5d8f83e80f5bbda0ba5490422b0a39c1964f"
+    sha256 cellar: :any,                 arm64_ventura: "b380779e4e23b8cefbdd43d89db23601dfdfc19e251d90584bd7e4a3227a269a"
+    sha256 cellar: :any,                 sonoma:        "2c6a9c7f49aace56f0214601ecc45d5fc8154ce18a5993668aa5d8b94e4e17bb"
+    sha256 cellar: :any,                 ventura:       "89b256ac6656b9e2f405176c14a8f3078b45e9878acead27d561abadfe4eab6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "459b89ff561bb5ecd03eba86edc5982fb632b719cfd0ee56c4e5aa0c327b6076"
   end
 
   depends_on "pkg-config" => :build

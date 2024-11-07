@@ -20,7 +20,7 @@ class Websocketpp < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <stdio.h>
       #include <websocketppconfigasio_no_tls_client.hpp>
       #include <websocketppclient.hpp>
@@ -36,7 +36,7 @@ class Websocketpp < Formula
           return 1;
         }
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{Formula["boost"].opt_lib}",
                     "-lboost_random", "-pthread", "-o", "test"
     system ".test"

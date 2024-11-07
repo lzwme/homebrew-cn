@@ -52,7 +52,7 @@ class S2geometry < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include "s2s2loop.h"
       #include "s2s2polygon.h"
       #include "s2s2latlng.h"
@@ -88,7 +88,7 @@ class S2geometry < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
       "-L#{lib}", "-ls2", "-L#{Formula["abseil"].lib}", "-labsl_log_internal_message"

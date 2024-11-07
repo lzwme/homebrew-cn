@@ -1,8 +1,8 @@
 class Soplex < Formula
   desc "Optimization package for solving linear programming problems (LPs)"
   homepage "https://soplex.zib.de/"
-  url "https://soplex.zib.de/download/release/soplex-7.1.1.0.tgz"
-  sha256 "3b992b2c1a7275ab67b738da70e9432e6d1fe24cd8adbba8e975c043288d078f"
+  url "https://soplex.zib.de/download/release/soplex-7.1.2.0.tgz"
+  sha256 "3808d72889272c70c43170722e2ebbc21bb787e164fb84df562d713e395744b1"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Soplex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df6053de6910965a8d977b5b9bee203dd154cb6b8eaad4f0cfc98bb02d40b409"
-    sha256 cellar: :any,                 arm64_sonoma:  "7893d3c63f533676063eece580eef974bf58fdecf5cd24ea32e5bc0e3708dd14"
-    sha256 cellar: :any,                 arm64_ventura: "6c5b245a25f1d8c3a2d548b65bf91c5baa112fe3bd4c25fbf5f1d12ad78d018c"
-    sha256 cellar: :any,                 sonoma:        "3494b79c52ca4fc97e9fea5b3009629a876dbcc40d4225840e927ce9bc36c1db"
-    sha256 cellar: :any,                 ventura:       "9240985761e54ab08ce9b370bcc46b0450d18e98a203938d4a3927a67003c8b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c81cfbd5235370fc9cf2f0375e80cdb3943cbd0768fbb56fdad77a14ec2896fe"
+    sha256 cellar: :any,                 arm64_sequoia: "45235723e234e61c4eb3dc47a346ed74bcaddb69ec7aaa650a09489edca5ac90"
+    sha256 cellar: :any,                 arm64_sonoma:  "471465c8aea235e3c3725da224fd42e3603ce7d1d99331d08031a982a6fa2faa"
+    sha256 cellar: :any,                 arm64_ventura: "0bed4d5eb3b86f2273ecec115cddf5833398b59322b0f8b323abdf9fb6e605c9"
+    sha256 cellar: :any,                 sonoma:        "640324db76c4fac154a965f266a786ee91e89072b9cd022e322ae7cd0a2aba14"
+    sha256 cellar: :any,                 ventura:       "84078b476b9c6ccd290c50193b07f9746a9afddc6a950011f0eabfb29f493feb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77fe1c28b376440ca6b197c3acdce9a43bb3cae42c6a334c7a648ade745b587f"
   end
 
   depends_on "cmake" => :build

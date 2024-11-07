@@ -51,7 +51,7 @@ class Surelog < Formula
     system bin"surelog", "--version"
 
     # ensure library is ok
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <SurelogAPISurelog.h>
       #include <SurelogCommandLineCommandLineParser.h>
       #include <SurelogCommonFileSystem.h>
@@ -103,7 +103,7 @@ class Surelog < Formula
         delete errors;
         return code;
       }
-    EOS
+    CPP
 
     flags = shell_output("pkg-config --cflags --libs Surelog").chomp.split
     system ENV.cxx, testpath"test.cpp", "-o", "test",

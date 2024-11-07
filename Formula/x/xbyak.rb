@@ -24,7 +24,7 @@ class Xbyak < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <xbyakxbyak_util.h>
 
       int main() {
@@ -32,7 +32,7 @@ class Xbyak < Formula
         cpu.has(Xbyak::util::Cpu::tSSE42);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-c", "-I#{include}"
   end
 end

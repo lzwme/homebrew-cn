@@ -26,13 +26,13 @@ class Tinyxml2 < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <tinyxml2.h>
       int main() {
         tinyxml2::XMLDocument doc (false);
         return 0;
       }
-    EOS
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-ltinyxml2", "-o", "test"
     system ".test"
   end

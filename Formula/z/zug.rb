@@ -23,7 +23,7 @@ class Zug < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~CPP
       #include <string>
       #include <zugtransducerfilter.hpp>
       #include <zugtransducermap.hpp>
@@ -32,7 +32,7 @@ class Zug < Formula
       auto xf = zug::filter([](int x) { return x > 0; })
           | zug::map([](int x) { return std::to_string(x); });
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "test.cpp", "-o", "test"
     system ".test"
