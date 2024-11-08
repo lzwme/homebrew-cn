@@ -60,13 +60,13 @@ class Gexiv2 < Formula
                    "-lgexiv2"
     system "./test"
 
-    (testpath/"test.py").write <<~EOS
+    (testpath/"test.py").write <<~PYTHON
       import gi
       gi.require_version('GExiv2', '0.10')
       from gi.repository import GExiv2
       exif = GExiv2.Metadata('#{test_fixtures("test.jpg")}')
       print(exif.try_get_gps_info())
-    EOS
+    PYTHON
     assert_equal "(longitude=0.0, latitude=0.0, altitude=0.0)\n", shell_output("#{python3} test.py")
   end
 end

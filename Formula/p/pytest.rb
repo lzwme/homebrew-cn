@@ -33,10 +33,10 @@ class Pytest < Formula
   end
 
   test do
-    (testpath/"test_example.py").write <<~EOS
+    (testpath/"test_example.py").write <<~PYTHON
       def test_example():
           assert 1 + 1 == 2
-    EOS
+    PYTHON
     system bin/"pytest", "test_example.py"
   end
 end

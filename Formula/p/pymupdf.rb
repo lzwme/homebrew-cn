@@ -35,7 +35,7 @@ class Pymupdf < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import sys
       from pathlib import Path
 
@@ -50,7 +50,7 @@ class Pymupdf < Formula
       png_bytes = pdf_page.get_pixmap().tobytes()
 
       Path(out_png).write_bytes(png_bytes)
-    EOS
+    PYTHON
 
     in_pdf = test_fixtures("test.pdf")
     out_png = testpath"test.png"

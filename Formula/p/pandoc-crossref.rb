@@ -30,13 +30,13 @@ class PandocCrossref < Formula
   end
 
   test do
-    (testpath"hello.md").write <<~EOS
+    (testpath"hello.md").write <<~MARKDOWN
       Demo for pandoc-crossref.
       See equation @eq:eqn1 for cross-referencing.
       Display equations are labelled and numbered
 
       $$ P_i(x) = \\sum_i a_i x^i $$ {#eq:eqn1}
-    EOS
+    MARKDOWN
     output = shell_output("#{Formula["pandoc"].bin}pandoc -F #{bin}pandoc-crossref -o out.html hello.md 2>&1")
     assert_match "∑", (testpath"out.html").read
     refute_match "WARNING: pandoc-crossref was compiled", output

@@ -36,11 +36,11 @@ class Mypy < Formula
   end
 
   test do
-    (testpath"broken.py").write <<~EOS
+    (testpath"broken.py").write <<~PYTHON
       def p() -> None:
         print('hello')
       a = p()
-    EOS
+    PYTHON
     output = pipe_output("#{bin}mypy broken.py 2>&1")
     assert_match '"p" does not return a value', output
 

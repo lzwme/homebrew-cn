@@ -23,9 +23,9 @@ class Ruff < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import os
-    EOS
+    PYTHON
 
     assert_match "`os` imported but unused", shell_output("#{bin}ruff check #{testpath}test.py", 1)
   end

@@ -38,14 +38,14 @@ class Needle < Formula
   end
 
   test do
-    (testpath"Test.swift").write <<~EOS
+    (testpath"Test.swift").write <<~SWIFT
       import Foundation
 
       protocol ChildDependency: Dependency {}
       class Child: Component<ChildDependency> {}
 
       let child = Child(parent: self)
-    EOS
+    SWIFT
 
     assert_match "Root\n", shell_output("#{bin}needle print-dependency-tree #{testpath}Test.swift")
     assert_match version.to_s, shell_output("#{bin}needle version")

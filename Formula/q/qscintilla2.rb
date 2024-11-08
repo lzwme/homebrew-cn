@@ -72,10 +72,10 @@ class Qscintilla2 < Formula
 
     cd "Python" do
       mv "pyproject-qt#{qt.version.major}.toml", "pyproject.toml"
-      (buildpath/"Python/pyproject.toml").append_lines <<~EOS
+      (buildpath/"Python/pyproject.toml").append_lines <<~TOML
         [tool.sip.project]
         sip-include-dirs = ["#{pyqt.opt_prefix/site_packages}/PyQt#{pyqt.version.major}/bindings"]
-      EOS
+      TOML
 
       args = %W[
         --target-dir #{prefix/site_packages}
@@ -91,10 +91,10 @@ class Qscintilla2 < Formula
 
   test do
     pyqt = Formula["pyqt"]
-    (testpath/"test.py").write <<~EOS
+    (testpath/"test.py").write <<~PYTHON
       import PyQt#{pyqt.version.major}.Qsci
       assert("QsciLexer" in dir(PyQt#{pyqt.version.major}.Qsci))
-    EOS
+    PYTHON
 
     system python3, "test.py"
   end

@@ -81,12 +81,12 @@ class GnustepBase < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <test>
         <text>I'm an XML document.<text>
       <test>
-    EOS
+    XML
 
     assert_match "Validation failed: no DTD found", shell_output("#{bin}xmlparse test.xml 2>&1")
   end

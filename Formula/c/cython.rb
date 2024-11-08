@@ -40,14 +40,14 @@ class Cython < Formula
 
     phrase = "You are using Homebrew"
     (testpath/"package_manager.pyx").write "print '#{phrase}'"
-    (testpath/"setup.py").write <<~EOS
+    (testpath/"setup.py").write <<~PYTHON
       from distutils.core import setup
       from Cython.Build import cythonize
 
       setup(
         ext_modules = cythonize("package_manager.pyx")
       )
-    EOS
+    PYTHON
     system python3, "setup.py", "build_ext", "--inplace"
     assert_match phrase, shell_output("#{python3} -c 'import package_manager'")
   end

@@ -31,11 +31,11 @@ class Swiftformat < Formula
   end
 
   test do
-    (testpath"potato.swift").write <<~EOS
+    (testpath"potato.swift").write <<~SWIFT
       struct Potato {
         let baked: Bool
       }
-    EOS
+    SWIFT
     system bin"swiftformat", "#{testpath}potato.swift"
   end
 end

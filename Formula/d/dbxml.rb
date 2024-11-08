@@ -52,7 +52,7 @@ class Dbxml < Formula
   end
 
   test do
-    (testpath"simple.xml").write <<~EOS
+    (testpath"simple.xml").write <<~XML
       <breakfast_menu>
         <food>
           <name>Belgian Waffles<name>
@@ -63,7 +63,7 @@ class Dbxml < Formula
           <calories>950<calories>
         <food>
       <breakfast_menu>
-    EOS
+    XML
 
     (testpath"dbxml.script").write <<~EOS
       createContainer ""

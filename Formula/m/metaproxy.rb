@@ -46,7 +46,7 @@ class Metaproxy < Formula
 
   # Test by making metaproxy test a trivial configuration file (etcconfig0.xml).
   test do
-    (testpath"test-config.xml").write <<~EOS
+    (testpath"test-config.xml").write <<~XML
       <?xml version="1.0"?>
       <metaproxy xmlns="http:indexdata.commetaproxy" version="1.0">
         <start route="start">
@@ -66,7 +66,7 @@ class Metaproxy < Formula
           <route>
         <routes>
       <metaproxy>
-    EOS
+    XML
 
     system bin"metaproxy", "-t", "--config", testpath"test-config.xml"
   end

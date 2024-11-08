@@ -38,11 +38,11 @@ class Bam < Formula
       }
     C
 
-    (testpath"bam.lua").write <<~EOS
+    (testpath"bam.lua").write <<~LUA
       settings = NewSettings()
       objs = Compile(settings, Collect("*.c"))
       exe = Link(settings, "hello", objs)
-    EOS
+    LUA
 
     system bin"bam", "-v"
     assert_equal "hello", shell_output(".hello").chomp

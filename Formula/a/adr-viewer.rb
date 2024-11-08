@@ -67,7 +67,7 @@ class AdrViewer < Formula
   test do
     adr_dir = testpath"doc""adr"
     mkdir_p adr_dir
-    (adr_dir"0001-record.md").write <<~EOS
+    (adr_dir"0001-record.md").write <<~MARKDOWN
       # 1. Record architecture decisions
       Date: 2018-09-02
       ## Status
@@ -78,7 +78,7 @@ class AdrViewer < Formula
       We will use Architecture Decision Records, as [described by Michael Nygard](https:thinkrelevance.comblog20111115documenting-architecture-decisions).
       ## Consequences
       See Michael Nygard's article, linked above. For a lightweight ADR toolset, see Nat Pryce's [adr-tools](https:github.comnpryceadr-tools).
-    EOS
+    MARKDOWN
     system bin"adr-viewer", "--adr-path", adr_dir, "--output", "index.html"
     assert_predicate testpath"index.html", :exist?
   end

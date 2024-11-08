@@ -91,11 +91,11 @@ class Uwsgi < Formula
   end
 
   test do
-    (testpath"helloworld.py").write <<~EOS
+    (testpath"helloworld.py").write <<~PYTHON
       def application(env, start_response):
         start_response('200 OK', [('Content-Type','texthtml')])
         return [b"Hello World"]
-    EOS
+    PYTHON
 
     port = free_port
 

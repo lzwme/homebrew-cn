@@ -25,7 +25,7 @@ class LizardAnalyzer < Formula
   end
 
   test do
-    (testpath/"test.swift").write <<~EOS
+    (testpath/"test.swift").write <<~SWIFT
       let base = 2
       let exponent_inner = 3
       let exponent_outer = 4
@@ -36,7 +36,7 @@ class LizardAnalyzer < Formula
           answer *= base
         }
       }
-    EOS
+    SWIFT
 
     assert_match "1 file analyzed.", shell_output("#{bin}/lizard -l swift #{testpath}/test.swift")
   end

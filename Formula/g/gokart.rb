@@ -31,11 +31,11 @@ class Gokart < Formula
   test do
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
-      (testpath"brewtestmain.go").write <<~EOS
+      (testpath"brewtestmain.go").write <<~GO
         package main
 
         func main() {}
-      EOS
+      GO
     end
 
     assert_match "GoKart found 0 potentially vulnerable functions",

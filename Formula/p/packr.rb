@@ -32,7 +32,7 @@ class Packr < Formula
   test do
     mkdir_p testpath"templatesadmin"
 
-    (testpath"templatesadminindex.html").write <<~EOS
+    (testpath"templatesadminindex.html").write <<~HTML
       <!doctype html>
       <html lang="en">
       <head>
@@ -41,9 +41,9 @@ class Packr < Formula
       <body>
       <body>
       <html>
-    EOS
+    HTML
 
-    (testpath"main.go").write <<~EOS
+    (testpath"main.go").write <<~GO
       package main
 
       import (
@@ -63,7 +63,7 @@ class Packr < Formula
 
         fmt.Print(s)
       }
-    EOS
+    GO
 
     system "go", "mod", "init", "example"
     system "go", "mod", "edit", "-require=github.comgobuffalopackrv2@v#{version}"

@@ -51,10 +51,10 @@ class Scipy < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from scipy import special
       print(special.exp10(3))
-    EOS
+    PYTHON
     pythons.each do |python3|
       assert_equal "1000.0", shell_output("#{python3} test.py").chomp
     end

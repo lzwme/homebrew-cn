@@ -52,13 +52,13 @@ class Pygobject3 < Formula
   end
 
   test do
-    Pathname("test.py").write <<~EOS
+    Pathname("test.py").write <<~PYTHON
       import gi
       gi.require_version("GLib", "2.0")
       assert("__init__" in gi.__file__)
       from gi.repository import GLib
       assert(31 == GLib.Date.get_days_in_month(GLib.DateMonth.JANUARY, 2000))
-    EOS
+    PYTHON
 
     pythons.each do |python|
       system python, "test.py"

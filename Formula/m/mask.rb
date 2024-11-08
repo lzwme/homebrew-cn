@@ -23,7 +23,7 @@ class Mask < Formula
   end
 
   test do
-    (testpath"maskfile.md").write <<~EOS
+    (testpath"maskfile.md").write <<~MARKDOWN
       # Example maskfile
 
       ## hello (name)
@@ -31,7 +31,7 @@ class Mask < Formula
       ```sh
       printf "Hello %s!" "$name"
       ```
-    EOS
+    MARKDOWN
     assert_equal "Hello Homebrew!", shell_output("#{bin}mask hello Homebrew")
   end
 end

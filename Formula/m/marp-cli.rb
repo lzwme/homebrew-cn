@@ -29,7 +29,7 @@ class MarpCli < Formula
   end
 
   test do
-    (testpath"deck.md").write <<~EOS
+    (testpath"deck.md").write <<~MARKDOWN
       ---
       theme: uncover
       ---
@@ -41,7 +41,7 @@ class MarpCli < Formula
       <!-- backgroundColor: blue -->
 
       # <!--fit--> :+1:
-    EOS
+    MARKDOWN
 
     system bin"marp", testpath"deck.md", "-o", testpath"deck.html"
     assert_predicate testpath"deck.html", :exist?

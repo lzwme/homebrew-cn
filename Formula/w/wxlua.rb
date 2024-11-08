@@ -44,10 +44,10 @@ class Wxlua < Formula
   end
 
   test do
-    (testpath"example.wx.lua").write <<~EOS
+    (testpath"example.wx.lua").write <<~LUA
       require('wx')
       print(wxlua.wxLUA_VERSION_STRING)
-    EOS
+    LUA
 
     assert_match "wxLua #{version}", shell_output("lua example.wx.lua")
   end

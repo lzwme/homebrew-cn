@@ -46,7 +46,7 @@ class Ant < Formula
   end
 
   test do
-    (testpath/"build.xml").write <<~EOS
+    (testpath/"build.xml").write <<~XML
       <project name="HomebrewTest" basedir=".">
         <property name="src" location="src"/>
         <property name="build" location="build"/>
@@ -57,16 +57,16 @@ class Ant < Formula
           <javac srcdir="${src}" destdir="${build}"/>
         </target>
       </project>
-    EOS
+    XML
 
-    (testpath/"src/main/java/org/homebrew/AntTest.java").write <<~EOS
+    (testpath/"src/main/java/org/homebrew/AntTest.java").write <<~JAVA
       package org.homebrew;
       public class AntTest {
         public static void main(String[] args) {
           System.out.println("Testing Ant with Homebrew!");
         }
       }
-    EOS
+    JAVA
 
     system bin/"ant", "compile"
   end

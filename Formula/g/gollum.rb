@@ -29,9 +29,9 @@ class Gollum < Formula
   def install
     # Work around https:github.comtrivagogollumissues265
     mod = "github.comCrowdStrikego-metrics-prometheus"
-    (buildpath"vendor#{mod}go.mod").write <<~EOS
+    (buildpath"vendor#{mod}go.mod").write <<~GOMOD
       module #{mod}
-    EOS
+    GOMOD
     (buildpath"go.work").write <<~EOS
       use .
       replace #{mod} => .vendor#{mod}

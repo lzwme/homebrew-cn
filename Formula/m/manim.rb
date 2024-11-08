@@ -200,7 +200,7 @@ class Manim < Formula
   end
 
   test do
-    (testpath"testscene.py").write <<~EOS
+    (testpath"testscene.py").write <<~PYTHON
       from manim import *
 
       class CreateCircle(Scene):
@@ -208,7 +208,7 @@ class Manim < Formula
               circle = Circle()  # create a circle
               circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
               self.play(Create(circle))  # show the circle on screen
-    EOS
+    PYTHON
 
     system bin"manim", "-ql", "#{testpath}testscene.py", "CreateCircle"
     assert_predicate testpath"mediavideostestscene480p15CreateCircle.mp4", :exist?

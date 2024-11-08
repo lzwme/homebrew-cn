@@ -30,7 +30,7 @@ class PythonTkAT39 < Formula
   def install
     cd "Modules" do
       tcltk_version = Formula["tcl-tk"].any_installed_version.major_minor
-      (Pathname.pwd/"setup.py").write <<~EOS
+      (Pathname.pwd/"setup.py").write <<~PYTHON
         from setuptools import setup, Extension
 
         setup(name="tkinter",
@@ -44,7 +44,7 @@ class PythonTkAT39 < Formula
                           library_dirs=["#{Formula["tcl-tk"].opt_lib}"])
               ]
         )
-      EOS
+      PYTHON
       system python3, "-m", "pip", "install", *std_pip_args(prefix: false), "--target=#{libexec}", "."
       rm_r libexec.glob("*.dist-info")
     end

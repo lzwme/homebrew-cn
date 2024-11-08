@@ -42,7 +42,7 @@ class Pazpar2 < Formula
   end
 
   test do
-    (testpath"test-config.xml").write <<~EOS
+    (testpath"test-config.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <pazpar2 xmlns="http:www.indexdata.compazpar21.0">
         <threads number="2">
@@ -50,7 +50,7 @@ class Pazpar2 < Formula
           <listen port="8004">
         <server>
       <pazpar2>
-    EOS
+    XML
 
     system "#{sbin}pazpar2", "-t", "-f", "#{testpath}test-config.xml"
   end

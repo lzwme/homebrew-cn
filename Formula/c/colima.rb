@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https:github.comabiosoftcolimablobmainREADME.md"
   url "https:github.comabiosoftcolima.git",
-      tag:      "v0.7.6",
-      revision: "3ab92f54210503770223a8c9bb61662725e23004"
+      tag:      "v0.8.0",
+      revision: "9c08cff339f087c0600d9d56af7b5fbcfe02e287"
   license "MIT"
   head "https:github.comabiosoftcolima.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Colima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0949b56303e3cf78795c24baa9730e1ed1e802affb7ef21023d352c0ce5c3ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fe4c1483a6a9616073ac7bc04172e4afe6aac9101750d434fd47a5d2a1022a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54cee2a5a6bb223d44048d037607e682c6c1098d95fe71940a0bd228b6cf5789"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59bcfa7e5d8264740ea616db59b3baa1db41ac8de7ed044800b5a2417c9e56ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "39ba772f61d31e529f377c404f7ae4c58b01358a3bef426daaf8229b1fb0844f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b469b8b84c00f1f2c1d29ec54d0aeec93839d791ed70e1b4b337ec956acd2c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd94b392c236f4d5d4cc26ce8f495df1e6efa07d1f75ccb07accb4079ef59606"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba14eef41c80f216f62b34d006c946ec7807cce09ec3e8e3a4b83ada92c16a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e9c2885b94bdf64c615beaa428954f43499b4c85b2b8ddb9c97a96833154c87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "392f2a5a29bc1ab2a5ba912d926ad38bba64855d8b541a1c277121858c6706b3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6c06b47fea19d6b52038f84f612cc2dfe8e479cae3c721854b4938974a1ffb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71c70b220e93a34d0a63aed7dbf116c6a1593d498e2a79887a332d378bf61eac"
   end
 
   depends_on "go" => :build

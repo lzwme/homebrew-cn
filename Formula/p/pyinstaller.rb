@@ -54,13 +54,13 @@ class Pyinstaller < Formula
   end
 
   test do
-    (testpath"easy_install.py").write <<~EOS
+    (testpath"easy_install.py").write <<~PYTHON
       """Run the EasyInstall command"""
 
       if __name__ == '__main__':
           from setuptools.command.easy_install import main
           main()
-    EOS
+    PYTHON
     system bin"pyinstaller", "-F", "--distpath=#{testpath}dist", "--workpath=#{testpath}build",
                               "#{testpath}easy_install.py"
     assert_predicate testpath"disteasy_install", :exist?

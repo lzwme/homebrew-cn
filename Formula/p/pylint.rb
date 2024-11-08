@@ -54,10 +54,10 @@ class Pylint < Formula
   end
 
   test do
-    (testpath"pylint_test.py").write <<~EOS
+    (testpath"pylint_test.py").write <<~PYTHON
       print('Test file'
       )
-    EOS
+    PYTHON
     system bin"pylint", "--exit-zero", "pylint_test.py"
   end
 end

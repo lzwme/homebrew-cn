@@ -26,10 +26,10 @@ class Isort < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    (testpath"isort_test.py").write <<~EOS
+    (testpath"isort_test.py").write <<~PYTHON
       from third_party import lib
       import os
-    EOS
+    PYTHON
     system bin"isort", "isort_test.py"
     assert_equal "import os\n\nfrom third_party import lib\n", (testpath"isort_test.py").read
   end

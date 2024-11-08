@@ -98,12 +98,12 @@ class Pymol < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from pymol import cmd
       cmd.fragment('ala')
       cmd.zoom()
       cmd.png("test.png", 200, 200)
-    EOS
+    PYTHON
 
     system bin"pymol", "-cq", testpath"test.py"
     assert_predicate testpath"test.png", :exist?, "Amino acid image should exist"

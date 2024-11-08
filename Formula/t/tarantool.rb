@@ -73,7 +73,7 @@ class Tarantool < Formula
   end
 
   test do
-    (testpath"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~LUA
       box.cfg{}
       local s = box.schema.create_space("test")
       s:create_index("primary")
@@ -84,7 +84,7 @@ class Tarantool < Formula
         os.exit(-1)
       end
       os.exit(0)
-    EOS
+    LUA
     system bin"tarantool", "#{testpath}test.lua"
   end
 end

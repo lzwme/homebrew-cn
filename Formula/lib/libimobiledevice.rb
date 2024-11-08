@@ -7,14 +7,13 @@ class Libimobiledevice < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cfb98ddb4dd90260eb28f3d1d2b44fac69c1341a926a221dda85e0afde956bb3"
-    sha256 cellar: :any,                 arm64_sonoma:   "f496e32077cc020a7ffcb6a6afee3034fc4c55ced685ba0b2155c0355bbf7a95"
-    sha256 cellar: :any,                 arm64_ventura:  "c0f9da975e59842256875121304fdb0825909f3c43b8cf1271b505cd7436955e"
-    sha256 cellar: :any,                 arm64_monterey: "b465efbb59cafd4d9ea16cefd5b0d33c1411da49855e14b5864ce139b65df8c6"
-    sha256 cellar: :any,                 sonoma:         "dfcb200312b7e57c99699a47ffc0ed522f3fe4d1913037003b706fe545daa082"
-    sha256 cellar: :any,                 ventura:        "a91555bb6c89202bbb68d84bfe425aeb63c50d4001c310d39643637d93bde290"
-    sha256 cellar: :any,                 monterey:       "aa17026544ec683e544113478c07c1d387e3566d949c32834b083ad72042be16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c418aa763659463002269201586cd356c69e6a233b2040ced02a352498b362d8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9bc550fcfb5ee4613073831691cda4cc54a88180e833a0f754886f1a34af4134"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fc25461e9305a7cadd0ec50326048641a67a6231d73a4ccf69e0d90c4783a19"
+    sha256 cellar: :any,                 arm64_ventura: "7017a85a4322e960abb9cc122ed45cf159eddc90c45a30d4a24aef14173ea0c6"
+    sha256 cellar: :any,                 sonoma:        "7ca1985300a97b783b50752ff9110cb9b02dc7d278a62451b36fa5b98d359708"
+    sha256 cellar: :any,                 ventura:       "c811173f433f58df573afeb557308c55be71309442e6088f0b2b93cafffb39cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d38d4434dc756c8153d4a0ed23ba0e68c643c7e9e1086cf08c5497700867cdb4"
   end
 
   # libimobiledevice-glue is required for building future versions
@@ -22,6 +21,7 @@ class Libimobiledevice < Formula
   head do
     url "https:github.comlibimobiledevicelibimobiledevice.git", branch: "master"
     depends_on "libimobiledevice-glue"
+    depends_on "libtatsu"
   end
 
   depends_on "autoconf" => :build

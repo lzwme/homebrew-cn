@@ -60,18 +60,18 @@ class Nox < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    (testpath/"noxfile.py").write <<~EOS
+    (testpath/"noxfile.py").write <<~PYTHON
       import nox
 
       @nox.session
       def tests(session):
           session.install("pytest")
           session.run("pytest")
-    EOS
-    (testpath/"test_trivial.py").write <<~EOS
+    PYTHON
+    (testpath/"test_trivial.py").write <<~PYTHON
       def test_trivial():
           assert True
-    EOS
+    PYTHON
     assert_match "usage", shell_output("#{bin}/nox --help")
     assert_match "Sessions defined in #{testpath}/noxfile.py", shell_output("#{bin}/nox --list-sessions")
   end

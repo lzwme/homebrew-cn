@@ -109,11 +109,11 @@ class Mlx < Formula
                     "-o", "test"
     system ".test"
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import mlx.core as mx
       x = mx.array(0.0)
       assert mx.cos(x) == 1.0
-    EOS
+    PYTHON
     system python3, "test.py"
   end
 end

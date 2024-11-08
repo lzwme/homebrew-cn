@@ -72,13 +72,13 @@ class Appstream < Formula
   end
 
   test do
-    (testpath"appdata.xml").write <<~EOS
+    (testpath"appdata.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <component type="desktop-application">
         <id>org.test.test-app<id>
         <name>Test App<name>
       <component>
-    EOS
+    XML
     (testpath"test.c").write <<~C
       #include "appstream.h"
 

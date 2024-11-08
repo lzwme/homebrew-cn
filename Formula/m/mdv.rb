@@ -40,11 +40,11 @@ class Mdv < Formula
   end
 
   test do
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       # Header 1
       ## Header 2
       ### Header 3
-    EOS
+    MARKDOWN
     system bin"mdv", "#{testpath}test.md"
   end
 end

@@ -112,10 +112,10 @@ class Black < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    (testpath"black_test.py").write <<~EOS
+    (testpath"black_test.py").write <<~PYTHON
       print(
       'It works!')
-    EOS
+    PYTHON
     system bin"black", "black_test.py"
     assert_equal "print(\"It works!\")\n", (testpath"black_test.py").read
     port = free_port

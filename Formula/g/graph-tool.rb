@@ -158,7 +158,7 @@ class GraphTool < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath/"test.py").write <<~PYTHON
       import graph_tool.all as gt
       g = gt.Graph()
       v1 = g.add_vertex()
@@ -166,7 +166,7 @@ class GraphTool < Formula
       e = g.add_edge(v1, v2)
       assert g.num_edges() == 1
       assert g.num_vertices() == 2
-    EOS
+    PYTHON
     assert_match "Graph drawing will not work", shell_output("#{python3} test.py 2>&1")
     ENV["PYTHONPATH"] = libexec/Language::Python.site_packages(python3)
     refute_match "Graph drawing will not work", shell_output("#{python3} test.py 2>&1")

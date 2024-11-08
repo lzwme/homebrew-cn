@@ -31,7 +31,7 @@ class Luaradio < Formula
 
   test do
     (testpath"hello").write("Hello, world!")
-    (testpath"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~LUA
       local radio = require('radio')
 
       local PrintBytes = radio.block.factory("PrintBytes")
@@ -52,7 +52,7 @@ class Luaradio < Formula
 
       top:connect(source, sink)
       top:run()
-    EOS
+    LUA
 
     assert_equal "Hello, world!", shell_output("#{bin}luaradio test.lua")
   end

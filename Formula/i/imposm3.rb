@@ -30,14 +30,14 @@ class Imposm3 < Formula
   end
 
   test do
-    (testpath"sample.osm.xml").write <<~EOS
+    (testpath"sample.osm.xml").write <<~XML
       <?xml version='1.0' encoding='UTF-8'?>
       <osm version="0.6">
         <bounds minlat="51.498" minlon="7.579" maxlat="51.499" maxlon="7.58">
       <osm>
-    EOS
+    XML
 
-    (testpath"mapping.yml").write <<~EOS
+    (testpath"mapping.yml").write <<~YAML
       tables:
         admin:
           columns:
@@ -57,7 +57,7 @@ class Imposm3 < Formula
             boundary:
             - administrative
           type: polygon
-    EOS
+    YAML
 
     assert_match version.to_s, shell_output("#{bin}imposm version").chomp
 

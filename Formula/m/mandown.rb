@@ -28,9 +28,9 @@ class Mandown < Formula
 
   test do
     (testpath".configmdn").mkpath # `mdn` may misbehave when its config directory is missing.
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       # Hi from readme file!
-    EOS
+    MARKDOWN
     expected_output = <<~EOS
       <html><head><title>test.md(7)<title><head><body><h1>Hi from readme file!<h1>
       <body><html>

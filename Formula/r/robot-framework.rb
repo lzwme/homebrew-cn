@@ -154,10 +154,10 @@ class RobotFramework < Formula
           Hello World
     EOS
 
-    (testpath"HelloWorld.py").write <<~EOS
+    (testpath"HelloWorld.py").write <<~PYTHON
       def hello_world():
           print("HELLO WORLD!")
-    EOS
+    PYTHON
     system bin"robot", testpath"HelloWorld.robot"
   end
 end

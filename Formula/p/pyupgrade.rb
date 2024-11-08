@@ -24,9 +24,9 @@ class Pyupgrade < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       print(("foo"))
-    EOS
+    PYTHON
 
     system bin"pyupgrade", "--exit-zero-even-if-changed", testpath"test.py"
     assert_match "print(\"foo\")", (testpath"test.py").read

@@ -103,7 +103,7 @@ class Ford < Formula
   end
 
   test do
-    (testpath"test-project.md").write <<~EOS
+    (testpath"test-project.md").write <<~MARKDOWN
       project: Example Project
       summary: This is a short example project
           that demonstrates many of Ford's features
@@ -157,7 +157,7 @@ class Ford < Formula
       \end{equation}
       So let your imagination run wild. As you can tell, I'm more or less just
       filling in space now. This will be the last sentence.
-    EOS
+    MARKDOWN
     mkdir testpath"src" do
       (testpath"src""ford_test_program.f90").write <<~FORTRAN
         program ford_test_program

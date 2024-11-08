@@ -65,13 +65,13 @@ class Fabric < Formula
   end
 
   test do
-    (testpath"fabfile.py").write <<~EOS
+    (testpath"fabfile.py").write <<~PYTHON
       from invoke import task
       import fabric
       @task
       def hello(c):
         c.run("echo {}".format(fabric.__version__))
-    EOS
+    PYTHON
     assert_equal version.to_s, shell_output("#{bin}fab hello").chomp
   end
 end

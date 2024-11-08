@@ -24,10 +24,10 @@ class ReorderPythonImports < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from os import path
       import sys
-    EOS
+    PYTHON
     system bin"reorder-python-imports", "--exit-zero-even-if-changed", "#{testpath}test.py"
     assert_equal("import sys\nfrom os import path\n", File.read(testpath"test.py"))
   end

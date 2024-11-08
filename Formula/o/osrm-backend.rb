@@ -84,7 +84,7 @@ class OsrmBackend < Formula
     node2 = 'visible="true" version="1" changeset="323878" timestamp="2008-05-03T13:39:23Z"'
     node3 = 'visible="true" version="1" changeset="323878" timestamp="2008-05-03T13:39:23Z"'
 
-    (testpath"test.osm").write <<~EOS
+    (testpath"test.osm").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <osm version="0.6">
        <bounds minlat="54.0889580" minlon="12.2487570" maxlat="54.0913900" maxlon="12.2524800">
@@ -97,14 +97,14 @@ class OsrmBackend < Formula
         <tag k="highway" v="unclassified">
        <way>
       <osm>
-    EOS
+    XML
 
-    (testpath"tiny-profile.lua").write <<~EOS
+    (testpath"tiny-profile.lua").write <<~LUA
       function way_function (way, result)
         result.forward_mode = mode.driving
         result.forward_speed = 1
       end
-    EOS
+    LUA
 
     safe_system bin"osrm-extract", "test.osm", "--profile", "tiny-profile.lua"
     safe_system bin"osrm-contract", "test.osrm"

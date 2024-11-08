@@ -80,7 +80,7 @@ class LiterateGit < Formula
     system "git", "add", "bar.txt"
     system "git", "commit", "-m", "bar"
     system "git", "branch", "two"
-    (testpath"create_url.py").write <<~EOS
+    (testpath"create_url.py").write <<~PYTHON
       class CreateUrl:
         @staticmethod
         def result_url(sha1):
@@ -88,7 +88,7 @@ class LiterateGit < Formula
         @staticmethod
         def source_url(sha1):
           return ''
-    EOS
+    PYTHON
     assert_match "<!DOCTYPE html>",
       shell_output("git literate-render test one two create_url.CreateUrl")
   end

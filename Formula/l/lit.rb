@@ -48,14 +48,14 @@ class Lit < Formula
       }
     C
 
-    (testpath/"lit.site.cfg.py").write <<~EOS
+    (testpath/"lit.site.cfg.py").write <<~PYTHON
       import lit.formats
 
       config.name = "Example"
       config.test_format = lit.formats.ShTest(True)
 
       config.suffixes = ['.c']
-    EOS
+    PYTHON
 
     system bin/"lit", "-v", "."
 

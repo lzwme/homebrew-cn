@@ -83,7 +83,7 @@ class Uvicorn < Formula
   end
 
   test do
-    (testpath"example.py").write <<~EOS
+    (testpath"example.py").write <<~PYTHON
       async def app(scope, receive, send):
           assert scope['type'] == 'http'
 
@@ -98,7 +98,7 @@ class Uvicorn < Formula
               'type': 'http.response.body',
               'body': b'Hello, Homebrew!',
           })
-    EOS
+    PYTHON
 
     port = free_port
     pid = fork do

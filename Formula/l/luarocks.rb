@@ -68,19 +68,19 @@ class Luarocks < Formula
 
       case luaversion
       when "5.1"
-        (testpath"lfs_#{luaversion}test.lua").write <<~EOS
+        (testpath"lfs_#{luaversion}test.lua").write <<~LUA
           require("lfs")
           lfs.mkdir("blank_space")
-        EOS
+        LUA
 
         system luaexec, "lfs_#{luaversion}test.lua"
         assert_predicate testpath"blank_space", :directory?,
           "Luafilesystem failed to create the expected directory"
       else
-        (testpath"lfs_#{luaversion}test.lua").write <<~EOS
+        (testpath"lfs_#{luaversion}test.lua").write <<~LUA
           require("lfs")
           print(lfs.currentdir())
-        EOS
+        LUA
 
         assert_match testpath.to_s, shell_output("#{luaexec} lfs_#{luaversion}test.lua")
       end

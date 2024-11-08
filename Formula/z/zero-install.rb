@@ -74,12 +74,12 @@ class ZeroInstall < Formula
   end
 
   test do
-    (testpath"hello.sh").write <<~EOS
+    (testpath"hello.sh").write <<~SH
       #!binsh
       echo "hello world"
-    EOS
+    SH
     chmod 0755, testpath"hello.sh"
-    (testpath"hello.xml").write <<~EOS
+    (testpath"hello.xml").write <<~XML
       <?xml version="1.0" ?>
       <interface xmlns="http:zero-install.sourceforge.net2004injectorinterface" xmlns:compile="http:zero-install.sourceforge.net2006namespaces0compile">
         <name>hello-bash<name>
@@ -92,7 +92,7 @@ class ZeroInstall < Formula
           <implementation>
         <group>
       <interface>
-    EOS
+    XML
     assert_equal "hello world\n", shell_output("#{bin}0launch --console hello.xml")
   end
 end

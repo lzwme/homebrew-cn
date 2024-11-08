@@ -31,10 +31,10 @@ class Libnxml < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <root>Hello world!<child>This is a child element.<child><root>
-    EOS
+    XML
 
     (testpath"test.c").write <<~C
       #include <nxml.h>

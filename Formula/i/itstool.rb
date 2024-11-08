@@ -42,9 +42,9 @@ class Itstool < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <tag>Homebrew<tag>
-    EOS
+    XML
     system bin"itstool", "-o", "test.pot", "test.xml"
     assert_match "msgid \"Homebrew\"", File.read("test.pot")
   end

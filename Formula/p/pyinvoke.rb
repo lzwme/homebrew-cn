@@ -21,7 +21,7 @@ class Pyinvoke < Formula
   end
 
   test do
-    (testpath"tasks.py").write <<~EOS
+    (testpath"tasks.py").write <<~PYTHON
       from invoke import run, task
 
       @task
@@ -31,7 +31,7 @@ class Pyinvoke < Formula
               patterns.append(extra)
           for pattern in patterns:
               run("rm -rf {}".format(pattern))
-    EOS
+    PYTHON
     (testpath"foo""bar").mkpath
     (testpath"baz").mkpath
     system bin"invoke", "clean"

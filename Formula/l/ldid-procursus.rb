@@ -40,7 +40,7 @@ class LdidProcursus < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
       <plist version="1.0">
@@ -53,7 +53,7 @@ class LdidProcursus < Formula
       	<true>
       <dict>
       <plist>
-    EOS
+    XML
     cp test_fixtures("macha.out"), testpath
     system bin"ldid", "-Stest.xml", "a.out"
     assert_match (testpath"test.xml").read, shell_output("#{bin}ldid -arch x86_64 -e a.out")

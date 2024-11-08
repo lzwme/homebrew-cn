@@ -9,6 +9,7 @@ class Pythran < Formula
   head "https:github.comserge-sans-paillepythran.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "868e70b12c50c833ebfa29f43222dbebb81365ea1bd467a3c89e5b43da5dbd11"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
@@ -62,17 +63,17 @@ class Pythran < Formula
     python3 = which("python3.12")
     pythran = Formula["pythran"].opt_bin"pythran"
 
-    (testpath"dprod.py").write <<~EOS
+    (testpath"dprod.py").write <<~PYTHON
       #pythran export dprod(int list, int list)
       def dprod(arr0, arr1):
         return sum([x*y for x,y in zip(arr0, arr1)])
-    EOS
+    PYTHON
     system pythran, testpath"dprod.py"
     rm(testpath"dprod.py")
 
     assert_equal "11", shell_output("#{python3} -c 'import dprod; print(dprod.dprod([1,2], [3,4]))'").chomp
 
-    (testpath"arc_distance.py").write <<~EOS
+    (testpath"arc_distance.py").write <<~PYTHON
       #pythran export arc_distance(float[], float[], float[], float[])
       import numpy as np
       def arc_distance(theta_1, phi_1, theta_2, phi_2):
@@ -82,14 +83,14 @@ class Pythran < Formula
         temp = np.sin((theta_2-theta_1)2)**2 + np.cos(theta_1)*np.cos(theta_2)*np.sin((phi_2-phi_1)2)**2
         distance_matrix = 2 * np.arctan2(np.sqrt(temp), np.sqrt(1-temp))
         return distance_matrix
-    EOS
+    PYTHON
     # Test with configured gcc to detect breakages from gcc major versions and for OpenMP support
     with_env(CC: nil, CXX: nil) do
       system pythran, "-DUSE_XSIMD", "-fopenmp", "-march=native", testpath"arc_distance.py"
     end
     rm(testpath"arc_distance.py")
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import numpy as np
       import arc_distance
       d = arc_distance.arc_distance(
@@ -97,6 +98,6 @@ class Pythran < Formula
         np.array([3.45,1.5,55.4,567.0,43.2]), np.array([56.1,3.4,1.34,-56.9,-3.4]),
       )
       assert ([1.927, 1., 1.975, 1.83, 1.032] == np.round(d, 3)).all()
-    EOS
+    PYTHON
   end
 end

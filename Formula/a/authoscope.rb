@@ -40,13 +40,13 @@ class Authoscope < Formula
   end
 
   test do
-    (testpath"true.lua").write <<~EOS
+    (testpath"true.lua").write <<~LUA
       descr = "always true"
 
       function verify(user, password)
           return true
       end
-    EOS
+    LUA
     system bin"authoscope", "run", "-vvx", testpath"true.lua", "foo"
   end
 end

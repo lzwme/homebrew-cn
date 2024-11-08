@@ -46,10 +46,10 @@ class Liblouis < Formula
   test do
     assert_equal "⠼⠙⠃", pipe_output("#{bin}lou_translate unicode.dis,en-us-g2.ctb", "42")
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import louis
       print(louis.translateString(["unicode.dis", "en-us-g2.ctb"], "42"))
-    EOS
+    PYTHON
     assert_equal "⠼⠙⠃", shell_output("#{python3} test.py").chomp
   end
 end

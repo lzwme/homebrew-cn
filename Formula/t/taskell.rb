@@ -43,12 +43,12 @@ class Taskell < Formula
   end
 
   test do
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       ## To Do
 
       - A thing
       - Another thing
-    EOS
+    MARKDOWN
 
     expected = <<~EOS
       test.md

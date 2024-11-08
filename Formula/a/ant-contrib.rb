@@ -23,7 +23,7 @@ class AntContrib < Formula
   end
 
   test do
-    (testpath/"build.xml").write <<~EOS
+    (testpath/"build.xml").write <<~XML
       <project name="HomebrewTest" default="init" basedir=".">
         <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
         <target name="init">
@@ -35,7 +35,7 @@ class AntContrib < Formula
           </if>
         </target>
       </project>
-    EOS
+    XML
     system Formula["ant"].opt_bin/"ant"
   end
 end

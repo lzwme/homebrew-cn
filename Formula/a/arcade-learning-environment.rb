@@ -75,14 +75,14 @@ class ArcadeLearningEnvironment < Formula
   end
 
   test do
-    (testpath"roms.py").write <<~EOS
+    (testpath"roms.py").write <<~PYTHON
       from ale_py.roms import get_all_rom_ids
       print(get_all_rom_ids())
-    EOS
+    PYTHON
     assert_match "adventure", shell_output("#{python3} roms.py")
 
     cp pkgshare"tetris.bin", testpath
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from ale_py import ALEInterface, SDL_SUPPORT
       assert SDL_SUPPORT
 
@@ -90,7 +90,7 @@ class ArcadeLearningEnvironment < Formula
       ale.setInt("random_seed", 123)
       ale.loadROM("tetris.bin")
       assert len(ale.getLegalActionSet()) == 18
-    EOS
+    PYTHON
 
     output = shell_output("#{python3} test.py 2>&1")
     assert_match <<~EOS, output

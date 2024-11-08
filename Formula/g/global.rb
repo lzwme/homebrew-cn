@@ -73,16 +73,16 @@ class Global < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       int c2func (void) { return 0; }
       void cfunc (void) {int cvar = c2func(); }")
-    EOS
-    (testpath/"test.py").write <<~EOS
+    C
+    (testpath/"test.py").write <<~PYTHON
       def py2func ():
            return 0
       def pyfunc ():
            pyvar = py2func()
-    EOS
+    PYTHON
 
     system bin/"gtags", "--gtagsconf=#{share}/gtags/gtags.conf", "--gtagslabel=pygments"
     assert_match "test.c", shell_output("#{bin}/global -d cfunc")

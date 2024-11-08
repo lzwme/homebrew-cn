@@ -26,10 +26,10 @@ class Md4c < Formula
 
   test do
     # test md2html
-    (testpath"test_md.md").write <<~EOS
+    (testpath"test_md.md").write <<~MARKDOWN
       # Title
       some text
-    EOS
+    MARKDOWN
     system bin"md2html", ".test_md.md"
 
     # test libmd4c

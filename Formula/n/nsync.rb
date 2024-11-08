@@ -4,22 +4,24 @@ class Nsync < Formula
   url "https:github.comgooglensyncarchiverefstags1.29.2.tar.gz"
   sha256 "1d63e967973733d2c97e841e3c05fac4d3fa299f01d14c86f2695594c7a4a2ec"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a3b52d87b9edb7d58f553ca104f219b34267f2a38f7b955b7f4e4583717ff8e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b882829292b6107a9a9071bedd749d1be71c1d3882b9d4bca871e8e78bb30bf2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17fc433b587e675763ec10ea6a3b8325b2c68341d76489c1b9e658761e153b5e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e616712e71b17684f597c4c97c6d578dfd8a7b88187d335f3c719aa5c036bcd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "73e3f9c25d2018fda3fd790c34d3babb957e4594491abc39bfb4bfa951be9c01"
-    sha256 cellar: :any_skip_relocation, ventura:        "989d69d3a745db37dafdf27c20dc98999827e1e5e4fcd31f38d09f57812353ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "515ecebbb92213d35028eadbe7227e468a6a6524cbd50c9a0c3f8adf3c955851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca3c65483e614249a252f27d6425ef5736ac8e8d28f517b4ac51cdcf0ed459c6"
+    sha256 cellar: :any,                 arm64_sequoia: "5646e78dfc90e6ea7a9575f5b51ccb91e142838e61170087a5ea89dd7076d1fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "fdcf50215956176ee21750ef95dea641a5464aa2c474e024d63c8032ddc99da1"
+    sha256 cellar: :any,                 arm64_ventura: "163b4942545d21ed0042db6343b07b7ceb810010cd513a77d2f2d8060ace3b9a"
+    sha256 cellar: :any,                 sonoma:        "03ffb1919593d89b4ce5e8bd58b540ebce76dedbfea579f06dfd3a1578af6120"
+    sha256 cellar: :any,                 ventura:       "d8573c05ff6039c4074be9a4bb3119200ce4904e8f55b3747b50c2d9c08cb10f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "371b938f9cc2b55990b934c679a18967d749bf7a82783dce7ac49585fedb0379"
   end
 
   depends_on "cmake" => :build
 
+  # PR ref: https:github.comgooglensyncpull24
+  patch :DATA
+
   def install
-    system "cmake", "-S", ".", "-B", "_build", "-DNSYNC_ENABLE_TESTS=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "_build", "-DBUILD_SHARED_LIBS=ON", "-DNSYNC_ENABLE_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
   end
@@ -42,3 +44,17 @@ class Nsync < Formula
     system ".test"
   end
 end
+
+__END__
+diff --git aCMakeLists.txt bCMakeLists.txt
+index fcc3f41..9dbe677 100644
+--- aCMakeLists.txt
++++ bCMakeLists.txt
+@@ -125,7 +125,6 @@ elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "DarwinX")
+ 		${NSYNC_OS_CPP_SRC}
+ 		"platformc++11srcnsync_semaphore_mutex.cc"
+ 		"platformposixsrcclock_gettime.c"
+-		"platformposixsrcnsync_semaphore_mutex.c"
+ 	)
+ elseif ("${CMAKE_SYSTEM_NAME}X" STREQUAL "LinuxX")
+ 	set (NSYNC_POSIX ON)

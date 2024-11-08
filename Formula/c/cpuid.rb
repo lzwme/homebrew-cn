@@ -1,20 +1,18 @@
 class Cpuid < Formula
   desc "CPU feature identification for Go"
   homepage "https:github.comklauspostcpuid"
-  url "https:github.comklauspostcpuidarchiverefstagsv2.2.8.tar.gz"
-  sha256 "765dda37ed4fffdbf00ef6055a1e12fd63a16707b1ab1a0bbdc5749c19343bfc"
+  url "https:github.comklauspostcpuidarchiverefstagsv2.2.9.tar.gz"
+  sha256 "d0aa17338c623af41fe17bb542ebaac5313a56c5f0a400577ee89319d054b4ca"
   license "MIT"
   head "https:github.comklauspostcpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "33e7a015806e78f4b1fb07ad98ea9714b4d520bbfa04257bb8087e8399609750"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0edf8630d52570d7d10bd8be300bcf8eb10ff145a95cb59ca0c76bf85e04fc25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0edf8630d52570d7d10bd8be300bcf8eb10ff145a95cb59ca0c76bf85e04fc25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0edf8630d52570d7d10bd8be300bcf8eb10ff145a95cb59ca0c76bf85e04fc25"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f547bb2fdfe3faa96f32a2cfd4a4f704b29bb103c1ea64b68f21e53f88969dd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "f547bb2fdfe3faa96f32a2cfd4a4f704b29bb103c1ea64b68f21e53f88969dd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "f547bb2fdfe3faa96f32a2cfd4a4f704b29bb103c1ea64b68f21e53f88969dd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "605634d94146c53b3f225c54e0d18d492d61997a0938f2e5359b8c4a18663795"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1860157d6df98e8353bb72b0201c0a044a4c7766e6d8e0d764abe1e49bfc749f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1860157d6df98e8353bb72b0201c0a044a4c7766e6d8e0d764abe1e49bfc749f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cb7c366b4d4e397d0a7c0f76ce0319756403b89cc1302a27eae587f201b5646"
   end
 
   depends_on "go" => :build

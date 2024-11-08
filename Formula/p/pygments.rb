@@ -21,10 +21,10 @@ class Pygments < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import os
       print(os.getcwd())
-    EOS
+    PYTHON
 
     system bin"pygmentize", "-f", "html", "-o", "test.html", testpath"test.py"
     assert_predicate testpath"test.html", :exist?

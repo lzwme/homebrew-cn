@@ -22,15 +22,15 @@ class MarkdownlintCli < Formula
   end
 
   test do
-    (testpath"test-bad.md").write <<~EOS
+    (testpath"test-bad.md").write <<~MARKDOWN
       # Header 1
       body
-    EOS
-    (testpath"test-good.md").write <<~EOS
+    MARKDOWN
+    (testpath"test-good.md").write <<~MARKDOWN
       # Header 1
 
       body
-    EOS
+    MARKDOWN
     assert_match "MD022blanks-around-headings Headings should be surrounded by blank lines",
                  shell_output("#{bin}markdownlint #{testpath}test-bad.md  2>&1", 1)
     assert_empty shell_output("#{bin}markdownlint #{testpath}test-good.md")

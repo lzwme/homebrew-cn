@@ -53,7 +53,7 @@ class Tundra < Formula
       ["linux", "gcc"]
     end
 
-    (testpath"tundra.lua").write <<~EOS
+    (testpath"tundra.lua").write <<~LUA
       Build {
         Units = function()
           local test = Program {
@@ -70,7 +70,7 @@ class Tundra < Formula
           },
         },
       }
-    EOS
+    LUA
     system bin"tundra2"
     system ".t2-output#{os}-#{cc}-debug-defaulttest"
   end

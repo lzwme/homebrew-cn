@@ -27,10 +27,10 @@ class Mdless < Formula
 
   test do
     assert_match "mdless #{version}", shell_output("#{bin}mdless --version")
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       # title first level
       ## title second level
-    EOS
+    MARKDOWN
     out = shell_output("#{bin}mdless --no-color -P test.md")
     assert_match(^title first level =+$, out)
     assert_match(^title second level -+$, out)

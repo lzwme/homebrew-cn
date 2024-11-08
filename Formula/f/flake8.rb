@@ -40,13 +40,13 @@ class Flake8 < Formula
   end
 
   test do
-    (testpath"test-bad.py").write <<~EOS
+    (testpath"test-bad.py").write <<~PYTHON
       print ("Hello World!")
-    EOS
+    PYTHON
 
-    (testpath"test-good.py").write <<~EOS
+    (testpath"test-good.py").write <<~PYTHON
       print("Hello World!")
-    EOS
+    PYTHON
 
     assert_match "E211", shell_output("#{bin}flake8 test-bad.py", 1)
     assert_empty shell_output("#{bin}flake8 test-good.py")

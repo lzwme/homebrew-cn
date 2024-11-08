@@ -3,14 +3,12 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https:github.comjjjakeinternetarchive"
-  url "https:files.pythonhosted.orgpackages0d9e07e577a1d3e20deeae447069b80d523e7140b790f0a8e1bab1e23b1b9252internetarchive-4.1.0.tar.gz"
-  sha256 "467188386218d2c77815ca798a51dd18310b326841113bb462b24ea9a71beedc"
+  url "https:files.pythonhosted.orgpackagesacfa38573471a3b0b7bb691ea514bc50f2e0ebc244e66fdcb64d0da42583c172internetarchive-5.0.0.tar.gz"
+  sha256 "62c26a8ac6942a2da043efb15cf6a149aea920b765c4af487fd6adefa7ca2a60"
   license "AGPL-3.0-or-later"
-  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "74d45c88b5384b3b9b6a05a9426a6e1b37be1ed43f45091ada9b2f27b3291862"
+    sha256 cellar: :any_skip_relocation, all: "202e5f58360bb950661fd3dd91119647a2f24f2cb48e3c0e4d29fd33b50eb275"
   end
 
   depends_on "certifi"
@@ -19,11 +17,6 @@ class Internetarchive < Formula
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
     sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
-  end
-
-  resource "docopt" do
-    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   resource "idna" do
@@ -52,8 +45,8 @@ class Internetarchive < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagese84f0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0tqdm-4.67.0.tar.gz"
+    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
   end
 
   resource "urllib3" do

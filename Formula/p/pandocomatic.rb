@@ -45,11 +45,11 @@ class Pandocomatic < Formula
   end
 
   test do
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       # Homebrew
 
       A package manager for humans. Cats should take a look at Tigerbrew.
-    EOS
+    MARKDOWN
     expected_html = <<~EOS
       <h1 id="homebrew">Homebrew<h1>
       <p>A package manager for humans. Cats should take a look at

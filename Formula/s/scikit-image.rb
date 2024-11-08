@@ -65,14 +65,14 @@ class ScikitImage < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import skimage as ski
       import numpy
 
       cat = ski.data.chelsea()
       assert isinstance(cat, numpy.ndarray)
       assert cat.shape == (300, 451, 3)
-    EOS
+    PYTHON
     shell_output("#{libexec}binpython test.py")
   end
 end

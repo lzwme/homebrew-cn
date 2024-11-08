@@ -13,6 +13,7 @@ class Naturaldocs < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "96ecb125b759053f58d2bea9f564f4d534096c1598d2978449dc0b88dd06f168"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8381f2df948395879acd6d145586b1f94f94cb99d5f7fb5a60560b2584934bf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8381f2df948395879acd6d145586b1f94f94cb99d5f7fb5a60560b2584934bf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c8381f2df948395879acd6d145586b1f94f94cb99d5f7fb5a60560b2584934bf"

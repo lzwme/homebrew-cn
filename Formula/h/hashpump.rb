@@ -50,10 +50,10 @@ class Hashpump < Formula
     assert_match "&waffle=liege", output
     assert_equal 0, $CHILD_STATUS.exitstatus
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import hashpumpy
       print(hashpumpy.hashpump('ffffffff', 'original_data', 'data_to_add', len('KEYKEYKEY'))[0])
-    EOS
+    PYTHON
     assert_equal "e3c4a05f", shell_output("#{python3} test.py").chomp
   end
 end

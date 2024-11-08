@@ -30,10 +30,10 @@ class Saxon < Formula
   end
 
   test do
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <test>It works!<test>
-    EOS
-    (testpath"test.xsl").write <<~EOS
+    XML
+    (testpath"test.xsl").write <<~XSL
       <xsl:stylesheet xmlns:xsl="http:www.w3.org1999XSLTransform" version="2.0">
         <xsl:template match="">
           <html>
@@ -43,14 +43,14 @@ class Saxon < Formula
           <html>
         <xsl:template>
       <xsl:stylesheet>
-    EOS
-    assert_equal <<~EOS.chop, shell_output("#{bin}saxon test.xml test.xsl")
+    XSL
+    assert_equal <<~HTML.chop, shell_output("#{bin}saxon test.xml test.xsl")
       <!DOCTYPE HTML>
       <html>
          <body>
             <p>It works!<p>
          <body>
       <html>
-    EOS
+    HTML
   end
 end

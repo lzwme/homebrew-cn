@@ -54,14 +54,14 @@ class Cryptominisat < Formula
     result = shell_output("#{bin}cryptominisat5 simple.cnf", 20)
     assert_match "s UNSATISFIABLE", result
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import pycryptosat
       solver = pycryptosat.Solver()
       solver.add_clause([1])
       solver.add_clause([-2])
       solver.add_clause([-1, 2, 3])
       print(solver.solve()[1])
-    EOS
+    PYTHON
     assert_equal "(None, True, False, True)\n", shell_output("#{python3} test.py")
   end
 end

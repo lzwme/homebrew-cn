@@ -53,7 +53,7 @@ class KyotoTycoon < Formula
   end
 
   test do
-    (testpath"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~LUA
       kt = __kyototycoon__
       db = kt.db
       -- echo back the input data as the output data
@@ -63,7 +63,7 @@ class KyotoTycoon < Formula
          end
          return kt.RVSUCCESS
       end
-    EOS
+    LUA
     port = free_port
 
     fork do

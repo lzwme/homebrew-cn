@@ -204,10 +204,10 @@ class Gnuradio < Formula
     plugin_pth_dir = etc"gnuradioplugins.d"
     plugin_pth_dir.mkpath
 
-    (venv.site_packages"homebrew_gr_plugins.py").write <<~EOS
+    (venv.site_packages"homebrew_gr_plugins.py").write <<~PYTHON
       import site
       site.addsitedir("#{plugin_pth_dir}")
-    EOS
+    PYTHON
 
     pth_contents = "#{prefixsite_packages}\nimport homebrew_gr_plugins\n"
     (venv.site_packages"homebrew-gnuradio.pth").write pth_contents
@@ -221,7 +221,7 @@ class Gnuradio < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}gnuradio-config-info -v")
 
-    (testpath"test.c++").write <<~EOS
+    (testpath"test.c++").write <<~CPP
       #include <gnuradiotop_block.h>
       #include <gnuradioblocksnull_source.h>
       #include <gnuradioblocksnull_sink.h>
@@ -250,7 +250,7 @@ class Gnuradio < Formula
         top_block top;
         top.run();
       }
-    EOS
+    CPP
     system ENV.cxx, testpath"test.c++", "-std=c++17", "-L#{lib}",
            "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
            "-L#{Formula["boost"].opt_lib}", "-lboost_system",
@@ -259,7 +259,7 @@ class Gnuradio < Formula
            "-o", testpath"test"
     system ".test"
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from gnuradio import blocks
       from gnuradio import gr
 
@@ -282,7 +282,7 @@ class Gnuradio < Formula
           tb.wait()
 
       main()
-    EOS
+    PYTHON
     system python3, testpath"test.py"
   end
 end

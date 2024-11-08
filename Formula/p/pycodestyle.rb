@@ -22,24 +22,24 @@ class Pycodestyle < Formula
 
   test do
     # test invocation on a file with no issues
-    (testpath"ok.py").write <<~EOS
+    (testpath"ok.py").write <<~PYTHON
       print(1)
-    EOS
+    PYTHON
     assert_equal "",
       shell_output("#{bin}pycodestyle ok.py")
 
     # test invocation on a file with a whitespace style issue
-    (testpath"ws.py").write <<~EOS
+    (testpath"ws.py").write <<~PYTHON
       print( 1)
-    EOS
+    PYTHON
     assert_equal "ws.py:1:7: E201 whitespace after '('\n",
       shell_output("#{bin}pycodestyle ws.py", 1)
 
     # test invocation on a file with an import not at top of file
-    (testpath"imp.py").write <<~EOS
+    (testpath"imp.py").write <<~PYTHON
       pass
       import sys
-    EOS
+    PYTHON
     assert_equal "imp.py:2:1: E402 module level import not at top of file\n",
       shell_output("#{bin}pycodestyle imp.py", 1)
   end

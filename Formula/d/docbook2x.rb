@@ -76,7 +76,7 @@ class Docbook2x < Formula
 
   test do
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    (testpath/"brew.1.xml").write <<~EOS
+    (testpath/"brew.1.xml").write <<~XML
       <?xml version="1.0" encoding="ISO-8859-1"?>
       <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
                          "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
@@ -90,7 +90,7 @@ class Docbook2x < Formula
         <refpurpose>The missing package manager for macOS</refpurpose>
       </refnamediv>
       </refentry>
-    EOS
+    XML
     system bin/"docbook2man", testpath/"brew.1.xml"
     assert_predicate testpath/"brew.1", :exist?, "Failed to create man page!"
   end

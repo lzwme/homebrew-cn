@@ -41,7 +41,7 @@ class XercesC < Formula
   end
 
   test do
-    (testpath/"ducks.xml").write <<~EOS
+    (testpath/"ducks.xml").write <<~XML
       <?xml version="1.0" encoding="iso-8859-1"?>
 
       <ducks>
@@ -50,7 +50,7 @@ class XercesC < Formula
           <email>duck@foo.com</email>
         </person>
       </ducks>
-    EOS
+    XML
 
     output = shell_output("#{bin}/SAXCount #{testpath}/ducks.xml")
     assert_match "(6 elems, 1 attrs, 0 spaces, 37 chars)", output

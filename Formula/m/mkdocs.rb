@@ -102,18 +102,18 @@ class Mkdocs < Formula
 
   test do
     # build a very simple site that uses the "readthedocs" theme.
-    (testpath/"mkdocs.yml").write <<~EOS
+    (testpath/"mkdocs.yml").write <<~YAML
       site_name: MkLorum
       nav:
         - Home: index.md
       theme: readthedocs
-    EOS
+    YAML
     mkdir testpath/"docs"
-    (testpath/"docs/index.md").write <<~EOS
+    (testpath/"docs/index.md").write <<~MARKDOWN
       # A heading
 
       And some deeply meaningful prose.
-    EOS
+    MARKDOWN
     system bin/"mkdocs", "build", "--clean"
   end
 end

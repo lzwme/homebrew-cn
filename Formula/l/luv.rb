@@ -55,7 +55,7 @@ class Luv < Formula
   end
 
   test do
-    (testpath"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~LUA
       local uv = require('luv')
       local timer = uv.new_timer()
       timer:start(1000, 0, function()
@@ -64,7 +64,7 @@ class Luv < Formula
       end)
       print("Sleeping");
       uv.run()
-    EOS
+    LUA
 
     expected = <<~EOS
       Sleeping

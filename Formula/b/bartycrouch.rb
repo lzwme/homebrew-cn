@@ -25,7 +25,7 @@ class Bartycrouch < Formula
   end
 
   test do
-    (testpath"Test.swift").write <<~EOS
+    (testpath"Test.swift").write <<~SWIFT
       import Foundation
 
       class Test {
@@ -33,7 +33,7 @@ class Bartycrouch < Formula
             NSLocalizedString("test", comment: "")
         }
       }
-    EOS
+    SWIFT
 
     (testpath"en.lprojLocalizable.strings").write <<~EOS
       * No comment provided by engineer. *

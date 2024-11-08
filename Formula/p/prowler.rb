@@ -3,17 +3,17 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/36/35/662426ded7c2968a0be40c763e9aa89a5a7a23532e952eab0912a814457a/prowler-4.5.0.tar.gz"
-  sha256 "1ed50d0c06de208e36594f706744f347b4e39883398b1b87a08d6e87ed691df0"
+  url "https://files.pythonhosted.org/packages/2e/c9/f1a642dc91fa80b1c4b5af8ec11c80612c0bcdcd873e8c777c60cbaffab7/prowler-4.5.1.tar.gz"
+  sha256 "94f4870f2726e6ce417a734674658c58dc580534b4a913f02602dc1368f80e34"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "acd1b03193880e3bd3cb9ee6b1b42fe08e3a190e8a732c75b6f8c0be337e0c8b"
-    sha256 cellar: :any,                 arm64_sonoma:  "48388c8614a9d34396dfd620b964f801ac6b73d97d8ae4f7035e99b6a0a0d316"
-    sha256 cellar: :any,                 arm64_ventura: "45911dc02f06b38f019447da8362692892c08dabeeedfc4fc1b08914a20d21a8"
-    sha256 cellar: :any,                 sonoma:        "748ef5b2b5e60572efa7ff7610c7fb5202d1565b6ba0504a38cc3f81c40ca746"
-    sha256 cellar: :any,                 ventura:       "7c1ff70bd41fa9958621d3fe288c1a37fdbb90ac1ec6c074d5f2c8ef1ad8c456"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d706daeab384275b2b7787817983756de2b1d67e37e879c9b22af1153561187a"
+    sha256 cellar: :any,                 arm64_sequoia: "b320fab98660a8ceec6dafc89868c562dc740b6756f01bc9bd41688d6f61d1f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "e15a3348c4597602e67554063838e7b7249a48f6cf10960b829872c3e9b173d5"
+    sha256 cellar: :any,                 arm64_ventura: "1783ce216a0ec98ac087506d5ebc951752509267c003531d7a588550deb152d7"
+    sha256 cellar: :any,                 sonoma:        "5365f9b54dcf99c622d10a625274ed01904999c4338418b9f13df166054f8a6a"
+    sha256 cellar: :any,                 ventura:       "5a9bb710eb588bac0e420a9ad2ce3b6641d83e241f1a76c1115c64d0508b2625"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a671156381040e9085e411780c01e799c1f3dbf10febe835ad99d8c1c95ce682"
   end
 
   depends_on "cmake" => :build
@@ -321,8 +321,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/a1/37/c854a8b1b1020cf042db3d67577c6f84cd1e8ff6515e4f5498ae9e444ea5/google_auth-2.35.0.tar.gz"
-    sha256 "f4c64ed4e01e8e8b646ef34c018f8bf3338df0c8e37d8b3bba40e7f574a3278a"
+    url "https://files.pythonhosted.org/packages/6a/71/4c5387d8a3e46e3526a8190ae396659484377a73b33030614dd3b28e7ded/google_auth-2.36.0.tar.gz"
+    sha256 "545e9618f2df0bcbb7dcbc45a546485b1212624716975a1ea5ae8149ce769ab1"
   end
 
   resource "google-auth-httplib2" do
@@ -656,8 +656,8 @@ class Prowler < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f9/38/148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96/regex-2024.9.11.tar.gz"
-    sha256 "6c188c307e8433bcb63dc1915022deb553b4203a70722fc542c363bf120a01fd"
+    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
+    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
   resource "requests" do
@@ -686,8 +686,8 @@ class Prowler < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/25/cb/8e919951f55d109d658f81c9b49d0cc3b48637c50792c5d2e77032b8c5da/rpds_py-0.20.1.tar.gz"
-    sha256 "e1791c4aabd117653530dccd24108fa03cc6baf21f58b950d0a73c3b3b29a350"
+    url "https://files.pythonhosted.org/packages/23/80/afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4f/rpds_py-0.21.0.tar.gz"
+    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
   end
 
   resource "rsa" do
@@ -791,13 +791,13 @@ class Prowler < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/e9/34/bef135b27fe1864993a5284ad001157ee9b5538e859ac90f5b0e8cc8c9ec/tqdm-4.66.6.tar.gz"
-    sha256 "4bdd694238bef1485ce839d67967ab50af8f9272aab687c0d7702a01da0be090"
+    url "https://files.pythonhosted.org/packages/e8/4f/0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0/tqdm-4.67.0.tar.gz"
+    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/c5/58/a79003b91ac2c6890fc5d90145c662fd5771c6f11447f116b63300436bc9/typer-0.12.5.tar.gz"
-    sha256 "f592f089bedcc8ec1b974125d64851029c3b1af145f04aca64d69410f0c9b722"
+    url "https://files.pythonhosted.org/packages/e7/87/9eb07fdfa14e22ec7658b5b1147836d22df3848a22c85a4e18ed272303a5/typer-0.13.0.tar.gz"
+    sha256 "f1c7198347939361eec90139ffa0fd8b3df3a2259d5852a0f7400e476d95985c"
   end
 
   resource "typing-extensions" do

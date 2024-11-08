@@ -17,15 +17,15 @@ class MarkdownlintCli2 < Formula
   end
 
   test do
-    (testpath"test-bad.md").write <<~EOS
+    (testpath"test-bad.md").write <<~MARKDOWN
       # Header 1
       body
-    EOS
-    (testpath"test-good.md").write <<~EOS
+    MARKDOWN
+    (testpath"test-good.md").write <<~MARKDOWN
       # Header 1
 
       body
-    EOS
+    MARKDOWN
     assert_match "Summary: 1 error(s)",
       shell_output("#{bin}markdownlint-cli2 :#{testpath}test-bad.md 2>&1", 1)
     assert_match "Summary: 0 error(s)",

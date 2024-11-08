@@ -35,7 +35,7 @@ class Sn0int < Formula
   end
 
   test do
-    (testpath"true.lua").write <<~EOS
+    (testpath"true.lua").write <<~LUA
       -- Description: basic selftest
       -- Version: 0.1.0
       -- License: GPL-3.0
@@ -43,7 +43,7 @@ class Sn0int < Formula
       function run()
           -- nothing to do here
       end
-    EOS
+    LUA
     system bin"sn0int", "run", "-vvxf", testpath"true.lua"
   end
 end

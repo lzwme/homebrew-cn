@@ -23,10 +23,10 @@ class Pyright < Formula
   end
 
   test do
-    (testpath"broken.py").write <<~EOS
+    (testpath"broken.py").write <<~PYTHON
       def wrong_types(a: int, b: int) -> str:
           return a + b
-    EOS
+    PYTHON
     output = pipe_output("#{bin}pyright broken.py 2>&1")
     assert_match "error: Type \"int\" is not assignable to return type \"str\"", output
   end

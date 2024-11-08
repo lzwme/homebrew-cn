@@ -65,7 +65,7 @@ class Aubio < Formula
     system bin"aubiocut", "--verbose", "02DayIsDone.aif"
     system bin"aubioonset", "--verbose", "02DayIsDone.aif"
 
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       import aubio
       src = aubio.source('#{testpath}02DayIsDone.aif')
       total_frames = 0
@@ -75,7 +75,7 @@ class Aubio < Formula
         if read < src.hop_size:
           break
       print(total_frames)
-    EOS
+    PYTHON
     assert_equal "8680056", shell_output("#{python3} test.py").chomp
   end
 end

@@ -35,9 +35,9 @@ class XmlCoreutils < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<~EOS
+    (testpath/"test.xml").write <<~XML
       <hello>world!</hello>
-    EOS
+    XML
     assert_match(/0\s+1\s+1/, shell_output("#{bin}/xml-wc test.xml"))
   end
 end

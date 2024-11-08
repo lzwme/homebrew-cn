@@ -1,18 +1,18 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https:d2lang.com"
-  url "https:github.comterrastructd2archiverefstagsv0.6.7.tar.gz"
-  sha256 "2e66d0012202070dccda6b8fdd8f13cbbf316e23d97fa94327908e4e87b685e5"
+  url "https:github.comterrastructd2archiverefstagsv0.6.8.tar.gz"
+  sha256 "7b18f3f597a913912843fcd6eb52b926e343a2784b2f1009fce9e196fbf9ca03"
   license "MPL-2.0"
   head "https:github.comterrastructd2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c4e1c0736cad71fe3a606a3c9f8a0995a450f63180258cdc1709f15d74e754f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59498cd5019df052264e524cc6b34a70ffdf89faf6ff2bb1ed759c5a2680c509"
-    sha256 cellar: :any_skip_relocation, ventura:       "59498cd5019df052264e524cc6b34a70ffdf89faf6ff2bb1ed759c5a2680c509"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a265f42290d383fc9a88106dd1914c4bd6dfd92b6f9cbbe2db96091119274fb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2a26f389d2aa2963eb9a9b21ff8b5548ad72a4db54ce371e6ee91faab6bde2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a26f389d2aa2963eb9a9b21ff8b5548ad72a4db54ce371e6ee91faab6bde2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2a26f389d2aa2963eb9a9b21ff8b5548ad72a4db54ce371e6ee91faab6bde2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad4191753f44bb706ce4007ce56f493d32c3f7647ed69a212372cb4d227faa65"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad4191753f44bb706ce4007ce56f493d32c3f7647ed69a212372cb4d227faa65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8219056b20d747b9ec219286d5ec02f1334a7fdae5f803fd87cc68cb6badb1"
   end
 
   depends_on "go" => :build

@@ -124,10 +124,10 @@ class Rdkit < Formula
 
   test do
     # Test Python module
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       from rdkit import Chem
       print(Chem.MolToSmiles(Chem.MolFromSmiles('C1=CC=CN=C1')))
-    EOS
+    PYTHON
     assert_equal "c1ccncc1", shell_output("#{python3} test.py 2>&1").chomp
 
     # Test PostgreSQL extension

@@ -33,9 +33,9 @@ class Mdcat < Formula
   end
 
   test do
-    (testpath"test.md").write <<~EOS
+    (testpath"test.md").write <<~MARKDOWN
       _lorem_ **ipsum** dolor **sit** _amet_
-    EOS
+    MARKDOWN
     output = shell_output("#{bin}mdcat --no-colour test.md")
     assert_match "lorem ipsum dolor sit amet", output
   end

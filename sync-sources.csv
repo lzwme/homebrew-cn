@@ -2998,6 +2998,7 @@ Homebrew-homebrew-core/Formula/k/kalker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kallisto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kamal-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kamel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kanata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kanif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kapacitor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karchive.rb, Homebrew/homebrew-core, 0
@@ -3473,7 +3474,7 @@ Homebrew-homebrew-core/Formula/lib/libelf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libemf2svg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libepoxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libestr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libetpan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libevent.rb, Homebrew/homebrew-core, 1
@@ -3766,6 +3767,7 @@ Homebrew-homebrew-core/Formula/lib/libsvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libswiftnav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtasn1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libtatsu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtcod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtecla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtensorflow.rb, Homebrew/homebrew-core, 1
@@ -4989,7 +4991,7 @@ Homebrew-homebrew-core/Formula/p/pivit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixiewps.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pixman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pixman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pixz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pjproject.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pk.rb, Homebrew/homebrew-core, 1
@@ -8187,6 +8189,7 @@ Homebrew-homebrew-cask/Casks/d/distroav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/divvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dixa.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/djuced.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/djv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/djview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dmenu-mac.rb, Homebrew/homebrew-cask, 1
@@ -14115,6 +14118,7 @@ Homebrew-homebrew-cask/Casks/w/whatsapp@legacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsyoursign.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whichspace.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/whimsical.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whisky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer@nightly.rb, Homebrew/homebrew-cask, 1

@@ -130,10 +130,10 @@ class Codelimit < Formula
   end
 
   test do
-    (testpath"test.py").write <<~EOS
+    (testpath"test.py").write <<~PYTHON
       def foo():
         print('Hello world!')
-    EOS
+    PYTHON
 
     assert_includes shell_output("#{bin}codelimit check #{testpath}test.py"), "Refactoring not necessary"
   end

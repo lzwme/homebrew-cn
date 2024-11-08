@@ -27,13 +27,13 @@ class Micropython < Formula
     lib_version = "6" if OS.linux?
 
     # Test the FFI module
-    (testpath"ffi-hello.py").write <<~EOS
+    (testpath"ffi-hello.py").write <<~PYTHON
       import ffi
 
       libc = ffi.open("#{shared_library("libc", lib_version)}")
       printf = libc.func("v", "printf", "s")
       printf("Hello!\\n")
-    EOS
+    PYTHON
 
     system bin"mpy-cross", "ffi-hello.py"
     system bin"micropython", "ffi-hello.py"

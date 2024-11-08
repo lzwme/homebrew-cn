@@ -53,7 +53,7 @@ class JingTrang < Formula
         element core:slug { xsd:string }?
       }
     EOS
-    (testpath"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <response xmlns:core="http:www.bbc.co.ukontologiescoreconcepts">
         <results>
@@ -73,7 +73,7 @@ class JingTrang < Formula
           <thing>
         <results>
       <response>
-    EOS
+    XML
 
     system bin"jing", "-c", "test.rnc", "test.xml"
     system bin"trang", "-I", "rnc", "-O", "rng", "test.rnc", "test.rng"
