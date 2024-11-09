@@ -67,7 +67,7 @@ class Heartbeat < Formula
 
     port = free_port
 
-    (testpath"configheartbeat.yml").write <<~EOS
+    (testpath"configheartbeat.yml").write <<~YAML
       heartbeat.monitors:
       - type: tcp
         schedule: '@every 5s'
@@ -79,7 +79,7 @@ class Heartbeat < Formula
         filename: heartbeat
         codec.format:
           string: '%{[monitor]}'
-    EOS
+    YAML
     fork do
       exec bin"heartbeat", "-path.config", testpath"config", "-path.data",
                             testpath"data"

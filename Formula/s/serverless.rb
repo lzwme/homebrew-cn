@@ -41,14 +41,14 @@ class Serverless < Formula
   end
 
   test do
-    (testpath"serverless.yml").write <<~EOS
+    (testpath"serverless.yml").write <<~YAML
       service: homebrew-test
       provider:
         name: aws
         runtime: python3.6
         stage: dev
         region: eu-west-1
-    EOS
+    YAML
 
     system bin"serverless", "config", "credentials", "--provider", "aws", "--key", "aa", "--secret", "xx"
     output = shell_output("#{bin}serverless package 2>&1")

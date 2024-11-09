@@ -36,17 +36,17 @@ class Yamllint < Formula
   end
 
   test do
-    (testpath"bad.yaml").write <<~EOS
+    (testpath"bad.yaml").write <<~YAML
       ---
       foo: bar: gee
-    EOS
+    YAML
     output = shell_output("#{bin}yamllint -f parsable -s bad.yaml", 1)
     assert_match "syntax error: mapping values are not allowed here", output
 
-    (testpath"good.yaml").write <<~EOS
+    (testpath"good.yaml").write <<~YAML
       ---
       foo: bar
-    EOS
+    YAML
     assert_equal "", shell_output("#{bin}yamllint -f parsable -s good.yaml")
   end
 end

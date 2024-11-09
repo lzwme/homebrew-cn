@@ -121,12 +121,12 @@ class Po4a < Formula
   test do
     # LaTeX
 
-    (testpath"en.tex").write <<~EOS
+    (testpath"en.tex").write <<~TEX
       \\documentclass[a4paper]{article}
       \\begin{document}
       Hello from Homebrew!
       \\end{document}
-    EOS
+    TEX
 
     system bin"po4a-updatepo", "-f", "latex", "-m", "en.tex", "-p", "latex.pot"
     assert_match "Hello from Homebrew!", (testpath"latex.pot").read

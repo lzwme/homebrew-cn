@@ -38,13 +38,13 @@ class Latex2rtf < Formula
   end
 
   test do
-    (testpath/"test.tex").write <<~EOS
+    (testpath/"test.tex").write <<~TEX
       \\documentclass{article}
       \\title{LaTeX to RTF}
       \\begin{document}
       \\maketitle
       \\end{document}
-    EOS
+    TEX
     system bin/"latex2rtf", "test.tex"
     assert_predicate testpath/"test.rtf", :exist?
     assert_match "LaTeX to RTF", File.read(testpath/"test.rtf")

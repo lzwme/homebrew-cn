@@ -81,7 +81,7 @@ class Pyspelling < Formula
   test do
     (testpath / "text.txt").write("Homebrew is my favourite package manager!")
     (testpath / "en-custom.txt").write("homebrew")
-    (testpath / ".pyspelling.yml").write <<~EOS
+    (testpath / ".pyspelling.yml").write <<~YAML
       spellchecker: aspell
       matrix:
       - name: Python Source
@@ -93,7 +93,7 @@ class Pyspelling < Formula
           - #{testpath}/en-custom.txt
         sources:
         - #{testpath}/text.txt
-    EOS
+    YAML
 
     output = shell_output(bin/"pyspelling", 1)
     assert_match <<~EOS, output

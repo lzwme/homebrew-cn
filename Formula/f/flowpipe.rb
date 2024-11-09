@@ -49,11 +49,11 @@ class Flowpipe < Formula
     ENV["FLOWPIPE_INSTALL_DIR"] = testpath".flowpipe"
     ENV["FLOWPIPE_CONFIG_PATH"] = testpath
 
-    (testpath"flowpipe_config.yml").write <<~EOS
+    (testpath"flowpipe_config.yml").write <<~YAML
       workspace:
         path: "#{testpath}workspace"
       mods: []
-    EOS
+    YAML
 
     output = shell_output("#{bin}flowpipe mod list")
     assert_match "No mods installed.", output

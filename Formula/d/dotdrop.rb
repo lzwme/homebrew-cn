@@ -87,7 +87,7 @@ class Dotdrop < Formula
 
   test do
     (testpath"xxx.conf").write("12345678")
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       config:
         dotpath: .
       dotfiles:
@@ -98,7 +98,7 @@ class Dotdrop < Formula
         home:
           dotfiles:
           - f_xxx
-    EOS
+    YAML
     system bin"dotdrop", "install", "--profile=home"
     assert_match "12345678", File.read("yyy.conf")
   end

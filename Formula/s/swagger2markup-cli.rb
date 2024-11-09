@@ -24,7 +24,7 @@ class Swagger2markupCli < Formula
   end
 
   test do
-    (testpath"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       swagger: "2.0"
       info:
         version: "1.0.0"
@@ -37,7 +37,7 @@ class Swagger2markupCli < Formula
             responses:
               "200":
                 description: Describe the test resource
-    EOS
+    YAML
     shell_output("#{bin}swagger2markup convert -i test.yaml -f test")
     assert_match "= TestSpec", shell_output("head -n 1 test.adoc")
   end

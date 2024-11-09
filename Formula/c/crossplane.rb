@@ -24,7 +24,7 @@ class Crossplane < Formula
   test do
     assert_match "Client Version: v#{version}", shell_output("#{bin}crossplane version --client")
 
-    (testpath"controllerconfig.yaml").write <<~EOS
+    (testpath"controllerconfig.yaml").write <<~YAML
       apiVersion: pkg.crossplane.iov1alpha1
       kind: ControllerConfig
       metadata:
@@ -32,8 +32,8 @@ class Crossplane < Formula
       spec:
        args:
          - --enable-external-secret-stores
-    EOS
-    expected_output = <<~EOS
+    YAML
+    expected_output = <<~YAML
       apiVersion: pkg.crossplane.iov1beta1
       kind: DeploymentRuntimeConfig
       metadata:
@@ -51,7 +51,7 @@ class Crossplane < Formula
                   - --enable-external-secret-stores
                   name: package-runtime
                   resources: {}
-    EOS
+    YAML
     system bin"crossplane", "beta", "convert", "deployment-runtime", "controllerconfig.yaml", "-o",
 "deploymentruntimeconfig.yaml"
     inreplace "deploymentruntimeconfig.yaml", ^\s+creationTimestamp.+$\n, ""

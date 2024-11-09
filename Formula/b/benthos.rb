@@ -26,7 +26,7 @@ class Benthos < Formula
       QmVudGhvcyByb2NrcyE=
     EOS
 
-    (testpath"test_pipeline.yaml").write <<~EOS
+    (testpath"test_pipeline.yaml").write <<~YAML
       ---
       logger:
         level: ERROR
@@ -39,7 +39,7 @@ class Benthos < Formula
          - bloblang: 'root = content().decode("base64")'
       output:
         stdout: {}
-    EOS
+    YAML
     output = shell_output("#{bin}benthos -c test_pipeline.yaml")
     assert_match "Benthos rocks!", output.strip
   end

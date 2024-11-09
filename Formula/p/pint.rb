@@ -28,7 +28,7 @@ class Pint < Formula
   end
 
   test do
-    (testpath"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       groups:
       - name: example
         rules:
@@ -39,7 +39,7 @@ class Pint < Formula
             severity: page
           annotations:
             summary: High request latency
-    EOS
+    YAML
 
     cp pkgshare"examplessimple.hcl", testpath".pint.hcl"
 

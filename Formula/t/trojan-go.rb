@@ -126,7 +126,7 @@ class TrojanGo < Formula
     end
 
     trojan_go_server_port = free_port
-    (testpath"server.yaml").write <<~EOS
+    (testpath"server.yaml").write <<~YAML
       run-type:     server
       local-addr:   127.0.0.1
       local-port:   #{trojan_go_server_port}
@@ -137,11 +137,11 @@ class TrojanGo < Formula
       ssl:
         cert:       #{testpath}test.crt
         key:        #{testpath}test.key
-    EOS
+    YAML
     server = fork { exec bin"trojan-go", "-config", testpath"server.yaml" }
 
     trojan_go_client_port = free_port
-    (testpath"client.yaml").write <<~EOS
+    (testpath"client.yaml").write <<~YAML
       run-type:     client
       local-addr:   127.0.0.1
       local-port:   #{trojan_go_client_port}
@@ -152,7 +152,7 @@ class TrojanGo < Formula
       ssl:
         verify:     false
         sni:        localhost
-    EOS
+    YAML
     client = fork { exec bin"trojan-go", "-config", testpath"client.yaml" }
 
     sleep 3

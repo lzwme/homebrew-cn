@@ -4,17 +4,15 @@ class Osmcoastline < Formula
   url "https:github.comosmcodeosmcoastlinearchiverefstagsv2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "217a446421753f6779411129b48f94d6f7ac323a9485428adc89ca27636b0e52"
-    sha256 cellar: :any,                 arm64_sonoma:   "a0f8361692aaed6d584672777d535d8bc0fce0e55538ece93d140d1b3fa5df80"
-    sha256 cellar: :any,                 arm64_ventura:  "e3bca51e41f0ef66d12b17b078cde994b9e3bd0735ba3c087eb03ff5ba6e8647"
-    sha256 cellar: :any,                 arm64_monterey: "e033d67ef3ecfc55b6fc8a00c30c4a235865ab94709ed92169d12ad67f7fb762"
-    sha256 cellar: :any,                 sonoma:         "54b87fc97bc9a3bd4937d05bd5c56899b32eb5d965cb9d518605656cb9e94ec2"
-    sha256 cellar: :any,                 ventura:        "37efc15a7cdb9db548e418553f7e8fd4c1cdc904b86112db01ed59a12717fbf3"
-    sha256 cellar: :any,                 monterey:       "d49649b9159889cdaa2ac3316ee6abf7c6f3e6ad218575ece8cef924eddb1d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09ec7fa2e10d61afe24e05ecba6f66631fdf49d1b8e8e3855209a406f8ef340c"
+    sha256 cellar: :any,                 arm64_sequoia: "605a3249c4abf3290bbb6aace0bb6606581fca5f77ef1d2020132c562e8cb06f"
+    sha256 cellar: :any,                 arm64_sonoma:  "396e9a1d22e2b775246004c456bfa26c722a11844fd5a3352c09167d0dd3157c"
+    sha256 cellar: :any,                 arm64_ventura: "c40d8ac027bfcf5d2a38d7021d352e37596708a1afe43465dc52b0010e6f8b7e"
+    sha256 cellar: :any,                 sonoma:        "36b1d0c5c69680f9fbafd5fbbba294890a148c3d0558dfba796f8f26ab313d27"
+    sha256 cellar: :any,                 ventura:       "11ab1852aa52d2baf18133093871584c7e19b12b63f40d2f496da44def050451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cd072c14fc969499f6f7824659012ea476cade804d9e5dff1f9adc4edee014c"
   end
 
   depends_on "cmake" => :build

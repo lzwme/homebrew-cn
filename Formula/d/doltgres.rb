@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https:github.comdolthubdoltgresql"
-  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.12.0.tar.gz"
-  sha256 "d2a3b96a6b6a0f44d95f89371727b7da378fcd446f74c81daae7c52ea1bba2a3"
+  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.13.0.tar.gz"
+  sha256 "2c770da4dbe4900cc0a5c1e31e0c1097d360302dff730cf36314664c308896ca"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "784fa9e3ac1ab2f09b3fa89c0da92cbfb6655f3b15e6ad8f879396a283a63348"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c81fd3f2431912fb59fc3d4435d3ea5f8433eb1c80b7717dac8e446f1127f46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ffccfbf8bbcb288f3846dabbe140eb64499dc4ec117507a5191fc36aa2a2382"
-    sha256 cellar: :any_skip_relocation, sonoma:        "942f8a6bac5fa1a900042067954318c1a744a55e9cf790a6b30af302e14951ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ac3b95b24a88d4ebb6b69872eb6e81a09427f82a4488cb1e5cda85c7ff65437"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f1afc798fa7e0ecfbd6cadfc4a32142ddfc9ce14089518c120ab7288a3f89c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22b1778645c99e3c853d677072a81d0923deff326ad6174ea93072a7b3575240"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b77bdcdf75a0e9a0b48ae6311468c40c48cc035f54634e247d4019370109dd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "72a14acb707fda8b59297dfefd373697e49987207dbad943e235cd6edd9a5c3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b7405695c31e03439bc32f1f122586afc99d91eced32f70e792a404274019a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "c3f22ce8e0cb3999fcb3ca2fec422ab32de0b5cee6bf252dccce7fbd61c43700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b2589179b6b011642591c44b6e539cc279c0a58b21d253c064588cffeefada5"
   end
 
   depends_on "go" => :build
@@ -33,7 +33,7 @@ class Doltgres < Formula
   test do
     port = free_port
 
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       behavior:
         read_only: false
         disable_client_multi_statements: false
@@ -48,7 +48,7 @@ class Doltgres < Formula
         port: #{port}
         read_timeout_millis: 28800000
         write_timeout_millis: 28800000
-    EOS
+    YAML
 
     fork do
       exec bin"doltgres", "--config", testpath"config.yaml"

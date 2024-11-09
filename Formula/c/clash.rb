@@ -42,7 +42,7 @@ class Clash < Formula
     assert_match version.to_s, shell_output("#{bin}clash -v")
 
     ss_port = free_port
-    (testpath"shadowsocks-libev.json").write <<~EOS
+    (testpath"shadowsocks-libev.json").write <<~JSON
       {
           "server":"127.0.0.1",
           "server_port":#{ss_port},
@@ -50,11 +50,11 @@ class Clash < Formula
           "timeout":600,
           "method":"chacha20-ietf-poly1305"
       }
-    EOS
+    JSON
     server = fork { exec "ss-server", "-c", testpath"shadowsocks-libev.json" }
 
     clash_port = free_port
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       mixed-port: #{clash_port}
       mode: global
       proxies:
@@ -64,7 +64,7 @@ class Clash < Formula
           port: #{ss_port}
           password: "test"
           cipher: chacha20-ietf-poly1305
-    EOS
+    YAML
     system bin"clash", "-t", "-d", testpath # test config && download Country.mmdb
     client = fork { exec bin"clash", "-d", testpath }
 

@@ -25,12 +25,12 @@ class Karn < Formula
   end
 
   test do
-    (testpath".karn.yml").write <<~EOS
+    (testpath".karn.yml").write <<~YAML
       ---
       #{testpath}:
         name: Homebrew Test
         email: test@brew.sh
-    EOS
+    YAML
     system "git", "init"
     system "git", "config", "--global", "user.name", "Test"
     system "git", "config", "--global", "user.email", "test@test.com"

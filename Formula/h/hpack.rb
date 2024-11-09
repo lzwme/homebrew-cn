@@ -33,12 +33,12 @@ class Hpack < Formula
   # be aware that failures here can probably be fixed by tweaking the
   # expected output a bit.
   test do
-    (testpath"package.yaml").write <<~EOS
+    (testpath"package.yaml").write <<~YAML
       name: homebrew
       dependencies: base
       library:
         exposed-modules: Homebrew
-    EOS
+    YAML
     expected = <<~EOS
       name:           homebrew
       version:        0.0.0

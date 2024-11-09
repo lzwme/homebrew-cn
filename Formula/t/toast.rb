@@ -26,13 +26,13 @@ class Toast < Formula
   end
 
   test do
-    (testpath"toast.yml").write <<~EOS
+    (testpath"toast.yml").write <<~YAML
       image: alpine
       tasks:
         homebrew_test:
           description: brewtest
           command: echo hello
-    EOS
+    YAML
 
     assert_match "homebrew_test", shell_output("#{bin}toast --list")
   end

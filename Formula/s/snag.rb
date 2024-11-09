@@ -40,11 +40,11 @@ class Snag < Formula
   end
 
   test do
-    (testpath".snag.yml").write <<~EOS
+    (testpath".snag.yml").write <<~YAML
       build:
         - touch #{testpath}snagged
       verbose: true
-    EOS
+    YAML
     begin
       pid = fork do
         exec bin"snag"

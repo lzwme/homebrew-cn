@@ -32,12 +32,12 @@ class Roadrunner < Formula
 
   test do
     port = free_port
-    (testpath".rr.yaml").write <<~EOS
+    (testpath".rr.yaml").write <<~YAML
       # RR configuration version
       version: '3'
       rpc:
         listen: tcp:127.0.0.1:#{port}
-    EOS
+    YAML
 
     output = shell_output("#{bin}rr jobs list 2>&1", 1)
     assert_match "connect: connection refused", output

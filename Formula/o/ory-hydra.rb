@@ -40,14 +40,14 @@ class OryHydra < Formula
     assert_match version.to_s, shell_output(bin"hydra version")
 
     admin_port = free_port
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       dsn: memory
       serve:
         public:
           port: #{free_port}
         admin:
           port: #{admin_port}
-    EOS
+    YAML
 
     fork { exec bin"hydra", "serve", "all", "--config", "#{testpath}config.yaml" }
     sleep 20

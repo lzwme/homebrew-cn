@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https:conduit.io"
-  url "https:github.comConduitIOconduitarchiverefstagsv0.12.1.tar.gz"
-  sha256 "3393c7121a2ff195efce1146a84daec21540e79ff72686ab7094197311133347"
+  url "https:github.comConduitIOconduitarchiverefstagsv0.12.2.tar.gz"
+  sha256 "2c77817eb81ff2b49fd620fbf3285ab226b53ff1c71ac042ec241855cd5c91f7"
   license "Apache-2.0"
   head "https:github.comConduitIOconduit.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5ee4dfff011715f6a0d8694e628205ce27ceac169eb10c02b827d7cb9e489f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d32a9f5f32f32aee864dc5d054399c036da5da4fba63c4cb0c5b3d74b7bd34c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c750911ca784d1ad4a6dd59a79f1dc0dee23a32038deac3458e2ed85aa155433"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f92d35ce47017f2994ab396e85f838f7e40658789de5354e831cbf2b438f1c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e587ef5aefe8052cbe3887700c4b6411e76a526da01319c19c99fa07b4ec546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e22feab7785ce23aa15b81dac8bf2d692f4e7070dfea635f96e40ef0a67f65f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3153ccd3363f601614139f711ace1428eb5190eec59a0c079024836479c49a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dae905f1257932806c8db656e2a757dbdadd1e2beb24e6840ad58a4c37c35cf4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52842d10d88c62d752b13cbf40d51786833b736a3e98544b0c2eb76b59c09724"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9857b499193fdb0304272c746c494d03d611c33a9e47c115fa22a374cc1fa7bd"
+    sha256 cellar: :any_skip_relocation, ventura:       "ec73be661e672446e5b9b5476509dbb33d004a9f02545be8d69b0918a1425531"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3c48f59c28ad328db294633190d3de6b6cb95c7c13ba971b60bbda50580bc3"
   end
 
   depends_on "go" => :build
@@ -30,8 +30,7 @@ class Conduit < Formula
   end
 
   test do
-    # Assert conduit version
-    assert_match(version.to_s, shell_output("#{bin}conduit -version"))
+    assert_match version.to_s, shell_output("#{bin}conduit --version")
 
     File.open("output.txt", "w") do |file|
       # redirect stdout to the file

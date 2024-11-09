@@ -35,7 +35,7 @@ class Egctl < Formula
   test do
     assert_equal version.to_s, shell_output("#{bin}egctl version --remote=false").strip
 
-    (testpath"input.yaml").write <<~EOS
+    (testpath"input.yaml").write <<~YAML
       apiVersion: gateway.networking.k8s.iov1
       kind: GatewayClass
       metadata:
@@ -100,7 +100,7 @@ class Egctl < Formula
               - path:
                   type: PathPrefix
                   value: 
-    EOS
+    YAML
 
     expected = <<~EOS
       xds:

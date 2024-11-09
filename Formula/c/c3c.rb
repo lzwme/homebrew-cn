@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https:github.comc3langc3c"
-  url "https:github.comc3langc3carchiverefstagsv0.6.3.tar.gz"
-  sha256 "b6c51c19bcbad68de9caf98ad6cf399aa7a643d2fff82cee6cd2807aa532bdc7"
+  url "https:github.comc3langc3carchiverefstagsv0.6.4.tar.gz"
+  sha256 "26d67aa10bf54278b5b3fe6fead1ba95d086af89e56f01f3ccd65ca9a8009339"
   license "LGPL-3.0-only"
   head "https:github.comc3langc3c.git", branch: "master"
 
@@ -15,12 +15,12 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "a74c6bdfea0083c9b475938b1bf6914b9c73edb9df58ed09e9505ea0d8cb3181"
-    sha256 cellar: :any, arm64_sonoma:  "9379e0611283f58e649b34ec762765f009caa1a38b5b5a57c324ca9922736ada"
-    sha256 cellar: :any, arm64_ventura: "3ccf1d2b5b3dd349d9c3e9dd2151e4fcc620ccabc7ee9000d8eab3767d64a068"
-    sha256 cellar: :any, sonoma:        "029b16211faf59d737995a6fbebd2df076edb8e1d191a432230bd85ff26e424c"
-    sha256 cellar: :any, ventura:       "e92d6f0202d19f5a75df3b2cd66509502e2b16722816232bd397368ceba961e0"
-    sha256               x86_64_linux:  "9feef7d3979c930d23546baa06726ac0b652a8932221387b6eb53d2d53b53166"
+    sha256 cellar: :any, arm64_sequoia: "f433b9e6d211285a7ae833a407756bc695bb9506faf3cbf9fd2a13a0435650ea"
+    sha256 cellar: :any, arm64_sonoma:  "ad59c2e95cd71b22a5b9c9517d4aa8e68008b0f6ffe228f5e2b2057af07909f3"
+    sha256 cellar: :any, arm64_ventura: "10575c80370a8f4179c7a24a7210b3fefba4077c00340ea6261f48fbb1bc4c71"
+    sha256 cellar: :any, sonoma:        "04b13cede3306c56b05c6432b6d54c99e59c92673801f4b9717be204dfe4323c"
+    sha256 cellar: :any, ventura:       "c6384da2f9ba750a0febda2954282c75abadd67b2332bbf3c96a3c2d485778c5"
+    sha256               x86_64_linux:  "963de4571c150b77247bdb4534a25fe818d4a6d1dfbaf6ed26ca837d350de921"
   end
 
   depends_on "cmake" => :build

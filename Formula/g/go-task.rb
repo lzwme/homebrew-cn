@@ -34,14 +34,14 @@ class GoTask < Formula
     output = shell_output("#{bin}task --version")
     assert_match "Task version: #{version}", output
 
-    (testpath"Taskfile.yml").write <<~EOS
+    (testpath"Taskfile.yml").write <<~YAML
       version: '3'
 
       tasks:
         test:
           cmds:
             - echo 'Testing Taskfile'
-    EOS
+    YAML
 
     output = shell_output("#{bin}task --silent test")
     assert_match "Testing Taskfile", output

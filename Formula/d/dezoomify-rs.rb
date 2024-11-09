@@ -31,7 +31,7 @@ class DezoomifyRs < Formula
   end
 
   test do
-    (testpath"tiles.yaml").write <<~EOS
+    (testpath"tiles.yaml").write <<~YAML
       url_template: "https:cdn.jsdelivr.netghlovasoadezoomify-rs@v2.11.2testdatagenericmap_{{x}}_{{y}}.jpg"
       x_template: "x * tile_size"
       y_template: "y * tile_size"
@@ -40,7 +40,7 @@ class DezoomifyRs < Formula
         - { name: y, from: 0, to: 1 } # Image height, in tiles
         - { name: tile_size, value: 256 }
       title: "testtile"
-    EOS
+    YAML
     (testpath"testtiles_shasum.txt").write <<~EOS
       d0544af94eac6b418af6824554cb6bbbca8b3772261a1eb5fe9d1afb1eab458b  testtile.png
     EOS

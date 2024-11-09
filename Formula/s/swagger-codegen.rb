@@ -28,7 +28,7 @@ class SwaggerCodegen < Formula
   end
 
   test do
-    (testpath"minimal.yaml").write <<~EOS
+    (testpath"minimal.yaml").write <<~YAML
       ---
       openapi: 3.0.0
       info:
@@ -40,7 +40,7 @@ class SwaggerCodegen < Formula
             responses:
               200:
                 description: OK
-    EOS
+    YAML
     system bin"swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html"
     assert_includes File.read(testpath"index.html"), "<h1>Simple API<h1>"
   end

@@ -22,7 +22,7 @@ class Webhook < Formula
   end
 
   test do
-    (testpath"hooks.yaml").write <<~EOS
+    (testpath"hooks.yaml").write <<~YAML
       - id: test
         execute-command: binsh
         command-working-directory: "#{testpath}"
@@ -31,7 +31,7 @@ class Webhook < Formula
           name: -c
         - source: string
           name: "pwd > out.txt"
-    EOS
+    YAML
 
     port = free_port
     fork do

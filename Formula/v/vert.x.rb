@@ -24,7 +24,7 @@ class VertX < Formula
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~JAVA
       import io.vertx.core.AbstractVerticle;
       public class HelloWorld extends AbstractVerticle {
         public void start() {
@@ -33,7 +33,7 @@ class VertX < Formula
           System.exit(0);
         }
       }
-    EOS
+    JAVA
     output = shell_output("#{bin}vertx run HelloWorld.java")
     assert_equal "Hello World!\n", output
   end

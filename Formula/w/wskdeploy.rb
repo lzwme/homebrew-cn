@@ -30,12 +30,12 @@ class Wskdeploy < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}wskdeploy version")
 
-    (testpath"manifest.yaml").write <<~EOS
+    (testpath"manifest.yaml").write <<~YAML
       packages:
         hello_world_package:
           version: 1.0
           license: Apache-2.0
-    EOS
+    YAML
 
     system bin"wskdeploy", "-v",
                             "--apihost", "openwhisk.ng.bluemix.net",

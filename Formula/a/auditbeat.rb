@@ -65,7 +65,7 @@ class Auditbeat < Formula
 
   test do
     (testpath"files").mkpath
-    (testpath"configauditbeat.yml").write <<~EOS
+    (testpath"configauditbeat.yml").write <<~YAML
       auditbeat.modules:
       - module: file_integrity
         paths:
@@ -73,7 +73,7 @@ class Auditbeat < Formula
       output.file:
         path: "#{testpath}auditbeat"
         filename: auditbeat
-    EOS
+    YAML
     fork do
       exec bin"auditbeat", "-path.config", testpath"config", "-path.data", testpath"data"
     end

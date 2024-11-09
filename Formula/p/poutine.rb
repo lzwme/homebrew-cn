@@ -32,11 +32,11 @@ class Poutine < Formula
 
   test do
     mkdir testpath".poutine"
-    (testpath".poutine.yml").write <<~EOS
+    (testpath".poutine.yml").write <<~YAML
       include:
       - path: .poutine
       ignoreForks: true
-    EOS
+    YAML
 
     assert_match version.to_s, shell_output("#{bin}poutine version")
 
@@ -45,7 +45,7 @@ class Poutine < Formula
     (testpath"repo.githubworkflows").mkpath
     system "git", "-C", testpath"repo", "init"
     system "git", "-C", testpath"repo", "remote", "add", "origin", "git@github.com:actionswhatever.git"
-    vulnerable_workflow = <<-HEREDOC
+    vulnerable_workflow = <<-YAML
     on:
       pull_request_target:
     jobs:
@@ -56,7 +56,7 @@ class Poutine < Formula
           with:
             ref: ${{ github.event.pull_request.head.sha }}
         - run: make test
-    HEREDOC
+    YAML
     (testpath"repo.githubworkflowsbuild.yml").write(vulnerable_workflow)
     system "git", "-C", testpath"repo", "add", ".githubworkflowsbuild.yml"
     system "git", "-C", testpath"repo", "commit", "-m", "message"

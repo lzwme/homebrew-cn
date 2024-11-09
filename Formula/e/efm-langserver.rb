@@ -24,7 +24,7 @@ class EfmLangserver < Formula
   end
 
   test do
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       version: 2
       root-markers:
         - ".git"
@@ -32,7 +32,7 @@ class EfmLangserver < Formula
         python:
           - lint-command: "flake8 --stdin-display-name ${INPUT} -"
             lint-stdin: true
-    EOS
+    YAML
     output = shell_output("#{bin}efm-langserver -c #{testpath"config.yml"} -d")
     assert_match "version: 2", output
     assert_match "lint-command: flake8 --stdin-display-name ${INPUT} -", output

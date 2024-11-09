@@ -40,7 +40,7 @@ class PodmanCompose < Formula
 
     port = free_port
 
-    (testpath"compose.yml").write <<~EOS
+    (testpath"compose.yml").write <<~YAML
       version: "3"
       services:
         test:
@@ -49,7 +49,7 @@ class PodmanCompose < Formula
             - #{port}:80
           environment:
             - NGINX_PORT=80
-    EOS
+    YAML
 
     assert_match "podman ps --filter label=io.podman.compose.project=brewtest",
       shell_output("#{bin}podman-compose up -d 2>&1", 1)

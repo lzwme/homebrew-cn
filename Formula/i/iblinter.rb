@@ -49,12 +49,12 @@ class Iblinter < Formula
     system bin"iblinter", "help"
 
     # Test by linting file
-    (testpath".iblinter.yml").write <<~EOS
+    (testpath".iblinter.yml").write <<~YAML
       ignore_cache: true
       enabled_rules: [ambiguous]
-    EOS
+    YAML
 
-    (testpath"Test.xib").write <<~EOS
+    (testpath"Test.xib").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch">
         <objects>
@@ -63,7 +63,7 @@ class Iblinter < Formula
           <view>
         <objects>
       <document>
-    EOS
+    XML
 
     assert_match "#{testpath}Test.xib:0:0: error: UIView (iGg-Eg-h0O) has ambiguous constraints",
                  shell_output("#{bin}iblinter lint --config #{testpath}.iblinter.yml --path #{testpath}", 2).chomp

@@ -56,11 +56,11 @@ class Licensed < Formula
       gem 'licensed', '#{version}'
     EOS
 
-    (testpath".licensed.yml").write <<~EOS
+    (testpath".licensed.yml").write <<~YAML
       name: 'test'
       allowed:
         - mit
-    EOS
+    YAML
 
     assert_match "Caching dependency records for test",
                         shell_output(bin"licensed cache")

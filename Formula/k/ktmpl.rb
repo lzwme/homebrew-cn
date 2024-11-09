@@ -28,7 +28,7 @@ class Ktmpl < Formula
   end
 
   test do
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       ---
       kind: "Template"
       apiVersion: "v1"
@@ -51,7 +51,7 @@ class Ktmpl < Formula
           description: "The port the service should run on"
           required: true
           parameterType: "int"
-    EOS
+    YAML
     system bin"ktmpl", "test.yml", "-p", "PORT", "8080"
   end
 end

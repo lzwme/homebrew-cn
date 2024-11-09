@@ -1,28 +1,17 @@
 class Lftp < Formula
   desc "Sophisticated file transfer program"
   homepage "https:lftp.yar.ru"
-  url "https:lftp.yar.ruftplftp-4.9.2.tar.xz"
-  sha256 "c517c4f4f9c39bd415d7313088a2b1e313b2d386867fe40b7692b83a20f0670d"
+  url "https:github.comlavv17lftpreleasesdownloadv4.9.3lftp-4.9.3.tar.gz"
+  sha256 "68116cc184ab660a78a4cef323491e89909e5643b59c7b5f0a14f7c2b20e0a29"
   license "GPL-3.0-or-later"
-  revision 1
-
-  livecheck do
-    url "https:github.comlavv17lftp.git"
-  end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "7669b4af3beb44b3cf274a13b07b08a30c4a7c783beb1e70a5503895a90e0f57"
-    sha256 arm64_sonoma:   "aaff61c7beb8135dfd9888ac0e7fbde05a83b3189f5610a682ed01bde537f16a"
-    sha256 arm64_ventura:  "c9bb0571b5b9472a289e93b9210e1917bede06a2d5909d47eacefb0f2f042439"
-    sha256 arm64_monterey: "d3d9dd22c527c2e7b97f6972a3e902ae58dbd52cac41a9f5480e350bc00cfb79"
-    sha256 arm64_big_sur:  "5df3fa7301a808e6f0194c833ff4a1003ad912f6524f4b79d175f2fd727a5883"
-    sha256 sonoma:         "48af9632ac3e06f2d8f65477ab05c2e57303561cc2f14c185154d069b21326d5"
-    sha256 ventura:        "dcb1fb4a543b3bd88b915ab1b616e42a8ef821d7987cd54bfcedb8436ff3e4a4"
-    sha256 monterey:       "ea4d5856758cd68e0a71606513352159c0e35fc97dbb07db747f2709b411787c"
-    sha256 big_sur:        "f51859af8603b65107fadf56c429a7f9582d7a1b232283c31a9d7933bf3306bd"
-    sha256 catalina:       "a35a9903b86843178a558fe72cc83f66d7821843cd43ab3580d915b165b0d383"
-    sha256 x86_64_linux:   "af84a1995e2213553c91e78b746cf9c921a11fa99bffcaea96f842669e956c81"
+    sha256 arm64_sequoia: "275b333b0e01dc1bc87f11332d5ee33d1399d73f36e3123f97a7a16d229c5d37"
+    sha256 arm64_sonoma:  "91e89854b82451fcd1dc6bfb2182b344adec778d5951224242aee4de60324034"
+    sha256 arm64_ventura: "47191323a1e714ea7534413bdc8d4dc90960cebe01cd634c85f44d100790c438"
+    sha256 sonoma:        "e4cb328becffa3416e370bd627bbea0e29505fe162f3d1c4ff54ad1da50ebb3b"
+    sha256 ventura:       "91432c67fc43b779976229a1c2982e4cfa32cff893d68cfe0e382fd175259ea3"
+    sha256 x86_64_linux:  "a4b7a6b989cdc30e9f5070e0d3669e2717e53b13984aef179035b99f0e2c2ab6"
   end
 
   depends_on "libidn2"

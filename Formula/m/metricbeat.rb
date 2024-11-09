@@ -58,7 +58,7 @@ class Metricbeat < Formula
   end
 
   test do
-    (testpath"configmetricbeat.yml").write <<~EOS
+    (testpath"configmetricbeat.yml").write <<~YAML
       metricbeat.modules:
       - module: system
         metricsets: ["load"]
@@ -67,7 +67,7 @@ class Metricbeat < Formula
         enabled: true
         path: #{testpath}data
         filename: metricbeat
-    EOS
+    YAML
 
     (testpath"logs").mkpath
     (testpath"data").mkpath

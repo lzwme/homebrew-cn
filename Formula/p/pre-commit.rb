@@ -94,13 +94,13 @@ class PreCommit < Formula
 
   test do
     system "git", "init"
-    (testpath".pre-commit-config.yaml").write <<~EOS
+    (testpath".pre-commit-config.yaml").write <<~YAML
       repos:
       -   repo: https:github.compre-commitpre-commit-hooks
           rev: v0.9.1
           hooks:
           -   id: trailing-whitespace
-    EOS
+    YAML
     system bin"pre-commit", "install"
     (testpath"f").write "hi\n"
     system "git", "add", "f"

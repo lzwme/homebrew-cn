@@ -50,7 +50,7 @@ class Prometheus < Formula
       --storage.tsdb.path #{var}prometheus
     EOS
 
-    (buildpath"prometheus.yml").write <<~EOS
+    (buildpath"prometheus.yml").write <<~YAML
       global:
         scrape_interval: 15s
 
@@ -58,7 +58,7 @@ class Prometheus < Formula
         - job_name: "prometheus"
           static_configs:
           - targets: ["localhost:9090"]
-    EOS
+    YAML
     etc.install "prometheus.args", "prometheus.yml"
   end
 
@@ -78,13 +78,13 @@ class Prometheus < Formula
   end
 
   test do
-    (testpath"rules.example").write <<~EOS
+    (testpath"rules.example").write <<~YAML
       groups:
       - name: http
         rules:
         - record: job:http_inprogress_requests:sum
           expr: sum(http_inprogress_requests) by (job)
-    EOS
+    YAML
 
     system bin"promtool", "check", "rules", testpath"rules.example"
   end

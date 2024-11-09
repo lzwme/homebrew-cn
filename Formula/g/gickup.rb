@@ -25,7 +25,7 @@ class Gickup < Formula
   end
 
   test do
-    (testpath"conf.yml").write <<~EOS
+    (testpath"conf.yml").write <<~YAML
       source:
         github:
           - token: brewtest-token
@@ -33,7 +33,7 @@ class Gickup < Formula
             username: brewtest
             password: testpass
             ssh: true
-    EOS
+    YAML
 
     output = shell_output("#{bin}gickup --dryrun 2>&1")
     assert_match "grabbing the repositories from Brew Test", output

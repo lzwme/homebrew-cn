@@ -31,7 +31,7 @@ class KubeScore < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}kube-score version")
 
-    (testpath"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
@@ -47,7 +47,7 @@ class KubeScore < Formula
           port: 80
           targetPort: 8080
         type: NodePort
-    EOS
+    YAML
     assert_match "The services selector does not match any pods", shell_output("#{bin}kube-score score test.yaml", 1)
   end
 end

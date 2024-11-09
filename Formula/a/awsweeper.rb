@@ -33,12 +33,12 @@ class Awsweeper < Formula
   end
 
   test do
-    (testpath"filter.yml").write <<~EOS
+    (testpath"filter.yml").write <<~YAML
       aws_autoscaling_group:
       aws_instance:
         - tags:
             Name: foo
-    EOS
+    YAML
 
     assert_match "Error: failed to configure provider (name=aws",
       shell_output("#{bin}awsweeper --dry-run #{testpath}filter.yml 2>&1", 1)

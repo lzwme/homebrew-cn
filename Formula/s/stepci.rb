@@ -28,7 +28,7 @@ class Stepci < Formula
     # https://docs.stepci.com/legal/privacy.html
     ENV["STEPCI_DISABLE_ANALYTICS"] = "1"
 
-    (testpath/"workflow.yml").write <<~EOS
+    (testpath/"workflow.yml").write <<~YAML
       version: "1.1"
       name: Status Check
       env:
@@ -42,7 +42,7 @@ class Stepci < Formula
                 method: GET
                 check:
                   status: /^20/
-    EOS
+    YAML
 
     expected = <<~EOS
       Tests: 0 failed, 1 passed, 1 total

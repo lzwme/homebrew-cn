@@ -28,7 +28,7 @@ class Victoriametrics < Formula
     system "make", "victoria-metrics"
     bin.install "binvictoria-metrics"
 
-    (etc"victoriametricsscrape.yml").write <<~EOS
+    (etc"victoriametricsscrape.yml").write <<~YAML
       global:
         scrape_interval: 10s
 
@@ -36,7 +36,7 @@ class Victoriametrics < Formula
         - job_name: "victoriametrics"
           static_configs:
           - targets: ["127.0.0.1:8428"]
-    EOS
+    YAML
   end
 
   service do
@@ -54,7 +54,7 @@ class Victoriametrics < Formula
   test do
     http_port = free_port
 
-    (testpath"scrape.yml").write <<~EOS
+    (testpath"scrape.yml").write <<~YAML
       global:
         scrape_interval: 10s
 
@@ -62,7 +62,7 @@ class Victoriametrics < Formula
         - job_name: "victoriametrics"
           static_configs:
           - targets: ["127.0.0.1:#{http_port}"]
-    EOS
+    YAML
 
     pid = fork do
       exec bin"victoria-metrics",

@@ -57,7 +57,7 @@ class FaasCli < Formula
       end
     end
 
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       provider:
         name: openfaas
         gateway: https:localhost:#{port}
@@ -68,7 +68,7 @@ class FaasCli < Formula
           lang: python
           handler: .dummy_function
           image: dummy_image
-    EOS
+    YAML
 
     begin
       output = shell_output("#{bin}faas-cli deploy --tls-no-verify -yaml test.yml 2>&1", 1)

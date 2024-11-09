@@ -1,18 +1,18 @@
 class Liblxi < Formula
   desc "Simple C API for communicating with LXI compatible instruments"
   homepage "https:github.comlxi-toolsliblxi"
-  url "https:github.comlxi-toolsliblxiarchiverefstagsv1.21.tar.gz"
-  sha256 "0ed6ddc2caeaf292c05a3d80fadf0ea0776187ec609fd3874f6dbbb411cda7e3"
+  url "https:github.comlxi-toolsliblxiarchiverefstagsv1.22.tar.gz"
+  sha256 "d33ca3990513223880ec238eb2e5aa1cc93aff51c470ef0db9df3e0c332493d5"
   license "BSD-3-Clause"
   head "https:github.comlxi-toolsliblxi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ba9f08d2c888fe83b95ee04bed636183570284335d9693b07deab14d5476f34b"
-    sha256 cellar: :any, arm64_sonoma:  "cafd14a894fe716196c2b384aa987466957ac95b17053cdae6c766466c560f12"
-    sha256 cellar: :any, arm64_ventura: "c542b037f1b237279be7d71ee0bf32b256164decf6c51f94d2d246aee6547719"
-    sha256 cellar: :any, sonoma:        "f490d08a779989026b594df8b93927a4d447c3b1f1be3124efce5526d171a785"
-    sha256 cellar: :any, ventura:       "af9a495a33df338841d3eb69ef146300c7782c132fb95e5a8168c1e17fa8d7af"
-    sha256               x86_64_linux:  "95c49c316da10f9a64559a1ae6d85f3eac043227d275f68196c696a29c167cb7"
+    sha256 cellar: :any,                 arm64_sequoia: "831cb59dad3bca5bed6c74817fd5597fdd4fd54ae2090e3ebab6ef5ef54a7fc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "16a11167f071f03bd1e765f0c8589a5d6bc344a0fe2d2deb31c0de8ed76fa751"
+    sha256 cellar: :any,                 arm64_ventura: "d78d4fbae7b6cc939fa66c4dd2076ad656da648a166f678b2eacd2e61e24588c"
+    sha256 cellar: :any,                 sonoma:        "53fbcaa96206292e4bf9c2cd1a1ff58923aff7a7e2158ed7e9b61c1fd8cbc672"
+    sha256 cellar: :any,                 ventura:       "7dbb5b441482ca8698090704c45aa776b2680957ae39325c93fc5ae7b81a2b80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21dab7abe5a6f4c2c6ff59733b4e25232a5ec4bd0085adf179890a8b68b88b85"
   end
 
   depends_on "meson" => :build

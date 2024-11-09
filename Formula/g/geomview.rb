@@ -38,6 +38,8 @@ class Geomview < Formula
   depends_on "mesa-glu"
   depends_on "openmotif"
 
+  uses_from_macos "zlib"
+
   conflicts_with "clip", because: "both install `clip` binaries"
 
   # Fix -flat_namespace being used on Big Sur and later.

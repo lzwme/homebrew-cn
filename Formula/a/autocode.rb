@@ -32,7 +32,7 @@ class Autocode < Formula
   end
 
   test do
-    (testpath/".autocode/config.yml").write <<~EOS
+    (testpath/".autocode/config.yml").write <<~YAML
       name: test
       version: 0.1.0
       description: test description
@@ -41,7 +41,7 @@ class Autocode < Formula
         email: test@example.com
         url: https://example.com
       copyright: 2015 Test
-    EOS
+    YAML
     system bin/"autocode", "build"
   end
 end

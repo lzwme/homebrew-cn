@@ -34,7 +34,7 @@ class Teller < Formula
       foo=bar
     EOS
 
-    (testpath".teller.yml").write <<~EOS
+    (testpath".teller.yml").write <<~YAML
       project: brewtest
       providers:
         # this will fuse vars with the below .env file
@@ -44,7 +44,7 @@ class Teller < Formula
           maps:
           - id: one
             path: #{testpath}test.env
-    EOS
+    YAML
 
     output = shell_output("#{bin}teller -c #{testpath}.teller.yml show 2>&1")
     assert_match "[dotenv (dotenv)]: foo = ba", output

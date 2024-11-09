@@ -39,7 +39,7 @@ class Apko < Formula
   end
 
   test do
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       contents:
         repositories:
           - https:dl-cdn.alpinelinux.orgalpineedgemain
@@ -56,7 +56,7 @@ class Apko < Formula
       # only key found for arch riscv64 [edge],
       archs:
         - riscv64
-    EOS
+    YAML
     system bin"apko", "build", testpath"test.yml", "apko-alpine:test", "apko-alpine.tar"
     assert_predicate testpath"apko-alpine.tar", :exist?
 

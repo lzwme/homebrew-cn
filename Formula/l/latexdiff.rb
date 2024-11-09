@@ -31,19 +31,19 @@ class Latexdiff < Formula
   end
 
   test do
-    (testpath"test1.tex").write <<~EOS
+    (testpath"test1.tex").write <<~TEX
       \\documentclass{article}
       \\begin{document}
       Hello, world.
       \\end{document}
-    EOS
+    TEX
 
-    (testpath"test2.tex").write <<~EOS
+    (testpath"test2.tex").write <<~TEX
       \\documentclass{article}
       \\begin{document}
       Goodnight, moon.
       \\end{document}
-    EOS
+    TEX
 
     expect = ^\\DIFdelbegin \s+
              \\DIFdel      \{ Hello,[ ]world \}

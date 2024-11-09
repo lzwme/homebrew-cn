@@ -78,13 +78,13 @@ class Polynote < Formula
     assert_match "Unknown command version", output
 
     port = free_port
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       listen:
         host: 127.0.0.1
         port: #{port}
       storage:
         dir: #{testpath}notebooks
-    EOS
+    YAML
 
     begin
       pid = fork do

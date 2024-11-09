@@ -204,7 +204,7 @@ class Latexindent < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~EOS
+    (testpath"test.tex").write <<~TEX
       \\documentclass{article}
       \\title{latexindent Homebrew Test}
       \\begin{document}
@@ -214,8 +214,8 @@ class Latexindent < Formula
       \\item World
       \\end{itemize}
       \\end{document}
-    EOS
-    assert_match <<~EOS, shell_output("#{bin}latexindent #{testpath}test.tex")
+    TEX
+    assert_match <<~TEX, shell_output("#{bin}latexindent #{testpath}test.tex")
       \\documentclass{article}
       \\title{latexindent Homebrew Test}
       \\begin{document}
@@ -225,6 +225,6 @@ class Latexindent < Formula
       	\\item World
       \\end{itemize}
       \\end{document}
-    EOS
+    TEX
   end
 end

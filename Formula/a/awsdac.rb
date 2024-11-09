@@ -22,12 +22,12 @@ class Awsdac < Formula
   end
 
   test do
-    (testpath"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       Diagram:
         Resources:
           Canvas:
             Type: AWS::Diagram::Canvas
-    EOS
+    YAML
     assert_equal "[Completed] AWS infrastructure diagram generated: output.png",
       shell_output("#{bin}awsdac test.yaml").strip
   end

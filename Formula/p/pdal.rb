@@ -4,6 +4,7 @@ class Pdal < Formula
   url "https:github.comPDALPDALreleasesdownload2.8.1PDAL-2.8.1-src.tar.bz2"
   sha256 "0e8d7deabe721f806b275dda6cf5630a8e43dc7210299b57c91f46fadcc34b31"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comPDALPDAL.git", branch: "master"
 
   # The upstream GitHub repository sometimes creates tags that only include a
@@ -17,12 +18,12 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ce5799eddec979fe2765b90fbd99a1136a78fe6f10333bdd480e9c07e4862af9"
-    sha256 cellar: :any,                 arm64_sonoma:  "04aa160e3d11fac4908f83ac146570d911ed9f9bbe2191101cb325df009ca3bd"
-    sha256 cellar: :any,                 arm64_ventura: "d0cab2aa3ed05dcc5094685680c4f5ce313bcd3edf9be2f0e36e07530127f7c1"
-    sha256 cellar: :any,                 sonoma:        "5c1281aeb4f1359ce3b9bb0f4badc759450fec87bb57616d3c931f0273769598"
-    sha256 cellar: :any,                 ventura:       "d93613d6a2b99a9dc10755f04527fda45c49060f55537141d8883992044316c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e256bb9ef10a9c945863e420130e6d0dd36e7e36973946e69034de723f49585"
+    sha256 cellar: :any,                 arm64_sequoia: "5ace63b345d073dff970808b106404c6948a3c11d485809811ca1b7688d3e63c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c902d2284736cb833b7df51a6aebfdbc287106cb083b99eff902217da069cff"
+    sha256 cellar: :any,                 arm64_ventura: "6ed67bc6d48660119474b32a6619767d2773b596b8d532abfb47e66c0a667402"
+    sha256 cellar: :any,                 sonoma:        "d32e2895b2ded2584177286909dc4610de3966ed88f0f55f496bcdf7bcc6480a"
+    sha256 cellar: :any,                 ventura:       "445cd7662377535b2edc3a4c7ac45c454256d09c7b03187e724c644c837202fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a388ac898e825428521848a1a71c3bd92e25132b250040bdd7def926e9ebe96f"
   end
 
   depends_on "cmake" => :build

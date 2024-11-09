@@ -259,13 +259,13 @@ class CondaLock < Formula
   test do
     assert_equal "#{name}, version #{version}", shell_output("#{bin}conda-lock --version").strip
 
-    (testpath"environment.yml").write <<~EOS
+    (testpath"environment.yml").write <<~YAML
       name: testenv
       channels:
         - conda-forge
       dependencies:
         - python=3.13
-    EOS
+    YAML
     system bin"conda-lock", "-p", "osx-64", "-p", "osx-arm64"
     assert_path_exists testpath"conda-lock.yml"
   end

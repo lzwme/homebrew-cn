@@ -31,30 +31,30 @@ class Yamale < Formula
   end
 
   test do
-    (testpath"schema.yaml").write <<~EOS
+    (testpath"schema.yaml").write <<~YAML
       string: str()
       number: num(required=False)
       datetime: timestamp(min='2010-01-01 0:0:0')
-    EOS
-    (testpath"data1.yaml").write <<~EOS
+    YAML
+    (testpath"data1.yaml").write <<~YAML
       string: bo is awesome
       datetime: 2011-01-01 00:00:00
-    EOS
-    (testpath"some_data.yaml").write <<~EOS
+    YAML
+    (testpath"some_data.yaml").write <<~YAML
       string: one
       number: 3
       datetime: 2015-01-01 00:00:00
-    EOS
+    YAML
     output = shell_output("#{bin}yamale -s schema.yaml data1.yaml")
     assert_match "Validation success!", output
 
     output = shell_output("#{bin}yamale -s schema.yaml some_data.yaml")
     assert_match "Validation success!", output
 
-    (testpath"good.yaml").write <<~EOS
+    (testpath"good.yaml").write <<~YAML
       ---
       foo: bar
-    EOS
+    YAML
     output = shell_output("#{bin}yamale -s schema.yaml schema.yaml", 1)
     assert_match "Validation failed!", output
   end

@@ -399,7 +399,7 @@ class Fdroidserver < Formula
       mkdir "metadata"
 
       (testpath"fdroidconfig.py").write "gradle = 'gradle'"
-      (testpath"fdroidmetadatafake.yml").write <<~EOS
+      (testpath"fdroidmetadatafake.yml").write <<~YAML
         Categories:
           - Internet
         License: GPL-3.0-or-later
@@ -409,7 +409,7 @@ class Fdroidserver < Formula
 
         AutoUpdateMode: None
         UpdateCheckMode: None
-      EOS
+      YAML
 
       system bin"fdroid", "checkupdates", "--verbose", "--allow-dirty"
       system bin"fdroid", "lint", "--verbose"

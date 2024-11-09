@@ -30,7 +30,7 @@ class Easeprobe < Formula
   end
 
   test do
-    (testpath"config.yml").write <<~EOS.chomp
+    (testpath"config.yml").write <<~YAML.chomp
       http:
         - name: "brew.sh"
           url: "https:brew.sh"
@@ -38,7 +38,7 @@ class Easeprobe < Formula
         log:
           - name: "logfile"
             file: #{testpath}easeprobe.log
-    EOS
+    YAML
 
     easeprobe_stdout = (testpath"easeprobe.log")
 

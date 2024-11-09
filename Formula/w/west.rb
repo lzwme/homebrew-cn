@@ -72,11 +72,11 @@ class West < Formula
   test do
     mkdir testpath"west" do
       mkdir "test-project"
-      (testpath"westtest-projectwest.yml").write <<~EOS
+      (testpath"westtest-projectwest.yml").write <<~YAML
         manifest:
           self:
             path: test-project
-      EOS
+      YAML
       system bin"west", "init", "-l", testpath"westtest-project"
       assert_predicate testpath"west.west", :exist?
     end

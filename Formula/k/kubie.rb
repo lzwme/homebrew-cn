@@ -32,7 +32,7 @@ class Kubie < Formula
   end
 
   test do
-    (testpath".kubekubie-test.yaml").write <<~EOS
+    (testpath".kubekubie-test.yaml").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
@@ -50,7 +50,7 @@ class Kubie < Formula
       users:
       - user:
         name: kubie-test-user
-    EOS
+    YAML
 
     assert_match "The connection to the server 0.0.0.0 was refused - did you specify the right host or port?",
       shell_output("#{bin}kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")

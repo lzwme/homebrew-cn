@@ -121,7 +121,7 @@ class Cf2tf < Formula
   end
 
   test do
-    (testpath"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       AWSTemplateFormatVersion: '2010-09-09'
       Description: 'Hello World S3 Bucket CloudFormation Stack'
       Resources:
@@ -130,14 +130,14 @@ class Cf2tf < Formula
           Properties:
             BucketName: hello-world-s3-bucket
             AccessControl: PublicRead
-    EOS
+    YAML
 
-    expected = <<~EOS
+    expected = <<~HCL
       resource "aws_s3_bucket" "hello_world_s3_bucket" {
         bucket = "hello-world-s3-bucket"
         acl = "public-read"
       }
-    EOS
+    HCL
 
     system bin"cf2tf", "test.yaml", "-o", testpath
     assert_match expected, (testpath"resource.tf").read

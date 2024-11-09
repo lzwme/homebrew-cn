@@ -36,7 +36,7 @@ class Melange < Formula
   end
 
   test do
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       package:
         name: hello
         version: 2.12
@@ -74,7 +74,7 @@ class Melange < Formula
         - uses: autoconfmake
         - uses: autoconfmake-install
         - uses: strip
-    EOS
+    YAML
 
     assert_equal "hello-2.12-r0", shell_output("#{bin}melange package-version #{testpath}test.yml")
 

@@ -45,7 +45,7 @@ class Spotbugs < Formula
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~JAVA
       public class HelloWorld {
         private double[] myList;
         public static void main(String[] args) {
@@ -55,7 +55,7 @@ class Spotbugs < Formula
           return myList;
         }
       }
-    EOS
+    JAVA
     system Formula["openjdk"].bin"javac", "HelloWorld.java"
     system Formula["openjdk"].bin"jar", "cvfe", "HelloWorld.jar", "HelloWorld", "HelloWorld.class"
     output = shell_output("#{bin}spotbugs -textui HelloWorld.jar")

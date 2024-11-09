@@ -22,7 +22,7 @@ class Crowdin < Formula
   end
 
   test do
-    (testpath"crowdin.yml").write <<~EOS
+    (testpath"crowdin.yml").write <<~YAML
       "project_id": "12"
       "api_token": "54e01--your-personal-token--2724a"
       "base_path": "."
@@ -36,7 +36,7 @@ class Crowdin < Formula
           "translation" : "%two_letters_code%%original_file_name%"
         }
       ]
-    EOS
+    YAML
 
     system bin"crowdin", "init"
 

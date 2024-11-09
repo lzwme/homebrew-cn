@@ -35,7 +35,7 @@ class CloudformationGuard < Formula
   end
 
   test do
-    (testpath"test-template.yml").write <<~EOS
+    (testpath"test-template.yml").write <<~YAML
       ---
       AWSTemplateFormatVersion: '2010-09-09'
       Resources:
@@ -46,7 +46,7 @@ class CloudformationGuard < Formula
             Size : 99
             Encrypted: true,
             AvailabilityZone : us-east-1b
-    EOS
+    YAML
 
     (testpath"test-ruleset").write <<~EOS
       rule migrated_rules {

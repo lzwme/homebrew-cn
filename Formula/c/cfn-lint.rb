@@ -150,7 +150,7 @@ class CfnLint < Formula
   end
 
   test do
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       ---
       AWSTemplateFormatVersion: '2010-09-09'
       Resources:
@@ -162,7 +162,7 @@ class CfnLint < Formula
             Parameters:
               DeploymentName: iam-pipeline
               Deploy: 'auto'
-    EOS
+    YAML
     system bin"cfn-lint", "test.yml"
   end
 end

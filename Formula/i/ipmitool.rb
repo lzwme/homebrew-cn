@@ -4,7 +4,7 @@ class Ipmitool < Formula
   url "https:codeberg.orgIPMIToolipmitoolarchiveIPMITOOL_1_8_19.tar.gz"
   sha256 "ce13c710fea3c728ba03a2a65f2dd45b7b13382b6f57e25594739f2e4f20d010"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -15,16 +15,12 @@ class Ipmitool < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "e634c21dfd6a2f2966ea44cd06769913da9063173243544dc37581ffe997c12c"
-    sha256 arm64_sonoma:   "706bd54ab2e1ba25915652b20b40a3fcef4611e185c5a6910a4c2b73d737df2b"
-    sha256 arm64_ventura:  "9c793c56cdb44aab31470708ab208e9525d4a5782b313f3cf7dd12fad2759275"
-    sha256 arm64_monterey: "c19e86e32583bceb9c38f2232c90726b2a529857d24638e62e355ad47eb8bfdb"
-    sha256 arm64_big_sur:  "d8e13a2e7d3c9bb7cb0f04aaeb559154685ca752247b0ebf45ee9c3e4e85fdfc"
-    sha256 sonoma:         "3c4a0d31ca3b729ae30dc91019f4e1c6359b753f8973149f444d78fb644d585b"
-    sha256 ventura:        "3f390f62eceea1ff43f989033f099f54a0f9f006b915e4f60b044dd6c9473a09"
-    sha256 monterey:       "9977d1fe240ac918fe0f2a2468a4fa451faf3a442b0136dd490cc58d02b2898b"
-    sha256 big_sur:        "18a570a5c08115eada019cd65b3a889e51f950ba9efed6bd1cb82864ff3661f7"
-    sha256 x86_64_linux:   "3642f1f3d4daa7d79df5394683be422345f2c397fc01febd9f4ad75e751c92c8"
+    sha256 arm64_sequoia: "edbce0fa9c0eb8554d49e69266b9a954b48675511ae98cab9f252df858c60feb"
+    sha256 arm64_sonoma:  "4209c292804d02871d7ffbb5eacfe3d0a9b4c433bd7ea324d7411453e5898ed8"
+    sha256 arm64_ventura: "d5f56eab1fc400e5160b2e08df8161d8d8c0bfeb9935ed220ae28e60ab6f460c"
+    sha256 sonoma:        "6486e5cfbef27dc3affea78d2ce0d06b50b44030e27606095f25ad9f42dafce7"
+    sha256 ventura:       "b232ea31418c3291675268781731b137e2d5737e3e588c46508bc5c7c9bcc3ce"
+    sha256 x86_64_linux:  "610caf753fee4dcb908b7213554bb2397a9e303c00c95b52a7168da42ba804f7"
   end
 
   depends_on "autoconf" => :build
@@ -36,8 +32,15 @@ class Ipmitool < Formula
     depends_on "readline"
   end
 
-  # fix enterprise-number URL due to IANA URL scheme change
-  # remove in next release
+  # Patch to fix lan print
+  # https:github.comipmitoolipmitoolissues388
+  patch do
+    url "https:github.comipmitoolipmitoolcommita61349b443c16821e4884cde5ad8c031d619631a.patch?full_index=1"
+    sha256 "e026b8a5a5128714a0f36d05b4b26428dca3522dc889ebc21dc8888a2d3f1505"
+  end
+
+  # Patch to fix enterprise-number URL due to IANA URL scheme change
+  # https:github.comipmitoolipmitoolissues377
   patch do
     url "https:codeberg.orgIPMIToolipmitoolcommit1edb0e27e44196d1ebe449aba0b9be22d376bcb6.patch?full_index=1"
     sha256 "044363a930cf6a9753d8be2a036a0ee8c4243ce107eebc639dcb93e1e412e0ed"

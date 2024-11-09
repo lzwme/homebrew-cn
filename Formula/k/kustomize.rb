@@ -37,13 +37,13 @@ class Kustomize < Formula
   test do
     assert_match "v#{version}", shell_output("#{bin}kustomize version")
 
-    (testpath"kustomization.yaml").write <<~EOS
+    (testpath"kustomization.yaml").write <<~YAML
       resources:
       - service.yaml
       patches:
       - path: patch.yaml
-    EOS
-    (testpath"patch.yaml").write <<~EOS
+    YAML
+    (testpath"patch.yaml").write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
@@ -51,15 +51,15 @@ class Kustomize < Formula
       spec:
         selector:
           app: foo
-    EOS
-    (testpath"service.yaml").write <<~EOS
+    YAML
+    (testpath"service.yaml").write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
         name: brew-test
       spec:
         type: LoadBalancer
-    EOS
+    YAML
     output = shell_output("#{bin}kustomize build #{testpath}")
     assert_match(type:\s+"?LoadBalancer"?, output)
   end

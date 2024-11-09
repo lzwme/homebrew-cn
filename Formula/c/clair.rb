@@ -30,7 +30,7 @@ class Clair < Formula
   test do
     http_port = free_port
     db_port = free_port
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       ---
       introspection_addr: "localhost:#{free_port}"
       http_listen_addr: "localhost:#{http_port}"
@@ -43,7 +43,7 @@ class Clair < Formula
         indexer_addr: "localhost:#{http_port}"
         matcher_addr: "localhost:#{http_port}"
         connstring: host=localhost port=#{db_port} user=clair dbname=clair sslmode=disable
-    EOS
+    YAML
 
     output = shell_output("#{bin}clair -conf #{testpath}config.yaml -mode combo 2>&1", 1)
     # requires a Postgres database

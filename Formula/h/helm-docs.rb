@@ -34,21 +34,21 @@ class HelmDocs < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}helm-docs --version")
 
-    (testpath"Chart.yaml").write <<~EOS
+    (testpath"Chart.yaml").write <<~YAML
       apiVersion: v2
       name: test-app
       description: A test Helm chart
       version: 0.1.0
       type: application
-    EOS
+    YAML
 
-    (testpath"values.yaml").write <<~EOS
+    (testpath"values.yaml").write <<~YAML
       replicaCount: 1
       image: "nginx:1.19.10"
       service:
         type: ClusterIP
         port: 80
-    EOS
+    YAML
 
     output = shell_output("#{bin}helm-docs --chart-search-root . 2>&1")
     assert_match "Generating README Documentation for chart .", output

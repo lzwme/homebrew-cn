@@ -30,11 +30,11 @@ class Dotbot < Formula
   end
 
   test do
-    (testpath"install.conf.yaml").write <<~EOS
+    (testpath"install.conf.yaml").write <<~YAML
       - create:
         - brew
         - .brewtest
-    EOS
+    YAML
 
     output = shell_output("#{bin}dotbot -c #{testpath}install.conf.yaml")
     assert_match "All tasks executed successfully", output

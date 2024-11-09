@@ -33,7 +33,7 @@ class Gator < Formula
     assert_match "gator is a suite of authorship tools for Gatekeeper", shell_output("#{bin}gator -h")
 
     # Create a test manifest file
-    (testpath"gator-manifest.yaml").write <<~EOS
+    (testpath"gator-manifest.yaml").write <<~YAML
       apiVersion: networking.k8s.iov1
       kind: Ingress
       metadata:
@@ -53,9 +53,9 @@ class Gator < Formula
                     name: nginx
                     port:
                       number: 80
-    EOS
+    YAML
     # Create a test constraint template
-    (testpath"template-and-constraintsgator-constraint-template.yaml").write <<~EOS
+    (testpath"template-and-constraintsgator-constraint-template.yaml").write <<~YAML
       apiVersion: templates.gatekeeper.shv1
       kind: ConstraintTemplate
       metadata:
@@ -89,9 +89,9 @@ class Gator < Formula
                 count(ingress.spec.tls) > 0
                 ingress.metadata.annotations["kubernetes.ioingress.allow-http"] == "false"
               }
-    EOS
+    YAML
     # Create a test constraint file
-    (testpath"template-and-constraintsgator-constraint.yaml").write <<~EOS
+    (testpath"template-and-constraintsgator-constraint.yaml").write <<~YAML
       apiVersion: constraints.gatekeeper.shv1beta1
       kind: K8sHttpsOnly
       metadata:
@@ -101,7 +101,7 @@ class Gator < Formula
           kinds:
             - apiGroups: ["extensions", "networking.k8s.io"]
               kinds: ["Ingress"]
-    EOS
+    YAML
 
     assert_empty shell_output("#{bin}gator test -f gator-manifest.yaml -f template-and-constraints")
 

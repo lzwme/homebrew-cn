@@ -38,14 +38,14 @@ class Aspectj < Formula
   end
 
   test do
-    (testpath"Test.java").write <<~EOS
+    (testpath"Test.java").write <<~JAVA
       public class Test {
         public static void main (String[] args) {
           System.out.println("Brew Test");
         }
       }
-    EOS
-    (testpath"TestAspect.aj").write <<~EOS
+    JAVA
+    (testpath"TestAspect.aj").write <<~JAVA
       public aspect TestAspect {
         private pointcut mainMethod () :
           execution(public static void main(String[]));
@@ -54,7 +54,7 @@ class Aspectj < Formula
             System.out.print("Aspect ");
           }
       }
-    EOS
+    JAVA
     ENV["CLASSPATH"] = "#{libexec}#{name}libaspectjrt.jar:test.jar:testaspect.jar"
     system bin"ajc", "-outjar", "test.jar", "Test.java"
     system bin"ajc", "-outjar", "testaspect.jar", "-outxml", "TestAspect.aj"

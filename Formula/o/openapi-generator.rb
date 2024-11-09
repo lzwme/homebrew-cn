@@ -36,7 +36,7 @@ class OpenapiGenerator < Formula
   test do
     # From the OpenAPI Spec website
     # https:web.archive.orgweb20230505222426https:swagger.iodocsspecificationbasic-structure
-    (testpath"minimal.yaml").write <<~EOS
+    (testpath"minimal.yaml").write <<~YAML
       ---
       openapi: 3.0.3
       info:
@@ -60,7 +60,7 @@ class OpenapiGenerator < Formula
                       type: array
                       items:
                         type: string
-    EOS
+    YAML
     system bin"openapi-generator", "generate", "-i", "minimal.yaml", "-g", "openapi", "-o", "."
     # Python is broken for (at least) Java 20
     system bin"openapi-generator", "generate", "-i", "minimal.yaml", "-g", "python", "-o", "."

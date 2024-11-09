@@ -28,7 +28,7 @@ class Qdmr < Formula
   end
 
   test do
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       radioIDs:
         - dmr: {id: id1, name: DM3MAT, number: 2621370}
 
@@ -39,7 +39,7 @@ class Qdmr < Formula
             rxFrequency: 123.456780   # <- Up to 10Hz precision
             txFrequency: 1234.567890
 
-    EOS
+    YAML
     system bin"dmrconf", "--radio=d878uv2", "encode", "config.yaml", "config.dfu"
   end
 end

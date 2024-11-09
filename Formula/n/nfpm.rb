@@ -32,14 +32,14 @@ class Nfpm < Formula
     # remove the generated default one
     # and use stubbed one for another test
     File.delete(testpath"nfpm.yaml")
-    (testpath"nfpm.yaml").write <<~EOS
+    (testpath"nfpm.yaml").write <<~YAML
       name: "foo"
       arch: "amd64"
       platform: "linux"
       version: "v1.0.0"
       section: "default"
       priority: "extra"
-    EOS
+    YAML
 
     system bin"nfpm", "pkg", "--packager", "deb", "--target", "."
     assert_predicate testpath"foo_1.0.0_amd64.deb", :exist?

@@ -41,7 +41,7 @@ class Buf < Formula
       package examplepb;
     EOS
 
-    (testpath"buf.yaml").write <<~EOS
+    (testpath"buf.yaml").write <<~YAML
       version: v1
       name: buf.buildbufbuildbuf
       lint:
@@ -52,7 +52,7 @@ class Buf < Formula
         use:
           - FILE
         ignore_unstable_packages: true
-    EOS
+    YAML
 
     expected = <<~EOS
       invalidFileName.proto:1:1:Filename "invalidFileName.proto" should be \

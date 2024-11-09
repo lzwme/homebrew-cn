@@ -70,10 +70,10 @@ class GrafanaAgent < Formula
 
     (testpath"wal").mkpath
 
-    (testpath"grafana-agent.yaml").write <<~EOS
+    (testpath"grafana-agent.yaml").write <<~YAML
       server:
         log_level: info
-    EOS
+    YAML
 
     system bin"grafana-agentctl", "config-check", "#{testpath}grafana-agent.yaml"
 

@@ -33,7 +33,7 @@ class Tygo < Formula
   end
 
   test do
-    (testpath"tygo.yml").write <<~EOS
+    (testpath"tygo.yml").write <<~YAML
       packages:
         - path: "simple"
           type_mappings:
@@ -42,7 +42,7 @@ class Tygo < Formula
             null.Bool: "null | boolean"
             uuid.UUID: "string * uuid *"
             uuid.NullUUID: "null | string * uuid *"
-    EOS
+    YAML
 
     system "go", "mod", "init", "simple"
     cp pkgshare"examplessimplesimple.go", testpath

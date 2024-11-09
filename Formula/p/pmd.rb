@@ -18,7 +18,7 @@ class Pmd < Formula
   end
 
   test do
-    (testpath"javatestClass.java").write <<~EOS
+    (testpath"javatestClass.java").write <<~JAVA
       public class BrewTestClass {
          dummy constant
         public String SOME_CONST = "foo";
@@ -27,7 +27,7 @@ class Pmd < Formula
           return true;
         }
       }
-    EOS
+    JAVA
 
     output = shell_output("#{bin}pmd check -d #{testpath}java " \
                           "-R categoryjavabestpractices.xml -f json")

@@ -49,7 +49,7 @@ class Stubby < Formula
 
   test do
     assert_predicate etc"stubbystubby.yml", :exist?
-    (testpath"stubby_test.yml").write <<~EOS
+    (testpath"stubby_test.yml").write <<~YAML
       resolution_type: GETDNS_RESOLUTION_STUB
       dns_transport_list:
         - GETDNS_TRANSPORT_TLS
@@ -62,7 +62,7 @@ class Stubby < Formula
         - address_data: 8.8.8.8
         - address_data: 8.8.4.4
         - address_data: 1.1.1.1
-    EOS
+    YAML
     output = shell_output("#{bin}stubby -i -C stubby_test.yml")
     assert_match "bindata for 8.8.8.8", output
 

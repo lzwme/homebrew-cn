@@ -41,7 +41,7 @@ class Monika < Formula
   end
 
   test do
-    (testpath/"config.yml").write <<~EOS
+    (testpath/"config.yml").write <<~YAML
       notifications:
         - id: 5b3052ed-4d92-4f5d-a949-072b3ebb2497
           type: desktop
@@ -52,7 +52,7 @@ class Monika < Formula
             - url: https://brew.sh
               body: {}
               timeout: 10000
-    EOS
+    YAML
 
     monika_stdout = (testpath/"monika.log")
     fork do

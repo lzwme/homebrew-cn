@@ -48,7 +48,7 @@ class Aerleon < Formula
   end
 
   test do
-    (testpath"defdefinitions.yaml").write <<~EOS
+    (testpath"defdefinitions.yaml").write <<~YAML
       networks:
         RFC1918:
           values:
@@ -86,9 +86,9 @@ class Aerleon < Formula
             protocol: tcp
           - port: 1024-65535
             protocol: udp
-    EOS
+    YAML
 
-    (testpath"policiespolexample.pol.yaml").write <<~EOS
+    (testpath"policiespolexample.pol.yaml").write <<~YAML
       filters:
       - header:
           comment: Example inbound
@@ -104,7 +104,7 @@ class Aerleon < Formula
           - name: default-deny
             comment: Deny anything else.
             action: deny#{"  "}
-    EOS
+    YAML
 
     assert_match "writing file: example.pol.acl", shell_output("#{bin}aclgen 2>&1")
     assert_path_exists "example.pol.acl"

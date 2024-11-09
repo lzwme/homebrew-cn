@@ -23,14 +23,14 @@ class Flank < Formula
   end
 
   test do
-    (testpath"flank.yml").write <<~EOS
+    (testpath"flank.yml").write <<~YAML
       gcloud:
         device:
         - model: Pixel2
           version: "29"
           locale: en
           orientation: portrait
-    EOS
+    YAML
 
     output = shell_output("#{bin}flank android doctor")
     assert_match "Valid yml file", output

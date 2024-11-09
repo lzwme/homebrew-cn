@@ -4,18 +4,16 @@ class SimpleTiles < Formula
   url "https:github.compropublicasimple-tilesarchiverefstagsv0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
-  revision 4
+  revision 5
   head "https:github.compropublicasimple-tiles.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "00747024c39d6107fda45fcccdee7c3ed84759cf4305a78a8d765b4569ee59bc"
-    sha256 cellar: :any,                 arm64_sonoma:   "0d53eeb5eb82384782741b1a171ae2ed2001c357ef57e4573a190a68a996b194"
-    sha256 cellar: :any,                 arm64_ventura:  "778d36ddc79b72a993ec3d1b78a52b9b0f1e7297cb273036fc194dce7d3073a5"
-    sha256 cellar: :any,                 arm64_monterey: "37d332d4b687b377a122c2fd965d51516cd70ee5b12f38258f14464d235b23a4"
-    sha256 cellar: :any,                 sonoma:         "af5c779f077ea891fdc5dceb00fc182778727140c54f194be4713c81d19b44bb"
-    sha256 cellar: :any,                 ventura:        "3d4a13f85120b05867e3d92e0c92798dac15d3177321aae163b3deadb729abb6"
-    sha256 cellar: :any,                 monterey:       "d218722daedb29891ef3f4edfbc8a922c3bf247a9a7a74300e0616d21b42ce7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05a018f496523df7e44f4199d0c85ff42516f6f29401d23a161e5359e1764e62"
+    sha256 cellar: :any,                 arm64_sequoia: "36390e47953ff999ef27071f99ab4431f71de4a3734f9afe084a6612e95560e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fe279a2263e8b191c494afd60febd6debef4d8e758890b8b3e17c15040e94e4"
+    sha256 cellar: :any,                 arm64_ventura: "100054d6eab29d9146d6c26682580c3d463c5ba3924f4f1d656d1e7a99594abd"
+    sha256 cellar: :any,                 sonoma:        "dae7ca47c278721f39b13fa071ffed21a10bd789984bf77b389d19df84d6bf4e"
+    sha256 cellar: :any,                 ventura:       "a0bff8824199fc2462c1144ea67b1efdc4cd59efccb8cb12d4aa73889b38b2cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b9bddf6bb8104fa5720df1b5a14e1f15710a09f04ccd9901555cc61bfd9d568"
   end
 
   depends_on "pkg-config" => [:build, :test]
@@ -32,12 +30,16 @@ class SimpleTiles < Formula
     depends_on "harfbuzz"
   end
 
-  # Update waf for python 3.12
-  # Use resource instead of patch since applying corrupts waf
-  # https:github.compropublicasimple-tilespull23
+  # Update waf for py3.13
   resource "waf" do
-    url "https:raw.githubusercontent.compropublicasimple-tilese402d6463f6afefd96a2e2d5ce630d909ba96af1waf"
-    sha256 "dcec3e179f9c33a66544f1b3d7d91f20f6373530510fa6a858cddb6bfdcde14b"
+    url "https:raw.githubusercontent.compropublicasimple-tilesd4bae6b932ef84cd115cc327651b4fad49557409waf"
+    sha256 "dd9dd1895f939d288823a7e23d7914c4f9fb018828da64842953e2a857a08713"
+  end
+
+  # update toolsclang_compilation_database.py for py3.13
+  patch do
+    url "https:github.compropublicasimple-tilescommita6e8b5738bb7b935d0579a5b514c49720e9eeeff.patch?full_index=1"
+    sha256 "b0d9226069b8c5cedd95d3150b46d123a14259a60f79d2827a5a99b9ce6e8944"
   end
 
   def install

@@ -27,13 +27,13 @@ class Pluto < Formula
     assert_match version.to_s, shell_output("#{bin}pluto version")
     assert_match "Deployment", shell_output("#{bin}pluto list-versions")
 
-    (testpath"deployment.yaml").write <<~EOS
+    (testpath"deployment.yaml").write <<~YAML
       apiVersion: extensionsv1beta1
       kind: Deployment
       metadata:
         name: homebrew-test
       spec: {}
-    EOS
+    YAML
     assert_match "homebrew-test", shell_output("#{bin}pluto detect deployment.yaml", 3)
   end
 end

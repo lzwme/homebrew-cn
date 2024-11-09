@@ -26,16 +26,16 @@ class Tfk8s < Formula
   end
 
   test do
-    (testpath"input.yml").write <<~EOS
+    (testpath"input.yml").write <<~YAML
       apiVersion: v1
       kind: ConfigMap
       metadata:
         name: test
       data:
         TEST: test
-    EOS
+    YAML
 
-    expected = <<~EOS
+    expected = <<~HCL
       resource "kubernetes_manifest" "configmap_test" {
         manifest = {
           "apiVersion" = "v1"
@@ -48,7 +48,7 @@ class Tfk8s < Formula
           }
         }
       }
-    EOS
+    HCL
 
     system bin"tfk8s", "-f", "input.yml", "-o", "output.tf"
     assert_equal expected, File.read("output.tf")

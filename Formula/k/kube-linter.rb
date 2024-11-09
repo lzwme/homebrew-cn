@@ -26,7 +26,7 @@ class KubeLinter < Formula
   end
 
   test do
-    (testpath"pod.yaml").write <<~EOS
+    (testpath"pod.yaml").write <<~YAML
       apiVersion: v1
       kind: Pod
       metadata:
@@ -48,7 +48,7 @@ class KubeLinter < Formula
               cpu: "250m"
           securityContext:
             readOnlyRootFilesystem: true
-    EOS
+    YAML
 
     # Lint pod.yaml for default errors
     assert_match "No lint errors found!", shell_output("#{bin}kube-linter lint pod.yaml 2>&1").chomp

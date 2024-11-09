@@ -83,13 +83,13 @@ class Cekit < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/cekit --version")
-    (testpath/"test.yml").write <<~EOS
+    (testpath/"test.yml").write <<~YAML
       schema_version: 1
       from: "scratch"
       name: &name "test"
       version: &version "0.0.1"
       description: "Test Description"
-    EOS
+    YAML
     assert_match "INFO  Finished!",
 shell_output("#{bin}/cekit --descriptor #{testpath}/test.yml build --dry-run docker 2>&1")
     system bin/"cekit", "--descriptor", "#{testpath}/test.yml", "build", "--dry-run", "docker"

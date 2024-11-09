@@ -2,32 +2,34 @@ class Braid < Formula
   desc "Simple tool to help track vendor branches in a Git repository"
   homepage "https:cristibalan.github.iobraid"
   url "https:github.comcristibalanbraid.git",
-      tag:      "v1.1.9",
-      revision: "0b2f7cd4296039c0e8c0a5f563443c4f0665d026"
+      tag:      "v1.1.10",
+      revision: "16729390a2a8e6b45919545b056a1a7ac83c14d6"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52f9ffcc5027360a52d67f1789201966ec0276777d997410ff21a3819d6aa7e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "37b6af924165c983beabe2fe2cf9bcb3fdf682e3b5bfca305934557268dbe6d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "323907f20250f9604aef138be96269c39ebf6ee86306ff1b7279cda7a9be430e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "427bf44f9ef42d29c47a5b08282128fe31db4f71926f699be37932a63f81a38f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "427bf44f9ef42d29c47a5b08282128fe31db4f71926f699be37932a63f81a38f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "427bf44f9ef42d29c47a5b08282128fe31db4f71926f699be37932a63f81a38f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "427bf44f9ef42d29c47a5b08282128fe31db4f71926f699be37932a63f81a38f"
+    sha256 cellar: :any_skip_relocation, ventura:       "427bf44f9ef42d29c47a5b08282128fe31db4f71926f699be37932a63f81a38f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d136306f67ebeedabfcc9e3a5d15c0d28cc6af3276cb4570e3d5a5fc4fc36c"
   end
 
-  uses_from_macos "ruby", since: :high_sierra
+  uses_from_macos "ruby"
 
-  resource "arrayfields" do
-    url "https:rubygems.orggemsarrayfields-4.9.2.gem"
-    sha256 "1593f0bac948e24aa5e5099b7994b0fb5da69b6f29a82804ccf496bc125de4ab"
+  resource "pstore" do
+    url "https:rubygems.orggemspstore-0.1.3.gem"
+    sha256 "04b6a7d299379277ac3ec110a1c99785d6596c2db8ae52b8b8c2de5b8c2ab3c4"
   end
 
-  resource "chronic" do
-    url "https:rubygems.orggemschronic-0.10.2.gem"
-    sha256 "766f2fcce6ac3cc152249ed0f2b827770d3e517e2e87c5fba7ed74f4889d2dc3"
+  resource "ostruct" do
+    url "https:rubygems.orggemsostruct-0.6.0.gem"
+    sha256 "3b1736c99f4d985de36bde1155be5e22aaf6e564b30ff9bd481e2ef7c2d9ba85"
+  end
+
+  resource "map" do
+    url "https:rubygems.orggemsmap-6.6.0.gem"
+    sha256 "153a6f384515b14085805f5839d318f9d3c9dab676f341340fa4300150373cbc"
   end
 
   resource "fattr" do
@@ -35,19 +37,29 @@ class Braid < Formula
     sha256 "a7544665977e6ff2945e204436f3b8e932edf8ed3d7174d5d027a265e328fc08"
   end
 
-  resource "json" do
-    url "https:rubygems.orggemsjson-2.6.3.gem"
-    sha256 "86aaea16adf346a2b22743d88f8dcceeb1038843989ab93cda44b5176c845459"
+  resource "chronic" do
+    url "https:rubygems.orggemschronic-0.10.2.gem"
+    sha256 "766f2fcce6ac3cc152249ed0f2b827770d3e517e2e87c5fba7ed74f4889d2dc3"
+  end
+
+  resource "arrayfields" do
+    url "https:rubygems.orggemsarrayfields-4.9.2.gem"
+    sha256 "1593f0bac948e24aa5e5099b7994b0fb5da69b6f29a82804ccf496bc125de4ab"
   end
 
   resource "main" do
-    url "https:rubygems.orggemsmain-6.2.3.gem"
-    sha256 "f630bf47a3ddfa09483a201a47c9601fd0ec9656d51b4a1196696ec57d33abf1"
+    url "https:rubygems.orggemsmain-6.3.0.gem"
+    sha256 "ebd573133ab3707e2b43710de79f03bde7f10d41b86f2ba75e93da1482b04897"
   end
 
-  resource "map" do
-    url "https:rubygems.orggemsmap-6.6.0.gem"
-    sha256 "153a6f384515b14085805f5839d318f9d3c9dab676f341340fa4300150373cbc"
+  resource "logger" do
+    url "https:rubygems.orggemslogger-1.6.0.gem"
+    sha256 "0ab7c120262dd8de2a18cb8d377f1f318cbe98535160a508af9e7710ff43ef3e"
+  end
+
+  resource "json" do
+    url "https:rubygems.orggemsjson-2.7.1.gem"
+    sha256 "187ea312fb58420ff0c40f40af1862651d4295c8675267c6a1c353f1a0ac3265"
   end
 
   def install

@@ -40,12 +40,12 @@ class Peru < Formula
   end
 
   test do
-    (testpath"peru.yaml").write <<~EOS
+    (testpath"peru.yaml").write <<~YAML
       imports:
         peru: peru
       git module peru:
         url: https:github.combuildinspaceperu.git
-    EOS
+    YAML
 
     system bin"peru", "sync"
     assert_predicate testpath".peru", :exist?

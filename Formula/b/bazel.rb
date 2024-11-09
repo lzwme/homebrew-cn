@@ -69,13 +69,13 @@ class Bazel < Formula
   test do
     touch testpath"WORKSPACE"
 
-    (testpath"ProjectRunner.java").write <<~EOS
+    (testpath"ProjectRunner.java").write <<~JAVA
       public class ProjectRunner {
         public static void main(String args[]) {
           System.out.println("Hi!");
         }
       }
-    EOS
+    JAVA
 
     (testpath"BUILD").write <<~EOS
       java_binary(

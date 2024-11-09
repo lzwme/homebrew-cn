@@ -63,7 +63,7 @@ class ApacheFlinkCdc < Formula
   end
 
   test do
-    (testpath"test-pipeline.yaml").write <<~EOS
+    (testpath"test-pipeline.yaml").write <<~YAML
       source:
         name: Dummy data source
         type: values
@@ -75,7 +75,7 @@ class ApacheFlinkCdc < Formula
       pipeline:
         name: Dummy pipeline job
         parallelism: 1
-    EOS
+    YAML
     (testpath"log").mkpath
     ENV["FLINK_LOG_DIR"] = testpath"log"
     flink_home = Formula["apache-flink"].libexec

@@ -1,17 +1,17 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https:vale.sh"
-  url "https:github.comerrata-aivalearchiverefstagsv3.8.0.tar.gz"
-  sha256 "fe460aaddab7ccffdb0f01981ae44f34e648000dcc83b43f1c3e8e636b231298"
+  url "https:github.comerrata-aivalearchiverefstagsv3.9.0.tar.gz"
+  sha256 "393ddfef73206cab948709898fe6891b347568f7121d2ff517280128952a1f49"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8b54ffb2458237cdaf420c4b12307c0bc580ec04a41a26831c4f178c6ec0f66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0da7bf559a4a3f63422ed9f1629342b14d202e70cf946b0a0160b8a4b0347749"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a869328505e5e724ff386345d39fd27553c28c7d0b1d610c7ce712d73479a2dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9aa6517f7f996ba76e72647d19a255f752a91150d17e9f4e0fb0a3c05b49e968"
-    sha256 cellar: :any_skip_relocation, ventura:       "c5c77ae6ee3311fc30576eabe7b82500f7cde5ba6b7ccbcaba3a52b5c3d69a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a7f06589c246db7ae38d4927dce91496a8e5bd02f2cdaaa1d22da941507782"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24c395a132a0959876f65946b9febc0a83fdcdc0c032788795da1ec4934a151d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc72326e7e9ce9ea8df23e3c0cc66dedebdd267c4a57f55a6c0bef4c459adabd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd9a77b2583fdb7bc6256c17a8e7624971ac2206fffbbc5108386ff5bec546f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eea89d3ebc17cd616074366f60ad6f69e6d1ad9e06ecda3f6a789f948f3781a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1aeeef464edd22a92d17901d58a0b7b88ea41e76069d1749b0fdb1be8beda8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d537c77dab9e79a44226ab51bc6e13d6813b0ff2d1fa3907114dd7d9829b1dd"
   end
 
   depends_on "go" => :build
@@ -23,13 +23,13 @@ class Vale < Formula
 
   test do
     mkdir_p "stylesdemo"
-    (testpath"stylesdemoHeadingStartsWithCapital.yml").write <<~EOS
+    (testpath"stylesdemoHeadingStartsWithCapital.yml").write <<~YAML
       extends: capitalization
       message: "'%s' should be in title case"
       level: warning
       scope: heading.h1
       match: $title
-    EOS
+    YAML
 
     (testpath"vale.ini").write <<~EOS
       StylesPath = styles

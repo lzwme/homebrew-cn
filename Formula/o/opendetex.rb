@@ -28,12 +28,12 @@ class Opendetex < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~EOS
+    (testpath"test.tex").write <<~TEX
       \\documentclass{article}
       \\begin{document}
       Simple \\emph{text}.
       \\end{document}
-    EOS
+    TEX
 
     output = shell_output("#{bin}detex test.tex")
     assert_equal "Simple text.\n", output

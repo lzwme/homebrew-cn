@@ -41,7 +41,7 @@ class Hysteria < Formula
 
   test do
     port = free_port
-    (testpath"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~YAML
       listen: :#{port}
       acme:
         domains:
@@ -52,7 +52,7 @@ class Hysteria < Formula
         type: salamander
         salamander:
           password: cry_me_a_r1ver
-    EOS
+    YAML
     output = shell_output("#{bin}hysteria server --disable-update-check -c #{testpath}config.yaml 2>&1", 1)
     assert_match "maintenance	started background certificate maintenance", output
 

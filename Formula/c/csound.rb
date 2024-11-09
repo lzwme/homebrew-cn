@@ -202,7 +202,7 @@ class Csound < Formula
   end
 
   test do
-    (testpath"test.orc").write <<~EOS
+    (testpath"test.orc").write <<~ORC
       0dbfs = 1
       gi_peer link_create
       gi_programHandle faustcompile "process = _;", "--vectorize --loop-variant 1"
@@ -218,12 +218,12 @@ class Csound < Formula
           mp3out a_signal, a_signal, "test.mp3"
           out a_signal
       endin
-    EOS
+    ORC
 
-    (testpath"test.sco").write <<~EOS
+    (testpath"test.sco").write <<~SCO
       i 1 0 1
       e
-    EOS
+    SCO
 
     if OS.mac?
       ENV["OPCODE6DIR64"] = frameworks"CsoundLib64.frameworkResourcesOpcodes64"
@@ -240,34 +240,34 @@ class Csound < Formula
     assert_predicate testpath"test.h5", :exist?
     assert_predicate testpath"test.mp3", :exist?
 
-    (testpath"opcode-existence.orc").write <<~EOS
+    (testpath"opcode-existence.orc").write <<~ORC
       JackoInfo
       instr 1
           i_ websocket 8888, 0
           i_ wiiconnect 1, 1
       endin
-    EOS
+    ORC
     system bin"csound", "--orc", "--syntax-check-only", "opcode-existence.orc"
 
     if OS.mac?
-      (testpath"mac-opcode-existence.orc").write <<~EOS
+      (testpath"mac-opcode-existence.orc").write <<~ORC
         instr 1
             p5gconnect
         endin
-      EOS
+      ORC
       system bin"csound", "--orc", "--syntax-check-only", "mac-opcode-existence.orc"
     end
 
     system python3, "-c", "import ctcsound"
 
-    (testpath"test.java").write <<~EOS
+    (testpath"test.java").write <<~JAVA
       import csnd6.*;
       public class test {
           public static void main(String args[]) {
               csnd6.csoundInitialize(csnd6.CSOUNDINIT_NO_ATEXIT | csnd6.CSOUNDINIT_NO_SIGNAL_HANDLER);
           }
       }
-    EOS
+    JAVA
     system Formula["openjdk"].bin"javac", "-classpath", "#{libexec}csnd6.jar", "test.java"
     system Formula["openjdk"].bin"java", "-classpath", "#{libexec}csnd6.jar:.",
                                           "-Djava.library.path=#{libexec}", "test"

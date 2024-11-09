@@ -38,12 +38,12 @@ class Ahoy < Formula
   end
 
   test do
-    (testpath".ahoy.yml").write <<~EOS
+    (testpath".ahoy.yml").write <<~YAML
       ahoyapi: v2
       commands:
         hello:
           cmd: echo "Hello Homebrew!"
-    EOS
+    YAML
     assert_equal "Hello Homebrew!\n", `#{bin}ahoy hello`
 
     assert_equal "#{version}-homebrew", shell_output("#{bin}ahoy --version").strip

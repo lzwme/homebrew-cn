@@ -6,6 +6,14 @@ class Openh264 < Formula
   license "BSD-2-Clause"
   head "https:github.comciscoopenh264.git", branch: "master"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f96c9079b9bbcd3e86c651511443bfd84caf406a0bb7714859b531c9f35a4729"
     sha256 cellar: :any,                 arm64_sonoma:   "850e4e3d1c3a7344d860435f26801df7fabcc17885b7df73deef72d8d18157da"

@@ -61,7 +61,7 @@ class Teleport < Formula
     assert_match version.to_s, shell_output("#{bin}tctl version")
 
     mkdir testpath"data"
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       version: v2
       teleport:
         nodename: testhost
@@ -69,7 +69,7 @@ class Teleport < Formula
         log:
           output: stderr
           severity: WARN
-    EOS
+    YAML
 
     fork do
       exec "#{bin}teleport start --roles=proxy,node,auth --config=#{testpath}config.yml"

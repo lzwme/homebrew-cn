@@ -97,9 +97,9 @@ class Logstash < Formula
     ["jvm.options", "log4j2.properties", "startup.options"].each do |f|
       cp prefix"libexecconfig#{f}", testpath"config"
     end
-    (testpath"configlogstash.yml").write <<~EOS
+    (testpath"configlogstash.yml").write <<~YAML
       path.queue: #{testpath}queue
-    EOS
+    YAML
     (testpath"data").mkpath
     (testpath"logs").mkpath
     (testpath"queue").mkpath

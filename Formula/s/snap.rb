@@ -36,12 +36,12 @@ class Snap < Formula
 
   test do
     (testpath"pkgmeta").mkpath
-    (testpath"pkgmetasnap.yaml").write <<~EOS
+    (testpath"pkgmetasnap.yaml").write <<~YAML
       name: test-snap
       version: 1.0.0
       summary: simple summary
       description: short description
-    EOS
+    YAML
     system bin"snap", "pack", "pkg"
     system bin"snap", "version"
   end

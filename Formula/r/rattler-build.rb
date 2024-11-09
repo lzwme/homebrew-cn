@@ -38,7 +38,7 @@ class RattlerBuild < Formula
   end
 
   test do
-    (testpath"recipe""recipe.yaml").write <<~EOS
+    (testpath"recipe""recipe.yaml").write <<~YAML
       package:
         name: test-package
         version: '0.1.0'
@@ -59,7 +59,7 @@ class RattlerBuild < Formula
         - script:
           - test -f "$PREFIXbinhello"
           - hello | grep "Hello World!"
-    EOS
+    YAML
     system bin"rattler-build", "build", "--recipe", "reciperecipe.yaml"
     assert_predicate testpath"outputnoarchtest-package-0.1.0-buildstring.conda", :exist?
 

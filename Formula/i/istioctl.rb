@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https:istio.io"
-  url "https:github.comistioistioarchiverefstags1.23.3.tar.gz"
-  sha256 "49c0d3b6b6cb99a0b628d30b92a22439e9a9cdb78a1b8aa44c53bbeb0c9f9991"
+  url "https:github.comistioistioarchiverefstags1.24.0.tar.gz"
+  sha256 "495e2f1a8e9b171c426b7f1db2a77230844ba06cb240b1a694b69c9dffc88317"
   license "Apache-2.0"
   head "https:github.comistioistio.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "009269f91f4f472206439f680e47eabfa7ac517fa5458fc633f57a2d7c408933"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad8e4feaafccf7a1090fe4f64b53418083fc584da39a92a33cac4f477db46ba2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fcaa4a42a5525621c3f2dcf6f4c9b039c4dda36fa611acc10ac3ebb3c3c0529"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03fc3e5322a3a74498defd6b67b6239d252138ba08a9c56a14d655cf286c51ed"
-    sha256 cellar: :any_skip_relocation, ventura:       "809f6b540075a95ba55df72b61ed7a230b30c23962ea79734fa73979c5ca9b44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87e2fcd6b449af189fe76708acc17333d48587432d191c9c14b847efc1fee892"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fa9e780776c71a640ba258ef06b8cb6703b75d84da1b21143774289bd23a42e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b93c9acd7b5f2a82fb3e02fa833ef8afc6351bb69a5e4a13eee9ad47005fe11"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "950274711876494d7bba649d229068e70c60642a333e1e405620bdd0672ce364"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d55ca79ec819aa6dee39ac0a14fa2f33baafe4d4768504ab1c71a7e5a0234155"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6ff9e87076c2d0b52bf9383756f1ea24cdf74ab533fc6008bdb089cb71bad32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aba801ca627647bc3245a3e1b69acf323d1eae709183e4e7dab955aae85e1b14"
   end
 
   depends_on "go" => :build

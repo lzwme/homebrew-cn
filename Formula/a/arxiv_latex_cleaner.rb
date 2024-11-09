@@ -44,10 +44,10 @@ class ArxivLatexCleaner < Formula
   test do
     latexdir = testpath"latex"
     latexdir.mkpath
-    (latexdir"test.tex").write <<~EOS
+    (latexdir"test.tex").write <<~TEX
       % remove
       keep
-    EOS
+    TEX
     system bin"arxiv_latex_cleaner", latexdir
     assert_predicate testpath"latex_arXiv", :exist?
     assert_equal "keep", (testpath"latex_arXivtest.tex").read.strip

@@ -35,7 +35,7 @@ class Greenmask < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}greenmask -v")
 
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       common:
         pg_bin_path: "usrlibpostgresql16bin"
         tmp_dir: "tmp"
@@ -70,7 +70,7 @@ class Greenmask < Formula
         pg_restore_options: # pg_restore option (you can use the same options as pg_restore has)
           jobs: 10
           dbname: "host=playground-db user=postgres password=example dbname=transformed"
-    EOS
+    YAML
 
     output = shell_output("#{bin}greenmask --config config.yml list-transformers")
     assert_match "Generate UUID", output

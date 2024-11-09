@@ -33,7 +33,7 @@ class Drill < Formula
   end
 
   test do
-    (testpath"benchmark.yml").write <<~EOS
+    (testpath"benchmark.yml").write <<~YAML
       ---
       concurrency: 4
       base: 'https:dummyjson.com'
@@ -48,7 +48,7 @@ class Drill < Formula
         - name: Check products API
           request:
             url: products1
-    EOS
+    YAML
 
     assert_match "Total requests            10",
       shell_output("#{bin}drill --benchmark #{testpath}benchmark.yml --stats")

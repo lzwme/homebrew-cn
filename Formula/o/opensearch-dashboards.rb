@@ -87,11 +87,11 @@ class OpensearchDashboards < Formula
                                                    "-Epath.logs=#{testpath}logs"
     end
 
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       server.host: "127.0.0.1"
       path.data: #{testpath}data
       opensearch.hosts: ["http:127.0.0.1:#{os_port}"]
-    EOS
+    YAML
 
     osd_port = free_port
     fork { exec bin"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath"config.yml" }

@@ -39,9 +39,9 @@ class Cig < Formula
   test do
     repo_path = "#{testpath}test"
     system "git", "init", "--bare", repo_path
-    (testpath".cig.yaml").write <<~EOS
+    (testpath".cig.yaml").write <<~YAML
       test_project: #{repo_path}
-    EOS
+    YAML
     system bin"cig", "--cp=#{testpath}"
   end
 end

@@ -1,18 +1,18 @@
 class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
   homepage "https:gofeatureflag.org"
-  url "https:github.comthomaspoignantgo-feature-flagarchiverefstagsv1.37.1.tar.gz"
-  sha256 "0e9b8aea3d1df4ebed87710b99950e0a363cd771ec69f0dbd272dc8f25739a80"
+  url "https:github.comthomaspoignantgo-feature-flagarchiverefstagsv1.38.0.tar.gz"
+  sha256 "13fabe8d6e7f866ac1509ed8ce8396e851aecf40a16d8b520f47cb7093371ed6"
   license "MIT"
   head "https:github.comthomaspoignantgo-feature-flag.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87b548cb231c9fb2f2f21ad9808089f868a006ee16060eb7116e0cb2f5b7cd8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87b548cb231c9fb2f2f21ad9808089f868a006ee16060eb7116e0cb2f5b7cd8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87b548cb231c9fb2f2f21ad9808089f868a006ee16060eb7116e0cb2f5b7cd8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3a98943ab602e6ef1ebdd3636889bf0b0bea8d6e2f6a7500969228804c2044d"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3a98943ab602e6ef1ebdd3636889bf0b0bea8d6e2f6a7500969228804c2044d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32f8c94f2065318e70989f10519cbdeda7a327f46d5b25c6c4d1c08a8e04caaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52805f1a778f460ec9561cdf064bbc4d0b3c60b5e8e5f6b601d39ea639034970"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52805f1a778f460ec9561cdf064bbc4d0b3c60b5e8e5f6b601d39ea639034970"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52805f1a778f460ec9561cdf064bbc4d0b3c60b5e8e5f6b601d39ea639034970"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56c4806e4e55fc50c29e71e4b670a06b4527a648fdba0c522c0bc2faa998d7c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "56c4806e4e55fc50c29e71e4b670a06b4527a648fdba0c522c0bc2faa998d7c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99f3e191ff621ee165383a5e83d0b174a865a1714b8e1e7248b1e796ff89bf62"
   end
 
   depends_on "go" => :build
@@ -25,22 +25,22 @@ class GoFeatureFlagRelayProxy < Formula
   test do
     port = free_port
 
-    (testpath"flags.yml").write <<~EOS
+    (testpath"flags.yml").write <<~YAML
       test-flag:
         variations:
           true-var: true
           false-var: false
         defaultRule:
           variation: true-var
-    EOS
+    YAML
 
-    (testpath"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~YAML
       listen: #{port}
       pollingInterval: 1000
       retriever:
         kind: file
         path: #{testpath}flags.yml
-    EOS
+    YAML
 
     begin
       pid = fork do

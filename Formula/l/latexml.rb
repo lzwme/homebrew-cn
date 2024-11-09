@@ -278,13 +278,13 @@ class Latexml < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~EOS
+    (testpath"test.tex").write <<~TEX
       \\documentclass{article}
       \\title{LaTeXML Homebrew Test}
       \\begin{document}
       \\maketitle
       \\end{document}
-    EOS
+    TEX
     assert_match %r{<title>LaTeXML Homebrew Test<title>},
                  shell_output("#{bin}latexml --quiet #{testpath}test.tex")
   end

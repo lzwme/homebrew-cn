@@ -33,7 +33,7 @@ class Bitrise < Formula
   end
 
   test do
-    (testpath"bitrise.yml").write <<~EOS
+    (testpath"bitrise.yml").write <<~YAML
       format_version: 1.3.1
       default_step_lib_source: https:github.combitrise-iobitrise-steplib.git
       workflows:
@@ -42,7 +42,7 @@ class Bitrise < Formula
           - script:
               inputs:
               - content: printf 'Test - OK' > brew.test.file
-    EOS
+    YAML
 
     system bin"bitrise", "setup"
     system bin"bitrise", "run", "test_wf"

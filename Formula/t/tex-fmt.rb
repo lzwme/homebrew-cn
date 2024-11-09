@@ -22,7 +22,7 @@ class TexFmt < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~EOS
+    (testpath"test.tex").write <<~TEX
       \\documentclass{article}
       \\title{tex-fmt Homebrew Test}
       \\begin{document}
@@ -32,9 +32,9 @@ class TexFmt < Formula
       \\item World
       \\end{itemize}
       \\end{document}
-    EOS
+    TEX
 
-    assert_equal <<~EOS, shell_output("#{bin}tex-fmt --print #{testpath}test.tex").chomp
+    assert_equal <<~TEX, shell_output("#{bin}tex-fmt --print #{testpath}test.tex").chomp
       \\documentclass{article}
       \\title{tex-fmt Homebrew Test}
       \\begin{document}
@@ -44,7 +44,7 @@ class TexFmt < Formula
         \\item World
       \\end{itemize}
       \\end{document}
-    EOS
+    TEX
 
     assert_match version.to_s, shell_output("#{bin}tex-fmt --version")
   end

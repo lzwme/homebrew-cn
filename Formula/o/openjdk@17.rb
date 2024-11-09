@@ -177,13 +177,13 @@ class OpenjdkAT17 < Formula
   end
 
   test do
-    (testpath"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~JAVA
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
         }
       }
-    EOS
+    JAVA
 
     system bin"javac", "HelloWorld.java"
 

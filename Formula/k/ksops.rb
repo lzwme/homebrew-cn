@@ -23,7 +23,7 @@ class Ksops < Formula
   end
 
   test do
-    (testpath"secret-generator.yaml").write <<~EOS
+    (testpath"secret-generator.yaml").write <<~YAML
       apiVersion: viaduct.aiv1
       kind: ksops
       metadata:
@@ -33,7 +33,7 @@ class Ksops < Formula
             exec:
               path: ksops
       files: []
-    EOS
+    YAML
     system bin"ksops", testpath"secret-generator.yaml"
   end
 end

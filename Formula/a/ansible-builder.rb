@@ -81,7 +81,7 @@ class AnsibleBuilder < Formula
 
   test do
     test_tmp = testpath/"tmp"
-    (testpath/"execution-environment.yml").write <<~EOS
+    (testpath/"execution-environment.yml").write <<~YAML
       ---
       version: 3
       images:
@@ -89,7 +89,7 @@ class AnsibleBuilder < Formula
           name: quay.io/ansible/awx-ee:latest
       options:
         skip_ansible_check: True
-    EOS
+    YAML
 
     system bin/"ansible-builder", "create", "-c", test_tmp,
       "--output-filename", "Containerfile",

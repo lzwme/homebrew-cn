@@ -39,7 +39,7 @@ class Embulk < Formula
     testpath.install resource("jruby-complete")
     jruby = "jruby=file:#{testpath}jruby-complete-#{resource("jruby-complete").version}.jar"
 
-    (testpath"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~YAML
       in:
         type: http
         url: https:formulae.brew.shapianalyticsbrew-command-run30d.json
@@ -54,7 +54,7 @@ class Embulk < Formula
             - {name: percent, type: double}
       out:
         type: stdout
-    EOS
+    YAML
 
     ENV["GEM_HOME"] = testpath"gems"
     system bin"embulk", "-X", jruby, "gem", "install", "embulk", "--version", version.to_s

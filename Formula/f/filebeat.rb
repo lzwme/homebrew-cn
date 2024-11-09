@@ -67,7 +67,7 @@ class Filebeat < Formula
     log_file = testpath"test.log"
     touch log_file
 
-    (testpath"filebeat.yml").write <<~EOS
+    (testpath"filebeat.yml").write <<~YAML
       filebeat:
         inputs:
           -
@@ -77,7 +77,7 @@ class Filebeat < Formula
       output:
         file:
           path: #{testpath}
-    EOS
+    YAML
 
     (testpath"log").mkpath
     (testpath"data").mkpath

@@ -24,18 +24,18 @@ class Cue < Formula
   end
 
   test do
-    (testpath"ranges.yml").write <<~EOS
+    (testpath"ranges.yml").write <<~YAML
       min: 5
       max: 10
       ---
       min: 10
       max: 5
-    EOS
+    YAML
 
-    (testpath"check.cue").write <<~EOS
+    (testpath"check.cue").write <<~CUE
       min?: *0 | number     0 if undefined
       max?: number & >min   must be strictly greater than min if defined.
-    EOS
+    CUE
 
     expected = <<~EOS
       max: invalid value 5 (out of bound >10):

@@ -29,7 +29,7 @@ class Datree < Formula
   end
 
   test do
-    (testpath"invalidK8sSchema.yaml").write <<~EOS
+    (testpath"invalidK8sSchema.yaml").write <<~YAML
       apiversion: v1
       kind: Service
       metadata:
@@ -41,7 +41,7 @@ class Datree < Formula
           - protocol: TCP
             port: 80
             targetPort: 9376
-    EOS
+    YAML
 
     # Set to work in the offline mode
     system bin"datree", "config", "set", "offline", "local"

@@ -41,13 +41,13 @@ class Kuttl < Formula
     kubectl = Formula["kubernetes-cli"].opt_bin  "kubectl"
     assert_equal shell_output("#{kubectl} kuttl version"), version_output
 
-    (testpath  "kuttl-test.yaml").write <<~EOS
+    (testpath  "kuttl-test.yaml").write <<~YAML
       apiVersion: kuttl.devv1beta1
       kind: TestSuite
       testDirs:
       - #{testpath}
       parallel: 1
-    EOS
+    YAML
 
     output = shell_output("#{kubectl} kuttl test --config #{testpath}kuttl-test.yaml", 1)
     assert_match "running tests using configured kubeconfig", output

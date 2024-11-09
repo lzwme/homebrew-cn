@@ -33,15 +33,15 @@ class Byteman < Formula
   end
 
   test do
-    (testpath"srcmainjavaBytemanHello.java").write <<~EOS
+    (testpath"srcmainjavaBytemanHello.java").write <<~JAVA
       class BytemanHello {
         public static void main(String... args) {
           System.out.println("Hello, Brew!");
         }
       }
-    EOS
+    JAVA
 
-    (testpath"brew.btm").write <<~EOS
+    (testpath"brew.btm").write <<~BTM
       RULE trace main entry
       CLASS BytemanHello
       METHOD main
@@ -57,7 +57,7 @@ class Byteman < Formula
       IF true
       DO traceln("Exiting main")
       ENDRULE
-    EOS
+    BTM
 
     system "#{Formula["openjdk"].bin}javac", "srcmainjavaBytemanHello.java"
 

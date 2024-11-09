@@ -4128,6 +4128,7 @@ Homebrew-homebrew-core/Formula/m/mk-configure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkcert.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkclean.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkcue.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mkdocs-material.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkfontscale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkhexgrid.rb, Homebrew/homebrew-core, 0
@@ -12244,6 +12245,7 @@ Homebrew-homebrew-cask/Casks/n/neat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neo-network-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neo4j.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neofinder.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/neohtop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neovide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nessus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nestopia.rb, Homebrew/homebrew-cask, 0

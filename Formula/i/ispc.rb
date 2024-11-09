@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https:ispc.github.io"
-  url "https:github.comispcispcarchiverefstagsv1.25.2.tar.gz"
-  sha256 "745cc8bcde26e63af2700f1811b66d2ca66b2844c8e2aa9ac19c12ab6a39b82a"
+  url "https:github.comispcispcarchiverefstagsv1.25.3.tar.gz"
+  sha256 "6f00038e0e86e90474f3117c3b393f6695a8fbe1b3d8fe3b1a0baf197dfb7557"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -14,11 +14,11 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "b0f72091d48f949e719772d717989af9cd169f6f89a890702b0104a02752395c"
-    sha256 cellar: :any, arm64_sonoma:  "c7a09a3f7c4204420de15636a254ddac95d3e43fbddcab1aa6b6c85b250245c5"
-    sha256 cellar: :any, arm64_ventura: "164b88b15ba40aaa2fa6bf1a48175a0702d07f0f2dd0959f505633d5fd638478"
-    sha256 cellar: :any, sonoma:        "7945def3908530673b9e6e3b20484734613ed5716180c0d080f8142eff99c329"
-    sha256 cellar: :any, ventura:       "2d802a069f6014fbce7666f9ed2bf5fa978c38d4fcd3445fd3ba2b4b4b7de308"
+    sha256 cellar: :any, arm64_sequoia: "7fdb124a8e5dcd9ebd6318f96ef0115eb31baa4bb0c37db04925a5d579d1e462"
+    sha256 cellar: :any, arm64_sonoma:  "416917fa154a69629e2c31dcc50cbd9bd7857351a12773f2c40d5c7a002ded3a"
+    sha256 cellar: :any, arm64_ventura: "d5ad759c26824c571ad97281925d7f5539a82682f2e303255433c2423005e2e0"
+    sha256 cellar: :any, sonoma:        "1441055791b7e00135fc9bb578199328b8dc911f66feb2b3988275f83626ca2b"
+    sha256 cellar: :any, ventura:       "36287742709f4ebef6b3f6f58fdb331c1f6b6cfad40f46997c41113821932d7e"
   end
 
   depends_on "bison" => :build

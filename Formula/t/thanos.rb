@@ -23,11 +23,11 @@ class Thanos < Formula
   end
 
   test do
-    (testpath"bucket_config.yaml").write <<~EOS
+    (testpath"bucket_config.yaml").write <<~YAML
       type: FILESYSTEM
       config:
         directory: #{testpath}
-    EOS
+    YAML
 
     output = shell_output("#{bin}thanos tools bucket inspect --objstore.config-file bucket_config.yaml")
     assert_match "| ULID |", output

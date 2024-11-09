@@ -30,14 +30,14 @@ class GitHound < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}git-hound -v")
 
-    (testpath".githound.yml").write <<~EOS
+    (testpath".githound.yml").write <<~YAML
       warn:
         - '(?i)user(name)?\W*[:=,]\W*.+$'
       fail:
         - '(?i)pass(word)?\W*[:=,]\W*.+$'
       skip:
         - 'skip-test.txt'
-    EOS
+    YAML
 
     (testpath"failure-test.txt").write <<~EOS
       password="hunter2"

@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https:openbuildservice.org"
-  url "https:github.comopenSUSEoscarchiverefstags1.9.2.tar.gz"
-  sha256 "c32bcf47c8a0f23a722fca781959ef2b1f865d0d4ed32be237f3e4444e671864"
+  url "https:github.comopenSUSEoscarchiverefstags1.10.1.tar.gz"
+  sha256 "20ee481f7ed9b3355cbdee5f590819b491e9c08992f3f7da0d96ca4495bc68db"
   license "GPL-2.0-or-later"
   head "https:github.comopenSUSEosc.git", branch: "master"
 
@@ -14,13 +14,12 @@ class Osc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1f568428057edf8e1f160d9c5d82f32bbdb11fd604d6b595c6eec92e9f3177b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1f568428057edf8e1f160d9c5d82f32bbdb11fd604d6b595c6eec92e9f3177b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1f568428057edf8e1f160d9c5d82f32bbdb11fd604d6b595c6eec92e9f3177b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b13d67cd299b39bccb518ddd249031e6337149d1c173960a971e2ac071796922"
-    sha256 cellar: :any_skip_relocation, ventura:       "b13d67cd299b39bccb518ddd249031e6337149d1c173960a971e2ac071796922"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1f568428057edf8e1f160d9c5d82f32bbdb11fd604d6b595c6eec92e9f3177b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8a4f91c04bacf43e49fb24e8ea1e5ca2c4a7bcf43ef106e7ff4614d21d30249"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8a4f91c04bacf43e49fb24e8ea1e5ca2c4a7bcf43ef106e7ff4614d21d30249"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8a4f91c04bacf43e49fb24e8ea1e5ca2c4a7bcf43ef106e7ff4614d21d30249"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af0180709d2e022668a7a2537b7e3d36f60693e465bcb33995b93e20e00ef861"
+    sha256 cellar: :any_skip_relocation, ventura:       "af0180709d2e022668a7a2537b7e3d36f60693e465bcb33995b93e20e00ef861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a4f91c04bacf43e49fb24e8ea1e5ca2c4a7bcf43ef106e7ff4614d21d30249"
   end
 
   depends_on "cryptography"
@@ -30,8 +29,8 @@ class Osc < Formula
   uses_from_macos "libffi"
 
   resource "rpm" do
-    url "https:files.pythonhosted.orgpackages441bef44b5e2fae8e398bfc58f38c25a6f0a10ea147e3e4970b7e66154017d1drpm-0.2.0.tar.gz"
-    sha256 "b92285f65c9ddf77678cb3e51aa67827426408fac34cdd8d537d8c14e3eaffbf"
+    url "https:files.pythonhosted.orgpackagesd3363dae1ccf058414ee9cc1d39722216db0e0430002ce5008c0b0244f1886fdrpm-0.3.1.tar.gz"
+    sha256 "d75c5dcb581f1e9c4f89cb6667e938e944c6e7c17dd96829e1553c39f3a4c961"
   end
 
   resource "urllib3" do

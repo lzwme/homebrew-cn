@@ -49,11 +49,11 @@ class Amber < Formula
 
   def install
     (buildpath"optarg").install resource("optarg")
-    (buildpath"shard.override.yml").write <<~EOS
+    (buildpath"shard.override.yml").write <<~YAML
       dependencies:
         optarg:
           path: #{buildpath}optarg
-    EOS
+    YAML
 
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.

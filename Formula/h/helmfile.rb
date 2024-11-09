@@ -33,7 +33,7 @@ class Helmfile < Formula
   end
 
   test do
-    (testpath"helmfile.yaml").write <<~EOS
+    (testpath"helmfile.yaml").write <<~YAML
       repositories:
       - name: stable
         url: https:charts.helm.shstable
@@ -46,7 +46,7 @@ class Helmfile < Formula
           foo: bar
         chart: stablevault    # the chart being installed to create this release, referenced by `repositorychart` syntax
         version: ~1.24.1       # the semver of the chart. range constraint is supported
-    EOS
+    YAML
     system Formula["helm"].opt_bin"helm", "create", "foo"
     output = "Adding repo stable https:charts.helm.shstable"
     assert_match output, shell_output("#{bin}helmfile -f helmfile.yaml repos 2>&1")

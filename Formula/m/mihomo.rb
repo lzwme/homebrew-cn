@@ -24,10 +24,10 @@ class Mihomo < Formula
     ]
     system "go", "build", "-tags", "with_gvisor", *std_go_args(ldflags:)
 
-    (buildpath"config.yaml").write <<~EOS
+    (buildpath"config.yaml").write <<~YAML
       # Document: https:wiki.metacubex.oneconfig
       mixed-port: 7890
-    EOS
+    YAML
     pkgetc.install "config.yaml"
   end
 
@@ -48,9 +48,9 @@ class Mihomo < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}mihomo -v")
 
-    (testpath"mihomoconfig.yaml").write <<~EOS
+    (testpath"mihomoconfig.yaml").write <<~YAML
       mixed-port: #{free_port}
-    EOS
+    YAML
     system bin"mihomo", "-t", "-d", testpath"mihomo"
   end
 end

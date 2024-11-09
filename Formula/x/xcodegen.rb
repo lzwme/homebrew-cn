@@ -28,7 +28,7 @@ class Xcodegen < Formula
   end
 
   test do
-    (testpath"xcodegen.yml").write <<~EOS
+    (testpath"xcodegen.yml").write <<~YAML
       name: GeneratedProject
       options:
         bundleIdPrefix: com.project
@@ -37,7 +37,7 @@ class Xcodegen < Formula
           type: application
           platform: iOS
           sources: TestProject
-    EOS
+    YAML
     (testpath"TestProject").mkpath
     system bin"xcodegen", "--spec", testpath"xcodegen.yml"
     assert_predicate testpath"GeneratedProject.xcodeproj", :exist?

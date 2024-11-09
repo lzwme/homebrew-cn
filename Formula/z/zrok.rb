@@ -34,7 +34,7 @@ class Zrok < Formula
   end
 
   test do
-    (testpath"ctrl.yml").write <<~EOS
+    (testpath"ctrl.yml").write <<~YAML
       v: 4
       maintenance:
         registration:
@@ -45,7 +45,7 @@ class Zrok < Formula
           expiration_timeout:           15m
           check_frequency:              15m
           batch_limit:                  500
-    EOS
+    YAML
 
     version_output = shell_output("#{bin}zrok version")
     assert_match(version.to_s, version_output)

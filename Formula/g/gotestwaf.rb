@@ -27,7 +27,7 @@ class Gotestwaf < Formula
   test do
     cp pkgetc"config.yaml", testpath
 
-    (testpath"testcasessql-injectiontest.yaml").write <<~EOS
+    (testpath"testcasessql-injectiontest.yaml").write <<~YAML
       ---
       payload:
         - '"union select -7431.1, name, @aaa from u_base--w-'
@@ -42,7 +42,7 @@ class Gotestwaf < Formula
         - UrlParam
         - JsonBody
         - Header
-    EOS
+    YAML
 
     output = shell_output("#{bin}gotestwaf --noEmailReport --url https:example.com 2>&1", 1)
     assert_match "Try to identify WAF solution", output

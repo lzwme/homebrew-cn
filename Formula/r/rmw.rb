@@ -1,8 +1,8 @@
 class Rmw < Formula
   desc "Trashcanrecycle bin utility for the command-line"
   homepage "https:theimpossibleastronaut.github.iormw-website"
-  url "https:github.comtheimpossibleastronautrmwreleasesdownloadv0.9.2rmw-0.9.2.tar.xz"
-  sha256 "f1a7003f920297b0d1904c7c79debc06fbb00e1ef62871615a4fe836715a889d"
+  url "https:github.comtheimpossibleastronautrmwreleasesdownloadv0.9.3rmw-0.9.3.tar.xz"
+  sha256 "a7215af12694d50282e4cfb9b9062fb7806bde8770d61a2a0cd8260e28db2749"
   license "GPL-3.0-or-later"
   head "https:github.comtheimpossibleastronautrmw.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Rmw < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "9ad3f588bf06a21b78cf3bd4e5a5bf3cae6178b05cb545ec71efadef334ec6dd"
-    sha256 arm64_sonoma:   "29b9e30ceb600ae6b8af8f170a72228b6734aee040fd8c48b79d98fed477be32"
-    sha256 arm64_ventura:  "9f1dc8c2a1ba4631f3502959d988473e9a55f915a02a0ba8f06f1279846538df"
-    sha256 arm64_monterey: "89fda4126f92fe441a6bbd56640aabdcddfc4383aca9214e82914c4f8b79cead"
-    sha256 sonoma:         "cdfcd0de3451565df2df12264e14616c144d139508374eec2fea96c0cb4b642d"
-    sha256 ventura:        "43ccd75b06bf85779799c91368cb91bdc43ca38449a74b3d7706df10b337afde"
-    sha256 monterey:       "4e655492692254ffab63eb9e73193463187f848a0a1583ff4f246a0e1e573fbd"
-    sha256 x86_64_linux:   "1b4a5d2dc6c56247cf6abcff5ef01f7262b3d749a559c4f741e99b8483cca099"
+    sha256 arm64_sequoia: "8d58a58079f53b8aaff4b93444acdf5b3d2684544797cc752c96b83da178c4d9"
+    sha256 arm64_sonoma:  "8239ccf6bb375fb50584507ab082b82ae08886dba6844ef1e62d3c559145a279"
+    sha256 arm64_ventura: "fb4a64fbe3d059aa12d2e70613c6425c31defa93b84cfa03234ac9216c091e3f"
+    sha256 sonoma:        "f039fa85ec2de59391e8ba0b15a161f8dbb3ce4bd1c320b481c467917ff754b7"
+    sha256 ventura:       "0b8bf09348b50d5781c5fdd00ad6a1aaa764d2a42e3a75899948244489a55f57"
+    sha256 x86_64_linux:  "90583fca0c8ce43359664635076f3251a3ceaac0d382c9c1879a74156c8f97c0"
   end
 
   depends_on "meson" => :build
