@@ -6,18 +6,18 @@ class Ccls < Formula
   #       https:github.comHomebrewhomebrew-corepull106939
   #       https:github.comMaskRaycclsissues786
   #       https:github.comMaskRaycclsissues895
-  url "https:github.comMaskRaycclsarchiverefstags0.20240505.tar.gz"
-  sha256 "4ea6d90a9f93d5503e59c3bd0e5568ab262ff3dcf1b7539b50a0ede4a0e32fea"
+  url "https:github.comMaskRaycclsarchiverefstags0.20241108.tar.gz"
+  sha256 "76224663c3554eef9102dca66d804874d0252312d7c7d02941c615c87dcb68af"
   license "Apache-2.0"
   head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "dd72e908ed43995d6078af01f9f8021cc61799445271d3a040e63e056b230a7f"
-    sha256                               arm64_sonoma:  "d150928cd70c213296534660ec53275dd35434863c11546978b19be11ba8078e"
-    sha256                               arm64_ventura: "ceff1c27a290bce123dab0bdf9b15644b372f6f2d4c14a03104a01bd13eccd40"
-    sha256                               sonoma:        "74a2bbdcfd5fe6ed74bc05e17af99edd7ca22e0d264d71aa4624e2c64f60cc95"
-    sha256                               ventura:       "cdfec2cf7d5027ac4ebf5dc41ffac54b2a41c8a14fe55a02f8c7edffaa96a867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30f6d1754edadb51e6f534c6624b00af338e61fca00abfbf2b296522c356b14a"
+    sha256                               arm64_sequoia: "ece6c26479841524dee0e88a2bf2a777b2574467634a97d97d24faeb727105cc"
+    sha256                               arm64_sonoma:  "e9df0aaf48436855c03f38a7119c9d907c06965a57274fc5448e909ec8e1254a"
+    sha256                               arm64_ventura: "0f697d60ca786fc5c27e35d9d00fffffcb0d0b72d5344d6d8bd3708c0ebb64d4"
+    sha256                               sonoma:        "0c9bbd4d249e1798109104f2952ca47e80e50b68f4203d2641bd5d41e867c8b2"
+    sha256                               ventura:       "6715ce158c2e09795f2d083013bbdf0ca3aa6d3399d91946d3db786decadead4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4e878b4bccc6d9e2a5c50e06ddf834c1a4c7de4ca1e64d4f4961ceb4ef36993"
   end
 
   depends_on "cmake" => :build

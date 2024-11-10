@@ -3,19 +3,22 @@ class Alot < Formula
 
   desc "Text mode MUA using notmuch mail"
   homepage "https:github.compazzalot"
+  # TODO: check if we can remove `standard-mailcap` from pypi_formula_mappings.json
+  # https:github.compazzalotissues1632
   url "https:github.compazzalot.git",
       tag:      "0.11",
       revision: "a8a108e2344656a13bca21211ccc0df2414cbef6"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.compazzalot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd0a1ebfd4d60d47d876cf52c1575b00205e375f92a17bcd7e81eaa01748952b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "667e4538b356855cb1bb271ae6b6c376f1b9c8e454f7b0b3e8930ed9a2b540a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4c0dd05962265e62fc1297f6aac26e1903a907645137928ccd5a80f6b344e40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7751a31767c3a20e159114932e6bb1926bf12268b133f9a0faffc3085238e6c"
-    sha256 cellar: :any_skip_relocation, ventura:       "69cddd838f3cf37dd4f49eb998aad613238214ea6fcc62c028429f287bf320dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b4bde5ef07d789852b596d14a1c3f646a3303cb1e2df208e9fbf9734fb7c6bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff5d90b1a2b335e78f0a2a26a452dcc05620ec910645330ea7fd9be8cdf72152"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78e840e2fafaac627380575d0e855ee986af666c7f5603c605eb2d4b272cf268"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a6ce0bd0798bca5bd5eaf719c839525208847eecc968cfd29d28ece2e63394a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9365d1c64fbc74200b5e64d8a4bdf04666d4e1775c4d5c9e626aed0faf783acc"
+    sha256 cellar: :any_skip_relocation, ventura:       "a999f33e1e8db8fa7d588e448395f6e2816a6ee3a88ed031580cf81331854f08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9fe0e18bbd0fde515a158f77ba00c50045f1e3b60d1bd2b36da91be030214a7"
   end
 
   depends_on "sphinx-doc" => :build
@@ -23,7 +26,7 @@ class Alot < Formula
   depends_on "gpgme"
   depends_on "libmagic"
   depends_on "notmuch"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "attrs" do
     url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
@@ -78,6 +81,11 @@ class Alot < Formula
   resource "six" do
     url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
+  resource "standard-mailcap" do
+    url "https:files.pythonhosted.orgpackages53e8672bd621c146b89667a2bfaa58a1384db13cdd62bb7722ddb8d672bf7a75standard_mailcap-3.13.0.tar.gz"
+    sha256 "19ed7955dbeaccb35e8bb05b2b5443ce55c1f932a8cbe7a5c13d42f9db4f499a"
   end
 
   resource "twisted" do

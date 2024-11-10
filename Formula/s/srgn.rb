@@ -1,18 +1,18 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
   homepage "https:github.comalexpovelsrgn"
-  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.3.tar.gz"
-  sha256 "cdddd6d0ec47a80ea28fc7eb411e1723e355e08ffad0369436d9f192d96382d0"
+  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.4.tar.gz"
+  sha256 "778766769b9c7845b6f24cb25c940f675c8634b3ba58bf1c552c717a12fe0ead"
   license "MIT"
   head "https:github.comalexpovelsrgn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "304dd4a56843b5b49a95a670c0e00f07d3b22acace8c7e330b915416f6a42f9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4f83e54ce024d8405f6c6d8f9523db92d3606270ff4796759fe0d35bf121878"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a96530c09fd92185ce00feeb1089fd7a43fa22f9f1709e5dc95b132ea336b403"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbe89f765057f30a44e94b8884f8fabeeda474e5a6bbc4dc6f7a5e133aacbafc"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4dd6e71b39d8416c372f2da33b1d1a329b56abce337db6360dbabacd645e1b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "affffc04ea97de3578ecee3aeaac4a18e94dea2f7944883cbdc5da3732712a36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c964dda4b9a115fcd5364b25231dffff4f44cd385e847b812265fcce86848cd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d712bc81f1e34eca3ae1162344648b74c436725cb1391ba2939256a80ebe939a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "767b0506c2c603913661c91d19a01e7d4ef04cd04c4df0151fa088a4cd4bb8c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99466f48efcfdcb949dba856d34750f47a8c7f5f130b1a502211971f70c46fe6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d7dfcfbf8108f83cf6786d2db1d3a8064ff8e1d0351da81e0c5f23df7bb7e07e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4283e4beb5740f05691a8df912520d3b27ddd817d3206bce9019afda950b235c"
   end
 
   depends_on "rust" => :build

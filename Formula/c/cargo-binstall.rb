@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.11.tar.gz"
-  sha256 "71e2a0570ec97cc286397a0d7a86811ff8e0cc57bfaef5651ff5a5c951e6881b"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.10.12.tar.gz"
+  sha256 "fde425f6093471b9f4648f54c8effc1b0ad23e39014646fdcfc0e2c69727fa69"
   license "GPL-3.0-only"
   head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
@@ -15,12 +15,12 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebc10d3c5dae3181a7e654e8c1905418a91ac28e9bca65af001860e3fae5c3e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7998f669c0ffb329f70d345a5ae107ddea44de71072bea4d88245c8a182891f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbfeb431dc10973f3d59ab1d4e71f2d38c2b93e1ed373f886f7586694a3c70a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d03d6307136c6f8b10c709a0e67a199789d0a4163761041094659d5d8297e6d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "5745e124509a6b3840564d56f1b4f36eba17f87f8cc36c4a937166d9be6e40b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "664387a85386b729f15e9b91e2db8d8095b2ce7848f875816345cfdaad2806b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eafff5330327964718b03a15e3a6c93bfcee8c78d5a8d761982ceb0f6772b538"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8e2add6fec0b20f8343dd5b2e0cbf217c416e1d8e31412d3a24cfb8106ff014"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8233885f5dba36bc662b3fa113c46ffa232126c04264b0431257871fa097e17"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6b35c0129ed19445ace88dfe301a2f2a8a17c191ce0c8e977c1cf5755cb069f"
+    sha256 cellar: :any_skip_relocation, ventura:       "f802e23bf7874d03dca874903aff46e16ee16c89b01efb5cffe5d9cfaec2dc5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bbdc84d2ecb557d76374f4ae9a527727f5f5736e464f7a4fc1cf41b1de9cef4"
   end
 
   depends_on "rust" => :build

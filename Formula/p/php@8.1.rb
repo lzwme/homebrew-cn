@@ -367,11 +367,11 @@ class PhpAT81 < Formula
       port_fpm = free_port
 
       expected_output = ^Hello world!$
-      (testpath"index.php").write <<~EOS
+      (testpath"index.php").write <<~PHP
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
-      EOS
+      PHP
       main_config = <<~EOS
         Listen #{port}
         ServerName localhost:#{port}

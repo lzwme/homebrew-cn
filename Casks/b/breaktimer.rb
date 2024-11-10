@@ -1,6 +1,6 @@
 cask "breaktimer" do
-  version "1.2.0"
-  sha256 "feebd9f838df0892664a1377f4e2cd568ffe823132390b82f6592da17d164566"
+  version "1.3.0"
+  sha256 "af57ccdbeb9687b4a28462bea9d18635edf128654bc2193336ee0093526453d1"
 
   url "https:github.comtom-james-watsonbreaktimer-appreleasesdownloadv#{version}BreakTimer.dmg",
       verified: "github.comtom-james-watsonbreaktimer-app"
@@ -25,8 +25,4 @@ cask "breaktimer" do
     "~LibraryPreferencescom.tomjwatson.breaktimer.plist",
     "~LibrarySaved Application Statecom.tomjwatson.breaktimer.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

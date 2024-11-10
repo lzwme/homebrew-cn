@@ -6,6 +6,7 @@ class Twty < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06376606f273478b5bbcb8f781549cf79bf9b4cf596cc3a274104c1dca2704ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "455017b709a05e29e56106d6fafd24f4e9c09fba6d18bcc2b8a5173faf1d21c7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f646e71ba538e0406565dde123ecea7cc153510e53abd19373d1bd3ec159173e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c6bab324fcbfdfd720834fae87499bd2725318394393f63f277c0212d5a56ce4"
@@ -20,7 +21,7 @@ class Twty < Formula
 
   # see discussions in https:github.commattntwtyissues28
   # and https:github.comorakarorainbowstreamissues342
-  deprecate! date: "2024-08-18", because: "uses the old, unsupported Twitter API"
+  disable! date: "2025-01-01", because: "uses the old, unsupported Twitter API"
 
   depends_on "go" => :build
 
@@ -37,12 +38,12 @@ class Twty < Formula
 
     # twty requires PIN code from stdin and putting nothing to stdin to make authentication failed
     require "pty"
-    PTY.spawn(bin"twty") do |r, w, _pid|
+    PTY.spawn(bin"twty") do |r, _w, pid|
       output = r.gets
       assert_match "cannot request temporary credentials: OAuth server status 401", output
       assert_match "{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}", output
-      w.puts
-      sleep 1 # Wait for twty exiting
+    ensure
+      Process.kill "TERM", pid
     end
   end
 end

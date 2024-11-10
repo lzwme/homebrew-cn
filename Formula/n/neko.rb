@@ -5,39 +5,38 @@ class Neko < Formula
   version "2.4.0"
   sha256 "232d030ce27ce648f3b3dd11e39dca0a609347336b439a4a59e9a5c0a465ce15"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comHaxeFoundationneko.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "6b49445459efe4047cdb5699d9ae8f73bb05941dbaf3eb4ccd910ca9aca754d4"
-    sha256 arm64_sonoma:   "fdad9a6dc773dffe3b1e55971758cfda775e8b473c7d135319c9c65528167b22"
-    sha256 arm64_ventura:  "9b40ecbae0b6a62cd9d32d19fecfb3a429e90660e194a0b2cc12ea5052f50976"
-    sha256 arm64_monterey: "71589dcf0a4ec18650f32439cff9caefdfdae7179b666d883acb9fa96b38cee7"
-    sha256 sonoma:         "15e070b6148e6bc15387ee1958c6f815d3bbacbf67438e073e8fd21f6b9deb3f"
-    sha256 ventura:        "4f19f161bbf2c088fe1e06b08082ac555999f4102d3c6f6a281aeda79e318572"
-    sha256 monterey:       "9615b73250454cf485ffc61a3190f0e5cd8a9769847d3ba914322266d3463d15"
-    sha256 x86_64_linux:   "50db5d00af036fd2803c42b1739c3038382a7f68cc3f75f785444564f6764f9b"
+    sha256 arm64_sequoia: "b38501d676f50f59850268cb391d22609b8e44cb1e519ccee69f232181a8daf0"
+    sha256 arm64_sonoma:  "aa8361053feb6c94e6398a6fa7e788b5d3e276b7c6f9e215bde0902436655cf3"
+    sha256 arm64_ventura: "a2bb17a1c4a91c23474106fd66aad13a65c9d2b448be0c40e93492fe62599f09"
+    sha256 sonoma:        "e9fe8e7903973df0a11cb1db8a0889f956575a643fa7f1004fb35a1af422d7a8"
+    sha256 ventura:       "628a94ee78dca18979beb02740d94c958bcfcad8f75d70760c5ef67dda547ac6"
+    sha256 x86_64_linux:  "78c31987c7dd238bf52a2a95b93835f114e11756cb974d761d5325e1474222e5"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "bdw-gc"
+  depends_on "mariadb-connector-c"
   depends_on "mbedtls"
-  depends_on "mysql-client"
   depends_on "pcre2"
-  depends_on "zlib" # due to `mysql-client`
 
+  uses_from_macos "apr"
   uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   on_linux do
-    depends_on "apr"
     depends_on "apr-util"
     depends_on "gtk+3" # On mac, neko uses carbon. On Linux it uses gtk3
     depends_on "httpd"
   end
 
   def install
-    args = %w[
+    args = %W[
+      -DMARIADB_CONNECTOR_LIBRARIES=#{Formula["mariadb-connector-c"].opt_lib"mariadb"shared_library("libmariadb")}
       -DRELOCATABLE=OFF
       -DRUN_LDCONFIG=OFF
     ]
@@ -49,7 +48,7 @@ class Neko < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build"
+    ENV.deparallelize { system "cmake", "--build", "build" }
     system "cmake", "--install", "build"
   end
 

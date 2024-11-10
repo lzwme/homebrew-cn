@@ -25,9 +25,9 @@ class Psysh < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}psysh --version")
 
-    (testpath"srchello.php").write <<~EOS
+    (testpath"srchello.php").write <<~PHP
       <?php echo 'hello brew';
-    EOS
+    PHP
 
     assert_match "hello brew", shell_output("#{bin}psysh -n srchello.php")
   end

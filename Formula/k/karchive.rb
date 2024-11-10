@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.7/karchive-6.7.0.tar.xz"
-  sha256 "eb4243e627f51f1224a99af5d0a6f8e309f9e5dbb7478f7a78e34e2b8541398a"
+  url "https://download.kde.org/stable/frameworks/6.8/karchive-6.8.0.tar.xz"
+  sha256 "e903eb54b875258727fd524b2489d2a5019973e27df67b33bb56fba91e4eec34"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
@@ -17,11 +17,11 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "8e89ef6a8540958b3c1625c3ba9b4c4d3ffa710c086ba7f84aa9ad98f4165fc4"
-    sha256 cellar: :any,                 arm64_ventura: "cfc032e60915c40126e3500faf273b5454c8afa8ba30174f011441f1ab4c0763"
-    sha256 cellar: :any,                 sonoma:        "dd66fc6dda65a1bf4135680d9bdcf96e889ab89b4da7d5aebf1432f9959dd0ba"
-    sha256 cellar: :any,                 ventura:       "7fb7e0bb567f5c4ba11b06bcab0e1e8e81adaacec3ad1ba6375089c430077423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6572eac2fef4f4166257211a84789ca43111351204ee031f23b4ed351d7da385"
+    sha256 cellar: :any,                 arm64_sonoma:  "50bb11bb20c72ed1521a3d7a5023a04c753af580d0bdf912a284806e4cddbaad"
+    sha256 cellar: :any,                 arm64_ventura: "5a66118bca1a5e337fef2c2de2f2b285082f3fd185655c4622d1f5c0beff3950"
+    sha256 cellar: :any,                 sonoma:        "ab173f26313d2e9bf14863b1ff3f72e8c6efc202f4eff1588ff2a990a39bbc9c"
+    sha256 cellar: :any,                 ventura:       "b54547c127235baab3bd966e935e7c1f6c6a65a384d8bf129568c0ccb41644ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "658b1bea9bc7a728091640f34f31146a8de10fb53607d1444a83be4f77157bd8"
   end
 
   depends_on "cmake" => [:build, :test]

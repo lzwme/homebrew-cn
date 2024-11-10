@@ -2,6 +2,7 @@ class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https:www.ntop.orgproductstraffic-analysisntop"
   license "GPL-3.0-only"
+  revision 1
 
   stable do
     url "https:github.comntopntopngarchiverefstags6.2.tar.gz"
@@ -17,12 +18,12 @@ class Ntopng < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "bd1dc32c1fdffb0e1d9c23400d74c43ebf252e8d755b0a019ec87046e92e697d"
-    sha256 arm64_sonoma:  "64288684042c3564bfd3e382d15d661172a2f522e407787d82e6af6f33d309f8"
-    sha256 arm64_ventura: "aee5b881035ec900c44dd05416df622b7e9e3d3759dd3b7f9aa715f368492196"
-    sha256 sonoma:        "586aa879223843e30fc9136377aa7cd00f3edb16d015d28b14de084e58588d58"
-    sha256 ventura:       "7d636609619e74f65df6a7345ad2ea5dad6579cb3d66cb5ce96786abeb62818c"
-    sha256 x86_64_linux:  "dcf114d1ce761fb41239ff2c496edcaff98061cdc0ee28b11fc96a0737d024c5"
+    sha256 arm64_sequoia: "0342fbf3f9f0555a8ae63bca9e58ffcc2978d8022b680872ebf779e73ff74375"
+    sha256 arm64_sonoma:  "80574754cd8d1d02c39bad6b33921f9fac544e6b319f56a73cc18ff57d202427"
+    sha256 arm64_ventura: "74af363c5bf72edc84af1b411e8379ed7b6ad34b2b6159397a38a7bcc82163d8"
+    sha256 sonoma:        "9fdf1fec3559511322cbafd7325ace357281bd76a9a0c51f1d46bbfd8864603d"
+    sha256 ventura:       "146234370eef0a7a771049db2b67f81a67548458edc82fb9f8a13babadb6ecfd"
+    sha256 x86_64_linux:  "26aa0a5a53f7bcb8bd70f26afa3b2aba2cfcad0d12c9887ded2cfc65038dfb02"
   end
 
   head do
@@ -42,17 +43,17 @@ class Ntopng < Formula
   depends_on "json-c"
   depends_on "libmaxminddb"
   depends_on "libsodium"
-  depends_on "mysql-client"
+  depends_on "mariadb-connector-c"
   depends_on "openssl@3"
   depends_on "redis"
   depends_on "rrdtool"
   depends_on "sqlite"
   depends_on "zeromq"
-  depends_on "zlib"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "zstd"

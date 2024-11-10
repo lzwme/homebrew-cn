@@ -21,14 +21,14 @@ class PhpCsFixer < Formula
   end
 
   test do
-    (testpath"test.php").write <<~EOS
+    (testpath"test.php").write <<~PHP
       <?php $this->foo(   'homebrew rox'   );
-    EOS
-    (testpath"correct_test.php").write <<~EOS
+    PHP
+    (testpath"correct_test.php").write <<~PHP
       <?php
 
       $this->foo('homebrew rox');
-    EOS
+    PHP
 
     system bin"php-cs-fixer", "fix", "test.php"
     assert compare_file("test.php", "correct_test.php")

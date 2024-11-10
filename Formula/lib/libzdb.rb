@@ -4,7 +4,7 @@ class Libzdb < Formula
   url "https://tildeslash.com/libzdb/dist/libzdb-3.2.3.tar.gz"
   sha256 "a1957826fab7725484fc5b74780a6a7d0d8b7f5e2e54d26e106b399e0a86beb0"
   license "GPL-3.0-only"
-  revision 5
+  revision 6
 
   livecheck do
     url :homepage
@@ -12,26 +12,20 @@ class Libzdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "c97a8bf09b5b6149e9b00055c7a41bdc44d30d24dba89057d10c692c66775ac8"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8ddfd01835494761c61f79bbf0268ed9970eda906751f394345132ee8f1e99"
-    sha256 cellar: :any,                 arm64_ventura: "2a68a90b4ae8eaf45dce9319688be51e9cbbed3f8906492641b04d7b03db03b2"
-    sha256 cellar: :any,                 sonoma:        "a60352d7b1e4544558bb754abfa0d792f4b30dec3ef8e3d36243885fde8005c2"
-    sha256 cellar: :any,                 ventura:       "a1d91f504e85283dade237952dd3872e28d253065de94e63ee3dd1b1509dfab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac6ae172d51fd94fc04a71798011d683d07d46f0e52b5de22968289e74fd01a"
+    sha256 cellar: :any,                 arm64_sequoia: "bd97a7dd6aefe7e58b341a5358edfb32b66bba0f1cb8630b399f2b02700d09bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "559a24c293383d393cf10674d80dc3dc2c11ba7e8ddc49fd946a5ef22956284d"
+    sha256 cellar: :any,                 arm64_ventura: "a6dd1911a57055a2166194a5d6d96511c66a9b33d471ea5de332521a6fd45fb3"
+    sha256 cellar: :any,                 sonoma:        "1bdf664002cbd63f8fce912432760eee51ca3b3836462ab7698fa9b1066a2e13"
+    sha256 cellar: :any,                 ventura:       "4ec2d9cad1a1461b597fb6dcd0ebf9087ca0afcb9e1532a666f4278bcc767df8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed4c23875500da4ada769975cf4857752db3e0a45f5c99553d008ae14282a72d"
   end
 
   depends_on "libpq"
   depends_on macos: :high_sierra # C++ 17 is required
-  depends_on "mysql-client"
+  depends_on "mariadb-connector-c"
   depends_on "sqlite"
 
-  patch :DATA # Fix build error my mysql-client 8.3.0 https://bitbucket.org/tildeslash/libzdb/issues/67/build-error-with-mysql-83
-
   def install
-    # Reduce linkage on macOS from `mysql-client`
-    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
-
     system "./configure", "--disable-silent-rules", "--enable-sqliteunlock", *std_configure_args
     system "make", "install"
     (pkgshare/"test").install Dir["test/*.{c,cpp}"]
@@ -45,22 +39,3 @@ class Libzdb < Formula
     end
   end
 end
-
-__END__
-diff --git a/src/db/mysql/MysqlConnection.c b/src/db/mysql/MysqlConnection.c
-index 45ae896..7b6c1e3 100644
---- a/src/db/mysql/MysqlConnection.c
-+++ b/src/db/mysql/MysqlConnection.c
-@@ -96,8 +96,10 @@ static MYSQL *_doConnect(Connection_T delegator, char **error) {
-         // Options
-         if (IS(URL_getParameter(url, "compress"), "true"))
-                 clientFlags |= CLIENT_COMPRESS;
--        if (IS(URL_getParameter(url, "use-ssl"), "true"))
--                mysql_ssl_set(db, 0,0,0,0,0);
-+        if (IS(URL_getParameter(url, "use-ssl"), "true")) {
-+                enum mysql_ssl_mode ssl_mode = SSL_MODE_REQUIRED;
-+                mysql_options(db, MYSQL_OPT_SSL_MODE, &ssl_mode);
-+        }
- #if MYSQL_VERSION_ID < 80000
-         if (IS(URL_getParameter(url, "secure-auth"), "true"))
-                 mysql_options(db, MYSQL_SECURE_AUTH, (const char*)&yes);

@@ -3,10 +3,11 @@ cask "font-host-grotesk" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflhostgrotesk"
   name "Host Grotesk"
-  homepage "https:github.comElement-TypeHostGrotesk"
+  homepage "https:fonts.google.comspecimenHost+Grotesk"
 
   font "HostGrotesk-Italic[wght].ttf"
   font "HostGrotesk[wght].ttf"

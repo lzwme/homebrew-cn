@@ -1,8 +1,8 @@
 class Tippecanoe < Formula
   desc "Build vector tilesets from collections of GeoJSON features"
   homepage "https:github.comfelttippecanoe"
-  url "https:github.comfelttippecanoearchiverefstags2.67.0.tar.gz"
-  sha256 "4544f7ca0be0f7ee6852fc3ed03867df7a80dd9327349d3f4c96417112aa2490"
+  url "https:github.comfelttippecanoearchiverefstags2.68.0.tar.gz"
+  sha256 "088aa4abd723cd6f509873e31bd22d1f6391db92cf7d0c5d4eea1093266161c3"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Tippecanoe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a0fe07547543f376b77145a7f0ac428ae3d2e0b8e985d97484624ab4b54ce22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8d6239c6803f4270222ff8fe45da4c0cf428491ac569f0cc1e391844a2fba4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6867cadd78115966d721f705bb916a0fe7d48ab25681e352e91104eaa1b0aea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d8a5d3770a6c0db502f572f5b1ba61e6772b377c71174ab386b05eca5c2e41e"
-    sha256 cellar: :any_skip_relocation, ventura:       "f50470c6a3135493b984651c185acb6320c0738cfc4ae8e0eb86e0b0e4482ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a6ad3db043599778022da6e5e0a41da6b5360875ce9c65eb7070c16a26d0e70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "076d02065c6affd1a4a61037bbd7657562d9c656da41099c84ae8bc91b90cfa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54e21f1d1939b056912ed9d5f23ca337a5bd52dbb86600e6ef5fdf8cf0d04385"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a726f1ecc18b8f82f729c607282a61ea48452d94717f61800db7b1616496367"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14e3924560cebf27c1adcce4139cbd3fd0b0c8e131a19d55daea35aa81a436b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "2750624e8113a57031602d1bb15cee0f6d13ca9a010e8424d2751cb05ea36358"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafe7dbd674c7744d909ea0286a774cf9c728c54836334ccfd2b0b71d64ccfc2"
   end
 
   uses_from_macos "sqlite"

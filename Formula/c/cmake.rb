@@ -17,12 +17,13 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8657731ef6748f043699a3f95ea6eccc8d27180e088871c3eec29d47273f1ba9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07e0e20eae8e728544f4063aea9d959083285b25a951a5e3ff090818a1f98fe5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1077d6ba9f88e9c8aaaa73de9c7ea186e9095fe34946fccde333d639438403c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a0ea704d3af00a79fa96bffa6bb3f9d4794399537fc8d08db8c76fd1871c86f"
-    sha256 cellar: :any_skip_relocation, ventura:       "524d914a598a9c3a82711ca2954a9576fd1074b6c7030c6d6bbd796c763e917e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7a6df026fffd0d69dc53899fee231b969f8e8872063b76773d0ec975a24f09e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34fe6c7f83913b147faf3970db99213d1197f64a2bb411b45b4020e80e004dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d10dcc360253726cc3872666f2ea7bc830bfb4dc25d73c79e28b4458973e301f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1500ca2cb91a2b56708c8b0ec6825edde8cc1afbdeaede2f7fca18c2ca42db3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6dc996c171867e69a7daa690e2101f983a56a9bc010a699775606d6c9a731ebb"
+    sha256 cellar: :any_skip_relocation, ventura:       "51c2b535f266689edfcc5bb4e595c09544ea4221deaeed559c63a26f73d1df26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "556d7c78c3c297098e13889ecaa603bd786bfdc43fc748ec900b02454360219c"
   end
 
   uses_from_macos "ncurses"
@@ -30,6 +31,11 @@ class Cmake < Formula
   on_linux do
     depends_on "openssl@3"
   end
+
+  # Prevent the formula from breaking on versionrevision bumps.
+  # Check if possible to remove in 3.32.0
+  # https:gitlab.kitware.comcmakecmake-merge_requests9978
+  patch :DATA
 
   # The completions were removed because of problems with system bash
 
@@ -78,3 +84,26 @@ class Cmake < Formula
     refute_path_exists man
   end
 end
+
+__END__
+diff --git aSourcecmSystemTools.cxx bSourcecmSystemTools.cxx
+index 5ad0439c..161257cf 100644
+--- aSourcecmSystemTools.cxx
++++ bSourcecmSystemTools.cxx
+@@ -2551,7 +2551,7 @@ void cmSystemTools::FindCMakeResources(const char* argv0)
+     _NSGetExecutablePath(exe_path, &exe_path_size);
+   }
+   exe_dir =
+-    cmSystemTools::GetFilenamePath(cmSystemTools::GetRealPath(exe_path));
++    cmSystemTools::GetFilenamePath(exe_path);
+   if (exe_path != exe_path_local) {
+     free(exe_path);
+   }
+@@ -2572,7 +2572,6 @@ void cmSystemTools::FindCMakeResources(const char* argv0)
+   std::string exe;
+   if (cmSystemTools::FindProgramPath(argv0, exe, errorMsg)) {
+      remove symlinks
+-    exe = cmSystemTools::GetRealPath(exe);
+     exe_dir = cmSystemTools::GetFilenamePath(exe);
+   } else {
+      ???

@@ -1,8 +1,8 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https:openimageio.readthedocs.ioenstable"
-  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.17.0.tar.gz"
-  sha256 "9cf1b98762ce5aa5f3f7cd34672549034f5716da1eba26eb5173c18aa21e6583"
+  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv3.0.0.3.tar.gz"
+  sha256 "fe96d2f39435f1585fe2ede4279a303e2cef3b28df351e8331fed46bbb251f35"
   license "Apache-2.0"
   head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45a9ba88d3b7f956f28f1ba7c7060a9a8c236f46ab7c4fac8381f220acc1714f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f4ca8bab5e1bf032624e6c0c6c33b8071885996343858020f48ab3cbd765b59"
-    sha256 cellar: :any,                 arm64_ventura: "f3324af1723643697c948077b2579b1887fe919fa3baf8aeb1c369205562f033"
-    sha256 cellar: :any,                 sonoma:        "bdf0404160449b2ba432b1da81d632d920bf0b9627600ae8d1443c80b8a60399"
-    sha256 cellar: :any,                 ventura:       "8eaa759ce670aea349b8a5bac66e8049cce5d93c8b9de85c4fcbeee128ae752c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe2335644d71cc739aaee970d46d0db9ccec48b20e33911844847512cd77807a"
+    sha256 cellar: :any,                 arm64_sequoia: "c3dcfaaab7fbe511652c4e718e7121d75efe6e9694aa1939e17008d8670c4a5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e5b658cb32ad125868b923f1bd97a3176b6f857e0476c50ef339accc8559d91"
+    sha256 cellar: :any,                 arm64_ventura: "8273d0bd6e7462281f4199555c6f340f4d39a8a395bcb1f5cb45f35a23db25b7"
+    sha256 cellar: :any,                 sonoma:        "a3640ef6154510b4ec7691b3b8ee7c3fae6e8e6689b7280adfc7e0f79c9119b5"
+    sha256 cellar: :any,                 ventura:       "a0242dfd3214ba4397b2e5de6f4063a5104f801d02c39735f809417e071d73ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7be30f32a79f8b0cf8e2a5a41b9b9022fc9506c9259263e0d58798af16f6e1"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +31,7 @@ class Openimageio < Formula
   depends_on "giflib"
   depends_on "imath"
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
   depends_on "libheif"
   depends_on "libpng"
   depends_on "libraw"

@@ -17,6 +17,10 @@ class Pdftoipe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a3da5c3168fefc7e7899400b3a618b91072777ed35feed3b76a727a3d99964c"
   end
 
+  # Patches to build with newer poppler are ignored upstream
+  # Ref: https:github.comotfriedipe-toolspull55
+  disable! date: "2024-11-07", because: "does not build with latest poppler"
+
   depends_on "pkg-config" => :build
   depends_on "poppler"
 

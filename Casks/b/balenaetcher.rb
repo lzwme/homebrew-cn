@@ -23,7 +23,8 @@ cask "balenaetcher" do
   uninstall quit: "io.balena.etcher.*"
 
   zap trash: [
-    "~LibraryApplication Supportbalena-etcher",
+    "~LibraryApplication SupportbalenaEtcher",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsio.balena.etcher.sfl*",
     "~LibraryPreferencesio.balena.etcher.helper.plist",
     "~LibraryPreferencesio.balena.etcher.plist",
     "~LibrarySaved Application Stateio.balena.etcher.savedState",

@@ -24,7 +24,7 @@ class PhpCodeSniffer < Formula
   end
 
   test do
-    (testpath"test.php").write <<~EOS
+    (testpath"test.php").write <<~PHP
       <?php
       **
       * PHP version 5
@@ -35,7 +35,7 @@ class PhpCodeSniffer < Formula
       * @license   BSD Licence
       * @link      https:brew.sh
       *
-    EOS
+    PHP
 
     assert_match "FOUND 13 ERRORS", shell_output("#{bin}phpcs --runtime-set ignore_errors_on_exit true test.php")
     assert_match "13 ERRORS WERE FIXED", shell_output("#{bin}phpcbf test.php", 1)

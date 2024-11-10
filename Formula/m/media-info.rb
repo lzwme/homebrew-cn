@@ -1,8 +1,8 @@
 class MediaInfo < Formula
   desc "Unified display of technical and tag data for audiovideo"
   homepage "https:mediaarea.net"
-  url "https:mediaarea.netdownloadbinarymediainfo24.06MediaInfo_CLI_24.06_GNU_FromSource.tar.bz2"
-  sha256 "4001264380c5f4ed224b542de2b6f6c517aa64b9364b194e2ab2939f355fbbfc"
+  url "https:mediaarea.netdownloadbinarymediainfo24.11MediaInfo_CLI_24.11_GNU_FromSource.tar.bz2"
+  sha256 "a85035cb758396a30ee84a2a7fb28edf15c16143bfcac2698ac02a9a0fcc22a0"
   license "BSD-2-Clause"
   head "https:github.comMediaAreaMediaInfo.git", branch: "master"
 
@@ -12,14 +12,12 @@ class MediaInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "fcfba4e54a79ed67933ee1adffc2ec21edbfb341895d11a95497a75cff31db28"
-    sha256 cellar: :any,                 arm64_sonoma:   "24ab01c2d04ff3dfef9140f7fb1c4c08a40f11f83a2d073cb6d0d2a9299e3947"
-    sha256 cellar: :any,                 arm64_ventura:  "e6bb4bf566a600f98b90ffbd502baff4e4612b762225bfe54d0e747058caade4"
-    sha256 cellar: :any,                 arm64_monterey: "0de46f4d1f87a446d0564bf44c4ecd1c04304053c0b2481c7f4ee84ab04648ba"
-    sha256 cellar: :any,                 sonoma:         "c3a1f44a8369d15d65ba73097f43086eac1acdc487f4cb23324d0f96540ca136"
-    sha256 cellar: :any,                 ventura:        "984d8dc333983a7fe824a0af5a6e70ddd094fa800e5af63e50fe03204fd81657"
-    sha256 cellar: :any,                 monterey:       "e8eabd1e4388f0ab62f33accfac14840a66087449e738380efc26611cf9f05aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5113125409dbbbf87d710bfe56592ff9593cde08412e220757e4ee9de3fdcefb"
+    sha256 cellar: :any,                 arm64_sequoia: "2775e900c6ddb64cb56c71ec4b2e7811a00dc753466b1229ece62c3d07256f7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ef20c63f8aa02a405fb6ec5f059933353039dc981373d939612c4a43dfa7924"
+    sha256 cellar: :any,                 arm64_ventura: "7e5773e817fbe92791f20aeb3053271d4b3aa5891306ca55a007865158176e68"
+    sha256 cellar: :any,                 sonoma:        "49f9e8d86207e83f0ae1d8804c2193f05b0e1f6aab891d5f857e6a1420409bb7"
+    sha256 cellar: :any,                 ventura:       "eeaeae9606fa1e0aa0456111b626d0d6f570d82570ecdc8157c417ecad49b3f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb54082f50d7d5cd15864b6b2bf1bc0f275a5d6847570e09e36b2bc2fd207e7"
   end
 
   depends_on "pkg-config" => :build

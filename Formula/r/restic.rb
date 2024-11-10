@@ -1,18 +1,18 @@
 class Restic < Formula
   desc "Fast, efficient and secure backup program"
   homepage "https:restic.net"
-  url "https:github.comresticresticarchiverefstagsv0.17.2.tar.gz"
-  sha256 "ac52843c40bc9b520bb8dbbbaeda6afec7a35c59753b8cbf11348dd734896ed1"
+  url "https:github.comresticresticarchiverefstagsv0.17.3.tar.gz"
+  sha256 "bf0dd73edfae531c24070e2e7833938613f7b179ed165e6b681098edfdf286c8"
   license "BSD-2-Clause"
   head "https:github.comresticrestic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a3009e4a833d5238bb51a1409d9478ae2833f7328330ca189b0a989e84a5ce34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01df0b8c186c74010c224c651fdbed0cf37e812ba583127a1267df41c5ec7673"
-    sha256 cellar: :any_skip_relocation, ventura:       "01df0b8c186c74010c224c651fdbed0cf37e812ba583127a1267df41c5ec7673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3d8528225b381f3d74decf95d057cd65834360536dd4b2aa5732977ac9cfa6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0debc30cad0e6e9f7dd0d02c1345865589d691ad796f6ea5e23827638d58862"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0debc30cad0e6e9f7dd0d02c1345865589d691ad796f6ea5e23827638d58862"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0debc30cad0e6e9f7dd0d02c1345865589d691ad796f6ea5e23827638d58862"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df2cbf0539af846b8302d81bd927230ea283dfc877a83a7a06e35a4c0fc08441"
+    sha256 cellar: :any_skip_relocation, ventura:       "df2cbf0539af846b8302d81bd927230ea283dfc877a83a7a06e35a4c0fc08441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e295026f4b3c1150f5b9c5ee718fd0ddc42835edecaab71441d03f8012bc97"
   end
 
   depends_on "go" => :build

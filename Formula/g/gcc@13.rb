@@ -12,6 +12,7 @@ class GccAT13 < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "cc01c9f4c79053bc25807069b3b9e8da3acc1b9828a623668c9917a143776ebc"
     sha256                               arm64_sonoma:   "ff56bc82f41d769ff59131299f9d576df8b4a1162ef44acc3a1c45ffbbaa6f9c"
     sha256                               arm64_ventura:  "2711d2616329446feb71d48fefd12e100b232f664dabee59873a961b8665239e"
     sha256                               arm64_monterey: "80a178083c446e401c59c4fd6ebe4c28fde89b4f93f6446e5144ec25d9b8b6dc"
@@ -45,6 +46,14 @@ class GccAT13 < Formula
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patchesbda0faddfbfb392e7b9c9101056b2c5ab2500508gccgcc-13.3.0.diff"
     sha256 "c5e9236430ef6edbdda7de9ac70bf79e21628077a48322cec7f3f064ccfc243d"
+  end
+
+  # Apply additional commits to support Xcode 16 until the next release
+  patch do
+    on_macos do
+      url "https:github.comiainsgcc-13-branchcomparefa196a8618c62428a372fb251f9fa292d4f275c2..4fdcc027fcc235805c7cc4bede6948b9a00afe1e.patch"
+      sha256 "c41b217f1e6dc447e208ade4c76e86d5a95a1bd9790abc28bc9c2a4f09b7eb4e"
+    end
   end
 
   def install
@@ -102,6 +111,7 @@ class GccAT13 < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https:stackoverflow.coma54038769
       inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+      inreplace "gccconfigaarch64t-aarch64-linux", "lp64=..lib64", "lp64="
 
       make_args = %W[
         BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}

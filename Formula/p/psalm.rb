@@ -31,7 +31,7 @@ class Psalm < Formula
   end
 
   test do
-    (testpath"composer.json").write <<~EOS
+    (testpath"composer.json").write <<~JSON
       {
         "name": "homebrewpsalm-test",
         "description": "Testing if Psalm has been installed properly.",
@@ -47,9 +47,9 @@ class Psalm < Formula
         },
         "minimum-stability": "stable"
       }
-    EOS
+    JSON
 
-    (testpath"srcEmail.php").write <<~EOS
+    (testpath"srcEmail.php").write <<~PHP
       <?php
       declare(strict_types=1);
 
@@ -91,7 +91,7 @@ class Psalm < Formula
           }
         }
       }
-    EOS
+    PHP
 
     system "composer", "install"
 

@@ -28,7 +28,7 @@ class Phpstan < Formula
   end
 
   test do
-    (testpath"srcautoload.php").write <<~EOS
+    (testpath"srcautoload.php").write <<~PHP
       <?php
       spl_autoload_register(
           function($class) {
@@ -46,9 +46,9 @@ class Phpstan < Formula
           true,
           false
       );
-    EOS
+    PHP
 
-    (testpath"srcEmail.php").write <<~EOS
+    (testpath"srcEmail.php").write <<~PHP
       <?php
         declare(strict_types=1);
 
@@ -85,7 +85,7 @@ class Phpstan < Formula
                 }
             }
         }
-    EOS
+    PHP
     assert_match(^\n \[OK\] No errors,
       shell_output("#{bin}phpstan analyse --level max --autoload-file srcautoload.php srcEmail.php"))
   end

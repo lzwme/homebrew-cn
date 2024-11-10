@@ -1,20 +1,18 @@
 class Libmediainfo < Formula
   desc "Shared library for mediainfo"
   homepage "https:mediaarea.netenMediaInfo"
-  url "https:mediaarea.netdownloadsourcelibmediainfo24.06libmediainfo_24.06.tar.xz"
-  sha256 "0683f28a2475dc2417205ba528debccc407da4d9fa6516eb4b75b3ff7244e96e"
+  url "https:mediaarea.netdownloadsourcelibmediainfo24.11libmediainfo_24.11.tar.xz"
+  sha256 "96e44a617f90c8b63bb685ad53be6716b7df4221793c329780f02aea6e707aa1"
   license "BSD-2-Clause"
   head "https:github.comMediaAreaMediaInfoLib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8f26919e56c446426bea8abe9f8bbb51c6487d2599ad853ce74a90268d590478"
-    sha256 cellar: :any,                 arm64_sonoma:   "dfb00a983d0b7a1691aafef218b6417b82605ba291e0367b901b921a23e8d114"
-    sha256 cellar: :any,                 arm64_ventura:  "14266e079f02a52815d0938b9b84bbd2afda5f21a1441d0de3b85f716bed763d"
-    sha256 cellar: :any,                 arm64_monterey: "4c07f5c3894ea2f267b22ff4bc4b97faad97991a631a45a3e0f48e0c812b21f8"
-    sha256 cellar: :any,                 sonoma:         "3e7bd62f61786ac2bf331d385a151f84f72f4ba7f7946f931cc1d7a3965eaba4"
-    sha256 cellar: :any,                 ventura:        "1de25cceecfa0fa85dfe280e72b1c7701278bb3f59e510cf37c85774004b1eca"
-    sha256 cellar: :any,                 monterey:       "864a8a489f88391f991d3ddcf1d276f143545049970e32da6d1f8cc82d1e30ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c80fc58fa1bc432f8661261873bb431c25ef6c85fc6b46fe5eb665334c179879"
+    sha256 cellar: :any,                 arm64_sequoia: "3427787833fe8c033078515e1ea8353eaab13e005941fd27eb6a85f85e9b5378"
+    sha256 cellar: :any,                 arm64_sonoma:  "85d5d24c152d76b6a05535b3ae22c5a0d88d8e17b81a347f2e5ef60e0c27a515"
+    sha256 cellar: :any,                 arm64_ventura: "38cb6ae2a91bbd88764cf647afa1ac2276d0b22e0644168486257e57756011dd"
+    sha256 cellar: :any,                 sonoma:        "d827fc809e651c6ac2719729a5cdbf26a837423a0ec27fab55b2eacfe7d74cd9"
+    sha256 cellar: :any,                 ventura:       "131a65274d572de55ce52e9cb01882f30a8abd778544995579f45942b0c477bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "942d09d98a3ef3146243709d5109c2aa63d27ac42fca5f9c43fa1dd2c29b2ff2"
   end
 
   depends_on "cmake" => :build

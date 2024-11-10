@@ -22,7 +22,7 @@ class Phpunit < Formula
   end
 
   test do
-    (testpath/"src/autoload.php").write <<~EOS
+    (testpath/"src/autoload.php").write <<~PHP
       <?php
       spl_autoload_register(
           function($class) {
@@ -40,9 +40,9 @@ class Phpunit < Formula
           true,
           false
       );
-    EOS
+    PHP
 
-    (testpath/"src/Email.php").write <<~EOS
+    (testpath/"src/Email.php").write <<~PHP
       <?php
         declare(strict_types=1);
 
@@ -79,9 +79,9 @@ class Phpunit < Formula
                 }
             }
         }
-    EOS
+    PHP
 
-    (testpath/"tests/EmailTest.php").write <<~EOS
+    (testpath/"tests/EmailTest.php").write <<~PHP
       <?php
       declare(strict_types=1);
 
@@ -113,7 +113,7 @@ class Phpunit < Formula
           }
       }
 
-    EOS
+    PHP
     assert_match(/^OK \(3 tests, 3 assertions\)$/,
       shell_output("#{bin}/phpunit --bootstrap src/autoload.php tests/EmailTest.php"))
   end

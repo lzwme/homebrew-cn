@@ -3,14 +3,13 @@ class Cryfs < Formula
 
   desc "Encrypts your files so you can safely store them in Dropbox, iCloud, etc."
   homepage "https:www.cryfs.org"
-  url "https:github.comcryfscryfsreleasesdownload0.11.4cryfs-0.11.4.tar.gz"
-  sha256 "6caca6276ce5aec40bf321fd0911b0af7bcffc44c3cb82ff5c5af944d6f75a45"
+  url "https:github.comcryfscryfsreleasesdownload1.0.0cryfs-1.0.0.tar.gz"
+  sha256 "eb2fec8e2ca13abe7d3b1e33967b3996bfb2ea1da2d890e7b93946c418260ad1"
   license "LGPL-3.0-or-later"
-  revision 7
   head "https:github.comcryfscryfs.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8aa0f0aded58dd01325c470c0411ff61d6b3be3e0e8f99b4c68ae7aa8afbe47e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bc7c2cc09256300b9abdaab9ac243496255fe8915b248b7a893e58065e267d67"
   end
 
   depends_on "cmake" => :build

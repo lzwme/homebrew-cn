@@ -4,6 +4,7 @@ class Notmuch < Formula
   url "https://notmuchmail.org/releases/notmuch-0.38.3.tar.xz"
   sha256 "9af46cc80da58b4301ca2baefcc25a40d112d0315507e632c0f3f0f08328d054"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
   livecheck do
@@ -12,14 +13,12 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "26f075815a3971c6e6fd67895e1e9009f2828c08469b3ec2a32fe365db2f0343"
-    sha256 cellar: :any,                 arm64_sonoma:   "dc0c9e64e45666c7b504edd124623723793d558f9b92841318cfb57e1905a2bc"
-    sha256 cellar: :any,                 arm64_ventura:  "5866c39776242b60bdffeae0cd8a8e72f4b436fff63eb3fcf2b33d7be69c32a4"
-    sha256 cellar: :any,                 arm64_monterey: "8040db968c5da6d96e90ccd2c1044f1c8eb0dfd0a6c5edc864f33105d31f4894"
-    sha256 cellar: :any,                 sonoma:         "f1017f9efe6fc4487a494f9838dd6ff4177a351ee914fa9845cd3be72132898d"
-    sha256 cellar: :any,                 ventura:        "2f10a85b0c2155e200abc0a4592f6285aaa8b754b20fb3b4cc90ac25a94731ab"
-    sha256 cellar: :any,                 monterey:       "57d086ced8e109e947cdabbaeb81ef9a50b079630b2b73eda20c912d314bb90f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3db984b392cccc361c5ffe324b79ea2e49631c1a468b1ab088bd01162dbcb66"
+    sha256 cellar: :any,                 arm64_sequoia: "afae4f2b51443c43285f1b7d1d8797ee8d43d24dc3ad7fea1d3364750a92804f"
+    sha256 cellar: :any,                 arm64_sonoma:  "2db7f9945c689431fb604b28d6f4edd0937497c657b481ae5c51e0998639ddd7"
+    sha256 cellar: :any,                 arm64_ventura: "d61604e6ce8d0c6c3dd341202de51b549ff9d8e3a34796ec7cd5d20079d80b0a"
+    sha256 cellar: :any,                 sonoma:        "4c0c5abd1006da2c5235374c6ab5936997d39a3f819ad1131f07366a7d79af7f"
+    sha256 cellar: :any,                 ventura:       "2f162fc7fb07a9ead2c39667fb24ccca546a70021a3a7591e194c72e661e3070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15655e56f2cf0a0580b812cb2b9d5948ad6e5b395c43291432b9d2bdcdc44e8b"
   end
 
   depends_on "doxygen" => :build
@@ -31,7 +30,7 @@ class Notmuch < Formula
   depends_on "cffi"
   depends_on "glib"
   depends_on "gmime"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "talloc"
   depends_on "xapian"
 
@@ -42,7 +41,7 @@ class Notmuch < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

@@ -1,20 +1,18 @@
 class N < Formula
   desc "Node version management"
   homepage "https:github.comtjn"
-  url "https:github.comtjnarchiverefstagsv10.0.0.tar.gz"
-  sha256 "096b78d1ccb4ad006293ed1e2b258925d99565449d374f5745ee374dc6f07a23"
+  url "https:github.comtjnarchiverefstagsv10.1.0.tar.gz"
+  sha256 "53f686808ef37728922ad22e8a5560f4caf1d214d706639ef8eca6e72b891697"
   license "MIT"
   head "https:github.comtjn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "06ca762d9337ab096b4a24f0463d7562d9e6da0f74bb3c3b73200e0444d47589"
-    sha256 cellar: :any_skip_relocation, ventura:        "06ca762d9337ab096b4a24f0463d7562d9e6da0f74bb3c3b73200e0444d47589"
-    sha256 cellar: :any_skip_relocation, monterey:       "06ca762d9337ab096b4a24f0463d7562d9e6da0f74bb3c3b73200e0444d47589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a81b86f1e2b6db0ab79a4d2c4622baa060c4a4b0d3f5a32a2c6a5255e71133d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "658d2c03d442e49143a223a77d49a462ec2ce5ee40d22da4a932e178920234d4"
+    sha256 cellar: :any_skip_relocation, ventura:       "658d2c03d442e49143a223a77d49a462ec2ce5ee40d22da4a932e178920234d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
   end
 
   def install
