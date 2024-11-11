@@ -23,7 +23,7 @@ class Jsonschema2pojo < Formula
   end
 
   test do
-    (testpath"srcjsonschema.json").write <<~EOS
+    (testpath"srcjsonschema.json").write <<~JSON
       {
         "type":"object",
         "properties": {
@@ -38,7 +38,7 @@ class Jsonschema2pojo < Formula
           }
         }
       }
-    EOS
+    JSON
     system bin"jsonschema2pojo", "-s", "src", "-t", testpath
     assert_predicate testpath"Jsonschema.java", :exist?, "Failed to generate Jsonschema.java"
   end

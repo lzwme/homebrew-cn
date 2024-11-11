@@ -24,11 +24,11 @@ class Tfupdate < Formula
   end
 
   test do
-    (testpath"provider.tf").write <<~EOS
+    (testpath"provider.tf").write <<~HCL
       provider "aws" {
         version = "2.39.0"
       }
-    EOS
+    HCL
 
     system bin"tfupdate", "provider", "aws", "-v", "2.40.0", testpath"provider.tf"
     assert_match "2.40.0", File.read(testpath"provider.tf")

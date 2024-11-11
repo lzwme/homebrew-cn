@@ -30,14 +30,14 @@ class Levant < Formula
   end
 
   test do
-    (testpath"template.nomad").write <<~EOS
+    (testpath"template.nomad").write <<~HCL
       resources {
           cpu    = [[.resources.cpu]]
           memory = [[.resources.memory]]
       }
-    EOS
+    HCL
 
-    (testpath"variables.json").write <<~EOS
+    (testpath"variables.json").write <<~JSON
       {
         "resources":{
           "cpu":250,
@@ -47,7 +47,7 @@ class Levant < Formula
           }
         }
       }
-    EOS
+    JSON
 
     assert_match "resources {\n    cpu    = 250\n    memory = 512\n}\n",
       shell_output("#{bin}levant render -var-file=#{testpath}variables.json #{testpath}template.nomad")

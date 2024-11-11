@@ -92,7 +92,7 @@ class Cppcms < Formula
     CPP
 
     port = free_port
-    (testpath/"config.json").write <<~EOS
+    (testpath/"config.json").write <<~JSON
       {
           "service" : {
               "api" : "http",
@@ -106,7 +106,7 @@ class Cppcms < Formula
               "script_names" : [ "/hello" ]
           }
       }
-    EOS
+    JSON
     system ENV.cxx, "hello.cpp", "-std=c++11", "-L#{lib}", "-lcppcms", "-o", "hello"
     pid = fork { exec "./hello", "-c", "config.json" }
 

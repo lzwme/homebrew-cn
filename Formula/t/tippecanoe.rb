@@ -27,9 +27,9 @@ class Tippecanoe < Formula
   end
 
   test do
-    (testpath"test.json").write <<~EOS
+    (testpath"test.json").write <<~JSON
       {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[0,0]}}
-    EOS
+    JSON
     safe_system bin"tippecanoe", "-o", "test.mbtiles", "test.json"
     assert_predicate testpath"test.mbtiles", :exist?, "tippecanoe generated no output!"
   end

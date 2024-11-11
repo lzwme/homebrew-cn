@@ -12,6 +12,14 @@ cask "autopkgr" do
 
   app "AutoPkgr.app"
 
+  zap trash: [
+    "~LibraryApplication SupportAutoPkgr",
+    "~LibraryCachescom.lindegroup.AutoPkgr",
+    "~LibraryHTTPStoragescom.lindegroup.AutoPkgr",
+    "~LibraryHTTPStoragescom.lindegroup.AutoPkgr.binarycookies",
+    "~LibraryPreferencescom.lindegroup.AutoPkgr.plist",
+  ]
+
   caveats do
     requires_rosetta
   end

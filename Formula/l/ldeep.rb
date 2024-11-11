@@ -3,18 +3,18 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https:github.comfranc-pentestldeep"
-  url "https:files.pythonhosted.orgpackages7f9f121148071d5e825f00120ec589d2e8c21868eb78465850cbfb095118c6e7ldeep-1.0.72.tar.gz"
-  sha256 "4591f267f82c2cebf2150f49f04fe72d062c6bd83f67d6984ea360f3a32a5183"
+  url "https:files.pythonhosted.orgpackagesdf9785c01dbc9475fed7934ddb6000bb1d5e3d7a3f99eb9a382c186c0cc66b6aldeep-1.0.73.tar.gz"
+  sha256 "ca235ce4051ae341a071c98b039f17ec74faa325fba712eecea2147a1366128d"
   license "MIT"
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8d00e22a5b7d9038ff4b20b31cc7b8f92f679db6bf06549e446a82445f3a983"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f3d11c306402792b706150499ec3a5cdb060e0e1745a4bf2b4c1af84b09669f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "154cc239a047bd4046ba80bd44a45ee7815cc4a3bf63d8e3ba7a303c404e5ca1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fcb9d6d26af6f21daba8a79c3697c423825e08c9f25abb05110d38ddcc99c491"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d4fa8b5e42dd84e9cf2a799f29bea4e6eaec2cf4785722ee0ca6d1f14335073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "206536ca643fa87021d68af9c51aa7514af22cbc9a9a106abc967acc4c4a307e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a55eb1209db6a3d67c1b986492658be10698582188b120a4aee43a8a0a8cc310"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c13e564d07cb6f3b5ad4ffad91f9c222bea8346714fe68856be19a4d2755b41"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "047167640c5086089d80fb8ce1dc0d6f7699315f3d1c9650b55fdc4ad618eab0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6bc003e707992b4c6563e021a4bc52f3f45ac07f3f5335dbb170a4dbaee0075"
+    sha256 cellar: :any_skip_relocation, ventura:       "b429014a1a7c1d45fc14ac59afdc3e0241b3fa9d9fa94b7755829e60352a9143"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2497b59b74b2f6cdcd0c8ed64b6153b36a8669bf1a2cc119ac9b31cb5b51bc04"
   end
 
   depends_on "cryptography"
@@ -83,8 +83,8 @@ class Ldeep < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagese84f0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0tqdm-4.67.0.tar.gz"
+    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
   end
 
   # support py3.13 build

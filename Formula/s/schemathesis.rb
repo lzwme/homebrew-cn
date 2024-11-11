@@ -283,12 +283,12 @@ class Schemathesis < Formula
   end
 
   test do
-    (testpath/"example.json").write <<~EOS
+    (testpath/"example.json").write <<~JSON
       {
         "openapi": "3.0.3",
         "paths": {}
       }
-    EOS
+    JSON
     output = shell_output("#{bin}/st run ./example.json --dry-run")
     assert_match "Schemathesis test session starts", output
     assert_match "Specification version: Open API 3.0.3", output

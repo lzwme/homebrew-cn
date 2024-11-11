@@ -111,7 +111,7 @@ class Cfripper < Formula
   end
 
   test do
-    (testpath/"test.json").write <<~EOS
+    (testpath/"test.json").write <<~JSON
       {
         "AWSTemplateFormatVersion": "2010-09-09",
         "Resources": {
@@ -136,7 +136,7 @@ class Cfripper < Formula
           }
         }
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}/cfripper #{testpath}/test.json --format txt 2>&1")
     assert_match "no AWS Account ID was found in the config.", output

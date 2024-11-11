@@ -1,18 +1,18 @@
 class Jp2a < Formula
   desc "Convert JPG images to ASCII"
   homepage "https:github.comTalinxjp2a"
-  url "https:github.comTalinxjp2areleasesdownloadv1.3.1jp2a-1.3.1.tar.bz2"
-  sha256 "a646f893508b111d922d5f726953d577089741b83fa299f351c98e7be7974c9f"
+  url "https:github.comTalinxjp2areleasesdownloadv1.3.2jp2a-1.3.2.tar.bz2"
+  sha256 "e2aabc4df8f003035059996f0768b4543fd483ab8cffa5f62286a1d00ddb0439"
   license "GPL-2.0-or-later"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "48a62bab6e6137a966a84aa358bd89951a08f4804e68ed8ddb62dd1aaa440d03"
-    sha256 cellar: :any,                 arm64_sonoma:  "54e7f74dc31bc89460ad5990a4edfd48f84ebf8157b5db704108d65d4cf3fec6"
-    sha256 cellar: :any,                 arm64_ventura: "ad160d25da5c3d94096f8df247ed23b768decd6e09ef1e41eb10cc209dff70db"
-    sha256 cellar: :any,                 sonoma:        "35c9ffafbe8be311bbc70d882d6a3d947845d64c1de25bf27f16e064b8e44478"
-    sha256 cellar: :any,                 ventura:       "d10a7ed7431a73c496aef8611d8b6d4688944776b0717b2e8c53ae7e9dd67e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42afb7dedf59ee0ee8bc3ad0ff12fc6f3a3c844fcf1d654a36c1991e85bb6bdc"
+    sha256 cellar: :any,                 arm64_sequoia: "c57c32d5a9a823615408c17fc7692cf918beac96cd9557c54f905da5803b9f31"
+    sha256 cellar: :any,                 arm64_sonoma:  "daf37f1570a9e1b2bd46b2cc0ccf57af00a813a0de9022a106e89fc7fe829ddc"
+    sha256 cellar: :any,                 arm64_ventura: "1b7dbe456e302277e7ff10a79e3999b35672855ca3a04425cf89572df87bf5b4"
+    sha256 cellar: :any,                 sonoma:        "1c5b176bba2e8ae0d825761da452a334d11411637342a159fecc6c9add83c5bf"
+    sha256 cellar: :any,                 ventura:       "e9b1cca5d32321539eec19f0e0c037a8e137cee43448a04b135f620df806478d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f6f42f5d2ef84ddc1a42004e9c44789be388385a454215e02dfa9b07c1bf43"
   end
 
   depends_on "pkg-config" => :build

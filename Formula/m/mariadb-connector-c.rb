@@ -25,12 +25,13 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "459bbe7021e6692558d602d179325151052d1bb1e54f5be6920ba964fb86a114"
-    sha256 arm64_sonoma:  "aae55f7cbf6548f7cded61f52c1fe270ed71e6420587a1e501d3331aef246c91"
-    sha256 arm64_ventura: "0a3f4ee88fbe4477b34c3cb69ec8f9ff41915226844553ad7e19e1f5afb98f9c"
-    sha256 sonoma:        "c634f779d70b48aabd64322c6de6201cb71568573afb0403ac033a28cca0a8ce"
-    sha256 ventura:       "f2b58c98f43016999d62ad8cc7e9e79ff47714f71b125f0fd28f4038259a3bdf"
-    sha256 x86_64_linux:  "03697dd4da4ff2ec7692b5585b7288f34e92be772691e344b13a3caaa91f403a"
+    rebuild 1
+    sha256 arm64_sequoia: "7164ff84f1e8eeb2e8efcb02f0ca31abd8a5997ebe1bf526b8c11edaaa7b7d34"
+    sha256 arm64_sonoma:  "e16a19729204f5ba97e259012aa7d1abbd549c49a9b2610bb1fd3fafe2ab7ad4"
+    sha256 arm64_ventura: "96fe4ece7f07237e0b1a344d99a1c181f3899a7990e3e6552ce819fea77e7dce"
+    sha256 sonoma:        "36b1de0a183158468936ff52b5ef9d235893d2efe73e3c4fe25e16551f715912"
+    sha256 ventura:       "9fd01a1f4f5c3460cc201893ff5c15e2471e8149944f46f13102f9cd9355f84b"
+    sha256 x86_64_linux:  "e00754661abefb2555e56e422fa2db368fa4787d4210ed4eddca4e863437dde4"
   end
 
   keg_only "it conflicts with mariadb"
@@ -46,9 +47,10 @@ class MariadbConnectorC < Formula
   def install
     rm_r "external"
 
-    args = %W[
-      -DINSTALL_LIBDIR=#{lib}
-      -DINSTALL_MANDIR=#{man}
+    # -DINSTALL_* are relative to prefix
+    args = %w[
+      -DINSTALL_LIBDIR=lib
+      -DINSTALL_MANDIR=shareman
       -DWITH_EXTERNAL_ZLIB=ON
       -DWITH_MYSQLCOMPAT=ON
       -DWITH_UNIT_TESTS=OFF
@@ -67,7 +69,7 @@ class MariadbConnectorC < Formula
 
     # Temporary symlinks for backwards compatibility.
     # TODO: Remove in future version update.
-    lib.glob(shared_library("*")) { |f| (lib"mariadb").install_symlink f }
+    (lib"mariadb").install_symlink lib.glob(shared_library("*"))
 
     # TODO: Automatically compress manpages in brew
     Utils::Gzip.compress(*man3.glob("*.3"))

@@ -121,9 +121,9 @@ class Podman < Formula
       system "make"
       system "make", "install", "install.completions"
 
-      (prefix"etccontainerspolicy.json").write <<~EOS
+      (prefix"etccontainerspolicy.json").write <<~JSON
         {"default":[{"type":"insecureAcceptAnything"}]}
-      EOS
+      JSON
 
       (prefix"etccontainersstorage.conf").write <<~EOS
         [storage]

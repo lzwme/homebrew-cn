@@ -23,13 +23,13 @@ class Gauge < Formula
   end
 
   test do
-    (testpath"manifest.json").write <<~EOS
+    (testpath"manifest.json").write <<~JSON
       {
         "Plugins": [
           "html-report"
         ]
       }
-    EOS
+    JSON
 
     system(bin"gauge", "install")
     assert_predicate testpath".gaugeplugins", :exist?

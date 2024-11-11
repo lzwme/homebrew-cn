@@ -35,7 +35,7 @@ class Regula < Formula
   end
 
   test do
-    (testpath"infratest.tf").write <<~EOS
+    (testpath"infratest.tf").write <<~HCL
       resource "aws_s3_bucket" "foo-bucket" {
         region        = "us-east-1"
         bucket        = "test"
@@ -46,7 +46,7 @@ class Regula < Formula
           enabled = true
         }
       }
-    EOS
+    HCL
 
     assert_match "Found 10 problems", shell_output(bin"regula run infra", 1)
 

@@ -1,31 +1,22 @@
 class Ivtools < Formula
   desc "X11 vector graphic servers"
   homepage "https:github.comvectaportivtools"
-  url "https:github.comvectaportivtoolsarchiverefstagsivtools-2.1.tar.gz"
-  sha256 "6a5a55883399cbfef317d8bbf553e57e54945188666b344d9efa98ba3edb57ad"
+  url "https:github.comvectaportivtoolsarchiverefstagsivtools-2.1.1.tar.gz"
+  sha256 "4fa680b9d0fd2af610e9012258e150249d9a8abbc3b1f65eb17d01c959142cfc"
   license "MIT"
-  revision 6
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "8c0c13fec5d7dbb494964ba3e1468c26e75d16d2fd455d067670c7509c757cdb"
-    sha256 cellar: :any, arm64_sonoma:   "9aff849b29d9ff8c26c9fa6f2465fed83432940fa92e0bbf02de4ec9f056e537"
-    sha256               arm64_ventura:  "983f0e8636e109d5908cb785451ccf63b0c50ca080d8ebcc9479396d92d81989"
-    sha256               arm64_monterey: "40498e4bc74223a345b5558cd13a15f201cc68c79aed787d20bf9bbbacf552f9"
-    sha256 cellar: :any, sonoma:         "fa6dca449abf1dbf670ca9ef2256f99e843618f923d897767c0629d6671f78e4"
-    sha256               ventura:        "40cdf0f8b141813718e9f4d4b7b3a32752f3cac1b5024014fce5e2405b9ed14b"
-    sha256               monterey:       "eecf13aa53e64d6b6deb95d05c8e633d1c8ecb5c28bbbc19250a9ce3a7f44483"
-    sha256               x86_64_linux:   "1a57b1289fa8c1ea7c42a4f96fd9dfbf4082aa96f23d19ad7942c2cf4af4eeda"
+    sha256 arm64_sequoia: "72e0267959ef39b08acc5ec077e3028dfa4b2c1e170ec53327d4bb476869adfe"
+    sha256 arm64_sonoma:  "0a33eff027d01ceaf6f35fbc7554bed89fac9360851796a71f4c1dfaef9d2f12"
+    sha256 arm64_ventura: "a42b9d7486543eb0d114226f1d34f16b4883d9b573ff28551e31edf13ff66fc2"
+    sha256 sonoma:        "968e072feb82650f7e558232fa7a9894846683acf69315b4d9b4a89ee7ddeed5"
+    sha256 ventura:       "0b650994d59f5ad13e180ebe45cd79ab6167914f82c23001c7a510c92407b410"
+    sha256 x86_64_linux:  "0c68382badfedbd3cea9375f35555b3ad54f202b2477f663244748cdddbedf3a"
   end
 
   depends_on "ace"
   depends_on "libx11"
   depends_on "libxext"
-
-  # c++17 build patch, upstream PR ref, https:github.comvectaportivtoolspull22
-  patch do
-    url "https:github.comvectaportivtoolscommit7ce87b9159e720cf1990b6fef10ba7a8b664bcda.patch?full_index=1"
-    sha256 "0c1e722b574df66e3c6d4114b066db99691764a04f92c77af2b7adaabde3782c"
-  end
 
   def install
     cp "Makefile.orig", "Makefile"

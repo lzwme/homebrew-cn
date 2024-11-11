@@ -34,7 +34,7 @@ class AvroCpp < Formula
   end
 
   test do
-    (testpath"cpx.json").write <<~EOS
+    (testpath"cpx.json").write <<~JSON
       {
           "type": "record",
           "name": "cpx",
@@ -43,7 +43,7 @@ class AvroCpp < Formula
               {"name": "im", "type" : "double"}
           ]
       }
-    EOS
+    JSON
 
     (testpath"test.cpp").write <<~CPP
       #include "cpx.hh"

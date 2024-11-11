@@ -3,19 +3,17 @@ class Snakeviz < Formula
 
   desc "Web-based viewer for Python profiler output"
   homepage "https://jiffyclub.github.io/snakeviz/"
-  url "https://files.pythonhosted.org/packages/64/9b/3983c41e913676d55e4b3de869aa0561e053ad3505f1fd35181670244b70/snakeviz-2.2.0.tar.gz"
-  sha256 "7bfd00be7ae147eb4a170a471578e1cd3f41f803238958b6b8efcf2c698a6aa9"
+  url "https://files.pythonhosted.org/packages/04/06/82f56563b16d33c2586ac2615a3034a83a4ff1969b84c8d79339e5d07d73/snakeviz-2.2.2.tar.gz"
+  sha256 "08028c6f8e34a032ff14757a38424770abb8662fb2818985aeea0d9bc13a7d83"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "188ce42a3ec12499676c82b4eddf04d412f9a7493f50598ce1ef6ddefdcb8a5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb6ff65e7ddd81e4b4da2ce4d2f1c4d71d66bf7afd244cb06704463655e39987"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eebb8d59c3b7484eb42f3d6f4823bb76e60e8a07f30b040f42f57c557a0c1c12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "684df7298ea85611dab2fd8019e643ec554f8ec85cf0c9eef16954d8ed87b1dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b9c89717342f4189849008929288963b28e26736c2d35777b8827903a288d76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8b886c75c192f230dfdb4b0b820e353cc24e8272cc66dcfc1d0deba90455b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cf83d69854f81ea7e49d0f3294ec95079e24c6317a2718eb87769340198e362"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73f4b73381a93267d81356694340892c6f5ef02359a803a16e0b4256362460d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "83d6771ad3a542629ed79fad73e68f2c2151c17acf283b3b4e6ea5b3e20d715c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e10a49c565b9ea48948cbc1e6c9c6b84839ece560f6d3a2645ae91966cc31c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "304463f63c64d33eb80edf14e447da50d9c3b2d737f4c2a06b48af5d26337cad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a406605762652107a661caf2d544b4bddb3372f534e657d75e1613defd105090"
   end
 
   depends_on "python@3.13"

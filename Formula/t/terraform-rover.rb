@@ -48,11 +48,11 @@ class TerraformRover < Formula
   end
 
   test do
-    (testpath"main.tf").write <<~EOS
+    (testpath"main.tf").write <<~HCL
       output "hello_world" {
         value = "Hello, World!"
       }
-    EOS
+    HCL
     system bin"terraform-rover", "-standalone", "-tfPath", Formula["terraform"].bin"terraform"
     assert_predicate testpath"rover.zip", :exist?
 

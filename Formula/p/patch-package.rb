@@ -28,12 +28,12 @@ class PatchPackage < Formula
     output = shell_output("#{bin}patch-package 2>&1", 1)
     assert_match "no package.json found for this project", output
 
-    (testpath"package.json").write <<~EOS
+    (testpath"package.json").write <<~JSON
       {
         "name": "brewtest",
         "version": "1.0.0"
       }
-    EOS
+    JSON
 
     expected = <<~EOS
       patch-package #{version}

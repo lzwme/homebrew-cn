@@ -33,11 +33,11 @@ class Minikube < Formula
     output = shell_output("#{bin}minikube version")
     assert_match "version: v#{version}", output
 
-    (testpath".minikubeconfigconfig.json").write <<~EOS
+    (testpath".minikubeconfigconfig.json").write <<~JSON
       {
         "vm-driver": "virtualbox"
       }
-    EOS
+    JSON
     output = shell_output("#{bin}minikube config view")
     assert_match "vm-driver: virtualbox", output
   end

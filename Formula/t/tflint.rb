@@ -22,7 +22,7 @@ class Tflint < Formula
   end
 
   test do
-    (testpath"test.tf").write <<~EOS
+    (testpath"test.tf").write <<~HCL
       terraform {
         required_version = ">= 1.0"
 
@@ -37,7 +37,7 @@ class Tflint < Formula
       provider "aws" {
         region = var.aws_region
       }
-    EOS
+    HCL
 
     # tflint returns exitstatus: 0 (no issues), 2 (errors occurred), 3 (no errors but issues found)
     assert_empty shell_output("#{bin}tflint --filter=test.tf")

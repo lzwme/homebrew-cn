@@ -33,7 +33,7 @@ class Kwctl < Formula
     system bin"kwctl", "pull", test_policy
     assert_match test_policy, shell_output("#{bin}kwctl policies")
 
-    (testpath"ingress.json").write <<~EOS
+    (testpath"ingress.json").write <<~JSON
       {
         "uid": "1299d386-525b-4032-98ae-1949f69f9cfc",
         "kind": {
@@ -68,14 +68,14 @@ class Kwctl < Formula
           }
         }
       }
-    EOS
-    (testpath"policy-settings.json").write <<~EOS
+    JSON
+    (testpath"policy-settings.json").write <<~JSON
       {
         "denied_labels": [
           "owner"
         ]
       }
-    EOS
+    JSON
 
     output = shell_output(
       "#{bin}kwctl run " \

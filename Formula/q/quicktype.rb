@@ -26,12 +26,12 @@ class Quicktype < Formula
   end
 
   test do
-    (testpath"sample.json").write <<~EOS
+    (testpath"sample.json").write <<~JSON
       {
         "i": [0, 1],
         "s": "quicktype"
       }
-    EOS
+    JSON
     output = shell_output("#{bin}quicktype --lang typescript --src sample.json")
     assert_match "i: number[];", output
     assert_match "s: string;", output

@@ -19,4 +19,6 @@ cask "oclint" do
   binary "oclint-#{version}binoclint"
   binary "oclint-#{version}libclang", target: "#{HOMEBREW_PREFIX}libclang"
   binary "oclint-#{version}liboclint", target: "#{HOMEBREW_PREFIX}liboclint"
+
+  # No zap stanza required
 end

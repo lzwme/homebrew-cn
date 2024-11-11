@@ -51,12 +51,12 @@ class IosClassGuard < Formula
     (testpath"crashdump").write <<~EOS
       1   MYAPP                           0x0006573a -[C03B setR02:] + 42
     EOS
-    (testpath"symbols.json").write <<~EOS
+    (testpath"symbols.json").write <<~JSON
       {
         "C03B" : "MyViewController",
         "setR02" : "setRightButtons"
       }
-    EOS
+    JSON
     system bin"ios-class-guard", "-c", "crashdump", "-m", "symbols.json"
   end
 end

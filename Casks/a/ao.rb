@@ -7,6 +7,8 @@ cask "ao" do
   desc "Elegant Microsoft To-Do desktop app"
   homepage "https:github.comklaussinaniao"
 
+  deprecate! date: "2024-11-10", because: :unmaintained
+
   app "Ao.app"
 
   caveats do

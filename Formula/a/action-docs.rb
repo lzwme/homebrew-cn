@@ -1,12 +1,12 @@
 class ActionDocs < Formula
   desc "Generate docs for GitHub actions"
   homepage "https:github.comnpalmaction-docs"
-  url "https:registry.npmjs.orgaction-docs-action-docs-2.5.0.tgz"
-  sha256 "109170e521e4096b571932a6c0af640db48d1d82c3023488c70f0c909787792e"
+  url "https:registry.npmjs.orgaction-docs-action-docs-2.5.1.tgz"
+  sha256 "f7d93433a6d3e532b30b3fc068fa263d16f7c38da91422450507b469bd36a64a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "abd1926961e5319b5400d918b66417b6e187855983f47f2182d2de1fe7d699af"
+    sha256 cellar: :any_skip_relocation, all: "89a129206e1fd2a3bb48e3f7923ba2bbb98c3533d28332c2511c6ff093807f51"
   end
 
   depends_on "node"

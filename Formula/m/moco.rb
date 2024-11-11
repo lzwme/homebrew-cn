@@ -23,7 +23,7 @@ class Moco < Formula
   end
 
   test do
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       [
         {
           "response" :
@@ -32,7 +32,7 @@ class Moco < Formula
           }
         }
       ]
-    EOS
+    JSON
 
     port = free_port
     begin

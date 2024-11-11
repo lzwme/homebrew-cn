@@ -25,12 +25,12 @@ class Devcontainer < Formula
     ENV["DOCKER_HOST"] = "devnull"
     # Modified .devcontainerdevcontainer.json from CLI example:
     # https:github.comdevcontainerscli#try-out-the-cli
-    (testpath".devcontainer.json").write <<~EOS
+    (testpath".devcontainer.json").write <<~JSON
       {
         "name": "devcontainer-homebrew-test",
         "image": "mcr.microsoft.comdevcontainersrust:0-1-bullseye"
       }
-    EOS
+    JSON
     output = shell_output("#{bin}devcontainer up --workspace-folder .", 1)
     assert_match '{"outcome":"error","message":"', output
   end

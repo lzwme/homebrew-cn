@@ -38,7 +38,7 @@ class Plank < Formula
   end
 
   test do
-    (testpath"pin.json").write <<~EOS
+    (testpath"pin.json").write <<~JSON
       {
         "id": "pin.json",
         "title": "pin",
@@ -50,7 +50,7 @@ class Plank < Formula
           "link": { "type": "string", "format": "uri"}
          }
       }
-    EOS
+    JSON
     system bin"plank", "--lang", "objc,flow", "--output_dir", testpath, "pin.json"
     assert_predicate testpath"Pin.h", :exist?, "[ObjC] Generated file does not exist"
     assert_predicate testpath"PinType.js", :exist?, "[Flow] Generated file does not exist"

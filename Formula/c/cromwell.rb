@@ -64,11 +64,11 @@ class Cromwell < Formula
       }
     EOS
 
-    (testpath"hello.json").write <<~EOS
+    (testpath"hello.json").write <<~JSON
       {
         "test.hello.name": "world"
       }
-    EOS
+    JSON
 
     result = shell_output("#{bin}cromwell run --inputs hello.json hello.wdl")
 

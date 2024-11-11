@@ -37,18 +37,18 @@ class Sbjson < Formula
   end
 
   test do
-    (testpath"in.json").write <<~EOS
+    (testpath"in.json").write <<~JSON
       [true,false,"string",42.001e3,[],{}]
-    EOS
+    JSON
 
-    (testpath"unwrapped.json").write <<~EOS
+    (testpath"unwrapped.json").write <<~JSON
       true
       false
       "string"
       42001
       []
       {}
-    EOS
+    JSON
 
     assert_equal shell_output("cat unwrapped.json"),
                  shell_output("#{bin}sbjson --unwrap-root in.json")

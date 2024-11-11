@@ -36,7 +36,7 @@ class Youtubeuploader < Formula
     assert_match version.to_s, shell_output("#{bin}youtubeuploader -version")
 
     # OAuth
-    (testpath"client_secrets.json").write <<~EOS
+    (testpath"client_secrets.json").write <<~JSON
       {
         "installed": {
           "client_id": "foo_client_id",
@@ -49,16 +49,16 @@ class Youtubeuploader < Formula
           "token_uri": "https:accounts.google.comooauth2token"
         }
       }
-    EOS
+    JSON
 
-    (testpath"request.token").write <<~EOS
+    (testpath"request.token").write <<~JSON
       {
         "access_token": "test",
         "token_type": "Bearer",
         "refresh_token": "test",
         "expiry": "2020-01-01T00:00:00.000000+00:00"
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}youtubeuploader -filename #{test_fixtures("test.m4a")} 2>&1", 1)
     assert_match 'oauth2: "invalid_client" "The OAuth client was not found."', output

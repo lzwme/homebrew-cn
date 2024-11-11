@@ -25,7 +25,7 @@ class GruntCli < Formula
   end
 
   test do
-    (testpath/"package.json").write <<~EOS
+    (testpath/"package.json").write <<~JSON
       {
         "name": "grunt-homebrew-test",
         "version": "1.0.0",
@@ -33,15 +33,15 @@ class GruntCli < Formula
           "grunt": ">=0.4.0"
         }
       }
-    EOS
+    JSON
 
-    (testpath/"Gruntfile.js").write <<~EOS
+    (testpath/"Gruntfile.js").write <<~JAVASCRIPT
       module.exports = function(grunt) {
         grunt.registerTask("default", "Write output to file.", function() {
           grunt.file.write("output.txt", "Success!");
         })
       };
-    EOS
+    JAVASCRIPT
 
     system "npm", "install", *std_npm_args(prefix: false)
     system bin/"grunt"

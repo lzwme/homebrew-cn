@@ -557,7 +557,7 @@ Homebrew-homebrew-core/Formula/b/bootloadhid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bootterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bore-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/borgbackup.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/borgmatic.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/borgmatic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/boring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boringtun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bork.rb, Homebrew/homebrew-core, 1
@@ -4604,6 +4604,7 @@ Homebrew-homebrew-core/Formula/o/onion-location.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onioncat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onionprobe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onlykey-agent.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/onnx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onnxruntime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onscripter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ooniprobe.rb, Homebrew/homebrew-core, 1
@@ -6237,6 +6238,7 @@ Homebrew-homebrew-core/Formula/t/tbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tccutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcl-tk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tcl-tk@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tclap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tcpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcpflow.rb, Homebrew/homebrew-core, 1
@@ -11152,7 +11154,7 @@ Homebrew-homebrew-cask/Casks/g/grid-clock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gridea.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grids.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/gridtracker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gridtracker2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grisbi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/groestlcoin-core.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/growlnotify.rb, Homebrew/homebrew-cask, 0

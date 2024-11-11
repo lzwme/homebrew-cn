@@ -123,7 +123,7 @@ class CodecovCli < Formula
   test do
     assert_equal "codecovcli, version #{version}\n", shell_output("#{bin}codecovcli --version")
 
-    (testpath"coverage.json").write <<~EOS
+    (testpath"coverage.json").write <<~JSON
       {
         "meta": { "format": 2 },
         "files": {},
@@ -133,7 +133,7 @@ class CodecovCli < Formula
           "percent_covered": 100,
         }
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}codecovcli do-upload --commit-sha=mocksha --dry-run 2>&1")
     assert_match "Found 1 coverage files to report", output

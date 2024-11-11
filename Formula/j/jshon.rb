@@ -32,9 +32,9 @@ class Jshon < Formula
   end
 
   test do
-    (testpath"test.json").write <<~EOS
+    (testpath"test.json").write <<~JSON
       {"a":1,"b":2}
-    EOS
+    JSON
 
     assert_equal "2", pipe_output("#{bin}jshon -l < test.json").strip
   end

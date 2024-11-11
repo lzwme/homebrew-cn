@@ -5,18 +5,19 @@ class SqliteAnalyzer < Formula
   version "3.47.0"
   sha256 "f59c349bedb470203586a6b6d10adb35f2afefa49f91e55a672a36a09a8fedf7"
   license "blessing"
+  revision 1
 
   livecheck do
     formula "sqlite"
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52220d0b6f1ddd14637b7cb56736421234e2a9cb6621f62fe049e362c7a5a4e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a49322029ea4052f821967f2e3c6b886c88a22f27dc2ffd92aaf6a613eddf18"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "edd8f2a17ff75d1c72ba4f6e246a448eb4b96bc1342178dc27fe17683a6228ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a26a443de2daa8ff777f05661d8f98738f2e17f34ed7325e1f4751088c70a13e"
-    sha256 cellar: :any_skip_relocation, ventura:       "454b0f61c466a65a6a9232028c46612d87be30a263c35332c975528a17e015f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50ecfee6225abb5fe56fde310cb500015b3ead9f6baabbd7badda0cbe0c6e9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b3aa0bf93eb73cf44225ee62249d98fec811922c437b1c3a4675972d0b551fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9fbc0d5b1ca41f58692ff030acaa34b445c1b89f8814725086c69f025ab8acb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2843a46bbbb8e9c143da7bfdc0fd0936b19ab11c8d9a5c559ba9eb8bdb6232a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "680620cf792d74d6146ae1c11d275a6df42e4f91596984023a9b98913b50918f"
+    sha256 cellar: :any_skip_relocation, ventura:       "9527def8c37e4524b7a9d70c242ae45febfd0481b9125fe561c2123b747574ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac900124930964af857a3437e24ce3627d5b44d66b4b20967d79b48132769c50"
   end
 
   uses_from_macos "sqlite" => :test

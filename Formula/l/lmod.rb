@@ -4,14 +4,15 @@ class Lmod < Formula
   url "https:github.comTACCLmodarchiverefstags8.7.53.tar.gz"
   sha256 "5e7ed1a5acfee76abfd96f2ffa3af69d49052b9e88a04ab18d87d18a538c4834"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7f89cc87742f2d1196bc0fad3dacc43be40d21136723189cbf23ece89f3a24d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a56018bcbee0602a805a6dc109b157ed8768dfd15d846d3102a29095c8e84e03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "20d6dd789dd3ba4c8f0f24d170340c4348a524881caf0f5802dd128497db5b18"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80620eaa145726e23265a8b7a6d77180f6b4235f5fbd0661aeeccaa32233e668"
-    sha256 cellar: :any_skip_relocation, ventura:       "6042f267182adca68fe69f98ee9e6bb56968912d815b480b95bae74b09a54abd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "343f599971e406ede650a5196da07f20c1b1f09ee597ab7a2ca9a89a64f31e56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad8674d50fae8017895cc9cf584a1c11218a81e2689e24b9b8e15db2f2052fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5399c157970666b639b2cb7f1b44650ba67df8bb01d7f1e0d6c2846ccd22ce69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f71e7caf342970807320d4f49ecaf6d1bfb7dc28a6d53c97625c6c3ac5b87b31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d915829812dd44a79d8bb5442b39b584b04804b47263aeeaa8fb7185029ad0ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "c99b2a8027dda56dcf559d3cb642297135fc6585df764f21e52c5f5ea3e86dff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "650a593ac759ffdb286de0041a205a384464b8f8f71b3f6af9f116afb73e0701"
   end
 
   depends_on "luarocks" => :build
@@ -20,10 +21,13 @@ class Lmod < Formula
 
   uses_from_macos "bc" => :build
   uses_from_macos "libxcrypt"
-  uses_from_macos "tcl-tk"
 
   on_macos do
     depends_on "gnu-sed" => :build
+  end
+
+  on_linux do
+    depends_on "tcl-tk@8" # TCL 9 issue: https:github.comTACCLmodissues728
   end
 
   resource "luafilesystem" do
@@ -51,9 +55,12 @@ class Lmod < Formula
     end
 
     # We install `tcl-tk` headers in a subdirectory to avoid conflicts with other formulae.
-    ENV.append_to_cflags "-I#{Formula["tcl-tk"].opt_include}tcl-tk" if OS.linux?
+    ENV.append_to_cflags "-I#{Formula["tcl-tk@8"].opt_include}tcl-tk" if OS.linux?
     system ".configure", "--with-siteControlPrefix=yes", "--prefix=#{prefix}"
     system "make", "install"
+
+    # Remove man page which conflicts with `modules` formula
+    rm man1"module.1"
   end
 
   def caveats

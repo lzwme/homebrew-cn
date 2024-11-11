@@ -147,14 +147,14 @@ class CheckJsonschema < Formula
   end
 
   test do
-    (testpath"test.json").write <<~EOS
+    (testpath"test.json").write <<~JSON
       {
       	"name" : "Eggs",
       	"price" : 34.99
       }
-    EOS
+    JSON
 
-    (testpath"test.schema").write <<~EOS
+    (testpath"test.schema").write <<~JSON
       {
         "type": "object",
         "properties": {
@@ -162,7 +162,7 @@ class CheckJsonschema < Formula
             "name": {"type": "string"}
         }
       }
-    EOS
+    JSON
 
     out = shell_output("#{bin}check-jsonschema --schemafile #{testpath}test.schema #{testpath}test.json")
     assert_match "ok -- validation done", out

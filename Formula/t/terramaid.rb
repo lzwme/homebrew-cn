@@ -38,12 +38,12 @@ class Terramaid < Formula
 
     ENV.prepend_path "PATH", testpath
 
-    (testpath"main.tf").write <<~EOS
+    (testpath"main.tf").write <<~HCL
       resource "aws_instance" "example" {
         ami           = "ami-0c55b159cbfafe1f0"
         instance_type = "t2.micro"
       }
-    EOS
+    HCL
 
     system bin"terramaid", "-d", testpath.to_s, "-o", testpath"output.mmd"
     assert_predicate testpath"output.mmd", :exist?

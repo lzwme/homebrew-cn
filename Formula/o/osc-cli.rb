@@ -83,7 +83,7 @@ class OscCli < Formula
     assert_match "Missing Access Key for authentication", str
 
     mkdir testpath".osc"
-    (testpath".oscconfig.json").write <<~EOS
+    (testpath".oscconfig.json").write <<~JSON
       {
         "default": {
           "access_key": "F4K4T706S9XKGEXAMPLE",
@@ -94,7 +94,7 @@ class OscCli < Formula
           "region_name": "eu-west-2"
         }
       }
-    EOS
+    JSON
 
     str = shell_output("#{bin}osc-cli api ReadVms 2>&1 >devnull", 1)
     match = "raise OscApiException(http_response)"

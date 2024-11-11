@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.0.5deno_src.tar.gz"
-  sha256 "741780562664c795cf5fc5e2e4cc09997ecba866eff0328f67926f11f48ae5a4"
+  url "https:github.comdenolanddenoreleasesdownloadv2.0.6deno_src.tar.gz"
+  sha256 "68f8d524b099567810838cdb117d9a9751ab1446c0095928a43ce16d56b0dfb2"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52b793d6b61bbd77385be97f74d1d1f5a28ca594b7890b0ff68b6fd3d4cba68b"
-    sha256 cellar: :any,                 arm64_sonoma:  "18541fd1e943b10f59083fb5de81be75b36b2e13f88ec8a5d2d329d3a8c05bb4"
-    sha256 cellar: :any,                 arm64_ventura: "080b92e42dd1706e24fd9d503931e1f544923ebde95a12a7c3c4099e16e21ca9"
-    sha256 cellar: :any,                 sonoma:        "793b8b86e702f4e7e6c5e3722ea044808314a55b516ba0feb0f0e17d0dc2138b"
-    sha256 cellar: :any,                 ventura:       "9f4500acd98a3f36606cb777248ca11f91d39fa3833f1f2c2e727639719f5163"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9850f760e442e2b20c2f73b23a163b5e992835dc88a6a4012c85f4a4ad4cf80d"
+    sha256 cellar: :any,                 arm64_sequoia: "bf9ebcbe6382226712b8563eb886f042033597a5148e3667210960432ba7e328"
+    sha256 cellar: :any,                 arm64_sonoma:  "0761912f01d6019da96afdcce5a39ebcc8b4578fcbdc096af162164a9cd9b7eb"
+    sha256 cellar: :any,                 arm64_ventura: "8b4e1feee042d000219e8b8e6d381437575d02629825221bb8bb267cc5ea7b84"
+    sha256 cellar: :any,                 sonoma:        "d97525911f0c454ff7ba682afbd35dced8cd418799338beaa52d76a2b6912a50"
+    sha256 cellar: :any,                 ventura:       "b04f52aecb9912b436ed9ae6f099f7b77fc5f15deb08b0c9cb9b2434193600b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82ada6b2a9aca227b4bd14e5940a1db7661ce937e7fd3a624a79bec5dae5e65f"
   end
 
   depends_on "cmake" => :build

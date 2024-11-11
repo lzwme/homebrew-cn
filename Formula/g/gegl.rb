@@ -12,12 +12,13 @@ class Gegl < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6bd88cae8516ebe58073db2ea3360f874a3fbc50d8c03b9c4b2da49844594751"
-    sha256 arm64_sonoma:  "1e25aa3f9c365f2b4c649ed0e3627aa0edc64e52c9ea3d0f8fe30801ca1bc37f"
-    sha256 arm64_ventura: "6277609123c9cb3126f995c2338d148027ab1806d0272ca8ec62138dca9fac34"
-    sha256 sonoma:        "c01c80479a69d3193fd07f6d8c7327eac886c0883ef399e5cea646e657c17004"
-    sha256 ventura:       "20a1ffd5936c47ecf52336d4d01b16f6c3a7847de705cd2a31618cc39af05318"
-    sha256 x86_64_linux:  "73e0aea27efd64a9c2b143108504694945b46e431fca56b7a3a40ab4d2088b1b"
+    rebuild 1
+    sha256 arm64_sequoia: "747d9f2ff9be71202954ff34a9a1caa0c1ca372e9687c1c9b820be17c56a3b79"
+    sha256 arm64_sonoma:  "96ee15eb5e4d61c5b5cda69ac93a1cc18d95818c3fe116715a4a4da3902595ec"
+    sha256 arm64_ventura: "db96141fe2b4cf84ee13f313b3c1d565c3b1244b65e89187787f5450ea0dec88"
+    sha256 sonoma:        "438589cbdf01a9ee9fa069cdfda4acaf4203c7f37179eef57d7e70522c12fbfa"
+    sha256 ventura:       "aac8f70a6fd4e43184c96e841e87305d8b1285be01dacfadc1ebf152c8e50d3b"
+    sha256 x86_64_linux:  "c499d23410bf942a333fcda22f0d57ff2e35d66515d703504e464b469c202653"
   end
 
   depends_on "gettext" => :build
@@ -27,6 +28,7 @@ class Gegl < Formula
   depends_on "pkg-config" => :build
 
   depends_on "babl"
+  depends_on "cairo"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "json-glib"
@@ -39,7 +41,6 @@ class Gegl < Formula
   end
 
   on_linux do
-    depends_on "cairo"
     depends_on "poppler"
   end
 
@@ -56,7 +57,6 @@ class Gegl < Formula
 
     args = %w[
       -Ddocs=false
-      -Dcairo=disabled
       -Djasper=disabled
       -Dumfpack=disabled
       -Dlibspiro=disabled

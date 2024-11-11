@@ -1,19 +1,17 @@
 class Cpi < Formula
   desc "Tiny c++ interpreter"
   homepage "https:treefrogframework.github.iocpi"
-  url "https:github.comtreefrogframeworkcpiarchiverefstagsv2.1.0.tar.gz"
-  sha256 "15a314e937dd05e62ca928a909305fa58052c764c7d313f79ae472eb0cc3c86c"
+  url "https:github.comtreefrogframeworkcpiarchiverefstagsv2.2.0.tar.gz"
+  sha256 "fb62a1e620850dcb69a1e65d0ff22c309c0469c876c718db017d0f92bcd114e5"
   license "MIT"
   head "https:github.comtreefrogframeworkcpi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "92785cd813d9b3464394887b9c25f5e2920a4987ea11907dd2d14b013a57afd7"
-    sha256 cellar: :any,                 arm64_ventura:  "a20eb54a55df6b579e43896bf79ce66429a0959c5d47d00b28b65676910455f7"
-    sha256 cellar: :any,                 arm64_monterey: "9dd31910d940877880ba9c132eac936e99b351bf739744e038913e515b8ab022"
-    sha256 cellar: :any,                 sonoma:         "4ea255114e1b6df199bcc2b0f77d2fb69318e554521b62827deadd752eaeea7a"
-    sha256 cellar: :any,                 ventura:        "1bf20979f51c0b032ab17ed4283e2e1482c21d626f91674ed409e2641c7354e8"
-    sha256 cellar: :any,                 monterey:       "4ee60a6c83ad0e9f9fe5ff9fb07e5d36c81289a48109d48c5c4c4f5f72451796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a6f27a012f1278a8c4175c3fb623a9adea382cd94378d61bcc1098ab06df492"
+    sha256 cellar: :any,                 arm64_sonoma:  "83f1d3e84a6717be85bd5d5303ec9844674adb1815e8356f7689e9932916fb06"
+    sha256 cellar: :any,                 arm64_ventura: "3e6533a18019a9eafc3a3217135c0205deb8fb63e05bd910698cf824e34d031d"
+    sha256 cellar: :any,                 sonoma:        "c26b11acc67d50e9f14b8b510c899173bbb93dbb80aa49f5813e5548012fdbe0"
+    sha256 cellar: :any,                 ventura:       "f991fc7314d3db3a6e74d13b3e120adfc6cd40311db2afa1586b013353c7522c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b330b5e227b479dea3cca97bc0a9e85d1e7b7450adf781236ffa96f1350e0e7"
   end
 
   depends_on "qt"

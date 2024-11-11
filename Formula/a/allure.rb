@@ -26,7 +26,7 @@ class Allure < Formula
   end
 
   test do
-    (testpath"allure-resultsallure-result.json").write <<~EOS
+    (testpath"allure-resultsallure-result.json").write <<~JSON
       {
         "uuid": "allure",
         "name": "testReportGeneration",
@@ -50,7 +50,7 @@ class Allure < Formula
           }
         ]
       }
-    EOS
+    JSON
     system bin"allure", "generate", "#{testpath}allure-results", "-o", "#{testpath}allure-report"
   end
 end

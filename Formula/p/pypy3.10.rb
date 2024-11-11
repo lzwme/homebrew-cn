@@ -4,6 +4,7 @@ class Pypy310 < Formula
   url "https:downloads.python.orgpypypypy3.10-v7.3.17-src.tar.bz2"
   sha256 "6ad74bc578e9c6d3a8a1c51503313058e3c58c35df86f7485453c4be6ab24bf7"
   license "MIT"
+  revision 1
   head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
@@ -12,14 +13,12 @@ class Pypy310 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "2b71143af68fed0d461de766331241bc08fafc1a000f240966d6001f00447b29"
-    sha256 cellar: :any,                 arm64_sonoma:   "ead38c7d6776e9c9916ad90918ae34f065689c9f1a0597e5373eb4a2d79dc1ea"
-    sha256 cellar: :any,                 arm64_ventura:  "183c46077da49d96f2a12248f662ae47277f74830c22d926ef20e0320e94e071"
-    sha256 cellar: :any,                 arm64_monterey: "a31cd246f9659570eca181aeb7b61f51e0ae5c177a95a36f74229a417fce599f"
-    sha256 cellar: :any,                 sonoma:         "5233e3dd7975518f8a761d648092a7812da80728d3deb471117469dd2bd9adae"
-    sha256 cellar: :any,                 ventura:        "f7a7df8744dc2dffb956ec782776151428fadf6eee0b948489fac64754a5b6da"
-    sha256 cellar: :any,                 monterey:       "4ab31d517486f9426eb7004caba11ad598e9c97f91182ec68fe9159ea3927f1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2c372b858fe7e493e7bb62aa3093b584b728901e0d9129bd2df78cdf52999a3"
+    sha256 cellar: :any,                 arm64_sequoia: "311b947a1528ae90983edc2176864a00865fb678c13c2286efe24075463a1796"
+    sha256 cellar: :any,                 arm64_sonoma:  "8276c86a74591aec5dcd72722caeaa9c5a950f922b77c5ac20fc1147e21698b5"
+    sha256 cellar: :any,                 arm64_ventura: "9e80dff6aaa3e465055533fe201daa041baf2e24af5ea96dca4951b56a171589"
+    sha256 cellar: :any,                 sonoma:        "cbac71c93a07a6e926836763d9d67662b157a12525ce5c333504a4e10eff14f6"
+    sha256 cellar: :any,                 ventura:       "f8216079a9bc035470ac314f3dacaab40839ea20edc53b8fea250af4128612e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4032a756625270ffb7945d97b0116ac7e9acb1e5731eab7590241874f2fb12d"
   end
 
   depends_on "pkg-config" => :build
@@ -27,7 +26,7 @@ class Pypy310 < Formula
   depends_on "gdbm"
   depends_on "openssl@3"
   depends_on "sqlite"
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -66,11 +65,13 @@ class Pypy310 < Formula
 
   def install
     # The `tcl-tk` library paths are hardcoded and need to be modified for non-usrlocal prefix
+    tcltk = Formula["tcl-tk@8"]
     inreplace "lib_pypy_tkintertklib_build.py" do |s|
-      s.gsub! "usrlocalopttcl-tk", Formula["tcl-tk"].opt_prefix""
-      # We moved `tcl-tk` headers to `includetcl-tk`.
+      s.gsub! "['usrlocalopttcl-tkinclude']", "[]"
+      # We moved `tcl-tk` headers to `includetcl-tk` and versioned TCL 8
       # TODO: upstream this.
-      s.gsub! "include'", "includetcl-tk'"
+      s.gsub! "(homebrew + 'include')", "('#{tcltk.opt_include}tcl-tk')"
+      s.gsub! "(homebrew + 'opttcl-tklib')", "('#{tcltk.opt_lib}')"
     end
 
     if OS.mac?

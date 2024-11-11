@@ -4,7 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.4.2.tar.gz"
   sha256 "1578cd603e8d866b58743e49d8bf99c569e81079b6a60cf33cdf7bdffeb817ec"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"
@@ -12,12 +12,12 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "bbcafded8e225c815608b0201fbe4197689b0cfb2fe16f69bd575d7917bb2f85"
-    sha256 arm64_sonoma:  "8dd4da0184d471ed617eb5cfd4d09df9e2617c8fa3dd1af7be80e2d91444a4f3"
-    sha256 arm64_ventura: "3ef590558c6dffa340458ddef8214e8d68843718592d0b3bda6968a5a9349373"
-    sha256 sonoma:        "27afd41e4391a0f3c34144ceb69890a820e1f1bd58e410741200b61ae7655484"
-    sha256 ventura:       "72c62120748105ef5301e8ee728043fd1ab7602256eeff95045d67a4a4f9020d"
-    sha256 x86_64_linux:  "796fd551b8d417ca9c4ec02688178d8a89f82e415a10a130a630ffd7c02f8e6f"
+    sha256 arm64_sequoia: "f1d78b921640ef5812a8bd94937853dd01f0a21da2d69d18a20f627101ed9bcb"
+    sha256 arm64_sonoma:  "953086cec342bd7cc121c0c59f7dddf1c666905d719eadf1d77aefc76f57dbde"
+    sha256 arm64_ventura: "5b394ab291177353357bfcc2d5d7ab4097b23ddc50f9346bd3ef94659a75f09d"
+    sha256 sonoma:        "e575dff30a4305b5a9a1e9e510c3583ce51d991281fdb48c5138f582e7c82055"
+    sha256 ventura:       "40f8186e96f4fd507f7b8d653a5d891dc488fa950e987c651feafa3ff81fb025"
+    sha256 x86_64_linux:  "6a984c21e657a33571022f0254219c0f220c225a9d39379f5e3240eedcd71188"
   end
 
   depends_on "pkg-config" => :build
@@ -30,7 +30,7 @@ class R < Formula
   depends_on "openblas"
   depends_on "pcre2"
   depends_on "readline"
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -77,8 +77,8 @@ class R < Formula
     args = [
       "--prefix=#{prefix}",
       "--enable-memory-profiling",
-      "--with-tcl-config=#{Formula["tcl-tk"].opt_lib}/tclConfig.sh",
-      "--with-tk-config=#{Formula["tcl-tk"].opt_lib}/tkConfig.sh",
+      "--with-tcl-config=#{Formula["tcl-tk@8"].opt_lib}/tclConfig.sh",
+      "--with-tk-config=#{Formula["tcl-tk@8"].opt_lib}/tkConfig.sh",
       "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--enable-R-shlib",
       "--disable-java",

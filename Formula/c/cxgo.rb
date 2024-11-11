@@ -1,20 +1,18 @@
 class Cxgo < Formula
   desc "Transpiling C to Go"
   homepage "https:github.comgotranspilecxgo"
-  url "https:github.comgotranspilecxgoarchiverefstagsv0.4.0.tar.gz"
-  sha256 "d17a69ae9d6bc96341a989d0f673f1f6b8f65686987ddbe4c903b571e56c665f"
+  url "https:github.comgotranspilecxgoarchiverefstagsv0.4.1.tar.gz"
+  sha256 "f3b4e7e1579c37e64618103bd82752e632d67653b686de9b513c47530169790f"
   license "MIT"
   head "https:github.comgotranspilecxgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e163f483caad70b6344b38981743602b65c9250361dd6470908f8140608aaf84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bed5ef0e2d7d6f45377b192e8abcc594ad9b3cd763905ae28093c54598cf88a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c16827d8dfadf869da239e7abd54cd2868eed4abbb4b027b3ee00c37893ee8f7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71999929e1355bbe9c8b119dde56c7a39006abc44a91cc1b83fc71717d507fa7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ccdb1b1538ea5be8610c8afdb399da9bc8754514b4a4658b41dfaf90727e8e05"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf4dd149ddba8b895c4ff91b69bcd0eca0726935010f0dd3fad497087cfdda6a"
-    sha256 cellar: :any_skip_relocation, monterey:       "19b69309d1dedbb456c32573d64771b0529158dad1dddf4f52b0f990da99e7bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26ef72201e83ff7d5c5409e6eef61999a44d60771c5829839f55966b8abdb289"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2869f3397eb5b07e5e8977bba350a01b8094037b71dc8fefe81cefad2197fe68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2869f3397eb5b07e5e8977bba350a01b8094037b71dc8fefe81cefad2197fe68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2869f3397eb5b07e5e8977bba350a01b8094037b71dc8fefe81cefad2197fe68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1b9f53a63e688c9872604e6ed97f6713017aa1203cdbb4148a7c25047673b3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a1b9f53a63e688c9872604e6ed97f6713017aa1203cdbb4148a7c25047673b3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ce6f29b644fa488aa3b595dd643197a89fa3e5e321fc5b91995921e81983266"
   end
 
   depends_on "go" => :build

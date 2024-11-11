@@ -25,15 +25,15 @@ class ShadowsocksRust < Formula
     server_port = free_port
     local_port = free_port
 
-    (testpath"server.json").write <<~EOS
+    (testpath"server.json").write <<~JSON
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
           "password":"mypassword",
           "method":"aes-256-gcm"
       }
-    EOS
-    (testpath"local.json").write <<~EOS
+    JSON
+    (testpath"local.json").write <<~JSON
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -42,7 +42,7 @@ class ShadowsocksRust < Formula
           "local_address":"127.0.0.1",
           "local_port":#{local_port}
       }
-    EOS
+    JSON
     fork { exec bin"ssserver", "-c", testpath"server.json" }
     fork { exec bin"sslocal", "-c", testpath"local.json" }
     sleep 3

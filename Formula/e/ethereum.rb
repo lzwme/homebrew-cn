@@ -35,7 +35,7 @@ class Ethereum < Formula
   end
 
   test do
-    (testpath"genesis.json").write <<~EOS
+    (testpath"genesis.json").write <<~JSON
       {
         "config": {
           "homesteadBlock": 10
@@ -50,7 +50,7 @@ class Ethereum < Formula
         "gasLimit": "0x2FEFD8",
         "alloc": {}
       }
-    EOS
+    JSON
 
     system bin"geth", "--datadir", "testchain", "init", "genesis.json"
     assert_predicate testpath"testchaingethchaindata000002.log", :exist?

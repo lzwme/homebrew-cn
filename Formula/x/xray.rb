@@ -65,7 +65,7 @@ class Xray < Formula
   end
 
   test do
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       {
         "log": {
           "access": "#{testpath}log"
@@ -95,7 +95,7 @@ class Xray < Formula
           ]
         }
       }
-    EOS
+    JSON
     output = shell_output "#{bin}xray -c #{testpath}config.json -test"
 
     assert_match "Configuration OK", output

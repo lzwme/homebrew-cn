@@ -35,7 +35,7 @@ class Perltidy < Formula
   end
 
   test do
-    (testpath/"testfile.pl").write <<~EOS
+    (testpath/"testfile.pl").write <<~PERL
       print "Help Desk -- What Editor do you use?";
       chomp($editor = <STDIN>);
       if ($editor =~ /emacs/i) {
@@ -45,7 +45,7 @@ class Perltidy < Formula
       } else {
         print "I think that's the problem\n";
       }
-    EOS
+    PERL
     system bin/"perltidy", testpath/"testfile.pl"
     assert_predicate testpath/"testfile.pl.tdy", :exist?
   end

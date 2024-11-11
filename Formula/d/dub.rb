@@ -48,12 +48,12 @@ class Dub < Formula
   test do
     assert_match "DUB version #{version}", shell_output("#{bin}dub --version")
 
-    (testpath"dub.json").write <<~EOS
+    (testpath"dub.json").write <<~JSON
       {
         "name": "brewtest",
         "description": "A simple D application"
       }
-    EOS
+    JSON
     (testpath"sourceapp.d").write <<~EOS
       import std.stdio;
       void main() { writeln("Hello, world!"); }

@@ -4,24 +4,23 @@ class PythonTkAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.20/Python-3.9.20.tar.xz"
   sha256 "6b281279efd85294d2d6993e173983a57464c0133956fbbb5536ec9646beaf0c"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     formula "python@3.9"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "69337728fbfe63387f3ee052e3cf13bcfea91fff4932594d8c568e5fc028b5a6"
-    sha256 cellar: :any,                 arm64_sonoma:   "d3e96db3185c125a680051a4984927651a69d9ecc832189f97f1c422944d9484"
-    sha256 cellar: :any,                 arm64_ventura:  "70aeb0283d3308c7a1f3a0ef6895c212499e9e3de7dc2892c815665d1e5a0a9e"
-    sha256 cellar: :any,                 arm64_monterey: "46c8166a4af72baa91d6ab36862fe0cd2acdef77813cd31e9658a4b94d808456"
-    sha256 cellar: :any,                 sonoma:         "e32cc2c7f3aca1968c0038ea6f001f0eb804b55548bfe0f7205d4b21c2180a79"
-    sha256 cellar: :any,                 ventura:        "5e1a52536fa875ec37b7a4ea42474ae8e1c13dea57f2973ce5db489685fd331f"
-    sha256 cellar: :any,                 monterey:       "93ef0db67efabc9e0f9ece2d93735baa7a1f315a26bed1dbcbb19bc39fe2b8d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b7ce74afeed87b5374e042a7bb0a6d7db6e6a019815fc607e20c628217856d"
+    sha256 cellar: :any,                 arm64_sequoia: "713fa447f7c22e845ea7f233ee4c9e3688c17942c3ebca2cd86b0892f5a4cbbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fae9d8fa88dfc67f9cbf446988a5fdbe94ce9c4f6c8cbe0991052fad146f1dc"
+    sha256 cellar: :any,                 arm64_ventura: "49cb8b6b5d122cac8762ef7ff7524862331749fc2772c4541ab0c32756a67dce"
+    sha256 cellar: :any,                 sonoma:        "49b41bd79d0561af95339e8a75cc1316925ff2ca4ad4db9296502b80e3ac0b4a"
+    sha256 cellar: :any,                 ventura:       "d3550da832fb9d53e35a5cb807f02cd16e64dc185cda24c4fd4fed54b1aacac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cff57de7bffd395bbef20d24cb6a04cd41817e8e087eee1af0d241c73f05dcd"
   end
 
   depends_on "python@3.9"
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
 
   def python3
     "python3.9"
@@ -29,8 +28,9 @@ class PythonTkAT39 < Formula
 
   def install
     cd "Modules" do
-      tcltk_version = Formula["tcl-tk"].any_installed_version.major_minor
-      (Pathname.pwd/"setup.py").write <<~PYTHON
+      tcltk = Formula["tcl-tk@8"]
+      tcltk_version = tcltk.any_installed_version.major_minor
+      Pathname("setup.py").write <<~PYTHON
         from setuptools import setup, Extension
 
         setup(name="tkinter",
@@ -39,9 +39,9 @@ class PythonTkAT39 < Formula
               ext_modules = [
                 Extension("_tkinter", ["_tkinter.c", "tkappinit.c"],
                           define_macros=[("WITH_APPINIT", 1)],
-                          include_dirs=["#{Formula["tcl-tk"].opt_include/"tcl-tk"}"],
+                          include_dirs=["#{tcltk.opt_include/"tcl-tk"}"],
                           libraries=["tcl#{tcltk_version}", "tk#{tcltk_version}"],
-                          library_dirs=["#{Formula["tcl-tk"].opt_lib}"])
+                          library_dirs=["#{tcltk.opt_lib}"])
               ]
         )
       PYTHON

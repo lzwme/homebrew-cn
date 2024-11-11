@@ -39,7 +39,7 @@ class Erigon < Formula
   end
 
   test do
-    (testpath"genesis.json").write <<~EOS
+    (testpath"genesis.json").write <<~JSON
       {
         "config": {
           "homesteadBlock": 10
@@ -54,7 +54,7 @@ class Erigon < Formula
         "gasLimit": "0x2FEFD8",
         "alloc": {}
       }
-    EOS
+    JSON
     args = %W[
       --datadir testchain
       --log.dir.verbosity debug

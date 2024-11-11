@@ -22,7 +22,7 @@ class Krakend < Formula
   end
 
   test do
-    (testpath"krakend_unsupported_version.json").write <<~EOS
+    (testpath"krakend_unsupported_version.json").write <<~JSON
       {
         "version": 2,
         "extra_config": {
@@ -34,20 +34,20 @@ class Krakend < Formula
           }
         }
       }
-    EOS
+    JSON
     assert_match "unsupported version",
       shell_output("#{bin}krakend check -c krakend_unsupported_version.json 2>&1", 1)
 
-    (testpath"krakend_bad_file.json").write <<~EOS
+    (testpath"krakend_bad_file.json").write <<~JSON
       {
         "version": 3,
         "bad": file
       }
-    EOS
+    JSON
     assert_match "ERROR",
       shell_output("#{bin}krakend check -c krakend_bad_file.json 2>&1", 1)
 
-    (testpath"krakend.json").write <<~EOS
+    (testpath"krakend.json").write <<~JSON
       {
         "version": 3,
         "extra_config": {
@@ -72,7 +72,7 @@ class Krakend < Formula
           }
         ]
       }
-    EOS
+    JSON
     assert_match "Syntax OK",
       shell_output("#{bin}krakend check -c krakend.json 2>&1")
   end

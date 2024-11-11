@@ -4,6 +4,7 @@ class Openmsx < Formula
   url "https:github.comopenMSXopenMSXreleasesdownloadRELEASE_19_1openmsx-19.1.tar.gz"
   sha256 "979b1322215095d82d5ea4a455c5e089fcbc4916c0725d6362a15b7022c0e249"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comopenMSXopenMSX.git", branch: "master"
 
   livecheck do
@@ -13,15 +14,12 @@ class Openmsx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "89c7955a19d04416183cf4b4e6228524269998f4db8b487e1c65c0fe72688164"
-    sha256 cellar: :any,                 arm64_sonoma:   "313d497452b11b20bfd53228bc5862f6df8134133ac441f680ff62b20404b6ee"
-    sha256 cellar: :any,                 arm64_ventura:  "a5dd401bb3451678067ba95a1ad51fef42a0456cb2c7b6eb8828de8b2692f1f4"
-    sha256 cellar: :any,                 arm64_monterey: "14de96e3de2aa91141c2c88574653e1b6de932c3a0f4769be4c54e2ed8b22b40"
-    sha256 cellar: :any,                 sonoma:         "bdf18586866bc4a721c02f0c31caa500d2a62d9a4fa2d8e1a61f24324977891b"
-    sha256 cellar: :any,                 ventura:        "58dcee68370adf283f6142d7da65aa0ba9b92ac7a3005a9699555db9c9baff7f"
-    sha256 cellar: :any,                 monterey:       "442fbca86c364459de2ff027d8e05cddd8b9d38808bc3ad3e5cf8dc61f9e563e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146e2d23818ca92cd18f65073fd5d4a5a5afd718a676dbe476494fb289a73da9"
+    sha256 cellar: :any,                 arm64_sequoia: "79b26f0bc081f8b8974e162246116bffdcbd0b6221fdab1e2e1dec4e4a845ebe"
+    sha256 cellar: :any,                 arm64_sonoma:  "b591ec9b4206114bc22294ec7efcab63064fda6232b49aea074bf151907581b4"
+    sha256 cellar: :any,                 arm64_ventura: "2244a38af42b9cbf7cdf6f5a2a52b54bf37bc9557de622d461dccc7b9920ddb5"
+    sha256 cellar: :any,                 sonoma:        "67024fa6b9d9568053cb3c712d89f1bf336e5e39e1d21335e7ea36652524a598"
+    sha256 cellar: :any,                 ventura:       "b25732b1cd38a2354146f923b7737fa47f9a217fcf3bcb254bab35e1b065282a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9760971e0edbb18c0aa386bd5a3fcacb2b99bad467aaf66b52184c809e5c77dd"
   end
 
   depends_on "freetype"
@@ -34,7 +32,6 @@ class Openmsx < Formula
   depends_on "theora"
 
   uses_from_macos "python" => :build
-  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
   on_macos do
@@ -44,6 +41,7 @@ class Openmsx < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "mesa"
+    depends_on "tcl-tk@8"
   end
 
   fails_with :clang do
@@ -72,7 +70,7 @@ class Openmsx < Formula
     inreplace "buildprobe.py", "usrlocal", HOMEBREW_PREFIX
 
     # Help finding Tcl (https:github.comopenMSXopenMSXissues1082)
-    ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path"SystemLibraryFrameworksTcl.framework" : Formula["tcl-tk"].lib
+    ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path"SystemLibraryFrameworksTcl.framework" : Formula["tcl-tk@8"].lib
 
     system ".configure"
     system "make", "CXX=#{ENV.cxx}"

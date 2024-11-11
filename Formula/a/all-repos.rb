@@ -29,7 +29,7 @@ class AllRepos < Formula
   end
 
   test do
-    (testpath"all-repos.json").write <<~EOS
+    (testpath"all-repos.json").write <<~JSON
       {
         "output_dir": "out",
         "source": "all_repos.source.json_file",
@@ -37,11 +37,11 @@ class AllRepos < Formula
         "push": "all_repos.push.readonly",
         "push_settings": {}
       }
-    EOS
+    JSON
     chmod 0600, "all-repos.json"
-    (testpath"repos.json").write <<~EOS
+    (testpath"repos.json").write <<~JSON
       {"discussions": "https:github.comHomebrewdiscussions"}
-    EOS
+    JSON
 
     system bin"all-repos-clone"
     assert_predicate testpath"outdiscussions", :exist?

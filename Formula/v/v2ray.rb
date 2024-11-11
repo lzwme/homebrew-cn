@@ -65,7 +65,7 @@ class V2ray < Formula
   end
 
   test do
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       {
         "log": {
           "access": "#{testpath}log"
@@ -95,7 +95,7 @@ class V2ray < Formula
           ]
         }
       }
-    EOS
+    JSON
     output = shell_output "#{bin}v2ray test -c #{testpath}config.json"
 
     assert_match "Configuration OK", output

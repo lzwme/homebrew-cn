@@ -1,18 +1,18 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
   homepage "https:k8sgpt.ai"
-  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.44.tar.gz"
-  sha256 "647c70c1d1bd586c880db7be65b301b05e69826bab034b6e2b7e3dae3c859560"
+  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.46.tar.gz"
+  sha256 "2b46c66817ad0782a42cfd376a7fda249e11bf942df7d3844a8c58d53eff5e53"
   license "Apache-2.0"
   head "https:github.comk8sgpt-aik8sgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad208a76ab129c6d3bb17a862b239e700a4242192d3250eb1b5d82f6ca4fc159"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31427a440244e9605df84ca20937902900af37117c4e60e9f9b1dd18e527d11f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6bbc40f3ba52209a8a75c8b7ca7511ffeb4f7ec33336cf1324937a799a3ad63c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67d6e1cc97a5f2300cd0e4ce3831013b9fc79bb76195a203ef618e122b538617"
-    sha256 cellar: :any_skip_relocation, ventura:       "80b8966a6e1c80aa6789a3d5e166c82071f502b892ed49892cc7abee634e1a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94438bf2461ca52dcc9f9d038f0f409bcded83e2e993aa4ce14954a4a633371e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5211145028ab7b5d4af766eadc9436d15a713c3dd78c47aa27d0b0c7e9487352"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36cfd029bf6ffcd7d5d8e0e02a793695b82ad414c9f08b6ba34eb2d1a1c63d09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f79766e61939ae48338148f861389b389a3011eb5dfe3a85400964717fd22f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83056fc19adfa2e28c378f24d75656bf34b5eb14b11cd4a07d64b268ab96051a"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f9671d1e31d59e8ac42df9f888bb1c202ca408f3716164cd68f92832273509f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5034e48f7939bf38469513094bc2f1ba91b460b4bcb4c98edf10a412b3f57a7"
   end
 
   depends_on "go" => :build

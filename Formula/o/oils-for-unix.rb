@@ -1,8 +1,8 @@
 class OilsForUnix < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oils-for-unix-0.23.0.tar.gz"
-  sha256 "c9d35ca78b4a08eeafac8bc6439e2bb40bccd3370db2226487faed6348a17521"
+  url "https://www.oilshell.org/download/oils-for-unix-0.24.0.tar.gz"
+  sha256 "df4afed94d53b303a782ce0380c393d60f6d21921ef2a25922b400828add98f3"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class OilsForUnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "7bf02fa96496e8b2a2a200fc6afb6f291e0106204081a4727a927700c5c44c89"
-    sha256 cellar: :any,                 arm64_sonoma:   "70b30bf460e32ccfd874c89c11067b20b6623cd19bc1f825453ea34c1035e29f"
-    sha256 cellar: :any,                 arm64_ventura:  "76de3593db7b5aae07beb6118e280baa5c17036810ec6101ceef39bb6485d8fb"
-    sha256 cellar: :any,                 arm64_monterey: "b5cd80ed7b3430c3aaed7461fce51b88162c2235e370f5bd29b63d57076d48cc"
-    sha256 cellar: :any,                 sonoma:         "431ada600584ba373dd189b3e1e5bac7c7916b77f982b6302a41e676d0a06071"
-    sha256 cellar: :any,                 ventura:        "4343f49136d3e8ee975c3e272e5be8a0b7fd479969c2d6f0fb3d29b44d829af2"
-    sha256 cellar: :any,                 monterey:       "c93128bc87f7d27a2daa7c56d75d361654647043c0d4220a87c91ddb0b477f98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41b43c7d3e5ad3fea25dc19dc24b0458faad3e6f5de692b701cf8a884381c48b"
+    sha256 cellar: :any,                 arm64_sequoia: "012109d80ffc6742c105a68a261610c06aafbb3cdcc06b6bb0df3066d7a9f2dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b684c6858dadd556fefc2395bb6cba17a00d5991cfed1c8946d972654152f376"
+    sha256 cellar: :any,                 arm64_ventura: "0fcac3d2f7b2e1edbdd85c96ac9c8ba28b255cc23f531409cc213d8e791e72b1"
+    sha256 cellar: :any,                 sonoma:        "1fa73c8245bacb5511d3a8567a0dabcbe16ae993d8fe48a054d91d3ec4bb4e85"
+    sha256 cellar: :any,                 ventura:       "35f7e663c383b5e4e6abdc332e8b95539959b9a0fa908dba22916a4439ff545e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eb3fa8eef95f11b879bb02657b6ef80faf95f62918424e7e5a89120a6dacd46"
   end
 
   depends_on "readline"

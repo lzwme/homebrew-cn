@@ -61,10 +61,10 @@ class SwiProlog < Formula
   end
 
   test do
-    (testpath"test.pl").write <<~EOS
+    (testpath"test.pl").write <<~PROLOG
       test :-
           write('Homebrew').
-    EOS
+    PROLOG
     assert_equal "Homebrew", shell_output("#{bin}swipl -s #{testpath}test.pl -g test -t halt")
   end
 end

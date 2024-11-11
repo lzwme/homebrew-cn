@@ -27,7 +27,7 @@ class Terrahash < Formula
   end
 
   test do
-    (testpath"main.tf").write <<~EOS
+    (testpath"main.tf").write <<~HCL
       module "example" {
         source = "terraform-aws-modulesec2-instanceaws"
         version = "~> 5"
@@ -36,7 +36,7 @@ class Terrahash < Formula
         instance_type = "t2.micro"
         name          = "example"
       }
-    EOS
+    HCL
 
     system "tofu", "init"
     assert_predicate testpath".terraform.lock.hcl", :exist?

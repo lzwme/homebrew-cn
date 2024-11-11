@@ -36,7 +36,7 @@ class Cfssl < Formula
   end
 
   test do
-    (testpath"request.json").write <<~EOS
+    (testpath"request.json").write <<~JSON
       {
         "CN" : "Your Certificate Authority",
         "hosts" : [],
@@ -54,7 +54,7 @@ class Cfssl < Formula
           }
         ]
       }
-    EOS
+    JSON
     shell_output("#{bin}cfssl genkey -initca request.json > response.json")
     response = JSON.parse(File.read(testpath"response.json"))
     assert_match(^-----BEGIN CERTIFICATE-----.*, response["cert"])

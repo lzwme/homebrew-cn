@@ -27,7 +27,7 @@ class TerraformDocs < Formula
   end
 
   test do
-    (testpath"main.tf").write <<~EOS
+    (testpath"main.tf").write <<~HCL
       **
        * Module usage:
        *
@@ -62,7 +62,7 @@ class TerraformDocs < Formula
       output "vpc_id" {
         value = "vpc-5c1f55fd"
       }
-    EOS
+    HCL
     system bin"terraform-docs", "json", testpath
   end
 end

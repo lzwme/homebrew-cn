@@ -32,7 +32,7 @@ class SingBox < Formula
 
   test do
     ss_port = free_port
-    (testpath"shadowsocks.json").write <<~EOS
+    (testpath"shadowsocks.json").write <<~JSON
       {
         "inbounds": [
           {
@@ -44,11 +44,11 @@ class SingBox < Formula
           }
         ]
       }
-    EOS
+    JSON
     server = fork { exec bin"sing-box", "run", "-D", testpath, "-c", testpath"shadowsocks.json" }
 
     sing_box_port = free_port
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       {
         "inbounds": [
           {
@@ -67,7 +67,7 @@ class SingBox < Formula
           }
         ]
       }
-    EOS
+    JSON
     system bin"sing-box", "check", "-D", testpath, "-c", "config.json"
     client = fork { exec bin"sing-box", "run", "-D", testpath, "-c", "config.json" }
 

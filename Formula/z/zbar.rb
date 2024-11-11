@@ -4,6 +4,7 @@ class Zbar < Formula
   url "https:linuxtv.orgdownloadszbarzbar-0.23.93.tar.bz2"
   sha256 "83be8f85fc7c288fd91f98d52fc55db7eedbddcf10a83d9221d7034636683fa0"
   license "LGPL-2.1-only"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,14 +12,12 @@ class Zbar < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "d75d246b7e2aafd6bd913171bd443a474616c47d73b3c7364d5c2d227161aee9"
-    sha256 arm64_sonoma:   "23bfbc0c9ae6d16727058825feb8147bb7384cd4307fb6f4642ff94c9cf99c13"
-    sha256 arm64_ventura:  "6d791bf71b217d0c7558f7becd6b38fcd6d3721002dd164bf01a23a356225259"
-    sha256 arm64_monterey: "c7f601f54d7c8609406cb2e1fcbbb4abd8321b58849c64ba5622a6b8ac68a850"
-    sha256 sonoma:         "bd76b39f1dc8bf551d535759fa3f86e9de3266a26939a42bca82cf9270ce3d87"
-    sha256 ventura:        "fd8701195bca0fbbaab5c5c28b06b93f79d3efb3f60a8a45ff927c95ba8f8e29"
-    sha256 monterey:       "b262f392f862ff8f4ba5808c70f77f2b857a95f392e8d2bad9e0c670b329e519"
-    sha256 x86_64_linux:   "b3f1842dfca655978646c83cdf8e58163ee2a3e5d1a9926314b5c8102817d528"
+    sha256 arm64_sequoia: "346cb49e583f75edf2e0a63cfe5f5bcba9b32f3ff9c8e8b2c56e647f6330fd12"
+    sha256 arm64_sonoma:  "8f8fa3d059605a7f72a5a102898aa3ea5b0888d01b7958c4f488b8bedb1a3be0"
+    sha256 arm64_ventura: "cc5de3f507ed2dad015258fb10e3e66bdbcfae0aa2699c82e16fc24b847717bc"
+    sha256 sonoma:        "91c0d003d45259393ddc8a7bd9eaa0c18fcedd2f1bead963353e3aa03f241cd4"
+    sha256 ventura:       "82271152893399cf0be78e7575f71344cc0eaa2f7fc7cd24c8e63abecd68d6a3"
+    sha256 x86_64_linux:  "2b2a0531ffd3f8dc84916c7f182a449570feb695e399c2a2a1cc87227cebe4fd"
   end
 
   head do

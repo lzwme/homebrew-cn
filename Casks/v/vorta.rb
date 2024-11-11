@@ -1,17 +1,18 @@
 cask "vorta" do
-  version "0.9.1"
-  sha256 "ea9c0086c034e95161f52e7a76f3c3230b688ff067615e32229d0b16cde20ac8"
+  arch arm: "arm", intel: "intel"
 
-  url "https:github.comborgbasevortareleasesdownloadv#{version}vorta-#{version}.dmg"
+  version "0.10.1"
+  sha256 arm:   "a50808b82f8a7f02e17852b5d537bd7bd4d4b3f04442a9b7409c9bc58f4fceaa",
+         intel: "d1586c9c36ec40190ec73f2a8e808685639db69ff83b5c91c120dbaec1a47dbf"
+
+  url "https:github.comborgbasevortareleasesdownloadv#{version}Vorta-v#{version}-#{arch}.dmg"
   name "Vorta"
   desc "Desktop Backup Client for Borg"
   homepage "https:github.comborgbasevorta"
 
-  # Not every GitHub release provides a file for macOS, so we check multiple
-  # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(^vorta[._-]v?(\d+(?:\.\d+)+)\.(?:dmg|pkg|zip)$i)
+    regex(^Vorta[._-]v?(\d+(?:\.\d+)+)-?(?:intel|arm)?\.(?:dmg|pkg|zip)$i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]

@@ -35,7 +35,7 @@ class Ooniprobe < Formula
     # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
     return if OS.linux?
 
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       {
         "_version": 3,
         "_informed_consent": false,
@@ -55,7 +55,7 @@ class Ooniprobe < Formula
           "collect_usage_stats": false
         }
       }
-    EOS
+    JSON
 
     mkdir_p "#{testpath}ooni_home"
     ENV["OONI_HOME"] = "#{testpath}ooni_home"

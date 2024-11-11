@@ -41,7 +41,7 @@ class CfnFlip < Formula
   end
 
   test do
-    (testpath"test.json").write <<~EOS
+    (testpath"test.json").write <<~JSON
       {
         "Resources": {
           "Bucket": {
@@ -54,7 +54,7 @@ class CfnFlip < Formula
           }
         }
       }
-    EOS
+    JSON
 
     expected = <<~EOS
       Resources:

@@ -22,7 +22,7 @@ class Dprint < Formula
   end
 
   test do
-    (testpath"dprint.json").write <<~EOS
+    (testpath"dprint.json").write <<~JSON
       {
         "$schema": "https:dprint.devschemasv0.json",
         "projectType": "openSource",
@@ -48,7 +48,7 @@ class Dprint < Formula
           "https:plugins.dprint.devrustfmt-0.3.0.wasm"
         ]
       }
-    EOS
+    JSON
 
     (testpath"test.js").write("const arr = [1,2];")
     system bin"dprint", "fmt", testpath"test.js"

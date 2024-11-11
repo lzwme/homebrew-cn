@@ -23,7 +23,7 @@ class Terrascan < Formula
   end
 
   test do
-    (testpath"ami.tf").write <<~EOS
+    (testpath"ami.tf").write <<~HCL
       resource "aws_ami" "example" {
         name                = "terraform-example"
         virtualization_type = "hvm"
@@ -35,7 +35,7 @@ class Terrascan < Formula
           volume_size = 8
         }
       }
-    EOS
+    HCL
 
     expected = <<~EOS
       \tViolated Policies   :\t0

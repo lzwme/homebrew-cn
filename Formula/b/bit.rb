@@ -56,9 +56,9 @@ class Bit < Formula
   end
 
   test do
-    (testpath"LibraryCachesBitconfigconfig.json").write <<~EOS
+    (testpath"LibraryCachesBitconfigconfig.json").write <<~JSON
       { "analytics_reporting": false, "error_reporting": false }
-    EOS
+    JSON
     output = shell_output("#{bin}bit init --skip-update")
     assert_match "successfully initialized", output
   end

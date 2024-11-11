@@ -48,7 +48,7 @@ class ShadowsocksLibev < Formula
     system ".configure", "--prefix=#{prefix}"
     system "make"
 
-    (buildpath"shadowsocks-libev.json").write <<~EOS
+    (buildpath"shadowsocks-libev.json").write <<~JSON
       {
           "server":"localhost",
           "server_port":8388,
@@ -57,7 +57,7 @@ class ShadowsocksLibev < Formula
           "timeout":600,
           "method":null
       }
-    EOS
+    JSON
     etc.install "shadowsocks-libev.json"
 
     system "make", "install"
@@ -72,7 +72,7 @@ class ShadowsocksLibev < Formula
     server_port = free_port
     local_port = free_port
 
-    (testpath"shadowsocks-libev.json").write <<~EOS
+    (testpath"shadowsocks-libev.json").write <<~JSON
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -82,7 +82,7 @@ class ShadowsocksLibev < Formula
           "timeout":600,
           "method":null
       }
-    EOS
+    JSON
     server = fork { exec bin"ss-server", "-c", testpath"shadowsocks-libev.json" }
     client = fork { exec bin"ss-local", "-c", testpath"shadowsocks-libev.json" }
     sleep 3

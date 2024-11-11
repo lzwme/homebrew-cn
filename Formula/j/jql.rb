@@ -22,11 +22,11 @@ class Jql < Formula
   end
 
   test do
-    (testpath"example.json").write <<~EOS
+    (testpath"example.json").write <<~JSON
       {
         "cats": [{ "first": "Pixie" }, { "second": "Kitkat" }, { "third": "Misty" }]
       }
-    EOS
+    JSON
     output = shell_output("#{bin}jql --inline --raw-string '\"cats\" [2:1] [0]' example.json")
     assert_equal '{"third":"Misty"}', output.chomp
   end

@@ -35,10 +35,10 @@ class GnuProlog < Formula
   end
 
   test do
-    (testpath/"test.pl").write <<~EOS
+    (testpath/"test.pl").write <<~PROLOG
       :- initialization(main).
       main :- write('Hello World!'), nl, halt.
-    EOS
+    PROLOG
 
     system bin/"gplc", "test.pl"
     assert_match "Hello World!", shell_output("./test")

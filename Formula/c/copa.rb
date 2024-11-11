@@ -30,13 +30,13 @@ class Copa < Formula
 
   test do
     assert_match "Project Copacetic: container patching tool", shell_output("#{bin}copa help")
-    (testpath"report.json").write <<~EOS
+    (testpath"report.json").write <<~JSON
       {
         "SchemaVersion": 2,
         "ArtifactName": "nginx:1.21.6",
         "ArtifactType": "container_image"
       }
-    EOS
+    JSON
     output = shell_output("#{bin}copa patch --image=mcr.microsoft.comossnginxnginx:1.21.6  \
                           --report=report.json 2>&1", 1)
     assert_match "Error: no scanning results for os-pkgs found", output

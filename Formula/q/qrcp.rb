@@ -37,13 +37,13 @@ class Qrcp < Formula
     port = free_port
     server_url = "http:localhost:#{port}sendtesting"
 
-    (testpath"config.json").write <<~EOS
+    (testpath"config.json").write <<~JSON
       {
         "interface": "any",
         "fqdn": "localhost",
         "port": #{port}
       }
-    EOS
+    JSON
 
     fork do
       exec bin"qrcp", "-c", testpath"config.json", "--path", "testing", testpath"test_data.txt"
