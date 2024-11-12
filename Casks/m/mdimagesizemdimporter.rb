@@ -6,6 +6,8 @@ cask "mdimagesizemdimporter" do
   name "mdImageSize"
   homepage "https:github.comNyx0ufqlImageSize"
 
+  disable! date: "2024-11-11", because: :discontinued
+
   depends_on macos: ">= :high_sierra"
 
   mdimporter "mdImageSize.mdimporter"

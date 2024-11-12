@@ -36,7 +36,7 @@ class Homebank < Formula
   depends_on "libsoup"
   depends_on "pango"
 
-  uses_from_macos "perl"
+  uses_from_macos "perl" => :build
 
   on_macos do
     depends_on "at-spi2-core"
@@ -49,12 +49,7 @@ class Homebank < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
-    end
-
-    system "./configure", "--with-ofx", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", "--with-ofx", *std_configure_args
     chmod 0755, "./install-sh"
     system "make", "install"
   end

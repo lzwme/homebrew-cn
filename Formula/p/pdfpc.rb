@@ -56,7 +56,7 @@ class Pdfpc < Formula
     # Upstream currently uses webkit2gtk-4.0 (API for GTK 3 and libsoup 2)
     # but we only provide webkit2gtk-4.1 (API for GTK 3 and libsoup 3).
     # Issue ref: https:github.compdfpcpdfpcissues671
-    inreplace "srcCMakeLists.txt", "webkit2gtk-4.0", "webkit2gtk-4.1"
+    inreplace "srcCMakeLists.txt", "webkit2gtk-4.0", "webkit2gtk-4.1" unless build.head?
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",

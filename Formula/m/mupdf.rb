@@ -1,8 +1,8 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.24.9-source.tar.gz"
-  sha256 "0b446aa0eecc114e9969dccd70c9789358fccb6589a81d470dc941a0874da98a"
+  url "https://mupdf.com/downloads/archive/mupdf-1.24.10-source.tar.gz"
+  sha256 "939285b5f97caf770fd46cbe7e6cc3a695ab19bb5bfaf5712904549cef390b7b"
   license "AGPL-3.0-or-later"
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "eef2190c572764150e6858ad29807000644aac70780990596df4cc6a84dcc61d"
-    sha256 cellar: :any,                 arm64_sonoma:   "32cd3dac426f00ab587bed33dd60bf861179babb06fa806410433e552eed2132"
-    sha256 cellar: :any,                 arm64_ventura:  "46bf0dda1818ca6a5d94eb489c3498a9aa6e5bd8f9188a223c336a820e20f7c7"
-    sha256 cellar: :any,                 arm64_monterey: "6fbe9a412b689da2d09a3e113c48e4d8b242fe232649dc22922f88f2fef36d11"
-    sha256 cellar: :any,                 sonoma:         "9fcf9b17272159016a482d90eceaf739f5716482dfa7527344e264b7d9ead82c"
-    sha256 cellar: :any,                 ventura:        "26744f3074268252ef4147e1d72e80f47db544516ebb219af2c6dabb7d9c325a"
-    sha256 cellar: :any,                 monterey:       "5703f9d46c902dd5e538ba62cb24ff86cff69cf408c03ce4517b088014f9dc62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "510087c1505b18d5f417bb5765ca4762d2a2df3a074a708b4749736ae215ae2f"
+    sha256 cellar: :any,                 arm64_sequoia: "fe57d3d13d9321e91933fc2d7585f6bca8708ab0dbe8fe1e3849aec2379b81a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "70c09e3a60b7d3c32fa5e2fd56545f3a368204d030b3e05a2c2ddece08009a0f"
+    sha256 cellar: :any,                 arm64_ventura: "fa0dcf9267d522c2dbd0477a9bc8ecec12802dc89c9a3ec7b70e3ae327c0e1d0"
+    sha256 cellar: :any,                 sonoma:        "acfbe85c59dd0bc52ff68ad8a1beefc4e812425fb8735674b359d2de025eb2d0"
+    sha256 cellar: :any,                 ventura:       "bfbcb1b4667d7af9bd929a3d487587fb7fbc2be2ae323b309c8f8e439f8674b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fdf3c61a96a4da5de7333b4c09f6a5b0ae08409de2d727d08f1d1e9e01abd25"
   end
 
   depends_on "llvm" => :build

@@ -38,8 +38,6 @@ class Libmypaint < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" if OS.linux?
-
     system ".configure", "--disable-introspection",
                           "--without-glib",
                           *std_configure_args

@@ -31,6 +31,13 @@ cask "natron" do
 
   app "Natron.app"
 
+  zap trash: [
+    "~.Natron",
+    "~LibraryApplication SupportINRIANatron",
+    "~LibraryCachesINRIANatron",
+    "~LibraryPreferencescom.inria.Natron.plist",
+  ]
+
   caveats do
     requires_rosetta
   end

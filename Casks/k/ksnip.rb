@@ -9,6 +9,11 @@ cask "ksnip" do
 
   app "ksnip.app"
 
+  zap trash: [
+    "~LibraryPreferencesorg.ksnip.*.plist",
+    "~LibrarySaved Application Stateorg.ksnip.ksnip.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

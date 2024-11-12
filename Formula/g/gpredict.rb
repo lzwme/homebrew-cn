@@ -75,8 +75,6 @@ class Gpredict < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" if OS.linux?
-
     if build.head?
       inreplace "autogen.sh", "libtoolize", "glibtoolize"
       system ".autogen.sh", *std_configure_args

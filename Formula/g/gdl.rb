@@ -49,11 +49,6 @@ class Gdl < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
-    end
-
     system "./configure", "--disable-silent-rules",
                           "--enable-introspection=yes",
                           *std_configure_args.reject { |s| s["--disable-debug"] }

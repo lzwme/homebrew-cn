@@ -26,20 +26,7 @@ class Intltool < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec/"lib/perl5"
-      resources.each do |res|
-        res.stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-          system "make", "PERL5LIB=#{ENV["PERL5LIB"]}"
-          system "make", "install"
-        end
-      end
-    end
-
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-silent-rules"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

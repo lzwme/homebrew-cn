@@ -15,6 +15,14 @@ cask "cellprofiler" do
 
   app "CellProfiler.app"
 
+  zap trash: [
+    "~LibraryCachesorg.cellprofiler.CellProfiler",
+    "~LibraryPreferencesCellProfilerLocal.cfg",
+    "~LibraryPreferencesorg.cellprofiler.CellProfiler.plist",
+    "~LibrarySaved Application Stateorg.cellprofiler.CellProfiler.savedState",
+    "~LibraryWebkitorg.cellprofiler.CellProfiler",
+  ]
+
   caveats do
     requires_rosetta
   end

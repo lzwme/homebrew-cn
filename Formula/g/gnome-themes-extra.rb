@@ -24,6 +24,8 @@ class GnomeThemesExtra < Formula
   depends_on "glib"
   depends_on "gtk+"
 
+  uses_from_macos "perl" => :build
+
   on_macos do
     depends_on "at-spi2-core"
     depends_on "gdk-pixbuf"
@@ -37,16 +39,11 @@ class GnomeThemesExtra < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec/"lib/perl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
-    end
-
     # To find gtk-update-icon-cache
     ENV.prepend_path "PATH", Formula["gtk+"].opt_libexec
-    system "./configure", *std_configure_args,
+    system "./configure", "--disable-gtk3-engine",
                           "--disable-silent-rules",
-                          "--disable-gtk3-engine"
+                          *std_configure_args
     system "make", "install"
   end
 

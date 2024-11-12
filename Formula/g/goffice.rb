@@ -26,7 +26,7 @@ class Goffice < Formula
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "at-spi2-core"
   depends_on "cairo"
@@ -52,45 +52,23 @@ class Goffice < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
-    end
-
     configure = build.head? ? "./autogen.sh" : "./configure"
-    system configure, *std_configure_args, "--disable-silent-rules"
+    system configure, "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
     (testpath/"test.c").write <<~C
       #include <goffice/goffice.h>
-      int main()
-      {
-          void
-          libgoffice_init (void);
-          void
-          libgoffice_shutdown (void);
-          return 0;
+      int main() {
+        libgoffice_init();
+        libgoffice_shutdown();
+        return 0;
       }
     C
-    libxml2 = if OS.mac?
-      "#{MacOS.sdk_path}/usr/include/libxml2"
-    else
-      Formula["libxml2"].opt_include/"libxml2"
-    end
-    system ENV.cc, "-I#{include}/libgoffice-0.10",
-           "-I#{Formula["glib"].opt_include}/glib-2.0",
-           "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
-           "-I#{Formula["harfbuzz"].opt_include}/harfbuzz",
-           "-I#{Formula["libgsf"].opt_include}/libgsf-1",
-           "-I#{libxml2}",
-           "-I#{Formula["gtk+3"].opt_include}/gtk-3.0",
-           "-I#{Formula["pango"].opt_include}/pango-1.0",
-           "-I#{Formula["cairo"].opt_include}/cairo",
-           "-I#{Formula["gdk-pixbuf"].opt_include}/gdk-pixbuf-2.0",
-           "-I#{Formula["at-spi2-core"].opt_include}/atk-1.0",
-           testpath/"test.c", "-o", testpath/"test"
+
+    flags = shell_output("pkg-config --cflags --libs libgoffice-#{version.major_minor}").strip.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

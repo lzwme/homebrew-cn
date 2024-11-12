@@ -13,4 +13,6 @@ cask "rwts-pdfwriter" do
     executable: "LibraryPrintersRWTSPDFwriteruninstall",
     sudo:       true,
   }
+
+  # No zap stanza required
 end

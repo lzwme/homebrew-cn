@@ -1,19 +1,17 @@
 class Favirecon < Formula
   desc "Uses favicon.ico to improve the target recon phase"
   homepage "https:github.comedoardotttfavirecon"
-  url "https:github.comedoardotttfavireconarchiverefstagsv0.1.2.tar.gz"
-  sha256 "517de215cb746be7382e08e35f718ac50fae4e0fd372d480e9cdb843749c8f5d"
+  url "https:github.comedoardotttfavireconarchiverefstagsv0.1.3.tar.gz"
+  sha256 "ab11b19ac7f78e41cd00df5832f4ead73a33a2e8e9a3f9c9099f596d3fe11405"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ebf89bd6a29519404f1ec141c22061f09ca6eaf2cb800bcf976bc1d7b6ee320"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd279747468dfdd1496e881d31ce02048e0c3de496e9dfaaae7711c13571ae98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71e61dc5adee7c23bab7414c942f1c2c4220c184ac66eabee31a01d0475bde29"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de3abb664903dddc3fa69e955fc96fc593624d563ee7108327b0fd9e34db5aa3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d219a7e987fc830017455d2f646c85ca8c842d89493a177992001fcee021b1a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ada10f915426b8b5b24bea1a2b67c6c86ae5534061bfb8266dcd322e9ffbe5ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "349250061f59593497791c2b7a7cf2c0a1fc7b7b9c2d86c4bcdeb50b1043d60c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a83f313e99f7d4077e41f9f1e3a37de502e031fda1798270d07c9223ed8a62da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f67c348cd32b50b8d6f27c933ff620153503030a5cc12eb38b50fa242de30e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f67c348cd32b50b8d6f27c933ff620153503030a5cc12eb38b50fa242de30e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "40f67c348cd32b50b8d6f27c933ff620153503030a5cc12eb38b50fa242de30e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8bc2f04831805761b2c04c30507f59c0b7622334cadfaeacba1d6a5f7de6ec0e"
+    sha256 cellar: :any_skip_relocation, ventura:       "8bc2f04831805761b2c04c30507f59c0b7622334cadfaeacba1d6a5f7de6ec0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e98be9e8cb6265734b57e242db0966079d444498adf9d4387ac6bb3d83d8ec"
   end
 
   depends_on "go" => :build

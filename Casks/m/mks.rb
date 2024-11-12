@@ -9,6 +9,8 @@ cask "mks" do
 
   app "MKS.app"
 
+  zap trash: "~LibraryPreferencescom.zynath.MKS.plist"
+
   caveats do
     requires_rosetta
   end

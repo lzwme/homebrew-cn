@@ -16,6 +16,11 @@ cask "pronterface" do
 
   app "pronterface.app"
 
+  zap trash: [
+    "~LibraryPreferencesPronterface.plist",
+    "~LibrarySaved Application StatePronterface.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

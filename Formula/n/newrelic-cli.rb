@@ -1,8 +1,8 @@
 class NewrelicCli < Formula
   desc "Command-line interface for New Relic"
   homepage "https:github.comnewrelicnewrelic-cli"
-  url "https:github.comnewrelicnewrelic-cliarchiverefstagsv0.96.3.tar.gz"
-  sha256 "149aa40ab6da7b662d3462d7fcf3693f19c1f28a3d3fb57b09adb1cb4a4d7c9a"
+  url "https:github.comnewrelicnewrelic-cliarchiverefstagsv0.97.0.tar.gz"
+  sha256 "9dec1c72fbe15fdf880119b1afdfb761968dac30cb1d883bece7973145275a86"
   license "Apache-2.0"
   head "https:github.comnewrelicnewrelic-cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class NewrelicCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ecbb1bf4418b57c10de86f62fa5d7f8a8a8572b40866f9cd538d1d1fd6ddd14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c79cae06490e6f271eee4d90439c5ead1fd8b39b9e2eb001929caae4b0391535"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bb989d75d9ceb793589cf448eed5d48b546276edc020759781c854fbf4d69cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7566c8dcf737ce706003a731c684d813d9a01a8a2bce3f81336eef922d67076"
-    sha256 cellar: :any_skip_relocation, ventura:       "dc4cc2b6193c7bddedda625d9ab875453f2f4b8b0996641430482992cf981527"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da37e6c3635093f4360fc2bab487653747a4166d6e3493ddcc105ac1e2c064d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "829c1c8742c2ffc853d8f921b89cb9e50389ec5ceb2a3fb68135965f77348b86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c47e657c1eb306a87dc815b2cf4152fcfa31437fee3d8d9bbd29e56c0129b248"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "061eff2fe7671524f1453d8e93a684ff22cdd9ae445cf588ffa22b305799a8a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d19ce4c3327d1387c9d7c51523f13c641dd00e8d8c8cfc716842cc54d337882d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1ea5c4c3ed64d6d707309123f5b2a6a4a4fa91f7308ff78f637080df67c592d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34fa71a0b49fcea34882ba62230314c4abc73d82b61d2c1a51016299e88946f0"
   end
 
   depends_on "go" => :build

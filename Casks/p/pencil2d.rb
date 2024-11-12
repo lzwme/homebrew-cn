@@ -13,6 +13,12 @@ cask "pencil2d" do
 
   app "Pencil2D.app"
 
+  zap trash: [
+    "~LibraryApplication SupportPencil2D",
+    "~LibraryPreferencescom.pencil.Pencil.plist",
+    "~LibrarySaved Application Statecom.pencil2d.Pencil2D.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

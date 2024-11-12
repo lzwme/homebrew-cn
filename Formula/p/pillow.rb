@@ -26,7 +26,6 @@ class Pillow < Formula
   depends_on "libxcb"
   depends_on "little-cms2"
   depends_on "openjpeg"
-  depends_on "tcl-tk"
   depends_on "webp"
 
   uses_from_macos "zlib"

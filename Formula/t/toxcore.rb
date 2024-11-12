@@ -3,19 +3,18 @@ class Toxcore < Formula
   homepage "https:tox.chat"
   # This repo is a fork, but it is the source used by Debian, Fedora, and Arch,
   # and is the repo linked in the homepage.
-  url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.19c-toxcore-0.2.19.tar.gz"
-  sha256 "8b418f6470db085cf59a9915685613556556df2bf427148f1814b7b118628594"
+  url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.20c-toxcore-0.2.20.tar.gz"
+  sha256 "a9c89a8daea745d53e5d78e7aacb99c7b4792c4400a5a69c71238f45d6164f4c"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comTokTokc-toxcore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8115a1b7420fe04e3317b34b23089616c585c58741bf3248e3b2004d09b49a74"
-    sha256 cellar: :any,                 arm64_sonoma:  "4447d4c8882c0f794fd933d3b771306acf67e8f3638ae7125f08b5bda5c1851d"
-    sha256 cellar: :any,                 arm64_ventura: "e4bb9510c529cc113e795c9063c331976f7bdd1dcdb8e8285150b4925f877406"
-    sha256 cellar: :any,                 sonoma:        "4f9b719b1748fb5e54996a487c301857d5d40c2104a41a2d60d86c6b1eb40abc"
-    sha256 cellar: :any,                 ventura:       "5ce4ae2f7d9270d9912b2fb3a8a332626b21bae85e73b816d50c43cb41bb1b5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28260047bfcfeb5441f1b73d8f58eaad3d1609bc0660a4b54e79467ca32771a4"
+    sha256 cellar: :any,                 arm64_sequoia: "7e2a14e9598e599c0f311145c328d9d274b17c74f03fb4f795db32ac55c826a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a969319efbe57bc7657603eea87f56a0668d6ea1b042dad62f3f613f98d1b770"
+    sha256 cellar: :any,                 arm64_ventura: "1d9a839019b2ca24cea932c60127b4418cdf1dc7d0a94755799fff1d0c62db9f"
+    sha256 cellar: :any,                 sonoma:        "6466f7b075609f7980cba36ecc5bc35a96ae5558f88ae9f698613600809e591c"
+    sha256 cellar: :any,                 ventura:       "ae3dfbf4c1f8ffaa59cfe4391535180386be2fa811b91234870c7abfabd0272d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2443ece50296533188f88dc789916e6266a02253915cc56227d627ce41adc42"
   end
 
   depends_on "cmake" => :build

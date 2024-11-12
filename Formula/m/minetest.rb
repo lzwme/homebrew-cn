@@ -2,16 +2,10 @@ class Minetest < Formula
   desc "Free, open source voxel game engine and game"
   homepage "https:www.minetest.net"
   license "LGPL-2.1-or-later"
-  revision 1
 
   stable do
-    url "https:github.comminetestminetestarchiverefstags5.9.1.tar.gz"
-    sha256 "aa9a6ae57445b779f57dcba5a83b0704fabd24c5eca37c6c8611e885bdf09d7c"
-
-    resource "irrlichtmt" do
-      url "https:github.comminetestirrlichtarchiverefstags1.9.0mt15.tar.gz"
-      sha256 "12d24380a19be51cab29f54ae48fe08b327789da9c4d082ff815df60393d643f"
-    end
+    url "https:github.comminetestminetestarchiverefstags5.10.0.tar.gz"
+    sha256 "2a3161c04e7389608006f01280eda30507f8bacfa1d6b64c2af1b820a62d2677"
 
     resource "minetest_game" do
       url "https:github.comminetestminetest_gamearchiverefstags5.8.0.tar.gz"
@@ -25,20 +19,16 @@ class Minetest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "31b38964edc4fb6bad8830a28bf4db4f34befb6256b6924a68d9e0b74a4905e5"
-    sha256 cellar: :any, arm64_sonoma:  "91eae1529bf5e5906dad91a3b40cd07ac2e7b2541d6146cc16b57cfdf6dd48de"
-    sha256 cellar: :any, arm64_ventura: "c8beb0ff42ab5a252851e0cfdf4c47a4b82bef7224de6f23c23d685fbbc0bd67"
-    sha256 cellar: :any, sonoma:        "94b69871386736f7d31e3626f2860e7014666fd1385152f8f9657c66c296e9e8"
-    sha256 cellar: :any, ventura:       "cbf8d020363989b3bbf8de24546e14132ef4c2dc6a1afbfddadf55d4e3fd886f"
-    sha256               x86_64_linux:  "1e7820a19108f1d61a5cc26d35ab8a65e3d12eb3b46aafd38ab052bf8bd2bd10"
+    sha256 cellar: :any, arm64_sequoia: "0cc31303d48f9c83845989868c8bc78d5132096ad3de8938dd116068773be1f1"
+    sha256 cellar: :any, arm64_sonoma:  "5cc8cd918fd8cf6887f5c9667ffb4ce576e709a0de9710a00804d7aa568c093d"
+    sha256 cellar: :any, arm64_ventura: "703c818a629e6b467e7b6228e61cdb10edea4b35352dda30549ac6b6e97a3da4"
+    sha256 cellar: :any, sonoma:        "e25ddc0f89ed707a2f5bf7611d496098340457c896e1dbca492f4f21edca6f76"
+    sha256 cellar: :any, ventura:       "5f466fa264f0817a939d9165352d9a8eee12cd20928618717d270422925abc36"
+    sha256               x86_64_linux:  "81295a377962e1212a9a1217e1284622a0d8411f7b3ec796b03493cd33607df3"
   end
 
   head do
     url "https:github.comminetestminetest.git", branch: "master"
-
-    resource "irrlichtmt" do
-      url "https:github.comminetestirrlicht.git", branch: "master"
-    end
 
     resource "minetest_game" do
       url "https:github.comminetestminetest_game.git", branch: "master"
@@ -79,7 +69,6 @@ class Minetest < Formula
     %w[lua gmp jsoncpp].each { |lib| rm_r(buildpath"lib"lib) }
 
     (buildpath"gamesminetest_game").install resource("minetest_game")
-    (buildpath"libirrlichtmt").install resource("irrlichtmt")
 
     args = %W[
       -DBUILD_CLIENT=1
@@ -96,11 +85,12 @@ class Minetest < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.write_exec_script prefix"minetest.appContentsMacOSminetest" if OS.mac?
+    bin.write_exec_script prefix"luanti.appContentsMacOSluanti" if OS.mac?
   end
 
   test do
-    output = shell_output("#{bin}minetest --version")
+    # engine got changed from minetest to luanti with 5.10.0 release
+    output = shell_output("#{bin}luanti --version")
     assert_match "USE_CURL=1", output
     assert_match "USE_GETTEXT=1", output
     assert_match "USE_SOUND=1", output

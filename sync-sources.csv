@@ -1010,6 +1010,7 @@ Homebrew-homebrew-core/Formula/c/commitizen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/commitlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/compiledb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/composer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/comtrya.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conan@1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/concurrencykit.rb, Homebrew/homebrew-core, 1
@@ -6536,6 +6537,7 @@ Homebrew-homebrew-core/Formula/t/typespeed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/typewritten.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typical.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typos-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/typos-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstyle.rb, Homebrew/homebrew-core, 1
@@ -7504,6 +7506,7 @@ Homebrew-homebrew-cask/Casks/a/aws-vpn-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/axure-rp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/azure-data-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/azure-data-studio@insiders.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/ba-connected.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/babeledit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backblaze-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backblaze.rb, Homebrew/homebrew-cask, 0
@@ -8464,6 +8467,7 @@ Homebrew-homebrew-cask/Casks/f/fastclicker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastmarks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastrawviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastscripts.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fathom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fauxpas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/favro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/faxbot.rb, Homebrew/homebrew-cask, 0

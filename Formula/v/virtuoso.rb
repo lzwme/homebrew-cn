@@ -1,19 +1,17 @@
 class Virtuoso < Formula
   desc "High-performance object-relational SQL database"
   homepage "https:virtuoso.openlinksw.comwikimain"
-  url "https:github.comopenlinkvirtuoso-opensourcereleasesdownloadv7.2.13virtuoso-opensource-7.2.13.tar.gz"
-  sha256 "7c138389fb412ca45935ab605daa16e96df1c11b67373a9b92f03c9fd6c35ec4"
+  url "https:github.comopenlinkvirtuoso-opensourcereleasesdownloadv7.2.14virtuoso-opensource-7.2.14.tar.gz"
+  sha256 "c80e1a9fd114479e0588fc61de149c6e5b142d517ed92a2d64b22d5a88458a74"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1c07489e94dc7864ebac9cd3360b530aeb13d871ea3552c94caf86b8ece564a8"
-    sha256 cellar: :any,                 arm64_sonoma:   "73ea2ae83de5dede38609a3bb93fbd170bfbc84ab81a46d3653704f546b84270"
-    sha256 cellar: :any,                 arm64_ventura:  "aee80e84acb4348d360de4ec9d3fa868c5785983bc278d06cf25ac108493e564"
-    sha256 cellar: :any,                 arm64_monterey: "67399c6e0e2f05a0474ba1687ad45d4a4a306c70cbe2a568f47ae33eece75b50"
-    sha256 cellar: :any,                 sonoma:         "a73f74103ffb52c691aaf413358b04b389d325987e48fddfe13608c22d70f89d"
-    sha256 cellar: :any,                 ventura:        "10938d0db150f8c612e6126f22b6b25bbaaf424c23d17cbf36dc4df6420c1ecc"
-    sha256 cellar: :any,                 monterey:       "cb01a85ca94e9a63608653fa758453593081714f4a385f79d2e53c0bf4e889eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24fc37ec8db10030a0acdbaea2185c30431936c16510ea6ba8efe0adc6c9a5ed"
+    sha256 cellar: :any,                 arm64_sequoia: "0e692694b4a2cff3fec3891040c0d7a6ca90d917267a5d8845d079d7e7a7993c"
+    sha256 cellar: :any,                 arm64_sonoma:  "48d4b155bda7e3d1b76feed1dae6380a5ddf86828fe8d68c20c13a4e2c4cfe4a"
+    sha256 cellar: :any,                 arm64_ventura: "ec1ba9dcf65b8306a7cf1355b9fdca4a36a2e4bbce092cf23be53a534e6b95d9"
+    sha256 cellar: :any,                 sonoma:        "12e6d1230335e4c77fc52c31c3657cd31cb3cb6a6ad7e519c7e903a0522170a8"
+    sha256 cellar: :any,                 ventura:       "97bb2a181efc5991b247244da81b046f3c51991f20a3523ce3140ad2a1bbfcf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3486ce694b17ad0decf53bb95f975885604623291f34076f7ea2922c3328d9b"
   end
 
   head do

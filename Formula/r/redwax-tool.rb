@@ -1,8 +1,8 @@
 class RedwaxTool < Formula
   desc "Universal certificate conversion tool"
   homepage "https://redwax.eu/rt/"
-  url "https://redwax.eu/dist/rt/redwax-tool-0.9.4.tar.bz2"
-  sha256 "ebaa0cc83130b423b689197d0b890eb09af83c29e6dfbd983c34c68e99f6883f"
+  url "https://redwax.eu/dist/rt/redwax-tool-0.9.6.tar.bz2"
+  sha256 "7409b13af278b8a69c8428e388d79ad1265136be177bd9083d84399aa4242edc"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class RedwaxTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8b0971fe2ff49ae26fc853202920ecaa633f5512352b1127da457087b6e7559a"
-    sha256 cellar: :any,                 arm64_sonoma:   "7c0cbe89dac3c1b0f7ebf39a437453b374524835836a56fc6439e7ea6b4f7f82"
-    sha256 cellar: :any,                 arm64_ventura:  "72fa28659675b26f3b9bed25274a49616ea13d44d0f2434f7b8af67cbe2ceae8"
-    sha256 cellar: :any,                 arm64_monterey: "f49ac977fb00a25483f510c8ff21cb0b49700f3f0f931019d6b697a5cafa52e4"
-    sha256 cellar: :any,                 sonoma:         "d801bcfab188ab87c7c7a0943fa242731c91751c1b26a0cccb34e19e88e1aac0"
-    sha256 cellar: :any,                 ventura:        "bb097286cef31e3b6ede988e244c0fe4afd62f47d8debb4781090cc48015b090"
-    sha256 cellar: :any,                 monterey:       "de4c817b48ab1a05d3b49d2c03f39d6762aea1a53139e31a329528f432478dff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24908bd64a1bb4c192ce7eb1fd009fd35436dc5355bc71eda539c355164da1aa"
+    sha256 cellar: :any,                 arm64_sequoia: "68d4c7a2ccfd9e7d6f1c5395fe149497eb9159dbc1854c80571d862e9a4da3f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "0655bc75c6619caf8ceeb4268695ff05619f8b41101496db08bb085d1cf9f0bd"
+    sha256 cellar: :any,                 arm64_ventura: "0801f3e1ee4e843ee1bd56bb2c2f1fa4bb6a97d1c8d78f881c3f90899960f036"
+    sha256 cellar: :any,                 sonoma:        "542baabe9c6267a58a3e07933972e478813c6bb506b46378dc03b23b09c572bc"
+    sha256 cellar: :any,                 ventura:       "69ef5583d4389ea70ee734c490a66bb8cacd7578dea8d25955a7006f03bdded1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d5c0d21bc2469587576c4f1c97f65ab611e9e9f3deafa151d8dde7949ec12e3"
   end
 
   depends_on "pkg-config" => :build

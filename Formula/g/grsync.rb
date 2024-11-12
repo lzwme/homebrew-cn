@@ -38,11 +38,7 @@ class Grsync < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-unity",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-unity", *std_configure_args
     chmod "+x", "install-sh"
     system "make", "install"
   end

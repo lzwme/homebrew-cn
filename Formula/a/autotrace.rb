@@ -35,6 +35,8 @@ class Autotrace < Formula
   depends_on "libtiff"
   depends_on "pstoedit"
 
+  uses_from_macos "perl" => :build
+
   on_macos do
     depends_on "fontconfig"
     depends_on "freetype"
@@ -50,11 +52,6 @@ class Autotrace < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec"libperl5"
-      ENV["INTLTOOL_PERL"] = Formula["perl"].bin"perl"
-    end
-
     system ".autogen.sh"
     system ".configure", "--enable-magick-readers",
                           "--mandir=#{man}",

@@ -48,9 +48,7 @@ class Klavaro < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
-
-    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
