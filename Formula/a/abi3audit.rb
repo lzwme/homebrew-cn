@@ -3,17 +3,17 @@ class Abi3audit < Formula
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
   homepage "https:github.comtrailofbitsabi3audit"
-  url "https:files.pythonhosted.orgpackages10f697c340b63486bf3228a0059035ff406f08b8d1e31b915eb6dae07da1cec9abi3audit-0.0.18.tar.gz"
-  sha256 "69a7a8e1858fd19287581912fba3bac6951804df2a94e4ebea541788274d00f7"
+  url "https:files.pythonhosted.orgpackages2f8709f7603de10036e98d36de8f5068b42239a60a114872d3fec25934044748abi3audit-0.0.19.tar.gz"
+  sha256 "6f9e5282c0e165ac927b6ca0473413a5204b0d9149c30cf9227f68604a73374b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "806516196006fc31ce64990b7545f72292c50982b41734e008964b2d030588a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "806516196006fc31ce64990b7545f72292c50982b41734e008964b2d030588a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "806516196006fc31ce64990b7545f72292c50982b41734e008964b2d030588a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e658648e08f807ac8a39319105c6c98f006f1cea9c32c3279b1a4b76c1b3bc7"
-    sha256 cellar: :any_skip_relocation, ventura:       "3e658648e08f807ac8a39319105c6c98f006f1cea9c32c3279b1a4b76c1b3bc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58a9948029a68dcaec75303c46c8cc3b6a49cf72da62dd1fc884a7447cd43629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d129734046ebaf6b39e3143318fb88d45b56d788bd08e0f6574b53649c301c34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d129734046ebaf6b39e3143318fb88d45b56d788bd08e0f6574b53649c301c34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d129734046ebaf6b39e3143318fb88d45b56d788bd08e0f6574b53649c301c34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2874cbd6125c16f4ab775e7f58ef697566775f14948e6c2de94b4e07226c3ce7"
+    sha256 cellar: :any_skip_relocation, ventura:       "2874cbd6125c16f4ab775e7f58ef697566775f14948e6c2de94b4e07226c3ce7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18e66389c501366a79f5f15fbf2cb90532033f0f20663af4936cb360cb72edd7"
   end
 
   depends_on "cmake" => :build
@@ -70,8 +70,8 @@ class Abi3audit < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pefile" do

@@ -1,21 +1,18 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https:github.comsharkdphyperfine"
-  url "https:github.comsharkdphyperfinearchiverefstagsv1.18.0.tar.gz"
-  sha256 "fea7b92922117ed04b9c84bb9998026264346768804f66baa40743c5528bed6b"
+  url "https:github.comsharkdphyperfinearchiverefstagsv1.19.0.tar.gz"
+  sha256 "d1c782a54b9ebcdc1dedf8356a25ee11e11099a664a7d9413fdd3742138fa140"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsharkdphyperfine.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f264e752ab5e957cc98893f3bdcdd83fa713f0260d1af96a3bc8cfa8d54184c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1939fbf7cb48e03cc1034d96381a28f387f9d64392bd95d654c5b3380553747d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08f05d443950d5d65314757434b87ad58c1919c01fe101c40db28a5123a7346b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6aa2641cf76179286d0534d310960e08172d72a70b0f517713497a88eac75e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0dac9d926a311e7a089490abfd1ee6bb8589df543fb303708df69760b35ccefc"
-    sha256 cellar: :any_skip_relocation, ventura:        "6968c0845b38aef0ef8a8520beb2f4ff76d8af3e3ed4d0d21cef34c49c506540"
-    sha256 cellar: :any_skip_relocation, monterey:       "3136c0d2e75850f036627794044ed25d6a7bb9b82e9e2e6cdd056c543fedf6d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18a874acbfd88d21dd0b279e4810711b79bc42481c5e2a749b73c98d281e80dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1052ba49bea61d5067ddc7ed874e113f38861db6f803cbadd01ca76e2a669729"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce2bd2477b8ed96d4a450e5cb8461196b9141c974db2ee4ce36c967bd73e0186"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "de9596f8420130df8e51d30ac2c17f72b904dec69366ec085372f65020947640"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52bfaad54da195297be6f729d4b90428be28e8476be776ee936306333e09de94"
+    sha256 cellar: :any_skip_relocation, ventura:       "22de2528600a8983011899f46ad1fe9b4c5e870f050ad3a3f31c5dd56bc029e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d248b05f6f1c95ab9a9d987710b68483da51a8ef8684fb39567fa83d4298f681"
   end
 
   depends_on "rust" => :build

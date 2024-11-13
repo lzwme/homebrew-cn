@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload7.4.0bazel-7.4.0-dist.zip"
-  sha256 "198d70bb73b93bb2b630c26feb08c4f832e7520c2390776672a853d68f46f428"
+  url "https:github.combazelbuildbazelreleasesdownload7.4.1bazel-7.4.1-dist.zip"
+  sha256 "83386618bc489f4da36266ef2620ec64a526c686cf07041332caff7c953afaf5"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4c711bbf985648069cca286d256c6d116ba6c73db416864e686c5da6f449cb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d26ffe31e03231f75d41e0b2c0abfa30ae7a384d4df06dfaf309fbc2a08e252b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "60f47d339c1e2b02a45c4fc46f450a1720f18e169d3214e464bb5a2248113f66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "666deb365e5e9eb0e59385eae0fa23fa3f69dd5f8686be626dd5b51486912704"
-    sha256 cellar: :any_skip_relocation, ventura:       "e6bbedc9fa932259ef674ba860fb0775fc26b00a49905b32d383a3f351dce04c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc775623baab8f83e293d5c9a15b2f264e8bbfc6985b9b0d34d675b1eca10604"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9769c3905214d37bc33ee022130d3eb53cf79332798f0d95b6fec7468d249ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c067b18f9ee1ef0a165bc868cb7a400c186bdc80025b84684e00f24057fad73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4325cabb79e0f12b6c0cd0a549f869213c95c76e75bd7f9c1d35f8a6ef13b31"
+    sha256 cellar: :any_skip_relocation, ventura:       "d78d5d6463d35c897e1c56fe52a358108b8d9150e3249e5345161a565aa4dafa"
   end
 
   depends_on "python@3.13" => :build

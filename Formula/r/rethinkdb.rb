@@ -24,6 +24,16 @@ class Rethinkdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "728c63d067ecd2ef2f0df719c1334e74a5f97486526af5ad947ea552b0e9492a"
   end
 
+  # There has been no response to Protobuf 25+ issue[^1] opened on 2023-12-13.
+  # Upstream appears to be in low maintenance state after parent company shut down[^2].
+  # Recently seeing download server issues[^3][^4] which makes source tarball unstable.
+  #
+  # [^1]: https:github.comrethinkdbrethinkdbissues7142
+  # [^2]: https:github.comrethinkdbrethinkdbissues6981
+  # [^3]: https:github.comrethinkdbrethinkdbissues7155
+  # [^4]: https:github.comrethinkdbrethinkdbissues7157
+  deprecate! date: "2024-11-12", because: "uses unmaintained `protobuf@21`"
+
   depends_on "boost" => :build
   depends_on "openssl@3"
   depends_on "protobuf@21"

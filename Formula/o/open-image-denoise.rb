@@ -1,19 +1,16 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https:openimagedenoise.github.io"
-  url "https:github.comOpenImageDenoiseoidnreleasesdownloadv2.3.0oidn-2.3.0.src.tar.gz"
-  sha256 "cce3010962ec84e0ba1acd8c9055a3d8de402fedb1b463517cfeb920a276e427"
+  url "https:github.comOpenImageDenoiseoidnreleasesdownloadv2.3.1oidn-2.3.1.src.tar.gz"
+  sha256 "225879b4225bfe015273f0372bf6e7a69d01030043c8aefa017196b41ecf8148"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "bf78ad262815065ef8b81dc58e08c6b07a7c0451c0312fc9b0b744fcdf9b4539"
-    sha256 cellar: :any,                 arm64_sonoma:   "fc3c4ba67d53d8e2fa8bb99ed1c69cc307bb89c06557d711dee97901f45364a5"
-    sha256 cellar: :any,                 arm64_ventura:  "01ce7b7dd522c6393a12889fcd12219d0a55b64b1acfa8d9fa825876bdff202a"
-    sha256 cellar: :any,                 arm64_monterey: "b0c477236d04837d0b49d84e9704eba22a17d539bcef29755809964b6f39dab5"
-    sha256 cellar: :any,                 sonoma:         "3eeffedc9f75b74c36a2a1f714abc363bf978112870a2c26377414afd7a4af3c"
-    sha256 cellar: :any,                 ventura:        "5b18013ad5adc8291c15201537c5a0eaddef36dedb0dc58d07b330640292152b"
-    sha256 cellar: :any,                 monterey:       "73919cbd7bd7ad3827cb362cbe262301edc58c613be4b094fbfc9fe222082436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d2a4435f06185707e8a6706f21444a11c93fdb1bf3257d7a15f36b9bbda7ee0"
+    sha256 cellar: :any, arm64_sequoia: "9f64e80c1449ceb35fb8255a7e598584d822d00ebaf76d8d77ab4ca44b8735f0"
+    sha256 cellar: :any, arm64_sonoma:  "9b1fead166634b11bcbe0433524253f1a4c132c7d9f84e045b88156a9a99248d"
+    sha256 cellar: :any, arm64_ventura: "1366c44e78888e88a8b5225dc26a4f0ec5f9e56ce9660406e65b7efe6565895b"
+    sha256 cellar: :any, sonoma:        "6267f407a2efe2129b7f28c3ee391e0c63f350883988b9c75fa172d1674f6220"
+    sha256 cellar: :any, ventura:       "bd7271ed6729302479e074e72c06f2751cc6c932b038face0f7fb03d0ff13a84"
   end
 
   depends_on "cmake" => :build
@@ -24,12 +21,6 @@ class OpenImageDenoise < Formula
   depends_on "tbb"
 
   uses_from_macos "python" => :build
-
-  # fix compile error when using old libc++ (e.g. from macOS 12 SDK)
-  patch do
-    url "https:github.comRenderKitoidncommite5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch?full_index=1"
-    sha256 "e5e42bb52b9790bbce3c8f82413986d5a23d389e1488965b738810b0d9fb0d2a"
-  end
 
   def install
     # Fix arm64 build targeting iOS

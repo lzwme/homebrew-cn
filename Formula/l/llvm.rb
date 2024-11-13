@@ -24,16 +24,14 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "19873681a95ca87aa8a88ef5c5a548e437dbe4c74ad16f88c4c556a9beb87bc3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f4bd09057f2badf19be728784804bd46c4dcfa94b42e56908a1879000baf6eb"
-    sha256 cellar: :any,                 arm64_ventura: "fd9b1bd61321fd36b0618c9702e4ffa492ec2edcb66c859faf521a4607df6368"
-    sha256 cellar: :any,                 sonoma:        "88c63f0c4c1a63b427dedc325cf26831f37604c749a2777a376bf6416c958f79"
-    sha256 cellar: :any,                 ventura:       "d0f1a642be8a52e2dfb342b0405b8e584ff822ab4309bdf629efa1a6ed1ad196"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "479d06278bca8d5a7b8863f003ca127641ffef9c734976eee34fe8c0cc01d763"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d54670a89c5beeb469091bd895d560e23820f1c3b8e3188685eed08a99c6f75d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e563ec784c4232867374c900d6402197392dd139bf0bd520670193abad02d0c9"
+    sha256 cellar: :any,                 arm64_ventura: "232ce61ccf98ca57fc92f2b65337a0cb2f87f98cdf090e94f8816a6ce3f5547e"
+    sha256 cellar: :any,                 sonoma:        "36145cfee5c0398188d702bd8399207c6ee8c8c6ba3b3b3b1f22bd0641d113f8"
+    sha256 cellar: :any,                 ventura:       "707225be33b04c17fee25e02424a842c63306e8db056cfac208ba517e1c1c252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c51736b56dcf9714b31b0be4dc505382346f2880519b8059365b2e030183cea"
   end
-
-  # Clang cannot find system headers if Xcode CLT is not installed
-  pour_bottle? only_if: :clt_installed
 
   keg_only :provided_by_macos
 
@@ -449,16 +447,9 @@ class Llvm < Formula
       xctoolchain.parent.install_symlink xctoolchain.basename.to_s => "LLVM#{soversion}.xctoolchain"
 
       # Write config files for each macOS major version so that this works across OS upgrades.
-      # TODO: replace this with a call to `MacOSVersion.kernel_major_version` once this is in a release tag:
-      #   https:github.comHomebrewbrewpull18674
-      {
-        11 => 20,
-        12 => 21,
-        13 => 22,
-        14 => 23,
-        15 => 24,
-      }.each do |macos_version, kernel_version|
-        write_config_files(macos_version, kernel_version, Hardware::CPU.arch)
+      MacOSVersion::SYMBOLS.each_value do |v|
+        macos_version = MacOSVersion.new(v)
+        write_config_files(macos_version, MacOSVersion.kernel_major_version(macos_version), Hardware::CPU.arch)
       end
 
       # Also write an unversioned config file as fallback
@@ -503,20 +494,37 @@ class Llvm < Formula
 
     arches = Set.new([:arm64, :x86_64])
     arches << arch
+    sysroot = if macos_version >= "10.14" || (macos_version.blank? && kernel_version.blank?)
+      "#{MacOS::CLT::PKG_PATH}SDKsMacOSX#{macos_version}.sdk"
+    else
+      ""
+    end
 
-    arches.each do |target_arch|
-      target_triple = "#{target_arch}-apple-darwin#{kernel_version}"
-      (clang_config_file_dir"#{target_triple}.cfg").atomic_write <<~CONFIG
-        --sysroot=#{MacOS::CLT::PKG_PATH}SDKsMacOSX#{macos_version}.sdk
-      CONFIG
+    {
+      darwin: kernel_version,
+      macosx: macos_version,
+    }.each do |system, version|
+      arches.each do |target_arch|
+        config_file = "#{target_arch}-apple-#{system}#{version}.cfg"
+        (clang_config_file_dirconfig_file).atomic_write <<~CONFIG
+          --sysroot=#{sysroot}
+        CONFIG
+      end
     end
   end
 
   def post_install
     return unless OS.mac?
-    return if (clang_config_file_dir"#{Hardware::CPU.arch}-apple-darwin#{OS.kernel_version.major}.cfg").exist?
 
-    write_config_files(MacOS.version.major, OS.kernel_version.major, Hardware::CPU.arch)
+    config_files = {
+      darwin: OS.kernel_version.major,
+      macosx: MacOS.version,
+    }.map do |system, version|
+      clang_config_file_dir"#{Hardware::CPU.arch}-apple-#{system}#{version}.cfg"
+    end
+    return if config_files.all?(&:exist?)
+
+    write_config_files(MacOS.version, OS.kernel_version.major, Hardware::CPU.arch)
   end
 
   def caveats
@@ -533,6 +541,10 @@ class Llvm < Formula
 
     on_macos do
       s += <<~EOS
+
+        Using `clang`, `clang++`, etc., requires a CLT installation at `LibraryDeveloperCommandLineTools`.
+        If you don't want to install the CLT, you can write appropriate configuration files pointing to your
+        SDK at ~.configclang.
 
         To use the bundled libunwind please use the following LDFLAGS:
           LDFLAGS="-L#{opt_lib}unwind -lunwind"
@@ -618,6 +630,16 @@ class Llvm < Formula
         assert_equal "Hello World!", shell_output(".testCLT++").chomp
         system bin"clang", "-v", "test.c", "-o", "testCLT"
         assert_equal "Hello World!", shell_output(".testCLT").chomp
+
+        target = "#{Hardware::CPU.arch}-apple-macosx#{MacOS.full_version}"
+        system bin"clang-cpp", "-v", "--target=#{target}", "test.c"
+        system bin"clang-cpp", "-v", "--target=#{target}", "test.cpp"
+
+        system bin"clang", "-v", "--target=#{target}", "test.c", "-o", "test-macosx"
+        assert_equal "Hello World!", shell_output(".test-macosx").chomp
+
+        system bin"clang++", "-v", "--target=#{target}", "-std=c++11", "test.cpp", "-o", "test++-macosx"
+        assert_equal "Hello World!", shell_output(".test++-macosx").chomp
       end
 
       # Testing Xcode

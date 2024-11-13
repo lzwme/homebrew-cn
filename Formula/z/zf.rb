@@ -1,18 +1,18 @@
 class Zf < Formula
   desc "Command-line fuzzy finder that prioritizes matches on filenames"
   homepage "https:github.comnatecraddockzf"
-  url "https:github.comnatecraddockzfarchiverefstags0.10.1.tar.gz"
-  sha256 "d1640134b002492d2ef823243bc49d96fe7e0780b0b2b45d29331caa9fbbbb27"
+  url "https:github.comnatecraddockzfarchiverefstags0.10.2.tar.gz"
+  sha256 "b8e41f942c7033536fd64f9edea467a7ff4f45d52885d585f0adafb7803ac0ed"
   license "MIT"
   head "https:github.comnatecraddockzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01e83d6b000b2fb7f4514fcc6784499be3d90638f6cf499aeb49759bc79553f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79be676a3b29a77dd57a8954a27130ec20edc575018df0df1098da8aba980a20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c118f618b1fa0014e943e676f2b11cec943c4bbf13fd3122be3a3ef15394e03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "258e4735444e3cafe7431d41c7785415ff78935aca7cb1478355025bd641fc58"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c3e7a6e7d6796cbaca393b92cafd14b24b4eebca0778b66bfa16ac2ecac1c3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141a283ae3068d928127d004cd195ea23ecc647b5cb0c501c304adc9770f9945"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca18e30ed084337c77376f0af8b97d3f10bc3ccb20660f7d74c15644fbcae1e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b45f360b6662b147c5adc50425ef87afac800c9aa2bdeab1f2f395614ab34b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "63025c662d67807c0f75b4df08c26b5af01c2e602d5438e2a08289b7ce8bb350"
+    sha256 cellar: :any_skip_relocation, sonoma:        "468b27e2ac00706f31f56fb7ca8fe5aebd31ffa282aae0b21eb8ec487a77561b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d9c75c28e02b4c7cede59bcb1137c62cfd34801b9a06d11855f96f0080829756"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9bfaef19e583a5409511f21a9853c0c37d5ea0067782cce94a92ea791200c4b"
   end
 
   depends_on "zig" => :build

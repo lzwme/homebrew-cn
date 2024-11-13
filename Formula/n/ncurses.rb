@@ -21,7 +21,7 @@ class Ncurses < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
     depends_on "gpatch" => :build

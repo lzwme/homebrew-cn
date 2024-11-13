@@ -30,6 +30,7 @@ cask "keepassxc" do
     "~LibraryApplication Supportkeepassxc",
     "~LibraryCachesorg.keepassx.keepassxc",
     "~LibraryLogsDiagnosticReportsKeePassXC_*.crash",
+    "~LibraryPreferenceskeepassxc.keepassxc.plist",
     "~LibraryPreferencesorg.keepassx.keepassxc.plist",
     "~LibrarySaved Application Stateorg.keepassx.keepassxc.savedState",
   ]

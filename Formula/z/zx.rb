@@ -1,12 +1,12 @@
 class Zx < Formula
   desc "Tool for writing better scripts"
   homepage "https:github.comgooglezx"
-  url "https:registry.npmjs.orgzx-zx-8.2.1.tgz"
-  sha256 "393f265347b4a49abf7a553693f33580b3912475c42681058a1719401d06c98a"
+  url "https:registry.npmjs.orgzx-zx-8.2.2.tgz"
+  sha256 "7ea784734891cab4238192209c56dda08b7f7a2d67be18ba2955f06b48242ef3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "12cda215472ec86f053dd4e4013e0da23d1f84c115fa772c1c6ea407fe95e230"
+    sha256 cellar: :any_skip_relocation, all: "d90e2f32b0ae3482318873ead7ab478dc587e9484c281998f9e6d154331ec1a2"
   end
 
   depends_on "node"

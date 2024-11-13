@@ -1789,6 +1789,7 @@ Homebrew-homebrew-core/Formula/f/file-formula.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/file-roller.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/filebeat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fileicon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fileql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/finatra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/findent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/findomain.rb, Homebrew/homebrew-core, 1
@@ -5002,7 +5003,6 @@ Homebrew-homebrew-core/Formula/p/pk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkcs11-helper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkcs11-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkg-config-wrapper.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pkg-config.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkl.rb, Homebrew/homebrew-core, 1
@@ -7269,6 +7269,7 @@ Homebrew-homebrew-cask/Casks/a/affinity-publisher@1.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/a/after-dark-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agenda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agi.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aifun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aimersoft-video-converter-ultimate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/air-video-server-hd.rb, Homebrew/homebrew-cask, 0
@@ -8012,7 +8013,7 @@ Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craftmanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crashplan.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/creality-slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/create-recovery-partition-installer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/createuserpkg.rb, Homebrew/homebrew-cask, 0
@@ -12216,6 +12217,7 @@ Homebrew-homebrew-cask/Casks/m/mysql-connector-python.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/m/mysql-shell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mysqlworkbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mysteriumdark.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mythic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/n1ghtshade.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nagbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nagstamon.rb, Homebrew/homebrew-cask, 1

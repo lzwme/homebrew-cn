@@ -2,8 +2,10 @@ class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https:github.compkgconfpkgconf"
   url "https:distfiles.ariadne.spacepkgconfpkgconf-2.3.0.tar.xz"
+  mirror "http:distfiles.ariadne.spacepkgconfpkgconf-2.3.0.tar.xz"
   sha256 "3a9080ac51d03615e7c1910a0a2a8df08424892b5f13b0628a204d3fcce0ea8b"
   license "ISC"
+  revision 1
 
   livecheck do
     url "https:distfiles.ariadne.spacepkgconf"
@@ -11,15 +13,12 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "18c4da47fd2032c4edfac853b772e1a16a745a0c67335b86931fb2bec8c10933"
-    sha256 arm64_sonoma:   "4d7c5803943bf2dcc8cb9ff8c838ea4283eeab24f49982df044cbc3031856fd8"
-    sha256 arm64_ventura:  "e0b2a95c807578a166fab8467305f1d54db32fe0656a4d6cb746c2356146b074"
-    sha256 arm64_monterey: "ac13529811ba6f3e57f7f4048711720d073e10a8797768073626f5d6daabbf76"
-    sha256 sequoia:        "9b44fe313d296fa10617d6b58ea1eab78bf217b6f00478ad98b01e0375475472"
-    sha256 sonoma:         "1db60da1d512bb109dd455f03856e790a156137f9d77f1f507ac72d538a1c1e2"
-    sha256 ventura:        "5f272a6b79920f7c236eaa01d94fc8da99ebc79947a56d1808a19d436571c9c8"
-    sha256 monterey:       "802a81f3ca1ea1a14699d6e2359e0ccd30ef310142c6c305b17d881cbd6d2ed0"
-    sha256 x86_64_linux:   "67710376078e1191ece25d69214d9ced135195b07c24a386db0d9aee590c8ead"
+    sha256 arm64_sequoia: "e20314280a6fccd1153b13f137f9e7a15fc4450c877d548360a259c22266efa0"
+    sha256 arm64_sonoma:  "5f83615f295e78e593c767d84f3eddf61bfb0b849a1e6a5ea343506b30b2c620"
+    sha256 arm64_ventura: "715c2c815d44a6c06da7e249c6b7d6f10c51784866c1ca43c22e5d56c45d5ebd"
+    sha256 sonoma:        "b180115e5725a12657fa74d80f0c8f15e852d6c84b7f982b72b5be4f5cd0e97a"
+    sha256 ventura:       "7077e63921d21433ef33d38a2a4cd14f2b08bccf6647bcc25b3f285135e9038c"
+    sha256 x86_64_linux:  "4fe98600d631d8d816217b96f905beb7ee40f2b736a3b74621973f908b6d295a"
   end
 
   head do
@@ -29,8 +28,6 @@ class Pkgconf < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
-
-  conflicts_with "pkg-config", because: "both install `pkg.m4` file"
 
   def install
     if build.head?
@@ -42,27 +39,33 @@ class Pkgconf < Formula
       #{HOMEBREW_PREFIX}libpkgconfig
       #{HOMEBREW_PREFIX}sharepkgconfig
     ]
-    pc_path << if OS.mac?
-      pc_path << "usrlocallibpkgconfig"
-      pc_path << "usrlibpkgconfig"
-      "#{HOMEBREW_LIBRARY}Homebrewosmacpkgconfig#{MacOS.version}"
+    pc_path += if OS.mac?
+      %W[
+        usrlocallibpkgconfig
+        usrlibpkgconfig
+        #{HOMEBREW_LIBRARY}Homebrewosmacpkgconfig#{MacOS.version}
+      ]
     else
-      "#{HOMEBREW_LIBRARY}Homebrewoslinuxpkgconfig"
+      ["#{HOMEBREW_LIBRARY}Homebrewoslinuxpkgconfig"]
     end
 
-    pc_path = pc_path.uniq.join(File::PATH_SEPARATOR)
-
-    configure_args = std_configure_args + %W[
-      --with-pkg-config-dir=#{pc_path}
-    ]
-
-    system ".configure", *configure_args
+    system ".configure", "--disable-silent-rules",
+                          "--with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}",
+                          *std_configure_args
     system "make"
     system "make", "install"
+
+    # Make `pkgconf` a drop-in replacement for `pkg-config` by adding symlink[^1].
+    # Similar to Debian[^2], Fedora, ArchLinux and MacPorts.
+    #
+    # [^1]: https:github.compkgconfpkgconf#pkg-config-symlink
+    # [^2]: https:salsa.debian.orgdebianpkgconf-blobdebianunstabledebianpkgconf.links?ref_type=heads
+    bin.install_symlink "pkgconf" => "pkg-config"
+    man1.install_symlink "pkgconf.1" => "pkg-config.1"
   end
 
   test do
-    (testpath"foo.pc").write <<~EOS
+    (testpath"foo.pc").write <<~PC
       prefix=usr
       exec_prefix=${prefix}
       includedir=${prefix}include
@@ -73,7 +76,7 @@ class Pkgconf < Formula
       Version: 1.0.0
       Cflags: -I${includedir}foo
       Libs: -L${libdir} -lfoo
-    EOS
+    PC
 
     ENV["PKG_CONFIG_LIBDIR"] = testpath
     system bin"pkgconf", "--validate", "foo"

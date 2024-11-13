@@ -1,8 +1,8 @@
 class Openh264 < Formula
   desc "H.264 codec from Cisco"
   homepage "https:www.openh264.org"
-  url "https:github.comciscoopenh264archiverefstagsv2.4.1.tar.gz"
-  sha256 "8ffbe944e74043d0d3fb53d4a2a14c94de71f58dbea6a06d0dc92369542958ea"
+  url "https:github.comciscoopenh264archiverefstagsv2.5.0.tar.gz"
+  sha256 "94c8ca364db990047ec4ec3481b04ce0d791e62561ef5601443011bdc00825e3"
   license "BSD-2-Clause"
   head "https:github.comciscoopenh264.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Openh264 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f96c9079b9bbcd3e86c651511443bfd84caf406a0bb7714859b531c9f35a4729"
-    sha256 cellar: :any,                 arm64_sonoma:   "850e4e3d1c3a7344d860435f26801df7fabcc17885b7df73deef72d8d18157da"
-    sha256 cellar: :any,                 arm64_ventura:  "7fa8aae80d9c726609936a0ec4f8190380b7df1dbfa14ef4e1a977f9e7d2988a"
-    sha256 cellar: :any,                 arm64_monterey: "eb334aa3e31f6893a7692c467dfb9f69120c8bc768cb20a9dc804a87cbcfcab2"
-    sha256 cellar: :any,                 sonoma:         "8de2fac44ca95e30f15a038b3cb3c7a7ca02b235d52c2828fd734175941a6fd2"
-    sha256 cellar: :any,                 ventura:        "7f7f24eff4b74e2e5780d8c764b61b73b95b0db31b91a23051ba688e5f29f9d1"
-    sha256 cellar: :any,                 monterey:       "f7588904e9eebfe583412424cd436929a145f3887c551f3a491b119faca12e9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32a021d9e81e693117f22a3b246073fca005cd120bba948dad1cc18578c96b88"
+    sha256 cellar: :any,                 arm64_sequoia: "93f1b2f1c050d2e5bf0479c09a09fbdbea71285ade4a7e185055dd0c087018a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c5eaf8bcb2c973e8b3a78f2d08d502662c212f26b5d5f23a85a3804eff652f7"
+    sha256 cellar: :any,                 arm64_ventura: "562c9fba739b35c698d911ad76c8cd6459c4809f1ec9d7f12a0d202efb9bca2a"
+    sha256 cellar: :any,                 sonoma:        "1457d067340742d322d16e82a446e4c390f8c227565b8d2e5f755653e9ca014c"
+    sha256 cellar: :any,                 ventura:       "9191b1ee21792f3292064b6e359c48f541aa3e113d26658fc2caa97edd534369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0fbebf84790e261e5928cdd7032d1d33d11c9d3bf493a65aa78da1d402f7723"
   end
 
   depends_on "nasm" => :build

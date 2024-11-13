@@ -1,8 +1,8 @@
 class Gwt < Formula
   desc "Google web toolkit"
   homepage "https:www.gwtproject.org"
-  url "https:github.comgwtprojectgwtreleasesdownload2.12.0gwt-2.12.0.zip"
-  sha256 "29e2b4fcbcf9807233aac786a0327b8467d34ef82d32021e1ac5388d30df447f"
+  url "https:github.comgwtprojectgwtreleasesdownload2.12.1gwt-2.12.1.zip"
+  sha256 "62276f5b67a32969955cb50fbe27d191d130f6e19f6913f88fa9dab3bab2a69f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Gwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1af88bff38eeb53f994baf67b0b6831c24b7c9c73f4b8dcdb0227958eaf26de5"
+    sha256 cellar: :any_skip_relocation, all: "a682cfecc1ed57444c4f76b9cd3a6cd2dfe131b30152260fa4d7ecd1528d4c1b"
   end
 
   depends_on "openjdk"

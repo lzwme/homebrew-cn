@@ -1,8 +1,8 @@
 class Websocat < Formula
   desc "Command-line client for WebSockets"
   homepage "https:github.comviwebsocat"
-  url "https:github.comviwebsocatarchiverefstagsv1.13.0.tar.gz"
-  sha256 "43800f8df38ede8b5bffe825e633c0db6a3c36cfe26c23e882bcfc028d3119c7"
+  url "https:github.comviwebsocatarchiverefstagsv1.14.0.tar.gz"
+  sha256 "919ee83c961074c176a129874a77c02889401f3548c2536a84c4427f97cfeb26"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Websocat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7e56370851e151ca46fa1008212799a29cb1415aa9959afd0595a83ae94cdf01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad69943ce0768290eef524aa9b69d2d3313199853586bc18c32fda8a04e20532"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d75ddc5d4523e2127bd679e6e6436e306f43bf6caac96641fa52d38428ddb45b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b28525e3861934de268b3599e868d134d4f5979e1ab571e6de3154516a340b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f31b9e73fd06fedc160428c42a31b139b719581994e2e3f378b6a444189dc383"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd3d8b8e591a95b50ea80806f62604fe53e1a9bfccbf11587e6434d7b39686b8"
-    sha256 cellar: :any_skip_relocation, monterey:       "cfa0efba1c5f8ea16042cd57891bdea87faa379ae0f5cdc32108422dc9aef6d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7d5dbdeca5e44981f69b3d1b93911932d7951e374c544379452b09dc3ded2af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43528315c386262e6d11036b016fc7ddab24c362e1a38e036b31133c3bf194af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e1c06621d0e8448803752f47c35f13a56a16e118de637aa6c19c20f1c954abe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eeecfce3377a6c4093b50d964f083b4b03dc39f13b933e2b57a38eed3d957066"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54a9d377c6bfa1776e72631b6a2599a1b45f409d2307b2c3dd36db86dfb8a778"
+    sha256 cellar: :any_skip_relocation, ventura:       "60b160dbc0fcb8ac2ffd81f9b27cc912ce15ba52b091897fe5d7ff0ff2e2cdd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47743949aee1665357d781c961840c97f3d781650995f7b0c9cb541f898c756f"
   end
 
   depends_on "rust" => :build

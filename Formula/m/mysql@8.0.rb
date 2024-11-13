@@ -24,7 +24,7 @@ class MysqlAT80 < Formula
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "icu4c@76"
   depends_on "libevent"
@@ -59,18 +59,8 @@ class MysqlAT80 < Formula
   end
 
   def install
-    if OS.linux?
-      # Disable ABI checking
-      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
-
-      # Work around build issue with Protobuf 22+ on Linux
-      # Ref: https:bugs.mysql.combug.php?id=113045
-      # Ref: https:bugs.mysql.combug.php?id=115163
-      inreplace "cmakeprotobuf.cmake" do |s|
-        s.gsub! 'IF(APPLE AND WITH_PROTOBUF STREQUAL "system"', 'IF(WITH_PROTOBUF STREQUAL "system"'
-        s.gsub! ' INCLUDE REGEX "${HOMEBREW_HOME}.*")', ' INCLUDE REGEX "libabsl.*")'
-      end
-    end
+    # Disable ABI checking
+    inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
     icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
                 .to_formula

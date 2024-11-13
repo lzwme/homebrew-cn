@@ -19,7 +19,7 @@ class Binutils < Formula
 
   keg_only "it shadows the host toolchain"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "zstd"
 
   uses_from_macos "bison" => :build

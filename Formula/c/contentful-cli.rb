@@ -1,18 +1,18 @@
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https:github.comcontentfulcontentful-cli"
-  url "https:registry.npmjs.orgcontentful-cli-contentful-cli-3.5.3.tgz"
-  sha256 "893aa859ade8be01881b881fdd0058e802b6221805f465dafbdad1d1f4364361"
+  url "https:registry.npmjs.orgcontentful-cli-contentful-cli-3.5.4.tgz"
+  sha256 "5626345775f1a9d48304931f958b8419ad855de4ffeb2fc76dfa8ad2759b5772"
   license "MIT"
   head "https:github.comcontentfulcontentful-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e9c1db917bcce316bceed6552aa5c8b07b95b57c3463175ac3954d6b51862aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e9c1db917bcce316bceed6552aa5c8b07b95b57c3463175ac3954d6b51862aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e9c1db917bcce316bceed6552aa5c8b07b95b57c3463175ac3954d6b51862aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d7318db99767f29ba28bc92e02be6218d7779b08adffbca397396626382dd2c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8d7318db99767f29ba28bc92e02be6218d7779b08adffbca397396626382dd2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e9c1db917bcce316bceed6552aa5c8b07b95b57c3463175ac3954d6b51862aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c025455fccc0d1ebd01a769582f9c71fe7393ed2030f6d3e76d4ef25a5bbdf3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c025455fccc0d1ebd01a769582f9c71fe7393ed2030f6d3e76d4ef25a5bbdf3d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c025455fccc0d1ebd01a769582f9c71fe7393ed2030f6d3e76d4ef25a5bbdf3d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71739011b0aebb96eb436ef65d9334e9f0ce526764f1a5311d095d1bacc9f645"
+    sha256 cellar: :any_skip_relocation, ventura:       "71739011b0aebb96eb436ef65d9334e9f0ce526764f1a5311d095d1bacc9f645"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c025455fccc0d1ebd01a769582f9c71fe7393ed2030f6d3e76d4ef25a5bbdf3d"
   end
 
   depends_on "node"

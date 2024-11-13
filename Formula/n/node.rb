@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v23.1.0/node-v23.1.0.tar.xz"
-  sha256 "57cbfd3dd51f9300ea2b8e60a8ed215b1eaa71fbde4c3903a7d31a443a4a4423"
+  url "https://registry.npmmirror.com/-/binary/node/v23.2.0/node-v23.2.0.tar.xz"
+  sha256 "3cf7a8a36682775693691f1de901bb5973ad3c0ae2aa87b1add9de515e7b2fc7"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "23880f5ec9a76db3849a3f37b65536f94c67244f91096aef2e0a7c20c5a53f9c"
-    sha256 arm64_sonoma:  "4933b550c70a22bdf1f3f22eb344db6da5c6881b0a0df8efd87135032700f347"
-    sha256 arm64_ventura: "ea816bfb85d12377f6e140eb307ef093c4b64bc0d3f2db63304838ddfbeb727a"
-    sha256 sonoma:        "6a3605890e590286f117dc94779ea1df756546c92c9f3766eecfe5b95716f05f"
-    sha256 ventura:       "45a8ebd5667cc203abbc45f4cc8e7b651aff64612cc316371cdc36361ed1f359"
-    sha256 x86_64_linux:  "e44cf954f3834ae57ade5d162c9bae349da4be5364a857b4a7d7a4cae3113df4"
+    sha256 arm64_sequoia: "81dd73d4690dd07f332724e37150a8a9d77e43841c421b3febd4dc57f4f28dda"
+    sha256 arm64_sonoma:  "2f69b5b62da5a8957ae89d486881f83ea481e9db033a9222acf80593870fccb8"
+    sha256 arm64_ventura: "2e20cf8df1bd24d0210c2f525b1b0d32211aeac76c1b6b1d8fb180a04310254b"
+    sha256 sonoma:        "2657b54ec053a034295a57b4debc08290ac9f92bf6d707b4ecf5069f1f45329a"
+    sha256 ventura:       "cde48931faeaae679ab0d0327e4d318f9c992557a172117d4b7cbf2332f6649a"
+    sha256 x86_64_linux:  "a5aa2d1690f334e34fa8c078c7fd37aedfcdeaeb0694e3a6ece1bdad4e2421f3"
   end
 
   depends_on "pkg-config" => :build
@@ -51,13 +50,6 @@ class Node < Formula
   resource "npm" do
     url "https://registry.npmjs.org/npm/-/npm-10.9.0.tgz"
     sha256 "c12def16fe3efdc80b1e652d60903d807ac4b78b9e7c3e76f633f4b13a32897c"
-  end
-
-  # Apply fix for ICU 76+ from open PR.
-  # PR ref: https://github.com/nodejs/node/pull/55563
-  patch do
-    url "https://github.com/nodejs/node/commit/54299ac3a3d4e4520b8604dce43c2584092ccde2.patch?full_index=1"
-    sha256 "1d047dd275ca615551a6c40c4f766f2d1c9913a3d7aacc5e94039e0fa55aa537"
   end
 
   def install

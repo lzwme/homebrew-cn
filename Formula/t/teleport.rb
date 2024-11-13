@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https:goteleport.com"
-  url "https:github.comgravitationalteleportarchiverefstagsv16.4.6.tar.gz"
-  sha256 "4c8b8f48c58649441502cf11d675036561ecf6a407351bc204af50ec6e5973f1"
+  url "https:github.comgravitationalteleportarchiverefstagsv16.4.7.tar.gz"
+  sha256 "34dc8ab9065563efef29ef2e9de65f2c15f063fb69f712db15bb7fc46fd4edfa"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https:github.comgravitationalteleport.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c4918f4f741014fa82f5f1e267863f38b04b3e62fa1a75458cd92e60b95d6bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "890427e93fc2a97fb40ed7219288b62c3ac4eac0df365cdb4735ef2fe5473f24"
-    sha256 cellar: :any,                 arm64_ventura: "7b23cd79f65acf7a2a3e06fd7e1e44bec627f0551acdc65f2eedfa9a91a48438"
-    sha256 cellar: :any,                 sonoma:        "560333dd05ec9f53cdc381ff704a7a2dd9072a3828d1dc11c16b20f788514b24"
-    sha256 cellar: :any,                 ventura:       "eaac7023290fe2ea193358cba07ef0167349fd23f0c2cc449e39f998e402d3c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e36eac1d5423401cf7412fe0538ac8c846f998bd58627a7ac844ca6167e4b70"
+    sha256 cellar: :any,                 arm64_sequoia: "4e7f4e8b74ac634320853f794cc5265afb34868558b1899a5b656e10fdfd9a42"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a4408ffbc5f206f421107b7384d2e8d18fd3d7266d1df6ec7f6dd7f7e9bb2e5"
+    sha256 cellar: :any,                 arm64_ventura: "f14ef6ef97ab5a6d6ff4721097a6d19eaa1e575b5ba425f0517f86470fc6fccc"
+    sha256 cellar: :any,                 sonoma:        "7df4288c8a0e73c95ac162cc87aa27d01dc67a807f0463360efe491c01b95ab0"
+    sha256 cellar: :any,                 ventura:       "851ff56dcb3809937089c0ab1d3c401121300b3a3d48f81c4772b06a07f48d26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dd4236aa926aae711c27fde357be865f4298492eda09d3ff8e446e9e0453b71"
   end
 
   # Use "go" again after https:github.comgravitationalteleportcommite4010172501f0ed18bb260655c83606dfa872fbd
