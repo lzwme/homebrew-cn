@@ -23,7 +23,7 @@ class ProjAT7 < Formula
   # https:github.comOSGeoPROJissues3067
   disable! date: "2024-02-12", because: :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtiff"
 
   uses_from_macos "curl"

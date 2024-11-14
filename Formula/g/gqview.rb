@@ -25,7 +25,7 @@ class Gqview < Formula
   # Last release on 2006-12-02
   disable! date: "2024-01-21", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gtk+"
 
   def install

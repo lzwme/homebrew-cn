@@ -21,7 +21,7 @@ class Pdftoipe < Formula
   # Ref: https:github.comotfriedipe-toolspull55
   disable! date: "2024-11-07", because: "does not build with latest poppler"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "poppler"
 
   fails_with gcc: "5"

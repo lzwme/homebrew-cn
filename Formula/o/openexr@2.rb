@@ -21,7 +21,7 @@ class OpenexrAT2 < Formula
   disable! date: "2024-02-07", because: :unsupported
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ilmbase"
 
   uses_from_macos "zlib"

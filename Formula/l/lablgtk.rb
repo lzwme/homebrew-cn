@@ -23,7 +23,7 @@ class Lablgtk < Formula
   # GTK 3 supported package is named `lablgtk3` so may be better as separate formula
   disable! date: "2024-01-21", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gtk+"
   depends_on "gtksourceview"
   depends_on "librsvg"

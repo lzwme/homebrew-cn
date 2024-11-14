@@ -2374,6 +2374,7 @@ Homebrew-homebrew-core/Formula/g/gpgme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gplcver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gplugin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpredict.rb, Homebrew/homebrew-core, 1
@@ -3124,6 +3125,7 @@ Homebrew-homebrew-core/Formula/k/kustomize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kustomizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kuto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kuttl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kuzco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kuzu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kvazaar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kwctl.rb, Homebrew/homebrew-core, 1
@@ -4003,7 +4005,6 @@ Homebrew-homebrew-core/Formula/m/mcabber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mcrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/md4c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md5deep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md5sha1sum.rb, Homebrew/homebrew-core, 0
@@ -5400,7 +5401,6 @@ Homebrew-homebrew-core/Formula/r/rdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rdfind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rdiff-backup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rdkit.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rdup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re-flex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2c.rb, Homebrew/homebrew-core, 1
@@ -6701,7 +6701,6 @@ Homebrew-homebrew-core/Formula/v/victoriametrics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/viddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/video-compare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/viennacl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/viewvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vifm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vilistextum.rb, Homebrew/homebrew-core, 0

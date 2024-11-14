@@ -3,20 +3,21 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackagesfedf6bfddef4d6b1cb7645f536368a32f9fff68a23c4c283d234b21ef2e056fbpferd-3.6.0.tar.gz"
-  sha256 "4fce35cb61a75e99b0ba8aed3ffef98c84b4059f4c424f966c37fb6b73f83dd1"
+  url "https:files.pythonhosted.orgpackages72f436436b7f6edb94f2ae327d921f9fa5048f4ee1883c6ae0e5f9ea14d9e32cpferd-3.7.0.tar.gz"
+  sha256 "0a92df47581cad5b1643354b6bb49f288653b946e41dc0982fa7ef7018428f80"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d9eb3356d5d93ce42ff3194bccdcc633bd7ad4950bb31e41bb2026c6c5f459"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b4280db5bcd1f1b6c3311037104cd668f735a77f31659f0e4e7958ec0dc187"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ada8f0c63925ae20a05a2e80cd9d6759dddc8d48a4e9ae0a0ddc431cb1038797"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c59b1dba9614ef5b0210482ee9ffeab3bbcefe91e7dfa7c4464b45b2467ba74b"
-    sha256 cellar: :any_skip_relocation, ventura:       "76baa46504d58f93cb80b76c3c3ce37bf080107204af1c9631c50d18261bf2a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "480e3e32f6a4d455de139f8cd8e1c367a16478ab28ba40669ed644b43e962d2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fd6f699900beaa481671b61cbe5c9dd068ea3743ffad45bdd003ef83595deb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96a06de3e3ddebc6085a84b8c8f1455d24802740ee431285f39529147594911e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c763d1de9af9aad4c0d3f0c21be140887c0fd3f187e20b327fe956c82a903cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "917d17bbece923d888a908cc0011fd6972711a7c87ca755857556bb20cb67a8c"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d0b030f451ae873019b0231c426ac3cc4f4f59ea6e36af08f74dc6c08d2c8b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "890c70cd61f1e0179222d9532db5e75bdddbb01ba83d142e0c99dc0232fcedbd"
   end
 
   depends_on "certifi"
+  depends_on "cryptography"
   depends_on "python@3.13"
 
   resource "aiohappyeyeballs" do
@@ -25,8 +26,8 @@ class Pferd < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages177e16e57e6cf20eb62481a2f9ce8674328407187950ccc602ad07c685279141aiohttp-3.10.10.tar.gz"
-    sha256 "0631dd7c9f0822cc61c88586ca76d5b5ada26538097d0f1df510b082bad3411a"
+    url "https:files.pythonhosted.orgpackages77074d2eb92798dc636e9512051b7fcfd3e6032a15c70af852abe777757e4c2daiohttp-3.11.0.tar.gz"
+    sha256 "f57a0de48dda792629e7952d34a0c7b81ea336bb9b721391c7c58145b237fe55"
   end
 
   resource "aiosignal" do
@@ -70,8 +71,8 @@ class Pferd < Formula
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackagesa51c2bdbcfd5d59dc6274ffb175bc29aa07ecbfab196830e0cfbde7bd861a2eakeyring-25.4.1.tar.gz"
-    sha256 "b07ebc55f3e8ed86ac81dd31ef14e81ace9dd9c3d4b5d77a6e9a2016d0d71a1b"
+    url "https:files.pythonhosted.orgpackagesf62464447b13df6a0e2797b586dad715766d756c932ce8ace7f67bd384d76ae0keyring-25.5.0.tar.gz"
+    sha256 "4c753b3ec91717fe713c4edd522d625889d8973a349b0e582622f49766de58e6"
   end
 
   resource "markdown-it-py" do
@@ -105,8 +106,8 @@ class Pferd < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesd9e9cf9ef5245d835065e6673781dbd4b8911d352fb770d56cf0879cf11b7ee1rich-13.9.3.tar.gz"
-    sha256 "bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "soupsieve" do
@@ -115,8 +116,8 @@ class Pferd < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages2352e9766cc6c2eab7dd1e9749c52c9879317500b46fb97d4105223f86679f93yarl-1.16.0.tar.gz"
-    sha256 "b6f687ced5510a9a2474bbae96a4352e5ace5fa34dc44a217b0537fec1db00b4"
+    url "https:files.pythonhosted.orgpackages549c9c0a9bfa683fc1be7fdcd9687635151544d992cccd48892dc5e0a5885a29yarl-1.17.1.tar.gz"
+    sha256 "067a63fcfda82da6b198fa73079b1ca40b7c9b7994995b6ee38acda728b64d47"
   end
 
   def install

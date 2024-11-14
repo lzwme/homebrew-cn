@@ -30,7 +30,7 @@ class Ganglia < Formula
   # https:www.mail-archive.comganglia-developers@lists.sourceforge.netmsg06873.html
   disable! date: "2024-01-23", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "apr"
   depends_on "confuse"
   depends_on "pcre"

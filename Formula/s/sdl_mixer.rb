@@ -30,7 +30,7 @@ class SdlMixer < Formula
   # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
   disable! date: "2024-02-07", because: :deprecated_upstream
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libmikmod"
   depends_on "libogg"

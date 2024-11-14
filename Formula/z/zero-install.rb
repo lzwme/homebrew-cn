@@ -29,7 +29,7 @@ class ZeroInstall < Formula
   depends_on "ocaml" => :build
   depends_on "ocamlbuild" => :build
   depends_on "opam" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnupg"
 
   uses_from_macos "python" => :build
@@ -37,7 +37,7 @@ class ZeroInstall < Formula
   uses_from_macos "curl"
 
   on_linux do
-    depends_on "pkg-config"
+    depends_on "pkgconf"
   end
 
   def install

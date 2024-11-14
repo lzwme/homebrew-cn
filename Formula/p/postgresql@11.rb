@@ -20,7 +20,7 @@ class PostgresqlAT11 < Formula
   # https://www.postgresql.org/support/versioning/
   disable! date: "2024-11-09", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "readline"

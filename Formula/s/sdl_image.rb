@@ -40,7 +40,7 @@ class SdlImage < Formula
   # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
   disable! date: "2024-02-07", because: :deprecated_upstream
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"

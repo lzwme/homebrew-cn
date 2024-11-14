@@ -24,7 +24,7 @@ class FuseEmulator < Formula
 
   disable! date: "2024-02-12", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libpng"
   depends_on "libspectrum"
   depends_on "sdl12-compat"

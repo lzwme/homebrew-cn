@@ -26,7 +26,7 @@ class Bfgminer < Formula
   depends_on "libgcrypt" => :build
   depends_on "libscrypt" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "uthash" => :build
   depends_on "jansson"
   depends_on "libevent"

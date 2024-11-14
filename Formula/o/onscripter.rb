@@ -19,7 +19,7 @@ class Onscripter < Formula
 
   disable! date: "2024-02-07", because: "uses deprecated `sdl_image`, `sdl_mixer`, and `sdl_ttf`"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "lua"
   depends_on "sdl12-compat"

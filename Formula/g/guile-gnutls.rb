@@ -1,22 +1,18 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
   homepage "https:gitlab.comgnutlsguile"
-  url "https:gitlab.comgnutlsguileuploads9060bc55069cedb40ab46cea49b439c0guile-gnutls-4.0.0.tar.gz"
-  sha256 "5b4cb926032076ec346bb5c0bc0d0231f968fe0f565913cc16934bb793afb239"
+  url "https:gitlab.com-project40217954uploadsf80b3a30cfc66c988775edc4ce3fb546guile-gnutls-4.0.1.tar.gz"
+  sha256 "01f0ba3bea837bb44dcb1b3ffcce3c2ebe88699d0a3bddac1d879e475a9787e4"
   license "LGPL-2.1-or-later"
   head "https:gitlab.comgnutlsguile.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "01a683c88e2e7f41743b06a5324571c3c9b76a26d5f38cd2085fac6c24b2f66e"
-    sha256 arm64_sonoma:   "fa04d75c5e4ce832178da0dd59c0903976517ec88bab6e447c2635f8efabcf86"
-    sha256 arm64_ventura:  "904211d84327edf97c2f981c332cfa4b87f9ae6acead1bd3fb03dbf730f86eb7"
-    sha256 arm64_monterey: "4a838b2cf2c2dd0e6709cd43201a9c8dc5cc7e09705a00eb2523cb9785048c07"
-    sha256 arm64_big_sur:  "ba2ef38bd8e6930920cbc9541d52e1d661858dd6f1a678018f3352b9affb6da5"
-    sha256 sonoma:         "60ec990b57c525b59f4dc15a197c55efabf364be72a569db4e5231a60c6b8a00"
-    sha256 ventura:        "ce529583a5a68f8ee4369922bf37ed729a4a7889347047f41221c654b95fc040"
-    sha256 monterey:       "13b7f3129d9b70f721db8e2a111c8e013e981076aef2d80628c83464a7c5b5f8"
-    sha256 big_sur:        "a9a905b1b7d1a8c74558474e5f75a3b267688221b598babdee1601e72f72d0f6"
-    sha256 x86_64_linux:   "4ac661ae9b1570dac4da9e15ded15e72c88be83d44d7b6f11a74b9773e1b5993"
+    sha256 arm64_sequoia: "774fbd9464a92152b3506f67c9e5b2f7349575e2031293e50132017b7a3e98bb"
+    sha256 arm64_sonoma:  "a50a21859c4523e1a26aa0e9b566d69b8351da2a31b8f01999b407551b2cc4d1"
+    sha256 arm64_ventura: "54ab78a024a433b7617ce26f88fac53debc42320651d7d6729a6c52c044d2071"
+    sha256 sonoma:        "5809a5ecdd6bacd5cb63f20aa5fd4d8af796e3d63c1554851090699d496f96a6"
+    sha256 ventura:       "2cf7fdb17f501d3585ec6025132bc4b598349043e4d12ee82fec511fd7864b0d"
+    sha256 x86_64_linux:  "6d35dcf9c11c5b00943128d0a9a4ad7e2fc97b470a34879729f77412ac6af431"
   end
 
   depends_on "gnutls"

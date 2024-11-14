@@ -26,7 +26,7 @@ class Zile < Formula
   end
 
   depends_on "help2man" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "glib"
   depends_on "libgee"
@@ -38,7 +38,7 @@ class Zile < Formula
     # which causes srceval.vala:87:32: error: incompatible function pointer types passing
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

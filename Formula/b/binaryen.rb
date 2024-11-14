@@ -6,6 +6,11 @@ class Binaryen < Formula
   license "Apache-2.0"
   head "https:github.comWebAssemblybinaryen.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^version[._-](\d+(?:\.\d+)*)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "29292c794cf605e525b06a61f25d9a5a9d69556979d1fa19c80973295835d429"
     sha256 cellar: :any,                 arm64_sonoma:  "25e06480f6181a7fff1409722c135ec9de1be390db038009ac943ac931b44805"

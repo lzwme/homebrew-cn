@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLSSSL protocols"
   homepage "https:github.comawss2n-tls"
-  url "https:github.comawss2n-tlsarchiverefstagsv1.5.7.tar.gz"
-  sha256 "c30b97c8bcccc0557331dd1a043010a70984c9cff11b0bbd769651db68f8b91d"
+  url "https:github.comawss2n-tlsarchiverefstagsv1.5.9.tar.gz"
+  sha256 "8a9aa2ba9a25f936e241eaa6bb7e39bc1a097d178c4b255fa36795c0457e3f4e"
   license "Apache-2.0"
   head "https:github.comawss2n-tls.git", branch: "main"
 
@@ -12,12 +12,12 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79f6891a6b7bca21cce0feeff6990c81528b29d5e6a087f811503a0e20e6f952"
-    sha256 cellar: :any,                 arm64_sonoma:  "1077b62d0147a10d7928afaaaf4361f9b5a90c340d8e00e4a137137c4430919c"
-    sha256 cellar: :any,                 arm64_ventura: "a1390eebaf9c03570367af7847039612279e2f092961002309e56a818c11789a"
-    sha256 cellar: :any,                 sonoma:        "3993a1af13b29ecda565b824db709046adc6d03aafd87e48b4dd413fef5474fd"
-    sha256 cellar: :any,                 ventura:       "d154c42cde51325a86f85309f2d0c8423d8cbfc4fda5671b05acece544226417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21683821ff23e7fc1a22a5f12fb3c4652ccb8d0792dd7252f2aac5a09c9e8e5f"
+    sha256 cellar: :any,                 arm64_sequoia: "00b3e40ef3eae87579b4ff37d7e6e626dc4a1672f935c5ca5d55fdc2c17f968f"
+    sha256 cellar: :any,                 arm64_sonoma:  "acedc4be09cef1b47c114eb155a907074b78b5a2a55b77d5374d3ffae40ebc95"
+    sha256 cellar: :any,                 arm64_ventura: "220d35e7b29150b7b75ebe4848f81070dd7ad133ad4aa1a182a0b3ac4f5f8375"
+    sha256 cellar: :any,                 sonoma:        "d55a6152c5b68775986e12ff08d12a293c2b230777c02e37fe52fbd9e3999afa"
+    sha256 cellar: :any,                 ventura:       "879fb481e42f74f12e273cc8c7cf531d45b4402d3a184e58c21d15c32d7bea82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "452e366b212bfbb62e52380a335d63281069031513d8c34624be8f2388bbccd4"
   end
 
   depends_on "cmake" => :build

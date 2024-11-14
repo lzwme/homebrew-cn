@@ -1,18 +1,18 @@
 class Pyright < Formula
   desc "Static type checker for Python"
   homepage "https:github.commicrosoftpyright"
-  url "https:registry.npmjs.orgpyright-pyright-1.1.388.tgz"
-  sha256 "f81e93b5b9073d1a4d29e5b29d5a4c6490d1746af1e5b4f664c42225ae70b593"
+  url "https:registry.npmjs.orgpyright-pyright-1.1.389.tgz"
+  sha256 "567ddfa65cb5a43a9286c2398b7fdd8755ca0238d7a35c45081d08a7d17773a2"
   license "MIT"
   head "https:github.commicrosoftpyright.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80983bf84c93f16354b790a991028b2057eb41a7e5ba7a62dce16ba74b41012d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80983bf84c93f16354b790a991028b2057eb41a7e5ba7a62dce16ba74b41012d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "80983bf84c93f16354b790a991028b2057eb41a7e5ba7a62dce16ba74b41012d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94e3903b7acc19c635eb51d7c6d68a357728bb46e4e2586ad4decfe1db63eba8"
-    sha256 cellar: :any_skip_relocation, ventura:       "94e3903b7acc19c635eb51d7c6d68a357728bb46e4e2586ad4decfe1db63eba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80983bf84c93f16354b790a991028b2057eb41a7e5ba7a62dce16ba74b41012d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a820d2b19f044813dfb33162c78ba323fd7df72013d3aac971156e7d90a82f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a820d2b19f044813dfb33162c78ba323fd7df72013d3aac971156e7d90a82f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a820d2b19f044813dfb33162c78ba323fd7df72013d3aac971156e7d90a82f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7aa42d7651cb7d7a6849a93881d3266bb45c33362019d87e8c38445bb62bf184"
+    sha256 cellar: :any_skip_relocation, ventura:       "7aa42d7651cb7d7a6849a93881d3266bb45c33362019d87e8c38445bb62bf184"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a820d2b19f044813dfb33162c78ba323fd7df72013d3aac971156e7d90a82f7"
   end
 
   depends_on "node"

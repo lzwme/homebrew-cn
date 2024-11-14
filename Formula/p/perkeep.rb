@@ -35,7 +35,7 @@ class Perkeep < Formula
 
   # This should match what gopherjs supports.
   depends_on "go@1.18" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   conflicts_with "hello", because: "both install `hello` binaries"
 

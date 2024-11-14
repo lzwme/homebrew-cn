@@ -18,7 +18,7 @@ class Vala < Formula
   depends_on "gobject-introspection" => :build
   depends_on "glib"
   depends_on "graphviz"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -29,7 +29,7 @@ class Vala < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make" # Fails to compile as a single step
     system "make", "install"
   end
@@ -38,11 +38,11 @@ class Vala < Formula
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libffi"].opt_lib/"pkgconfig"
     test_string = "Hello Homebrew\n"
     path = testpath/"hello.vala"
-    path.write <<~EOS
+    path.write <<~VALA
       void main () {
         print ("#{test_string}");
       }
-    EOS
+    VALA
 
     valac_args = [
       # Build with debugging symbols.

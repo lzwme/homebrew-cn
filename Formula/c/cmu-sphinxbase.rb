@@ -40,7 +40,7 @@ class CmuSphinxbase < Formula
 
   disable! date: "2024-01-02", because: :repo_archived
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   # If these are found, they will be linked against and there is no configure
   # switch to turn them off.
   depends_on "libsamplerate"

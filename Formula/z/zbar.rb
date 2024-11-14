@@ -29,7 +29,7 @@ class Zbar < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xmlto" => :build
 
   depends_on "imagemagick"
@@ -49,8 +49,6 @@ class Zbar < Formula
   on_linux do
     depends_on "dbus"
   end
-
-  fails_with gcc: "5" # imagemagick is built with GCC
 
   def install
     ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"

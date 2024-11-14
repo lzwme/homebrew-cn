@@ -18,7 +18,7 @@ class Kyua < Formula
 
   disable! date: "2024-02-16", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "atf"
   depends_on "lua"
   depends_on "lutok"

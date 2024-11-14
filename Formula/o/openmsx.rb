@@ -10,7 +10,12 @@ class Openmsx < Formula
   livecheck do
     url :stable
     regex(RELEASE[._-]v?(\d+(?:[._]\d+)+)i)
-    strategy :github_latest
+    strategy :github_latest do |json, regex|
+      match = json["tag_name"]&.match(regex)
+      next if match.blank?
+
+      match[1].tr("_", ".")
+    end
   end
 
   bottle do

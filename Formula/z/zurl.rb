@@ -21,7 +21,7 @@ class Zurl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e03115779822a91ea2c4547dae103f6538beeab596a56251aad671519c1becd8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cmake" => :test # for scikit_build_core
   depends_on "cython" => :test # use brew cython as building it in test can cause time out
   depends_on "python@3.13" => :test

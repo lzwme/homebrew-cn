@@ -24,7 +24,7 @@ class RubyAT27 < Formula
   # https:www.ruby-lang.orgendownloadsbranches
   disable! date: "2024-06-15", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"

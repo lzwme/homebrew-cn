@@ -24,7 +24,7 @@ class Libspectrum < Formula
 
   disable! date: "2024-02-12", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "audiofile"
   depends_on "glib"
   depends_on "libgcrypt"

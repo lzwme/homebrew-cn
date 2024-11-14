@@ -2,11 +2,10 @@ class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https:mariadb.orgdownload?tab=connector&prod=connector-c"
   # TODO: Remove backward compatibility library symlinks on breaking version bump
-  url "https:archive.mariadb.orgconnector-c-3.4.1mariadb-connector-c-3.4.1-src.tar.gz"
-  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.1-src.tar.gz"
-  sha256 "0a7f2522a44a7369c1dda89676e43485037596a7b1534898448175178aedeb4d"
+  url "https:archive.mariadb.orgconnector-c-3.4.3mariadb-connector-c-3.4.3-src.tar.gz"
+  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.3-src.tar.gz"
+  sha256 "a9033833a88ca74789bd6db565965382c982d06aae1c086097fa9c3e7c7d1eaf"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:github.commariadb-corporationmariadb-connector-c.git", branch: "3.4"
 
   # The REST API may omit the newest majorminor versions unless the
@@ -25,13 +24,12 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "7164ff84f1e8eeb2e8efcb02f0ca31abd8a5997ebe1bf526b8c11edaaa7b7d34"
-    sha256 arm64_sonoma:  "e16a19729204f5ba97e259012aa7d1abbd549c49a9b2610bb1fd3fafe2ab7ad4"
-    sha256 arm64_ventura: "96fe4ece7f07237e0b1a344d99a1c181f3899a7990e3e6552ce819fea77e7dce"
-    sha256 sonoma:        "36b1de0a183158468936ff52b5ef9d235893d2efe73e3c4fe25e16551f715912"
-    sha256 ventura:       "9fd01a1f4f5c3460cc201893ff5c15e2471e8149944f46f13102f9cd9355f84b"
-    sha256 x86_64_linux:  "e00754661abefb2555e56e422fa2db368fa4787d4210ed4eddca4e863437dde4"
+    sha256 arm64_sequoia: "462f8b1b844ffd11a6848b3db96c9a91eb6d70b0293055375e83f29a2ae58c28"
+    sha256 arm64_sonoma:  "cc5818a3b76aad42d8c8bb2353b1defc925f8fbf77aa9ca8da2fa4481a3b64f7"
+    sha256 arm64_ventura: "c14286f2fad6a45db22b155b50311151628ab0c4626bf29222d3c8827dd72fca"
+    sha256 sonoma:        "3b308c690e20b19c4bed0ffccfb4f5c9b75970ed631e445a664ab146bf7ac86b"
+    sha256 ventura:       "9dd3822cccaefd5770675bf267f65ff6791b2869259bc98ad25f7633d55045af"
+    sha256 x86_64_linux:  "9aa82a00506a9aad0a0bae6054d2eef6ec377eacfb8b0ff6f3416e66a6dac277"
   end
 
   keg_only "it conflicts with mariadb"

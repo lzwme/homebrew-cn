@@ -1,17 +1,17 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https:pocketbase.io"
-  url "https:github.compocketbasepocketbasearchiverefstagsv0.22.23.tar.gz"
-  sha256 "f7780c2579450ba94e81b02f105b39cca87087f134753f0dbdae851e3848506f"
+  url "https:github.compocketbasepocketbasearchiverefstagsv0.22.24.tar.gz"
+  sha256 "9f8f3cc56525babee6fbfc6a9b1af15e738481dab9f3bf51cb5511d5d718e57c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b6de8b3fcd8748da2e9b7aa9a5aefa02a7a0ef743886917f3a2f87349402c87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b6de8b3fcd8748da2e9b7aa9a5aefa02a7a0ef743886917f3a2f87349402c87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b6de8b3fcd8748da2e9b7aa9a5aefa02a7a0ef743886917f3a2f87349402c87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f93428658967a98b0fe6bf6c7e15f3a3efd7d357e84fe64ed8748f166e661fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f93428658967a98b0fe6bf6c7e15f3a3efd7d357e84fe64ed8748f166e661fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6bf8750c2c99a086a1c1dfaff08c8c6d7872a9004c652c0ec08ad476b23ce28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "982800d4d33d0977429ca54404e579297f5bc779cc7bb1b1c1fc3936c18f8a94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "982800d4d33d0977429ca54404e579297f5bc779cc7bb1b1c1fc3936c18f8a94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "982800d4d33d0977429ca54404e579297f5bc779cc7bb1b1c1fc3936c18f8a94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d3faf780bee9039ba3f4a73a1e3afb225ceeb428e0ff26a2f1245f0c7cad20c"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d3faf780bee9039ba3f4a73a1e3afb225ceeb428e0ff26a2f1245f0c7cad20c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88da40f34262fa574ae7ecef84a0c8b7b367867f490d5f1dfb58c44f29e31662"
   end
 
   depends_on "go" => :build

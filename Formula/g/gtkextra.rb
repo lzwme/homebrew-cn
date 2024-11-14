@@ -21,7 +21,7 @@ class Gtkextra < Formula
   # https:gtkextra.sourceforge.netcmsindex.php?option=com_content&view=article&id=63:new-maintainer-searched&catid=3:news
   disable! date: "2024-01-21", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gtk+"
 
   # Fix -flat_namespace being used on Big Sur and later.

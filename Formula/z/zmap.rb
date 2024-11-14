@@ -25,7 +25,7 @@ class Zmap < Formula
   depends_on "byacc" => :build
   depends_on "cmake" => :build
   depends_on "gengetopt" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "json-c"
   depends_on "judy"

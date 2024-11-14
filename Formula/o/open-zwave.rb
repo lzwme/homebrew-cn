@@ -20,7 +20,7 @@ class OpenZwave < Formula
   disable! date: "2024-08-24", because: :unmaintained
 
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     ENV["BUILD"] = "release"

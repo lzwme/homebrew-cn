@@ -1,8 +1,8 @@
 class Premake < Formula
   desc "Write once, build anywhere Lua-based build system"
   homepage "https:premake.github.io"
-  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta2premake-5.0.0-beta2-src.zip"
-  sha256 "4c1100f5170ae1c3bd1b4fd9458b3b02ae841aefbfc41514887b80996436dee2"
+  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta3premake-5.0.0-beta3-src.zip"
+  sha256 "4b2b1fe9772ca1caf689c07e8c32f108b8393922956f602ddaf404f73467bd83"
   license "BSD-3-Clause"
   version_scheme 1
   head "https:github.compremakepremake-core.git", branch: "master"
@@ -13,16 +13,12 @@ class Premake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3bfc9dcaa66a02d7a66b6dfe7ea26c30051bced4c021f213f918defb1400daa8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c98ca72530e48dbdc33ccb631a81beee53314e93d6f5312684472ac9175306a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7c0e198ec64df063c624729b362aeffcf03b6a7c3d369a289553830aa84e76e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1a2d677314bd928dbbe53c160bd3d67477b485904f7df4afe1e7d92876380d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb6aded02913a669e7bb98a1556c1c1d069ca998e41c22fb77da2bafb82baa75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad3de1154f1003e538a26acb07434550db8b66d9050c14416cc33bde88e16185"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e6089750d30a7173fd03d1c0397188f0bc81def52bd14d78c52b062d269a245"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e2e64dcda1ad406434262658bca0830bd564a6c8fc9878bad0178e807fc140d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0468917acf8072ff58035d030cff0500de669c64445bf113740d65d5cc098bea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df19de0950ff6c2e808f5faf472ef74b52b68076c12ed4db4afe7ed9583c514b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fc61135e4dc02497cc901ea5e947c71c1d679ddce74a06b6debebbb91ee9b68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4181c30d8f5bf26a313bd09698e701029a4d7c5177d56807ad3f66f6572e621"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "488c6a7b28f8ca949c962103c9688670add748d067a3325f4b974c680376b32b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f4685956e6dda4395f48556328db9619a2833928553d08b54b8196666e8dd6a"
+    sha256 cellar: :any_skip_relocation, ventura:       "01b4c6a57b7d41757c48749dc3da6d0eb29e590c685becd3d39e019ab1cee107"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70279e7aab1b39c6428961e5b5b3ca0d4480cc637703730f87e0bc98c4a5477e"
   end
 
   on_linux do

@@ -28,7 +28,7 @@ class Yara < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "libmagic"
   depends_on "openssl@3"
@@ -37,20 +37,19 @@ class Yara < Formula
   def install
     system ".bootstrap.sh"
     system ".configure", "--disable-silent-rules",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
                           "--enable-dotnet",
                           "--enable-cuckoo",
                           "--enable-magic",
                           "--enable-macho",
                           "--enable-dex",
-                          "--with-crypto"
+                          "--with-crypto",
+                          *std_configure_args
     system "make", "install"
   end
 
   test do
     rules = testpath"commodore.yara"
-    rules.write <<~EOS
+    rules.write <<~YARA
       rule chrout {
         meta:
           description = "Calls CBM KERNEL routine CHROUT"
@@ -60,7 +59,7 @@ class Yara < Formula
         condition:
           $jsr_chrout or $jmp_chrout
       }
-    EOS
+    YARA
 
     program = testpath"zero.prg"
     program.binwrite [0x00, 0xc0, 0xa9, 0x30, 0x4c, 0xd2, 0xff].pack("C*")

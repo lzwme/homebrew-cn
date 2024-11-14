@@ -1,18 +1,18 @@
 class Hwatch < Formula
   desc "Modern alternative to the watch command"
   homepage "https:github.comblacknonhwatch"
-  url "https:github.comblacknonhwatcharchiverefstags0.3.16.tar.gz"
-  sha256 "0026bf677dd5b6a0c0160e537c6638902917e26aec2265bd0144a6e0f6d78e56"
+  url "https:github.comblacknonhwatcharchiverefstags0.3.17.tar.gz"
+  sha256 "29ee3982626fc3ee498d7aa60a8a88c5b62f1832d7696eba3104c7012eb6c4e4"
   license "MIT"
   head "https:github.comblacknonhwatch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b47c451a2adae468d375277ab6aac3a4e39ac48c32903902da26c81df717cb58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02dfeac01590fb6a56a10d0e9ce2640984122f238abaf22fec4ac4984f4724ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "268c221940effc8717e8c0718165cab772fd3cf698b78c209dff5f9fa3ac1310"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce2c09eeb5cb02424b86533ab837fda135db237043801f5b0cf7428b700c78e1"
-    sha256 cellar: :any_skip_relocation, ventura:       "301222e51e8ced22afa28794fcc29747b37ec5debcd9d0a60edd08d27cfb6037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ef11e41bd6a353ad0abcdfbf18a2395043af04fa00507b702aeb01da532c37c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60c5f14c344ff9ab60e1770a1167728ef324a4772e8af2e7cba575e2944acaa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f9bb6213f71a4d45b6210bb827ec65901725cc020a47cbec3d6be4417ced7c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a81c265b0afac984e57bf2b96f4e165fb26f836aff436e2fee4a5ec9a2cdf22d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a21b743cfeb8b5fc313ba60c9f489ecff26290d0ad324e00fb808c2e90f6aad8"
+    sha256 cellar: :any_skip_relocation, ventura:       "2241ec8940b332ca244cf2ed736f7a4f05e48918a35e8a6ac6eddcb856c363aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47db940ecacb95cb065e4ed6f4c2fc0ef21ba14eb1cdff2154aeeb1311b6d6f"
   end
 
   depends_on "rust" => :build

@@ -14,7 +14,7 @@ class Zizmor < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5f97ebc4657bba502de43e00a21177f858e1c2c91948b94ee051cfad331ecf3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

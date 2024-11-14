@@ -21,7 +21,7 @@ class Gtksourceview < Formula
   disable! date: "2024-01-21", because: :unmaintained
 
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "gtk+"
 

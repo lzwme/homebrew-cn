@@ -22,7 +22,7 @@ class OpencvAT3 < Formula
   disable! date: "2024-01-31", because: :unmaintained
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "ceres-solver"
   depends_on "eigen"

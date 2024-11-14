@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https:github.comunisonwebunison.git",
-        tag:      "release0.5.27",
-        revision: "bb3b5f1c9e9d11287906e8dea4ab186068b160ba"
+        tag:      "release0.5.28",
+        revision: "0dc566a064ff26dfb3047b6a4f7198c9af0cc31f"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.27.tar.gz"
-      sha256 "eaefe430187f936f7af1a2052b7f4d4d3aaa81b11d3c2697e116b3de69373781"
+      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.28.tar.gz"
+      sha256 "d3f02cb9803ba81265e21098652242f0715da3cd81cad4c9d8a1977983f33e15"
     end
   end
 
@@ -20,12 +20,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c932ce73cc4a460b374a84658886fb0340f37fc57d3e29d26d8d3d71fd4c003e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef3a71e79da0bc262378436daee748db052a95562df7706d9b20917dbc8659fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9608de524d053b08952821a8f60135315f8cd6dc146b4fc02f1a4b8a69617343"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a7aca5dd9bdabcc1ad1dfccdbe797239f8288b995259fe2179141a1bc2c1790"
-    sha256 cellar: :any_skip_relocation, ventura:       "4faa61a66721d02b8fe75094bff502a55701b3b91a2b84bceb72d9c4c521a609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "025cd5e87f536511ce28e66861da12c4d471fcfe5618959b74e45466af302ed3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e8d0cc8af44aa9e49fa7749bd473c3575764487a04c6a4918aa4d9b3877c282"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9a2bece09e8624aed7cec27e8cb65c3c617dbd5bc29e64c0693089f677dc967"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b8a526ccc0bf6046504e40d8eebc839c0213792b80e0e8ba15028312e04220e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0dc10d1bb4361f155fb1ee9daeae609a44afa13b1b092bdd33cc638b1b3c0073"
+    sha256 cellar: :any_skip_relocation, ventura:       "fae375a39b98e8f0502d0516449a762c340ef2d586fdd1271e643316df2e7095"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bb8e641017c8f3e3e7c1b3ce3209e4b5867670b2fe8487d1b35409e1b150ac7"
   end
 
   head do
@@ -82,7 +82,7 @@ class Unisonlang < Formula
       --local-bin-path=#{buildpath}
     ]
 
-    system "stack", "-j#{jobs}", "build", "--flag", "unison-parser-typechecker:optimized", *stack_args
+    system "stack", "-j#{jobs}", "build", *stack_args
 
     prefix.install "unison" => "ucm"
     bin.install_symlink prefix"ucm"

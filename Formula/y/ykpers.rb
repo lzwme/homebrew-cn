@@ -27,7 +27,7 @@ class Ykpers < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eee945e8cc748d69622f20b470e327fee279b356b78be2df9a75dc10ab945f1d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "json-c"
   depends_on "libyubikey"
 
@@ -47,10 +47,11 @@ class Ykpers < Formula
   end
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")
+
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --with-libyubikey-prefix=#{Formula["libyubikey"].opt_prefix}
     ]
     args << if OS.mac?
@@ -58,7 +59,7 @@ class Ykpers < Formula
     else
       "--with-backend=libusb-1.0"
     end
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "check"
     system "make", "install"
   end

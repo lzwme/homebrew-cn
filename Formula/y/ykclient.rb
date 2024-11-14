@@ -49,7 +49,7 @@ class Ykclient < Formula
   disable! date: "2024-08-03", because: :repo_archived
 
   depends_on "help2man" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "curl"
 

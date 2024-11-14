@@ -1,10 +1,9 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https:qmmp.ylsoftware.com"
-  url "https:qmmp.ylsoftware.comfilesqmmp2.1qmmp-2.1.9.tar.bz2"
-  sha256 "b59f7a378b521d4a6d2b5c9e37a35c3494528bf0db85b24caddf3e1a1c9c3a37"
+  url "https:qmmp.ylsoftware.comfilesqmmp2.2qmmp-2.2.2.tar.bz2"
+  sha256 "53055984b220ec1f825b885db3ebdb54a7a71ac67935438ee4ff9c082f600c4f"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https:qmmp.ylsoftware.comdownloads.php"
@@ -12,13 +11,11 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5fdf9499f3a80c471492e03df8a755be67e31799abced5e32542e6a67ef19a78"
-    sha256 arm64_ventura:  "6d75b373d7825e6a97716f97a274608920ff7aa81f50973446e8cc5b82bba137"
-    sha256 arm64_monterey: "df531f89e2a5b959a6637041378e9da53c0a8f38a6bd2e1bbdb04c073eef4d6c"
-    sha256 sonoma:         "c0c251c58bfb213e98db5ab335cc245ac2c253239461753b361da1e1100c597f"
-    sha256 ventura:        "28648897ea50fcc6ef3a119e2c351b6f44e8c503a9906512f6902e2d5c4e2949"
-    sha256 monterey:       "48fd7d7f632424e93665d9d894b4c1734aae1d109eb12e8180053d5fecd77c33"
-    sha256 x86_64_linux:   "abd12bd0ae508464ea099d7ea64f0813f15e388396cfdcca23e152a5168efbe3"
+    sha256 cellar: :any,                 arm64_sonoma:  "515b38786fd3299f49dda650f810b4278faeec35ad6003a60ae072c25c93a4d6"
+    sha256 cellar: :any,                 arm64_ventura: "cac00b68eaabb52ee9f93d54da5b68fe52de4cb7f39e798f3716f0c99fadb3cd"
+    sha256 cellar: :any,                 sonoma:        "49a2054e2552565d1942d4fcc916b3402f7ae52b178844694869f7cbcb9dc72b"
+    sha256 cellar: :any,                 ventura:       "83c5f7524a1119d497b34303ffa0df3100d7bb179945e3567574ce0e5befe91c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde277e48b32110088fa920e36c15d64d5ff5bb1d26e7835dde8bbff01c0f029"
   end
 
   depends_on "cmake" => :build
@@ -66,15 +63,6 @@ class Qmmp < Formula
     depends_on "musepack"
   end
 
-  on_sonoma :or_newer do
-    # Support Sonoma (BSD iconv) as qmmp has an incompatible typedef:
-    # tmpqmmp-20240828-19582-sf4k85qmmp-2.1.9srcqmmpqmmptextcodec.h:28:15:
-    # error: typedef redefinition with different types ('void *' vs 'struct __tag_iconv_t *')
-    #
-    # Issue ref: https:sourceforge.netpqmmp-devtickets1167
-    patch :DATA
-  end
-
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
@@ -84,8 +72,8 @@ class Qmmp < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "qmmp-plugin-pack" do
-    url "https:qmmp.ylsoftware.comfilesqmmp-plugin-pack2.1qmmp-plugin-pack-2.1.2.tar.bz2"
-    sha256 "fb5b7381a7f11a31e686fb7c76213d42dfa5df1ec61ac2c7afccd8697730c84b"
+    url "https:qmmp.ylsoftware.comfilesqmmp-plugin-pack2.2qmmp-plugin-pack-2.2.1.tar.bz2"
+    sha256 "bfb19dfc657a3b2d882bb1cf4069551488352ae920d8efac391d218c00770682"
   end
 
   def install
@@ -101,6 +89,10 @@ class Qmmp < Formula
       cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
       cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
     end
+
+    # Fix to recognize x11
+    # Issue ref: https:sourceforge.netpqmmp-devtickets1177
+    inreplace "srcpluginsUiskinnedCMakeLists.txt", "PkgConfig::X11", "${X11_LDFLAGS}"
 
     system "cmake", "-S", ".", *cmake_args
     system "cmake", "--build", "."
@@ -120,23 +112,3 @@ class Qmmp < Formula
     system bin"qmmp", "--version"
   end
 end
-
-__END__
-diff --git asrcqmmpqmmptextcodec.h bsrcqmmpqmmptextcodec.h
-index 5242c33..7399c54 100644
---- asrcqmmpqmmptextcodec.h
-+++ bsrcqmmpqmmptextcodec.h
-@@ -21,12 +21,11 @@
- #ifndef QMMPTEXTCODEC_H
- #define QMMPTEXTCODEC_H
-
-+#include <iconv.h>
- #include <QByteArray>
- #include <QStringList>
- #include "qmmp_export.h"
-
--typedef void *iconv_t;
--
- class QMMP_EXPORT QmmpTextCodec
- {
- public:

@@ -24,7 +24,7 @@ class GlibOpenssl < Formula
   # See: https://gitlab.gnome.org/Archive/glib-openssl/
   disable! date: "2024-02-22", because: :repo_archived
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "openssl@1.1"
 

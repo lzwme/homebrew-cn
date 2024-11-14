@@ -23,7 +23,7 @@ class PamYubico < Formula
   # Issue opened on 2022-07-29: https:github.comYubicoyubico-pamissues242
   disable! date: "2024-08-03", because: "uses deprecated `ykclient`"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libyubikey"
   depends_on "ykclient"
   depends_on "ykpers"

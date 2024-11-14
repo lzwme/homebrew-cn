@@ -6,6 +6,11 @@ cask "font-zed-mono" do
   name "Zed Mono"
   homepage "https:github.comzed-industrieszed-fonts"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   font "zed-mono-bold.ttf"
   font "zed-mono-bolditalic.ttf"
   font "zed-mono-boldoblique.ttf"

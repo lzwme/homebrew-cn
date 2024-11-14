@@ -2,10 +2,11 @@ cask "plugdata" do
   version "0.9.1"
   sha256 "ae45c3a214e56035b6aa663a92919de4d2f5b4b316778194436749a5fdbbc1b6"
 
-  url "https:github.comtimothyschoenPlugDatareleasesdownloadv#{version}plugdata-macOS-Universal.pkg"
+  url "https:github.comtimothyschoenPlugDatareleasesdownloadv#{version}plugdata-macOS-Universal.pkg",
+      verified: "github.comtimothyschoenPlugData"
   name "PlugData"
   desc "Plugin wrapper for PureData"
-  homepage "https:github.comtimothyschoenPlugData"
+  homepage "https:plugdata.org"
 
   livecheck do
     url :url

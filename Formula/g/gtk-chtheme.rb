@@ -25,7 +25,7 @@ class GtkChtheme < Formula
   # No new release or commit since 2008
   disable! date: "2024-01-21", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "gtk+"
 

@@ -21,7 +21,7 @@ class Yaf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b09048f7e10ddaa4c419542f5ec672437103d257712a6ea6b43444670db950"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "glib"
   depends_on "libfixbuf"

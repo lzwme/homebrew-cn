@@ -24,7 +24,7 @@ class MariadbAT104 < Formula
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "groonga"
   depends_on "openssl@1.1"
   depends_on "pcre2"

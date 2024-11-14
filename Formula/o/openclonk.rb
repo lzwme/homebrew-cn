@@ -78,7 +78,7 @@ class Openclonk < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "libxrandr"
     depends_on "mesa"
     depends_on "openal-soft"

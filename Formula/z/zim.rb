@@ -13,7 +13,7 @@ class Zim < Formula
     sha256 cellar: :any_skip_relocation, all: "f4824f56d36bfe7a27b6e5ca299247eb1e1a85416c112506303164ce6ac9f28f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "adwaita-icon-theme"
   depends_on "graphviz"
   depends_on "gtk+3"

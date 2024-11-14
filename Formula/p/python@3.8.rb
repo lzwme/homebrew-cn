@@ -28,7 +28,7 @@ class PythonAT38 < Formula
   # https:devguide.python.orgversions#versions
   disable! date: "2024-10-14", because: :deprecated_upstream
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gdbm"
   depends_on "mpdecimal"
   depends_on "openssl@3"

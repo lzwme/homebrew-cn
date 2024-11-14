@@ -21,7 +21,7 @@ class Zookeeper < Formula
   depends_on "cppunit" => :build
   depends_on "libtool" => :build
   depends_on "maven" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "openjdk"
   depends_on "openssl@3"

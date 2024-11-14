@@ -20,7 +20,7 @@ class NodeAT16 < Formula
   # https://nodejs.org/en/about/releases/
   disable! date: "2024-11-03", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.11" => :build
   depends_on "brotli"
   depends_on "c-ares"

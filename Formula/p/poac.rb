@@ -1,10 +1,19 @@
 class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.compoac-devpoac"
-  url "https:github.compoac-devpoacarchiverefstags0.10.1.tar.gz"
-  sha256 "4be4f9d80ee1b4b2dd489bc335d59b50d945ad2bff9458eba66b230247f5c8a6"
   license "Apache-2.0"
   head "https:github.compoac-devpoac.git", branch: "main"
+
+  stable do
+    url "https:github.compoac-devpoacarchiverefstags0.10.1.tar.gz"
+    sha256 "4be4f9d80ee1b4b2dd489bc335d59b50d945ad2bff9458eba66b230247f5c8a6"
+
+    # Backport build fix for tbb 2022
+    patch do
+      url "https:github.compoac-devpoaccommit97cc65443b8d0a938a9cfdbfbbbe4b83f73976a8.patch?full_index=1"
+      sha256 "f3d5885a17ce00cc7f1568504a128f36704875bd41a66d7dcbfcdc3e7d53c538"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "a6a22dea81a6f82833163d1a7541f7b1856dbec8eca1bed9d5c0365e65e50076"
@@ -22,7 +31,7 @@ class Poac < Formula
   depends_on "curl"
   depends_on "fmt"
   depends_on "libgit2"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "tbb"
 
   on_macos do
@@ -38,7 +47,10 @@ class Poac < Formula
     cause "Requires C++20"
   end
 
-  fails_with gcc: "11" # C++20
+  fails_with :gcc do
+    version "11"
+    cause "Requires C++20"
+  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)

@@ -1,13 +1,12 @@
 class Astgen < Formula
   desc "Generate AST in json format for JSTS"
   homepage "https:github.comjoernioastgen"
-  url "https:github.comjoernioastgenarchiverefstagsv3.16.0.tar.gz"
-  sha256 "3097f0db0d7dc223c851ed42e2692d2991f36f0e4446321f5f4ef22413af696c"
+  url "https:github.comjoernioastgenarchiverefstagsv3.17.0.tar.gz"
+  sha256 "b989ca182c838e4e0aca56d0ddf55167884f7de7425e8557d1533a4c2f15de11"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "cca01b477e6e5b6406f09290be047f05dfef76226d17e004a42d2fcfb33b1ec2"
+    sha256 cellar: :any_skip_relocation, all: "8a3ff787bb98219536e744663035f15f53b7ee2db59ffee934b0a422fc73476a"
   end
 
   depends_on "node"

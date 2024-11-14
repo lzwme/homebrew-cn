@@ -25,7 +25,7 @@ class Xml2 < Formula
 
   disable! date: "2024-01-02", because: :repo_removed
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "libxml2"
 

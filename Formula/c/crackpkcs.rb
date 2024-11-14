@@ -23,7 +23,7 @@ class Crackpkcs < Formula
   # Last release on 2018-03-10.
   disable! date: "2024-08-01", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@1.1"
 
   resource "cert.p12" do

@@ -11,27 +11,26 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aa6ade504277d3b6ebf8398ab34e4660b36cacaf68f5c9c73eacf62c3d6e5a71"
-    sha256 cellar: :any,                 arm64_sonoma:  "baaf6c94e9737b438d72163723d10371f929d41d9198982beaea24146f00b4c8"
-    sha256 cellar: :any,                 arm64_ventura: "44180c3c927e34b69e002ab693d5c70fee42f93ab2f3e5649f1918964f996ff7"
-    sha256 cellar: :any,                 sonoma:        "1f1f78f79e2092b73d4b8bf40b8928e05fa9b8ccf940d1e6fb7ac20d4975f7e0"
-    sha256 cellar: :any,                 ventura:       "981b1f46457bdd762cce824b7a6aca648eb81ca9bb6305439f957399ba1df218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ddd4cb5fd3252d55eaccd437d45acf06606f0ef04a3bddf59b34aab23aa4369"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c2b2490600fdbe3f9c0d8905b865226c43b1d18acde422368b60ac78cdb2d824"
+    sha256 cellar: :any,                 arm64_sonoma:  "abbe09e0b54dff9192c08d7590bb5471fcfe100cfddbb88da19c5fad07a8f53f"
+    sha256 cellar: :any,                 arm64_ventura: "74268250b16280da66df74087862538541b0743f6bf072e0dd73fa7ddb9cb68d"
+    sha256 cellar: :any,                 sonoma:        "b7f37cc9be177add80233edced3ca587144ecee5efa796dd05f6f024c5d43154"
+    sha256 cellar: :any,                 ventura:       "a66e65ee7ba2aff015c4e477b4041740916da4f8af70662f9621c53136f341dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43f4750299363720f98a8bb94292922722f2c039ba05b704de9b1b4f5dbd7e5"
   end
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "protobuf@21"
   depends_on "zlib"
   depends_on "zstd"
 
   def install
-    args = []
-    %w[lz4 protobuf rapidjson zlib zstd].each do |libname|
-      args << "-DWITH_#{libname.upcase}=system"
-      rm_r buildpath/"cdk/extra"/libname
+    args = %w[lz4 rapidjson zlib zstd].map do |libname|
+      rm_r(buildpath/"cdk/extra"/libname)
+      "-DWITH_#{libname.upcase}=system"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -19,7 +19,7 @@ class Yafc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc9c9ee718893b94e236db36df97740b59378591bd881a95fec98c9da8bdf88"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libssh"
   depends_on "openssl@3"
   depends_on "readline"

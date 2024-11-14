@@ -32,7 +32,7 @@ class Libcapn < Formula
   disable! date: "2024-02-01", because: :repo_archived
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   # Compatibility with OpenSSL 1.1

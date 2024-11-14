@@ -1,10 +1,24 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https:tree-sitter.github.io"
-  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.24.4.tar.gz"
-  sha256 "d704832a6bfaac8b3cbca3b5d773cad613183ba8c04166638af2c6e5dfb9e2d2"
   license "MIT"
   head "https:github.comtree-sittertree-sitter.git", branch: "master"
+
+  # Remove stable block when patch is no longer needed.
+  stable do
+    url "https:github.comtree-sittertree-sitterarchiverefstagsv0.24.4.tar.gz"
+    sha256 "d704832a6bfaac8b3cbca3b5d773cad613183ba8c04166638af2c6e5dfb9e2d2"
+
+    # Fix Neovim freezing in some configurations.
+    # See: https:github.comneovimneovimissues31163
+    #      https:github.comtree-sittertree-sitterissues3930
+    #      https:github.comtree-sittertree-sitterpull3898
+    # Remove in next release.
+    patch do
+      url "https:github.comtree-sittertree-sittercommit5d1be545c439eba4810f34a14fef17e5f76df6c0.patch?full_index=1"
+      sha256 "5c083354226f945992ec401a6c469b2a7bf9419d7599bca749254b3b28c841ea"
+    end
+  end
 
   livecheck do
     url :stable
@@ -23,24 +37,6 @@ class TreeSitter < Formula
 
   depends_on "rust" => :build
   depends_on "node" => :test
-
-  # The next three patches fix Neovim freezing in some configurations.
-  # See: https:github.comneovimneovimissues31163
-  #      https:github.comtree-sittertree-sitterissues3930
-  #      https:github.comtree-sittertree-sitterpull3898
-  # Remove in next release.
-  patch do
-    url "https:github.comtree-sittertree-sittercommitced69d59da9537abef13dbe027ee3a4a20e0ab77.patch?full_index=1"
-    sha256 "f8440176a9354066bbe5e6eca535f7645ac9110d68f71cb903eb1b1d9f561773"
-  end
-  patch do
-    url "https:github.comtree-sittertree-sittercommite6cb7f3f61cc99b78892a23ceb2cb2e8dde40a49.patch?full_index=1"
-    sha256 "c84bda1fa49a88d41306d4fce6f128329c942403d16f1b75d7d4c2305c097eaa"
-  end
-  patch do
-    url "https:github.comtree-sittertree-sittercommit455aa0d9b2d97514079783c7b7de718c0a148c5c.patch?full_index=1"
-    sha256 "ce1cc2ebbad714c76fc12e74bb72a04f95dcccd474f4af1ef5ef23976624110c"
-  end
 
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"

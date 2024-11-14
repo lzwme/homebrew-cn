@@ -23,7 +23,7 @@ class Yder < Formula
   depends_on "orcania"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "systemd"
   end
 

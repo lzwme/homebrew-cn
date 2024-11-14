@@ -23,7 +23,7 @@ class Gbdfed < Formula
   # Last release on 2010-04-19
   disable! date: "2024-01-21", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gtk+"
 
   # Fixes compilation error with gtk+ per note on the project homepage.

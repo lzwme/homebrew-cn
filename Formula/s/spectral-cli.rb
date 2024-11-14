@@ -1,17 +1,17 @@
 class SpectralCli < Formula
   desc "JSONYAML linter and support OpenAPI v3.1v3.0v2.0, and AsyncAPI v2.x"
   homepage "https:stoplight.ioopen-sourcespectral"
-  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.13.1.tgz"
-  sha256 "c9d8cec26445fece14db54835ddb1447e2adb23ca76c3aef6e7dc7c5a7f114a3"
+  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.14.1.tgz"
+  sha256 "ff13237b1a7b7bca139503552f76a688cbb4719d481451a5655c61cc54e2d0fe"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a6bfa0d8037eae38d8e1eaceec0a8b6d6481a1e855ce6e7794116ef8719bf85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a6bfa0d8037eae38d8e1eaceec0a8b6d6481a1e855ce6e7794116ef8719bf85"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a6bfa0d8037eae38d8e1eaceec0a8b6d6481a1e855ce6e7794116ef8719bf85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54e0e0c0d078e8a456a57d53c1191aebdda0982cf67e04813c5b95d1a98c3cdd"
-    sha256 cellar: :any_skip_relocation, ventura:       "54e0e0c0d078e8a456a57d53c1191aebdda0982cf67e04813c5b95d1a98c3cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a6bfa0d8037eae38d8e1eaceec0a8b6d6481a1e855ce6e7794116ef8719bf85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e98c002497c8161548d86690a8916ff1c2fee78674b9cd1859d295ff864e5c12"
+    sha256 cellar: :any_skip_relocation, ventura:       "e98c002497c8161548d86690a8916ff1c2fee78674b9cd1859d295ff864e5c12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
   end
 
   depends_on "node"
@@ -41,7 +41,7 @@ class SpectralCli < Formula
 
     testpath.install resource("homebrew-streetlights-mqtt.yml")
     output = shell_output("#{bin}spectral lint -r #{test_config} #{testpath}streetlights-mqtt.yml")
-    assert_match "6 problems (0 errors, 6 warnings, 0 infos, 0 hints)", output
+    assert_match "7 problems (0 errors, 6 warnings, 1 info, 0 hints)", output
 
     assert_match version.to_s, shell_output("#{bin}spectral --version")
   end

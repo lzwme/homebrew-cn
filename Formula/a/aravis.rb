@@ -5,6 +5,11 @@ class Aravis < Formula
   sha256 "3c4409a12ea70bba4de25e5b08c777112de854bc801896594f2cb6f8c2bd6fbc"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sequoia:  "96d182a7e33a41f832f692201bc0bf29067db30a48d7039c0b514c076e9b205b"
     sha256 arm64_sonoma:   "e39510f09d4f2bda766c23e3f422d3040ee1225c5b8eddb8703b1318002484de"

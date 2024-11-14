@@ -39,7 +39,7 @@ class SdlTtf < Formula
   # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
   disable! date: "2024-02-07", because: :deprecated_upstream
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "sdl12-compat"
 

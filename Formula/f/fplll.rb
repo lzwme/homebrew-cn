@@ -1,19 +1,17 @@
 class Fplll < Formula
   desc "Lattice algorithms using floating-point arithmetic"
   homepage "https:github.comfplllfplll"
-  url "https:github.comfplllfplllreleasesdownload5.4.5fplll-5.4.5.tar.gz"
-  sha256 "76d3778f0326597ed7505bab19493a9bf6b73a5c5ca614e8fb82f42105c57d00"
+  url "https:github.comfplllfplllreleasesdownload5.5.0fplll-5.5.0.tar.gz"
+  sha256 "f0af6bdd0ebd5871e87ff3ef7737cb5360b1e38181a4e5a8c1236f3476fec3b2"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256                               arm64_sequoia:  "8b425ebd95749e2547ab4fd07cce428ebe24b53c0313613d3ae79e4884714e8a"
-    sha256                               arm64_sonoma:   "005ede2a59af2f7cca112eae17a3128cc51655e87b94f32d99cc419370e84f8a"
-    sha256                               arm64_ventura:  "b6cd7be6eff467d3232377783aca10e2f233550ac3d41e50731e78fc3d7bd528"
-    sha256                               arm64_monterey: "0e4d84d3652a61c6276ae3514062702c6d908eaff1ebca50942a9c20c73112dc"
-    sha256                               sonoma:         "3894a53bb67520e1917065140d56bd920f86a550d3ba9a04c2e79caf7df74b97"
-    sha256                               ventura:        "9880f878b0569d0bb86363a9cc3a46b4b4688bd48b2f8b4fb8cf25e1b2d20039"
-    sha256                               monterey:       "f23ce17d986fa034eb47fdb832a32d7c1d01482cd289876547ce830062386595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5384ba66202662ce80e4a5d644a6e2f1f38a6432d4b1a772b716428553ce2ae3"
+    sha256                               arm64_sequoia: "a25629aa8d961b12af85b7c04935f1133c8a18dee209ff4a593692e11543dc3b"
+    sha256                               arm64_sonoma:  "b9bd6d1a49c4cc589234f87a12a08a24f5c4e43a5cd8a300467ef1dedfb2f05f"
+    sha256                               arm64_ventura: "1d79f55394b4e2d055ca691e5618b63b84b6d0db58195222acecd5390c27eb93"
+    sha256                               sonoma:        "2333676f4b1a145a78f8143882a81a9b2b9c309ae7ab2f54f4736b4c88db2cb7"
+    sha256                               ventura:       "592795ee10822fe22704b9e4907af58022ac78bbdc2942a3d25c22801f265f04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c9679fb7aa760cc54e7fb45622595f1c2364bacbd340275682292fe18fa89db"
   end
 
   depends_on "automake" => :build

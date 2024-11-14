@@ -17,7 +17,7 @@ class ProcpsAT3 < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on :linux
   depends_on "ncurses"
 

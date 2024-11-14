@@ -3,13 +3,12 @@ class DockerSquash < Formula
 
   desc "Docker image squashing tool"
   homepage "https:github.comgoldmanndocker-squash"
-  url "https:files.pythonhosted.orgpackagesc9104bf67bb4e15414f2a5e2a7d20fe773c96f471223b1a4d6dd60f1fe2e6365docker_squash-1.2.1.tar.gz"
-  sha256 "ecb801ff52baf2b954d6420a82279fa035a40d3bb35ef68f21a7537d9099f05e"
+  url "https:files.pythonhosted.orgpackages77ef45dc63f3f0f3fba18306dac34d9be26f9dd0d1a0742a7f0ca39cf1a98b15docker_squash-1.2.2.tar.gz"
+  sha256 "74dd70412ddcf570bcd322567929062342793d1ec70c63b5371cc9e2808ae2ef"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aa137f79643caa2bb12d760e087c268bcbed6e6b28bd273f621ce30733716e71"
+    sha256 cellar: :any_skip_relocation, all: "d4fe0620d9ab7a6c5f55e575438c1913ea44c968ab83ca2ff427215002b33cec"
   end
 
   depends_on "certifi"
@@ -31,8 +30,8 @@ class DockerSquash < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "requests" do

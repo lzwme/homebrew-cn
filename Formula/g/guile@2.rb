@@ -29,7 +29,7 @@ class GuileAT2 < Formula
   depends_on "gmp"
   depends_on "libtool"
   depends_on "libunistring"
-  depends_on "pkg-config" # guile-config is a wrapper around pkg-config.
+  depends_on "pkgconf" # guile-config is a wrapper around pkg-config.
   depends_on "readline"
 
   uses_from_macos "libffi", since: :catalina
@@ -37,7 +37,7 @@ class GuileAT2 < Formula
 
   def install
     # Avoid superenv shim
-    inreplace "meta/guile-config.in", "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
+    inreplace "meta/guile-config.in", "@PKG_CONFIG@", Formula["pkgconf"].opt_bin/"pkgconf"
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

@@ -22,7 +22,7 @@ class SpidermonkeyAT91 < Formula
   disable! date: "2024-09-09", because: :unsupported
 
   depends_on "autoconf@2.13" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.9" => :build
   depends_on "rust" => :build
   # Can uncomment after https:github.comHomebrewhomebrew-corepull192986

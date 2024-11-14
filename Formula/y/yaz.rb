@@ -34,7 +34,7 @@ class Yaz < Formula
     uses_from_macos "tcl-tk" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "icu4c@76"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
@@ -82,7 +82,7 @@ class Yaz < Formula
     # Test ICU support by running yaz-icu with the example icu_chain
     # from its man page.
     configfile = testpath"icu-chain.xml"
-    configfile.write <<~EOS
+    configfile.write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <icu_chain locale="en">
         <transform rule="[:Control:] Any-Remove">
@@ -92,7 +92,7 @@ class Yaz < Formula
         <display>
         <casemap rule="l">
       <icu_chain>
-    EOS
+    XML
 
     inputfile = testpath"icu-test.txt"
     inputfile.write "yaz-ICU	xy!"

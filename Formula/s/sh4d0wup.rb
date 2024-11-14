@@ -1,19 +1,17 @@
 class Sh4d0wup < Formula
   desc "Signing-key abuse and update exploitation framework"
   homepage "https:github.comkpcyrdsh4d0wup"
-  url "https:github.comkpcyrdsh4d0wuparchiverefstagsv0.9.3.tar.gz"
-  sha256 "7a1258a5dfc48c54cea1092adddb6bcfb1fcf19c7272c0a6a9e1d2d7daee6e12"
+  url "https:github.comkpcyrdsh4d0wuparchiverefstagsv0.10.0.tar.gz"
+  sha256 "63662f386302ceb06470cab62a36924a1a2efcb51602913f8cf6e2a5a2a34acc"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "d271b4e7d8e501547f5f005334678566e0ef29ddea9ace526c46a1fba236e461"
-    sha256 cellar: :any,                 arm64_sonoma:   "6400ac5b11c6bd5e7a057940a73a05824cbe3546ca57f7760f66862975d4dffe"
-    sha256 cellar: :any,                 arm64_ventura:  "9b734ee54116c4288b832c79d3e722c057570e39129ba54163242a74bc0a089d"
-    sha256 cellar: :any,                 arm64_monterey: "3ab07c4272e04dd6625f1c5071f903e3f98334e0055adbb32170df5ae307c565"
-    sha256 cellar: :any,                 sonoma:         "cbb5c0144089d7ade097def6c84e0787a4df4ab567fa9fb4e63ace6e98d6af4d"
-    sha256 cellar: :any,                 ventura:        "6d5f820f18c6fd2c8aace97b28279b6ee73c2a972d62b1a9457beff582b52acb"
-    sha256 cellar: :any,                 monterey:       "0d0abae2ec6ca3d4db3920e3d6b9263100a3092abaea545daefca656d1ef29c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35560cb4308848c78775629660947cb2a49dc473fc605797ea0132458ec058ee"
+    sha256 cellar: :any,                 arm64_sequoia: "6540738f0265efb9e3f511af4b63dc9cbb91a6179c701309a269a3eeaa2f3b0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "07bba11a7500ccdfe6359bb0a2e5bc96decd4ea8b53d9d86f8d3844532bb752e"
+    sha256 cellar: :any,                 arm64_ventura: "c19a90aee8ec95180f4383d4e4199ef106dbe0140ce50506319cf85acaace739"
+    sha256 cellar: :any,                 sonoma:        "be07c857f0b5a7ed98808891806c05d9c2363519207e3180f7bb61ed619f4963"
+    sha256 cellar: :any,                 ventura:       "bf9730529911ca723d3422e19653c3458f18566c8484531cf695fd16a7c0b88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5737e1328718e96a6f737b7f994099d552d27a74dd3424698d5426fde8a06e"
   end
 
   depends_on "llvm" => :build
@@ -29,12 +27,6 @@ class Sh4d0wup < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-
-  # rust 1.80 build patch, upstream pr ref, https:github.comkpcyrdsh4d0wuppull32
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches31f5e08b1c7df4025d7042dafe756e5326151158sh4d0wuprust-1.80.patch"
-    sha256 "24f3fc3919ead47c6e38c68a55d8fed0370cfddd92738519de4bd41e4da71e93"
-  end
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's

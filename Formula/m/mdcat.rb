@@ -1,18 +1,18 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https:github.comswsnrmdcat"
-  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.5.0.tar.gz"
-  sha256 "fc7855277a2f5e0c9ca74f9a9f72c8f527dde8ae16d2aa9bbe6a249040592aea"
+  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.6.1.tar.gz"
+  sha256 "0dac8322b74d3eefc412ea13fca448aac43b257a3ff3e361d3343c6220a6618f"
   license "MPL-2.0"
   head "https:github.comswsnrmdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e091e8f07d47fb1fa69efae631c459a9e3f793ba8efee226a01f5de4201f80e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed13411f7ccee13439c01c33afa8be8f98746dc204744bda9dc55d1fc8fdb404"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "597aa7f1d640efb41bf3c9fad7b1869a2c91237a29fc712dbbbad2e9de71b9dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b282b41eea98066429f5bd4b19418ed0281fabc258292801199f45ba4b2a835"
-    sha256 cellar: :any_skip_relocation, ventura:       "7757a1701707005ddabb6c8ee4fbe76641396029a6a8677eec1b7dd37d1939c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24dfd12efa1d77060747414c2c03796a11e6aa47489ba6af81a5b80848757d40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c26c22a9efb034b2b8d562af1621099ce62d70908b1f303acc61460355211f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381588c26928902bad2f8b21d6b2cf9fcac7fa1c2697972cdbd9b1f4a0ce3497"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "613dddcd20631d34b8349dc2915e1214ad9f34deec489d5e83c68b36501281ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae56e8127ef9d13c94fe29e19da32bc8d5f43ceb09361b07254a766076a71be7"
+    sha256 cellar: :any_skip_relocation, ventura:       "3d15ec90a4ab3121b98080e412ccfd1b25864d42695aa5acac988f3ecfeace80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa7d5f06422524927d87e1c53333548ed11980a39de2b7befc0bcbd8137b8e42"
   end
 
   depends_on "asciidoctor" => :build
