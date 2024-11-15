@@ -1,18 +1,18 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
   homepage "https:github.comdbrgntealdeer"
-  url "https:github.comdbrgntealdeerarchiverefstagsv1.7.0.tar.gz"
-  sha256 "940fe96a44571f395ac8349e5cba7ddb9231ce526bee07a9eb68f02c32f7da7b"
+  url "https:github.comdbrgntealdeerarchiverefstagsv1.7.1.tar.gz"
+  sha256 "2b10e141774d2a50d25a1d3ca3d911dedc0e1313366ce0a364068c7a686300d8"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comdbrgntealdeer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf60e967be7a644346440663e0b9eb534868c91c54e75438cd372de8f2a6eaa5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c304880e3b6f5bfc8dbdc8dc554d7fe7e1b0ff3622ef21d43edc878f7bb3d275"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1eed75f00e0f33155fb5ef289cd00e098ce51c49b328afd3e6463cd76ec8220c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4590f9b5420367d9d4af16e6ce8fde5eb0b6fa94d7a838ca7f3765b44f05634b"
-    sha256 cellar: :any_skip_relocation, ventura:       "25fdfaa03e8701027863838377388100e7c392d562dde7ed66d9eaab60c08d7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d0c302d4a8bcf82559c0ce7be9a36dd483ef4b3bcb69287db8350ca4ef5ce1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98e3ea943307c047c4bcbd4e71c0c6e753adce66af57e4881fab360b6ad91ca0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e8645f8f68c525cd9b66cf9b703b28f795cd5aee6c875378dca042b0461f70a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa8716deaae90b75e9597e54474aa7a2c4e55fde790a7b33d4f99f1e5927f516"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d21e8203993929078c44ae1862a9ea569177acf75b773310ae4d5309d35adce"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab81dc0b6f9bf01f565d731a64b6500b816a5f616edcfd6416b5e56d3060beba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fcf5d4d0516caa738d291d7319a78b7dbba8875256ed34e0b3a57d1f905d235"
   end
 
   depends_on "rust" => :build

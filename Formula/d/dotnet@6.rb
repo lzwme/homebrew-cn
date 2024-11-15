@@ -3,15 +3,15 @@ class DotnetAT6 < Formula
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
   url "https:github.comdotnetinstaller.git",
-      tag:      "v6.0.135",
-      revision: "9b2a203ee661f837f50486a8caedc688e05dedc4"
+      tag:      "v6.0.136",
+      revision: "d638663530d923adbe0442604b7a6562127321e9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d4504f7537d39b828fd1090b071d7500b32c1159dec10ce28ab7defa25fe34ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "6112bc7fb910dc62bb68aa2f9bdd93ce9c47d396c8949b46432b9011440e6722"
-    sha256 cellar: :any,                 sonoma:        "2e850d8505cdb3c220370b3cb94b724f446af5009a4429971745ae5e41788e34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c656cdbcf9e10e6961b82a4ac9f6f7a96aca9e0705eed54b54676584bfc4d983"
+    sha256 cellar: :any,                 arm64_sequoia: "50966bc99116591a7fcfd12df0791a5865cb5829cf39a6ce23f0c6f904a67c0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "b8ccf36b8d7bee74bfe225bb8b7b769e4bc6abb4c4c81a6a79af8059397ffbd4"
+    sha256 cellar: :any,                 sonoma:        "7891aacef4e9bb862a0ddb742b0436c99f54d1355a22068e681f5c1ceff5abb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0880c4ba48755bcc91c4a66c88b84db0aa874e76e45ed8ad1bd38069767f21d5"
   end
 
   keg_only :versioned_formula

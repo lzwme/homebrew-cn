@@ -3,14 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https:toot.bezdomni.net"
-  url "https:files.pythonhosted.orgpackages0584ca6d145997a2a28af90224efd5fb39ebdc2084c0ac6788539c2e589174c7toot-0.45.0.tar.gz"
-  sha256 "ba209fe60c22f4efda7d882381492ca8639d52c60b6012eb1a10ae1ca70db7cf"
+  url "https:files.pythonhosted.orgpackages2fc69ff74a93121cd6216c270be6fc6d9a795e0f1d233006f308a95753938c91toot-0.47.0.tar.gz"
+  sha256 "4e3cda8e95261cf6a65543d9ebe95e4de7054711bca84060ef2b2c9da606cdef"
   license "GPL-3.0-only"
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9d03a49b2287b4698fdc101b7bac7913829e3252b4ecea1d9e221b76783006ca"
+    sha256 cellar: :any_skip_relocation, all: "3437ce6c86468e58ebc0d9cae7e518807b0ede3e3dc52dcab6a13cb35f4d556d"
   end
 
   depends_on "certifi"
@@ -68,8 +67,8 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages85b7516b0bbb7dd9fc313c6443b35d86b6f91b3baa83d2c4016e4d8e0df5a5e3urwid-2.6.15.tar.gz"
-    sha256 "9ecc57330d88c8d9663ffd7092a681674c03ff794b6330ccfef479af7aa9671b"
+    url "https:files.pythonhosted.orgpackages9821ad23c9e961b2d36d57c63686a6f86768dd945d406323fb58c84f09478530urwid-2.6.16.tar.gz"
+    sha256 "93ad239939e44c385e64aa00027878b9e5c486d59e855ec8ab5b1e1adcdb32a2"
   end
 
   resource "urwidgets" do

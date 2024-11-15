@@ -1,8 +1,8 @@
 class Fnm < Formula
   desc "Fast and simple Node.js version manager"
   homepage "https:github.comSchnizfnm"
-  url "https:github.comSchnizfnmarchiverefstagsv1.37.2.tar.gz"
-  sha256 "13db2e352206a26b35480ebd062ff93f10659a771cd785cb72780a0c9061454f"
+  url "https:github.comSchnizfnmarchiverefstagsv1.38.0.tar.gz"
+  sha256 "1bf4552dd6a4eb63fa49c739d0ee18bf06c2c023a5ac00958aadf71e24fe8a49"
   license "GPL-3.0-only"
   head "https:github.comSchnizfnm.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Fnm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98ea96b0f2335e3b8466fde6db538f6495c76c97e6f15724c6ff7e1d24ebedd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c84cc60505feee7f759169fb4819aeedfa82bc3b1c23267a515a50a7ecf70e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe39aa23a34cb9771c60e62da7c73d1e3f5bfed4e0aec49f2f85933eace094a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d23d29e1fa407e7cae7392b71e505db7c9b7a3c7c90f97361ccf7e9179c44a5"
-    sha256 cellar: :any_skip_relocation, ventura:       "90917209749cf8ea57f7831b57362930e61803b80af002e7b0179965eda5c585"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0b512e3ae10ec4fb0319056dd8d56b99fad20f800c4375cd5fb756aaf3822f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a25d2c3600ceac01be3038e80a75733731880fb5ad536cf1f4f7735bf039bcb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "650f08b1009d79185012c8fc95b04b5ab1593d94cf649d80678688afdc119eaa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28a2697b8443c379fa7a474a573c2a29b2a7ba41e71c81498202b0a539cbc0d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5125290b564a8e0fcb22c6905b30d0f38080b47b5a3e47a5af89e895481ced3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "34690f1d0dc4248365d877334e6547be6c940be692efa087e429975b022de6ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b92933ec3f212301f6bf8a7e66a49d86de970ae9c0025997ce8fa10db6aaeeba"
   end
 
   depends_on "rust" => :build

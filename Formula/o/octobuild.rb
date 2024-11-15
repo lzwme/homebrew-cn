@@ -1,20 +1,18 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https:github.comoctobuildoctobuild"
-  url "https:github.comoctobuildoctobuildarchiverefstags1.4.0.tar.gz"
-  sha256 "559fa141ccc7d8b23f4bf063928c7abed24af78c9e87f1d0e240fe120021c2af"
+  url "https:github.comoctobuildoctobuildarchiverefstags1.5.0.tar.gz"
+  sha256 "3c355aae72134861d9c060061ab4ebfbb6ba8a5a7981f577c567af2dfbdf9279"
   license "MIT"
   head "https:github.comoctobuildoctobuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb50f7ffb941684c8b34a7b29df1cb9adac1c701b1bd3b9e60479179fa9fb109"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0648c142ff702b4083fa83e7768f67139afd1f50b026db5745982d03ba896b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca6205aaf127361fcceed8ddbbd0e5fe02d76fc376718fd7e048ee655db9d7ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7024d305a578287337cc4db25e25532109fc78397daa738c5c4e0448515eca19"
-    sha256 cellar: :any_skip_relocation, sonoma:         "663603d6450c90d42d84e2d3d4c647cbfa15d84b936338e25652e3605e78e091"
-    sha256 cellar: :any_skip_relocation, ventura:        "529aaec3549db4d2613b66432fe6d1b2dfb2808c5e8089f523e62f450066be33"
-    sha256 cellar: :any_skip_relocation, monterey:       "82cc6b3caf14d13b72fcaab9e17b37afb36debbd518cac6af4722b7bdaba4a0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57cb08038aa3c666770a7fc13ebb2f9c8a1d816fac5f9b4346b2be540f13925e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "028a593ef0d0a6b24d69e931d19c9707232f315efab624d16b76f6e8e3939b31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b8d2ee5678de7b1fe2c0234b029932984550214071f01399039bdc51127d92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01c591047ded7b0e8e021acdf3e91f28de954e93536f237217e8bb052c548df6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39d367ca23ab315160d9e4350409616db74be873f5e3abf716a1d083d9d6686d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e0e728e7200e0df2dfaa1cb25e4166d544760abe1dd2198376aa09b6fb44a8a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f236d463ca1f779606681ef1933a3b96afa145ec1956f6cf9328c5cccf846a"
   end
 
   depends_on "rust" => :build

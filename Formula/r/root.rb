@@ -2,12 +2,11 @@ class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https:root.cern"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:github.comroot-projectroot.git", branch: "master"
 
   stable do
-    url "https:root.cerndownloadroot_v6.32.06.source.tar.gz"
-    sha256 "3fc032d93fe848dea5adb1b47d8f0a86279523293fee0aa2b3cd52a1ffab7247"
+    url "https:root.cerndownloadroot_v6.32.08.source.tar.gz"
+    sha256 "29ad4945a72dff1a009c326a65b6fa5ee2478498823251d3cef86a2cbeb77b27"
 
     # Backport fix for RPATH on macOS
     patch do
@@ -25,12 +24,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "926049db01a7ba8784d2ccb58368a409774f1803f3fdecfed00d845dc872876e"
-    sha256 arm64_sonoma:  "e9d3d3ec4704e77d3a0b4919c00908d24e2e18499baacf2fe3c59b4d8fbfb92e"
-    sha256 arm64_ventura: "183f8e23efa428d1ab963447749230cf2b473a2d3483ffb2709773e8c66b466f"
-    sha256 sonoma:        "7a1c2f98c12ed6c44ffbd51b036cedc148ffeb4285b3fc3af8a4ad6586d0601b"
-    sha256 ventura:       "a2c498026129e235b03c73b3014d70f36f9c06ab05f0cbfbdbf135c9dce283e9"
-    sha256 x86_64_linux:  "2b583335b3a904ccb20baf36e41887fb950acf0674f820e10b5fe6b025cfb39f"
+    sha256 arm64_sequoia: "c1bfbeb7e3b575aae166c61272d178037aaf520fd92d62412cf53693e174f98b"
+    sha256 arm64_sonoma:  "c9493b1209d72dde8a29ebe3c5b7cf8cab840399bbada9f3205393b82dd29c8b"
+    sha256 arm64_ventura: "55d9cb47591f8802fc38c1f84d4dbc5114ade1d46598099bf89867cbfe84ec54"
+    sha256 sonoma:        "41b8bb0e19a62eec938a89e8aa5ed5cbefa49d2298f9f9d16010f5c44a7b6230"
+    sha256 ventura:       "7c4bd4f672dfe680fb02353c0a7c7d315601079e9797c863bde708696e6caddd"
+    sha256 x86_64_linux:  "b324dbc173966910292f9bbc64b2d66837f604eb6a6eb4930421b1b69f35c544"
   end
 
   depends_on "cmake" => :build

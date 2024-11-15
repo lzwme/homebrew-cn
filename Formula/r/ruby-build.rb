@@ -13,7 +13,7 @@ class RubyBuild < Formula
   depends_on "autoconf"
   depends_on "libyaml"
   depends_on "openssl@3"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "readline"
 
   def install

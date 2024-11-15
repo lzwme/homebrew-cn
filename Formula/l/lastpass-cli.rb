@@ -1,20 +1,18 @@
 class LastpassCli < Formula
   desc "LastPass command-line interface tool"
   homepage "https:github.comlastpasslastpass-cli"
-  url "https:github.comlastpasslastpass-clireleasesdownloadv1.6.0lastpass-cli-1.6.0.tar.gz"
-  sha256 "9d52616fc1065eb7122cd9b43a31c4155eed22c3ef9d2806dbb3cb49e9d38859"
+  url "https:github.comlastpasslastpass-clireleasesdownloadv1.6.1lastpass-cli-1.6.1.tar.gz"
+  sha256 "5e4ff5c9fef8aa924547c565c44e5b4aa31e63d642873847b8e40ce34558a5e1"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https:github.comlastpasslastpass-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "668ecd05d52f6f783a4731f5c999d3315e85e5534982c2a66574494cb52cb39a"
-    sha256 cellar: :any,                 arm64_sonoma:   "ed7d74c933f0027faccadcbf6306381912d6f0d43898a0728619e567e8df5467"
-    sha256 cellar: :any,                 arm64_ventura:  "e7feee38ad111909c95ad5da1f3b0574755564aab688ece5f6fe7f250b9f3537"
-    sha256 cellar: :any,                 arm64_monterey: "a0fddec6c0c16bbbaf1d3afdd6accda370daebf141dea87290f89a8fba8331e8"
-    sha256 cellar: :any,                 sonoma:         "c68a69722cc6a4cb15f250c69f482d8edcfa055877fec4b092c331b398cc9535"
-    sha256 cellar: :any,                 ventura:        "75ea985edf8019726ca1fc4a4bf2f548010757d1a903335f3839dbe6b92fa83b"
-    sha256 cellar: :any,                 monterey:       "fd4dc9735a358b864591435f1a5a396327076def887f7e619d73efcad6c36934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f18215620449def4005943a5e2708552f13d8eb16a7da57f89a3c3c178e295ae"
+    sha256 cellar: :any,                 arm64_sequoia: "5ef0e66dd2a0206034d4750a932bdf7b3842ad64bf394791cbb7b4de5e0ebfdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b381ad7ecd30a993342cf22f59f91de72a6f9a7006225f2ee76a3c9abb10bc80"
+    sha256 cellar: :any,                 arm64_ventura: "c015a4006f07dd1dc19005a042712559699c49a687e251583e2307e1f00a21d2"
+    sha256 cellar: :any,                 sonoma:        "a7610f932a5e2cb85bd7aaf671cab2c9ee6e00c6775ae6dc0268e115b77218f4"
+    sha256 cellar: :any,                 ventura:       "043a2e2ed36e33158ea8318ee177294c4064151cb053834a4eb4bf00d36420b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4503fb1a86f94795f9ccd9433497cde32a9186968873dae16782e53adcb61d79"
   end
 
   depends_on "asciidoc" => :build

@@ -1,6 +1,6 @@
 cask "treesheets" do
-  version "11806628538"
-  sha256 "d6651eda1ba684f66698da13ff3e9618b06083c51ef41b1ce7d89bf5eb3a5147"
+  version "11846384060"
+  sha256 "484f3576a193f417a07f5e2664fe82645bdd932f27ab0d2411b63b4bd0d858d7"
 
   url "https:github.comaardappeltreesheetsreleasesdownload#{version}mac_treesheets.zip",
       verified: "github.comaardappeltreesheets"
@@ -14,7 +14,7 @@ cask "treesheets" do
     strategy :github_latest
   end
 
-  app "buildBuildProductsReleaseTreeSheets.app"
+  app "macos-bundletreesheets.app"
 
   uninstall quit: "dot3labs.TreeSheets"
 

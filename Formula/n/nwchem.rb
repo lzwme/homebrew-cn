@@ -27,7 +27,7 @@ class Nwchem < Formula
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "python@3.13"
   depends_on "scalapack"
 

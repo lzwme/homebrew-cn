@@ -10,10 +10,10 @@ class LibpthreadStubs < Formula
     sha256 cellar: :any_skip_relocation, all: "303b8c21fc1b9322b6bd8f24e75a4e53a1c331d09b4f6271f75eba743d119819"
   end
 
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   def install
-    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

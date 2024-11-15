@@ -445,6 +445,7 @@ Homebrew-homebrew-core/Formula/b/beancount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beanstalkd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beast.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/beautysh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bedops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bedtools.rb, Homebrew/homebrew-core, 1
@@ -472,6 +473,7 @@ Homebrew-homebrew-core/Formula/b/bgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bib-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibclean.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/biber.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bibtex-tidy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibtex2html.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibtexconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bibutils.rb, Homebrew/homebrew-core, 0
