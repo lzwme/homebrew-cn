@@ -1,8 +1,8 @@
 class Rarian < Formula
   desc "Documentation metadata library"
   homepage "https://rarian.freedesktop.org/"
-  url "https://gitlab.freedesktop.org/rarian/rarian/-/releases/0.8.5/downloads/assets/rarian-0.8.5.tar.bz2"
-  sha256 "8ead8a0e70cbf080176effa6f288de55747f649c9bae9809aa967a81c7e987ed"
+  url "https://gitlab.freedesktop.org/rarian/rarian/-/releases/0.8.6/downloads/assets/rarian-0.8.6.tar.bz2"
+  sha256 "9d4f7873009d2e31b8b1ec762606b12bee5526e1fe75de48e9495382bfef2bea"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,21 +11,19 @@ class Rarian < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "2893387ce5580afb06e529f1329102a0882f4514e65faeb4cdc65ee342b8ad81"
-    sha256 arm64_sonoma:   "98833e600512fbb1258715c6748be4909216695db2a18b33e13b79e1ecdad382"
-    sha256 arm64_ventura:  "0bd6d6c0dbf8af88be3de2cc58374c22a0f6754de720b408468b8687faed9991"
-    sha256 arm64_monterey: "234efb4a3e23a05557f67f7166639e86e4638b722865efd6b11674a411e096c3"
-    sha256 sonoma:         "f9bb606136efc8de3c89928b213a2e223403293b0f55929de7d381bfec3900cc"
-    sha256 ventura:        "3915d74bdc15d87280f1231212649db051797013e08cd8099c736c0edadfaf73"
-    sha256 monterey:       "cec37c05da4ab47e4bbd746335b7e8282f69901e1d083473ac35a4005e08904f"
-    sha256 x86_64_linux:   "b0554edb782e27b9a2cf0009781b33eddefb81f0adf2fff144579e3dc6b6a91e"
+    sha256 arm64_sequoia: "d28b342406dadc412d136c1c08c9b97613b668131f813d542d07ffe379b17db0"
+    sha256 arm64_sonoma:  "2d901dd0b530c413b30ab3eb0327c02596590c685928ef896bdfc13b9fac1df2"
+    sha256 arm64_ventura: "ec32e06c27f85d273f6ca90b78031f4b0ce6e190b9f160fed55f0cf1797f35a4"
+    sha256 sonoma:        "82ff77a27b3ed671542d4c066f945a45c5fce1777df9d77bdc8cfabc38bc219d"
+    sha256 ventura:       "1c10f34f9b76eba56f95ef5b1af592e6f51aaadd88e42cecb93864bbab8f41f6"
+    sha256 x86_64_linux:  "1db54c3f633551261b40b7dc69e6b7a6e18649c681f7eb4f01703f35e565abec"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
-  depends_on "tinyxml"
+  depends_on "pkgconf" => :build
+  depends_on "tinyxml2"
 
   conflicts_with "scrollkeeper",
     because: "rarian and scrollkeeper install the same binaries"

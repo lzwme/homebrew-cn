@@ -4,17 +4,17 @@ class Mapproxy < Formula
   desc "Accelerating web map proxy"
   # `mapproxy.org` is 404, upstream bug report, https:github.commapproxymapproxyissues983
   homepage "https:github.commapproxymapproxy"
-  url "https:files.pythonhosted.orgpackages203772c3bd2a68d753c595cc15d781b6300d882bfa959ab6b73f20e6e194c2b4MapProxy-3.1.0.tar.gz"
-  sha256 "a473f5554723d89b04186a41ee15f8463d135bc41ade53f885228d7e5774f1c8"
+  url "https:files.pythonhosted.orgpackagesc993c35398ec9dff95fa646f87fa2690f142a8779e4e07730a1962f08ce60fffMapProxy-3.1.1.tar.gz"
+  sha256 "f35b308d57b2b2d64d2ba3cfe8643df9b00d2e5452c2a5f81cae599f163bda3e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f2a5388e5b7dd9c1bd08d0ce6ed9a9520ad085b2c9c39c23ad467413ad4fb440"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca2578919d1c9373c675403450fa5480af2d7f76b6a57f4a8574b4af454c17e"
-    sha256 cellar: :any,                 arm64_ventura: "7fd3bbbf8eda2c887a0d783783dbd82f0134cefb7af5d4b46bf9aa4ea9ba225b"
-    sha256 cellar: :any,                 sonoma:        "bad40127f6dae06e1c819e19555a870ccf209d5e675bd8cc0df294992a0f741a"
-    sha256 cellar: :any,                 ventura:       "bf67be50e86b2cfe15016aeb493c8dd41edbcf9320e9d9899f3aadcccc749503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93e509f3f757a65da2787796550a66f43d1944a3507300ba927fb6dd9750a2f7"
+    sha256 cellar: :any,                 arm64_sequoia: "493c875579ee0db01173258262674f9609d6b5a0f363880a19fee5092003718a"
+    sha256 cellar: :any,                 arm64_sonoma:  "077d3cdf113954bfd3debea1b39e55e02e595b4de057db9181a1b33253c3e5e0"
+    sha256 cellar: :any,                 arm64_ventura: "79c6ec8cb81e10a77e706fea96520715e16b93b7d3e39a985ba1dbcad768bc61"
+    sha256 cellar: :any,                 sonoma:        "d877ee94e9f6618b01eb7926ebf57b837421987178d6f7fcd36068bdb0a3a65d"
+    sha256 cellar: :any,                 ventura:       "05e9cc9746f7bb50b696f6cbae70b34068871c329ac8bdbede50e21440eacce2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44bfb01b15861482ea2550da6aef3ca84a4f573e018fa0a20b67e1c159aff22"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -44,6 +44,11 @@ class Mapproxy < Formula
     sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
+  resource "markupsafe" do
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+  end
+
   resource "pyproj" do
     url "https:files.pythonhosted.orgpackages47c20572c8e31aebf0270f15f3368adebd10fc473de9f09567a0743a3bc41c8dpyproj-3.7.0.tar.gz"
     sha256 "bf658f4aaf815d9d03c8121650b6f0b8067265c36e31bc6660b98ef144d81813"
@@ -60,13 +65,13 @@ class Mapproxy < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages5564b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29arpds_py-0.20.0.tar.gz"
-    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
+    url "https:files.pythonhosted.orgpackages2380afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4frpds_py-0.21.0.tar.gz"
+    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
   end
 
   resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages1027a33329150147594eff0ea4c33c2036c0eadd933141055be0ff911f7f8d04Werkzeug-1.0.1.tar.gz"
-    sha256 "6c80b1e5ad3665290ea39320b91e1be1e0d5f60652b964a3070216de83d2e47c"
+    url "https:files.pythonhosted.orgpackages9f6983029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71ewerkzeug-3.1.3.tar.gz"
+    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
   end
 
   def install

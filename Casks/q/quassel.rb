@@ -17,6 +17,13 @@ cask "quassel" do
 
   app "Quassel.app"
 
+  zap trash: [
+    "~LibraryApplication SupportQuassel",
+    "~LibraryPreferencesorg.quassel-irc.quasselclient.plist",
+    "~LibraryPreferencesorg.quassel-irc.quasselcore.plist",
+    "~LibrarySaved Application Stateorg.quassel-irc.client.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

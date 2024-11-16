@@ -1,13 +1,12 @@
 class Prettierd < Formula
   desc "Prettier daemon"
   homepage "https:github.comfsouzaprettierd"
-  url "https:registry.npmjs.org@fsouzaprettierd-prettierd-0.25.3.tgz"
-  sha256 "39b761c81a6d1d65819ea2f30e96965e25e7ada6d14644e449116e9543b4619f"
+  url "https:registry.npmjs.org@fsouzaprettierd-prettierd-0.25.4.tgz"
+  sha256 "3150e6d3502855632dc259a717e3833d321db6915d57c958cab6463e292cc033"
   license "ISC"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "09e3ec3d5b7a6e73ccd4dd9478f2c34be67b24dfb0ceb6384bd1831e325a209d"
+    sha256 cellar: :any_skip_relocation, all: "c6bff9b787b92531aa1acbd522ddbd8215c377717ef1f69466922bd846f3cc0b"
   end
 
   depends_on "node"

@@ -1,19 +1,17 @@
 class Argus < Formula
   desc "Audit Record Generation and Utilization System server"
   homepage "https:openargus.org"
-  url "https:github.comopenargusargusarchiverefstagsv5.0.0.tar.gz"
-  sha256 "d2ac1013832ba502570ce4a152c02c898e3725b8682e21af54d8e3a513c3396e"
+  url "https:github.comopenargusargusarchiverefstagsv5.0.2.tar.gz"
+  sha256 "1718454ac717fe5f500d00ff608097e3c5483f4e138aa789e67e306feb52bafb"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42ddc1e03a084a0e68b4e0acce8078bc28d85d17b6e234fa6b523c67e30c374f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd66bf50cf9c6dd402c58e531708893cd2aca10266d6d2d70ecb00768775ac27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5dff8faed6dd67b53ab7bfdba11cc52385e32c675d2610dee21eb0bdecc3d0c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7626939126bc907b343cc0782fbb87bcb05928e2147f3314c2e4f77d8df21548"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68c8c71f306e9f13d030a81c69a6f0325b57b9b06c3d8ea6ee1037bc75fca757"
-    sha256 cellar: :any_skip_relocation, ventura:        "a358ec3026dbb2b9c0f8dc6800a97c608859993a5bc46d129d9c668fb174c785"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc9b325392bbd2b9838141d04dcb2f145599fa55f4f5dc4d75e83d26baac2261"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b66d1d53a26ee4246fb31053f0ce4cddea6a54b27529cd0cdbf852942ccdd51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347acb963caee49f75d34625c31ea0d62da3a7197cdce61877ea7a9cc4234a47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df1ed0d1ca211cc64e1d53368628178ba4b184e7b13f34734dfd8da167008dd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7fb76b9b7256db647ea6a124882c3cfee5e0838b08cca59494f53ce295caac1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee799b219fbfca3ff8c1babf20c550ab30274e3fa2e87f964a53a3a47416d65c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a48764b6fbf43defc9dfa3505f6bc5e53c683eb2a94a5a05575fb31c16305695"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f955db69cd767d836e4f1c784f21d22205f3f7ed466218f1837ea89743e3a8c1"
   end
 
   uses_from_macos "bison" => :build

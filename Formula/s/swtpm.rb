@@ -1,19 +1,17 @@
 class Swtpm < Formula
   desc "Software TPM Emulator based on libtpms"
   homepage "https:github.comstefanbergerswtpm"
-  url "https:github.comstefanbergerswtpmarchiverefstagsv0.9.0.tar.gz"
-  sha256 "9679ca171e8aaa3c4e4053e8bc1d10c8dabf0220bd4b16aba78743511c25f731"
+  url "https:github.comstefanbergerswtpmarchiverefstagsv0.10.0.tar.gz"
+  sha256 "9f10ae0d3123ab05c3808f8c8d39f633cf1a0cf142d6ac9b87b8364a682ac842"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sequoia:  "e2c4bd0e4caeae9b7eca2c6194c45049484dc149056c3c594e40a53f7e06a044"
-    sha256 arm64_sonoma:   "726b2d08394252d97179fbd3ec31bb3ec36ec8a5c0da9f766eb69be2f8ee0e6b"
-    sha256 arm64_ventura:  "18485cb18590d95725ea35cb7e4e1b23d39f464a9b6a2e4a6c5ace343c95d6a5"
-    sha256 arm64_monterey: "1e6e7565a5be8e020c9520d58eb00126c2c4825003fbf1cda1ba552e71d1162a"
-    sha256 sonoma:         "fa3c8e6fc64926c88359f48ab4923dcad77bd2fd34b88c7efc8fd609c7382ab4"
-    sha256 ventura:        "bdf86130622d7c291eb7cfc18e12fdfa74494b3c5727f04f102d47588eb13496"
-    sha256 monterey:       "eb37ade00357e2e6509d142262d0fcd7cee755a1c4e221aabc821e728d3546ff"
-    sha256 x86_64_linux:   "9a9920cd1b18dbe4ad05243c70d597423b4360573076c3ee43a30c78c2e1ea08"
+    sha256 arm64_sequoia: "4a2c3949e70a95b58041d26f22406573e7f388e66ee586f6ecceb152a7e7bbad"
+    sha256 arm64_sonoma:  "ee23c88ac66faf5af97af08bb8ced8aee8df9303816734f192333e5e283107d4"
+    sha256 arm64_ventura: "7d256e20aa50d3cf67738640fe8f5eb621eebc6227b4276ba29de9a4101e710a"
+    sha256 sonoma:        "b8c0f97829f741d2617009b6a384f8a7a78d7935563a414ba3ebed9e1ec9ad06"
+    sha256 ventura:       "28156039325983eb3a99891663edc2f31f728de2f0a1609fe7ddf6d89206ceda"
+    sha256 x86_64_linux:  "80ea36298803fec03cb1f12daf266f913094ff6a0302ee41395f469d1f321ca7"
   end
 
   depends_on "autoconf" => :build
@@ -52,7 +50,7 @@ class Swtpm < Formula
     pid = fork do
       system bin"swtpm", "socket", "--ctrl", "type=tcp,port=#{port}"
     end
-    sleep 2
+    sleep 10
     system bin"swtpm_ioctl", "--tcp", "127.0.0.1:#{port}", "-s"
   ensure
     Process.wait pid

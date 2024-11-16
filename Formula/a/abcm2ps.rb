@@ -16,7 +16,7 @@ class Abcm2ps < Formula
     sha256 x86_64_linux:   "cb486f3afb52ba110aa20878c5ac7b14bca9a1e4acd6b1a30fc4fd7741a55b93"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     system ".configure", "--prefix=#{prefix}"
@@ -24,7 +24,7 @@ class Abcm2ps < Formula
   end
 
   test do
-    (testpath"voices.abc").write <<~EOS
+    (testpath"voices.abc").write <<~ABC
       X:7
       T:Qui Tolis (Trio)
       C:Andre Raison
@@ -43,7 +43,7 @@ class Abcm2ps < Formula
       V:Trompette
       %%MIDI program 56
       "Trompette"z3|z3 |z3 |z3 |:Mc>BA|PGAGF|PE>EF|PEFED|C>CPB,|A,G,F,-|
-    EOS
+    ABC
 
     system bin"abcm2ps", testpath"voices"
     assert_predicate testpath"Out.ps", :exist?

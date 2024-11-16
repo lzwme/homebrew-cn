@@ -1,17 +1,22 @@
 class Kubehound < Formula
   desc "Tool for building Kubernetes attack paths"
   homepage "https:kubehound.io"
-  url "https:github.comDataDogKubeHoundarchiverefstagsv1.5.3.tar.gz"
-  sha256 "f00f864873475f5b13413575dcf8a3de92c4de65dfdbd0b7d4bc34ad91f58c4f"
+  url "https:github.comDataDogKubeHoundarchiverefstagsv1.6.0.tar.gz"
+  sha256 "d77cdd05de70f4efa32db16f824ffeb04e9ddd6cb9be62e8be95579af3528213"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad229fbd337169f6bcd2fdd46d87f1c36fa6b5a462fed79dc409e8f1508bab81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba7cfa08409ef456cb2d1b051baee6312ff3117c690711614b190fa639678589"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b03288e6617df5beba90ae89372b9726cdb6dae08291667f49116b6a0c1706ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bd9cafe2c74c5fb2276b733b8ee0f4d0515ed8a501401d66eea8e93906ee997"
-    sha256 cellar: :any_skip_relocation, ventura:       "e986c40e993a568fa0c7928f749e6db68f374b7ab7d23d524eca078a25a51ba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae2d8015827c37d85843a20ea50c25fd728227ec9cd38efe417cf88c21428068"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5a7aec6b3ab8071c74eb27613cdb632f79d7c145b5865c1f4537e02e0c7f85a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "442ca990c675846f5f4da0309e2d3251317bd0bc4ea1bad80b93483b8a6e2638"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "598f863b2da3863aa2a88a300fb8bb72017aad2b32666490cda0c14d9d0eec92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05497b4858b6fa67a13414997f47b239a9a500d7191f43c519ff4075b9dc68ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "47a7fbe378a0ea9744654d3981f3906e2d499d225b5c1f954b67012d96d2eb86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25c065f5524e14fdee16fa32785619cdf9f6e9edb1d8e34775138d4ba55ab196"
   end
 
   depends_on "go" => [:build, :test]

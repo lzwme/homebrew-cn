@@ -20,7 +20,7 @@ class Abi3audit < Formula
   depends_on "python@3.13"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "rust" => :build
   end
 

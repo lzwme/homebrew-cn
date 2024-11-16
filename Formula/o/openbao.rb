@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https:openbao.org"
   url "https:github.comopenbaoopenbao.git",
-      tag:      "v2.0.2",
-      revision: "96853bb4de27ab8ffd1b0c2898c691460d43edeb"
+      tag:      "v2.0.3",
+      revision: "a2522eb71d1854f83c7e2e02fdbfc01ae74c3a78"
   license "MPL-2.0"
   head "https:github.comopenbaoopenbao.git", branch: "main"
 
@@ -13,17 +13,16 @@ class Openbao < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dcd3f86dcea6e0cc2be156adddfd60736cc95ba74b44372ff5cd370473a849a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b755adfde26f3c9e7efaf241da78b00b5c7b3cae815f3ea2c591079b745a0a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f05acc1a92bc289eb1f6296ef7d378e3c260ce882815ba4bc8826cea793573d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e47a002aa13ea1f489db2ce634779f303aa3d7bfe737de3184610350238c55bb"
-    sha256 cellar: :any_skip_relocation, ventura:       "4306de08507771cc02ad3bab677ac148b844ddea9c74c757bd8c058d51c980ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695b69e0d426b78233958bd8cb836a457da6787d91e1f0ff6bf821d4ab2fb0e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8302b47beb4fcdf7666f8eed87518721c4253e71122e73d7175c50b5d773e754"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdcab819c2550899884daf12564f0dbe334796ebf1469779a8e70ce7af55c871"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c75a30b1b54dbfabd8864b324225a342aae7c16cfdf38f5b4cb427d157cca59e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16eba9ceb081e26566a9fd7720de29cfd863f386dcc9f19aea9a4769df9047c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "f6cbb98a7790b9ebe32f6ee7a131560b955708a012f33661fb20413cdaad1451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "977ac13ebe95e7ac86b5597516785a73b2e1b47e0f03edea94e1276433d73924"
   end
 
   depends_on "go" => :build
-  depends_on "node" => :build
+  depends_on "node@22" => :build # failed to build with node 23, https:github.comopenbaoopenbaoissues731
   depends_on "yarn" => :build
 
   uses_from_macos "curl" => :test
@@ -31,7 +30,7 @@ class Openbao < Formula
   conflicts_with "bao", because: "both install `bao` binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin" # for npm
+    ENV.prepend_path "PATH", Formula["node@22"].opt_libexec"bin" # for npm
     system "make", "bootstrap", "static-dist", "dev-ui"
     bin.install "binbao"
   end

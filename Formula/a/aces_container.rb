@@ -24,7 +24,7 @@ class AcesContainer < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

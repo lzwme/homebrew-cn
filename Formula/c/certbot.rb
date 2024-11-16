@@ -3,18 +3,18 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https:certbot.eff.org"
-  url "https:files.pythonhosted.orgpackages43882be7d027cd2def0790d29d58a4287d99b261a24e3eaad2e66c7938527a38certbot-3.0.0.tar.gz"
-  sha256 "480014af69ac507c1ff4b892d23159a98d8d2ff3f70aedc3e6e56cf170878f5b"
+  url "https:files.pythonhosted.orgpackagesa709cb6243a1bf761916a24d0cf58b7719f68d8975ba4491916d5ad7ed540e3dcertbot-3.0.1.tar.gz"
+  sha256 "4d573635840bbcc1124a2176e7188e69f6e3210f9ed94e20839547f07caee2b2"
   license "Apache-2.0"
   head "https:github.comcertbotcertbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c1b5976fad48b79c76f64bef77b40d23490f5926c156d950093ddbccd42f052"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c1b5976fad48b79c76f64bef77b40d23490f5926c156d950093ddbccd42f052"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c1b5976fad48b79c76f64bef77b40d23490f5926c156d950093ddbccd42f052"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3f89ff7040ac90ef542ab824e55420bbf887cf974ed6669951df6bbd72bb268c"
-    sha256 cellar: :any_skip_relocation, ventura:       "3f89ff7040ac90ef542ab824e55420bbf887cf974ed6669951df6bbd72bb268c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6a99003dcaef4842ea85ca3e59aff781caea1f9a275a03a62e6d293e05460d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbde13cbcc6e5feef5a2537a72d6c0bcb9e5ddc86a9e8428ac867acac8d9c3b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbde13cbcc6e5feef5a2537a72d6c0bcb9e5ddc86a9e8428ac867acac8d9c3b0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbde13cbcc6e5feef5a2537a72d6c0bcb9e5ddc86a9e8428ac867acac8d9c3b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8bccffd9210ae0b1a801f502bf68c948f9d67361df9c1bb36a505f2e519c502"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8bccffd9210ae0b1a801f502bf68c948f9d67361df9c1bb36a505f2e519c502"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49b11b2966938fcff0616fb123e3382bf82dfee1d50fb8704d4d64d63c5970ab"
   end
 
   depends_on "augeas"
@@ -26,18 +26,18 @@ class Certbot < Formula
   uses_from_macos "libffi"
 
   resource "acme" do
-    url "https:files.pythonhosted.orgpackagesb81b427989e228687c26d3db34a6749ff0ee5d7f8193ada9101e2b04773beab2acme-3.0.0.tar.gz"
-    sha256 "2bb48ad117b4190600e9fb5c372e3b658cd320bc445d5dba493be20db490d9e4"
+    url "https:files.pythonhosted.orgpackages2a34d6d7064afabe02f0043e5015aab664b67fc8bf049e81ac9220526afed3ceacme-3.0.1.tar.gz"
+    sha256 "2f4ae207c8a6791a2bc74cd18d60274766f483c2059145b0142cbb43e761331c"
   end
 
   resource "certbot-apache" do
-    url "https:files.pythonhosted.orgpackages5a397aa29a5864c590169ed4670265680fd92d889df9a14287999119f2792d6ccertbot_apache-3.0.0.tar.gz"
-    sha256 "91c4db4364456310cf1e8cb4a196513543bf7f5407b0c74a922f4cb272f83ca1"
+    url "https:files.pythonhosted.orgpackagesbca0e156803d229c63c317442d1a23f6218201971fa2f41261e5fa3e13b64cbbcertbot_apache-3.0.1.tar.gz"
+    sha256 "83af7dfc1bff6149e810426038bb81ad2b8b4261b3d8b969c8be8321fba24df4"
   end
 
   resource "certbot-nginx" do
-    url "https:files.pythonhosted.orgpackages7554abdd7c437ebca58dfb2df9612ea23714b70602dccd7ac4a9e67f27572d57certbot_nginx-3.0.0.tar.gz"
-    sha256 "616159cc17b0de158a7af6ee6ee9d601f91dbff94390daf4e1bd2e38511d3a3a"
+    url "https:files.pythonhosted.orgpackages2ffedd474bb102881362703de7cb3b00c5fb147f8de1eb72a52542e63e89fb78certbot_nginx-3.0.1.tar.gz"
+    sha256 "2507fdfb3401ba58b24bac9c3722b4e1641ec100e5b21fde0c518b2c77c6647b"
   end
 
   resource "charset-normalizer" do
@@ -106,8 +106,8 @@ class Certbot < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
+    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "urllib3" do

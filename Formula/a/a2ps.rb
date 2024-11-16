@@ -17,18 +17,18 @@ class A2ps < Formula
     sha256 x86_64_linux:   "6df41a07d6bd52713e700a83a2994c5955b305ee068b73c50e4786cbb8213dae"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "libpaper"
   uses_from_macos "gperf"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--with-lispdir=#{elisp}",
                           "--with-packager=#{tap.user}",
                           "--with-packager-version=#{pkg_version}",
-                          "--with-packager-bug-reports=#{tap.issues_url}"
+                          "--with-packager-bug-reports=#{tap.issues_url}",
+                          *std_configure_args
     system "make", "install"
     inreplace etc/"a2ps.cfg", prefix, opt_prefix
   end

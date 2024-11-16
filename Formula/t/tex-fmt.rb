@@ -1,18 +1,18 @@
 class TexFmt < Formula
   desc "Extremely fast LaTeX formatter written in Rust"
   homepage "https:github.comWGUNDERWOODtex-fmt"
-  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.4.6.tar.gz"
-  sha256 "2b7c7f6759007fa0671b9e324b089f5fd70fe6ffdb63388152681217db44b2ae"
+  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.4.7.tar.gz"
+  sha256 "3259a5ee9211753787e894c10313541108149285e7eba27f8281886bb14b5c79"
   license "MIT"
   head "https:github.comWGUNDERWOODtex-fmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb34c52677db7fb7550f8b1fb8f7929ce3ebe878ae7c40a908910b2dce0a22b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b36a877d20a23d3dd125687249b2443b849e2cc861a4a6a252d54a46995e9555"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8e0e09eec157e097b59f92a843dbaca6d5c4cc00c2276b807b512aa43df8ee5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a42d1a3e86e57004e02099dc83cfe34cb7855025cf662b35b97ddac1ea29ab7"
-    sha256 cellar: :any_skip_relocation, ventura:       "02302e6fbe21bb550ac45a4d0bec1be3f4eff0b2427ccd907d9a48e88d55c733"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8bf49bdec450809a5ecebbae8a78f73c629dd77f8fd101757d3a52b2305a4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0636bf40ec68b03b914d0dd4115a8230f6ffd1d3b6495cb19ce3dc304ca9ecc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5afc92da72d274f39bd1684150acea5a6000ad632b1234605cda190b5cff7a43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cf0767c4734a75ce5372f7cda16960d9ed983d9a34c33d1812fc41ada68424c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "236d4385a0656b16fe0fcb2e0ba8f6dec2833c89554c2e00a692a76d93b03965"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8e1949a1da55a773b52cb1bd0d7454a9a09147c668438f12ff1e70c485a72b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9064b7e146abadfcff4001160ec5b4fb2c97a83d18007fa2afc0b07bc341afa7"
   end
 
   depends_on "rust" => :build
@@ -34,7 +34,7 @@ class TexFmt < Formula
       \\end{document}
     TEX
 
-    assert_equal <<~TEX, shell_output("#{bin}tex-fmt --print #{testpath}test.tex").chomp
+    assert_equal <<~TEX, shell_output("#{bin}tex-fmt --print #{testpath}test.tex")
       \\documentclass{article}
       \\title{tex-fmt Homebrew Test}
       \\begin{document}

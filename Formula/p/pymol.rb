@@ -9,15 +9,13 @@ class Pymol < Formula
   head "https:github.comschrodingerpymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "74f27308354b79dd6fa37f983f45de35c1fe35331e3da135c8304279c2946902"
-    sha256 cellar: :any,                 arm64_sonoma:   "d903427e21c3999f8801d4ab41bc6840a36a7f08214b93a9ecb161e5e3530daf"
-    sha256 cellar: :any,                 arm64_ventura:  "176d90f7f194ad152a51f3294dae1be6fc21ed32ab9013e6222668412e111186"
-    sha256 cellar: :any,                 arm64_monterey: "a9e0d72ca12accc15f1492b44ae2cd9dbfdcc2ffb1219a1753b7a0041be20ef2"
-    sha256 cellar: :any,                 sonoma:         "b91f3f4f7d28396a36553f188490cbefbfad5698b4c738d83e9f4ef08869c3cd"
-    sha256 cellar: :any,                 ventura:        "25c91b0d4e9397f6cb5c5a8d4c9164415962190858e4fb4df5c97f44d980b323"
-    sha256 cellar: :any,                 monterey:       "a93c70898ff78ab423c6c0b11c49ff100f9c9c87305b5682be88f13baadc5a3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ddc563e11f73e16b179d3355f674456c470427397e07bf1f6d1144a0e96565"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "904c051cb45e268db9779fdad63d78be5fdf06e9e27b232226539ea1b705a456"
+    sha256 cellar: :any,                 arm64_sonoma:  "8833b94cf1eeac4270c8493a45cf7834f8f504d2fa7035797eff676aa82848b8"
+    sha256 cellar: :any,                 arm64_ventura: "a36682e5f1db804e7c5b4b2f2a9e62d555e9651b25b3c3afe5d62f0f7af7c6c1"
+    sha256 cellar: :any,                 sonoma:        "a92d1debd4a4c78fe3d71e3ea29c4a074e8be8d06178b61b306521d31cdb1fbc"
+    sha256 cellar: :any,                 ventura:       "b32a2ef527361c088669ed0dacccc16c25b0040a3f54613337ecc3ea58603f77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "233778acd8b74666d8b104390355f5657b47dd87007ee2c13a2b83710cecd4dd"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +29,7 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2"
 
@@ -67,7 +65,7 @@ class Pymol < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install

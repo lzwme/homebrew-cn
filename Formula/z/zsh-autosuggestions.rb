@@ -1,13 +1,12 @@
 class ZshAutosuggestions < Formula
   desc "Fish-like fastunobtrusive autosuggestions for zsh"
   homepage "https:github.comzsh-userszsh-autosuggestions"
-  url "https:github.comzsh-userszsh-autosuggestionsarchiverefstagsv0.7.0.tar.gz"
-  sha256 "ccd97fe9d7250b634683c651ef8a2fe3513ea917d1b491e8696a2a352b714f08"
+  url "https:github.comzsh-userszsh-autosuggestionsarchiverefstagsv0.7.1.tar.gz"
+  sha256 "0df7affff21cd87ed298e6a3970ed08a1dd66a6efa676454ee5b091ad503badf"
   license "MIT"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "56550795abab132ef15f7dd1ec2632e0db3a87c3234c0db5ce6d17f03137b7f4"
+    sha256 cellar: :any_skip_relocation, all: "b81edc29e7e71866042bb3e06be7c23ce5501b6cd72be6cd5f3fdfd14b311c71"
   end
 
   uses_from_macos "zsh" => :test

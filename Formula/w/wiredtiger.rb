@@ -1,8 +1,8 @@
 class Wiredtiger < Formula
   desc "High performance NoSQL extensible platform for data management"
   homepage "https:source.wiredtiger.com"
-  url "https:github.comwiredtigerwiredtigerarchiverefstags11.2.0.tar.gz"
-  sha256 "90d1392a9b10dae5bda02d476cb3204331dcf94b3e47ce5e2ab4d4d9b4dd198c"
+  url "https:github.comwiredtigerwiredtigerarchiverefstags11.3.1.tar.gz"
+  sha256 "ac0417c10cecc686baff5fdc00a7872003fc007993163bafba387fad903d5091"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -11,14 +11,12 @@ class Wiredtiger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e7f3509ad95e4eb2a1d81ce017407033273919dd1f6be6c4c84e94562f964afe"
-    sha256 cellar: :any,                 arm64_sonoma:   "e197fa1445bd63c676205773ce8e923ddd41710fdf9538f71ba17607630254eb"
-    sha256 cellar: :any,                 arm64_ventura:  "85bcc6b06e613f65e191e0a7d62a0f7f270b20c56cbff82f3ece7b7c12f3a2cd"
-    sha256 cellar: :any,                 arm64_monterey: "56d763ad1949f872340d073ffee0a856bb93b36c95cf4677efece640d276b59b"
-    sha256 cellar: :any,                 sonoma:         "b1a0251185e768cfe22c5a18d16315e2323224b23c06dd8c0a2c5f53ed913d9c"
-    sha256 cellar: :any,                 ventura:        "800a9c02a36cf7896635424ea417cb284bdff6374a001d5f25889c01c7184130"
-    sha256 cellar: :any,                 monterey:       "0a0e6b9bbecd6fd7dfc3f8b733034c4c9be1da777dbd03cf2a8999bcefb6a715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aaf52d23a2472908928ddb309d4f7aa08143e57a178c698805ca1dd3a00bdc9"
+    sha256 cellar: :any,                 arm64_sequoia: "fe94103be40ac4d1f2030cf28f3bd93dda5f65f45196884e18e21dc48825a502"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f46b39b9ad85313b1cbcb81e9b86204a15a017b859bbbafac05094a994a5284"
+    sha256 cellar: :any,                 arm64_ventura: "0333748feb3a4d7939b945a6e24dda5a73f7a9fcc7497e21b8af17ce6197e666"
+    sha256 cellar: :any,                 sonoma:        "2c6472b714776076789ecdab468016f3c4b25ebcd84695ca70a67d463537c4a6"
+    sha256 cellar: :any,                 ventura:       "4085e3bbb32627b3dac06760f86dfb6e28a7d580dfa9cbeaab94a3126a4f11da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "100e4051caa78dbd63c57f3e0a3be5f0272676e187c191d040068cbaf5c67aa4"
   end
 
   depends_on "ccache" => :build

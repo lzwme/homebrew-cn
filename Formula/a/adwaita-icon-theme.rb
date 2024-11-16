@@ -12,7 +12,7 @@ class AdwaitaIconTheme < Formula
   depends_on "gtk4" => :build # for gtk4-update-icon-cache
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librsvg"
 
   def install

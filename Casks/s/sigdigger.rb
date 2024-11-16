@@ -17,6 +17,11 @@ cask "sigdigger" do
 
   app "SigDigger.app"
 
+  zap trash: [
+    "~LibraryPreferencesorg.actinid.SigDigger.plist",
+    "~LibrarySaved Application Stateorg.actinid.SigDigger.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

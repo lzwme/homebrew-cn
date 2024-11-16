@@ -19,12 +19,12 @@ class Afsctool < Formula
 
   depends_on "cmake" => :build
   depends_on "google-sparsehash" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on :macos
 
   resource "lzfse" do
     url "https:github.comlzfselzfse.git",
-      revision: "e634ca58b4821d9f3d560cdc6df5dec02ffc93fd"
+        revision: "e634ca58b4821d9f3d560cdc6df5dec02ffc93fd"
   end
 
   def install

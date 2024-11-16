@@ -34,7 +34,7 @@ class Adplug < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libbinio"
 
   on_system :linux, macos: :ventura_or_newer do
@@ -47,10 +47,8 @@ class Adplug < Formula
   end
 
   def install
-    system "autoreconf", "-ivf" if build.head?
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

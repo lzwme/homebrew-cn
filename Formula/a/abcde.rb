@@ -28,7 +28,7 @@ class Abcde < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "93e3d734fe73f1ca3edeab8e4f25794a28acbdde6df9f3ffd7d01b2e16ce31a2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cdrtools"
   depends_on "eye-d3"

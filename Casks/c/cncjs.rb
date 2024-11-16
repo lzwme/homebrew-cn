@@ -19,4 +19,11 @@ cask "cncjs" do
   depends_on macos: ">= :high_sierra"
 
   app "CNCjs.app"
+
+  zap trash: [
+    "~.cncjs-sessions",
+    "~LibraryApplication SupportCNCjs",
+    "~LibraryPreferencesorg.cncjs.plist",
+    "~LibrarySaved Application Stateorg.cncjs.savedState",
+  ]
 end
