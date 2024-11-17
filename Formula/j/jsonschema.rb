@@ -21,7 +21,7 @@ class Jsonschema < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5d9adbaab5f963722b4da057ae1524bb48c5c7d5f4f1cf2a214c969d6160598"
   end
 
-  disable! date: "2024-01-21", because: "is deprecated as a CLI and succeeded by `check-jsonschema`"
+  disable! date: "2024-01-21", because: "is deprecated upstream as a CLI", replacement: "check-jsonschema"
 
   depends_on "python@3.11"
 

@@ -1,20 +1,18 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
   homepage "https:github.comkarlstavcava"
-  url "https:github.comkarlstavcavaarchiverefstags0.10.2.tar.gz"
-  sha256 "853ee78729ed3501d0cdf9c1947967ad3bfe6526d66a029b4ddf9adaa6334d4f"
+  url "https:github.comkarlstavcavaarchiverefstags0.10.3.tar.gz"
+  sha256 "bf822ac18ae0ca2cf926c2875f3221591960c25f2bcab89ea19729be4b9c3663"
   license "MIT"
   head "https:github.comkarlstavcava.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "6b7abdbd2b00942957380ca8770ebeb2eda39dda4ff6238afea4a46e47c45920"
-    sha256 cellar: :any, arm64_sonoma:   "aa62a4d58c42b5b95be8d6f996728308730bb70eaabc4d0bf26f2599fe23e2c7"
-    sha256 cellar: :any, arm64_ventura:  "480f4fb722f970d56afd1d626df91d276f0b6d8c762c53436f835dfbf8bb4df5"
-    sha256 cellar: :any, arm64_monterey: "498ee144ce314d844962eef7df12b139aa5fab106dc20b6437e2ca1346bfc4a3"
-    sha256 cellar: :any, sonoma:         "70e9e1476a708fe482f568f9b2f621b17eb76437e390c2ac2eaf7dc233f62edc"
-    sha256 cellar: :any, ventura:        "9fad2eb551ddb104fca1a0de695586bafdd598a0189dd00156955f704d1b6921"
-    sha256 cellar: :any, monterey:       "80f5dde55a22dc3e162f11f0131ed4829158f5f748c466dbed34adcf304ce8fc"
-    sha256               x86_64_linux:   "9d951035501e2b9a741d8b470119a9a3223e2a361161996a4f82322664002f8b"
+    sha256 cellar: :any, arm64_sequoia: "542e3b1a6e1afc56696d15da1e7687dad07172b86b8bfc490225a6187efe0ede"
+    sha256 cellar: :any, arm64_sonoma:  "13aded048f357625802864e2067ccdbf358bfc334c041d055c06cdb691f67463"
+    sha256 cellar: :any, arm64_ventura: "69f94af1c238347ce18b1c7c5c2d2c91290fbbb6f2c8db2fcfa62b6bb371757e"
+    sha256 cellar: :any, sonoma:        "3797dfa8b39311aac363f40d6dfb8b1d5154def13f6b99279f128492ba36e1d3"
+    sha256 cellar: :any, ventura:       "f2a6956deb87d8920b59dd98a739c89d00c93eed8f7b4ed7276199710d1e093f"
+    sha256               x86_64_linux:  "a9f74b99e1f3fa902de09d21c022681cce3a9e90af4aa6ee1dd1e5f0dcc6506c"
   end
 
   depends_on "autoconf" => :build
@@ -68,7 +66,7 @@ class Cava < Formula
 
     pid = spawn(bin"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
 
-    sleep 2
+    sleep 5
 
     assert_match "0;0;\n", cava_stdout.read
   ensure

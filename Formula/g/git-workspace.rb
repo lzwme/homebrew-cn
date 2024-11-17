@@ -1,17 +1,17 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https:github.comorfgit-workspace"
-  url "https:github.comorfgit-workspacearchiverefstagsv1.7.0.tar.gz"
-  sha256 "547ccd48bedab03f0439920be12c37cb02f837e27cba3a0fa5166dfc34199274"
+  url "https:github.comorfgit-workspacearchiverefstagsv1.8.0.tar.gz"
+  sha256 "b6499b70362730dbe1674fd07bd9aefef0bcd45ba4504ed0cce62ef2c7ecad1f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a664c2005258367b604d7fb31a80f8f9dfaf5ccd2b9d32f8226868aeadcdba37"
-    sha256 cellar: :any,                 arm64_sonoma:  "6efe100bc02d6fe50e9a4834522d3f2e7f13d5778142a6f56a524dccf70067c3"
-    sha256 cellar: :any,                 arm64_ventura: "158b62a573be88e82afc5f05426ae29e2d5c4bb9e72a55438905238ea9aaf145"
-    sha256 cellar: :any,                 sonoma:        "9d7da5c7c03137653583c077700e0b7bfc05abcfcf9be1c9e01f6bbd30d2d63a"
-    sha256 cellar: :any,                 ventura:       "05db764547caa9d0bc19b2e2f843fad408ca6d03b9d326f02bceffc2288be8d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "084cfd8dd58e7b636cb63a7d5ece84846e596277a76bda14ed6b7736ef765315"
+    sha256 cellar: :any,                 arm64_sequoia: "6a4fe8611f58904c04941f7d24f0c05690e94a530e1a5c6a65e1b66ea17a63c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4cbcd08c8721d9d57b484e83370207dd7d624625b3fe3fe2f3b3a032ef57e602"
+    sha256 cellar: :any,                 arm64_ventura: "2238606be70e0cda69f2b1385151a603da2b4cb09d5d5596801bd297e78d809e"
+    sha256 cellar: :any,                 sonoma:        "24d8208eaa671dc162bad95db12f51ed4a33e8ba47f0f5d734e292d97d43f1c1"
+    sha256 cellar: :any,                 ventura:       "09b7800f722e02bbee6a0d894b06a88ebd8a7b1606532c7c922b285b5dab0dca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac36464fd5fef9aa5c473173281b4a73ded57c21a6fc8595742a1b6a6a539e7"
   end
 
   depends_on "pkg-config" => :build

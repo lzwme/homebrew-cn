@@ -1,20 +1,18 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
   homepage "https:uncrustify.sourceforge.net"
-  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.79.0.tar.gz"
-  sha256 "e7afaeabf636b7f0ce4e3e9747b95f7bd939613a8db49579755dddf44fedca5f"
+  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.80.0.tar.gz"
+  sha256 "8df1a4fb9aeb6c59d21fd328bb8fd34be7a11aef24310636df5cadca0900c729"
   license "GPL-2.0-or-later"
   head "https:github.comuncrustifyuncrustify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd6c01e2ea7eb4cb327cf01fe9dd248d60f37846545927453c333cda5554f67d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bffdfbf17b6eb0c781fa7141fb02e92b0a601cd4ceac35cc356d9cdd26dc2636"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c16c1efe048bee421a9d20ca62ddcb1a133f6ae48d5461e714607f6b9280a2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b24f7b0cb08ca53782bc8882cac2272c8eb9609d2079c7d8ecc01babae05583f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b3d5e126a00e64024c28b2ebe1f05a1b7e38da32912a0fa0834c268ea6edfbb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "0203cc842a538476e70a96c0f566c604e6ff0aed05fc6f09e7f3fc1d3109b760"
-    sha256 cellar: :any_skip_relocation, monterey:       "4018e748acd7ed470ab1090d85307f63d5638b18fbfdf9ba3eff822c303b0c59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3a5450c682fb4a635b43c6b6479ef572029cc7933cc3b2dbb08c8f3a51c6c45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f0a849b0298e6e686a8977a3435af8f7364fa5b5a8e46cdd5919682935f1eab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8c5c7b53f48d9ee3fe209d091c176820d206101e466daab49d1720722bbbd2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26f5ad867e2ec12ba0afe4f08ccd17aec03e027a14bdcb417148cf6a26ee84e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e32b638090c9faebaee42b300032d46fef42f2914fba7b31c4aede3711d73f2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c6153d632bb84b834863b881f9025a18c420dcf644badd34428333fe3602689c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a59613a7c4325389e8d369099c5d908fd5cb3716fd51dbc160ec91f6eae666e9"
   end
 
   depends_on "cmake" => :build
@@ -37,8 +35,7 @@ class Uncrustify < Formula
     expected = <<~C
       #include <stdio.h>
       int main(void) {
-      \treturn 0;
-      }
+      \treturn 0;}
     C
 
     system bin"uncrustify", "-c", doc"htdocsdefault.cfg", "t.c"

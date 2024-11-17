@@ -11,19 +11,19 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a416ceb547e428f6fa7ba55c1f955889504dc92ad62ad0c23d3e52c0aca4dff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827a14dab71af9ca068ebe22e3e5a8cefb87f3f69f93011d9e9c4feb36d054b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10a1a47517183e7b2e92f45dffae7142b261332a2a187c37677690684d69c30a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ada587bb34d56e564ad457584c1e100ae5b505dc16d79e9e22840353106234ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "17bb1834271dbed6588418961a23891cd2682b3f717bb1d82157dbaf87fc4519"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2e167df3de25498aca9b287f2880d99a0b20de5e2710166063a8dd4ad5912f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "407d8f5515eeb0c443c72ee65936ce362560b62d50787a098d4ace42cab7b356"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d19c4646703cf96b1fabbc25dd0c9b28fcb5f448f6362b8411df884191f51df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26a3fcb3f14649a6e9532a6d6944e1ec251e6146438f638795d52b264c12e4af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac92285ab2996d0a377cfc6b307ad84a3f34208760bb8301ddee62626e7d9859"
+    sha256 cellar: :any_skip_relocation, ventura:       "142c5fcdf46f3c0a6d30ed428a4d605bb0dba236eee5efc25e8ca9a43097ef43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "552aa9660900fe06d884d14ce7cd9b6389f7d4535f7f039a52cc5450477d23bf"
   end
 
   depends_on "cmake" => :build
-  depends_on "lld" => [:build, :test]
   depends_on "wasi-libc" => [:build, :test]
-  depends_on "wasm-component-ld" => [:build, :test]
+  depends_on "lld" => :test
+  depends_on "wasm-component-ld" => :test
   depends_on "wasmtime" => :test
   depends_on "llvm"
 
@@ -55,6 +55,7 @@ class WasiRuntimes < Formula
       -DCMAKE_C_COMPILER_WORKS=ON
       -DCMAKE_CXX_COMPILER_WORKS=ON
       -DCMAKE_SYSROOT=#{wasi_libc.opt_share}wasi-sysroot
+      -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY
       -DCMAKE_FIND_FRAMEWORK=NEVER
       -DCMAKE_VERBOSE_MAKEFILE=ON
       -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{HOMEBREW_LIBRARY_PATH}cmaketrap_fetchcontent_provider.cmake

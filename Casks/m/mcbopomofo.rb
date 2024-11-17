@@ -11,4 +11,6 @@ cask "mcbopomofo" do
   installer manual: "McBopomofoInstaller.app"
 
   uninstall delete: "~LibraryInput MethodsMcBopomofo.app"
+
+  zap trash: "~LibrarySaved Application Stateorg.openvanilla.McBopomofo.McBopomofoInstaller.savedState"
 end

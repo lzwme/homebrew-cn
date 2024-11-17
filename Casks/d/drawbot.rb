@@ -10,6 +10,12 @@ cask "drawbot" do
 
   app "DrawBot.app"
 
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.drawbot.sfl*",
+    "~LibraryPreferencescom.drawbot.plist",
+    "~LibrarySaved Application Statecom.drawbot.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

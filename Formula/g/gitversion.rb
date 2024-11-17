@@ -1,23 +1,22 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https:gitversion.net"
-  url "https:github.comGitToolsGitVersionarchiverefstags6.0.4.tar.gz"
-  sha256 "766dc4f7b79a9caa344f2a32ecaabd559346a6a7d74ce1340735ab7a8a2582d0"
+  url "https:github.comGitToolsGitVersionarchiverefstags6.0.5.tar.gz"
+  sha256 "621b46427db8947fa9a2ff04d0fcc4d00d0dd0ce05e248eb8d7bbc18e4ba29a7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1dda0d82f91e723ea70609c458d83b9b9bb7b3982e8d52b7aea5e1cf35714b38"
-    sha256 cellar: :any,                 arm64_sonoma:  "56e13ee7c213f32fe8c3388c6e70c6fb2cbd9a9149585d98cd843da4de8d5d10"
-    sha256 cellar: :any,                 arm64_ventura: "b6408b94f75edc80f8952fa1cc3105d42e3cafb9ff8de81ff7909c55358a993f"
-    sha256 cellar: :any,                 sonoma:        "0ef11d130e0b4a431279f245fb3972e17480c3c9de34a3a4ca086477577aa68c"
-    sha256 cellar: :any,                 ventura:       "3d9efd399a978d43eddc6d66a34946a838171afc16f5da7ded0848fdaa38b018"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0c376d77a35462b2a2f8071b9b766f64e41b3788339fc0dbf64224c3b45f4d3"
+    sha256 cellar: :any,                 arm64_sequoia: "fae232c086ea1d8c37f1b3984ad05064278e79adc156825985aa6fe8c2523a2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa322c23f444e8dff137177a50559760c9d4f062bc5fc1b8610f67f5149b9842"
+    sha256 cellar: :any,                 arm64_ventura: "8b49968692aef48626c8dd70abf01204cd9246577ffc12b6e9e766234fac3464"
+    sha256 cellar: :any,                 ventura:       "bf1f9c7685da72147892bb11d1ac14e4167ffe2edb9abe9a41fa77cb1eeb9665"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc5389bd40a2e8e7ca02acb9704b5ec0d69b51421939baee10b53e48a1f6be7f"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@8"
 
   def install
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@8"]
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 

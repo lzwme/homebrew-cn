@@ -11,6 +11,12 @@ cask "electorrent" do
 
   app "Electorrent.app"
 
+  zap trash: [
+    "~LibraryApplication SupportElectorrent",
+    "~LibraryPreferencescom.github.tympanix.Electorrent.plist",
+    "~LibrarySaved Application Statecom.github.tympanix.Electorrent.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

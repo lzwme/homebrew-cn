@@ -1,18 +1,18 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
   homepage "https:github.comipfsipget"
-  url "https:github.comipfsipgetarchiverefstagsv0.11.0.tar.gz"
-  sha256 "b0ee2198cbaa0b68626eac9a77f8e63efa033fcdc90af79cf7d4500e88daad14"
+  url "https:github.comipfsipgetarchiverefstagsv0.11.1.tar.gz"
+  sha256 "3dd56e9243ab59383d206c2b374980cc987c016a391976dd9dcf5bff33a96f35"
   license "MIT"
   head "https:github.comipfsipget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a8488bf496b10eb52dfb7cc75a8f013d97f9bff841a54ac7572a5da969b88e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e1e44e31731336f3b8833ea24a5847dd19d136f2bc8b59e0421ff5583024b21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ec21db435018020b6e76f77565bcc01dc6fa416c08bbd844a45639e99fe3044"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9c3bc4d15edbf857e849cd59dc0438f8e59b88c84338b9e53ea754681d56b5b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c6030d43c74ffd804c434db3d3bda8b4fab47a4a119d4a5c7e91f5fc59a5463e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e20411b76204d12a1a7b66d49781157fbd950a8720abeecdc9ac69cb0e00088"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8ae441fecd189ca058e76d0acfb30e93a2fa8a04beffdaa27b1780d3f0ba34b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d963166f966424517640b342f72019fd6d1f5d7721a508f60d3841f512ded3d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e5a57ab51fe284bb42595846d991d16f16c9af8b9edc1ca59a8d4601abc2ffa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f918f9a023d8f9259c75ed408752e6a0cfe660806ec2e9aef326ebaf19ac199f"
+    sha256 cellar: :any_skip_relocation, ventura:       "f5725f63532333b6729f26664512984c4e2914358344894c6c9cfe8fabf81245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "304bebe13417bc89ee71aab782f6f528824b4fd3dae6d8bf6a01540b2e11832c"
   end
 
   depends_on "go" => :build

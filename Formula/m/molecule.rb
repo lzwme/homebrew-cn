@@ -9,12 +9,13 @@ class Molecule < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1e8e23d3f5d01aad9fe372f1cadafbcd8465f96304328a925524b58fabfaa33e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b2d5ce0f7f2bf7547b4a1370277ed7687606d48a4b25589f1e3309f3afc7ff1"
-    sha256 cellar: :any,                 arm64_ventura: "f61f513562f615f5c21f12fe1f56ec36553e3943509cd5b748f4ffb150aa1771"
-    sha256 cellar: :any,                 sonoma:        "c660aaab3fd5b18cf5a427c36988030ecca7ed41d0a2b91b1578b9f7d1063a57"
-    sha256 cellar: :any,                 ventura:       "8991c06035b98b42e99310924553e0df22043382d15f7e1bde79deb3528df199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4efe48d7c398e9cd1843796fe926030b99d82254f51a34052f2715aa3df5cd1a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "874921042a8c0743c2412f9ff1f479e4fa5ac021703baf0319e13482d41df011"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b4687a03ffa1335e56a94c051edea0f27309d55672223e3ffafff0d7153fdd6"
+    sha256 cellar: :any,                 arm64_ventura: "5164f3eadfc1ab58d880b014829940343f377c727bac43f245adea51bbf2775b"
+    sha256 cellar: :any,                 sonoma:        "0265b9667b9e9eaa6f30196b5430c9cc39c2677d39ff7f2512f53b5a437e5047"
+    sha256 cellar: :any,                 ventura:       "f18177cc0990b3c89ba5b4b7ffb1b7efeea1c4d2f5a5c658a4b4ede523359fdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74d04cfcfb3d429878c9c4696d81358da06f4e2bf1a87ced38e42d6e43792bb1"
   end
 
   depends_on "rust" => :build
@@ -22,7 +23,7 @@ class Molecule < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libffi"
 
@@ -206,7 +207,7 @@ class Molecule < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

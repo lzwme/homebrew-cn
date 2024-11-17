@@ -4,9 +4,12 @@ cask "objektiv" do
 
   url "https:github.comnthloopObjektivreleasesdownloadv#{version}Objektiv.zip"
   name "Objektiv"
+  desc "Browser switcher utility"
   homepage "https:github.comnthloopObjektiv"
 
   app "Objektiv.app"
+
+  zap trash: "~LibraryPreferencescom.nthloop.Objektiv.plist"
 
   caveats do
     requires_rosetta

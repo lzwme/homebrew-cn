@@ -5,9 +5,17 @@ cask "powder-player" do
   url "https:github.comjarubaPowderPlayerreleasesdownloadv#{version}PowderPlayer_v#{version}.dmg",
       verified: "github.comjarubaPowderPlayer"
   name "Powder Player"
+  desc "Torrent client and streaming media player"
   homepage "https:powder.media"
 
   app "Powder Player.app"
+
+  zap trash: [
+    "~LibraryApplication SupportPowder-Player",
+    "~LibraryCachesPowder-Player",
+    "~LibraryPreferencesmedia.powder.player.plist",
+    "~LibrarySaved Application Statemedia.powder.player.savedState",
+  ]
 
   caveats do
     requires_rosetta

@@ -7,31 +7,35 @@ class Marksman < Formula
   head "https:github.comartempyanykhmarksman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d41cd9570edf1216e05c5b1b9c24e53245e5d8f62eff01af041ba9dc13e74130"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45f594a715a7c80886deb22d7cd75de2abb8742667ece6cd77a6c93b272b4cb1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9d3428560916765a1551be5e6c8b3fdb3a4141c686f876220aa06d3e2d3f9e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "079b494392db99c537d82d5ac970289101ce6cc4522342957c8e001f06ddf4a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c03ecf16e58b03c2917fea6285d0781b791948795b12b872a35a6b131cbeb53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c076fc10cfc0eed8b3cb367ca3736b9483c3af515733ac8125309eead36c15bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91742130129cda2d4af22130ecadba1c607521a57e97b3cef6533e6b5a760184"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2df0f1701aed534d6611f4b2cc70af65cabfefc14d9139ae49d26223da11cb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc21bbe15887f9e92c8b07cb10ce2a419cf85d3ae99f89f9932cb0cb152de1de"
+    sha256 cellar: :any_skip_relocation, ventura:       "afbc97b611b2651eef931c4979b662f5bfc5b207db95e9601732b871489de782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6c4ba93d8946408b3963f273c424e2eff140c06d74ea8178635a6c45237185e"
   end
 
-  depends_on "dotnet" => :build
+  depends_on "dotnet@8"
 
   uses_from_macos "zlib"
 
   def install
-    bin.mkdir
-
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
-    # by default it uses `git describe` to acquire a version suffix, for details
-    # see the GitHub pull request [1], the resulting version would for example
-    # be `1.0.0-<version>`
-    #
-    # [1]: https:github.comartempyanykhmarksmanpull125
-    ENV.deparallelize do
-      system "make", "VERSIONSTRING=#{version}", "DEST=#{bin}", "publishTo"
-    end
+    dotnet = Formula["dotnet@8"]
+    args = %W[
+      --configuration Release
+      --framework net#{dotnet.version.major_minor}
+      --no-self-contained
+      --output #{libexec}
+      --use-current-runtime
+      -p:PublishSingleFile=true
+      -p:DebugType=embedded
+    ]
+    args << "-p:VersionString=#{version}" if build.stable?
+
+    system "dotnet", "publish", "MarksmanMarksman.fsproj", *args
+    (bin"marksman").write_env_script libexec"marksman", DOTNET_ROOT: dotnet.opt_libexec
   end
 
   test do

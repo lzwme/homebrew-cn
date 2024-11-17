@@ -1,8 +1,8 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-14.0.3.tar.xz"
-  sha256 "ebd6215eeb01ee412fed078c8a9f7f87d4e1f6187ebcdc1bc09f46095a4f4003"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-14.2.0.tar.xz"
+  sha256 "1b5f7e39b05e4651bedb57344d60b9b1f9aa17354f06c0e34eac94496badd884"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cd8f2a9238f2ed1342f90bcaccfa16be257195b00afcfe00ad163c5db96af4f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "5494509545562e10b3f4b73968e4c6558957111fabcec58311976d97c8e8534a"
-    sha256 cellar: :any,                 arm64_ventura: "b18f008d3e59c702a17b9850d7e129413646815b2f23cab69663ac86d87b07dc"
-    sha256 cellar: :any,                 sonoma:        "a5d309d87feb8a4516be371207087695d4049f640fd06e8255f759d6ac24af99"
-    sha256 cellar: :any,                 ventura:       "5fd2bbac3110aa5f68f6bc12a5b70f5762bfd58b70fd4db1844c42957b67fff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cc65a1a732d92d576baa12ac1267cc08df1a93f78eb6cb23683c68d6c450f59"
+    sha256 cellar: :any,                 arm64_sequoia: "bcf12ed568ca7223d633382d34a18e8be0070dd5854dda53d5a9f6a3eb63db00"
+    sha256 cellar: :any,                 arm64_sonoma:  "f05078b9af2241accc0ee1f803115d2cdc6ce9c7d3bc9fb63690bd5f6da0c26b"
+    sha256 cellar: :any,                 arm64_ventura: "11c9c7b8713c369d272abe888a93be6e1bbfc244423a4fc313fdcfdc937cab36"
+    sha256 cellar: :any,                 sonoma:        "89bc926056f4ac31dcad51fd90eaa371404b0ba01c911764941fc2889f78a369"
+    sha256 cellar: :any,                 ventura:       "ab0331eff19478c95a8a95c0d10040cd4425189101aa1e4f9cc7960a18e17fdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d6c2614c5c0b65aa1a5d11467dcc48e770e6bb2bfde4a376b1338d74ba39e04"
   end
 
   depends_on "cmake" => :build

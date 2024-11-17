@@ -1,8 +1,8 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https:github.comorfgping"
-  url "https:github.comorfgpingarchiverefstagsgping-v1.17.3.tar.gz"
-  sha256 "bed3e1d46c2311ae15cad114700458a138e7d29fd45322cb9dd2c1108eb5a68e"
+  url "https:github.comorfgpingarchiverefstagsgping-v1.18.0.tar.gz"
+  sha256 "a76e09619831c0f2bb95f505a92c1332de89c3c43383b4d832a69afcb0fafd4c"
   license "MIT"
   head "https:github.comorfgping.git", branch: "master"
 
@@ -16,14 +16,12 @@ class Gping < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e8b08ac653ce93370c85ac653ec29740ff21eb5749e412b1d942f7acee8054b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6eb418ec57e33d1bfcfda69a0738e5e164de6a1d197849dbde6da4c63756d91"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f959a7aa732520112d44a85bc11012239ceb3e275a8dcf46ecc19b464caf5e0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b48ca5b370e8eb0f569d4f21e6663da95d2a0de3ed734a3e8b1e3177d258590"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9aa68b0f94c94e6427408eb1f1f529ffcb834a03d89b6d903e252be94b53a886"
-    sha256 cellar: :any_skip_relocation, ventura:        "de2141acb5076142902729d31b6e61355cb881c31a4d5a66f2865436f70a3788"
-    sha256 cellar: :any_skip_relocation, monterey:       "fec4f74efb785001b2c963521c08112ad4f783aab0f1c2aeb9cfb00371577bf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4bb666c77ecb5e01cb365cef6e6064f75c136bebb4aa0a9786893dc9a9edc28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d5997b1f711f810ad7ac906979aa8e30935fec0d5be6928709803d6ed1e6927"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66ca9e13796783e00217ecb9df7b16577882d7908f2ad2e17e4d79efd166cf02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddc951ebb3e3bb95cc312aa6e8ee465c1171bef226508a99c2f98c329e6e1c96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb8e2f91391341fe2e43c4a584021f859b79223f21410f980880c709d0a7f720"
+    sha256 cellar: :any_skip_relocation, ventura:       "9a1329f19dfd5c4e49ae9fe894ff501b9d9ed6b06022cb49c75296a4591425ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3d71c0896cb93022a289d740ed310160ea4e92b5da84d60a1bb15fb40940a6"
   end
 
   depends_on "pkg-config" => :build

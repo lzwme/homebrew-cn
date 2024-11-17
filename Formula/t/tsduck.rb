@@ -1,19 +1,18 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https:tsduck.io"
-  url "https:github.comtsducktsduckarchiverefstagsv3.38-3822.tar.gz"
-  sha256 "18bb779584384197dbb72af406cdcd42fe06efbf4a6ca8fd3138eb518b7ad369"
+  url "https:github.comtsducktsduckarchiverefstagsv3.39-3956.tar.gz"
+  sha256 "1a391504967bd7a6ffb1cabd98bc6ee904a742081c0a17ead4d6639d58c82979"
   license "BSD-2-Clause"
   head "https:github.comtsducktsduck.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "96475b87976813903241cf98592d01cacf720e882a6e9ac98bbe934f82eef105"
-    sha256 cellar: :any,                 arm64_sonoma:  "da97a4845370eb1f506f0802fd8695e3f4ba496b6203a5e75cb37aed6bafad37"
-    sha256 cellar: :any,                 arm64_ventura: "c14a4574386893d0246638ef5596a9166aacfbe5bfdeba200bb9d15a1e21eed1"
-    sha256 cellar: :any,                 sonoma:        "20f54631fba2329f9658ecb5237e738359806be48f23ecd8b997fce35f9c6f32"
-    sha256 cellar: :any,                 ventura:       "a8ea6ad5d363de528af0c363c1c5c42114e1eaf1387e0a9ba0f38b32f1db0d6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec2639e010a13f3bbfac270123337df1be212d4215e9846851c969138b896196"
+    sha256 cellar: :any,                 arm64_sequoia: "85fcccc144054ae42b8e3fc935b61a17f3de645bebbdf937f27b4b844fcbea1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6971736a613a09dc3ff5d4b6c2596f448e4430ce704c7ab4f31480a32c2821a"
+    sha256 cellar: :any,                 arm64_ventura: "bb3a3198574de64b13c459858e3d9e4a0bd5c4df853d77c2a871cfb68891f010"
+    sha256 cellar: :any,                 sonoma:        "49de30577f310a4f960c8edf64e33f1313cf40171e7e60a602d50d1f68ac0bdf"
+    sha256 cellar: :any,                 ventura:       "18819fa81eaebdf055ab92176acb3e06962969e1efb12bd522aea05a45303f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27c7b137281536685aad911ccab6fe3dd99aa6fbea5d65e4b286d340d7446b5c"
   end
 
   depends_on "asciidoctor" => :build
@@ -33,6 +32,7 @@ class Tsduck < Formula
   uses_from_macos "pcsc-lite"
 
   on_macos do
+    depends_on "bash" => :build
     depends_on "make" => :build
   end
 

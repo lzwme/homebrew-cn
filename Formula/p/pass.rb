@@ -2,7 +2,7 @@ class Pass < Formula
   desc "Password manager"
   homepage "https://www.passwordstore.org/"
   url "https://git.zx2c4.com/password-store/snapshot/password-store-1.7.4.tar.xz"
-  sha256 "4c2d0a8b99df8915a87099607a8d912fd05d30651b6f014745c14e4ca8dbbfb7"
+  sha256 "cfa9faf659f2ed6b38e7a7c3fb43e177d00edbacc6265e6e32215ff40e3793c0"
   license "GPL-2.0-or-later"
   head "https://git.zx2c4.com/password-store.git", branch: "master"
 
@@ -13,6 +13,7 @@ class Pass < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28e5b23335b5260675224af5d330a5d4f3b5e3d9be5f9491c68dbdb48ab8a6fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
@@ -22,10 +23,13 @@ class Pass < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3104f2584abf3c35e811152282541832cc3e672d8b28024ee8d77d49cca172"
   end
 
-  depends_on "gnu-getopt"
   depends_on "gnupg"
   depends_on "qrencode"
   depends_on "tree"
+
+  on_macos do
+    depends_on "gnu-getopt"
+  end
 
   def install
     system "make", "PREFIX=#{prefix}", "WITH_ALLCOMP=yes", "BASHCOMPDIR=#{bash_completion}",
@@ -52,7 +56,7 @@ class Pass < Formula
     begin
       system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
       system bin/"pass", "init", "Testing"
-      system bin/"pass", "generate", "Email/testing@foo.bar", "15"
+      assert_match "The generated password for", shell_output("#{bin}/pass generate Email/testing@foo.bar 15")
       assert_predicate testpath/".password-store/Email/testing@foo.bar.gpg", :exist?
     ensure
       system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"

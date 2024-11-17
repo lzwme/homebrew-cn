@@ -15,6 +15,11 @@ cask "osmc" do
   # Original discussion: https:github.comHomebrewhomebrew-caskpull9420
   app "qt_host_installer.app", target: "OSMC.app"
 
+  zap trash: [
+    "~LibrarySaved Application Statetv.osmc.installer.savedState",
+    "~omsc_installer_log.txt",
+  ]
+
   caveats do
     requires_rosetta
   end

@@ -15,6 +15,14 @@ cask "geotag-photos-pro" do
 
   app "Geotag Photos Pro 2.app"
 
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.tappytaps.geotagphotosdesktop.sfl*",
+    "~LibraryApplication SupportGeotag Photos Pro*",
+    "~LibraryLogsGeotag Photos Pro*",
+    "~LibraryPreferencescom.tappytaps.geotagphotosdesktop.plist",
+    "~LibrarySaved Application Statecom.tappytaps.geotagphotosdesktop.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

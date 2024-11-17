@@ -7,7 +7,15 @@ cask "morkro-papyrus" do
   desc "Unofficial Dropbox Paper desktop app"
   homepage "https:github.commorkropapyrus"
 
+  conflicts_with cask: "papyrus"
+
   app "Papyrus.app"
+
+  zap trash: [
+    "~LibraryApplication SupportPapyrus",
+    "~LibraryPreferencescom.electron.papyrus.plist",
+    "~LibrarySaved Application Statecom.electron.papyrus.savedState",
+  ]
 
   caveats do
     requires_rosetta

@@ -17,6 +17,8 @@ cask "xaos" do
 
   app "XaoS.app"
 
+  zap trash: "~LibraryPreferencesnet.sourceforge.xaos.XaoS.plist"
+
   caveats do
     requires_rosetta
   end

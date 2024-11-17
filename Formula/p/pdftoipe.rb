@@ -1,42 +1,23 @@
 class Pdftoipe < Formula
   desc "Reads arbitrary PDF files and generates an XML file readable by Ipe"
   homepage "https:github.comotfriedipe-tools"
-  url "https:github.comotfriedipe-toolsarchiverefstagsv7.2.24.1.tar.gz"
-  sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
+  url "https:github.comotfriedipe-toolsarchiverefstagsv7.2.29.1.tar.gz"
+  sha256 "604ef6e83ad8648fa09c41a788549db28193bb3638033d69cac2b0b3f33bd69b"
   license "GPL-2.0-or-later"
-  revision 20
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "83ed62435778f3458488df273547f0b62affc8e0639f277f7b696ab65af7db42"
-    sha256 cellar: :any,                 arm64_sonoma:   "3ffc098642fb07f56fdf7123d1ed96e89c08e2a90138fe14b75fbaa5fb1a0baa"
-    sha256 cellar: :any,                 arm64_ventura:  "abaf4114b8f8e31cf552dedf510267915baea3cfac66eee9881c9ed357a0f1a5"
-    sha256 cellar: :any,                 arm64_monterey: "3d2e9878726033261d5d28a7cfe217f9eab8bc25ca87c62396043a4dd565a5f9"
-    sha256 cellar: :any,                 sonoma:         "da1ac14a407e12800983b7964d1e9c8568704cf1cda25c2537b1d33f730fc831"
-    sha256 cellar: :any,                 ventura:        "fcec35e3b168b6bd8c83a8dda6d9b1464d5bdb1e326b649463567f9b05b03937"
-    sha256 cellar: :any,                 monterey:       "cea74fc81e5544544e9e8534c97a3b7987f16b9ed7859e9a7c8fa7318649bc47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a3da5c3168fefc7e7899400b3a618b91072777ed35feed3b76a727a3d99964c"
+    sha256 cellar: :any,                 arm64_sequoia: "676487a4936713e7959e84fc88044043702b83264a252b993e81a9dd86d6d319"
+    sha256 cellar: :any,                 arm64_sonoma:  "360ff0144680ed13f66f522aaf25ad20a614e94100646f613ac85cc7be579a1e"
+    sha256 cellar: :any,                 arm64_ventura: "c95975c6051e420465edb2678ac971ae8d6f4a14d3c7e8dd99de384149ca5da2"
+    sha256 cellar: :any,                 sonoma:        "c1d0b1dd05122e9d7efffa64af044688da047af048200a52f5ef4c7c3e3e0835"
+    sha256 cellar: :any,                 ventura:       "c1807495f1e45996dc8296fe8d4783f7b0f5642cba6ff7317d9f7a4fd43be564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c63824a5a34755e35f7355010e82ddc080e1e42e8c8f869e1582821d0c041d"
   end
-
-  # Patches to build with newer poppler are ignored upstream
-  # Ref: https:github.comotfriedipe-toolspull55
-  disable! date: "2024-11-07", because: "does not build with latest poppler"
 
   depends_on "pkgconf" => :build
   depends_on "poppler"
 
   fails_with gcc: "5"
-
-  # https:github.comotfriedipe-toolspull48
-  patch do
-    url "https:github.comotfriedipe-toolscommit14335180432152ad094300d0afd00d8e390469b2.patch?full_index=1"
-    sha256 "544d891bfab2c297f659895761cb296d6ed2b4aa76a888e9ca2c215d497a48e5"
-  end
-
-  # https:github.comotfriedipe-toolspull55
-  patch do
-    url "https:github.comotfriedipe-toolscommit65586fcd9cc39e482ae5a9abdb6f4932d9bb88c4.patch?full_index=1"
-    sha256 "61f507fcaa843c00e5aa06bc1c8ab1cbc2798214c5f794d2c9bd376f78b49a11"
-  end
 
   def install
     cd "pdftoipe" do

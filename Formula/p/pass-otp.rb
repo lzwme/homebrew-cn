@@ -38,7 +38,7 @@ class PassOtp < Formula
         stdin.write "otpauth:hotphotp-secret?secret=AAAAAAAAAAAAAAAA&counter=1&issuer=hotp-secret"
         stdin.close
       end
-      assert_equal "073348", `pass otp show hotp-secret`.strip
+      assert_equal "073348", shell_output("pass otp show hotp-secret").strip
     ensure
       system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
     end

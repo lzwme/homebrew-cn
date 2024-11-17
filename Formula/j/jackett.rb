@@ -1,24 +1,23 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https:github.comJackettJackett"
-  url "https:github.comJackettJackettarchiverefstagsv0.22.867.tar.gz"
-  sha256 "382e9cc11536866b991a80688f8159f44c7e57048d71f831960b2810bd1f1e5b"
+  url "https:github.comJackettJackettarchiverefstagsv0.22.946.tar.gz"
+  sha256 "d181a575802c49886ddca7ccaf9b2b7a30cbd8b4d240eeab91c6b14293d033c7"
   license "GPL-2.0-only"
   head "https:github.comJackettJackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "58fdee28a3167bfe2a0e1285ada0b347a1bb2963b91c9f16d7fce805f23039a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee2d883d72a7fef0b010b327cecbf38669f65c9b44418b86daea6fa81e15601c"
-    sha256 cellar: :any,                 arm64_ventura: "2ea758536cc7a8a48f915f8be1d32dc238ea03361a2ef63b4e7708f492a39afa"
-    sha256 cellar: :any,                 sonoma:        "35497941844c9f93cae8897967e161da4e211a70e222bf7a7d7f3c30cd3d39fd"
-    sha256 cellar: :any,                 ventura:       "588df8002314e43776f0ea6c97ea234bbfe4f40d72152088d26e19c2824f9521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f924caaec9d2b2310b92865dc114c959b7fe0e04df227c1c77241c9e586fa369"
+    sha256 cellar: :any,                 arm64_sequoia: "6b89553763c118e38857a2820daa3ec38560d0325adbcfdc00a68629e1ecaa1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "25b48c0b576c623aa707835c8d7b6bbcf3751639a4dc368248f6d9caa7491dbf"
+    sha256 cellar: :any,                 arm64_ventura: "fdaadf9c05cf54f640fe72bc5ed4be0efa004ec3993564017a8cde0040c6a23d"
+    sha256 cellar: :any,                 ventura:       "25f94d59774606bfc9b32b75bed79570b9c517e5cdeb10c502c3e07735edb7dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33d77fec51e337752d3d37c5a263f27f03a8e309ac38ab11205352fef4fcca1d"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@8"
 
   def install
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@8"]
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 

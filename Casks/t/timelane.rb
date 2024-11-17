@@ -11,6 +11,13 @@ cask "timelane" do
 
   app "Timelane.app"
 
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.underplot.timelane.sfl*",
+    "~LibraryHTTPStoragescom.underplot.timelane",
+    "~LibraryPreferencescom.underplot.timelane.plist",
+    "~LibrarySaved Application Statecom.underplot.timelane.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

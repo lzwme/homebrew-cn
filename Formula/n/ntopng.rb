@@ -38,6 +38,7 @@ class Ntopng < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "valkey" => :test
 
   depends_on "hiredis"
   depends_on "json-c"
@@ -45,7 +46,6 @@ class Ntopng < Formula
   depends_on "libsodium"
   depends_on "mariadb-connector-c"
   depends_on "openssl@3"
-  depends_on "redis"
   depends_on "rrdtool"
   depends_on "sqlite"
   depends_on "zeromq"
@@ -62,8 +62,6 @@ class Ntopng < Formula
   on_linux do
     depends_on "libcap"
   end
-
-  fails_with gcc: "5"
 
   def install
     # Remove bundled libraries
@@ -86,19 +84,15 @@ class Ntopng < Formula
   end
 
   test do
-    redis_port = free_port
-    redis_bin = Formula["redis"].bin
-    fork do
-      exec redis_bin"redis-server", "--port", redis_port.to_s
-    end
+    valkey_port = free_port
+    valkey_bin = Formula["valkey"].bin
+    spawn valkey_bin"valkey-server", "--port", valkey_port.to_s
     sleep 10
 
     mkdir testpath"ntopng"
-    fork do
-      exec bin"ntopng", "-i", test_fixtures("test.pcap"), "-d", testpath"ntopng", "-r", "localhost:#{redis_port}"
-    end
+    spawn bin"ntopng", "-i", test_fixtures("test.pcap"), "-d", testpath"ntopng", "-r", "localhost:#{valkey_port}"
     sleep 30
 
-    assert_match "list", shell_output("#{redis_bin}redis-cli -p #{redis_port} TYPE ntopng.trace")
+    assert_match "list", shell_output("#{valkey_bin}valkey-cli -p #{valkey_port} TYPE ntopng.trace")
   end
 end

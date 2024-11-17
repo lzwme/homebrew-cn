@@ -4,15 +4,15 @@ class DmtxUtils < Formula
   url "https:github.comdmtxdmtx-utilsarchiverefstagsv0.7.6.tar.gz"
   sha256 "0d396ec14f32a8cf9e08369a4122a16aa2e5fa1675e02218f16f1ab777ea2a28"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c5c39f74e46f11e5ec7981d8bc5c3bb8dcbe372d337487fc17ffb10308bfc63d"
-    sha256 cellar: :any,                 arm64_sonoma:  "213cd0921574a2f8d2188db99fe70d4cbeab0ce846bb4af22965287d389748c5"
-    sha256 cellar: :any,                 arm64_ventura: "6e047ce6b7421e233f68c3fd471e445df9eb438e62f5267f19e5d200e0154573"
-    sha256 cellar: :any,                 sonoma:        "5db28571133af052c05a62617d80e2b079126a3ffedc536eb8fa1f66f355d8c0"
-    sha256 cellar: :any,                 ventura:       "c39fe0239d30c55fb0099af364a422625247104514fb92eb6c52249a21893aa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f51b82ef16b29ead50fa9a2535af3a33af667faac3524c6fb6e5d493ea9cfd4"
+    sha256 cellar: :any,                 arm64_sequoia: "266e690457d4ad1f3844c37e52e3228121803ab16f5df2a8441ac8f0380a2b12"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ed0bf91ff69184917d25840c46c8b1a390e116b468dba2bfebcfca4688326f4"
+    sha256 cellar: :any,                 arm64_ventura: "baccf696ad55b1eeda946e6e9e6f8085e6cee318bec01446bd260f774ec3ebd7"
+    sha256 cellar: :any,                 sonoma:        "e4166dd09301ba1d1bf09ca625d395b145b5271b6e8c6938c6299b1b6773eac7"
+    sha256 cellar: :any,                 ventura:       "57db09489948aa30d196602969ff17059e3668afd012b2bd21a56c1de4bf4e16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b15ef564fc867cfe335573ed209b3c96cb509859ac0507794433316d8246b4"
   end
 
   depends_on "autoconf" => :build

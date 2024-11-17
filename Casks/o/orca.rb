@@ -4,6 +4,7 @@ cask "orca" do
 
   url "https:github.complotlyorcareleasesdownloadv#{version}mac-release.zip"
   name "Orca"
+  desc "Generate images of interactive plotly charts"
   homepage "https:github.complotlyorca"
 
   livecheck do
@@ -14,6 +15,11 @@ cask "orca" do
   container nested: "orca-#{version}.dmg"
 
   app "orca.app"
+
+  zap trash: [
+    "~LibraryApplication Supportorca",
+    "~LibraryPreferencescom.plotly.orca.plist",
+  ]
 
   caveats do
     requires_rosetta

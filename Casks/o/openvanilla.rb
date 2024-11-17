@@ -23,6 +23,12 @@ cask "openvanilla" do
 
   input_method "OpenVanilla.app"
 
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openvanilla.*.sfl*",
+    "~LibraryApplication SupportOpenVanilla",
+    "~LibraryPreferencesorg.openvanilla.*",
+  ]
+
   caveats do
     logout
   end

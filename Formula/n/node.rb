@@ -4,6 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v23.2.0/node-v23.2.0.tar.xz"
   sha256 "3cf7a8a36682775693691f1de901bb5973ad3c0ae2aa87b1add9de515e7b2fc7"
   license "MIT"
+  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "81dd73d4690dd07f332724e37150a8a9d77e43841c421b3febd4dc57f4f28dda"
-    sha256 arm64_sonoma:  "2f69b5b62da5a8957ae89d486881f83ea481e9db033a9222acf80593870fccb8"
-    sha256 arm64_ventura: "2e20cf8df1bd24d0210c2f525b1b0d32211aeac76c1b6b1d8fb180a04310254b"
-    sha256 sonoma:        "2657b54ec053a034295a57b4debc08290ac9f92bf6d707b4ecf5069f1f45329a"
-    sha256 ventura:       "cde48931faeaae679ab0d0327e4d318f9c992557a172117d4b7cbf2332f6649a"
-    sha256 x86_64_linux:  "a5aa2d1690f334e34fa8c078c7fd37aedfcdeaeb0694e3a6ece1bdad4e2421f3"
+    sha256 arm64_sequoia: "2268c15d79e7fb4433f6ab0164f6c25cb89dabb1f4c72ce337035d535c9d439a"
+    sha256 arm64_sonoma:  "6846e8545ad4f44e5106abe13a54eb5ebaa86b8070f8d6da1b19b9cba17488ea"
+    sha256 arm64_ventura: "16d07bba770dfd200c41f280acf7c5ca99bca00e592e2e35f39996aa4561bfda"
+    sha256 sonoma:        "c38ad56339bea51eb3370e3bbd6df8eba831da8a500144e3623ba87ca66864a4"
+    sha256 ventura:       "e29b273bbe7972c961f3e3ab7b13ea6cf487f0f93347685d804069c684d1d1b4"
+    sha256 x86_64_linux:  "46bf3c3ca55577ddde781d1ed80a57409d2983746a73e674bd341df064ba1ea4"
   end
 
   depends_on "pkg-config" => :build
@@ -50,6 +51,17 @@ class Node < Formula
   resource "npm" do
     url "https://registry.npmjs.org/npm/-/npm-10.9.0.tgz"
     sha256 "c12def16fe3efdc80b1e652d60903d807ac4b78b9e7c3e76f633f4b13a32897c"
+  end
+
+  # patch to fix `Unexpected end of JSON input` for webpack build, see https://github.com/nodejs/node/issues/55826
+  # upstream revert PR, https://github.com/nodejs/node/pull/55828
+  patch do
+    url "https://github.com/nodejs/node/commit/5f43e6d409c34d0ab3c3bbd879669f638e64d6a9.patch?full_index=1"
+    sha256 "a484ac9247389a80214be836ac8ca915f18a02a1f2acbab463abc991da4e41d2"
+  end
+  patch do
+    url "https://github.com/nodejs/node/commit/df0b75f39f2b79932d4145b8350f683caf6331f2.patch?full_index=1"
+    sha256 "64dbf49afbe15ef92c145a735941ff817b5664d9368891f17194ba4d21ee9069"
   end
 
   def install

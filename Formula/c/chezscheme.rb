@@ -1,20 +1,17 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
   homepage "https:cisco.github.ioChezScheme"
-  url "https:github.comciscoChezSchemereleasesdownloadv10.0.0csv10.0.0.tar.gz"
-  sha256 "d37199012b5ed1985c4069d6a87ff18e5e1f5a2df27e402991faf45dc4f2232c"
+  url "https:github.comciscoChezSchemereleasesdownloadv10.1.0csv10.1.0.tar.gz"
+  sha256 "9181a6c8c4ab5e5d32d879ff159d335a50d4f8b388611ae22a263e932c35398b"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "383ef05d3d088270e9621611a269d5865c3486e3b64972f944d73bf4ae9c8908"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee1fd372ef45e033935538cfad0a6362790260ef7b5d2784b491756c16adccca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "333374134b8b06bed7b86532b46a10ad15756254a6dcd345b3206b9535291b3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12d715a0ca6280e1f526deaf4a0e8f74282280be3062763e64aa5bdbc360fc57"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad447774b81335d4b26e15fd4a9b1934cdfcf96b3d54359517396f98acf7a0db"
-    sha256 cellar: :any_skip_relocation, ventura:        "174810d0a11dc60f4137d336b71e2a633efd0fc36fb5271b3976b742568b4c97"
-    sha256 cellar: :any_skip_relocation, monterey:       "677d9122cb99611dea8e88fc116513d18e361e05433e8ed7171e87df37c873a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f33bc7596361090dcbc3cd7eec1e226e9f8934b2da43684efef7763fbba2125"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51cde006c2b97bf84caa052a6d07765e33fbdae21b66cd6c0cdb5bfda267ee9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c39185c83b72bba802036044c986372283a5f489a0d6119d467b25418d00ba1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "21913a213c56d08efe39b91f80a478f7b3351db7e69a73e1bfd51bf621d55b1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a9eeb709f6a99fd0e9e314ecf500feeccc7cf10de3dcf279ed95cce56344268"
+    sha256 cellar: :any_skip_relocation, ventura:       "bfa3d61ad2c6f134940cbd64ea1a1477caac43441f8a28d353b64a87171a9cbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e94bab3cb93b135cfdd00ddf2d43e9b8a0b9d15f248aa05bda1682c8dcc1a8d"
   end
 
   depends_on "libx11" => :build

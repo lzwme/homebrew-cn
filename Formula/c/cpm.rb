@@ -1,18 +1,18 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https:metacpan.orgpodcpm"
-  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997018.tar.gz"
-  sha256 "78fbd96b047d0383b6a7f8895b193f0b38b0a2b550b92f18c07f752ea97c4efd"
+  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997019.tar.gz"
+  sha256 "1be7391d3f30ab2417fb569f971d58941ce623dc23dfa02673b602297588c5cd"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https:github.comskajicpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de2868bac7f13283019848d368eec6ad120c4e145864ab5574e1d18c208023ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de2868bac7f13283019848d368eec6ad120c4e145864ab5574e1d18c208023ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de2868bac7f13283019848d368eec6ad120c4e145864ab5574e1d18c208023ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d860a43bdbea93671b9c962b17b0dda6e37c4e97d39d8dd2e7a1511c398bab6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d860a43bdbea93671b9c962b17b0dda6e37c4e97d39d8dd2e7a1511c398bab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d111b0e3f0aff4ad826fa8f351588e697f8b04cded7916930365f02cd270909"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26d9f0b375c1ad71aa8f1155f3cbdb78e07247d5925606d8788f5e8ecec00727"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26d9f0b375c1ad71aa8f1155f3cbdb78e07247d5925606d8788f5e8ecec00727"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26d9f0b375c1ad71aa8f1155f3cbdb78e07247d5925606d8788f5e8ecec00727"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6813fa4431a282e877ff406564b5bc2a34b69209caef52a2f7b4a8f0a8765078"
+    sha256 cellar: :any_skip_relocation, ventura:       "6813fa4431a282e877ff406564b5bc2a34b69209caef52a2f7b4a8f0a8765078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e26071da3e95da027045aae2b81ebce4db2f523fbd60bdd08054524aa10c40"
   end
 
   depends_on "perl"
@@ -140,8 +140,8 @@ class Cpm < Formula
   end
 
   resource "URI" do
-    url "https:cpan.metacpan.orgauthorsidOOAOALDERSURI-5.29.tar.gz"
-    sha256 "a34b9f626c3ff1e20c0d4a23ec5c8b7ae1de1fb674ecefed7e46791388137372"
+    url "https:cpan.metacpan.orgauthorsidOOAOALDERSURI-5.31.tar.gz"
+    sha256 "b9c4d58b2614b8611ae03a95a6d60ed996f4b311ef3cd5a937b92f1825ecc564"
   end
 
   resource "Win32::ShellQuote" do
