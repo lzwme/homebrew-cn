@@ -15,7 +15,7 @@ class Biber < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4038ee28a6d598309e506acc878f6f3554e1af17ab02851282c993e51db8a0cd"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "texlive" => :test
   depends_on "openssl@3"
   depends_on "perl"

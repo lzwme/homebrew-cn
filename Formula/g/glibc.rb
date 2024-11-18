@@ -144,7 +144,6 @@ class Glibc < Formula
         "--disable-silent-rules",
         "--prefix=#{prefix}",
         "--sysconfdir=#{etc}",
-        "--enable-obsolete-rpc",
         "--without-gd",
         "--without-selinux",
         "--with-binutils=#{bootstrap_dir}bin",

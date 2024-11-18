@@ -1,8 +1,8 @@
 class Fend < Formula
   desc "Arbitrary-precision unit-aware calculator"
   homepage "https:printfn.github.iofend"
-  url "https:github.comprintfnfendarchiverefstagsv1.5.3.tar.gz"
-  sha256 "b31befe0df562c5626c52d1cef70d272115054fa707debe56ade9e4f2f28a956"
+  url "https:github.comprintfnfendarchiverefstagsv1.5.5.tar.gz"
+  sha256 "330ca6ca5fcb4410fe75caeab0d77b0b112a355ec2a5d5848dffb0a7a7a2e7a7"
   license "MIT"
   head "https:github.comprintfnfend.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Fend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48b3493b2ef8b41ae98b823b759ce8d282994899c8c3d9cac066c80b1bfc05d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9f40c7b2fd01a37f515018006ef7cba9f639eb5f5e55659318b5f17e8df19ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "527dfdf3b7769259c507b60e519779eb0818ceadbfe78cbd8e0abadefc92f0ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6842a139f8597c9f5520304ba372fae3f2a3aa2a18f5502d9544ccefb7b02d55"
-    sha256 cellar: :any_skip_relocation, ventura:       "273ed1e79298d9e0f02a07d86a9d756073ec7362728f4fb7e717b4aa6e32fe34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa4748015813df022131377c59bb657f9ff66c327230e25a471031ed6ff6ea5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a895b4ac98b099dacb311c238bcf5cdf860f823b6ddc70423224be74f290fe0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1905a8703a78bf4602a102c89aeb3578c2b1576bcd9a106c06153911ff0ae88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6621ae3e58ba667e556da05e943ae0ec4608d3f520081c523e98287d8df45222"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f068df89baada7957d393c260bc21f97bad06bfe7d22ae2ad6eb45941501d8e1"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e08534e87506e9af4bd106244689b2022496593b167a16b188403d79777cb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1408db401afb16f2b2220852e15250f2d35ceb5688902f975f7453ffc716e84"
   end
 
   depends_on "pandoc" => :build

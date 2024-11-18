@@ -27,7 +27,7 @@ class BotanAT2 < Formula
   # Ref: https:botan.randombit.net#releases
   deprecate! date: "2024-12-31", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13"
   depends_on "sqlite"
 

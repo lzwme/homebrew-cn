@@ -3,18 +3,18 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackagesa843c61d52c91b7132084a23a69b44779894fdd01ec1fe747859ca533463b80daider_chat-0.62.1.tar.gz"
-  sha256 "374d531f97e8fc829fa3d7a36d7ead8e01ed991f0924b296bc9d308e12921c73"
+  url "https:files.pythonhosted.orgpackagese7c849a8c680626eb9fc05ca5dd6caea2fe62f5252976611a5419dfcfbc90599aider_chat-0.63.1.tar.gz"
+  sha256 "e3d8ac2e0059b3c71b515d7f2495e5a7cf2ac864a12997c0724a4ad608fa5b10"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7f40e5a258b1bc11251eacc16f2143aeb60062a49e86e542caf7b66ff45eb7a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e33ee7850f4cdf7bd6d71c0c3800b49ef6650400301fd2d7bd89a4f46a728b2"
-    sha256 cellar: :any,                 arm64_ventura: "384d714a593a9d0c9d3592e2a50d2f724af440880e966bc29703d3bf99fbf757"
-    sha256 cellar: :any,                 sonoma:        "9604726a6de7f77e68fcf2011bf29bfa64beed3d86bcaf92ad7b12466162bb88"
-    sha256 cellar: :any,                 ventura:       "8504114db2fb8bb67a9f23ed9675b4e15ff15b9e26b419105a697f0ca04c225b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38e07a97d2a2c9fb0f7046788eb14cc45c237b6eade5bd2c107eb6b7ae4b2180"
+    sha256 cellar: :any,                 arm64_sequoia: "58ec942b0628251e859798986c3762d00112d956b2017a3dd05eff218903a5fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e2e5edefa28b8e947d1abd6690c5b7fa9143ffcc02e7e4ae23b6c96c41dada4"
+    sha256 cellar: :any,                 arm64_ventura: "6136319ce020233a5ce934f5528be039d403ae4ab7814b109c59637e20a31c0f"
+    sha256 cellar: :any,                 sonoma:        "d001baf9a0d8eb23f4f32c14bd06e04abef1cc5ccfe8bf11d366c79838cbfd7a"
+    sha256 cellar: :any,                 ventura:       "763eff04a5e5a8179e9986438060bcc1f5605f555da0375a98bfa0e43c847ec0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d53887c9035b0ede7161fc649f1babb1b05f18c95abb0f409fbf46b2f5135ef"
   end
 
   depends_on "rust" => :build # for pydantic_core

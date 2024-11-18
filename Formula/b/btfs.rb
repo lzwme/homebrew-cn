@@ -14,7 +14,7 @@ class Btfs < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on "libfuse@2"
   depends_on "libtorrent-rasterbar"
@@ -25,7 +25,7 @@ class Btfs < Formula
     ENV.cxx11
     inreplace "configure.ac", "fuse >= 2.8.0", "fuse >= 2.7.3"
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

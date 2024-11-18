@@ -17,7 +17,7 @@ class Borgbackup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b362ecca7e4b2d507ed33b16553b61db7d63124584b7d665533ef26971bd278f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libb2"
   depends_on "lz4"
   depends_on "openssl@3"

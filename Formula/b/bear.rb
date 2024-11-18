@@ -17,7 +17,7 @@ class Bear < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "fmt"
   depends_on "grpc"
@@ -30,8 +30,6 @@ class Bear < Formula
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
   end
-
-  fails_with gcc: "5" # needs C++17
 
   fails_with :clang do
     build 1100
@@ -63,6 +61,6 @@ class Bear < Formula
       }
     C
     system bin"bear", "--", "clang", "test.c"
-    assert_predicate testpath"compile_commands.json", :exist?
+    assert_path_exists testpath"compile_commands.json"
   end
 end

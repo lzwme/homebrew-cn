@@ -19,7 +19,7 @@ class Bozohttpd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f662a5761fcd610221da12ac4476496fe39bb5254c0192a05e6170b495c988"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lua"
   depends_on "openssl@3"
 
@@ -45,9 +45,7 @@ class Bozohttpd < Formula
     expected_output = "Hello from bozotic httpd!"
     (testpath/"index.html").write expected_output
 
-    fork do
-      exec bin/"bozohttpd", "-b", "-f", "-I", port.to_s, testpath
-    end
+    spawn bin/"bozohttpd", "-b", "-f", "-I", port.to_s, testpath
     sleep 3
 
     assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")

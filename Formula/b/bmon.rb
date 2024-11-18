@@ -28,7 +28,7 @@ class Bmon < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "confuse"
 
   uses_from_macos "ncurses"
@@ -43,9 +43,7 @@ class Bmon < Formula
     inreplace %w[srcin_proc.c srcout_curses.c], "__unused__", ""
 
     system ".autogen.sh" if build.head?
-    system ".configure", "--disable-debug",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

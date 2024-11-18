@@ -6,12 +6,11 @@ class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https:www.qt.io"
   # NOTE: Use *.diff for GitLabKDE patches to avoid their checksums changing.
-  url "https:download.qt.ioofficial_releasesqt5.155.15.15singleqt-everywhere-opensource-src-5.15.15.tar.xz"
-  mirror "https:mirrors.dotsrc.orgqtprojectarchiveqt5.155.15.15singleqt-everywhere-opensource-src-5.15.15.tar.xz"
-  mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.15singleqt-everywhere-opensource-src-5.15.15.tar.xz"
-  sha256 "b423c30fe3ace7402e5301afbb464febfb3da33d6282a37a665be1e51502335e"
+  url "https:download.qt.ioofficial_releasesqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
+  mirror "https:mirrors.dotsrc.orgqtprojectarchiveqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
+  mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
+  sha256 "efa99827027782974356aceff8a52bd3d2a8a93a54dd0db4cca41b5e35f1041c"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
-  revision 2
 
   livecheck do
     url "https:download.qt.ioofficial_releasesqt5.15"
@@ -19,19 +18,19 @@ class QtAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e5c91906dc55e3db8d08b6c6fb2b88d20002dbd354b38217a4895f5778ff30ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "edc57e4e22e53d76b10cecd2c1e9d7ad4569078a9efd51e9710d4b758174b7d9"
-    sha256 cellar: :any,                 arm64_ventura: "d1c567b934d8d26d5adbc7582014e93dcdd6c613260d1b9657000558775f0974"
-    sha256 cellar: :any,                 sonoma:        "f1027df9b92489c085d94b94c9853e67f6061133a219444815ccd5c96989f309"
-    sha256 cellar: :any,                 ventura:       "90894c59d79b044ac5f1cbb0e3a7d769d6ced812c5d5253ae574f37a04a20710"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad78e47f11ab2fc4a232fe01664e65ee49cda567cd4abc7878537119d8fac2b0"
+    sha256 cellar: :any,                 arm64_sequoia: "138ebf51a5f10c4114aa8c1f8693c69bbbc86c26a9db2151ade5b92e07e77dbb"
+    sha256 cellar: :any,                 arm64_sonoma:  "21e95319cad6ad9f660e45f2972c4e033b0c48324f4553e655278d021d98a319"
+    sha256 cellar: :any,                 arm64_ventura: "6bf97e444438c798e380f5915e468754feb8710b2e4977f01c02f73eeea74b91"
+    sha256 cellar: :any,                 sonoma:        "82c708126a40cab234cf57513b7396446bd4e2987084543e1de6c7828a2cf1b9"
+    sha256 cellar: :any,                 ventura:       "d4b2863b35f4372b4079cfcab30838ca7b032170f4d1087e8a88b12628a270eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a0c883f4b2c6b293f030d3292209b6bc3d6dff6d11d653fb6834ddb2c96a3f6"
   end
 
   keg_only :versioned_formula
 
   depends_on "node" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.12" => :build # Python 3.13 fails with ModuleNotFoundError: No module named 'pipes'
   depends_on xcode: :build
   depends_on "freetype"
   depends_on "glib"
@@ -98,12 +97,10 @@ class QtAT5 < Formula
     depends_on "xcb-util-wm"
   end
 
-  fails_with gcc: "5"
-
   resource "qtwebengine" do
     url "https:code.qt.ioqtqtwebengine.git",
-        tag:      "v5.15.17-lts",
-        revision: "17fd3176988586168bee8654008a097a5f23ec1d"
+        tag:      "v5.15.18-lts",
+        revision: "87ceb6a2ef5ee25d56f765dc533728c4ca4787e0"
 
     # Use Arch Linux's patch for ICU 75 support
     patch do
@@ -157,33 +154,6 @@ class QtAT5 < Formula
     directory "qtlocationsrc3rdpartymapbox-gl-native"
   end
 
-  # Fix qmake with Xcode 15.
-  # https:bugreports.qt.iobrowseQTBUG-117225
-  # Likely can remove with 5.15.16.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches086e8cfqt5qt5-qmake-xcode15.patch"
-    sha256 "802f29c2ccb846afa219f14876d9a1d67477ff90200befc2d0c5759c5081c613"
-  end
-
-  # Fix qtmultimedia build with Xcode 15
-  # https:bugreports.qt.iobrowseQTBUG-113782
-  # https:github.comhmaarrfkqt-main-feedstockblob0758b98854a3a3b9c99cded856176e96c9b8c0c5recipepatches0014-remove-usage-of-unary-operator.patch
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches3f509180qt5qt5-qtmultimedia-xcode15.patch"
-    sha256 "887d6cb4fd115ce82323d17e69fafa606c51cef98c820b82309ab38288f21e08"
-  end
-
-  # Fix use of macOS 14 only memory_resource on macOS 13
-  # The `_cpp_lib_memory_resource` feature test macro should be sufficient but a bug in the SDK means
-  # the extra checks are required. This part of the patch will likely be fixed in a future SDK.
-  # https:bugreports.qt.iobrowseQTBUG-114316
-  # This can likely be removed in 5.15.16.
-  patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-ports56a9af76a6bcecc3d12c3a65f2465c25e05f2559aquaqt5filespatch-qtbase-memory_resource.diff"
-    sha256 "87967d685b08f06e91972a6d8c5e2e1ff672be9a2ba1d7d7084eba1413f641d5"
-    directory "qtbase"
-  end
-
   # CVE-2023-51714
   # Remove with Qt 5.15.17
   patch do
@@ -194,6 +164,30 @@ class QtAT5 < Formula
   patch do
     url "https:download.qt.ioofficial_releasesqt5.150002-CVE-2023-51714-qtbase-5.15.diff"
     sha256 "99d5d32527e767d6ab081ee090d92e0b11f27702619a4af8966b711db4f23e42"
+    directory "qtbase"
+  end
+
+  # CVE-2024-25580
+  # Remove with Qt 5.15.17
+  patch do
+    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-25580-qtbase-5.15.diff"
+    sha256 "7cc9bf74f696de8ec5386bb80ce7a2fed5aa3870ac0e2c7db4628621c5c1a731"
+    directory "qtbase"
+  end
+
+  # CVE-2024-36048
+  # Remove with Qt 5.15.17
+  patch do
+    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-36048-qtnetworkauth-5.15.diff"
+    sha256 "e5d385d636b5241b59ac16c4a75359e21e510506b26839a4e2033891245f33f9"
+    directory "qtnetworkauth"
+  end
+
+  # CVE-2024-39936
+  # Remove with Qt 5.15.18
+  patch do
+    url "https:download.qt.ioofficial_releasesqt5.15CVE-2024-39936-qtbase-5.15.patch"
+    sha256 "2cc23afba9d7e48f8faf8664b4c0324a9ac31a4191da3f18bd0accac5c7704de"
     directory "qtbase"
   end
 
@@ -388,8 +382,8 @@ class QtAT5 < Formula
 
     system bin"qmake", testpath"hello.pro"
     system "make"
-    assert_predicate testpath"hello", :exist?
-    assert_predicate testpath"main.o", :exist?
+    assert_path_exists testpath"hello"
+    assert_path_exists testpath"main.o"
     system ".hello"
   end
 end

@@ -557,8 +557,7 @@ class Duplicity < Formula
 
   def install
     inreplace "pyproject.toml", 'requires-python = ">= 3.8, <3.13"', 'requires-python = ">= 3.8"'
-    ENV["SODIUM_INSTALL"] = "system"
-    virtualenv_install_with_resources(link_manpages: true)
+    virtualenv_install_with_resources
   end
 
   test do

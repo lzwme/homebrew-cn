@@ -17,23 +17,13 @@ class Bindfs < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-    ]
-
-    if build.head?
-      system ".autogen.sh", *args
-    else
-      system ".configure", *args
-    end
-
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *std_configure_args
     system "make", "install"
   end
 

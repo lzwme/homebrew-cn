@@ -26,12 +26,12 @@ class Babl < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pcre2" => :build # to add to PKG_CONFIG_PATH for glib
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "vala" => :build
   depends_on "little-cms2"
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dwith-docs=false"
+    system "meson", "setup", "build", "-Dwith-docs=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

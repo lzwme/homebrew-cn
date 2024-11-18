@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/17/68/01d370ace57d1be85a80aeaf83f3d0da589e9060dd0d5f02b75080470aa1/checkov-3.2.290.tar.gz"
-  sha256 "01a80fbe70faafefd0ec5d26c5dad6f0118bc9b271e2c55aeb2530e06986caf2"
+  url "https://files.pythonhosted.org/packages/3f/cf/5ff27d76c96a174aa0f2c463164e0f0d3ce68925a882eee84fed2f796071/checkov-3.2.300.tar.gz"
+  sha256 "42f779c99ef08175a478ddbfb6061a37797ffce5c83cce0e83a0548aa1335ff9"
   license "Apache-2.0"
 
   livecheck do
@@ -17,12 +17,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6518f0132694ca17d9cce19e8028fd015cb5f6db0fb31274716470adbd01c721"
-    sha256 cellar: :any,                 arm64_sonoma:  "0634985a4e709657b9722f534a7229fb0db4ef6f5f179399513b6622eef3aa62"
-    sha256 cellar: :any,                 arm64_ventura: "83b5212ee0cba75999ae3804ae0729a429e3260f59648654a91d45f5e1fd807a"
-    sha256 cellar: :any,                 sonoma:        "987191d66286308edd27021ec360e3ab8dc1d3da5eff8225f2170aa4656fc490"
-    sha256 cellar: :any,                 ventura:       "2a647c002576b990db080e31313720fc4a593ca6b2ddf3d1c0d49f402eb5331c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56bf0e6660480c0591a27f9a9c589ef09a97f0db4db8fb518c347d3d7b677c2a"
+    sha256 cellar: :any,                 arm64_sequoia: "d2f57d5939f21ac7920702ae8a438e1d1a347291b512d75958db89fbd6cd94a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "24d65d1cb03fe20e8afb192fec41b5b69bfd72645afab726f157202a9bd931c6"
+    sha256 cellar: :any,                 arm64_ventura: "c7f4eb0c124063bbd9223aa6db82b7ac3b26ebdf2b11c55e98055b8adae02d77"
+    sha256 cellar: :any,                 sonoma:        "300a6132b1bb2fcc62afa9c72d3292d1f3ae17dbf5f0d8a27856d4769f8c85c5"
+    sha256 cellar: :any,                 ventura:       "1b7db2a8848adeb3fa6eddaca0364f7bdd6c2c0a7000ccb50f93a31afeae94ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "253bcfd8372c3565ae83839412f11ce0e27e7d98b1ba34bb107fb381def20f4a"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -45,8 +45,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/17/7e/16e57e6cf20eb62481a2f9ce8674328407187950ccc602ad07c685279141/aiohttp-3.10.10.tar.gz"
-    sha256 "0631dd7c9f0822cc61c88586ca76d5b5ada26538097d0f1df510b082bad3411a"
+    url "https://files.pythonhosted.org/packages/55/68/97e4fab2add44bbd4b0107379d6900e80556c9a5d8ff548385690807b3f6/aiohttp-3.11.2.tar.gz"
+    sha256 "68d1f46f9387db3785508f5225d3acbc5825ca13d9c29f2b5cce203d5863eb79"
   end
 
   resource "aiomultiprocess" do
@@ -110,8 +110,8 @@ class Checkov < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/cd/d8/49a69f2aa71efcd9a278370171185160be3ac35f5e09ed303c08612c6336/botocore-1.35.58.tar.gz"
-    sha256 "8303309c7b59ddf04b11d79813530809d6b10b411ac9f93916d2032c283d6881"
+    url "https://files.pythonhosted.org/packages/6e/db/11eb0bfd552d28872654663c0b8d9c3fc0e57ba88261b0b1877c990e1740/botocore-1.35.63.tar.gz"
+    sha256 "2b8196bab0a997d206c3d490b52e779ef47dffb68c57c685443f77293aca1589"
   end
 
   resource "cached-property" do

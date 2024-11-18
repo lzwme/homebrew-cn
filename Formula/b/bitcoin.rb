@@ -29,7 +29,7 @@ class Bitcoin < Formula
   depends_on "automake" => :build
   depends_on "boost" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on macos: :big_sur
   depends_on "miniupnpc"

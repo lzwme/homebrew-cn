@@ -24,13 +24,13 @@ class Prometheus < Formula
 
   depends_on "gnu-tar" => :build
   depends_on "go" => :build
-  depends_on "node@22" => :build # pin to use node22, due to node23 issue, see https:github.comnodejsnodeissues55826
+  depends_on "node" => :build
   depends_on "yarn" => :build
 
   def install
     ENV.deparallelize
     ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec"gnubin"
-    ENV.prepend_path "PATH", Formula["node@22"].opt_libexec"bin"
+    ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin"
     mkdir_p buildpath"srcgithub.comprometheus"
     ln_sf buildpath, buildpath"srcgithub.comprometheusprometheus"
 

@@ -20,7 +20,7 @@ class BcGh < Formula
   # TODO: keg_only :provided_by_macos (replaced GNU bc since Ventura)
   keg_only :shadowed_by_macos
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "libedit"
 

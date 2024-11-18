@@ -18,7 +18,7 @@ class Bullet < Formula
 
   depends_on "cmake" => :build
   depends_on "numpy" => [:build, :test]
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => [:build, :test]
 
   def python3

@@ -1,8 +1,8 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
   homepage "https:getclipboard.app"
-  url "https:github.comSlackadaysClipboardarchiverefstags0.9.1.tar.gz"
-  sha256 "b59f7111c2de0369d80a379503ac056e33c59be34596d72cda600e4115002b60"
+  url "https:github.comSlackadaysClipboardarchiverefstags0.10.0.tar.gz"
+  sha256 "741717ee505a7852fab5c69740b019e2b33f81d948232894ce294ed0a55e70fb"
   license "GPL-3.0-or-later"
   head "https:github.comSlackadaysClipboard.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Clipboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8501c5412bdafe9871e98abcf6a8ac74ea21ef54d4824585688725319689310d"
-    sha256 cellar: :any,                 arm64_sonoma:  "43da80ae657f14a03ed778237fa36b638555a66e1711c93adb5e201ea1c932c8"
-    sha256 cellar: :any,                 arm64_ventura: "0b0573a91397eb893042a7496a057ef63545e5b843d34c85ee68edf89fcd22b2"
-    sha256 cellar: :any,                 sonoma:        "e2dda12c223d91e437af9d40332bb1e4ece529aa0635710ec6b9ad3b3deae428"
-    sha256 cellar: :any,                 ventura:       "75b250a323dba0e3f489e13261b1743ee9d800f248ad8f5c548a5ea0b697fb73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e1298b4b0428e8eefe474d18815cdf6b534068da2a7b8e04624cd2d58baeee"
+    sha256 cellar: :any,                 arm64_sequoia: "4133bfd9353d194c8b0597eaab4640752c07d53027c733ed1c1056b84a1f74c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f479da9e04d1fe86620fe54f9149d90b4d15eb6945a44380193bd190333e9497"
+    sha256 cellar: :any,                 arm64_ventura: "d0415d6ed62ac9d27c7d360ca0d97ba7114c430c4c54fcca252cb3bbae73e39c"
+    sha256 cellar: :any,                 sonoma:        "c551b2ece1d81249476f06ee13336c52a948fdf469b02b02b892a16bab58862d"
+    sha256 cellar: :any,                 ventura:       "da3319d484d5bff0daff721c5236718d7dc65dd31e2b4352beee5aa4f70e2c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d390684f0efa26d3fe4a5a5b93f98daaf10c678cf1b0a638ae52aeca7ec1ebb"
   end
 
   depends_on "cmake" => :build

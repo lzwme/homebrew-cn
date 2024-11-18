@@ -4,7 +4,10 @@ cask "developerexcuses" do
 
   url "https:github.comkimarDeveloperExcusesreleasesdownload#{version}DeveloperExcuses.saver.zip"
   name "Developer Excuses Screensaver"
+  desc "Screensaver showing quotes from developerexcuses.com"
   homepage "https:github.comkimarDeveloperExcuses"
 
   screen_saver "DeveloperExcuses.saver"
+
+  # No zap stanza required
 end

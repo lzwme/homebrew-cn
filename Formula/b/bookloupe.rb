@@ -28,7 +28,7 @@ class Bookloupe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b7cdc047eeed0574f7b0c8bccae751fa4b047b0a2aa30d71153960b75b52444"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
 

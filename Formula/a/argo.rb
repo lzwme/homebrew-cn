@@ -2,17 +2,17 @@ class Argo < Formula
   desc "Get stuff done with container-native workflows for Kubernetes"
   homepage "https:argoproj.io"
   url "https:github.comargoprojargo-workflows.git",
-      tag:      "v3.5.12",
-      revision: "8fe8de2e16ec39a5477df17586a3d212ec63a4bd"
+      tag:      "v3.6.0",
+      revision: "b26ed4aa4dee395844531efa4a76a022183bec22"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14cf8c0aa5509140bf337acbdcaf04a2369dd89ff9f820e86cf36abfb18c467a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb431233f0d858b2f62e67d6c67285808d25fcae7002467d38968740265aa30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2cfcbe3ccb3edbf04e06a448d292e9439a66891c20703354a00c0f1a2ebd8ff6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c6a7c4eb22147511e02ffb080193ad3e8d2cce451fd3e3c0b6700b8e69a9670"
-    sha256 cellar: :any_skip_relocation, ventura:       "0436ee08f82cfe503aea8e1c7e2e4a8afaef32651ac0b853e97b458b31eaf1ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb83572c88fe05671446888b4374dffd40574e150a28c712dc254ef7b3c98b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e91f7cee8189af64bc956f0bb72279c0faf55c84e8945db6b6061569cd5024b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5567cf7f7fe5259db124df9417c714f7432b21385f6a53996c4d81bc45baaaca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ca0b4a7443ff7fbfb275ad1a0ac71272593ead6d55497ef10305fec0b757b03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb7bfa175856a3c60540c59f15c3c22b8725440831cfd4564e4fa30bf3f8e35a"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc54b4e180faedd8ba5535a19ea8299dffd1cb034d6c194570a2a48c6a4d786a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8afe5fb8c3138edd03b7f87539aa557565d7f4d13bf646806339c9fcab898fb"
   end
 
   depends_on "go" => :build
@@ -22,7 +22,7 @@ class Argo < Formula
   def install
     # this needs to be remove to prevent multiple 'operation not permitted' errors
     inreplace "Makefile", "CGO_ENABLED=0", ""
-    system "make", "distargo"
+    system "make", "distargo", "-j1"
     bin.install "distargo"
 
     generate_completions_from_executable(bin"argo", "completion", shells: [:bash, :zsh])

@@ -9,7 +9,7 @@ class Bluez < Formula
     sha256 x86_64_linux: "8c67b7d3aac221d00420c11e5de419b8d3277a2be8b15a5fdf38691b13328dd6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "dbus"
   depends_on "glib"
   depends_on "libical"

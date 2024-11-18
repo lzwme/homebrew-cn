@@ -18,7 +18,7 @@ class Blink < Formula
   end
 
   depends_on "make" => :build # Needs Make 4.0+
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   uses_from_macos "zlib"
 
   def install

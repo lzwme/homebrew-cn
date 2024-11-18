@@ -1,19 +1,17 @@
 class Stylua < Formula
   desc "Opinionated Lua code formatter"
   homepage "https:github.comJohnnyMorganzStyLua"
-  url "https:github.comJohnnyMorganzStyLuaarchiverefstagsv0.20.0.tar.gz"
-  sha256 "f4a27b12669953d2edf55b89cc80381f97a2dfa735f53f95c6ae6015c8c35ffb"
+  url "https:github.comJohnnyMorganzStyLuaarchiverefstagsv2.0.0.tar.gz"
+  sha256 "6222cb07ec22963cce2ff2cb0a64f8a5df59d9aa434191610948ad3607d668e0"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9fe715f0439091c568f7ed188668d37a203dfaf761f3d37f65753e4d2eb05156"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ed3a64c2458dc6a1202dadd20978ad67ff1ed683d401c3a20eafbb897cc035d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "961c31cb07618a28e0f693eb2eca4f2796015273cccb09de8d7f3ac0084e6b27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a89dbeb4bbe0d8990bfaaa8a6920c116bc242184c64b73e2bc4b7658fa0b16bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "57ecca22c43085d553368c606dbfbac58b239dbd7cad368dc04d5069c6f08e52"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d4937c5fd1b291ef802f6c47492ece4507d114ad65f845e44b14fc16e17b74d"
-    sha256 cellar: :any_skip_relocation, monterey:       "29f04a3f58c57e1cf185a40092a0b1bd66769b58df171e2d63f91ae02db9ee4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c02f4e0bacb23acf879bf1ff14e8bacf6a7b2a5cbb6a649337bc271106e0e25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abd7ea3e53efa92a46309d7d26496ea09ca66517210f41b83d1b5ee55ed92ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7cf9816d2ae5194fb5b6c090fc29ee75239466134f7517ecc8fee78a0bbc43f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a7fa5f9995ae86b754acfa0dc13cdf642818496b6a0b7a30c6f8e89f3ecca81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00cdbe48967e70796c9ab6a9f5075435a2fb89855add13329edd8252342d28c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f06c852fe2fadb5e598713b63dcf380029fffb20882c5b482c1e265a22be060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f6368ebaaf54612dfa0b7cb65730a92a580f37b503faa97d7aa3f0280808e41"
   end
 
   depends_on "rust" => :build

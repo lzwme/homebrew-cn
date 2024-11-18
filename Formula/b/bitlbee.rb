@@ -26,7 +26,7 @@ class Bitlbee < Formula
     sha256 x86_64_linux:   "046736bbc9acefad55c69d5acbe77d4f96123d6a1ab49db0179d95f5cb72eec6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "gnutls"
   depends_on "libgcrypt"

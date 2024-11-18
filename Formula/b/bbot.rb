@@ -20,7 +20,7 @@ class Bbot < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "openjdk" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"

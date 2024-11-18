@@ -16,7 +16,7 @@ class Bloaty < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "capstone"
   depends_on "protobuf"
@@ -37,6 +37,7 @@ class Bloaty < Formula
     abseil_cxx_standard = 17 # Keep in sync with C++ standard in abseil.rb
     inreplace "CMakeLists.txt", "CMAKE_CXX_STANDARD 11", "CMAKE_CXX_STANDARD #{abseil_cxx_standard}"
     inreplace "CMakeLists.txt", "-std=c++11", "-std=c++17"
+
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=#{abseil_cxx_standard}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

@@ -25,6 +25,13 @@ cask "mindforger" do
 
   app "mindforger.app"
 
+  zap trash: [
+    "~.localshareMindForger",
+    "~.mindforger.md",
+    "~LibraryApplication SupportMindForger",
+    "~LibrarySaved Application Statecom.yourcompany.mindforger.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

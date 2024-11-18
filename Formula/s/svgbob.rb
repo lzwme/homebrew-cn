@@ -1,22 +1,18 @@
 class Svgbob < Formula
   desc "Convert your ascii diagram scribbles into happy little SVG"
   homepage "https:ivanceras.github.iosvgbob-editor"
-  url "https:github.comivancerassvgbobarchiverefstags0.7.2.tar.gz"
-  sha256 "a48c80bbbe1ca7575d1dc07a0a02b8d7116689dde0ffee7953f89865ae008357"
+  url "https:github.comivancerassvgbobarchiverefstags0.7.3.tar.gz"
+  sha256 "f859372839614af9102e476f643956a14b2334dd56819e5935d7192153cb99c2"
   license "Apache-2.0"
   head "https:github.comivancerassvgbob.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "556af648a5a4104f25b642e55e833c011a6f51662a30007dce2bb632171097dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a95291ecc34de16fee752808e98f2c6df881477516f2c8f2638ae0488f71a5f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c171c95df91d9bb63b93137bf71f94dbfd477c70ce2101d8bfae5b10170c79e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9863eea174639c29795fa62d6d9ce1dccc0c1450ece1e109f9e02cd604904781"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a7368fc3952f47ad022b81882fc6e0af9a799adc86520ad36df188134cfa741"
-    sha256 cellar: :any_skip_relocation, sonoma:         "29868df7048921b54018b41c9d685b8ec19b4e68e0eff7cca853aee836146e2d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2d6834238b96fb5bc092e3f8327c78c60d35ac4af35426de02b9d474b607792"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea7c1a1c4f79f6f76207467968b6c037831fd727d069d3d026db9524d53fa20f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3c78fce9cb0ad73241060c3bbe1af3da58ccaba4a27f3ca64d665d06372d1673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1adf826293db81cf51dc8f9c35ed68906b629e47e238ac429e35dec75a9d8578"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5e32c07bde74477d219d2266b7afa1748ce67bfc26ad55871353d2c2ba2f297"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab59853ca30109c4eceae025555aa9cc09a325dffafc6e0793c7c652281920e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "23309dbad0fd01e0de87a8b3a2ecbc79a41c70f835880e95ea3ccc6812e44ef4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42b47e238ffbf33c0e2649198c1fceb9df3eb0e0974940cd296c93a0df06e4dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "f0f0fd5aea7eec08b9db8e1274783afef44ad3b635a398f7dab5018d6e154d68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0891f49bb80e9a7d8445da24921cfeaacdda15be39cdc64f91a10f13bcc58b6"
   end
 
   depends_on "rust" => :build

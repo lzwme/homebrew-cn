@@ -1,8 +1,8 @@
 class QtPerconaServer < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.tar.xz"
-  sha256 "c5f22a5e10fb162895ded7de0963328e7307611c688487b5d152c9ee64767599"
+  url "https://download.qt.io/official_releases/qt/6.7/6.7.3/submodules/qtbase-everywhere-src-6.7.3.tar.xz"
+  sha256 "8ccbb9ab055205ac76632c9eeddd1ed6fc66936fc56afc2ed0fd5d9e23da3097"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -10,12 +10,11 @@ class QtPerconaServer < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:  "f9b42c6f4de923d6b7c452dfa6454d3ff30219fdc4c99a9a3f17539add805fc1"
-    sha256 cellar: :any,                 arm64_ventura: "cb4ec5ba83c47e9e5aa42db405fd3e6c9d3d6ddb7cc70822b1c354fa2b18a25e"
-    sha256 cellar: :any,                 sonoma:        "a86a2fa03ffa2b31216c6d1977eb083c93c5216557f3e48d233b30bdbe4ec4cd"
-    sha256 cellar: :any,                 ventura:       "407ed5bbddd3bdfe6f8b13b5902f8a49c3458d8fbe662e08979c8333928cd8d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85701a4da17e54dde8b2cd09d26e7e73edf4e3c4cbdbc9a5a02935e208cbbfd4"
+    sha256 cellar: :any,                 arm64_sonoma:  "60bf3e61d61cf447ab0d3f411d95e03c0adf40e46aed63a3a4f7de827083b88a"
+    sha256 cellar: :any,                 arm64_ventura: "ce07eba34a46e36bc779143c694b4814e2089fcc922252c88dba897899046e88"
+    sha256 cellar: :any,                 sonoma:        "db44a66e8a43cdecf0aad8d6c6dd85310754584ca0876f6911ebc9035f24dd86"
+    sha256 cellar: :any,                 ventura:       "a72f065f79433dfb2c27044f2249f629894ec4c2140e81930682cf0a210d0a4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9be1770432fa9425df2bdb36ffc2545ab753ca990337799489c2f473640c32ab"
   end
 
   depends_on "cmake" => [:build, :test]

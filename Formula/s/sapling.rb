@@ -23,15 +23,13 @@ class Sapling < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "72ecad5e177d577c7ebd927239070e146840c59200c4b3a8a52671def95ce02e"
-    sha256 cellar: :any,                 arm64_sonoma:   "13c25947c50793d1667376036bbe727ef7553644dc9e30da685fbe49bc41d903"
-    sha256 cellar: :any,                 arm64_ventura:  "906fe8ad3aaa71ea843beabd59e547c30091376e04e24557550f8f378843e823"
-    sha256 cellar: :any,                 arm64_monterey: "b9b45ea52f2afb75b4edef87552c04b9fa7987a8020fabecbc7c0818460bf282"
-    sha256 cellar: :any,                 sonoma:         "8721faac713244b72b274d471d78a209af615459bae0f104bd9045281fb0ec35"
-    sha256 cellar: :any,                 ventura:        "6062dce6be0a5eb76dd044b6d9d3aca7aabc25a31dae8e273bce2d6158888bda"
-    sha256 cellar: :any,                 monterey:       "7bbaa4fee381fcc479a699622275335ccb6f07d8343718f6a8dd25ec956206f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca0de217b8362da225c88e3c937f6c228e0597bc2dc6e1f88ca6520558c2becf"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "60bcea0cc8d231647295709c7b3d4e02a12c41fc01e42008a166ebe34605fae3"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fa0437a9e393c5351a924b7043e6437e7103a432214c0b45330b59125743f2d"
+    sha256 cellar: :any,                 arm64_ventura: "62de9035cb2918f4ed281c75db35d3ba307734815860342cd3b1173596fd5419"
+    sha256 cellar: :any,                 sonoma:        "53b8e3e1cee4803014e4e2020d0a8a9331234859fcb2144dbbfa5bbcd3f18361"
+    sha256 cellar: :any,                 ventura:       "cc3b90c7bf62e9dab0695598a52b7aed57906f9a4e5f4b2a0e2a37b31760fb36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "595d837e78b2fcbeae267fe54256134c38d6094fae4a49ee0fae330890045844"
   end
 
   depends_on "cmake" => :build
@@ -46,7 +44,10 @@ class Sapling < Formula
   depends_on "python@3.12"
 
   uses_from_macos "bzip2"
-  uses_from_macos "curl"
+  # curl-config on ventura builds do not report http2 feature,
+  # this is a workaround to allow to build against system curl
+  # see discussions in https:github.comHomebrewhomebrew-corepull197727
+  uses_from_macos "curl", since: :sonoma
   uses_from_macos "zlib"
 
   conflicts_with "sl", because: "both install `sl` binaries"
@@ -96,17 +97,6 @@ class Sapling < Formula
       odie "Inreplace did not modify any branch usage in Cargo.toml manifests!" if no_modification
     end
 
-    if OS.mac?
-      # Avoid vendored libcurl.
-      inreplace %w[
-        edenscmlibhttp-clientCargo.toml
-        edenscmlibdoctornetworkCargo.toml
-        edenscmlibrevisionstoreCargo.toml
-      ],
-        ^curl = { version = "(.+)", features = \["http2"\] }$,
-        'curl = { version = "\\1", features = ["http2", "force-system-lib-on-osx"] }'
-    end
-
     python3 = "python3.12"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -148,12 +138,7 @@ class Sapling < Formula
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ]
-    if OS.mac?
-      assert (bin"sl").dynamically_linked_libraries.any? { |dll| dll.start_with?("usrliblibcurl.") },
-             "No linkage with system curl! Cargo is likely using a vendored version."
-    else
-      dylibs << (Formula["curl"].opt_libshared_library("libcurl"))
-    end
+    dylibs << (Formula["curl"].opt_libshared_library("libcurl")) if OS.linux?
 
     dylibs.each do |library|
       assert check_binary_linkage(bin"sl", library),

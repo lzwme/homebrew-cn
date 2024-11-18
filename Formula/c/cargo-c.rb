@@ -11,23 +11,24 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9c0c1b7844fe4712d74500fab1032405414930b4bba5abed3881a189701bed1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "603a4e4b165a5eb5d7f4f52f7de4c0b583345eb6789a7c9a43aa358d486560b0"
-    sha256 cellar: :any,                 arm64_ventura: "ca357671b2b7d8df05e2e248eda1943ebc666e0ed1a36d8e500d729d6de64d68"
-    sha256 cellar: :any,                 sonoma:        "7a5eb6a052715f2bf19afce583456cfbf42747c8b1f1ca2f5c0cc1c0ae9ae888"
-    sha256 cellar: :any,                 ventura:       "2c4591df9bdfa9fa55d83d3cc4727a094e375c161bec9b7dbd4b7c137a01b68b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b17b13927c04926fc5a6e0acf59db403d80c57aff93f8b54243ab0da83c0c8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8e9a3bae0da95a41d8818909c34ded22c2aba59a3a12d07b0389eef73985ed94"
+    sha256 cellar: :any,                 arm64_sonoma:  "c476ff73e9228cdeab5fe42e4d9ca54bf01a641cd72bb9d3290bf120229b27d1"
+    sha256 cellar: :any,                 arm64_ventura: "13be07e091401e2a1913d19b2876186fda87d7547bd5a67400a97c693334b428"
+    sha256 cellar: :any,                 sonoma:        "22b3b8467d4d071bd79cc234cb5f513f3b5c1f93fec3a5f330172a468a50c283"
+    sha256 cellar: :any,                 ventura:       "952068e034d29232358ce9747cc246cfa0371f1e08c15d2d0184428101a69a6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b2f52bb385f560be363f7631bbc3c5bff0c8f70243ff0428bdb2c15ee163a2"
   end
 
   depends_on "rust" => :build
-  # The `cargo` crate requires http2, which `curl-config` from macOS reports to
-  # be missing despite its presence.
-  # Try switching to `uses_from_macos` when that's resolved.
-  depends_on "curl"
   depends_on "libgit2"
   depends_on "libssh2"
   depends_on "openssl@3"
 
+  # curl-config on ventura builds do not report http2 feature,
+  # this is a workaround to allow to build against system curl
+  # see discussions in https:github.comHomebrewhomebrew-corepull197727
+  uses_from_macos "curl", since: :sonoma
   uses_from_macos "zlib"
 
   on_linux do
@@ -58,7 +59,6 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["curl"].opt_libshared_library("libcurl"),
       Formula["libgit2"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),

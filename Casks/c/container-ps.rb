@@ -9,6 +9,12 @@ cask "container-ps" do
 
   app "Container PS.app"
 
+  zap trash: [
+    "~LibraryApplication Supportcontainer-ps",
+    "~LibraryPreferencescom.electron.container-ps.plist",
+    "~LibrarySaved Application Statecom.electron.container-ps.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

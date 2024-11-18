@@ -11,6 +11,12 @@ cask "leocad" do
 
   app "LeoCAD.app"
 
+  zap trash: [
+    "~LibraryCachesLeoCAD Software",
+    "~LibraryPreferencesorg.leocad.LeoCAD.plist",
+    "~LibrarySaved Application Stateorg.leozide.LeoCAD.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

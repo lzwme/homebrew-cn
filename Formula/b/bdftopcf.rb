@@ -14,8 +14,8 @@ class Bdftopcf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d558ac21dd07f613ee4ebea998439f027b861a788fde3095a7d59193ea33562c"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "xorgproto"  => :build
+  depends_on "pkgconf" => :build
+  depends_on "xorgproto" => :build
 
   def install
     system "./configure", *std_configure_args

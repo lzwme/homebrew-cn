@@ -30,7 +30,7 @@ class Bind < Formula
     sha256 x86_64_linux:  "098d706e0f27f1a8f8e986e036f8fed15aa0dc07471fd5925d6ab14d4b4b3e94"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "jemalloc"
   depends_on "json-c"

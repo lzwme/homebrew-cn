@@ -3,17 +3,17 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/ba/bc/7c7fcc732f915530ed1aad0246137f5b08fad32ddecbb8cc8a2ae79b371b/llm-0.17.1.tar.gz"
-  sha256 "b7688d721f0d42a6e428c945f3dbdba5b92dde790f71b3610631bea24a725f21"
+  url "https://files.pythonhosted.org/packages/8d/f1/0fb7b1fd468eb9d80ddb583cc1badcadbebf4549c3cdf4a7ff26f62803a6/llm-0.18.tar.gz"
+  sha256 "1c4243dea5ec3e7ee50f4fd0b8ccd6475b8f5a6cca2b9aac8270c0e843c0e490"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "69004a35347b8f3cef2fb5ee69cfbd1d6f491c3d1cc2b5dac69578557844aa01"
-    sha256 cellar: :any,                 arm64_sonoma:  "53d33f424570c28b25421c7e641f809f1f38bcceebe0886b42c1ff7c05eaf713"
-    sha256 cellar: :any,                 arm64_ventura: "ca2aab993abe1d9539ba99ed7f7e68ba8a64d2bcfed55479394587399ffd6fd6"
-    sha256 cellar: :any,                 sonoma:        "b18e3fc1704d05c04a6ccfb1b78f06f2d801eba3ea09b3d94722bb9e06fb47b7"
-    sha256 cellar: :any,                 ventura:       "0ed77696c1b6ade9ccc640943fe2aa802b25c6d62d51cd2106f0814ee6ae9e15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f89395e0f9dfb3a97b449689625f1654885d87ae9817eccac71a8c338fe7e69"
+    sha256 cellar: :any,                 arm64_sequoia: "d95c42e348403a63b1b54981584e0f043ee93341bd62c5b3967293ae42b47e8e"
+    sha256 cellar: :any,                 arm64_sonoma:  "64381169260c695b8baaa90441e19caf52da3dd6f553c53a8ac5b0377b9132e4"
+    sha256 cellar: :any,                 arm64_ventura: "22c13c24acd89540b08d2ff2bb33acb942125e215799ada13f75ca03f76f6489"
+    sha256 cellar: :any,                 sonoma:        "ec7483192cd192fa582984056a962bfcc28c5f6bcd8ae1a848bea1597c1ccfc8"
+    sha256 cellar: :any,                 ventura:       "5ccd90c38bc57666c28c1c6624e41391681c3930b9af4647c60afeb2f4e1d8de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfd914078e5e118ba910a47c8bb8c9355f29e34daaf300633e312556dff6c77a"
   end
 
   depends_on "rust" => :build
@@ -52,8 +52,8 @@ class Llm < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/b6/44/ed0fa6a17845fb033bd885c03e842f08c1b9406c86a2e60ac1ae1b9206a6/httpcore-1.0.6.tar.gz"
-    sha256 "73f6dbd6eb8c21bbf7ef8efad555481853f5f6acdeaff1edb0694289269ee17f"
+    url "https://files.pythonhosted.org/packages/6a/41/d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90/httpcore-1.0.7.tar.gz"
+    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
   end
 
   resource "httpx" do
@@ -67,13 +67,13 @@ class Llm < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/ac/3d/4ca1c6b8d1d15ea747da474891f9879c0f0777e2e44e87c0be81657ed016/jiter-0.7.0.tar.gz"
-    sha256 "c061d9738535497b5509f8970584f20de1e900806b239a39a9994fc191dad630"
+    url "https://files.pythonhosted.org/packages/46/e5/50ff23c9bba2722d2f0f55ba51e57f7cbab9a4be758e6b9b263ef51e6024/jiter-0.7.1.tar.gz"
+    sha256 "448cf4f74f7363c34cdef26214da527e8eeffd88ba06d0b80b485ad0667baf5d"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/83/fc/77552f9ddd40ac32fe44c591c5a0918a050aea6ce62a3f22fc7d8fe0359a/openai-1.53.0.tar.gz"
-    sha256 "be2c4e77721b166cce8130e544178b7d579f751b4b074ffbaade3854b6f85ec5"
+    url "https://files.pythonhosted.org/packages/7e/95/83845be5ddd46ce0a35fd602a3366ec2d7fd6b2be6fb760ca553e2488ea1/openai-1.54.4.tar.gz"
+    sha256 "50f3656e45401c54e973fa05dc29f3f0b0d19348d685b2f7ddb4d92bf7b1b6bf"
   end
 
   resource "pluggy" do
@@ -112,8 +112,8 @@ class Llm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/ed/22/a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bd/setuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https://files.pythonhosted.org/packages/c8/db/722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6fee/setuptools-75.5.0.tar.gz"
+    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "six" do
@@ -147,8 +147,8 @@ class Llm < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/e9/34/bef135b27fe1864993a5284ad001157ee9b5538e859ac90f5b0e8cc8c9ec/tqdm-4.66.6.tar.gz"
-    sha256 "4bdd694238bef1485ce839d67967ab50af8f9272aab687c0d7702a01da0be090"
+    url "https://files.pythonhosted.org/packages/e8/4f/0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0/tqdm-4.67.0.tar.gz"
+    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
   end
 
   resource "typing-extensions" do

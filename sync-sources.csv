@@ -727,6 +727,7 @@ Homebrew-homebrew-core/Formula/c/cattle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cava.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cayley.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cbc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cbfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cbindgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cbmbasic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cbmc.rb, Homebrew/homebrew-core, 1
@@ -922,6 +923,7 @@ Homebrew-homebrew-core/Formula/c/clipsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clisp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clitest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clive.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cljfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cln.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clog.rb, Homebrew/homebrew-core, 1
@@ -3886,7 +3888,7 @@ Homebrew-homebrew-core/Formula/lib/libxscrnsaver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxshmfence.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxslt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxspf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libxt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libxt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxtst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxvmc.rb, Homebrew/homebrew-core, 0

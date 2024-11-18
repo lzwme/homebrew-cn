@@ -17,7 +17,7 @@ class Bupstash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b61eb9cbb571a97f1064e6b0e0766e2fc19e1b7691ab8cc988ea4db67f8d5182"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libsodium"
 

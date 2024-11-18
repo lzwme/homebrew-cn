@@ -15,7 +15,7 @@ class Bandicoot < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "clblas"
   depends_on "openblas"
 
@@ -27,17 +27,11 @@ class Bandicoot < Formula
   end
 
   def install
-    if OS.mac?
-      # Enable the detection of OpenBLAS on macOS
-      system "cmake", "-S", ".", "-B", "build",
-                      "-DALLOW_OPENBLAS_MACOS=ON",
-                      "-DALLOW_BLAS_LAPACK_MACOS=ON",
-                      *std_cmake_args
-    else
-      # Avoid specifying detection for linux
-      system "cmake", "-S", ".", "-B", "build",
-                      *std_cmake_args
-    end
+    args = []
+    # Enable the detection of OpenBLAS on macOS. Avoid specifying detection for linux
+    args += ["-DALLOW_OPENBLAS_MACOS=ON", "-DALLOW_BLAS_LAPACK_MACOS=ON"] if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

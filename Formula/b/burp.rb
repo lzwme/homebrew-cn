@@ -44,13 +44,17 @@ class Burp < Formula
     end
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librsync"
   depends_on "openssl@3"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "acl"
+  end
 
   def install
     resource("uthash").stage do
@@ -59,7 +63,7 @@ class Burp < Formula
 
     ENV.prepend "CPPFLAGS", "-I#{buildpath}uthashinclude"
 
-    system "autoreconf", "-fiv" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     system ".configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}burp",

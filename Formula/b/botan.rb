@@ -20,7 +20,7 @@ class Botan < Formula
     sha256 x86_64_linux:  "e26d10788a66b623e5c9d2b127303963062cb47f6562f0c127a1e97f6e502169"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ca-certificates"
   depends_on "python@3.13"
   depends_on "sqlite"

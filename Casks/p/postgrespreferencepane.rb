@@ -8,4 +8,10 @@ cask "postgrespreferencepane" do
   homepage "https:github.comMaccaTechPostgresPrefs"
 
   prefpane "PostgreSQL.prefPane"
+
+  zap trash: [
+    "~LibraryLaunchAgentsorg.postgresql.preferences.*.plist",
+    "~LibraryLogsPostgreSQL",
+    "~LibraryPreferencesorg.postgresql.preferences.servers.plist",
+  ]
 end

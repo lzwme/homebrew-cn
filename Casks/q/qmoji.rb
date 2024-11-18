@@ -9,6 +9,8 @@ cask "qmoji" do
 
   app "qmoji.app"
 
+  zap trash: "~LibraryPreferencescom.jaredforsyth.qmoji.json"
+
   caveats do
     requires_rosetta
   end

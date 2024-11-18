@@ -1,8 +1,8 @@
 class Fltk < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https:www.fltk.org"
-  url "https:www.fltk.orgpubfltk1.3.9fltk-1.3.9-source.tar.gz"
-  sha256 "d736b0445c50d607432c03d5ba5e82f3fba2660b10bc1618db8e077a42d9511b"
+  url "https:www.fltk.orgpubfltk1.3.10fltk-1.3.10-source.tar.gz"
+  sha256 "c1c96d4f2ca7844f4b7945b4670aff2846f150cd5f3e23e3e4c70a61807108c7"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
 
   livecheck do
@@ -11,14 +11,12 @@ class Fltk < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "b1f013906d83a39cbf3154b72c0834dfe0b5fddb18f091742d3d6209f5143986"
-    sha256 arm64_sonoma:   "91c7ccb23fdc7ee40d62179d011655dcf4101a524d15378a8eab10b6cdd2479f"
-    sha256 arm64_ventura:  "c5b71477f972a83b169634cda2e0dd9ad1cc7a050c4fc9e7e67e2ef67f9a30dc"
-    sha256 arm64_monterey: "ce76c6264a6b286c50effde7467af19277f3aa6687ea3defb5a73f0152753652"
-    sha256 sonoma:         "b9bb01de6143df249171a3222ac987e5f767e87a917cbde3a94b5f63e481314c"
-    sha256 ventura:        "d3445b029cec2eec979b6b64478c388759c1950cf69d3b0b8ce89aa3711d954f"
-    sha256 monterey:       "f974455eeeebd4968b82146f20259634e5eea0e3f66f93a568cb0526bbadea9e"
-    sha256 x86_64_linux:   "140c36c48ef05474e89989556e188b4993d89a770fd74ad6166f640d5be40872"
+    sha256 arm64_sequoia: "54759e1f0e09059afe4336d8dd8c7553b2c3826fd7de66c68d646ad7de28845d"
+    sha256 arm64_sonoma:  "f396bd099823600cb79495748dc245766495986e53ccc17c3f6f9f1e798c84cb"
+    sha256 arm64_ventura: "78ffee8da5edf502295b918f039a2bd351621c43d700c5713f0c6b6b397973a2"
+    sha256 sonoma:        "5862341ba160f98a461fa44f71975b4620e20513d7f91c92d10856a2e7d95e10"
+    sha256 ventura:       "3655b8af66de20eab4e70ce5ff45941780fed5078d0610e45639c5e0922f4678"
+    sha256 x86_64_linux:  "ec631462814cb6bec51b83dc38663df566c09ec4cdb307c6af1976f197c4b2b1"
   end
 
   head do

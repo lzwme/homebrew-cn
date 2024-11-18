@@ -25,7 +25,7 @@ class Bat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9b46511808dedc8e88fe9a7194adee9d873e84c32a22a5fdc2b66f13cf35b56"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "oniguruma"

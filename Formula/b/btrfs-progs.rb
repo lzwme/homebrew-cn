@@ -18,7 +18,7 @@ class BtrfsProgs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "af208cffbee39cbbabbc91002cfad1b8f706353ddd466ea3d5fd5f5c8c815416"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "sphinx-doc" => :build

@@ -1,6 +1,6 @@
 class Clog < Formula
   desc "Colorized pattern-matching log tail utility"
-  homepage "https:taskwarrior.orgdocsclog"
+  homepage "https:gothenburgbitfactory.orgclogdocs"
   url "https:github.comGothenburgBitFactoryclogreleasesdownloadv1.3.0clog-1.3.0.tar.gz"
   sha256 "fed44a8d398790ab0cf426c1b006e7246e20f3fcd56c0ec4132d24b05d5d2018"
   license "MIT"

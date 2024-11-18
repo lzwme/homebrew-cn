@@ -1,8 +1,8 @@
 class Spack < Formula
   desc "Package manager that builds multiple versions and configurations of software"
   homepage "https:spack.io"
-  url "https:github.comspackspackarchiverefstagsv0.22.2.tar.gz"
-  sha256 "aef1a5ce16fe1a8bcced54c40012b19a0f4ade1cd9c5379aca081e96ec5b18ac"
+  url "https:github.comspackspackarchiverefstagsv0.23.0.tar.gz"
+  sha256 "ddb8220c46743e45c9484622370a1e17e193acba6a43230868c2dbc717e88b56"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comspackspack.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Spack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "632ce5663f6b4868d4aef30a30420962adcd3ecba55805d225458e2f2ae341c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "632ce5663f6b4868d4aef30a30420962adcd3ecba55805d225458e2f2ae341c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "632ce5663f6b4868d4aef30a30420962adcd3ecba55805d225458e2f2ae341c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6739a45e0cfaa8da77918019d076cf39199ed08b7db5ed436e7eb60dc37b748"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6739a45e0cfaa8da77918019d076cf39199ed08b7db5ed436e7eb60dc37b748"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cf3d6110e4504286c7bb0df44f5544b80cea8df3c9de00bdd8ca93a961ac1f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6173f977d3891104cb46ee50c4bc837cf7b92661af6183b62b0ec83464d8ae83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6173f977d3891104cb46ee50c4bc837cf7b92661af6183b62b0ec83464d8ae83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6173f977d3891104cb46ee50c4bc837cf7b92661af6183b62b0ec83464d8ae83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c682f2cd78501749a964b8746a96323360756716b49f328749e112083c458628"
+    sha256 cellar: :any_skip_relocation, ventura:       "c682f2cd78501749a964b8746a96323360756716b49f328749e112083c458628"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64db88c47bf810db166550726a6f6d2f9d22ba8d69c5d2674f897e3d5c65a016"
   end
 
   uses_from_macos "python"

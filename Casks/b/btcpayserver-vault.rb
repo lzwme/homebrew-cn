@@ -17,6 +17,8 @@ cask "btcpayserver-vault" do
 
   app "BTCPayServer Vault.app"
 
+  zap trash: "~LibrarySaved Application Statecom.btcpayserver.vault.savedState"
+
   caveats do
     requires_rosetta
   end

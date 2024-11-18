@@ -15,7 +15,7 @@ class Baresip < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libre"
 
   on_macos do
@@ -23,13 +23,12 @@ class Baresip < Formula
   end
 
   def install
-    libre = Formula["libre"]
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DRE_INCLUDE_DIR=#{libre.opt_include}re
+      -DRE_INCLUDE_DIR=#{Formula["libre"].opt_include}re
     ]
-    system "cmake", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build", "-j"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 

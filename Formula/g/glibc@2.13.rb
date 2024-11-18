@@ -126,7 +126,6 @@ class GlibcAT213 < Formula
         "--disable-dependency-tracking",
         "--disable-silent-rules",
         "--prefix=#{prefix}",
-        "--enable-obsolete-rpc",
         "--without-selinux",
         "--with-headers=#{Formula["linux-headers@4.4"].include}",
       ]

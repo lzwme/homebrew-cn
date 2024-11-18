@@ -34,7 +34,7 @@ class TrashCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources(link_manpages: true)
+    virtualenv_install_with_resources
   end
 
   test do

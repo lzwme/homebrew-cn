@@ -11,19 +11,20 @@ class BitwardenCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "8390437164839a4964681bbca8d7fc7b609721590543b52472c8fc1ce77f48f7"
-    sha256                               arm64_sonoma:  "d21fe06e0476f3203d9bbd0d68a40265665b7c9a29a31886d4ce22e7480fd78a"
-    sha256                               arm64_ventura: "60b55f9b140f21db10ba98739280be916bd46a3d249049d9b119a6a0a811805a"
-    sha256                               sonoma:        "69c355971c6b4f217aac5a9c90b3f97b264faa2e767fd59120431868adf94547"
-    sha256                               ventura:       "7bf6753e26f425be72f2da673558efd45ee5b0bc5e76da56339ac9cbcb12dd4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a084b9b6adb392d2c735bf2a1138f50d6bff5cb2e1353a2aae8619b0e853255c"
+    rebuild 1
+    sha256                               arm64_sequoia: "7301888778a93e4807475350b1a001d4e6cc80d1d56d94153d250d01ad667252"
+    sha256                               arm64_sonoma:  "5b918f77e9185ada288332d2381681bfedc5c789c0848ec065301682d58c88a0"
+    sha256                               arm64_ventura: "4c4edb366f65ae20e07f3be32915c30c1d30f779e0d4da95c015c2b554e98122"
+    sha256                               sonoma:        "9aa23e06f199947d7639b8ebb9163dcd38702bc0f98b213e081e5de125fb0de6"
+    sha256                               ventura:       "f9a6fd88f57b5d77d4c4d3080e561e807c97b170491beae85e20f218d5d0d64e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce1a51de4b97580ed639a95080d6ea64578f69d50412890831f0465a93f4a882"
   end
 
-  # fail to build with node v23 due to https:github.comnodejsnodeissues55826
-  depends_on "node@22"
+  depends_on "node"
 
   def install
     system "npm", "ci", "--ignore-scripts"
+
     cd buildpath"appscli" do
       # The `oss` build of Bitwarden is a GPL backed build
       system "npm", "run", "build:oss:prod", "--ignore-scripts"

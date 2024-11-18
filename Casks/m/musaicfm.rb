@@ -8,4 +8,6 @@ cask "musaicfm" do
   homepage "https:github.comdocterdMusaicFM"
 
   screen_saver "MusaicFM.saver"
+
+  zap trash: "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferencesByHostcom.obrhoff.musaicfm.*.plist"
 end

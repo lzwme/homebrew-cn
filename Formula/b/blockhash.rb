@@ -16,7 +16,7 @@ class Blockhash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5281622fbde0603ec516b153e1a02e85d58e18c0074e4a6bc2b7df5670784aee"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "imagemagick"
 
   uses_from_macos "python" => :build

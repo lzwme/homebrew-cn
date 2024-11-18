@@ -1,17 +1,17 @@
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https:github.comCycloneDXcdxgen"
-  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.0.0.tgz"
-  sha256 "c931ced0a0e673fe09895773ced4c196d58db4eb053a94a7e38879f25e611302"
+  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.0.1.tgz"
+  sha256 "6fa50097023b7279e6b3a9f07669f70f2d4956dfc6f6255f41761b4abc0bdf70"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af3cdde4bf47b92e076bc094b3273625bd6409b5f02b4c71828cc9b95150dbd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "694be565b710874aadcf3266558f78b62edd595294d0138fa87bbd4e8798cd22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1c75d4c55803bd824bfa82b02d168346f7f7d56d4dc955a0275439802f86b33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac7008c33ffd3dc006f9052f2e68383c3593138cf7e0ff17399dbf083ad449e1"
-    sha256 cellar: :any_skip_relocation, ventura:       "38f3fca97d658924c32157565eccd97810ee0a9c86e9ca0d614988d796d1853f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32e598960a099533f964c6b9ca8ca7605c4ce987f18a04b365ea9222c15e816a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f08c879859d7de5e5dab70f87c60ef3b00ba855da9db169222c2bd8c5fbd6e25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d219b34da0dd14bea8a940b0d56a2ac748ff12f55335af88cf0bd9ef98f1e730"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "03f01e8225ccc3d1edc09048610809d739a8157727734b5d21f29ba223dbc755"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f99d7a54428a5b08ddc74d2102007430291c23a6357f9847d6159fa21170d63c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d4cc302f5e6116d7cfb103a9caf4fa3935431c1dfae3e67828594c39dec10061"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84dc66ef70d3c132a97664a66bc5b97cfdc4b90f379ae1e18a143be588c556d2"
   end
 
   depends_on "node"
@@ -30,6 +30,10 @@ class Cdxgen < Formula
 
       rm f
     end
+
+    # Remove pre-built osquery plugins for macOS arm builds
+    osquery_plugins = node_modules"@cyclonedxcdxgen-plugins-bin-darwin-arm64pluginsosquery"
+    rm_r(osquery_plugins) if OS.mac? && Hardware::CPU.arm?
   end
 
   test do

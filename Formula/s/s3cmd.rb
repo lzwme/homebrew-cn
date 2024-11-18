@@ -19,6 +19,7 @@ class S3cmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ff809e6935a4f1e5973d1e6d60ee4f04d9aecc4151f3a734df55d4ea3609b90"
   end
 
+  depends_on "libmagic" # for python-magic
   depends_on "python@3.13"
 
   resource "python-dateutil" do
@@ -37,7 +38,7 @@ class S3cmd < Formula
   end
 
   def install
-    virtualenv_install_with_resources(link_manpages: true)
+    virtualenv_install_with_resources
   end
 
   test do

@@ -21,7 +21,7 @@ class Bochs < Formula
     sha256 x86_64_linux:   "62d0ad82342936b765efec9a5b9a2525d5daf1ebfa86be5d89530a0c585e7969"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtool"
   depends_on "sdl2"
 

@@ -1,8 +1,8 @@
 class QtMysql < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.tar.xz"
-  sha256 "c5f22a5e10fb162895ded7de0963328e7307611c688487b5d152c9ee64767599"
+  url "https://download.qt.io/official_releases/qt/6.7/6.7.3/submodules/qtbase-everywhere-src-6.7.3.tar.xz"
+  sha256 "8ccbb9ab055205ac76632c9eeddd1ed6fc66936fc56afc2ed0fd5d9e23da3097"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -10,11 +10,11 @@ class QtMysql < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "440dc27791dfa15b9776140512556842fbc59651d31f4e8cebc707de8dec2e22"
-    sha256 cellar: :any,                 arm64_ventura: "cefd7d38e5830538e6f4334db6d2caeeb43342b2c90863fe9583e17c4f074b87"
-    sha256 cellar: :any,                 sonoma:        "546033f6fc6d05cdc0b94d87a5000fd1c8f59d438979e11e5534ad15d3137af6"
-    sha256 cellar: :any,                 ventura:       "c57c2c3d365c8745843c1dac0cd814a52e0042a9a37efa43aee5353026017311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac8068580a16d1ad03ff7d9aad88fc796cd4409ebf83e4291de3629d8609055"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a2b6030dfe103e7659ffb179f0d28d7190cd595ea63299cbeda0e2aae417300"
+    sha256 cellar: :any,                 arm64_ventura: "b79b338cb5f8b80b96d1799b6d9d3e0cb09866717c45f6bf62cdb05bd34276be"
+    sha256 cellar: :any,                 sonoma:        "251df7385ae4075b181a238ac73ec4f53f8d5f149028e21debfbfb00a4b76ee6"
+    sha256 cellar: :any,                 ventura:       "efd45ba29bf8fb77413a1b93da740fed5084667d5388ac04413fcfc0486de172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39b8e320a0015f6487c15594abe6b16e28b50a7ab892e99ae3538aa6e70ae026"
   end
 
   depends_on "cmake" => [:build, :test]
