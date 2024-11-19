@@ -48,7 +48,7 @@ class Webpack < Formula
   end
 
   test do
-    (testpath"index.js").write <<~EOS
+    (testpath"index.js").write <<~JS
       function component() {
         const element = document.createElement('div');
         element.innerHTML = 'Hello' + ' ' + 'webpack';
@@ -56,7 +56,7 @@ class Webpack < Formula
       }
 
       document.body.appendChild(component());
-    EOS
+    JS
 
     system bin"webpack", "bundle", "--mode", "production", "--entry", testpath"index.js"
     assert_match "const e=document.createElement(\"div\");", File.read(testpath"distmain.js")

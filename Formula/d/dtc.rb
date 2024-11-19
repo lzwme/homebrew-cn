@@ -20,7 +20,7 @@ class Dtc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d1c865cba2244acd9bb059eae7fa4377506b64438ce12608f8f87d01e6640"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build

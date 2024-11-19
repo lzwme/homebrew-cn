@@ -22,7 +22,7 @@ class Ccache < Formula
   depends_on "cmake" => :build
   depends_on "cpp-httplib" => :build
   depends_on "doctest" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "span-lite" => :build
   depends_on "tl-expected" => :build
   depends_on "blake3"

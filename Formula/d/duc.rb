@@ -20,7 +20,7 @@ class Duc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8068dbd6bfa637aa4718113cff03ce8f8b641e65a379f489827b8acd3411f0e8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "glfw"

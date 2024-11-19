@@ -39,7 +39,7 @@ class Dnscontrol < Formula
     version_output = shell_output("#{bin}dnscontrol version")
     assert_match version.to_s, version_output
 
-    (testpath"dnsconfig.js").write <<~EOS
+    (testpath"dnsconfig.js").write <<~JS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");
       var r53 = NewDnsProvider("r53", "ROUTE53")
 
@@ -49,7 +49,7 @@ class Dnscontrol < Formula
         MX("@",5,"mail.myserver.com."),
         A("test", "5.6.7.8")
       )
-    EOS
+    JS
 
     output = shell_output("#{bin}dnscontrol check #{testpath}dnsconfig.js 2>&1").strip
     assert_equal "No errors.", output

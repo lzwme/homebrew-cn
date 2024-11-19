@@ -1,18 +1,18 @@
 class Litmusctl < Formula
   desc "Command-line interface for interacting with LitmusChaos"
   homepage "https:litmuschaos.io"
-  url "https:github.comlitmuschaoslitmusctlarchiverefstags1.11.0.tar.gz"
-  sha256 "b982343f69196071df3cad8ad20a0397d3e64edb424d2d77b6b8f7b050e3ab6e"
+  url "https:github.comlitmuschaoslitmusctlarchiverefstags1.12.0.tar.gz"
+  sha256 "5193ecb7127991e4fe1cb1175ea0bd6f3d376f7fa42f213173fe3724113e772a"
   license "Apache-2.0"
   head "https:github.comlitmuschaoslitmusctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f7b88154fbee3d2fe381914d658b4d5ff8a994d9cd7bd4a57e076089db4dad7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f7b88154fbee3d2fe381914d658b4d5ff8a994d9cd7bd4a57e076089db4dad7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f7b88154fbee3d2fe381914d658b4d5ff8a994d9cd7bd4a57e076089db4dad7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0eb826d0b2be3ef79885e6073a39238f25f58b697ab863bd7dc395e64e6fef25"
-    sha256 cellar: :any_skip_relocation, ventura:       "0eb826d0b2be3ef79885e6073a39238f25f58b697ab863bd7dc395e64e6fef25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44ffb4fcda2e41f5c5d8b68443bc83fbce68b56a7cf5cc085d5b77d0f6bbb82a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a44f01ab6828433fb6aa72450dd29a710d20d6304553330e4a4c281e0d4e0d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a44f01ab6828433fb6aa72450dd29a710d20d6304553330e4a4c281e0d4e0d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a44f01ab6828433fb6aa72450dd29a710d20d6304553330e4a4c281e0d4e0d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a93b3080ee63aeb0d5afa97e2cd8ac633afdbba4d7e809e138645f22f4470afa"
+    sha256 cellar: :any_skip_relocation, ventura:       "a93b3080ee63aeb0d5afa97e2cd8ac633afdbba4d7e809e138645f22f4470afa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a06bffa7b08469aaeff0dfaabf580125108fe9be988575adf65f495e020782b"
   end
 
   depends_on "go" => :build

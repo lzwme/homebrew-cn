@@ -20,7 +20,7 @@ class Cmusfm < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libfaketime" => :test
 
   uses_from_macos "curl"
@@ -32,7 +32,7 @@ class Cmusfm < Formula
   def install
     system "autoreconf", "--install"
     mkdir "build" do
-      system "..configure", "--prefix=#{prefix}", "--disable-dependency-tracking", "--disable-silent-rules"
+      system "..configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
   end

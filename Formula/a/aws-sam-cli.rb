@@ -16,7 +16,7 @@ class AwsSamCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1da608e26b8038a6692fe68178b5e55076845ec49013fbe58c392d26305c242"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"

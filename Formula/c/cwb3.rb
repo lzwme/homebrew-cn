@@ -33,7 +33,7 @@ class Cwb3 < Formula
     depends_on "pcre2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "readline"
 

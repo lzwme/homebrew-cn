@@ -22,7 +22,7 @@ class AstrometryNet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "feab592ac829d2863bf2ce65d50d9c880cfa60b513f6ac0a6d70dfe8aa13c1e3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "cairo"
@@ -79,11 +79,11 @@ class AstrometryNet < Formula
     EOS
     system bin"solve-field", "--config", "99.cfg", prefix"examplesapod4.jpg",
                               "--continue", "--dir", "jpg"
-    assert_predicate testpath"jpgapod4.solved", :exist?
-    assert_predicate testpath"jpgapod4.wcs", :exist?
+    assert_path_exists testpath"jpgapod4.solved"
+    assert_path_exists testpath"jpgapod4.wcs"
     system bin"solve-field", "--config", "99.cfg", prefix"examplesapod4.xyls",
                               "--continue", "--dir", "xyls"
-    assert_predicate testpath"xylsapod4.solved", :exist?
-    assert_predicate testpath"xylsapod4.wcs", :exist?
+    assert_path_exists testpath"xylsapod4.solved"
+    assert_path_exists testpath"xylsapod4.wcs"
   end
 end

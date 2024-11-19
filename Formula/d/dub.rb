@@ -29,7 +29,7 @@ class Dub < Formula
   end
 
   depends_on "ldc" => [:build, :test]
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   uses_from_macos "curl"
 

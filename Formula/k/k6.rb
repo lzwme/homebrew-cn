@@ -23,11 +23,11 @@ class K6 < Formula
   end
 
   test do
-    (testpath"whatever.js").write <<~EOS
+    (testpath"whatever.js").write <<~JS
       export default function() {
         console.log("whatever");
       }
-    EOS
+    JS
 
     assert_match "whatever", shell_output("#{bin}k6 run whatever.js 2>&1")
     assert_match version.to_s, shell_output("#{bin}k6 version")

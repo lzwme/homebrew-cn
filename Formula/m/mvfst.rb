@@ -1,18 +1,18 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https:github.comfacebookmvfst"
-  url "https:github.comfacebookmvfstarchiverefstagsv2024.11.11.00.tar.gz"
-  sha256 "c082ae1f08e53b910a6977a703b0b84fd9106e9d7b04d5f014d0714b12fbbaf9"
+  url "https:github.comfacebookmvfstarchiverefstagsv2024.11.18.00.tar.gz"
+  sha256 "4855fa55044769021877ae60683a9650bd2ad724d84b0a7897a7d802f610a4ee"
   license "MIT"
   head "https:github.comfacebookmvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e6be46419ea163c22adb29a1c720d4ba867d74acd61b8d1011daee6fd6ba4e13"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0946161dace700a24490be326f65712a9a17486ca7ec26708006d184b16efbe"
-    sha256 cellar: :any,                 arm64_ventura: "6d63c49928716cb40b28f4f480874f03627612c476a186c220ccccd91b210cdc"
-    sha256 cellar: :any,                 sonoma:        "39725cf53adf5b08788dd1d2da3c5e2e07770d34614f7bd348c6f36de758ac45"
-    sha256 cellar: :any,                 ventura:       "a8b0cf70b4cbfb442d451ff5bc1467e743269de33faf0b5063056eacc07c23be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "660e0470caa5c06b324cb29d9668e178bf2dc1862f4e3e1c6a5d6f3153c61f97"
+    sha256 cellar: :any,                 arm64_sequoia: "a41ddd4aa12034bda7b95dd4475655bcd3634702a4efbffe8b443e18b3fc1542"
+    sha256 cellar: :any,                 arm64_sonoma:  "38ebe320cc6a43ca4d6a0c540ab695c36776bee6d6cd70db8620282c4cd0e5b1"
+    sha256 cellar: :any,                 arm64_ventura: "4dee7b734c8e26283863ba249560f61590841829433b1b184a6860463eb7bf61"
+    sha256 cellar: :any,                 sonoma:        "54d3c6f31410314a5727e822d0e80408b423edcd9270938b23ce71b3d0e535f2"
+    sha256 cellar: :any,                 ventura:       "9f71fac8073e3d1109f2004be74bee3e331fa60111ca560fe403a65cb2d01570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6062a9c767f8ccb62b71e0476a2867fcc20a289c7ca8ba8e435a26165c431bb1"
   end
 
   depends_on "cmake" => [:build, :test]

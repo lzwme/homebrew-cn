@@ -23,36 +23,25 @@ class ApacheArrowGlib < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "apache-arrow"
   depends_on "glib"
 
-  fails_with gcc: "5"
-
   def install
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    if DevelopmentTools.clang_build_version >= 1500
-      recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
-        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
-        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
-    end
-
     system "meson", "setup", "build", "c_glib", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   test do
-    (testpath"test.c").write <<~SOURCE
+    (testpath"test.c").write <<~C
       #include <arrow-glibarrow-glib.h>
       int main(void) {
         GArrowNullArray *array = garrow_null_array_new(10);
         g_object_unref(array);
         return 0;
       }
-    SOURCE
+    C
     apache_arrow = Formula["apache-arrow"]
     glib = Formula["glib"]
     flags = %W[

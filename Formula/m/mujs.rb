@@ -35,11 +35,11 @@ class Mujs < Formula
   end
 
   test do
-    (testpath"test.js").write <<~EOS
+    (testpath"test.js").write <<~JS
       print('hello, world'.split().reduce(function (sum, char) {
         return sum + char.charCodeAt(0);
       }, 0));
-    EOS
+    JS
     assert_equal "104", shell_output("#{bin}mujs test.js").chomp
     # test pkg-config setup correctly
     assert_match "-I#{include}", shell_output("pkg-config --cflags mujs")

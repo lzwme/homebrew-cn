@@ -27,7 +27,7 @@ class Djview4 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "djvulibre"
   depends_on "libtiff"
   depends_on "qt@5"
@@ -37,7 +37,7 @@ class Djview4 < Formula
   patch :DATA
 
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
 
     system "./configure", "--with-x=no",
                           "--disable-nsdejavu",

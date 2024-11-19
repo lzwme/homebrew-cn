@@ -18,11 +18,11 @@ class VowpalWabbit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "24bc424f2e333c4995e596f13ce7b4bda399467dc711098d4fb399fc954bf6bf"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "rapidjson" => :build
   depends_on "spdlog" => :build
-  depends_on "boost"
-  depends_on "eigen"
   depends_on "fmt"
 
   uses_from_macos "zlib"
@@ -35,17 +35,14 @@ class VowpalWabbit < Formula
   patch :DATA
 
   def install
-    ENV.cxx11
-
     args = %w[
-      -DBUILD_TESTING=OFF
       -DRAPIDJSON_SYS_DEP=ON
       -DFMT_SYS_DEP=ON
       -DSPDLOG_SYS_DEP=ON
-      -DVW_BOOST_MATH_SYS_DEP=On
-      -DVW_EIGEN_SYS_DEP=On
-      -DVW_SSE2NEON_SYS_DEP=On
-      -DVW_INSTALL=On
+      -DVW_BOOST_MATH_SYS_DEP=ON
+      -DVW_EIGEN_SYS_DEP=ON
+      -DVW_SSE2NEON_SYS_DEP=ON
+      -DVW_INSTALL=ON
     ]
 
     # The project provides a Makefile, but it is a basic wrapper around cmake

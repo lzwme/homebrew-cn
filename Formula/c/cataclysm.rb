@@ -32,7 +32,7 @@ class Cataclysm < Formula
     end
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sdl2"
@@ -83,9 +83,7 @@ class Cataclysm < Formula
     user_config_dir.mkpath
 
     # run cataclysm for 30 seconds
-    pid = fork do
-      exec bin"cataclysm"
-    end
+    pid = spawn bin"cataclysm"
     begin
       sleep 30
       assert_predicate user_config_dir"config",

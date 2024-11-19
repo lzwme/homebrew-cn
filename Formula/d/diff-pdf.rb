@@ -19,7 +19,7 @@ class DiffPdf < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "glib"
@@ -30,10 +30,8 @@ class DiffPdf < Formula
     depends_on "gettext"
   end
 
-  fails_with gcc: "5"
-
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

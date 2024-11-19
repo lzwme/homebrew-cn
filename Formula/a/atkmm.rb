@@ -18,7 +18,7 @@ class Atkmm < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "at-spi2-core"
   depends_on "glib"
@@ -28,8 +28,6 @@ class Atkmm < Formula
   on_macos do
     depends_on "gettext"
   end
-
-  fails_with gcc: "5"
 
   def install
     system "meson", "setup", "build", *std_meson_args

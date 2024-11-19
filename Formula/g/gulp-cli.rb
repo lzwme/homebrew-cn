@@ -32,12 +32,12 @@ class GulpCli < Formula
     assert_match "CLI version: #{version}", output
     assert_match "Local version: ", output
 
-    (testpath"gulpfile.js").write <<~EOS
+    (testpath"gulpfile.js").write <<~JS
       function defaultTask(cb) {
         cb();
       }
       exports.default = defaultTask
-    EOS
+    JS
     assert_match "Finished 'default' after ", shell_output("#{bin}gulp")
   end
 end

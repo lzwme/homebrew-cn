@@ -31,7 +31,7 @@ class Hsd < Formula
   end
 
   test do
-    (testpath"script.js").write <<~EOS
+    (testpath"script.js").write <<~JS
       const assert = require('assert');
       const hsd = require('#{libexec}libnode_moduleshsd');
       assert(hsd);
@@ -43,7 +43,7 @@ class Hsd < Formula
       (async () => {
         await node.ensure();
       })();
-    EOS
+    JS
     system Formula["node"].opt_bin"node", testpath"script.js"
     assert_predicate testpath".hsd", :directory?
   end

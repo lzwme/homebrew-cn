@@ -17,7 +17,7 @@ class DmtxUtils < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "imagemagick"
   depends_on "libdmtx"
@@ -35,7 +35,7 @@ class DmtxUtils < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

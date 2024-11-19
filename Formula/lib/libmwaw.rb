@@ -18,10 +18,10 @@ class Libmwaw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f6f70031a248697ceaaaf2b4626511400904de27cac8f6c441196a6bf05ef1c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librevenge"
 
-  fails_with gcc: "5"
+  uses_from_macos "zlib"
 
   resource "homebrew-test_document" do
     url "https:github.comopenpreserveformat-corpusraw825c8a5af012a93cf7aac408b0396e03a4575850office-examplesOld%20Word%20fileNEWSSLID.DOC"
@@ -29,10 +29,7 @@ class Libmwaw < Formula
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -42,7 +39,6 @@ class Libmwaw < Formula
     assert_equal shell_output("#{bin}mwawFile #{testpath}NEWSSLID.DOC").chomp,
                  "#{testpath}NEWSSLID.DOC:Microsoft Word 2.0[pc]"
     # Control case; non-document format should return an empty string
-    assert_equal shell_output("#{bin}mwawFile #{test_fixtures("test.mp3")}").chomp,
-                 ""
+    assert_empty shell_output("#{bin}mwawFile #{test_fixtures("test.mp3")}").chomp
   end
 end

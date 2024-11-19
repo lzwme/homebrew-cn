@@ -24,25 +24,23 @@ class Cups < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
   def install
-    system ".configure", *std_configure_args,
-                          "--with-components=core",
+    system ".configure", "--with-components=core",
                           "--with-tls=openssl",
-                          "--without-bundledir"
+                          "--without-bundledir",
+                          *std_configure_args
     system "make", "install"
   end
 
   test do
     port = free_port.to_s
-    pid = fork do
-      exec "#{bin}ippeveprinter", "-p", port, "Homebrew Test Printer"
-    end
+    pid = spawn "#{bin}ippeveprinter", "-p", port, "Homebrew Test Printer"
 
     begin
       sleep 2

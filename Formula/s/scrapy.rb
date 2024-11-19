@@ -3,20 +3,18 @@ class Scrapy < Formula
 
   desc "Web crawling & scraping framework"
   homepage "https:scrapy.org"
-  url "https:files.pythonhosted.orgpackagesf21f5524416a64c030fbe18caeba079e7176836b281bf9eb50b79efdf8015063scrapy-2.11.2.tar.gz"
-  sha256 "dfbd565384fc3fffeba121f5a3a2d0899ac1f756d41432ca0879933fbfb3401d"
+  url "https:files.pythonhosted.orgpackagesf852b0f4ded03c5966e7e90c607bb9aa7e3c5b228cb1d7051325fde017c46987scrapy-2.12.0.tar.gz"
+  sha256 "d66d6e76009b12447604196875a463b61d10721140032a8084a0a52df7f4788f"
   license "BSD-3-Clause"
-  revision 3
   head "https:github.comscrapyscrapy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96ccde182e60de0b603957f17b4967b28cd2ed4ff0bf276e2cd7b46e2704e6d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "897d612ab1778cfbe4bc3777dfade3397d367e2edc33e002ff61b459f70db98d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90f7d4f57273295ad42e22337400ccdfc5ca24d7fa37127110f6dae9d4e70f70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ecaa3e699cf2e40e299a3d653c997db7c2c7d69f814f2df11e413a2a07b161d"
-    sha256 cellar: :any_skip_relocation, ventura:       "c076d5714df57e219f09416c8f4d3c246c42ea8de3f3b1876d68facd7f4c88fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bc58b53aa1af4adcb27f831ff701f9254aad08d5f8d1348269f6f727fbbf773"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "231c6afa4bef26d97d561573d84122881cd2ce96fbcc34eb90792a6705accd88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c1bb8ce306e11de49a28958192119069730a31e14c7867306374fbb19eb208a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7c85c0d9ecbe6936e12e4248a5c4b62639b74d97cb4155c12be0e1ee602c657"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b68c6b19a86e4ad012d97f0ff4a3b703c8f4ac2a9f5ae2fa8e5efa8123fd1a67"
+    sha256 cellar: :any_skip_relocation, ventura:       "a908c2d0534d43aece879fb1d6b1293c03dc6915bb489033732bbc869c31cc2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7bc8b42c8d0ee6555dd55392f08c6dbc5a1407dd8184ba5484a53ed4326f2a0"
   end
 
   depends_on "certifi"
@@ -97,8 +95,8 @@ class Scrapy < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "parsel" do
@@ -147,23 +145,23 @@ class Scrapy < Formula
   end
 
   resource "service-identity" do
-    url "https:files.pythonhosted.orgpackages38d22ac20fd05f1b6fce31986536da4caeac51ed2e1bb25d4a7d73ca4eccdfabservice_identity-24.1.0.tar.gz"
-    sha256 "6829c9d62fb832c2e1c435629b0a8c476e1929881f28bee4d20bc24161009221"
+    url "https:files.pythonhosted.orgpackages07a5dfc752b979067947261dbbf2543470c58efe735c3c1301dd870ef27830eeservice_identity-24.2.0.tar.gz"
+    sha256 "b8683ba13f0d39c6cd5d625d2c5f65421d6d707b013b375c355751557cbe8e09"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
+    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "tldextract" do
-    url "https:files.pythonhosted.orgpackagesdbedc92a5d6edaafec52f388c2d2946b4664294299cebf52bb1ef9cbc44ae739tldextract-5.1.2.tar.gz"
-    sha256 "c9e17f756f05afb5abac04fe8f766e7e70f9fe387adb1859f0f52408ee060200"
+    url "https:files.pythonhosted.orgpackages4a4feee4bebcbad25a798bf55601d3a4aee52003bebcf9e55fce08b91ca541a9tldextract-5.1.3.tar.gz"
+    sha256 "d43c7284c23f5dc8a42fd0fee2abede2ff74cc622674e4cb07f514ab3330c338"
   end
 
   resource "twisted" do
-    url "https:files.pythonhosted.orgpackages8bbff30eb89bcd14a21a36b4cd3d96658432d4c590af3c24bbe08ea77fa7bbbbtwisted-24.7.0.tar.gz"
-    sha256 "5a60147f044187a127ec7da96d170d49bcce50c6fd36f594e60f4587eff4d394"
+    url "https:files.pythonhosted.orgpackagesb20f2d0b0dcd52a849db64ff63619aead94ae1091fe4d4d7e100371efe513585twisted-24.10.0.tar.gz"
+    sha256 "02951299672595fea0f70fa2d5f7b5e3d56836157eda68859a6ad6492d36756e"
   end
 
   resource "typing-extensions" do
@@ -182,8 +180,8 @@ class Scrapy < Formula
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackagese41f8bb0739aba9a8909bcfa2e12dc20443ebd5bd773b6796603f1a126211e18zope_interface-7.1.0.tar.gz"
-    sha256 "3f005869a1a05e368965adb2075f97f8ee9a26c61898a9e52a9764d93774f237"
+    url "https:files.pythonhosted.orgpackages3cf51079cab32302359cc09bd1dca9656e680601e0e8af9397322ab0fe85f368zope.interface-7.1.1.tar.gz"
+    sha256 "4284d664ef0ff7b709836d4de7b13d80873dc5faeffc073abdb280058bfac5e3"
   end
 
   def install

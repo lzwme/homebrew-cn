@@ -21,7 +21,7 @@ class Cbc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a29a22d7f976bd09ed6a0473f64c8bf0ab84a6729fb3d9635133c9bc36dc3fd5"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cgl"
   depends_on "clp"

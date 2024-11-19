@@ -29,7 +29,7 @@ class Dvdauthor < Formula
   # Dvdauthor will optionally detect ImageMagick or GraphicsMagick, too.
   # But we don't add either as deps because they are big.
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "libdvdread"
   depends_on "libpng"
@@ -37,9 +37,7 @@ class Dvdauthor < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make"
     ENV.deparallelize # Install isn't parallel-safe
     system "make", "install"

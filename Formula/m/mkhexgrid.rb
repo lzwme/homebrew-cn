@@ -28,7 +28,7 @@ class Mkhexgrid < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a52fcf963685daee9a1f8ab938b009639886dfb1f2a71cdf93969ff4a5d6bfc3"
   end
 
-  depends_on "boost"
+  depends_on "boost" => :build
   depends_on "gd"
 
   def install

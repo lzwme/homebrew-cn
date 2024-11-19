@@ -35,7 +35,7 @@ class Cubeb < Formula
     depends_on "cmake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
     depends_on "pulseaudio"

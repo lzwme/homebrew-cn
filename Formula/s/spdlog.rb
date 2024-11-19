@@ -1,21 +1,18 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
   homepage "https:github.comgabimespdlog"
-  url "https:github.comgabimespdlogarchiverefstagsv1.14.1.tar.gz"
-  sha256 "1586508029a7d0670dfcb2d97575dcdc242d3868a259742b69f100801ab4e16b"
+  url "https:github.comgabimespdlogarchiverefstagsv1.15.0.tar.gz"
+  sha256 "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5"
   license "MIT"
-  revision 1
   head "https:github.comgabimespdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "294c2eacc174d2112dcb7d43a3b952c6051da94b1c835f61859d3673c97571ea"
-    sha256 cellar: :any,                 arm64_sonoma:   "94a51165d021eedd4262d15dad7c14c83f0f33eeda096d86ee762f08f831bbba"
-    sha256 cellar: :any,                 arm64_ventura:  "fa3a2b18afd9c0b6211a2315d253360a9ba5bcc3256303cc8ad6cce5ebd3586c"
-    sha256 cellar: :any,                 arm64_monterey: "d0c4e6684ca59fa4859bd412003c25847f9e377f1151404ce293d5aeb5d13980"
-    sha256 cellar: :any,                 sonoma:         "6ffe5ad092446c9c74b4a72e10b1f77daf4ea21d6fe5fa29cbeead408be37210"
-    sha256 cellar: :any,                 ventura:        "3186075434c83929ac6d41bfd2d48edd6bafa7e84c03600c6718f4c606068e47"
-    sha256 cellar: :any,                 monterey:       "044d54b7073502383bb0776f545dde9a98178ba4da6e40e7d2a62adf1e799ac5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89a7b397614d329f87cdc031c3b6842e0526827f4a5b6de2ee4f06d369068766"
+    sha256 cellar: :any,                 arm64_sequoia: "246130deacdb3cde7faa8e5159c6f03b2175160db08060a6d76ad36500e27175"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1e17b29906ba9ee8fbc5ec3ae90ed4c2cc1b5a28b7d1837a3f106435f77fdef"
+    sha256 cellar: :any,                 arm64_ventura: "d594a2118a23b1817edccbc8b1c05930fd8cc31724b989086ccac6a5f5abc2cd"
+    sha256 cellar: :any,                 sonoma:        "9f1b0e5bd8b2c7fe94cb7f5a71bb97cc14fcff4e98db8606b78638dd01181d91"
+    sha256 cellar: :any,                 ventura:       "c4db7a7c3af2edc21bcc955663cc4bbe63969bcb1ac74996c3de1c4474b7c01a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60250a68987a49d8aa950e3bdedfaaa2e19b3834813c01e2133c63b6d0f29bee"
   end
 
   depends_on "cmake" => :build

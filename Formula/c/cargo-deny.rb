@@ -15,7 +15,7 @@ class CargoDeny < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ba5d8e5e155b50caa91ccbc8c2785bc94fb94d8a6115e1ef886c6bac48a3d29"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
 

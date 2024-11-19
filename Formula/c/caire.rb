@@ -22,7 +22,7 @@ class Caire < Formula
   depends_on "go" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "vulkan-headers" => :build
     depends_on "libx11"
     depends_on "libxcursor"

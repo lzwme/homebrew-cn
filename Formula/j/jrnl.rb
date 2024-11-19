@@ -3,18 +3,18 @@ class Jrnl < Formula
 
   desc "Command-line note taker"
   homepage "https:jrnl.shenstable"
-  url "https:files.pythonhosted.orgpackagesb6653b0649ac261e3cf7c110acbdd74b13eeb3e9e6a91eb41832cb4d7d1f9049jrnl-4.1.tar.gz"
-  sha256 "980848f9c7ae8d4c844a4cae770c9686b5dda98f479dafac2c3cd72268a53f8b"
+  url "https:files.pythonhosted.orgpackages6bc4f1738608e5893963516124a76b99aa484e89fe578c41f1219d9ba95b92aejrnl-4.2.tar.gz"
+  sha256 "68af0347cd7097a6af1b9cf375251df0db67e90b296fd8ef68cdbf12046cc6c7"
   license "GPL-3.0-only"
+  head "https:github.comjrnl-orgjrnl.git", branch: "develop"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04af8ab0d3cd2c6ce7baf44831c9e32060b271275460a8a4e7a98df329df771c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04af8ab0d3cd2c6ce7baf44831c9e32060b271275460a8a4e7a98df329df771c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "04af8ab0d3cd2c6ce7baf44831c9e32060b271275460a8a4e7a98df329df771c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cea703bd05a9a6c4e972cb76509b22a979b86394b90d4e2ee01d0c65e8536e80"
-    sha256 cellar: :any_skip_relocation, ventura:       "cea703bd05a9a6c4e972cb76509b22a979b86394b90d4e2ee01d0c65e8536e80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ea78a59eccddcce6c488a24576cc29e82777dde5ae49d7ad0a6b40c6b10baa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172a60998e3892b52c49d1674444e175001279cd3b826c7c59586c94a6fb3735"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "172a60998e3892b52c49d1674444e175001279cd3b826c7c59586c94a6fb3735"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "172a60998e3892b52c49d1674444e175001279cd3b826c7c59586c94a6fb3735"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1a8d393e49001a46d6f1963ed0bf43b85080cbfcc7e9812cfc764e4bcaa69a8"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1a8d393e49001a46d6f1963ed0bf43b85080cbfcc7e9812cfc764e4bcaa69a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "492800f36d819ffdad3abc6e9616f2572d9ce9013e2b445251f57735e6ddc8ff"
   end
 
   depends_on "cryptography"
@@ -43,9 +43,14 @@ class Jrnl < Formula
     sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
   end
 
+  resource "jeepney" do
+    url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+  end
+
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackagesa51c2bdbcfd5d59dc6274ffb175bc29aa07ecbfab196830e0cfbde7bd861a2eakeyring-25.4.1.tar.gz"
-    sha256 "b07ebc55f3e8ed86ac81dd31ef14e81ace9dd9c3d4b5d77a6e9a2016d0d71a1b"
+    url "https:files.pythonhosted.orgpackagesf62464447b13df6a0e2797b586dad715766d756c932ce8ace7f67bd384d76ae0keyring-25.5.0.tar.gz"
+    sha256 "4c753b3ec91717fe713c4edd522d625889d8973a349b0e582622f49766de58e6"
   end
 
   resource "markdown-it-py" do
@@ -84,13 +89,18 @@ class Jrnl < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "ruamel-yaml" do
     url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
     sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
+  end
+
+  resource "secretstorage" do
+    url "https:files.pythonhosted.orgpackages53a4f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "six" do
@@ -102,9 +112,6 @@ class Jrnl < Formula
     url "https:files.pythonhosted.orgpackages04d3c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0tzlocal-5.2.tar.gz"
     sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
-
-  # patch to build with py3.13
-  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -144,31 +151,3 @@ class Jrnl < Formula
     assert_match "encrypt: true", (testpath".configjrnljrnl.yaml").read
   end
 end
-
-__END__
-diff --git aPKG-INFO bPKG-INFO
-index 1c84ce0..3da71dc 100644
---- aPKG-INFO
-+++ bPKG-INFO
-@@ -8,7 +8,7 @@ Author: jrnl contributors
- Author-email: maintainers@jrnl.sh
- Maintainer: Jonathan Wren and Micah Ellison
- Maintainer-email: maintainers@jrnl.sh
--Requires-Python: >=3.10.0,<3.13
-+Requires-Python: >=3.10.0,<3.14
- Classifier: Environment :: Console
- Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
- Classifier: Operating System :: OS Independent
-diff --git apyproject.toml bpyproject.toml
-index fa6126f..b0a6eee 100644
---- apyproject.toml
-+++ bpyproject.toml
-@@ -27,7 +27,7 @@ classifiers = [
- "Funding" = "https:opencollective.comjrnl"
- 
- [tool.poetry.dependencies]
--python = ">=3.10.0, <3.13"
-+python = ">=3.10.0, <3.14"
- 
- colorama = ">=0.4"       # https:github.comtartleycoloramablobmasterCHANGELOG.rst
- cryptography = ">=3.0"   # https:cryptography.ioenlatestapi-stability.html

@@ -14,6 +14,7 @@ class CargoUdeps < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26f3b56f9d41283f711376765990805865ebbcb89687e7fe9cae281dc49ba888"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
   depends_on "libgit2"
@@ -21,10 +22,6 @@ class CargoUdeps < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

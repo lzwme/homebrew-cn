@@ -14,7 +14,7 @@ class CargoEdit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a7e551e57b7ec7b6e22015bc2d4971ee8c9ec21eca1784855dd019c3b863ef"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
 

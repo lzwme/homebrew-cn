@@ -20,6 +20,7 @@ class CargoC < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b2f52bb385f560be363f7631bbc3c5bff0c8f70243ff0428bdb2c15ee163a2"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "libssh2"
@@ -30,10 +31,6 @@ class CargoC < Formula
   # see discussions in https:github.comHomebrewhomebrew-corepull197727
   uses_from_macos "curl", since: :sonoma
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

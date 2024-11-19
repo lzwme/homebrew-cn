@@ -16,7 +16,7 @@ class Daktilo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d862c33b912fb26fb8564fdc3bef5f666265f8945c9cd17c2b7fc030ee3e3ce7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

@@ -3,20 +3,18 @@ class Circleci < Formula
   homepage "https:circleci.comdocs2.0local-cli"
   # Updates should be pushed no more frequently than once per week.
   url "https:github.comCircleCI-Publiccircleci-cli.git",
-      tag:      "v0.1.30995",
-      revision: "77b1f5175a42e351a0104a22279fa72f1f1f9ea5"
+      tag:      "v0.1.31151",
+      revision: "591d7b247869fc47c663fad2e756b9e45ca2a302"
   license "MIT"
   head "https:github.comCircleCI-Publiccircleci-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6be19f78ebddac0c3616f62f6ad564fb40109d6e7d395ec713056932208c540c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c7c77d1e5648627c96cd3cfe8aad738074ea5f5c6c07e01469e5d3d56c53916"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c7c77d1e5648627c96cd3cfe8aad738074ea5f5c6c07e01469e5d3d56c53916"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c7c77d1e5648627c96cd3cfe8aad738074ea5f5c6c07e01469e5d3d56c53916"
-    sha256 cellar: :any_skip_relocation, sonoma:         "81eed0e31f4c1260d2270b6474522a6b5a83aa6ce0dc697997bff517c3fb8a33"
-    sha256 cellar: :any_skip_relocation, ventura:        "81eed0e31f4c1260d2270b6474522a6b5a83aa6ce0dc697997bff517c3fb8a33"
-    sha256 cellar: :any_skip_relocation, monterey:       "81eed0e31f4c1260d2270b6474522a6b5a83aa6ce0dc697997bff517c3fb8a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa851d9960c700716ff72091a125fdd68f5f65b911467a80bb7887a9263f3335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd7183aa43741eaf1215d725331567b28df0c3b79fe52300a71752e640fd7493"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd7183aa43741eaf1215d725331567b28df0c3b79fe52300a71752e640fd7493"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd7183aa43741eaf1215d725331567b28df0c3b79fe52300a71752e640fd7493"
+    sha256 cellar: :any_skip_relocation, sonoma:        "348f51f93f629eb708d2c81c11d297a48d5967d4e297dcf0c9df34ed13ba1d47"
+    sha256 cellar: :any_skip_relocation, ventura:       "348f51f93f629eb708d2c81c11d297a48d5967d4e297dcf0c9df34ed13ba1d47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf2ab29b9d8d6418ddfbe1a26adb6d371ee623e3e6f86bc2f49c24531a5dae7"
   end
 
   depends_on "go" => :build

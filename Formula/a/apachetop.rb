@@ -20,7 +20,7 @@ class Apachetop < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "adns"
   depends_on "ncurses"
   depends_on "pcre2"
@@ -32,11 +32,11 @@ class Apachetop < Formula
   def install
     ENV.append "CXX", "-std=gnu++17"
 
-    system ".configure", *std_configure_args,
-                          "--mandir=#{man}",
+    system ".configure", "--mandir=#{man}",
                           "--with-logfile=#{var}logapache2access_log",
                           "--with-adns=#{Formula["adns"].opt_prefix}",
-                          "--with-pcre2=#{Formula["pcre2"].opt_prefix}"
+                          "--with-pcre2=#{Formula["pcre2"].opt_prefix}",
+                          *std_configure_args
     system "make", "install"
   end
 

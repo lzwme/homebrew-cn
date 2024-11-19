@@ -19,7 +19,7 @@ class CodeServer < Formula
   uses_from_macos "python" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "krb5"
     depends_on "libsecret"
     depends_on "libx11"

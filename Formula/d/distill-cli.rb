@@ -15,7 +15,7 @@ class DistillCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "22ebb083671dbe450f27a1d29caa892eb1b12e1e54a11271677984e3622fecfc"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

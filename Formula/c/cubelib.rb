@@ -26,7 +26,7 @@ class Cubelib < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -46,7 +46,7 @@ class Cubelib < Formula
       args << "LDFLAGS=-stdlib=libc++"
     end
 
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 

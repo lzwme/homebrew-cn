@@ -28,7 +28,7 @@ class DbusGlib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40299090266efbefb057847af56cbccedf7c96ba98107c86fe4c7c0b8254cf0c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "dbus"
   depends_on "glib"
 

@@ -13,7 +13,7 @@ class Apptainer < Formula
   pour_bottle? only_if: :default_prefix
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libseccomp"
   depends_on :linux
   depends_on "squashfs"

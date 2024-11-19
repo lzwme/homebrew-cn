@@ -31,7 +31,7 @@ class Aqbanking < Formula
   depends_on "libxmlsec1"
   depends_on "libxslt" # Our libxslt links with libgcrypt
   depends_on "openssl@3"
-  depends_on "pkg-config" # aqbanking-config needs pkg-config for execution
+  depends_on "pkgconf" # aqbanking-config needs pkg-config for execution
 
   uses_from_macos "zlib"
 

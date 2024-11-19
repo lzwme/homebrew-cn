@@ -29,7 +29,7 @@ class Alure < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
     depends_on "openal-soft"
@@ -45,10 +45,9 @@ class Alure < Formula
   end
 
   def install
-    cd "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

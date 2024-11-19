@@ -21,7 +21,7 @@ class Dnsperf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20a13780c6a708fea6bc212705ba13d38756d63a487f908637bb159651f5c070"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "concurrencykit"
   depends_on "ldns"
   depends_on "libnghttp2"

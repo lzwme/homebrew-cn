@@ -18,7 +18,7 @@ class Jsdoc3 < Formula
   end
 
   test do
-    (testpath"test.js").write <<~EOS
+    (testpath"test.js").write <<~JS
       **
        * Represents a formula.
        * @constructor
@@ -26,7 +26,7 @@ class Jsdoc3 < Formula
        * @param {string} version - the version of the formula.
        **
       function Formula(name, version) {}
-    EOS
+    JS
 
     system bin"jsdoc", "--verbose", "test.js"
   end

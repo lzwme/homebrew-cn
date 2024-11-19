@@ -21,7 +21,7 @@ class Dnsmasq < Formula
     sha256 x86_64_linux:   "ba407d18d57b06e39f5576cda5f97703b1def62c14960d62f16eecd236180fc4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     ENV.deparallelize

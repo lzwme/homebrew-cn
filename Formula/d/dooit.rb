@@ -3,18 +3,18 @@ class Dooit < Formula
 
   desc "TUI todo manager"
   homepage "https:github.comkraanzudooit"
-  url "https:files.pythonhosted.orgpackagesb789d48e51d4953535fe8e441fbf96c691a98e6d482d63812d275bfa59d00090dooit-3.0.3.tar.gz"
-  sha256 "1eea4cf65ba5825a189b0228966a2982694d9eda18dad5008781e820942d745d"
+  url "https:files.pythonhosted.orgpackagesc6c671f799c0c0a1d25ee27ef8e400e4ae1eee7fc8a9c4117d6d315d32151610dooit-3.0.4.tar.gz"
+  sha256 "0462f68909d74bec9977aeb9567f0da137d843e6b72a567772f66218a39a1ced"
   license "MIT"
   head "https:github.comkraanzudooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b6bd47324c3fcc65df6e1a0148d78a9fdf3d9fb7a5daeba1f4a285309098c9ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "461aeefd247d31728ec04655299947f7e4f1a31cfda5e689154a8ac01b10774a"
-    sha256 cellar: :any,                 arm64_ventura: "cde28c3a2c8d415247c7958cde5db8ada8316e8a6a562539cf53cc4ed49f3f6a"
-    sha256 cellar: :any,                 sonoma:        "9ca2c0327de60468058b895f8c8e80b48f4c95e99b21501bbad4730c11926622"
-    sha256 cellar: :any,                 ventura:       "44e09eb9e430bac7208d4c5dc901a6663e4dc1627faa3430cdda1f8730fcb193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d38e646a8eb70f60f39d97b8d303730440ab91f4c5d950becc6545cead76a31a"
+    sha256 cellar: :any,                 arm64_sequoia: "a02bfb48a92a3419b43a5ba5a540f9227610a5aea486f64247f10c4263505e7d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e01e2ec937977ea343d49a4bc90380225dfa55f220eb857fdc95539d2027283"
+    sha256 cellar: :any,                 arm64_ventura: "26020920e18963309900908a272cb354152ede1369b158c503faf5f57cb05734"
+    sha256 cellar: :any,                 sonoma:        "57df5fd52ed72edff599d0fb605b848f7ba94fda22e5efb7e70314ad9dfd7e1b"
+    sha256 cellar: :any,                 ventura:       "176d24f78db08e253939336a65ecbdce8f0236e168982587aad98ba5b6432f7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22f37d8ff0c1a3d379dc17ee93855322a8f488f304617b94568b6aec1a7e4d21"
   end
 
   depends_on "cmake" => :build
@@ -87,8 +87,8 @@ class Dooit < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages71698b2c90ef5863b67f2adb067772b259412130a10c7080e1fede39c6245f73textual-0.85.2.tar.gz"
-    sha256 "2a416995c49d5381a81d0a6fd23925cb0e3f14b4f239ed05f35fa3c981bb1df2"
+    url "https:files.pythonhosted.orgpackages56c6435723343db6a65ed92950d1e20ded920c4c22e6e785ea0e369abd4ac1c7textual-0.86.1.tar.gz"
+    sha256 "a6e68de5383415f222f26b4049c2a92ed204071fdfebe3d729f8dd373ca5f519"
   end
 
   resource "typing-extensions" do

@@ -1,18 +1,18 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https:github.comfacebookproxygen"
-  url "https:github.comfacebookproxygenreleasesdownloadv2024.11.11.00proxygen-v2024.11.11.00.tar.gz"
-  sha256 "7bf41bdaf4e14eb8cfa4d567b136197530677edd61f7a085c97d01292bc564f1"
+  url "https:github.comfacebookproxygenreleasesdownloadv2024.11.18.00proxygen-v2024.11.18.00.tar.gz"
+  sha256 "c344a522ed792e9d7ecfd866319bec3d8145ec774f652f508caccfd1871144de"
   license "BSD-3-Clause"
   head "https:github.comfacebookproxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c0e2e04b50b11ccaf42476b841518ec0597d1ff2c2ce40ddf3c5e1c232c8a9ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "910e4ed00c3c715bb7c166be4168fb92b9710e7ed629a6ceecabb0d15a9ba426"
-    sha256 cellar: :any,                 arm64_ventura: "20aa347956c1a8125e19c269937a7b26f9409f5438e8851fbe384fdc8d6ae3b8"
-    sha256 cellar: :any,                 sonoma:        "9d6d8f365a48538ccbedcaa22012033a3a669eadf78274f604d4c3dda2a28e86"
-    sha256 cellar: :any,                 ventura:       "42b26077abb147da68a1f0438fed748bc249987f2e6f1853ea25e836c5c20496"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4100ca5c8f157977111da74b73a9d27dca5e90eb07116919ae093e97a96d7094"
+    sha256 cellar: :any,                 arm64_sequoia: "89697830785db1bdb668677c253f33c28bf030bd8374283a8a2178022d80f606"
+    sha256 cellar: :any,                 arm64_sonoma:  "394503c4f13a04b08fd0a67ac371692a8638dda1db212e6b7ead41cbe58c2c3b"
+    sha256 cellar: :any,                 arm64_ventura: "8a823f77463dbe8bb87f1db1caf8a176a8cfcf078e3c394ef5817c56a6cd7ef3"
+    sha256 cellar: :any,                 sonoma:        "845f58372741845a9b0ec4be5dcf14db728cf5e09f65536107f001d9b6459d43"
+    sha256 cellar: :any,                 ventura:       "13aa5bd936ff0e424785000df474b22cc99800f7cd51a9c4a89a457fd8f9bb3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2a6538dceee4e650b0a1d0dfe14cfdbf23be2faddb266fbe8b5d809356db89f"
   end
 
   depends_on "cmake" => :build

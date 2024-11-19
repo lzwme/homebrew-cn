@@ -22,16 +22,10 @@ class Airspyhf < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install
-    args = std_cmake_args
-
-    libusb = Formula["libusb"]
-    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-#{libusb.version.major_minor}"
-    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_libshared_library("libusb-#{libusb.version.major_minor}")}"
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

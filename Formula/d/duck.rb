@@ -24,7 +24,7 @@ class Duck < Formula
 
   depends_on "ant" => :build
   depends_on "maven" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on xcode: ["13.1", :build]
   depends_on "openjdk"
 

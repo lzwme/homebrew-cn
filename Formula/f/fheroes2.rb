@@ -42,6 +42,12 @@ class Fheroes2 < Formula
 
   def caveats
     <<~EOS
+      Run fheroes2-install-demo command to download and install all the necessary
+      files from the demo version of the original Heroes of Might and Magic II game.
+
+      Run fheroes2-extract-resources command to extract all the necessary resource
+      files from a legally purchased copy of the original game.
+
       Documentation is available at:
       #{share}docfheroes2README.txt
     EOS

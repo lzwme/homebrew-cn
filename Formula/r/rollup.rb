@@ -1,17 +1,17 @@
 class Rollup < Formula
   desc "Next-generation ES module bundler"
   homepage "https://rollupjs.org/"
-  url "https://registry.npmjs.org/rollup/-/rollup-4.27.2.tgz"
-  sha256 "dcc20c2ba45db7eb20c49ce23cbe0d487e97baff348ed87acf62f220850ff1c8"
+  url "https://registry.npmjs.org/rollup/-/rollup-4.27.3.tgz"
+  sha256 "e70fd38a1189fc484efa9a14defbd1115b9bbaea24f454b30aca115ef37a4d6b"
   license all_of: ["ISC", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4d6f6ff6efa82ea9963e5fc9d17998aae95e12a93d0b8c0d7d64bf3e7bd9916d"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d6f6ff6efa82ea9963e5fc9d17998aae95e12a93d0b8c0d7d64bf3e7bd9916d"
-    sha256 cellar: :any,                 arm64_ventura: "4d6f6ff6efa82ea9963e5fc9d17998aae95e12a93d0b8c0d7d64bf3e7bd9916d"
-    sha256 cellar: :any,                 sonoma:        "8505514a464c036e623ffb2d2a5f15603500283a57afaead581326a8ef324945"
-    sha256 cellar: :any,                 ventura:       "8505514a464c036e623ffb2d2a5f15603500283a57afaead581326a8ef324945"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "693172c617d43f0dbaef958e190fcc5e695ace05e58f59df600a356a8fc9d67e"
+    sha256 cellar: :any,                 arm64_sequoia: "36fbf748fc14fc0caa76625da904550b74b97c144e80c9825abeaa18efbfce0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "36fbf748fc14fc0caa76625da904550b74b97c144e80c9825abeaa18efbfce0f"
+    sha256 cellar: :any,                 arm64_ventura: "36fbf748fc14fc0caa76625da904550b74b97c144e80c9825abeaa18efbfce0f"
+    sha256 cellar: :any,                 sonoma:        "cc2968baf408ca566181dbd63b6fc714b0f7e31b8f7404477ef308582cf19545"
+    sha256 cellar: :any,                 ventura:       "cc2968baf408ca566181dbd63b6fc714b0f7e31b8f7404477ef308582cf19545"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64f6b10162e24f12d70e350a56bd79e5ed38d7d806dfde6ac0c484ecc7d52a1b"
   end
 
   depends_on "node"
@@ -24,18 +24,18 @@ class Rollup < Formula
   end
 
   test do
-    (testpath/"test/main.js").write <<~EOS
+    (testpath/"test/main.js").write <<~JS
       import foo from './foo.js';
       export default function () {
         console.log(foo);
       }
-    EOS
+    JS
 
-    (testpath/"test/foo.js").write <<~EOS
+    (testpath/"test/foo.js").write <<~JS
       export default 'hello world!';
-    EOS
+    JS
 
-    expected = <<~EOS
+    expected = <<~JS
       'use strict';
 
       var foo = 'hello world!';
@@ -45,7 +45,7 @@ class Rollup < Formula
       }
 
       module.exports = main;
-    EOS
+    JS
 
     assert_equal expected, shell_output("#{bin}/rollup #{testpath}/test/main.js -f cjs")
   end

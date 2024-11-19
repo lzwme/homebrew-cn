@@ -23,7 +23,7 @@ class Aubio < Formula
   end
 
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "libsndfile"
   depends_on "numpy"

@@ -24,7 +24,7 @@ class Clamz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bedccbcf92f7884cf99615ea347345f035a6693e953b6ebf90e51695e4351c95"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libgcrypt"
   depends_on "libgpg-error"
 

@@ -24,7 +24,7 @@ class ConanAT1 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cmake" => :test
   depends_on "certifi"
   depends_on "libyaml"

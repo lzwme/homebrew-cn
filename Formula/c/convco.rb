@@ -15,7 +15,7 @@ class Convco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0109d8ad3f830c0307d2350f190ef1afad564ac1af83120cc5fb72e3d41114"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
 

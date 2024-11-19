@@ -10,7 +10,7 @@ class Conmon < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "libseccomp"

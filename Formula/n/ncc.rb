@@ -17,7 +17,7 @@ class Ncc < Formula
   end
 
   test do
-    (testpath"input.js").write <<~EOS
+    (testpath"input.js").write <<~JS
       function component() {
         const element = document.createElement('div');
         element.innerHTML = 'Hello' + ' ' + 'webpack';
@@ -25,7 +25,7 @@ class Ncc < Formula
       }
 
       document.body.appendChild(component());
-    EOS
+    JS
 
     system bin"ncc", "build", "input.js", "-o", "dist"
     assert_match "document.createElement", File.read("distindex.js")

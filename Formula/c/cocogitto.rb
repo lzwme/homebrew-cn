@@ -17,7 +17,7 @@ class Cocogitto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aff6d16e56cddef28b7cad4d730bc0984c75134525f7e3761918b275774826c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2@1.7"
 

@@ -29,7 +29,7 @@ class DosboxX < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fluid-synth"
   depends_on "freetype"
@@ -52,8 +52,6 @@ class DosboxX < Formula
     depends_on "libx11"
     depends_on "libxrandr"
   end
-
-  fails_with gcc: "5"
 
   def install
     ENV.cxx11

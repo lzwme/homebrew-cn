@@ -16,7 +16,7 @@ class DeviceMapper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0e9e3a6ed8b745338383e56a2cde2fd67190ff2006a666f8774df3941628000c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libaio"
   depends_on :linux
 

@@ -19,7 +19,7 @@ class ArmLinuxGnueabihfBinutils < Formula
     sha256 x86_64_linux:  "6dca015b099d6221e09b9acfba7514099d538d5bf57fa5b40940a7bf1bb256be"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   # Requires the <uchar.h> header
   # https://sourceware.org/bugzilla/show_bug.cgi?id=31320
   depends_on macos: :ventura
@@ -38,10 +38,7 @@ class ArmLinuxGnueabihfBinutils < Formula
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
 
     target = "arm-linux-gnueabihf"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--enable-deterministic-archives",
-                          "--prefix=#{prefix}",
+    system "./configure", "--enable-deterministic-archives",
                           "--libdir=#{lib}/#{target}",
                           "--infodir=#{info}/#{target}",
                           "--disable-werror",
@@ -51,7 +48,8 @@ class ArmLinuxGnueabihfBinutils < Formula
                           "--enable-interwork",
                           "--with-system-zlib",
                           "--with-zstd",
-                          "--disable-nls"
+                          "--disable-nls",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

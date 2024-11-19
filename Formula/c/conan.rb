@@ -17,7 +17,7 @@ class Conan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "00e675dc0090abbb7de0cde1fc2cdb7dce7b0e5f5575bfd5c43c5acfe8702333"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cmake" => :test
   depends_on "certifi"
   depends_on "libyaml"

@@ -20,7 +20,7 @@ class Avfs < Formula
     sha256 x86_64_linux: "6e98b737305eb3e7370df0c26aeaaff9845ddc47b9698786c008740bafc3aadd"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "bzip2"
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
@@ -28,13 +28,13 @@ class Avfs < Formula
   depends_on "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--enable-fuse",
                           "--enable-library",
                           "--with-system-zlib",
                           "--with-system-bzlib",
-                          "--with-xz"
+                          "--with-xz",
+                          *std_configure_args
     system "make", "install"
   end
 

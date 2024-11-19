@@ -19,13 +19,13 @@ class Daq < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "libpcap"
 
   def install
     system ".bootstrap"
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

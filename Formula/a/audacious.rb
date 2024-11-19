@@ -37,7 +37,7 @@ class Audacious < Formula
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "faad2"
   depends_on "ffmpeg"
   depends_on "flac"
@@ -87,7 +87,7 @@ class Audacious < Formula
       -Dgtk=false
     ]
 
-    system "meson", "setup", "build", *std_meson_args, *args, "-Ddbus=false"
+    system "meson", "setup", "build", "-Ddbus=false", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
@@ -98,7 +98,7 @@ class Audacious < Formula
       ]
 
       ENV.prepend_path "PKG_CONFIG_PATH", lib"pkgconfig"
-      system "meson", "setup", "build", *std_meson_args, *args
+      system "meson", "setup", "build", *args, *std_meson_args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
     end
@@ -107,7 +107,8 @@ class Audacious < Formula
   def caveats
     <<~EOS
       audtool does not work due to a broken dbus implementation on macOS, so it is not built.
-      GTK+ GUI is not built by default as the Qt GUI has better integration with macOS, and the GTK GUI would take precedence if present.
+      GTK+ GUI is not built by default as the Qt GUI has better integration with macOS,
+      and the GTK GUI would take precedence if present.
     EOS
   end
 

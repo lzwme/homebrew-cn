@@ -36,19 +36,19 @@ class Charge < Formula
   end
 
   test do
-    (testpath"srcindex.html.jsx").write <<~EOS
+    (testpath"srcindex.html.jsx").write <<~JS
       import Component from ".component.html.jsx"
 
       export default () => {
         return <Component message="Hello!" >
       }
-    EOS
+    JS
 
-    (testpath"srccomponent.html.jsx").write <<~EOS
+    (testpath"srccomponent.html.jsx").write <<~JS
       export default (props) => {
         return <p>{props.message}<p>
       }
-    EOS
+    JS
 
     system bin"charge", "build", "src", "out"
     assert_predicate testpath"outindex.html", :exist?

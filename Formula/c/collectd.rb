@@ -36,7 +36,7 @@ class Collectd < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libgcrypt"
   depends_on "libtool"
   depends_on "net-snmp"
@@ -58,7 +58,7 @@ class Collectd < Formula
     # https:github.comprotobuf-cprotobuf-cpull711
     ENV["PROTOC_C"] = Formula["protobuf"].opt_bin"protoc"
 
-    args = std_configure_args + %W[
+    args = %W[
       --localstatedir=#{var}
       --disable-java
       --enable-write_riemann
@@ -66,7 +66,7 @@ class Collectd < Formula
     args << "--with-perl-bindings=PREFIX=#{prefix} INSTALLSITEMAN3DIR=#{man3}" if OS.linux?
 
     system ".build.sh" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

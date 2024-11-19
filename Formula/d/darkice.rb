@@ -21,7 +21,7 @@ class Darkice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e96398becc4f8c42c2fa104ea86e96207756ee073a301d0acb0fe56fd665ebcb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "faac"
   depends_on "jack"

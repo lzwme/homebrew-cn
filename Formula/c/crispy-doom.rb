@@ -19,7 +19,7 @@ class CrispyDoom < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fluid-synth"
   depends_on "libpng"
   depends_on "libsamplerate"
@@ -30,11 +30,10 @@ class CrispyDoom < Formula
   uses_from_macos "zlib"
 
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--disable-sdltest"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules",
+                          "--disable-sdltest",
+                          *std_configure_args
     system "make", "install", "execgamesdir=#{bin}"
   end
 

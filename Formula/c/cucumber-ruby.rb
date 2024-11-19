@@ -21,7 +21,7 @@ class CucumberRuby < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "34227e49e2a9843381f9aff2d4500302a88e03e5af4ecf867b3b61380f3ee4d1"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ruby" # Requires >= Ruby 2.7
 
   uses_from_macos "libffi", since: :catalina

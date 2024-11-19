@@ -7,20 +7,23 @@ class Osm2pgsql < Formula
   head "https:github.comopenstreetmaposm2pgsql.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "44e982673a866dec6f55a0ed34981dabce3fd941abd1dd4afea370edb518d41e"
-    sha256 arm64_sonoma:  "a2fdfb145a93bf00cc5dd31fda4978c1cc920bc36a0d2eca6baac03d7f60c91d"
-    sha256 arm64_ventura: "e95d13d81e46720bf56cb72972c0faab3f27ed8a89911cf35eabba5c7699e19b"
-    sha256 sonoma:        "34a75d5b8fb063e4edc427c780197c2d89089f92d11f2bd1c62f00533420f0fa"
-    sha256 ventura:       "b750fbd5a9b0ca469b4c19f3360c004fc8a1127aacce15a73f79d66b086984c9"
-    sha256 x86_64_linux:  "a4a8f8ba54aa13e536e0a994b66bdd4b4d3ba0a780846236432a613118926f24"
+    rebuild 1
+    sha256 arm64_sequoia: "ffea3cae27bf62d48968eb9be4ab85440e60fa216231855c97a68ed4e42b8219"
+    sha256 arm64_sonoma:  "b6f235dacd6ba9a51d383689d1b632445108ec701f89793bf40c4e6a55e856b9"
+    sha256 arm64_ventura: "07994b3ea37df9184ad633a9d0a30a571ec4f5e4b07497106a5182797ff455e2"
+    sha256 sonoma:        "1fe7f0b34eeec3f80bf76bb57df61afb08a4018c20234e6b46de2a1bf9e7abc0"
+    sha256 ventura:       "85d2ace7b9134fdfaf2cd64d9ee9c269796524b8aef5e5cd659e1b11401d3a2e"
+    sha256 x86_64_linux:  "574cff38f797341afc455c8d7ee5a996d2ebe376214f38a578f4a79e260d52a7"
   end
 
+  depends_on "boost" => :build
+  depends_on "cli11" => :build
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
+  depends_on "libosmium" => :build
   depends_on "lua" => :build
   depends_on "nlohmann-json" => :build
 
-  depends_on "boost"
-  depends_on "geos"
   depends_on "libpq"
   depends_on "luajit"
   depends_on "proj"
@@ -36,9 +39,16 @@ class Osm2pgsql < Formula
     inreplace "cmakeFindLua.cmake", set\(LUA_VERSIONS5( \d\.\d)+\),
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
-    args = %w[
+    # Remove bundled libraries
+    rm_r("contrib")
+
+    args = %W[
+      -DEXTERNAL_CLI11=ON
+      -DEXTERNAL_FMT=ON
+      -DEXTERNAL_LIBOSMIUM=ON
+      -DEXTERNAL_PROTOZERO=ON
+      -DPROTOZERO_INCLUDE_DIR=#{Formula["libosmium"].opt_libexec}include
       -DWITH_LUAJIT=ON
-      -DUSE_PROJ_LIB=6
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

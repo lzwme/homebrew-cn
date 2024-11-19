@@ -16,11 +16,11 @@ class Libpulsar < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e988998856c14cee75a14a6a8d77baade48238a306d1072df5bf807bb35a048"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "abseil"
-  depends_on "boost"
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "snappy"

@@ -21,7 +21,7 @@ class Cgl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "59464aa62dd9a8016b3b46d99246b734bc9eaee228eaca8aac5c757e709158ad"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "clp"
   depends_on "coinutils"

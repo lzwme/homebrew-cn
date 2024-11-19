@@ -26,20 +26,18 @@ class Libodfgen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8466ec0a88ee4d205fb5bac977d257b7cea7c4dfcdcfc1028d97e4be5529c848"
   end
 
-  depends_on "boost" => :build
-  depends_on "libetonyek" => :build
-  depends_on "libwpg" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librevenge"
-  depends_on "libwpd"
+
+  uses_from_macos "libxml2"
 
   def install
-    system "./configure", "--without-docs",
-                          "--disable-dependency-tracking",
-                          "--enable-static=no",
-                          "--with-sharedptr=boost",
+    system "./configure", "--disable-silent-rules",
+                          "--disable-static",
+                          "--disable-test",
                           "--disable-werror",
-                          "--prefix=#{prefix}"
+                          "--without-docs",
+                          *std_configure_args
     system "make", "install"
   end
 
@@ -51,12 +49,10 @@ class Libodfgen < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-o", "test",
-      "-lrevenge-0.0",
-      "-I#{Formula["librevenge"].include}/librevenge-0.0",
-      "-L#{Formula["librevenge"].lib}",
-      "-lodfgen-0.1",
-      "-I#{include}/libodfgen-0.1",
-      "-L#{lib}"
+                    "-I#{include}/libodfgen-0.1",
+                    "-I#{Formula["librevenge"].include}/librevenge-0.0",
+                    "-L#{lib}", "-lodfgen-0.1",
+                    "-L#{Formula["librevenge"].lib}", "-lrevenge-0.0"
     system "./test"
   end
 end

@@ -4,16 +4,14 @@ class Arrayfire < Formula
   url "https:github.comarrayfirearrayfirereleasesdownloadv3.9.0arrayfire-full-3.9.0.tar.bz2"
   sha256 "8356c52bf3b5243e28297f4b56822191355216f002f3e301d83c9310a4b22348"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "62c059c02e2c6680c7c3fd3a9006243389ec2a2f272596f2c1c77f7826a6e0dd"
-    sha256 cellar: :any, arm64_sonoma:   "aef59074ff5628ef41c629de9af481140971fb67d0dd952cf2624ad6add73f70"
-    sha256 cellar: :any, arm64_ventura:  "e206b29e0790322ed14a06082e80a4ab2b804c79e3a98db0a134e71aa5f74ebe"
-    sha256 cellar: :any, arm64_monterey: "2e1b6dcef1a94a00aface53d21cb5ded7977d9f9f9db74606250f47f82ec6f59"
-    sha256 cellar: :any, sonoma:         "0347b552c78ae2da175819625d20bdc8de8cba7b6eb800f713a43b1690dbe3bd"
-    sha256 cellar: :any, ventura:        "f0e961ea63dc30a6b72b23afcbd9181d94d43c7a24c0f75d9add33cb9420ffdd"
-    sha256 cellar: :any, monterey:       "e0cdfa9839ea984d846c2fd7c9df45c337ae7159d07a590256896b1934d9670e"
+    sha256 cellar: :any, arm64_sequoia: "bdc90c11320a6266ef4de580089a04b8c4b2b3dab9ae984c910d631a8c1eea15"
+    sha256 cellar: :any, arm64_sonoma:  "149b7225e5e5c90272b2a85b530ebc8f70a3c05b8c55af6c14f352d03846400c"
+    sha256 cellar: :any, arm64_ventura: "22a13f617fea6ec5e17cd2caa9c95712c6721a594a5a7d80ba4740a35564aadc"
+    sha256 cellar: :any, sonoma:        "ef92a75a71d09d7f9912e91a39ec319fb5b34ab7361b4d0f4c85c874de3d7cf4"
+    sha256 cellar: :any, ventura:       "6a38a6cba73cf3e95c639d4763081c1bedf867a0e817982cefbbac4ae1e00465"
   end
 
   depends_on "boost" => :build
@@ -99,14 +97,14 @@ index ac149d9..edffdfa 100644
 +    auto format(const arrayfire::common::Node& node, FormatContext& ctx) const
          -> decltype(ctx.out()) {
           ctx.out() is an output iterator to write to.
- 
+
 diff --git asrcbackendcommonArrayFireTypesIO.hpp bsrcbackendcommonArrayFireTypesIO.hpp
 index e7a2e08..5da74a9 100644
 --- asrcbackendcommonArrayFireTypesIO.hpp
 +++ bsrcbackendcommonArrayFireTypesIO.hpp
 @@ -21,7 +21,7 @@ struct fmt::formatter<af_seq> {
      }
- 
+
      template<typename FormatContext>
 -    auto format(const af_seq& p, FormatContext& ctx) -> decltype(ctx.out()) {
 +    auto format(const af_seq& p, FormatContext& ctx) const -> decltype(ctx.out()) {
@@ -115,7 +113,7 @@ index e7a2e08..5da74a9 100644
              p.step == af_span.step) {
 @@ -73,18 +73,16 @@ struct fmt::formatter<arrayfire::common::Version> {
      }
- 
+
      template<typename FormatContext>
 -    auto format(const arrayfire::common::Version& ver, FormatContext& ctx)
 +    auto format(const arrayfire::common::Version& ver, FormatContext& ctx) const
@@ -147,7 +145,7 @@ index 54e74a2..07fa589 100644
 +#include <fmtranges.h>
  #include <spdlogfmtbundledformat.h>
  #include <iostream>
- 
+
 diff --git asrcbackendopenclcompile_module.cpp bsrcbackendopenclcompile_module.cpp
 index 89d382c..2c979fd 100644
 --- asrcbackendopenclcompile_module.cpp
@@ -155,7 +153,7 @@ index 89d382c..2c979fd 100644
 @@ -22,6 +22,8 @@
  #include <platform.hpp>
  #include <traits.hpp>
- 
+
 +#include <fmtranges.h>
 +
  #include <algorithm>

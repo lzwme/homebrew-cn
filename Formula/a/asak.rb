@@ -17,7 +17,7 @@ class Asak < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd7c4ef4628e5e217ffdb2734748773d871890232e3183ba7a09eacfe4f1a453"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "jack"
 

@@ -1,17 +1,17 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https:github.comJackettJackett"
-  url "https:github.comJackettJackettarchiverefstagsv0.22.950.tar.gz"
-  sha256 "b2cd562ba16042586674b146b8fa771387b6b2a2f0c653ed1f4d2d348c69c5fe"
+  url "https:github.comJackettJackettarchiverefstagsv0.22.955.tar.gz"
+  sha256 "cc8d9ba420e3cb194f990c870850aa1a8361485fe96b838dee2d53c2b550d45e"
   license "GPL-2.0-only"
   head "https:github.comJackettJackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d2187f6a44ba5db4fac9b89408976d17e823f57b6ac39c3710d264cb314a22f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "97ace4f069d08bd5fc47b3f4457bd0c922499219411f77793cd6dfdf8b145f16"
-    sha256 cellar: :any,                 arm64_ventura: "282396221171d70440a7d7cc34fd2e315f9392eca646ca8f978bd6a99f7bce52"
-    sha256 cellar: :any,                 ventura:       "015eb94f4b57f13c35a639caa4bd55c92888a9146d842d09f4b4b970849903d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0853807c9d58fcc42cb22278d362593f86cee80e91569cf3f671b32f83ae9a83"
+    sha256 cellar: :any,                 arm64_sequoia: "8806279b5c6395e471a17a75bc039d0bab235aff66cb89bebeccba65013a35b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "dfed24636d6d63d47927d705f6cb23118b4a0280825f8b4b069f328d7492443b"
+    sha256 cellar: :any,                 arm64_ventura: "d60f3a79961e198b6a94b767441f869412da81a706abd006eb719adbda1eaef6"
+    sha256 cellar: :any,                 ventura:       "5b09dbbfadbe10ac745b427413ec2c2913ba36b0037520d7d07a4ea73edc00ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14987243096686573937fb9daa765bb07729be5f0eeaa13e49db8ec837693737"
   end
 
   depends_on "dotnet@8"

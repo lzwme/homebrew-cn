@@ -22,12 +22,12 @@ class ClosureCompiler < Formula
   end
 
   test do
-    (testpath/"test.js").write <<~EOS
+    (testpath/"test.js").write <<~JS
       (function(){
         var t = true;
         return t;
       })();
-    EOS
+    JS
     system bin/"closure-compiler",
            "--js", testpath/"test.js",
            "--js_output_file", testpath/"out.js"

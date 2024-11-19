@@ -22,7 +22,7 @@ class CdogsSdl < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "python@3.13"
   depends_on "sdl2"
@@ -46,9 +46,7 @@ class CdogsSdl < Formula
   end
 
   test do
-    pid = fork do
-      exec bin"cdogs-sdl"
-    end
+    pid = spawn bin"cdogs-sdl"
 
     max_sleep_time = 90
     time_slept = 0

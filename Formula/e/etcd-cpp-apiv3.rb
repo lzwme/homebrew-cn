@@ -19,15 +19,12 @@ class EtcdCppApiv3 < Formula
   depends_on "etcd" => :test
 
   depends_on "abseil"
-  depends_on "boost"
   depends_on "c-ares"
   depends_on "cpprestsdk"
   depends_on "grpc"
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "re2"
-
-  fails_with gcc: "5"
 
   # Fix for removal of GPR_ASSERT macro in grpc.
   # https:github.cometcd-cpp-apiv3etcd-cpp-apiv3pull281

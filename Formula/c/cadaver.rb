@@ -32,7 +32,7 @@ class Cadaver < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "neon"
   depends_on "openssl@3"
   depends_on "readline"

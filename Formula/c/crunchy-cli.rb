@@ -19,7 +19,7 @@ class CrunchyCli < Formula
 
   deprecate! date: "2024-07-16", because: :repo_archived
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
   depends_on "openssl@3"

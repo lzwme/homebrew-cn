@@ -20,7 +20,7 @@ class ArmNoneEabiBinutils < Formula
     sha256 x86_64_linux:  "ee375c801fe9d934f983b43c293390c9d4318cdb02403560799a845746ce0597"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "zstd"
 
   uses_from_macos "zlib"
@@ -32,13 +32,13 @@ class ArmNoneEabiBinutils < Formula
   def install
     target = "arm-none-eabi"
     system "./configure", "--target=#{target}",
-           "--prefix=#{prefix}",
-           "--libdir=#{lib}/#{target}",
-           "--infodir=#{info}/#{target}",
-           "--with-system-zlib",
-           "--with-zstd",
-           "--enable-multilib",
-           "--disable-nls"
+                          "--prefix=#{prefix}",
+                          "--libdir=#{lib}/#{target}",
+                          "--infodir=#{info}/#{target}",
+                          "--with-system-zlib",
+                          "--with-zstd",
+                          "--enable-multilib",
+                          "--disable-nls"
     system "make"
     system "make", "install"
   end

@@ -19,21 +19,19 @@ class Akku < Formula
     sha256 x86_64_linux:   "23a1841305dd2e17051dc12c0e0c10e17420c432a0fca409ece365558a5cce4f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "guile"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     system bin/"akku", "init", "brewtest"
-    assert_predicate testpath/"brewtest/brewtest.sls", :exist?
-    assert_match "akku-package (\"brewtest\"",
-      (testpath/"brewtest/Akku.manifest").read
-
+    assert_path_exists testpath/"brewtest/brewtest.sls"
+    assert_match "akku-package (\"brewtest\"", (testpath/"brewtest/Akku.manifest").read
     assert_match "Akku.scm #{version}", shell_output("#{bin}/akku --help 2>&1")
   end
 end

@@ -8204,8 +8204,9 @@ Homebrew-homebrew-cask/Casks/d/distroav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/divvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dixa.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/djstudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/djuced.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/djv.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/djv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/djview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dmenu-mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dmg-canvas.rb, Homebrew/homebrew-cask, 0
@@ -9155,6 +9156,7 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-mono-complete.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-mono-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-denk-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-d/font-departure-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-departure-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-devicons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-devonshire.rb, Homebrew/homebrew-cask, 1
@@ -11495,6 +11497,7 @@ Homebrew-homebrew-cask/Casks/j/jiggler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jitouch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jitsi-meet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jitsi.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jlutil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jmc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/joinme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/joker.rb, Homebrew/homebrew-cask, 0
@@ -12675,6 +12678,7 @@ Homebrew-homebrew-cask/Casks/p/pixel-picker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixel-shift-combiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pixelorama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixelsnap.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pixpin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pktriot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plain-clip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plan.rb, Homebrew/homebrew-cask, 0
@@ -13306,7 +13310,6 @@ Homebrew-homebrew-cask/Casks/s/simplenote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simplesynth.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simpletex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplex.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/simplistic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simply-fortran.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simsim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/singlebox.rb, Homebrew/homebrew-cask, 0

@@ -24,7 +24,7 @@ class Aide < Formula
     depends_on "bison" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libgcrypt"
   depends_on "libgpg-error"
@@ -53,8 +53,7 @@ class Aide < Formula
       "--with-curl=#{Formula["curl"].prefix}"
     end
 
-    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
-
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

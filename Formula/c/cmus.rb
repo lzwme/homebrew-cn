@@ -15,7 +15,7 @@ class Cmus < Formula
     sha256 x86_64_linux:  "36afb0eb6672a1734b4c9cdfcb128b8c21ac925b69c854b6e7a8175bf21d2d20"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "faad2"
   depends_on "ffmpeg"
   depends_on "flac"

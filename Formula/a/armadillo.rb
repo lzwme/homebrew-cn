@@ -4,6 +4,7 @@ class Armadillo < Formula
   url "https://downloads.sourceforge.net/project/arma/armadillo-14.2.0.tar.xz"
   sha256 "1b5f7e39b05e4651bedb57344d60b9b1f9aa17354f06c0e34eac94496badd884"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,27 +12,23 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bcf12ed568ca7223d633382d34a18e8be0070dd5854dda53d5a9f6a3eb63db00"
-    sha256 cellar: :any,                 arm64_sonoma:  "f05078b9af2241accc0ee1f803115d2cdc6ce9c7d3bc9fb63690bd5f6da0c26b"
-    sha256 cellar: :any,                 arm64_ventura: "11c9c7b8713c369d272abe888a93be6e1bbfc244423a4fc313fdcfdc937cab36"
-    sha256 cellar: :any,                 sonoma:        "89bc926056f4ac31dcad51fd90eaa371404b0ba01c911764941fc2889f78a369"
-    sha256 cellar: :any,                 ventura:       "ab0331eff19478c95a8a95c0d10040cd4425189101aa1e4f9cc7960a18e17fdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d6c2614c5c0b65aa1a5d11467dcc48e770e6bb2bfde4a376b1338d74ba39e04"
+    sha256 cellar: :any,                 arm64_sequoia: "c3c5b32b9b1c89243d51a1382fcdd81aed6157aa5663da785e9bf8241bd074f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd9181525797ffda355744dc64883580b731ff23ab9a3a941592ba10c4e5ce03"
+    sha256 cellar: :any,                 arm64_ventura: "ac1bbaa49be0842a30ce50becbb823a7ed6e8b4fc6e682efbca08787fe2ac81f"
+    sha256 cellar: :any,                 sonoma:        "0e1e23278d919306e5f7121897e55410ef7b40990dc448ed7dbabc9e5aef29ce"
+    sha256 cellar: :any,                 ventura:       "3a2b4f39a4bdc51950a3fa131280d8b6c3e075d480c5afb5087ae95160ca5b48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed01b0bce503d462a3ea3b8d8f40c04283274035fac52b1f35a7e1f6523db661"
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "arpack"
-  depends_on "hdf5"
-  depends_on "libaec"
   depends_on "openblas"
-  depends_on "superlu"
 
   def install
-    ENV.prepend "CXXFLAGS", "-DH5_USE_110_API -DH5Ovisit_vers=1"
-
-    system "cmake", ".", "-DDETECT_HDF5=ON", "-DALLOW_OPENBLAS_MACOS=ON", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DALLOW_OPENBLAS_MACOS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

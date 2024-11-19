@@ -6,15 +6,16 @@ class OpenaiWhisper < Formula
   url "https:files.pythonhosted.orgpackagesf577952ca71515f81919bd8a6a4a3f89a27b09e73880cebf90957eda8f2f8545openai-whisper-20240930.tar.gz"
   sha256 "b7178e9c1615576807a300024f4daa6353f7e1a815dac5e38c33f1ef055dd2d2"
   license "MIT"
+  revision 1
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "333a5b728a7ec6580cc6971132da2ddfa4d6b2bc051660a0f9f705f636dd2bdf"
-    sha256 cellar: :any,                 arm64_sonoma:  "13460c68971d6e2cae7907162fa9b0d20169f00175a6a221e729c3503cd6edce"
-    sha256 cellar: :any,                 arm64_ventura: "eaa165df04715ff60c266def5824423c35f23eb8d9a3bb1bf729fab41f503e62"
-    sha256 cellar: :any,                 sonoma:        "50d19c37a08c45f69d4c282a0917038795446cdb05c92a508fb2e10edf5e6337"
-    sha256 cellar: :any,                 ventura:       "75bfce6861bf4690f3cd19c43527d2ed01ba7d0691d42b0ae74342f94c03f3d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4b951c98a9be002e8744fa16db7d3d2e04bed5f143492ab23b1dbcbcd9107ca"
+    sha256 cellar: :any,                 arm64_sequoia: "fb20c184addee014fbd43a8035592e76c148b5ea8ce30e22fd5b1f17ca38b7aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ff5f9e031d71cdc3b66795bfadb17c67f9ad75466e695ad601dde1a60dce069"
+    sha256 cellar: :any,                 arm64_ventura: "175aba1ee80e67f54dae13ef88f265a53cce12e0acf3c43353a780cf11979573"
+    sha256 cellar: :any,                 sonoma:        "60a4054c514839aade340a6f9e394c57f1f6d43e8f85bad84aa775c2aa5d49a3"
+    sha256 cellar: :any,                 ventura:       "3b78fc5f446614ae7367a8c8204da6f3af00501437381e40306c904ad1dcad88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b019e05f4ec4d9a1cab322adc279ec2d89d07b32e0fa48b906902a3eaeb2c6"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -22,7 +23,7 @@ class OpenaiWhisper < Formula
   depends_on "ffmpeg"
   depends_on "llvm@16" # LLVM 17 PR: https:github.comnumballvmlitepull1042
   depends_on "numpy"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "pytorch"
 
   on_linux do
@@ -30,8 +31,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "idna" do
@@ -52,10 +53,10 @@ class OpenaiWhisper < Formula
   end
 
   resource "numba" do
-    # Fetch from Git hash for numpy 2.1 compatibility.
+    # Fetch from Git hash for numpy 2.1 and python 3.13 compatibility.
     # Use git checkout to avoid .gitattributes causing checksum changes and unknown version info
     url "https:github.comnumbanumba.git",
-        revision: "a344e8f55440c91d40c5221e93a38ce0c149b803"
+        revision: "391511bcb0b97af8d311cd276a46030774bc30b7"
   end
 
   resource "regex" do
@@ -69,8 +70,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "tiktoken" do
-    url "https:files.pythonhosted.orgpackagesc44aabaec53e93e3ef37224a4dd9e2fc6bb871e7a538c2b6b9d2a6397271daf4tiktoken-0.7.0.tar.gz"
-    sha256 "1077266e949c24e0291f6c350433c6f0971365ece2b173a23bc3b9f9defef6b6"
+    url "https:files.pythonhosted.orgpackages3702576ff3a6639e755c4f70997b2d315f56d6d71e0d046f4fb64cb81a3fb099tiktoken-0.8.0.tar.gz"
+    sha256 "9ccbb2740f24542534369c5635cfd9b2b3c2490754a78ac8831d99f89f94eeb2"
   end
 
   resource "tqdm" do
@@ -85,6 +86,7 @@ class OpenaiWhisper < Formula
 
   def install
     ENV["LLVM_CONFIG"] = Formula["llvm@16"].opt_bin"llvm-config"
+    inreplace "setup.py", "version=read_version()", "version='#{version}'"
     venv = virtualenv_install_with_resources without: "numba"
 
     # We depend on pytorch, but that's a separate formula, so install a `.pth` file to link them.

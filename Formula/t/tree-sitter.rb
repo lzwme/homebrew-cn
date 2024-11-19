@@ -48,14 +48,14 @@ class TreeSitter < Formula
     assert_equal "tree-sitter #{version}", shell_output("#{bin}tree-sitter --version").strip
 
     # test `tree-sitter generate`
-    (testpath"grammar.js").write <<~EOS
+    (testpath"grammar.js").write <<~JS
       module.exports = grammar({
         name: 'YOUR_LANGUAGE_NAME',
         rules: {
           source_file: $ => 'hello'
         }
       });
-    EOS
+    JS
     system bin"tree-sitter", "generate", "--abi=latest"
 
     # test `tree-sitter parse`

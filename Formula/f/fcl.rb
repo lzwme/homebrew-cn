@@ -19,16 +19,15 @@ class Fcl < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
-  depends_on "boost"
+  depends_on "pkgconf" => :build
   depends_on "eigen"
   depends_on "libccd"
   depends_on "octomap"
 
   def install
-    ENV.cxx11
-    system "cmake", ".", "-DBUILD_TESTING=OFF", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

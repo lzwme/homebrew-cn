@@ -21,7 +21,7 @@ class Couchdb < Formula
   depends_on "automake" => :build
   depends_on "erlang" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "icu4c@76"
   depends_on "openssl@3"
 
@@ -29,11 +29,6 @@ class Couchdb < Formula
   uses_from_macos "zlib"
 
   conflicts_with "ejabberd", because: "both install `jiffy` lib"
-
-  fails_with :gcc do
-    version "5"
-    cause "mfbt (and Gecko) require at least gcc 6.1 to build."
-  end
 
   def install
     system "./configure", "--disable-spidermonkey", "--js-engine=quickjs"

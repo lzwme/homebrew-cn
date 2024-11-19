@@ -3,20 +3,18 @@ class Cf2tf < Formula
 
   desc "Cloudformation templates to Terraform HCL converter"
   homepage "https:github.comDontShaveTheYakcf2tf"
-  url "https:files.pythonhosted.orgpackages520094c12acc1ed644df1c3ee658068929c33863fccfdd2f8ab9236d58eb4496cf2tf-0.8.0.tar.gz"
-  sha256 "f36bbf5abacdf70baeb12529a7ae4ba1c5f748112c240bef4a5ed0e0e654f44c"
+  url "https:files.pythonhosted.orgpackagese49d79064ec7a79fcde16fc17c3261059f60b6da6ebc5ee5c9a7eb19c3f55c8bcf2tf-0.9.0.tar.gz"
+  sha256 "e0227b6ab2bcb9d5c4e517e4a6c013b758ed51f41e0fdd5c2570a2f586b47256"
   license "GPL-3.0-only"
-  revision 2
   head "https:github.comDontShaveTheYakcf2tf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "fdf7e3468b13c630f1800649353a4ed8b78ce1c595b9acc748e2d63bbca67c84"
-    sha256 cellar: :any,                 arm64_sonoma:  "62f2649d42fe4e42597d6f8135aa3f5cc851d59d477240724c034286ffdb211d"
-    sha256 cellar: :any,                 arm64_ventura: "2f4439a21605763fd2e9fe7d8c283d5d13b467dc060f409673d6fd5b8e0aa942"
-    sha256 cellar: :any,                 sonoma:        "bdd998c6cf8fdc351cb65918f8eb45b72da43026dddd3b54dc5a18c93a71e2a6"
-    sha256 cellar: :any,                 ventura:       "97e99e2dc3b98b3da83c1a881385649be0cf326a06b1bf0967c2dea50641a163"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bc8b1c28a76c27344d84ea60cd25611eea17143634864f2f54de5f2511c0cc7"
+    sha256 cellar: :any,                 arm64_sequoia: "b68d444c791578ac7172a98c937379e8806a879ab679973f7d63ddf5d101c620"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc011202c428d42dd44d7e18f5f75db856b8f50d42792b342bf73610a75a14a5"
+    sha256 cellar: :any,                 arm64_ventura: "7cf68b535274fc53184fd1e57ed7241df6f3be9554b511e8b2af8ea4f8ef1ecb"
+    sha256 cellar: :any,                 sonoma:        "4c0dda3856b184ec54cd2829ccaf3ceec86819246cc623eba53d84080236b58c"
+    sha256 cellar: :any,                 ventura:       "31ad5e712e9aae6e7bfe09730706b8f239221e0591e20515f5df2801f68845ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849d06ad59466e4df08932943a6aa30081f67cbfed9f1d9b0516292568759e3e"
   end
 
   depends_on "cmake" => :build
@@ -65,8 +63,8 @@ class Cf2tf < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pluggy" do
@@ -85,8 +83,8 @@ class Cf2tf < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages8143ce16df67029b8e4f528fd1b3fbe5e9fcfc6fcc16823c66349260dd93750erapidfuzz-3.10.0.tar.gz"
-    sha256 "6b62af27e65bb39276a66533655a2fa3c60a487b03935721c45b7809527979be"
+    url "https:files.pythonhosted.orgpackagese139e3bcb901c2746734cd70151253bf9e61c688d3c415227b08e6fbf7eb5d7frapidfuzz-3.10.1.tar.gz"
+    sha256 "5a15546d847a915b3f42dc79ef9b0c78b998b4e2c53b252e7166284066585979"
   end
 
   resource "requests" do

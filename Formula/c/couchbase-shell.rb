@@ -22,7 +22,7 @@ class CouchbaseShell < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "libx11"
     depends_on "libxcb"
     depends_on "openssl@3"

@@ -21,7 +21,7 @@ class Convox < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
     depends_on "systemd" # for libudev

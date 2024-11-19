@@ -23,8 +23,7 @@ class Openimageio < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "boost"
-  depends_on "boost-python3"
+  depends_on "pybind11" => :build
   depends_on "ffmpeg"
   depends_on "fmt"
   depends_on "freetype"
@@ -39,17 +38,16 @@ class Openimageio < Formula
   depends_on "opencolorio"
   depends_on "openexr"
   depends_on "pugixml"
-  depends_on "pybind11"
   depends_on "python@3.12"
   depends_on "tbb"
   depends_on "webp"
 
   uses_from_macos "zlib"
 
-  # https:github.comAcademySoftwareFoundationOpenImageIOblobmasterINSTALL.md
+  # https:github.comAcademySoftwareFoundationOpenImageIOblobmainINSTALL.md
   fails_with :gcc do
-    version "5"
-    cause "Requires GCC 6.1 or later"
+    version "8"
+    cause "Requires GCC 9.3 or later"
   end
 
   def python3

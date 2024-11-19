@@ -26,7 +26,7 @@ class Castget < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "590a6ec3e2fe983ff5c82e3b5b96b43c87f3a51fd7848216da86dc48ba01b8ca"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "id3lib"
 

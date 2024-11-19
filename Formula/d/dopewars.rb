@@ -18,7 +18,7 @@ class Dopewars < Formula
     sha256 x86_64_linux:   "7a543edc764a62a6b9c5e9884acb00b034e4631248f9c6b44e4c0cd8483f4e50"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
 

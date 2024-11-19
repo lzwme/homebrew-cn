@@ -17,10 +17,10 @@ class Groestlcoin < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "boost" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "berkeley-db@5"
-  depends_on "boost"
   depends_on "libevent"
   depends_on macos: :big_sur
   depends_on "miniupnpc"
@@ -39,9 +39,9 @@ class Groestlcoin < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args,
-           "--disable-silent-rules",
-           "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+    system ".configure", "--disable-silent-rules",
+                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
+                          *std_configure_args
     system "make", "install"
     pkgshare.install "sharerpcauth"
   end

@@ -23,17 +23,17 @@ class Librevenge < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "11fd00b1110acb46392ccc91a6fbb54261834a53e256e3d48d6c268e71d7c4b5"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "boost"
+  depends_on "boost" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--without-docs",
-                          "--enable-static=no",
+    system "./configure", "--without-docs",
+                          "--disable-static",
                           "--disable-werror",
-                          "--disable-tests"
+                          "--disable-tests",
+                          *std_configure_args
     system "make", "install"
   end
 

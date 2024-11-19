@@ -32,10 +32,10 @@ class Ringojs < Formula
   end
 
   test do
-    (testpath"test.js").write <<~EOS
+    (testpath"test.js").write <<~JS
       var x = 40 + 2;
       console.assert(x === 42);
-    EOS
+    JS
     system bin"ringo", "test.js"
   end
 end

@@ -19,9 +19,9 @@ class Babel < Formula
   end
 
   test do
-    (testpath/"script.js").write <<~EOS
+    (testpath/"script.js").write <<~JS
       [1,2,3].map(n => n + 1);
-    EOS
+    JS
 
     system bin/"babel", "script.js", "--out-file", "script-compiled.js"
     assert_predicate testpath/"script-compiled.js", :exist?, "script-compiled.js was not generated"

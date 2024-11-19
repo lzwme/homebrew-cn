@@ -18,7 +18,7 @@ class Cbonsai < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "adab516beb445c4f2f03666bef052c660e3484c1f9e252d27c0741f91b2f40fb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "scdoc" => :build
   depends_on "ncurses"
 

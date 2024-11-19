@@ -23,7 +23,7 @@ class CairommAT114 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "libpng"
   depends_on "libsigc++@2"

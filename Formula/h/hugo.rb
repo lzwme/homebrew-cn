@@ -1,8 +1,8 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https:gohugo.io"
-  url "https:github.comgohugoiohugoarchiverefstagsv0.138.0.tar.gz"
-  sha256 "2527f9df57d872c2651ad8e8895c7256c7af9a58c73e5e72f5ba0ae9714cad8e"
+  url "https:github.comgohugoiohugoarchiverefstagsv0.139.0.tar.gz"
+  sha256 "4eeba2c3f993d05267d604eca2a5929a090663c437a1585c0607bfcfaa5a8c95"
   license "Apache-2.0"
   head "https:github.comgohugoiohugo.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Hugo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cb0c749125a32f312af992aa34f1b48a9135ed50f32b13657d2476431601265"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46ee1485e8926af9d67089237c6f9600d39ff46c46d5bec14e89f5d81774e2ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c6fb1ace5effbfaa41c3b87ec7627324a90aadaa2474ef9e3cb38468db7b259"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9a1fdc7b6b5dc4abec65d06b590340bc4c9057b45bc5c16c84cbfb39ba06920"
-    sha256 cellar: :any_skip_relocation, ventura:       "b167904e4eb2856d1967036121a989fe41edea9f856df9d37cf59ea991d2ab92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e3c6d9507f0b6311b0ad4c8e5bb480ec7e3cfafb91ab7e6e46407658fe8b13f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1004045903897caa98b450e1c8a188492f5b49d443df2895813f8acabc5afa8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3879187e43791f5dd903a8d2dcf86797a35acaca7622b4a47ad0174d4edb2dee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d70b9e50551b568776597971aa3a804651a130f1231fb7b9de5df636f31ce08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c81361df92d7c8690420d8b4c60a32b11c06f53f4544444a95aafe2e0f99582"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ef54c8ecbddc1aab146acf3527712d18c251c6d8812835dab1bb88496e97a7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2e84d02e8553220e55ac7ff9a44cc95a7c48cd39416a66d432f5f6c007494da"
   end
 
   depends_on "go" => :build

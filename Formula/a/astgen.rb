@@ -20,9 +20,9 @@ class Astgen < Formula
   end
 
   test do
-    (testpath"main.js").write <<~EOS
+    (testpath"main.js").write <<~JS
       console.log("Hello, world!");
-    EOS
+    JS
 
     assert_match "Converted AST", shell_output("#{bin}astgen -t js -i . -o #{testpath}out")
     assert_match '"fullName": "main.js"', (testpath"outmain.js.json").read

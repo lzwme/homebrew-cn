@@ -10,7 +10,7 @@ class Atop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "724dc68495d244ecc250ab08de07a9e5b746a59fe5dd22a75c98a9544b589557"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on :linux
   depends_on "linux-headers@5.15"
@@ -18,11 +18,7 @@ class Atop < Formula
   depends_on "zlib"
 
   def install
-    if build.head?
-      inreplace "version.h" do |s|
-        s.sub!("$, "-#{Utils.git_short_head}\"")
-      end
-    end
+    inreplace "version.h", "$, "-#{Utils.git_short_head}\"", global: false if build.head?
     # As this project does not use configure, we have to configure manually:
     ENV["BINPATH"] = bin.to_s
     ENV["SBINPATH"] = bin.to_s

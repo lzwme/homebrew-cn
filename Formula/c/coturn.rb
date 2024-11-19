@@ -24,7 +24,7 @@ class Coturn < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c91fbd01d98f9d930e27333818de9f7ae357b1d0ca2313a8a6fcf1f4eee8837"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "hiredis"
   depends_on "libevent"
   depends_on "libpq"
@@ -33,15 +33,12 @@ class Coturn < Formula
   def install
     ENV["SSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
     ENV["SSL_LIBS"] = "-L#{Formula["openssl@3"].opt_lib} -lssl -lcrypto"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--mandir=#{man}",
                           "--localstatedir=#{var}",
                           "--includedir=#{include}",
-                          "--libdir=#{lib}",
                           "--docdir=#{doc}",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
 
     system "make", "install"
 

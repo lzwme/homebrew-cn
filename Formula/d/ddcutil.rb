@@ -14,7 +14,7 @@ class Ddcutil < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b7d388702cb206684a9ff7486862ed5530fb04d41dd0629d987743ef050ce4be"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "i2c-tools"
   depends_on "jansson"
@@ -26,7 +26,7 @@ class Ddcutil < Formula
   depends_on "systemd"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end

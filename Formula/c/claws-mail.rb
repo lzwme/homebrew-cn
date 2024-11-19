@@ -20,7 +20,7 @@ class ClawsMail < Formula
     sha256 x86_64_linux:  "6d08c23e20dc8679ed712a4709e976bbd722d7e0030114e43e322c88c0b39356"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"

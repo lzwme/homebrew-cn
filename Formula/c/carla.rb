@@ -35,7 +35,7 @@ class Carla < Formula
     depends_on "qt"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fluid-synth"
   depends_on "liblo"
@@ -51,8 +51,6 @@ class Carla < Formula
     depends_on "pulseaudio"
     depends_on "sdl2"
   end
-
-  fails_with gcc: "5"
 
   def install
     system "make"

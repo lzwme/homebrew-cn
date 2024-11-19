@@ -24,7 +24,7 @@ class Cahute < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.13" => :build
   depends_on "libusb"
   depends_on "sdl2"

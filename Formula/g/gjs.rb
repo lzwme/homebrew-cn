@@ -56,12 +56,12 @@ class Gjs < Formula
   end
 
   test do
-    (testpath/"test.js").write <<~EOS
+    (testpath/"test.js").write <<~JS
       #!/usr/bin/env gjs
       const GLib = imports.gi.GLib;
       if (31 != GLib.Date.get_days_in_month(GLib.DateMonth.JANUARY, 2000))
         imports.system.exit(1)
-    EOS
+    JS
     system bin/"gjs", "test.js"
   end
 end

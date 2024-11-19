@@ -28,14 +28,12 @@ class Jumanpp < Formula
     sha256 x86_64_linux:   "a646201910dc5c938adcd64559fc0ce85dd8f13017ddadb1b65965f4cc2f4afe"
   end
 
+  depends_on "boost" => :build
   depends_on "boost-build" => :build
-  depends_on "boost"
   depends_on "gperftools"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

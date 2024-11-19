@@ -34,7 +34,7 @@ class Dbus < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xmlto" => :build
 
   uses_from_macos "expat"
@@ -56,8 +56,6 @@ class Dbus < Formula
     system ".autogen.sh", "--no-configure" if build.head?
 
     args = [
-      "--disable-dependency-tracking",
-      "--prefix=#{prefix}",
       "--localstatedir=#{var}",
       "--sysconfdir=#{etc}",
       "--enable-xml-docs",
@@ -71,7 +69,7 @@ class Dbus < Formula
       args << "--with-launchd-agent-dir=#{prefix}"
     end
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

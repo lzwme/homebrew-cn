@@ -20,7 +20,7 @@ class Allureofthestars < Formula
 
   depends_on "cabal-install" => :build
   depends_on "ghc@9.6" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl2"
   depends_on "sdl2_ttf"
 

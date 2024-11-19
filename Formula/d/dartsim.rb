@@ -15,7 +15,7 @@ class Dartsim < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "assimp"
   depends_on "bullet"
@@ -74,7 +74,6 @@ class Dartsim < Formula
     system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
                     "-L#{Formula["assimp"].opt_lib}", "-lassimp",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_system",
                     "-L#{Formula["libccd"].opt_lib}", "-lccd",
                     "-L#{Formula["fcl"].opt_lib}", "-lfcl",
                     "-std=c++17", "-o", "test"

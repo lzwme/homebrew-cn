@@ -1,19 +1,16 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https:dotnet.github.iodocfx"
-  url "https:github.comdotnetdocfxarchiverefstagsv2.77.0.tar.gz"
-  sha256 "03c13ca2cdb4a476365ef8f5b7f408a6cf6e35f0193c959d7765c03dd4884bfb"
+  url "https:github.comdotnetdocfxarchiverefstagsv2.78.0.tar.gz"
+  sha256 "d4b2c80d2042ec81b85b9ae5dd026a6dde71c8029db3113d5a101d07dc078ccb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0947f65af0ac5e2be8272cbb1e58ec9bb58c9a360f8914b2a680e3bfdd241e5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a7d1a6e441d983071dd1cb2f1a945ee55cb05cdb6cedd57d29a68c886794490"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be98269aced336adee7567f5bce4b75316b650595b2ff71d0059a259323b9ce5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6d7c94288c97591bea4b1eb37066663c1e1e3469c506babd95ea42fff52cf6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cbf338809fb49538a7d0776e571ddf58da4815f9bfa643209d5c68259b3d7d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "812bf6ad4c29682b276a1464febff524b0eff3d72482d3e55120613f4b86f3c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "d831a32f78422ac08b69b3458ab9425fb2ec7bf6d201742d927b8656a2ff478b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c55f049d46aacabdfd83aed28a7834e88c566f7d3f1affbad9de3f19f0e93217"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "855573d550a5f2c34d59fb49a075678326b23c3ae49816d1db2727da4406a075"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "620faab34ebdd849ec36d5a796ddb56e14815df5e44030990af321ea70868a4b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc6108b87bcf053f572b87b741373901288fa52fd16f6f1a9e65a83769da2852"
+    sha256 cellar: :any_skip_relocation, ventura:       "1d86bcb6083dd8da25f7eb7a872519c86ea2c1808cedd55f69b189bb36abb146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e115c51f534956a337e9b96194e9735892046f8ab8f7e14db40ae6e3f2b58e81"
   end
 
   depends_on "dotnet"

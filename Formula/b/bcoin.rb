@@ -34,7 +34,7 @@ class Bcoin < Formula
   end
 
   test do
-    (testpath"script.js").write <<~EOS
+    (testpath"script.js").write <<~JS
       const assert = require('assert');
       const bcoin = require('#{libexec}libnode_modulesbcoin');
       assert(bcoin);
@@ -46,7 +46,7 @@ class Bcoin < Formula
       (async () => {
         await node.ensure();
       })();
-    EOS
+    JS
     system "#{node.opt_bin}node", testpath"script.js"
     assert File.directory?("#{testpath}.bcoin")
   end

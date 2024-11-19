@@ -35,10 +35,10 @@ class Flow < Formula
 
   test do
     system bin"flow", "init", testpath
-    (testpath"test.js").write <<~EOS
+    (testpath"test.js").write <<~JS
       * @flow *
       var x: string = 123;
-    EOS
+    JS
     expected = Found 1 error
     assert_match expected, shell_output("#{bin}flow check #{testpath}", 2)
   end

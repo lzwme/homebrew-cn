@@ -25,13 +25,13 @@ class Commitlint < Formula
   end
 
   test do
-    (testpath"commitlint.config.js").write <<~EOS
+    (testpath"commitlint.config.js").write <<~JS
       module.exports = {
           rules: {
             'type-enum': [2, 'always', ['foo']],
           },
         };
-    EOS
+    JS
     assert_match version.to_s, shell_output("#{bin}commitlint --version")
     assert_equal "", pipe_output(bin"commitlint", "foo: message")
   end

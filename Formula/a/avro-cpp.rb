@@ -26,11 +26,9 @@ class AvroCpp < Formula
   depends_on "boost"
 
   def install
-    cd "langc++" do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-    end
+    system "cmake", "-S", "langc++", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

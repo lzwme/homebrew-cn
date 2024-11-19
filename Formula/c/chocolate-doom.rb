@@ -24,7 +24,7 @@ class ChocolateDoom < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fluid-synth"
   depends_on "libpng"
   depends_on "libsamplerate"
@@ -34,9 +34,7 @@ class ChocolateDoom < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install", "execgamesdir=#{bin}"
     rm_r(share"applications")
     rm_r(share"icons")

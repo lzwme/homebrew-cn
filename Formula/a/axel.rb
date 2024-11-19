@@ -27,7 +27,7 @@ class Axel < Formula
     depends_on "txt2man" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   on_macos do

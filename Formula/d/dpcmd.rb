@@ -19,7 +19,7 @@ class Dpcmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4bb5c62758c86baf6c6a8211260e41c9311d3660d46d7f94f4b89bf2dd7b41"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install

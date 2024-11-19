@@ -1,7 +1,6 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https:www.percona.com"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.36-28sourcetarballpercona-server-8.0.36-28.tar.gz"
   sha256 "8a4b44bd9cf79a38e6275e8f5f9d4e8d2c308854b71fd5bf5d1728fff43a6844"
   license "BSD-3-Clause"
@@ -20,24 +19,26 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f33ab3853ad5d77d832172a84bc26d7caff044417c9f4eb6aace70a4ad962a41"
-    sha256 arm64_sonoma:  "d3a25c59d673eb187a0de78311a22327632966e4b55ea7a929288d28e5c1a6a0"
-    sha256 arm64_ventura: "326320bf4026b8a1e01a615e71521b336b6ce7467e9c6efcea6961f2504d0815"
-    sha256 sonoma:        "44a4869d90907cf599832f67d59ab2b2719fbdd3a2efc4a8e4c38c8a573b35b4"
-    sha256 ventura:       "5d482f723ab038acaf8a355db7d464bbe74d1a50d84795627091ae758213f216"
-    sha256 x86_64_linux:  "28712e5fe869747e2a045981475ddb7c35ca138f8588510d68c241e946fb5805"
+    rebuild 1
+    sha256 arm64_sequoia: "29e0b962cb2f38106efe55c33b8110c5d531c88157ff52d8ce5657667f147e36"
+    sha256 arm64_sonoma:  "534428d3ac87a01e2ed1eda3ee30790c9f065dc89f24d1df9afbcc32c3fd3a23"
+    sha256 arm64_ventura: "8ed29556bfdd2c5f81d8b7414b6baba9d04ea19822b816de39f7c22fb37b9313"
+    sha256 sonoma:        "20abc25692b98473b4963e242c8cc38bcafd8c5aea4f0251dc6b783f8c756800"
+    sha256 ventura:       "abadd8d5152e2e72c8d8a5ad030bed067d3dcc6acad2919abe95fcbe1be8a728"
+    sha256 x86_64_linux:  "621e57fa5a0c7cc891a531caf7ec36ad1403dffc269ad6a3a33210419666ed83"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "abseil"
   depends_on "icu4c@76"
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@3"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
@@ -70,6 +71,17 @@ class PerconaServer < Formula
   resource "boost" do
     url "https:boostorg.jfrog.ioartifactorymainrelease1.77.0sourceboost_1_77_0.tar.bz2"
     sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
+  end
+
+  # Backport support for newer Protobuf. Remove with 8.0.39  8.4.2
+  patch do
+    url "https:github.comperconapercona-servercommit089c011f8e2a865e4bd97715653b4bc0973c43a1.patch?full_index=1"
+    sha256 "aac166f579e636923abeb86cc89934efaf0185df35355aab2d08192d9bf9efd8"
+  end
+  # Backport support for Protobuf 22+ on Linux. Remove with 8.0.40  8.4.3
+  patch do
+    url "https:github.commysqlmysql-servercommit269abc0409b22bb87ec88bd4d53dfb7a1403eace.patch?full_index=1"
+    sha256 "ffcee32804e7e1237907432adb3590fcbf30c625eea836df6760c05a312a84e1"
   end
 
   # Patch out check for Homebrew `boost`.

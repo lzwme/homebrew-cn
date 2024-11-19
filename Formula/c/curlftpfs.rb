@@ -15,7 +15,7 @@ class Curlftpfs < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on "glib"
   depends_on "libfuse@2"
@@ -23,9 +23,8 @@ class Curlftpfs < Formula
 
   def install
     ENV.append "CPPFLAGS", "-D__off_t=off_t"
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

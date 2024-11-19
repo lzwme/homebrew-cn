@@ -24,15 +24,14 @@ class DatetimeFortran < Formula
 
     depends_on "autoconf"   => :build
     depends_on "automake"   => :build
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   depends_on "gcc" # for gfortran
 
   def install
-    system "autoreconf", "-fvi" if build.head?
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-silent-rules"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     (pkgshare"test").install "testsdatetime_tests.f90"
   end

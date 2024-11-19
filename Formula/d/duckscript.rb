@@ -15,11 +15,12 @@ class Duckscript < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5235e7033e0a8ed818f198f52df387bd1d82422000c9a32297b7265df247ac36"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 

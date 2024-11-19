@@ -11,12 +11,13 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b9c156677e374eaf59be5495bb5e2762af577ff840149e388ec895d28b6f5cf4"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c9ed4e2f11cb81b1802f8f00a12d896eeed78fb3654f32a571b67c021d3753c"
-    sha256 cellar: :any,                 arm64_ventura: "b5282e586af70de0dacfc75cb625226343bfdba1f6335890adecc91a106a6db7"
-    sha256 cellar: :any,                 sonoma:        "2da60a4a743c85bb3e4d885ff96ed9db94df9076c7b565a9ba51304121384db3"
-    sha256 cellar: :any,                 ventura:       "ac152d013a33817d9f0455d1f052a3d297ae4b0cb7070bcdfb6de7877ede2333"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22896839ea9da3dd776292c755058b6e11fd1adb67fc23cf526addd10452c75b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7d25ad2af2b0d23695ac400c5650d9f4b1ab381363c649f382b1763010362fba"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc412d6503e462724de89699c0b84c96944b349b88d222e37c9c38cea72c479d"
+    sha256 cellar: :any,                 arm64_ventura: "5e579cf156f4878259a12cc70ccc7d300e6d6eb1a9e6822457df27185d3abd22"
+    sha256 cellar: :any,                 sonoma:        "8e0726035c368da6bcd502d76b5139a668222de5b19f64787561500a0eacbd8f"
+    sha256 cellar: :any,                 ventura:       "6fcd5c082015c863f527bb1983c72915f1c9a3f8b1d1ad0e27e2dbcb55e68561"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa64d53b22674a9afddd6bea5bb0c1f53bad7262ff6c98131d8ccbff989d791"
   end
 
   depends_on "cmake" => :build
@@ -28,8 +29,6 @@ class Solidity < Formula
 
   conflicts_with "solc-select", because: "both install `solc` binaries"
 
-  fails_with gcc: "5"
-
   # build patch to use system fmt, nlohmann-json, and range-v3, upstream PR ref, https:github.comethereumsoliditypull15414
   patch do
     url "https:github.comethereumsoliditycommitaa47181eef8fa63a6b4f52bff2c05517c66297a2.patch?full_index=1"
@@ -37,7 +36,13 @@ class Solidity < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DSTRICT_Z3_VERSION=OFF", *std_cmake_args
+    rm_r("deps")
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBoost_USE_STATIC_LIBS=OFF",
+                    "-DSTRICT_Z3_VERSION=OFF",
+                    "-DTESTS=OFF",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

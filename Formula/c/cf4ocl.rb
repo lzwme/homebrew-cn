@@ -21,7 +21,7 @@ class Cf4ocl < Formula
   deprecate! date: "2024-01-18", because: :repo_archived
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   on_macos do

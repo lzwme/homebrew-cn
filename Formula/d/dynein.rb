@@ -18,12 +18,12 @@ class Dynein < Formula
   end
 
   depends_on "cmake" => :build # for libz-ng-sys crate
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "openssl@3" # need to build `openssl-sys`
   end
 

@@ -25,7 +25,7 @@ class Clip < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "fmt"
@@ -37,8 +37,6 @@ class Clip < Formula
 
   conflicts_with "geomview", because: "both install `clip` binaries"
 
-  fails_with gcc: "5" # for C++17
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -49,9 +47,8 @@ class Clip < Formula
 
   test do
     cp_r pkgshare"test", testpath
-    system bin"clip", "--export", "chart.svg",
-           "testexamplescharts_basic_areachart.clp"
-    assert_predicate testpath"chart.svg", :exist?
+    system bin"clip", "--export", "chart.svg", "testexamplescharts_basic_areachart.clp"
+    assert_path_exists testpath"chart.svg"
   end
 end
 

@@ -34,7 +34,7 @@ class Jsonnet < Formula
   end
 
   test do
-    (testpath"example.jsonnet").write <<~EOS
+    (testpath"example.jsonnet").write <<~JSONNET
       {
         person1: {
           name: "Alice",
@@ -42,7 +42,7 @@ class Jsonnet < Formula
         },
         person2: self.person1 { name: "Bob" },
       }
-    EOS
+    JSONNET
 
     expected_output = {
       "person1" => {

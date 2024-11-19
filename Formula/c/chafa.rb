@@ -19,7 +19,7 @@ class Chafa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc49d8207b352f3adf9b570363b0a40986addfc14deedab6181c55594e6d18a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "freetype"
   depends_on "glib"

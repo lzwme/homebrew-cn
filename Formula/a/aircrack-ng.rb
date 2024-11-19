@@ -1,6 +1,7 @@
 class AircrackNg < Formula
   desc "Next-generation aircrack with lots of new features"
   homepage "https:aircrack-ng.org"
+  # TODO: Migrate to PCRE2 in the next release
   url "https:download.aircrack-ng.orgaircrack-ng-1.7.tar.gz"
   sha256 "05a704e3c8f7792a17315080a21214a4448fd2452c1b0dd5226a3a55f90b58c3"
   license all_of: [
@@ -32,7 +33,7 @@ class AircrackNg < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "pcre"
   depends_on "sqlite"
@@ -45,10 +46,9 @@ class AircrackNg < Formula
 
   def install
     system ".autogen.sh", "--disable-silent-rules",
-                           "--disable-dependency-tracking",
-                           "--prefix=#{prefix}",
                            "--sysconfdir=#{etc}",
-                           "--with-experimental"
+                           "--with-experimental",
+                           *std_configure_args
     system "make", "install"
     inreplace sbin"airodump-ng-oui-update", "usrlocal", HOMEBREW_PREFIX
   end

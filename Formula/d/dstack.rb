@@ -16,8 +16,8 @@ class Dstack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03c3ef436675292431f6322a70cefbeddd2ded3c82c45221ce93da1b1f1a2f49"
   end
 
-  # `pkg-config` and `rust` are for bcrypt.
-  depends_on "pkg-config" => :build
+  # `pkgconf` and `rust` are for bcrypt.
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"

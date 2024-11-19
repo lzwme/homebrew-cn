@@ -15,7 +15,7 @@ class CargoRelease < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1f2ae57104ab9c0d6887e53cd12d84741a2a6a6358016c1dd4833f2e83f77d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
   depends_on "libgit2"

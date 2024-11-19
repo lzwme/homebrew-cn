@@ -16,7 +16,7 @@ class Aria2 < Formula
     sha256 x86_64_linux:   "e459fd063b80457e1d8ead88e3168effb13a80974e4d5e2fcd1bd2a11aa1cb00"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "sqlite"

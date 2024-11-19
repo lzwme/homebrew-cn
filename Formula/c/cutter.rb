@@ -29,7 +29,7 @@ class Cutter < Formula
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   uses_from_macos "perl" => :build

@@ -23,13 +23,13 @@ class Esbuild < Formula
   end
 
   test do
-    (testpath"app.jsx").write <<~EOS
+    (testpath"app.jsx").write <<~JS
       import * as React from 'react'
       import * as Server from 'react-domserver'
 
       let Greet = () => <h1>Hello, world!<h1>
       console.log(Server.renderToString(<Greet >))
-    EOS
+    JS
 
     system Formula["node"].libexec"binnpm", "install", "react", "react-dom"
     system bin"esbuild", "app.jsx", "--bundle", "--outfile=out.js"

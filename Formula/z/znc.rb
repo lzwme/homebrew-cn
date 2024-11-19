@@ -12,17 +12,20 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "47a4377429c552b85f0f0d01c4bd626c16b870b25e5c236b3638d7d364b8515f"
-    sha256 arm64_sonoma:  "cd03c571acd62e9278b6a4a516e8eb62e4b6094c3207130b6bae9aa8e15e022b"
-    sha256 arm64_ventura: "8d500898246859202ec756125592c33b07419d7d42e19ec739d3cdb7a87d6339"
-    sha256 sonoma:        "f7d4596fc318adca1268a55c3e0d065999e69dedc7b55f84b89a72cb8fb1ae51"
-    sha256 ventura:       "ab19a326ac21a984ff8e0594239d567d8bbe9c793566040d54d283eefd8c37b4"
-    sha256 x86_64_linux:  "0da654df490b1c2eb22af53ec756b181d5116006b24ecb78451a325812929a14"
+    rebuild 1
+    sha256 arm64_sequoia: "8e2a03b070797aebc5285ee44bc4f3b24b1e18ea7ede34b99c6d26ec6c10664e"
+    sha256 arm64_sonoma:  "9186e3d185f82706175bf4092af6e0ee4829c90d758b374e3acfe95201f0c7a7"
+    sha256 arm64_ventura: "0afd839114a50990b300740b36473128e79e15032f8b7074c1413c1efa763d97"
+    sha256 sonoma:        "0532ab7f343c502374a812274d63cceb96e88a44a278bfaac02024f7768809b7"
+    sha256 ventura:       "1124fe470899bc70a32f366b18edd5eb2d3d44827484b18113aa56664bebf7f2"
+    sha256 x86_64_linux:  "1d7d7ecea3de12210ed78b1178d3e5afd2aa93f9ffb1985fb0df4ed70d795f0c"
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "cctz"
   depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "python@3.13"
@@ -30,6 +33,8 @@ class Znc < Formula
   uses_from_macos "zlib"
 
   def install
+    rm_r(["third_party/cctz", "third_party/googletest"])
+
     python3 = "python3.13"
     xy = Language::Python.major_minor_version python3
 

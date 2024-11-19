@@ -17,7 +17,7 @@ class CargoGenerate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "515399398dbaba43f5fa4225df8334c28b620e1e0e486771010fb6aeef6fb0ee"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "libssh2"

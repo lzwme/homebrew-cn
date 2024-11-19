@@ -14,7 +14,7 @@ class Cocoapods < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "48a2e96d3ec4bb17a007ae9c78efda0942905dfc353113e331e967cc12f8f680"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ruby"
   uses_from_macos "libffi", since: :catalina
 

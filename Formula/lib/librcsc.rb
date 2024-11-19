@@ -6,20 +6,19 @@ class Librcsc < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cf6fd6b7ec4c1edbf8554e45217d35af20109709806f656fdc2ba76a8b345a53"
-    sha256 cellar: :any,                 arm64_sonoma:   "32e10d7512099663cf9488e62504a26234b7335c2d8a3678394001a7e7804ed4"
-    sha256 cellar: :any,                 arm64_ventura:  "077a939210847e00dd2ab85f25f0875ea9358baed7ba7dca8ac978688c2b862a"
-    sha256 cellar: :any,                 arm64_monterey: "1bb50580e569d0f194faa5559d0bfa0d72bd6ac9402792a1d9dd39fdd9d3b6c2"
-    sha256 cellar: :any,                 sonoma:         "4e6daaee921804fbd0fa83b779f312106889ae9b7066e17d8027ada97c9ee56e"
-    sha256 cellar: :any,                 ventura:        "fd1e0dfe09e8bdc381eb7f6149dfd6a325fc6b5de42e3e0e1c11dd226c63f1c3"
-    sha256 cellar: :any,                 monterey:       "99203b77c967aa6689f992cf0e2d07ea90297fe4d319aaa1d8560893af3fad7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7d6186b22dd38c32f6a0451efd7c9d67a829be9e19b40b0dc55aa87a64d5224"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3d9d528cd8cfa66f49e6a5a371a4f93a2ceac383985a9189627bfd901006b9c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fde29d988114c1ad006242a6e5ff6d76da689505116521fd8581c44f3c1f6b1"
+    sha256 cellar: :any,                 arm64_ventura: "2ef3bfaa135d7dcdfa214b56ec141bdac11882fb307a6aaa4415fda4a982aad8"
+    sha256 cellar: :any,                 sonoma:        "d4887f6f0256c8c55347ef86c671a712b3b8b07e52ff691899197a4ecb40ac90"
+    sha256 cellar: :any,                 ventura:       "d91b3e133981705b317d6a74a48f821a13c3e83d1ea53f27a8b087c6087cfe2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77dd0bd9e1b3c8971a4eca3430b49648f944824d1a6fc0337696c846372ca9b2"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "boost" => :build
   depends_on "libtool" => :build
-  depends_on "boost"
 
   uses_from_macos "zlib"
 
@@ -28,6 +27,9 @@ class Librcsc < Formula
   patch :DATA
 
   def install
+    # Strip linkage to `boost`
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
+
     system ".bootstrap"
     system ".configure", "--disable-silent-rules",
                           "--with-boost=#{Formula["boost"].opt_prefix}",

@@ -4,22 +4,22 @@ class Arpack < Formula
   url "https:github.comopencollabarpack-ngarchiverefstags3.9.1.tar.gz"
   sha256 "f6641deb07fa69165b7815de9008af3ea47eb39b2bb97521fbf74c97aba6e844"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comopencollabarpack-ng.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "bbc370902c31da397dea1116ad0cea384c2ab8fabebfcf57a5b59dead58ed53d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a38b56bc96151574fd11c85f0244f63a31f3d51305b1902b2cf2bd21c7784fa"
-    sha256 cellar: :any,                 arm64_ventura: "653947ce18a5e7189e1e45a568e96670a847583cc46d979fde56f8fc295f2704"
-    sha256 cellar: :any,                 sonoma:        "1694ae0fc82302280d5c96327965ca61e32bcc2c4aa75a41ba1eec6e2b0ec38f"
-    sha256 cellar: :any,                 ventura:       "965eca12081b1cc6152ae3ec03c97bc9e3e90ee82c5211350e476cb90b88214e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a96492c90636b4f299ae95a9dfcf92a9b19caa8219dd6cd27bbd73c1d7d4d9f0"
+    sha256 cellar: :any,                 arm64_sequoia: "476f1c28808b3115fa9cf72d17bda20b989dc60d911d3abe85be50a92bd1d6a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "fcc8d39b5a28e371db0331c0f2ae3de23a6c37e38e9ee5026b88e668c093ea71"
+    sha256 cellar: :any,                 arm64_ventura: "99cf4eb648f19ac5355d2572ec5536624ca39d7480fd42bf00fcc478728ac9b4"
+    sha256 cellar: :any,                 sonoma:        "f2b3e99ace1d79b1b69b986f2bbe88b43ccef0c2662b2158b70586b3c4a40e90"
+    sha256 cellar: :any,                 ventura:       "153bbc3358e289d2ee528f481a86dcb41de9fe2947713b5e3a7241bfe45cb6de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37cccca9e03aeb558521d7f5e3022e24c99ba52aaecddfb99fd38ce08287c5bf"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "eigen"
   depends_on "gcc" # for gfortran
@@ -28,8 +28,6 @@ class Arpack < Formula
 
   def install
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{libexec}
       --with-blas=-L#{Formula["openblas"].opt_lib}\ -lopenblas
       F77=mpif77
       --enable-mpi
@@ -38,14 +36,10 @@ class Arpack < Formula
     ]
 
     system ".bootstrap"
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
-
-    lib.install_symlink Dir["#{libexec}lib*"].select { |f| File.file?(f) }
-    (lib"pkgconfig").install_symlink Dir["#{libexec}libpkgconfig*"]
-    pkgshare.install "TESTStestA.mtx", "TESTSdnsimp.f",
-                     "TESTSmmio.f", "TESTSdebug.h"
+    pkgshare.install "TESTStestA.mtx", "TESTSdnsimp.f", "TESTSmmio.f", "TESTSdebug.h"
   end
 
   test do

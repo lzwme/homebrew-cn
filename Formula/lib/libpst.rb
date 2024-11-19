@@ -25,9 +25,8 @@ class Libpst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ef7024943254ef22bbf082c8c96ce8d207c30a1b9fe77a8d6f4432d09f924aa"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
-  depends_on "boost"
   depends_on "glib"
   depends_on "libgsf"
 
@@ -38,7 +37,7 @@ class Libpst < Formula
   end
 
   def install
-    system "./configure", "--disable-python", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", "--disable-python", *std_configure_args
     system "make", "install"
   end
 

@@ -20,7 +20,7 @@ class Ansible < Formula
   end
 
   # `pkg-config` and `rust` are for bcrypt
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"

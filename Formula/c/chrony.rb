@@ -19,7 +19,7 @@ class Chrony < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "55cd6ef009f00d493b55f8ced8b850f4029c6bc9f17e628303d65d4391df69d4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "nettle"
 

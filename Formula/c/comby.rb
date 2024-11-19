@@ -21,7 +21,7 @@ class Comby < Formula
   depends_on "gmp" => :build
   depends_on "ocaml@4" => :build # https:github.comcomby-toolscombyissues358
   depends_on "opam" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"

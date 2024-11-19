@@ -21,7 +21,7 @@ class AvroC < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "snappy"
   depends_on "xz"
@@ -29,11 +29,9 @@ class AvroC < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "langc" do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-    end
+    system "cmake", "-S", "langc", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

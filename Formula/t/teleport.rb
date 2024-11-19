@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https:goteleport.com"
-  url "https:github.comgravitationalteleportarchiverefstagsv16.4.7.tar.gz"
-  sha256 "34dc8ab9065563efef29ef2e9de65f2c15f063fb69f712db15bb7fc46fd4edfa"
+  url "https:github.comgravitationalteleportarchiverefstagsv17.0.1.tar.gz"
+  sha256 "d2022e497edf5f42f110d4c8d2d8e9dbbcd87d45810fe7cb58e8dcc666f0b0fb"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https:github.comgravitationalteleport.git", branch: "master"
 
@@ -18,17 +18,15 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e7f4e8b74ac634320853f794cc5265afb34868558b1899a5b656e10fdfd9a42"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a4408ffbc5f206f421107b7384d2e8d18fd3d7266d1df6ec7f6dd7f7e9bb2e5"
-    sha256 cellar: :any,                 arm64_ventura: "f14ef6ef97ab5a6d6ff4721097a6d19eaa1e575b5ba425f0517f86470fc6fccc"
-    sha256 cellar: :any,                 sonoma:        "7df4288c8a0e73c95ac162cc87aa27d01dc67a807f0463360efe491c01b95ab0"
-    sha256 cellar: :any,                 ventura:       "851ff56dcb3809937089c0ab1d3c401121300b3a3d48f81c4772b06a07f48d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dd4236aa926aae711c27fde357be865f4298492eda09d3ff8e446e9e0453b71"
+    sha256 cellar: :any,                 arm64_sequoia: "318a7d816285010fca6f4442450e0703249134a6860151c5d26b288683a551d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "079fc1e7ee5ecbbffcbeb200b3578a7c9487dc11c071865e91a922b6a06f84c4"
+    sha256 cellar: :any,                 arm64_ventura: "5978eced41a5bb7de57597b6e5c0c44b2930dc708e1bc0367bed8b23ec84ac7d"
+    sha256 cellar: :any,                 sonoma:        "ea516dd6d686938aeea65c860e3f3147ac8ee77faad97dee96e6ec84af39e2cf"
+    sha256 cellar: :any,                 ventura:       "c5488e1e7897e9ee361a6ddb42c7eea083017dfa772653cf42b1758cc9c81d1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0919bd611327c12655352871e3508577c08e952401d7b74470c0fa55b234eb2"
   end
 
-  # Use "go" again after https:github.comgravitationalteleportcommite4010172501f0ed18bb260655c83606dfa872fbd
-  # is released, likely in a version 17.x.x (or later?):
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "pnpm" => :build
   depends_on "rust" => :build
@@ -78,8 +76,8 @@ class Teleport < Formula
     sleep 10
     system "curl", "--insecure", "https:localhost:3080"
 
-    status = shell_output("#{bin}tctl --config=#{testpath}config.yml status")
-    assert_match(Cluster\s*testhost, status)
-    assert_match(Version\s*#{version}, status)
+    status = shell_output("#{bin}tctl status --config=#{testpath}config.yml")
+    assert_match(Cluster:\s*testhost, status)
+    assert_match(Version:\s*#{version}, status)
   end
 end

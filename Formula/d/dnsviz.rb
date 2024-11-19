@@ -18,7 +18,7 @@ class Dnsviz < Formula
   end
 
   depends_on "bind" => [:build, :test]
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "swig" => :build
   depends_on "json-c" => :test
   depends_on "cryptography"
@@ -37,7 +37,7 @@ class Dnsviz < Formula
   end
 
   def install
-    virtualenv_install_with_resources(link_manpages: true)
+    virtualenv_install_with_resources
   end
 
   test do

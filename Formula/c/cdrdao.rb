@@ -20,7 +20,7 @@ class Cdrdao < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lame"
   depends_on "libao"
   depends_on "libvorbis"
@@ -35,7 +35,7 @@ class Cdrdao < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args, "--mandir=#{man}"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

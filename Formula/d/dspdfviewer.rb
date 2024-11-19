@@ -20,7 +20,7 @@ class Dspdfviewer < Formula
 
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "boost"
   depends_on "cairo"

@@ -31,7 +31,7 @@ class Cmuclmtk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "708324bb6cf751c76f927c6a648416ee38012499dddfc80c4b2c50cf36431c4d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   conflicts_with "julius", because: "both install `binlm2arpa` binaries"
 
@@ -46,8 +46,7 @@ class Cmuclmtk < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

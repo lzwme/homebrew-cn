@@ -29,7 +29,7 @@ class Dwarfutils < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "zlib"
 

@@ -8,17 +8,17 @@ class OpentelemetryCpp < Formula
   head "https:github.comopen-telemetryopentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52498a1a7aeb42575042a99050e78be2f9c5de7ab39ccb58c91cabc9b697638d"
-    sha256 cellar: :any,                 arm64_sonoma:  "45ec6422e77b4f501cec75b70408c63f6f4a8ddc1191d8ffd689046036337d45"
-    sha256 cellar: :any,                 arm64_ventura: "c4859f5b6ba3b4ade9a502e7ae8a31d8cad8ec9620c04a168399fa893e4640bb"
-    sha256 cellar: :any,                 sonoma:        "54316b4229d00295d12961084bd8c5ba1a3b4ea1d882a8763a97f6516f11e23b"
-    sha256 cellar: :any,                 ventura:       "c344f88d66c6005c0f41dc86a4a4f35d80e351924f4a4dd59bed095eaabd78bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a71efa5cff1c200c6da5be3c90c581723221e6da77522b725bf86d9b59f75da"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "641daf431606b1db8be742517b5de831e76287c4e374db37a3b3e1c51d0d7225"
+    sha256 cellar: :any,                 arm64_sonoma:  "83a5dd311347c1e7faee0eff47a0184a32dfef40f3ab6159ac9a61a47057756b"
+    sha256 cellar: :any,                 arm64_ventura: "227fca82917507f9b1bedfdde99705e45cbffb9579f28c98786ff16ea04fa444"
+    sha256 cellar: :any,                 sonoma:        "d191760b851d6a3b1fe6facce4b91ae6df4665d995fe3ece704291a56fa88316"
+    sha256 cellar: :any,                 ventura:       "688880c32bcac3776ffb69a1cd4ad1a0f0f1356ead4b9673143c3cec3326b919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b94ec6b8e515389826bb6d1375ab8791a7299ad08ee176e4bd28dc33cbdde420"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
-  depends_on "boost"
   depends_on "grpc"
   depends_on "nlohmann-json"
   depends_on "prometheus-cpp"
@@ -35,13 +35,11 @@ class OpentelemetryCpp < Formula
   def install
     ENV.append "LDFLAGS", "-Wl,-undefined,dynamic_lookup" if OS.mac?
     system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_CXX_STANDARD=17", # Keep in sync with C++ standard in abseil.rb
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DBUILD_TESTING=OFF",
                     "-DWITH_ELASTICSEARCH=ON",
                     "-DWITH_EXAMPLES=OFF",
-                    "-DWITH_JAEGER=OFF", # deprecated, needs older `thrift`
-                    "-DWITH_METRICS_PREVIEW=ON",
                     "-DWITH_OTLP_GRPC=ON",
                     "-DWITH_OTLP_HTTP=ON",
                     "-DWITH_ABSEIL=ON",
