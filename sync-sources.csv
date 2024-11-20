@@ -4057,6 +4057,7 @@ Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mercurial.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mercury.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mergelog.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mergiraf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesa-glu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
@@ -7589,6 +7590,7 @@ Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betwixt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/beyond-compare.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/beyond-compare@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/beyond-compare@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bezel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bfxr.rb, Homebrew/homebrew-cask, 0
@@ -9849,7 +9851,8 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-manjari.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-manrope.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mansalva.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-manuale.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-m/font-maple.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marck-script.rb, Homebrew/homebrew-cask, 1
@@ -11664,6 +11667,7 @@ Homebrew-homebrew-cask/Casks/l/lapce.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laravel-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lasso.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/last-window-quits.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lastfm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lastpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latest.rb, Homebrew/homebrew-cask, 0
@@ -13666,6 +13670,7 @@ Homebrew-homebrew-cask/Casks/t/telegram-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-connect.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/teleport.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tella.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tempbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/temurin.rb, Homebrew/homebrew-cask, 1
@@ -13685,6 +13690,7 @@ Homebrew-homebrew-cask/Casks/t/termhere.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/terminology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/termius.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/termius@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/testfully.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tetrio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tex-live-utility.rb, Homebrew/homebrew-cask, 1

@@ -18,7 +18,8 @@ class Envchain < Formula
   end
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
+    depends_on "glib"
     depends_on "libsecret"
     depends_on "readline"
   end

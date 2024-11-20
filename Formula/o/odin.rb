@@ -6,15 +6,16 @@ class Odin < Formula
       revision: "e6475fec4d2a3e34099b24a7a3bf890c7a3ef8d9"
   version "2024-11"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a91650f6f1f162e4f97edb3eb37ff405a4b3489879fea827b59d60de897f1611"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0e206de0cb654f640506f8c290a4cd9adbbc3b6dfe922514eaf001a38bbaecc"
-    sha256 cellar: :any,                 arm64_ventura: "b3aa71ba40266020de5094de62da209d8636c80ff468c236e0c6b5fe9e657284"
-    sha256 cellar: :any,                 sonoma:        "6aaa0043560c7a7350b340dc84f98883536fbfd023a1a4d0ccd3f99a8e592105"
-    sha256 cellar: :any,                 ventura:       "681e64950b8d627be9441afade8a93730ae9dcd2049d4dd56382cd95b331d3eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5525674250061c026a799c4007e9e75a0ec4a72c46540464ca341874b3fe5ad6"
+    sha256 cellar: :any,                 arm64_sequoia: "31e940b62db1b555df91381d21b8c435774f6438239e47e124fcec7004cfc63e"
+    sha256 cellar: :any,                 arm64_sonoma:  "189fe3a399760b5a44c5e42ccb57d07fb6d79d1516051cc6e69bb430b0d72f74"
+    sha256 cellar: :any,                 arm64_ventura: "548a349c0147afa70db136b3a5df3210ae48dbaf3473e5ef9a4bef26f1726dab"
+    sha256 cellar: :any,                 sonoma:        "25f2095090821214a1ec0e8c61d6dd8c0d78ce74cfd6d483aa2a70f6ede4c51c"
+    sha256 cellar: :any,                 ventura:       "ccd82ddf333eb27e715e62857646177129cc9a5a3ff0c9847d70ca8499f07272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fc24e935cbf3e3828f9cb55ba45f8cf0a96ee7c1898be962e616474ec580b4"
   end
 
   depends_on "glfw"
@@ -64,8 +65,8 @@ class Odin < Formula
     ln_s Formula["glfw"].lib"libglfw3.a", buildpathglfw_installpath"libglfw3.a"
 
     ln_s Formula["raylib"].lib"libraylib.a", buildpathraylib_installpath"libraylib.a"
-    # This is actually raylib 5.0, but upstream had not incremented this number yet when it released.
-    ln_s Formula["raylib"].libshared_library("libraylib", "4.5.0"),
+    # In order to match the version 500 used in odin
+    ln_s Formula["raylib"].libshared_library("libraylib", "5.5.0"),
       buildpathraylib_installpathshared_library("libraylib", "500")
 
     resource("raygui").stage do

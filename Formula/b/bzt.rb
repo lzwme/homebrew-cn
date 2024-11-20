@@ -6,16 +6,16 @@ class Bzt < Formula
   url "https:files.pythonhosted.orgpackages8234b17b2e064c762f4ba4cc65dd7104d581bb8110bb345fe187baf8d57d5406bzt-1.16.35.tar.gz"
   sha256 "96e83af92084211663ba2b16ffd2fa44839c121bb3665140d3777fcadb92b57d"
   license "Apache-2.0"
+  revision 1
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "dbf4a44bfaf913022400bc7378cf49591a87ad2603151d7f422a8c1a40853f14"
-    sha256 cellar: :any,                 arm64_sonoma:  "09632b05c6af7f2588272f37ed4fcc1a4fc8c22c39f802b8f44c435636a7b5c2"
-    sha256 cellar: :any,                 arm64_ventura: "08c7fd62ab22bfba32f727016e74d8c5a58bf26baee45caef0b2f1a0e68c8e90"
-    sha256 cellar: :any,                 sonoma:        "6d743d57c97696b81fec774f2b3221d8ac3410deffc94d3950ac048ed01eb5f5"
-    sha256 cellar: :any,                 ventura:       "15838721f6b98876eaa494e9a0bb5a1ab478f84b53723daf5e6566c33e626691"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90862b27592bb2a9a1524b13cde726c18f14f2a6e56ce74daceb9d24b73569e9"
+    sha256 cellar: :any,                 arm64_sequoia: "33fc5da70e8c03daabc789832bae85c4277a7b7f82e8fd87dd5ae8114000d9cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "88db3c2b2bb6c2aa866661208b9717e3697ef01a159a16739eb70828e592c66d"
+    sha256 cellar: :any,                 arm64_ventura: "be09be228b93424c66a9034061487da6e263a683264742e4fdd805bcb4f7dcb1"
+    sha256 cellar: :any,                 sonoma:        "61386372428d6467a10937ef03b45ccd7edbb72c84c4032825f016b7062d1960"
+    sha256 cellar: :any,                 ventura:       "f0b95d4b0d92cae7d2ba0625bfc2ab09f06f8e15ed021e81c4322c41117e8171"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1d7702dd22279bf299bceafa0ace86d6320dc0359014375f1c736f08d59562a"
   end
 
   depends_on "cmake" => :build
@@ -40,8 +40,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages177e16e57e6cf20eb62481a2f9ce8674328407187950ccc602ad07c685279141aiohttp-3.10.10.tar.gz"
-    sha256 "0631dd7c9f0822cc61c88586ca76d5b5ada26538097d0f1df510b082bad3411a"
+    url "https:files.pythonhosted.orgpackages1dcdaf0e573bdb77ae7df1148fe8e4ea854215a37db0b116aac6b5496335095eaiohttp-3.11.4.tar.gz"
+    sha256 "9d95cce8bb010597b3f2217155befe4708e0538d3548aa08d640ebf54e3f57cb"
   end
 
   resource "aiosignal" do
@@ -250,8 +250,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb7a095e9e962c5fd9da11c1e28aa4c0d8210ab277b1ada951d2aee336b505813wheel-0.44.0.tar.gz"
-    sha256 "a29c3f2817e95ab89aa4660681ad547c0e9547f20e75b0562fe7723c9a2a9d49"
+    url "https:files.pythonhosted.orgpackagese752fd4516fb8f7d11a08e3f9cd69eb1558f098ab67e79f32d920c4974ee550fwheel-0.45.0.tar.gz"
+    sha256 "a57353941a3183b3d5365346b567a260a0602a0f8a635926a7dede41b94c674a"
   end
 
   resource "wsproto" do
@@ -260,8 +260,8 @@ class Bzt < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages549c9c0a9bfa683fc1be7fdcd9687635151544d992cccd48892dc5e0a5885a29yarl-1.17.1.tar.gz"
-    sha256 "067a63fcfda82da6b198fa73079b1ca40b7c9b7994995b6ee38acda728b64d47"
+    url "https:files.pythonhosted.orgpackages4bd50d0481857de42a44ba4911f8010d4b361dc26487f48d5503c66a797cff48yarl-1.17.2.tar.gz"
+    sha256 "753eaaa0c7195244c84b5cc159dc8204b7fd99f716f11198f999f2332a86b178"
   end
 
   def install

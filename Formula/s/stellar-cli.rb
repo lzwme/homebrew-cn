@@ -1,18 +1,18 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
   homepage "https:developers.stellar.org"
-  url "https:github.comstellarstellar-cliarchiverefstagsv21.5.3.tar.gz"
-  sha256 "a30c7b5291558a0924d79924f6add2b5db0514ff67dabd71f5ecbb12a957d928"
+  url "https:github.comstellarstellar-cliarchiverefstagsv22.0.0.tar.gz"
+  sha256 "658fc88d8abe6511091f65e9ff0ad001643c916334572b054d736385be2ed977"
   license "Apache-2.0"
   head "https:github.comstellarstellar-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00afb8e432b02c40a5fc9eda8e57e2f7ccfcafda50732914247308b1a2352f06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddc127ae0fe1a621375fbcd4f2f5f9f27d48544bdc19fe805ab9feca0ea5491a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "048894c60188076ec774c5e6807317322d4108b3372bb74db77b3dde0dc04619"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2ad54c6c2edbece073f9ee8e192f725d8397ba59ca7d0d7781ae63f20ba6bf1"
-    sha256 cellar: :any_skip_relocation, ventura:       "52d16b202ad79fe8904427ca7f00b712c40f52f6f4b0ed98a6dea580873c417e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15491afefbac64e5e9794a18a52210f43f432a1f4ff4b05e2af07a224779fffc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96973a25c2e9c1b1f2e6f2433e643d930a9ccd30669f909b752644da7601792a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f396ecea540e3761338b34b8b5883c4b28d8ee4d085ca24eb883eddab27fab9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e007a3067c819e2254572b1a3fd928379f060d2b4b736ef0ade76a79c02479f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "caedffc1652aa1cddd3b0cb3c9f728378fbac13765d5c34f35c1954765d2a698"
+    sha256 cellar: :any_skip_relocation, ventura:       "a690b6f48b82ca2c187b64ca1e866ef90059da0e2d7b7a02bc03710e932147dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd594e5e89b8c29f2bcb1f486a16beb62c410878f76fd820f0825a9ffab02059"
   end
 
   depends_on "pkg-config" => :build

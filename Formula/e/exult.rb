@@ -24,7 +24,7 @@ class Exult < Formula
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libogg"
   depends_on "libvorbis"
@@ -38,8 +38,7 @@ class Exult < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *std_configure_args
     system "make", "EXULT_DATADIR=#{pkgshare}data"
 
     if OS.mac?

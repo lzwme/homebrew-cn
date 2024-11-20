@@ -17,7 +17,7 @@ class Edbrowse < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e500898284f9a555e06cae23b9329e734825dcb1c1fc743327ee51584a226f9"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "quickjs" => :build
   depends_on "curl"
   depends_on "openssl@3"

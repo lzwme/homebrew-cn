@@ -1,17 +1,17 @@
 class SpectralCli < Formula
   desc "JSONYAML linter and support OpenAPI v3.1v3.0v2.0, and AsyncAPI v2.x"
   homepage "https:stoplight.ioopen-sourcespectral"
-  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.14.1.tgz"
-  sha256 "ff13237b1a7b7bca139503552f76a688cbb4719d481451a5655c61cc54e2d0fe"
+  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.14.2.tgz"
+  sha256 "b05baab337ed4dd1c3bcd5c100ed242e72d3d548e793dc92b9ae0ec921879092"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e98c002497c8161548d86690a8916ff1c2fee78674b9cd1859d295ff864e5c12"
-    sha256 cellar: :any_skip_relocation, ventura:       "e98c002497c8161548d86690a8916ff1c2fee78674b9cd1859d295ff864e5c12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "145c2990d2ace5a0aad476d1a7e3a55dfb9c9eb8754a1cfcb836e55b653f0200"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61fdb4fdac272c0949a8e50089957945963b3c2aea9d619654364c0aa54b4545"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61fdb4fdac272c0949a8e50089957945963b3c2aea9d619654364c0aa54b4545"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61fdb4fdac272c0949a8e50089957945963b3c2aea9d619654364c0aa54b4545"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96473c38812b2b4375be4f159b6561436bdde566fdf9e4172029dd5676fcd18d"
+    sha256 cellar: :any_skip_relocation, ventura:       "96473c38812b2b4375be4f159b6561436bdde566fdf9e4172029dd5676fcd18d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61fdb4fdac272c0949a8e50089957945963b3c2aea9d619654364c0aa54b4545"
   end
 
   depends_on "node"

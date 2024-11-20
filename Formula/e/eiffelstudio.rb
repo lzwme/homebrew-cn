@@ -23,7 +23,7 @@ class Eiffelstudio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1bb6c9813e6f2b36b34f5046ed2893ae5ca1349903beefd648976c87f92883"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"

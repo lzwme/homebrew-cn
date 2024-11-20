@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https:docs.swmansion.comscarb"
-  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.8.4.tar.gz"
-  sha256 "2ad8c76f4226f508dc129fe1e4e6120a27b64b141bffe2c4c24d1f4dde2d0a69"
+  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.8.5.tar.gz"
+  sha256 "18a07a0a09946f276ab399cddff1d6a6bccb342da903204dd88e804df6f478a0"
   license "MIT"
   head "https:github.comsoftware-mansionscarb.git", branch: "main"
 
@@ -12,15 +12,16 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2afa762034ca0c4837adcd4613587c5db30540b6c3db04538cb7548743a4df8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "222627aa2010abc24797891842034559486876fb52626ef483f73eef791879af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "701dc123b9f089be94b9f4a26178e8b332e9a35269043cd157600d6a92e66147"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8083e48c330dff6e38fc9f64aa212189e65ffbb00b15daff4a7ac000ad34ab06"
-    sha256 cellar: :any_skip_relocation, ventura:       "e399010676d3d25c34166587fecc054894513b1854c9e1d3bcc2c994e0536a7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec9f547b3a9d59d2ee451bd982ad3102c846227cd8d250198ceb7a8d2ed1cd77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e5ad817c5e8634bc9f7b9cb8be4fe8eed216825b9e65885cf94088b0868a48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70a84c6e76582540af3243e0e052f6f998c444b110959a0d3c1c0150840f7f21"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5c2f567237364e2c14f08469c18b674f43b9b7ba19016b86f0db0e37ec09848"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48cf60524abe4c4271d7db2dcc1dc022f716cca785a30a245930883b68c4d8cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "9357aef48ccb1561640845755fd00e619a37f7cc1739d6695b9b4d5ac7e75114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "532733488fc64bbfdb9a1669b2819285cdb61e9e5b62e706d02f19d10881133c"
   end
 
   depends_on "rust" => :build
+  uses_from_macos "zlib"
 
   def install
     %w[

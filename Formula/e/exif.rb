@@ -21,19 +21,17 @@ class Exif < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a41aa53dd457e0318526a6ec043f18ff97a8a23a9009e0a556c271d0eae14d09"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libexif"
   depends_on "popt"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
+    args = %w[
       --disable-silent-rules
       --disable-nls
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

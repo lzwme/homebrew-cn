@@ -1,18 +1,17 @@
 class Libheif < Formula
   desc "ISOIEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https:www.libde265.org"
-  url "https:github.comstrukturaglibheifreleasesdownloadv1.19.3libheif-1.19.3.tar.gz"
-  sha256 "1e6d3bb5216888a78fbbf5fd958cd3cf3b941aceb002d2a8d635f85cc59a8599"
+  url "https:github.comstrukturaglibheifreleasesdownloadv1.19.4libheif-1.19.4.tar.gz"
+  sha256 "44c35b80596561ab531556175309f5f0ab3fcf7a7517dd933940574063f2af85"
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "dd0280b46fc9f2a96513f84fecc39f33bcbf63c2d66bb4c499f88fcc4d732205"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd766246f75d32c9ac7cde63d5ad3461acdd3b0dc4e0ccc9adffaa71d0493dce"
-    sha256 cellar: :any,                 arm64_ventura: "4a0fff7327682a50ec5f3d02f2417d9cf51a0ada7796e85ef55571f8e611ede1"
-    sha256 cellar: :any,                 sonoma:        "f164e3c4c16433d67114da8648b385737754727614d204b253ecd3a90caf63eb"
-    sha256 cellar: :any,                 ventura:       "886a527680d9f16b774dd32121b9dea3dc248290ab0874b7120ae46dfbaf311a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16cc60c0af4787d7f943e19204122cf8d6f8132e84ec9cf008dd3f0f070314d3"
+    sha256 cellar: :any,                 arm64_sequoia: "79eb071bec943d0e8373f787f98dd52dfb1767a641276f07c1de8eefd379b82f"
+    sha256 cellar: :any,                 arm64_sonoma:  "809f4f6c34b84d935066fc4a4dc1744918aed16b673711f9d2dbfa7f96464166"
+    sha256 cellar: :any,                 arm64_ventura: "f8036615932e8e737cd23f0f65b0d9c319869325735932a7b73abe4adc2dbf44"
+    sha256 cellar: :any,                 sonoma:        "735308e6dcc00ad1d9a02628a0e9ac23f773c05f0b5fcb57e34fc6895d6dfe69"
+    sha256 cellar: :any,                 ventura:       "d2d26231ffc0384944a212c82006f29d8ce92a8b4bb2eedcc32c8c006aa29484"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba117314ebe9966b949e49a731ef6d1ca22b14d32469bd76e457df0be8f8ebd"
   end
 
   depends_on "cmake" => :build

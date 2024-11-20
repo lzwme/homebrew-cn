@@ -1,8 +1,8 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https:gleam.run"
-  url "https:github.comgleam-langgleamarchiverefstagsv1.6.0.tar.gz"
-  sha256 "e4362bca4e82cfdbbb5a09f2bfa9a67fe6d766f893c6bed8852694aca9c30bc9"
+  url "https:github.comgleam-langgleamarchiverefstagsv1.6.1.tar.gz"
+  sha256 "86bdaa4b7803230bd434044e0632f6d31246a8514fd68d10c3add9dfff400544"
   license "Apache-2.0"
   head "https:github.comgleam-langgleam.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd85a8cc0275e6ea48acf214183e9b859ee2948ffbbddbbec52423d97b3ea77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6b69fdb4b71a1797fa10a731d2433284a359e51effc628a30df63fa732d5395"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1fd8841f5e010c904f87fa675ce8136ddecd98b1bada1f47f076ac672e4b09c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d06b86586ee4cd8fe1b18983de304db361465c3b521a9fcfcbc080ee27cea94"
-    sha256 cellar: :any_skip_relocation, ventura:       "c22d8f6ae91c4cc8fb6a38b48754af41be29a04c57249554da04cdf19cb89791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04b84c9ecb9371b3e8aa33bbd2c24c75b8679cc007e2d717c395d378ec20e020"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84740cac7c3dac5dd0a205f086583c6b426c8d9cbdbc0907e01453cc371a7a1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "612498f5b8b28c059b59304ff85d4c50b74b3ef985a32c02d102561d6153fc67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7712445491215f929ed9bf729da333a8dbabf69d69e117f20d9bc74dc74807d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd8ea45e615c2c7d469faac0091e129817716fa2c56742e61dbe6ebf54441435"
+    sha256 cellar: :any_skip_relocation, ventura:       "17e7a0b7cc7e8117492da196cdd75daceb299967a965f6360bf598db26055a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb8e8b1a2a0e59d243b9a6cbe860c167b4ef48770a953964e2341a0b35cec15a"
   end
 
   depends_on "pkg-config" => :build

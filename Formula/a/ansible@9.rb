@@ -3,18 +3,17 @@ class AnsibleAT9 < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/e4/85/23d1a1884f8c6bd437edc5a0f55709c77250f357a198469d8060071237f9/ansible-9.6.0.tar.gz"
-  sha256 "58732a4ad74a746d299ecfa48b7a91cb217e2c0bd3a44493f2d9f29af2f3ab61"
+  url "https://files.pythonhosted.org/packages/e4/fb/4a53d3cc1b3d6cffc9d62ac968815897e6d8f28db242123d15e469de9870/ansible-9.12.0.tar.gz"
+  sha256 "54557393fae5768ee6430491c55b74f7831d89dd198d3d74431edaae44004298"
   license "GPL-3.0-or-later"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "21cec2134f4b0bd67c9a999a5bb9bee4d0b726b8846658137539095479d8bbff"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b323e70f96a437d4a916959016cfec1a458ac1d627d4ac15326dccb622b7cfa"
-    sha256 cellar: :any,                 arm64_ventura: "24362a117cf304aa9ea2f3329b72f4c40605fe82cbb53deaa9f385577985b0e3"
-    sha256 cellar: :any,                 sonoma:        "b576236420165584320486d9aa40b6799ffba381da4afbe3f5fac07cbcda4406"
-    sha256 cellar: :any,                 ventura:       "519f387eed34d1dee6e5f3430fb73c9f3e68ef3fb8554d52587a173c4c86d2b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31fae381b50e1c22228811771e40853085077131d48b4515b40775e33855740b"
+    sha256 cellar: :any,                 arm64_sequoia: "d5cd79e7a360a27280335d72dc0c7a883bc1d761bf8dfb85a197c6ad4b1cb295"
+    sha256 cellar: :any,                 arm64_sonoma:  "3debf499e17520d4d92d54f65dd91eb52d1a8b55326cc5b849a54a5bf47a4f5d"
+    sha256 cellar: :any,                 arm64_ventura: "f866596fdd071872b3977e1363d09ec8232d6dd4a12bda5b8570d687ecc34d3d"
+    sha256 cellar: :any,                 sonoma:        "3f4d79861f39b34beb0e6dcfe4ccc7236be9c500764b57025f8907d50434c0b6"
+    sha256 cellar: :any,                 ventura:       "5db78ab39c3f0197d717037e1ca6c9af8aefc97da813a0e3e0406e9e44389755"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe1d26d1991c392166ed30b58cf8c2b76cc6d382505d609813742d0b2a395297"
   end
 
   keg_only :versioned_formula
@@ -22,8 +21,8 @@ class AnsibleAT9 < Formula
   # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
   deprecate! date: "2024-11-30", because: :unmaintained
 
-  # `pkg-config` and `rust` are for bcrypt
-  depends_on "pkg-config" => :build
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
@@ -70,13 +69,13 @@ class AnsibleAT9 < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/45/a7/1fc5a2567f1d42f7fcc903381b5fc550b4bd6fcfb82a1a50b72cae250e1f/boto3-1.35.56.tar.gz"
-    sha256 "6fcc510a4e747e85f84046b0ba0e5b178e89ba0f8ac9e2b6ebb4cc925c68c23b"
+    url "https://files.pythonhosted.org/packages/46/d5/2eda9ef554182c3b306ea18c049f152be8495198911ce0c4c2375eb6a236/boto3-1.35.64.tar.gz"
+    sha256 "bc3fc12b41fa2c91e51ab140f74fb1544408a2b1e00f88a4c2369a66d18ddf20"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8d/e5/222add2085839bdf738c8d039fc1773e409c0dc5ed085774f4645e9efbc8/botocore-1.35.56.tar.gz"
-    sha256 "8a9e752c8e87a423575ac528340a35d4318b8576ae4c6e0acfe5a3867f6bbccf"
+    url "https://files.pythonhosted.org/packages/0e/d3/71c2bbccea5a307e9b6218e41b5189d5e0c61217dc8d883dcac6a2aae762/botocore-1.35.64.tar.gz"
+    sha256 "2f95c83f31c9e38a66995c88810fc638c829790e125032ba00ab081a2cf48cb9"
   end
 
   resource "cachetools" do
@@ -95,8 +94,8 @@ class AnsibleAT9 < Formula
   end
 
   resource "cmd2" do
-    url "https://files.pythonhosted.org/packages/46/47/3f621e0ddf0c5a1f69d3a0c8135d1f42fa6ea9da650e6882eaba979be6cb/cmd2-2.5.4.tar.gz"
-    sha256 "405016f6cee5d4155534a39c8089ebedcfffbb3e24c37150a2b61df32ec90122"
+    url "https://files.pythonhosted.org/packages/d5/88/703b5c75610ec4ac2c5bcd390ab4b478e689faf1f02ea91fce3f57d449b8/cmd2-2.5.6.tar.gz"
+    sha256 "ab0ff178784ca087d886081b2ca384724c90b9b25eb982c57c6925ca17479f52"
   end
 
   resource "debtcollector" do
@@ -260,18 +259,18 @@ class AnsibleAT9 < Formula
   end
 
   resource "oslo-config" do
-    url "https://files.pythonhosted.org/packages/42/92/f53acc4f8bb37ba50722b9ba03f53fd507adc434d821552d79d34ca87d2f/oslo.config-9.6.0.tar.gz"
-    sha256 "9f05ef70e48d9a61a8d0c9bed389da24f2ef5a89df5b6e8deb7c741d6113667e"
+    url "https://files.pythonhosted.org/packages/2e/e9/2cac91d42e8fb86b17ef8f350b523f70282fbc9f3a0785884e455b132e50/oslo.config-9.7.0.tar.gz"
+    sha256 "b371ebf3f9a63e92b81d5c72b84d2f96f40553532699c68e1c5cd8ca9eca088b"
   end
 
   resource "oslo-context" do
-    url "https://files.pythonhosted.org/packages/41/3a/d217eb9c3f844aa6e955bf6d85cc9207b2d93e42fc47aff77fc1a778fc72/oslo.context-5.6.0.tar.gz"
-    sha256 "5222c32636be070a230df9d3141a0b27a95f0a3b6978f4c1485bcada47a4c3cb"
+    url "https://files.pythonhosted.org/packages/99/f3/1a7fa94ca9d7807f193c83ea403f8526e19301f0cecbf20bd6f35c29fcfb/oslo.context-5.7.0.tar.gz"
+    sha256 "398c460b9cf7cb397ede7962223e4b88078fb2fbc53665a47a34e1b28890f4ce"
   end
 
   resource "oslo-i18n" do
-    url "https://files.pythonhosted.org/packages/75/16/743dbdaa3ddf05206c07965e89889295ada095d7b91954445f3e6cc7157e/oslo.i18n-6.4.0.tar.gz"
-    sha256 "66e04c041e9ff17d07e13ec7f48295fbc36169143c72ca2352a3efcc98e7b608"
+    url "https://files.pythonhosted.org/packages/ca/a5/9ecdc0b2620efae576a7688283d34a2c273989e6e850ee9be8116296b7d5/oslo.i18n-6.5.0.tar.gz"
+    sha256 "9393bcae92eadc5f771132d1c6ab239b19896ff6d885e3afc21a9faa4de924d3"
   end
 
   resource "oslo-log" do
@@ -280,8 +279,8 @@ class AnsibleAT9 < Formula
   end
 
   resource "oslo-serialization" do
-    url "https://files.pythonhosted.org/packages/3d/99/5d314298d154a58343050b4d8bb972cbbbb728ef943b57aef7f247c372f8/oslo.serialization-5.5.0.tar.gz"
-    sha256 "9e752fc5d8a975956728dd96a82186783b3fefcacbb3553acd933058861e15a6"
+    url "https://files.pythonhosted.org/packages/1e/4e/54d2fc3c2a9620a9a7572bb89ca7bc2b02a1e0e511004f27eced4c613759/oslo.serialization-5.6.0.tar.gz"
+    sha256 "4c7d4e12da853cc4f04b9123041134e886e8c9ff57ab57c1962d3ad4a87b7f7c"
   end
 
   resource "oslo-utils" do
@@ -290,8 +289,8 @@ class AnsibleAT9 < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "paramiko" do
@@ -375,8 +374,8 @@ class AnsibleAT9 < Formula
   end
 
   resource "pyspnego" do
-    url "https://files.pythonhosted.org/packages/46/f5/1f938a781742d18475ac43a101ec8a9499e1655da0984e08b59e20012c04/pyspnego-0.11.1.tar.gz"
-    sha256 "e92ed8b0a62765b9d6abbb86a48cf871228ddb97678598dc01c9c39a626823f6"
+    url "https://files.pythonhosted.org/packages/6b/f8/53f1fc851dab776a183ffc9f29ebde244fbb467f5237f3ea809519fc4b2e/pyspnego-0.11.2.tar.gz"
+    sha256 "994388d308fb06e4498365ce78d222bf4f3570b6df4ec95738431f61510c971b"
   end
 
   resource "python-consul" do
@@ -465,8 +464,8 @@ class AnsibleAT9 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/ed/22/a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bd/setuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https://files.pythonhosted.org/packages/c8/db/722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6fee/setuptools-75.5.0.tar.gz"
+    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "shade" do
@@ -535,7 +534,6 @@ class AnsibleAT9 < Formula
   end
 
   def install
-    ENV["SODIUM_INSTALL"] = "system"
     venv = virtualenv_install_with_resources without: "ansible-core"
     venv.pip_install_and_link resource("ansible-core")
   end

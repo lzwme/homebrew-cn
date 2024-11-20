@@ -1,20 +1,18 @@
 class Commitlint < Formula
   desc "Lint commit messages according to a commit convention"
   homepage "https:commitlint.js.org#"
-  url "https:registry.npmjs.orgcommitlint-commitlint-19.5.0.tgz"
-  sha256 "2d2705b457826f260f9d76671bb75080ce0ff5bfd44dcc4d15627fa21a8d56a2"
+  url "https:registry.npmjs.orgcommitlint-commitlint-19.6.0.tgz"
+  sha256 "7f542617b63a1465506b25063a817956b661596c7d592cd62c5547c87ed743f5"
   license "MIT"
   head "https:github.comconventional-changelogcommitlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d8b1f57ca8238fb8a9f3af7d5298c0b9380ab2f3f108242efa588e6f6bd39cf9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8b1f57ca8238fb8a9f3af7d5298c0b9380ab2f3f108242efa588e6f6bd39cf9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8b1f57ca8238fb8a9f3af7d5298c0b9380ab2f3f108242efa588e6f6bd39cf9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8b1f57ca8238fb8a9f3af7d5298c0b9380ab2f3f108242efa588e6f6bd39cf9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5723621d0ec49d9e914b6a83bb2693bf407301fe3e8f6bac75fe9e8a0e44e004"
-    sha256 cellar: :any_skip_relocation, ventura:        "5723621d0ec49d9e914b6a83bb2693bf407301fe3e8f6bac75fe9e8a0e44e004"
-    sha256 cellar: :any_skip_relocation, monterey:       "5723621d0ec49d9e914b6a83bb2693bf407301fe3e8f6bac75fe9e8a0e44e004"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8b1f57ca8238fb8a9f3af7d5298c0b9380ab2f3f108242efa588e6f6bd39cf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c570d99279f32d2479e720a9962d2c63ae4dacfcb5cdee049a834c62da234c6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c570d99279f32d2479e720a9962d2c63ae4dacfcb5cdee049a834c62da234c6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c570d99279f32d2479e720a9962d2c63ae4dacfcb5cdee049a834c62da234c6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e90f34ebb3833485e699a5390c8a7e7f0e5fa6b06b6fc292fea5c8e8b4ac561a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e90f34ebb3833485e699a5390c8a7e7f0e5fa6b06b6fc292fea5c8e8b4ac561a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c570d99279f32d2479e720a9962d2c63ae4dacfcb5cdee049a834c62da234c6e"
   end
 
   depends_on "node"

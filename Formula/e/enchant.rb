@@ -16,7 +16,7 @@ class Enchant < Formula
     sha256 x86_64_linux:   "d0aab4334f7a0feb7d168863bb81a4800982aacd709bee3b96146328b0a9f097"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "aspell"
   depends_on "glib"
 

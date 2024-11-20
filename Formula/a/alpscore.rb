@@ -79,7 +79,7 @@ class Alpscore < Formula
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test)
-      set(CMAKE_CXX_STANDARD 11)
+      set(CMAKE_CXX_STANDARD 14)
       find_package(HDF5 REQUIRED)
       find_package(ALPSCore REQUIRED mc accumulators params)
       add_executable(test test.cpp)

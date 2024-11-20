@@ -1,17 +1,17 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https:github.comcloudposseatmos"
-  url "https:github.comcloudposseatmosarchiverefstagsv1.107.0.tar.gz"
-  sha256 "70b849f076f81f3963f55c452d4cc0adfa00b3cd97a370c3ebb5e05df000d4fc"
+  url "https:github.comcloudposseatmosarchiverefstagsv1.107.2.tar.gz"
+  sha256 "a6f68dc89d411edc78a6a4fbcfacad8552ca37000058d239915756e70d487012"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "450be6cbd8ceabbbace294a1bf908c7246c3aaf3364890d2edbe9c36ba049ca2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "450be6cbd8ceabbbace294a1bf908c7246c3aaf3364890d2edbe9c36ba049ca2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "450be6cbd8ceabbbace294a1bf908c7246c3aaf3364890d2edbe9c36ba049ca2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd09d0047a8b63962ad3952df0f936a20b57bb0455fe42a18a2d8cc5ce3d9928"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd09d0047a8b63962ad3952df0f936a20b57bb0455fe42a18a2d8cc5ce3d9928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b7a7ec4d57643fd4f84150379f45ec5f529e54f9803b93b6916d830b960360"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "262bce5b1451972769018366e5a0cae942b6c688de73b0b5cc9b2aa1c4092c3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "262bce5b1451972769018366e5a0cae942b6c688de73b0b5cc9b2aa1c4092c3c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "262bce5b1451972769018366e5a0cae942b6c688de73b0b5cc9b2aa1c4092c3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7241f7f6ed793c15fed91d7a2aa713ce53fa98b8b65d28836c18c47484010510"
+    sha256 cellar: :any_skip_relocation, ventura:       "7241f7f6ed793c15fed91d7a2aa713ce53fa98b8b65d28836c18c47484010510"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3297e4c7ffe400c175fd98af3eba53088e686c9d1a398566310413168a4c8c5"
   end
 
   depends_on "go" => :build

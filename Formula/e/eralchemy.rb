@@ -17,7 +17,7 @@ class Eralchemy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed03f3df61c850f93cbb16b1f06c25cd586c92164594e49803bc69565cc2e432"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "graphviz"
   depends_on "libpq"
   depends_on "openssl@3"
@@ -51,7 +51,7 @@ class Eralchemy < Formula
     system bin"eralchemy", "-v"
     resource("er_example").stage do
       system bin"eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
-      assert_predicate Pathname.pwd"test_eralchemy.pdf", :exist?
+      assert_path_exists Pathname.pwd"test_eralchemy.pdf"
     end
   end
 end

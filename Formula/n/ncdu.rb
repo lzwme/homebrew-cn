@@ -1,8 +1,8 @@
 class Ncdu < Formula
   desc "NCurses Disk Usage"
   homepage "https:dev.yorhel.nlncdu"
-  url "https:dev.yorhel.nldownloadncdu-2.6.tar.gz"
-  sha256 "3f471ebd38b56e60dab80c27e3af1d826666957f02d9e8419b149daaf7ade505"
+  url "https:dev.yorhel.nldownloadncdu-2.7.tar.gz"
+  sha256 "b218cc14a2bb9852cf951db4e21aec8980e7a8c3aca097e3aa3417f20eb93000"
   license "MIT"
   head "https:g.blicky.netncdu.git", branch: "zig"
 
@@ -12,12 +12,12 @@ class Ncdu < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "90cfdbbc47079deaf8fd378baaa0e6d9eef06d5ad1824534886d8a36d5a16f37"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b36b94f142184f4413c3efd69610f1d3ed5389592c5f6bea10f525bad021c81"
-    sha256 cellar: :any,                 arm64_ventura: "25983b0f0db6aaf01e13f683ec327498cc0388a77118549754b0723fc9eadf04"
-    sha256 cellar: :any,                 sonoma:        "ff30c04328a783b03fa39919c98192dc56b56bf507c44f10cc2d0c01409d49eb"
-    sha256 cellar: :any,                 ventura:       "913ba8eebf38d56648e2ab30c9b278c158c4c41e39d1add5d63c505ed5fb6a09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac219795061a7eeed8e16c4af9663e9cab188a1a4c51d20c94bf8fb0bd20063"
+    sha256 cellar: :any,                 arm64_sequoia: "94e8907cf6b72057a4cc6913ff0a8b942172f82f231384dc2659c2476ffa7a8e"
+    sha256 cellar: :any,                 arm64_sonoma:  "1041490c1b919a6d63c9108ff77ed89f62fc12c766ca2be16068a2da553abb94"
+    sha256 cellar: :any,                 arm64_ventura: "dbd4d5e5b8d15bfc0923ed9bf43040e04e9f32e8d8d32cae75a26ef1dbc35b3b"
+    sha256 cellar: :any,                 sonoma:        "43a6e24ab5ff83297138f2aec826aa6ccc57ca64b8eb3b2f87e64ad7b60b155d"
+    sha256 cellar: :any,                 ventura:       "4ffc8d1553dbe38037cb3019c4607afb3c0b22399cc72a6d41b37c2f1a0db4af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed452df75f7c3eab2ace9ed72104d9a12bc0f75241ab562a1a023b5e5aa9416"
   end
 
   depends_on "pkg-config" => :build

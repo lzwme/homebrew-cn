@@ -28,7 +28,7 @@ class Enigma < Formula
   end
 
   depends_on "imagemagick" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "enet"
   depends_on "freetype"

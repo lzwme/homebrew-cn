@@ -18,7 +18,7 @@ class Eigenpy < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost-python3"
   depends_on "eigen"
   depends_on "numpy"

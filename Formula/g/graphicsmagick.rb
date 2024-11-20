@@ -12,12 +12,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "ef8bf8d6a90c702a0dfb865e7812b9ba2e696db0c22ee3ca35b73e4e8683156e"
-    sha256 arm64_sonoma:  "c91a420ba370579b309a2b7ad7b40a2cc4b67f075517c384a092854124ef569f"
-    sha256 arm64_ventura: "72b50b7f99e67404855a0e158566d3e84959145a36318af47d5db7154f4a4f0a"
-    sha256 sonoma:        "5042f6619a45c4e79788a23472f9f1472b4494924212eb57ed64e983b87af980"
-    sha256 ventura:       "dd6d30c9b669b7a2ed16711fc71927a7a6673fa6ac5731a029e9074e8d2011f8"
-    sha256 x86_64_linux:  "4c1b2f71ef9382074f6a0afc3a6f4d989a8b455df750494faf0f300df77699b7"
+    rebuild 1
+    sha256 arm64_sequoia: "f950843cfad9376677acb179ad6553531249d9e79b37a830eba929591beaac46"
+    sha256 arm64_sonoma:  "8b521ea1cf171f8fdb14b43f3b3d06699280569791a25d64aa73684062e06ed0"
+    sha256 arm64_ventura: "e0c9b6972e74fcc2d74037d907671ad6a2073553816beb11b8aacb9b554ec689"
+    sha256 sonoma:        "15ad3752ebc129fe21f9da7b729c2d90cf8c40ce824dc42f6725d31c139d2896"
+    sha256 ventura:       "104380c258558a7469b1b7133222740d00af867fe8d8a1dc36a419e6294a58b7"
+    sha256 x86_64_linux:  "b6e2fea1abc3ea05bc6c9a7837b1e5fb2257a35155fe0c539d1e3008d257879d"
   end
 
   depends_on "pkg-config" => :build
@@ -42,8 +43,6 @@ class Graphicsmagick < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
       --disable-openmp
       --disable-static
       --enable-shared
@@ -56,11 +55,13 @@ class Graphicsmagick < Formula
       --without-wmf
       --with-jxl
     ]
-
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_VERSION}", "${PACKAGE_NAME}"
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix
   end
 
   test do

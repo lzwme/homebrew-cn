@@ -21,7 +21,7 @@ class Espflash < Formula
   end
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "systemd" # for libudev
   end
 

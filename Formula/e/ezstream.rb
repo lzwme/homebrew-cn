@@ -36,7 +36,7 @@ class Ezstream < Formula
   end
 
   depends_on "check" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libshout"
   depends_on "taglib"
 

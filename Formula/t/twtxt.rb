@@ -6,16 +6,15 @@ class Twtxt < Formula
   url "https:files.pythonhosted.orgpackagesfc4ccff74642212dbca8d4d9059119555cd335324b3da0b52990a414a0257756twtxt-1.3.1.tar.gz"
   sha256 "f15e580f8016071448b24048402b939b9e8dec07eabacd84b1f2878d751b71ff"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4f590cb712a3df1920c24f4eab27a5775e01702bef740e6cd3dbf5d3596eaa4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8202e4442858187e3e78a0ead54890f0f6e8c681f8d1e91cbe9aeb65d115b2c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d3f2b6c60aec97df3908b7b48ce711188ca04623d126153a720577a20087cdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4bf94444aa2abc531ca49e18f5ad989d88bdaab09b16b40f73922ad85ff0933"
-    sha256 cellar: :any_skip_relocation, ventura:       "bd61d7a65299a58049997b26c0c1850c755bc8038522553db783d7b0789a3a39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c620715d8bf674f13d752dc56fef8dbfe5db2d51ed51012fe289917772c72a1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edb8ea5c3391196da08836218420f89c6bd007decd33854e0c2e306789489076"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47364ec472d99034f372dc075295ee98d3e7ebb38e29d9a692b353d7dc46eb4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "682fab3d700db2019e0e40e049950be61c64fd995d2fe9d44cb451f07d03f877"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e07965ffd9743f2bb45dd95af5f3b1a45e090388116234aa52fee0da93a645fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1853863f6717ea82bbafa030651b0975700a319d6637aba0e7a619518e425d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c5d0c9f7b62813e47e77c796d0ed351e038091ed3dbd91b1a6fd90187fd252f"
   end
 
   depends_on "python@3.13"
@@ -26,8 +25,8 @@ class Twtxt < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages177e16e57e6cf20eb62481a2f9ce8674328407187950ccc602ad07c685279141aiohttp-3.10.10.tar.gz"
-    sha256 "0631dd7c9f0822cc61c88586ca76d5b5ada26538097d0f1df510b082bad3411a"
+    url "https:files.pythonhosted.orgpackages1dcdaf0e573bdb77ae7df1148fe8e4ea854215a37db0b116aac6b5496335095eaiohttp-3.11.4.tar.gz"
+    sha256 "9d95cce8bb010597b3f2217155befe4708e0538d3548aa08d640ebf54e3f57cb"
   end
 
   resource "aiosignal" do
@@ -46,8 +45,8 @@ class Twtxt < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackagescf3d2102257e7acad73efc4a0c306ad3953f68c504c16982bbdfee3ad75d8085frozenlist-1.4.1.tar.gz"
-    sha256 "c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"
+    url "https:files.pythonhosted.orgpackages8fed0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3frozenlist-1.5.0.tar.gz"
+    sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
   end
 
   resource "humanize" do
@@ -81,8 +80,8 @@ class Twtxt < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages46fe2ca2e5ef45952f3e8adb95659821a4e9169d8bbafab97eb662602ee12834yarl-1.14.0.tar.gz"
-    sha256 "88c7d9d58aab0724b979ab5617330acb1c7030b79379c8138c1c8c94e121d1b3"
+    url "https:files.pythonhosted.orgpackages4bd50d0481857de42a44ba4911f8010d4b361dc26487f48d5503c66a797cff48yarl-1.17.2.tar.gz"
+    sha256 "753eaaa0c7195244c84b5cc159dc8204b7fd99f716f11198f999f2332a86b178"
   end
 
   # Drop setuptools dep: https:github.combuckkettwtxtpull178

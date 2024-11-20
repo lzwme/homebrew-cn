@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/8d/36/0d6779b9876168bfe813aca6973004f73dfc494db11f9661ea90819d25bc/borgmatic-1.9.1.tar.gz"
-  sha256 "d2f0bae2c2050040e5e07a825e605f195cbe9974862b290238c48f72fc04e79a"
+  url "https://files.pythonhosted.org/packages/ed/d2/e5155958099999c968917461b542d302b391c935f92b6a673ac0fe41837a/borgmatic-1.9.2.tar.gz"
+  sha256 "bddfc0a75312a4b40108b7acfbcd42f28c82eba314760c6616ac56ace4e96cc2"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "763466d715348dcea59e1f372187d6204e086c9a94e7bac55830f67f9e39aee3"
-    sha256 cellar: :any,                 arm64_sonoma:  "84257380d3a03e7111366390123419e99c19836f0d5f36158b177bc8ca89942f"
-    sha256 cellar: :any,                 arm64_ventura: "4016c9db2b234b596df8ed25eb02d4faca4d4dcabb60f95f3513909350015b27"
-    sha256 cellar: :any,                 sonoma:        "6697484d4fc153d84ac504d9d619911a6fb98139fd4003848637e6964f5652e8"
-    sha256 cellar: :any,                 ventura:       "4a7ec87f0409e7ed0e9679a118623df5d68ecc8edb55d59ce37564c12c1d7b8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8c13c96cfa3d77163d7d54f63198ceccaaba6cb9f43304e6418a579c59b241"
+    sha256 cellar: :any,                 arm64_sequoia: "4f6b057e973e0387a657e7fb2e98740f875f75632a601cc4a1111bb2821561aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6c13e25bc258ac7bfb9f3c9cf7d0573d6c7aefcc692afc67c1bb22f40f10ca4"
+    sha256 cellar: :any,                 arm64_ventura: "f50601b54971ebf5e963fe55df6c6b59d50f45e9c790477c3385af35f3d00b46"
+    sha256 cellar: :any,                 sonoma:        "d4e3f36630beba2cfb8d3ee9fac7a79c7b7b2f4e065a93c7d36fdbb8a1447c9f"
+    sha256 cellar: :any,                 ventura:       "75707157336f2489ec245d8f12292aadc0c8e7933c0f26619dccad9b2763feb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b12884312a154cab0ef7d8a416612a2a73b1d3fa76de4cd9ccdc24fe044190"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -187,21 +187,30 @@ class Borgmatic < Formula
     log_content = File.read(log_path)
 
     # Assert that the proper borg commands were executed
-    assert_equal <<~EOS, log_content
+    expected_log = <<~EOS
       --version --debug --show-rc
       info --json #{repo_path}
       init --encryption repokey --debug #{repo_path}
       --version
-      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/./borgmatic #{config_path}
+      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/borgmatic-.{8}/./borgmatic #{config_path}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
       check --glob-archives {hostname}-* #{repo_path}
       --version
-      create --json #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/./borgmatic #{config_path}
+      create --json #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/borgmatic-.{8}/./borgmatic #{config_path}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
     EOS
+    expected = expected_log.split("\n").map(&:strip)
+
+    log_content.lines.map.with_index do |line, i|
+      if line.start_with?("create")
+        assert_match(/#{expected[i].chomp}/, line.chomp)
+      else
+        assert_equal expected[i].chomp, line.chomp
+      end
+    end
   end
 end

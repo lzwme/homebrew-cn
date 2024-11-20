@@ -34,7 +34,7 @@ class EmsFlasher < Formula
     depends_on "gawk" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install

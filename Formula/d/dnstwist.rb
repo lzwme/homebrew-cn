@@ -6,15 +6,15 @@ class Dnstwist < Formula
   url "https:files.pythonhosted.orgpackages3fdf9c62d9e40d374fd1311de3c761670771615101e0a0b31968b31289882db7dnstwist-20240812.tar.gz"
   sha256 "eb109cfcede027fe97b72d2f176f11d2ab633b5aadb833bb7f9b785d2e0ae1a1"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "580c4cdbae5da3ccf69169c471fcf77bcca100237b8ba87b22f2e4d7718a656b"
-    sha256 cellar: :any,                 arm64_sonoma:  "cbef7593537ca448a23de93ab98de802bddc6f12993b54290934be2710943379"
-    sha256 cellar: :any,                 arm64_ventura: "f257124355dbd2667779de10903d9f6871484ab851c8f5f9ce1102e23c6e7851"
-    sha256 cellar: :any,                 sonoma:        "24c041921bbf71ce3330669c450abe3f4589ced96ae77054c29360f59097fbf6"
-    sha256 cellar: :any,                 ventura:       "750197faf864229e714c2705afe968bd892133d65c68a4f87034743fe5d27355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5485fb88bd54dc0a36072176c46c2f231a1d32877dce66a1b6d052dd010d1c5"
+    sha256 cellar: :any,                 arm64_sequoia: "f7e8f0a997d505ea564f79e24172da657065eafb97fe20ea4abb98468e5350c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1860d198b28d695c709e38dfd7658bb0c779df39c832b6d426d4b374f6c827c"
+    sha256 cellar: :any,                 arm64_ventura: "86b29b8527f671c25aea07f3b39395e98dd4e19c1e764a05f3e446368f6f3dfc"
+    sha256 cellar: :any,                 sonoma:        "de554a8909af5061d0b825d0315159bfc78cde36a9b6197e012a6f0834c91dc9"
+    sha256 cellar: :any,                 ventura:       "6014e32034945c127d259416d7a9e8a48a35bdbda82d66cb379e59f70b763b8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "063b51a73d66df519456b857df18f3edc51e5db49f1851af0f936da855592589"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages177e16e57e6cf20eb62481a2f9ce8674328407187950ccc602ad07c685279141aiohttp-3.10.10.tar.gz"
-    sha256 "0631dd7c9f0822cc61c88586ca76d5b5ada26538097d0f1df510b082bad3411a"
+    url "https:files.pythonhosted.orgpackages1dcdaf0e573bdb77ae7df1148fe8e4ea854215a37db0b116aac6b5496335095eaiohttp-3.11.4.tar.gz"
+    sha256 "9d95cce8bb010597b3f2217155befe4708e0538d3548aa08d640ebf54e3f57cb"
   end
 
   resource "aiosignal" do
@@ -59,13 +59,13 @@ class Dnstwist < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackagescf3d2102257e7acad73efc4a0c306ad3953f68c504c16982bbdfee3ad75d8085frozenlist-1.4.1.tar.gz"
-    sha256 "c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"
+    url "https:files.pythonhosted.orgpackages8fed0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3frozenlist-1.5.0.tar.gz"
+    sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
   end
 
   resource "geoip2" do
-    url "https:files.pythonhosted.orgpackagesa7ae892642e21881f95bdcb058580e74aaa3de0ee5ee4f76ccec02745f2a3abegeoip2-4.8.0.tar.gz"
-    sha256 "dd9cc180b7d41724240ea481d5d539149e65b234f64282b231b9170794a9ac35"
+    url "https:files.pythonhosted.orgpackagesfee0f1e6c9a7beee45ad11ce648f23c71228ac17c5c171dcd25167a5329d73d5geoip2-4.8.1.tar.gz"
+    sha256 "9aea2eab4b3e6252f47456528ae9c35b104c45277639c13fce1be87c92f84257"
   end
 
   resource "idna" do
@@ -103,11 +103,6 @@ class Dnstwist < Formula
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
-  end
-
   resource "tld" do
     url "https:files.pythonhosted.orgpackages192b678082222bc1d2823ea8384c6806085b85226ff73885c703fe0c7143ef64tld-0.13.tar.gz"
     sha256 "93dde5e1c04bdf1844976eae440706379d21f4ab235b73c05d7483e074fb5629"
@@ -119,8 +114,8 @@ class Dnstwist < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages5cf816a6eeaf14fe94a48e5f1690c0e5a36ac19ef844d378f4092423d087439fyarl-1.15.0.tar.gz"
-    sha256 "efc0430b80ed834c80c99c32946cfc6ee29dfcd7c62ad3c8f15657322ade7942"
+    url "https:files.pythonhosted.orgpackages4bd50d0481857de42a44ba4911f8010d4b361dc26487f48d5503c66a797cff48yarl-1.17.2.tar.gz"
+    sha256 "753eaaa0c7195244c84b5cc159dc8204b7fd99f716f11198f999f2332a86b178"
   end
 
   def install

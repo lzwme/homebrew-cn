@@ -3,14 +3,13 @@ class Kin < Formula
 
   desc "Sane PBXProj files"
   homepage "https:github.comSerchinasticoKin"
-  url "https:files.pythonhosted.orgpackages4f36dcb0e16c5634d58d0ef2f771fe1e608264698394f4a184afc289d9a85bb8kin-2.1.10.tar.gz"
-  sha256 "a3cbb3b376c3d28b16b0c07ee835607690745b7a3ba7592f2534b384dd9a9eab"
+  url "https:files.pythonhosted.orgpackagesadd44013f41b82c183d720f9083994c9f341236f790343f6bc8d879ec6d8921ckin-2.1.13.tar.gz"
+  sha256 "89f3af51edd19a7d3c30dc179974446b714895d99bef2c8d0645eb946ec35570"
   license "Apache-2.0"
   head "https:github.comSerchinasticoKin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "da6d161bf7d2eaaa1150abe6c09599ae49bcb43c3f43ef0be93e7b1a3e4ea7de"
+    sha256 cellar: :any_skip_relocation, all: "d562acaad85e1c1326f82806f1785ddca89d396821bc2f5da3fb2aca3039608d"
   end
 
   depends_on "python@3.13"
@@ -18,12 +17,6 @@ class Kin < Formula
   resource "antlr4-python3-runtime" do
     url "https:files.pythonhosted.orgpackagesb6007f1cab9b44518ca225a03f4493ac9294aab5935a7a28486ba91a20ea29cfantlr4-python3-runtime-4.13.1.tar.gz"
     sha256 "3cd282f5ea7cfb841537fe01f143350fdb1c0b1ce7981443a2fa8513fddb6d1a"
-  end
-
-  # Drop unneeded argparse requirement: https:github.comSerchinasticoKinpull115
-  patch do
-    url "https:github.comSerchinasticoKincommit02251e6babc56e3b3d5dfda18559d2f86f147975.patch?full_index=1"
-    sha256 "838b4e9fe54c9afcff0f38a6b6f1eda83883ff724c7089bfa08521f96615fbca"
   end
 
   def install

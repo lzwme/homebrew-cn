@@ -1,8 +1,8 @@
 class Govc < Formula
   desc "Command-line tool for VMware vSphere"
   homepage "https:github.comvmwaregovmomitreemastergovc"
-  url "https:github.comvmwaregovmomiarchiverefstagsv0.46.1.tar.gz"
-  sha256 "bccd949c843313472919e52ac63f7e1d1a2a713e6dbd007d19916dcc6335afb4"
+  url "https:github.comvmwaregovmomiarchiverefstagsv0.46.2.tar.gz"
+  sha256 "4086b7de092932ad34be67b1a804c8d4f0e1664a1f4a99841034aad55d323f07"
   license "Apache-2.0"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,12 +14,12 @@ class Govc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ede4af03b976732d6f70caaf3e8ad30ac09aae2ea04c8e45c18227e057e1d815"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e84c6243cfbf6559052747501402627357fd495debf74d1ff8d2948192a2ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c606dcf54c8229e2dee90cf07594fd0063771f7043c1d037502583ef28ef868b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b75177c28dde552b41ec1f6ee7846960449021055dd8f60b570ec6c3e701668b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b258a775daee9041f8e5fb4332e0c190792c9d9a0107315a1e4c725cef1dc80a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7cea89cd706b0da436c400549bf7c99d70e251a17fcb413b7b6ab3b32093b24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e9d0f2b0b1c40bf60b3efd02be7c90eab44dbf499bef858717b2ee9ba5b3ba4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4aa8532091f140d7577e733f7fc7cccfd5cc16254df4a6113cfa65ee51e7a8c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1f0a77e43e69f6ee3692ca98cbcac41f377e63e0c682aa782a41d72a4b45c41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69fc7c0b334e2054341279094634179148bed7736c176b7527d90b57e6a8ca6b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b09d0815db4bf3e0841b16d417c19e4eb48cdfd1b63b1b347e58d3fab988d5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e17ba20919960b677a2a5ca3684baf7370a4c685a0befe43d07f11bc021b535"
   end
 
   depends_on "go" => :build

@@ -15,7 +15,7 @@ class Envio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61427474955a6e35804f605178403e2ac41bda326841faf024ba873b88824c0d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "gpgme"
   depends_on "libgpg-error"

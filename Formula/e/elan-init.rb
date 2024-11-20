@@ -27,6 +27,7 @@ class ElanInit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "45ca6bf10c24f0d45e7a81dfe66d94ae87b25ea61b0d635bbcaf46e1d20f153d"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "coreutils"
   depends_on "gmp"
@@ -34,10 +35,6 @@ class ElanInit < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   conflicts_with "lean-cli", because: "both install `lean` binaries"
   conflicts_with "lean", because: "`lean` and `elan-init` install the same binaries"

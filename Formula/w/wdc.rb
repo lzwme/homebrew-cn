@@ -7,34 +7,31 @@ class Wdc < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2366db8bc76ff72d3237f9f5de3b9f2a714e247fcb104e96357a7a0ff5ec0cb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2e092c3df85fc7ebb07e6ac2f0b7a19fea8a9366733fb9eb8b04a7f629c40e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bf82be52c38f175bcfbf0e4bd06af35bfadc8c9f5d59efcb7e40a9afbaca0ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89c0f41a2fb78d5f63e5242652f8a7b5e14991b0ae04949b46ad73d09690f179"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0d034056bfb1e51c26134f639d7d2b0fa3edf5b16ef0956f72b7211efd2103d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ec1779ac6f229e51b7d2ad958e5f12aa807f4099e1e46a89a5793ab83181d243"
-    sha256 cellar: :any_skip_relocation, ventura:        "4fe97e89777f69767c2298717c64ce40f13a4a3a71aaec16a843dff375207991"
-    sha256 cellar: :any_skip_relocation, monterey:       "b1c38fc88f4367f244fc4516799ae9fc5c97c71fdcd82a7d1fa8c5c2b2f4bf97"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79ee8ab9fd6385a5db733582c6ecb3a28369dd2510f29abc4d02a4ec83d0083c"
-    sha256 cellar: :any_skip_relocation, catalina:       "40528e275df5a1df4985b461180eaa795283f0f19f816d0eb249aa14d73ff5d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "979e255fa0e9ef8558dfb3b09e2ae5463d4b00eb0418e8bda1376cc00ab32f11"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "88067ae5f0b55bc266ee7ad8b64e5d6fb4f445965cbfc6b2e212be792f9af9f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "e64bd5d5a196023df1f0e99be1501a36a12261cfeafa8674af3605b5f6e0337d"
+    sha256 cellar: :any,                 arm64_ventura: "144bf99589283a042b25507aecc6b2865341a806fb9f35436b9ba4aa272476f7"
+    sha256 cellar: :any,                 sonoma:        "a5a1823e37f7aced3a355008f7b85768d1c37600c2da80cf385d2efdf5c2543d"
+    sha256 cellar: :any,                 ventura:       "253521687c9eb9ef2a8367d1bcbb193617cbce57005ba4fb75558474f2272d20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68eb8337eee2c79f2892966a4311e56a5af9c24e32c07795f7dd8c5089474c8b"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "openssl@3" => :build
-  depends_on "boost"
+  depends_on "openssl@3"
   depends_on "pugixml"
 
   uses_from_macos "curl"
 
   def install
-    pugixml = Formula["pugixml"]
-    ENV.prepend "CXXFLAGS", "-I#{pugixml.opt_include.children.first}"
     inreplace "CMakeLists.txt", "CURL CONFIG REQUIRED", "CURL REQUIRED"
-    system "cmake", ".", "-DPUGIXML_INCLUDE_DIR=#{pugixml.opt_include}",
-                         "-DPUGIXML_LIBRARY=#{pugixml.opt_lib}",
-                         "-DHUNTER_ENABLED=OFF", *std_cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DHUNTER_ENABLED=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

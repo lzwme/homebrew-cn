@@ -15,7 +15,7 @@ class Etl < Formula
     sha256 cellar: :any_skip_relocation, all: "0c052b60f8a2e21a109351218fa2d1402f6bf28c66e1695f3aba77a26dc959b2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glibmm@2.66"
 
   # upstream bug report, https:github.comsynfigsynfigissues3371
