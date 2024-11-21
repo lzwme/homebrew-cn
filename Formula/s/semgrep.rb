@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.96.0",
-      revision: "e743e2d243c83e6ba20e8f2096569f7383c00239"
+      tag:      "v1.97.0",
+      revision: "f6cf57283726575a7946256c85358ff7445f79e2"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "099051725230031f77d3df23ed5030b83f71cc4200f5d19e1af7a57e8dbe1290"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5d2d8eb2b08fa44f2bb3a094712e3a377e9bb4457d831b8a9b19597e874a182"
-    sha256 cellar: :any,                 arm64_ventura: "b7d7eedd3ff7ebac8d945eea3766494f56131ab033bd9ecc41b58f229e30343e"
-    sha256 cellar: :any,                 sonoma:        "325d04ef412408cd0b7762ca6668470d06d9424fdea63e15c59f3e812e5cc541"
-    sha256 cellar: :any,                 ventura:       "e3e4e896f02926b5567f478b6e4c8c93fcb9f140751cc19d3c5b242119bcaeef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08c493b02bb58704ceb8fca1bf9bc6e1b73966a09ad52cb0109ea6d2a743d8f3"
+    sha256 cellar: :any,                 arm64_sequoia: "eb77f5b071631fad638dae5098f6411f8d6bb0d681fa3fb753e5d5bc4f606e96"
+    sha256 cellar: :any,                 arm64_sonoma:  "e698545c7aef9288ea9a5fbd319eb9bafc345b20dd76b22ea2755e3e1ebac2a5"
+    sha256 cellar: :any,                 arm64_ventura: "e3616cc922fa6a98ec6468e412951b78388676b86b32fa8546826f5dca0324e3"
+    sha256 cellar: :any,                 sonoma:        "1f9b0dedeffbdaa6ee646e152ceaaa1e960a7b610e445de20837db73cf9eae36"
+    sha256 cellar: :any,                 ventura:       "343fd29ea7c8317cbc78a6b4314cbe822ac9dd96a9811aff1490f6f8022af285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce9be3f68eff5da462b36fbb823cf686f7f7920e4cf3ee6e0c2e3d79ca1d79c"
   end
 
   depends_on "autoconf" => :build
@@ -87,8 +87,8 @@ class Semgrep < Formula
   end
 
   resource "deprecated" do
-    url "https:files.pythonhosted.orgpackages92141e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232Deprecated-1.2.14.tar.gz"
-    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
+    url "https:files.pythonhosted.orgpackages2ea353e7d78a6850ffdd394d7048a31a6f14e44900adedf190f9a165f6b69439deprecated-1.2.15.tar.gz"
+    sha256 "683e561a90de76239796e6b6feac66b99030d2dd3fcf61ef996330f14bbb9b0d"
   end
 
   resource "exceptiongroup" do
@@ -107,8 +107,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https:files.pythonhosted.orgpackages533b1599ceafa875ffb951480c8c74f4b77646a6b80e80970698f2aa93c216cegoogleapis_common_protos-1.65.0.tar.gz"
-    sha256 "334a29d07cddc3aa01dee4988f9afd9b2916ee2ff49d6b757155dc0d197852c0"
+    url "https:files.pythonhosted.orgpackagesffa78e9cccdb1c49870de6faea2a2764fa23f627dd290633103540209f03524cgoogleapis_common_protos-1.66.0.tar.gz"
+    sha256 "c3e7b33d15fdca5374cc0a7346dd92ffa847425cc4ea941d970f13680052ec8c"
   end
 
   resource "idna" do
@@ -187,13 +187,13 @@ class Semgrep < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "peewee" do
-    url "https:files.pythonhosted.orgpackagese12dc5e34703c118da6dae4de89d5c9b5a2fb9fbc2f7789ac2c8d8836f6367bapeewee-3.17.7.tar.gz"
-    sha256 "6aefc700bd530fc6ac23fa19c9c5b47041751d92985b799169c8e318e97eabaa"
+    url "https:files.pythonhosted.orgpackagesb4dc832bcf4ea5ee2ebc4ea42ef36e44a451de5d80f8b9858bf2066e30738c67peewee-3.17.8.tar.gz"
+    sha256 "ce1d05db3438830b989a1b9d0d0aa4e7f6134d5f6fd57686eeaa26a3e6485a8c"
   end
 
   resource "protobuf" do
@@ -232,8 +232,8 @@ class Semgrep < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
+    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "tomli" do
@@ -262,8 +262,8 @@ class Semgrep < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages54bf5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86zipp-3.20.2.tar.gz"
-    sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
+    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
+    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
   end
 
   def install

@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https:www.uvicorn.org"
-  url "https:files.pythonhosted.orgpackagese0fc1d785078eefd6945f3e5bab5c076e4230698046231eb0f3747bc5c8fa992uvicorn-0.32.0.tar.gz"
-  sha256 "f78b36b143c16f54ccdb8190d0a26b5f1901fe5a3c777e1ab29f26391af8551e"
+  url "https:files.pythonhosted.orgpackages6a3c21dba3e7d76138725ef307e3d7ddd29b763119b3aa459d02cc05fefcff75uvicorn-0.32.1.tar.gz"
+  sha256 "ee9519c246a72b1c084cea8d3b44ed6026e78a4a309cbedae9c37e4cb9fbb175"
   license "BSD-3-Clause"
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c0abc93959749ee3c7297d6f5279f77ba4efea5ce503e20bab286621359f7480"
-    sha256 cellar: :any,                 arm64_sonoma:  "3055509f099f2d5969de81f93e3650a1f3c1dcdbc42d58708efe0c06baf4a3d5"
-    sha256 cellar: :any,                 arm64_ventura: "b3af7069c0eff85a1ee6f0289d2ec410bf7df672fc810114379fc753833f32bf"
-    sha256 cellar: :any,                 sonoma:        "cc0bd02c69cc4e1546c86af6871081d6682f23ffdbd9a4e96afd849ff985975e"
-    sha256 cellar: :any,                 ventura:       "83599d4fe89daab09c021ab35f2f8431e58375b494e0c90fced7bf03460c97aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8ecccb2b0d7c3a66dc19970e7ce6428803c6e860d1ce9769224d0c4348c73fb"
+    sha256 cellar: :any,                 arm64_sequoia: "b19f65989965c6be71d7969dcf52cdcb87bee81f9eac9d3c9aa63f5cd81f4262"
+    sha256 cellar: :any,                 arm64_sonoma:  "65070152376671fdd6c09c5d7b26e703cee3d0627422cf543fa7166ce0824a26"
+    sha256 cellar: :any,                 arm64_ventura: "324196809789df135e8fb1f57cc8f5d398025cd4b85f38270a20152336066b0d"
+    sha256 cellar: :any,                 sonoma:        "647d50301da0a73e1f7522e0dae17f7b03b4ca207eb8144f7c32adb332210b5a"
+    sha256 cellar: :any,                 ventura:       "efcaedf3e1eff20b8a2a44ed9fd9a1dd2ac16b9030f4ac93c0e96ab5ae7426e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff82957b540311d852dd194e08b7b86eb6f1213ea52708fb01b90681dc1c3fa7"
   end
 
   depends_on "rust" => :build
@@ -37,8 +37,8 @@ class Uvicorn < Formula
   end
 
   resource "httptools" do
-    url "https:files.pythonhosted.orgpackages9c4f8c7e42e8897f905e84505897f8f9cb4178235888aab571417897362a6764httptools-0.6.2.tar.gz"
-    sha256 "ae694efefcb61317c79b2fa1caebc122060992408e389bb00889567e463a47f1"
+    url "https:files.pythonhosted.orgpackagesa79ace5e1f7e131522e6d3426e8e7a490b3a01f39a6696602e1c4f33f9e94277httptools-0.6.4.tar.gz"
+    sha256 "4e93eee4add6493b59a5c514da98c939b244fce4a0d8879cd3f466562f4b7d5c"
   end
 
   resource "idna" do
@@ -62,8 +62,8 @@ class Uvicorn < Formula
   end
 
   resource "uvloop" do
-    url "https:files.pythonhosted.orgpackagescf3da150e044b5bc69961168b024c531d21b63acd9948b7d681b03e551be01e1uvloop-0.21.0b1.tar.gz"
-    sha256 "5e12901bd67c5ba374741fc497adc44de14854895c416cd0672b2e5b676ca23c"
+    url "https:files.pythonhosted.orgpackagesafc0854216d09d33c543f12a44b393c402e89a920b1a0a7dc634c42de91b9cf6uvloop-0.21.0.tar.gz"
+    sha256 "3bf12b0fda68447806a7ad847bfa591613177275d35b6724b1ee573faa3704e3"
   end
 
   resource "watchfiles" do
@@ -72,8 +72,8 @@ class Uvicorn < Formula
   end
 
   resource "websockets" do
-    url "https:files.pythonhosted.orgpackagese2739223dbc7be3dcaf2a7bbf756c351ec8da04b1fa573edaf545b95f6b0c7fdwebsockets-13.1.tar.gz"
-    sha256 "a3b3366087c1bc0a2795111edcadddb8b3b59509d5db5d7ea3fdd69f954a8878"
+    url "https:files.pythonhosted.orgpackagesf41b380b883ce05bb5f45a905b61790319a28958a9ab1e4b6b95ff5464b60ca1websockets-14.1.tar.gz"
+    sha256 "398b10c77d471c0aab20a845e7a60076b6390bfdaac7a6d2edb0d2c59d75e8d8"
   end
 
   def install

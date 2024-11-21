@@ -25,6 +25,13 @@ class Atuin < Formula
     generate_completions_from_executable(bin"atuin", "gen-completion", "--shell")
   end
 
+  service do
+    run [opt_bin"atuin", "daemon"]
+    keep_alive true
+    log_path var"logatuin.log"
+    error_log_path var"logatuin.log"
+  end
+
   test do
     # or `atuin init zsh` to setup the `ATUIN_SESSION`
     ENV["ATUIN_SESSION"] = "random"

@@ -3,18 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https:dstack.ai"
-  url "https:files.pythonhosted.orgpackages268adb535673244a2ae8dde1e2da4a6537e489657e8bfe1e1b95239c6834e9c6dstack-0.18.25.tar.gz"
-  sha256 "f896975eee750eed51bdac2cf66ebfadea64ad08fdf5dcc71dfc59e8a6468d24"
+  url "https:files.pythonhosted.orgpackages0685b12a7482412a7dbb7dc0ccb45783f0f201e9869e3623641d19da8c38604ddstack-0.18.26.tar.gz"
+  sha256 "ef991e34bbca52a7f4f62cc86c9a37c4885fc5f3d991d9221fb2ff695f150e11"
   license "MPL-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c7d84efa586f655808749351a93ab87f19e4403fe2b5e2863b95acdbb4f9eaa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "e75c76282962e3a8e4f32f552fffe5f0b997898b6922df9172944539d4e43493"
-    sha256 cellar: :any,                 arm64_ventura: "967c5c3243bd44e535de5c8adc55467b463965d1728f553b4f7e083894372a09"
-    sha256 cellar: :any,                 sonoma:        "b2b452ce41ffec30f82cfe03f6deb0f42585c65bef280a1981eb195af44aa72a"
-    sha256 cellar: :any,                 ventura:       "970cd29d41e73f228a612babba6310e418c819b790ece4bf7f11cb9a13f745c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd4e998a433c3bf36fd4ff9a6e4d4a18026c439f741a3bbc733982a5d64e5f0a"
+    sha256 cellar: :any,                 arm64_sequoia: "b45d2482d2a76909ce8c4ed360be413522155bc589f6c08f345f9e154be82cb6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7c31c9d1faf0b31ff1815a1e09f663179b87cbacd3fd90854562e0392a948a3"
+    sha256 cellar: :any,                 arm64_ventura: "0161c82ed87a71d78767d5b25a1a7cd3f7bc32f68dcf2838cd2987bb579b7fa1"
+    sha256 cellar: :any,                 sonoma:        "c8f007168f0f641d56615fc7328be7544c576364dfa664c88ee74bf039ee0dc8"
+    sha256 cellar: :any,                 ventura:       "dc9a139388bd5a0e68492ad8b2ff1cd2fcd5bce21a219b56fdb6cd6e01dbceae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f0df824535a2ffa0b75a417f40d775545ee17644ebe28db7271a3fde70145c3"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -32,8 +31,8 @@ class Dstack < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages1dcdaf0e573bdb77ae7df1148fe8e4ea854215a37db0b116aac6b5496335095eaiohttp-3.11.4.tar.gz"
-    sha256 "9d95cce8bb010597b3f2217155befe4708e0538d3548aa08d640ebf54e3f57cb"
+    url "https:files.pythonhosted.orgpackagesd566a967a2e9ceab12b6970ca5be3bccc9cf13fed4acfabe2c66de3d75599185aiohttp-3.11.6.tar.gz"
+    sha256 "fd9f55c1b51ae1c20a1afe7216a64a88d38afee063baa23c7fce03757023c999"
   end
 
   resource "aiorwlock" do
@@ -57,8 +56,8 @@ class Dstack < Formula
   end
 
   resource "alembic-postgresql-enum" do
-    url "https:files.pythonhosted.orgpackagesc4635188bd184cc7515090ca98686b97695f68aca403c119e688b66ceb0e653balembic_postgresql_enum-1.3.0.tar.gz"
-    sha256 "64d5de7ac2ea39433afd965b057ca882fb420eb5cd6a7db8e2b4d0e7e673cae1"
+    url "https:files.pythonhosted.orgpackagesbcdf5171230d05b17751fbf4242ff111cf6c568395b5fae8f64e74aa5765a056alembic_postgresql_enum-1.4.0.tar.gz"
+    sha256 "fb0af50059891bf3fb9638d4c32a61b4eee116c302a90e0c74ed3f5f396153f4"
   end
 
   resource "anyio" do
@@ -127,18 +126,18 @@ class Dstack < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackagese47ed95e7d96d4828e965891af92e43b52a4cd3395dc1c1ef4ee62748d0471d0bcrypt-4.2.0.tar.gz"
-    sha256 "cf69eaf5185fd58f268f805b505ce31f9b9fc2d64b376642164e9244540c1221"
+    url "https:files.pythonhosted.orgpackages568cdd696962612e4cd83c40a9e6b3db77bfe65a830f4b9af44098708584686cbcrypt-4.2.1.tar.gz"
+    sha256 "6765386e3ab87f569b276988742039baab087b2cdb01e809d74e74503c2faafe"
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages46d52eda9ef554182c3b306ea18c049f152be8495198911ce0c4c2375eb6a236boto3-1.35.64.tar.gz"
-    sha256 "bc3fc12b41fa2c91e51ab140f74fb1544408a2b1e00f88a4c2369a66d18ddf20"
+    url "https:files.pythonhosted.orgpackages3a33f4155a18a3c374be75638ae83e7e0d6958bcdff50c4fcec9d6340286ec69boto3-1.35.65.tar.gz"
+    sha256 "f6c266b4124b92b1603727bf1ed1917e0b74a899bd0e326f151d80c3eaed27a1"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages0ed371c2bbccea5a307e9b6218e41b5189d5e0c61217dc8d883dcac6a2aae762botocore-1.35.64.tar.gz"
-    sha256 "2f95c83f31c9e38a66995c88810fc638c829790e125032ba00ab081a2cf48cb9"
+    url "https:files.pythonhosted.orgpackagesf09c1d9c4a4d0a77659c5404b978a86453214563387a5332587eaedc28c4bbe2botocore-1.35.65.tar.gz"
+    sha256 "46652f732f2b2fb395fffcc33cacb288d05ea283047c9a996fb59d6849464919"
   end
 
   resource "cached-classproperty" do

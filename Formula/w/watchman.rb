@@ -18,7 +18,8 @@ class Watchman < Formula
   depends_on "cmake" => :build
   depends_on "cpptoml" => :build
   depends_on "googletest" => :build
-  depends_on "pkg-config" => :build
+  depends_on "mvfst" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build
   depends_on "edencommon"
@@ -37,8 +38,6 @@ class Watchman < Formula
     depends_on "boost"
     depends_on "libunwind"
   end
-
-  fails_with gcc: "5"
 
   def install
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.

@@ -130,6 +130,7 @@ Homebrew-homebrew-core/Formula/a/ansible-creator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ansible@10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@9.rb, Homebrew/homebrew-core, 0
@@ -956,6 +957,7 @@ Homebrew-homebrew-core/Formula/c/clusterctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cmake-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmake-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cmake-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmark-gfm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmark.rb, Homebrew/homebrew-core, 1
@@ -1646,6 +1648,7 @@ Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eslint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/eslint_d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/esniper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/espeak-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/espeak.rb, Homebrew/homebrew-core, 0
@@ -2002,6 +2005,7 @@ Homebrew-homebrew-core/Formula/g/gcc@7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcem.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gci.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcovr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcsfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcviewer.rb, Homebrew/homebrew-core, 1
@@ -2543,6 +2547,7 @@ Homebrew-homebrew-core/Formula/h/haste-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hasura-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hatari.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hatch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/havn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hawkeye.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haxe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hayai.rb, Homebrew/homebrew-core, 1
@@ -6970,6 +6975,7 @@ Homebrew-homebrew-core/Formula/x/xcode-build-server.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/x/xcode-kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodegen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodes.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xcresultparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xctesthtmlreport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xdelta.rb, Homebrew/homebrew-core, 1

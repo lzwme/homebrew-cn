@@ -1,8 +1,8 @@
 class LandoCli < Formula
   desc "Cli part of Lando"
   homepage "https:docs.lando.devcli"
-  url "https:github.comlandocorearchiverefstagsv3.23.7.tar.gz"
-  sha256 "baa02fe1733c6d76a6ba42c058dba9b308e1246378994b7441d18b5833815d8c"
+  url "https:github.comlandocorearchiverefstagsv3.23.11.tar.gz"
+  sha256 "ceffd506f1a9e40b1b0310ea090b89a083da29cb2cb84bb92e38da117ae1214a"
   license "GPL-3.0-or-later"
   head "https:github.comlandocore.git", branch: "main"
 
@@ -12,12 +12,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "1886da7f0dfbba801f2d1c44dc50e100cf5907ac5d184d0fda4a90f381f05b62"
-    sha256                               arm64_sonoma:  "57f955383a45af74d96bb7f2d60a25df4f0e5ea3b182ce14f05e07f116a93f44"
-    sha256                               arm64_ventura: "b1b35a50cd87075e1d040792f12e011ad2f41bb3a2df35293e7614f230b5dd87"
-    sha256                               sonoma:        "cd0f227c21dd214eb55f40f725ca2db73762ef2ef4dd489687387e87fba4d349"
-    sha256                               ventura:       "684af73247b50e9b4280fafc551007badad5173333c9a02edd48e97387ae769a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97c1a18e40beac6462b86349785045f99ddbe47a27fff639923f937968684c49"
+    sha256                               arm64_sequoia: "5b6821abb0f7470f0601fc8d20e0d6c2608f7363c2068bf537a3911734b75ebe"
+    sha256                               arm64_sonoma:  "f3ae808ab2f0a47046497922fcba148faab5ad232e21c9596ed159b409733407"
+    sha256                               arm64_ventura: "85209821dfef3d5cb9ea3d710a05ce085d6764e5b1b6936ea4cf62390d6eefb2"
+    sha256                               sonoma:        "e414bd219108ad09800d77f81131078fa30596c8a9f40e53061555a2abdaf9b2"
+    sha256                               ventura:       "331094cd35bd901f719cbcd28a6133e9a3f839fc977409b0ff354f59c9a34d8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39d333e7d506ef35ae63f4048bb6296b83570b24c842213ee1814c7559288715"
   end
 
   depends_on "node"

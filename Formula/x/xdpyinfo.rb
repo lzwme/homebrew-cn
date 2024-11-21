@@ -18,7 +18,7 @@ class Xdpyinfo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f37e0dbf3c6c0741151f53befb6a5bc82b2fab008b3d28ce4cedf63e6a8bbbf"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libx11"
   depends_on "libxcb"
@@ -32,7 +32,7 @@ class Xdpyinfo < Formula
       --localstatedir=#{var}
       --disable-silent-rules
     ]
-    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

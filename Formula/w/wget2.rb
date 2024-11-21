@@ -26,7 +26,7 @@ class Wget2 < Formula
   depends_on "graphviz" => :build
   depends_on "lzlib" => :build # static lib
   depends_on "pandoc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "texinfo" => :build # Build fails with macOS-provided `texinfo`
 
   depends_on "brotli"

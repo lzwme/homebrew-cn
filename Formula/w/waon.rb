@@ -23,7 +23,7 @@ class Waon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f91b56d77254441ef842600da7b63b3ec7f84046cad6d89c64314aafa82af1e2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sox" => :test
   depends_on "fftw"
   depends_on "libsndfile"
@@ -39,6 +39,6 @@ class Waon < Formula
     output = shell_output("#{bin}waon -i #{testpath}test.wav -o #{testpath}output.midi 2>&1")
     assert_match "# of events = 2", output
     assert_match "n = 2", output
-    assert_predicate testpath"output.midi", :exist?
+    assert_path_exists testpath"output.midi"
   end
 end

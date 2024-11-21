@@ -15,14 +15,14 @@ class Wget < Formula
   end
 
   head do
-    url "https://git.savannah.gnu.org/git/wget.git"
+    url "https://git.savannah.gnu.org/git/wget.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "xz" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libidn2"
   depends_on "openssl@3"
 

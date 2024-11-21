@@ -31,7 +31,7 @@ class X11vnc < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libvncserver"
   depends_on "openssl@3"
 
@@ -42,12 +42,10 @@ class X11vnc < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"
-
-    system ".autogen.sh", *std_configure_args,
-                           "--disable-silent-rules",
+    system ".autogen.sh", "--disable-silent-rules",
                            "--mandir=#{man}",
-                           "--without-x"
+                           "--without-x",
+                           *std_configure_args
     system "make", "install"
   end
 

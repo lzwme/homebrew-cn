@@ -22,7 +22,7 @@ class Wxwidgets < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b2caf603dfed363a25a93862bcecd9a006ac82fdb3154125ccf1ff860cc5f1a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
@@ -54,7 +54,6 @@ class Wxwidgets < Formula
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath"src"l) }
 
     args = [
-      "--prefix=#{prefix}",
       "--enable-clipboard",
       "--enable-controls",
       "--enable-dataviewctrl",
@@ -71,7 +70,6 @@ class Wxwidgets < Formula
       "--with-libtiff",
       "--with-opengl",
       "--with-zlib",
-      "--disable-dependency-tracking",
       "--disable-tests",
       "--disable-precomp-headers",
       # This is the default option, but be explicit
@@ -89,7 +87,7 @@ class Wxwidgets < Formula
       inreplace "srcosxcarbondcscreen.cpp", "#if !wxOSX_USE_IPHONE", "#if 0" if MacOS.version >= :sequoia
     end
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     # wx-config should reference the public prefix, not wxwidgets's keg

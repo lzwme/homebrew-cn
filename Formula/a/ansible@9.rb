@@ -7,6 +7,14 @@ class AnsibleAT9 < Formula
   sha256 "54557393fae5768ee6430491c55b74f7831d89dd198d3d74431edaae44004298"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url "https://pypi.org/rss/project/ansible/releases.xml"
+    regex(/^v?(9(?:\.\d+)+)$/i)
+    strategy :xml do |xml, regex|
+      xml.get_elements("//item/title").map { |item| item.text[regex, 1] }
+    end
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d5cd79e7a360a27280335d72dc0c7a883bc1d761bf8dfb85a197c6ad4b1cb295"
     sha256 cellar: :any,                 arm64_sonoma:  "3debf499e17520d4d92d54f65dd91eb52d1a8b55326cc5b849a54a5bf47a4f5d"

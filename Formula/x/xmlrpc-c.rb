@@ -16,7 +16,7 @@ class XmlrpcC < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdbcf2578d239e21752a3f06e0df6d0e27f26e83376536ecd16e62b9b8edfc5e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "curl"

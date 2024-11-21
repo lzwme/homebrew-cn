@@ -17,6 +17,10 @@ class AzureStorageCpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3c89ec4ddedce0b55bbf1f97de363abf7e2778b39a4363284a642f6215f116c"
   end
 
+  # https:github.comAzureazure-storage-cppcommitb319b189067ac5f54137ddcfc18ef506816cbea4
+  # https:aka.msAzStorageCPPSDKRetirement
+  disable! date: "2025-05-20", because: :deprecated_upstream
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "cpprestsdk"

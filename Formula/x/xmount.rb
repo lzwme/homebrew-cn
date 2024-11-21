@@ -10,7 +10,7 @@ class Xmount < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "afflib"
   depends_on "libewf"
   depends_on "libfuse@2"
@@ -18,10 +18,9 @@ class Xmount < Formula
   depends_on "openssl@3"
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
-
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -1,17 +1,17 @@
 class Bandicoot < Formula
   desc "C++ library for GPU accelerated linear algebra"
   homepage "https://coot.sourceforge.io/"
-  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/1.16.0/bandicoot-code-1.16.0.tar.bz2"
-  sha256 "d3049c8caed7ea527565bf96030d190282d0d9cf5f2a33b5a2dd393a60f01e8f"
+  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/1.16.1/bandicoot-code-1.16.1.tar.bz2"
+  sha256 "b9c6532b8c7e37dd7986ccd346a849db57cca4024ce41c3591f778139531b1d0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fe872e9c9d278c330ab54f9645ef503189f938176a943198d93cc866cc499a14"
-    sha256 cellar: :any,                 arm64_sonoma:  "672ec9569c42fd5d97be9fc81c9721c0eb3c016b632badbfb38176a8de97afd3"
-    sha256 cellar: :any,                 arm64_ventura: "eda4ccd849b8aa82a14e9eb520512ae55dbac19f98f868b9cc9dc4ac392d6e37"
-    sha256 cellar: :any,                 sonoma:        "deeddc134d35ee37dabc3daa8ae6c544f3c152ad16ffa3af00cd09b437efca24"
-    sha256 cellar: :any,                 ventura:       "3fb92dd99616ec54cca47bae78706daa6a6bdb529c0978506d95d6a1a3534744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f3faa04cbe15d7ec9a39a2e120268ea06413d17d6154ec5894c0fbe9e646565"
+    sha256 cellar: :any,                 arm64_sequoia: "d3e5cae271211ff164554d8c9f065d4a6707a08f8c20e26f1409f1e506ef01b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "dcbb689ef19632d7e26ef7d17242e0357debda872cc350795ae2d8b4e0f5679a"
+    sha256 cellar: :any,                 arm64_ventura: "aa9bef5d8e8454bb791209fb94916c114003a6a0890bd666fd64e6fabb1edd63"
+    sha256 cellar: :any,                 sonoma:        "83c3169b28393ac1ee07224951d2e072f4cf8d972419507739036f4e2f095586"
+    sha256 cellar: :any,                 ventura:       "58798b5f55aac745c9aff6b7d0ab32b4ec19597673fdf62bc0a84992ccceab6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f442ff6aaafcb1376fbf3257a5355ff369734d09f0a7b7e8218ea94dfce29a18"
   end
 
   depends_on "cmake" => :build

@@ -17,7 +17,7 @@ class Xplr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2e5fd49885a71195c2c9e6087e3b8d2f1b6b9c4a866be343db5fd1e067d5915"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "luajit"
 

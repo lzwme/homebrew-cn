@@ -26,10 +26,10 @@ class Zzuf < Formula
   head do
     url "https:github.comsamhocevarzzuf.git", branch: "master"
 
-    depends_on "autoconf"   => :build
-    depends_on "automake"   => :build
-    depends_on "libtool"    => :build
-    depends_on "pkg-config" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+    depends_on "pkgconf" => :build
   end
 
   def install

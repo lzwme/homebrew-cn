@@ -37,19 +37,17 @@ class Libsigrokdecode < Formula
   end
 
   def install
-    # While this doesn't appear much better than hardcoding `3.10`, this allows
+    # While this doesn't appear much better than hardcoding `3.13`, this allows
     # `brew audit` to catch mismatches between this line and the dependencies.
     python = "python3.13"
     py_version = Language::Python.major_minor_version(python)
 
-    inreplace "configure.ac" do |s|
-      # Force the build system to pick up the right Python 3
-      # library. It'll normally scan for a Python library using a list
-      # of major.minor versions which means that it might pick up a
-      # version that is different from the one specified in the
-      # formula.
-      s.sub!(/^(SR_PKG_CHECK\(\[python3\], \[SRD_PKGLIBS\],)\n.*$/, "\\1 [python-#{py_version}-embed])")
-    end
+    # We should be able to remove this in libsigrokdecode >0.5.3, who will
+    # check for a version-independent `python3-embed` pkg-config file, and
+    # correctly detect the python3 version from our formula dependencies.
+    inreplace "configure.ac",
+              "SR_PKG_CHECK([python3], [SRD_PKGLIBS],",
+              "SR_PKG_CHECK([python3], [SRD_PKGLIBS], [python-#{py_version}-embed],"
 
     if build.head?
       system "./autogen.sh"

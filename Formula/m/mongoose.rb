@@ -1,19 +1,17 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https:mongoose.ws"
-  url "https:github.comcesantamongoosearchiverefstags7.15.tar.gz"
-  sha256 "efcb5aa89b85d40373dcff3241316ddc0f2f130ad7f05c9c964f8cc1e2078a0b"
+  url "https:github.comcesantamongoosearchiverefstags7.16.tar.gz"
+  sha256 "f2c42135f7bc34b3d10b6401e9326a20ba5dd42d4721b6a526826ba31c1679fd"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "22a4f3acc392f97710bbb2eb7b2a8652deb0e32c42a2372a273a97c780bd7654"
-    sha256 cellar: :any,                 arm64_sonoma:   "8fa426f24794e047d6b2ef627e70d7469dab6004b63a2da262273fabbf6fdd08"
-    sha256 cellar: :any,                 arm64_ventura:  "2f01277d6d1f691ad4dc55a26251a56fae6b85fdc4abac97fe19804b2cb700ae"
-    sha256 cellar: :any,                 arm64_monterey: "e796a72aa7601a0573f63e5d822fd24c018c4f2f49ba9c62fe9500f62a184e3e"
-    sha256 cellar: :any,                 sonoma:         "8b4feba3ce4d790de7cb53461a252769c86cac32c0ab676782856400ac73f9b4"
-    sha256 cellar: :any,                 ventura:        "2cc1fabb8af18a789cd2a90a64f31408306a02c65abc94b01c9682bd4c5fb54f"
-    sha256 cellar: :any,                 monterey:       "5ad700fcbe8d2be7f2ba8be80196cf47306d3c65d05d4293f8e756d2935eff2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3faf77782983cb1c0e662afb1321326c2742e656bb6e8af8ab678f9a417ae3a"
+    sha256 cellar: :any,                 arm64_sequoia: "b99dd5a11b1cc2722a01cdf6ea227382ba43f85f1866c759194b11f4aa3e0170"
+    sha256 cellar: :any,                 arm64_sonoma:  "0585d930d3e7e844a196ae762088d5c3dbab3cca1dd9dc5a7c804372d15470de"
+    sha256 cellar: :any,                 arm64_ventura: "cf1660db27a14f9cc25a98627028768fedab551a1cdefbd7edfa852366aa568d"
+    sha256 cellar: :any,                 sonoma:        "d50c85f28f86bc70b8f6735f211ade27c08ffd957cbb7ab307eddf842ff5383c"
+    sha256 cellar: :any,                 ventura:       "4595a19b70fa94727881c59e93971218aa479d771a5fd5d8dd52259473f327d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "654c508a99bb309ccd1511cae66fa356b3431a93d52c632cd49257a5ad4893c6"
   end
 
   depends_on "openssl@3"

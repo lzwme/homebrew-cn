@@ -9,21 +9,19 @@ class Xtrans < Formula
     sha256 cellar: :any_skip_relocation, all: "2ef458309b1b5ac2db8ad56d17fbfcc94c9cbdc6e765cb726a1e6e6fad22a5dc"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :test
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-docs=no
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

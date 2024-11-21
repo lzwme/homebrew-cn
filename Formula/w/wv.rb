@@ -21,7 +21,7 @@ class Wv < Formula
     sha256 x86_64_linux:  "2ea81d55829b98259a212af78e40fb74d6ab9a83be165a3d7f2c6e6cc91f753d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libgsf"
   depends_on "libpng"

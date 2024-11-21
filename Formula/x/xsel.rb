@@ -23,12 +23,11 @@ class Xsel < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "libxt" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
 
   def install
     system ".autogen.sh", *std_configure_args
-    system ".configure", *std_configure_args
     system "make", "install"
   end
 

@@ -33,7 +33,7 @@ class Wv2 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "libgsf"
@@ -51,8 +51,9 @@ class Wv2 < Formula
     ENV.append "LDFLAGS", "-lgobject-2.0" # work around broken detection
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.append "CXXFLAGS", "-I#{Formula["libxml2"].include}/libxml2" unless OS.mac?
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     (pkgshare/"test").install "tests/testole.doc"
   end
 

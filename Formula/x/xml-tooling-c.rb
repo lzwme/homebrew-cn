@@ -19,7 +19,7 @@ class XmlToolingC < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2342976e7b86e5826af7d8634ae96c3abc75b1fae9a80436d7e513278887e0e9"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "log4shib"
   depends_on "openssl@3"
@@ -31,8 +31,6 @@ class XmlToolingC < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@3"].opt_lib}/pkgconfig"
-
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end

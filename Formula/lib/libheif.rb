@@ -1,17 +1,17 @@
 class Libheif < Formula
   desc "ISOIEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https:www.libde265.org"
-  url "https:github.comstrukturaglibheifreleasesdownloadv1.19.4libheif-1.19.4.tar.gz"
-  sha256 "44c35b80596561ab531556175309f5f0ab3fcf7a7517dd933940574063f2af85"
+  url "https:github.comstrukturaglibheifreleasesdownloadv1.19.5libheif-1.19.5.tar.gz"
+  sha256 "d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79eb071bec943d0e8373f787f98dd52dfb1767a641276f07c1de8eefd379b82f"
-    sha256 cellar: :any,                 arm64_sonoma:  "809f4f6c34b84d935066fc4a4dc1744918aed16b673711f9d2dbfa7f96464166"
-    sha256 cellar: :any,                 arm64_ventura: "f8036615932e8e737cd23f0f65b0d9c319869325735932a7b73abe4adc2dbf44"
-    sha256 cellar: :any,                 sonoma:        "735308e6dcc00ad1d9a02628a0e9ac23f773c05f0b5fcb57e34fc6895d6dfe69"
-    sha256 cellar: :any,                 ventura:       "d2d26231ffc0384944a212c82006f29d8ce92a8b4bb2eedcc32c8c006aa29484"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba117314ebe9966b949e49a731ef6d1ca22b14d32469bd76e457df0be8f8ebd"
+    sha256 cellar: :any,                 arm64_sequoia: "7362cb33a980ff16d59f44253146dffad69e4a82c860f07314b0ecad6a8d0487"
+    sha256 cellar: :any,                 arm64_sonoma:  "d559071bd87df4e179136b4d1d7c5dd1e953137e84b7616a77ca66eb17649682"
+    sha256 cellar: :any,                 arm64_ventura: "a962ade1a6eb63d7924ae754755d48b67da587ae5ad72646b3f6c9c093f51fd6"
+    sha256 cellar: :any,                 sonoma:        "cf80a1839e76ef28e6a63ccce2a368822b91f66785e9070a49b6431f4ec274e8"
+    sha256 cellar: :any,                 ventura:       "84242885c4fe3851ca56875ee8b6489a4f61dac8ada35836ee01ba00d2299319"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a8fa3d2bfd42c47eb692f331304d76eee4b9f5d0afed44a3a6bc1ccd5aedf96"
   end
 
   depends_on "cmake" => :build

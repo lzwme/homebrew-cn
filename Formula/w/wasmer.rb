@@ -20,7 +20,7 @@ class Wasmer < Formula
   depends_on "wabt" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "libxkbcommon"
   end
 

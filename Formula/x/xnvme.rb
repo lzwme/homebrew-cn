@@ -21,17 +21,18 @@ class Xnvme < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   def install
     # We do not have SPDK nor libvfn on macOS, thus disabling these
     # The examples and tests are also a bit superfluous, so disable those as well
-    system "meson", "setup", "build",
-           *std_meson_args,
-           "-Dwith-spdk=disabled",
-           "-Dwith-libvfn=disabled",
-           "-Dtests=false",
-           "-Dexamples=false"
+    args = %w[
+      -Dwith-spdk=disabled
+      -Dwith-libvfn=disabled
+      -Dtests=false
+      -Dexamples=false
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
   end

@@ -16,7 +16,7 @@ class Xauth < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "79c33da732dc8f9d89082193869d83fcd79d695ea8cc8f26f1f5e2c743da6633"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxau"
@@ -30,10 +30,8 @@ class Xauth < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-unix-transport
       --enable-tcp-transport
@@ -41,7 +39,7 @@ class Xauth < Formula
       --enable-local-transport
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

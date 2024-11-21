@@ -1,9 +1,9 @@
 cask "zed@preview" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.162.2"
-  sha256 arm:   "7e374d15e0c5bca5a35cece3a37a74f08160a211d1a5c0a35fb775d6a80d43af",
-         intel: "e164d7fdd92477a60cf8bad262abb0c8231acd5da81501bc0acda46b14cc3160"
+  version "0.163.0"
+  sha256 arm:   "46a0f073ed674121f2aacc634faaaf6efc594602451b2090e6a9aca285f81929",
+         intel: "988ab5f91d5338d7e75b9b55d1d03f6c2dd5570aa5bc48d0c6190974ba207385"
 
   url "https://zed.dev/api/releases/preview/#{version}/Zed-#{arch}.dmg"
   name "Zed Preview"

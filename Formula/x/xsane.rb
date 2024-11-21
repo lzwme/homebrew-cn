@@ -22,7 +22,7 @@ class Xsane < Formula
     sha256 x86_64_linux:   "38f48e2fb08a821089e4419e0b0a6d6994a9e3d1faa009e3319107a4b393af03"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "gtk+" # GTK3 issue: https:gitlab.comsane-projectfrontendxsane-issues34
   depends_on "jpeg-turbo"

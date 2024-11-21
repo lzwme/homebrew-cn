@@ -2,17 +2,17 @@ class Kopia < Formula
   desc "Fast and secure open-source backup"
   homepage "https:kopia.io"
   url "https:github.comkopiakopia.git",
-      tag:      "v0.18.1",
-      revision: "b60cac48608bb8cd8fad69e535b5d351e49916f2"
+      tag:      "v0.18.2",
+      revision: "c70f1a1c1164ee8676f85f9a1cea6de0a782a3ae"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3802612e84ea09a8ed7d98940bb69002eaa48603bf353f645e6a2b9130e6bb58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dd97e8c3b25916bf71748327b9bac969c40f659b20513decf77c088ed112148"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a490015c568fc800356210807bfe2b17e1a78e48b6d76dab4f4eabc2e9f1756"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe9d2c1c9c276f42c2126eee04bbe8891b5382847280caab414222397c005bf9"
-    sha256 cellar: :any_skip_relocation, ventura:       "6cb9f647768618090f104e141f5704dfef8b923151e6d2785b80f703e326fc3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad0ffd68e0d086fd5af7e2d8f5d9e0ef7efcfd940d713a72849da9e0b482fa6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46f26a749b222822808abad363e0d12412be881c606673138cb3ea89510d408a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0e46083fef1f5f54ea37be417c4beaa2d75a47c111f5bf8c94b5c7cb9375fce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddc9bd3b92ac306a9897dfc5cebaf4d1e8fa71af5cdf64051f56b73f06b06c04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ee4ec73278fce4c2b2b490e6b5d0eea8ff7019f6139e2c970fb0596adeb64f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "52a7548ef68d846e3b375b4d02f5660b944683343fdc741f15192e20e4e494ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc166972aaf5c62bb65300d1b8d9e51dc8c78c0b6b24a872397ff87f8052ce3a"
   end
 
   depends_on "go" => :build

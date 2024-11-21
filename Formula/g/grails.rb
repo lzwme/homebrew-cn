@@ -1,8 +1,8 @@
 class Grails < Formula
   desc "Web application framework for the Groovy language"
   homepage "https:grails.org"
-  url "https:github.comgrailsgrails-corereleasesdownloadv6.2.1grails-6.2.1.zip"
-  sha256 "fb1c103ddf5aecd41cae5d2964d0aa92d1abc8b4d75c8f15ffcd5af2993f8f8f"
+  url "https:github.comgrailsgrails-corereleasesdownloadv6.2.2grails-6.2.2.zip"
+  sha256 "50f81ac85a78098673a35c87848236f01c7e094abecf9137fb22a35d52d26741"
   license "Apache-2.0"
 
   livecheck do
@@ -11,19 +11,19 @@ class Grails < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d0eb3ee0abb5295b1b4087b6df68672900ccf56730b8007a910901cb37a5c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d0eb3ee0abb5295b1b4087b6df68672900ccf56730b8007a910901cb37a5c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2d0eb3ee0abb5295b1b4087b6df68672900ccf56730b8007a910901cb37a5c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a8096f4ba68c2d3068cea5b91772540075a827e8c3c2b05c05933d65fa5845e"
-    sha256 cellar: :any_skip_relocation, ventura:       "7a8096f4ba68c2d3068cea5b91772540075a827e8c3c2b05c05933d65fa5845e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2d0eb3ee0abb5295b1b4087b6df68672900ccf56730b8007a910901cb37a5c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c004e5b850051a6ef9fecaef9564a40846da0fc8be387ff596eabe712aee9c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c004e5b850051a6ef9fecaef9564a40846da0fc8be387ff596eabe712aee9c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c004e5b850051a6ef9fecaef9564a40846da0fc8be387ff596eabe712aee9c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d35ca3d0d15195a8e1428b73007b37a63942db05b6b73a825b8799d9f765bc59"
+    sha256 cellar: :any_skip_relocation, ventura:       "d35ca3d0d15195a8e1428b73007b37a63942db05b6b73a825b8799d9f765bc59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c004e5b850051a6ef9fecaef9564a40846da0fc8be387ff596eabe712aee9c7"
   end
 
   depends_on "openjdk@17"
 
   resource "cli" do
-    url "https:github.comgrailsgrails-forgereleasesdownloadv6.2.1grails-cli-6.2.1.zip"
-    sha256 "44cfa9d9fff9d79c6258e2c1f6b739ecab7c0ca4cc660015724b5078afade60f"
+    url "https:github.comgrailsgrails-forgereleasesdownloadv6.2.2grails-cli-6.2.2.zip"
+    sha256 "08d52986a9ddba065b723dad0224d143be29b6ea939a94b830d85f84486af699"
   end
 
   def install

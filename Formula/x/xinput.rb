@@ -18,7 +18,7 @@ class Xinput < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48811518afc1be944c7f11606493feeffa4acd7653ad98f80e2dd583e6144bf0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
   depends_on "libxext"
@@ -28,14 +28,12 @@ class Xinput < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

@@ -16,7 +16,7 @@ class XmlSecurityC < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "027db5710abf606d13b530d94cbfd9c9b0f6b619080dd2aff53fcec7a965ed9d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "xerces-c"
 
@@ -29,8 +29,7 @@ class XmlSecurityC < Formula
   def install
     ENV.cxx11
 
-    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
+    system ".configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}", *std_configure_args
     system "make", "install"
   end
 

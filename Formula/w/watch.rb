@@ -24,18 +24,17 @@ class Watch < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ncurses"
 
   conflicts_with "visionmedia-watch"
 
   def install
-    system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-nls",
-                          "--enable-watch8bit"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-nls",
+                          "--enable-watch8bit",
+                          *std_configure_args
     system "make", "src/watch"
     bin.install "src/watch"
     man1.install "man/watch.1"

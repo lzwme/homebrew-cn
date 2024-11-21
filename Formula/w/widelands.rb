@@ -24,7 +24,7 @@ class Widelands < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glew"
   depends_on "icu4c@76"

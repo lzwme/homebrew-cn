@@ -30,14 +30,12 @@ class Wslay < Formula
   end
 
   depends_on "cunit" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
 
   def install
-    system "autoreconf", "-fvi" if build.head?
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules"
+    system "autoreconf", "--force", "--verbose", "--install" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "check"
     system "make", "install"
   end

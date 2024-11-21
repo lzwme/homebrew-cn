@@ -24,7 +24,7 @@ class Wordgrinder < Formula
 
   depends_on "lua" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ncurses"
 
   uses_from_macos "zlib"
@@ -39,6 +39,6 @@ class Wordgrinder < Formula
 
   test do
     system bin"wordgrinder", "--convert", "#{doc}README.wg", "#{testpath}converted.txt"
-    assert_predicate testpath"converted.txt", :exist?
+    assert_path_exists testpath"converted.txt"
   end
 end

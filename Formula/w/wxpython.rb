@@ -25,7 +25,7 @@ class Wxpython < Formula
   depends_on "wxwidgets"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "gtk+3"
   end
 

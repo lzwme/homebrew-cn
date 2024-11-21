@@ -4,17 +4,17 @@ class Mapproxy < Formula
   desc "Accelerating web map proxy"
   # `mapproxy.org` is 404, upstream bug report, https:github.commapproxymapproxyissues983
   homepage "https:github.commapproxymapproxy"
-  url "https:files.pythonhosted.orgpackagesc993c35398ec9dff95fa646f87fa2690f142a8779e4e07730a1962f08ce60fffMapProxy-3.1.1.tar.gz"
-  sha256 "f35b308d57b2b2d64d2ba3cfe8643df9b00d2e5452c2a5f81cae599f163bda3e"
+  url "https:files.pythonhosted.orgpackagescf84c3f312ea9335c72631b98545472270057c4e099ad9048c6c170c5b8ff79dMapProxy-3.1.2.tar.gz"
+  sha256 "1a6b790032d0e3330de43578069eee346d36c84e28a90a6a157b6c7c766b5ffe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "493c875579ee0db01173258262674f9609d6b5a0f363880a19fee5092003718a"
-    sha256 cellar: :any,                 arm64_sonoma:  "077d3cdf113954bfd3debea1b39e55e02e595b4de057db9181a1b33253c3e5e0"
-    sha256 cellar: :any,                 arm64_ventura: "79c6ec8cb81e10a77e706fea96520715e16b93b7d3e39a985ba1dbcad768bc61"
-    sha256 cellar: :any,                 sonoma:        "d877ee94e9f6618b01eb7926ebf57b837421987178d6f7fcd36068bdb0a3a65d"
-    sha256 cellar: :any,                 ventura:       "05e9cc9746f7bb50b696f6cbae70b34068871c329ac8bdbede50e21440eacce2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44bfb01b15861482ea2550da6aef3ca84a4f573e018fa0a20b67e1c159aff22"
+    sha256 cellar: :any,                 arm64_sequoia: "c5ed8d4100e10cc0e9ddcb034007f99fd1fcc75b033e5b0e71f1d57662d275f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "880bc61692eae449e97f542df4f315fe2d556daa29068abdff8dd0883a37540f"
+    sha256 cellar: :any,                 arm64_ventura: "a0cdbf4ba93c1930a53fd0729f6188f95e439fe679a972cc723c231a58fc4981"
+    sha256 cellar: :any,                 sonoma:        "fd3afa1a82d57c1b73e0a1ae88740f51612a7cc35474ae442f332fdd0b3152f3"
+    sha256 cellar: :any,                 ventura:       "af5a9d2e2f9c65d3d9e73281a4ef90b9e6d008b066ca76ebc03b2b1167b32c7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3935e4726bc7ee69ef340d44a1c70821bcf77974610f5e3a90e810dd9d9107e8"
   end
 
   depends_on "rust" => :build # for rpds-py

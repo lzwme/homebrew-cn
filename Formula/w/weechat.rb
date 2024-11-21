@@ -18,7 +18,7 @@ class Weechat < Formula
 
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "aspell"
   depends_on "cjson"
   depends_on "gettext"
@@ -45,7 +45,7 @@ class Weechat < Formula
 
   def install
     pyver = Language::Python.major_minor_version python3
-    # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
+    # Help pkgconf find python as we only provide `python3-embed` for aliased python formula
     inreplace "cmakeFindPython.cmake", " python3-embed ", " python-#{pyver}-embed "
 
     args = %W[

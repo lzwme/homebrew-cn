@@ -19,7 +19,7 @@ class Xplanet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff1ddc436b45234444d121e117b299ec702da829391200dfae26547114834d02"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "giflib"
   depends_on "jpeg-turbo"
@@ -75,7 +75,7 @@ class Xplanet < Formula
     ]
     args << "--with-aqua" if OS.mac?
 
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

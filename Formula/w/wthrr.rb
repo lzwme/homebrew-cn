@@ -15,7 +15,7 @@ class Wthrr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0d8bda45cf33d2ec34c043302a42b9551d9d7c33dbdc0421c80ccb599db8219"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

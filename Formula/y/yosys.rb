@@ -17,7 +17,7 @@ class Yosys < Formula
   end
 
   depends_on "bison" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "readline"
 
   uses_from_macos "flex"
@@ -27,6 +27,7 @@ class Yosys < Formula
   uses_from_macos "zlib"
 
   def install
+    ENV.append "LINKFLAGS", "-L#{Formula["readline"].opt_lib}"
     system "make", "install", "PREFIX=#{prefix}", "PRETTY=0"
   end
 

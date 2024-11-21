@@ -21,7 +21,7 @@ class X8664ElfBinutils < Formula
     sha256 x86_64_linux:   "f0ed12582580e7fa52c4a1db664ceeef57c921ba29aa110673ae6aeb7ed3e7cf"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "zstd"
 
   uses_from_macos "zlib"

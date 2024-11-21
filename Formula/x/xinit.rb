@@ -18,7 +18,7 @@ class Xinit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "540015cba432ff1f7e719b37f9c2c3af6d8f40784840eeb8e8774cf8575b82a0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "tradcpp" => :build
   depends_on "xorg-server" => :test
 
@@ -80,7 +80,7 @@ class Xinit < Formula
   def install
     install_xquartz_resource if OS.mac?
 
-    configure_args = std_configure_args + %W[
+    configure_args = %W[
       --bindir=#{HOMEBREW_PREFIX}bin
       --sysconfdir=#{etc}
       --with-bundle-id-prefix=#{plist_name.chomp ".startx"}
@@ -88,7 +88,7 @@ class Xinit < Formula
       --with-launchdaemons-dir=#{prefix}
     ]
 
-    system ".configure", *configure_args
+    system ".configure", *configure_args, *std_configure_args
     system "make", "RAWCPP=tradcpp"
     system "make", "XINITDIR=#{prefix}etcX11xinit",
                    "sysconfdir=#{prefix}etc",

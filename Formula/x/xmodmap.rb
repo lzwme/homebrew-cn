@@ -18,8 +18,8 @@ class Xmodmap < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8866422cea1dfecb73e767819e793be7d9f6acf91c1f21611809126c54985c4"
   end
 
-  depends_on "pkg-config"  => :build
-  depends_on "xorgproto"   => :build
+  depends_on "pkgconf" => :build
+  depends_on "xorgproto" => :build
   depends_on "xorg-server" => :test
 
   depends_on "libx11"

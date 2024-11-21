@@ -27,13 +27,16 @@ class Wmctrl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f35104a632334a639f0c7d233baea5a9177a2d43fe78cd563870c97b394d78bc"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "gettext"
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libice"
   depends_on "libsm"
   depends_on "libx11"
   depends_on "libxmu"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Fix for 64-bit arch. See:
   # https:bugs.debian.orgcgi-binbugreport.cgi?bug=362068
@@ -43,9 +46,7 @@ class Wmctrl < Formula
   end
 
   def install
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

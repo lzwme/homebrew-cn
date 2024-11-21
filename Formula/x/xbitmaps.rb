@@ -10,31 +10,29 @@ class Xbitmaps < Formula
     sha256 cellar: :any_skip_relocation, all: "a2d50475647c9d98e3822fbbf383231d0757fcbfd429d6999ad263ff692dcfb2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~'EOS'
+    (testpath/"test.c").write <<~'C'
       #include <X11/bitmaps/gray>
       #include <stdio.h>
       int main() {
         printf("gray_width = %d\n", gray_width);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}"
     assert_equal "gray_width = 2", shell_output("./test").strip
   end

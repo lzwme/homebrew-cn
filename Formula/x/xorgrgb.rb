@@ -19,20 +19,18 @@ class Xorgrgb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6c3eca82aa9624b8b521d9d0e5cec68b9391538717c36c4d438edc75bb0085f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

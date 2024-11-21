@@ -18,7 +18,7 @@ class Xrootd < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "davix"
   depends_on "krb5"
@@ -67,9 +67,9 @@ class Xrootd < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}xrootd -v 2>&1")
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import XRootD
       from XRootD import client
-    EOS
+    PYTHON
   end
 end

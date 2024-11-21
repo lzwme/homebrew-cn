@@ -25,7 +25,7 @@ class Xboard < Formula
     depends_on "gettext" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "fairymax"
   depends_on "gdk-pixbuf"

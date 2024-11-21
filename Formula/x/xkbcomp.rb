@@ -16,13 +16,13 @@ class Xkbcomp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6be95ca9ca5cb1c2afaa4e0d2cf31d75f5daa5e543a824c3c9cb9f6d895c25e2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libx11"
   depends_on "libxkbfile"
 
   def install
-    system "./configure", *std_configure_args, "--with-xkb-config-root=#{HOMEBREW_PREFIX}/share/X11/xkb"
+    system "./configure", "--with-xkb-config-root=#{HOMEBREW_PREFIX}/share/X11/xkb", *std_configure_args
     system "make"
     system "make", "install"
     # avoid cellar in bindir

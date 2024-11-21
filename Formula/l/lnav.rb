@@ -1,8 +1,8 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
   homepage "https:lnav.org"
-  url "https:github.comtstacklnavreleasesdownloadv0.12.2lnav-0.12.2.tar.gz"
-  sha256 "25356f8bb4febc6935d6e675d1803969f6eb44d9997eb8cd7dc9cbab56c65972"
+  url "https:github.comtstacklnavreleasesdownloadv0.12.3lnav-0.12.3.tar.gz"
+  sha256 "db5eee92aa00ce0b0614186c918a11db2fe6c06104fb615ad82cbea295ea6dac"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Lnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5b496dcf9673b71030d90616ecaf58257bcfc387c14bd6cbdd13ba0557f336f1"
-    sha256 cellar: :any,                 arm64_sonoma:   "80b8918f94160300cff29745767717b71af097c7d296948d90c44e69e45ba156"
-    sha256 cellar: :any,                 arm64_ventura:  "d1b3ffd05f8a7b4f3b49d0d14839eb13ba67fa52c5e7b85a5dd99ad554610627"
-    sha256 cellar: :any,                 arm64_monterey: "d0b50c12666431385fafaeebf06f20fa58bda84653abf2cb178a62bc0c86a40a"
-    sha256 cellar: :any,                 sonoma:         "7eedd1448358cb92f27634ab5d28710f45ec81c52505e90cb647e535c1666e56"
-    sha256 cellar: :any,                 ventura:        "10c576bef574f0c5677feb155b2cc01f28295fa7fadbe46d8b3a5c28bad83586"
-    sha256 cellar: :any,                 monterey:       "9501d57fead1c7f49bce092ce360dd177c60f454a2e5254f21d061fab221181d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ab0fd59e71d64c25540c4ab06b5d138b0e61a272be5b7474974ddc19ba6fbd9"
+    sha256 cellar: :any,                 arm64_sequoia: "8cfe7f2d7e7b5e91d73a0403114e39b7002d6a30118b473829e173d02e002cea"
+    sha256 cellar: :any,                 arm64_sonoma:  "818f11e9ea89c2846e52dd55bde68e120134559724606ce6d9dfca6e75758a7a"
+    sha256 cellar: :any,                 arm64_ventura: "006e087ddba4a2d4d952b07519b6b133d7789e26128538228a5497fd400da9eb"
+    sha256 cellar: :any,                 sonoma:        "b1c1c47cf54a10a5fb050785ba8bc8e2ac6d104b9bace376c6075b9990659f7d"
+    sha256 cellar: :any,                 ventura:       "4c8db944f681b29e2510cce15fa5f0efa23d2b80ba26d11597b5330c70025877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2911a883a7cd44aab2c9237748d379c74399e9ae180e8108e2134ef43a1dcacf"
   end
 
   head do

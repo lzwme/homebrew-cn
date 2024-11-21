@@ -39,7 +39,7 @@ class Wownero < Formula
 
   depends_on "cmake" => :build
   depends_on "miniupnpc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost@1.85"
   depends_on "hidapi"
   depends_on "libsodium"

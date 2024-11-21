@@ -1,20 +1,20 @@
 class PhpAT84Debug < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchivee44b7625c598dba3a33d2a7d10b0863d26ef326a.tar.gz?commit=e44b7625c598dba3a33d2a7d10b0863d26ef326a"
+  url "https:github.comphpphp-srcarchiveda81b5c8d220257f79b70afd8a3e7e437c4f4869.tar.gz?commit=da81b5c8d220257f79b70afd8a3e7e437c4f4869"
   version "8.4.0"
-  sha256 "7a7e2c8652d1f8320fbda77e0f792a0c83db25b2c01775b829ebdf8569bef9b7"
+  sha256 "294b56d57ae9e1b0273197ee2aa35354ff14f412f6a41798dae5362f12b29bc3"
   license "PHP-3.01"
   revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 15
-    sha256 arm64_sequoia: "7f35fa4ad5f3941dcea0198f88ede4b0cf119362042f61c12d0d3da48174084f"
-    sha256 arm64_sonoma:  "5b223c294bc9110f1479be4db0412cc29af9af17211a7d44a22da54506264ef6"
-    sha256 arm64_ventura: "ebb02532ce28c821ad7d05f9862f1b7bb7b1dc206dfcd52e22bf0c03057e6c9e"
-    sha256 ventura:       "ad04fe657158f16adff813a01f28d0bddedcc2dd782c0622bbbe21c8b4361fd9"
-    sha256 x86_64_linux:  "c6363387449a25f9b2db5925582f7a63a046d1a4d1ae47cc5cefbe0817aeb5ee"
+    rebuild 16
+    sha256 arm64_sequoia: "ebf699bc48f72ee6b4b47f4a1878481e5593627b234c6010564507b621389db5"
+    sha256 arm64_sonoma:  "835431de5b3e3ec43d27542150254771786b338520ec41d0aac66de840e05169"
+    sha256 arm64_ventura: "e4c0770860773e91e76fe1f72d1722a40355b9a38fd34acb6955ea287f6e015e"
+    sha256 ventura:       "5710a58b2a72afb056f66eb3795198b2a0df817a96e5dd6f194caf1c717e0a94"
+    sha256 x86_64_linux:  "308986d24398ef972dac5ea0a24f9e95af69d407bda252cd5b454c62552991f3"
   end
 
   keg_only :versioned_formula
