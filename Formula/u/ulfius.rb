@@ -17,7 +17,7 @@ class Ulfius < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "gnutls"
   depends_on "jansson"
   depends_on "libmicrohttpd"

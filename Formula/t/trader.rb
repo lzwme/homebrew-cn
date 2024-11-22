@@ -21,20 +21,16 @@ class Trader < Formula
     sha256 x86_64_linux:   "39db68dcc4e59eb947e208f403ae5f1f3a8abbefe5b530339b2bd860768288b8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "ncurses" # The system version does not work correctly
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH",
-        Formula["ncurses"].opt_libexec/"lib/pkgconfig"
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --with-libintl-prefix=#{Formula["gettext"].opt_prefix}
     ]
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

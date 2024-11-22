@@ -6,6 +6,7 @@ class AnsibleAT9 < Formula
   url "https://files.pythonhosted.org/packages/e4/fb/4a53d3cc1b3d6cffc9d62ac968815897e6d8f28db242123d15e469de9870/ansible-9.12.0.tar.gz"
   sha256 "54557393fae5768ee6430491c55b74f7831d89dd198d3d74431edaae44004298"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/ansible/releases.xml"
@@ -16,12 +17,12 @@ class AnsibleAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d5cd79e7a360a27280335d72dc0c7a883bc1d761bf8dfb85a197c6ad4b1cb295"
-    sha256 cellar: :any,                 arm64_sonoma:  "3debf499e17520d4d92d54f65dd91eb52d1a8b55326cc5b849a54a5bf47a4f5d"
-    sha256 cellar: :any,                 arm64_ventura: "f866596fdd071872b3977e1363d09ec8232d6dd4a12bda5b8570d687ecc34d3d"
-    sha256 cellar: :any,                 sonoma:        "3f4d79861f39b34beb0e6dcfe4ccc7236be9c500764b57025f8907d50434c0b6"
-    sha256 cellar: :any,                 ventura:       "5db78ab39c3f0197d717037e1ca6c9af8aefc97da813a0e3e0406e9e44389755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe1d26d1991c392166ed30b58cf8c2b76cc6d382505d609813742d0b2a395297"
+    sha256 cellar: :any,                 arm64_sequoia: "cdbb667ef602069efe8c1296000df573bd5243e5815c66160725af83c6737797"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4ee28346861590e5434d4a33ae3aa1ae26586b3a0b128319542743d0fdbc467"
+    sha256 cellar: :any,                 arm64_ventura: "982f13abefb877d8eab503c07d11a09dd8559c1ab6d9e06d824efa302beba035"
+    sha256 cellar: :any,                 sonoma:        "1f607a2eddcd10cdbe69c73170e6ee1d1bcc885ed0b27ce6c7a23164577790a5"
+    sha256 cellar: :any,                 ventura:       "deba381ca48060259d55ff0e96a32e2948f60b2f92942a8c6275a1cedc662b63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a75b75a66518a2e265039b1242a1d71a79806411878201e01875d17c63d0502"
   end
 
   keg_only :versioned_formula
@@ -361,6 +362,11 @@ class AnsibleAT9 < Formula
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
 
+  resource "pynetbox" do
+    url "https://files.pythonhosted.org/packages/1a/f9/e6c524e5ddc4c2788ab2f5ee1ab2d9afad49cad9c7cd3a372cf5b8433ed3/pynetbox-7.4.1.tar.gz"
+    sha256 "3f82b5964ca77a608aef6cc2fc48a3961f7667fbbdbb60646655373e3dae00c3"
+  end
+
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/8c/d5/e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2/pyparsing-3.2.0.tar.gz"
     sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
@@ -409,6 +415,11 @@ class AnsibleAT9 < Formula
   resource "python-string-utils" do
     url "https://files.pythonhosted.org/packages/10/91/8c883b83c7d039ca7e6c8f8a7e154a27fdeddd98d14c10c5ee8fe425b6c0/python-string-utils-1.0.0.tar.gz"
     sha256 "dcf9060b03f07647c0a603408dc8b03f807f3b54a05c6e19eb14460256fac0cb"
+  end
+
+  resource "pytz" do
+    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
+    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pywinrm" do

@@ -23,14 +23,13 @@ class Vcftools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12d75148c3b77914e113d975b122966b5936d05870330f66dc7aa6dc81def2f0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "htslib"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-pmdir=libperl5site_perl"
+    system ".configure", "--disable-silent-rules",
+                          "--with-pmdir=libperl5site_perl",
+                          *std_configure_args
     system "make", "install"
 
     bin.env_script_all_files(libexec"bin", PERL5LIB: lib"perl5site_perl")

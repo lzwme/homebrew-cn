@@ -17,7 +17,7 @@ class Securefs < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "tclap" => :build
   depends_on "abseil"
   depends_on "argon2"

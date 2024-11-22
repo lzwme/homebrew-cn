@@ -20,7 +20,7 @@ class Urh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7249ef337f50461015896cc171db6501f3ca2b3d0b9e0664a2c32ba51fb7629"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "hackrf"
   depends_on "numpy"
   depends_on "pyqt@5"

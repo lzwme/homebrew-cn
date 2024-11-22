@@ -17,7 +17,7 @@ class Tldr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1e92ca409631c8006533f00706aeb966dcd6d7ee175b51c8aceeab523ebb3f5"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libzip"
 
   uses_from_macos "curl"

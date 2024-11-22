@@ -1,18 +1,18 @@
 class Ktor < Formula
   desc "Generates Ktor projects through the command-line interface"
   homepage "https:github.comktorioktor-cli"
-  url "https:github.comktorioktor-cliarchiverefstags0.3.0.tar.gz"
-  sha256 "32a6ded9d4b27de47a4d628894d892bb464a984dcd762e5678b3aa2dee0095d5"
+  url "https:github.comktorioktor-cliarchiverefstags0.3.1.tar.gz"
+  sha256 "d733b4e1bdb6dc1c24bdc5952805449e5fab974728c1491cbb680d94c88687bd"
   license "Apache-2.0"
   head "https:github.comktorioktor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc9d7a77698749a4f3794d4dc6554bfe340124fce946052c3a07590e37fd4428"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc9d7a77698749a4f3794d4dc6554bfe340124fce946052c3a07590e37fd4428"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc9d7a77698749a4f3794d4dc6554bfe340124fce946052c3a07590e37fd4428"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89c03c35c64647ed36aac771b4f09eacbdee8566a2ea459aa8c6473515759b73"
-    sha256 cellar: :any_skip_relocation, ventura:       "89c03c35c64647ed36aac771b4f09eacbdee8566a2ea459aa8c6473515759b73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f3a77be3b68e5095fd14eb239d7c439ee46f76ee341096f6136fb452dad4a69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5695e2ba9dab74be6437b89e40655a77da6f174b46ff08560c7a25b3adc69fe6"
+    sha256 cellar: :any_skip_relocation, ventura:       "5695e2ba9dab74be6437b89e40655a77da6f174b46ff08560c7a25b3adc69fe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea8d0c87d24e4d2adec9724111c151e4a2f9034a32a12ea979ada403a84ed5e"
   end
 
   depends_on "go" => :build

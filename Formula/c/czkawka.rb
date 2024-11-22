@@ -24,7 +24,7 @@ class Czkawka < Formula
   depends_on "libheif"
   depends_on "librsvg"
   depends_on "pango"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "webp-pixbuf-loader"
 
   uses_from_macos "bzip2"

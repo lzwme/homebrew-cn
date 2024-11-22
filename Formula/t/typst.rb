@@ -21,7 +21,7 @@ class Typst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "66c9c3b7c7e3899fef7daacea96eb2a309add3524747e2fd4164a4afb9175169"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
@@ -42,7 +42,7 @@ class Typst < Formula
   test do
     (testpath"Hello.typ").write("Hello World!")
     system bin"typst", "compile", "Hello.typ", "Hello.pdf"
-    assert_predicate testpath"Hello.pdf", :exist?
+    assert_path_exists testpath"Hello.pdf"
 
     assert_match version.to_s, shell_output("#{bin}typst --version")
   end

@@ -1,20 +1,18 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https:github.comcloudentityoauth2c"
-  url "https:github.comcloudentityoauth2carchiverefstagsv1.16.0.tar.gz"
-  sha256 "367589bb203347df7c63b413a2b39a1a9f9f6e125974b662932c10949fddae83"
+  url "https:github.comcloudentityoauth2carchiverefstagsv1.17.0.tar.gz"
+  sha256 "5ce0453584c79ebc5679a8613b22da21ace5545aec40da54f93aac2ffcbddc4b"
   license "Apache-2.0"
   head "https:github.comcloudentityoauth2c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f7c393a74886ddb076c3e4a741a92c66475b42d1fe02bdcda4e082a29f86e5d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70d78e0f5915856c6ee1e4b943d0010b11b9b327ea3f613dadeeebfdc8b0e123"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70d78e0f5915856c6ee1e4b943d0010b11b9b327ea3f613dadeeebfdc8b0e123"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70d78e0f5915856c6ee1e4b943d0010b11b9b327ea3f613dadeeebfdc8b0e123"
-    sha256 cellar: :any_skip_relocation, sonoma:         "beae09c09015b3112b922e046b62e921d743289a8ea024f25ec65af046307533"
-    sha256 cellar: :any_skip_relocation, ventura:        "beae09c09015b3112b922e046b62e921d743289a8ea024f25ec65af046307533"
-    sha256 cellar: :any_skip_relocation, monterey:       "beae09c09015b3112b922e046b62e921d743289a8ea024f25ec65af046307533"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f816bcd236dafd4150fef77600a5528b150bedab186554aab0ad4ed61dd27ffc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0987135ef9d32d07260ecf96a5fa8e1d49dd1b1b73b43d04cb241462f7be9585"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0987135ef9d32d07260ecf96a5fa8e1d49dd1b1b73b43d04cb241462f7be9585"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0987135ef9d32d07260ecf96a5fa8e1d49dd1b1b73b43d04cb241462f7be9585"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f56879d8aad33150f2d723ba48e3ec40676baa8d351695a49f305674ef9b4ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f56879d8aad33150f2d723ba48e3ec40676baa8d351695a49f305674ef9b4ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "094855633d25467fe90cb4e1d89fc13d25e606cffcfa6a3e69fb64f6a2d7c6c4"
   end
 
   depends_on "go" => :build

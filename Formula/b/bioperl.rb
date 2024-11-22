@@ -28,15 +28,17 @@ class Bioperl < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "perl"
 
-  uses_from_macos "zlib"
+  uses_from_macos "expat"
+  uses_from_macos "libxml2"
 
   def install
+    ENV["ALIEN_INSTALL_TYPE"] = "system"
     ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
-    system "cpanm", "--self-contained", "-l", libexec, "DBI" unless OS.mac?
-    system "cpanm", "--verbose", "--self-contained", "-l", libexec, "."
+    system "cpanm", "--notest", "--self-contained", "--local-lib", libexec, "DBI" unless OS.mac?
+    system "cpanm", "--notest", "--self-contained", "--local-lib", libexec, "."
     bin.env_script_all_files libexec, "PERL5LIB" => ENV["PERL5LIB"]
     libexec.glob("binbp_*") do |executable|
       (binexecutable.basename).write_env_script executable, PERL5LIB: ENV["PERL5LIB"]

@@ -1,10 +1,19 @@
 class Augeas < Formula
   desc "Configuration editing tool and API"
   homepage "https:augeas.net"
-  url "https:github.comhercules-teamaugeasreleasesdownloadrelease-1.14.1augeas-1.14.1.tar.gz"
-  sha256 "368bfdd782e4b9c7163baadd621359c82b162734864b667051ff6bcb57b9edff"
   license "LGPL-2.1-or-later"
-  head "https:github.comhercules-teamaugeas.git", branch: "master"
+
+  stable do
+    url "https:github.comhercules-teamaugeasreleasesdownloadrelease-1.14.1augeas-1.14.1.tar.gz"
+    sha256 "368bfdd782e4b9c7163baadd621359c82b162734864b667051ff6bcb57b9edff"
+
+    # Fixes `implicit-function-declaration` error
+    # Remove when merged and released
+    patch do
+      url "https:github.comhercules-teamaugeascommit26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
+      sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
+    end
+  end
 
   livecheck do
     url :stable
@@ -24,29 +33,25 @@ class Augeas < Formula
     sha256 x86_64_linux:   "b42ec1edf00ea7a66acff5ea7286a68b5bbbfa49442a3ab818f8c6c13eafdb32"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  head do
+    url "https:github.comhercules-teamaugeas.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "bison" => :build
+    depends_on "libtool" => :build
+  end
+
+  depends_on "pkgconf" => :build
   depends_on "readline"
 
   uses_from_macos "libxml2"
 
-  # Fixes `implicit-function-declaration` error
-  # Remove when merged and released
-  patch do
-    url "https:github.comhercules-teamaugeascommit26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
-    sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
-  end
-
   def install
-    if build.head?
-      system ".autogen.sh", *std_configure_args
-    else
-      system ".configure", *std_configure_args
-    end
+    ENV.append "LDFLAGS", "-L#{Formula["readline"].opt_lib}"
 
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *std_configure_args
     system "make", "install"
   end
 

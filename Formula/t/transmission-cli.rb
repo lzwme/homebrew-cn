@@ -24,7 +24,7 @@ class TransmissionCli < Formula
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "miniupnpc"
 
@@ -51,7 +51,7 @@ class TransmissionCli < Formula
       -DENABLE_WEB=OFF
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

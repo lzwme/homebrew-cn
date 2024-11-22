@@ -16,7 +16,7 @@ class Scriptisto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeb6d0436c7092c1056e3e1baca883a891a3dfb700517d28b6f07e4665151f3a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   def install

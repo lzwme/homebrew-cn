@@ -44,7 +44,7 @@ class Theora < Formula
   end
 
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
   depends_on "libvorbis"
 
@@ -52,9 +52,7 @@ class Theora < Formula
     cp Dir["#{Formula["libtool"].opt_share}libtool*config.{guess,sub}"], buildpath
     system ".autogen.sh" if build.head?
 
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --disable-oggtest
       --disable-vorbistest
       --disable-examples
@@ -62,7 +60,7 @@ class Theora < Formula
 
     args << "--disable-asm" if build.head?
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

@@ -36,13 +36,12 @@ class Toilet < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libcaca"
 
   def install
     system ".bootstrap" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

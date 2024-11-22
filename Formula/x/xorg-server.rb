@@ -18,7 +18,7 @@ class XorgServer < Formula
   depends_on "libxkbfile"  => :build
   depends_on "meson"       => :build
   depends_on "ninja"       => :build
-  depends_on "pkg-config"  => :build
+  depends_on "pkgconf"     => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto"   => :build
   depends_on "xtrans"      => :build

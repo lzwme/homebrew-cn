@@ -19,8 +19,8 @@ class Webkitgtk < Formula
   depends_on "gobject-introspection" => :build
   depends_on "gperf" => :build
   depends_on "perl" => :build
-  depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.12" => :build
+  depends_on "pkgconf" => [:build, :test]
+  depends_on "python@3.13" => :build
   depends_on "ruby" => :build
   depends_on "unifdef" => :build
   depends_on "at-spi2-core"
@@ -65,8 +65,6 @@ class Webkitgtk < Formula
   depends_on "wpebackend-fdo"
   depends_on "zlib"
 
-  fails_with gcc: "5"
-
   # Backport support for ICU 76+
   patch do
     url "https:github.comWebKitWebKitcommit63f7badbada070ebaadd318b2801818ecf7e7ea0.patch?full_index=1"
@@ -85,7 +83,7 @@ class Webkitgtk < Formula
       -DUSE_JPEGXL=ON
       -DUSE_LIBBACKTRACE=OFF
       -DUSE_LIBHYPHEN=OFF
-      -DPython_EXECUTABLE=#{which("python3.12")}
+      -DPython_EXECUTABLE=#{which("python3.13")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -149,7 +147,7 @@ class Webkitgtk < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.1").chomp.split
+    pkg_config_flags = shell_output("pkgconf --cflags --libs gtk+-3.0 webkit2gtk-4.1").chomp.split
     system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
     # While we cannot open a browser window in CI, we can make sure that the test binary runs
     # and produces the expected warning.

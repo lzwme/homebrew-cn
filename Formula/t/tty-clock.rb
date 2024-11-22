@@ -24,7 +24,7 @@ class TtyClock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b676f9ca583791e909a241667741a84289d4f75c5673fdd31176c48450ab701"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "ncurses"
 

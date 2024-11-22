@@ -29,7 +29,7 @@ class Utimer < Formula
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   uses_from_macos "perl" => :build
@@ -43,11 +43,8 @@ class Utimer < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
-      # Work around /usr/bin/ld: timer.o:(.bss+0x0): multiple definition of `ut_config'
-      ENV.append_to_cflags "-fcommon"
-    end
+    # Work around /usr/bin/ld: timer.o:(.bss+0x0): multiple definition of `ut_config'
+    ENV.append_to_cflags "-fcommon" if OS.linux?
     # Fix compile with newer Clang. Project is no longer maintained so cannot be fixed upstream.
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 

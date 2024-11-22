@@ -16,7 +16,7 @@ class SimpleTiles < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b9bddf6bb8104fa5720df1b5a14e1f15710a09f04ccd9901555cc61bfd9d568"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairo"
   depends_on "gdal"
@@ -59,7 +59,7 @@ class SimpleTiles < Formula
         return 0;
       }
     C
-    cflags = shell_output("pkg-config --cflags simple-tiles").chomp.split
+    cflags = shell_output("pkgconf --cflags simple-tiles").chomp.split
     system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
     system ".test"
   end

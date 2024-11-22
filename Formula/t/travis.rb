@@ -16,7 +16,7 @@ class Travis < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c12a3598e9cfdf75556100cbd028916085d5de6c6f49c9d50c27f8c5935fe6b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ruby"
 
   uses_from_macos "libffi"

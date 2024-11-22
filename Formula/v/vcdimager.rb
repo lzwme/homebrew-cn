@@ -24,7 +24,7 @@ class Vcdimager < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb6dace78a99bd83f85d18ebc1630cdd0dc81be0cc6a630661d4d8fb2cfe64ee"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libcdio"
   depends_on "popt"
 
@@ -35,9 +35,7 @@ class Vcdimager < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

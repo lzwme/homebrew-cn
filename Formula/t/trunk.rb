@@ -15,7 +15,7 @@ class Trunk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6bf06af4f18d5eec1541a9ae2d69e66b0087911605aa11c7655b3e6113191bb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 

@@ -24,7 +24,7 @@ class UniversalCtags < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "docutils" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.12" => :build
   depends_on "jansson"
   depends_on "libyaml"

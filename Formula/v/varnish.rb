@@ -22,7 +22,7 @@ class Varnish < Formula
 
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "pcre2"
 
@@ -31,9 +31,7 @@ class Varnish < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--localstatedir=#{var}"
+    system "./configure", "--localstatedir=#{var}", *std_configure_args
 
     # flags to set the paths used by varnishd to load VMODs and VCL,
     # pointing to the ${HOMEBREW_PREFIX}/ shared structure so other packages

@@ -16,7 +16,7 @@ class Tt < Formula
 
   depends_on "go" => :build
   depends_on "mage" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "curl"

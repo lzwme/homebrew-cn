@@ -39,7 +39,7 @@ class Tectonic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf78eafd736c3ef80d839669766e9c4ceb283772facbbe8aaa236084d6eda476"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "freetype"
   depends_on "graphite2"

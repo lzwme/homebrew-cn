@@ -19,7 +19,7 @@ class S3ql < Formula
   end
 
   depends_on "cython" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cryptography"
   depends_on "libffi"

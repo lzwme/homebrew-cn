@@ -19,7 +19,7 @@ class ShibbolethSp < Formula
     sha256 x86_64_linux:  "0dd53cb012bdb80804df6c2ae04476966cc9f337b4e5b2df5ee5cdef9017191c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "apr"
   depends_on "apr-util"

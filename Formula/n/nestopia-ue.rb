@@ -4,23 +4,22 @@ class NestopiaUe < Formula
   url "https:github.com0ldsk00lnestopiaarchiverefstags1.52.1.tar.gz"
   sha256 "c9c0bce673eb3b625b538b462e49c00ed1ee1ded1e0bad09be780076880968b5"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "186ac8f3ba4e9074efc2fbf75afeb3bf01cfc9b08a0a8c752b378b14fdd6bf75"
-    sha256 arm64_sonoma:   "bba218b8268f6062f2882471629ad25a240b9d0d9dd24efbafdf2cf7818b5638"
-    sha256 arm64_ventura:  "d633b03ad8d1774d29f6cd3f8a433e92074cddfffc75a9d1c4fdd3a1addb2ef0"
-    sha256 arm64_monterey: "115682347106093089ff1f3b045a8c5e7691bcb2b514b8792e64c4dff704ade6"
-    sha256 sonoma:         "d0d8b9beb96c6ac06a66dc9dae3fce6a5106aee96141c0e17ce92d5298d5bc05"
-    sha256 ventura:        "dc19708fed0ce2cd8dfcc3d8deb2b256408b7b453ffa23aba585486cbfcdf43e"
-    sha256 monterey:       "0579323fdd9048d6170abd75af16065cd958bcfcf45bfeb59c6e6318af8b706f"
-    sha256 x86_64_linux:   "baa896c57a6cc6a9c5d528bab2c67c828715115e4cfb83f71dda491e312fb3ec"
+    sha256 arm64_sequoia: "67af1d1abc8403e93fd13196f700615e07dd7034479f3822f1a4b00b1240899b"
+    sha256 arm64_sonoma:  "6c6067d902336e6e8ec57e70607c703b6a4d95e8639cde05375b667da2b2f97f"
+    sha256 arm64_ventura: "c57ba97017d1bed91703be29ff24a3cccf099fc962e0972e63c9af9c8ea54083"
+    sha256 sonoma:        "9c90b0b5a87130d6d4a64e37c76f9d358e238a9a87c5bf227448f0bd143dd8b7"
+    sha256 ventura:       "b0900fc15e84459bd860ec7ea552d9abebf8670dc3211440d9e585706d72cfc4"
+    sha256 x86_64_linux:  "9108695ba978f4218da904110ce3d22e0345aeb85edc7bc3152997e759af58a6"
   end
 
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fltk"
   depends_on "libarchive"

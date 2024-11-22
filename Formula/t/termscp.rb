@@ -15,7 +15,7 @@ class Termscp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c205c5785124bee178c50b264518b55a5365c83a53dc5e694dd473e8710c166e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 

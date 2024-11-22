@@ -17,7 +17,7 @@ class UutilsFindutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1960b1bfa82f3b45f2df7580e15e9114a04503da577ec1cc76a02c3e2191bb7d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
 

@@ -1,21 +1,17 @@
 class Libmtp < Formula
   desc "Implementation of Microsoft's Media Transfer Protocol (MTP)"
   homepage "https://libmtp.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/libmtp/libmtp/1.1.21/libmtp-1.1.21.tar.gz"
-  sha256 "c4ffa5ab8c8f48c91b0047f2e253c101c418d5696a5ed65c839922a4280872a7"
+  url "https://downloads.sourceforge.net/project/libmtp/libmtp/1.1.22/libmtp-1.1.22.tar.gz"
+  sha256 "c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e0faf33f3b1230922d73472334949d6d8b1265fbee9ff8bcf37898c8c4437971"
-    sha256 cellar: :any,                 arm64_sonoma:   "e5fcc63cb5a7c844f964a1bca0e6e55f072d0d117bfcc2b7683e0d1bab4e39b2"
-    sha256 cellar: :any,                 arm64_ventura:  "e410f7a6dab05b9bf74a0c179450d8e563f60802a2789da986841dcefd493f56"
-    sha256 cellar: :any,                 arm64_monterey: "f0127838120cb34a56434b2ff8b267f4f280cbb2d06ab48fb959d0f641e92f13"
-    sha256 cellar: :any,                 arm64_big_sur:  "a247cada4841c6a16d507ab969cf60f31dab5cd91f94d10a8a390be3b02df110"
-    sha256 cellar: :any,                 sonoma:         "4d46d38ea7378ab959fc439310264ab5ed42377729185d694406654fb5ff8b2a"
-    sha256 cellar: :any,                 ventura:        "af43ad4feaf03b0c822219131261fb5d24a2bebf39c198778229d9488c1040cd"
-    sha256 cellar: :any,                 monterey:       "330cb763b3a708340527235e892a0b45e086bdc559021ad7b06b6e9c230be21c"
-    sha256 cellar: :any,                 big_sur:        "65dff5ee98c8f7701e2b2e646509ac37a2420d07f384f762e4653c6f526f0ecd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c0baeb49e12c024050db966e3e8f9562131eed2a378ff29c0ed04e51ba812e"
+    sha256 cellar: :any,                 arm64_sequoia: "1142786084849b45e771a43aeb71e026fe248539172a196067679ff794eeb2fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "70073e53b78c742bb5270a210a9abd301a14ec61938d4c73b0a71105e84f4d3a"
+    sha256 cellar: :any,                 arm64_ventura: "122bcdc9ef407c2395f4022f9bebed02d4bf29eeebdeea7791b7f5fce1d7ddf7"
+    sha256 cellar: :any,                 sonoma:        "5c8a42810b2c8e462121c5a30b9f416d88b36854074f05c361a29a8b2c8d9691"
+    sha256 cellar: :any,                 ventura:       "5b5b1a0918987fb736d910a8b9153cb81c9a8f059ed5bd70af6fa19c18160695"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa88301d0fda571bdac1fee606be3dae4a207a403c658592f9a914f53c9e9579"
   end
 
   depends_on "pkg-config" => :build

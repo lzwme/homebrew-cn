@@ -20,13 +20,11 @@ class Treefrog < Formula
     sha256 x86_64_linux:  "0dadd26e6024a82c296e5faefa8576642ea0127aa69c22c868458ba55800eb3b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glog"
   depends_on "lz4"
   depends_on "mongo-c-driver"
   depends_on "qt"
-
-  fails_with gcc: "5"
 
   def install
     rm_r("3rdparty")

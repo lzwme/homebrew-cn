@@ -21,12 +21,10 @@ class Scrcpy < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "libusb"
   depends_on "sdl2"
-
-  fails_with gcc: "5"
 
   resource "prebuilt-server" do
     url "https:github.comGenymobilescrcpyreleasesdownloadv2.7scrcpy-server-v2.7", using: :nounzip

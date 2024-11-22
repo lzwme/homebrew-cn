@@ -21,7 +21,7 @@ class Valabind < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a026ff063223ac9af89b8fd78aa1d610cc20771b3995dd9b39bc2f2e6ac04c19"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "swig"

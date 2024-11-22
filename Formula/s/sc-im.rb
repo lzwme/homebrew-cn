@@ -17,7 +17,7 @@ class ScIm < Formula
     sha256 x86_64_linux:   "a597c79ce61df47871de641099781406f41918f54aa7572f5ebd34ee8cffcd78"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libxls"
   depends_on "libxlsxwriter"
   depends_on "libxml2"

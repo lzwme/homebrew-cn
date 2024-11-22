@@ -1,20 +1,18 @@
-class PhpAT84 < Formula
+class PhpAT83Debug < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchiveda81b5c8d220257f79b70afd8a3e7e437c4f4869.tar.gz?commit=da81b5c8d220257f79b70afd8a3e7e437c4f4869"
-  version "8.4.0"
-  sha256 "294b56d57ae9e1b0273197ee2aa35354ff14f412f6a41798dae5362f12b29bc3"
+  url "https:www.php.netdistributionsphp-8.3.14.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.14.tar.xz"
+  sha256 "58b4cb9019bf70c0cbcdb814c7df79b9065059d14cf7dbf48d971f8e56ae9be7"
   license "PHP-3.01"
-  revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 16
-    sha256 arm64_sequoia: "90a2a6c99a51700571ad529dd0d196e3b7f46c9e7eb4eb445210f1f995f7183e"
-    sha256 arm64_sonoma:  "6be83c2f2620f8df24a140bbf42d737114ca936a100798a6d0765aafbdb59607"
-    sha256 arm64_ventura: "b12cfcd04737814450e04a101e935664274aee354801024467699d383ce08f61"
-    sha256 ventura:       "9c05cd4f0a2193335fb4c9e1153fc109dbc0c8ce9415e87b84635bc40cc83b02"
-    sha256 x86_64_linux:  "8e93b443c9cab5950a6cfd79773e665ff9fe08a8c498b2039b8bf04a74857e42"
+    sha256 arm64_sequoia: "a5fef463e1598af6416412d47c3d875626ed3e9391c5a1ff1adbfbea71e3586f"
+    sha256 arm64_sonoma:  "3ca86d59df29d411658dac968433c29bce9fa1ccc814b237b736ea1b2519f19a"
+    sha256 arm64_ventura: "32e433e388d671ba6a7bf2720d3fae0180341052f8f47a37f29108ea63cf4c16"
+    sha256 ventura:       "141a91a46d45c1bc39a59bef97ec5bfc42d17d0ded5ecfd072bb80713305eabe"
+    sha256 x86_64_linux:  "0551768e4c58d43160320992afba58bd52f726013aad6c1dd2cd0c65b44fad1f"
   end
 
   keg_only :versioned_formula
@@ -28,13 +26,12 @@ class PhpAT84 < Formula
   depends_on "argon2"
   depends_on "aspell"
   depends_on "autoconf"
-  depends_on "capstone"
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -64,11 +61,11 @@ class PhpAT84 < Formula
     system ".buildconf", "--force"
 
     inreplace "configure" do |s|
-      s.gsub! "$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes' >devnull 2>&1",
-              "false"
-      s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'$($APXS -q LIBEXECDIR)",
+      s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes'`",
+              "APACHE_THREADED_MPM="
+      s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`",
               "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}httpdmodules'"
-      s.gsub! "-z $($APXS -q SYSCONFDIR)",
+      s.gsub! "-z `$APXS -q SYSCONFDIR`",
               "-z ''"
 
       # apxs will interpolate the @ in the versioned prefix: https:bz.apache.orgbugzillashow_bug.cgi?id=61944
@@ -125,6 +122,7 @@ class PhpAT84 < Formula
       --enable-bcmath
       --enable-calendar
       --enable-dba
+      --enable-debug
       --enable-exif
       --enable-ftp
       --enable-fpm
@@ -146,7 +144,6 @@ class PhpAT84 < Formula
       --enable-sysvshm
       --with-apxs2=#{Formula["httpd"].opt_bin}apxs
       --with-bz2#{headers_path}
-      --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre
@@ -319,7 +316,7 @@ class PhpAT84 < Formula
   end
 
   def php_version
-    version.to_s.split(".")[0..1].join(".")
+    version.to_s.split(".")[0..1].join(".") + "-debug"
   end
 
   service do
@@ -431,24 +428,11 @@ class PhpAT84 < Formula
 end
 
 __END__
-diff --git ascriptsphp-config.in bscriptsphp-config.in
-index 87c20089bb..879299f9cf 100644
---- ascriptsphp-config.in
-+++ bscriptsphp-config.in
-@@ -11,7 +11,7 @@ lib_dir="@orig_libdir@"
- includes="-I$include_dir -I$include_dirmain -I$include_dirTSRM -I$include_dirZend -I$include_dirext -I$include_dirextdatelib"
- ldflags="@PHP_LDFLAGS@"
- libs="@EXTRA_LIBS@"
--extension_dir="@EXTENSION_DIR@"
-+extension_dir='@EXTENSION_DIR@'
- man_dir=`eval echo @mandir@`
- program_prefix="@program_prefix@"
- program_suffix="@program_suffix@"
 diff --git abuildphp.m4 bbuildphp.m4
-index 176d4d4144..f71d642bb4 100644
+index 3624a33a8e..d17a635c2c 100644
 --- abuildphp.m4
 +++ bbuildphp.m4
-@@ -429,7 +429,7 @@ dnl
+@@ -425,7 +425,7 @@ dnl
  dnl Adds a path to linkpathrunpath (LDFLAGS).
  dnl
  AC_DEFUN([PHP_ADD_LIBPATH],[
@@ -457,15 +441,15 @@ index 176d4d4144..f71d642bb4 100644
      PHP_EXPAND_PATH($1, ai_p)
      ifelse([$2],,[
        _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
+@@ -470,7 +470,7 @@ dnl
+ dnl Add an include path. If before is 1, add in the beginning of INCLUDES.
  dnl
- AC_DEFUN([PHP_ADD_INCLUDE], [
- for include_path in m4_normalize(m4_expand([$1])); do
--  AS_IF([test "$include_path" != "usrinclude"], [
-+  AS_IF([test "$include_path" != "$PHP_OS_SDKPATHusrinclude"], [
-     PHP_EXPAND_PATH([$include_path], [ai_p])
-     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
-       [INCLUDES="-I$ai_p $INCLUDES"],
+ AC_DEFUN([PHP_ADD_INCLUDE],[
+-  if test "$1" != "usrinclude"; then
++  if test "$1" != "$PHP_OS_SDKPATHusrinclude"; then
+     PHP_EXPAND_PATH($1, ai_p)
+     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [
+       if test "$2"; then
 diff --git aconfigure.ac bconfigure.ac
 index 36c6e5e3e2..71b1a16607 100644
 --- aconfigure.ac

@@ -16,12 +16,11 @@ class Sispmctl < Formula
     sha256 x86_64_linux:   "db43f15862bbace1e2af6f17b257da7d3522011d82f00fa581d78fea1faa47db"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb-compat"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

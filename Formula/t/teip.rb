@@ -17,7 +17,7 @@ class Teip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "82477350d16f0ce242352d7d6046fb2a1a2024cd9ba064219012e5c451d9b582"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
 

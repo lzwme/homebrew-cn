@@ -35,7 +35,7 @@ class Sdl2Net < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl2"
 
   def install
@@ -43,8 +43,7 @@ class Sdl2Net < Formula
 
     system ".autogen.sh" if build.head?
 
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--disable-sdltest"
+    system ".configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
   end
 

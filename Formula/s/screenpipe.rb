@@ -19,7 +19,7 @@ class Screenpipe < Formula
   depends_on "ffmpeg"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
     depends_on "libxcb"
@@ -37,12 +37,10 @@ class Screenpipe < Formula
     assert_match "Usage", shell_output("#{bin}screenpipe -h")
 
     log_file = testpath".screenpipescreenpipe.#{Time.now.strftime("%Y-%m-%d")}.log"
-    pid = fork do
-      exec bin"screenpipe --debug setup"
-    end
+    pid = spawn bin"screenpipe --debug setup"
     sleep 200
 
-    assert_predicate log_file, :exist?
+    assert_path_exists log_file
     assert_match "screenpipe setup complete", File.read(log_file)
   ensure
     Process.kill("TERM", pid)

@@ -19,7 +19,7 @@ class Timg < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "ffmpeg"
   depends_on "glib"
@@ -38,8 +38,6 @@ class Timg < Formula
     depends_on "gdk-pixbuf"
     depends_on "gettext"
   end
-
-  fails_with gcc: "5" # rubberband is built with GCC
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

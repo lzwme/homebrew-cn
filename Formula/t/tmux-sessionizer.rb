@@ -15,11 +15,12 @@ class TmuxSessionizer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3f45a9334e24a1c2715a766b4fe387fb3a8ed737c7cf8e5e4837ef2ba27e468"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "libssh2"
   depends_on "openssl@3"
+
   uses_from_macos "zlib"
 
   def install

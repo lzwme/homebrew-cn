@@ -17,7 +17,7 @@ class Teller < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a575efbb6d5fc01d43cd7ba2f6df6c0fc121e696b7b176a8b309c55b955503"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 

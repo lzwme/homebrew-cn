@@ -18,7 +18,7 @@ class Twm < Formula
     sha256 x86_64_linux:   "11f8a44432789065dda5ccfabf83be674ca7cf37232a47005e75033fdb54a130"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libice"
   depends_on "libsm"

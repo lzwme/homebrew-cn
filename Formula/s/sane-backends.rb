@@ -32,7 +32,7 @@ class SaneBackends < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
@@ -55,11 +55,11 @@ class SaneBackends < Formula
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
+    system "./configure", "--enable-local-backends",
                           "--localstatedir=#{var}",
                           "--without-gphoto2",
-                          "--enable-local-backends",
-                          "--with-usb=yes"
+                          "--with-usb=yes",
+                          *std_configure_args
     system "make", "install"
   end
 

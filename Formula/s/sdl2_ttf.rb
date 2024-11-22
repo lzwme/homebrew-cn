@@ -32,7 +32,7 @@ class Sdl2Ttf < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
   depends_on "sdl2"

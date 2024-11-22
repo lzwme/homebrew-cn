@@ -18,26 +18,21 @@ class Xrdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b387dbe59b86aad4b9e297ed43cb2bfc07b7a5c893fa22cf36e8e8712cb722fa"
   end
 
-  depends_on "pkg-config"  => :build
+  depends_on "pkgconf" => :build
   depends_on "xorg-server" => :test
 
   depends_on "libx11"
   depends_on "libxmu"
 
   def install
-    system "./configure", "--with-cpp=/usr/bin/cpp", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", "--with-cpp=/usr/bin/cpp", *std_configure_args
     system "make", "install"
   end
 
   test do
+    spawn Formula["xorg-server"].bin/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
-
-    fork do
-      exec Formula["xorg-server"].bin/"Xvfb", ":1"
-    end
-
-    sleep 5
-
+    sleep 10
     system bin/"xrdb", "-query"
   end
 end

@@ -24,7 +24,7 @@ class ShairportSync < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libao"
   depends_on "libconfig"
   depends_on "libdaemon"
@@ -34,7 +34,7 @@ class ShairportSync < Formula
   depends_on "pulseaudio"
 
   def install
-    system "autoreconf", "-fvi"
+    system "autoreconf", "--force", "--install", "--verbose"
     args = %W[
       --with-libdaemon
       --with-ssl=openssl

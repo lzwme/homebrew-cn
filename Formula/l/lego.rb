@@ -1,8 +1,8 @@
 class Lego < Formula
   desc "Let's Encrypt client and ACME library"
   homepage "https:go-acme.github.iolego"
-  url "https:github.comgo-acmelegoarchiverefstagsv4.20.2.tar.gz"
-  sha256 "8b295378d4b2d3fed4f0df6d4d5d6aa712082729334848f89f776a8fec912f97"
+  url "https:github.comgo-acmelegoarchiverefstagsv4.20.4.tar.gz"
+  sha256 "ae4ec098b583ca4317765defe0e654fc54705a83f661455c30042701b7597fee"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lego < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc646fcf60cca6b5e069168514074873e22fe500382f6b912929ca92c09c5a46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc646fcf60cca6b5e069168514074873e22fe500382f6b912929ca92c09c5a46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc646fcf60cca6b5e069168514074873e22fe500382f6b912929ca92c09c5a46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d65e9b87b341d672eee6696f1a875b41f2b2a1215eddbb1e05fa4751cde406d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "d65e9b87b341d672eee6696f1a875b41f2b2a1215eddbb1e05fa4751cde406d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "262a00a4e48d23d151566d0e1aedb1591b27409b9323b1d893f90a0e55bf28e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae4b6eac5bc49ea5e42f4c10e4b830c51b3b7c855d5152f4c675a53ffc214690"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae4b6eac5bc49ea5e42f4c10e4b830c51b3b7c855d5152f4c675a53ffc214690"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae4b6eac5bc49ea5e42f4c10e4b830c51b3b7c855d5152f4c675a53ffc214690"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3486c5bc8dd78d6e8eaef7671849eb1a58588e701dbbf010afe06c7ceff02ac"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3486c5bc8dd78d6e8eaef7671849eb1a58588e701dbbf010afe06c7ceff02ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8510b1d2f30d898dd5be4c4f9e05c881efe612ae4ff1191545c70eb06f5eb1ac"
   end
 
   depends_on "go" => :build

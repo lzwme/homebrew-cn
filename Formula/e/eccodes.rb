@@ -1,8 +1,8 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.38.3-Source.tar.gz"
-  sha256 "fa7b7ffb22973ed1dfbeb208c042a67a805ab070f1288a0f1f0707a1020d1c81"
+  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.39.0-Source.tar.gz"
+  sha256 "0c4d746700acc49af9c878925f1b26bdd42443ff7c2d7c676deb2babb6847afb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "104afd7a17b4b5d749fa9a7a54511501026036aaf8bffa132065fe3685630286"
-    sha256 arm64_sonoma:  "26cbcb3e8a5e3f11eb0ea25e460c3a7106eb232faedc0666761f8640b3e4b5d6"
-    sha256 arm64_ventura: "e932a9059f36bc5ba8d8086501f3b09d0b9520d03c7dd80800756beabc2c0761"
-    sha256 sonoma:        "18ddf3ebf2f29f72853399ac7d7998c0da2a0eb85e3084e7ccf7705a52bf3c9d"
-    sha256 ventura:       "0dbc8e21456ba8effd6e91ab354bd6608b6a1abd251b272825a4bf9f0bcf16b1"
-    sha256 x86_64_linux:  "690ca4b2ec328d7868573ade44c8b6ff6731f82ac0eccac9d9c2e74c8ddff634"
+    sha256 arm64_sequoia: "038b023ee6a1abb809cfd90a56f1a866c070c12ceb84205dd2ec6e993c007666"
+    sha256 arm64_sonoma:  "bec847844e0379a2c1f7fd4b2f7662bc7055303071527f4d338e98162992f368"
+    sha256 arm64_ventura: "8bb29dbe986c04b46e576e4ae4135ad2d12fd59155b2c5fb95c8f01586a689a3"
+    sha256 sonoma:        "891bf650bf2adba6cc05c6a601af72eee52aeb437781ed1d7887a5a64872e385"
+    sha256 ventura:       "b3462d8c871a3a731e3ca62bc5f7bfd3a8ed49053e794a7d33e2e0d3ecbe5f0a"
+    sha256 x86_64_linux:  "3341656e4174c32fc58ad8f8c772030cbbd400e173069fbc031c42269a9284c8"
   end
 
   depends_on "cmake" => :build

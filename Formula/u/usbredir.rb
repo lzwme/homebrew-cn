@@ -23,7 +23,7 @@ class Usbredir < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libusb"
 
@@ -40,10 +40,7 @@ class Usbredir < Formula
         return usbredirparser_create() ? 0 : 1;
       }
     C
-    system ENV.cc, "test.c",
-                   "-L#{lib}",
-                   "-lusbredirparser",
-                   "-o", "test"
+    system ENV.cc, "test.c", "-L#{lib}", "-lusbredirparser", "-o", "test"
     system "./test"
   end
 end

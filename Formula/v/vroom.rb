@@ -19,13 +19,11 @@ class Vroom < Formula
   end
 
   depends_on "cxxopts" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
   depends_on "asio"
   depends_on macos: :mojave # std::optional C++17 support
   depends_on "openssl@3"
-
-  fails_with gcc: "5"
 
   def install
     # fixes https:github.comVROOM-Projectvroomissues997 , remove in version > 1.13.0

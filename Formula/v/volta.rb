@@ -22,13 +22,10 @@ class Volta < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e50806022ce887eb58b2880aff109e3a0f0a63827d9bf8ea3c543287500230b"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "bzip2"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

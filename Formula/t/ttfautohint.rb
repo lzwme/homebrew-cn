@@ -31,21 +31,19 @@ class Ttfautohint < Formula
     depends_on "automake" => :build
     depends_on "bison" => :build
     depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
   depends_on "libpng"
 
   def install
     system "./bootstrap" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--without-doc",
-                          "--without-qt"
+                          "--without-qt",
+                          *std_configure_args
     system "make", "install"
   end
 
@@ -59,6 +57,6 @@ class Ttfautohint < Formula
     end
     cp "#{font_dir}/#{font_name}", testpath
     system bin/"ttfautohint", font_name, "output.ttf"
-    assert_predicate testpath/"output.ttf", :exist?
+    assert_path_exists testpath/"output.ttf"
   end
 end

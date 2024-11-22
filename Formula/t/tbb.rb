@@ -15,7 +15,7 @@ class Tbb < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "swig" => :build
@@ -36,22 +36,21 @@ class Tbb < Formula
     tbb_site_packages = prefixsite_packages"tbb"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath},-rpath,#{rpath(source: tbb_site_packages)}"
 
-    args = %w[
+    args = %W[
       -DTBB_TEST=OFF
       -DTBB4PY_BUILD=ON
+      -DPYTHON_EXECUTABLE=#{which(python3)}
     ]
 
     system "cmake", "-S", ".", "-B", "buildshared",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
                     *args, *std_cmake_args
     system "cmake", "--build", "buildshared"
     system "cmake", "--install", "buildshared"
 
     system "cmake", "-S", ".", "-B", "buildstatic",
                     "-DBUILD_SHARED_LIBS=OFF",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
                     *args, *std_cmake_args
     system "cmake", "--build", "buildstatic"
     lib.install buildpath.glob("buildstatic*libtbb*.a")
@@ -75,7 +74,7 @@ class Tbb < Formula
       }
     CPP
 
-    system ENV.cxx, "cores-types.cpp", "--std=c++14", "-DTBB_PREVIEW_TASK_ARENA_CONSTRAINTS_EXTENSION=1",
+    system ENV.cxx, "cores-types.cpp", "-std=c++14", "-DTBB_PREVIEW_TASK_ARENA_CONSTRAINTS_EXTENSION=1",
                                       "-L#{lib}", "-ltbb", "-o", "core-types"
     system ".core-types"
 
@@ -104,7 +103,7 @@ class Tbb < Formula
       }
     CPP
 
-    system ENV.cxx, "sum1-100.cpp", "--std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
+    system ENV.cxx, "sum1-100.cpp", "-std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
     assert_equal "5050", shell_output(".sum1-100").chomp
 
     system python3, "-c", "import tbb"

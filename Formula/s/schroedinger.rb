@@ -33,13 +33,12 @@ class Schroedinger < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "orc"
 
   def install
-    system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args
 
     # The test suite is known not to build against Orc >0.4.16 in Schroedinger 1.0.11.
     # A fix is in upstream, so test when pulling 1.0.12 if this is still needed. See:

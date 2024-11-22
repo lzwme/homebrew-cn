@@ -24,7 +24,7 @@ class Sile < Formula
   end
 
   depends_on "jq" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "poppler" => :build
   depends_on "rust" => :build
 

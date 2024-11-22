@@ -17,7 +17,7 @@ class Vis < Formula
     sha256 x86_64_linux:   "6f7e0f61479a8c931556361f8c0dd42a913211ddff0a8b8dfb6b2240f6fb2c6b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtermkey"
   depends_on "lpeg"
   depends_on "lua"

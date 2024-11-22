@@ -5,15 +5,15 @@ class PhpAT70DebugZts < Formula
   version "7.0.33"
   sha256 "a40f969f584fb35b1caf1d2f5c45dfceee92f7e9d8e61b26b806f7537c5c645b"
   license "PHP-3.01"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "1d1ede6c55ecc42f0d9da156c5084081cce6398ff769f8b3ab01e2d611e48bb9"
-    sha256 arm64_sonoma:  "0b20e8363b6b43c8dfc1584bcc1a68d4c56fde61c678df626b1fd6776d326f0d"
-    sha256 arm64_ventura: "4028f9621240dd0b166d449493967944fd30320a7201de4ee4eed36a8913680c"
-    sha256 ventura:       "339a9ae6efe41756333fe2b11f521971141de62dcfd5593cac6766cc4a997640"
-    sha256 x86_64_linux:  "2f12bbb5aab785262db77becd1d3e16180ddd49905f76c1ade7651f7179e8820"
+    sha256 arm64_sequoia: "7cb5cb3b0edf3792454be40a3737fecde7f9dabaf5db29c4cea9ce221beef9d4"
+    sha256 arm64_sonoma:  "80d7c030c0096281490c861c5d16795fce031f9e25d4b9886d26e1f2289ce0b8"
+    sha256 arm64_ventura: "6776a371cb35cd0d6ceda60e7a60a52ebcdf908f3cf6ab779f0bf3134bc6886b"
+    sha256 ventura:       "baf83d86a9518a2abcfb69035bfcea399654725b6b6f05164259069bc928dec9"
+    sha256 x86_64_linux:  "e8a4271d7dda74a12f16ddae0ed09bdaf8921dc83092abbcde8f429ef1d7ddd1"
   end
 
   keg_only :versioned_formula
@@ -38,7 +38,7 @@ class PhpAT70DebugZts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -176,7 +176,7 @@ class PhpAT70DebugZts < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c@75"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@76"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

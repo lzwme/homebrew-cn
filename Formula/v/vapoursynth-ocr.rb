@@ -19,7 +19,7 @@ class VapoursynthOcr < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "tesseract"
   depends_on "vapoursynth"
 
@@ -27,8 +27,8 @@ class VapoursynthOcr < Formula
     # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
     # prefix, but we want it in a Cellar location instead.
     inreplace "meson.build",
-      "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
-      "install_dir : '#{lib}vapoursynth'"
+              "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
+              "install_dir : '#{lib}vapoursynth'"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

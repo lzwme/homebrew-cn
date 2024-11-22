@@ -12,7 +12,7 @@ class Uftrace < Formula
   end
 
   depends_on "pandoc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "capstone"
   depends_on "elfutils"
   depends_on "libunwind"
@@ -30,7 +30,7 @@ class Uftrace < Formula
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace Dir["check-depsMakefile{,.check}"], "pkg-config python3", "pkg-config python-#{pyver}"
 
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install", "V=1"
   end
 

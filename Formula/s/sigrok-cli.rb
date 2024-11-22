@@ -32,7 +32,7 @@ class SigrokCli < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libsigrok"
   depends_on "libsigrokdecode"

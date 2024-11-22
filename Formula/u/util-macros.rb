@@ -14,7 +14,7 @@ class UtilMacros < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "418d29093fca0889e64ecc830bd8d987269774aba25d302cf959338acc1363ac"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
     args = %W[

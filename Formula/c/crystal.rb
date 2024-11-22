@@ -43,11 +43,9 @@ class Crystal < Formula
   depends_on "llvm"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
-  depends_on "pkg-config" # @[Link] will use pkg-config if available
+  depends_on "pkgconf" # @[Link] will use pkg-config if available
 
   uses_from_macos "libffi" # for the interpreter
-
-  fails_with gcc: "5"
 
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to
@@ -84,8 +82,7 @@ class Crystal < Formula
   def install
     llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
                .to_formula
-    non_keg_only_runtime_deps = deps.reject(&:build?)
-                                    .map(&:to_formula)
+    non_keg_only_runtime_deps = deps.filter_map { |dep| dep.to_formula unless dep.build? }
                                     .reject(&:keg_only?)
 
     resource("boot").stage "boot"

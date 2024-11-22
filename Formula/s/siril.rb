@@ -19,7 +19,7 @@ class Siril < Formula
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
@@ -54,8 +54,6 @@ class Siril < Formula
     depends_on "gtk-mac-integration"
     depends_on "libomp"
   end
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     args = %w[

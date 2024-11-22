@@ -19,10 +19,10 @@ class Unicorn < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DUNICORN_SHARE=yes"
+    system "cmake", "-S", ".", "-B", "build", "-DUNICORN_SHARE=yes", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -71,8 +71,7 @@ class Unicorn < Formula
         return 0;
       }
     C
-    system ENV.cc, "-o", testpath"test1", testpath"test1.c",
-                   "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
+    system ENV.cc, "-o", "test1", "test1.c", "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
     system testpath"test1"
   end
 end

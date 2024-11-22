@@ -25,7 +25,7 @@ class Samba < Formula
 
   depends_on "bison" => :build
   depends_on "cmocka" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   # icu4c can get linked if detected by pkg-config and there isn't a way to force disable
   # without disabling spotlight support. So we just enable the feature for all systems.

@@ -30,7 +30,7 @@ class Vgmstream < Formula
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "jansson"
@@ -42,8 +42,6 @@ class Vgmstream < Formula
   on_macos do
     depends_on "libogg"
   end
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX"lib"

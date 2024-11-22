@@ -18,7 +18,7 @@ class Toxcore < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libconfig"
   depends_on "libsodium"
   depends_on "libvpx"
@@ -37,7 +37,7 @@ class Toxcore < Formula
         TOX_ERR_NEW err_new;
         Tox *tox = tox_new(NULL, &err_new);
         if (err_new != TOX_ERR_NEW_OK) {
-           return 1;
+          return 1;
         }
         return 0;
       }

@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v23.2.0/node-v23.2.0.tar.xz"
-  sha256 "3cf7a8a36682775693691f1de901bb5973ad3c0ae2aa87b1add9de515e7b2fc7"
+  url "https://registry.npmmirror.com/-/binary/node/v23.3.0/node-v23.3.0.tar.xz"
+  sha256 "42a6b5611aeec6723f4b6f98f1c205fc1fa32399df41dbed6a27083afd48c5c1"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2268c15d79e7fb4433f6ab0164f6c25cb89dabb1f4c72ce337035d535c9d439a"
-    sha256 arm64_sonoma:  "6846e8545ad4f44e5106abe13a54eb5ebaa86b8070f8d6da1b19b9cba17488ea"
-    sha256 arm64_ventura: "16d07bba770dfd200c41f280acf7c5ca99bca00e592e2e35f39996aa4561bfda"
-    sha256 sonoma:        "c38ad56339bea51eb3370e3bbd6df8eba831da8a500144e3623ba87ca66864a4"
-    sha256 ventura:       "e29b273bbe7972c961f3e3ab7b13ea6cf487f0f93347685d804069c684d1d1b4"
-    sha256 x86_64_linux:  "46bf3c3ca55577ddde781d1ed80a57409d2983746a73e674bd341df064ba1ea4"
+    sha256 arm64_sequoia: "c74bc85d40d6b375d1aababa75de93f9215325bf416f56da5a5eba77a2eb959d"
+    sha256 arm64_sonoma:  "e39b20ca30f2d4761530274e4fc1fd31dc0672c5bdf8b309cb3cf63d478b3ccc"
+    sha256 arm64_ventura: "2b31cb6c50c8eb36868cc665c195408a41b3c145ee4b52590e0f37f709595836"
+    sha256 sonoma:        "c4f7eb53d14a9eaf1c96ae49345753fdb41fe95d9cc92cd2ecb2fd2dd6de516d"
+    sha256 ventura:       "28a491eda835e37fed1f69d12c5967d86c25d5e8aa43c4c5664c6f042d8f6fa7"
+    sha256 x86_64_linux:  "b45281a4d43c4cc37ee1b9c87f6cae90cc52f78fa262d0d270e7780e0a68fbb8"
   end
 
   depends_on "pkg-config" => :build
@@ -51,17 +50,6 @@ class Node < Formula
   resource "npm" do
     url "https://registry.npmjs.org/npm/-/npm-10.9.0.tgz"
     sha256 "c12def16fe3efdc80b1e652d60903d807ac4b78b9e7c3e76f633f4b13a32897c"
-  end
-
-  # patch to fix `Unexpected end of JSON input` for webpack build, see https://github.com/nodejs/node/issues/55826
-  # upstream revert PR, https://github.com/nodejs/node/pull/55828
-  patch do
-    url "https://github.com/nodejs/node/commit/5f43e6d409c34d0ab3c3bbd879669f638e64d6a9.patch?full_index=1"
-    sha256 "a484ac9247389a80214be836ac8ca915f18a02a1f2acbab463abc991da4e41d2"
-  end
-  patch do
-    url "https://github.com/nodejs/node/commit/df0b75f39f2b79932d4145b8350f683caf6331f2.patch?full_index=1"
-    sha256 "64dbf49afbe15ef92c145a735941ff817b5664d9368891f17194ba4d21ee9069"
   end
 
   def install

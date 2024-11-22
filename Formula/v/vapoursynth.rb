@@ -26,7 +26,7 @@ class Vapoursynth < Formula
   depends_on "cython" => :build
   depends_on "libtool" => :build
   depends_on "nasm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13"
   depends_on "zimg"
 
@@ -38,8 +38,6 @@ class Vapoursynth < Formula
     fails_with :clang
   end
 
-  fails_with gcc: "5"
-
   def install
     if OS.mac? && MacOS.version <= :ventura
       ENV.llvm_clang
@@ -48,13 +46,12 @@ class Vapoursynth < Formula
 
     system ".autogen.sh"
     inreplace "Makefile.in", "pkglibdir = $(libdir)", "pkglibdir = $(exec_prefix)"
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-silent-rules",
-                          "--disable-dependency-tracking",
+    system ".configure", "--disable-silent-rules",
                           "--with-cython=#{Formula["cython"].bin}cython",
                           "--with-plugindir=#{HOMEBREW_PREFIX}libvapoursynth",
                           "--with-python_prefix=#{prefix}",
-                          "--with-python_exec_prefix=#{prefix}"
+                          "--with-python_exec_prefix=#{prefix}",
+                          *std_configure_args
     system "make", "install"
   end
 

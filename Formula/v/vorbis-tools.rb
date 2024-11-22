@@ -30,7 +30,7 @@ class VorbisTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5bf7cdf6990819e485ad13b82e4206b9b9d53864533b2015361893e1611c494"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libao"
   depends_on "libogg"

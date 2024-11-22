@@ -1849,6 +1849,7 @@ Homebrew-homebrew-core/Formula/f/flow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flowgrind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flowpipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fltk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fltk@1.3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fluent-bit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fluid-synth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flume.rb, Homebrew/homebrew-core, 0
@@ -3450,6 +3451,7 @@ Homebrew-homebrew-core/Formula/lib/libcss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcuefile.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libcutl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdaemon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdap.rb, Homebrew/homebrew-core, 1
@@ -3890,6 +3892,7 @@ Homebrew-homebrew-core/Formula/lib/libxrandr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxrender.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxres.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxscrnsaver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libxsd-frontend.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxshmfence.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxslt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxspf.rb, Homebrew/homebrew-core, 1
@@ -7032,7 +7035,7 @@ Homebrew-homebrew-core/Formula/x/xrdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xroar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xrootd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xsane.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xshogi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xsimd.rb, Homebrew/homebrew-core, 1
@@ -14514,10 +14517,10 @@ shivammathur-homebrew-php/Formula/php@8.2-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.2-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.2-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.2.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.4-debug-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.4-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.3-debug-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.3-debug.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.3-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.3.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.5-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.5-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.5-zts.rb, shivammathur/homebrew-php, 1

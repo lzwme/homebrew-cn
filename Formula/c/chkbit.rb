@@ -1,20 +1,18 @@
 class Chkbit < Formula
   desc "Check your files for data corruption"
   homepage "https:github.comlaktakchkbit"
-  url "https:github.comlaktakchkbitarchiverefstagsv5.2.0.tar.gz"
-  sha256 "6f6f2660fa917dcd2becd2bf1eb07a55a97b000beded278e9a31729c2e1607d4"
+  url "https:github.comlaktakchkbitarchiverefstagsv5.3.0.tar.gz"
+  sha256 "70c7800cf92245a8b76ad5485bbe299251ce1dc7894873a8ab198712ab407c41"
   license "MIT"
   head "https:github.comlaktakchkbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9971349107aa967e19ba88e18173e1fb95afc6aaf418b74a771c258d504a8309"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed01ab6fa1864b006275ac541bd53468f6d297631697b5ce4c4a0622c8d6e6ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
-    sha256 cellar: :any_skip_relocation, ventura:        "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
-    sha256 cellar: :any_skip_relocation, monterey:       "e56b64110591e002a3b7a9e15c3ad476084dd1ffd9d51d867b902034d68acfe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc68cb3135ebd1d3962e8bb5e3baa6e5f6fa744d3336ff3b0ae920b6dcc0f122"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7beb4e1287bd9e353d88ea6382bd1da7626789e3cab128dcadc95bb5ca599fa1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7beb4e1287bd9e353d88ea6382bd1da7626789e3cab128dcadc95bb5ca599fa1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7beb4e1287bd9e353d88ea6382bd1da7626789e3cab128dcadc95bb5ca599fa1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66e10e990ce4c166674ae01ac20dcbf4e023efd52cd640ac9bcd7a8d7c7ff3ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "66e10e990ce4c166674ae01ac20dcbf4e023efd52cd640ac9bcd7a8d7c7ff3ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3002b57bbd6b83bb1dc5e06a2eb0585ec87aefd3496fec983775a1c3cfa7b178"
   end
 
   depends_on "go" => :build

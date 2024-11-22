@@ -35,7 +35,7 @@ class Tmate < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "libssh"
   depends_on "msgpack"
@@ -46,9 +46,7 @@ class Tmate < Formula
     system "sh", "autogen.sh"
 
     ENV.append "LDFLAGS", "-lresolv"
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}"
+    system ".configure", "--sysconfdir=#{etc}", *std_configure_args
     system "make", "install"
   end
 

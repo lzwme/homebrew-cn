@@ -20,7 +20,8 @@ class Txr < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "61091144d680585ceeaa4415d161e60e00a356c30d92795b2922fb1b49c3afb8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
+
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "libffi", since: :catalina

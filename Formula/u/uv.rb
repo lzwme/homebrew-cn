@@ -15,7 +15,7 @@ class Uv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c81cdb8fd4db86bc01b3452375f6d5fc7e7d1126fa00ed328ccb50d4f6f6ab6c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "python" => :test

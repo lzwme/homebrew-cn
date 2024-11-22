@@ -26,7 +26,7 @@ class Uhd < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "libusb"
   depends_on "python@3.13"
@@ -34,8 +34,6 @@ class Uhd < Formula
   on_linux do
     depends_on "ncurses"
   end
-
-  fails_with gcc: "5"
 
   resource "mako" do
     url "https:files.pythonhosted.orgpackages6703fb5ba97ff65ce64f6d35b582aacffc26b693a98053fa831ab43a437cbddbMako-1.3.5.tar.gz"

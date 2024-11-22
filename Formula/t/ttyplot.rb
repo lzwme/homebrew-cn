@@ -21,7 +21,7 @@ class Ttyplot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d5ff7c36ca059d6505a68598fd91ff6b2a8f48837cce27d829a3648cbbbad50"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   uses_from_macos "ncurses"
 
   def install

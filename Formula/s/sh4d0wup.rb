@@ -15,7 +15,7 @@ class Sh4d0wup < Formula
   end
 
   depends_on "llvm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "pgpdump" => :test
 

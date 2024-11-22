@@ -23,7 +23,7 @@ class Vtclock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aaffb5793d37cea515c7e1c1d428225dcd58cb898d088f1113fadb76b9fd0e7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   uses_from_macos "ncurses"
 
   def install

@@ -34,7 +34,7 @@ class VampPluginSdk < Formula
   end
 
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libogg"
   depends_on "libsndfile"

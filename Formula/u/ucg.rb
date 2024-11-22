@@ -1,10 +1,23 @@
 class Ucg < Formula
   desc "Tool for searching large bodies of source code (like grep)"
   homepage "https:github.comgvansickleucg"
-  url "https:github.comgvansickleucgreleasesdownload0.3.3universalcodegrep-0.3.3.tar.gz"
-  sha256 "116d832bbc743c7dd469e5e7f1b20addb3b7a08df4b4441d59da3acf221caf2d"
   license "GPL-3.0-or-later"
-  head "https:github.comgvansickleucg.git", branch: "master"
+
+  stable do
+    url "https:github.comgvansickleucgreleasesdownload0.3.3universalcodegrep-0.3.3.tar.gz"
+    sha256 "116d832bbc743c7dd469e5e7f1b20addb3b7a08df4b4441d59da3acf221caf2d"
+
+    # Fix Xcode 9 compilation issue: https:github.comgvansickleucgissues118
+    # Patch adapted from upstream: https:github.comgvansickleucgcommit395f89
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches00615b433f5d2e3eaaf0075fbf4c63d0d732f8c8ucgxcode9.patch"
+      sha256 "3005fda5923cfa3093ce53ad84435fd7a5974f960b2e222e0e59afa90414af90"
+    end
+
+    # Backport fix for Linux
+    # Ref: https:github.comgvansickleucgcommit619be108a10b49cb22441c1cbf378ea630237a2d
+    patch :DATA
+  end
 
   bottle do
     rebuild 1
@@ -20,10 +33,15 @@ class Ucg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2e2db85a685f30bdda52dbc415278d3e070fc3b8aa8dd5529cede481d5e5e8eb"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  head do
+    url "https:github.comgvansickleucg.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
+  depends_on "pkgconf" => :build
   depends_on arch: :x86_64 # https:github.comgvansickleucgissues123
   depends_on "pcre2"
 
@@ -31,20 +49,9 @@ class Ucg < Formula
     depends_on "argp-standalone" => :build
   end
 
-  # Fix Xcode 9 compilation issue: https:github.comgvansickleucgissues118
-  # Patch adapted from upstream: https:github.comgvansickleucgcommit395f89
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches00615b433f5d2e3eaaf0075fbf4c63d0d732f8c8ucgxcode9.patch"
-    sha256 "3005fda5923cfa3093ce53ad84435fd7a5974f960b2e222e0e59afa90414af90"
-  end
-
   def install
     system "autoreconf", "-i" if build.head?
-
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -53,3 +60,17 @@ class Ucg < Formula
     assert_match "Hello World!", shell_output("#{bin}ucg 'Hello World' #{testpath}")
   end
 end
+
+__END__
+diff --git asrclibextDoubleCheckedLock.hpp bsrclibextDoubleCheckedLock.hpp
+index fbce12f5d11fd384becb37fd43ce74d254fc4ac3..be06119bb8d0bb42be77bece750c40c6724606be 100644
+--- asrclibextDoubleCheckedLock.hpp
++++ bsrclibextDoubleCheckedLock.hpp
+@@ -24,6 +24,7 @@
+ 
+ #include <atomic>
+ #include <functional>
++#include <mutex>
+ 
+ **
+  * Function template implementing a double-checked lock.

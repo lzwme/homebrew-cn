@@ -34,7 +34,7 @@ class Sc68 < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   uses_from_macos "zlib"

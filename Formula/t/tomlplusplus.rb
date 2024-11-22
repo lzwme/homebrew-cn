@@ -19,7 +19,7 @@ class Tomlplusplus < Formula
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -50,7 +50,7 @@ class Tomlplusplus < Formula
       }
     CPP
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs tomlplusplus").chomp.split
+    pkg_config_flags = shell_output("pkgconf --cflags --libs tomlplusplus").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++17", "-o", "test"
     assert_match "Title: TOML Example", shell_output(".test")
   end

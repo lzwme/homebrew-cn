@@ -2,9 +2,9 @@ class PhpZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.13.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.13.tar.xz"
-  sha256 "89adb978cca209124fe53fd6327bc4966ca21213a7fa2e9504f854e340873018"
+  url "https:www.php.netdistributionsphp-8.4.1.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.4.1.tar.xz"
+  sha256 "94c8a4fd419d45748951fa6d73bd55f6bdf0adaefb8814880a67baa66027311f"
   license "PHP-3.01"
 
   livecheck do
@@ -14,11 +14,11 @@ class PhpZts < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "5e0cd23800aa9ea672e1f00586b5e38e4a15761d2f4263a68835c393bcad93f2"
-    sha256 arm64_sonoma:  "3d7a9990bda670e33a87936e87a36f2e973431f8291cc308eceb673bf07e2649"
-    sha256 arm64_ventura: "654d7ef468853a869fdd38da48ec97588cde52a4c4c3e9e3cb8d7b75a48a73a7"
-    sha256 ventura:       "3d49f08830668149226d89d64970306bbe06e6b077bbf1bc3d0c3b3c5b9cc037"
-    sha256 x86_64_linux:  "44074e285f11ed4c4b4885caa94438df699e22538b2d0e25118802d63d3b3d1c"
+    sha256 arm64_sequoia: "93c053e932e74a3d36a6aabab5ad1238003e278502900779fe757100fe41bfcd"
+    sha256 arm64_sonoma:  "73e92acf780e60ef6a16234843181cabd22a95bdc302fa135eb178e9f1a69cb2"
+    sha256 arm64_ventura: "fd05aa03444b66c3c168af3a8dca9d54617af8434dfdc067efb29c929c9dae2b"
+    sha256 ventura:       "6b74b138a3f69587d753427fa9dbdf664ca730bb0095bd367a98757175704ea1"
+    sha256 x86_64_linux:  "d88311e0e76631a5b81642da1bb5a87d5906be165e9b133c85c2d81af11797ef"
   end
 
   head do
@@ -35,12 +35,13 @@ class PhpZts < Formula
   depends_on "argon2"
   depends_on "aspell"
   depends_on "autoconf"
+  depends_on "capstone"
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -71,11 +72,11 @@ class PhpZts < Formula
     system ".buildconf", "--force"
 
     inreplace "configure" do |s|
-      s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes'`",
-              "APACHE_THREADED_MPM="
-      s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`",
+      s.gsub! "$APXS_HTTPD -V 2>devnull | grep 'threaded:.*yes' >devnull 2>&1",
+              "false"
+      s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'$($APXS -q LIBEXECDIR)",
               "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}httpdmodules'"
-      s.gsub! "-z `$APXS -q SYSCONFDIR`",
+      s.gsub! "-z $($APXS -q SYSCONFDIR)",
               "-z ''"
     end
 
@@ -147,6 +148,7 @@ class PhpZts < Formula
       --enable-sysvshm
       --enable-zts
       --with-bz2#{headers_path}
+      --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre
@@ -452,10 +454,10 @@ end
 
 __END__
 diff --git abuildphp.m4 bbuildphp.m4
-index 3624a33a8e..d17a635c2c 100644
+index 176d4d4144..f71d642bb4 100644
 --- abuildphp.m4
 +++ bbuildphp.m4
-@@ -425,7 +425,7 @@ dnl
+@@ -429,7 +429,7 @@ dnl
  dnl Adds a path to linkpathrunpath (LDFLAGS).
  dnl
  AC_DEFUN([PHP_ADD_LIBPATH],[
@@ -464,15 +466,15 @@ index 3624a33a8e..d17a635c2c 100644
      PHP_EXPAND_PATH($1, ai_p)
      ifelse([$2],,[
        _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -470,7 +470,7 @@ dnl
- dnl Add an include path. If before is 1, add in the beginning of INCLUDES.
+@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
  dnl
- AC_DEFUN([PHP_ADD_INCLUDE],[
--  if test "$1" != "usrinclude"; then
-+  if test "$1" != "$PHP_OS_SDKPATHusrinclude"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [
-       if test "$2"; then
+ AC_DEFUN([PHP_ADD_INCLUDE], [
+ for include_path in m4_normalize(m4_expand([$1])); do
+-  AS_IF([test "$include_path" != "usrinclude"], [
++  AS_IF([test "$include_path" != "$PHP_OS_SDKPATHusrinclude"], [
+     PHP_EXPAND_PATH([$include_path], [ai_p])
+     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
+       [INCLUDES="-I$ai_p $INCLUDES"],
 diff --git aconfigure.ac bconfigure.ac
 index 36c6e5e3e2..71b1a16607 100644
 --- aconfigure.ac

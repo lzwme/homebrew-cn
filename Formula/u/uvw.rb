@@ -23,7 +23,7 @@ class Uvw < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "libuv"
 
   def install

@@ -21,7 +21,7 @@ class Uhdm < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.13" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "capnp"
 
   resource "orderedmultidict" do

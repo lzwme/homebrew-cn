@@ -22,7 +22,7 @@ class Visp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "eigen"
   depends_on "gsl"
@@ -52,7 +52,15 @@ class Visp < Formula
     depends_on "libnsl"
   end
 
-  fails_with gcc: "5"
+  # Backport fix for recent Apple Clang
+  patch do
+    url "https:github.comlagadicvispcommit8c1461661f99a5db31c89ede9946d2b0244f8123.patch?full_index=1"
+    sha256 "1e0126c731bf14dfe915088a4205a16ec0b6d5f2ea57d0e84f2f69b8e86b144f"
+  end
+  patch do
+    url "https:github.comlagadicvispcommite41aa4881e0d58c182f0c140cc003b37afb99d39.patch?full_index=1"
+    sha256 "c0dd6678f1b39473da885f7519daf16018e20209c66cdd04f660a968f6fadbba"
+  end
 
   # One usage of OpenCV Universal Intrinsics API altered starting from 4.9.0
   # Remove this patch if it's merged into a future version
@@ -139,11 +147,12 @@ class Visp < Formula
         return 0;
       }
     CPP
-    pkg_config_flags = shell_output("pkg-config --cflags --libs visp").chomp.split
+    pkg_config_flags = shell_output("pkgconf --cflags --libs visp").chomp.split
     system ENV.cxx, "test.cpp", "-o", "test", *pkg_config_flags
     assert_equal version.to_s, shell_output(".test").chomp
   end
 end
+
 __END__
 diff --git amodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp bmodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp
 index 8a47b5d437..c6d636bc9e 100644

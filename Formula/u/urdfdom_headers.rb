@@ -18,7 +18,7 @@ class UrdfdomHeaders < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
     ENV.cxx11

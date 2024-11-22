@@ -17,7 +17,7 @@ class Tracy < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "capstone"
   depends_on "freetype"
   depends_on "glfw"
@@ -29,8 +29,6 @@ class Tracy < Formula
     depends_on "tbb"
     depends_on "wayland"
   end
-
-  fails_with gcc: "5" # C++17
 
   def install
     args = %w[CAPSTONE GLFW FREETYPE].map { |arg| "-DDOWNLOAD_#{arg}=OFF" }
@@ -55,9 +53,7 @@ class Tracy < Formula
     assert_match "Tracy Profiler #{version}", shell_output("#{bin}tracy --help")
 
     port = free_port
-    pid = fork do
-      exec bin"tracy", "-p", port.to_s
-    end
+    pid = spawn bin"tracy", "-p", port.to_s
     sleep 1
   ensure
     Process.kill("TERM", pid)

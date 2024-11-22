@@ -20,7 +20,7 @@ class Silicon < Formula
   depends_on "harfbuzz"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "libxcb"
     depends_on "xclip"
   end
@@ -30,7 +30,7 @@ class Silicon < Formula
   end
 
   test do
-    (testpath"test.rs").write <<~EOF
+    (testpath"test.rs").write <<~RUST
       fn factorial(n: u64) -> u64 {
           match n {
               0 => 1,
@@ -41,10 +41,10 @@ class Silicon < Formula
       fn main() {
           println!("10! = {}", factorial(10));
       }
-    EOF
+    RUST
 
     system bin"silicon", "-o", "output.png", "test.rs"
-    assert_predicate testpath"output.png", :exist?
+    assert_path_exists testpath"output.png"
     expected_size = [894, 630]
     assert_equal expected_size, File.read("output.png")[0x10..0x18].unpack("NN")
   end

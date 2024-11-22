@@ -28,7 +28,7 @@ class Vstr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8346f2277202db06584db705dcf754a00ca364c547791d911e7c3395072b1b6e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # Fix flat namespace usage on macOS.
   patch :DATA
@@ -36,9 +36,7 @@ class Vstr < Formula
   def install
     ENV.append "CFLAGS", "--std=gnu89"
     ENV["ac_cv_func_stat64"] = "no" if Hardware::CPU.arm?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

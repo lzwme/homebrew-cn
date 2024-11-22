@@ -10,7 +10,7 @@ class Tup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "677b1e4dbb495cf13c2b30dd7267cff734c22226cb3720f154c6c7e552036033"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
 

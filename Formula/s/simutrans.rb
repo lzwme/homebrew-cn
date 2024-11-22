@@ -27,7 +27,7 @@ class Simutrans < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fluid-synth"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -40,8 +40,6 @@ class Simutrans < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  fails_with gcc: "5"
 
   resource "pak64" do
     url "https:downloads.sourceforge.netprojectsimutranspak64124-2simupak64-124-2.zip"
@@ -56,7 +54,7 @@ class Simutrans < Formula
     # These translations are dynamically generated.
     system ".toolsget_lang_files.sh"
 
-    system "cmake", "-B", "build", "-S", ".", *std_cmake_args, "-DSIMUTRANS_USE_REVISION=#{stable.specs[:revision]}"
+    system "cmake", "-B", "build", "-S", ".", "-DSIMUTRANS_USE_REVISION=#{stable.specs[:revision]}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "makeobj"
     system "cmake", "--build", "build", "--target", "nettool"

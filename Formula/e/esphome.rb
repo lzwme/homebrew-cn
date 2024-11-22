@@ -3,19 +3,20 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackages8c145c0df964abd46acc0d7df4bffe84c139283985030f4a26f18dba4e791720esphome-2024.10.3.tar.gz"
-  sha256 "bd35003604967918347f015cf718c00dcf02ca17d372af048242278784279f1c"
+  url "https:files.pythonhosted.orgpackagesfc16b2139bc3f6f8f1c92c09eefc51e78289fecc715b32ae96a87bfe6379c5acesphome-2024.11.0.tar.gz"
+  sha256 "2500eb27e2f5b8e4945670db2693286dc7501f90f3606779546dad30d4e04c19"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2a7a4c304d749c141523e0c564f1fb7597ca73d8e1801c646f5de72ad356b11b"
-    sha256 cellar: :any,                 arm64_sonoma:  "932dedca1d0aebc9c821071e047797f8e82b0da255abc58c3594c9a0eb923665"
-    sha256 cellar: :any,                 arm64_ventura: "a51bc24c7cfe3c0984bb8ec79f24c6cb4108c6dba67995f818b14009ca4a5eee"
-    sha256 cellar: :any,                 sonoma:        "718a9c219dac139ed93e22a71032c28c94919d72a8c8c1aed261b3aae56b45db"
-    sha256 cellar: :any,                 ventura:       "26da76b752efceeff3ba5bfbc2cd2151983790bd58475c14afa6e8de0cebc421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba0b4e71389e84b260fad78f322323084700fc54913818c36358cce0ebb5c1c1"
+    sha256 cellar: :any,                 arm64_sequoia: "9a1e06871a98fbf735b5141b9913adff358cdd476de02be81f445a54b51c7c98"
+    sha256 cellar: :any,                 arm64_sonoma:  "db5dc4001335863f1a19653a81f097f8a8391ceb295d92b24cb7bd249902e6d2"
+    sha256 cellar: :any,                 arm64_ventura: "84e7eec4ad3fb8166901fd39eecf90554fe1c863716931b248ab6eb2eea14361"
+    sha256 cellar: :any,                 sonoma:        "bc75b597f9ecaea141992dd22bf880b29f95ab07a353de04a0ec41c6d72c2a45"
+    sha256 cellar: :any,                 ventura:       "e8fcc422664e8e10a97533d994e0039a90b059ce0fcc816c17d674944339c502"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40544ce3f62aafd4383959177574e614171df7ad0ab282a74cd8fa6bdbbc6261"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libmagic"
@@ -46,6 +47,11 @@ class Esphome < Formula
     sha256 "4c8bc31ccdb51c7f7bd251f51c609e038d63e34219b44aa86e47576389880b4c"
   end
 
+  resource "appdirs" do
+    url "https:files.pythonhosted.orgpackagesd7d805696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40appdirs-1.4.4.tar.gz"
+    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
+  end
+
   resource "argcomplete" do
     url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
     sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
@@ -54,6 +60,11 @@ class Esphome < Formula
   resource "async-interrupt" do
     url "https:files.pythonhosted.orgpackagesef7c5a2d74465037b33ccdaf830e3d9ac008bccdbe4b0657983b90dc89191626async_interrupt-1.2.0.tar.gz"
     sha256 "d147559e2478501ad45ea43f52df23b246456715a7cb96e1aebdb4b71aed43d5"
+  end
+
+  resource "attrs" do
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "bitarray" do
@@ -91,19 +102,54 @@ class Esphome < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
+  resource "defcon" do
+    url "https:files.pythonhosted.orgpackages7a9eebce8d0eec62c7e6c676bf2e2e39feeafbfe78711355df4a7e5974b2ae06defcon-0.10.3.zip"
+    sha256 "56de26d7c75f164eea03e28bc11b4c769c68d705fa186dfcaeb56c27f9a4cc0c"
+  end
+
   resource "ecdsa" do
     url "https:files.pythonhosted.orgpackages5ed0ec8ac1de7accdcf18cfe468653ef00afd2f609faf67c423efbd02491051becdsa-0.19.0.tar.gz"
     sha256 "60eaad1199659900dd0af521ed462b793bbdf867432b3948e87416ae4caf6bf8"
   end
 
   resource "esphome-dashboard" do
-    url "https:files.pythonhosted.orgpackagesd41b65ccbe1bccfe3c9750f63ce4fd1f626bccbbc3d07c2c8cff01849e46bb7besphome_dashboard-20240620.0.tar.gz"
-    sha256 "971de2f19d8f51e7f289b08d890e333c4c1f817afaaff4d56bd4c1174604e5f0"
+    url "https:files.pythonhosted.orgpackages89aa4b734dcf66a733f0e6e811151fa326262726cbc2371fafb058a7fb557cdaesphome_dashboard-20241120.0.tar.gz"
+    sha256 "ffaca722250d75bec945c32edb4187dfa44d1dc7931657a09691375ad2c44b89"
   end
 
   resource "esptool" do
     url "https:files.pythonhosted.orgpackages1b8bf0d1e75879dee053874a4f955ed1e9ad97275485f51cb4bc2cb4e9b24479esptool-4.7.0.tar.gz"
     sha256 "01454e69e1ef3601215db83ff2cb1fc79ece67d24b0e5d43d451b410447c4893"
+  end
+
+  resource "fonttools" do
+    url "https:files.pythonhosted.orgpackagesd74e053fe1b5c0ce346c0a9d0557492c654362bafb14f026eae0d3ee98009152fonttools-4.55.0.tar.gz"
+    sha256 "7636acc6ab733572d5e7eec922b254ead611f1cdad17be3f0be7418e8bfaca71"
+  end
+
+  resource "freetype-py" do
+    url "https:files.pythonhosted.orgpackagesd09c61ba17f846b922c2d6d101cc886b0e8fb597c109cedfcb39b8c5d2304b54freetype-py-2.5.1.zip"
+    sha256 "cfe2686a174d0dd3d71a9d8ee9bf6a2c23f5872385cf8ce9f24af83d076e2fbd"
+  end
+
+  resource "fs" do
+    url "https:files.pythonhosted.orgpackages5da9af5bfd5a92592c16cdae5c04f68187a309be8a146b528eac3c6e30edbad2fs-2.4.16.tar.gz"
+    sha256 "ae97c7d51213f4b70b6a958292530289090de3a7e15841e108fbe144f069d313"
+  end
+
+  resource "gflanguages" do
+    url "https:files.pythonhosted.orgpackagesd247d281fde544fb23c734287b29fd24cdd5ecb6cbf7e4ff5c4b6b2a1afd5ee5gflanguages-0.7.1.tar.gz"
+    sha256 "823595d53f97536a8ace884336ad51959821f0681156b486869c2b5d3b933ed1"
+  end
+
+  resource "glyphsets" do
+    url "https:files.pythonhosted.orgpackages9dbed1526237e23f798e6072e552f64da19bd1afe4bf58b3b2b1e626cd6285bfglyphsets-1.0.0.tar.gz"
+    sha256 "7daf96d4818865c9f53f5c4d2a6d586ff4ceb9fe1074356722f94390e2ce70b6"
+  end
+
+  resource "glyphslib" do
+    url "https:files.pythonhosted.orgpackages875dc69ff84ad33983f95056dfc98e3e0d555d49a54eb5eaebea0468011e3449glyphslib-6.9.5.tar.gz"
+    sha256 "e081c3514d6bc12e62e5c849e1d222ae7607ff7ed58628848a72323e88277c6f"
   end
 
   resource "h11" do
@@ -146,6 +192,11 @@ class Esphome < Formula
     sha256 "b092a871b60f6a8f07f17950dc9f7098c8fe7d715b049bd4c24ee3752b90d645"
   end
 
+  resource "openstep-plist" do
+    url "https:files.pythonhosted.orgpackages9c36edffefa5f2f679fc7c146303c035fc18b015a1c5b7c48b5beb2d53abc2b9openstep_plist-0.4.0.tar.gz"
+    sha256 "453a56cdf534c6f42d24934d2ed7f95bc77c3d1a8acbc1881a4aa061a7d601a2"
+  end
+
   resource "packaging" do
     url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
     sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
@@ -156,14 +207,19 @@ class Esphome < Formula
     sha256 "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f"
   end
 
+  resource "pillow" do
+    url "https:files.pythonhosted.orgpackagescd74ad3d526f3bf7b6d3f408b73fde271ec69dfac8b81341a318ce825f2b3812pillow-10.4.0.tar.gz"
+    sha256 "166c1cd4d24309b30d61f79f4a9114b7b2313d7450912277855ff5dfd7cd4a06"
+  end
+
   resource "platformio" do
     url "https:files.pythonhosted.orgpackages32a04b1d18da2668a37b28beff3ecdc934940516302565c31a4cd4e17661a285platformio-6.1.16.tar.gz"
     sha256 "79387b45ca7df9c0c51cae82b3b0a40ba78d11d87cea385db47e1033d781e959"
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages746ee69eb906fddcb38f8530a12f4b410699972ab7ced4e21524ece9d546ac27protobuf-5.28.3.tar.gz"
-    sha256 "64badbc49180a5e401f373f9ce7ab1d18b63f7dd4a9cdc43c92b9f0b481cef7b"
+    url "https:files.pythonhosted.orgpackages555be3d951e34f8356e5feecacd12a8e3b258a1da6d9a03ad1770f28925f29bcprotobuf-3.20.3.tar.gz"
+    sha256 "2e3427429c9cffebf259491be0af70189607f365c2f41c7c3764af6f337105f2"
   end
 
   resource "puremagic" do
@@ -211,6 +267,11 @@ class Esphome < Formula
     sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
   end
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+  end
+
   resource "six" do
     url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
@@ -222,8 +283,8 @@ class Esphome < Formula
   end
 
   resource "starlette" do
-    url "https:files.pythonhosted.orgpackages61b56bceb93ff20bd7ca36e6f7c540581abb18f53130fabb30ba526e26fd819bstarlette-0.37.2.tar.gz"
-    sha256 "9af890290133b79fc3db55474ade20f6220a364a0402e0b556e7cd5e1e093823"
+    url "https:files.pythonhosted.orgpackages020a62fbd5697f6174041f9b4e2e377b6f383f9189b77dbb7d73d24624caca1dstarlette-0.39.2.tar.gz"
+    sha256 "caaa3b87ef8518ef913dac4f073dea44e85f73343ad2bdc17941931835b2a26a"
   end
 
   resource "tabulate" do
@@ -246,14 +307,24 @@ class Esphome < Formula
     sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
 
+  resource "ufolib2" do
+    url "https:files.pythonhosted.orgpackagescd953bec185d3712cdc0efc2cf70ec82dd275c5c4f5d505ce6ce4be996b89411ufolib2-0.16.1.tar.gz"
+    sha256 "ad53201d11e12f61b5fc5c2a81cb14cdbe68647cca6c00150ea1c0a1a9c7a32b"
+  end
+
+  resource "unicodedata2" do
+    url "https:files.pythonhosted.orgpackages7f3512c70556a27ad6196135ddb37030d1a989234ef41f05995a166297651a49unicodedata2-15.1.0.tar.gz"
+    sha256 "cb30f189ad66482f8529a45da71b2a8841e9bd2bb376cc2933003a4a55a07648"
+  end
+
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
     sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   resource "uvicorn" do
-    url "https:files.pythonhosted.orgpackages498d5005d39cd79c9ae87baf7d7aafdcdfe0b13aa69d9a1e3b7f1c984a2ac6d2uvicorn-0.29.0.tar.gz"
-    sha256 "6a69214c0b6a087462412670b3ef21224fa48cae0e452b5883e8e8bdfdd11dd0"
+    url "https:files.pythonhosted.orgpackages5a015e637e7aa9dd031be5376b9fb749ec20b86f5a5b6a49b87fabd374d5fa9fuvicorn-0.30.6.tar.gz"
+    sha256 "4b15decdda1e72be08209e860a1e10e92439ad5b97cf44cc945fcbee66fc5788"
   end
 
   resource "voluptuous" do
@@ -270,9 +341,6 @@ class Esphome < Formula
     url "https:files.pythonhosted.orgpackages247d02e8c583b57692eee495e60c7a4dd862635a9702067d69c6dd1c907cb589zeroconf-0.132.2.tar.gz"
     sha256 "9ad8bc6e3f168fe8c164634c762d3265c775643defff10e26273623a12d73ae1"
   end
-
-  # patch pyyaml and platformio to build with py3.13
-  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -293,49 +361,3 @@ class Esphome < Formula
     system bin"esphome", "compile", "test.yaml"
   end
 end
-
-__END__
-diff --git aPKG-INFO bPKG-INFO
-index b42efb7..74aef15 100644
---- aPKG-INFO
-+++ bPKG-INFO
-@@ -26,7 +26,7 @@ License-File: LICENSE
- Requires-Dist: async_timeout==4.0.3; python_version <= "3.10"
- Requires-Dist: cryptography==43.0.0
- Requires-Dist: voluptuous==0.14.2
--Requires-Dist: PyYAML==6.0.1
-+Requires-Dist: PyYAML==6.0.2
- Requires-Dist: paho-mqtt==1.6.1
- Requires-Dist: colorama==0.4.6
- Requires-Dist: icmplib==3.0.4
-@@ -34,7 +34,7 @@ Requires-Dist: tornado==6.4
- Requires-Dist: tzlocal==5.2
- Requires-Dist: tzdata>=2021.1
- Requires-Dist: pyserial==3.5
--Requires-Dist: platformio==6.1.15
-+Requires-Dist: platformio==6.1.16
- Requires-Dist: esptool==4.7.0
- Requires-Dist: click==8.1.7
- Requires-Dist: esphome-dashboard==20240620.0
-diff --git arequirements.txt brequirements.txt
-index 3e658de..84605e2 100644
---- arequirements.txt
-+++ brequirements.txt
-@@ -1,7 +1,7 @@
- async_timeout==4.0.3; python_version <= "3.10"
- cryptography==43.0.0
- voluptuous==0.14.2
--PyYAML==6.0.1
-+PyYAML==6.0.2
- paho-mqtt==1.6.1
- colorama==0.4.6
- icmplib==3.0.4
-@@ -9,7 +9,7 @@ tornado==6.4
- tzlocal==5.2    # from time
- tzdata>=2021.1  # from time
- pyserial==3.5
--platformio==6.1.15  # When updating platformio, also update Dockerfile
-+platformio==6.1.16  # When updating platformio, also update Dockerfile
- esptool==4.7.0
- click==8.1.7
- esphome-dashboard==20240620.0

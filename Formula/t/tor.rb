@@ -28,7 +28,7 @@ class Tor < Formula
     sha256 x86_64_linux:  "61c54b14efec65e0f0cb97832e78a1740453859421769d2478f18e7a1ee6978b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "libscrypt"
   depends_on "openssl@3"
@@ -57,8 +57,8 @@ class Tor < Formula
 
   test do
     pipe_output("#{bin}/tor-gencert --create-identity-key --passphrase-fd 0")
-    assert_predicate testpath/"authority_certificate", :exist?
-    assert_predicate testpath/"authority_identity_key", :exist?
-    assert_predicate testpath/"authority_signing_key", :exist?
+    assert_path_exists testpath/"authority_certificate"
+    assert_path_exists testpath/"authority_identity_key"
+    assert_path_exists testpath/"authority_signing_key"
   end
 end

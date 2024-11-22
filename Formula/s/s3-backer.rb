@@ -10,7 +10,7 @@ class S3Backer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "60886e9f4d464c3050a711c732717fc833fa1364b60acbe1f07a15e2d13e8728"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on "expat"
   depends_on "libfuse@2"
@@ -18,7 +18,7 @@ class S3Backer < Formula
   depends_on "openssl@3"
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -31,7 +31,7 @@ class Sdl2Image < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
@@ -44,16 +44,15 @@ class Sdl2Image < Formula
     inreplace "SDL2_image.pc.in", "@prefix@", HOMEBREW_PREFIX
 
     system ".autogen.sh" if build.head?
-
-    system ".configure", *std_configure_args,
-                          "--disable-imageio",
+    system ".configure", "--disable-imageio",
                           "--disable-avif-shared",
                           "--disable-jpg-shared",
                           "--disable-jxl-shared",
                           "--disable-png-shared",
                           "--disable-stb-image",
                           "--disable-tif-shared",
-                          "--disable-webp-shared"
+                          "--disable-webp-shared",
+                          *std_configure_args
     system "make", "install"
   end
 

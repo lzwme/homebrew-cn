@@ -25,13 +25,12 @@ class Sassc < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libsass"
 
   def install
-    system "autoreconf", "-fvi"
-    system ".configure", "--prefix=#{prefix}", "--disable-silent-rules",
-                          "--disable-dependency-tracking"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

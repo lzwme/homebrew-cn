@@ -44,7 +44,7 @@ class Uade < Formula
     end
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libao"
 
   def install
