@@ -21,7 +21,7 @@ class Qca < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "botan"
   depends_on "ca-certificates"
   depends_on "gnupg"
@@ -42,8 +42,6 @@ class Qca < Formula
     build 1400
     cause "Requires C++20"
   end
-
-  fails_with gcc: "5"
 
   def install
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400

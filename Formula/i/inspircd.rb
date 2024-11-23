@@ -20,7 +20,7 @@ class Inspircd < Formula
     sha256 x86_64_linux:  "4b1a8af15e371bc33667843f40443259f741cfe4927d3ca4c438136ae3190873"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "argon2"
   depends_on "gnutls"
   depends_on "libpq"

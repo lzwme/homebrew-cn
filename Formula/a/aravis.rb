@@ -26,7 +26,7 @@ class Aravis < Formula
   depends_on "gtk-doc" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "glib"
@@ -68,6 +68,12 @@ class Aravis < Formula
   end
 
   test do
+    # The initial plugin load takes a long time without extra permissions on
+    # macOS, which frequently causes the slower Intel macOS runners to time out.
+    #
+    # Ref: https:gitlab.freedesktop.orggstreamergstreamer-issues1119
+    ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     lib_ext = OS.mac? ? "dylib" : "so"
     output = shell_output("gst-inspect-1.0 #{lib}gstreamer-1.0libgstaravis.#{version.major_minor}.#{lib_ext}")
     assert_match(Description *Aravis Video Source, output)

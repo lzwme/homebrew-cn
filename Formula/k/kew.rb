@@ -1,22 +1,21 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https:github.comravacholkew"
-  url "https:github.comravacholkewarchiverefstagsv3.0.0.tar.gz"
-  sha256 "3a6dad87b76ecd59a4c6a2517738cd3b7bd831fcafe1d741fcc5b285532bdbd4"
+  url "https:github.comravacholkewarchiverefstagsv3.0.1.tar.gz"
+  sha256 "3b91d8cc661284b6f89ff54e59493fd3cf76f6e71f1d182c14b55a695ac47839"
   license "GPL-2.0-only"
   head "https:github.comravacholkew.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "878bb421bb73bf6325391498399d212cc31abff31f611dc1684da948bad760ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "115815c5ae03a68403255aa5ff4c36bcb72a9bb911c934614dc53c92a354d37a"
-    sha256 cellar: :any,                 arm64_ventura: "d55b24c0e0267791add9f0bc9b7acf4b7caa19bd4492cce2f93d2120ab831713"
-    sha256 cellar: :any,                 sonoma:        "5e5fcc4968f62f3a62a4973231b6639b5631d0a7d3877573dd35df6c46175d20"
-    sha256 cellar: :any,                 ventura:       "01c87a19a4ba57d003b1b1c258e199214bc8ddb9131f071ff854520c3dddc5af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5380562d71ac6e5d0dcd41958c51075f28a1414d33ac16cc36aced7880e32c94"
+    sha256 cellar: :any,                 arm64_sequoia: "fc82a5f03eb1af8e658dd822760e908c47402a47df2dc3fa62b1468e0a1009bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "747bd2598cb4984c3992c67f08e5fc0014d1e164544da3b66068cc74aee10ceb"
+    sha256 cellar: :any,                 arm64_ventura: "9151b839c74444c6a7785f90fb4fdbc8a6ad4d7aa897933d679292d48b4f88a9"
+    sha256 cellar: :any,                 sonoma:        "43306e3dd89b7379cc295415d5c36d399ce222437c7aa9816737a6cf2b19821f"
+    sha256 cellar: :any,                 ventura:       "ab89f48bc982c1977e699d15818df55da28618daa46318f5e3240331d41b12c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "741cd3be83e16e34207727fe50794d50508417eadf8f87475c1b6e19f49e3518"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "chafa"
   depends_on "faad2"
   depends_on "fftw"

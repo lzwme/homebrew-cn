@@ -21,7 +21,7 @@ class TrezorAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea07ce42c9c3de33f2c307f30522d41a43809ad90096078f3d48657be95b1942"
   end
 
-  depends_on "pkg-config" => :build # for hidapi resource
+  depends_on "pkgconf" => :build # for hidapi resource
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "hidapi"
@@ -188,16 +188,28 @@ class TrezorAgent < Formula
   resource "pyobjc-framework-cocoa" do
     url "https:files.pythonhosted.orgpackagesa76cb62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161pyobjc_framework_cocoa-10.3.1.tar.gz"
     sha256 "1cf20714daaa986b488fb62d69713049f635c9d41a60c8da97d835710445281a"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   resource "pyobjc-framework-corebluetooth" do
     url "https:files.pythonhosted.orgpackagesf76989afd7747f42d2eb1e8f4b7f2ba2739d98ccf36f6b5c72474802962494depyobjc_framework_corebluetooth-10.3.1.tar.gz"
     sha256 "dc5d326ab5541b8b68e7e920aa8363851e779cb8c33842f6cfeef4674cc62f94"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   resource "pyobjc-framework-libdispatch" do
     url "https:files.pythonhosted.orgpackagesb7371a7d9e5a04ab42aa8186f3493478c055601503ac7f8d58b8501d23db8b21pyobjc_framework_libdispatch-10.3.1.tar.gz"
     sha256 "f5c3475498cb32f54d75e21952670e4a32c8517fb2db2e90869f634edc942446"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   resource "pyserial" do
@@ -271,9 +283,9 @@ class TrezorAgent < Formula
   end
 
   def install
-    ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
-    ENV["SODIUM_INSTALL"] = "system"
     without = if OS.mac?
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
       ["dbus-fast"]
     else
       resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
@@ -289,3 +301,22 @@ class TrezorAgent < Formula
     system libexec"binpython", "-m", "pip", "check"
   end
 end
+
+__END__
+--- apyobjc_setup.py
++++ bpyobjc_setup.py
+@@ -510,15 +510,6 @@ def Extension(*args, **kwds):
+             % (tuple(map(int, os_level.split(".")[:2])))
+         )
+
+-    # XCode 15 has a bug w.r.t. weak linking for older macOS versions,
+-    # fall back to older linker when using that compiler.
+-    # XXX: This should be in _fixup_compiler but doesn't work there...
+-    lines = subprocess.check_output(["xcodebuild", "-version"], text=True).splitlines()
+-    if lines[0].startswith("Xcode"):
+-        xcode_vers = int(lines[0].split()[-1].split(".")[0])
+-        if xcode_vers >= 15:
+-            ldflags.append("-Wl,-ld_classic")
+-
+     if os_level == "10.4":
+         cflags.append("-DNO_OBJC2_RUNTIME")

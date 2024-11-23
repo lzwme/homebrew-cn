@@ -1,8 +1,8 @@
 class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https:github.comarduinoarduino-cli"
-  url "https:github.comarduinoarduino-cliarchiverefstagsv1.1.0.tar.gz"
-  sha256 "35681850bed6af2379d1cd40cfda6064ee24e4933eeb1cfc1df47d5b0f8ed70f"
+  url "https:github.comarduinoarduino-cliarchiverefstagsv1.1.1.tar.gz"
+  sha256 "df09593aee5f9e03b4aa4321fca90def01336f11681d87d57e5c73e4574a92cc"
   license "GPL-3.0-only"
   head "https:github.comarduinoarduino-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edcf278ad5654a6af1183f3ff66d18c9bc054dcbbb24ed7b9063545157f5df71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3ae7e979ed9d0804ca30d2af1794586499f8fa2c07a7e5889c174f4e2d321e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "577921ac79c22438e1b74f5b555478f4a3e23401a2d8dc7ab933a57f31d1c1ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e6d8bbd30040d58f69cc5c359e1ea089ae05c8d32efc2c038836d3268e39361"
-    sha256 cellar: :any_skip_relocation, ventura:       "c42d033793a374f3b627d56af5f23b97dd83c05a5414450ae3768602bd4005e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26ce7f1819876915bcdc38784f8dc8dafa5b7805c10b1ff696b2630e11b94490"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51b5219c8412797db3f85fe4b76b7f798888b196ecb2b77a300e1fa8850bcbf5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "387e38355220131a489480a27033753f75f3e5610d0fc21ef1e927b3e104d54f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6aa0feb6773b341ad300530935f7a260f6b6d7813cbebd9da874fd81bd533605"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9ecb96cf5fba04ee9d2703d6e9bf498069a34d15f65383ac3513f70e1f0c25c"
+    sha256 cellar: :any_skip_relocation, ventura:       "c49eb0ad4e988fbe9c0168a6f6ae87bb48bcfe704483a5b89c96aa7a0023e4cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14865f8788eb71b03378ff7dc9c6d444f1bbab7b079dc8b770828cabd4daa042"
   end
 
   depends_on "go" => :build

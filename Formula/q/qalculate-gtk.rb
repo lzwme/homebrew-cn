@@ -13,8 +13,9 @@ class QalculateGtk < Formula
     sha256 x86_64_linux:  "97c8bd229a1b196064d3cc5dcdbbc3fef66ff8e11163b1e6c537958b5fa5ead4"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
@@ -39,7 +40,7 @@ class QalculateGtk < Formula
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
 
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

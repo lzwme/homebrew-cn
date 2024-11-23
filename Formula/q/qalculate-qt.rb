@@ -14,7 +14,7 @@ class QalculateQt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0560b558736c380de57779ba37dec31767efad265630f0274957a79bb1891798"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libqalculate"
   depends_on "qt"

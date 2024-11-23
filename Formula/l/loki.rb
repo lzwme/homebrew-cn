@@ -1,8 +1,8 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.2.1.tar.gz"
-  sha256 "4d39632d6cb60a3252ca294558aa7eff2c9bb4b66b62920f4691389d293b6d7b"
+  url "https:github.comgrafanalokiarchiverefstagsv3.3.0.tar.gz"
+  sha256 "b36148586da9f8b58dc0a44fb3e74f0d03043db2fcf47194bc9d145bf5708b3e"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -12,15 +12,22 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b5725129da9fb946bd0223c68c75a5be4502afb83c1971841c89358196057d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5acd3974a562d43da8788124a8431a71b518be594f9fdb29fc4f91c4cce60290"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b609758054872182caab7089a4c7b5dced4b89e00f01b4c72a766a64c0e7821"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9c66c4fbece6898c9c9d733a8bb217911810e776c0e83418418e0df771e71ed"
-    sha256 cellar: :any_skip_relocation, ventura:       "85db50a8f3a447d6dc513aed1f1c4802ae11eb43bd1ed40eb52d6d93f2d757e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f07d77f8dd183254d7d14e6f16dd800cb4f7f05014fb8c49e65c3404d31c6ddb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6e2e673b9fc75631cb99267c8498343b1a66e22cc4b2c4988dc7350734ee76c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2f57c62581fb8c34a886acde7144a2467267b67a28eb90ea38810a64221f24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e526b4dd1af4b85e363e1e0c82910855b4f804ddac6beaa973a0b6aea9d9004"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4212c0bb0aa91ee726c260a69ce11a11fad1d474b0d94136d82ebf1d9ca7258"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a22bb6baff0b8877676528df047741db53fd6dc3a22a902751f6a6e373eeadf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e1323cf8dd0f69a577e278a91e4357f6c7093cf92428c72ef264b035f1828a9"
   end
 
   depends_on "go" => :build
+
+  # Fix to yaml: unmarshal errors
+  # Issue ref: https:github.comgrafanalokiissues15039, upstream pr ref, https:github.comgrafanalokipull15059
+  patch do
+    url "https:github.comgrafanalokicommit5c8542036609f157fee45da7efafbba72308e829.patch?full_index=1"
+    sha256 "733203854fa0dd828b74e291a72945a511a20b68954964ad56c815f118fc68d6"
+  end
 
   def install
     cd "cmdloki" do
@@ -48,7 +55,7 @@ class Loki < Formula
     end
 
     fork { exec bin"loki", "-config.file=loki-local-config.yaml" }
-    sleep 3
+    sleep 6
 
     output = shell_output("curl -s localhost:#{port}metrics")
     assert_match "log_messages_total", output

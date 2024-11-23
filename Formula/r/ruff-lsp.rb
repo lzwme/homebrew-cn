@@ -3,12 +3,12 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https:github.comastral-shruff-lsp"
-  url "https:files.pythonhosted.orgpackages0d3bd77cba8ed4c92732d540f5384afdbcf08e742d14ad9c2e93c1c5d4764a9cruff_lsp-0.0.58.tar.gz"
-  sha256 "378db39955b32260473602b531dc6333d6686d1d8956673ef1c5203e08132032"
+  url "https:files.pythonhosted.orgpackagesfa4fd855c6c298326384b2d8c6396f21e3ab421ea9bf089c1ead0718f0bfce36ruff_lsp-0.0.59.tar.gz"
+  sha256 "340a9d42b6fbdbc09f6a5c6d641bd4fa1e7f51868427467109a1331955c52754"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b3f636d714bec4633fc10c36ffc6adfd56919a5c1211cc069e6eb0f52d3ea679"
+    sha256 cellar: :any_skip_relocation, all: "0ee57d863d9f0e0fe49f9af398575e3f28a6cf8637da6aa0ca33ea7c7ca0e95e"
   end
 
   depends_on "python@3.13"
@@ -30,8 +30,8 @@ class RuffLsp < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pygls" do

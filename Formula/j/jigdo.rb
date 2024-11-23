@@ -24,21 +24,22 @@ class Jigdo < Formula
     sha256 x86_64_linux:   "244d944cf955deef5bfb200e61e3fae6cfc49038883f2c542e534b0c498dc4c6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "gettext" => :build # for msgfmt
+  depends_on "pkgconf" => :build
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "wget"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "gettext" => :build # for msgfmt
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    system "./configure", *std_configure_args, "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
 
     # disable documentation building
     (buildpath/"doc/Makefile").atomic_write "all:\n\techo hello"

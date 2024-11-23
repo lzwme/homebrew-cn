@@ -22,19 +22,16 @@ class Phpmyadmin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8128020d81fb88ccf3a6f6d8237c51ed2a1a19834539fa9b2303d5feaff22667"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb34ea7ccef57d1f9a45841b4dc4bd8a6d483611bc4aeaa4d5ddfda417005864"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bd02506f7741f5c566ce1208327f2a2cf02e2295d4cb5cadb6f9f2c4fafb8ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2545dca90ee52f478275ff1a0da76cf27fcaf20fa7071f5cfe00f2c7fcdf1f7a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83753db830be44e9d0b476e3fbb02ccabf9673364da6c9af9a15909d790acaf5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af9fe78d82eedac1e56a34dc09d2f15aaeecba6dd21f8c51706afce6cd0c6170"
-    sha256 cellar: :any_skip_relocation, ventura:        "15496fab9c4d8744f5d69869e0862a9c3ea957ebb1c3e62c6f02b7a8ba810169"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0e69d5885b6c7a0e34214d6f3f5ef1aa982c913a239ff3e71c1b4ac6732e701"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77e2cb701aaf85ea94c8e1c9b9345fb6bd6ef6f6ec51a956eed2e3d81895cd21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3db06f5c804f3bdc48368d1d1b6460d093163fed7cd881fcdae06d14ee3c53d6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "639600846a9d3e93308a58896d6e08239f82c7a76f117ac664561647d98feb97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "639600846a9d3e93308a58896d6e08239f82c7a76f117ac664561647d98feb97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "639600846a9d3e93308a58896d6e08239f82c7a76f117ac664561647d98feb97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "995e2b5ae053275953d667a4dfb1ef757cb2fb493eba23f16f2fecc35d668fc2"
+    sha256 cellar: :any_skip_relocation, ventura:       "995e2b5ae053275953d667a4dfb1ef757cb2fb493eba23f16f2fecc35d668fc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "639600846a9d3e93308a58896d6e08239f82c7a76f117ac664561647d98feb97"
   end
 
-  depends_on "php" => :test
+  depends_on "php@8.3" => :test
 
   def install
     pkgshare.install Dir["*"]
@@ -65,8 +62,9 @@ class Phpmyadmin < Formula
   end
 
   test do
+    php = Formula["php@8.3"].opt_bin/"php"
     cd pkgshare do
-      assert_match "German", shell_output("php #{pkgshare}/index.php")
+      assert_match "German", shell_output("#{php} #{pkgshare}/index.php")
     end
   end
 end

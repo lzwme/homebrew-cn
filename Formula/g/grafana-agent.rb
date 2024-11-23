@@ -5,6 +5,11 @@ class GrafanaAgent < Formula
   sha256 "99d48af06ac8e2c8c6696508e53a06e1bab4e1dc3bbcd5146e9f0066fef1e9ae"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df50c15aefcf0ef5966448c86bd08deb85084c685de2ad4b2f0dd8cc2f5a018"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27b23bd0769a183852d016149b1345504265653d08f1c68bbbe0fb6bff8a7997"

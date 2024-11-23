@@ -15,7 +15,7 @@ class Iptables < Formula
   end
 
   depends_on "linux-headers@5.15" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmnl"
   depends_on "libnetfilter_conntrack"
   depends_on "libnfnetlink"
@@ -26,11 +26,12 @@ class Iptables < Formula
 
   def install
     ENV.append "CFLAGS", "-I#{Formula["linux-headers@5.15"].opt_include}"
-    system "./configure", *std_configure_args, "--disable-silent-rules",
-      "--enable-bpf-compiler",
-      "--enable-devel",
-      "--enable-libipq",
-      "--enable-shared"
+    system "./configure", "--disable-silent-rules",
+                          "--enable-bpf-compiler",
+                          "--enable-devel",
+                          "--enable-libipq",
+                          "--enable-shared",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

@@ -27,7 +27,7 @@ class Jnettop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e3617c2641b35e01517e783554157ece0999367fccf494fc9824618277464eb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   uses_from_macos "libpcap"

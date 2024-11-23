@@ -37,18 +37,25 @@ class Iconsur < Formula
   resource "pyobjc-framework-cocoa" do
     url "https:files.pythonhosted.orgpackagesa76cb62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161pyobjc_framework_cocoa-10.3.1.tar.gz"
     sha256 "1cf20714daaa986b488fb62d69713049f635c9d41a60c8da97d835710445281a"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   def install
     system "npm", "install", *std_npm_args
 
     if MacOS.version >= :monterey
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+
       venv = virtualenv_create(libexec"venv", "python3.13")
       venv.pip_install resources
-      bin.install Dir["#{libexec}bin*"]
+      bin.install libexec.glob("bin*")
       bin.env_script_all_files libexec"bin", PATH: "#{venv.root}bin:${PATH}"
     else
-      bin.install_symlink Dir["#{libexec}bin*"]
+      bin.install_symlink libexec.glob("bin*")
     end
   end
 
@@ -59,3 +66,22 @@ class Iconsur < Formula
     system bin"iconsur", "unset", testpath"Test.app"
   end
 end
+
+__END__
+--- apyobjc_setup.py
++++ bpyobjc_setup.py
+@@ -510,15 +510,6 @@ def Extension(*args, **kwds):
+             % (tuple(map(int, os_level.split(".")[:2])))
+         )
+ 
+-    # XCode 15 has a bug w.r.t. weak linking for older macOS versions,
+-    # fall back to older linker when using that compiler.
+-    # XXX: This should be in _fixup_compiler but doesn't work there...
+-    lines = subprocess.check_output(["xcodebuild", "-version"], text=True).splitlines()
+-    if lines[0].startswith("Xcode"):
+-        xcode_vers = int(lines[0].split()[-1].split(".")[0])
+-        if xcode_vers >= 15:
+-            ldflags.append("-Wl,-ld_classic")
+-
+     if os_level == "10.4":
+         cflags.append("-DNO_OBJC2_RUNTIME")

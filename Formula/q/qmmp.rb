@@ -19,7 +19,7 @@ class Qmmp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # TODO: on linux: pipewire
   depends_on "faad2"
@@ -68,8 +68,6 @@ class Qmmp < Formula
     depends_on "libx11"
     depends_on "mesa"
   end
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "qmmp-plugin-pack" do
     url "https:qmmp.ylsoftware.comfilesqmmp-plugin-pack2.2qmmp-plugin-pack-2.2.1.tar.bz2"

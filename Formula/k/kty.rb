@@ -15,7 +15,7 @@ class Kty < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd2bbe08fcd0a77a2402d91f009d13d4c9ddd5b51d533d4810e26aee40fccb9"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

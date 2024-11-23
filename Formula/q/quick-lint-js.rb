@@ -20,7 +20,7 @@ class QuickLintJs < Formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "simdjson"
 
   fails_with :gcc do

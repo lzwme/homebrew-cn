@@ -25,7 +25,7 @@ class Icecast < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5ea433670e7f6a02c9ff502c6d65c56d6ea5c5e65c3eac418d3da2cf05cac2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libogg"
   depends_on "libvorbis"
@@ -44,7 +44,7 @@ class Icecast < Formula
     # HACK: Avoid linking brewed `curl` as side effect of `using: :homebrew_curl`
     args << "--with-curl-config=/usr/bin/curl-config" if OS.mac?
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -60,9 +60,7 @@ class Icecast < Formula
     cp etc/"icecast.xml", testpath/"icecast.xml"
     inreplace testpath/"icecast.xml", "<port>8000</port>", "<port>#{port}</port>"
 
-    pid = fork do
-      exec "icecast", "-c", testpath/"icecast.xml", "2>", "/dev/null"
-    end
+    pid = spawn "icecast", "-c", testpath/"icecast.xml", err: "/dev/null"
     sleep 3
 
     begin

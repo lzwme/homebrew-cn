@@ -46,7 +46,7 @@ class Kapacitor < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build # for `pkg-config-wrapper`
+    depends_on "pkgconf" => :build # for `pkg-config-wrapper`
   end
 
   # NOTE: The version here is specified in the go.mod of kapacitor.

@@ -21,7 +21,7 @@ class Tuntox < Formula
   end
 
   depends_on "cscope" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "toxcore"
 
   def install
@@ -40,7 +40,7 @@ class Tuntox < Formula
     Open3.popen2e(bin"tuntox") do |stdin, stdout_err, th|
       pid = th.pid
       stdin.close
-      sleep 2
+      sleep 5
       io = stdout_err.wait_readable(100)
       refute_nil io
 

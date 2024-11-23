@@ -694,6 +694,7 @@ Homebrew-homebrew-core/Formula/c/cargo-depgraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-deps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-docset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-edit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-expand.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-generate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-instruments.rb, Homebrew/homebrew-core, 1
@@ -1476,7 +1477,7 @@ Homebrew-homebrew-core/Formula/d/dsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dspdfviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dssim.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dstack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dstack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dstask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsvpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dtach.rb, Homebrew/homebrew-core, 0
@@ -4959,6 +4960,7 @@ Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/php@8.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmyadmin.rb, Homebrew/homebrew-core, 0
@@ -5851,6 +5853,7 @@ Homebrew-homebrew-core/Formula/s/siril.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sisc-scheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sispmctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/six.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sixtunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sjk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skaffold.rb, Homebrew/homebrew-core, 1
@@ -13653,6 +13656,7 @@ Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskexplorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskpaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskwarrior-pomodoro.rb, Homebrew/homebrew-cask, 1

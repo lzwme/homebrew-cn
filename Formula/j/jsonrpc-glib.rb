@@ -19,7 +19,7 @@ class JsonrpcGlib < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
 
   depends_on "glib"
@@ -44,7 +44,7 @@ class JsonrpcGlib < Formula
         return 0;
       }
     C
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs jsonrpc-glib-1.0").chomp.split
+    pkg_config_cflags = shell_output("pkgconf --cflags --libs jsonrpc-glib-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkg_config_cflags
     system "./test"
   end

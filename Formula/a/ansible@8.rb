@@ -22,8 +22,8 @@ class AnsibleAT8 < Formula
   # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
   disable! date: "2024-12-14", because: :unmaintained
 
-  # `pkg-config` and `rust` are for bcrypt
-  depends_on "pkg-config" => :build
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"

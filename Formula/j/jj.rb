@@ -15,7 +15,7 @@ class Jj < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98608443f34e51980f2381544ba42e385081ab690866b53c78f9495a7e1150de"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "openssl@3"

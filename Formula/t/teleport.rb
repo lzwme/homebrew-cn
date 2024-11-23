@@ -27,7 +27,7 @@ class Teleport < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
   depends_on "rust" => :build
   # TODO: try to remove rustup dependancy, see https:github.comHomebrewhomebrew-corepull191633#discussion_r1774378671

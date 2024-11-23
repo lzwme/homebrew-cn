@@ -23,7 +23,7 @@ class Icecream < Formula
   depends_on "automake" => :build
   depends_on "docbook2x" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libarchive"
   depends_on "lzo"
   depends_on "zstd"
@@ -34,15 +34,13 @@ class Icecream < Formula
   end
 
   def install
-    args = %W[
-      --disable-dependency-tracking
+    args = %w[
       --disable-silent-rules
-      --prefix=#{prefix}
       --enable-clang-wrappers
     ]
 
     system ".autogen.sh"
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     # Manually install scheduler property list

@@ -17,7 +17,7 @@ class JupyterR < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5b13b7b57330d27afc80e134f7d27c2b5207a9abc00a92f081d2fa21f834ede"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jupyterlab"
   depends_on "r"
   depends_on "zeromq"

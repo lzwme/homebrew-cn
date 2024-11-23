@@ -1,18 +1,17 @@
 class Libspelling < Formula
   desc "Spellcheck library for GTK 4"
   homepage "https://gitlab.gnome.org/GNOME/libspelling"
-  url "https://gitlab.gnome.org/GNOME/libspelling/-/archive/0.4.4/libspelling-0.4.4.tar.bz2"
-  sha256 "9b2adc84b7cb964588ee55f70a8c61fea942f894a89f41af9a186c7b17abbc5a"
+  url "https://gitlab.gnome.org/GNOME/libspelling/-/archive/0.4.5/libspelling-0.4.5.tar.bz2"
+  sha256 "d54c0b5e5f176b75bdb57640e13214c92b188995c5333fec798be65603d7cad7"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "544f99d7226d07a24a0b5c878f057f3d38f5d24ecf32a7f724be39e0ed58e2d2"
-    sha256 arm64_sonoma:  "7dc5d4e683e46fd2f960ed171b9748611fce54d0921f3cdf7cb206f662bed35c"
-    sha256 arm64_ventura: "6fed5f819f45aa5de2ce58bd899a551a34f264de0f36401d7103c54556c42894"
-    sha256 sonoma:        "ba9c7208ff52fa9c14a33a3f25a392d9d6c423ef84b13feb04176e4e1ff6faf3"
-    sha256 ventura:       "f7f40f4b3530a5e7b6fae7cf7538dbd36c25a2ad577862d372d0d0e0e2f7ddba"
-    sha256 x86_64_linux:  "42e881b76bb593fd772dff4a53a348469d6bf653e274209fef15820917c1773a"
+    sha256 arm64_sequoia: "85a6b4841512a5ce08e359110ce16767f5d936cdb98648d746a5474e2f9ca87a"
+    sha256 arm64_sonoma:  "d729a17269dc05233680f3f668961c8ac4592bcd38c649c1c7d5eab76d1e8b71"
+    sha256 arm64_ventura: "dbddfbcb42507dfe3f2f37acd4293652b60010cf64a853a7e6a26737e4a00af1"
+    sha256 sonoma:        "211dc82ec83b0a6769b3fa7d443d99f347ab0cf970235f6a8b35612fbe6cd2d7"
+    sha256 ventura:       "3407b8d7874a64ebb9833aa69a867e9952b68867d7e8b855a796b9408d502ab4"
+    sha256 x86_64_linux:  "6342666f2d5291249bf0df5f42daa56d4a4790b9f5c329fc38be04827fc8df4f"
   end
 
   depends_on "gobject-introspection" => :build

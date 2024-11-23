@@ -24,15 +24,13 @@ class Qtads < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "251840532a70387d1007ab9a992bb9f6e8d6c543133fc19d5d41b0dd81c822a5"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fluid-synth"
   depends_on "libsndfile"
   depends_on "libvorbis"
   depends_on "mpg123"
   depends_on "qt@5"
   depends_on "sdl2"
-
-  fails_with gcc: "5"
 
   def install
     args = ["DEFINES+=NO_STATIC_TEXTCODEC_PLUGINS"]

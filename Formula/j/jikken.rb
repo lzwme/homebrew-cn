@@ -15,7 +15,7 @@ class Jikken < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e16712754cad5e86d225ea36efb22b9275f31f46083a426ae4ba4d4b5c03455d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

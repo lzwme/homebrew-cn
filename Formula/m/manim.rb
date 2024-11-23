@@ -21,9 +21,8 @@ class Manim < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "84bf4558e70b655644cbd49e3dd1f36ecc683cfa6a80365285ca1c1914e4fb1e"
   end
 
-  depends_on "cython" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo" # for cairo.h
   depends_on "ffmpeg"
   depends_on "fontconfig"
@@ -144,6 +143,10 @@ class Manim < Formula
   resource "pyobjc-framework-cocoa" do
     url "https:files.pythonhosted.orgpackagesa76cb62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161pyobjc_framework_cocoa-10.3.1.tar.gz"
     sha256 "1cf20714daaa986b488fb62d69713049f635c9d41a60c8da97d835710445281a"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   resource "pyrr" do
@@ -192,11 +195,13 @@ class Manim < Formula
   end
 
   def install
-    python = "python3.12"
-    ENV.prepend_path "PYTHONPATH", Formula["cython"].opt_libexecLanguage::Python.site_packages(python)
-    venv = virtualenv_create(libexec, python)
-    venv.pip_install resources.reject { |r| r.name.start_with?("pyobjc") && OS.linux? }
-    venv.pip_install_and_link buildpath
+    if OS.mac?
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+    else
+      without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+    end
+    virtualenv_install_with_resources(without:)
   end
 
   test do
@@ -210,7 +215,26 @@ class Manim < Formula
               self.play(Create(circle))  # show the circle on screen
     PYTHON
 
-    system bin"manim", "-ql", "#{testpath}testscene.py", "CreateCircle"
-    assert_predicate testpath"mediavideostestscene480p15CreateCircle.mp4", :exist?
+    system bin"manim", "-ql", testpath"testscene.py", "CreateCircle"
+    assert_path_exists testpath"mediavideostestscene480p15CreateCircle.mp4"
   end
 end
+
+__END__
+--- apyobjc_setup.py
++++ bpyobjc_setup.py
+@@ -510,15 +510,6 @@ def Extension(*args, **kwds):
+             % (tuple(map(int, os_level.split(".")[:2])))
+         )
+ 
+-    # XCode 15 has a bug w.r.t. weak linking for older macOS versions,
+-    # fall back to older linker when using that compiler.
+-    # XXX: This should be in _fixup_compiler but doesn't work there...
+-    lines = subprocess.check_output(["xcodebuild", "-version"], text=True).splitlines()
+-    if lines[0].startswith("Xcode"):
+-        xcode_vers = int(lines[0].split()[-1].split(".")[0])
+-        if xcode_vers >= 15:
+-            ldflags.append("-Wl,-ld_classic")
+-
+     if os_level == "10.4":
+         cflags.append("-DNO_OBJC2_RUNTIME")

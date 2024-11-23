@@ -26,7 +26,7 @@ class IconNamingUtils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2808ba5e1f6d084d4f424e084ead17462349b6b2c5d60e5162ecd633c7e3be2f"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   uses_from_macos "perl"
 
@@ -154,7 +154,7 @@ class IconNamingUtils < Formula
   end
 
   test do
-    assert_equal libexec.to_s, shell_output("pkg-config --variable=program_path icon-naming-utils").chomp
+    assert_equal libexec.to_s, shell_output("pkgconf --variable=program_path icon-naming-utils").chomp
     assert_match "Usage: icon-name-mapping", shell_output(libexec/"icon-name-mapping", 1)
   end
 end

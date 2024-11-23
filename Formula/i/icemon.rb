@@ -23,7 +23,7 @@ class Icemon < Formula
 
   depends_on "cmake" => :build
   depends_on "extra-cmake-modules" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
 
   depends_on "icecream"
@@ -39,10 +39,8 @@ class Icemon < Formula
     depends_on "libcap-ng"
   end
 
-  fails_with gcc: "5"
-
   def install
-    args = "-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}ECMcmake"
+    args = ["-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}ECMcmake"]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

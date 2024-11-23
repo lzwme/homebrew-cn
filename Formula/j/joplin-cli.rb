@@ -15,7 +15,7 @@ class JoplinCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1f734064440c1e742dbeb9bc55c4f633c1393783b70fc88deec51a990abeeb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build # for node-gyp
   depends_on "python@3.13" => :build
   depends_on "glib"

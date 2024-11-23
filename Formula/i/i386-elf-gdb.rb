@@ -12,18 +12,19 @@ class I386ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "be8a2a2f0f18a53349a0f6103a4ef0859768f7ab41e5c2c52d604b2429ed8039"
-    sha256 arm64_sonoma:  "6070a72caa2528c08bff3f308faa1bb181e106415a7fda814b88b3d9dc068943"
-    sha256 arm64_ventura: "516c2c1674652d852968a86967e603fecca37b0c011f9e41c3b53d1289964585"
-    sha256 sonoma:        "f42540c98d2ecd220c569272d1f0dce591f38fde394c70bf7b5ea513ea78144c"
-    sha256 ventura:       "c524423fa98380fcb953e7ef6bc539f1822dc1c36e9a6706997515877121f66c"
-    sha256 x86_64_linux:  "1167a22ec9850be75bf301911ceb7250f0964e491a92fd50d50d2896d517c783"
+    rebuild 1
+    sha256 arm64_sequoia: "900f3c478443c1636c26dd7262b96a94032eebf5d7855a5dd6b7e3ca0dd5e134"
+    sha256 arm64_sonoma:  "d947404a475e7c75e7d1867fdd675bd42c3c3589eee201b77050827127e58fbb"
+    sha256 arm64_ventura: "bfb598c82c87bac5a8769ca3bfdfbd0f9b1f586c5a3c116e2fde7a98d8bd8dac"
+    sha256 sonoma:        "847d2c5470792b36811b123394a49b97d2fa2ef5be2c76f6622e4f086084151d"
+    sha256 ventura:       "6fd9fbabbb715b75a09977c4f4f4e39a4b4cbd62ac6b17d9e90aab3f13abad51"
+    sha256 x86_64_linux:  "798b68a4592ac805de5b2b03bd591fc60562782e1404fb9a85ce53f37ddb4448"
   end
 
   depends_on "i686-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "expat"
@@ -43,7 +44,7 @@ class I386ElfGdb < Formula
       --infodir=#{info}/#{target}
       --mandir=#{man}
       --with-lzma
-      --with-python=#{which("python3.12")}
+      --with-python=#{which("python3.13")}
       --with-system-zlib
       --disable-binutils
     ]

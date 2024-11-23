@@ -27,15 +27,13 @@ class Karchive < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "qt"
   depends_on "xz"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
-
-  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args
@@ -67,12 +65,12 @@ class Karchive < Formula
 
     ENV["LC_ALL"] = "en_US.UTF-8"
     assert_match "The whole world inside a hello.", shell_output("helloworld/helloworld 2>&1")
-    assert_predicate testpath/"hello.zip", :exist?
+    assert_path_exists testpath/"hello.zip"
 
     system "unzipper/unzipper", "hello.zip"
-    assert_predicate testpath/"world", :exist?
+    assert_path_exists testpath/"world"
 
     system "tarlocalfiles/tarlocalfiles", "world"
-    assert_predicate testpath/"myFiles.tar.gz", :exist?
+    assert_path_exists testpath/"myFiles.tar.gz"
   end
 end

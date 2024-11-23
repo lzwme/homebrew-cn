@@ -20,7 +20,7 @@ class IosWebkitDebugProxy < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libimobiledevice"
   depends_on "libplist"
   depends_on "libusbmuxd"
@@ -42,11 +42,8 @@ class IosWebkitDebugProxy < Formula
       null:#{base_port},:#{base_port + 1}-#{base_port + 101}
     CSV
 
-    fork do
-      exec "#{bin}ios_webkit_debug_proxy", "-c", testpath"config.csv"
-    end
-
-    sleep(2)
+    spawn "#{bin}ios_webkit_debug_proxy", "-c", testpath"config.csv"
+    sleep 2
     assert_match "iOS Devices:", shell_output("curl localhost:#{base_port}")
   end
 end

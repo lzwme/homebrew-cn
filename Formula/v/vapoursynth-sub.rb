@@ -6,7 +6,6 @@ class VapoursynthSub < Formula
   license "MIT"
   revision 1
   version_scheme 1
-
   head "https:github.comvapoursynthsubtext.git", branch: "master"
 
   bottle do
@@ -22,7 +21,7 @@ class VapoursynthSub < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "libass"
   depends_on "vapoursynth"

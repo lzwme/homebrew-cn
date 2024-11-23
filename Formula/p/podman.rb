@@ -8,12 +8,13 @@ class Podman < Formula
   head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7ddbbf3b491162887889a727d00902d449c76f4067d163a0dec15ab12d296c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d17d6d19560d8ae30a68a8548baa0cb092dee39204fee26168eaed23318e8e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae4e1c13d4c3689b2fc059c613c35c26c623fa0f2d503ae89d8a64cd79424bb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "652d9cf48b9f4597173b6a06b8cd805f4c81f2c461560485597de5122a9197c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "571ebed226ac8a3362350af7180e05e14d4bdc7c7daeee836d1a80e5712ee290"
-    sha256                               x86_64_linux:  "005fd23bf313fc82bb6aa886796ee8d7d7545fbecef15920302cc16f50db63ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcea80c47624a035c054c065421d166a373a9eaeb876f44ea98d6715ec9df87d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0902976fdacd66894bf60a5d38483066e33ffeb6ecf268490bebf998158ed59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "148659c386bc90a6c8283f7bb3c6a1ad52efdb1de3f2ed57f1e614f6d49372d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e7181c7b38df04c2622e9da5b76b2836667608b3b891c7e6a05e11a2642a452"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc77238d65e819accc8201b116a5431facad157e3bfb7bfe5afdb7b131e1d2b9"
+    sha256                               x86_64_linux:  "7abe33ae4577b5785c3940a8e5223e92d5aabfd0d720f429a21335da7666f991"
   end
 
   depends_on "go" => :build
@@ -171,7 +172,7 @@ class Podman < Formula
   end
 
   service do
-    run linux: [opt_bin"podman", "system", "service", "--time=0"]
+    run linux: [opt_bin"podman", "system", "service", "--time", "0"]
     environment_variables PATH: std_service_path_env
     working_dir HOMEBREW_PREFIX
   end

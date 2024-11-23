@@ -23,7 +23,7 @@ class Qemu < Formula
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
@@ -61,8 +61,6 @@ class Qemu < Formula
     depends_on "mesa"
     depends_on "systemd"
   end
-
-  fails_with gcc: "5"
 
   def install
     ENV["LIBTOOL"] = "glibtool"

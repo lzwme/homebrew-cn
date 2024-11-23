@@ -17,7 +17,7 @@ class AnsibleLint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c8ee000d26f840190539411f333f6d32541d679129595d391c99cc90a309cb1"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for rpds-py
   depends_on "ansible" => :test
   depends_on "cryptography"

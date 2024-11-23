@@ -25,7 +25,7 @@ class Jack < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "libsamplerate"
 
@@ -66,13 +66,9 @@ class Jack < Formula
   end
 
   test do
-    fork do
-      if OS.mac?
-        exec bin"jackd", "-X", "coremidi", "-d", "dummy"
-      else
-        exec bin"jackd", "-d", "dummy"
-      end
-    end
+    args = ["-d", "dummy"]
+    args += ["-X", "coremidi"] if OS.mac?
+    spawn bin"jackd", *args
 
     assert_match "jackdmp version #{version}", shell_output("#{bin}jackd --version")
   end

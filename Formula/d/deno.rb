@@ -1,22 +1,23 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.1.0deno_src.tar.gz"
-  sha256 "2318042f2385c96e83cf365626d3fd19fcb1a6af488527c0820370490f94a9af"
+  url "https:github.comdenolanddenoreleasesdownloadv2.1.1deno_src.tar.gz"
+  sha256 "a2c7a33f46fcfd80447a0ab5fc164be746a9218ef4c6e2ae1c641b8ecbcab2a4"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f015ec94bdffaecf267d56dd0baef2a05822ee83f602caf17034d619253ec341"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a7b9e1c39d1f9f2f3a77739dafd8420f8ed34944f671c76298c73725ed02495"
-    sha256 cellar: :any,                 arm64_ventura: "833bb7836592e80a2bb85f5a9cd527a29bcb2dc01dc712e794c56cf927139182"
-    sha256 cellar: :any,                 sonoma:        "29443d0c3fa185e5326ff16a40eaf0895e70d889bb41c23bb123355acfc4b853"
-    sha256 cellar: :any,                 ventura:       "d72aab5a228b8d4471af53384d760e6b235333b104ec9f232da40f22cf535fcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ac0f094c89734d1a018425721986e44c526ab9742fd05f25772777f0e391948"
+    sha256 cellar: :any,                 arm64_sequoia: "25541ef114d61d76fa1f31b26acef53781985e1d063490ca2fd0786c6e8e2b5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "52b0bf58645969abab46eaf7f2a3d795116d9820f5596776277e8f84a7525d57"
+    sha256 cellar: :any,                 arm64_ventura: "289dddc09cbb095cccbbab46c28341abf66f643fce329760f89eeb224fb1a2bf"
+    sha256 cellar: :any,                 sonoma:        "ff8b849cd3059c9aa871ee5f6c9c9fd2b0a4ddaf6ce0ec8981d8c8a70e814826"
+    sha256 cellar: :any,                 ventura:       "6920db488b33096fb02201ffe247b379d7a86505c3ae0119e0693b2c761868e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74d5ca3a496c5965c07629c33fc77cb70c4d98add6efd448ff4ad11d1d33d93d"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@18" => :build
+  depends_on "lld" => :build
+  depends_on "llvm" => :build
   depends_on "ninja" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
@@ -40,22 +41,22 @@ class Deno < Formula
   # TODO: Remove this and `v8` resource when https:github.comdenolandrusty_v8issues1065 is resolved
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "v8"'
   resource "rusty_v8" do
-    url "https:static.crates.iocratesv8v8-0.106.0.crate"
-    sha256 "a381badc47c6f15acb5fe0b5b40234162349ed9d4e4fd7c83a7f5547c0fc69c5"
+    url "https:static.crates.iocratesv8v8-130.0.1.crate"
+    sha256 "c23b5c2caff00209b03a716609b275acae94b02dd3b63c4648e7232a84a8402f"
   end
 
   # Find the v8 version from the last commit message at:
   # https:github.comdenolandrusty_v8commitsv#{rusty_v8_version}v8
   # Then, use the corresponding tag found in https:github.comdenolandv8tags
   resource "v8" do
-    url "https:github.comdenolandv8archiverefstags12.9.202.13-denoland-245ce17ed8483e6bc3de.tar.gz"
-    sha256 "63cd3d4a42cac18a7475165f8c623cfdae8782d0fedea9aa030f983e987c8309"
+    url "https:github.comdenolandv8archiverefstags13.0.245.12-denoland-6a811c9772d847135876.tar.gz"
+    sha256 "d2de7fc75381d8d7c0cd8b2d59bb23d91f8719f5d5ad6b19b8288acd2aae8733"
   end
 
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "deno_core"'
   resource "deno_core" do
-    url "https:github.comdenolanddeno_corearchiverefstags0.318.0.tar.gz"
-    sha256 "c33b5c9ce2e5fccf8f6b3c9015bddef2949dcd2fc492e4d8ce6b3fadf93ec85f"
+    url "https:github.comdenolanddeno_corearchiverefstags0.321.0.tar.gz"
+    sha256 "8b238d4e09c61d545e16298912bc035ff65e9308de83a1a1d1cbd48eadbb8639"
   end
 
   # The latest commit from `denolandicu`, go to https:github.comdenolandrusty_v8treev#{rusty_v8_version}third_party
@@ -68,11 +69,11 @@ class Deno < Formula
   # V8_TAG=#{v8_resource_tag} && curl -s https:raw.githubusercontent.comdenolandv8$V8_TAGDEPS | grep gn_version
   resource "gn" do
     url "https:gn.googlesource.comgn.git",
-        revision: "54f5b539df8c4e460b18c62a11132d77b5601136"
+        revision: "20806f79c6b4ba295274e3a589d85db41a02fdaa"
   end
 
   def llvm
-    Formula["llvm@18"]
+    Formula["llvm"]
   end
 
   def install

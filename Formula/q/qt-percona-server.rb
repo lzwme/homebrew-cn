@@ -18,15 +18,13 @@ class QtPerconaServer < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "percona-server"
   depends_on "qt"
 
   conflicts_with "qt-mysql", "qt-mariadb",
     because: "qt-mysql, qt-mariadb, and qt-percona-server install the same binaries"
-
-  fails_with gcc: "5"
 
   def install
     args = %W[

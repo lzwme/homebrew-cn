@@ -28,14 +28,12 @@ class Qcli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "14e72317eceef670be0d732541e176f143ffafc616cb698dc4052b5c1c589c92"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg@6" # Issue ref: https:github.combavcqctoolsissues552
   depends_on "qt"
   depends_on "qwt"
 
   uses_from_macos "zlib"
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     ENV["USE_BREW"] = "true"
@@ -54,10 +52,10 @@ class Qcli < Formula
   test do
     # Create an example mp4 file
     mp4out = testpath"video.mp4"
-    system "#{Formula["ffmpeg@6"].bin}ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    system Formula["ffmpeg@6"].bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     # Create a qcli report from the mp4
     qcliout = testpath"video.mp4.qctools.xml.gz"
     system bin"qcli", "-i", mp4out, "-o", qcliout
-    assert_predicate qcliout, :exist?
+    assert_path_exists qcliout
   end
 end

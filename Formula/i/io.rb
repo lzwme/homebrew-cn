@@ -22,7 +22,7 @@ class Io < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on arch: :x86_64 # https:github.comIoLanguageioissues465
 
   uses_from_macos "libxml2"

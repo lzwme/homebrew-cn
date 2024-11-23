@@ -42,7 +42,7 @@ class Texlive < Formula
     sha256 x86_64_linux:  "75296912aab28aad7c0669d9f9f37a95dfc14b826d10c3b6e96af92d904781bb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "clisp"
   depends_on "fontconfig"
@@ -90,8 +90,6 @@ class Texlive < Formula
   conflicts_with "lcdf-typetools", because: "both install a `cfftot1` executable"
   conflicts_with "ht", because: "both install `ht` binaries"
   conflicts_with "opendetex", because: "both install `detex` binaries"
-
-  fails_with gcc: "5"
 
   # biber 2.20 requires BibLaTeX 3.20, but TeX Live 2024 ships BibLaTeX 3.19
   # (https:github.comHomebrewhomebrew-coreissues172769). Install BibLaTeX 3.20

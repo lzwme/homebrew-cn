@@ -1,8 +1,8 @@
 class Orbiton < Formula
   desc "Fast and config-free text editor and IDE limited by VT100"
   homepage "https:roboticoverlords.orgorbiton"
-  url "https:github.comxyprotoorbitonarchiverefstagsv2.68.2.tar.gz"
-  sha256 "3facf3b4f066d9a6ba33a969fd0b540c224bdfdfde1d4abe3fcc70e072dbee1b"
+  url "https:github.comxyprotoorbitonarchiverefstagsv2.68.3.tar.gz"
+  sha256 "4445cbf395f9acefda6aedba24c401f3fd08d7ef66083a30a17138ba1f6dbf97"
   license "BSD-3-Clause"
   head "https:github.comxyprotoorbiton.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Orbiton < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee787f8183688c19bf756ea0190f2f985c2c7a33631252946e3cbeb513eb89f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee787f8183688c19bf756ea0190f2f985c2c7a33631252946e3cbeb513eb89f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee787f8183688c19bf756ea0190f2f985c2c7a33631252946e3cbeb513eb89f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1930aebb80236b81a67d610e52b07ebc0a21521991d7751f30c78f8b3183e57a"
-    sha256 cellar: :any_skip_relocation, ventura:       "1930aebb80236b81a67d610e52b07ebc0a21521991d7751f30c78f8b3183e57a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db9a102525b3a251778eef1e5a11b216a596a197bee418fa311f463cffce5a37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77b345dff9e77d084bc4f7b5595ae501ffa54630f9ff079df7683fea4d115973"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b345dff9e77d084bc4f7b5595ae501ffa54630f9ff079df7683fea4d115973"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77b345dff9e77d084bc4f7b5595ae501ffa54630f9ff079df7683fea4d115973"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dcc7b731ead2574e04b14f8b09154f3c1fc344e9bf4601c60e8e5d8de9e0fc37"
+    sha256 cellar: :any_skip_relocation, ventura:       "dcc7b731ead2574e04b14f8b09154f3c1fc344e9bf4601c60e8e5d8de9e0fc37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdef6cc87ee0b7968c786d6b14687b896a1fbbcfb75ea2444bdd8423a1e51cec"
   end
 
   depends_on "go" => :build

@@ -23,14 +23,14 @@ class Ideviceinstaller < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libimobiledevice"
   depends_on "libplist"
   depends_on "libzip"
 
   def install
-    system ".autogen.sh", *std_configure_args if build.head?
-    system ".configure", *std_configure_args if build.stable?
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *std_configure_args
     system "make", "install"
   end
 

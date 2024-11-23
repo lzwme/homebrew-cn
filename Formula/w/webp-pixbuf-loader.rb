@@ -19,8 +19,9 @@ class WebpPixbufLoader < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "webp"
 
   # Constants for gdk-pixbuf's multiple version numbers, which are the same as
@@ -39,7 +40,7 @@ class WebpPixbufLoader < Formula
   end
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dgdk_pixbuf_moduledir=#{prefix}#{module_subdir}"
+    system "meson", "setup", "build", "-Dgdk_pixbuf_moduledir=#{prefix}#{module_subdir}", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
@@ -47,12 +48,12 @@ class WebpPixbufLoader < Formula
   # After the loader is linked in, update the global cache of pixbuf loaders
   def post_install
     ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}#{module_subdir}"
-    system "#{Formula["gdk-pixbuf"].opt_bin}gdk-pixbuf-query-loaders", "--update-cache"
+    system Formula["gdk-pixbuf"].opt_bin"gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
     # Generate a .webp file to test with.
-    system "#{Formula["webp"].opt_bin}cwebp", test_fixtures("test.png"), "-o", "test.webp"
+    system Formula["webp"].opt_bin"cwebp", test_fixtures("test.png"), "-o", "test.webp"
 
     # Sample program to load a .webp file via gdk-pixbuf.
     (testpath"test.c").write <<~C
@@ -73,7 +74,7 @@ class WebpPixbufLoader < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
+    flags = shell_output("pkgconf --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
     system ENV.cc, "test.c", "-o", "test_loader", *flags
     system ".test_loader", "test.webp"
   end

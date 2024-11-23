@@ -123,6 +123,10 @@ class OrganizeTool < Formula
   resource "pyobjc-framework-cocoa" do
     url "https:files.pythonhosted.orgpackagesa76cb62e31e6e00f24e70b62f680e35a0d663ba14ff7601ae591b5d20e251161pyobjc_framework_cocoa-10.3.1.tar.gz"
     sha256 "1cf20714daaa986b488fb62d69713049f635c9d41a60c8da97d835710445281a"
+
+    # Backport commit to avoid Xcode.app dependency. Remove in the next release
+    # https:github.comronaldoussorenpyobjccommit864a21829c578f6479ac6401d191fb759215175e
+    patch :DATA
   end
 
   resource "python-dateutil" do
@@ -171,19 +175,21 @@ class OrganizeTool < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
-    venv = virtualenv_create(libexec, "python3.13")
-    # `macos-tags` and `pyobjc-framework-cocoa` + dependencies are only needed on macOS
-    # TODO: Currently requires manual check to confirm PyPI dependency tree
-    skipped = %w[macos-tags mdfind-wrapper xattr cffi pycparser]
-    skipped += %w[pyobjc-framework-cocoa pyobjc-core]
-    venv.pip_install resources.reject { |r| OS.linux? && skipped.include?(r.name) }
-    venv.pip_install_and_link buildpath
+    if OS.mac?
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+    else
+      # `macos-tags` and `pyobjc-framework-cocoa` + dependencies are only needed on macOS
+      # TODO: Currently requires manual check to confirm PyPI dependency tree
+      without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+      without += %w[macos-tags mdfind-wrapper xattr]
+    end
+    virtualenv_install_with_resources(without:)
   end
 
   test do
     config_file = testpath"config.yaml"
-    config_file.write <<~EOS
+    config_file.write <<~YAML
       rules:
         - locations: #{testpath}
           filters:
@@ -191,12 +197,31 @@ class OrganizeTool < Formula
           actions:
             - echo: 'Found: {path.name}'
             - delete
-    EOS
+    YAML
 
     touch testpath"homebrew.txt"
 
     assert_match "Found: homebrew.txt", shell_output("#{bin}organize sim #{config_file}")
     system bin"organize", "run", config_file
-    refute_predicate testpath"homebrew.txt", :exist?
+    refute_path_exists testpath"homebrew.txt"
   end
 end
+
+__END__
+--- apyobjc_setup.py
++++ bpyobjc_setup.py
+@@ -510,15 +510,6 @@ def Extension(*args, **kwds):
+             % (tuple(map(int, os_level.split(".")[:2])))
+         )
+
+-    # XCode 15 has a bug w.r.t. weak linking for older macOS versions,
+-    # fall back to older linker when using that compiler.
+-    # XXX: This should be in _fixup_compiler but doesn't work there...
+-    lines = subprocess.check_output(["xcodebuild", "-version"], text=True).splitlines()
+-    if lines[0].startswith("Xcode"):
+-        xcode_vers = int(lines[0].split()[-1].split(".")[0])
+-        if xcode_vers >= 15:
+-            ldflags.append("-Wl,-ld_classic")
+-
+     if os_level == "10.4":
+         cflags.append("-DNO_OBJC2_RUNTIME")

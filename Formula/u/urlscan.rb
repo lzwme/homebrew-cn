@@ -3,12 +3,12 @@ class Urlscan < Formula
 
   desc "Viewselect the URLs in an email message or file"
   homepage "https:github.comfirecat53urlscan"
-  url "https:files.pythonhosted.orgpackages5e110610ca7763c958555688edac109cba92bd5b71bc42af7b8eeacafff0c96eurlscan-1.0.4.tar.gz"
-  sha256 "622bfa957615633f8c0b931b8e131b6cfcc5b843ccca75f89927468870ee0e8e"
+  url "https:files.pythonhosted.orgpackagesf09ddbb1b7b3bb226a8a796b870cf9325cae53edc36acdf619cf4c5eefe94880urlscan-1.0.6.tar.gz"
+  sha256 "3bbf8900de23913c29aed27702eaba92a871b2fe95920e72c56a19fff7cb4581"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "724122478fcb0e78dcf6ce8de139bbdf25fd20a5d18995b6ddb6ed131eca04f4"
+    sha256 cellar: :any_skip_relocation, all: "be64bb1ca7c78bd13312b59f17f761051b64857476413d41952af71d0d5de7cd"
   end
 
   depends_on "python@3.13"

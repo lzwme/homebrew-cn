@@ -22,7 +22,7 @@ class Irssi < Formula
     sha256 x86_64_linux:  "4af07634acbc8972700abb9dd307360a506032ab34eaf389fbb55780f4cd9781"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "openssl@3"
 

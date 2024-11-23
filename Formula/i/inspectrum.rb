@@ -18,13 +18,11 @@ class Inspectrum < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fftw"
   depends_on "liquid-dsp"
   depends_on "qt@5"
-
-  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

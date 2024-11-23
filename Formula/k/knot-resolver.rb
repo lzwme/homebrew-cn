@@ -22,7 +22,7 @@ class KnotResolver < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fstrm"
   depends_on "gnutls"
   depends_on "knot"

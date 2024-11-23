@@ -3,19 +3,18 @@ class MongoOrchestration < Formula
 
   desc "REST API to manage MongoDB configurations on a single host"
   homepage "https:github.com10genmongo-orchestration"
-  url "https:files.pythonhosted.orgpackagesf1c63ccc6baa1693168052dff0a96450ac64ea738249c96d890c12c48e4b76a6mongo_orchestration-0.9.0.tar.gz"
-  sha256 "fcf3b644d946794218672f94ea63cea4de1d7a3c29c60bacae507bb64c147134"
+  url "https:files.pythonhosted.orgpackages597cb1a9ed6bfedb7133c56d1253123ddea4d6396aac745f589f3e55fde1e27fmongo_orchestration-0.10.0.tar.gz"
+  sha256 "c11126757e64c9ed08585a53bd95c0edb7fd0d8ca0861c13329c903936966f15"
   license "Apache-2.0"
   head "https:github.com10genmongo-orchestration.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e72090a591082c708896c0a532b0766ed57df7a15a5a6fc6232724616f22d5ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a8716d85b80f661330d4157c71ed5824d88073c9517e0987aa9beeaffa97c0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f9cc085707934fc7eea5468d81f9be3070951b7c25b7875ee8cf5be21acdf39b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21b9ad5e54e36b5ca36db95afc8094851758c7b42d1682129f03abb2075ac782"
-    sha256 cellar: :any_skip_relocation, ventura:       "603da886e1419f68ca7d7016fe0cbdb6903cec0f25481f8bb88ff2c7c7f2eae6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d86b5a5852b44b306486edaa93781de3cd18120d6470e37809900411449a7c9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a25bc059c11f4278be77b58aed7b436a4a67f22f283727ae0effd7feced1cab6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "279cc710f34e644bc071f4886a9b78db5ba606594ec895f66a29af91cd2701cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ae506920b6d2237295bee49207ac8e6527f4aa68ecf0c19eed88370972fef01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2dcf09fba57848009e2619c44f49908620dfa82bf336dbcdf926c162fd13bce8"
+    sha256 cellar: :any_skip_relocation, ventura:       "c5aa61f592bc7e4df5f1f23e13c35367519ea8591b3a7cb4cf427c6dd39f2e8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9538b4208c255994d76f2a0aa09a3fc7f36a136374fb314ef44c45f9740c6d19"
   end
 
   depends_on "certifi"

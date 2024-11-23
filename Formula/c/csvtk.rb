@@ -1,18 +1,18 @@
 class Csvtk < Formula
   desc "Cross-platform, efficient and practical CSVTSV toolkit in Golang"
   homepage "https:bioinf.shenwei.mecsvtk"
-  url "https:github.comshenwei356csvtkarchiverefstagsv0.31.0.tar.gz"
-  sha256 "ac28ae180d58b0214521a2ba5881ac3daf676ee2c39157366fad6cb56a64ba86"
+  url "https:github.comshenwei356csvtkarchiverefstagsv0.31.1.tar.gz"
+  sha256 "f992fdd80c9cf4589931da9fbe7344b9e508fe53de54a8b8646c8fe83135f723"
   license "MIT"
   head "https:github.comshenwei356csvtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3bff7148c3fca85c1a5fa275eaf58df1e5353a2683b60102c23ee1e3a359b0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3bff7148c3fca85c1a5fa275eaf58df1e5353a2683b60102c23ee1e3a359b0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3bff7148c3fca85c1a5fa275eaf58df1e5353a2683b60102c23ee1e3a359b0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92edbcfbbb3e7d2b71353cdda8343a542f190b903bbb67e5bb4cbcd627a58c91"
-    sha256 cellar: :any_skip_relocation, ventura:       "92edbcfbbb3e7d2b71353cdda8343a542f190b903bbb67e5bb4cbcd627a58c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25952e330b40f92c0a651badca0f76e6496ec3cf979b920e3a15a6fe192c1c2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ea9170ffd5bf473a7103d5596f55d4189681f2d01c63f42af6ca0dfe2afda74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ea9170ffd5bf473a7103d5596f55d4189681f2d01c63f42af6ca0dfe2afda74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ea9170ffd5bf473a7103d5596f55d4189681f2d01c63f42af6ca0dfe2afda74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "938fcdf81d3690a33f9c0b0e62c727dca842cb8b164250ba819273f1104c6b1f"
+    sha256 cellar: :any_skip_relocation, ventura:       "938fcdf81d3690a33f9c0b0e62c727dca842cb8b164250ba819273f1104c6b1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b15df0347dcdea4fc8bd36c858095feb93e6d9369a0f001cf5a3934557d95c7"
   end
 
   depends_on "go" => :build

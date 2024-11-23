@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https:github.comsimdutfsimdutf"
-  url "https:github.comsimdutfsimdutfarchiverefstagsv5.6.2.tar.gz"
-  sha256 "325c012e7c29e549779cebfe5a43a3197d9d675b6764f6de547ef19905b56b76"
+  url "https:github.comsimdutfsimdutfarchiverefstagsv5.6.3.tar.gz"
+  sha256 "503070ddf27e26c051b9500dfc7354ec8850e11076f47db32635931c85b630c0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsimdutfsimdutf.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "57f88db5377a15eb1b7f622bdc3f9abfe4b64cc1d895ee45a01810225b4431c9"
-    sha256 cellar: :any, arm64_sonoma:  "7b5cea1f885bfc808eb55f6af84ffdf45a037ea772325df7f90050d08a17785f"
-    sha256 cellar: :any, arm64_ventura: "a749a83de2c936e949385ba373f317bb4106b9648e5c0b53badf9679b5f933fd"
-    sha256 cellar: :any, sonoma:        "79b5d880ff104c7491f9c1ce412c2f916292da264f8bb1c0ff78956333508233"
-    sha256 cellar: :any, ventura:       "44ee9d1836bf80171b4d1be6f02643d73b201b41e57e1ddfcbebe7b6fca21d68"
+    sha256 cellar: :any, arm64_sequoia: "6ad935b6baf56a640e4b71b5e33e4f3cf88aeed80142a04d60e5e01fdbc37cf9"
+    sha256 cellar: :any, arm64_sonoma:  "0b23e4cdc44e3f2e2ff957534e80d34c5f3e36e3bb9314a604f69dd6c5d289da"
+    sha256 cellar: :any, arm64_ventura: "a68aeb8f1fd6248d6c6e5a2c16c895c8a2d3d9a0af166ac4c068530a6454c8b1"
+    sha256 cellar: :any, sonoma:        "d9c15febe12fe9289e8d117803421f6b2fdda66c16cca3b84686a0efa726f17d"
+    sha256 cellar: :any, ventura:       "4bcfa45952f7d18a0c52eb5f58de3b872bc7ddf2921438c29d19a64368edeb80"
   end
 
   depends_on "cmake" => :build

@@ -16,7 +16,7 @@ class Jellyfish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "105fae95b5a56dea674d9e6f97e6dadde81372f86b3c3dc8303548460dfb376e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "htslib"
 
   # Fix -flat_namespace being used on Big Sur and later.

@@ -20,15 +20,13 @@ class Qjackctl < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jack"
   depends_on "qt"
 
   on_linux do
     depends_on "alsa-lib"
   end
-
-  fails_with gcc: "5"
 
   def install
     args = %w[

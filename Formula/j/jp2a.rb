@@ -15,16 +15,17 @@ class Jp2a < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f6f42f5d2ef84ddc1a42004e9c44789be388385a454215e02dfa9b07c1bf43"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libpng"
   depends_on "webp"
+
   uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

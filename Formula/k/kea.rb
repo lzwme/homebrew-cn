@@ -34,7 +34,7 @@ class Kea < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "log4cplus"
   depends_on "openssl@3"

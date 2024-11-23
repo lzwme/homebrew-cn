@@ -18,7 +18,7 @@ class KeepkeyAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d977a585788997b34e907e44f9857618969c795401963147cd53bc9430b09c5"
   end
 
-  depends_on "pkg-config" => :build # for hidapi resource
+  depends_on "pkgconf" => :build # for hidapi resource
   depends_on "cryptography"
   depends_on "hidapi"
   depends_on "libsodium" # for pynacl
@@ -128,8 +128,6 @@ class KeepkeyAgent < Formula
   end
 
   def install
-    ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
-    ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
   end
 

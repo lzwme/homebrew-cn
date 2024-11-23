@@ -25,7 +25,7 @@ class Kcov < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "dwarfutils"
   depends_on "openssl@3"
@@ -39,7 +39,7 @@ class Kcov < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DSPECIFY_RPATH=ON"
+    system "cmake", "-S", ".", "-B", "build", "-DSPECIFY_RPATH=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -51,6 +51,6 @@ class Kcov < Formula
     EOS
 
     system bin"kcov", testpath"out", testpath"hello.bash"
-    assert_predicate testpath"outhello.bashcoverage.json", :exist?
+    assert_path_exists testpath"outhello.bashcoverage.json"
   end
 end

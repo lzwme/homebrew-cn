@@ -16,8 +16,9 @@ class Iamb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f77262d3d6396f267d57ae41fa0d76d023dc5960ebb0eea743ebff4b9ea7f245"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
   uses_from_macos "sqlite", since: :ventura # requires sqlite3_error_offset
 
   on_linux do
