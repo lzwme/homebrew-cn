@@ -19,7 +19,7 @@ class Rsyslog < Formula
     sha256 x86_64_linux:  "178bd0caa4693283111914bba31ea5625f3c3d52ef4f9fbe004e36208160fc70"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "libestr"
   depends_on "libfastjson"
@@ -28,13 +28,13 @@ class Rsyslog < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--enable-imfile",
+    system "./configure", "--enable-imfile",
                           "--enable-usertools",
                           "--enable-diagtools",
                           "--disable-uuid",
                           "--disable-libgcrypt",
-                          "--enable-gnutls"
+                          "--enable-gnutls",
+                          *std_configure_args
     system "make"
     system "make", "install"
 

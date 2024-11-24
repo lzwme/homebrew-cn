@@ -34,7 +34,7 @@ class Root < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cfitsio"
   depends_on "davix"
   depends_on "fftw"

@@ -20,7 +20,7 @@ class H2o < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -81,11 +81,8 @@ class H2o < Formula
   test do
     port = free_port
     (testpath"h2o.conf").write conf_example(port)
-    fork do
-      exec "#{bin}h2o -c #{testpath}h2o.conf"
-    end
+    spawn "#{bin}h2o -c #{testpath}h2o.conf"
     sleep 2
-
     assert_match "Welcome to H2O", shell_output("curl localhost:#{port}")
   end
 end

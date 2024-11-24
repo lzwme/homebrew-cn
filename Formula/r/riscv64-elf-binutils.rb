@@ -21,7 +21,7 @@ class Riscv64ElfBinutils < Formula
     sha256 x86_64_linux:   "2d20f3c9e5b38bd284237023d75cd87e34224390064af224929fd51cf740e0a2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "zstd"
 
   uses_from_macos "zlib"
@@ -33,12 +33,12 @@ class Riscv64ElfBinutils < Formula
   def install
     target = "riscv64-elf"
     system "./configure", "--target=#{target}",
-           "--prefix=#{prefix}",
-           "--libdir=#{lib}/#{target}",
-           "--infodir=#{info}/#{target}",
-           "--with-system-zlib",
-           "--with-zstd",
-           "--disable-nls"
+                          "--prefix=#{prefix}",
+                          "--libdir=#{lib}/#{target}",
+                          "--infodir=#{info}/#{target}",
+                          "--with-system-zlib",
+                          "--with-zstd",
+                          "--disable-nls"
     system "make"
     system "make", "install"
   end

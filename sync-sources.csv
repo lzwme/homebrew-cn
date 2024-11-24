@@ -114,6 +114,7 @@ Homebrew-homebrew-core/Formula/a/amdatu-bootstrap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/amfora.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ammonite-repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ampl-asl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ampl-mp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amqp-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amtterm.rb, Homebrew/homebrew-core, 0
@@ -981,6 +982,7 @@ Homebrew-homebrew-core/Formula/c/cmusfm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cnats.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cntb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cntlm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/coal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cobalt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coccinelle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cocoapods.rb, Homebrew/homebrew-core, 1
@@ -2630,7 +2632,6 @@ Homebrew-homebrew-core/Formula/h/howard-hinnant-date.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/h/howdoi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hping.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hpp-fcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hqx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hr.rb, Homebrew/homebrew-core, 1
@@ -3117,6 +3118,7 @@ Homebrew-homebrew-core/Formula/k/kubehound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubekey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubelogin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubeone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.29.rb, Homebrew/homebrew-core, 1
@@ -8005,7 +8007,7 @@ Homebrew-homebrew-cask/Casks/c/copilot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copyclip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copyq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copytranslator.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/coqide.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/coq-platform.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cord.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/core-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/core-tunnel.rb, Homebrew/homebrew-cask, 0
@@ -14194,6 +14196,7 @@ Homebrew-homebrew-cask/Casks/w/wireshark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2022.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wiso-steuer-2025.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiznote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wjoy.rb, Homebrew/homebrew-cask, 1

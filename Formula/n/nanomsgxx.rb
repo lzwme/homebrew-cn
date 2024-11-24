@@ -20,7 +20,7 @@ class Nanomsgxx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed20e2617835e53e1ee41927a5066275c7b7a6058de093932be16bb89bf23cd4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "nanomsg"
 
   uses_from_macos "python" => :build

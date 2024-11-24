@@ -28,7 +28,7 @@ class Redstore < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f459a58381dd6067d033bb20eb4101af9136f5260796bd2daee07cf6365c3bde"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "raptor"
   depends_on "rasqal"
   depends_on "redland"

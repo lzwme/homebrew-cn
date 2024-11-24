@@ -12,19 +12,20 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b62673061d0dc0e43854dc03f881a8c1c862a49c083bddbe4f92e851bdb29eae"
-    sha256 arm64_sonoma:  "8a7fb61f0c58aaec08d9d4a7af0d2e85d4137da492bdfdbd4d4b0a4572e9be43"
-    sha256 arm64_ventura: "83f82a565e83ce1b601c1dcd08a095ff4c6a60045d4d6deae16ca8fa63574beb"
-    sha256 sonoma:        "f09b8ba93f91471910fcd70c481137b28990e33d2f062a300692965b9bfbc5de"
-    sha256 ventura:       "afb225d0c2c19acac114fe52f776256510d9ae3352c5cdc5707facb6eeffa259"
-    sha256 x86_64_linux:  "20b07a8f2ead7c91287fc52b063746f1e733554075133959819bf48ed78aea06"
+    rebuild 1
+    sha256 arm64_sequoia: "e5cd21441950f37a3bf9921c74336c35e015cbabe1b094b9ca162f447a918636"
+    sha256 arm64_sonoma:  "b99503e52ec19d7fe73617369189441b540c54ef9f00afa75087b6553e5e49af"
+    sha256 arm64_ventura: "408284897e5287a1de871f00b6191161cdca29b0712fb9b8773cf3a4d93a2e6d"
+    sha256 sonoma:        "3bf2066f804c6fa970c1fbd02ec93f7b029aaeae238e00cee3b1669c6db116c2"
+    sha256 ventura:       "d1fa41b6dc0366f7638d553ed50fb86d71ed5048c55afa98b0ff6e8f90187917"
+    sha256 x86_64_linux:  "f58fd6d035e5742511549d3679c91f777eaea20410692d74fafa3e744e461467"
   end
 
   depends_on "pkgconf" => :build
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
@@ -49,7 +50,7 @@ class Aarch64ElfGdb < Formula
       --with-curses
       --with-expat
       --with-lzma
-      --with-python=#{which("python3.12")}
+      --with-python=#{which("python3.13")}
       --with-system-readline
       --with-system-zlib
       --with-zstd

@@ -22,7 +22,7 @@ class Rmw < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "canfigger"
   depends_on "gettext"
   # Slightly buggy with system ncurses
@@ -39,9 +39,9 @@ class Rmw < Formula
     file = testpath"foo"
     touch file
     assert_match "removed", shell_output("#{bin}rmw #{file}")
-    refute_predicate file, :exist?
+    refute_path_exists file
     system bin"rmw", "-u"
-    assert_predicate file, :exist?
+    assert_path_exists file
     assert_match ".localshareWaste", shell_output("#{bin}rmw -l")
     assert_match "purging is disabled", shell_output("#{bin}rmw -vvg")
   end

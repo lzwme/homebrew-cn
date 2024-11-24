@@ -16,7 +16,7 @@ class Imgdiet < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "vips"
@@ -31,6 +31,6 @@ class Imgdiet < Formula
 
   test do
     system bin/"imgdiet", "--compression", "9", test_fixtures("test.png"), testpath/"out.jpg"
-    assert_predicate testpath/"out.jpg", :exist?
+    assert_path_exists testpath/"out.jpg"
   end
 end

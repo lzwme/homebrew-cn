@@ -24,7 +24,7 @@ class Netdata < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "m4" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "json-c"
   depends_on "libuv"
@@ -60,8 +60,7 @@ class Netdata < Formula
     judyprefix = "#{buildpath}resourcesjudy"
 
     resource("judy").stage do
-      system ".configure", "--disable-debug", "--disable-dependency-tracking",
-          "--disable-shared", "--prefix=#{judyprefix}"
+      system ".configure", "--disable-shared", *std_configure_args(prefix: judyprefix)
 
       # Parallel build is broken
       ENV.deparallelize do
@@ -79,9 +78,7 @@ class Netdata < Formula
 
     system "autoreconf", "--force", "--install", "--verbose"
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --libexecdir=#{libexec}
@@ -97,7 +94,7 @@ class Netdata < Formula
       args << "UUID_LIBS=-luuid"
       args << "UUID_CFLAGS=-I#{Formula["util-linux"].opt_include}"
     end
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "clean"
     system "make", "install"
 
@@ -118,9 +115,9 @@ class Netdata < Formula
   end
 
   test do
-    system "#{sbin}netdata", "-W", "set", "registry", "netdata unique id file",
-                              "#{testpath}netdata.unittest.unique.id",
-                              "-W", "set", "registry", "netdata management api key file",
-                              "#{testpath}netdata.api.key"
+    system sbin"netdata", "-W", "set", "registry", "netdata unique id file",
+                           "#{testpath}netdata.unittest.unique.id",
+                           "-W", "set", "registry", "netdata management api key file",
+                           "#{testpath}netdata.api.key"
   end
 end

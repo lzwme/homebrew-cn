@@ -33,7 +33,7 @@ class Influxdb < Formula
 
   depends_on "breezy" => :build
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 

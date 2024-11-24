@@ -2,6 +2,7 @@ class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin) with Python bindings (Pivy)"
   homepage "https:coin3d.github.io"
   license all_of: ["BSD-3-Clause", "ISC"]
+  revision 1
 
   stable do
     url "https:github.comcoin3dcoinreleasesdownloadv4.0.3coin-4.0.3-src.tar.gz"
@@ -29,12 +30,11 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "07ba0c39b01b9fcd22fb91035e9611bec4963639866f3087dfab514a179c085c"
-    sha256 cellar: :any, arm64_ventura:  "ba7c7fed04fff40f0abb513edaa5f94991082831790cda8568534ecec152f6e3"
-    sha256 cellar: :any, arm64_monterey: "36609cc09227ad57193fcac9f3f985cd6dc63ed88db22064558dfff8ad787305"
-    sha256 cellar: :any, sonoma:         "aed55516747e173e91ba4f54613c545b0bd2eb56e166cfa8713dec27189b2939"
-    sha256 cellar: :any, ventura:        "c2b9e8a6316316b8be599e29339d52a34e2c0cbcfc4e6a49f763f7f5c0b8182b"
-    sha256 cellar: :any, monterey:       "112eb4cf91392b07c62c1dc69212f7845d5ef8f685c2d2cbd9419527779ed203"
+    sha256 cellar: :any,                 arm64_sonoma:  "788e8af8f7eef2baecbe637c9b749b0bbb3374cac3480ea4ebbbf98f5ea0d24c"
+    sha256 cellar: :any,                 arm64_ventura: "5ff987acf7ede22752c4d4b193d4ec8f63a9f402737eb8078d675e1a0db8b2fd"
+    sha256 cellar: :any,                 sonoma:        "af3184b755a9830954954132172e9f911df140e598a02c2b8c5d7cf6b7081370"
+    sha256 cellar: :any,                 ventura:       "8ff9c323ded49fc7207e7802e7fdb952867ee494ba56bc33bf5a30b73af5c0ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a099ddb5fad2794a8c8591fb702c3ec710b9773c8969d08c17e9ef3d2f5b516"
   end
 
   head do
@@ -54,7 +54,7 @@ class Coin3d < Formula
   depends_on "swig" => :build
   depends_on "boost"
   depends_on "pyside"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt"
 
   on_linux do
@@ -63,7 +63,7 @@ class Coin3d < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
@@ -119,10 +119,10 @@ class Coin3d < Formula
     # Set QT_QPA_PLATFORM to minimal to avoid error:
     # "This application failed to start because no Qt platform plugin could be initialized."
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import shiboken6
       from pivy.sogui import SoGui
       assert SoGui.init("test") is not None
-    EOS
+    PYTHON
   end
 end

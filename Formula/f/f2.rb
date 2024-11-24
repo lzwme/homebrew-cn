@@ -1,18 +1,18 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
   homepage "https:github.comayoisaiahf2"
-  url "https:github.comayoisaiahf2archiverefstagsv2.0.2.tar.gz"
-  sha256 "c5f95ae41f3c7966e39aa8ba4e9fc6a45cea1a451788c20e8df9be7981c7614b"
+  url "https:github.comayoisaiahf2archiverefstagsv2.0.3.tar.gz"
+  sha256 "164e1282ae1f2ea6a8af93c785d7bb214b09919ad8537b8fbab5b5bc8ee1a396"
   license "MIT"
   head "https:github.comayoisaiahf2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f4803de329ac29d29612f465c46e67bdf4fd401a217867f9c7f74311be26141"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f4803de329ac29d29612f465c46e67bdf4fd401a217867f9c7f74311be26141"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f4803de329ac29d29612f465c46e67bdf4fd401a217867f9c7f74311be26141"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b219b3d34f73b3f08014c229499a48b685655c6dd84e8d6351819c361e9286f"
-    sha256 cellar: :any_skip_relocation, ventura:       "6b219b3d34f73b3f08014c229499a48b685655c6dd84e8d6351819c361e9286f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78c97e892c09a36af4b11ae2153058b75a429d87befb1c91a2197bb89da7e063"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "102beebfbd41758b97daf1e7046d8f5447e3851f507a07b8fe113c81e96e80f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "102beebfbd41758b97daf1e7046d8f5447e3851f507a07b8fe113c81e96e80f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "102beebfbd41758b97daf1e7046d8f5447e3851f507a07b8fe113c81e96e80f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6a7dd847b9498a136b9680531cd4d99e1faaf320f30a2c51d8b8f31e1998d6f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c6a7dd847b9498a136b9680531cd4d99e1faaf320f30a2c51d8b8f31e1998d6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c197664eb13a389ea69c122ea8dbe4aaeb426c7db9724400631f4aca9a1dd6a"
   end
 
   depends_on "go" => :build

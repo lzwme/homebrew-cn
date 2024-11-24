@@ -15,7 +15,7 @@ class Htmldoc < Formula
     sha256 x86_64_linux:  "7a3c3054f5628a3ce636939808c5db98daa187a4b2bc9a2ca6b1c040b48b3c49"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
@@ -27,9 +27,9 @@ class Htmldoc < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--mandir=#{man}",
-                          "--without-gui"
+    system ".configure", "--mandir=#{man}",
+                          "--without-gui",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

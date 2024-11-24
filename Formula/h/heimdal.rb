@@ -38,7 +38,7 @@ class Heimdal < Formula
   uses_from_macos "libxcrypt"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   resource "JSON" do

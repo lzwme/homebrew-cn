@@ -19,7 +19,7 @@ class Ncmpcpp < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "fftw"
   depends_on "icu4c@76"

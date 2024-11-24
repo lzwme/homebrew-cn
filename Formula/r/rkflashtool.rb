@@ -24,7 +24,7 @@ class Rkflashtool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c38a8b6e2f2f2b8dd7b437c07916c5624076f472392a2899fbb3c397c07bb4a3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install

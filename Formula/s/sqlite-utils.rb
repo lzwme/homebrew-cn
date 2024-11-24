@@ -3,18 +3,17 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/65/c5/a16a5d3f5f64e700a77de3df427ce1fcf5029e38db3352e12a0696448569/sqlite_utils-3.37.tar.gz"
-  sha256 "542a71033d4e7936fe909230ac9794d3e200021838ab63dbaf3ce8f5bc2273a4"
+  url "https://files.pythonhosted.org/packages/51/43/ce9183a21911e0b73248c8fb83f8b8038515cb80053912c2a009e9765564/sqlite_utils-3.38.tar.gz"
+  sha256 "1ae77b931384052205a15478d429464f6c67a3ac3b4eafd3c674ac900f623aab"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5d7100462793220f54b6e7c42cfc8666a2843930d90858e480c237dc615c867"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5d7100462793220f54b6e7c42cfc8666a2843930d90858e480c237dc615c867"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5d7100462793220f54b6e7c42cfc8666a2843930d90858e480c237dc615c867"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d587683efd20531b59572a6b8fba6451ccc6847916c5a6564d7af377df0dbe2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d587683efd20531b59572a6b8fba6451ccc6847916c5a6564d7af377df0dbe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7914f646e31f39161b69a8c6597597c1a42c78e99e4d750cfd67241173356614"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ba7d7894a17d995f13bbc6e028709736092ffda97c57e226446635ac463fe23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33df8c15199c62afd1e5892a815caa0f5450f6e9f3678f50fa23469ee1a48d9c"
+    sha256 cellar: :any_skip_relocation, ventura:       "33df8c15199c62afd1e5892a815caa0f5450f6e9f3678f50fa23469ee1a48d9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "801f58dacffee3dd06633556ec40db111693a2031e0f6011748bf9e0681cdd11"
   end
 
   depends_on "python@3.13"

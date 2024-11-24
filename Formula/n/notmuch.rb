@@ -24,7 +24,7 @@ class Notmuch < Formula
   depends_on "doxygen" => :build
   depends_on "emacs" => :build
   depends_on "libgpg-error" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
 
   depends_on "cffi"

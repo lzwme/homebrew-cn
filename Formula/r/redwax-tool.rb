@@ -19,7 +19,7 @@ class RedwaxTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d5c0d21bc2469587576c4f1c97f65ab611e9e9f3deafa151d8dde7949ec12e3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "openssl@3"
@@ -27,7 +27,7 @@ class RedwaxTool < Formula
   uses_from_macos "expat"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--with-openssl"
+    system "./configure", "--disable-silent-rules", "--with-openssl", *std_configure_args
     system "make", "install"
   end
 
@@ -66,6 +66,6 @@ class RedwaxTool < Formula
       assert_match s, output
     end
 
-    assert_predicate testpath/"combined.pem", :exist?
+    assert_path_exists testpath/"combined.pem"
   end
 end

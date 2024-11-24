@@ -22,7 +22,7 @@ class ImagemagickAT6 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fontconfig"
   depends_on "freetype"
@@ -68,7 +68,7 @@ class ImagemagickAT6 < Formula
       --without-wmf
     ]
 
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

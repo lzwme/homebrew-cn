@@ -16,7 +16,7 @@ class Inlyne < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "330b0c5da919d5226afdbbaf7d3b4ced74443cce34970e00fb4d029dda7e9968"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "expect" => :test

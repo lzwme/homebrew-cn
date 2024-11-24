@@ -23,22 +23,16 @@ class Hackrf < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fftw"
   depends_on "libusb"
 
   def install
-    cd "host" do
-      args = std_cmake_args
+    args = OS.linux? ? ["-DUDEV_RULES_GROUP=plugdev", "-DUDEV_RULES_PATH=#{lib}udevrules.d"] : []
 
-      if OS.linux?
-        args << "-DUDEV_RULES_GROUP=plugdev"
-        args << "-DUDEV_RULES_PATH=#{lib}udevrules.d"
-      end
-
-      system "cmake", ".", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", "host", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "firmware-bin"
   end
 

@@ -23,7 +23,7 @@ class InfluxdbAT1 < Formula
   keg_only :versioned_formula
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   # NOTE: The version here is specified in the go.mod of influxdb.
@@ -82,9 +82,7 @@ class InfluxdbAT1 < Formula
     end
 
     begin
-      pid = fork do
-        exec "#{bin}influxd -config #{testpath}config.toml"
-      end
+      pid = spawn "#{bin}influxd -config #{testpath}config.toml"
       sleep 6
       output = shell_output("curl -Is localhost:8086ping")
       assert_match "X-Influxdb-Version:", output

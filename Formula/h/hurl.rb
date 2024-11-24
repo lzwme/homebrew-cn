@@ -25,7 +25,7 @@ class Hurl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "da088a0c38d10658b71d7baddf5cdb9efad45068455fc7db526a7f90d6a2fe44"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "curl"

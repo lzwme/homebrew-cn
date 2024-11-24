@@ -21,7 +21,7 @@ class Ngs < Formula
 
   depends_on "cmake" => :build
   depends_on "pandoc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "gnu-sed"
   depends_on "json-c"

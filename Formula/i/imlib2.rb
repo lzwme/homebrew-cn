@@ -16,7 +16,7 @@ class Imlib2 < Formula
     sha256 x86_64_linux:   "02135ffdab6c249729d5253a44c1a232c80be1f4464f8887524019404ed00b65"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "giflib"
   depends_on "jpeg-turbo"
@@ -31,8 +31,7 @@ class Imlib2 < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--enable-amd64=no",
                           "--without-heif",
                           "--without-id3",
@@ -40,7 +39,8 @@ class Imlib2 < Formula
                           "--without-jxl",
                           "--without-ps",
                           "--without-svg",
-                          "--without-webp"
+                          "--without-webp",
+                          *std_configure_args
     system "make", "install"
   end
 

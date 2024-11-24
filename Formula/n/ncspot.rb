@@ -21,7 +21,7 @@ class Ncspot < Formula
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
     depends_on "libxcb"

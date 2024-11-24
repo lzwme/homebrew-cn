@@ -26,7 +26,7 @@ class Ncmpc < Formula
   depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "libmpdclient"
   depends_on "pcre2"

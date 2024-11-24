@@ -4,16 +4,15 @@ class OcamlZarith < Formula
   url "https:github.comocamlZaritharchiverefstagsrelease-1.14.tar.gz"
   sha256 "5db9dcbd939153942a08581fabd846d0f3f2b8c67fe68b855127e0472d4d1859"
   license "LGPL-2.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9c6e011f7957d6fb4c36bcd17ebbad4f01aba13815c1835f1398b4e5411517b3"
-    sha256 cellar: :any,                 arm64_sonoma:   "515898c18f57cf4f95848363cad9ddc0bcce5822a0cbb19f3a61bd5f28584094"
-    sha256 cellar: :any,                 arm64_ventura:  "d9e1fad027a101b902d9fd0c3bfcc58c6b6d4928092d80f9aeb043029ed5743d"
-    sha256 cellar: :any,                 arm64_monterey: "a6afc5a2871d654eedf99c6d134f6507cfce542cfe4d41b9460636026bac2090"
-    sha256 cellar: :any,                 sonoma:         "4ee869c844b6dd77c9df7e5997c042aeffa2d5ca06e403f689cd896f308040a7"
-    sha256 cellar: :any,                 ventura:        "757d2465c37550081fc1ba9b00830f0c406e1c70bef3f0f1a021d226e482866b"
-    sha256 cellar: :any,                 monterey:       "1d5b4d9293b256249cc5fbaa84329f95aaf7ee9e20aafd74c9de4b2528231144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e783e507b26e4860a591abdc72e215bd8c067a13142f5cf05d567af392b33d87"
+    sha256 cellar: :any,                 arm64_sequoia: "ed8861f99b854e2e65c9d294e01f6b8ed0788abc19ebd3d4dc3ce7cfa34db096"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fef98a78a16f4a16510d4504391226ef04dae87230d44e8bc31e5b90909e8e7"
+    sha256 cellar: :any,                 arm64_ventura: "c19075b8f0aa1e49811a07157d742fb7efd44cacc40bcf4f6a333b41c90b3414"
+    sha256 cellar: :any,                 sonoma:        "3786c671d7fffb86a26e445c1da3f7144f612baf1830e53bbb45941df0b693c4"
+    sha256 cellar: :any,                 ventura:       "1ca4591569e5651a8f6dcee7e567eefa1801bda9a30e1494ef1c059aa1da7f17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ab7fd9e6eb25af8bf079f8b35985320694dbba6f44c4764ba123f129d9749b"
   end
 
   depends_on "ocaml-findlib" => :build

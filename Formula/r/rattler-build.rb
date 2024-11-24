@@ -23,7 +23,7 @@ class RattlerBuild < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e30fa49f9291a7d3aa161e77e7a31eab390de8b2fbea90a985dfcea1f105c5ce"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
   depends_on "xz"
@@ -61,7 +61,7 @@ class RattlerBuild < Formula
           - hello | grep "Hello World!"
     YAML
     system bin"rattler-build", "build", "--recipe", "reciperecipe.yaml"
-    assert_predicate testpath"outputnoarchtest-package-0.1.0-buildstring.conda", :exist?
+    assert_path_exists testpath"outputnoarchtest-package-0.1.0-buildstring.conda"
 
     assert_match version.to_s, shell_output(bin"rattler-build --version")
   end

@@ -24,7 +24,7 @@ class Ntfs3g < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "coreutils" => :test
   depends_on "gettext"
   depends_on "libfuse@2"

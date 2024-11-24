@@ -21,7 +21,7 @@ class Hamlib < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtool"
   depends_on "libusb"
   depends_on "libusb-compat"
@@ -29,8 +29,6 @@ class Hamlib < Formula
   on_linux do
     depends_on "readline"
   end
-
-  fails_with gcc: "5"
 
   def install
     system ".bootstrap" if build.head?

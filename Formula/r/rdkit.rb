@@ -26,7 +26,7 @@ class Rdkit < Formula
 
   depends_on "catch2" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "postgresql@14" => [:build, :test]
   depends_on "postgresql@17" => [:build, :test]
   depends_on "boost"

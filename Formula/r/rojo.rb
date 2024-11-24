@@ -19,7 +19,7 @@ class Rojo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d455bb69759f1d0030ef0d1a7ee8a182f682eb169169c3c5084e0dca263ecc68"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
@@ -33,7 +33,7 @@ class Rojo < Formula
 
   test do
     system bin"rojo", "init"
-    assert_predicate testpath"default.project.json", :exist?
+    assert_path_exists testpath"default.project.json"
 
     assert_match version.to_s, shell_output(bin"rojo --version")
   end

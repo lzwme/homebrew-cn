@@ -31,15 +31,13 @@ class Redshift < Formula
   end
 
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "glib"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
+    args = %w[
       --disable-silent-rules
-      --disable-dependency-tracking
       --disable-geoclue
       --disable-geoclue2
       --with-systemduserunitdir=no
@@ -52,7 +50,7 @@ class Redshift < Formula
     end
 
     system ".bootstrap" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
     pkgshare.install "redshift.conf.sample"
   end

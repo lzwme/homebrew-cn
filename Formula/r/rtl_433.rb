@@ -16,7 +16,7 @@ class Rtl433 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librtlsdr"
   depends_on "libusb"
   depends_on "openssl@3"

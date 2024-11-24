@@ -23,7 +23,7 @@ class Ripgrep < Formula
   end
 
   depends_on "asciidoctor" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "pcre2"
 

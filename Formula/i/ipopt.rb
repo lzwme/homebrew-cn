@@ -4,21 +4,21 @@ class Ipopt < Formula
   url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
   sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
   license "EPL-2.0"
+  revision 1
   head "https:github.comcoin-orIpopt.git", branch: "stable3.14"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "f27c151e814d4c9a0caeb33bb0a584c5d885121ec6a70a0586b330b8485779fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a7c783b3ccd11860b615afc874ead0f60700a7f97dde4d5752a4444778aa86d"
-    sha256 cellar: :any,                 arm64_ventura: "5e623167a75d4f3516f6e2b50c61578bd3222f18c63abb7d5483c95dd2a0c53b"
-    sha256 cellar: :any,                 sonoma:        "fb86b1e3c17ed6cfb6b44bf1fcaca4a989a62335b364baa36490b4f0003675b8"
-    sha256 cellar: :any,                 ventura:       "467af1d0edd4ee1beb1ef2496bf277992988c8599b3082467f5be3d6891cd85b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e2c7ebb501bd2b73e5c847f1f5e82dcedfd3a9528de22c6848e9393cedaede6"
+    sha256 cellar: :any,                 arm64_sequoia: "ff6ba93dca47a18218817c81fa1e0f67b950d031fcedae98f33cc291eea6bd34"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b2e17f3d29e91fcea03af5de5c51cddfcc3a7a31c6be0686ccee3400a56b7ed"
+    sha256 cellar: :any,                 arm64_ventura: "41aae134e8a11bbbd904e625f19dd91b9462bcd47eb245ce0758d2b4580bb6ca"
+    sha256 cellar: :any,                 sonoma:        "6f5af16203486282e3eb4d74380600a35544b362d171c66c4161a367ac4c22eb"
+    sha256 cellar: :any,                 ventura:       "d042fd4c2993aad8181d9be04ff2ce979f1b9f206c5fe9e5b1638da827caa2b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "563c0669c52d28e3e80c8352f28c48b68e8421036ca0e8a08868b1c97ee9d739"
   end
 
   depends_on "openjdk" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ampl-mp"
+  depends_on "ampl-asl"
   depends_on "gcc" # for gfortran
   depends_on "openblas"
 
@@ -84,8 +84,8 @@ class Ipopt < Formula
       "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-mumps-cflags=-I#{buildpath}mumps_include",
       "--with-mumps-lflags=-L#{lib} -ldmumps -lmpiseq -lmumps_common -lopenblas -lpord",
-      "--with-asl-cflags=-I#{Formula["ampl-mp"].opt_include}asl",
-      "--with-asl-lflags=-L#{Formula["ampl-mp"].opt_lib} -lasl",
+      "--with-asl-cflags=-I#{Formula["ampl-asl"].opt_include}asl",
+      "--with-asl-lflags=-L#{Formula["ampl-asl"].opt_lib} -lasl",
     ]
 
     system ".configure", *args

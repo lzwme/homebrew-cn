@@ -25,7 +25,7 @@ class NodeAT18 < Formula
   # disable! date: "2025-04-30", because: :unsupported
   deprecate! date: "2024-10-29", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.13" => :build
   depends_on "brotli"
@@ -48,8 +48,6 @@ class NodeAT18 < Formula
       error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
     EOS
   end
-
-  fails_with gcc: "5"
 
   # Backport support for ICU 76+
   patch do

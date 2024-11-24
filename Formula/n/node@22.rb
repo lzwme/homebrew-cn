@@ -25,7 +25,7 @@ class NodeAT22 < Formula
   # disable! date: "2027-04-30", because: :unsupported
   deprecate! date: "2026-10-28", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
@@ -47,8 +47,6 @@ class NodeAT22 < Formula
       error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
     EOS
   end
-
-  fails_with gcc: "5"
 
   # Backport support for ICU 76+
   patch do

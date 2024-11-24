@@ -23,14 +23,14 @@ class Highs < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    *std_cmake_args,
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}"
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "check", "examples"

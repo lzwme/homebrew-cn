@@ -21,7 +21,7 @@ class Hivex < Formula
     sha256               x86_64_linux:   "521ab163122aa40680fe0473ca6ea2f77fdb877ac4ef417dfff93eef66608a0b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "readline"
 
   uses_from_macos "pod2man" => :build

@@ -25,7 +25,7 @@ class Inadyn < Formula
     depends_on "libtool"  => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "confuse"
   depends_on "gnutls"

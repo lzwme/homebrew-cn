@@ -16,7 +16,7 @@ class Rsgain < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "fmt"
   depends_on "inih"

@@ -38,7 +38,7 @@ class Haxe < Formula
   depends_on "cmake" => :build
   depends_on "ocaml" => :build
   depends_on "opam" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "mbedtls"
   depends_on "neko"
   depends_on "pcre2"

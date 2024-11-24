@@ -17,7 +17,7 @@ class HopenpgpTools < Formula
 
   depends_on "cabal-install" => :build
   depends_on "ghc@9.6" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "nettle"
 
   uses_from_macos "zlib"

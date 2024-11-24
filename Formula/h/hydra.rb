@@ -16,7 +16,7 @@ class Hydra < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b289ab00cf96e4b7a327102991a0d1787756dcdca1af594828c05ecc4e86e075"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libssh"
   depends_on "mariadb-connector-c"
   depends_on "openssl@3"

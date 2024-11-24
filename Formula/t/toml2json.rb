@@ -17,6 +17,8 @@ class Toml2json < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "remarshal", because: "both install `toml2json` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

@@ -1,20 +1,18 @@
 class Ratchet < Formula
   desc "Tool for securing CICD workflows with version pinning"
   homepage "https:github.comsethvargoratchet"
-  url "https:github.comsethvargoratchetarchiverefstagsv0.10.0.tar.gz"
-  sha256 "e96135fa2acddade2707e2110d212b790c2a8d114a7ace8c5d25e9edbf83b7e9"
+  url "https:github.comsethvargoratchetarchiverefstagsv0.10.1.tar.gz"
+  sha256 "0ca44bf4051e144a6df726950c7f056c419ffbafd1d0c3784046c9f6b865d453"
   license "Apache-2.0"
   head "https:github.comsethvargoratchet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebede08c8ce709ae39e9bc0f62c3544dad4abf496283830e0cd90f60a2453829"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e904d78b0e6c10d5bf551a16ed857252d24ead2e9f516f26e461b69508fb196"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "579509ef8e3f5f20d185c8662620613b7aff6131a53f17d510068d91c7200370"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e42a349f8878e4ff5adb0daddba625e93488b1042123e4deb28e2eb0ed68154"
-    sha256 cellar: :any_skip_relocation, sonoma:         "97aa1f256588276eba74c07ff6ee9c99fa19740c4bfb3b1c9e4bc4634a994111"
-    sha256 cellar: :any_skip_relocation, ventura:        "56b68e942bb996298d508b5bf7c7d5233066397bb07f756d1ef5f8a69abbdfe8"
-    sha256 cellar: :any_skip_relocation, monterey:       "b3d68a2ebc3886f694dc4771449230fe9bf57da781d7701692be1aa8a950f5b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db3d5f28e3d08211699d07e23aae308a856acd2652177e9164354fa4efe563d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7c78e2858c6d74c4c47495170b42a1d8990b9852bb8f0c250efba163cbaab49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7c78e2858c6d74c4c47495170b42a1d8990b9852bb8f0c250efba163cbaab49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7c78e2858c6d74c4c47495170b42a1d8990b9852bb8f0c250efba163cbaab49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f81010454c8f43536a6cc0ec15f55c3c18e3ff683943ee11ad87573878f6406c"
+    sha256 cellar: :any_skip_relocation, ventura:       "f81010454c8f43536a6cc0ec15f55c3c18e3ff683943ee11ad87573878f6406c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4b8068b35a15a7104bde1ffe0188477a757863982ccb827a5694c2a217a0fb4"
   end
 
   depends_on "go" => :build

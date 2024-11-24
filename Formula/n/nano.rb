@@ -21,7 +21,7 @@ class Nano < Formula
     sha256 x86_64_linux:   "edf58c3490cd237a93a008057d5e434aa89be53065bafd94b1a64f1dd17018eb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "ncurses"
 
@@ -30,15 +30,13 @@ class Nano < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--enable-color",
+    system "./configure", "--enable-color",
                           "--enable-extra",
                           "--enable-multibuffer",
                           "--enable-nanorc",
-                          "--enable-utf8"
+                          "--enable-utf8",
+                          "--sysconfdir=#{etc}",
+                          *std_configure_args
     system "make", "install"
     doc.install "doc/sample.nanorc"
   end

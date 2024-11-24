@@ -8,24 +8,20 @@ class Mas < Formula
   head "https:github.commas-climas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f79bc1592e59900e5f876a255259a0aed774069109e2b608ffcac46bac66b52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bae1f14f8522dc16f69b00371ae12221b6550456dd12ed0238df72cdd68f20e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3a4df50b78219917927a482dfde491edc3524d41211fea9e507ac7a47700b1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7915e683c7579d8289934b4eb162997b74ab0cf0ad8378dd6158872965f07cdf"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7862ed579d42f662bbb41d4611452444e3cecfe747c09774a2cbdfd844c448a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d60116e4940c47bd25bc0f6a1892b0208614aa9aed42dcadaa09e3076d0c8f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a8e74596411c07d2ed9836cee135d332275c0c16eb13bd913af7a57e26b6a90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "41063e066322ddf890781b9e52aeba17531d0049f3a7b1a8b2224f526353bf5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c1cf3ef5f895e07f8890f74ee79ab722398dd64a62393bcc74342c52ccc1743"
+    sha256 cellar: :any_skip_relocation, ventura:       "753b67a87bdce69ead4ec7d667a3834bb72e9654594e3789f315e70d3f439243"
   end
 
+  depends_on xcode: ["14.2", :build]
   depends_on :macos
-  on_arm do
-    depends_on xcode: ["12.2", :build]
-  end
-  on_intel do
-    depends_on xcode: ["12.0", :build]
-  end
 
   def install
     system "scriptbuild"
-    system "scriptinstall", prefix
+    bin.install ".buildreleasemas"
 
     bash_completion.install "contribcompletionmas-completion.bash" => "mas"
     fish_completion.install "contribcompletionmas.fish"

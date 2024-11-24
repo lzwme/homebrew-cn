@@ -23,7 +23,7 @@ class Nghttp2 < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "c-ares"
   depends_on "jemalloc"
   depends_on "libev"
@@ -74,7 +74,7 @@ class Nghttp2 < Formula
       --without-systemd
     ]
 
-    system "autoreconf", "-ivf" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system ".configure", *args
     system "make"
     system "make", "install"

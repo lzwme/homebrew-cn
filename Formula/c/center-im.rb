@@ -22,7 +22,7 @@ class CenterIm < Formula
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libsigc++@2"
   depends_on "pidgin" # for libpurple
@@ -54,11 +54,11 @@ class CenterIm < Formula
     ENV["TERM"] = "xterm"
     File.open("output.txt", "w") do |file|
       $stdout.reopen(file)
-      pid = fork { exec bin"centerim5", "--basedir", testpath }
-      sleep 10
+      pid = spawn bin"centerim5", "--basedir", testpath
+      sleep 25
       Process.kill("TERM", pid)
     end
     assert_match "Welcome to CenterIM", (testpath"output.txt").read
-    assert_predicate testpath"prefs.xml", :exist?
+    assert_path_exists testpath"prefs.xml"
   end
 end

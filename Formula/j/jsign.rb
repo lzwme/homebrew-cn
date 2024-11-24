@@ -7,13 +7,13 @@ class Jsign < Formula
   head "https:github.comebourgjsign.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24033e21246e7d13267d179314ce519e859cf9bef4285049a652dc8790ff7e56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b8c8a17f4e9d31e48d26de1b4f4b576ea1167e3d9cfb11ba5a61cc6f58a0f23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e345dc02f318332b975d8c9cf046c3bc26d9e896b1fb19889f6970a6fb46c7ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31f1d1de5c61a4b3d676736aee2a84ba9165602afeedbb00a85dfc5c90bdd976"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e45ee386b5c2d0f48cf9fc0452faa2912f8269dc6e710b3d42da17146d944cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c8d5b9be18eb3997161637c60bc4e22058cde49ef23e5320398fe80c473ef61"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b00098005ac7db789bb40bbb7586303706bf40ecb565c00cf16e72da8973afab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f22c6ddf024d78f5e251838dfe6737906048a265d6186a487183d03eb75fb65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fa5c59d84abae2fcf6df7f6b4de93e6f8f366a8ab49e3f08274e5a57b8e42c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff260c3a23a688662cddaff0704a35b36333dfbf8ecff36ef264b22ed01a2637"
+    sha256 cellar: :any_skip_relocation, ventura:       "1f014aa2f1412a040d6c997e4fae0038168fa8d793cc94fd7be648d5b189ad9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fa5c59d84abae2fcf6df7f6b4de93e6f8f366a8ab49e3f08274e5a57b8e42c8"
   end
 
   depends_on "maven" => :build
@@ -23,6 +23,7 @@ class Jsign < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home("21")
     system "mvn", "--batch-mode", "package",
                   "--projects", "jsign-core,jsign-cli,jsign-ant,jsign",
+                  "--also-make",
                   "-DskipTests",
                   "-Djdeb.skip",
                   "-Dmaven.javadoc.skip"

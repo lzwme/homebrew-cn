@@ -1,20 +1,17 @@
 class Logdy < Formula
   desc "Web based real-time log viewer"
   homepage "https:logdy.dev"
-  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.13.0.tar.gz"
-  sha256 "7aec95af51d4d954ad01fcdd7e925269fa4cdbadab5484761c56fc54dc122c38"
+  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.13.1.tar.gz"
+  sha256 "aaa5b05b13c52d58ea840c4e54b86315df516b8f0131145379040311ea8117f0"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b97337df265fafda2d9c799c804e889503ec51d81030d61f95a48a58d9958f66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "903dda9a2dc16f7195b4bb3dfe94bcb7b91b1ec62b6cc1e89c7f9c3125b644d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60c0887e8ddacd4b9cd8ba871acac5634b44ff46b7d1ce3e3e46ff1abca7a0d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "60c0887e8ddacd4b9cd8ba871acac5634b44ff46b7d1ce3e3e46ff1abca7a0d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "60c0887e8ddacd4b9cd8ba871acac5634b44ff46b7d1ce3e3e46ff1abca7a0d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "632e162a3f8827b9ef6518a554653588474fadfedd0dfb92cf3a5523ad1b3170"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a68c4abfb604f793b9073993c79242aa020a479e8bbe1f36fc758189163d4c76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a68c4abfb604f793b9073993c79242aa020a479e8bbe1f36fc758189163d4c76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a68c4abfb604f793b9073993c79242aa020a479e8bbe1f36fc758189163d4c76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4fa1aadfd4b1f56d083b44cbcb9e82aaa78ea18e3773d1dce93f0d0b0879c2e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fa1aadfd4b1f56d083b44cbcb9e82aaa78ea18e3773d1dce93f0d0b0879c2e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69f015fc0b94b74132eb8d846a33fefc6d207e4f902eb27f7d9b0d1b22431994"
   end
 
   depends_on "go" => :build
@@ -26,7 +23,7 @@ class Logdy < Formula
 
   test do
     port = free_port
-    r, _, pid = PTY.spawn("#{bin}logdy --port=#{port}")
+    r, _, pid = PTY.spawn("#{bin}logdy stdin --port=#{port}")
     assert_match "Listen to stdin (from pipe)", r.readline
   ensure
     Process.kill("TERM", pid)

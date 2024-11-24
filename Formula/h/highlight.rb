@@ -21,10 +21,8 @@ class Highlight < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lua"
-
-  fails_with gcc: "5" # needs C++17
 
   def install
     conf_dir = etc/"highlight/" # highlight needs a final / for conf_dir

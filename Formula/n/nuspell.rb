@@ -17,7 +17,7 @@ class Nuspell < Formula
 
   depends_on "cmake" => :build
   depends_on "pandoc" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "icu4c@76"
 
   def install

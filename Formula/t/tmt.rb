@@ -3,28 +3,23 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https:tmt.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesb01d49e757ca78bdfd5aa47976d6cef195373f567d9a829acdaa96e9af4c69c9tmt-1.38.0.tar.gz"
-  sha256 "3954af99051be5b03b87c2fbb06864a139d43e5c9b7b69e1ea23d3e6b73305a2"
+  url "https:files.pythonhosted.orgpackagese14c4e82bb59cc070b24d70e57a53813650b595987330d2e4ef7f53cd588a245tmt-1.39.0.tar.gz"
+  sha256 "6bdf71d0dab7ac290c0c908d37e1221717ac13eef0056617a39f84fdf94f6063"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0e281fd045ec219c7d62980bf249e9b7d1d0e24e934649bbac43237fd911e595"
-    sha256 cellar: :any,                 arm64_sonoma:  "16f69d01cf9b9d3b573a2849d84869e25aa99d1776a78c2fd0eb4973138b3e93"
-    sha256 cellar: :any,                 arm64_ventura: "75b7dda7a5200cf1f4fe6493daaa3c7687123372237ebf7b2ad3db25befbdeec"
-    sha256 cellar: :any,                 sonoma:        "9e6730f45f0dce0232ae483a2485169b1d4576eee1df20a4d534077fdb4d252e"
-    sha256 cellar: :any,                 ventura:       "e94335ecc2df0a7e4a64965aaac3790d86903e56607332bf28203ccd36f72f80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cde04f643d639cff67a166f97d1d3d69d92f1d952b2e3bcce3e6433c4de3be9"
+    sha256 cellar: :any,                 arm64_sequoia: "83900f80883342e5c8c6134f9718c7d515b86e4fae32d2b3fff9de80f2322053"
+    sha256 cellar: :any,                 arm64_sonoma:  "41ab538708aa1fd319b34d72b36c459889509dc72bcfacd26bef467f61fe0169"
+    sha256 cellar: :any,                 arm64_ventura: "5fdd5362dd83cb7d114326984b006e2b4e74f620a79054782ad1856f38a9ea4c"
+    sha256 cellar: :any,                 sonoma:        "59f12d64dec961fefdd9cd3870ddcb29727b382ad5da6614812f5789b18173d8"
+    sha256 cellar: :any,                 ventura:       "379f06a8b05f7ce9e3968241401394a914e314f931d8615177e0df6ffe9fef92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f265f057f724ad73bacdf495c88f9d5a3c4686226afa29365f537d790fbbb7"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "beakerlib"
   depends_on "certifi"
-  depends_on "python@3.12"
-
-  resource "appdirs" do
-    url "https:files.pythonhosted.orgpackagesd7d805696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40appdirs-1.4.4.tar.gz"
-    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
+  depends_on "python@3.13"
 
   resource "attrs" do
     url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
@@ -57,8 +52,8 @@ class Tmt < Formula
   end
 
   resource "flexparser" do
-    url "https:files.pythonhosted.orgpackagesdce4a73612499d9c8c450c8f4878e8bb8b3b2dce4bf671b21dd8d5c6549525a7flexparser-0.3.1.tar.gz"
-    sha256 "36f795d82e50f5c9ae2fde1c33f21f88922fdd67b7629550a3cc4d0b40a66856"
+    url "https:files.pythonhosted.orgpackages8299b4de7e39e8eaf8207ba1a8fa2241dd98b2ba72ae6e16960d8351736d8702flexparser-0.4.tar.gz"
+    sha256 "266d98905595be2ccc5da964fe0a2c3526fbbffdc45b65b3146d75db992ef6b2"
   end
 
   resource "fmf" do
@@ -88,19 +83,24 @@ class Tmt < Formula
     sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
-  resource "markupSafe" do
+  resource "markupsafe" do
     url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pint" do
-    url "https:files.pythonhosted.orgpackages537d30178ff193a076e35521592260915f74049bfa77dccb43ac8aa5abe1414bpint-0.24.3.tar.gz"
-    sha256 "d54771093e8b94c4e0a35ac638c2444ddf3ef685652bab7675ffecfa0c5c5cdf"
+    url "https:files.pythonhosted.orgpackages20bb52b15ddf7b7706ed591134a895dbf6e41c8348171fb635e655e0a4bbb0eapint-0.24.4.tar.gz"
+    sha256 "35275439b574837a6cd3020a5a4a73645eb125ce4152a73a2f126bf164b91b80"
+  end
+
+  resource "platformdirs" do
+    url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
+    sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
   end
 
   resource "pygments" do
@@ -119,18 +119,13 @@ class Tmt < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages5564b693f262791b818880d17268f3f8181ef799b0d187f6f731b1772e05a29arpds_py-0.20.0.tar.gz"
-    sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
+    url "https:files.pythonhosted.orgpackages2380afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4frpds_py-0.21.0.tar.gz"
+    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
   end
 
   resource "ruamel-yaml" do
     url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
     sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
-    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "typing-extensions" do
@@ -144,10 +139,6 @@ class Tmt < Formula
   end
 
   def install
-    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
-    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
     virtualenv_install_with_resources
   end
 

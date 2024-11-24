@@ -20,7 +20,7 @@ class R < Formula
     sha256 x86_64_linux:  "6a984c21e657a33571022f0254219c0f220c225a9d39379f5e3240eedcd71188"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gcc" # for gfortran
   depends_on "gettext"

@@ -18,7 +18,7 @@ class Nfdump < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -27,7 +27,7 @@ class Nfdump < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args, "--enable-readpcap", "LEXLIB="
+    system ".configure", "--enable-readpcap", "LEXLIB=", *std_configure_args
     system "make", "install"
   end
 

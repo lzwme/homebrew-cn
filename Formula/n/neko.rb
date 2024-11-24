@@ -18,7 +18,7 @@ class Neko < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "mariadb-connector-c"
   depends_on "mbedtls"

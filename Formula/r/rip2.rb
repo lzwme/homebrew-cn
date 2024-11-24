@@ -18,6 +18,8 @@ class Rip2 < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "rm-improved", because: "both install `rip` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
 

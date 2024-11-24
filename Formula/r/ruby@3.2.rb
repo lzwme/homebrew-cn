@@ -23,7 +23,7 @@ class RubyAT32 < Formula
 
   depends_on "autoconf" => :build
   depends_on "bison" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "openssl@3"

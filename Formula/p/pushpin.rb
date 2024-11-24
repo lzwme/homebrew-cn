@@ -8,11 +8,12 @@ class Pushpin < Formula
   head "https:github.comfastlypushpin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "1d120efbfadd608cd604b66470462a3e4488f69b86e46808797d230d25790303"
-    sha256 cellar: :any,                 arm64_ventura: "0e40cbd84d4f05265640af260ebe60817491fc1025aa38589912ece4b4ee7998"
-    sha256 cellar: :any,                 sonoma:        "77d2d0fb0619c56b39c9cef7ffcc21d41a47be7b9886842feb157164090c336d"
-    sha256 cellar: :any,                 ventura:       "a9eb99d74245913f4e521c113fb5b2abcdd6ad97db162f86abae790efb27534f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848d95a2cf6027fd9c0bdb99b34fe0d7a70b86784a40365bd7c432506b70e2e2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "b21a3a9a5ebc10ca3f753bde79a40e21b47f12e5c5dff5323f519195efdaa449"
+    sha256 cellar: :any,                 arm64_ventura: "93ed50774f9359a82d2758c28a9feb42c967a4699247b1fbbd4ee38f3f0838a4"
+    sha256 cellar: :any,                 sonoma:        "445efcf66fc080457df5cd035952d9d9e480bb88913b620a64339dc4a5fc19a4"
+    sha256 cellar: :any,                 ventura:       "5cb0cb08f8b383f1f49ddc488d91282971937f045b1590583bfe8e8cd780d7de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f1d6d7bd7fca315386205d982a48853efa8a1cbe3e04695c63950f0a0d31782"
   end
 
   depends_on "boost" => :build
@@ -20,7 +21,7 @@ class Pushpin < Formula
   depends_on "rust" => :build
 
   depends_on "openssl@3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt"
   depends_on "zeromq"
   depends_on "zurl"
@@ -108,12 +109,11 @@ class Pushpin < Formula
     ENV["LC_ALL"] = "en_US.UTF-8"
     ENV["LANG"] = "en_US.UTF-8"
 
-    pid = fork do
-      exec bin"pushpin", "--config=#{conffile}"
-    end
+    pid = spawn bin"pushpin", "--config=#{conffile}"
+    sleep 5
 
     begin
-      system Formula["python@3.12"].opt_bin"python3.12", runfile
+      system Formula["python@3.13"].opt_bin"python3.13", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

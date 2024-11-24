@@ -29,7 +29,8 @@ class Redland < Formula
     sha256 x86_64_linux:   "5439aed60715d12f7bce18e9292ce3301fc93b89cdb2eae2bd072a0a59a5fc6b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
+  depends_on "libtool"
   depends_on "raptor"
   depends_on "rasqal"
   depends_on "sqlite"
@@ -47,12 +48,10 @@ class Redland < Formula
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-bdb=no",
+    system ".configure", "--with-bdb=no",
                           "--with-mysql=no",
-                          "--with-sqlite=yes"
+                          "--with-sqlite=yes",
+                          *std_configure_args
     system "make", "install"
   end
 

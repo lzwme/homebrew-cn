@@ -2,14 +2,14 @@ cask "macfuse" do
   version "4.8.3"
   sha256 "cf2951ce10d005711734196c43c55922d34ad45f6e0b27b15e345eeab1c92935"
 
-  url "https:github.comosxfuseosxfusereleasesdownloadmacfuse-#{version}macfuse-#{version}.dmg",
-      verified: "github.comosxfuseosxfuse"
+  url "https:github.commacfusemacfusereleasesdownloadmacfuse-#{version}macfuse-#{version}.dmg",
+      verified: "github.commacfusemacfuse"
   name "macFUSE"
   desc "File system integration"
-  homepage "https:osxfuse.github.io"
+  homepage "https:macfuse.github.io"
 
   livecheck do
-    url "https:osxfuse.github.ioreleasesCurrentRelease.plist"
+    url "https:macfuse.github.ioreleasesCurrentRelease.plist"
     strategy :xml do |xml|
       xml.get_elements("key[text()='Version']").map { |item| item.next_element&.text&.strip }
     end

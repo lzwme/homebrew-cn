@@ -16,7 +16,7 @@ class Nftables < Formula
     sha256 x86_64_linux: "49760ce306d0ed33f13a26b25b00ee965fc8f4f64f902c8ef8ef4a639a210527"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "gmp"
   depends_on "jansson"
@@ -29,9 +29,9 @@ class Nftables < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.13")
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-python-bin=#{venv.root}/bin/python3"
+    system "./configure", "--disable-silent-rules",
+                          "--with-python-bin=#{venv.root}/bin/python3",
+                          *std_configure_args
     system "make", "install"
   end
 

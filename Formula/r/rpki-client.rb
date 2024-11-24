@@ -19,7 +19,7 @@ class RpkiClient < Formula
     sha256 x86_64_linux:  "ba880cf10fd69db73ab54d1b861bb35ebbf15f91333bce53e9ab64dbdb739817"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libretls"
   depends_on "openssl@3"
   depends_on "rsync"
@@ -28,11 +28,11 @@ class RpkiClient < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--with-rsync=#{Formula["rsync"].opt_bin}/rsync",
+    system "./configure", "--with-rsync=#{Formula["rsync"].opt_bin}/rsync",
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
-                          "--localstatedir=#{var}"
+                          "--localstatedir=#{var}",
+                          *std_configure_args
     system "make", "install"
   end
 

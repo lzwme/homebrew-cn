@@ -21,7 +21,7 @@ class RomTools < Formula
   end
 
   depends_on "asio" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   # Need C++ compiler and standard library support C++17.
   depends_on macos: :high_sierra

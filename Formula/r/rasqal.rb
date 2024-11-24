@@ -28,7 +28,7 @@ class Rasqal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2267d3f39fc7d088095d64bb6cf86f5fcad6c2a72fdd72dde8237cc910b123d1"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "raptor"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -38,9 +38,7 @@ class Rasqal < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}",
-                          "--with-html-dir=#{share}doc",
-                          "--disable-dependency-tracking"
+    system ".configure", "--with-html-dir=#{share}doc", *std_configure_args
     system "make", "install"
   end
 end

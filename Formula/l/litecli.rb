@@ -3,12 +3,12 @@ class Litecli < Formula
 
   desc "CLI for SQLite Databases with auto-completion and syntax highlighting"
   homepage "https:github.comdbclilitecli"
-  url "https:files.pythonhosted.orgpackages979c3a2ab329a5349aa41c01ff01f944309d3d43b9d77c422fee26466ffe2800litecli-1.12.4.tar.gz"
-  sha256 "53f7fa067acdb2714dfaa2145ed27937b14d0751c781c2d09e80e5d848e05602"
+  url "https:files.pythonhosted.orgpackagesca5cba2f4968855db0e2978f622691f67c8f64e297c17625ae4d7f038b420771litecli-1.13.0.tar.gz"
+  sha256 "c76c63cdc3aa4137dd1b06bcfd63ffc656562f4bdeee664a7fa38cd7841bb97e"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fc7e8f11aa5df9089c0df61c002dca1431ef478bc4fa9c0c9c3a4a7261418a5a"
+    sha256 cellar: :any_skip_relocation, all: "811f2f0880b7e1a4dcfd240c90464113bdc26cc8371d4037d24614956de94556"
   end
 
   depends_on "python@3.13"
@@ -41,8 +41,8 @@ class Litecli < Formula
   end
 
   resource "sqlparse" do
-    url "https:files.pythonhosted.orgpackages7382dfa23ec2cbed08a801deab02fe7c904bfb00765256b155941d789a338c68sqlparse-0.5.1.tar.gz"
-    sha256 "bb6b4df465655ef332548e24f08e205afc81b9ab86cb1c45657a7ff173a3a00e"
+    url "https:files.pythonhosted.orgpackages57615bc3aff85dc5bf98291b37cf469dab74b3d0aef2dd88eade9070a200af05sqlparse-0.5.2.tar.gz"
+    sha256 "9e37b35e16d1cc652a2545f0997c1deb23ea28fa1f3eefe609eee3063c3b105f"
   end
 
   resource "tabulate" do

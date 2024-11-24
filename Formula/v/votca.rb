@@ -6,12 +6,13 @@ class Votca < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c851db85234aa35aa9155aaa4872a04aa58324f08fbb47bc3788541792b1d661"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec44f7aac765b4b81260bcc1de2ea076b4b78c2dfa4bf7d993da8c74335bf2bc"
-    sha256 cellar: :any,                 arm64_ventura: "1c9dbd430fc9300fcc282269f596cada4beb8839ce7446dcde32194da234e3bc"
-    sha256 cellar: :any,                 sonoma:        "eef20cb56c41ed7c1d2413cdeaa5a4f9f3726e97798697cf601621a65d862f35"
-    sha256 cellar: :any,                 ventura:       "52dbdf32d36464cbc1bfc044246ca8f981410c9ecbf31e6b1e7e6f5eaaadc78e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4703fa99a47953c9648d617c618b4b810b768607225f5acec6b4f0e1a8ce99"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3bee35e3501b30d45351535d5df50f4529b6db11d024df9b48d0e1d712edd626"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f4e7335acbdcae62e289c13f25384583a9073b7304839627115b44948f3e3b4"
+    sha256 cellar: :any,                 arm64_ventura: "0bb72aea264b3b63efcbb022883c5870ba5517b3bd9790ea15ed9e78118ad05d"
+    sha256 cellar: :any,                 sonoma:        "8795bb4558db3b7744dd1383681d53718476a22974368a1ea3ca06d818e0baa8"
+    sha256 cellar: :any,                 ventura:       "4fdb6152fdedf5e0dd7971fa9b5646c6a915874333f6946739520a86edd41316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a263fe3977df21e1d8033c82270ffa20c86d4dda43393f7ca728699599dcb23"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class Votca < Formula
   depends_on "libint"
   depends_on "libxc"
   depends_on "numpy"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "expat"
 

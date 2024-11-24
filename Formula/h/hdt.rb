@@ -24,7 +24,7 @@ class Hdt < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "serd"
 
   uses_from_macos "zlib"
@@ -55,7 +55,7 @@ class Hdt < Formula
     EOS
 
     system bin"rdf2hdt", test_file, "test.hdt"
-    assert_predicate testpath"test.hdt", :exist?
+    assert_path_exists testpath"test.hdt"
     system bin"hdtInfo", "test.hdt"
   end
 end

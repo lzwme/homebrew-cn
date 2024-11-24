@@ -21,6 +21,7 @@ class Remarshal < Formula
   depends_on "python@3.13"
 
   conflicts_with "msgpack-tools", because: "both install 'json2msgpack' binary"
+  conflicts_with "toml2json", because: "both install `toml2json` binaries"
 
   resource "cbor2" do
     url "https:files.pythonhosted.orgpackagese4aaba55b47d51d27911981a18743b4d3cebfabccbb0598c09801b734cec4184cbor2-5.6.5.tar.gz"

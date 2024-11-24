@@ -18,7 +18,7 @@ class Rizin < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "capstone"
   depends_on "libmagic"
   depends_on "libzip"

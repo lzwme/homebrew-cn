@@ -1,8 +1,8 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/people/mcalabre/WCS/"
-  url "https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib-8.3.tar.bz2"
-  sha256 "431ea3417927bbc02b89bfa3415dc0b4668b0f21a3b46fb8a3525e2fcf614508"
+  url "https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib-8.4.tar.bz2"
+  sha256 "960b844426d14a8b53cdeed78258aa9288cded99a7732c0667c64fa6a50126dc"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Wcslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b58519295a6f5324492a6ab2cb85c88757d03341a7aca1da1ebf411c2347eaa2"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bc1c82b8c69f67c15d8ae2c483060cf79b17e299fc71a925aa1fd27960f2288"
-    sha256 cellar: :any,                 arm64_ventura: "aabc26c024db1b46aabd91df3e6e644ed4c30c66e4a3eb0df70afa694ec51593"
-    sha256 cellar: :any,                 sonoma:        "8bb35f89b28e53fdba267d500b006b0c1d671eb59be4cb491ce91a5be1aab085"
-    sha256 cellar: :any,                 ventura:       "342018d1233c04c9f057330b3041fc13e4a2ac6a67852f16b87ec404589d5576"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c269ab6085a158ee39f20cbb4eaff0d5f77f7f9022969c49e7b5accc58acd0d"
+    sha256 cellar: :any,                 arm64_sequoia: "9b4c893d06fdc0f35e6d0068cd2c0f8e310bcc21fcd80242c8096895ef6bbdc5"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d19f46e3c4eccaf8a8f0e47b15650a0d597fb7b1a0e41523f98c225733f79cd"
+    sha256 cellar: :any,                 arm64_ventura: "a8a2219881ba618ed874d2d8e398c6014e0acc2a8116f2786fa44354950d0050"
+    sha256 cellar: :any,                 sonoma:        "1e11d5347b5aabd5a8be7b58f255b296b32a27daea37dd6f1c96d58e05a099f9"
+    sha256 cellar: :any,                 ventura:       "7ad6caa1fcc73ee40853218467f7c69063672b81c9f57168c2fc3fe36a352581"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4796b96042e9131506aaacb702c1e6cb372fddc463b0e328b5f46ea49bf342"
   end
 
   depends_on "cfitsio"

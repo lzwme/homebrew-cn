@@ -19,7 +19,7 @@ class Nudoku < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gettext"
 
@@ -27,10 +27,9 @@ class Nudoku < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--enable-cairo",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
   end
 

@@ -9,12 +9,13 @@ class AnsibleLint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b69fc5e3877ef621d104fdf34fae3212feb47cc24cbc19ceae5551d30b6075b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f1a75c66451cb7bb04e79c672e24fdfe6f02ec98af7e8ba322153983ea72f7e"
-    sha256 cellar: :any,                 arm64_ventura: "56c6dd9fd632e6d1a94d9dd31ca92f81432c3ef2f2a528064e0658a54ae04888"
-    sha256 cellar: :any,                 sonoma:        "978c43bdf9cc1a0b635479e598fdc3ef9be30e5f8f5ffc50e51711f433009994"
-    sha256 cellar: :any,                 ventura:       "640267d7c124e22c14d552bf9085756a05a495c026a8899d2dd2344bb9371021"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c8ee000d26f840190539411f333f6d32541d679129595d391c99cc90a309cb1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a3e8ea837d34ad3db11430946434522c784834fa744dcb5c8f5c4b46446c1ba7"
+    sha256 cellar: :any,                 arm64_sonoma:  "bad9a2bc2b926069f2d720c2e64d091c028a39318167439c4f839e2baf8581ac"
+    sha256 cellar: :any,                 arm64_ventura: "8c352b9c0e5a27f03c06fd0c5bc98b0100ef8c3b54edc8ff6bc6e37bc4859301"
+    sha256 cellar: :any,                 sonoma:        "e1df8fcf2c0df053910f7ce08aa9b070a5c88d0863ede4edfa90bb4ebb275f9f"
+    sha256 cellar: :any,                 ventura:       "07895c4a91a5ef82e609c8c48e19bc6436cd2a4636dfcac84e2d51120c4b7cc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f2d6fd913aedcb0f8e1b071dc41ebf3df969d1fb9e709d8e7b249ace3b74bcc"
   end
 
   depends_on "pkgconf" => :build
@@ -22,7 +23,7 @@ class AnsibleLint < Formula
   depends_on "ansible" => :test
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/59/f9/c48f3a140e3afad144a720f5c29aa8b34087926b2e2fc8778d4d4b5b6323/ansible_compat-24.10.0.tar.gz"

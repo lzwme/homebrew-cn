@@ -21,12 +21,17 @@ class Huexpress < Formula
     sha256               x86_64_linux:   "8f5ca6b63b8fc347e8221765dc09ac1000f4b6a62e53424fb578bb14103c8952"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "scons" => :build
   depends_on "libvorbis"
   depends_on "libzip"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "glib"
+  end
 
   on_linux do
     depends_on "mesa"

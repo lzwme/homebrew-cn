@@ -15,7 +15,7 @@ class Hcxtools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa435ef982fe30b6e3ea26c1d736882a4799c0ee035bccb5cf20bdca00740dd"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "curl"

@@ -23,7 +23,7 @@ class Nickle < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "flex" => :build # conflicting types for 'yyget_leng'
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "readline"
 
   uses_from_macos "bison" => :build

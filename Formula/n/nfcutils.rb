@@ -22,14 +22,12 @@ class Nfcutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f32645957380142c3180b1c67f9afb4170caa582aae8e0500731700d170dbc6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libnfc"
   depends_on "libusb"
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end

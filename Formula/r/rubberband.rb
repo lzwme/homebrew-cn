@@ -22,7 +22,7 @@ class Rubberband < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libsamplerate"
   depends_on "libsndfile"
 
@@ -31,8 +31,6 @@ class Rubberband < Formula
     depends_on "ladspa-sdk"
     depends_on "vamp-plugin-sdk"
   end
-
-  fails_with gcc: "5"
 
   def install
     args = ["-Dresampler=libsamplerate"]

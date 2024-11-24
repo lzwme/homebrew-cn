@@ -63,6 +63,7 @@ class Qt < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on maximum_macos: [:sonoma, :build] # https:bugreports.qt.iobrowseQTBUG-128900
   depends_on "ninja" => :build
   depends_on "node" => :build
   depends_on "pkg-config" => :build
