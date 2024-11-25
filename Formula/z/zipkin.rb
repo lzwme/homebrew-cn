@@ -32,9 +32,7 @@ class Zipkin < Formula
     port = free_port
     ENV["QUERY_PORT"] = port.to_s
 
-    fork do
-      exec bin/"zipkin"
-    end
+    spawn bin/"zipkin"
     sleep 20
     assert_match "UP", shell_output("curl -s 127.0.0.1:#{port}/health")
   end

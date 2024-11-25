@@ -167,9 +167,9 @@ class Animdl < Formula
 
   test do
     test_config = testpath"config.yml"
-    test_config.write <<~EOS
+    test_config.write <<~YAML
       default_provider: animixplay
-    EOS
+    YAML
 
     assert_match "One Piece Film", shell_output("#{bin}animdl search \"one piece\" 2>&1")
     assert_match "animdl, version #{version}", shell_output("#{bin}animdl --version")

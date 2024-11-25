@@ -16,9 +16,9 @@ class Docfx < Formula
   depends_on "dotnet"
 
   def install
+    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+
     dotnet = Formula["dotnet"]
-    os = OS.mac? ? "osx" : OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
     # specify the target framework to only target the currently used version of
     # .NET, otherwise additional frameworks will be added due to this running
@@ -28,8 +28,8 @@ class Docfx < Formula
       --configuration Release
       --framework net#{dotnet.version.major_minor}
       --output #{libexec}
-      --runtime #{os}-#{arch}
       --no-self-contained
+      --use-current-runtime
       -p:Version=#{version}
       -p:TargetFrameworks=net#{dotnet.version.major_minor}
     ]

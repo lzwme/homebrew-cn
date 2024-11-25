@@ -43,7 +43,7 @@ class ActionValidator < Formula
 
   test do
     test_action = testpath"action.yml"
-    test_action.write <<~EOS
+    test_action.write <<~YAML
       name: "Brew Test Action"
       description: "Test Action"
       inputs:
@@ -53,10 +53,10 @@ class ActionValidator < Formula
       runs:
         using: "node20"
         main: "index.js"
-    EOS
+    YAML
 
     test_workflow = testpath"workflow.yml"
-    test_workflow.write <<~EOS
+    test_workflow.write <<~YAML
       name: "Brew Test Workflow"
       on: [push111]
       jobs:
@@ -64,7 +64,7 @@ class ActionValidator < Formula
           runs-on: ubuntu-latest
           steps:
             - uses: actionscheckout@v4
-    EOS
+    YAML
 
     output = shell_output("#{bin}action-validator --verbose #{test_action}")
     assert_match "Treating action.yml as an Action definition", output

@@ -14,18 +14,18 @@ class Fwup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1267aba26b012ba18bc6f2c57a046d5a3633f3886e6c934ee6620db096a9b164"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "confuse"
   depends_on "libarchive"
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     system bin"fwup", "-g"
-    assert_predicate testpath"fwup-key.priv", :exist?, "Failed to create fwup-key.priv!"
-    assert_predicate testpath"fwup-key.pub", :exist?, "Failed to create fwup-key.pub!"
+    assert_path_exists testpath"fwup-key.priv", "Failed to create fwup-key.priv!"
+    assert_path_exists testpath"fwup-key.pub", "Failed to create fwup-key.pub!"
   end
 end

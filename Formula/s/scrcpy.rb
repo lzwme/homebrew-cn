@@ -1,8 +1,8 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https:github.comGenymobilescrcpy"
-  url "https:github.comGenymobilescrcpyarchiverefstagsv2.7.tar.gz"
-  sha256 "3ceea215f6eccb59535f68a16db6db2b05a8a1c91bdcb4a6e222d3093a9daf8c"
+  url "https:github.comGenymobilescrcpyarchiverefstagsv3.0.tar.gz"
+  sha256 "6ad2306dcdf17a8c927691d1004ec632a694069187ded73d30113a5db780fc43"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Scrcpy < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f0fee1075318ee78ec35066cff51f5faef4d3af0c81ecdad25686f89394f3aa1"
-    sha256 arm64_sonoma:  "afaf0bf5fc3c48997ca8a36c626e40c673564c638ac951c44d667fc8782e1906"
-    sha256 arm64_ventura: "9ace7a93c8b40a371863463945b703f68424d78433803028bcd9a3b77f619920"
-    sha256 sonoma:        "f3b446582e45ca9972c8de85734ba16d293916479ae73e4f11a2884ef554df50"
-    sha256 ventura:       "84791d738ac1d933573c9ab27f773ab5b378257b4465122f8f1413caaa9d7545"
-    sha256 x86_64_linux:  "694bc1df5e0064f05df84169b5e07f7bbd1f54191d8d35892fc61eb771676d8e"
+    sha256 arm64_sequoia: "dc645512230237f88dd769cdd8239e7a2343447b8d029ed1dd4d813bf0f5f04b"
+    sha256 arm64_sonoma:  "4404674f0d68bee3f0654c50b82bf487ecb7d69da2920e4b06d8e318bc4f95fd"
+    sha256 arm64_ventura: "cb4d5ba2ebe83ca9da3388ee3fe4558f29757c4522af714f2a3f160f2b1fb910"
+    sha256 sonoma:        "3c3bcf6550981315c6e45f419b66fcbdc2673b5811408c4acc034ddaaee3e872"
+    sha256 ventura:       "307b9726aa88a54cb4e7ab47aa1e657b40acee79c2c56277d0fc050da8071f44"
+    sha256 x86_64_linux:  "03b4e7857a38b7d7e564293f2c8dbc01d41316b476808c4eb32e13fc5bb86e90"
   end
 
   depends_on "meson" => :build
@@ -27,8 +27,8 @@ class Scrcpy < Formula
   depends_on "sdl2"
 
   resource "prebuilt-server" do
-    url "https:github.comGenymobilescrcpyreleasesdownloadv2.7scrcpy-server-v2.7", using: :nounzip
-    sha256 "a23c5659f36c260f105c022d27bcb3eafffa26070e7baa9eda66d01377a1adba"
+    url "https:github.comGenymobilescrcpyreleasesdownloadv3.0scrcpy-server-v3.0", using: :nounzip
+    sha256 "800044c62a94d5fc16f5ab9c86d45b1050eae3eb436514d1b0d2fe2646b894ea"
   end
 
   def install
@@ -83,7 +83,7 @@ class Scrcpy < Formula
 
     # It's expected to fail after adb reverse step because fakeadb exits
     # with code 42
-    out = shell_output("#{bin}scrcpy --no-display --record=file.mp4 -p 1337 2>&1", 1)
+    out = shell_output("#{bin}scrcpy --no-window --record=file.mp4 -p 1337 2>&1", 1)
     assert_match( 42, out)
 
     log_content = File.read(testpath"fakeadb.log")

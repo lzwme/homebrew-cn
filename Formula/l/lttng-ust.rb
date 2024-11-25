@@ -14,13 +14,13 @@ class LttngUst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "efe5ffe7089dbecb5a5202820c0a3776543c8981cdd558dd6f13b9beb0ba6247"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on :linux
   depends_on "numactl"
   depends_on "userspace-rcu"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

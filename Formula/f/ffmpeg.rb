@@ -23,7 +23,7 @@ class Ffmpeg < Formula
     sha256 x86_64_linux:  "d3a29d2c867df86335af5f7d3643c830782d8323bbe45cc2c9a067caef651136"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "aom"
   depends_on "aribb24"
   depends_on "dav1d"
@@ -84,8 +84,6 @@ class Ffmpeg < Formula
   on_intel do
     depends_on "nasm" => :build
   end
-
-  fails_with gcc: "5"
 
   # Fix for QtWebEngine, do not remove
   # https:bugs.freebsd.orgbugzillashow_bug.cgi?id=270209
@@ -168,6 +166,6 @@ class Ffmpeg < Formula
     # Create an example mp4 file
     mp4out = testpath"video.mp4"
     system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
-    assert_predicate mp4out, :exist?
+    assert_path_exists mp4out
   end
 end

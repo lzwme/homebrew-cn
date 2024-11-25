@@ -1,22 +1,24 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https:github.comswsnrmdcat"
-  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.6.1.tar.gz"
-  sha256 "0dac8322b74d3eefc412ea13fca448aac43b257a3ff3e361d3343c6220a6618f"
+  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.7.0.tar.gz"
+  sha256 "e372a82291a139f95d77c12325a2f595f47f6d6b4c2de70e50ab2117e975734f"
   license "MPL-2.0"
   head "https:github.comswsnrmdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c26c22a9efb034b2b8d562af1621099ce62d70908b1f303acc61460355211f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381588c26928902bad2f8b21d6b2cf9fcac7fa1c2697972cdbd9b1f4a0ce3497"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "613dddcd20631d34b8349dc2915e1214ad9f34deec489d5e83c68b36501281ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae56e8127ef9d13c94fe29e19da32bc8d5f43ceb09361b07254a766076a71be7"
-    sha256 cellar: :any_skip_relocation, ventura:       "3d15ec90a4ab3121b98080e412ccfd1b25864d42695aa5acac988f3ecfeace80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa7d5f06422524927d87e1c53333548ed11980a39de2b7befc0bcbd8137b8e42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca38875152be98d69833fbb90851625cad41ea408d2988d1b692e0514eea7d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "919a746231ece9f3525138673946ad329656f3eb58970ee356f614aaa91eaeb9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "53f91d8e89afb3542a7a496027fd41a37935a0cd99d5d0a6fc36081d86187856"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe51c3e6cfc2b64039d1b9ce584b9b9655c293c76f5fae35737a3d94e1da9f01"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ffb94fac81a11124aa4668fbbc4a35891706a915f18b9c3e29f5262b8f2c549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ad557b7e0f95bf84b13d2fd11fb8592ffac94a5fd9207d92436e3e7b23ac6a"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "curl"
 
   on_linux do
     depends_on "pkg-config" => :build

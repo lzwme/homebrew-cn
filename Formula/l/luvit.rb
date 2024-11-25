@@ -18,7 +18,7 @@ class Luvit < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libuv"
   depends_on "luajit"
   depends_on "luv"

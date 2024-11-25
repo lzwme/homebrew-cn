@@ -21,17 +21,17 @@ class Zx < Formula
   end
 
   test do
-    (testpath"test.mjs").write <<~EOS
+    (testpath"test.mjs").write <<~JAVASCRIPT
       #!usrbinenv zx
 
       let name = YAML.parse('foo: bar').foo
       console.log(`name is ${name}`)
       await $`touch ${name}`
-    EOS
+    JAVASCRIPT
 
     output = shell_output("#{bin}zx #{testpath}test.mjs")
     assert_match "name is bar", output
-    assert_predicate testpath"bar", :exist?
+    assert_path_exists testpath"bar"
 
     assert_match version.to_s, shell_output("#{bin}zx --version")
   end

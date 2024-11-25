@@ -29,12 +29,10 @@ class Ffms2 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
 
   uses_from_macos "zlib"
-
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     system ".autogen.sh", "--enable-avresample", *std_configure_args
@@ -50,7 +48,7 @@ class Ffms2 < Formula
     # download small sample and check that the index was created
     resource("homebrew-videosample").stage do
       system bin"ffmsindex", "lm20.avi"
-      assert_predicate Pathname.pwd"lm20.avi.ffindex", :exist?
+      assert_path_exists Pathname.pwd"lm20.avi.ffindex"
     end
   end
 end

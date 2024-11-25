@@ -14,14 +14,14 @@ class Bashunit < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       function test_addition() {
         local result
         result="$((2 + 2))"
 
         assert_equals "4" "$result"
       }
-    EOS
+    SHELL
     assert "addition", shell_output("#{bin}bashunit test.sh")
 
     assert_match version.to_s, shell_output("#{bin}bashunit --version")

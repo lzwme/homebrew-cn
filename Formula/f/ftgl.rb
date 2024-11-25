@@ -28,7 +28,7 @@ class Ftgl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a53d8292298b4c6974e04fd8ab744860aec65b58149a704d9e2dad61aba0c4f6"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "freetype"
 
   on_linux do
@@ -76,8 +76,8 @@ class Ftgl < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs ftgl").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    pkgconf_flags = shell_output("pkgconf --cflags --libs ftgl").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
     system "./test"
   end
 end

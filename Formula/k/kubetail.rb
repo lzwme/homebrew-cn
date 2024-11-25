@@ -1,8 +1,8 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.0.7.tar.gz"
-  sha256 "7b5a19702f514ecf2789b949105d93837ec876f2e78927b9d518cfe6f1859ec1"
+  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.0.8.tar.gz"
+  sha256 "d1a5274688379f7e5b5775e44c1465f9c46d07957f096a32a62bd299f7921c63"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40c6e03ee085553aec3e2acd213073d07d0e1e4a8645dcf2d86c61635e689e33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79d957a05db593a5e55b4d36d6d9e97573417f54bfca07f95c2b491d5901fded"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44ed7695865a2fed8999edeb2cd6a7fc8a6969788adeae61f58d1bfad0f1f7f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87e66066ea85355dc4b88ec8d56ceea3b943472be570a902e2f7a6b2ebc1031d"
-    sha256 cellar: :any_skip_relocation, ventura:       "6376840ff6416fdeb7fd365036fddf6451888c371cc25a787e02c39dd68b3eee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d77b6f6f664f773db9cf6b8ac11ebeae3c442f00b0184f960bae41ca07dd7c53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a46e2e2c3aa7e7557da12014fcf1541f0e4a6e16381173bdbef0973f3c043d16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d23292f3714a95485f12c3fd8442e5e7c86769dfd238071c80603f22d53da90b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "82b131affdd59ef2063e8676aeece3e74130059a5de7a44e679d0c5cc1281db3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abf57d3176003d355d954c0ffb838de00d74da5347058b5e36471092b7de6f88"
+    sha256 cellar: :any_skip_relocation, ventura:       "76144d6d1d0b9c93bcd146f729765ac869786b54dd5aa629c9ecf2bfead95945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea2664e7d8e8cf333df6c6240add44fdccd616c22dce5bf1abc6a6fb6f9ec059"
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Kubetail < Formula
   depends_on "pnpm" => :build
 
   def install
-    system "make", "build"
+    system "make", "build", "VERSION=#{version}"
     bin.install "binkubetail"
     generate_completions_from_executable(bin"kubetail", "completion")
   end
@@ -33,5 +33,7 @@ class Kubetail < Formula
   test do
     command_output = shell_output("#{bin}kubetail serve --test")
     assert_match "ok", command_output
+
+    assert_match version.to_s, shell_output("#{bin}kubetail --version")
   end
 end

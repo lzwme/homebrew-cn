@@ -28,7 +28,7 @@ class Flickcurl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3590c3c9a44504b1a7493018de9e009fc1ff929beb7cc890f8907eed5fc0e05"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
@@ -40,8 +40,7 @@ class Flickcurl < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

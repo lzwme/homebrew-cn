@@ -73,14 +73,14 @@ class Apprise < Formula
   test do
     # Setup a custom notifier that can be passed in as a plugin
     file = "#{testpath}/brewtest_notifier.py"
-    apprise_plugin_definition = <<~EOS
+    apprise_plugin_definition = <<~PYTHON
       from apprise.decorators import notify
 
       @notify(on="brewtest")
       def my_wrapper(body, title, *args, **kwargs):
         # A simple test - print to screen
         print("{}: {}".format(title, body))
-    EOS
+    PYTHON
 
     File.write(file, apprise_plugin_definition)
 

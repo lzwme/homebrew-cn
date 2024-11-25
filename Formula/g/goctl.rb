@@ -5,6 +5,11 @@ class Goctl < Formula
   sha256 "74f9281e5f0ed1c65d27a3bb8ae39fed67c25ec726b04fe08c5eb6c923824f46"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(%r{^toolsgoctlv?(\d+(?:\.\d+)+)$}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "888e085a20e03ab2c88d1295c516134a1e8145cea6100499af2db560980c36c5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "888e085a20e03ab2c88d1295c516134a1e8145cea6100499af2db560980c36c5"

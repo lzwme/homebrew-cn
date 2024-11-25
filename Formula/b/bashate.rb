@@ -30,10 +30,10 @@ class Bashate < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       #!binbash
         echo "Testing Bashate"
-    EOS
+    SHELL
 
     assert_match "E003 Indent not multiple of 4", shell_output("#{bin}bashate #{testpath}test.sh", 1)
     assert_empty shell_output("#{bin}bashate -i E003 #{testpath}test.sh")

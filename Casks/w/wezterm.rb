@@ -18,7 +18,7 @@ cask "wezterm" do
 
   conflicts_with cask: "wezterm@nightly"
 
-  app "WezTerm.app"
+  app "WezTerm-macos-#{version.csv.first}-#{version.csv.second}WezTerm.app"
   %w[
     wezterm
     wezterm-gui
@@ -28,21 +28,12 @@ cask "wezterm" do
     binary "#{appdir}WezTerm.appContentsMacOS#{tool}"
   end
 
-  binary "WezTerm.appContentsResourcesshell-completionzsh",
+  binary "#{appdir}WezTerm.appContentsResourcesshell-completionzsh",
          target: "#{HOMEBREW_PREFIX}sharezshsite-functions_wezterm"
-  binary "WezTerm.appContentsResourcesshell-completionbash",
+  binary "#{appdir}WezTerm.appContentsResourcesshell-completionbash",
          target: "#{HOMEBREW_PREFIX}etcbash_completion.dwezterm"
-  binary "WezTerm.appContentsResourcesshell-completionfish",
+  binary "#{appdir}WezTerm.appContentsResourcesshell-completionfish",
          target: "#{HOMEBREW_PREFIX}sharefishvendor_completions.dwezterm.fish"
-
-  preflight do
-    # Move "WezTerm-macos-#{version}WezTerm.app" out of the subfolder
-    staged_subfolder = staged_path.glob(["WezTerm-*", "wezterm-*"]).first
-    if staged_subfolder
-      FileUtils.mv(staged_subfolder"WezTerm.app", staged_path)
-      FileUtils.rm_r(staged_subfolder)
-    end
-  end
 
   zap trash: "~LibrarySaved Application Statecom.github.wez.wezterm.savedState"
 end

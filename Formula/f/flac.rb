@@ -40,25 +40,19 @@ class Flac < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --disable-debug
-      --prefix=#{prefix}
-      --enable-static
-    ]
     system "./autogen.sh" if build.head?
-    system "./configure", *args
+    system "./configure", "--enable-static", *std_configure_args
     system "make", "install"
   end
 
   test do
     system bin/"flac", "--decode", "--force-raw", "--endian=little", "--sign=signed",
-                          "--output-name=out.raw", test_fixtures("test.flac")
+                       "--output-name=out.raw", test_fixtures("test.flac")
     system bin/"flac", "--endian=little", "--sign=signed", "--channels=1", "--bps=8",
-                          "--sample-rate=8000", "--output-name=out.flac", "out.raw"
+                       "--sample-rate=8000", "--output-name=out.flac", "out.raw"
   end
 end

@@ -38,25 +38,25 @@ class Apgdiff < Formula
     sql_orig = testpath"orig.sql"
     sql_new = testpath"new.sql"
 
-    sql_orig.write <<~EOS
+    sql_orig.write <<~SQL
       SET search_path = public, pg_catalog;
       SET default_tablespace = '';
       CREATE TABLE testtable (field1 integer);
       ALTER TABLE public.testtable OWNER TO fordfrog;
-    EOS
+    SQL
 
-    sql_new.write <<~EOS
+    sql_new.write <<~SQL
       SET search_path = public, pg_catalog;
       SET default_tablespace = '';
       CREATE TABLE testtable (field1 integer,
         field2 boolean DEFAULT false NOT NULL);
       ALTER TABLE public.testtable OWNER TO fordfrog;
-    EOS
+    SQL
 
-    expected = <<~EOS.strip
+    expected = <<~SQL.strip
       ALTER TABLE testtable
       \tADD COLUMN field2 boolean DEFAULT false NOT NULL;
-    EOS
+    SQL
 
     result = pipe_output("#{bin}apgdiff #{sql_orig} #{sql_new}").strip
 

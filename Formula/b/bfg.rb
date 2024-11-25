@@ -19,10 +19,10 @@ class Bfg < Formula
 
   def install
     libexec.install "bfg-#{version}.jar"
-    (bin/"bfg").write <<~EOS
+    (bin/"bfg").write <<~SHELL
       #!/bin/bash
       exec "#{Formula["openjdk"].opt_bin}/java" -jar "#{libexec}/bfg-#{version}.jar" "$@"
-    EOS
+    SHELL
   end
 
   test do

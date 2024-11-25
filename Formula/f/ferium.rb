@@ -15,12 +15,10 @@ class Ferium < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "139b6568724b1ff83342d0e33539425f3d0c74a34319e8bfbe17eecdb37f03f6"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  uses_from_macos "bzip2"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
+  uses_from_macos "bzip2"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -38,6 +36,6 @@ class Ferium < Formula
     system bin"ferium", "add", "sodium"
     system bin"ferium", "list", "--verbose"
     system bin"ferium", "upgrade"
-    !Dir.glob("#{testpath}mods*.jar").empty?
+    refute_empty testpath.glob("mods*.jar")
   end
 end

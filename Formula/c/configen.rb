@@ -29,7 +29,7 @@ class Configen < Formula
   end
 
   test do
-    (testpath"test.plist").write <<~EOS
+    (testpath"test.plist").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
       <plist version="1.0">
@@ -40,7 +40,8 @@ class Configen < Formula
         <integer>2<integer>
       <dict>
       <plist>
-    EOS
+    XML
+
     (testpath"test.map").write <<~EOS
       testURL : URL
       retryCount : Int

@@ -20,7 +20,7 @@ class Fastfec < Formula
 
   depends_on "cmake" => :build # for zig resource
   depends_on "llvm@16" => :build # for zig resource
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   # TODO: depends_on "zig" => :build
   depends_on "zstd" => :build # for zig resource
   depends_on macos: :big_sur # for zig resource - https:github.comziglangzigissues13313

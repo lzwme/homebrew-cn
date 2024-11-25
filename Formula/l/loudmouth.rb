@@ -42,16 +42,17 @@ class Loudmouth < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "libidn"
 
+  uses_from_macos "krb5"
+
   def install
     system ".autogen.sh", "-n" if build.head?
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--with-ssl=gnutls"
+    system ".configure", "--with-ssl=gnutls", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

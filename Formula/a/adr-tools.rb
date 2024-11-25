@@ -15,11 +15,11 @@ class AdrTools < Formula
 
     # Unlink and re-write to matches homebrew's installation conventions
     config.unlink
-    config.write <<~EOS
+    config.write <<~SHELL
       #!binbash
       echo 'adr_bin_dir="#{bin}"'
       echo 'adr_template_dir="#{prefix}"'
-    EOS
+    SHELL
 
     prefix.install Dir["src*.md"]
     bin.install Dir["src*"]

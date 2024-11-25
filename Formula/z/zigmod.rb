@@ -43,7 +43,7 @@ class Zigmod < Formula
   end
 
   test do
-    (testpath"zig.mod").write <<~EOS
+    (testpath"zigmod.yml").write <<~YAML
       id: 89ujp8gq842x6mzok8feypwze138n2d96zpugw44hcq7406r
       name: zigmod
       main: srclib.zig
@@ -52,18 +52,18 @@ class Zigmod < Formula
       min_zig_version: 0.11.0
       dependencies:
         - src: git https:github.comnektrozig-yaml
-    EOS
+    YAML
 
-    (testpath"srclib.zig").write <<~EOS
+    (testpath"srclib.zig").write <<~ZIG
       const std = @import("std");
       pub fn main() !void {
         std.log.info("Hello, world!");
       }
-    EOS
+    ZIG
 
     system bin"zigmod", "fetch"
-    assert_predicate testpath"deps.zig", :exist?
-    assert_predicate testpath"zigmod.lock", :exist?
+    assert_path_exists testpath"deps.zig"
+    assert_path_exists testpath"zigmod.lock"
 
     assert_match version.to_s, shell_output("#{bin}zigmod version")
   end

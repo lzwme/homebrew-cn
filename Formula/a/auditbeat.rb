@@ -40,7 +40,7 @@ class Auditbeat < Formula
       prefix.install "buildkibana"
     end
 
-    (bin"auditbeat").write <<~EOS
+    (bin"auditbeat").write <<~SHELL
       #!binsh
       exec #{libexec}binauditbeat \
         --path.config #{etc}auditbeat \
@@ -48,7 +48,7 @@ class Auditbeat < Formula
         --path.home #{prefix} \
         --path.logs #{var}logauditbeat \
         "$@"
-    EOS
+    SHELL
 
     chmod 0555, bin"auditbeat"
     generate_completions_from_executable(bin"auditbeat", "completion", shells: [:bash, :zsh])

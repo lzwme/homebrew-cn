@@ -17,12 +17,12 @@ class BashUnit < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       test_addition() {
         RES="$(echo 2+2 | bc)"
         assert_equals "${RES}" "4"
       }
-    EOS
+    SHELL
     assert "addition", shell_output("#{bin}bash_unit test.sh")
   end
 end

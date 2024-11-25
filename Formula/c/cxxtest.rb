@@ -25,8 +25,8 @@ class Cxxtest < Formula
   end
 
   test do
-    testfile = testpath"MyTestSuite1.h"
-    testfile.write <<~EOS
+    testfile = testpath"MyTestSuite1.hpp"
+    testfile.write <<~CPP
       #include <cxxtestTestSuite.h>
 
       class MyTestSuite1 : public CxxTest::TestSuite {
@@ -36,7 +36,7 @@ class Cxxtest < Formula
               TS_ASSERT_EQUALS(1 + 1, 2);
           }
       };
-    EOS
+    CPP
 
     system bin"cxxtestgen", "--error-printer", "-o", testpath"runner.cpp", testfile
     system ENV.cxx, "-o", testpath"runner", testpath"runner.cpp"

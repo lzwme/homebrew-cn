@@ -160,7 +160,7 @@ class Buku < Formula
     ENV["XDG_DATA_HOME"] = "#{testpath}.localshare"
 
     # Firefox exported bookmarks file
-    (testpath"bookmarks.html").write <<~EOS
+    (testpath"bookmarks.html").write <<~HTML
       <!DOCTYPE NETSCAPE-Bookmark-file-1>
       <META HTTP-EQUIV="Content-Type" CONTENT="texthtml; charset=UTF-8">
       <TITLE>Bookmarks<TITLE>
@@ -173,7 +173,7 @@ class Buku < Formula
               <DT><A HREF="https:github.comHomebrewbrew" ADD_DATE="1477369518" LAST_MODIFIED="1477369529">Title unknown<A>
           <DL><p>
       <DL>
-    EOS
+    HTML
 
     system bin"buku", "--nostdin", "--nc", "--tacit", "--import", "bookmarks.html"
     assert_equal <<~EOS, shell_output("#{bin}buku --nostdin --nc --print").chomp
@@ -186,7 +186,7 @@ class Buku < Formula
     assert_match "Index 1: updated", shell_output("#{bin}buku --nostdin --nc --update")
 
     # Test crypto functionality
-    (testpath"crypto-test").write <<~EOS
+    (testpath"crypto-test").write <<~SHELL
       # Lock bookmark database
       spawn #{bin}buku --lock
       expect "Password: "
@@ -206,7 +206,7 @@ class Buku < Formula
           -re ".*ERROR.*" { exit 1 }
           "File decrypted"
       }
-    EOS
+    SHELL
     system "expect", "-f", "crypto-test"
 
     # Test database content and search

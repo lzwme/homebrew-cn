@@ -26,12 +26,12 @@ class Ata < Formula
     system bin"ata", "--version"
 
     config_file = testpath"configata.toml"
-    config_file.write <<~EOS
+    config_file.write <<~TOML
       api_key = "<YOUR SECRET API KEY>"
       model = "gpt-3.5-turbo"
       max_tokens = 2048
       temperature = 0.8
-    EOS
+    TOML
 
     IO.popen("#{bin}ata --config #{config_file} 2>&1", "r+") do |pipe|
       assert_match "Ask the Terminal Anything", pipe.gets.chomp

@@ -34,15 +34,15 @@ class Cppi < Formula
   end
 
   test do
-    test = <<~EOS
+    test = <<~C
       #ifdef TEST
       #include <homebrew.h>
       #endif
-    EOS
-    assert_equal <<~EOS, pipe_output(bin/"cppi", test, 0)
+    C
+    assert_equal <<~C, pipe_output(bin/"cppi", test, 0)
       #ifdef TEST
       # include <homebrew.h>
       #endif
-    EOS
+    C
   end
 end

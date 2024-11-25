@@ -16,7 +16,7 @@ class Licensed < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ruby"
   depends_on "xz"
 
@@ -62,7 +62,6 @@ class Licensed < Formula
         - mit
     YAML
 
-    assert_match "Caching dependency records for test",
-                        shell_output(bin"licensed cache")
+    assert_match "Caching dependency records for test", shell_output("#{bin}licensed cache")
   end
 end

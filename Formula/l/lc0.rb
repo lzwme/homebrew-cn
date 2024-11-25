@@ -18,7 +18,7 @@ class Lc0 < Formula
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "eigen"
 
   uses_from_macos "python" => :build # required to compile .pb files
@@ -27,8 +27,6 @@ class Lc0 < Formula
   on_linux do
     depends_on "openblas"
   end
-
-  fails_with gcc: "5" # for C++17
 
   # We use "753723" network with 15 blocks x 192 filters (from release notes)
   # Downloaded from https:training.lczero.orgnetworks?show_all=0

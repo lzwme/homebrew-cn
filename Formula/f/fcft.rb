@@ -11,7 +11,7 @@ class Fcft < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "scdoc" => :build
   depends_on "tllist" => :build
 
@@ -31,14 +31,14 @@ class Fcft < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <fcft/fcft.h>
 
       int main() {
         printf("%u", fcft_capabilities());
       }
-    EOS
+    C
 
     pixman = Formula["pixman"]
     utf8proc = Formula["utf8proc"]

@@ -25,7 +25,7 @@ class Fizmo < Formula
     sha256 x86_64_linux:   "9fe334a5cf5e393d868f48d5be496001315fd76a84058458c7244b4970ffda4d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -37,7 +37,7 @@ class Fizmo < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

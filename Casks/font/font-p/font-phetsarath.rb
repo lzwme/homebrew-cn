@@ -7,7 +7,7 @@ cask "font-phetsarath" do
       branch:    "main",
       only_path: "oflphetsarath"
   name "Phetsarath"
-  homepage "https:fonts.google.comearlyaccess"
+  homepage "https:fonts.google.comspecimenPhetsarath"
 
   font "Phetsarath-Bold.ttf"
   font "Phetsarath-Regular.ttf"

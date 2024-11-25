@@ -27,7 +27,7 @@ class KyotoTycoon < Formula
   end
 
   depends_on "lua" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "kyoto-cabinet"
 
   uses_from_macos "zlib"
@@ -45,6 +45,8 @@ class KyotoTycoon < Formula
   end
 
   def install
+    ENV.append_to_cflags "-fpermissive" if OS.linux?
+    ENV.append "CXXFLAGS", "-std=c++98"
     system ".configure", "--prefix=#{prefix}",
                           "--with-kc=#{Formula["kyoto-cabinet"].opt_prefix}",
                           "--with-lua=#{Formula["lua"].opt_prefix}"
@@ -66,10 +68,8 @@ class KyotoTycoon < Formula
     LUA
     port = free_port
 
-    fork do
-      exec bin"ktserver", "-port", port.to_s, "-scr", testpath"test.lua"
-    end
-    sleep 5
+    spawn bin"ktserver", "-port", port.to_s, "-scr", testpath"test.lua"
+    sleep 10
 
     assert_match "Homebrew\tCool", shell_output("#{bin}ktremotemgr script -port #{port} echo Homebrew Cool 2>&1")
   end

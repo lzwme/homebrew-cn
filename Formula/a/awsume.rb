@@ -85,11 +85,11 @@ class Awsume < Formula
 
   test do
     assert_match version.to_s, shell_output("bash -c '. #{bin}awsume -v 2>&1'")
-    assert_match <<~EOS, (testpath".awsumeconfig.yaml").read
+    assert_match <<~YAML, (testpath".awsumeconfig.yaml").read
       colors: true
       fuzzy-match: false
       role-duration: 0
-    EOS
+    YAML
     assert_match "PROFILE  TYPE  SOURCE  MFA?  REGION  PARTITION  ACCOUNT",
                  shell_output("bash -c '. #{bin}awsume --list-profiles 2>&1'")
   end

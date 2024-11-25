@@ -1,8 +1,8 @@
 class BashCompletionAT2 < Formula
   desc "Programmable completion for Bash 4.2+"
   homepage "https:github.comscopbash-completion"
-  url "https:github.comscopbash-completionreleasesdownload2.14.0bash-completion-2.14.0.tar.xz"
-  sha256 "5c7494f968280832d6adb5aa19f745a56f1a79df311e59338c5efa6f7285e168"
+  url "https:github.comscopbash-completionreleasesdownload2.15.0bash-completion-2.15.0.tar.xz"
+  sha256 "976a62ee6226970283cda85ecb9c7a4a88f62574c0a6f9e856126976decf1a06"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class BashCompletionAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "35c3dfec6b25b505f6d44bc650a7be26a3a66619759d8c0df22591cf8a3163f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddd730a4ec0c0fe21ffa9c0d48009b8d32c32ca3f4babb61a5b9aa8513432019"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59600ca38f753a80adf4cd18262e7c1715e48594d7ed0a5158478b7bb5150e41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c6e0b32b4f7ba34a1e601b200d8d6fd82178ba10d10c9933acec4156342f97a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f9ce334d3e044c6a45ea6560397624a2ba3fcf46d2424663b41f63c67540423c"
-    sha256 cellar: :any_skip_relocation, ventura:        "4613fd0d18d2dd5609238cae627980a5bff8b8d5a24c055b13b5163c04b760ee"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5613d8b636cf1cf4a40e8ea02d035310ea184648e2f616b6f1f9cbea8d701a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd97d8e15058a780ce9b0e2b411b50911009e00a97d1504ac653ea1557d70aa6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf91eafe8baacf4dc09a22d1fefe219f90479025937d073377f625320a78a5ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf91eafe8baacf4dc09a22d1fefe219f90479025937d073377f625320a78a5ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf91eafe8baacf4dc09a22d1fefe219f90479025937d073377f625320a78a5ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a13ee70befd5ebe48d5cf1c9d90549eb54f09496e8aae8b2e7ef1a09e58e152"
+    sha256 cellar: :any_skip_relocation, ventura:       "5a13ee70befd5ebe48d5cf1c9d90549eb54f09496e8aae8b2e7ef1a09e58e152"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf91eafe8baacf4dc09a22d1fefe219f90479025937d073377f625320a78a5ab"
   end
 
   head do

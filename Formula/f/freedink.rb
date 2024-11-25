@@ -24,7 +24,7 @@ class Freedink < Formula
   end
 
   depends_on "glm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "check"
   depends_on "cxxtest"
   depends_on "fontconfig"
@@ -52,12 +52,10 @@ class Freedink < Formula
     # cannot initialize a variable of type 'char *' with an rvalue of type 'const char *'
     inreplace "srcgfx_fonts.cpp", "char *familyname", "const char *familyname"
     inreplace "srcgfx_fonts.cpp", "char *stylename", "const char *stylename"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
 
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
+
     resource("freedink-data").stage do
       inreplace "Makefile", "xargs -0r", "xargs -0"
       system "make", "install", "PREFIX=#{prefix}"
@@ -66,6 +64,6 @@ class Freedink < Formula
 
   test do
     assert_match "GNU FreeDink 109.6", shell_output("#{bin}freedink -vwis")
-    assert_predicate share"dinkdinkDink.dat", :exist?
+    assert_path_exists share"dinkdinkDink.dat"
   end
 end

@@ -25,11 +25,11 @@ class CfnFormat < Formula
   end
 
   test do
-    (testpath"test.template").write <<~EOS
+    (testpath"test.template").write <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
-    EOS
+    YAML
     assert_equal "test.template: formatted OK", shell_output("#{bin}cfn-format -v test.template").strip
   end
 end

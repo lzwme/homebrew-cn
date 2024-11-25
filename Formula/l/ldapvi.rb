@@ -25,7 +25,7 @@ class Ldapvi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b2deb6f280d0b64a18c53e61aa77b2e46d0907ffe56f30ca81e71ae4447e3a5"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.
 
   depends_on "gettext"

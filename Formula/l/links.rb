@@ -21,17 +21,17 @@ class Links < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e5d1f0bddfee851800eedbefc4a4e97d7563cc00910ecf74ddcdce4b56a415"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--mandir=#{man}",
+    system "./configure", "--mandir=#{man}",
                           "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--without-lzma"
+                          "--without-lzma",
+                          *std_configure_args
     system "make", "install"
     doc.install Dir["doc/*"]
   end

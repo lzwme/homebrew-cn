@@ -15,7 +15,7 @@ class Flawz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "917ae375e82d69e1c5952feeee931ebb6f2c18d48c0722ba06da19ebef69aa84"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "sqlite"

@@ -16,7 +16,7 @@ class FluidSynth < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "libsndfile"
   depends_on "portaudio"
@@ -101,9 +101,9 @@ class FluidSynth < Formula
     resource("homebrew-test").stage testpath
     wavout = testpath"Drum_sample.wav"
     system bin"fluidsynth", "-F", wavout, pkgshare"sf2VintageDreamsWaves-v2.sf2", testpath"Drum_sample.mid"
-    assert_predicate wavout, :exist?
+    assert_path_exists wavout
 
     # Check the pkg-config module
-    system "pkg-config", "--cflags", "--libs", "--static", lib"pkgconfigfluidsynth.pc"
+    system "pkgconf", "--cflags", "--libs", "--static", lib"pkgconfigfluidsynth.pc"
   end
 end

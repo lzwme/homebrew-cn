@@ -26,7 +26,7 @@ class Leetup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f06e66d4529f7489b4ca0b9bcf9976c376015d6ea635c0c00a09adcd4439dca"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

@@ -21,7 +21,7 @@ class Lutok < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8ce236e89a71233f9ff42e9d6ad46c4ac504f3c6684e1af98d6659f07c59f8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lua"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -31,9 +31,7 @@ class Lutok < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "check"

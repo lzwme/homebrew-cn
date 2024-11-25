@@ -23,7 +23,7 @@ class LiterateGit < Formula
   uses_from_macos "libffi"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   resource "cffi" do

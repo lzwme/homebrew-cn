@@ -281,7 +281,7 @@ class CloudformationCli < Formula
   end
 
   test do
-    (testpath"test.exp").write <<~EOS
+    (testpath"test.exp").write <<~SHELL
       #!usrbinenv expect -f
       set timeout -1
 
@@ -301,7 +301,7 @@ class CloudformationCli < Formula
 
       expect -exact "Initialized a new project in"
       expect eof
-    EOS
+    SHELL
 
     system "expect", "-f", "test.exp"
 

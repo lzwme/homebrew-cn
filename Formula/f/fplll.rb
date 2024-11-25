@@ -15,15 +15,12 @@ class Fplll < Formula
   end
 
   depends_on "automake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "gmp"
   depends_on "mpfr"
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -48,10 +45,8 @@ class Fplll < Formula
         return 0;
       }
     CPP
-    system "pkg-config", "fplll", "--cflags"
-    system "pkg-config", "fplll", "--libs"
-    pkg_config_flags = `pkg-config --cflags --libs gmp mpfr fplll`.chomp.split
-    system ENV.cxx, "-std=c++11", "test.cpp", *pkg_config_flags, "-o", "test"
+    pkgconf_flags = shell_output("pkgconf --cflags --libs gmp mpfr fplll").chomp.split
+    system ENV.cxx, "-std=c++11", "test.cpp", *pkgconf_flags, "-o", "test"
     system ".test"
   end
 end

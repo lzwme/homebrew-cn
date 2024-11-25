@@ -24,21 +24,21 @@ class Lighttpd < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openldap"
   depends_on "openssl@3"
   depends_on "pcre2"
 
+  uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
+  uses_from_macos "zlib"
 
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
 
   def install
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --sbindir=#{bin}
       --with-bzip2
       --with-ldap
@@ -51,7 +51,7 @@ class Lighttpd < Formula
     # autogen must be run, otherwise prebuilt configure may complain
     # about a version mismatch between included automake and Homebrew's
     system "./autogen.sh"
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     unless File.exist? etc/"lighttpd"

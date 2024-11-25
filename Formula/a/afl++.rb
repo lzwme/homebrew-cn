@@ -59,13 +59,13 @@ class Aflxx < Formula
 
   test do
     cpp_file = testpath"main.cpp"
-    cpp_file.write <<~EOS
+    cpp_file.write <<~CPP
       #include <iostream>
 
       int main() {
         std::cout << "Hello, world!";
       }
-    EOS
+    CPP
 
     system bin"afl-c++", "-g", cpp_file, "-o", "test"
     assert_equal "Hello, world!", shell_output(".test")

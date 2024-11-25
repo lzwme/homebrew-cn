@@ -43,7 +43,7 @@ class Castget < Formula
   end
 
   test do
-    (testpath/"test.rss").write <<~EOS
+    (testpath/"test.rss").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <rss version="2.0">
         <channel>
@@ -56,7 +56,7 @@ class Castget < Formula
           </item>
         </channel>
       </rss>
-    EOS
+    XML
 
     (testpath/"castgetrc").write <<~EOS
       [test]

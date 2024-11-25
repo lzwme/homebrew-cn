@@ -7,6 +7,9 @@ cask "swiftcord" do
   desc "Native Discord client built in Swift"
   homepage "https:github.comSwiftcordAppSwiftcord"
 
+  # https:github.comSwiftcordAppSwiftcorddiscussions189
+  disable! date: "2024-11-23", because: :unmaintained
+
   depends_on macos: ">= :monterey"
 
   app "Swiftcord.app"

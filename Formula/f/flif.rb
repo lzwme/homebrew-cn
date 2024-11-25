@@ -21,7 +21,7 @@ class Flif < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libpng"
   depends_on "sdl2"
 
@@ -44,6 +44,6 @@ class Flif < Formula
     system bin"flif", "-i", "dummy.flif"
     system bin"flif", "-I", test_fixtures("test.png"), "test.flif"
     system bin"flif", "-d", "test.flif", "test.png"
-    assert_predicate testpath"test.png", :exist?, "Failed to decode test.flif"
+    assert_path_exists testpath"test.png", "Failed to decode test.flif"
   end
 end

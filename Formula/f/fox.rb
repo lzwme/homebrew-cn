@@ -1,8 +1,8 @@
 class Fox < Formula
   desc "Toolkit for developing Graphical User Interfaces easily"
   homepage "http:fox-toolkit.org"
-  url "http:fox-toolkit.orgftpfox-1.6.58.tar.gz"
-  sha256 "5a734b84d76d2f8e334e26ff85dd3950d3fedf53057a4d4b19fd4a712c8d5b81"
+  url "http:fox-toolkit.orgftpfox-1.6.59.tar.gz"
+  sha256 "48f33d2dd5371c2d48f6518297f0ef5bbf3fcd37719e99f815dc6fc6e0f928ae"
   license "LGPL-2.1-or-later"
 
   # We restrict matching to versions with an even-numbered minor version
@@ -15,14 +15,12 @@ class Fox < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "03d4467da14575e4fc72068fc604e5b5881a3c872cc8ce0836b47cf7e0711935"
-    sha256 cellar: :any,                 arm64_sonoma:   "a7d81645a79ad7dc2cfef61762146266c510354d0b8f47c58acc329d65f1adc2"
-    sha256 cellar: :any,                 arm64_ventura:  "254668d35c9764f82cb174d6a5ea420497a25f4c73e897163daa0ebcb7da69cc"
-    sha256 cellar: :any,                 arm64_monterey: "ebb32475c51e23f89bd5e88b425a90a074d9cfaf6863c07e21db2eba5eafd818"
-    sha256 cellar: :any,                 sonoma:         "e325ea4ff9c8fb5ab63b3edb2600205838b08434f542ab9b0642968afcb7fa90"
-    sha256 cellar: :any,                 ventura:        "17702bfb3962e3d989912ae9da1ba0aebff4da22d827b47aaaffbc249b528d5b"
-    sha256 cellar: :any,                 monterey:       "d5ac193139082652a763aa9c33f805cd7afe1b448799e5db198d6cdc706efcf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a67a558528e60b0476f36bc1b2ea18f93e1b751c0b0fa2b526f3d473dcea7b53"
+    sha256 cellar: :any,                 arm64_sequoia: "9c2013438ee383a44ff0b074698e0525e723eaea322745da017f9a18e254c55d"
+    sha256 cellar: :any,                 arm64_sonoma:  "680d4ca9e11e09ae8022d3e66d38df4ca5c7aa3c9178d9768d7968e89c8afa8b"
+    sha256 cellar: :any,                 arm64_ventura: "913fd94fc1d4051b12d88df4659942892cf9c3e05fd4ad582c2a2fc38efe0def"
+    sha256 cellar: :any,                 sonoma:        "6e12aa948749cb6bb0618a376ced17b39a3c6d043b97598b91e31ac1c2d09306"
+    sha256 cellar: :any,                 ventura:       "365ecefc5bf0fa8070f7b13604b4706cdf13e0510ede27f0531d905664d1672e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "192f9a030ddd8f3613d2bc213b843f9ca0b667f08a67e3a5dbd43e84ff3b8ea5"
   end
 
   depends_on "fontconfig"

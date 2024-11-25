@@ -39,11 +39,11 @@ class Atf < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       #!usrbinenv atf-sh
       echo test
       exit 0
-    EOS
+    SHELL
     system "bash", "test.sh"
   end
 end

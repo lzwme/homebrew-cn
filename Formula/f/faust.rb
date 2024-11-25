@@ -23,12 +23,10 @@ class Faust < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
   depends_on "llvm@18"
-
-  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", "build", "-B", "homebrew_build",

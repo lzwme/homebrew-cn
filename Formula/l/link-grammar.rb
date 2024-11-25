@@ -21,7 +21,7 @@ class LinkGrammar < Formula
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "swig" => :build
 
@@ -37,7 +37,7 @@ class LinkGrammar < Formula
     inreplace "bindingspythonMakefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
                                              "$(PYTHON_LDFLAGS) -module"
     system "autoreconf", "--verbose", "--install", "--force"
-    system ".configure", *std_configure_args, "--with-regexlib=c"
+    system ".configure", "--with-regexlib=c", *std_configure_args
 
     # Work around error due to install using detected path inside Python formula.
     # install: ...site-packageslinkgrammar.pth: Operation not permitted

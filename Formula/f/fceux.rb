@@ -32,7 +32,7 @@ class Fceux < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "libarchive"
@@ -48,8 +48,6 @@ class Fceux < Formula
     depends_on "zlib"
   end
 
-  fails_with gcc: "5"
-
   def install
     ENV["CXXFLAGS"] = "-DPUBLIC_RELEASE=1" if build.stable?
     system "cmake", ".", *std_cmake_args, "-DQT6=ON"
@@ -58,10 +56,10 @@ class Fceux < Formula
     fceux_path = OS.mac? ? "srcfceux.appContentsMacOS" : "src"
     libexec.install Pathname.new(fceux_path)"fceux"
     pkgshare.install ["outputluaScripts", "outputpalettes", "outputtools"]
-    (bin"fceux").write <<~EOS
+    (bin"fceux").write <<~BASH
       #!binbash
       LUA_PATH=#{pkgshare}luaScripts?.lua #{libexec}fceux "$@"
-    EOS
+    BASH
   end
 
   test do

@@ -27,20 +27,20 @@ class Anyenv < Formula
     Dir.mktmpdir do |dir|
       profile = "#{dir}.profile"
       File.open(profile, "w") do |f|
-        content = <<~EOS
+        content = <<~SHELL
           export ANYENV_ROOT=#{dir}anyenv
           export ANYENV_DEFINITION_ROOT=#{dir}anyenv-install
           eval "$(anyenv init -)"
-        EOS
+        SHELL
         f.write(content)
       end
 
-      cmds = <<~EOS
+      cmds = <<~SHELL
         anyenv install --force-init
         anyenv install --list
         anyenv install rbenv
         rbenv install --list
-      EOS
+      SHELL
       cmds.split("\n").each do |cmd|
         shell_output(". #{profile} && #{cmd}")
       end

@@ -27,12 +27,12 @@ class Assh < Formula
 
   test do
     assh_config = testpath"assh.yml"
-    assh_config.write <<~EOS
+    assh_config.write <<~YAML
       hosts:
         hosta:
           Hostname: 127.0.0.1
       asshknownhostfile: devnull
-    EOS
+    YAML
 
     output = "hosta assh ping statistics"
     assert_match output, shell_output("#{bin}assh --config #{assh_config} ping -c 4 hosta 2>&1")

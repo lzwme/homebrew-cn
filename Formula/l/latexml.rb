@@ -21,7 +21,7 @@ class Latexml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ccca1cfac575c937655ad5ae0482606378c56aa463d303a91493983727f584f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   # macOS system perl hits an issue on Big Sur due to XML::LibXSLT
   # Ref: https:github.comHomebrewhomebrew-corepull94387
   depends_on "perl"

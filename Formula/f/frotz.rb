@@ -20,7 +20,7 @@ class Frotz < Formula
     sha256 big_sur:        "f2ba195e9b744fb2a1d846f365603956b0261bfff8b97c07558fc2fc46b9a750"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libao"

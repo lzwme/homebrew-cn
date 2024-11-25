@@ -20,7 +20,7 @@ class Lldpd < Formula
     sha256 x86_64_linux:   "4f8cb4e54dcf685cc00a0d6882f01c16e87584a2aef9742cb33a197e166be7b8"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "readline"
 

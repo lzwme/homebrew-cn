@@ -38,16 +38,16 @@ class Click < Formula
   test do
     mkdir testpath"config"
     # Default state configuration file to avoid warning on startup
-    (testpath"configclick.config").write <<~EOS
+    (testpath"configclick.config").write <<~YAML
       ---
       namespace: ~
       context: ~
       editor: ~
       terminal: ~
-    EOS
+    YAML
 
     # Fake K8s configuration
-    (testpath"configconfig").write <<~EOS
+    (testpath"configconfig").write <<~YAML
       apiVersion: v1
       clusters:
         - cluster:
@@ -70,14 +70,14 @@ class Click < Formula
               invalid
             client-key-data: >-
               invalid
-    EOS
+    YAML
 
     # This test cannot test actual K8s connectivity, but it is enough to prove click starts
-    (testpath"click-test").write <<~EOS
+    (testpath"click-test").write <<~SHELL
       spawn "#{bin}click" --config_dir "#{testpath}config"
       expect "*\\[*none*\\]* *\\[*none*\\]* *\\[*none*\\]* >"
       send "quit\\r"
-    EOS
+    SHELL
     system "expect", "-f", "click-test"
   end
 end

@@ -17,23 +17,26 @@ class Navidrome < Formula
 
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "taglib"
 
   def install
+    ldflags = %W[
+      -X github.comnavidromenavidromeconsts.gitTag=v#{version}
+      -X github.comnavidromenavidromeconsts.gitSha=source_archive
+    ]
     system "make", "setup"
     system "make", "buildjs"
-    system "go", "build", *std_go_args(ldflags: "-X github.comnavidromenavidromeconsts.gitTag=v#{version} -X github.comnavidromenavidromeconsts.gitSha=source_archive"), "-buildvcs=false"
+    system "go", "build", *std_go_args(ldflags:), "-buildvcs=false"
   end
 
   test do
     assert_equal "#{version} (source_archive)", shell_output("#{bin}navidrome --version").chomp
     port = free_port
-    pid = fork do
-      exec bin"navidrome", "--port", port.to_s
-    end
-    sleep 15
+    pid = spawn bin"navidrome", "--port", port.to_s
+    sleep_count = (OS.mac? && Hardware::CPU.intel?) ? 90 : 30
+    sleep sleep_count
     assert_equal ".", shell_output("curl http:localhost:#{port}ping")
   ensure
     Process.kill "TERM", pid

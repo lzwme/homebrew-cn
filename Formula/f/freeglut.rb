@@ -17,7 +17,7 @@ class Freeglut < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "libx11"
   depends_on "libxi"
   depends_on "libxrandr"
@@ -38,7 +38,7 @@ class Freeglut < Formula
     args = %W[
       -DFREEGLUT_BUILD_DEMOS=OFF
       -DOPENGL_INCLUDE_DIR=#{Formula["mesa"].include}
-      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].lib}#{shared_library("libGL")}
+      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].libshared_library("libGL")}
     ]
     system "cmake", *std_cmake_args, *args, "."
     system "make", "all"
@@ -47,7 +47,7 @@ class Freeglut < Formula
 
   test do
     resource("init_error_func.c").stage(testpath)
-    flags = shell_output("pkg-config --cflags --libs glut gl xext x11").chomp.split
+    flags = shell_output("pkgconf --cflags --libs glut gl xext x11").chomp.split
     system ENV.cc, "init_error_func.c", "-o", "init_error_func", *flags
     assert_match "Entering user defined error handler", shell_output(".init_error_func 2>&1", 1)
   end

@@ -23,7 +23,7 @@ class Lmdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8505f02598426843842d04507a63658185cb0ec0abb2e4f561eda10719bf564"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
     cd "libraries/liblmdb" do

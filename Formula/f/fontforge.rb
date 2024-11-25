@@ -20,7 +20,7 @@ class Fontforge < Formula
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "fontconfig"
@@ -98,7 +98,7 @@ class Fontforge < Formula
       ffscript = "fontforge.open('Ambrosia.sfd').generate('#{testpath}Ambrosia.woff2')"
       system bin"fontforge", "-c", ffscript
     end
-    assert_predicate testpath"Ambrosia.woff2", :exist?
+    assert_path_exists testpath"Ambrosia.woff2"
 
     fileres = shell_output("usrbinfile #{testpath}Ambrosia.woff2")
     assert_match "Web Open Font Format (Version 2)", fileres

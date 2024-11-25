@@ -1,25 +1,24 @@
 class FileRoller < Formula
   desc "GNOME archive manager"
   homepage "https://wiki.gnome.org/Apps/FileRoller"
-  url "https://download.gnome.org/sources/file-roller/44/file-roller-44.3.tar.xz"
-  sha256 "04c8a74625fec84267fdec40306afb4104bd332d85061e0d36d4ab0533adfa4a"
+  url "https://download.gnome.org/sources/file-roller/44/file-roller-44.4.tar.xz"
+  sha256 "b8c309da3aa784c719558c3466402378f4a3d6cae8ed77cf6849aacd56ceb9ec"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "5fdf0e8f856b2937f7425adf1f76476a1c0c3040ae8cc19202ece4061f9e4003"
-    sha256 arm64_sonoma:  "3e315618dbfccb93103370898a2893f577200c18fb06b78a91de4d63eb7e621f"
-    sha256 arm64_ventura: "60d733ba2a88e1602239d9876d4544551514a2964132261fd3f20162f7cd606c"
-    sha256 sonoma:        "0323ebe54212e9a7ed78feac735f3efd2e8f7288cbd8b9431a280482836a6935"
-    sha256 ventura:       "1fac86edb73d530583e08a3df8a2fc8be8be38694a26cb26a0529483ef1b9b6f"
-    sha256 x86_64_linux:  "8dc9764c957dba2820dafc9d46b6651f12f471b137ff31380782461694cac58f"
+    sha256 arm64_sequoia: "58dcfb00dadd8c98610a6d536f54abf6ae29422a50a258619369f2dce79a4c88"
+    sha256 arm64_sonoma:  "23a0cf73bd4e04a939632f18e133c6c45d65d932ffd52c465985a3677eb19cf1"
+    sha256 arm64_ventura: "a96c174f776fac26bf71fef578fd611501c8942035cc837cbf05719a3d0279eb"
+    sha256 sonoma:        "0fa0c7d4f29a9303897a1c01ef01ba04b949356495ad06dcb5f19dbb10123ce6"
+    sha256 ventura:       "695c4c4d1bebf33c0e99ddf5e5a521bcc840755dc6cf5c412fc8e61384ffdad5"
+    sha256 x86_64_linux:  "bef062dad4c6d4dceef22c1441dee977e4cfda91825408facb410633c5774e46"
   end
 
   depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "adwaita-icon-theme"
   depends_on "desktop-file-utils"
   depends_on "glib"
@@ -43,9 +42,9 @@ class FileRoller < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system "#{Formula["gtk4"].opt_bin}/gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
-    system "#{Formula["desktop-file-utils"].opt_bin}/update-desktop-database", "#{HOMEBREW_PREFIX}/share/applications"
+    system Formula["glib"].opt_bin/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
+    system Formula["gtk4"].opt_bin/"gtk4-update-icon-cache", "-f", "-t", HOMEBREW_PREFIX/"share/icons/hicolor"
+    system Formula["desktop-file-utils"].opt_bin/"update-desktop-database", HOMEBREW_PREFIX/"share/applications"
   end
 
   test do

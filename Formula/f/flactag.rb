@@ -22,7 +22,7 @@ class Flactag < Formula
 
   depends_on "asciidoc" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "jpeg-turbo"
   depends_on "libdiscid"

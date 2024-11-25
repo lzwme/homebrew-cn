@@ -23,26 +23,24 @@ class Zoro < Formula
   end
 
   test do
-    (testpath"index.html").write <<~EOF
+    (testpath"index.html").write <<~HTML
       <!DOCTYPE HTML>
       <html>
       <body>
         <p>passed<p>
       <body>
       <html>
-    EOF
+    HTML
     zoro_server_port = free_port
     server_port = free_port
     client_port = free_port
-    server_pid = fork { exec bin"zoro", "server", "-l", ":#{zoro_server_port}", "-p", "password" }
+    server_pid = spawn bin"zoro", "server", "-l", ":#{zoro_server_port}", "-p", "password"
     sleep 5
-    client_pid = fork do
-      exec bin"zoro", "client", "-s", "127.0.0.1:#{zoro_server_port}",
-                                "-p", "password",
-                                "--serverport", server_port.to_s,
-                                "--dir", testpath,
-                                "--dirport", client_port.to_s
-    end
+    client_pid = spawn bin"zoro", "client", "-s", "127.0.0.1:#{zoro_server_port}",
+                                             "-p", "password",
+                                             "--serverport", server_port.to_s,
+                                             "--dir", testpath,
+                                             "--dirport", client_port.to_s
     sleep 3
     output = shell_output "curl 127.0.0.1:#{server_port}"
     assert_match "passed", output

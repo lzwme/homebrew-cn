@@ -21,8 +21,12 @@ class LunarDate < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -37,9 +41,8 @@ class LunarDate < Formula
   end
 
   test do
-    pkg_config_flags = Utils.safe_popen_read("pkg-config", "--cflags", "--libs", "lunar-date-3.0",
-"glib-2.0").chomp.split
-    system ENV.cc, pkgshare"teststesting.c", *pkg_config_flags,
+    pkgconf_flags = Utils.safe_popen_read("pkgconf", "--cflags", "--libs", "lunar-date-3.0", "glib-2.0").chomp.split
+    system ENV.cc, pkgshare"teststesting.c", *pkgconf_flags,
                    "-I#{include}lunar-date-3.0lunar-date",
                    "-L#{lib}", "-o", "testing"
     assert_match "End of date tests", shell_output("#{testpath}testing")

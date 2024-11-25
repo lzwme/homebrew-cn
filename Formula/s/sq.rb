@@ -1,19 +1,17 @@
 class Sq < Formula
   desc "Data wrangler with jq-like query language"
   homepage "https:sq.io"
-  url "https:github.comneilotoolesqarchiverefstagsv0.48.3.tar.gz"
-  sha256 "46e75e2db83a6cbc98b07dbcfb23de03fc41b2b2cbc7de7aaee0425cef4fb9bb"
+  url "https:github.comneilotoolesqarchiverefstagsv0.48.4.tar.gz"
+  sha256 "4692a71da5302f0f392721e9d9f28676d5120aefe90e81dcab54bc3214882977"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac92a789727a715117040a35e3d4b3eac4c747f028d6e092899fbff5d095f9fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c783bcbcb9b86ae7849c10303b66fb66bfb14eddfdfede1c2f37491f46715f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac698e5af7d207bf310ec7b07fc4a4e92c4684ec846bd94c08dc2afef616d93b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3cebfcec2654133d4e5f264729e2926cc9aa8debbb799c790825ee5da4576c0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a3bb863ef4a276354a9fe8c76b54abfdfc9e55cbdea707dcd09a1f3b479b5ef1"
-    sha256 cellar: :any_skip_relocation, ventura:        "8083d7ae858b43854461078d8c8e9a429472ffdaa6e54d4619a5a43767eee8ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "82f610ae37114fde1748bc38ec3a571294c1d0418c3ae07bad5cba120f07401f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ed9354f57bd345ce1360ce97230ef0b9362a4fee991ce34dd02ff94d8b0d9bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92be5a892e8a9c67f1103b47bf1e0f264a661a113db4d12967eef3cbb64d8000"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95e93c5e11e1c5e90b5993dc13de7b83f78e6ecccf058358cbf177591b12b010"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d136c58af98dc7df95672ed52d2eeaa27fd057b9b2579c25d7650c769ab07340"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa5f1a036b7c4461056d49d6c81133e4f7cd9776ad16f25ab33322314678d4c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "7c07ea074069ee8fb544a38ef5a8ecd2f2f6babd003bbd069d04cc6a6b84485f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d4f10847e486477de56fe0158991f5757dce5963c63ee708555c32e782eaf6"
   end
 
   depends_on "go" => :build

@@ -26,13 +26,12 @@ class Lrdf < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "raptor"
 
   def install
     system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
     (pkgshare"examples").install Dir["examples*"] - Dir["examplesMakefile*"]
   end

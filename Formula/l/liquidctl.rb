@@ -18,7 +18,7 @@ class Liquidctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "daeeeb0e6b98a1275460bce5cae4994c1c74307c2447dff786da1c744c4d9ce6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "hidapi"
   depends_on "libusb"
   depends_on "pillow"

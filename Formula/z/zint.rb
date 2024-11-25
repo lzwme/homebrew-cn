@@ -57,10 +57,10 @@ class Zint < Formula
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lzint"
     system "./test"
-    assert_predicate testpath/"out.png", :exist?, "Failed to create barcode PNG"
+    assert_path_exists testpath/"out.png", "Failed to create barcode PNG"
 
     system bin/"zint", "-o", "test-zing.png", "-d", "This Text"
-    assert_predicate testpath/"test-zing.png", :exist?, "Failed to create barcode PNG"
+    assert_path_exists testpath/"test-zing.png", "Failed to create barcode PNG"
 
     assert_match version.to_s, shell_output("#{bin}/zint --version")
   end

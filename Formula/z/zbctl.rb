@@ -1,6 +1,6 @@
 class Zbctl < Formula
   desc "Zeebe CLI client"
-  homepage "https:docs.camunda.iodocsapis-clientscli-clientindex"
+  homepage "https:docs.camunda.iodocsapis-toolscommunity-clientscli-client"
   url "https:github.comcamunda-community-hubzeebe-client-goarchiverefstagsv8.6.0.tar.gz"
   sha256 "849c3f951b923dfa2bd34443d47bc06b705cb8faa10d2be5e0d411c238dc1f72"
   license "Apache-2.0"

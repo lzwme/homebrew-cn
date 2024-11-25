@@ -1,18 +1,18 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https:docs.libcpr.org"
-  url "https:github.comlibcprcprarchiverefstags1.11.0.tar.gz"
-  sha256 "fdafa3e3a87448b5ddbd9c7a16e7276a78f28bbe84a3fc6edcfef85eca977784"
+  url "https:github.comlibcprcprarchiverefstags1.11.1.tar.gz"
+  sha256 "e84b8ef348f41072609f53aab05bdaab24bf5916c62d99651dfbeaf282a8e0a2"
   license "MIT"
   head "https:github.comlibcprcpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52148bb941bbed4a3e8641a942edfcb73bd2c37ad949a4d21255cdc84e3a8772"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4f5ac50892af98014d9536a09fbd84e10ed71fdfa0ff4b2d2a8c13a3cf01f17"
-    sha256 cellar: :any,                 arm64_ventura: "62221b4b1f800a1b10f7af4774f00a94219a160e79ecc629aeadbc6b0bfb32e3"
-    sha256 cellar: :any,                 sonoma:        "e429dd6fc464ef789d5ab13fedd4213266cf1c082319a69647d6cbd70d18c2ca"
-    sha256 cellar: :any,                 ventura:       "28de8df1ddca1b9d1c6bf5c3de5978e311b2a95adde7bb0de4981ff38c39ec9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cc60004b96d225fa1633e79ba527227bbf167b52e30730bbd859ea75c3bb558"
+    sha256 cellar: :any,                 arm64_sequoia: "5761b811cb868c87f715f4126c99beeae1d08574718a1863ab9db461ed6c24fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb169169df651fb87ca6f4fcd8c31dc195375c1b60e108208d5d816c3d406f0d"
+    sha256 cellar: :any,                 arm64_ventura: "118ce16912d68e08066bcb3e5310c19d44f592dfd0a3d5762d93e4f8ccd060dc"
+    sha256 cellar: :any,                 sonoma:        "5fe94c2c18cdc160c2a884cb07398cf8839e8c9645301fda881d817e48cc1213"
+    sha256 cellar: :any,                 ventura:       "941cca13b62d8d0124bfe6d718d304b3f0a79505c8161c60b5e7af22bc7fb4c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a37cca4bacbd1624f234b5e3696b30b278b3f7553437047d8b9c36324a209ae"
   end
 
   depends_on "cmake" => :build

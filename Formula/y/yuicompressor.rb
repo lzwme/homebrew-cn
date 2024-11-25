@@ -32,13 +32,12 @@ class Yuicompressor < Formula
 
   test do
     path = testpath"test.js"
-    path.write <<~EOS
+    path.write <<~JAVASCRIPT
       var i = 1;       foo
       console.log(i);  bar
-    EOS
+    JAVASCRIPT
 
-    output = `#{bin}yuicompressor --nomunge --preserve-semi #{path}`.strip
+    output = shell_output("#{bin}yuicompressor --nomunge --preserve-semi #{path}").strip
     assert_equal "var i=1;console.log(i);", output
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

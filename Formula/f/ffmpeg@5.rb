@@ -24,7 +24,7 @@ class FfmpegAT5 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "aom"
   depends_on "aribb24"
   depends_on "dav1d"
@@ -157,6 +157,6 @@ class FfmpegAT5 < Formula
     # Create an example mp4 file
     mp4out = testpath"video.mp4"
     system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
-    assert_predicate mp4out, :exist?
+    assert_path_exists mp4out
   end
 end

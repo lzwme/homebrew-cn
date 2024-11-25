@@ -14,7 +14,7 @@ class Feroxbuster < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c31b3b1589aa43597612d07fcb4c1c2386473f82dcd91ef6e64ebe05338209e3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "miniserve" => :test
   depends_on "openssl@3"
@@ -38,10 +38,7 @@ class Feroxbuster < Formula
     (testpath"webb.txt").write "b"
 
     port = free_port
-    pid = fork do
-      exec "miniserve", testpath"web", "-i", "127.0.0.1", "--port", port.to_s
-    end
-
+    pid = spawn "miniserve", testpath"web", "-i", "127.0.0.1", "--port", port.to_s
     sleep 1
 
     begin

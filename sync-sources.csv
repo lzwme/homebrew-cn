@@ -1461,6 +1461,7 @@ Homebrew-homebrew-core/Formula/d/dps8m.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drafter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dragonbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftwood.rb, Homebrew/homebrew-core, 1
@@ -3048,6 +3049,7 @@ Homebrew-homebrew-core/Formula/k/keychain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keydb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keyring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keystone.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kfr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khiva.rb, Homebrew/homebrew-core, 1
@@ -3809,6 +3811,7 @@ Homebrew-homebrew-core/Formula/lib/libtrng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libu2f-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libucl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuecc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libultrahdr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunibreak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuninameslist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 1
@@ -5369,6 +5372,7 @@ Homebrew-homebrew-core/Formula/r/rails-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/railway.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rainbarf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rainfrog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rake-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rakudo-star.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rakudo.rb, Homebrew/homebrew-core, 1
@@ -5442,6 +5446,7 @@ Homebrew-homebrew-core/Formula/r/redir.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis-leveldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis@6.2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/redka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redland.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redpen.rb, Homebrew/homebrew-core, 1
@@ -12432,6 +12437,7 @@ Homebrew-homebrew-cask/Casks/o/onekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
@@ -12444,6 +12450,7 @@ Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openconnect-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1
@@ -12452,6 +12459,7 @@ Homebrew-homebrew-cask/Casks/o/opendnsupdater.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openemu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openemu@experimental.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openframeworks.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openhv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openineditor-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openinterminal-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openinterminal.rb, Homebrew/homebrew-cask, 1
@@ -13288,6 +13296,7 @@ Homebrew-homebrew-cask/Casks/s/shortcat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shortcutdetective.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shortcutor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shortcuts.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/shortwave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shotcut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shottr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/showhiddenfiles.rb, Homebrew/homebrew-cask, 0

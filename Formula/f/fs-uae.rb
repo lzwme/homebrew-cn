@@ -32,7 +32,7 @@ class FsUae < Formula
   end
 
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "freetype"
   depends_on "glew"

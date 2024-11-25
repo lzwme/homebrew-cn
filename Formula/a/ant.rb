@@ -31,10 +31,10 @@ class Ant < Formula
     libexec.install Dir["*"]
     bin.install_symlink Dir["#{libexec}/bin/*"]
     rm bin/"ant"
-    (bin/"ant").write <<~EOS
+    (bin/"ant").write <<~SHELL
       #!/bin/bash
       JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}" exec "#{libexec}/bin/ant" -lib #{HOMEBREW_PREFIX}/share/ant "$@"
-    EOS
+    SHELL
 
     resource("ivy").stage do
       (libexec/"lib").install Dir["ivy-*.jar"]

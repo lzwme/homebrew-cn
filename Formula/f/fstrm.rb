@@ -37,23 +37,18 @@ class Fstrm < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-debug",
-           "--disable-dependency-tracking",
-           "--disable-silent-rules",
-           "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    job = fork do
-      exec bin"fstrm_capture", "-t", "protobuf:dnstap.Dnstap",
-           "-u", "dnstap.sock", "-w", "capture.fstrm", "-dddd"
-    end
+    job = spawn bin"fstrm_capture", "-t", "protobuf:dnstap.Dnstap",
+                                     "-u", "dnstap.sock", "-w", "capture.fstrm", "-dddd"
     sleep 2
 
     system bin"fstrm_dump", "capture.fstrm"

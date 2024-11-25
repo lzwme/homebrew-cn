@@ -1,19 +1,17 @@
 class Tree < Formula
   desc "Display directories as trees (with optional colorHTML output)"
   homepage "https:oldmanprogrammer.netsource.php?dir=projectstree"
-  url "https:github.comOld-Man-Programmertreearchiverefstags2.1.3.tar.gz"
-  sha256 "3ffe2c8bb21194b088ad1e723f0cf340dd434453c5ff9af6a38e0d47e0c2723b"
+  url "https:github.comOld-Man-Programmertreearchiverefstags2.2.0.tar.gz"
+  sha256 "c4964b503d609e7146edd75566b978b1853e2cebee7c0342be230cbd84da326c"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4f39e10fb168ba78da684d3341b9de003cc75de0fe69654816d24eda6d7d834f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0ff7ec061de0b347ca0c735aa199f30c57439134cc6ea1d8e66243986656924"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2c2977827a57759b2661878fe661284c4c72ddc0c6a7f8d49e2814392b4f976"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ef85c4b4b00b63b41159241eefb3f0712326b03f4a3a0f92468fdf339916c98"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe9c14383700f0f5d8a170be81d9f344006e3a33ca5d14e7a9c6349e414ebac4"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a7806b8309c92599eaeb275b11d872048dd19d572f461c1fe28005873fb9389"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b617ca01cbcfff57c659b7678eeafd02893f8d82945325f3d21fb645db3ed3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d57629617283034eb02db149a2f441dab0872fe4b96547999ff0e7376f0c99a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da86b349a512a06a0646ac0e729f6a422dbe09ddd0b6045368e5f91d13338181"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cdb04082e8fbed9dbafcc8e7a4e7d9afc2af0ce36725e0c31bf7fde830405e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "891da675b57ff1a34b83f06b3cc491cdbbd689ba0506589e7c12a368b6e30d0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42a58ba4de938e595943efcd568d7272c63eb7bbdb402d9a94b6e62a53dbc971"
+    sha256 cellar: :any_skip_relocation, ventura:       "cf0029ab3cbe9b515a7f2ade2a29ca5ef604802de40f80d86447530ae61387d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb859ce5d27196a3765c1c2265641e30de7d4d295511f5e6e13f8c1b70feb708"
   end
 
   def install

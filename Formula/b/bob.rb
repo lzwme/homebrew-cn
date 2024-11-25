@@ -25,12 +25,13 @@ class Bob < Formula
 
   test do
     config_file = testpath"config.json"
-    config_file.write <<~EOS
+    config_file.write <<~JSON
       {
         "downloads_location": "#{testpath}.localsharebob",
         "installation_location": "#{testpath}.localsharebobnvim-bin"
       }
-    EOS
+    JSON
+
     ENV["BOB_CONFIG"] = config_file
     mkdir_p "#{testpath}.localsharebob"
     mkdir_p "#{testpath}.localsharenvim-bin"

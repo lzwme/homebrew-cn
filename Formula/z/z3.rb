@@ -27,8 +27,6 @@ class Z3 < Formula
   # which does not need Python.
   depends_on "python@3.13" => [:build, :test]
 
-  fails_with gcc: "5"
-
   fails_with :clang do
     build 1000
     cause <<-EOS

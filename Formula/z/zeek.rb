@@ -36,8 +36,6 @@ class Zeek < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
     # https:github.comHomebrewhomebrew-corepull74932
@@ -70,10 +68,10 @@ class Zeek < Formula
     assert_match "version #{version}", shell_output("#{bin}zeek --version")
     assert_match "ARP packet analyzer", shell_output("#{bin}zeek --print-plugins")
     system bin"zeek", "-C", "-r", test_fixtures("test.pcap")
-    assert_predicate testpath"conn.log", :exist?
-    refute_predicate testpath"conn.log", :empty?
-    assert_predicate testpath"http.log", :exist?
-    refute_predicate testpath"http.log", :empty?
+    assert_path_exists testpath"conn.log"
+    refute_empty (testpath"conn.log").read
+    assert_path_exists testpath"http.log"
+    refute_empty (testpath"http.log").read
     # For bottling MacOS SDK paths must not be part of the public include directories, see zeekzeek#1468.
     refute_includes shell_output("#{bin}zeek-config --include_dir").chomp, "MacOSX"
   end

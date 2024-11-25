@@ -17,7 +17,7 @@ class Fdroidserver < Formula
   end
 
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "rust" => :build
   depends_on "certifi"
@@ -334,7 +334,6 @@ class Fdroidserver < Formula
     # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    ENV["SODIUM_INSTALL"] = "system"
     venv = virtualenv_install_with_resources without: "matplotlib"
 
     # `matplotlib` needs extra inputs to use system libraries.

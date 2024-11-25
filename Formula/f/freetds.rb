@@ -28,7 +28,7 @@ class Freetds < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "unixodbc"
 
@@ -51,11 +51,8 @@ class Freetds < Formula
       --enable-odbc-wide
     ]
 
-    if build.head?
-      system ".autogen.sh", *args
-    else
-      system ".configure", *args
-    end
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *args
     system "make"
     ENV.deparallelize # Or fails to install on multi-core machines
     system "make", "install"

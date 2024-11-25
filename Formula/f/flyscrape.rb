@@ -1,20 +1,18 @@
 class Flyscrape < Formula
   desc "Standalone and scriptable web scraper"
   homepage "https:flyscrape.com"
-  url "https:github.comphilipptaflyscrapearchiverefstagsv0.8.1.tar.gz"
-  sha256 "af8c162e1c34bef994e5f54a2a9d985fb794bbddd9735ce0a0884d944251dd39"
+  url "https:github.comphilipptaflyscrapearchiverefstagsv0.9.0.tar.gz"
+  sha256 "cbc8c977c55f9617ce29f2178c00c22bda4bd9d1987f37c688580c2848653e17"
   license "MPL-2.0"
   head "https:github.comphilipptaflyscrape.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7501c0365f6a5545e4c0bc95b0a0d8eb47a3361f40bd73f02751409dd059a8d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e79161770c219fdc28c98c0702e5a8edef45957c734799768a1aa76a2963a7c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66983affadaa35c25cd051e3f8e89be18ca5e52a2fe961efcbae4589b194c6fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07d059096ef20417a0a5d3d72518c32f842c3d810095c151ba4170996d88e264"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bde6c44df06433b8e6e0fda04d70b77fe3b001b73b08e35b12023ff6ab783494"
-    sha256 cellar: :any_skip_relocation, ventura:        "caaad8607039c47e8a32c52b1e2c9a0ad21fc456b53033d60f042cea5d2ddcfd"
-    sha256 cellar: :any_skip_relocation, monterey:       "a327acda83d6c2aa1fd58104cd454ad88727027c73235e2e20751d521f9866c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6abbcdb1e654e4d65ff6231508c99791a41298f8837ec5cb2b81477f089580cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acb2f440ac077232c69c85695e4881e8d3b55d6e4ea479692bb7d27843425bff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eedd58ef7911aa33feacab98dbe7c71882d9113238b5fb8cf81683b9cc01cbc3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b50a2604f78102cdb89c054e6843dd1972bf6b96a3849297dc5cd2923b02114"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4deece613d812a4224b21a3688f741009372a80bd1a0f18190dae3e29672f85"
+    sha256 cellar: :any_skip_relocation, ventura:       "1f804a2b20deb93cca4a66cb987b8d1a65c121eb0e80b1a29afa662814298898"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0a8620570646d6112ef6424c5cb7463c860e6e1a045662fef70d50fb6b6977"
   end
 
   depends_on "go" => :build
@@ -33,7 +31,7 @@ class Flyscrape < Formula
     return_status = OS.mac? ? 1 : 0
     output = shell_output("#{bin}flyscrape run #{test_config} 2>&1", return_status)
     expected = if OS.mac?
-      "unable to open database file"
+      "failed to create database file"
     else
       "\"url\": \"https:news.ycombinator.com\""
     end

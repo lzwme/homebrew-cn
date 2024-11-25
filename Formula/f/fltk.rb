@@ -45,12 +45,12 @@ class Fltk < Formula
     if build.head?
       args = [
         # Don't build docs  require doxygen
-        "-DOPTION_BUILD_HTML_DOCUMENTATION=OFF",
-        "-DOPTION_BUILD_PDF_DOCUMENTATION=OFF",
+        "-DFLTK_BUILD_HTML_DOCS=OFF",
+        "-DFLTK_BUILD_PDF_DOCS=OFF",
         # Don't build tests
         "-DFLTK_BUILD_TEST=OFF",
         # Build both shared & static libs
-        "-DOPTION_BUILD_SHARED_LIBS=ON",
+        "-DFLTK_BUILD_SHARED_LIBS=ON",
       ]
       system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
       system "cmake", "--build", "build"

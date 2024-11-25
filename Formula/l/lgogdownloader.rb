@@ -23,7 +23,7 @@ class Lgogdownloader < Formula
 
   depends_on "cmake" => :build
   depends_on "help2man" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "htmlcxx"
   depends_on "jsoncpp"

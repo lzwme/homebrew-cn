@@ -18,10 +18,10 @@ class Ckan < Formula
 
   def install
     (libexec"bin").install "ckan.exe"
-    (bin"ckan").write <<~EOS
+    (bin"ckan").write <<~SHELL
       #!binsh
       exec mono "#{libexec}binckan.exe" "$@"
-    EOS
+    SHELL
   end
 
   def caveats

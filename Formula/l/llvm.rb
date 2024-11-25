@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https:github.comllvmllvm-project.git", branch: "main"
 
   stable do
-    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.3llvm-project-19.1.3.src.tar.xz"
-    sha256 "324d483ff0b714c8ce7819a1b679dd9e4706cf91c6caf7336dc4ac0c1d3bf636"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.4llvm-project-19.1.4.src.tar.xz"
+    sha256 "3aa2d2d2c7553164ad5c6f3b932b31816e422635e18620c9349a7da95b98d811"
 
     # Backport relative `CLANG_CONFIG_FILE_SYSTEM_DIR` patch.
     # Remove in LLVM 20.
@@ -24,13 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d54670a89c5beeb469091bd895d560e23820f1c3b8e3188685eed08a99c6f75d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e563ec784c4232867374c900d6402197392dd139bf0bd520670193abad02d0c9"
-    sha256 cellar: :any,                 arm64_ventura: "232ce61ccf98ca57fc92f2b65337a0cb2f87f98cdf090e94f8816a6ce3f5547e"
-    sha256 cellar: :any,                 sonoma:        "36145cfee5c0398188d702bd8399207c6ee8c8c6ba3b3b3b1f22bd0641d113f8"
-    sha256 cellar: :any,                 ventura:       "707225be33b04c17fee25e02424a842c63306e8db056cfac208ba517e1c1c252"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c51736b56dcf9714b31b0be4dc505382346f2880519b8059365b2e030183cea"
+    sha256 cellar: :any,                 arm64_sequoia: "524e4d54632e5752efcc946e0c3db02377c776381bec2b975f115a53add46847"
+    sha256 cellar: :any,                 arm64_sonoma:  "848d60155ac74aafe9c8aa5c8922a1ab606d37f3581a80124fae2a2a5b9e1624"
+    sha256 cellar: :any,                 arm64_ventura: "69229f827c5673dd736eebc1420f730e4ac878d666a593a477b1f057f4c8a8a8"
+    sha256 cellar: :any,                 sonoma:        "9d37758160bfefb044b73ede330a317319e048ae1b0d5d61752410d7b4372561"
+    sha256 cellar: :any,                 ventura:       "cd6a811972a59fe223998e5ec7d6b241e3e723a171402d5aecb99d730aa1b47d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c024910d3894417c378adbe40ddddc278693cc737b6bced04b2889251ca9046e"
   end
 
   keg_only :provided_by_macos

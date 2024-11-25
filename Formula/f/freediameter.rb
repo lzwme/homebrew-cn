@@ -31,7 +31,7 @@ class Freediameter < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "libgcrypt"
   depends_on "libidn2"

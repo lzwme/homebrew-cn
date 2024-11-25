@@ -16,7 +16,7 @@ class Lndir < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecf4313dfc583a1197e94925c502cdfe08d777e5aead7dd44bc3ab360f9c8b3d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorgproto"  => :build
 
   def install
@@ -28,6 +28,6 @@ class Lndir < Formula
   test do
     mkdir "test"
     system bin/"lndir", bin, "test"
-    assert_predicate testpath/"test/lndir", :exist?
+    assert_path_exists testpath/"test/lndir"
   end
 end

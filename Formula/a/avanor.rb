@@ -40,13 +40,13 @@ class Avanor < Formula
 
   test do
     script = (testpath"script.exp")
-    script.write <<~EOS
+    script.write <<~SHELL
       #!usrbinexpect -f
       set timeout 10
       spawn avanor
       send -- "\e"
       expect eof
-    EOS
+    SHELL
     script.chmod 0700
     system "expect", "-f", "script.exp"
   end

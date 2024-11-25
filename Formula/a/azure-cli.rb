@@ -750,10 +750,10 @@ class AzureCli < Formula
       end
     end
 
-    (bin"az").write <<~EOS
+    (bin"az").write <<~SHELL
       #!usrbinenv bash
       AZ_INSTALLER=HOMEBREW #{libexec}binpython -Im azure.cli "$@"
-    EOS
+    SHELL
 
     generate_completions_from_executable(libexec"binregister-python-argcomplete", "az",
                                          base_name: "az", shell_parameter_format: :arg)

@@ -1,18 +1,18 @@
 class CargoAuditable < Formula
   desc "Make production Rust binaries auditable"
   homepage "https:github.comrust-secure-codecargo-auditable"
-  url "https:github.comrust-secure-codecargo-auditablearchiverefstagsv0.6.5.tar.gz"
-  sha256 "5e7dad2d00cba7f09f92f457999d15b7fb786a5ddd1adf87ddbc634878ab5589"
+  url "https:github.comrust-secure-codecargo-auditablearchiverefstagsv0.6.6.tar.gz"
+  sha256 "adecc1ccf8e86f4e3734767ee6a1c90e04c6639a4f73a59ac2db68a07220c807"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comrust-secure-codecargo-auditable.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60928c67b16d6a617c778f08b4bbb7b8d922dea2a7ff1ff4f54e6b6cc66650cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89aeaf91fe1fcff9a0b3ac510baeb363e34bafe0bf4b24c80b439ea5ec248a75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ad6bd14a6db7840b0722309601309a3e7253ce3e517ae20c356ce84420a8ea6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "696c006aa2fda55aa8a433ad76798622701e2f21a846f9449a11868366d9a0ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b183d8e9cdb1e2f973b6add241d06b672d06c88bac9ee27cf62309000700438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "730bd26957690a15576702db17fa620dd1bf35c2ff73bdd6114da4236c473b66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4a53d9eacb0c9aa937a9c3d5e5fb7ba62a47d4308097d2c7991100101c5cb0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6b0fadb29dcf17629b37a38e8890ae36280a1b065b6247e86c5adda465296e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cb6e8c4c0f4e56e49d1fdff4d84a9b5a756e7baf5715576fc04ede78499b4e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f78f652b37f307d3df5d902a8627f390502fcb6b658d25def21323cff7bc37e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "85b0450e262c72b68fced5f3bae43f1ae16dcd6b9008460773dbb42b0f34ce24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36add51b1b9f2187c2959c6a7ec969e1e101e565833b3407f4447d7020b2215e"
   end
 
   depends_on "rust" => :build

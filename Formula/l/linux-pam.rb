@@ -13,7 +13,7 @@ class LinuxPam < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libnsl"
   depends_on "libtirpc"
   depends_on "libxcrypt"

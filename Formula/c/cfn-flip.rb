@@ -56,13 +56,13 @@ class CfnFlip < Formula
       }
     JSON
 
-    expected = <<~EOS
+    expected = <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
           Properties:
             BucketName: !Ref 'AWS::StackName'
-    EOS
+    YAML
 
     assert_match expected, shell_output("#{bin}cfn-flip test.json")
   end

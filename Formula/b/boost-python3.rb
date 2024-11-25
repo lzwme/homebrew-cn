@@ -116,10 +116,10 @@ class BoostPython3 < Formula
     system ENV.cxx, "-shared", "-fPIC", "-std=c++14", "hello.cpp", "-L#{lib}", "-lboost_python#{pyver}",
                     "-o", "hello.so", *pyincludes, *pylib
 
-    output = <<~EOS
+    output = <<~PYTHON
       import hello
       print(hello.greet())
-    EOS
+    PYTHON
     assert_match "Hello, world!", pipe_output(python3, output, 0)
   end
 end

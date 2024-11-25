@@ -30,13 +30,13 @@ class Busted < Formula
   test do
     test_file = testpath"test.lua"
 
-    test_file.write <<~EOS
+    test_file.write <<~LUA
       describe("brewtest", function()
         it("should pass", function()
           assert.is_true(true)
         end)
       end)
-    EOS
+    LUA
 
     assert_match "1 success  0 failures", shell_output("#{bin}busted #{test_file}")
 

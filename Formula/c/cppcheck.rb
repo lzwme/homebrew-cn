@@ -51,7 +51,7 @@ class Cppcheck < Formula
   test do
     # Execution test with an input .cpp file
     test_cpp_file = testpath"test.cpp"
-    test_cpp_file.write <<~EOS
+    test_cpp_file.write <<~CPP
       #include <iostream>
       using namespace std;
 
@@ -74,19 +74,19 @@ class Cppcheck < Formula
       {
         number = initialNumber;
       }
-    EOS
+    CPP
     system bin"cppcheck", test_cpp_file
 
     # Test the "out of bounds" check
     test_cpp_file_check = testpath"testcheck.cpp"
-    test_cpp_file_check.write <<~EOS
+    test_cpp_file_check.write <<~CPP
       int main()
       {
         char a[10];
         a[10] = 0;
         return 0;
       }
-    EOS
+    CPP
     output = shell_output("#{bin}cppcheck #{test_cpp_file_check} 2>&1")
     assert_match "out of bounds", output
 
@@ -100,7 +100,7 @@ class Cppcheck < Formula
     assert_parse_message = "Error: sampleaddon.py: failed: can't parse the #{name} dump."
 
     sample_addon_file = testpath"sampleaddon.py"
-    sample_addon_file.write <<~EOS
+    sample_addon_file.write <<~PYTHON
       #!usrbinenv #{python3}
       """A simple test addon for #{name}, prints function names and token count"""
       import sys
@@ -121,7 +121,7 @@ class Cppcheck < Formula
           detected_token_count = len(fConfig.tokenlist)
           # Print the function names on the first line and the token count on the second
           print("%s\\n%s" %(detected_functions, detected_token_count))
-    EOS
+    PYTHON
 
     system bin"cppcheck", "--dump", test_cpp_file
     test_cpp_file_dump = "#{test_cpp_file}.dump"

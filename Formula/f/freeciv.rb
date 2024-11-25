@@ -29,7 +29,7 @@ class Freeciv < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "adwaita-icon-theme"
   depends_on "at-spi2-core"
   depends_on "cairo"
@@ -89,13 +89,11 @@ class Freeciv < Formula
       civ2civ37.html
       civ2civ38.html
     ].each do |file|
-      assert_predicate testpathfile, :exist?
+      assert_path_exists testpathfile
     end
 
-    fork do
-      system bin"freeciv-server", "-l", testpath"test.log"
-    end
+    spawn bin"freeciv-server", "-l", testpath"test.log"
     sleep 5
-    assert_predicate testpath"test.log", :exist?
+    assert_path_exists testpath"test.log"
   end
 end

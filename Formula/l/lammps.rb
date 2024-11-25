@@ -36,7 +36,7 @@ class Lammps < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fftw"
   depends_on "gcc" # for gfortran

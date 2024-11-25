@@ -18,7 +18,7 @@ class Ffmpeg2theora < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3965a87c59f7e76f5440130868ad518c5e770a786e5074bb3803cc88c627c024"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "scons" => :build
   depends_on "ffmpeg@4"
   depends_on "libkate"

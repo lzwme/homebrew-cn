@@ -19,16 +19,14 @@ class FdkAacEncoder < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fdk-aac"
 
   def install
     system "autoreconf", "-i"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system ".configure", "--disable-silent-rules",
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install"
   end
 
@@ -58,7 +56,7 @@ class FdkAacEncoder < Formula
       (sample * 32767.0).round
     end
 
-    File.open("#{testpath}tone.pcm", "wb") do |f|
+    (testpath"tone.pcm").open("wb") do |f|
       f.syswrite(samples.flatten.pack("s*"))
     end
 

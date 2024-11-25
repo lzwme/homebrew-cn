@@ -23,12 +23,12 @@ class BatsCore < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       @test "addition using bc" {
         result="$(echo 2+2 | bc)"
         [ "$result" -eq 4 ]
       }
-    EOS
+    SHELL
     assert_match "addition", shell_output("#{bin}bats test.sh")
   end
 end

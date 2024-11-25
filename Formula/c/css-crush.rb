@@ -15,10 +15,10 @@ class CssCrush < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin+"csscrush").write <<~EOS
+    (bin+"csscrush").write <<~SHELL
       #!binsh
       php "#{libexec}cli.php" "$@"
-    EOS
+    SHELL
   end
 
   test do

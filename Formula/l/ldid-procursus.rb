@@ -28,7 +28,7 @@ class LdidProcursus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8277afbe297f7153901815514ad120e29b9ca67b891287c4ee133868d43b84f7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libplist"
   depends_on "openssl@3"
 

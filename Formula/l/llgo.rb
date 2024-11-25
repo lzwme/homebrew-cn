@@ -19,7 +19,7 @@ class Llgo < Formula
   depends_on "go"
   depends_on "llvm@18"
   depends_on "openssl@3"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
@@ -48,7 +48,7 @@ class Llgo < Formula
 
     libexec.install "LICENSE", "README.md"
 
-    path = llvm.opt_bin + ":" + %w[go pkg-config].map { |f| Formula[f].opt_bin }.join(":")
+    path = llvm.opt_bin + ":" + %w[go pkgconf].map { |f| Formula[f].opt_bin }.join(":")
     opt_lib = %w[bdw-gc openssl@3].map { |f| Formula[f].opt_lib }.join(":")
 
     (libexec"bin").children.each do |f|

@@ -19,7 +19,7 @@ class Lychee < Formula
   depends_on "openssl@3"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   def install

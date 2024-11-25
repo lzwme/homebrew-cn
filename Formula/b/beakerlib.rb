@@ -30,7 +30,7 @@ class Beakerlib < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       #!usrbinenv bash
       source #{share}beakerlibbeakerlib.sh || exit 1
       rlJournalStart
@@ -38,7 +38,7 @@ class Beakerlib < Formula
           rlPass "All works"
         rlPhaseEnd
       rlJournalEnd
-    EOS
+    SHELL
     expected_journal = \[\s*PASS\s*\]\s*::\s*All works
     ENV["BEAKERLIB_DIR"] = testpath
     system "bash", "#{testpath}test.sh"

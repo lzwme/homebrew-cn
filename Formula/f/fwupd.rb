@@ -22,7 +22,7 @@ class Fwupd < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
 
@@ -98,8 +98,8 @@ class Fwupd < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs fwupd").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    pkgconf_flags = shell_output("pkgconf --cflags --libs fwupd").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
     system ".test"
 
     # this is a lame test, but fwupdtool requires root access to do anything much interesting

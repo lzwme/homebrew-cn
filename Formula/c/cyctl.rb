@@ -26,7 +26,7 @@ class Cyctl < Formula
   test do
     assert_match "cyctl version #{version}", shell_output("#{bin}cyctl --version")
 
-    (testpath".kubeconfig").write <<~EOS
+    (testpath".kubeconfig").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
@@ -45,7 +45,7 @@ class Cyctl < Formula
       - name: test
         user:
           token: test
-    EOS
+    YAML
 
     assert_match "Error from server (NotFound)", shell_output("#{bin}cyctl delete templates deployment.yaml 2>&1")
   end

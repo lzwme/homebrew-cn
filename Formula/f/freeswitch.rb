@@ -27,7 +27,7 @@ class Freeswitch < Formula
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "yasm" => :build
 
   depends_on "ffmpeg@5" # FFmpeg 6 issue: https:github.comsignalwirefreeswitchissues2202
@@ -135,10 +135,7 @@ class Freeswitch < Formula
   def install
     resource("spandsp").stage do
       system ".bootstrap.sh"
-      system ".configure", "--disable-debug",
-                            "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}spandsp"
+      system ".configure", "--disable-silent-rules", *std_configure_args(prefix: libexec"spandsp")
       system "make"
       ENV.deparallelize { system "make", "install" }
 
@@ -188,7 +185,7 @@ class Freeswitch < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "all"
     system "make", "install"
 

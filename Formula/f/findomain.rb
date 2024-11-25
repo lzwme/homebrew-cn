@@ -16,7 +16,7 @@ class Findomain < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6c56c142e8b88f2141eb8082fa974ac8b642fcdee05fd6f65b39237ae22e9aa"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 

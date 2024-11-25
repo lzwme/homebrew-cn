@@ -103,11 +103,11 @@ class Bullet < Formula
                    "-lLinearMath", cxx_lib, "-o", "test"
     system ".test"
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import pybullet
       pybullet.connect(pybullet.DIRECT)
       pybullet.setGravity(0, 0, -10)
       pybullet.disconnect()
-    EOS
+    PYTHON
   end
 end

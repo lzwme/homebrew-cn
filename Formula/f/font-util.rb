@@ -18,17 +18,17 @@ class FontUtil < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "deb3137c5cba7ee33ca8733cc79348b69bf8d337cb20037d12de3bf4eff593dd"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "util-macros" => :build
 
   def install
-    args = std_configure_args + %W[
+    args = %W[
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --with-fontrootdir=#{HOMEBREW_PREFIX}/share/fonts/X11
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "fontrootdir=#{share}/fonts/X11", "install"
   end
@@ -41,7 +41,7 @@ class FontUtil < Formula
   end
 
   test do
-    system "pkg-config", "--exists", "fontutil"
+    system "pkgconf", "--exists", "fontutil"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

@@ -28,7 +28,7 @@ class Lrzip < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "lzo"
 
@@ -50,15 +50,12 @@ class Lrzip < Formula
     # Set nasm format correctly on macOS. See https:github.comckolivaslrzippull211
     inreplace "configure.ac", "-f elf64", "-f macho64" if OS.mac?
 
-    system "autoreconf", "-ivf"
+    system "autoreconf", "--force", "--install", "--verbose"
 
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-    ]
+    args = []
     args << "--disable-asm" unless Hardware::CPU.intel?
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "SHELL=bash"
     system "make", "install"
   end

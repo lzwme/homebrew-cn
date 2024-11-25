@@ -21,7 +21,7 @@ class QuartzWm < Formula
   depends_on "autoconf"    => :build
   depends_on "automake"    => :build
   depends_on "libtool"     => :build
-  depends_on "pkg-config"  => :build
+  depends_on "pkgconf"     => :build
   depends_on "util-macros" => :build
   depends_on "xorg-server" => :test
 
@@ -41,16 +41,9 @@ class QuartzWm < Formula
   end
 
   test do
+    spawn Formula["xorg-server"].bin/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
-
-    fork do
-      exec Formula["xorg-server"].bin/"Xvfb", ":1"
-    end
-
-    sleep 5
-
-    fork do
-      exec bin/"quartz-wm"
-    end
+    sleep 10
+    spawn bin/"quartz-wm"
   end
 end

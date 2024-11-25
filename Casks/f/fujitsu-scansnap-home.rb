@@ -16,6 +16,7 @@ cask "fujitsu-scansnap-home" do
     end
   end
 
+  auto_updates true
   depends_on macos: ">= :sierra"
   container nested: "Download/MacSSHomeInstaller_#{version.dots_to_underscores}.dmg"
 
@@ -42,4 +43,8 @@ cask "fujitsu-scansnap-home" do
         "~/Library/Saved Application State/com.fujitsu.pfu.ScanSnapHome.savedState",
         "~/Library/Saved Application State/jp.co.pfu.SSHomeWizard.savedState",
       ]
+
+  caveats do
+    requires_rosetta
+  end
 end

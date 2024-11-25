@@ -1,10 +1,9 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-14.2.0.tar.xz"
-  sha256 "1b5f7e39b05e4651bedb57344d60b9b1f9aa17354f06c0e34eac94496badd884"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-14.2.1.tar.xz"
+  sha256 "2495815cf9d130f70fffb6a12733d0dcaf86cbaac51e8b4b82ad25183eda1dd5"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c3c5b32b9b1c89243d51a1382fcdd81aed6157aa5663da785e9bf8241bd074f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd9181525797ffda355744dc64883580b731ff23ab9a3a941592ba10c4e5ce03"
-    sha256 cellar: :any,                 arm64_ventura: "ac1bbaa49be0842a30ce50becbb823a7ed6e8b4fc6e682efbca08787fe2ac81f"
-    sha256 cellar: :any,                 sonoma:        "0e1e23278d919306e5f7121897e55410ef7b40990dc448ed7dbabc9e5aef29ce"
-    sha256 cellar: :any,                 ventura:       "3a2b4f39a4bdc51950a3fa131280d8b6c3e075d480c5afb5087ae95160ca5b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed01b0bce503d462a3ea3b8d8f40c04283274035fac52b1f35a7e1f6523db661"
+    sha256 cellar: :any,                 arm64_sequoia: "e3b9ada7e1792f062dc93a5efa9cb5f99d46bf4fad9de2a9259d4aa19a54dcc0"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb29567f1d3f00148400ace0246796bf49237029015f5c344ee2e21355502162"
+    sha256 cellar: :any,                 arm64_ventura: "e99d210bec861f1be0778f7ff13837a0c28210d00fe3baa160f1e8d2affa5dd2"
+    sha256 cellar: :any,                 sonoma:        "854b135d140174fbd49f1830adf4f99a7b212793acc0f71672b3c99b6e335061"
+    sha256 cellar: :any,                 ventura:       "c31a88b86b32183757a4192e367cda439bb8e8dc2476a7219d32a11b2a333ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d75209f14e7cd860f5c411f330aefc8cfa146fc8a7f9ce7e20577bf40daf75ca"
   end
 
   depends_on "cmake" => :build

@@ -33,10 +33,10 @@ class Brogue < Formula
     libexec.install "binbrogue", "binkeymap.txt", "binassets"
 
     # Use var directory to save highscores and replay files across upgrades
-    (bin"brogue").write <<~EOS
+    (bin"brogue").write <<~SHELL
       #!binbash
       cd "#{var}brogue" && exec "#{libexec}brogue" "$@"
-    EOS
+    SHELL
   end
 
   def post_install

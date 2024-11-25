@@ -46,7 +46,7 @@ class Angband < Formula
 
   test do
     script = (testpath"script.exp")
-    script.write <<~EOS
+    script.write <<~SHELL
       #!usrbinexpect -f
       set timeout 10
       spawn angband
@@ -55,7 +55,7 @@ class Angband < Formula
       sleep 2
       send -- "\x18"
       expect eof
-    EOS
+    SHELL
     system "expect", "-f", "script.exp"
   end
 end

@@ -35,6 +35,6 @@ class Zzz < Formula
   # No test is possible: this has no --help or --version, it just
   # sleeps the Mac instantly.
   test do
-    assert_predicate bin"Zzz", :exist?
+    assert_path_exists bin"Zzz"
   end
 end
