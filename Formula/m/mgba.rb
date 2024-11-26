@@ -24,7 +24,7 @@ class Mgba < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "libepoxy"
@@ -54,11 +54,12 @@ class Mgba < Formula
     args = []
     args << "-DUSE_DISCORD_RPC=OFF" if OS.linux?
 
-    # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
-    inreplace "srcplatformqtCMakeLists.txt", "fixup_bundle(", "# \\0"
-
-    # Install .app bundle into prefix, not prefixApplications
-    inreplace "srcplatformqtCMakeLists.txt", "Applications", "."
+    inreplace "srcplatformqtCMakeLists.txt" do |s|
+      # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
+      s.gsub! "fixup_bundle(", "# \\0"
+      # Install .app bundle into prefix, not prefixApplications
+      s.gsub! "Applications", "."
+    end
 
     # Fix OpenGL linking on macOS.
     if OS.mac?

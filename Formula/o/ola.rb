@@ -51,7 +51,7 @@ class Ola < Formula
   depends_on "automake" => :build
   depends_on "cppunit" => :build # TODO: remove once we no longer need to run tests
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "abseil"
   depends_on "liblo"

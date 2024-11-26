@@ -16,7 +16,7 @@ class Pqiv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ad555fc865b2af09114d0e8132435f9b166696bfdc8ed588e26b19cb5531f99"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "gdk-pixbuf"

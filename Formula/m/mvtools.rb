@@ -21,14 +21,14 @@ class Mvtools < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "nasm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "fftw"
   depends_on "vapoursynth"
 
   def install
     system ".autogen.sh"
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
@@ -42,10 +42,10 @@ class Mvtools < Formula
   end
 
   test do
-    script = <<~EOS.split("\n").join(";")
+    script = <<~PYTHON.split("\n").join(";")
       import vapoursynth as vs
       vs.core.std.LoadPlugin(path="#{libshared_library("libmvtools")}")
-    EOS
+    PYTHON
     python = Formula["vapoursynth"].deps
                                    .find { |d| d.name.match?(^python@\d\.\d+$) }
                                    .to_formula

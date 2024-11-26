@@ -42,9 +42,7 @@ class Yorkie < Formula
   end
 
   test do
-    yorkie_pid = fork do
-      exec bin"yorkie", "server"
-    end
+    yorkie_pid = spawn bin"yorkie", "server"
     # sleep to let yorkie get ready
     sleep 3
     system bin"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"

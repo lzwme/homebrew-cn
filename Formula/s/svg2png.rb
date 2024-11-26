@@ -25,7 +25,7 @@ class Svg2png < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "26430f8c9086f1f7d1e460dc8588c57a2fb696527278006c68f41641ff88bd42"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -47,12 +47,12 @@ class Svg2png < Formula
                                    "$(LINK) $(svg2png_OBJECTS) $(svg2png_LDFLAGS)"
     end
 
-    system "./configure", *std_configure_args, "--mandir=#{man}"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 
   test do
     system bin/"svg2png", test_fixtures("test.svg"), "test.png"
-    assert_predicate testpath/"test.png", :exist?
+    assert_path_exists testpath/"test.png"
   end
 end

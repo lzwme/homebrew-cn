@@ -27,7 +27,7 @@ class Mpdas < Formula
     sha256 x86_64_linux:   "863be659b7b2e9ee5e61c73d284d0a753430f438fbf1225efcee4120850883d2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmpdclient"
 
   uses_from_macos "curl"

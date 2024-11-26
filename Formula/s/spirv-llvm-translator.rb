@@ -15,12 +15,9 @@ class SpirvLlvmTranslator < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "spirv-headers" => :build
   depends_on "llvm"
-
-  # See https:gcc.gnu.orgbugzillashow_bug.cgi?id=56480
-  fails_with gcc: "5"
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
@@ -49,6 +46,6 @@ class SpirvLlvmTranslator < Formula
     EOS
     system llvm.opt_bin"llvm-as", "test.ll"
     system bin"llvm-spirv", "test.bc"
-    assert_predicate testpath"test.spv", :exist?
+    assert_path_exists testpath"test.spv"
   end
 end

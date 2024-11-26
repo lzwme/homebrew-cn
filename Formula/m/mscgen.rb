@@ -25,12 +25,12 @@ class Mscgen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5957b2f4840517592807494271eb28d63b5c245ac014d34be596fb0355129031"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "gd"
 
   def install
-    system "./configure", *std_configure_args, "--with-freetype"
+    system "./configure", "--with-freetype", *std_configure_args
     system "make", "install"
   end
 

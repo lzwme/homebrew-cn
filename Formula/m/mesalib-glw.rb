@@ -28,16 +28,13 @@ class MesalibGlw < Formula
   # [^2]: https://gitlab.freedesktop.org/mesa/glw
   deprecate! date: "2024-10-09", because: :repo_archived
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "libxt"
   depends_on "mesa"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

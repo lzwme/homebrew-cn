@@ -20,14 +20,18 @@ class Sox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bb06054835fa3a2be758935d05d245b9edb5330b484b6f1e57d77ab60f772ad"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "lame"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "libsndfile"
   depends_on "libvorbis"
   depends_on "mad"
   depends_on "opusfile"
+
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "alsa-lib"
   end
@@ -50,10 +54,10 @@ class Sox < Formula
   def install
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
-    args = std_configure_args
+    args = []
     args << "--with-alsa" if OS.linux?
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -62,6 +66,6 @@ class Sox < Formula
     output = testpath"concatenated.wav"
     cp test_fixtures("test.wav"), input
     system bin"sox", input, input, output
-    assert_predicate output, :exist?
+    assert_path_exists output
   end
 end

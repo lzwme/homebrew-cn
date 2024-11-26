@@ -19,13 +19,13 @@ class Msmtp < Formula
     sha256 x86_64_linux:  "c961aa0f18c58586f17e20f1b8ca3e05cd1ad7e4d33e077b99de2bfc5b1dd50e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "libidn2"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--with-macosx-keyring"
+    system "./configure", "--disable-silent-rules", "--with-macosx-keyring", *std_configure_args
     system "make", "install"
     (pkgshare/"scripts").install "scripts/msmtpq"
   end

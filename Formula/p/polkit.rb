@@ -19,7 +19,7 @@ class Polkit < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "duktape"
   depends_on "glib"
   uses_from_macos "expat"
@@ -69,7 +69,7 @@ class Polkit < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs polkit-gobject-1").strip.split
+    flags = shell_output("pkgconf --cflags --libs polkit-gobject-1").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end

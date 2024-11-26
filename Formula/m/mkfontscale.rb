@@ -16,7 +16,7 @@ class Mkfontscale < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ea938e8ad6c373bad7f07d10cce369fa35345c4ae07629d46e8173357404708"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorgproto"  => :build
 
   depends_on "freetype"
@@ -26,17 +26,17 @@ class Mkfontscale < Formula
   uses_from_macos "zlib"
 
   def install
-    configure_args = std_configure_args + %w[
+    configure_args = %w[
       --with-bzip2
     ]
 
-    system "./configure", *configure_args
+    system "./configure", *configure_args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     system bin/"mkfontscale"
-    assert_predicate testpath/"fonts.scale", :exist?
+    assert_path_exists testpath/"fonts.scale"
   end
 end

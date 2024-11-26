@@ -17,13 +17,12 @@ class Spek < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "73d782e38ee8b6b90ed44ad6a7e91e58f2c0f37f8822793888aa1d60870b9df5"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "wxwidgets"
 
   def install
-    args = std_configure_args - ["--disable-debug"]
-    system ".configure", *args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
 
     # https:github.comalexkayspekissues235

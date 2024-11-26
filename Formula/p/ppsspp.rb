@@ -27,7 +27,7 @@ class Ppsspp < Formula
 
   depends_on "cmake" => :build
   depends_on "nasm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libzip"
   depends_on "miniupnpc"
@@ -70,7 +70,7 @@ class Ppsspp < Formula
 
     # Replace bundled MoltenVK dylib with symlink to Homebrew-managed dylib
     vulkan_frameworks = buildpath"extvulkanmacOSFrameworks"
-    (vulkan_frameworks"libMoltenVK.dylib").unlink
+    rm(vulkan_frameworks"libMoltenVK.dylib")
     vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib"libMoltenVK.dylib"
 
     args = %w[

@@ -33,7 +33,7 @@ class Smpeg2 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl2"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -42,11 +42,9 @@ class Smpeg2 < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}",
-                          "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-debug",
-                          "--disable-sdltest"
+    system ".configure", "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}",
+                          "--disable-sdltest",
+                          *std_configure_args
     system "make"
     system "make", "install"
 

@@ -20,7 +20,7 @@ class Snownews < Formula
   end
 
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ncurses"
   depends_on "openssl@3"
 

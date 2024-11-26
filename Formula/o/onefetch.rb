@@ -18,7 +18,7 @@ class Onefetch < Formula
   # `cmake` is used to build `zlib`.
   # upstream issue, https:github.comrust-langlibz-sysissues147
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "zstd"
 

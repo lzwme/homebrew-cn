@@ -10,14 +10,14 @@ class Onedrive < Formula
   end
 
   depends_on "ldc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on :linux
   depends_on "sqlite"
   depends_on "systemd"
 
   def install
-    system ".configure", *std_configure_args, "--with-systemdsystemunitdir=no"
+    system ".configure", "--with-systemdsystemunitdir=no", *std_configure_args
     system "make", "install"
     bash_completion.install "contribcompletionscomplete.bash" => "onedrive"
     zsh_completion.install "contribcompletionscomplete.zsh" => "_onedrive"

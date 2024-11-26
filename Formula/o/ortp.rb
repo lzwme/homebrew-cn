@@ -37,7 +37,7 @@ class Ortp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     odie "bctoolbox resource needs to be updated" if build.stable? && version != resource("bctoolbox").version

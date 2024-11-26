@@ -28,7 +28,7 @@ class Tracker < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "pygobject3" => :build
   depends_on "vala" => :build
 

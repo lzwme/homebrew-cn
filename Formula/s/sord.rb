@@ -24,7 +24,7 @@ class Sord < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pcre2"
   depends_on "serd"
   depends_on "zix"

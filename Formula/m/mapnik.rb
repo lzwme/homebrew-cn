@@ -24,7 +24,7 @@ class Mapnik < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "cairo"
   depends_on "freetype"
@@ -46,20 +46,21 @@ class Mapnik < Formula
   conflicts_with "svg2png", because: "both install `svg2png` binaries"
 
   def install
-    cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_BENCHMARK:BOOL=OFF"
-    cmake_args << "-DBUILD_DEMO_CPP:BOOL=OFF"
-    cmake_args << "-DBUILD_DEMO_VIEWER:BOOL=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH:PATH=#{rpath}"
+    cmake_args = %W[
+      -DBUILD_BENCHMARK:BOOL=OFF
+      -DBUILD_DEMO_CPP:BOOL=OFF
+      -DBUILD_DEMO_VIEWER:BOOL=OFF
+      -DCMAKE_INSTALL_RPATH:PATH=#{rpath}
+    ]
 
-    system "cmake", "-S", ".", "-B", "build", *cmake_args
+    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "ctest", "--verbose", "--parallel", ENV.make_jobs, "--test-dir", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    output = shell_output("#{Formula["pkg-config"].bin}pkg-config libmapnik --variable prefix").chomp
+    output = shell_output("#{Formula["pkgconf"].bin}pkgconf libmapnik --variable prefix").chomp
     assert_equal prefix.to_s, output
 
     output = shell_output("#{bin}mapnik-index --version 2>&1", 1).chomp

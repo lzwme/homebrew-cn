@@ -27,7 +27,7 @@ class Mimic < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pcre2"
 
   on_macos do
@@ -48,6 +48,6 @@ class Mimic < Formula
 
   test do
     system bin"mimic", "-t", "Hello, Homebrew!", "test.wav"
-    assert_predicate testpath"test.wav", :exist?
+    assert_path_exists testpath"test.wav"
   end
 end

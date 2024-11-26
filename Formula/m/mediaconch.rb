@@ -11,19 +11,20 @@ class Mediaconch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b1c07f44e462b03a77dfcc566a7d2c814e8d9f6c366c84f33d52116e86e5437e"
-    sha256 cellar: :any,                 arm64_sonoma:   "939859b3e6b27cea95e30dd0249430f53e50dd2482d9e5910089372e1442bc2b"
-    sha256 cellar: :any,                 arm64_ventura:  "e377a3a11dd83320786791b39c255446d8097c154a61d5bcb49409a156faf526"
-    sha256 cellar: :any,                 arm64_monterey: "aa33f61f409e854a4a03ca69de8371ed7a47b872b33928b650662325776ad206"
-    sha256 cellar: :any,                 sonoma:         "5d2cec68e7f1e6b3b5ca0fbbbbcbba2a40dd88c258f4149d8462ddd34100b1e9"
-    sha256 cellar: :any,                 ventura:        "056b82ae9504a3eb15b18d66fe79e94c12c837ed3714faa88009793a93052b52"
-    sha256 cellar: :any,                 monterey:       "70c1594d43d848825434efaf63b21ac294cf0758b53f0fb5bb0da6a22f87f8aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc3b5ed1de5f34d66934807b79a38a3fb34b9bde991a6b7172db384e1da19a86"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "10ce29cf594e58d4fc6ca0b3cc2d1f5333adf9f7440fdeda05dc0d1c3aaea6e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0880640ba261dc82a8f91885b08c1474203a9bd2f4e497c3d5fdb24e51f62ef"
+    sha256 cellar: :any,                 arm64_ventura: "6bf6ef2c0295778a884a55842ab43ec96de05ff3974788cb9bde1a2f74cc4682"
+    sha256 cellar: :any,                 sonoma:        "ff7b48bac8502ded512fffc37eaf892652b1a96be65930d8f890adcc243f1a0c"
+    sha256 cellar: :any,                 ventura:       "c7fb0337d0eba78b2bb9068d56e9d92b4e024905e0c2f32c693c9197b2cb4f2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cf59eccd7e3183e0a02788a5e0a1dcc6d109221bdafa604c8c1be4338c002d7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "libevent"
+  depends_on "libmediainfo"
+  depends_on "libzen"
   depends_on "sqlite"
 
   uses_from_macos "curl"
@@ -32,35 +33,8 @@ class Mediaconch < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "ZenLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--enable-shared",
-              "--enable-static",
-              "--prefix=#{prefix}",
-              # mediaconch installs libs/headers at the same paths as mediainfo
-              "--libdir=#{lib}/mediaconch",
-              "--includedir=#{include}/mediaconch"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
-    cd "MediaInfoLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--enable-static",
-              "--enable-shared",
-              "--with-libcurl",
-              "--prefix=#{prefix}",
-              "--libdir=#{lib}/mediaconch",
-              "--includedir=#{include}/mediaconch"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
     cd "MediaConch/Project/GNU/CLI" do
-      system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                            "--prefix=#{prefix}"
+      system "./configure", *std_configure_args
       system "make", "install"
     end
   end

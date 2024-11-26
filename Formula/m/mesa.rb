@@ -35,7 +35,7 @@ class Mesa < Formula
   depends_on "libyaml" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "xorgproto" => :build
 
@@ -69,8 +69,6 @@ class Mesa < Formula
     depends_on "wayland-protocols"
     depends_on "zstd"
   end
-
-  fails_with gcc: "5"
 
   resource "mako" do
     url "https://files.pythonhosted.org/packages/fa/0b/29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dc/mako-1.3.6.tar.gz"

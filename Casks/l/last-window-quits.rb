@@ -10,11 +10,11 @@ cask "last-window-quits" do
   livecheck do
     url "https:raw.githubusercontent.comlawand-dot-iolast-window-quitsmainappcast.xml"
     regex(%r{(\d+)(\d+)[^]+?$}i)
-    strategy :sparkle do |item|
-      directories = item&.url&.match(regex)
-      next if directories.blank?
+    strategy :sparkle do |item, regex|
+      match = item.url&.match(regex)
+      next if match.blank?
 
-      "#{item.short_version},#{directories[1]},#{directories[2]}"
+      "#{item.short_version},#{match[1]},#{match[2]}"
     end
   end
 
@@ -25,6 +25,8 @@ cask "last-window-quits" do
 
   zap trash: [
     "~LibraryApplication Supportio.lawand.last-window-quits",
+    "~LibraryHTTPStoragesio.lawand.last-window-quits",
+    "~LibraryLaunchAgentsio.lawand.last-window-quits.plist",
     "~LibraryPreferencesio.lawand.last-window-quits.plist",
     "~LWQ Debug Logs",
   ]

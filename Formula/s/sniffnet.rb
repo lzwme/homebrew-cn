@@ -23,7 +23,7 @@ class Sniffnet < Formula
   uses_from_macos "libpcap"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "fontconfig"
   end
@@ -33,10 +33,8 @@ class Sniffnet < Formula
   end
 
   test do
-    pid = fork do
-      # sniffet is a GUI application
-      exec bin"sniffnet"
-    end
+    # sniffet is a GUI application
+    pid = spawn bin"sniffnet"
     sleep 1
   ensure
     Process.kill("TERM", pid)

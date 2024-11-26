@@ -25,7 +25,7 @@ class Spidermonkey < Formula
   end
 
   depends_on "cbindgen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "rust" => :build
   depends_on "icu4c@76"

@@ -22,7 +22,7 @@ class Mysql < Formula
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "icu4c@76"
   depends_on "lz4"
@@ -92,7 +92,8 @@ class Mysql < Formula
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
     end
 
-    icu4c = deps.map(&:to_formula).find { |f| f.name.match?(^icu4c@\d+$) }
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
@@ -126,7 +127,7 @@ class Mysql < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix"mysql-test").cd do
+    cd prefix"mysql-test" do
       system ".mysql-test-run.pl", "status", "--vardir=#{buildpath}mysql-test-vardir"
     end
 

@@ -22,7 +22,7 @@ class Superlu < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "gcc"
   depends_on "openblas"
 
@@ -43,8 +43,8 @@ class Superlu < Formula
   end
 
   test do
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs superlu").chomp.split
-    system ENV.cc, pkgshare"dlinsol.c", *pkg_config_cflags, "-o", "test"
+    pkgconf_cflags = shell_output("pkgconf --cflags --libs superlu").chomp.split
+    system ENV.cc, pkgshare"dlinsol.c", *pkgconf_cflags, "-o", "test"
     assert_match "No of nonzeros in L+U = 11886",
                  shell_output(".test < #{pkgshare}g20.rua")
   end

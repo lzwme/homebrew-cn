@@ -31,7 +31,7 @@ class Mplayer < Formula
     patch :DATA
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "yasm" => :build
   depends_on "fontconfig"
   depends_on "freetype"

@@ -16,7 +16,7 @@ class Oha < Formula
   end
 
   depends_on "cmake" => :build # for aws-lc-sys
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

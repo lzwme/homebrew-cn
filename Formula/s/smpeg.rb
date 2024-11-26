@@ -33,7 +33,7 @@ class Smpeg < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl12-compat"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -44,10 +44,7 @@ class Smpeg < Formula
     ENV.append_to_cflags "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1400
 
     args = %W[
-      --prefix=#{prefix}
       --with-sdl-prefix=#{Formula["sdl12-compat"].opt_prefix}
-      --disable-dependency-tracking
-      --disable-debug
       --disable-gtk-player
       --disable-gtktest
       --disable-opengl-player
@@ -55,7 +52,7 @@ class Smpeg < Formula
     ]
 
     system ".autogen.sh"
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     # Install script is not +x by default for some reason
     chmod 0755, ".install-sh"

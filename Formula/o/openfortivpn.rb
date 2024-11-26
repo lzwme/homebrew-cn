@@ -19,7 +19,7 @@ class Openfortivpn < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   # awaiting formula creation
@@ -27,11 +27,10 @@ class Openfortivpn < Formula
 
   def install
     system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--enable-legacy-pppd", # only for pppd < 2.5.0
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}openfortivpn"
+                          "--sysconfdir=#{etc}openfortivpn",
+                          *std_configure_args
     system "make", "install"
   end
 

@@ -25,7 +25,7 @@ class Dwarfs < Formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "brotli"
   depends_on "double-conversion"

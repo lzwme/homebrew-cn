@@ -24,7 +24,7 @@ class Opencbm < Formula
   # cc65 is only used to build binary blobs included with the programs; it's
   # not necessary in its own right.
   depends_on "cc65" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   uses_from_macos "ncurses"

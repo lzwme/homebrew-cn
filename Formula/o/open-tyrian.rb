@@ -20,7 +20,7 @@ class OpenTyrian < Formula
     sha256 x86_64_linux:   "20d32afb8db3ce9038cdbc8424c16a081b93e0060ac43f35a3d62bcde0c54fbd"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl2"
   depends_on "sdl2_net"
 

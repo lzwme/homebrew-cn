@@ -22,7 +22,7 @@ class Spr < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   # rust 1.80 build patch, upstream pr ref, https:github.comspacedentistsprpull202

@@ -22,7 +22,7 @@ class ManDb < Formula
     sha256 x86_64_linux:   "e70f9a2750c93a8f2c88a7b843f73d063dd7fbe492d945a464b731a9289c4022"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "groff"
   depends_on "libpipeline"
 

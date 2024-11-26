@@ -17,9 +17,13 @@ class Oscats < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cea14d82ea0d9f7fea63cbd5364ccd2a85d0d8b8e02a498904b3f1bec140712c"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "gsl"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -43,15 +47,15 @@ class Oscats < Formula
     if OS.mac?
       inreplace pkgshare"examplesMakefile",
         Superenv.shims_path"pkg-config",
-        Formula["pkg-config"].opt_bin"pkg-config"
+        Formula["pkgconf"].opt_bin"pkg-config"
     else
       inreplace pkgshare"examplesMakefile", Superenv.shims_path"ld", "ld"
     end
   end
 
   test do
-    pkg_config_flags = shell_output("pkg-config --cflags --libs oscats glib-2.0").chomp.split
-    system ENV.cc, pkgshare"examplesex01.c", *pkg_config_flags, "-o", "ex01"
+    pkgconf_flags = shell_output("pkgconf --cflags --libs oscats glib-2.0").chomp.split
+    system ENV.cc, pkgshare"examplesex01.c", *pkgconf_flags, "-o", "ex01"
     assert_match "Done", shell_output("#{testpath}ex01")
   end
 end

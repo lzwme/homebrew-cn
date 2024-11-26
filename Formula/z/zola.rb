@@ -39,9 +39,9 @@ class Zola < Formula
 
       Hi I'm Homebrew.
     MARKDOWN
-    (testpath"mysitetemplatessection.html").write <<~EOS
+    (testpath"mysitetemplatessection.html").write <<~HTML
       {{ section.content | safe }}
-    EOS
+    HTML
 
     cd testpath"mysite" do
       system bin"zola", "build"

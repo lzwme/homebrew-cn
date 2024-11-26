@@ -24,7 +24,7 @@ class Metaproxy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6b0f7dfee1364a2b5fa6bed0444dfc973f393ba576c06840643967a5da1f64f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "boost"
   depends_on "yaz"
@@ -32,8 +32,6 @@ class Metaproxy < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-
-  fails_with gcc: "5"
 
   def install
     # Match C++ standard in boost to avoid undefined symbols at runtime

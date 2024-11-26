@@ -33,7 +33,7 @@ class Opusfile < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
   depends_on "openssl@3"
   depends_on "opus"

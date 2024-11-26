@@ -18,7 +18,7 @@ class Openrct2 < Formula
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "duktape"
   depends_on "flac"
@@ -40,8 +40,6 @@ class Openrct2 < Formula
     depends_on "fontconfig"
     depends_on "mesa"
   end
-
-  fails_with gcc: "5" # C++17
 
   resource "title-sequences" do
     url "https:github.comOpenRCT2title-sequencesreleasesdownloadv0.4.14title-sequences.zip"
@@ -73,10 +71,10 @@ class Openrct2 < Formula
 
     # By default macOS build only looks up data in app bundle Resources
     libexec.install bin"openrct2"
-    (bin"openrct2").write <<~EOS
+    (bin"openrct2").write <<~BASH
       #!binbash
       exec "#{libexec}openrct2" "$@" "--openrct2-data-path=#{pkgshare}"
-    EOS
+    BASH
   end
 
   test do

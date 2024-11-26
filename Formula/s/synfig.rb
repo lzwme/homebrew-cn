@@ -26,7 +26,7 @@ class Synfig < Formula
   depends_on "automake" => :build
   depends_on "intltool" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairo"
   depends_on "etl"
@@ -63,8 +63,6 @@ class Synfig < Formula
     depends_on "perl-xml-parser" => :build
   end
 
-  fails_with gcc: "5"
-
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
 
@@ -92,8 +90,8 @@ class Synfig < Formula
     CPP
 
     ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg@6"].opt_lib"pkgconfig"
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libavcodec synfig").chomp.split
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkg_config_flags
+    pkgconf_flags = shell_output("pkgconf --cflags --libs libavcodec synfig").chomp.split
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkgconf_flags
     system ".test"
   end
 end

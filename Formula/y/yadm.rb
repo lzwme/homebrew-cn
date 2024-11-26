@@ -19,7 +19,7 @@ class Yadm < Formula
 
   test do
     system bin"yadm", "init"
-    assert_predicate testpath".localshareyadmrepo.gitconfig", :exist?, "Failed to init repository."
+    assert_path_exists testpath".localshareyadmrepo.gitconfig", "Failed to init repository."
     assert_match testpath.to_s, shell_output("#{bin}yadm gitconfig core.worktree")
 
     # disable auto-alt

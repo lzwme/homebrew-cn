@@ -1,24 +1,19 @@
 class QpidProton < Formula
   desc "High-performance, lightweight AMQP 1.0 messaging library"
   homepage "https://qpid.apache.org/proton/"
-  url "https://www.apache.org/dyn/closer.lua?path=qpid/proton/0.39.0/qpid-proton-0.39.0.tar.gz"
-  mirror "https://archive.apache.org/dist/qpid/proton/0.39.0/qpid-proton-0.39.0.tar.gz"
-  sha256 "41f3a8d910ba96dda79f405a35e943465d9869cd075346650c7d6c0dc33a6459"
+  url "https://www.apache.org/dyn/closer.lua?path=qpid/proton/0.40.0/qpid-proton-0.40.0.tar.gz"
+  mirror "https://archive.apache.org/dist/qpid/proton/0.40.0/qpid-proton-0.40.0.tar.gz"
+  sha256 "0acb39e92d947e30175de0969a5b2e479e2983bc3e3d69c835ee5174610e9636"
   license "Apache-2.0"
-  revision 1
   head "https://gitbox.apache.org/repos/asf/qpid-proton.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "be3d9e43662e0962b77edb845ec4edb481aa1f20beaac92b11de19bb581f45f2"
-    sha256 cellar: :any,                 arm64_sonoma:   "ae7cde3f2c19dd6b34eb1d890e9eb70f6b5afa55ed80cd0ba70392781d54bda0"
-    sha256 cellar: :any,                 arm64_ventura:  "bc2035cdab5e0195df720092370e11a02e8db25476a374cfd9a90bd5c6243149"
-    sha256 cellar: :any,                 arm64_monterey: "b5e3877a2bae6bfff13261522c578baffcf130864319f2adfc5aee83c523a825"
-    sha256 cellar: :any,                 arm64_big_sur:  "b855d44527bca4b1ff1923c11a65d31f4309b268b9d8fe8f7d00d8501a17692d"
-    sha256 cellar: :any,                 sonoma:         "d1f4b32a3efa0384e94acd7d538f650cd75892546632934ed2ca3660f5ff3ee6"
-    sha256 cellar: :any,                 ventura:        "5411c7230909b5197a2265ca6c27662f4f3bf2ef4d43f51d0295e6ba048424ac"
-    sha256 cellar: :any,                 monterey:       "d12e7ba83a3f1801c1c760706f20bb30e55b3d956758500bdee5ecd70646923c"
-    sha256 cellar: :any,                 big_sur:        "322ef68983826e6c99be79b961a463d4d44023472594ab23643c2f03a7651fb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2fa26294b6a1a0bcd926744a98d23b582ddec574ea75012d287667dff6921e7"
+    sha256 cellar: :any,                 arm64_sequoia: "ad2d0628f2d4cfca80bd45f29612ec776c48de10a3f4f49f65e8c7f4cc2bbe0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "80e748066920432d06e1ef02053cf91ca25126f72432c7cb48d4b58d70b0213d"
+    sha256 cellar: :any,                 arm64_ventura: "7ba2629ad9f29a3fdfc38b9400f805fb598d68a9740cb1f950bb27a21ceaea9f"
+    sha256 cellar: :any,                 sonoma:        "91a726082f6b056f11bf05f702270977a08c3c3d842f1e5ecc3c0e6501501dcd"
+    sha256 cellar: :any,                 ventura:       "7dcf7fac3dc9cb98a388b4e7fa0c0ca9c33897f5fa0657afadc55fd018eb84e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "529a54660787834c31b10aae535c4b99faf146b5f567715f9a44e06fdc3b37b0"
   end
 
   depends_on "cmake" => :build

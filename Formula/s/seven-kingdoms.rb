@@ -23,7 +23,7 @@ class SevenKingdoms < Formula
     sha256 x86_64_linux:   "b3ba3202ca789169da6b0eb0173e686b97866e37ac12f0f10429e747c4ce0751"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "enet"
   depends_on "gettext"
   depends_on "sdl2"
@@ -46,7 +46,7 @@ class SevenKingdoms < Formula
   end
 
   test do
-    pid = fork { exec bin/"7kaa", "-win", "-demo" }
+    pid = spawn bin/"7kaa", "-win", "-demo"
     sleep 5
     system "kill", "-9", pid
   end

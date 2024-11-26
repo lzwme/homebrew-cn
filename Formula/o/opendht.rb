@@ -26,7 +26,7 @@ class Opendht < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "argon2"
   depends_on "asio"
   depends_on "fmt"
@@ -34,8 +34,6 @@ class Opendht < Formula
   depends_on "msgpack-cxx"
   depends_on "nettle"
   depends_on "readline"
-
-  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", ".", "-B", "build",

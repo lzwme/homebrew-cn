@@ -21,7 +21,7 @@ class Mupdf < Formula
   end
 
   depends_on "llvm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "swig" => :build
   depends_on "freetype"
   depends_on "gumbo-parser"
@@ -78,8 +78,8 @@ class Mupdf < Formula
         ["LIBJPEG", "libjpeg"],
         ["OPENJPEG", "libopenjp2"],
       ].each do |argname, libname|
-        args << "SYS_#{argname}_CFLAGS=#{Utils.safe_popen_read("pkg-config", "--cflags", libname).strip}"
-        args << "SYS_#{argname}_LIBS=#{Utils.safe_popen_read("pkg-config", "--libs", libname).strip}"
+        args << "SYS_#{argname}_CFLAGS=#{Utils.safe_popen_read("pkgconf", "--cflags", libname).strip}"
+        args << "SYS_#{argname}_LIBS=#{Utils.safe_popen_read("pkgconf", "--libs", libname).strip}"
         args << "HAVE_SYS_#{argname}=yes"
       end
 

@@ -17,7 +17,7 @@ class Mandown < Formula
     sha256 cellar: :any, big_sur:        "6cd1c1d88d93223b889eecd77b5e278dc59f9de445b7a08eb7d41c7152db6b6d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libconfig"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -31,10 +31,10 @@ class Mandown < Formula
     (testpath"test.md").write <<~MARKDOWN
       # Hi from readme file!
     MARKDOWN
-    expected_output = <<~EOS
+    expected_output = <<~HTML
       <html><head><title>test.md(7)<title><head><body><h1>Hi from readme file!<h1>
       <body><html>
-    EOS
+    HTML
     system bin"mdn", "-f", "test.md", "-o", "test"
     assert_equal expected_output, File.read("test")
   end

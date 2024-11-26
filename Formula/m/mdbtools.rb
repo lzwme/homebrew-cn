@@ -25,7 +25,7 @@ class Mdbtools < Formula
   depends_on "gawk" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "readline"
@@ -36,8 +36,7 @@ class Mdbtools < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-
-    system ".configure", "--enable-man", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", "--enable-man", *std_configure_args
     system "make", "install"
   end
 

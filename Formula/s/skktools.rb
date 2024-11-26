@@ -20,8 +20,12 @@ class Skktools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac8ed96d1342ecee708da56e9da672b9603b75c542bd835a83435d136e54100e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "gdbm"
@@ -34,7 +38,7 @@ class Skktools < Formula
       # Help find Homebrew's gdbm compatibility layer header
       inreplace %w[configure skkdic-expr.c], "gdbmndbm.h", "gdbm-ndbm.h"
     end
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "CC=#{ENV.cc}"
     ENV.deparallelize
     system "make", "install"

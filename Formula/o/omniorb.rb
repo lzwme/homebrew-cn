@@ -20,9 +20,11 @@ class Omniorb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c9e139a01ab68b128a4cb5ca256ffb4c7f022542cc300e225483675b2a3aed3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "python@3.13"
+  depends_on "zstd"
+
   uses_from_macos "zlib"
 
   resource "bindings" do

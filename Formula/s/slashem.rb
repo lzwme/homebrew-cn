@@ -31,7 +31,7 @@ class Slashem < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e6ce8d29f4ebd5eba336525f8d314b1f26c032d935389c704698f5881396f0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -61,13 +61,11 @@ class Slashem < Formula
     # Fix issue where ioctl is not declared and fails on Sonoma
     inreplace "sysshareioctl.c", "#include \"hack.h\"", "#include \"hack.h\"\n#include <sysioctl.h>"
 
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-mandir=#{man}",
+    system ".configure", "--with-mandir=#{man}",
                           "--with-group=#{Etc.getpwuid.gid}",
                           "--with-owner=#{Etc.getpwuid.name}",
-                          "--enable-wizmode=#{Etc.getpwuid.name}"
+                          "--enable-wizmode=#{Etc.getpwuid.name}",
+                          *std_configure_args
     system "make", "install"
 
     man6.install "docslashem.6", "docrecover.6"

@@ -29,7 +29,7 @@ class Oggz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32cc66ca90d54de30392f5c92d7858fd3cb86068a7363ed869aece87f0f9bb1"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -39,9 +39,7 @@ class Oggz < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-debug",
-                          "--disable-dependency-tracking"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

@@ -27,7 +27,7 @@ class Mkvtoolnix < Formula
   end
 
   depends_on "docbook-xsl" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "flac"
   depends_on "fmt"
@@ -48,8 +48,6 @@ class Mkvtoolnix < Formula
   uses_from_macos "ruby" => :build
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     ENV.cxx11
 
@@ -65,13 +63,12 @@ class Mkvtoolnix < Formula
     extra_libs.chop!
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-debug",
-                          "--prefix=#{prefix}",
-                          "--with-boost=#{Formula["boost"].opt_prefix}",
+    system "./configure", "--with-boost=#{Formula["boost"].opt_prefix}",
                           "--with-docbook-xsl-root=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl",
                           "--with-extra-includes=#{extra_includes}",
                           "--with-extra-libs=#{extra_libs}",
-                          "--disable-gui"
+                          "--disable-gui",
+                          *std_configure_args
     system "rake", "-j#{ENV.make_jobs}"
     system "rake", "install"
   end

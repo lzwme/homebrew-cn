@@ -22,7 +22,7 @@ class Mednafen < Formula
   end
 
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "flac"
   depends_on "libsndfile"
@@ -46,13 +46,14 @@ class Mednafen < Formula
   end
 
   def install
-    args = std_configure_args
+    args = %w[
+      --with-external-lzo
+      --with-external-libzstd
+      --enable-ss
+    ]
     args << "--with-external-mpcdec" if OS.mac? # musepack
 
-    system ".configure", "--with-external-lzo",
-                          "--with-external-libzstd",
-                          "--enable-ss",
-                          *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

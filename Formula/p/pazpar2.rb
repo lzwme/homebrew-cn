@@ -27,7 +27,7 @@ class Pazpar2 < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "icu4c@76"
   depends_on "yaz"
@@ -52,6 +52,6 @@ class Pazpar2 < Formula
       <pazpar2>
     XML
 
-    system "#{sbin}pazpar2", "-t", "-f", "#{testpath}test-config.xml"
+    system sbin"pazpar2", "-t", "-f", testpath"test-config.xml"
   end
 end

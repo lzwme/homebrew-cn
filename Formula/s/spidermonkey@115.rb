@@ -25,7 +25,7 @@ class SpidermonkeyAT115 < Formula
 
   disable! date: "2025-07-01", because: :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.11" => :build # https:bugzilla.mozilla.orgshow_bug.cgi?id=1857515
   depends_on "rust" => :build
   depends_on "icu4c@76"

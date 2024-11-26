@@ -19,7 +19,7 @@ class Paps < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "fmt"
   depends_on "glib"
@@ -46,7 +46,7 @@ class Paps < Formula
 
   test do
     system bin"paps", pkgshare"examplessmall-hello.utf8", "--encoding=UTF-8", "-o", "paps.ps"
-    assert_predicate testpath"paps.ps", :exist?
+    assert_path_exists testpath"paps.ps"
     assert_match "%!PS-Adobe-3.0", (testpath"paps.ps").read
   end
 end

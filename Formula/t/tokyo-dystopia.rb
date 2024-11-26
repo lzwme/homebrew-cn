@@ -37,11 +37,11 @@ class TokyoDystopia < Formula
   end
 
   test do
-    (testpath/"test.tsv").write <<~EOS
+    (testpath/"test.tsv").write <<~TSV
       1\tUnited States
       55\tBrazil
       81\tJapan
-    EOS
+    TSV
 
     system bin/"dystmgr", "importtsv", "casket", "test.tsv"
     system bin/"dystmgr", "put", "casket", "83", "China"

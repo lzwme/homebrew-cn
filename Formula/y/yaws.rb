@@ -95,9 +95,7 @@ class Yaws < Formula
         <auth>
       <server>
     EOS
-    fork do
-      exec bin"yaws", "-c", testpath"yaws.conf", "--erlarg", "-noshell"
-    end
+    spawn bin"yaws", "-c", testpath"yaws.conf", "--erlarg", "-noshell"
     sleep 6
 
     output = shell_output("curl --silent localhost:#{port}example.txt")

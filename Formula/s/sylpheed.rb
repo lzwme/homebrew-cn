@@ -21,7 +21,7 @@ class Sylpheed < Formula
     sha256 x86_64_linux:   "2acbda751260830e9e9388a9745bc6df4668b2c3799b200335d0c19d2018882c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -46,7 +46,7 @@ class Sylpheed < Formula
   end
 
   def install
-    system ".configure", "--disable-updatecheck", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", "--disable-updatecheck", *std_configure_args
     system "make", "install"
   end
 

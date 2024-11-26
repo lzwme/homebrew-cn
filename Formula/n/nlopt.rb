@@ -1,18 +1,18 @@
 class Nlopt < Formula
   desc "Freeopen-source library for nonlinear optimization"
   homepage "https:nlopt.readthedocs.io"
-  url "https:github.comstevengjnloptarchiverefstagsv2.9.0.tar.gz"
-  sha256 "6e899e297485e457ec1bf84844de29921aeef674f9d5caf60277df45dca6ff76"
+  url "https:github.comstevengjnloptarchiverefstagsv2.9.1.tar.gz"
+  sha256 "1e6c33f8cbdc4138d525f3326c231f14ed50d99345561e85285638c49b64ee93"
   license "MIT"
   head "https:github.comstevengjnlopt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bf554c611a6bc268c2faa7cd6659b6e6047f2b47ac550cc90c41185221b14e86"
-    sha256 cellar: :any,                 arm64_sonoma:  "f50f5763c8bf4e0cd452130c9338e7479f895eafc982dd1f2e7d06f723bd45ff"
-    sha256 cellar: :any,                 arm64_ventura: "5ab38a026fa76cd19df9e0eeda96f7792a7d851c596b1bd1be8884814256aec1"
-    sha256 cellar: :any,                 sonoma:        "85eac9d6647bb9b0231f73c5423a44914f815aeed4cbb15356e28fa6844a5a7d"
-    sha256 cellar: :any,                 ventura:       "63051104fb0de336dbf5bbbbff79ee61d41b60ea5dc59b0c9628a60b8ce0fdd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e49dd81f4bb02c9efcbe4431b520e5f8c8791f2041085309024e5d72e5d3524"
+    sha256 cellar: :any,                 arm64_sequoia: "dde3448448cfcab26c78ee3297ff3a108990cd5ad6e7ce51c75bec01b0b80f67"
+    sha256 cellar: :any,                 arm64_sonoma:  "141948dfbf37d2598acf237f30f249a8c350a731b8fa0989f9d3764e39a33018"
+    sha256 cellar: :any,                 arm64_ventura: "14eab9b8b46a24fd3074f843a64bc65445cac18c344dcb598db05662069b10c7"
+    sha256 cellar: :any,                 sonoma:        "47ec9a4f7cd5d583479fc5de4e26c7cba0ab1a7a352851a19dd11c542700c918"
+    sha256 cellar: :any,                 ventura:       "e5554d8ee37a66b7c7bf61b1071b28cf323aeea4b9973a11160b60bcecc5d3d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aef777322e668f27597d9801736b270d74a017a607d2d5fa310787b0916bf38e"
   end
 
   depends_on "cmake" => [:build, :test]

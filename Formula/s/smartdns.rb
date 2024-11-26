@@ -21,8 +21,8 @@ class Smartdns < Formula
   uses_from_macos "llvm" # for libclang
 
   on_linux do
-    depends_on "openssl@3" =>  :build # cargo patch
-    depends_on "pkg-config" => :build # cargo patch
+    depends_on "openssl@3" => :build # cargo patch
+    depends_on "pkgconf" => :build # cargo patch
     depends_on "bind" => :test # for `dig`
   end
 
@@ -47,10 +47,8 @@ class Smartdns < Formula
       local-ttl 3
       address example.com1.2.3.4
     EOS
-    fork do
-      exec sbin"smartdns", "run", "-c", testpath"smartdns.conf"
-    end
-    sleep(2)
+    spawn sbin"smartdns", "run", "-c", testpath"smartdns.conf"
+    sleep 2
     output = shell_output("dig @127.0.0.1 -p #{port} example.com.")
     assert_match("example.com.\t\t3\tIN\tA\t1.2.3.4", output)
   end

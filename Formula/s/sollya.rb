@@ -21,7 +21,7 @@ class Sollya < Formula
   end
 
   depends_on "automake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "fplll"
   depends_on "gmp"
   depends_on "mpfi"
@@ -30,7 +30,7 @@ class Sollya < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
@@ -42,7 +42,7 @@ class Sollya < Formula
     system bin/"sollya", "cos.sollya"
     assert_equal "2", (testpath/"two.txt").read
 
-    (testpath/"test.c").write <<~EOF
+    (testpath/"test.c").write <<~C
       #include <sollya.h>
 
       int main(void) {
@@ -54,9 +54,9 @@ class Sollya < Formula
         sollya_lib_close();
         return 0;
       }
-    EOF
-    pkg_config_flags = shell_output("pkg-config --cflags --libs gmp mpfr fplll").chomp.split
-    system ENV.cc, "test.c", *pkg_config_flags, "-I#{include}", "-L#{lib}", "-lsollya", "-o", "test"
+    C
+    pkgconf_flags = shell_output("pkgconf --cflags --libs gmp mpfr fplll").chomp.split
+    system ENV.cc, "test.c", *pkgconf_flags, "-I#{include}", "-L#{lib}", "-lsollya", "-o", "test"
     assert_equal "pi", shell_output("./test")
   end
 end

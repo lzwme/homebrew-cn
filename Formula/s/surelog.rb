@@ -22,7 +22,7 @@ class Surelog < Formula
   depends_on "nlohmann-json" => :build
   depends_on "openjdk" => :build
   depends_on "python@3.13" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "antlr4-cpp-runtime"
   depends_on "capnp"
   depends_on "uhdm"
@@ -105,7 +105,7 @@ class Surelog < Formula
       }
     CPP
 
-    flags = shell_output("pkg-config --cflags --libs Surelog").chomp.split
+    flags = shell_output("pkgconf --cflags --libs Surelog").chomp.split
     system ENV.cxx, testpath"test.cpp", "-o", "test",
                     "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}lib",
                     "-fPIC", "-std=c++17", *flags

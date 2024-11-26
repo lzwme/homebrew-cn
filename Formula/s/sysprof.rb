@@ -23,7 +23,7 @@ class Sysprof < Formula
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "glib"
   depends_on "graphene"
@@ -61,7 +61,7 @@ class Sysprof < Formula
 
   test do
     cp pkgshare/"examples/app.c", "."
-    flags = shell_output("pkg-config --cflags --libs glib-2.0 sysprof-capture-4").chomp.split
+    flags = shell_output("pkgconf --cflags --libs glib-2.0 sysprof-capture-4").chomp.split
     system ENV.cc, "app.c", "-o", "app", *flags
     assert_equal "SYSPROF_TRACE_FD not found, exiting.", shell_output("./app 2>&1", 1).chomp
   end

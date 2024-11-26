@@ -14,7 +14,7 @@ class Sn0int < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "799345e368ecb3b46e5ce18b62976a75707f78a3e717d33b5524d6af3b3a9819"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
   depends_on "libsodium"

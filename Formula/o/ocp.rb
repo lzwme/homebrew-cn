@@ -22,7 +22,7 @@ class Ocp < Formula
     sha256 x86_64_linux:   "4cd81c537874b42e0de929447ecc9fe813030cce6a3b1296caf32309233239bb"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xa" => :build
 
   depends_on "ancient"

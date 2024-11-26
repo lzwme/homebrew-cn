@@ -22,7 +22,7 @@ class PangommAT246 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairomm@1.14"
   depends_on "glib"
   depends_on "glibmm@2.66"
@@ -44,8 +44,8 @@ class PangommAT246 < Formula
       }
     CPP
 
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs pangomm-1.4").chomp.split
-    system ENV.cxx, "-std=c++11", "test.cpp", *pkg_config_cflags, "-o", "test"
+    pkgconf_flags = shell_output("pkgconf --cflags --libs pangomm-1.4").chomp.split
+    system ENV.cxx, "-std=c++11", "test.cpp", *pkgconf_flags, "-o", "test"
     system "./test"
   end
 end

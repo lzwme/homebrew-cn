@@ -1,18 +1,18 @@
 class Mdbook < Formula
   desc "Create modern online books from Markdown files"
   homepage "https:rust-lang.github.iomdBook"
-  url "https:github.comrust-langmdBookarchiverefstagsv0.4.42.tar.gz"
-  sha256 "cf1c7c293fd1ad3d51fe13cd385303df8b30004ba5edcc35dd8dbd23d670d528"
+  url "https:github.comrust-langmdBookarchiverefstagsv0.4.43.tar.gz"
+  sha256 "7213c006d78dafa0d7a893bdb8fd3814bbf4d6794ffb97822038185364b73f77"
   license "MPL-2.0"
   head "https:github.comrust-langmdBook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e0042ec919503d740bbef64e4a6576cf8910f3ff1d1e7279e72296df6d0522f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b10ddc976febcbc71d6f4fe153b0130cf86cd47bdf765e82709eb08e3dbb0aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d9171d3402c70ef01de58465aa333b0bddcabc6157afec46be46d0c54d48a4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "961b272865570522117852058d60ed97f2148706d0346ca89167acc8bb06da94"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c805980b1c7754ef2415714522651b437d56aba0359297c99ac013f2588c705"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a2d07e99a976b6946065ce27d4fe0eb4140b6b88b411d438183d4b81fbfa20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82c64a936de94fa3c23ebc97c31b1c318ed55fdf9ac31732b4cf89d4f1bb272c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bd3e774e47c76c00a8f0379d5a20a64968862f21b6b1b3b97f18d03f460ede8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8265ffaf0950c8e82fbda6b80e90d13747e99939ed68bfd1d687f09651c2770"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9399a9b16f24e3cabb65200a20a53a9b0448980441d02310de8fb3b4a062c5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e29c7ef941e3bf56eba7798c6d0930453f5b6779c9ac50b04095480805588966"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8a96ddf105f1fec0ce2f5998ff61a679237b33d16e2dd4d1cc1cb8d9eb09e3d"
   end
 
   depends_on "rust" => :build

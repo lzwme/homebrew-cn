@@ -17,7 +17,7 @@ class Ipopt < Formula
   end
 
   depends_on "openjdk" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "ampl-asl"
   depends_on "gcc" # for gfortran
   depends_on "openblas"
@@ -76,11 +76,8 @@ class Ipopt < Formula
     end
 
     args = [
-      "--disable-debug",
-      "--disable-dependency-tracking",
       "--disable-silent-rules",
       "--enable-shared",
-      "--prefix=#{prefix}",
       "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-mumps-cflags=-I#{buildpath}mumps_include",
       "--with-mumps-lflags=-L#{lib} -ldmumps -lmpiseq -lmumps_common -lopenblas -lpord",
@@ -88,7 +85,7 @@ class Ipopt < Formula
       "--with-asl-lflags=-L#{Formula["ampl-asl"].opt_lib} -lasl",
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
 
     ENV.deparallelize
@@ -97,8 +94,8 @@ class Ipopt < Formula
 
   test do
     testpath.install resource("test")
-    pkg_config_flags = shell_output("pkg-config --cflags --libs ipopt").chomp.split
-    system ENV.cxx, "exampleshs071_cpphs071_main.cpp", "exampleshs071_cpphs071_nlp.cpp", *pkg_config_flags
+    pkgconf_flags = shell_output("pkgconf --cflags --libs ipopt").chomp.split
+    system ENV.cxx, "exampleshs071_cpphs071_main.cpp", "exampleshs071_cpphs071_nlp.cpp", *pkgconf_flags
     system ".a.out"
 
     resource("miniampl").stage do

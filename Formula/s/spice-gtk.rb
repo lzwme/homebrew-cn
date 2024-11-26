@@ -30,7 +30,7 @@ class SpiceGtk < Formula
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
 
@@ -107,11 +107,12 @@ class SpiceGtk < Formula
     CPP
     ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c"].lib}/pkgconfig"
     system ENV.cc, "test.cpp",
-                   *shell_output("pkg-config --cflags --libs spice-client-gtk-3.0 ").chomp.split,
+                   *shell_output("pkgconf --cflags --libs spice-client-gtk-3.0 ").chomp.split,
                    "-o", "test"
     system "./test"
   end
 end
+
 __END__
 diff --git a/subprojects/keycodemapdb/tools/keymap-gen b/subprojects/keycodemapdb/tools/keymap-gen
 index b6cc95b..d05e945 100755

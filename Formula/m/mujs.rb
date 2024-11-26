@@ -22,7 +22,7 @@ class Mujs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5a378c307b4b3d0f14c3035959ea57f956023b93bc38011e9e8e7102b59b4ee"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   on_linux do
     depends_on "readline"
@@ -35,15 +35,15 @@ class Mujs < Formula
   end
 
   test do
-    (testpath"test.js").write <<~JS
+    (testpath"test.js").write <<~JAVASCRIPT
       print('hello, world'.split().reduce(function (sum, char) {
         return sum + char.charCodeAt(0);
       }, 0));
-    JS
+    JAVASCRIPT
     assert_equal "104", shell_output("#{bin}mujs test.js").chomp
     # test pkg-config setup correctly
-    assert_match "-I#{include}", shell_output("pkg-config --cflags mujs")
-    assert_match "-L#{lib}", shell_output("pkg-config --libs mujs")
-    system "pkg-config", "--atleast-version=#{version}", "mujs"
+    assert_match "-I#{include}", shell_output("pkgconf --cflags mujs")
+    assert_match "-L#{lib}", shell_output("pkgconf --libs mujs")
+    system "pkgconf", "--atleast-version=#{version}", "mujs"
   end
 end

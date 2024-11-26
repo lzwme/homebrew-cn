@@ -16,7 +16,7 @@ class Ocrmypdf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7804f48e5815e641061623b94425e3d15ff89376b69b369b3bd2a9d38965560b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cryptography"
   depends_on "freetype"
   depends_on "ghostscript"
@@ -35,8 +35,6 @@ class Ocrmypdf < Formula
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
-
-  fails_with gcc: "5"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
@@ -123,6 +121,6 @@ class Ocrmypdf < Formula
   test do
     system bin/"ocrmypdf", "-f", "-q", "--deskew",
                            test_fixtures("test.pdf"), "ocr.pdf"
-    assert_predicate testpath/"ocr.pdf", :exist?
+    assert_path_exists testpath/"ocr.pdf"
   end
 end

@@ -22,7 +22,7 @@ class Owfs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc7081d7fe26ec46288fa5bb16f5404e9697f1c567dde4ded5e181f0b54bbb6b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libftdi"
   depends_on "libusb"
 
@@ -35,8 +35,7 @@ class Owfs < Formula
   def install
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac? && MacOS.version >= :sequoia
 
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-swig",
+    system ".configure", "--disable-swig",
                           "--disable-owtcl",
                           "--disable-zero",
                           "--disable-owpython",
@@ -44,7 +43,7 @@ class Owfs < Formula
                           "--disable-swig",
                           "--enable-ftdi",
                           "--enable-usb",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
   end
 

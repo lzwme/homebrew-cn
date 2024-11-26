@@ -14,7 +14,7 @@ class Micropython < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ae330d48509fb62a44b8a51c5e1f2d42d45cedd897b45fdaefd251bf1041167"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "python" # Requires libffi v3 closure API
 

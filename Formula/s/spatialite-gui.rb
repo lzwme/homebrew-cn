@@ -22,7 +22,7 @@ class SpatialiteGui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01964fdfdcd4ea1dea29d24210777887be81dd46ffed07a341c86a5ca932c409"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freexl"
   depends_on "geos"
   depends_on "libpq"
@@ -47,15 +47,6 @@ class SpatialiteGui < Formula
   uses_from_macos "zlib"
 
   def install
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    if DevelopmentTools.clang_build_version >= 1500
-      recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
-        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
-        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
-    end
-
     # Link flags for sqlite don't seem to get passed to make, which
     # causes builds to fatally error out on linking.
     # https:github.comHomebrewhomebrewissues44003

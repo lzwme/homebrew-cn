@@ -21,13 +21,13 @@ class Mpop < Formula
     sha256 x86_64_linux:   "6b216878830d207454e6327c2c5ca7960c44dd237304c9346a47d80c2d81db68"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "libidn2"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

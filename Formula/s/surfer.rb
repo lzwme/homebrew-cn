@@ -16,7 +16,7 @@ class Surfer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3855f6c6fb4e457389ec74da4de999382698a98b0f806304e988ae4ecbb234"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
@@ -50,7 +50,7 @@ class Surfer < Formula
     EOS
 
     token = "tokentoken"
-    pid = fork { exec bin/"surfer", "server", "--file", "test.vcd", "--port", port.to_s, "--token", token }
+    pid = spawn bin/"surfer", "server", "--file", "test.vcd", "--port", port.to_s, "--token", token
 
     sleep 2
 

@@ -23,18 +23,18 @@ class OpenalSoft < Formula
   keg_only :shadowed_by_macos, "macOS provides OpenAL.framework"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     # Please don't re-enable example building. See:
     # https:github.comHomebrewhomebrewissues38274
-    args = %w[
+    args = %W[
       -DALSOFT_BACKEND_PORTAUDIO=OFF
       -DALSOFT_BACKEND_PULSEAUDIO=OFF
       -DALSOFT_EXAMPLES=OFF
       -DALSOFT_MIDI_FLUIDSYNTH=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

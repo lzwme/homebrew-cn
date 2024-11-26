@@ -22,7 +22,7 @@ class Multitail < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e5209ad76b3f876606ca6a7a7fa6720ec2f976affd51aaab992c0dde63540b4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ncurses"
 
   def install

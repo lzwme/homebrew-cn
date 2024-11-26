@@ -61,13 +61,13 @@ class Zig < Formula
   end
 
   test do
-    (testpath"hello.zig").write <<~EOS
+    (testpath"hello.zig").write <<~ZIG
       const std = @import("std");
       pub fn main() !void {
           const stdout = std.io.getStdOut().writer();
           try stdout.print("Hello, world!", .{});
       }
-    EOS
+    ZIG
     system bin"zig", "build-exe", "hello.zig"
     assert_equal "Hello, world!", shell_output(".hello")
 

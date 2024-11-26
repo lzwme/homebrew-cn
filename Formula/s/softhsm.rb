@@ -34,21 +34,20 @@ class Softhsm < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   depends_on "openssl@3"
 
   def install
     system "sh", ".autogen.sh" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system ".configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}softhsm",
                           "--localstatedir=#{var}",
                           "--with-crypto-backend=openssl",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--disable-gost"
+                          "--disable-gost",
+                          *std_configure_args
     system "make", "install"
   end
 

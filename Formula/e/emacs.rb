@@ -23,7 +23,7 @@ class Emacs < Formula
     depends_on "gnu-sed" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
   depends_on "gmp"
   depends_on "gnutls"
@@ -45,6 +45,7 @@ class Emacs < Formula
     ENV["ac_cv_func_aligned_alloc"] = "no" if OS.mac? && MacOS.version == :mojave
 
     args = %W[
+      --disable-acl
       --disable-silent-rules
       --enable-locallisppath=#{HOMEBREW_PREFIX}shareemacssite-lisp
       --infodir=#{info}emacs

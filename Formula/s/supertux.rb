@@ -24,7 +24,7 @@ class Supertux < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "freetype"
   depends_on "glew"
@@ -47,12 +47,14 @@ class Supertux < Formula
   def install
     ENV.cxx11
 
-    args = std_cmake_args
-    args << "-DINSTALL_SUBDIR_BIN=bin"
-    args << "-DINSTALL_SUBDIR_SHARE=sharesupertux"
-    # Without the following option, Cmake intend to use the library of MONO framework.
-    args << "-DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}"
-    system "cmake", "-S", ".", "-B", "build", *args
+    args = [
+      "-DINSTALL_SUBDIR_BIN=bin",
+      "-DINSTALL_SUBDIR_SHARE=sharesupertux",
+      # Without the following option, Cmake intend to use the library of MONO framework.
+      "-DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}",
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

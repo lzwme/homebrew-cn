@@ -31,7 +31,7 @@ class Sqlsmith < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libpq"
   depends_on "libpqxx"
 
@@ -39,8 +39,8 @@ class Sqlsmith < Formula
 
   def install
     ENV.append_to_cflags "-DNDEBUG"
-    system "autoreconf", "-fvi" if build.head?
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end

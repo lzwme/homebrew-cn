@@ -1,18 +1,18 @@
 class Bazelisk < Formula
   desc "User-friendly launcher for Bazel"
   homepage "https:github.combazelbuildbazelisk"
-  url "https:github.combazelbuildbazeliskarchiverefstagsv1.24.0.tar.gz"
-  sha256 "54d31b53f8638c8b717e802736f9a478e929943b7e9d3bc6f9cee7c82b4302ef"
+  url "https:github.combazelbuildbazeliskarchiverefstagsv1.24.1.tar.gz"
+  sha256 "c7a44600ae88732fd75d8cbd1d58efe69610e41540566ff4102c5e3b96e497a7"
   license "Apache-2.0"
   head "https:github.combazelbuildbazelisk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f8ea1fdecb3a56f01aa166cee1d841581ca2be9cbddcd04ca975151ccd04443"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f8ea1fdecb3a56f01aa166cee1d841581ca2be9cbddcd04ca975151ccd04443"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f8ea1fdecb3a56f01aa166cee1d841581ca2be9cbddcd04ca975151ccd04443"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36040fa8759e342762ecf7f232d54cbfbc39265eabef7060ad39efc89e5aa23d"
-    sha256 cellar: :any_skip_relocation, ventura:       "36040fa8759e342762ecf7f232d54cbfbc39265eabef7060ad39efc89e5aa23d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "391bec6183afbcf91572a54322c7c547dea14dd580fd7484841131910e06eebe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0bae555199c22e743265ddbceacfdb1b02eb95219524bc8725fee548f0cce34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0bae555199c22e743265ddbceacfdb1b02eb95219524bc8725fee548f0cce34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0bae555199c22e743265ddbceacfdb1b02eb95219524bc8725fee548f0cce34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58d895bc81f10a256160bc6b15a5681408cc74c12da4674d2f1f2b9214d03b8b"
+    sha256 cellar: :any_skip_relocation, ventura:       "58d895bc81f10a256160bc6b15a5681408cc74c12da4674d2f1f2b9214d03b8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9349dc52707a43f29c61cf1f6eab004a6f10f9e8a214044933b9e81a88e9989"
   end
 
   depends_on "go" => :build

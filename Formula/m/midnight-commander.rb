@@ -30,7 +30,7 @@ class MidnightCommander < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "libssh2"
@@ -53,7 +53,7 @@ class MidnightCommander < Formula
     ]
 
     system ".autogen.sh" if build.head?
-    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     if OS.mac?

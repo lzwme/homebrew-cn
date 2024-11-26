@@ -31,7 +31,7 @@ class OpenAdventure < Formula
   uses_from_macos "libedit"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
   end
 
   resource "pyyaml" do

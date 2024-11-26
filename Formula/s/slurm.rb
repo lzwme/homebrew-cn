@@ -26,14 +26,9 @@ class Slurm < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "ncurses"
-
-  on_sonoma do
-    # Work around Sonoma's broken ncurses5.4-config by using pkg-config instead
-    depends_on "pkg-config" => :build
-  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

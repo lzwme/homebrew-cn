@@ -10,7 +10,8 @@ class VirtManager < Formula
   head "https:github.comvirt-managervirt-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a1584e780e4ade6489534849abe65f7b65878b3109b7653f58688707de596807"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3490af322b74e2098969db9537ec991f141cb7efd330e3cbd2d794856dac5fe4"
   end
 
   depends_on "docutils" => :build
@@ -55,6 +56,10 @@ class VirtManager < Formula
   end
 
   def install
+    # Fix to use shlex instead of pipes, should be removed in next release
+    # Commit ref: https:github.comvirt-managervirt-managercommitbb1afaba29019605a240a57d6b3ca8eb36341d9b
+    inreplace "virtManagerobjectdomain.py", "pipes", "shlex"
+
     python3 = "python3.13"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
@@ -65,7 +70,7 @@ class VirtManager < Formula
     ENV["PIP_CONFIG_SETTINGS"] = "--global-option=--no-update-icon-cache --no-compile-schemas"
     venv.pip_install_and_link buildpath
 
-    prefix.install libexec"share"
+    share.install Dir[libexec"share*"]
   end
 
   def post_install
@@ -76,9 +81,7 @@ class VirtManager < Formula
   end
 
   test do
-    libvirt_pid = fork do
-      exec Formula["libvirt"].opt_sbin"libvirtd", "-f", Formula["libvirt"].etc"libvirtlibvirtd.conf"
-    end
+    libvirt_pid = spawn Formula["libvirt"].opt_sbin"libvirtd", "-f", Formula["libvirt"].etc"libvirtlibvirtd.conf"
 
     output = testpath"virt-manager.log"
     virt_manager_pid = fork do
@@ -86,7 +89,7 @@ class VirtManager < Formula
       $stderr.reopen(output)
       exec bin"virt-manager", "-c", "test:default", "--debug"
     end
-    sleep 10
+    sleep 20
 
     assert_match "conn=test:default changed to state=Active", output.read
   ensure

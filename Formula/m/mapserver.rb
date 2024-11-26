@@ -21,7 +21,7 @@ class Mapserver < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "swig" => :build
   depends_on "cairo"
   depends_on "fcgi"
@@ -40,29 +40,18 @@ class Mapserver < Formula
 
   uses_from_macos "curl"
 
-  fails_with gcc: "5"
-
   def python3
     "python3.12"
   end
 
   def install
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    if DevelopmentTools.clang_build_version >= 1500
-      recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
-        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
-        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
-    end
-
     # Workaround for: Built-in generator --c_out specifies a maximum edition
     # PROTO3 which is not the protoc maximum 2023.
     # Remove when fixed in `protobuf-c`:
     # https:github.comprotobuf-cprotobuf-cpull711
     inreplace "CMakeLists.txt",
               "COMMAND ${PROTOBUFC_COMPILER}",
-              "COMMAND #{Formula["protobuf"].opt_bin"protoc"}"
+              "COMMAND #{Formula["protobuf"].opt_bin}protoc"
 
     if OS.mac?
       mapscript_rpath = rpath(source: prefixLanguage::Python.site_packages(python3)"mapscript")
@@ -71,7 +60,7 @@ class Mapserver < Formula
                                                        "-Wl,-undefined,dynamic_lookup,-rpath,#{mapscript_rpath}"
     end
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DWITH_CLIENT_WFS=ON",
                     "-DWITH_CLIENT_WMS=ON",
@@ -87,8 +76,9 @@ class Mapserver < Formula
                     "-DWITH_PYTHON=ON",
                     "-DWITH_SOS=ON",
                     "-DWITH_WFS=ON",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DPHP_EXTENSION_DIR=#{lib}phpextensions"
+                    "-DPython_EXECUTABLE=#{which(python3)}",
+                    "-DPHP_EXTENSION_DIR=#{lib}phpextensions",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

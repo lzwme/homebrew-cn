@@ -27,7 +27,7 @@ class Diffstat < Formula
   end
 
   test do
-    (testpath/"diff.diff").write <<~EOS
+    (testpath/"diff.diff").write <<~DIFF
       diff --git a/diffstat.rb b/diffstat.rb
       index 596be42..5ff14c7 100644
       --- a/diffstat.rb
@@ -38,7 +38,7 @@ class Diffstat < Formula
       -  sha256 'fad5135199c3b9aea132c5d45874248f4ce0ff35f61abb8d03c3b90258713793'
       +  url 'https://deb.debian.org/debian/pool/main/d/diffstat/diffstat_1.61.orig.tar.gz'
       +  sha256 '760ed0c99c6d643238d41b80e60278cf1683ffb94a283954ac7ef168c852766a'
-    EOS
+    DIFF
     output = shell_output("#{bin}/diffstat diff.diff")
     assert_match "2 insertions(+), 3 deletions(-)", output
   end

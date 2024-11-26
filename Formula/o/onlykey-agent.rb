@@ -18,7 +18,7 @@ class OnlykeyAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64d86873e97fa9e89aa54cbf77ef7ee139696fe68b93ed7664fd1b7c690c659a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "gnupg"
@@ -193,8 +193,6 @@ class OnlykeyAgent < Formula
   end
 
   def install
-    ENV["HIDAPI_SYSTEM_HIDAPI"] = "1"
-    ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
   end
 

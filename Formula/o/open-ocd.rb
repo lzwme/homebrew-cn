@@ -33,7 +33,7 @@ class OpenOcd < Formula
     depends_on "texinfo" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "capstone"
   depends_on "hidapi"
   depends_on "libftdi"
@@ -43,13 +43,12 @@ class OpenOcd < Formula
     ENV["CCACHE"] = "none"
 
     system ".bootstrap", "nosubmodule" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-buspirate",
+    system ".configure", "--enable-buspirate",
                           "--enable-stlink",
                           "--enable-dummy",
                           "--enable-jtag_vpi",
-                          "--enable-remote-bitbang"
+                          "--enable-remote-bitbang",
+                          *std_configure_args
     system "make", "install"
   end
 end

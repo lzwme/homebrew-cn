@@ -25,7 +25,7 @@ class Openssh < Formula
   # Please don't resubmit the keychain patch option. It will never be accepted.
   # https:archive.ishSB6d#10%25
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ldns"
   depends_on "libfido2"
   depends_on "openssl@3"
@@ -77,7 +77,7 @@ class Openssh < Formula
       end
     end
 
-    args = *std_configure_args + %W[
+    args = %W[
       --sysconfdir=#{etc}ssh
       --with-ldns
       --with-libedit
@@ -89,7 +89,7 @@ class Openssh < Formula
 
     args << "--with-privsep-path=#{var}libsshd" if OS.linux?
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "install"
@@ -116,7 +116,7 @@ class Openssh < Formula
     assert_match "OpenSSH_", shell_output("#{bin}ssh -V 2>&1")
 
     port = free_port
-    fork { exec sbin"sshd", "-D", "-p", port.to_s }
+    spawn sbin"sshd", "-D", "-p", port.to_s
     sleep 2
     assert_match "sshd", shell_output("lsof -i :#{port}")
   end

@@ -15,7 +15,7 @@ class Minipro < Formula
     sha256 x86_64_linux:  "7c0587d281ee52203b8346e78d4d42631fc008e47f60298e2559524122515413"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
   depends_on "srecord"
 

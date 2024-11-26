@@ -20,7 +20,7 @@ class MediaInfo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb54082f50d7d5cd15864b6b2bf1bc0f275a5d6847570e09e36b2bc2fd207e7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmediainfo"
   depends_on "libzen"
 

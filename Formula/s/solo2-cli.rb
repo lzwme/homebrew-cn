@@ -20,7 +20,7 @@ class Solo2Cli < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "pcsc-lite"
     depends_on "systemd"
   end

@@ -25,7 +25,7 @@ class Dynare < Formula
   depends_on "flex" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fftw"
   depends_on "gcc"
   depends_on "gsl"
@@ -102,12 +102,12 @@ class Dynare < Formula
 
     # Replace `makeinfo` with dummy command `true` to prevent generating docs
     # that are not useful to the test.
-    (testpath"dyn_test.m").write <<~EOS
+    (testpath"dyn_test.m").write <<~MATLAB
       makeinfo_program true
       pkg prefix #{testpath}octave
       pkg install statistics-release-#{statistics.version}.tar.gz
       dynare bkk.mod console
-    EOS
+    MATLAB
 
     system Formula["octave"].opt_bin"octave", "--no-gui",
            "--no-history", "--path", "#{lib}dynarematlab", "dyn_test.m"

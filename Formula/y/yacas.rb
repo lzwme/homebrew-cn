@@ -22,19 +22,14 @@ class Yacas < Formula
 
   depends_on "cmake" => :build
 
-  fails_with :gcc do
-    version "6"
-    cause "needs std::string_view"
-  end
-
   def install
-    cmake_args = std_cmake_args + [
+    cmake_args = [
       "-DENABLE_CYACAS_GUI=OFF",
       "-DENABLE_CYACAS_KERNEL=OFF",
       "-DCMAKE_C_COMPILER=#{ENV.cc}",
       "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
     ]
-    system "cmake", "-S", ".", "-B", "build", *cmake_args
+    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "scripts"

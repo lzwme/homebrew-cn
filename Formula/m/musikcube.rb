@@ -34,7 +34,7 @@ class Musikcube < Formula
 
   depends_on "asio" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "game-music-emu"

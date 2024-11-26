@@ -25,7 +25,7 @@ class Ott < Formula
   depends_on "gmp" => :build
   depends_on "ocaml" => :build
   depends_on "opam" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     opamroot = buildpath".opam"

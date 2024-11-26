@@ -23,7 +23,7 @@ class Dpkg < Formula
     sha256 x86_64_linux:  "919ea8d9f51c3016d23cd7885ed19b36de0cd9554d4b931b2fa4318969343170"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "po4a" => :build
   depends_on "gettext"
   depends_on "gnu-tar"

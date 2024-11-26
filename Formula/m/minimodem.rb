@@ -29,15 +29,13 @@ class Minimodem < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e160d02015fdfd48ef348ef8f73bb6040e2a66ff9047cf1bc7f720ad94c173a7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fftw"
   depends_on "libsndfile"
   depends_on "pulseaudio"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--without-alsa"
+    system "./configure", "--without-alsa", *std_configure_args
     system "make", "install"
   end
 

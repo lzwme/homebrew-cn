@@ -16,7 +16,7 @@ class Matplotplusplus < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fftw"
   depends_on "gnuplot"
   depends_on "jpeg-turbo"
@@ -31,12 +31,11 @@ class Matplotplusplus < Formula
     cause "cannot run simple program using std::filesystem"
   end
 
-  fails_with gcc: "5"
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
-                    "-DBUILD_EXAMPLES=OFF"
+                    "-DBUILD_EXAMPLES=OFF",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "examples"
@@ -49,6 +48,6 @@ class Matplotplusplus < Formula
     cp pkgshare"examplesexportingsavesave_1.cpp", testpath"test.cpp"
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lmatplot", "-o", "test"
     system ".test"
-    assert_predicate testpath"imgbarchart.svg", :exist?
+    assert_path_exists testpath"imgbarchart.svg"
   end
 end

@@ -1,17 +1,17 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https:phrase.com"
-  url "https:github.comphrasephrase-cliarchiverefstags2.33.1.tar.gz"
-  sha256 "5b68b4c961c459073ecc1f8e3fdf275e9fd096433ef00227852265a8c50b387d"
+  url "https:github.comphrasephrase-cliarchiverefstags2.34.0.tar.gz"
+  sha256 "0a6ecb14be1d0454c837cc6c8f4ce244a2bd432c8c2ccbce5679a118eb251054"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23af1b2f778a0f0e2233cae57f19f7cce6ccc7b9b7be4bc7f9331d143b588a12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23af1b2f778a0f0e2233cae57f19f7cce6ccc7b9b7be4bc7f9331d143b588a12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23af1b2f778a0f0e2233cae57f19f7cce6ccc7b9b7be4bc7f9331d143b588a12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74d555d5c7e2b2dc89e1d71d632b134699b0f63ca22599b913a2c11c2ba931e0"
-    sha256 cellar: :any_skip_relocation, ventura:       "74d555d5c7e2b2dc89e1d71d632b134699b0f63ca22599b913a2c11c2ba931e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e43b43244dfb7bc3199aee3991711b49e02b6efdff8856aa7e1cdd8a442198e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6e9aeaf31bfda90f655b9a9720e456f3ad987e5fbb1e4dd165a47539a59ad8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6e9aeaf31bfda90f655b9a9720e456f3ad987e5fbb1e4dd165a47539a59ad8d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6e9aeaf31bfda90f655b9a9720e456f3ad987e5fbb1e4dd165a47539a59ad8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce07fe202ed1bc611f4cc006304fd2b82fe545bcb8fd63cfc16467c376fb0fa6"
+    sha256 cellar: :any_skip_relocation, ventura:       "ce07fe202ed1bc611f4cc006304fd2b82fe545bcb8fd63cfc16467c376fb0fa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c8c8d8c5f4bc2de447ce8810e782ffc5c255fb6bba6e2e11b51a55c6f412cc4"
   end
 
   depends_on "go" => :build

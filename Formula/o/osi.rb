@@ -21,7 +21,7 @@ class Osi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "093a334ad180ed10951e23866b1d6df68087fc29aee54a749899bb8b5d629780"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "coinutils"
 
   on_macos do

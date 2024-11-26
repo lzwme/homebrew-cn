@@ -22,7 +22,7 @@ class OrTools < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
   depends_on "cbc"
   depends_on "cgl"
@@ -35,8 +35,6 @@ class OrTools < Formula
   depends_on "re2"
   depends_on "scip"
   uses_from_macos "zlib"
-
-  fails_with gcc: "5"
 
   # Add missing `#include`s to fix incompatibility with `abseil` 20240722.0.
   # https:github.comgoogleor-toolspull4339

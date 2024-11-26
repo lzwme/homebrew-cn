@@ -18,7 +18,7 @@ class Swtpm < Formula
   depends_on "automake" => :build
   depends_on "gawk" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "socat" => :build
   depends_on "glib"
   depends_on "gmp"
@@ -40,16 +40,14 @@ class Swtpm < Formula
   end
 
   def install
-    system ".autogen.sh", *std_configure_args, "--with-openssl"
+    system ".autogen.sh", "--with-openssl", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     port = free_port
-    pid = fork do
-      system bin"swtpm", "socket", "--ctrl", "type=tcp,port=#{port}"
-    end
+    pid = spawn bin"swtpm", "socket", "--ctrl", "type=tcp,port=#{port}"
     sleep 10
     system bin"swtpm_ioctl", "--tcp", "127.0.0.1:#{port}", "-s"
   ensure

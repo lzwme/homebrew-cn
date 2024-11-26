@@ -23,7 +23,7 @@ class SpatialiteTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf36de708f0b4ade1201cdf1e0878b08283c155fd486fb9d7ec8d856e3a2e78"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libspatialite"
   depends_on "libxml2"
@@ -49,8 +49,7 @@ class SpatialiteTools < Formula
     ENV.prepend "LDFLAGS", "-L#{sqlite.opt_lib} -lsqlite3"
     ENV.prepend "CFLAGS", "-I#{sqlite.opt_include}"
 
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

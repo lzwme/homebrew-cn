@@ -22,13 +22,12 @@ class Mfcuk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce46cb3bb5f400139ff5e306dbdd76d4e1c0fe62acd3b9bc5711e3cc734ee835"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libnfc"
   depends_on "libusb"
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end

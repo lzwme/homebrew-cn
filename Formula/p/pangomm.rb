@@ -18,15 +18,13 @@ class Pangomm < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairomm"
   depends_on "glib"
   depends_on "glibmm"
   depends_on "libsigc++"
   depends_on "pango"
-
-  fails_with gcc: "5"
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -44,8 +42,8 @@ class Pangomm < Formula
       }
     CPP
 
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs pangomm-2.48").chomp.split
-    system ENV.cxx, "-std=c++17", "test.cpp", *pkg_config_cflags, "-o", "test"
+    pkgconf_flags = shell_output("pkgconf --cflags --libs pangomm-2.48").chomp.split
+    system ENV.cxx, "-std=c++17", "test.cpp", *pkgconf_flags, "-o", "test"
     system "./test"
   end
 end

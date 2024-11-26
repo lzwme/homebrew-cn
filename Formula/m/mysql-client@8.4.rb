@@ -22,7 +22,7 @@ class MysqlClientAT84 < Formula
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "libfido2"
   # GCC is not supported either, so exclude for El Capitan.
@@ -32,8 +32,6 @@ class MysqlClientAT84 < Formula
   depends_on "zstd"
 
   uses_from_macos "libedit"
-
-  fails_with gcc: "5"
 
   def install
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)

@@ -38,7 +38,7 @@ class Mpd < Formula
   depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "chromaprint"
   depends_on "expat"
@@ -83,8 +83,6 @@ class Mpd < Formula
     depends_on "pulseaudio"
     depends_on "systemd"
   end
-
-  fails_with gcc: "5"
 
   def install
     # mpd specifies -std=gnu++0x, but clang appears to try to build

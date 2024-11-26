@@ -21,7 +21,7 @@ class Omega < Formula
     sha256 x86_64_linux:   "8c5d3d4f9b8456a19cff0b0d47f3662734cac29a69a07ece8bdc840fd5a6b253"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmagic"
   depends_on "pcre2"
   depends_on "xapian"
@@ -29,8 +29,7 @@ class Omega < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-silent-rules",
-                          *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

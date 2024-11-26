@@ -30,11 +30,9 @@ class Deno < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "glib"
   end
-
-  fails_with gcc: "5"
 
   # Temporary resources to work around build failure due to files missing from crate
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
@@ -157,9 +155,9 @@ class Deno < Formula
 
     assert_match "# Fresh project", (testpath"fresh-projectREADME.md").read
 
-    (testpath"hello.ts").write <<~EOS
+    (testpath"hello.ts").write <<~TYPESCRIPT
       console.log("hello", "deno");
-    EOS
+    TYPESCRIPT
     assert_match "hello deno", shell_output("#{bin}deno run hello.ts")
     assert_match "Welcome to Deno!",
       shell_output("#{bin}deno run https:deno.landstd@0.100.0exampleswelcome.ts")

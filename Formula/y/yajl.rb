@@ -24,14 +24,14 @@ class Yajl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c206281370fe7277f21d17ff50fe9511233aff74501238516918027006c9cbf3"
   end
 
-  # Configure uses cmake internally
   depends_on "cmake" => :build
 
   def install
     ENV.deparallelize
 
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     (include"yajl").install Dir["srcapi*.h"]
   end
 

@@ -90,7 +90,7 @@ class Yamcha < Formula
                    "CORPUS=train.data", "MODEL=case_study", "train"
 
     %w[log model se svmdata txtmodel.gz].each do |ext|
-      assert_predicate testpath/"case_study.#{ext}", :exist?
+      assert_path_exists testpath/"case_study.#{ext}"
     end
   end
 end

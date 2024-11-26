@@ -19,7 +19,7 @@ class Souffle < Formula
   depends_on "bison" => :build # Bison included in macOS is out of date.
   depends_on "cmake" => :build
   depends_on "mcpp" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on macos: :catalina
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
@@ -42,7 +42,7 @@ class Souffle < Formula
       s.gsub!(%r{-I.*?srcinclude }, "")
       s.gsub!(%r{"source_include_dir": ".*?srcinclude"}, "\"source_include_dir\": \"#{include}\"")
     end
-    system "cmake", "--build", "build", "-j", "--target", "install"
+    system "cmake", "--build", "build", "--target", "install"
     include.install Dir["srcinclude*"]
     man1.install Dir["man*"]
   end
@@ -61,7 +61,7 @@ class Souffle < Formula
       1,2
     EOS
     system bin"souffle", "-F", "#{testpath}.", "-D", "#{testpath}.", "#{testpath}example.dl"
-    assert_predicate testpath"path.csv", :exist?
+    assert_path_exists testpath"path.csv"
     assert_equal "1,2\n", shell_output("cat #{testpath}path.csv")
   end
 end

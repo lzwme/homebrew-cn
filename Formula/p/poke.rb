@@ -20,7 +20,7 @@ class Poke < Formula
   depends_on "automake" => :build
   depends_on "help2man" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "bdw-gc"
   depends_on "gettext"
@@ -29,7 +29,7 @@ class Poke < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--with-lispdir=#{elisp}"
+    system "./configure", "--disable-silent-rules", "--with-lispdir=#{elisp}", *std_configure_args
     system "make"
     system "make", "install"
   end

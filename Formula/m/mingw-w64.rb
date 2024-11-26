@@ -23,7 +23,7 @@ class MingwW64 < Formula
   end
 
   # binutils searches for zstd using pkg-config
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   # Apple's makeinfo is old and has bugs
   depends_on "texinfo" => :build
 

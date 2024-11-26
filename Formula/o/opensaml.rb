@@ -19,7 +19,7 @@ class Opensaml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "252f721596bf59190b2acb8b37ac0aa8b77aa47c8c9fa7de236bdd35a5217a13"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "log4shib"
   depends_on "openssl@3"
   depends_on "xerces-c"

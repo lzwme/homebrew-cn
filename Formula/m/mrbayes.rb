@@ -26,7 +26,7 @@ class Mrbayes < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "102eb61f76273eb1345ca920c8e0e4dc4cec0ccba93c56a9a2634376b727e3e6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "beagle"
   depends_on "open-mpi"
 
@@ -49,7 +49,7 @@ class Mrbayes < Formula
       args << "ax_cv_have_avx_os_support_ext=no"
       args << "ax_cv_have_avx512_os_support_ext=no"
     end
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     doc.install share"examplesmrbayes" => "examples"

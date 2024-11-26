@@ -28,7 +28,7 @@ class Projectm < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "sdl2"
 
   on_linux do
@@ -36,13 +36,13 @@ class Projectm < Formula
   end
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_predicate prefix"shareprojectMconfig.inp", :exist?
-    assert_predicate prefix"shareprojectMpresets", :exist?
+    assert_path_exists prefix"shareprojectMconfig.inp"
+    assert_path_exists prefix"shareprojectMpresets"
 
     (testpath"test.cpp").write <<~CPP
       #include <libprojectMprojectM.hpp>
@@ -71,7 +71,7 @@ class Projectm < Formula
         return 0;
       }
     CPP
-    flags = shell_output("pkg-config libprojectM sdl2 --cflags --libs").split
+    flags = shell_output("pkgconf libprojectM sdl2 --cflags --libs").split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
 
     # Fails in Linux CI with "Video init failed: No available video device"

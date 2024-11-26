@@ -20,7 +20,7 @@ class Metview < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "eccodes"
   depends_on "eigen"
@@ -106,6 +106,6 @@ class Metview < Formula
       plot(grib, grid_shading)
     EOS
     system bin/"metview", "-nocreatehome", "-b", "test_binary_run_grib_plot.mv"
-    assert_predicate testpath/"test.1.png", :exist?
+    assert_path_exists testpath/"test.1.png"
   end
 end

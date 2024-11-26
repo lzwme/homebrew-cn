@@ -15,7 +15,7 @@ class Ord < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c22dca94a37039b117b120688ec8976f9598d606678a513caf6d9b10bd189b0e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

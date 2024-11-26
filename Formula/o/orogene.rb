@@ -18,7 +18,7 @@ class Orogene < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ead950a69b6ee4a7d7023264f55372d0d84e83984c46af445280d8f5281871fc"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do

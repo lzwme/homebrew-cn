@@ -22,7 +22,7 @@ class Openvpn < Formula
     sha256 x86_64_linux:   "eb42fbd2153609daa6953f0772fef04980198877eb4af8699ca7381a3f8e2bd0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "lzo"
   depends_on "openssl@3"
@@ -36,15 +36,13 @@ class Openvpn < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-crypto-library=openssl",
                           "--enable-pkcs11",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     inreplace "sample/sample-plugins/Makefile" do |s|
       if OS.mac?
-        s.gsub! Superenv.shims_path/"pkg-config", Formula["pkg-config"].opt_bin/"pkg-config"
+        s.gsub! Superenv.shims_path/"pkg-config", Formula["pkgconf"].opt_bin/"pkg-config"
       else
         s.gsub! Superenv.shims_path/"ld", "ld"
       end

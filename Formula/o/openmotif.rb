@@ -17,7 +17,7 @@ class Openmotif < Formula
     sha256 x86_64_linux:   "48f58afdf62747a75241a1be50fde497d04d74fe09e4385c47e01bcc4a572e4f"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"

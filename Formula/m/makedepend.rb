@@ -21,14 +21,12 @@ class Makedepend < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3513c65618644fc944f76db3cb1975f843d82eaf6198d58770c23ee145c1efed"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros"
   depends_on "xorgproto"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

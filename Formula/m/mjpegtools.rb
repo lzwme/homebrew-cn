@@ -20,7 +20,7 @@ class Mjpegtools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7efdf0c986f0afd7094a355256ee6743f2ce7720d23f680005e53a8ae5213244"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -30,7 +30,7 @@ class Mjpegtools < Formula
   end
 
   def install
-    system ".configure", *std_configure_args, "--enable-simd-accel"
+    system ".configure", "--enable-simd-accel", *std_configure_args
     system "make", "install"
   end
 end

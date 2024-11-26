@@ -17,7 +17,7 @@ class Mlpack < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "armadillo"
   depends_on "cereal"
@@ -50,7 +50,7 @@ class Mlpack < Formula
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
       -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_libshared_library("libarmadillo")}
-      -DSTB_IMAGE_INCLUDE_DIR=#{include"stb"}
+      -DSTB_IMAGE_INCLUDE_DIR=#{include}stb
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
@@ -69,7 +69,7 @@ class Mlpack < Formula
       "-d", "distances.csv",
       "-k", "5", "-v"
 
-    (testpath"test.cpp").write <<-EOS
+    (testpath"test.cpp").write <<~CPP
       #include <mlpackcore.hpp>
 
       using namespace mlpack;
@@ -79,7 +79,7 @@ class Mlpack < Formula
         Log::Info << "Some test informational output." << std::endl;
         Log::Warn << "A false alarm!" << std::endl;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
                     "-larmadillo", "-L#{lib}", "-o", "test"
     system ".test", "--verbose"

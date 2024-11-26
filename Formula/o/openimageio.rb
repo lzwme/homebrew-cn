@@ -22,7 +22,7 @@ class Openimageio < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "ffmpeg"
   depends_on "fmt"
@@ -86,11 +86,10 @@ class Openimageio < Formula
     assert_match "#{test_image} :    1 x    1, 3 channel, uint8 jpeg",
                  shell_output("#{bin}oiiotool --info #{test_image} 2>&1")
 
-    output = <<~EOS
-      from __future__ import print_function
+    output = <<~PYTHON
       import OpenImageIO
       print(OpenImageIO.VERSION_STRING)
-    EOS
+    PYTHON
     assert_match version.major_minor_patch.to_s, pipe_output(python3, output, 0)
   end
 end

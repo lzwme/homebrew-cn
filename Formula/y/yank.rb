@@ -26,7 +26,7 @@ class Yank < Formula
   end
 
   test do
-    (testpath"test.exp").write <<~EOS
+    (testpath"test.exp").write <<~EXPECT
       spawn sh
       set timeout 1
       send "echo key=value | #{bin}yank -d = | cat"
@@ -37,7 +37,7 @@ class Yank < Formula
             "value" { send "exit\r"; exit 0 }
             timeout { send "exit\r"; exit 1 }
       }
-    EOS
+    EXPECT
     system "expect", "-f", "test.exp"
   end
 end

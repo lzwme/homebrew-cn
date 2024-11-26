@@ -29,7 +29,7 @@ class OathToolkit < Formula
     depends_on "libtool"  => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libxml2"
   depends_on "libxmlsec1"
