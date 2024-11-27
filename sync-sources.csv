@@ -705,6 +705,7 @@ Homebrew-homebrew-core/Formula/c/cargo-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-nextest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-outdated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-run-bin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-sweep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-udeps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-watch.rb, Homebrew/homebrew-core, 1
@@ -2543,6 +2544,7 @@ Homebrew-homebrew-core/Formula/h/haproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/haproxy@2.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/harbour.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/harfbuzz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/harlequin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/has.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hashcash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hashcat.rb, Homebrew/homebrew-core, 1
@@ -3092,6 +3094,7 @@ Homebrew-homebrew-core/Formula/k/kotlin-language-server.rb, Homebrew/homebrew-co
 Homebrew-homebrew-core/Formula/k/kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kraftkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/krew.rb, Homebrew/homebrew-core, 1
@@ -4990,6 +4993,7 @@ Homebrew-homebrew-core/Formula/p/pict.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidgin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidof.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pigz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
@@ -5697,6 +5701,7 @@ Homebrew-homebrew-core/Formula/s/scm-manager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scmpuff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scnlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scons.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/scooter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scorecard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scotch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scour.rb, Homebrew/homebrew-core, 1
@@ -6468,6 +6473,7 @@ Homebrew-homebrew-core/Formula/t/toot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topfew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgrade.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/topiary.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/torchvision.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/torsocks.rb, Homebrew/homebrew-core, 0
@@ -13657,6 +13663,7 @@ Homebrew-homebrew-cask/Casks/t/tableau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tablecruncher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableplus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tabtab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabtopus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tabula.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taccy.rb, Homebrew/homebrew-cask, 1

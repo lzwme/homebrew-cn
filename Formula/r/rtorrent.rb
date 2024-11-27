@@ -18,7 +18,7 @@ class Rtorrent < Formula
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "libtorrent-rakshasa"
   depends_on "xmlrpc-c"
@@ -40,11 +40,9 @@ class Rtorrent < Formula
   end
 
   test do
-    pid = fork do
-      exec bin"rtorrent", "-n", "-s", testpath
-    end
-    sleep 3
-    assert_predicate testpath"rtorrent.lock", :exist?
+    pid = spawn bin"rtorrent", "-n", "-s", testpath
+    sleep 10
+    assert_path_exists testpath"rtorrent.lock"
   ensure
     Process.kill("HUP", pid)
   end

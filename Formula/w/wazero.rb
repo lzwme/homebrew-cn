@@ -1,8 +1,8 @@
 class Wazero < Formula
   desc "Zero dependency WebAssembly runtime"
   homepage "https:wazero.io"
-  url "https:github.comtetratelabswazeroarchiverefstagsv1.8.1.tar.gz"
-  sha256 "228e2d5b19e9de83f583c723b54a00b7cd751db44a44ffb0964957326b10d7a0"
+  url "https:github.comtetratelabswazeroarchiverefstagsv1.8.2.tar.gz"
+  sha256 "dd6dca5ab206a1b6031ed977922eed225814bc5452792799e106636b25444333"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Wazero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e42061077c9c88ee8017d07ad49d77b02bc63d33be890ebb65cfcc6632252b79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e42061077c9c88ee8017d07ad49d77b02bc63d33be890ebb65cfcc6632252b79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e42061077c9c88ee8017d07ad49d77b02bc63d33be890ebb65cfcc6632252b79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cbfed9906f15f5a73ce09aba01946014539a6d19b379181f16359c47c79056c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8cbfed9906f15f5a73ce09aba01946014539a6d19b379181f16359c47c79056c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9358e7efc73332d64c9edf09acdea0a787befdc6141ce269f9261bdda96c07b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18af5cc83af3be53c518c83b319ed69a25d74c57113e055e5f731f2d3995a9c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18af5cc83af3be53c518c83b319ed69a25d74c57113e055e5f731f2d3995a9c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18af5cc83af3be53c518c83b319ed69a25d74c57113e055e5f731f2d3995a9c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3c30694d930fd4d3e0893e303b60cc85d1e77cc9da06216151b65ec1f2870e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3c30694d930fd4d3e0893e303b60cc85d1e77cc9da06216151b65ec1f2870e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd26fe348b54d47f1b35a38ce1fed2b83d5f1b2cf6560cf2dee968be3d340080"
   end
 
   depends_on "go" => :build

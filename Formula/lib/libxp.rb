@@ -27,7 +27,7 @@ class Libxp < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxext"
@@ -40,23 +40,17 @@ class Libxp < Formula
   def install
     resource("printproto").stage do
       system "sh", "autogen.sh"
-      system "./configure", "--disable-debug",
-                            "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{prefix}"
+      system "./configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
 
     ENV.prepend_path "PKG_CONFIG_PATH", "#{lib}/pkgconfig"
     system "sh", "autogen.sh"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "-I#{include}", shell_output("pkg-config --cflags xp").chomp
+    assert_match "-I#{include}", shell_output("pkgconf --cflags xp").chomp
   end
 end

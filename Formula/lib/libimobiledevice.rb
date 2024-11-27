@@ -27,7 +27,7 @@ class Libimobiledevice < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libplist"
   depends_on "libtasn1"
   depends_on "libusbmuxd"
@@ -47,8 +47,8 @@ class Libimobiledevice < Formula
       --enable-debug
     ]
 
-    system ".autogen.sh", *std_configure_args, *args if build.head?
-    system ".configure", *std_configure_args, *args if build.stable?
+    configure = build.head? ? ".autogen.sh" : ".configure"
+    system configure, *args, *std_configure_args
     system "make", "install"
   end
 

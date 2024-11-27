@@ -20,6 +20,8 @@ class Sourcery < Formula
   depends_on xcode: "14.3"
 
   uses_from_macos "ruby" => :build
+  uses_from_macos "curl"
+  uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
   uses_from_macos "swift"

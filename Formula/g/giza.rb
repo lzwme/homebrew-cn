@@ -17,7 +17,7 @@ class Giza < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d59a3cb64df7fae5c3b094273d6dcfd0b455e05216bf251b0b116b8a4f0e3dfc"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "fontconfig"
@@ -26,7 +26,7 @@ class Giza < Formula
   depends_on "libx11"
 
   def install
-    system ".configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
 
     # Clean up stray Makefiles in test folder

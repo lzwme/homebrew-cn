@@ -29,7 +29,7 @@ class Libu2fServer < Formula
   depends_on "check" => :build
   depends_on "gengetopt" => :build
   depends_on "help2man" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "json-c"
   depends_on "openssl@3"
 
@@ -42,9 +42,9 @@ class Libu2fServer < Formula
   def install
     ENV["LIBSSL_LIBS"] = "-lssl -lcrypto -lz"
     ENV["LIBCRYPTO_LIBS"] = "-lcrypto -lz"
-    ENV["PKG_CONFIG"] = "#{Formula["pkg-config"].opt_bin}pkg-config"
+    ENV["PKG_CONFIG"] = "#{Formula["pkgconf"].opt_bin}pkg-config"
 
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -19,7 +19,7 @@ class LibgeditGtksourceview < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
@@ -47,7 +47,7 @@ class LibgeditGtksourceview < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs libgedit-gtksourceview-300").strip.split
+    flags = shell_output("pkgconf --cflags --libs libgedit-gtksourceview-300").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

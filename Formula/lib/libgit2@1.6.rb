@@ -22,7 +22,7 @@ class Libgit2AT16 < Formula
   deprecate! date: "2024-04-11", because: :unmaintained
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libssh2"
   depends_on "openssl@3"
 

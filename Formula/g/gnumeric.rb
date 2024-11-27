@@ -18,7 +18,7 @@ class Gnumeric < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "itstool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "at-spi2-core"
@@ -51,9 +51,9 @@ class Gnumeric < Formula
               "GOFFICE_PLUGINS_DIR = @GOFFICE_PLUGINS_DIR@",
               "GOFFICE_PLUGINS_DIR = @libdir@/goffice/@GOFFICE_API_VER@/plugins/gnumeric"
 
-    system "./configure", *std_configure_args,
+    system "./configure", "--disable-schemas-compile",
                           "--disable-silent-rules",
-                          "--disable-schemas-compile"
+                          *std_configure_args
     system "make", "install"
   end
 

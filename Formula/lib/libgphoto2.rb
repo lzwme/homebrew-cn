@@ -31,7 +31,7 @@ class Libgphoto2 < Formula
     depends_on "gettext" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "gd"
   depends_on "jpeg-turbo"

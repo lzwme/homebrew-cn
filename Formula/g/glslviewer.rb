@@ -20,7 +20,7 @@ class Glslviewer < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "glfw"
@@ -41,7 +41,7 @@ class Glslviewer < Formula
 
   test do
     cp_r pkgshare"examplesio.", testpath
-    pid = fork { exec bin"glslViewer", "orca.frag", "-l" }
+    pid = spawn bin"glslViewer", "orca.frag", "-l"
     sleep 1
   ensure
     Process.kill("HUP", pid)

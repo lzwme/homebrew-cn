@@ -22,7 +22,7 @@ class OpenjdkAT17 < Formula
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on xcode: :build # for metal
 
   depends_on "freetype"

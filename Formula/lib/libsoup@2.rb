@@ -23,7 +23,7 @@ class LibsoupAT2 < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
 
@@ -68,8 +68,8 @@ class LibsoupAT2 < Formula
     C
 
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libsoup-2.4").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    flags = shell_output("pkgconf --cflags --libs libsoup-2.4").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

@@ -25,7 +25,7 @@ class Gnuradio < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "rust" => :build # for rpds-py
   depends_on "adwaita-icon-theme"
@@ -61,8 +61,6 @@ class Gnuradio < Formula
     depends_on "alsa-lib"
     depends_on "llvm"
   end
-
-  fails_with gcc: "5"
 
   # Resources for Python packages based on .condarecipemeta.yaml
   # Currently skipping `matplotlib` and `scipy` extra dependencies.

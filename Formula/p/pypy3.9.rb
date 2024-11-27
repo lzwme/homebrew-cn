@@ -21,7 +21,7 @@ class Pypy39 < Formula
   # https:doc.pypy.orgenlatestrelease-v7.3.17.html#pypy-versions-and-speed-pypy-org
   deprecate! date: "2024-09-04", because: :deprecated_upstream
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pypy" => :build
   depends_on "gdbm"
   depends_on "openssl@3"

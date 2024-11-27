@@ -18,7 +18,7 @@ class SyslogNg < Formula
     sha256 x86_64_linux:  "6f91871abc18890308b0330fe4c2b80f7f5b79b312cbc9afc9a4f70fcec1ab4b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "abseil"
   depends_on "glib"

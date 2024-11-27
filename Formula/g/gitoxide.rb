@@ -20,7 +20,7 @@ class Gitoxide < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cdf8d5783d0d4351f4615fe5dc8687371cd4df9e76d05b6a998bc652d7bd8fe"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"

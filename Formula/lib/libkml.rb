@@ -23,7 +23,7 @@ class Libkml < Formula
   depends_on "boost" => [:build, :test]
   depends_on "cmake" => :build
   depends_on "googletest" => :test
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   depends_on "minizip"
   depends_on "uriparser"
@@ -73,8 +73,8 @@ class Libkml < Formula
       }
     CPP
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libkml gtest").chomp.split
-    system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++14", "-o", "test"
-    assert_match("PASSED", shell_output(".test"))
+    flags = shell_output("pkgconf --cflags --libs libkml gtest").chomp.split
+    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", *flags
+    assert_match "PASSED", shell_output(".test")
   end
 end

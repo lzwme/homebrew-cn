@@ -14,21 +14,21 @@ class LibnetfilterConntrack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ae07370b1802d6089195cb605b4010635126ca6f6f37d20023c5f19ff9b833e6"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libmnl"
   depends_on "libnfnetlink"
   depends_on :linux
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     pkgshare.install "examples"
     inreplace pkgshare/"examples/Makefile", Superenv.shims_path/"ld", "ld"
   end
 
   test do
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libnetfilter_conntrack libmnl").chomp.split
-    system ENV.cc, pkgshare/"examples/nfct-mnl-get.c", *pkg_config_flags, "-o", "nfct-mnl-get"
-    assert_match "mnl_socket_recvfrom: Operation not permitted", shell_output("#{testpath}/nfct-mnl-get inet 2>&1", 1)
+    flags = shell_output("pkgconf --cflags --libs libnetfilter_conntrack libmnl").chomp.split
+    system ENV.cc, pkgshare/"examples/nfct-mnl-get.c", "-o", "nfct-mnl-get", *flags
+    assert_match "mnl_socket_recvfrom: Operation not permitted", shell_output("./nfct-mnl-get inet 2>&1", 1)
   end
 end

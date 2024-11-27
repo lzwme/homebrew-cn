@@ -6,14 +6,15 @@ class Fdroidserver < Formula
   url "https:files.pythonhosted.orgpackages7bdd9a37d36aadf87ce469c70713887dd9dfa6881010d5b0c9471bb181a4f4f2fdroidserver-2.3.1.tar.gz"
   sha256 "b0473bd62976e51a13d58a2e626627773cdcf3df67e747c7f1572afc6c71c89d"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a320355dc1152990278c3b49c392fe39755b6602a737878a911d9d524c944be6"
-    sha256 cellar: :any,                 arm64_sonoma:  "9785a27e44fdb3e5d161da9004582acf67c54b0f21ca49dfacb2f3efeb64e0cb"
-    sha256 cellar: :any,                 arm64_ventura: "270b3788890a410cb8518fda4a4d33e7747e5b89be5cd3519a5209f4475c02ad"
-    sha256 cellar: :any,                 sonoma:        "d40dc8cef4335a023b1691983102fdf48db50a2744904a40d6d1903e0aa32ee4"
-    sha256 cellar: :any,                 ventura:       "855ddc71960dc8cc41e1ad6b24ba23bb6c40bf99370d852f05bf0ab26a0be883"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "708d62d6155c4d5026081b49f5575b8e886ed8b8ebe6a23ad73349b036aa0b86"
+    sha256 cellar: :any,                 arm64_sequoia: "16eb1b8716f716d5d7dd828dd05d4987e22a26a50820a89d018b3e9054ae9b04"
+    sha256 cellar: :any,                 arm64_sonoma:  "69297f50d234b63ec53a0674e0031e48beaaebab0b2e5c3c69c920595f9b73b0"
+    sha256 cellar: :any,                 arm64_ventura: "5480d2cbc3dd6afb157b1fd5912e15d9348e9d48aa1a068788c50d5d95b708a6"
+    sha256 cellar: :any,                 sonoma:        "b111eacad9729c19f47aae433bdf313a588ee71ad809679266b964d05260faa6"
+    sha256 cellar: :any,                 ventura:       "8753b931d0a3a102f7466be03ae5687f1523406745d9927307f35eb934590e57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee044ccbe6fe0a0a776548526168190d18b6dafa4fc9ddb2d11bfa46ecd87150"
   end
 
   depends_on "ninja" => :build
@@ -23,12 +24,14 @@ class Fdroidserver < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "freetype"
+  depends_on "libmagic"
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.12"
   depends_on "qhull"
+  depends_on "rclone"
   depends_on "s3cmd"
 
   uses_from_macos "libffi", since: :catalina
@@ -72,6 +75,11 @@ class Fdroidserver < Formula
   resource "bcrypt" do
     url "https:files.pythonhosted.orgpackages568cdd696962612e4cd83c40a9e6b3db77bfe65a830f4b9af44098708584686cbcrypt-4.2.1.tar.gz"
     sha256 "6765386e3ab87f569b276988742039baab087b2cdb01e809d74e74503c2faafe"
+  end
+
+  resource "biplist" do
+    url "https:files.pythonhosted.orgpackages3e562db170a498c9c6545cda16e93c2f2ef9302da44802787b45a8a520d01bdbbiplist-1.0.3.tar.gz"
+    sha256 "4c0549764c5fe50b28042ec21aa2e14fe1a2224e239a1dae77d9e7f3932aa4c6"
   end
 
   resource "charset-normalizer" do
@@ -239,6 +247,11 @@ class Fdroidserver < Formula
     sha256 "195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"
   end
 
+  resource "pycountry" do
+    url "https:files.pythonhosted.orgpackages7657c389fa68c50590881a75b7883eeb3dc15e9e73a0fdc001cdd45c13290c92pycountry-24.6.1.tar.gz"
+    sha256 "b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221"
+  end
+
   resource "pydot" do
     url "https:files.pythonhosted.orgpackages85104e4da8c271540dc35914e927546cbb821397f0f9477f4079cd8732946699pydot-3.0.2.tar.gz"
     sha256 "9180da540b51b3aa09fbf81140b3edfbe2315d778e8589a7d0a4a69c41332bae"
@@ -390,9 +403,14 @@ class Fdroidserver < Formula
       (testpath"fdroidconfigcategories.yml").write <<~YAML
         Development:
           name: Development
+          icon: category_development.png
         System:
           name: System
+          icon: category_system.png
       YAML
+
+      cp test_fixtures("test.png"), testpath"fdroidconfigcategory_development.png"
+      cp test_fixtures("test.png"), testpath"fdroidconfigcategory_system.png"
 
       (testpath"fdroidmetadatafake.yml").write <<~YAML
         Categories:

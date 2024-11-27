@@ -23,7 +23,7 @@ class Libxmlxx < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glibmm@2.66"
 
   uses_from_macos "libxml2"

@@ -22,7 +22,7 @@ class Libnice < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
   depends_on "gnutls"
@@ -61,8 +61,8 @@ class Libnice < Formula
       }
     C
 
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs nice").chomp.split
-    system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs nice").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end
 end

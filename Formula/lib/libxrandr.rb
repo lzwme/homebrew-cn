@@ -16,7 +16,7 @@ class Libxrandr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c48b622aed3d5e99e225601dca2d129fda08585571d948f8737f3e6a4bcb2a56"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "libxext"
   depends_on "libxrender"
@@ -24,14 +24,12 @@ class Libxrandr < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

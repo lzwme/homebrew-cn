@@ -31,6 +31,6 @@ class Commitlint < Formula
         };
     JS
     assert_match version.to_s, shell_output("#{bin}commitlint --version")
-    assert_equal "", pipe_output(bin"commitlint", "foo: message")
+    assert_empty pipe_output(bin"commitlint", "foo: message")
   end
 end

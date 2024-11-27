@@ -23,7 +23,7 @@ class Libprelude < Formula
   # Last release on 2020-09-11
   deprecate! date: "2024-11-04", because: :unmaintained
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "gnutls"
   depends_on "libgpg-error"

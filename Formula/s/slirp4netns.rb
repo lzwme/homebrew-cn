@@ -11,7 +11,7 @@ class Slirp4netns < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "bash" => :test
   depends_on "jq" => :test
@@ -42,6 +42,10 @@ class Slirp4netns < Formula
 
     resource("homebrew-test-common").stage (testpath"test")
     resource("homebrew-test-api-socket").stage (testpath"test")
+
+    # Reduce output to avoid interleaving of commands and stdout
+    inreplace "testtest-slirp4netns-api-socket.sh", ^set -xe, "set -e"
+
     # The test secript requires network namespace to run, which is not available on Homebrew CI.
     # So here we check the error messages.
     output = shell_output("bash .testtest-slirp4netns-api-socket.sh 2>&1", 1)

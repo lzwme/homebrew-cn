@@ -18,7 +18,7 @@ class Libxft < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5279042fda36daaee45abd6bbe34b5eb675fe34a745755e8b1cae29b299830e3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "libxrender"
 
@@ -27,14 +27,12 @@ class Libxft < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

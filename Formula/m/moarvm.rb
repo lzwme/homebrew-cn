@@ -19,7 +19,7 @@ class Moarvm < Formula
     sha256 x86_64_linux:  "7f1969a3430c43b3054da1962359607cadb30064ed2721cc39b1a03d29bf61ad"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtommath"
   depends_on "libuv"
   depends_on "zstd"
@@ -42,7 +42,7 @@ class Moarvm < Formula
       --has-libtommath
       --has-libuv
       --optimize
-      --pkgconfig=#{Formula["pkg-config"].opt_bin}pkg-config
+      --pkgconfig=#{Formula["pkgconf"].opt_bin}pkgconf
       --prefix=#{prefix}
     ]
     system "perl", "Configure.pl", *configure_args

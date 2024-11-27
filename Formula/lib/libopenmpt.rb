@@ -20,7 +20,7 @@ class Libopenmpt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e9a78aff7e1f92feeba7dc9e54cb2eaec554140965e5c91c984a4ae01d4af8a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "flac"
   depends_on "libogg"
@@ -35,19 +35,15 @@ class Libopenmpt < Formula
     depends_on "pulseaudio"
   end
 
-  fails_with gcc: "5" # needs C++17
-
   resource "homebrew-mystique.s3m" do
     url "https://api.modarchive.org/downloads.php?moduleid=54144#mystique.s3m"
     sha256 "e9a3a679e1c513e1d661b3093350ae3e35b065530d6ececc0a96e98d3ffffaf4"
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--without-vorbisfile"
+    system "./configure", "--disable-silent-rules",
+                          "--without-vorbisfile",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

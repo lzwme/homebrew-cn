@@ -17,14 +17,13 @@ class BcGh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99d223ee8690ef3a798c6c342faa78b304230ea30cb4957ce7e06b89fc213866"
   end
 
-  # TODO: keg_only :provided_by_macos (replaced GNU bc since Ventura)
-  keg_only :shadowed_by_macos
+  keg_only :provided_by_macos # since Ventura
 
   depends_on "pkgconf" => :build
 
   uses_from_macos "libedit"
 
-  # TODO: conflicts_with "bc", because: "both install `bc` and `dc` binaries"
+  conflicts_with "bc", because: "both install `bc` and `dc` binaries"
 
   def install
     # https:git.gavinhoward.comgavinbc#recommended-optimizations

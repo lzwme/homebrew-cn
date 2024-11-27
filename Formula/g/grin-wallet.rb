@@ -18,7 +18,7 @@ class GrinWallet < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
@@ -28,6 +28,6 @@ class GrinWallet < Formula
 
   test do
     system "yes | #{bin}grin-wallet init"
-    assert_predicate testpath".grinmainwallet_datawallet.seed", :exist?
+    assert_path_exists testpath".grinmainwallet_datawallet.seed"
   end
 end

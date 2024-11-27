@@ -1,26 +1,24 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https:github.combkryzaclang-uml"
-  url "https:github.combkryzaclang-umlarchiverefstags0.5.5.tar.gz"
-  sha256 "95585b59c822f3c135dae04574055384e1f904ac69c75c8570b4eb65eca6fd37"
+  url "https:github.combkryzaclang-umlarchiverefstags0.5.6.tar.gz"
+  sha256 "7a92e7b8b4f1d269087f13e05ea7ff2ae3f2ca0a8e3ecd0a4db34444bb8dc4f9"
   license "Apache-2.0"
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "14b3ad29b42c1c86e0de3681e7207c5e83ef996d3d8f06303deaad0d8ea5869f"
-    sha256 cellar: :any,                 arm64_sonoma:  "740293a5bd8a3887c0ae601e721754a6b9d49d9a621e081c565ce0b00ce7080e"
-    sha256 cellar: :any,                 arm64_ventura: "fa735fd5af8835a3b170a87fd31c08794d403601e726637b751b1ee266f2d86e"
-    sha256 cellar: :any,                 sonoma:        "5c6751a5cbce1640b7b16c28ce1d8d7b7c44b963461ea9a99adc500ec0610e3d"
-    sha256 cellar: :any,                 ventura:       "91f342d39e27ee11f5f82fb06659d8948f04609962cc99bf7abc8d9fcf525ea3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a249d17300e6cfa62dba4babf4e0367c8d4a2aa12e1c8170b5e74337220adae1"
+    sha256 cellar: :any,                 arm64_sequoia: "e8527b07cfad9e26e73127631eadeadc661d183c6cdb03ff3405244df225f0ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac3003dac9ef3014ebc2649d9ba455fdfbd76c8778c1dec13bfe59ebf6e973ac"
+    sha256 cellar: :any,                 arm64_ventura: "b0f65d8510f0a0685972cdd5404165969e743d1782dbfd751d5e29d2fb4ffbb9"
+    sha256 cellar: :any,                 sonoma:        "75a3ad5215b45b54bb74e8646419aaa1ae63a649d43f9bc29d991431edb74b00"
+    sha256 cellar: :any,                 ventura:       "c300dafc9f8abe3422ae79b528277dff1de15c1b62dd6e01ede7ef98637cc3e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a31c7e482ce458b220713abb0e0e5ffd71ca6c829dbd7cb118da6df567e2e16"
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "llvm"
   depends_on "yaml-cpp"
-
-  fails_with gcc: "5"
 
   def llvm
     deps.map(&:to_formula)
@@ -59,7 +57,7 @@ class ClangUml < Formula
       }
       int main(int argc, char** argv) { A::AA a; return 0; }
     CPP
-    (testpath".clang-uml").write <<~EOS
+    (testpath".clang-uml").write <<~YAML
       compilation_database_dir: build
       output_directory: diagrams
       diagrams:
@@ -68,7 +66,7 @@ class ClangUml < Formula
           include:
             namespaces:
               - A
-    EOS
+    YAML
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.15)
 

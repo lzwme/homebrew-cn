@@ -29,7 +29,7 @@ class Gnuplot < Formula
   end
 
   depends_on "gnu-sed" => :build # https://sourceforge.net/p/gnuplot/bugs/2676/
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "gd"
@@ -45,8 +45,6 @@ class Gnuplot < Formula
     depends_on "gettext"
     depends_on "harfbuzz"
   end
-
-  fails_with gcc: "5"
 
   def install
     args = %W[
@@ -97,6 +95,6 @@ class Gnuplot < Formula
       set output "#{testpath}/graph.txt";
       plot sin(x);
     EOS
-    assert_predicate testpath/"graph.txt", :exist?
+    assert_path_exists testpath/"graph.txt"
   end
 end

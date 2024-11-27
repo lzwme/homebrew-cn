@@ -19,7 +19,7 @@ class LibomemoC < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "protobuf-c"
 
   def install
@@ -102,8 +102,9 @@ class LibomemoC < Formula
         return 0;
       }
     C
-    pkg_config = shell_output("pkg-config --cflags --libs libomemo-c").chomp.split
-    system ENV.cc, "test.c", *pkg_config, "-o", "test"
+
+    flags = shell_output("pkgconf --cflags --libs libomemo-c").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end
 end

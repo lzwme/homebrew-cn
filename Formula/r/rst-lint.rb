@@ -29,7 +29,7 @@ class RstLint < Formula
       Hello World
       ===========
     EOS
-    assert_equal "", shell_output("#{bin}rst-lint pass.rst")
+    assert_empty shell_output("#{bin}rst-lint pass.rst")
 
     # test invocation on a file with a whitespace style issue
     (testpath"fail.rst").write <<~EOS

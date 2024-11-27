@@ -24,7 +24,7 @@ class Libgit2AT17 < Formula
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libssh2"
   depends_on "openssl@3"
 

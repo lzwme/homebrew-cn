@@ -20,7 +20,7 @@ class Libtcod < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on macos: :catalina
   depends_on "sdl2"
 
@@ -28,12 +28,10 @@ class Libtcod < Formula
 
   conflicts_with "libzip", because: "libtcod and libzip install a `zip.h` header"
 
-  fails_with gcc: "5"
-
   def install
     cd "buildsysautotools" do
       system "autoreconf", "--force", "--install", "--verbose"
-      system ".configure", *std_configure_args, "--disable-silent-rules"
+      system ".configure", "--disable-silent-rules", *std_configure_args
       system "make"
       system "make", "install"
     end

@@ -4,7 +4,7 @@ class Gdal < Formula
   url "https:github.comOSGeogdalreleasesdownloadv3.10.0gdal-3.10.0.tar.gz"
   sha256 "946ef444489bedbc1b04bd4c115d67ae8d3f3e4a5798d5a2f1cb2a11014105b2"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -12,12 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "54aea694c1e1ba1c96ac4fd949d41387610e027144b521e126ee939ff71a5168"
-    sha256 arm64_sonoma:  "56bd79100e84c0edc8db1a0fadaafb3952b8128d2655f8273ee05de09e9c5933"
-    sha256 arm64_ventura: "1b67abc3493575365ae867cc4884c15be2b457999260e378d0766db4840a9db8"
-    sha256 sonoma:        "8a86f6e489a1989a881809d230ed32359310eaa7c84282feb36fec00877b5896"
-    sha256 ventura:       "a207082e25441b7b434e494dd7fcd7d8a2a2be2f962c5815d1e100865aee86a1"
-    sha256 x86_64_linux:  "f9c0d060c170745d0a0c0af44b8ce0ef1d45ff0abc72076a31f3d7384f01add5"
+    sha256 arm64_sequoia: "944c05be746d14a20ed79722ddcc4e7e56b803caf6dd681ed726650897fd4cc8"
+    sha256 arm64_sonoma:  "3bd2572ecb5f135f64a852e0bb0dfedd4cc17097b040c2560891e305bbb10cde"
+    sha256 arm64_ventura: "7ee6ba66453c5214af0d607bb24bdc0bbdeb5b0ac8b666c705e004c9f2631453"
+    sha256 sonoma:        "959462e34095ea712e25d6f90a33fa21d9ece3055399b0d279e71411bb13048a"
+    sha256 ventura:       "7f80ba754c299ea99fcccc250d8bf71377de8e3b1b108336f9495479cc1aea7c"
+    sha256 x86_64_linux:  "f79c544a3c5c92031b7a79852b9285c50eb5066015df55a0432ee7b938d8ab7e"
   end
 
   head do
@@ -27,7 +27,7 @@ class Gdal < Formula
 
   depends_on "boost" => :build # for `libkml`
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "apache-arrow"
@@ -87,22 +87,11 @@ class Gdal < Formula
   conflicts_with "avce00", because: "both install a cpl_conv.h header"
   conflicts_with "cpl", because: "both install cpl_error.h"
 
-  fails_with gcc: "5"
-
   def python3
     "python3.12"
   end
 
   def install
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    if DevelopmentTools.clang_build_version >= 1500
-      recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
-        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
-        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
-    end
-
     site_packages = prefixLanguage::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIXlib since Python 3.10.

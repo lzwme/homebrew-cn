@@ -14,8 +14,8 @@ class Libsail < Formula
     sha256 x86_64_linux:  "17994b249055bd8d8509d9f484a12f42738df1c033b2841ebfa972a1cf6c797d"
   end
 
-  depends_on "cmake"      => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "cmake" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "brotli"
   depends_on "giflib"
   depends_on "highway"
@@ -58,10 +58,9 @@ class Libsail < Formula
       }
     C
 
-    cflags = shell_output("#{Formula["pkg-config"].opt_bin}pkg-config --cflags sail").strip.split
-    libs   = shell_output("#{Formula["pkg-config"].opt_bin}pkg-config --libs sail").strip.split
+    flags = shell_output("#{Formula["pkgconf"].opt_bin}pkgconf --cflags --libs sail").strip.split
 
-    system ENV.cc, *cflags, "test.c", "-o", "test", *libs
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test", test_fixtures("test.jpg")
   end
 end

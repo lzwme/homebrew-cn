@@ -23,7 +23,7 @@ class Libquicktime < Formula
     sha256 x86_64_linux:   "3c5ec43c6051163260865415f7a3fc0b32b7ca6b49e56ea999ac1fe4119c75d4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
 
   # Fix CVE-2016-2399. Applied upstream on March 6th 2017.
@@ -43,13 +43,11 @@ class Libquicktime < Formula
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-gpl",
+    system ".configure", "--enable-gpl",
                           "--without-doxygen",
                           "--without-gtk",
-                          "--without-x"
+                          "--without-x",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end
@@ -58,6 +56,6 @@ class Libquicktime < Formula
     fixture = test_fixtures("test.m4a")
     output = shell_output("#{bin}qtinfo #{fixture} 2>&1")
     assert_match "length 1536 samples, compressor mp4a", output
-    assert_predicate testpath".libquicktime_codecs", :exist?
+    assert_path_exists testpath".libquicktime_codecs"
   end
 end

@@ -24,13 +24,12 @@ class Libmms < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bf0654cdf09b4ca5c749e75d8920ff2eddee195e31a468c64bee07f74571b29"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

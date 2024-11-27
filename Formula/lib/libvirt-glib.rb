@@ -25,7 +25,7 @@ class LibvirtGlib < Formula
   depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "glib"
   depends_on "libvirt"
@@ -33,7 +33,7 @@ class LibvirtGlib < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "meson", "setup", "builddir", *std_meson_args, "-Dintrospection=enabled"
+    system "meson", "setup", "builddir", "-Dintrospection=enabled", *std_meson_args
     system "meson", "compile", "-C", "builddir"
     system "meson", "install", "-C", "builddir"
   end

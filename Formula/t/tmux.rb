@@ -82,7 +82,7 @@ class Tmux < Formula
     require "pty"
 
     socket = testpathtap.user
-    PTY.spawn bin"tmux", "-S", socket, "-f", "devnull"
+    PTY.spawn bin"tmux", "-S", socket, "-f", File::NULL
     sleep 10
 
     assert_predicate socket, :exist?

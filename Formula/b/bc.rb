@@ -25,7 +25,7 @@ class Bc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a362b8441afe9204305f4ae8909a67ff7e9ea702d4c4e8394911af1c914dbac"
   end
 
-  keg_only :provided_by_macos
+  keg_only :provided_by_macos # before Ventura
 
   uses_from_macos "bison" => :build
   uses_from_macos "ed" => :build
@@ -34,6 +34,8 @@ class Bc < Formula
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
+
+  conflicts_with "bc-gh", because: "both install `bc` and `dc` binaries"
 
   def install
     # prevent user BC_ENV_ARGS from interfering with or influencing the

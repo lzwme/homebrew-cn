@@ -18,20 +18,18 @@ class Libxcomposite < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c6925de51a563c4385b69861aef8eb8cd7cb7982dcbb4a2f4d8395728b2ffea"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libxfixes"
   depends_on "xorgproto"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

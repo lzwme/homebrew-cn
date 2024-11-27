@@ -18,19 +18,17 @@ class Libxshmfence < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "531196f68924b7a5f887156766dbc04ae745e8315f6e41adbe812e1119bc6d20"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorgproto" => [:build, :test]
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

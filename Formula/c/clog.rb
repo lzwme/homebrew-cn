@@ -51,6 +51,6 @@ class Clog < Formula
     assert_equal "do not suppress", pipe_output("#{bin}clog --file #{testpath}.clogrc", "do not suppress").chomp
 
     # Test to ensure that a line that matches the above rule is suppressed
-    assert_equal "", pipe_output("#{bin}clog --file #{testpath}.clogrc", "ignore this line").chomp
+    assert_empty pipe_output("#{bin}clog --file #{testpath}.clogrc", "ignore this line").chomp
   end
 end

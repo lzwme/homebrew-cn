@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https:ooni.org"
-  url "https:github.comooniprobe-cliarchiverefstagsv3.23.0.tar.gz"
-  sha256 "ff4717e8fd0075bcb011d738e12a47a5be17deaa0b23346f354ddd6d95fed728"
+  url "https:github.comooniprobe-cliarchiverefstagsv3.24.0.tar.gz"
+  sha256 "4c2dad0367cfe3924ca45c9f484660a132e843d6c55259ff375efadeb6d518c3"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b03c68f62cdc53f336c8176f81f5b8e107cf317a3b79ee9d9083aff4ecd353f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "113d42d4783092e36169acf440ac6cd8d041a182d7909fd7ecc86afb6c55c3b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c4247526d2395b129b4d670badedc7fad394035980ff9268a2105b502d49693"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db583fd8073b3bc8347768758909b9e98516e6e0cd160e40590bdfd5ba425cee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f93a68b4ea2bbea9b508800550cb0f97f798bd94c38fad34bbbbbb75c3cabc20"
-    sha256 cellar: :any_skip_relocation, ventura:        "157806bdb6f5e50a2915bd3711fb5287a0f9f90d4862fcfc992252ff48cd389d"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa5eb7017a42cedc5b3317b49d07e45182ceb03641404bc6e3133e5ca44a2225"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c0eea0d5b13174c5086f46bf340372f39e9d00cd00deb9e43fc9f5df6d040d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90f3093d1c71c3f456e024eb6c15624a9fa94b13a580463de7894359a3c12cb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8d137f2874730e7c9b6e9f7f38033de9211d026700ff8c3b99a1aad28dd52c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "efee84f0b4d279db5bfb2da593dcaecde4c74bfee07f4a0d6c8aea6b6c52c0e9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a9029ea95fe11a5fde169d1ff1eb902ee7ac469e3f28a88bc5460772cd2ee7d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2591ef98c36d99c6b25622077754f0fbef671bdc37660e689c6933d5988ed2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b013f9418249c12c12209166817ef7d1a32161acc09c9d3d41b8939f0fcb730"
   end
 
   depends_on "go" => :build

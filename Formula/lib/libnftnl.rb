@@ -14,7 +14,7 @@ class Libnftnl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a967378e066186315b30a3e6a5eff8bd47c098aa13e418d47489f0e1c7884e72"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libmnl"
   depends_on :linux
 
@@ -26,8 +26,8 @@ class Libnftnl < Formula
   end
 
   test do
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libnftnl libmnl").chomp.split
-    system ENV.cc, pkgshare/"examples/nft-set-get.c", *pkg_config_flags, "-o", "nft-set-get"
-    assert_match "error: Operation not permitted", shell_output("#{testpath}/nft-set-get inet 2>&1", 1)
+    flags = shell_output("pkgconf --cflags --libs libnftnl libmnl").chomp.split
+    system ENV.cc, pkgshare/"examples/nft-set-get.c", "-o", "nft-set-get", *flags
+    assert_match "error: Operation not permitted", shell_output("./nft-set-get inet 2>&1", 1)
   end
 end

@@ -26,7 +26,7 @@ class Libkate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "159b8a3fb3e5ed3f1fe68bd29dbe791f5a4e967fe7b94af24a4148d09f7c6e03"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
   depends_on "libpng"
 
@@ -35,13 +35,13 @@ class Libkate < Formula
     # however, this breaks install as it needs python2 to compile the KateDJ tool.
     ENV["PYTHON"] = ":"
 
-    system "./configure", *std_configure_args,
-                          "--enable-shared",
-                          "--enable-static"
+    system "./configure", "--enable-shared",
+                          "--enable-static",
+                          *std_configure_args
     system "make", "check"
     system "make", "install"
 
-    (man1/"KateDJ.1").unlink
+    rm(man1/"KateDJ.1")
   end
 
   test do

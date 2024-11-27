@@ -14,7 +14,7 @@ class Libxcursor < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "02e5f01e4940638fbcce577f05ac3bc57f87bf272959e286a323f6fe3c2fc86d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxfixes"
@@ -22,14 +22,12 @@ class Libxcursor < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

@@ -29,16 +29,16 @@ class Libnfc < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb-compat"
 
   uses_from_macos "pcsc-lite"
 
   def install
-    system "autoreconf", "-vfi" if build.head?
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--enable-serial-autoprobe",
-                          "--with-drivers=all"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--enable-serial-autoprobe",
+                          "--with-drivers=all",
+                          *std_configure_args
     system "make", "install"
     (prefix"etcnfclibnfc.conf").write "allow_intrusive_scan=yes"
   end

@@ -24,7 +24,7 @@ class Libvoikko < Formula
   end
 
   depends_on "foma" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "hfstospell"
 
   uses_from_macos "python" => :build

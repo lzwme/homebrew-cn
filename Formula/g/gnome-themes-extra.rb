@@ -18,7 +18,7 @@ class GnomeThemesExtra < Formula
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "glib"
@@ -48,7 +48,7 @@ class GnomeThemesExtra < Formula
   end
 
   test do
-    assert_predicate share/"icons/HighContrast/scalable/actions/document-open-recent.svg", :exist?
-    assert_predicate lib/"gtk-2.0/2.10.0/engines/libadwaita.so", :exist?
+    assert_path_exists share/"icons/HighContrast/scalable/actions/document-open-recent.svg"
+    assert_path_exists lib/"gtk-2.0/2.10.0/engines/libadwaita.so"
   end
 end

@@ -19,7 +19,7 @@ class Libxmlsec1 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbdf3e9c1bc660992306f640fa0b64bafe4db84ab1fdd0f785256d34e640aa18"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls" # Yes, it wants both ssl/tls variations
   depends_on "libgcrypt"
   depends_on "libxml2"
@@ -30,17 +30,17 @@ class Libxmlsec1 < Formula
   patch :DATA
 
   def install
-    args = ["--disable-dependency-tracking",
-            "--prefix=#{prefix}",
-            "--disable-crypto-dl",
-            "--disable-apps-crypto-dl",
-            "--with-nss=no",
-            "--with-nspr=no",
-            "--enable-mscrypto=no",
-            "--enable-mscng=no",
-            "--with-openssl=#{Formula["openssl@3"].opt_prefix}"]
+    args = [
+      "--disable-crypto-dl",
+      "--disable-apps-crypto-dl",
+      "--with-nss=no",
+      "--with-nspr=no",
+      "--enable-mscrypto=no",
+      "--enable-mscng=no",
+      "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+    ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

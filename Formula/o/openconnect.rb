@@ -31,7 +31,7 @@ class Openconnect < Formula
   end
 
   depends_on "gettext" => :build # for msgfmt
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "gmp"
   depends_on "gnutls"
@@ -73,7 +73,7 @@ class Openconnect < Formula
       --with-vpnc-script=#{etc}/vpnc/vpnc-script
     ]
 
-    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

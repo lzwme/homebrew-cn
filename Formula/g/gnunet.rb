@@ -15,7 +15,7 @@ class Gnunet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5bae678ede4b9bc6b6d9518f455aa7191fc903c939ddd07a5bee3bd8d27586e"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "gmp"
   depends_on "gnutls"

@@ -20,7 +20,7 @@ class Libwbxml < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "wget"
 
   uses_from_macos "expat"
@@ -43,6 +43,6 @@ class Libwbxml < Formula
     XML
 
     system bin"xml2wbxml", "-o", "output.wbxml", "input.xml"
-    assert_predicate testpath"output.wbxml", :exist?
+    assert_path_exists testpath"output.wbxml"
   end
 end

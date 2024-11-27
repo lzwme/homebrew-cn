@@ -16,7 +16,7 @@ class Libsbol < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jsoncpp"
   depends_on "raptor"
   depends_on "rasqal"

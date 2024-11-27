@@ -1,8 +1,8 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https:www.citusdata.com"
-  url "https:github.comcitusdatacitusarchiverefstagsv12.1.4.tar.gz"
-  sha256 "6f8e55bbcae75309192c48cdb7238e8c895fd63e5b785ff798023c8b8b799e61"
+  url "https:github.comcitusdatacitusarchiverefstagsv12.1.5.tar.gz"
+  sha256 "bc95a30e93459f0398865e9dced53e61e758483b78c9fdc4eab2bc1317db2ea4"
   license "AGPL-3.0-only"
   head "https:github.comcitusdatacitus.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f32f83baf5052b4564c889b703206d260016b3f7e69b2693dab22338dda8d598"
-    sha256 cellar: :any,                 arm64_sonoma:   "786b219283e84207a8cf2820c7c74e9e61b3f2bf0ba06a10bc32d9e781c1bdfc"
-    sha256 cellar: :any,                 arm64_ventura:  "5bb67885ce15fa7298da6923126b7130310053504edc84d2aec88630af21e831"
-    sha256 cellar: :any,                 arm64_monterey: "0422a4a7e7891f5102c12c289bea85c9f69f59fd3f36dae47bc297760c470ef0"
-    sha256 cellar: :any,                 sonoma:         "362100c937c43c33190c04eef85b17fc1a697649634500d8ed7457bf7668e9be"
-    sha256 cellar: :any,                 ventura:        "0e17325da26d62c2cb2a0e60b5adfee79676271c1a93814791bbce6918e8c5de"
-    sha256 cellar: :any,                 monterey:       "1584b2586f0a566ab65e88edc40bcd848b67870e0581affbb55ff23a6f5ed277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4363b7e3f120d35f0fa024c82f9903619e0414185fdc9ad466853fd37c30a86d"
+    sha256 cellar: :any,                 arm64_sequoia: "9e940ccb91123ca14d3c286e47bca26357a2d6bc37c5af2ad726c800ea0cd511"
+    sha256 cellar: :any,                 arm64_sonoma:  "60cfd5a3aa56d439ad2fc8762267ac91f459e209c1de60574c6d20bb1b2bc6f2"
+    sha256 cellar: :any,                 arm64_ventura: "e87a8036cd8bbe60c7fbfe001cdbd5e09cb1e06cea2bea884eab0576254a04f1"
+    sha256 cellar: :any,                 sonoma:        "761870536febbfecb3e0ae65460e202fe36a0b412dd2a643ec300c30caad1e75"
+    sha256 cellar: :any,                 ventura:       "9de6617cd2c7accd7640118e45fd800a5cf801d4eccd63f5c7df6b8f2b2c6cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6157dc81d6fc2df83b60c8d016257a9473a34ae731331945b0d6db7fef6ce1d2"
   end
 
   depends_on "lz4"

@@ -57,7 +57,7 @@ class Patchelf < Formula
       assert_equal "libld-linux.so.2\n", shell_output("#{bin}patchelf --print-interpreter chello")
       assert_equal "libc.so.6\n", shell_output("#{bin}patchelf --print-needed chello")
       assert_equal "\n", shell_output("#{bin}patchelf --print-rpath chello")
-      assert_equal "", shell_output("#{bin}patchelf --set-rpath usrlocallib chello")
+      assert_empty shell_output("#{bin}patchelf --set-rpath usrlocallib chello")
       assert_equal "usrlocallib\n", shell_output("#{bin}patchelf --print-rpath chello")
     end
   end

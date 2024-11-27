@@ -11,11 +11,11 @@ class Libnl < Formula
 
   depends_on "bison" => :build
   depends_on "flex" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on :linux # Netlink sockets are only available in Linux.
 
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules", "--sysconfdir=#{etc}"
+    system ".configure", "--disable-silent-rules", "--sysconfdir=#{etc}", *std_configure_args
     system "make", "install"
   end
 
@@ -53,9 +53,9 @@ class Libnl < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libnl-3.0 libnl-route-3.0").chomp.split
-    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
-    assert_match "Unable to delete link: Operation not permitted", shell_output("#{testpath}test 2>&1", 228)
+    flags = shell_output("pkgconf --cflags --libs libnl-3.0 libnl-route-3.0").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    assert_match "Unable to delete link: Operation not permitted", shell_output(".test 2>&1", 228)
 
     assert_match "inet 127.0.0.1", shell_output("#{bin}nl-route-list")
   end

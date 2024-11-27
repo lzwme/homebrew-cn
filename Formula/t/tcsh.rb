@@ -1,9 +1,9 @@
 class Tcsh < Formula
   desc "Enhanced, fully compatible version of the Berkeley C shell"
   homepage "https://www.tcsh.org/"
-  url "https://astron.com/pub/tcsh/tcsh-6.24.13.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.24.13.tar.gz"
-  sha256 "1e927d52e9c85d162bf985f24d13c6ccede9beb880d86fec492ed15480a5c71a"
+  url "https://astron.com/pub/tcsh/tcsh-6.24.14.tar.gz"
+  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.24.14.tar.gz"
+  sha256 "36880f258a63fc11fe72a65098b585ebc4ecdee24388b8ebec97e6ae8e485318"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,14 +12,12 @@ class Tcsh < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "0ceaf5267bed3efc85efcedebe5e32a5c83fe675c4b03eb0681882efea27de11"
-    sha256 arm64_sonoma:   "b21a9a41ce1df413301c79c0cd433134cfa384c45270f1aca43170e81982cce3"
-    sha256 arm64_ventura:  "f731e3a53d88baaefbdc5bbac669b55d2895ab6259d7f63d922d566e8b25dc42"
-    sha256 arm64_monterey: "787dcae47ce234cdd6f3df70b6458ea955e73f936acbb53e0e9083464a109b17"
-    sha256 sonoma:         "73262bdc3403940827207e5834f2bca3dc8524d9901e334fa05d7c6fa718d9a9"
-    sha256 ventura:        "e746ac1cd27292e67bb0596abc2d22ac281b6ffda20abd0853759faf0080fa52"
-    sha256 monterey:       "a4691a92634ca8ee1b37a0176b22f46bdbeda5737fb1817f7dcbd5be11457103"
-    sha256 x86_64_linux:   "5ba8ae414fef90bbe832539c0fb69041a2106492d07c41c7d26d1ff98b9c50d1"
+    sha256 arm64_sequoia: "b460d7025a11e390417b99856092d9910efa2f782860ec2eac1b69818fc80ff8"
+    sha256 arm64_sonoma:  "298251e43c80d546516f9b428c63b691f3b6d19dfae15153ef599ef493eb17d9"
+    sha256 arm64_ventura: "83aa4593aeb551300ac7a23dd246c7b7fea918fcfd84bba5ab01ec7612a6f2c7"
+    sha256 sonoma:        "4f15dd7ac8b3da7915f7f797a68223540f5f5f525c70f0cc800aa17ae6f6c398"
+    sha256 ventura:       "2bebcbc5a02fa991f1a9a46e347f2528af16813787ff302097095d5aafd7bee0"
+    sha256 x86_64_linux:  "110669eac6b4e5a1c8fe4e0dcb87e06928e77c938c5ed97fbf3e10eaa7df01fb"
   end
 
   uses_from_macos "libxcrypt"

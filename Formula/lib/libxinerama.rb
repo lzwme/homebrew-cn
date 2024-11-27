@@ -19,21 +19,19 @@ class Libxinerama < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8bcf697bd80954325c6994d562554f890ab0fd6e35ae671f0886a05bcacc29b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "libxext"
   depends_on "xorgproto"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

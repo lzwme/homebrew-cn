@@ -19,21 +19,19 @@ class Libxxf86vm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db08eb34714521835fe1a5abf153e1b551329230b951ce7ef9bb2c6ca29be893"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "libxext"
   depends_on "xorgproto"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

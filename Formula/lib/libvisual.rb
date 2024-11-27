@@ -18,7 +18,7 @@ class Libvisual < Formula
     sha256               x86_64_linux:   "ceefedcaeb4e18c06c22c2a210e35d3439783f2f457107090d91d2b777e788f2"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl12-compat"
 
   def install

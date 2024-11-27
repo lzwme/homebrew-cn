@@ -22,15 +22,14 @@ class Libmagic < Formula
     sha256 x86_64_linux:   "213f20f87112c4e7a6415baace66d49fdf165d96e8ca96c128e12745a1ea8862"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--enable-fsect-man5",
-                          "--enable-static"
+                          "--enable-static",
+                          *std_configure_args
     system "make", "install"
     (share/"misc/magic").install Dir["magic/Magdir/*"]
 
@@ -54,7 +53,7 @@ class Libmagic < Formula
           puts(magic_file(cookie, argv[1]));
       }
     C
-    flags = shell_output("pkg-config --cflags --libs #{name}").chomp.split
+    flags = shell_output("pkgconf --cflags --libs #{name}").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     cp test_fixtures("test.png"), "test.png"
     assert_equal "image/png", shell_output("./test test.png").chomp

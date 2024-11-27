@@ -21,13 +21,17 @@ class Sdcv < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "gettext"
   depends_on "glib"
   depends_on "readline"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # fix type mismatch and memory deallocation build errors
   # upstream PR ref, https:github.comDushistovsdcvpull103

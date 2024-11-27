@@ -18,23 +18,21 @@ class Libice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aed9bb2a55522c29d05b499b235181e2474d34e242991238e8322b3d8222ecb7"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xtrans" => :build
   depends_on "libx11"=> :test
   depends_on "xorgproto"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-docs=no
       --enable-specs=no
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

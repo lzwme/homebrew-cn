@@ -22,7 +22,7 @@ class Libtickit < Formula
   end
 
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtermkey"
   depends_on "unibilium"
 

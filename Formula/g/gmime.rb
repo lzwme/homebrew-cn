@@ -26,7 +26,7 @@ class Gmime < Formula
   end
 
   depends_on "gobject-introspection" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "gpgme"
   depends_on "libidn2"
@@ -48,8 +48,7 @@ class Gmime < Formula
     ]
 
     system ".autogen.sh" if build.head?
-
-    system ".configure", *std_configure_args, *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     # Avoid hardcoding Cellar paths of dependencies
@@ -80,12 +79,12 @@ class Gmime < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs gmime-#{version.major}.0").strip.split
+    flags = shell_output("pkgconf --cflags --libs gmime-#{version.major}.0").strip.split
     system ENV.cc, "-o", "test", "test.c", *flags
     system ".test"
 
     # Check that `pkg-config` paths are valid
-    cflags = shell_output("pkg-config --cflags gmime-#{version.major}.0").strip
+    cflags = shell_output("pkgconf --cflags gmime-#{version.major}.0").strip
     cflags.split.each do |flag|
       next unless flag.start_with?("-I")
 
@@ -93,7 +92,7 @@ class Gmime < Formula
       assert_path_exists flag
     end
 
-    ldflags = shell_output("pkg-config --libs gmime-#{version.major}.0").strip
+    ldflags = shell_output("pkgconf --libs gmime-#{version.major}.0").strip
     ldflags.split.each do |flag|
       next unless flag.start_with?("-L")
 

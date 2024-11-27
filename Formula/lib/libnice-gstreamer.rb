@@ -20,7 +20,7 @@ class LibniceGstreamer < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gstreamer"

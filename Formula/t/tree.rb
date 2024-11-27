@@ -1,17 +1,17 @@
 class Tree < Formula
   desc "Display directories as trees (with optional colorHTML output)"
   homepage "https:oldmanprogrammer.netsource.php?dir=projectstree"
-  url "https:github.comOld-Man-Programmertreearchiverefstags2.2.0.tar.gz"
-  sha256 "c4964b503d609e7146edd75566b978b1853e2cebee7c0342be230cbd84da326c"
+  url "https:github.comOld-Man-Programmertreearchiverefstags2.2.1.tar.gz"
+  sha256 "5caddcbca805131ff590b126d3218019882e4ca10bc9eb490bba51c05b9b3b75"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da86b349a512a06a0646ac0e729f6a422dbe09ddd0b6045368e5f91d13338181"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cdb04082e8fbed9dbafcc8e7a4e7d9afc2af0ce36725e0c31bf7fde830405e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "891da675b57ff1a34b83f06b3cc491cdbbd689ba0506589e7c12a368b6e30d0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42a58ba4de938e595943efcd568d7272c63eb7bbdb402d9a94b6e62a53dbc971"
-    sha256 cellar: :any_skip_relocation, ventura:       "cf0029ab3cbe9b515a7f2ade2a29ca5ef604802de40f80d86447530ae61387d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb859ce5d27196a3765c1c2265641e30de7d4d295511f5e6e13f8c1b70feb708"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccfac896234e1c63841b421873387c407f375af7e6db54abea549d24e3c69589"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a290f08288dc441d0842aeb0fc5d27e2ebb890ad0ef03680c08fddf4b6281252"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4eded180a935460b5b2d0cc50504197e29d4b9cbd04d20b800860c73e81d930"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6d54f8fe160c9508e5a85b4245900a9458200cac58e5a2105eef7fa75564884"
+    sha256 cellar: :any_skip_relocation, ventura:       "834f7d3715e67ca1b3b24fc3979c0290ab81e0fdd22ad971c8d25746457a6693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45f02a1a405f4782d3e26963f7f37b3842e9857b06cd36cc0e5945cbeeb55758"
   end
 
   def install

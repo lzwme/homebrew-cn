@@ -20,7 +20,7 @@ class Libnxml < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   uses_from_macos "curl"
 
@@ -71,8 +71,8 @@ class Libnxml < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs nxml").chomp.split
-    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
-    assert_equal("root: Hello world!\n", shell_output(".test"))
+    flags = shell_output("pkgconf --cflags --libs nxml").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    assert_equal "root: Hello world!\n", shell_output(".test")
   end
 end

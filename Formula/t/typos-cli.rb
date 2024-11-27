@@ -1,8 +1,8 @@
 class TyposCli < Formula
   desc "Source code spell checker"
   homepage "https:github.comcrate-citypos"
-  url "https:github.comcrate-cityposarchiverefstagsv1.27.3.tar.gz"
-  sha256 "21d0fedc66be2efdad8db0741f27b831728e0cfd5cedd9bdf1076f9e71da0aa4"
+  url "https:github.comcrate-cityposarchiverefstagsv1.28.1.tar.gz"
+  sha256 "fea58e99f7a53d69d9564a87913a6596d253f454c276c86e5e9b6a52e0eeb43a"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eb60a26b6f5443f49d9e1cba7b396e9d30c330a12d489b0476ab54ace099792"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d0e101a7e90678fe503755bfc03e349f03ca9bae8fc88e2c7d8b44459a96bbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "20737cf5ade36b71bbe825c37d6b31c99c1e1533812b50a8ecca13e04590f44b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83bcd6c3a8b572c8dd7e31eea1d1959a1cce414f77d20f3890318a492c176b2b"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3df00febba9c3a2f7c03edc17b9bd93a4d1d82da81e0789574591cc9a50aa19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33edbf60e5d380331ff75866403ab86a94033cd72ca796082d1069b3d45f22a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cd6e4af18e3ec40ee5b5ed67dd6ae0d171a00f2deff0d7269916dd4d56f80d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8892530a829edca4c773ffd44390ec63b8af72abd05cac8c540d813d5b9b0572"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5e818dbc7aec4ac19ba863ba248888d6a504057a860b28c8a5a74c737238625"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0a02d109e30ab5a7444c7ec86f48fc977a1a32cb18b6268a02878309eb76163"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad68c6d1eb567d6a9958c9e8827250c7a43de015a63f934b49ec29587070672f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aed53c19045a5d5d5008b860d220d9b6d45fd1ecf2facba6cec5a13d960607c4"
   end
 
   depends_on "rust" => :build

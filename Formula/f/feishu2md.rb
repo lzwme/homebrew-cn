@@ -1,8 +1,8 @@
 class Feishu2md < Formula
   desc "Convert feishularksuite documents to markdown"
   homepage "https:github.comWsinefeishu2md"
-  url "https:github.comWsinefeishu2mdarchiverefstagsv2.4.0.tar.gz"
-  sha256 "a02bead184c0f9d9c6a64dd5a21b994ff8a86eecd940f6e53ad27e048177003b"
+  url "https:github.comWsinefeishu2mdarchiverefstagsv2.4.4.tar.gz"
+  sha256 "ba4efca5bda10f46ca243e961e314f80532ad8533caf742521250e1bc677f74a"
   license "MIT"
   head "https:github.comWsinefeishu2md.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Feishu2md < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "770eec2c17386647a3935e04c6b2227f44b1af33011f526edfeb35566fa78c23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f121364f539161ad3df2d4d8812b712bdcd6b4b478f26bf31fcd7114935826e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f121364f539161ad3df2d4d8812b712bdcd6b4b478f26bf31fcd7114935826e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f121364f539161ad3df2d4d8812b712bdcd6b4b478f26bf31fcd7114935826e4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e088621d7b83eee24a03be91b3fbec9186cb1e594f7508aef94bdc86e2fd5da7"
-    sha256 cellar: :any_skip_relocation, ventura:        "e088621d7b83eee24a03be91b3fbec9186cb1e594f7508aef94bdc86e2fd5da7"
-    sha256 cellar: :any_skip_relocation, monterey:       "e088621d7b83eee24a03be91b3fbec9186cb1e594f7508aef94bdc86e2fd5da7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39114b4d1ef448d8b524e6643235aadc1e57d68443888cef8b7117547ecda4bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82204b6c9dd00fb608a7614dc617780425daa713056ef59387d3d870e23d65a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82204b6c9dd00fb608a7614dc617780425daa713056ef59387d3d870e23d65a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "82204b6c9dd00fb608a7614dc617780425daa713056ef59387d3d870e23d65a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a95e2b53c60de61472fc0f76ad47213d90385c104f9c6d89ad8d029d7f9e08d"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a95e2b53c60de61472fc0f76ad47213d90385c104f9c6d89ad8d029d7f9e08d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db49c3b5b879ef0e64fc72bda13d1c15429e54eae26754a7891b10e8940d1f8c"
   end
 
   depends_on "go" => :build

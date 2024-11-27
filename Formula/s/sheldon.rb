@@ -7,21 +7,25 @@ class Sheldon < Formula
   head "https:github.comrossmacarthursheldon.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cef072269673d984ad6652c14124942d829d6c09ae97e717d044b12950fae909"
-    sha256 cellar: :any,                 arm64_sonoma:   "92282f5ae930b2bab08f86cf2baaffb54eb88c94847b5c1abd29a08addf9007d"
-    sha256 cellar: :any,                 arm64_ventura:  "2224e9f9e5ddcf6239dfe92b269ef06d942c4cd5d548dcd31d1d235fe03617e5"
-    sha256 cellar: :any,                 arm64_monterey: "7f7f7970cf7c2fcd1b10972db6ac9a2ce1fe98114d051158d775c92986cd8e1e"
-    sha256 cellar: :any,                 sonoma:         "3a40d9b78e571efbff661f8e19f61bad8d2337c120395489a7ac1d530b88a552"
-    sha256 cellar: :any,                 ventura:        "9741bf2aaa1e807893582ace21f69a93f529633d9641022accd890e58eb65bd6"
-    sha256 cellar: :any,                 monterey:       "053bd969792bf0ff6ab3c8b7447bc15e1fb787cb1e51312b9aa54e4d47e1b168"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "484a82b6474cbc25d40ce7a9a3f0fd562438fb6dbd218bc3e0d856167235a4a5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7721bb7c252d11827db27bc2e94599b59e2d5189f13da21c0baf2985e2a0a006"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd934fd9477dd230780e8c18386a4255598278ae6a496abef5a262ddf7599ded"
+    sha256 cellar: :any,                 arm64_ventura: "e5a9fc87b96346dd783949200364782fe94899c86791b2005cc939616ae47767"
+    sha256 cellar: :any,                 sonoma:        "7eac3be77a7a3d35685ecefecea705e3b2c506b81e4c649bfc8c510f68f7b585"
+    sha256 cellar: :any,                 ventura:       "9c4d728a1e1541f33ff20906cdacc5fd055ee5567dbbaf36b00c274c594e8601"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4c15f35368003e34e91eaa5e4f78edccaffbde9ce2c1a3109eeebbdb15ea4c4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "curl"
   depends_on "libgit2"
   depends_on "openssl@3"
+
+  # curl-config on ventura builds do not report http2 feature,
+  # this is a workaround to allow to build against system curl
+  # see discussions in https:github.comHomebrewhomebrew-corepull197727
+  uses_from_macos "curl" => :build, since: :sonoma
+  uses_from_macos "curl"
 
   def install
     # Ensure the declared `openssl@3` dependency will be picked up.
@@ -49,14 +53,16 @@ class Sheldon < Formula
   test do
     touch testpath"plugins.toml"
     system bin"sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
-    assert_predicate testpath"plugins.lock", :exist?
+    assert_path_exists testpath"plugins.lock"
 
-    [
+    libraries = [
       Formula["libgit2"].opt_libshared_library("libgit2"),
-      Formula["curl"].opt_libshared_library("libcurl"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
-    ].each do |library|
+    ]
+    libraries << (Formula["curl"].opt_libshared_library("libcurl")) if OS.linux?
+
+    libraries.each do |library|
       assert check_binary_linkage(bin"sheldon", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end

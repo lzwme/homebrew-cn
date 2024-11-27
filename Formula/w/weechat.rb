@@ -18,10 +18,10 @@ class Weechat < Formula
 
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
+  depends_on "gettext" => :build # for xgettext
   depends_on "pkgconf" => :build
   depends_on "aspell"
   depends_on "cjson"
-  depends_on "gettext"
   depends_on "gnutls"
   depends_on "libgcrypt"
   depends_on "lua"
@@ -36,6 +36,7 @@ class Weechat < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     depends_on "libgpg-error"
   end
 

@@ -18,7 +18,7 @@ class Libgee < Formula
   end
 
   depends_on "gobject-introspection" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "vala" => :build
 
   depends_on "glib"
@@ -40,7 +40,7 @@ class Libgee < Formula
               "@HAVE_INTROSPECTION_TRUE@typelibdir = $(libdir)/girepository-1.0"
     end
 
-    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

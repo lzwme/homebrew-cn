@@ -20,7 +20,7 @@ class LibspellingAT02 < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
 
   depends_on "enchant"
@@ -55,8 +55,8 @@ class LibspellingAT02 < Formula
     C
 
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs libspelling-1").chomp.split
-    system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs libspelling-1").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

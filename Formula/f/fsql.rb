@@ -30,6 +30,6 @@ class Fsql < Formula
     cmd = "#{bin}fsql SELECT name FROM . WHERE name = bar.txt"
     assert_equal "bar.txt", shell_output(cmd).chomp
     cmd = "#{bin}fsql SELECT name FROM . WHERE FORMAT\\(size, GB\\) \\> 500"
-    assert_equal "", shell_output(cmd)
+    assert_empty shell_output(cmd)
   end
 end

@@ -17,7 +17,7 @@ class Libxaw3d < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce52f2da8dd74a3df5d277ffeb678f86a9572b0c52a29e513aa688d37e704210"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxext"

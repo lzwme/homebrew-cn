@@ -27,7 +27,7 @@ class GnustepBase < Formula
   end
 
   depends_on "gnustep-make" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "gnutls"
 

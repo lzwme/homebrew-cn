@@ -18,20 +18,18 @@ class Libxfixes < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd98561e1f625057b34be07c81541d7759f29756d5d7272b59bd9e86af0d7d22"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libx11"
   depends_on "xorgproto"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

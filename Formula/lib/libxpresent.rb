@@ -25,7 +25,7 @@ class Libxpresent < Formula
     depends_on "util-macros" => :build
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libx11"
   depends_on "libxext"
   depends_on "libxfixes"

@@ -22,7 +22,7 @@ class LibbitcoinConsensus < Formula
   depends_on "automake" => :build
   depends_on "boost" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   resource "secp256k1" do
     url "https:github.comlibbitcoinsecp256k1archiverefstagsv0.1.0.20.tar.gz"
@@ -33,21 +33,19 @@ class LibbitcoinConsensus < Formula
     ENV.cxx11
     resource("secp256k1").stage do
       system ".autogen.sh"
-      system ".configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}",
+      system ".configure", "--disable-silent-rules",
                             "--enable-module-recovery",
-                            "--with-bignum=no"
+                            "--with-bignum=no",
+                            *std_configure_args(prefix: libexec)
       system "make", "install"
     end
 
     ENV.prepend_path "PKG_CONFIG_PATH", "#{libexec}libpkgconfig"
 
     system ".autogen.sh"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+    system ".configure", "--disable-silent-rules",
+                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
+                          *std_configure_args
     system "make", "install"
   end
 

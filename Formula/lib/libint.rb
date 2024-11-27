@@ -19,7 +19,7 @@ class Libint < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "boost"
   depends_on "eigen"
   depends_on "mpfr"
@@ -35,10 +35,9 @@ class Libint < Formula
   end
 
   test do
-    system ENV.cxx, "-std=c++11", pkgshare"hartree-fock.cc",
-      *shell_output("pkg-config --cflags --libs libint2").chomp.split,
-      "-I#{Formula["eigen"].opt_include}eigen3",
-      "-o", "hartree-fock"
+    system ENV.cxx, "-std=c++11", pkgshare"hartree-fock.cc", "-o", "hartree-fock",
+                    "-I#{Formula["eigen"].opt_include}eigen3",
+                    *shell_output("pkgconf --cflags --libs libint2").chomp.split
     system ".hartree-fock", pkgshare"h2o.xyz"
   end
 end

@@ -14,7 +14,7 @@ class Libxt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0de9305b6428a6ffca0a8bdb1a777ed01bf9a31cfb91035099a9003cac5598"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libice"
   depends_on "libsm"
   depends_on "libx11"

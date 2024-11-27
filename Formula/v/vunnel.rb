@@ -3,19 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https:github.comanchorevunnel"
-  url "https:files.pythonhosted.orgpackagese52d81fcf0d5b3a668e580f2949c2eb84715da3b70113a6c851acd67f465f864vunnel-0.28.0.tar.gz"
-  sha256 "f7a0a9d303b20381eb1c4b488618952e8cd4375552e2e4b683801d1bcd1e0e1e"
+  url "https:files.pythonhosted.orgpackagesfd2133fcc3d6e212e55e00bb1d2a0b8f58e78e05db1b4e8dac008f3a609e52a6vunnel-0.29.0.tar.gz"
+  sha256 "59163b1017168f71ac2e442b35f4fa56ffa1af78869c54f12d6cf5e7352ac884"
   license "Apache-2.0"
   head "https:github.comanchorevunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "800abcab4df158fc8d11ff39558e0605bbcae02359e366bbb86d9cc210a25cc4"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a3bc1b42a81f6b216e4142be7738edbcf90c608fe4dece49b19eeb15ab2e42d"
-    sha256 cellar: :any,                 arm64_ventura: "1b7d5fda8e221646658b70ce3fe16dd119c653c05348eb4b3b281dfac89fa0fe"
-    sha256 cellar: :any,                 sonoma:        "c8c7e0615e7ba7461b25c96c4fffee25f7ac2db6fd9ce5324500aa1d7aad0784"
-    sha256 cellar: :any,                 ventura:       "807b3c184fb697e59783231833b83155b200dec3adc072904761b6f1c5f67913"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8fc145773e1d0b69f7aeaeb21d5f86839840307fde7d238e9960e65731d91b"
+    sha256 cellar: :any,                 arm64_sequoia: "c34fbe1ffc0910c9adbe4b47a91d2a2a867c96d2af9bab1691c82fcb70be35c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "64be177f070268cf977e394ca1f88448f90597ea29b3e3feb24b956c25756b92"
+    sha256 cellar: :any,                 arm64_ventura: "84e060d7bd37b6338cf72a06bca896a104e7b7da5796ccfb56826c47b9e29c42"
+    sha256 cellar: :any,                 sonoma:        "2888f119600874f3c2f3bd87564ad36c1f702f6ce7b76ac0f22cc84a947e96a0"
+    sha256 cellar: :any,                 ventura:       "5488ea44460648270e492a700dcee5357734092e0f5cfce51afca1f227b2e9e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "315811a2fc797247bcb5d3778c84baf8d0c6bc743a12fd852f84d896c7b58076"
   end
 
   depends_on "rust" => :build
@@ -42,13 +41,13 @@ class Vunnel < Formula
   end
 
   resource "colorlog" do
-    url "https:files.pythonhosted.orgpackagesdb382992ff192eaa7dd5a793f8b6570d6bbe887c4fbbf7e72702eb0a693a01c8colorlog-6.8.2.tar.gz"
-    sha256 "3e3e079a41feb5a1b64f978b5ea4f46040a94f11f0e8bbb8261e3dbbeca64d44"
+    url "https:files.pythonhosted.orgpackagesd37a359f4d5df2353f26172b3cc39ea32daa39af8de522205f512f458923e677colorlog-6.9.0.tar.gz"
+    sha256 "bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"
   end
 
   resource "cvss" do
-    url "https:files.pythonhosted.orgpackages13325801ac139ab2cca3acc3000aa6deadf55d1c54f1400cad40cd6476b3deefcvss-3.2.tar.gz"
-    sha256 "5e8e0f95e9e6c9dec0c2ef38f14153b2c019cfcd2fd6e75b5ad7da80a110fa8b"
+    url "https:files.pythonhosted.orgpackagesb8f38893d8c4ea780e51eb22bc94a5959a2836d7eb74fe7c24b98bd1b2c74d9ccvss-3.3.tar.gz"
+    sha256 "ae097183ee58b02262ab2291d27857ca3d0a7c4242b9b076c6bf537e6239fbc0"
   end
 
   resource "defusedxml" do
@@ -77,8 +76,8 @@ class Vunnel < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackages767233d1bb4be61f1327d3cd76fc41e2d001a6b748a0648d944c646643f123feimportlib_metadata-7.2.1.tar.gz"
-    sha256 "509ecb2ab77071db5137c655e24ceb3eee66e7bbc6574165d0d114d9fc4bbe68"
+    url "https:files.pythonhosted.orgpackagescd1233e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1bimportlib_metadata-8.5.0.tar.gz"
+    sha256 "71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
   end
 
   resource "iniconfig" do
@@ -102,13 +101,13 @@ class Vunnel < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "mashumaro" do
-    url "https:files.pythonhosted.orgpackagesb340753855b41db0db9a2bed0c83aaf9432df724acb21ab779f2a20b73f613aemashumaro-3.13.1.tar.gz"
-    sha256 "169f0290253b3e6077bcb39c14a9dd0791a3fdedd9e286e536ae561d4ff1975b"
+    url "https:files.pythonhosted.orgpackagesf3c17b687c8b993202e2eb49e559b25599d8e85f1b6d92ce676c8801226b8bdfmashumaro-3.15.tar.gz"
+    sha256 "32a2a38a1e942a07f2cbf9c3061cb2a247714ee53e36a5958548b66bd116d0a9"
   end
 
   resource "mergedeep" do
@@ -117,13 +116,13 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackages9e03821c8197d0515e46ea19439f5c5d5fd9a9889f76800613cfac947b5d7845orjson-3.10.7.tar.gz"
-    sha256 "75ef0640403f945f3a1f9f6400686560dbfb0fb5b16589ad62cd477043c4eee3"
+    url "https:files.pythonhosted.orgpackagese004bb9f72987e7f62fb591d6c880c0caaa16238e4e530cbc3bdc84a7372d75forjson-3.10.12.tar.gz"
+    sha256 "0a78bbda3aea0f9f079057ee1ee8a1ecf790d4f1af88dd67493c6b8ee52506ff"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pluggy" do
@@ -167,8 +166,8 @@ class Vunnel < Formula
   end
 
   resource "tomli" do
-    url "https:files.pythonhosted.orgpackages35b9de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264btomli-2.0.2.tar.gz"
-    sha256 "d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"
+    url "https:files.pythonhosted.orgpackages1ee41b6cbcc82d8832dd0ce34767d5c560df8a3547ad8cbc427f34601415930atomli-2.1.0.tar.gz"
+    sha256 "3f646cae2aec94e17d04973e4249548320197cfabdf130015d023de4b74d8ab8"
   end
 
   resource "toposort" do
@@ -202,8 +201,8 @@ class Vunnel < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages54bf5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86zipp-3.20.2.tar.gz"
-    sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
+    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
+    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
   end
 
   resource "zstandard" do

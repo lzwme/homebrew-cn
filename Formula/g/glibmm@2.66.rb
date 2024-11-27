@@ -24,7 +24,7 @@ class GlibmmAT266 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "libsigc++@2"
 
@@ -45,7 +45,7 @@ class GlibmmAT266 < Formula
       }
     CPP
 
-    flags = shell_output("pkg-config --cflags --libs glibmm-2.4").chomp.split
+    flags = shell_output("pkgconf --cflags --libs glibmm-2.4").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end

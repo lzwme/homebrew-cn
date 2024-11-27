@@ -308,7 +308,7 @@ class Agda < Formula
     # test the GHC backend;
     # compile and run a simple program
     system bin"agda", "--ghc-flag=-fno-warn-star-is-type", "-c", iotest
-    assert_equal "", shell_output(testpath"IOTest")
+    assert_empty shell_output(testpath"IOTest")
 
     # translate a simple file via agda2hs
     system bin"agda2hs", agda2hstest,

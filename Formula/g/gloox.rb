@@ -21,7 +21,7 @@ class Gloox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "95bec00a34c6fa57dd21c50ebeff2a52af273b3a2a413436f40eaeda30b9511d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libidn"
   depends_on "openssl@3"
 
@@ -31,12 +31,12 @@ class Gloox < Formula
   patch :DATA
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-zlib",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--without-tests",
-                          "--without-examples"
+                          "--without-examples",
+                          *std_configure_args
     system "make", "install"
   end
 

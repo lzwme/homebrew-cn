@@ -24,14 +24,13 @@ class Libwps < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librevenge"
   depends_on "libwpd"
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          # Installing Doxygen docs trips up make install
-                          "--prefix=#{prefix}", "--without-docs"
+    # Installing Doxygen docs trips up make install
+    system "./configure", "--without-docs", *std_configure_args
     system "make", "install"
   end
 

@@ -15,7 +15,7 @@ class Lcdproc < Formula
     sha256 x86_64_linux: "d869dec7aa2e03b2c6bc21a281ac56537d5a596e0a87442fc79fda035f000282"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on arch: :x86_64
   depends_on "libftdi"
   depends_on "libusb"
@@ -24,10 +24,12 @@ class Lcdproc < Formula
   uses_from_macos "ncurses"
 
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
+    ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")
+
+    system ".configure", "--disable-silent-rules",
                           "--enable-drivers=all",
-                          "--enable-libftdi=yes"
+                          "--enable-libftdi=yes",
+                          *std_configure_args
     system "make", "install"
   end
 

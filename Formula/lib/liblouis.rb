@@ -24,7 +24,7 @@ class Liblouis < Formula
   end
 
   depends_on "help2man" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13"
 
   uses_from_macos "m4"

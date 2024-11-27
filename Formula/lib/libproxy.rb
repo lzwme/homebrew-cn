@@ -19,7 +19,7 @@ class Libproxy < Formula
   depends_on "gsettings-desktop-schemas" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "vala" => :build # for vapigen
 
   depends_on "duktape"

@@ -23,7 +23,7 @@ class Gitg < Formula
   depends_on "gettext" => :build # for `msgfmt`
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
 
   depends_on "adwaita-icon-theme"
@@ -81,7 +81,7 @@ class Gitg < Formula
     C
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgit2@1.7"].opt_lib/"pkgconfig"
-    flags = shell_output("pkg-config --cflags --libs libgitg-1.0").chomp.split
+    flags = shell_output("pkgconf --cflags --libs libgitg-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

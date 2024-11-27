@@ -23,7 +23,7 @@ class Dupseek < Formula
   test do
     mkdir "folder"
     touch "folder/file1"
-    assert_equal "", shell_output("#{bin}/dupseek -b report -f de folder").chomp
+    assert_empty shell_output("#{bin}/dupseek -b report -f de folder").chomp
     touch "folder/file2"
     assert_match %r{^folder\\/file[12]$}, shell_output("#{bin}/dupseek -b report -f de folder").chomp
     assert_equal "folder\\/file1\nfolder\\/file2", shell_output("#{bin}/dupseek -b report -f e folder | sort").chomp

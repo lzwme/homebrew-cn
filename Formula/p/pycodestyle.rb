@@ -25,8 +25,7 @@ class Pycodestyle < Formula
     (testpath"ok.py").write <<~PYTHON
       print(1)
     PYTHON
-    assert_equal "",
-      shell_output("#{bin}pycodestyle ok.py")
+    assert_empty shell_output("#{bin}pycodestyle ok.py")
 
     # test invocation on a file with a whitespace style issue
     (testpath"ws.py").write <<~PYTHON

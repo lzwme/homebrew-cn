@@ -16,7 +16,7 @@ class Libhubbub < Formula
   end
 
   depends_on "netsurf-buildsystem" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libparserutils"
 
   uses_from_macos "gperf" => :build

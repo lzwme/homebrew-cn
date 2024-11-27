@@ -19,7 +19,7 @@ class LibgeditTepl < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "glib"
   depends_on "gtk+3"
@@ -59,7 +59,7 @@ class LibgeditTepl < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs libgedit-tepl-6").chomp.split
+    flags = shell_output("pkgconf --cflags --libs libgedit-tepl-6").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end

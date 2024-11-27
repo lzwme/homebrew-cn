@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https:github.comrenovatebotrenovate"
-  url "https:registry.npmjs.orgrenovate-renovate-39.30.0.tgz"
-  sha256 "d91ffcf4b55b9c0a57d6e1452c62281d043f3e85f19a45cc58d3ab870bede5c2"
+  url "https:registry.npmjs.orgrenovate-renovate-39.31.0.tgz"
+  sha256 "eea4609bd049f2e0ebdce0a728f3b1f39d7feb90f0fd9053e7999efa0a2ed72d"
   license "AGPL-3.0-only"
 
   # There are thousands of renovate releases on npm and the page the `Npm`
@@ -17,12 +17,12 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cfa1fd340ff7a570642086bed378330d80ea9e78236552422bebecf2f89d40e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3828ec38f69369c7f938b1892e90cc620bff3d54b141a059b2bb7bfc551afb75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b3c06e7f747c100ee012982a900012c827133285c497054c87a9ae020b794d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a93bd2e2df4925392cf7e6edeba144852c2a5e216fe0b8df071b1e8e377cdcf4"
-    sha256 cellar: :any_skip_relocation, ventura:       "fecb371dda77c52ccc0329968fa3fe5daaa6e2e3a986b194f9e7d6942c78c90f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa6359c4dc9d7e05ef8d9907e1a455a28714471a33d26f753ba730f5f995013"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "628b70776e3c4c4585b1192e3c40018424a30e6304a15caaf66cff09e0b16584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2edd509d0a30020983ac55d6fa4684a11b089b76ac2b460f24cb59901d046576"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b0b4d4a52e8736c64c80e3bfc78eff222a0f11eb5b3fd3a17faa51684c36067"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1bec547aaa3b80ec8d264e542079f027a90878207b281351dbfbdfa33dcba8f7"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7123e48af652d51d3a76c8893e2ad00afc0f4c9bbcac6a1b230735e4dc44521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caacdb4231fb0082bb3078ca358929f5d24c2685a65b29f54d47a0145189a269"
   end
 
   depends_on "node@20"

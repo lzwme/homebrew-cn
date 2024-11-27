@@ -29,14 +29,13 @@ class Libpagemaker < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librevenge"
 
   def install
     system "./configure", "--without-docs",
-                          "--disable-dependency-tracking",
                           "--enable-static=no",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
   end
 

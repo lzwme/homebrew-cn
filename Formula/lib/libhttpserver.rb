@@ -22,21 +22,15 @@ class Libhttpserver < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
 
   uses_from_macos "curl" => :test
 
   def install
-    args = [
-      "--disable-dependency-tracking",
-      "--disable-silent-rules",
-      "--prefix=#{prefix}",
-    ]
-
     system ".bootstrap"
     mkdir "build" do
-      system "..configure", *args
+      system "..configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end
     pkgshare.install "examples"
@@ -52,7 +46,7 @@ class Libhttpserver < Formula
     system ENV.cxx, "minimal_hello_world.cpp",
       "-std=c++17", "-o", "minimal_hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
 
-    fork { exec ".minimal_hello_world" }
+    spawn ".minimal_hello_world"
     sleep 3 # grace time for server start
 
     assert_match "Hello, World!", shell_output("curl http:127.0.0.1:#{port}hello")

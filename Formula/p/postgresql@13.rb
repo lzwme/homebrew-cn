@@ -24,7 +24,7 @@ class PostgresqlAT13 < Formula
   # https:www.postgresql.orgsupportversioning
   deprecate! date: "2025-11-13", because: :unsupported
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "icu4c@76"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.

@@ -16,7 +16,7 @@ class Imgproxy < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "vips"
 
@@ -25,30 +25,28 @@ class Imgproxy < Formula
   end
 
   def install
-    ENV["CGO_LDFLAGS_ALLOW"]="-s|-w"
-    ENV["CGO_CFLAGS_ALLOW"]="-Xpreprocessor"
+    ENV["CGO_LDFLAGS_ALLOW"] = "-s|-w"
+    ENV["CGO_CFLAGS_ALLOW"] = "-Xpreprocessor"
 
     system "go", "build", *std_go_args
   end
 
   test do
     port = free_port
-
-    cp(test_fixtures("test.jpg"), testpath"test.jpg")
+    cp test_fixtures("test.jpg"), testpath"test.jpg"
 
     ENV["IMGPROXY_BIND"] = "127.0.0.1:#{port}"
     ENV["IMGPROXY_LOCAL_FILESYSTEM_ROOT"] = testpath
 
-    pid = fork do
-      exec bin"imgproxy"
-    end
+    pid = spawn bin"imgproxy"
     sleep 30
+    sleep 30 if OS.mac? && Hardware::CPU.intel?
 
     output = testpath"test-converted.png"
+    url = "http:127.0.0.1:#{port}insecureresize:fit:100:100:trueplainlocal:test.jpg@png"
 
-    system "curl", "-s", "-o", output,
-           "http:127.0.0.1:#{port}insecureresize:fit:100:100:trueplainlocal:test.jpg@png"
-    assert_predicate output, :exist?
+    system "curl", "-s", "-o", output, url
+    assert_path_exists output
 
     file_output = shell_output("file #{output}")
     assert_match "PNG image data", file_output

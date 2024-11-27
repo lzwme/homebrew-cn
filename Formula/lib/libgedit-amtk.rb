@@ -20,7 +20,7 @@ class LibgeditAmtk < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
   depends_on "gtk+3"
@@ -35,7 +35,7 @@ class LibgeditAmtk < Formula
   end
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dgtk_doc=false"
+    system "meson", "setup", "build", "-Dgtk_doc=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
@@ -50,8 +50,8 @@ class LibgeditAmtk < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libgedit-amtk-5").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    flags = shell_output("pkgconf --cflags --libs libgedit-amtk-5").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

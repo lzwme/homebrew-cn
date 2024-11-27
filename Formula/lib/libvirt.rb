@@ -24,7 +24,7 @@ class Libvirt < Formula
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "glib"
   depends_on "gnutls"
@@ -49,8 +49,6 @@ class Libvirt < Formula
     depends_on "libtirpc"
     depends_on "util-linux"
   end
-
-  fails_with gcc: "5"
 
   def install
     args = %W[

@@ -17,7 +17,7 @@ class Libmxml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c46e4fd4d9fd79ebeff1183abe4fca41d7d92698f418a9f01c1705c6b78b368f"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
     system ".configure", "--enable-shared", *std_configure_args
@@ -40,15 +40,15 @@ class Libmxml < Formula
       }
     C
 
-    (testpath"test.xml").write <<~C
+    (testpath"test.xml").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <test>
         <text>I'm an XML document.<text>
       <test>
-    C
+    XML
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs mxml4").chomp.split
-    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs mxml4").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end
 end

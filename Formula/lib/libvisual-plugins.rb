@@ -18,7 +18,7 @@ class LibvisualPlugins < Formula
     sha256 x86_64_linux:   "dfb02d238ee8abe6fa95c0a0d1d9f4fdc77e5d1946ef670b4bfdae9f481f95b3"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorg-server" => :test
 
   depends_on "jack"

@@ -18,7 +18,7 @@ class Libxv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db2f06d9ccdd30342fa9d7249dbc068cd1bdb3800f44e22424269f4c29dc5bd6"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxext"
@@ -26,14 +26,12 @@ class Libxv < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

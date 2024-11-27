@@ -28,7 +28,7 @@ class Libmpd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4035c1bec6e7cdd64abca505361da64a9de52e82dcd5da6bd84f2902fbab6157"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gettext"
   depends_on "glib"
 
@@ -43,7 +43,7 @@ class Libmpd < Formula
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
 
     ENV.append "CFLAGS", "-DHAVE_STRNDUP" unless OS.mac?
-    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

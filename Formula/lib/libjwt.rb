@@ -28,13 +28,13 @@ class Libjwt < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "openssl@3"
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

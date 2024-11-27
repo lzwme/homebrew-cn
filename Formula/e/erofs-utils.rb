@@ -18,7 +18,7 @@ class ErofsUtils < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "xz"
 
@@ -30,6 +30,9 @@ class ErofsUtils < Formula
   end
 
   def install
+    # Link to liblzma from brew rather than system
+    ENV.append "LDFLAGS", "-L#{Formula["xz"].opt_lib}"
+
     args = %w[
       --disable-silent-rules
       --enable-lz4
@@ -57,12 +60,12 @@ class ErofsUtils < Formula
     # Test mkfs.erofs can make a valid erofsimg.
     #   (Also tests that `lz4` support is properly linked.)
     system bin/"mkfs.erofs", "--quiet", "-zlz4", "test.lz4.erofs", "in"
-    assert_predicate testpath/"test.lz4.erofs", :exist?
+    assert_path_exists testpath/"test.lz4.erofs"
 
     # Test mkfs.erofs can make a valid erofsimg.
     #   (Also tests that `lzma` support is properly linked.)
     system bin/"mkfs.erofs", "--quiet", "-zlzma", "test.lzma.erofs", "in"
-    assert_predicate testpath/"test.lzma.erofs", :exist?
+    assert_path_exists testpath/"test.lzma.erofs"
 
     # Unfortunately, fsck.erofs doesn't support extraction for now, and
     # erofsfuse doesn't officially work on MacOS

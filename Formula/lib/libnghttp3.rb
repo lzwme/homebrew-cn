@@ -17,10 +17,10 @@ class Libnghttp3 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_LIB_ONLY=1"
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_LIB_ONLY=1", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -39,8 +39,8 @@ class Libnghttp3 < Formula
       }
     C
 
-    flags = shell_output("pkg-config --cflags --libs libnghttp3").chomp.split
-    system ENV.cc, "test.c", *flags, "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs libnghttp3").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end
 end

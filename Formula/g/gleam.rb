@@ -20,7 +20,7 @@ class Gleam < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f61a5e3a6c7f504ec9369cbbaef5698d1037d895d22245d215e3f1a73afdcf0"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "erlang"
   depends_on "rebar3"
@@ -30,7 +30,6 @@ class Gleam < Formula
   end
 
   test do
-    Dir.chdir testpath
     system bin"gleam", "new", "test_project"
     Dir.chdir "test_project"
     system bin"gleam", "test"

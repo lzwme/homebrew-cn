@@ -21,7 +21,7 @@ class Gkrellm < Formula
     sha256 x86_64_linux:   "8d8b012ba597fb48d4a205aecfff14230f67053b25a504e64945378fa3331fd4"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "fontconfig"
@@ -51,13 +51,11 @@ class Gkrellm < Formula
   end
 
   test do
-    pid = fork do
-      exec "#{bin}/gkrellmd --pidfile #{testpath}/test.pid"
-    end
+    pid = spawn "#{bin}/gkrellmd --pidfile #{testpath}/test.pid"
     sleep 2
 
     begin
-      assert_predicate testpath/"test.pid", :exist?
+      assert_path_exists testpath/"test.pid"
     ensure
       Process.kill "SIGINT", pid
       Process.wait pid

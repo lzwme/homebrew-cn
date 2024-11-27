@@ -25,7 +25,7 @@ class Libmp3splt < Formula
     sha256 x86_64_linux:   "61f6d9accf005b87e7ef35000094703019abab54d6e7b851019552060cc93aae"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "gettext"
   depends_on "libid3tag"
@@ -36,9 +36,7 @@ class Libmp3splt < Formula
   depends_on "pcre"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

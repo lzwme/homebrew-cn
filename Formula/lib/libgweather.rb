@@ -30,7 +30,7 @@ class Libgweather < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "pygobject3" => :build
   depends_on "python@3.12" => :build
 
@@ -71,8 +71,8 @@ class Libgweather < Formula
       }
     C
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
-    pkg_config_flags = shell_output("pkg-config --cflags --libs gweather4").chomp.split
-    system ENV.cc, "-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE=1", "test.c", "-o", "test", *pkg_config_flags
+    flags = shell_output("pkgconf --cflags --libs gweather4").chomp.split
+    system ENV.cc, "-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE=1", "test.c", "-o", "test", *flags
     system "./test"
   end
 end

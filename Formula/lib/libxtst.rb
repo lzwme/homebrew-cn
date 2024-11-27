@@ -16,7 +16,7 @@ class Libxtst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51cacd4573d0d4e1cc33c83574cf4838d93de28276a9cd3c69496da8a4466771"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
 
   depends_on "libx11"
@@ -26,15 +26,13 @@ class Libxtst < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-specs=no
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

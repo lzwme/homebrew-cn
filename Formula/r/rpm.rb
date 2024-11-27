@@ -36,7 +36,7 @@ class Rpm < Formula
   # See https:github.comrpm-software-managementrpmissues2222 for details.
   depends_on macos: :ventura
   depends_on "openssl@3"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "popt"
   depends_on "readline"
   depends_on "sqlite"
@@ -64,7 +64,7 @@ class Rpm < Formula
 
     # ensure that pkg-config binary is found for dep generators
     inreplace "scriptspkgconfigdeps.sh",
-              "usrbinpkg-config", Formula["pkg-config"].opt_bin"pkg-config"
+              "usrbinpkg-config", Formula["pkgconf"].opt_bin"pkg-config"
 
     # work around Homebrew's prefix scheme which sets Python3_SITEARCH outside of prefix
     inreplace "pythonCMakeLists.txt", "${Python3_SITEARCH}", prefixLanguage::Python.site_packages(python3)
@@ -106,8 +106,7 @@ class Rpm < Formula
 
     system bin"rpmdb", "--initdb", "--root=#{testpath}"
     system bin"rpm", "-vv", "-qa", "--root=#{testpath}"
-    assert_predicate testpathvar"librpmrpmdb.sqlite", :exist?,
-                     "Failed to create 'rpmdb.sqlite' file"
+    assert_path_exists testpathvar"librpmrpmdb.sqlite", "Failed to create 'rpmdb.sqlite' file"
 
     %w[SPECS BUILD BUILDROOT].each do |dir|
       (testpath"rpmbuild#{dir}").mkpath
@@ -140,8 +139,8 @@ class Rpm < Formula
 
     EOS
     system bin"rpmbuild", "-ba", specfile
-    assert_predicate testpath"rpmbuildSRPMStest-1.0-1.src.rpm", :exist?
-    assert_predicate testpath"rpmbuildRPMSnoarchtest-1.0-1.noarch.rpm", :exist?
+    assert_path_exists testpath"rpmbuildSRPMStest-1.0-1.src.rpm"
+    assert_path_exists testpath"rpmbuildRPMSnoarchtest-1.0-1.noarch.rpm"
 
     info = shell_output(bin"rpm --query --package -i #{testpath}rpmbuildRPMSnoarchtest-1.0-1.noarch.rpm")
     assert_match "Name        : test", info

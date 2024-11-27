@@ -25,7 +25,7 @@ class PostgresqlAT15 < Formula
   deprecate! date: "2027-11-11", because: :unsupported
 
   depends_on "gettext" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "icu4c@76"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.

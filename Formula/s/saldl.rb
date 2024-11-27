@@ -22,7 +22,7 @@ class Saldl < Formula
 
   depends_on "asciidoc" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "curl" # curl >= 7.55 is required
   depends_on "libevent"
 

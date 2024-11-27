@@ -27,7 +27,7 @@ class Libsigrokdecode < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
   depends_on "python@3.13"
@@ -75,7 +75,7 @@ class Libsigrokdecode < Formula
         return 0;
       }
     C
-    flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libsigrokdecode").strip.split
+    flags = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs libsigrokdecode").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

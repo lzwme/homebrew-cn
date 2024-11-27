@@ -30,20 +30,20 @@ class Libp11 < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libtool"
   depends_on "openssl@3"
 
   def install
     openssl = deps.find { |d| d.name.match?(^openssl) }
                   .to_formula
-    enginesdir = Utils.safe_popen_read("pkg-config", "--variable=enginesdir", "libcrypto").chomp
+    enginesdir = Utils.safe_popen_read("pkgconf", "--variable=enginesdir", "libcrypto").chomp
     enginesdir.sub!(openssl.prefix.realpath, prefix)
 
     system ".bootstrap" if build.head?
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-enginesdir=#{enginesdir}"
+    system ".configure", "--disable-silent-rules",
+                          "--with-enginesdir=#{enginesdir}",
+                          *std_configure_args
     system "make", "install"
     pkgshare.install "examplesauth.c"
   end

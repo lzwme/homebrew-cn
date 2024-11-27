@@ -42,7 +42,7 @@ class Gnucobol < Formula
     uses_from_macos "flex" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # MacOSX provided BDB does not work (only _way_ work adjusted CFLAGS)
   # so we use the homebrew one
@@ -80,9 +80,8 @@ class Gnucobol < Formula
       inreplace "configure.ac", "AM_GNU_GETTEXT_VERSION", "AM_GNU_GETTEXT_REQUIRE_VERSION"
       system "build_aux/bootstrap", "install"
     end
-    system "./configure", *std_configure_args,
-                          *args
 
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

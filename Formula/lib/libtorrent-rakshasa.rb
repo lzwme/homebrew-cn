@@ -22,13 +22,12 @@ class LibtorrentRakshasa < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
-  conflicts_with "libtorrent-rasterbar",
-    because: "they both use the same libname"
+  conflicts_with "libtorrent-rasterbar", because: "they both use the same libname"
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

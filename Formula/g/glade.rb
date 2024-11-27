@@ -22,7 +22,7 @@ class Glade < Formula
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
@@ -72,8 +72,8 @@ class Glade < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs gladeui-2.0").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    pkgconf_flags = shell_output("pkgconf --cflags --libs gladeui-2.0").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
     system "./test"
   end
 end

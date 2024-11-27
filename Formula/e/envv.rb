@@ -42,7 +42,7 @@ class Envv < Formula
     assert_equal "mylist=B:C; export mylist", shell_output("#{bin}envv del mylist A").strip
     assert_equal "mylist=A:B; export mylist", shell_output("#{bin}envv del mylist C").strip
 
-    assert_equal "", shell_output("#{bin}envv add mylist B").strip
+    assert_empty shell_output("#{bin}envv add mylist B").strip
     assert_equal "mylist=B:A:C; export mylist", shell_output("#{bin}envv add mylist B 1").strip
     assert_equal "mylist=A:C:B; export mylist", shell_output("#{bin}envv add mylist B 99").strip
 

@@ -56,6 +56,6 @@ class Beancount < Formula
 
   test do
     (testpath"example.ledger").write shell_output("#{bin}bean-example").strip
-    assert_equal "", shell_output("#{bin}bean-check #{testpath}example.ledger").strip
+    assert_empty shell_output("#{bin}bean-check #{testpath}example.ledger").strip
   end
 end

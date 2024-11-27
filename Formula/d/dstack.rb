@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/ff/6e/071ddc34615e2f3ebe354b929c19df8325175a4025dc5c1af3eceac0c771/dstack-0.18.27.tar.gz"
-  sha256 "96fdf5acaf7711b208b875e23ac4a3d3435608364e1ffbee7f28055cd3b31a8b"
+  url "https://files.pythonhosted.org/packages/16/82/c0052e86b63d31992cab9fe9114dca9bc9d50412d9a9df6aaee7e2efe45b/dstack-0.18.28.tar.gz"
+  sha256 "2cd7ace0bca0faeb01ca73c6fed7df002de14cd664ec3bc6fdf2b1c5107f9460"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e355a6a458c765c862d37de6cc8d930eb21443ba6283c8e57482288a758ce736"
-    sha256 cellar: :any,                 arm64_sonoma:  "70717a1c458e0df19691566015ea30a81329d1525caa2438eaa0dc2f00df665b"
-    sha256 cellar: :any,                 arm64_ventura: "6325178a568ccd04a31f370e4ab0061b130e373d044d143866b77dd9c756ce1a"
-    sha256 cellar: :any,                 sonoma:        "ea5ae7519355a7a6981d52abe8daf6493e99a77c2a60ec6d5445fab25786b698"
-    sha256 cellar: :any,                 ventura:       "97dbf8018fcfb2c8aee2214fb705e298e4251f06f81fccc4fe5ac804cbcc5b12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fedfa213c69c43cd614103b0cb148d1f7b24f86b153f17f9d30c55ca680ddfd"
+    sha256 cellar: :any,                 arm64_sequoia: "d780aebe65a0cc19ea8d7a477386e3665603513b4dd16efcb5bf0c8a47dc26ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fce6c3b62d245686d909e0d8af8724851716ec5446cea8e01bdb59fb1fb0f3d"
+    sha256 cellar: :any,                 arm64_ventura: "46672ba0ebbdc4a5b57e4dc9d1f256cec2ece494bb1a7cfa1f7b53e564e14c9a"
+    sha256 cellar: :any,                 sonoma:        "66fb0d9981d6f7127e0c42336e787ab1eb3076d6ecd494e17851aafefc17ff17"
+    sha256 cellar: :any,                 ventura:       "b3b05ce6e6bcce4b3872501eb426173051b4d90f8d6e5826acf65e7da7d0a5da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfea9ed5521a59debce692a869653303df4b236e7ad46b9ff94ef8b6099dfc4c"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -36,8 +36,8 @@ class Dstack < Formula
   end
 
   resource "aiorwlock" do
-    url "https://files.pythonhosted.org/packages/ba/c5/882b4c89d71d6f9c7d0d8dee18d267025e71d4c3241eb3b16ab39105a0d1/aiorwlock-1.4.0.tar.gz"
-    sha256 "4cea5bec4e9d03533a26919299394822a1422aa519bca9dd09178ec490f8d1cc"
+    url "https://files.pythonhosted.org/packages/c5/bf/d1ddcd676be027a963b3b01fdf9915daf4590b4dfd03bf1c8c2858aac7e3/aiorwlock-1.5.0.tar.gz"
+    sha256 "b529da24da659bdedcf68faf216595bde00db228c905197ac554773620e7fd2f"
   end
 
   resource "aiosignal" do
@@ -66,8 +66,8 @@ class Dstack < Formula
   end
 
   resource "apscheduler" do
-    url "https://files.pythonhosted.org/packages/5e/34/5dcb368cf89f93132d9a31bd3747962a9dc874480e54333b0c09fa7d56ac/APScheduler-3.10.4.tar.gz"
-    sha256 "e6df071b27d9be898e486bc7940a7be50b4af2e9da7c08f0744a96d4bd4cef4a"
+    url "https://files.pythonhosted.org/packages/4e/00/6d6814ddc19be2df62c8c898c4df6b5b1914f3bd024b780028caa392d186/apscheduler-3.11.0.tar.gz"
+    sha256 "4c622d250b0955a65d5d0eb91c33e6d43fd879834bf541e0a18661ae60460133"
   end
 
   resource "asyncpg" do
@@ -131,13 +131,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/84/60/9120d532933b1401dd29b9264d8ddd7f30bd2e4e6b6c3fc42e33082ca5c5/boto3-1.35.67.tar.gz"
-    sha256 "4eb793c45123fbca1b2b152ce0d18272d19126cf89809cd6698bf2dfc66270fb"
+    url "https://files.pythonhosted.org/packages/b7/72/f80a131ac5e069b12975c1054243713c46617cc769dc78348e1d59a3f945/boto3-1.35.69.tar.gz"
+    sha256 "40db86c7732a310b282f595251995ecafcbd62009a57e47a22683862e570cc7a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d4/7d/e4a141353a360c55a9604dc0c4227623b8908bab8f481b222a9c24668490/botocore-1.35.67.tar.gz"
-    sha256 "d782e02f2949889cf97a140a89cd5e9363d0e4b0153db51faf7fc16305c6e0e1"
+    url "https://files.pythonhosted.org/packages/55/75/aaaa22f737b7a5251f2ab24f5860b1bfc55050a77b91524474bcaadb3070/botocore-1.35.69.tar.gz"
+    sha256 "f9f23dd76fb247d9b0e8d411d2995e6f847fc451c026f1e58e300f815b0b36eb"
   end
 
   resource "cached-classproperty" do
@@ -440,6 +440,11 @@ class Dstack < Formula
     sha256 "64badbc49180a5e401f373f9ce7ab1d18b63f7dd4a9cdc43c92b9f0b481cef7b"
   end
 
+  resource "psutil" do
+    url "https://files.pythonhosted.org/packages/26/10/2a30b13c61e7cf937f4adf90710776b7918ed0a9c434e2c38224732af310/psutil-6.1.0.tar.gz"
+    sha256 "353815f59a7f64cdaca1c0307ee13558a0512f6db064e92fe833784f08539c7a"
+  end
+
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
     sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
@@ -500,11 +505,6 @@ class Dstack < Formula
     sha256 "41330d831cae6e2f22902704ead2826ea038d0419530eadff3ea80175aec5538"
   end
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
-  end
-
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
@@ -556,8 +556,8 @@ class Dstack < Formula
   end
 
   resource "simple-term-menu" do
-    url "https://files.pythonhosted.org/packages/a1/a0/7e78b93510886f6fb5b7146bd5cee03986fa5c2319644155c275e389c55a/simple-term-menu-1.6.4.tar.gz"
-    sha256 "be9c5dbd8df12a404b14cd8e95d6fc02d58c60e2555f65ddde41777c487fb3b9"
+    url "https://files.pythonhosted.org/packages/40/7a/29d436e7b067532e901c0facd66da76c7aa8706b88bf04e0eeeaafec89fc/simple_term_menu-1.6.5.tar.gz"
+    sha256 "aa5745abbd5f329383207d759878750da1b103347df2c03174a829789c15efed"
   end
 
   resource "six" do
@@ -591,8 +591,8 @@ class Dstack < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/e8/4f/0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0/tqdm-4.67.0.tar.gz"
-    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
+    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "typing-extensions" do
@@ -621,8 +621,8 @@ class Dstack < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c8/27/2ba23c8cc85796e2d41976439b08d52f691655fdb9401362099502d1f0cf/watchfiles-0.24.0.tar.gz"
-    sha256 "afb72325b74fa7a428c009c1b8be4b4d7c2afedafb2982827ef2156646df2fe1"
+    url "https://files.pythonhosted.org/packages/9e/5e/5a9dfb8594b075d7c225d5fb628d498001c5dfae62298e9eb85b8754668f/watchfiles-1.0.0.tar.gz"
+    sha256 "37566c844c9ce3b5deb964fe1a23378e575e74b114618d211fbda8f59d7b5dab"
   end
 
   resource "websocket-client" do

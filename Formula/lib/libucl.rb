@@ -19,20 +19,17 @@ class Libucl < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     system ".autogen.sh"
 
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
+    args = %w[
       --disable-silent-rules
       --enable-utils
-      --prefix=#{prefix}
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

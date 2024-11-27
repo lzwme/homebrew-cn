@@ -29,11 +29,15 @@ class Libsecret < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "libgcrypt"
   uses_from_macos "libxslt" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
@@ -73,8 +77,8 @@ class Libsecret < Formula
       }
     C
 
-    pkg_config_cflags = shell_output("pkg-config --cflags --libs libsecret-1").chomp.split
-    system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs libsecret-1").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

@@ -24,7 +24,7 @@ class Libmypaint < Formula
 
   depends_on "gettext" => :build # for intltool
   depends_on "intltool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "json-c"
 
   uses_from_macos "perl" => :build

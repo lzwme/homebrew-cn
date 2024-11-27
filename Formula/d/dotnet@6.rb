@@ -20,7 +20,7 @@ class DotnetAT6 < Formula
   deprecate! date: "2024-11-12", because: :unsupported
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "icu4c@76"
   depends_on "openssl@3"

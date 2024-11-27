@@ -25,7 +25,7 @@ class GnuApl < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "glib"
   depends_on "gtk+3"
@@ -46,7 +46,6 @@ class GnuApl < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
@@ -57,13 +56,9 @@ class GnuApl < Formula
       )OFF
     EOS
 
-    pid = fork do
-      exec bin/"APserver"
-    end
-
-    sleep 4
-
+    pid = spawn bin/"APserver"
     begin
+      sleep 4
       assert_match "Hello world", shell_output("#{bin}/apl -s -f hello.apl")
     ensure
       Process.kill("SIGINT", pid)

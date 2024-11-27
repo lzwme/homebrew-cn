@@ -40,7 +40,7 @@ class Libspatialite < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freexl"
   depends_on "geos"
   depends_on "librttopo"
@@ -68,14 +68,12 @@ class Libspatialite < Formula
     ENV.append "CFLAGS", "-I#{sqlite.opt_include}"
 
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --with-sysroot=#{HOMEBREW_PREFIX}
       --enable-geocallbacks
       --enable-rttopo=yes
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

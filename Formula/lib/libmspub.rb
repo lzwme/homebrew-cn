@@ -22,7 +22,7 @@ class Libmspub < Formula
 
   depends_on "boost" => :build
   depends_on "libwpg" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "icu4c@76"
   depends_on "librevenge"
   depends_on "libwpd"

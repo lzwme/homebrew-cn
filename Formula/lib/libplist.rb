@@ -20,7 +20,7 @@ class Libplist < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
     ENV.deparallelize
@@ -30,8 +30,8 @@ class Libplist < Formula
       --without-cython
     ]
 
-    system ".autogen.sh", *std_configure_args, *args if build.head?
-    system ".configure", *std_configure_args, *args if build.stable?
+    system ".autogen.sh", *args, *std_configure_args if build.head?
+    system ".configure", *args, *std_configure_args if build.stable?
     system "make"
     system "make", "install"
   end
@@ -52,7 +52,6 @@ class Libplist < Formula
       <plist>
     EOS
     system bin"plistutil", "-i", "test.plist", "-o", "test_binary.plist"
-    assert_predicate testpath"test_binary.plist", :exist?,
-                     "Failed to create converted plist!"
+    assert_path_exists testpath"test_binary.plist", "Failed to create converted plist!"
   end
 end

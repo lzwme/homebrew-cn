@@ -66,7 +66,7 @@ class Qt < Formula
   depends_on maximum_macos: [:sonoma, :build] # https:bugreports.qt.iobrowseQTBUG-128900
   depends_on "ninja" => :build
   depends_on "node" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "vulkan-headers" => [:build, :test]
   depends_on "vulkan-loader" => [:build, :test]
@@ -143,8 +143,6 @@ class Qt < Formula
     depends_on "xcb-util-renderutil"
     depends_on "xcb-util-wm"
   end
-
-  fails_with gcc: "5"
 
   resource "html5lib" do
     url "https:files.pythonhosted.orgpackagesacb6b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2html5lib-1.1.tar.gz"

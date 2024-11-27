@@ -18,6 +18,7 @@ class OpenaiWhisper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b019e05f4ec4d9a1cab322adc279ec2d89d07b32e0fa48b906902a3eaeb2c6"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for tiktoken
   depends_on "certifi"
   depends_on "ffmpeg"
@@ -25,10 +26,6 @@ class OpenaiWhisper < Formula
   depends_on "numpy"
   depends_on "python@3.13"
   depends_on "pytorch"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"

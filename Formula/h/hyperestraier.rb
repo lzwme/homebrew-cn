@@ -28,7 +28,7 @@ class Hyperestraier < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "67da1265df5336838e42f563b8b90041d83d848739bf7972950de444cef78650"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "qdbm"
 
   def install

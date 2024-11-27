@@ -1,8 +1,8 @@
 class Libetonyek < Formula
   desc "Interpret and import Apple Keynote presentations"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
-  url "https://dev-www.libreoffice.org/src/libetonyek/libetonyek-0.1.11.tar.xz"
-  sha256 "4bbce5aecbfc939e24a2c654efed561930c4605c270476df455fb3118b3ce3ce"
+  url "https://dev-www.libreoffice.org/src/libetonyek/libetonyek-0.1.12.tar.xz"
+  sha256 "b9fa82fbeb8cb7a701101060e4f3e1e4ef7c38f574b2859d3ecbe43604c21f83"
   license "MPL-2.0"
 
   livecheck do
@@ -11,18 +11,18 @@ class Libetonyek < Formula
   end
 
   bottle do
-    sha256               arm64_sequoia: "33625e0fd425a1d316273c53d0fc0b78a4731d2181f4368c662a19f3c4d9d36e"
-    sha256               arm64_sonoma:  "2aa916c2a2a69ddb9aee72cb2817b5403372d3bbbe6a0816a59f27c5a0c499fa"
-    sha256               arm64_ventura: "1a6406249a29e3bd3aa3919dff1f293ddb3fb688e9c2486e4604b7838d12f2c2"
-    sha256 cellar: :any, sonoma:        "3f12af26a6a0a2a921f63b645f8ee81637ac431e0870452644c3b70818c43570"
-    sha256 cellar: :any, ventura:       "9149bd7f11e97a6f61896d5a9df299e93911d7767e6e251558d684d6cbe54097"
-    sha256               x86_64_linux:  "4b6a13e931fc36ec5dc12cbd690632940e23663bdab180cbfb9f34977c79964e"
+    sha256               arm64_sequoia: "0eb492997db6e7df366f6be4b4c30778aed163f97279c114325d3c1caf551032"
+    sha256               arm64_sonoma:  "5b0326bceb378ae5864f2be1b20d835e8f033cef7e0a12fc08e21a9bc1010161"
+    sha256               arm64_ventura: "18b9e602c028f0c0c77b366ac2509f74bc2243f557b20c510952b389b512ca95"
+    sha256 cellar: :any, sonoma:        "5976299ba865549520b864036093f709d7fa18fd06fb46de1a8773ee0da058b5"
+    sha256 cellar: :any, ventura:       "b40d8148bec5f1360852a4e4a943e7d2e28b1ec95c747cc0d4516a438e8a1218"
+    sha256               x86_64_linux:  "88cd3008e344d4ebf311a8035ef6b0108e9811046c43c4480831df4c169b66dc"
   end
 
   depends_on "boost" => :build
   depends_on "glm" => :build
   depends_on "mdds" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "librevenge"
 
   uses_from_macos "libxml2"

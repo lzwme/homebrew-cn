@@ -21,7 +21,7 @@ class Libgig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "55b3244b6baa9d30aa0d625a9c27455437b8bb85a1feb61571dec1d4dd765e81"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libsndfile"
 
   on_linux do
@@ -29,9 +29,7 @@ class Libgig < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

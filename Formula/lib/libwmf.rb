@@ -25,7 +25,7 @@ class Libwmf < Formula
     sha256 x86_64_linux:   "a18467741b4b8a3b995017473f8481d46023e36f5af44b28be538aa306007962"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "freetype"
   depends_on "gd"

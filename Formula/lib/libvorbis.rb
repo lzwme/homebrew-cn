@@ -33,7 +33,7 @@ class Libvorbis < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
 
   resource("oggfile") do
@@ -44,8 +44,7 @@ class Libvorbis < Formula
   def install
     system "./autogen.sh" if build.head?
     inreplace "configure", " -force_cpusubtype_ALL", ""
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

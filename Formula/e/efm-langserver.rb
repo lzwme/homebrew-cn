@@ -1,20 +1,18 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
   homepage "https:github.commattnefm-langserver"
-  url "https:github.commattnefm-langserverarchiverefstagsv0.0.53.tar.gz"
-  sha256 "2e315b6c563a994d8f5b3d2d8e5be629628b1f6dc7e4a82d9ea1a5deb8c81be6"
+  url "https:github.commattnefm-langserverarchiverefstagsv0.0.54.tar.gz"
+  sha256 "4149b2922899ce313a89f60851f6678369253ed542dd65bdc8dd22f3cf1629bb"
   license "MIT"
   head "https:github.commattnefm-langserver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9f2519c8b0bd2c84a34ab41818136152b191813d12d6c79469d8dce1f80f1554"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acdd9f4c7834504e7e8c5078d64c5c602818cd9e51229cfc23c8c6a507d43eb5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acdd9f4c7834504e7e8c5078d64c5c602818cd9e51229cfc23c8c6a507d43eb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acdd9f4c7834504e7e8c5078d64c5c602818cd9e51229cfc23c8c6a507d43eb5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b614e49df5008158661b2dcdf75a1baacad164372e426dcaee83e244999ce3ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "b614e49df5008158661b2dcdf75a1baacad164372e426dcaee83e244999ce3ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "b614e49df5008158661b2dcdf75a1baacad164372e426dcaee83e244999ce3ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22b2233ec19c7568d83661cbfd6cb196ef85d64fa74a779ca599399c75c7b081"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89928fa34e9f83ed16f3a69e36b7a01bb2566a2c9a56c14bbd486f553641ce97"
+    sha256 cellar: :any_skip_relocation, ventura:       "89928fa34e9f83ed16f3a69e36b7a01bb2566a2c9a56c14bbd486f553641ce97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c26b74e7b23809dab23791a2366f8ab2720a07dc35b7759d67f391303daa3d3"
   end
 
   depends_on "go" => :build

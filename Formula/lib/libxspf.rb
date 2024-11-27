@@ -20,7 +20,7 @@ class Libxspf < Formula
   end
 
   depends_on "cpptest" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "uriparser"
 
   uses_from_macos "expat"

@@ -25,7 +25,7 @@ class Libnids < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libnet"
 
@@ -41,7 +41,7 @@ class Libnids < Formula
 
   def install
     # autoreconf the old 2005 era code for sanity.
-    system "autoreconf", "-ivf"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--prefix=#{prefix}", "--mandir=#{man}",
                           "--enable-shared"
     system "make", "install"

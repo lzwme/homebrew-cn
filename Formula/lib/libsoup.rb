@@ -17,7 +17,7 @@ class Libsoup < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
 
@@ -68,8 +68,8 @@ class Libsoup < Formula
       }
     C
 
-    pkg_config_flags = shell_output("pkg-config --cflags --libs libsoup-3.0").chomp.split
-    system ENV.cc, "test.c", "-o", "test", *pkg_config_flags
+    flags = shell_output("pkgconf --cflags --libs libsoup-3.0").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

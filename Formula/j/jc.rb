@@ -3,18 +3,17 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https:github.comkellyjonbraziljc"
-  url "https:files.pythonhosted.orgpackagesa582bfb1ec7d9667bc2f922254bc62e12fd460a5de3b711518f5089df0a17180jc-1.25.3.tar.gz"
-  sha256 "fa3140ceda6cba1210d1362f363cd79a0514741e8a1dd6167db2b2e2d5f24f7b"
+  url "https:files.pythonhosted.orgpackages5b82146ef4c94297ef87c6a732c92dd57761bea2c2179e1b8ca8a6b9b8dd6ff7jc-1.25.4.tar.gz"
+  sha256 "a32eaf029c56b582dadae48895f20784d0f84f2fa28a8e2b32f377a8bffa8b39"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bcd8287e3d93d1b538b33368b87c69b11a089aa0188d6e8cd7d0b8680d612df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bcd8287e3d93d1b538b33368b87c69b11a089aa0188d6e8cd7d0b8680d612df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bcd8287e3d93d1b538b33368b87c69b11a089aa0188d6e8cd7d0b8680d612df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4a3db1b3dacc4d23c1c4a3db8894d2203aaa7de2ca69bd579bfe906205b7876"
-    sha256 cellar: :any_skip_relocation, ventura:       "e4a3db1b3dacc4d23c1c4a3db8894d2203aaa7de2ca69bd579bfe906205b7876"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bcd8287e3d93d1b538b33368b87c69b11a089aa0188d6e8cd7d0b8680d612df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0de81faab274ebbfa4289870a9ab9497059ec7a76af0e6f95ce5efc0ca3e9b8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0de81faab274ebbfa4289870a9ab9497059ec7a76af0e6f95ce5efc0ca3e9b8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0de81faab274ebbfa4289870a9ab9497059ec7a76af0e6f95ce5efc0ca3e9b8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cab2ae0a9da71eb21e2b0a553ced8f03953a277f74bcb97ce58ca207ab752224"
+    sha256 cellar: :any_skip_relocation, ventura:       "cab2ae0a9da71eb21e2b0a553ced8f03953a277f74bcb97ce58ca207ab752224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0de81faab274ebbfa4289870a9ab9497059ec7a76af0e6f95ce5efc0ca3e9b8e"
   end
 
   depends_on "libyaml"
@@ -31,8 +30,8 @@ class Jc < Formula
   end
 
   resource "xmltodict" do
-    url "https:files.pythonhosted.orgpackages98f7d29b8cdc9d8d075673be0f800013c1161e2fd4234546a140855a1bcc9eb4xmltodict-0.14.1.tar.gz"
-    sha256 "338c8431e4fc554517651972d62f06958718f6262b04316917008e8fd677a6b0"
+    url "https:files.pythonhosted.orgpackages500551dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958fxmltodict-0.14.2.tar.gz"
+    sha256 "201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"
   end
 
   def install

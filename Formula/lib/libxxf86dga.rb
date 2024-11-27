@@ -18,21 +18,19 @@ class Libxxf86dga < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "80432c3b9c22e33647c255fc8669b182d3980df952d6e5f7f1c93e6d31b56285"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
   depends_on "libxext"
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

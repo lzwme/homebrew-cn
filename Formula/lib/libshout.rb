@@ -25,7 +25,7 @@ class Libshout < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "898c7da67e779f3cce1a4b3f7b5cff8af87725d7235b3a138c06396db1b2eeec"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "openssl@3"

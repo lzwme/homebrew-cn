@@ -20,7 +20,7 @@ class Libstrophe < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   uses_from_macos "expat"
@@ -29,9 +29,7 @@ class Libstrophe < Formula
 
   def install
     system ".bootstrap.sh"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

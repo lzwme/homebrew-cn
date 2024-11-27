@@ -14,7 +14,7 @@ class Libva < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f09fc392caac089c8689d89ccbfd9bea27689afd747313e84ff59ca21f339b78"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libdrm"
   depends_on "libx11"
   depends_on "libxext"
@@ -23,22 +23,21 @@ class Libva < Formula
   depends_on "wayland"
 
   def install
-    system ".configure", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
+    system ".configure", "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
-                          "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--enable-drm",
                           "--enable-x11",
                           "--disable-glx",
-                          "--enable-wayland"
+                          "--enable-wayland",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
     %w[libva libva-drm libva-wayland libva-x11].each do |name|
-      assert_match "-I#{include}", shell_output("pkg-config --cflags #{name}")
+      assert_match "-I#{include}", shell_output("pkgconf --cflags #{name}")
     end
     (testpath"test.c").write <<~C
       #include <vava.h>

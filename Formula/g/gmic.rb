@@ -21,7 +21,7 @@ class Gmic < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cimg"
   depends_on "fftw"
   depends_on "imath"
@@ -61,6 +61,6 @@ class Gmic < Formula
     end
     system bin"gmic", "-input", test_fixtures("test.jpg"), "rodilius", "10,4,400,16",
            "smooth", "60,0,1,1,4", "normalize_local", "10,16", "-output", testpath"test_rodilius.jpg"
-    assert_predicate testpath"test_rodilius.jpg", :exist?
+    assert_path_exists testpath"test_rodilius.jpg"
   end
 end

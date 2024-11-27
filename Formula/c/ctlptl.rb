@@ -29,7 +29,7 @@ class Ctlptl < Formula
 
   test do
     assert_match "v#{version}", shell_output("#{bin}ctlptl version")
-    assert_equal "", shell_output("#{bin}ctlptl get")
+    assert_empty shell_output("#{bin}ctlptl get")
     assert_match "not found", shell_output("#{bin}ctlptl delete cluster nonexistent 2>&1", 1)
   end
 end

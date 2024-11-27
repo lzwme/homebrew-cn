@@ -28,7 +28,7 @@ class Libpinyin < Formula
   # macOS `ld64` does not like the `.la` files created during the build.
   # upstream issue report, https:github.comlibpinyinlibpinyinissues158
   depends_on "lld" => :build if DevelopmentTools.clang_build_version >= 1400
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
 
   on_macos do

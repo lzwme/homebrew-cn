@@ -1,18 +1,18 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https:github.comabhinavgit-spice"
-  url "https:github.comabhinavgit-spicearchiverefstagsv0.8.1.tar.gz"
-  sha256 "4336863f756709bff6a1a39430512734faf823c38b922a60ea43cb1bca1e9908"
+  url "https:github.comabhinavgit-spicearchiverefstagsv0.9.0.tar.gz"
+  sha256 "c798cc30845b43e9df1a530af6ba132e4a95770cd861f5b030925e11a2c8a3fd"
   license "GPL-3.0-or-later"
   head "https:github.comabhinavgit-spice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6a5f405f3321aeec60653f58e389542db6b53a2ccf00981d1e468997322b859"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6a5f405f3321aeec60653f58e389542db6b53a2ccf00981d1e468997322b859"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6a5f405f3321aeec60653f58e389542db6b53a2ccf00981d1e468997322b859"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e4c6850a0fce7529376eec85eb11a79480b24e5d4cd008ef763b5d21404b5e7"
-    sha256 cellar: :any_skip_relocation, ventura:       "9e4c6850a0fce7529376eec85eb11a79480b24e5d4cd008ef763b5d21404b5e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ee01da42d93f86411695e7e2533932b60abcdb17ad65d4faae3a64a8d801b47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52f0b4649f858c8ea073b70fc5d7c56be025232b0d7e12cd2b65496367c831b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a52f0b4649f858c8ea073b70fc5d7c56be025232b0d7e12cd2b65496367c831b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a52f0b4649f858c8ea073b70fc5d7c56be025232b0d7e12cd2b65496367c831b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a352af4894f7bf28dff834dd9c6cfcf6eee07e344accf03e0406ce749f6de71"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a352af4894f7bf28dff834dd9c6cfcf6eee07e344accf03e0406ce749f6de71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8ca7adea8fa623ab630a2c832b5c4f4d9ece69535a6cfe5a28e51aa8f6a15c5"
   end
 
   depends_on "go" => :build

@@ -1,11 +1,10 @@
 class SpidermonkeyAT115 < Formula
   desc "JavaScript-C Engine"
   homepage "https:spidermonkey.dev"
-  url "https:archive.mozilla.orgpubfirefoxreleases115.17.0esrsourcefirefox-115.17.0esr.source.tar.xz"
-  version "115.17.0"
-  sha256 "80f184a102a743ee75401e86dd86af0be5f1e5ebf07c81119d9ca77422d716c3"
+  url "https:archive.mozilla.orgpubfirefoxreleases115.18.0esrsourcefirefox-115.18.0esr.source.tar.xz"
+  version "115.18.0"
+  sha256 "2a79174f743caa1bffcc6f4e95e4642b0f36ab24cfa94e4dca0663e0d45c344c"
   license "MPL-2.0"
-  revision 1
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
   # Firefox ESR release versions.
@@ -15,12 +14,12 @@ class SpidermonkeyAT115 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "3aebca08e0acc92e4ccc247686838664b7f392138f352d2911a4a56784233667"
-    sha256 cellar: :any, arm64_sonoma:  "2138280c5b28d8ae8a5d020ec58dfafb4f5d37ee303510abccc1735529e64b90"
-    sha256 cellar: :any, arm64_ventura: "592fa5ac198f1b18c0c00156d814495da628d23dde64fd7f377819822f9f88b3"
-    sha256 cellar: :any, sonoma:        "ec5329a777657c76f8d2ccd1bdf93d1113d81b30d9f3d647a98252bcc23d481c"
-    sha256 cellar: :any, ventura:       "b7a84a181eb2b6c5bd90afd99bad0af21957e94a03eb986504de601ad9440937"
-    sha256               x86_64_linux:  "752a0b12ed649b4eaf208b3aeb1aeadaf6bb8775d9269eb8e4858159244fee2a"
+    sha256 cellar: :any, arm64_sequoia: "ac5efe200d732f8698375165dd788d8030e39a62f069055966edcc50cf61d5ac"
+    sha256 cellar: :any, arm64_sonoma:  "fe7570f7aca00cad06b343a900d1c7dd36c449957394d6baa356e09bdae6237e"
+    sha256 cellar: :any, arm64_ventura: "c15376eab09e478ea144f6b2b062b61564a5fd7e24afbe8479e36cb33748fecc"
+    sha256 cellar: :any, sonoma:        "06daae4b712047cdd9f4901fb2f44d8c0773f8da60c9284e5374c26b9f3cfaa0"
+    sha256 cellar: :any, ventura:       "c6ccd1f907ac0ddfc352cb9fef18a8ea2312564b4fc66de6ec75e8ee5a46842e"
+    sha256               x86_64_linux:  "e693c7e42d1d6c034c079ac7276aae7238ccc058d12dea0223c4826ffc5698a0"
   end
 
   disable! date: "2025-07-01", because: :versioned_formula

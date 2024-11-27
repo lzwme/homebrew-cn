@@ -21,7 +21,7 @@ class Libzen < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # These files used to be distributed as part of the media-info formula
   link_overwrite "includeZenLib*"

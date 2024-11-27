@@ -14,7 +14,7 @@ class Libmtp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa88301d0fda571bdac1fee606be3dae4a207a403c658592f9a914f53c9e9579"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install

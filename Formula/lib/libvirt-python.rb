@@ -19,7 +19,7 @@ class LibvirtPython < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "083260eab1d2a1223373b8512eb0cdb79c33b70c9331908a75aa2c382473c4fa"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libvirt"
   depends_on "python@3.13"
 

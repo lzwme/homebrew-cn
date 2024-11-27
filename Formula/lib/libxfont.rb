@@ -21,7 +21,7 @@ class Libxfont < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2c2202c343f1c42b642eaa9e4410f3886faf1158fd7a271ad928623922a43ee"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "xtrans" => :build
   depends_on "freetype"
@@ -33,17 +33,15 @@ class Libxfont < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
       --enable-devel-docs=no
       --with-freetype-config=#{Formula["freetype"].opt_bin}/freetype-config
       --with-bzip2
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

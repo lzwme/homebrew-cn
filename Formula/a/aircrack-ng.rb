@@ -39,6 +39,7 @@ class AircrackNg < Formula
   depends_on "sqlite"
 
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
 
   # Remove root requirement from OUI update script. See:
   # https:github.comHomebrewhomebrewpull12755
@@ -97,6 +98,6 @@ __END__
 -	echo Run it as root ; exit ;
 -fi
 -
- 
+
  if [ ! -d "${OUI_PATH}" ]; then
  	mkdir -p ${OUI_PATH}

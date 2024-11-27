@@ -16,10 +16,10 @@ class Libxfont2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1290f56a9f831c1a2c8d8765bc300519e448bc334d6a156061cc5e05162a3c5f"
   end
 
-  depends_on "pkg-config"  => :build
+  depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
-  depends_on "xorgproto"   => [:build, :test]
-  depends_on "xtrans"      => :build
+  depends_on "xorgproto" => [:build, :test]
+  depends_on "xtrans" => :build
 
   depends_on "freetype"
   depends_on "libfontenc"
@@ -28,7 +28,7 @@ class Libxfont2 < Formula
   uses_from_macos "zlib"
 
   def install
-    configure_args = std_configure_args + %w[
+    configure_args = %w[
       --with-bzip2
       --enable-devel-docs=no
       --enable-snfformat
@@ -37,7 +37,7 @@ class Libxfont2 < Formula
       --enable-ipv6
     ]
 
-    system "./configure", *configure_args
+    system "./configure", *configure_args, *std_configure_args
     system "make"
     system "make", "install"
   end
