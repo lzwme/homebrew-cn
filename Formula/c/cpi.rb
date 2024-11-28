@@ -18,8 +18,6 @@ class Cpi < Formula
 
   uses_from_macos "llvm"
 
-  fails_with gcc: "5"
-
   def install
     system "qmake", "CONFIG+=release", "target.path=#{bin}"
     system "make"

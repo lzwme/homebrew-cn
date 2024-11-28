@@ -41,8 +41,6 @@ class MariadbAT103 < Formula
     depends_on "linux-pam"
   end
 
-  fails_with gcc: "5"
-
   def install
     # Set basedir and ldata so that mysql_install_db can find the server
     # without needing an explicit path to be set. This can still

@@ -22,7 +22,7 @@ class Openjdk < Formula
   keg_only :shadowed_by_macos
 
   depends_on "autoconf" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on xcode: :build # for metal
   depends_on "freetype"
   depends_on "giflib"
@@ -48,8 +48,6 @@ class Openjdk < Formula
     depends_on "libxt"
     depends_on "libxtst"
   end
-
-  fails_with gcc: "5"
 
   # From https:jdk.java.netarchive
   resource "boot-jdk" do

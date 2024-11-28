@@ -30,8 +30,6 @@ class Clazy < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5" # C++17
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCLAZY_LINK_CLANG_DYLIB=ON", *std_cmake_args
     system "cmake", "--build", "build"

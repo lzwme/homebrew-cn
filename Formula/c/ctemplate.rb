@@ -26,8 +26,6 @@ class Ctemplate < Formula
   depends_on "libtool" => :build
   uses_from_macos "python" => :build
 
-  fails_with gcc: "5"
-
   def install
     system ".autogen.sh"
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

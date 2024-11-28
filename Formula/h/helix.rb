@@ -21,8 +21,6 @@ class Helix < Formula
 
   conflicts_with "hex", because: "both install `hx` binaries"
 
-  fails_with gcc: "5" # For C++17
-
   def install
     ENV["HELIX_DEFAULT_RUNTIME"] = libexec"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")

@@ -36,16 +36,8 @@ class Fzf < Formula
 
   def caveats
     <<~EOS
-      To set up shell integration, add this to your shell configuration file:
-        # bash
-        eval "$(fzf --bash)"
-
-        # zsh
-        source <(fzf --zsh)
-
-        # fish
-        fzf --fish | source
-
+      To set up shell integration, see:
+        https:github.comjunegunnfzf#setting-up-shell-integration
       To use fzf in Vim, add the following line to your .vimrc:
         set rtp+=#{opt_prefix}
     EOS

@@ -43,8 +43,6 @@ class MariadbAT109 < Formula
     depends_on "readline" # uses libedit on macOS
   end
 
-  fails_with gcc: "5"
-
   # Fix libfmt usage.
   # https:github.comMariaDBserverpull2732
   patch do

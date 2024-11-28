@@ -1,18 +1,18 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2024.11.18.00.tar.gz"
-  sha256 "1dda15fa8f9bb510d6cc3014a5e783dd0d41f3885b539d9f8a8c937d93da9b15"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2024.11.25.00.tar.gz"
+  sha256 "0be6415d20e6a8a39246e177d8ec4452dad98fd6085397bed825b8f71acaf305"
   license "MIT"
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7c96b430a27c127156850852a791008c94ce16afa87f1d8f7ed151a048320024"
-    sha256 cellar: :any,                 arm64_sonoma:  "55f403193ea71e98d0757f1a54db6e1bda940b9a796ac7bead0ff69b4cce88cb"
-    sha256 cellar: :any,                 arm64_ventura: "714e67a7b7411ca04378da6875a658c93c4fb57198281b2c4d27f00a98a34cb8"
-    sha256 cellar: :any,                 sonoma:        "41cae9d097af1ef1f98034580efa364fda841b13902bb0c6ac61742c53ea74e2"
-    sha256 cellar: :any,                 ventura:       "f59f8a08ec932e0c97befec56cab828f3975228df182e23cf53ef3ca0142ff17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3403a22d4cdcddb1be0c3eec2150b54750ac16c881f536e538c4a51a52e0b035"
+    sha256 cellar: :any,                 arm64_sequoia: "d9655b2dcfb50ab9d746db2387891aeacc2b56d58a805a3d8c47ebc885ef3a03"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d8e675b59976097a3301a9189f9a02be14ff29dd64115d0096cf42e2aeab35d"
+    sha256 cellar: :any,                 arm64_ventura: "6da9d2d18df0298918afb5f87f4c74b8ede02f67fdfb6e4c855d8e9ffee2cee2"
+    sha256 cellar: :any,                 sonoma:        "fea1bef225a3f1178319334777473b6d304690c79f4f1ddd2795e59122b7db88"
+    sha256 cellar: :any,                 ventura:       "0b808e134b07d5a1d393c5760374e0dac87d127a1281e53fbfb989445fc544c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c1b58edb12453b06ffc6f4cd7cdc09805eab3212dd1d011367546dd3777c4c8"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,9 @@ class Watchman < Formula
     depends_on "boost"
     depends_on "libunwind"
   end
+
+  # Workaround for https:github.comGuillaumeGomezsysinfoissues1392
+  patch :DATA
 
   def install
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
@@ -71,3 +74,16 @@ class Watchman < Formula
     assert_equal(version.to_s, shell_output("#{bin}watchman -v").chomp)
   end
 end
+
+__END__
+--- awatchmancliCargo.toml
++++ bwatchmancliCargo.toml
+@@ -16,7 +16,7 @@
+ serde = { version = "1.0.185", features = ["derive", "rc"] }
+ serde_json = { version = "1.0.132", features = ["float_roundtrip", "unbounded_depth"] }
+ structopt = "0.3.26"
+-sysinfo = "0.30.11"
++sysinfo = "0.32.1"
+ tabular = "0.2.0"
+ tokio = { version = "1.41.0", features = ["full", "test-util", "tracing"] }
+ watchman_client = { version = "0.9.0", path = "..rustwatchman_client" }

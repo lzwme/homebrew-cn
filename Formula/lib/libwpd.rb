@@ -27,7 +27,8 @@ class Libwpd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "589effab1c398690ba5ee3b616d3ab9667260d013ac3ebb93aef4a69dc1ebe9b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "boost" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libgsf"
   depends_on "librevenge"
@@ -37,8 +38,7 @@ class Libwpd < Formula
   patch :DATA
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

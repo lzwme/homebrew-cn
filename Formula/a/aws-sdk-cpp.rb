@@ -31,8 +31,6 @@ class AwsSdkCpp < Formula
 
   conflicts_with "s2n", because: "both install s2nunstablecrl.h"
 
-  fails_with gcc: "5"
-
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     # Avoid OOM failure on Github runner

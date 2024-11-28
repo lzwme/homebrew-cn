@@ -19,8 +19,6 @@ class Bcpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99e6dc868a2b3bd6fcf189124cccaccdd1322ee18a51dc23055e8579d2e28e8"
   end
 
-  fails_with gcc: "5"
-
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"

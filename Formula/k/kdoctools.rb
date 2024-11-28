@@ -37,8 +37,6 @@ class Kdoctools < Formula
   uses_from_macos "libxslt"
   uses_from_macos "perl"
 
-  fails_with gcc: "5"
-
   resource "URI::Escape" do
     on_linux do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.27.tar.gz"

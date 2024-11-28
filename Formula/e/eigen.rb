@@ -13,8 +13,8 @@ class Eigen < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "b7d3fc4023e664e69392994530a88aa0b6f2a81067da6d64727cf983db2c1bd1"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "06503290dc3c07a67b8f582046b0a7f0bd68c2cb2da1e5bc071710de5ba7f5ec"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +24,6 @@ class Eigen < Formula
   def install
     system "cmake", "-S", ".", "-B", "eigen-build", "-Dpkg_config_libdir=#{lib}", *std_cmake_args
     system "cmake", "--install", "eigen-build"
-    (share/"cmake/Modules").install "cmake/FindEigen3.cmake"
   end
 
   test do

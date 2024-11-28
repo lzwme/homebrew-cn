@@ -15,7 +15,7 @@ class Gsmartcontrol < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "at-spi2-core"
   depends_on "atkmm@2.28"
   depends_on "cairo"

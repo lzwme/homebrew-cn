@@ -38,8 +38,6 @@ class Dspdfviewer < Formula
     depends_on "gettext"
   end
 
-  fails_with gcc: "5"
-
   def install
     args = %w[
       -DRunDualScreenTests=OFF

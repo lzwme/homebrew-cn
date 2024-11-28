@@ -59,6 +59,6 @@ class Omake < Formula
       .DEFAULT: hello$(EXE)
     EOF
     system bin"omake", "hello"
-    assert_equal shell_output(testpath"hello"), "Hello, world!\n"
+    assert_equal "Hello, world!\n", shell_output(testpath"hello")
   end
 end

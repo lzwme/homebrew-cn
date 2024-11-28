@@ -24,19 +24,20 @@ class Libmusicbrainz < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "neon"
 
   uses_from_macos "libxml2"
 
-  on_linux do
-    depends_on "pkg-config"
+  # Backport fix to build with newer libxml2
+  patch do
+    url "https:github.commetabrainzlibmusicbrainzcommit4655b571a70d73d41467091f59c518517c956198.patch?full_index=1"
+    sha256 "ee0c63e56a17156bca13b157744a54aeed6e19b39f65b14f2a5ac4e504358c8e"
   end
 
   def install
-    neon = Formula["neon"]
-    neon_args = %W[-DNEON_LIBRARIES:FILEPATH=#{neon.lib}#{shared_library("libneon")}
-                   -DNEON_INCLUDE_DIR:PATH=#{neon.include}neon]
-    system "cmake", ".", *(std_cmake_args + neon_args)
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
+    system "cmake", "--build", "."
+    system "cmake", "--install", "."
   end
 end

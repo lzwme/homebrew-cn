@@ -6,6 +6,14 @@ class OhMyPosh < Formula
   license "MIT"
   head "https:github.comJanDeDobbeleeroh-my-posh.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "43aafb2499d4da16fe29681dadaf70628878c5bac33988732de0604de900eb6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6757d997d0065f573411d2486ca2ed764fc3a510a5b5903eff6ff827c712dcd"

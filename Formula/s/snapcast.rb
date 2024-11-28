@@ -17,7 +17,7 @@ class Snapcast < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libogg"
   depends_on "libsoxr"
@@ -50,7 +50,7 @@ class Snapcast < Formula
     client_pid = spawn bin"snapclient", out: w
     w.close
 
-    sleep 5
+    sleep 10
     Process.kill("SIGTERM", client_pid)
 
     output = r.read

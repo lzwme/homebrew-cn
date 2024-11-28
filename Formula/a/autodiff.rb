@@ -22,8 +22,6 @@ class Autodiff < Formula
   depends_on "eigen"
   depends_on "pybind11"
 
-  fails_with gcc: "5"
-
   def python3
     "python3.13"
   end

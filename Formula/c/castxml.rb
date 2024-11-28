@@ -1,10 +1,9 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https:github.comCastXMLCastXML"
-  url "https:github.comCastXMLCastXMLarchiverefstagsv0.6.8.tar.gz"
-  sha256 "b517a9d18ddb7f71b3b053af61fc393dd81f17911e6c6d53a85f3f523ba8ad64"
+  url "https:github.comCastXMLCastXMLarchiverefstagsv0.6.10.tar.gz"
+  sha256 "d8498b39b4cf3d57671254056013de177f47fc7a2683f1a53049ab854d85ad55"
   license "Apache-2.0"
-  revision 2
   head "https:github.comCastXMLcastxml.git", branch: "master"
 
   livecheck do
@@ -13,18 +12,16 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "09eeab9e19404218b6f4257df621f695da81d4a16d2d139a81e3816efde16798"
-    sha256 cellar: :any,                 arm64_sonoma:  "5902e2b5e7ee77601d3b3b5134e3c75fcf6fd9d1514d944355f0ee750bf3eddf"
-    sha256 cellar: :any,                 arm64_ventura: "5022195efbecd4ab3e41df8d8f71409064e55c849883e6240abad8124e75f150"
-    sha256 cellar: :any,                 sonoma:        "e02a0e5c39a33f65d4f0b3f4c264468e78fe6e6384b886eee80ebf4860371699"
-    sha256 cellar: :any,                 ventura:       "44e174548e6919d4f02f7bd072a950a139157ee8d0bf9d2c71f9ae7c70470f66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e4147162020b86e4f1418c85731fb7fe430985d90dcd955b9cdcbfef4d1d8a6"
+    sha256 cellar: :any,                 arm64_sequoia: "08f2353fdaca10bf594966fb42a276409e7efaeadc7ecf60a1379667b923b9af"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf333d88e3baf649c3142fdad533d6e7c71100f53e21ca5186ec59415c48e7fe"
+    sha256 cellar: :any,                 arm64_ventura: "80cd21a8ecdac41889bb29bed8e70cdfc05f87314c726d77ed96c3ca0eeb2692"
+    sha256 cellar: :any,                 sonoma:        "0ef20ed1736f2609530349fb115998ad435f3513e9344153de92e2e010cb6452"
+    sha256 cellar: :any,                 ventura:       "7d9e07e2b0c985652c4b3d7f4ef9625a50dd954d8fb53e37cdbc3d70e338b564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4817790a5db0eba2476afe9c32d45d6beeda66b3a60d7b12462fd33ad065573"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
-
-  fails_with gcc: "5"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

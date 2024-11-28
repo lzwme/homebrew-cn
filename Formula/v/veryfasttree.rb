@@ -23,11 +23,6 @@ class Veryfasttree < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with :gcc do
-    version "4" # fails with GCC 4.x and earlier
-    cause "Requires gcc >=5"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DUSE_SHARED=ON", "-DUSE_NATIVE=OFF", *std_cmake_args
     system "cmake", "--build", "build"

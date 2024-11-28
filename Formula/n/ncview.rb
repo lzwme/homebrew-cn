@@ -1,8 +1,8 @@
 class Ncview < Formula
   desc "Visual browser for netCDF format files"
   homepage "https://cirrus.ucsd.edu/ncview/"
-  url "https://cirrus.ucsd.edu/~pierce/ncview/ncview-2.1.10.tar.gz"
-  sha256 "08d9cefb58a25b41316296074dccfe24147c3b7ea1af071cbfe785eff9f0dc65"
+  url "https://cirrus.ucsd.edu/~pierce/ncview/ncview-2.1.11.tar.gz"
+  sha256 "597cfddf9c2d7993e9b0b86bca1b73839567ee9116ee33f6d750a449b5033d91"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,14 +11,12 @@ class Ncview < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9c32e0c8d61208d3573870a33349e73dd07aed488fa950efc9209aad3499d464"
-    sha256 cellar: :any,                 arm64_sonoma:   "5b5169eca0a60caf8ecf81577a4defc72f8d18f97836fbdd69cddf1ec9d4215e"
-    sha256 cellar: :any,                 arm64_ventura:  "96ab79560d36c63a53c61ed9974738627eb217cbe69bea25b625ac2f4a8deba2"
-    sha256 cellar: :any,                 arm64_monterey: "5e634d2eb02f6a4e7fb1e35ef14920816262def3495d76697edeb76af115c2fb"
-    sha256 cellar: :any,                 sonoma:         "e23c7440e27e4395c5c7dc5df2d1f39b18be9961b9bbdceec5b4de3fbff97238"
-    sha256 cellar: :any,                 ventura:        "ba35d1867da98ec3b6046414749366c07b5cd71efa1f9d2205e36699beeddd54"
-    sha256 cellar: :any,                 monterey:       "5e9dc69c8c96e2e9e5184f78041a6bf9d58c4b6ec10e213b937476b5bb049c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1962ae80242970e6d4a782be711680746eda4dfcd160d2e9990005856bc8be80"
+    sha256 cellar: :any,                 arm64_sequoia: "5e7a66ee669661ddcc3212e291e1b9f315dc81e97a7457471c16fa806bb7f604"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ff3a39169afd61af20dac04a213f0ef832e6a11f928d358fb2145a5ef249d6d"
+    sha256 cellar: :any,                 arm64_ventura: "f3909f25f887347c09702cb0b64464a7a2e7ee6432bb04e932954fe6daca6576"
+    sha256 cellar: :any,                 sonoma:        "94e98efb569e6580c73cc3f4c5f4e28bb06440c447c6ff292b5d11cc02aca350"
+    sha256 cellar: :any,                 ventura:       "b41fef5fc2a91cd5dfb10b4a934aa473cda99c532ec99fd15849afedf665fb4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4a7443caf71f6f422b38f1aa1b332793871815a6f75c0669b9ca5bc19bafdf8"
   end
 
   depends_on "libice"

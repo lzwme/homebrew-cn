@@ -1,6 +1,6 @@
 class Libagg < Formula
   desc "High fidelity 2D graphics library for C++"
-  homepage "https://antigrain.com/"
+  homepage "https://agg.sourceforge.net/antigrain.com/"
   # Canonical URL inaccessible: https://antigrain.com/agg-2.5.tar.gz
   url "https://ftp.osuosl.org/pub/blfs/8.0/a/agg-2.5.tar.gz"
   sha256 "ab1edc54cc32ba51a62ff120d501eecd55fceeedf869b9354e7e13812289911f"
@@ -33,7 +33,7 @@ class Libagg < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sdl12-compat"
 
   # Fix build with clang; last release was in 2006
@@ -46,12 +46,11 @@ class Libagg < Formula
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
     system "sh", "autogen.sh",
-                 "--disable-dependency-tracking",
-                 "--prefix=#{prefix}",
                  "--disable-platform", # Causes undefined symbols
                  "--disable-ctrl",     # No need to run these during configuration
                  "--disable-examples",
-                 "--disable-sdltest"
+                 "--disable-sdltest",
+                 *std_configure_args
     system "make", "install"
   end
 end

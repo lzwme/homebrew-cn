@@ -29,7 +29,7 @@ class QtAT5 < Formula
   keg_only :versioned_formula
 
   depends_on "node" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.12" => :build # Python 3.13 fails with ModuleNotFoundError: No module named 'pipes'
   depends_on xcode: :build
   depends_on "freetype"
@@ -284,7 +284,7 @@ class QtAT5 < Formula
     # Remove reference to shims directory
     inreplace prefix"mkspecsqmodule.pri",
               ^PKG_CONFIG_EXECUTABLE = .*$,
-              "PKG_CONFIG_EXECUTABLE = #{Formula["pkg-config"].opt_bin}pkg-config"
+              "PKG_CONFIG_EXECUTABLE = #{Formula["pkgconf"].opt_bin}pkg-config"
 
     # Fix find_package call using QtWebEngine version to find other Qt5 modules.
     inreplace lib.glob("cmakeQt5WebEngine**Config.cmake"),

@@ -19,8 +19,6 @@ class C2rust < Formula
   depends_on "rust" => :build
   depends_on "llvm@18"
 
-  fails_with gcc: "5"
-
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")
     pkgshare.install "examples"

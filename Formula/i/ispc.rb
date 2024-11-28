@@ -32,8 +32,6 @@ class Ispc < Formula
     depends_on "tbb"
   end
 
-  fails_with gcc: "5"
-
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }
   end

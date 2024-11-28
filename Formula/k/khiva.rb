@@ -28,8 +28,6 @@ class Khiva < Formula
   depends_on "arrayfire"
   depends_on "eigen"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

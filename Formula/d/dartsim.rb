@@ -39,8 +39,6 @@ class Dartsim < Formula
     depends_on "mesa"
   end
 
-  fails_with gcc: "5"
-
   def install
     args = std_cmake_args
 

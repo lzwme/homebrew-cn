@@ -19,7 +19,7 @@ class PythonFreethreading < Formula
     sha256 x86_64_linux:  "16860c5c2990ba76679f67ffc08142ee3c0df759caac776abcd69d61a43cc036"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "mpdecimal"
   depends_on "openssl@3"
   depends_on "sqlite"

@@ -29,7 +29,7 @@ class StellarCore < Formula
   depends_on "bison" => :build # Bison 3.0.4+
   depends_on "libtool" => :build
   depends_on "pandoc" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libpq"
   depends_on "libpqxx"
@@ -67,8 +67,10 @@ class StellarCore < Formula
     test_categories = %w[
       accountsubentriescount
       bucketlistconsistent
-      topology
     ]
+    # Reduce tests on Intel macOS as runner is too slow and times out
+    test_categories << "topology" if !OS.mac? || !Hardware::CPU.intel?
+
     system bin"stellar-core", "test", test_categories.map { |category| "[#{category}]" }.join(",")
   end
 end

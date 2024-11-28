@@ -57,8 +57,6 @@ class Cherrytree < Formula
     depends_on "harfbuzz"
   end
 
-  fails_with gcc: "5" # Needs std::optional
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

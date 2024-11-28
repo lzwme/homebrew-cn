@@ -43,8 +43,6 @@ class Itk < Formula
     depends_on "unixodbc"
   end
 
-  fails_with gcc: "5"
-
   def install
     # Avoid CMake trying to find GoogleTest even though tests are disabled
     rm_r(buildpath"ModulesThirdPartyGoogleTest")

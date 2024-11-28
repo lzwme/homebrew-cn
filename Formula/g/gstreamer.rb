@@ -51,7 +51,7 @@ class Gstreamer < Formula
   depends_on "meson" => :build
   depends_on "nasm" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "aom"
   depends_on "cairo"
@@ -256,12 +256,12 @@ class Gstreamer < Formula
     #   https:github.comorgsHomebrewdiscussions3740
     system bin"gst-validate-launcher", "--usage"
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import gi
       gi.require_version('Gst', '1.0')
       from gi.repository import Gst
       print (Gst.Fraction(num=3, denom=5))
-    EOS
+    PYTHON
 
     # FIXME: The initial plugin load takes a long time without extra permissions on
     # macOS, which frequently causes the slower Intel macOS runners to time out.

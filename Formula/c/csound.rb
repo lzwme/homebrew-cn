@@ -73,8 +73,6 @@ class Csound < Formula
 
   conflicts_with "libextractor", because: "both install `extract` binaries"
 
-  fails_with gcc: "5"
-
   resource "ableton-link" do
     url "https:github.comAbletonlinkarchiverefstagsLink-3.1.2.tar.gz"
     sha256 "2673dfad75b1484e8388deb8393673c3304b3ab5662dd5828e08e029ca8797aa"

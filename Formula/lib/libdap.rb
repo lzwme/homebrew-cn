@@ -30,7 +30,7 @@ class Libdap < Formula
   end
 
   depends_on "bison" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libxml2"
   depends_on "openssl@3"
 
@@ -43,22 +43,11 @@ class Libdap < Formula
   end
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
-      --disable-debug
-      --with-included-regex
-    ]
-
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *args
+    system ".configure", "--with-included-regex", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
-
-    # Ensure no Cellar versioning of libxml2 path in dap-config entries
-    xml2 = Formula["libxml2"]
-    inreplace bin"dap-config", xml2.opt_prefix.realpath, xml2.opt_prefix
   end
 
   test do

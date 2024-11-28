@@ -11,11 +11,6 @@ class MagicEnum < Formula
 
   depends_on "cmake" => :build
 
-  fails_with :gcc do
-    version "5"
-    cause "Requires C++17"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

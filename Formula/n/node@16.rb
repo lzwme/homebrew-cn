@@ -41,8 +41,6 @@ class NodeAT16 < Formula
     cause "Node requires Xcode CLT 11+"
   end
 
-  fails_with gcc: "5"
-
   # Backport support for ICU 76+
   patch do
     url "https://github.com/nodejs/node/commit/81517faceac86497b3c8717837f491aa29a5e0f9.patch?full_index=1"

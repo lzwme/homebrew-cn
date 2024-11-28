@@ -18,7 +18,7 @@ class Libdex < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build # for vapigen
   depends_on "glib"
 
@@ -33,9 +33,9 @@ class Libdex < Formula
     cp %w[examples/cp.c config.h].map { |file| pkgshare/file }, "."
 
     ENV.append_to_cflags "-I."
-    ENV.append_to_cflags shell_output("pkg-config --cflags libdex-1").chomp
-    ENV.append "LDFLAGS", shell_output("pkg-config --libs-only-L libdex-1").chomp
-    ENV.append "LDLIBS", shell_output("pkg-config --libs-only-l libdex-1").chomp
+    ENV.append_to_cflags shell_output("pkgconf --cflags libdex-1").chomp
+    ENV.append "LDFLAGS", shell_output("pkgconf --libs-only-L libdex-1").chomp
+    ENV.append "LDLIBS", shell_output("pkgconf --libs-only-l libdex-1").chomp
 
     system "make", "cp"
 

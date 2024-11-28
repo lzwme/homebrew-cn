@@ -26,8 +26,6 @@ class Numpy < Formula
     depends_on "patchelf" => :build
   end
 
-  fails_with gcc: "5"
-
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }

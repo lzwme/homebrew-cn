@@ -21,7 +21,7 @@ class Pypy310 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4032a756625270ffb7945d97b0116ac7e9acb1e5731eab7590241874f2fb12d"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "pypy" => :build
   depends_on "gdbm"
   depends_on "openssl@3"

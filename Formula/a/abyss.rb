@@ -37,7 +37,6 @@ class Abyss < Formula
 
   uses_from_macos "sqlite"
 
-  fails_with gcc: "5"
   fails_with :clang # no OpenMP support
 
   resource "btllib" do

@@ -183,7 +183,7 @@ class Opencv < Formula
       }
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}opencv4", "-o", "test"
-    assert_equal shell_output(".test").strip, version.to_s
+    assert_equal version.to_s, shell_output(".test").strip
 
     output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp

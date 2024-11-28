@@ -37,8 +37,6 @@ class Botan < Formula
     cause "Requires C++20"
   end
 
-  fails_with gcc: "5"
-
   def python3
     which("python3.13")
   end

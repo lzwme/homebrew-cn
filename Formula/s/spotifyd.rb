@@ -32,7 +32,7 @@ class Spotifyd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4baab23fe6181c526b89960d0fb9db63bafea067a4ac9c6f5ac6af658267eea9"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "dbus"
   depends_on "portaudio"

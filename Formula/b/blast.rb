@@ -35,8 +35,6 @@ class Blast < Formula
 
   conflicts_with "proj", because: "both install a `libproj.a` library"
 
-  fails_with gcc: "5" # C++17
-
   def install
     cd "c++" do
       # Boost is only used for unit tests.

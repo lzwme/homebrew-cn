@@ -46,8 +46,6 @@ class GrpcAT154 < Formula
     cause "Requires C++17 features not yet implemented"
   end
 
-  fails_with gcc: "5" # C++17
-
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     mkdir "cmakebuild" do

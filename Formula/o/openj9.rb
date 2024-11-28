@@ -30,7 +30,7 @@ class Openj9 < Formula
   depends_on "bash" => :build
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "giflib"
   depends_on "harfbuzz"

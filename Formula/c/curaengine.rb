@@ -26,8 +26,6 @@ class Curaengine < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   # The version tag in these resources (e.g., `1.2.3`) should be changed as
   # part of updating this formula to a new version.
   resource "fdmextruder_defaults" do

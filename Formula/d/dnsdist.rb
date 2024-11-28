@@ -32,8 +32,6 @@ class Dnsdist < Formula
 
   uses_from_macos "libedit"
 
-  fails_with gcc: "5"
-
   def install
     system "./configure", "--disable-silent-rules",
                           "--without-net-snmp",

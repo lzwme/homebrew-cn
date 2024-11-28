@@ -50,8 +50,6 @@ class Allegro < Formula
     depends_on "mesa-glu"
   end
 
-  fails_with gcc: "5"
-
   def install
     cmake_args = std_cmake_args + %W[
       -DWANT_DOCS=OFF

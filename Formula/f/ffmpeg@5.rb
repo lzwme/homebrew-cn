@@ -83,8 +83,6 @@ class FfmpegAT5 < Formula
     depends_on "nasm" => :build
   end
 
-  fails_with gcc: "5"
-
   def install
     # The new linker leads to duplicate symbol issue https:github.comhomebrew-ffmpeghomebrew-ffmpegissues140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500

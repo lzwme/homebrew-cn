@@ -20,8 +20,6 @@ class Chromaprint < Formula
   depends_on "cmake" => :build
   depends_on "ffmpeg"
 
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
-
   # Backport support for FFmpeg 5+. Remove in the next release
   patch do
     url "https:github.comacoustidchromaprintcommit584960fbf785f899d757ccf67222e3cf3f95a963.patch?full_index=1"

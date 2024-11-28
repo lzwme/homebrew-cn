@@ -1,20 +1,18 @@
 class Putty < Formula
   desc "Implementation of Telnet and SSH"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
-  url "https://the.earth.li/~sgtatham/putty/0.81/putty-0.81.tar.gz"
-  sha256 "cb8b00a94f453494e345a3df281d7a3ed26bb0dd7e36264f145206f8857639fe"
+  url "https://the.earth.li/~sgtatham/putty/0.82/putty-0.82.tar.gz"
+  sha256 "195621638bb6b33784b4e96cdc296f332991b5244968dc623521c3703097b5d9"
   license "MIT"
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d4f1ebec6dc4712148681ee0322d1f0af99a0363e7807536470721c736754b94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8323405dffcac446d027bee3e03848ce07d8c3d4a8f626eaa302cae659d78772"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "171c6e16fc9c4157a5f43da3de8af558349393ad80b51e78b583c6ac233c08d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a3efb18c58c42f7c45e1432fef59dc26f3ff653b65d8b21c4f5a4524343f11d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "983b30ce0c3ca5e6059fabfa1a5a4855e82f527d13f483c6bba45c8e005b4366"
-    sha256 cellar: :any_skip_relocation, ventura:        "4805d14b128dc36bc2118d66e0f0a648709ae1c5561270b5901bda70f22a2378"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc85f8be2bcbc40c7b322813c4a841d85762a69888bc55d2ee32b6c2a7c8535c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c346418520e243b63a68a70c53392cbc3a7a9503bb3e2d494b41d4ff035f6f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f09d7bfe2bfd74570c0bd49b31b4f9001715c6cf092076df643835573be8ac55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8532e4f40cd79e4c86904d1b55523c162154c59310a9fb708ee191cc7d0d4a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4a58c9affe4cfee0189680417c6a67681536cc7d4cc84a192320afb2b80aa76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85528e9395420ae3468bb87b6d02746f194fe62f30119a159b2b84ae9fe0d268"
+    sha256 cellar: :any_skip_relocation, ventura:       "2015273d08a201df6fc6ac56708eb142ea6c9a1a1f4fd5c75fec5328bdec6c09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17952b03aea70ccf039020719c23f283031de9de00e49883c4847d02a0f9c4fd"
   end
 
   depends_on "cmake" => :build

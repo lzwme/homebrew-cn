@@ -49,6 +49,6 @@ class Bandicoot < Formula
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}", "-lbandicoot", "-o", "test"
 
     # Check that the coot version matches with the formula version
-    assert_equal shell_output("./test").to_i, version.to_s.to_i
+    assert_equal version.to_s.to_i, shell_output("./test").to_i
   end
 end

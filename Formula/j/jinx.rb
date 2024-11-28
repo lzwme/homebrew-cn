@@ -21,8 +21,6 @@ class Jinx < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   def install
     # disable building tests
     inreplace "CMakeLists.txt", "if(NOT jinx_is_subproject)", "if(FALSE)"

@@ -36,8 +36,8 @@ class Libmwaw < Formula
   test do
     testpath.install resource("homebrew-test_document")
     # Test ID on an actual office document
-    assert_equal shell_output("#{bin}mwawFile #{testpath}NEWSSLID.DOC").chomp,
-                 "#{testpath}NEWSSLID.DOC:Microsoft Word 2.0[pc]"
+    assert_equal "#{testpath}NEWSSLID.DOC:Microsoft Word 2.0[pc]",
+                 shell_output("#{bin}mwawFile #{testpath}NEWSSLID.DOC").chomp
     # Control case; non-document format should return an empty string
     assert_empty shell_output("#{bin}mwawFile #{test_fixtures("test.mp3")}").chomp
   end

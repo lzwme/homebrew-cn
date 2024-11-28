@@ -34,8 +34,6 @@ class BotanAT2 < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def python3
     which("python3.13")
   end

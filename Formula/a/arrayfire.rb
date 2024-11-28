@@ -29,8 +29,6 @@ class Arrayfire < Formula
     depends_on "pocl"
   end
 
-  fails_with gcc: "5"
-
   # fmt 11 compatibility
   # https:github.comarrayfirearrayfireissues3596
   patch :DATA

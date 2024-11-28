@@ -19,8 +19,6 @@ class Cimg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c866c9ec6c066c5905bf7b732f70a6ecfa42b4490194563ad54f482db6d54a"
   end
 
-  fails_with gcc: "5" # C++ 17 is required
-
   def install
     include.install "CImg.h"
     prefix.install "Licence_CeCILL-C_V1-en.txt", "Licence_CeCILL_V2-en.txt"

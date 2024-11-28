@@ -28,8 +28,6 @@ class ArcadeLearningEnvironment < Formula
 
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   # See https:github.comFarama-FoundationArcade-Learning-Environmentblobmasterscriptsdownload_unpack_roms.sh
   resource "roms" do
     url "https:gist.githubusercontent.comjjshoots61b22aefce4456920ba99f2c36906edaraw00046ac3403768bfe45857610a3d333b8e35e026Roms.tar.gz.b64"

@@ -3,13 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https:toot.bezdomni.net"
-  url "https:files.pythonhosted.orgpackages2fc69ff74a93121cd6216c270be6fc6d9a795e0f1d233006f308a95753938c91toot-0.47.0.tar.gz"
-  sha256 "4e3cda8e95261cf6a65543d9ebe95e4de7054711bca84060ef2b2c9da606cdef"
+  url "https:files.pythonhosted.orgpackages14f2859fedf48ef98efea3180b40ead1035c8655d8da0466227ff8d58b6f778btoot-0.47.1.tar.gz"
+  sha256 "fae758b50d22c019379a1f90ac0fe7adfc152ce8899005e463b36ee2e88abc2b"
   license "GPL-3.0-only"
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3437ce6c86468e58ebc0d9cae7e518807b0ede3e3dc52dcab6a13cb35f4d556d"
+    sha256 cellar: :any_skip_relocation, all: "51ae04d8e7d831f7929c5c380fc25fb18ed7409bdebbd00ecf7bfbf5becf2851"
   end
 
   depends_on "certifi"

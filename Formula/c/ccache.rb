@@ -31,8 +31,6 @@ class Ccache < Formula
   depends_on "xxhash"
   depends_on "zstd"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DENABLE_IPO=TRUE",

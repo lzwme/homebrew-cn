@@ -1,21 +1,17 @@
 class PowerlineGo < Formula
   desc "Beautiful and useful low-latency prompt for your shell"
   homepage "https:github.comjustjannepowerline-go"
-  url "https:github.comjustjannepowerline-goarchiverefstagsv1.24.tar.gz"
-  sha256 "08d958c49269e7025a998a617f3d6a0b6dcd7432437f950f0d0e3335bf7b59b3"
+  url "https:github.comjustjannepowerline-goarchiverefstagsv1.25.tar.gz"
+  sha256 "64cb194bbf08536320d0f4c24ef9524fdf486f579147cacdb0b6dc0afc1134e2"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c83752ade79c7914a786a0deba36b17c8f51c8c34238364e4c190c25d32f6be1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dbf3a93ca803663089d7b99842e15ec145101b6a19560a0d33b9fc935e7e74e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b8f00ce64616d9a75c81e533783d118fd60d3e8ca412ae1af57701598efce67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb9acae2a52e836ada9ecccdf9d5d7b35bd590f43af48a2a5845780f785e430b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e23866ef1204163a43b7e78e23d192cda14182f1837c549e30075e8b0f3bdf3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "59643ebb8d82b9285161b6b02fb6d567c9313003e0030db8d3eadc615b7f6633"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0851b68b27a6721b76f19ea6ae85f8ffc28c425d6e9e9c269a020431b239139"
-    sha256 cellar: :any_skip_relocation, monterey:       "debe8485884c401c707082ece657be86b4a5bbaa737959858dd7cb01936bdb54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af9fa9e620348645b7bc76c65b927c634aa97c78704d85b4c777d9ebe9a748d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da14d26cdab843a7100443af7e2f793a29329af1abb0ed663da8712330ddda5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7016b0b4b949f29f28f6184c6954c072196c5d97a35fdf113b23be20ee8546e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7f698ff3ffaef1601e4ba82581ebb94d28cf9cb7a5bbc4e3c1034ad0e8da13f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe228337f5d9019509b79924ec03bf73e8c567d35801ba004d203855ebf0ec99"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e42db1091864a2e65757b17b5ff2777912b98b43de30f9b3c9add5b60885dfbe"
+    sha256 cellar: :any_skip_relocation, ventura:       "91422811ec55ebdb10ac1763fcb75da19723767491b5fa5988b4e7e2d5c085e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18782f87199e7dbcc1470c2c13a6bd0d79bcf0dca59d60f75816c77a9479ac97"
   end
 
   depends_on "go" => :build

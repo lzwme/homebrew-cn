@@ -1,30 +1,33 @@
 class Screenpipe < Formula
   desc "Library to build personalized AI powered by what you've seen, said, or heard"
   homepage "https:github.commediar-aiscreenpipe"
-  url "https:github.commediar-aiscreenpipearchiverefstagsv0.1.98.tar.gz"
-  sha256 "cb3c8039ecb60d35bacd2b9673db112f907b4a1d3d7c32f49a5e77c0274268ad"
+  url "https:github.commediar-aiscreenpipearchiverefstagsv0.2.4.tar.gz"
+  sha256 "92d23a6b13fbf86a931de2a016fbe1aa55aedffd34242d976c4739b9f7245544"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0ab3cdb0a6676c440a02eebc342341017f95c0295073bf507cef513a61a704af"
-    sha256 cellar: :any,                 arm64_sonoma:  "441c211f4af82c9a34053905d7f1055e24e417d715b85aba03b4b82aa8a38262"
-    sha256 cellar: :any,                 arm64_ventura: "de4e7286e9a19ad32fc47aeefb60b424870171898bc9cd39bf70ef383ca0eb11"
-    sha256 cellar: :any,                 sonoma:        "474e316a3d35adb731bd5d053583ad74f11735e27b11cdc8d1d69ace46631c5d"
-    sha256 cellar: :any,                 ventura:       "0798f9f36e491aed26d598d744a06487d039eae71f91cb5113d6bdbe41272823"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b45dcfd02154031f502f7824477a6127e6e5730bb9db7cc918bbf75539e0dd2"
+    sha256 cellar: :any,                 arm64_sequoia: "77308d8b5f944bf7228de456c2ba679d7cc1e67a5be2f4ddb18631743bf83e82"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5f48ebf2417bea35ae88c472fe4ad68c0f6773a7a312bee3e305169dacd353b"
+    sha256 cellar: :any,                 arm64_ventura: "10959cbd31bea956ccca9f1b5dfb3262d1423ffbcffa84794803cb71de7af4b9"
+    sha256 cellar: :any,                 sonoma:        "7ad885d4015354d5ee3c77e91366216bb12ed7c38af0e750e72380bb0b82cc3a"
+    sha256 cellar: :any,                 ventura:       "45e90df2ea94269eecad00a7a9fb2d39686b7ad436b67476813011eef5271b9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4685d6b5d4e1e3300b999cfd6efaf12c7c9ca87f7957dcd9fbf3b32e58d5890"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
 
+  uses_from_macos "llvm" # for libclang
+
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
     depends_on "libxcb"
     depends_on "openssl@3"
     depends_on "tesseract"
+    depends_on "xz"
   end
 
   def install

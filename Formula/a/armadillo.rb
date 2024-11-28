@@ -40,6 +40,6 @@ class Armadillo < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{lib}", "-larmadillo", "-o", "test"
-    assert_equal shell_output("./test").to_i, version.to_s.to_i
+    assert_equal version.to_s.to_i, shell_output("./test").to_i
   end
 end

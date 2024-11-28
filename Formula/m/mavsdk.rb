@@ -48,8 +48,6 @@ class Mavsdk < Formula
     EOS
   end
 
-  fails_with gcc: "5"
-
   # ver={version} && \
   # curl -s https:raw.githubusercontent.commavlinkMAVSDKv$verthird_partymavlinkCMakeLists.txt && \
   # | grep 'MAVLINK_GIT_HASH'

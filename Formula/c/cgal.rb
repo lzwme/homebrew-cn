@@ -20,8 +20,6 @@ class Cgal < Formula
     depends_on "openssl@3"
   end
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

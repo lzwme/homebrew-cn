@@ -30,8 +30,6 @@ class Assimp < Formula
 
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     args = %W[
       -DASSIMP_BUILD_TESTS=OFF

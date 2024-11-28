@@ -32,8 +32,6 @@ class CeresSolver < Formula
   depends_on "suite-sparse"
   depends_on "tbb"
 
-  fails_with gcc: "5" # C++17
-
   def install
     system "cmake", "-S", ".", "-B", "homebrew-build",
                     "-DBUILD_SHARED_LIBS=ON",

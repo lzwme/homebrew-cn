@@ -21,7 +21,7 @@ class Pypy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ec62e5d6a517ee0fd009759b2931a0c040b18e0693414a5d45a74e4f48f644"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gdbm"
   depends_on "openssl@3"
   depends_on "sqlite"

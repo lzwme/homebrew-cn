@@ -36,15 +36,13 @@ class Libcaca < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "imlib2"
 
   def install
     system ".bootstrap" if build.head?
 
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --disable-cocoa
       --disable-csharp
       --disable-doc
@@ -55,7 +53,7 @@ class Libcaca < Formula
       --disable-x11
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     ENV.deparallelize # Or install can fail making the same folder at the same time
     system "make", "install"

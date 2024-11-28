@@ -19,8 +19,6 @@ class Mdds < Formula
   depends_on "autoconf" => :build
   depends_on "boost"
 
-  fails_with gcc: "5" # for C++17
-
   def install
     args = %W[
       --prefix=#{prefix}

@@ -1,7 +1,7 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
-  homepage "https:pimalaya.orghimalayaclilatest"
-  url "https:github.comsoywodhimalayaarchiverefstagsv0.9.0.tar.gz"
+  homepage "https:github.compimalayahimalaya"
+  url "https:github.compimalayahimalayaarchiverefstagsv0.9.0.tar.gz"
   sha256 "9a5593a3a92dcce8227cea45870a88432d8df3a012636eb5461165cf599dbcbb"
   license "MIT"
 
@@ -17,10 +17,10 @@ class Himalaya < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "401182fcfee72d5ef3a1c42204dbd71687c3c17586bb2ac2e87fc158aa496d85"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 
@@ -33,7 +33,7 @@ class Himalaya < Formula
   end
 
   test do
-    # See https:github.comsoywodhimalaya#configuration
+    # See https:github.compimalayahimalaya#configuration
     (testpath".confighimalayaconfig.toml").write <<~TOML
       name = "Your full name"
       downloads-dir = "abspathtodownloads"

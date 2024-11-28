@@ -25,8 +25,6 @@ class Gammaray < Formula
     depends_on "wayland"
   end
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_DISABLE_FIND_PACKAGE_Graphviz=ON",

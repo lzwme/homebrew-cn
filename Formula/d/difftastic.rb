@@ -16,8 +16,6 @@ class Difftastic < Formula
 
   depends_on "rust" => :build
 
-  fails_with gcc: "5"
-
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "difft.1"

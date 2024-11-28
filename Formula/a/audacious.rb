@@ -78,8 +78,6 @@ class Audacious < Formula
     depends_on "pulseaudio"
   end
 
-  fails_with gcc: "5"
-
   def install
     odie "plugins resource needs to be updated" if build.stable? && version != resource("plugins").version
 

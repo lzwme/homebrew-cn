@@ -16,7 +16,7 @@ class Mlt < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "ffmpeg"
   depends_on "fftw"
@@ -48,8 +48,6 @@ class Mlt < Formula
     depends_on "alsa-lib"
     depends_on "pulseaudio"
   end
-
-  fails_with gcc: "5"
 
   def install
     rpaths = [rpath, rpath(source: lib"mlt")]

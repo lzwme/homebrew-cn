@@ -49,13 +49,10 @@ class Llvm < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
   end
-
-  # Fails at building LLDB
-  fails_with gcc: "5"
 
   # Support simplified triples in version config files.
   # https:github.comllvmllvm-projectpull111387
@@ -767,10 +764,10 @@ class Llvm < Formula
 
     # This will fail if the clang bindings cannot find `libclang`.
     with_env(PYTHONPATH: prefixLanguage::Python.site_packages(python3)) do
-      system python3, "-c", <<~EOS
+      system python3, "-c", <<~PYTHON
         from clang import cindex
         cindex.Config().get_cindex_library()
-      EOS
+      PYTHON
     end
 
     unless versioned_formula?

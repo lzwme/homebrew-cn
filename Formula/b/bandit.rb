@@ -3,19 +3,18 @@ class Bandit < Formula
 
   desc "Security-oriented static analyser for Python code"
   homepage "https:github.comPyCQAbandit"
-  url "https:files.pythonhosted.orgpackages3826bdd962d6ee781f6229c3fb83483cf9e09d87959150a9000789806d750f3cbandit-1.7.10.tar.gz"
-  sha256 "59ed5caf5d92b6ada4bf65bc6437feea4a9da1093384445fed4d472acc6cff7b"
+  url "https:files.pythonhosted.orgpackages57c3bea54f22cdc8224f0ace18b2cf86c6adf7010285d0ed51b703af9910c5b2bandit-1.8.0.tar.gz"
+  sha256 "b5bfe55a095abd9fe20099178a7c6c060f844bfd4fe4c76d28e35e4c52b9d31e"
   license "Apache-2.0"
   head "https:github.comPyCQAbandit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "a773798dbfadc5fec12de44bf1b06d1a01df4eaa4223a0edcabc5fad80fb6ac5"
-    sha256 cellar: :any,                 arm64_sonoma:  "2954286ef2ceec08925a604763a86fe7e8a200a177eb7ca19a488ebc03b64155"
-    sha256 cellar: :any,                 arm64_ventura: "06c6654ab52bee3037373055ae8cc53c10b656099ab5e30b9202545318833d9a"
-    sha256 cellar: :any,                 sonoma:        "1b50299811ae6ff87887a87e48cd771fa4c1a5cfbfc63e2d300adcb5ffde5ed0"
-    sha256 cellar: :any,                 ventura:       "ae30f72cc3f66b78de593710e083c656d1d547406139dd8f6fb404482c8166fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9f26864e92086e87e571e601bd7993ed18f6d92897c48b4116091987233ec28"
+    sha256 cellar: :any,                 arm64_sequoia: "2861a95b6146e7c2036a7739ac5d959f9420344823ceb0051070230331a3dc14"
+    sha256 cellar: :any,                 arm64_sonoma:  "afb67b338fba2d20b90eaa3e572061c23c8cacca15742d5a97b1a8206d31faca"
+    sha256 cellar: :any,                 arm64_ventura: "da978f631964da2592f1672047ad696d881f828e9f6f482ca55639d9997b3971"
+    sha256 cellar: :any,                 sonoma:        "10807ed7a5734bb96e90c571458d8c98dfd5eef7fffffc38b34cf56a985827ea"
+    sha256 cellar: :any,                 ventura:       "07b23cd656973d2894a7d0b8ab0b2be4c8b1e6a1debf90f550e149c6feb17a5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b653512b053c974c56d2e03f21ffa1f183bbbce386792b43dd4220cf91eca44b"
   end
 
   depends_on "libyaml"
@@ -47,13 +46,13 @@ class Bandit < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "stevedore" do
-    url "https:files.pythonhosted.orgpackagesc459f8aefa21020054f553bf7e3b405caec7f8d1f432d9cb47e34aaa244d8d03stevedore-5.3.0.tar.gz"
-    sha256 "9a64265f4060312828151c204efbe9b7a9852a0d9228756344dbc7e4023e375a"
+    url "https:files.pythonhosted.orgpackages4ae94eedccff8332cc40cc60ddd3b28d4c3e255ee7e9c65679fa4533ab98f598stevedore-5.4.0.tar.gz"
+    sha256 "79e92235ecb828fe952b6b8b0c6c87863248631922c8e8e0fa5b17b232c4514d"
   end
 
   def install

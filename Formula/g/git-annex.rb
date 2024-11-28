@@ -1,11 +1,11 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
-  homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20241031/git-annex-10.20241031.tar.gz"
+  homepage "https:git-annex.branchable.com"
+  url "https:hackage.haskell.orgpackagegit-annex-10.20241031git-annex-10.20241031.tar.gz"
   sha256 "0c8eafec05e8203e3125530fb8d7435f6867e5bebea96db9f9d3a6177c929293"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
-  head "git://git-annex.branchable.com/", branch: "master"
+  head "git:git-annex.branchable.com", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "241a9c71c2edc6da62015b274b8a781576afdf2be56afa9ff6c386cf907a30a1"
@@ -18,19 +18,21 @@ class GitAnnex < Formula
 
   depends_on "cabal-install" => :build
   depends_on "ghc@9.8" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libmagic"
 
   uses_from_macos "zlib"
 
   def install
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
+    # Work around https:github.comyesodwebyesodissues1854 with constraint
+    # TODO: Remove once fixed upstream
+    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3", "--constraint=wai-extra<3.1.17"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 
   service do
-    run [opt_bin/"git-annex", "assistant", "--autostart"]
+    run [opt_bin"git-annex", "assistant", "--autostart"]
   end
 
   test do
@@ -39,16 +41,16 @@ class GitAnnex < Formula
 
     system "git", "init"
     system "git", "annex", "init"
-    (testpath/"Hello.txt").write "Hello!"
-    assert !File.symlink?("Hello.txt")
-    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
+    (testpath"Hello.txt").write "Hello!"
+    refute_predicate (testpath"Hello.txt"), :symlink?
+    assert_match(^add Hello.txt.*ok.*\(recording state in git\.\.\.\)m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
-    assert File.symlink?("Hello.txt")
+    assert_predicate (testpath"Hello.txt"), :symlink?
 
     # make sure the various remotes were built
-    assert_match shell_output("git annex version | grep 'remote types:'").chomp,
-                 "remote types: git gcrypt p2p S3 bup directory rsync web bittorrent " \
-                 "webdav adb tahoe glacier ddar git-lfs httpalso borg rclone hook external"
+    assert_match "remote types: git gcrypt p2p S3 bup directory rsync web bittorrent " \
+                 "webdav adb tahoe glacier ddar git-lfs httpalso borg rclone hook external",
+                 shell_output("git annex version | grep 'remote types:'").chomp
 
     # The steps below are necessary to ensure the directory cleanly deletes.
     # git-annex guards files in a way that isn't entirely friendly of automatically

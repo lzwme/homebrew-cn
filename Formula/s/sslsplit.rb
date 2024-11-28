@@ -30,7 +30,7 @@ class Sslsplit < Formula
   end
 
   depends_on "check" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "libnet"
   depends_on "libpcap"
@@ -43,10 +43,12 @@ class Sslsplit < Formula
   end
 
   test do
-    port = free_port
-
-    cmd = "#{bin}sslsplit -D http 0.0.0.0 #{port} www.roe.ch 80"
-    output = pipe_output("(#{cmd} & PID=$! && sleep 3 ; kill $PID) 2>&1")
-    assert_match "Starting main event loop", output
+    Open3.popen2e(bin"sslsplit", "-D", "http", "0.0.0.0", free_port.to_s, "www.roe.ch", "80") do |_, stdout, w|
+      sleep 5
+      sleep 10 if OS.mac? && Hardware::CPU.intel?
+      assert_match "Starting main event loop", stdout.read_nonblock(4096)
+    ensure
+      Process.kill "TERM", w.pid
+    end
   end
 end

@@ -22,8 +22,6 @@ class NeovimQt < Formula
   depends_on "neovim"
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", "-DWITH_QT=Qt6", *std_cmake_args
     system "cmake", "--build", "build"

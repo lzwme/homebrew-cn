@@ -73,7 +73,7 @@ class Flex < Formula
   end
 
   test do
-    (testpath"test.flex").write <<~EOS
+    (testpath"test.flex").write <<~FLEX
       CHAR   [a-z][A-Z]
       %%
       {CHAR}+      printf("%s", yytext);
@@ -84,10 +84,10 @@ class Flex < Formula
         yyin = stdin;
         yylex();
       }
-    EOS
+    FLEX
     system bin"flex", "test.flex"
     system ENV.cc, "lex.yy.c", "-L#{lib}", "-lfl", "-o", "test"
-    assert_equal shell_output("echo \"Hello World\" | .test"), <<~EOS
+    assert_equal <<~EOS, pipe_output(".test", "Hello World\n")
       Hello
       World
     EOS

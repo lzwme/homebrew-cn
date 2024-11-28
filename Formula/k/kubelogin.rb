@@ -28,7 +28,7 @@ class Kubelogin < Formula
     version_output = shell_output("#{bin}kubectl-oidc_login --version")
     assert_match version.to_s, version_output
 
-    assert_equal shell_output("kubectl oidc-login --version"), version_output
+    assert_equal version_output, shell_output("kubectl oidc-login --version")
 
     # Connect to non-existant OIDC endpoint
     get_token_output = shell_output("kubectl oidc-login get-token " \

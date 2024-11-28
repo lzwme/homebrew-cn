@@ -45,8 +45,6 @@ class Lean < Formula
 
   conflicts_with "elan-init", because: "`lean` and `elan-init` install the same binaries"
 
-  fails_with gcc: "5"
-
   def install
     args = std_cmake_args + %w[
       -DCMAKE_CXX_FLAGS='-std=c++14'

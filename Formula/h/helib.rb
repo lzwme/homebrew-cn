@@ -23,8 +23,6 @@ class Helib < Formula
   depends_on "gmp"
   depends_on "ntl"
 
-  fails_with gcc: "5" # for C++17
-
   def install
     mkdir "build" do
       system "cmake", "-DBUILD_SHARED=ON", "..", *std_cmake_args

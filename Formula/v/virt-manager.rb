@@ -1,23 +1,23 @@
 class VirtManager < Formula
   include Language::Python::Virtualenv
+  include Language::Python::Shebang
 
   desc "App for managing virtual machines"
   homepage "https:virt-manager.org"
-  url "https:releases.pagure.orgvirt-managervirt-manager-4.1.0.tar.gz"
-  sha256 "950681d7b32dc61669278ad94ef31da33109bf6fcf0426ed82dfd7379aa590a2"
+  url "https:releases.pagure.orgvirt-managervirt-manager-5.0.0.tar.xz"
+  sha256 "bc89ae46e0c997bd754ed62a419ca39c6aadec27e3d8b850cea5282f0083f84a"
   license "GPL-2.0-or-later"
-  revision 8
   head "https:github.comvirt-managervirt-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3490af322b74e2098969db9537ec991f141cb7efd330e3cbd2d794856dac5fe4"
+    sha256 cellar: :any_skip_relocation, all: "83397ecb04b719a262ba0d0b06a0a7561598de290647b16fce11ed3e64a7fa9c"
   end
 
   depends_on "docutils" => :build
   depends_on "intltool" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python-setuptools" => :build
   depends_on "adwaita-icon-theme"
   depends_on "certifi"
   depends_on "cpio"
@@ -36,13 +36,13 @@ class VirtManager < Formula
   depends_on "vte3"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "requests" do
@@ -51,26 +51,24 @@ class VirtManager < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   def install
-    # Fix to use shlex instead of pipes, should be removed in next release
-    # Commit ref: https:github.comvirt-managervirt-managercommitbb1afaba29019605a240a57d6b3ca8eb36341d9b
-    inreplace "virtManagerobjectdomain.py", "pipes", "shlex"
-
     python3 = "python3.13"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
+    ENV.prepend_path "PATH", venv.root"bin"
 
-    # Restore disabled egg_info command
-    inreplace "setup.py", "'install_egg_info': my_egg_info,", ""
-    system libexec"binpython", "setup.py", "configure", "--prefix=#{prefix}"
-    ENV["PIP_CONFIG_SETTINGS"] = "--global-option=--no-update-icon-cache --no-compile-schemas"
-    venv.pip_install_and_link buildpath
+    system "meson", "setup", "build", "-Dtests=disabled",
+                                      "-Dupdate-icon-cache=false",
+                                      "-Dcompile-schemas=false",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
 
-    share.install Dir[libexec"share*"]
+    rewrite_shebang python_shebang_rewrite_info(venv.root"binpython"), *bin.children
   end
 
   def post_install

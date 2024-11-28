@@ -22,7 +22,7 @@ class Suricata < Formula
     sha256 x86_64_linux:  "a7c52934a4c8f2df71be5d154b0308ebc8c1c92b103c5d33cc2c72301427568c"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "jansson"
   depends_on "libmagic"

@@ -37,8 +37,6 @@ class Lnav < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     system ".autogen.sh" if build.head?
     system ".configure", *std_configure_args,

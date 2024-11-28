@@ -1,20 +1,18 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https:algo2.iti.kit.edudocumentskahipindex.html"
-  url "https:github.comKaHIPKaHIParchiverefstagsv3.16.tar.gz"
-  sha256 "b0ef72a26968d37d9baa1304f7a113b61e925966a15e86578d44e26786e76c75"
+  url "https:github.comKaHIPKaHIParchiverefstagsv3.17.tar.gz"
+  sha256 "3aa5fedf5a69fd3771ac97b4dbcc40f6f8a45f6c8b64e30d85c95cee124e38c3"
   license "MIT"
   head "https:github.comKaHIPKaHIP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0821739473246533d6043038f905d07cfd071224b1b201a88f572930895ec64e"
-    sha256 cellar: :any,                 arm64_sonoma:   "970fe2a3d90298de2d44a30bce8a60f9bbcf2e0be59f2035c617d825fd4713e7"
-    sha256 cellar: :any,                 arm64_ventura:  "3ba222ed29cb5e903167de8216be60180d41a0f59d64edcaa00955e7c7670e0b"
-    sha256 cellar: :any,                 arm64_monterey: "ecd60dda8182bfcbd93e030c93d42f7bdca84e36e4bb1a0e0b11f7c64637387e"
-    sha256 cellar: :any,                 sonoma:         "e4eebc7fd9b608923efe1e17d006ffe7fd0a00261e3ee72239f5b744dc042a44"
-    sha256 cellar: :any,                 ventura:        "26def65973de379722881a0a714458586b23bf5e45fb9632252687de0cc49355"
-    sha256 cellar: :any,                 monterey:       "c3c24dfa4c3607db5b3de5a68123606c3883180cbf8436415e180a65d4c58f56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "438e8df826b458d6401fc3ddc7326b758c281597bace27f9a542a87389a8c60c"
+    sha256 cellar: :any,                 arm64_sequoia: "16093791788ca776629995486830135eff95a1f5a811feb83ac76e426594b54d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d8857629b507b827fa310597072e62f0a4343616a4680b4ae7fe63c5ec2d20bf"
+    sha256 cellar: :any,                 arm64_ventura: "138f4b644a0798b2d5db48b41de9552cd7d8a96f7d7044884e3c2740303c91e2"
+    sha256 cellar: :any,                 sonoma:        "0b1b0511b0ad243ae8d009eebf326918d0a17b930f2e7eb38ce2da64a28e8224"
+    sha256 cellar: :any,                 ventura:       "4116ad27663b45eefb02d97d6b843c2bb4cbd9198ed2c3d0020b6a3f1a5e7b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84b023f1a6c42b2bd9edf696ab8e345a067d8879c6e6df04325765de9e9c5684"
   end
 
   depends_on "cmake" => :build

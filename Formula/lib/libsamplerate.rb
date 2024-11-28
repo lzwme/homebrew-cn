@@ -6,37 +6,28 @@ class Libsamplerate < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5fc173532c2b6fce115a5e36266da6c2dab4b4508478132790befa5f0342199e"
-    sha256 cellar: :any,                 arm64_sonoma:   "dc278cc14c1b7bfe2530935297bb3ab56d162420387702a38def3aaa26e03181"
-    sha256 cellar: :any,                 arm64_ventura:  "3e9b241d45526b794f8f2a5873b1377ba909532da1bde00a235c8949edde1366"
-    sha256 cellar: :any,                 arm64_monterey: "f9e2a83582d3ab964fd92d0aee6acffe5b73ab8981d80d4119beb1b45210f4ce"
-    sha256 cellar: :any,                 arm64_big_sur:  "3093453ad9b90daa071d033cfaf5e6cafe8963350130ef26741a1c9d1c4b5659"
-    sha256 cellar: :any,                 sonoma:         "701022edab06b57aed672ab9f1c6791f1ee3c7f538215fd4f65ea6e1cabad171"
-    sha256 cellar: :any,                 ventura:        "85204079adb4d9070ead5ce096f7338a8c921fa108f65560256b23a7311d4a02"
-    sha256 cellar: :any,                 monterey:       "de43a6d8b43091b2f76d367409e7bcae60599e13875166c58c50443f0d336e91"
-    sha256 cellar: :any,                 big_sur:        "58ef6e20fc12580743d91e00fb349b1160fff0de49028b7c90903245605c0ae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9d59c68d8d1f510237381994b7eab99cfc1d99113c5cd5ced3d0bb460faccaf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d51907988e3ab62f6e49ddd1253a723fd5964b78a0361453e8d9b75a2106b4e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c6892acfead8a6b32ede92a5f1eb1d4a4dc8a75e6c295b469875d50ec05e019"
+    sha256 cellar: :any,                 arm64_ventura: "e3503b414dc2371bf89d19291377b45241255a4b538d81912c228c84a170bda9"
+    sha256 cellar: :any,                 sonoma:        "6c59b98bd83a71ff444c2cd2a480d78459244174fb8ec7234ba9438b03ca53d5"
+    sha256 cellar: :any,                 ventura:       "dac109c36e9c06cb12473b9eb767e44bbd0330f18ffdcfbb77af7574038eb7d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1223ba0942433dd6c68ce167723d32e2e40ee2f454054001008d487a8256ff6"
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "buildshared",
-      *std_cmake_args,
-      "-DBUILD_SHARED_LIBS=ON",
-      "-DLIBSAMPLERATE_EXAMPLES=OFF",
-      "-DBUILD_TESTING=OFF"
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--build", "buildshared", "--target", "install"
+    args = ["-DLIBSAMPLERATE_EXAMPLES=OFF"]
 
-    system "cmake", "-S", ".", "-B", "buildstatic",
-      *std_cmake_args,
-      "-DBUILD_SHARED_LIBS=OFF",
-      "-DLIBSAMPLERATE_EXAMPLES=OFF",
-      "-DBUILD_TESTING=OFF"
-    system "cmake", "--build", "buildstatic"
-    system "cmake", "--build", "buildstatic", "--target", "install"
+    system "cmake", "-S", ".", "-B", "build_shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
+    system "cmake", "--build", "build_shared"
+    system "cmake", "--install", "build_shared"
+
+    system "cmake", "-S", ".", "-B", "build_static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
+    system "cmake", "--build", "build_static"
+    lib.install "build_staticsrclibsamplerate.a"
   end
 
   test do

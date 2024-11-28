@@ -45,8 +45,6 @@ class MariadbAT110 < Formula
     depends_on "readline" # uses libedit on macOS
   end
 
-  fails_with gcc: "5"
-
   def install
     ENV.cxx11
 

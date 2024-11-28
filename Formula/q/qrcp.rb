@@ -51,6 +51,6 @@ class Qrcp < Formula
     sleep 1
 
     # User-Agent header needed in order for curl to be able to receive file
-    assert_equal shell_output("curl -H \"User-Agent: Mozilla\" #{server_url}"), "Hello there, big world\n"
+    assert_equal "Hello there, big world\n", shell_output("curl -H \"User-Agent: Mozilla\" #{server_url}")
   end
 end

@@ -22,8 +22,6 @@ class Cpr < Formula
     depends_on "openssl@3"
   end
 
-  fails_with gcc: "5" # C++17
-
   def install
     args = %W[
       -DCPR_USE_SYSTEM_CURL=ON

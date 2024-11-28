@@ -51,7 +51,7 @@ class SynergyCore < Formula
   end
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "gdk-pixbuf"
     depends_on "glib"
     depends_on "libnotify"
@@ -67,10 +67,6 @@ class SynergyCore < Formula
   fails_with :clang do
     build 1402
     cause "needs `std::ranges::find`"
-  end
-
-  fails_with gcc: "5" do
-    cause "synergy-core requires C++17 support"
   end
 
   def install

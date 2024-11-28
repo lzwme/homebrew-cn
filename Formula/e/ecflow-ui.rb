@@ -25,9 +25,6 @@ class EcflowUi < Formula
 
   uses_from_macos "libxcrypt"
 
-  # requires C++17 compiler to build with Qt
-  fails_with gcc: "5"
-
   def install
     args = %w[
       -DECBUILD_LOG_LEVEL=DEBUG

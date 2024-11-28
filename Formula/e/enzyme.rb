@@ -18,8 +18,6 @@ class Enzyme < Formula
   depends_on "cmake" => :build
   depends_on "llvm"
 
-  fails_with gcc: "5"
-
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
   end

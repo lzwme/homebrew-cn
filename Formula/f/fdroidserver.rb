@@ -3,18 +3,17 @@ class Fdroidserver < Formula
 
   desc "Create and manage Android app repositories for F-Droid"
   homepage "https:f-droid.org"
-  url "https:files.pythonhosted.orgpackages7bdd9a37d36aadf87ce469c70713887dd9dfa6881010d5b0c9471bb181a4f4f2fdroidserver-2.3.1.tar.gz"
-  sha256 "b0473bd62976e51a13d58a2e626627773cdcf3df67e747c7f1572afc6c71c89d"
+  url "https:files.pythonhosted.orgpackages511bec2cae4ba139f72ec4e178618cd58ec103cce1629cb32e6c654adad9a768fdroidserver-2.3.2.tar.gz"
+  sha256 "b50212b5f25544eb6e330afe757bdee0043f26b4e3cdff7b0f056fff37a0f36e"
   license "AGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "16eb1b8716f716d5d7dd828dd05d4987e22a26a50820a89d018b3e9054ae9b04"
-    sha256 cellar: :any,                 arm64_sonoma:  "69297f50d234b63ec53a0674e0031e48beaaebab0b2e5c3c69c920595f9b73b0"
-    sha256 cellar: :any,                 arm64_ventura: "5480d2cbc3dd6afb157b1fd5912e15d9348e9d48aa1a068788c50d5d95b708a6"
-    sha256 cellar: :any,                 sonoma:        "b111eacad9729c19f47aae433bdf313a588ee71ad809679266b964d05260faa6"
-    sha256 cellar: :any,                 ventura:       "8753b931d0a3a102f7466be03ae5687f1523406745d9927307f35eb934590e57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee044ccbe6fe0a0a776548526168190d18b6dafa4fc9ddb2d11bfa46ecd87150"
+    sha256 cellar: :any,                 arm64_sequoia: "478dc374c926e2571efe36ccfff02778e7b56a32fee219e25cbecf6ad615b165"
+    sha256 cellar: :any,                 arm64_sonoma:  "81e9a2ad1277850d68e787bbd5666dc978e6a6a6cc720ae227457f981b1b5345"
+    sha256 cellar: :any,                 arm64_ventura: "1c399d1714a793e292ae4ee220d1d695671a60ca759c984ff483abdbccf8ac7e"
+    sha256 cellar: :any,                 sonoma:        "4f702ac788f64cd33cbd5e27352156921de04e2d9c2fcfa49e81c39c49485d70"
+    sha256 cellar: :any,                 ventura:       "249c125772e8b7db8ad79909c99731344f23dcd4a23d4c644af8954343f21492"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddaadab6b43a462548a1254123ff18c8bdce0688e0e6509bdbae486e2385551c"
   end
 
   depends_on "ninja" => :build
@@ -75,11 +74,6 @@ class Fdroidserver < Formula
   resource "bcrypt" do
     url "https:files.pythonhosted.orgpackages568cdd696962612e4cd83c40a9e6b3db77bfe65a830f4b9af44098708584686cbcrypt-4.2.1.tar.gz"
     sha256 "6765386e3ab87f569b276988742039baab087b2cdb01e809d74e74503c2faafe"
-  end
-
-  resource "biplist" do
-    url "https:files.pythonhosted.orgpackages3e562db170a498c9c6545cda16e93c2f2ef9302da44802787b45a8a520d01bdbbiplist-1.0.3.tar.gz"
-    sha256 "4c0549764c5fe50b28042ec21aa2e14fe1a2224e239a1dae77d9e7f3932aa4c6"
   end
 
   resource "charset-normalizer" do
@@ -245,11 +239,6 @@ class Fdroidserver < Formula
   resource "puremagic" do
     url "https:files.pythonhosted.orgpackages092d40599f25667733e41bbc3d7e4c7c36d5e7860874aa5fe9c584e90b34954dpuremagic-1.28.tar.gz"
     sha256 "195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"
-  end
-
-  resource "pycountry" do
-    url "https:files.pythonhosted.orgpackages7657c389fa68c50590881a75b7883eeb3dc15e9e73a0fdc001cdd45c13290c92pycountry-24.6.1.tar.gz"
-    sha256 "b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221"
   end
 
   resource "pydot" do

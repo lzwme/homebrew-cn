@@ -25,8 +25,6 @@ class Gromacs < Formula
   depends_on "openblas"
 
   fails_with :clang
-  fails_with gcc: "5"
-  fails_with gcc: "6"
 
   def install
     # Non-executable GMXRC files should be installed in DATADIR

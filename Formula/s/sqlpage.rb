@@ -1,10 +1,10 @@
 class Sqlpage < Formula
-  desc "Web application framework, for creation of websites with simple database queries"
-  homepage "https:sql.ophir.dev"
-  url "https:github.comlovasoaSQLpagearchiverefstagsv0.31.0.tar.gz"
+  desc "Web app builder using SQL queries to create dynamic webapps quickly"
+  homepage "https:sql-page.com"
+  url "https:github.comsqlpageSQLpagearchiverefstagsv0.31.0.tar.gz"
   sha256 "f1547945fdc4a8191a0ddd626f43fa0463f378d2d508877d74cd707d7626e589"
   license "MIT"
-  head "https:github.comlovasoaSQLpage.git", branch: "main"
+  head "https:github.comsqlpageSQLpage.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e16d96d3dcc50fdf4ed11cbc81aa0668d12bcf1f76853888d669226ea44dc8b2"

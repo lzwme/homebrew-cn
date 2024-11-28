@@ -24,8 +24,6 @@ class Minizinc < Formula
   depends_on "gecode"
   depends_on "osi"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

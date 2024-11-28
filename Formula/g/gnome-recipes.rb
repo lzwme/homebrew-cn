@@ -21,7 +21,7 @@ class GnomeRecipes < Formula
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
@@ -57,11 +57,9 @@ class GnomeRecipes < Formula
 
   def install
     resource("goa").stage do
-      system ".configure", "--disable-debug",
-                            "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}",
-                            "--disable-backend"
+      system ".configure", "--disable-silent-rules",
+                            "--disable-backend",
+                            *std_configure_args(prefix: libexec)
       system "make", "install"
     end
 

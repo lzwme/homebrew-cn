@@ -31,8 +31,6 @@ class Gjs < Formula
     depends_on "gettext"
   end
 
-  fails_with gcc: "5" # meson ERROR: SpiderMonkey sanity check: DID NOT COMPILE
-
   def install
     # ensure that we don't run the meson post install script
     ENV["DESTDIR"] = "/"

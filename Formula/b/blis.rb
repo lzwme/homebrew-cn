@@ -19,8 +19,6 @@ class Blis < Formula
 
   uses_from_macos "python" => :build
 
-  fails_with gcc: "5"
-
   def install
     # https:github.comflameblisblobmasterdocsConfigurationHowTo.md
     ENV.runtime_cpu_detection

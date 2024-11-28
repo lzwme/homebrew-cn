@@ -23,8 +23,6 @@ class Atomicparsley < Formula
 
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", ".", *std_cmake_args
     system "cmake", "--build", ".", "--config", "Release"

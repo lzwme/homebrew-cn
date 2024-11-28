@@ -34,6 +34,6 @@ class Golines < Formula
 
       var strings = []string{\n\t"foo",\n\t"bar",\n\t"baz",\n}
     GO
-    assert_equal shell_output("#{bin}golines --max-len=30 given.go"), (testpath"expected.go").read
+    assert_equal (testpath"expected.go").read, shell_output("#{bin}golines --max-len=30 given.go")
   end
 end

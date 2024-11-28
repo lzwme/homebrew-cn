@@ -23,8 +23,6 @@ class Cbmc < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
-  fails_with gcc: "5"
-
   def install
     # Fixes: *** No rule to make target 'bingoto-gcc',
     # needed by 'tmpcbmc-20240525-215493-ru4krxregressiongoto-gccarchiveslibour_archive.a'.  Stop.

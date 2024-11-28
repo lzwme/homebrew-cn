@@ -45,8 +45,6 @@ class DosboxStaging < Formula
     depends_on "mesa-glu"
   end
 
-  fails_with gcc: "5"
-
   def install
     rm_r(buildpath"subprojects") # Ensure we don't use vendored dependencies
     args = %w[-Ddefault_library=shared -Db_lto=true -Dtracy=false]
