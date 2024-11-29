@@ -1,18 +1,18 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
   homepage "https:github.commagic-wormholemagic-wormhole.rs"
-  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.3.tar.gz"
-  sha256 "f787a31113af560fcfea4ef2d6096f860253450ce2207d436edb83bf6be2b1e1"
+  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.4.tar.gz"
+  sha256 "d265a1776894064842d0015a1f49f62189f4f054e4c3bd0de24ee0b9d8f37e58"
   license "EUPL-1.2"
   head "https:github.commagic-wormholemagic-wormhole.rs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11707cb0b64b1a5082f1dda75d2d499d18fe2e62efccc28b5e254245e983bd50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bde29ea50cd93af504b2048425bd0f0adbd4968639c6b68d0e4349f5dab07614"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b50810f239eceb1401f4bbb1ca8268e013fd104f4d5140927b0bc33578e946b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0ef9ca867b85cad21f24c3bfe29c9c219c1b4ff1ff8f58dbe21c835676be887"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a1519f2c3ab5b20b11c310584f731d973865856aa1ab512b1e3ded39c13f0bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b89af0f49d3d3059549eba8401ffb16342bff900aa8a8c1874d324c8bb3e0bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c291523fc89958dae120378dbffb0a4e76ba8ec8604031b4df19d08a0a63af5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b9343957ebd9870b2a721e4b3f0a0f7374b21392785330dc66acb78967cb5ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d363764193ad93360c2ad444381936c7b28f110f952874fa3277dc23db03e77d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84a239b2e52bc020fb593c186bcfe8bda822fd21984c73b54a3608def96de24f"
+    sha256 cellar: :any_skip_relocation, ventura:       "30e96e43a6d388fe42da77457b20ad22831089441cd70dfaa4336c6321363ad3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91faa7de6700a7a6bcc339412786a9467e65027484a3dce8f2b3047bcc64314f"
   end
 
   depends_on "rust" => :build

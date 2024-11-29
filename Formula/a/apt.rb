@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.14.tar.xz"
-  sha256 "c57b1f65854ee4189847157b5d294164ac7cd73cbfd9a5825d5d9ab820762911"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.15.tar.xz"
+  sha256 "01ddc6b682dec792e860c961603eb980324e1c6bd74ce68c45a7c225eca06ce1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "fc1017229fd8f4598e7453cde31bf9199140203647865596272b7dc20e6023bc"
+    sha256 x86_64_linux: "af5408cbf9f873f7f264206d87f8d21a2f19ed89c61c8de23ef6c490cc9aa341"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -102,8 +102,8 @@ class Apt < Formula
   end
 
   resource "XS::Parse::Keyword::Builder" do
-    url "https:cpan.metacpan.orgauthorsidPPEPEVANSXS-Parse-Keyword-0.46.tar.gz"
-    sha256 "65a2726a910079499ad4bb83c4178059da43306ae92c8734c8fa17c02f22a01d"
+    url "https:cpan.metacpan.orgauthorsidPPEPEVANSXS-Parse-Keyword-0.47.tar.gz"
+    sha256 "d42fb5a9978e25c4c3f10351291b155d503fe869ccd532910c05e6b93a6b9fad"
   end
 
   resource "Syntax::Keyword::Try" do

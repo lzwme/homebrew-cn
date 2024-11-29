@@ -1,8 +1,8 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
   homepage "https:grafana.comdocsagent"
-  url "https:github.comgrafanaagentarchiverefstagsv0.43.3.tar.gz"
-  sha256 "99d48af06ac8e2c8c6696508e53a06e1bab4e1dc3bbcd5146e9f0066fef1e9ae"
+  url "https:github.comgrafanaagentarchiverefstagsv0.43.4.tar.gz"
+  sha256 "06d0bb36017e8298c5a775ad44fb83a05e42f0c4654cb33ab29fb4832e922c3f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class GrafanaAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df50c15aefcf0ef5966448c86bd08deb85084c685de2ad4b2f0dd8cc2f5a018"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27b23bd0769a183852d016149b1345504265653d08f1c68bbbe0fb6bff8a7997"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "508566ffd9692fdb49c66bff04865eb87d5953da70e5a4eaafa34088c1cf3e7a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fd2bbd05f143fc7608acc767166f975176da4ce25c47dd8c03f387c761f9ec4"
-    sha256 cellar: :any_skip_relocation, ventura:       "c44eae56d3105734dd889a4e952084b55af19e7c36a6d02068f5a369e165d984"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a64752034facb371210f5da42f490635b21ee9690d19e405dece66f2622d87e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6490f17f587fd91e60cc621ca3a541c9a8db4923d474dc16050e366b36e4933"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04b0076fe7823a1f57efcc9b17536ff4345b4ab131f5a83a0d5da3e9f6e47d9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "39c0457c500c07966180bc5b9298c2ccdd5517b967357e40fb305eb44d225cc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "117751e5c6308d96f4f1bc4093a07057811ca98234be5e25908ad726761d53e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "1413ef79c54aa0dc96fc7ab09f34e0a650fcfc9f94ac985c3b7993d9ab622077"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb74954c3365d544b2efa5e1862fc2602317d89a12532ab870850ae34cebd055"
   end
 
   # use "go" again when https:github.comgrafanaagentissues6972 is resolved and released

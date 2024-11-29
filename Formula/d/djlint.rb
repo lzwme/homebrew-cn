@@ -3,18 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https:djlint.com"
-  url "https:files.pythonhosted.orgpackagesebffc3a7ee0c22703c03132737d1021b3c75fe1a8cfc852ce03fe74842c12966djlint-1.36.1.tar.gz"
-  sha256 "f7260637ed72c270fa6dd4a87628e1a21c49b24a46df52e4e26f44d4934fb97c"
+  url "https:files.pythonhosted.orgpackagesde749173e0a91e705976c639eba1a39ce44b2b2ca1694e01c5ed8e397886d554djlint-1.36.2.tar.gz"
+  sha256 "00d1a79de3c43b50e46a0ce6f279535b88bbf203d3f50ada92f56740fca4f590"
   license "GPL-3.0-or-later"
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78219ea6bb1a185b5575a140c55616bdaab17e8b6ec37badd723c7409b9dca9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "38f1457fc7dd2606bb59a67969a9b78fa1651481d460637332b4caf87ad3665d"
-    sha256 cellar: :any,                 arm64_ventura: "d9f682f49fb07fa053cfd076f748f9d742b14bcc701426f4b769486fb720f9de"
-    sha256 cellar: :any,                 sonoma:        "7d96f1d76ce62098ed3179538a79a07e5968c12d55f451e6520e3793d40a147c"
-    sha256 cellar: :any,                 ventura:       "2379979f4a81273b9cbbcb3eb7e3338a6541de99966a9284b714ff22d4996260"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a120d347fd0caf802f333789c6c4961c2ef6c98a14e83849d60139fc1f24f61"
+    sha256 cellar: :any,                 arm64_sequoia: "f786943aacd4b105a8ed2c4af1ea098c951f6bdfc5fc7088aa154e988c3bc392"
+    sha256 cellar: :any,                 arm64_sonoma:  "6445ca51ed86197e72bb1dbbfb952b9f068b3273bc6908e384e9369d3c758c15"
+    sha256 cellar: :any,                 arm64_ventura: "27975159027d70fa412454c572f46b62d6124ee6ea49de075e2199cdc618bbfc"
+    sha256 cellar: :any,                 sonoma:        "096d34dbd6e447ac5fde0ed82c131b26436606a93b48b6bb7b6c4e1bc20dfda9"
+    sha256 cellar: :any,                 ventura:       "e7bb1a79ef85804559e246cf445e60f06b854c435d17d54d68eeeec457d0bb6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90f40c17e6bcb2a89f126500ba12ca36acaa024caca2390937c8d2e904689cc"
   end
 
   depends_on "libyaml"
@@ -46,8 +46,8 @@ class Djlint < Formula
   end
 
   resource "json5" do
-    url "https:files.pythonhosted.orgpackages915951b032d53212a51f17ebbcc01bd4217faab6d6c09ed0d856a987a5f42bbcjson5-0.9.25.tar.gz"
-    sha256 "548e41b9be043f9426776f05df8635a00fe06104ea51ed24b67f908856e151ae"
+    url "https:files.pythonhosted.orgpackages853dbbe62f3d0c05a689c711cff57b2e3ac3d3e526380adb7c781989f075115cjson5-0.10.0.tar.gz"
+    sha256 "e66941c8f0a02026943c52c2eb34ebeb2a6f819a0be05920a6f5243cd30fd559"
   end
 
   resource "pathspec" do
@@ -71,8 +71,8 @@ class Djlint < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagese84f0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0tqdm-4.67.0.tar.gz"
-    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   def install

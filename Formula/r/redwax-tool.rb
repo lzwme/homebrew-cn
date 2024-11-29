@@ -1,8 +1,8 @@
 class RedwaxTool < Formula
   desc "Universal certificate conversion tool"
   homepage "https://redwax.eu/rt/"
-  url "https://redwax.eu/dist/rt/redwax-tool-0.9.6.tar.bz2"
-  sha256 "7409b13af278b8a69c8428e388d79ad1265136be177bd9083d84399aa4242edc"
+  url "https://redwax.eu/dist/rt/redwax-tool-0.9.7.tar.bz2"
+  sha256 "00d621f710ebe27c198db2bc24e913710cdc4a0e4e09058dfa9ac9100c995870"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class RedwaxTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "68d4c7a2ccfd9e7d6f1c5395fe149497eb9159dbc1854c80571d862e9a4da3f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "0655bc75c6619caf8ceeb4268695ff05619f8b41101496db08bb085d1cf9f0bd"
-    sha256 cellar: :any,                 arm64_ventura: "0801f3e1ee4e843ee1bd56bb2c2f1fa4bb6a97d1c8d78f881c3f90899960f036"
-    sha256 cellar: :any,                 sonoma:        "542baabe9c6267a58a3e07933972e478813c6bb506b46378dc03b23b09c572bc"
-    sha256 cellar: :any,                 ventura:       "69ef5583d4389ea70ee734c490a66bb8cacd7578dea8d25955a7006f03bdded1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d5c0d21bc2469587576c4f1c97f65ab611e9e9f3deafa151d8dde7949ec12e3"
+    sha256 cellar: :any,                 arm64_sequoia: "47d5145608c4bd4e53812fc5d0b45ed02227c40609005ec7b115ef6642e50908"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf0a50409754ea19a9898eb84668506f590ffe9090013b406a13c293730b770b"
+    sha256 cellar: :any,                 arm64_ventura: "1167634d79dd458d7df607c2730f89e48ea4510328ad4ba91907a97b26eb5b7b"
+    sha256 cellar: :any,                 sonoma:        "b173bde7a53dee2054f6d55119086129b10b89c9189e70a35ec7a3ad2cceacd6"
+    sha256 cellar: :any,                 ventura:       "b267e0c5a584638ccd4f219632dfe7b51af105ef9ebdf81bb79595c2e5acd876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5160a7ca964a6de120991d21f1ebef91232556504ebfee44daed45924fb6b2dd"
   end
 
   depends_on "pkgconf" => :build

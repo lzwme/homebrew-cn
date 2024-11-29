@@ -1,8 +1,8 @@
 class PkgConfigWrapper < Formula
   desc "Easier way to include C code in your Go program"
   homepage "https:github.cominfluxdatapkg-config"
-  url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.13.tar.gz"
-  sha256 "8a686074e30db54f26084ec0ab0cd3b04e32b856f680b153e75130d3a77a04ea"
+  url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.14.tar.gz"
+  sha256 "465d2fb3fc6dab9aca60e3ee3ca623ea346f3544d53082505645f81a7c4cd6d3"
   license "MIT"
   head "https:github.cominfluxdatapkg-config.git", branch: "master"
 
@@ -12,16 +12,12 @@ class PkgConfigWrapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "687f2708ea80449698c7e397224c31bdefed92a3fb62129789af9696c903855e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff84cf136641fa9e4600cad7363ba236b6e61754febd1e1535221295ec433398"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f890aaf1aca1ef6bf208306efdecb9d0014d94814b7b8bc4630a147d159b90b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f890aaf1aca1ef6bf208306efdecb9d0014d94814b7b8bc4630a147d159b90b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f890aaf1aca1ef6bf208306efdecb9d0014d94814b7b8bc4630a147d159b90b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5e5413553fe515154ec9f64b1aa8ce3818ae738a19c7f6b8e8e9a9996de8ca26"
-    sha256 cellar: :any_skip_relocation, ventura:        "55c744422bc40db622dd94af14f64f0fce31dbfad1aabd536b0e2e6c4f8fe037"
-    sha256 cellar: :any_skip_relocation, monterey:       "55c744422bc40db622dd94af14f64f0fce31dbfad1aabd536b0e2e6c4f8fe037"
-    sha256 cellar: :any_skip_relocation, big_sur:        "55c744422bc40db622dd94af14f64f0fce31dbfad1aabd536b0e2e6c4f8fe037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48b50b820851376d9360895b3376639d7a31e050fcb4709a9fb17fa4e8edc40c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "918843c100312c7989536900ad3d290d425b9de54743685dd2f3b1511775ee69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "918843c100312c7989536900ad3d290d425b9de54743685dd2f3b1511775ee69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "918843c100312c7989536900ad3d290d425b9de54743685dd2f3b1511775ee69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5209cadce1517a6c12c81ece351367c2c37c75a4c9b9153e5c9ff1ff88bd455"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5209cadce1517a6c12c81ece351367c2c37c75a4c9b9153e5c9ff1ff88bd455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a95298ce324c3fa5a0ea2ecafd015c31c84af68de6650112ef8cdf2bd11889c"
   end
 
   depends_on "go" => :build

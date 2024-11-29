@@ -3,21 +3,21 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https:github.comtfeldmannorganize"
-  url "https:files.pythonhosted.orgpackagesef456b36a81132cd91b35f6727826533e9f166070eace72f3a09d85e7829c515organize_tool-3.2.5.tar.gz"
-  sha256 "319930ddaf76712cdf8e8d208ac5718bf87d1101d33339eda5fc84e73d2d70cc"
+  url "https:files.pythonhosted.orgpackages3cbd1b4217217aadce0d46e28042c0e06bb28863bfdfb383ce7afb18f69a1553organize_tool-3.3.0.tar.gz"
+  sha256 "034fdcf9ffeb23d21b495e038665278e589fa04dc7c0c0a01a4a3b30a06c539f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "36f14905bbce4d3324f19252da600e18b2afc5a388446f53697c5ab84a9f859c"
-    sha256 cellar: :any,                 arm64_sonoma:  "acbdf0326d0c14575e5859cc796b7a9f9d25425eba542dd7fd5ed69314b6cef9"
-    sha256 cellar: :any,                 arm64_ventura: "64443a5711ffe7e17f91b8895380b776902fcc0dd7910c7a981502fe0883b821"
-    sha256 cellar: :any,                 sonoma:        "dfa60944fffc04378f2e526487db3cdd78d3ac27d1b6aed42a1ed8924329bbb2"
-    sha256 cellar: :any,                 ventura:       "92c4cac7dad6b085212b906dfb22899a5d1fde1f4cb8c9fecf874889a7cc3915"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5bf2161867f1d90d2388a011e35dccb8b9698aed596bad51305dc6b34e8ac69"
+    sha256 cellar: :any,                 arm64_sequoia: "b6f9e95698b7fd36da9dd8b1496a8b9f256ec621afd2c5ee9189c0a76209102d"
+    sha256 cellar: :any,                 arm64_sonoma:  "46e1ea475ee507110ebd029f5ac455ae9a8e94ca019fa35c83e631f3868c600f"
+    sha256 cellar: :any,                 arm64_ventura: "0af9326f3082652c5f4a070deebbca7ecc3265796c5a099bea4e1f8a2e45658c"
+    sha256 cellar: :any,                 sonoma:        "cba1bb955b16375cb5016b074f40a28c7bcc4537317d2696207d87e1199c4238"
+    sha256 cellar: :any,                 ventura:       "376a6ae7bec093eb725a2072c57ec2f1d2212050a7e56c7e29fb463f3fccb47c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa0df1e16c90a4270ed94a57647b8b573817b6e92dded236af8bf53aac107f36"
   end
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build # for macos-tags
   depends_on "rust" => :build
   depends_on "cryptography"
   depends_on "freetype"
@@ -71,8 +71,8 @@ class OrganizeTool < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "mdfind-wrapper" do
@@ -91,8 +91,8 @@ class OrganizeTool < Formula
   end
 
   resource "pdfminer-six" do
-    url "https:files.pythonhosted.orgpackages31b1a43e3bd872ded4deea4f8efc7aff1703fca8c5455d0c06e20506a06a44ffpdfminer.six-20231228.tar.gz"
-    sha256 "6004da3ad1a7a4d45930cb950393df89b068e73be365a6ff64a838d37bcb08c4"
+    url "https:files.pythonhosted.orgpackagese33763cb918ffa21412dd5d54e32e190e69bfc340f3d6aa072ad740bec9386bbpdfminer.six-20240706.tar.gz"
+    sha256 "c631a46d5da957a9ffe4460c5dce21e8431dabb615fee5f9f4400603a58d95a6"
   end
 
   resource "platformdirs" do
@@ -101,13 +101,13 @@ class OrganizeTool < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
-    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
+    url "https:files.pythonhosted.orgpackages4186a03390cb12cf64e2a8df07c267f3eb8d5035e0f9a04bb20fb79403d2a00epydantic-2.10.2.tar.gz"
+    sha256 "2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
-    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
+    url "https:files.pythonhosted.orgpackagesa69f7de1f19b6aea45aeb441838782d68352e71bfa98ee6fa048d5041991b33epydantic_core-2.27.1.tar.gz"
+    sha256 "62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"
   end
 
   resource "pygments" do
@@ -140,8 +140,8 @@ class OrganizeTool < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "send2trash" do

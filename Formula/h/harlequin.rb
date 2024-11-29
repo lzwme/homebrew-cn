@@ -6,14 +6,15 @@ class Harlequin < Formula
   url "https:files.pythonhosted.orgpackagesbbc10fc47822534938e73f070eb485059be414bb6ee274ac05e1d5d695fb4c24harlequin-1.25.2.tar.gz"
   sha256 "8319da69b07afd063e1296ebba1569374daa171489b97bd35d2dbdae802e6144"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a4222d31076b6b37a7893a1f4f33864dbe7d0441913c627f3de2072ca735df0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "431c1d2d62756ffe35844622de0752cd921442607dc4053dbeeb3df4cb48c05d"
-    sha256 cellar: :any,                 arm64_ventura: "63f20125af649403431da9e77828f737496a6f98cc413a74a728eeb6a96873d1"
-    sha256 cellar: :any,                 sonoma:        "76e9ddc0c1986af61180e1aa4a97d9a17cdb29c5aac14fe659fc31f2777a1c21"
-    sha256 cellar: :any,                 ventura:       "32b8d392730383596dfec5bece5e5f14ed88fc58594180b03d6b088bebf4efa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d353b3e7738c1b0848c8336280dc14c31170330949766ac39a52c021eba7b83f"
+    sha256 cellar: :any,                 arm64_sequoia: "a0325720a564ef70170a8678b274989f790c8a9c6f941ce8d0de28ccd2886097"
+    sha256 cellar: :any,                 arm64_sonoma:  "85bcdff85ce10a5347c4aa11dd122530113712c8822bb71fa6b5bcd2d62ddce4"
+    sha256 cellar: :any,                 arm64_ventura: "d53144065dbf6f3795184304a15a683d150f5739c6e65af081b9f89d64d914d0"
+    sha256 cellar: :any,                 sonoma:        "4cbdc353f11b180b0c3b4f2e30efe8bd9dea204f4419afc83cdfa5d4d30f91b0"
+    sha256 cellar: :any,                 ventura:       "a35f1ea5b322961525aa3ff9450531e80b97f57b27fbdc99a06ae453b1e4038e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "624d397576b9b0d573162619a8fd98f46f01dc3bd5cba0546efb7d5c439520a1"
   end
 
   depends_on "cmake" => :build

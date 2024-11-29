@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https:github.comfluentfluent-bit"
-  url "https:github.comfluentfluent-bitarchiverefstagsv3.2.1.tar.gz"
-  sha256 "8e706a2bbde85260f7df0638084e56d64a7149aa1bb67c5816bb5bda0bb928ab"
+  url "https:github.comfluentfluent-bitarchiverefstagsv3.2.2.tar.gz"
+  sha256 "3abcd7eda1a26fe79f1d715491bafcca77d0186cc46d1d8465157790358f827d"
   license "Apache-2.0"
   head "https:github.comfluentfluent-bit.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79596fead7be0aedb84259d3faa6e6486e7acfd92fa69fcde67b9c139950287b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9257daf1370c0834fad3cea318b808908393f9485d757a7e5d25f89e804ed4f4"
-    sha256 cellar: :any,                 arm64_ventura: "6c79091cac29e43a70e2350d33aad6d97956ac25f8f5e7a89edd07193147d707"
-    sha256 cellar: :any,                 sonoma:        "255bef3b3278aaa77779f1838da05a3fc695aad23d8474046ec26d1e4df83390"
-    sha256 cellar: :any,                 ventura:       "ab8c1ca181aa2899c931391ec128a7dc6c074dcd61d8978466bba9ed48bd0a8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8437e0f10f87dc8c3c2e8706ca7e1a039efae7b343a5874d80b071c1fdc43d3f"
+    sha256 cellar: :any,                 arm64_sequoia: "af89d2a66e1e668cb3ba357373ab986ea64e39a09cc18968feb5db295776cb87"
+    sha256 cellar: :any,                 arm64_sonoma:  "86f22d5dbda4363a14e71ed1de1be7f26d8d03bbc1d4c0da057b5a0a2d052db7"
+    sha256 cellar: :any,                 arm64_ventura: "ecea648bc9c45ad2598bd2c2d4a46e295922dad232475cf7174be6114f8823c4"
+    sha256 cellar: :any,                 sonoma:        "09a32f1ed146c6ab1f4727d3c88915edc7a7fa56002b96ebe742751ac601ff0e"
+    sha256 cellar: :any,                 ventura:       "2d497b67f90eb42621d2b45880afc8b7e03ba5c718f57ab084584b866e031983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1ed19978a87c0cd15ea46b8c85f99e2560e3ffd343ce4aae5855abdb768bad2"
   end
 
   depends_on "bison" => :build

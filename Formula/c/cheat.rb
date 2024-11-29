@@ -6,14 +6,13 @@ class Cheat < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d5668b7aff791cb9ca9da071b579af1f0856b9e073fb9bd1cbf5baa2a5506794"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dd5285d4e42b1976c4f0f334801393e2e4773162923cd55452f802321e2f711"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e21ab004b1cb5980cc44bca0f53b15c2faa6eafce6ddc9eca8111686fd1cd7f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1474e66acfad304ccfaac31485a8d157f9f46715abee290f762101012b75edfd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5ba6469c2d181e3d0003a62b82013a1e062e83fcede817b03c3b0fe396b296fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf46ed2b17ac40f8c9fbadb38654b9ed601f825e9256975e0903fbecce3f432f"
-    sha256 cellar: :any_skip_relocation, monterey:       "72b7aad552bca469ac25da221432e8cf1fdb066082d3b9772f831faf6b7e566d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "029acbb363f0d93fa5560e631262cff46147940c960283aecb0256ca7919e163"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2235b0cfe1d7f343b6fa54c57e5b17a23d664c3f9c4db25ca608b2e3aa19122a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "848c49f1b2779689004f4e12ff81576243be07eb5d85edcd1a6dead04ed39cf0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b826a7eebaefd56353b8803f89a6caf5fbb6f0cd7b40dd8edeaef35be8f6b6c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df2aea16e35718db7e41104bdb40d5470b5910f8922bcfbdd52f07efa486f563"
+    sha256 cellar: :any_skip_relocation, ventura:       "b0ab4a1d6fec6ca930f8feee4b0347aba711573e9a8966bfc348b6561c12786e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65de6e12581b52da9cd69157314771de3b0f003b098ea6cfcfd7347a8e8ca6fa"
   end
 
   depends_on "go" => :build
@@ -25,7 +24,7 @@ class Cheat < Formula
 
     bash_completion.install "scriptscheat.bash"
     fish_completion.install "scriptscheat.fish"
-    zsh_completion.install "scriptscheat.zsh"
+    zsh_completion.install "scriptscheat.zsh" => "_cheat"
   end
 
   test do

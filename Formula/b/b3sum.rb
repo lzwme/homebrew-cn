@@ -1,19 +1,17 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.4.tar.gz"
-  sha256 "ddd24f26a31d23373e63d9be2e723263ac46c8b6d49902ab08024b573fd2a416"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.5.tar.gz"
+  sha256 "6feba0750efc1a99a79fb9a495e2628b5cd1603e15f56a06b1d6cb13ac55c618"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fe35bfce0671e18a64849c7058afe0954c89af8d455b48ebe7f81fad8ff3163a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c06d5ab0945af5136872f7416e7ca30b81114042121774b88cf9d1b16a4ec083"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd2814bac039ad97a977980a1efac2948c98e68775a60203ed2d0233a212e7dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a52d4b0e231e19b4e0b096b8fb4ecbde3cd01a36feb5ec7e3bffdba9df530c57"
-    sha256 cellar: :any_skip_relocation, sonoma:         "41a72f0fc4d7c8cdd9a71e6ea7ed71787fa93be8802e057082d38ec3344af21d"
-    sha256 cellar: :any_skip_relocation, ventura:        "58affc8a903569e96fd41df552cba86cb3a8f3f640dbf300cfafaff19afc0133"
-    sha256 cellar: :any_skip_relocation, monterey:       "a1b3a4bc1b1e1b587c03b140359b531c1d80ed7044991aba48d561d8148cf364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a9ea3f9205c87cdf3807f1604a1af25c25070653061db2d3167e4abe714a2d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9082de4e1d3f9390c44ff4f38d4e379509b2fec34517a3e1f9a5a9a09c0ada96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e34b5afc894772d32d0d983499bd86d5ddff03023cf637d3390db4202cbc49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6db680bdafce5253681b4a7840b01367146682dc258f48a4c2a438f47595860"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6230145a2c86105180567a79296ebbae941f7091444238e83dac659a855d2df9"
+    sha256 cellar: :any_skip_relocation, ventura:       "9a4948a3ead4ee1ffffb910b032627da971bb343c59bb3a64821c6c96c000a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064f2d5353a0cb664ebdb227d00cd6444e5fb3b0adb2a5e9f10ea9b0fd4cda83"
   end
 
   depends_on "rust" => :build

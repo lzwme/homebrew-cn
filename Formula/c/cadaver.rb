@@ -1,8 +1,8 @@
 class Cadaver < Formula
   desc "Command-line client for DAV"
   homepage "https:notroj.github.iocadaver"
-  url "https:notroj.github.iocadavercadaver-0.24.tar.gz"
-  sha256 "46cff2f3ebd32cd32836812ca47bcc75353fc2be757f093da88c0dd8f10fd5f6"
+  url "https:notroj.github.iocadavercadaver-0.26.tar.gz"
+  sha256 "9236e43cdf3505d9ef06185fda43252840105c0c02d9370b6e1077d866357b55"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,16 +11,12 @@ class Cadaver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1ddf0b7918bade1b595f7883371fd7dae26f81938688890951f3a46b3a54e20e"
-    sha256 cellar: :any,                 arm64_sonoma:   "1d97d4fffb780e41d1202d716cb9c509c7883ab2da70ac59c0439fbb910a8908"
-    sha256 cellar: :any,                 arm64_ventura:  "c48264ae39d915f8cdb905a8b8807d39205edc892f40163cfc07d09ed8f7be75"
-    sha256 cellar: :any,                 arm64_monterey: "7b80acb805a75e568a23999803cba218418d30fcf686e81226b8922adad0d4be"
-    sha256 cellar: :any,                 arm64_big_sur:  "42fd4197b8eb2bc2e6d6dc3dd0864c497c697bcc497fd4e5994f7a55880f7629"
-    sha256 cellar: :any,                 sonoma:         "e4e7e28823f9863cf1c5a140333816fc4a48ee034abd0d70b20ba9c047e9bed1"
-    sha256 cellar: :any,                 ventura:        "69364af64cd35d26b327788d6a6851f3bef4adccb62a4ee2de0b2925f2fd03c9"
-    sha256 cellar: :any,                 monterey:       "43eab9ac0dcb4d73e38f20d79989613b30f075af20b2496728362c82a37c82c0"
-    sha256 cellar: :any,                 big_sur:        "d10e0968b5b4402e13db9871b9e26d34fd923f926e1f3d6cd89342dd9ca32fe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1833b0bdb9598c89320a80dd6c92137c2b3dacae8622e60b60782883d031d32"
+    sha256 arm64_sequoia: "1865f65bd09a67eab16c71888453b96c58b83d5ee053cb8b0afaf9ce632b3149"
+    sha256 arm64_sonoma:  "2da179616e40cf56092cde66d44281e7f7f1031507642299f13702031f650d31"
+    sha256 arm64_ventura: "dbfd46990bd7f0da5555531fe05b453ed720ef200c000d4e72bcb2e6a0acd506"
+    sha256 sonoma:        "abfa76ac943d4031ba46c0147e83dbb13cdc6f5049d1c66eba7396572e0bc437"
+    sha256 ventura:       "a5369a2c7d4c1b21b64035be3c3a899872fb7e55c10374343386aee3a82d6fa6"
+    sha256 x86_64_linux:  "aca16f2c07fb756b65f35d3b6ed8f53f7f07226bb7657a6ec009629eb014732b"
   end
 
   head do
@@ -45,10 +41,6 @@ class Cadaver < Formula
     if build.head?
       ENV["LIBTOOLIZE"] = "glibtoolize"
       system ".autogen.sh"
-    else
-      # Allow building with `neon` 33. Fixed upstream but would require regenerating configure
-      # Ref: https:github.comnotrojcadavercommit2433126db25ffd38dc11ef847614e479141cc229
-      inreplace "configure", "in 27 28 29 30 31 32; do", "in 27 28 29 30 31 32 33; do"
     end
     system ".configure", "--with-ssl=openssl",
                           "--with-libs=#{Formula["openssl@3"].opt_prefix}",

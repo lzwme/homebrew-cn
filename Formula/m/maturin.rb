@@ -1,18 +1,18 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https:github.comPyO3maturin"
-  url "https:github.comPyO3maturinarchiverefstagsv1.7.5.tar.gz"
-  sha256 "e0c82ba54e5b410c9641db653581b995f6ec9f7a44e10a2cc6a8f75ce3797c2a"
+  url "https:github.comPyO3maturinarchiverefstagsv1.7.6.tar.gz"
+  sha256 "97fbd90108886776441eccbc44b92d5804cc6e8261fd8c03758c210c7f759320"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comPyO3maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88a63869f72b1cbd552701d989c8cde7d51cd4503f955eb86797c11b0f3f8915"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f7413a1ce352bb4e4b81dfdf70487d6992a2de95f2ffffae8d7aa7c37c9cb0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01e725dec32794803ac57634a124594c87ed17841442fd1018e1e2a64deec27f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4ff50c642e37e53281cf8ce3d28674d8c33e86a4d86208d16839be998aa8a6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "d34147513268f169d81367fbe81c66b7b297bb9385a2a1662b13b6459f103432"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe45f423c8110066bff523e78fe5898b43b7ad9fa6666a23dc447d22dab02095"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5784fbd684ee35fc8ae2641d2adee25bdb67d02df2aa39ed4f3bc801a8ceaf0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "772c217c599e6f41abf5956a4965ba7b43d9c5ed5c89ffcca80a0c24664794c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2439388c570370f0390c5ba47ba35fe336f6e043c521d2d74d159fd81b87d50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "039cfbdfc091143106abb9a978c9fde1f7d01513ed175db694630f1872e2211f"
+    sha256 cellar: :any_skip_relocation, ventura:       "9d30cfbd74f2199893e3a050c3d39bf3adfcce241b1ed00e676ec3cc6b026586"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c8e062d673a83a428da9fe2aec16441c3aa38b9ec9d9a9bf37fd577baa4124f"
   end
 
   depends_on "python@3.13" => :test

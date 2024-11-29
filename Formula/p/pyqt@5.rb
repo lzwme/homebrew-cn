@@ -4,21 +4,19 @@ class PyqtAT5 < Formula
   url "https://files.pythonhosted.org/packages/4d/5d/b8b6e26956ec113ad3f566e02abd12ac3a56b103fcc7e0735e27ee4a1df3/PyQt5-5.15.10.tar.gz"
   sha256 "d46b7804b1b10a4ff91753f8113e5b5580d2b4462f3226288e2d84497334898a"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia:  "d4d4bf1fb19690cbe7acccb4ac2ddb98046d94a44623271e7221397a4de415c4"
-    sha256 cellar: :any,                 arm64_sonoma:   "4d80fa381e5a71e813bdbb8a512f62f427da0735ae0907aeeaebe9991ff35b9b"
-    sha256 cellar: :any,                 arm64_ventura:  "fb69149347b51e29edcc5a7f63316655056c5ce8642473253556194382ba9c24"
-    sha256 cellar: :any,                 arm64_monterey: "1a9033ed91291ee6048cd8f65ccb01ab8af0ab921c14a9d0ca0b5642350499dc"
-    sha256 cellar: :any,                 sonoma:         "637ae5ecc8f131cd10706b86fba6bc283ae6fea036678fdeac542458458d0fc2"
-    sha256 cellar: :any,                 ventura:        "c49b4f97bdfbfb38387abe015187fe4fdc64db2861542425a340fc40e54c8252"
-    sha256 cellar: :any,                 monterey:       "3ab79417378d323ab71bab013cbfa593800d7872becb887e6a3b905f93998d4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f94b4ae841859f9384e9c0a56bde2c6b8f66180c3ef272a02ced3ab23c0b1247"
+    sha256 cellar: :any,                 arm64_sequoia: "cbb294870fe68a946ad473615463bf020f201e27b3e32b452a6139d268b9390a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e23f3f9cdfced3bebb3e55ba99a187ea02da0d8b0708e9f6c8ee67c9049c0ba2"
+    sha256 cellar: :any,                 arm64_ventura: "9c6eefaa9ef275e41d7990d193c5024493f0e9a4702e807c87ee676466a41f6a"
+    sha256 cellar: :any,                 sonoma:        "528343b76225dddb2268ec7527536792f4b59ab923ed57db40cbfb94e94655d2"
+    sha256 cellar: :any,                 ventura:       "36a87c353b592a4e29a55acf9ed23e29197bb0547e0a9e78dc794b1b55127c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f786acf87d628381c7ca0338afc417e5f95ce766116203253b957ce8f4c5fe3"
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt@5"
 
   fails_with gcc: "5"
@@ -60,7 +58,7 @@ class PyqtAT5 < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

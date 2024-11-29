@@ -1,17 +1,17 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https:github.comtriyanoxlla"
-  url "https:github.comtriyanoxllaarchiverefstagsv0.2.7.tar.gz"
-  sha256 "a09d352aa519a0c8e73fc812abd844ca1948b16b73071a68dbd44695fa804c12"
+  url "https:github.comtriyanoxllaarchiverefstagsv0.2.9.tar.gz"
+  sha256 "e21cba33f4f2da83c4a58d799b5b36cca0bce1946231e611cceacf681584a67a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c55294aa140b5e5643251a774189dcfb15549d903c8d22f87f98d721972e8862"
-    sha256 cellar: :any,                 arm64_sonoma:  "de3015b2a489de168bfb217f66c16475e9e6d92e093cfce85647402735074412"
-    sha256 cellar: :any,                 arm64_ventura: "cd36dbbe69774f47e159abd6968d38e801f3831f433735761115e502f8966a5f"
-    sha256 cellar: :any,                 sonoma:        "a9e89bfb960e8cfc1f393f1c3614f28ced5ef58db5a249f129c9f7aed28a0733"
-    sha256 cellar: :any,                 ventura:       "38d95db1e5156465318dcabac345bf3f956f61d5fb9554a9e5b405f1a3d4c9fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab53dced7964bcf2f33d9e8202c8926f827a9fa24216365b922b798c9e09014a"
+    sha256 cellar: :any,                 arm64_sequoia: "e3ae1d1272bf0986f14b3b0e3b59eca7ebd29d41c83bac402c946a708709429a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9bdd32ccd66cc3169d8097580545ff3d398a3204ca9feb0746b88510a76f743"
+    sha256 cellar: :any,                 arm64_ventura: "46bea68ecfeebac773b8299fe44b7da3e063490886ff96b7c14f6972efcdcd63"
+    sha256 cellar: :any,                 sonoma:        "469bc5757d83a6eb98ec7cb69f49f69b60cee95c1569adf9f204334fd58beb3b"
+    sha256 cellar: :any,                 ventura:       "28b96efbf8dddb237e90f40a042c004a0679ee71a6c224478fddcc8284fa5c32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b347ae2ff74facbeda40012390f7b36f4fb3600c9098d21f424f2cd961aa24"
   end
 
   depends_on "rust" => :build
@@ -28,8 +28,8 @@ class Lla < Formula
       system "cargo", "build", "--jobs", ENV.make_jobs.to_s,
                                "--locked", "--lib", "--release",
                                "--manifest-path=#{plugin_path}"
-      lib.install plugin"targetrelease"shared_library("lib#{plugin.basename}")
     end
+    lib.install Dir["targetrelease*.{dylib,so}"]
   end
 
   def caveats
@@ -50,7 +50,7 @@ class Lla < Formula
     system bin"lla"
 
     # test lla plugins
-    inreplace(test_config, ^plugins_dir = ".*"$, "plugins_dir = \"#{opt_lib}\"")
+    system bin"lla", "config", "--set", "plugins_dir", opt_lib
 
     system bin"lla", "--enable-plugin", "git_status", "categorizer"
     system bin"lla"

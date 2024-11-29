@@ -42,7 +42,14 @@ class S3cmd < Formula
   end
 
   test do
-    assert_match ".s3cfg: None", shell_output("#{bin}s3cmd ls s3:brewtest 2>&1", 78)
+    (testpath".s3cfg").write <<~EOS
+      [default]
+      access_key = FAKE_KEY
+      secret_key = FAKE_SECRET
+    EOS
+    output = shell_output("#{bin}s3cmd ls s3:brewtest 2>&1", 77)
+    assert_match "ERROR: S3 error: 403 (InvalidAccessKeyId)", output
+
     assert_match "s3cmd version #{version}", shell_output("#{bin}s3cmd --version")
   end
 end

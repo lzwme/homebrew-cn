@@ -2,8 +2,8 @@
 class FileFormula < Formula
   desc "Utility to determine file types"
   homepage "https:darwinsys.comfile"
-  url "https:astron.compubfilefile-5.45.tar.gz"
-  sha256 "fc97f51029bb0e2c9f4e3bffefdaf678f0e039ee872b9de5c002a6d09c784d82"
+  url "https:astron.compubfilefile-5.46.tar.gz"
+  sha256 "c9cc77c7c560c543135edc555af609d5619dbef011997e988ce40a3d75d86088"
   license "BSD-2-Clause-Darwin"
   head "https:github.comfilefile.git", branch: "master"
 
@@ -13,16 +13,12 @@ class FileFormula < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "251cec26310d3a9487bebee946957caf8adfb2b8d9f4c2dc4f950de05e2384fd"
-    sha256 cellar: :any,                 arm64_sonoma:   "46c92c7eeddf54855344d6ca8930eaa1b4119acf988ce42455fdccd20eccb439"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe86a1022a44ac24fbd0f8b40a2ee4624335cdc6f1a865f5c5ca8df5fa07b454"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdaf9f9b25fcf7ea6c7bdbe44ec3f3cc0d56be0dcec1bbb9c6d4a0fd8d639e9c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4058375a321cd37c7d6090f446a2da2781e199b58a9b33cf8c4af480d4381836"
-    sha256 cellar: :any,                 sonoma:         "ea555131b8cf53945def5e4686babb38d502b0c907ff5e5eb4402a98e0960bd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "e801499f30fee64e03dc573b510c5ddfc9eafd1e258d54e3d2b0c16fc1fb74fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "83c75fa244fa2a9d65f2401516a4084805abf69896ff1ba76b1c50e516fd1f82"
-    sha256 cellar: :any_skip_relocation, big_sur:        "43280d24f741d9e770a41434fb8877d8004ad610fcec70b63cbc93be8d599efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52bffb8f6675e1f95f197f1247b569ad5203fde6bbdc69fdddaaf7805de520c6"
+    sha256 cellar: :any,                 arm64_sequoia: "5fe19d9d579de777487bbaa3722d672da01bcfae88f92af992918069bb5a0ac0"
+    sha256 cellar: :any,                 arm64_sonoma:  "573bef480b6d3091dac30e1c279c18285ad25df7a30eea2805abe96aadce828a"
+    sha256 cellar: :any,                 arm64_ventura: "99647711bffd2202b37256b511b365f4d1896b4ff6c0434d280dcff204d7ff10"
+    sha256 cellar: :any,                 sonoma:        "3fea058cdd5fc0e35dc5eac1d7c50e08bea271f93bd68bcd679c3a25073aa559"
+    sha256 cellar: :any,                 ventura:       "c05544f86ae7b5a8469dede0beaa2553c083195e183cc842fd818db0cfe037e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2ca7e9679bf47ba1ddc966bef0a2c2fa1d85280122449fae5dc877fc0ba8874"
   end
 
   keg_only :provided_by_macos

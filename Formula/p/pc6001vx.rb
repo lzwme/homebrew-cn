@@ -15,7 +15,7 @@ class Pc6001vx < Formula
     sha256 cellar: :any, ventura:       "ebc9b5019ca6e11e1dded702b91d39630b8e1d6f04c30c3ec6f0312251953c98"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "qt"
   depends_on "sdl2"
@@ -24,33 +24,40 @@ class Pc6001vx < Formula
     depends_on "gettext"
   end
 
-  fails_with gcc: "5" # ffmpeg is compiled with GCC
+  on_linux do
+    depends_on "libx11"
+  end
 
   def install
     mkdir "build" do
       system "qmake", "PREFIX=#{prefix}",
-                                 "QMAKE_CXXFLAGS=#{ENV.cxxflags}",
-                                 "CONFIG+=no_include_pwd",
-                                 ".."
+                      "QMAKE_CXXFLAGS=#{ENV.cxxflags}",
+                      "CONFIG+=no_include_pwd",
+                      ".."
       system "make"
 
-      prefix.install "PC6001VX.app"
-      bin.write_exec_script "#{prefix}PC6001VX.appContentsMacOSPC6001VX"
+      if OS.mac?
+        prefix.install "PC6001VX.app"
+        bin.write_exec_script prefix"PC6001VX.appContentsMacOSPC6001VX"
+      else
+        bin.install "PC6001VX"
+      end
     end
   end
 
   test do
+    # Set QT_QPA_PLATFORM to minimal to avoid error:
+    # "This application failed to start because no Qt platform plugin could be initialized."
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     # locales aren't set correctly within the testing environment
     ENV["LC_ALL"] = "en_US.UTF-8"
+
     user_config_dir = testpath".pc6001vx4"
     user_config_dir.mkpath
-    pid = fork do
-      exec bin"PC6001VX"
-    end
+    pid = spawn bin"PC6001VX"
     sleep 30
-    sleep 30 if Hardware::CPU.intel?
-    assert_predicate user_config_dir"rom",
-                     :exist?, "User config directory should exist"
+    sleep 45 if OS.mac? && Hardware::CPU.intel?
+    assert_path_exists user_config_dir"rom", "User config directory should exist"
   ensure
     # the first SIGTERM signal closes a window which spawns another immediately
     # after 5 seconds, send a second SIGTERM signal to ensure the process is fully stopped

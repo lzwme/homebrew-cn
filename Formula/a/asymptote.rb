@@ -1,27 +1,27 @@
 class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
-  homepage "https://asymptote.sourceforge.io"
+  homepage "https:asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/2.92/asymptote-2.92.src.tgz"
-  sha256 "9d9b5c6fa7e0fbce3c1e54feb25e2d51d28c4fe7798f24c76cdcae8291a8ea66"
+  url "https:downloads.sourceforge.netprojectasymptote2.95asymptote-2.95.src.tgz"
+  sha256 "15604fd02cb6ddbc5b807529d2e6fc617c825a184dd0d7b71390c567aeac78e7"
   license "LGPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/asymptote[._-]v?(\d+(?:\.\d+)+)\.src\.t}i)
+    regex(%r{url=.*?asymptote[._-]v?(\d+(?:\.\d+)+)\.src\.t}i)
   end
 
   bottle do
-    sha256 arm64_sequoia: "a2ab1dcc8aec354cde8671c085d0087da9defc0a69b45133235b51722b1da807"
-    sha256 arm64_sonoma:  "14e5d0b73d1a8a8d3b75afe56b483bb891171ca9f54733c7c7be1e6bb12663f7"
-    sha256 arm64_ventura: "924fbbc0946774ebdb79b1acd8d2b15ac9a99c339381949f8329775bfb381723"
-    sha256 sonoma:        "85cb50b11d1bd47bdcfd720da922713a9cac97537b2cee05a97424bdc7e75684"
-    sha256 ventura:       "bf56177a8977e92c6aed5bc61f061d7015099a8d659733a7c145c105fcb3cc4d"
-    sha256 x86_64_linux:  "26492e1f8f727213bff5d06863fd3869c975687a794c8affa408151a19769592"
+    sha256 arm64_sequoia: "a1c56be4c45650d2d5f83bc9542ab89835f84057dfec939c427e829c246b628a"
+    sha256 arm64_sonoma:  "eea6f4fdaa8596fa1e83aa3e160857d5a51464d88d8316c57c32c263e5ecc9e6"
+    sha256 arm64_ventura: "ca60203750f4c53fe9346318ceb5c47b543f26b42bd046b38a709433201aebe7"
+    sha256 sonoma:        "2252c4a0f709df7154cb483c5740f69d4cb7163ec9793ba68325f0bb3cb6a577"
+    sha256 ventura:       "10cf4f66bb72faed0126d9b40775c2a0927741365de994e9c4459fc8d0c6b9a9"
+    sha256 x86_64_linux:  "0f1a1c3e3e400b2e62ff63d3f461c4fc7691220b8e9facfad0729139117c330d"
   end
 
   depends_on "glm" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "fftw"
   depends_on "ghostscript"
   depends_on "gsl"
@@ -39,34 +39,37 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/2.92/asymptote.pdf"
-    sha256 "ba96b049da98207eed38eb3be5c306fbd10ff8b00124e26609d5effe7adbdac6"
+    url "https:downloads.sourceforge.netprojectasymptote2.95asymptote.pdf"
+    sha256 "6fa4428a78c6af413ed82173056dd6330a496c5f7e930883b16c5cbfc01394cf"
   end
 
   def install
     odie "manual resource needs to be updated" if version != resource("manual").version
 
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
 
     # Avoid use of MacTeX with these commands
     # (instead of `make all && make install`)
-    touch buildpath/"doc/asy-latex.pdf"
+    touch buildpath"docasy-latex.pdf"
     system "make", "asy"
     system "make", "asy-keywords.el"
     system "make", "install-asy"
 
+    # https:github.comvectorgraphicsasymptoteissues497
+    chmod "+x", pkgshare"GUIxasy.py"
+
     doc.install resource("manual")
-    (share/"emacs/site-lisp").install_symlink pkgshare
+    (share"emacssite-lisp").install_symlink pkgshare
   end
 
   test do
-    (testpath/"line.asy").write <<~EOF
+    (testpath"line.asy").write <<~EOF
       settings.outformat = "pdf";
       size(200,0);
       draw((0,0)--(100,50),N,red);
     EOF
 
-    system bin/"asy", testpath/"line.asy"
-    assert_predicate testpath/"line.pdf", :exist?
+    system bin"asy", testpath"line.asy"
+    assert_predicate testpath"line.pdf", :exist?
   end
 end

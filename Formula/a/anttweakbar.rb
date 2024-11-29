@@ -1,6 +1,6 @@
 class Anttweakbar < Formula
   desc "CC++ library for adding GUIs to OpenGL apps"
-  homepage "https:anttweakbar.sourceforge.net"
+  homepage "https:anttweakbar.sourceforge.iodoc"
   url "https:downloads.sourceforge.netprojectanttweakbarAntTweakBar_116.zip"
   version "1.16"
   sha256 "fbceb719c13ceb13b9fd973840c2c950527b6e026f9a7a80968c14f76fcf6e7c"

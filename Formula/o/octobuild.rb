@@ -1,18 +1,18 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https:github.comoctobuildoctobuild"
-  url "https:github.comoctobuildoctobuildarchiverefstags1.5.0.tar.gz"
-  sha256 "3c355aae72134861d9c060061ab4ebfbb6ba8a5a7981f577c567af2dfbdf9279"
+  url "https:github.comoctobuildoctobuildarchiverefstags1.6.0.tar.gz"
+  sha256 "534215b646adef426810a1b371ecdfd087d432ca7b4262cff493dfedbacf9818"
   license "MIT"
   head "https:github.comoctobuildoctobuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "028a593ef0d0a6b24d69e931d19c9707232f315efab624d16b76f6e8e3939b31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b8d2ee5678de7b1fe2c0234b029932984550214071f01399039bdc51127d92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01c591047ded7b0e8e021acdf3e91f28de954e93536f237217e8bb052c548df6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39d367ca23ab315160d9e4350409616db74be873f5e3abf716a1d083d9d6686d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e0e728e7200e0df2dfaa1cb25e4166d544760abe1dd2198376aa09b6fb44a8a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f236d463ca1f779606681ef1933a3b96afa145ec1956f6cf9328c5cccf846a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7082f0eb5eb0f4ab3b67bcfc60e3411272388b32e81e4d5954e31fc12a01af11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5031d60300a4bed4adc3bfaa4367d64a1f30f896c632c62bc651f46fd7e9863"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b7bc35cb66bd00fc994a4aeabd31bb593adce49a23c806cadafd53843de24bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8601d7641b785f8336ec6643d6671d3edf5dbf0b02c1e146d3c2d595da75cdd"
+    sha256 cellar: :any_skip_relocation, ventura:       "536e3d03ab8af38a5ad474a3e59dc127e40abadf3e4fcc1d457806f01eae1656"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39e59384699ca25dcb9e6dde849ef81d980b035902c34b7a602974cb3eea6c71"
   end
 
   depends_on "rust" => :build

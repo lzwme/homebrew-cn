@@ -1,20 +1,17 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https:docs.cocogitto.io"
-  url "https:github.comcocogittococogittoarchiverefstags6.1.0.tar.gz"
-  sha256 "756bc574f311311639723297f3dc793f7494d9b3ae375d6bc3e6e714432d08f0"
+  url "https:github.comcocogittococogittoarchiverefstags6.2.0.tar.gz"
+  sha256 "fd7d69fb5b6d64e292877d87a77864d5081906b6e515e20b93348b7f05bd05c1"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9af39545522af295f59ee4be503a0416a32fdd409253a55c927752e20b2fc5f4"
-    sha256 cellar: :any,                 arm64_sonoma:   "78143145d4ad6e3882c09189bda0c96adfc34ddb544bee9fa5658c9c0a09d42f"
-    sha256 cellar: :any,                 arm64_ventura:  "4d250f3ca8f2d8883c89f0ca7ede68c7f3bc36ddf113f17e19a69e4bb4430c72"
-    sha256 cellar: :any,                 arm64_monterey: "8234e0b85119c68705cffda63d43f31b86c0336e0365ff2bdd47b6ea9d523393"
-    sha256 cellar: :any,                 sonoma:         "2440a1f23340d2a4c190971535c346775f85c10d4ac1cee5b393c892002ed095"
-    sha256 cellar: :any,                 ventura:        "56f49ee11cd3a9c2483fe81cb8bfbefeb17439dcbe246c5aee3e7da3ee1154e0"
-    sha256 cellar: :any,                 monterey:       "84480d041c83ebad7f0ad1e4f7233505d8b083b81b716c2b83bf0ac9b9324694"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aff6d16e56cddef28b7cad4d730bc0984c75134525f7e3761918b275774826c"
+    sha256 cellar: :any,                 arm64_sequoia: "d1316b272cc20ceae0cea34737f3a2becc8a06d398b27dfce3b1015fd02ffebf"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ae176d0c770b599d2df65532d080c90e3d621509a6f2dae490aa8148a8f5327"
+    sha256 cellar: :any,                 arm64_ventura: "792758a0e716a6a71775322246891153abb367de77e1591abfa98ec02a0d2190"
+    sha256 cellar: :any,                 sonoma:        "726859cd13aef5b104f7093e2aab721ae1a6cde300d64064678728c3b0fbc15b"
+    sha256 cellar: :any,                 ventura:       "5c85175e6d0a9071a4f3c746f09ae54a1932e70566a9279bdaa61d41bcf593c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84d0f037ed3ee459c1556a832e359b2970b4df2016c8ce888f5926dbebcd2664"
   end
 
   depends_on "pkgconf" => :build

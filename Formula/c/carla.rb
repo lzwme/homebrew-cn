@@ -2,6 +2,7 @@ class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST23, SF2 and more"
   homepage "https:kx.studioApplications:Carla"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https:github.comfalkTXCarlaarchiverefstagsv2.5.9.tar.gz"
@@ -21,11 +22,11 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "56213e765979dbe90d105907e5f9eb20d00f90290c63147d5c04de5ecf3d5baf"
-    sha256 cellar: :any,                 arm64_ventura: "ea3005ad3619d14e4c1c7f75f60c9af86e0a21fc927ac5dd3dcf136ace5eef0b"
-    sha256 cellar: :any,                 sonoma:        "6199f9867bff7d8fe10d49e29e46a5f3986f54ccb90c993398ab7b69e6d5839e"
-    sha256 cellar: :any,                 ventura:       "20e04d81cc37f87d5277f7e94882d9d4b5bdda0f3c61e4ed2ecda1f4c85b3ecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "133ea99c321c48bdba588d22f2c7ae064fb0d82730c815b1b6bb7f681b942c8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce72afa1076fbddeea49955b0317e5b68f6edf4977820f2a5b70f8901c38b7a7"
+    sha256 cellar: :any,                 arm64_ventura: "f9ff117b161827d6cb4baa2dfacbe278f352d2de9f9155065e739dee6bbd07a6"
+    sha256 cellar: :any,                 sonoma:        "f1c5e24d843962ef91ea7e4ccf820f829ffe55249fa2ac578cd921d28813ec89"
+    sha256 cellar: :any,                 ventura:       "ad08054b961096e4f34b9fb839cdd23d590199c110a8e8b99d1668a2512a86b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29b248df9d099efa03eb0a3d8ba9276e508e9e72a5ea428b58bc5df4024b176"
   end
 
   head do
@@ -41,7 +42,7 @@ class Carla < Formula
   depends_on "liblo"
   depends_on "libmagic"
   depends_on "libsndfile"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   on_linux do
     depends_on "alsa-lib"
@@ -57,7 +58,7 @@ class Carla < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     inreplace bin"carla", "PYTHON=$(which python3 2>devnull)",
-                           "PYTHON=#{which("python3.12")}"
+                           "PYTHON=#{which("python3.13")}"
   end
 
   test do

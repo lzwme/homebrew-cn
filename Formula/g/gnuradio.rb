@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https:github.comgnuradiognuradioarchiverefstagsv3.10.11.0.tar.gz"
   sha256 "9ca658e6c4af9cfe144770757b34ab0edd23f6dcfaa6c5c46a7546233e5ecd29"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d8c90b4a37295e286c4922b1c8ec7d845a8a3a0a0c27ab32b8d5530979143dfe"
-    sha256 cellar: :any,                 arm64_sonoma:  "06ac8da03aaca3d8f6fdede63295234259120c9cab34c58d22702f7ae8ed18b6"
-    sha256 cellar: :any,                 arm64_ventura: "72fba0972648f34a1f5e3e1887c05f64e18806bed4fe8ac4392de8c9572fc1c6"
-    sha256 cellar: :any,                 sonoma:        "3ae3eba4b90095e3262475be620845da0224e8db8046feffa8f5da3766ac4385"
-    sha256 cellar: :any,                 ventura:       "8612ccf79c75479767dd5a40ba092b29acaa70e805503fb77fdf6c26f2dcd67a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9b4fbb8b410cced6bffe53dca172e4df0ff3cbba8ef4be1bd729445da7d60b"
+    sha256 cellar: :any,                 arm64_sequoia: "e32a74cda3c91f1f0bd6a048c94dc5381468e8a32e3ba124ecc67681ea85c93f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab3a5ff722ffc0f72f81d06c7997bf69399149e09947388ae136cbf77a7ec6c8"
+    sha256 cellar: :any,                 arm64_ventura: "9c4f6425905fbdd404f0ace01e1956e1a107a9a6fe8ffaab057030addcafa32f"
+    sha256 cellar: :any,                 sonoma:        "44daf20a7ebaa312e0e8462ec83ce877598c5f96d5b7942e31612a32528202c9"
+    sha256 cellar: :any,                 ventura:       "e7c4fff9fd885440d9e1c4d58a39bdaf59824247c1a2993898c557098d3c2661"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb99bd447fe6c57571f5bb8669661a6b5b037ba3d43eaa3776a23d1b57cd0a7"
   end
 
   depends_on "cmake" => :build
@@ -44,7 +44,7 @@ class Gnuradio < Formula
   depends_on "portaudio"
   depends_on "pygobject3"
   depends_on "pyqt@5"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "soapyrtlsdr"
@@ -77,8 +77,8 @@ class Gnuradio < Formula
   # * setuptools - gr-utilsmodtoolclibase.py
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
-    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
+    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
   end
 
   resource "click" do
@@ -92,62 +92,62 @@ class Gnuradio < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages382e03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deecjsonschema-4.23.0.tar.gz"
+    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
-    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
+    url "https:files.pythonhosted.orgpackages10db58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352jsonschema_specifications-2024.10.1.tar.gz"
+    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
+    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
   end
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackagesd41b71434d9fa9be1ac1bc6fb5f54b9d41233be2969f16be759766208f49f072Mako-1.3.2.tar.gz"
-    sha256 "2a0c8ad7f6274271b3bb7467dd37cf9cc6dab4bc19cb69a4ef10669402de698e"
+    url "https:files.pythonhosted.orgpackagesfa0b29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dcmako-1.3.6.tar.gz"
+    sha256 "9ec3a1583713479fae654f83ed9fa8c9a4c16b7bb0daba0e6bbebff50c0d983d"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pygccxml" do
-    url "https:files.pythonhosted.orgpackagesa76626fd5b200172161de3d903b87a3ec9c6764bc6c6895744a57070790ea2aapygccxml-2.4.0.tar.gz"
-    sha256 "831d670c9829635a4f2fe1ff1e92d1e2bfbdebc16179f1ce7f4c3ce1762f1cb3"
+    url "https:files.pythonhosted.orgpackages831636c43ffd40f8b7326bb0d095fc705ccadee2ae0a6e5bcbbfa002185959a2pygccxml-2.6.0.tar.gz"
+    sha256 "7185c55867561e2b1082eadc5ddc3b3019b0328a1fd9e64d4b813a83e06131a6"
   end
 
   resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages21c5b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9areferencing-0.33.0.tar.gz"
-    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2380afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4frpds_py-0.21.0.tar.gz"
+    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

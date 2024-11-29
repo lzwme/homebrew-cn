@@ -6,43 +6,41 @@ class Urh < Formula
   url "https:files.pythonhosted.orgpackagesd8dca6dcf5686e980530b23bc16936cd9c879c50da133f319f729da6d20bd95burh-2.9.6.tar.gz"
   sha256 "0dee42619009361e8f5f54d48f31e1c6cf24b171c773dd38f99a34111a0945e1"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comjopohlurh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f4c830b4dcadd93a8cb54abe61279a9d4c6498b519422fe51da78cafbf036e0d"
-    sha256 cellar: :any,                 arm64_sonoma:   "9cf0c985be519cb7a5f1451f28e242d9505aecd69e45f24e6ea5ee5348c13421"
-    sha256 cellar: :any,                 arm64_ventura:  "eb11c4f95f491213e504f5b60504b12a828caa585be5c0aec76feeca62f57ab5"
-    sha256 cellar: :any,                 arm64_monterey: "750206ac26d982f439f424f847ba0836fe8a5dcc38ee6d11365bd4c13515c371"
-    sha256 cellar: :any,                 sonoma:         "c0a2928d954e4db4233ec61cd01b51dd53a97ce5378064645da014ba0809cc2a"
-    sha256 cellar: :any,                 ventura:        "add9e8fa22725e8821e914840d7d9fb7d7264a759aa938ad71e79518f753eeee"
-    sha256 cellar: :any,                 monterey:       "d7ecf3dccb8741f280378988e79477a37b78eb6493f50cf4688582f24c697abd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7249ef337f50461015896cc171db6501f3ca2b3d0b9e0664a2c32ba51fb7629"
+    sha256 cellar: :any,                 arm64_sequoia: "7a245b652c23f045e0126d444e311284ff745e55abb0eeec71fcd5fcea51463b"
+    sha256 cellar: :any,                 arm64_sonoma:  "c95d3a91199338f0f7c7d9908a0c73b34ac26adac714e045ac30d5a162440e5c"
+    sha256 cellar: :any,                 arm64_ventura: "6908cc6ffac8f16ac0462417d02e1761630a6a338cb03a8b339be40feb465101"
+    sha256 cellar: :any,                 sonoma:        "531cf6900e8e2f404fbf7f191b4d38ee0d82ff217a9fb68292ff8ab9e7561744"
+    sha256 cellar: :any,                 ventura:       "a2333202e0587108f7641225da241da61c735062a9a0704596afdb6d598d047a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c07f1091b4d163888bde7bfce246c3c94cbfeb8ba76b982dbbdd4f75cef4a16"
   end
 
   depends_on "pkgconf" => :build
   depends_on "hackrf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "cython" do
-    url "https:files.pythonhosted.orgpackages2a978cc3fe7c6de4796921236a64d00ca8a95565772e57f0d3caae68d880b592Cython-0.29.37.tar.gz"
-    sha256 "f813d4a6dd94adee5d4ff266191d1d95bf6d4164a4facc535422c021b2504cfb"
+    url "https:files.pythonhosted.orgpackages844db720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aacython-3.0.11.tar.gz"
+    sha256 "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
-    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+    url "https:files.pythonhosted.orgpackages26102a30b13c61e7cf937f4adf90710776b7918ed0a9c434e2c38224732af310psutil-6.1.0.tar.gz"
+    sha256 "353815f59a7f64cdaca1c0307ee13558a0512f6db064e92fe833784f08539c7a"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources
     # Need to disable build isolation and install Setuptools since `urh` only
     # has a setup.py which assumes Cython and Setuptools are already installed

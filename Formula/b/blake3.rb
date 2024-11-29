@@ -1,27 +1,23 @@
 class Blake3 < Formula
   desc "C implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.4.tar.gz"
-  sha256 "ddd24f26a31d23373e63d9be2e723263ac46c8b6d49902ab08024b573fd2a416"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.5.tar.gz"
+  sha256 "6feba0750efc1a99a79fb9a495e2628b5cd1603e15f56a06b1d6cb13ac55c618"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1572b7c66fd8e1e74db8df0663a0f5f8e8672c6f5617419d3894f1b6d0408188"
-    sha256 cellar: :any,                 arm64_sonoma:   "b98d30812404a382e2e0a4128c9c751359f6f5e416ed8be61de0cd70689c0b26"
-    sha256 cellar: :any,                 arm64_ventura:  "fa8e067197369778b60dd612db3310e9b97cea62ad449904372b57795438f0c1"
-    sha256 cellar: :any,                 arm64_monterey: "55fa7bced465117ebf342d11fa2dca0d466bbe66419fe2f119ed68b0278cce14"
-    sha256 cellar: :any,                 sonoma:         "c1dbb15d592fc823840875cc5cc0c98314f88ecf5bdbde7933e949964286ba8e"
-    sha256 cellar: :any,                 ventura:        "de367d003e40a75bc3a0649b62e435a6f55ad116f51e79f13c8cf056a34baedf"
-    sha256 cellar: :any,                 monterey:       "946aa7915986ed4ba1b2442c1a446358d7e429becd25450585c96f14727164fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1b7ef6252d7f5d1aba488f178a347a90359bb6b759dfc2805e9904784210ffb"
+    sha256 cellar: :any,                 arm64_sequoia: "b9d053b51e933e41cb5949074ad9a299fd2b31cbd59804a8c853e5e5c85cf6f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "0df024291db039b86a0de52917c0ec819085256130547ad0b534d0206a2e0d84"
+    sha256 cellar: :any,                 arm64_ventura: "ae11cf3d5117500c362a13b1e3e26df04004e14a2c0739914b81fbef270ccea0"
+    sha256 cellar: :any,                 sonoma:        "dd4a5e905c5b2bb06a323ede9c871c3284ba739c8a6934c8443c5ebfe548c8f8"
+    sha256 cellar: :any,                 ventura:       "f6f057edf60d9448debbe993061fe1ec0a19f706473a7f99a43cc122ec4ad95b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6138af9754e790d10ef2aa346c41860730a9ebcc1beb1d737ef57e73b1a21cf"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", "c", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    *std_cmake_args
+    system "cmake", "-S", "c", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

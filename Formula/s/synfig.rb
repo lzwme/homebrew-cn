@@ -64,8 +64,6 @@ class Synfig < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
-
     ENV.cxx11
 
     # missing install-sh in the tarball, and re-generate configure script
@@ -89,7 +87,6 @@ class Synfig < Formula
       }
     CPP
 
-    ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg@6"].opt_lib"pkgconfig"
     pkgconf_flags = shell_output("pkgconf --cflags --libs libavcodec synfig").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *pkgconf_flags
     system ".test"

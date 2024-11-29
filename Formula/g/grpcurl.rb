@@ -1,19 +1,17 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https:github.comfullstorydevgrpcurl"
-  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.9.1.tar.gz"
-  sha256 "4bc60a920635929bdf9fa9bb5d310fe3f82bccd441a1487680566694400e4304"
+  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.9.2.tar.gz"
+  sha256 "9259935b6ef86d701caef60be338600798348368c0f4dca063a45cf88d8186a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5809c9dd0340f5a8a58850e2aedf505a26ddd3739fe719d00d6fc5a38f10875"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efd68b0efcb47dad3279e83287d949c29a7006b30b6fd0f76703a1b493ea332d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa42f3862cb0797efa42180319ce25ea635cfa3a682d1e359da1879323d43a54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ace40839f0ecf9bedaeef3dc0ac75efcc872ab3c297f6f2cd3125d325a4fa5ac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b776c9fec3fc86a992c59ef7cdd5a0ce3c9fd2dc47fe93baef60463ac300cff6"
-    sha256 cellar: :any_skip_relocation, ventura:        "653f584dafa843f1f3b4306e905090f91a6d3d275eccf49d3931eabf8540bbd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "e62d02e7c297595290140eca5fae2b725089338e41891bae1816581a44abccca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d18d53a4e37806ac19e5e934f8798793d09595fdac978dda5b9581db675e0f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7bf5a847cacaef832a85655c36c22c5d38aaa8919188ce0595de2a3cb45711c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7bf5a847cacaef832a85655c36c22c5d38aaa8919188ce0595de2a3cb45711c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392591de30468ffd85c19e811d50b6f461f0bfa778cd540e482e08acf5ae9647"
   end
 
   depends_on "go" => :build

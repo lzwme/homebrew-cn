@@ -3,8 +3,8 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https:docs.openvino.ai"
-  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.4.1.tar.gz"
-  sha256 "b8045c9d24be1f7247ed5e1055f5a2df745fb00d4820af2686b5c04eca113163"
+  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.5.0.tar.gz"
+  sha256 "3d5b89760e1c946aca7b219dff4bf4cf5eb511932863c90cafc47d3c01c85744"
   license "Apache-2.0"
   head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
@@ -14,17 +14,17 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "08db97ef594be91f9e5ac60f0e7762f86821ca2606a67f4f90fa854f99017df1"
-    sha256 cellar: :any,                 arm64_sonoma:  "325852c31c34d989df1a36a794ba3cb6a0250be477c1d07079db05e4c40305e0"
-    sha256 cellar: :any,                 arm64_ventura: "f1344c24759b04c975ee35669b5fd808120446fb7374aa41a1799733d9f3cbc0"
-    sha256 cellar: :any,                 sonoma:        "907d1976dabef9dbd228a5ed44aa762d691c69a1971de7b3c1517e2ea5fecb6e"
-    sha256 cellar: :any,                 ventura:       "34d41a49064520427bd9402cd8e3962d53b138eaeb1161f3f1c45da8ec98d751"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34f60bcb27eee29db774d2249a6b649e5b28e4ddf34ff7ca6fc482d28387b93"
+    sha256 cellar: :any,                 arm64_sequoia: "5b2272d4aa5e3fee2709975d0e853a8af0aae0eb6db1b3b7858a0f5099bf82e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2697be979c58f4f4de033ec07fbd8b6bde2e47939d83fd2cd6585cdcc3d9c066"
+    sha256 cellar: :any,                 arm64_ventura: "2a1243c427383a6e945ee384d01fa1797ea26da8a6190785317ad6a692582227"
+    sha256 cellar: :any,                 sonoma:        "645bc931fb34a71bbda2254e69e902203668269e8b7a839a9fc3eb1b0215cb5a"
+    sha256 cellar: :any,                 ventura:       "1785b0322c816fc26430cccf45d2b133ca678d3921b07623510ae0ea8856f18f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b9cb38da036d771f8e24c2f4cc00ed42573f33686fb9d7ff87ee300228bb93"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "protobuf@21" => :build
   depends_on "pybind11" => :build
   depends_on "python-setuptools" => :build
@@ -41,8 +41,8 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https:github.comoneapi-srconeDNNarchiverefstagsv3.6-pc.tar.gz"
-      sha256 "d0eeff1425e318887c429a709d58010a580c8173eba8fbee74bca41b7f621f59"
+      url "https:github.comoneapi-srconeDNNarchive1722066ad4c0f15495f2d0fcbe9deb2bfd188c36.tar.gz"
+      sha256 "8955f19800066d8a705df2eb8b462085d6142b4f771ff88ae196e59a0d4ab1bb"
     end
   end
 
@@ -65,13 +65,13 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https:github.comopenvinotoolkitoneDNNarchivec8ae8d96e963bd04214858319fa334968e5e73c9.tar.gz"
-    sha256 "b9c2a53061b4528231ff5fbcee85900d698c329c7977b1f39c5d3d65f29c2caa"
+    url "https:github.comopenvinotoolkitoneDNNarchivec60a9946aa2386890e5c9f5587974facb7624227.tar.gz"
+    sha256 "37cea8af9772053fd6d178817f64d59e3aa7de9fd8f1aa21873075bb0664240f"
   end
 
   resource "onnx" do
-    url "https:github.comonnxonnxarchiverefstagsv1.16.0.tar.gz"
-    sha256 "0ce153e26ce2c00afca01c331a447d86fbf21b166b640551fe04258b4acfc6a4"
+    url "https:github.comonnxonnxarchiverefstagsv1.17.0.tar.gz"
+    sha256 "8d5e983c36037003615e5a02d36b18fc286541bf52de1a78f6cf9f32005a820e"
   end
 
   resource "openvino-telemetry" do
@@ -86,6 +86,13 @@ class Openvino < Formula
 
   def python3
     "python3.12"
+  end
+
+  # Fix to evade redefinition errors in ocl_ext.hpp (https:github.comopenvinotoolkitopenvinopull27698)
+  # Remove patch when available in release.
+  patch do
+    url "https:github.comopenvinotoolkitopenvinocommit9736b1811d5916b37473483b237314d0370e2ce8.patch?full_index=1"
+    sha256 "ff2dc599930b42f922d0ddc1158e22cdab3590a6e05159efcc307638015c8798"
   end
 
   def install
@@ -117,6 +124,7 @@ class Openvino < Formula
       -DENABLE_CPPLINT=OFF
       -DENABLE_CLANG_FORMAT=OFF
       -DENABLE_NCC_STYLE=OFF
+      -DENABLE_OV_JAX_FRONTEND=OFF
       -DENABLE_JS=OFF
       -DENABLE_TEMPLATE=OFF
       -DENABLE_INTEL_NPU=OFF

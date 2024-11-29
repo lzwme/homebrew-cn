@@ -1,20 +1,18 @@
 class QbittorrentCli < Formula
   desc "Command-line interface for qBittorrent written in Go"
   homepage "https:github.comludviglundgrenqbittorrent-cli"
-  url "https:github.comludviglundgrenqbittorrent-cliarchiverefstagsv2.0.0.tar.gz"
-  sha256 "91969f22bb167f99091a1ff8f4dbfe61cb1b592cb000453859ca9173ecbb8f10"
+  url "https:github.comludviglundgrenqbittorrent-cliarchiverefstagsv2.1.0.tar.gz"
+  sha256 "2b78d5e8531aa54d0b01b801aea3b78da4a4932d65e4243cdf3209a68bb80777"
   license "MIT"
   head "https:github.comludviglundgrenqbittorrent-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2354020af5f92c74432d7d77ac324bb9956893076efe1650216c4beeebf2223b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d1c5fb756844c20716657afb77ebe37ee8379482946db1eaef3a9219ef31bf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b022b67a52e85f8a45704a3fac937b9222ecae032b57d1b28be7d3f7f016431"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bcac1629bb928fc3b5cbce2d1016a53542e2bbf19fb15e4ca2bf8b122c8878a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6bb9f6e806e31b6af0baf61497d09e3ec9054868d55d0d2bc5d336b5e3ddae98"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ca83cbdf66246e6042d1224ead2b9bfa762ba1553b6812940d921dcc634b1c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c3f597d225f26e14548083ab785a4dbbb4dddf250c919e3cf80dc552a7fba73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b59dc2b5c911a5cf008c32873d5e2799bde307efb789a429dac242a8c350ad40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c99c6f81ebf2ca5e2e6461cc14ea24791b636010f3b75333191fea42bbe4a5e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "c99c6f81ebf2ca5e2e6461cc14ea24791b636010f3b75333191fea42bbe4a5e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba350b2338f39e81a126cf9dad5a827018a0f90288bea9144f873ba0677139a5"
   end
 
   depends_on "go" => :build

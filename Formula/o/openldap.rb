@@ -86,7 +86,7 @@ class Openldap < Formula
     # Passing `build.bottle?` ensures that inreplace failures result in build failures
     # only when building a bottle. This helps avoid problems for users who build from source
     # and may have an old version of these files in `etc`.
-    inreplace etc.glob("openldapslapd.{conf,ldif}"), prefix, opt_prefix, build.bottle?
+    inreplace etc.glob("openldapslapd.{conf,ldif}"), prefix, opt_prefix, audit_result: build.bottle?
   end
 
   test do
