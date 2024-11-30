@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages076729460db015af573d3c59ec8a2d213c371422f594b6ac23bfc05daf1f76f0snakemake-8.25.4.tar.gz"
-  sha256 "ff6797ddd9fc43663ec4056b65c88b318c477cc8a16fecaa76af739cff5fd76d"
+  url "https:files.pythonhosted.orgpackagesf8c03d480f1bb41212076dc329e4a602f28389738b161eed6361baefbfcd05f8snakemake-8.25.5.tar.gz"
+  sha256 "62a2009a28b6738aa189e3c04b9366713f2efe8085b6facb2b4655643549fd51"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c639d4c2191189ba517210ff58114ff8c8ad246b45aef9636f3330e6c77453f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d46f9c307217ab82713f776ace127d1433e34a3e91c92fb763916b6ad9b02dc"
-    sha256 cellar: :any,                 arm64_ventura: "8f77526e971699b8df2d555dfb199e7e6ee7406f79d0b709356b3bf6c5cb1bae"
-    sha256 cellar: :any,                 sonoma:        "5a774eeceaaec1c971c0b828512b163149951e2fd1efe2510b385760354ec569"
-    sha256 cellar: :any,                 ventura:       "b91473f16eba9c12b38e056d3bf0a65e0ebf9e1a9374fa74fc0f1deb680e62c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de3b9a634fb2baccc731130611c8649eff18e39a096b68566f99a73c6a42fa2"
+    sha256 cellar: :any,                 arm64_sequoia: "6af6a689a0a884b910c2734871c92a68f1036f80e9547e3e299184769b5e0ced"
+    sha256 cellar: :any,                 arm64_sonoma:  "921f484523bb0a90abffbd181538a6e8db8617b20fd362f004f5ca97f121eb9f"
+    sha256 cellar: :any,                 arm64_ventura: "1f71ad451ff7d0b8a618c55edf8c3826316753b659c49a7dfb7facc7fcee9cbb"
+    sha256 cellar: :any,                 sonoma:        "5ed9ea49c3b361e8aa39934c84e84799c6013076515a813f5d4b5ea77de2fd77"
+    sha256 cellar: :any,                 ventura:       "c5573312a805d12b0f14eb248c0599994fb8d20c9e7c9c6c97a3cda83caead06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "915fc89babf0d565201332fcb12a8c3b019d3756a648c31af2cec085f2b77953"
   end
 
   depends_on "rust" => :build
@@ -74,8 +74,8 @@ class Snakemake < Formula
   end
 
   resource "fastjsonschema" do
-    url "https:files.pythonhosted.orgpackages033f3ad5e7be13b4b8b55f4477141885ab2364f65d5f6ad5f7a9daffd634d066fastjsonschema-2.20.0.tar.gz"
-    sha256 "3d48fc5300ee96f5d116f10fe6f28d938e6008f59a6a025c2649475b87f76a23"
+    url "https:files.pythonhosted.orgpackages31d0492a26afa3bdd0cb5dd78f59d7f4ca902d8e335856530e599e0d1ed9140dfastjsonschema-2.21.0.tar.gz"
+    sha256 "a02026bbbedc83729da3bfff215564b71902757f33f60089f1abae193daa4771"
   end
 
   resource "gitdb" do

@@ -2,17 +2,17 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https:www.cprover.orgcbmc"
   url "https:github.comdiffbluecbmc.git",
-      tag:      "cbmc-6.4.0",
-      revision: "4f56b6a911911fe89c73e2b6b58c96852e8b233d"
+      tag:      "cbmc-6.4.1",
+      revision: "c902db34beb113815f151c4d1f635e745ac79c0c"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f35caffd7f789cc052591dcdc96929018e1de188ddc36f706e00f0884db4ea4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8898d785e82f2a5a2e88b6973f1036a28235907c2fc4fca4418d661b43d2de7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a22afc1680d62d4bfc6815e7f2de5f61dd5fb452babdc5129b8df41b048fc979"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f3f9004d77e6eca5f10d05ee23d96e31dba2086b299810b52b5d1813e099aa9"
-    sha256 cellar: :any_skip_relocation, ventura:       "00ac7f3f6c95c6e974d3a93b29efc6b664f9430ebab4c0d2dfa50ffdd5a700e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c010f61202ddf3d679d7570ba04eb75ba0480de6c7c436793328f60064c7c68d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e05561fe7d5ebef7193131e715a51ba3333f7a7049053c0515197b266ed0f44d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfdce5719d48d31342be5de4ffbc058c75379cd6761b482c35f6580de9caaa7d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c585f645ff7ddb8ba111fb6bb767232e3326eb980786e56c3c4d7141e19b9dac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "268f4fc857d8162123a86ce5a21f88425dbc65b27612708864db748078fc09ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "8babc8404f37fb21553dcbee759dd94f029a53764bd85ac9db8b1cd63b2ce763"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f500a38f6ccd2e0b9c321e6cd09b522ed2885b46691e06bdc04cc1c16785a04"
   end
 
   depends_on "cmake" => :build

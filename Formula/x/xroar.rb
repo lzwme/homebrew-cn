@@ -1,17 +1,17 @@
 class Xroar < Formula
   desc "Dragon and Tandy 8-bit computer emulator"
   homepage "https://www.6809.org.uk/xroar/"
-  url "https://www.6809.org.uk/xroar/dl/xroar-1.7.2.tar.gz"
-  sha256 "937b751ac6b553e399506863585dca912b21c62ff6ad9bb40cca35de00cf0924"
+  url "https://www.6809.org.uk/xroar/dl/xroar-1.7.3.tar.gz"
+  sha256 "f88f4ebf852be4262935020f350d9ce55e2b054172f9851ba47fe34e10940dea"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ccfa0dd915cfdc60742e1b285352184ef951b2357daa535e2dbed6bd6d29e73c"
-    sha256 cellar: :any,                 arm64_sonoma:  "73ff267a6221e26c1752a97980fc43b37c86f8db612d839fd3c00b667bc25031"
-    sha256 cellar: :any,                 arm64_ventura: "35527c68bcb1b9d2e45b6324f17cd08cebab932cae3271c4558c2c3d62f9713f"
-    sha256 cellar: :any,                 sonoma:        "ec53965fb323f21ed79b675ab8dc69f3bc28d828bcdb72307dc35779e17eb3f2"
-    sha256 cellar: :any,                 ventura:       "14b4c9936123103183d48a34f8f194065adae8c18f41cc6235f925d814dc1d1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "938c54d98571124f9cfb6aa0b3b96d7054773ada989f67127965178a8548901e"
+    sha256 cellar: :any,                 arm64_sequoia: "34519adf33e18cd229ed996013c543deb11bd1c6b65ba98b7b009697cecc075b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a0acaeb79606d1898ff89585e8b49c1ebbf7924ec0755ba080ccb784d6f4a5e"
+    sha256 cellar: :any,                 arm64_ventura: "8d8557ef41fc4682f2e2672b8c26dd6f7117737b58342bd5d9cffe1b339b8fea"
+    sha256 cellar: :any,                 sonoma:        "0c5abb10d693bf016157de298134af5633fae54298c77d1dd7fbc3971e38b925"
+    sha256 cellar: :any,                 ventura:       "d5abd1b2906613201122ff2e08182a36f185d9c7a316eaf0618a43be10bee654"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d16cd7482de3cad4ee6fab72f82c2d9ab4a181c36937042661e4b0ccf3e9d744"
   end
 
   head do

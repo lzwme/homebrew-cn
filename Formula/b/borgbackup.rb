@@ -2,7 +2,7 @@ class Borgbackup < Formula
   include Language::Python::Virtualenv
 
   desc "Deduplicating archiver with compression and authenticated encryption"
-  homepage "https://borgbackup.org/"
+  homepage "https://www.borgbackup.org/"
   url "https://files.pythonhosted.org/packages/dd/0d/28e60180ce4ae171adba65ce9f8878fce3580c6d2cfdfa998929175105dd/borgbackup-1.4.0.tar.gz"
   sha256 "c54c45155643fa66fed7f9ff2d134ea0a58d0ac197c18781ddc2fb236bf6ed29"
   license "BSD-3-Clause"

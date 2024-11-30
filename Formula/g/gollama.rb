@@ -1,28 +1,27 @@
 class Gollama < Formula
   desc "Go manage your Ollama models"
   homepage "https:smcleod.net"
-  url "https:github.comsammcjgollamaarchiverefstagsv1.27.23.tar.gz"
-  sha256 "46349b473440f486a04e5142eff20d50066d03c43eceaaa409039ade00ab8ac2"
+  url "https:github.comsammcjgollamaarchiverefstagsv1.27.24.tar.gz"
+  sha256 "6b51ed771d95e327e40b47d911e0b168ae6fa0491f62360995766f77306e5d63"
   license "MIT"
   head "https:github.comsammcjgollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f80bff38bae18561d4aa866f80cfb7e3b571e3a0f4fec4a839b1b6a5a55a300"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b6ea17dd415e89bca960c78cb26a519ffb62b0e6da4f78269f942f0336cb9a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afd45324dabfdc95dd1cef2037717759710847577cc8f980901fca3e4b9148fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37c6dd218e344c0c0067dc7ad616753cbc7374a9b4cd68ea0dbad0d45e233323"
-    sha256 cellar: :any_skip_relocation, ventura:       "32d5c0833c2057ffeeb1dc8f46ce4e2e81273a5fe7d66863f0a9123f6508b0e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fbea5f82fe600f892eb458f514a157bc5cc40a2d2454226fc1314476937f84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60576a89e58ce97d6e51d20f30ebb26c056ebe48d5c756f36fbdb5ce5f2b30f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95eee53452058eda4e33ad952d3143424287a1d683e16d6a21e512b41249e4fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e3950e4498e0b31d5fd08e03eeb4510c9315b25a2ffd036c7cc32e5c2b903b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "941a6acab3dc640b946abb0771ad9b36ab3d2dbf089cdcddb33b01d0610f0d96"
+    sha256 cellar: :any_skip_relocation, ventura:       "0429186d98b52d762b09f1e0b85c4b9283c4efe4d5d75bef2a741ed88b5dff2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ee9174d101a28284716d460b2189490f6882b57b03a60b4d0fc9b44406cb7f2"
   end
 
   depends_on "go" => :build
   depends_on "ollama" => :test
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.Version=#{version}
-    ]
+    system "go", "mod", "tidy"
+
+    ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

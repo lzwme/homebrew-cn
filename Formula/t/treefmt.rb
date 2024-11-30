@@ -1,24 +1,24 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https:github.comnumtidetreefmt"
-  url "https:github.comnumtidetreefmtarchiverefstagsv2.1.0.tar.gz"
-  sha256 "1a4d1727c7e2e792993654a54ca4144a2b0a6ac71c3d0812c5256ff14766aa86"
+  url "https:github.comnumtidetreefmtarchiverefstagsv2.1.1.tar.gz"
+  sha256 "4cd20c3cf763bbf4054b9241e6d59de4d59bb4705a758a666d1661685294f2e7"
   license "MIT"
   head "https:github.comnumtidetreefmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3a33046c58bfc3a23cc412097af985bb69b2651d88ad803b004710030eaa991"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3a33046c58bfc3a23cc412097af985bb69b2651d88ad803b004710030eaa991"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3a33046c58bfc3a23cc412097af985bb69b2651d88ad803b004710030eaa991"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3640245943f477ba6ce2c3494a58779c6857e2bbabb3aa235a0362d364094401"
-    sha256 cellar: :any_skip_relocation, ventura:       "3640245943f477ba6ce2c3494a58779c6857e2bbabb3aa235a0362d364094401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5973e192989d0d8a2240d4ac2f4ed9765cda7ec0ff96af1cf08ee706057e653"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2a426f65294df81445e47dc1152e442dac0f002174211aeefdb35499505453f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2a426f65294df81445e47dc1152e442dac0f002174211aeefdb35499505453f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2a426f65294df81445e47dc1152e442dac0f002174211aeefdb35499505453f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c33dfea2710b67fb44954c2ad2934900623498c2475fe877caa5c55a0ab3ebf"
+    sha256 cellar: :any_skip_relocation, ventura:       "0c33dfea2710b67fb44954c2ad2934900623498c2475fe877caa5c55a0ab3ebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47494c6dee4c5b9b385806320f3a6b8692bc447f16be268ca7668e464d6b86b6"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.comnumtidetreefmtbuild.Version=#{version}"
+    ldflags = "-s -w -X github.comnumtidetreefmtv2build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

@@ -2,7 +2,7 @@ class Bumpversion < Formula
   include Language::Python::Virtualenv
 
   desc "Increase version numbers with SemVer terms"
-  homepage "https:pypi.python.orgpypibumpversion"
+  homepage "https:pypi.orgprojectbumpversion"
   # maintained fork for the project
   # Ongoing maintenance discussion for the project, https:github.comc4urselfbump2versionissues86
   url "https:files.pythonhosted.orgpackages292a688aca6eeebfe8941235be53f4da780c6edee05dbbea5d7abaa3aab6fad2bump2version-1.0.1.tar.gz"

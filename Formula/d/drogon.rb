@@ -9,12 +9,13 @@ class Drogon < Formula
   head "https:github.comdrogonframeworkdrogon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "104d0bcb26fdf65349b70c67fcaf5332c59b5c8a687de02a42e55e95b7822132"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed7df8b6d3de6cb9591a19aff68a08a85655e8de7f5b2eac2d38eb14b4cfaa98"
-    sha256 cellar: :any,                 arm64_ventura: "6be94afa6a2f76bf1ca3bcc9c208699fcd593fa6cca818405ed4fe9eb255b523"
-    sha256 cellar: :any,                 sonoma:        "cf4dda4f454e4d79efab47179a4b271ed1abe4047357b2c96f035b8d3269cf25"
-    sha256 cellar: :any,                 ventura:       "2e4aa714582bb75849194dfde74de99fa1f5a4077d8aec2016a8c07467a0099c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "781436bf99dc8ba66be94afe8f63474cfe4b78c78cbd34d8b7d3695ba10804e9"
+    rebuild 1
+    sha256                               arm64_sequoia: "d7713ae1b91274ee539bcf3111396ec341664bb66b360143be1bc02ee1d527bb"
+    sha256                               arm64_sonoma:  "918e9594835f3f5ff27992fefc91867c58148b21f203e1dacc305d6db9e6bda6"
+    sha256                               arm64_ventura: "4f6b123877a15d6ddc9eb00dcd6a8ad384c2f5f23a25a3e440767ea52652175a"
+    sha256                               sonoma:        "0d5ac27f514e7014ee8c605c7a6a3dbb8f36bf61bb1cd89e84e26fd6f0102d66"
+    sha256                               ventura:       "f11e22833092ef33c773b2781cca9d5285419e3b42f3807cc38ae619d5e69cd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37802093942e430f38b315d72c019af76246e27fd7acf55f40c6c0009e3d0dcb"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,7 +32,7 @@ class Drogon < Formula
   end
 
   def install
-    args = []
+    args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     args << "-DUUID_DIR=#{Formula["util-linux"].opt_prefix}" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

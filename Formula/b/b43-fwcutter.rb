@@ -1,6 +1,6 @@
 class B43Fwcutter < Formula
   desc "Extract firmware from Braodcom 43xx driver files"
-  homepage "https://wireless.wiki.kernel.org/en/users/drivers/b43"
+  homepage "https://wireless.docs.kernel.org/en/latest/en/users/drivers/b43.html"
   url "https://bues.ch/b43/fwcutter/b43-fwcutter-019.tar.bz2"
   mirror "https://launchpad.net/ubuntu/+archive/primary/+files/b43-fwcutter_019.orig.tar.bz2"
   sha256 "d6ea85310df6ae08e7f7e46d8b975e17fc867145ee249307413cfbe15d7121ce"

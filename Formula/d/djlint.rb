@@ -3,18 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https:djlint.com"
-  url "https:files.pythonhosted.orgpackagesde749173e0a91e705976c639eba1a39ce44b2b2ca1694e01c5ed8e397886d554djlint-1.36.2.tar.gz"
-  sha256 "00d1a79de3c43b50e46a0ce6f279535b88bbf203d3f50ada92f56740fca4f590"
+  url "https:files.pythonhosted.orgpackagesffdda442814263f6ef16153f87fe78658097c6690106f53f0d2594bf4ee81202djlint-1.36.3.tar.gz"
+  sha256 "d85735da34bc7ac93ad8ef9b4822cc2a23d5f0ce33f25438737b8dca1d404f78"
   license "GPL-3.0-or-later"
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f786943aacd4b105a8ed2c4af1ea098c951f6bdfc5fc7088aa154e988c3bc392"
-    sha256 cellar: :any,                 arm64_sonoma:  "6445ca51ed86197e72bb1dbbfb952b9f068b3273bc6908e384e9369d3c758c15"
-    sha256 cellar: :any,                 arm64_ventura: "27975159027d70fa412454c572f46b62d6124ee6ea49de075e2199cdc618bbfc"
-    sha256 cellar: :any,                 sonoma:        "096d34dbd6e447ac5fde0ed82c131b26436606a93b48b6bb7b6c4e1bc20dfda9"
-    sha256 cellar: :any,                 ventura:       "e7bb1a79ef85804559e246cf445e60f06b854c435d17d54d68eeeec457d0bb6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90f40c17e6bcb2a89f126500ba12ca36acaa024caca2390937c8d2e904689cc"
+    sha256 cellar: :any,                 arm64_sequoia: "bf5ec3937b2c45003e27ece8d9d226acd734583cdfb21e2f6650769e7a142f8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "412df1673992ea25bf4164c28dd9b1e282819fb0b2de0c40076feafa74b17f42"
+    sha256 cellar: :any,                 arm64_ventura: "e59df593650ab61b4d89ced74ec39e38eb432bb7c3982daf2179bdd7bfe7c675"
+    sha256 cellar: :any,                 sonoma:        "a292cbc9d52eef8755cbd27ea35eef5d43a0a24cc27fbbcaec92e9a0ca768c10"
+    sha256 cellar: :any,                 ventura:       "2482520049ffadc6209b80735c15ea68aa38dc9769c8c30accb741c972b38277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca01adda69151e8f3a763995895315cca8d4c7964455397c2a184d4cea746208"
   end
 
   depends_on "libyaml"

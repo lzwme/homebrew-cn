@@ -1,6 +1,6 @@
 class Binkd < Formula
   desc "TCPIP FTN Mailer"
-  homepage "https:2f.rubinkd"
+  homepage "https:github.compgulbinkd"
   url "https:happy.kiev.uapubfidosoftmailerbinkdbinkd-1.0.4.tar.gz"
   sha256 "917e45c379bbd1a140d1fe43179a591f1b2ec4004b236d6e0c4680be8f1a0dc0"
   license "GPL-2.0-or-later"

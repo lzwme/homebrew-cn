@@ -1,5 +1,5 @@
 class Root < Formula
-  desc "Object oriented framework for large scale data analysis"
+  desc "Analyzing petabytes of data, scientifically"
   homepage "https:root.cern"
   license "LGPL-2.1-or-later"
   head "https:github.comroot-projectroot.git", branch: "master"

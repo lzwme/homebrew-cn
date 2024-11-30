@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https:openbao.org"
   url "https:github.comopenbaoopenbao.git",
-      tag:      "v2.0.3",
-      revision: "a2522eb71d1854f83c7e2e02fdbfc01ae74c3a78"
+      tag:      "v2.1.0",
+      revision: "93609bf0c73a18dd81ac8c7d21b95cbde1e4887c"
   license "MPL-2.0"
   head "https:github.comopenbaoopenbao.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8302b47beb4fcdf7666f8eed87518721c4253e71122e73d7175c50b5d773e754"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdcab819c2550899884daf12564f0dbe334796ebf1469779a8e70ce7af55c871"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c75a30b1b54dbfabd8864b324225a342aae7c16cfdf38f5b4cb427d157cca59e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16eba9ceb081e26566a9fd7720de29cfd863f386dcc9f19aea9a4769df9047c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6cbb98a7790b9ebe32f6ee7a131560b955708a012f33661fb20413cdaad1451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "977ac13ebe95e7ac86b5597516785a73b2e1b47e0f03edea94e1276433d73924"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "940577b0a16660eb3b8f2102b6136b1ad1b442e7de8fd07deab094d2a4c5429b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60c1e58b97bdd7b8a97ae5dd77928f4cdc793961fdb378a672f3254ae0c373df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf0e4be4db2c9ada9155742fa55dab94b2eeb33446da4a03a34b5e715ba644a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb2b837e679ab8a4fc0811f47ce491fe3ce300a99d129d3ad11500d1e18b720d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e40878ff92e9d146e9288c134815fdd6e9fe02cb8a34f9633b8d3abb595c909f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1920f697d2f763daeb299b7d0c33cd45f82fe862f42b9f4b8cb193aa58b3d5d"
   end
 
   depends_on "go" => :build

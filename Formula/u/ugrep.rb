@@ -1,17 +1,17 @@
 class Ugrep < Formula
   desc "Ultra fast grep with query UI, fuzzy search, archive search, and more"
   homepage "https:ugrep.com"
-  url "https:github.comGeniviaugreparchiverefstagsv7.1.0.tar.gz"
-  sha256 "e821b5747d3bca17a71c49a704f5b5a383e51657ccb13470b456e4da5016ddab"
+  url "https:github.comGeniviaugreparchiverefstagsv7.1.1.tar.gz"
+  sha256 "89e3d7898995d1aff44c0231d65ce2b78d991db198544723526576f9a46f0578"
   license "BSD-3-Clause"
 
   bottle do
-    sha256                               arm64_sequoia: "99301af699b0bc449bfbe89ff75ac5dcce2086431a317e313ffea4cdcc124cd5"
-    sha256                               arm64_sonoma:  "9deb34f80597c25684501f81f04ddf497a7992e901e3fdaf202c464cb48ad46f"
-    sha256                               arm64_ventura: "bd7de2e6d010126d91e451fcf3517868868cf6805b8d4ad695099055c76b1fa8"
-    sha256                               sonoma:        "86e043833c7218145e493576f4019e28c207edbb8b2fef4cf5c84b6f1e982e03"
-    sha256                               ventura:       "800d5cffacf743eaa43ff5025c65894a58afba0a94a8b4aca48302dcdc2d5188"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0cfc789f10a22c72a4d9ee37cd79f63f0dafffabc5ba47878f9cbba8421d815"
+    sha256                               arm64_sequoia: "f945601e6589986edf77a2169d849795773a173fc81e066f538e46992cb94cc8"
+    sha256                               arm64_sonoma:  "f1a5fd61a2d30e41152612e2e5f667822b2f62cbc25566686794dacd878ae18e"
+    sha256                               arm64_ventura: "efdba3c9444f561b69eb6419c9fd16b0a8ddb00d80a688ca1ddb34d89ea9a7f6"
+    sha256                               sonoma:        "7641fc9ce25a319614c22fd1e48086b5a59e785e46a735546dea02cba9bd735b"
+    sha256                               ventura:       "d88f75b978197bd8c46926e80ab3a18405793f4582ee61a2e79d69ba903bf38e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd7b06a2807cda2fedad502ac4420125850cc2a5d505e10fa152d876471f9021"
   end
 
   depends_on "brotli"

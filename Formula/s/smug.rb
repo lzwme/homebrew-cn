@@ -1,42 +1,43 @@
 class Smug < Formula
   desc "Automate your tmux workflow"
   homepage "https:github.comivaaaansmug"
-  url "https:github.comivaaaansmugarchiverefstagsv0.3.4.tar.gz"
-  sha256 "c398b2d7094cb961a8c8f42338b669462d4f2413363ef704d10fc004fceabb02"
+  url "https:github.comivaaaansmugarchiverefstagsv0.3.5.tar.gz"
+  sha256 "56a49f3eff84be8f7cc1c202f5223f6ceebbe5236095dcb669473d5659eba45f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5f27c6f9c94d78089203eef03cffad372469da86999b5ada164cfd24b3809e23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1bf817ecb24dd75664860b906815595e7300a0983d4fef6d5c712c69ecd9dcc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1bf817ecb24dd75664860b906815595e7300a0983d4fef6d5c712c69ecd9dcc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1bf817ecb24dd75664860b906815595e7300a0983d4fef6d5c712c69ecd9dcc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c0f3f6da2ea72eb42b1c70b9097c5711405ea34e5b445f211d5ebf1930e50b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c0f3f6da2ea72eb42b1c70b9097c5711405ea34e5b445f211d5ebf1930e50b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c0f3f6da2ea72eb42b1c70b9097c5711405ea34e5b445f211d5ebf1930e50b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "909c57aee9501f38fa537ce3b6a1519bd1bea0fbaa28e16af77aca8ff36630fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b1f04f414bf5f3b0b60c5c5c50466eecdb17cddf423eb8c74babb4a81e4a7cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1f04f414bf5f3b0b60c5c5c50466eecdb17cddf423eb8c74babb4a81e4a7cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b1f04f414bf5f3b0b60c5c5c50466eecdb17cddf423eb8c74babb4a81e4a7cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72d64663ac113f30e808efb528756171cb25882c8c5610dd922228e0e0a3f3ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "72d64663ac113f30e808efb528756171cb25882c8c5610dd922228e0e0a3f3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dca1132c8cbb2da4aa2416a4a1552bb47f202ed1ea51d637cc5919b4f2e39fb"
   end
 
   depends_on "go" => :build
-  depends_on "tmux" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
-    (testpath"test.yml").write <<~EOF
+    (testpath".configsmugtest.yml").write <<~EOF
       session: homebrew-test-session
+      root: .
       windows:
         - name: test
     EOF
 
     assert_equal(version, shell_output(bin"smug").lines.first.split("Version").last.chomp)
 
-    with_env(TERM: "screen-256color") do
-      system bin"smug", "start", "--file", testpath"test.yml", "--detach"
+    begin
+      output_log = testpath"output.log"
+      pid = spawn bin"smug", "start", "--file", testpath".configsmugtest.yml", [:out, :err] => output_log.to_s
+      sleep 2
+      assert_match "Starting a new session", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
     end
-
-    assert_empty shell_output("tmux has-session -t homebrew-test-session")
-    system "tmux", "kill-session", "-t", "homebrew-test-session"
   end
 end

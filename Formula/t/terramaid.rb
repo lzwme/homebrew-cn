@@ -1,24 +1,25 @@
 class Terramaid < Formula
   desc "Utility for generating Mermaid diagrams from Terraform configurations"
   homepage "https:github.comRoseSecurityTerramaid"
-  url "https:github.comRoseSecurityTerramaidarchiverefstagsv1.14.0.tar.gz"
-  sha256 "8bb8c08521489fab058e1be79b01099c042bb95d1340f921bc70e29501352370"
+  url "https:github.comRoseSecurityTerramaidarchiverefstagsv2.0.2.tar.gz"
+  sha256 "1ddf7f16d12e96b3169f92e78415337d76edee9e9576b03f7b844615cb2daaee"
   license "Apache-2.0"
   head "https:github.comRoseSecurityTerramaid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b229084543b26dddea49f61cd0f2b650aeda21bf75f2ce0cfdca6c4c8efaa61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b229084543b26dddea49f61cd0f2b650aeda21bf75f2ce0cfdca6c4c8efaa61"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b229084543b26dddea49f61cd0f2b650aeda21bf75f2ce0cfdca6c4c8efaa61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "686a468a164909702734a5a5f559c7b4430c39d4be520da16fbf0a716e2b903f"
-    sha256 cellar: :any_skip_relocation, ventura:       "686a468a164909702734a5a5f559c7b4430c39d4be520da16fbf0a716e2b903f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c3a908d95845f0187f40b611f2788c72575be6d6159fcee30ecd272578bcc4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c439ac1215c0344015e2c027a36240c97a339ae1878466cb3821b1a360094616"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c439ac1215c0344015e2c027a36240c97a339ae1878466cb3821b1a360094616"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c439ac1215c0344015e2c027a36240c97a339ae1878466cb3821b1a360094616"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45347c94c895dfe6ab06022bdb1b645bdb9fcfa92c47e686c9892d2f9cc63375"
+    sha256 cellar: :any_skip_relocation, ventura:       "45347c94c895dfe6ab06022bdb1b645bdb9fcfa92c47e686c9892d2f9cc63375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96c7dcc481717cef4596739b95ded0246e5d5951258c34d9b3fec4b56aabae4c"
   end
 
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.comRoseSecurityterramaidcmd.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"terramaid", "completion")
   end
@@ -45,7 +46,7 @@ class Terramaid < Formula
       }
     HCL
 
-    system bin"terramaid", "-d", testpath.to_s, "-o", testpath"output.mmd"
+    system bin"terramaid", "run", "-w", testpath.to_s, "-o", testpath"output.mmd"
     assert_predicate testpath"output.mmd", :exist?
 
     assert_match version.to_s, shell_output("#{bin}terramaid version")

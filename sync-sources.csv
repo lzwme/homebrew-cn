@@ -1088,6 +1088,7 @@ Homebrew-homebrew-core/Formula/c/cpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpmtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpp-gsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpp-httplib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cpp-peglib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppcms.rb, Homebrew/homebrew-core, 0
@@ -4823,7 +4824,6 @@ Homebrew-homebrew-core/Formula/p/packetbeat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packetq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/packetry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packmol.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/packr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacmc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacvim.rb, Homebrew/homebrew-core, 1
@@ -4978,7 +4978,6 @@ Homebrew-homebrew-core/Formula/p/phoronix-test-suite.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/p/php-code-sniffer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php-cs-fixer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/php@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.3.rb, Homebrew/homebrew-core, 1
@@ -6068,6 +6067,7 @@ Homebrew-homebrew-core/Formula/s/sqlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlite-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sqlitecpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqliteodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlpage.rb, Homebrew/homebrew-core, 1

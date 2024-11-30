@@ -1,20 +1,18 @@
 class Sdb < Formula
   desc "Ondiskmemory hashtable based on CDB"
   homepage "https:github.comradareorgsdb"
-  url "https:github.comradareorgsdbarchiverefstags2.0.1.tar.gz"
-  sha256 "053dd19eb642135d5726fa2b9cbeb394befe95e9fe607bed823de501cca34365"
+  url "https:github.comradareorgsdbarchiverefstags2.0.2.tar.gz"
+  sha256 "8fc030eb8bb5b8b02af95615317ea5d7c9fbc1a06cbb46703e3fc8a6b428a3ae"
   license "MIT"
   head "https:github.comradareorgsdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "36e0f0e49588d3ea3b588335bd7d7afd72218e517332c1aae818d8acb8f3bef1"
-    sha256 cellar: :any,                 arm64_sonoma:   "93290582465ed3ba9fb67a8e9a609da68038bb657490a4735b8ddb75859f30ba"
-    sha256 cellar: :any,                 arm64_ventura:  "97e8c8df5c36921224815910ccd8aa3fdce8f66f7b51ab2658404b16d026c659"
-    sha256 cellar: :any,                 arm64_monterey: "930c20bd65468d75d7ad9c56573e19c11faf811e94300cde2aea8c14b77f7987"
-    sha256 cellar: :any,                 sonoma:         "e0aff0b588c6e3366646183995697338c5802536b7974f454d6454dd4f050001"
-    sha256 cellar: :any,                 ventura:        "85b9a8dcd0ad7e465c2dcdec26b62691bbd3be8458e7fcc87c4b0b46807c5d08"
-    sha256 cellar: :any,                 monterey:       "ea2dc0465223cc6149eb74bf30ebe01874dacb484b40a2a74169bf629cdc8bc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "755428c13355b296d6bea89f02587b1252f29c05a73f1cdf2d88f71af73177d8"
+    sha256 cellar: :any,                 arm64_sequoia: "58d13c328d1ed7b41fbb692d7bcd87e657ca2a2f7e0d583820436ac82a3c7079"
+    sha256 cellar: :any,                 arm64_sonoma:  "0cd0d6f75a622d04d4b0e4a11bd88713bbcda7ab6bff745a0af845614e944baf"
+    sha256 cellar: :any,                 arm64_ventura: "b447543663b247729c12bbcf5191d564b7dd7702cc66d019f3d03a7f9ab20503"
+    sha256 cellar: :any,                 sonoma:        "70701ffdde52ba8e647a94e320246fcb758dbda7d6b91bb0b33543ccb96c7966"
+    sha256 cellar: :any,                 ventura:       "1075c34dba2bd26539fde81339e210d0852c2b4c2589439ba35a4c4603d93f0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f53aa55609f3bfd90b1bccf2503ce7ec281d8662992beef201f2b577a91b1c"
   end
 
   depends_on "meson" => :build
