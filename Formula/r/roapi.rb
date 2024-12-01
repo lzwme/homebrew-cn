@@ -18,6 +18,12 @@ class Roapi < Formula
 
   depends_on "rust" => :build
 
+  # explicitly specify lifetime for `ExcelSubrange` return type, upstream pr ref, https:github.comroapiroapipull353
+  patch do
+    url "https:github.comroapiroapicommit6f8b597177b5abce1b7672df2c058ca3c3679535.patch?full_index=1"
+    sha256 "eb24da11bd453621824384c2df9295f24fcd4d4f8f5f79aa07a495617ad935b4"
+  end
+
   def install
     # skip default features like snmalloc which errs on ubuntu 16.04
     system "cargo", "install", "--no-default-features",

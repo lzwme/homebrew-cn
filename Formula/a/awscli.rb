@@ -9,12 +9,13 @@ class Awscli < Formula
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56ba53f8f786a0ddf52c6491f6f468d3e972d2b69ffa0265fd400e6478fd4cf5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "156730c90938b439961d7299a008deae084700137a342438f6c54ea62d60f78b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "42c0c7061825822de333667f968c8ecd04f77c9bcdbf4555fd241f951a9db16b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a98981894f168bf70bd356c69e3770708e522bc088d23648a2475d59410f787"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe7c1fd1241b78ddb20a8dc32485ea92389919597bc6ffe29022e3ecfe0c5a8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a36e85996c42a95cebaed3eff23061a7357d33522d752ae9b5dcab5ebfed7ec9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93dbe5f61c2f60faa8e99bfea392191356b49109e5747e1ab8dc95171b41dc4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcb6812a5582a6155f42ea340691445045b79b135ad4326eaea6c2599eb4bb3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0dd54fcd29d5548ead46cb31eff4afb92b738ef1d0194f6c452f4b63bff315c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c00e8fd6e482b1ab7364b593752df4c11174a2f8ab09ffd35b92ff5f8327a475"
+    sha256 cellar: :any_skip_relocation, ventura:       "c62b31fee9e3c57ffe1c800ce8211f6029b6ef5fa2b5dd86ac622fe371222748"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c16042f5edc68ed475126c121d4995ca7e8773ebfb9222029965ecb5d0b7e54c"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +24,10 @@ class Awscli < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "mandoc"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   resource "awscrt" do
     url "https:files.pythonhosted.orgpackagese2e582646e045902c237df1e59c2430ed392377d4dff0755eb30f9ea2c47d15fawscrt-0.22.0.tar.gz"
@@ -94,16 +99,7 @@ class Awscli < Formula
   end
 
   def install
-    # The `awscrt` package uses its own libcrypto.a on Linux. When building _awscrt.*.so,
-    # Homebrew's default environment causes issues, which may be due to `openssl` flags.
-    # This causes installation to fail while running `scriptsgen-ac-index` with error:
-    # ImportError: _awscrt.cpython-39-x86_64-linux-gnu.so: undefined symbol: EVP_CIPHER_CTX_init
-    # As workaround, add relative path to local libcrypto.a before openssl's so it gets picked.
-    if OS.linux?
-      python_version = Language::Python.major_minor_version(python3)
-      ENV.prepend "CFLAGS", "-I.buildtemp.linux-x86_64-#{python_version}depsinstallinclude"
-      ENV.prepend "LDFLAGS", "-L.buildtemp.linux-x86_64-#{python_version}depsinstalllib"
-    end
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
 
     # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
     # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32

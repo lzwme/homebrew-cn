@@ -4,6 +4,7 @@ class Libphonenumber < Formula
   url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.50.tar.gz"
   sha256 "a46b2b5195b85197212ca9d9c0d8dc37af57d2f38b38b8c15dd56a0ec3a2cdc0"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,15 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4d8beabc380c2b656a47375d28c090bef3890ca841a3cc49c7eeba76bcf72e09"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce771636e0e3f83db9ea18386b20bdbdead9bbea118bba20cc2727fb7f516601"
-    sha256 cellar: :any,                 arm64_ventura: "86f6557390ee7f8099834f353fb5b98b57a2f02bd096d1d00eb0d84fa0e01a77"
-    sha256 cellar: :any,                 sonoma:        "e6c8020b56218a0685ab9b3dde8153b985656ad5639c83e1b7cd5ee0603092ca"
-    sha256 cellar: :any,                 ventura:       "f959c41fc5a98a0adae5ab7212f9af1a4797238d734383d857cf74ea2e6c387a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "372a38d5ddb6a5977b2affc2cf8a2c953256bb23562c58bde8f2779c358c49f9"
+    sha256 cellar: :any,                 arm64_sequoia: "c119c5f06b80738e99fe15ec4c1190ee79ff9d29a126ae4f74b85fa47cf6bdbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fffabfbeb44fc5e8d31ad0bd6c33b44345a9def37cc7229526ae898682c3d2f"
+    sha256 cellar: :any,                 arm64_ventura: "2c04938948d2c31b52845ef233415f88fac9cf83a95b3d5cc4a2e67d171ed0bb"
+    sha256 cellar: :any,                 sonoma:        "9087f4947fcc00714ef5ec4853d2fcd41763409b42c9122f62fbaf4196dc08a5"
+    sha256 cellar: :any,                 ventura:       "6930422f0d4f4917e8e844ccf3f1a6adf940f5d907d8149ebc191c6c430261a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "579bd9ce342bcd3a7993ba0a2a89d1d83e1c6fa81bc282ba679d0044eb3f343f"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "openjdk" => :build
   depends_on "abseil"
   depends_on "boost"
@@ -60,9 +61,18 @@ class Libphonenumber < Formula
         }
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cpp",
-                                "-I#{Formula["protobuf"].opt_include}",
-                                "-L#{lib}", "-lphonenumber", "-o", "test"
+
+    (testpath"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 3.14)
+      project(test LANGUAGES CXX)
+      find_package(Boost COMPONENTS date_time system thread)
+      find_package(libphonenumber CONFIG REQUIRED)
+      add_executable(test test.cpp)
+      target_link_libraries(test libphonenumber::phonenumber-shared)
+    CMAKE
+
+    system "cmake", ".", *std_cmake_args
+    system "cmake", "--build", "."
     system ".test"
   end
 end

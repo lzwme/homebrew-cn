@@ -2,7 +2,7 @@ class AivenClient < Formula
   include Language::Python::Virtualenv
 
   desc "Official command-line client for Aiven"
-  homepage "https:docs.aiven.iodocstoolscli"
+  homepage "https:aiven.iodocstoolscli"
   url "https:files.pythonhosted.orgpackages02e8687f8d55bce44b8bfa33a48c508f5a575624db4b9832dfa5843e92a7c8eeaiven_client-4.4.0.tar.gz"
   sha256 "2cb0542643ad575a7a3135078264783faf845227c89238b0b6346f824b9a08e3"
   license "Apache-2.0"

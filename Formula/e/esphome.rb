@@ -3,29 +3,35 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagesa7f34ae9d5425023d8147dba2ffb5c54877870d665751d7fc9301ae7a7817266esphome-2024.11.1.tar.gz"
-  sha256 "40f2c3d4b1148b296ce68c163e6b698ad842ae93a979242ef7bba2bc8b06a5ff"
+  url "https:files.pythonhosted.orgpackagescaf205a08737de801fef339763b342a504c56b6c9ccc77b84f808c02b411183besphome-2024.11.2.tar.gz"
+  sha256 "6c9323c5cd5161c49bc088a041de637a436f8ad20fe555cfd39f41bad487de07"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d8b0f4c3c718952d5801e858623c132709f8013bf82378d2d8e57178a6766992"
-    sha256 cellar: :any,                 arm64_sonoma:  "908e77877ddd2f054fb377fca1889d73c4849a68ab7bd4132af06969b7182877"
-    sha256 cellar: :any,                 arm64_ventura: "3660920cc25c30b7d26efaf887cd1995e09ab165eb76714a7c296423d7ea6a40"
-    sha256 cellar: :any,                 sonoma:        "fd17231ab8b0a7d41461b15261d8fa898d74dabe6746d17493e64cc1cbf7cc41"
-    sha256 cellar: :any,                 ventura:       "dd2f46a64a99ac0c0bd9abcfd7df2bea5f16deaccb724ef7e73c4212cf68633c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "485a540db7d2bb439c464037a4e7088fdcc487d33fba48824f11411dab47a65d"
+    sha256 cellar: :any,                 arm64_sequoia: "603124d89512acc9faa86d3550e8f5cbd11b36d4f031fff30bf46e365d60724d"
+    sha256 cellar: :any,                 arm64_sonoma:  "3390377775774b83690ec0e066d804fa4f9012c44cabb2c26cfec30388a98874"
+    sha256 cellar: :any,                 arm64_ventura: "ea0d95d29b3cd4b49c0c6b89da07381f0902a5dd7a758d30f33f9cb35fd847b0"
+    sha256 cellar: :any,                 sonoma:        "b5b40e5b6f78754532d82d8d1f73fa7cd1d850892c31a3450c14ade16653d9cf"
+    sha256 cellar: :any,                 ventura:       "cb2a3386ddde538ff03215987ed5c8a310291176a3e55609c8ec8cdce931051d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd6d2c8a1e4ef6e42436ab368ab062f190b976d6ead356db538b20749f421c61"
   end
 
   depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "freetype"
+  depends_on "jpeg-turbo"
   depends_on "libmagic"
+  depends_on "libraqm"
+  depends_on "libtiff"
   depends_on "libyaml"
+  depends_on "little-cms2"
   depends_on "pillow"
   depends_on "python-setuptools"
   depends_on "python@3.13"
+  depends_on "webp"
 
-  uses_from_macos "libffi"
+  uses_from_macos "zlib"
 
   resource "aioesphomeapi" do
     url "https:files.pythonhosted.orgpackages894de5b6826e7256abc0783876a382797fd26b632b860eecc61698abb46a52caaioesphomeapi-24.6.2.tar.gz"
@@ -308,8 +314,8 @@ class Esphome < Formula
   end
 
   resource "ufolib2" do
-    url "https:files.pythonhosted.orgpackagescd953bec185d3712cdc0efc2cf70ec82dd275c5c4f5d505ce6ce4be996b89411ufolib2-0.16.1.tar.gz"
-    sha256 "ad53201d11e12f61b5fc5c2a81cb14cdbe68647cca6c00150ea1c0a1a9c7a32b"
+    url "https:files.pythonhosted.orgpackages1ee1d20226fc36ce7df772500409879c3a856f77a07ba8a5e1629449f219a656ufolib2-0.17.0.tar.gz"
+    sha256 "891524052b3636a25b9a92f13f7fd8c24e15483bac96ccd0245ae947d127248b"
   end
 
   resource "unicodedata2" do

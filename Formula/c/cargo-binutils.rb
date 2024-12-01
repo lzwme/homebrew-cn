@@ -45,7 +45,11 @@ class CargoBinutils < Formula
         [package]
         name = "demo-crate"
         version = "0.1.0"
+        edition = "2021"
         license = "MIT"
+
+        [profile.release]
+        debug = true
       TOML
 
       expected = if OS.mac?

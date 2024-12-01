@@ -335,8 +335,20 @@ Homebrew-homebrew-core/Formula/a/avro-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-amplify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-auth.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-auth.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-cal.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-common.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-compression.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-event-stream.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-http.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-io.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-mqtt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-s3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-c-sdkutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-cdk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-checksums.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-console.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-crt-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-elasticbeanstalk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-es-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-google-auth.rb, Homebrew/homebrew-core, 1
@@ -1501,6 +1513,7 @@ Homebrew-homebrew-core/Formula/d/dub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/ducker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duff.rb, Homebrew/homebrew-core, 1
@@ -1676,6 +1689,7 @@ Homebrew-homebrew-core/Formula/e/ettercap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/euler-py.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eureka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eva.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/eventpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote2md.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evince.rb, Homebrew/homebrew-core, 0
@@ -6249,6 +6263,7 @@ Homebrew-homebrew-core/Formula/t/t1lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t1utils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ta-lib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tabiew.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taglib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tagref.rb, Homebrew/homebrew-core, 1
@@ -6747,6 +6762,7 @@ Homebrew-homebrew-core/Formula/v/vgmstream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vhs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vice.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/victorialogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/victoriametrics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/viddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/video-compare.rb, Homebrew/homebrew-core, 1
@@ -13205,6 +13221,7 @@ Homebrew-homebrew-cask/Casks/s/santa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/saoimageds9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sapmachine-jdk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/satellite-eyes.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/satyrn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sauce-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sauerbraten.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/save-hollywood.rb, Homebrew/homebrew-cask, 0

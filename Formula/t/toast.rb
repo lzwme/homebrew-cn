@@ -1,10 +1,16 @@
 class Toast < Formula
   desc "Tool for running tasks in containers"
   homepage "https:github.comstepchowfuntoast"
-  url "https:github.comstepchowfuntoastarchiverefstagsv0.47.6.tar.gz"
-  sha256 "6cda205ec551232106a05a94b6a71d9eb90e4d3bf1541e629062c65257aa3e6a"
   license "MIT"
   head "https:github.comstepchowfuntoast.git", branch: "main"
+
+  stable do
+    url "https:github.comstepchowfuntoastarchiverefstagsv0.47.6.tar.gz"
+    sha256 "6cda205ec551232106a05a94b6a71d9eb90e4d3bf1541e629062c65257aa3e6a"
+
+    # eliminate needless lifetimes, upstream pr ref, https:github.comstepchowfuntoastpull524
+    patch :DATA
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "32d64e56a321339f6c83f3df40c5078da1b9327bdda1db3c96a1f0d59fb2cb27"
@@ -37,3 +43,18 @@ class Toast < Formula
     assert_match "homebrew_test", shell_output("#{bin}toast --list")
   end
 end
+
+__END__
+diff --git asrcfailure.rs bsrcfailure.rs
+index bb01653..05ab70b 100644
+--- asrcfailure.rs
++++ bsrcfailure.rs
+@@ -24,7 +24,7 @@ impl fmt::Display for Failure {
+ }
+
+ impl error::Error for Failure {
+-    fn source<'a>(&'a self) -> Option<&(dyn error::Error + 'static)> {
++    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
+         match self {
+             Self::System(_, source) => source.as_ref().map(|e| &**e),
+             Self::User(_, source) => source.as_ref().map(|e| &**e),

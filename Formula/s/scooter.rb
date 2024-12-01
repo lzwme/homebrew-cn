@@ -1,17 +1,17 @@
 class Scooter < Formula
   desc "Interactive find and replace in the terminal"
   homepage "https:github.comthomasschaferscooter"
-  url "https:github.comthomasschaferscooterarchiverefstagsv0.1.2.tar.gz"
-  sha256 "82fe41560deb2006b11a7c7b176c9d94744c608ffc7c95e846dccb0baeb7adfe"
+  url "https:github.comthomasschaferscooterarchiverefstagsv0.2.1.tar.gz"
+  sha256 "3585c1d2d335f6bef23c9aa2f55fec82f956c9d20ebfcdb5c9cd1aca76978525"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42c24265d21662bf88e062d40d1b4fb2827c27cc57862a285ce014389c9d00b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ec477aa12f681baf8a44c67ced470c843524e805058173369cb1de1768ad1c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c11689d5b5304333cc4614408630dd69962b7873cc38c217c73f6aea4657cba6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4f644e8f1749eee6281bfc1fd74bd88b37c7fc2a6b0bd2bb0606f0f0a2d2d82"
-    sha256 cellar: :any_skip_relocation, ventura:       "e74c429f0d6e9f8cdc0514a8c8f22b997f3c04b337bbbc2813768f056bacf439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f97b76a4de7d194a577a7b37857113e38c9296333a9f4d077ad705e4101d3e36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c442d6b86deeafceb15410b13b8f788ec617133cdc09045662281ec6ba41bc8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a659655b053c1cd0cf33b176af4c0a6cfbcce7f242253ce520a6cf1ffd146e2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ab8181ea6a1c14a242759c2c7b5655d8ec5fa27791e5dc51680ca7c7d347e9d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d81444f7bc95a9626cd2c5bf66149593efa7e6077980feabd35de1e363d805fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "f85bd8158a57f131dedc86c5abcab6f578a9763362b7bae3d315426801b8210c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b49e5b151751cd465fcc357e4ccdd4ab1187f55a052bbf39b15aba824b87366"
   end
 
   depends_on "rust" => :build

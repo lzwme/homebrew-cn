@@ -5,15 +5,16 @@ class ApacheArrow < Formula
   mirror "https:archive.apache.orgdistarrowarrow-18.1.0apache-arrow-18.1.0.tar.gz"
   sha256 "2dc8da5f8796afe213ecc5e5aba85bb82d91520eff3cf315784a52d0fa61d7fc"
   license "Apache-2.0"
+  revision 1
   head "https:github.comapachearrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "21b70194364e3dc4580643cbcf6e571597166678bd259ffe47a518156a5307c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "af73f2dc6b9f4f5c563216b947c010dcd17ce41492c179a8527ceac53a97bbf1"
-    sha256 cellar: :any,                 arm64_ventura: "7cf56e0b3c21201af705b7419aaa7ead1de094a1fe74a4aa13d2eb3e84cd69ab"
-    sha256 cellar: :any,                 sonoma:        "719a4abaad84c1f3d504ec823f637cdde0fc263a0ab49dfa5c5247d49ee4d0ac"
-    sha256 cellar: :any,                 ventura:       "51279e0425997f8853556b6ce5e684ebf003c4d93dea3980b22f2ca88ac3b504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1eade23c4af9500581130fec6a7ed57db4764107f33404039e70f0b9e7247cdc"
+    sha256 cellar: :any,                 arm64_sequoia: "9158e6fc07d81069c123993a446ddda39c2ec00a1b74ea02e457b95efdff4a18"
+    sha256 cellar: :any,                 arm64_sonoma:  "922fb3b4cb068647b2311f0553ab77ea847076481a904abd301ce3f060c9a854"
+    sha256 cellar: :any,                 arm64_ventura: "5e1b5e7add3e5eca7dfea73aa952648d38bb4c64441c6aaf75e65513211134ca"
+    sha256 cellar: :any,                 sonoma:        "0551a841c14bb4dd64180836f2ca69fac7ea35a5dc78c6e44b58a4eae723244a"
+    sha256 cellar: :any,                 ventura:       "d6ccf02cacfd6c1b5556c35f2627bfbbcc0304c0ce41e73f417405662ed4639a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb6d8b5f40cb6a4f3565ee03c667e666e50f498a57c08f6319a0df37c8d09e52"
   end
 
   depends_on "boost" => :build
@@ -25,6 +26,7 @@ class ApacheArrow < Formula
   depends_on "abseil"
   depends_on "aws-sdk-cpp"
   depends_on "brotli"
+  depends_on "c-ares"
   depends_on "grpc"
   depends_on "llvm"
   depends_on "lz4"
@@ -40,11 +42,15 @@ class ApacheArrow < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "c-ares"
+  # Issue ref: https:github.comprotocolbuffersprotobufissues19447
+  fails_with :gcc do
+    version "12"
+    cause "Protobuf 29+ generated code with visibility and deprecated attributes needs GCC 13+"
   end
 
   def install
+    ENV.llvm_clang if OS.linux?
+
     # We set `ARROW_ORC=OFF` because it fails to build with Protobuf 27.0
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -84,6 +90,8 @@ class ApacheArrow < Formula
   end
 
   test do
+    ENV.method(DevelopmentTools.default_compiler).call if OS.linux?
+
     (testpath"test.cpp").write <<~CPP
       #include "arrowapi.h"
       int main(void) {

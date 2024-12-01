@@ -1,17 +1,17 @@
 class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https:www.micropython.org"
-  url "https:github.commicropythonmicropythonreleasesdownloadv1.24.0micropython-1.24.0.tar.xz"
-  sha256 "cde2a6795280945100089c053ba85f842d85f3038229d743da35a3673bc1786b"
+  url "https:github.commicropythonmicropythonreleasesdownloadv1.24.1micropython-1.24.1.tar.xz"
+  sha256 "5d624a0b23389134d963b204601db9bc4ca57bfb615d13f13592bc2b5b494c03"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41ee316369a7cb78751f94e01e7998763b2331af864a28070f34fec0e89a2ad9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e39f5db5d86d837a19161c93070911e9aee5bdee970f92cd7a4ed1a6a64d3fbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b67ffae89e9c8f5007e21b4694fa1feb587997112c72a6dad729640cab2c82e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "613962ca2e0f6074dc76ddcfa09c8c28f89539d74b2fc8089ce5c03c7fc60daf"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ee8a08bac9b3226d63495447463586ad6da48da132b3912a4c467de7d79e96b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ae330d48509fb62a44b8a51c5e1f2d42d45cedd897b45fdaefd251bf1041167"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7119417af2aac51f933f3fdf56463271e059a5809a3fed2156d1f581fdedf70c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90640d85ddaee22d1e8c811d4a0a77684cd61959634428e673a8e70958a18803"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ca6087dc2087c3bdd0c83be91573ef2c5ea24fab910b7d80d934f23deb5ec1b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfe7cd0c32d85d09ab9ae8c747c4fa0201e987cf00f16ea27c47756bd98613f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "6601736a89957321cdb26111f3d6da67575ee7a5324b1af791cf2370240b259b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051ed9e99ab5253da80a44cae0e8bcc177f0da957b1f67261f10801798b39e9f"
   end
 
   depends_on "pkgconf" => :build

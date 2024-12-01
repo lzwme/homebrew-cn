@@ -2,7 +2,7 @@ class AwscliLocal < Formula
   include Language::Python::Virtualenv
 
   desc "Thin wrapper around the `aws` command-line interface for use with LocalStack"
-  homepage "https://localstack.cloud/"
+  homepage "https://www.localstack.cloud/"
   url "https://files.pythonhosted.org/packages/25/f9/023c80ea27d67b0930f116597fd55a93f84de9b05d18b38c7d2d5d75c1c9/awscli-local-0.22.0.tar.gz"
   sha256 "3807cf2ee4bbdd4df4dfc8bef027f25bde523dcaf8119720f677ed95ebba66a4"
   license "Apache-2.0"

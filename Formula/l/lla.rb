@@ -1,17 +1,17 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https:github.comtriyanoxlla"
-  url "https:github.comtriyanoxllaarchiverefstagsv0.2.9.tar.gz"
-  sha256 "e21cba33f4f2da83c4a58d799b5b36cca0bce1946231e611cceacf681584a67a"
+  url "https:github.comtriyanoxllaarchiverefstagsv0.2.10.tar.gz"
+  sha256 "f8eb547b66ed541b8c14f86e222ab21be9311debe4a39348be72518de51d1278"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3ae1d1272bf0986f14b3b0e3b59eca7ebd29d41c83bac402c946a708709429a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9bdd32ccd66cc3169d8097580545ff3d398a3204ca9feb0746b88510a76f743"
-    sha256 cellar: :any,                 arm64_ventura: "46bea68ecfeebac773b8299fe44b7da3e063490886ff96b7c14f6972efcdcd63"
-    sha256 cellar: :any,                 sonoma:        "469bc5757d83a6eb98ec7cb69f49f69b60cee95c1569adf9f204334fd58beb3b"
-    sha256 cellar: :any,                 ventura:       "28b96efbf8dddb237e90f40a042c004a0679ee71a6c224478fddcc8284fa5c32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b347ae2ff74facbeda40012390f7b36f4fb3600c9098d21f424f2cd961aa24"
+    sha256 cellar: :any,                 arm64_sequoia: "2fc32e5f17c2080f83c6ae40c592e1013dbfe688308907e94f1027fe60e3f790"
+    sha256 cellar: :any,                 arm64_sonoma:  "df3fd22eb7927d287680ab0f28a697a699ff06f46bdd2c1a0fc2eb87d50f8cc4"
+    sha256 cellar: :any,                 arm64_ventura: "993b65cfc2d0972f831327c501f8b654ebbe2bd7e5495ed0c4c48997f7f82a6a"
+    sha256 cellar: :any,                 sonoma:        "72532a59d840e4d9e42cfd64d18e4bcb68c428e98d67fa39289b569c4f94e3ff"
+    sha256 cellar: :any,                 ventura:       "73ecd6feb44b828df32d9678f4bc0c29136ce431d5888c3cebff698752a6c2c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0949461f42ce1dfe90b77412ad3b2b0d459de9b34dbe3054e864c5c3751041c"
   end
 
   depends_on "rust" => :build

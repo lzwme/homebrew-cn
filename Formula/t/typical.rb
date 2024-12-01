@@ -18,6 +18,9 @@ class Typical < Formula
 
   depends_on "rust" => :build
 
+  # eliminate needless lifetimes, upstream pr ref, https:github.comstepchowfuntypicalpull501
+  patch :DATA
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -53,3 +56,18 @@ class Typical < Formula
     assert_match "export type SendEmailResponseOut", generated_typescript_code
   end
 end
+
+__END__
+diff --git asrcerror.rs bsrcerror.rs
+index 4563e1e..213faf9 100644
+--- asrcerror.rs
++++ bsrcerror.rs
+@@ -34,7 +34,7 @@ impl fmt::Display for Error {
+ }
+
+ impl error::Error for Error {
+-    fn source<'a>(&'a self) -> Option<&(dyn error::Error + 'static)> {
++    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
+         self.reason.as_deref()
+     }
+ }

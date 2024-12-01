@@ -9,9 +9,7 @@ cask "pictureview" do
 
   livecheck do
     url "https:raw.githubusercontent.comwl879wl879.github.iomasterappspicviewappcase.xml"
-    strategy :sparkle do |item|
-      item.url[%r{PictureView[._-]v?(\d+(?:\.\d+)+)\.dmg}i, 1]
-    end
+    strategy :sparkle, &:short_version
   end
 
   depends_on macos: ">= :mojave"

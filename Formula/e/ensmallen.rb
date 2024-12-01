@@ -1,13 +1,13 @@
 class Ensmallen < Formula
   desc "Flexible C++ library for efficient mathematical optimization"
   homepage "https:ensmallen.org"
-  url "https:github.commlpackensmallenarchiverefstags2.21.1.tar.gz"
-  sha256 "820eee4d8aa32662ff6a7d883a1bcaf4e9bf9ca0a3171d94c5398fe745008750"
+  url "https:github.commlpackensmallenarchiverefstags2.22.0.tar.gz"
+  sha256 "6794098afc9d41930c288ff111ecd821ca296892f1d4a6e3bab7c4028f0b6e59"
   license "BSD-3-Clause"
   head "https:github.commlpackensmallen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9595ef3976ec48fdb6ecc4d2a2d04664a9c44ab17af0c275727374f6d2acc4ae"
+    sha256 cellar: :any_skip_relocation, all: "6f42aace1bc9dbe8d382bb1032928bf0a1cc178c7ad4754aa7c0086c620ba027"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +33,7 @@ class Ensmallen < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
                     "-larmadillo", "-o", "test"
   end
 end

@@ -14,19 +14,20 @@ class Victoriametrics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec8eee8023d2949debefa8fa0977f5234f0e1b02466268bacb462f04e3d823e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f2f90d92887706f2d0ab2ca8af60c8d07da9795f4331a704d945b141c59eb87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73fe34fa232553571e42376e6cd3240d07cd170e950a638a74d4ea82513c8c9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a56819994e70fe56e94d3bb89aa41215c8dc5ae0cb94f7c3845fa9cff62b97b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "805df895f864433d89ab3a817074e8f6941f8ccf0589cdeefcf943a6aa7994a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02f8d87a63c6d1334e60b59a971eaec270232edd9d6857ef50d0141438de4448"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47e702c5b99ae2c30bd4b919522b18235cb652d90d216d487170f4626ae08680"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7752dfe947beeb2cc2bf244281a3345e4b56d382acc57bf3912365a5fcb46fa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0fcc0eb28e20394f38acf883594c87746cb1ecfe811989883c99400db41064b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a00afa0d2517176d600ce8cb7da1b49b054134a0ceff312e77f623c22feaf65"
+    sha256 cellar: :any_skip_relocation, ventura:       "d66d68da11d43819884b2d62bc6f9e656d8a13d942e0a487965d98b7e892092e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fc3ff143a3d60ff2872872c541d22d13c3a5ef34977bee5d9bca3b0e1b0c131"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "victoria-metrics"
-    bin.install "binvictoria-metrics"
+    ldflags = "-s -w -X github.comVictoriaMetricsVictoriaMetricslibbuildinfo.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:, output: bin"victoria-metrics"), ".appvictoria-metrics"
 
     (etc"victoriametricsscrape.yml").write <<~YAML
       global:
@@ -72,6 +73,8 @@ class Victoriametrics < Formula
     end
     sleep 5
     assert_match "Single-node VictoriaMetrics", shell_output("curl -s 127.0.0.1:#{http_port}")
+
+    assert_match version.to_s, shell_output("#{bin}victoria-metrics --version")
   ensure
     Process.kill(9, pid)
     Process.wait(pid)

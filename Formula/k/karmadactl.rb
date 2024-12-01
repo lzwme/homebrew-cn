@@ -1,18 +1,18 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https:karmada.io"
-  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.11.3.tar.gz"
-  sha256 "a56b37ebe5cead776808ed2b35958f15e75c2e5e1733e876d17c14304206cac6"
+  url "https:github.comkarmada-iokarmadaarchiverefstagsv1.12.0.tar.gz"
+  sha256 "6fa45d3124f7537157364f9decaa0cde613f85b86d529ed62f103812082bf1bc"
   license "Apache-2.0"
   head "https:github.comkarmada-iokarmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7798f1719d7495cdf476494204cf269384ca9ddb3f20a647d88c0e97dae2dbb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf1d71dcd45eb2f75ef3cea38932f8eae477af3bf0b69758f0fc689e5c83e088"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d3bc62890c3aff6dca81f89ab6fa24e457b7ab57b24e512843b2c7d489bc578"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da6c6d461f2b0e4fdb523274a4407308020411297ee593913645d1fe49a04842"
-    sha256 cellar: :any_skip_relocation, ventura:       "21519d361dce80473be31ce03a729a059ea856e0b5e09327925ac232e5285985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea0db056200f0a3f5a487762db0e4009baff6f4a1803338e6175f232ad5160e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "878eaf721f993dde17a020fd9ca32119defde1ecf8e3ae95bc8714a5cef2b1aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5ffddd40aa91bc78c85fb87ed5268b4cd01233e85f905d2b15f05c30748b2f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2525c33ed9bfa5be9c87fed405cfcfb39ab0af9c3fc90467c2519a15c82ae5f9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc2f4f81f8f79b29d4620caec29be2105be3b34c743330300eb33b878fae9eb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "a091c4c14e56a4180ffe9414e96cfa610ba299bdd8ba60e56a819e51ff4bd8a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e166742382704c26a836b131ebcc8573c5c66b9844573b01447c32809121763"
   end
 
   depends_on "go" => :build
@@ -27,7 +27,7 @@ class Karmadactl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmdkarmadactl"
 
-    generate_completions_from_executable(bin"karmadactl", "completion")
+    generate_completions_from_executable(bin"karmadactl", "completion", shells: [:bash, :zsh])
   end
 
   test do

@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https:mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0271.tar.gz"
-  version "0.271"
-  sha256 "79960f4c57715b2d08c3eba12933d04dd91ad1d95b0c1059306a75bf07fd6027"
+  url "https:github.commamedevmamearchiverefstagsmame0272.tar.gz"
+  version "0.272"
+  sha256 "cd83bff2f8acf72bdb105ba8e899b49ad09c25cee8a8a063ae27a954fe0dc097"
   license "GPL-2.0-or-later"
   head "https:github.commamedevmame.git", branch: "master"
 
@@ -12,12 +12,12 @@ class RomTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b2eb83be31464686651a0bb20ef4972c0bd3dbf078398e80d34dd523c8e794f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "f71cb382e8b12163ec8b6a11fda3144965f030fa73694fe7a58b743ed638b016"
-    sha256 cellar: :any,                 arm64_ventura: "4a1315f0d240806caf1893eb498eeb5e20552cb42dc826ed3b0e4636e96fa7e6"
-    sha256 cellar: :any,                 sonoma:        "ef52bb5e686b66e57b6add49d1bf6b2a2beaa9cb372cce6161dc2a6fb68d41bb"
-    sha256 cellar: :any,                 ventura:       "e41c45ccbc9339a555166f6a71c9e9d67478c950a9dc486adccee53798d5912d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b69f68717b8f183d79fed2730becdd2a4564aa91ffaceed8613f373e3f1936"
+    sha256 cellar: :any,                 arm64_sequoia: "6edf8ee314b84466f42c4d51d3d35d3537fb65361f6834a0f507f5f866986317"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e468fc4d3300f5900039a771c9b88d0134e64d7e5067c53c60219b234cf3ba9"
+    sha256 cellar: :any,                 arm64_ventura: "f15d003176d2ed9fd84562814cc7c2cbb6fe9a0196216f599f66f4e831b8a52f"
+    sha256 cellar: :any,                 sonoma:        "93bd1d4ddd7a32d8764da497aae220f5709d09510cc52060e86bc35477bfd41f"
+    sha256 cellar: :any,                 ventura:       "e4d64929b83d0de06e29bbe616b0d0822d032d49d1463b0c581e7daade581af7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "252f9f58dfcb61eeb3fe2ba9c7146134c3b9d1931ec2530172e11de573c0f2aa"
   end
 
   depends_on "asio" => :build

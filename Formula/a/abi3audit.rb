@@ -2,7 +2,7 @@ class Abi3audit < Formula
   include Language::Python::Virtualenv
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
-  homepage "https:github.comtrailofbitsabi3audit"
+  homepage "https:github.compypaabi3audit"
   url "https:files.pythonhosted.orgpackages2f8709f7603de10036e98d36de8f5068b42239a60a114872d3fec25934044748abi3audit-0.0.19.tar.gz"
   sha256 "6f9e5282c0e165ac927b6ca0473413a5204b0d9149c30cf9227f68604a73374b"
   license "MIT"

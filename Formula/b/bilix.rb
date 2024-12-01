@@ -6,15 +6,15 @@ class Bilix < Formula
   url "https:files.pythonhosted.orgpackages5c120f885cee77471123a3c82da85bd1934af00aed213910987bbe5b2296997dbilix-0.18.9.tar.gz"
   sha256 "8ab1be9bcc661369cbeba95439c09716778b6b42b2505a3eaddb45175688e247"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "c1698ce1a8712bd840e4d6fb4d3426004d5c550ef4bcefbf612f2fff0f825897"
-    sha256 cellar: :any,                 arm64_sonoma:  "3419e6b07a131ecfe878c16685aa7e9ca1b0fedde7ea73037304234a33fa1eb8"
-    sha256 cellar: :any,                 arm64_ventura: "3fcfea83abb025a1071c00e0c495ef4dc25dc5bb9f21ea88ee2859f291d288f8"
-    sha256 cellar: :any,                 sonoma:        "d5ed9477ca466758762dbf3a9a39db67f25d2b915a09dbd846ca13924d9f39e2"
-    sha256 cellar: :any,                 ventura:       "0376b93bf9bdd01565087441e2d65ab6a8bb92a5806509c1625fa5a92d62d776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a884b45cbd5a52c7b778b86c1c26232a174b1ada02cb6d7cfb9480aca2e475c9"
+    sha256 cellar: :any,                 arm64_sequoia: "3c1e5cde851eb27c85abb5c41bed3edfd4d45f68adf9661621e6c3a00ceb2061"
+    sha256 cellar: :any,                 arm64_sonoma:  "49a684a00f27ec7f6ce57a768886cf1ee731d6fc75403e7341248ec02e640511"
+    sha256 cellar: :any,                 arm64_ventura: "10290bffb1be855b97822cac52915f16180185794478e53ee99bdb960b7d4c4c"
+    sha256 cellar: :any,                 sonoma:        "78d4865ffa1dc7106db2272b789a90a46f509bfc7b0186c18c3b916280eb4b40"
+    sha256 cellar: :any,                 ventura:       "669ef0d47cfbd0f9c8ac6b9a70c5af94ff828cd271867ad981a0ff6ebf39b2cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216ac59112c834424f935f42cedcec79ea202f40a817bb0dff133315b7b0760c"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -32,8 +32,8 @@ class Bilix < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackages7849f3f17ec11c4a91fe79275c426658e509b07547f874b14c1a526d86a83fc8anyio-4.6.0.tar.gz"
-    sha256 "137b4559cbb034c477165047febb6ff83f390fc3b20bf181c1fc0a728cb8beeb"
+    url "https:files.pythonhosted.orgpackages9f0945b9b7a6d4e45c6bcb5bf61d19e3ab87df68e0601fa8c5293de3542546ccanyio-4.6.2.post1.tar.gz"
+    sha256 "4c8bc31ccdb51c7f7bd251f51c609e038d63e34219b44aa86e47576389880b4c"
   end
 
   resource "beautifulsoup4" do
@@ -82,13 +82,13 @@ class Bilix < Formula
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackagesb644ed0fa6a17845fb033bd885c03e842f08c1b9406c86a2e60ac1ae1b9206a6httpcore-1.0.6.tar.gz"
-    sha256 "73f6dbd6eb8c21bbf7ef8efad555481853f5f6acdeaff1edb0694289269ee17f"
+    url "https:files.pythonhosted.orgpackages6a41d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90httpcore-1.0.7.tar.gz"
+    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
-    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
+    url "https:files.pythonhosted.orgpackages10df676b7cf674dd1bdc71a64ad393c89879f75e4a0ab8395165b498262ae106httpx-0.28.0.tar.gz"
+    sha256 "0858d3bab51ba7e386637f22a61d8ccddaeec5f3fe4209da3a6168dbb91573e0"
   end
 
   resource "hyperframe" do
@@ -102,8 +102,8 @@ class Bilix < Formula
   end
 
   resource "json5" do
-    url "https:files.pythonhosted.orgpackages915951b032d53212a51f17ebbcc01bd4217faab6d6c09ed0d856a987a5f42bbcjson5-0.9.25.tar.gz"
-    sha256 "548e41b9be043f9426776f05df8635a00fe06104ea51ed24b67f908856e151ae"
+    url "https:files.pythonhosted.orgpackages853dbbe62f3d0c05a689c711cff57b2e3ac3d3e526380adb7c781989f075115cjson5-0.10.0.tar.gz"
+    sha256 "e66941c8f0a02026943c52c2eb34ebeb2a6f819a0be05920a6f5243cd30fd559"
   end
 
   resource "lz4" do
@@ -127,8 +127,8 @@ class Bilix < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesb1a44579a61de526e19005ceeb93e478b61d77aa38c8a85ad958ff16a9906549protobuf-5.28.2.tar.gz"
-    sha256 "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
+    url "https:files.pythonhosted.orgpackages6abb8e59a30b83102a37d24f907f417febb58e5f544d4f124dd1edcd12e078bfprotobuf-5.29.0.tar.gz"
+    sha256 "445a0c02483869ed8513a585d80020d012c6dc60075f96fa0563a724987b1001"
   end
 
   resource "pycryptodome" do
@@ -142,13 +142,13 @@ class Bilix < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
-    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
+    url "https:files.pythonhosted.orgpackages4186a03390cb12cf64e2a8df07c267f3eb8d5035e0f9a04bb20fb79403d2a00epydantic-2.10.2.tar.gz"
+    sha256 "2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
-    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
+    url "https:files.pythonhosted.orgpackagesa69f7de1f19b6aea45aeb441838782d68352e71bfa98ee6fa048d5041991b33epydantic_core-2.27.1.tar.gz"
+    sha256 "62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"
   end
 
   resource "pygments" do
@@ -162,8 +162,8 @@ class Bilix < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "sniffio" do
@@ -179,6 +179,12 @@ class Bilix < Formula
   resource "typing-extensions" do
     url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
     sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+  end
+
+  # update bilibili play_info api, upstream pr ref, https:github.comHFrost0bilixpull244
+  patch do
+    url "https:github.comHFrost0bilixcommit72c259d88b2fffb6cd530fce01b8c3d35fb79335.patch?full_index=1"
+    sha256 "6f241455c6f1940626ed660d97abbcf3eecd3931cca3b6db6acd1f961649b6cb"
   end
 
   def install

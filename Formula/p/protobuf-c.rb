@@ -4,15 +4,15 @@ class ProtobufC < Formula
   url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.0protobuf-c-1.5.0.tar.gz"
   sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d41d8e2810be2c6b407858cfcdc388bd50b6e876520090202883d38c6cf922a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "3972558e6edf7738eebbb771f17bedb7edd69f0a06352d68741c576bda6414c9"
-    sha256 cellar: :any,                 arm64_ventura: "365b1a39a08002c87ab523e8f24b5fcf2aa00c12cc2308093b54ab17681e96f4"
-    sha256 cellar: :any,                 sonoma:        "412a5685c185e124c29e63d45c06413670da2cf8f87041b12b78e4814b813c94"
-    sha256 cellar: :any,                 ventura:       "d00b15e374af0308b1cf81405cb206d0a16f98f8dc70a441022503c2f282c544"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0546972473388485cbf82ecc77939ce6680544a00f65f7e254ebe01fa01252ac"
+    sha256 cellar: :any,                 arm64_sequoia: "de456c5730dd9c4f1c85b0025c0d3a425651b5f8252b9d119a69e7ed54b6b303"
+    sha256 cellar: :any,                 arm64_sonoma:  "20c9d206a73620e2bed2fed6eabe33f87863b29e241148921e0018b57d691114"
+    sha256 cellar: :any,                 arm64_ventura: "0b3a54aaf1ebceb195e0c7300bade936e39f17c51c6249e8b91bfa99eb04bad5"
+    sha256 cellar: :any,                 sonoma:        "27964d86508e9b13aa0f08209797e3688ef90d64322ace63381338be2aa1f337"
+    sha256 cellar: :any,                 ventura:       "a4261bf4d6c6d722d0ada2b6e04e3dff294d8288bace2aa748cb87cf71e581fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f225ac0e0bcfa330a7f089b7c1b10e7387cdbe74f4be750d57731fd9562761b9"
   end
 
   head do

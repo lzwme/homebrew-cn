@@ -1,6 +1,6 @@
 class Alembic < Formula
   desc "Open computer graphics interchange framework"
-  homepage "http:alembic.io"
+  homepage "http:www.alembic.io"
   url "https:github.comalembicalembicarchiverefstags1.8.7.tar.gz"
   sha256 "3590f51f82e3675bb907f7a6a7149a76c06c23ef25d153e64391bcd22d86cc8c"
   license "BSD-3-Clause"

@@ -21,6 +21,7 @@ class Jupyterlab < Formula
   end
 
   depends_on "cmake" => :build # for ipykernel
+  depends_on "ninja" => :build # for ipykernel
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "libyaml"

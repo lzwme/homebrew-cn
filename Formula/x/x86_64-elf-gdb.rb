@@ -12,19 +12,20 @@ class X8664ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b4a37cc07ed4f167af859b14f5bbef1810d6da398c2950bfc4dbc229b660d603"
-    sha256 arm64_sonoma:  "c2cfcaf13fb0a884526f28b1d3e5c003f434ceb32ebc763d5c93effd960b387f"
-    sha256 arm64_ventura: "2aabe359b5ba0134d73be955a7acb49439c2a32cad29da4a3d2f5be748a87fed"
-    sha256 sonoma:        "86aab0c249fae16a8ac42e32ee2b9b3e199c603eeb2e420ffbad806b22ca48d6"
-    sha256 ventura:       "f49d50a7283884ac80ee9564e88abab5bd3dd367a84161bd56166e9f814834de"
-    sha256 x86_64_linux:  "93c20ca8de2681ae1b9262d0c52831acce867060e19d2f936aa0487b96aad2ec"
+    rebuild 1
+    sha256 arm64_sequoia: "2fd85b797b50c4e7a54bed3052056522777b561a64fae3f80f6c82a08446e087"
+    sha256 arm64_sonoma:  "5cd4e7ef7ff308390654ed95e291f26edf68aa99310c8d652d8477a2f51364ba"
+    sha256 arm64_ventura: "733f9611756c8bcb3386c087d41a15048b0bc6049073a14be1c9cc0f34b3ba78"
+    sha256 sonoma:        "6746795a11377b90273d230cb14690327bbec869a314254850782d984804346a"
+    sha256 ventura:       "fc6e69469c2ff3583f7fca5829b765a893ea58392c6888aa488cc635b48e5baf"
+    sha256 x86_64_linux:  "192d1e71c2caeffc11b900d44206778ce199913ac94d75dd569df20b9ae35c4e"
   end
 
   depends_on "x86_64-elf-gcc" => :test
 
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "expat"
@@ -44,7 +45,7 @@ class X8664ElfGdb < Formula
       --infodir=#{info}/#{target}
       --mandir=#{man}
       --with-lzma
-      --with-python=#{which("python3.12")}
+      --with-python=#{which("python3.13")}
       --with-system-zlib
       --disable-binutils
     ]
@@ -61,7 +62,7 @@ class X8664ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system "#{Formula["x86_64-elf-gcc"].bin}/x86_64-elf-gcc", "-g", "-nostdlib", "test.c"
+    system Formula["x86_64-elf-gcc"].bin/"x86_64-elf-gcc", "-g", "-nostdlib", "test.c"
 
     output = shell_output("#{bin}/x86_64-elf-gdb -batch -ex 'info address _start' a.out")
     assert_match "Symbol \"_start\" is a function at address 0x", output

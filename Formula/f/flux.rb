@@ -44,6 +44,12 @@ class Flux < Formula
     end
   end
 
+  # rust 1.83.0 build patch, upstream pr ref, https:github.cominfluxdatafluxpull5516
+  patch do
+    url "https:github.cominfluxdatafluxcommit08b6cb784759242fd1455f1d28e653194745c0c6.patch?full_index=1"
+    sha256 "3c40b88897c1bd34c70f277e13320148cbee44b8ac7b8029be6bf4f541965302"
+  end
+
   def install
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
