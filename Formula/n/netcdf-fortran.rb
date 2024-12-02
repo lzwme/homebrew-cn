@@ -21,7 +21,7 @@ class NetcdfFortran < Formula
   depends_on "netcdf"
 
   def install
-    args = std_cmake_args + %w[-DBUILD_TESTING=OFF -DENABLE_TESTS=OFF -DENABLE_NETCDF_4=ON -DENABLE_DOXYGEN=OFF]
+    args = std_cmake_args + %w[-DENABLE_TESTS=OFF -DENABLE_NETCDF_4=ON -DENABLE_DOXYGEN=OFF]
 
     # Help netcdf-fortran find netcf
     # https:github.comUnidatanetcdf-fortranissues301#issuecomment-1183204019

@@ -16,7 +16,7 @@ class Dexter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "83130e9cf8066ce05ff78a2e893da336cc2d5225b20be91a9746a43f3a2bcc65"
   end
 
-  depends_on "postgresql@16" => :test
+  depends_on "postgresql@17" => :test
   depends_on "libpq"
   depends_on "ruby"
 
@@ -60,7 +60,7 @@ class Dexter < Formula
   test do
     ENV["LC_ALL"] = "C"
 
-    postgresql = Formula["postgresql@16"]
+    postgresql = Formula["postgresql@17"]
     pg_ctl = postgresql.opt_bin"pg_ctl"
     port = free_port
 

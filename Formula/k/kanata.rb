@@ -4,6 +4,7 @@ class Kanata < Formula
   url "https:github.comjtrookanataarchiverefstagsv1.7.0.tar.gz"
   sha256 "eb7e11511f77558d72b5b3b0c9defb04b269637e5c8a4ad9b45d21382e9247d2"
   license "LGPL-3.0-only"
+  head "https:github.comjtrookanata.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4f7a14dcaf0958380d869568c7e2080f81fa3f04596fb0401185ccfdd2e8b79"

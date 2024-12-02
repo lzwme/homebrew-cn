@@ -29,7 +29,6 @@ class Uvw < Formula
   def install
     args = %w[
       -DBUILD_UVW_LIBS=ON
-      -DBUILD_TESTING=OFF
       -DBUILD_DOCS=OFF
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

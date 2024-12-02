@@ -17,11 +17,9 @@ class OpenclClhppHeaders < Formula
   depends_on "opencl-headers"
 
   def install
-    system "cmake", "-DBUILD_TESTING=OFF",
+    system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_DOCS=OFF",
                     "-DBUILD_EXAMPLES=OFF",
-                    "-S", ".",
-                    "-B", "build",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

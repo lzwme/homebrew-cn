@@ -21,12 +21,7 @@ class Cnats < Formula
   depends_on "protobuf-c"
 
   def install
-    args = %W[
-      -DCMAKE_INSTALL_PREFIX=#{prefix}
-      -DBUILD_TESTING=OFF
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -31,7 +31,7 @@ class Abyss < Formula
   depends_on "google-sparsehash" => :build
   depends_on "meson" => :build # For btllib
   depends_on "ninja" => :build # For btllib
-  depends_on "python@3.12" => :build # For btllib
+  depends_on "python@3.13" => :build # For btllib
   depends_on "gcc"
   depends_on "open-mpi"
 
@@ -45,7 +45,7 @@ class Abyss < Formula
   end
 
   def install
-    python3 = "python3.12"
+    python3 = "python3.13"
 
     (buildpath"btllib").install resource("btllib")
     cd "btllib" do
@@ -54,13 +54,13 @@ class Abyss < Formula
     end
 
     system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args,
+    system ".configure", "--disable-silent-rules",
                           "--enable-maxk=128",
                           "--with-boost=#{Formula["boost"].include}",
                           "--with-btllib=#{buildpath}btllibinstall",
                           "--with-mpi=#{Formula["open-mpi"].prefix}",
                           "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
-                          "--disable-silent-rules"
+                          *std_configure_args
     system "make", "install"
   end
 

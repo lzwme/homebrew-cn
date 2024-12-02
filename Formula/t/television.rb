@@ -17,6 +17,8 @@ class Television < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "tidy-viewer", because: "both install `tv` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

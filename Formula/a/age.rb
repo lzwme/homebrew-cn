@@ -20,8 +20,10 @@ class Age < Formula
   depends_on "go" => :build
 
   def install
-    bin.mkpath
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "-o", bin, "filippo.ioagecmd..."
+    ldflags = "-s -w -X main.Version=v#{version}"
+    system "go", "build", *std_go_args(ldflags:), ".cmdage"
+    system "go", "build", *std_go_args(ldflags:, output: bin"age-keygen"), ".cmdage-keygen"
+
     man1.install "docage.1"
     man1.install "docage-keygen.1"
   end

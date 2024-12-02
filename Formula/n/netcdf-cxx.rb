@@ -24,8 +24,12 @@ class NetcdfCxx < Formula
   end
 
   def install
-    args = std_cmake_args + %w[-DBUILD_TESTING=OFF -DNCXX_ENABLE_TESTS=OFF -DENABLE_TESTS=OFF -DENABLE_NETCDF_4=ON
-                               -DENABLE_DOXYGEN=OFF]
+    args = std_cmake_args + %w[
+      -DNCXX_ENABLE_TESTS=OFF
+      -DENABLE_TESTS=OFF
+      -DENABLE_NETCDF_4=ON
+      -DENABLE_DOXYGEN=OFF
+    ]
 
     # https:github.comUnidatanetcdf-cxx4issues151#issuecomment-2041111870
     args << "-DHDF5_C_LIBRARY_hdf5=#{Formula["hdf5"].opt_lib}"

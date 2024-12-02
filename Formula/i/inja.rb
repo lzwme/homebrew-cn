@@ -15,8 +15,7 @@ class Inja < Formula
   depends_on "nlohmann-json"
 
   def install
-    system "cmake", ".", "-DBUILD_TESTING=OFF",
-                         "-DBUILD_BENCHMARK=OFF",
+    system "cmake", ".", "-DBUILD_BENCHMARK=OFF",
                          "-DINJA_USE_EMBEDDED_JSON=OFF",
                          *std_cmake_args
     system "make", "install"

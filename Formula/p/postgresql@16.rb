@@ -11,12 +11,13 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6e3782edae9998def84db4d9eedb6776d4f84defb782311520b713814f510075"
-    sha256 arm64_sonoma:  "88d77209b367e4449ba5b73d8f9381d92b62c919c8c83cdc07bed7276eab43d9"
-    sha256 arm64_ventura: "046778957b5ab89c0cee710c7818b4aa9bf53b720fd07db97e839c6119dc735b"
-    sha256 sonoma:        "c2ab884ddb8c67204bc7347424f220b2a3bb30fb8fd09a726e3176f743a200f4"
-    sha256 ventura:       "d7b2fae695261b6444afcabf73371cfcc44bf02bed9b96714b078b7e3e6e3d6d"
-    sha256 x86_64_linux:  "5066742d66aade04e29bce8d08ebb48eb43e6fb816ebbc8d35a392ca72819f9e"
+    rebuild 1
+    sha256 arm64_sequoia: "a125571f9fef1986bedf7300e3d99ad0b9c7b1f7d2798adcc7dc84af7f8b6173"
+    sha256 arm64_sonoma:  "cba3ec296592f3a10b8f9c412524610aa56eaf7d9cab8f498cd9a1264d5f1adf"
+    sha256 arm64_ventura: "a36cab1b111803ca1ad88fec990d5a5d3d5a6d5f20667d1322217e2ac2072c6c"
+    sha256 sonoma:        "17ce2aafc8b68a7560e6650240466cc0d5a83df0eca998f8420cc6d818acc79d"
+    sha256 ventura:       "da6354aa893f7de19811cca70816556df8257011bc1e9b16f4eb0ad447d3ed47"
+    sha256 x86_64_linux:  "50858f007990ab7356c183b6b1d02dffabc4fa058321a44e71de67efe33a8d95"
   end
 
   keg_only :versioned_formula
@@ -66,7 +67,6 @@ class PostgresqlAT16 < Formula
 
     args = %W[
       --datadir=#{opt_pkgshare}
-      --libdir=#{opt_lib}
       --includedir=#{opt_include}
       --sysconfdir=#{etc}
       --docdir=#{doc}
@@ -83,15 +83,15 @@ class PostgresqlAT16 < Formula
       --with-pam
       --with-perl
       --with-uuid=e2fs
-      --with-extra-version=\ (#{tap.user})
     ]
+    args << "--with-extra-version= (#{tap.user})" if tap
     args += %w[--with-bonjour --with-tcl] if OS.mac?
 
     # PostgreSQL by default uses xcodebuild internally to determine this,
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system ".configure", *args, *std_configure_args
+    system ".configure", *args, *std_configure_args(libdir: opt_lib)
 
     # Work around busted path magic in Makefile.global.in. This can't be specified
     # in .configure, but needs to be set here otherwise install prefixes containing
@@ -150,7 +150,7 @@ class PostgresqlAT16 < Formula
   test do
     system bin"initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_equal opt_pkgshare.to_s, shell_output("#{bin}pg_config --sharedir").chomp
-    assert_equal lib.to_s, shell_output("#{bin}pg_config --libdir").chomp
+    assert_equal opt_lib.to_s, shell_output("#{bin}pg_config --libdir").chomp
     assert_equal (opt_lib"postgresql").to_s, shell_output("#{bin}pg_config --pkglibdir").chomp
     assert_equal (opt_include"postgresql").to_s, shell_output("#{bin}pg_config --pkgincludedir").chomp
     assert_equal (opt_include"postgresqlserver").to_s, shell_output("#{bin}pg_config --includedir-server").chomp

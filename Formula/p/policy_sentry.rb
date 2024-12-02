@@ -3,19 +3,18 @@ class PolicySentry < Formula
 
   desc "Generate locked-down AWS IAM Policies"
   homepage "https:policy-sentry.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages524f02922c178ca4acbe21f5d1252209ccc05bb70d515ca406925ae7e34e164fpolicy_sentry-0.13.1.tar.gz"
-  sha256 "6bb0133d897a45349aed78942459b4f583542051bb181e3a64464d13af8190b0"
+  url "https:files.pythonhosted.orgpackagesa40575e8953eb5fa564e45fc5afc61696d38ce779169309ca270224561926fa8policy_sentry-0.13.2.tar.gz"
+  sha256 "db2b39f92989077f83fc4dd1d064e3ff20b69cfed82168ebdc060e7dce292e77"
   license "MIT"
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "9d7ab42b3cc3cd0f619594e79e73f163b9dc24c94f23018ef0f9e67568a66267"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f125bd2113536a97c523827b359270e95edc941b2e91a56d4da7fefe0f1ed52"
-    sha256 cellar: :any,                 arm64_ventura: "3febd59cedf3aea33af3560e1b4d2e47e7ff0d69f1e5adedb80fd8f113f0c010"
-    sha256 cellar: :any,                 sonoma:        "191fa81f65ae9379736413106bb1253e0f37d4270252700fbf0db2e8b50d9e3f"
-    sha256 cellar: :any,                 ventura:       "9253304ecff6fbfacc5a1065b7cd7c1f5caafb4d283253825615d12b6a37b2c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4f96d2c2f624bbe53a1d18e1cb181cc66cbb9515ae420fd133abe95dcc5f5dd"
+    sha256 cellar: :any,                 arm64_sequoia: "fde1b3e06bb5eb3c39a51af1c10082c0c5694daa04b441de0ddf01481158c43b"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0dd955c6e2b44d68b7b935c09dc3d3ac2d12491ed08d748585f4bbf57595019"
+    sha256 cellar: :any,                 arm64_ventura: "14d470971cebf8b3dac675424d1d58956590d86d4b022c4baed5e56b967df751"
+    sha256 cellar: :any,                 sonoma:        "952d10e2f4ef7f6075ae5da83268b12ef0238a0774a1f7b7680cdbba71841cb8"
+    sha256 cellar: :any,                 ventura:       "2c7bfe2a9d22e9bf214a441d49eb294021a8b4b7135be12691531186f9aa9ea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3b0f18d8d4596e56de1da069ba69f5b09674edc68943b559c18f1b318610d5f"
   end
 
   depends_on "rust" => :build # for orjson
@@ -44,8 +43,8 @@ class PolicySentry < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackages9e03821c8197d0515e46ea19439f5c5d5fd9a9889f76800613cfac947b5d7845orjson-3.10.7.tar.gz"
-    sha256 "75ef0640403f945f3a1f9f6400686560dbfb0fb5b16589ad62cd477043c4eee3"
+    url "https:files.pythonhosted.orgpackagese004bb9f72987e7f62fb591d6c880c0caaa16238e4e530cbc3bdc84a7372d75forjson-3.10.12.tar.gz"
+    sha256 "0a78bbda3aea0f9f079057ee1ee8a1ecf790d4f1af88dd67493c6b8ee52506ff"
   end
 
   resource "pyyaml" do

@@ -25,7 +25,6 @@ class Cryfs < Formula
 
   def install
     system "cmake", "-B", "build", "-S", ".",
-                    "-DBUILD_TESTING=off",
                     "-DCRYFS_UPDATE_CHECKS=OFF",
                     "-DDEPENDENCY_CONFIG=cmake-utilsDependenciesFromLocalSystem.cmake",
                     *std_cmake_args

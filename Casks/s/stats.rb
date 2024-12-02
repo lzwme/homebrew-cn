@@ -8,8 +8,8 @@ cask "stats" do
     end
   end
   on_catalina :or_newer do
-    version "2.11.18"
-    sha256 "c4453cf7b3c4f0b9e24098a3a7cde849b1e595c937a7279d88cab3fdbce01721"
+    version "2.11.19"
+    sha256 "689f5bf3f99666660f6d2f44afab0ca0c0084bb1b40283d3ffb827131ed2b06c"
   end
 
   url "https:github.comexelbanstatsreleasesdownloadv#{version}Stats.dmg"

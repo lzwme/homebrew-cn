@@ -1,10 +1,19 @@
 class Zzz < Formula
   desc "Command-line tool to put Macs to sleep"
   homepage "https:github.comOrcZzz"
-  url "https:github.comOrcZzzarchiverefstagsv1.tar.gz"
-  sha256 "8c8958b65a74ab1081ce1a950af6d360166828bdb383d71cc8fe37ddb1702576"
   license :public_domain
   head "https:github.comOrcZzz.git", branch: "main"
+
+  stable do
+    url "https:github.comOrcZzzarchiverefstagsv1.tar.gz"
+    sha256 "8c8958b65a74ab1081ce1a950af6d360166828bdb383d71cc8fe37ddb1702576"
+
+    # Backport fix for C99
+    patch do
+      url "https:github.comOrcZzzcommit2bf4284ecdbdfd0d629ed00752bcda5d0d0f63f6.patch?full_index=1"
+      sha256 "b861283f25c6c6f160929c630203861dc9bbaf501d89cb6e6d7a3b383c53bf20"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fd0ee248946ce362be9296be1706999d0e32f120f86e07923d5f98f58ddd014b"
@@ -21,12 +30,6 @@ class Zzz < Formula
   end
 
   depends_on :macos
-
-  # build patch for main function signature, upstream pr ref, https:github.comOrcZzzpull6
-  patch do
-    url "https:github.comOrcZzzcommitefb6f6314722de65e709df6dc5f94284cf12abaf.patch?full_index=1"
-    sha256 "6e92a6d87c7ddeff5308318b80f4287434cf793a4cf2b1761193b5aff2ea5867"
-  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

@@ -80,12 +80,12 @@ class Zurl < Formula
     venv.pip_install resources.reject { |r| r.name == "pyzmq" }
     venv.pip_install(resource("pyzmq"), build_isolation: false)
 
-    conffile.write <<~EOS
+    conffile.write <<~INI
       [General]
       in_req_spec=ipc:#{ipcfile}
       defpolicy=allow
       timeout=10
-    EOS
+    INI
 
     port = free_port
     runfile.write <<~PYTHON
@@ -130,7 +130,7 @@ class Zurl < Formula
 
     pid = spawn bin"zurl", "--config=#{conffile}"
     begin
-      system testpath"vendorbin#{python3}", runfile
+      system testpath"vendorbin"python3, runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

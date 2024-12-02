@@ -1,18 +1,17 @@
 class LxiTools < Formula
   desc "Open source tools for managing network attached LXI compatible instruments"
   homepage "https:github.comlxi-toolslxi-tools"
-  url "https:github.comlxi-toolslxi-toolsarchiverefstagsv2.7.tar.gz"
-  sha256 "6196980e82be2d143aa7f52e8e4612866b570cfce225d7d61698d2eeb1bf8a00"
+  url "https:github.comlxi-toolslxi-toolsarchiverefstagsv2.8.tar.gz"
+  sha256 "ef9d013189c9449f850d467dd35ac3840929e76a888cdb77e0edbce067da0b2d"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "8abe1db4feed78939aad2fcb5ff3691ef65bb5568d4720c08eefcd7ed764f20c"
-    sha256 cellar: :any, arm64_sonoma:  "6e54d6184b33c8505b2d1fcdb9e30941b4dcb11c5af0eeaf6a58bf51f02a05d8"
-    sha256 cellar: :any, arm64_ventura: "db91c6caf54ba2cfefe385fa604294ba010cde1e3361914f509e886359c7573b"
-    sha256 cellar: :any, sonoma:        "8f59f9f854d0d1c50f59305b9f0895b2d57f3bae5260e57e8aa97f9149cf9cc9"
-    sha256 cellar: :any, ventura:       "d9d421a14b487c82d19b18492d5f4149e127ef5061d9197171a38bca907378ce"
-    sha256               x86_64_linux:  "26ad09a5de577c6994732332c41db9abd9eead9ff22752fa89286e1faf7b960e"
+    sha256 cellar: :any, arm64_sequoia: "be6069943c2ea42d4bbe08093d302097c6b845daf5715a3c48fe53fc6af9d613"
+    sha256 cellar: :any, arm64_sonoma:  "aa7dcfd5abb6be73394e6de4e178852da17b4d77c9e2ac92e0526e166f8aa146"
+    sha256 cellar: :any, arm64_ventura: "2d6da719bc67d07ecaa3c90eba4adfb710287f1a658dc6f430c7218ca47a5cfe"
+    sha256 cellar: :any, sonoma:        "2072bc9693447a72bf3fa53f4b7fe44e1eaae6d86c7f451b51005a5613b20182"
+    sha256 cellar: :any, ventura:       "1007e5d715fa7d3dd46a13354eb0403e21de7062914650da8ebd4b0d58011678"
+    sha256               x86_64_linux:  "ec4ad53dd83db6db87bae92862f289e2e098aabaf94a2c1f056562e9b8b6293f"
   end
 
   depends_on "meson" => :build

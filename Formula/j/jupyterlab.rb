@@ -9,15 +9,15 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb811410b0c5ca82837f084b01bf4eb3408a894ea14dce128d5fb918400564c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7c30a9d6faf243d1510073e9465412c6bb658f93181607da0b36213b65e5537"
-    sha256 cellar: :any,                 arm64_ventura: "105816dc0f010e994cba26c1bde11a695dadd982e7dd5244dae3b92faddac560"
-    sha256 cellar: :any,                 sonoma:        "b0c9f0cc3cacd526c28cdf5dcc659add044c11377fe20c132a849189373b1f86"
-    sha256 cellar: :any,                 ventura:       "977fc13686e6d278e34d9b0d5f35f9a9b9493f0d9178f5fb32dd08e66054221a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adf6c4951550cec1a9ae332df51f88d12399b10383d39a031797efcf45e7b80b"
+    sha256 cellar: :any,                 arm64_sequoia: "603a01fd87960638d7cb89187b43a0c42ad31ed2b102d50e1bffa87a6a560fc3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef45b500aefc929c52341ccdfdb19315caa44f7a4693bc036701bcf4017532ef"
+    sha256 cellar: :any,                 arm64_ventura: "ceb091b710d290f98566d25340d5e110b9876361358f981d79ab37fe8ab65094"
+    sha256 cellar: :any,                 sonoma:        "a350c90e92508b9dfa629d486794d0edceb44f54df2c8133d36cce04a93ccd4f"
+    sha256 cellar: :any,                 ventura:       "ba0149168f05ad612cd355c5bf88b444f345bf2b28ba8c03fdac0fd1abb88068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c646fcf4c3c14cd2d37a992e60d87bd456a95e7f679e26aa60d1196ab51208d0"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -27,7 +27,7 @@ class Jupyterlab < Formula
   depends_on "libyaml"
   depends_on "node"
   depends_on "pandoc"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "zeromq"
 
   uses_from_macos "expect" => :test
@@ -516,7 +516,7 @@ class Jupyterlab < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

@@ -3,18 +3,18 @@ class Twine < Formula
 
   desc "Utilities for interacting with PyPI"
   homepage "https:github.compypatwine"
-  url "https:files.pythonhosted.orgpackagesd1712f838ca17e941a25353702ad993d5f6b2d8e3130b01185592e9465155fe1twine-6.0.0.tar.gz"
-  sha256 "9a9b815b3bad3186cc85be92294d8e2509558e0315d69ed746c0594419c835de"
+  url "https:files.pythonhosted.orgpackages2c3388b80116504b61759fa2db05e13f2296b0d2e73568f5e731d020c13843b8twine-6.0.1.tar.gz"
+  sha256 "36158b09df5406e1c9c1fb8edb24fc2be387709443e7376689b938531582ee27"
   license "Apache-2.0"
   head "https:github.compypatwine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "463a2ef6685385cfd0ac25e3d883ba9722d9fe1dfd4f05144ca13cc88f512b96"
-    sha256 cellar: :any,                 arm64_sonoma:  "b811639acab20cc9e33e1bbdb82c781d4d16b34d0687fe91dedb3e87684192ec"
-    sha256 cellar: :any,                 arm64_ventura: "0e38c2991a89795a6f139dafd1ce4fb9a2f135096dff52c874ebdcc0034b6810"
-    sha256 cellar: :any,                 sonoma:        "09553607fc1922923950de009e19d26ea3c78bc3539893c26c37fc014e64a10f"
-    sha256 cellar: :any,                 ventura:       "e5c62b12b1a138cee90f4b909f9708575a99a7451b53bfec08e3c9fb5caccb76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03701421c865e460daaadff8ef958d4df56c4d5778a6c8282ed9eff6baec09d"
+    sha256 cellar: :any,                 arm64_sequoia: "6dff759325c7f1603c79ca46882f6e0cb9bfee6366ebae605da842e900a59693"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3dbf5104b23ef0c7a05c7167e7c1333dcc18dc84fbec2bb1330033237016efc"
+    sha256 cellar: :any,                 arm64_ventura: "227ed1cf4d96f4219797912f80a4b29c1ef117de6b07885041b73589ed1b4db3"
+    sha256 cellar: :any,                 sonoma:        "41f03b8ab1da44839e1bc19fefb72d02611c588a50f6db7a0e823d746a12d26a"
+    sha256 cellar: :any,                 ventura:       "abd7516363a24c1bd228c0adcf91c5aacbb39c42c8ed6ec713012f30db45a4d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005112eb84f72ca2e0fc714a3f139da8036985658ca3809c3e13709c70f97ce7"
   end
 
   depends_on "rust" => :build
@@ -34,11 +34,6 @@ class Twine < Formula
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
-  end
-
-  resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagescd1233e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1bimportlib_metadata-8.5.0.tar.gz"
-    sha256 "71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
   end
 
   resource "jaraco-classes" do
@@ -134,11 +129,6 @@ class Twine < Formula
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
     sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
-  end
-
-  resource "zipp" do
-    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
-    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
   homepage "https:github.comtuna-f1shcyme"
-  url "https:github.comtuna-f1shcymearchiverefstagsv2.1.0.tar.gz"
-  sha256 "cd6955a847e27698ebc086cb2270e51e4367f47769321c1ae6bb3ad8c1d28cfd"
+  url "https:github.comtuna-f1shcymearchiverefstagsv2.1.1.tar.gz"
+  sha256 "a4259f3a77a9b01dc1e8968a184113d47e353c332520f9384cd8d90f5d88b7bb"
   license "GPL-3.0-or-later"
   head "https:github.comtuna-f1shcyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c701624fe101a27fb96f0136f48f25ebb671091ff3ab86010b25679098419e45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27cc02abd006b1b49b6921d40d39d5d3b4091bb07383679af3713b8266f9abeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "65b47ef35162cf21bab557424957675f7a5e60cc8a50e08a2421a2efaebc9c90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6d0bbd3e18f6877c52d1fd928d1d623a9dac07e4800594e50fa0ee5f1bfffd96"
-    sha256 cellar: :any_skip_relocation, ventura:       "36671f19973d27b191734987749ce2422b0896317ff42e016528cc22ca6f0a00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbfb53df50eb582d3d4d9a6b220a8a68337ff7f0de287d65b87e0dff85ffe10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89da05b7471adcf0f4ad726ffea17a281666663cfad2853878f6989c920f948d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "107d2423c440b4899416d5ce4d2c42f48ac0c3a2189bb1dbbbcae8e8a4363de2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "883f637b63aecccc74079cae4da7a61fd60e40850b57619bdf217e2f90e7db73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d19e2b4799a0527430047e682363eca91d311315701ebef717ae9d3609006dda"
+    sha256 cellar: :any_skip_relocation, ventura:       "12d746e164f206f680f18d793de6d8cc5baa10e257f3ad0d6641c3317cbc2194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06dad774dd4a81a10274a0c5b27e38dd3724031ea8491ad6bc1e908c8f4cbb63"
   end
 
   depends_on "rust" => :build

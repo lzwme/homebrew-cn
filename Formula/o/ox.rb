@@ -1,18 +1,18 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
   homepage "https:github.comcurlpipeox"
-  url "https:github.comcurlpipeoxarchiverefstags0.7.2.tar.gz"
-  sha256 "6ddcfb008f7cc86c9074dc46302f47f2763a13aea0765c00d6e9f4731d8556d2"
+  url "https:github.comcurlpipeoxarchiverefstags0.7.3.tar.gz"
+  sha256 "3ce5682ddb26dbc300b2c8cc73c1b49eff846642887f83d5030c470d1a89e270"
   license "GPL-2.0-only"
   head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7abca35692db07006cfdc2bd9312f3a937b07e9651ffc8694a9b368f22bc38e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baef0f01cf869fdaa47f01f23d1ece49a5444ff86dbdfccd5d77850f1bc50125"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05a6ba32c30d776496dc94115b4978e4da0bacc9ed85b6db8844d3bc77fec01d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "648bbe305252eedb6cb8155412e88b9d63bd540b3b5b216a61177a1edaf094e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c5c304b3d46e7efc6e7a9d6e235bf227c08a681bb718b249f307189a37b233d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28ddc6e09bfca415cbee588648ffaa14e49bc8e65bf4f6fb38db370ba2998bc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6153587883655d8413b987ad3d22460537a7dc7f906b2bada3318d9db304ca9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8747148f2e5774e16647ce68fc225fca26633753b5c770de31ca81d15609277"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f0a0726df8995a9f2266b58e9d35fa166a135e8659c53024ce473d15edfc242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62cad7dbc5abab5d92034b8fffcdf1d0d2a0362d5b1eaaaba0a160e57b848927"
+    sha256 cellar: :any_skip_relocation, ventura:       "7183ab8600575681ace720aeff2b69e2a64d98d981483f530e8c8775186ff19f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ee04f7cd1d84eec056ae289999e811649b8d9e303aba3a0fcf1ffd272cc5f7"
   end
 
   depends_on "rust" => :build

@@ -2,20 +2,18 @@ class Gojq < Formula
   desc "Pure Go implementation of jq"
   homepage "https:github.comitchynygojq"
   url "https:github.comitchynygojq.git",
-      tag:      "v0.12.16",
-      revision: "0607aa5af33a4f980e3e769a1820db80e3cc7b23"
+      tag:      "v0.12.17",
+      revision: "f4c2cfe4c7ef54436cc791250bc66cf33dc44c7b"
   license "MIT"
   head "https:github.comitchynygojq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a354370d6a57facc20c2b42ec1c70fbe03b40a3f09681850c559d585908cd038"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d3a1f03ff3bb4f6e4de770a27adbf1ec9f2bd45a6596bf28bf35860fbf10988"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d3a1f03ff3bb4f6e4de770a27adbf1ec9f2bd45a6596bf28bf35860fbf10988"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d3a1f03ff3bb4f6e4de770a27adbf1ec9f2bd45a6596bf28bf35860fbf10988"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b473c2429f8843e306a800f0be08daa2d0c291725d9ac169aa0c4145bd4ea22"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b473c2429f8843e306a800f0be08daa2d0c291725d9ac169aa0c4145bd4ea22"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b473c2429f8843e306a800f0be08daa2d0c291725d9ac169aa0c4145bd4ea22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "308dc8d13b4be74896a795a2870faac42ff6a0d2684f05f73194780dbf42fee7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "523520da9c06c9603c8d049432177e302140c217308b421dd9da85cb2a6eea74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "523520da9c06c9603c8d049432177e302140c217308b421dd9da85cb2a6eea74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "523520da9c06c9603c8d049432177e302140c217308b421dd9da85cb2a6eea74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8a965b5a81ec2ed412f0d013080967e8e1156a054258ed9313a1b24135b4991"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8a965b5a81ec2ed412f0d013080967e8e1156a054258ed9313a1b24135b4991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c7c2f05dbb80299cfbe4798429fd38fb3c24f8e05bb002c6285a1f280be48a"
   end
 
   depends_on "go" => :build

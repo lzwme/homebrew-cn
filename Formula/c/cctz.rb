@@ -20,7 +20,7 @@ class Cctz < Formula
   depends_on "cmake" => :build
 
   def install
-    args = ["-DBUILD_TESTING=OFF", "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"]
+    args = ["-DCMAKE_POSITION_INDEPENDENT_CODE=ON"]
 
     system "cmake", "-S", ".", "-B", "build_shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build_shared"

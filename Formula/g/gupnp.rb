@@ -8,12 +8,13 @@ class Gupnp < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "29d88e4f5264b6fa7fb0ac8f639f430d8e0d9ff27ed5c55c55e35b273a60f77d"
-    sha256 cellar: :any, arm64_sonoma:  "8ad508ff6e4534e480751b8e7d13a779c315b86fa684c5c3e623fba2646c4ce4"
-    sha256 cellar: :any, arm64_ventura: "accd605b048a9f1da2563805ef1a1fccee2b3bfecc90f70d485cea7b3af872eb"
-    sha256 cellar: :any, sonoma:        "89f4e49877c5e9f0e60a149dd87d58badb46e6ede255eecca6e7437c9eb35e29"
-    sha256 cellar: :any, ventura:       "973f38fb49c3c9d03aa96aef88935d5295721ac34186e08f3a570cbfb5846863"
-    sha256               x86_64_linux:  "c3ee66eef6d62af9934ac331a4fdfd718129216a0ab7fd8a3b30730b7a87ed33"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "8c18a95efa27ee27156418c2d9a99a8ce4206e06ff3a9ccc4206843f30d90f9a"
+    sha256 cellar: :any, arm64_sonoma:  "9653aa3dddd82aaf175c4e543befdc12f21ce93f920fdbfcc7302fc5e23ca88c"
+    sha256 cellar: :any, arm64_ventura: "e0bc178339fa428d98ec257e561165a2794e11144a591eb13a54d321e44168db"
+    sha256 cellar: :any, sonoma:        "a83e95325c0fcdaaca81451aa20079dd11a348119555462eea2a62fa16e74afb"
+    sha256 cellar: :any, ventura:       "9859c15edf1e93b81d7f17e524ddf6fd418701c83cdb0afa3da712f1ad4545ed"
+    sha256               x86_64_linux:  "b8960e8b3d647fdd3c52312731e2e7f6934ae97807f76631036ad32a45272d5a"
   end
 
   depends_on "docbook-xsl" => :build
@@ -27,7 +28,7 @@ class Gupnp < Formula
   depends_on "gssdp"
   depends_on "libsoup"
   depends_on "libxml2"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
