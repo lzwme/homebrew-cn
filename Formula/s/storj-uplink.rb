@@ -33,10 +33,10 @@ class StorjUplink < Formula
   end
 
   test do
-    (testpath"config.ini").write <<~EOS
+    (testpath"config.ini").write <<~INI
       [metrics]
       addr=
-    EOS
+    INI
     ENV["UPLINK_CONFIG_DIR"] = testpath.to_s
     ENV["UPLINK_INTERACTIVE"] = "false"
     assert_match "No accesses configured", shell_output("#{bin}uplink ls 2>&1", 1)

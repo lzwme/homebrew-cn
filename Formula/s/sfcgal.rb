@@ -20,9 +20,6 @@ class Sfcgal < Formula
   depends_on "gmp"
   depends_on "mpfr"
 
-  # error: array must be initialized with a brace-enclosed initializer
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

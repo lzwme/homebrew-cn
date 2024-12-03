@@ -24,8 +24,6 @@ class Qcachegrind < Formula
   depends_on "graphviz"
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   def install
     args = %w[-config release]
     if OS.mac?

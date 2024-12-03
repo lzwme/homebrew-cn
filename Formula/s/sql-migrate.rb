@@ -27,12 +27,12 @@ class SqlMigrate < Formula
     ENV["TZ"] = "UTC"
 
     test_config = testpath"dbconfig.yml"
-    test_config.write <<~EOS
+    test_config.write <<~YAML
       development:
         dialect: sqlite3
         datasource: test.db
         dir: migrationssqlite3
-    EOS
+    YAML
 
     mkdir testpath"migrationssqlite3"
     system bin"sql-migrate", "new", "brewtest"

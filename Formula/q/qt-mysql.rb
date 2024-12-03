@@ -25,8 +25,6 @@ class QtMysql < Formula
   conflicts_with "qt-mariadb", "qt-percona-server",
     because: "qt-mysql, qt-mariadb, and qt-percona-server install the same binaries"
 
-  fails_with gcc: "5"
-
   def install
     args = std_cmake_args + %W[
       -DCMAKE_STAGING_PREFIX=#{prefix}

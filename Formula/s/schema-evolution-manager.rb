@@ -17,9 +17,9 @@ class SchemaEvolutionManager < Formula
   end
 
   test do
-    (testpath"new.sql").write <<~EOS
+    (testpath"new.sql").write <<~SQL
       CREATE TABLE IF NOT EXISTS test (id text);
-    EOS
+    SQL
     system "git", "init", "."
     assert_match "File staged in git", shell_output("#{bin}sem-add .new.sql")
   end

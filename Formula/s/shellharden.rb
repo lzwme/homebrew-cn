@@ -23,10 +23,10 @@ class Shellharden < Formula
   end
 
   test do
-    (testpath"script.sh").write <<~EOS
+    (testpath"script.sh").write <<~SH
       dog="poodle"
       echo $dog
-    EOS
+    SH
     system bin"shellharden", "--replace", "script.sh"
     assert_match "echo \"$dog\"", (testpath"script.sh").read
   end

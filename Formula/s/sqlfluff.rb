@@ -112,9 +112,9 @@ class Sqlfluff < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/sqlfluff --version")
-    (testpath/"test.sql").write <<~EOS
+    (testpath/"test.sql").write <<~SQL
       SELECT 1;
-    EOS
+    SQL
     assert_match "All Finished!", shell_output("#{bin}/sqlfluff lint --dialect sqlite --nocolor #{testpath}/test.sql")
   end
 end

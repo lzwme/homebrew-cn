@@ -1,9 +1,8 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https:xgboost.ai"
-  url "https:github.comdmlcxgboost.git",
-      tag:      "v2.1.3",
-      revision: "600be4dbb54ec5cda4cb61a2bb8fc4bce6f3fc58"
+  url "https:github.comdmlcxgboostreleasesdownloadv2.1.3xgboost-2.1.3.tar.gz"
+  sha256 "90b1b7b770803299b337dd9b9206760d9c16f418403c77acce74b350c6427667"
   license "Apache-2.0"
 
   bottle do
@@ -24,18 +23,12 @@ class Xgboost < Formula
 
   fails_with :clang do
     build 1100
-    cause <<-EOS
+    cause <<~EOS
       clang: error: unable to execute command: Segmentation fault: 11
       clang: error: clang frontend command failed due to signal (use -v to see invocation)
       make[2]: *** [srcCMakeFilesobjxgboost.dirtreeupdater_quantile_hist.cc.o] Error 254
     EOS
   end
-
-  # Starting in XGBoost 1.6.0, compiling with GCC 5.4.0 results in:
-  # srclinearcoordinate_common.h:414:35: internal compiler error: in tsubst_copy, at cppt.c:13039
-  # This compiler bug is fixed in more recent versions of GCC: https:gcc.gnu.orgbugzillashow_bug.cgi?id=80543
-  # Upstream issue filed at https:github.comdmlcxgboostissues7820
-  fails_with gcc: "5"
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)

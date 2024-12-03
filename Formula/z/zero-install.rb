@@ -1,9 +1,8 @@
 class ZeroInstall < Formula
   desc "Decentralised cross-platform software installation system"
   homepage "https:0install.net"
-  url "https:github.com0install0install.git",
-      tag:      "v2.18",
-      revision: "b58af5db6afd496cfd4a5f85fb23f30ba8dfbc87"
+  url "https:github.com0install0installreleasesdownloadv2.180install-2.18.tbz"
+  sha256 "648c4b318c1a26dfcb44065c226ab8ca723795924ad80a3bf39ae1ce0e9920c3"
   license "LGPL-2.1-or-later"
   head "https:github.com0install0install.git", branch: "master"
 
@@ -27,7 +26,6 @@ class ZeroInstall < Formula
   end
 
   depends_on "ocaml" => :build
-  depends_on "ocamlbuild" => :build
   depends_on "opam" => :build
   depends_on "pkgconf" => :build
   depends_on "gnupg"
@@ -36,41 +34,16 @@ class ZeroInstall < Formula
   uses_from_macos "unzip" => :build
   uses_from_macos "curl"
 
-  on_linux do
-    depends_on "pkgconf"
-  end
-
   def install
-    ENV.append_path "PATH", Formula["gnupg"].opt_bin
+    ENV["OPAMROOT"] = buildpath".opam"
+    ENV["OPAMYES"] = "1"
+    ENV["OPAMVERBOSE"] = "1"
+    packages = [".0install.opam", ".0install-solver.opam"]
 
-    Dir.mktmpdir("opamroot") do |opamroot|
-      ENV["OPAMROOT"] = opamroot
-      ENV["OPAMYES"] = "1"
-      ENV["OPAMVERBOSE"] = "1"
-      system "opam", "init", "--no-setup", "--disable-sandboxing"
-      # Tell opam not to try to install external dependencies
-      system "opam", "option", "depext=false"
-      modules = %w[
-        yojson
-        xmlm
-        ounit
-        lwt_react
-        ocurl
-        sha
-        dune
-      ]
-      system "opam", "config", "exec", "opam", "install", *modules
-
-      # mkdir: <buildpath>build: File exists.
-      # https:github.com0install0installissues87
-      ENV.deparallelize { system "opam", "config", "exec", "make" }
-
-      inreplace "distinstall.sh" do |s|
-        s.gsub! '"usrlocal"', prefix
-        s.gsub! '"${PREFIX}man"', man
-      end
-      system "make", "install"
-    end
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    system "opam", "exec", "--", "opam", "install", *packages, "--deps-only", "-y", "--no-depexts"
+    system "opam", "exec", "--", "make", "all"
+    system "opam", "exec", "--", "distinstall.sh", prefix
   end
 
   test do

@@ -33,7 +33,7 @@ class Wtfutil < Formula
 
   test do
     testconfig = testpath"config.yml"
-    testconfig.write <<~EOS
+    testconfig.write <<~YAML
       wtf:
         colors:
           background: "red"
@@ -66,7 +66,7 @@ class Wtfutil < Formula
             normal: "*"
             selected: "_"
         term: "xterm-256color"
-    EOS
+    YAML
 
     begin
       pid = fork do

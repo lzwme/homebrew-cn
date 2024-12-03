@@ -1,18 +1,18 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https:www.kubewarden.io"
-  url "https:github.comkubewardenkwctlarchiverefstagsv1.18.0.tar.gz"
-  sha256 "315fd4f31cd02c196c4c85a00854fbfce292ab1a3ffdf323a5ea168620c100ff"
+  url "https:github.comkubewardenkwctlarchiverefstagsv1.19.0.tar.gz"
+  sha256 "9de263a3c51a5ffa8e468938a5fbd31c4e7174c583cbdced4839d847e93d2f4f"
   license "Apache-2.0"
   head "https:github.comkubewardenkwctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "963b0b043bc3391097b8a70e43cdd0d3a3bb424f2b256c5321df7066fb09e2ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "116decc55e886cc5d8e73076573e0323c88324a326390f7d443e8bb31f33da2c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b05edd54aff2590372d7060d56edaad94363dadecd6aea54f83c8228d026121"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42ab48946cc90231a382ee596defb02f0f9ca523757760f098f4ba5ad39ea66a"
-    sha256 cellar: :any_skip_relocation, ventura:       "25f84b3ed965cc5140e61208b04718a74800d77b2d0f4cb337cad305e394c711"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49980de56abaf5e1f1896289a084fefd2b0f7fdc38dcb339ecfbf8123a5b5c5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74b1b2ae56157465a59b3120ac8941a1d6967826af111cb70f51465d2ddaa593"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1c633f7f9b2dd8270f4e5147a8a5a77ad6eb82295b3d8e6c0613aca37820d9e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e60536652477f5b184685415c588e5f4139ed2ab0b04f7dda1236152b6c2bfce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c601b6cc413ddefed9254dc2722a0470fdb88079b6210a9f0545d112420a6ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "71d265af2a3207c8d9649e02e81c2bc5fd7f171ccfa607fd84da8333fe7cb5c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff66ffcf550db2a2ad0b89df9589762e44848f872d7d6bd177e1f527b42e832"
   end
 
   depends_on "rust" => :build

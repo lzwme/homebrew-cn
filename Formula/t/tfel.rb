@@ -22,7 +22,6 @@ class Tfel < Formula
   depends_on "gcc" => :build
   depends_on "boost-python3"
   depends_on "python@3.12"
-  fails_with gcc: "5"
 
   def install
     args = [

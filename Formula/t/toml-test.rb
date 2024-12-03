@@ -26,10 +26,10 @@ class TomlTest < Formula
   test do
     system bin"toml-test", "-version"
     system bin"toml-test", "-help"
-    (testpath"stub-decoder").write <<~EOS
+    (testpath"stub-decoder").write <<~SH
       #!binsh
       cat #{pkgshare}testsvalidexample.json
-    EOS
+    SH
     chmod 0755, testpath"stub-decoder"
     system bin"toml-test", "-testdir", pkgshare"tests",
                             "-run", "validexample*",

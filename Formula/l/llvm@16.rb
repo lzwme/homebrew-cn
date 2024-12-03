@@ -47,9 +47,6 @@ class LlvmAT16 < Formula
     depends_on "elfutils" # openmp requires <gelf.h>
   end
 
-  # Fails at building LLDB
-  fails_with gcc: "5"
-
   # Fixes https:github.commesonbuildmesonissues11642
   patch do
     url "https:github.comllvmllvm-projectcommitab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"

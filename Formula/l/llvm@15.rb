@@ -48,9 +48,6 @@ class LlvmAT15 < Formula
     depends_on "elfutils" # openmp requires <gelf.h>
   end
 
-  # Fails at building LLDB
-  fails_with gcc: "5"
-
   def install
     python3 = "python3.12"
 

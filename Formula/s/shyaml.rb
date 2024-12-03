@@ -35,12 +35,12 @@ class Shyaml < Formula
   end
 
   test do
-    yaml = <<~EOS
+    yaml = <<~YAML
       key: val
       arr:
         - 1st
         - 2nd
-    EOS
+    YAML
     assert_equal "val", pipe_output("#{bin}shyaml get-value key", yaml, 0)
     assert_equal "1st", pipe_output("#{bin}shyaml get-value arr.0", yaml, 0)
     assert_equal "2nd", pipe_output("#{bin}shyaml get-value arr.-1", yaml, 0)

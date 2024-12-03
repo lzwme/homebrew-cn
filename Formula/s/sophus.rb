@@ -17,8 +17,6 @@ class Sophus < Formula
   depends_on "eigen"
   depends_on "fmt"
 
-  fails_with gcc: "5" # C++17 (ceres-solver dependency)
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DBUILD_SOPHUS_EXAMPLES=OFF"

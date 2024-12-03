@@ -60,7 +60,7 @@ class Xsd < Formula
       </MeaningOfLife>
     XML
 
-    (testpath/"xsdtest.cxx").write <<~EOS
+    (testpath/"xsdtest.cxx").write <<~CPP
       #include <cassert>
       #include "meaningoflife.hxx"
       int main (int argc, char *argv[]) {
@@ -69,7 +69,7 @@ class Xsd < Formula
         assert(42==*x);
         return 0;
       }
-    EOS
+    CPP
 
     system bin/"xsd", "cxx-tree", "meaningoflife.xsd"
     assert_path_exists testpath/"meaningoflife.hxx"

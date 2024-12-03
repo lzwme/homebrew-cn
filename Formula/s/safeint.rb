@@ -31,7 +31,7 @@ class Safeint < Formula
   test do
     # Modified from:
     #   https:learn.microsoft.comen-uscppsafeintsafeint-class?view=msvc-170#example
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #ifdef NDEBUG
       #undef NDEBUG
       #endif
@@ -52,7 +52,7 @@ class Safeint < Formula
         assert(result == 2);
         assert(!success);
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "-o", "test", "test.cc"
     system ".test"

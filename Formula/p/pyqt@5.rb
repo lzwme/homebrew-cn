@@ -19,8 +19,6 @@ class PyqtAT5 < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
 
-  fails_with gcc: "5"
-
   # extra components
   resource "pyqt3d" do
     url "https://files.pythonhosted.org/packages/a5/80/26e3394c25187854bd3b68865b2b46cfd285aae01bbf448ddcac6f466af0/PyQt3D-5.15.6.tar.gz"

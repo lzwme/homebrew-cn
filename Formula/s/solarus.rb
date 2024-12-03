@@ -43,8 +43,6 @@ class Solarus < Formula
     depends_on "openal-soft"
   end
 
-  fails_with gcc: "5" # needs same GLIBCXX as mesa at runtime
-
   # Backport fix for error: GLM: GLM_GTX_matrix_transform_2d is an experimental extension
   patch do
     url "https://gitlab.com/solarus-games/solarus/-/commit/2200e0ccc8e2850d2a265cace96c3f548d988f2d.diff"

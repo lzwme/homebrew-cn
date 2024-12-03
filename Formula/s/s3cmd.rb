@@ -42,11 +42,11 @@ class S3cmd < Formula
   end
 
   test do
-    (testpath".s3cfg").write <<~EOS
+    (testpath".s3cfg").write <<~INI
       [default]
       access_key = FAKE_KEY
       secret_key = FAKE_SECRET
-    EOS
+    INI
     output = shell_output("#{bin}s3cmd ls s3:brewtest 2>&1", 77)
     assert_match "ERROR: S3 error: 403 (InvalidAccessKeyId)", output
 

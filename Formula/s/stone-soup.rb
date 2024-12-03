@@ -27,8 +27,6 @@ class StoneSoup < Formula
   depends_on "pcre"
   depends_on "sqlite"
 
-  fails_with gcc: "5"
-
   def install
     ENV.cxx11
 

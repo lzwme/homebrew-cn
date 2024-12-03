@@ -42,12 +42,12 @@ class SpicetifyCli < Formula
     mkdir_p spotify_folder
     touch pref_file
     path = testpath".configspicetifyconfig-xpui.ini"
-    path.write <<~EOS
+    path.write <<~INI
       [Setting]
       spotify_path            = #{spotify_folder}
       current_theme           = SpicetifyDefault
       prefs_path              = #{pref_file}
-    EOS
+    INI
 
     quiet_system bin"spicetify", "config"
     assert_match version.to_s, shell_output("#{bin}spicetify -v")

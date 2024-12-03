@@ -61,7 +61,7 @@ class Flint < Formula
   end
 
   test do
-    (testpath"test.c").write <<-EOS
+    (testpath"test.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include "flint.h"
@@ -110,7 +110,7 @@ class Flint < Formula
 
           return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
            "-lflint", "-lgmp", "-o", "test"
     system ".test", "2"

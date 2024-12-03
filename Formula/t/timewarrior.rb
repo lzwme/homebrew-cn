@@ -24,8 +24,6 @@ class Timewarrior < Formula
     depends_on "man-db" => :test
   end
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"

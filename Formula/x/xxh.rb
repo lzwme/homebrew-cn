@@ -42,12 +42,12 @@ class Xxh < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}xxh --version")
 
-    (testpath"config.xxhc").write <<~EOS
+    (testpath"config.xxhc").write <<~YAML
       hosts:
         test.localhost:
           -o: HostName=127.0.0.1
           +s: xxh-shell-zsh
-    EOS
+    YAML
     begin
       port = free_port
       server = TCPServer.new(port)

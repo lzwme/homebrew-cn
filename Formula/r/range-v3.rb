@@ -12,8 +12,6 @@ class RangeV3 < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", ".",
                     "-DRANGE_V3_TESTS=OFF",

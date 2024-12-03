@@ -41,7 +41,7 @@ class Uwsgi < Formula
     ENV.prepend "CFLAGS", "-I#{openssl.opt_include}"
     ENV.prepend "LDFLAGS", "-L#{openssl.opt_lib}"
 
-    (buildpath"buildconfbrew.ini").write <<~EOS
+    (buildpath"buildconfbrew.ini").write <<~INI
       [uwsgi]
       ssl = true
       json = yajl
@@ -50,7 +50,7 @@ class Uwsgi < Formula
       inherit = base
       plugin_dir = #{libexec}uwsgi
       embedded_plugins = null
-    EOS
+    INI
 
     system python3, "uwsgiconfig.py", "--verbose", "--build", "brew"
 

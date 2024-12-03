@@ -27,8 +27,6 @@ class Wabt < Formula
 
   uses_from_macos "python" => :build
 
-  fails_with gcc: "5" # C++17
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_TESTS=OFF",

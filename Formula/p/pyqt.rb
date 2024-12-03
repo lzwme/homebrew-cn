@@ -18,8 +18,6 @@ class Pyqt < Formula
   depends_on "python@3.12"
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   # extra components
   resource "pyqt6-3d" do
     url "https://files.pythonhosted.org/packages/d4/4c/fdc69a29e733e2f6fdb9a9d3f6321702502405e45cef632be4d73c1cd501/PyQt6_3D-6.7.0.tar.gz"

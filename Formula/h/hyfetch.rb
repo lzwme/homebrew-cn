@@ -24,27 +24,27 @@ class Hyfetch < Formula
   end
 
   test do
-    (testpath".confighyfetch.json").write <<-EOS
-    {
-      "preset": "genderfluid",
-      "mode": "rgb",
-      "light_dark": "dark",
-      "lightness": 0.5,
-      "color_align": {
-        "mode": "horizontal",
-        "custom_colors": [],
-        "fore_back": null
-      },
-      "backend": "neofetch",
-      "distro": null,
-      "pride_month_shown": [],
-      "pride_month_disable": false
-    }
-    EOS
+    (testpath".confighyfetch.json").write <<~JSON
+      {
+        "preset": "genderfluid",
+        "mode": "rgb",
+        "light_dark": "dark",
+        "lightness": 0.5,
+        "color_align": {
+          "mode": "horizontal",
+          "custom_colors": [],
+          "fore_back": null
+        },
+        "backend": "neofetch",
+        "distro": null,
+        "pride_month_shown": [],
+        "pride_month_disable": false
+      }
+    JSON
 
     system bin"neowofetch", "--config", "none", "--color_blocks", "off",
-                              "--disable", "wm", "de", "term", "gpu"
+                             "--disable", "wm", "de", "term", "gpu"
     system bin"hyfetch", "-C", testpath"hyfetch.json",
-                             "--args=\"--config none --color_blocks off --disable wm de term gpu\""
+                          "--args=\"--config none --color_blocks off --disable wm de term gpu\""
   end
 end

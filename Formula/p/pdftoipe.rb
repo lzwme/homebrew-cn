@@ -17,8 +17,6 @@ class Pdftoipe < Formula
   depends_on "pkgconf" => :build
   depends_on "poppler"
 
-  fails_with gcc: "5"
-
   def install
     cd "pdftoipe" do
       system "make"

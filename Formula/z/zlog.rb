@@ -22,12 +22,12 @@ class Zlog < Formula
   end
 
   test do
-    (testpath"zlog.conf").write <<~EOS
+    (testpath"zlog.conf").write <<~INI
       [formats]
       simple = "%m%n"
       [rules]
       my_cat.DEBUG    >stdout; simple
-    EOS
+    INI
     (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <zlog.h>

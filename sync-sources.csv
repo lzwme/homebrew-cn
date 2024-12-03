@@ -377,6 +377,7 @@ Homebrew-homebrew-core/Formula/a/azion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azqr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aztfexport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azure-core-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b2-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b2sum.rb, Homebrew/homebrew-core, 1
@@ -3843,6 +3844,7 @@ Homebrew-homebrew-core/Formula/lib/libucl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libultrahdr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunibreak.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libunicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuninameslist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunwind-headers.rb, Homebrew/homebrew-core, 1
@@ -5202,6 +5204,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-go-grpc.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/protoc-gen-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-gogo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-gogofaster.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-java.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
@@ -6924,6 +6927,7 @@ Homebrew-homebrew-core/Formula/w/wgcf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wget2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wgetpaste.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whalebrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whatmask.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whatmp3.rb, Homebrew/homebrew-core, 1
@@ -13268,7 +13272,7 @@ Homebrew-homebrew-cask/Casks/s/saleae-logic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/salt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sameboy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/samsung-dex.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/samsung-portable-ssd-t7.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/samsung-magician.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sanctum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sanesidebuttons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/santa.rb, Homebrew/homebrew-cask, 1

@@ -45,19 +45,18 @@ class Poutine < Formula
     (testpath"repo.githubworkflows").mkpath
     system "git", "-C", testpath"repo", "init"
     system "git", "-C", testpath"repo", "remote", "add", "origin", "git@github.com:actionswhatever.git"
-    vulnerable_workflow = <<-YAML
-    on:
-      pull_request_target:
-    jobs:
-      test:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actionscheckout@v3
-          with:
-            ref: ${{ github.event.pull_request.head.sha }}
-        - run: make test
+    (testpath"repo.githubworkflowsbuild.yml").write <<~YAML
+      on:
+        pull_request_target:
+      jobs:
+        test:
+          runs-on: ubuntu-latest
+          steps:
+          - uses: actionscheckout@v3
+            with:
+              ref: ${{ github.event.pull_request.head.sha }}
+          - run: make test
     YAML
-    (testpath"repo.githubworkflowsbuild.yml").write(vulnerable_workflow)
     system "git", "-C", testpath"repo", "add", ".githubworkflowsbuild.yml"
     system "git", "-C", testpath"repo", "commit", "-m", "message"
     assert_match "Detected usage of `make`", shell_output("#{bin}poutine analyze_local #{testpath}repo")

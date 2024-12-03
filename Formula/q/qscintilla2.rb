@@ -32,8 +32,6 @@ class Qscintilla2 < Formula
   depends_on "python@3.12"
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   def python3
     "python3.12"
   end

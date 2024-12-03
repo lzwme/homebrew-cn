@@ -28,7 +28,7 @@ class TerraformInventory < Formula
   end
 
   test do
-    example = <<~EOS
+    example = <<~JSON
       {
           "version": 1,
           "serial": 1,
@@ -55,7 +55,7 @@ class TerraformInventory < Formula
               }
           ]
       }
-    EOS
+    JSON
     (testpath"example.tfstate").write(example)
     assert_match(example_instance, shell_output("#{bin}terraform-inventory --list example.tfstate"))
   end

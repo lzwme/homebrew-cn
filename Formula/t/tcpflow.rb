@@ -39,8 +39,6 @@ class Tcpflow < Formula
   uses_from_macos "libpcap"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     system "bash", ".bootstrap.sh" if build.head?
     system ".configure", *std_configure_args,

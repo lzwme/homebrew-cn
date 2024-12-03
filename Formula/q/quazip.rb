@@ -24,8 +24,6 @@ class Quazip < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5" # C++17
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}", *std_cmake_args
     system "cmake", "--build", "build"

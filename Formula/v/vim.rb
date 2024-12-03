@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https:www.vim.org"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https:github.comvimvimarchiverefstagsv9.1.0850.tar.gz"
-  sha256 "4bbd7480c2d5c577a77a070fa4a133e057c37f611adf47d9a317e50244d7caa4"
+  url "https:github.comvimvimarchiverefstagsv9.1.0900.tar.gz"
+  sha256 "30efb714ed82c5d7a1491f3e4aac6487d2c493d33c834d7ef043e6f45176772e"
   license "Vim"
   head "https:github.comvimvim.git", branch: "master"
 
@@ -25,12 +25,12 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "080fc85b0be2c82c2e3afdabb12e6df5384d29aa85530b4f42855a096e8b709c"
-    sha256 arm64_sonoma:  "a321c19bfd32e3a66e5a7676bc059b99f5eee18f25855d820e3ecf0010809ddf"
-    sha256 arm64_ventura: "f4b7e8330328a9bd5daec9d2e8812f0d05aab71d056a151fa7193f5542604646"
-    sha256 sonoma:        "d5ba1f754cfbfbf7a06135be2dfab52b2f46964e937316283ed2c0c150c727ff"
-    sha256 ventura:       "4595ce6c86dd80d7551d166d01e5d86d6e1952af45df3509074528c1c2ae1c6e"
-    sha256 x86_64_linux:  "43671b39421f5cfeb84799b901a5b5d2efa8a330ab96c1911371c94531a22862"
+    sha256 arm64_sequoia: "355ad66fb8f3eb9b5fc94631a9e7cf17014039616bdf864ac49d19de93eb00bc"
+    sha256 arm64_sonoma:  "5e632b371b29ba16c8b12ee2487eba3d08fcdda4c60fba52eaedee8c0040b3f6"
+    sha256 arm64_ventura: "047b6cca6703e235911d4399f46d2f40bb2cca1b67615d7cb4a6d7a3794fc1ac"
+    sha256 sonoma:        "31f5167572cc81d6ed571401564d88b81513810ab7eb13c06efb2f220d4d2af7"
+    sha256 ventura:       "afc8d120cac9a44a8e9c0119be9aacaeb4d0017593084c61aaadc99e96bdef73"
+    sha256 x86_64_linux:  "a76dc7b7d574f8fc437181a12b04f45b49f1c0b1aaf36c01f28a9c6e1b0739b0"
   end
 
   depends_on "gettext"
@@ -95,10 +95,10 @@ class Vim < Formula
   end
 
   test do
-    (testpath"commands.vim").write <<~EOS
+    (testpath"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'
       :wq
-    EOS
+    VIM
     system bin"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
     assert_equal "hello python3", File.read("test.txt").chomp
     assert_match "+gettext", shell_output("#{bin}vim --version")

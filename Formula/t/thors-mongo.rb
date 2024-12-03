@@ -23,8 +23,6 @@ class ThorsMongo < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   def install
     ENV["COV"] = "gcov"
 

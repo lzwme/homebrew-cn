@@ -1,20 +1,18 @@
 class Giza < Formula
   desc "Scientific plotting library for CFortran built on cairo"
   homepage "https:danieljprice.github.iogiza"
-  url "https:github.comdanieljpricegizaarchiverefstagsv1.4.1.tar.gz"
-  sha256 "67c8eba2cc44a4eb16ff89b10147fa1a157be5801668391726200735c522faf7"
+  url "https:github.comdanieljpricegizaarchiverefstagsv1.4.3.tar.gz"
+  sha256 "6023bd7f9f608fad4cc9e30ad2d00570eee7007411d4750191d6c17bd97f5a02"
   license "LGPL-3.0-only"
   head "https:github.comdanieljpricegiza.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "fa14dd38b5754c4b39efc904b9ec559e4d1efc9d93af47ec48c6dde4fd2c6dfd"
-    sha256 cellar: :any,                 arm64_sonoma:   "22cb653beed8d13da143eb46eb02c85923f512a59f28301cbad9d3d3fc461393"
-    sha256 cellar: :any,                 arm64_ventura:  "033d6270f86668e5400734f04b1d35dbeaac4ebeb66179ecb679a4a29af0f1fe"
-    sha256 cellar: :any,                 arm64_monterey: "3cae4c7547de87c4dea58f0c10581b4419676a70a52791fbaaeade23617dd404"
-    sha256 cellar: :any,                 sonoma:         "0a9de6e1beb8f7d26b3da09236d5f3d072548ad95e44b3a9ece430e88d4bef75"
-    sha256 cellar: :any,                 ventura:        "3ffc862d71532358649df9236f1e25f6889ccd6d16e16fda16881db6e7ac22f8"
-    sha256 cellar: :any,                 monterey:       "59f5440bf93bb86b074965904d9baaeca01e44d4825c71059085a7f8e44b84c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d59a3cb64df7fae5c3b094273d6dcfd0b455e05216bf251b0b116b8a4f0e3dfc"
+    sha256 cellar: :any,                 arm64_sequoia: "afe823e036e4028dcb11f000d68d7e84a7c5d6681423eb81eff25175a29d0c77"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d9b1ef22e40319ec7961587b35037bd672a2416a250b990fdc0419a2f514874"
+    sha256 cellar: :any,                 arm64_ventura: "89a9fc54fea042b4d20a23ecb7fb2b6debe5d22aa1fe0bb27c1bb27233183f9d"
+    sha256 cellar: :any,                 sonoma:        "d886629a3080ed36b828b5f1f4462cf0d6b9ff29d524f1a9e8356d37e3dc0151"
+    sha256 cellar: :any,                 ventura:       "6e95e55c707393413697296d5012b02ea84faead3c2e725d6037868494b52fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "449a4ea38c5ae28d61449ab6c87f2c4071b9331ddbcd4868572437611781a9db"
   end
 
   depends_on "pkgconf" => :build

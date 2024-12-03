@@ -69,8 +69,6 @@ class Vtk < Formula
     depends_on "mesa-glu"
   end
 
-  fails_with gcc: "5"
-
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 

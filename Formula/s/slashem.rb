@@ -75,12 +75,12 @@ class Slashem < Formula
     # Make sure that we don't modify the user's files
     cp_r "#{Formula["slashem"].prefix}slashemdir", testpath"slashemdir"
     # Write an expect script to respond to the game's prompts and quit
-    (testpath"slashem.exp").write <<~EOS
+    (testpath"slashem.exp").write <<~EXPECT
       spawn -pty #{Formula["slashem"].prefix}slashemdirslashem -d #{testpath}slashemdir
       expect "Shall"
       send "q"
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "slashem.exp"
   end

@@ -32,8 +32,6 @@ class Thrax < Formula
   depends_on "openfst"
   uses_from_macos "python", since: :catalina
 
-  fails_with gcc: "5"
-
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

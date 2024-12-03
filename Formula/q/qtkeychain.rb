@@ -23,8 +23,6 @@ class Qtkeychain < Formula
     depends_on "libsecret"
   end
 
-  fails_with gcc: "5"
-
   def install
     args = %w[-DBUILD_TRANSLATIONS=OFF -DBUILD_WITH_QT6=ON]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -34,7 +34,7 @@ class Tm < Formula
   end
 
   test do
-    (testpath"kubeconfig").write <<~EOS
+    (testpath"kubeconfig").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
@@ -53,7 +53,7 @@ class Tm < Formula
       - name: test
         user:
           token: test
-    EOS
+    YAML
 
     ENV["KUBECONFIG"] = testpath"kubeconfig"
 

@@ -108,12 +108,12 @@ class SqlTranslator < Formula
   test do
     command = "#{bin}sqlt -f MySQL -t PostgreSQL --no-comments -"
     sql_input = "create table sqlt ( id int AUTO_INCREMENT );"
-    sql_output = <<~EOS
+    sql_output = <<~SQL
       CREATE TABLE "sqlt" (
         "id" serial
       );
 
-    EOS
+    SQL
     assert_equal sql_output, pipe_output(command, sql_input)
   end
 end

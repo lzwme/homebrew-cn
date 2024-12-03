@@ -58,7 +58,7 @@ class Supervisor < Formula
   end
 
   test do
-    (testpath"sd.ini").write <<~EOS
+    (testpath"sd.ini").write <<~INI
       [unix_http_server]
       file=supervisor.sock
 
@@ -70,7 +70,7 @@ class Supervisor < Formula
 
       [supervisorctl]
       serverurl=unix:supervisor.sock
-    EOS
+    INI
 
     begin
       pid = fork { exec bin"supervisord", "--nodaemon", "-c", "sd.ini" }

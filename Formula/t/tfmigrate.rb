@@ -25,13 +25,13 @@ class Tfmigrate < Formula
   test do
     ENV["TFMIGRATE_EXEC_PATH"] = "tofu"
 
-    (testpath"tfmigrate.hcl").write <<~EOS
+    (testpath"tfmigrate.hcl").write <<~HCL
       migration "state" "brew" {
         actions = [
           "mv aws_security_group.foo aws_security_group.baz",
         ]
       }
-    EOS
+    HCL
     output = shell_output(bin"tfmigrate plan tfmigrate.hcl 2>&1", 1)
     assert_match "[migrator@.] compute a new state", output
     assert_match "No state file was found!", output

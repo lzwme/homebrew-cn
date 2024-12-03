@@ -47,7 +47,7 @@ class Healpix < Formula
   end
 
   test do
-    (testpath/"test.cxx").write <<-EOS
+    (testpath/"test.cxx").write <<~CPP
       #include <math.h>
       #include <stdio.h>
       #include "chealpix.h"
@@ -60,7 +60,7 @@ class Healpix < Formula
           ns1  = npix2nside(npix);
         }
       };
-    EOS
+    CPP
 
     system ENV.cxx, "-o", "test", "test.cxx", "-L#{lib}", "-lchealpix"
     system "./test"

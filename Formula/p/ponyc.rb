@@ -23,7 +23,7 @@ class Ponyc < Formula
 
   # We use LLVM to work around an error while building bundled `google-benchmark` with GCC
   fails_with :gcc do
-    cause <<-EOS
+    cause <<~EOS
       ...srcgbenchmarksrcthread_manager.h:50:31: error: expected ')' before '(' token
          50 |   GUARDED_BY(GetBenchmarkMutex()) Result results;
             |                               ^

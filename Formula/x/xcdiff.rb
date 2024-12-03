@@ -2,8 +2,8 @@ class Xcdiff < Formula
   desc "Tool to diff xcodeproj files"
   homepage "https:github.combloombergxcdiff"
   url "https:github.combloombergxcdiff.git",
-    tag:      "0.12.0",
-    revision: "8ae8a1074662dfbef271140bfb4ae424b331dde9"
+      tag:      "0.12.0",
+      revision: "8ae8a1074662dfbef271140bfb4ae424b331dde9"
   license "Apache-2.0"
   head "https:github.combloombergxcdiff.git", branch: "main"
 
@@ -16,6 +16,7 @@ class Xcdiff < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "066813b4a4cf35c7a0b07f4927abcebd97dee931d0c3f0cd19a57eae07eb7864"
     sha256 cellar: :any_skip_relocation, monterey:       "3e462aeba27a92ed9e1c7c532891ed6eef0d73f27396c389acd2855a9462ca9d"
   end
+
   depends_on :macos
   depends_on xcode: "14.1"
 

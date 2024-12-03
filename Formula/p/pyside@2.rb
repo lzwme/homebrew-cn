@@ -44,8 +44,6 @@ class PysideAT2 < Formula
     depends_on "mesa"
   end
 
-  fails_with gcc: "5"
-
   # Don't copy qt@5 tools.
   patch do
     url "https://src.fedoraproject.org/rpms/python-pyside2/raw/009100c67a63972e4c5252576af1894fec2e8855/f/pyside2-tools-obsolete.patch"

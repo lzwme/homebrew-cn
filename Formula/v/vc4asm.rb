@@ -34,12 +34,12 @@ class Vc4asm < Formula
   end
 
   test do
-    (testpath"test.qasm").write <<~EOS
+    (testpath"test.qasm").write <<~ASM
       mov -, sacq(9)
       add r0, r4, ra1.unpack8b
       add.unpack8ai r0, r4, ra1
       add r0, r4.8a, ra1
-    EOS
+    ASM
     system bin"vc4asm", "-o test.hex", "-V", "#{share}vc4incvc4.qinc", "test.qasm"
   end
 end

@@ -22,8 +22,6 @@ class Spot < Formula
 
   depends_on "python@3.13" => :build
 
-  fails_with gcc: "5" # C++17
-
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"

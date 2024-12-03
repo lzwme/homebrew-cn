@@ -24,8 +24,6 @@ class Threadweaver < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args
     system "cmake", "--build", "build"

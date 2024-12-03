@@ -4,16 +4,15 @@ class Latexindent < Formula
   url "https:github.comcmhugheslatexindent.plarchiverefstagsV3.24.4.tar.gz"
   sha256 "7b7216604d1e544b7f22cf520b3ca1817222e70e28fe2865bcc4d0e3284c497c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d534cd3e3721d0714d5b4d36a1aabef1cc2c970aeb863cd8c175f5811d884506"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b04582bc3af70d9b42d800a00e3203fb498c6f9cbb9f1882cd65bd2998302c52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a139417ac37daa84a1c07f563157cb63fbb0b2fb5a34f610c96dc6ae0c8526e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f3fc5462d9bfae6801a589f29eecc338f49c1a7100c38274ecf114bc7cf7519"
-    sha256 cellar: :any_skip_relocation, sonoma:         "109ef109bba008c2574dc99a81a5eea0377dbc7aaa40b9b7cf0426235038b785"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8537550b090777911270e933fc33911f3af2ef5de4b320b0abd1a8703c41c41"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d29972ec35a4f252b261e334cc9898e7933a780cc4045b9f0cded45b10a0867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "217da1f566d0196dfed633e6b722d9e5ea39b1fa31f288973215dacafe9f8086"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83b002051cf480f85aa240da502d46ad9c0cd213f743b4134e681a76a65e5e90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ae745f0c6cbb2af7c11b147f35d42234f2150cca8c2c30ea638be01956e19d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c6472b59100a2d5f779e3775b1a5447cc956dea402a9acf59061388b032ccc5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e3c07fa210342825f57e594544f4c0ca65c5e442d6ec9c4069c645997c4a37b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd2a76ce01cb9345068a69e6fea12c58f25feaf82f650cf90a65e22c7c6bf9ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56577072a5f0a17392a1e787eb8877c78f54e7fa865b96941fa1461920dadba"
   end
 
   depends_on "perl"

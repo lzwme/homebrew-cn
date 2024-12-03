@@ -26,7 +26,7 @@ class Sqlc < Formula
   end
 
   test do
-    (testpath"sqlc.json").write <<~SQLC
+    (testpath"sqlc.json").write <<~JSON
       {
         "version": "1",
         "packages": [
@@ -39,14 +39,14 @@ class Sqlc < Formula
           }
         ]
       }
-    SQLC
+    JSON
 
-    (testpath"query.sql").write <<~EOS
+    (testpath"query.sql").write <<~SQL
       CREATE TABLE foo (bar text);
 
       -- name: SelectFoo :many
       SELECT * FROM foo;
-    EOS
+    SQL
 
     system bin"sqlc", "generate"
     assert_predicate testpath"db.go", :exist?

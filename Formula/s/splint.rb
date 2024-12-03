@@ -53,7 +53,7 @@ class Splint < Formula
 
   test do
     path = testpath"test.c"
-    path.write <<~EOS
+    path.write <<~C
       #include <stdio.h>
       int main()
       {
@@ -61,7 +61,7 @@ class Splint < Formula
           printf("%c", c);
           return 0;
       }
-    EOS
+    C
 
     output = shell_output("#{bin}splint #{path} 2>&1", 1)
     assert_match(5:18:\s+Variable c used before definition, output)

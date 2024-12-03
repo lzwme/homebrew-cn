@@ -26,7 +26,7 @@ class Tmx < Formula
   end
 
   test do
-    (testpath"test.tmx").write <<-EOS
+    (testpath"test.tmx").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="28" height="18" tilewidth="32" tileheight="32">
         <tileset firstgid="1" name="base" tilewidth="32" tileheight="32" spacing="1" tilecount="9" columns="3">
@@ -41,8 +41,8 @@ class Tmx < Formula
           <layer>
         <group>
       <map>
-    EOS
-    (testpath"test.c").write <<-EOS
+    XML
+    (testpath"test.c").write <<~C
       #include <tmx.h>
 
       int main(void) {
@@ -54,7 +54,7 @@ class Tmx < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "#{lib}#{shared_library("libtmx")}", "-lz", "-lxml2", "-o", "test"
     system ".test"
   end

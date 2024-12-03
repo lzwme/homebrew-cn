@@ -38,10 +38,10 @@ class Sq < Formula
   end
 
   test do
-    (testpath"test.sql").write <<~EOS
+    (testpath"test.sql").write <<~SQL
       create table t(a text, b integer);
       insert into t values ('hello',1),('there',42);
-    EOS
+    SQL
     system "sqlite3 test.db < test.sql"
     out1 = shell_output("#{bin}sq add --active --handle @tst test.db")
     assert_equal %w[@tst sqlite3 test.db], out1.strip.split(\s+)

@@ -162,14 +162,14 @@ class ZabbixCli < Formula
   end
 
   test do
-    assert_match <<~EOS, shell_output("#{bin}zabbix-cli sample_config")
+    assert_match <<~TOML, shell_output("#{bin}zabbix-cli sample_config")
       [api]
       url = "https:zabbix.example.com"
       username = "Admin"
       password = ""
       auth_token = ""
       verify_ssl = true
-    EOS
+    TOML
 
     assert_match version.to_s, shell_output("#{bin}zabbix-cli --version")
   end

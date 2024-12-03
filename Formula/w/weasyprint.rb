@@ -82,9 +82,9 @@ class Weasyprint < Formula
   end
 
   test do
-    (testpath/"example.html").write <<~EOS
+    (testpath/"example.html").write <<~HTML
       <p>This is a PDF</p>
-    EOS
+    HTML
     system bin/"weasyprint", "example.html", "example.pdf"
     assert_predicate testpath/"example.pdf", :exist?
     File.open(testpath/"example.pdf", encoding: "iso-8859-1") do |f|

@@ -1,8 +1,8 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
   homepage "https:web.crev.devrust-reviews"
-  url "https:github.comcrev-devcargo-crevarchiverefstagsv0.26.0.tar.gz"
-  sha256 "49a59c650945c000071e850346b2ddb86e4f0821060dce411fbb3d669fef31d3"
+  url "https:github.comcrev-devcargo-crevarchiverefstagsv0.26.2.tar.gz"
+  sha256 "b2204510acf65667418980dc6e93580167e738376ee888f810064542fa04ef92"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class CargoCrev < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "278811134c27d88aaa656ff6ba7ebe15074e388e7fa9d4fc50f1803514d5419a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7aaaeb5d29dd662954b84999416eabb006e73de3c6c98631df7ba4ac7e42fdcb"
-    sha256 cellar: :any,                 arm64_ventura: "6a552a852cc132a0c0d30f27672c9098a8470fadb6e4b765ecb1f481ef26ff88"
-    sha256 cellar: :any,                 sonoma:        "b2b3c04265d11102e8115ced2ce6d699d153326fe76b4ec1a41f8cae3ec1efd0"
-    sha256 cellar: :any,                 ventura:       "c974ba8bb5b92c0dc31c6b5dc29761101f4ca16d8f17eb5ed605100024705ccc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b22aeffa3ed897e2d9017d110006a84cde521ee30374452a5f127669d99dcb6"
+    sha256 cellar: :any,                 arm64_sequoia: "86f84ff2635fb1a77d18cb8a6fd2250a226c2d9a5e224a9fa0e033c00d53d7de"
+    sha256 cellar: :any,                 arm64_sonoma:  "68b55d4831b5c770f9f2e9decc416efcdc1da734d4264280f4765d27ca400cf2"
+    sha256 cellar: :any,                 arm64_ventura: "9199253f5e4adf8f0b4e7d9bb8c3705daef619882c5104b1e498b9ad9180e0dc"
+    sha256 cellar: :any,                 sonoma:        "2ab213753e97b52a63a3b77d372e207ca5b5ed1db56ca31988561d026ad6d438"
+    sha256 cellar: :any,                 ventura:       "e5b487c6b3e014551eaa1ccad4b0cfbad9e8015a105483c00c6aa0bdb90042cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a83a5e8d5797465d4c502f5fb2067e8b4a298a3c9fd91cfe7f58ecaf5ff00f3b"
   end
 
   depends_on "rust" => :build

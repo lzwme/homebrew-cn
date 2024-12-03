@@ -3,8 +3,8 @@ class Julia < Formula
   homepage "https:julialang.org"
   # Use the `-full` tarball to avoid having to download during the build.
   # TODO: Check if we can unbundle `curl`: https:github.comJuliaLangDownloads.jlissues260
-  url "https:github.comJuliaLangjuliareleasesdownloadv1.11.1julia-1.11.1-full.tar.gz"
-  sha256 "a49b804de6e86a03fe26c73f58851eaee1ff243d7204f2b5ae4dbc5c1dc2758d"
+  url "https:github.comJuliaLangjuliareleasesdownloadv1.11.2julia-1.11.2-full.tar.gz"
+  sha256 "a7365b969944f27df0d8563716ca9769e07f3f77b9f9fbb48bcd114ddf752ca4"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https:github.comJuliaLangjulia.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3b2539c87cfe9806329260581fc67be5bc2c86ea093e1e51a06ca180a11e31ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cc98c936169dcc782b9c25c33c2ed2970a15472c19196ece265c73c695f7d0e"
-    sha256 cellar: :any,                 arm64_ventura: "030f65d72a6defa11b745578c309204e0524256ff4bdbf3dfba014abb28774d3"
-    sha256 cellar: :any,                 sonoma:        "8729de1cbe4595e6410284e7806dbe32868cf1aa58b5aaec1b53e9f1f2836bd6"
-    sha256 cellar: :any,                 ventura:       "4a84666af1dc53c87a29c6d717601626190f6137166d3029ecc060d7f54797d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c202ab099227ac14559c988c050b92a8a1a346c9796141e418839686fa05ebf8"
+    sha256                               arm64_sequoia: "2561c1337e2781f2892d6ea8e11cf9ac39e4133faddf70f8db5f97594b2c5f1c"
+    sha256 cellar: :any,                 arm64_sonoma:  "cab1ecfebb57dabffeeccef4641035d028b2a99466f5b9b2a181eb2fdb02ee76"
+    sha256 cellar: :any,                 arm64_ventura: "9b3fa7cff81b387afc14464d4754a6ad27ddb1de101875f6139b70d3665abf91"
+    sha256 cellar: :any,                 sonoma:        "02017eeb569f7cd27b289cf8d41385122bb5f0da9277a745ec9edac30cb4e23e"
+    sha256 cellar: :any,                 ventura:       "5613c9d168cef4b3578f18af032bbcb2006d7dbd52e36e408eae85b4b2de8af5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ab077d11dc895bdbd5967c6b2572c31c57603d1ef2f75824c7ac30e2b8b07b"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

@@ -1,9 +1,8 @@
 class Zls < Formula
   desc "Language Server for Zig"
   homepage "https:github.comzigtoolszls"
-  url "https:github.comzigtoolszls.git",
-      tag:      "0.13.0",
-      revision: "a26718049a8657d4da04c331aeced1697bc7652b"
+  url "https:github.comzigtoolszlsarchiverefstags0.13.0.tar.gz"
+  sha256 "2e8046b6b0de765a4bf4bb828345e2badc8b828bc257dc931d0f56b147684d9f"
   license "MIT"
   head "https:github.comzigtoolszls.git", branch: "master"
 
@@ -36,11 +35,11 @@ class Zls < Formula
 
   test do
     test_config = testpath"zls.json"
-    test_config.write <<~EOS
+    test_config.write <<~JSON
       {
         "enable_semantic_tokens": true
       }
-    EOS
+    JSON
 
     json = <<~JSON
       {

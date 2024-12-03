@@ -43,7 +43,7 @@ class WebtorrentCli < Formula
       &tr=https://tracker.archlinux.org:443/announce
     EOS
 
-    expected_output_raw = <<~EOS
+    expected_output_raw = <<~JSON
       {
         "xt": "urn:btih:9eae210fe47a073f991c83561e75d439887be3f3",
         "dn": "archlinux-2017.02.01-x86_64.iso",
@@ -59,7 +59,7 @@ class WebtorrentCli < Formula
         ],
         "urlList": []
       }
-    EOS
+    JSON
     expected_json = JSON.parse(expected_output_raw)
     actual_output_raw = shell_output("#{bin}/webtorrent info '#{magnet_uri}'")
     actual_json = JSON.parse(actual_output_raw)

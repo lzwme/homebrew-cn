@@ -42,13 +42,13 @@ class Wolfmqtt < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~EOT
+    (testpath"test.cpp").write <<~CPP
       #include <wolfmqttmqtt_client.h>
       int main() {
         MqttClient mqttClient;
         return 0;
       }
-    EOT
+    CPP
     system ENV.cc, "test.cpp", "-L#{lib}", "-lwolfmqtt", "-o", "test"
     system ".test"
   end

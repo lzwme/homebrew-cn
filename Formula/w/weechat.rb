@@ -1,6 +1,6 @@
 class Weechat < Formula
   desc "Extensible IRC client"
-  homepage "https:www.weechat.org"
+  homepage "https:weechat.org"
   url "https:weechat.orgfilessrcweechat-4.4.4.tar.xz"
   sha256 "a8f4bb768c3d6ac3ea1eb4e6dc7a7bb2ee19b734a72cc58e063476dae8f3d077"
   license "GPL-3.0-or-later"

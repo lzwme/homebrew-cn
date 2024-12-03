@@ -5,7 +5,7 @@ class ClickhouseOdbc < Formula
   url "https:github.comClickHouseclickhouse-odbcarchiverefstagsv1.2.1.20220905.tar.gz"
   sha256 "ca8666cbc7af9e5d4670cd05c9515152c34543e4f45e2bc8fa94bee90d724f1b"
   license "Apache-2.0"
-  revision 6
+  revision 7
   head "https:github.comClickHouseclickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -14,12 +14,12 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c6b0acad4b807f6107d995f47eae04bdce3ad7c64c6f4a0cf31eb98dd7c2c2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "04ca343b2b2849c9a11510e111341dc1f119beccf9ca8a2d09e2d85f95432343"
-    sha256 cellar: :any,                 arm64_ventura: "668def88586c374c2e51eb199bd908b65336029aa74de957b4b7b53e55eba806"
-    sha256 cellar: :any,                 sonoma:        "4f8477fd4142bfb2ccd7f56f4deb8190a444f258e91697f689879fa65ad087e5"
-    sha256 cellar: :any,                 ventura:       "34a27423851185c72717d6f0fc2eb2055d11846a0b5527024daa7065e68427d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "688ff9bea0da387640e6a46228e136b2a001740c33d75bdaec9232d1c83b4027"
+    sha256 cellar: :any,                 arm64_sequoia: "2dede9beae8a3bccb0bb370835ceba0a5621746db5fb07bb1d04d62a180ea621"
+    sha256 cellar: :any,                 arm64_sonoma:  "cebcb25fe92aaa4157a764a170d377b983e5966b01e499eae89f822b7784f5d2"
+    sha256 cellar: :any,                 arm64_ventura: "c3fb8ef17692a36c5119115db53f2f2ddd83f7833ac5e02c87ef628cccc3c984"
+    sha256 cellar: :any,                 sonoma:        "2cc6e5bf96a77fe04b61f9edc073d21aed7b6a24b000acbade86f6b8bee3f8c6"
+    sha256 cellar: :any,                 ventura:       "f8309c8c83b07dfff445dd2c094b7c64ac2e6251d459f0036897d8adffc7096c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ab019654dc81b5162e4575b3a3118653fe3ea9d9b884b6820599a0df6925b26"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,7 @@ class ClickhouseOdbc < Formula
   depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "poco"
+  depends_on "utf8proc"
 
   on_macos do
     depends_on "libiodbc"
@@ -38,8 +39,10 @@ class ClickhouseOdbc < Formula
     depends_on "unixodbc"
   end
 
-  fails_with :gcc do
-    version "6"
+  # build patch for utf8proc, no needed for newer version, as folly got removed per https:github.comClickHouseclickhouse-odbcpull456
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchesc76519fcbfa664cd37a8901deb76403b1af1bec1clickhouse-odbc1.2.1.20220905-Utf8Proc.patch"
+    sha256 "29f3aeaa05609d53b942903868cb52ddcfcb3b35d32e8075d152cd2ca0ff5242"
   end
 
   def install
@@ -65,7 +68,7 @@ class ClickhouseOdbc < Formula
   end
 
   test do
-    (testpath"my.odbcinst.ini").write <<~EOS
+    (testpath"my.odbcinst.ini").write <<~INI
       [ODBC Drivers]
       ClickHouse ODBC Test Driver A = Installed
       ClickHouse ODBC Test Driver W = Installed
@@ -81,9 +84,9 @@ class ClickhouseOdbc < Formula
       Driver      = #{libshared_library("libclickhouseodbcw")}
       Setup       = #{libshared_library("libclickhouseodbcw")}
       UsageCount  = 1
-    EOS
+    INI
 
-    (testpath"my.odbc.ini").write <<~EOS
+    (testpath"my.odbc.ini").write <<~INI
       [ODBC Data Sources]
       ClickHouse ODBC Test DSN A = ClickHouse ODBC Test Driver A
       ClickHouse ODBC Test DSN W = ClickHouse ODBC Test Driver W
@@ -97,7 +100,7 @@ class ClickhouseOdbc < Formula
       Driver      = ClickHouse ODBC Test Driver W
       Description = DSN for ClickHouse ODBC Test Driver (Unicode)
       Url         = https:default:password@example.com:8443query?database=default
-    EOS
+    INI
 
     ENV["ODBCSYSINI"] = testpath
     ENV["ODBCINSTINI"] = "my.odbcinst.ini"

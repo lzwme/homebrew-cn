@@ -48,9 +48,6 @@ class LlvmAT14 < Formula
     depends_on "elfutils" # openmp requires <gelf.h>
   end
 
-  # Fails at building LLDB
-  fails_with gcc: "5"
-
   # Fix build with Xcode 15
   # https:github.comspackspackissues40158
   # Backport of https:reviews.llvm.orgD130060

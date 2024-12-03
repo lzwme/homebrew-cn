@@ -42,13 +42,13 @@ class Scala < Formula
 
   test do
     file = testpath"Test.scala"
-    file.write <<~EOS
+    file.write <<~SCALA
       object Test {
         def main(args: Array[String]): Unit = {
           println(s"${2 + 2}")
         }
       }
-    EOS
+    SCALA
 
     out = shell_output("#{bin}scala #{file}").strip
 

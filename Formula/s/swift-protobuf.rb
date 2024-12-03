@@ -33,7 +33,7 @@ class SwiftProtobuf < Formula
   end
 
   test do
-    (testpath"test.proto").write <<~EOS
+    (testpath"test.proto").write <<~PROTO
       syntax = "proto3";
       enum Flavor {
         CHOCOLATE = 0;
@@ -43,7 +43,7 @@ class SwiftProtobuf < Formula
         int32 scoops = 1;
         Flavor flavor = 2;
       }
-    EOS
+    PROTO
     system Formula["protobuf"].opt_bin"protoc", "test.proto", "--swift_out=."
     assert_predicate testpath"test.pb.swift", :exist?
   end

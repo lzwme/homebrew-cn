@@ -28,8 +28,6 @@ class Osmcoastline < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   # To fix gdal-3.7.0
   patch do
     url "https:github.comosmcodeosmcoastlinecommit67cc33161069f65e315acae952492ab5ee07af15.patch?full_index=1"

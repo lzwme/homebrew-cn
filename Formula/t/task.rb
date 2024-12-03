@@ -34,8 +34,6 @@ class Task < Formula
 
   conflicts_with "go-task", because: "both install `task` binaries"
 
-  fails_with gcc: "5"
-
   # CmdImport.h:41:8: error: no template named 'unordered_map' in namespace 'std'
   # https:github.comGothenburgBitFactorytaskwarriorcommit4ff63a796087c9f04f7d6dccd03cda0afdce1f40
   patch :DATA

@@ -28,7 +28,7 @@ class Xtensor < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include "xtensorxarray.hpp"
       #include "xtensorxio.hpp"
@@ -48,7 +48,7 @@ class Xtensor < Formula
         std::cout << res(2) << std::endl;
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++14", "test.cc", "-o", "test", "-I#{include}"
     assert_equal "323", shell_output(".test").chomp
   end

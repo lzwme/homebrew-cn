@@ -27,8 +27,6 @@ class S2geometry < Formula
   depends_on "glog"
   depends_on "openssl@3"
 
-  fails_with gcc: "5" # C++17
-
   def install
     args = %W[
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}

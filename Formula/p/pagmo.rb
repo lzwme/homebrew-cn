@@ -23,8 +23,6 @@ class Pagmo < Formula
   depends_on "nlopt"
   depends_on "tbb"
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", ".", "-DPAGMO_WITH_EIGEN3=ON", "-DPAGMO_WITH_NLOPT=ON",
                          *std_cmake_args,

@@ -59,7 +59,7 @@ class Hyperkit < Formula
         cp(File.join(path_resource_versioned, "initrd.gz"), testpath)
       end
 
-      (testpath  "test_hyperkit.exp").write <<-EOS
+      (testpath"test_hyperkit.exp").write <<~EXPECT
         #!usrbinenv expect -d
         set KERNEL ".vmlinuz"
         set KERNEL_INITRD ".initrd.gz"
@@ -83,7 +83,7 @@ class Hyperkit < Formula
         }
         expect eof
         puts "\\nPASS"
-      EOS
+      EXPECT
       system "expect", "test_hyperkit.exp"
     end
   end

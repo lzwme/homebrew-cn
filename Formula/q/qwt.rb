@@ -22,8 +22,6 @@ class Qwt < Formula
 
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   # Update designer plugin linking back to qwt framework/lib after install
   # See: https://sourceforge.net/p/qwt/patches/45/
   patch :DATA

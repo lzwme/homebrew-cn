@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https:github.comunisonwebunison.git",
-        tag:      "release0.5.28",
-        revision: "0dc566a064ff26dfb3047b6a4f7198c9af0cc31f"
+        tag:      "release0.5.29",
+        revision: "99baffd3b436d9d87254f8dbdf13a479fc63f4e3"
 
     resource "local-ui" do
-      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.28.tar.gz"
-      sha256 "d3f02cb9803ba81265e21098652242f0715da3cd81cad4c9d8a1977983f33e15"
+      url "https:github.comunisonwebunison-local-uiarchiverefstagsrelease0.5.29.tar.gz"
+      sha256 "1e6c2b1f299495159f15113b669bfeb13bb53bf68205203e4a30f82c2f434fe4"
     end
   end
 
@@ -20,12 +20,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e8d0cc8af44aa9e49fa7749bd473c3575764487a04c6a4918aa4d9b3877c282"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9a2bece09e8624aed7cec27e8cb65c3c617dbd5bc29e64c0693089f677dc967"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b8a526ccc0bf6046504e40d8eebc839c0213792b80e0e8ba15028312e04220e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0dc10d1bb4361f155fb1ee9daeae609a44afa13b1b092bdd33cc638b1b3c0073"
-    sha256 cellar: :any_skip_relocation, ventura:       "fae375a39b98e8f0502d0516449a762c340ef2d586fdd1271e643316df2e7095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bb8e641017c8f3e3e7c1b3ce3209e4b5867670b2fe8487d1b35409e1b150ac7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec0f527e2f8b0968ed9fa43d2fc91ea814336329cdd8be8c740acfd920920a88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d79afed87c658a5f72c88e83f2f38e4a5faeb81cd2733d2aa3f81faecf55693"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdc2e69d6f23e13e168a10b307f03b45e73aefb17f0772acd32e71a4417005ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0718ad8212c9629c9bb528f19b68d1dd8ae9376e35f3e0530349c68f360d0ea6"
+    sha256 cellar: :any_skip_relocation, ventura:       "a4848fb4df607fbc4b86f846ceb017aef0deaa0d96e380d9eea4381488275dad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48db1414d3f46c92a48d4d194e94ded51a69b2506744c8f8f592a834c29d6378"
   end
 
   head do
@@ -89,7 +89,7 @@ class Unisonlang < Formula
   end
 
   test do
-    (testpath"hello.u").write <<~EOS
+    (testpath"hello.u").write <<~UNISON
       helloTo : Text ->{IO, Exception} ()
       helloTo name =
         printLine ("Hello " ++ name)
@@ -97,7 +97,7 @@ class Unisonlang < Formula
       hello : '{IO, Exception} ()
       hello _ =
         helloTo "Homebrew"
-    EOS
+    UNISON
 
     (testpath"hello.md").write <<~MARKDOWN
       ```ucm

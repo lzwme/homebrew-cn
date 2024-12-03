@@ -22,8 +22,6 @@ class Libsigcxx < Formula
 
   uses_from_macos "m4" => :build
 
-  fails_with gcc: "5"
-
   def install
     system "meson", "setup", "build", "-Dbuild-examples=false", "-Dbuild-tests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

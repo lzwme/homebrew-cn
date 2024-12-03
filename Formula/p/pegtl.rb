@@ -12,8 +12,6 @@ class Pegtl < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   def install
     args = %w[
       -DPEGTL_BUILD_TESTS=OFF

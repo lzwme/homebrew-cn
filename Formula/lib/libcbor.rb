@@ -30,7 +30,7 @@ class Libcbor < Formula
   end
 
   test do
-    (testpath"example.c").write <<-EOS
+    (testpath"example.c").write <<~C
       #include "cbor.h"
       #include <stdio.h>
 
@@ -39,7 +39,7 @@ class Libcbor < Formula
         printf("Pretty-printer support: %s\\n", CBOR_PRETTY_PRINTER ? "yes" : "no");
         printf("Buffer growth factor: %f\\n", (float) CBOR_BUFFER_GROWTH);
       }
-    EOS
+    C
 
     system ENV.cc, "-std=c99", "example.c", "-o", "test", "-L#{lib}", "-lcbor"
     system ".test"

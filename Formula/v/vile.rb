@@ -39,12 +39,12 @@ class Vile < Formula
 
   test do
     ENV["TERM"] = "xterm"
-    (testpath/"vile.exp").write <<~EOS
+    (testpath/"vile.exp").write <<~EXPECT
       spawn #{bin}/vile
       expect "unnamed"
       send ":w new\r:q\r"
       expect eof
-    EOS
+    EXPECT
     system "expect", "-f", "vile.exp"
     assert_predicate testpath/"new", :exist?
   end

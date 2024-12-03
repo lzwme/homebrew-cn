@@ -39,7 +39,7 @@ class Libfido2 < Formula
   end
 
   test do
-    (testpath"test.c").write <<-EOF
+    (testpath"test.c").write <<~C
       #include <stddef.h>
       #include <stdio.h>
       #include <fido.h>
@@ -57,7 +57,7 @@ class Libfido2 < Formula
           printf("FIDOU2F devices found: %s\\n", found_devices ? "Some" : "None");
         fido_dev_info_free(&devlist, max_devices);
       }
-    EOF
+    C
 
     flags = shell_output("pkgconf --cflags --libs libfido2").chomp.split
     system ENV.cc, "test.c", "-I#{include}", "-o", "test", *flags

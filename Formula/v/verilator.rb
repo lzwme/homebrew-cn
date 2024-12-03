@@ -26,9 +26,6 @@ class Verilator < Formula
 
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
-  # error: specialization of 'template<class _Tp> struct std::hash' in different namespace
-  fails_with gcc: "5"
-
   def install
     system "autoconf"
     system ".configure", "--prefix=#{prefix}"
@@ -47,11 +44,11 @@ class Verilator < Formula
   end
 
   test do
-    (testpath"test.v").write <<~EOS
+    (testpath"test.v").write <<~VERILOG
       module test;
          initial begin $display("Hello World"); $finish; end
       endmodule
-    EOS
+    VERILOG
     (testpath"test.cpp").write <<~CPP
       #include "Vtest.h"
       #include "verilated.h"

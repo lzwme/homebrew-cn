@@ -509,7 +509,7 @@ class Swift < Formula
     module_cache = testpath"ModuleCache"
     module_cache.mkdir
 
-    (testpath"test.swift").write <<~'EOS'
+    (testpath"test.swift").write <<~'SWIFT'
       let base = 2
       let exponent_inner = 3
       let exponent_outer = 4
@@ -522,17 +522,17 @@ class Swift < Formula
       }
 
       print("(\(base)^\(exponent_inner))^\(exponent_outer) == \(answer)")
-    EOS
+    SWIFT
     output = shell_output("#{bin}swift -module-cache-path #{module_cache} -v test.swift")
     assert_match "(2^3)^4 == 4096\n", output
 
     # Test accessing Foundation
-    (testpath"foundation-test.swift").write <<~'EOS'
+    (testpath"foundation-test.swift").write <<~'SWIFT'
       import Foundation
 
       let swifty = URLComponents(string: "https:www.swift.org")!
       print("\(swifty.host!)")
-    EOS
+    SWIFT
     output = shell_output("#{bin}swift -module-cache-path #{module_cache} -v foundation-test.swift")
     assert_match "www.swift.org\n", output
 

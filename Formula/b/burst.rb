@@ -14,11 +14,6 @@ class Burst < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
 
-  fails_with :gcc do
-    version "6"
-    cause "Requires C++14 constexpr"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBURST_TESTING=OFF",

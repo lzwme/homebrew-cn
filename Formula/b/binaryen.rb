@@ -23,11 +23,6 @@ class Binaryen < Formula
   depends_on "cmake" => :build
   depends_on macos: :mojave # needs std::variant
 
-  fails_with :gcc do
-    version "6"
-    cause "needs std::variant"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TESTS=false"
     system "cmake", "--build", "build"

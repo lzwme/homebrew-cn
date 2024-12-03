@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https:github.comgooglelibphonenumber"
-  url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.50.tar.gz"
-  sha256 "a46b2b5195b85197212ca9d9c0d8dc37af57d2f38b38b8c15dd56a0ec3a2cdc0"
+  url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.51.tar.gz"
+  sha256 "c96da523824546a91b4bd6753a54f2ab7f4979d87729407170b58066e245f5bc"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c119c5f06b80738e99fe15ec4c1190ee79ff9d29a126ae4f74b85fa47cf6bdbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fffabfbeb44fc5e8d31ad0bd6c33b44345a9def37cc7229526ae898682c3d2f"
-    sha256 cellar: :any,                 arm64_ventura: "2c04938948d2c31b52845ef233415f88fac9cf83a95b3d5cc4a2e67d171ed0bb"
-    sha256 cellar: :any,                 sonoma:        "9087f4947fcc00714ef5ec4853d2fcd41763409b42c9122f62fbaf4196dc08a5"
-    sha256 cellar: :any,                 ventura:       "6930422f0d4f4917e8e844ccf3f1a6adf940f5d907d8149ebc191c6c430261a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "579bd9ce342bcd3a7993ba0a2a89d1d83e1c6fa81bc282ba679d0044eb3f343f"
+    sha256 cellar: :any,                 arm64_sequoia: "f74390186fdcde8e17735bf081014a2b56d56893619bd41905c7772a8a680ec3"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b132b50b3877792eda43cf91f0e3f9df6f1763ddec8154f7a68f51b8fed124b"
+    sha256 cellar: :any,                 arm64_ventura: "34db0b799366e2c1b0aef0ae5476a0a5797ec90b4e808263e5f4d1f460002ca7"
+    sha256 cellar: :any,                 sonoma:        "2dab1b02563fe80d3a204c7d56f62fcebbf4d0a0070a063286ea155e6a3c4cd8"
+    sha256 cellar: :any,                 ventura:       "be47e927d0fbd12feeee7a3c5bd2c99173a084840f98663bdef633ab99160e71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3761f8f7e3769a608f557f03f903cfb3bbd23a07e9e874210bfe7d282dee49f7"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,8 +25,6 @@ class Libphonenumber < Formula
   depends_on "boost"
   depends_on "icu4c@76"
   depends_on "protobuf"
-
-  fails_with gcc: "5" # For abseil and C++17
 
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.

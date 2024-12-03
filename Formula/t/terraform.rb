@@ -29,10 +29,6 @@ class Terraform < Formula
   conflicts_with "tenv", because: "both install terraform binary"
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 
-  # Needs libraries at runtime:
-  # usrlibx86_64-linux-gnulibstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)
-  fails_with gcc: "5"
-
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
@@ -49,7 +45,7 @@ class Terraform < Formula
 
   test do
     minimal = testpath"minimal.tf"
-    minimal.write <<~EOS
+    minimal.write <<~HCL
       variable "aws_region" {
         default = "us-west-2"
       }
@@ -75,7 +71,7 @@ class Terraform < Formula
         ami           = var.aws_amis[var.aws_region]
         count         = 4
       }
-    EOS
+    HCL
     system bin"terraform", "init"
     system bin"terraform", "graph"
   end

@@ -28,8 +28,6 @@ class Libnetworkit < Formula
     depends_on "libomp"
   end
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DNETWORKIT_EXT_TLX=#{Formula["tlx"].opt_prefix}",

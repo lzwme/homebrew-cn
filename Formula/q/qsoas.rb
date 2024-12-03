@@ -29,8 +29,6 @@ class Qsoas < Formula
 
   uses_from_macos "ruby"
 
-  fails_with gcc: "5"
-
   def install
     gsl = Formula["gsl"].opt_prefix
     qt5 = Formula["qt@5"].opt_prefix

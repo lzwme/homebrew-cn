@@ -24,11 +24,6 @@ class Rocksdb < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with :gcc do
-    version "6"
-    cause "Requires C++17 compatible compiler. See https:github.comfacebookrocksdbissues9388"
-  end
-
   def install
     args = %W[
       -DPORTABLE=ON
@@ -95,7 +90,7 @@ class Rocksdb < Formula
     assert_match "rocksdb_dump:", shell_output("#{bin}rocksdb_dump --help 2>&1", 1)
     assert_match "rocksdb_undump:", shell_output("#{bin}rocksdb_undump --help 2>&1", 1)
 
-    db = testpath  "db"
+    db = testpath"db"
     %w[no snappy zlib bzip2 lz4 zstd].each_with_index do |comp, idx|
       key = "key-#{idx}"
       value = "value-#{idx}"

@@ -50,11 +50,11 @@ class Znapzend < Formula
 
   test do
     fake_zfs = testpath"zfs"
-    fake_zfs.write <<~EOS
+    fake_zfs.write <<~SH
       #!binsh
       for word in "$@"; do echo $word; done >> znapzendzetup_said.txt
       exit 0
-    EOS
+    SH
     chmod 0755, fake_zfs
     ENV.prepend_path "PATH", testpath
 

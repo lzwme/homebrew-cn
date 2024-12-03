@@ -53,13 +53,13 @@ class Sqlcipher < Formula
 
   test do
     path = testpath"school.sql"
-    path.write <<~EOS
+    path.write <<~SQL
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
       insert into students (name, age) values ('Sue', 12);
       insert into students (name, age) values ('Tim', json_extract('{"age": 13}', '$.age'));
       select name from students order by age asc;
-    EOS
+    SQL
 
     names = shell_output("#{bin}sqlcipher < #{path}").strip.split("\n")
     assert_equal %w[Sue Tim Bob], names

@@ -1,18 +1,18 @@
 class Nuclei < Formula
   desc "HTTPDNS scanner configurable via YAML templates"
   homepage "https:nuclei.projectdiscovery.io"
-  url "https:github.comprojectdiscoverynucleiarchiverefstagsv3.3.6.tar.gz"
-  sha256 "7fb42cf5c9c4fa8800d40a997466dbfeac9954e1cae8d98a7af25c19801eb113"
+  url "https:github.comprojectdiscoverynucleiarchiverefstagsv3.3.7.tar.gz"
+  sha256 "3d12498f90b4babead541578f095c8f8aac7d08038073f0f239142356d3a4c79"
   license "MIT"
   head "https:github.comprojectdiscoverynuclei.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1600bbd80d7ae1fdd980022008d4b214c84553acc09ba5c375f4d7312f9e8765"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31b8247e96b04a3e1ceac6d2510acb98c8e6440526f2cdfdfdc174807854ced9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c083b0c0a474983ab925cd337e689dca59938fa58bc36c85e7e596ca69ce4c5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "898ac62856f9bc6374fe26e1b0b5218e604f0c67e9988c075a0dc695de7423cc"
-    sha256 cellar: :any_skip_relocation, ventura:       "fc2d69cf5842a8fe07500fc46acf09787b44c17304c6080da3e2ab1c5cf70fac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6daaee6f6ec205a28d080ba4795df06223fa12795b1edf83f8cada7295973ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdf2f0facc6f57692cbf11ebc5bb15580bd1566593ddc122179244371b4ab4bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7aa542abecde162792f487b057421bd990c9c36fccdb3f281382ec27110d749"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a62a62f2b7409c4652be25ab611d258de3f320de6c5a2500af4db4c6b7d6cd93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c6dbcb75e61ba5de3471028775a7d2db6b58cd04842a7a47a9c13b8f1599997"
+    sha256 cellar: :any_skip_relocation, ventura:       "e80a978d3471d7c5dbf70e3bdc4abbb1eb141bb7c5e251ee123cd085151c19bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "650457610e325b268e964e590977eb54456dccf7961bca36de0550307c32eed3"
   end
 
   depends_on "go" => :build

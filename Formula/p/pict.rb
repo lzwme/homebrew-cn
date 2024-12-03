@@ -20,8 +20,6 @@ class Pict < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bc79051760ece4228b1b8effde4c16289f250aa9f6feb14f05e6065e3aba070"
   end
 
-  fails_with gcc: "5"
-
   resource "testfile" do
     url "https:gist.githubusercontent.comglsorre9f67891c69c21cbf477c6cedff8ee910raw84ec65cf37e0a8df5428c6c607dbf397c2297e06pict.txt"
     sha256 "ac5e3561f9c481d2dca9d88df75b58a80331b757a9d2632baaf3ec5c2e49ccec"

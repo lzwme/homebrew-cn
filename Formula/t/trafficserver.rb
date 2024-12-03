@@ -40,8 +40,6 @@ class Trafficserver < Formula
     depends_on "libunwind"
   end
 
-  fails_with gcc: "5" # needs C++17
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXPERIMENTAL_PLUGINS=ON",

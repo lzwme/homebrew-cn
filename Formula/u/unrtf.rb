@@ -36,12 +36,12 @@ class Unrtf < Formula
   end
 
   test do
-    (testpath/"test.rtf").write <<~'EOS'
+    (testpath/"test.rtf").write <<~'RTF'
       {\rtf1\ansi
       {\b hello} world
       }
-    EOS
-    expected = <<~EOS
+    RTF
+    expected = <<~HTML
       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
       <html>
       <head>
@@ -50,7 +50,7 @@ class Unrtf < Formula
       </head>
       <body><b>hello</b> world</body>
       </html>
-    EOS
+    HTML
     assert_equal expected, shell_output("#{bin}/unrtf --html test.rtf")
   end
 end

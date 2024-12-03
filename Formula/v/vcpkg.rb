@@ -34,8 +34,6 @@ class Vcpkg < Formula
   depends_on "fmt"
   depends_on "ninja" # This will install its own copy at runtime if one isn't found.
 
-  fails_with gcc: "5"
-
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
     inreplace "includevcpkgbasemessage-data.inc.h",

@@ -34,12 +34,12 @@ class Tcpstat < Formula
   end
 
   test do
-    (testpath"script.exp").write <<~EOS
+    (testpath"script.exp").write <<~EXPECT
       set timeout 30
       spawn "#{bin}tcpstat"
       send -- "q"
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "script.exp"
   end

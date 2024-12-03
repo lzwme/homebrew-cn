@@ -3,8 +3,8 @@ class ConanAT1 < Formula
 
   desc "Distributed, open source, package manager for CC++"
   homepage "https:conan.io"
-  url "https:files.pythonhosted.orgpackages7b0040fa960783926ccc478707cc294f645636df5ecd7eb29edc87f6280a4898conan-1.65.0.tar.gz"
-  sha256 "2fc5c8d681d94ccb9c0f273c29e4a8c78a8ea1b25295dc6ca17f9a715935c2df"
+  url "https:files.pythonhosted.orgpackageseee80893952ee0c0f78100a7da72aeb81f68925933ecbb730bfd664e7a4c6f1fconan-1.66.0.tar.gz"
+  sha256 "04d2ad0f6ec6f055d95fa0a157b55fdea9328ae67f51b11e7d26e9d9d2f76ab9"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,12 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4bc9b74eef882752605df6c695f98cc801c4765fa999d101f7e03eb1f27dc391"
-    sha256 cellar: :any,                 arm64_sonoma:  "81cd6c31e38161277d571c8414abef861921822e939f856aa54b037108ca6723"
-    sha256 cellar: :any,                 arm64_ventura: "9cbfc31ea483e5fe65ac4bff6e8fa2d88ccef2bcf264a41d56f81839284e93ba"
-    sha256 cellar: :any,                 sonoma:        "c4287660620dcf60e51261409acfe04929dc30464dea7b3a8661456b4a06deb6"
-    sha256 cellar: :any,                 ventura:       "1edfa7bde7ed9706121fd1eea26f7b7a285fb591474ef50889ec2330384571e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07110262d848b368269788689f39d19a9699b2b8c0f82b480aa7f49ce329c078"
+    sha256 cellar: :any,                 arm64_sequoia: "6f9bd30639b2eb389211f5079d4e58ad7d6bf998f467ee5de2f8d64fb2a5c4d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cc316bde2e42cb5f9e7023f1a7b2d145fa9067ae0a54539201f694adfebb1c6"
+    sha256 cellar: :any,                 arm64_ventura: "f2c0b869b8570c7161e37d3fff4e943e6c22ca2fc5edfb7f1c54bc46a4cd6e86"
+    sha256 cellar: :any,                 sonoma:        "bbd9bdda8c64177052554521d5573f911e8ff52959d77048e448eec8173fe702"
+    sha256 cellar: :any,                 ventura:       "6f53e808ad9d0602a1430a7675cefd7f0c98aa20707894f3a5a5549370e07e4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "942f9d3f8b6fca3eba1938d5769bb9f7617e495c0674542c3e675a2b6d4a24e5"
   end
 
   keg_only :versioned_formula
@@ -36,8 +35,8 @@ class ConanAT1 < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "colorama" do
@@ -56,8 +55,8 @@ class ConanAT1 < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "jinja2" do
@@ -66,8 +65,8 @@ class ConanAT1 < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "node-semver" do
@@ -91,8 +90,8 @@ class ConanAT1 < Formula
   end
 
   resource "pyjwt" do
-    url "https:files.pythonhosted.orgpackagesfb68ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020epyjwt-2.9.0.tar.gz"
-    sha256 "7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c"
+    url "https:files.pythonhosted.orgpackagese746bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-dateutil" do
@@ -116,19 +115,13 @@ class ConanAT1 < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
-    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
-  end
-
-  # sequoia build patch, upstream pr ref, https:github.comconan-ioconanpull16980
-  patch do
-    url "https:github.comconan-ioconancommitec02a5d24feff1c7f4278d1e07d48486b43b8f54.patch?full_index=1"
-    sha256 "2a6a1a1f5d0cc9166fb8223dc6f7690919c70dfa82ffc964bf0aae54e92a0f9a"
+    url "https:files.pythonhosted.orgpackagese4e86ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392furllib3-1.26.20.tar.gz"
+    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
   end
 
   def install

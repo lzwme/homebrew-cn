@@ -30,7 +30,7 @@ class Entityx < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<-EOS
+    (testpath"test.cpp").write <<~CPP
       #include <entityxentityx.h>
 
       int main(int argc, char *argv[]) {
@@ -41,7 +41,7 @@ class Entityx < Formula
 
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lentityx", "-o", "test"
     system ".test"
   end

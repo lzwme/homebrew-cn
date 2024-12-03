@@ -63,8 +63,6 @@ class Sysdig < Formula
     depends_on "zstd"
   end
 
-  fails_with gcc: "5" # C++17
-
   # More info on https:gist.github.comjuniorz9986999
   resource "homebrew-sample_file" do
     url "https:gist.githubusercontent.comjuniorz9986999rawa3556d7e93fa890a157a33f4233efaf8f5e01a6fsample.scap"

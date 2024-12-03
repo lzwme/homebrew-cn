@@ -27,7 +27,7 @@ class Zlint < Formula
   test do
     assert_match "ZLint version #{version}", shell_output("#{bin}zlint -version")
 
-    (testpath"cert.pem").write <<~EOS
+    (testpath"cert.pem").write <<~PEM
       -----BEGIN CERTIFICATE-----
       MIIB3jCCAWSgAwIBAgIUU3hxzxSDV5V1DeRyZjgzdPKatBEwCgYIKoZIzj0EAwMw
       HjEcMBoGA1UEAwwTaG9tZWJyZXctemxpbnQtdGVzdDAeFw0yMjAxMDEwMDAwMDBa
@@ -41,7 +41,7 @@ class Zlint < Formula
       MQDEMciPyBdrKwnJilT2kVwIMdMmxAjcmV048Ai0CImT5iRERKdBa7QeydMcJo3Z
       7zs=
       -----END CERTIFICATE-----
-    EOS
+    PEM
 
     output = shell_output("#{bin}zlint -longSummary cert.pem")
     %w[

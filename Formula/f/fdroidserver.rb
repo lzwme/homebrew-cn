@@ -8,13 +8,13 @@ class Fdroidserver < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "9ac0b4c6634b2d5d4eab568d9115fb5da797fc2a728ec326737361b2e7259528"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d039b1f9dddf6e51452a2f9c816ea4a76168d323872f936317208a15ce6db45"
-    sha256 cellar: :any,                 arm64_ventura: "6022d1533ad1ab59a93418cfcdebe8a054e63daf64ae0a26c35ed87535791649"
-    sha256 cellar: :any,                 sonoma:        "67e475ea3270a2eb02f5c03987b1ed157c4eadbd0fd7456d5ab1509f48d09f37"
-    sha256 cellar: :any,                 ventura:       "86a49bd7df2201f5618a34fa70b352d3913ab625c7279ff525dd6daea449a807"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "001fa00e156f2e4dc8dab3e7fa1efc7af9de032f52bc786ac0b9176488a07df4"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "439c8007d2c99583d4850bf97433708034f1bc90a8dfd76c10a5624afca909b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "4000d5188b58ea6f1ced3d1214ce6756513e7b63c627f4e9e561d006ee40403c"
+    sha256 cellar: :any,                 arm64_ventura: "86f00e0a6e182a74dfb548a5e4330d4cf45d478a9d898a094e6635bf83ee8c56"
+    sha256 cellar: :any,                 sonoma:        "4fdaec3d321aca73e7ec4f1f460ea718dfa9f31fa1f5fb3f004374d809f373da"
+    sha256 cellar: :any,                 ventura:       "dbe39653fd99f6a35135b9c3cdb4d48f8f7badea92d0debd2fab2f52c7009995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6df959d626de20dc0f268a3b57ef59fdbbab36436bd3dd94736386e6f9559bf4"
   end
 
   depends_on "ninja" => :build
@@ -24,7 +24,7 @@ class Fdroidserver < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "freetype"
-  depends_on "libmagic"
+  depends_on "libmagic"  # obviates the need for puremagic
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
   depends_on "numpy"
@@ -242,11 +242,6 @@ class Fdroidserver < Formula
     sha256 "5f4e983f40564c576c7c8635ae88db5956bb2229d7e9237d03b3c0b0190eaf42"
   end
 
-  resource "puremagic" do
-    url "https:files.pythonhosted.orgpackages092d40599f25667733e41bbc3d7e4c7c36d5e7860874aa5fe9c584e90b34954dpuremagic-1.28.tar.gz"
-    sha256 "195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"
-  end
-
   resource "pycountry" do
     url "https:files.pythonhosted.orgpackages7657c389fa68c50590881a75b7883eeb3dc15e9e73a0fdc001cdd45c13290c92pycountry-24.6.1.tar.gz"
     sha256 "b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221"
@@ -275,6 +270,11 @@ class Fdroidserver < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "python-magic" do
+    url "https:files.pythonhosted.orgpackagesdadb0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130python-magic-0.4.27.tar.gz"
+    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
   end
 
   resource "python-vagrant" do
@@ -415,7 +415,7 @@ class Fdroidserver < Formula
         UpdateCheckMode: None
       YAML
 
-      system bin"fdroid", "checkupdates", "--verbose", "--allow-dirty"
+      system bin"fdroid", "install", "--verbose", "--yes"
       system bin"fdroid", "lint", "--verbose"
       system bin"fdroid", "rewritemeta", "fake", "--verbose"
       system bin"fdroid", "scanner", "--verbose"

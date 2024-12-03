@@ -25,8 +25,6 @@ class QtUnixodbc < Formula
   conflicts_with "qt-libiodbc",
     because: "qt-unixodbc and qt-libiodbc install the same binaries"
 
-  fails_with gcc: "5"
-
   def install
     args = std_cmake_args + %W[
       -DCMAKE_STAGING_PREFIX=#{prefix}

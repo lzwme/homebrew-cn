@@ -3,8 +3,8 @@ class AstrometryNet < Formula
 
   desc "Automatic identification of astronomical images"
   homepage "https:github.comdstndstnastrometry.net"
-  url "https:github.comdstndstnastrometry.netreleasesdownload0.96astrometry.net-0.96.tar.gz"
-  sha256 "fb3f2ec09cbe155d9ff461b9a60336f8493f5cb7804199e1782664e9034c9aac"
+  url "https:github.comdstndstnastrometry.netreleasesdownload0.97astrometry.net-0.97.tar.gz"
+  sha256 "e4eef1b658ba5ad462282b661c0ca3a5c538ba1716e853f7970b7b9fa4a33459"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,13 +13,12 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "f1bbde0a339c8945bd6dfafa9bd600e0f64f4ac436e1b24b1e1ea29d69a0cbec"
-    sha256 cellar: :any,                 arm64_sonoma:  "28a9cf7512a67a5254942e999848970fc37fc260f24be235cdb00bd5cc73ea67"
-    sha256 cellar: :any,                 arm64_ventura: "4a3bbbaaf304a430652453c98238d3af806edf368aff66253d221705b9175848"
-    sha256 cellar: :any,                 sonoma:        "b4cb1d75bb7ed5de5d080760db6b0a81dac3798a6d5439be01f1d423ad6c1c0d"
-    sha256 cellar: :any,                 ventura:       "c4780f3e9aaf73c835cfc421aa927d52e33c30837911776e34e068d49c94ce12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feab592ac829d2863bf2ce65d50d9c880cfa60b513f6ac0a6d70dfe8aa13c1e3"
+    sha256 cellar: :any,                 arm64_sequoia: "757f3c12578d021709e8332caa87e0d3ca1bcc28f39a675946d83cca07bc214e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e37742770e1efe10c744f4a908c002af489a59e8aa2bf6c5cb4dbad74b02d74"
+    sha256 cellar: :any,                 arm64_ventura: "12ea115da7ff9e7976e71bcb7e3f6ee7420f633a1c2295d24df6c95568aa28ba"
+    sha256 cellar: :any,                 sonoma:        "f4115527d39d5d12b687a44b02556072ad48e0d982b445193e1ccb3fb2f42eb8"
+    sha256 cellar: :any,                 ventura:       "acfb3cb5d86b8127c99a3ad33b874e3496e12bca06bf84252a70d49e33bf76df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92de421cb2c9161b9cc6a25bd364988041831bece5de023e55684350b0a03b3"
   end
 
   depends_on "pkgconf" => :build

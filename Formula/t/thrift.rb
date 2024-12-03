@@ -82,11 +82,11 @@ class Thrift < Formula
   end
 
   test do
-    (testpath"test.thrift").write <<~EOS
+    (testpath"test.thrift").write <<~THRIFT
       service MultiplicationService {
         i32 multiply(1:i32 x, 2:i32 y),
       }
-    EOS
+    THRIFT
 
     system bin"thrift", "-r", "--gen", "cpp", "test.thrift"
 

@@ -30,13 +30,13 @@ class Scalastyle < Formula
   end
 
   test do
-    (testpath"test.scala").write <<~EOS
+    (testpath"test.scala").write <<~SCALA
       object HelloWorld {
         def main(args: Array[String]) {
           println("Hello")
         }
       }
-    EOS
+    SCALA
     testpath.install resource("default_config")
     system bin"scalastyle", "--config", "scalastyle_config.xml", testpath"test.scala"
   end

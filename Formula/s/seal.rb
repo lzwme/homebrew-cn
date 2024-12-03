@@ -22,8 +22,6 @@ class Seal < Formula
 
   uses_from_macos "zlib"
 
-  fails_with gcc: "5"
-
   resource "hexl" do
     url "https:github.comintelhexlarchiverefstagsv1.2.5.tar.gz"
     sha256 "3692e6e6183dbc49253e51e86c3e52e7affcac925f57db0949dbb4d34b558a9a"

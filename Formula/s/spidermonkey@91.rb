@@ -36,12 +36,6 @@ class SpidermonkeyAT91 < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "zlib"
 
-  # From pythonmozbuildmozbuildtestconfiguretest_toolchain_configure.py
-  fails_with :gcc do
-    version "6"
-    cause "Only GCC 7.1 or newer is supported"
-  end
-
   def install
     # Help the build script detect ld64 as it expects logs from LD_PRINT_OPTIONS=1 with -Wl,-version
     if DevelopmentTools.clang_build_version >= 1500

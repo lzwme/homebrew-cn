@@ -19,8 +19,6 @@ class Reproc < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   def install
     args = *std_cmake_args << "-DREPROC++=ON"
     system "cmake", "-S", ".", "-B", "build", *args, "-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"

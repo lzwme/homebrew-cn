@@ -31,11 +31,6 @@ class Halide < Formula
   depends_on "llvm"
   depends_on "python@3.13"
 
-  fails_with :gcc do
-    version "6"
-    cause "Requires C++17"
-  end
-
   # Check wabt version in `dependencieswasmCMakeLists.txt`.
   # TODO: Ask upstream to support usage of a system-provided wabt.
   # TODO: Do we really need a git checkout here?

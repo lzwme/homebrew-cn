@@ -30,8 +30,6 @@ class Symengine < Formula
     depends_on "z3"
   end
 
-  fails_with gcc: "5"
-
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
     system "cmake", "-S", ".", "-B", "build",

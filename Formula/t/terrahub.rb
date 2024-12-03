@@ -30,7 +30,7 @@ class Terrahub < Formula
   end
 
   test do
-    (testpath/".terrahub.yml").write <<~EOF
+    (testpath/".terrahub.yml").write <<~YAML
       project:
         name: terrahub-demo
         code: abcd1234
@@ -40,7 +40,7 @@ class Terrahub < Formula
       subnet_component:
         name: subnet
         root: ./subnet
-    EOF
+    YAML
     output = shell_output("#{bin}/terrahub graph")
     assert_match "Project: terrahub-demo", output
   end

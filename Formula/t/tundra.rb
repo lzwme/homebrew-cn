@@ -39,13 +39,13 @@ class Tundra < Formula
   end
 
   test do
-    (testpath"test.c").write <<~'EOS'
+    (testpath"test.c").write <<~'C'
       #include <stdio.h>
       int main() {
         printf("Hello World\n");
         return 0;
       }
-    EOS
+    C
 
     os, cc = if OS.mac?
       ["macosx", "clang"]

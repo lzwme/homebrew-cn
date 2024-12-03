@@ -35,7 +35,7 @@ class Arangodb < Formula
   end
 
   fails_with :clang do
-    cause <<-EOS
+    cause <<~EOS
       ...arangodIResearchAqlHelper.h:563:40: error: no matching constructor
       for initialization of 'std::string_view' (aka 'basic_string_view<char>')
               std::forward<Visitor>(visitor)(std::string_view{prev, begin});

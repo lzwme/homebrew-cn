@@ -53,6 +53,6 @@ class Zssh < Formula
 
   test do
     require "pty"
-    PTY.spawn "#{bin}/zssh -V"
+    PTY.spawn(bin/"zssh", "-V")
   end
 end

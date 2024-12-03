@@ -29,14 +29,9 @@ class Doxygen < Formula
   uses_from_macos "flex" => :build, since: :big_sur
   uses_from_macos "python" => :build
 
-  fails_with :gcc do
-    version "6"
-    cause "Need gcc>=7.2. See https:gcc.gnu.orgbugzillashow_bug.cgi?id=66297"
-  end
-
   fails_with :clang do
     build 1000
-    cause <<-EOS
+    cause <<~EOS
       doxygen-1.11.0srcdatetime.cpp:100:19: error: no viable constructor or deduction guide for deduction of template arguments of 'array'
       static std::array g_specFormats
                         ^

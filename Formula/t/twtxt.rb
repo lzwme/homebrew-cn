@@ -97,13 +97,13 @@ class Twtxt < Formula
   end
 
   test do
-    (testpath"config").write <<~EOS
+    (testpath"config").write <<~INI
       [twtxt]
       nick = homebrew
       twtfile = twtxt.txt
       [following]
       brewtest = https:example.orgalice.txt
-    EOS
+    INI
     assert_match "✓ You’ve unfollowed brewtest", shell_output("#{bin}twtxt -c config unfollow brewtest")
 
     assert_match version.to_s, shell_output(bin"twtxt --version")

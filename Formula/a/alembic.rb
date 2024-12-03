@@ -1,18 +1,18 @@
 class Alembic < Formula
   desc "Open computer graphics interchange framework"
   homepage "http:www.alembic.io"
-  url "https:github.comalembicalembicarchiverefstags1.8.7.tar.gz"
-  sha256 "3590f51f82e3675bb907f7a6a7149a76c06c23ef25d153e64391bcd22d86cc8c"
+  url "https:github.comalembicalembicarchiverefstags1.8.8.tar.gz"
+  sha256 "ba1f34544608ef7d3f68cafea946ec9cc84792ddf9cda3e8d5590821df71f6c6"
   license "BSD-3-Clause"
   head "https:github.comalembicalembic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3edd7f3c3ebc3b64fdaa1130f865f91b307e772efd256d5fda086bc930c3e6bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9d36ca1955b740cbc377fe5c655ab99fcf14144e8cd906a06e1340e7b9a4d57"
-    sha256 cellar: :any,                 arm64_ventura: "0d63d70231fd1f49bc0930ff0f47c6ada8ffa3c09d43edf845a74394cfb75893"
-    sha256 cellar: :any,                 sonoma:        "0ab1ce5ab65809f87b3566552cb9d2fee7a2f2126a620b9b8140785e2b0cda6a"
-    sha256 cellar: :any,                 ventura:       "149e6d1b898efa42b1e6aba279b7aff05acf5ccdefaa3685bfdb39ab72eba61f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afa6ea2eb2307d8e4951ef0e24130abcc4137190dbc443834e56c3467abade5a"
+    sha256 cellar: :any,                 arm64_sequoia: "6a69e3e7fe9ed8794cfb70d95e5a90d4edd03fb37870d318cc2772f3d887dc57"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0de5bbd49ecae579210057e2fd9623bfcd5c8751ebb33638b9c498a8e896cfd"
+    sha256 cellar: :any,                 arm64_ventura: "805fdb868569c1d52f0014d0fe5c33ec94351295713cabd827d6604ec59b931a"
+    sha256 cellar: :any,                 sonoma:        "9b999957a0cd7bb166cbaab35e65c2b29fa7571366d7140548469cb416fa0a7e"
+    sha256 cellar: :any,                 ventura:       "b0156c9b787c034db3f133800446abae92cb2d9ad778cc28e76c8e2794b9a72f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef41d868f2c1ab7bfe69219612f1958056e6396dd5055d8320a6a952dca4e2d"
   end
 
   depends_on "cmake" => :build

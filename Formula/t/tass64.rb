@@ -26,7 +26,7 @@ class Tass64 < Formula
   end
 
   test do
-    (testpath/"hello.asm").write <<~'EOS'
+    (testpath/"hello.asm").write <<~'ASM'
       ;; Simple "Hello World" program for C64
       *=$c000
         LDY #$00
@@ -41,7 +41,7 @@ class Tass64 < Formula
         .text "HELLO WORLD",0
       L2
         RTS
-    EOS
+    ASM
 
     system bin/"64tass", "-a", "hello.asm", "-o", "hello.prg"
     assert_predicate testpath/"hello.prg", :exist?

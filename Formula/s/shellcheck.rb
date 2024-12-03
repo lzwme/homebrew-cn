@@ -30,12 +30,12 @@ class Shellcheck < Formula
 
   test do
     sh = testpath"test.sh"
-    sh.write <<~EOS
+    sh.write <<~SH
       for f in $(ls *.wav)
       do
         echo "$f"
       done
-    EOS
+    SH
     assert_match "[SC2045]", shell_output("#{bin}shellcheck -f gcc #{sh}", 1)
   end
 end

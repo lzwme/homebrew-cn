@@ -34,7 +34,7 @@ class Scrypt < Formula
   end
 
   test do
-    (testpath"test.exp").write <<~EOS
+    (testpath"test.exp").write <<~EXPECT
       set timeout -1
       spawn #{bin}scrypt enc homebrew.txt homebrew.txt.enc
       expect -exact "Please enter passphrase: "
@@ -43,7 +43,7 @@ class Scrypt < Formula
       Please confirm passphrase: "
       send -- "Testing\n"
       expect eof
-    EOS
+    EXPECT
     touch "homebrew.txt"
 
     system "expect", "-f", "test.exp"

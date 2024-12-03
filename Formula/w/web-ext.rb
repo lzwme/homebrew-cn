@@ -39,13 +39,13 @@ class WebExt < Formula
   end
 
   test do
-    (testpath"manifest.json").write <<~EOF
+    (testpath"manifest.json").write <<~JSON
       {
         "manifest_version": 2,
         "name": "minimal web extension",
         "version": "0.0.1"
       }
-    EOF
+    JSON
     assert_equal <<~EOF, shell_output("#{bin}web-ext lint").gsub( +$, "")
       Validation Summary:
 

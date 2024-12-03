@@ -30,8 +30,6 @@ class Patchelf < Formula
     depends_on "automake" => :build
   end
 
-  fails_with gcc: "5" # Needs std::optional
-
   resource "homebrew-helloworld" do
     url "http:timelessname.comelfbinhelloworld.tar.gz"
     sha256 "d8c1e93f13e0b7d8fc13ce75d5b089f4d4cec15dad91d08d94a166822d749459"

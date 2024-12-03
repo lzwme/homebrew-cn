@@ -47,7 +47,10 @@ class Nghttp2 < Formula
     cause "Requires C++20 support"
   end
 
-  fails_with gcc: "11"
+  fails_with :gcc do
+    version "11"
+    cause "Requires C++20 support"
+  end
 
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400

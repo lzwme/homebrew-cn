@@ -29,7 +29,7 @@ class Z3 < Formula
 
   fails_with :clang do
     build 1000
-    cause <<-EOS
+    cause <<~EOS
       Z3 uses modern C++17 features, which is not supported by Apple's clang until
       later macOS (10.14).
     EOS

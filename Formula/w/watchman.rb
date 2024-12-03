@@ -1,18 +1,18 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2024.11.25.00.tar.gz"
-  sha256 "0be6415d20e6a8a39246e177d8ec4452dad98fd6085397bed825b8f71acaf305"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2024.12.02.00.tar.gz"
+  sha256 "445bda6f262cd23ed305f914249e400c7377ebe21ec971a2ace6c1c3dfad5880"
   license "MIT"
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d9655b2dcfb50ab9d746db2387891aeacc2b56d58a805a3d8c47ebc885ef3a03"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d8e675b59976097a3301a9189f9a02be14ff29dd64115d0096cf42e2aeab35d"
-    sha256 cellar: :any,                 arm64_ventura: "6da9d2d18df0298918afb5f87f4c74b8ede02f67fdfb6e4c855d8e9ffee2cee2"
-    sha256 cellar: :any,                 sonoma:        "fea1bef225a3f1178319334777473b6d304690c79f4f1ddd2795e59122b7db88"
-    sha256 cellar: :any,                 ventura:       "0b808e134b07d5a1d393c5760374e0dac87d127a1281e53fbfb989445fc544c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c1b58edb12453b06ffc6f4cd7cdc09805eab3212dd1d011367546dd3777c4c8"
+    sha256 cellar: :any,                 arm64_sequoia: "6adf1c598ff74d52bbb6e6019588ea2c088683a0d45fb74e39c2675aa154ed94"
+    sha256 cellar: :any,                 arm64_sonoma:  "98ed340b58fce54b27f5f4ef91ccf31949611327d086ce183eae77ab95729184"
+    sha256 cellar: :any,                 arm64_ventura: "4cdc6893cc2dc54720495c378b7d8076b58cce2bc189330033d6b9bf77566f83"
+    sha256 cellar: :any,                 sonoma:        "3ab65ac543b5e2e6cf937355cd4b19e16c6bd47b1ced1f70ad42f44ba87264bc"
+    sha256 cellar: :any,                 ventura:       "174d3c72459adf70ed117edb479b766b1ceae5f41488bcdb6a47e9f6340f1a68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e2aaf0e7ca686132f797d47c20b66e1d6332285eaf84074bcf03e04cbe60399"
   end
 
   depends_on "cmake" => :build

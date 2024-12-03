@@ -96,7 +96,7 @@ class Itk < Formula
   end
 
   test do
-    (testpath"test.cxx").write <<-EOS
+    (testpath"test.cxx").write <<~CPP
       #include "itkImage.h"
       int main(int argc, char* argv[])
       {
@@ -105,7 +105,7 @@ class Itk < Formula
         image->Update();
         return EXIT_SUCCESS;
       }
-    EOS
+    CPP
 
     v = version.major_minor
     # Build step

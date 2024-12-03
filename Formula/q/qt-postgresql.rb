@@ -22,8 +22,6 @@ class QtPostgresql < Formula
   depends_on "libpq"
   depends_on "qt"
 
-  fails_with gcc: "5"
-
   def install
     args = std_cmake_args + %W[
       -DCMAKE_STAGING_PREFIX=#{prefix}

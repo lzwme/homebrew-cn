@@ -100,11 +100,11 @@ class Torchvision < Formula
 
     # test that the `torchvision` Python module is available
     cp test_fixtures("test.png"), "test.png"
-    system libexec"binpython", "-c", <<~EOS
+    system libexec"binpython", "-c", <<~PYTHON
       import torch
       import torchvision
       t = torchvision.io.read_image("test.png")
       assert isinstance(t, torch.Tensor)
-    EOS
+    PYTHON
   end
 end

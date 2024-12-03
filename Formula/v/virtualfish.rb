@@ -77,11 +77,11 @@ class Virtualfish < Formula
     assert_path_exists testpath".configfishconf.dvirtualfish-loader.fish"
 
     # Add virtualenv to prompt so virtualfish doesn't link to prompt doc
-    (testpath".configfishfunctionsfish_prompt.fish").write(<<~EOS)
+    (testpath".configfishfunctionsfish_prompt.fish").write <<~FISH
       function fish_prompt --description 'Test prompt for virtualfish'
         echo -n -s (pwd) 'VIRTUAL_ENV=' (basename "$VIRTUAL_ENV") '>'
       end
-    EOS
+    FISH
 
     # Create a virtualenv 'new_virtualenv'
     refute_path_exists testpath".virtualenvsnew_virtualenvpyvenv.cfg"

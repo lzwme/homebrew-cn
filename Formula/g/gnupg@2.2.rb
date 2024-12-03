@@ -23,7 +23,7 @@ class GnupgAT22 < Formula
 
   disable! date: "2025-04-01", because: :versioned_formula
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "libassuan"
   depends_on "libgcrypt"
@@ -46,14 +46,13 @@ class GnupgAT22 < Formula
     libusb = Formula["libusb"]
     ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--sbindir=#{bin}",
                           "--sysconfdir=#{etc}",
                           "--enable-all-tests",
                           "--enable-symcryptrun",
-                          "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry"
+                          "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry",
+                          *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

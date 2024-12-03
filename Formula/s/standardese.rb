@@ -36,8 +36,6 @@ class Standardese < Formula
   depends_on "cmark-gfm"
   depends_on "llvm" # must be Homebrew LLVM, not system, because of `llvm-config`
 
-  fails_with gcc: "5" # LLVM is built with Homebrew GCC
-
   # https:github.comstandardesecppastblobmainexternalexternal.cmake#L12
   resource "type_safe" do
     url "https:github.comfoonathantype_safearchiverefstagsv0.2.4.tar.gz"
@@ -73,7 +71,7 @@ class Standardese < Formula
   end
 
   test do
-    (testpath"test.hpp").write <<~EOS
+    (testpath"test.hpp").write <<~CPP
       #pragma once
 
       #include <string>
@@ -99,7 +97,7 @@ class Standardese < Formula
            \\notes Some stuff at the end.
           using Baz = Test;
       };
-    EOS
+    CPP
     system bin"standardese", "--compilation.standard", "c++17",
                               "--output.format", "xml",
                               testpath"test.hpp"

@@ -26,7 +26,7 @@ class Thriftgo < Formula
     assert_match "thriftgo #{version}", output
 
     thriftfile = testpath"test.thrift"
-    thriftfile.write <<~EOS
+    thriftfile.write <<~THRIFT
       namespace go api
       struct Request {
               1: string message
@@ -37,7 +37,7 @@ class Thriftgo < Formula
       service Hello {
           Response echo(1: Request req)
       }
-    EOS
+    THRIFT
     system bin"thriftgo", "-o=.", "-g=go", "test.thrift"
     assert_predicate testpath"api""test.go", :exist?
     refute_predicate (testpath"api""test.go").size, :zero?

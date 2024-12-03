@@ -1,18 +1,17 @@
 class Gtranslator < Formula
   desc "GNOME gettext PO file editor"
   homepage "https://wiki.gnome.org/Design/Apps/Translator"
-  url "https://download.gnome.org/sources/gtranslator/47/gtranslator-47.0.tar.xz"
-  sha256 "76e1041c5efb0a88ba18764ea4588b4e1965fa50314e01a173fa3ea0150e1cd5"
+  url "https://download.gnome.org/sources/gtranslator/47/gtranslator-47.1.tar.xz"
+  sha256 "c91c0264b9a99e3091ef911f731a8ff6d09a84a2bcd75e5651971da6bbea6222"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "2e437ceeced7d637bf27767134cf2a2bc4450d8a4bbbe1f2c4e2d1366f132c5f"
-    sha256 arm64_sonoma:  "7189d694adb46dcbb4d29903aa213ac3411954b3636d6e9b66734018457a837f"
-    sha256 arm64_ventura: "4f1a1106b78f94f0ff7868db11fbce660706094e8516dd542ff0db74c04d86ec"
-    sha256 sonoma:        "3e3325618a0b76ae70458fd864d466a95ea8847ad9c2da0c88948aa9574390ad"
-    sha256 ventura:       "87be245fa245123cdf9e310b45da667f04ccf3e45404013918774bdfc8242b6f"
-    sha256 x86_64_linux:  "6b63dcc4ddcaaa9e7fd4cc2e1edb3e7b82f5dd9edd704d5859bf9849ae088199"
+    sha256 arm64_sequoia: "9528d2d0c63f9fc72e116c529635b9a1062c378de167317f533eeb19f26b3ec9"
+    sha256 arm64_sonoma:  "dbbbb590aa84894918b7d13179f95c4a5e3048df1707ef285011dc070e09aeeb"
+    sha256 arm64_ventura: "44f9fae1b4fcc02e8cd7cb1c81162e14a7122a17046e14f719f11faebbc01983"
+    sha256 sonoma:        "a7bee03217bdf2fec854a4ac33c6fdb7dc2a73c230f880aa51c162e6f0a25487"
+    sha256 ventura:       "b9ced5aee8dfac8bdeaddb5be0e3221660298cbb622dc8739a5112c3fe9f696c"
+    sha256 x86_64_linux:  "0c4b171ded4cde9d2cd935af1d7e8993cd28d9a929b11d8bbbca29ba45b87c35"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

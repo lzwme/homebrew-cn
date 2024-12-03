@@ -42,12 +42,12 @@ class VueCli < Formula
   end
 
   test do
-    (testpath/".vuerc").write <<~EOS
+    (testpath/".vuerc").write <<~JSON
       {
         "useTaobaoRegistry": false,
         "packageManager": "yarn"
       }
-    EOS
+    JSON
 
     assert_match "yarn", shell_output(bin/"vue config")
     assert_match "npm", shell_output(bin/"vue info")

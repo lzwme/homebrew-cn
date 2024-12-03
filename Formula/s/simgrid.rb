@@ -30,8 +30,6 @@ class Simgrid < Formula
 
   uses_from_macos "python", since: :catalina
 
-  fails_with gcc: "5"
-
   def install
     # Avoid superenv shim references
     inreplace "src/smpi/smpicc.in", "@CMAKE_C_COMPILER@", DevelopmentTools.locate(ENV.cc)

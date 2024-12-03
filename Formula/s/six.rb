@@ -37,11 +37,11 @@ class Six < Formula
 
   test do
     pythons.each do |python|
-      system python.opt_libexec"binpython", "-c", <<~EOS
+      system python.opt_libexec"binpython", "-c", <<~PYTHON
         import six
         assert not six.PY2
         assert six.PY3
-      EOS
+      PYTHON
     end
   end
 end

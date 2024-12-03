@@ -24,8 +24,6 @@ class Libebml < Formula
 
   depends_on "cmake" => :build
 
-  fails_with gcc: "5"
-
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"

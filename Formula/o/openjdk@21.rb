@@ -49,8 +49,6 @@ class OpenjdkAT21 < Formula
     depends_on "libxtst"
   end
 
-  fails_with gcc: "5"
-
   # From https:jdk.java.netarchive
   resource "boot-jdk" do
     on_macos do

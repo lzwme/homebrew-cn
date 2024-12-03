@@ -31,11 +31,11 @@ class Vale < Formula
       match: $title
     YAML
 
-    (testpath"vale.ini").write <<~EOS
+    (testpath"vale.ini").write <<~INI
       StylesPath = styles
       [*.md]
       BasedOnStyles = demo
-    EOS
+    INI
 
     (testpath"document.md").write("# heading is not capitalized")
 

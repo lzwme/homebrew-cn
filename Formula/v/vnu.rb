@@ -18,7 +18,7 @@ class Vnu < Formula
   end
 
   test do
-    (testpath/"index.html").write <<~EOS
+    (testpath/"index.html").write <<~HTML
       <!DOCTYPE html>
       <html>
       <head>
@@ -27,7 +27,7 @@ class Vnu < Formula
       <body>
       </body>
       </html>
-    EOS
+    HTML
     system bin/"vnu", testpath/"index.html"
   end
 end

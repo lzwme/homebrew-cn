@@ -21,8 +21,6 @@ class Openfst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b293aa36b18f6c227da97b39f8389accdf0f02a6b5801b197d062a473407fa"
   end
 
-  fails_with gcc: "5" # for C++17
-
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

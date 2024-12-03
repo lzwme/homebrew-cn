@@ -3,17 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackages42eacdba8c9cc8d452a5d5b461cc6f216cc2d16461ca492f6526a3d17d23d2c5dolphie-6.6.1.tar.gz"
-  sha256 "2a1c03b334ceb3cf7af4e2ce99a7019b80ef92c9a4ea42a1750260eee3452712"
+  url "https:files.pythonhosted.orgpackages4486789c985cea612af7dcb689d9458a04b3118bb2b73e6fad56198d946046dcdolphie-6.6.2.tar.gz"
+  sha256 "58098fc20aad5c4174359b2aa148fe4b1f0539fbea046a07a12b037405b7f6a2"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c932c796482ae53935cfcd71de6f81a037d74688ce874cdd070225c9c141a1ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "6440d6011f1d11e51c82fdd17935fc9bc2d9ad25fef120a96c18b85022ed8cae"
-    sha256 cellar: :any,                 arm64_ventura: "d288fb26f0d6e8c826c6b62acefe6fe611349f58e0de6c85a2f558d88a650e11"
-    sha256 cellar: :any,                 sonoma:        "507a28396afef22c0db29ed9e475cb27e7a6b4f374354a4aa66e3dac353d94d2"
-    sha256 cellar: :any,                 ventura:       "58d4383076eb3f0cf3be6f68b20307cca40e2dd54af4f5d2e19e3d12114269df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88db9ed2082f44263a27a414d6182eccbd799324fe1b4cbf7162b391d6b964bf"
+    sha256 cellar: :any,                 arm64_sequoia: "839dc474cde159c33cbb99a888344a66671f3089bdff6160156a9ebae82ec2b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "132ad97c9b222cf91ca956f6d8ff130201d94f652fe7f81d7cc121d3863207a0"
+    sha256 cellar: :any,                 arm64_ventura: "b43e1b850ff6e6acd325f459d3f5d9482c9393fd92a5689a0d602dcf2abe44a3"
+    sha256 cellar: :any,                 sonoma:        "f755609f7fe81630e3c2f9ad091d18ea86ad48cdca42c8fc0eadfde32927ad11"
+    sha256 cellar: :any,                 ventura:       "88f6a4b74b045174240b56da722f9d6dd70598cc59fa80146f9e132cfbd51a7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "485cadf86c9d7e762b05b149a8484a18b60f0df9499fd90e87b1f3072cf1e69c"
   end
 
   depends_on "rust" => :build # for orjson
@@ -132,8 +132,8 @@ class Dolphie < Formula
   end
 
   resource "tree-sitter" do
-    url "https:files.pythonhosted.orgpackages0123e001538062ece748d7ab1fcfbcd9fa766d85f60f0d5ae014a7caf4f07c70tree-sitter-0.23.1.tar.gz"
-    sha256 "28fe02aff6676b203cbe4213ca7116db0aaac08d6ca4c0b1f1af038991631838"
+    url "https:files.pythonhosted.orgpackages0f50fd5fafa42b884f741b28d9e6fd366c3f34e15d2ed3aa9633b34e388379e2tree-sitter-0.23.2.tar.gz"
+    sha256 "66bae8dd47f1fed7bdef816115146d3a41c39b5c482d7bad36d9ba1def088450"
   end
 
   # sdist issue report, https:github.comgrantjenkspy-tree-sitter-languagesissues63

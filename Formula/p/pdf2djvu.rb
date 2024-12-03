@@ -27,8 +27,6 @@ class Pdf2djvu < Formula
   depends_on "gettext"
   depends_on "poppler"
 
-  fails_with gcc: "5" # poppler compiles with GCC
-
   def install
     ENV.append "CXXFLAGS", "-std=gnu++17" # poppler uses std::optional
     ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR=1" if ENV.compiler == :clang

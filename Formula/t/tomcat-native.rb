@@ -49,9 +49,9 @@ class TomcatNative < Formula
     ENV["CATALINA_BASE"] = testpath
     tomcat = Formula["tomcat"]
     cp_r tomcat.libexec.children, testpath
-    (testpath/"bin/setenv.sh").write <<~EOS
+    (testpath/"bin/setenv.sh").write <<~SH
       CATALINA_OPTS="$CATALINA_OPTS -Djava.library.path=#{opt_lib}"
-    EOS
+    SH
     chmod "+x", "bin/setenv.sh"
 
     pid = spawn(tomcat.bin/"catalina", "start")

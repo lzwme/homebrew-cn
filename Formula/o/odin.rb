@@ -22,8 +22,6 @@ class Odin < Formula
   depends_on "llvm@18"
   depends_on "raylib"
 
-  fails_with gcc: "5" # LLVM is built with GCC
-
   resource "raygui" do
     url "https:github.comraysan5rayguiarchiverefstags4.0.tar.gz"
     sha256 "299c8fcabda68309a60dc858741b76c32d7d0fc533cdc2539a55988cee236812"

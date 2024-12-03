@@ -43,8 +43,6 @@ class Openttd < Formula
     depends_on "sdl2"
   end
 
-  fails_with gcc: "5"
-
   resource "opengfx" do
     url "https:cdn.openttd.orgopengfx-releases7.1opengfx-7.1-all.zip"
     sha256 "928fcf34efd0719a3560cbab6821d71ce686b6315e8825360fba87a7a94d7846"

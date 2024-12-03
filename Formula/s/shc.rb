@@ -30,11 +30,11 @@ class Shc < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SH
       #!binsh
       echo hello
       exit 0
-    EOS
+    SH
     system bin"shc", "-f", "test.sh", "-o", "test"
     assert_equal "hello", shell_output(".test").chomp
   end
