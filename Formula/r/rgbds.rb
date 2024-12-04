@@ -47,12 +47,12 @@ class Rgbds < Formula
 
   test do
     # Based on https:github.comrednexrgbdsblobHEADtestasmassert-const.asm
-    (testpath"source.asm").write <<~EOS
+    (testpath"source.asm").write <<~ASM
       SECTION "rgbasm passing asserts", ROM0[0]
       Label:
         db 0
         assert @
-    EOS
+    ASM
     system bin"rgbasm", "-o", "output.o", "source.asm"
     system bin"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
     system bin"rgbgfx", test_fixtures("test.png"), "-o", testpath"test.2bpp"

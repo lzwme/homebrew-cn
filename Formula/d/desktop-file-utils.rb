@@ -35,7 +35,7 @@ class DesktopFileUtils < Formula
   end
 
   test do
-    (testpath/"test.desktop").write <<~EOS
+    (testpath/"test.desktop").write <<~DESKTOP
       [Desktop Entry]
       Version=1.0
       Type=Application
@@ -55,7 +55,7 @@ class DesktopFileUtils < Formula
       Exec=fooview --create-new
       Name=Create a new Foo!
       Icon=fooview-new
-    EOS
+    DESKTOP
 
     system bin/"desktop-file-validate", "test.desktop"
   end

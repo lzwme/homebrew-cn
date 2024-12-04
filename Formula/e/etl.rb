@@ -1,18 +1,17 @@
 class Etl < Formula
   desc "Extensible Template Library"
   homepage "https:synfig.org"
-  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.2ETL-1.5.2.tar.gz"
-  mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.2ETL-1.5.2.tar.gz"
-  sha256 "98d428d4a2b3e3f17469d3da35d1f9f488c57cedbe6a934fee5c684c0ff4030f"
-  license "GPL-2.0-or-later"
+  url "https:github.comsynfigsynfigreleasesdownloadv1.5.3ETL-1.5.3.tar.gz"
+  sha256 "640f4d2cbcc1fb580028de8d23b530631c16e234018cefce33469170a41b06bf"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?ETL[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0c052b60f8a2e21a109351218fa2d1402f6bf28c66e1695f3aba77a26dc959b2"
+    sha256 cellar: :any_skip_relocation, all: "3c63ed72c0400281f0b83a9db3437aa84426d37f482feaf4dcf2c9accc70caf6"
   end
 
   depends_on "pkgconf" => :build
@@ -28,11 +27,14 @@ class Etl < Formula
 
   test do
     (testpath"test.cpp").write <<~CPP
-      #include <ETLmisc>
-      int main(int argc, char *argv[])
+      #include <iostream>
+      #include <ETLetl_profile.h>
+
+      int main()
       {
-        int rv = etl::ceil_to_int(5.5);
-        return 6 - rv;
+        std::cout << "ETL Name: " << ETL_NAME << std::endl;
+        std::cout << "ETL Version: " << ETL_VERSION << std::endl;
+        return 0;
       }
     CPP
     flags = %W[
@@ -40,7 +42,9 @@ class Etl < Formula
       -lpthread
     ]
     system ENV.cxx, "test.cpp", "-o", "test", *flags
-    system ".test"
+    output = shell_output(".test")
+    assert_match "ETL", output
+    assert_match version.to_s, output
   end
 end
 

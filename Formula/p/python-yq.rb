@@ -53,11 +53,11 @@ class PythonYq < Formula
   end
 
   test do
-    input = <<~EOS
+    input = <<~YAML
       foo:
        bar: 1
        baz: {bat: 3}
-    EOS
+    YAML
     expected = <<~EOS
       3
       ...

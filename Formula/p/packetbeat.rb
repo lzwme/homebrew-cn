@@ -40,7 +40,7 @@ class Packetbeat < Formula
       prefix.install "_metakibana"
     end
 
-    (bin"packetbeat").write <<~EOS
+    (bin"packetbeat").write <<~SH
       #!binsh
       exec #{libexec}binpacketbeat \
         --path.config #{etc}packetbeat \
@@ -48,7 +48,7 @@ class Packetbeat < Formula
         --path.home #{prefix} \
         --path.logs #{var}logpacketbeat \
         "$@"
-    EOS
+    SH
 
     chmod 0555, bin"packetbeat" # generate_completions_from_executable fails otherwise
     generate_completions_from_executable(bin"packetbeat", "completion", shells: [:bash, :zsh])

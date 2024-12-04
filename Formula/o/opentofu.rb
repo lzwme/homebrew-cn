@@ -26,7 +26,7 @@ class Opentofu < Formula
 
   test do
     minimal = testpath"minimal.tf"
-    minimal.write <<~EOS
+    minimal.write <<~HCL
       variable "aws_region" {
         default = "us-west-2"
       }
@@ -52,7 +52,7 @@ class Opentofu < Formula
         ami           = var.aws_amis[var.aws_region]
         count         = 4
       }
-    EOS
+    HCL
 
     system bin"tofu", "init"
     system bin"tofu", "graph"

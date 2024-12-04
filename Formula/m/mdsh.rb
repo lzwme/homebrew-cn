@@ -26,7 +26,7 @@ class Mdsh < Formula
   test do
     (testpath"README.md").write "`$ seq 4 | sort -r`"
     system bin"mdsh"
-    assert_equal <<~EOS.strip, (testpath"README.md").read
+    assert_equal <<~MARKDOWN.strip, (testpath"README.md").read
       `$ seq 4 | sort -r`
 
       ```
@@ -35,7 +35,7 @@ class Mdsh < Formula
       2
       1
       ```
-    EOS
+    MARKDOWN
 
     assert_match version.to_s, shell_output("#{bin}mdsh --version")
   end

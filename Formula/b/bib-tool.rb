@@ -28,7 +28,7 @@ class BibTool < Formula
   end
 
   test do
-    (testpath"test.bib").write <<~EOS
+    (testpath"test.bib").write <<~BIBTEX
       @article{Homebrew,
           title   = {Something},
           author  = {Someone},
@@ -37,7 +37,7 @@ class BibTool < Formula
           number  = {2},
           pages   = {3--4}
       }
-    EOS
+    BIBTEX
 
     system bin"bibtool", "test.bib"
   end

@@ -33,13 +33,13 @@ class Solhint < Formula
       }
     EOS
 
-    (testpath/"test.sol").write <<~EOS
+    (testpath/"test.sol").write <<~SOLIDITY
       pragma solidity ^0.4.0;
       contract Test {
         function test() {
         }
       }
-    EOS
+    SOLIDITY
     assert_match "error  Code contains empty blocks  no-empty-blocks",
       shell_output("#{bin}/solhint --config #{test_config} test.sol 2>&1", 1)
   end

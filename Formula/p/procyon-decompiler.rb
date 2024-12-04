@@ -18,14 +18,14 @@ class ProcyonDecompiler < Formula
   end
 
   test do
-    fixture = <<~EOS
+    fixture = <<~JAVA
       class T
       {
           public static void main(final String[] array) {
               System.out.println("Hello World!");
           }
       }
-    EOS
+    JAVA
 
     (testpath"T.java").write fixture
     system Formula["openjdk@21"].bin"javac", "T.java"

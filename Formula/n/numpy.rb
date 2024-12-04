@@ -50,12 +50,12 @@ class Numpy < Formula
   test do
     pythons.each do |python|
       python3 = python.opt_libexec"binpython"
-      system python3, "-c", <<~EOS
+      system python3, "-c", <<~PYTHON
         import numpy as np
         t = np.ones((3,3), int)
         assert t.sum() == 9
         assert np.dot(t, t).sum() == 27
-      EOS
+      PYTHON
     end
   end
 end

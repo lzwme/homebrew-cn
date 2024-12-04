@@ -47,7 +47,7 @@ class Bibclean < Formula
   end
 
   test do
-    (testpath/"test.bib").write <<~EOS
+    (testpath/"test.bib").write <<~BIBTEX
       @article{small,
       author = {Test, T.},
       title = {Test},
@@ -55,7 +55,7 @@ class Bibclean < Formula
       year = 2014,
       note = {test},
       }
-    EOS
+    BIBTEX
 
     system bin/"bibclean", "test.bib"
   end

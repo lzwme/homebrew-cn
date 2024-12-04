@@ -41,13 +41,12 @@ class Gping < Formula
     require "pty"
     require "ioconsole"
 
-    r, w, = PTY.spawn("#{bin}gping google.com")
-    r.winsize = [80, 130]
-    sleep 10
-    w.write "q"
+    PTY.spawn(bin"gping", "google.com") do |r, w, _pid|
+      r.winsize = [80, 130]
+      sleep 10
+      w.write "q"
 
-    begin
-      screenlog = r.read
+      screenlog = r.read_nonblock(1024)
       # remove ANSI colors
       screenlog.encode!("UTF-8", "binary",
         invalid: :replace,
@@ -56,8 +55,6 @@ class Gping < Formula
       screenlog.gsub!(\e\[([;\d]+)?m, "")
 
       assert_match "google.com (", screenlog
-    rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
     end
   end
 end

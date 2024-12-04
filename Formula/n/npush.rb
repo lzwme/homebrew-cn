@@ -32,9 +32,9 @@ class Npush < Formula
     inreplace "Makefile", "$(PROGRAM) $(OBJECTS)", "$(PROGRAM) $(OBJECTS) -lncurses" unless OS.mac?
     system "make"
     pkgshare.install ["npush", "levels"]
-    (bin/"npush").write <<~EOS
+    (bin/"npush").write <<~SH
       #!/bin/sh
       cd "#{pkgshare}" && exec ./npush $@
-    EOS
+    SH
   end
 end

@@ -6,14 +6,15 @@ class Bbot < Formula
   url "https:files.pythonhosted.orgpackages8b5bd3938f8601ca27cc395d4f586ea1c0acf1b8c766d79d217ff500983b3785bbot-2.2.0.tar.gz"
   sha256 "7b896a5aa62f8f9d7a0b73b713092d6e0e57c9b1668f712448640ccb22efdf4c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7f7fdcc1d43cbb49302bd826c89a66a1710e10732d037a111252bae8868870a"
-    sha256 cellar: :any,                 arm64_sonoma:  "44ebcf37d4a9e7a5737d92c69fdee0e63f13ac038eb9d97d61046e522eba534e"
-    sha256 cellar: :any,                 arm64_ventura: "55b679daea1e26e2c56174d96dc2b26d56203451434cc1da9884a4497ffda7a0"
-    sha256 cellar: :any,                 sonoma:        "45a77b1ddfccb330e9b63dc2ee966fea647663a2b9be6e912764a312f2958d0d"
-    sha256 cellar: :any,                 ventura:       "307602b6a00dae797d3102a878ab4ae8e0b954d266d9bc1fb641e43a513e17e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c1a411c601c73b7cc731e11218fcf1e737ec80733de3bf9096dc4af131a941"
+    sha256 cellar: :any,                 arm64_sequoia: "a8fc3ef498d21ba8e5d11e4e78eb17c7626b23dbd46a0d9e354a73ab99236823"
+    sha256 cellar: :any,                 arm64_sonoma:  "740b6e0b27c3793badf278349595175b1b68b14ca531376b3bccde0d0a1ee74c"
+    sha256 cellar: :any,                 arm64_ventura: "aa807cc00c0a495bb11ac365fb328e586df9f0a9fc8f8ffcf38ab4b93c30ee23"
+    sha256 cellar: :any,                 sonoma:        "93e0abc04071ce23b8104df8787505ed5b39bfe8d62ff8d1d540e79b87ba5a58"
+    sha256 cellar: :any,                 ventura:       "aeec81a7efb74ed52d156b17fcbcbce96f5395e7cc18dd420665ee56cd38552a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f27c191ad4c979d7bc4e25472caa711273293287350f046d6113232d4d3f547"
   end
 
   depends_on "cmake" => :build
@@ -182,23 +183,23 @@ class Bbot < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
-    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
+    url "https:files.pythonhosted.orgpackages4186a03390cb12cf64e2a8df07c267f3eb8d5035e0f9a04bb20fb79403d2a00epydantic-2.10.2.tar.gz"
+    sha256 "2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
-    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
+    url "https:files.pythonhosted.orgpackagesa69f7de1f19b6aea45aeb441838782d68352e71bfa98ee6fa048d5041991b33epydantic_core-2.27.1.tar.gz"
+    sha256 "62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"
   end
 
   resource "pyjwt" do
-    url "https:files.pythonhosted.orgpackagesb505324952ded002de746f87b21066b9373080bb5058f64cf01c4d62784b8186pyjwt-2.10.0.tar.gz"
-    sha256 "7628a7eb7938959ac1b26e819a1df0fd3259505627b575e4bad6d08f76db695c"
+    url "https:files.pythonhosted.orgpackagese746bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-daemon" do
-    url "https:files.pythonhosted.orgpackages54cdd62884732e5d6ff6906234169d06338d53e37243c60cf73679c8942f9e42python_daemon-3.1.0.tar.gz"
-    sha256 "fdb621d7e5f46e74b4de1ad6b0fff6e69cd91b4f219de1476190ebdd0f4781df"
+    url "https:files.pythonhosted.orgpackages7b4f95ac1f941ae61fafba00b6c03a7ffa67aadcf33dfb9b63b95eec61867126python_daemon-3.1.1.tar.gz"
+    sha256 "a389d342aab7ac4c0e8397510af54ecb0d6919e2fced9bab7dd24f8c22265306"
   end
 
   resource "pyyaml" do
@@ -239,11 +240,6 @@ class Bbot < Formula
   resource "setproctitle" do
     url "https:files.pythonhosted.orgpackagesae4eb09341b19b9ceb8b4c67298ab4a08ef7a4abdd3016c7bb152e9b6379031dsetproctitle-1.3.4.tar.gz"
     sha256 "3b40d32a3e1f04e94231ed6dfee0da9e43b4f9c6b5450d53e6dd7754c34e0c50"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
-    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "sniffio" do

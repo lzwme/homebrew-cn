@@ -37,14 +37,14 @@ class Ninja < Formula
   end
 
   test do
-    (testpath"build.ninja").write <<~EOS
+    (testpath"build.ninja").write <<~NINJA
       cflags = -Wall
 
       rule cc
         command = gcc $cflags -c $in -o $out
 
       build foo.o: cc foo.c
-    EOS
+    NINJA
     system bin"ninja", "-t", "targets"
     port = free_port
     fork do

@@ -7,18 +7,19 @@ class AwsRotateKey < Formula
   head "https:github.comstefansundinaws-rotate-key.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a215e496204ec19a14b0c162b17f5bfa6a4bc0af37238d3c8fc7c88737b0461"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a215e496204ec19a14b0c162b17f5bfa6a4bc0af37238d3c8fc7c88737b0461"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a215e496204ec19a14b0c162b17f5bfa6a4bc0af37238d3c8fc7c88737b0461"
-    sha256 cellar: :any_skip_relocation, sonoma:        "411c5af053e3ad6e23196a054b04c98b1b17b247f4c4e02fbecbd6dd722667e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "411c5af053e3ad6e23196a054b04c98b1b17b247f4c4e02fbecbd6dd722667e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46dc80d32c322061ff4d64527cc0e9e01dbe12d6f9b015434f75e446d18c409f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51c9c9e83de0683c2a79db2c926ed216dd5801602bd2a7796386a64f0964d258"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51c9c9e83de0683c2a79db2c926ed216dd5801602bd2a7796386a64f0964d258"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "51c9c9e83de0683c2a79db2c926ed216dd5801602bd2a7796386a64f0964d258"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9430280fe49a0045dbb0664c3c29e8159e4716d87a33bc66a68cf2247a311219"
+    sha256 cellar: :any_skip_relocation, ventura:       "9430280fe49a0045dbb0664c3c29e8159e4716d87a33bc66a68cf2247a311219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c01910c4f482e31fa3f2980df4a370d7b7482ee199f16f47f2414d58ced1fc3"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

@@ -19,17 +19,17 @@ class Djhtml < Formula
 
   test do
     test_file = testpath"test.html"
-    test_file.write <<~EOF
+    test_file.write <<~HTML
       <html>
       <p>Hello, World!<p>
       <html>
-    EOF
+    HTML
 
-    expected_output = <<~EOF
+    expected_output = <<~HTML
       <html>
         <p>Hello, World!<p>
       <html>
-    EOF
+    HTML
 
     system bin"djhtml", "--tabwidth", "2", test_file
     assert_equal expected_output, test_file.read

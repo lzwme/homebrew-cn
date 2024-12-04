@@ -34,14 +34,14 @@ class ProtocGenGogo < Formula
 
   test do
     protofile = testpath"proto3.proto"
-    protofile.write <<~EOS
+    protofile.write <<~PROTO
       syntax = "proto3";
       package proto3;
       message Request {
         string name = 1;
         repeated int64 key = 2;
       }
-    EOS
+    PROTO
     system "protoc", "--gogo_out=.", "proto3.proto"
     assert_predicate testpath"proto3.pb.go", :exist?
     refute_predicate (testpath"proto3.pb.go").size, :zero?

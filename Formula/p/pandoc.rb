@@ -30,16 +30,16 @@ class Pandoc < Formula
   end
 
   test do
-    input_markdown = <<~EOS
+    input_markdown = <<~MARKDOWN
       # Homebrew
 
       A package manager for humans. Cats should take a look at Tigerbrew.
-    EOS
-    expected_html = <<~EOS
+    MARKDOWN
+    expected_html = <<~HTML
       <h1 id="homebrew">Homebrew<h1>
       <p>A package manager for humans. Cats should take a look at
       Tigerbrew.<p>
-    EOS
+    HTML
     assert_equal expected_html, pipe_output("#{bin}pandoc -f markdown -t html5", input_markdown)
   end
 end

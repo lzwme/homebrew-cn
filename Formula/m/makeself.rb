@@ -25,10 +25,10 @@ class Makeself < Formula
     source = testpath"source"
     source.mkdir
     (source"foo").write "bar"
-    (source"script.sh").write <<~EOS
+    (source"script.sh").write <<~SH
       #!binsh
       echo 'Hello Homebrew!'
-    EOS
+    SH
     chmod 0755, source"script.sh"
     system bin"makeself", source, "testfile.run", "'A test file'", ".script.sh"
     assert_match "Hello Homebrew!", shell_output(".testfile.run --target output")

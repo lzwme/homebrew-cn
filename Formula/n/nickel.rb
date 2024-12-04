@@ -28,9 +28,9 @@ class Nickel < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}nickel --version")
 
-    (testpath"program.ncl").write <<~EOS
+    (testpath"program.ncl").write <<~NICKEL
       let s = "world" in "Hello, " ++ s
-    EOS
+    NICKEL
 
     output = shell_output("#{bin}nickel eval program.ncl")
     assert_match "Hello, world", output

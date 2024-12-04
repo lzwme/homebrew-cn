@@ -1,9 +1,9 @@
 class GoAT122 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.22.9.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.22.9.src.tar.gz"
-  sha256 "e81a362f51aee2125722b018e46714e6a055a1954283414c0f937e737013db22"
+  url "https://go.dev/dl/go1.22.10.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.22.10.src.tar.gz"
+  sha256 "1e94fd48be750d1fafb4d9b3b6dd31a6e9d2735d339bf2462bc97b64ca4c1037"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,12 +20,12 @@ class GoAT122 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "985b6fb1f6492383c99e19d95b33d12e6d221987f17098ff3537e724c62e395f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c09d53e4d01f9498120d18ae866304547b4ca6abadf250e337a993499b9bd13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea3e4773f62f3db051806fd5d8aac169e5af9b3e9e9c4b3d99b401b65df915d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc92d8991effaeb1052fab4776c3d97d925a5875a7cd6e8e6a80c3fd2cd38808"
-    sha256 cellar: :any_skip_relocation, ventura:       "bf3bbc9a6a8d61268f68f8023235320920a247a5a6d0b4b78a3f4653fd187da1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b7a3d72702cd20ea9cd94562f0e8c9d84109255602e01038b5833716b17f67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4cb518c163fdc3aa489b279578d1732664af9a491314f091a1548c0e0c79fa0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3925f6b9cf1e61d516ae5d0db73348e59fe446a6083d469166598881f8368c1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be8d96dab00981fe6c7cb541677afd4d2b4cf5e51cdeca67a49b3fca89177680"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8bb956d6c479674f9ac509e51638223a4a415985cbd8f935661473c2c2e30967"
+    sha256 cellar: :any_skip_relocation, ventura:       "27e045d92b19fd6fb2cc853162ed9799351a521c2fba549de8b1dae2876a34e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8425571caba6e73914d727cb021a47d7f67ea588595b6c1c7a23d27559d9ef8e"
   end
 
   keg_only :versioned_formula

@@ -34,10 +34,10 @@ class NodeExporter < Formula
 
     touch etc/"node_exporter.args"
 
-    (bin/"node_exporter_brew_services").write <<~EOS
+    (bin/"node_exporter_brew_services").write <<~BASH
       #!/bin/bash
       exec #{bin}/node_exporter $(<#{etc}/node_exporter.args)
-    EOS
+    BASH
   end
 
   def caveats

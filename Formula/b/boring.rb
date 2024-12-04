@@ -37,13 +37,13 @@ class Boring < Formula
     assert_predicate test_config, :exist?
 
     # now add an example tunnel and check that it is parsed correctly
-    test_config.write <<~EOF, mode: "a+"
+    test_config.write <<~TOML, mode: "a+"
       [[tunnels]]
       name = "dev"
       local = "9000"
       remote = "localhost:9000"
       host = "dev-server"
-    EOF
+    TOML
     output = shell_output("#{bin}boring list")
     assert_match "dev   9000   ->  localhost:9000  dev-server", output
   end

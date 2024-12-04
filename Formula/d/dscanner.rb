@@ -38,13 +38,13 @@ class Dscanner < Formula
   end
 
   test do
-    (testpath"test.d").write <<~EOS
+    (testpath"test.d").write <<~D
       import std.stdio;
       void main(string[] args)
       {
         writeln("Hello World");
       }
-    EOS
+    D
 
     assert_match(test.d:\t28\ntotal:\t28\n, shell_output("#{bin}dscanner --tokenCount test.d"))
   end

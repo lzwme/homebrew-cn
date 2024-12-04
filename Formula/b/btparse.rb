@@ -34,7 +34,7 @@ class Btparse < Formula
   end
 
   test do
-    (testpath/"test.bib").write <<~EOS
+    (testpath/"test.bib").write <<~BIBTEX
       @article{mxcl09,
         title={{H}omebrew},
         author={{H}owell, {M}ax},
@@ -43,7 +43,7 @@ class Btparse < Formula
         page={42},
         year={2009}
       }
-    EOS
+    BIBTEX
 
     system bin/"bibparse", "-check", "test.bib"
   end

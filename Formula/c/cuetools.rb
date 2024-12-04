@@ -41,11 +41,11 @@ class Cuetools < Formula
   end
 
   test do
-    (testpath"test.cue").write <<~EOS
+    (testpath"test.cue").write <<~CUE
       FILE "sampleimage.bin" BINARY
         TRACK 01 MODE12352
           INDEX 01 00:00:00
-    EOS
+    CUE
     system bin"cueconvert", testpath"test.cue", testpath"test.toc"
     assert_predicate testpath"test.toc", :exist?
   end

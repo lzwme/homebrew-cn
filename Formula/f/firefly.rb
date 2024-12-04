@@ -12,23 +12,25 @@ class Firefly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "943dbc946523546a3c4b775a6373d290993c8d0bd07e0d0381e1cc4e77cf81ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd0f8daa3f920d243b7b392cb5da1fc85e81b815b552986aed651022aa049108"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "678aa4fdcc452e75b65e81bba862e72be253acfa98d2ff32cd821dd150427457"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fcc22601d4581cbe07d0fb4be06d86de7315cfbf4a309b4f279cb62ff8f81e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "45e9c74fb60e7347f00f85041af876938a17c569eaf01e51718f925e02da8165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79948f373e847c8d3ac8c2ae65fe5b2832a5d0e29ca307a4bd6b4cbd40b40df1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44628813a1cb58358500b2c8ee071d4d75744b35aae40dbed47c90899b91ccc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "782a3f0b9cc91772c7fa488a8759035c88fea56c6be33b643976233375694c40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "193d5ff64fa0ba56a7ed48b9b9cd8120a36a546c824a8d701c157fa9cdf9e682"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70856574a48c873544469327015b3f382464deff91c5d84c0b96addeb686d127"
+    sha256 cellar: :any_skip_relocation, ventura:       "67d4e4ff32859a58003a7b99c983d3024644688c8e75ea07be39635bb6701c62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35a5fbde29e80405e4f9c6e47a241505b70ab03b2e51f280ba07fff976ca155b"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
+      -s -w
       -X github.comhyperledgerfirefly-clicmd.BuildDate=#{Time.now.utc.iso8601}
       -X github.comhyperledgerfirefly-clicmd.BuildCommit=#{tap.user}
       -X github.comhyperledgerfirefly-clicmd.BuildVersionOverride=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), "ffmain.go"
+    system "go", "build", *std_go_args(ldflags:), ".ff"
 
     generate_completions_from_executable(bin"firefly", "completion")
   end

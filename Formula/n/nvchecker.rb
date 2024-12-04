@@ -53,11 +53,11 @@ class Nvchecker < Formula
 
   test do
     file = testpath"example.toml"
-    file.write <<~EOS
+    file.write <<~TOML
       [nvchecker]
       source = "pypi"
       pypi = "nvchecker"
-    EOS
+    TOML
 
     out = shell_output("#{bin}nvchecker -c #{file} --logger=json | jq '.[\"version\"]' ").strip
     assert_equal "\"#{version}\"", out

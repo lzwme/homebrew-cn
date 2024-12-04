@@ -7,12 +7,13 @@ class ChiselTunnel < Formula
   head "https:github.comjpillorachisel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b397a8a01fc38a83f555b0f13e7ff9a35aebb841429fc2fd3b3eac677a710c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b397a8a01fc38a83f555b0f13e7ff9a35aebb841429fc2fd3b3eac677a710c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b397a8a01fc38a83f555b0f13e7ff9a35aebb841429fc2fd3b3eac677a710c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c340b49c0b6562f7b6e27750cb5ae2b0e693a9705277a7e6b0294c51044effa6"
-    sha256 cellar: :any_skip_relocation, ventura:       "c340b49c0b6562f7b6e27750cb5ae2b0e693a9705277a7e6b0294c51044effa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "636bb604a3dc5845c89843386b4ef6c877f72110c3099403471239a6fbd1e0ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ab3b695c06c0f9228bfd895ef79863a8e78a6b68e96b06774e703ac9075bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05ab3b695c06c0f9228bfd895ef79863a8e78a6b68e96b06774e703ac9075bd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "05ab3b695c06c0f9228bfd895ef79863a8e78a6b68e96b06774e703ac9075bd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6320979297527ca632fa428271fa3519e3382e90c6d02a6bc1fd8c0886d23ae8"
+    sha256 cellar: :any_skip_relocation, ventura:       "6320979297527ca632fa428271fa3519e3382e90c6d02a6bc1fd8c0886d23ae8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7957fcca28005c5d81736033b68312872485b673a1e01ec53d1c7e98b11050b"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,8 @@ class ChiselTunnel < Formula
   conflicts_with "chisel", because: "both install `chisel` binaries"
 
   def install
-    system "go", "build", *std_go_args(output: bin"chisel", ldflags: "-X github.comjpillorachiselshare.BuildVersion=v#{version}")
+    ldflags = "-s -w -X github.comjpillorachiselshare.BuildVersion=v#{version}"
+    system "go", "build", *std_go_args(ldflags:, output: bin"chisel")
   end
 
   test do

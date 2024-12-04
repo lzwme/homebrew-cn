@@ -26,7 +26,7 @@ class StylishHaskell < Formula
   end
 
   test do
-    (testpath"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~HASKELL
       {-# LANGUAGE ViewPatterns, TemplateHaskell #-}
       {-# LANGUAGE GeneralizedNewtypeDeriving,
                   ViewPatterns,
@@ -39,8 +39,8 @@ class StylishHaskell < Formula
 
       import qualified Data.Map as M
       import      Data.Map    ((!), keys, Map)
-    EOS
-    expected = <<~EOS
+    HASKELL
+    expected = <<~HASKELL
       {-# LANGUAGE GeneralizedNewtypeDeriving #-}
       {-# LANGUAGE ScopedTypeVariables        #-}
       {-# LANGUAGE TemplateHaskell            #-}
@@ -52,7 +52,7 @@ class StylishHaskell < Formula
 
       import           Data.Map            (Map, keys, (!))
       import qualified Data.Map            as M
-    EOS
+    HASKELL
     assert_equal expected, shell_output("#{bin}stylish-haskell test.hs")
   end
 end

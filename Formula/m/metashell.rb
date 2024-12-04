@@ -50,10 +50,10 @@ class Metashell < Formula
   end
 
   test do
-    (testpath"test.hpp").write <<~EOS
+    (testpath"test.hpp").write <<~CPP
       template <class T> struct add_const { using type = const T; };
       add_const<int>::type
-    EOS
+    CPP
     output = pipe_output("#{bin}metashell -H", (testpath"test.hpp").read)
     assert_match "const int", output
   end

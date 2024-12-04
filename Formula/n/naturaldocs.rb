@@ -30,10 +30,10 @@ class Naturaldocs < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
     libexec.install Dir["*"]
-    (bin/"naturaldocs").write <<~EOS
+    (bin/"naturaldocs").write <<~BASH
       #!/bin/bash
       mono #{libexec}/NaturalDocs.exe "$@"
-    EOS
+    BASH
 
     libexec.install_symlink etc/"naturaldocs" => "config"
 

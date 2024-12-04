@@ -28,14 +28,14 @@ class Bindgen < Formula
   end
 
   test do
-    (testpath"cool.h").write <<~EOS
+    (testpath"cool.h").write <<~C
       typedef struct CoolStruct {
           int x;
           int y;
       } CoolStruct;
 
       void cool_function(int i, char c, CoolStruct* cs);
-    EOS
+    C
 
     output = shell_output("#{bin}bindgen cool.h")
     assert_match "pub struct CoolStruct", output

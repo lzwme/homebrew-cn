@@ -22,18 +22,18 @@ class Stylelint < Formula
   end
 
   test do
-    (testpath/".stylelintrc").write <<~EOS
+    (testpath/".stylelintrc").write <<~JSON
       {
         "rules": {
           "block-no-empty": true
         }
       }
-    EOS
+    JSON
 
-    (testpath/"test.css").write <<~EOS
+    (testpath/"test.css").write <<~CSS
       a {
       }
-    EOS
+    CSS
 
     output = shell_output("#{bin}/stylelint test.css 2>&1", 2)
     assert_match "Unexpected empty block", output

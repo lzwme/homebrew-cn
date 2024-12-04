@@ -22,7 +22,7 @@ class Kanata < Formula
   end
 
   test do
-    minimal_config = <<-CFG
+    (testpath"kanata.kbd").write <<~LISP
       (defsrc
         caps grv         i
                     j    k    l
@@ -45,9 +45,8 @@ class Kanata < Formula
         cap (tap-hold-press 200 200 caps lctl)
         grv (tap-hold-press 200 200 grv (layer-toggle arrows))
       )
-    CFG
+    LISP
 
-    (testpath"kanata.kbd").write(minimal_config)
     system bin"kanata", "--check"
   end
 end

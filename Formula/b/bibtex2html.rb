@@ -47,7 +47,7 @@ class Bibtex2html < Formula
   end
 
   test do
-    (testpath"test.bib").write <<~EOS
+    (testpath"test.bib").write <<~BIBTEX
       @article{Homebrew,
           title   = {Something},
           author  = {Someone},
@@ -56,7 +56,7 @@ class Bibtex2html < Formula
           number  = {2},
           pages   = {3--4}
       }
-    EOS
+    BIBTEX
 
     system bin"bib2bib", "test.bib", "--remove", "pages", "-ob", "out.bib"
     assert(pages\s*=\s*\{3--4\} !~ File.read("out.bib"))

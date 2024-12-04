@@ -7,18 +7,20 @@ class Conftest < Formula
   head "https:github.comopen-policy-agentconftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "162ac301c9dbd984bf2e6d9b70d12fa4dc3c925c62eced93f7a46569075198bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162ac301c9dbd984bf2e6d9b70d12fa4dc3c925c62eced93f7a46569075198bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "162ac301c9dbd984bf2e6d9b70d12fa4dc3c925c62eced93f7a46569075198bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84d97ed2be57732f4453e95b0d2aa03901a17531f5188b2dcb79194250db17a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "84d97ed2be57732f4453e95b0d2aa03901a17531f5188b2dcb79194250db17a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bf2ee72203526349f54f6afca6be6fc393d568e4cc51de1a234437be8ee6eb8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c64f5c8a968bf6ab500243b6667540a2ed3b5e2180ac3a37ccf5772caedf4d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c64f5c8a968bf6ab500243b6667540a2ed3b5e2180ac3a37ccf5772caedf4d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c64f5c8a968bf6ab500243b6667540a2ed3b5e2180ac3a37ccf5772caedf4d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "471db4756b576675f4a0a65ec595c14e833cefaca970afc7e1b493af21780e92"
+    sha256 cellar: :any_skip_relocation, ventura:       "471db4756b576675f4a0a65ec595c14e833cefaca970afc7e1b493af21780e92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84f2eba2ce487f5f52a63a98b2f6064bb7acc83a687878927752af8ced89ed5f"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X github.comopen-policy-agentconftestinternalcommands.version=#{version}")
+    ldflags = "-s -w -X github.comopen-policy-agentconftestinternalcommands.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"conftest", "completion")
   end

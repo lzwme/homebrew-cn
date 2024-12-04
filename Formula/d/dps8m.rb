@@ -38,7 +38,7 @@ class Dps8m < Formula
   end
 
   test do
-    (testpath/"test.exp").write <<~EOS
+    (testpath/"test.exp").write <<~EXPECT
       spawn #{bin}/dps8 -t
       set timeout 30
       expect {
@@ -56,7 +56,7 @@ class Dps8m < Formula
         timeout { exit 3 }
         eof
       }
-    EOS
+    EXPECT
     system("expect", "-f", "test.exp")
   end
 end

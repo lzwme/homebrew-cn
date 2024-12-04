@@ -34,7 +34,7 @@ class ContainerStructureTest < Formula
       sha256 "ab5088c314316f39ff1d1a452b486141db40813351731ec8d5300db3eb35a316"
     end
 
-    (testpath"test.yml").write <<~EOF
+    (testpath"test.yml").write <<~YAML
       schemaVersion: "2.0.0"
 
       fileContentTests:
@@ -48,7 +48,7 @@ class ContainerStructureTest < Formula
           path: bintest
           shouldExist: yes
           permissions: '-rwxr-xr-x'
-    EOF
+    YAML
 
     args = %w[
       --driver tar

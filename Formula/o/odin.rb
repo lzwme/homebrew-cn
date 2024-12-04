@@ -104,16 +104,16 @@ class Odin < Formula
     args << "ODIN_VERSION=dev-#{version}" unless build.head?
     system "make", "release", *args
     libexec.install "odin", "core", "shared", "base", "vendor"
-    (bin"odin").write <<~EOS
+    (bin"odin").write <<~BASH
       #!binbash
       export PATH="#{llvm.opt_bin}:$PATH"
       exec -a odin "#{libexec}odin" "$@"
-    EOS
+    BASH
     pkgshare.install "examples"
   end
 
   test do
-    (testpath"hellope.odin").write <<~EOS
+    (testpath"hellope.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -121,11 +121,11 @@ class Odin < Formula
       main :: proc() {
         fmt.println("Hellope!");
       }
-    EOS
+    ODIN
     system bin"odin", "build", "hellope.odin", "-file"
     assert_equal "Hellope!\n", shell_output(".hellope")
 
-    (testpath"miniaudio.odin").write <<~EOS
+    (testpath"miniaudio.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -136,10 +136,10 @@ class Odin < Formula
         assert(len(ver) > 0)
         fmt.println(ver)
       }
-    EOS
+    ODIN
     system bin"odin", "run", "miniaudio.odin", "-file"
 
-    (testpath"raylib.odin").write <<~EOS
+    (testpath"raylib.odin").write <<~ODIN
       package main
 
       import rl "vendor:raylib"
@@ -152,7 +152,7 @@ class Odin < Formula
         num := rl.GetRandomValue(42, 1337)
         assert(42 <= num && num <= 1337)
       }
-    EOS
+    ODIN
     system bin"odin", "run", "raylib.odin", "-file"
 
     if OS.mac?
@@ -160,7 +160,7 @@ class Odin < Formula
         "-define:RAYLIB_SHARED=true", "-define:RAYGUI_SHARED=true"
     end
 
-    (testpath"glfw.odin").write <<~EOS
+    (testpath"glfw.odin").write <<~ODIN
       package main
 
       import "core:fmt"
@@ -169,7 +169,7 @@ class Odin < Formula
       main :: proc() {
         fmt.println(glfw.GetVersion())
       }
-    EOS
+    ODIN
     ENV.prepend_path "LD_LIBRARY_PATH", Formula["glfw"].lib if OS.linux?
     system bin"odin", "run", "glfw.odin", "-file", "-define:GLFW_SHARED=true",
       "-extra-linker-flags:\"-L#{Formula["glfw"].lib}\""

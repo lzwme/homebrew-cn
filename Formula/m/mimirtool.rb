@@ -37,7 +37,7 @@ class Mimirtool < Formula
     assert_match version.to_s, shell_output("#{bin}mimirtool version")
 
     # Check that the binary runs as expected by testing the 'rules check' command
-    test_rule = <<~EOF
+    test_rule = <<~YAML
       namespace: my_namespace
       groups:
         - name: example
@@ -45,7 +45,7 @@ class Mimirtool < Formula
           rules:
             - record: job_http_inprogress_requests_sum
               expr: sum by (job) (http_inprogress_requests)
-    EOF
+    YAML
 
     (testpath"rule.yaml").write(test_rule)
 

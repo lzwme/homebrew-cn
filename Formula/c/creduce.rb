@@ -137,11 +137,11 @@ class Creduce < Formula
         printf("%d\n", 0);
       }
     C
-    (testpath"test1.sh").write <<~C
+    (testpath"test1.sh").write <<~BASH
       #!usrbinenv bash
 
       #{ENV.cc} -Wall #{testpath}test1.c 2>&1 | grep 'Wimplicit-function-declaration'
-    C
+    BASH
 
     chmod 0755, testpath"test1.sh"
     system bin"creduce", "test1.sh", "test1.c"

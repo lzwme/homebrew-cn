@@ -42,13 +42,13 @@ class Dtools < Formula
   end
 
   test do
-    (testpath"hello.d").write <<~EOS
+    (testpath"hello.d").write <<~D
       import std.stdio;
       void main()
       {
         writeln("Hello world!");
       }
-    EOS
+    D
     assert_equal "Hello world!", shell_output("#{bin}rdmd #{testpath}hello.d").chomp
   end
 end

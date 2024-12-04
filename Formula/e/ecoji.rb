@@ -25,7 +25,6 @@ class Ecoji < Formula
     cd "cmd" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
-    # system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmd"
   end
 
   test do

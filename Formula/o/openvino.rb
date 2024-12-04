@@ -209,9 +209,9 @@ class Openvino < Formula
     system "cmake", "--build", testpath.to_s
     assert_equal "6", shell_output("#{testpath}openvino_frontends_test").strip
 
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import openvino.runtime as ov
       assert '#{version}' in ov.__version__
-    EOS
+    PYTHON
   end
 end

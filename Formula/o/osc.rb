@@ -46,7 +46,7 @@ class Osc < Formula
     test_config = testpath"oscrc"
     ENV["OSC_CONFIG"] = test_config
 
-    test_config.write <<~EOS
+    test_config.write <<~INI
       [general]
       apiurl = https:api.opensuse.org
 
@@ -54,7 +54,7 @@ class Osc < Formula
       credentials_mgr_class=osc.credentials.TransientCredentialsManager
       user=brewtest
       pass=
-    EOS
+    INI
 
     output = shell_output("#{bin}osc status 2>&1", 1).chomp
     assert_match "Directory '.' is not a working copy", output

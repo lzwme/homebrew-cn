@@ -27,14 +27,14 @@ class Slides < Formula
   end
 
   test do
-    (testpath"test.md").write <<-MARKDOWN
-    # Slide 1
-    Content
+    (testpath"test.md").write <<~MARKDOWN
+      # Slide 1
+      Content
 
-    ---
+      ---
 
-    # Slide 2
-    More Content
+      # Slide 2
+      More Content
     MARKDOWN
 
     # Bubbletea-based apps are hard to test even under PTY.spawn (or via
@@ -42,13 +42,10 @@ class Slides < Formula
     # "<ESC>[6n" to report the cursor position. For now we just run the command
     # for a second and see that it tried to send some ANSI out of it.
     require "pty"
-    r, _, pid = PTY.spawn "#{bin}slides test.md"
-    sleep 1
-    Process.kill("TERM", pid)
-    begin
-      assert_match(\e\[, r.read)
-    rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+    PTY.spawn(bin"slides", "test.md") do |r, _, pid|
+      sleep 1
+      Process.kill("TERM", pid)
+      assert_match(\e\[, r.read_nonblock(1024))
     end
   end
 end

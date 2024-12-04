@@ -45,11 +45,11 @@ class Mise < Formula
     generate_completions_from_executable(bin"mise", "completion")
     lib.mkpath
     touch lib".disable-self-update"
-    (share"fish""vendor_conf.d""mise-activate.fish").write <<~EOS
+    (share"fish""vendor_conf.d""mise-activate.fish").write <<~FISH
       if [ "$MISE_FISH_AUTO_ACTIVATE" != "0" ]
         #{opt_bin}mise activate fish | source
       end
-    EOS
+    FISH
   end
 
   def caveats

@@ -35,11 +35,11 @@ class SaltLint < Formula
   end
 
   test do
-    (testpath"test.sls").write <<~EOS
+    (testpath"test.sls").write <<~YAML
       tmptestfile:
         file.managed:
             - source: salt:{{unspaced_var}}example
-    EOS
+    YAML
     out = shell_output("#{bin}salt-lint #{testpath}test.sls", 2)
     assert_match "[206] Jinja variables should have spaces before and after: '{{ var_name }}'", out
   end

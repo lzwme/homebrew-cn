@@ -26,9 +26,9 @@ class Statix < Formula
   end
 
   test do
-    (testpath"test.nix").write <<~EOS
+    (testpath"test.nix").write <<~NIX
       github:oppiliappanstatix
-    EOS
+    NIX
     assert_match "Found unquoted URI expression", shell_output("#{bin}statix check test.nix", 1)
 
     system bin"statix", "fix", "test.nix"

@@ -76,10 +76,10 @@ class Pyqt < Formula
       next if r.name == "pyqt6-webengine" && OS.mac? && DevelopmentTools.clang_build_version <= 1200
 
       r.stage do
-        inreplace "pyproject.toml", "[tool.sip.project]", <<~EOS
+        inreplace "pyproject.toml", "[tool.sip.project]", <<~TOML
           [tool.sip.project]
           sip-include-dirs = ["#{site_packages}/PyQt#{version.major}/bindings"]
-        EOS
+        TOML
         system sip_install, "--target-dir", site_packages
       end
     end

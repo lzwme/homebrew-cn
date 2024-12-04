@@ -2,24 +2,22 @@ class Synfig < Formula
   desc "Command-line renderer"
   homepage "https:synfig.org"
   # TODO: Update livecheck to track only stable releases when 1.6.x is available.
-  url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.2sourcesynfig-1.5.2.tar.gz"
-  mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.2synfig-1.5.2.tar.gz"
-  sha256 "0a7cff341eb0bcd31725996ad70c1461ce5ddb3c3ee9f899abeb4a3e77ab420e"
+  url "https:github.comsynfigsynfigreleasesdownloadv1.5.3synfig-1.5.3.tar.gz"
+  sha256 "913c9cee6e5ad8fd6db3b3607c5b5ae0312f9ee6720c60619e3a97da98501ea8"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comsynfigsynfig.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?synfig[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 arm64_sonoma:  "cf897c7b4ca90d3b11d4280d4c9f87792e47c331de1a8ae8f2dc8b7e77364a6f"
-    sha256 arm64_ventura: "8a4aa8b68252349f620914abe3d341c5a096fd76a8987a3187ee7b014e45b54e"
-    sha256 sonoma:        "5a683d57ebd562483d473d9355e502a01e06d62e97b17de7c7cee471a0347fdb"
-    sha256 ventura:       "16e823e3f072aaaf8889377bf704702445677555e2850080d1f5a2a21af18fc3"
-    sha256 x86_64_linux:  "7333419b778418bcbd3300a5f6d72bc69e8eaf429addb58dd450d34355b1df6d"
+    sha256                               arm64_sonoma:  "a34f714cd0675cdaf0770cf662de92fab119890831b8e806584594e07a36abbe"
+    sha256                               arm64_ventura: "6d5e945bb683d8a2a053950136bf5b6a45831a9239e8b513c334ef6be3ad3115"
+    sha256                               sonoma:        "d912728bb8c9e5c0f0b2b7c85a38aec545d342c217c518ed8d424ba05c7998f4"
+    sha256                               ventura:       "6949dc5c8e91eb8726237619c4e45272ac0a8fc99a0baa77260081bc46fdd772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b865dde889776e10d50939b7243452c5ecd9981412a0101e6c82e40e2bd45c35"
   end
 
   depends_on "autoconf" => :build

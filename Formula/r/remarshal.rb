@@ -79,16 +79,16 @@ class Remarshal < Formula
 
   test do
     json = "{\"foo.bar\":\"baz\",\"qux\":1}"
-    yaml = <<~EOS.chomp
+    yaml = <<~YAML.chomp
       foo.bar: baz
       qux: 1
 
-    EOS
-    toml = <<~EOS.chomp
+    YAML
+    toml = <<~TOML.chomp
       "foo.bar" = "baz"
       qux = 1
 
-    EOS
+    TOML
     assert_equal yaml, pipe_output("#{bin}remarshal -if=json -of=yaml", json)
     assert_equal yaml, pipe_output("#{bin}json2yaml", json)
     assert_equal toml, pipe_output("#{bin}remarshal -if=yaml -of=toml", yaml)

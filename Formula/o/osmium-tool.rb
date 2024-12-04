@@ -34,7 +34,7 @@ class OsmiumTool < Formula
   end
 
   test do
-    (testpath"test.osm").write <<~EOS
+    (testpath"test.osm").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <osm version="0.6" generator="handwritten">
         <node id="1" lat="0.001" lon="0.001" user="Dummy User" uid="1" version="1" changeset="1" timestamp="2015-11-01T19:00:00Z"><node>
@@ -49,7 +49,7 @@ class OsmiumTool < Formula
           <member type="way" ref="1" role="">
         <relation>
       <osm>
-    EOS
+    XML
     output = shell_output("#{bin}osmium fileinfo test.osm")
     assert_match(Compression.+generator=handwrittenm, output)
     system bin"osmium", "tags-filter", "test.osm", "wname=line", "-f", "osm"

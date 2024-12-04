@@ -34,10 +34,10 @@ class Daemonize < Formula
     dummy_script_file = testpath"script.sh"
     output_file = testpath"outputfile.txt"
     pid_file = testpath"pidfile.txt"
-    dummy_script_file.write <<~EOS
+    dummy_script_file.write <<~SH
       #!binsh
       echo "#{version}" >> "#{output_file}"
-    EOS
+    SH
     chmod 0700, dummy_script_file
     system "#{sbin}daemonize", "-p", pid_file, dummy_script_file
     assert_predicate pid_file, :exist?,

@@ -21,7 +21,7 @@ class NlohmannJson < Formula
   end
 
   test do
-    (testpath"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~CPP
       #include <iostream>
       #include <nlohmannjson.hpp>
 
@@ -39,12 +39,12 @@ class NlohmannJson < Formula
         };
         std::cout << j << std::endl;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "test.cc", "-I#{include}", "-std=c++11", "-o", "test"
-    std_output = <<~EOS
+    std_output = <<~JSON
       {"list":[1,0,2],"name":"Niels","object":{"happy":true,"nothing":null},"pi":3.141}
-    EOS
+    JSON
     assert_match std_output, shell_output(".test")
   end
 end

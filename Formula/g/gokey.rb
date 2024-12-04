@@ -7,21 +7,21 @@ class Gokey < Formula
   head "https:github.comcloudflaregokey.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65505988ee30e521ce2a597550d9c340048fde87b7a50940b5e12d634d7aeead"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ae5486ec1ab213ec6288012f1d9b3c71edaf8e384b314e7d2a09786606fda76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3213372d1b8e6a45657d9ca0c7f6e14bae6086f20c428f3146474260c5dcdaea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "979193bc7c66e5e0d14eae989218ee81585b896ada2051657eed4fa025c19b58"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0056b2877b3ae64ebaa2da2a03210110fbc75b6db707a642624e5edae500d04b"
-    sha256 cellar: :any_skip_relocation, ventura:        "25c79c864890415b28ad725e01b4af05234ee1731c4fba4163eba5f4cb17d229"
-    sha256 cellar: :any_skip_relocation, monterey:       "702791caffb7b265896f10c66018a5f58658a7f908d01c7b8a1ffb83eb061368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dafc7e2db8633f7f99f5c7fafe8bfb2ce21380bf2f0bfe3c0af87252e139013c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c48361701ef4bb0cb240cac294c443a25c0bbf0c052491374ece690251004c50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c48361701ef4bb0cb240cac294c443a25c0bbf0c052491374ece690251004c50"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c48361701ef4bb0cb240cac294c443a25c0bbf0c052491374ece690251004c50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60a0379dcee805100101fc743bca36ac50142bb12b7b33aad7b904f47d47691e"
+    sha256 cellar: :any_skip_relocation, ventura:       "60a0379dcee805100101fc743bca36ac50142bb12b7b33aad7b904f47d47691e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b858ad23afe1d56612a5e2a586f1d24b5b87acadc282d104e44ff7a2959d425"
   end
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
   def install
-    system "go", "build", *std_go_args, ".cmdgokey"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgokey"
+
     system "go-md2man", "-in=gokey.1.md", "-out=gokey.1"
     man1.install "gokey.1"
   end

@@ -123,7 +123,7 @@ class C7n < Formula
     # trim last decimal point version to match semver returned from version command
     assert_match version.major_minor_patch.to_s, shell_output("#{bin}custodian version")
 
-    (testpath"good-policy.yml").write <<~EOF
+    (testpath"good-policy.yml").write <<~YAML
       policies:
       - name: ec2-auto-tag-user
         resource: ec2
@@ -141,13 +141,13 @@ class C7n < Formula
           - type: auto-tag-user
             tag: CreatorName
             principal_id_tag: CreatorId
-    EOF
+    YAML
 
     output = shell_output("#{bin}custodian validate --verbose #{testpath}good-policy.yml 2>&1")
     assert_match "valid", output
 
     # has invalid "action" key instead of "actions"
-    (testpath"bad-policy.yml").write <<~EOF
+    (testpath"bad-policy.yml").write <<~YAML
       policies:
       - name: ec2-auto-tag-user
         resource: ec2
@@ -157,7 +157,7 @@ class C7n < Formula
           - type: auto-tag-user
             tag: CreatorName
             principal_id_tag: CreatorId
-    EOF
+    YAML
 
     output = shell_output("#{bin}custodian validate --verbose #{testpath}bad-policy.yml 2>&1", 1)
     assert_match "invalid", output

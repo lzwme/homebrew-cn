@@ -1,8 +1,8 @@
 class Libclc < Formula
   desc "Implementation of the library requirements of the OpenCL C programming language"
   homepage "https:libclc.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.4libclc-19.1.4.src.tar.xz"
-  sha256 "d73969262195a0aef9643c80431f46061353c41021951bd96cf25e912cec5077"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.5libclc-19.1.5.src.tar.xz"
+  sha256 "95ee4b8694fd7b1405d362b9ed758be3e88a81c9ee80c1e8433183f0ddde070e"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
@@ -11,12 +11,12 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "020834a7b15653d4e1fd3ceeb9eaaebca9c8948cc054c5633f337ab2b6c62c2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "020834a7b15653d4e1fd3ceeb9eaaebca9c8948cc054c5633f337ab2b6c62c2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "020834a7b15653d4e1fd3ceeb9eaaebca9c8948cc054c5633f337ab2b6c62c2a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "020834a7b15653d4e1fd3ceeb9eaaebca9c8948cc054c5633f337ab2b6c62c2a"
-    sha256 cellar: :any_skip_relocation, ventura:       "020834a7b15653d4e1fd3ceeb9eaaebca9c8948cc054c5633f337ab2b6c62c2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f08fca7c8ffaa532652b066f300eb67b3d12acefce84bda6152b6bfde899ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b4c3e941d8bcef5c9f84161437e7c0d35f63c98e20f88dd125db91ed8b8d0b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b4c3e941d8bcef5c9f84161437e7c0d35f63c98e20f88dd125db91ed8b8d0b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b4c3e941d8bcef5c9f84161437e7c0d35f63c98e20f88dd125db91ed8b8d0b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b4c3e941d8bcef5c9f84161437e7c0d35f63c98e20f88dd125db91ed8b8d0b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b4c3e941d8bcef5c9f84161437e7c0d35f63c98e20f88dd125db91ed8b8d0b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2deadf35baf81547213c75458f7f776d55d2c3797a63e6ef67030dcf10283e95"
   end
 
   depends_on "cmake" => :build

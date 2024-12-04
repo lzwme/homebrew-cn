@@ -45,7 +45,7 @@ class Ntl < Formula
   end
 
   test do
-    (testpath"square.cc").write <<~EOS
+    (testpath"square.cc").write <<~CPP
       #include <iostream>
       #include <NTLZZ.h>
 
@@ -56,7 +56,7 @@ class Ntl < Formula
           std::cout << NTL::power(a, 2);
           return 0;
       }
-    EOS
+    CPP
     gmp = Formula["gmp"]
     flags = %W[
       -std=c++11

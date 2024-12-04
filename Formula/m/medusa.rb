@@ -29,7 +29,7 @@ class Medusa < Formula
   test do
     system "truffle", "init"
 
-    (testpath"contractstest.sol").write <<~EOS
+    (testpath"contractstest.sol").write <<~SOLIDITY
       pragma solidity ^0.8.0;
       contract Test {
         function assert_true() public {
@@ -39,7 +39,7 @@ class Medusa < Formula
           assert(false);
         }
       }
-    EOS
+    SOLIDITY
 
     fuzz_output = shell_output("#{bin}medusa fuzz --compilation-target #{testpath} --test-limit 100", 7)
     assert_match(PASSED.*assert_true, fuzz_output)

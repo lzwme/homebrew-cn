@@ -9575,6 +9575,7 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-devanagari.rb, Homeb
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-hebrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-jp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-kr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-thai-looped.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ibm-plex-sans-thai.rb, Homebrew/homebrew-cask, 1
@@ -13645,6 +13646,9 @@ Homebrew-homebrew-cask/Casks/s/steelseries-engine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steelseries-gg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steermouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steinberg-activation-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/steinberg-download-assistant.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/steinberg-library-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/steinberg-mediabay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stella.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stellarium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stepmania.rb, Homebrew/homebrew-cask, 1
@@ -14313,6 +14317,7 @@ Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2025.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wizcli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiznote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wjoy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wkhtmltopdf.rb, Homebrew/homebrew-cask, 1

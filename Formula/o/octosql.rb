@@ -30,10 +30,10 @@ class Octosql < Formula
     ENV["OCTOSQL_NO_TELEMETRY"] = "1"
 
     test_json = testpath"test.json"
-    test_json.write <<~EOS
+    test_json.write <<~JSON
       {"field1": "value", "field2": 42, "field3": {"field4": "eulav", "field5": 24}}
       {"field1": "value", "field2": 42, "field3": {"field5": "eulav", "field6": "value"}}
-    EOS
+    JSON
 
     expected = <<~EOS
       +---------+--------+--------------------------+

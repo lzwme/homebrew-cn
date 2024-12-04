@@ -30,11 +30,11 @@ class Vhs < Formula
   end
 
   test do
-    (testpath"test.tape").write <<-TAPE
-    Output test.gif
-    Type "Foo Bar"
-    Enter
-    Sleep 1s
+    (testpath"test.tape").write <<~TAPE
+      Output test.gif
+      Type "Foo Bar"
+      Enter
+      Sleep 1s
     TAPE
 
     system bin"vhs", "validate", "test.tape"

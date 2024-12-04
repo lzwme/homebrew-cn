@@ -45,10 +45,10 @@ class Nco < Formula
       (buildpath"include").install "libcppantlr"
       (buildpath"lib").install "libcppsrclibantlr.a"
 
-      (buildpath"binantlr").write <<~EOS
+      (buildpath"binantlr").write <<~SH
         #!binsh
         exec "#{Formula["openjdk"].opt_bin}java" -classpath "#{buildpath}libexecantlr.jar" antlr.Tool "$@"
-      EOS
+      SH
 
       chmod 0755, buildpath"binantlr"
     end

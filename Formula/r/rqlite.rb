@@ -32,11 +32,11 @@ class Rqlite < Formula
     end
     sleep 5
 
-    (testpath"test.sql").write <<~EOS
+    (testpath"test.sql").write <<~SQL
       CREATE TABLE foo (id INTEGER NOT NULL PRIMARY KEY, name TEXT)
       .schema
       quit
-    EOS
+    SQL
     output = shell_output("#{bin}rqlite -p #{port} < test.sql")
     assert_match "foo", output
 

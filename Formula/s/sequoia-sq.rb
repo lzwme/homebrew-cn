@@ -3,7 +3,7 @@ class SequoiaSq < Formula
   homepage "https://sequoia-pgp.org"
   url "https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v0.40.0/sequoia-sq-v0.40.0.tar.gz"
   sha256 "6693d80f49e154a3588a3b64e4be06cede672f50e45be1a5ed3fba54f9a8126c"
-  license "GPL-2.0-or-later"
+  license "LGPL-2.0-or-later"
   head "https://gitlab.com/sequoia-pgp/sequoia-sq.git", branch: "main"
 
   bottle do

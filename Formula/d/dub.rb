@@ -54,10 +54,10 @@ class Dub < Formula
         "description": "A simple D application"
       }
     JSON
-    (testpath"sourceapp.d").write <<~EOS
+    (testpath"sourceapp.d").write <<~D
       import std.stdio;
       void main() { writeln("Hello, world!"); }
-    EOS
+    D
     system bin"dub", "build", "--compiler=#{Formula["ldc"].opt_bin}ldc2"
     assert_equal "Hello, world!", shell_output("#{testpath}brewtest").chomp
   end

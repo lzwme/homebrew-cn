@@ -7,18 +7,19 @@ class Gocloc < Formula
   head "https:github.comhhattogocloc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9f4dc85c3ddc43c31527fd3f6df113617dd112aa22bca294e3355baa4b90d08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9f4dc85c3ddc43c31527fd3f6df113617dd112aa22bca294e3355baa4b90d08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9f4dc85c3ddc43c31527fd3f6df113617dd112aa22bca294e3355baa4b90d08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf63923a441b475a1978069a8cc40370ab978ea02b793c7c63c1ede93c140ffe"
-    sha256 cellar: :any_skip_relocation, ventura:       "bf63923a441b475a1978069a8cc40370ab978ea02b793c7c63c1ede93c140ffe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ca7a047ee079c90fa7dd1e53b51057ef72641bc296e1d3d2d043eae5ef32ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f40f1c0fca393b31141e5c023aed4140ad794b29ba00ba0d492abd381232a05e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f40f1c0fca393b31141e5c023aed4140ad794b29ba00ba0d492abd381232a05e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f40f1c0fca393b31141e5c023aed4140ad794b29ba00ba0d492abd381232a05e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7d4e4477d71e3e14fce82f869ad284153ca991e8718506ccb930cfd0d6daa9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7d4e4477d71e3e14fce82f869ad284153ca991e8718506ccb930cfd0d6daa9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4aef5724fea748da99937ff0de07a5f6eb8a653fcaffe0685be6b91ff868b29"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, ".cmdgocloc"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgocloc"
   end
 
   test do

@@ -7,18 +7,22 @@ class Ghostunnel < Formula
   head "https:github.comghostunnelghostunnel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89135bb036c1063dbf0293d75366d92104b66492db932daeee6bf8af01df7221"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab6e62203948bc3fe40061ac7460def7fe7bd1d04f652da49ec997727c549cf0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdf0cdbf10be5e5e0f096a71298d024de086ef092b07bcc999c5745872012c76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "670dbb5113ac27a58604a427ce1b7f5b227b7c3175489acb5a446a0d0d722820"
-    sha256 cellar: :any_skip_relocation, ventura:       "461e65e35836026629f68f213b6ecc25ef60a37321feb48be8c950ac542f8e4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5a74d14387e5643d7ce02bd297dccf56a6c61c9056bd2508c9e5343e66432f9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "249c196b62df391cd6f0c5c4697330dba38d32183c1ac7d8c062317f55008652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cad4f3707c187d57bc9ad6489402fae0d9db5032026cbcd8f83c4c9f93d6e0c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ea5b9840dc8cc7113d2c6346db486a357e809872209e976a573ed946e18a7cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3dec4122fa0bd01ac3ca5da553c852e1206469e737b92ac1c48d4925f316696a"
+    sha256 cellar: :any_skip_relocation, ventura:       "8427b971974bf91ed5bd17cb9b3d65f5d1d00edc1d53fd5939a3ed93ea0127f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0afabc0f4ae4a7ef44fa9a90b553e7aa0c0ef72819bf64ebf3bee1e2505673e3"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+
+    generate_completions_from_executable(bin"ghostunnel", shell_parameter_format: "--completion-script-",
+                                                           shells:                 [:bash, :zsh])
   end
 
   test do

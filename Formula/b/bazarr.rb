@@ -89,10 +89,10 @@ class Bazarr < Formula
 
     config_file = pkgetc"config.ini"
     unless config_file.exist?
-      config_file.write <<~EOS
+      config_file.write <<~INI
         [backup]
         folder = #{pkgvar}backup
-      EOS
+      INI
     end
   end
 
@@ -110,10 +110,10 @@ class Bazarr < Formula
 
     system bin"bazarr", "--help"
 
-    (testpath"configconfig.ini").write <<~EOS
+    (testpath"configconfig.ini").write <<~INI
       [backup]
       folder = #{testpath}custom_backup
-    EOS
+    INI
 
     port = free_port
 

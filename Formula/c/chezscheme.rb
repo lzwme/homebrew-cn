@@ -31,9 +31,9 @@ class Chezscheme < Formula
   end
 
   test do
-    (testpath"hello.ss").write <<~EOS
+    (testpath"hello.ss").write <<~SCHEME
       (display "Hello, World!") (newline)
-    EOS
+    SCHEME
 
     expected = <<~EOS
       Hello, World!

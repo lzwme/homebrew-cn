@@ -47,10 +47,10 @@ class Mcpp < Formula
   end
 
   test do
-    (testpath"test.c.in").write <<~EOS
+    (testpath"test.c.in").write <<~C
       #define RET 5
       int main() { return RET; }
-    EOS
+    C
 
     (testpath"test.c").write shell_output("#{bin}mcpp test.c.in")
     system ENV.cc, "test.c", "-o", "test"

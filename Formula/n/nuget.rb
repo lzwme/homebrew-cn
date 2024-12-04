@@ -18,10 +18,10 @@ class Nuget < Formula
 
   def install
     libexec.install "nuget.exe" => "nuget.exe"
-    (bin/"nuget").write <<~EOS
+    (bin/"nuget").write <<~BASH
       #!/bin/bash
       mono #{libexec}/nuget.exe "$@"
-    EOS
+    BASH
   end
 
   test do

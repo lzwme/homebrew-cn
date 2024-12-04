@@ -27,7 +27,7 @@ class Osmosis < Formula
 
   test do
     path = testpath"test.osm"
-    path.write <<~EOS
+    path.write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <osm version="0.6" generator="CGImap 0.5.8 (30532 thorn-05.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="https:www.openstreetmap.orgcopyright" license="https:opendatacommons.orglicensesodbl1-0">
       <bounds minlat="49.9363700" minlon="8.9159400" maxlat="49.9371300" maxlon="8.9173800">
@@ -45,7 +45,7 @@ class Osmosis < Formula
         <tag k="wheelchair:description" v="Kein Kasseler Bord">
       <node>
       <osm>
-    EOS
+    XML
 
     system(bin"osmosis", "--read-xml", "file=#{path}", "--write-null")
   end

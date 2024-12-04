@@ -65,7 +65,7 @@ class ProtobufAT3 < Formula
   end
 
   test do
-    testdata = <<~EOS
+    testdata = <<~PROTO
       syntax = "proto3";
       package test;
       message TestCase {
@@ -74,7 +74,7 @@ class ProtobufAT3 < Formula
       message Test {
         repeated TestCase case = 1;
       }
-    EOS
+    PROTO
     (testpath"test.proto").write testdata
     system bin"protoc", "test.proto", "--cpp_out=."
 

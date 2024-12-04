@@ -82,9 +82,9 @@ class Djlint < Formula
   test do
     assert_includes shell_output("#{bin}djlint --version"), version.to_s
 
-    (testpath"test.html").write <<~EOS
+    (testpath"test.html").write <<~HTML
       {% load static %}<!DOCTYPE html>
-    EOS
+    HTML
 
     assert_includes shell_output("#{bin}djlint --reformat #{testpath}test.html", 1), "1 file was updated."
   end

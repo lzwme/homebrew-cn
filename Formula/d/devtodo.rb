@@ -51,12 +51,12 @@ class Devtodo < Formula
   end
 
   test do
-    (testpath/"test").write <<~EOS
+    (testpath/"test").write <<~EXPECT
       spawn #{bin}/devtodo --add HomebrewWork
       expect "priority*"
       send -- "2\r"
       expect eof
-    EOS
+    EXPECT
     system "expect", "-f", "test"
     assert_match "HomebrewWork", (testpath/".todo").read
   end

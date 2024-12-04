@@ -36,7 +36,7 @@ class Mongoose < Formula
   end
 
   test do
-    (testpath"hello.html").write <<~EOS
+    (testpath"hello.html").write <<~HTML
       <!DOCTYPE html>
       <html>
         <head>
@@ -46,7 +46,7 @@ class Mongoose < Formula
           <p>Hi!<p>
         <body>
       <html>
-    EOS
+    HTML
 
     begin
       pid = fork { exec bin"mongoose" }

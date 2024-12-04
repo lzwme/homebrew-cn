@@ -71,10 +71,10 @@ class Notmuch < Formula
   end
 
   test do
-    (testpath/".notmuch-config").write <<~EOS
+    (testpath/".notmuch-config").write <<~INI
       [database]
       path=#{testpath}/Mail
-    EOS
+    INI
     (testpath/"Mail").mkpath
     assert_match "0 total", shell_output("#{bin}/notmuch new")
 

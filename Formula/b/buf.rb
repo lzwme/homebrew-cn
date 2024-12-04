@@ -36,10 +36,10 @@ class Buf < Formula
   end
 
   test do
-    (testpath"invalidFileName.proto").write <<~EOS
+    (testpath"invalidFileName.proto").write <<~PROTO
       syntax = "proto3";
       package examplepb;
-    EOS
+    PROTO
 
     (testpath"buf.yaml").write <<~YAML
       version: v1

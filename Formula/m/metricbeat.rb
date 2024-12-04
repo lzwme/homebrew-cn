@@ -39,7 +39,7 @@ class Metricbeat < Formula
       prefix.install "buildkibana"
     end
 
-    (bin"metricbeat").write <<~EOS
+    (bin"metricbeat").write <<~SH
       #!binsh
       exec #{libexec}binmetricbeat \
         --path.config #{etc}metricbeat \
@@ -47,7 +47,7 @@ class Metricbeat < Formula
         --path.home #{prefix} \
         --path.logs #{var}logmetricbeat \
         "$@"
-    EOS
+    SH
 
     chmod 0555, bin"metricbeat" # generate_completions_from_executable fails otherwise
     generate_completions_from_executable(bin"metricbeat", "completion", shells: [:bash, :zsh])

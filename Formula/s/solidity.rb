@@ -48,7 +48,7 @@ class Solidity < Formula
   end
 
   test do
-    (testpath"hello.sol").write <<~EOS
+    (testpath"hello.sol").write <<~SOLIDITY
        SPDX-License-Identifier: GPL-3.0
       pragma solidity ^0.8.0;
       contract HelloWorld {
@@ -56,7 +56,7 @@ class Solidity < Formula
           return "Hello, World!";
         }
       }
-    EOS
+    SOLIDITY
 
     output = shell_output("#{bin}solc --bin hello.sol")
     assert_match "hello.sol:HelloWorld", output

@@ -15,10 +15,10 @@ class PhpCsFixer < Formula
   def install
     libexec.install "php-cs-fixer.phar"
 
-    (bin"php-cs-fixer").write <<~EOS
+    (bin"php-cs-fixer").write <<~PHP
       #!#{Formula["php@8.3"].opt_bin}php
       <?php require '#{libexec}php-cs-fixer.phar';
-    EOS
+    PHP
   end
 
   test do

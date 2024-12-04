@@ -147,22 +147,22 @@ class Octave < Formula
     # This is supposed to crash octave if there is a problem with BLAS
     system bin"octave", "--eval", "single ([1+i 2+i 3+i]) * single ([ 4+i ; 5+i ; 6+i])"
     # Test basic compilation
-    (testpath"oct_demo.cc").write <<~EOS
+    (testpath"oct_demo.cc").write <<~CPP
       #include <octaveoct.h>
       DEFUN_DLD (oct_demo, args, *nargout*, "doc str")
       { return ovl (42); }
-    EOS
-    system bin"octave", "--eval", <<~EOS
+    CPP
+    system bin"octave", "--eval", <<~MATLAB
       mkoctfile ('-v', '-std=c++11', '-L#{lib}octave#{version}', 'oct_demo.cc');
       assert(oct_demo, 42)
-    EOS
+    MATLAB
     # Test FLIBS environment variable
-    system bin"octave", "--eval", <<~EOS
+    system bin"octave", "--eval", <<~MATLAB
       args = strsplit (mkoctfile ('-p', 'FLIBS'));
       args = args(~cellfun('isempty', args));
       mkoctfile ('-v', '-std=c++11', '-L#{lib}octave#{version}', args{:}, 'oct_demo.cc');
       assert(oct_demo, 42)
-    EOS
+    MATLAB
     ENV["QT_QPA_PLATFORM"] = "minimal"
     system bin"octave", "--gui"
   end

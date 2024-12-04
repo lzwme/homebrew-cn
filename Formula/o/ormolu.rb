@@ -26,7 +26,7 @@ class Ormolu < Formula
   end
 
   test do
-    (testpath"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~HASKELL
       foo =
         f1
         p1
@@ -40,8 +40,8 @@ class Ormolu < Formula
       foo'' =
         f3 p1 p2
         p3
-    EOS
-    expected = <<~EOS
+    HASKELL
+    expected = <<~HASKELL
       foo =
         f1
           p1
@@ -59,7 +59,7 @@ class Ormolu < Formula
           p1
           p2
           p3
-    EOS
+    HASKELL
     assert_equal expected, shell_output("#{bin}ormolu test.hs")
   end
 end

@@ -7,14 +7,13 @@ class HelmLs < Formula
   head "https:github.commrjoshhelm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8036353a79e05dbf8cf9575683e8ebfe01f061c03d47494d9a8843c949ca297b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fedd5ab71b9056b1e72dea7cf14793a3f031749abac67ceb8ea82562a14316ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b97bb39daac8453d8f743d3d2157788c2a98d975c0eaa4f8d4bee296583b436"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cff77a1eb4bfba6811d7c0874a48a12282f22ae041ae45030654b1b36dd1b2b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18ec922131749e79ead6a293f7f24e46c40381843a6569bba092ccb392176652"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a7c8137569c772d25e34d98f723519db292329706a8cb9042893a9888c6b8d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "db62edea9ffe0fcfb5572030a136d163d3b8b8c2233da4bb1b8b9eb1a7c800f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4b8c65835838e2509815cba6b3895e940354df97ac376516b809d7dc1d01710"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "874a97cf9543d19f8ba4687f0e9f809a5d2f742b036cf5529b90bb9a79eb7577"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2da6658cf4a6ce7f1a92d39c973347caee051d78826c39fe1e4d0b3a97ec1e87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7e8d7110fd8d3e90a6d4aa1eaff674a63995a90cbed88701da27c0a7214bc5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d793bed14eaca1e833610ffe73779747b23adb6bade8c5d38e5d5419b6cab48"
+    sha256 cellar: :any_skip_relocation, ventura:       "bf81a819185bc3e3bf4d512dbe2a1f79deab59015da9e8f3e915edebf9ac2f55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "410ffbbd5cba045de940112775ba77cf0f14da911a58b6abeefe7ade59682a94"
   end
 
   depends_on "go" => :build
@@ -28,7 +27,7 @@ class HelmLs < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"helm_ls")
 
-    generate_completions_from_executable(bin"helm_ls", "completion")
+    generate_completions_from_executable(bin"helm_ls", "completion", base_name: "helm_ls")
   end
 
   test do

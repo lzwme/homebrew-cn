@@ -79,10 +79,10 @@ class PyqtAT5 < Formula
       next if r.name == "pyqt5-sip"
 
       r.stage do
-        inreplace "pyproject.toml", "[tool.sip.project]", <<~EOS
+        inreplace "pyproject.toml", "[tool.sip.project]", <<~TOML
           [tool.sip.project]
           sip-include-dirs = ["#{site_packages}/PyQt#{version.major}/bindings"]
-        EOS
+        TOML
         system sip_install, "--target-dir", site_packages
       end
     end

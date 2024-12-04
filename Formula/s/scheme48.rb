@@ -34,9 +34,9 @@ class Scheme48 < Formula
   end
 
   test do
-    (testpath/"hello.scm").write <<~EOS
+    (testpath/"hello.scm").write <<~SCHEME
       (display "Hello, World!") (newline)
-    EOS
+    SCHEME
 
     expected = <<~EOS
       Hello, World!\#{Unspecific}

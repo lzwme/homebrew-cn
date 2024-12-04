@@ -52,9 +52,9 @@ class Clisp < Formula
   end
 
   test do
-    (testpath/"main.lisp").write <<~EOS
+    (testpath/"main.lisp").write <<~LISP
       (format t "Hello, World!")
-    EOS
+    LISP
     assert_equal "Hello, World!", shell_output(bin/"clisp main.lisp").chomp
   end
 end

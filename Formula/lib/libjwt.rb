@@ -1,9 +1,10 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
   homepage "https:github.combenmcollinslibjwt"
-  url "https:github.combenmcollinslibjwtreleasesdownloadv1.18.1libjwt-1.18.1.tar.bz2"
-  sha256 "72039fb837c034b37f12111b037e8abc05724f8289c996e9ab2b1baa3b620644"
+  url "https:github.combenmcollinslibjwtreleasesdownloadv1.18.3libjwt-1.18.3.tar.bz2"
+  sha256 "7c582667fe3e6751897c8d9c1b4c8c117bbfa9067d8398524adb5dded671213e"
   license "MPL-2.0"
+  head "https:github.combenmcollinslibjwt.git", branch: "master"
 
   livecheck do
     url :stable
@@ -11,22 +12,17 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b4c3cd3130a3bf99c5354a4ad4bf9ffb1667f42cb600da5c60faf1be2108417a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4dcbf97fa57dd5671881bb7e5091446800c714c364bf0e00fceab54ea03fb1e"
-    sha256 cellar: :any,                 arm64_ventura: "947c9d8c412eadd1aa927d3296d9fa5f26be6be11c5fe8fcb22bd9c0ed9f29a8"
-    sha256 cellar: :any,                 sonoma:        "fe1d8f6bd8da36026fd3fffa6d13fca45ce9d45edb183326de6153e5f0db5c5b"
-    sha256 cellar: :any,                 ventura:       "7bd485ff432a0c6b105a6f4c70fbf0c5bbd05e8032f6d3cab048a893dacfc634"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f771e0ff2c0061fecda61ab201b73345abe425122eab07cb0b116577703501ee"
-  end
-
-  head do
-    url "https:github.combenmcollinslibjwt.git", branch: "master"
-
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
+    sha256 cellar: :any,                 arm64_sequoia: "6700895a78f1c621f84a1576ea50bae94f6598a2baa397d1ee89073cd2163b97"
+    sha256 cellar: :any,                 arm64_sonoma:  "9afe31b8a4ee67fcf2e48199e61993f070dba5ce22a9bca5dbe69eca372a5b18"
+    sha256 cellar: :any,                 arm64_ventura: "e13eabbc661d4a668b920078e86b87e695517ed22b6b7c8a9741cf1e1075c796"
+    sha256 cellar: :any,                 sonoma:        "d24d2c62e66928b6b151ce7954a7ea703cfe9d77d3c5ac66160099652b7b14d9"
+    sha256 cellar: :any,                 ventura:       "69e40b90da45c93bf213616125e4deef6a451a904e5b19442b139ea1c714e378"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c7023517f53333fe537cb82288e2f99fd61421d6df096e8f85d5b1801762ed8"
   end
 
   depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "openssl@3"

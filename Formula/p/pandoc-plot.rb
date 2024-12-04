@@ -28,7 +28,7 @@ class PandocPlot < Formula
   end
 
   test do
-    input_markdown_1 = <<~EOS
+    input_markdown_1 = <<~MARKDOWN
       # pandoc-plot demo
 
       ```{.graphviz}
@@ -36,9 +36,9 @@ class PandocPlot < Formula
         pandoc -> plot
       }
       ```
-    EOS
+    MARKDOWN
 
-    input_markdown_2 = <<~EOS
+    input_markdown_2 = <<~MARKDOWN
       # repeat the same thing
 
       ```{.graphviz}
@@ -46,18 +46,18 @@ class PandocPlot < Formula
         pandoc -> plot
       }
       ```
-    EOS
+    MARKDOWN
 
     output_html_1 = pipe_output("pandoc --filter #{bin}pandoc-plot -f markdown -t html5", input_markdown_1)
     output_html_2 = pipe_output("pandoc --filter #{bin}pandoc-plot -f markdown -t html5", input_markdown_2)
     filename = output_html_1.match(%r{(plots[\da-z]+\.png)}i)
 
-    expected_html_2 = <<~EOS
+    expected_html_2 = <<~HTML
       <h1 id="repeat-the-same-thing">repeat the same thing<h1>
       <figure>
       <img src="#{filename}" >
       <figure>
-    EOS
+    HTML
 
     assert_equal expected_html_2, output_html_2
   end

@@ -31,7 +31,7 @@ class Minisign < Formula
 
   test do
     (testpath"homebrew.txt").write "Hello World!"
-    (testpath"keygen.exp").write <<~EOS
+    (testpath"keygen.exp").write <<~EXPECT
       set timeout -1
       spawn #{bin}minisign -G
       expect -exact "Please enter a password to protect the secret key."
@@ -42,19 +42,19 @@ class Minisign < Formula
       Password (one more time): "
       send -- "Homebrew\n"
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "keygen.exp"
     assert_path_exists testpath"minisign.pub"
     assert_path_exists testpath".minisignminisign.key"
 
-    (testpath"signing.exp").write <<~EOS
+    (testpath"signing.exp").write <<~EXPECT
       set timeout -1
       spawn #{bin}minisign -Sm homebrew.txt
       expect -exact "Password: "
       send -- "Homebrew\n"
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "signing.exp"
     assert_path_exists testpath"homebrew.txt.minisig"

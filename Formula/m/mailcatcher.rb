@@ -184,7 +184,7 @@ class Mailcatcher < Formula
     smtp_port = free_port
     http_port = free_port
     system bin"mailcatcher", "--smtp-port", smtp_port.to_s, "--http-port", http_port.to_s
-    (testpath"mailcatcher.exp").write <<~EOS
+    (testpath"mailcatcher.exp").write <<~EXPECT
       #!usrbinenv expect
 
       set timeout 3
@@ -235,7 +235,7 @@ class Mailcatcher < Formula
         "221 *" { }
         eof { exit }
       }
-    EOS
+    EXPECT
 
     system "expect", "-f", "mailcatcher.exp"
     assert_match "bob@example.org", shell_output("curl --silent http:localhost:#{http_port}messages")

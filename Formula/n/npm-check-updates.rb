@@ -23,14 +23,14 @@ class NpmCheckUpdates < Formula
 
   test do
     test_package_json = testpath"package.json"
-    test_package_json.write <<~EOS
+    test_package_json.write <<~JSON
       {
         "dependencies": {
           "express": "1.8.7",
           "lodash": "3.6.1"
         }
       }
-    EOS
+    JSON
 
     system bin"ncu", "-u"
 

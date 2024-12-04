@@ -68,7 +68,7 @@ class MitScheme < Formula
 
   test do
     # https://www.cs.indiana.edu/pub/scheme-repository/code/num/primes.scm
-    (testpath/"primes.scm").write <<~EOS
+    (testpath/"primes.scm").write <<~SCHEME
       ;
       ; primes
       ; By Ozan Yigit
@@ -96,7 +96,7 @@ class MitScheme < Formula
         (sieve (interval-list 2 n)))
 
       ; (primes<= 300)
-    EOS
+    SCHEME
 
     output = shell_output(
       "#{bin}/mit-scheme --load primes.scm --eval '(primes<= 72)' < /dev/null",

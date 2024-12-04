@@ -7,18 +7,19 @@ class EfmLangserver < Formula
   head "https:github.commattnefm-langserver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6cf0b828b6d451c479718b4e1d59fb702b6b213e23de81472ceccd4af4c30f56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89928fa34e9f83ed16f3a69e36b7a01bb2566a2c9a56c14bbd486f553641ce97"
-    sha256 cellar: :any_skip_relocation, ventura:       "89928fa34e9f83ed16f3a69e36b7a01bb2566a2c9a56c14bbd486f553641ce97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c26b74e7b23809dab23791a2366f8ab2720a07dc35b7759d67f391303daa3d3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a243107e41b7158b42aaef39c118b8ad6b2e321bedbedbbec267cc55ae1cd40"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a243107e41b7158b42aaef39c118b8ad6b2e321bedbedbbec267cc55ae1cd40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84eb67d38a415d8f87456816e0ae24e0c1e000d8836f70ba0d9fa115a423a811"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

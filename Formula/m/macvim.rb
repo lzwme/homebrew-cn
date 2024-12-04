@@ -93,10 +93,10 @@ class Macvim < Formula
     # Simple test to check if MacVim was linked to Homebrew's Python 3
     py3_exec_prefix = shell_output(Formula["python@3.13"].opt_libexec"binpython-config --exec-prefix")
     assert_match py3_exec_prefix.chomp, output
-    (testpath"commands.vim").write <<~EOS
+    (testpath"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'
       :wq
-    EOS
+    VIM
     system bin"mvim", "-v", "-T", "dumb", "-s", "commands.vim", "test.txt"
     assert_equal "hello python3", (testpath"test.txt").read.chomp
   end

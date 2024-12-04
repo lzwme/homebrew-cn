@@ -28,7 +28,7 @@ class Blades < Formula
 
   test do
     script = (testpath"script.exp")
-    script.write <<~EOS
+    script.write <<~EXPECT
       #!usrbinexpect -f
       set timeout 2
       spawn #{bin}blades init
@@ -40,7 +40,7 @@ class Blades < Formula
       send -- "test\r"
 
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "script.exp"
     assert_predicate testpath"content", :exist?

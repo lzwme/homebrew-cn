@@ -36,11 +36,11 @@ class Duckdb < Formula
 
   test do
     path = testpath"weather.sql"
-    path.write <<~EOS
+    path.write <<~SQL
       CREATE TABLE weather (temp INTEGER);
       INSERT INTO weather (temp) VALUES (40), (45), (50);
       SELECT AVG(temp) FROM weather;
-    EOS
+    SQL
 
     expected_output = <<~EOS
       ┌─────────────┐

@@ -59,7 +59,7 @@ class Morpheus < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<~EOF
+    (testpath/"test.xml").write <<~XML
       <?xml version='1.0' encoding='UTF-8'?>
       <MorpheusModel version="4">
           <Description>
@@ -84,7 +84,7 @@ class Morpheus < Formula
               <ModelGraph include-tags="#untagged" format="dot" reduced="false"/>
           </Analysis>
       </MorpheusModel>
-    EOF
+    XML
 
     assert_match "Simulation finished", shell_output("#{bin}/morpheus --file test.xml")
   end

@@ -42,7 +42,7 @@ class Cmctl < Formula
     # we find the error about connecting
     assert_match "error: error finding the scope of the object", shell_output("#{bin}cmctl check api 2>&1", 1)
     # The convert command *can* be tested locally.
-    (testpath"cert.yaml").write <<~EOF
+    (testpath"cert.yaml").write <<~YAML
       apiVersion: cert-manager.iov1beta1
       kind: Certificate
       metadata:
@@ -53,9 +53,9 @@ class Cmctl < Formula
           name: test-issuer
           kind: Issuer
         commonName: example.com
-    EOF
+    YAML
 
-    expected_output = <<~EOF
+    expected_output = <<~YAML
       apiVersion: cert-manager.iov1
       kind: Certificate
       metadata:
@@ -68,7 +68,7 @@ class Cmctl < Formula
           name: test-issuer
         secretName: test
       status: {}
-    EOF
+    YAML
 
     assert_equal expected_output, shell_output("#{bin}cmctl convert -f cert.yaml")
   end

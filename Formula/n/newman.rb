@@ -25,7 +25,7 @@ class Newman < Formula
 
   test do
     path = testpath/"test-collection.json"
-    path.write <<~EOS
+    path.write <<~JSON
       {
         "info": {
           "_postman_id": "db95eac2-6e1c-48c0-8c3a-f83c5341d4dd",
@@ -59,7 +59,7 @@ class Newman < Formula
           }
         ]
       }
-    EOS
+    JSON
 
     assert_match "newman", shell_output("#{bin}/newman run #{path}")
     assert_equal version.to_s, shell_output("#{bin}/newman --version").strip

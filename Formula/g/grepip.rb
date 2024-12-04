@@ -11,22 +11,21 @@ class Grepip < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "913b4365b80488cf7c4b488ea4853363122eaa9238cd01adb676c1afb5d528fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c7dab5d4e074a90602f8669e7d11be8b36ab9a43308aeae9e364b3f4f440281"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "127a16e5a544dfd437b203f471b8259cf247c655cbc1031689998280d5a4054c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "127a16e5a544dfd437b203f471b8259cf247c655cbc1031689998280d5a4054c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "127a16e5a544dfd437b203f471b8259cf247c655cbc1031689998280d5a4054c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b6153b9cb1e54550ed479280b06f9dd5222a441c39a9133697986d829f9d2df"
-    sha256 cellar: :any_skip_relocation, ventura:        "1368886025366798bc84ccf0dece8def4aeec415fa2dad37a9cdc675b09b8526"
-    sha256 cellar: :any_skip_relocation, monterey:       "1368886025366798bc84ccf0dece8def4aeec415fa2dad37a9cdc675b09b8526"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1368886025366798bc84ccf0dece8def4aeec415fa2dad37a9cdc675b09b8526"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d066156f98edcbf0164a1ee749cba4e78b14dc6cb4a39b3be80b9484aa6a61ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef333d42f469784211e7520c89ac8ac07014ca9e56a7ef3a87a29749ddae30dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef333d42f469784211e7520c89ac8ac07014ca9e56a7ef3a87a29749ddae30dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef333d42f469784211e7520c89ac8ac07014ca9e56a7ef3a87a29749ddae30dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d831e7a316e08e58f230b208ed0b7a5db4b2c3ae425dbb71a52b1099d15bf77b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d831e7a316e08e58f230b208ed0b7a5db4b2c3ae425dbb71a52b1099d15bf77b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89fb159a561f18bd7ddb41e4fe0e280d1aa632165f0b887d4ce2c04af65633bc"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, ".grepip"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".grepip"
+
+    generate_completions_from_executable(bin"grepip", shell_parameter_format: "--completions-")
   end
 
   test do

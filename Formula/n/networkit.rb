@@ -57,7 +57,7 @@ class Networkit < Formula
   end
 
   test do
-    system python3, "-c", <<~EOS
+    system python3, "-c", <<~PYTHON
       import networkit as nk
       G = nk.graph.Graph(3)
       G.addEdge(0,1)
@@ -66,6 +66,6 @@ class Networkit < Formula
       assert G.degree(0) == 2
       assert G.degree(1) == 2
       assert G.degree(2) == 2
-    EOS
+    PYTHON
   end
 end

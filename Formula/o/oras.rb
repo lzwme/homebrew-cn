@@ -33,12 +33,12 @@ class Oras < Formula
     assert_match "#{version}+Homebrew", shell_output("#{bin}oras version")
 
     port = free_port
-    contents = <<~EOS
+    contents = <<~JSON
       {
         "key": "value",
         "this is": "a test"
       }
-    EOS
+    JSON
     (testpath"test.json").write(contents)
 
     # Although it might not make much sense passing the JSON as both manifest and payload,

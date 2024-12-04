@@ -25,10 +25,10 @@ class Bwidget < Formula
     # Fails with: no display name and no $DISPLAY environment variable
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    test_bwidget = <<~EOS
+    test_bwidget = <<~TCL
       puts [package require BWidget]
       exit
-    EOS
+    TCL
     assert_equal version.to_s, pipe_output("#{Formula["tcl-tk"].bin}/tclsh", test_bwidget).chomp
   end
 end

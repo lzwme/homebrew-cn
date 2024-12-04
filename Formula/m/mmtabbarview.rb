@@ -40,14 +40,14 @@ class Mmtabbarview < Formula
   end
 
   test do
-    (testpath"test.m").write <<~EOS
+    (testpath"test.m").write <<~OBJC
       #import <MMTabBarViewMMTabBarView.h>
       int main() {
         MMTabBarView *view = [MMTabBarView alloc];
         [view release];
         return 0;
       }
-    EOS
+    OBJC
     system ENV.cc, "test.m", "-F#{frameworks}", "-framework", "MMTabBarView", "-framework", "Foundation", "-o", "test"
     system ".test"
   end

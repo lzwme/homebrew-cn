@@ -28,18 +28,18 @@ class CargoChef < Formula
     system "rustup", "default", "beta"
     system "rustup", "set", "profile", "minimal"
 
-    (testpath"Cargo.toml").write <<~EOS
+    (testpath"Cargo.toml").write <<~TOML
       [package]
       name = "test_project"
       version = "0.1.0"
       edition = "2021"
-    EOS
+    TOML
 
-    (testpath"srcmain.rs").write <<~EOS
+    (testpath"srcmain.rs").write <<~RUST
       fn main() {
         println!("Hello BrewTestBot!");
       }
-    EOS
+    RUST
 
     recipe_file = testpath"recipe.json"
     system bin"cargo-chef", "chef", "prepare", "--recipe-path", recipe_file

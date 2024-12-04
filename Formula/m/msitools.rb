@@ -55,7 +55,7 @@ class Msitools < Formula
     # wixl: build two installers
     1.upto(2) do |i|
       (testpath/"test#{i}.txt").write "abc"
-      (testpath/"installer#{i}.wxs").write <<~EOS
+      (testpath/"installer#{i}.wxs").write <<~XML
         <?xml version="1.0"?>
         <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
            <Product Id="*" UpgradeCode="DADAA9FC-54F7-4977-9EA1-8BDF6DC73C7#{i}"
@@ -78,7 +78,7 @@ class Msitools < Formula
               </Feature>
            </Product>
         </Wix>
-      EOS
+      XML
       system bin/"wixl", "-o", "installer#{i}.msi", "installer#{i}.wxs"
       assert_predicate testpath/"installer#{i}.msi", :exist?
     end

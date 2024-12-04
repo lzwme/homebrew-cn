@@ -4,15 +4,15 @@ class Sile < Formula
   url "https:github.comsile-typesettersilereleasesdownloadv0.15.5sile-0.15.5.tar.zst"
   sha256 "d20137b02d16302d287670fd285ad28ac3b8d3af916460aa6bc8cbff9321b9f9"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "702f167def540e5073692fb507ca92697cae0e8e97b81b89168323e0f152dcc0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecf8c93698ea9b91f750ea19aa2451d44f386fcc65631218cba177e5bef21161"
-    sha256 cellar: :any,                 arm64_ventura: "67de009e44089ead45fec336a6056a022c2c54edc107c94bfa3d8df3b9225c6b"
-    sha256 cellar: :any,                 sonoma:        "7d13d7033dae2854c1990fa82eaee4e618a310d0ba557f49b0b5a9996f3be2f9"
-    sha256 cellar: :any,                 ventura:       "41937295233b330a9ec868dd48edee575fdccfc6d0eec2dfe6e5b7924b747878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd4ecb72cece35d29db9b4b4485d29b62f7a4decfe32b97d8de0157aa2f89cba"
+    sha256 cellar: :any,                 arm64_sequoia: "840aacf2bbfbac9fd5fc325774bf97b5b8f856744ac4d586b21818e2739409c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7ac10480de2c0788764c7372734a9e02784020250fc8fe05c4e9b849798dc96"
+    sha256 cellar: :any,                 arm64_ventura: "cee961523e14bdac28e8a56a32d78024cb733be124e47e681bc31ba5de252309"
+    sha256 cellar: :any,                 sonoma:        "cdfeaa079d829bcf98022e8069a5c9e92ab87145198e90e8369015d48be92454"
+    sha256 cellar: :any,                 ventura:       "7b228b9043c17e02d80b3d361fe0b2d0f5d2f45ddea0e0ddcdfc5877a2af7812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbd247ab127cc9f68e3f25e4404974e1ec87e074af1210fb19240bde79dd4ff1"
   end
 
   head do
@@ -157,8 +157,8 @@ class Sile < Formula
       #{luapath}sharelua#{luaversion}lxp?.lua
     ]
 
-    ENV["LUA_PATH"] = paths.join(";")
-    ENV["LUA_CPATH"] = "#{luapath}liblua#{luaversion}?.so"
+    ENV["LUA_PATH"] = "#{paths.join(";")};;"
+    ENV["LUA_CPATH"] = "#{luapath}liblua#{luaversion}?.so;;"
 
     ENV.prepend "CPPFLAGS", "-I#{lua.opt_include}luajit-2.1"
     ENV.prepend "LDFLAGS", "-L#{lua.opt_lib}"
@@ -193,27 +193,12 @@ class Sile < Formula
       --disable-silent-rules
       --with-system-luarocks
       --with-system-lua-sources
-      --disable-embeded-resources
     ]
-
-    # Upstream bug https:github.comsile-typesettersileissues2078 triggers
-    # a useless automake cycle when building from the source tarball. This
-    # argument avoids needing the dependency by just making it a noop. Remove
-    # on the next release.
-    configure_args += %w[AUTOMAKE=:]
 
     system ".bootstrap.sh" if build.head?
     system ".configure", *configure_args, *std_configure_args
     system "make"
     system "make", "install"
-
-    env = {
-      LUA_PATH:  "#{ENV["LUA_PATH"]};;",
-      LUA_CPATH: "#{ENV["LUA_CPATH"]};;",
-    }
-
-    (libexec"bin").install bin"sile"
-    (bin"sile").write_env_script libexec"binsile", env
   end
 
   def caveats

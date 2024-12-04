@@ -7,23 +7,24 @@ class Doctl < Formula
   head "https:github.comdigitaloceandoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c95e59649de8692a0ce8a56122a036f71abfd299cc1dcef09d28eff2cbf76a2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c95e59649de8692a0ce8a56122a036f71abfd299cc1dcef09d28eff2cbf76a2c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c95e59649de8692a0ce8a56122a036f71abfd299cc1dcef09d28eff2cbf76a2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c8bda0fffd79c51fd6297f6f6902a061227ab2542847ea92b48126b2ec9976d"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c8bda0fffd79c51fd6297f6f6902a061227ab2542847ea92b48126b2ec9976d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4a19715404ce274f38e56f43c2f17145b9e53b2ca525fcf0d8ed4292f6bdf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efa80baa4208855f71d4eb70a4109a6fae617dcd7b5de2d4d038d8bd65faa623"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efa80baa4208855f71d4eb70a4109a6fae617dcd7b5de2d4d038d8bd65faa623"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "efa80baa4208855f71d4eb70a4109a6fae617dcd7b5de2d4d038d8bd65faa623"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd44e5bbe490c336be302c23ec41e7b91fd135bbc9f51e11ca4b4bee9d4c577c"
+    sha256 cellar: :any_skip_relocation, ventura:       "fd44e5bbe490c336be302c23ec41e7b91fd135bbc9f51e11ca4b4bee9d4c577c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770a510d6dc710fa68c280de7ffb5d63e649c65da752241e26503832943a8c11"
   end
 
   depends_on "go" => :build
 
   def install
-    base_flag = "-X github.comdigitaloceandoctl"
     ldflags = %W[
-      #{base_flag}.Major=#{version.major}
-      #{base_flag}.Minor=#{version.minor}
-      #{base_flag}.Patch=#{version.patch}
-      #{base_flag}.Label=release
+      -s -w
+      -X github.comdigitaloceandoctl.Major=#{version.major}
+      -X github.comdigitaloceandoctl.Minor=#{version.minor}
+      -X github.comdigitaloceandoctl.Patch=#{version.patch}
+      -X github.comdigitaloceandoctl.Label=release
     ]
 
     system "go", "build", *std_go_args(ldflags:), ".cmddoctl"

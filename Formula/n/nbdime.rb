@@ -71,7 +71,7 @@ class Nbdime < Formula
   end
 
   test do
-    (testpath/"old.ipynb").write <<~EOS
+    (testpath/"old.ipynb").write <<~JSON
       {
        "cells": [
         {
@@ -106,8 +106,8 @@ class Nbdime < Formula
        "nbformat": 4,
        "nbformat_minor": 1
       }
-    EOS
-    (testpath/"new.ipynb").write <<~EOS
+    JSON
+    (testpath/"new.ipynb").write <<~JSON
       {
        "cells": [
         {
@@ -150,7 +150,7 @@ class Nbdime < Formula
        "nbformat": 4,
        "nbformat_minor": 1
       }
-    EOS
+    JSON
     # sadly no special exit code if files are the same
     diff_output = shell_output("#{bin}/nbdiff --no-color old.ipynb new.ipynb")
     assert_match "nbdiff old.ipynb new.ipynb", diff_output

@@ -3,17 +3,17 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/d2/8c/3266f88ac42f4c13e2d17e9bae62bb0de39fdd7b08150f5c5d1421fc7990/prowler-4.6.1.tar.gz"
-  sha256 "593b4a35ae1c9421a88b8b54a5890a5fc4d2fca1ce611280eae539f34d6fd2df"
+  url "https://files.pythonhosted.org/packages/81/1f/5096d95395cf9aad0a844c45c169f88f2872b46b75d81c30726685d03da0/prowler-5.0.0.tar.gz"
+  sha256 "0b1131c8706f99c87dac7f9e12de65de897d729aa3546e4197166b6b2e8fbffa"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9713d38c24215fa85d81cc509facc3317bbab7969a5c57ca14643a2ed232b564"
-    sha256 cellar: :any,                 arm64_sonoma:  "65b5e0912d7d4beefe4d8ddaa4725006f03a39b7f7ef3c468bec9185f81365a1"
-    sha256 cellar: :any,                 arm64_ventura: "b577df416099f32b3d208bf4a149b57717f7ea237c27cb068a4590d5a37876d6"
-    sha256 cellar: :any,                 sonoma:        "9a8fd731c8049518b20bb9c394628e44c88f965082cd5cc03fc27bb55da60e55"
-    sha256 cellar: :any,                 ventura:       "195d374d844ad43daa37199696a0f6380a7bafef3a7fcc727cd66b8ba163f0cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42cda03a30c43903fa696e468a1988e1143e018101e7fd0dc39099de5b839656"
+    sha256 cellar: :any,                 arm64_sequoia: "a8516130b3bfec6d24901e5da68bd0b4c42b379b904d598f22e8279dc75f7c69"
+    sha256 cellar: :any,                 arm64_sonoma:  "700316d0bb88c9bafa43f44ac3e6cdb6d5806cd520457aec0bb2dbc86508dd0a"
+    sha256 cellar: :any,                 arm64_ventura: "7c50642768f3921d243c171b2e3f5c6e8ada04772a9e2637cc4412ce73edced1"
+    sha256 cellar: :any,                 sonoma:        "0eb5e9cc5a5df12f08ab1f92bb70c6170f0f5da455575cbf42b5fb8d8c9b8e13"
+    sha256 cellar: :any,                 ventura:       "13244acf784579833924ea8ae7de20307f25f2ae48127e54ff1d267b5021eeea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "209fb9b09f9e4f7d110d6cdbb729667126de8eb524b2d4898ceb2ce259248bd3"
   end
 
   depends_on "cmake" => :build
@@ -36,13 +36,13 @@ class Prowler < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/bc/69/2f6d5a019bd02e920a3417689a89887b39ad1e350b562f9955693d900c40/aiohappyeyeballs-2.4.3.tar.gz"
-    sha256 "75cf88a15106a5002a8eb1dab212525c00d1f4c0fa96e551c9fbe6f09a621586"
+    url "https://files.pythonhosted.org/packages/7f/55/e4373e888fdacb15563ef6fa9fa8c8252476ea071e96fb46defac9f18bf2/aiohappyeyeballs-2.4.4.tar.gz"
+    sha256 "5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/2c/e5/c7ad0689e8ab74c3ec9bf20e0f667e1278b3738ae19ae3fed21e6a0543ca/aiohttp-3.11.8.tar.gz"
-    sha256 "7bc9d64a2350cbb29a9732334e1a0743cbb6844de1731cbdf5949b235653f3fd"
+    url "https://files.pythonhosted.org/packages/3f/24/d5c0aed3ed90896f8505786e3a1e348fd9c61284ef21f54ee9cdf8b92e4f/aiohttp-3.11.9.tar.gz"
+    sha256 "a9266644064779840feec0e34f10a89b3ff1d2d6b751fe90017abcad1864fa7c"
   end
 
   resource "aiosignal" do
@@ -191,13 +191,13 @@ class Prowler < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/66/aa/5a6318f61564bd181e6c65855dc78c46139b5e8c5e301256e18eedfbb7af/boto3-1.35.66.tar.gz"
-    sha256 "c392b9168b65e9c23483eaccb5b68d1f960232d7f967a1e00a045ba065ce050d"
+    url "https://files.pythonhosted.org/packages/87/6d/8e89a60e756c5da4ef56afa738aabed4aa16945676e98b23ede17dffb007/boto3-1.35.71.tar.gz"
+    sha256 "3ed7172b3d4fceb6218bb0ec3668c4d40c03690939c2fca4f22bb875d741a07f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/87/06/bd0dcda686003598530eebbd0c4d7da67c031db2059a3d51a945e6199ce5/botocore-1.35.66.tar.gz"
-    sha256 "51f43220315f384959f02ea3266740db4d421592dd87576c18824e424b349fdb"
+    url "https://files.pythonhosted.org/packages/77/7b/c3f9babe738d5efeb96bd5b250bafcd733c2fd5d8650d8986daa86ee45a1/botocore-1.35.71.tar.gz"
+    sha256 "f9fa058e0393660c3fe53c1e044751beb64b586def0bd2212448a7c328b0cbba"
   end
 
   resource "cachetools" do
@@ -521,8 +521,8 @@ class Prowler < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/a9/4d/5e5a60b78dbc1d464f8a7bbaeb30957257afdc8512cbb9dfd5659304f5cd/propcache-0.2.0.tar.gz"
-    sha256 "df81779732feb9d01e5d513fad0122efb3d53bbc75f61b2a4f29a020bc985e70"
+    url "https://files.pythonhosted.org/packages/20/c8/2a13f78d82211490855b2fb303b6721348d0787fdd9a12ac46d99d3acde1/propcache-0.2.1.tar.gz"
+    sha256 "3f77ce728b19cb537714499928fe800c3dda29e8d9428778fc7c186da4c09a64"
   end
 
   resource "proto-plus" do
@@ -606,8 +606,8 @@ class Prowler < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/23/80/afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4f/rpds_py-0.21.0.tar.gz"
-    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
+    url "https://files.pythonhosted.org/packages/11/e8/9316e3d6edd0530ac284cee5c7ab1cd00acf020b68e08c051c91580d893e/rpds_py-0.22.1.tar.gz"
+    sha256 "157a023bded0618a1eea54979fe2e0f9309e9ddc818ef4b8fc3b884ff38fedd5"
   end
 
   resource "rsa" do
@@ -721,8 +721,8 @@ class Prowler < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5e/4b/53db4ecad4d54535aff3dfda1f00d6363d79455f62b11b8ca97b82746bd2/yarl-1.18.0.tar.gz"
-    sha256 "20d95535e7d833889982bfe7cc321b7f63bf8879788fee982c76ae2b24cfb715"
+    url "https://files.pythonhosted.org/packages/b7/9d/4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918/yarl-1.18.3.tar.gz"
+    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
   end
 
   resource "zipp" do

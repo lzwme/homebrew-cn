@@ -1,8 +1,8 @@
 class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
   homepage "https:juicefs.com"
-  url "https:github.comjuicedatajuicefsarchiverefstagsv1.2.1.tar.gz"
-  sha256 "1cb3908424e210535842cfb9ab612421b2f84261acd9d9fd537b3a5ef1fd6779"
+  url "https:github.comjuicedatajuicefsarchiverefstagsv1.2.2.tar.gz"
+  sha256 "44aa8933887a237d5a69af84366d9cabe3eff025beabed19b57353fd941c2e45"
   license "Apache-2.0"
   head "https:github.comjuicedatajuicefs.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Juicefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "04044d1903b67931d1ce46ef55e58696a521f4fe3255ad99604d9698f1fca71d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d63d4269fd4555c75ae5a89df14c07a75b2475e78f73e0fd32c45816a24345f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba497331d415a7313fa5283ec92f755996ab0fa360022c217bd42c626127715b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "062042d599a3de2bc0af45b80cd757fdc2cbd583936f028450979e51a8fd21ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "665de5ac209bcc1f7c7227bdeb809d742294e58cec5496bd994b1653a74e8319"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c385ae11200e8155caaf1852540c42fc9419ce10dcee2806be884720e32330f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c641718b9d934c60512d1db22f23fdcaeec5b5d58e09349c85dd9201f572efb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "219adbe24922942e227aaefcbddc776f1b48eaf9e0f4f5ff77e4e81e552a93ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0511b17a82dba189a74abcdacf3877c3298397188cb6284c41b15f89b4a8f8c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ef807478563c3ecec0cd4b4ea91d0bb3f1ea85ae1a48ed00aa0475c10e47ab1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5852636200c9c7d60026c6f23ced75986601e7806a4c5c166b70384e6223ee5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa9d00a712fff0e8c9ef0c12cb0407cfb60a27a90b3b71c0ed653823979e7a9f"
+    sha256 cellar: :any_skip_relocation, ventura:       "14ff5640d41e364088ef3f63a7b3cd5732329bcb8ad606b159738552405e7182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67bbb702c83dfdcf6b3ac992b760d161e4690d75c01aa1feea6a637da7f8b1e5"
   end
 
   # use "go" again after https:github.comjuicedatajuicefsissues5047 is resolved and released

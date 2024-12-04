@@ -39,18 +39,18 @@ class Dfmt < Formula
   end
 
   test do
-    (testpath"test.d").write <<~EOS
+    (testpath"test.d").write <<~D
       import std.stdio; void main() { writeln("Hello, world without explicit compilations!"); }
-    EOS
+    D
 
-    expected = <<~EOS
+    expected = <<~D
       import std.stdio;
 
       void main()
       {
           writeln("Hello, world without explicit compilations!");
       }
-    EOS
+    D
 
     system bin"dfmt", "-i", "test.d"
 

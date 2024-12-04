@@ -1,6 +1,6 @@
 class Tinyxml < Formula
   desc "XML parser"
-  homepage "http:www.grinninglizard.comtinyxml"
+  homepage "https:sourceforge.netprojectstinyxml"
   url "https:downloads.sourceforge.netprojecttinyxmltinyxml2.6.2tinyxml_2_6_2.tar.gz"
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   license "Zlib"
@@ -22,6 +22,9 @@ class Tinyxml < Formula
     sha256 cellar: :any,                 el_capitan:     "16e6052892b43e68c45f5122b6802e9bc32001dc9478dfcd89511a24544660e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade5525899de7063ade79d1b0dec70ceef3d0acc08e1dc1b55e937cb539ad38d"
   end
+
+  # sourceforge recommends tinyxml2 as an alternative
+  disable! date: "2025-06-03", because: :deprecated_upstream
 
   depends_on "cmake" => :build
 

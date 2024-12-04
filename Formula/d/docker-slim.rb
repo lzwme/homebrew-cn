@@ -45,10 +45,10 @@ class DockerSlim < Formula
     assert_match version.to_s, shell_output("#{bin}slim --version")
     system "test", "-x", bin"slim-sensor"
 
-    (testpath"Dockerfile").write <<~EOS
+    (testpath"Dockerfile").write <<~DOCKERFILE
       FROM alpine
       RUN apk add --no-cache curl
-    EOS
+    DOCKERFILE
 
     output = shell_output("#{bin}slim lint #{testpath}Dockerfile")
     assert_match "Missing .dockerignore", output

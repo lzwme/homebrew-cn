@@ -3,18 +3,17 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/d0/cd/77e4403b61d5da59063bb65ee894cf951c6f1137658499947adc040102f5/trafilatura-1.12.2.tar.gz"
-  sha256 "4c9cb1434f7e13ef0b16cb44ee1d44e84523ec7268940b9559c374e7effc9a96"
+  url "https://files.pythonhosted.org/packages/06/25/e3ebeefdebfdfae8c4a4396f5a6ea51fc6fa0831d63ce338e5090a8003dc/trafilatura-2.0.0.tar.gz"
+  sha256 "ceb7094a6ecc97e72fea73c7dba36714c5c5b577b6470e4520dca893706d6247"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce47ba0127cb5bf325e5691caaacfcd7d17bb7ddf276bed16eb78c1a65d5cefb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5362f50a078666ae81665cd621694d7db62114dcdb01ee1155ae84eb0abd0648"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a27fda548f21e74589a3d95136864ebf294f99a1897ce94a1a0817cc980958a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e49841b50a85288524d218efb823d6a62811f1bd80709b4d34f27c718e13f62d"
-    sha256 cellar: :any_skip_relocation, ventura:       "8c2bfdf716efc8472dafc9d9e899a07137eaa233efd60e96c76b718e370f3cb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d208d1c99b96e721e6fcfda2a0790d5336d5a8b3ba12ba823963fb8f294c6ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "505f84b8d24a77ceb6d76724565c4aa15328b1387e0ddfde87a559fe9fe5f3d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b3baf89879238df5adad51d5760dffd6d8b2037e46b324b2f16de6d7638c6d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b553c17f86bafe9f26435dfd8cf62553edcacf246f60f2e3534b06430a519c2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6afd99392568f511f979a48743edee48540be464fc5e6c08ffd502afdc5bda5e"
+    sha256 cellar: :any_skip_relocation, ventura:       "e01ee817069b9bae6800880153c0c7a9ff25eb02555f9968aa6a9edfc1024ced"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6410979b76f70b9e8ca8786d708e7713212afb61d59231c497c2d9b97287a254"
   end
 
   depends_on "certifi"

@@ -47,10 +47,10 @@ class Muon < Formula
         return 0;
       }
     C
-    (testpath/"meson.build").write <<~EOS
+    (testpath/"meson.build").write <<~MESON
       project('hello', 'c')
       executable('hello', 'helloworld.c')
-    EOS
+    MESON
 
     system bin/"muon", "setup", "build"
     assert_predicate testpath/"build/build.ninja", :exist?

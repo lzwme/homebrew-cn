@@ -1,16 +1,16 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https:gr-framework.org"
-  url "https:github.comsciappgrarchiverefstagsv0.73.8.tar.gz"
-  sha256 "1eb9f15096f839f6cd8581cf8b4a427de3dcdcd1d2d76dbc3e7d933e637ccd71"
+  url "https:github.comsciappgrarchiverefstagsv0.73.9.tar.gz"
+  sha256 "b784300c069582cb30b45233f358dfcde176fec53250f0bb5d93e0e21c0f1a1f"
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:  "8b62829c85bdadaa6e580778908cc35f77cc2c77ad8d087b24faa3e63809278a"
-    sha256 arm64_ventura: "028634a8e7da865ba9c30f56ec4db6464c68f5c6d02de0a83bc20ddb0c9efd78"
-    sha256 sonoma:        "911929b594cd54ca72270cc27aa58496662d885b27eb290973cfe37815f9c985"
-    sha256 ventura:       "90343b750d2dc752fa579f0d34135e8681b313bc17a07c4d580219aac3a0b943"
-    sha256 x86_64_linux:  "970e8d4f63b3d6a1b0ad4f151669f5c3844ae2e0cdaed99c298bd83263cc54ab"
+    sha256 arm64_sonoma:  "bc68059bba097861d2abdb86ccf884c8da6fd75e0cf2038a8c0db9ea360d0aa7"
+    sha256 arm64_ventura: "37e5188036fefbec7c4d3110177b64c3b5f475811e176c2ba926b72fb57eb0c3"
+    sha256 sonoma:        "459e35eab2e559cfbbee8923bb1af63561f23dce0bc89b233136a0c22b58f17d"
+    sha256 ventura:       "073389373df87e0282d1395b82efbeb085aef812bbb0d279c0279ee82b86b18d"
+    sha256 x86_64_linux:  "c18b1bdd6e3d7ff848e32347e75542a481615e42da06ff2bd234ad294dcc4a0a"
   end
 
   depends_on "cmake" => :build

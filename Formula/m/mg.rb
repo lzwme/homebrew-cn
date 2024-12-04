@@ -30,13 +30,13 @@ class Mg < Formula
   end
 
   test do
-    (testpath"command.exp").write <<~EOS
+    (testpath"command.exp").write <<~EXPECT
       set timeout -1
       spawn #{bin}mg
       match_max 100000
       send -- "\u0018\u0003"
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "command.exp"
   end

@@ -46,13 +46,13 @@ class Opendbx < Formula
 
   test do
     testfile = testpath/"test.sql"
-    testfile.write <<~EOS
+    testfile.write <<~SQL
       create table t(x);
       insert into t values("Hello");
       .header
       select * from t;
       .quit
-    EOS
+    SQL
 
     assert_match '"Hello"',
       pipe_output("#{bin}/odbx-sql odbx-sql -h ./ -d test.sqlite3 -b sqlite3", (testpath/"test.sql").read)

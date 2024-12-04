@@ -29,11 +29,11 @@ class CargoMake < Formula
     system "rustup", "set", "profile", "minimal"
 
     text = "it's working!"
-    (testpath"Makefile.toml").write <<~EOF
+    (testpath"Makefile.toml").write <<~TOML
       [tasks.is_working]
       command = "echo"
       args = ["#{text}"]
-    EOF
+    TOML
 
     assert_match text, shell_output("cargo make is_working")
     assert_match text, shell_output("#{bin}cargo-make make is_working")

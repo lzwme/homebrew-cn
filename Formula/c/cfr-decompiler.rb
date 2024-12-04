@@ -62,7 +62,7 @@ class CfrDecompiler < Formula
   end
 
   test do
-    fixture = <<~EOS
+    fixture = <<~JAVA
       *
        * Decompiled with CFR #{version}.
        *
@@ -74,7 +74,7 @@ class CfrDecompiler < Formula
               System.out.println("Hello brew!");
           }
       }
-    EOS
+    JAVA
     (testpath"T.java").write fixture
     system Formula["openjdk@11"].bin"javac", "T.java"
     output = pipe_output("#{bin}cfr-decompiler --comments false T.class")
